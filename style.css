@@ -5,7 +5,7 @@
  Author:       WPoperation
  Author URI:   http://wpoperation.com/
  Template:     arrival
- Version:      1.0.1
+ Version:      1.0.2
  License:      GNU General Public License v3 or later
  License URI:   http://www.gnu.org/licenses/gpl-3.0.html
  Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors
@@ -113,6 +113,7 @@ header
     font-size: 14px;
     border: 1px solid #6e6e6e;
     border-right: 0;
+    -moz-appearance: none;
 }
 .after-top-header-wrapp .product-search form#searchform .op_search_wrap {
     position: relative;

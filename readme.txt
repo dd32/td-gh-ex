@@ -2,8 +2,8 @@
 Contributors: WPoperation
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors
 Requires at least: 4.0
-Tested up to: 5.3.2
-Stable tag: 1.0.1
+Tested up to: 5.4.1
+Stable tag: 1.0.2
 Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -42,6 +42,7 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/PLGCXMYH4J
 
 
+All the icons on the screenshot are created using Illustrator by WPoperation and licenced under CC0
 
 All other images are designed by WPoperation and licenced under CC0
 

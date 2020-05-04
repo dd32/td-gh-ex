@@ -118,6 +118,19 @@ function arrival_store_get_default_theme_options() {
     $defaults[$prefix.'_social_icons_new_tab']              = false;
     $defaults[$prefix.'_breadcrumb_enable']                 = 'yes';
     
+    $defaults[$prefix.'_main_logo_width']                   = 100;
+    $defaults[$prefix.'_single_page_sidebars']              = 'no_sidebar';
+    $defaults[$prefix.'_post_featured_image_enable']        = 'yes';
+    $defaults[$prefix.'_blog_page_sidebars']                = 'no_sidebar';
+    $defaults[$prefix.'_post_meta_enable']                  = 'yes';
+    $defaults[$prefix.'_post_author_enable']                = 'yes';
+    $defaults[$prefix.'_post_date_enable']                  = 'yes';
+    $defaults[$prefix.'_post_comment_enable']               = 'yes';
+
+if( class_exists('woocommerce')):
+    $defaults[$prefix.'_archive_shop_sidebars']             = 'no_sidebar';
+    $defaults[$prefix.'_single_shop_sidebars']              = 'no_sidebar';
+endif;
     
     $defaults['arrival_store_middle_header_phone']          = '';
     $defaults['arrival_store_top_header_bg']                = '#000';
@@ -439,16 +452,23 @@ if( ! function_exists('arrival_store_mob_nav')){
             </span>
 
             <div class="mob-nav-wrapp">
+                <button class="toggle close-wrapp toggle-wrapp">
+                    <span class="text"><?php esc_html_e('Close Menu','arrival'); ?></span>
+                    <span class="icon-wrapp"><?php echo arrival_get_icon_svg('cross',18); ?></span>
+                </button>
+                <nav arial-label="Mobile" role="navigation" tabindex="1">
                 <?php 
                     wp_nav_menu(
                         array(
                             'theme_location' => 'primary',
                             'menu_id'        => 'primary-menu',
                             'container'      => 'ul',
-                            'menu_class'     => 'mob-primary-menu'
+                            'show_toggles'   => true,
+                            'menu_class'     => 'mob-primary-menu clear'
                         )
                     );
                 ?>
+            </nav>
             </div>
 
         </div>

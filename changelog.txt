@@ -1,3 +1,7 @@
+=== v1.0.2 ===
+- Optimized mobile menu for keyboard navigation
+
+
 === v1.0.1 ===
 - Fixed keyboard navigation issues
 
