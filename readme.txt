@@ -3,6 +3,11 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.5.5 - 04 May 2020 =
+* Added header image height option.
+* Added header image bottom shape option.
+* Updated Kirki framework to the latest version.
+
 = 1.5.4 - 25 March 2020 =
 * Removed the framework/agama-filters.php file.
 * Minor design updates.

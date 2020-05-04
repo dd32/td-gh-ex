@@ -1,10 +1,9 @@
 === Kirki Customizer Framework ===
-Contributors: aristath, dannycooper, wplemon, igmoweb
+Contributors: davidvongries, aristath, dannycooper, wplemon, igmoweb
 Tags: customizer, options framework, theme, mods, toolkit, gutenberg
-Donate link: https://aristath.github.io/donate
 Requires at least: 4.9
 Tested up to: 5.3
-Stable tag: 3.1.0
+Stable tag: 3.1.2
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -52,15 +51,6 @@ Included are more than 30 custom control types ranging from simple sliders to co
 * [Typography Customizer Control](https://kirki.org/docs/controls/typography)
 * [Upload Customizer Control](https://kirki.org/docs/controls/upload)
 
-Premium controls are also available for premium themes:
-
-* [Kirki WCAG Text Colorpicker](https://wplemon.com/downloads/kirki-wcag-text-colorpicker/)
-* [Kirki WCAG Links Colorpicker](https://wplemon.com/downloads/kirki-wcag-link-colorpicker/)
-* [Kirki Box Model](https://wplemon.com/downloads/kirki-box-model/)
-* [Kirki Box Shadow](https://wplemon.com/downloads/kirki-box-shadow/)
-
-All premium controls are also [available as a pack](https://wplemon.com/downloads/kirki-premium-controls-pack/)
-
 Theme developers should be familiar with the Customizer API before you start writing your theme using Kirki. An excellent handbook for the WordPress Customizer can be found on the [developer.wordpress.org](https://developer.wordpress.org/themes/customize-api/) website.
 
 You can find detailed documentation on how to use Kirki on [kirki.org](https://kirki.org)
@@ -75,15 +65,12 @@ If you want to integrate Kirki in your theme or plugin, please read the instruct
 
 == Changelog ==
 
-= 3.1.0 - 2020-03-01 =
+= 3.1.2 - 2020-04-20 =
+
+### Fixed
+* Added back `font-display:swap` to Google Fonts.
 
 ### Changed
-* Completely refactored the google-fonts downloader. Fonts now get stored in `wp-content/fonts/{font-family}/{file}`.
 * Updated Google-Fonts lists.
 
-### Removed
-* Removed the `branding` module.
-* Removed the `styling` module.
-* Removed the `telemetry` module.
-
-[See the previous changelogs here](https://github.com/aristath/kirki/blob/master/CHANGELOG.md).
+[See the previous changelogs here](https://github.com/kirki-framework/kirki/blob/master/CHANGELOG.md).

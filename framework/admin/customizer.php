@@ -872,6 +872,41 @@ add_action( 'customize_register', 'agama_customize_register' );
             ]
         ]
 	] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => __( 'Viewport Height (vh)', 'agama' ),
+        'description'   => __( 'Set header image viewport height.', 'agama' ),
+        'settings'  => 'agama_header_image_height',
+        'section'   => 'header_image',
+        'transport' => 'auto',
+        'type'      => 'slider',
+        'choices'   => [
+            'min'   => 5,
+            'max'   => 100,
+            'step'  => 5
+        ],
+        'default'   => 50,
+        'output'    => [
+           [
+               'element'  => '#agama-header-image .header-image',
+               'property' => 'height',
+               'suffix'   => 'vh'
+           ]
+        ],
+        'priority'  => 1
+    ] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => esc_attr__( 'Bottom Shape', 'agama' ),
+        'description'   => esc_attr__( 'Select the header image bottom shape.', 'agama' ),
+        'section'       => 'header_image',
+        'settings'      => 'agama_header_image_bottom_shape',
+        'type'          => 'select',
+        'choices'       => [
+            'none'      => __( 'None', 'agama' ),
+            'waves'     => __( 'Waves', 'agama' )
+        ],
+        'default'       => 'waves',
+        'priority'      => 1
+    ] );
     ##########################################################
     # HEADER STYLING SECTION
     ##########################################################
