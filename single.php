@@ -63,7 +63,26 @@ arrival_post_tags();
 	</main><!-- #primary -->
 
 <?php
+
+$default              	= arrival_get_default_theme_options();
+$_single_post_sidebars 	= get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
+
+
 if( function_exists('arrival_mb_single_posts_sidebar')){
-	arrival_mb_single_posts_sidebar();	
+	$meta_sidebar = arrival_mb_single_posts_sidebar();
+
+	if($meta_sidebar != 'default' ){
+		if( $meta_sidebar == 'leftsidebar' ){
+			get_sidebar('left');	
+		}else if( $meta_sidebar == 'rightsidebar' ){
+			get_sidebar('right');
+		}	
+	}elseif($_single_post_sidebars != 'no_sidebar' ){
+		get_sidebar($_single_post_sidebars);
+	}
+}else if( $_single_post_sidebars != 'no_sidebar' ){
+	get_sidebar($_single_post_sidebars);
 }
+
+
 get_footer();

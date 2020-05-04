@@ -31,6 +31,7 @@ remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_
 remove_action( 'woocommerce_before_shop_loop_item_title','woocommerce_show_product_loop_sale_flash', 10 );
 remove_action( 'woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail', 10 );
 add_action ( 'woocommerce_before_shop_loop_item_title', 'arrival_product_thumb_wrapp',10);
+add_action( 'woocommerce_after_main_content', 'arrival_woo_sidebar_wrapp', 10 );
 
 
 
@@ -258,4 +259,26 @@ if( ! function_exists('arrival_product_thumb_wrapp') ){
     echo '</div>';
   }
   
+}
+
+
+if( ! function_exists('arrival_woo_sidebar_wrapp')){
+  function arrival_woo_sidebar_wrapp(){
+
+    $default                = arrival_get_default_theme_options();
+    $_archive_shop_sidebars = get_theme_mod('arrival_archive_shop_sidebars',$default['arrival_archive_shop_sidebars']);
+    $_single_shop_sidebars  = get_theme_mod('arrival_single_shop_sidebars',$default['arrival_single_shop_sidebars']);
+
+
+    if( is_singular()){
+      $sidebar = $_single_shop_sidebars;
+    }else{
+      $sidebar = $_archive_shop_sidebars;
+    }
+
+    if( $sidebar != 'no_sidebar' ){
+      get_sidebar( $sidebar );
+    }
+
+  }
 }

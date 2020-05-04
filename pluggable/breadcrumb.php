@@ -1227,6 +1227,7 @@ if( ! function_exists('arrival_breadcrumb_header_titles')){
     }
 }
 
+add_action('arrival_breadcrumb_banner','arrival_header_title_display',10);
 if( ! function_exists('arrival_header_title_display') ){
     function arrival_header_title_display(){
         

@@ -247,59 +247,13 @@ if( function_exists('arrival_customizer_pro_info')){
   arrival_customizer_pro_info( $wp_customize, $prefix.'_general_settings_info',$prefix.'_general_setting_section');
 }
 
-/**
-* Sidebar settings
-*
-*/
-$wp_customize->add_section( $prefix.'_sidebar_settings', array(
-      'title'   => esc_html__( 'Sidebar Settings', 'arrival' ),
-      'panel'   => 'general_settings'
-    )
-  );
-
-
-/**
-* Single post sidebar
-*/
-$wp_customize->add_setting( $prefix.'_single_post_sidebars_sep', array(
-        'sanitize_callback'   => 'sanitize_text_field',        
-      ) );
-
-$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_single_post_sidebars_sep', array(
-        'label'         => esc_html__( 'Sidebar Display Option', 'arrival' ),
-        'section'       => $prefix.'_sidebar_settings',
-      ) ) );
-
-//single post sidebars
-$wp_customize->add_setting( $prefix.'_single_post_sidebars', array(
-    'default'           => $default[$prefix.'_single_post_sidebars'],
-    'capability'        => 'edit_theme_options',
-    'sanitize_callback' => 'arrival_sanitize_page_sidebar'
-       )
-);
-$wp_customize->add_control( new Arrival_Lite_Image_Radio_Control($wp_customize, $prefix.'_single_post_sidebars', array(
-    'type'        => 'radio',
-    'description' => esc_html__( 'Select sidebar style for the theme.', 'arrival' ),
-    'section'     => $prefix.'_sidebar_settings',
-    'choices'     => array(
-        'right_sidebar' => ARRIVAL_URI . '/assets/images/sidebars/rt.png',
-        'no_sidebar'    => ARRIVAL_URI . '/assets/images/sidebars/no.png',
-                
-        )
-       )
-    )
-);
-
-if( function_exists('arrival_customizer_pro_info')){
-  arrival_customizer_pro_info( $wp_customize, $prefix.'_single_post_sidebars_info',$prefix.'_sidebar_settings');
-}
 
 /**
 * Blog settings
 *
 */
 $wp_customize->add_section( $prefix.'_blog_settings', array(
-      'title'   => esc_html__( 'Blog Settings', 'arrival' ),
+      'title'   => esc_html__( 'Blog/Archive Settings', 'arrival' ),
       'panel'   => 'general_settings'
     )
   );
@@ -336,6 +290,43 @@ $wp_customize->add_control( $prefix.'_blog_excerpts', array(
         'type'          => 'number'
         
       ) );
+
+// blog sidebar separator
+$wp_customize->add_setting( $prefix.'_blog_sidebars_sep', array(
+        'sanitize_callback'   => 'sanitize_text_field',        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_blog_sidebars_sep', array(
+        'label'         => esc_html__( 'Sidebar Options', 'arrival' ),
+        'section'       => $prefix.'_blog_settings',
+      ) ) );
+
+
+//blog sidebars
+$wp_customize->add_setting( $prefix.'_blog_page_sidebars', array(
+    'default'           => $default[$prefix.'_blog_page_sidebars'],
+    'capability'        => 'edit_theme_options',
+    'sanitize_callback' => 'arrival_sanitize_page_sidebar'
+       )
+);
+$wp_customize->add_control( new Arrival_Lite_Image_Radio_Control($wp_customize, $prefix.'_blog_page_sidebars', array(
+    'type'        => 'radio',
+    'description' => esc_html__( 'Select sidebar for the blogs.', 'arrival' ),
+    'section'     => $prefix.'_blog_settings',
+    'choices'     => array(
+        'left'          => ARRIVAL_URI . '/assets/images/sidebars/lft.png',
+        'right'         => ARRIVAL_URI . '/assets/images/sidebars/rt.png',
+        'no_sidebar'    => ARRIVAL_URI . '/assets/images/sidebars/no.png',
+                
+        )
+       )
+    )
+);
+
+if( function_exists('arrival_customizer_pro_info')){
+  arrival_customizer_pro_info( $wp_customize, $prefix.'_blog_post_info',$prefix.'_blog_settings');
+}
+
 
 /**
 * Post Meta Options

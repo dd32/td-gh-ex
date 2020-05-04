@@ -22,6 +22,8 @@ function arrival_body_classes( $classes ) {
     $_after_top_header_align_center = get_theme_mod('arrival_after_top_header_align_center',$default['arrival_after_top_header_align_center']);
     $_top_header_enable             = get_theme_mod('arrival_top_header_enable',$default['arrival_top_header_enable']);
     $_main_nav_layout               = get_theme_mod('arrival_main_nav_layout',$default['arrival_main_nav_layout']);
+    $_single_page_sidebars          = get_theme_mod('arrival_single_page_sidebars',$default['arrival_single_page_sidebars']);
+    $_blog_page_sidebars            = get_theme_mod('arrival_blog_page_sidebars',$default['arrival_blog_page_sidebars']);
 
     $classes[] = $_main_nav_menu_align;
 
@@ -31,8 +33,26 @@ function arrival_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+    if(is_admin_bar_showing()){
+        $classes[] = 'admin-bar';
+    }
     if(class_exists('WooCommerce')){
-        $classes[] = 'woocommerce';   
+        $classes[] = 'woocommerce'; 
+        
+        $_archive_shop_sidebars = get_theme_mod('arrival_archive_shop_sidebars',$default['arrival_archive_shop_sidebars']);
+        $_single_shop_sidebars  = get_theme_mod('arrival_single_shop_sidebars',$default['arrival_single_shop_sidebars']);
+
+        if ( is_singular( 'product' ) ) {
+            if( $_single_shop_sidebars != 'no_sidebar'){
+                $classes[] = 'has-sidebar '.$_single_shop_sidebars;
+            }            
+        }  
+
+        if ( is_shop() || is_product_category() ) {
+            if( $_archive_shop_sidebars != 'no_sidebar'){
+                $classes[] = 'has-sidebar '.$_archive_shop_sidebars;
+            } 
+        }
     }
 
     if( $_inner_header_image ){
@@ -50,8 +70,15 @@ function arrival_body_classes( $classes ) {
 	$classes[] = 'active-arrival';
 
 
-    if( ('no_sidebar' != $_single_post_sidebars) &&  ('default' == $ultra_sidebar_layout) ){
-        $classes[] = 'has-sidebar';
+    if( is_singular('post') &&  ('no_sidebar' != $_single_post_sidebars) &&  ('default' == $ultra_sidebar_layout) ){
+        $classes[] = 'has-sidebar '.$_single_post_sidebars;
+    }
+
+    if( is_page() && ('no_sidebar' != $_single_page_sidebars) &&  ('default' == $ultra_sidebar_layout) ){
+        $classes[] = 'has-sidebar '.$_single_page_sidebars;   
+    }
+    if( (is_home() || is_category()) && ('no_sidebar' != $_blog_page_sidebars) ){
+        $classes[] = 'has-sidebar '.$_blog_page_sidebars;   
     }
 
     if( $_top_header_enable == 'on' && $_main_nav_layout == 'boxed' ){
@@ -593,4 +620,69 @@ function arrival_hex2rgba($color, $opacity = false) {
         }
         //Return rgb(a) color string
         return $output;
+}
+
+
+/**
+ * Add a Sub Nav Toggle to the Expanded Menu and Mobile Menu.
+ *
+ * @param stdClass $args An array of arguments.
+ * @param string   $item Menu item.
+ * @param int      $depth Depth of the current menu item.
+ *
+ * @return stdClass $args An object of wp_nav_menu() arguments.
+ * 
+ * @since 1.2.7
+ */
+function arrival_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
+
+
+    // Add sub menu toggles to the Expanded Menu with toggles.
+    if ( isset( $args->show_toggles ) && $args->show_toggles ) {
+
+        
+        $args->after  = '';
+
+        // Add a toggle to items with children.
+        if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+
+            $toggle_target_string = '.menu-modal .menu-item-' . $item->ID . ' > .sub-menu';
+            $toggle_duration      = 50;
+
+            // Add the sub menu toggle.
+            $args->after .= '<button class="toggle sub-toggle sub-menu-toggle"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . arrival_get_icon_svg( 'arrow_down' ) . '</button>';
+
+        }
+
+    } 
+
+    return $args;
+
+}
+
+add_filter( 'nav_menu_item_args', 'arrival_add_sub_toggles_to_main_menu', 10, 3 );
+
+
+
+/**
+* Remove Archive prefix
+*
+* @since 1.2.7
+*/
+add_filter('get_the_archive_title','arrival_archive_prefix');
+if( ! function_exists('arrival_archive_prefix')){
+    function arrival_archive_prefix($title){
+        if ( is_category() ) {    
+                $title = single_cat_title( '', false );    
+            } elseif ( is_tag() ) {    
+                $title = single_tag_title( '', false );    
+            } elseif ( is_author() ) {    
+                $title = '<span class="vcard">' . get_the_author() . '</span>' ;    
+            } elseif ( is_tax() ) { //for custom post types
+                $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+            } elseif (is_post_type_archive()) {
+                $title = post_type_archive_title( '', false );
+            }
+        return $title; 
+    }
 }

@@ -111,7 +111,7 @@ function arrival_setup() {
 	 */
 	add_theme_support(
 		'custom-logo', array(
-			'height'      => 1280,
+			'height'      => 1200,
 			'width'       => 1920,
 			'flex-width'  => false,
 			'flex-height' => false,

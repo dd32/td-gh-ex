@@ -58,43 +58,30 @@ jQuery(document).ready(function ($) {
 * Mobile navigation scripts
 *
 */   
- $('body').on('click keypress','.toggle-wrapp', function(){
-
+ $('body').on('click keypress','.toggle-wrapp', function(e){
+    e.preventDefault();
+     
     $('.site-header').toggleClass('toggled-on');
+   
  });
 
-//close sidemenu on click outside it's container
-var menuWraper = $('.mob-nav-wrapp');
-    $(document).on('click', function(event){
-        var menuToggle = $('.toggle-wrapp');
-        if (!menuWraper.is(event.target) &&            // If the target of the click isn't the container...
-            menuWraper.has(event.target).length === 0) // ... nor a descendant of the container
-        {
-             if (!menuToggle.is(event.target) &&            
-                menuToggle.has(event.target).length === 0) {
-                // Do whatever you want to do when click is outside the element
-                $('.site-header').removeClass('toggled-on');
-            }
-            
-        }
-    });
 
 
 $('.mob-nav-wrapp ul li ul').slideUp();
 
-$('<div class="sub-toggle"></div>').insertBefore('.mob-nav-wrapp .menu-item-has-children ul');
-$('<div class="sub-toggle-children"></div>').insertBefore('.mob-nav-wrapp .page_item_has_children ul');
+/*$('<button class="toggle sub-toggle"></button>').insertBefore('.mob-nav-wrapp .menu-item-has-children ul');
+$('<button class="toggle sub-toggle-children"></div>').insertBefore('.mob-nav-wrapp .page_item_has_children ul');*/
 
 
 
-$('body').on('vclick touchstart','.mob-nav-wrapp .sub-toggle', function()  {
+$('body').on('vclick touchstart keypress','.mob-nav-wrapp .sub-toggle', function()  {
   
-  $(this).next('ul.sub-menu').slideToggle(400);
+  $(this).next().next('ul.sub-menu').slideToggle(400);
   $(this).parent('li').toggleClass('mob-menu-toggle');
 });
 
-$('body').on('click touchstart','.mob-nav-wrapp .sub-toggle-children',function() {
-  $(this).next('ul.sub-menu').slideToggle(400);
+$('body').on('click touchstart keypress','.mob-nav-wrapp .sub-toggle-children',function() {
+  $(this).next().next('ul.sub-menu').slideToggle(400);
     
 });
 
@@ -116,6 +103,7 @@ if( 'yes' == smoothScrollEnable ){
          stepSize         : 100, // [px]
       })
 }
+
 
 
 

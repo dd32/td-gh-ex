@@ -61,8 +61,16 @@ class Arrival_Customize_Redirect extends WP_Customize_Control{
       return;
     }
     $controller = $this->description;
+    $type = 'section';
+    if( !empty($this->type) ){
+      $type = $this->type;
+    } 
+    if($this->type == 'text'){
+      $type = 'section';
+    }
+
   ?>
-    <a href="javascript:wp.customize.section('<?php echo esc_attr($controller);?>').focus();" class="button section-redirect">
+    <a href="javascript:wp.customize.<?php echo esc_attr($type)?>('<?php echo esc_attr($controller);?>').focus();" class="button section-redirect">
       <span><?php echo esc_html($this->label); ?></span>
     </a>
   <?php

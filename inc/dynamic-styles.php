@@ -18,7 +18,8 @@ function arrival_dynamic_styles(){
 	?>
 	
 	.top-header-wrapp,.scroll-top-top,.widget h2.widget-title:before,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.header-last-item.search-wrap.header-btn a.header-cta-btn,.arrival-archive-navigation ul li a:hover,
-	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before,header span.cart-count,.site-main .entry-content a.button.wc-backward,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button, .content-area .product a.compare.button, .content-area .product .yith-wcwl-wishlistexistsbrowse.show a, .woocommerce .widget_shopping_cart .buttons a, .woocommerce.widget_shopping_cart .buttons a, .site-main .entry-content a.button.wc-backward,.arrival-cart-wrapper{
+	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before,header span.cart-count,.site-main .entry-content a.button.wc-backward,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button, .content-area .product a.compare.button, .content-area .product .yith-wcwl-wishlistexistsbrowse.show a, .woocommerce .widget_shopping_cart .buttons a, .woocommerce.widget_shopping_cart .buttons a, .site-main .entry-content a.button.wc-backward,.arrival-cart-wrapper,
+	.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce-account .woocommerce-MyAccount-navigation ul li a{
 		background: <?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 
@@ -403,6 +404,19 @@ function arrival_dynamic_styles(){
 	if( $ultra_page_custom_css ){
 
 		echo esc_html($ultra_page_custom_css); 
+	}
+
+
+	/**
+	* Additional settings
+	* @since 1.2.7
+	*/
+	$_main_logo_width = get_theme_mod('arrival_main_logo_width',$defaults['arrival_main_logo_width']);
+	if($_main_logo_width != 100 ){ ?>
+		.site-header .site-branding img{
+		 max-width: <?php echo absint($_main_logo_width); ?>%
+		}
+	<?php 
 	}
 
 

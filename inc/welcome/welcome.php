@@ -148,7 +148,7 @@
 					<div class="about-text"><?php echo wp_kses_post($this->strings['theme_short_description']); ?></div>
 					</div>
 				</div>
-				<div class="wrap about-wrap">
+				<div class="wrap op-about-wrap">
 					
 					
 

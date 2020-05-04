@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.2.6
+Version: 1.2.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -466,7 +466,7 @@ template {
 		    -ms-flex-pack: center;
 		        justify-content: center;
 	}
-	.has-sidebar.leftsidebar .site{
+	.has-sidebar.left .site{
 		 display: -ms-grid;
     	display: grid;
 		-ms-grid-columns: 1fr 2rem 3fr;
@@ -477,10 +477,10 @@ template {
 		        justify-content: center;
 		    grid-template-areas: "column-1 column-2";
 	}
-	.has-sidebar.leftsidebar .left-sidebar{
+	.has-sidebar.left .left-sidebar{
 		    grid-area: column-1;
 	}
-	.has-sidebar.leftsidebar .site-main{
+	.has-sidebar.left .site-main{
 		    grid-area: column-2;
 	}
 
@@ -493,7 +493,6 @@ template {
 		-ms-grid-column: 1;
     	grid-column: 1;
 		min-width: 0;
-		background: #FFF;
 		padding: 1.25rem 1.25rem;
 	}
 	
@@ -509,7 +508,9 @@ template {
     	grid-column: span 2;
 	}
 }
-
+.site-main {
+		background: #FFF;
+	}
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -705,7 +706,7 @@ input[type="submit"] {
 	cursor: pointer;
 	background-color: #E12454;
     border: none;
-    color: #FFF !important;
+    color: #FFF;
     box-shadow: none;
     color: inherit;
     cursor: pointer;
@@ -2046,13 +2047,15 @@ a.opstore-btn.bdr:visited, a.opstore-btn,
 
 /* Mobile Navigation  */
 .mob-nav-wrapp {
+	opacity: 0;
+	visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99999;
     background: #FFF;
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     height: 100vh;
     overflow: auto;
     padding-top: 30px;
@@ -2067,9 +2070,43 @@ a.opstore-btn.bdr:visited, a.opstore-btn,
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
-
+.mob-nav-wrapp .close-wrapp {
+    padding: 20px;
+    border-bottom: 1px solid #f4f0f0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+.mob-nav-wrapp span.icon-wrapp svg {
+    vertical-align: middle;
+}
+.mob-nav-wrapp span.text {
+    padding-right: 10px;
+}
+button.toggle {
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 400;
+    letter-spacing: inherit;
+    padding: 0;
+    text-transform: none;
+}
+body.admin-bar .site-header.toggled-on .mob-nav-wrapp {
+    margin-top: 35px;
+}
 
 .site-header.toggled-on .mob-nav-wrapp {
+	opacity: 1;
+	left: 0;
+	right: 0;
+	visibility: visible;
     -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.075);
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.075);
     -webkit-transform: translateX(0);
@@ -2092,39 +2129,15 @@ a.opstore-btn.bdr:visited, a.opstore-btn,
 }
 .mob-nav-wrapp .mob-primary-menu li .sub-toggle{
     position: absolute;
-    top: 10px;
-    right: 0;
-    height: 25px;
-    width: 25px;
+    top: 5px;
+    right: 10px;
+    padding: 12px;
+    border-left: 1px solid #666;
 }
 .mob-nav-wrapp .mob-primary-menu li .sub-toggle:hover{
     cursor: pointer;
 }
-.mob-nav-wrapp .mob-primary-menu li .sub-toggle:before {
-    position: absolute;
-    content: "\f067";
-    font-family: 'fontawesome';
-    font-size: 12px;
-    color: #666;
-    top: 0;
-    left: 0;
-    -webkit-transform-origin: center;
-    -moz-transform-origin: center;
-    -ms-transform-origin: center;
-    -o-transform-origin: center;
-    transform-origin: center;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -ms-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    transition: all ease 0.3s;
-}
 
-.mob-nav-wrapp .mob-primary-menu > li.mob-menu-toggle > .sub-toggle:before {
-    content: "\f068";
-    font-family: 'fontawesome';
-    color: #E12454;
-}
 
 .mob-outer-wrapp .site-branding {
     float: left;
@@ -2132,6 +2145,7 @@ a.opstore-btn.bdr:visited, a.opstore-btn,
 }
 .mob-outer-wrapp .toggle-wrapp {
     float: right;
+    padding: 15px;
 }
 .mob-outer-wrapp .container {
     padding: 0 10px;
@@ -2148,7 +2162,7 @@ a.opstore-btn.bdr:visited, a.opstore-btn,
 .mob-primary-menu li a{
     text-decoration: none;
     text-transform: capitalize;
-    padding: 7px 20px;
+    padding: 15px 20px;
     color: #333;
     display: block;
 }
@@ -2209,33 +2223,7 @@ span.toggle-wrapp {
     background-color: transparent;
     padding-top: 0;
 }
-.toggled-on span.menu-toggle{
-    -webkit-transform: translate3d(0,10px,0) rotate(45deg);
-       -moz-transform: translate3d(0,10px,0) rotate(45deg);
-        -ms-transform: translate3d(0,10px,0) rotate(45deg);
-         -o-transform: translate3d(0,10px,0) rotate(45deg);
-            transform: translate3d(0,10px,0) rotate(45deg);
-}
 
-.toggled-on span.menu-toggle:before{
-    -webkit-transform: rotate(-45deg) translate3d(-5.71429px,-6px,0);
-       -moz-transform: rotate(-45deg) translate3d(-5.71429px,-6px,0);
-        -ms-transform: rotate(-45deg) translate3d(-5.71429px,-6px,0);
-         -o-transform: rotate(-45deg) translate3d(-5.71429px,-6px,0);
-            transform: rotate(-45deg) translate3d(-5.71429px,-6px,0);
-        opacity: 0;
-}
-
-.toggled-on span.menu-toggle:after{
-    -webkit-transform: translate3d(0,-20px,0) rotate(-90deg);
-       -moz-transform: translate3d(0,-20px,0) rotate(-90deg);
-        -ms-transform: translate3d(0,-20px,0) rotate(-90deg);
-         -o-transform: translate3d(0,-20px,0) rotate(-90deg);
-            transform: translate3d(0,-20px,0) rotate(-90deg);
-}
-.toggled-on span.menu-toggle:after{
-    bottom: -20px;
-}
 
 /* mobile social icons */
 .mob-nav-wrapp .social{
@@ -2536,6 +2524,9 @@ section.no-results.not-found {
 	align-items: center;
 }
 .header-last-item{
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
 	line-height: 70px;
 	padding: .4em 0.5em;
 }
@@ -2711,7 +2702,7 @@ button
     text-transform: capitalize;
     padding: 14px 25px!important;
     color: #FFF;
-    background: #fcb700!important;
+    background: #fcb700;
     transition: all 0.3s ease-in-out;
 }
 .wc-proceed-to-checkout a.button:hover,

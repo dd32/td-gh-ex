@@ -46,6 +46,8 @@ function arrival_customize_register( $wp_customize ) {
 
 	require get_template_directory() . '/inc/customizer/arrival-customizer.php';
 
+	require get_template_directory() . '/inc/customizer/customizer-additional.php';
+
 	/**
 	* Hook to pass additional customizer settings from child themes
 	* the hook accepts array or single file

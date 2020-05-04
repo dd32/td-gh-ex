@@ -83,6 +83,12 @@ function arrival_index_header() {
  * Prints HTML with meta information for the current post-date/time.
  */
 function arrival_posted_on() {
+	$default   				= arrival_get_default_theme_options();
+	$_post_date_enable 	= get_theme_mod('arrival_post_date_enable',$default['arrival_post_date_enable']);
+	if($_post_date_enable == 'no' ){
+		return;
+	}
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -111,8 +117,15 @@ function arrival_posted_on() {
  */
 function arrival_posted_by() {
 	global $post;
-	$author_id = $post->post_author;
-	$avator = get_avatar($author_id);
+	$default   				= arrival_get_default_theme_options();
+	$_post_author_enable 	= get_theme_mod('arrival_post_author_enable',$default['arrival_post_author_enable']);
+	if($_post_author_enable == 'no' ){
+		return;
+	}
+
+	$author_id 	= $post->post_author;
+	$avator 	= get_avatar($author_id);
+
 	$byline = sprintf(
 		/* translators: %s: post author. */
 		esc_html_x( 'by %s', 'post author', 'arrival' ),
@@ -160,6 +173,12 @@ function arrival_post_tags() {
  * Prints comments link when comments are enabled.
  */
 function arrival_comments_link() {
+	$default   				= arrival_get_default_theme_options();
+	$_post_comment_enable 	= get_theme_mod('arrival_post_comment_enable',$default['arrival_post_comment_enable']);
+	if($_post_comment_enable == 'no' ){
+		return;
+	}
+
 	$icon = arrival_get_icon_svg('comment',14);
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">'.$icon;

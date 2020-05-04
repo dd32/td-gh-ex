@@ -7,9 +7,10 @@
  * @package Arrival
  */
 
-$defaults 		= arrival_get_default_theme_options();
-$_blog_excerpts = get_theme_mod('arrival_blog_excerpts',$defaults['arrival_blog_excerpts']);
-$_blog_layout 	= get_theme_mod('arrival_blog_layout',$defaults['arrival_blog_layout']);
+$defaults 			= arrival_get_default_theme_options();
+$_blog_excerpts 	= get_theme_mod('arrival_blog_excerpts',$defaults['arrival_blog_excerpts']);
+$_blog_layout 		= get_theme_mod('arrival_blog_layout',$defaults['arrival_blog_layout']);
+$_post_meta_enable 	= get_theme_mod('arrival_post_meta_enable',$defaults['arrival_post_meta_enable']);
 
 $post_format 	= get_post_format( get_the_id() );
 
@@ -30,6 +31,8 @@ if( 'gallery' == $post_format ){
 		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		echo arrival_get_excerpt_content($_blog_excerpts); //sanitization already done inside arrival_get_excerpt_content()
 		?>
+
+	<?php if( $_post_meta_enable == 'yes' ){ ?>
 		<div class="entry-meta">
 		<?php
 		if( $_blog_layout == 'list-layout' ){
@@ -42,5 +45,7 @@ if( 'gallery' == $post_format ){
 		arrival_edit_post_link();
 		?>
 		</div><!-- .entry-meta -->
+	<?php } ?>
+
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

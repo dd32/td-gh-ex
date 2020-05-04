@@ -45,8 +45,7 @@ $_breadcrumb_enable 		= get_theme_mod('arrival_breadcrumb_enable',$default['arri
 		<?php do_action('arrival_main_header_wrapp'); ?>
 
 <?php if( $_page_header_layout == 'layout-two' && $_breadcrumb_enable == 'yes' ){
-	arrival_header_title_display();
-
+	do_action('arrival_breadcrumb_banner');
 }?>
 <?php 
 	$class = 'site';

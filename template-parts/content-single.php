@@ -12,13 +12,21 @@ if( 'gallery' == $post_format ){
 	$slider_class = 'gallery-post-format';
 }
 
+
+$default   						= arrival_get_default_theme_options();
+$_post_meta_enable 				= get_theme_mod('arrival_post_meta_enable',$default['arrival_post_meta_enable']);
+$_post_featured_image_enable 	= get_theme_mod('arrival_post_featured_image_enable',$default['arrival_post_featured_image_enable']);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
+	<?php if($_post_featured_image_enable == 'yes' ){ ?>
 	<div class="post-thumb <?php echo esc_attr($slider_class)?>">
 		<?php arrival_post_format_display(); ?>
 	</div>
+	<?php } ?>
+	
+	<?php if($_post_meta_enable == 'yes'){ ?>
 	<div class="entry-meta">
 		<?php
 		arrival_posted_by();
@@ -29,7 +37,8 @@ if( 'gallery' == $post_format ){
 		arrival_edit_post_link();
 		?>
 	</div><!-- .entry-meta -->
-	
+	<?php } ?>
+
 	<div class="entry-content clearfix">
 		<?php
 		the_content(

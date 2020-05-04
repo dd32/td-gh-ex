@@ -136,11 +136,11 @@
 	/**
      * Script for sidebars
      */
-      jQuery('body').on('click', '.controls#arrival-img-container li img', function () {
-        jQuery('.controls#arrival-img-container li').each(function(){
-            jQuery(this).find('img').removeClass ('arrival-radio-img-selected') ;
+      jQuery('body').on('click', '.controls#arrival-img-container li', function () {
+        jQuery(this).each(function(){
+            jQuery(this).parent().find('img').removeClass ('arrival-radio-img-selected');
         });
-        jQuery(this).addClass ('arrival-radio-img-selected') ;
+        jQuery(this).find('img').addClass ('arrival-radio-img-selected');
     });
 
 

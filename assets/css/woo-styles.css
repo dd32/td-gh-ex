@@ -739,3 +739,39 @@ ul.site-header-cart {
     padding: 0;
     position: relative;
 }
+.woocommerce-account .woocommerce-MyAccount-navigation ul li{
+    list-style: none;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a{
+    padding: 10px 20px;
+    background: #E12454;
+    margin: 5px 0;
+    display: block;
+    color: #fff;
+    font-weight: 400;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
+.woocommerce-message.woocommerce-message--info.woocommerce-Message.woocommerce-Message--info.woocommerce-info a:hover,
+.woocommerce .woocommerce-error .button:hover,
+.woocommerce .woocommerce-info .button:hover,
+.woocommerce .woocommerce-message .button:hover,
+.woocommerce-page .woocommerce-error .button:hover,
+.woocommerce-page .woocommerce-info .button:hover,
+.woocommerce-page .woocommerce-message .button:hover{
+    color: #FFF;
+    background: #333;
+}
+.woocommerce-message.woocommerce-message--info.woocommerce-Message.woocommerce-Message--info.woocommerce-info a,
+.woocommerce .woocommerce-error .button,
+.woocommerce .woocommerce-info .button,
+.woocommerce .woocommerce-message .button,
+.woocommerce-page .woocommerce-error .button,
+.woocommerce-page .woocommerce-info .button,
+.woocommerce-page .woocommerce-message .button {
+    display: block;
+    background: #E12454;
+    font-weight: 400;
+    padding: 15px 25px;
+    border-radius: 0;
+    color:  #fff;
+}

@@ -198,7 +198,8 @@ function arrival_sanitize_number_blank( $val ) {
 */
 function arrival_sanitize_page_sidebar( $input ) {
     $valid_keys = array(
-            'right_sidebar' => ARRIVAL_URI . '/assets/images/sidebars/rt.png',
+    		'left' 			 => ARRIVAL_URI . '/assets/images/sidebars/lft.png',
+            'right' 		=> ARRIVAL_URI . '/assets/images/sidebars/rt.png',
             'no_sidebar' 	=> ARRIVAL_URI . '/assets/images/sidebars/no.png',
             
         );

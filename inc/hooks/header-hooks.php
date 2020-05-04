@@ -314,45 +314,53 @@ if(! function_exists('arrival_mob_nav')){
 	<div class="mob-outer-wrapp">
 	<div class="container clearfix">
 		<?php arrival_site_logo(); ?>
-		<span class="toggle-wrapp">
+		<button class="toggle toggle-wrapp">
+		<span class="toggle-wrapp-inner">
 			<span class="toggle-box">
 			<span class="menu-toggle"></span>
 			</span>
 		</span>
+		</button>
 		
 	</div>
 		<div class="mob-nav-wrapp">
+			<button class="toggle close-wrapp toggle-wrapp">
+				<span class="text"><?php esc_html_e('Close Menu','arrival'); ?></span>
+				<span class="icon-wrapp"><?php echo arrival_get_icon_svg('cross',18); ?></span>
+			</button>
+			<nav arial-label="Mobile" role="navigation" tabindex="1">
 				<?php 
 				wp_nav_menu(
 					array(
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
 						'container'      => 'ul',
-						'menu_class'	 => 'mob-primary-menu'
+						'show_toggles'   => true,
+						'menu_class'	 => 'mob-primary-menu clear'
 					)
 				);
-				
-				 ?>
-		<?php
-		if( 'search' == $arrival_main_nav_right_content ){ ?>
-			<div class="header-last-item search-wrap">
-				<div class="search-wrap">
-					<?php echo arrival_get_icon_svg('search'); ?>
+				?>
+				<?php
+				if( 'search' == $arrival_main_nav_right_content ){ ?>
+					<div class="header-last-item search-wrap">
+						<div class="search-wrap">
+							<?php echo arrival_get_icon_svg('search'); ?>
+						</div>
+						<?php if( 'main' == $_cart_display_position ){
+							do_action('arrival_header_cart_disp');
+						} ?>
+					</div>
+				<?php }elseif( 'button' == $arrival_main_nav_right_content){ ?>
+				<div class="header-last-item search-wrap header-btn">
+					<?php do_action('arrival_header_cta_btn_info'); ?>
+					
+					<?php if( 'main' == $_cart_display_position ){
+							do_action('arrival_header_cart_disp');
+					} ?>
 				</div>
-				<?php if( 'main' == $_cart_display_position ){
-					do_action('arrival_header_cart_disp');
-				} ?>
-			</div>
-		<?php }elseif( 'button' == $arrival_main_nav_right_content){ ?>
-		<div class="header-last-item search-wrap header-btn">
-			<?php do_action('arrival_header_cta_btn_info'); ?>
-			
-			<?php if( 'main' == $_cart_display_position ){
-					do_action('arrival_header_cart_disp');
-			} ?>
-		</div>
-		<?php } 
-		do_action('arrival_social_icons'); ?>
+				<?php } 
+				do_action('arrival_social_icons'); ?>
+		</nav>
 		</div>
 
 

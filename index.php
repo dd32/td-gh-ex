@@ -60,5 +60,10 @@ get_header(); ?>
 	</main><!-- #primary -->
 
 <?php
-get_sidebar();
+$default              	= arrival_get_default_theme_options();
+$_blog_page_sidebars 	= get_theme_mod('arrival_blog_page_sidebars',$default['arrival_blog_page_sidebars']);
+
+if( $_blog_page_sidebars != 'no_sidebar' ){
+	get_sidebar($_blog_page_sidebars);
+}
 get_footer();
