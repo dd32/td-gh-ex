@@ -1,3 +1,6 @@
+=== v1.2.8 ===
+- Minor bugs fixed
+
 === v1.2.7 ===
 - Added option to control logo width
 - Added options for single posts

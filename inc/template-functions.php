@@ -650,7 +650,7 @@ function arrival_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
             $toggle_duration      = 50;
 
             // Add the sub menu toggle.
-            $args->after .= '<button class="toggle sub-toggle sub-menu-toggle"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . arrival_get_icon_svg( 'arrow_down' ) . '</button>';
+            $args->after .= '<button class="toggle sub-toggle sub-menu-toggle"><span class="screen-reader-text">' . __( 'Show sub menu', 'arrival' ) . '</span>' . arrival_get_icon_svg( 'arrow_down' ) . '</button>';
 
         }
 

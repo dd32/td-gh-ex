@@ -260,7 +260,7 @@ $wp_customize->add_setting( $prefix.'_post_meta_enable', array(
 
 $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_post_meta_enable', array(
         'label'         => esc_html__( 'Show Post Meta', 'arrival' ),
-        'description'   => esc_html__('Post meta includes post date, comment counts, author name, post view etc.'),
+        'description'   => esc_html__('Post meta includes post date, comment counts, author name, post view etc.','arrival'),
         'section'       => $prefix.'_meta_setting_section',
         'priority'      => 1,
         'choices'       => array(
