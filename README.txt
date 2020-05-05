@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.40
+* Style tweaks/fixes
+* Mobile Navigation fix
+* PREMIUM: FIX: js error loading caroufredsel for NEW shortcode slider
+
 #### 1.1.39
 * Style tweaks/fixes
 * Mobile CSS fixes/tweaks

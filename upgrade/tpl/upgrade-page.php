@@ -188,6 +188,31 @@
 
         <div class="upgrade-changelog">
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.40</li>
+                <li>Style tweaks/fixes</li>
+                <li>Mobile Navigation fix</li>
+                <li><span>Premium: FIX:</span> js error loading caroufredsel for NEW shortcode slider</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.39</li>
+                <li>Style tweaks/fixes</li>
+                <li>Mobile CSS fixes/tweaks</li>
+                <li>Improved accessibility / keyboard navigation for desktop sites</li>
+                <li>Improved accessibility / mobile keyboard navigation - trap focus to mobile menu</li>
+                <li>fix excluding default slider category from single post page if set to be excluded</li>
+                <li>Updated the language .pot file</li>
+                <li><span>PREMIUM: NEW FEATURE:</span> Avant Premium now includes a FREE shortcode slider plugin</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.38</li>
+                <li>Removed TGM enternal link</li>
+                <li>Added extra config strings to prevent conflict with SiteOrigin page builder TGM</li>
+                <li>Updated the language .pot file</li>
+            </ul>
             
             <ul>
                 <li class="upgrade-changelog-v">#### 1.1.37</li>

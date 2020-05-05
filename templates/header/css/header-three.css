@@ -474,6 +474,7 @@ a.header-cart-contents {
         font-size: 12px;
         cursor: pointer;
         text-align: center;
+        width: 100%;
     }
     .site-header-switch .header-menu-button {
         padding: 15px 10px 16px;

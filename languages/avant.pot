@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2020-02-12 11:20+0200\n"
+"POT-Creation-Date: 2020-05-05 16:31+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
 
-#: 404.php:17 customizer/customizer-options.php:1467
+#: 404.php:17 customizer/customizer-options.php:1480
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: 404.php:20 customizer/customizer-options.php:1474
+#: 404.php:20 customizer/customizer-options.php:1487
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
@@ -223,9 +223,9 @@ msgid ""
 "Links design<br />- Change Site Attribution text"
 msgstr ""
 
-#: customizer/customizer-options.php:171 customizer/customizer-options.php:1225
-#: customizer/customizer-options.php:1411
-#: customizer/customizer-options.php:1506
+#: customizer/customizer-options.php:171 customizer/customizer-options.php:1238
+#: customizer/customizer-options.php:1424
+#: customizer/customizer-options.php:1519
 msgid "Header"
 msgstr ""
 
@@ -366,7 +366,7 @@ msgid ""
 "replace default search with Shortcode"
 msgstr ""
 
-#: customizer/customizer-options.php:322 customizer/customizer-options.php:1530
+#: customizer/customizer-options.php:322 customizer/customizer-options.php:1543
 msgid "Home Page Slider"
 msgstr ""
 
@@ -382,8 +382,8 @@ msgstr ""
 msgid "Featured Image"
 msgstr ""
 
-#: customizer/customizer-options.php:331 customizer/customizer-options.php:584
-#: customizer/customizer-options.php:706 customizer/customizer-options.php:766
+#: customizer/customizer-options.php:331 customizer/customizer-options.php:597
+#: customizer/customizer-options.php:719 customizer/customizer-options.php:779
 msgid "None"
 msgstr ""
 
@@ -408,181 +408,193 @@ msgstr ""
 msgid "Enter the shortcode give by the slider."
 msgstr ""
 
-#: customizer/customizer-options.php:357
-msgid "Set slider to full width"
-msgstr ""
-
-#: customizer/customizer-options.php:363
-msgid "Small Slider"
+#: customizer/customizer-options.php:359
+msgid ""
+"Avant Premium now includes a FREE Shortcode Slider plugin to use on any/all "
+"pages"
 msgstr ""
 
 #: customizer/customizer-options.php:364
+msgid "Set slider to full width"
+msgstr ""
+
+#: customizer/customizer-options.php:370
+msgid "Small Slider"
+msgstr ""
+
+#: customizer/customizer-options.php:371
 msgid "Medium Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:365
+#: customizer/customizer-options.php:372
 msgid "Large Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:369
+#: customizer/customizer-options.php:376
 msgid "Slider Size"
 msgstr ""
 
-#: customizer/customizer-options.php:376
+#: customizer/customizer-options.php:383
 msgid "Fade"
 msgstr ""
 
-#: customizer/customizer-options.php:377
+#: customizer/customizer-options.php:384
 msgid "Cover Fade"
 msgstr ""
 
-#: customizer/customizer-options.php:378
+#: customizer/customizer-options.php:385
 msgid "Uncover Fade"
 msgstr ""
 
-#: customizer/customizer-options.php:379
+#: customizer/customizer-options.php:386
 msgid "Cover"
 msgstr ""
 
-#: customizer/customizer-options.php:380
+#: customizer/customizer-options.php:387
 msgid "Scroll"
 msgstr ""
 
-#: customizer/customizer-options.php:384
+#: customizer/customizer-options.php:391
 msgid "Slider Scroll Effect"
 msgstr ""
 
-#: customizer/customizer-options.php:392
+#: customizer/customizer-options.php:399
 msgid "Link Slide to post"
 msgstr ""
 
-#: customizer/customizer-options.php:399
+#: customizer/customizer-options.php:406
 msgid "Pause Slider on mouse hover"
 msgstr ""
 
-#: customizer/customizer-options.php:406
+#: customizer/customizer-options.php:413
 msgid "Remove Slider Title & Text"
 msgstr ""
 
-#: customizer/customizer-options.php:413
+#: customizer/customizer-options.php:420
 msgid "Remove Slider Excerpt Only"
 msgstr ""
 
-#: customizer/customizer-options.php:420
+#: customizer/customizer-options.php:427
 msgid "Remove Slider Pagination"
 msgstr ""
 
-#: customizer/customizer-options.php:427
+#: customizer/customizer-options.php:434
 msgid "Stop Auto Scroll"
 msgstr ""
 
-#: customizer/customizer-options.php:434
+#: customizer/customizer-options.php:443
+msgid ""
+"<b>Premium Extra Features:</b><br />- Avant Premium now includes a FREE "
+"Shortcode Slider plugin to use on any/all pages"
+msgstr ""
+
+#: customizer/customizer-options.php:447
 msgid "Extra Small Image"
 msgstr ""
 
-#: customizer/customizer-options.php:435
+#: customizer/customizer-options.php:448
 msgid "Small Image"
 msgstr ""
 
-#: customizer/customizer-options.php:436
+#: customizer/customizer-options.php:449
 msgid "Medium Image"
 msgstr ""
 
-#: customizer/customizer-options.php:437
+#: customizer/customizer-options.php:450
 msgid "Large Image"
 msgstr ""
 
-#: customizer/customizer-options.php:438
+#: customizer/customizer-options.php:451
 msgid "Use Full Image"
 msgstr ""
 
-#: customizer/customizer-options.php:442
+#: customizer/customizer-options.php:455
 msgid "Image Size"
 msgstr ""
 
-#: customizer/customizer-options.php:450
+#: customizer/customizer-options.php:463
 msgid "Make Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:461
+#: customizer/customizer-options.php:474
 msgid "Blog List"
 msgstr ""
 
-#: customizer/customizer-options.php:468
+#: customizer/customizer-options.php:481
 msgid "Break into Blocks"
 msgstr ""
 
-#: customizer/customizer-options.php:474
+#: customizer/customizer-options.php:487
 msgid "Left Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:475
+#: customizer/customizer-options.php:488
 msgid "Right Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:476
+#: customizer/customizer-options.php:489
 msgid "Alternate Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:477
+#: customizer/customizer-options.php:490
 msgid "Top Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:478
+#: customizer/customizer-options.php:491
 msgid "Blocks Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:482
+#: customizer/customizer-options.php:495
 msgid "Blog Posts Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:489
+#: customizer/customizer-options.php:502
 msgid "All Images Square"
 msgstr ""
 
-#: customizer/customizer-options.php:490
+#: customizer/customizer-options.php:503
 msgid "All Images Round"
 msgstr ""
 
-#: customizer/customizer-options.php:491
+#: customizer/customizer-options.php:504
 msgid "Actual Image Shape"
 msgstr ""
 
-#: customizer/customizer-options.php:495
+#: customizer/customizer-options.php:508
 msgid "Blog Post Image Shape"
 msgstr ""
 
-#: customizer/customizer-options.php:503
+#: customizer/customizer-options.php:516
 msgid "Blog Image Cut"
 msgstr ""
 
-#: customizer/customizer-options.php:506
+#: customizer/customizer-options.php:519
 msgid ""
 "Select which cut the Blog list uses<br />Recommended: Optimize images before "
 "upload"
 msgstr ""
 
-#: customizer/customizer-options.php:511
+#: customizer/customizer-options.php:524
 msgid "Remove Blocks Border"
 msgstr ""
 
-#: customizer/customizer-options.php:518 customizer/customizer-options.php:621
+#: customizer/customizer-options.php:531 customizer/customizer-options.php:634
 msgid "Remove Meta Info"
 msgstr ""
 
-#: customizer/customizer-options.php:525
+#: customizer/customizer-options.php:538
 msgid "Remove Content"
 msgstr ""
 
-#: customizer/customizer-options.php:532 customizer/customizer-options.php:628
+#: customizer/customizer-options.php:545 customizer/customizer-options.php:641
 msgid "Remove Tags & Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:539
+#: customizer/customizer-options.php:552
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:542
+#: customizer/customizer-options.php:555
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -591,142 +603,143 @@ msgid ""
 "at <b>Posts -> Categories</b>."
 msgstr ""
 
-#: customizer/customizer-options.php:547
+#: customizer/customizer-options.php:560
 msgid "Remove Blog & Archive Page Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:554
+#: customizer/customizer-options.php:567
 msgid "Remove text before Archive Title"
 msgstr ""
 
-#: customizer/customizer-options.php:557
+#: customizer/customizer-options.php:570
 msgid ""
 "This will not update in the Customizer. Exit the Customizer to view the "
 "change"
 msgstr ""
 
-#: customizer/customizer-options.php:564
+#: customizer/customizer-options.php:577
 msgid ""
-"<b>Premium Extra Features:</b><br />- Change Blog Pagination to Numberic "
-"Pagination<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- "
-"Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & "
-"archives to use post summary<br />- Extra summary settings<br />- Set custom "
-"Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change "
-"Blocks styling (Image or Post layouts)"
+"<b>Premium Extra Features:</b><br />- Avant Proemium now includes a FREE "
+"slider plugin<br />- Change Blog Pagination to Numberic Pagination<br />- "
+"Set Blog, Archives and Post pages to Left Sidebar<br />- Set Blog, Archives "
+"and Single pages to Full Width<br />- Set Blog list & archives to use post "
+"summary<br />- Extra summary settings<br />- Set custom Blocks layout "
+"columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling "
+"(Image or Post layouts)"
 msgstr ""
 
-#: customizer/customizer-options.php:571
+#: customizer/customizer-options.php:584
 msgid "Blog Single Posts"
 msgstr ""
 
-#: customizer/customizer-options.php:578
+#: customizer/customizer-options.php:591
 msgid "Remove Next & Previous Post Navigation"
 msgstr ""
 
-#: customizer/customizer-options.php:585 customizer/customizer-options.php:707
+#: customizer/customizer-options.php:598 customizer/customizer-options.php:720
 msgid "Standard"
 msgstr ""
 
-#: customizer/customizer-options.php:586 customizer/customizer-options.php:708
+#: customizer/customizer-options.php:599 customizer/customizer-options.php:721
 msgid "Page Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:590 customizer/customizer-options.php:712
+#: customizer/customizer-options.php:603 customizer/customizer-options.php:725
 msgid "Featured Image Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:597 customizer/customizer-options.php:719
+#: customizer/customizer-options.php:610 customizer/customizer-options.php:732
 msgid "Extra Small Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:598 customizer/customizer-options.php:720
+#: customizer/customizer-options.php:611 customizer/customizer-options.php:733
 msgid "Small Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:599 customizer/customizer-options.php:721
+#: customizer/customizer-options.php:612 customizer/customizer-options.php:734
 msgid "Medium Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:600 customizer/customizer-options.php:722
+#: customizer/customizer-options.php:613 customizer/customizer-options.php:735
 msgid "Large Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:601 customizer/customizer-options.php:723
+#: customizer/customizer-options.php:614 customizer/customizer-options.php:736
 msgid "Use Proper Image"
 msgstr ""
 
-#: customizer/customizer-options.php:605 customizer/customizer-options.php:727
+#: customizer/customizer-options.php:618 customizer/customizer-options.php:740
 msgid "Page Banner Size"
 msgstr ""
 
-#: customizer/customizer-options.php:614
+#: customizer/customizer-options.php:627
 msgid "Add in the Post Modified Date"
 msgstr ""
 
-#: customizer/customizer-options.php:637
+#: customizer/customizer-options.php:650
 msgid ""
 "<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full "
 "Width<br />- Add Post Author block below content"
 msgstr ""
 
-#: customizer/customizer-options.php:645 customizer/customizer-options.php:1339
+#: customizer/customizer-options.php:658 customizer/customizer-options.php:1352
 msgid "Pages"
 msgstr ""
 
-#: customizer/customizer-options.php:652
+#: customizer/customizer-options.php:665
 msgid "Break Sidebar into Blocks"
 msgstr ""
 
-#: customizer/customizer-options.php:659
+#: customizer/customizer-options.php:672
 msgid "Remove all Page Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:666
+#: customizer/customizer-options.php:679
 msgid "Sidebar Widget Spacing"
 msgstr ""
 
-#: customizer/customizer-options.php:678
+#: customizer/customizer-options.php:691
 msgid "Sidebar Title Size"
 msgstr ""
 
-#: customizer/customizer-options.php:685
+#: customizer/customizer-options.php:698
 msgid "Left Align Title"
 msgstr ""
 
-#: customizer/customizer-options.php:691
+#: customizer/customizer-options.php:704
 msgid "Plain"
 msgstr ""
 
-#: customizer/customizer-options.php:692
+#: customizer/customizer-options.php:705
 msgid "Underlined Dots"
 msgstr ""
 
-#: customizer/customizer-options.php:693
+#: customizer/customizer-options.php:706
 msgid "Underlined Solid"
 msgstr ""
 
-#: customizer/customizer-options.php:694
+#: customizer/customizer-options.php:707
 msgid "Short Underline"
 msgstr ""
 
-#: customizer/customizer-options.php:698
+#: customizer/customizer-options.php:711
 msgid "Widget Title Styling"
 msgstr ""
 
-#: customizer/customizer-options.php:735
+#: customizer/customizer-options.php:748
 msgid "Content Border Radius"
 msgstr ""
 
-#: customizer/customizer-options.php:749
+#: customizer/customizer-options.php:762
 msgid ""
 "<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:757 customizer/customizer-options.php:1356
+#: customizer/customizer-options.php:770 customizer/customizer-options.php:1369
 msgid "Footer"
 msgstr ""
 
-#: customizer/customizer-options.php:759
+#: customizer/customizer-options.php:772
 msgid ""
 "Customize the <a href=\"#avant-panel-colors\" rel=\"tc-panel\">Footer "
 "Colors</a>, add <a href=\"#avant-social-section\" rel=\"tc-section\">Social "
@@ -734,44 +747,44 @@ msgid ""
 "Fonts</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:764
+#: customizer/customizer-options.php:777
 msgid "Standard Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:765
+#: customizer/customizer-options.php:778
 msgid "Social Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:770
+#: customizer/customizer-options.php:783
 msgid "Footer Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:780
+#: customizer/customizer-options.php:793
 msgid ""
 "The Standard Footer is divided into columns by the amount of widgets that "
 "are added under<br /><i>Dashboard -> Appearance -> <a href=\"#widgets\" rel="
 "\"tc-panel\">Widgets</a></i>"
 msgstr ""
 
-#: customizer/customizer-options.php:786
+#: customizer/customizer-options.php:799
 msgid ""
 "Add your <a href=\"#avant-social-section\" rel=\"tc-section\">Social links</"
 "a> to the footer"
 msgstr ""
 
-#: customizer/customizer-options.php:791
+#: customizer/customizer-options.php:804
 msgid "Set Footer to Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:798
+#: customizer/customizer-options.php:811
 msgid "Add \"Privacy Policy\" page link"
 msgstr ""
 
-#: customizer/customizer-options.php:805
+#: customizer/customizer-options.php:818
 msgid "Switch Bottom Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:814
+#: customizer/customizer-options.php:827
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- "
 "Adjust Social Footer Icon size<br />- Adjust Social Footer Icon spacing<br /"
@@ -780,50 +793,50 @@ msgid ""
 "Adjust Footer top & bottom padding"
 msgstr ""
 
-#: customizer/customizer-options.php:825 functions.php:365
+#: customizer/customizer-options.php:838 functions.php:365
 msgid "WooCommerce"
 msgstr ""
 
-#: customizer/customizer-options.php:832
+#: customizer/customizer-options.php:845
 msgid "Remove Shop Page Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:839
+#: customizer/customizer-options.php:852
 msgid "Remove Product Border"
 msgstr ""
 
-#: customizer/customizer-options.php:846
+#: customizer/customizer-options.php:859
 msgid "Remove Shop Results & Sorting"
 msgstr ""
 
-#: customizer/customizer-options.php:853
+#: customizer/customizer-options.php:866
 msgid "Remove Categories Count"
 msgstr ""
 
-#: customizer/customizer-options.php:860
+#: customizer/customizer-options.php:873
 msgid "Product Single Page Column Width"
 msgstr ""
 
-#: customizer/customizer-options.php:868
+#: customizer/customizer-options.php:881
 msgid "Set the width of the Product Single Page Columns"
 msgstr ""
 
-#: customizer/customizer-options.php:873
+#: customizer/customizer-options.php:886
 msgid "Align Product Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:876
+#: customizer/customizer-options.php:889
 msgid ""
 "Try keep titles to 2 lines, if more then you can <a href=\"https://kairaweb."
 "com/documentation/add-custom-css-to-align-the-woocommerce-titles/\" target="
 "\"_blank\">add CSS to align the titles</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:881
+#: customizer/customizer-options.php:894
 msgid "Products Full Width on Mobile"
 msgstr ""
 
-#: customizer/customizer-options.php:890
+#: customizer/customizer-options.php:903
 msgid ""
 "<b>Premium Extra Features:</b><br />- Set Products Per Page<br />- Set "
 "Products Per Row<br />- Set Shop and Product pages to Left Sidebar<br />- "
@@ -831,260 +844,260 @@ msgid ""
 "Zoom and/or Lightbox"
 msgstr ""
 
-#: customizer/customizer-options.php:900
+#: customizer/customizer-options.php:913
 msgid "SEO (Search Engine Optimization)"
 msgstr ""
 
-#: customizer/customizer-options.php:906 customizer/customizer-options.php:923
-#: customizer/customizer-options.php:940 customizer/customizer-options.php:956
-#: customizer/customizer-options.php:972
+#: customizer/customizer-options.php:919 customizer/customizer-options.php:936
+#: customizer/customizer-options.php:953 customizer/customizer-options.php:969
+#: customizer/customizer-options.php:985
 msgid "H1"
 msgstr ""
 
-#: customizer/customizer-options.php:907 customizer/customizer-options.php:924
-#: customizer/customizer-options.php:941 customizer/customizer-options.php:957
-#: customizer/customizer-options.php:973
+#: customizer/customizer-options.php:920 customizer/customizer-options.php:937
+#: customizer/customizer-options.php:954 customizer/customizer-options.php:970
+#: customizer/customizer-options.php:986
 msgid "H2"
 msgstr ""
 
-#: customizer/customizer-options.php:908 customizer/customizer-options.php:925
-#: customizer/customizer-options.php:942 customizer/customizer-options.php:958
-#: customizer/customizer-options.php:974
+#: customizer/customizer-options.php:921 customizer/customizer-options.php:938
+#: customizer/customizer-options.php:955 customizer/customizer-options.php:971
+#: customizer/customizer-options.php:987
 msgid "H3"
 msgstr ""
 
-#: customizer/customizer-options.php:909 customizer/customizer-options.php:926
-#: customizer/customizer-options.php:943 customizer/customizer-options.php:959
-#: customizer/customizer-options.php:975
+#: customizer/customizer-options.php:922 customizer/customizer-options.php:939
+#: customizer/customizer-options.php:956 customizer/customizer-options.php:972
+#: customizer/customizer-options.php:988
 msgid "H4"
 msgstr ""
 
-#: customizer/customizer-options.php:910 customizer/customizer-options.php:927
-#: customizer/customizer-options.php:944 customizer/customizer-options.php:960
-#: customizer/customizer-options.php:976
+#: customizer/customizer-options.php:923 customizer/customizer-options.php:940
+#: customizer/customizer-options.php:957 customizer/customizer-options.php:973
+#: customizer/customizer-options.php:989
 msgid "H5"
 msgstr ""
 
-#: customizer/customizer-options.php:911 customizer/customizer-options.php:928
-#: customizer/customizer-options.php:945 customizer/customizer-options.php:961
-#: customizer/customizer-options.php:977
+#: customizer/customizer-options.php:924 customizer/customizer-options.php:941
+#: customizer/customizer-options.php:958 customizer/customizer-options.php:974
+#: customizer/customizer-options.php:990
 msgid "H6"
 msgstr ""
 
-#: customizer/customizer-options.php:915
+#: customizer/customizer-options.php:928
 msgid "Site Title Element"
 msgstr ""
 
-#: customizer/customizer-options.php:932
+#: customizer/customizer-options.php:945
 msgid "Site Description Element"
 msgstr ""
 
-#: customizer/customizer-options.php:949
+#: customizer/customizer-options.php:962
 msgid "Page Titles Element"
 msgstr ""
 
-#: customizer/customizer-options.php:965
+#: customizer/customizer-options.php:978
 msgid "Blog List Titles Element"
 msgstr ""
 
-#: customizer/customizer-options.php:981
+#: customizer/customizer-options.php:994
 msgid "Widget Titles Element"
 msgstr ""
 
-#: customizer/customizer-options.php:993
+#: customizer/customizer-options.php:1006
 msgid "Avant Font Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:1004
+#: customizer/customizer-options.php:1017
 msgid "Title/Tagline Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:1011
+#: customizer/customizer-options.php:1024
 msgid "Site Title - Uppercase"
 msgstr ""
 
-#: customizer/customizer-options.php:1018
-#: customizer/customizer-options.php:1026
+#: customizer/customizer-options.php:1031
+#: customizer/customizer-options.php:1039
 msgid "Site Title Font"
 msgstr ""
 
-#: customizer/customizer-options.php:1034
+#: customizer/customizer-options.php:1047
 msgid "Site Title Size"
 msgstr ""
 
-#: customizer/customizer-options.php:1041
-#: customizer/customizer-options.php:1049
+#: customizer/customizer-options.php:1054
+#: customizer/customizer-options.php:1062
 msgid "Site Tagline Font"
 msgstr ""
 
-#: customizer/customizer-options.php:1057
+#: customizer/customizer-options.php:1070
 msgid "Site Tagline Size"
 msgstr ""
 
-#: customizer/customizer-options.php:1064
+#: customizer/customizer-options.php:1077
 msgid "Site Title Bottom Margin"
 msgstr ""
 
-#: customizer/customizer-options.php:1067
+#: customizer/customizer-options.php:1080
 msgid "This will set the space between the site title and the site tagline"
 msgstr ""
 
-#: customizer/customizer-options.php:1074
+#: customizer/customizer-options.php:1087
 msgid "<b>Premium Extra Features:</b><br />- Set custom Title & Tagline colors"
 msgstr ""
 
-#: customizer/customizer-options.php:1081
+#: customizer/customizer-options.php:1094
 msgid "Site Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:1088
-#: customizer/customizer-options.php:1096
+#: customizer/customizer-options.php:1101
+#: customizer/customizer-options.php:1109
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:1104
+#: customizer/customizer-options.php:1117
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1112
-#: customizer/customizer-options.php:1120
+#: customizer/customizer-options.php:1125
+#: customizer/customizer-options.php:1133
 msgid "Heading Font"
 msgstr ""
 
-#: customizer/customizer-options.php:1128
-#: customizer/customizer-options.php:1370
+#: customizer/customizer-options.php:1141
+#: customizer/customizer-options.php:1383
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1135
+#: customizer/customizer-options.php:1148
 msgid "Page Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1142
+#: customizer/customizer-options.php:1155
 msgid "Blog List Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1149
+#: customizer/customizer-options.php:1162
 msgid "Sidebar Widget Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1158
+#: customizer/customizer-options.php:1171
 msgid "WooCommerce Product Title Size"
 msgstr ""
 
-#: customizer/customizer-options.php:1165
+#: customizer/customizer-options.php:1178
 msgid "WooCommerce Product Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1177
+#: customizer/customizer-options.php:1190
 msgid "Avant Layout Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:1186
+#: customizer/customizer-options.php:1199
 msgid "Default Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:1193
+#: customizer/customizer-options.php:1206
 msgid "Site Boxed Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1201
+#: customizer/customizer-options.php:1214
 msgid "Primary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1209
+#: customizer/customizer-options.php:1222
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1218
+#: customizer/customizer-options.php:1231
 msgid "<b>Premium Extra Features:</b><br />- Edit Mobile slide out menu colors"
 msgstr ""
 
-#: customizer/customizer-options.php:1232
+#: customizer/customizer-options.php:1245
 msgid "Top Bar Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1239
+#: customizer/customizer-options.php:1252
 msgid "Top Bar Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1246
-#: customizer/customizer-options.php:1283
-#: customizer/customizer-options.php:1363
+#: customizer/customizer-options.php:1259
+#: customizer/customizer-options.php:1296
+#: customizer/customizer-options.php:1376
 msgid "Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1253
-#: customizer/customizer-options.php:1290
-#: customizer/customizer-options.php:1377
+#: customizer/customizer-options.php:1266
+#: customizer/customizer-options.php:1303
+#: customizer/customizer-options.php:1390
 msgid "Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1260
+#: customizer/customizer-options.php:1273
 msgid "Header Opacity"
 msgstr ""
 
-#: customizer/customizer-options.php:1276
+#: customizer/customizer-options.php:1289
 msgid "Navigation"
 msgstr ""
 
-#: customizer/customizer-options.php:1297
+#: customizer/customizer-options.php:1310
 msgid "Drop Down Bg Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1304
+#: customizer/customizer-options.php:1317
 msgid "Drop Down Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1311
+#: customizer/customizer-options.php:1324
 msgid "Drop Down Opacity"
 msgstr ""
 
-#: customizer/customizer-options.php:1323
+#: customizer/customizer-options.php:1336
 msgid "Selected/Active Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1332
+#: customizer/customizer-options.php:1345
 msgid ""
 "<b>Premium Extra Features:</b><br />- Full Mobile navigation color settings"
 msgstr ""
 
-#: customizer/customizer-options.php:1346
+#: customizer/customizer-options.php:1359
 msgid "Content Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1385
+#: customizer/customizer-options.php:1398
 msgid "Bottom Bar Bg Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1392
+#: customizer/customizer-options.php:1405
 msgid "Bottom Bar Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1403
+#: customizer/customizer-options.php:1416
 msgid "Avant Theme Text"
 msgstr ""
 
-#: customizer/customizer-options.php:1418
+#: customizer/customizer-options.php:1431
 msgid "Phone Number Icon"
 msgstr ""
 
-#: customizer/customizer-options.php:1421
+#: customizer/customizer-options.php:1434
 msgid ""
 "Add your own custom icon by pasting the corrent <a href=\"https://"
 "fontawesome.com/cheatsheet\" target=\"_blank\">Font Awesome</a> class "
 "here<br />Eg: \"fa-phone\"<br />Or enter a space to remove the icon"
 msgstr ""
 
-#: customizer/customizer-options.php:1422
+#: customizer/customizer-options.php:1435
 msgid "fa-phone"
 msgstr ""
 
-#: customizer/customizer-options.php:1426
+#: customizer/customizer-options.php:1439
 msgid "Phone Number"
 msgstr ""
 
-#: customizer/customizer-options.php:1429
+#: customizer/customizer-options.php:1442
 #: templates/header/header-layout-five.php:15
 #: templates/header/header-layout-four.php:15
 #: templates/header/header-layout-one.php:15
@@ -1095,58 +1108,58 @@ msgstr ""
 msgid "Call Us: +2782 444 YEAH"
 msgstr ""
 
-#: customizer/customizer-options.php:1433
+#: customizer/customizer-options.php:1446
 msgid "Address Icon"
 msgstr ""
 
-#: customizer/customizer-options.php:1436
+#: customizer/customizer-options.php:1449
 msgid ""
 "Add your custom icon from <a href=\"https://fontawesome.com/cheatsheet\" "
 "target=\"_blank\">Font Awesome</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:1437
+#: customizer/customizer-options.php:1450
 msgid "fa-map-marker-alt"
 msgstr ""
 
-#: customizer/customizer-options.php:1441
+#: customizer/customizer-options.php:1454
 msgid "Address"
 msgstr ""
 
-#: customizer/customizer-options.php:1444
+#: customizer/customizer-options.php:1457
 msgid "Cape Town, South Africa"
 msgstr ""
 
-#: customizer/customizer-options.php:1450
+#: customizer/customizer-options.php:1463
 msgid "<b>Premium Extra Features:</b><br />- Add extra text to Header"
 msgstr ""
 
-#: customizer/customizer-options.php:1457
+#: customizer/customizer-options.php:1470
 msgid "404 Error / No Results"
 msgstr ""
 
-#: customizer/customizer-options.php:1464
+#: customizer/customizer-options.php:1477
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:1471
+#: customizer/customizer-options.php:1484
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:1478
+#: customizer/customizer-options.php:1491
 msgid "No Search Results Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:1481
+#: customizer/customizer-options.php:1494
 #: templates/contents/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: customizer/customizer-options.php:1485
+#: customizer/customizer-options.php:1498
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:1488
+#: customizer/customizer-options.php:1501
 #: templates/contents/content-none.php:24
 #: templates/contents/content-none.php:28
 msgid ""
@@ -1154,86 +1167,86 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:1498
+#: customizer/customizer-options.php:1511
 msgid "Avant Mobile Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:1513
+#: customizer/customizer-options.php:1526
 msgid "Remove Top Bar on Mobile"
 msgstr ""
 
-#: customizer/customizer-options.php:1520
+#: customizer/customizer-options.php:1533
 msgid "Menu Button Text"
 msgstr ""
 
-#: customizer/customizer-options.php:1536
+#: customizer/customizer-options.php:1549
 msgid "Add set height to Slides"
 msgstr ""
 
-#: customizer/customizer-options.php:1543
+#: customizer/customizer-options.php:1556
 msgid "Remove Slider Text"
 msgstr ""
 
-#: customizer/customizer-options.php:1555
+#: customizer/customizer-options.php:1568
 msgid "Avant Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:1561
+#: customizer/customizer-options.php:1574
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:1567
+#: customizer/customizer-options.php:1580
 msgid "Skype Name"
 msgstr ""
 
-#: customizer/customizer-options.php:1573
+#: customizer/customizer-options.php:1586
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:1579
+#: customizer/customizer-options.php:1592
 msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:1585
+#: customizer/customizer-options.php:1598
 msgid "Pinterest"
 msgstr ""
 
-#: customizer/customizer-options.php:1591
+#: customizer/customizer-options.php:1604
 msgid "LinkedIn"
 msgstr ""
 
-#: customizer/customizer-options.php:1597
+#: customizer/customizer-options.php:1610
 msgid "Tumblr"
 msgstr ""
 
-#: customizer/customizer-options.php:1603
+#: customizer/customizer-options.php:1616
 msgid "Flickr"
 msgstr ""
 
-#: customizer/customizer-options.php:1609
+#: customizer/customizer-options.php:1622
 msgid "VK"
 msgstr ""
 
-#: customizer/customizer-options.php:1615
+#: customizer/customizer-options.php:1628
 msgid "GitHub"
 msgstr ""
 
-#: customizer/customizer-options.php:1623
+#: customizer/customizer-options.php:1636
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change Social Icons to their brand "
 "colors<br />- Premium offers a bunch of extra Social Links<br />- Plus 3 "
 "custom inputs for your own links"
 msgstr ""
 
-#: customizer/customizer-options.php:1631
+#: customizer/customizer-options.php:1644
 msgid "Plugin Support"
 msgstr ""
 
-#: customizer/customizer-options.php:1633
+#: customizer/customizer-options.php:1646
 msgid "Avant adds/removes custom styling to support external plugins"
 msgstr ""
 
-#: customizer/customizer-options.php:1638
+#: customizer/customizer-options.php:1651
 msgid "Mega Menu"
 msgstr ""
 
@@ -1285,11 +1298,25 @@ msgstr ""
 msgid "HubSpot"
 msgstr ""
 
-#: functions.php:555
+#: functions.php:505
+msgid "Post navigation"
+msgstr ""
+
+#: functions.php:516
+msgctxt "Previous post link"
+msgid "%title"
+msgstr ""
+
+#: functions.php:517
+msgctxt "Next post link"
+msgid "%title"
+msgstr ""
+
+#: functions.php:588
 msgid "Thank you for using Avant!"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:590
 #, php-format
 msgid ""
 "We pride ourselves on <a href=\"%1$s\" target=\"_blank\">good products and 5 "
@@ -1299,76 +1326,87 @@ msgid ""
 "topbtn\">Get In Contact</a>"
 msgstr ""
 
-#: functions.php:561
+#: functions.php:594
+#, php-format
+msgid "%1$s on the Shortcode slider included FREE with Avant Premium!"
+msgstr ""
+
+#: functions.php:594
+msgid "Read More here"
+msgstr ""
+
+#: functions.php:599
 msgid "Popular links to get you started"
 msgstr ""
 
-#: functions.php:563
+#: functions.php:601
 msgid "See what the Avant Premium theme offers"
 msgstr ""
 
-#: functions.php:564
+#: functions.php:602
 msgid "Setting up the Avant default slider"
 msgstr ""
 
-#: functions.php:565
+#: functions.php:603
 msgid "How to install Avant Premium"
 msgstr ""
 
-#: functions.php:566
+#: functions.php:604
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:569
+#: functions.php:607
 msgid "Go To Documentation"
 msgstr ""
 
-#: functions.php:573
+#: functions.php:611
 msgid "Start customizing your site:"
 msgstr ""
 
-#: functions.php:575
+#: functions.php:613
 msgid ""
 "All Avant Settings are built into the WordPress Customizer for easy, visual "
 "site editing."
 msgstr ""
 
-#: functions.php:578
+#: functions.php:616
 msgid "Start Customizing Avant"
 msgstr ""
 
-#: functions.php:582
+#: functions.php:620
 msgid "Need Help with Avant?"
 msgstr ""
 
-#: functions.php:584
+#: functions.php:622
 msgid ""
 "Need help upgrading? Have a question about using the Avant theme? We're here "
 "to help... Contact us."
 msgstr ""
 
-#: functions.php:587
+#: functions.php:625
 msgid "Get in contact"
 msgstr ""
 
-#: functions.php:594
+#: functions.php:632
 #, php-format
-msgid "Avant Premium is %1$s for all the extra %2$s"
+msgid ""
+"Avant Premium is %1$s for all the extra %2$s and a FREE shortcode slider "
+"plugin"
 msgstr ""
 
-#: functions.php:594
+#: functions.php:632
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
 "target=\"_blank\">currently selling for only $25</a>"
 msgstr ""
 
-#: functions.php:594
+#: functions.php:632
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#premium-features\" "
 "target=\"_blank\">Avant Premium features</a>"
 msgstr ""
 
-#: functions.php:598
+#: functions.php:636
 msgid "Dismiss Notice"
 msgstr ""
 
@@ -1783,24 +1821,24 @@ msgid "% Comments"
 msgstr ""
 
 #: includes/inc/woocommerce-header-inc.php:9
-#: templates/header/header-layout-five.php:94
-#: templates/header/header-layout-four.php:92
-#: templates/header/header-layout-one.php:68
-#: templates/header/header-layout-seven.php:132
-#: templates/header/header-layout-six.php:69
+#: templates/header/header-layout-five.php:96
+#: templates/header/header-layout-four.php:94
+#: templates/header/header-layout-one.php:69
+#: templates/header/header-layout-seven.php:134
+#: templates/header/header-layout-six.php:70
 #: templates/header/header-layout-three.php:78
-#: templates/header/header-layout-two.php:103
+#: templates/header/header-layout-two.php:105
 msgid "View your shopping cart"
 msgstr ""
 
 #: includes/inc/woocommerce-header-inc.php:11
-#: templates/header/header-layout-five.php:96
-#: templates/header/header-layout-four.php:94
-#: templates/header/header-layout-one.php:70
-#: templates/header/header-layout-seven.php:134
-#: templates/header/header-layout-six.php:71
+#: templates/header/header-layout-five.php:98
+#: templates/header/header-layout-four.php:96
+#: templates/header/header-layout-one.php:71
+#: templates/header/header-layout-seven.php:136
+#: templates/header/header-layout-six.php:72
 #: templates/header/header-layout-three.php:80
-#: templates/header/header-layout-two.php:105
+#: templates/header/header-layout-two.php:107
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1966,92 +2004,106 @@ msgid "View OR Download all the page layouts offered with Avant Premium"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:47
+msgid "Avant Premium now includes a FREE shortcode Slider plugin"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:48
+msgid ""
+"Create unlimited sliders  for your website and easily add them to all or any "
+"site pages you choose"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:51
+msgid "Avant shortcode slider"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:57
 msgid ""
 "View the Avant Premium Demo, and try out all the settings neatly built into "
 "the Customizer"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:51
+#: upgrade/tpl/upgrade-page.php:61
 msgid "Avant Premium Demo"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:58
+#: upgrade/tpl/upgrade-page.php:68
 msgid "Download a working Child Theme for Avant"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:59
+#: upgrade/tpl/upgrade-page.php:69
 #, php-format
 msgid ""
 "Or learn more on creating/editing a <a href=\"%s\" target=\"_blank\">Child "
 "Theme</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:63
+#: upgrade/tpl/upgrade-page.php:73
 msgid "Avant Child Theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:70
+#: upgrade/tpl/upgrade-page.php:80
 msgid "See what we suggest when building your website."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:74
+#: upgrade/tpl/upgrade-page.php:84
 msgid "Recommended Resources"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:81
+#: upgrade/tpl/upgrade-page.php:91
 msgid ""
 "We have on-growing documentation on setting up your website with the Avant "
 "theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:85
+#: upgrade/tpl/upgrade-page.php:95
 msgid "Documentation"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:92
+#: upgrade/tpl/upgrade-page.php:102
 msgid "Have you enjoyed using Avant?"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:93
+#: upgrade/tpl/upgrade-page.php:103
 msgid "Please help by giving us a rating on WordPress.org :)"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:97
+#: upgrade/tpl/upgrade-page.php:107
 msgid "Give Avant a rating"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:102
+#: upgrade/tpl/upgrade-page.php:112
 #, php-format
 msgid "Theme: Avant, built by <a href=\"%s\" target=\"_blank\">Kaira</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:111
+#: upgrade/tpl/upgrade-page.php:121
 msgid ""
 "We aim to keep our prices cheaper than other theme shops, while still "
 "offering you the best WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:113
+#: upgrade/tpl/upgrade-page.php:123
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:115
+#: upgrade/tpl/upgrade-page.php:125
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:119
+#: upgrade/tpl/upgrade-page.php:129
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:131
+#: upgrade/tpl/upgrade-page.php:141
 msgid "Karmawordz"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:134
+#: upgrade/tpl/upgrade-page.php:144
 msgid ""
 "The Avant theme works. It is stable, reliable and amazing. I had a few "
 "questions and Zack answered them almost instantly. Great attitude and an "
@@ -2059,21 +2111,21 @@ msgid ""
 "woocommerce themes I have ever used!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:140
+#: upgrade/tpl/upgrade-page.php:150
 msgid "Adrigrove"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:143
+#: upgrade/tpl/upgrade-page.php:153
 msgid ""
 "By far the most beautiful and customizable free theme available.<br /><br /"
 ">The support has been extremely quick and professional. Highly recommended!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:149
+#: upgrade/tpl/upgrade-page.php:159
 msgid "PixieLauren"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:152
+#: upgrade/tpl/upgrade-page.php:162
 msgid ""
 "This theme is so pretty. It's customizable, it's fast, and even the free "
 "version offers lots of options to get the look you want for your site.<br /"
@@ -2081,11 +2133,11 @@ msgid ""
 "features - it's really affordable for such a great theme. Love it!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:158
+#: upgrade/tpl/upgrade-page.php:168
 msgid "AllisonMandel"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:161
+#: upgrade/tpl/upgrade-page.php:171
 msgid ""
 "This theme has a clean design with many options for customization. "
 "Flexibility is key, especially with an online store.<br /><br />Plus, when I "
@@ -2094,11 +2146,11 @@ msgid ""
 "recommend it to other users."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:170
+#: upgrade/tpl/upgrade-page.php:180
 #, php-format
 msgid "See all of <a href=\"%s\" target=\"_blank\">Avant's 5 Star Ratings</a>!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:180
+#: upgrade/tpl/upgrade-page.php:190
 msgid "Avant Changelog:"
 msgstr ""

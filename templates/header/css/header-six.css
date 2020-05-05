@@ -454,6 +454,7 @@ a.header-cart-contents {
     }
     .site-header-social .social-icon,
     .menu-search {
+        box-shadow: none;
         float: none;
         display: inline-block;
         vertical-align: middle;
