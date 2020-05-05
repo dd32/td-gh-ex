@@ -771,7 +771,7 @@ endif;
 
 if ( ! function_exists( 'catchkathmandu_category_sliders' ) ) :
 /**
- * Template for Featued Page Slider
+ * Template for Featured Category Slider
  *
  * To override this in a child theme
  * simply create your own catchkathmandu_category_sliders(), and that function will be used instead.
@@ -1430,6 +1430,7 @@ function catchkathmandu_alter_home( $query ){
 
 	    if ( $options['exclude_slider_post'] != "0" && !empty( $options['featured_slider'] ) ) {
 			$query->query_vars['post__not_in'] = $options['featured_slider'];
+			$query->query_vars['category__not_in'] = $options['slider_category'];
 		}
 
 		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {

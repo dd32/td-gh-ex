@@ -611,7 +611,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'panel' 			=> 'featured_slider',
 			'section' 			=> 'slider_options',
 			'default' 			=> $defaults['exclude_slider_post'],
-			'active_callback' 	=> 'catchkathmandu_is_post_slider_active'
+			'active_callback' 	=> 'catchkathmandu_is_demo_slider_inactive'
 		),
 
 		//Featured Category Slider
