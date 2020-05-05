@@ -21,3 +21,6 @@ i) Removed default slider images.
 
 Version 1.2.5
 i) Removed few bugs from the files.
+
+Version 1.2.6
+i) Added skip to content button and made some css changes.

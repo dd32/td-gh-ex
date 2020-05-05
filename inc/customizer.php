@@ -255,9 +255,6 @@ function animals_css(){
 add_action('wp_head','animals_css');
 
 function animals_custom_customize_enqueue() {
-	wp_enqueue_script( 'animals-custom-customize', get_template_directory_uri() . '/js/custom.customize.js', array( 'jquery', 'customize-controls' ), false, true );
-	wp_localize_script( 'animals-custom-customize', 'animalsjsvar', array(
-	'upgrade' => __('Upgrade to PRO Version', 'animals')
-	));
+	wp_enqueue_script( 'animals-custom-customize', get_template_directory_uri() . '/js/customize-preview.js', array( 'jquery', 'customize-controls' ), false, true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'animals_custom_customize_enqueue' );

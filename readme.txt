@@ -1,26 +1,20 @@
-/*-----------------------------------------------------------------------------------*/
-/* Animals WordPress Theme */
-/*-----------------------------------------------------------------------------------*/
+=== Animals ===
 
-Theme Name      :   Animals
-Theme URI       :   https://www.flythemes.net/wordpress-themes/animals-wordpress-theme/
-Version         :   1.2.5
-Tested up to    :   WP 4.9.8
-Author          :   Flythemes
-Author URI      :   https://www.flythemes.net/
+Contributors: Flythemes
+Requires at least: WordPress 4.4  
+Tested up to: WordPress 5.4.1
+Requires PHP: 5.2.6
+Stable tag: 1.2.6
+Version: 1.2.6
+License: GPLv3 or later  
+License URI: http://www.gnu.org/licenses/gpl-3.0.html  
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 
-license         :   GNU General Public License v3.0
-License URI     :   http://www.gnu.org/licenses/gpl.html
+== Description ==
 
-/*-----------------------------------------------------------------------------------*/
-/* About Author - Contact Details */
-/*-----------------------------------------------------------------------------------*/
-
-email       :   support@flythemes.net
-
-/*-----------------------------------------------------------------------------------*/
-/* Theme Resources */
-/*-----------------------------------------------------------------------------------*/
+Animals theme is well designed and coded with the WordPress standards and best use for theme is pet shop, pet care and related to all kinds of pet services industries. This theme has a nice layout also useful for the nature, holiday, business, restaurant, corporate, entertainment, consultancy, health and other industries. This theme is compatible with the latest version of WordPress and plugins like woocommerce, jetpack, contact form 7 etc. This theme is fully responsive and working well with all the resolutions.  Check demo at: http://flythemesdemo.net/animals
+ 
+== Theme Resources ==
 
 Theme is Built using the following resource bundles.
 
@@ -57,3 +51,32 @@ Animals pro version is compatible with GPL licensed.
 
 
 For any help you can mail us at support[at]flythemes.net
+
+== Changelog ==
+
+== 1.0 ==
+i) Intial version Release
+
+== 1.1 ==
+i) Removed unwanted tags and resolve issues as asked by reviewer.
+
+== 1.2 ==
+i) Set slider content by pages, remove pagination fuctions, header image enabled, resolve site title and tagline issue, resolve header textcolor issue and made changes in archive file.
+
+== 1.2.1 ==
+i) Removed demo content, added translation function and made some changes as per reviewers sugestion.
+
+== 1.2.2 ==
+i) Screenshot changed.
+
+== 1.2.3 ==
+i) Removed default slider content and added instructions in readme.txt file.
+
+== 1.2.4 ==
+i) Removed default slider images.
+
+== 1.2.5 ==
+i) Removed few bugs from the files.
+
+== 1.2.6 ==
+i) Added skip to content button and made some css changes.

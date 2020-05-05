@@ -146,6 +146,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/*
+ * Load customize pro
+ */
+require_once( trailingslashit( get_template_directory() ) . 'customize-pro/class-customize.php' );
+
 define('animals_pro_theme_url','https://flythemes.net/wordpress-themes/animals-wordpress-theme/');
 define('animals_site_url','https://flythemes.net/');
 
