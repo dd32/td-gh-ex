@@ -2,8 +2,8 @@
 Contributors: LogicalThemes
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
 Requires at least: 5.0
-Tested up to: 5.3.2
-Stable tag: 0.2.6
+Tested up to: 5.4
+Stable tag: 0.2.7
 Requires PHP: 7.2.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -59,6 +59,10 @@ Academic Education theme is suitable for college, School, university, LMS, Train
 = 0.2.6 =
   * Added sticky header option.
   * Changed some theme code.
+  * Updated POT file.
+
+= 0.2.7 =
+  * Resolved some theme errors.
   * Updated POT file.
 
 == Resources ==

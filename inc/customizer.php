@@ -28,22 +28,21 @@ function academic_education_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('academic_education_theme_options',array(
-        'default' => __( 'One Column', 'academic-education' ),
-        'sanitize_callback' => 'academic_education_sanitize_choices'	        
+        'default' => __( 'Right Sidebar', 'academic-education' ),
+        'sanitize_callback' => 'academic_education_sanitize_choices'        
 	));
-	$wp_customize->add_control('academic_education_theme_options',
-	    array(
-	        'type' => 'radio',
-	        'label' => __( 'Do you want this section', 'academic-education' ),
-	        'section' => 'academic_education_left_right',
-	        'choices' => array(
-	            'One Column' => __('One Column ','academic-education'),
-	            'Three Columns' => __('Three Columns','academic-education'),
-	            'Four Columns' => __('Four Columns','academic-education'),
-	            'Right Sidebar' => __('Right Sidebar','academic-education'),
-	            'Left Sidebar' => __('Left Sidebar','academic-education'),
-	            'Grid Layout' => __('Grid Layout','academic-education')
-	        ),
+	$wp_customize->add_control('academic_education_theme_options', array(
+        'type' => 'radio',
+        'label' => __( 'Do you want this section', 'academic-education' ),
+        'section' => 'academic_education_left_right',
+        'choices' => array(
+            'One Column' => __('One Column ','academic-education'),
+            'Three Columns' => __('Three Columns','academic-education'),
+            'Four Columns' => __('Four Columns','academic-education'),
+            'Right Sidebar' => __('Right Sidebar','academic-education'),
+            'Left Sidebar' => __('Left Sidebar','academic-education'),
+            'Grid Layout' => __('Grid Layout','academic-education')
+        ),
 	));
 
     $font_array = array(
@@ -226,7 +225,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	// This is Topbar Font Size setting
 	$wp_customize->add_setting('academic_education_topbar_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_topbar_paragraph_font_size',array(
@@ -262,7 +261,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	//This is logo FontSize setting
 	$wp_customize->add_setting('academic_education_topbar_heading_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_topbar_heading_font_size',array(
@@ -297,7 +296,7 @@ function academic_education_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('academic_education_description_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_description_font_size',array(
@@ -321,7 +320,7 @@ function academic_education_customize_register( $wp_customize ) {
 	//This is contact Fontsize picker setting
 
 	$wp_customize->add_setting('academic_education_contact_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_contact_font_size',array(
@@ -361,14 +360,14 @@ function academic_education_customize_register( $wp_customize ) {
 		'type'	=> 'url'
 	));
 
-	$wp_customize->add_setting('academic_education_google_url',array(
+	$wp_customize->add_setting('academic_education_instagram_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	$wp_customize->add_control('academic_education_google_url',array(
-		'label'	=> __('Add Google link','academic-education'),
+	$wp_customize->add_control('academic_education_instagram_url',array(
+		'label'	=> __('Add Instagram link','academic-education'),
 		'section'	=> 'academic_education_social_media',
-		'setting'	=> 'academic_education_google_url',
+		'setting'	=> 'academic_education_instagram_url',
 		'type'	=> 'url'
 	));
 
@@ -402,7 +401,7 @@ function academic_education_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('academic_education_slider_hide',array(
-	   'default' => 'false',
+	   'default' => false,
 	   'sanitize_callback'  => 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_slider_hide',array(
@@ -412,7 +411,6 @@ function academic_education_customize_register( $wp_customize ) {
 	));
 
 	for ( $count = 1; $count <= 4; $count++ ) {
-
 		$wp_customize->add_setting( 'academic_education_slidersettings_page' . $count, array(
 			'default'           => '',
 			'sanitize_callback' => 'academic_education_sanitize_dropdown_pages'
@@ -450,7 +448,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	//This is Title FontSize setting
 	$wp_customize->add_setting('academic_education_slider_heading_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_slider_heading_font_size',array(
@@ -485,7 +483,7 @@ function academic_education_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('academic_education_slider_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_slider_paragraph_font_size',array(
@@ -593,7 +591,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	//This is our course  title FontSize setting
 	$wp_customize->add_setting('academic_education_course_heading_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_course_heading_font_size',array(
@@ -628,7 +626,7 @@ function academic_education_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('academic_education_course_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_course_paragraph_font_size',array(
@@ -663,7 +661,7 @@ function academic_education_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('academic_education_course_atag_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('academic_education_course_atag_font_size',array(

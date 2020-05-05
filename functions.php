@@ -341,7 +341,6 @@ function academic_education_scripts() {
 	    $academic_education_course_paragraph_font_family = get_theme_mod('academic_education_course_paragraph_font_family', '');
 	    $academic_education_course_paragraph_font_size = get_theme_mod('academic_education_course_paragraph_font_size', '');
 
-
 	    $custom_css ='
 			#slider .inner_carousel h2{
 			    color:'.esc_html($academic_education_slider_heading_color).'!important;
@@ -404,12 +403,6 @@ function academic_education_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'academic_education_scripts' );
-
-function academic_education_ie_stylesheet(){
-	wp_enqueue_style('academic-education-ie', get_template_directory_uri().'/assets/css/ie.css', array('academic-education-basic-style'));
-	wp_style_add_data( 'academic-education-ie', 'conditional', 'IE' );
-}
-add_action('wp_enqueue_scripts','academic_education_ie_stylesheet');
 
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/customizer.php';

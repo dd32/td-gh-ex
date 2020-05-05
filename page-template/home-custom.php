@@ -36,10 +36,10 @@
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h2><?php esc_html(the_title()); ?></h2>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( academic_education_string_limit_words( $excerpt,30 ) ); ?></p>
                   <div class="more-btn"> 
-                    <a href="<?php the_permalink(); ?>"><span><?php esc_html_e('LEARN MORE','academic-education'); ?></span><span class="screen-reader-text"><?php esc_html_e('LEARN MORE','academic-education'); ?></span></a>
+                    <a href="<?php esc_url(the_permalink()); ?>"><span><?php esc_html_e('LEARN MORE','academic-education'); ?></span><span class="screen-reader-text"><?php esc_html_e('LEARN MORE','academic-education'); ?></span></a>
                   </div>
                 </div>
               </div>
@@ -48,8 +48,8 @@
           wp_reset_postdata();?>
         </div>
         <?php else : ?>
-            <div class="no-postfound"></div>
-          <?php endif;
+          <div class="no-postfound"></div>
+        <?php endif;
         endif;?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span><span class="screen-reader-text"><?php esc_attr_e( 'Previous','academic-education' );?></span>
@@ -65,52 +65,55 @@
   <?php do_action( 'academic_education_after_slider' ); ?>
 
   <?php /*--Courses--*/?>
-  <section id="courses">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-8 row">
-          <?php 
-            $catData = get_theme_mod('academic_education_category');
-            if($catData){
-            $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'academic-education')));?>
-            <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-              <div class="col-lg-4 col-md-6">
-                <div class="course-box">
-                  <a href="<?php the_permalink(); ?>"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?><span class="screen-reader-text"><?php the_title();?></span></a>
+  <?php if( get_theme_mod('academic_education_category') != ''){ ?>
+    <section id="courses">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 row">
+            <?php 
+              $catData = get_theme_mod('academic_education_category');
+              if($catData){
+              $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'academic-education')));?>
+              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+                <div class="col-lg-4 col-md-6">
+                  <div class="course-box">
+                    <a href="<?php esc_url(the_permalink()); ?>"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                  </div>
                 </div>
-              </div>
-            <?php endwhile;
-            wp_reset_postdata();
-          }
-          ?>
-          <div class="clearfix"></div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="single-layout">
-            <?php
-              $postData = get_theme_mod('academic_education_single_post');
+              <?php endwhile;
+              wp_reset_postdata();
+            }
+            ?>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="single-layout">
+              <?php
+                $postData = get_theme_mod('academic_education_single_post');
                 if($postData){
                 $args = array( 'name' => esc_html( $postData ,'academic-education'));
                   $query = new WP_Query( $args );
                   if ( $query->have_posts() ) :
                     while ( $query->have_posts() ) : $query->the_post(); ?>
-                      <h3><?php the_title(); ?></h3>
+                      <h3><?php esc_html(the_title()); ?></h3>
                       <p><?php the_excerpt(); ?></p>
                       <div class="button">
-                        <a href="<?php the_permalink(); ?>"><span><?php esc_html_e('SEE COURSE','academic-education'); ?></span><span class="screen-reader-text"><?php esc_html_e('SEE COURSE','academic-education'); ?></span></a>
+                        <a href="<?php esc_url(the_permalink()); ?>"><span><?php esc_html_e('SEE COURSE','academic-education'); ?></span><span class="screen-reader-text"><?php esc_html_e('SEE COURSE','academic-education'); ?></span></a>
                       </div>
                   <?php endwhile; 
-                wp_reset_postdata(); ?>
-              <?php else : ?>
-              <div class="no-postfound"></div>
-             <?php
-            endif; } ?>
-            <div class="clearfix"></div>
+                  wp_reset_postdata(); ?>
+                <?php else : ?>
+                  <div class="no-postfound"></div>
+                <?php
+                endif; 
+              } ?>
+              <div class="clearfix"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <?php }?>
 
   <?php do_action( 'academic_education_after_courses' ); ?>
 

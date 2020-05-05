@@ -24,9 +24,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
   <div class="post-wrap">
     <div class="box-image">
-      	<?php
+    	<?php
 			if ( ! is_single() ) {
-
 				// If not a single post, highlight the audio file.
 				if ( ! empty( $audio ) ) {
 					foreach ( $audio as $audio_html ) {
@@ -35,14 +34,13 @@
 						echo '</div><!-- .entry-audio -->';
 					}
 				};
-
 			};
 	    ?>
     </div>    
     <div class="post-main">
-      <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a><span class="screen-reader-text"><?php the_title(); ?></span></h3>
+      <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title()); ?></a><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></h3>
       <div class="adminbox">  
-        <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
+        <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
         <span class="entry-comments"><i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'academic-education'), __('0 Comments', 'academic-education'), __('% Comments', 'academic-education') ); ?> </span>
         <span class="entry-date"><i class="far fa-calendar-alt"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
       </div>
@@ -50,7 +48,7 @@
       <div class="entry-content"><?php the_excerpt();?></div>
       </div>
       <div class="continue-read">
-        <a href="<?php the_permalink(); ?>"><span><?php esc_html_e('READ MORE...','academic-education'); ?></span><span class="screen-reader-text"><?php esc_html_e( 'READ MORE...','academic-education' );?></span></a>
+        <a href="<?php esc_url(the_permalink()); ?>"><span><?php esc_html_e('READ MORE...','academic-education'); ?></span><span class="screen-reader-text"><?php esc_html_e( 'READ MORE...','academic-education' );?></span></a>
       </div>
     </div>
   </div>
