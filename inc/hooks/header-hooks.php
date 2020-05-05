@@ -361,6 +361,7 @@ if(! function_exists('arrival_mob_nav')){
 				<?php } 
 				do_action('arrival_social_icons'); ?>
 		</nav>
+		<div class="menu-last"></div>
 		</div>
 
 

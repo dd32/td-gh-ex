@@ -12,8 +12,15 @@
     }
 }
 @media only screen and (max-width: 768px){
+    
     header .cart-wrapper{
         display: block;
+    }
+    .header-last-item{
+        float: left;
+    }
+    ul.site-header-cart li svg {
+        vertical-align: middle;
     }
     .container,.site {
         padding: 0 20px;

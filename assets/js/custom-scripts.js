@@ -62,15 +62,13 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
      
     $('.site-header').toggleClass('toggled-on');
+    $('body').toggleClass('toggled-modal');
    
  });
 
 
 
 $('.mob-nav-wrapp ul li ul').slideUp();
-
-/*$('<button class="toggle sub-toggle"></button>').insertBefore('.mob-nav-wrapp .menu-item-has-children ul');
-$('<button class="toggle sub-toggle-children"></div>').insertBefore('.mob-nav-wrapp .page_item_has_children ul');*/
 
 
 
@@ -105,6 +103,60 @@ if( 'yes' == smoothScrollEnable ){
 }
 
 
+
+
+arrivalFocusTab();
+function arrivalFocusTab(){
+        var _doc = document;
+
+        _doc.addEventListener( 'keydown', function( event ) {
+            var toggleTarget, modal, selectors, elements, menuType, bottomMenu, activeEl, lastEl, firstEl, tabKey, shiftKey;
+                
+            if ( _doc.body.classList.contains( 'toggled-modal' ) ) {
+                toggleTarget = '.mob-nav-wrapp';//mobile menu wrapper
+                selectors = 'input, a, button';
+                modal = _doc.querySelector( toggleTarget );
+
+                elements = modal.querySelectorAll( selectors );
+                elements = Array.prototype.slice.call( elements );
+
+                if ( '.menu-modal' === toggleTarget ) {
+                    menuType = window.matchMedia( '(min-width: 1000px)' ).matches;
+                    menuType = menuType ? '.expanded-menu' : '.mobile-menu';
+
+                    elements = elements.filter( function( element ) {
+                        return null !== element.closest( menuType ) && null !== element.offsetParent;
+                    } );
+
+                    elements.unshift( _doc.querySelector( '.mob-outer-wrapp .toggle-wrapp' ) ); //mobile toggle
+
+                    bottomMenu = _doc.querySelector( '.mob-outer-wrapp .menu-last' );//mobile menu last div
+
+                    if ( bottomMenu ) {
+                        bottomMenu.querySelectorAll( selectors ).forEach( function( element ) {
+                            elements.push( element );
+                        } );
+                    }
+                }
+
+                lastEl = elements[ elements.length - 1 ];
+                firstEl = elements[0];
+                activeEl = _doc.activeElement;
+                tabKey = event.keyCode === 9;
+                shiftKey = event.shiftKey;
+
+                if ( ! shiftKey && tabKey && lastEl === activeEl ) {
+                    event.preventDefault();
+                    firstEl.focus();
+                }
+
+                if ( shiftKey && tabKey && firstEl === activeEl ) {
+                    event.preventDefault();
+                    lastEl.focus();
+                }
+            }
+        } );
+}
 
 
 });
