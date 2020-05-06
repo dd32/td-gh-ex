@@ -16,7 +16,7 @@ if ( accesspress_parallax_of_get_option( 'enable_parallax' ) == 1 ) :
     get_template_part( 'index', 'parallax' );
 else:
     ?>
-    <div class="mid-content clearfix">
+    <div class="mid-content rightsidebar clearfix">
         <div id="primary" class="content-area">
             <main id="main" class="site-main">
 

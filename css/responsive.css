@@ -95,6 +95,9 @@ Responsive CSS
 }
 
 @media screen and (max-width: 768px){
+    body:not(.home) .main-navigation .current_page_item > a, body:not(.home) .main-navigation .current-menu-item > a{
+        color: #FFF;
+    }
     h1{
         font-size: 24px;
     }

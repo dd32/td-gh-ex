@@ -48,9 +48,11 @@ function accesspress_parallax_bxslidercb() {
     $accesspress_show_slider = accesspress_parallax_of_get_option( 'show_slider', 'yes' );
     $accesspress_show_caption = accesspress_parallax_of_get_option( 'show_caption','yes' );
     $accesspress_enable_parallax = accesspress_parallax_of_get_option( 'enable_parallax' );
+
+
     ?>
 
-    <?php if ( $accesspress_show_slider == "yes" ) : ?>
+    <?php if ( ($accesspress_show_slider == "yes") && !empty( $accesspress_slider_category ) ) : ?>
         <section id="main-slider" class="full-screen-<?php echo esc_attr( $accesspress_slider_full_window ); ?>">
 
             <?php if ( !empty( $next_link ) ): ?>
@@ -370,3 +372,23 @@ function accesspress_parallax_get_plx_sections() {
         }
         return $cat_list;
     }
+
+
+function accesspress_parallax_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
+
+        $args->after  = '';
+
+        // Add a toggle to items with children.
+        if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+
+            // Add the sub menu toggle.
+            $args->after .= '<span class="menu-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>';
+
+        }
+
+
+    return $args;
+
+}
+
+add_filter( 'nav_menu_item_args', 'accesspress_parallax_add_sub_toggles_to_main_menu', 10, 3 );

@@ -126,7 +126,8 @@ jQuery(document).ready(function ($) {
 
     $(".fancybox-gallery").nivoLightbox();
 
-    $('.menu-toggle').click(function () {
+    $('body').on('click keypress','.menu-toggle',function (e) {
+        e.preventDefault();
         $(this).next('ul').slideToggle();
     });
 

@@ -44,7 +44,7 @@
 
                         <nav id="site-navigation" class="main-navigation">
 
-                            <div class="menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-parallax' ); ?></div>
+                            <button class="toggle menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-parallax' ); ?></button>
 
                             <?php
                             $sections = accesspress_parallax_get_plx_sections();

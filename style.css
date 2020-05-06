@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
 Description: Create beautiful one page / parallax website for your business, online shop, agency or any type with AccessPress Parallax. Theme is fully Gutenberg / Elementor friendly and consists of 6 demo (starter site content) built in Elementor in just one click.
-Version: 3.8
+Version: 3.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-parallax
@@ -367,7 +367,7 @@ input[type="submit"] {
     height: 36px;
 }
 
-button:focus,
+/* button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
@@ -376,7 +376,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
     outline: 0;
-}
+} */
 
 input[type="text"],
 input[type="email"],
@@ -1207,7 +1207,7 @@ Main Header
 
 #masthead {
     width: 100%;
-    z-index: 99999;
+    z-index: 9999;
     background: #FFF;
     padding: 24px 0;
     position: relative;
@@ -2612,9 +2612,9 @@ body:not(.home) header#masthead{
 .elementor-heading-title b{
     font-weight: 600;
 }
-body:not(.home) #masthead + #content{
+/* body:not(.home) #masthead + #content{
     padding-top: 80px !important;
-}
+} */
 #masthead.ap-fixed{
     -webkit-transform: translateY(-100%);
        -moz-transform: translateY(-100%);
@@ -3534,7 +3534,24 @@ body:not(.home) #masthead + #content{
 }
 
 
-
-
-
-
+.main-navigation li.menu-item-has-children {
+    margin-right: 10px;
+}
+.main-navigation span.menu-icon {
+    position: absolute;
+    right: -3px;
+    top: 4px;
+}
+button.toggle {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 400;
+    letter-spacing: inherit;
+    padding: 0;
+    text-transform: none;
+}
+button.toggle.menu-toggle:focus {
+    outline: 1px dashed #333;
+}

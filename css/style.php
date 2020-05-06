@@ -82,7 +82,7 @@ function accesspress_parallax_dynamic_styles() {
             .main-navigation > ul,
             .menu-toggle
             {
-                background-color: {$tpl_color} !important;
+                background-color: {$tpl_color};
             }
         }";
 
