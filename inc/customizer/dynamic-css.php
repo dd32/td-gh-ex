@@ -235,7 +235,7 @@ function ashe_true_false( $option ) {
 		
 	
 		/* Accent */
-		.page-content a,
+		a,
 		.post-categories,
 		.page-content .ashe-widget.widget_text a {
 			color: '. esc_html(ashe_options( 'colors_content_accent' )) .';
@@ -252,7 +252,7 @@ function ashe_true_false( $option ) {
 			background: '. esc_html(ashe_options( 'colors_content_accent' )) .';
 		}
 
-		.page-content a:hover {
+		a:hover {
 			color: '. esc_html(ashe_hex2rgba( ashe_options( 'colors_content_accent' ), 0.8 )) .';
 		}
 
@@ -864,6 +864,9 @@ function ashe_true_false( $option ) {
 			  font-size: 80px;
 			  line-height: 65px;
 			  text-align: center;
+			}
+
+			.blog-post .post-content > p:not(.wp-block-tag-cloud):first-of-type:first-letter {
 			  color: #030303;
 			}
 
