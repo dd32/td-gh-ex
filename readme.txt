@@ -1,11 +1,11 @@
-﻿=== Arbutus ===
+=== Arbutus ===
 Contributors: celloexpressions
 Tags: one-column, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, translation-ready, photography, accessibility-ready
 Requires at least: 5.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GPLv2
-Stable tag: 1.1
+Stable tag: 1.1.1
 Description: Arbutus is a minimalist photography theme that transforms your site into a visually stimulating canvas of cleanly layered images and content.
 
 == Description ==
@@ -71,7 +71,7 @@ along with WordPress. If not, see <http://www.gnu.org/licenses/ >.
 
 == Changelog ==
 = 1.1 =
-* Updates for WoedPress 4.3 - 5.4.
+* Updates for WordPress 4.3 - 5.4.
 * Hue slide color scheme strategy.
 * Coordinated updates with sister theme Visualize.
 

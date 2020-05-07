@@ -17,8 +17,5 @@
 		<div class="inner">
 			<?php the_excerpt(); ?>
 		</div>
-		<footer class="entry-footer">
-			<?php //edit_post_link( __( 'Edit', 'arbutus' ), '<span class="edit-link">', '</span>' ); ?>
-		</footer><!-- .entry-footer -->
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

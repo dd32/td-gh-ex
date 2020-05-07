@@ -23,10 +23,10 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
+			$comments_number = absint( get_comments_number() );
+			if ( 1 === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'arbutus' ), get_the_title() );
+				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'arbutus' ), esc_html( get_the_title() ) );
 			} else {
 				printf(
 				/* translators: 1: number of comments, 2: post title */
@@ -38,14 +38,14 @@ if ( post_password_required() ) {
 						'arbutus'
 					),
 					number_format_i18n( $comments_number ),
-					get_the_title()
+					esc_html ( get_the_title() )
 				);
 			}
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
+		<nav id="comment-nav-above" class="comment-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Comment navigation', 'arbutus' ); ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'arbutus' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'arbutus' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'arbutus' ) ); ?></div>

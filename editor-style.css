@@ -368,7 +368,7 @@ object {
 	color: #fff;
 }
 
-.editor-block-list__layout .editor-block-list__block ::selection {
+.block-editor-block-list__layout .block-editor-block-list__block ::selection {
 	background: #2c12ed;
 	color: #fff;
 }

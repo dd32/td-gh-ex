@@ -149,6 +149,11 @@ function arbutus_gallery_excerpt() {
 	}
 
 	if ( empty( $ids ) && empty( $srcs ) ) {
+		if ( ! has_post_thumbnail() ) {
+			// Make sure that the title is displayed if there's no image or gallery but the format is gallery.
+			the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+		}
+		the_excerpt();
 		return;
 	}
 
@@ -181,10 +186,10 @@ function arbutus_gallery_excerpt() {
 	// Read more button.
 	if ( has_post_thumbnail() ) {
 		$title = sprintf ( __( 'See more %s', 'arbutus' ),
-			'<span class="screen-reader-text">' . get_the_title() .
+			'<span class="screen-reader-text">' . esc_html( get_the_title() ) .
 			' </span><span class="meta-nav"> &rarr;</span>' );
 	} else {
-		$title = get_the_title() . '<span class="meta-nav">&rarr;</span>';
+		$title = esc_html( get_the_title() ) . '<span class="meta-nav">&rarr;</span>';
 	}
 	echo '<li class="gallery-excerpt-item"><a href="' . esc_url( get_the_permalink() ) . '" class="excerpt-more button" rel="bookmark">' . $title . '</a></li>';
 	echo '</ul>';
@@ -234,7 +239,7 @@ function arbutus_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation">
+	<nav class="navigation paging-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Paging navigation', 'arbutus' ); ?>">
 		<div class="inner">
 			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
@@ -267,7 +272,7 @@ function arbutus_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Post navigation', 'arbutus' ); ?>">
 		<div class="inner">
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
@@ -360,7 +365,7 @@ add_action( 'save_post',     'arbutus_category_transient_flusher' );
  * Display the footer credits area.
  */
 function arbutus_footer_credits() {
-	?>&copy <?php echo date('Y'); ?> <a href="<?php echo home_url(); ?>" id="footer-copy-name"><?php echo get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ); ?></a>
+	?>&copy <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url() ); ?>" id="footer-copy-name"><?php echo esc_html( get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ) ); ?></a>
 	<?php if( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
 		<span class="wordpress-credit" <?php if ( ! get_theme_mod( 'powered_by_wp', true ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
 			<span class="sep"> | </span><a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'arbutus' ), 'WordPress' ); ?></a>

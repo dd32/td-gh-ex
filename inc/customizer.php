@@ -37,7 +37,7 @@ function arbutus_customize_register( $wp_customize ) {
 	) ) );
 
 	$wp_customize->add_setting( 'copy_name' , array(
-		'default'	        => get_bloginfo( 'name' ),
+		'default'	        => esc_html( get_bloginfo( 'name' ) ),
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
