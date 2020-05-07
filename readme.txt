@@ -2,11 +2,11 @@
 
 Thema Name: Atomy
 Contributors: franchidesign
-Version: 1.1.0
+Version: 1.1.1
 Requires at least: 4.7
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Text Domain: atomy
 License:  GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -282,3 +282,6 @@ Atomy is distributed under the terms of the GNU GPL
 = 1.1.0 =
 * Fixed some bugs
 * Improved the Customizer
+
+= 1.1.1 =
+* Updated WooCommerce Template
