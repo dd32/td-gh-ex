@@ -25,15 +25,7 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html_e( 'Comments', 'bakes-and-cakes' ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2>
+		<h2 class="comments-title"><?php esc_html_e( 'Comments', 'bakes-and-cakes' ); ?></h2>
 
 		<ol class="comment-list">
 			<?php

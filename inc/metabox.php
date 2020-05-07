@@ -9,27 +9,27 @@
 
 function bakes_and_cakes_add_sidebar_layout_box(){    
     add_meta_box(
-                 'bakes_and_cakes_sidebar_layout', // $id
-                 __( 'Sidebar Layout', 'bakes-and-cakes' ), // $title
-                 'bakes_and_cakes_sidebar_layout_callback', // $callback
-                 'page', // $page
-                 'normal', // $context
-                 'high'); // $priority    
+        'bakes_and_cakes_sidebar_layout', // $id
+        __( 'Sidebar Layout', 'bakes-and-cakes' ), // $title
+        'bakes_and_cakes_sidebar_layout_callback', // $callback
+        'page', // $page
+        'normal', // $context
+        'high'
+    ); // $priority    
 }
 
 $bakes_and_cakes_sidebar_layout = array(         
-        'right-sidebar' => array(
-                        'value' => 'right-sidebar',
-                        'label' => __( 'Right sidebar (default)', 'bakes-and-cakes' ),
-                        'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
-                    ),
-        'no-sidebar' => array(
-                        'value'     => 'no-sidebar',
-                        'label'     => __( 'No sidebar', 'bakes-and-cakes' ),
-                        'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
-                    )   
-
-    );
+    'right-sidebar' => array(
+        'value' => 'right-sidebar',
+        'label' => __( 'Right sidebar (default)', 'bakes-and-cakes' ),
+        'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
+    ),
+    'no-sidebar' => array(
+        'value'     => 'no-sidebar',
+        'label'     => __( 'No sidebar', 'bakes-and-cakes' ),
+        'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
+    )
+);
 
 function bakes_and_cakes_sidebar_layout_callback(){
     global $post , $bakes_and_cakes_sidebar_layout;
@@ -68,7 +68,7 @@ function bakes_and_cakes_sidebar_layout_callback(){
  * @hooked to save_post hook
  */
 function bakes_and_cakes_save_sidebar_layout( $bakes_and_cakes_post_id ) { 
-    global $bakes_and_cakes_sidebar_layout, $post; 
+    global $bakes_and_cakes_sidebar_layout; 
 
     // Verify the nonce before proceeding.
     if ( !isset( $_POST[ 'bakes_and_cakes_sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'bakes_and_cakes_sidebar_layout_nonce' ], basename( __FILE__ ) ) )
@@ -79,23 +79,17 @@ function bakes_and_cakes_save_sidebar_layout( $bakes_and_cakes_post_id ) {
         return;
         
     if ('page' == $_POST['post_type']) {  
-        if (!current_user_can( 'edit_page', $bakes_and_cakes_post_id ) )  
-            return $bakes_and_cakes_post_id;  
-    } elseif (!current_user_can( 'edit_post', $bakes_and_cakes_post_id ) ) {  
-            return $bakes_and_cakes_post_id;  
+        if (!current_user_can( 'edit_page', $bakes_and_cakes_post_id ) ) return $bakes_and_cakes_post_id;  
+    }elseif (!current_user_can( 'edit_post', $bakes_and_cakes_post_id ) ){  
+        return $bakes_and_cakes_post_id;  
     }  
-    
 
-    foreach ($bakes_and_cakes_sidebar_layout as $bakes_and_cakes_field) {  
-        //Execute this saving function
-        $bakes_and_cakes_old = get_post_meta( $bakes_and_cakes_post_id, 'bakes_and_cakes_sidebar_layout', true); 
-        $bakes_and_cakes_new = sanitize_text_field( $_POST['bakes_and_cakes_sidebar_layout'] );
-        if ( $bakes_and_cakes_new && $bakes_and_cakes_new != $bakes_and_cakes_old ) {  
-            update_post_meta( $bakes_and_cakes_post_id, 'bakes_and_cakes_sidebar_layout', $bakes_and_cakes_new );  
-        } elseif ( '' == $bakes_and_cakes_new && $bakes_and_cakes_old ) {  
-            delete_post_meta( $bakes_and_cakes_post_id,'bakes_and_cakes_sidebar_layout', $bakes_and_cakes_old );  
-        }  
-     } // end foreach   
-     
+    $layout = isset( $_POST['bakes_and_cakes_sidebar_layout'] ) ? sanitize_key( $_POST['bakes_and_cakes_sidebar_layout'] ) : 'right-sidebar';
+
+    if( array_key_exists( $layout, $bakes_and_cakes_sidebar_layout ) ) {
+        update_post_meta( $bakes_and_cakes_post_id, 'bakes_and_cakes_sidebar_layout', $layout );
+    }else{
+        delete_post_meta( $bakes_and_cakes_post_id, 'bakes_and_cakes_sidebar_layout' );
+    }
 }
 add_action('save_post', 'bakes_and_cakes_save_sidebar_layout'); 

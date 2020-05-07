@@ -21,7 +21,7 @@ function bakes_and_cakes_customizer_theme_info( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new bakes_and_cakes_Theme_Info( 
+		new Bakes_And_Cakes_Theme_Info( 
 			$wp_customize,
 			'setup_instruction',
 			array(
@@ -45,7 +45,7 @@ function bakes_and_cakes_customizer_theme_info( $wp_customize ) {
 
 
 	$wp_customize->add_control( 
-		new bakes_and_cakes_Theme_Info( 
+		new Bakes_And_Cakes_Theme_Info( 
 			$wp_customize,
 			'theme_info_theme',
 			array(
@@ -66,7 +66,7 @@ add_action( 'customize_register', 'bakes_and_cakes_customizer_theme_info' );
 
 if( class_exists( 'WP_Customize_control' ) ){
 
-	class bakes_and_cakes_Theme_Info extends WP_Customize_Control
+	class Bakes_And_Cakes_Theme_Info extends WP_Customize_Control
 	{
     	/**
        	* Render the content on the theme customizer page
@@ -92,7 +92,7 @@ if( class_exists( 'WP_Customize_Section' ) ) :
  * Adding Go to Pro Section in Customizer
  * https://github.com/justintadlock/trt-customizer-pro
  */
-class bakes_and_cakes_Customize_Section_Pro extends WP_Customize_Section {
+class Bakes_And_Cakes_Customize_Section_Pro extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.
@@ -163,11 +163,11 @@ endif;
 add_action( 'customize_register', 'bakes_and_cakes_sections_pro' );
 function bakes_and_cakes_sections_pro( $manager ) {
 	// Register custom section types.
-	$manager->register_section_type( 'bakes_and_cakes_Customize_Section_Pro' );
+	$manager->register_section_type( 'Bakes_And_Cakes_Customize_Section_Pro' );
 
 	// Register sections.
 	$manager->add_section(
-		new bakes_and_cakes_Customize_Section_Pro(
+		new Bakes_And_Cakes_Customize_Section_Pro(
 			$manager,
 			'bakes_and_cakes_view_pro',
 			array(

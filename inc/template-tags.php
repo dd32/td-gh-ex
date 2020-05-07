@@ -115,3 +115,45 @@ function wp_body_open() {
 	do_action( 'wp_body_open' );
 }
 endif;
+
+if( ! function_exists( 'bakes_and_cakes_fonts_url' ) ) :
+/**
+ * Register custom fonts.
+ */
+function bakes_and_cakes_fonts_url() {
+	$fonts_url = '';
+
+	/*
+	* translators: If there are characters in your language that are not supported
+	* by Open Sans, translate this to 'off'. Do not translate into your own language.
+	*/
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'bakes-and-cakes' );
+	
+	/*
+	* translators: If there are characters in your language that are not supported
+	* by Niconne, translate this to 'off'. Do not translate into your own language.
+	*/
+	$lato = _x( 'on', 'Niconne font: on or off', 'bakes-and-cakes' );
+
+	if ( 'off' !== $open_sans || 'off' !== $lato ) {
+		$font_families = array();
+
+		if( 'off' !== $open_sans ){
+			$font_families[] = 'Open Sans:400,400italic,700';
+		}
+
+		if( 'off' !== $lato ){
+			$font_families[] = 'Niconne';
+		}
+
+		$query_args = array(
+			'family'  => urlencode( implode( '|', $font_families ) ),
+			'display' => urlencode( 'fallback' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url( $fonts_url );
+}
+endif;

@@ -17,9 +17,9 @@
 		if($page_qry->have_posts()){
 		    while($page_qry->have_posts()){ $page_qry->the_post(); 
 				echo '<header class="header">';
-				  echo '<h1 class="main-title">';
+				  echo '<h2 class="main-title">';
 				    the_title();
-				  echo '</h1>';
+				  echo '</h2>';
 				    the_excerpt();
 				echo '</header>';
 		    }
@@ -51,8 +51,13 @@
 				<li>
 					<a href="#tab<?php echo $j; ?>" <?php if($j%3 == 0 ){ echo 'class="active"'; } ?>>
 					<?php 
-                        $image = wp_get_attachment_image_url( get_post_thumbnail_id( get_the_ID() ) ); ?>						
-                        <img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title_attribute(); ?>">
+                        $image = wp_get_attachment_image_url( get_post_thumbnail_id( get_the_ID() ) ); 
+                        if ( has_post_thumbnail() ) {
+	                        ?>						
+	                        <img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title_attribute(); ?>">
+	                    <?php }else{
+	                    	bakes_and_cakes_get_fallback_svg( 'thumbnail' );
+	                    } ?>
 						<span class="text-holder">
 							<strong class="name"><?php the_title(); ?></strong>
 							<?php if(has_excerpt()){ ?>

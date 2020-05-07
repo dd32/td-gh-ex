@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: WordPress 4.9
 Requires PHP: 5.6
-Tested up to: WordPress 5.3
-Stable tag: 1.2.1
+Tested up to: WordPress 5.4.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options, food-and-drink, e-commerce, custom-colors, custom-logo    
@@ -174,40 +174,46 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 
 External resources linked to the theme. 
-    * Open Sans Font by through Google Font 
-    https://www.google.com/fonts/specimen/Open+Sans 
-   
-    * Niconne Font by through Google Font 
-    https://www.google.com/fonts/specimen/Niconne 
-    
-    * Font Awesome https://fortawesome.github.io/Font-Awesome/, (C) Dave Gandy, http://fontawesome.io/license/
-
 
 # Images
 All images are under Creative Commons Public Domain deed CC0.
 
-https://pixabay.com/en/cake-cafeteria-desserts-dessert-906263/
-https://pixabay.com/en/pastries-bake-sweet-brownie-756601/
-https://pixabay.com/en/dessert-jam-dough-sugar-678071/ 
-https://pixabay.com/en/dessert-fruit-cake-plate-cherry-978665/
-https://pixabay.com/en/easter-easter-cakes-cookie-cutter-100171/
+Source:
+  - https://pxhere.com/en/photo/1228487
+  - https://pxhere.com/en/photo/878959
+  - https://pxhere.com/en/photo/896881
+  - https://pxhere.com/en/photo/686889
+  - https://pxhere.com/en/photo/1352650
 
+License: CCO
+  - https://pxhere.com/en/license
 
-# JS
-owl.carousel.js, https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html, Copyright (c) 2013-2017 David Deutsch, Licensed under MIT, http://opensource.org/licenses/MIT
+# Bakes and Cakes bundles the following third-party resources:
 
-lightslider.js, https://github.com/sachinchoolur/lightslider, (C) Sachin, MIT, http://opensource.org/licenses/MIT
+normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
+License: MIT
+Source: https://necolas.github.io/normalize.css/
 
-sameheight.js, https://css-tricks.com/examples/EqualHeightsInRows/ ,   licensed under GPLv2 or later
+Font Awesome icons, Copyright Dave Gandy
+Icons License: CC BY 4.0 
+Fonts License: SIL OFL 1.1 
+Source: http://fontawesome.io/
 
-https://jqueryui.com/tabs/ ,licensed under GPLv2 or later
+TGMPA, Copyright (c) 2011, Thomas Griffin
+License: GPL-2.0+
+Source: http://tgmpluginactivation.com/
 
+Animate, Copyright (c) 2013 Daniel Eden
+License: MIT
+Source: http://daneden.me/animate
 
-* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+Owl-carousel, Copyright 2013-2017 David Deutsch 
+License : MIT
+Source  : https://owlcarousel2.github.io/OwlCarousel2
 
-
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-
+Owl Carousel v2 Accessibility Layer, © Geoffrey Roberts 2016
+License : MIT
+Source  : https://github.com/rtrvrtg/owlcarousel2-a11ylayer/blob/master/LICENSE
 
 All other resources and theme elements are licensed under the GPLv2 or later
 
@@ -222,6 +228,20 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.2.2
+    * Fixed calendar widget design issue for WordPress 5.4.1
+    * Fixed menu accessibility
+    * Fixed multiple h1 tag
+    * Fixed posts page title issue
+    * Added excerpt field in page
+    * Added comment fields as required
+    * Added static page content when homepage section is disabled
+    * Updated breadcrumbs
+    * Updated metabox
+    * Changed owl carousel aria with allylayer
+    * Updated preg replace for telephone to add + sign
+    * Replaced fallback image by fallback svg
+
     1.2.1
     * Fixed slider navigation for latest google chrome updates
     * Fixed accessibility issue of menu hover for edge browser.

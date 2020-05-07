@@ -19,9 +19,9 @@ $featured_product_page  = get_theme_mod('bakes_and_cakes_featured_product_page')
 	    if($page_qry->have_posts()){
 		    while($page_qry->have_posts()){ $page_qry->the_post(); 
 				echo '<header class="header">';
-				  echo '<h1 class="main-title">';
+				  echo '<h2 class="main-title">';
 				    the_title();
-				  echo '</h1>';
+				  echo '</h2>';
 				    the_excerpt();
 				echo '</header>';
 		    }
@@ -62,7 +62,12 @@ if( bakes_and_cakes_is_woocommerce_activated() ){
 				<li>
 					<div class="img-holder">
 						<a href="<?php the_permalink(); ?>">
-						     <?php the_post_thumbnail('bakes-and-cakes-product-thumb', array( 'itemprop' => 'image' )); ?>
+						    <?php 
+						    if ( has_post_thumbnail() ) {
+						    	the_post_thumbnail( 'bakes-and-cakes-product-thumb', array( 'itemprop' => 'image' ));
+						    }else{
+						    	bakes_and_cakes_get_fallback_svg( 'bakes-and-cakes-product-thumb' );
+						    } ?>
 						</a>
 					 </div>
 					<div class="text-holder">

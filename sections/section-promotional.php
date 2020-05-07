@@ -20,9 +20,9 @@ $promotional_page  = get_theme_mod('bakes_and_cakes_promotional_page');
 		if($page_qry->have_posts()){
 		    while($page_qry->have_posts()){ $page_qry->the_post(); 
 				echo '<header class="header">';
-				  echo '<h1 class="main-title">';
+				  echo '<h2 class="main-title">';
 				    the_title();
-				  echo '</h1>';
+				  echo '</h2>';
 				    the_excerpt();
 				echo '</header>';
 		    }

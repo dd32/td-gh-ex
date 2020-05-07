@@ -12,14 +12,15 @@
 */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content',  'woocommerce_output_content_wrapper_end', 10 );
-remove_action( 'woocommerce_sidebar',             'woocommerce_get_sidebar', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 add_action( 'woocommerce_before_main_content', 'bakes_and_cakes_wc_wrapper', 10 );
-add_action( 'woocommerce_after_main_content',  'bakes_and_cakes_wc_wrapper_end', 10 );
-add_action( 'after_setup_theme',               'bakes_and_cakes_woocommerce_support');
-add_action( 'bakes_and_cakes_wo_sidebar',      'bakes_and_cakes_wc_sidebar_cb' );
-add_action( 'widgets_init',                    'bakes_and_cakes_wc_widgets_init' );
+add_action( 'woocommerce_after_main_content', 'bakes_and_cakes_wc_wrapper_end', 10 );
+add_action( 'after_setup_theme', 'bakes_and_cakes_woocommerce_support');
+add_action( 'bakes_and_cakes_wo_sidebar', 'bakes_and_cakes_wc_sidebar_cb' );
+add_action( 'widgets_init', 'bakes_and_cakes_wc_widgets_init' );
+add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 /**
  * Declare Woocommerce Support
@@ -84,21 +85,4 @@ function bakes_and_cakes_wc_sidebar_cb(){
         dynamic_sidebar( 'shop-sidebar' );
         echo '</aside>'; 
     }
-}
-
-add_filter( 'woocommerce_show_page_title' , 'bakes_and_cakes_woo_hide_page_title' );
-
-/**
- * bakes_and_cakes_woo_hide_page_title
- *
- * Removes the "shop" title on the main shop page
- *
- * @access      public
- * @since       1.0 
- * @return      void
-*/
-function bakes_and_cakes_woo_hide_page_title() {
-	
-	return false;
-	
 }

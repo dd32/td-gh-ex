@@ -57,21 +57,26 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
             <ul>
                 <?php 
                 while( $bakes_and_cakes_qry->have_posts() ){
-                    $bakes_and_cakes_qry->the_post();
-                ?>
+                    $bakes_and_cakes_qry->the_post(); ?>
                     <li>
-                        <?php if( has_post_thumbnail() && $show_thumbnail ){ ?>
+                        <?php if( $show_thumbnail ){ ?>
                             <a href="<?php the_permalink();?>" class="post-thumbnail">
-                                <?php the_post_thumbnail( 'bakes-and-cakes-post-thumb', array( 'itemprop' => 'image' ) );?>
+                                <?php 
+                                if( has_post_thumbnail() ){
+                                    the_post_thumbnail( 'bakes-and-cakes-post-thumb', array( 'itemprop' => 'image' ) ); 
+                                }else{
+                                    bakes_and_cakes_get_fallback_svg( 'bakes-and-cakes-post-thumb' );
+                                }
+                                ?>
                             </a>
-                        <?php }?>
+                        <?php } ?>
 						<div class="entry-header">
 							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
 							<?php if( $show_postdate ) {?>
-                                    <span class="posted-on"><a href="<?php the_permalink(); ?>">
-                                        <time datetime="<?php echo esc_html( get_the_date('Y-m-d') ); ?>">
-                                        <?php echo esc_html( get_the_date('Y/m/d') ); ?></time></a>
-                                    </span>
+                                <span class="posted-on"><a href="<?php the_permalink(); ?>">
+                                    <time datetime="<?php echo esc_attr( get_the_date('Y-m-d') ); ?>">
+                                    <?php echo esc_html( get_the_date('Y/m/d') ); ?></time></a>
+                                </span>
                             <?php  } ?>
 						</div>                        
                     </li>        

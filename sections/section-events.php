@@ -36,7 +36,7 @@ if( $events_first_post || $events_second_post ){
 <div class="container">
 	<?php if($events_title){  ?>
 		<header class="header">
-			<?php if($events_title) ?><h1 class="main-title"><?php echo esc_html($events_title); ?></h1>
+			<?php if($events_title) ?><h2 class="main-title"><?php echo esc_html($events_title); ?></h2>
 		</header>
 	<?php } ?>
 		<div class="row">
@@ -63,7 +63,7 @@ if( $events_first_post || $events_second_post ){
 					<div class="info">
 						<?php if($reservation_title) ?><strong><?php echo esc_html($reservation_title); ?></strong>
 						<?php if($reservation_content_first) ?><p><?php echo esc_html($reservation_content_first); ?></p>
-						<?php if($reservation_phone_number) ?><a href="tel:<?php echo esc_html($reservation_phone_number); ?>" class="tel-link"><?php echo esc_html($reservation_phone_number); ?></a>
+						<?php if($reservation_phone_number) ?><a href="<?php echo esc_url( 'tel:' . preg_replace( '/[^\d+]/', '', $reservation_phone_number ) ); ?>" class="tel-link"><?php echo esc_html($reservation_phone_number); ?></a>
 						<?php if($reservation_content_second) ?><p><?php echo esc_html($reservation_content_second); ?></p>
 						<?php if($reservation_button) ?><a href="<?php echo esc_url($reservation_button_link); ?>" class="btn-reserve"><?php echo esc_html($reservation_button); ?></a>
 					</div>

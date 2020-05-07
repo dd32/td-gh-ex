@@ -22,7 +22,7 @@ function bakes_and_cakes_customizer_demo_content( $wp_customize ) {
     $demo_content_description = sprintf( __( 'Bakes and Cakes comes with demo content import feature. You can import the demo content with just one click. For step-by-step video tutorial, %1$sClick here%2$s', 'bakes-and-cakes' ), '<a class="documentation" href="' . esc_url( 'https://rarathemes.com/blog/import-demo-content-rara-themes/' ) . '" target="_blank">', '</a>' );
 
 	$wp_customize->add_control(
-		new bakes_and_cakes_Theme_Info( 
+		new Bakes_And_Cakes_Theme_Info( 
 			$wp_customize,
 			'demo_content_instruction',
 			array(
@@ -46,7 +46,7 @@ function bakes_and_cakes_customizer_demo_content( $wp_customize ) {
 		));
 
 	// Demo content 
-	$wp_customize->add_control( new bakes_and_cakes_Theme_Info( $wp_customize ,'theme_demo_content_info',array(
+	$wp_customize->add_control( new Bakes_And_Cakes_Theme_Info( $wp_customize ,'theme_demo_content_info',array(
 		'section'     => 'theme_demo_content',
 		'description' => $theme_demo_content_desc
 		)));

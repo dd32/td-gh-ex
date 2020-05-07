@@ -18,7 +18,7 @@ $about_us_page  = get_theme_mod('bakes_and_cakes_about_us_page');
 	    
 	    <div class="columns-2">
 			<header class="heading">
-				<h1 class="main-title"><?php the_title(); ?></h1>		
+				<h2 class="main-title"><?php the_title(); ?></h2>		
 			</header>
 			<div class="text">
 				<?php the_excerpt(); ?>
@@ -28,12 +28,16 @@ $about_us_page  = get_theme_mod('bakes_and_cakes_about_us_page');
 				        <?php echo _e('Read More', 'bakes-and-cakes'); ?>
 				    </a>
 				</div>
-		</div>
-        <?php if( has_post_thumbnail()){ ?>
+		</div> 
 		<div class="columns-2 image-holder">		   
-			<?php the_post_thumbnail('bakes-and-cakes-about-thumb', array( 'itemprop' => 'image' ) ); ?>			
+			<?php 
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail( 'bakes-and-cakes-about-thumb', array( 'itemprop' => 'image' ) ); 			
+			}else{
+				bakes_and_cakes_get_fallback_svg( 'bakes-and-cakes-about-thumb' );
+			} ?>
 		</div>
-	    <?php } } }
-	    wp_reset_postdata();?>	
+	    <?php  } }
+	    wp_reset_postdata(); ?>	
 	</div>
-<?php } ?>
+<?php } 

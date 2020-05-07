@@ -4,7 +4,7 @@ Theme URI: https://rarathemes.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
 Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://demo.rarathemes.com/bakes-and-cakes/, documentation at https://docs.rarathemes.com/docs/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
@@ -595,7 +595,8 @@ a:active {
     text-align: left;
     width: 200px;
     padding: 5px 0;
-    display: none;
+    /*display: none;*/
+    margin-left: -99999px;
 }
 
 .main-navigation ul ul ul {
@@ -632,7 +633,8 @@ a:active {
     .main-navigation ul li:hover>ul,
     .main-navigation ul li.focus>ul,
     .main-navigation ul li.hover>ul {
-        display: block;
+        /*display: block;*/
+        margin-left: 0;
     }
 
     .main-navigation ul li:focus-within>ul {
@@ -1283,6 +1285,16 @@ ul.owl-carousel {
     overflow: hidden;
     margin: 0 0 20px;
 }
+.featured .featured-slider .img-holder svg{
+    vertical-align: top;
+    width: 100%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+}
 
 .featured .featured-slider .img-holder a:focus{
     outline-offset: -2px;
@@ -1605,12 +1617,12 @@ ul.owl-carousel {
 }
 
 
-.our-staff #staff-slider .img-holder {
+.our-staff #staff-slider .img-holder, .our-staff #staff-slider .svg-holder {
     float: left;
     width: 487px;
 }
 
-.our-staff #staff-slider .img-holder img {
+.our-staff #staff-slider .img-holder img, .our-staff #staff-slider .svg-holder svg{
     width: 100%;
     vertical-align: top;
 }
@@ -1719,7 +1731,7 @@ ul.owl-carousel {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
 }
 
-.our-staff #carousel img {
+.our-staff #carousel img, .our-staff #carousel svg {
     width: 100%;
     border-radius: 50%;
     border: 4px solid #fff;
@@ -1823,12 +1835,17 @@ ul.owl-carousel {
     left: 15px;
 }
 
+.testimonial .tabset li .svg-holder, 
 .testimonial .tabset li img {
     border-radius: 50%;
     display: inline-block;
     width: 80px;
     height: 80px;
     opacity: 0.5;
+}
+.testimonial .tabset li .svg-holder {
+    overflow: hidden;
+    opacity: 1;
 }
 
 .testimonial .tabset li .active img {
@@ -2110,10 +2127,17 @@ ul.owl-carousel {
 #crumbs {
     color: #555;
     margin: 0 0 26px;
+    padding: 0 10px;
 }
 
 #crumbs a {
     color: #f6a8c6;
+}
+#crumbs .separator{
+    margin: 0 7px;
+}
+#crumbs span:last-child .separator{
+    display: none;
 }
 
 .page-title {
@@ -3007,6 +3031,31 @@ ul.owl-carousel {
     float: right;
     margin-right: 30px;
 }
+.widget.widget_calendar .wp-calendar-nav-prev a{
+    position: absolute;
+    top: 18px;
+    left: 0;
+    text-indent: -9999px;
+    background: url(images/btn-prev-month.png) no-repeat;
+    width: 8px;
+    height: 12px;
+    float: left;
+    margin-left: 30px
+}
+.widget.widget_calendar .wp-calendar-nav-next a{
+    position: absolute;
+    top: 18px;
+    right: 0;
+    text-indent: -9999px;
+    background: url(images/btn-next-month.png) no-repeat;
+    width: 8px;
+    height: 12px;
+    float: right;
+    margin-right: 30px;
+}
+.widget.widget_calendar .calendar_wrap{
+    position: relative;
+}
 
 #secondary .widget.widget_rss .widget-title a {
     color: #555;
@@ -3883,4 +3932,9 @@ body.menu-open .overlay{
         font-size: 50px;
         line-height: 56px;
     }
+}
+
+svg.fallback-svg {
+    vertical-align: top;
+    width: 100%;
 }

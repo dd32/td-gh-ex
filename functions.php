@@ -5,11 +5,11 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Bakes_And_Cakes
- */
+*/
 
-$theme_data = wp_get_theme();
-if( ! defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) define ( 'BAKES_AND_CAKES_THEME_VERSION', $theme_data->get( 'Version' ) );
-if( ! defined( 'BAKES_AND_CAKES_THEME_NAME' ) ) define( 'BAKES_AND_CAKES_THEME_NAME', $theme_data->get( 'Name' ) );
+$bakes_and_cakes_theme_data = wp_get_theme();
+if( ! defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) define ( 'BAKES_AND_CAKES_THEME_VERSION', $bakes_and_cakes_theme_data->get( 'Version' ) );
+if( ! defined( 'BAKES_AND_CAKES_THEME_NAME' ) ) define( 'BAKES_AND_CAKES_THEME_NAME', $bakes_and_cakes_theme_data->get( 'Name' ) );
 
 if (!function_exists('bakes_and_cakes_setup')):
 /**
@@ -18,88 +18,89 @@ if (!function_exists('bakes_and_cakes_setup')):
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
- */
-	function bakes_and_cakes_setup() {
-		/*
-			 * Make theme available for translation.
-			 * Translations can be filed in the /languages/ directory.
-			 * If you're building a theme based on Bakes And Cakes, use a find and replace
-			 * to change 'bakes-and-cakes' to the name of your theme in all the template files.
-		*/
-		load_theme_textdomain('bakes-and-cakes', get_template_directory() . '/languages');
+*/
+function bakes_and_cakes_setup() {
+	/*
+			* Make theme available for translation.
+			* Translations can be filed in the /languages/ directory.
+			* If you're building a theme based on Bakes And Cakes, use a find and replace
+			* to change 'bakes-and-cakes' to the name of your theme in all the template files.
+	*/
+	load_theme_textdomain('bakes-and-cakes', get_template_directory() . '/languages');
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support('automatic-feed-links');
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support('automatic-feed-links');
 
-		/*
-			 * Let WordPress manage the document title.
-			 * By adding theme support, we declare that this theme does not use a
-			 * hard-coded <title> tag in the document head, and expect WordPress to
-			 * provide it for us.
-		*/
-		add_theme_support('title-tag');
+	/*
+			* Let WordPress manage the document title.
+			* By adding theme support, we declare that this theme does not use a
+			* hard-coded <title> tag in the document head, and expect WordPress to
+			* provide it for us.
+	*/
+	add_theme_support('title-tag');
 
-		/*
-			 * Enable support for Post Thumbnails on posts and pages.
-			 *
-			 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
-		add_theme_support('post-thumbnails');
+	/*
+			* Enable support for Post Thumbnails on posts and pages.
+			*
+			* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	*/
+	add_theme_support('post-thumbnails');
 
-	    /* Custom Logo */
-	    add_theme_support( 'custom-logo', array(
-	    	'header-text' => array( 'site-title', 'site-description' ),
-	    ) );
-    
+	/* Custom Logo */
+	add_theme_support( 'custom-logo', array(
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(array(
-			'primary' => esc_html__('Primary', 'bakes-and-cakes'),
-		));
 
-		/*
-			 * Switch default core markup for search form, comment form, and comments
-			 * to output valid HTML5.
-		*/
-		add_theme_support('html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		));
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(array(
+		'primary' => esc_html__('Primary', 'bakes-and-cakes'),
+	));
 
-		/*
-			 * Enable support for Post Formats.
-			 * See https://developer.wordpress.org/themes/functionality/post-formats/
-		*/
-		add_theme_support('post-formats', array(
-			'aside',
-			'status',
-			'video',
-			'quote',
-			'link',
-		));
+	/*
+			* Switch default core markup for search form, comment form, and comments
+			* to output valid HTML5.
+	*/
+	add_theme_support('html5', array(
+		'search-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	));
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters('bakes_and_cakes_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		)));
+	/*
+			* Enable support for Post Formats.
+			* See https://developer.wordpress.org/themes/functionality/post-formats/
+	*/
+	add_theme_support('post-formats', array(
+		'aside',
+		'status',
+		'video',
+		'quote',
+		'link',
+	));
 
-		//Custom Image Sizes
-		add_image_size('bakes-and-cakes-post-thumb', 60, 60, true);
-		add_image_size('bakes-and-cakes-about-thumb', 600, 400, true);
-		add_image_size('bakes-and-cakes-product-thumb', 235, 235, true);
-		add_image_size('bakes-and-cakes-slider', 1920, 500, true);
-		add_image_size('bakes-and-cakes-image-full', 1139, 498, true);
-		add_image_size('bakes-and-cakes-image', 750, 400, true);
-		add_image_size('bakes-and-cakes-staff-thumb', 487, 527, true);
-		add_image_size('bakes-and-cakes-blog-thumb', 280, 255, true);
-		add_image_size('bakes-and-cakes-events-thumb', 255, 255, true);
-		add_image_size('bakes-and-cakes-schema', 600, 60, true);
-	}
+	// show excerpt in page 
+	add_post_type_support( 'page', 'excerpt' );
 
+	// Set up the WordPress core custom background feature.
+	add_theme_support('custom-background', apply_filters('bakes_and_cakes_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	)));
+
+	//Custom Image Sizes
+	add_image_size('bakes-and-cakes-post-thumb', 60, 60, true);
+	add_image_size('bakes-and-cakes-about-thumb', 600, 400, true);
+	add_image_size('bakes-and-cakes-product-thumb', 235, 235, true);
+	add_image_size('bakes-and-cakes-slider', 1920, 500, true);
+	add_image_size('bakes-and-cakes-image-full', 1139, 498, true);
+	add_image_size('bakes-and-cakes-image', 750, 400, true);
+	add_image_size('bakes-and-cakes-staff-thumb', 487, 527, true);
+	add_image_size('bakes-and-cakes-blog-thumb', 280, 255, true);
+	add_image_size('bakes-and-cakes-events-thumb', 255, 255, true);
+	add_image_size('bakes-and-cakes-schema', 600, 60, true);
+}
 endif;
 add_action('after_setup_theme', 'bakes_and_cakes_setup');
 
@@ -125,18 +126,15 @@ function bakes_and_cakes_sidebar_layout(){
  */
 function bakes_and_cakes_content_width() {
 	$GLOBALS['content_width'] = apply_filters('bakes_and_cakes_content_width', 750);
-
 }
 add_action('after_setup_theme', 'bakes_and_cakes_content_width', 0);
-
 
 /**
 * Adjust content_width value according to template.
 *
 * @return void
 */
-function bakes_and_cakes_template_redirect_content_width() {
-     
+function bakes_and_cakes_template_redirect_content_width() {     
 	// Full Width in the absence of sidebar.
 	if( is_page() ){
 	   $sidebar_layout = bakes_and_cakes_sidebar_layout();
@@ -145,9 +143,7 @@ function bakes_and_cakes_template_redirect_content_width() {
 	}elseif ( ! ( is_active_sidebar( 'right-sidebar' ) ) ) {
 		$GLOBALS['content_width'] = 1170;
 	}
-
 }
-
 add_action( 'template_redirect', 'bakes_and_cakes_template_redirect_content_width' );
 
 /**
@@ -205,7 +201,6 @@ function bakes_and_cakes_widgets_init() {
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	));
-
 }
 add_action('widgets_init', 'bakes_and_cakes_widgets_init');
 
@@ -216,24 +211,20 @@ function bakes_and_cakes_scripts() {
 	// Use minified libraries if SCRIPT_DEBUG is false
     $build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
     $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	$query_args = array(
-		'family' => 'Open+Sans:400,400italic,700|Niconne',
-	);
-    wp_enqueue_style('animate', get_template_directory_uri(). '/css' . $build . '/animate' . $suffix . '.css' );
-    wp_enqueue_style('owl-carousel', get_template_directory_uri(). '/css' . $build . '/owl.carousel' . $suffix . '.css' );
-	wp_enqueue_style('bakes-and-cakes-google-fonts', add_query_arg($query_args, "//fonts.googleapis.com/css"));
-	wp_enqueue_style('bakes-and-cakes-style', get_stylesheet_uri(), array(), BAKES_AND_CAKES_THEME_VERSION );
+	
+	wp_enqueue_style( 'animate', get_template_directory_uri( ). '/css' . $build . '/animate' . $suffix . '.css' );
+    wp_enqueue_style( 'owl-carousel', get_template_directory_uri( ). '/css' . $build . '/owl.carousel' . $suffix . '.css' );
+	wp_enqueue_style( 'bakes-and-cakes-google-fonts', bakes_and_cakes_fonts_url() );
+	wp_enqueue_style( 'bakes-and-cakes-style', get_stylesheet_uri(), array(), BAKES_AND_CAKES_THEME_VERSION );
 	
 	if( bakes_and_cakes_is_woocommerce_activated() )
     wp_enqueue_style( 'bakes-and-cakes-woocommerce-style', get_template_directory_uri(). '/css' . $build . '/woocommerce' . $suffix . '.css', array('bakes-and-cakes-style'), BAKES_AND_CAKES_THEME_VERSION );
  
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true);
-    wp_enqueue_script('owl-carousel-aria', get_template_directory_uri() . '/js' . $build . '/owl.carousel.aria' . $suffix . '.js', array('owl-carousel'), '2.0.0', true);
-	wp_enqueue_script('tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array(), '20120206', true);
-	wp_enqueue_script('same-height', get_template_directory_uri() . '/js' . $build . '/sameheight' . $suffix . '.js', array(), '20120206', true);
+    wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true);
+    wp_enqueue_script( 'owlcarousel2-a11ylayer', get_template_directory_uri() . '/js' . $build . '/owlcarousel2-a11ylayer' . $suffix . '.js', array('owl-carousel'), '0.2.1', true );
 	wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
     wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
-	wp_register_script('bakes-and-cakes-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), BAKES_AND_CAKES_THEME_VERSION, true);
+	wp_register_script( 'bakes-and-cakes-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), BAKES_AND_CAKES_THEME_VERSION, true);
 	
     $slider_auto      = get_theme_mod( 'bakes_and_cakes_slider_auto', '1' );
     $slider_loop      = get_theme_mod( 'bakes_and_cakes_slider_loop', '1' );
@@ -262,8 +253,6 @@ function bakes_and_cakes_scripts() {
 }
 add_action('wp_enqueue_scripts', 'bakes_and_cakes_scripts');
 
-
-
 function bakes_and_cakes_admin_scripts() {
 	wp_enqueue_style( 'bakes-and-cakes-admin-style',get_template_directory_uri().'/inc/css/admin.css','', BAKES_AND_CAKES_THEME_VERSION ); 
 }
@@ -281,34 +270,29 @@ add_action( 'customize_controls_enqueue_scripts', 'bakes_and_cakes_customizer_js
 
 
 if ( ! function_exists( 'bakes_and_cakes_excerpt_more' ) ) :
-	/**
-	* Replaces "[...]" (appended to automatically generated excerpts) with ... * 
-	*/
-	function bakes_and_cakes_excerpt_more( $more ) {
-		return is_admin() ? $more : ' &hellip; ';
-	}
-
+/**
+* Replaces "[...]" (appended to automatically generated excerpts) with ... * 
+*/
+function bakes_and_cakes_excerpt_more( $more ) {
+	return is_admin() ? $more : ' &hellip; ';
+}
 endif;
-
 add_filter( 'excerpt_more', 'bakes_and_cakes_excerpt_more' );
 
 if ( ! function_exists( 'bakes_and_cakes_excerpt_length' ) ) :
-	/**
-	* Changes the default 55 character in excerpt 
-	*/
-	function bakes_and_cakes_excerpt_length( $length ) {
-		return is_admin() ? $length : 50;
-	}
-
+/**
+* Changes the default 55 character in excerpt 
+*/
+function bakes_and_cakes_excerpt_length( $length ) {
+	return is_admin() ? $length : 50;
+}
 endif;
-
 add_filter( 'excerpt_length', 'bakes_and_cakes_excerpt_length', 999 );
 
 /**
  * Query WooCommerce activation
  */
-if ( ! function_exists( 'bakes_and_cakes_is_woocommerce_activated' ) ) {
-	
+if ( ! function_exists( 'bakes_and_cakes_is_woocommerce_activated' ) ) {	
 	function bakes_and_cakes_is_woocommerce_activated() {
 		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
 	}

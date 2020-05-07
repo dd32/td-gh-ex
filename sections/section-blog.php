@@ -17,9 +17,9 @@ $blog_page   = get_theme_mod('bakes_and_cakes_blog_page');
         if($page_qry->have_posts()){
 		    while($page_qry->have_posts()){ $page_qry->the_post(); 
 				echo '<header class="header">';
-				  echo '<h1 class="main-title">';
+				  echo '<h2 class="main-title">';
 				    the_title();
-				  echo '</h1>';
+				  echo '</h2>';
 				    the_excerpt();
 				echo '</header>';
 		    }
@@ -38,15 +38,11 @@ $blog_page   = get_theme_mod('bakes_and_cakes_blog_page');
 			        <article class="post">
 						<?php if(has_post_thumbnail()){ ?>
 							<a href="<?php the_permalink(); ?>" class="post-thumbnail">
-								<?php the_post_thumbnail('bakes-and-cakes-blog-thumb', array( 'itemprop' => 'image' ) );?>
+								<?php the_post_thumbnail( 'bakes-and-cakes-blog-thumb', array( 'itemprop' => 'image' ) );?>
 							</a>
-						<?php } else{ ?>
-								<a href="<?php the_permalink(); ?>" class="post-thumbnail">
-									<?php echo '<img src="' . esc_url( get_template_directory_uri() . '/images/fallback-blog-thumb.png' ) . '" itemprop="image"/>'; ?>
-								</a>
-							<?php 
-							} 
-						?>
+						<?php }else{ 
+								bakes_and_cakes_get_fallback_svg( 'bakes-and-cakes-blog-thumb' );
+							} ?>
 						<div class="text-holder">
 							<header class="entry-header">
 								<span class="posted-on"><a href="<?php the_permalink(); ?>"><time><?php echo esc_html(get_the_date()); ?></time></a></span>

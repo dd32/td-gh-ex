@@ -56,28 +56,32 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
             <ul>
                 <?php 
                 while( $qry->have_posts() ){
-                    $qry->the_post();
-                ?>
+                    $qry->the_post(); ?>
                     <li>
-                        <?php if( has_post_thumbnail() && $show_thumbnail ){ ?>
+                        <?php if( $show_thumbnail ){ ?>
                             <div class="post-thumbnail">
                                 <a href="<?php the_permalink();?>" class="post-thumbnail">
-                                    <?php the_post_thumbnail( 'bakes-and-cakes-post-thumb', array( 'itemprop' => 'image' ) );?>
+                                    <?php 
+                                    if( has_post_thumbnail() ){
+                                        the_post_thumbnail( 'bakes-and-cakes-post-thumb', array( 'itemprop' => 'image' ) ); 
+                                    }else{
+                                        bakes_and_cakes_get_fallback_svg( 'bakes-and-cakes-post-thumb' );
+                                    } ?>
                                 </a>
                             </div>
-                        <?php }?>
+                        <?php } ?>
                         <header class="entry-header">
-                                    <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-                                    <div class="entry-meta">
-                                    <?php 
-                                        if($show_postdate){  ?>
-                                            <span class="posted-on"><a href="<?php the_permalink(); ?>">
-                                                 <time datetime="<?php echo esc_html( get_the_date('Y-m-d') ); ?>">
-                                                  <?php echo esc_html( get_the_date('Y/m/d') ); ?></time></a>
-                                            </span>
-                                    <?php } ?>
-                                    </div>
-                         </header>                       
+                            <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+                            <div class="entry-meta">
+                            <?php 
+                                if($show_postdate){  ?>
+                                    <span class="posted-on"><a href="<?php the_permalink(); ?>">
+                                         <time datetime="<?php echo esc_attr( get_the_date('Y-m-d') ); ?>">
+                                          <?php echo esc_html( get_the_date('Y/m/d') ); ?></time></a>
+                                    </span>
+                            <?php } ?>
+                            </div>
+                        </header>                       
                     </li>        
                 <?php    
                 }

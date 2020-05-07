@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2019 Rara Theme
+# <!=Copyright (C) 2020 Rara Theme
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Bakes And Cakes 1.2.1\n"
+"Project-Id-Version: Bakes And Cakes 1.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bakes-and-cakes\n"
-"POT-Creation-Date: 2019-11-18 10:15:58+00:00\n"
+"POT-Creation-Date: 2020-05-07 07:41:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -41,23 +41,23 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: comments.php:31
+#: comments.php:28
 msgid "Comments"
 msgstr ""
 
-#: comments.php:50
+#: comments.php:42
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:53
+#: comments.php:45
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:46
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:67
+#: comments.php:59
 msgid "Comments are closed."
 msgstr ""
 
@@ -69,31 +69,31 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:156
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:166
 msgid "Google Map Widget"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:168
 msgid "Widget for Google map section( Use Text widget for Google Map )."
 msgstr ""
 
-#: functions.php:180
+#: functions.php:176
 msgid "Footer First"
 msgstr ""
 
-#: functions.php:190
+#: functions.php:186
 msgid "Footer Second"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:188
 msgid "Here you can use text widget to display Contact Form."
 msgstr ""
 
-#: functions.php:200
+#: functions.php:196
 msgid "Footer Third"
 msgstr ""
 
@@ -101,39 +101,65 @@ msgstr ""
 msgid "Skip to content (Press Enter)"
 msgstr ""
 
-#: inc/custom-functions.php:72 inc/customizer.php:150
+#: inc/custom-functions.php:71 inc/customizer.php:150
 msgid ">"
 msgstr ""
 
-#: inc/custom-functions.php:73 inc/customizer.php:132
+#: inc/custom-functions.php:72 inc/customizer.php:132
 msgid "Home"
 msgstr ""
 
-#: inc/custom-functions.php:95
-msgid "Search Results for \""
-msgstr ""
-
-#: inc/custom-functions.php:95
-msgid "\""
-msgstr ""
-
-#: inc/custom-functions.php:208
-msgid "Error 404"
-msgstr ""
-
-#: inc/custom-functions.php:230 inc/customizer.php:1115
-msgid "Continue Reading"
-msgstr ""
-
-#: inc/custom-functions.php:411
-msgid "&copy; "
-msgstr ""
-
-#: inc/custom-functions.php:412
+#: inc/custom-functions.php:119 inc/custom-functions.php:121
+#: inc/custom-functions.php:127 inc/custom-functions.php:132
+#: inc/custom-functions.php:490
 msgid "Y"
 msgstr ""
 
-#: inc/custom-functions.php:417
+#: inc/custom-functions.php:121
+msgid "m"
+msgstr ""
+
+#: inc/custom-functions.php:121 inc/custom-functions.php:129
+msgid "F"
+msgstr ""
+
+#: inc/custom-functions.php:123
+msgid "d"
+msgstr ""
+
+#: inc/custom-functions.php:232
+msgid "Search Results for \""
+msgstr ""
+
+#: inc/custom-functions.php:232
+msgid "\""
+msgstr ""
+
+#: inc/custom-functions.php:276
+msgid "Page %s"
+msgstr ""
+
+#: inc/custom-functions.php:293
+msgid "404 Error - Page not Found"
+msgstr ""
+
+#: inc/custom-functions.php:295
+msgid " (Page"
+msgstr ""
+
+#: inc/custom-functions.php:295
+msgid ")"
+msgstr ""
+
+#: inc/custom-functions.php:308 inc/customizer.php:1115
+msgid "Continue Reading"
+msgstr ""
+
+#: inc/custom-functions.php:489
+msgid "&copy; "
+msgstr ""
+
+#: inc/custom-functions.php:495
 msgid "Bakes and Cakes | Developed By"
 msgstr ""
 
@@ -141,45 +167,53 @@ msgstr ""
 msgid "Rara Theme"
 msgstr ""
 
-#: inc/custom-functions.php:421
+#: inc/custom-functions.php:499
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:421
+#: inc/custom-functions.php:499
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/custom-functions.php:511
+#: inc/custom-functions.php:573
 msgid "Name*"
 msgstr ""
 
-#: inc/custom-functions.php:514
+#: inc/custom-functions.php:573 inc/custom-functions.php:577
+msgid "Name"
+msgstr ""
+
+#: inc/custom-functions.php:574
 msgid "Email*"
 msgstr ""
 
-#: inc/custom-functions.php:517
+#: inc/custom-functions.php:574 inc/custom-functions.php:579
+msgid "Email"
+msgstr ""
+
+#: inc/custom-functions.php:581
 msgid "Website"
 msgstr ""
 
-#: inc/custom-functions.php:534
+#: inc/custom-functions.php:594
 msgid "Comment"
 msgstr ""
 
-#: inc/custom-functions.php:669
+#: inc/custom-functions.php:710
 msgid "Congratulations!"
 msgstr ""
 
-#: inc/custom-functions.php:670
+#: inc/custom-functions.php:711
 msgid ""
 "%1$s is now installed and ready to use. Click below to see theme "
 "documentation, plugins to install and other details to get started."
 msgstr ""
 
-#: inc/custom-functions.php:671
+#: inc/custom-functions.php:712
 msgid "Go to the getting started."
 msgstr ""
 
-#: inc/custom-functions.php:672
+#: inc/custom-functions.php:713
 msgid "Dismiss"
 msgstr ""
 
@@ -805,11 +839,11 @@ msgstr ""
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/metabox.php:23
+#: inc/metabox.php:24
 msgid "Right sidebar (default)"
 msgstr ""
 
-#: inc/metabox.php:28
+#: inc/metabox.php:29
 msgid "No sidebar"
 msgstr ""
 
@@ -1189,25 +1223,25 @@ msgstr ""
 msgid "A Popular Post Widget"
 msgstr ""
 
-#: inc/widget-popular-post.php:41 inc/widget-popular-post.php:97
-#: inc/widget-popular-post.php:140
+#: inc/widget-popular-post.php:41 inc/widget-popular-post.php:102
+#: inc/widget-popular-post.php:145
 msgid "Most Viewed"
 msgstr ""
 
-#: inc/widget-popular-post.php:105 inc/widget-recent-post.php:110
+#: inc/widget-popular-post.php:110 inc/widget-recent-post.php:114
 #: inc/widget-social-links.php:120
 msgid "Title"
 msgstr ""
 
-#: inc/widget-popular-post.php:110 inc/widget-recent-post.php:115
+#: inc/widget-popular-post.php:115 inc/widget-recent-post.php:119
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/widget-popular-post.php:116 inc/widget-recent-post.php:121
+#: inc/widget-popular-post.php:121 inc/widget-recent-post.php:125
 msgid "Show Post Thumbnail"
 msgstr ""
 
-#: inc/widget-popular-post.php:121 inc/widget-recent-post.php:126
+#: inc/widget-popular-post.php:126 inc/widget-recent-post.php:130
 msgid "Show Post Date"
 msgstr ""
 
@@ -1219,8 +1253,8 @@ msgstr ""
 msgid "A Recent Post Widget"
 msgstr ""
 
-#: inc/widget-recent-post.php:41 inc/widget-recent-post.php:102
-#: inc/widget-recent-post.php:144
+#: inc/widget-recent-post.php:41 inc/widget-recent-post.php:106
+#: inc/widget-recent-post.php:148
 msgid "Recent Posts"
 msgstr ""
 
@@ -1281,11 +1315,11 @@ msgstr ""
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/woocommerce-functions.php:44
+#: inc/woocommerce-functions.php:45
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/woocommerce-functions.php:46
+#: inc/woocommerce-functions.php:47
 msgid "Sidebar displaying only in woocommerce pages."
 msgstr ""
 
@@ -1359,6 +1393,22 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Home Page"
+msgstr ""
+
+#: inc/template-tags.php:130
+#. translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-tags.php:136
+#. translators: If there are characters in your language that are not supported
+#. by Niconne, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Niconne font: on or off"
+msgid "on"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:1121
