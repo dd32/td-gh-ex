@@ -40,7 +40,7 @@ input[type="submit"]:focus {
     color:#01AEFD;
 }
 
-.main-navigation ul li:focus > ul {
+.main-navigation ul li:focus-within > ul {
 	display: block;
 }
 

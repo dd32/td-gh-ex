@@ -2,7 +2,9 @@
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 AccessPress Lite WordPress Theme, Copyright 2014 http://wordpresssuperexpress.com
 AccessPress Lite is distributed under the terms of the GNU GPL v3
-
+Tested up to: 5.4.1
+Stable tag: 2.88
+Contributors: Access Keys
 
 Install Steps:
 --------------
@@ -65,6 +67,13 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+
+= 2.88 =
+** Added dropdown icon for submenus
+** Minor CSS improvements
+
+= 2.87 =
+** Minor Bugs Fixed
 
 = 2.86 =
 ** Added MetaData Option For Single Post

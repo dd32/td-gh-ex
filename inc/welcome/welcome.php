@@ -33,8 +33,7 @@ if(!class_exists('Accesspress_Lite_Welcome')) :
 				/** Tabs **/
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'accesspress-lite'),
-					'actions_required' => esc_html__('Required Plugins', 'accesspress-lite'),
-					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-lite'),
+					'actions_required' => esc_html__('Recommended Plugins', 'accesspress-lite'),
 					'demo_import' => esc_html__('Import Demo', 'accesspress-lite'),
 					'free_vs_pro' => esc_html__('Free Vs Pro', 'accesspress-lite'),
 					'changelog' => esc_html__('ChangeLog', 'accesspress-lite'),

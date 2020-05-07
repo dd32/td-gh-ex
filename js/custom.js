@@ -15,7 +15,7 @@ jQuery(function($){
   });
   jQuery('.commentmetadata').after('<div class="clear"></div>');
 
-  jQuery('.menu-toggle').click(function(){
+  jQuery('body').on('click keypress','.menu-toggle',function(){
     jQuery('#site-navigation .menu').slideToggle('slow');
   });
     

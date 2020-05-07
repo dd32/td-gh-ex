@@ -43,7 +43,7 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 		
 		<nav id="site-navigation" class="main-navigation <?php do_action( 'accesspresslite_menu_alignment' ); ?>">
 			<div class="ak-container">
-				<div class="menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-lite' ); ?></div>
+				<div class="menu-toggle" tabindex="0"><?php esc_html_e( 'Menu', 'accesspress-lite' ); ?></div>
 
 				<?php wp_nav_menu( array( 
 				'theme_location' => 'primary' ) ); ?>

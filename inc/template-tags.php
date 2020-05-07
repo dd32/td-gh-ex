@@ -139,3 +139,23 @@ function accesspresslite_category_transient_flusher() {
 }
 add_action( 'edit_category', 'accesspresslite_category_transient_flusher' );
 add_action( 'save_post',     'accesspresslite_category_transient_flusher' );
+
+
+function accesspresslite_add_down_icon_to_main_menu( $args, $item, $depth ) {
+
+        $args->after  = '';
+
+        // Add a toggle to items with children.
+        if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+
+            // Add the sub menu toggle.
+            $args->after .= '<span class="menu-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>';
+
+        }
+
+
+    return $args;
+
+}
+
+add_filter( 'nav_menu_item_args', 'accesspresslite_add_down_icon_to_main_menu', 10, 3 );
