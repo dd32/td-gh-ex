@@ -16,7 +16,7 @@
     ?>
   </div>
   <div class="new-text">
-    <?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_post_excerpt_number','30')))); ?>
+    <?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_post_excerpt_number','30')))); ?> <?php echo esc_html( get_theme_mod('automobile_car_dealer_post_discription_suffix','[...]') ); ?>
   </div> 
   <?php if( get_theme_mod('automobile_car_dealer_button_text','View More') != ''){ ?>
     <div class="postbtn">

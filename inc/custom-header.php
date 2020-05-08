@@ -30,12 +30,12 @@ add_action( 'wp_enqueue_scripts', 'automobile_car_dealer_header_style' );
 function automobile_car_dealer_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$automobile_car_dealer_custom_css = "
         #header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
-	   	wp_add_inline_style( 'automobile-car-dealer-basic-style', $custom_css );
+	   	wp_add_inline_style( 'automobile-car-dealer-basic-style', $automobile_car_dealer_custom_css );
 	endif;
 }
 endif; // automobile_car_dealer_header_style

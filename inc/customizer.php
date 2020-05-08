@@ -59,7 +59,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'automobile-car-dealer' ),
 	) );
 
-	$font_array = array(
+	$automobile_car_dealer_font_array = array(
 		''                       => 'No Fonts',
 		'Abril Fatface'          => 'Abril Fatface',
 		'Acme'                   => 'Acme',
@@ -180,7 +180,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('Paragraph Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	$wp_customize->add_setting('automobile_car_dealer_paragraph_font_size', array(
@@ -215,7 +215,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('"a" Tag Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -239,7 +239,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('"li" Tag Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -263,7 +263,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('H1 Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -299,7 +299,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('h2 Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -335,7 +335,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('h3 Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -371,7 +371,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('h4 Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -407,7 +407,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('h5 Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -443,7 +443,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section' => 'automobile_car_dealer_typography',
 		'label'   => __('h6 Fonts', 'automobile-car-dealer'),
 		'type'    => 'select',
-		'choices' => $font_array,
+		'choices' => $automobile_car_dealer_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -474,6 +474,38 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
        'label' => __('Show / Hide Preloader','automobile-car-dealer'),
        'section' => 'automobile_car_dealer_option'
     ));
+
+    $wp_customize->add_setting('automobile_car_dealer_preloader_type',array(
+        'default' => __('First Preloader Type','automobile-car-dealer'),
+        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'
+	));
+	$wp_customize->add_control('automobile_car_dealer_preloader_type',array(
+        'type' => 'radio',
+        'label' => __('Preloader Types','automobile-car-dealer'),
+        'section' => 'automobile_car_dealer_option',
+        'choices' => array(
+            'First Preloader Type' => __('First Preloader Type','automobile-car-dealer'),
+            'Second Preloader Type' => __('Second Preloader Type','automobile-car-dealer'),
+        ),
+	) );
+
+	$wp_customize->add_setting('automobile_car_dealer_preloader_bg_color_option', array(
+		'default'           => '#000',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'automobile_car_dealer_preloader_bg_color_option', array(
+		'label'    => __('Preloader Background Color', 'automobile-car-dealer'),
+		'section'  => 'automobile_car_dealer_option',
+	)));
+
+	$wp_customize->add_setting('automobile_car_dealer_preloader_icon_color_option', array(
+		'default'           => '#fff',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'automobile_car_dealer_preloader_icon_color_option', array(
+		'label'    => __('Preloader Icon Color', 'automobile-car-dealer'),
+		'section'  => 'automobile_car_dealer_option',
+	)));
 
 	$wp_customize->add_setting('automobile_car_dealer_width_layout_options',array(
         'default' => __('Default','automobile-car-dealer'),
@@ -618,6 +650,17 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$wp_customize->add_setting( 'automobile_car_dealer_post_discription_suffix', array(
+		'default'   => __('[...]','automobile-car-dealer'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'automobile_car_dealer_post_discription_suffix', array(
+		'label'       => esc_html__( 'Post Excerpt Suffix','automobile-car-dealer' ),
+		'section'     => 'automobile_car_dealer_post_settings',
+		'type'        => 'text',
+		'settings'    => 'automobile_car_dealer_post_discription_suffix',
+	) );
+
 	$wp_customize->add_setting('automobile_car_dealer_button_text',array(
 		'default'=> __('VIEW MORE','automobile-car-dealer'),
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -749,6 +792,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting( 'automobile_car_dealer_sticky_header',array(
+		'default'	=> false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('automobile_car_dealer_sticky_header',array(
@@ -756,6 +800,20 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
         'label' => __( 'Enable / Disable Sticky Header','automobile-car-dealer' ),
         'section' => 'automobile_car_dealer_contact'
     ));
+
+    $wp_customize->add_setting('automobile_car_dealer_menu_font_size_option',array(
+		'default'=> 12,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control(new automobile_car_dealer_Custom_Control( $wp_customize,'automobile_car_dealer_menu_font_size_option',array(
+		'label'	=> __('Menu Font Size ','automobile-car-dealer'),
+		'section'=> 'automobile_car_dealer_contact',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+	)));
 
     $wp_customize->add_setting('automobile_car_dealer_email_icon',array(
 		'default'	=> 'fas fa-envelope',
@@ -1247,7 +1305,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 
 	//404 Page Setting
 	$wp_customize->add_section('automobile_car_dealer_page_not_found',array(
-		'title'	=> __('404 Page Not Found','automobile-car-dealer'),
+		'title'	=> __('404 Page Not Found / No Result','automobile-car-dealer'),
 		'panel' => 'automobile_car_dealer_panel_id',
 	));	
 
@@ -1277,6 +1335,28 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control('automobile_car_dealer_page_not_found_button',array(
 		'label'	=> __('404 Button','automobile-car-dealer'),
+		'section'=> 'automobile_car_dealer_page_not_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('automobile_car_dealer_no_search_result_heading',array(
+		'default'=> __('Nothing Found','automobile-car-dealer'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automobile_car_dealer_no_search_result_heading',array(
+		'label'	=> __('No Search Results Heading','automobile-car-dealer'),
+		'description'=>__('The search page heading display when no results are found.','automobile-car-dealer'),
+		'section'=> 'automobile_car_dealer_page_not_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('automobile_car_dealer_no_search_result_text',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','automobile-car-dealer'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automobile_car_dealer_no_search_result_text',array(
+		'label'	=> __('No Search Results Text','automobile-car-dealer'),
+		'description'=>__('The search page text display when no results are found.','automobile-car-dealer'),
 		'section'=> 'automobile_car_dealer_page_not_found',
 		'type'=> 'text'
 	));
