@@ -2,13 +2,13 @@
 
 Theme Name: Semper Fi Lite
 Contributors: Schwarttzy
-Version: 113
+Version: 114
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Stable tag: 113
+Stable tag: 114
 Tags: blog, custom-colors, custom-logo, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, portfolio, theme-options, threaded-comments, translation-ready
 Text Domain: semper-fi-lite
 
@@ -83,8 +83,17 @@ to represent the company, product, or service to which they refer.**
 
 == Changelog ==
 
+= 114 =
+* Fixed issue where click the customizer icon on the first square box would open up the 404 video tab
+
 = 113 =
 * Minor adjustmen for cell phone when using keyboard accessibility, outline got cut off
+* In customizer and issue with the menu not floating properly and an accident with absolute positioning happened
+* Fixed customizer option that never got updated to the newer customizer code
+* Fixed an issue where the customizer would display
+* excerpt_length, excerpt_more no longer target admin section, only front page
+* removed some code that was commented out
+* Author URI changed to the correct link
 
 = 112 =
 * Had a second Text domain in style.css
@@ -162,6 +171,12 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 114 =
+* Fixed issue in customizer linking
+
+= 113 =
+* Improved experience in Customizer, fixed some code issues, and updated some information
 
 = 112 =
 * Worked to improve keyboard accessibility

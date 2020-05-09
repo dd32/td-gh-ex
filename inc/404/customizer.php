@@ -13,7 +13,7 @@ $semper_fi_lite_404_customizer_options_array = array(
         'priority'          => 9,
         'section_title'     => __('404 Error', 'semper-fi-lite'),
         'section_priority'  => 9,
-        'selector'          => 'article#square-boxes .square-~ h3',
+        'selector'          => '#title-image-content.404error .header-text',
         'type'              => 'video', ),
 
 

@@ -1,4 +1,4 @@
-<article id="title-image-content" <?php post_class(); ?>>
+<article id="title-image-content" class="404error" <?php post_class(); ?>>
             
         <header id="title-and-image">
             
