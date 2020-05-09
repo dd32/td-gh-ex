@@ -9,7 +9,7 @@ $arilewp_menu_container_size = get_theme_mod('arilewp_menu_container_size', 'con
 				
 					<div class="align-self-center">	
 						<?php arilewp_header_logo(); ?>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation','arilewp'); ?>">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 					</div>
