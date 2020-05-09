@@ -1,5 +1,5 @@
 <?php if ( absint ( get_theme_mod( 'social_icon_display_1' , true ) ) ) : ?>
-<?php if ( is_customize_preview() ) echo '<div class="customizer"></span>'; ?>
+<?php if ( is_customize_preview() ) echo '<div class="customizer"></div>'; ?>
 
                 <ul class="social">
             

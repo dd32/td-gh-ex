@@ -65,6 +65,8 @@ main#the-article > div.wp-block-archives,
 main#the-article > div.wp-block-columns,
 main#the-article > div.wp-block-button,
 main#the-article > div.wp-block-file,
+main#the-article > div.jetpack-likes-widget-wrapper,
+main#the-article > div.sharedaddy,
 main#the-article > div.video-player,
 main#the-article > form,
 main#the-article > div > form,
@@ -139,6 +141,14 @@ main#the-article a.post-edit-link {
 
 img.microdata-publisher-logo {
     display: none;
+}
+
+main#the-article div.sharedaddy h3.sd-title {
+    display: none;
+}
+
+main#the-article div.sd-sharing-enabled {
+    padding-top: 3em;
 }
 
 main#the-article .woocommerce ul.wc-item-meta {

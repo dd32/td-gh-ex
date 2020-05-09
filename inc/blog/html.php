@@ -25,15 +25,14 @@ $semper_fi_lite_blog_wp_query = new WP_Query( array(
 
 if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
 
-    if ( ( absint ( get_theme_mod( 'square_boxes_enable_1' , false ) ) 
-        && ( absint ( get_theme_mod( 'store_front_enable_1' , false ) ) || absint ( get_theme_mod( 'woocommerce_store_front_enable_1' , false ) ) ) ) || ( is_front_page() && is_page() ) ) : ?>
+    if  ( is_home() || is_page() )  { ?>
 
         <header id="blog-title-and-image" style="background-image: url('<?php semper_fi_lite_image( 'blog_background_img_1' , '/inc/blog/images/Schwarttzy-Australia-Noosa-Beach-1920x1080.jpg' , 1920 , 1080 ); ?>');">
 
             <h2 class='header-text' itemprop="headline"><?php echo esc_attr( get_theme_mod( 'blog_title_text_1' , __( 'Blog' , 'semper-fi-lite' ) ) ); ?></h2>
-            <?php if ( is_customize_preview() ) echo '<div class="customizer-title-image"></div><div class="customizer-title-image-2"></div><div class="customizer-title-image-3"></div>'; ?>
+            <?php if ( is_customize_preview() ) echo '<div class="customizer-title-image"></div><div class="customizer-title-image-2"></div>'; ?>
 
-        </header><?php endif; ?>
+        </header><?php } ?>
 
         <section id="the-posts"><?php
 
@@ -45,7 +44,7 @@ if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
 
                 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/><?php
 
-                $semper_fi_lite_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), '850x478' );
+                $semper_fi_lite_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'semper_fi_lite_850x478' );
 
                 if ( !empty ( $semper_fi_lite_featured_image_data ) ) : ?>
 
@@ -54,7 +53,7 @@ if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
 
                     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 
-                        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( '850x478', array( 'itemprop' => 'image' ) ); ?></a>
+                        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'semper_fi_lite_850x478', array( 'itemprop' => 'image' ) ); ?></a>
 
                         <meta itemprop="url" content="<?php echo esc_url( $semper_fi_lite_featured_image_data[0] ); ?>">
 

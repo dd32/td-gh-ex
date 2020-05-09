@@ -39,23 +39,23 @@ $semper_fi_lite_navigation_customizer_options_array = array(
     'nav_title_size' => array(
         'default_options'  => array(
             1                   => '2.2',),
-        'css'               => '    nav#display-menu h1 { font-size: $em',
-        'stylesheet_handle' => 'semper_fi_lite-navigation',
-        'label'             => __('Title Font Size', 'semper-fi-lite'),
         'description'       => array(
             1                   => '', ),
-        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
+        'input_attrs'       => array(
+            'stylesheet_handle' => 'semper_fi_lite-navigation',
+            'css'               => "    nav#display-menu h1 { font-size: $", ),
+        'label'             => __('Title Font Size', 'semper-fi-lite'),
         'panel_priority'    => 1,
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'priority'          => 9,
-        'section_title'     => __('Navigation', 'semper-fi-lite'),
         'section_priority'  => 9,
+        'section_title'     => __('Navigation', 'semper-fi-lite'),
         'selector'          => 'nav#display-menu h1',
-        'type'              => 'range',
         'high'              => '12.00',
         'low'               => '0.00',
         'step'              => '.05',
-        'units'             => 'em',
-        'type'              => 'range'),
+        'type'              => 'range',
+        'units'             => 'em', ),
 
 
 );

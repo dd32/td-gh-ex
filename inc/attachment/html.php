@@ -19,7 +19,7 @@
                 $semper_fi_lite_image_sizes = get_intermediate_image_sizes();
                 array_unshift( $semper_fi_lite_image_sizes, 'full' );
                 foreach( $semper_fi_lite_image_sizes as $semper_fi_lite_image_size ) {
-                    if ( ( $semper_fi_lite_image_size == '1920x1080' ) || ( $semper_fi_lite_image_size == '850x478' ) || ( $semper_fi_lite_image_size == __( 'small' , 'semper-fi-lite' ) ) || ( $semper_fi_lite_image_size == __( 'thumbnail' , 'semper-fi-lite' ) ) ) {
+                    if ( ( $semper_fi_lite_image_size == 'semper_fi_lite_1920x1080' ) || ( $semper_fi_lite_image_size == 'semper_fi_lite_850x478' ) || ( $semper_fi_lite_image_size == __( 'small' , 'semper-fi-lite' ) ) || ( $semper_fi_lite_image_size == __( 'thumbnail' , 'semper-fi-lite' ) ) ) {
                     $semper_fi_lite_image = wp_get_attachment_image_src( get_the_ID(), $semper_fi_lite_image_size );
                     $semper_fi_lite_name = $semper_fi_lite_image_size . ' (' . $semper_fi_lite_image[1] . 'x' . $semper_fi_lite_image[2] . ')';
                     $semper_fi_lite_images[] = '<a href="' . $semper_fi_lite_image[0] . '">' . ucfirst(strtolower($semper_fi_lite_name)) . '</a>';}}

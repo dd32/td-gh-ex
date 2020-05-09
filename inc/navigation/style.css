@@ -224,6 +224,7 @@ nav#display-menu > ul:only-child {
 
 nav#display-menu ul.navigation {
     background: #ffffff;
+    clear: both;
     display: grid;
 }
 

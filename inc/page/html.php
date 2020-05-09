@@ -8,17 +8,17 @@ if ( !is_paged() ) : while ( have_posts() ) : the_post(); ?>
             
             <header id="title-and-image">
             
-            <?php if (is_customize_preview()) echo '<div class="customizer-title-image"></div><div class="customizer-title-image-2"></div><div class="customizer-title-image-3"></div>'; ?>
+            <?php if ( is_customize_preview() ) echo '<div class="customizer-title-image"></div>'; ?>
 
 <?php if ( has_post_thumbnail() ) : ?>
                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 
-                    <?php the_post_thumbnail('1920x1080', array( 'class' => 'featured_image', 'itemprop' => 'url')); ?>
+                    <?php the_post_thumbnail('semper_fi_lite_1920x1080', array( 'class' => 'featured_image', 'itemprop' => 'url')); ?>
 
 
-                    <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url( '1920x1080' ) ); ?>">
+                    <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url( 'semper_fi_lite_1920x1080' ) ); ?>">
 
-                    <meta itemprop="width" content="<?php $semper_fi_lite_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), '850x478' ); $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[1]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
+                    <meta itemprop="width" content="<?php $semper_fi_lite_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'semper_fi_lite_850x478' ); $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[1]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
 
                     <meta itemprop="height" content="<?php $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[2]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
                     

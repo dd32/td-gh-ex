@@ -10,7 +10,7 @@
 
 <?php if ( has_post_thumbnail() ) : ?>
 
-                <?php the_post_thumbnail( '1920x1080' , array( 'class' => 'featured_image', 'itemprop' => 'image' ) ); ?>
+                <?php the_post_thumbnail( 'semper_fi_lite_1920x1080' , array( 'class' => 'featured_image', 'itemprop' => 'image' ) ); ?>
 
 <?php else :?>
         <img src="<?php semper_fi_lite_image( 'default_header_img' , 'images/semper-fi-lite-top-of-world-H3-hummer-1920x1080.jpg' , 1920 , 1080 ); ?>" class="featured_image"  itemprop="image" />

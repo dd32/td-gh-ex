@@ -7,6 +7,7 @@ header#blog-title-and-image {
     color: #eeeeee;
     height: 35em;
     overflow: hidden;
+    pointer-events: none;
     position: relative;
     text-shadow: .05em -.05em .05em #2c2e32;
 }
@@ -123,6 +124,7 @@ header h2.header-text span.woo-commerce-product-price span:after {
 header#title-and-image .customizer-title-image,
 header#blog-title-and-image .customizer-title-image {
     left: 4em;
+    max-width: 12em;
     position: absolute;
     top: 4em;
     z-index: 10;
@@ -131,6 +133,7 @@ header#blog-title-and-image .customizer-title-image {
 header#title-and-image .customizer-title-image-2,
 header#blog-title-and-image .customizer-title-image-2 {
     left: 4em;
+    max-width: 12em;
     position: absolute;
     top: 8em;
     z-index: 10;
@@ -138,9 +141,13 @@ header#blog-title-and-image .customizer-title-image-2 {
 
 header#title-and-image .customizer-title-image-3,
 header#blog-title-and-image .customizer-title-image-3 {
+    background: rgba(0,0,0,.6);
     left: 4em;
+    max-width: 20em;
+    padding: 1em;
     position: absolute;
     top: 12em;
+    text-align: justify;
     z-index: 10;
 }
 

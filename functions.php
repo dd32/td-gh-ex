@@ -5,85 +5,90 @@ if ( !defined('ABSPATH')) exit; ?><?php
 
 // Ladies, Gentalmen, boys and girls let's start our engines
 add_action( 'after_setup_theme' , 'semper_fi_lite_setup_theme' );
-
-if ( !function_exists( 'semper_fi_lite_setup_theme' ) ):
-
 function semper_fi_lite_setup_theme() {
-			
-// Add Callback for Custom TinyMCE editor stylesheets.
-//add_editor_style( $stylesheet = 'style.css' );
-    
-// Content Width is such dated idea
-if ( ! isset( $content_width ) ) $content_width = 1920;
 
-// This feature enables post and comment RSS feed links to head
-add_theme_support( 'automatic-feed-links' );
+    // Content Width is such dated idea
+    if ( ! isset( $content_width ) ) $content_width = 1920;
 
-// This feature enables custom-menus support for a theme
-register_nav_menus( array(
-    'touch_menu'    => __( 'Touch Menu' , 'semper-fi-lite' ),
-    'content_menu'  => __( 'Menu Bar Below Title' , 'semper-fi-lite' ) ) );
 
-/* 
-*   This enables featured image on posts, pages, and customizer.
-*   While I would like to name semper_fi_lite-300x300, without it I can't
-*   select the correct image size and would be forced to use whatever
-*   the user uploads, so if the image the user uploads is a 2mb 4k
-*   photo that what everone sees, so in the interest of not killing
-*   data this the solution I came up with. I would use starter content
-*   but if the theme isn't a fresh install things tend to brake down.
-*/
-add_theme_support( 'post-thumbnails' );
-add_image_size( '24x24' , 24 , 24 , true );
-add_image_size( '600x60' , 600 , 60 , true );
-add_image_size( '600x60' , 350 , 100 , true );
-add_image_size( '100x100' , 100 , 100 , true );
-add_image_size( '150x150' , 150 , 150 , true );
-add_image_size( '300x300' , 300 , 300 , true );
-add_image_size( '500x500' , 500 , 500 , true );
-add_image_size( '576x324' , 570 , 324 , true );
-add_image_size( '850x478' , 850 , 478 , true );
-add_image_size( '1920x450' , 1920 , 450 , false );
-add_image_size( '1920x1080' , 1920 , 1080 , false );
+    // This feature enables custom-menus support for a theme
+    register_nav_menus( array(
+        'touch_menu'    => __( 'Touch Menu' , 'semper-fi-lite' ),
+        'content_menu'  => __( 'Menu Bar Below Title' , 'semper-fi-lite' ) ) );
+
+
+    // The Theme Supports Stuff
+    add_theme_support( 'automatic-feed-links' );
+
+
+    // This feature enables Custom_Backgrounds support for a theme.
+    add_theme_support( 'custom-background', array(
+        'default-attachment'    => 'fixed',     // 'scroll', 'fixed'
+        'default-image'         => get_template_directory_uri() . '/images/semper-fi-lite-top-of-world-H3-hummer-1920x1080.jpg',
+        'default-position-x'    => 'center',    // 'left', 'center', 'right'
+        'default-position-y'    => 'center',    // 'top', 'center', 'bottom'
+        'default-size'          => 'cover',     // 'auto', 'contain', 'cover'
+        'default-color'         => '#333333', ) , );
+
+
+    // This feature enables Selective Refresh for Widgets being managed within the Customizer.
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
+
+    // Themes can disable the ability to set custom font sizes with the following code
+    add_theme_support('disable-custom-font-sizes');
+
+
+    // This feature allows the use of HTML5 markup for the search forms, comment forms, comment lists, gallery, and caption.
+    add_theme_support( 'html5', array(
+        'caption',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'script',
+        'search-form',
+        'style',
+        'widgets', ) , );
+
+
+    // This feature enables Post Thumbnails support for a theme.
+    add_theme_support( 'post-thumbnails' );
+
+
+    // This feature enables plugins and themes to manage the document title tag. This should be used in place of wp_title() function.
+    add_theme_support( 'title-tag' );
+
+
+    // All the image sizes need for the theme
+    add_image_size( 'semper_fi_lite_24x24' , 24 , 24 , true );
+    add_image_size( 'semper_fi_lite_600x60' , 600 , 60 , true );
+    add_image_size( 'semper_fi_lite_350x100' , 350 , 100 , true );
+    add_image_size( 'semper_fi_lite_100x100' , 100 , 100 , true );
+    add_image_size( 'semper_fi_lite_150x150' , 150 , 150 , true );
+    add_image_size( 'semper_fi_lite_300x300' , 300 , 300 , true );
+    add_image_size( 'semper_fi_lite_500x500' , 500 , 500 , true );
+    add_image_size( 'semper_fi_lite_576x324' , 570 , 324 , true );
+    add_image_size( 'semper_fi_lite_850x478' , 850 , 478 , true );
+    add_image_size( 'semper_fi_lite_1920x450' , 1920 , 450 , false );
+    add_image_size( 'semper_fi_lite_1920x1080' , 1920 , 1080 , false );
+
+}
+
 
 // Add Custom Sizes to options
 add_filter( 'image_size_names_choose', 'semper_fi_lite_custom_image_sizes' );
-function semper_fi_lite_custom_image_sizes( $sizes ) {
-    
-    return array_merge( $sizes, array(
-        '300x300'   => __( 'Semper Fi 300 By 300', 'semper-fi-lite' ),
-        '570x1080'  => __( 'Semper Fi 570 By 324', 'semper-fi-lite' ),
-        '850x478'   => __( 'Semper Fi 850 By 478', 'semper-fi-lite' ),
-        '1920x450'  => __( 'Semper Fi 1920 By 450', 'semper-fi-lite' ),
-        '1920x1080' => __( 'Semper Fi 1920 By 1080', 'semper-fi-lite' ), ) );
-    
+function semper_fi_lite_custom_image_sizes( $size_names ) {
+
+    $new_sizes = array(
+        'semper_fi_lite_300x300'   => __( 'Semper Fi 300 By 300', 'semper-fi-lite' ),
+        'semper_fi_lite_570x1080'  => __( 'Semper Fi 570 By 324', 'semper-fi-lite' ),
+        'semper_fi_lite_850x478'   => __( 'Semper Fi 850 By 478', 'semper-fi-lite' ),
+        'semper_fi_lite_1920x450'  => __( 'Semper Fi 1920 By 450', 'semper-fi-lite' ),
+        'semper_fi_lite_1920x1080' => __( 'Semper Fi 1920 By 1080', 'semper-fi-lite' ), );
+
+    return array_merge( $size_names, $new_sizes );
+  
 }
-
-/*
-* Let WordPress manage the document title.
-* By adding theme support, we declare that this theme does not use a
-* hard-coded <title> tag in the document head, and expect WordPress to
-* provide it for us.
-*/
-add_theme_support( 'title-tag' );
-add_theme_support( 'customize-selective-refresh-widgets' );
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'custom-background' );
-    
-} endif;
-
-
-// Switch default core markup for search form, comment form, and comments to output valid HTML5.
-add_theme_support( 'html5',
-                  array(
-                      'automatic-feed-links',
-                      'caption',
-                      'comment-form',
-                      'comment-list',
-                      'custom-background',
-                      'gallery',
-                      'search-form',
-                      'widgets', ) );
 
 
 // Add in that jumping comment reply thingy
@@ -91,30 +96,33 @@ if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_en
 
 
 // Set the length of the excerpt to 100
-function semper_fi_lite_custom_excerpt_length( $length ) {
-   return 100;
-}
 add_filter( 'excerpt_length', 'semper_fi_lite_custom_excerpt_length', 999 );
+function semper_fi_lite_custom_excerpt_length( $length ) {
+    if ( is_admin() ) return $length;
+    return 100;
+}
 
 
 // add more link to excerpt
-function semper_fi_lite_custom_excerpt_more($more) {
-   return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading  &rarr;' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
-}
 add_filter('excerpt_more', 'semper_fi_lite_custom_excerpt_more');
+function semper_fi_lite_custom_excerpt_more( $more ) {
+    if ( is_admin() ) return $more;
+    return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading  &rarr;' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
+}
 
 
 // Doesn't look right to have the textbox on top
+add_filter( 'comment_form_fields' , 'semper_fi_lite_move_comment_field_to_bottom' );
 function semper_fi_lite_move_comment_field_to_bottom( $fields ) {
     $comment_field = $fields['comment'];
     unset( $fields['comment'] );
     $fields['comment'] = $comment_field;
     return $fields;
 }
-add_filter( 'comment_form_fields' , 'semper_fi_lite_move_comment_field_to_bottom' );
 
 
 // Wrap Video in a DIV so that a videos width and height can be made reponsive using CSS
+add_filter( 'embed_oembed_html' , 'semper_fi_lite_wrap_embed_with_div' , 10 , 3 );
 function semper_fi_lite_wrap_embed_with_div( $html , $url , $attr ) {
 	
     // Don't see your video host in here? Just add it in, make sure you have the forward slash marks
@@ -130,10 +138,10 @@ function semper_fi_lite_wrap_embed_with_div( $html , $url , $attr ) {
         return $html;
     
 }
-add_filter( 'embed_oembed_html' , 'semper_fi_lite_wrap_embed_with_div' , 10 , 3 );
 
 
 // WordPress Widgets start right here.
+add_action('widgets_init', 'semper_fi_lite_widgets_init');
 function semper_fi_lite_widgets_init() {
 
 	register_sidebar( array(
@@ -154,7 +162,6 @@ function semper_fi_lite_widgets_init() {
 		'after_title'     => '</h3>', ) );
     
 }
-add_action('widgets_init', 'semper_fi_lite_widgets_init');
 
 // Add quick filter because I don't need these wrapped having needless css or html5 elements
 add_filter('next_post_link', 'semper_fi_lite_next_post_link_attributes');
@@ -227,7 +234,7 @@ foreach( $semper_fi_lite_load_in_all_sections as $semper_fi_lite_one_loaded_sect
 }
 
 
-// Only load if have WooCommerce Plugin Installed
+// Only load if the WooCommerce Plugin is installed
 if ( class_exists( 'WooCommerce' ) ) {
     
     // Remove simple shopping cart
@@ -235,9 +242,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 
     // Woo-Commerce, Customize
     require get_parent_theme_file_path( '/inc/woo-commerce/functions.php' );
-
-    // Woo-Commerce, Customize
-    //require get_parent_theme_file_path( '/inc/woo-commerce-content-microdata/functions.php' );
 
     // Woo-Commerce Add Display Products after cart
     require get_parent_theme_file_path( '/inc/woo-commerce-display-products/functions.php' );
@@ -252,9 +256,9 @@ do_action( 'semper_fi_lite-functions-hook' );
 // Let's not display needlessly big images
 function semper_fi_lite_image( $semper_fi_lite_get_theme_mod_image , $semper_fi_lite_theme_mod_default , $semper_fi_lite_image_width , $semper_fi_lite_image_height ) {
     
-    if ( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) != get_template_directory_uri() . $semper_fi_lite_theme_mod_default ) {
+    if ( ( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) != get_template_directory_uri() . $semper_fi_lite_theme_mod_default ) && ( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) != '' ) ) {
         
-        echo esc_url( wp_get_attachment_image_src( attachment_url_to_postid( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) ) , $semper_fi_lite_image_width . 'x' . $semper_fi_lite_image_height )[0] );
+        echo esc_url( wp_get_attachment_image_src( attachment_url_to_postid( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) ) , 'semper_fi_lite_' . $semper_fi_lite_image_width . 'x' . $semper_fi_lite_image_height )[0] );
         
     } else {
         
@@ -297,7 +301,7 @@ function semper_fi_lite_image_alt( $semper_fi_lite_get_theme_mod_image , $semper
 
                 } else {
 
-                    //quess we got nothing to work with, lets just return nothing
+                    // quess we got nothing to work with, lets just return nothing
                     echo ' alt=""';
 
                 }

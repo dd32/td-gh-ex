@@ -3,8 +3,8 @@
 function semper_fi_lite_above_the_fold() {
     
     function semper_fi_lite_above_the_fold_html() {
-            
-        if ( !is_paged() ) {
+        
+        if ( is_page() && !is_paged() && absint ( get_theme_mod( 'square_boxes_enable_1' , false ) ) ) {
         
             require get_parent_theme_file_path( '/inc/above-the-fold/html.php' );
             

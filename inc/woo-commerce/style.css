@@ -20,6 +20,19 @@
 	background: #555555;
 }
 
+.woocommerce-page main#the-article form.cart label.screen-reader-text {
+    position: absolute;
+    left: 500em;
+}
+
+.woocommerce-page main#the-article form.cart .wc-force-sells {
+    margin-top: 2em;
+}
+
+.woocommerce-page main#the-article form.cart .wc-force-sells p {
+    text-align: center;
+}
+
 .single-product a.reset_variations {
 	padding-left: 2em;
 }

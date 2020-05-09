@@ -5,7 +5,7 @@ function semper_fi_lite_front_page() {
     
     function semper_fi_lite_front_page_html() {
             
-        if ( !is_paged() ) {
+        if ( !is_home() && is_page() && !is_paged() ) {
 
             require get_parent_theme_file_path( '/inc/front-page/html.php' );
             
@@ -22,7 +22,7 @@ function semper_fi_lite_front_page() {
 
     function semper_fi_lite_front_page_css() {
             
-        if ( !is_paged() ) {
+        if ( !is_home() && is_page() && !is_paged() ) {
 
             wp_enqueue_style( 'semper_fi_lite-front-page' , get_theme_file_uri( '/inc/single/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
             

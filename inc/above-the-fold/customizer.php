@@ -36,12 +36,11 @@ $semper_fi_lite_above_the_fold_customizer_options_array = array(
         'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
         'selector'          => 'header > h2.header-text',
-        'type'              => 'range',
         'high'              => '12.00',
         'low'               => '0.00',
         'step'              => '.025',
-        'units'             => 'em',
-        'type'              => 'range'),
+        'type'              => 'range',
+        'units'             => 'em', ),
 
 
     'above_the_fold_position_from_bottom' => array(
@@ -59,12 +58,11 @@ $semper_fi_lite_above_the_fold_customizer_options_array = array(
         'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
         'selector'          => 'header > h2.header-text',
-        'type'              => 'range',
         'high'              => '12.00',
         'low'               => '-12.00',
         'step'              => '.025',
-        'units'             => 'em',
-        'type'              => 'range'),
+        'type'              => 'range',
+        'units'             => 'em', ),
 
     
     'above_the_fold_title_color' => array(

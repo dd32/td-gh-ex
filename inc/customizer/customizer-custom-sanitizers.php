@@ -50,6 +50,7 @@ function semper_fi_lite_sanitize_select( $input, $setting ) {
 
 }
 
+
 // semper_fi_lite radio box sanitization
 function semper_fi_lite_sanitize_radio( $input, $setting ){
 
