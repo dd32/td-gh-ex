@@ -31,7 +31,7 @@ class astral_Customizer extends astral_Abstract_Main {
 			'priority' => 1, // Mixed with top-level-section hierarchy.
 		) );
 		
-		/* social icon section */
+		/* general section */
 		$wp_customize->add_section( 'astral_general_settings', array(
 			'title'      => __( 'General Settings', 'astral' ),
 			'panel'      => 'astral_theme_option',
@@ -101,6 +101,45 @@ class astral_Customizer extends astral_Abstract_Main {
 				'center_layout' => get_template_directory_uri() . '/images/center.png',
         )
         ) ) );
+
+
+        /* color section */
+		$wp_customize->add_section( 'astral_color', array(
+			'title'      => __( 'Color Settings', 'astral' ),
+			'panel'      => 'astral_theme_option',
+			'capability' => 'edit_theme_options',
+			'priority'   => 34,
+		) );
+		
+		$wp_customize->add_setting( 'header_color_setting', array(
+			'type'              => 'theme_mod',
+            'default' => '#153e4d',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'header_color_setting', array(
+        'label'      => __( 'Header Background Color', 'astral' ),
+        'section'    => 'astral_color',
+        'settings'   => 'header_color_setting',
+    	) ) 
+		);
+
+		$wp_customize->add_setting( 'footer_color_setting', array(
+            'type'              => 'theme_mod',
+            'default' => '#17181b',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'footer_color_setting', array(
+        'label'      => __( 'Footer Background Color', 'astral' ),
+        'section'    => 'astral_color',
+        'settings'   => 'footer_color_setting',
+    	) ) 
+		);
 
 		/* footer section */
 		$wp_customize->add_section( 'astral_footer', array(

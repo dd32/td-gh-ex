@@ -27,6 +27,10 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 1.9 =
+* Header, Footer background color option
+* Minor changes in Rate us notice 
+
 = 1.8 =
 * Minor changes in Rate us notice
 * Minor changes in welcome page

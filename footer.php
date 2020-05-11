@@ -31,6 +31,7 @@
     <div class="circle"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 </a>
 <?php get_template_part('google', 'font'); ?>
+<?php get_template_part('custom','css') ?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -151,11 +151,13 @@ $my_theme = wp_get_theme();
 		    font-size: 18px;
 		}
 		a.rainbow2 {
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f2f), color-stop(0.15, #f2f), color-stop(0.3, #f2f), color-stop(0.45, #22f), color-stop(0.6, #22f),color-stop(0.75, #22f), color-stop(0.9, #22f), color-stop(1, #22f) );
-  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+    background-color: #ffc247;
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color: #fff;
+    /* -webkit-background-clip: text; */
+    background-clip: text;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .blinking{
@@ -184,7 +186,9 @@ $my_theme = wp_get_theme();
 				
 				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Welcome Page','astral'); ?> </a>
 
-				<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Astral Pro','astral'); ?> </a><sup class="blinking"> <?php _e('Coming Soon','astral'); ?> </sup>
+				<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php echo esc_url('https://wordpress.org/themes/foodiz/'); ?>" > <?php _e('New Theme - Foodiz','astral'); ?> </a>
+
+				<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Astral Pro coming soon','astral'); ?> </a>
 				
 			</div>
 		</div>
@@ -261,3 +265,7 @@ endif;
 if (is_admin()) {
 	require_once('inc/astral-pro-intro.php');
 }
+
+
+
+?>
