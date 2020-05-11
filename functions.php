@@ -343,7 +343,7 @@ function advance_automobile_scripts() {
 	    $advance_automobile_h6_font_family = get_theme_mod('advance_automobile_h6_font_family', '');
 	    $advance_automobile_h6_font_size = get_theme_mod('advance_automobile_h6_font_size', '');
 
-		$custom_css ='
+		$advance_automobile_custom_css ='
 			p,span{
 			    color:'.esc_html($advance_automobile_paragraph_color).'!important;
 			    font-family: '.esc_html($advance_automobile_paragraph_font_family).';
@@ -389,7 +389,7 @@ function advance_automobile_scripts() {
 			}
 
 			';
-	wp_add_inline_style( 'advance-automobile-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-automobile-basic-style',$advance_automobile_custom_css );
 
 	wp_enqueue_script( 'owl-carousel-script', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '', true);
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
@@ -397,7 +397,7 @@ function advance_automobile_scripts() {
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
-	wp_add_inline_style( 'advance-automobile-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-automobile-basic-style',$advance_automobile_custom_css );
 
 	wp_enqueue_style('advance-automobile-ie', get_template_directory_uri().'/css/ie.css', array('advance-automobile-basic-style'));
 	wp_style_add_data('advance-automobile-ie', 'conditional', 'IE');

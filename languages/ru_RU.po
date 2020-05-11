@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-04-17 17:49+0530\n"
+"PO-Revision-Date: 2020-05-02 11:41+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -56,7 +56,7 @@ msgstr "Следущая страница"
 #: index.php:136 search.php:38 search.php:64 search.php:92 search.php:117
 #: search.php:146
 msgid "page"
-msgstr "страница"
+msgstr "página"
 
 #: comments.php:28 comments.php:38
 msgid "comments title"
@@ -258,7 +258,7 @@ msgstr "Предыдущий пост:"
 #: page-template/custom-front-page:40 template-parts/content-audio.php:63
 #: template-parts/content-gallery.php:53 template-parts/content-image.php:42
 #: template-parts/content-video.php:63 template-parts/content.php:43
-#: template-parts/grid-layout.php:36 inc/customizer.php:1287
+#: template-parts/grid-layout.php:36 inc/customizer.php:1297
 msgid "READ MORE"
 msgstr "ПОДРОБНЕЕ"
 
@@ -458,7 +458,7 @@ msgstr "Выберите страницу слайд-изображения"
 msgid "Size of image should be 1600 x 633"
 msgstr "Размер изображения должен быть 1600 х 633"
 
-#: inc/customizer.php:943 inc/customizer.php:952 inc/customizer.php:1349
+#: inc/customizer.php:943 inc/customizer.php:952 inc/customizer.php:1410
 msgid "Left"
 msgstr "Осталось"
 
@@ -466,11 +466,11 @@ msgstr "Осталось"
 msgid "Slider Content Alignment"
 msgstr "Выравнивание содержимого слайдера"
 
-#: inc/customizer.php:951 inc/customizer.php:1351
+#: inc/customizer.php:951 inc/customizer.php:1412
 msgid "Center"
 msgstr "Центр"
 
-#: inc/customizer.php:953 inc/customizer.php:1341 inc/customizer.php:1350
+#: inc/customizer.php:953 inc/customizer.php:1402 inc/customizer.php:1411
 msgid "Right"
 msgstr "Правильно"
 
@@ -566,107 +566,110 @@ msgstr "Пролистать наверх"
 msgid "Sidebar"
 msgstr "Боковая панель"
 
-#: inc/customizer.php:1197
+#: inc/customizer.php:1201
+msgid "Preloader"
+msgstr "Preloader"
+
+#: inc/customizer.php:1207
 msgid "Blog Page Settings"
 msgstr "Настройки страницы блога"
 
-#: inc/customizer.php:1207
+#: inc/customizer.php:1217
 msgid "Post Date"
 msgstr "Дата публикации"
 
-#: inc/customizer.php:1217
+#: inc/customizer.php:1227
 msgid "Comments"
 msgstr "Комментарии"
 
-#: inc/customizer.php:1227
+#: inc/customizer.php:1237
 msgid "Author"
 msgstr "автор"
 
-#: inc/customizer.php:1237
+#: inc/customizer.php:1247
 msgid "Single Post Tags"
 msgstr "Метки одного сообщения"
 
-#: inc/customizer.php:1242 inc/customizer.php:1251
+#: inc/customizer.php:1252 inc/customizer.php:1261
 msgid "Excerpt Content"
 msgstr "Содержание выдержки"
 
-#: inc/customizer.php:1247
+#: inc/customizer.php:1257
 msgid "Post Description Length"
 msgstr "Длина сообщения"
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1260
 msgid "No Content"
 msgstr "Без содержания"
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1262
 msgid "Full Content"
 msgstr "Полный контент"
 
-#: inc/customizer.php:1264
+#: inc/customizer.php:1274
 msgid "Excerpt length"
 msgstr "Фиксированная длина"
 
-#: inc/customizer.php:1276
+#: inc/customizer.php:1286
 msgid "..."
 msgstr "..."
 
-#: inc/customizer.php:1280
+#: inc/customizer.php:1290
 msgid "Post Excerpt Indicator Option"
 msgstr "Опция индикатора после выдержки"
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1301
 msgid "Add Button Text"
 msgstr "Добавить текст кнопки"
 
-#: inc/customizer.php:1298
+#: inc/customizer.php:1308
 msgid "Footer Text"
 msgstr "Текст нижнего колонтитула"
 
-#: inc/customizer.php:1309
+#: inc/customizer.php:1319
 msgid "Footer widget area"
-msgstr "Область виджета нижнего колонтитула"
+msgstr "Área de widget de pie de página"
 
-#: inc/customizer.php:1311
+#: inc/customizer.php:1321
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
-"Выберите количество областей виджетов, которые вы хотите в нижнем "
-"колонтитуле. После этого зайдите в Внешний вид> Виджеты и добавьте свои "
-"виджеты."
+"Seleccione el número de áreas de widgets que desea en el pie de página. "
+"Después de eso, ve a Apariencia> Widgets y agrega tus widgets."
 
-#: inc/customizer.php:1313
+#: inc/customizer.php:1323
 msgid "One"
 msgstr "Один"
 
-#: inc/customizer.php:1314
+#: inc/customizer.php:1324
 msgid "Two"
 msgstr "Два"
 
-#: inc/customizer.php:1315
+#: inc/customizer.php:1325
 msgid "Three"
 msgstr "Три"
 
-#: inc/customizer.php:1316
+#: inc/customizer.php:1326
 msgid "Four"
 msgstr "четыре"
 
-#: inc/customizer.php:1325
-msgid "Copyright Text"
-msgstr "Авторский текст"
-
-#: inc/customizer.php:1336
+#: inc/customizer.php:1397
 msgid "Show / Hide Scroll Top Button"
 msgstr "Показать / Скрыть кнопку прокрутки сверху"
 
-#: inc/customizer.php:1346
+#: inc/customizer.php:1407
 msgid "Scroll Back to Top Position"
 msgstr "Прокрутите назад к верхней позиции"
 
-#: inc/customizer.php:1436
+#: inc/customizer.php:1424
+msgid "Scroll Icon Font Size"
+msgstr "Размер шрифта для значка прокрутки"
+
+#: inc/customizer.php:1515
 msgid "Advance Automobile"
 msgstr "Advance Automobile"
 
-#: inc/customizer.php:1437
+#: inc/customizer.php:1516
 msgid "Go Pro"
 msgstr "Go Pro"
