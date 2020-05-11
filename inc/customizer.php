@@ -661,6 +661,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
 	$wp_customize->add_setting( 'advance_business_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_business_sticky_header',array(
@@ -1087,6 +1088,16 @@ function advance_business_customize_register($wp_customize) {
        'section' => 'advance_business_responsive_setting'
     ));
 
+    $wp_customize->add_setting('advance_business_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','advance-business'),
+       'section' => 'advance_business_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('advance_business_blog_post',array(
 		'title'	=> __('Blog Page Settings','advance-business'),
@@ -1209,6 +1220,24 @@ function advance_business_customize_register($wp_customize) {
         ),
     ));
 
+    $wp_customize->add_setting('advance_business_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_business_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'advance-business'),
+		'section'  => 'advance_business_footer_section',
+	)));
+
+	$wp_customize->add_setting('advance_business_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'advance_business_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','advance-business'),
+        'section' => 'advance_business_footer_section'
+	)));
+
 	$wp_customize->add_setting('advance_business_footer_copy', array(
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -1217,6 +1246,39 @@ function advance_business_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-business'),
 		'section' => 'advance_business_footer_section',
 		'type'    => 'text',
+	));
+
+	$wp_customize->add_setting('advance_business_copyright_content_align',array(
+        'default' => __('center','advance-business'),
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','advance-business'),
+        'section' => 'advance_business_footer_section',
+        'choices' => array(
+            'left' => __('Left','advance-business'),
+            'right' => __('Right','advance-business'),
+            'center' => __('Center','advance-business'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_business_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','advance-business' ),
+		'section'=> 'advance_business_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 	
 	$wp_customize->add_setting('advance_business_enable_disable_scroll',array(
@@ -1243,6 +1305,24 @@ function advance_business_customize_register($wp_customize) {
             'Center' => __('Center','advance-business'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_business_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','advance-business'),
+		'section'=> 'advance_business_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
+	));
 
 }
 add_action('customize_register', 'advance_business_customize_register');

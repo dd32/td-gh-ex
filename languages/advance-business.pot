@@ -746,120 +746,157 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer.php:1092
-msgid 'Blog Page Settings'
+#: inc/customizer.php:1096
+msgid "Preloader"
 msgstr ""
 
 #: inc/customizer.php:1102
-msgid 'Post Date'
+msgid 'Blog Page Settings'
 msgstr ""
 
 #: inc/customizer.php:1112
-msgid 'Comments'
+msgid 'Post Date'
 msgstr ""
 
 #: inc/customizer.php:1122
-msgid 'Author'
+msgid 'Comments'
 msgstr ""
 
 #: inc/customizer.php:1132
-msgid 'Single Post Tags'
-msgstr ""
-
-#: inc/customizer.php:1137
-#: inc/customizer.php:1146
-msgid 'Excerpt Content'
+msgid 'Author'
 msgstr ""
 
 #: inc/customizer.php:1142
-msgid 'Post Description Length'
-msgstr ""
-
-#: inc/customizer.php:1145
-msgid 'No Content'
+msgid 'Single Post Tags'
 msgstr ""
 
 #: inc/customizer.php:1147
+#: inc/customizer.php:1156
+msgid 'Excerpt Content'
+msgstr ""
+
+#: inc/customizer.php:1152
+msgid 'Post Description Length'
+msgstr ""
+
+#: inc/customizer.php:1155
+msgid 'No Content'
+msgstr ""
+
+#: inc/customizer.php:1157
 msgid 'Full Content'
 msgstr ""
 
-#: inc/customizer.php:1156
+#: inc/customizer.php:1166
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:1168
+#: inc/customizer.php:1178
 msgid '...'
 msgstr ""
 
-#: inc/customizer.php:1172
+#: inc/customizer.php:1182
 msgid 'Post Excerpt Indicator Option'
 msgstr ""
 
-#: inc/customizer.php:1179
+#: inc/customizer.php:1189
 msgid 'Read More'
 msgstr ""
 
-#: inc/customizer.php:1183
+#: inc/customizer.php:1193
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:1190
+#: inc/customizer.php:1200
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:1201
+#: inc/customizer.php:1211
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:1203
+#: inc/customizer.php:1213
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:1205
+#: inc/customizer.php:1215
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:1206
+#: inc/customizer.php:1216
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:1207
+#: inc/customizer.php:1217
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:1208
+#: inc/customizer.php:1218
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:1217
+#: inc/customizer.php:1227
+msgid 'Footer Widget Background Color'
+msgstr ""
+
+#: inc/customizer.php:1236
+msgid 'Footer Widget Background Image'
+msgstr ""
+
+#: inc/customizer.php:1245
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:1228
-msgid 'Show / Hide Scroll Top Button'
+#: inc/customizer.php:1251
+#: inc/customizer.php:1261
+msgid 'center'
 msgstr ""
 
-#: inc/customizer.php:1233
-#: inc/customizer.php:1242
-msgid 'Right'
+#: inc/customizer.php:1256
+msgid 'Copyright Text Alignment '
 msgstr ""
 
-#: inc/customizer.php:1238
-msgid 'Scroll Back to Top Position'
-msgstr ""
-
-#: inc/customizer.php:1241
+#: inc/customizer.php:1259
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1243
+#: inc/customizer.php:1260
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:1273
+msgid 'Copyright Font Size'
+msgstr ""
+
+#: inc/customizer.php:1289
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:1294
+#: inc/customizer.php:1303
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:1299
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:1302
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:1303
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:1328
+#: inc/customizer.php:1316
+msgid 'Scroll Icon Font Size'
+msgstr ""
+
+#: inc/customizer.php:1407
 msgid 'Business Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:1329
+#: inc/customizer.php:1408
 msgid 'Go Pro'
 msgstr ""

@@ -23,13 +23,13 @@ get_header(); ?>
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
-                          while ( have_posts() ) : the_post();
-                            get_template_part( 'template-parts/content', get_post_format() ); 
-                          endwhile;
-                          else :
-                            get_template_part( 'no-results' ); 
-                          endif; 
+                            /* Start the Loop */
+                            while ( have_posts() ) : the_post();
+                                get_template_part( 'template-parts/content', get_post_format() ); 
+                            endwhile;
+                            else :
+                                get_template_part( 'no-results' ); 
+                            endif; 
                         ?>
                         <div class="navigation">
                             <?php
@@ -109,13 +109,13 @@ get_header(); ?>
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
-                          while ( have_posts() ) : the_post();
-                            get_template_part( 'template-parts/content', get_post_format() ); 
-                          endwhile;
-                          else :
-                            get_template_part( 'no-results' );
-                          endif; 
+                            /* Start the Loop */
+                            while ( have_posts() ) : the_post();
+                                get_template_part( 'template-parts/content', get_post_format() ); 
+                            endwhile;
+                            else :
+                                get_template_part( 'no-results' );
+                            endif; 
                         ?>
                         <div class="navigation">
                             <?php
@@ -139,7 +139,7 @@ get_header(); ?>
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
+                            /* Start the Loop */
                             while ( have_posts() ) : the_post();
                                 get_template_part( 'template-parts/content', get_post_format() ); 
                             endwhile;
@@ -201,13 +201,13 @@ get_header(); ?>
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
-                          while ( have_posts() ) : the_post();
-                            get_template_part( 'template-parts/content', get_post_format() ); 
-                          endwhile;
-                          else :
-                            get_template_part( 'no-results' ); 
-                          endif; 
+                            /* Start the Loop */
+                            while ( have_posts() ) : the_post();
+                                get_template_part( 'template-parts/content', get_post_format() ); 
+                            endwhile;
+                            else :
+                                get_template_part( 'no-results' ); 
+                            endif; 
                         ?>
                         <div class="navigation">
                             <?php
