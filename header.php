@@ -22,7 +22,7 @@
     do_action( 'wp_body_open' );
   } ?>
   <header role="banner">
-    <?php if(get_theme_mod('advance_coaching_preloader_option',true)){ ?>
+    <?php if(get_theme_mod('advance_coaching_preloader_option',true) != '' || get_theme_mod('advance_coaching_responsive_preloader', true) != ''){ ?>
       <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
@@ -31,7 +31,7 @@
     <?php }?>
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-coaching' ); ?></a>
     <div id="header">
-      <?php if( get_theme_mod('advance_coaching_display_topbar') != ''){ ?>
+      <?php if( get_theme_mod('advance_coaching_display_topbar', false) != ''){ ?>
         <div class="top-header"> 
           <div class="container">
             <div class="row">

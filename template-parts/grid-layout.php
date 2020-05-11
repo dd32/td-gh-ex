@@ -22,7 +22,7 @@
         </div>
     <?php } ?>
     <div class="new-text">
-      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_coaching_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_coaching_post_suffix_option','...') ); ?></p></div>
+      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_coaching_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('advance_coaching_post_suffix_option','...') ); ?></p></div>
       <?php if( get_theme_mod('advance_coaching_button_text','READ MORE') != ''){ ?>
         <div class="read-more-btn">
           <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_button_text','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_coaching_button_text','READ MORE'));?></span></a>
