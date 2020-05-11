@@ -3,10 +3,10 @@ Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
 Tested up to: 5.4
 Requires PHP: 5.6
-Version: 1.0.15
-Stable tag: 1.0.15
-License: GNU GPL v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0.16
+Stable tag: 1.0.16
+License: GNU GPL v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
 
 Hotel and Accommodation booking theme to create a complete booking site
@@ -27,7 +27,7 @@ Full-featured theme version ("BA Hotel") is completed with payment gateways (Pay
 
 == Copyright ==
 
-"BA Hotel light" WordPress Theme, Copyright 2019 Booking Algorithms
+"BA Hotel light" WordPress Theme, Copyright 2020 Booking Algorithms
 BA Hotel theme uses next free images:
 
 Architecture, Copyright Junhan Foong
@@ -39,6 +39,12 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/VIWIBCR4L9
 
 == Changelog ==
+
+= 1.0.16 =
+* Removed functions which are from "plugin territory"
+* License is updated to GPLv3
+* Fixed issue "The My Account in the header should not be displayed unless the plugin is activated"
+* Replaced "best booking theme" line on screenshot to "booking theme"
 
 = 1.0.15 =
 * Pagination styles are updated

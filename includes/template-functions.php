@@ -428,7 +428,7 @@ if ( ! function_exists( 'bahotel_l_terms_block' ) ) :
                'hide_empty' => false,
             ) );
 			
-			if ( ! empty( $terms ) ) {
+			if ( ! empty( $terms ) && !is_wp_error($terms) ) {
 			    
                 $results = array();
 				
@@ -569,35 +569,6 @@ if ( ! function_exists( 'bahotel_l_filter_news_block_item' ) ) :
             
 		}
 
-endif;
-
-/////////////////////////////
-
-add_action( 'comment_post', 'bahotel_l_comment_meta_save', 10, 3 );
-if ( ! function_exists( 'bahotel_l_comment_meta_save' ) ) :
-/**
- * Save comment meta
- * 
- * @param int $comment_id
- * @param int|string $comment_approved
- * @param array $commentdata
- * @return
- */
-   function bahotel_l_comment_meta_save($comment_id, $comment_approved, $commentdata) {
-    
-       if (isset($_POST['from_city']) && $_POST['from_city']){ // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        
-           $city = sanitize_text_field(wp_unslash($_POST['from_city']));
-           
-           if ($city){
-              update_comment_meta( $comment_id, 'from_city', $city );
-           }
-        
-       }
-       
-       return;
-   }
-        
 endif;
 
 //////////////////////////////
@@ -924,9 +895,13 @@ if ( ! function_exists( 'bahotel_l_header_navbar_after' ) ):
      * @return
      */
     function bahotel_l_header_navbar_after() {
+
+        if ( !class_exists('BABE_Settings') ){
+            return;
+        }
         
         $title = is_user_logged_in() ? '<span class="eleganticon icon_lock-open_alt"></span>'.esc_html__( 'My account', 'ba-hotel-light' ) : '<span class="eleganticon icon_lock_alt"></span>'.esc_html__( 'Login', 'ba-hotel-light' );
-        $url = class_exists('BABE_Settings') ? BABE_Settings::get_my_account_page_url() : '#';
+        $url = BABE_Settings::get_my_account_page_url();
         
         /// $title is already escaped
         echo '<div class="header-login">';
@@ -956,26 +931,6 @@ if ( ! function_exists( 'bahotel_l_wp_nav_menu_primary_items' ) ):
         }
 
         return $items;
-    }
-
-endif;
-
-//////////////////////////////
-add_action('wp_head', 'bahotel_l_remove_auto_p', 10);
-
-if ( ! function_exists( 'bahotel_l_remove_auto_p' ) ):
-    /**
-     * Remove auto p from front page.
-     * 
-     * @return
-     */
-    function bahotel_l_remove_auto_p() {
-        
-        if ( is_front_page() && is_main_query() ) {
-           remove_filter( 'the_content', 'wpautop' );
-        }
-        
-        return;
     }
 
 endif;
@@ -3002,34 +2957,6 @@ if ( ! function_exists( 'bahotel_l_get_excerpt' ) ) :
     return $output;
     
   }
-
-endif;
-
-///////////////////////////////////////
-
-add_action( 'wp_insert_post', 'bahotel_l_updates_on_insert_post', 10, 3 );
-
-if ( ! function_exists( 'bahotel_l_updates_on_insert_post' ) ) :
-   /**
-    * Clear postmeta '_post_excerpt' when post is updated
-    * 
-    * @param int $post_id
-    * @param obj $post WP_Post
-    * @param boolean $update
-    *
-    * @return
-    */
-    function bahotel_l_updates_on_insert_post( $post_id, $post, $update ) {
-
-      remove_action( 'wp_insert_post', 'bahotel_l_updates_on_insert_post', 10, 3 );
-      
-      if ( metadata_exists( 'post', $post_id, '_post_excerpt' ) ){
-          delete_post_meta($post_id, '_post_excerpt');
-      }
-    
-      return;
-    
-    }
 
 endif;
 
