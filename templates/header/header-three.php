@@ -114,11 +114,13 @@ global $woocommerce; ?>
             
             <div class="site-container">
                 
-                <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></span>
+                <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></button>
                 <div id="main-menu" class="main-menu-container">
-                    <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
-                    <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
-                    <div class="clearboth"></div>
+                    <div class="main-menu-inner">
+                        <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                        <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
+                        <div class="clearboth"></div>
+                    </div>
                 </div>
                 
             </div>

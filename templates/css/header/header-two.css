@@ -90,7 +90,7 @@
     z-index: 10;
 }
 .header-cart {
-    float: right;
+    float: left;
 }
 .header-cart i.fa {
     position: relative;
@@ -98,7 +98,7 @@
     font-size: 12px;
 }
 .main-navigation {
-    float: right;
+    float: left;
 }
 
 .site-title {
@@ -273,6 +273,15 @@ body.admin-bar .site-sticky-header .header-bar {
 }
 
 @media only screen and (max-width: 980px) {
+
+    .site-header-main {
+        text-align: right;
+    }
+    .main-navigation,
+    .header-cart {
+        float: none;
+        display: inline-block;
+    }
 
     .header-menu-button {
         padding: 20px 20px 25px 100px;

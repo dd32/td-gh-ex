@@ -79,6 +79,20 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.20
+* Style tweaks/fixes
+* Added wp_body_open hook required in new WP versions
+* Added Smush as a recommended plugin for Image Optimization
+* Improved theme keyboard navigation for better accessibility
+* Improved mobile keyboard navigation - trap focus to navigation when mobile nav open
+* Removed skip-link-focus file and added to footer scripts (too small to load own file)
+* Reduce size of admin notice to align with theme review rules
+* Updated the language .pot file
+* PREMIUM: NEW FEATURE: Now includes a FREE shortcode slider - Dashboard -> Conica Sliders
+* PREMIUM: NEW FEATURE: Now includes a FREE shortcode slider - Dashboard -> Nikkon Sliders
+* PREMIUM: NEW FEATURE: Website Loader
+* PREMIUM: NEW FEATURE: Website Loader Customization settings
+
 #### 1.3.18
 * Removed TGM enternal link
 * Added extra config strings to prevent conflict with SiteOrigin page builder TGM
@@ -89,14 +103,14 @@ View the theme settings under "Appearance" -> Customize.
 * Fix js customizer issue
 * Added WooCustomizer as a recommended plugin in TGMPA
 * Updated language .pot file
-Premium: Updated Page Layouts importer section
+* PREMIUM: Updated Page Layouts importer section
 
 #### 1.3.16
 * Style tweaks/fixes
 * Updated Theme URI
 * Remove old deprecated code
 * Updated the language .pot file
-Premium: Added Elementor Page Builder Layouts page to import page layouts
+* PREMIUM: Added Elementor Page Builder Layouts page to import page layouts
 
 #### 1.3.15
 * Change/Update pingback_url function
@@ -110,17 +124,17 @@ Premium: Added Elementor Page Builder Layouts page to import page layouts
 * Added a selection of web-safe fonts
 * Remove old deprecated code
 * Updated the language .pot file
-Premium: Added setting to increase Social Footer icon size
-Premium: Added setting to adjust Social Footer icon spacing
+* PREMIUM: Added setting to increase Social Footer icon size
+* PREMIUM: Added setting to adjust Social Footer icon spacing
 
 #### 1.3.13
 * Style tweaks/fixes
 * Added setting to customize all titles (Site Title, Desctiprtion, Widget Titles, Posts) for better SEO
 * Updated the screenshot.png
 * Updated the language .pot file
-Premium: Added setting to remove WooCommerce Product Gallery Zoom
-Premium: Added setting to remove WooCommerce Product Gallery LightBox
-Premium: Added setting to replace default search with more advanced shortcode search
+* PREMIUM: Added setting to remove WooCommerce Product Gallery Zoom
+* PREMIUM: Added setting to remove WooCommerce Product Gallery LightBox
+* PREMIUM: Added setting to replace default search with more advanced shortcode search
 
 #### 1.3.12
 * Style tweaks/fixes
@@ -154,24 +168,24 @@ Premium: Added setting to replace default search with more advanced shortcode se
 * Styling fixes/tweaks
 * Added NEW side social icons
 * Updated the language .pot file
-Premium: Added setting to change Side Social Links design - Square or Round
+* PREMIUM: Added setting to change Side Social Links design - Square or Round
 
 #### 1.3.08
 * Styling fixes/tweaks
 * Updated screenshot.png
 * Updated the language.pot file
-Premium: Added new WooCommerce drop down basket/cart
-Premium: Added setting to enable/disable new WooCommerce basket
-Premium: Added color settings for basket/cart
+* PREMIUM: Added new WooCommerce drop down basket/cart
+* PREMIUM: Added setting to enable/disable new WooCommerce basket
+* PREMIUM: Added color settings for basket/cart
 
 #### 1.3.07
 * Styling fixes/tweaks
 * Added styling for new Gallery widget
 * Fix page title bar bug with WooCommerce archive
 * Updated the language.pot file
-Premium: Added settings to show Site Title and/or Tagline with uploaded logo & adjust
-Premium: Added setting to remove header phone & address icons
-Premium: Added setting to center align Page Titles
+* PREMIUM: Added settings to show Site Title and/or Tagline with uploaded logo & adjust
+* PREMIUM: Added setting to remove header phone & address icons
+* PREMIUM: Added setting to center align Page Titles
 
 #### 1.3.06
 * Styling fixes/tweaks
@@ -186,23 +200,23 @@ Premium: Added setting to center align Page Titles
 * Fix/Improve Default Slider responsiveness
 * Updated/Improved masonry layout javascript
 * Updated the language.pot file
-Premium: Added 3 settings to adjust sidebar widgets titles
+* PREMIUM: Added 3 settings to adjust sidebar widgets titles
 
 #### 1.3.03
 * Styling fixes/tweaks
 * Re-added footer Address setting - Accidentally removed
 * Added setting to change icon for footer address
 * Updated the language.pot file
-Premium: Added setting to set WooCommerce products amount to display per page
+* PREMIUM: Added setting to set WooCommerce products amount to display per page
 
 #### 1.3.02
 * Styling fixes/tweaks
 * Updated the language.pot file
-Premium: Setting to remove "Category:" text from archives list
-Premium: Added setting to add Author block to blog single pages
-Premium: Fixed custom Footer layout responsiveness
-Premium: Added settings to change WooCommerce product per row
-Premium: Added setting to remove Product hover border
+* PREMIUM: Setting to remove "Category:" text from archives list
+* PREMIUM: Added setting to add Author block to blog single pages
+* PREMIUM: Fixed custom Footer layout responsiveness
+* PREMIUM: Added settings to change WooCommerce product per row
+* PREMIUM: Added setting to remove Product hover border
 
 #### 1.3.01
 * Updated/fixed compatibility with new WooCommerce Gallery
@@ -211,25 +225,25 @@ Premium: Added setting to remove Product hover border
 #### 1.3.00
 * Styling fixes/tweaks
 * Updated the language.pot file
-Premium: Added setting to set custom links for default slider posts
-Premium: Added setting to add any social link needed
-Premium: Added setting to set search results page to Left SideBar / Full Width
-Premium: Added extra color settings for header, top bar & navigation colors, defaut slider colors and footer & bottom bar colors
+* PREMIUM: Added setting to set custom links for default slider posts
+* PREMIUM: Added setting to add any social link needed
+* PREMIUM: Added setting to set search results page to Left SideBar / Full Width
+* PREMIUM: Added extra color settings for header, top bar & navigation colors, defaut slider colors and footer & bottom bar colors
 
 #### 1.2.9
 * Fixed comment error
-Premium: Added setting to change Title bar background color
-Premium: Added setting to remove page titles
+* PREMIUM: Added setting to change Title bar background color
+* PREMIUM: Added setting to remove page titles
 
 #### 1.2.8
 * WooCommerce styling fixes/tweaks
 * Customizer javascript fix
 * Added help for setting up Default Slider
 * Updated the language.pot file
-Premium: Added extra settings for blog list excerpt/shortened content
-Premium: Added setting for uploaded logo max-width
-Premium: Added social link for GitHub
-Premium: Added social link for Etsy
+* PREMIUM: Added extra settings for blog list excerpt/shortened content
+* PREMIUM: Added setting for uploaded logo max-width
+* PREMIUM: Added social link for GitHub
+* PREMIUM: Added social link for Etsy
 
 #### 1.2.7
 * Initial release

@@ -81,6 +81,17 @@ global $woocommerce; ?>
                         </nav><!-- #site-navigation -->
                     <?php else : ?>
                         
+                        <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'conica-set-navigation-style' ) ) ? sanitize_html_class( get_theme_mod( 'conica-set-navigation-style' ) ) : sanitize_html_class( 'conica-navigation-style-blocks' ); ?> conica-navigation-animation-none" role="navigation">
+                            <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></button>
+                            <div id="main-menu" class="main-menu-container">
+                                <div class="main-menu-inner">
+                                    <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                                    <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
+                                    <div class="clearboth"></div>
+                                </div>
+                            </div>
+                        </nav> <!-- #site-navigation -->
+
                         <?php if ( conica_is_woocommerce_activated() ) : ?>
                             <?php if ( !get_theme_mod( 'conica-set-header-cart' ) ) : ?>
                                 <div class="header-cart">
@@ -97,15 +108,6 @@ global $woocommerce; ?>
                                 </div>
                             <?php endif; ?>
                         <?php endif; ?>
-                        
-                        <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'conica-set-navigation-style' ) ) ? sanitize_html_class( get_theme_mod( 'conica-set-navigation-style' ) ) : sanitize_html_class( 'conica-navigation-style-blocks' ); ?> conica-navigation-animation-none" role="navigation">
-                            <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></span>
-                            <div id="main-menu" class="main-menu-container">
-                                <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
-                                <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
-                                <div class="clearboth"></div>
-                            </div>
-                        </nav> <!-- #site-navigation -->
                         
                     <?php endif; ?>
                     

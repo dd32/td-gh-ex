@@ -271,6 +271,7 @@ body.admin-bar .site-sticky-header .main-navigation {
 @media only screen and (max-width: 980px) {
     
     .header-menu-button {
+        width: 100%;
         padding: 14px 0 18px;
     }
     

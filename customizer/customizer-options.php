@@ -100,7 +100,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-help-layout',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Set website container width<br />- Change sidebar width<br />- Change content area padding', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Website Loader and customization settings<br />- Set website container width<br />- Change sidebar width<br />- Change content area padding', 'conica' )
     );
     // ---------------------------------------------------------------------------- Website Layout Settings
 
@@ -226,7 +226,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-help-nav',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change dropdown animation<br />- Fade / Slide Down / Fold Out', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Fade / Slide Down / Fold Out', 'conica' )
     );
     // ----------------------------------------------------------------------------------- Navigation Settings
 
@@ -290,7 +290,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-help-slider',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Set each slide to have custom url link<br />- Change slider scroll effect<br />- Change slider scroll duration<br />- Change slider direction<br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider scrolling', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Premium includes a more advanced FREE Shortcode Slider<br /><br />- Set each slide to have custom url link<br />- Change slider scroll effect<br />- Change slider scroll duration<br />- Change slider direction<br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider scrolling', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Slider Settings
 

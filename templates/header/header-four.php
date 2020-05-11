@@ -89,29 +89,31 @@ global $woocommerce; ?>
             
             <div class="site-container">
                 
-                <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></span>
+                <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></button>
                 <div id="main-menu" class="main-menu-container">
-                    <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
-                    <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
-                    
-                    <?php if ( conica_is_woocommerce_activated() ) : ?>
-                        <?php if ( !get_theme_mod( 'conica-set-header-cart' ) ) : ?>
-                            <div class="header-cart">
-                                
-                                <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'conica' ); ?>">
-                                    <span class="header-cart-amount">
-                                        <?php echo sprintf( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count(), 'conica' ), WC()->cart->get_cart_contents_count() ); ?><span> - <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
-                                    </span>
-                                    <span class="header-cart-checkout <?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
-                                        <i class="fa <?php echo ( get_theme_mod( 'conica-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
-                                    </span>
-                                </a>
-                                
-                            </div>
+                    <div class="main-menu-inner">
+                        <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                        <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
+                        
+                        <?php if ( conica_is_woocommerce_activated() ) : ?>
+                            <?php if ( !get_theme_mod( 'conica-set-header-cart' ) ) : ?>
+                                <div class="header-cart">
+                                    
+                                    <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'conica' ); ?>">
+                                        <span class="header-cart-amount">
+                                            <?php echo sprintf( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count(), 'conica' ), WC()->cart->get_cart_contents_count() ); ?><span> - <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+                                        </span>
+                                        <span class="header-cart-checkout <?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
+                                            <i class="fa <?php echo ( get_theme_mod( 'conica-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
+                                        </span>
+                                    </a>
+                                    
+                                </div>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    <?php endif; ?>
-                    
-                    <div class="clearboth"></div>
+                        
+                        <div class="clearboth"></div>
+                    </div>
                 </div>
                 
             </div>
