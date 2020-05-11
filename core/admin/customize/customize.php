@@ -308,6 +308,38 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 				'std' => 'top',
 			
 			),
+			
+			array(
+				
+				'label' => esc_html__( 'Post category','avventura-lite'),
+				'description' => esc_html__( 'Do you want to display the post category on homepage slideshow?','avventura-lite'),
+				'id' => 'avventura_lite_slideshow_post_category',
+				'type' => 'select',
+				'section' => 'slideshow_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','avventura-lite'),
+				   'on' => esc_html__( 'Yes','avventura-lite'),
+				),
+				
+				'std' => 'on',
+			
+			),
+
+			array(
+				
+				'label' => esc_html__( 'Post details','avventura-lite'),
+				'description' => esc_html__( 'Do you want to display the post details on homepage slideshow?','avventura-lite'),
+				'id' => 'avventura_lite_slideshow_post_details',
+				'type' => 'select',
+				'section' => 'slideshow_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','avventura-lite'),
+				   'on' => esc_html__( 'Yes','avventura-lite'),
+				),
+				
+				'std' => 'on',
+			
+			),
 
 			array(
 				
