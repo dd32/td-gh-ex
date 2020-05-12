@@ -61,7 +61,7 @@ function semper_fi_lite_woo_commerce() {
     
     function semper_fi_lite_new_loop_shop_per_page( $cols ) {
 
-        // $cols contains the current number of products per page based on the value stored on Options -> Reading
+        // cols contains the current number of products per page based on the value stored on Options -> Reading
         $cols = 16;
 
         // Return the number of products you wanna show per page.

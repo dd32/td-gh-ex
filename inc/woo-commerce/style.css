@@ -21,8 +21,7 @@
 }
 
 .woocommerce-page main#the-article form.cart label.screen-reader-text {
-    position: absolute;
-    left: 500em;
+    display: none;
 }
 
 .woocommerce-page main#the-article form.cart .wc-force-sells {

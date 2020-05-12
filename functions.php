@@ -23,12 +23,13 @@ function semper_fi_lite_setup_theme() {
 
     // This feature enables Custom_Backgrounds support for a theme.
     add_theme_support( 'custom-background', array(
-        'default-attachment'    => 'fixed',     // 'scroll', 'fixed'
+        'default-attachment'    => 'fixed',     // choices - scroll, fixed     
+        'default-color'         => '#333333',
         'default-image'         => get_template_directory_uri() . '/images/semper-fi-lite-top-of-world-H3-hummer-1920x1080.jpg',
-        'default-position-x'    => 'center',    // 'left', 'center', 'right'
-        'default-position-y'    => 'center',    // 'top', 'center', 'bottom'
-        'default-size'          => 'cover',     // 'auto', 'contain', 'cover'
-        'default-color'         => '#333333', ) , );
+        'default-position-x'    => 'center',    // choices - left, center, right
+        'default-position-y'    => 'center',    // choices - top, center, bottom
+        'default-repeat'        => 'no-repeat', // choices - repeat-x, repeat-y, repeat, no-repeat
+        'default-size'          => 'cover',) ); // choices - auto, contain, cover
 
 
     // This feature enables Selective Refresh for Widgets being managed within the Customizer.
@@ -48,7 +49,7 @@ function semper_fi_lite_setup_theme() {
         'script',
         'search-form',
         'style',
-        'widgets', ) , );
+        'widgets', ) );
 
 
     // This feature enables Post Thumbnails support for a theme.

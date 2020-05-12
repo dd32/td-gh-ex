@@ -8,8 +8,6 @@ function semper_fi_lite_woo_commerce_content_data() {
 
     }
     
-    //add_action( 'semper_fi_lite_woo_commerce_content_microdata' , 'semper_fi_lite_woo_commerce_content_data_html' );
-    
     function semper_fi_lite_woo_commerce_content_data_css() {
     
         if ( is_product() ) {
@@ -19,8 +17,6 @@ function semper_fi_lite_woo_commerce_content_data() {
         }
         
     }
-    
-    //add_action( 'semper_fi_lite_woo_commerce_the_header' , 'semper_fi_lite_woo_commerce_content_data_css' );
     
     
 }

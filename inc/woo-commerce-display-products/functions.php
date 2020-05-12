@@ -1,23 +1,6 @@
 <?php
 
 function semper_fi_lite_woo_commerce_display_products_shopping_cart() {
-    
-    /*
-    // Display store after shopping cart page, remove categories and tags
-    function semper_fi_lite_woo_commerce_display_products_shopping_cart_html() {
-
-        if ( is_cart() ) {
-        
-            //require get_parent_theme_file_path( '/inc/woo-commerce-display-products/html.php' );
-
-            //add_action( 'semper_fi_lite_page_after_content' , 'semper_fi_lite_woo_commerce_display_products_shopping_cart_html' );
-            //add_action( 'semper_fi_lite_page_after_footer', 'semper_fi_lite_woo_commerce_display_products_css' );
-
-        }
-
-    }
-
-    //add_action( 'semper_fi_lite_page_after_header', 'semper_fi_lite_woo_commerce_display_products_shopping_cart' );*/
 
 
     // Display store on the page store instead of standard page
@@ -60,21 +43,6 @@ function semper_fi_lite_woo_commerce_display_products_shopping_cart() {
     }
 
     add_action( 'semper_fi_lite_front_page_after_content', 'semper_fi_lite_woo_commerce_display_products_front_page_html' , 5 );
-
-    
-    // Adds the store after blog when is not home
-    function semper_fi_lite_woo_commerce_display_products_front_page_before_footer() {
-
-        if ( is_paged() && absint ( get_theme_mod( 'woocommerce_store_front_enable_1' , false ) ) ) {
-
-            require get_parent_theme_file_path( '/inc/woo-commerce-display-products/html.php' );
-            add_action( 'semper_fi_lite_page_after_footer', 'semper_fi_lite_woo_commerce_display_products_css' );
-
-        }
-
-    }
-
-    //add_action( 'semper_fi_lite_front_page_before_footer', 'semper_fi_lite_woo_commerce_display_products_front_page_before_footer' );
     
     
     function semper_fi_lite_store_front_css() {
