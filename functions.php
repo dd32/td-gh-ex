@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'RESPONSIVE_THEME_VERSION', '4.3.5' );
+define( 'RESPONSIVE_THEME_VERSION', '4.3.6' );
 define( 'RESPONSIVE_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'RESPONSIVE_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 
@@ -899,3 +899,17 @@ function responsive_header_widget_position() {
 
 }
 add_action( 'wp_head', 'responsive_header_widget_position' );
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Fire the wp_body_open action.
+	 *
+	 * Added for backwards compatibility to support WordPress versions prior to 5.2.0.
+	 */
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 */
+		do_action( 'wp_body_open' );
+	}
+}
