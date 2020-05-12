@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2020-02-23 18:44+0100\n"
-"PO-Revision-Date: 2020-02-23 18:45+0100\n"
+"POT-Creation-Date: 2020-05-12 16:16+0100\n"
+"PO-Revision-Date: 2020-05-12 16:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -174,43 +174,43 @@ msgstr ""
 msgid "WordPress Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:47
+#: functions.php:50
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:78
+#: functions.php:81
 msgid "Small"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:82
 msgid "S"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:87
 msgid "Regular"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:88
 msgid "M"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:93
 msgid "Large"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:94
 msgid "L"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:99
 msgid "Larger"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:100
 msgid "XL"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:128
 msgid "Sidebar"
 msgstr ""
 
@@ -218,87 +218,91 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:67
+#: header.php:68
 msgid "Facebook"
 msgstr ""
 
-#: header.php:71
+#: header.php:72
 msgid "Twitter"
 msgstr ""
 
-#: header.php:75
+#: header.php:76
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:79
+#: header.php:80
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:83
+#: header.php:84
 msgid "Instagram"
 msgstr ""
 
-#: header.php:87
+#: header.php:88
 msgid "YouTube"
 msgstr ""
 
-#: header.php:91
+#: header.php:92
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:95
+#: header.php:96
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:99
+#: header.php:100
 msgid "VK"
 msgstr ""
 
-#: header.php:103
+#: header.php:104
 msgid "GitHub"
 msgstr ""
 
-#: header.php:107
+#: header.php:108
 msgid "Vine"
 msgstr ""
 
-#: header.php:111
+#: header.php:112
 msgid "Xing"
 msgstr ""
 
-#: header.php:115
+#: header.php:116
 msgid "Telegram"
 msgstr ""
 
-#: header.php:119
+#: header.php:120
 msgid "Imdb"
 msgstr ""
 
-#: header.php:123
+#: header.php:124
 msgid "Twitch"
 msgstr ""
 
-#: header.php:127
+#: header.php:128
+msgid "Spotify"
+msgstr ""
+
+#: header.php:132
 msgid "Email"
 msgstr ""
 
-#: header.php:131
+#: header.php:136
 msgid "RSS"
 msgstr ""
 
-#: header.php:135
+#: header.php:140
 msgid "Search"
 msgstr ""
 
-#: header.php:142
+#: header.php:147
 msgid "Search for:"
 msgstr ""
 
-#: header.php:143
+#: header.php:148
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:150
+#: header.php:155
 msgid "Menu"
 msgstr ""
 
@@ -469,11 +473,11 @@ msgstr ""
 msgid "Animations"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:353 inc/blogghiamo-dynamic.php:320
+#: inc/admin/blogghiamo-admin-page.php:353 inc/blogghiamo-dynamic.php:325
 msgid "Loading Page"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:358 inc/blogghiamo-dynamic.php:319
+#: inc/admin/blogghiamo-admin-page.php:358 inc/blogghiamo-dynamic.php:324
 msgid "Font switcher"
 msgstr ""
 
@@ -481,31 +485,31 @@ msgstr ""
 msgid "Beautiful posts slider"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:368 inc/blogghiamo-dynamic.php:323
+#: inc/admin/blogghiamo-admin-page.php:368 inc/blogghiamo-dynamic.php:328
 msgid "Breaking News"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:373 inc/blogghiamo-dynamic.php:325
+#: inc/admin/blogghiamo-admin-page.php:373 inc/blogghiamo-dynamic.php:330
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:378 inc/blogghiamo-dynamic.php:324
+#: inc/admin/blogghiamo-admin-page.php:378 inc/blogghiamo-dynamic.php:329
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:383 inc/blogghiamo-dynamic.php:327
+#: inc/admin/blogghiamo-admin-page.php:383 inc/blogghiamo-dynamic.php:332
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:388 inc/blogghiamo-dynamic.php:328
+#: inc/admin/blogghiamo-admin-page.php:388 inc/blogghiamo-dynamic.php:333
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:393 inc/blogghiamo-dynamic.php:329
+#: inc/admin/blogghiamo-admin-page.php:393 inc/blogghiamo-dynamic.php:334
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/blogghiamo-admin-page.php:398 inc/blogghiamo-dynamic.php:330
+#: inc/admin/blogghiamo-admin-page.php:398 inc/blogghiamo-dynamic.php:335
 msgid "Information About Author Box"
 msgstr ""
 
@@ -593,80 +597,84 @@ msgstr ""
 msgid "Twitch URL"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:200
+#: inc/blogghiamo-dynamic.php:170
+msgid "Spotify URL"
+msgstr ""
+
+#: inc/blogghiamo-dynamic.php:205
 msgid "Your Email"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:217
+#: inc/blogghiamo-dynamic.php:222
 msgid "Show Search Button"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:235
+#: inc/blogghiamo-dynamic.php:240
 msgid "Show RSS Icon"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:253
+#: inc/blogghiamo-dynamic.php:258
 msgid ""
 "Check if you want to show excerpt, uncheck if you want to show full post"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:271
+#: inc/blogghiamo-dynamic.php:276
 msgid "Read more button"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:272
+#: inc/blogghiamo-dynamic.php:277
 msgid "Leave the field blank if you do not want to show the read more button"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:290
+#: inc/blogghiamo-dynamic.php:295
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:291
+#: inc/blogghiamo-dynamic.php:296
 msgid "Get the PRO version to remove CrestaProject Credits"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:305
+#: inc/blogghiamo-dynamic.php:310
 msgid "Get Blogghiamo PRO WP Theme for only"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:310
+#: inc/blogghiamo-dynamic.php:315
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:313
+#: inc/blogghiamo-dynamic.php:318
 msgid "Get Blogghiamo PRO Theme"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:317
+#: inc/blogghiamo-dynamic.php:322
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:318
+#: inc/blogghiamo-dynamic.php:323
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:321
+#: inc/blogghiamo-dynamic.php:326
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:322
+#: inc/blogghiamo-dynamic.php:327
 msgid "Beautiful Slider"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:326
+#: inc/blogghiamo-dynamic.php:331
 msgid "Post format"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:331
+#: inc/blogghiamo-dynamic.php:336
 msgid "Advertising System"
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:332
+#: inc/blogghiamo-dynamic.php:337
 msgid "And much more..."
 msgstr ""
 
-#: inc/blogghiamo-dynamic.php:338
+#: inc/blogghiamo-dynamic.php:343
 msgid "More features? Upgrade to PRO"
 msgstr ""
 
