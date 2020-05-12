@@ -55,35 +55,30 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			$css[] = '#site-navigation{' . azuma_css_font_family( $font_nav ) . ';}';
 		}
 
-		if ( azuma_get_installed_version() < '1.1.1' ) {
-			$fs_site_title = get_theme_mod( 'fs_site_title', '56' );
+
+		$fs_site_title = get_theme_mod( 'fs_site_title' );
+		$fs_site_title_laptop = get_theme_mod( 'fs_site_title_laptop' );
+		$fs_site_title_tablet = get_theme_mod( 'fs_site_title_tablet' );
+		$fs_site_title_mobile = get_theme_mod( 'fs_site_title_mobile' );
+		if ( $fs_site_title_laptop || $fs_site_title_tablet || $fs_site_title_mobile ) {
+			if ( $fs_site_title ) {
+				$css[] = '@media only screen and (min-width: 1025px){.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}}';
+			}
+			if ( $fs_site_title_laptop ) {
+				$css[] = '@media only screen and (min-width: 769px) and (max-width: 1024px){.site-title{font-size:' . esc_attr($fs_site_title_laptop) . 'px;}}';
+			}
+			if ( $fs_site_title_tablet ) {
+				$css[] = '@media only screen and (min-width: 481px) and (max-width: 768px){.site-title{font-size:' . esc_attr($fs_site_title_tablet) . 'px;}}';
+			}
+			if ( $fs_site_title_mobile ) {
+				$css[] = '@media only screen and (max-width: 480px){.site-title{font-size:' . esc_attr($fs_site_title_mobile) . 'px;}}';
+			}
+		} else {
 			if ( $fs_site_title && $fs_site_title != '56' ) {
 				$css[] = '.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}';
 			}
-		} else {
-			$fs_site_title = get_theme_mod( 'fs_site_title' );
-			$fs_site_title_laptop = get_theme_mod( 'fs_site_title_laptop' );
-			$fs_site_title_tablet = get_theme_mod( 'fs_site_title_tablet' );
-			$fs_site_title_mobile = get_theme_mod( 'fs_site_title_mobile' );
-			if ( $fs_site_title_laptop || $fs_site_title_tablet || $fs_site_title_mobile ) {
-				if ( $fs_site_title ) {
-					$css[] = '@media only screen and (min-width: 1025px){.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}}';
-				}
-				if ( $fs_site_title_laptop ) {
-					$css[] = '@media only screen and (min-width: 769px) and (max-width: 1024px){.site-title{font-size:' . esc_attr($fs_site_title_laptop) . 'px;}}';
-				}
-				if ( $fs_site_title_tablet ) {
-					$css[] = '@media only screen and (min-width: 481px) and (max-width: 768px){.site-title{font-size:' . esc_attr($fs_site_title_tablet) . 'px;}}';
-				}
-				if ( $fs_site_title_mobile ) {
-					$css[] = '@media only screen and (max-width: 480px){.site-title{font-size:' . esc_attr($fs_site_title_mobile) . 'px;}}';
-				}
-			} else {
-				if ( $fs_site_title && $fs_site_title != '56' ) {
-					$css[] = '.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}';
-				}
-			}
 		}
+		
 
 		$fw_site_title = get_theme_mod( 'fw_site_title', '700' );
 		if ( $fw_site_title && $fw_site_title != '700' ) {

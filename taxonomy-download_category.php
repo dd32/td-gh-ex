@@ -23,7 +23,7 @@ $grid_loop_main = ' infinite-grid layout-'. esc_attr( $grid_layout );
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php if ( get_theme_mod( 'page_title_style' ) == 2 ) { ?>
+			<?php if ( get_theme_mod( 'page_title_style' ) == 2 || get_theme_mod( 'page_title_style' ) == 4 ) { ?>
 			<header class="archive-header">
 				<?php
 				the_archive_title( '<h1 class="archive-title">', '</h1>' );

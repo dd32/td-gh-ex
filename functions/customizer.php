@@ -236,6 +236,7 @@ function azuma_customize_register( $wp_customize ) {
 			'choices' => array(
 				'' => get_template_directory_uri() . '/images/header-title-style-1.png',
 				'2' => get_template_directory_uri() . '/images/header-title-style-2.png',
+				'4' => get_template_directory_uri() . '/images/header-title-style-4.png',
 				)
 			)
 		)
@@ -656,7 +657,7 @@ function azuma_customize_register( $wp_customize ) {
 				'label'			=> esc_html__( 'Letter Spacing', 'azuma' ),
 				'type'       	=> 'number',
 				'input_attrs' => array(
-                'min'   => -6,
+                'min'   => 1,
                 'max'   => 20,
                 'step'  => 1,
             ),

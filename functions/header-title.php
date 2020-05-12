@@ -3,7 +3,7 @@
 if ( !function_exists( 'azuma_header_title' ) ) {
 	function azuma_header_title() {
 
-		if ( get_theme_mod( 'page_title_style' ) == 2 ) {
+		if ( get_theme_mod( 'page_title_style' ) == 2 || get_theme_mod( 'page_title_style' ) == 4 ) {
 			return NULL;
 		}
 

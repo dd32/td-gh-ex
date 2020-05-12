@@ -29,7 +29,7 @@
 		$page_class = '';
 	}
 
-	if ( get_theme_mod( 'page_title_style' ) == 2 ) {
+	if ( get_theme_mod( 'page_title_style' ) == 2 || get_theme_mod( 'page_title_style' ) == 4 ) {
 		$masthead_class = ' not-full';
 	} else {
 		$masthead_class = ' full';

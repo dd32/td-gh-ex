@@ -8,7 +8,7 @@
 ?>
 
 <section class="no-results not-found">
-		<?php if ( get_theme_mod( 'page_title_style' ) == 2 ) { ?>
+		<?php if ( get_theme_mod( 'page_title_style' ) == 2 || get_theme_mod( 'page_title_style' ) == 4 ) { ?>
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'azuma' ); ?></h1>
 		<?php } ?>
 	<div class="page-content">

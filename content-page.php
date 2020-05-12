@@ -10,9 +10,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php
-if ( get_theme_mod( 'page_title_style' ) == 2 ) {
+if ( get_theme_mod( 'page_title_style' ) == 2 || get_theme_mod( 'page_title_style' ) == 4 ) {
 
-	if ( has_post_thumbnail() ) {
+	if ( has_post_thumbnail() && get_theme_mod( 'page_title_style' ) == 2 ) {
 	$thumbnail_on = true; ?>
 	<header class="entry-header with-image" style="background-image: url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>')">
 		<div class="title-meta-wrapper">

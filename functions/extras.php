@@ -7,10 +7,6 @@
  * @package Azuma
  */
 
-function azuma_get_installed_version() {
-	return wp_get_theme()->get( 'Version' );
-}
-
 /**
  * Adds custom classes to the array of body classes
  *
