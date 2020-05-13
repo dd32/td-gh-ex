@@ -31,12 +31,12 @@ add_action( 'wp_enqueue_scripts', 'advance_ecommerce_store_header_style' );
 function advance_ecommerce_store_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$advance_ecommerce_store_custom_css = "
         #header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center;
 		}";
-	   	wp_add_inline_style( 'advance-ecommerce-store-basic-style', $custom_css );
+	   	wp_add_inline_style( 'advance-ecommerce-store-basic-style', $advance_ecommerce_store_custom_css );
 	endif;
 }
 endif; // advance_ecommerce_store_header_style
