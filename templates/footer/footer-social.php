@@ -7,39 +7,39 @@
 	            
 	            <?php
 				if( get_theme_mod( 'conica-social-email' ) ) :
-				    echo '<a href="' . esc_url( 'mailto:' . antispambot( get_theme_mod( 'conica-social-email' ), 1 ) ) . '" title="' . esc_attr__( 'Send Us an Email', 'conica' ) . '" class="footer-social-icon footer-social-email"><i class="fa fa-envelope-o"></i></a>';
+				    echo '<a href="' . esc_url( 'mailto:' . antispambot( get_theme_mod( 'conica-social-email' ), 1 ) ) . '" title="' . esc_attr__( 'Send Us an Email', 'conica' ) . '" class="footer-social-icon footer-social-email"><i class="fab fa-envelope-o"></i></a>';
 				endif;
 
 				if( get_theme_mod( 'conica-social-facebook' ) ) :
-				    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-facebook' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Facebook', 'conica' ) . '" class="footer-social-icon footer-social-facebook"><i class="fa fa-facebook"></i></a>';
+				    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-facebook' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Facebook', 'conica' ) . '" class="footer-social-icon footer-social-facebook"><i class="fab fa-facebook"></i></a>';
 				endif;
                 
                 if( get_theme_mod( 'conica-social-twitter' ) ) :
-                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-twitter' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Facebook', 'conica' ) . '" class="footer-social-icon footer-social-twitter"><i class="fa fa-twitter"></i></a>';
+                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-twitter' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Facebook', 'conica' ) . '" class="footer-social-icon footer-social-twitter"><i class="fab fa-twitter"></i></a>';
                 endif;
 
 				if( get_theme_mod( 'conica-social-google-plus' ) ) :
-				    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-google-plus' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Google Plus', 'conica' ) . '" class="footer-social-icon footer-social-gplus"><i class="fa fa-google-plus"></i></a>';
+				    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-google-plus' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Google Plus', 'conica' ) . '" class="footer-social-icon footer-social-gplus"><i class="fab fa-google-plus"></i></a>';
 				endif;
 				
 				if( get_theme_mod( 'conica-social-linkedin' ) ) :
-				    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-linkedin' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on LinkedIn', 'conica' ) . '" class="footer-social-icon footer-social-linkedin"><i class="fa fa-linkedin"></i></a>';
+				    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-linkedin' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on LinkedIn', 'conica' ) . '" class="footer-social-icon footer-social-linkedin"><i class="fab fa-linkedin"></i></a>';
 				endif;
                 
                 if( get_theme_mod( 'conica-social-behance' ) ) :
-                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-behance' ) ) . '" target="_blank" title="' . esc_attr__( 'Find us on Behance', 'conica' ) . '" class="footer-social-icon social-behance"><i class="fa fa-behance"></i></a>';
+                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-behance' ) ) . '" target="_blank" title="' . esc_attr__( 'Find us on Behance', 'conica' ) . '" class="footer-social-icon social-behance"><i class="fab fa-behance"></i></a>';
                 endif;
                 
                 if( get_theme_mod( 'conica-social-tumblr' ) ) :
-                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-tumblr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Tumblr', 'conica' ) . '" class="footer-social-icon footer-social-tumblr"><i class="fa fa-tumblr"></i></a>';
+                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-tumblr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Tumblr', 'conica' ) . '" class="footer-social-icon footer-social-tumblr"><i class="fab fa-tumblr"></i></a>';
                 endif;
 
                 if( get_theme_mod( 'conica-social-flickr' ) ) :
-                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-flickr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Flickr', 'conica' ) . '" class="footer-social-icon footer-social-flickr"><i class="fa fa-flickr"></i></a>';
+                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-flickr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Flickr', 'conica' ) . '" class="footer-social-icon footer-social-flickr"><i class="fab fa-flickr"></i></a>';
                 endif;
                 
                 if( get_theme_mod( 'conica-social-vk' ) ) :
-                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-vk' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on VK', 'conica' ) . '" class="footer-social-icon social-vk"><i class="fa fa-vk"></i></a>';
+                    echo '<a href="' . esc_url( get_theme_mod( 'conica-social-vk' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on VK', 'conica' ) . '" class="footer-social-icon social-vk"><i class="fab fa-vk"></i></a>';
                 endif; ?>
 			
 			<?php endif; ?>

@@ -19,16 +19,16 @@ global $woocommerce; ?>
                 <div class="header-top-bar-right">
                     
                     <?php if ( get_theme_mod( 'conica-set-text-header-add' ) ) : ?>
-                        <span class="header-top-bar-right-ad"><i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-add' ) ); ?></span>
+                        <span class="header-top-bar-right-ad"><i class="fas fa-map-marker-alt"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-add' ) ); ?></span>
                     <?php endif; ?>
                     
                     <?php if ( get_theme_mod( 'conica-set-text-header-phone' ) ) : ?>
-                        <span class="header-top-bar-right-no"><i class="fa fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-phone' ) ); ?></span>
+                        <span class="header-top-bar-right-no"><i class="fas fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-phone' ) ); ?></span>
                     <?php endif; ?>
                     
                     <?php if ( get_theme_mod( 'conica-set-text-header-custom' ) ) : ?>
                         <span class="header-top-bar-right-no">
-                            <?php echo ( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) ? '<i class="fa ' . sanitize_html_class( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) . '"></i> ' : ''; ?>
+                            <?php echo ( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) ? '<i class="fas ' . sanitize_html_class( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) . '"></i> ' : ''; ?>
                             <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-custom' ) ); ?>
                         </span>
                     <?php endif; ?>
@@ -71,10 +71,10 @@ global $woocommerce; ?>
                     <?php else : ?>
                         
                         <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'conica-set-navigation-style' ) ) ? sanitize_html_class( get_theme_mod( 'conica-set-navigation-style' ) ) : sanitize_html_class( 'conica-navigation-style-blocks' ); ?> conica-navigation-animation-none" role="navigation">
-                            <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></button>
+                            <button class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></button>
                             <div id="main-menu" class="main-menu-container">
                                 <div class="main-menu-inner">
-                                    <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                                    <button class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></button>
                                     <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
                                     <div class="clearboth"></div>
                                 </div>
@@ -90,7 +90,7 @@ global $woocommerce; ?>
                                             <?php echo sprintf( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count(), 'conica' ), WC()->cart->get_cart_contents_count() ); ?><span> - <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
                                         </span>
                                         <span class="header-cart-checkout <?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
-                                            <i class="fa <?php echo ( get_theme_mod( 'conica-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
+                                            <i class="fas <?php echo ( get_theme_mod( 'conica-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
                                         </span>
                                     </a>
                                     
@@ -102,7 +102,7 @@ global $woocommerce; ?>
                     
                     <?php if ( get_theme_mod( 'conica-set-show-search', customizer_library_get_default( 'conica-set-show-search' ) ) ) : ?>
                         <div class="search-button">
-                            <i class="fa fa-search"></i>
+                            <i class="fas fa-search"></i>
                         </div>
                     <?php endif; ?>
                     

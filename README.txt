@@ -79,6 +79,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.21
+* Updated Font Awesome
+* Update header to use latest icons
+* PREMIUM: Fixed NEW shortcode slider using new icons
+
 #### 1.3.20
 * Style tweaks/fixes
 * Added wp_body_open hook required in new WP versions

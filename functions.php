@@ -4,7 +4,7 @@
  *
  * @package Conica
  */
-define( 'CONICA_THEME_VERSION' , '1.3.20' );
+define( 'CONICA_THEME_VERSION' , '1.3.21' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -137,7 +137,7 @@ function conica_scripts() {
     	wp_enqueue_style( 'conica-body-font-default', '//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), CONICA_THEME_VERSION );
 	}
 	
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
+    wp_enqueue_style( 'conica-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/all.min.css', array(), '5.9.0' );
 	wp_enqueue_style( 'conica-style', get_stylesheet_uri(), array(), CONICA_THEME_VERSION );
 	
 	if ( conica_is_woocommerce_activated() ) {
@@ -432,7 +432,7 @@ function conica_add_license_notice() {
                 ?>
             </p>
             <p>
-            <?php esc_html_e( 'Conica Premium offers a more advanced Shorcode Slider included FREE', 'conica' ); ?>
+                <?php esc_html_e( 'Conica Premium offers a more advanced Shorcode Slider included FREE', 'conica' ); ?>
             </p>
             
             <?php if ( $conicapage == 'themes.php?page=theme_info' ) : ?>
