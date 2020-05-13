@@ -32,14 +32,50 @@ $(document).ready(function(){
     });
 });
 </script>
+
+<?php
+$options = get_option('theme_options');
+$designtempradio = $options['designtempradio'];
+if( $designtempradio  == 2 ) {  ?>
+<style>
+.content-title, .widget-title, .entry-title, .archive-title, .rand-post-main h4{background:#000;}
+.content-title h1, .widget-title, .entry-title, .archive-title, .rand-post-main h4{ color:#fff;}
+#search_button{background: #000; color: #fff; border: none;}
+.post_expert_index a{background-color: #000;}
+.post_expert_index a:hover{background-color: #2d2f32;}
+.navigation a{color:#eee; background:#000;}
+.navigation a:hover{background:#eee; color:#444;}
+
+</style><?php }
+else{ ?>
+<style>
+.content-title, .widget-title, .entry-title, .archive-title, .rand-post-main h4{background: #f6f6f6;}
+.content-title h1, .widget-title, .entry-title, .archive-title, .rand-post-main h4{ color:#333;}
+.post_expert_index a{background-color: #000;}
+.post_expert_index a:hover{background-color: #2d2f32;}
+.navigation a{color:#000; background:#eee;}
+.navigation a:hover{background:#444; color:#fff;}
+
+</style>
+<?php }  ?>
+
+
+
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
+
+
+
 <div class="main" >
 
 <header class="site-header" role="banner">
+
+	<nav class="top-navigation" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'top-menu', 'menu_class' => 'top-menu' ) ); ?>
+	</nav><!-- #topsite-navigation -->
 		
         <div class="logo">
         <?php 
@@ -77,6 +113,8 @@ $(document).ready(function(){
         </div>
 	</header><!-- site-header -->
     <div class="clear"></div>
+	
+	
 	
 <div class="wrapper">
 

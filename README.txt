@@ -1,5 +1,5 @@
 Theme Name : Artikler
-Version : 1.3.4.8
+Version : 1.3.5.0
 Author : JAZ Themes Team
 Author URI : https://jazcompany.wordpress.com/
 Theme URI : https://jazcompany.wordpress.com/2016/07/30/artikler/

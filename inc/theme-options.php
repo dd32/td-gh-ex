@@ -17,7 +17,7 @@ function artikler_options_page() { ?>
    <form method="post" action="options.php" enctype="multipart/form-data">
    <?php settings_fields('theme_options');
    do_settings_sections(__FILE__); ?> 
-   <p class="submit"> <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" /> </p>
+   <p class="submit"> <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes', 'artikler'); ?>" /> </p>
    </form> 
   </div> 
 <?php } 
@@ -29,6 +29,8 @@ function register_and_build_fields() {
 	function section_basic() {}
 		add_settings_field('favicon_url', 'Favicon (URL)', 'favicon_url', __FILE__, 'header_settings');
 		add_settings_field('logo_url', 'Logo Image (URL)', 'logo_url', __FILE__, 'header_settings');
+		add_settings_field('homesidebarradio', 'Home Sidebar Options', 'homesidebar_radio', __FILE__, 'header_settings');
+		add_settings_field('designtempradio', 'Theme Design', 'designtemp_radio', __FILE__, 'header_settings');
 		
 	add_settings_section('footer_settings', 'Footer Options', 'section_footer', __FILE__);
 	function section_footer() {} 
@@ -45,13 +47,48 @@ function validate_setting($theme_options) {
 function favicon_url() {
 	$options = get_option('theme_options'); 
 	echo "<input name='theme_options[favicon_url]' type='text' value='{$options['favicon_url']}' />";
-	print '<code>Recommend: Image must be 16x16 pixels or 32x32 pixels. </code>';
+	_e('Recommend: Image must be 16x16 pixels or 32x32 pixels.', 'artikler');
 }
 function logo_url() {
 	$options = get_option('theme_options'); 
 	echo "<input name='theme_options[logo_url]' type='text' value='{$options['logo_url']}' />";
-	print '<code>Recommend: 70px &gt; height of image. </code>';
+	_e('Recommend: 70px &gt; height of image.', 'artikler');
 }
+
+function homesidebar_radio() {
+ 
+    $options = get_option( 'theme_options' );
+     
+    $html = '<input type="radio" id="homesidebar_radio_one" name="theme_options[homesidebarradio]" value="1"' . checked( 1, $options['homesidebarradio'], false ) . '/>';
+    $html .= '<label for="homesidebar_radio_one">Left   </label>';
+     
+    $html .= '<input type="radio" id="homesidebar_radio_two" name="theme_options[homesidebarradio]" value="2"' . checked( 2, $options['homesidebarradio'], false ) . '/>';
+    $html .= '<label for="homesidebar_radio_two">Right (Default)    </label>';
+	
+	$html .= '<input type="radio" id="homesidebar_radio_three" name="theme_options[homesidebarradio]" value="3"' . checked( 3, $options['homesidebarradio'], false ) . '/>';
+    $html .= '<label for="homesidebar_radio_three">None</label>';
+     
+    echo $html;
+ 
+} // end homesidebar_radio
+
+
+function designtemp_radio() {
+ 
+    $options = get_option( 'theme_options' );
+     
+    $html = '<input type="radio" id="designtemp_radio_one" name="theme_options[designtempradio]" value="1"' . checked( 1, $options['designtempradio'], false ) . '/>';
+    $html .= '<label for="designtemp_radio_one">Orignal(Default)    </label>';
+     
+    $html .= '<input type="radio" id="designtemp_radio_two" name="theme_options[designtempradio]" value="2"' . checked( 2, $options['designtempradio'], false ) . '/>';
+    $html .= '<label for="designtemp_radio_two">Black & White    </label>';
+	
+	
+     
+    echo $html;
+ 
+} // end designtemp_radio
+
 
 function aboutus() {
 	$options = get_option('theme_options'); 

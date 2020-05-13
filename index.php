@@ -4,10 +4,18 @@
  */
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-    		 
+<?php
+$options = get_option('theme_options');
+$homesidebarradio = $options['homesidebarradio'];
+if( $homesidebarradio  == 1 ) {  $sidebarleftp = 'float_right ';} 
+elseif( $homesidebarradio  == 3 ) {  $sidebarleftp = 'hundred-width';} 
+else{$sidebarleftp = 'float_left ';}  ?>
+
+
+	<div id="primary " class="site-content <?php echo $sidebarleftp;?>">
+
 		<div id="content" role="main">
-		<div class="content-title"><h1>Latest Post</h1></div>
+		<div class="content-title"><h1><?php _e( 'Latest Post', 'artikler' ); ?></h1></div>
 		
         		<?php if ( have_posts() ) : ?>
         

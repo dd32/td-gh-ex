@@ -389,13 +389,21 @@ wp_enqueue_style( 'dashicons' );
 /***Footer Sidebar***/
 function sidebar_footer(){ ?>
 	<div id="secondary" class="footer-sidebar">
-			 <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-2' ) ?> </div> <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-3' ) ?> '</div> <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-4' ) ?> </div> <?php get_themeoptions_value(); ?>
+			 <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-2' ) ?> </div> <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-3' ) ?> </div> <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-4' ) ?> </div> <?php get_themeoptions_value(); ?>
             </div><!-- #secondary -->
 <?php }
 
 require( get_template_directory() . '/inc/custom-comment.php' );
 
 //@since 1.3.4
+
+//Top Menu
+function wpb_top_menu() {
+  register_nav_menu('top-menu',__( 'Top Menu' , 'artikler' ));
+}
+add_action( 'init', 'wpb_top_menu' );
+//@since 1.3.5
+
 if(is_admin()){
 require( get_template_directory() . '/inc/theme-options.php' );
 }
