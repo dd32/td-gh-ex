@@ -2,10 +2,10 @@
 
 Contributors: Alexathemes
 Requires at least: WordPress 4.4  
-Tested up to: WordPress 5.3.2
+Tested up to: WordPress 5.4.1
 Requires PHP: 5.2.6
-Stable tag: 1.0
-Version: 1.0
+Stable tag: 1.1
+Version: 1.1
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 Tags: e-commerce, education, right-sidebar, custom-background, custom-header, custom-menu, featured-images, theme-options, threaded-comments, custom-logo, blog, full-width-template
@@ -49,6 +49,9 @@ Theme is built using the following resource bundles:
 		pxhere provides images under CC0 license
  		CC0 license: https://creativecommons.org/share-your-work/public-domain/cc0
 		https://pxhere.com/en/license
+
+*       Logo Image
+	The logo image is self created by AlexaThemes and can be use for commercial and non-commercial use.
 			
 *       babysitter-lite/css/font-awesome.css 
 
@@ -76,3 +79,6 @@ For any help you can mail us at support[at]alexathemes.net
 
 = 1.0 =
 *      Initial version release.
+
+= 1.1 =
+*     Removed unused css, added escape functions and resolved css issues.

@@ -4,7 +4,7 @@ Theme URI: https://alexathemes.net/themes/free-babysitter-wordpress-theme/
 Author: Alexathemes
 Author URI: https://alexathemes.net
 Description:  Babysitter Lite WordPress theme is a beautifully designed and developed responsive theme made for babysitting online network, nannies bureau, mom’s blog, preschool, kindergarten, and children educational websites. This theme is specially made for people who own babycare business and trying to explore the business online. This theme is compatible with many popular plugins like wocommerce and contact form 7. This theme is well-performing in mobile, tab and desktop views. This theme is also included with search, categories, Standard pages like 404, archives. The five-level dropdown is implemented. It also includes the appearance menu which controls the header menu as well as the footer menu. 
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: babysitter-lite
@@ -12,7 +12,7 @@ Tags:  e-commerce, education, right-sidebar, custom-background, custom-header, c
 
 Babysitter Lite is based on Underscores theme(Underscores is distributed under the terms of the GNU GPL v2 or later).
 Babysitter Lite WordPress Theme has been created by Alexathemes(alexathemes.net), 2020.
-Babysitter Lite WordPress Theme is released under the terms of GNU GPL
+Babysitter Lite WordPress Theme is released under the terms of GNU GPL.
 */
 
 body {
@@ -383,7 +383,11 @@ button.dropdown-toggle{
 	text-align:left;
 }
 
-/* = Navigation 3rd level css
+@media screen and (min-width: 1000px) {
+    #header .header-inner .logo {
+        float: left;
+    }
+	/* = Navigation 3rd level css
 -------------------------------------------------------------- */
 .sitenav ul li:hover ul li:hover > ul,
 .sitenav ul li:hover ul li:focus > ul{
@@ -395,10 +399,12 @@ button.dropdown-toggle{
 	-webkit-animation: fadeInRight .3s ease-in-out; 
 	animation:fadeInRight .3s ease-in-out; 
 }
-@media screen and (min-width: 1000px) {
-    #header .header-inner .logo {
-        float: left;
-    }
+
+.sitenav ul li.menu-item-has-children.focus ul li.menu-item-has-children.focus ul {
+	left:inherit !important; 
+	top:-1px !important;
+	right: -174px !important;
+}
 }
 
 /* = section first css

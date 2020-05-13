@@ -12,7 +12,9 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php if(is_singular() && pings_open()) { ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php } ?>
 <?php wp_head(); ?>
 </head>
 
@@ -21,6 +23,8 @@
 	//wp_body_open hook from WordPress 5.2
 	if ( function_exists( 'wp_body_open' ) ) {
 	    wp_body_open();
+	} else {
+		do_action( 'wp_body_open' );
 	}
 ?>
 <a class="skip-link screen-reader-text" href="#sitemain">
@@ -37,7 +41,7 @@
 			<?php } ?>
 			<?php if(get_theme_mod('email-txt') != ''){ ?>
 				<span>
-					<i class="fa fa-envelope-o" aria-hidden="true"></i><a href="<?php echo esc_attr('mailto:','babysitter-lite').esc_html(get_theme_mod('email-txt')); ?>"><?php echo esc_html(get_theme_mod('email-txt')); ?></a>
+					<i class="fa fa-envelope-o" aria-hidden="true"></i><a href="<?php echo esc_url('mailto:'.sanitize_email(get_theme_mod('email-txt'))); ?>"><?php echo sanitize_email(get_theme_mod('email-txt')); ?></a>
 				</span>
 			<?php } ?>
 		</div><!-- top-contact -->

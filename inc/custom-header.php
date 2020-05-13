@@ -30,7 +30,7 @@ function babysitter_lite_header_style() {
 		//Check if user has defined any header image.
 		if ( get_header_image() || get_header_textcolor() ) :
 	?>
-		.header{
+		#header{
 			background-image: url(<?php echo esc_url(get_header_image()); ?>);
 			background-position: center top;
 		}

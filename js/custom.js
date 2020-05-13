@@ -1,6 +1,6 @@
 (function( $ ) {
 // NAVIGATION CALLBACK
-var ww = jQuery(window).width();
+var baysitter_lite_ww = jQuery(window).width();
 jQuery(document).ready(function() { 
 	jQuery(".sitenav li a").each(function() {
 		if (jQuery(this).next().length > 0) {
@@ -12,17 +12,17 @@ jQuery(document).ready(function() {
 		jQuery(this).toggleClass("active");
 		jQuery(".sitenav").slideToggle('fast');
 	});
-	adjustMenu();
+	baysitter_lite_adjustMenu();
 })
 
 // navigation orientation resize callbak
 jQuery(window).bind('resize orientationchange', function() {
-	ww = jQuery(window).width();
-	adjustMenu();
+	baysitter_lite_ww = jQuery(window).width();
+	baysitter_lite_adjustMenu();
 });
 
-var adjustMenu = function() {
-	if (ww < 1000) {
+var baysitter_lite_adjustMenu = function() {
+	if (baysitter_lite_ww < 1000) {
 		jQuery(".toggleMenu").css("display", "block");
 		if (!jQuery(".toggleMenu").hasClass("active")) {
 			jQuery(".sitenav").hide();

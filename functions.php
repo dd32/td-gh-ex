@@ -165,5 +165,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load customize pro
  */
 require_once( trailingslashit( get_template_directory() ) . 'customize-pro/class-customize.php' );
-
-add_filter('use_block_editor_for_post', '__return_false');
