@@ -83,14 +83,3 @@ jQuery(function() {
 });
 
 
-extendNav();
-function extendNav() {
-  jQuery('.nav-wrapper .dropdown').hover(function() {
-    jQuery(this).children('.dropdown-menu').stop(true, true).show().addClass('animated-fast slfadeInDown');
-    jQuery(this).toggleClass('open');
-  }, function() {
-    jQuery(this).children('.dropdown-menu').stop(true, true).hide().removeClass('animated-fast slfadeInDown');
-    jQuery(this).toggleClass('open');
-  });
-}
-

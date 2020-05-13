@@ -7,6 +7,7 @@
  */
 $auto_car_settings = auto_car_get_theme_options();
 ?>
+</div><!-- #content -->
 <footer>
     <?php
     if (in_array('layout-pro/layout-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) {

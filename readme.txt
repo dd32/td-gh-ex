@@ -1,7 +1,7 @@
 == Auto Car ==
 
 Contributors: codepixelzmedia
-Version: 1.0.0
+Version: 1.1.0 
 Requires at least: 4.0
 Requires PHP: 5.6
 Tested up to: 5.2.2
@@ -134,3 +134,8 @@ Source: http://materializecss.com/
 = 1.0.0 =
 * 17 March 2020
 * Initial release
+
+
+= 1.1.0 =
+* 13 May 2020
+* Major Issues fixed based on .org review standard

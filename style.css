@@ -6,7 +6,7 @@ Author:  Code Themes
 Author URI: https://codethemes.co/
 Description:  Auto car is a WordPress theme that is suitable for auto mechanic, car repair shops, car wash, garages and automobile mechanicals , mechanic  workshops, auto painting, auto centres and many or small more. It is also suitable for small businesses like car service mot, tyres, brakes hire, car rental and so on. With drag and drop elements you will be able to create a niche focused auto mechanic website in matter minutes. Some of it flexible features are modern design, 100% responsive making your website look elegant and attractive in any kind of devices, nice easy customizable layouts and designs.
 
-Version: 1.0.0
+Version: 1.1.0 
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, threaded-comments, flexible-header, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, custom-logo, footer-widgets, portfolio, blog
@@ -4594,4 +4594,27 @@ section#promo h2 {
     max-width: 600px;
     margin: 0 auto;
     margin-bottom: 50px;
+}
+a:focus, a:focus-within {
+    outline: none;
+    text-decoration: underline !important;
+}
+
+.navbar-nav .dropdown-menu{
+	opacity:  0;
+	display: block !important;
+}
+.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children>.dropdown-sub{
+	display: block;
+	opacity:  0;
+}
+.navbar li.menu-item-has-children:hover .dropdown-menu, .navbar li.menu-item-has-children:focus .dropdown-menu, .navbar li.menu-item-has-children:focus-within .dropdown-menu {
+    opacity:  1;
+}
+
+.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children:hover .dropdown-sub,.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children:focus .dropdown-sub,.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children:focus-within .dropdown-sub{
+	opacity:  1;
+}
+.nav-wrapper .navbar ul.dropdown-menu li a:focus {
+    color: #333 !important;
 }

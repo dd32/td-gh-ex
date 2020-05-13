@@ -361,3 +361,21 @@ if (!function_exists('auto_car_is_url')):
         }
     }
 endif;
+
+/**
+for skipping
+*/
+function auto_car_skip_link_focus_fix() {
+    ?>
+    <script>
+    /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+    </script>
+    <?php
+}
+add_action( 'wp_print_footer_scripts', 'auto_car_skip_link_focus_fix' );
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}

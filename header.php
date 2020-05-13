@@ -24,8 +24,10 @@ if (in_array('layout-pro/layout-pro.php', apply_filters('active_plugins', get_op
 $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
 ?> 
 
-<body <?php body_class('woocommerce'); ?>>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
 <div id="page">
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'auto-car' ); ?></a>
     <?php
     if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins'))) && in_array('ecommerce-addons-for-elementor/ecommerce-addons-for-elementor.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
 <div id="mySidenav" class="sidenav">
@@ -101,6 +103,7 @@ $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
    
     ?>
 </header>
+<div id="content" class="site-content">
 <?php
 if (in_array('layout-pro/layout-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) {
     $layout_pro_customizer = layout_pro_customizer_get_theme_options();
