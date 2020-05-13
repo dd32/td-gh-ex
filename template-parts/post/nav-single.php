@@ -7,7 +7,7 @@
 
 ?>
 
-<nav class="navigation post-navigation push-center col12 mobile-margins" role="navigation">
+<nav class="navigation post-navigation push-center mobile-margins" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'aino' ); ?></h2>
 		<div class="nav-links">
 
@@ -20,10 +20,10 @@
 			<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev" class="nav-thumb"><?php echo get_the_post_thumbnail( $prev_post->ID, 'aino-s-squared' ); ?></a>
 		<?php endif; ?>
 
-		<h5 class="nav-title">
+		<p class="nav-title">
 			<span><?php esc_html_e( 'Previous Post', 'aino' ); ?></span>
 			<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev" class="entry-title"><?php echo esc_attr( $prev_post->post_title ); ?></a>
-		</h5>
+		</p>
 
 	</div><!-- .nav-previous -->
 <?php endif; ?>
@@ -36,10 +36,10 @@
 			<a class="nav-thumb" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"><?php echo get_the_post_thumbnail( $next_post->ID, 'aino-s-squared' ); ?></a>
 		<?php endif; ?>
 
-		<h5 class="nav-title">
+		<p class="nav-title">
 			<span><?php esc_html_e( 'Next Post', 'aino' ); ?></span>
 			<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"  class="entry-title"><?php echo esc_attr( $next_post->post_title ); ?></a>
-		</h5>
+		</p>
 	</div><!-- .nav-next -->
 <?php endif; ?>
 

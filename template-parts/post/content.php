@@ -36,20 +36,18 @@ $custom_post_excerpt = array(
 				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 				<?php if ( 0 !== get_theme_mod( 'post_excerpt_lengths' ) ) : ?>
-
-				<div class="entry-summary">
-					<?php if ( aino_defaults( 'post_excerpt_lengths' ) === get_theme_mod( 'post_excerpt_lengths' ) ) : ?>
-						<?php echo esc_html( aino_custom_excerpt_length( aino_defaults( 'post_excerpt_lengths' ) ) ); ?>
-					<?php else : ?>
-						<?php echo esc_html( aino_custom_excerpt_length( $custom_post_excerpt['post_excerpt_length'] ) ); ?>
-					<?php endif; ?>
-				</div><!-- .entry-summary -->
-
+					<div class="entry-summary">
+						<?php if ( 15 === get_theme_mod( 'post_excerpt_lengths' ) ) : ?>
+							<?php echo esc_html( aino_custom_excerpt_length( 15 ) ); ?>
+						<?php else : ?>
+							<?php echo esc_html( aino_custom_excerpt_length( $custom_post_excerpt['post_excerpt_length'] ) ); ?>
+						<?php endif; ?>
+					</div><!-- .entry-summary -->
 				<?php endif; ?>
 
 			</header><!-- .entry-header -->
 
-			<footer class="entry-footer">
+			<div class="entry-footer">
 				<?php
 				$check = get_theme_mod( 'blogcards_authororcats', aino_defaults( 'blogcards_authororcats' ) );
 				if ( get_avatar( get_the_author_meta( 'user_email' ) ) && ( $check ) ) :
@@ -62,7 +60,7 @@ $custom_post_excerpt = array(
 					</figure>
 				<?php endif; ?>
 
-				<aside class="entry-meta">
+				<div class="entry-meta">
 					<?php if ( ( ! $check ) ) : ?>
 						<span class="entry-cats"><?php aino_the_categories(); ?></span>
 					<?php endif; ?>
@@ -80,7 +78,7 @@ $custom_post_excerpt = array(
 					<?php endif; ?>
 
 					<?php aino_estimated_read_time(); ?>
-				</aside><!-- .entry-meta -->
-			</footer><!-- .entry-footer -->
+				</div><!-- .entry-meta -->
+			</div><!-- .entry-footer -->
 	</a><!-- .entry-link -->
 </article><!-- #post-## -->

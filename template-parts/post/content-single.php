@@ -32,7 +32,7 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( '' !== get_the_post_thumbnail() ) : ?>
-		<figure class="post-thumb push-center col12 grid-margins">
+		<figure class="post-thumb push-center grid-margins">
 			<?php the_post_thumbnail(); ?>
 		</figure><!-- .post-thumb -->
 	<?php endif; ?>
@@ -56,7 +56,7 @@
 			?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer col push-center small-margins">
+	<div class="entry-footer col push-center small-margins">
 
 		<?php aino_entry_meta(); ?>
 
@@ -67,7 +67,7 @@
 		endif;
 		?>
 
-	</footer><!-- .entry-footer -->
+	</div><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 <?php if ( '1' === get_theme_mod( 'aino_displayrelatedposts', '1' ) ) : ?>
