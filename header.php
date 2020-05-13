@@ -24,7 +24,7 @@ $breadcrumb_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nn
 </head>
 
 <body <?php body_class(); ?>>
-
+	<?php wp_body_open(); ?>
 	<div id="page" class="site site-wrapper">
 		<div id="nnfy">
 			<?php

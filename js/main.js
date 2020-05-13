@@ -265,9 +265,10 @@
     }
 
 
-	$('.shop-filter-tab .shop-tab a').on('click', function(){
+	$('.shop-filter-tab .shop-tab a').on('click', function(e){
+        e.preventDefault();
+        
 	    var $proStyle = $(this).data('toggle');
-	    
 	    $('.shop-filter-tab .shop-tab a').removeClass('active');
 	    $(this).addClass('active');
 	    

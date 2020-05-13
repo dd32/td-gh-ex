@@ -2,8 +2,8 @@
 
 Contributors: hasthemes, htplugins, devitemsllc
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.3.2-trunk
-Version: 3.1.4
+Tested up to: WordPress 5.4.1-trunk
+Version: 3.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Elementor, WooCommerce, WooLentor, retail, shop, shopping, fashion, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options
@@ -90,6 +90,15 @@ Image used in Theme Screenshot:
 License: Creative Commons Zero (CC0) license
 
 == Changelog ==
+
+= 3.1.4 =
+* Released: May 13, 2020
+* Product Attribute Error Solved.
+* Shop Page loop wrapper add.
+* Shop page tab switcher issue solved.
+* Price filter del tag add in regular price.
+* Product Variation Image showing issue solved.
+* Template library improve.
 
 = 3.1.4 =
 * Released: March 28, 2020

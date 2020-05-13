@@ -48,7 +48,7 @@
 // archive product
 add_action( 'woocommerce_before_shop_loop', 'nnfy_before_shop_loop_left_wrapper_start', 15);
 function nnfy_before_shop_loop_left_wrapper_start(){
-	echo '<div class="shop-found-selector">';
+	echo '<div class="shop-bar pb-30"><div class="shop-found-selector">';
 }
 
 add_action( 'woocommerce_before_shop_loop', 'nnfy_before_shop_loop_left_wrapper_end', 35);
@@ -69,6 +69,7 @@ function nnfy_archive_view_switch(){
             </a>
         </div>
     </div>
+</div> <!-- close div shop bar area -->
 	<?php
 }
 
@@ -107,7 +108,7 @@ function nnfy_add_to_wishlist_button() {
 // format price html
 add_filter( 'woocommerce_format_sale_price', 'nnfy_format_sale_price', '', 4 );
 function nnfy_format_sale_price($price, $regular_price, $sale_price){
-	$price = '<span class="new">' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</span> <span class="old">' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</span>';
+	$price = '<span class="new">' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</span> <span class="old"><del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del></span>';
 
 	return $price;
 }
@@ -168,9 +169,7 @@ function nnfy_woocommerce_template_loop_product_thumbnail(){
 	?>
 	<div class="product-img">
 		<a href="<?php the_permalink(); ?>">
-
 		    <?php woocommerce_template_loop_product_thumbnail(); ?>
-
 		</a>
 
         <div class="product-action">
@@ -199,48 +198,49 @@ function nnfy_woocommerce_template_loop_product_thumbnail(){
 		<?php
 			foreach( $attributes as $item ):
 
-				$name = $item->get_name();
+				if( isset( $item['name'] ) ):
 
-				$values = wc_get_product_terms( $product->get_id(), $name, array( 'fields' => 'all' ) );
+					$name = $item->get_name();
 
-				if( $item['name'] == 'pa_size'):
-				?>
+					$values = wc_get_product_terms( $product->get_id(), $name, array( 'fields' => 'all' ) );
 
-				<div class="product-size">
-					<?php
-						if( $values ){
-							foreach ($values as $item) {
-								echo '<span>'.$item->name.' </span>';
-							}
-						}
+					if( $item['name'] == 'pa_size'):
 					?>
-				</div>
 
-				<?php elseif($item['name'] == 'pa_color'): ?>
-					<div class="product-color">
-						<ul>
-							<?php
-								if($values){
-									foreach ($values as $item) {
-										$product_term_name = esc_html( $item->name );
-                                        $link = get_term_link( $item->term_id, $name );
-                                        $color = get_term_meta( $item->term_id, 'color', true );
-                                        if( !empty($link) ){
-											echo '<a href="'.esc_url( $link ).'"><li style="'.( !empty( $color ) ? 'background-color:'.$color : '' ).'" class="'.strtolower($product_term_name).'">'.esc_html($product_term_name).'</li></a>';
-                                        }else{
-                                        	echo '<li style="'.( !empty( $color ) ? 'background-color:'.$color : '' ).'" class="'.strtolower($product_term_name).'">'.esc_html($product_term_name).'</li>';
-                                        }
-									}
+					<div class="product-size">
+						<?php
+							if( $values ){
+								foreach ($values as $item) {
+									echo '<span>'.$item->name.' </span>';
 								}
-							?>
-						</ul>
+							}
+						?>
 					</div>
 
-		<?php
+					<?php elseif($item['name'] == 'pa_color'): ?>
+						<div class="product-color">
+							<ul>
+								<?php
+									if($values){
+										foreach ($values as $item) {
+											$product_term_name = esc_html( $item->name );
+	                                        $link = get_term_link( $item->term_id, $name );
+	                                        $color = get_term_meta( $item->term_id, 'color', true );
+	                                        if( !empty($link) ){
+												echo '<a href="'.esc_url( $link ).'"><li style="'.( !empty( $color ) ? 'background-color:'.$color : '' ).'" class="'.strtolower($product_term_name).'">'.esc_html($product_term_name).'</li></a>';
+	                                        }else{
+	                                        	echo '<li style="'.( !empty( $color ) ? 'background-color:'.$color : '' ).'" class="'.strtolower($product_term_name).'">'.esc_html($product_term_name).'</li>';
+	                                        }
+										}
+									}
+								?>
+							</ul>
+						</div>
+			<?php
+					endif;
 				endif;
 			endforeach;
-		?>
-
+			?>
 		</div>
 		<?php endif; ?>
 
@@ -291,4 +291,26 @@ function nnfy_product_nnfyquickview() {
 	}
 	wp_reset_postdata();
 	die();
+}
+
+
+add_action( 'woocommerce_before_add_to_cart_quantity', 'nnfy_product_variation_image' );
+function nnfy_product_variation_image() {
+	global $product;
+	if ( $product->is_type('variable') ) {
+	    ?>
+	    <script>
+	      	;jQuery(document).ready(function($) {
+		      	$('.variations .loop .value select').on('change', function(){
+		            if( '' != $('input.variation_id').val() ) {
+			            var var_id = $('input.variation_id').val();
+			            $( '.nnfy-tab-pane' ).removeClass('nnfyactive');
+			            $( '.nnfyfirstthumb' ).addClass('nnfyactive');
+			        }
+		      	});         
+	      	});
+	    </script>
+	    <?php
+	}
+    
 }

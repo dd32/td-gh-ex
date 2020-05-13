@@ -3,7 +3,7 @@
 	$bg_image = get_option('nnfy_page_title_bgimage');
 	$bg_color = get_option( 'nnfy_page_title_bgcolor','#ddd' );
     $bg_size = get_option( 'nnfy_page_title_bg_image_size', 'cover' );
-	$space = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_page_title_space', get_the_ID(), '150px' ) : '';
+	$space = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_page_title_space', get_the_ID(), '20px' ) : '';
 
     // Page background value
     $pcolor = function_exists( 'nnfy_get_elementor_option' ) ? nnfy_get_elementor_option( 'nnfy_title_area_bg_color', get_the_ID() ) : '';
@@ -32,7 +32,7 @@
     $csspos = "transform: translate( {$x_pos}, {$y_pos} );";
 
 ?>
-<div class="<?php echo 'page_title_area-'.get_the_ID(); ?> breadcrumb-area pt-150 pb-150 breadcrumb-style-<?php echo esc_attr( $breadcrumb_layout ); ?>" style="<?php echo esc_html( $css ); ?>">
+<div class="<?php echo 'page_title_area-'.get_the_ID(); ?> breadcrumb-area pt-20 pb-20 breadcrumb-style-<?php echo esc_attr( $breadcrumb_layout ); ?>" style="<?php echo esc_html( $css ); ?>">
     <div class="ht-container">
         <div class="breadcrumb-content ht-text-center" style="<?php if( $title_custom_pos == 'yes' ){ echo "display: inline-block; $csspos"; } ?>">
         	

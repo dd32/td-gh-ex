@@ -30,9 +30,13 @@ global $post, $product;
 
 $attachment_ids = $product->get_gallery_image_ids();
 
+if ( $product->get_image_id() ){
+    $attachment_ids = array( 'nnfythumbnails_id' => $product->get_image_id() ) + $attachment_ids;
+}
+
 if ( $attachment_ids && has_post_thumbnail() ) {
 	$i = 0;
-	foreach ( $attachment_ids as $attachment_id ) {
+	foreach ( $attachment_ids as $imgkey => $attachment_id ) {
 		$i++;
 
 		$full_size_image = wp_get_attachment_image_src( $attachment_id, 'full' );
@@ -48,7 +52,7 @@ if ( $attachment_ids && has_post_thumbnail() ) {
 
 		$class = $i == 1 ? 'nnfyactive' : '';
 
-		$html = ' <li><a class="'.$class.'" href="#pro-details'.$attachment_id.'">';
+		$html = ' <li><a class="'.$class.'" href="#pro-details'.( $imgkey === 'nnfythumbnails_id' ? $post->ID : $attachment_id ).'">';
  		$html .= wp_get_attachment_image( $attachment_id, 'nnfy_product_nav_thumb', false, $attributes );
  		$html .= '</a></li>';
 

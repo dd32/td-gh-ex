@@ -50,10 +50,10 @@ $attachment_ids = $product->get_gallery_image_ids();
 		);
 		
 		if ( has_post_thumbnail() ) {
-			$html  = '<div class="nnfy-tab-pane nnfyactive" id="pro-details'. $post->ID .'" role="tabpanel">';
+			$html  = '<div class="nnfy-tab-pane nnfyfirstthumb nnfyactive" id="pro-details'. $post->ID .'" role="tabpanel">';
 
 			if(is_single()){
-				$html .= '<div class="easyzoom easyzoom--overlay  is-ready">';
+				$html .= '<div class="woocommerce-product-gallery__image easyzoom easyzoom--overlay is-ready">';
 			}
 
 			$html  .= '<a href="'. esc_url( (isset($full_size_image[0]) ? $full_size_image[0] : '#') ) .'">';
@@ -79,7 +79,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 				$html  = '<div class="nnfy-tab-pane" id="pro-details'. $attachment_id .'" role="tabpanel">';
 				if(is_single()){
-					$html .= '<div class="easyzoom easyzoom--overlay  is-ready">';
+					$html .= '<div class="easyzoom easyzoom--overlay is-ready">';
 				}
 				$html  .= '<a href="'. esc_url( ( isset($tab_full_size_image[0]) ? $tab_full_size_image[0] : '#' ) ) .'">';
 				$html  .= wp_get_attachment_image( $attachment_id, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), $attributes );

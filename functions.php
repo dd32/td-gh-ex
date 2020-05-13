@@ -56,7 +56,7 @@ function nnfy_setup() {
 	* This theme uses wp_nav_menu() in one location.
 	*/
 	register_nav_menus( array(
-		'primary'        => esc_html__( 'Primary', '99fy' ),
+		'primary'  => esc_html__( 'Primary', '99fy' ),
 	) );
 
 	/*
@@ -107,7 +107,7 @@ add_action( 'after_setup_theme', 'nnfy_setup' );
  * @global int $content_width
  */
 
- if ( !function_exists( 'nnfy_content_width')){
+if ( !function_exists( 'nnfy_content_width')){
  	function nnfy_content_width() {
 		$GLOBALS['content_width'] = apply_filters( 'nnfy_content_width', 640 );
 	}
