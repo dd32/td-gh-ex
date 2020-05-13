@@ -99,8 +99,8 @@ function advance_it_company_widgets_init() {
 	));
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('advance_it_company_footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$advance_it_company_widget_areas = get_theme_mod('advance_it_company_footer_widget_areas', '4');
+	for ($i=1; $i<=$advance_it_company_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'advance-it-company' ) . $i,
 			'id'            => 'footer-' . $i,
@@ -344,7 +344,7 @@ function advance_it_company_scripts() {
 	    $advance_it_company_h6_font_family = get_theme_mod('advance_it_company_h6_font_family', '');
 	    $advance_it_company_h6_font_size = get_theme_mod('advance_it_company_h6_font_size', '');
 
-		$custom_css ='
+		$advance_it_company_custom_css ='
 			p,span{
 			    color:'.esc_html($advance_it_company_paragraph_color).'!important;
 			    font-family: '.esc_html($advance_it_company_paragraph_font_family).';
@@ -390,14 +390,14 @@ function advance_it_company_scripts() {
 			}
 
 			';
-	wp_add_inline_style( 'advance-it-company-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-it-company-basic-style',$advance_it_company_custom_css );
 
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-it-company-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
-	wp_add_inline_style( 'advance-it-company-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-it-company-basic-style',$advance_it_company_custom_css );
 
 	wp_enqueue_style('advance-it-company-ie', get_template_directory_uri().'/css/ie.css', array('advance-it-company-basic-style'));
 	wp_style_add_data('advance-it-company-ie', 'conditional', 'IE');

@@ -24,24 +24,15 @@
           <?php if( get_theme_mod( 'advance_it_company_date_hide',true) != '') { ?>
             <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
           <?php } ?>
-
           <?php if( get_theme_mod( 'advance_it_company_comment_hide',true) != '') { ?>
             <span class="entry-comments"><i class="fas fa-comments"></i><?php comments_number( __('0 Comments','advance-it-company'), __('0 Comments','advance-it-company'), __('% Comments','advance-it-company') ); ?></span>
           <?php } ?>
-
           <?php if( get_theme_mod( 'advance_it_company_author_hide',true) != '') { ?>
             <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
           <?php } ?>
         </div>
       <?php }?>
-      <?php if(get_theme_mod('advance_it_company_blog_post_description_option') == 'Full Content'){ ?>
-        <?php the_content(); ?>
-      <?php }
-      if(get_theme_mod('advance_it_company_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
-        <?php if(get_the_excerpt()) { ?>
-          <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_it_company_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_it_company_post_suffix_option','...') ); ?></p></div>
-        <?php }?>
-      <?php }?>    
+      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_it_company_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_it_company_post_suffix_option','...') ); ?></p></div>
       <?php if( get_theme_mod('advance_it_company_button_text','READ MORE') != ''){ ?>
         <div class="read-more-btn">
           <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html(get_theme_mod('advance_it_company_button_text','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_it_company_button_text','READ MORE'));?></span></a>

@@ -10,6 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
 function advance_it_company_customize_register($wp_customize) {
 
 	//add home page setting pannel
@@ -21,7 +22,8 @@ function advance_it_company_customize_register($wp_customize) {
 	));	
 
 	// font array
-	$font_array = array(
+
+	$advance_it_company_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -143,7 +145,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	$wp_customize->add_setting('advance_it_company_paragraph_font_size',array(
@@ -179,7 +181,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -204,7 +206,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -229,7 +231,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'H1 Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -266,7 +268,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'h2 Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -303,7 +305,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'h3 Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -340,7 +342,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'h4 Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -377,7 +379,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'h5 Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -414,7 +416,7 @@ function advance_it_company_customize_register($wp_customize) {
 	    'section'  => 'advance_it_company_typography',
 	    'label'    => __( 'h6 Fonts','advance-it-company'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_it_company_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -625,8 +627,9 @@ function advance_it_company_customize_register($wp_customize) {
 	));
 
 	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_it_company_theme_color_option', 
-		array( 'panel' => 'advance_it_company_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-it-company' ) )
+	$wp_customize->add_section( 'advance_it_company_theme_color_option', array( 
+		'panel' => 'advance_it_company_panel_id', 'title' => esc_html__( 
+		'Theme Color Option', 'advance-it-company' ) )
 	);
 
   	$wp_customize->add_setting( 'advance_it_company_theme_color_first', array(
@@ -648,7 +651,6 @@ function advance_it_company_customize_register($wp_customize) {
   		'label' => 'Second Color Option',
   		'description' => __('One can change complete theme color on just one click.', 'advance-it-company'),
 	    'section' => 'advance_it_company_theme_color_option',
-	    'settings' => 'advance_it_company_theme_color_second',
   	)));
 
 	//Layouts
@@ -812,7 +814,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_it_company_display_topbar',array(
-		'default' => true,
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_it_company_display_topbar',array(
@@ -823,6 +825,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     //Sticky Header
 	$wp_customize->add_setting( 'advance_it_company_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_it_company_sticky_header',array(
@@ -1146,7 +1149,7 @@ function advance_it_company_customize_register($wp_customize) {
 	));
 
     $wp_customize->add_setting('advance_it_company_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_it_company_responsive_sticky_header',array(
@@ -1156,7 +1159,7 @@ function advance_it_company_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_it_company_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_it_company_responsive_slider',array(
@@ -1165,13 +1168,13 @@ function advance_it_company_customize_register($wp_customize) {
        'section' => 'advance_it_company_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_it_company_responsive_metabox',array(
+    $wp_customize->add_setting('advance_it_company_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_it_company_responsive_metabox',array(
+    $wp_customize->add_control('advance_it_company_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-it-company'),
+       'label' => __('Scroll To Top','advance-it-company'),
        'section' => 'advance_it_company_responsive_setting'
     ));
 
@@ -1185,6 +1188,16 @@ function advance_it_company_customize_register($wp_customize) {
        'section' => 'advance_it_company_responsive_setting'
     ));
 
+    $wp_customize->add_setting('advance_it_company_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_it_company_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','advance-it-company'),
+       'section' => 'advance_it_company_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('advance_it_company_blog_post',array(
 		'title'	=> __('Blog Page Settings','advance-it-company'),
@@ -1192,7 +1205,7 @@ function advance_it_company_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_it_company_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_it_company_date_hide',array(
@@ -1202,7 +1215,7 @@ function advance_it_company_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_it_company_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_it_company_comment_hide',array(
@@ -1212,7 +1225,7 @@ function advance_it_company_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_it_company_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_it_company_author_hide',array(
@@ -1222,7 +1235,7 @@ function advance_it_company_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_it_company_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_it_company_tags_hide',array(
@@ -1307,6 +1320,24 @@ function advance_it_company_customize_register($wp_customize) {
         ),
     ));
 
+    $wp_customize->add_setting('advance_it_company_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_it_company_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'advance-it-company'),
+		'section'  => 'advance_it_company_footer_section',
+	)));
+
+	$wp_customize->add_setting('advance_it_company_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'advance_it_company_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','advance-it-company'),
+        'section' => 'advance_it_company_footer_section'
+	)));
+
 	$wp_customize->add_setting('advance_it_company_footer_copy', array(
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -1315,6 +1346,39 @@ function advance_it_company_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-it-company'),
 		'section' => 'advance_it_company_footer_section',
 		'type'    => 'text',
+	));
+
+	$wp_customize->add_setting('advance_it_company_copyright_content_align',array(
+        'default' => __('center','advance-it-company'),
+        'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_it_company_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','advance-it-company'),
+        'section' => 'advance_it_company_footer_section',
+        'choices' => array(
+            'left' => __('Left','advance-it-company'),
+            'right' => __('Right','advance-it-company'),
+            'center' => __('Center','advance-it-company'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_it_company_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_it_company_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','advance-it-company' ),
+		'section'=> 'advance_it_company_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 
 	$wp_customize->add_setting('advance_it_company_enable_disable_scroll',array(
@@ -1341,6 +1405,24 @@ function advance_it_company_customize_register($wp_customize) {
             'Center' => __('Center','advance-it-company'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_it_company_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_it_company_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','advance-it-company'),
+		'section'=> 'advance_it_company_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
+	)	);
 }
 add_action('customize_register', 'advance_it_company_customize_register');
 

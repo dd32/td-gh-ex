@@ -18,7 +18,7 @@
             <h3 class="widget-title"><?php esc_html_e( 'Meta', 'advance-it-company' ); ?></h3>
             <ul>
                 <?php wp_register(); ?>
-                <li><?php wp_loginout(); ?></li>
+                    <li><?php wp_loginout(); ?></li>
                 <?php wp_meta(); ?>
             </ul>
         </aside>

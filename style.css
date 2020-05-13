@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-it-company-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. CTA [call to action button] is one important advantage and with this, you visitors have the subscription option. Based on the Bootstrap technology, it comes with the stunning animations and possesses a secure and clean code. All these features are responsible for its credibility with the international clients. Above all, you are flabbergasted with its eye catching design and it is also accompanied with a WordPress customizer. It is active, possesses optimised codes and provides faster page load time. Demo: https://www.themeshopy.com/advance-it-company-pro/
-Version: 0.4.5
+Version: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-it-company
@@ -278,13 +278,12 @@ input[type="submit"] {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 99;
+  z-index: 99999;
   overflow: hidden;
 }
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -578,7 +577,6 @@ ul.sub-menu {
   display: none;
 }
 /*--------------- SUPERFISH MENU ---------------------------*/
-
 .sf-arrows .sf-with-ul:after{
   content: '\f067';
   position: absolute;
@@ -1340,7 +1338,7 @@ a.showcoupon,
   padding: 0;
   margin: 0 !important;
 }
-h2.woocommerce-loop-product__title{
+.woocommerce-loop-product__title{
   color: #232322;
   font-weight: 500;
   font-size: 23px !important;
@@ -1372,18 +1370,15 @@ h2.woocommerce-loop-product__title{
   border: solid 1px #abda37;
   color: #abda37;
 }
-.col-1,.col-2 {
-  max-width: 100%;
-}
-nav.woocommerce-MyAccount-navigation ul {
+.woocommerce-MyAccount-navigation ul {
   list-style: none;
 }
-nav.woocommerce-MyAccount-navigation ul li {
+.woocommerce-MyAccount-navigation ul li {
   background: #abda37 !important;
   padding: 12px!important;
   margin-bottom: 10px;
 }
-nav.woocommerce-MyAccount-navigation ul li a{
+.woocommerce-MyAccount-navigation ul li a{
   color: #272b46;
   font-weight: bold;
 }
@@ -1400,7 +1395,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 .woocommerce .woocommerce-ordering select{
 	padding: 10px;
 }
-span.woocommerce-input-wrapper{
+.woocommerce-input-wrapper{
  width: 100%;
 }
 .woocommerce-product-gallery__image{
@@ -1556,7 +1551,6 @@ a.shipping-calculator-button, nav.woocommerce-MyAccount-navigation ul li a,tr.wo
 .woocommerce-Reviews .comment-form-rating label{
   padding: 10px 0;
 }
-
 .woocommerce form.login{
   display: inline-block;
 }
@@ -2019,10 +2013,9 @@ iframe {
   }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
-
 @media screen and (max-width: 1000px){
   .menubar .primary-navigation ul li a:focus,
-  a.closebtn.responsive-menu:focus{
+  a.closebtn.responsive-menu:focus, .primary-navigation a:focus{
     outline: 1px dotted #fff;
     border-bottom: 1px solid #fff;
   }
@@ -2230,7 +2223,7 @@ iframe {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99999;
+    z-index: 999;
     background: #272b46;
     box-shadow: 2px 2px 10px 0px #000;
     width: 100%;

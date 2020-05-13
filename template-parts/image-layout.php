@@ -14,7 +14,6 @@
             <div class="attachment">
                 <?php advance_it_company_the_attached_image(); ?>
             </div>
-
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
                     <div class="entry-content">

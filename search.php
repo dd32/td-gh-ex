@@ -11,8 +11,8 @@ get_header(); ?>
     <div class="innerlightbox">
         <div class="container">
             <?php
-                $left_right = get_theme_mod( 'advance_it_company_layout_options','Right Sidebar');
-                if($left_right == 'Left Sidebar'){ ?>
+            $advance_it_company_left_right = get_theme_mod( 'advance_it_company_layout_options','Right Sidebar');
+            if($advance_it_company_left_right == 'Left Sidebar'){ ?>
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
@@ -41,7 +41,7 @@ get_header(); ?>
                         </div> 
                     </div>
                 </div>
-            <?php }else if($left_right == 'Right Sidebar'){ ?>
+            <?php }else if($advance_it_company_left_right == 'Right Sidebar'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                        <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Results For: %s','advance-it-company'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
@@ -70,7 +70,7 @@ get_header(); ?>
                         <?php get_sidebar();?>
                     </div>
                 </div>
-            <?php }else if($left_right == 'One Column'){ ?>
+            <?php }else if($advance_it_company_left_right == 'One Column'){ ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                    <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Results For: %s','advance-it-company'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 
@@ -94,7 +94,7 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>
-            <?php }else if($left_right == 'Grid Layout'){ ?>
+            <?php }else if($advance_it_company_left_right == 'Grid Layout'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9 row'); ?>>
                        <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Results For: %s','advance-it-company'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
