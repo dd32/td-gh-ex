@@ -26,7 +26,6 @@
           <?php if( get_theme_mod( 'advance_portfolio_date_hide',true) != '') { ?>
             <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>  
           <?php } ?>
-
           <?php if( get_theme_mod( 'advance_portfolio_comment_hide',true) != '') { ?>
             <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'advance-portfolio'), __('0 Comments', 'advance-portfolio'), __('% Comments', 'advance-portfolio') ); ?></span>
           <?php } ?>
@@ -43,7 +42,7 @@
     <?php }
     if(get_theme_mod('advance_portfolio_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
       <?php if(get_the_excerpt()) { ?>
-        <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_portfolio_post_suffix_option','...') ); ?></p></div>
+        <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('advance_portfolio_post_suffix_option','...') ); ?></p></div>
       <?php }?>
     <?php }?>
     <?php if( get_theme_mod('advance_portfolio_button_text','Read More') != ''){ ?>

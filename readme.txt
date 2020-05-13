@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, post-formats, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 7.2.14
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -98,6 +98,15 @@ Advance Portfolio is a clean, sleek and creative WordPress theme for building a 
   * Added box shadow option for products.
   * Added padding setting for products buttons.
   * Added border radius option for products buttons.
+
+= 0.4.2 =
+  * Added footer widget background color option.
+  * Added footer widget background image option.
+  * Added show and hide preloader for mobile media.
+  * Added scroll to top icon font size.
+  * Added font size and allignment options for copyright text.
+  * Resolved errors.
+  * Updated POT file.
 
 == Resources ==
 

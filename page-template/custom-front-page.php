@@ -8,15 +8,15 @@ get_header(); ?>
   <?php do_action( 'advance_portfolio_above_banner' ); ?>
   
   <section id="banner">
-    <?php $slider_pages = array();
+    <?php $advance_portfolio_slider_pages = array();
     $mod = absint( get_theme_mod( 'advance_portfolio_page_settings' ));
     if ( 'page-none-selected' != $mod ) {
-      $slider_pages[] = $mod;
+      $advance_portfolio_slider_pages[] = $mod;
     }
-    if( !empty($slider_pages) ) :
+    if( !empty($advance_portfolio_slider_pages) ) :
       $args = array(
         'post_type' => 'page',
-        'post__in' => $slider_pages,
+        'post__in' => $advance_portfolio_slider_pages,
         'orderby' => 'post__in'
       );
       $query = new WP_Query( $args );
@@ -51,9 +51,9 @@ get_header(); ?>
           </div>
           <div class="clearfix"></div>
         </div>                            
-        <?php $count++; endwhile; ?>
-        <?php else : ?>
-          <div class="no-postfound"></div>
+      <?php $count++; endwhile; ?>
+      <?php else : ?>
+        <div class="no-postfound"></div>
       <?php endif;
     endif; wp_reset_postdata();?>
   </section>
@@ -108,31 +108,31 @@ get_header(); ?>
           $args = array( 'name' => get_theme_mod('advance_portfolio_awesome_setting2',''));
           $query = new WP_Query( $args );
             if ( $query->have_posts() ) :
-             while ( $query->have_posts() ) : $query->the_post(); ?>
+              while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="image-box">
                   <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
                 </div>
-             <?php endwhile; 
-             wp_reset_postdata();?>
+              <?php endwhile; 
+              wp_reset_postdata();?>
             <?php else : ?>
-               <div class="no-postfound"></div>
+              <div class="no-postfound"></div>
             <?php
           endif; ?>
         </div>
         <div class="col-lg-6 col-md-6">
           <?php
-           $args = array( 'name' => get_theme_mod('advance_portfolio_awesome_setting3',''));
-           $query = new WP_Query( $args );
-           if ( $query->have_posts() ) :
-             while ( $query->have_posts() ) : $query->the_post(); ?>
+          $args = array( 'name' => get_theme_mod('advance_portfolio_awesome_setting3',''));
+          $query = new WP_Query( $args );
+          if ( $query->have_posts() ) :
+            while ( $query->have_posts() ) : $query->the_post(); ?>
               <div class="box-image text-center">
                 <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
               </div>
-             <?php endwhile; 
-             wp_reset_postdata();?>
-             <?php else : ?>
-               <div class="no-postfound"></div>
-             <?php
+            <?php endwhile; 
+            wp_reset_postdata();?>
+            <?php else : ?>
+              <div class="no-postfound"></div>
+            <?php
           endif; ?>
         </div>
       </div>

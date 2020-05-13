@@ -22,9 +22,9 @@
   } else {
     do_action( 'wp_body_open' );
   } ?>
-  <div class="main-menu <?php if( get_theme_mod( 'advance_portfolio_sticky_header') != '' || get_theme_mod( 'advance_portfolio_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+  <div class="main-menu <?php if( get_theme_mod( 'advance_portfolio_sticky_header', false) != '' || get_theme_mod( 'advance_portfolio_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
-      <?php if(get_theme_mod('advance_portfolio_preloader_option',true)){ ?>
+      <?php if(get_theme_mod('advance_portfolio_preloader_option',true)!= '' || get_theme_mod('advance_portfolio_responsive_preloader', true) != ''){ ?>
         <div id="loader-wrapper">
           <div id="loader"></div>
           <div class="loader-section section-left"></div>

@@ -38,14 +38,7 @@
       <?php the_post_thumbnail();?>
     </div>
     <div class="new-text">
-      <?php if(get_theme_mod('advance_portfolio_blog_post_description_option') == 'Full Content'){ ?>
-        <?php the_content(); ?>
-      <?php }
-      if(get_theme_mod('advance_portfolio_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
-        <?php if(get_the_excerpt()) { ?>
-          <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_portfolio_post_suffix_option','...') ); ?></p></div>
-        <?php }?>
-      <?php }?>
+      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('advance_portfolio_post_suffix_option','...') ); ?></p></div>
       <?php if( get_theme_mod('advance_portfolio_button_text','Read More') != ''){ ?>
         <div class="second-border">
           <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-portfolio' ); ?>"><?php echo esc_html(get_theme_mod('advance_portfolio_button_text','Read More'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_portfolio_button_text','Read More'));?></span></a>
