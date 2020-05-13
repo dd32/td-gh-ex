@@ -23,7 +23,7 @@
     do_action( 'wp_body_open' );
   } ?>
   <header role="banner">
-    <?php if(get_theme_mod('advance_fitness_gym_preloader_option',true)){ ?>
+    <?php if(get_theme_mod('advance_fitness_gym_preloader_option',true) != '' || get_theme_mod('advance_fitness_gym_responsive_preloader',true) != ''){ ?>
       <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>

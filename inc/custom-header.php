@@ -31,12 +31,12 @@ add_action( 'wp_enqueue_scripts', 'advance_fitness_gym_header_style' );
 function advance_fitness_gym_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$advance_fitness_gym_custom_css = "
         .middle-header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
-	   	wp_add_inline_style( 'advance-fitness-gym-basic-style', $custom_css );
+	   	wp_add_inline_style( 'advance-fitness-gym-basic-style', $advance_fitness_gym_custom_css );
 	endif;
 }
 endif; // advance_fitness_gym_header_style
