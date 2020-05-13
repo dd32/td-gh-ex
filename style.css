@@ -7,7 +7,7 @@ Author URI: https://d5creation.com/
 
 Description: AssociationX is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. This Theme is designed for Multi Purposes. You can develop a Community Site using the Plugin BuddyPress easily with this Theme. You can also use bbPress Forum in your Site. AssociationX Theme is E-Commerce ready by WooCommerce. You can use this Theme for Personal Blog, Travel Blog, Company Website, Corporate Website, Association Website, Alumni Website, University/School/College Websites, E-Commerce Product Selling Websites etc. You can add Extra Page Contents in Front Page from the Theme Options. This is very helpful for Page Builder Pages like Elementor. You can show Exciting Multilayer Slider, Featured Links, About Section, Featured Boxes, Events Boxes, Members Boxes, Partners/Clients List, Testimonials with Title, Text, Name and Avatar. The Theme can be decorated Smartly with all Devices as it is Fully Responsive. The Gallery and Image Presentation system of this Theme is really Awesome.  You can find details in the Theme Page Here: https://d5creation.com/theme/associationx/
 
-Version: 1.17
+Version: 1.19
 
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
 
@@ -73,7 +73,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 .wp-caption img{border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
 .wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
 
-body{color:#555555;  font-family:'Open Sans',Arial, SolaimanLipi, sans-serif;  font-size:15px;line-height:1.5; word-wrap:break-word; font-weight: 100; min-width: 1280px; max-width: 100%; background: #ffffff; background-repeat: no-repeat; background-position: top center; background-attachment: scroll; }
+body{color:#555555;  font-family:Roboto,Arial, SolaimanLipi, sans-serif;  font-size:15px;line-height:1.5; word-wrap:break-word; font-weight: 100; min-width: 1280px; max-width: 100%; background: #ffffff; background-repeat: no-repeat; background-position: top center; background-attachment: scroll; }
 #site-container { width: 100%; margin: 0 auto; position: relative; }
 #site-con { width: 100%; display: block; margin: 0 auto; overflow: hidden; position: relative; background-attachment: scroll; background-repeat: repeat; background-position: top left; }
 #sitetoppart{ background: #ffffff; position: relative; display: block; width: 100%; z-index: 5; background-attachment: scroll; background-repeat: repeat; background-position: top left;}
@@ -533,7 +533,7 @@ input[type="submit"].search-submit:hover, #bbp_search_submit:hover, .woocommerce
 .noticeitemtitles .nbitmplink{margin: 0 10px; width: calc(100% - 20px);  }
 .nbitemtitle {color: #333333;padding: 5px 0; position: relative; display: flex;  }
 .nbitemtitle::before { margin: 1px 7px 0 0; font-size: 15px; }
-.nbitemtitle h4{margin: 0; font-size: 15px; font-family: 'Open Sans',Arial,SolaimanLipi,sans-serif;}
+.nbitemtitle h4{margin: 0; font-size: 15px; font-family: Roboto,Arial,SolaimanLipi,sans-serif;}
 .nbitemtitle h4:hover{ text-decoration: underline; color: #000000; }
 .nbcatlinkra { display: table; margin: 5px auto;background: #eeeeee; padding: 3px 5px; color: #333333 !important; font-size: 17px; font-weight: 500; border-radius: 3px; transition: all .3s; }
 .nbcatlinkra:before, .nbcatlinkra:after { content: '\f04c'; font-size: 15px; padding: 0 5px; }

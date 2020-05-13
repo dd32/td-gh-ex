@@ -30,8 +30,8 @@
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'yoast-seo-breadcrumbs' );
-		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' )))):
+		add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style', ));
+		if (class_exists('woocommerce')):
 			add_theme_support( 'woocommerce' );
 			add_theme_support( 'wc-product-gallery-zoom' );
 			add_theme_support( 'wc-product-gallery-lightbox' );
@@ -53,7 +53,7 @@
 
 	wp_enqueue_script( 'associationx-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	
-	wp_register_style('associationx-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
+	wp_register_style('associationx-gfonts1', '//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i', false );
 	wp_enqueue_style('associationx-gfonts1');
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_script( 'associationx-html5', get_template_directory_uri().'/js/html5.min.js'); 

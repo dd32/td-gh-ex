@@ -3,7 +3,7 @@
 Contributors: d5creation
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4.1
 Requires PHP: 5.4
 Stable tag: 1.16
 License: GPLv2 or later
@@ -31,6 +31,9 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
 == Changelog ==
+
+= 1.19 =
+* Font Issue Fixed
 
 = 1.17 =
 * New Feature Added
