@@ -1068,6 +1068,16 @@ function advance_education_customize_register($wp_customize) {
        'section' => 'advance_education_responsive_setting'
     ));
 
+    $wp_customize->add_setting('advance_education_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','advance-education'),
+       'section' => 'advance_education_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('advance_education_blog_post',array(
 		'title'	=> __('Blog Page Settings','advance-education'),
@@ -1190,6 +1200,24 @@ function advance_education_customize_register($wp_customize) {
         ),
     ));
 
+    $wp_customize->add_setting('advance_education_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_education_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'advance-education'),
+		'section'  => 'advance_education_footer_section',
+	)));
+
+	$wp_customize->add_setting('advance_education_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'advance_education_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','advance-education'),
+        'section' => 'advance_education_footer_section'
+	)));
+
 	$wp_customize->add_setting('advance_education_footer_copy', array(
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -1198,6 +1226,39 @@ function advance_education_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-education'),
 		'section' => 'advance_education_footer_section',
 		'type'    => 'text',
+	));
+
+	$wp_customize->add_setting('advance_education_copyright_content_align',array(
+        'default' => __('center','advance-education'),
+        'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_education_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','advance-education'),
+        'section' => 'advance_education_footer_section',
+        'choices' => array(
+            'left' => __('Left','advance-education'),
+            'right' => __('Right','advance-education'),
+            'center' => __('Center','advance-education'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_education_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_education_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','advance-education' ),
+		'section'=> 'advance_education_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 
 	$wp_customize->add_setting('advance_education_enable_disable_scroll',array(
@@ -1223,6 +1284,24 @@ function advance_education_customize_register($wp_customize) {
             'Right' => __('Right','advance-education'),
             'Center' => __('Center','advance-education'),
         ),
+	) );
+
+	$wp_customize->add_setting('advance_education_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_education_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','advance-education'),
+		'section'=> 'advance_education_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	) );
 }
 add_action('customize_register', 'advance_education_customize_register');

@@ -338,7 +338,7 @@ function advance_education_scripts() {
 	    $advance_education_h6_font_family = get_theme_mod('advance_education_h6_font_family', '');
 	    $advance_education_h6_font_size = get_theme_mod('advance_education_h6_font_size', '');
 
-		$custom_css ='
+		$advance_education_custom_css ='
 			p,span{
 			    color:'.esc_html($advance_education_paragraph_color).'!important;
 			    font-family: '.esc_html($advance_education_paragraph_font_family).';
@@ -384,14 +384,14 @@ function advance_education_scripts() {
 			}
 			';
 
-	wp_add_inline_style( 'advance-education-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-education-basic-style',$advance_education_custom_css );
 
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-education-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
-	wp_add_inline_style( 'advance-education-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-education-basic-style',$advance_education_custom_css );
 	
 	wp_enqueue_style('advance-education-ie', get_template_directory_uri().'/css/ie.css', array('advance-education-basic-style'));
 	wp_style_add_data('advance-education-ie', 'conditional', 'IE');
