@@ -1145,6 +1145,16 @@ function advance_pet_care_customize_register($wp_customize) {
        'section' => 'advance_pet_care_responsive_setting'
     ));
 
+    $wp_customize->add_setting('advance_pet_care_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_pet_care_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','advance-pet-care'),
+       'section' => 'advance_pet_care_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('advance_pet_care_blog_post',array(
 		'title'	=> __('Blog Page Settings','advance-pet-care'),
@@ -1267,6 +1277,24 @@ function advance_pet_care_customize_register($wp_customize) {
         ),
     ));
 
+    $wp_customize->add_setting('advance_pet_care_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_pet_care_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'advance-pet-care'),
+		'section'  => 'advance_pet_care_footer_section',
+	)));
+
+	$wp_customize->add_setting('advance_pet_care_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'advance_pet_care_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','advance-pet-care'),
+        'section' => 'advance_pet_care_footer_section'
+	)));
+
 	$wp_customize->add_setting('advance_pet_care_footer_copy', array(
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -1275,6 +1303,39 @@ function advance_pet_care_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-pet-care'),
 		'section' => 'advance_pet_care_footer_section',
 		'type'    => 'text',
+	));
+
+	$wp_customize->add_setting('advance_pet_care_copyright_content_align',array(
+        'default' => __('center','advance-pet-care'),
+        'sanitize_callback' => 'advance_pet_care_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_pet_care_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','advance-pet-care'),
+        'section' => 'advance_pet_care_footer_section',
+        'choices' => array(
+            'left' => __('Left','advance-pet-care'),
+            'right' => __('Right','advance-pet-care'),
+            'center' => __('Center','advance-pet-care'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_pet_care_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_pet_care_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','advance-pet-care' ),
+		'section'=> 'advance_pet_care_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 
 	$wp_customize->add_setting('advance_pet_care_enable_disable_scroll',array(
@@ -1301,6 +1362,24 @@ function advance_pet_care_customize_register($wp_customize) {
             'Center' => __('Center','advance-pet-care'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_pet_care_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_pet_care_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','advance-pet-care'),
+		'section'=> 'advance_pet_care_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
+	)	);
 }
 add_action('customize_register', 'advance_pet_care_customize_register');
 
