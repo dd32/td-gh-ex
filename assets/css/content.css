@@ -406,13 +406,13 @@ object {
 }
 
 @media screen and (min-width: 48em) {
-	.entry-content .wp-block-gallery {
-		/*padding-right: 0;*/
-		padding-left: 0;
+	.entry-content .wp-block-gallery,
+	.entry-content .wp-block-gallery ul {
+		padding: 0;
 	}
 }
 
-.wp-block-gallery {
+.wp-block-gallery ul{
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	grid-gap: .5em;
@@ -437,35 +437,35 @@ object {
 } */
 
 @media screen and (min-width: 40em) {
-	.wp-block-gallery.columns-2 {
+	.wp-block-gallery.columns-2 ul {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.wp-block-gallery.columns-3 {
+	.wp-block-gallery.columns-3 ul{
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.wp-block-gallery.columns-4 {
+	.wp-block-gallery.columns-4 ul{
 		grid-template-columns: repeat(4, 1fr);
 	}
 
-	.wp-block-gallery.columns-5 {
+	.wp-block-gallery.columns-5 ul{
 		grid-template-columns: repeat(5, 1fr);
 	}
 
-	.wp-block-gallery.columns-6 {
+	.wp-block-gallery.columns-6 ul{
 		grid-template-columns: repeat(6, 1fr);
 	}
 
-	.wp-block-gallery.columns-7 {
+	.wp-block-gallery.columns-7 ul{
 		grid-template-columns: repeat(7, 1fr);
 	}
 
-	.wp-block-gallery.columns-8 {
+	.wp-block-gallery.columns-8 ul{
 		grid-template-columns: repeat(8, 1fr);
 	}
 
-	.wp-block-gallery.columns-9 {
+	.wp-block-gallery.columns-9 ul{
 		grid-template-columns: repeat(9, 1fr);
 	}
 }
@@ -631,8 +631,7 @@ span.tags-links {
     margin-right: -22px;
     margin-left: -22px;
     display: block;
-    padding-left: 25px;
-    padding: 15px 0;
+    padding: 15px 20px;
 }
 span.tags-links a,
 .arrival-archive-navigation ul li a{
@@ -777,4 +776,8 @@ nav.navigation.post-navigation .nav-links a:hover::after{
 .entry-meta svg {
     vertical-align: middle;
     fill: #777;
+}
+blockquote.wp-block-quote {
+    background: #fafafa;
+    padding: 15px;
 }

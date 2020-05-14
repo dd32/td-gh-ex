@@ -194,29 +194,11 @@ color: #FFF;
   visibility: visible;
     opacity: 1;
 }
-/* .woocommerce .products li a.button:last-child{
-  top: 20%;
-  display: block;
-  
-} */
+
 .woocommerce .products li {
   position: relative;
 }
-/* .button.yith-wcqv-button::before {
-    content: "\f06e";
-} */
 
-/* .button.product_type_simple.add_to_cart_button.ajax_add_to_cart.loading::before{
-    content: "\f110";
-} */
-/* .button.product_type_simple.add_to_cart_button.ajax_add_to_cart.added::before{
-    content: "\f00c";
-} */
-.button.product_type_grouped::before,
-.button.product_type_variable.add_to_cart_button::before {
-    content: "\f1de";
-    
-}
 .button.product_type_grouped::before,
 .button.product_type_simple.add_to_cart_button.ajax_add_to_cart::before,
 .button.yith-wcqv-button::before,
@@ -774,4 +756,196 @@ ul.site-header-cart {
     padding: 15px 25px;
     border-radius: 0;
     color:  #fff;
+}
+
+.onsale {
+    margin: 0!important;
+    min-height: 0!important;
+    display: flex;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    min-width: 0!important;
+    line-height: 1!important;
+    padding: 0!important!important;
+    padding: 8px 22px!important;
+    background: #fcb700!important;
+    border-radius: 0!important;
+    letter-spacing: 1px;
+    font-size: 14px!important;
+    width: 70px;
+}
+.woocommerce ul.products li.product .onsale {
+    top: 10px;
+    left: -6px!important;
+}
+span.onsale:after {
+    content: "";
+    position: absolute;
+    border-color: transparent #fcb700 #fcb700 transparent;
+    border-width: 3px;
+    border-style: solid;
+    top: -6px;
+    left: 0;
+    right: initial;
+}
+
+a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
+    display: block!important;
+}
+
+.arrival-product-thumb-wrapp {
+    position: relative;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    margin-bottom: 5px;
+}
+.woocommerce ul.products li.product .star-rating {
+    display: block!important;
+    margin: 0 auto 10px;
+    font-size: 15px!important;
+}
+.wpopea-opstore-products .woocommerce ul.products li.product{
+    width: calc(25% - 30px)!important;
+    margin: 0 15px 50px;
+}
+/*-------------------
+button
+-------------------*/
+.wc-proceed-to-checkout a.button,
+.woocommerce-terms-and-conditions-wrapper button {
+    border-radius: 0!important;
+    font-weight: 300!important;
+    text-transform: capitalize;
+    padding: 14px 25px!important;
+    color: #FFF;
+    background: #fcb700;
+    transition: all 0.3s ease-in-out;
+}
+.wc-proceed-to-checkout a.button:hover,
+.woocommerce-terms-and-conditions-wrapper button:hover{
+    background: #333!important;
+}
+/*----------------------
+mini cart
+--------------------*/
+.after-top-header-wrapp .icons-wrapp .minicart-item-content h4.item-title a {
+    text-align: left;
+}
+.woocommerce.widget_shopping_cart .cart_list li a.remove {
+    margin-top: -10px;
+    font-size: 13px!important;
+}
+.widget_shopping_cart .mini_cart_item a.remove svg {
+    width: 100%!important;
+    height: 100%!important;
+}
+.widget.widget_shopping_cart .mini_cart_item .minicart-item-thumb,
+.widget.widget_shopping_cart .mini_cart_item .minicart-item-thumb img {
+    width: 75px!important;
+}
+/*--------------------------
+cart
+----------------------*/
+.woocommerce #content table.cart td.actions .input-text, 
+.woocommerce table.cart td.actions .input-text, 
+.woocommerce-page #content table.cart td.actions .input-text, 
+.woocommerce-page table.cart td.actions .input-text {
+    width: 215px!important;
+    height: 42px;
+}
+.woocommerce #respond input#submit.disabled, 
+.woocommerce #respond input#submit:disabled, 
+.woocommerce #respond input#submit:disabled[disabled], 
+.woocommerce a.button.disabled, 
+.woocommerce a.button:disabled, 
+.woocommerce a.button:disabled[disabled], 
+.woocommerce button.button.disabled, 
+.woocommerce button.button:disabled, 
+.woocommerce button.button:disabled[disabled], 
+.woocommerce input.button.disabled, 
+.woocommerce input.button:disabled, 
+.woocommerce input.button:disabled[disabled] {
+    padding: 14px 30px!important;
+}
+td.product-thumbnail img {
+    width: 100px;
+}
+
+td.product-remove {
+    position: relative;
+    width: 40px;
+    padding: 0!important;
+}
+
+td.product-remove a.remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    color: #ff4545!important;
+}
+
+td.product-remove a.remove:hover {
+    background-color: #ff4545!important;
+}
+.woocommerce table.shop_table {
+    border-radius: 0!important;
+}
+.wc-proceed-to-checkout a.button {
+    float: right;
+}
+
+/*--------------------------
+checkout
+-------------------------*/
+.select2-container .select2-selection--single, .select2-container--default .select2-selection--single .select2-selection__rendered {
+    height: 51px;
+    border-radius: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.woocommerce form .woocommerce-checkout-payment .place-order {
+    padding: 20px!important;
+    margin: 0;
+}
+.yith-wcwl-share li.share-button a, .yith-wcwl-share li.share-button a:hover {
+    color: #fff;
+}
+/*---------------------
+product single
+---------------------*/
+.woocommerce div.product .woocommerce-product-rating {
+    margin-bottom: 10px!important;
+}
+.woocommerce div.product p.price {
+    font-size: 26px!important;
+}
+.summary a.compare.button {
+    color: #fcb700!important;
+    background: transparent!important;
+    padding: 0!important;
+    text-decoration: underline;
+    font-weight: 500!important;
+}
+.add-to-wishlist-custom.exists .yith-wcwl-wishlistexistsbrowse.hide{
+    display: block !important;
 }

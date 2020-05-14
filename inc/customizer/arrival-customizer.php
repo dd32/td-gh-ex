@@ -1238,6 +1238,7 @@ $wp_customize->add_setting( $prefix.'_page_header_layout', array(
 
 $wp_customize->add_control( $prefix.'_page_header_layout', array(
         'label'         => esc_html__( 'Page Header Layout', 'arrival' ),
+        'description'   => esc_html__('Please change this layout to Seperate if using custom Elementor header','arrival'),
         'section'       => $prefix.'_breadcrumb_potions',
         'type'          => 'select',
         'choices'       => array(

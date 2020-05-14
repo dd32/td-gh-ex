@@ -12,6 +12,14 @@
     }
 }
 @media only screen and (max-width: 768px){
+
+    body.masonry-layout .site-main article.post{
+        width: 46%;
+    }
+    body.masonry-layout .site-main article.post:nth-child(4){
+        clear: none;
+        margin-left: 3.5%;
+    }
     
     header .cart-wrapper{
         display: block;
@@ -65,6 +73,10 @@
      header .after-top-header-wrapp{
         padding-top: 0;
     }
+     body.masonry-layout .site-main article.post,
+     body.masonry-layout.has-sidebar .site-main article.post{
+        width: 100%;
+    }
     .after-top-header-wrapp .widget_arrival_info .contact-info-wrapp .info-wrap{
         width: 100%;
     }
@@ -92,6 +104,7 @@
 }
 
 @media only screen and (max-width: 500px){
+   
     .site-title{
         font-size: 26px;
     }
