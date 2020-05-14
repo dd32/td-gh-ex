@@ -55,6 +55,7 @@ function ct_tracks_video_callback( $post ) {
 	$youtube_captions = get_post_meta( $post->ID, 'ct_tracks_video_youtube_captions', true );
 	$youtube_autoplay = get_post_meta( $post->ID, 'ct_tracks_video_youtube_autoplay', true );
 	$youtube_loop     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_loop', true );
+	$youtube_mute     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_mute', true );
 
 	// sets video to display on posts only by default
 	if( empty( $display_value ) ) {
@@ -62,7 +63,11 @@ function ct_tracks_video_callback( $post ) {
 	}
 
 	// video preview
-	echo '<div class="ct_tracks_video_preview_container" id="ct_tracks_video_preview_container">';
+	$container_classes = 'ct_tracks_video_preview_container';
+	if ( strpos( $video_url, 'youtube-nocookie.com' ) !== false ) {
+		$container_classes .= ' youtube-nocookie';
+	}
+	echo '<div class="'. $container_classes .'" id="ct_tracks_video_preview_container">';
 		echo '<label for="ct_tracks_video_url">';
 			esc_html_e( 'Video Preview', 'tracks' );
 		echo '</label> ';
@@ -117,14 +122,6 @@ function ct_tracks_video_callback( $post ) {
 
 	echo '<div class="ct_tracks_video_youtube_controls_container ' . $class . '">';
 		echo '<p>' . esc_html__( 'Youtube controls', 'tracks' ) . '</p>';
-		echo '<label for="ct_tracks_video_youtube_title">';
-			echo '<input type="checkbox" name="ct_tracks_video_youtube_title" id="ct_tracks_video_youtube_title" value="1" ' . checked( '1', $youtube_title, false ) . '>';
-			esc_html_e( 'Hide title', 'tracks' );
-		echo '</label> ';
-		echo '<label for="ct_tracks_video_youtube_related">';
-			echo '<input type="checkbox" name="ct_tracks_video_youtube_related" id="ct_tracks_video_youtube_related" value="1" ' . checked( '1', $youtube_related, false ) . '>';
-			esc_html_e( 'Hide related videos', 'tracks' );
-		echo '</label> ';
 		echo '<label for="ct_tracks_video_youtube_logo">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_logo" id="ct_tracks_video_youtube_logo" value="1" ' . checked( '1', $youtube_logo, false ) . '>';
 			esc_html_e( 'Hide Youtube logo', 'tracks' );
@@ -140,6 +137,10 @@ function ct_tracks_video_callback( $post ) {
 		echo '<label for="ct_tracks_video_youtube_loop">';
 			echo '<input type="checkbox" name="ct_tracks_video_youtube_loop" id="ct_tracks_video_youtube_loop" value="1" ' . checked( '1', $youtube_loop, false ) . '>';
 			esc_html_e( 'Loop video', 'tracks' );
+		echo '</label> ';
+		echo '<label for="ct_tracks_video_youtube_mute">';
+			echo '<input type="checkbox" name="ct_tracks_video_youtube_mute" id="ct_tracks_video_youtube_mute" value="1" ' . checked( '1', $youtube_mute, false ) . '>';
+			esc_html_e( 'Auto-mute video', 'tracks' );
 		echo '</label> ';
 	echo '</div>';
 }
@@ -236,12 +237,11 @@ function ct_tracks_video_save_data( $post_id ) {
 	}
 
 	$youtube_IDs = array(
-		'ct_tracks_video_youtube_title',
-		'ct_tracks_video_youtube_related',
 		'ct_tracks_video_youtube_logo',
 		'ct_tracks_video_youtube_captions',
 		'ct_tracks_video_youtube_autoplay',
-		'ct_tracks_video_youtube_loop'
+		'ct_tracks_video_youtube_loop',
+		'ct_tracks_video_youtube_mute'
 	);
 
 	foreach ( $youtube_IDs as $youtube_option ) {
@@ -273,6 +273,11 @@ if ( ! function_exists( ( 'ct_tracks_pro_output_featured_video' ) ) ) {
 
 		if( $featured_video ) {
 
+			$container_classes = 'featured-video';
+			if ( strpos( $featured_video, 'youtube-nocookie.com' ) !== false ) {
+				$container_classes .= ' youtube-nocookie';
+			}
+
 			// get the display setting (post or blog)
 			$display_blog = get_post_meta( $post->ID, 'ct_tracks_video_display_key', true );
 
@@ -282,7 +287,7 @@ if ( ! function_exists( ( 'ct_tracks_pro_output_featured_video' ) ) ) {
 				|| ( ( is_home() || is_archive() || is_search() ) && ( $display_blog == 'blog' || $display_blog == 'both' ) )
 				|| is_singular('page')
 			) {
-				$featured_image = '<div class="featured-video">' . wp_oembed_get( esc_url( $featured_video ) ) . '</div>';
+				$featured_image = '<div class="'. esc_attr($container_classes) .'">' . wp_oembed_get( esc_url( $featured_video ) ) . '</div>';
 			}
 		}
 
@@ -310,14 +315,11 @@ function ct_tracks_add_youtube_parameters($html, $url, $args) {
 			if( strpos($featured_video, 'youtube.com' ) || strpos($featured_video, 'youtu.be' ) ) {
 
 				// get user Youtube parameter settings
-				// flip their value so 1 means, yes HIDE it, NOT yes SHOW it.
-				$youtube_title    = get_post_meta( $post->ID, 'ct_tracks_video_youtube_title', true ) ? 0 : 1;
-				$youtube_related  = get_post_meta( $post->ID, 'ct_tracks_video_youtube_related', true ) ? 0 : 1;
-				$youtube_logo     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_logo', true ) ? 0 : 1;
-
+				$youtube_logo     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_logo', true );
 				$youtube_captions = get_post_meta( $post->ID, 'ct_tracks_video_youtube_captions', true );
 				$youtube_autoplay = get_post_meta( $post->ID, 'ct_tracks_video_youtube_autoplay', true );
 				$youtube_loop     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_loop', true );
+				$youtube_mute     = get_post_meta( $post->ID, 'ct_tracks_video_youtube_mute', true );
 
 				$youtube_parameters = array(
 					'showinfo'       => $youtube_title,
@@ -325,7 +327,8 @@ function ct_tracks_add_youtube_parameters($html, $url, $args) {
 					'modestbranding' => $youtube_logo,
 					'cc_load_policy' => $youtube_captions,
 					'autoplay'       => $youtube_autoplay,
-					'loop'           => $youtube_loop
+					'loop'           => $youtube_loop,
+					'mute'					 => $youtube_mute
 				);
 
 				if ( $youtube_loop == 1 ) {

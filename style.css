@@ -5,13 +5,13 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, over 50+ social media icons, search bar, comment display controls, premium layouts, and more. Tracks has a dark, simple, and minimalist design that makes it great for publish both text and image based content. Use it for a travel blog, online newspaper, video site, podcast, or even an eCommerce store thanks to its WooCommerce compatibility. As a free theme, you can use Tracks for as many projects as you’d like. Now fully compatible with the new Gutenberg post editor. Preview Tracks now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=tracks
-Version: 1.71
+Version: 1.72
 Tags: one-column, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Text Domain: tracks
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Tracks WordPress Theme, Copyright 2019 Compete Themes
+Tracks WordPress Theme, Copyright 2020 Compete Themes
 Tracks is distributed under the terms of the GNU GPL
 */
 /*===== Variables =====*/
@@ -21,7 +21,7 @@ Tracks is distributed under the terms of the GNU GPL
   line-height: 1.85;
 }
 
-.alignright figcaption,
+.wp-block-table figcaption, .alignright figcaption,
 .alignleft figcaption,
 .aligncenter figcaption,
 .alignnone figcaption,
@@ -237,6 +237,35 @@ th {
   line-height: 1.5;
 }
 
+.wp-block-table {
+  margin: 0;
+}
+.wp-block-table thead {
+  background: #ededed;
+}
+.wp-block-table td,
+.wp-block-table th {
+  border-color: #aaaaaa;
+}
+
+.wp-block-table.is-style-stripes {
+  border-bottom: none;
+}
+.wp-block-table.is-style-stripes thead {
+  background: none;
+}
+.wp-block-table.is-style-stripes td,
+.wp-block-table.is-style-stripes th {
+  border-color: #aaaaaa;
+}
+
+.wp-block-table figcaption {
+  line-height: 1.5;
+  margin: -1em 0 0 0;
+  color: #8c8c8c;
+  text-align: center;
+}
+
 /* Images */
 .alignright,
 .alignleft,
@@ -328,6 +357,10 @@ img {
 .wp-caption-text {
   margin: 6px 0 0 0;
   color: #8c8c8c;
+}
+
+.wp-block-social-links a {
+  color: #fff;
 }
 
 /* Form styles */
@@ -575,6 +608,12 @@ a img {
 .menu-primary-items {
   list-style: none;
   opacity: 0;
+}
+.menu-unset > ul li.current-menu-item a,
+.menu-unset > ul li.current_page_item a,
+.menu-primary-items li.current-menu-item a,
+.menu-primary-items li.current_page_item a {
+  opacity: 1;
 }
 .menu-unset > ul a,
 .menu-primary-items a {
@@ -994,6 +1033,8 @@ a img {
     padding: 0;
     margin-bottom: 1.5em;
     opacity: 0.8;
+    -webkit-transition: opacity 0.2s;
+            transition: opacity 0.2s;
   }
   .excerpt .featured-image {
     -webkit-transform: translateZ(0);
