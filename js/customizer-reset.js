@@ -1,7 +1,7 @@
 jQuery(function ($) {
 
     var sections = [
-        [ '#customize-save-button-wrapper', 'all', 'ct-reset', 'ct-reset-main', catchEvolutionCustomizerReset.confirm, catchEvolutionCustomizerReset.reset ], // Reset main.
+        [ '#customize-theme-controls', 'all', 'ct-reset', 'ct-reset-main', catchEvolutionCustomizerReset.confirm, catchEvolutionCustomizerReset.reset ], // Reset main.
         ["#customize-control-catchevolution_options-content_layout select", "layout_options", "ct-layout-reset", "ct-reset-section", catchEvolutionCustomizerReset.confirmSection, catchEvolutionCustomizerReset.resetSection],
         ["#customize-control-catchevolution_options-excerpt_length input", "excerpt_options", "ct-excerpt-reset", "ct-reset-section", catchEvolutionCustomizerReset.confirmSection, catchEvolutionCustomizerReset.resetSection]
     ];

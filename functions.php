@@ -104,12 +104,6 @@ function catchevolution_setup() {
 	 */
 	load_theme_textdomain( 'catch-evolution', get_template_directory() . '/languages' );
 
-	/**
-     * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
-     * @see http://codex.wordpress.org/Function_Reference/add_editor_style
-     */
-	add_editor_style();
-
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -187,6 +181,58 @@ function catchevolution_setup() {
 		*/
 		add_theme_support( 'custom-logo' );
 	}
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	/**
+     * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
+     * @see http://codex.wordpress.org/Function_Reference/add_editor_style
+     */
+	add_editor_style( 'css/editor-style.css' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add custom editor font sizes.
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name'      => __( 'Small', 'catch-evolution' ),
+				'shortName' => __( 'S', 'catch-evolution' ),
+				'size'      => 13,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'Normal', 'catch-evolution' ),
+				'shortName' => __( 'M', 'catch-evolution' ),
+				'size'      => 16,
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => __( 'Large', 'catch-evolution' ),
+				'shortName' => __( 'L', 'catch-evolution' ),
+				'size'      => 28,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => __( 'Huge', 'catch-evolution' ),
+				'shortName' => __( 'XL', 'catch-evolution' ),
+				'size'      => 36,
+				'slug'      => 'huge',
+			),
+		)
+	);
 }
 endif; // catchevolution_setup
 

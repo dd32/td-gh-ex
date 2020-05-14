@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-evolution/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian, Brazilian Portuguese and Dutch. If you need support with this theme, please go to https://catchthemes.com/support/
-Version: 3.0.7
+Version: 4.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-everest
@@ -574,6 +574,9 @@ a#scrollup,
     max-width: 100%;
 	padding: 0;
 }
+#header-image img {
+	width: 100%;
+}
 #logo-wrap {
 	clear: both;
 	display: inline-block;
@@ -1058,6 +1061,7 @@ a#scrollup,
 }
 .entry-content table,
 .comment-content table {
+	border-collapse: collapse;
 	border-bottom: 1px solid #ccc;
 	margin: 0 0 2em;
 	width: 100%;
@@ -1072,10 +1076,11 @@ a#scrollup,
 	line-height: 2.6em;
 	text-transform: uppercase;
 }
+.entry-content th,
 .entry-content td,
 .comment-content td {
-	border-top: 1px solid #ccc;
-	padding: 6px 10px 6px 0;
+	border: 1px solid #ccc;
+	padding: 0.833em;
 }
 .entry-content #s {
 	width: 75%;
@@ -1139,6 +1144,13 @@ dl.gallery-item {
 }
 a.more-link {
 	white-space: nowrap;
+}
+.drop-cap:first-letter {
+  	float: left;
+  	font-size: 88px;
+  	font-size: 5.5rem;
+  	line-height: 0.6;
+  	margin: 6px 16px 6px -3px;
 }
 /* Images */
 .entry-content img,
