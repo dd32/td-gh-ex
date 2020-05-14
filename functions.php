@@ -453,7 +453,7 @@ if( ! function_exists('arrival_store_mob_nav')){
 
             <div class="mob-nav-wrapp">
                 <button class="toggle close-wrapp toggle-wrapp">
-                    <span class="text"><?php esc_html_e('Close Menu','arrival'); ?></span>
+                    <span class="text"><?php esc_html_e('Close Menu','arrival-store'); ?></span>
                     <span class="icon-wrapp"><?php echo arrival_get_icon_svg('cross',18); ?></span>
                 </button>
                 <nav arial-label="Mobile" role="navigation" tabindex="1">
@@ -536,5 +536,22 @@ if( ! function_exists('arrival_store_customizer_scripts')){
         wp_enqueue_script( 'arrival-store-customizer', get_theme_file_uri( '/assets/js/customizer-scripts.js' ), array( 'customize-preview' ), '20151215', true );
 
 
+    }
+}
+
+
+/*
+* Ajax function to updat wishlist count
+*/
+add_action( 'wp_ajax_arrival_store_update_wishlist_count', 'arrival_store_update_wishlist_count' );
+add_action( 'wp_ajax_nopriv_arrival_store_update_wishlist_count', 'arrival_store_update_wishlist_count' );
+if( ! function_exists('arrival_store_update_wishlist_count') ){
+    function arrival_store_update_wishlist_count(){
+
+        if( ! function_exists( 'YITH_WCWL' ) )
+            return;
+
+        wp_send_json( YITH_WCWL()->count_products() );
+        
     }
 }

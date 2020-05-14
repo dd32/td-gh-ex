@@ -1,3 +1,8 @@
+=== v1.0.3 ===
+- Fixed textdomain issue
+- Fixed YITH Wishlist counter issue
+- Fixed YITH Compare counter issue
+
 === v1.0.2 ===
 - Optimized mobile menu for keyboard navigation
 
