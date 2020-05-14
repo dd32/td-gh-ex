@@ -43,14 +43,16 @@ $testimonial_qry = new WP_Query( array(
                             <?php the_content(); ?>
                         </blockquote>
                         <cite>
-                        <?php
-                            if( has_post_thumbnail() ){ ?>
-                                <span class="img-holder">
-                                    <a href="<?php the_permalink(); ?>" >
-                                        <?php the_post_thumbnail( 'book-landing-page-recent-post' ); ?>
-                                    </a>
-                                </span>
-                            <?php } ?>
+                            <span class="img-holder">
+                                <a href="<?php the_permalink(); ?>" >
+                                    <?php
+                                    if( has_post_thumbnail() ){ 
+                                        the_post_thumbnail( 'book-landing-page-recent-post' ); 
+                                    }else{
+                                        book_landing_page_get_fallback_svg( 'book-landing-page-recent-post' );
+                                    } ?>
+                                </a>
+                            </span>
                             <div class="text-holder">
                                 <?php the_title('<strong class="name">','</strong>');
                                 if( has_excerpt() ){

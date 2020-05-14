@@ -1,16 +1,16 @@
 <?php 
 /**
-Implementing the Parent theme banner with static banner in child theme
+ *Implementing the Parent theme banner with static banner in child theme
 */
 function book_landing_page_customize_register_banner( $wp_customize ) {
 
 	global $book_landing_page_options_posts;
     /** Banner Section */
-    $wp_customize->get_section( 'header_image' )->panel                    = 'book_landing_page_home_page_settings';
-    $wp_customize->get_section( 'header_image' )->title                    = __( 'Banner Section', 'author-landing-page' );
-    $wp_customize->get_section( 'header_image' )->priority                 = 20;
-    $wp_customize->get_section( 'header_image' )->description              = '';                                               
-    $wp_customize->get_setting( 'header_image' )->transport                = 'refresh';
+    $wp_customize->get_section( 'header_image' )->panel       = 'book_landing_page_home_page_settings';
+    $wp_customize->get_section( 'header_image' )->title       = __( 'Banner Section', 'author-landing-page' );
+    $wp_customize->get_section( 'header_image' )->priority    = 20;
+    $wp_customize->get_section( 'header_image' )->description = '';
+    $wp_customize->get_setting( 'header_image' )->transport   = 'refresh';
 
 	/** Banner Section */
     $wp_customize->add_section(

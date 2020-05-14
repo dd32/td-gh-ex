@@ -30,9 +30,17 @@ $about_section_post    = get_theme_mod( 'book_landing_page_about_section_post' )
                         echo '<div class="col">';
                             echo '<div class="video-holder">';
                                 if( $about_video ){ 
-                                    echo book_landing_page_sanitize_iframe( $about_video );   
+                                    if( book_landing_page_iframe_match( $about_video ) ){    
+                                        echo book_landing_page_sanitize_iframe( $about_video );         
+                                    }else{
+                                        echo wp_oembed_get( $about_video );
+                                    }   
                                 }else{
-                                     the_post_thumbnail( 'author-landing-page-about-block' ); 
+                                    if ( has_post_thumbnail() ) {
+                                        the_post_thumbnail( 'author-landing-page-about-block' ); 
+                                    }else{
+                                        book_landing_page_get_fallback_svg( 'thumbnail' );
+                                    }
                                 }
                             echo '</div>';
                         echo '</div>';
@@ -45,9 +53,10 @@ $about_section_post    = get_theme_mod( 'book_landing_page_about_section_post' )
                             ?>
                             </div>
                         </div>
-            <?php }
-            wp_reset_postdata();
-             } } ?>
+                    <?php }
+                    wp_reset_postdata();
+                } 
+            } ?>
         </div>
     </div>
 </section>

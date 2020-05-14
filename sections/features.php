@@ -41,11 +41,13 @@ if( $section_title || $section_content || $features_blocks ){ ?>
                             <div class="col">
                                 <div class="holder">
                                     <?php
+                                    echo '<div class="img-holder">';
                                         if( has_post_thumbnail() ){ 
-                                            echo '<div class="img-holder">';
-                                                the_post_thumbnail( 'book-landing-page-featured-post' ); 
-                                            echo '</div>';
+                                            the_post_thumbnail( 'book-landing-page-featured-post' ); 
+                                        }else{
+                                            book_landing_page_get_fallback_svg( 'book-landing-page-featured-post' );
                                         } 
+                                    echo '</div>';
                                     ?>
                                     <div class="text-holder">
                                         <h2 class="title"><?php the_title(); ?></h2>

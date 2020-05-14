@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.2.3
-Stable tag: 1.0.3
+Tested up to: WordPress 5.4.1
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,11 +37,19 @@ Images used in screenshots.
 
 * Screenshot image: 
 	All images are under Creative Commons Public Domain deed CC0.
-	- https://pxhere.com/en/photo/1292778; [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
+	Source:
+		- https://pxhere.com/en/photo/1292778
+
+	License: CCO
+		- https://pxhere.com/en/license
+		
 All other images including icon image and images used in customizer settings are self created and are under the GPL.
 
 == Changelog ==
+	1.0.4
+	* Added fallback svg.
+
 	1.0.3
 	* Added accessibility requirement for Skip Links, Keyboard navigation, Controls and Form labeling.
     * Added Getting started page.

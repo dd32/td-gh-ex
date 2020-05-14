@@ -15,14 +15,49 @@ function author_landing_page_enqueue_styles() {
     wp_enqueue_style( 'author-landing-page-parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'author-landing-page-style', get_stylesheet_directory_uri() . '/style.css', array( 'author-landing-page-parent-style' ), $version );
 
-
-    $query_args = array(
-		'family' => 'PT+Sans:400,400i,700,700i|Quicksand:300,400,500,700',
-		'subset' => 'latin,latin-ext',
-	);
-	wp_enqueue_style( 'author-landing-page-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_enqueue_style( 'author-landing-page-google-fonts', author_landing_page_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'author_landing_page_enqueue_styles' );
+
+/**
+ * Register custom fonts.
+ */
+function author_landing_page_fonts_url() {
+    $fonts_url = '';
+
+    /*
+    * translators: If there are characters in your language that are not supported
+    * by PT Sans, translate this to 'off'. Do not translate into your own language.
+    */
+    $pt_sans = _x( 'on', 'PT Sans font: on or off', 'author-landing-page' );
+    
+    /*
+    * translators: If there are characters in your language that are not supported
+    * by Quicksand, translate this to 'off'. Do not translate into your own language.
+    */
+    $quicksand = _x( 'on', 'Quicksand font: on or off', 'author-landing-page' );
+
+    if ( 'off' !== $pt_sans || 'off' !== $quicksand ) {
+        $font_families = array();
+
+        if( 'off' !== $pt_sans ){
+            $font_families[] = 'PT Sans:700i';
+        }
+
+        if( 'off' !== $quicksand ){
+            $font_families[] = 'Quicksand:300,400,500,700';
+        }
+
+        $query_args = array(
+            'family'  => urlencode( implode( '|', $font_families ) ),
+            'display' => urlencode( 'fallback' ),
+        );
+
+        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+    }
+
+    return esc_url( $fonts_url );
+}
 
 /**
  * After setup theme hook

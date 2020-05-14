@@ -36,7 +36,7 @@ if( $banner_post && $banner_qry->have_posts() ){
                             if ( $button_text ) { ?>
                                 <a href="<?php echo esc_url( $button_link ); ?>" class="btn-buy"><?php echo esc_html( $button_text ); ?></a>
                             <?php } if( $banner_image ){ 
-                                echo '<div class="cards"><img src="' . esc_url( $banner_image ) . '" alt="" ></div>'; 
+                                echo '<div class="cards"><img src="' . esc_url( $banner_image ) . '" alt="' . the_title_attribute( 'echo=0' ) . '" ></div>'; 
                             } 
                         ?>
                     </div>

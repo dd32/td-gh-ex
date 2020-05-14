@@ -5,7 +5,7 @@ Author: Rara Theme
 Author URI: https://rarathemes.com/
 Description: Author Landing Page is a beautiful and easy-to-use free WordPress theme for authors, writers, novelists, and publishers who want to launch, promote or publish their book online. This theme features an elegant and attractive layout to help you generate high leads and get more sales of your book. With Author Landing Page free theme, you can create a fully responsive, and visually appealing landing page to sell and promote your book without writing a single line of code. It is a speed optimized theme that helps your website load within a blink of an eye and provides a great user experience to your visitors. The theme is developed with SEO optimized codes and is schema.org markup ready to help your website rank higher in Google and other search engines. Furthermore, this theme is fully compatible with the popular WooCommerce plugin to allow you to sell your book via your website. Check demo at https://demo.rarathemes.com/author-landing-page/ and documentation at https://docs.rarathemes.com/docs/author-landing-page/. Read theme details at https://rarathemes.com/wordpress-themes/author-landing-page/ and get free support at https://rarathemes.com/support-ticket/.
 Template: book-landing-page
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: author-landing-page
@@ -394,7 +394,7 @@ a:active {
     margin-right: 20px;
 }
 
-.testimonial .col cite .img-holder img{
+.testimonial .col cite .img-holder img, .testimonial .col cite .svg-holder svg{
     width: 60px;
     height: 60px;
     vertical-align: top;
@@ -644,11 +644,15 @@ a:active {
     display: flex;
     flex-wrap: wrap;
     box-shadow: 4.444rem 4.44rem 0 rgba(var(--primary-color-rgb), 0.1);
+    -webkit-align-items: stretch;
+    align-items: stretch;
 }
 
 .about-author .col:first-child{
     width: 585px;
     padding-left: 0px;
+    position: relative;
+    overflow: hidden;
 }
 
 .about-author .col:last-child{
@@ -667,6 +671,11 @@ a:active {
     border: 0;
 }
 
+.about-author .video-holder .svg-holder,
+.about-author .video-holder .svg-holder svg{
+    height: 100%;
+    vertical-align: top;
+}
 .about-author .video-holder img{
     vertical-align: top;
     width: 100%;
@@ -806,9 +815,8 @@ a:active {
     border-bottom: 0;
 }
 
-.breadcrumbs a,
-.breadcrumbs span{
-    margin: 0 10px;
+.breadcrumbs a{
+    margin: 0 2px;
     color: #121212;
     -webkit-transition: ease 0.2s;
     -moz-transition: ease 0.2s;
@@ -817,7 +825,6 @@ a:active {
 
 .breadcrumbs .current{
     margin-right: 0;
-    margin-left: 10px;
 }
 
 .breadcrumbs a:hover,

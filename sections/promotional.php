@@ -40,7 +40,7 @@ if( $promotional_section_post ){
             				<a href="<?php echo esc_url( $promotional_section_button ); ?>" class="btn-buy"><?php echo esc_html( $promotional_section_button_text ); ?></a>
             			</div>
         			    <?php if( $promotional_image ){
-                            echo '<div class="cards"><img src="' . esc_url( $promotional_image ). '"></div>'; 
+                            echo '<div class="cards"><img src="' . esc_url( $promotional_image ). '" alt="' . the_title_attribute( 'echo=0' ) . '"></div>'; 
                         } 
                      }
                 }
