@@ -6,28 +6,45 @@ jQuery( document ).ready( function ( $ ) {
 	$( '.at-gsm-btn' ).click( function ( e ) {
 		e.preventDefault();
 
-		// Show updating gif icon.
-        $( this ).addClass( 'updating-message' );
-
-		// Change button text.
-        $( this ).text( acmeblog_adi_install.btn_text );
+		$( this ).addClass( 'updating-message' );
+		$( this ).text( acmeblog_adi_install.btn_text );
 
 		$.ajax({
 			type: "POST",
 			url: ajaxurl,
 			data: {
-                action     : 'at_getting_started',
-                security : acmeblog_adi_install.nonce
-            },
+				action     : 'at_getting_started',
+				security : acmeblog_adi_install.nonce,
+				slug : 'advanced-import',
+				request : 1
+			},
 			success:function( response ) {
-                var extra_uri, redirect_uri, dismiss_nonce;
+				setTimeout(function(){
+					$.ajax({
+						type: "POST",
+						url: ajaxurl,
+						data: {
+							action     : 'at_getting_started',
+							security : acmeblog_adi_install.nonce,
+							slug : 'acme-demo-setup',
+							request : 2
+						},
+						success:function( response ) {
+							var extra_uri, redirect_uri, dismiss_nonce;
+							redirect_uri         = acmeblog_adi_install.adminurl+'/themes.php?page=advanced-import&browse=all&at-gsm-hide-notice=welcome';
+							if ( $( '.at-gsm-close' ).length ) {
+								dismiss_nonce = $( '.at-gsm-close' ).attr( 'href' ).split( 'at_gsm_admin_notice_nonce=' )[1];
+								extra_uri     = '&at_gsm_admin_notice_nonce=' + dismiss_nonce;
+							}
+							redirect_uri         = redirect_uri + extra_uri;
+							window.location.href = redirect_uri;
 
-                if ( $( '.at-gsm-close' ).length ) {
-					dismiss_nonce = $( '.at-gsm-close' ).attr( 'href' ).split( 'at_gsm_admin_notice_nonce=' )[1];
-					extra_uri     = '&at_gsm_admin_notice_nonce=' + dismiss_nonce;
-				}
-				redirect_uri         = response.data.redirect + extra_uri;
-                window.location.href = redirect_uri;
+						},
+						error: function( xhr, ajaxOptions, thrownError ){
+							console.log(thrownError);
+						}
+					});
+				}, 2000);
 			},
 			error: function( xhr, ajaxOptions, thrownError ){
 				console.log(thrownError);

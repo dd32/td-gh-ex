@@ -50,7 +50,6 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
             $this->menu_title    = isset( $this->config['menu_title'] ) ? $this->config['menu_title'] : esc_html__('Info','acmeblog') . $this->theme_name;
             $this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( __('Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our %2$swelcome page%3$s.','acmeblog'), $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-info' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-info' ) ) . '" class="button" style="text-decoration: none;">' . sprintf( __('Get started with %s','acmeblog'), $this->theme_name ) . '</a></p>' );
             $this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
-
         }
 
         /**
@@ -125,6 +124,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
             }
             exit;
         }
+
         private function get_recommended_actions() {
             $saved_actions = get_option( $this->theme_slug . '_recommended_actions' );
             if ( ! is_array( $saved_actions ) ) {
@@ -214,7 +214,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                 $notice_nag = get_option( 'acmeblog_admin_notice_welcome' );
                 if ( ! $notice_nag ) {
                     echo '<div class="at-gsm-notice">
-                        <small class="plugin-install-notice">'.esc_html__('Clicking the button below will install and activate the Advanced Import plugin.','acmeblog').'</small>
+                        <small class="plugin-install-notice">'.esc_html__('Clicking the button below will install and activate the Advanced Import and Acme Demo Setup plugin.','acmeblog').'</small>
                         <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="'.esc_html__('Get started with AcmeBlog','acmeblog').'">
                          '.esc_html__('Get started with AcmeBlog','acmeblog').'                   
                          </a>
@@ -233,7 +233,6 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                     }
                     echo "</p>";
                 }
-
                 /* Display tabs */
                 if ( ! empty( $this->tabs ) ) {
                     $current_tab = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : 'getting_started';
@@ -447,9 +446,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                             $saved_recommended_actions[ $id ] == false ) {
                             $hidden = true;
                         }
-                        if ( $hidden ) {
-                            //continue;
-                        }
+
                         $done = '';
                         if ( $check ) {
                            $done = 'done';
@@ -969,7 +966,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
          */
         public function style_and_scripts( $hook_suffix ) {
 
-            // this is needed on all admin pages, not just the about page, for the badge action count in the wordpress main sidebar
+            // this is needed on all admin pages, not just the about page, for the badge action count in the WordPress main sidebar
             wp_enqueue_style( 'at-theme-info-css', get_template_directory_uri() . '/acmethemes/at-theme-info/css/at-theme-info.css' );
 
             if ( 'appearance_page_' . $this->theme_slug . '-info' == $hook_suffix ) {

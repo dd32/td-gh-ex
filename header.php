@@ -44,6 +44,7 @@ do_action( 'acmeblog_action_before_head' );?>
  *
  */
 do_action( 'wp_body_open' );
+
 /**
  * acmeblog_action_before hook
  * @since AcmeBlog 1.0.0

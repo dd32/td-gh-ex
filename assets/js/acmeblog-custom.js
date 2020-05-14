@@ -442,8 +442,28 @@ jQuery(document).ready(function($) {
         prependTo: '.header-wrapper .responsive-slick-menu'
     });
     $('.acme-toggle-search').click(function(){
-        $('.right-header .search-block').fadeToggle();
+        $('.right-header .search-block').fadeToggle('fast',function () {
+            if( $('.right-header .search-block').is(":visible")){
+                $('.right-header .search-block .menu-search').focus();
+            }
+
+        });
         $( this ).toggleClass( "fa-times fa-search" );
+
+    });
+    /*Menu Icon Close/Open*/
+    $( document ).on('keydown','.right-header .search-block #searchsubmit',function(e){
+        const parent = document.getElementById('acmeblog-search-block');
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 9) {
+            parent.addEventListener('focusout', e => {
+                const leavingParent = !parent.contains(e.relatedTarget);
+                if (leavingParent) {
+                    $('.right-header .search-block').fadeOut();
+                    $('.acme-toggle-search').toggleClass( "fa-times fa-search" );
+                }
+            });
+        }
     });
     /*featured slider*/
     jQuery('.home-bxslider').show().bxSlider({

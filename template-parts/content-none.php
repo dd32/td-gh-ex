@@ -7,7 +7,6 @@
  * @package Acme Themes
  * @subpackage AcmeBlog
  */
-
 ?>
 <section class="no-results not-found">
 	<header class="page-header">

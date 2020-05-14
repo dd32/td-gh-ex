@@ -2,7 +2,7 @@
 /**
  * AcmeBlog Theme Customizer.
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmeBlog
  */
 

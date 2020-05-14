@@ -27,7 +27,6 @@ add_filter('excerpt_length', 'acmeblog_alter_excerpt');
  * @return null
  *
  */
-
 if ( !function_exists('acmeblog_excerpt_more') ) :
     function acmeblog_excerpt_more($more) {
 		if( is_admin() ){

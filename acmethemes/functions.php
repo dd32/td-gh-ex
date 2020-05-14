@@ -31,7 +31,6 @@ if ( !function_exists('acmeblog_list_category') ) :
             $output .='</span>';
             echo trim($output, $separator);
         }
-
     }
 endif;
 
@@ -49,7 +48,6 @@ endif;
 if ( !function_exists('acmeblog_commment_list') ) :
 
     function acmeblog_commment_list($comment, $args, $depth) {
-        $GLOBALS['comment'] = $comment;
         extract($args, EXTR_SKIP);
         if ('div' == $args['style']) {
             $tag = 'div';

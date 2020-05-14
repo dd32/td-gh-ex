@@ -57,6 +57,9 @@ if ( ! function_exists( 'acmeblog_setup' ) ) :
          * to output valid HTML5.
          */
         add_theme_support( 'html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
             'gallery',
             'caption',
         ) );
@@ -69,6 +72,11 @@ if ( ! function_exists( 'acmeblog_setup' ) ) :
 
 	    /*woocommerce support*/
 	    add_theme_support( 'woocommerce' );
+
+        /*Set up the woocommerce Gallery Lightbox*/
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
     }
 endif; // acmeblog_setup
 add_action( 'after_setup_theme', 'acmeblog_setup' );

@@ -60,37 +60,8 @@ class AcmeBlog_Notice_Handler {
 	 * return array
 	 */
 	public function advanced_demo_import(){
-		add_action( 'advanced_import_demo_lists', array( $this, 'demo_lists' ), 20 );
 		add_action( 'advanced_import_replace_post_ids', array( $this, 'replace_post_ids' ), 20 );
 		add_action( 'advanced_import_replace_term_ids', array( $this, 'replace_term_ids' ), 20 );
-	}
-
-	/**
-	 * Advance Demo import process
-     * parameters $demo_lists array
-     * Active callback of advanced_import_demo_lists
-	 * return array
-	 */
-	public function demo_lists( $demo_lists ) {
-	    $url = 'https://demo.acmethemes.com/wp-json/acmethemes-demo-api/v1/fetch_templates/?theme-slug=acmeblog';
-        $body_args = [
-            /*API version*/
-            'api_version' => wp_get_theme()['Version'],
-            /*lang*/
-            'site_lang' => get_bloginfo( 'language' ),
-        ];
-        $raw_json = wp_safe_remote_get( $url, [
-            'timeout' => 100,
-            'body' => $body_args,
-        ] );
-
-        if ( ! is_wp_error( $raw_json ) ) {
-            $demo_server = json_decode( wp_remote_retrieve_body( $raw_json ), true );
-            if( is_array( $demo_server )){
-                return array_merge( $demo_lists, $demo_server );
-            }
-        }
-		return array_merge( $demo_lists);
 	}
 
 	/**
@@ -153,7 +124,8 @@ class AcmeBlog_Notice_Handler {
 
 			$translation = array(
 			        'btn_text' => esc_html__( 'Processing...', 'acmeblog' ),
-                    'nonce'    => wp_create_nonce( 'acmeblog_demo_import_nonce' )
+                'nonce'    => wp_create_nonce( 'acmeblog_demo_import_nonce' ),
+                'adminurl'    => admin_url(),
             );
 			wp_localize_script( 'acmeblog-adi-install', 'acmeblog_adi_install', $translation );
 			
@@ -213,7 +185,7 @@ class AcmeBlog_Notice_Handler {
 						?>
                     </h2>
 
-                    <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Advanced Import plugin.', 'acmeblog' ); ?></p>
+                    <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Advanced Import and Acme Demo Setup plugin.', 'acmeblog' ); ?></p>
 
                     <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with AcmeBlog', 'acmeblog' ); ?>">
 		                <?php esc_html_e( 'Get started with AcmeBlog', 'acmeblog' );?>
@@ -233,8 +205,9 @@ class AcmeBlog_Notice_Handler {
 
 		check_ajax_referer( 'acmeblog_demo_import_nonce', 'security' );
 
-		$slug   = 'advanced-import';
-		$plugin = 'advanced-import/advanced-import.php';
+        $slug   = $_POST['slug'];
+        $plugin = $slug.'/'.$slug.'.php';
+        $request = $_POST['request'];
 
 		$status = array(
 			'install' => 'plugin',
@@ -252,6 +225,10 @@ class AcmeBlog_Notice_Handler {
 			$status['errorMessage'] = __( 'Sorry, you are not allowed to install plugins on this site.', 'acmeblog' );
 			wp_send_json_error( $status );
 		}
+
+        if( $request > 2){
+            wp_send_json_error( );
+        }
 
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';

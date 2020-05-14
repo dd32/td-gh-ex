@@ -16,7 +16,6 @@ if ( ! function_exists( 'acmeblog_sanitize_number' ) ) :
 		// If the input is an number, return it; otherwise, return the default
 		return ( is_numeric( $acmeblog_sanitize_text ) ? $acmeblog_sanitize_text : $acmeblog_setting->default );
 	}
-
 endif;
 
 /**

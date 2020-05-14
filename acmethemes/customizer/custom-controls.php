@@ -3,7 +3,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Acmeblog_Customi
 
     /**
      * Custom Control for category dropdown
-     * @package AcmeThemes
+     * @package Acme Themes
      * @subpackage AcmeBlog
      * @since 1.0.0
      *
@@ -53,7 +53,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Acmeblog_Customi
 
     /**
      * Custom Control for post dropdown
-     * @package AcmeThemes
+     * @package Acme Themes
      * @subpackage AcmeBlog
      * @since 1.0.0
      *
@@ -111,7 +111,7 @@ endif;
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Acmeblog_Customize_Message_Control' )):
     /**
      * Custom Control for html display
-     * @package AcmeThemes
+     * @package Acme Themes
      * @subpackage AcmeBlog
      * @since 1.0.0
      *

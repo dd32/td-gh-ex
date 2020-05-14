@@ -196,7 +196,7 @@ if ( ! function_exists( 'acmeblog_header' ) ) :
                             <?php
                             if ( 1 == $acmeblog_customizer_all_values['acmeblog-menu-show-search'] ):
                                 echo "<div class='acme-search-block'>";
-                                echo "<span class='acme-toggle-search fa fa-search'></span>";
+                                echo "<a class='acme-toggle-search fa fa-search' href='#'></a>";
                                 get_search_form();
                                 echo "</div>";
                             endif;

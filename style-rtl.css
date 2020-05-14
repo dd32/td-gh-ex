@@ -259,6 +259,10 @@ a{
 	-webkit-transition:all 0.3s ease-in-out 0s;
 	-moz-transition:all 0.3s ease-in-out 0s;
 }
+a:focus{
+	outline: 3px dotted #0d47a1;
+	color: #0d47a1;
+}
 p{
 	margin: 0 0 16px;
 }
@@ -369,7 +373,8 @@ i.fa{
 .main-navigation ul ul a {
 	width: 250px;
 }
-.main-navigation ul li:hover > ul {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li:focus-within > ul{
 	right: auto;
 }
 .main-navigation ul ul li:hover > ul {

@@ -7,7 +7,6 @@
  * @package Acme Themes
  * @subpackage AcmeBlog
  */
-
 global $acmeblog_customizer_all_values;
 $acmeblog_blog_single_image_layout = $acmeblog_customizer_all_values['acmeblog-single-image-size'];
 ?>
