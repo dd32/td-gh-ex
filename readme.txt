@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.3.2
-Stable tag: 1.1.3
+Tested up to: WordPress 5.4.1
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
@@ -149,26 +149,47 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 External resources linked to the theme.
 
--- Fonts --
-Lato Font by Google Font https://fonts.google.com/specimen/Lato
-Font Awesome https://fortawesome.github.io/Font-Awesome/, (C) Dave Gandy, http://fontawesome.io/license/
+-- App Landing Page bundles the following third-party resources --
+
+  * normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
+    - License: MIT
+    - Source: https://necolas.github.io/normalize.css/
+
+  * Font Awesome icons, Copyright Dave Gandy
+    - Icons License: CC BY 4.0 
+    - Fonts License: SIL OFL 1.1 
+    - Source: http://fontawesome.io/
+
+  * TGMPA, Copyright (c) 2011, Thomas Griffin
+    - License: GPL-2.0+
+    - Source: http://tgmpluginactivation.com/
+
+  * Animate.css, Copyright (c) 2013 Daniel Eden
+    - License: MIT
+    - Source: http://daneden.me/animate
+
+  * jQuery Countdown, Copyright (c) 2015 Edson Hilios
+    - License: MIT
+    - Source: https://github.com/hilios/jQuery.countdown
+
+  * Nicescroll 3.6.6 InuYaksa
+    - License: MIT
+    - Source: http://nicescroll.areaaperta.com
+
+  * Wow, Copyright (c) 2013 Daniel Eden
+    - License: MIT
+    - Source: https://github.com/matthieua/WOW
+
 
 -- Images --
 All images are under Creative Commons Public Domain deed CC0.
-https://pixabay.com/en/girl-woman-hand-hands-holding-791389/
-https://pxhere.com/en/photo/1458009
 
--- JS --
-All the JS are licensed under GPLv2 or later
+Source: 
+  - https://pxhere.com/en/photo/1458009
+  - https://pxhere.com/en/photo/876174
 
-jquery-match-height.js, http://brm.io/jquery-match-height, (C), MIT License, https://github.com/liabru/jquery-match-height/blob/master/LICENSE
-jquery.nicescroll.js, https://github.com/inuyaksa/jquery.nicescroll  (C) 2015 InuYaksa, MIT License, https://github.com/inuyaksa/jquery.nicescroll/blob/master/MIT.LICENSE
-jquery.sidr.js, https://github.com/artberri/sidr, (C) 2013 Alberto Varela, MIT License, https://github.com/artberri/sidr/blob/master/LICENSE
-jquery.countdown.js, http://hilios.github.io/jQuery.countdown/, (C) 2015 Edson Hilios, https://github.com/hilios/jQuery.countdown/blob/master/LICENSE.md
-wow.js, https://github.com/matthieua/WOW, (C) Matthieu Aussaguel, https://www.gnu.org/licenses/gpl-3.0.en.html
-
-* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+License: CC0
+  - https://pxhere.com/en/license
 
 
 All other resources and theme elements are licensed under the GPLv2 or later
@@ -184,6 +205,15 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
 == Change Log ==    
+    1.1.4
+    * Fixed calendar widget design issue for WordPress 5.4.1.
+    * Fixed menu accessibility.
+    * Added static page content when home page sections are disabled.
+    * Added comment fields as required.
+    * Added fallback svg.
+    * Updated 
+    * Removed publisher and image from schema function.
+
     1.1.3
     * Fixed stat counter design issue in responisive
     * Added enable\disable option for scrollbar.

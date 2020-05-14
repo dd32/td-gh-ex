@@ -39,41 +39,6 @@ function app_landing_page_customize_register_service( $wp_customize ) {
         )
     );
 
-    /** Service Section Title */
-    /*$wp_customize->add_setting(
-        'app_landing_page_service_section_title',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_text_field',
-        )
-    );
-    
-    $wp_customize->add_control(
-        'app_landing_page_service_section_title',
-        array(
-            'label' => __( 'Service Section Title', 'app-landing-page' ),
-            'section' => 'app_landing_page_service_settings',
-            'type' => 'text',
-        )
-    );*/
-    
-    /** Service Section Content */
-    /*$wp_customize->add_setting(
-        'app_landing_page_service_section_content',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'wp_kses_post',
-        )
-    );
-    
-    $wp_customize->add_control(
-        'app_landing_page_service_section_content',
-        array(
-            'label' => __( 'Service Section Content', 'app-landing-page' ),
-            'section' => 'app_landing_page_service_settings',
-            'type' => 'textarea',
-        )
-    );*/
     /** Secrvices Page */
     $wp_customize->add_setting(
         'app_landing_page_service_page',

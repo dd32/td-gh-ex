@@ -29,8 +29,7 @@ if ( post_password_required() ) {
 			<?php
 				printf( // WPCS: XSS OK.
 					esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'app-landing-page' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
+					number_format_i18n( get_comments_number() )
 				);
 			?>
 		</h2>
@@ -40,8 +39,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
-					//'callback'   => 'app_landing_page_comment',
-          			'avatar_size'=> 79,
+					'avatar_size'=> 79,
 				) );
 			?>
 		</ol><!-- .comment-list -->

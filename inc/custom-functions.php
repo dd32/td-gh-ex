@@ -3,7 +3,7 @@
  * Custom functions that act independently of the theme templates.
  *
  * @package App_Landing_Page
- */
+*/
 
 if ( ! function_exists( 'app_landing_page_setup' ) ) :
 /**
@@ -51,7 +51,6 @@ function app_landing_page_setup() {
 	 */
 	add_theme_support( 'html5', array(
 		'search-form',
-		'comment-form',
 		'comment-list',
 	) );
 
@@ -64,10 +63,12 @@ function app_landing_page_setup() {
 	// Custom Image Size
 	add_image_size( 'app-landing-page-banner', 1366, 750, true );
 	add_image_size( 'app-landing-page-featured', 170, 170, true );
-  add_image_size( 'app-landing-page-with-sidebar', 750, 340, true );
-  add_image_size( 'app-landing-page-without-sidebar', 1140, 437, true );
-  add_image_size( 'app-landing-page-video-image', 795, 450 , true );
-  add_image_size( 'app-landing-page-recent-post', 78, 58, true );
+    add_image_size( 'app-landing-page-with-sidebar', 750, 340, true );
+    add_image_size( 'app-landing-page-without-sidebar', 1140, 437, true );
+    add_image_size( 'app-landing-page-video-image', 795, 450 , true );
+    add_image_size( 'app-landing-page-recent-post', 78, 58, true );
+    add_image_size( 'app-landing-page-intro', 341, 466, true );
+    add_image_size( 'app-landing-page-features-image', 341, 533, true );
 
     /* Custom Logo */
     add_theme_support( 'custom-logo', array(    	
@@ -76,6 +77,7 @@ function app_landing_page_setup() {
 
 }
 endif;
+add_action( 'after_setup_theme', 'app_landing_page_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -87,6 +89,7 @@ endif;
 function app_landing_page_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'app_landing_page_content_width', 750 );
 }
+add_action( 'after_setup_theme', 'app_landing_page_content_width', 0 );
 
 /**
 * Adjust content_width value according to template.
@@ -100,6 +103,7 @@ function app_landing_page_template_redirect_content_width() {
 		$GLOBALS['content_width'] = 1170;
 	}
 }
+add_action( 'template_redirect', 'app_landing_page_template_redirect_content_width' );
 
 if ( ! function_exists( 'app_landing_page_scripts' ) ) :
 /**
@@ -107,8 +111,8 @@ if ( ! function_exists( 'app_landing_page_scripts' ) ) :
  */
 function app_landing_page_scripts() {
     // Use minified libraries if SCRIPT_DEBUG is false
-    $build               = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
-    $suffix              = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+    $build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
+    $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
   	$app_landing_page_query_args = array(
   		'family' => 'Lato:400,400italic,700,900,300',
@@ -121,7 +125,7 @@ function app_landing_page_scripts() {
     
     wp_enqueue_script( 'jquery-ui-datepicker' );
 
-    if( is_woocommerce_activated() ){
+    if( app_landing_page_is_woocommerce_activated() ){
       wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css' . $build . '/woocommerce' . $suffix . '.css' );
     }
 
@@ -176,6 +180,7 @@ function app_landing_page_scripts() {
   	}
 }
 endif;
+add_action( 'wp_enqueue_scripts', 'app_landing_page_scripts' );
 
 if( ! function_exists( 'app_landing_page_admin_scripts' ) ) :
 /**
@@ -205,30 +210,29 @@ function app_landing_page_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-  // Adds a class of custom-background-image to sites with a custom background image.
-  if ( get_background_image() ) {
-    $classes[] = 'custom-background-image';
-  }
+    // Adds a class of custom-background-image to sites with a custom background image.
+    if ( get_background_image() ) {
+        $classes[] = 'custom-background-image';
+    }
     
-  // Adds a class of custom-background-color to sites with a custom background color.
-  if ( get_background_color() != 'ffffff' ) {
-    $classes[] = 'custom-background-color';
-  }
+    // Adds a class of custom-background-color to sites with a custom background color.
+    if ( get_background_color() != 'ffffff' ) {
+        $classes[] = 'custom-background-color';
+    }
 
-  if(is_page()){
-    $app_landing_page_post_class = app_landing_page_sidebar_layout(); 
-    if( $app_landing_page_post_class == 'no-sidebar' )
-    $classes[] = 'full-width';
-  }
+    if(is_page()){
+        $app_landing_page_post_class = app_landing_page_sidebar_layout(); 
+        if( $app_landing_page_post_class == 'no-sidebar' )
+        $classes[] = 'full-width';
+    }
 
-  if( !( is_active_sidebar( 'right-sidebar' )) || is_page_template( 'template-home.php' ) || is_404() ) {
-      $classes[] = 'full-width'; 
-  }
+    if( !( is_active_sidebar( 'right-sidebar' )) || is_page_template( 'template-home.php' ) || is_404() ) {
+        $classes[] = 'full-width'; 
+    }
 
 	return $classes;
 }
 add_filter( 'body_class', 'app_landing_page_body_classes' );
-
 
 /**
  * Flush out the transients used in app_landing_page_categorized_blog.
@@ -240,23 +244,29 @@ function app_landing_page_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'app_landing_page_categories' );
 }
+add_action( 'edit_category', 'app_landing_page_category_transient_flusher' );
+add_action( 'save_post', 'app_landing_page_category_transient_flusher' );
 
 if( ! function_exists( 'app_landing_page_change_comment_form_default_fields' ) ) :
 /**
  * Change Comment form default fields i.e. author, email & url.
+ * https://blog.josemcastaneda.com/2016/08/08/copy-paste-hurting-theme/
 */
 function app_landing_page_change_comment_form_default_fields( $fields ){    
     // get the current commenter if available
     $commenter = wp_get_current_commenter();
  
     // core functionality
-    $req = get_option( 'require_name_email' );
-    $aria_req = ( $req ? " aria-required='true'" : '' );    
+    $req      = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $required = ( $req ? " required" : '' );
+    $author   = ( $req ? __( 'Name*', 'app-landing-page' ) : __( 'Name', 'app-landing-page' ) );
+    $email    = ( $req ? __( 'Email*', 'app-landing-page' ) : __( 'Email', 'app-landing-page' ) );
  
     // Change just the author field
-    $fields['author'] = '<p class="comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( 'Name*', 'app-landing-page' ) . '</label><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'app-landing-page' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['author'] = '<p class="comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( 'Name', 'app-landing-page' ) . '<span class="required">*</span></label><input id="author" name="author" placeholder="' . esc_attr( $author ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $required . ' /></p>';
     
-    $fields['email'] = '<p class="comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( 'Email*', 'app-landing-page' ) . '</label><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'app-landing-page' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['email'] = '<p class="comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( 'Email', 'app-landing-page' ) . '<span class="required">*</span></label><input id="email" name="email" placeholder="' . esc_attr( $email ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . $required. ' /></p>';
     
     $fields['url'] = '<p class="comment-form-url"><label class="screen-reader-text" for="url">' . esc_html__( 'Website', 'app-landing-page' ) . '</label><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'app-landing-page' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
     
@@ -268,10 +278,11 @@ add_filter( 'comment_form_default_fields', 'app_landing_page_change_comment_form
 if( ! function_exists( 'app_landing_page_change_comment_form_defaults' ) ) :
 /**
  * Change Comment Form defaults
+ * https://blog.josemcastaneda.com/2016/08/08/copy-paste-hurting-theme/
 */
 function app_landing_page_change_comment_form_defaults( $defaults ){    
-    $defaults['comment_field'] = '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( 'Comment', 'app-landing-page' ) . '</label><textarea id="comment" name="comment" placeholder="' . esc_attr__( 'Comment*', 'app-landing-page' ) . '" cols="45" rows="8" aria-required="true"></textarea></p>';
-    $defaults['title_reply'] = esc_html__( 'Leave a Reply', 'app-landing-page' );
+    $defaults['comment_field'] = '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( 'Comment', 'app-landing-page' ) . '</label><textarea id="comment" name="comment" placeholder="' . esc_attr__( 'Comment', 'app-landing-page' ) . '" cols="45" rows="8" aria-required="true" required></textarea></p>';
+    
     return $defaults;    
 }
 endif;
@@ -284,17 +295,18 @@ if ( ! function_exists( 'app_landing_page_excerpt_more' ) ) :
 function app_landing_page_excerpt_more( $more ) {
 	return is_admin() ? $more : ' &hellip; ';
 }
-
 endif;
+add_filter( 'excerpt_more', 'app_landing_page_excerpt_more' );
 
 if ( ! function_exists( 'app_landing_page_excerpt_length' ) ) :
 /**
  * Changes the default 55 character in excerpt 
 */
 function app_landing_page_excerpt_length( $length ) {
-	return 40;
+	return is_admin() ? $length : 40;
 }
 endif;
+add_filter( 'excerpt_length', 'app_landing_page_excerpt_length', 999 );
 
 if( ! function_exists( 'app_landing_page_escape_text_tags' ) ) :
 /**
@@ -333,28 +345,11 @@ function app_landing_page_single_post_schema() {
                 "@id"   => esc_url( get_permalink( $post->ID ) )
             ),
             "headline"  => esc_html( get_the_title( $post->ID ) ),
-            "image"     => array(
-                "@type"  => "ImageObject",
-                "url"    => $images[0],
-                "width"  => $images[1],
-                "height" => $images[2]
-            ),
             "datePublished" => esc_html( get_the_time( DATE_ISO8601, $post->ID ) ),
             "dateModified"  => esc_html( get_post_modified_time(  DATE_ISO8601, __return_false(), $post->ID ) ),
             "author"        => array(
                 "@type"     => "Person",
                 "name"      => app_landing_page_escape_text_tags( get_the_author_meta( 'display_name', $post->post_author ) )
-            ),
-            "publisher" => array(
-                "@type"       => "Organization",
-                "name"        => esc_html( get_bloginfo( 'name' ) ),
-                "description" => wp_kses_post( get_bloginfo( 'description' ) ),
-                "logo"        => array(
-                    "@type"   => "ImageObject",
-                    "url"     => $site_logo[0],
-                    "width"   => $site_logo[1],
-                    "height"  => $site_logo[2]
-                )
             ),
             "description" => ( class_exists('WPSEO_Meta') ? WPSEO_Meta::get_value( 'metadesc' ) : $content )
         );
@@ -423,7 +418,7 @@ function app_landing_page_admin_notice(){
             <div class="notice-wrapper">
                 <div class="notice-text">
                     <h3><?php esc_html_e( 'Congratulations!', 'app-landing-page' ); ?></h3>
-                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'app-landing-page' ), $name ) ; ?></p>
+                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'app-landing-page' ), esc_html( $name ) ); ?></p>
                     <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=app-landing-page-getting-started' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'app-landing-page' ); ?></a></p>
                     <p class="dismiss-link"><strong><a href="?app_landing_page_admin_notice=1"><?php esc_html_e( 'Dismiss', 'app-landing-page' ); ?></a></strong></p>
                 </div>
@@ -445,13 +440,3 @@ function app_landing_page_update_admin_notice(){
 }
 endif;
 add_action( 'admin_init', 'app_landing_page_update_admin_notice' );
-
-if( ! function_exists( 'app_landing_page_restore_admin_notice' ) ) :
-/**
- * Restoring admin notice on theme switch
- */
-function app_landing_page_restore_admin_notice(){
-    update_option( 'app_landing_page_admin_notice', false );
-}
-endif;
-add_action( 'after_switch_theme', 'app_landing_page_restore_admin_notice' );

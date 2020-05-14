@@ -8,14 +8,21 @@
  */
 
 get_header(); 
-
-    global $app_landing_page_sections;
-    
-    foreach( $app_landing_page_sections as $section ){ 
-    	
-    	if( get_theme_mod( 'app_landing_page_ed_' . $section . '_section' ) == 1 ){
-        	get_template_part( 'sections/' . esc_attr( $section ) );
-        }
-    }
-
+?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">	
+		<?php 
+		while ( have_posts() ) : the_post(); ?> 
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			    <?php the_post_thumbnail(); ?>
+			    <div class="text-holder">
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+				</div>			    
+			</article><!-- #post-## -->
+		<?php endwhile; ?>
+	</main><!-- #main -->
+</div>
+<?php
 get_footer();

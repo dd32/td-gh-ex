@@ -52,6 +52,5 @@ function app_landing_page_sanitize_iframe( $iframe ){
         'iframe' =>array(
             'src' => array()
         ) );
-return wp_kses( $iframe, $allow_tag );
+    return wp_kses( $iframe, $allow_tag );
 }
-

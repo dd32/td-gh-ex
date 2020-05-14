@@ -58,17 +58,21 @@ class App_Landing_Page_Recent_Post extends WP_Widget {
                     $qry->the_post();
                 ?>
                     <li>
-                        <?php if( has_post_thumbnail() && $show_thumb ){ ?>
+                        <?php if( has_post_thumbnail() && $show_thumb ){  ?>
                             <a href="<?php the_permalink(); ?>" class="post-thumbnail">
                                 <?php the_post_thumbnail( 'app-landing-page-recent-post' ); ?>
                             </a>
-                        <?php }?>
+                        <?php }elseif( ! has_post_thumbnail() && $show_thumb ){ ?>
+                            <a href="<?php the_permalink(); ?>" class="post-thumbnail">
+                                <?php app_landing_page_get_fallback_svg( 'app-landing-page-recent-post' ); ?>
+                            </a>
+                        <?php } ?>
                         <div class="entry-header">
                             <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <?php if( $show_date ) { ?>
                                 <div class="entry-meta">
                                     <span class="posted-on"><a href="<?php the_permalink(); ?>">
-                                        <time datetime="<?php printf( '%1$s', get_the_date('Y-m-d') ); ?>"><?php printf( '%1$s', get_the_date('F j, Y') ); ?></time></a>
+                                        <time datetime="<?php echo esc_attr( get_the_date('Y-m-d') ); ?>"><?php echo esc_html( get_the_date('F j, Y') ); ?></time></a>
                                     </span>
                                 </div>
                             <?php } ?>

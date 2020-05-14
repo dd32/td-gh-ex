@@ -19,7 +19,14 @@ if( $app_landing_page_intro_section_page ){
     	?>
         	<div class="row">
         		<div class="col">
-        			<div class="img-holder wow wow fadeInUp"><?php the_post_thumbnail( 'app-landing-page-intro' ); ?></div>
+        			<div class="img-holder wow wow fadeInUp">
+                        <?php 
+                        if( has_post_thumbnail() ){
+                            the_post_thumbnail( 'app-landing-page-intro' );
+                        }else{
+                            app_landing_page_get_fallback_svg( 'app-landing-page-intro' );
+                        } ?>   
+                        </div>
         		</div>
         		<div class="col">
         			<div class="text-holder wow fadeInRight">

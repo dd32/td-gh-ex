@@ -61,11 +61,13 @@ if( $app_landing_page_service_one_post || $app_landing_page_service_two_post || 
         				        $services_qry->the_post();
         
                         		echo '<div class="col wow fadeInUp">';
-                         			if( has_post_thumbnail() ){
-                						echo '<div class="icon-holder">';
-                							the_post_thumbnail( 'thumbnail' );
-                						echo '</div>' ; 
-                					} 
+                					echo '<div class="icon-holder">';
+                             			if( has_post_thumbnail() ){
+                    						the_post_thumbnail( 'thumbnail' );
+                    					}else{
+                                            app_landing_page_get_fallback_svg( 'thumbnail' );
+                                        } 
+                					echo '</div>' ; 
             						echo '<div class="text-holder">';
             							the_title( '<h2 class="main-title" itemprop="name">', '</h2>' );
             							the_content();

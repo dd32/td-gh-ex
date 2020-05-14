@@ -151,7 +151,6 @@ function app_landing_page_customize_register_features( $wp_customize ) {
             'choices' => $app_landing_page_options_posts,
         )
     );
-
  
     /** Featured Post Six */
     $wp_customize->add_setting(

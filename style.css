@@ -4,7 +4,7 @@ Theme URI: https://rarathemes.com/wordpress-themes/app-landing-page/
 Author: Rara Theme 
 Author URI: https://rarathemes.com/
 Description: App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://docs.rarathemes.com/docs/app-landing-page/
-Version: 1.1.3
+Version: 1.1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: app-landing-page
@@ -587,26 +587,19 @@ a:active {
 		width: 250px;
 		background: #205497;
 		z-index: 2;
-		opacity: 0;
-		visibility: hidden;
-		-webkit-transition: ease 0.5s;
-		-moz-transition: ease 0.5s;
-		transition: ease 0.5s;
+		margin-left: -99999px;
 	}
 
 	.main-navigation ul li:hover > ul{
-		visibility: visible;
-		opacity: 1;
+		margin-left: 0;
 	}
 
 	.main-navigation ul li:focus-within > ul{
-		visibility: visible;
-		opacity: 1;
+		margin-left: 0;
 	}
 
 	.main-navigation ul li.focus > ul{
-		visibility: visible;
-		opacity: 1;
+		margin-left: 0;
 	}
 
 	.main-navigation ul ul li{
@@ -1201,6 +1194,10 @@ object {
 	-moz-transition: all 0.2s;
 	transition: all 0.2s;
 }
+.features .col .icon-holder svg{
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
 
 .features .col .icon-holder img{
 	border-radius: 50%;
@@ -1369,7 +1366,10 @@ object {
 .section-4 .col .img-holder img{
 	vertical-align: top;
 }
-
+.section-4 .col .img-holder .svg-holder svg{
+	width: 341px;
+	height: 466px;
+}
 .section-4 .col .text-holder{
 	color: #fff;
 	font-size: 16px;
@@ -1448,6 +1448,10 @@ object {
 .section-5 .col .icon-holder img{
 	border-radius: 50%;
 	-webkit-border-radius: 100px;
+}
+.section-5 .col .icon-holder svg{
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
 }
 
 .section-5 .col .text-holder{
@@ -1787,6 +1791,12 @@ object {
 #crumbs a:focus{
 	text-decoration: none;
 	color: #5abe32;
+}
+#crumbs .separator{
+    margin: 0 5px;
+}
+#crumbs span:last-child .separator{
+    display: none;
 }
 
 #primary{
@@ -2673,6 +2683,10 @@ object {
 	color: #3d3d3d;
 }
 
+.widget_calendar .calendar_wrap{
+	position: relative;
+}
+.widget_calendar .calendar_wrap .wp-calendar-nav-prev a,
 .widget_calendar table #prev a{
     left: 15px;
     position: absolute;
@@ -2682,7 +2696,7 @@ object {
     height: 11px;
     text-indent: -9999px;
 }
-
+.widget_calendar .calendar_wrap .wp-calendar-nav-next a,
 .widget.widget_calendar table #next a {
     position: absolute;
     right: 15px;
@@ -2870,6 +2884,10 @@ object {
 body.menu-open .overlay{
 	opacity: 1;
 	visibility: visible;
+}
+.svg-holder svg{
+	width: 100%;
+	vertical-align: top;
 }
 
 /*--------------------------------------------------------------
@@ -3077,6 +3095,10 @@ body.menu-open .overlay{
 	}
 
 	.section-4 .col .img-holder{margin-left: 0;}
+	.section-4 .col .img-holder .svg-holder svg{
+		width: 341px;
+		height: 466px;
+	}
 
 	.section-5 .col{width: 50%;}
 

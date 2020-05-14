@@ -12,7 +12,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<div class="error-holder">
 				<div class="icon-holder">
-					<img src="<?php echo esc_url( get_template_directory_uri() . '/images/smily.png' ) ;?>" alt="" width="146" height="146">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/images/smily.png' ) ;?>" alt="<?php esc_attr_e( '404 Not Found', 'app-landing-page' ); ?>" width="146" height="146">
 				</div>
 				<h1><?php esc_html_e( 'Looks Like Something Went Wrong!', 'app-landing-page' ); ?></h1>
 

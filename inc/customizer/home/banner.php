@@ -147,8 +147,7 @@ function app_landing_page_customize_register_banner( $wp_customize ) {
             'section' => 'app_landing_page_banner_settings',
             'type' => 'text',
         )
-    );
-    
+    );    
     /** Banner Section Ends */
 }
 endif;

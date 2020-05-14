@@ -22,13 +22,11 @@ function app_landing_page_author_posted_on() {
 }
 endif;
 
-
 if ( ! function_exists( 'app_landing_page_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function app_landing_page_posted_on() {
-	
+function app_landing_page_posted_on() {	
 	
 	$byline = sprintf(
 		esc_html_x( 'By %s', 'post author', 'app-landing-page' ),
@@ -62,18 +60,14 @@ function app_landing_page_posted_on() {
 			printf( '<span class="tags-links">%1$s</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
-
 }
 endif;
-
-
 
 if ( ! function_exists( 'app_landing_page_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function app_landing_page_entry_footer() {
-
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
@@ -116,56 +110,6 @@ function app_landing_page_categorized_blog() {
 	}
 }
 
-/**
- * Callback function for Comment List *
- * 
- * @link https://codex.wordpress.org/Function_Reference/wp_list_comments 
- */
- 
- function app_landing_page_comment($comment, $args, $depth){
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
-	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	
-    <footer class="comment-meta">
-    
-        <div class="comment-author vcard">
-    	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    	<?php printf( '<b class="fn">%s</b>', get_comment_author_link() ); ?>
-    	</div>
-    	<?php if ( $comment->comment_approved == '0' ) : ?>
-    		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'app-landing-page' ); ?></em>
-    		<br />
-    	<?php endif; ?>
-    
-    	<div class="comment-metadata commentmetadata"><?php esc_html_e('Posted on&nbsp;', 'app-landing-page'); ?><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_date(); ?>">
-    		<?php
-    			/* translators: 1: date, 2: time */
-    			printf( __( '%1$s at %2$s', 'app-landing-page' ), get_comment_date(),  get_comment_time()  ); ?></time></a><?php edit_comment_link( __( '(Edit)', 'app-landing-page' ), '  ', '' );
-    		?>
-    	</div>
-    </footer>
-    
-    <div class="comment-content"><?php comment_text(); ?></div>
-
-	<div class="reply">
-	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
-<?php
-}
-
 if( ! function_exists( 'app_landing_page_pagination' ) ) :
 /**
  * Pagination
@@ -189,8 +133,7 @@ function app_landing_page_sidebar_layout(){
         return get_post_meta( $post->ID, 'app_landing_page_sidebar_layout', true );    
     }else{
         return 'right-sidebar';
-    }
-    
+    }    
 }
 endif;
 
@@ -264,11 +207,11 @@ function cur_stats_date_noleap(  $control ){
 	}
 }
 
-if( ! function_exists( 'is_woocommerce_activated' ) ) :
+if( ! function_exists( 'app_landing_page_is_woocommerce_activated' ) ) :
 /**
  * Query WooCommerce activation
  */
-function is_woocommerce_activated() {
+function app_landing_page_is_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;
 }
 endif;
@@ -295,7 +238,6 @@ if( ! function_exists( 'app_landing_page_ed_section') ):
     /**
      * Check if home page section are enable or not.
     */
-
     function app_landing_page_ed_section(){
         global $app_landing_page_sections;
         $en_sec = false;
@@ -306,7 +248,6 @@ if( ! function_exists( 'app_landing_page_ed_section') ):
         }
         return $en_sec;
     }
-
 endif;
 
 if( ! function_exists( 'wp_body_open' ) ) :
@@ -319,5 +260,64 @@ function wp_body_open() {
 	 * Triggered after the opening <body> tag.
     */
 	do_action( 'wp_body_open' );
+}
+endif;
+
+if( ! function_exists( 'app_landing_page_get_image_sizes' ) ) :
+/**
+ * Get information about available image sizes
+ */
+function app_landing_page_get_image_sizes( $size = '' ) {
+ 
+    global $_wp_additional_image_sizes;
+ 
+    $sizes = array();
+    $get_intermediate_image_sizes = get_intermediate_image_sizes();
+ 
+    // Create the full array with sizes and crop info
+    foreach( $get_intermediate_image_sizes as $_size ) {
+        if ( in_array( $_size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
+            $sizes[ $_size ]['width'] = get_option( $_size . '_size_w' );
+            $sizes[ $_size ]['height'] = get_option( $_size . '_size_h' );
+            $sizes[ $_size ]['crop'] = (bool) get_option( $_size . '_crop' );
+        } elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
+            $sizes[ $_size ] = array( 
+                'width' => $_wp_additional_image_sizes[ $_size ]['width'],
+                'height' => $_wp_additional_image_sizes[ $_size ]['height'],
+                'crop' =>  $_wp_additional_image_sizes[ $_size ]['crop']
+            );
+        }
+    } 
+    // Get only 1 size if found
+    if ( $size ) {
+        if( isset( $sizes[ $size ] ) ) {
+            return $sizes[ $size ];
+        } else {
+            return false;
+        }
+    }
+    return $sizes;
+}
+endif;
+
+if ( ! function_exists( 'app_landing_page_get_fallback_svg' ) ) :    
+/**
+ * Get Fallback SVG
+*/
+function app_landing_page_get_fallback_svg( $post_thumbnail ) {
+    if( ! $post_thumbnail ){
+        return;
+    }
+    
+    $image_size = app_landing_page_get_image_sizes( $post_thumbnail );
+     
+    if( $image_size ){ ?>
+        <div class="svg-holder">
+             <svg class="fallback-svg" viewBox="0 0 <?php echo esc_attr( $image_size['width'] ); ?> <?php echo esc_attr( $image_size['height'] ); ?>" preserveAspectRatio="none">
+                    <rect width="<?php echo esc_attr( $image_size['width'] ); ?>" height="<?php echo esc_attr( $image_size['height'] ); ?>" style="fill:#dedbdb;"></rect>
+            </svg>
+        </div>
+        <?php
+    }
 }
 endif;

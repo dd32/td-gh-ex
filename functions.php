@@ -7,33 +7,20 @@
  * @package App_Landing_Page
  */
 
+$app_landing_page_theme_data = wp_get_theme();	
+if( ! defined( 'APP_LANDING_PAGE_THEME_VERSION' ) )	define( 'APP_LANDING_PAGE_THEME_VERSION', $app_landing_page_theme_data->get( 'Version' ) );
+if( ! defined( 'APP_LANDING_PAGE_THEME_NAME' ) ) define( 'APP_LANDING_PAGE_THEME_NAME', $app_landing_page_theme_data->get( 'Name' ) );
+if( ! defined( 'APP_LANDING_PAGE_THEME_TEXTDOMAIN' ) ) define( 'APP_LANDING_PAGE_THEME_TEXTDOMAIN', $app_landing_page_theme_data->get( 'TextDomain' ) );
 
-//define theme version
-if ( ! defined( 'APP_LANDING_PAGE_THEME_VERSION' ) && ! defined( 'APP_LANDING_PAGE_THEME_NAME' ) && ! defined( 'APP_LANDING_PAGE_THEME_TEXTDOMAIN' ) ) {
-	$theme_data = wp_get_theme();	
-	define( 'APP_LANDING_PAGE_THEME_VERSION', $theme_data->get( 'Version' ) );
-    define( 'APP_LANDING_PAGE_THEME_NAME', $theme_data->get( 'Name' ) );
-    define( 'APP_LANDING_PAGE_THEME_TEXTDOMAIN', $theme_data->get( 'TextDomain' ) );
-}
 /**
  * Implement the Custom functions.
  */
 require get_template_directory() . '/inc/custom-functions.php';
 
 /**
- * Implement the WordPress Hooks.
- */
-require get_template_directory() . '/inc/wp-hooks.php';
-
-/**
  * Custom template function for this theme.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Custom template hooks for this theme.
- */
-require get_template_directory() . '/inc/template-hooks.php';
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -77,6 +64,6 @@ require get_template_directory() . '/inc/getting-started/getting-started.php';
 /**
  * Add theme compatibility function for woocommerce if active
 */
-if( is_woocommerce_activated() ){
+if( app_landing_page_is_woocommerce_activated() ){
     require get_template_directory() . '/inc/woocommerce-functions.php';    
 }
