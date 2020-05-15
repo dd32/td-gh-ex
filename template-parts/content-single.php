@@ -18,11 +18,9 @@
     <?php if( get_theme_mod( 'bb_ecommerce_store_date_hide',true) != '') { ?>
       <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
     <?php } ?>
-
     <?php if( get_theme_mod( 'bb_ecommerce_store_author_hide',true) != '') { ?>
       <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?></a></span>
     <?php } ?>
-
     <?php if( get_theme_mod( 'bb_ecommerce_store_comment_hide',true) != '') { ?>
       <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'bb-ecommerce-store'), __('0 Comments', 'bb-ecommerce-store'), __('% Comments', 'bb-ecommerce-store') ); ?> </span>
     <?php } ?>
@@ -57,8 +55,7 @@
       'link_after'  => '</span>',
       'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>%',
       'separator'   => '<span class="screen-reader-text">, </span>',
-    ) );
-                  
+    ) );     
     if ( is_singular( 'attachment' ) ) {
       // Parent post navigation.
       the_post_navigation( array(
@@ -78,5 +75,5 @@
     // If comments are open or we have at least one comment, load up the comment template.
     if ( comments_open() || get_comments_number() ) {
       comments_template();
-  }?>
+  } ?>
 </article>

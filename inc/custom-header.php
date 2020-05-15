@@ -26,12 +26,12 @@ add_action( 'wp_enqueue_scripts', 'bb_ecommerce_store_header_style' );
 function bb_ecommerce_store_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$bb_ecommerce_store_custom_css = "
         .header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
-	   	wp_add_inline_style( 'bb-ecommerce-store-basic-style', $custom_css );
+	   	wp_add_inline_style( 'bb-ecommerce-store-basic-style', $bb_ecommerce_store_custom_css );
 	endif;
 }
 endif; // bb_ecommerce_store_header_style

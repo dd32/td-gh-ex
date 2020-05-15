@@ -20,25 +20,9 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'title' => __( 'Theme Settings', 'bb-ecommerce-store' ),
 	    'description' => __( 'Description of what this panel does.', 'bb-ecommerce-store' ),
 	) );
-	
-	 // Add the Theme Color Option section.
-	$wp_customize->add_section( 'bb_ecommerce_store_theme_color_option', array( 
-		'panel' => 'bb_ecommerce_store_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'bb-ecommerce-store'
-	) )	);
-	
-  	$wp_customize->add_setting( 'bb_ecommerce_store_theme_color', array(
-	    'default' => '',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
-  		'label' => 'Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-ecommerce-store'),
-	    'section' => 'bb_ecommerce_store_theme_color_option',
-	    'settings' => 'bb_ecommerce_store_theme_color',
-  	)));
 
-	$font_array = array(
+	// font array
+	$bb_ecommerce_store_font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -131,8 +115,9 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
         'Volkhov' =>'Volkhov',
         'Yanone Kaffeesatz' => 'Yanone Kaffeesatz'
     );
-    
+
 	//Typography
+	
 	$wp_customize->add_section( 'bb_ecommerce_store_typography', array(
     	'title'      => __( 'Typography', 'bb-ecommerce-store' ),
 		'panel' => 'bb_ecommerce_store_panel_id'
@@ -160,7 +145,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'Paragraph Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_paragraph_font_size',array(
@@ -196,7 +181,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( '"a" Tag Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -221,7 +206,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( '"li" Tag Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -246,7 +231,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'H1 Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -283,7 +268,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'h2 Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -320,7 +305,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'h3 Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -357,7 +342,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'h4 Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -394,7 +379,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'h5 Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -431,7 +416,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'section'  => 'bb_ecommerce_store_typography',
 	    'label'    => __( 'h6 Fonts','bb-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_ecommerce_store_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -641,6 +626,23 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		),
 	));
 
+	 // Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_ecommerce_store_theme_color_option', array( 
+		'panel' => 'bb_ecommerce_store_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-ecommerce-store'
+	) )	);
+	
+  	$wp_customize->add_setting( 'bb_ecommerce_store_theme_color', array(
+	    'default' => '',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
+  		'label' => 'Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-ecommerce-store'),
+	    'section' => 'bb_ecommerce_store_theme_color_option',
+	    'settings' => 'bb_ecommerce_store_theme_color',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section( 'bb_ecommerce_store_left_right', array(
     	'title'      => __( 'Layout Settings', 'bb-ecommerce-store' ),
@@ -804,7 +806,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'bb_ecommerce_store_display_topbar',array(
-		'default' => true,
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('bb_ecommerce_store_display_topbar',array(
@@ -815,6 +817,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 
     //Sticky Header
 	$wp_customize->add_setting( 'bb_ecommerce_store_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('bb_ecommerce_store_sticky_header',array(
@@ -1079,7 +1082,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));
 
     $wp_customize->add_setting('bb_ecommerce_store_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_ecommerce_store_responsive_sticky_header',array(
@@ -1089,7 +1092,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_ecommerce_store_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_ecommerce_store_responsive_slider',array(
@@ -1098,13 +1101,13 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
        'section' => 'bb_ecommerce_store_responsive_setting'
     ));
 
-    $wp_customize->add_setting('bb_ecommerce_store_responsive_metabox',array(
+    $wp_customize->add_setting('bb_ecommerce_store_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('bb_ecommerce_store_responsive_metabox',array(
+    $wp_customize->add_control('bb_ecommerce_store_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','bb-ecommerce-store'),
+       'label' => __('Scroll To Top','bb-ecommerce-store'),
        'section' => 'bb_ecommerce_store_responsive_setting'
     ));
 
@@ -1118,6 +1121,16 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
        'section' => 'bb_ecommerce_store_responsive_setting'
     ));
 
+    $wp_customize->add_setting('bb_ecommerce_store_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('bb_ecommerce_store_blog_post',array(
 		'title'	=> __('Blog Page Settings','bb-ecommerce-store'),
@@ -1125,7 +1138,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_ecommerce_store_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_ecommerce_store_date_hide',array(
@@ -1135,7 +1148,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_ecommerce_store_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_ecommerce_store_comment_hide',array(
@@ -1145,7 +1158,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_ecommerce_store_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_ecommerce_store_author_hide',array(
@@ -1155,7 +1168,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_ecommerce_store_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_ecommerce_store_tags_hide',array(
@@ -1242,6 +1255,24 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
             '4'     => __('Four', 'bb-ecommerce-store')
         ),
     ));
+
+    $wp_customize->add_setting('bb_ecommerce_store_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'bb_ecommerce_store_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'bb-ecommerce-store'),
+		'section'  => 'bb_ecommerce_store_footer_section',
+	)));
+
+	$wp_customize->add_setting('bb_ecommerce_store_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'bb_ecommerce_store_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_footer_section'
+	)));
 	
 	$wp_customize->add_setting('bb_ecommerce_store_footer_copy',array(
 		'default'	=> '',
@@ -1251,6 +1282,39 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'label'	=> __('Copyright Text','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_footer_section',
 		'type'		=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_copyright_content_align',array(
+        'default' => __('center','bb-ecommerce-store'),
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_footer_section',
+        'choices' => array(
+            'left' => __('Left','bb-ecommerce-store'),
+            'right' => __('Right','bb-ecommerce-store'),
+            'center' => __('Center','bb-ecommerce-store'),
+        ),
+	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_footer_content_font_size',array(
+		'default'=> 15,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_ecommerce_store_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','bb-ecommerce-store' ),
+		'section'=> 'bb_ecommerce_store_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_enable_disable_scroll',array(
@@ -1276,6 +1340,24 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
             'Right' => __('Right','bb-ecommerce-store'),
             'Center' => __('Center','bb-ecommerce-store'),
         ),
+	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_ecommerce_store_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	) );
 		
 }

@@ -30,18 +30,18 @@ get_header(); ?>
 		                  foreach ( $product_categories as $product_category ) {
 		                      $cats_id   = $product_category->term_id;
 		                    $cat_link = get_category_link( $cats_id );
-		                    $thumbnail_id = get_woocommerce_term_meta( $product_category->term_id, 'thumbnail_id', true ); // Get Category Thumbnail
+		                    $thumbnail_id = get_term_meta( $product_category->term_id, 'thumbnail_id', true ); // Get Category Thumbnail
 		                    $image = wp_get_attachment_url( $thumbnail_id );
 		                    if ($product_category->category_parent == 0) {
 		                      ?>
-		                   <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
-		                    <?php
-		                   if ( $image ) {
-		                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php esc_html(the_title()); ?>" role="img" />';
-		                }
-		                  echo esc_html( $product_category->name ); ?><span class="screen-reader-text"><?php esc_html_e( 'Product Category','bb-ecommerce-store' );?></span></a></li>
-		                   <?php
-		                  }
+		                    <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
+			                    <?php
+			                    if ( $image ) {
+				                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php esc_html(the_title()); ?>" role="img" />';
+				                }
+			                    echo esc_html( $product_category->name ); ?><span class="screen-reader-text"><?php esc_html_e( 'Product Category','bb-ecommerce-store' );?></span></a></li>
+		                    	<?php
+		                    }
 		                }
 		              }
 		            ?>
@@ -53,21 +53,21 @@ get_header(); ?>
 			</div>
 			<div class="col-lg-9 col-md-9">
 				<?php do_action( 'bb_ecommerce_store_before_slider' ); ?>
-
-				<?php if( get_theme_mod('bb_ecommerce_store_slider_hide_show') != ''){ ?>
+				
+				<?php if( get_theme_mod('bb_ecommerce_store_slider_hide_show', false) != '' || get_theme_mod('bb_ecommerce_store_responsive_slider', false) != ''){ ?>
 					<section id="slider">
 					  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-						    <?php $slider_pages = array();
+						    <?php $bb_ecommerce_store_slider_pages = array();
 						      	for ( $count = 1; $count <= 4; $count++ ) {
 							        $mod = intval( get_theme_mod( 'bb_ecommerce_store_slider' . $count ));
 							        if ( 'page-none-selected' != $mod ) {
-							          $slider_pages[] = $mod;
+							          $bb_ecommerce_store_slider_pages[] = $mod;
 							        }
 						      	}
-						      	if( !empty($slider_pages) ) :
+						      	if( !empty($bb_ecommerce_store_slider_pages) ) :
 						        $args = array(
 						          	'post_type' => 'page',
-						          	'post__in' => $slider_pages,
+						          	'post__in' => $bb_ecommerce_store_slider_pages,
 						          	'orderby' => 'post__in'
 						        );
 						        $query = new WP_Query( $args );
@@ -113,9 +113,9 @@ get_header(); ?>
 					<section id="our-service">					
 						<div class="row">
 						    <?php 
-							$catData=  get_theme_mod('bb_ecommerce_store_services_category');
-							if($catData){
-						    $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'bb-ecommerce-store')));?>
+							$bb_ecommerce_store_catData=  get_theme_mod('bb_ecommerce_store_services_category');
+							if($bb_ecommerce_store_catData){
+						    $page_query = new WP_Query(array( 'category_name' => esc_html($bb_ecommerce_store_catData,'bb-ecommerce-store')));?>
 					     	<?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
 					     		<div class="col-lg-4 col-md-4">
 					     			<div class="service">
@@ -139,15 +139,15 @@ get_header(); ?>
 					            <strong><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></strong>
 					        <?php }?>
 					    </div>
-						<?php $slider_pages = array();
+						<?php $bb_ecommerce_store_slider_pages = array();
 							$mod = intval( get_theme_mod( 'bb_ecommerce_store_servicesettings' ));
 							if ( 'page-none-selected' != $mod ) {
-							  $slider_pages[] = $mod;
+							  $bb_ecommerce_store_slider_pages[] = $mod;
 							}
-						if( !empty($slider_pages) ) :
+						if( !empty($bb_ecommerce_store_slider_pages) ) :
 						  $args = array(
 						    'post_type' => 'page',
-						    'post__in' => $slider_pages,
+						    'post__in' => $bb_ecommerce_store_slider_pages,
 						    'orderby' => 'post__in'
 						  );
 						  $query = new WP_Query( $args );
