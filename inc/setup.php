@@ -125,9 +125,6 @@ function graphene_setup() {
 	add_filter( 'embed_oembed_html', 'graphene_responsive_embed', 10, 3 );
 	add_theme_support( 'responsive-embeds' );
 
-	/* Add support for Yoast SEO breadcrumbs */
-	add_theme_support( 'yoast-seo-breadcrumbs' );
-        
     do_action( 'graphene_setup' );
 }
 endif;

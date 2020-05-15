@@ -4,6 +4,10 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.7.6 [15-05-2020]
+	* Fixed: Unable to turn off Yoast SEO breadcrumbs
+	* Fixed: Alignment issues in Customizer when using RTL languages
+
 Version 2.7.5 [28-04-2020]
 	* Added: Native support for Yoast SEO breadcrumbs
 	* Fixed: Option to display excerpt in front page not applied if option to show full content in archive pages is enabled

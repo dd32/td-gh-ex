@@ -28,6 +28,7 @@ add_action( 'graphene_before_content', 'graphene_breadcrumb_navxt' );
 */
 function graphene_breadcrumb_yoast( $in_custom_layout = false ){
 	if ( ! function_exists( 'yoast_breadcrumb' ) ) return;
+	if ( ! WPSEO_Options::get( 'breadcrumbs-enable', false ) ) return;
 
 	if ( graphene_has_custom_layout() && ! $in_custom_layout ) return;
 	else {
