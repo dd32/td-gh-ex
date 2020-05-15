@@ -32,14 +32,7 @@
           <?php } ?>
         </div>
       <?php }?>
-      <?php if(get_theme_mod('advance_startup_blog_post_description_option') == 'Full Content'){ ?>
-        <?php the_content(); ?>
-      <?php }
-      if(get_theme_mod('advance_startup_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
-        <?php if(get_the_excerpt()) { ?>
-          <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_startup_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_startup_post_suffix_option','...') ); ?></p></div>
-        <?php }?>
-      <?php }?>
+      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_startup_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('advance_startup_post_suffix_option','...') ); ?></p></div>
       <?php if( get_theme_mod('advance_startup_button_text','READ MORE') != ''){ ?>
         <div class="read-more-btn">
           <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html(get_theme_mod('advance_startup_button_text','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_startup_button_text','READ MORE'));?></span></a>

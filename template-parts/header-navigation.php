@@ -75,7 +75,7 @@
           <div class="serach_inner">
             <?php get_search_form(); ?>
           </div>
-          <a href="#" onclick="advance_startup_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-startup' );?></span></a>
+          <a href="#maincontent" onclick="advance_startup_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-startup' );?></span></a>
         </div>
     </div>
   </div>

@@ -13,8 +13,8 @@ get_header(); ?>
     <div class="innerlightbox">
         <div class="container">
             <?php
-                $left_right = get_theme_mod( 'advance_startup_layout_options','Right Sidebar');
-                if($left_right == 'Left Sidebar'){ ?>
+            $advance_startup_left_right = get_theme_mod( 'advance_startup_layout_options','Right Sidebar');
+            if($advance_startup_left_right == 'Left Sidebar'){ ?>
                 <div class="row">
                     <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
@@ -23,13 +23,13 @@ get_header(); ?>
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
-                          while ( have_posts() ) : the_post();
+                            /* Start the Loop */
+                            while ( have_posts() ) : the_post();
                             get_template_part( 'template-parts/content' , get_post_format() ); 
-                          endwhile;
-                          else :
+                            endwhile;
+                            else :
                             get_template_part( 'no-results' ); 
-                          endif; 
+                            endif; 
                         ?>
                         <div class="navigation">
                             <?php
@@ -43,7 +43,7 @@ get_header(); ?>
                         </div> 
                     </div>
                 </div>
-            <?php }else if($left_right == 'Right Sidebar'){ ?>
+            <?php }else if($advance_startup_left_right == 'Right Sidebar'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
@@ -75,7 +75,7 @@ get_header(); ?>
                         <?php get_sidebar();?>
                     </div>
                 </div>
-            <?php }else if($left_right == 'One Column'){ ?>
+            <?php }else if($advance_startup_left_right == 'One Column'){ ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -102,7 +102,7 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>
-            <?php }else if($left_right == 'Grid Layout'){ ?>
+            <?php }else if($advance_startup_left_right == 'Grid Layout'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9 row'); ?>>
                         <?php
@@ -110,7 +110,7 @@ get_header(); ?>
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
+                            /* Start the Loop */
                             while ( have_posts() ) : the_post();
                                 get_template_part( 'template-parts/grid-layout' ); 
                             endwhile;
@@ -119,13 +119,13 @@ get_header(); ?>
                             endif; 
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
-                          while ( have_posts() ) : the_post();
+                            /* Start the Loop */
+                            while ( have_posts() ) : the_post();
                             get_template_part( 'template-parts/single-post' ); 
-                          endwhile;
-                          else :
+                            endwhile;
+                            else :
                             get_template_part( 'no-results' ); 
-                          endif; 
+                            endif; 
                         ?>
                         <div class="navigation">
                             <?php

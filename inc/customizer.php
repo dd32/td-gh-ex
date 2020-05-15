@@ -11,6 +11,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function advance_startup_customize_register($wp_customize) {
+
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_startup_panel_id', array(
 		'priority'       => 10,
@@ -19,48 +20,8 @@ function advance_startup_customize_register($wp_customize) {
 		'title'          => __('Theme Settings', 'advance-startup'),
 	));	
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_startup_theme_color_option', 
-		array( 'panel' => 'advance_startup_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-startup' ) )
-	);
-
-  	$wp_customize->add_setting( 'advance_startup_theme_color_first', array(
-	    'default' => '#df2b23',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_first', array(
-  		'label' => 'First Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'advance-startup'),
-	    'section' => 'advance_startup_theme_color_option',
-	    'settings' => 'advance_startup_theme_color_first',
-  	)));
-
-  	$wp_customize->add_setting( 'advance_startup_theme_color_second', array(
-	    'default' => '#906b00 ',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_second', array(
-  		'label' => 'Second Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'advance-startup'),
-	    'section' => 'advance_startup_theme_color_option',
-	    'settings' => 'advance_startup_theme_color_second',
-  	)));
-
-  	$wp_customize->add_setting('advance_startup_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-startup'),
-        'sanitize_callback' => 'advance_startup_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_startup_background_skin_mode',array(
-        'type' => 'select',
-        'label' => __('Background Type','advance-startup'),
-        'section' => 'background_image',
-        'choices' => array(
-            'With Background' => __('With Background','advance-startup'),
-            'Transparent Background' => __('Transparent Background','advance-startup'),
-        ),
-	) );
-
-	$font_array = array(
+	// font array
+	$advance_startup_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -183,11 +144,11 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	$wp_customize->add_setting('advance_startup_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_paragraph_font_size',array(
@@ -219,7 +180,7 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -244,7 +205,7 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -269,12 +230,12 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'H1 Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('advance_startup_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_h1_font_size',array(
@@ -306,12 +267,12 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'h2 Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('advance_startup_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_h2_font_size',array(
@@ -343,12 +304,12 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'h3 Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('advance_startup_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_h3_font_size',array(
@@ -380,12 +341,12 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'h4 Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('advance_startup_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_h4_font_size',array(
@@ -417,12 +378,12 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'h5 Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('advance_startup_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_h5_font_size',array(
@@ -454,12 +415,12 @@ function advance_startup_customize_register($wp_customize) {
 	    'section'  => 'advance_startup_typography',
 	    'label'    => __( 'h6 Fonts','advance-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_startup_font_array,
 	));
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('advance_startup_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_startup_h6_font_size',array(
@@ -468,6 +429,20 @@ function advance_startup_customize_register($wp_customize) {
 		'setting'	=> 'advance_startup_h6_font_size',
 		'type'	=> 'text'
 	));
+
+  	$wp_customize->add_setting('advance_startup_background_skin_mode',array(
+        'default' => __('Transparent Background','advance-startup'),
+        'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_startup_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-startup'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-startup'),
+            'Transparent Background' => __('Transparent Background','advance-startup'),
+        ),
+	) );
 
 	// woocommerce section
 	$wp_customize->add_setting('advance_startup_show_related_products',array(
@@ -650,6 +625,34 @@ function advance_startup_customize_register($wp_customize) {
 		),
 	));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_startup_theme_color_option', array( 
+		'panel' => 'advance_startup_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-startup' ) )
+	);
+
+  	$wp_customize->add_setting( 'advance_startup_theme_color_first', array(
+	    'default' => '#df2b23',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_first', array(
+  		'label' => __('First Color Option', 'advance-startup'),
+  		'description' => __('One can change complete theme color on just one click.', 'advance-startup'),
+	    'section' => 'advance_startup_theme_color_option',
+	    'settings' => 'advance_startup_theme_color_first',
+  	)));
+
+  	$wp_customize->add_setting( 'advance_startup_theme_color_second', array(
+	    'default' => '#906b00 ',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_second', array(
+  		'label' => __('Second Color Option', 'advance-startup'),
+  		'description' => __('One can change complete theme color on just one click.', 'advance-startup'),
+	    'section' => 'advance_startup_theme_color_option',
+	    'settings' => 'advance_startup_theme_color_second',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_startup_left_right', array(
 		'title'    => __('Layout Settings', 'advance-startup'),
@@ -822,6 +825,7 @@ function advance_startup_customize_register($wp_customize) {
 
     //Sticky Header
 	$wp_customize->add_setting( 'advance_startup_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_startup_sticky_header',array(
@@ -1108,7 +1112,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 
     $wp_customize->add_setting('advance_startup_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_startup_responsive_sticky_header',array(
@@ -1118,7 +1122,7 @@ function advance_startup_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_startup_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_startup_responsive_slider',array(
@@ -1127,13 +1131,13 @@ function advance_startup_customize_register($wp_customize) {
        'section' => 'advance_startup_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_startup_responsive_metabox',array(
+    $wp_customize->add_setting('advance_startup_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_startup_responsive_metabox',array(
+    $wp_customize->add_control('advance_startup_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-startup'),
+       'label' => __('Scroll To Top','advance-startup'),
        'section' => 'advance_startup_responsive_setting'
     ));
 
@@ -1147,6 +1151,16 @@ function advance_startup_customize_register($wp_customize) {
        'section' => 'advance_startup_responsive_setting'
     ));
 
+    $wp_customize->add_setting('advance_startup_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_startup_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','advance-startup'),
+       'section' => 'advance_startup_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('advance_startup_blog_post',array(
 		'title'	=> __('Blog Page Settings','advance-startup'),
@@ -1154,7 +1168,7 @@ function advance_startup_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_startup_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_startup_date_hide',array(
@@ -1164,7 +1178,7 @@ function advance_startup_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_startup_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_startup_comment_hide',array(
@@ -1174,7 +1188,7 @@ function advance_startup_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_startup_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_startup_author_hide',array(
@@ -1184,7 +1198,7 @@ function advance_startup_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_startup_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_startup_tags_hide',array(
@@ -1272,6 +1286,24 @@ function advance_startup_customize_register($wp_customize) {
         ),
     ));
 
+    $wp_customize->add_setting('advance_startup_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_startup_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'advance-startup'),
+		'section'  => 'advance_startup_footer_section',
+	)));
+
+	$wp_customize->add_setting('advance_startup_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'advance_startup_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','advance-startup'),
+        'section' => 'advance_startup_footer_section'
+	)));
+
 	$wp_customize->add_setting('advance_startup_footer_copy', array(
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -1280,6 +1312,39 @@ function advance_startup_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-startup'),
 		'section' => 'advance_startup_footer_section',
 		'type'    => 'text',
+	));
+
+	$wp_customize->add_setting('advance_startup_copyright_content_align',array(
+        'default' => __('center','advance-startup'),
+        'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_startup_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','advance-startup'),
+        'section' => 'advance_startup_footer_section',
+        'choices' => array(
+            'left' => __('Left','advance-startup'),
+            'right' => __('Right','advance-startup'),
+            'center' => __('Center','advance-startup'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_startup_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_startup_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','advance-startup' ),
+		'section'=> 'advance_startup_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 
 	$wp_customize->add_setting('advance_startup_enable_disable_scroll',array(
@@ -1306,6 +1371,24 @@ function advance_startup_customize_register($wp_customize) {
             'Center' => __('Center','advance-startup'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_startup_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_startup_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','advance-startup'),
+		'section'=> 'advance_startup_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
+	)	);
 	
 }
 add_action('customize_register', 'advance_startup_customize_register');

@@ -15,7 +15,6 @@
             <div class="attachment">
                 <?php advance_startup_the_attached_image(); ?>
             </div>
-
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
                     <div class="entry-content">
