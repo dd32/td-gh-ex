@@ -78,11 +78,6 @@ a.book-now {
     color: #ee591f ;
 }
 
-.view-more {
-    color: #ee591f ;
-}
-
-
 /* 06. Services */
 #services .service-icon {
     background: #ee591f;
@@ -166,10 +161,6 @@ a.book-now {
 
 /* Widget Color */
 
-.widget_about a:hover {
-    color: #ee591f ;
-}
-
 .widget_pages ul li a:hover {
     color: #ee591f ;
 }
@@ -249,9 +240,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	color: #ee591f ;
     border-color: #ee591f ;
 }
-.widget_about a:hover {
-    color: #ee591f ;
-}
+
 textarea {
 	border: 1px solid #ee591f ;
 }
@@ -303,10 +292,6 @@ p {
 
 /* Features list*/
 .features-list-item h4 {
-    color: #242424;
-}
-
-.view-more:hover {
     color: #242424;
 }
 
