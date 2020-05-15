@@ -99,8 +99,8 @@ function bb_wedding_bliss_widgets_init() {
 	) );
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('bb_wedding_bliss_footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$bb_wedding_bliss_widget_areas = get_theme_mod('bb_wedding_bliss_footer_widget_areas', '4');
+	for ($i=1; $i<=$bb_wedding_bliss_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'bb-wedding-bliss' ) . $i,
 			'id'            => 'footer-' . $i,
@@ -286,7 +286,7 @@ function bb_wedding_bliss_scripts() {
 	    $bb_wedding_bliss_h6_font_size = get_theme_mod('bb_wedding_bliss_h6_font_size', '');
 
 
-		$custom_css ='
+		$bb_wedding_bliss_custom_css ='
 			p,span{
 			    color:'.esc_html($bb_wedding_bliss_paragraph_color).'!important;
 			    font-family: '.esc_html($bb_wedding_bliss_paragraph_font_family).';
@@ -332,14 +332,14 @@ function bb_wedding_bliss_scripts() {
 			}
 
 			';
-		wp_add_inline_style( 'bb-wedding-bliss-basic-style',$custom_css );
+		wp_add_inline_style( 'bb-wedding-bliss-basic-style',$bb_wedding_bliss_custom_css );
 
 	wp_enqueue_script( 'bb-wedding-bliss-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	
 	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
-	wp_add_inline_style( 'bb-wedding-bliss-basic-style',$custom_css );
+	wp_add_inline_style( 'bb-wedding-bliss-basic-style',$bb_wedding_bliss_custom_css );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -347,6 +347,7 @@ function bb_wedding_bliss_scripts() {
 	wp_enqueue_style('bb-wedding-bliss-ie', get_template_directory_uri().'/css/ie.css', array('bb-wedding-bliss-basic-style'));
 	wp_style_add_data( 'bb-wedding-bliss-ie', 'conditional', 'IE' );
 }
+
 add_action( 'wp_enqueue_scripts', 'bb_wedding_bliss_scripts' );
 
 define('BB_WEDDING_BLISS_BUY_NOW',__('https://www.themeshopy.com/themes/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss'));

@@ -60,7 +60,6 @@ function bb_wedding_bliss_mostrar_guide() {
 			</div>
 		</div>
 	</div>
-
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'bb-wedding-bliss'); ?></h3>
 	  	<div class="sec-button">
@@ -107,21 +106,21 @@ function bb_wedding_bliss_mostrar_guide() {
 			</div>
 		</div>
 	</div>
+	
+	<script>
+		function openPage(pageName,elmnt,color) {
+		    var i, tabcontent, tablinks;
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+		    tablinks = document.getElementsByClassName("tablink");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].style.backgroundColor = "";
+		    }
+		    document.getElementById(pageName).style.display = "block";
+		    elmnt.style.backgroundColor = color;
 
-<script>
-	function openPage(pageName,elmnt,color) {
-	    var i, tabcontent, tablinks;
-	    tabcontent = document.getElementsByClassName("tabcontent");
-	    for (i = 0; i < tabcontent.length; i++) {
-	        tabcontent[i].style.display = "none";
-	    }
-	    tablinks = document.getElementsByClassName("tablink");
-	    for (i = 0; i < tablinks.length; i++) {
-	        tablinks[i].style.backgroundColor = "";
-	    }
-	    document.getElementById(pageName).style.display = "block";
-	    elmnt.style.backgroundColor = color;
-
-	}
-</script>
+		}
+	</script>
 <?php } ?>

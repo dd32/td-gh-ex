@@ -22,9 +22,9 @@
   } else {
     do_action( 'wp_body_open' );
   } ?>
-  <div class="<?php if( get_theme_mod( 'bb_wedding_bliss_sticky_header') != '' || get_theme_mod( 'bb_wedding_bliss_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+  <div class="<?php if( get_theme_mod( 'bb_wedding_bliss_sticky_header', false) != '' || get_theme_mod( 'bb_wedding_bliss_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
-      <?php if(get_theme_mod('bb_wedding_bliss_preloader_option',true)){ ?>
+      <?php if(get_theme_mod('bb_wedding_bliss_preloader_option',true) != '' || get_theme_mod('bb_wedding_bliss_responsive_preloader', true) != ''){ ?>
         <div id="loader-wrapper">
           <div id="loader"></div>
           <div class="loader-section section-left"></div>
@@ -61,59 +61,59 @@
                     <?php endif; ?>
                   </div>
                 </div>
-                  <div class="col-lg-8 col-md-3 col-3">
-                    <div class="toggle-menu responsive-menu">
-                      <button onclick="bb_wedding_bliss_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-wedding-bliss'); ?></span></button>
-                    </div>
-                    <div id="menu-sidebar" class="nav sidebar">
-                      <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-wedding-bliss' ); ?>">
-                          <?php 
-                            wp_nav_menu( array( 
-                              'theme_location' => 'primary',
-                              'container_class' => 'main-menu-navigation clearfix' ,
-                              'menu_class' => 'clearfix',
-                              'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                              'fallback_cb' => 'wp_page_menu',
-                            ) ); 
-                          ?>
-                        <div id="contact-info">
-                          <div class="social-media">
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_youtube_url' ) != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_facebook_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_twitter_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_rss_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'RSS','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_insta_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_pint_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                          </div>
-                          <?php get_search_form();?>
+                <div class="col-lg-8 col-md-3 col-3">
+                  <div class="toggle-menu responsive-menu">
+                    <button onclick="bb_wedding_bliss_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-wedding-bliss'); ?></span></button>
+                  </div>
+                  <div id="menu-sidebar" class="nav sidebar">
+                    <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-wedding-bliss' ); ?>">
+                        <?php 
+                          wp_nav_menu( array( 
+                            'theme_location' => 'primary',
+                            'container_class' => 'main-menu-navigation clearfix' ,
+                            'menu_class' => 'clearfix',
+                            'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                            'fallback_cb' => 'wp_page_menu',
+                          ) ); 
+                        ?>
+                      <div id="contact-info">
+                        <div class="social-media">
+                          <?php if( get_theme_mod( 'bb_wedding_bliss_youtube_url' ) != '') { ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','bb-wedding-bliss' );?></span></a>
+                          <?php } ?>
+                          <?php if( get_theme_mod( 'bb_wedding_bliss_facebook_url') != '') { ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','bb-wedding-bliss' );?></span></a>
+                          <?php } ?>
+                          <?php if( get_theme_mod( 'bb_wedding_bliss_twitter_url') != '') { ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','bb-wedding-bliss' );?></span></a>
+                          <?php } ?>
+                          <?php if( get_theme_mod( 'bb_wedding_bliss_rss_url') != '') { ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'RSS','bb-wedding-bliss' );?></span></a>
+                          <?php } ?>
+                          <?php if( get_theme_mod( 'bb_wedding_bliss_insta_url') != '') { ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-wedding-bliss' );?></span></a>
+                          <?php } ?>
+                          <?php if( get_theme_mod( 'bb_wedding_bliss_pint_url') != '') { ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','bb-wedding-bliss' );?></span></a>
+                          <?php } ?>
                         </div>
-                        <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_wedding_bliss_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-wedding-bliss'); ?></span></a>
-                      </nav>
-                    </div>
+                        <?php get_search_form();?>
+                      </div>
+                      <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_wedding_bliss_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-wedding-bliss'); ?></span></a>
+                    </nav>
                   </div>
-                  <div class="col-lg-1 col-md-1">
-                    <a href="#" onclick="bb_wedding_bliss_search_open()" class="search-box">
-                      <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','bb-wedding-bliss' );?></span>
-                    </a>
-                  </div>
+                </div>
+                <div class="col-lg-1 col-md-1">
+                  <a href="#" onclick="bb_wedding_bliss_search_open()" class="search-box">
+                    <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','bb-wedding-bliss' );?></span>
+                  </a>
+                </div>
               </div>
               <div class="serach_outer">
                 <div class="serach_inner">
                   <?php get_search_form(); ?>
                 </div>
-                <a href="#" onclick="bb_wedding_bliss_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','bb-wedding-bliss' );?></span></a>
+                <a href="#maincontent" onclick="bb_wedding_bliss_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','bb-wedding-bliss' );?></span></a>
               </div>
             </div>
           </div>

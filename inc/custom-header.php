@@ -32,12 +32,12 @@ add_action( 'wp_enqueue_scripts', 'bb_wedding_bliss_header_style' );
 function bb_wedding_bliss_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$bb_wedding_bliss_custom_css = "
         #header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
-	   	wp_add_inline_style( 'bb-wedding-bliss-basic-style', $custom_css );
+	   	wp_add_inline_style( 'bb-wedding-bliss-basic-style', $bb_wedding_bliss_custom_css );
 	endif;
 }
 endif; // bb_wedding_bliss_header_style

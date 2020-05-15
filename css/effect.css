@@ -32,8 +32,6 @@
   transform: translate3d(-40px,0,0);
 }
 
-
-
 .hovereffect .overlay:before {
   position: absolute;
   top: 20px;

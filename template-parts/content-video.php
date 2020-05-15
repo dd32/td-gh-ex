@@ -21,7 +21,6 @@
     <?php if(get_theme_mod('bb_wedding_bliss_blog_post_description_option') != 'Full Content'){ ?> 
       <?php
         if ( ! is_single() ) {
-
           // If not a single post, highlight the video file.
           if ( ! empty( $video ) ) {
             foreach ( $video as $video_html ) {
@@ -41,7 +40,7 @@
       <?php }
       if(get_theme_mod('bb_wedding_bliss_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
         <?php if(get_the_excerpt()) { ?>
-          <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_wedding_bliss_string_limit_words( $excerpt, esc_attr(get_theme_mod('bb_wedding_bliss_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('bb_wedding_bliss_post_suffix_option','...') ); ?></p></div>
+          <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_wedding_bliss_string_limit_words( $excerpt, esc_attr(get_theme_mod('bb_wedding_bliss_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('bb_wedding_bliss_post_suffix_option','...') ); ?></p></div>
         <?php }?>
       <?php }?>
       <?php if( get_theme_mod('bb_wedding_bliss_button_text','Read More') != ''){ ?>

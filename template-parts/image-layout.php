@@ -14,7 +14,6 @@
             <div class="attachment">
                 <?php bb_wedding_bliss_the_attached_image(); ?>
             </div>
-
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
                     <?php the_excerpt(); ?>
@@ -40,15 +39,15 @@
             the_post_navigation( array(
                 'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'bb-wedding-bliss' ),
             ) );
-        } elseif ( is_singular( 'post' ) ) {
-            // Previous/next post navigation.
-            the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'bb-wedding-bliss' ) . '</span> ' .
-                    '<span class="screen-reader-text">' . __( 'Next post:', 'bb-wedding-bliss' ) . '</span> ' .
-                    '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'bb-wedding-bliss' ) . '</span> ' .
-                    '<span class="screen-reader-text">' . __( 'Previous post:', 'bb-wedding-bliss' ) . '</span> ' .
-                    '<span class="post-title">%title</span>',
+        }   elseif ( is_singular( 'post' ) ) {
+                // Previous/next post navigation.
+                the_post_navigation( array(
+                    'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'bb-wedding-bliss' ) . '</span> ' .
+                        '<span class="screen-reader-text">' . __( 'Next post:', 'bb-wedding-bliss' ) . '</span> ' .
+                        '<span class="post-title">%title</span>',
+                    'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'bb-wedding-bliss' ) . '</span> ' .
+                        '<span class="screen-reader-text">' . __( 'Previous post:', 'bb-wedding-bliss' ) . '</span> ' .
+                        '<span class="post-title">%title</span>',
             ) );
         }
 

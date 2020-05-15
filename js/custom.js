@@ -15,7 +15,6 @@ function bb_wedding_bliss_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 
-
 /**** Hidden search box ***/
 
 	function bb_wedding_bliss_search_open() {
@@ -49,7 +48,7 @@ function bb_wedding_bliss_resmenu_close() {
 
   $(window).scroll(function(){
     var sticky = $('.sticky-header'),
-        scroll = $(window).scrollTop();
+      scroll = $(window).scrollTop();
 
     if (scroll >= 100) sticky.addClass('fixed-header');
     else sticky.removeClass('fixed-header');
@@ -60,6 +59,6 @@ function bb_wedding_bliss_resmenu_close() {
 jQuery(function($){
   $(window).load(function() {
     $("#loader-wrapper").delay(1000).fadeOut("slow");
-      $("#loader").delay(1000).fadeOut("slow");
+    $("#loader").delay(1000).fadeOut("slow");
   })
 });

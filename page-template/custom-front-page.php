@@ -7,20 +7,20 @@ get_header(); ?>
 <main role="main" id="maincontent">
   <?php do_action( 'bb_wedding_bliss_below_slider' ); ?>
 
-  <?php if( get_theme_mod('bb_wedding_bliss_slider_arrows') != ''){ ?>
+  <?php if( get_theme_mod('bb_wedding_bliss_slider_arrows', false) != '' || get_theme_mod( 'bb_wedding_bliss_responsive_slider', false) != ''){ ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_pages = array();
+        <?php $bb_wedding_bliss_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'bb_wedding_bliss_slidersettings_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_pages[] = $mod;
+              $bb_wedding_bliss_slider_pages[] = $mod;
             }
           }
-          if( !empty($slider_pages) ) :
+          if( !empty($bb_wedding_bliss_slider_pages) ) :
           $args = array(
               'post_type' => 'page',
-              'post__in' => $slider_pages,
+              'post__in' => $bb_wedding_bliss_slider_pages,
               'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
@@ -88,7 +88,7 @@ get_header(); ?>
                 wp_reset_postdata();?>
                 <?php else : ?>
                   <div class="no-postfound"></div>
-                 <?php
+                <?php
               endif; ?>
               <div class="clearfix"></div>
             </div>
@@ -107,9 +107,9 @@ get_header(); ?>
                 <?php } ?>
                 <div class="row">
                   <?php
-                    $catData=  get_theme_mod('bb_wedding_bliss_event_setting');
-                      if($catData){
-                        $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'bb-wedding-bliss')));?>
+                    $bb_wedding_bliss_catData=  get_theme_mod('bb_wedding_bliss_event_setting');
+                      if($bb_wedding_bliss_catData){
+                        $page_query = new WP_Query(array( 'category_name' => esc_html($bb_wedding_bliss_catData,'bb-wedding-bliss')));?>
                         <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                           <div class="col-lg-4 col-md-4">
                             <div class="imagebox">

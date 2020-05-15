@@ -17,8 +17,8 @@ get_header(); ?>
 <main role="main" id="maincontent" class="middle-align">
     <div class="container">
         <?php
-        $left_right = get_theme_mod( 'bb_wedding_bliss_single_page_sidebar_layout','One Column');
-        if($left_right == 'Left Sidebar'){ ?>
+        $bb_wedding_bliss_left_right = get_theme_mod( 'bb_wedding_bliss_single_page_sidebar_layout','One Column');
+        if($bb_wedding_bliss_left_right == 'Left Sidebar'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-4 col-md-4">
                     <?php dynamic_sidebar('sidebar-1'); ?>
@@ -38,7 +38,7 @@ get_header(); ?>
                     <div class="clear"></div>
                 </div>
             </div>
-        <?php }else if($left_right == 'Right Sidebar'){ ?>
+        <?php }else if($bb_wedding_bliss_left_right == 'Right Sidebar'){ ?>
             <div class="row">
                 <div class="col-lg-8 col-md-8 background-img-skin">
                     <?php while ( have_posts() ) : the_post(); ?>
@@ -58,7 +58,7 @@ get_header(); ?>
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
             </div>
-        <?php }else if($left_right == 'One Column'){ ?>
+        <?php }else if($bb_wedding_bliss_left_right == 'One Column'){ ?>
             <div class="container background-img-skin">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php the_post_thumbnail(); ?>

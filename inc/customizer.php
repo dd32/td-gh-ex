@@ -11,7 +11,6 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function bb_wedding_bliss_customize_register( $wp_customize ) {	
-
 	//add home page setting pannel
 	$wp_customize->add_panel( 'bb_wedding_bliss_panel_id', array(
 	    'priority' => 10,
@@ -21,36 +20,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-wedding-bliss' ),
 	) );
 
-    // Add the Theme Color Option section.
-	$wp_customize->add_section('bb_wedding_bliss_theme_color_option', array( 
-		'panel' => 'bb_wedding_bliss_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
-	);
-
-  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
-	    'default' => '#b79338',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
-  		'label' => 'First Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_theme_color_option',
-	    'settings' => 'bb_wedding_bliss_theme_color_first',
-  	)));
-
-  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
-	    'default' => '#151c27',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
-  		'label' => 'Second Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_theme_color_option',
-	    'settings' => 'bb_wedding_bliss_theme_color_second',
-  	)));
-
-	$font_array = array(
-        '' =>'No Fonts',
+	$bb_wedding_bliss_font_array = array('' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' =>'Acme', 
         'Anton' => 'Anton', 
@@ -174,7 +144,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'Paragraph Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_paragraph_font_size',array(
@@ -210,7 +180,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( '"a" Tag Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -235,7 +205,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( '"li" Tag Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -260,7 +230,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'H1 Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -297,7 +267,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'h2 Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -334,7 +304,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'h3 Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -371,7 +341,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'h4 Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -408,7 +378,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'h5 Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -445,7 +415,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section'  => 'bb_wedding_bliss_typography',
 	    'label'    => __( 'h6 Fonts','bb-wedding-bliss'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_wedding_bliss_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -654,6 +624,34 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 			'step' => 1,
 		),
 	));
+
+	 // Add the Theme Color Option section.
+	$wp_customize->add_section('bb_wedding_bliss_theme_color_option', array( 
+		'panel' => 'bb_wedding_bliss_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
+	);
+
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
+	    'default' => '#b79338',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
+  		'label' => __('First Color Option', 'bb-wedding-bliss'),
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_first',
+  	)));
+
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
+	    'default' => '#151c27',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
+  		'label' => __('Second Color Option', 'bb-wedding-bliss'),
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_second',
+  	)));
   	
 	//Layouts
 	$wp_customize->add_section( 'bb_wedding_bliss_left_right', array(
@@ -673,6 +671,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//Sticky Header
 	$wp_customize->add_setting( 'bb_wedding_bliss_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('bb_wedding_bliss_sticky_header',array(
@@ -1080,7 +1079,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
     $wp_customize->add_setting('bb_wedding_bliss_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_wedding_bliss_responsive_sticky_header',array(
@@ -1090,7 +1089,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_wedding_bliss_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_wedding_bliss_responsive_slider',array(
@@ -1099,13 +1098,13 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
        'section' => 'bb_wedding_bliss_responsive_setting'
     ));
 
-    $wp_customize->add_setting('bb_wedding_bliss_responsive_metabox',array(
+    $wp_customize->add_setting('bb_wedding_bliss_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('bb_wedding_bliss_responsive_metabox',array(
+    $wp_customize->add_control('bb_wedding_bliss_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','bb-wedding-bliss'),
+       'label' => __('Scroll To Top','bb-wedding-bliss'),
        'section' => 'bb_wedding_bliss_responsive_setting'
     ));
 
@@ -1119,6 +1118,16 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
        'section' => 'bb_wedding_bliss_responsive_setting'
     ));
 
+    $wp_customize->add_setting('bb_wedding_bliss_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','bb-wedding-bliss'),
+       'section' => 'bb_wedding_bliss_responsive_setting'
+    ));
+
   	//Blog Post
 	$wp_customize->add_section('bb_wedding_bliss_blog_post',array(
 		'title'	=> __('Blog Page Settings','bb-wedding-bliss'),
@@ -1126,7 +1135,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_wedding_bliss_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_wedding_bliss_date_hide',array(
@@ -1136,7 +1145,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_wedding_bliss_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_wedding_bliss_comment_hide',array(
@@ -1146,7 +1155,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_wedding_bliss_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_wedding_bliss_author_hide',array(
@@ -1156,7 +1165,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_wedding_bliss_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_wedding_bliss_tags_hide',array(
@@ -1242,6 +1251,24 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
             '4'     => __('Four', 'bb-wedding-bliss')
         ),
     ));
+
+    $wp_customize->add_setting('bb_wedding_bliss_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'bb_wedding_bliss_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'bb-wedding-bliss'),
+		'section'  => 'bb_wedding_bliss_footer_section',
+	)));
+
+	$wp_customize->add_setting('bb_wedding_bliss_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'bb_wedding_bliss_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_footer_section'
+	)));
 	
 	$wp_customize->add_setting('bb_wedding_bliss_footer_copy',array(
 		'default'	=> '',
@@ -1251,6 +1278,24 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Copyright Text','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_footer_section',
 		'type'		=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','bb-wedding-bliss' ),
+		'section'=> 'bb_wedding_bliss_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_enable_disable_scroll',array(
@@ -1276,6 +1321,24 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
             'Right' => __('Right','bb-wedding-bliss'),
             'Center' => __('Center','bb-wedding-bliss'),
         ),
+	) );
+
+	$wp_customize->add_setting('bb_wedding_bliss_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','bb-wedding-bliss'),
+		'section'=> 'bb_wedding_bliss_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	) );
 		
 }
