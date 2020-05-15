@@ -46,7 +46,7 @@
       </div> 
     </div>
     <div class="inner">
-      <div class="copyright text-center">
+      <div class="copyright">
         <p><?php bb_mobile_application_credit(); ?> <?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('By Themeshopy','bb-mobile-application'))); ?></p>
       </div>
       <div class="clear"></div>

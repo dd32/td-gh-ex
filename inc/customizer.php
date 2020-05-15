@@ -1059,6 +1059,16 @@ function bb_mobile_application_customize_register( $wp_customize ) {
        'section' => 'bb_mobile_application_responsive_setting'
     ));
 
+    $wp_customize->add_setting('bb_mobile_application_responsive_preloader',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_mobile_application_responsive_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Preloader','bb-mobile-application'),
+       'section' => 'bb_mobile_application_responsive_setting'
+    ));
+
 	//Blog Post
 	$wp_customize->add_section('bb_mobile_application_blog_post',array(
 		'title'	=> __('Blog Page Settings','bb-mobile-application'),
@@ -1183,6 +1193,24 @@ function bb_mobile_application_customize_register( $wp_customize ) {
         ),
     ));
 
+    $wp_customize->add_setting('bb_mobile_application_footer_widget_bg_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'bb_mobile_application_footer_widget_bg_color', array(
+		'label'    => __('Footer Widget Background Color', 'bb-mobile-application'),
+		'section'  => 'bb_mobile_application_footer_section',
+	)));
+
+	$wp_customize->add_setting('bb_mobile_application_footer_widget_bg_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'bb_mobile_application_footer_widget_bg_image',array(
+        'label' => __('Footer Widget Background Image','bb-mobile-application'),
+        'section' => 'bb_mobile_application_footer_section'
+	)));
+
 	$wp_customize->add_setting('bb_mobile_application_footer_copy',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
@@ -1192,6 +1220,39 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'section'	=> 'bb_mobile_application_footer_section',
 		'type'		=> 'text'
 	));	
+
+	$wp_customize->add_setting('bb_mobile_application_copyright_content_align',array(
+        'default' => __('center','bb-mobile-application'),
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_mobile_application_copyright_content_align',array(
+        'type' => 'select',
+        'label' => __('Copyright Text Alignment ','bb-mobile-application'),
+        'section' => 'bb_mobile_application_footer_section',
+        'choices' => array(
+            'left' => __('Left','bb-mobile-application'),
+            'right' => __('Right','bb-mobile-application'),
+            'center' => __('Center','bb-mobile-application'),
+        ),
+	) );
+
+	$wp_customize->add_setting('bb_mobile_application_footer_content_font_size',array(
+		'default'=> 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_mobile_application_footer_content_font_size',array(
+		'label' => esc_html__( 'Copyright Font Size','bb-mobile-application' ),
+		'section'=> 'bb_mobile_application_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
+	));
 
 	$wp_customize->add_setting('bb_mobile_application_enable_disable_scroll',array(
         'default' => true,
@@ -1216,6 +1277,24 @@ function bb_mobile_application_customize_register( $wp_customize ) {
             'Right' => __('Right','bb-mobile-application'),
             'Center' => __('Center','bb-mobile-application'),
         ),
+	) );
+
+	$wp_customize->add_setting('bb_mobile_application_scroll_font_size_icon',array(
+		'default'=> 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_mobile_application_scroll_font_size_icon',array(
+		'label'	=> __('Scroll Icon Font Size','bb-mobile-application'),
+		'section'=> 'bb_mobile_application_footer_section',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+        'type' => 'number',
 	) );
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	

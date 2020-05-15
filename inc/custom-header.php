@@ -31,12 +31,12 @@ add_action( 'wp_enqueue_scripts', 'bb_mobile_application_header_style' );
 function bb_mobile_application_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$bb_mobile_application_custom_css = "
         .page-template-custom-front-page #header, #header {
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
-	   	wp_add_inline_style( 'bb-mobile-application-basic-style', $custom_css );
+	   	wp_add_inline_style( 'bb-mobile-application-basic-style', $bb_mobile_application_custom_css );
 	endif;
 }
 endif; // bb_mobile_application_header_style

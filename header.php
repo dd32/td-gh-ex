@@ -23,7 +23,7 @@
     do_action( 'wp_body_open' );
   } ?>
   <header role="banner">
-    <?php if(get_theme_mod('bb_mobile_application_preloader_option',true)){ ?>
+    <?php if(get_theme_mod('bb_mobile_application_preloader_option',true)!= '' || get_theme_mod('bb_mobile_application_responsive_preloader', true) != ''){ ?>
       <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
@@ -84,5 +84,4 @@
         </div>
       </div>
     </div>
-
   </header>
