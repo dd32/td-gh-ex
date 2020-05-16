@@ -48,3 +48,6 @@ Version 2.0.0 (5th Oct 2018)
 i)   Theme options removed.
 ii)  Theme customizer added.
 iii) Misc Changes.
+
+Version 2.0.1 (16th May 2020)
+i) Misc Changes.
