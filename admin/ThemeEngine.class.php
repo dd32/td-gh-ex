@@ -621,9 +621,9 @@ class AttireThemeEngine {
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 
 		$image   = wp_get_attachment_image_src( $custom_logo_id, 'full' );
-		$logourl = esc_url( $image[0] ); // source : https://codex.wordpress.org/Theme_Logo
 
-		if ( $logourl ) {
+		if ( is_array($image) && isset($image[0]) ) {
+            $logourl = esc_url( $image[0] ); // source : https://codex.wordpress.org/Theme_Logo
 			$image_id = attachment_url_to_postid( $logourl );
 			$meta     = wp_prepare_attachment_for_js( $image_id );
 

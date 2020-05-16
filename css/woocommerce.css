@@ -224,3 +224,8 @@ Checkout
 #bestseller .card-body{
     padding: 15px 0 10px 0;
 }
+
+#payment.woocommerce-checkout-payment label {
+    display: inline-block;
+    width: auto;
+}
