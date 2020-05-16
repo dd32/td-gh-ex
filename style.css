@@ -5,7 +5,7 @@ Description: MyWiki is simple, lightweight and fast loading WordPress Theme for 
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Tags: custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style , translation-ready
-version: 3.0.2
+version: 3.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the FasterThemes.
@@ -49,6 +49,25 @@ table tbody tr th, table tbody tr td {
 	font-weight: normal;
 }
 
+.post_content ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.post_content li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.post_content ul ul, .post_content ol ul, .post_content ul ol, .post_content ol ol {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.post_content ul ul ul {
+    list-style-type: square;
+    margin-left: 10px;
+}
 
 .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
