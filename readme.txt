@@ -66,28 +66,23 @@ License URI:  http://fontawesome.io/license/
 Resource Name: fontawesome
 License Name: Open Font License (OFL) Version 4.0.3	
 	
-ii)Administration Panel
-===========
-Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-License: GNU General Public License v2
-
-iii)Fonts
+ii)Fonts
 ===========
 Istok Web - http://fonts.googleapis.com/css?family=Istok+Web
 They are under SIL Open Font.
 	
-iv)Bootstrap files
+iii)Bootstrap files
 ===========
 we used are licensed under the Apache License v3.1.1
 Bootstrap - http://getbootstrap.com
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-vi) respond.min js file
+iv) respond.min js file
 ============
 we used are licensed under MIT/GPL2.
 Version - v1.3.0
 
-vii) Images
+v) Images
 ============
 
 http://pixabay.com/en/fried-chicken-japanese-food-250863/  - Public Domain CC0 License
@@ -98,10 +93,3 @@ http://pixabay.com/en/new-year-s-eve-feuerzangenbowle-325149/ - Public Domain CC
  
 Icons - https://fasterthemes.com
 License: General Public License (GPL)
-
----------------------------------------------------------
-TGM Plugin license and link
----------------------------------------------------------
-
- license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation	

@@ -97,3 +97,6 @@ Version 1.4.9 (24th April 2018)
 
 Version 1.5.0 (2nd Nov 2018)
     i) Misc Changes.
+
+Version 1.5.1 (16th May 2020)
+    i) Misc Changes.
