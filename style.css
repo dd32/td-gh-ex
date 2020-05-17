@@ -3,8 +3,8 @@ Theme Name: Customizable
 Theme URI: https://fasterthemes.com/wordpress-themes/customizable
 Author: FasterThemes
 Author URI: https://fasterthemes.com/
-Description: Customizable is a WordPress responsive cooperate theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design. Customizable Pro version is a paid version which has several other options like 6 color schemes, different page templates, more Google Fonts options etc.
-Version: 2.3.0
+Description: Customizable is a WordPress responsive cooperate theme developed for personal and corporate websites. Customizable is a free WordPress theme with premium functionality and design. Customizable Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It comes with several customization options which are available inside Customize menu under Appearance menu of WordPress admin panel. Step by step documentation for setup of website inclucing DUMMY DATA files is available here => https://fasterthemes.com/documentation/customizable/
+Version: 2.3.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar, one-column, two-columns, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
@@ -418,7 +418,6 @@ a:hover, a:focus {
 	color: #ffffff;
 	display: inline-block;
 	padding: 10px 10px;
-	text-transform: uppercase;
 	font-size: 14px;
 	letter-spacing: 0.5px;
 }
@@ -678,7 +677,6 @@ a:hover, a:focus {
 	padding: 0;
 	color: #fff;
 	font-size: 18px;
-	text-transform: uppercase;
 	font-weight: normal;
 }
 .subscribe a:hover {
@@ -692,7 +690,6 @@ a:hover, a:focus {
 	font-size: 16px;
 	font-weight: normal;
 	float: right;
-	text-transform: uppercase;
 }
 /*Section css part end*/	
 
@@ -855,8 +852,7 @@ a:hover, a:focus {
 	margin: 26px 0;
 	font-size: 16px;
 	color: #f6f6f6;
-	text-transform: uppercase;
-        display: inline-block;
+    display: inline-block;
 }
 .footer-widget li {
 	margin: 0;
@@ -921,7 +917,6 @@ a:hover, a:focus {
 	margin: 12px 0 23px 0;
 	font-size: 16px;
 	color: #f6f6f6;
-	text-transform: uppercase;
 }
 .bottom_footer {
 	width: 100%;
@@ -1145,7 +1140,6 @@ a.more:hover {
 .comment-title {
 	font-size: 18px;
 	font-weight: normal;
-	text-transform: uppercase;
 }
 .avtar {
 	float: left;
@@ -1153,7 +1147,6 @@ a.more:hover {
 }
 .fn a, a.reply {
 	color: #00BEE0;
-	text-transform: uppercase;
 }
 .comment-respond {
 	margin-top: 40px;
@@ -1288,7 +1281,6 @@ li.menu-divider:last-child {display:none;}
 	color:#212121;
 	text-align:center;
 	font-weight:bold;
-	text-transform:uppercase;
 }
 .customizable-home-icom{
 	margin-bottom:20px;
@@ -1325,7 +1317,6 @@ li.menu-divider:last-child {display:none;}
 .customizable-home-icom h1{
 	font-size:16px;
 	color:#212121;
-	text-transform:uppercase;
 }
 .customizable-home-icom p{
 	font-size:14px;

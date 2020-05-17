@@ -69,3 +69,6 @@ Version 2.2.3 (24-04-2018)
 
 Version 2.3.0 (6-11-2018)
     i) Minor changes
+
+Version 2.3.1 (17-05-2020)
+    i) Misc changes
