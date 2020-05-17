@@ -6,11 +6,6 @@ get_header(); ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
     <h1><?php the_title(); ?></h1>
-    <div class="header-breadcrumb">
-      <ol>
-        <?php if (function_exists('generator_custom_breadcrumbs')) generator_custom_breadcrumbs(); ?>
-      </ol>
-    </div>
   </div>
 </div>
 <div class="container container-generator">

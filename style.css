@@ -3,8 +3,8 @@ Theme Name: Generator
 Theme URI: https://fasterthemes.com/wordpress-themes/generator
 Author: FasterThemes
 Author URI: https://fasterthemes.com/
-Description: Generator is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Generator Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built slider and recent posts are touch friendly slider based on owl carousel. 
-Version: 2.2.4
+Description: Generator is a lightweight, fast-loading, clean, super flexible and bootstrap based responsive theme for business or personal websites. Generator Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, customizer options in order to get it customized as per your needs. Home page layout contains in-built slider and recent posts are touch friendly slider based on owl carousel. Step by step documentation with dummy data is available here: https://fasterthemes.com/documentation/generator
+Version: 2.2.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, full-width-template, one-column, two-columns, theme-options, custom-background, custom-colors, custom-header, custom-menu, post-formats , translation-ready
@@ -719,7 +719,6 @@ p > embed, p > iframe, p > object, span > embed, span > iframe, span > object {
 	margin-bottom: 30px;
 	padding: 6px 30px;
 	text-transform: uppercase;
-	border-color: rgb(53, 126, 189);
 	border-radius: 4px;
 	cursor: pointer;
 	display: inline-block;
