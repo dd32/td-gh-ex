@@ -2,8 +2,8 @@
 Contributors: avidthemes
 Tags: right-sidebar, portfolio, e-commerce, theme-options, featured-images, rtl-language-support, grid-layout, editor-style, custom-header, threaded-comments, custom-background, custom-colors, blog, footer-widgets
 Requires at least: 4.9.6
-Tested up to: 5.0.0
-Stable tag: 1.0.4
+Tested up to: 5.4.0
+Stable tag: 1.0.5
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,13 @@ Avid Magazine WordPress Theme is very lightweight, easy to use, SEO friendly and
 	
 
 == Changelog ==
+
+
+	= 1.0.5 =
+
+		* Release Date: May 17, 2020
+			i)   Demo Import Removed
+			ii)	 Theme URI changed
 
 
 	= 1.0.4 =

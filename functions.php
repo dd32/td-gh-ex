@@ -167,11 +167,6 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 // Register Custom Navigation Walker
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
-/**
- * Demo Content Section
- */
-require get_template_directory() . '/inc/demo-content.php';
-
 
 // Breadcrumbs
 require get_template_directory() . '/inc/breadcrumbs.php';
@@ -185,13 +180,6 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 
 
 require get_template_directory() . '/inc/dynamic-css.php';
-
-if ( is_admin() ) {
-
-	// Load demo.
-	require_once trailingslashit( get_stylesheet_directory() ) . 'inc/demo/class-demo.php';
-	require_once trailingslashit( get_stylesheet_directory() ) . 'inc/demo/demo.php';
-}
 
 
 // Remove default "Category or Tags" from title
