@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BAHOTEL_L', __FILE__ );
-define( 'BAHOTEL_L_VERSION', '1.0.16' );
+define( 'BAHOTEL_L_VERSION', '1.0.17' );
 define( 'BAHOTEL_L_NAME', 'BA Hotel light' );
 define( 'BAHOTEL_L_URI', get_template_directory_uri() );
 define( 'BAHOTEL_L_STYLESHEET_URI', get_stylesheet_directory_uri() );
@@ -23,21 +23,6 @@ define( 'BAHOTEL_L_TEXTDOMAIN', 'ba-hotel-light' );
 define( 'BAHOTEL_L_AUTHOR', 'Booking Algorithms' );
 define( 'BAHOTEL_L_AUTHOR_URL', 'https://ba-booking.com/' );
 define( 'BAHOTEL_L_DEV', true );
-
-//////////////////////////////////////
-
-add_action( 'init', 'bahotel_l_setup_env_vars', 1);
-function bahotel_l_setup_env_vars(){
-    
-  $batheme_current = get_option('batheme_current');
-  $batheme_version = get_option('batheme_version');
-
-  if ( $batheme_current != 'bahotel_l' || version_compare( $batheme_version, BAHOTEL_L_VERSION, '!=' ) ){
-    update_option('batheme_current', 'bahotel_l');
-    update_option('batheme_version', BAHOTEL_L_VERSION);
-  }
-
-}
 
 //////////////////////////////////////
 
@@ -52,13 +37,13 @@ function bahotel_l_setup(){
 	add_theme_support( 'title-tag' );
     
     /* Add post formats support */
-	add_theme_support( 'post-formats', array( 'audio', 'gallery', 'video' ) );
+	add_theme_support( 'post-formats', [ 'audio', 'gallery', 'video' ] );
     
     // Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	/* Support for HTML5 */
-	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+	add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
 
     load_theme_textdomain( 'ba-hotel-light' );
 
@@ -66,16 +51,18 @@ function bahotel_l_setup(){
 	add_theme_support( 'automatic-feed-links' );
     
     add_theme_support( 'yoast-seo-breadcrumbs' );
+
+    add_theme_support( 'ba-theme-core', [ 'current' => 'bahotel_l', 'version' => BAHOTEL_L_VERSION ] );
     
     add_theme_support(
 		'custom-logo', apply_filters(
-			'bahotel_l_custom_logo_args', array(
+			'bahotel_l_custom_logo_args', [
 				'height'      => 80,
                 'width'       => 200,
                 'flex-height' => true,
                 'flex-width'  => true,
-                'header-text' => array( 'site-title', 'site-description' ),
-			)
+                'header-text' => [ 'site-title', 'site-description' ],
+			]
 		)
 	);
     
@@ -120,10 +107,10 @@ function bahotel_l_enqueue_scripts(){
         
         if (BAHOTEL_L_DEV){
            //included into theme style.min.css
-           $styles = array(
+           $styles = [
 			'normalize' => 'normalize.css', 
             'bootstrap' => 'bootstrap.min.css',
-		   );
+		   ];
 
 		   foreach ( $styles as $id => $style ) {
 			 wp_enqueue_style( 'bahotel-l-' . $id, BAHOTEL_L_URI . '/css/' . $style, false, BAHOTEL_L_VERSION );

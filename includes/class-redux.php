@@ -139,8 +139,6 @@ class Bahotel_L_Redux {
 			    update_option( 'blogdescription', $return_array['options']['blogdescription'] );
 			}
 		}
-        
-        update_option( '_bahotel_l_custom_css', '' );
 		
 		return $return_array;
 	}
@@ -385,10 +383,9 @@ class Bahotel_L_Redux {
 			$flag_update_options = true;
 		}
 		
-		// Update option from WP data.
+		// Update theme options from WP data.
 		if ( $flag_update_options ) {
-			
-			$result = update_option( Bahotel_L_Settings::$option_name, $options );
+			update_option( Bahotel_L_Settings::$option_name, $options );
 		}
 		
 		$sections[] = array(

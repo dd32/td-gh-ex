@@ -88,6 +88,26 @@ class Bahotel_L_Settings {
         return isset(self::$settings[$key]) ? self::$settings[$key] : $default_value;
         
     }
+
+    //////////////////////////////
+
+    /**
+     * Set option value
+     *
+     * @param string $option_name
+     * @param mixed $value
+     *
+     * @return mixed
+     */
+    public static function set_option( $option_name, $value ) {
+
+        $key = sanitize_key($option_name);
+        $settings = get_option(self::$option_name);
+        $settings[$key] = $value;
+        update_option(self::$option_name, $settings);
+        return;
+
+    }
     
     //////////////////////////////
 	
@@ -1752,7 +1772,7 @@ class Bahotel_L_Settings {
         
         $output = '';
         
-        $saved_custom_css = get_option( '_bahotel_l_custom_css' );
+        $saved_custom_css = self::get_option('', 'custom_css');
         
         if ($saved_custom_css && !BAHOTEL_L_DEV){
             return $saved_custom_css;
@@ -1823,7 +1843,7 @@ class Bahotel_L_Settings {
         
         //// cache custom styles
         if (!BAHOTEL_L_DEV){
-            update_option( '_bahotel_l_custom_css', $output );
+            self::set_option( 'custom_css', $output );
         }
         
         return $output;
