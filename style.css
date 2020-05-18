@@ -1,13 +1,13 @@
 /*
 Theme Name: Top Mag
-Theme URI: http://fasterthemes.com/wordpress-themes/topmag
+Theme URI: https://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
-Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 2.0.1
+Author URI: https://fasterthemes.com/
+Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through customizer options available inside Appearance menu of WordPress admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders. Step by step documentation for setup of website like Top Mag theme demo including DUMMY DATA files is available here => https://fasterthemes.com/documentation/topmag/
+Version: 2.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Top Mag Theme, Copyright 2014 fasterthemes.com
+Top Mag Theme, Copyright 2020 fasterthemes.com
 Top Mag is distributed under the terms of the GNU GPL
 Tags: right-sidebar, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
 Text Domain: top-mag
@@ -23,7 +23,6 @@ body {
 a, a:hover{
     color: rgb(78, 0, 0);
 }
-
 
 .no-padding {
     padding-left: 0px;

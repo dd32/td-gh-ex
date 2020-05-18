@@ -3,11 +3,11 @@ Theme Name: Top Mag
 Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 2.0.0
+Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through customizer options available inside Appearance menu of WordPress admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders. Step by step documentation for setup of website like Top Mag theme demo including DUMMY DATA files is available here => https://fasterthemes.com/documentation/topmag/
+Version: 2.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Top Mag Theme, Copyright 2014 fasterthemes.com
+Top Mag Theme, Copyright 2020 fasterthemes.com
 Top Mag is distributed under the terms of the GNU GPL
 Tags: right-sidebar, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
 Text Domain: top-mag
@@ -16,11 +16,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 == Theme Description ==
 
-Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
+Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through customizer options available inside Appearance menu of WordPress admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders. Step by step documentation for setup of website like Top Mag theme demo including DUMMY DATA files is available here => https://fasterthemes.com/documentation/topmag/
 
 == Features ==
 
-Responsive design(Bootstrap), Theme Options, Custom Menu, custom header, custom background.
+Responsive design(Bootstrap), Customizer Options, Custom Menu, custom header, custom background.
 
 == Tags ==
 
@@ -48,20 +48,7 @@ right-sidebar, one-column, two-columns, custom-background, custom-colors, custom
 
 6. To select a Home Page template, you need to select 'Slider Home Page' from Drop down then click 'Update'. After that click on 'Appearnce', select 'FT optios', select 'Home page settings' tab. 
 
-7. Theme Options:
-	
-	i. Header Settings
-		= Breaking news and news category you can set here.
-		= Upload the logo and favicon.
-		
-	ii. Footer Settings
-		= You can manage Copyright text here.
-		
-	iii. Home Page Settings
-		= Slider settings can be managed from this tab.
-		= In 'Recent Posts' slider you can manage posts, number of posts for recent posts slider.
-		= Select post category and number of posts to display posts on home page.
-
+7. Customizer Options: Under Appearance menu, you will find Customize menu, click there and you will find all the customize options.
  
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -73,28 +60,23 @@ License URI:  http://fontawesome.io/license/
 Resource Name: fontawesome
 License Name: Open Font License (OFL) Version 4.0.3	
 	
-ii)Administration Panel
-===========
-Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-License: GNU General Public License v2
-
-iii)Fonts
+ii)Fonts
 ===========
 Istok Web - http://fonts.googleapis.com/css?family=Lato
 They are under SIL Open Font.
 	
-iv)Bootstrap files
+iii)Bootstrap files
 ===========
 we used are licensed under the Apache License v3.1.1
 Bootstrap - http://getbootstrap.com
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-vi) respond.min js file
+iv) respond.min js file
 ============
 we used are licensed under MIT/GPL2.
 Version - v1.3.0
 
-vii) slider js files
+v) slider js files
 ============
 owl.carousel.min.js - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) The MIT License (MIT) Copyright (c) 2013
 
@@ -108,10 +90,3 @@ https://www.pexels.com/photo/adult-adventure-baby-child-532508/  - Pixabay CC0 L
  
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)
-
----------------------------------------------------------
-TGM Plugin license and link
----------------------------------------------------------
-
- license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation

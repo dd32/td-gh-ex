@@ -60,3 +60,9 @@ Version 2.0.0 (29th Nov 2018)
 i) Js & css folder Updated.
 ii) Theme options shifted in customizer section.
 iii) Misc changes
+
+Version 2.0.1 (07th Feb 2020)
+i) Misc changes
+
+Version 2.0.2 (18th May 2020)
+i) Misc changes.
