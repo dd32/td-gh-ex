@@ -300,6 +300,7 @@ function arilewp_import_theme_mods_from_child_themes_to_parent_theme() {
         $previous_theme, array(
             'business-street',
 			'strangerwp',
+			'newyork-city',
         )
     ) ) {
         return;
