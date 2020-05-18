@@ -3,7 +3,7 @@
 	} else { ?>
 		<div class="widget">
 			<h3 class="widget-title">
-				<?php __('Search', 'baena'); ?>
+				<?php _e('Search', 'baena'); ?>
 			</h3>
 		</div><!--.widget-->
 <?php } ?>				

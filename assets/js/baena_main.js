@@ -42,10 +42,10 @@ jQuery(document).ready(function() {
 
 
 //LOCK THE SEARCH IF THE FIELD IS EMPTY
-     jQuery('#searchsubmit').attr('disabled','disabled');
-     jQuery('#s').keypress(function(){
+     jQuery('.searchsubmit').attr('disabled','disabled');
+     jQuery('.s').keypress(function(){
             if(jQuery(this).val() != ''){
-               jQuery('#searchsubmit').removeAttr('disabled');
+               jQuery('.searchsubmit').removeAttr('disabled');
             }
      });
 

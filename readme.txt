@@ -1,5 +1,5 @@
 === Baena ===
-Contributors: the WordPress team
+Contributors: bernibernal
 Requires at least: 4.5
 Requires PHP: 5.4
 Tested up to: 5.3.2
@@ -29,8 +29,36 @@ Baena Theme is an creative theme WordPress.
 = Do you have any problem? =
 Contact with holabernibernal@gmail.com 
 
+== Licenses ==
+Noto Serif font
+License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
+Source: https://fonts.google.com/specimen/Noto Serif
+
+Quicksand font
+License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
+Source: https://fonts.google.com/specimen/Quicksand
+
+Modernizr Code
+License: MIT License, https://opensource.org/licenses/MIT
+Source: https://modernizr.com/
 
 == Changelog ==
+Version 1.0.2 (2019-05-18)
+-------------------------
+- Code bug review
+- Customizer update
+- Delete unused functions
+- Update Search function
+- Territory plugin removal functions
+- Correct style sheet name with theme prefix
+- Introducing necessary classes in header
+- Accessibility improvements
+- Code improvements in Footer
+- Text string translation
+- Elimination of unnecessary style sheets
+- Call for a single comment
+- Entering license information in this file
+
 
 Version 1.0.1 (2019-03-29)
 -------------------------

@@ -8,6 +8,15 @@
 </head>
 
 <body <?php body_class(); ?>>
+    
+    <?php
+        if ( function_exists( 'wp_body_open' ) ) {
+            wp_body_open();
+        }
+        ?>
+
+        <a class="skip-link" href="#site-content"><?php _e( 'Skip to the content', 'baena' ); ?></a>
+
     <header>
             <section class="esection grid">    
                 <div class="father-col clearfix">

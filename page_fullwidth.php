@@ -7,7 +7,6 @@
       <?php
         $args = array(
           // Arguments for the query
-          'cat'=> 3,
           'post_per_page'=> 3,
           'orderby'=> 'date',
           'order'=> 'ASC'

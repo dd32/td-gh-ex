@@ -11,11 +11,17 @@
 				<h2>
 					<a href="<?php the_permalink();?>"><?php the_title();?></a>
 				</h2>
-				<p class="date"><?php the_date();?> in <?php the_category();?></p>
+				<p class="date">
+					<?php 
+					the_date(); 
+					esc_html_e("in", "baena"); 
+					the_category();
+					?>
+				</p>
 				<p class="extract"><?php the_excerpt();?></p>
 			</article>
 		</div>
 	<?php endwhile; else: ?>
-	<h1><?php _e("No items found", "baena"); ?></h1>
+	<h1><?php esc_html_e("No items found", "baena"); ?></h1>
 	<?php endif; ?>
 </section>

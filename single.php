@@ -29,38 +29,23 @@
                                     <div class="">
                                       <!--TO SHOW CUSTOM FIELD GUTEN-->
                                         <h2>
-                                            <?php esc_html_e("The Meta Info. Custom Field 1", "baena"); ?>
+                                            <?php esc_html_e("The Meta Info. Custom Field", "baena"); ?>
                                         </h2>
                                       <!--END TO SHOW CUSTOM FIELD GUTEN-->
-
-                                      <!--SHOW ALL INFO ABOUT CUSTOM FIELDS + METABOX FUNCTIONS-->
-                                        <h2>
-                                            <?php esc_html_e("The Meta Info. Custom Field 2", "baena"); ?>
-                                        </h2>
-                                        <?php the_meta(); ?>
-                                    <!--END SHOW ALL INFO ABOUT CUSTOM FIELDS + METABOX FUNCTIONS-->
-                                    
-                                    <!--SHOW CUSTOM FIELDS ONLY FUNCTIONS METABOX-->
-                                        <h2>
-                                            <?php esc_html_e("The Meta Info. Custom Field 3", "baena"); ?>
-                                        </h2>
-                                        <ul>
-                                            <li><?php echo get_post_meta( get_the_ID(), 'book', true );?></li>
-                                            <li><?php echo get_post_meta( get_the_ID(), 'author', true );?></li>
-                                            <li><?php echo get_post_meta( get_the_ID(), 'format', true );?></li>
-                                        </ul>
-                                    <!--END SHOW CUSTOM FIELDS ONLY FUNCTIONS METABOX-->
+                                  
                                     </div><!---->
                                     <div class="">
-                                        <h2>The Taxonomies</h2>
+                                        <h2>
+                                            <?php esc_html_e("The Taxonomies", "baena"); ?>
+                                        </h2>
                                             <?php the_taxonomies(); ?>
                                     </div>
                                     <div class="">
-                                        <h2>The Tags</h2>
+                                        <h2>
+                                            <?php esc_html_e("The Tags", "baena"); ?>
+                                        </h2>
                                         <?php the_tags() ?>
                                         <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
-                                       
-                                        <?php the_tags( 'Social tagging: ',' > ' ); ?>
                                         <?php the_tags( 'Tags: ', ', ', '<br />' ); ?>
                                     </div>
                                 </div><!--.table-info-->

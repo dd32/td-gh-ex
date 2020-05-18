@@ -2,7 +2,7 @@
 
     Theme Name: Baena
     Text Domain: baena
-    Version: 1.0.1
+    Version: 1.0.2
     Description: Baena is a feature-packed WordPress creative theme that gives you full control over the fonts and colors on your site. Built from scratch with the new Block Editor in mind, it makes it easy to create attractive layouts on both posts and pages. This flexibility makes Baena suitable for almost any type of website. The fonts and colors in the theme can be easily modified within the Customizer, allowing you to create a unique look for your website.
     Tags: blog, portfolio, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template
     Author: Berni Bernal
@@ -354,6 +354,27 @@ a:hover{text-decoration: underline;}
 /* Copy Cookies ------------------------ */
 div#copyright {text-align: center;}
 
+/* Skip Link --------------------------------- */
+
+.skip-link {
+    position: absolute;
+    left: -9999rem;
+    top: 2.5rem;
+}
+
+.skip-link:focus {
+    display: block;
+    left: 6px;
+    top: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    z-index: 100000;
+    right: auto;
+}
+
 /* --------------------------------------------------------------------------------------------- */
 /*  2. Element Base
 /* --------------------------------------------------------------------------------------------- */
@@ -532,6 +553,14 @@ div#copyright {text-align: center;}
 }
 /*End Arrow from TOP*/
 
+/*Accessibility*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+button:focus, nav:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
 /* --------------------------------------------------------------------------------------------- */
 /*  13. Pagination
 /* --------------------------------------------------------------------------------------------- */
@@ -544,12 +573,13 @@ div#copyright {text-align: center;}
 
 @media screen and (max-width:992px) {
 /* Whidth--------------------------- */
-    .col-30,.col-70, {width: 100%;}
+    .col-30,.col-70 {width: 100%;}
+    .mena-bar{right: 60px;}
 }
 
 @media screen and (max-width:768px) {
 /* Width--------------------------- */
-.col-33{width: 100%;}
+.col-33, footer .widget{width: 100%;}
 
 /* Menu --------------------------- */
     .dropdown-menu{display: block;}
