@@ -186,8 +186,6 @@ $my_theme = wp_get_theme();
 				
 				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Welcome Page','astral'); ?> </a>
 
-				<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php echo esc_url('https://wordpress.org/themes/foodiz/'); ?>" > <?php _e('New Theme - Foodiz','astral'); ?> </a>
-
 				<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Astral Pro coming soon','astral'); ?> </a>
 				
 			</div>
