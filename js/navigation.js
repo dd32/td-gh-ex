@@ -24,36 +24,40 @@
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-		links[i].addEventListener( 'blur', toggleFocus, true );
+		links[i].addEventListener( 'focus', toggleFocus, false );
+		links[i].addEventListener( 'blur', toggleFocus, false );
 	}
 
 	/**
 	 * Sets or removes .focus class on an element.
 	 */
 	function toggleFocus( event ) {
-		var self = this;
+		var self = this, parent = self.parentElement;
 
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+		// This function is run on menu item links; verify the parent is an li.
+		if ( 'li' === parent.localName ) {
+		
+			// Is the current link a direct submenu parent?
+			if ( -1 !== parent.className.indexOf( 'menu-item-has-children' ) ) {
 
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-
-					// Close all submenus if we go past the last link.
-					if ( null === this.parentElement.nextElementSibling
-						&& 'li' !== event.relatedTarget.parentElement.localName ) {
-						for ( i = 0, len = subMenus.length; i < len; i++ ) {
-							subMenus[i].parentElement.className = subMenus[i].parentElement.className.replace( ' focus', '' );
-						}
-					}
-				} else {
-					self.className += ' focus';
+				// Add focus as needed.
+				if ( 'focus' === event.type && -1 === parent.className.indexOf( 'focus' ) ) {
+					parent.className = parent.className + ' focus';
 				}
 			}
 
-			self = self.parentElement;
+			if ( 'blur' === event.type && self === parent.parentElement.lastElementChild ) {
+				parent.className = parent.className.replace( ' focus', '' );
+			}
+
+			// If this is the last element in this level, close previous menus.			
+			if ( event.relatedTarget && 'li' !== event.relatedTarget.parentElement.localName ) {
+				for ( i = 0, len = subMenus.length; i < len; i++ ) {
+					subMenus[i].parentElement.className = subMenus[i].parentElement.className.replace( ' focus', '' );
+				}
+			}
+		} else {
+			return;
 		}
 	}
 

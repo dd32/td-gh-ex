@@ -43,7 +43,7 @@
 			</div>
 	<?php endif; // Front page/header image check. ?>
 		<nav id="site-navigation" class="main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Main navigation', 'arbutus' ); ?>">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 3 ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

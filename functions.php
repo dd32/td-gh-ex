@@ -324,7 +324,7 @@ function arbutus_excerpt_more( $more ) {
 	}
 
 	global $post;
-	return '&hellip;<div><a class="excerpt-more button" href="' . get_permalink( $post->ID ) . '">Read more &rarr;</a></div>';
+	return '&hellip;<div><a class="excerpt-more button" href="' . get_permalink( $post->ID ) . '">' . __( 'Read more &rarr;', 'arbutus' ) . '</a></div>';
 }
 add_filter( 'excerpt_more', 'arbutus_excerpt_more' );
 
@@ -373,7 +373,9 @@ function arbutus_wp_trim_excerpt( $text ) {
 		$text = strip_tags( $text, '<a><b><strong><i><em><p><h1><h2><h3><h4><h5><h6>' );
 		/* translators: If your word count is based on single characters (East Asian characters),
 		   enter 'characters'. Otherwise, enter 'words'. Do not translate into your own language. */
-		if ( 'characters' == _x( 'words', 'word count: words or characters?' ) && preg_match( '/^utf\-?8$/i', get_option( 'blog_charset' ) ) ) { // Intentionally using core translation since this is copied from a core function. // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
+		if ( 'characters' == _x( 'words', 'word count: words or characters?' ) && preg_match( '/^utf\-?8$/i', get_option( 'blog_charset' ) ) ) { // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
+			// In previous line: intentionally using core translation since this is copied from a core function. 
+
 			$text = trim( preg_replace( "/[\n\r\t ]+/", ' ', $text ), ' ' );
 			preg_match_all( '/./u', $text, $words_array );
 			$words_array = array_slice( $words_array[0], 0, $excerpt_length + 1 );
