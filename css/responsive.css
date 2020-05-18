@@ -59,10 +59,6 @@
         margin: 22px -30px 22px 0;
     }
 
-    .section-header h2:after {
-        right: 40px;
-    }
-
 	.sidebar .widget table tbody a {
 		padding: 1px;
 		margin-left: -10px!important;
@@ -78,9 +74,6 @@
 /* medium Layout 1280px */
 
 @media only screen and (min-width:992px) {
-    #subscribe i {
-        float: left;
-    }
 	div#sticky-wrapper {
 		height: 0 !important;
 	}
@@ -109,6 +102,8 @@
         background: #fff;
         min-height: 99px;
 		position: relative;
+		display: flex;
+		align-items: center;
     }
 
     .header-right-bar {
@@ -128,23 +123,10 @@
     .header-slider .container.inner-content.text-right {
         margin-right: 0;
     }
-	
-    /* Team Member */
-    .team-member img {
-        width: 100%;
-    }
 
     .post-thumbnail img {
         width: 100%;
     }
-
-    .section-header h2:after {
-        display: none;
-    }
-    #subscribe i {
-        margin-right: 0 !important;
-    }
-
 
     .features-list-item:hover {
         margin-top: 0;

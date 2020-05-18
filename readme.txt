@@ -2,13 +2,13 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.3.2
+Tested up to: 5.4.1
 Requires PHP: 5.6
-Stable tag: 2.0.2
-Version: 2.0.2
+Stable tag: 2.0.20
+Version: 2.0.20
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
 
 == Copyright ==
 
@@ -111,6 +111,61 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 2.0.20
+* Tested up to & Requires PHP Fields Added in Style.css
+
+@version 2.0.19
+* Removed Unnecessary Styles
+
+@version 2.0.18
+* Removed Unnecessary Styles
+
+@version 2.0.17
+* Tested With WordPress 5.4.1 
+
+@version 2.0.16
+* Subject Tag Updated
+
+@version 2.0.15
+* Code Improvement
+
+@version 2.0.14
+* Keyboard Navigation Improved
+* Code Improvement
+
+@version 2.0.13
+* Tested With WordPress 5.4 
+
+@version 2.0.12
+* Code Improvement In Blog Section
+
+@version 2.0.11
+* Remove Unnecessary Styles
+
+@version 2.0.10
+* Prefixing Issues Resolved
+
+@version 2.0.9
+* Remove Unnecessary Styles
+
+@version 2.0.8
+* Screenshot Updated
+
+@version 2.0.7
+* Menu Active Style Added
+
+@version 2.0.6
+* Code Optimize In Navigation File
+
+@version 2.0.5
+* Code Optimize In Navigation
+
+@version 2.0.4
+* Remove Unnecessary Style
+
+@version 2.0.3
+* Remove Unnecessary Style
 
 @version 2.0.2
 * Remove Unnecessary Style
