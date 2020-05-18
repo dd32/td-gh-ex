@@ -2,7 +2,7 @@
 /**
  * The template for displaying details of the posts
  *
- * @version    0.0.16
+ * @version    0.0.17
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
@@ -58,9 +58,9 @@
 			                                        	
 		                                        <div class="featured-img">
 		                                        	<?php if ( has_post_thumbnail()) : ?>
-									        		<a class="" href="<?php the_permalink(); ?>"  >
+									        		<div class="" >
 									            		<?php the_post_thumbnail(); ?>
-									            	</a>
+									            	</div>
 									            	<?php endif; ?>
 		                                        </div>
 	                                            <p><?php the_content(); ?></p>

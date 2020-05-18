@@ -3,11 +3,11 @@ Theme Name: Axis Magazine
 Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: https://zidithemes.tumblr.com/author
-Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.16
+Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal and professional blog, beauty, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , book, game, travel, fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
+Version: 0.0.17
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
+Tags:  one-column, two-columns, right-sidebar, footer-widgets, Entertainment, News, food-and-drink, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
 Text Domain: axis-magazine
 */
 
@@ -1600,9 +1600,9 @@ ul {
 .axis-magazine-index-two .blog-2-col-inner .items  .items-inner .img-box .img-wrap img{
     display: block;
     width: 100%;
-    height: 427px;
+    height: auto;
     padding: 0px 10px;
-    max-height: 610px;
+    max-height: 390px;
     box-sizing: border-box;
 } 
         
@@ -1884,9 +1884,9 @@ ul {
     display: block;
     width: 90%;
     margin: 0px auto;
-    height: 530px;
+    height: auto;
+    max-height: 470px;
     padding: 0px 40px;
-    max-height: 610px;
     box-sizing: border-box;
 } 
         
@@ -2165,9 +2165,9 @@ ul {
 .axis-magazine-index-four .blog-2-col-inner .items  .items-inner .img-box .img-wrap img{
     display: block;
     width: 100%;
-    height: 427px;
+    height: auto;
     padding: 0px 40px;
-    max-height: 610px;
+    max-height: 390px;
     box-sizing: border-box;
 } 
         
@@ -2426,9 +2426,9 @@ ul {
 .axis-magazine-index-five .blog-2-col-inner .items  .items-inner .img-box .img-wrap img{
     display: block;
     width: 100%;
-    height: 427px;
+    height: auto;
     padding: 0px 15px;
-    max-height: 610px;
+    max-height: 390px;
     box-sizing: border-box;
 } 
         
@@ -2723,6 +2723,7 @@ ul {
 .axis-magazine-index-six .blog-2-col-inner .items  .items-inner .img-box .img-wrap img{
     display: block;
     width: 100%;
+    height: auto;
     max-height: 610px;
     box-sizing: border-box;
 } 

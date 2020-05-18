@@ -2,7 +2,7 @@
 /**
  * The template for displaying archives pages
  *
- * @version    0.0.16
+ * @version    0.0.17
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.

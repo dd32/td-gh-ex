@@ -4,13 +4,13 @@ Tags: one-column, two-columns, right-sidebar footer-widgets, Blog, News, e-comme
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.2.4
-Stable tag: 0.0.16
+Stable tag: 0.0.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
+Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal and professional blog, beauty, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , book, game, travel, fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
 
 == Copyright ==
 
@@ -18,6 +18,15 @@ Axis Magazine WordPress Theme, Copyright 2020 Zidithemes
 Axis Magazine is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 0.0.17 =  
+* Released: May 18, 2020
+
+made changes to style.css height: auto (.axis-magazine-index-six .blog-2-col-inner .items .items-inner .img-box .img-wrap img).
+made changes to style.css height: auto (.axis-magazine-index-two .blog-2-col-inner .items .items-inner .img-box .img-wrap img).
+made changes to style.css height: auto (.axis-magazine-index-three .blog-2-col-inner .items .items-inner .img-box .img-wrap img).
+made changes to style.css height: auto (.axis-magazine-index-four .blog-2-col-inner .items .items-inner .img-box .img-wrap img).
+made changes to style.css height: auto (.axis-magazine-index-five .blog-2-col-inner .items .items-inner .img-box .img-wrap img).
 
 = 0.0.16 =  
 * Released: April 8, 2020
