@@ -9,9 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bar-restaurant
 
 == Theme Description ==
-Bar Restaurant theme is a high quality WordPress theme designed specially for Bars, Pubs and Restaurant websites. It is an easily customizable theme which uses WordPress customizer options for logo, colors etc. Bar Restaurant theme is based on twitter bootstrap hence it looks good in mobile, iPads and all other computer devices.
-Step by step documentation and dummy data is here: https://voilathemes.com/documentation/bar-restaurant/
-
+Bar Restaurant theme is a high quality WordPress theme designed specially for Bars, Pubs and Restaurant websites. It is an easily customizable theme which uses WordPress customizer options for logo, colors etc. Bar Restaurant theme is based on twitter bootstrap hence it looks good in mobile, iPads and all other computer devices. Bar Restaurant theme uses SiteOrigin page builder (a very powerful yet free plugin available at WordPress.org), to easily create variety of page designs suiting your business. Step by step documentation and dummy data is here: https://voilathemes.com/documentation/bar-restaurant
 == Copyright ==
 Bar Restaurant WordPress Theme, Copyright 2020 VoilaThemes
 Bar Restaurant is distributed under the terms of the GNU GPL
@@ -71,7 +69,8 @@ Bar Restaurant is distributed under the terms of the GNU GPL
 * Theme Url Change.
 = 2.0(19th May 2020)
 * Misc Changes.
-
+= 2.0.1 (19th May 2020)
+* Misc Changes.
 ---------------------------------------------------------
 Resources
 ---------------------------------------------------------
