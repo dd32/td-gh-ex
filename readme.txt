@@ -4,7 +4,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexibl
 Requires at least: 4.9
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 2.6
+Stable tag: 2.6.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -110,6 +110,9 @@ Before getting started with your featured images, regenerate them first and you 
 Theme supports Jetpack logo and it can be easily uploaded from Customizer area. It also supports Responsive videos and Infinite Scroll as well. We highly recommend installing JetPack plugin.
 
 == Change log ==
+= 2.6.1 (Released: May 19, 2020) =
+* Bug Fixed: iframe width overflow issue with masonry
+
 = 2.6 (Released: May 19, 2020) =
 * Added: Support for wp_body_open action
 * Bug Fixed: Keyboard navigation accessibility issue
