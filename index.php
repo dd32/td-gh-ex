@@ -12,6 +12,7 @@
  * @package appdetail
  */
 get_header();
+
 global $appdetail_theme_options;
 ?>
 	 <section class="pb-160 blog-inner-page">

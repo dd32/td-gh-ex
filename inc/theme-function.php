@@ -63,18 +63,13 @@ if (!function_exists('appdetail_breadcrumb')) :
     <div class="row">
         <div class="col-md-12">
             <div class="inner-banner-box">
-				<?php if (is_home() || is_front_page()) { ?>						
-							<h2><?php echo esc_html__('Blog', 'appdetail') ?></h2>
-						<?php } else{ ?>
-						<h2><?php the_title(); ?></h2> 
-						<div class="breadcrumbs">
-							<ul>
-								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Home', 'appdetail' ); ?></a></li>
-								<li><?php the_title(); ?></li>
-							</ul>
-						</div>
-						<?php } ?>
-                
+                <h2><?php the_title(); ?></h2>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Home', 'appdetail' ); ?></a></li>
+                        <li><?php the_title(); ?></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

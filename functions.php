@@ -260,3 +260,4 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require_once  get_template_directory()  . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory(). '/inc/hook-tgm.php';
+require_once( trailingslashit( get_template_directory() ) . '/inc/upgrade/class-customize.php' );

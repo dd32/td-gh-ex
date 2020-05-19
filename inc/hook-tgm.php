@@ -26,6 +26,11 @@ if ( ! function_exists( 'appdetail_recommended_plugins' ) ) :
                 'slug'     => 'pricetable-wp',
                 'required' => false,
             ),
+			 array(
+                'name'     => esc_html__( 'Coming Soon Countdown', 'appdetail' ),
+                'slug'     => 'coming-soon-countdown',
+                'required' => false,
+            ),
         );
 
         tgmpa( $plugins );
