@@ -2,8 +2,8 @@
 Contributors: VoilaThemes
 Tags: two-columns, right-sidebar, full-width-template , grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, footer-widgets, theme-options
 Requires at least: 4.0
-Tested up to: 4.8.3
-Stable tag: 1.0.9
+Tested up to: 5.4.1
+Stable tag: 2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bar-restaurant
@@ -13,7 +13,7 @@ Bar Restaurant theme is a high quality WordPress theme designed specially for Ba
 Step by step documentation and dummy data is here: https://voilathemes.com/documentation/bar-restaurant/
 
 == Copyright ==
-Bar Restaurant WordPress Theme, Copyright 2017 VoilaThemes
+Bar Restaurant WordPress Theme, Copyright 2020 VoilaThemes
 Bar Restaurant is distributed under the terms of the GNU GPL
 
 == Installation ==
@@ -63,6 +63,14 @@ Bar Restaurant is distributed under the terms of the GNU GPL
 = 1.0.9(6 Nov 2017)
 * In front page change.
 * main logo image change and added scroll logo.
+= 1.0.10(19 March 2018)
+* Theme Url Change.
+= 1.0.11(11 May 2018)
+* Theme Url Change.
+= 1.0.12(6th July 2018)
+* Theme Url Change.
+= 2.0(19th May 2020)
+* Misc Changes.
 
 ---------------------------------------------------------
 Resources
