@@ -13,30 +13,26 @@
 </main><!-- #main -->
 
 <footer id="page-footer" role="contentinfo">
-    <div class="inner">
-        <div id="site-info">
-        <span class="footer-site-title"> &copy <?php echo date_i18n( esc_html__( 'Y', 'bassist' ) ) ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-        
-        <a href="<?php echo esc_url( __('https://wordpress.org/', 'bassist') ); ?>"><?php  _e( 'Proudly powered by WordPress', 'bassist' ) ; ?></a>
-        </div><!--/site-info-->
-        
-        <?php if (has_nav_menu('social')): ?>
-            <nav id="footer-social-navigation" class="site-navigation social-navigation" role="navigation" aria-label='<?php esc_attr_e( 'Social Menu ', 'bassist' ); ?>' >
-                <?php wp_nav_menu( array(
-                                'theme_location' => 'social',
-                                'container' => 'ul',
-                                'menu_id' => 'footer-social-menu',
-                                'depth'          => 1,
-                                'link_before'    => '<span class="screen-reader-text">',
-                                'link_after'     => '</span>', )); ?>
-            </nav> <!--/social--> 
-        <?php endif ?>
-        
-    </div> <!--/inner-->
+	<div id="site-info">
+	<span class="footer-site-title"> &copy <?php echo date_i18n( esc_html__( 'Y', 'bassist' ) ) ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+	
+	<a href="<?php echo esc_url( __('https://wordpress.org/', 'bassist') ); ?>"><?php  _e( 'Proudly powered by WordPress', 'bassist' ) ; ?></a>
+	</div><!--/site-info-->
+		
+<?php if (has_nav_menu('social')): ?>
+	<nav id="footer-social-navigation" class="site-navigation social-navigation" role="navigation" aria-label='<?php esc_attr_e( 'Social Menu ', 'bassist' ); ?>' >
+		<?php wp_nav_menu( array(
+						'theme_location' => 'social',
+						'container' => 'ul',
+						'menu_id' => 'footer-social-menu',
+						'depth'          => 1,
+						'link_before'    => '<span class="fa" aria-hidden="true"></span><span class="screen-reader-text">',
+						'link_after'     => '</span>', )); ?>
+	</nav> <!--/social--> 
+<?php endif ?>
 </footer> <!--/footer-->
 
 </div><!-- #container -->
-
 <?php wp_footer(); ?>
 </body>
 </html>

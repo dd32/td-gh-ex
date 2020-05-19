@@ -16,7 +16,7 @@
 	bassist_entry_title();
 
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		echo '<span class="featured-post"><i class="fa fa-thumb-tack"></i>' . __( 'Featured', 'bassist' ) . '</span>';
+		echo '<span class="featured-post"><span class="fa fa-thumb-tack"></span>' . __( 'Featured', 'bassist' ) . '</span>';
 	}
 ?>
 	<div class="entry-meta">
@@ -33,13 +33,13 @@
 				if ( 'post' == get_post_type() ) {
 				// Translators: there is a space after "By".
 				print(__('By ', 'bassist'));
-				printf( '<a href="%1$s" rel="author"><i class="fa fa-user" aria-hidden="true"></i>%2$s</a>',
+				printf( '<a href="%1$s" rel="author"><span class="fa fa-user" aria-hidden="true"></span>%2$s</a>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_the_author() );
 				}
 			?>
 		</span><!--.byline -->
-		<?php edit_post_link('<i class="fa fa-pencil" aria-hidden="true"></i>'. __('Edit', 'bassist') ) ?>
+		<?php edit_post_link('<span class="fa fa-pencil" aria-hidden="true"></span>'. __('Edit', 'bassist') ) ?>
 	</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

@@ -14,23 +14,16 @@
 
 get_header(); ?>
 
-<div class="inner flex-container" >
+<div class="flex-container" >
 	<div id="main-content" >
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
-
-			// Include the page content template.
-			if ( is_singular( 'page' ) ) {
-				get_template_part( 'template-parts/content', 'page' );
-			} else {
-				get_template_part( 'template-parts/content', 'single' );
-			}
-		// End of the loop.
-		endwhile;
-		?>
-
+<?php
+	// Start the loop.
+	while ( have_posts() ) : the_post();
+		get_template_part( 'template-parts/content', get_post_type() );
+	// End of the loop.
+	endwhile;
+?>
 	</div><!--/main-content-->
 <?php get_sidebar(); ?>  
-</div><!--/inner-->
+</div><!--/flex-container-->
 <?php get_footer(); ?>

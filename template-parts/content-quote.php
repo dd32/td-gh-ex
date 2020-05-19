@@ -16,7 +16,7 @@
 	bassist_entry_title();
 
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		echo '<span class="featured-post"><i class="fa fa-thumb-tack"></i>' . __( 'Featured', 'bassist' ) . '</span>';
+		echo '<span class="featured-post"><span class="fa fa-thumb-tack"></span>' . __( 'Featured', 'bassist' ) . '</span>';
 	}
 ?>
 	<div class="entry-meta">
@@ -27,7 +27,7 @@
 				bassist_post_format_info();
 			endif;
 		?>
-		<?php edit_post_link('<i class="fa fa-pencil" aria-hidden="true"></i>'. __('Edit', 'bassist') ) ?>
+		<?php edit_post_link('<span class="fa fa-pencil" aria-hidden="true"></span>'. __('Edit', 'bassist') ) ?>
 	</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

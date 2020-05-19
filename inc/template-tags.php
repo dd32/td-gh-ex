@@ -35,7 +35,7 @@ function bassist_entry_footer() { ?>
 	<footer class="entry-footer">
 		<div class="entry-meta">
 		<?php		
-			printf( '<a class="entry-date" href="%1$s" rel="bookmark"><span class="screen-reader-text"> %2$s</span><time datetime="%3$s"><i class="fa fa-clock-o" aria-hidden="true"></i>%4$s</time></a>',
+			printf( '<a class="entry-date" href="%1$s" rel="bookmark"><span class="screen-reader-text"> %2$s</span><time datetime="%3$s"><span class="fa fa-clock-o" aria-hidden="true"></span>%4$s</time></a>',
 			esc_url( get_permalink() ),
 			esc_html( get_the_title() ),
 			esc_attr( get_the_date( 'c' ) ),
@@ -45,12 +45,12 @@ function bassist_entry_footer() { ?>
 			// Translators: used between list items, there is a space after the comma.
 			$tag_list = get_the_tag_list( '', __( ', ', 'bassist' ) );
 			if ( $tag_list ) {
-				echo '<span class="tags-links"><i class="fa fa-tag" aria-hidden="true"></i>' . $tag_list . '</span>';
+				echo '<span class="tags-links"><span class="fa fa-tag" aria-hidden="true"></span>' . $tag_list . '</span>';
 			}
 
 			if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 				<span class="comments-link">
-					<i class="fa fa-comment" aria-hidden="true"></i>
+					<span class="fa fa-comment" aria-hidden="true"></span>
 					<?php bassist_comments_popup_link(); ?>
 				</span>
 		<?php endif; ?>
@@ -106,13 +106,13 @@ function bassist_blog_navigation() {
 	$bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
 	if ( $bassist_theme_options['blog_navigation'] == 'navigation' ) :
 		the_posts_navigation( array(
-			'prev_text' => '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>' .__( 'Older articles', 'bassist' ),
-			'next_text' => __( 'Newer articles', 'bassist' ) . '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>',
+			'prev_text' => '<span class="fa fa-long-arrow-left" aria-hidden="true"></span>' .__( 'Older articles', 'bassist' ),
+			'next_text' => __( 'Newer articles', 'bassist' ) . '<span class="fa fa-long-arrow-right" aria-hidden="true"></span>',
 			) );
 	else:
 		the_posts_pagination( array(
-			'prev_text'			 => '<i class="fa fa-long-arrow-left" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Previous page', 'bassist' ) . '</span>',
-			'next_text'			 => '<span class="screen-reader-text">' . __( 'Next page', 'bassist' ) . '</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i>',
+			'prev_text'			 => '<span class="fa fa-long-arrow-left" aria-hidden="true"></span><span class="screen-reader-text">' . __( 'Previous page', 'bassist' ) . '</span>',
+			'next_text'			 => '<span class="screen-reader-text">' . __( 'Next page', 'bassist' ) . '</span><span class="fa fa-long-arrow-right" aria-hidden="true"></span>',
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bassist' ) . ' </span>',
 		) );
 	endif;
@@ -129,8 +129,8 @@ function bassist_post_navigation() {
 	the_post_navigation( array(
 		'next_text' => 	'<span class="screen-reader-text">' . __( 'Next post:', 'bassist' ) . '</span> ' .
 						'<span class="post-title">%title</span>' .
-						'<i class="meta-nav fa fa-long-arrow-right" aria-hidden="true"></i>',
-		'prev_text' =>  '<i class="meta-nav fa fa-long-arrow-left" aria-hidden="true"></i>' .
+						'<span class="meta-nav fa fa-long-arrow-right" aria-hidden="true"></span>',
+		'prev_text' =>  '<span class="meta-nav fa fa-long-arrow-left" aria-hidden="true"></span>' .
 						'<span class="screen-reader-text">' . __( 'Previous post:', 'bassist' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
 	) );
@@ -145,8 +145,8 @@ if ( ! function_exists( 'bassist_comments_navigation' ) ) :
  */
 function bassist_comments_navigation() {
 	the_comments_navigation( array(
-		'prev_text' => '<i class="fa fa-long-arrow-left"></i> '. __( 'Older', 'bassist' ),
-		'next_text' => __( 'Newer', 'bassist' ) . ' <i class="fa fa-long-arrow-right"></i>',
+		'prev_text' => '<span class="fa fa-long-arrow-left"></span> '. __( 'Older', 'bassist' ),
+		'next_text' => __( 'Newer', 'bassist' ) . ' <span class="fa fa-long-arrow-right"></span>',
 		));
 }
 endif;
@@ -180,34 +180,34 @@ function bassist_post_format_info() {
 	$format_link = get_post_format_link($format);
 	switch ($format) {
 		case 'aside':
-			printf('<a href="%1$s"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-dot-circle-o" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'image':
-			printf('<a href="%1$s"><i class="fa fa-camera" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-camera" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'video':
-			printf('<a href="%1$s"><i class="fa fa-film" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-film" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'quote':
-			printf('<a href="%1$s"><i class="fa fa-quote-right" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-quote-right" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'link':
-			printf('<a href="%1$s"><i class="fa fa-link" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-link" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'gallery':
-			printf('<a href="%1$s"><i class="fa fa-picture-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-picture-o" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'status':
-			printf('<a href="%1$s"><i class="fa fa-commenting-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-commenting-o" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'audio':
-			printf('<a href="%1$s"><i class="fa fa-music" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-music" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;
 		case 'chat':
-			printf('<a href="%1$s"><i class="fa fa-comments-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
+			printf('<a href="%1$s"><span class="fa fa-comments-o" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), esc_html( ucfirst($format) ));
 			break;		
 		default:
-			printf('<a href="%1$s"><i class="fa fa-thumb-tack" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), __('Standard', 'bassist'));
+			printf('<a href="%1$s"><span class="fa fa-thumb-tack" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ), __('Standard', 'bassist'));
 			break;
 		}
 	}
@@ -258,7 +258,7 @@ add_filter( 'excerpt_length', 'bassist_excerpt_length', 999 );
  * Filter the edit comment link.
  */
 function bassist_edit_comment_link() {
-	printf( '<span class="edit-link"><a href="%1$s" class="comment-edit-link"><i class="fa fa-pencil" aria-hidden="true"></i>%2$s</a></span>',
+	printf( '<span class="edit-link"><a href="%1$s" class="comment-edit-link"><span class="fa fa-pencil" aria-hidden="true"></span>%2$s</a></span>',
     	esc_url( get_edit_comment_link() ),
     	esc_html( __('Edit', 'bassist') )
     	);

@@ -18,7 +18,7 @@
 				// Translators: used between list items, there is a space after the comma.
 				$categories_list = get_the_category_list( __( ', ', 'bassist' ) );
 				if ( $categories_list ) {
-					echo '<span class="cat-links"><i class="fa fa-folder-open" aria-hidden="true"></i>' . $categories_list . '</span>';
+					echo '<span class="cat-links"><span class="fa fa-folder-open" aria-hidden="true"></span>' . $categories_list . '</span>';
 				}
 			?>
 	</div><!-- .entry-meta -->
@@ -28,7 +28,7 @@
 
 	if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<span class="featured-post">
-		<i class="fa fa-thumb-tack"></i> <span class="screen-reader-text">' . __( 'Featured', 'bassist' ) . '</span></span>';
+		<span class="fa fa-thumb-tack"></span> <span class="screen-reader-text">' . __( 'Featured', 'bassist' ) . '</span></span>';
 	}
 ?>
 	<div class="entry-meta">
@@ -45,13 +45,13 @@
 				if ( 'post' == get_post_type() ) {
 				// Translators: there is a space after "By".
 				print( __('By ', 'bassist') );
-				printf( '<a href="%1$s" rel="author"><i class="fa fa-user" aria-hidden="true"></i>%2$s</a>',
+				printf( '<a href="%1$s" rel="author"><span class="fa fa-user" aria-hidden="true"></span>%2$s</a>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_the_author() );
 				}
 			?>
 		</span><!--.byline -->
-		<?php edit_post_link('<i class="fa fa-pencil" aria-hidden="true"></i>'. __('Edit', 'bassist') ) ?>
+		<?php edit_post_link('<span class="fa fa-pencil" aria-hidden="true"></span>'. __('Edit', 'bassist') ) ?>
 
 	</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->

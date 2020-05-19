@@ -9,9 +9,8 @@
  */
 
 get_header(); ?>
-<div class="inner flex-container">
-    <div id="main-content">
-    	<div class="small-section">
+<div id="main-content" class="main-content">
+	<div class="featured-articles flex-container">
 	<?php
 		$is_sticky = get_option('sticky_posts');
 		$args = array(	'posts_per_page' => 4,
@@ -29,12 +28,7 @@ get_header(); ?>
 			wp_reset_postdata();
 		endif;
 		?>
-
-
-		</div><!--/small-section-->   
-	</div><!--/main-content-->    
-<?php get_sidebar('sidebar'); ?>
-</div><!--/inner-->
-
+	</div>
+</div><!--/main-content-->
 <?php get_footer(); ?>
 

@@ -17,7 +17,7 @@ $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
 
 get_header(); ?>
 
-<div class="inner flex-container">
+<div class="flex-container">
 	<div id="main-content">
 	<?php
 		if ( have_posts() ) :
@@ -48,8 +48,8 @@ get_header(); ?>
 
 	</div><!--/main-content-->
 
-	<?php get_sidebar(); ?>    
+<?php get_sidebar(); ?>    
 
-</div><!--/inner-->
+</div><!--/flex-container-->
 <?php get_footer(); ?>
 

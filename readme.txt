@@ -3,7 +3,7 @@ Contributors: acalfieri
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Version: 1.0.6.1
+Version: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, blog, entertainment, portfolio

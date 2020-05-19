@@ -9,18 +9,15 @@
  */
 
 get_header(); ?>
-<div class="inner flex-container">
+<div class="flex-container">
 	<div id="main-content">
-		<?php if ( have_posts() ) : ?>
+		<header class="page-header">
+			<h2 class="page-title"><?php printf( __( 'Search Results for:', 'bassist' ) . ' %s', '<span>' .  get_search_query() . '</span>' ); ?></h2>
+		</header><!-- .page-header -->
 
-			<header class="page-header">
-				<h2 class="page-title"><?php printf( __( 'Search Results for:', 'bassist' ).' %s', '<span>' .  get_search_query() . '</span>' ); ?></h2>
-			</header><!-- .page-header -->
-
-			<?php
+<?php 	if ( have_posts() ) :
 			// Start the loop.
 			while ( have_posts() ) : the_post();
-
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
@@ -41,6 +38,6 @@ get_header(); ?>
 		?>
 	</div><!--/main-content-->
 <?php get_sidebar('sidebar'); ?>
-</div><!--/inner-->
+</div><!--/flex-container-->
 <?php get_footer(); ?>
 

@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-<div class="inner flex-container">
+<div class="flex-container">
 	<div id="main-content">
 		<section class="error-404 not-found">
 			<header class="page-header">
@@ -22,7 +22,7 @@ get_header(); ?>
 		
 	</div><!--/main-content-->
 <?php get_sidebar('sidebar'); ?>
-</div><!--/inner-->
+</div><!--/flex-container-->
 <?php get_footer(); ?>
 
 

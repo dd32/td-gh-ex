@@ -9,8 +9,7 @@ $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
 $video_section_title = $bassist_theme_options['video_section_title'];
 ?>
 
-<section id="video-section" class="video-format-section">
-	<div class="inner">
+<section id="videos" class="video-format-section">
 <?php
 	$args = array(  'posts_per_page' => 6,
 					'tax_query' => array(
@@ -50,7 +49,5 @@ $video_section_title = $bassist_theme_options['video_section_title'];
 					__('To fill up this section you have to create some posts, choose the format "video" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Video Section" in the Customizer.', 'bassist') );
 
 		endif; ?>
-	</div><!--/inner-->
-
 </section><!--/video-format-section-->
 

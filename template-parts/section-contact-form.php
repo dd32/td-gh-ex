@@ -10,7 +10,6 @@ $contact_page = $bassist_theme_options['contact_page'];
 ?>
 
 <section id="contact" class="contact-section">
-	<div class="inner">
 <?php
 if ( $contact_page ) :
 	$contact = new WP_Query( array( 'page_id' => $contact_page ) );   
@@ -28,7 +27,6 @@ elseif ( is_customize_preview() ):
 		__('This is the contact section', 'bassist'),
 		__('To fill up this section, create a page with the title "Contact", "Contact me" or something similar and write the shortcode of your preferred contact plugin in the content of the page. You can also add some text before the shortcode. Go to Contact Section Settings in the Customizer and select the page. This section can have a background picture.', 'bassist') );
 endif;
-?>   
-	</div><!--/inner-->
+?>
 </section><!--/contact-section-->
 

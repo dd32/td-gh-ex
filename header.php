@@ -20,6 +20,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?> >
+		<?php wp_body_open(); ?>
 		<div id="container">
 			<header id="masthead" class="site-header" role="banner">
 				<a class="screen-reader-text skip-link" href="#main"><?php _e( 'Skip to content', 'bassist' ); ?></a>
@@ -27,7 +28,7 @@
 				<nav id="main-menu" class="site-navigation main-navigation" role="navigation" aria-label='<?php _e( 'Primary Menu ', 'bassist' ); ?>'>
 					<button id="nav-button" class="menu-toggle">
 						<span class="screen-reader-text"><?php _e( 'Menus', 'bassist' ); ?></span>
-						<i id="nav-icon" class="fa fa-bars" aria-hidden="true"></i>
+						<span id="nav-icon" class="fa fa-bars" aria-hidden="true"></span>
 					</button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'ul', 'menu_class' => 'nav-menu', 'menu_id' => 'nav-menu'  ) ); ?>
 				</nav><!--main-menu-->

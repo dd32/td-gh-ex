@@ -11,7 +11,6 @@ $audio_section_title = $bassist_theme_options['audio_section_title'];
 ?>
 
 <section id="music" class="audio-format-section">
-	<div class="inner">
 <?php
 	$args = array(  'posts_per_page' => 6,
 					'tax_query' => array(
@@ -49,7 +48,5 @@ $audio_section_title = $bassist_theme_options['audio_section_title'];
 					__('To fill up this section you have to create some posts, choose the format "audio" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Audio Section" in the Customizer.', 'bassist') );
 
 		endif; ?>
-	</div><!--/inner-->
-
 </section><!--/audio-format-section-->
 

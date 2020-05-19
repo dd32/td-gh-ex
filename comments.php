@@ -54,7 +54,7 @@ if ( post_password_required() ) {
 				'style'       => 'ol',
 				'short_ping'  => true,
 				'avatar_size' => 34,
-				'reply_text' => '<i class="fa fa-reply" aria-hidden="true"></i>' . __('Reply', 'bassist'),
+				'reply_text' => '<span class="fa fa-reply" aria-hidden="true"></span>' . __('Reply', 'bassist'),
 			) );
 		?>
 	</ol><!-- .comment-list -->
@@ -69,6 +69,6 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form( array( 'cancel_reply_link' => '<i class="fa fa-times" aria-hidden="true"></i><span class="screen-reader-text">'. __('Cancel Reply', 'bassist').'</span>')); ?>
+	<?php comment_form( array( 'cancel_reply_link' => '<span class="fa fa-times" aria-hidden="true"></span><span class="screen-reader-text">'. __('Cancel Reply', 'bassist').'</span>')); ?>
 
 </div><!-- #comments -->

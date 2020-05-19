@@ -15,7 +15,6 @@ $bassist_theme_options = bassist_get_options();
 
 if ( 'page' == get_option( 'show_on_front' ) ):
 	get_header(); ?>
-	<div id="main-content">
 		<?php
 			bassist_parallax('1');
 			if ( $bassist_theme_options['hide_about_section'] == 0 ) :
@@ -49,8 +48,7 @@ if ( 'page' == get_option( 'show_on_front' ) ):
 			if( $bassist_theme_options['hide_contact_section'] == 0 ) :
 				get_template_part('template-parts/section', 'contact-form');
 			endif;
-		?>      
-	</div><!--/main-content-->
+		?>
 
 <?php get_footer(); 
 

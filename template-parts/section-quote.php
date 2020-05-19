@@ -10,8 +10,7 @@ $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
 $quote_section_title = $bassist_theme_options['quote_section_title'];
 ?>
 
-<section id="quotes-section" class="quote-format-section">
-	<div class="inner">
+<section id="quotes" class="quote-format-section">
 <?php
 	$args = array(  'posts_per_page' => 6,
 					'tax_query' => array(
@@ -49,7 +48,5 @@ $quote_section_title = $bassist_theme_options['quote_section_title'];
 					__('To fill up this section you have to create some posts, choose the format "quote" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Quote Section" in the Customizer.', 'bassist') );
 
 		endif; ?>
-	</div><!--/inner-->
-
 </section><!--/quote-format-section-->
 

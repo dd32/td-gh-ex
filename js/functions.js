@@ -11,9 +11,9 @@ _window = $(window);
 
 if (881 > _window.width()) {
 	var dropdownToggle = $('<button />', {'class': 'dropdown-toggle'})
-					.append( $( '<i />', {'class': 'fa fa-caret-right', 'aria-hidden': 'true'}));
+					.append( $( '<span />', {'class': 'fa fa-caret-right', 'aria-hidden': 'true'}));
 } else {
-	var dropdownToggle = $('<i />', {'class': 'fa fa-caret-right', 'aria-hidden': 'true'});
+	var dropdownToggle = $('<span />', {'class': 'fa fa-caret-right', 'aria-hidden': 'true'});
 }
 
 function switchClass (a, b, c) {

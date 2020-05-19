@@ -163,7 +163,7 @@ $wp_customize->add_section( 'audio_section', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[audio_section_title]', array(
-	'default'			=> 'Music',
+	'default'			=> __( 'Music', 'bassist'),
 	'sanitize_callback'	=> 'sanitize_text_field',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
@@ -216,7 +216,7 @@ $wp_customize->add_section( 'video_section', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[video_section_title]', array(
-	'default'			=> 'Videos',
+	'default'			=> __('Videos', 'bassist' ),
 	'sanitize_callback'	=> 'sanitize_text_field',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
@@ -231,7 +231,7 @@ $wp_customize->add_control( 'video_section_title', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[video_section_background_color]', array(
-	'default'			=> '#1258a8',
+	'default'			=> '#145599',
 	'sanitize_callback'	=> 'sanitize_hex_color',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option',
@@ -269,7 +269,7 @@ $wp_customize->add_section( 'image_section', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[image_section_title]', array(
-	'default'			=> 'Images',
+	'default'			=> __( 'Images', 'bassist' ),
 	'sanitize_callback'	=> 'sanitize_text_field',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
@@ -284,7 +284,7 @@ $wp_customize->add_control( 'image_section_title', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[image_section_background_color]', array(
-	'default'			=> '#004f6f',
+	'default'			=> '#0a69a1',
 	'sanitize_callback'	=> 'sanitize_hex_color',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option',
@@ -322,7 +322,7 @@ $wp_customize->add_section( 'quote_section', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[quote_section_title]', array(
-	'default'			=> 'Quotes',
+	'default'			=> __( 'Quotes', 'bassist' ),
 	'sanitize_callback'	=> 'sanitize_text_field',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
@@ -330,14 +330,14 @@ $wp_customize->add_setting( 'bassist_theme_options[quote_section_title]', array(
 
 $wp_customize->add_control( 'quote_section_title', array(
 	'label'			=> __('Title of the Quotes Section', 'bassist'),
-	'description'	=> __('This section shows your posts with format quote.', 'bassist'),
+	'description'	=> __('This section shows your posts with format quote. You can use it for testimonials.', 'bassist'),
 	'section'		=> 'quote_section',
 	'settings'		=> 'bassist_theme_options[quote_section_title]',
 ));
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[quote_section_background_color]', array(
-	'default'			=> '#078587',
+	'default'			=> '#0a80a0',
 	'sanitize_callback'	=> 'sanitize_hex_color',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option',
@@ -456,7 +456,7 @@ $wp_customize->add_control( 'contact_page', array(
 
 //===============================
 $wp_customize->add_setting( 'bassist_theme_options[contact_section_background_color]', array(
-	'default'			=> '#02cc94',
+	'default'			=> '#029aa8',
 	'sanitize_callback'	=> 'sanitize_hex_color',
 	'capability'		=> 'edit_theme_options',
 	'type'				=> 'option',
@@ -684,53 +684,63 @@ function bassist_theme_custom_styling() {
 	$css .= '.about-section { background-color: ' . $about_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance($about_section_background_color) <= 0.324 ) {
-	$css .= '.about-section { color: #eee}' . "\n";
+		$css .= '.about-section { color: #ccc}' . "\n";
+		$css .= '.about-section a { color: #ddd; text-decoration: underline dotted; }' . "\n";
+		$css .= '.about-section a:hover, .about-section a:focus { color: #fff}' . "\n";
 	}
 
 	if ( $audio_section_background_color )
 	$css .= '.audio-format-section { background-color: ' . $audio_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance($audio_section_background_color) <= 0.324 ) {
-	$css .= '.audio-format-section, .audio-posts .entry-title a, .audio-posts .entry-meta, .audio-posts .entry-meta a, .audio-posts .wp-block-audio figcaption { color: #eee}' . "\n";
-	$css .= '.audio-posts .entry-meta a:hover, .audio-posts .entry-meta a:focus { color: #ccc}' . "\n";
-	$css .= '.audio-posts .entry-title a:hover, .audio-posts .entry-title a:focus { color: #ccc}' . "\n";
+		$css .= '.audio-format-section, .audio-posts .entry-title a, .audio-posts .entry-meta, .audio-posts .entry-meta a, .audio-posts .wp-block-audio figcaption { color: #ddd}' . "\n";
+		$css .= '.audio-posts .entry-meta a:hover, .audio-posts .entry-meta a:focus { color: #fff}' . "\n";
+		$css .= '.audio-posts .entry-title a:hover, .audio-posts .entry-title a:focus { color: #fff}' . "\n";
+		$css .= '.audio-posts .entry-content a { color: #ddd; text-decoration: underline dotted; }' . "\n";
+		$css .= '.audio-posts .entry-content a:hover, .audio-posts .entry-content a:focus { color: #fff}' . "\n";
 	}
 
 	if ( $video_section_background_color )
-	$css .= '.video-format-section { background-color: ' . $video_section_background_color . '}' . "\n";
+		$css .= '.video-format-section { background-color: ' . $video_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance($video_section_background_color) <= 0.324 ) {
-	$css .= '.video-format-section, .video-posts .entry-title a, .video-posts .entry-meta, .video-posts .entry-meta a { color: #ccc}' . "\n";
-	$css .= '.video-posts .entry-meta a:hover, .video-posts .entry-meta a:focus { color: #fff}' . "\n";
-	$css .= '.video-posts .entry-title a:hover, .video-posts .entry-title a:focus { color: #fff}' . "\n";
-}
+		$css .= '.video-format-section, .video-posts .entry-title a, .video-posts .entry-meta, .video-posts .entry-meta a { color: #ddd}' . "\n";
+		$css .= '.video-posts .entry-meta a:hover, .video-posts .entry-meta a:focus { color: #fff}' . "\n";
+		$css .= '.video-posts .entry-title a:hover, .video-posts .entry-title a:focus { color: #fff}' . "\n";
+		$css .= '.video-posts .entry-content a { color: #ddd; text-decoration: underline dotted; }' . "\n";
+		$css .= '.video-posts .entry-content a:hover, .video-posts .entry-content a:focus { color: #fff}' . "\n";
+	}
 
 	if ( $image_section_background_color )
-	$css .= '.image-format-section { background-color: ' . $image_section_background_color . '}' . "\n";
+		$css .= '.image-format-section { background-color: ' . $image_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance( $image_section_background_color ) <= 0.324 ) {
-	$css .= '.image-format-section, .image-posts .entry-title a, .image-posts .entry-meta, .image-posts .entry-meta a, .image-posts .wp-caption .wp-caption-text, .image-posts .wp-block-image figcaption { color: #ccc}' . "\n";
-	$css .= '.image-posts .entry-meta a:hover, .image-posts .entry-meta a:focus { color: #eee}' . "\n";
-	$css .= '.image-posts .entry-title a:hover, .image-posts .entry-title a:focus { color: #eee}' . "\n";
+		$css .= '.image-format-section, .image-posts .entry-title a, .image-posts .entry-meta, .image-posts .entry-meta a, .image-posts .wp-caption .wp-caption-text, .image-posts .wp-block-image figcaption { color: #ddd}' . "\n";
+		$css .= '.image-posts .entry-meta a:hover, .image-posts .entry-meta a:focus { color: #fff}' . "\n";
+		$css .= '.image-posts .entry-title a:hover, .image-posts .entry-title a:focus { color: #fff}' . "\n";
+		$css .= '.image-posts .entry-content a { color: #ddd; text-decoration: underline dotted; }' . "\n";
+		$css .= '.image-posts .entry-content a:hover, .image-posts .entry-content a:focus { color: #fff}' . "\n";
 	}
 
 	if ( $quote_section_background_color )
-	$css .= '.quote-format-section { background-color: ' . $quote_section_background_color . '}' . "\n";
+		$css .= '.quote-format-section { background-color: ' . $quote_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance( $quote_section_background_color ) <= 0.324 ) {
-		$css .= '.quote-format-section, .quote-posts .entry-title a, .quote-posts .entry-meta, .quote-posts .entry-meta a { color: #ccc}' . "\n";
-		$css .= '.quote-posts .wp-block-quote, .quote-posts blockquote { color: #eee}' . "\n";
+		$css .= '.quote-format-section, .quote-posts .entry-title a, .quote-posts .entry-meta, .quote-posts .entry-meta a { color: #ddd}' . "\n";
+		$css .= '.quote-posts .wp-block-quote, .quote-posts blockquote { color: #fff}' . "\n";
 		$css .= '.quote-posts .wp-block-quote cite, .quote-posts blockquote cite, .quote-posts blockquote cite a { color: #ddd}' . "\n";
-		$css .= '.quote-posts .entry-meta a:hover, .quote-posts .entry-meta a:focus { color: #eee}' . "\n";
-		$css .= '.quote-posts .entry-title a:hover, .quote-posts .entry-title a:focus { color: #eee}' . "\n";
-		$css .= '.quote-posts blockquote cite a:hover, .quote-posts blockquote cite a:focus { color: #eee}' . "\n";
+		$css .= '.quote-posts .entry-meta a:hover, .quote-posts .entry-meta a:focus { color: #fff}' . "\n";
+		$css .= '.quote-posts .entry-title a:hover, .quote-posts .entry-title a:focus { color: #fff}' . "\n";
+		$css .= '.quote-posts .entry-content a { color: #ddd; text-decoration: underline dotted; }' . "\n";
+		$css .= '.quote-posts .entry-content a:hover, .quote-posts .entry-content a:focus { color: #fff}' . "\n";
+		$css .= '.quote-posts blockquote cite a:hover, .quote-posts blockquote cite a:focus { color: #fff}' . "\n";
 	}
 
 	if ( $contact_section_background_color )
-	$css .= '.contact-section { background-color: ' . $contact_section_background_color . '}' . "\n";
+		$css .= '.contact-section { background-color: ' . $contact_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance( $contact_section_background_color ) <= 0.324 )
-	$css .= '.contact-section { color: #ccc}' . "\n";
+		$css .= '.contact-section { color: #ddd}' . "\n";
 
 	if ( $contact_section_background_image ) {
 		$css .= '.contact-section { background-image: url(' . $contact_section_background_image . ')}' . "\n";
@@ -740,7 +750,7 @@ function bassist_theme_custom_styling() {
 	// CSS styles
 	if ( isset( $css ) && $css != '' ) {
 		$css = strip_tags( $css );
-		$css = "<!--Custom Styling-->\n<style media=\"screen\" type=\"text/css\">\n" . esc_html($css) . "</style>\n";
+		$css = "<!--Custom Styling-->\n<style media=\"screen\" type=\"text/css\">\n" . esc_html( $css ) . "</style>\n";
 		echo $css;
 	}
 }
@@ -789,16 +799,16 @@ function bassist_get_option_defaults() {
 		'about_section_background_color' => '#aa0000',
 		'hide_about_section' => false,
 		'audio_section_background_color' => '#971598',
-		'audio_section_title' => 'Music',
+		'audio_section_title' => __( 'Music', 'bassist' ),
 		'hide_audio_section' => false,
-		'video_section_background_color' => '#1258a8',
-		'video_section_title' => 'Videos',
+		'video_section_background_color' => '#145599',
+		'video_section_title' => __( 'Videos', 'bassist' ),
 		'hide_video_section' => false,
-		'image_section_background_color' => '#004f6f',
-		'image_section_title' => 'Images',
+		'image_section_background_color' => '#0a69a1',
+		'image_section_title' => __( 'Images', 'bassist' ),
 		'hide_image_section' => false,
-		'quote_section_background_color' => '#078587',
-		'quote_section_title' => 'Quotes',
+		'quote_section_background_color' => '#0a80a0',
+		'quote_section_title' => __( 'Quotes', 'bassist' ),
 		'hide_quote_section' => false,
 		'about_page' => '',
 		'contributors_page' => '',
@@ -808,7 +818,7 @@ function bassist_get_option_defaults() {
 		'parallax_background_image_2' => '',
 		'parallax_background_image_3' => '',
 		'parallax_background_image_4' => '',
-		'contact_section_background_color' => '#02cc94',
+		'contact_section_background_color' => '#029aa8',
 		'contact_section_background_image' => '',
 		'contact_section_text_color' => '#000000',
 		'contact_page' => '',

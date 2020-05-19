@@ -10,7 +10,6 @@ $about_page = $bassist_theme_options['about_page'];
 ?>
 
 <section id="about" class="about-section">
-	<div class="inner">
 <?php
 if ( $about_page) :
 	$args = array(
@@ -34,5 +33,4 @@ elseif ( is_customize_preview() ) :
 		__('To fill up this section, create a page with the title "About", "About me" or something similar and select the page with the dropdown selector in the Customizer. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide About Section" in the Customizer.', 'bassist') );
 endif;
 ?>
-	</div><!--/inner-->
 </section><!--/about-section-->
