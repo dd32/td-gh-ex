@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -585,7 +585,8 @@ ul.products li.product .tinvwl_add_to_wishlist_button,
 ul.woocommerce-thankyou-order-details li,
 .woocommerce-MyAccount-navigation ul li,
 .attesa-infinite-button-container .attesa-infinite-scroll-more-button,
-.awp-ajax-search.shortcode .awp-search-results ul li img {
+.awp-ajax-search.shortcode .awp-search-results ul li img,
+ul.attesa-categories-list {
 	border-radius: 5px;
 }
 #wp-calendar > caption {
@@ -595,15 +596,6 @@ ul.woocommerce-thankyou-order-details li,
 	-moz-border-radius-topright: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-}
-.woocommerce .wooImage .entry-wooImage img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-	width: 100%;
-}
-.attesa_woocommerce_mini_cart .widget_shopping_cart_content {
-	border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 /*--------------------------------------------------------------
 # Forms
@@ -1188,7 +1180,6 @@ body.yesOpenPopupMenu .menu-full-screen-icon .icon-full-screen .square-full-scre
 .site-main .posts-navigation,
 .site-main .post-navigation,
 .site-main .navigation.pagination,
-.site-main .woocommerce-pagination,
 .authorAbout,
 .relatedBox {
 	overflow: hidden;
@@ -1223,16 +1214,13 @@ body.yesOpenPopupMenu .menu-full-screen-icon .icon-full-screen .square-full-scre
 .navigation.pagination .nav-links {
 	text-align: center;
 }
-.navigation.pagination .nav-links .prev,
-.woocommerce-pagination > ul.page-numbers li a.prev {
+.navigation.pagination .nav-links .prev {
 	float: left;
 }
-.navigation.pagination .nav-links .next,
-.woocommerce-pagination > ul.page-numbers li a.next {
+.navigation.pagination .nav-links .next {
 	float: right;
 }
 .navigation.pagination .nav-links a,
-.woocommerce-pagination > ul.page-numbers li a,
 .page-links a {
     padding: 2px 15px;
     display: inline-block;
@@ -1242,7 +1230,6 @@ body.yesOpenPopupMenu .menu-full-screen-icon .icon-full-screen .square-full-scre
     transition: background-color .3s ease-in-out;
 }
 .navigation.pagination .nav-links span.current,
-.woocommerce-pagination > ul.page-numbers li span,
 .page-links .current {
 	display: inline-block;
     padding: 1px 15px;
@@ -1481,40 +1468,25 @@ aside ul li:first-child {
 .widget.widget_nav_menu li.attesaMenuButton {
 	padding: 0 10px;
 }
-aside ul.menu ul.sub-menu,
-aside ul.product-categories ul.children {
+aside ul.menu ul.sub-menu {
 	display: none;
 	padding-left: 1.5em;
 }
-aside ul.menu li,
-aside ul.product-categories li {
+aside ul.menu li {
 	position: relative;
     padding: 0;
 }
-aside ul.menu li a,
-aside ul.product-categories li a {
+aside ul.menu li a {
     padding: 0.5em 0;
 	display: inline-block;
 }
-aside ul.product-categories li a:before {
-	font-family: "Font Awesome 5 Free";
-	content: "\f111";
-    padding-right: 0.5em;
-    float: left;
-	font-weight: 400;
-}
-aside ul.product-categories li.current-cat a:before {
-	font-weight: 900;
-}
-aside ul.menu .indiContainer,
-aside ul.product-categories .indiContainer {
+aside ul.menu .indiContainer {
 	position: absolute;
     display: block;
     top: 0;
     right: 0;
 }
-aside ul.menu .indicatorBar,
-aside ul.product-categories .indicatorBar {
+aside ul.menu .indicatorBar {
 	position: absolute;
     right: 0;
     top: 50%;
@@ -1525,13 +1497,11 @@ aside ul.product-categories .indicatorBar {
     font-family: "Font Awesome 5 Free";
 	transform: translateY(-50%);
 }
-aside ul.menu .indicatorBar:before,
-aside ul.product-categories .indicatorBar:before {
+aside ul.menu .indicatorBar:before {
 	content: "\f107";
 	font-weight: 900;
 }
-aside ul.menu .indicatorBar.yesOpenBar:before,
-aside ul.product-categories .indicatorBar.yesOpenBar:before {
+aside ul.menu .indicatorBar.yesOpenBar:before {
 	content: "\f106";
 	font-weight: 900;
 }
@@ -1621,9 +1591,7 @@ aside ul.product-categories .indicatorBar.yesOpenBar:before {
 	font-size: 13px;
 }
 /* Search widget */
-.widget.widget_search input[type="search"],
-.widget.woocommerce.widget_product_search input[type="search"],
-.woocommerce #content form.cart .quantity input[type="number"] {
+.widget.widget_search input[type="search"] {
 	width: 68%;
     display: inline-block;
     -webkit-appearance: none;
@@ -1635,9 +1603,7 @@ aside ul.product-categories .indicatorBar.yesOpenBar:before {
 	float: left;
 	height: 40px;
 }
-.widget.widget_search input[type="submit"],
-.widget.woocommerce.widget_product_search button,
-.woocommerce #content form.cart .button {
+.widget.widget_search input[type="submit"] {
 	width: 32%;
     display: inline-block;
     border-bottom-left-radius: 0 !important;
@@ -2052,8 +2018,6 @@ footer.entry-footer .read-more span {
 	display: inline-block;
 }
 .post-thumbnail img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage .entry-wooImage img,
-.edd_downloads_list .edd_download .edd_download_inner .edd_download_image img,
 .relatedBox .theImgRelated .blockRelatedImg img,
 .attesa-post-slider-single .attesa-post-slider-image img,
 .attesa-portfolio-single .attesa-portfolio-image img {
@@ -2065,8 +2029,6 @@ footer.entry-footer .read-more span {
     transition: filter .2s ease-in-out;
 }
 .post-thumbnail.hover_blur img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur .entry-wooImage img,
-.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_blur img,
 .relatedBox .theImgRelated .blockRelatedImg.hover_blur img,
 .attesa-post-slider-single .attesa-post-slider-image.hover_blur img,
 .attesa-portfolio-single .attesa-portfolio-image.hover_blur img {
@@ -2075,12 +2037,6 @@ footer.entry-footer .read-more span {
 .post-thumbnail.hover_blur:hover img,
 .post-thumbnail.hover_blur:focus img,
 .post-thumbnail.hover_blur:active img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur:hover .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur:focus .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur:active .entry-wooImage img,
-.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_blur img,
-.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_blur img,
-.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_blur img,
 .relatedBox .theImgRelated:hover .blockRelatedImg.hover_blur img,
 .relatedBox .theImgRelated:focus .blockRelatedImg.hover_blur img,
 .relatedBox .theImgRelated:active .blockRelatedImg.hover_blur img,
@@ -2093,8 +2049,6 @@ footer.entry-footer .read-more span {
 	filter:blur(3px);
 }
 .post-thumbnail.hover_grayscale img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale .entry-wooImage img,
-.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_grayscale img,
 .relatedBox .theImgRelated .blockRelatedImg.hover_grayscale img,
 .attesa-post-slider-single .attesa-post-slider-image.hover_grayscale img,
 .attesa-portfolio-single .attesa-portfolio-image.hover_grayscale img {
@@ -2103,12 +2057,6 @@ footer.entry-footer .read-more span {
 .post-thumbnail.hover_grayscale:hover img,
 .post-thumbnail.hover_grayscale:focus img,
 .post-thumbnail.hover_grayscale:active img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale:hover .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale:focus .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale:active .entry-wooImage img,
-.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_grayscale img,
-.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_grayscale img,
-.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_grayscale img,
 .relatedBox .theImgRelated:hover .blockRelatedImg.hover_grayscale img,
 .relatedBox .theImgRelated:focus .blockRelatedImg.hover_grayscale img,
 .relatedBox .theImgRelated:active .blockRelatedImg.hover_grayscale img,
@@ -2121,8 +2069,6 @@ footer.entry-footer .read-more span {
 	filter:grayscale(100%);
 }
 .post-thumbnail.hover_invert img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert .entry-wooImage img,
-.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_invert img,
 .relatedBox .theImgRelated .blockRelatedImg.hover_invert img,
 .attesa-post-slider-single .attesa-post-slider-image.hover_invert img,
 .attesa-portfolio-single .attesa-portfolio-image.hover_invert img {
@@ -2131,12 +2077,6 @@ footer.entry-footer .read-more span {
 .post-thumbnail.hover_invert:hover img,
 .post-thumbnail.hover_invert:focus img,
 .post-thumbnail.hover_invert:active img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert:hover .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert:focus .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert:active .entry-wooImage img,
-.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_invert img,
-.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_invert img,
-.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_invert img,
 .relatedBox .theImgRelated:hover .blockRelatedImg.hover_invert img,
 .relatedBox .theImgRelated:focus .blockRelatedImg.hover_invert img,
 .relatedBox .theImgRelated:active .blockRelatedImg.hover_invert img,
@@ -2149,8 +2089,6 @@ footer.entry-footer .read-more span {
 	filter:invert(100%);
 }
 .post-thumbnail.hover_sepia img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia .entry-wooImage img,
-.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_sepia img,
 .relatedBox .theImgRelated .blockRelatedImg.hover_sepia img,
 .attesa-post-slider-single .attesa-post-slider-image.hover_sepia img,
 .attesa-portfolio-single .attesa-portfolio-image.hover_sepia img {
@@ -2159,12 +2097,6 @@ footer.entry-footer .read-more span {
 .post-thumbnail.hover_sepia:hover img,
 .post-thumbnail.hover_sepia:focus img,
 .post-thumbnail.hover_sepia:active img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia:hover .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia:focus .entry-wooImage img,
-.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia:active .entry-wooImage img,
-.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_sepia img,
-.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_sepia img,
-.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_sepia img,
 .relatedBox .theImgRelated:hover .blockRelatedImg.hover_sepia img,
 .relatedBox .theImgRelated:focus .blockRelatedImg.hover_sepia img,
 .relatedBox .theImgRelated:active .blockRelatedImg.hover_sepia img,
@@ -2662,6 +2594,24 @@ body.admin-bar #tertiary.widget-area {
 }
 body.single.single-docs #primary.content-area {
     width: 100%;
+}
+/* QR Code shortcode */
+.attesa-extra-qrcode {
+	display: inline-block;
+}
+.attesa-extra-qrcode.center {
+	display: block;
+    clear: both;
+    margin: .5em auto;
+    text-align: center;
+}
+.attesa-extra-qrcode.left {
+	float: left;
+    margin: 0 .5em .5em 0;
+}
+.attesa-extra-qrcode.right {
+	float: right;
+    margin: 0 0 .5em .5em;
 }
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -3196,6 +3146,7 @@ object {
 --------------------------------------------------------------*/
 body.with_fa4 blockquote::before,
 body.with_fa4 .main-navigation li a:not(:last-child):after,
+body.with_fa4 ul.attesa-categories-list li a:not(:last-child):after,
 body.with_fa4 aside ul.product-categories li a:before,
 body.with_fa4 aside ul.menu .indicatorBar,
 body.with_fa4 aside ul.product-categories .indicatorBar,
@@ -3228,6 +3179,7 @@ body.with_fa4.woocommerce ul.products li.product a.compare:before,
 body.with_fa4 .widget.widget_edd_cart_widget li.edd-cart-item:before,
 body.with_fa4 .widget.widget_edd_categories_tags_widget li:before,
 body.with_fa4 .main-navigation ul li .indicator:before,
+body.with_fa4 ul.attesa-categories-list li .indicator:before,
 body.with_fa4 aside ul.product-categories li a:before {
 	font-family: "FontAwesome";
 	font-weight: 400;

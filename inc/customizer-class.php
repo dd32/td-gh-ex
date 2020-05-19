@@ -74,7 +74,7 @@ if( class_exists( 'WP_Customize_Control' ) ):
 					<?php }
 					$multi_values = !is_array( $this->value() ) ? explode( ',', $this->value() ) : $this->value();
 					echo '<ul class="attesa-multiple-checkbox '.esc_attr($this->type).'">';
-					$checkExcludedType = array('toShowShare', 'toShowFooterCallout');
+					$checkExcludedType = array('toShowShare', 'toShowFooterCallout', 'toShowCategories');
 					if (!in_array($this->type, $checkExcludedType)):
 					?>
 						<li class="attesaToShow entire">

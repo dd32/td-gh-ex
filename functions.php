@@ -98,7 +98,7 @@ if ( ! function_exists( 'attesa_setup' ) ) :
 		) );
 
 		// Add support for responsive embedded content.
-		add_theme_support( 'responsive-embeds' );		
+		add_theme_support( 'responsive-embeds' );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -220,13 +220,13 @@ add_action( 'widgets_init', 'attesa_widgets_init' );
  */
 function attesa_scripts() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	wp_enqueue_style( 'attesa-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
 	if ( class_exists( 'WooCommerce' ) ) {
 		wp_enqueue_style( 'attesa-woocommerce', get_template_directory_uri() .'/css/third/woocommerce'.$min.'.css', array(), wp_get_theme()->get('Version'));
 	}
 	if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 		wp_enqueue_style( 'attesa-edd', get_template_directory_uri() .'/css/third/edd'.$min.'.css', array(), wp_get_theme()->get('Version'));
 	}
+	wp_enqueue_style( 'attesa-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
 	// Remove FontAwesome style from plugins
 	wp_deregister_style( 'font-awesome' );
 	wp_deregister_style( 'fontawesome' );

@@ -208,7 +208,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				ul.woocommerce-thankyou-order-details li,
 				.woocommerce-MyAccount-navigation ul li,
 				.attesa-infinite-button-container .attesa-infinite-scroll-more-button,
-				.awp-ajax-search.shortcode .awp-search-results ul li img {
+				.awp-ajax-search.shortcode .awp-search-results ul li img,
+				ul.attesa-categories-list {
 					border-radius: '.intval($borderRadius).'px;
 				}
 				#wp-calendar > caption {
@@ -330,7 +331,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				$attesa_custom_css .= '
 				.main-navigation li,
 				.main-navigation-popup li,
-				.site-social-header a {
+				.site-social-header a,
+				ul.attesa-categories-list li {
 					font-size: '.esc_html($mainmenu_font_size).';
 				}';
 			}
@@ -782,7 +784,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			}
 			@media all and (max-width: 1025px) {
 				.main-navigation ul ul a,
-				.main-navigation ul li .indicator:before {
+				.main-navigation ul li .indicator:before,
+				ul.attesa-categories-list li a {
 					color: '.esc_html($generalTextColor).' !important;
 				}
 			}';
@@ -843,7 +846,9 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				color: '.esc_html($generalBackgroundColor).' !important;
 			}
 			@media all and (max-width: 1025px) {
-				.attesa-main-menu-container {
+				.attesa-main-menu-container,
+				.attesa-categories-list-container,
+				.attesa-categories-list-container ul.attesa-categories-list {
 					background-color: '.esc_html($generalBackgroundColor).';
 				}
 				.main-navigation >div ul li.attesaMenuButton a,
@@ -893,7 +898,10 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-breadcrumbs,
 			.rank-math-breadcrumb,
 			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
-			.wp-block-image {
+			.wp-block-image,
+			ul.attesa-categories-list,
+			.attesa-close-blog-categories-menu,
+			ul.attesa-categories-list ul {
 				background-color: '.esc_html($alternativeBackgroundColor).';
 			}
 			.tagcloud a,
@@ -932,7 +940,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			#edd_sl_license_sites thead th,
 			body.edd-page legend,
 			.site-social-widget .attesa-social,
-			.woocommerce-MyAccount-navigation ul li.is-active {
+			.woocommerce-MyAccount-navigation ul li.is-active,
+			ul.attesa-categories-list > li > a:before {
 				background-color: '.esc_html($generalBorderColor).';
 			}
 			input[type="text"],
@@ -1010,7 +1019,11 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.wp-block-image,
 			ul.woocommerce-thankyou-order-details li,
 			.woocommerce-MyAccount-navigation ul li,
-			.awp-ajax-search.shortcode .awp-search-results ul li {
+			.awp-ajax-search.shortcode .awp-search-results ul li,
+			ul.attesa-categories-list,
+			ul.attesa-categories-list ul,
+			ul.attesa-categories-list ul a,
+			.attesa-close-blog-categories-menu {
 				border-color: '.esc_html($generalBorderColor).';
 			}
 			.star-rating:before {
@@ -1020,7 +1033,10 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.main-navigation li,
 				.main-navigation ul li .indicator,
 				.main-navigation > div > ul > li > ul.sub-menu,
-				.attesa-main-menu-container {
+				.attesa-main-menu-container,
+				ul.attesa-categories-list li,
+				ul.attesa-categories-list li .indicator,
+				ul.attesa-categories-list ul.children {
 					border-color: '.esc_html($generalBorderColor).';
 				}
 			}';

@@ -22,7 +22,7 @@
 			});
 		});
 		// Multiple checkbox control
-		$( 'ul.toShowClassic li.attesaToShow input[type="checkbox"], ul.toShowPush li.attesaToShow input[type="checkbox"], ul.toShowFooter li.attesaToShow input[type="checkbox"], ul.toShowShare li.attesaToShow input[type="checkbox"], ul.toShowFooterCallout li.attesaToShow input[type="checkbox"], ul.toShowContact li.attesaToShow input[type="checkbox"]' ).on( 'change', function() {
+		$( 'ul.toShowClassic li.attesaToShow input[type="checkbox"], ul.toShowPush li.attesaToShow input[type="checkbox"], ul.toShowFooter li.attesaToShow input[type="checkbox"], ul.toShowShare li.attesaToShow input[type="checkbox"], ul.toShowFooterCallout li.attesaToShow input[type="checkbox"], ul.toShowContact li.attesaToShow input[type="checkbox"], ul.toShowCategories li.attesaToShow input[type="checkbox"]' ).on( 'change', function() {
 			var checkbox_values = $( this ).parents( '.customize-control' ).find( 'input[type="checkbox"]:checked' ).map(
 				function() {
 					return this.value;

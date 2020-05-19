@@ -1,6 +1,46 @@
 /*--------------------------------------------------------------
 ## Attesa EDD Style
 --------------------------------------------------------------*/
+.edd_downloads_list .edd_download .edd_download_inner .edd_download_image img {
+	width: 100%;
+    display: block;
+	-o-transition: filter .2s ease-in-out;
+    -moz-transition: filter .2s ease-in-out;
+    -webkit-transition: filter .2s ease-in-out;
+    transition: filter .2s ease-in-out;
+}
+.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_blur img {
+	filter:blur(0px);
+}
+.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_blur img,
+.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_blur img,
+.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_blur img {
+	filter:blur(3px);
+}
+.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_grayscale img {
+	filter:grayscale(0%);
+}
+.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_grayscale img,
+.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_grayscale img,
+.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_grayscale img {
+	filter:grayscale(100%);
+}
+.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_invert img {
+	filter:invert(0%);
+}
+.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_invert img,
+.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_invert img,
+.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_invert img {
+	filter:invert(100%);
+}
+.edd_downloads_list .edd_download .edd_download_inner .edd_download_image.hover_sepia img {
+	filter:sepia(0%);
+}
+.edd_downloads_list .edd_download:hover .edd_download_inner .edd_download_image.hover_sepia img,
+.edd_downloads_list .edd_download:focus .edd_download_inner .edd_download_image.hover_sepia img,
+.edd_downloads_list .edd_download:active .edd_download_inner .edd_download_image.hover_sepia img {
+	filter:sepia(100%);
+}
 .cartedd-button {
 	float: right;
 	padding: 0 0.5em;

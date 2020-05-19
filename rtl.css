@@ -135,7 +135,8 @@ header.site-header .site-branding.menuposition_right {
     float: right;
 }
 .widget.widget_categories li:before,
-.widget.widget_recent_comments li:before {
+.widget.widget_recent_comments li:before,
+aside ul.product-categories li a:before {
     padding-right: 0;
 	padding-left: 0.5em;
     float: right;

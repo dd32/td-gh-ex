@@ -1,6 +1,152 @@
 /*--------------------------------------------------------------
 ## Attesa WooCommerce Style
 --------------------------------------------------------------*/
+.woocommerce .wooImage .entry-wooImage img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	width: 100%;
+}
+.attesa_woocommerce_mini_cart .widget_shopping_cart_content {
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.site-main .woocommerce-pagination {
+	overflow: hidden;
+	margin: 3em 0;
+    padding-bottom: 3em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+.woocommerce-pagination > ul.page-numbers li a.prev {
+	float: left;
+}
+.woocommerce-pagination > ul.page-numbers li a.next {
+	float: right;
+}
+.woocommerce-pagination > ul.page-numbers li a {
+    padding: 2px 15px;
+    display: inline-block;
+    -o-transition: background-color .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+}
+.woocommerce-pagination > ul.page-numbers li span {
+	display: inline-block;
+    padding: 1px 15px;
+    border-width: 1px;
+    border-style: solid;
+	font-weight: 700;
+}
+.widget.woocommerce.widget_product_search input[type="search"],
+.woocommerce #content form.cart .quantity input[type="number"] {
+	width: 68%;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+	border-right-width: 0;
+    padding: 4px 15px;
+    line-height: 1;
+	float: left;
+	height: 40px;
+}
+.widget.woocommerce.widget_product_search button,
+.woocommerce #content form.cart .button {
+	width: 32%;
+    display: inline-block;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+	float: right;
+	height: 40px;
+}
+aside ul.product-categories ul.children {
+	display: none;
+	padding-left: 1.5em;
+}
+aside ul.product-categories li {
+	position: relative;
+    padding: 0;
+}
+aside ul.product-categories li a {
+    padding: 0.5em 0;
+	display: inline-block;
+}
+aside ul.product-categories li a:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f111";
+    padding-right: 0.5em;
+    float: left;
+	font-weight: 400;
+}
+aside ul.product-categories li.current-cat a:before {
+	font-weight: 900;
+}
+aside ul.product-categories .indiContainer {
+	position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+}
+aside ul.product-categories .indicatorBar {
+	position: absolute;
+    right: 0;
+    top: 50%;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Font Awesome 5 Free";
+	transform: translateY(-50%);
+}
+aside ul.product-categories .indicatorBar:before {
+	content: "\f107";
+	font-weight: 900;
+}
+aside ul.product-categories .indicatorBar.yesOpenBar:before {
+	content: "\f106";
+	font-weight: 900;
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur .entry-wooImage img {
+	filter:blur(0px);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur:hover .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur:focus .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_blur:active .entry-wooImage img {
+	filter:blur(3px);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale .entry-wooImage img {
+	filter:grayscale(0%);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale:hover .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale:focus .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_grayscale:active .entry-wooImage img {
+	filter:grayscale(100%);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert .entry-wooImage img {
+	filter:invert(0%);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert:hover .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert:focus .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_invert:active .entry-wooImage img {
+	filter:invert(100%);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia .entry-wooImage img {
+	filter:sepia(0%);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia:hover .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia:focus .entry-wooImage img,
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage.hover_sepia:active .entry-wooImage img {
+	filter:sepia(100%);
+}
+.woocommerce ul.products >li:not(.attesa-has-gallery) .wooImage .entry-wooImage img {
+	width: 100%;
+    display: block;
+	-o-transition: filter .2s ease-in-out;
+    -moz-transition: filter .2s ease-in-out;
+    -webkit-transition: filter .2s ease-in-out;
+    transition: filter .2s ease-in-out;
+}
 .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single {
     height: 40px;
     border-style: solid;
