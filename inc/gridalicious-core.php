@@ -237,19 +237,6 @@ add_action( 'wp_enqueue_scripts', 'gridalicious_scripts' );
  *
  * @since Gridalicious 0.1
  */
-function gridalicious_enqueue_metabox_scripts() {
-    //Scripts
-	wp_enqueue_script( 'gridalicious-metabox', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/gridalicious-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
-
-	//CSS Styles
-	wp_enqueue_style( 'gridalicious-metabox-tabs', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/gridalicious-metabox-tabs.css' );
-}
-add_action( 'admin_print_scripts-post-new.php', 'gridalicious_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-post.php', 'gridalicious_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-page-new.php', 'gridalicious_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-page.php', 'gridalicious_enqueue_metabox_scripts', 11 );
-
-
 /**
  * Default Options.
  */

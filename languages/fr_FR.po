@@ -1,11 +1,11 @@
-# Copyright (C) 2015 Catch Themes
+# Copyright (C) 2015-2020 Catch Themes
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-10-26 16:26+0545\n"
-"PO-Revision-Date: 2018-10-26 16:26+0545\n"
+"POT-Creation-Date: 2020-05-19 15:23-0700\n"
+"PO-Revision-Date: 2020-05-19 15:23-0700\n"
 "Last-Translator: Laurent DURETZ <laurent@duretz.net>\n"
 "Language-Team: Laurent DURETZ <laurent@duretz.net>\n"
 "Language: fr_FR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
@@ -99,8 +99,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Pages :"
 
-#: ../content-page.php:35 ../inc/gridalicious-core.php:521
-#: ../inc/gridalicious-core.php:540 ../inc/gridalicious-core.php:666
+#: ../content-page.php:35 ../inc/gridalicious-core.php:508
+#: ../inc/gridalicious-core.php:527 ../inc/gridalicious-core.php:653
 msgid "Edit"
 msgstr "Éditer"
 
@@ -386,7 +386,7 @@ msgid "Select Categories"
 msgstr "Sélectionner les Catégories"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:172
-#: ../inc/gridalicious-metabox.php:93
+#: ../inc/gridalicious-metabox.php:89
 msgid "Layout Options"
 msgstr "Options de disposition"
 
@@ -399,7 +399,6 @@ msgid "Archive Content Layout"
 msgstr "Disposition du contenu d'une archive"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:210
-#: ../inc/gridalicious-metabox.php:95
 msgid "Single Page/Post Image Layout "
 msgstr "Disposition de l'image de l'article ou la page"
 
@@ -594,98 +593,98 @@ msgstr "Premier Menu"
 msgid "Secondary Menu"
 msgstr "Second Menu"
 
-#: ../inc/gridalicious-core.php:489
+#: ../inc/gridalicious-core.php:476
 msgid "Post navigation"
 msgstr "Navigation dans les articles"
 
-#: ../inc/gridalicious-core.php:498
+#: ../inc/gridalicious-core.php:485
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Articles précédents"
 
-#: ../inc/gridalicious-core.php:499
+#: ../inc/gridalicious-core.php:486
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Articles suivants <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/gridalicious-core.php:521
+#: ../inc/gridalicious-core.php:508
 msgid "Pingback:"
 msgstr "Ping :"
 
-#: ../inc/gridalicious-core.php:531
+#: ../inc/gridalicious-core.php:518
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">commente :</span>"
 
-#: ../inc/gridalicious-core.php:537
+#: ../inc/gridalicious-core.php:524
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: ../inc/gridalicious-core.php:544
+#: ../inc/gridalicious-core.php:531
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../inc/gridalicious-core.php:647
+#: ../inc/gridalicious-core.php:634
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Posté le</span>"
 
-#: ../inc/gridalicious-core.php:654
+#: ../inc/gridalicious-core.php:641
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Auteur</span>"
 
-#: ../inc/gridalicious-core.php:662
+#: ../inc/gridalicious-core.php:649
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
-#: ../inc/gridalicious-core.php:662
+#: ../inc/gridalicious-core.php:649
 msgid "1 Comment"
 msgstr "1 Commentaire"
 
-#: ../inc/gridalicious-core.php:662
+#: ../inc/gridalicious-core.php:649
 msgid "% Comments"
 msgstr "% Commentsaire"
 
-#: ../inc/gridalicious-core.php:683 ../inc/gridalicious-core.php:691
+#: ../inc/gridalicious-core.php:670 ../inc/gridalicious-core.php:678
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/gridalicious-core.php:686
+#: ../inc/gridalicious-core.php:673
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Catégories</span>"
 
-#: ../inc/gridalicious-core.php:694
+#: ../inc/gridalicious-core.php:681
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags</span>"
 
-#: ../inc/gridalicious-core.php:1338
+#: ../inc/gridalicious-core.php:1325
 msgid "Scroll Up"
 msgstr "Remonter"
 
-#: ../inc/gridalicious-core.php:1356
+#: ../inc/gridalicious-core.php:1343
 msgid "Posted on"
 msgstr "Publié le"
 
-#: ../inc/gridalicious-core.php:1357
+#: ../inc/gridalicious-core.php:1344
 msgid "By"
 msgstr "Par"
 
-#: ../inc/gridalicious-core.php:1398
+#: ../inc/gridalicious-core.php:1385
 msgid "Next &rarr;"
 msgstr "Suivant &rarr;"
 
-#: ../inc/gridalicious-core.php:1399
+#: ../inc/gridalicious-core.php:1386
 msgid "Next post:"
 msgstr "Article suivant :"
 
-#: ../inc/gridalicious-core.php:1401
+#: ../inc/gridalicious-core.php:1388
 msgid "&larr; Previous"
 msgstr "&larr; Précédent"
 
-#: ../inc/gridalicious-core.php:1402
+#: ../inc/gridalicious-core.php:1389
 msgid "Previous post:"
 msgstr "Article précédent :"
 
@@ -1035,11 +1034,17 @@ msgstr "Rechercher"
 msgid "Menu"
 msgstr "Menu"
 
-#: ../inc/gridalicious-metabox.php:94
+#: ../inc/gridalicious-metabox.php:106
 msgid "Header Featured Image Options"
 msgstr "Options de l'image d'en-tête"
 
-#: ../inc/gridalicious-metabox.php:221
+#: ../inc/gridalicious-metabox.php:123
+#, fuzzy
+#| msgid "Single Page/Post Image Layout "
+msgid "Single Page/Post Image Layout"
+msgstr "Disposition de l'image de l'article ou la page"
+
+#: ../inc/gridalicious-metabox.php:186
 msgid "Gridalicious Options"
 msgstr "Options Gridalicious"
 

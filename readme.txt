@@ -1,13 +1,28 @@
 === Gridalicious ===
+Contributors: catchthemes
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support
+Requires at least: 5.1
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 2.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which ensures that your content is always displayed beautifully.
+
+== Description ==
 
 Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French and German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
 
+For more information about Gridalicious please go to https://catchthemes.com/themes/gridalicious/
 
-== Support ==
+== Installation ==
 
-Support: https://catchthemes.com/support/
-Support Forum: https://catchthemes.com/support-forum/forum/gridalicious-free/
-
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Gridalicious in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/gridalicious/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
 == Translation ==
 
@@ -15,49 +30,7 @@ Gridalicious theme is translation ready.
 Added Translation for French by Laurent Duretz ( Email: laurent@duretz.net )
 Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
 
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Gridalicious WordPress Theme, Copyright 2015 Catchthemes.com
-Gridalicious is distributed under the terms of the GNU General Public License v3
-
-Gridalicious is based on Catch Base theme https://catchthemes.com/themes/catch-base/
-
-Images used are released under the CC0 license
-1. http://pixabay.com/en/bridge-manhattan-brooklyn-new-york-370542/ - 1st Grid Image
-2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 2nd Grid Image
-3. http://pixabay.com/en/taxi-cab-taxicab-taxi-cab-new-york-238478/ - 3rd Grid Image
-4. http://pixabay.com/en/central-park-new-york-city-benches-535645/ - 1st Featured Content Image
-5. http://pixabay.com/en/clock-city-antique-architecture-426079/ - 2nd Featured Content Image
-6. http://pixabay.com/en/vespa-street-night-city-517227/ - 3rd Featued Content Image
-7. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - Custom Header Image
-8. All other images are self shot image by (CatchThemes.com)
-
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
-JS Files
-    HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://code.google.com/p/html5shiv/
-
-    fitvids is Licensed under the  WTFPL license
-    http://fitvidsjs.com/
-
-    Sidr is Licensed under the MIT License
-    https://github.com/artberri/sidr
-
-
 == Getting Started ==
-
-= Installation =
-
-1. In your admin panel, go to Appearance -> Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
 = Custom Menus =
 
@@ -142,16 +115,17 @@ Number:
 Number:
     callto://+*********** : Link will initiate Skype to call my Skype username!
 
-= Theme Instructions =
-
-For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/gridalicious/
-
-
 == Change Log ==
+= 2.0 (Released: May 19, 2020) =
+* Added: Support for wp_body_open action
+* Updated: Metabox UI
+* Updated: readme.txt and styles.css file as per new requirement
+* Updated: Screenshot Image size
+* Bug Fixed: Keyboard navigation accessibility issue
 
 = 1.9 (Released: October 26, 2018) =
 * Added: Core Privacy Policy link support in footer
-* Update: Upgrade to pro button css
+* Updated: Upgrade to pro button css
 * Updated Content delivered through the_content filter
 * Updated: Content type label
 
@@ -283,3 +257,35 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 = 0.1 =
 * Submitted to WordPress.org
+
+== Copyright ==
+
+Gridalicious WordPress Theme, Copyright 2015 Catchthemes.com
+Gridalicious is distributed under the terms of the GNU General Public License v3
+
+== Resources ==
+
+* Images used are released under the CC0 license
+1. http://pixabay.com/en/bridge-manhattan-brooklyn-new-york-370542/ - 1st Grid Image
+2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 2nd Grid Image
+3. http://pixabay.com/en/taxi-cab-taxicab-taxi-cab-new-york-238478/ - 3rd Grid Image
+4. http://pixabay.com/en/central-park-new-york-city-benches-535645/ - 1st Featured Content Image
+5. http://pixabay.com/en/clock-city-antique-architecture-426079/ - 2nd Featured Content Image
+6. http://pixabay.com/en/vespa-street-night-city-517227/ - 3rd Featued Content Image
+7. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - Custom Header Image
+8. All other images are self shot image by (CatchThemes.com)
+
+* Font Icons
+    Genericons by Automattic, Inc.
+    Genericons is Licensed under the GPL, version 2 or later
+    http://genericons.com/
+
+* JS Files
+    HTML5-Shiv is Licensed under the MIT and GPL licenses
+    https://code.google.com/p/html5shiv/
+
+    fitvids is Licensed under the  WTFPL license
+    http://fitvidsjs.com/
+
+    Sidr is Licensed under the MIT License
+    https://github.com/artberri/sidr

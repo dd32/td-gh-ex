@@ -4,7 +4,10 @@ Theme URI: https://catchthemes.com/themes/gridalicious
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French and German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
-Version: 1.9
+Version: 2.0
+Requires at least: 5.1
+Tested up to: 5.4
+Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: gridalicious
@@ -966,8 +969,11 @@ textarea {
 }
 
 .gridalicious-nav-menu .menu-item:hover > .sub-menu,
+.gridalicious-nav-menu .menu-item.focus > .sub-menu,
 .gridalicious-nav-menu .page_item:hover > .children,
-.sidebar-header-right .widget_nav_menu .menu-item:hover > .sub-menu {
+.gridalicious-nav-menu .page_item.focus > .children,
+.sidebar-header-right .widget_nav_menu .menu-item:hover > .sub-menu,
+.sidebar-header-right .widget_nav_menu .menu-item.focus > .sub-menu {
 	left: auto;
 	opacity: 1;
 }
@@ -1466,7 +1472,6 @@ textarea {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
-
     height: auto;
     float: left;
     width: 400px;
@@ -1550,6 +1555,7 @@ textarea {
 #featured-grid-content .grid-box.first {
 	width: 800px;
 }
+
 #featured-grid-content .grid-box:hover .caption {
     box-shadow: inset 0 0 50px 0 rgba(0,0,0,.1);
     opacity: 1;
@@ -1564,6 +1570,24 @@ textarea {
 #featured-grid-content .first-cols {
 	clear: both;
 }
+
+#featured-grid-content.layout-two .grid-box {
+	width: 50%;
+}
+
+#featured-grid-content.layout-two .first-cols {
+	clear: none;
+}
+
+#featured-grid-content.layout-two .grid-box:nth-child(2n+1) {
+	clear: both;
+}
+
+#featured-grid-content.layout-one .grid-box,
+#featured-grid-content.layout-one .grid-box.first {
+	width: 100%;
+}
+
 
 /*--------------------------------------------------------------
 12. Promotion Area

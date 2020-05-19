@@ -22,7 +22,7 @@ if ( ! function_exists( 'gridalicious_primary_menu' ) ) :
  */
 function gridalicious_primary_menu() {
     ?>
-	<nav class="nav-primary search-enabled" role="navigation">
+	<nav class="site-navigation nav-primary search-enabled" role="navigation">
         <div class="wrapper">
             <h1 class="assistive-text"><?php _e( 'Primary Menu', 'gridalicious' ); ?></h1>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gridalicious' ); ?>"><?php _e( 'Skip to content', 'gridalicious' ); ?></a></div>
@@ -64,7 +64,7 @@ if ( ! function_exists( 'gridalicious_secondary_menu' ) ) :
 function gridalicious_secondary_menu() {
     if ( has_nav_menu( 'secondary' ) ) {
 	?>
-    	<nav class="nav-secondary" role="navigation">
+    	<nav class="site-navigation nav-secondary" role="navigation">
             <div class="wrapper">
                 <h1 class="assistive-text"><?php _e( 'Secondary Menu', 'gridalicious' ); ?></h1>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gridalicious' ); ?>"><?php _e( 'Skip to content', 'gridalicious' ); ?></a></div>
