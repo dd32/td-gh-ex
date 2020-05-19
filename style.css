@@ -4,7 +4,10 @@ Theme URI: https://catchthemes.com/themes/create/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/create/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/create/
-Version: 2.5.1
+Version: 2.6
+Requires at least: 4.9
+Tested up to: 5.4
+Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
@@ -1037,6 +1040,10 @@ a:active {
     color: #e7b507;
 }
 
+a:focus {
+    outline: thin dotted;
+}
+
 /*
  * Selection highlight
  */
@@ -1273,7 +1280,8 @@ a:active {
     color: #7a7a7a;
 }
 
-.create-menu a:hover {
+.create-menu a:hover,
+.create-menu a:focus {
     color: #e7b507;
 }
 
@@ -1344,6 +1352,7 @@ a:active {
 }
 
 .create-menu ul li:hover > ul,
+.create-menu ul li.focus > ul,
 .create-menu.toggled ul ul {
     left: auto;
     opacity: 1;
@@ -1386,12 +1395,18 @@ a:active {
     content: "\f406";
 }
 
-.main-navigation .menu-toggle {
+#site-header-menu .menu-toggle {
     background-color: #090401;
     color: #dbdada;
 }
 
-.secondary-navigation .menu-toggle {
+#site-header-menu .menu-toggle:hover,
+#site-header-menu .menu-toggle:focus {
+    background-color: #393939;
+    color: #e7b507;
+}
+
+#site-secondary-menu .menu-toggle {
     background-color: #e8e8e8;
     color: #7a7a7a;
 }
@@ -1865,7 +1880,8 @@ a:active {
 img,
 embed,
 object,
-video {
+video,
+iframe {
     height: auto;
     max-width: 100%;
 }

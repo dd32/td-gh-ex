@@ -31,6 +31,8 @@ wp_head(); ?>
 
 <body <?php body_class(); ?>>
 
+<?php do_action( 'wp_body_open' );  ?>
+
 	<?php
 	/**
 	 * create_before_header hook

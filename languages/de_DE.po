@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-10 12:28+0545\n"
-"PO-Revision-Date: 2018-08-10 12:28+0545\n"
+"POT-Creation-Date: 2020-05-19 14:49-0700\n"
+"PO-Revision-Date: 2020-05-19 14:49-0700\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__\n"
@@ -166,7 +166,7 @@ msgstr ""
 msgid "collapse child menu"
 msgstr ""
 
-#: ../functions.php:270
+#: ../functions.php:257
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr "An"
@@ -287,7 +287,6 @@ msgid "Select Categories"
 msgstr "Kategorien ausw&auml;hlen"
 
 #: ../inc/customizer-includes/customizer-theme-options.php:141
-#: ../inc/metabox.php:85
 msgid "Layout Options"
 msgstr "Layout Optionen"
 
@@ -304,7 +303,6 @@ msgid "Archive Content Layout"
 msgstr "Blog Archiv Layout"
 
 #: ../inc/customizer-includes/customizer-theme-options.php:223
-#: ../inc/metabox.php:87
 msgid "Single Page/Post Image Layout "
 msgstr "Layout f&uuml;r einzelne Seite/Post"
 
@@ -436,12 +434,12 @@ msgid "Disabled"
 msgstr "Deaktiviert"
 
 #: ../inc/default-options.php:97
-msgid "Demo Featured Slider"
-msgstr "Demo Auswahlslider"
+msgid "Demo"
+msgstr ""
 
-#: ../inc/default-options.php:101
-msgid "Featured Page Slider"
-msgstr "Ausgew&auml;hlte Seiten Slider"
+#: ../inc/default-options.php:101 ../inc/template-tags.php:35
+msgid "Page"
+msgstr "Seite"
 
 #: ../inc/default-options.php:118
 msgid "Fade"
@@ -583,11 +581,7 @@ msgstr "nach"
 msgid "Scroll Up"
 msgstr "Hoch scrollen"
 
-#: ../inc/metabox.php:86
-msgid "Header Featured Image Options"
-msgstr "Optionen für das Header-Themenbild"
-
-#: ../inc/metabox.php:213
+#: ../inc/metabox.php:144
 msgid "Create Options"
 msgstr "Create Optionen"
 
@@ -624,10 +618,6 @@ msgstr "Vorherige Seite"
 #: ../inc/template-tags.php:34
 msgid "Next page"
 msgstr "Nächste Seite"
-
-#: ../inc/template-tags.php:35
-msgid "Page"
-msgstr "Seite"
 
 #: ../inc/template-tags.php:41
 msgid "Posts navigation"
@@ -806,6 +796,15 @@ msgstr "Suchergebnis für: %s"
 msgctxt "label"
 msgid "Search for:"
 msgstr "Suche nach:"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Demo Auswahlslider"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Ausgew&auml;hlte Seiten Slider"
+
+#~ msgid "Header Featured Image Options"
+#~ msgstr "Optionen für das Header-Themenbild"
 
 #~ msgid "%s"
 #~ msgstr "%s"

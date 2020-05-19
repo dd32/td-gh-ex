@@ -94,11 +94,11 @@ function create_featured_slider_types() {
 	$featured_slider_types = array(
 		'demo-featured-slider' => array(
 			'value' => 'demo-featured-slider',
-			'label' => __( 'Demo Featured Slider', 'create' ),
+			'label' => __( 'Demo', 'create' ),
 		),
 		'featured-page-slider' => array(
 			'value' => 'featured-page-slider',
-			'label' => __( 'Featured Page Slider', 'create' ),
+			'label' => __( 'Page', 'create' ),
 		),
 	);
 

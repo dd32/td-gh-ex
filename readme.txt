@@ -1,50 +1,53 @@
 === Create ===
-
-Contributors: Catch Themes and Emil Uzelac
+Contributors: catchthemes, emiluzelac
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Requires at least: 4.7
-Tested up to: 4.9.8
-Create WordPress Theme, Copyright 2012-2016 Catchthemes.com
-Create is distributed under the terms of the GNU General Public License v3
+Requires at least: 4.9
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 2.6
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Create is super easy to use Free WordPress theme and has unconventional out-of-the-box features great for your personal, business or even organizational web portals.
 
 == Description ==
 
 Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/create/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/create/
 
-* Responsive Layout
-* Custom Background
-* Social Links
-* Jetpack logo and Infinite Scroll
-* Post Formats
+For more information about Create please go to https://catchthemes.com/themes/create/
 
+== Installation ==
 
-== Credits ==
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Create in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/create/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
-* Create was based on Underscores http://underscores.me/ - (C) 2012-2014 Automattic, Inc. - [GNU General Public License v2 or later]
-* screenshot.png images: http://pixabay.com/en/man-person-shirt-bow-tie-suspender-407095/, http://pixabay.com/en/radio-television-grunge-chair-407112/, http://pixabay.com/en/wristwatch-watch-time-gadget-407096/ - [CC0]
-* /images/default-background.jpg http://www.pexels.com/photo/2286/ [CC0]
-* /css/genericons/ http://genericons.com/ - (C) 2014 Automattic, Inc. - [GPL, version 2 or later]
+== Frequently Asked Questions ==
 
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/create in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/create/
+
+= More FAQ =
+
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Translation ==
 
 Create theme is translation ready.
 Added Translation for German language
 
-
-== Support ==
-
-Support: https://catchthemes.com/support/
-Support Forum: https://catchthemes.com/support-forum/forum/create-free/
-
-
 == Getting Started ==
-
-= Installation =
-
-1. In your admin panel, go to Appearance -> Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
 = Custom Menus =
 
@@ -94,33 +97,32 @@ Available icons: (Linking to any of the following sites will automatically displ
 * WordPress
 * YouTube
 
-
 = Widgets =
 
 Theme supports two widgets, one is your main one and second one is used for your homepage area and used as intro for your site. Please note that Intro Widget is available only if you are using default frontpage settings.
-
 
 = Featured Images =
 
 Before getting started with your featured images, regenerate them first and you can do that easily with this plugin: https://wordpress.org/plugins/regenerate-thumbnails/. The plugin allows you to regenerate your thumbnails after changing the thumbnail sizes, which occurs by switching from one theme to another.
 
-
 = Jetpack Plugin =
 
 Theme supports Jetpack logo and it can be easily uploaded from Customizer area. It also supports Responsive videos and Infinite Scroll as well. We highly recommend installing JetPack plugin.
 
-= Theme Instructions =
-
-For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/create/
-
-
 == Change log ==
+= 2.6 (Released: May 19, 2020) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Keyboard navigation accessibility issue
+* Bug Fixed: iframe width overflow issue
+* Updated: Metabox UI
+* Updated: readme.txt and style.css file as per the new requirement
 
 = 2.5.1 (Released: August 10, 2018) =
 * Bug Fixed: Single page featured image size
 * Bug Fixed: Single page/post default layout set to "Primary Sidebar, Content"
 * Bug Fixed: Responsive Masonry and archive image sizes
 * Updated: Added wrapper in various section for better css control
+* Updated: Content type label updated
 
 = 2.5 (Released: August 02, 2018) =
 * Bug Fixed: Default Background Attachment to cover
@@ -185,7 +187,6 @@ For detail instructions, check out theme instructions page at https://catchtheme
 * Bug Fixed: Added missing keyword _nx:1,2,4c and esc_html__ in language file create.pot
 * Removed unnecessary font: Alegreya in blockquote
 
-
 = 1.1 =
 * Initial Release in Catchthemes.com
 * Updated instructions and links in Readme.txt
@@ -204,3 +205,15 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 = 0.1 =
 * Submitted to WordPress.org
+
+== Copyright ==
+
+Create WordPress Theme, Copyright 2016 Catchthemes.com
+Create is distributed under the terms of the GNU General Public License v3
+
+== Resources ==
+
+* Create was based on Underscores http://underscores.me/ - (C) 2012-2014 Automattic, Inc. - [GNU General Public License v2 or later]
+* screenshot.png images: http://pixabay.com/en/man-person-shirt-bow-tie-suspender-407095/, http://pixabay.com/en/radio-television-grunge-chair-407112/, http://pixabay.com/en/wristwatch-watch-time-gadget-407096/ - [CC0]
+* /images/default-background.jpg http://www.pexels.com/photo/2286/ [CC0]
+* /css/genericons/ http://genericons.com/ - (C) 2014 Automattic, Inc. - [GPL, version 2 or later]

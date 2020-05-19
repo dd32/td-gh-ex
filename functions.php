@@ -244,19 +244,6 @@ add_action( 'wp_enqueue_scripts', 'create_scripts' );
  *
  * @since Create 1.4
  */
-function create_enqueue_metabox_scripts() {
-    //Scripts
-    wp_enqueue_script( 'create-metabox', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/metabox.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
-
-	//CSS Styles
-	wp_enqueue_style( 'create-metabox-tabs', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/metabox-tabs.css' );
-}
-add_action( 'admin_print_scripts-post-new.php', 'create_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-post.php', 'create_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-page-new.php', 'create_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-page.php', 'create_enqueue_metabox_scripts', 11 );
-
-
 /**
  * Register Google fonts.
  *
