@@ -324,7 +324,12 @@ function arbutus_excerpt_more( $more ) {
 	}
 
 	global $post;
-	return '&hellip;<div><a class="excerpt-more button" href="' . get_permalink( $post->ID ) . '">' . __( 'Read more &rarr;', 'arbutus' ) . '</a></div>';
+	
+	$title = sprintf ( __( 'Read more %s', 'arbutus' ),
+		'<span class="screen-reader-text">' . esc_html( get_the_title() ) .
+		' </span><span class="meta-nav" aria-hidden="true"> &rarr;</span>' );
+
+	return '&hellip;<div><a class="excerpt-more button" href="' . esc_url( get_permalink( $post->ID ) ) . '">' . $title . '</a></div>';
 }
 add_filter( 'excerpt_more', 'arbutus_excerpt_more' );
 

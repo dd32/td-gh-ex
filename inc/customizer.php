@@ -133,7 +133,7 @@ add_action( 'customize_preview_init', 'arbutus_customize_preview_js' );
  */
 function arbutus_custom_color_css() {
 	if ( is_customize_preview() ) {
-		$data = ' data-color_hue="' . get_theme_mod( 'color_hue', 220 ) . '"';
+		$data = ' data-color_hue="' . absint( get_theme_mod( 'color_hue', 220 ) ) . '"';
 	} else {
 		$data = '';
 	}

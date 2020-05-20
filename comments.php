@@ -20,35 +20,39 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
 			$comments_number = absint( get_comments_number() );
-			if ( 1 === $comments_number ) {
-				/* translators: %s: post title */
+			if ( ! have_comments() ) {
+				_e( 'Leave a Comment', 'arbutus' );
+			} elseif ( 1 === $comments_number ) {
+				/* translators: %s: Post title. */
 				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'arbutus' ), esc_html( get_the_title() ) );
 			} else {
 				printf(
-				/* translators: 1: number of comments, 2: post title */
+					/* translators: 1: Number of comments, 2: Post title. */
 					_nx(
-						'%1$s Reply to &ldquo;%2$s&rdquo;',
-						'%1$s Replies to &ldquo;%2$s&rdquo;',
+						'%1$s reply on &ldquo;%2$s&rdquo;',
+						'%1$s replies on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
 						'arbutus'
 					),
 					number_format_i18n( $comments_number ),
-					esc_html ( get_the_title() )
+					esc_html( get_the_title() )
 				);
 			}
-			?>
-		</h2>
 
+			?>
+		</h2><!-- .comments-title -->
+
+
+	<?php if ( have_comments() ) : ?>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Comment navigation', 'arbutus' ); ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'arbutus' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'arbutus' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'arbutus' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '<span aria-hidden="true">&larr;</span> Older Comments', 'arbutus' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span aria-hidden="true">&rarr;</span>', 'arbutus' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
 
@@ -72,6 +76,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'arbutus' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 'comment_notes_after' => '' ) ); ?>
+	<?php comment_form( array( 'comment_notes_after' => '', 'title_reply' => '' ) ); ?>
 
 </div><!-- #comments -->

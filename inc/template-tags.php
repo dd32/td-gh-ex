@@ -30,20 +30,24 @@ function arbutus_post_thumbnail_img() {
 		if ( '' === $img ) {
 			echo '<div id="full-page-image" class="empty"></div>';
 			return;
+		} elseif ( '/img/default.png' === substr( $img, -16 ) ) {
+			// Define default image properties without loading the image file.
+			$img = array( 0 => $img, 1 => 1900, 2 => 1075 );
+		} else {
+			$fullimgdata = getimagesize( $img );
+			$imgdata = array(
+				0 => $img, // url
+				1 => $fullimgdata[0], // width
+				2 => $fullimgdata[1], // height
+			);
+			$img = $imgdata;
 		}
-		$fullimgdata = getimagesize( $img );
-		$imgdata = array(
-			0 => $img, // url
-			1 => $fullimgdata[0], // width
-			2 => $fullimgdata[1], // height
-		);
-		$img = $imgdata;
 	}
 
 	// Determine image orientation.
 	$orientation = ( $img[1] > $img[2] ) ? 'landscape' : 'portrait';
 
-	echo '<div id="full-page-image" class="entry-visual" style="background-image: url(' . esc_url( $img[0] ) . ');" class="' . $orientation . '">';
+	echo '<div id="full-page-image" class="entry-visual ' . $orientation . '" style="background-image: url(' . esc_url( $img[0] ) . ');">';
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( 'post-thumbnail', array( 'class' => 'screen-reader-text' ) );
 	}
@@ -187,9 +191,9 @@ function arbutus_gallery_excerpt() {
 	if ( has_post_thumbnail() ) {
 		$title = sprintf ( __( 'See more %s', 'arbutus' ),
 			'<span class="screen-reader-text">' . esc_html( get_the_title() ) .
-			' </span><span class="meta-nav"> &rarr;</span>' );
+			' </span><span class="meta-nav" aria-hidden="true"> &rarr;</span>' );
 	} else {
-		$title = esc_html( get_the_title() ) . '<span class="meta-nav">&rarr;</span>';
+		$title = esc_html( get_the_title() ) . '<span class="meta-nav" aria-hidden="true" aria-hidden="true">&rarr;</span>';
 	}
 	echo '<li class="gallery-excerpt-item"><a href="' . esc_url( get_the_permalink() ) . '" class="excerpt-more button" rel="bookmark">' . $title . '</a></li>';
 	echo '</ul>';
@@ -245,11 +249,11 @@ function arbutus_paging_nav() {
 			<div class="nav-links">
 
 				<?php if ( get_next_posts_link() ) : ?>
-				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'arbutus' ) ); ?></div>
+				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav" aria-hidden="true">&larr;</span> Older posts', 'arbutus' ) ); ?></div>
 				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>
-				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'arbutus' ) ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav" aria-hidden="true">&rarr;</span>', 'arbutus' ) ); ?></div>
 				<?php endif; ?>
 
 			</div><!-- .nav-links -->
@@ -277,8 +281,8 @@ function arbutus_post_nav() {
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
 				<?php
-					previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'arbutus' ) );
-					next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'arbutus' ) );
+					previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav" aria-hidden="true">&larr;</span>&nbsp;%title', 'Previous post link', 'arbutus' ) );
+					next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav" aria-hidden="true">&rarr;</span>', 'Next post link',     'arbutus' ) );
 				?>
 			</div><!-- .nav-links -->
 		</div><!-- .inner-->
@@ -365,14 +369,15 @@ add_action( 'save_post',     'arbutus_category_transient_flusher' );
  * Display the footer credits area.
  */
 function arbutus_footer_credits() {
-	?>&copy <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url() ); ?>" id="footer-copy-name"><?php echo esc_html( get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ) ); ?></a>
+	$sep_span = '<span class="sep" role="separator" aria-hidden="true"> | </span>';
+	?>&copy <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="footer-copy-name"><?php echo esc_html( get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ) ); ?></a>
 	<?php if( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
 		<span class="wordpress-credit" <?php if ( ! get_theme_mod( 'powered_by_wp', true ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
-			<span class="sep"> | </span><a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'arbutus' ), 'WordPress' ); ?></a>
+			<?php echo $sep_span; ?><a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'arbutus' ), 'WordPress' ); ?></a>
 		</span>
 	<?php } if( get_theme_mod( 'theme_meta', false ) || is_customize_preview() ) { ?>
 		<span class="theme-credit" <?php if ( ! get_theme_mod( 'theme_meta', false ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
-			<span class="sep"> | </span><?php printf( __( 'Theme: %1$s by %2$s.', 'arbutus' ), 'Arbutus', '<a href="https://celloexpressions.com/" rel="designer">Nick Halsey</a>' ); ?>
+			<?php echo $sep_span; ?><?php printf( __( 'Theme: %1$s by %2$s.', 'arbutus' ), 'Arbutus', '<a href="https://celloexpressions.com/" rel="designer">Nick Halsey</a>' ); ?>
 		</span>
 	<?php }
 }

@@ -36,7 +36,18 @@
 
 		// This function is run on menu item links; verify the parent is an li.
 		if ( 'li' === parent.localName ) {
-		
+
+			// Remove focus from adjacent parent menu items if this is a top-level item. 1: verify ul; 2: verify menu, not sub-menu
+			if ( 'ul' === parent.parentElement.localName 
+				&& -1 === parent.parentElement.className.indexOf( 'sub-menu' ) ) {
+				if ( parent.nextElementSibling ) {
+					parent.nextElementSibling.className = parent.nextElementSibling.className.replace( ' focus', '' );
+				}
+				if ( parent.previousElementSibling ) {
+					parent.previousElementSibling.className = parent.previousElementSibling.className.replace( ' focus', '' );
+				}
+			}
+
 			// Is the current link a direct submenu parent?
 			if ( -1 !== parent.className.indexOf( 'menu-item-has-children' ) ) {
 
@@ -46,11 +57,7 @@
 				}
 			}
 
-			if ( 'blur' === event.type && self === parent.parentElement.lastElementChild ) {
-				parent.className = parent.className.replace( ' focus', '' );
-			}
-
-			// If this is the last element in this level, close previous menus.			
+			// If we leave the menu, close all submenus.
 			if ( event.relatedTarget && 'li' !== event.relatedTarget.parentElement.localName ) {
 				for ( i = 0, len = subMenus.length; i < len; i++ ) {
 					subMenus[i].parentElement.className = subMenus[i].parentElement.className.replace( ' focus', '' );
