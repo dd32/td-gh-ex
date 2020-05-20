@@ -15,17 +15,14 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 	 */
 	function blue_planet_setup() {
 
-		/**
-	   * Set the content width based on the theme's design and stylesheet.
-	   */
+		// Set the content width based on the theme's design and stylesheet.
 		global $content_width;
+
 		if ( ! isset( $content_width ) ) {
 			$content_width = 730;
 		}
 
-		/*
-		 * Make theme available for translation.
-		 */
+		// Make theme available for translation.
 		load_theme_textdomain( 'blue-planet' );
 
 		// Add default posts and comments RSS feed links to head.
@@ -34,19 +31,18 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		// Add support for custom backgrounds.
 		add_theme_support( 'custom-background' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
+		// Let WordPress manage the document title.
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 */
+		// Load default block styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'homepage-thumb', 285, 215, true ); // Cropped image.
+		add_image_size( 'homepage-thumb', 285, 215, true );
 
 		// Register nav menu.
 		register_nav_menus( array(
@@ -69,9 +65,7 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
         // Editor style.
         add_editor_style();
 
-        /**
-         * Enable support for footer widgets.
-         */
+		// Enable support for footer widgets.
         add_theme_support( 'footer-widgets', 4 );
 
         // Include supports.
@@ -86,9 +80,10 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 			'flex-height'        => true,
 			'wp-head-callback'   => 'blue_planet_header_style',
         ) ) );
-
 	}
+
 endif;
+
 add_action( 'after_setup_theme', 'blue_planet_setup' );
 
 /**
@@ -129,7 +124,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/thirdparty/bootstrap/css/bootstrap' . $min . '.css', false ,'3.3.6' );
 		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/thirdparty/genericons/genericons' . $min . '.css', array(), '3.4.1' );
         wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu' . $min . '.css', false ,'2.0.6' );
-        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), '3.7' );
+        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), '3.8' );
 
         $banner_background_color = blue_planet_get_option( 'banner_background_color' );
         $custom_css = blue_planet_get_option( 'custom_css' );
@@ -146,8 +141,9 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		$slider_status = blue_planet_get_option( 'slider_status' );
+		$slider_status   = blue_planet_get_option( 'slider_status' );
 		$slider_status_2 = blue_planet_get_option( 'slider_status_2' );
+
 		if ( 'none' !== $slider_status || 'none' !== $slider_status_2 ) {
 			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider' . $min . '.css', false ,'3.2' );
 			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default' . $min . '.css', false ,'3.2' );
@@ -161,13 +157,6 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu' . $min . '.js', array( 'jquery' ), '2.0.6', true );
 
 		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom' . $min . '.js', array( 'jquery' ), '2.0.0', true );
-
-		// Scripts for IE hack.
-		wp_enqueue_script( 'blue-planet-html5shiv', get_template_directory_uri() . '/js/html5shiv' . $min . '.js', array(), '3.7.3', false );
-        wp_script_add_data( 'blue-planet-html5shiv', 'conditional', 'lt IE 9' );
-        wp_enqueue_script( 'blue-planet-respond', get_template_directory_uri() . '/js/respond' . $min . '.js', array(), '1.4.2', false );
-        wp_script_add_data( 'blue-planet-respond', 'conditional', 'lt IE 9' );
-
 	}
 
 endif;
