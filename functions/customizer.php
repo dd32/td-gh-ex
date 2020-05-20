@@ -179,7 +179,7 @@ function azuma_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'container_width',
 		array(
-			'default'			=> '1920',
+			'default'			=> '1400',
 			'transport'			=> 'postMessage',
 			'sanitize_callback' => 'absint'
 		)

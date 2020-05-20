@@ -101,8 +101,8 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			}
 		}
 
-		$container_width = get_theme_mod( 'container_width', '1920' );
-		if ( $container_width && $container_width != '1920' ) {
+		$container_width = get_theme_mod( 'container_width', '1400' );
+		if ( $container_width && $container_width != '1400' ) {
 			$css[] = '.container{max-width:' . esc_attr($container_width) . 'px;}';
 		}
 
@@ -205,6 +205,11 @@ add_filter( 'tiny_mce_before_init', 'azuma_editor_dynamic_style' );
 
 function azuma_block_editor_dynamic_style( $css = array() ) {
 
+	$container_width = get_theme_mod( 'container_width', '1400' );
+	if ( $container_width && $container_width != '1400' ) {
+		$css[] = '.wp-block{max-width:' . esc_attr($container_width) . 'px;}';
+	}
+
 	$font_content = get_theme_mod( 'font_content', 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' );
 	if ($font_content && $font_content != 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' ) {
 		$css[] = '.editor-default-block-appender textarea.editor-default-block-appender__content,.editor-styles-wrapper div,.editor-styles-wrapper p,.editor-styles-wrapper ul,.editor-styles-wrapper li{' . azuma_css_font_family( $font_content ) . ';}';
@@ -216,7 +221,7 @@ function azuma_block_editor_dynamic_style( $css = array() ) {
 	}
 
 	$hi_color = get_theme_mod( 'hi_color' );
-	if ($hi_color && $hi_color != "#ff7800") {		
+	if ($hi_color && $hi_color != "#ff7800") {
 		$css[] = '.editor-rich-text__tinymce a,.block-editor-rich-text__editable a{color:'.esc_attr($hi_color).'}';
 
 		$css[] = '.wp-block-button__link,.wc-block-price-filter .wc-block-price-filter__range-input::-webkit-slider-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-moz-range-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-webkit-slider-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-moz-range-thumb,.editor-styles-wrapper .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-onsale,.wc-block-grid__product-onsale{background-color:'.esc_attr($hi_color).'}';
