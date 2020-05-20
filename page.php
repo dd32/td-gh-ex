@@ -16,7 +16,7 @@ global $appdetail_theme_options;
 
 
 ?>
-	<div id="primary" class="content-area about s-pad col-sm-8 col-md-8 col-xs-12">
+	<div id="primary" class="content-area about col-sm-8 col-md-8 col-xs-12">
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();

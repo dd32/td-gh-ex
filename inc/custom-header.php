@@ -48,10 +48,7 @@ if ( !function_exists('appdetail_header_style') ) :
         // If we get this far, we have custom styles. Let's do this.
         ?>
         <style type="text/css">
-            <?php
-                // Has the text been hidden?
-                if (  display_header_text() ) :
-            ?>
+            
             .inner-banner-area
            {
             background-image:url('<?php header_image(); ?>');
@@ -63,7 +60,7 @@ if ( !function_exists('appdetail_header_style') ) :
                 color: #<?php echo esc_attr( $header_text_color ); ?>;
             }
 
-            <?php endif; ?>
+            
         </style>
         <?php
     }
