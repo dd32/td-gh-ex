@@ -4,8 +4,8 @@ Theme URI: https://electrathemes.com/wordpress-themes/best-startup/
 Author: ElectraThemes
 Author URI: http://electathemes.com/
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.1.3
+Tested up to: 5.4.1
+Stable tag: 1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar,left-sidebar,full-width-template, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, featured-image-header, theme-options, threaded-comments, translation-ready, blog
@@ -13,10 +13,10 @@ Text Domain: best-startup
 
 == Theme Description ==
 
-Best Startup is a premium quality WordPress theme mainly designed for online startups which need high quality websites quickly. Using Best Startup WordPress themes, online entrepreneurs will be able to create eye catchy websites in just a few minutes even if they are newbie as we have a step by step tutorial available. Best Startup WordPress theme is a mobile responsive WordPress theme hence the website will look amazing in all the mobile devices, tables, MacBooks, PCs etc. Step by step documentation and dummy data is available here: https://electrathemes.com/documentation/best-startup/
+Best Startup is a premium quality WordPress theme mainly designed for online startups which need high quality websites quickly. Using Best Startup WordPress theme, online entrepreneurs will be able to create eye catchy websites in just a few minutes even if they are newbie as we have a step by step tutorial available. Best Startup WordPress theme is a mobile responsive WordPress theme hence the website will look amazing in all the mobile devices, tables, MacBooks, PCs etc. Best Startup theme is an easily customizable theme which uses WordPress customizer options for logo, colors etc. Best Startup theme uses SiteOrigin page builder (a very powerful yet free plugin available at WordPress.org), to easily create variety of page designs suiting your business niche using drag and drop page builer elements. Step by step documentation and dummy data is available at: https://electrathemes.com/documentation/best-startup/
 
 == Copyright ==
-Best Startup WordPress Theme, Copyright 2017 ElectraThemes
+Best Startup WordPress Theme, Copyright 2020 ElectraThemes
 Best Startup is distributed under the terms of the GNU GPL
 
 == Features ==
@@ -74,6 +74,9 @@ Responsive design(Bootstrap), Customization Options, Custom Menu, supports socia
 * Css Added and Misc Changes
 
 = 1.1.3 (5th July 2018) 
+* Misc Changes
+
+= 1.2 (20th June 2020) 
 * Misc Changes
 
 ---------------------------------------------------------
