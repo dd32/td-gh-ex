@@ -26,7 +26,7 @@ if ( post_password_required() )
 					/* translators: 1: number of comments, 2: post title */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'babysitter-lite' ) ),
 					esc_attr(number_format_i18n( get_comments_number() )),
-					'<span>' . esc_attr(get_the_title()) . '</span>'
+					'<span>' . esc_html(get_the_title()) . '</span>'
 				);
 			?>
 		</h2>

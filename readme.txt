@@ -3,9 +3,9 @@
 Contributors: Alexathemes
 Requires at least: WordPress 4.4  
 Tested up to: WordPress 5.4.1
-Requires PHP: 5.2.6
-Stable tag: 1.1
-Version: 1.1
+Requires PHP: 7.2.14
+Stable tag: 1.1.1
+Version: 1.1.1
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 Tags: e-commerce, education, right-sidebar, custom-background, custom-header, custom-menu, featured-images, theme-options, threaded-comments, custom-logo, blog, full-width-template
@@ -41,7 +41,7 @@ Theme is built using the following resource bundles:
         
 *       Slider Images Are pxhere Images:  
 		
-		https://pxhere.com/en/photo/1604616
+		https://pxhere.com/en/photo/1066458
 		
 		
 		Copyright 2020, pxhere
@@ -82,3 +82,6 @@ For any help you can mail us at support[at]alexathemes.net
 
 = 1.1 =
 *     Removed unused css, added escape functions and resolved css issues.
+
+== 1.1.1 ==
+*     Screenshot changed and added proper escape functions.
