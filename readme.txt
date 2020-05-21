@@ -2,7 +2,7 @@
 Advent Theme by FruitThemes https://fruitthemes.com
 
 === About Advent ===
-Advent is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Advent Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
+Advent is a lightweight, clean, super flexible and Twitter bootstrap based responsive theme for business and personal websites. Advent Theme is built on top of Twitter Bootstrap framework which means that your website will be displayed properly on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. Advent theme has got custom widgets, customizer options etc in order to get it customized as per your needs. It is a translation ready theme and hence can be translated to any LTR language. Step by step documentation for setting up your website like Advent theme demo including DUMMY DATA files is available here => https://fruitthemes.com/documentation/advent/
 
 === Tags ===
 left-sidebar, right-sidebar, custom-background, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready, custom-header
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 == Copyright ==
-Advent WordPress Theme, Copyright 2017 fruitthemes.com
+Advent WordPress Theme, Copyright 2020 fruitthemes.com
 Advent is distributed under the terms of the GNU GPL
 
 
@@ -37,23 +37,7 @@ Advent is distributed under the terms of the GNU GPL
 
 4. Now click on "advent" to activate the theme.
 
-5. Theme Options :
-
-	a) Basic Settings:
-           
-           You can manage here site logo,favicon and footer copyright text.	
-
-	b) Home Page Settings:
-
-		i) Top header  : Here you can manage home page top header to background image, brand logo and title. 
-		ii) Title Bar : You can set home page title and description.
-		iii) Feature Section : you can insert font-awesome icon class, title and short description. 
-		iv) How it work Section : you can upload image, title, heading and short description. 
-        v) Recent post Section : you can select category of posts and add title of posts slider.
-		
-	c) Social Settings:
-
-           You can add here social media links.	
+5. For logo, color etc, please visit "Customize" submenu which you will find under "Appearance" menu of your WordPress admin panel.
 		
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -66,12 +50,7 @@ i) Fontawesome
 	License: SIL Open Font License, Version 1.1
 	License URI: https://scripts.sil.org/OFL?
 
-ii)Administration Panel
-===========
-	Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-	License: GNU General Public License v3
-
-iii) Fonts
+ii) Fonts
 ===========
 	(a).
 		Open Sans
@@ -87,14 +66,14 @@ iii) Fonts
 		License: SIL Open Font License, 1.1
 		License URI: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OF
 
-iv) Bootstrap files
+iii) Bootstrap files
 ===========
 	Resource URI: http://getbootstrap.com/
 	Copyright: 2011-2014 Twitter, Inc
 	License: MIT
 	License URI: http://opensource.org/licenses/MIT
 	
-vi) slider
+iv) slider
 ============
 	OwlCarousel 
 	jQuery OwlCarousel v1.3.3  
