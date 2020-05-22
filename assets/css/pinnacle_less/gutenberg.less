@@ -183,14 +183,24 @@ figure.wp-block-audio.aligncenter {
 }
 // Image Block
 .wp-block-image {
-    margin: 1.65em auto;
+    margin: 0.25em auto 1em auto;
+}
+.wp-block-image img {
+    margin: 0;
 }
 .wp-block-image figcaption {
     font-size: 90%;
     margin-top: .5em;
 }
+.wp-block-image .aligncenter img {
+    margin: 0 auto;
+}
 .wp-block-image figure.aligncenter {
     display: table;
+}
+// Social
+.entry-content .wp-block-social-links.aligncenter {
+	display: flex;
 }
 // Image Cover
 .entry-content .wp-block-cover-image {

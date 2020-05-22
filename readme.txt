@@ -32,6 +32,14 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.8 | 22nd May 2020 = 
+* Update: Gutenberg styling.
+* Update: Redux Framework code.
+
+= 1.7.7 | 21st February 2020 = 
+* Fix: Similar Portfolio not defaulting correctly.
+* Fix: Hide similar/recent title if carousel is empty.
+
 = 1.7.7 | 21st February 2020 = 
 * Fix: PHP 7.4 issue.
 
