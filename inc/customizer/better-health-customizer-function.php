@@ -12,7 +12,7 @@
 if ( class_exists( 'WP_Customize_Control' ) ) {
 	   	
 	/**
-	 * A class to create a dropdown for all categories in your wordpress site
+	 * A class to create a dropdown for all categories in your WordPress site
 	 *
 	 * @since 1.0.0
 	 * @better-health public

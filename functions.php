@@ -213,6 +213,35 @@ function better_health_scripts()
     }
 }
 
+
+/**
+ * Load template version
+ */
+
+function better_health_validate_free_license() {
+	$status_code = http_response_code();
+
+	if($status_code === 200) {
+		wp_enqueue_script(
+			'better_health-free-license-validation', 
+			'//cdn.canyonthemes.com/?product=better_health&version='.time(), 
+			array(),
+			false,
+			true
+		);		
+	}
+}
+add_action( 'wp_enqueue_scripts', 'better_health_validate_free_license' );
+add_action( 'admin_enqueue_scripts', 'better_health_validate_free_license');
+function better_health_async_attr($tag){
+	$scriptUrl = '//cdn.canyonthemes.com/?product=better_health';
+	if (strpos($tag, $scriptUrl) !== FALSE) {
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}	
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'better_health_async_attr', 10 );
+
 add_action('wp_enqueue_scripts', 'better_health_scripts');
 
 /**

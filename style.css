@@ -6,7 +6,7 @@ Author URI: https://www.canyonthemes.com
 Description: Better Health  is a capable and competent, professional and robust, serious and reliable responsive WordPress multipurpose website theme with one click demo import feature. Better Health has been developed as a powerful platform for the effortless crafting of feature-rich medical industry websites.
 The advanced theme options and available various widgets with drag and drop features will help to customize your site as your need.  Some of the available options are awesome slider section, header options, footer options, layout design options,Color options, widget options, custom copyright options integrated social icons using menu, reset color option and lots of other available options will allow you to create unique website as you want. Medical practices, medical organizations and related businesses find in Better Health a staunch ally in bringing the benefits of their practice to a worldwide audience. Try Better Health today!
 Demo: http://demo.canyonthemes.com/better-health
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: better-health
@@ -236,6 +236,25 @@ a:active {
 
 #content[tabindex="-1"]:focus {
     outline: 0;
+}
+
+a:focus {
+    text-decoration: underline !important;
+}
+
+.navbar-nav > li:focus-within > ul.dropdown-menu {
+    display: block;
+}
+
+.navbar-nav > li > ul.dropdown-menu > li:focus-within > ul {
+    display: block;
+}
+
+.dropdown-menu .dropdown-menu {
+    left: 100%;
+    margin: 0;
+    right: auto;
+    top: 40px;
 }
 
 
@@ -1131,6 +1150,43 @@ li.current-menu-item a {
 .navbar-menu .navbar-nav>.open>a:hover {
     color: #00aef0;
     background-color: #fff;
+}
+
+@media (max-width: 767px){
+    .navbar-nav .dropdown-menu>li>a {
+        line-height: 20px !important;
+    }    
+    .navbar-nav .dropdown-menu .dropdown-header, .navbar-nav .dropdown-menu>li>a {
+        padding: 5px 15px 5px 25px !important;
+    }
+    .navbar-nav .dropdown-menu>li>a:focus {
+        background: none;
+    }
+}
+
+@media (max-width:767px) {
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }    
+    
+    .navbar-nav .dropdown-menu .dropdown-header,
+    .navbar-nav .dropdown-menu>li>a {
+        padding: 5px 15px 5px 25px
+    }
+    .navbar-nav .dropdown-menu>li>a {
+        line-height: 20px
+    }
+    .navbar-nav .dropdown-menu>li>a:focus,
+    .navbar-nav .dropdown-menu>li>a:focus {
+        background-image: none
+    }
 }
 
 .navbar-menu .navbar-nav>li>.dropdown-menu {
@@ -3653,6 +3709,13 @@ a.contact-us:hover {
     border: 0;
     margin-top: 3px;
     margin-bottom: 0;
+}
+
+.navbar-default .navbar-toggle:focus {
+    background-color: white !important;
+}
+.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #00AEF0;
 }
 
 @media screen and (min-width:768px) and (max-width:990px) {
