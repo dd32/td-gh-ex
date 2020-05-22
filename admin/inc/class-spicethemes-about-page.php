@@ -3,8 +3,8 @@
  * @author SpiceThemes
  */
 
-if (!class_exists('SpiceThemes_About_Page')) {
-	class SpiceThemes_About_Page {
+if (!class_exists('Content_About_Page')) {
+	class Content_About_Page {
 
 		protected static $instance;
 		private $options;
@@ -38,20 +38,20 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			add_action('wp_ajax_content_update_rec_acts', array($this, 'update_recommended_actions_watch'));
 			add_action('load-themes.php', array($this, 'activation_admin_notice'));
 			/* enqueue script and style for welcome screen */
-			add_action( 'admin_enqueue_scripts', array( $this, 'content_style_and_scripts' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'style_and_scripts' ) );
 			
 			/* load welcome screen */
-			add_action( 'content_info_screen', array( $this, 'content_getting_started' ), 	    10 );
-			add_action( 'content_info_screen', array( $this, 'content_github' ), 		            40 );
-			add_action( 'content_info_screen', array( $this, 'content_welcome_free_pro' ), 				50 );
-			add_action( 'content_info_screen', array( $this, 'content_recommended_actions' ), 				50 );
-			add_action( 'content_info_screen', array( $this, 'content_changelog' ), 				60 );
+			add_action( 'content_info_screen', array( $this, 'getting_started' ), 	    10 );
+			add_action( 'content_info_screen', array( $this, 'github' ), 		            40 );
+			add_action( 'content_info_screen', array( $this, 'welcome_free_pro' ), 				50 );
+			add_action( 'content_info_screen', array( $this, 'recommended_actions' ), 				50 );
+			add_action( 'content_info_screen', array( $this, 'changelog' ), 				60 );
 			}
 
 		/**
 	 * Load welcome screen css and javascript
 	 */
-	public function content_style_and_scripts( $hook_suffix ) {
+	public function style_and_scripts( $hook_suffix ) {
 
 		if ( 'appearance_page_content-welcome' == $hook_suffix ) {
 			
@@ -62,7 +62,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			
 			wp_enqueue_style('content-theme-info-style', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome-page-styles.css');
 			
-			wp_enqueue_style('welcome_customizer', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css');
+			wp_enqueue_style('content-welcome_customizer', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css');
 			wp_enqueue_script('plugin-install');
 			wp_enqueue_script('updates');
 			wp_enqueue_script('content-companion-install', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
@@ -72,7 +72,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 					'installing' => esc_html__('Installing', 'content'),
 					'activating' => esc_html__('Activating', 'content'),
 					'error'      => esc_html__('Error', 'content'),
-					'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+					'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 				)
 			);
 		}
@@ -82,7 +82,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Load scripts for customizer page
 	 * @sfunctionse  1.8.2.4
 	 */
-	public function content_scripts_for_customizer() {
+	public function scripts_for_customizer() {
 
 		wp_enqueue_style( 'content-info-screen-customizer-css', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css' );
 		wp_enqueue_script( 'content-info-screen-customizer-js', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/js/welcome_customizer.js', array('jquery'), '20120206', true );
@@ -110,12 +110,10 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			'nr_actions_required' => $nr_actions_required,
 			'aboutpage' => esc_url( admin_url( 'themes.php?page=content-info' ) ),
 			'customizerpage' => esc_url( admin_url( 'customize.php' ) ),
-			'themeinfo' => __('View Theme Info','content'),
+			'themeinfo' => esc_html__('View Theme Info','content'),
 		) );
 	}
 		
-		
-
 		public function add_theme_info_menu() {
 			$theme = $this->theme;
 			$count = $this->action_count;
@@ -133,13 +131,9 @@ if (!class_exists('SpiceThemes_About_Page')) {
 
 		public function welcome_admin_notice() {
 			?>
-			<div class="updated notice is-dismissible content-notice">
-				<h1><?php
-				$theme_info = wp_get_theme();
-				printf( esc_html__('Welcome to %1$s - Version %2$s', 'content'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
-				</h1>
-				<p><?php echo sprintf( esc_html__("Welcome! Thank you for choosing SpiceThemes Content WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "content"), '<a href="' . esc_url( admin_url( 'themes.php?page=content-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=content-welcome' ) ); ?>" class="button button-blue-secondary button_content" style="text-decoration: none;"><?php _e('Get started with Content','content'); ?></a></p>
+			<div class="updated notice is-dismissible">
+				<p><?php echo sprintf( esc_html__("Content theme is installed. To take full advantage of the features this theme has to offer visit our %1\$s welcome page %2\$s", "content"), '<a href="' . esc_url( admin_url( 'themes.php?page=content-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=content-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with Content theme', 'content' ); ?></a></p>
 			</div>
 			<?php
 		}
@@ -209,7 +203,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			<?php
 		}
 		
-		public function content_getting_started() {
+		public function getting_started() {
 		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php' );
 	}
 
@@ -217,7 +211,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Contribute
 	 *
 	 */
-	public function content_github() {
+	public function github() {
 		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/useful_plugins.php' );
 	}
 
@@ -226,7 +220,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Free vs PRO
 	 * 
 	 */
-	public function content_welcome_free_pro() {
+	public function welcome_free_pro() {
 		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/free_vs_pro.php' );
 	}
 	
@@ -235,7 +229,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Recommended Action
 	 * 
 	 */
-	public function content_recommended_actions() {
+	public function recommended_actions() {
 		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/recommended_actions.php' );
 	}
 	
@@ -244,7 +238,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	/**
 		 * Output the changelog screen.
 		 */
-		public function content_changelog() {
+		public function changelog() {
 			global $wp_filesystem;
 
 			?>
@@ -256,7 +250,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				<p class="about-description"><?php esc_html_e( 'See changelog below:', 'content' ); ?></p>
 
 				<?php
-				$changelog_file = apply_filters( 'content_changelog_file', CONTENT_ST_TEMPLATE_DIR . '/changelog.txt' );
+				$changelog_file = apply_filters( 'changelog_file', CONTENT_ST_TEMPLATE_DIR . '/changelog.txt' );
 
 				// Check if the changelog file exists and is readable.
 				if ( $changelog_file && is_readable( $changelog_file ) ) {
@@ -359,7 +353,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 		public function get_recommended_actions() {
 
 			$act_count           = 0;
-			$actions_todo = get_option( 'content_recommended_actions', array());
+			$actions_todo = get_option( 'recommended_actions', array());
 			
 			$plugins = $this->get_recommended_plugins();
 
@@ -400,7 +394,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			$button_html  = '';
 			$is_installed = $this->is_plugin_installed($slug);
 			$plugin_path  = $this->get_plugin_basename_from_slug($slug);
-			$is_activeted = $this->is_plugin_active($plugin_path);
+			$is_activeted = $this->chk_plg_active($name);
 			if (!$is_installed) {
 				$plugin_install_url = add_query_arg(
 					array(
@@ -412,7 +406,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				$plugin_install_url = wp_nonce_url($plugin_install_url, 'install-plugin_' . esc_attr($slug));
 				$button_html        = sprintf('<a class="spicethemes-plugin-install install-now button-secondary button" data-slug="%1$s" href="%2$s" aria-label="%3$s" data-name="%4$s">%5$s</a>',
 					esc_attr($slug),
-					esc_url_raw($plugin_install_url),
+					esc_url($plugin_install_url),
 					sprintf(esc_html__('Install %s now', 'content'), esc_html($name)),
 					esc_html($name),
 					esc_html__('Install and activate', 'content')
@@ -431,7 +425,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 
 				$button_html = sprintf('<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="%1$s" href="%2$s" aria-label="%3$s" data-name="%4$s">%5$s</a>',
 					esc_attr($slug),
-					esc_url_raw($plugin_activate_link),
+					esc_url($plugin_activate_link),
 					sprintf(esc_html__('Activate %s now', 'content'), esc_html($name)),
 					esc_html($name),
 					esc_html__('Activate', 'content')
@@ -444,13 +438,14 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			return array('done' => $is_done, 'button' => $button_html);
 		}
 
-		public function is_plugin_active($path) {
-
-			if (!function_exists('is_plugin_active')) {
-				require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		public function chk_plg_active($name)
+		{
+			if (  function_exists( 'spiceb_activate' ) && ($name=='SpiceBox'))
+			{
+				return true;
 			}
-
-			if (is_plugin_active($path)) {
+			if( class_exists('WPCF7') && ($name=='Contact Form 7'))
+			{
 				return true;
 			}
 		}
@@ -483,16 +478,16 @@ if (!class_exists('SpiceThemes_About_Page')) {
 		public function update_recommended_actions_watch() {
 			if (isset($_POST['action_id'])) {
 				$action_id    = sanitize_text_field($_POST['action_id']);
-				$actions_todo = get_option('content_recommended_actions', array());
+				$actions_todo = get_option('recommended_actions', array());
 
 				if ((!isset($actions_todo[$action_id]) || !$actions_todo[$action_id])) {
 					$actions_todo[$action_id] = true;
 				} else {
 					$actions_todo[$action_id] = false;
 				}
-				update_option('content_recommended_actions', $actions_todo);
+				update_option('recommended_actions', $actions_todo);
 			}
-			echo json_encode(get_option('content_recommended_actions'));
+			echo json_encode(get_option('recommended_actions'));
 			wp_die();
 		}
 
@@ -574,8 +569,8 @@ function content_recommended_plugins_array($plugins){
 }
 add_filter('content_recommended_plugins', 'content_recommended_plugins_array');
 
-function SpiceThemes_About_Page() {
-	return SpiceThemes_About_Page::get_instance();
+function Content_About_Page() {
+	return Content_About_Page::get_instance();
 }
 global $content_about_page;
-$content_about_page = SpiceThemes_About_Page();
+$content_about_page = Content_About_Page();

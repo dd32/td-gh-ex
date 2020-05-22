@@ -41,7 +41,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 						'installing' => esc_html__('Installing', 'content'),
 						'activating' => esc_html__('Activating', 'content'),
 						'error'      => esc_html__('Error', 'content'),
-						'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+						'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 					)
 				);
 			}
@@ -77,7 +77,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 						$plugin_install_url = wp_nonce_url($plugin_install_url, 'install-plugin_spicethemes-companion');
 					 ?>
 						<p><?php esc_html_e("To take advantage of this theme's features in the customizer you need to install the SpiceBox plugin.", "content");?></p>
-						<a class="spicethemes-plugin-install install-now button-secondary button" href="<?php echo esc_url_raw($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install SpiceBox Now', 'content');?>" data-name="<?php esc_attr_e('SpiceBox', 'content'); ?>">
+						<a class="spicethemes-plugin-install install-now button-secondary button" href="<?php echo esc_url($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install SpiceBox Now', 'content');?>" data-name="<?php esc_attr_e('SpiceBox', 'content'); ?>">
 							<?php esc_html_e('Install and activate', 'content');?>
 						</a>
 					<?php else: ?>
@@ -94,7 +94,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 							);
 						?>
 						<p><?php esc_html_e("You have installed the SpiceBox plugin. To take advantage of this theme's features in the customizer, you need to activate it.", "content");?></p>
-						<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="spicethemes-companion" href="<?php echo esc_url_raw($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate SpiceBox now', 'content');?>" data-name="<?php esc_attr_e('SpiceBox', 'content'); ?>">
+						<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="spicethemes-companion" href="<?php echo esc_url($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate SpiceBox now', 'content');?>" data-name="<?php esc_attr_e('SpiceBox', 'content'); ?>">
 							<?php esc_html_e('Activate now', 'content');?>
 						</a>
 					<?php endif;?>

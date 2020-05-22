@@ -5,10 +5,11 @@
 get_header();  
 spicepress_breadcrumbs(); ?>
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section class="blog-section">
 	<div class="container">
 		<div class="row">
-		<div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar_primary' ) ? '12' :'8' ); ?> col-xs-12">
+		<div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'8' ); ?> col-sm-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'7' ); ?> col-xs-12">
 				<?php 
 				if ( have_posts() ) :
 					// Start the Loop.
@@ -34,6 +35,7 @@ spicepress_breadcrumbs(); ?>
 		</div>
 	</div>
 </section>
+</div>
 <!-- /Blog & Sidebar Section -->
 
 <?php get_footer(); ?>

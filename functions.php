@@ -51,7 +51,7 @@ add_action( 'admin_init', 'content_detect_button' );
 // footer custom script
 function content_footer_custom_script() {
 	
-if ( is_active_sidebar('sidebar_primary') ) {
+if ( is_active_sidebar('sidebar-1') ) {
 $col =6;
 }
 else

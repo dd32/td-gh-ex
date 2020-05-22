@@ -7,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
 		'footer_copyright_text',
 		array(
-			'default'           =>  '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="designer">Content</a> by SpiceThemes', 'content' ).'</p>',
+			'default'           =>  '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="nofollow">Content</a> by SpiceThemes', 'content' ).'</p>',
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'content_copyright_sanitize_text',
 			'transport'         => $selective_refresh,

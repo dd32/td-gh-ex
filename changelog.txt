@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.8 ==
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Changed the screenshot image.
+3. Corrected the admin notice.
+4. Fixed all the other issues.
+
 = 1.7.1 ==
 1. Fixed escaping issues.
 

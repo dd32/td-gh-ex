@@ -102,7 +102,7 @@
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo ('https://wordpress.org/support/theme/spicepress');?>" target="_blank" ><?php esc_html_e("On WordPress.org Support Forum","content"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url('https://wordpress.org/support/theme/spicepress');?>" target="_blank" ><?php esc_html_e("On WordPress.org Support Forum","content"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
@@ -134,7 +134,7 @@
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo ('https://support.spicethemes.com/');?>" target="_blank"><?php esc_html_e("Premium Support Forum","content"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url('https://support.spicethemes.com/');?>" target="_blank"><?php esc_html_e("Premium Support Forum","content"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
@@ -144,7 +144,7 @@
 						<div class="offer-content clearfix">
 							<div class="media pricing-content text-center padding10">
 								<div class="media-body">
-									<a href="<?php echo ( 'https://spicethemes.com/spicepress/' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get SpicePress PRO Now!','content' ); ?></a>
+									<a href="<?php echo esc_url( 'https://spicethemes.com/spicepress/' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get SpicePress PRO Now!','content' ); ?></a>
 								</div>
 							</div>
 						</div>

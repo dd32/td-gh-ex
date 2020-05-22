@@ -2,7 +2,7 @@
 /**
  * Template file for footer area
  */
-$footer_copyright = get_theme_mod('footer_copyright_text','<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="designer">Content</a> by SpiceThemes', 'content' ).'</p>');
+$footer_copyright = get_theme_mod('footer_copyright_text','<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="nofollow">Content</a> by SpiceThemes', 'content' ).'</p>');
 ?>
 <!-- Footer Section -->
 <footer class="site-footer">		

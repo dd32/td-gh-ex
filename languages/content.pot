@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Content\n"
-"POT-Creation-Date: 2018-11-01 19:12+0530\n"
+"POT-Creation-Date: 2020-05-22 19:12+0530\n"
 "PO-Revision-Date: 2018-11-01 19:12+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -40,98 +40,92 @@ msgstr ""
 msgid "View Theme Info"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:123
+#: admin/inc/class-spicethemes-about-page.php:121
 #, php-format
 msgid "About %1$s %2$s"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:124
+#: admin/inc/class-spicethemes-about-page.php:122
 #, php-format
 msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:139
-#, php-format
-msgid "Welcome to %1$s - Version %2$s"
-msgstr ""
-
-#: admin/inc/class-spicethemes-about-page.php:141
+#: admin/inc/class-spicethemes-about-page.php:135
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing SpiceThemes Content WordPress theme. To take "
-"full advantage of the features this theme has to offer visit our %swelcome "
-"page%s."
+"Content theme is installed. To take full advantage of the features this "
+"theme has to offer visit our %1$s welcome page %2$s"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:142
-msgid "Get started with Content"
+#: admin/inc/class-spicethemes-about-page.php:136
+msgid "Get started with Content theme"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:256
+#: admin/inc/class-spicethemes-about-page.php:250
 msgid "See changelog below:"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:310
-#: admin/tab-pages/getting-started.php:25
+#: admin/inc/class-spicethemes-about-page.php:304
+#: admin/tab-pages/getting-started.php:24
 msgid "Getting Started"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:315
+#: admin/inc/class-spicethemes-about-page.php:309
 msgid "Recommended Actions"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:323
+#: admin/inc/class-spicethemes-about-page.php:317
 msgid "Support"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:330
+#: admin/inc/class-spicethemes-about-page.php:324
 #: admin/tab-pages/useful_plugins.php:28 admin/tab-pages/useful_plugins.php:30
 msgid "Changelog"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:335
+#: admin/inc/class-spicethemes-about-page.php:329
 msgid "Free vs. PRO"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:416
+#: admin/inc/class-spicethemes-about-page.php:410
 #, php-format
 msgid "Install %s now"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:418
+#: admin/inc/class-spicethemes-about-page.php:412
 #: admin/inc/include-companion.php:81
 msgid "Install and activate"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:435
+#: admin/inc/class-spicethemes-about-page.php:429
 #, php-format
 msgid "Activate %s now"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:437
+#: admin/inc/class-spicethemes-about-page.php:431
 msgid "Activate"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:440
+#: admin/inc/class-spicethemes-about-page.php:434
 msgid "Active"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:562
+#: admin/inc/class-spicethemes-about-page.php:557
 #: admin/inc/include-companion.php:80 admin/inc/include-companion.php:97
 msgid "SpiceBox"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:564
+#: admin/inc/class-spicethemes-about-page.php:559
 msgid ""
 "To access the advance Frontpage sections and other theme features, please "
 "install the SpiceBox plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:568
+#: admin/inc/class-spicethemes-about-page.php:563
 msgid "Contact Form 7"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:570
+#: admin/inc/class-spicethemes-about-page.php:565
 msgid ""
 "To display the contact form on the contact section in homepage, please "
 "install the Contact Form 7 plugin"
@@ -359,42 +353,42 @@ msgid ""
 "Contact, Services, Portfolios, About Us and Blog."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:29
+#: admin/tab-pages/getting-started.php:27
 msgid ""
 "To take full advantage of all the features this theme has to offer, install "
 "and activate the SpiceBox plugin. Go to Customize and install the SpiceBox "
 "plugin."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:32
+#: admin/tab-pages/getting-started.php:30
 msgid "Go to the Customizer"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:38
+#: admin/tab-pages/getting-started.php:36
 msgid "Content theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:46
+#: admin/tab-pages/getting-started.php:44
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:53
+#: admin/tab-pages/getting-started.php:51
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:57
+#: admin/tab-pages/getting-started.php:55
 msgid "PRO Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:68
+#: admin/tab-pages/getting-started.php:66
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:71
+#: admin/tab-pages/getting-started.php:69
 msgid "Premium Theme Support"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:81
+#: admin/tab-pages/getting-started.php:79
 msgid "Premium Theme Details"
 msgstr ""
 
@@ -432,7 +426,7 @@ msgstr ""
 #: footer.php:5 functions/customizer/customizer_general_settings.php:10
 msgid ""
 "<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
-"<a href=\"https://spicethemes.com\" rel=\"designer\">Content</a> by "
+"<a href=\"https://spicethemes.com\" rel=\"nofollow\">Content</a> by "
 "SpiceThemes"
 msgstr ""
 
@@ -440,11 +434,15 @@ msgstr ""
 msgid "Copyright text"
 msgstr ""
 
-#: search.php:27
-msgid "Nothing found"
+#: index.php:18 index.php:25
+msgid "Home"
 msgstr ""
 
 #: search.php:28
+msgid "Nothing found"
+msgstr ""
+
+#: search.php:29
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
@@ -470,7 +468,7 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "spicethemes.com"
+msgid "spicethemes"
 msgstr ""
 
 #. Author URI of the plugin/theme

@@ -4,10 +4,11 @@ spicepress_breadcrumbs(); ?>
 <!-- /Page Title Section -->
 <div class="clearfix"></div>
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section class="blog-section">
 	<div class="container">
 		<div class="row">
-		<div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar_primary' ) ? '12' :'8' ); ?> col-xs-12">
+		<div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'8' ); ?> col-sm-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'7' ); ?> col-xs-12">
 			<div class="row site-content" id="blog-masonry">
 				<?php 
 					if ( have_posts() ) :
@@ -19,13 +20,15 @@ spicepress_breadcrumbs(); ?>
 						echo '</div>';
 					endwhile;
 				endif;
-				// Previous/next page navigation.
+				?>	
+			</div>
+			<?php
+			// Previous/next page navigation.
 					the_posts_pagination( array(
 						'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
 						'next_text'          => '<i class="fa fa-angle-double-right"></i>'
 					) );
-				?>	
-			</div>
+			?>
 		</div>
 		
 		<?php get_sidebar();?>
@@ -33,6 +36,7 @@ spicepress_breadcrumbs(); ?>
 		</div>
 	</div>
 </section>
+</div>
 <!-- /Blog & Sidebar Section -->
 
 <?php get_footer(); ?>
