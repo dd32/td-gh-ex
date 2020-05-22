@@ -2,7 +2,7 @@
 /**
  * Template file for footer area
  */
-$footer_copyright = get_theme_mod('footer_copyright_text','<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="designer">Rockers</a> by SpiceThemes', 'rockers' ).'</p>');
+$rockers_footer_copyright = get_theme_mod('footer_copyright_text','<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="nofollow">Rockers</a> by SpiceThemes', 'rockers' ).'</p>');
 ?>
 <!-- Footer Section -->
 <footer class="site-footer">		
@@ -10,11 +10,11 @@ $footer_copyright = get_theme_mod('footer_copyright_text','<p>'.__( '<a href="ht
 		
 		   <?php get_template_part('sidebar','footer');?>
 		
-		<?php if($footer_copyright != null): ?>
+		<?php if($rockers_footer_copyright != null): ?>
 			<div class="row">
 			<div class="col-md-12">
 					<div class="site-info wow fadeIn animated" data-wow-delay="0.4s">
-						<?php echo wp_kses_post($footer_copyright); ?>
+						<?php echo wp_kses_post($rockers_footer_copyright); ?>
 					</div>
 				</div>			
 			</div>	

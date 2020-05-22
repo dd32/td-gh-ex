@@ -3,8 +3,8 @@
  * @author SpiceThemes
  */
 
-if (!class_exists('SpiceThemes_About_Page')) {
-	class SpiceThemes_About_Page {
+if (!class_exists('Rockers_About_Page')) {
+	class Rockers_About_Page {
 
 		protected static $instance;
 		private $options;
@@ -38,20 +38,20 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			add_action('wp_ajax_rockers_update_rec_acts', array($this, 'update_recommended_actions_watch'));
 			add_action('load-themes.php', array($this, 'activation_admin_notice'));
 			/* enqueue script and style for welcome screen */
-			add_action( 'admin_enqueue_scripts', array( $this, 'rockers_style_and_scripts' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'style_and_scripts' ) );
 			
 			/* load welcome screen */
-			add_action( 'rockers_info_screen', array( $this, 'rockers_getting_started' ), 	    10 );
-			add_action( 'rockers_info_screen', array( $this, 'rockers_github' ), 		            40 );
-			add_action( 'rockers_info_screen', array( $this, 'rockers_welcome_free_pro' ), 				50 );
-			add_action( 'rockers_info_screen', array( $this, 'rockers_recommended_actions' ), 				50 );
-			add_action( 'rockers_info_screen', array( $this, 'rockers_changelog' ), 				60 );
+			add_action( 'rockers_info_screen', array( $this, 'getting_started' ), 	    10 );
+			add_action( 'rockers_info_screen', array( $this, 'github' ), 		            40 );
+			add_action( 'rockers_info_screen', array( $this, 'welcome_free_pro' ), 				50 );
+			add_action( 'rockers_info_screen', array( $this, 'recommended_actions' ), 				50 );
+			add_action( 'rockers_info_screen', array( $this, 'changelog' ), 				60 );
 			}
 
 		/**
 	 * Load welcome screen css and javascript
 	 */
-	public function rockers_style_and_scripts( $hook_suffix ) {
+	public function style_and_scripts( $hook_suffix ) {
 
 		if ( 'appearance_page_rockers-welcome' == $hook_suffix ) {
 			
@@ -62,7 +62,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			
 			wp_enqueue_style('rockers-theme-info-style', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome-page-styles.css');
 			
-			wp_enqueue_style('welcome_customizer', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css');
+			wp_enqueue_style('rockers-welcome_customizer', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css');
 			wp_enqueue_script('plugin-install');
 			wp_enqueue_script('updates');
 			wp_enqueue_script('rockers-companion-install', RC_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
@@ -72,7 +72,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 					'installing' => esc_html__('Installing', 'rockers'),
 					'activating' => esc_html__('Activating', 'rockers'),
 					'error'      => esc_html__('Error', 'rockers'),
-					'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+					'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 				)
 			);
 		}
@@ -82,7 +82,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Load scripts for customizer page
 	 * @sfunctionse  1.8.2.4
 	 */
-	public function rockers_scripts_for_customizer() {
+	public function scripts_for_customizer() {
 
 		wp_enqueue_style( 'rockers-info-screen-customizer-css', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css' );
 		wp_enqueue_script( 'rockers-info-screen-customizer-js', RC_TEMPLATE_DIR_URI . '/admin/assets/js/welcome_customizer.js', array('jquery'), '20120206', true );
@@ -133,13 +133,9 @@ if (!class_exists('SpiceThemes_About_Page')) {
 
 		public function welcome_admin_notice() {
 			?>
-			<div class="updated notice is-dismissible rockers-notice">
-				<h1><?php
-				$theme_info = wp_get_theme();
-				printf( esc_html__('Welcome to %1$s - Version %2$s', 'rockers'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
-				</h1>
-				<p><?php echo sprintf( esc_html__("Welcome! Thank you for choosing SpiceThemes Rockers WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "rockers"), '<a href="' . esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ); ?>" class="button button-blue-secondary button_rockers" style="text-decoration: none;"><?php esc_html_e('Get started with Rockers','rockers'); ?></a></p>
+			<div class="updated notice is-dismissible">
+				<p><?php echo sprintf( esc_html__("Rockers theme is installed. To take full advantage of the features this theme has to offer visit our %1\$s welcome page %2\$s", "rockers"), '<a href="' . esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with Rockers theme', 'rockers' ); ?></a></p>
 			</div>
 			<?php
 		}
@@ -185,7 +181,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 						?>
 		
 						 <ul class="rockers-nav-tabs" role="tablist">
-							<?php echo $tabs_head; ?>
+							<?php echo wp_kses_post($tabs_head); ?>
 						 </ul>
 						 
 						 	<div class="rockers-tab-content">
@@ -209,7 +205,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			<?php
 		}
 		
-		public function rockers_getting_started() {
+		public function getting_started() {
 		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php' );
 	}
 
@@ -217,7 +213,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Contribute
 	 *
 	 */
-	public function rockers_github() {
+	public function github() {
 		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/useful_plugins.php' );
 	}
 
@@ -226,7 +222,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Free vs PRO
 	 * 
 	 */
-	public function rockers_welcome_free_pro() {
+	public function welcome_free_pro() {
 		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/free_vs_pro.php' );
 	}
 	
@@ -235,7 +231,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * Recommended Action
 	 * 
 	 */
-	public function rockers_recommended_actions() {
+	public function recommended_actions() {
 		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/recommended_actions.php' );
 	}
 	
@@ -244,7 +240,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	/**
 		 * Output the changelog screen.
 		 */
-		public function rockers_changelog() {
+		public function changelog() {
 			global $wp_filesystem;
 
 			?>
@@ -400,7 +396,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			$button_html  = '';
 			$is_installed = $this->is_plugin_installed($slug);
 			$plugin_path  = $this->get_plugin_basename_from_slug($slug);
-			$is_activeted = $this->is_plugin_active($plugin_path);
+			$is_activeted = $this->chk_plg_active($name);
 			if (!$is_installed) {
 				$plugin_install_url = add_query_arg(
 					array(
@@ -412,7 +408,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				$plugin_install_url = wp_nonce_url($plugin_install_url, 'install-plugin_' . esc_attr($slug));
 				$button_html        = sprintf('<a class="spicethemes-plugin-install install-now button-secondary button" data-slug="%1$s" href="%2$s" aria-label="%3$s" data-name="%4$s">%5$s</a>',
 					esc_attr($slug),
-					esc_url_raw($plugin_install_url),
+					esc_url($plugin_install_url),
 					sprintf(esc_html__('Install %s now', 'rockers'), esc_html($name)),
 					esc_html($name),
 					esc_html__('Install and activate', 'rockers')
@@ -431,7 +427,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 
 				$button_html = sprintf('<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="%1$s" href="%2$s" aria-label="%3$s" data-name="%4$s">%5$s</a>',
 					esc_attr($slug),
-					esc_url_raw($plugin_activate_link),
+					esc_url($plugin_activate_link),
 					sprintf(esc_html__('Activate %s now', 'rockers'), esc_html($name)),
 					esc_html($name),
 					esc_html__('Activate', 'rockers')
@@ -444,13 +440,14 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			return array('done' => $is_done, 'button' => $button_html);
 		}
 
-		public function is_plugin_active($path) {
-
-			if (!function_exists('is_plugin_active')) {
-				require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		public function chk_plg_active($name)
+		{
+			if (  function_exists( 'spiceb_activate' ) && ($name=='SpiceBox'))
+			{
+				return true;
 			}
-
-			if (is_plugin_active($path)) {
+			if( class_exists('WPCF7') && ($name=='Contact Form 7'))
+			{
 				return true;
 			}
 		}
@@ -574,8 +571,8 @@ function rockers_recommended_plugins_array($plugins){
 }
 add_filter('rockers_recommended_plugins', 'rockers_recommended_plugins_array');
 
-function SpiceThemes_About_Page() {
-	return SpiceThemes_About_Page::get_instance();
+function Rockers_About_Page() {
+	return Rockers_About_Page::get_instance();
 }
 global $rockers_about_page;
-$rockers_about_page = SpiceThemes_About_Page();
+$rockers_about_page = Rockers_About_Page();

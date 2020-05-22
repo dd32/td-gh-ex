@@ -41,7 +41,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 						'installing' => esc_html__('Installing', 'rockers'),
 						'activating' => esc_html__('Activating', 'rockers'),
 						'error'      => esc_html__('Error', 'rockers'),
-						'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+						'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 					)
 				);
 			}
@@ -77,7 +77,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 						$plugin_install_url = wp_nonce_url($plugin_install_url, 'install-plugin_spicethemes-companion');
 					 ?>
 						<p><?php esc_html_e("To take advantage of this theme's features in the customizer you need to install the SpiceBox plugin.", "rockers");?></p>
-						<a class="spicethemes-plugin-install install-now button-secondary button" data-slug="spicebox" href="<?php echo esc_url_raw($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install SpiceBox Now', 'rockers');?>" data-name="<?php esc_attr_e('SpiceBox', 'rockers'); ?>">
+						<a class="spicethemes-plugin-install install-now button-secondary button" data-slug="spicebox" href="<?php echo esc_url($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install SpiceBox Now', 'rockers');?>" data-name="<?php esc_attr_e('SpiceBox', 'rockers'); ?>">
 							<?php esc_html_e('Install and activate', 'rockers');?>
 						</a>
 					<?php else: ?>
@@ -94,7 +94,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 							);
 						?>
 						<p><?php esc_html_e("You have installed the SpiceBox plugin. To take advantage of this theme's features in the customizer, you need to activate it.", "rockers");?></p>
-						<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="spicebox" href="<?php echo esc_url_raw($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate SpiceBox now', 'rockers');?>" data-name="<?php esc_attr_e('SpiceBox', 'rockers'); ?>">
+						<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="spicebox" href="<?php echo esc_url($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate SpiceBox now', 'rockers');?>" data-name="<?php esc_attr_e('SpiceBox', 'rockers'); ?>">
 							<?php esc_html_e('Activate now', 'rockers');?>
 						</a>
 					<?php endif;?>

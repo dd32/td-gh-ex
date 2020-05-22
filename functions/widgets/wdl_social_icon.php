@@ -253,32 +253,32 @@
 	public function update( $new_instance, $old_instance ) {
 	
 	$instance = array();
-		$instance['facebook_link'] = ( ! empty( $new_instance['facebook_link'] ) ) ? strip_tags( $new_instance['facebook_link'] ) : '';
-		$instance['facebook_target'] = ( ! empty( $new_instance['facebook_target'] ) ) ? strip_tags( $new_instance['facebook_target'] ) : '';
+		$instance['facebook_link'] = ( ! empty( $new_instance['facebook_link'] ) ) ? esc_url_raw( $new_instance['facebook_link'] ) : '';
+		$instance['facebook_target'] = ( ! empty( $new_instance['facebook_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['facebook_target'])  : '';
 		
-		$instance['twitter_link'] = ( ! empty( $new_instance['twitter_link'] ) ) ? strip_tags( $new_instance['twitter_link'] ) : '';
-		$instance['twitter_target'] = ( ! empty( $new_instance['twitter_target'] ) ) ? strip_tags( $new_instance['twitter_target'] ) : '';
+		$instance['twitter_link'] = ( ! empty( $new_instance['twitter_link'] ) ) ? esc_url_raw( $new_instance['twitter_link'] ) : '';
+		$instance['twitter_target'] = ( ! empty( $new_instance['twitter_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['twitter_target'])  : '';
 		
-		$instance['google_plus_link'] = ( ! empty( $new_instance['google_plus_link'] ) ) ? strip_tags( $new_instance['google_plus_link'] ) : '';
-		$instance['google_plus_target'] = ( ! empty( $new_instance['google_plus_target'] ) ) ? strip_tags( $new_instance['google_plus_target'] ) : '';
+		$instance['google_plus_link'] = ( ! empty( $new_instance['google_plus_link'] ) ) ? esc_url_raw( $new_instance['google_plus_link'] ) : '';
+		$instance['google_plus_target'] = ( ! empty( $new_instance['google_plus_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['google_plus_target'])  : '';
 		
-		$instance['linkedin_link'] = ( ! empty( $new_instance['linkedin_link'] ) ) ? strip_tags( $new_instance['linkedin_link'] ) : '';
-		$instance['linkedin_target'] = ( ! empty( $new_instance['linkedin_target'] ) ) ? strip_tags( $new_instance['linkedin_target'] ) : '';
+		$instance['linkedin_link'] = ( ! empty( $new_instance['linkedin_link'] ) ) ? esc_url_raw( $new_instance['linkedin_link'] ) : '';
+		$instance['linkedin_target'] = ( ! empty( $new_instance['linkedin_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['linkedin_target'])  : '';
 		
-		$instance['instagram_link'] = ( ! empty( $new_instance['instagram_link'] ) ) ? strip_tags( $new_instance['instagram_link'] ) : '';
-		$instance['instagram_target'] = ( ! empty( $new_instance['instagram_target'] ) ) ? strip_tags( $new_instance['instagram_target'] ) : '';
+		$instance['instagram_link'] = ( ! empty( $new_instance['instagram_link'] ) ) ? esc_url_raw( $new_instance['instagram_link'] ) : '';
+		$instance['instagram_target'] = ( ! empty( $new_instance['instagram_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['instagram_target'])  : '';
 		
-		$instance['youtube_link'] = ( ! empty( $new_instance['youtube_link'] ) ) ? strip_tags( $new_instance['youtube_link'] ) : '';
-		$instance['youtube_target'] = ( ! empty( $new_instance['youtube_target'] ) ) ? strip_tags( $new_instance['youtube_target'] ) : '';
+		$instance['youtube_link'] = ( ! empty( $new_instance['youtube_link'] ) ) ? esc_url_raw( $new_instance['youtube_link'] ) : '';
+		$instance['youtube_target'] = ( ! empty( $new_instance['youtube_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['youtube_target'])  : '';
 		
-		$instance['skype_link'] = ( ! empty( $new_instance['skype_link'] ) ) ? strip_tags( $new_instance['skype_link'] ) : '';
-		$instance['skype_target'] = ( ! empty( $new_instance['skype_target'] ) ) ? strip_tags( $new_instance['skype_target'] ) : '';
+		$instance['skype_link'] = ( ! empty( $new_instance['skype_link'] ) ) ? esc_url_raw( $new_instance['skype_link'] ) : '';
+		$instance['skype_target'] = ( ! empty( $new_instance['skype_target'] ) ) ?  rockers_sanitize_checkbox($new_instance['skype_target'])  : '';
 		
-		$instance['vimeo_link'] = ( ! empty( $new_instance['vimeo_link'] ) ) ? strip_tags( $new_instance['vimeo_link'] ) : '';
-		$instance['vimeo_target'] = ( ! empty( $new_instance['vimeo_target'] ) ) ? strip_tags( $new_instance['vimeo_target'] ) : '';
+		$instance['vimeo_link'] = ( ! empty( $new_instance['vimeo_link'] ) ) ? esc_url_raw( $new_instance['vimeo_link'] ) : '';
+		$instance['vimeo_target'] = ( ! empty( $new_instance['vimeo_target'] ) ) ? rockers_sanitize_checkbox($new_instance['vimeo_target'])  : '';
 		
-		$instance['dribble_link'] = ( ! empty( $new_instance['dribble_link'] ) ) ? strip_tags( $new_instance['dribble_link'] ) : '';
-		$instance['dribble_target'] = ( ! empty( $new_instance['dribble_target'] ) ) ? strip_tags( $new_instance['dribble_target'] ) : '';
+		$instance['dribble_link'] = ( ! empty( $new_instance['dribble_link'] ) ) ? esc_url_raw( $new_instance['dribble_link'] ) : '';
+		$instance['dribble_target'] = ( ! empty( $new_instance['dribble_target'] ) ) ? rockers_sanitize_checkbox($new_instance['dribble_target']) : '';
 		
 		return $instance;
 	}

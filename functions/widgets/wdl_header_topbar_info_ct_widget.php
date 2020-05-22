@@ -27,7 +27,7 @@
 	
 	//echo $args['before_widget']; 
 	
-	if($args['id']=='sidebar_primary')
+	if($args['id']=='sidebar-1')
 	{
 		$instance['before_title']='<div class="sm-widget-title wow fadeInDown animated" data-wow-delay="0.4s"><h3>';
 		$instance['before_title']='</h3></div><div class="sm-sidebar-widget wow fadeInDown animated" data-wow-delay="0.4s">';
@@ -52,7 +52,7 @@
 										</a>
 										<?php } } 	else
 										{
-										echo '<h4>'.esc_html($instance['header_title']).'</h4>';
+										echo '<h4>'.esc_html__( 'Chestnut Road,', 'rockers' ).'</h4>';
 										} 
 										?>
 									
@@ -60,7 +60,12 @@
 										
 											<h5><?php echo esc_html($instance['description']); ?></h5>
 											
-										<?php }?>
+										<?php }
+										else
+										{
+										echo '<h5>'.esc_html__( 'California - United States', 'rockers' ).'</h5>';
+										} 
+										?>
 										
 										
 									</div>
@@ -90,14 +95,14 @@
 	$header_title = $instance[ 'header_title' ];
 	}
 	else {
-	$header_title = __( 'Chestnut Road,', 'rockers' );
+	$header_title = esc_html__( 'Chestnut Road,', 'rockers' );
 	}
 	
 	if ( isset( $instance[ 'description' ])){
 	$description = $instance[ 'description' ];
 	}
 	else {
-	$description = __( 'California - United States', 'rockers' );
+	$description = esc_html__( 'California - United States', 'rockers' );
 	}
 	
 	if ( isset( $instance[ 'link' ])){
@@ -119,7 +124,7 @@
 	
 	<label for="<?php echo esc_attr($this->get_field_id( 'fa_icon' )); ?>"><?php esc_html_e('Font Awesome icon','rockers' ); ?></label>
 	<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'fa_icon' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'fa_icon' )); ?>" type="text" value="<?php if($fa_icon) echo esc_attr( $fa_icon ); else echo 'fa-map-marker';?>" />
-	<span><?php esc_html_e('Link to get Font Awesome icons','rockers'); ?><a href="<?php echo 'http://fortawesome.github.io/Font-Awesome/icons/'; ?>" target="_blank" ><?php esc_html_e('fa-icon','rockers'); ?></a></span><br><br>
+	<span><?php esc_html_e('Link to get Font Awesome icons','rockers'); ?><a href="<?php echo esc_url('http://fortawesome.github.io/Font-Awesome/icons/'); ?>" target="_blank" ><?php esc_html_e('fa-icon','rockers'); ?></a></span><br><br>
 	
 	<label for="<?php echo esc_attr($this->get_field_id( 'header_title' )); ?>"><?php esc_html_e( 'Title','rockers' ); ?></label>
 	<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'header_title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'header_title' )); ?>" type="text" value="<?php if($header_title) echo esc_attr($header_title); else esc_attr_e( 'Chestnut Road,', 'rockers' );?>" /><br><br>
@@ -141,11 +146,11 @@
 	public function update( $new_instance, $old_instance ) {
 	
 		$instance = array();
-		$instance['fa_icon'] = ( ! empty( $new_instance['fa_icon'] ) ) ? strip_tags( $new_instance['fa_icon'] ) : '';
-		$instance['header_title'] = ( ! empty( $new_instance['header_title'] ) ) ? htmlspecialchars_decode($new_instance['header_title']) : '';
-		$instance['description'] = ( ! empty( $new_instance['description'] ) ) ? htmlspecialchars_decode($new_instance['description']) : '';
-		$instance['link'] = ( ! empty( $new_instance['link'] ) ) ? $new_instance['link'] : '';
-		$instance['target'] = ( ! empty( $new_instance['target'] ) ) ? $new_instance['target'] : '';
+		$instance['fa_icon'] = ( ! empty( $new_instance['fa_icon'] ) ) ? sanitize_text_field( $new_instance['fa_icon'] ) : '';
+		$instance['header_title'] = ( ! empty( $new_instance['header_title'] ) ) ? sanitize_text_field($new_instance['header_title']) : '';
+		$instance['description'] = ( ! empty( $new_instance['description'] ) ) ? sanitize_text_field($new_instance['description']) : '';
+		$instance['link'] = ( ! empty( $new_instance['link'] ) ) ? esc_url_raw($new_instance['link']) : '';
+		$instance['target'] = ( ! empty( $new_instance['target'] ) ) ? rockers_sanitize_checkbox($new_instance['target']) : '';
 		
 		return $instance;
 	}

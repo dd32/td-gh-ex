@@ -84,13 +84,13 @@
 									<ul class="feature">
 										<li style="font-size:16px; line-height:25px; padding:28px"> 
 										
-										<?php esc_html_e("Slider [Static Image], Services [3 Services], Portfolio [3 Portfolio], Testimonial, Latest News","spicepress"); ?>
+										<?php esc_html_e("Slider [Static Image], Services [3 Services], Portfolio [3 Portfolio], Testimonial, Latest News","rockers"); ?>
 										
 										
 										</li>
 										<li style="font-size:16px; line-height:25px; padding:28px"> 
-										<?php esc_html_e("Business Template and Full-Width Template","spicepress"); ?>
-										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php esc_html_e("Wide Layout","spicepress"); ?> </li>
+										<?php esc_html_e("Business Template and Full-Width Template","rockers"); ?>
+										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php esc_html_e("Wide Layout","rockers"); ?> </li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -102,7 +102,7 @@
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/spicepress" target="_blank" ><?php esc_html_e("On WordPress.org Support Forum","spicepress"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url('https://wordpress.org/support/theme/spicepress'); ?>" target="_blank" ><?php esc_html_e("On WordPress.org Support Forum","rockers"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
@@ -119,10 +119,10 @@
 									
 									<ul class="feature">
 										<li style="font-size:16px; line-height:25px; padding:19px">
-										<?php esc_html_e("Top Header, Slider [Unlimited], Services [Unlimited], Portfolio [Unlimited], Latest News, Clients, Testimonials, Custom Widgets","spicepress"); ?>
+										<?php esc_html_e("Top Header, Slider [Unlimited], Services [Unlimited], Portfolio [Unlimited], Latest News, Clients, Testimonials, Custom Widgets","rockers"); ?>
 										</li>
-										<li style="font-size:16px; line-height:25px; padding:18px"><?php esc_html_e("About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","spicepress"); ?></li>
-										<li style="font-size:16px; line-height:25px; padding:43px"><?php esc_html_e("Wide layout & Boxed Layout","spicepress"); ?></li>
+										<li style="font-size:16px; line-height:25px; padding:18px"><?php esc_html_e("About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","rockers"); ?></li>
+										<li style="font-size:16px; line-height:25px; padding:43px"><?php esc_html_e("Wide layout & Boxed Layout","rockers"); ?></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -134,7 +134,7 @@
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo 'https://support.spicethemes.com/';?>" target="_blank"><?php esc_html_e("Premium Support Forum","spicepress"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url('https://support.spicethemes.com/');?>" target="_blank"><?php esc_html_e("Premium Support Forum","rockers"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
@@ -144,7 +144,7 @@
 						<div class="offer-rockers clearfix">
 							<div class="media pricing-rockers text-center padding10">
 								<div class="media-body">
-									<a href="<?php echo 'https://spicethemes.com/spicepress/'; ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get SpicePress PRO Now!','rockers' ); ?></a>
+									<a href="<?php echo esc_url('https://spicethemes.com/spicepress/'); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get SpicePress PRO Now!','rockers' ); ?></a>
 								</div>
 							</div>
 						</div>

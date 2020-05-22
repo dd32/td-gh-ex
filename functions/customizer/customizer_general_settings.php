@@ -7,14 +7,14 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
 		'footer_copyright_text',
 		array(
-			'default'           =>  '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="designer">Rockers</a> by SpiceThemes', 'rockers' ).'</p>',
+			'default'           =>  '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="nofollow ">Rockers</a> by SpiceThemes', 'rockers' ).'</p>',
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'rockers_copyright_sanitize_text',
 			'transport'         => $selective_refresh,
 		)	
 	);
 	$wp_customize->add_control('footer_copyright_text', array(
-			'label' => esc_html__('Copyright text','chilly'),
+			'label' => esc_html__('Copyright text','rockers'),
 			'section' => 'spicepress_footer_copyright',
 			'type'    =>  'textarea'
 	));	 // footer copyright

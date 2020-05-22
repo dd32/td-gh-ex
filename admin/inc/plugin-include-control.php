@@ -40,7 +40,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Rockers_Plugin_Instal
 					'installing' => esc_html__('Installing', 'rockers'),
 					'activating' => esc_html__('Activating', 'rockers'),
 					'error'      => esc_html__('Error', 'rockers'),
-					'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+					'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 				)
 			);
 		}
@@ -65,11 +65,6 @@ if (class_exists('WP_Customize_Control') && !class_exists('Rockers_Plugin_Instal
 			if(!is_object($rockers_about_page)){
 				return;
 			}
-			
-			$path = $rockers_about_page->get_plugin_basename_from_slug($this->slug);
-			if($rockers_about_page->is_plugin_active($path)){
-				return;
-			}
 			?>
 			<div class="spicethemes-plugin-install-control">
 				<span class="spicethemes-customizer-notification-dismiss" id="<?php echo esc_attr($this->slug); ?>-install-dismiss" data-slug="<?php echo esc_attr($this->slug); ?>"> <i class="fa fa-times"></i></span>
@@ -77,11 +72,11 @@ if (class_exists('WP_Customize_Control') && !class_exists('Rockers_Plugin_Instal
 		            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		        <?php endif; ?>
 		        <?php if ( ! empty( $this->description ) ) : ?>
-		            <span class="description customize-control-description"><?php echo $this->description ; ?></span>
+		            <span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
 		        <?php endif; ?>
 				<?php 
 					$button = $rockers_about_page->get_plugin_buttion($this->slug, $this->name);
-					echo $button['button'];
+					echo wp_kses_post($button['button']);
 				?>
 				<div style="clear: both;"></div>
 			</div>

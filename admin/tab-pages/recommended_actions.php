@@ -4,12 +4,12 @@
 ?>
 <div id="recommended_actions" class="rockers-tab-pane panel-close">
 <div class="action-list">
-	<?php if($actions): foreach ($actions as $key => $action): ?>
+	<?php if($actions): foreach ($actions as $key => $rockers_val): ?>
 	<div class="col-md-6">
-	<div class="action" id="<?php echo esc_attr($action['id']); ?>">
+	<div class="action" id="<?php echo esc_attr($rockers_val['id']); ?>">
 		<div class="action-watch">
-		<?php if(!$action['is_done']): ?>
-			<?php if(!isset($actions_todo[$action['id']]) || !$actions_todo[$action['id']]): ?>
+		<?php if(!$rockers_val['is_done']): ?>
+			<?php if(!isset($actions_todo[$rockers_val['id']]) || !$actions_todo[$rockers_val['id']]): ?>
 				<span class="dashicons dashicons-visibility"></span>
 			<?php else: ?>
 				<span class="dashicons dashicons-hidden"></span>
@@ -19,9 +19,9 @@
 		<?php endif; ?>
 		</div>
 		<div class="action-inner">
-			<h3 class="action-title"><?php echo esc_html($action['title']); ?></h3>
-			<div class="action-desc"><?php echo wp_kses_post($action['desc']); ?></div>
-			<?php echo $action['link']; ?>
+			<h3 class="action-title"><?php echo esc_html($rockers_val['title']); ?></h3>
+			<div class="action-desc"><?php echo esc_html($rockers_val['desc']); ?></div>
+			<?php echo wp_kses_post($rockers_val['link']); ?>
 		</div>
 	</div>
 	</div>
