@@ -2,7 +2,7 @@
 Deserve Theme by fruitthemes https://fruitthemes.com
 
 === About Deserve ===
-Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
+Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. Deserve theme has got custom widgets, theme-options etc in order to get it customized as per your needs. Step by step documentation for setting up your website like Deserve theme demo including DUMMY DATA files is available here => https://fruitthemes.com/documentation/deserve/
 
 === Tags ===
 left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -37,23 +37,10 @@ Deserve is distributed under the terms of the GNU GPL
 5. one custom widgets :
 	i) deserve latest post widget for display latest post in sidebar or footer.
 	
-6. Theme Options :
-
-	a) You can manage here site logo,email,phone and footer copyright text.	
-
-	b) Home Page Settings
-		i) Banner Slider : Here you can manage home page slider. 
-		ii) First Section Title Bar : You can set home page First Section title and description.
-		iii) First Section : you can upload image, title and short description. 
-		iv) Second Section Title Bar : You can set home page Second Section title and description.
-	c)Social Settings  : You can manage here Social Media
-		
-
-		
-		
+6. In order to add logo and other customization options, please visit Appearance => Customize menu. 
 		
 ---------------------------------------------------------
-License and Copyrights for Resources used in this theme
+License and Copyrights for Resources used in Deserve theme
 ---------------------------------------------------------
 
 i) Fontawesome
@@ -62,34 +49,27 @@ License URI:  http://fontawesome.io/license/
 Resource Name: fontawesome
 License Name: Open Font License (OFL) Version 4.0.1
 	
-ii)Administration Panel
-===========
-Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-License: GNU General Public License v2
-
-iii)Fonts
+ii)Fonts
 ===========
 Istok Web - http://fonts.googleapis.com/css?family=Istok+Web
 Quicksand - http://fonts.googleapis.com/css?family=Quicksand
 
 They are under SIL Open Font.
 	
-iv)Bootstrap files
+iii)Bootstrap files
 ===========
 we used are licensed under the Apache License v3.3.1
 Bootstrap - http://getbootstrap.com
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-vi) html5 js file
+iv) html5 js file
 ============
 we used are licensed under MIT/GPL2.
 Version - v3.7.0
 
-vii) slider
+v) slider
 ============
 OwlCarousel - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) Copyright (c) 2014 The MIT License (MIT) 
-
-
 
 ---------------------------------------------------------
 Image

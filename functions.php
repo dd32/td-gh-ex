@@ -134,7 +134,7 @@ function deserve_admin_menu( ) {
 }
 function deserve_buy_now(){ ?>
 <div class="deserve_pro_version">
-  <a href="<?php echo esc_url('https://fruitthemes.com/wordpress-themes/deserve/'); ?>" target="_blank">    
+  <a href="<?php echo esc_url('https://fruitthemes.com/wordpress-themes/deservepro/'); ?>" target="_blank">    
     <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/deserve_pro_features.png" width="70%" height="auto" />    
   </a>
 </div>
@@ -375,7 +375,8 @@ $query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_pag
 echo $after_widget;
 }
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("LatestPostWidget");') );
+add_action( 'widgets_init', function(){ register_widget( 'LatestPostWidget' ); });
+
 /* Deserve Entry Meta  */
 /*
  * deserve Set up post entry meta.
