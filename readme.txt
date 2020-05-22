@@ -2,7 +2,7 @@
 Avocation Theme by FruitThemes https://fruitthemes.com/
 
 === About Avocation ===
-Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets,  customize options etc in order to get it customized as per your needs. Step by step documentation for setting up your website like Advent theme demo including DUMMY DATA files is available here => https://fruitthemes.com/documentation/avocation/
+Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets,  customize options etc in order to get it customized as per your needs. Step by step documentation for setting up your website like Avocation theme demo including DUMMY DATA files is available here => https://fruitthemes.com/documentation/avocation/
 
 === Tags ===
 left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template,  sticky-post, theme-options, threaded-comments, translation-ready
