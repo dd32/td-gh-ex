@@ -4,7 +4,7 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version: 0.4
+Version: 0.4.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -80,12 +80,12 @@ input[type="tel"]:focus,
 textarea:focus,
 input[type="submit"]:focus,
 #comments:focus,
-select{
+select:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
   text-decoration:none !important;
 } 
-.serach_inner input.search-field:focus, .serach_inner input.search-submit:focus, a.closepop:focus{
+.logo h1 a:focus, .logo p.site-title a:focus, .serach_inner input.search-field:focus, .serach_inner input.search-submit:focus, a.closepop:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
   text-decoration:none !important;
@@ -255,7 +255,7 @@ input[type="submit"] {
 
 /* --------TOP BAR --------- */
 #topbar {
-  padding: 15px 0;
+  padding: 10px 0;
 }
 .info-box i {
   font-size: 30px;
@@ -585,7 +585,7 @@ ul.list_nav {
   height: auto;
 }
 #slider .carousel-caption {
-  top: 50%;
+  top: 52%;
   transform: translateY(-50%);
   right: 50%;
   left: 7%;
@@ -599,6 +599,9 @@ ul.list_nav {
   letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
+}
+#slider .inner_carousel h1 a{
+  color: #fff;
 }
 #slider .inner_carousel p {
   color: #fff;
@@ -1545,7 +1548,7 @@ h2#reply-title {
   margin-right: 10px;
 }
 .post-navigation span.meta-nav {
-  font-size: 14px;
+  font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
@@ -1773,14 +1776,6 @@ section.related.products h2 {
   margin-top: 32px;
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
-@media screen and (max-width:600px) {
-  .admin-bar .home-page-header{
-    margin-top: 46px;
-  }
-  .admin-bar .header-fixed{
-    margin-top:0px;
-  }
-}
 @media screen and (max-width:720px) {
   #slider .inner_carousel,.logo,
   #topbar .custom-social-icons{
@@ -2013,6 +2008,9 @@ section.related.products h2 {
     margin: 0;
     text-align: left;
   }
+  .admin-bar .home-page-header{
+    margin-top: 46px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
   .page-template-custom-home-page .home-page-header{
@@ -2020,7 +2018,7 @@ section.related.products h2 {
     background: #010203;
   }
   .top-btn a{
-    padding:12px 18px;
+    padding:12px 15px;
   }
   #slider .carousel-caption {
     top: 32%;
@@ -2043,10 +2041,13 @@ section.related.products h2 {
     border-bottom: 1px solid #fff;
     text-decoration:none !important;
   } 
+  .logo h1, .logo p.site-title{
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1199px){
   .top-btn a{
-    padding:12px 9px;
+    padding:12px 7px;
   }
   #slider .carousel-caption {
     top: 55%;
@@ -2057,11 +2058,20 @@ section.related.products h2 {
   }
   #slider .carousel-control-prev,
   #slider .carousel-control-next{
-    bottom: 10%;
+    bottom: 2%;
   }
   .scrollup i{
     bottom: 10px;
     right: 10px;
+  }
+  #topbar {
+    padding: 5px 0;
+  }
+  #slider .inner_carousel h1 {
+    font-size: 30px;
+  }
+  #slider .inner_carousel p {
+    line-height: 1.5;
   }
 }
 /* safari */

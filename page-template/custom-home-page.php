@@ -8,21 +8,21 @@ get_header(); ?>
 <main id="maincontent" role="main">
   <?php do_action( 'automotive_centre_before_slider' ); ?>
 
-  <?php if( get_theme_mod( 'automotive_centre_slider_hide_show',true) != '') { ?>
+  <?php if( get_theme_mod( 'automotive_centre_slider_hide_show') != '') { ?>
 
   <section id="slider">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-      <?php $slider_page = array();
+      <?php $automotive_centre_slider_pages = array();
         for ( $count = 1; $count <= 4; $count++ ) {
           $mod = intval( get_theme_mod( 'automotive_centre_slider_page' . $count ));
           if ( 'page-none-selected' != $mod ) {
-            $slider_page[] = $mod;
+            $automotive_centre_slider_pages[] = $mod;
           }
         }
-        if( !empty($slider_page) ) :
+        if( !empty($automotive_centre_slider_pages) ) :
           $args = array(
             'post_type' => 'page',
-            'post__in' => $slider_page,
+            'post__in' => $automotive_centre_slider_pages,
             'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
@@ -35,7 +35,7 @@ get_header(); ?>
             <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
-                <h1><?php the_title(); ?></h1>
+                <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_slider_excerpt_number','30')))); ?></p>
                 <div class="slider-btn">
                   <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'LEARN MORE', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'LEARN MORE','automotive-centre' );?></span></a>
@@ -72,17 +72,17 @@ get_header(); ?>
         <h2><?php echo esc_html(get_theme_mod('automotive_centre_section_title',''));?></h2>
       <?php } ?>
       <div class="row">
-        <?php $about_page = array();
+        <?php $automotive_centre_about_pages = array();
           for ( $count = 0; $count <= 0; $count++ ) {
             $mod = absint( get_theme_mod( 'automotive_centre_about_page' ));
             if ( 'page-none-selected' != $mod ) {
-              $about_page[] = $mod;
+              $automotive_centre_about_pages[] = $mod;
             }
           }
-          if( !empty($about_page) ) :
+          if( !empty($automotive_centre_about_pages) ) :
             $args = array(
               'post_type' => 'page',
-              'post__in' => $about_page,
+              'post__in' => $automotive_centre_about_pages,
               'orderby' => 'post__in'
             );
             $query = new WP_Query( $args );

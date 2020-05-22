@@ -53,9 +53,9 @@ function automotive_centre_mostrar_guide() {
 
     <div class="tab-sec">
 		<div class="tab">
-		  <button class="tablinks" onclick="openCity(event, 'automotive_lite')"><?php esc_html_e( 'Getting Started', 'automotive-centre' ); ?></button>		  
-		  <button class="tablinks" onclick="openCity(event, 'automotive_pro')"><?php esc_html_e( 'Get Premium', 'automotive-centre' ); ?></button>
-		  <button class="tablinks" onclick="openCity(event, 'free_pro')"><?php esc_html_e( 'Support', 'automotive-centre' ); ?></button>
+		  <button class="tablinks" onclick="automotive_centre_open_tab(event, 'automotive_lite')"><?php esc_html_e( 'Getting Started', 'automotive-centre' ); ?></button>		  
+		  <button class="tablinks" onclick="automotive_centre_open_tab(event, 'automotive_pro')"><?php esc_html_e( 'Get Premium', 'automotive-centre' ); ?></button>
+		  <button class="tablinks" onclick="automotive_centre_open_tab(event, 'free_pro')"><?php esc_html_e( 'Support', 'automotive-centre' ); ?></button>
 		</div>
 
 		<!-- Tab content -->

@@ -38,12 +38,12 @@
 	<?php if(get_theme_mod('automotive_centre_loader_enable',true)==1){ ?>
   		<div id="preloader">
 		    <div id="status">
-		      	<?php $theme_lay = get_theme_mod( 'automotive_centre_loader_icon','Two Way');
-		        if($theme_lay == 'Two Way'){ ?>
+		      	<?php $automotive_centre_theme_lay = get_theme_mod( 'automotive_centre_loader_icon','Two Way');
+		        if($automotive_centre_theme_lay == 'Two Way'){ ?>
 		       		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/two-way.gif" alt="" role="img"/>
-		      	<?php }else if($theme_lay == 'Dots'){ ?>
+		      	<?php }else if($automotive_centre_theme_lay == 'Dots'){ ?>
 		        	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/dots.gif" alt="" role="img"/>
-		      	<?php }else if($theme_lay == 'Rotate'){ ?>
+		      	<?php }else if($automotive_centre_theme_lay == 'Rotate'){ ?>
 		       		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/rotate.gif" alt="" role="img"/>
 		      	<?php } ?>
 		    </div>

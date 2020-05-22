@@ -12,7 +12,7 @@
 	<div id="header" class="menubar">
 		<div class="header-menu <?php if( get_theme_mod( 'automotive_centre_sticky_header') != '') { ?> header-sticky"<?php } else { ?>close-sticky <?php } ?>">
 			<div class="row">
-				<div class="<?php if( get_theme_mod( 'automotive_centre_search_hide_show') != '') { ?>col-lg-11 col-md-10 col-6"<?php } else { ?>col-lg-12 col-md-12 <?php } ?> ">
+				<div class="<?php if( get_theme_mod( 'automotive_centre_search_hide_show',true) != '') { ?>col-lg-11 col-md-10 col-6"<?php } else { ?>col-lg-12 col-md-12 <?php } ?> ">
 					<div class="toggle-nav mobile-menu">
 					    <button role="tab" onclick="automotive_centre_menu_open_nav()"><i class="<?php echo esc_attr(get_theme_mod('automotive_centre_res_open_menu_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Button','automotive-centre'); ?></span></button>
 					</div>
@@ -32,7 +32,7 @@
 			        </div>
 				</div>
 				<div class="col-lg-1 col-md-2 col-6">
-			        <?php if( get_theme_mod( 'automotive_centre_search_hide_show') != '') { ?>
+			        <?php if( get_theme_mod( 'automotive_centre_search_hide_show',true) != '') { ?>
 			        <div class="search-box">
 			        	<a href="#" onclick="automotive_centre_search_open()"><span><i class="fas fa-search"></i></span></a>
 			        </div>
@@ -44,7 +44,7 @@
 	        <div class="serach_inner">
 	          <?php get_search_form(); ?>
 	        </div>
-	        <a href="#" onclick="automotive_centre_search_close()" class="closepop"><i class="far fa-window-close"></i></a>
+	        <a href="#main" onclick="automotive_centre_search_close()" class="closepop"><i class="fa fa-window-close"></i></a>
 	    </div>
 	</div>
 </div>

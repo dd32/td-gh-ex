@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="col-lg-4 col-md-4">
+<div class="col-lg-4 col-md-6">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
 	    <div class="post-main-box">
 	      	<div class="box-image">
@@ -22,15 +22,7 @@
 	        <div class="new-text">
 	        	<div class="entry-content">
 	        		<p>
-			          <?php $theme_lay = get_theme_mod( 'automotive_centre_excerpt_settings','Excerpt');
-			          if($theme_lay == 'Content'){ ?>
-			            <?php the_content(); ?>
-			          <?php }
-			          if($theme_lay == 'Excerpt'){ ?>
-			            <?php if(get_the_excerpt()) { ?>
-			              <?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?> <?php echo esc_html(get_theme_mod('automotive_centre_excerpt_suffix',''));?>
-			            <?php }?>
-			          <?php }?>
+			          <?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?> <?php echo esc_html( get_theme_mod('automotive_centre_excerpt_suffix','') ); ?>
 			        </p>
 	        	</div>
 	        </div>

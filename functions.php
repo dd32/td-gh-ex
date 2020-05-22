@@ -149,7 +149,7 @@ function automotive_centre_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Single Product Sidebar', 'automotive-centre' ),
-		'description'   => __( 'Appears on shop page', 'automotive-centre' ),
+		'description'   => __( 'Appears on single product page', 'automotive-centre' ),
 		'id'            => 'woocommerce-single-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -276,7 +276,7 @@ function automotive_centre_scripts() {
 	wp_enqueue_style( 'automotive-centre-basic-style', get_stylesheet_uri() );
 	/* Inline style sheet */
 	require get_parent_theme_file_path( '/inline-style.php' );
-	wp_add_inline_style( 'automotive-centre-basic-style',$custom_css );
+	wp_add_inline_style( 'automotive-centre-basic-style',$automotive_centre_custom_css );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/fontawesome-all.css' );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
@@ -290,12 +290,6 @@ function automotive_centre_scripts() {
 	wp_enqueue_style( 'dashicons' );
 }
 add_action( 'wp_enqueue_scripts', 'automotive_centre_scripts' );
-
-function automotive_centre_ie_stylesheet(){
-	wp_enqueue_style('automotive-centre-ie', get_template_directory_uri().'/css/ie.css');
-	wp_style_add_data( 'automotive-centre-ie', 'conditional', 'IE' );
-}
-add_action('wp_enqueue_scripts','automotive_centre_ie_stylesheet');
 
 function automotive_centre_sanitize_dropdown_pages( $page_id, $setting ) {
   	// Ensure $input is an absolute integer.
