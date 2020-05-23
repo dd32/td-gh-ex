@@ -4,11 +4,11 @@ Text Domain: impressive
 Theme URI: https://fruitthemes.com/wordpress-themes/impressive/
 Author: FruitThemes
 Author URI: https://fruitthemes.com/
-Description: Impressive is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Impressive Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.Step by step documentation and dummy data is available at: https://fruitthemes.com/documentation/impressive/
-Version: 2.0.1
+Description: Impressive is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Impressive Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, customizer options etc in order to get it customized as per your needs. Step by step documentation and dummy data is available at: https://fruitthemes.com/documentation/impressive/
+Version: 2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Impressive Theme, Copyright 2018 fruitthemes.com
+Impressive Theme, Copyright 2020 FruitThemes.com
 Impressive is distributed under the terms of the GNU GPL
 Tags:  left-sidebar, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, custom-background, custom-colors, custom-header
 This theme, like WordPress, is licensed under the FruitThemes.
@@ -51,8 +51,7 @@ td, th {
 .our-blog-details > p {
     line-height: 1.8;
     margin: 0 0 20px;
-    text-align: justify;
-    font-size: 18px;
+    font-size: 16px;
 }
 .page-numbers {
     border: 1px solid #000;

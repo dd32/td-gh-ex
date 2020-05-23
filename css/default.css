@@ -52,12 +52,10 @@ img{
     width: 100%;
 }
 .title > h2, .site-breadcumb > h1{
-    font-weight:bold;
     margin: 0 0 15px;
     position: relative;
-    text-transform: uppercase;
     padding-bottom: 15px;
-    font-size: 34px;
+    font-size: 28px;
 }
 .title > h2:before, .site-breadcumb > h1:before {
     border-bottom: 2px solid #dba605;
@@ -71,9 +69,7 @@ img{
 }
 .subtitle{
     font-family: 'Dancing Script';
-    text-transform: capitalize;
     font-size: 24px;
-    font-weight:bold;
 }
 .social-icon ul, 
 .our-work-list > ul, 
@@ -94,8 +90,6 @@ img{
     list-style: none outside none;
 }
 .site-btn{
-    font-weight:bold;
-    text-transform: uppercase;
     font-size: 18px;
     padding: 10px 35px;
     display: inline-block;
@@ -116,8 +110,6 @@ img{
 }
 .our-work-list > ul > li > a {
     padding: 0 10px;
-    font-weight:bold;
-    text-transform: uppercase;
     font-size: 16px;
     color: #181818;
 }
@@ -161,8 +153,6 @@ section {
     padding: 10px;
     color: #fff;
     position: relative;
-    text-transform: capitalize;
-    font-weight:bold;
 }
 .main-menu-ul ul ul li a{
     clear: both;
@@ -173,8 +163,6 @@ section {
     line-height: 1;    
     padding: 10px;
     text-align: left;
-    text-transform: capitalize;
-    font-weight:bold;
 }
 .main-menu-ul ul ul li a:hover,
 .main-menu-ul ul ul li a:focus, 
@@ -299,7 +287,6 @@ section {
     padding: 10px;
     transition: width 0.7s ease 0s;
     -webkit-transition: width 0.7s ease 0s;
-    font-weight:bold;
     width: 85px;
     outline: 0;
 }
@@ -342,7 +329,6 @@ section {
     display: inline-block;
     font-family: 'MontserratAlternates-Bold';
     font-size: 28px;    
-    text-transform: uppercase;
     line-height: 1.6;
 }
 /**************************header end*********************/
@@ -370,8 +356,7 @@ section {
 }
 .copyright p{
     font-family: "Dancing Script";
-    font-size: 22px;  
-    font-weight:bold;
+    font-size: 22px; 
 }
 /**************************footer end*********************/
 
@@ -389,8 +374,6 @@ section {
     font-family: "Dancing Script";
     font-size: 22px;
     color: #181818;
-    text-transform: capitalize;
-    font-weight:bold;
 }
 .breadcrumb-menubar > li > a, .breadcrumb-menubar .active, .breadcrumb-menubar > li + li:before{
     color: #181818;
@@ -405,11 +388,9 @@ section {
     border-radius: 1px;
     color: #272727;
     display: inline-block;
-    font-weight:bold;
     font-size: 14px;
     padding: 7px 13px;
     text-align: center;
-    text-transform: uppercase;
     transition: all 0.3s ease 0s;
 }
 .site-pagination ul li a:hover, .site-pagination ul li .active {
@@ -442,13 +423,11 @@ section {
 .main-sidebar .sidebar-widget .widget-title {
     border-bottom: 1px solid #dba605;
     color: #dba605;
-    font-weight:bold;
     font-size: 16px;
     margin: 0;
     padding-bottom: 8px;
     margin: 0 0 20px;
-    text-align: center;
-    text-transform: uppercase;
+    text-align: left;
 }
 .main-sidebar .sidebar-widget ul {
     list-style: outside none none;
@@ -457,13 +436,10 @@ section {
 }
 .main-sidebar .sidebar-widget .aouthr-name{
     color: #272727;
-    font-weight:bold;
     font-size: 13px;
-    text-transform: uppercase;
 }
 .main-sidebar .sidebar-widget .comment-date{
     font-size: 12px;
-    text-transform: capitalize;
     color: #2a2b2c;
 }
 .main-sidebar .comments-box ul li {
@@ -489,7 +465,6 @@ section {
 }
 .main-sidebar .sidebar-widget ul li a{
     color: #2a2b2c;
-    text-transform: uppercase;
 }
 .main-sidebar .sidebar-widget ul li span{
     padding-left: 5px;
@@ -518,9 +493,7 @@ section {
     color: #5c5c5c;
 }
 .our-services .service-title{
-    font-size: 22px;   
-    font-weight:bold;
-    text-transform: uppercase;
+    font-size: 22px; 
     color: #dba605;
     margin-bottom: 20px;
 }
@@ -561,7 +534,6 @@ section {
     display: inline-block;
     font-family: "Dancing Script";
     font-size: 34px;
-    font-weight:bold;
     width: 100%;
 }
 .get-in-touch-info .site-btn{
@@ -589,11 +561,9 @@ section {
     text-align: left;
 }
 .work-title{
-    font-weight:bold;
     position: relative;
     font-size: 18px;
-    color: #181818;
-    text-transform: capitalize;   
+    color: #181818;  
     display: block;
     padding: 12px 0;
     text-align: center;
@@ -638,13 +608,11 @@ section {
 } 
 .post-meta ul li {
     padding-right: 10px;
-    font-weight:bold;
     font-size: 16px;
     color: #181818;
 }
 .post-meta ul li a {
-    color: #dba605;   
-    text-transform: uppercase;
+    color: #dba605;  
 }
 .post-meta ul li .date{
     color: #181818;
@@ -710,8 +678,6 @@ section {
     padding-bottom: 10px;
 }
 .article-title > h2, .comment-reply-title{    
-    font-weight:bold;
-    text-transform: uppercase;
     font-size: 18px;
     text-align: center;
     color:  #dba605;
@@ -826,7 +792,6 @@ section {
     padding: 10px;
     width: 100%;
     outline: 0;
-    text-transform: capitalize;
 }
 .comment-form .comment-form-comment > textarea{
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -837,20 +802,17 @@ section {
     font-size: 13px;
     padding: 10px;
     width: 100%;
-    resize: vertical; 
-    text-transform: capitalize;	
+    resize: vertical;
     outline: 0;
 }
 .form-submit > input[type="submit"]{
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #000000;
     border-radius: 2px;
-    color: #000000;     
-    font-weight:bold;
+    color: #000000;  
     font-size: 13px;
     margin-top: 20px;
     padding: 8px 40px;
-    text-transform: uppercase;
     transition: all 0.3s ease-in-out 0s;
     -webkit-transition: all 0.3s ease-in-out 0s;
 }
@@ -899,12 +861,10 @@ section {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #000000;
     border-radius: 2px;
-    color: #000000;    
-    font-weight:bold;
+    color: #000000; 
     font-size: 13px;
     margin-top: 20px;
     padding: 8px 40px;
-    text-transform: uppercase;
     transition: all 0.3s ease-in-out 0s;
     -webkit-transition: all 0.3s ease-in-out 0s;
 }
@@ -918,7 +878,6 @@ section {
     margin-bottom: 15px;
     color: #dba605;
     font-family: "Dancing Script";
-    font-weight:bold;
 }
 .contact-form {
     border-right: 1px solid #dadada;
@@ -943,13 +902,11 @@ section {
     padding: 5px 0;
     font-size: 15px;    
     width: 100%;
-    font-weight:bold;
 }
 .contact-add > ul > li > span {
     float: right;
     font-size: 16px;
     padding: 1px 0;
-    text-transform: capitalize;
     font-weight: normal;
     width: 65%;
 }

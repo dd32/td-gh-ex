@@ -4,7 +4,7 @@ Impressive Theme by FruitThemes https://fruitthemes.com/
 
 === About Impressive ===
 
-Impressive is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Impressive Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
+Impressive is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Impressive Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, customizer options etc in order to get it customized as per your needs. Step by step documentation and dummy data is available at: https://fruitthemes.com/documentation/impressive/
 
 === Tags ===
 
@@ -16,12 +16,12 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Impressive Theme, Copyright 2017 fruitthemes.com
+Impressive Theme, Copyright 2020 FruitThemes.com
 Impressive is distributed under the terms of the GNU GPL
 
 == Features ==
 
-Responsive design(Bootstrap), Theme Options, Custom Menu, supports social media.
+Responsive design(Bootstrap), Customizer Options, Custom Menu, supports social media.
 
 == Installation ==
 
@@ -41,27 +41,7 @@ Responsive design(Bootstrap), Theme Options, Custom Menu, supports social media.
 
 4. Now click on "Impressive" to activate the theme.
 
-5. Theme Options :
-	a).Basic Settings.
-		i). you can manage here site logo,favicon,Header backgroung image and blog title.
-
-	b).Header Settings.
-		i). you can manage Header backgroung image and social icon.
-	
-	c).Home Page Settings.
-		i).  Title Bar : you can set home page title,sub title and description.
-		ii). Our Services: you can upload font awesome icon class names, title, post and shortdescription.
-		iii).Get In Touch: you can set home page backgroung image, button title, link and description.
-		iv). Blog Section: you can set home page blog title,blog sub title and blog number.
-
-	d).Social Settings
-		i). you can manage here social icon.
-		
-	e).Footer Settings
-		i). you can manage here site logo,social icon and footer copyright text.	
-		
-	f). Contact us Settings	
-		i). you can manage here contact info title, description, telephone number, fax number, email id, web and address.  
+5. In order to customize logo, colors etc., please visit Appearance => Customize menu inside your WordPress admin panel.  
 			
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -73,25 +53,20 @@ i) Fontawesome
 	Resource Name: fontawesome
 	License Name: Open Font License (OFL) Version 4.2.0
 
-ii) Administration Panel
-========================
-	Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-	License: GNU General Public License v3
-
-iii) Fonts
+ii) Fonts
 ===========
     http://fonts.googleapis.com/css?family=Josefin+Sans:400,700
 	http://fonts.googleapis.com/css?family=Dancing+Script
 	http://fonts.googleapis.com/css?family=Montserrat+Alternates
 	They are under SIL Open Font.
 
-iv)Bootstrap files
+iii)Bootstrap files
 ==================
 	we used are licensed under the Apache License v3.3.1
 	Bootstrap - http://getbootstrap.com
 	Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-v) html5 js file
+iv) html5 js file
 =================
 	we used are licensed under MIT/GPL2.
 	Version - v3.7.0

@@ -22,7 +22,7 @@ function impressive_custom_breadcrumbs() {
            
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
               
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . esc_html(get_the_archive_title()) . '</strong></li>';
+            echo '<li class="item-current item-archive"><span class="bread-current bread-archive">' . esc_html(get_the_archive_title()) . '</span></li>';
               
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
               
@@ -40,7 +40,7 @@ function impressive_custom_breadcrumbs() {
             }
               
             $custom_tax_name = get_queried_object()->name;
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . esc_html($custom_tax_name) . '</strong></li>';
+            echo '<li class="item-current item-archive"><span class="bread-current bread-archive">' . esc_html($custom_tax_name) . '</span></li>';
               
         } else if ( is_single() ) { 
               
@@ -92,24 +92,24 @@ function impressive_custom_breadcrumbs() {
             // Check if the post is in a category
             if(!empty($last_category)) {
                 echo $cat_display;
-                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><strong class="bread-current bread-' . esc_attr($post->ID) . '" title="' . esc_attr(get_the_title()) . '">' . esc_html(get_the_title()). '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><span class="bread-current bread-' . esc_attr($post->ID) . '" title="' . esc_attr(get_the_title()) . '">' . esc_html(get_the_title()). '</span></li>';
                   
             // Else if post is in a custom taxonomy
             } else if(!empty($cat_id)) {
                   
                 echo '<li class="item-cat item-cat-' . esc_attr($cat_id) . ' item-cat-' . esc_attr($cat_nicename) . '"><a class="bread-cat bread-cat-' . esc_attr($cat_id) . ' bread-cat-' . esc_attr($cat_nicename) . '" href="' . esc_url($cat_link) . '" title="' . esc_attr($cat_name) . '">' . esc_html($cat_name) . '</a></li>';             
-                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><strong class="bread-current bread-' . esc_attr($post->ID) . '" title="' . esc_attr(get_the_title()) . '">' . esc_html(get_the_title()) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><span class="bread-current bread-' . esc_attr($post->ID) . '" title="' . esc_attr(get_the_title()) . '">' . esc_html(get_the_title()) . '</span></li>';
               
             } else {
                   
-                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><strong class="bread-current bread-' . esc_attr($post->ID) . '" title="' . esc_attr(get_the_title()) . '">' . esc_html(get_the_title()) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><span class="bread-current bread-' . esc_attr($post->ID) . '" title="' . esc_attr(get_the_title()) . '">' . esc_html(get_the_title()) . '</span></li>';
                   
             }
               
         } else if ( is_category() ) {
                
             // Category page
-            echo '<li class="item-current item-cat"><strong class="bread-current bread-cat">' . esc_html(single_cat_title('', false)) . '</strong></li>';
+            echo '<li class="item-current item-cat"><span class="bread-current bread-cat">' . esc_html(single_cat_title('', false)) . '</span></li>';
                
         } else if ( is_page() ) {
                
@@ -133,12 +133,12 @@ function impressive_custom_breadcrumbs() {
                 echo $parents;
                    
                 // Current page
-                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><strong title="' . esc_attr(get_the_title()) . '"> ' . esc_html(get_the_title()). '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><span title="' . esc_attr(get_the_title()) . '"> ' . esc_html(get_the_title()). '</span></li>';
                    
             } else {
                    
                 // Just display current page if not parents
-                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><strong class="bread-current bread-' . esc_attr($post->ID) . '"> ' . esc_html(get_the_title()) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr($post->ID) . '"><span class="bread-current bread-' . esc_attr($post->ID) . '"> ' . esc_html(get_the_title()) . '</span></li>';
                    
             }
                
@@ -156,7 +156,7 @@ function impressive_custom_breadcrumbs() {
             $get_term_name  = $terms[0]->name;
                
             // Display the tag name
-            echo '<li class="item-current item-tag-' . esc_attr($get_term_id) . ' item-tag-' . esc_attr($get_term_slug) . '"><strong class="bread-current bread-tag-' . esc_attr($get_term_id) . ' bread-tag-' . esc_attr($get_term_slug) . '">' . esc_html($get_term_name) . '</strong></li>';
+            echo '<li class="item-current item-tag-' . esc_attr($get_term_id) . ' item-tag-' . esc_attr($get_term_slug) . '"><span class="bread-current bread-tag-' . esc_attr($get_term_id) . ' bread-tag-' . esc_attr($get_term_slug) . '">' . esc_html($get_term_name) . '</span></li>';
            
         } elseif ( is_day() ) {
                
@@ -170,7 +170,7 @@ function impressive_custom_breadcrumbs() {
            
                
             // Day display
-            echo '<li class="item-current item-' . esc_attr(get_the_time('j')) . '"><strong class="bread-current bread-' . esc_attr(get_the_time('j')) . '"> ' . esc_html(get_the_time('jS')) . ' ' . esc_html(get_the_time('M')) . esc_html__(' Archives','impressive').'</strong></li>';
+            echo '<li class="item-current item-' . esc_attr(get_the_time('j')) . '"><span class="bread-current bread-' . esc_attr(get_the_time('j')) . '"> ' . esc_html(get_the_time('jS')) . ' ' . esc_html(get_the_time('M')) . esc_html__(' Archives','impressive').'</span></li>';
                
         } else if ( is_month() ) {
                
@@ -181,12 +181,12 @@ function impressive_custom_breadcrumbs() {
            
                
             // Month display
-            echo '<li class="item-month item-month-' . esc_attr(get_the_time('m')) . '"><strong class="bread-month bread-month-' . esc_attr(get_the_time('m')) . '" title="' . esc_attr(get_the_time('M')) . '">' . esc_html(get_the_time('M')) . esc_html__(' Archives','impressive').'</strong></li>';
+            echo '<li class="item-month item-month-' . esc_attr(get_the_time('m')) . '"><span class="bread-month bread-month-' . esc_attr(get_the_time('m')) . '" title="' . esc_attr(get_the_time('M')) . '">' . esc_html(get_the_time('M')) . esc_html__(' Archives','impressive').'</span></li>';
                
         } else if ( is_year() ) {
                
             // Display year archive
-            echo '<li class="item-current item-current-' . esc_attr(get_the_time('Y')) . '"><strong class="bread-current bread-current-' . esc_attr(get_the_time('Y')) . '" title="' . esc_attr(get_the_time('Y')) . '">' . esc_html(get_the_time('Y')) . esc_html__(' Archives','impressive').'</strong></li>';
+            echo '<li class="item-current item-current-' . esc_attr(get_the_time('Y')) . '"><span class="bread-current bread-current-' . esc_attr(get_the_time('Y')) . '" title="' . esc_attr(get_the_time('Y')) . '">' . esc_html(get_the_time('Y')) . esc_html__(' Archives','impressive').'</span></li>';
                
         } else if ( is_author() ) {
                
@@ -197,17 +197,17 @@ function impressive_custom_breadcrumbs() {
             $userdata = get_userdata( $author );
                
             // Display author name
-            echo '<li class="item-current item-current-' . esc_attr($userdata->user_nicename) . '"><strong class="bread-current bread-current-' . esc_attr($userdata->user_nicename) . '" title="' . esc_attr($userdata->display_name) . '">' . esc_html__('Author: ','impressive') . esc_html($userdata->display_name) . '</strong></li>';
+            echo '<li class="item-current item-current-' . esc_attr($userdata->user_nicename) . '"><span class="bread-current bread-current-' . esc_attr($userdata->user_nicename) . '" title="' . esc_attr($userdata->display_name) . '">' . esc_html__('Author: ','impressive') . esc_html($userdata->display_name) . '</span></li>';
            
         } else if ( get_query_var('paged') ) {
                
             // Paginated archives
-            echo '<li class="item-current item-current-' . esc_attr(get_query_var('paged')) . '"><strong class="bread-current bread-current-' . esc_attr(get_query_var('paged')) . '" title="'.esc_attr__('Page ','impressive') . esc_attr(get_query_var('paged')) . '">'.esc_html__('Page','impressive') . ' ' . esc_html(get_query_var('paged')) . '</strong></li>';
+            echo '<li class="item-current item-current-' . esc_attr(get_query_var('paged')) . '"><span class="bread-current bread-current-' . esc_attr(get_query_var('paged')) . '" title="'.esc_attr__('Page ','impressive') . esc_attr(get_query_var('paged')) . '">'.esc_html__('Page','impressive') . ' ' . esc_html(get_query_var('paged')) . '</span></li>';
                
         } else if ( is_search() ) {
            
             // Search results page
-            echo '<li class="item-current item-current-' . esc_attr(get_search_query()) . '"><strong class="bread-current bread-current-' . esc_attr(get_search_query()) . '" title="'.esc_attr__('Search results for: ','impressive') . esc_attr(get_search_query()) . '">'.esc_html__('Search results for: ','impressive') . esc_html(get_search_query(),'impressive') . '</strong></li>';
+            echo '<li class="item-current item-current-' . esc_attr(get_search_query()) . '"><span class="bread-current bread-current-' . esc_attr(get_search_query()) . '" title="'.esc_attr__('Search results for: ','impressive') . esc_attr(get_search_query()) . '">'.esc_html__('Search results for: ','impressive') . esc_html(get_search_query(),'impressive') . '</span></li>';
            
         } elseif ( is_404() ) {
                
