@@ -52,8 +52,8 @@ add_action( 'save_post',     'aagaz_startup_category_transient_flusher' );
  */
 if ( ! function_exists( 'aagaz_startup_pagination_option' ) ) {
 	function aagaz_startup_pagination_type() {
-		$pagination_type = get_theme_mod( 'aagaz_startup_pagination_option', 'Default' );
-		if ( $pagination_type == 'Default' ) {
+		$aagaz_startup_pagination_type = get_theme_mod( 'aagaz_startup_pagination_option', 'Default' );
+		if ( $aagaz_startup_pagination_type == 'Default' ) {
 			the_posts_pagination();
 		} else {
 			the_posts_navigation();

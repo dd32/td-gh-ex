@@ -2,9 +2,9 @@
 Contributors: ThemesEye
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 7.2.14
-Stable tag: 0.4.5
+Stable tag: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,12 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 
 = 0.4.5 =
   * Changed some code.
+  * Updated POT file.
+
+= 0.4.6 =
+  * Added show / hide related post option, related post title option and related post number option in post settings.
+  * Added show related post by categories and tags option in post settings.
+  * Added show / hide option for single post featured image option.
   * Updated POT file.
   
 == Resources ==

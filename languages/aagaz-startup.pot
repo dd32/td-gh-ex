@@ -597,157 +597,193 @@ msgid 'Post Author'
 msgstr ""
 
 #: inc/customizer.php:1023
-msgid 'Post Tags'
-msgstr ""
-
-#: inc/customizer.php:1028
-#: inc/customizer.php:1036
-msgid 'Default'
+msgid 'Single Post Tags'
 msgstr ""
 
 #: inc/customizer.php:1033
-msgid 'Post Layout Option'
-msgstr ""
-
-#: inc/customizer.php:1037
-msgid 'Center'
+msgid 'Single Post Featured Image'
 msgstr ""
 
 #: inc/customizer.php:1038
-msgid 'Image and Content'
-msgstr ""
-
-#: inc/customizer.php:1048
-msgid 'Post Description'
-msgstr ""
-
-#: inc/customizer.php:1043
-#: inc/customizer.php:1052
-msgid 'Post Excerpt'
-msgstr ""
-
-#: inc/customizer.php:1051
-msgid 'None'
-msgstr ""
-
-#: inc/customizer.php:1053
-msgid 'Post Content'
-msgstr ""
-
-#: inc/customizer.php:1065
-msgid 'Excerpt length'
-msgstr ""
-
-#: inc/customizer.php:1077
-msgid '{...}'
-msgstr ""
-
-#: inc/customizer.php:1081
-msgid 'Excerpt Indicator'
-msgstr ""
-
-#: inc/customizer.php:1088
-msgid 'READ MORE'
-msgstr ""
-
-#: inc/customizer.php:1092
-msgid 'Add Button Text'
-msgstr ""
-
-#: inc/customizer.php:1098
-#: inc/customizer.php:1106
+#: inc/customizer.php:1046
 msgid 'Default'
 msgstr ""
 
-#: inc/customizer.php:1104
+#: inc/customizer.php:1043
+msgid 'Post Layout Option'
+msgstr ""
+
+#: inc/customizer.php:1047
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:1048
+msgid 'Image and Content'
+msgstr ""
+
+#: inc/customizer.php:1058
+msgid 'Post Description'
+msgstr ""
+
+#: inc/customizer.php:1053
+#: inc/customizer.php:1062
+msgid 'Post Excerpt'
+msgstr ""
+
+#: inc/customizer.php:1061
+msgid 'None'
+msgstr ""
+
+#: inc/customizer.php:1063
+msgid 'Post Content'
+msgstr ""
+
+#: inc/customizer.php:1075
+msgid 'Excerpt length'
+msgstr ""
+
+#: inc/customizer.php:1087
+msgid '{...}'
+msgstr ""
+
+#: inc/customizer.php:1091
+msgid 'Excerpt Indicator'
+msgstr ""
+
+#: inc/customizer.php:1098
+msgid 'READ MORE'
+msgstr ""
+
+#: inc/customizer.php:1102
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:1108
+#: inc/customizer.php:1116
+msgid 'Default'
+msgstr ""
+
+#: inc/customizer.php:1114
 msgid 'Post Pagination'
 msgstr ""
 
-#: inc/customizer.php:1107
+#: inc/customizer.php:1117
 msgid 'Next / Previous'
 msgstr ""
 
-#: inc/customizer.php:1112
+#: inc/customizer.php:1122
+msgid "Related Post Settings"
+msgstr ""
+
+#: inc/customizer.php:1132
+msgid "Related Post"
+msgstr ""
+
+#: inc/customizer.php:1143
+msgid "Show Related Posts"
+msgstr ""
+
+#: inc/customizer.php:1145
+msgid "By Categories"
+msgstr ""
+
+#: inc/customizer.php:1146
+msgid "By Tags"
+msgstr ""
+
+#: inc/customizer.php:1150
+msgid "Related Posts"
+msgstr ""
+
+#: inc/customizer.php:1154
+msgid "Change Related Post Title"
+msgstr ""
+
+#: inc/customizer.php:1164
+msgid "Change Related Post Number"
+msgstr ""
+
+#: inc/customizer.php:1176
 msgid 'Footer Section'
 msgstr ""
 
-#: inc/customizer.php:1123
+#: inc/customizer.php:1187
 msgid 'No. of Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:1125
+#: inc/customizer.php:1189
 msgid 'Select the number of footer widget areas and after that, go to Appearance > Widgets and add your widgets in the footer.'
 msgstr ""
 
-#: inc/customizer.php:1127
+#: inc/customizer.php:1191
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:1128
+#: inc/customizer.php:1192
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:1129
+#: inc/customizer.php:1193
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:1130
+#: inc/customizer.php:1194
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:1139
+#: inc/customizer.php:1203
 msgid 'Copyright Top and Bottom Padding'
 msgstr ""
 
-#: inc/customizer.php:1155
+#: inc/customizer.php:1219
 msgid 'Show / Hide Scroll To Top'
 msgstr ""
 
-#: inc/customizer.php:1160
-#: inc/customizer.php:1170
+#: inc/customizer.php:1224
+#: inc/customizer.php:1234
 msgid 'Right align'
 msgstr ""
 
-#: inc/customizer.php:1165
+#: inc/customizer.php:1229
 msgid 'Scroll To Top'
 msgstr ""
 
-#: inc/customizer.php:1166
+#: inc/customizer.php:1230
 msgid 'Here you can change the Footer layout.'
 msgstr ""
 
-#: inc/customizer.php:1169
+#: inc/customizer.php:1233
 msgid 'Left align'
 msgstr ""
 
-#: inc/customizer.php:1171
+#: inc/customizer.php:1235
 msgid 'Center align'
 msgstr ""
 
-#: inc/customizer.php:1180
+#: inc/customizer.php:1244
 msgid 'Scroll To Top Font Size'
 msgstr ""
 
-#: inc/customizer.php:1195
+#: inc/customizer.php:1259
 msgid 'Scroll Top Bottom Padding'
 msgstr ""
 
-#: inc/customizer.php:1210
+#: inc/customizer.php:1274
 msgid 'Scroll Left Right Padding'
 msgstr ""
 
-#: inc/customizer.php:1225
+#: inc/customizer.php:1289
 msgid 'Scroll To Top Border Radius'
 msgstr ""
 
-#: inc/customizer.php:1240
+#: inc/customizer.php:1304
 msgid 'Add Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:1372
+#: inc/customizer.php:1436
 msgid 'Aagaz Startup Pro'
 msgstr ""
 
-#: inc/customizer.php:1373
+#: inc/customizer.php:1437
 msgid 'Go Pro'
 msgstr ""

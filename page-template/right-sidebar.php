@@ -11,9 +11,7 @@ get_header(); ?>
     <main id="main" role="main" class="wrapper">
         <div class="row">
     		<div class="col-lg-8 col-md-8" id="main-content">
-
     			<?php while ( have_posts() ) : the_post(); ?>	
-                    
                     <h1><?php esc_html(the_title()); ?></h1>
                     <?php the_post_thumbnail(); ?>
                     <div class="text"><p><?php the_content();?></p></div>

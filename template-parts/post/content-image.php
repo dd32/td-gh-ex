@@ -10,8 +10,8 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="blogger">
-    <?php $blog_layout = get_theme_mod( 'aagaz_startup_blog_post_layout','Default');
-    if($blog_layout == 'Default' || $blog_layout == 'Center'){ ?>
+    <?php $aagaz_startup_blog_layout = get_theme_mod( 'aagaz_startup_blog_post_layout','Default');
+    if($aagaz_startup_blog_layout == 'Default' || $aagaz_startup_blog_layout == 'Center'){ ?>
       <div class="post-image">
         <?php the_post_thumbnail(); ?>
       </div>
@@ -34,7 +34,7 @@
       <?php }
       if(get_theme_mod('aagaz_startup_blog_description', 'Post Excerpt') == 'Post Excerpt'){ ?>
         <?php if(get_the_excerpt()) { ?>
-          <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
+          <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
         <?php } ?>
       <?php }?>
       <?php if( get_theme_mod('aagaz_startup_button_text','READ MORE') != ''){ ?>
@@ -42,7 +42,7 @@
           <a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html(get_theme_mod('aagaz_startup_button_text','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('aagaz_startup_button_text','READ MORE'));?></span></a>
         </div>
       <?php }?>
-    <?php }elseif($blog_layout == 'Image and Content'){ ?>
+    <?php }elseif($aagaz_startup_blog_layout == 'Image and Content'){ ?>
       <div class="row m-0">
         <div class="post-image col-lg-6 col-md-12">
           <?php the_post_thumbnail(); ?>
@@ -67,7 +67,7 @@
           <?php }
           if(get_theme_mod('aagaz_startup_blog_description', 'Post Excerpt') == 'Post Excerpt'){ ?>
             <?php if(get_the_excerpt()) { ?>
-              <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
+              <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
             <?php } ?>
           <?php }?>
           <?php if( get_theme_mod('aagaz_startup_button_text','READ MORE') != ''){ ?>

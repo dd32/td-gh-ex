@@ -12,7 +12,6 @@
 						esc_html_e( 'Menu', 'aagaz-startup' );
 					?>
 				</button>
-
 				<?php wp_nav_menu( array(
 					'theme_location' => 'top',
 					'menu_id'        => 'top-menu',
@@ -29,7 +28,7 @@
 	</div>
 	<div class="serach_outer">
 	    <div class="serach_inner">
-	      <?php get_search_form(); ?>
+      		<?php get_search_form(); ?>
 	    </div>
 	    <a href="#main" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','aagaz-startup' );?></span></a>
 	</div>

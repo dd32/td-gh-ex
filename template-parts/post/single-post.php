@@ -10,13 +10,15 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
 	<div class="blogger singlebox">
-		<div class="post-image">
-		    <?php 
-		      if(has_post_thumbnail()) { 
-		        the_post_thumbnail(); 
-		      }
-		    ?>
-	 	</div>
+		<?php if( get_theme_mod( 'aagaz_startup_single_post_image',true) != '') { ?>
+			<div class="post-image">
+			    <?php 
+			      if(has_post_thumbnail()) { 
+			        the_post_thumbnail(); 
+			      }
+			    ?>
+		 	</div>
+		<?php } ?>
 		<div class="category">
 		  	<a href="<?php echo esc_url( get_permalink() ); ?>"><?php foreach((get_the_category()) as $category) { echo esc_html($category->cat_name) . ' '; } ?></a>
 		</div>
@@ -51,3 +53,7 @@
 	    <?php } ?>
 	</div>
 </article>
+
+<?php if (get_theme_mod('aagaz_startup_related_posts',true) != '') {
+  get_template_part( 'template-parts/post/related-posts' );
+}

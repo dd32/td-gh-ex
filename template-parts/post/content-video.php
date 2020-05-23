@@ -53,7 +53,7 @@
     <?php }
     if(get_theme_mod('aagaz_startup_blog_description', 'Post Excerpt') == 'Post Excerpt'){ ?>
       <?php if(get_the_excerpt()) { ?>
-        <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
+        <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?> <?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
       <?php } ?>
     <?php }?>
     <?php if( get_theme_mod('aagaz_startup_button_text','READ MORE') != ''){ ?>
