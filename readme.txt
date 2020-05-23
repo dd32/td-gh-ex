@@ -64,6 +64,10 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.3.4 -2020-05-22 =
+* Add   - Required header fields: `Tested up to` and `Requires PHP` in style.css.
+* Tweak - Add and improve theme-related notices.
+
 = Version 1.3.3 -2020-05-04 =
 * Fix   - Menu not accessible on small devices.
 * Tweak - Add review notice message.
