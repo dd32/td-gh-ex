@@ -1,11 +1,11 @@
-# Copyright (C) 2015 the Catch Themes Team
+# Copyright (C) 2017-2020 the Catch Themes Team
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-05-22 18:21-0400\n"
-"PO-Revision-Date: 2019-05-22 18:21-0400\n"
+"POT-Creation-Date: 2020-05-22 17:31-0700\n"
+"PO-Revision-Date: 2020-05-22 17:31-0700\n"
 "Last-Translator: Kurt <catchme@vindu.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -16,7 +16,7 @@ msgstr ""
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 

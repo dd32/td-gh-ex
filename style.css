@@ -4,7 +4,10 @@ Theme URI: https://catchthemes.com/themes/full-frame/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/full-frame/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/full-frame/
-Version: 2.5.7
+Version: 2.6
+Requires at least: 5.1
+Tested up to: 5.4
+Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: full-frame
@@ -488,7 +491,9 @@ blockquote:before {
 .cat-links span + a:before,
 .tags-links span + a:before,
 .comments-link a:before,
-.edit-link a:before {
+.edit-link a:before,
+.sidr .menu-item-has-children a:after,
+.sidr .page_item_has_children a:after {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
     display: inline-block;
@@ -898,7 +903,8 @@ textarea {
 	color: #aaa;
 }
 
-.nav-primary .menu li:hover > a {
+.nav-primary .menu li:hover > a,
+.nav-primary .menu li.focus > a {
 	color: #aaa;
 }
 
@@ -976,7 +982,9 @@ textarea {
 
 /* Hover Parent */
 .fullframe-nav-menu li:hover > a,
-.sidebar-header-right .widget_nav_menu li:hover > a {
+.fullframe-nav-menu li.focus > a,
+.sidebar-header-right .widget_nav_menu li:hover > a,
+.sidebar-header-right .widget_nav_menu li.focus > a  {
 }
 
 .fullframe-nav-menu .current-menu-item > a,
@@ -1057,8 +1065,11 @@ textarea {
 }
 
 .fullframe-nav-menu .menu-item:hover > .sub-menu,
+.fullframe-nav-menu .menu-item.focus > .sub-menu,
 .fullframe-nav-menu .page_item:hover > .children,
-.sidebar-header-right .widget_nav_menu .menu-item:hover > .sub-menu {
+.fullframe-nav-menu .page_item.focus > .children,
+.sidebar-header-right .widget_nav_menu .menu-item:hover > .sub-menu,
+.sidebar-header-right .widget_nav_menu .menu-item.focus > .sub-menu {
 	left: auto;
 	opacity: 1;
 }

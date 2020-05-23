@@ -21,7 +21,7 @@ if ( ! function_exists( 'fullframe_primary_menu' ) ) :
 function fullframe_primary_menu() {
     $options    = fullframe_get_theme_options();
     ?>
-	<nav class="nav-primary search-enabled" role="navigation">
+	<nav class="site-navigation nav-primary search-enabled" role="navigation">
         <div class="wrapper">
             <h1 class="assistive-text"><?php esc_html_e( 'Primary Menu', 'full-frame' ); ?></h1>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'full-frame' ); ?>"><?php esc_html_e( 'Skip to content', 'full-frame' ); ?></a></div>
