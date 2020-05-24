@@ -1,10 +1,10 @@
 <?php
 /*
- * Postmeta used by file single.
+ * Postmeta used by files single and single-full.
  */
 ?>
 
-<div class="postmetadata">
+<div class="postmetadata postmetadata-bottom">
 	<?php printf( __( 'Category: %s', 'multicolors' ), get_the_category_list( __( ', ', 'multicolors' ) ) ); ?>
 	<?php if(has_tag() ) : ?>
 		<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'multicolors' ), get_the_tag_list('', __( ', ', 'multicolors' ) ) ); ?>
