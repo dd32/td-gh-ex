@@ -611,6 +611,10 @@ input[type="number"]:focus {
 	border-left: none;
 }
 
+.wp-color-result-text{
+	margin-right: 4px;
+}
+
 .wp-picker-holder .iris-picker .iris-palette {
 	box-shadow: none;
 }

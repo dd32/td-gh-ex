@@ -693,7 +693,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 define('atomy_url_go_pro_theme','https://www.denisfranchi.com/atomy/');// Go Pro
-define('atomy_url_updates_theme','https://www.denisfranchi.com/updates/');// Update Theme
+define('atomy_url_updates_theme','https://www.denisfranchi.com/blog/2020/03/15/atomy-free/');// Update Theme
 define('atomy_url_documentation_theme','https://www.denisfranchi.com/community/index.php?forums/guides.20/');// Documentation Theme
 define('atomy_url_support_theme','https://www.denisfranchi.com/community/index.php?forums/support.22/');// Support Theme
 define('atomy_url_faq_1_support','https://www.denisfranchi.com/community/index.php?threads/initial-settings-atomy-free.29/#post-40');// Faq 1 Support
@@ -704,6 +704,7 @@ define('atomy_url_copyright_theme','https://www.denisfranchi.com/');// Franchi D
 define('atomy_url_demos_theme','https://www.denisfranchi.com/atomy-demos/');// Franchi Design Demo   
 define('atomy_url_basic_documentation','https://www.denisfranchi.com/community/index.php?threads/initial-settings-atomy-free.29/');// Basic Documentation    
 define('atomy_review_theme','https://wordpress.org/support/theme/atomy/reviews/');// Review Theme    
+define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design 
 
 
 /* Notice Admin Area
@@ -720,13 +721,13 @@ function atomy_add_script() {
 		wp_enqueue_script(  'notice-update' );
 }
 
-if( get_option( 'atomy_3_dismiss_notice' ) != true ) {
+if( get_option( 'atomy_4_dismiss_notice' ) != true ) {
 
 add_action( 'admin_notices', 'atomy_add_dismissible' );
 }
 function atomy_add_dismissible() {
   ?>
-   <div class='notice notice-success atomy-3-dismiss-notice atomy-class-update is-dismissible'>
+   <div class='notice notice-success atomy-4-dismiss-notice atomy-class-update is-dismissible'>
 	   <div class="df-logo">
 		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
 	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
@@ -763,9 +764,9 @@ function atomy_add_dismissible() {
   <?php
 }
 
-add_action( 'wp_ajax_atomy_3_dismiss_notice', 'atomy_3_dismiss_notice' );
-function atomy_3_dismiss_notice() {
-update_option( 'atomy_3_dismiss_notice', true );
+add_action( 'wp_ajax_atomy_4_dismiss_notice', 'atomy_4_dismiss_notice' );
+function atomy_4_dismiss_notice() {
+update_option( 'atomy_4_dismiss_notice', true );
 }
 
 /*  Demo Import

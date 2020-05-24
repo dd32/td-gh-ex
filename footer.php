@@ -9,7 +9,7 @@
 
 </div><!-- #content --> 
  <footer id="colophon" class="footer_area"> 
-            <div class="<?php if ( false == get_theme_mod('atomy_enable_full_width_footer', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_width_footer', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+            <div class="<?php if ( false == get_theme_mod('atomy_enable_full_width_footer', false) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_width_footer', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
                 <div class="footer_copyright text-center container-fluid">
                   <div class="row">
                    <div class="col-lg-12 col-md-12">

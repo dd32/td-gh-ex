@@ -437,7 +437,7 @@ $wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,
 // Enable/Disable Overall width Footer
 $wp_customize->add_setting('atomy_enable_full_width_footer',
 array(
-	'default'           => 1,
+	'default'           => 0,
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'atomy_switch_sanitization'
 ));
