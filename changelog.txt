@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 6.5 - may 2020
+- Added extra class to bottom postmeta of single event page
+- Added setting to show or hide Search Bar
+- Added setting for knowledge base to show a View All link
+- Minor changes in code
+- Readme file: updated info about theme features and settings
+
 MyKnowledgeBase version 6.4 - january 2020
 - Removed support for IE 8 and older
 - Added basic support for new editor

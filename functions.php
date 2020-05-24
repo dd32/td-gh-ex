@@ -250,9 +250,24 @@ function myknowledgebase_theme_customizer( $wp_customize ) {
 		'default' => 'no',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_page_title', array(
-		'label' => __( 'Display page title', 'myknowledgebase' ),
+		'label' => __( 'Show page title', 'myknowledgebase' ),
 		'section' => 'myknowledgebase_posts_section',
 		'settings' => 'myknowledgebase_page_title',
+		'type' => 'radio',
+		'choices' => array(
+			'yes' => __('Yes', 'myknowledgebase'),
+			'no' => __('No', 'myknowledgebase'),
+		),
+	) ) );
+	$wp_customize->add_setting( 'myknowledgebase_view_all', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'default' => 'no',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_view_all', array(
+		'label' => __( 'Show View All link', 'myknowledgebase' ),
+		'section' => 'myknowledgebase_posts_section',
+		'settings' => 'myknowledgebase_view_all',
 		'type' => 'radio',
 		'choices' => array(
 			'yes' => __('Yes', 'myknowledgebase'),
@@ -265,7 +280,7 @@ function myknowledgebase_theme_customizer( $wp_customize ) {
 		'default' => 'no',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_cat_description', array(
-		'label' => __( 'Display category description', 'myknowledgebase' ),
+		'label' => __( 'Show category description', 'myknowledgebase' ),
 		'section' => 'myknowledgebase_posts_section',
 		'settings' => 'myknowledgebase_cat_description',
 		'type' => 'radio',
@@ -315,13 +330,28 @@ function myknowledgebase_theme_customizer( $wp_customize ) {
 		'priority' => 34,
 		'description' => __( 'Settings for the Knowledge Base search bar.', 'myknowledgebase' ),
 	) );
+	$wp_customize->add_setting( 'myknowledgebase_show_search', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'default' => 'yes',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_show_search', array(
+		'label' => __( 'Show Search Bar', 'myknowledgebase' ),
+		'section' => 'myknowledgebase_search_section',
+		'settings' => 'myknowledgebase_show_search',
+		'type' => 'radio',
+		'choices' => array(
+			'yes' => __('Yes', 'myknowledgebase'),
+			'no' => __('No', 'myknowledgebase'),
+		),
+	) ) );	
 	$wp_customize->add_setting( 'myknowledgebase_search', array(
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'myknowledgebase_search', array(
 		'label' => __( 'Title', 'myknowledgebase' ),
-		'description' => __( 'This will overwrite the default title.', 'myknowledgebase' ),
+		'description' => __( 'This will override the default title.', 'myknowledgebase' ),
 		'section' => 'myknowledgebase_search_section',
 		'settings' => 'myknowledgebase_search',
 	) ) );

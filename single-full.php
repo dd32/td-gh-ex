@@ -3,7 +3,6 @@
  * Template Name: Full Width Template
  * Description: Template without sidebar
  * Template Post Type: post
- * This requires at least WordPress 4.7
  */
 ?>
 

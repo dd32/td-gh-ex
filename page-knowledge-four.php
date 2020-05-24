@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <div id="content-full">
 	<?php while ( have_posts() ) : the_post(); ?>
-		<?php if ( get_theme_mod( 'myknowledgebase_page_title' ) == 'yes' ) { ?>
+		<?php if ( get_theme_mod( 'myknowledgebase_page_title' ) == "yes" ) { ?>
 			<h1 class="page-title"><?php the_title(); ?></h1>
 		<?php } ?>
 
@@ -40,7 +40,7 @@
 		foreach ( $myknowledgebase_cats as $category ) :
 			echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $category->cat_ID ) . '" title="' . $category->name . '" >' . $category->name . '</a></li>';
 
-			if ( get_theme_mod( 'myknowledgebase_cat_description' ) == 'yes' ) :
+			if ( get_theme_mod( 'myknowledgebase_cat_description' ) == "yes" ) :
 				if ( category_description( $category->cat_ID ) ) :
 					echo '<div class="cat-description">'. wp_kses_post( category_description( $category->cat_ID ) ) .'</div>';
 				endif;
@@ -52,7 +52,7 @@
 				$posts_per_page = -1;
 			endif;
 
-			if ( get_theme_mod( 'myknowledgebase_order' ) == 'name' ) :
+			if ( get_theme_mod( 'myknowledgebase_order' ) == "name" ) :
 				$order_by = 'name';
 				$the_order = 'asc';
 			else :
@@ -80,6 +80,10 @@
 			foreach( $myknowledgebase_posts AS $single_post ) :
 				echo '<li class="post-name"><a href="'. get_permalink( $single_post->ID ) .'" rel="bookmark" title="'. get_the_title( $single_post->ID ) .'">'. get_the_title( $single_post->ID ) .'</a></li>';
 			endforeach;
+
+			if ( get_theme_mod( 'myknowledgebase_view_all' ) == "yes" ) {
+				echo '<li class="view-all"><a href="'. get_category_link( $category->cat_ID ) .'" title="'. $category->name .'" >'. __( 'View All &raquo;', 'myknowledgebase' ). '</a></li>';
+			}
 
 			echo '</ul>';
 		endforeach; ?>

@@ -59,17 +59,19 @@
 	<?php } ?>
 	<?php } ?>
 
-	<div id="header-third">
-		<?php if ( get_theme_mod( 'myknowledgebase_search' ) ) {
-			$search_title = esc_attr( get_theme_mod( 'myknowledgebase_search' ) );
-		} else {
-			$search_title = esc_attr__( 'Search Posts', 'myknowledgebase' );
-		} ?>
+	<?php if ( get_theme_mod( 'myknowledgebase_show_search' ) != "no" ) : ?>
+		<div id="header-third">
+			<?php if ( get_theme_mod( 'myknowledgebase_search' ) ) {
+				$search_title = esc_attr( get_theme_mod( 'myknowledgebase_search' ) );
+			} else {
+				$search_title = esc_attr__( 'Search Posts', 'myknowledgebase' );
+			} ?>
 
-		<h3 class="searchbar-title"><?php echo $search_title; ?></h3>
-		<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo $search_title; ?>" />
-			<input type="submit" class="search-submit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
-			<input type="hidden" name="post_type" value="post" />
-		</form>
-	</div>
+			<h3 class="searchbar-title"><?php echo $search_title; ?></h3>
+			<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo $search_title; ?>" />
+				<input type="submit" class="search-submit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
+				<input type="hidden" name="post_type" value="post" />
+			</form>
+		</div>
+	<?php endif; ?>

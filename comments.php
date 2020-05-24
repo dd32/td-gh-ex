@@ -33,7 +33,6 @@ if ( post_password_required() )
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
 			<h4 class="no-comments"><?php _e( 'Comments are closed.', 'myknowledgebase' ); ?></h4>
 		<?php endif; ?>
-
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
