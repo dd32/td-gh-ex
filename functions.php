@@ -174,15 +174,30 @@ function darkelements_theme_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'darkelements_menu_title_section' , array(
 		'title' => __( 'Menu Title', 'darkelements' ),
 		'priority' => 31,
-		'description' => __( 'Change title displayed above the menu.', 'darkelements' ),
+		'description' => __( 'Change the title above your menu.', 'darkelements' ),
 	) );
+	$wp_customize->add_setting( 'darkelements_show_menu_title', array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'default' => 'yes',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'darkelements_show_menu_title', array(
+		'label' => __( 'Show title', 'darkelements' ),
+		'section' => 'darkelements_menu_title_section',
+		'settings' => 'darkelements_show_menu_title',
+		'type' => 'radio',
+		'choices' => array(
+			'yes' => __('Yes', 'darkelements'),
+			'no' => __('No', 'darkelements'),
+		),
+	) ) );
 	$wp_customize->add_setting( 'darkelements_menu_title', array(
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'darkelements_menu_title', array(
 		'label' => __( 'Title', 'darkelements' ),
-		'description' => __( 'This will overwrite the default title.', 'darkelements' ),
+		'description' => __( 'This will override the default title.', 'darkelements' ),
 		'section' => 'darkelements_menu_title_section',
 		'settings' => 'darkelements_menu_title',
 	) ) );

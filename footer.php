@@ -1,6 +1,6 @@
 <?php
 /*
- * The footer for displaying footer widgets and site-info.
+ * The footer for displaying footer-widgets and site-info.
  */
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * Postmeta used by files archive, index, search and single.
+ * Postmeta used by files content-list and single.
  */
 ?>
 

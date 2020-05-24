@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="postmetadata">
+<div class="postmetadata postmetadata-bottom">
 	<?php printf( __( 'Category: %s', 'darkelements' ), get_the_category_list( __( ', ', 'darkelements' ) ) ); ?>
 	<?php if(has_tag() ) : ?>
 		<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'darkelements' ), get_the_tag_list('', __( ', ', 'darkelements' ) ) ); ?>

@@ -33,13 +33,14 @@
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<?php if ( get_theme_mod( 'darkelements_menu_title' ) ) {
-				$menu_title = esc_attr( get_theme_mod( 'darkelements_menu_title' ) );
-			} else {
-				$menu_title = esc_attr__( 'Menu', 'darkelements' );
-			} ?>
-			<h3 class="nav-primary-title"><?php echo $menu_title; ?></h3>
-
+			<?php if ( get_theme_mod( 'darkelements_show_menu_title' ) != "no" ) : ?>
+				<?php if ( get_theme_mod( 'darkelements_menu_title' ) ) {
+					$menu_title = esc_attr( get_theme_mod( 'darkelements_menu_title' ) );
+				} else {
+					$menu_title = esc_attr__( 'Menu', 'darkelements' );
+				} ?>
+				<h3 class="nav-primary-title"><?php echo $menu_title; ?></h3>
+			<?php endif; ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-primary' ) ); ?>
 			<div class="mobile-nav-container">
 				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkelements' ); ?><?php _e( ' +', 'darkelements' ); ?></div>
