@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Shipyard version 6.6 - may 2020
+- Added extra class to bottom postmeta of single event page
+- Minor changes in code
+- Readme file: updated info about theme features and settings
+
 Shipyard version 6.5 - january 2020
 - Removed support for IE 8 and older
 - Added basic support for new editor

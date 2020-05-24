@@ -11,7 +11,6 @@ if ( post_password_required() )
 
 <div id="comments">
 	<?php if ( have_comments() ) : ?>
-
 		<h3 class="comments-title">
 			<?php printf( _n( '%1$s comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'shipyard' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
 		</h3>
@@ -34,7 +33,6 @@ if ( post_password_required() )
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
 			<h4 class="no-comments"><?php _e( 'Comments are closed.', 'shipyard' ); ?></h4>
 		<?php endif; ?>
-
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
