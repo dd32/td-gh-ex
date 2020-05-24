@@ -328,7 +328,7 @@ if(! function_exists('arrival_mob_nav')){
 				<span class="text"><?php esc_html_e('Close Menu','arrival'); ?></span>
 				<span class="icon-wrapp"><?php echo arrival_get_icon_svg('cross',18); ?></span>
 			</button>
-			<nav arial-label="Mobile" role="navigation" tabindex="1">
+			<nav  class="avl-mobile-wrapp clear clearfix" arial-label="Mobile" role="navigation" tabindex="1">
 				<?php 
 				wp_nav_menu(
 					array(
