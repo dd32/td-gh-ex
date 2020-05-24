@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php if( is_home() && (get_theme_mod('gridbulletin_blog_sidebar') != 'yes') ) { ?>
+<?php if( is_home() && (get_theme_mod('gridbulletin_blog_sidebar') != "yes") ) { ?>
 	<?php if( $wp_query->current_post%4 == 0 ) : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four left'); ?>>
 	<?php elseif( $wp_query->current_post%4 == 3 ) : ?>
@@ -12,7 +12,7 @@
 	<?php else : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four'); ?>>
 	<?php endif; ?>
-<?php } elseif( is_archive() && (get_theme_mod('gridbulletin_archive_sidebar') == 'no') ) { ?>
+<?php } elseif( is_archive() && (get_theme_mod('gridbulletin_archive_sidebar') == "no") ) { ?>
 	<?php if( $wp_query->current_post%4 == 0 ) : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four left'); ?>>
 	<?php elseif( $wp_query->current_post%4 == 3 ) : ?>
