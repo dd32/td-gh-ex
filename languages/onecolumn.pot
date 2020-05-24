@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OneColumn\n"
-"POT-Creation-Date: 2020-01-25 17:56+0100\n"
+"POT-Creation-Date: 2020-05-23 16:36+0200\n"
 "PO-Revision-Date: 2015-11-15 22:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -173,11 +173,11 @@ msgstr ""
 msgid "Show Read More button"
 msgstr ""
 
-#: header.php:36
+#: header.php:38
 msgid "Menu"
 msgstr ""
 
-#: header.php:36
+#: header.php:38
 msgid " +"
 msgstr ""
 
@@ -204,10 +204,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"OneColumn is a free, clean, minimalistic, responsive, mobile-friendly "
-"WordPress theme. Features: homepage widgets, footer widgets, custom header "
-"image, custom background, custom logo to replace site title and tagline, "
-"dropdown navigation. For more info please check readme file. Enjoy."
+"OneColumn is a lightweight and mobile-friendly WordPress theme. "
+"Personalize your website via the Customizer in your dashboard. It also "
+"contains multiple widget areas. Enjoy!"
 msgstr ""
 
 #. Author of the plugin/theme

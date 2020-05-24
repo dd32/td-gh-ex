@@ -1,6 +1,6 @@
 <?php
 /*
- * Because sidebar.php is required it's used for displaying footer widgets.
+ * Because this is a required file, it is being used for displaying footer-widgets.
  */
 ?>
 
