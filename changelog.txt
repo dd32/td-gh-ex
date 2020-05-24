@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange version 6.9 - may 2020
+- Added extra class to bottom postmeta of single event page
+- Minor changes in code
+- Readme file: updated info about theme features and settings
+
 DarkOrange version 6.8 - january 2020
 - Removed support for IE 8 and older
 - Added basic support for new editor
@@ -137,7 +142,7 @@ DarkOrange version 4.6 - may 2016
 - File index and style: changed featured post notice
 - File single: changed .page-title-post into .post-title-single
 - Changed .sticky into .sticky-title
-- several small adjustments
+- Several small adjustments
 
 DarkOrange version 4.4 - april 2016
 - Resized all headings (thanks Tom)
