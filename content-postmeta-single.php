@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="postmetadata">
+<div class="postmetadata postmetadata-bottom">
 	<?php printf( __( 'Category: %s', 'leftside' ), get_the_category_list( __( ', ', 'leftside' ) ) ); ?>
 	<?php if(has_tag() ) : ?>
 		<?php echo '|'; ?> <?php printf(__( 'Tag: %s', 'leftside' ), get_the_tag_list('', __( ', ', 'leftside' ) ) ); ?>
