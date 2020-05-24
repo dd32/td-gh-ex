@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+BlueGray version 6.5 - may 2020
+- Added extra class to bottom postmeta of single event page
+- Minor changes in code
+- Readme file: updated info about theme features and settings
+
 BlueGray version 6.4 - january 2020
 - Removed support for IE 8 and older
 - Added basic support for new editor
@@ -70,7 +75,7 @@ BlueGray version 5.4 - june 2017
 - If you're using a child theme that contains file header: copy-paste code regarding new navigation
 
 BlueGray version 5.3 - april 2017
-- File single: added post class "post-single"
+- File single: added post class .post-single
 - File style: changed margin and padding of several elements (layout improvement)
 
 BlueGray version 5.2 - march 2017

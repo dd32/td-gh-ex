@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BlueGray\n"
-"POT-Creation-Date: 2020-01-25 17:55+0100\n"
+"POT-Creation-Date: 2020-05-23 16:35+0200\n"
 "PO-Revision-Date: 2015-11-15 16:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -138,67 +138,67 @@ msgstr ""
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:189 functions.php:198
+#: functions.php:188 functions.php:197
 msgid "Logo"
 msgstr ""
 
-#: functions.php:191
+#: functions.php:190
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:203
+#: functions.php:202
 msgid "Blog Page"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:204
 msgid "Set a page title and content above your posts."
 msgstr ""
 
-#: functions.php:212
+#: functions.php:211
 msgid "Title"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:220
 msgid "Content"
 msgstr ""
 
-#: functions.php:227
+#: functions.php:226
 msgid "Posts"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:228
 msgid "Customize the way how posts are displayed."
 msgstr ""
 
-#: functions.php:237
+#: functions.php:236
 msgid "Show a summary"
 msgstr ""
 
-#: functions.php:242 functions.php:257
+#: functions.php:241 functions.php:256
 msgid "Yes"
 msgstr ""
 
-#: functions.php:243 functions.php:258
+#: functions.php:242 functions.php:257
 msgid "No"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:251
 msgid "Show Read More button"
 msgstr ""
 
-#: header.php:38
+#: header.php:40
 msgid "Menu"
 msgstr ""
 
-#: header.php:38
+#: header.php:40
 msgid " +"
 msgstr ""
 
-#: page-full.php:22 page.php:20 single-full.php:23 single.php:20
+#: page-full.php:22 page.php:20 single-full.php:22 single.php:20
 msgid "Pages:"
 msgstr ""
 
-#: page-full.php:30 page.php:28 single-full.php:35 single.php:32
+#: page-full.php:30 page.php:28 single-full.php:34 single.php:32
 msgid "Edit"
 msgstr ""
 
@@ -217,11 +217,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"BlueGray is a free, clean, minimalistic, responsive, mobile-friendly "
-"WordPress theme. Features: sidebar, homepage widgets, footer widgets, "
-"custom header image, custom background, custom logo to replace site title "
-"and tagline, full width page template, dropdown navigation. For more info "
-"please check readme file. Enjoy."
+"BlueGray is a lightweight and mobile-friendly WordPress theme. Personalize "
+"your website via the Customizer in your dashboard and by using a custom "
+"post or page template. It also contains multiple widget areas. Enjoy!"
 msgstr ""
 
 #. Author of the plugin/theme

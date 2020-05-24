@@ -1,15 +1,16 @@
 === BlueGray ===
 Contributors: Guido07111975
-Version: 6.4
+Version: 6.5
+Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.3
+Tested up to: 5.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 
 
 == Description ==
-BlueGray is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
+BlueGray is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard and by using a custom post or page template. It also contains multiple widget areas. Enjoy!
 
 
 == Installation ==
@@ -18,28 +19,23 @@ BlueGray is a free, clean, minimalistic, responsive, mobile-friendly WordPress t
 3. Once activated, you're ready to use it.
 
 = Set hompepage =
-You can use the default homepage (displaying posts) or set a static page as homepage.
+You can choose between the default homepage (displaying posts) and a static page as homepage.
 
-To set a static homepage go to your WordPress Dashboard > Settings > Reading and select the page you want.
+To set a static page as homepage go to your WordPress Dashboard > Settings > Reading and select the page you want.
 
-= Header image =
-You can change the header image via WordPress Dashboard > Appearance > Customize. 
+= Page templates =
+While creating a post or page you can choose between default layout (with sidebar) and full width layout. This can be done via the Post or Page Attributes box.
 
-You will find the recommended size there too.
+= Customizer =
+You can personalize your theme via the Customizer in your dashboard.
 
-= Logo =
-Set a logo to replace site title and tagline via WordPress Dashboard > Appearance > Customize.
+Besides the native settings for Site Identity and Menu you can also:
 
-= Background =
-You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
-
-= Menu = 
-You can create and set a menu via WordPress Dashboard > Appearance > Menus.
-
-= Blog =
-You can set a page title and content above your posts via WordPress Dashboard > Appearance > Customize.
-
-And you can change the way how posts are displayed via WordPress Dashboard > Appearance > Customize.
+* Set header image (you will find the recommended image-size there as well)
+* Set logo to replace site title and tagline
+* Set background-color or background-image
+* Set page title and content above your posts
+* Change the way how posts are being displayed
 
 
 == Copyright ==
