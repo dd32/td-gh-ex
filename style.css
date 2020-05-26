@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Version: 0.5.8
+Version: 0.5.9
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -500,7 +500,8 @@ span.cart-value {
  color: #000 !important;
 }
 /* ---------HEADER--------- */
-.main-navigation .sub-menu > li > a:focus{
+.main-navigation .sub-menu > li > a:focus,
+.toggle-menu button:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
 }
@@ -1867,8 +1868,14 @@ iframe{
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    transition: 0.5s;
+    visibility: hidden;
     padding-top: 60px;
+    transition: 0.5s;
+  }
+  .sidebar.display{
+    visibility: visible;
+    width: 100%;
+    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;
