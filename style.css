@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro/
-Version: 0.4.5
+Version: 0.4.6
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -593,8 +593,7 @@ ul.list_nav {
   right: 50%;
 }
 /*-----------------Search pop up----------------*/
-
-.serach_inner form.search-form label {
+.serach_inner label {
   width: 95%;
 }
 .serach_inner{
@@ -610,42 +609,17 @@ ul.list_nav {
   transition: all 500ms;
   box-shadow: 0px 0px 12px #c0bebe;
 }
-.serach_outer {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0em;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: all 300ms;
-  visibility: visible;
-  transition: opacity 300ms, z-index 0ms;
-}
 .closepop {
  position: absolute;
- top: 25px;
+ top: 0;
  text-align: center;
  font-size: 40px;
  z-index: 9999;
  right: 50%;
- color: #707070;
-}
-.serach_outer {
- font-size: 24px;
- padding: 4px 0 0 0;
+ color: #575756;
+ background: none;
+ border:none;
  cursor: pointer;
-}
-.serach_inner form.search-form {
- display: table;
- padding: 0;
- border-radius: 0;
- background: #ffffff;
- margin: 0 auto;
- max-width: 1200px;
- width: 100%;
 }
 .serach_inner form.search-form {
   width: calc(100% - 30px);
@@ -655,6 +629,14 @@ ul.list_nav {
   border-bottom: 1px solid #eae6e6;
   position: absolute;
   bottom: 2em;
+  display: table;
+  padding: 0;
+  border-radius: 0;
+  background: #ffffff;
+  max-width: 1200px;
+}
+.serach_inner form.search-form label {
+  width: 95%;
 }
 .serach-page input.search-field {
  border: 1px solid #ccc;
@@ -667,7 +649,6 @@ ul.list_nav {
  font-weight: normal;
  color: #3a4d5e;
  max-height: 1200px;
- border:none;
 }
 .serach_inner input.search-submit {
  padding: 8px 35px;
@@ -679,15 +660,21 @@ button.search-submit {
  background: transparent;
 }
 input.search-field {
- border: 1px solid #bbb;
- padding: 10px 0;
+ border: none;
+ padding: 4px 0;
  background: transparent;
- width: 100%;
+ width: 95%;
 }
 .search-box i {
   padding: 10px;
   color: #000;
-  margin-top: 12px;
+  margin: 10px;
+  background: none;
+  border:none;
+}
+.search-box button {
+  background: none;
+  border:none;
 }
 .search-box {
   margin: 8px 0px;
@@ -699,6 +686,28 @@ input.search-field {
   position: absolute;
   margin:0;
   background-size: 30px;
+}
+.modal-content{
+  background: transparent;
+  border: 0;
+}
+.modal-dialog{
+  max-width: 100%;
+  pointer-events: all;
+  margin: 0;
+}
+.modal-body{
+  padding: 0;
+}
+#myModal {
+  padding: 0 !important;
+}
+.modal-open{
+  overflow-y: scroll;
+  padding: 0 !important;
+}
+.modal-backdrop{
+  position: relative;
 }
 /* --------- Slider --------- */
 #slider{ 
@@ -1877,7 +1886,7 @@ iframe{
 
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus{
+  a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
     outline: 1px dotted #fff;
     border-bottom: 1px solid #fff;
   }
@@ -1901,8 +1910,14 @@ iframe{
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    transition: 0.5s;
+    visibility: hidden;
     padding-top: 60px;
+    transition: 0.5s;
+  }
+  .sidebar.display{
+    visibility: visible;
+    width: 100%;
+    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;
@@ -2011,8 +2026,9 @@ iframe{
     padding: 9px;
     margin: 0 2%;
   }
-  .primary-navigation a{
-    display: unset;
+  .primary-navigation a:focus{
+    background: none !important;
+    color: #fff !important;
   }
   #contact-info form.search-form {
     display: block;

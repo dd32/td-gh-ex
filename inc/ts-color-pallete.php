@@ -25,7 +25,7 @@
 		$advance_business_custom_css .='}';
 	}
 	if($advance_business_theme_color != false){
-		$advance_business_custom_css .='#footer input[type="search"], #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, .second-border a:hover{';
+		$advance_business_custom_css .='#footer input[type="search"], #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, .second-border a:hover, #slider .inner_carousel .know-btn a:hover{';
 			$advance_business_custom_css .='border-color: '.esc_html($advance_business_theme_color).';';
 		$advance_business_custom_css .='}';
 	}

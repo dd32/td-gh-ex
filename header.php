@@ -60,7 +60,7 @@
             </div>
             <div class="col-lg-8 col-md-7 col-3">
               <div class="toggle-menu responsive-menu">
-                <button onclick="advance_business_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-business'); ?></span></button>
+                <button class="mobiletoggle" onclick="advance_business_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-business'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-business' ); ?>">
@@ -80,17 +80,21 @@
                 </nav>
               </div>
             </div>
-            <div class="col-lg-1 search-box">
-              <a href="#" onclick="advance_business_search_open()">
-                <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-business' );?></span>
-              </a>
+            <div class="col-lg-1 col-md-1 col-6">
+              <div class="search-box">
+                <button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
+              </div>
             </div>
           </div>
-          <div class="serach_outer">
-            <div class="serach_inner">
-              <?php get_search_form(); ?>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-body">
+                <div class="serach_inner">
+                  <?php get_search_form(); ?>
+                </div>
+              </div>
+              <button type="button" class="closepop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
             </div>
-            <a href="#maincontent" onclick="advance_business_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-business' );?></span></a>
           </div>
         </div>
       </div> 
