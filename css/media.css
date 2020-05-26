@@ -102,6 +102,11 @@ iframe {
 }
 }
 @media (max-width:767px) {
+#sidebar-carousel-1 i.fa.fa-angle-left, #sidebar-carousel-1 i.fa.fa-angle-right {
+    font-size: 28px!important;
+    width: 26px!important;
+	height: 45px!important;
+}
 .logo_div{padding-left: 0;} 
 .search-box{margin-left: 0;}
 .list-inline > li{padding-left: 0;}
@@ -126,6 +131,11 @@ iframe {
 }
 .main-menu-ul ul > li > a {
 	margin-bottom:5px;
+}
+	.main-menu-ul > ul > li > a {
+    color: #ffffff;
+    font-size: 15px;
+	padding: 7px 15px;
 }
 .main-menu-ul ul li{
 	margin-left:0;	

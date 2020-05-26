@@ -47,3 +47,12 @@ i) Fixed Text Domain
 
 Version 1.1.9 (20-08-2015)
 i) Fixed constructor issue.
+
+Version 1.1.10 (03-01-2017)
+i) Minor fixes.
+
+Version 1.1.11 (21-12-2018)
+i) Minor fixes.
+
+Version 1.2 (26-05-2020)
+i) Minor fixes.
