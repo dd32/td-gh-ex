@@ -1,3 +1,7 @@
+=== v1.3.3 ===
+- Added dynamic styles for header color and menu color to match companion plugin metabox settings
+
+
 === v1.3.2 ===
 - Minor bug fixed
 

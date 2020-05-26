@@ -42,7 +42,7 @@ $wp_customize->add_section( $prefix.'_general_styling_section', array(
 $wp_customize->add_setting($prefix.'_theme_color', array(
         'default'           => $default[$prefix.'_theme_color'],
         'sanitize_callback' => 'arrival_sanitize_color',
-        'transport'         => 'postMessage'
+        
     )
 );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_theme_color', array(

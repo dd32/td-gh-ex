@@ -406,6 +406,38 @@ function arrival_dynamic_styles(){
 		echo esc_html($ultra_page_custom_css); 
 	}
 
+	/***
+	* Header background color from page metabox
+	*
+	* @since 1.3.3
+	*/
+	$ultra_arrival_header_bg_color 		= arrival_get_post_meta('ultra_arrival_header_bg_color');
+	$ultra_arrival_header_link_color 	= arrival_get_post_meta('ultra_arrival_header_link_color');
+	
+
+	if( $ultra_arrival_header_bg_color ){ ?>
+		header .main-header-wrapp.full{
+			background: <?php echo arrival_sanitize_color($ultra_arrival_header_bg_color); ?>
+		}
+		.main-header-wrapp.boxed .container, .main-header-wrapp.full{
+			box-shadow: unset;
+			-webkit-box-shadow:unset;
+		}
+	<?php }
+
+		if( $ultra_arrival_header_link_color ){ ?>
+		.main-navigation ul li > a, .site-title a, .site-description, .header-last-item .search-wrap i, header .header-last-item .cart-wrapper a{
+			color: <?php echo arrival_sanitize_color($ultra_arrival_header_link_color); ?>
+		}
+		.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{
+			border-color: <?php echo arrival_sanitize_color($ultra_arrival_header_link_color); ?>
+		}
+	<?php }
+
+
+
+
+
 
 	/**
 	* Additional settings
