@@ -2,7 +2,7 @@
 Jobile Theme by FasterThemes https://fasterthemes.com/
 
 === About Jobile ===
-Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer.
+Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer. Step by step documentation with Dummy Data is available for free at: https://fasterthemes.com/documentation/jobile/ 
 
 === Tags ===
 two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
@@ -34,8 +34,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	i) Jobile social icon widget for display social icon in sidebar or footer.
 	ii) Jobile image description widget for dispay image and description in sidebar or footer.
 	
-6. Theme Options :
-	You can manage here site logo,favicon and footer copyright text. 
+6. Customizer Options : In Appearance => Customize menu,
+   You can manage site logo,favicon and footer copyright text etc. 
 
 7. Google Maps:
 

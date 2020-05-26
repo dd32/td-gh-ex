@@ -1,10 +1,10 @@
 /*
 Theme Name: Jobile
-Theme URI: https://fasterthemes.com/wordpress-themes/Jobile
+Theme URI: https://fasterthemes.com/wordpress-themes/jobile
 Author: FasterThemes
 Author URI: https://fasterthemes.com/
 Description: Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer.
-Version: 1.4.1
+Version: 1.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
@@ -94,7 +94,6 @@ a:focus {
 	display:none !important;	
 }
 select{
-	text-transform: capitalize;	
 }
 /**normal css**/
 /**header css start start**/
@@ -126,7 +125,6 @@ a.prev.page-numbers,a.next.page-numbers {
     color: #555555;
     transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
-    text-transform: capitalize;
     margin: 0 0px 0 10px;
 }
 
@@ -148,7 +146,7 @@ a.prev.page-numbers {
 
 .jobile-nav{
 	font-family: 'ubuntu';
-	font-weight: bold;
+	
 	position:relative;
 	padding:0px 0;
 	float: right;
@@ -193,8 +191,6 @@ a.prev.page-numbers {
 	transition:all 0.8s ease-in-out;
 	-webkit-transition:all 0.5s ease-in-out;
 	font-family: 'ubuntu';
-	font-weight: bold;
-	text-transform:capitalize;
 }
 
 
@@ -266,7 +262,6 @@ a.prev.page-numbers {
 	_height: 10px; /*IE6 only*/
 	display: block;	
 	float: none;
-	text-transform: capitalize;
 	font-size:16px;
 	color:#e6e6e6;
 }
@@ -317,19 +312,16 @@ a.prev.page-numbers {
 }
 .find-job{
 	padding:150px 0;
-	text-transform: capitalize;	
 }
 .find-job h2{
 	border-bottom: 1px solid #2ec2c3;
     color: #fff;
     font-size: 28px;
 	font-family: 'ubuntu';
-	font-weight: bold;
     margin: 0 auto;
     padding-bottom: 10px;
     text-align: center;
     width: 100%;
-	text-transform:capitalize;
 }
 .postjob h2{
 	width:93%;
@@ -349,8 +341,7 @@ a.prev.page-numbers {
 	text-align:center;
 	display:inline-block;
 	font-family: 'ubuntu';
-	font-weight: bold;
-	text-transform: uppercase;
+	
 }
 .findjob-btn:hover,
 .postjob-btn:hover,
@@ -387,7 +378,7 @@ a.prev.page-numbers {
 .job-title h2 > span{
 	background-color: #f3f3f3;
     padding-right: 10px;
-	text-transform: capitalize;
+	
 }
 .job-title h2 > span > span{
 	color:#068587;
@@ -556,10 +547,9 @@ a.prev.page-numbers {
     position: absolute;
     top: 15px;
 	font-size:9px;
-	text-transform:uppercase;
 	color:#FFF;
 	font-family: 'istok web';
-	font-weight:bold;
+	
 }
 .featured-details{
 	text-align:left;
@@ -575,7 +565,7 @@ a.prev.page-numbers {
 	text-transform:capitalize !important;
 	text-align:left;
 	font-family: 'istok web' !important;
-	font-weight: bold;
+	
 	margin-bottom:3px;
 }	
 .featured-details > .job-btn-group{
@@ -592,7 +582,6 @@ a.prev.page-numbers {
 .featured-details a{
 	color:#7b7b7b;
 	font-size:13px;
-	text-transform:capitalize;
 	font-family: 'istok web';
 }	
 .featured-details span a:hover{color:#fc5b3f;}
@@ -603,7 +592,6 @@ a.prev.page-numbers {
 	border-radius:2px;
 	color:#FFF;
 	font-size:9px;
-	text-transform:uppercase;
 	font-family: 'istok web';
 	margin-bottom:0px;
 	min-width:60px;
@@ -629,7 +617,7 @@ a.prev.page-numbers {
 .job-title2 h2{
 	width:100%;
 	float:left;
-	text-transform: capitalize;
+	
 }
 .section-top > .container > .row > .job-title h2{
 	width: 95%;	
@@ -642,7 +630,6 @@ a.prev.page-numbers {
 	margin-right: 0px;
 	margin-top: 15px;
 	padding-top: 1px;
-
 	width: 59%;
 }
 .job-title1 h2:after{width:75%;}
@@ -663,8 +650,7 @@ a.prev.page-numbers {
 .person-post{
 	color:#fc5b3f;	
 	font-size:14px;
-	font-family: 'istok web';
-	font-weight: bold;
+	font-family: 'istok web';	
 	margin-bottom:0px !important;
 	text-transform:capitalize !important;
 	text-align:left !important;
@@ -686,7 +672,7 @@ a.prev.page-numbers {
 }
 .late-job-btn a{
 	margin:0 2px;
-	text-transform: capitalize;
+	
 }
 .job-status{
 	margin-top:15px;
@@ -694,7 +680,7 @@ a.prev.page-numbers {
 .job-status span a,
 .job-status p a{
 	color:#7b7b7b;
-	text-transform: capitalize;
+	
 }
 .job-status p{
 	float:right;
@@ -724,7 +710,7 @@ a.prev.page-numbers {
 	color:#212121;
 	font-size:30px;
 	margin-bottom:30px;
-	text-transform: capitalize;
+	
 }
 .section-2-head h2 span{
 	color:#fc5b3f;
@@ -767,7 +753,6 @@ a.prev.page-numbers {
 	margin-top:50px;
 	width:80%;
 	min-width:81%;
-	text-transform: uppercase;
 }
 .counter-box:after{
 	content:'';
@@ -797,7 +782,7 @@ a.prev.page-numbers {
 	margin:0px;
 	font-family: 'istok web';
 	padding:0 31px;
-	text-transform:capitalize;
+	
 } 
 .box-circle{
 	border:1px solid #fff;
@@ -822,7 +807,6 @@ a.prev.page-numbers {
 	color:#ffffff;
 	font-size:18px;
 	font-family: 'istok web';
-	text-transform: uppercase;
 } 
 /**section part css end**/
 /**footer css start**/
@@ -848,11 +832,10 @@ a.prev.page-numbers {
 .li-title{
     color: #f3f3f3;
     font-family: 'ubuntu';
-    font-weight: bold;
+    
     font-size: 14px;
     list-style: none outside none;
     margin: 15px 0;
-    text-transform: uppercase;
 }
 .left-column{
 	text-align: left;	
@@ -876,8 +859,7 @@ a.prev.page-numbers {
 	-moz-transition:all 0.20s ease-in-out;
 	-o-transition:all 0.20s ease-in-out;
 	-ms-transition:all 0.20s ease-in-out;
-	transition:all 0.20s ease-in-out;
-	text-transform: capitalize;
+	transition:all 0.20s ease-in-out;	
 }
 .left-column li:first-child:before {
 	content:""; 
@@ -899,7 +881,7 @@ a.prev.page-numbers {
 	color:#cacaca;
 	font-size:14px;	
 	font-family: 'istok web';	
-	text-transform: capitalize;
+	
 }
 .footer-column4 .f-email{
 	background-color:#e5e5e5;
@@ -913,7 +895,6 @@ a.prev.page-numbers {
 	height:40px;
 	margin-top:10px;
 	margin-bottom:23px;
-
 }
 .footer-column4 .f-email:focus{
 	box-shadow:inset 0px 0px 5px #212121;
@@ -936,13 +917,11 @@ a.prev.page-numbers {
 }
 .social-icon label{
 	color: #f3f3f3;
-    	font-family: 'ubuntu';
-    	font-weight: bold;
-    	font-size: 14px;
+    font-family: 'ubuntu';    	
+    font-size: 14px;
 	margin-right:2px;
 	margin-top:4px;
 	font-weight:normal;
-	text-transform:uppercase;
 }
 .social-icon ul li{
 	list-style:none;
@@ -1003,12 +982,10 @@ a.prev.page-numbers {
 }
 .footer-main .widget h4 {
 	color: #f3f3f3;
-    font-family: 'ubuntu';
-    font-weight: bold;
+    font-family: 'ubuntu';    
     font-size: 14px;
     list-style: none outside none;
     margin: 15px 0;
-    text-transform: uppercase;
     text-align: center;
     border-bottom:none
 }
@@ -1079,10 +1056,10 @@ a.prev.page-numbers {
 	color:#fff;
 	font-size:20px;
 	font-family: 'ubuntu';
-	font-weight: bold;
+	
 	float:left;
 	margin-right:20px;
-	text-transform: capitalize;
+	
 }
 .bread-left span{
 	float:left;
@@ -1103,13 +1080,11 @@ a.prev.page-numbers {
 }
 .site-breadcumb a {
 	font-size:14px;
-	color:#fff;	
-	text-transform: capitalize;
+	color:#fff;		
 }
 .site-breadcumb li a{
 	font-size:14px;
-	color:#fff;	
-	text-transform: capitalize;
+	color:#fff;		
 }
 .site-breadcumb a:hover,
 .bread-left a:hover,
@@ -1154,30 +1129,26 @@ aside{
 	border-bottom:1px solid #c5c5c5;
 	padding-bottom:10px;
 	font-family: 'ubuntu';
-	font-weight: bold;
-	text-transform:uppercase;
 }
 .aside-column2 p{
 	margin-top:15px;
 }
 .aside-column2 p label{
 	float:left;
-	font-family: 'istok web';
-	font-weight: bold;
+	font-family: 'istok web';	
 	font-size:13px;
 	color:#272727;
 	font-weight: normal;
-	text-transform: capitalize;
+	
 }
 .aside-column2 p span{
 	float:right;
 	width:150px;
-	font-family: 'istok web'; 
-	font-weight: bold;
+	font-family: 'istok web'; 	
 	font-size:13px;
 	color:#555555;
 	word-wrap:break-word;
-	text-transform: capitalize;
+	
 }
 .aside-column2 .wp-caption {
     background-color: rgba(204, 204, 204, 0.5);
@@ -1213,13 +1184,10 @@ aside{
     font-size: 16px;
     margin: 0 0 20px;
     padding-bottom: 15px;
-    text-transform: uppercase;
 	border-bottom: 1px solid #c5c5c5;
     color: #fc5b3f;
     font-family: 'ubuntu';
-    font-weight: bold;
     font-size: 16px;
-    text-transform: uppercase;
     width: 100%;
 }
 .main-sidebar .social-icon ul li a i:hover, 
@@ -1275,8 +1243,7 @@ article{
 	border:1px solid #9c9b9b;
 	color:#545454;
 	font-size:13px;
-	font-family: 'istok web'; 
-	text-transform:capitalize;
+	font-family: 'istok web';	
 	border-radius:3px;
 	padding:7px 15px 5px 15px;	
 	transition:all ease-in-out 0.5s;
@@ -1385,12 +1352,11 @@ article{
 	color:#fff;
 	padding:10px 15px;
 	font-size:15px;
-	font-family: 'istok web'; 
-	font-weight: bold;
+	font-family: 'istok web'; 	
 	transition:all ease-in-out 0.5s;
 	-moz-transition:all ease-in-out 0.5s;
 	-webkit-transition:all ease-in-out 0.5s;	
-	text-transform: capitalize;
+	
 }
 .apply-btn:hover{
 	background-color:transparent;
@@ -1400,7 +1366,6 @@ article{
 	color:#212121;
 	font-size:14px;
 	font-family: 'istok web';
-	text-transform:uppercase;
 	font-weight:normal;
 	margin-right:10px; 
 }
@@ -1446,8 +1411,7 @@ article{
 	border-bottom: 1px solid #e6e6e6;
 	font-size:16px;
     margin:0 0 20px;
-    padding-bottom: 15px;
-	text-transform:uppercase;	
+    padding-bottom: 15px;	
 }
 .jobs-sidebar-column span{
 	color:#555555;
@@ -1485,12 +1449,11 @@ article{
     cursor: pointer;
     display: inline-block;
     font-size: 15px;
-	font-family: 'istok web';
-	font-weight: bold;
+	font-family: 'istok web';	
 	margin-top:18px;
     padding: 6px 25px 4px 25px;
     text-align: center;
-	text-transform: capitalize;
+	
 	transition: all 0.25s ease-out 0s;
 	-webkit-transition: all 0.25s ease-out 0s;
 }
@@ -1501,11 +1464,10 @@ article{
     border-style: solid;
     border-width: 1px 1px 2px;
     color: #fff;
-    font-family: 'istok web';
-    font-weight: bold;
+    font-family: 'istok web';    
     font-size: 15px;
     padding: 6px 25px 4px 25px;
-    text-transform: capitalize;
+    
     transition: all 0.5s ease-in-out 0s;
 	display: inline-block;
 	margin-top: 10px;
@@ -1524,9 +1486,7 @@ article{
 .category-title{
 	color:#212121;
 	font-size:14px;
-	font-family: 'ubuntu';
-	font-weight: bold;
-	text-transform:uppercase; 
+	font-family: 'ubuntu'; 
 	margin-bottom:15px;	
 }
 /**accordian bar menu**/
@@ -1623,7 +1583,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
   font-size: 14px;
   text-decoration: none;
   color: #555555;
-  text-transform: capitalize;
+  
 }
 .cssmenu > ul > li > a > span{padding-left:3px;}
 .cssmenu > ul > li > a:hover{
@@ -1738,7 +1698,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	font-family: 'istok web';
 	font-size:14px;
 	position: relative;
-	text-transform: capitalize;
+	
 }
 .multi-one label{
 	font-weight:normal;
@@ -1855,7 +1815,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	color:#555555;
 	transition:all 0.5s ease-in-out 0s;
 	-webkit-transition:all 0.5s ease-in-out 0s;
-	text-transform: capitalize;
+	
 }
 .right-pagination ul li a:hover{
 	background-color:#1d9092;
@@ -1878,7 +1838,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 }
 .result-btm-text a{
 	font-family: 'istok web';
-	font-weight: bold;
+	
 	transition:all 0.5s ease-in-out 0s;	
 }
 .result-btm-text a:hover{
@@ -1924,7 +1884,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	font-size:16px;	
 	font-family: 'istok web';
 	font-weight:normal;
-	text-transform: capitalize;
+	
 } 
 .post-form span{font-size:14px;float:left;margin-top:5px;}
 .post-form-title{
@@ -1933,8 +1893,6 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	border-bottom: 1px solid #c5c5c5;
 	padding-bottom: 10px;
 	font-family: 'ubuntu';
-	font-weight: bold;
-	text-transform: uppercase;
 	margin:15px 0 35px 0;	
 }
 .form-input input[type="file"]{
@@ -2002,11 +1960,9 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	border-bottom: 1px solid #c5c5c5;
     color: #fc5b3f;
     font-family: 'ubuntu';
-    font-weight: bold;
     font-size: 16px;
     margin: 0 auto 25px;
     padding: 0 0 10px;
-    text-transform: uppercase;
     width: 97%;
 }
 .jobile-page-title {
@@ -2041,7 +1997,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	width:100%;
 	display:inline-block;
 	transition:all 0.5s ease-in-out 0s; 
-	text-transform: capitalize;
+	
 }
 .team-caption a:hover{
 	color: #fc5b3f;	
@@ -2053,7 +2009,6 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .team-caption span{
 	font-family: 'ubuntu';
     font-size: 14px;	
-	text-transform: uppercase;
 }
 .about-item {
 	border:1px solid #dfdfdf;	
@@ -2107,7 +2062,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	font-family: 'istok web';	
 }
 .con-address p{
-	text-transform: capitalize;	
+		
 }
 .con-other p a{
 	color:#1d9092;
@@ -2176,11 +2131,11 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	color:#555555;
 	display:inline-block;
 	font-family: 'ubuntu';
-	font-weight: bold;
+	
     font-size: 16px;
 	float:left;
 	padding:10px 0;
-	text-transform: capitalize;
+	
 }
 .column-btm > button{
 	 display:inline-block;	
@@ -2210,7 +2165,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .hover-title{
 	color:#fff;
 	font-family: 'ubuntu';
-	font-weight: bold;
+	
     font-size: 20px;
 	padding:20px 0;	
 }
@@ -2345,10 +2300,10 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .term-content h4{
 	color:#555555;
 	font-family: 'ubuntu';
-	font-weight: bold;
+	
     font-size: 16px;
 	margin:20px 0 10px 0;
-	text-transform: capitalize;
+	
 }
 .term-content p{
 	color:#555555;
@@ -2364,7 +2319,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
     float: left;
     font-size: 22px;
     margin: 10px 0 15px;
-    text-transform: capitalize;
+    
 }
 .comment-reply-title a {
 	color: #fc5b3f;
@@ -2575,7 +2530,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .comment-metadata{
     font-size: 14px;
     margin: 5px 0;
-    font-weight: bold;
+    
 }
 dd {
     margin: 0 0 1.5em 0;
@@ -2685,7 +2640,6 @@ dd {
 .comments-area h2 {
     color: #212121;
     font-size: 18px;
-    text-transform: uppercase;
     margin-bottom: 10px !important;
     margin-top: 20px !important;
 }
