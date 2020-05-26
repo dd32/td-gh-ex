@@ -75,30 +75,30 @@
             <div class="col-lg-3 col-md-4 col-9">
               <div class="logo">
                 <?php if ( has_custom_logo() ) : ?>
-                <div class="site-logo"><?php the_custom_logo(); ?></div>
+                  <div class="site-logo"><?php the_custom_logo(); ?></div>
                 <?php else: ?>
-                <?php $blog_info = get_bloginfo( 'name' ); ?>
-                <?php if ( ! empty( $blog_info ) ) : ?>
-                  <?php if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                  <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                  <?php $blog_info = get_bloginfo( 'name' ); ?>
+                  <?php if ( ! empty( $blog_info ) ) : ?>
+                    <?php if ( is_front_page() && is_home() ) : ?>
+                      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php else : ?>
+                      <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php endif; ?>
                   <?php endif; ?>
-                <?php endif; ?>
-                <?php
-                $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) :
-                  ?>
-                <p class="site-description">
-                  <?php echo esc_html($description); ?>
-                </p>
-              <?php endif; ?>
+                  <?php
+                  $description = get_bloginfo( 'description', 'display' );
+                  if ( $description || is_customize_preview() ) :
+                    ?>
+                    <p class="site-description">
+                      <?php echo esc_html($description); ?>
+                    </p>
+                  <?php endif; ?>
               <?php endif; ?>
               </div>
             </div>
             <div class="col-lg-8 col-md-8 col-3">
               <div class="toggle-menu mobile-menu">
-                <button onclick="advance_automobile_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
+                <button class="mobiletoggle" onclick="advance_automobile_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-automobile' ); ?>">
@@ -142,17 +142,21 @@
                 </nav>
               </div>
             </div>
-            <div class="col-lg-1">
-              <a href="#" onclick="advance_automobile_search_open()" class="search-box">
-                <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-automobile' );?></span>
-              </a>
+            <div class="col-lg-1 col-md-1 col-6">
+              <div class="search-box">
+                <button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
+              </div>
             </div>
           </div>
-          <div class="serach_outer">
-            <div class="serach_inner">
-              <?php get_search_form(); ?>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-body">
+                <div class="serach_inner">
+                  <?php get_search_form(); ?>
+                </div>
+              </div>
+              <button type="button" class="closepop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
             </div>
-            <a href="#maincontent" onclick="advance_automobile_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-automobile' );?></span></a>
           </div>
         </div>
       </div>
