@@ -1,6 +1,6 @@
 <?php 
 /* 	SunRain Theme's Search Page
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -9,15 +9,15 @@ get_header(); ?>
 <div id="container">
 	<?php if (have_posts()) : ?>
 		<div id="content">
-        <h1 class="page-title fa-search-plus"><?php echo __('Search Results', 'sunrain'); ?></h1>
+        <h1 class="page-title fa-search-plus"><?php echo esc_html__('Search Results', 'sunrain'); ?></h1>
 		
 		<?php $counter = 0; global $more; $more = 0; ?>
 		
 		<?php while (have_posts()) : the_post();
 			if($counter == 0) {
 				$numposts = $wp_query->found_posts; // count # of search results ?>
-				<h3 class="arc-src"><span><?php echo __('Search Term:', 'sunrain');?> </span><?php the_search_query(); ?></h3>
-				<h3 class="arc-src"><span><?php echo __('Number of Results:', 'sunrain');?> </span><?php echo $numposts; ?></h3><br />
+				<h3 class="arc-src"><span><?php echo esc_html__('Search Term:', 'sunrain');?> </span><?php the_search_query(); ?></h3>
+				<h3 class="arc-src"><span><?php echo esc_html__('Number of Results:', 'sunrain');?> </span><?php echo $numposts; ?></h3><br />
 				<?php } //endif ?>
 			
 				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -35,8 +35,8 @@ get_header(); ?>
  		
 		<?php endwhile; ?>
         <div id="page-nav">
-		<div class="alignleft"><?php previous_posts_link(__('&laquo; Previous Entries', 'sunrain')) ?></div>
-		<div class="alignright"><?php next_posts_link(__('Next Entries &raquo;', 'sunrain')) ?></div>
+		<div class="alignleft"><?php previous_posts_link('&laquo; '.esc_html__('Previous Entries', 'sunrain')); ?></div>
+		<div class="alignright"><?php next_posts_link(esc_html__('Next Entries', 'sunrain').' &raquo;'); ?></div>
 		</div>
         
 		</div>		

@@ -1,6 +1,6 @@
 <?php 
 /* 	SunRain Theme's About Page
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 3.0
 */
@@ -21,7 +21,7 @@
 <a href="<?php echo esc_url('https://d5creation.com/theme/sunrain/'); ?>" target="_blank" class="extendlink"> </a>
         </div>
         
-        <p>SunRain is CSS3 Powered and WordPress Latest Version Ready Responsive Theme.  SunRain has Multi Layered Slider where two Slides can show many Items which can be controlled from the Theme Options Panel.  Super Elegant and Professional Sunrain Theme will be adjusted automatically with all smart devices if the Responsive Layout be Selected.  Full Wide Template can be used for showing showcase or other pages. You can download the SunRain Extend from d5creation.com
+        <p class="themeabout">SunRain is CSS3 Powered and WordPress Latest Version Ready Responsive Theme.  SunRain has Multi Layered Slider where two Slides can show many Items which can be controlled from the Theme Options Panel.  Super Elegant and Professional Sunrain Theme will be adjusted automatically with all smart devices if the Responsive Layout be Selected.  Full Wide Template can be used for showing showcase or other pages. You can download the SunRain Extend from d5creation.com
         </p>
         
         <div class="floatcntr">
@@ -100,7 +100,3 @@
 
 
 </div>
-
-
-
-

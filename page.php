@@ -1,6 +1,6 @@
 <?php
 /* 	SunRain Theme's General Page to display all Pages
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -17,7 +17,7 @@
  <?php the_post_thumbnail('thumbnail');  ?>
  <?php sunrain_content(); ?>
 
-				<?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','sunrain'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php  wp_link_pages( array( 'before' => '<div class="page-link"><span class="pagelnk dashicons dashicons-text-page"></span>', 'after' => '</div><br/>' ) ); ?>
 
 			</div>
 		</div>

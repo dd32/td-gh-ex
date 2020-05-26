@@ -3,49 +3,52 @@
 -------------------------------------------------------------- */
 @media screen and (max-width: 1100px) {
 	body {max-width: 100%; min-width: 100%; width: 100%; overflow-x: hidden;}
-	.box90, #heading3, #container, #header-content, .lsep, #footer-content, .slider-wrapper, .heading1vcenter, #bqpcontainer-sub, #heading2, .heading-desc2, .heading-desc3, .fpage-quote {width: 97% !important;}
+	.box90, #heading3, #container, #header-content, .lsep, #footer-content, .slider-wrapper, .heading1vcenter, #bqpcontainer-sub, #heading2, .heading-desc2, .heading-desc3, .fpage-quote {width: 97% !important; max-width: calc(100% - 40px); }
 	.bqpcontainer-box {width: 100% !important;}
 }
 
 @media screen and (max-width: 1024px) { 
 	#header.smallheader {position: relative; }
-	.featured-box { width: calc(33.333% - 14.05px); }
-	#header-content {display: flex; align-items: center; flex-direction: column;}
-	h1.site-title, img.site-logo {width: auto; max-height: 50px; display: flex; align-items: center; text-align: center; justify-content: center; }
-	#top-menu-con {margin-bottom: 3px;}
-	#main-menu-con {position: relative; top: auto !important;}
+	.featured-box { min-width: calc(33.333% - 14px); }
+	#header-content {display: flex; align-items: center; flex-direction: column; flex-wrap: wrap; }
+	h1.site-title{ max-width: 100%; }
+	img.site-logo {width: auto; max-width: 300%;  text-align: center; }
+	#top-menu-con {margin-bottom: 3px; width: 100%; justify-content: center; float: none; flex-wrap: wrap; }
+	#main-menu-con {position: relative;}
 }
 
-@media screen and (max-width: 900px) {
-	#top-menu-con {float: none;}
-	.logotitle {float: none; margin: 0 auto; display: block; }
-	.featured-box { width: calc(33.333% - 14.05px); }
-	.mobile-menu {display: block;}
-	#main-menu-con {display: none; top: 100% !important; right: auto !important; left: 0 !important; z-index: 99999; width: auto; }
+@media screen and (max-width: 1023px) {
+	#resmwdt { width: 9px; }
+	#header-content {flex-direction:row; justify-content: space-between; }
+	#logotitlecon{ order: 3; max-width: calc(100% - 80px); }
+	h1.site-title{ text-align: right; }
+	.featured-box { min-width: calc(33.333% - 14px); }
+	.mobile-menu {display: inline-flex;}
+	#main-menu-con {display: none; top: 100%; position: absolute; right: auto !important; left: 0 !important; z-index: 99999; width: auto; }
 	#main-menu-con li { width: auto; margin: 0; }
 	#main-menu-con a { width: 250px; background: #ffffff; padding: 10px 15px; margin: 0; border-radius: 0 !important; border-bottom: 1px solid #eeeeee; }
 	#main-menu-con a.wccart-icon {padding: 11px 15px;}
-	#main-menu-con ul ul a {width: 250px;}
-	#main-menu-con ul ul a {margin: 0; }
-	#main-menu-con ul ul, .sub-menu, .sub-menu ul ul {border-radius: 0 !important;}
+	#main-menu-con ul ul a {width: 250px; margin: 0; }
+	#main-menu-con ul ul a {margin: 0; background:#f80f25; }
+	#main-menu-con ul ul {border-radius: 0 !important; background:#f80f25; }
 	#main-menu-con ul ul ul{left:20px;top:calc(100% - 5px);}
 	#content {width: 100%;}
 	#right-sidebar { width: 100%; display: flex; align-items: start; flex-wrap: wrap; justify-content: center; }
-	#right-sidebar .widget {width: 330px; margin: 0 10px 20px;}
+	#right-sidebar .widget {width: 330px; max-width: 100%; margin: 0 10px 20px;}
 	#footer-sidebar {margin: 0; display: flex; align-items: start; flex-wrap: wrap; justify-content: center;}
 	#footer-sidebar .footer-widgets {width: 250px; margin: 0 10px 20px;}
 	#top-menu-con {flex-wrap: wrap; justify-content: center; }
-	.post-slide-box { width: calc(50% - 30px); }
+	.post-slide-box { min-width: calc(50% - 30px); }
+	#top-menu-con input[type="search"].search-field:focus{ width: 120px; }
 }
 
 @media screen and (max-width: 700px) {
-	.featured-box { width: calc(50% - 14.05px); min-width: 200px; }
-	.contactboxpart {width: 100%; min-width: 250px;}
-	#heading2, #heading3, .bqpheading {font-size: 29px;} 
-	#header-content { align-items: flex-start;}
+	.featured-box { min-width: calc(50% - 14px); }
+	#heading1container, #heading1container *{ display: flex; align-items: center; flex-direction: column; text-align: center; }
+	#heading2, #heading3, .bqpheading {font-size: 29px;} 	
 }
 
 @media screen and (max-width: 500px) {
-	.featured-box { width: calc(100% - 14.05px); }
-	.post-slide-box { width: calc(100% - 30px); }
+	.featured-box { min-width: calc(100% - 14px); }
+	.post-slide-box { min-width: calc(100% - 30px); }
 }

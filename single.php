@@ -1,7 +1,7 @@
 <?php
 
 /* 	SunRain Theme's Single Page to display Single Page or Post
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -21,11 +21,11 @@ get_header(); ?>
             </div>
             <div class="clear"> </div>
             <div class="up-bottom-border">
-            <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . '' . '</span>', 'after' => '</div><br/>' ) ); ?>
+            <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span class="pagelnk dashicons dashicons-text-page"></span>', 'after' => '</div><br/>' ) ); ?>
             <?php sunrain_post_meta(); ?>
             <div class="content-ver-sep"> </div>
-            <div class="floatleft"><?php previous_post_link('&laquo; %link'); ?></div>
-			<div class="floatright"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
+            <div class="floatleft pagenextpre"><?php previous_post_link('&laquo; %link'); ?></div>
+			<div class="floatright pagenextpre"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
             <?php if ( is_attachment() ): ?>
             <div class="floatleft"><?php previous_image_link( false, __('&laquo; Previous Image','sunrain') ); ?></div>
 			<div class="floatright"><?php next_image_link( false, __('Next Image &raquo;','sunrain') ); ?></div> 
@@ -37,8 +37,6 @@ get_header(); ?>
           <!-- End the Loop. -->          
         	
 			<?php comments_template(); ?>
-            <?php if (get_post_meta( get_the_ID(), 'sb_pl', true ) == 'fullwidth' ): echo '<style>#content { width: 100%; } #right-sidebar { display: none; }</style>'; endif; ?>
-            
 </div></div>			
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

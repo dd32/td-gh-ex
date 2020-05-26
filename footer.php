@@ -1,6 +1,6 @@
 <?php
 /* 	SunRain Theme's Footer
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */

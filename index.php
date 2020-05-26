@@ -1,6 +1,6 @@
 <?php 
 /* 	SunRain Theme's Index Page to hsow Blog Posts
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -25,8 +25,8 @@ get_header(); ?>
  <?php endwhile; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link(__('&laquo; Previous Entries','sunrain')) ?></div>
-<div class="alignright"><?php next_posts_link(__('Next Entries &raquo;','sunrain'),'') ?></div>
+	<div class="alignleft"><?php previous_posts_link('&laquo; '.esc_html__('Previous Entries', 'sunrain')); ?></div>
+	<div class="alignright"><?php next_posts_link(esc_html__('Next Entries', 'sunrain').' &raquo;'); ?></div>
 </div>
   
  
