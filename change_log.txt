@@ -69,3 +69,6 @@ i) Misc changes.
 
 Version: 1.5 (26 May 2020)
 i) Misc changes.
+
+Version: 1.5.1 (26 May 2020)
+i) Added Documentation URL in theme description.
