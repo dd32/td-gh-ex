@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Azuma 1.2.7\n"
-"POT-Creation-Date: 2020-05-20 12:02+0100\n"
+"Project-Id-Version: Azuma 1.2.8\n"
+"POT-Creation-Date: 2020-05-26 15:19+0100\n"
 "PO-Revision-Date: 2019-04-08 16:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: UXL Themes\n"
@@ -60,14 +60,14 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-front-page.php:18 content-page-blank-canvas.php:16
+#: content-front-page.php:16 content-page-blank-canvas.php:16
 #: content-page.php:39 content-search.php:53 content-single.php:57
 #: content.php:53
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: content-front-page.php:29 content-page-blank-canvas.php:27
+#: content-front-page.php:27 content-page-blank-canvas.php:27
 #: content-page.php:50
 #, php-format
 msgid "Edit %s"
@@ -347,415 +347,415 @@ msgstr ""
 msgid "Container Width"
 msgstr ""
 
-#: functions/customizer.php:214
+#: functions/customizer.php:213
 msgid "Disable Search Form in Header"
 msgstr ""
 
-#: functions/customizer.php:232
+#: functions/customizer.php:231
 msgid "Page Title Layout"
 msgstr ""
 
-#: functions/customizer.php:233
+#: functions/customizer.php:232
 msgid ""
 "Large image header uses default \"Header Image\" or page/post \"Featured "
 "Image\" if available."
 msgstr ""
 
-#: functions/customizer.php:259
+#: functions/customizer.php:258
 msgid "Blog - Grid Layout"
 msgstr ""
 
-#: functions/customizer.php:282
+#: functions/customizer.php:281
 msgid "Blog - Posts Image Size"
 msgstr ""
 
-#: functions/customizer.php:283 functions/customizer.php:1101
+#: functions/customizer.php:282 functions/customizer.php:1100
 msgid ""
 "See: \"Settings\" > \"Media\" (or any active plugins that control image "
 "sizes)"
 msgstr ""
 
-#: functions/customizer.php:300
+#: functions/customizer.php:299
 msgid "Sidebar Position"
 msgstr ""
 
-#: functions/customizer.php:304
+#: functions/customizer.php:303
 msgid "Left"
 msgstr ""
 
-#: functions/customizer.php:305
+#: functions/customizer.php:304
 msgid "Right"
 msgstr ""
 
-#: functions/customizer.php:322
+#: functions/customizer.php:321
 msgid "Enable Sticky Footer"
 msgstr ""
 
-#: functions/customizer.php:332 functions/customizer.php:378
+#: functions/customizer.php:331 functions/customizer.php:377
 msgid "Homepage Sections"
 msgstr ""
 
-#: functions/customizer.php:333
+#: functions/customizer.php:332
 msgid ""
 "You should first select a Static Homepage if you have not already done so. "
 "See: \"Homepage Settings\""
 msgstr ""
 
-#: functions/customizer.php:350
+#: functions/customizer.php:349
 msgid "Activate Homepage Sections"
 msgstr ""
 
-#: functions/customizer.php:351
+#: functions/customizer.php:350
 msgid "Page Content is displayed by default if Homepage Sections is disabled."
 msgstr ""
 
-#: functions/customizer.php:379
+#: functions/customizer.php:378
 msgid ""
 "Check the box to display. Sortable: drag and drop into your preferred order."
 msgstr ""
 
-#: functions/customizer.php:399 functions/extras.php:656
+#: functions/customizer.php:398 functions/extras.php:658
 msgid "Featured Services"
 msgstr ""
 
-#: functions/customizer.php:420
+#: functions/customizer.php:419
 msgid "Feature "
 msgstr ""
 
-#: functions/customizer.php:441
+#: functions/customizer.php:440
 msgid "Icon"
 msgstr ""
 
-#: functions/customizer.php:460 functions/customizer.php:499
+#: functions/customizer.php:459 functions/customizer.php:498
 msgid "Select Page"
 msgstr ""
 
-#: functions/customizer.php:461
+#: functions/customizer.php:460
 msgid ""
 "Displays title and excerpt of selected page. You can add an optional hand-"
 "crafted excerpt in the page editor (make sure []excerpt is checked in Screen "
 "Options)."
 msgstr ""
 
-#: functions/customizer.php:481 functions/extras.php:668
+#: functions/customizer.php:480 functions/extras.php:670
 msgid "Extra Page Content"
 msgstr ""
 
-#: functions/customizer.php:500
+#: functions/customizer.php:499
 msgid "Choose which extra page content to display on homepage."
 msgstr ""
 
-#: functions/customizer.php:509
+#: functions/customizer.php:508
 msgid "Typography & Fonts"
 msgstr ""
 
-#: functions/customizer.php:521 functions/customizer.php:580
-#: functions/customizer.php:681 functions/customizer.php:723
-#: functions/customizer.php:765
+#: functions/customizer.php:520 functions/customizer.php:579
+#: functions/customizer.php:680 functions/customizer.php:722
+#: functions/customizer.php:764
 msgid "Site Title"
 msgstr ""
 
-#: functions/customizer.php:534
+#: functions/customizer.php:533
 msgid "Navigation"
 msgstr ""
 
-#: functions/customizer.php:547
+#: functions/customizer.php:546
 msgid "Content"
 msgstr ""
 
-#: functions/customizer.php:560
+#: functions/customizer.php:559
 msgid "Headings"
 msgstr ""
 
-#: functions/customizer.php:598 functions/customizer.php:699
-#: functions/customizer.php:741 functions/customizer.php:783
+#: functions/customizer.php:597 functions/customizer.php:698
+#: functions/customizer.php:740 functions/customizer.php:782
 msgid "Size"
 msgstr ""
 
-#: functions/customizer.php:619
+#: functions/customizer.php:618
 msgid "Weight"
 msgstr ""
 
-#: functions/customizer.php:637
+#: functions/customizer.php:636
 msgid "Transform"
 msgstr ""
 
-#: functions/customizer.php:640
+#: functions/customizer.php:639
 msgid "none"
 msgstr ""
 
-#: functions/customizer.php:640
+#: functions/customizer.php:639
 msgid "capitalize"
 msgstr ""
 
-#: functions/customizer.php:640
+#: functions/customizer.php:639
 msgid "lowercase"
 msgstr ""
 
-#: functions/customizer.php:640
+#: functions/customizer.php:639
 msgid "uppercase"
 msgstr ""
 
-#: functions/customizer.php:657
+#: functions/customizer.php:656
 msgid "Letter Spacing"
 msgstr ""
 
-#: functions/customizer.php:798
+#: functions/customizer.php:797
 msgid "EDD Options"
 msgstr ""
 
-#: functions/customizer.php:800
+#: functions/customizer.php:799
 msgid ""
 "Easy Digital Downloads options for Azuma theme. Requires Easy Digital "
 "Downloads plugin."
 msgstr ""
 
-#: functions/customizer.php:817
+#: functions/customizer.php:816
 msgid ""
 "Selecting \"Azuma Theme\" in Downloads > Settings > Styles > Default Button "
 "Color will make the EDD buttons follow the theme color/styling."
 msgstr ""
 
-#: functions/customizer.php:832
+#: functions/customizer.php:831
 msgid "Header Search"
 msgstr ""
 
-#: functions/customizer.php:833
+#: functions/customizer.php:832
 msgid "What should be searched for? Select downloads or all content."
 msgstr ""
 
-#: functions/customizer.php:837
+#: functions/customizer.php:836
 msgid "Downloads"
 msgstr ""
 
-#: functions/customizer.php:838
+#: functions/customizer.php:837
 msgid "All content"
 msgstr ""
 
-#: functions/customizer.php:857
+#: functions/customizer.php:856
 msgid "Header Account"
 msgstr ""
 
-#: functions/customizer.php:876
+#: functions/customizer.php:875
 msgid "User Logged In"
 msgstr ""
 
-#: functions/customizer.php:894
+#: functions/customizer.php:893
 msgid "Customer Account/Profile Page"
 msgstr ""
 
-#: functions/customizer.php:895
+#: functions/customizer.php:894
 msgid ""
 "If you have created a customer account page, select it here and the account "
 "icon will link to it."
 msgstr ""
 
-#: functions/customizer.php:910
+#: functions/customizer.php:909
 msgid "Enable Purchase History in Account Dropdown"
 msgstr ""
 
-#: functions/customizer.php:926
+#: functions/customizer.php:925
 msgid "Enable Download History in Account Dropdown"
 msgstr ""
 
-#: functions/customizer.php:942
+#: functions/customizer.php:941
 msgid "Enable Profile Editor in Account Dropdown"
 msgstr ""
 
-#: functions/customizer.php:961
+#: functions/customizer.php:960
 msgid "User Not Logged In"
 msgstr ""
 
-#: functions/customizer.php:979
+#: functions/customizer.php:978
 msgid "Customer Login/Registration Page"
 msgstr ""
 
-#: functions/customizer.php:980
+#: functions/customizer.php:979
 msgid ""
 "If you have created a customer login and registration page, select it here "
 "and the account icon will link to it."
 msgstr ""
 
-#: functions/customizer.php:995
+#: functions/customizer.php:994
 msgid "Enable Login Form in Account Dropdown"
 msgstr ""
 
-#: functions/customizer.php:1011
+#: functions/customizer.php:1010
 msgid "Enable Registration Form in Account Dropdown"
 msgstr ""
 
-#: functions/customizer.php:1043
+#: functions/customizer.php:1042
 msgid "Downloads - Grid Layout"
 msgstr ""
 
-#: functions/customizer.php:1044
+#: functions/customizer.php:1043
 msgid ""
 "Download product archives, categories, search results. Note: pages using "
 "[downloads] shortcode should use columns option e.g. [downloads columns="
 "\"4\"]"
 msgstr ""
 
-#: functions/customizer.php:1068
+#: functions/customizer.php:1067
 msgid "Downloads Archive Title"
 msgstr ""
 
-#: functions/customizer.php:1069
+#: functions/customizer.php:1068
 msgid ""
 "When you create at least one download, EDD creates a special \"/downloads/\" "
 "archive with \"Downloads\" page title. Change this here."
 msgstr ""
 
-#: functions/customizer.php:1085
+#: functions/customizer.php:1084
 msgid "Downloads Archive Description"
 msgstr ""
 
-#: functions/customizer.php:1100
+#: functions/customizer.php:1099
 msgid "Download Image Size"
 msgstr ""
 
-#: functions/customizer.php:1120
+#: functions/customizer.php:1119
 msgid "Download Placeholder Image"
 msgstr ""
 
-#: functions/customizer.php:1139
+#: functions/customizer.php:1138
 msgid "Sidebar"
 msgstr ""
 
-#: functions/customizer.php:1155
+#: functions/customizer.php:1154
 msgid "Enable EDD Sidebar on Single Download Pages"
 msgstr ""
 
-#: functions/customizer.php:1171
+#: functions/customizer.php:1170
 msgid ""
 "Enable EDD Sidebar instead of Page Sidebar on Standard Pages containing the "
 "[downloads] Shortcode. Please note this can use a lot of resources if you "
 "have pages with a large amount of content."
 msgstr ""
 
-#: functions/customizer.php:1189
+#: functions/customizer.php:1188
 msgid "Sidebar will only be visible if it contains active widget(s)."
 msgstr ""
 
-#: functions/customizer.php:1207
+#: functions/customizer.php:1206
 msgid "See also \"No Sidebar\" template in page/download editor."
 msgstr ""
 
-#: functions/customizer.php:1215 functions/customizer.php:1226
-#: functions/customizer.php:1427
+#: functions/customizer.php:1214 functions/customizer.php:1225
+#: functions/customizer.php:1426
 msgid "Go Pro"
 msgstr ""
 
-#: functions/customizer.php:1217 functions/theme-help.php:85
+#: functions/customizer.php:1216 functions/theme-help.php:85
 msgid ""
 "Upgrade to Azuma Pro for even more cool features and customization options."
 msgstr ""
 
-#: functions/customizer.php:1335
+#: functions/customizer.php:1334
 msgid "Search..."
 msgstr ""
 
-#: functions/customizer.php:1410
+#: functions/customizer.php:1409
 msgid "More options available"
 msgstr ""
 
-#: functions/customizer.php:1419
+#: functions/customizer.php:1418
 msgid "Documentation"
 msgstr ""
 
-#: functions/customizer.php:1624
+#: functions/customizer.php:1623
 msgid "Full (original full size image)"
 msgstr ""
 
-#: functions/customizer.php:1628
+#: functions/customizer.php:1627
 msgid "(exact dimensions)"
 msgstr ""
 
-#: functions/customizer.php:1630
+#: functions/customizer.php:1629
 msgid "(proportional)"
 msgstr ""
 
-#: functions/extras.php:299
+#: functions/extras.php:301
 msgid "Search for:"
 msgstr ""
 
-#: functions/extras.php:300
+#: functions/extras.php:302
 msgid "Search downloads&hellip;"
 msgstr ""
 
-#: functions/extras.php:302
+#: functions/extras.php:304
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: functions/extras.php:402
+#: functions/extras.php:404
 msgid "https://wordpress.org/"
-msgstr ""
-
-#: functions/extras.php:402
-#, php-format
-msgid "Powered by %s"
 msgstr ""
 
 #: functions/extras.php:404
 #, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: functions/extras.php:406
+#, php-format
 msgid "Theme: %s"
 msgstr ""
 
-#: functions/extras.php:427
+#: functions/extras.php:429
 msgid "options"
 msgstr ""
 
-#: functions/extras.php:662
+#: functions/extras.php:664
 msgid "Page Content"
 msgstr ""
 
-#: functions/extras.php:676
+#: functions/extras.php:678
 msgid "Product Categories"
 msgstr ""
 
-#: functions/extras.php:682
+#: functions/extras.php:684
 msgid "New products"
 msgstr ""
 
-#: functions/extras.php:688
+#: functions/extras.php:690
 msgid "Featured products"
 msgstr ""
 
-#: functions/extras.php:694
+#: functions/extras.php:696
 msgid "On-sale products"
 msgstr ""
 
-#: functions/extras.php:700
+#: functions/extras.php:702
 msgid "Top sellers"
 msgstr ""
 
-#: functions/extras.php:706
+#: functions/extras.php:708
 msgid "Top rated products"
 msgstr ""
 
-#: functions/extras.php:878 functions/extras.php:909
+#: functions/extras.php:880 functions/extras.php:911
 msgid "Read More"
 msgstr ""
 
-#: functions/extras.php:1076 functions/extras.php:1104
+#: functions/extras.php:1078 functions/extras.php:1106
 msgid "Free"
 msgstr ""
 
-#: functions/extras.php:1079 functions/extras.php:1106
+#: functions/extras.php:1081 functions/extras.php:1108
 msgid "From"
 msgstr ""
 
-#: functions/extras.php:1080
+#: functions/extras.php:1082
 msgid "Select Options"
 msgstr ""
 
-#: functions/extras.php:1128 functions/extras.php:1148
-#: functions/extras.php:1175
+#: functions/extras.php:1130 functions/extras.php:1150
+#: functions/extras.php:1177
 msgid "Azuma Theme"
 msgstr ""
 
 #. translators: %s: link to the customizer
-#: functions/extras.php:1152
+#: functions/extras.php:1154
 #, php-format
 msgid ""
 "More options can be found at Appearance &gt; <a href=\"%s\">Customize</a>"

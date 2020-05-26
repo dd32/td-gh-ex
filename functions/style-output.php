@@ -161,10 +161,6 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			
 		}
 
-		if ( get_theme_mod( 'header_search_off' ) ) {
-			$css[] = '#masthead .top-search{display:none;}';
-		}
-
 		return implode( '', $css );
 
 	}

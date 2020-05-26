@@ -9,8 +9,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php azuma_post_thumbnail(); ?>
-
 	<div class="entry-content single-entry-content">
 		<?php the_content(); ?>
 		<?php

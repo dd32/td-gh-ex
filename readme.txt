@@ -18,6 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.2.8 - May 26, 2020
+Fix alignment when search and cart not active
+Fix header layout on blank canvas and transparent header page templates
+
 1.2.7 - May 20, 2020
 Fix for wrong customizer container width option
 

@@ -271,6 +271,7 @@ if ( !function_exists( 'azuma_current_page_url' ) ) {
 
 if ( !function_exists( 'azuma_header_search' ) ) {
 	function azuma_header_search() {
+		if ( !get_theme_mod( 'header_search_off' ) ) {
 		?>
 		<div class="top-search">
 			<a href="#" class="icons azuma-icon-search"></a>
@@ -287,6 +288,7 @@ if ( !function_exists( 'azuma_header_search' ) ) {
 			</div>
 		</div>
 	<?php }
+	}
 }
 
 

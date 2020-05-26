@@ -203,7 +203,6 @@ function azuma_customize_register( $wp_customize ) {
 		'header_search_off',
 		array(
 			'default'			=> 0,
-			'transport'			=> 'postMessage',
 			'sanitize_callback' => 'absint'
 		)
 	);

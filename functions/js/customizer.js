@@ -35,16 +35,6 @@
 		} );
 	} );
 
-	wp.customize('header_search_off', function( value ) {
-		value.bind( function( to ) {
-			if ( to == 1 ) {
-				$('#masthead .top-search').css( {'display': 'none'} );
-			} else {
-				$('#masthead .top-search').css( {'display': 'inline-block'} );
-			}			
-		} );
-	} );
-
 	wp.customize('grid_layout', function( value ) {
 		value.bind( function( to ) {
 			$( '#grid-loop:not(.edd_downloads_list)' ).removeClass();

@@ -28,10 +28,22 @@
 	} else {
 		$page_class = '';
 	}
+
+	if ( get_theme_mod( 'header_search_off' ) ) {
+		$masthead_class_search = '';
+	} else {
+		$masthead_class_search = ' has-search';
+	}
+
+	if ( class_exists( 'WooCommerce' ) ) {
+		$masthead_class_wc = ' has-wc';
+	} else {
+		$masthead_class_wc = '';
+	}
 ?>
 <div id="page"<?php echo $page_class; ?>>
 
-	<header id="masthead" class="site-header not-full">
+	<header id="masthead" class="site-header not-full<?php echo $masthead_class_search.$masthead_class_wc; ?>">
 
 		<div class="container">
 		<?php azuma_header_content(); ?>
