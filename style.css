@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-coaching-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, personal trainer, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
-Version: 0.4.6
+Version: 0.4.7
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-coaching
@@ -70,11 +70,11 @@ a:focus,
 a:hover{
 	text-decoration:none !important;
 }
-a:focus, textarea:focus, input:focus, .topbar .closepop:focus{
+a:focus, textarea:focus, input:focus, .topbar .closepop:focus, button:focus, input:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
-#footer a:focus, .primary-navigation a:focus{
+#footer a:focus, .primary-navigation a:focus, .search-box button:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
 }
@@ -568,46 +568,21 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   transition: all 500ms;
   box-shadow: 0px 0px 12px #c0bebe;
 }
-.serach_outer {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0em;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: all 300ms;
-  visibility: visible;
-  transition: opacity 300ms, z-index 0ms;
-}
 .closepop {
  position: absolute;
- top: 25px;
+ top: 0;
  text-align: center;
  font-size: 40px;
  z-index: 9999;
  right: 50%;
  color: #575756;
-}
-.serach_outer {
- font-size: 24px;
- padding: 4px 0 0 0;
+ background: none;
+ border:none;
  cursor: pointer;
-}
-.serach_inner form.search-form {
- display: table;
- padding: 0;
- border-radius: 0;
- background: #ffffff;
- margin: 0 auto;
- max-width: 1200px;
- width: 100%;
 }
 .serach_inner form.search-form {
   width: calc(100% - 30px);
@@ -617,9 +592,14 @@ input[type="submit"] {
   border-bottom: 1px solid #eae6e6;
   position: absolute;
   bottom: 2em;
+  display: table;
+  padding: 0;
+  border-radius: 0;
+  background: #ffffff;
+  max-width: 1200px;
 }
-.serach_inner form.search-form input.search-field{
-  border:none;
+.serach_inner form.search-form label {
+  width: 95%;
 }
 .serach-page input.search-field {
  border: 1px solid #ccc;
@@ -644,24 +624,20 @@ button.search-submit {
 }
 input.search-field {
  border: none;
- padding: 10px 0;
+ padding: 4px 0;
  background: transparent;
- width: 100%;
- border: 1px solid #bbb;
-}
-.page-template-custom-front-page .search-box i {
-  color: #005bba;
+ width: 95%;
 }
 .search-box i {
-  padding: 5px 0px;
-  color: #fff;
-  margin: 15px 7px;
+  padding: 10px 0px;
+  color: #06393a;
+  margin: 5px;
+  background: none;
+  border:none;
 }
-a.search-box {
-  color: #fff;
-}
-.page-template-custom-front-page a.search-box {
-  color: #005bba;
+.search-box button {
+  background: none;
+  border:none;
 }
 .search-box {
   margin: 8px 0px;
@@ -674,6 +650,45 @@ a.search-box {
   margin:0;
   background-size: 30px;
 }
+.modal-content{
+  background: transparent;
+  border: 0;
+}
+.modal-dialog{
+  max-width: 100%;
+  pointer-events: all;
+  margin: 0;
+}
+.modal-body{
+  padding: 0;
+}
+#myModal {
+  padding: 0 !important;
+}
+.modal-open{
+  overflow-y: scroll;
+  padding: 0 !important;
+}
+.modal-backdrop{
+  position: relative;
+}
+.search-box i {
+  padding: 5px;
+  color: #fff;
+}
+a.search-box {
+  color: #fff;
+}
+.page-template-custom-front-page a.search-box {
+  color: #005bba;
+}
+.search-box {
+  margin: 15px 0px;
+}
+.page-template-custom-front-page .search-box i {
+  color: #005bba;
+}
+
 /* --------- Slider --------- */
 #slider{ 
   max-width:100%; 
@@ -2199,7 +2214,7 @@ iframe {
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .page-template-custom-front-page .topbar a:focus{
+  a.closebtn.mobile-menu:focus, .page-template-custom-front-page .topbar a:focus, .toggle-menu button:focus{
     outline: 1px dotted #fff;
     border-bottom: 1px solid #fff;
   }
@@ -2228,8 +2243,14 @@ iframe {
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    transition: 0.5s;
+    visibility: hidden;
     padding-top: 60px;
+    transition: 0.5s;
+  }
+  .sidebar.display{
+    visibility: visible;
+    width: 100%;
+    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;

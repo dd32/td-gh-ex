@@ -99,7 +99,7 @@
                 <div class="topbar">
                   <div class="<?php if( get_theme_mod( 'advance_coaching_sticky_header', false) != '' || get_theme_mod( 'advance_coaching_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
                     <div class="toggle-menu responsive-menu">
-                      <button role="tab" onclick="advance_coaching_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
+                      <button role="tab" class="mobiletoggle" onclick="advance_coaching_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
                     </div>
                     <div class="row m-0">
                       <div class="col-lg-11 col-md-11 padding0">
@@ -128,18 +128,22 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-lg-1 col-md-1">
-                        <a href="#" onclick="advance_coaching_search_open()" class="search-box">
-                          <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-coaching' );?></span>
-                        </a>
+                      <div class="col-lg-1 col-md-1 col-6">
+                        <div class="search-box">
+                          <button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="serach_outer">
-                    <div class="serach_inner">
-                      <?php get_search_form(); ?>
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-body">
+                        <div class="serach_inner">
+                          <?php get_search_form(); ?>
+                        </div>
+                      </div>
+                      <button type="button" class="closepop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
                     </div>
-                    <a href="#maincontent" onclick="advance_coaching_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-coaching' );?></span></a>
                   </div>
                   <div class="contact_data row m-0">
                     <div class="col-lg-4 col-md-4">
