@@ -116,13 +116,13 @@ get_header(); ?>
                             endif; 
                         ?>
                         <?php if ( have_posts() ) :
-                          /* Start the Loop */
-                          while ( have_posts() ) : the_post();
-                            get_template_part( 'template-parts/single-post' ); 
-                          endwhile;
-                          else :
-                            get_template_part( 'no-results' ); 
-                          endif; 
+                            /* Start the Loop */
+                            while ( have_posts() ) : the_post();
+                                get_template_part( 'template-parts/single-post' ); 
+                            endwhile;
+                            else :
+                                get_template_part( 'no-results' ); 
+                            endif; 
                         ?>
                         <div class="navigation">
                             <?php

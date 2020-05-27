@@ -143,7 +143,7 @@
           <div class="row">
             <div class="col-lg-10 col-md-7 col-4">
               <div class="toggle-menu responsive-menu">
-                <button role="tab" onclick="advance_pet_care_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-pet-care'); ?></span></button>
+                <button role="tab" class="mobiletoggle" onclick="advance_pet_care_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-pet-care'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-pet-care' ); ?>">
@@ -187,10 +187,10 @@
                 </nav>
               </div>
             </div>
-            <div class="col-lg-1 col-md-1 col-1">
-              <a href="#" onclick="advance_pet_care_search_open()" class="search-box">
-                <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-pet-care' );?></span>
-              </a>
+            <div class="col-lg-1 col-md-1 col-4">
+              <div class="search-box">
+                <button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
+              </div>
             </div>
             <div class="col-lg-1 col-md-3 col-4">
               <div class="cart_icon">
@@ -198,11 +198,15 @@
               </div>
             </div>
           </div>
-          <div class="serach_outer">
-            <div class="serach_inner">
-              <?php get_search_form(); ?>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-body">
+                <div class="serach_inner">
+                  <?php get_search_form(); ?>
+                </div>
+              </div>
+              <button type="button" class="closepop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
             </div>
-            <a href="#maincontent" onclick="advance_pet_care_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-pet-care' );?></span></a>
           </div>
         </div>
       </div>
