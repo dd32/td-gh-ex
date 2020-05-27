@@ -30,7 +30,7 @@
       </div>
     <?php }?>
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'bb-ecommerce-store' ); ?></a>
-    <?php if( get_theme_mod('bb_ecommerce_store_display_topbar') != ''){ ?>
+    <?php if( get_theme_mod('bb_ecommerce_store_display_topbar', false) != ''){ ?>
       <div class="topbar">
         <div class="container">
           <div class="row">
@@ -102,7 +102,7 @@
         </div>
       </div>
       <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-        <button role="tab" onclick="bb_ecommerce_store_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
+        <button role="tab" class="mobiletoggle" onclick="bb_ecommerce_store_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
       </div>
       <div class="top-header">
         <div class="container">
