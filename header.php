@@ -95,7 +95,7 @@
             <div class="col-lg-9 col-md-3 col-3 ">
               <div class="main-menu">
                 <div class="toggle-menu responsive-menu">
-                  <button role="tab" onclick="advance_fitness_gym_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-fitness-gym'); ?></span></button>
+                  <button role="tab" class="mobiletoggle" onclick="advance_fitness_gym_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-fitness-gym'); ?></span></button>
                 </div>
                 <div id="menu-sidebar" class="nav sidebar">
                   <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-fitness-gym' ); ?>">
