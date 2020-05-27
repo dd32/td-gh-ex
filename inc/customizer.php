@@ -632,7 +632,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	) );
 
   	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
-	    'default' => '#3ae0bf',
+	    'default' => '',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(

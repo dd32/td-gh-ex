@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 7.2.14
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -189,6 +189,9 @@ Trying to create an interactive website with the help of a flexible option? If s
   * Added scroll to top icon font size.
   * Added font size and allignment options for copyright text.
   * Updated POT file.
+
+= 1.3.5 =
+  * Resolved menu focus error.
 
 == Resources ==
 
