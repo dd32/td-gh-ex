@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 7.2.14
-Stable tag: 0.4.7
+Stable tag: 0.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 
 == Description ==
 
-Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, mentors, online library, educational websites and everything related to education, learning and teaching. It offers various layout options to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages. It is readily customizable to change its various elements to make it represent your brand. To keep visitors engaged, there are several sections like gallery, testimonial, faculty, contact form etc. Advance Education is made to score good rank in search engine results and its social media icons give the needed exposure to reach maximum people in minimum time. It is based on the latest WordPress version and hence yields a bug-free website. Its interface is simple to understand so any person with no previous coding skills can also use it to design a high performing and professional looking website.  
+Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, mentors, online library, educational websites and everything related to education, learning and teaching. It offers various layout options to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages also compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. It is readily customizable to change its various elements to make it represent your brand. To keep visitors engaged, there are several sections like gallery, testimonial, faculty, contact form etc. Advance Education is made to score good rank in search engine results and its social media icons give the needed exposure to reach maximum people in minimum time. It is based on the latest WordPress version and hence yields a bug-free website. Its interface is simple to understand so any person with no previous coding skills can also use it to design a high performing and professional looking website.  
 
 == Changelog ==
 
@@ -118,6 +118,10 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 * Added scroll to top icon font size.
 * Added font size and allignment options for copyright text.
 * Updated POT file.
+
+= 0.4.8 =
+* Resolved menu focus error.
+* Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
 == Resources ==
 
