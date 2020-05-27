@@ -324,28 +324,3 @@ require get_template_directory() . '/styles.php';
  * Page builder styles
  */
 require get_template_directory() . '/inc/rows.php';
-
-/**
- *TGM Plugin activation.
- */
-require_once dirname( __FILE__ ) . '/plugins/class-tgm-plugin-activation.php';
- 
-add_action( 'tgmpa_register', 'quill_recommend_plugin' );
-function quill_recommend_plugin() {
- 
-    $plugins = array(
-        array(
-            'name'               => 'Page Builder by SiteOrigin',
-            'slug'               => 'siteorigin-panels',
-            'required'           => false,
-        ),
-        array(
-            'name'               => 'Types - Custom Fields and Custom Post Types Management',
-            'slug'               => 'types',
-            'required'           => false,
-        ),          
-    );
- 
-    tgmpa( $plugins);
- 
-}
