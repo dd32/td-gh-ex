@@ -13,13 +13,7 @@
 	
 
 <body <?php body_class('arowana-btn'); ?>>
-<?php 
-    if ( function_exists( 'wp_body_open' ) ) {
-        wp_body_open();
-    } else {
-        do_action( 'wp_body_open' );
-    } 
-?>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arowana' ); ?></a>
 <?php
