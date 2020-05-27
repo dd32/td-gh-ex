@@ -1,9 +1,10 @@
 === Adonis ===
 Contributors: catchthemes
 Tags: two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
-Requires at least: 4.9
-Tested up to: 5.3
-Stable tag: 1.3.8
+Requires at least: 5.1
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 1.3.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +43,9 @@ You can check our Theme Demo at https://catchthemes.com/demo/adonis/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.3.9 (Released: May 27, 2020) =
+* Updated: readme.txt and style.css as per the new requirements
 
 = 1.3.8 (Released: February 03, 2020) =
 * Bug Fixed: Breadcrumb issue with disabled on homepage
