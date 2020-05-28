@@ -1,3 +1,7 @@
+=== v1.3.4 ===
+- Fixed responsive issue on transparent headers
+- Fixed customizer issue 
+
 === v1.3.3 ===
 - Added dynamic styles for header color and menu color to match companion plugin metabox settings
 

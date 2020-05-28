@@ -41,6 +41,9 @@
     }
 	.mob-outer-wrapp{
 		display: block;
+        position: absolute !important;
+        left: 0;
+        right: 0;
 	}
 	.menu-toggle {
 		display: block;
@@ -178,9 +181,7 @@
     .site-title {
         font-size: 21px;
     }
-    .mob-nav-wrapp{
-        max-width: 200px;
-    }
+    
     .mob-primary-menu li a{
         font-size: 14px;
     }
@@ -192,9 +193,7 @@
         font-size: 18px;
     }
     
-    .mob-nav-wrapp{
-        max-width: 200px;
-    }
+   
     .top-header-wrapp{
         padding: 10px 0 0px;
     }

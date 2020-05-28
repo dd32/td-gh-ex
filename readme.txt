@@ -7,12 +7,11 @@ License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header,left-sidebar,rtl-language-support,block-styles,wide-blocks
 Tested up to: 5.4.1
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 
 == Description ==
 
-Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
-The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
+Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website like corporate, business, portfolio, construction, charity, resturant, landing pages, education, fitness, gym, spa, travel, ecommerce, online stores etc. The theme is lightweight, fast and fully compatible with elementor and other major page builders. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor. The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
 
 
 Arrival is a WordPress Theme, 

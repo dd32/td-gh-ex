@@ -114,6 +114,7 @@ class Arrival_Customize_Redirect extends WP_Customize_Control{
     }
   }
 
+if( class_exists('WP_Customize_Section')){
   /**
      * Pro customizer section.
      *
@@ -182,3 +183,4 @@ class Arrival_Customize_Redirect extends WP_Customize_Control{
             </li>
         <?php }
     }
+  }
