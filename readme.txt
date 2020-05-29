@@ -1,9 +1,10 @@
 === Catch Everest ===
 Contributors: catchthemes
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
-Requires at least: 4.8
-Tested up to: 5.2.3
-Stable tag: 3.3.1
+Requires at least: 5.1
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 3.3.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -51,6 +52,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 3.3.2 (Released: May 28, 2020) =
+* Updated: readme.txt and style.css as per the new requirements
 
 = 3.3.1 (Released: September 08, 2019)
 * Bug Fixed: Sub menu issue on Hover
