@@ -133,12 +133,18 @@ if( class_exists('woocommerce')):
 endif;
     
     $defaults['arrival_store_middle_header_phone']          = '';
+    $defaults['arrival_store_middle_header_phone_text']     = esc_html__('Hotline Free:','arrival-store');
+    $defaults['arrival_store_header_category_text']         = esc_html__('Shop By Department','arrival-store');
+    $detaults['arrival_store_header_categories']            = '';
     $defaults['arrival_store_top_header_bg']                = '#000';
     $defaults['arrival_store_top_header_text_color']        = '#fff';
     $defaults['arrival_store_middle_header_bg']             = '#fff';
     $defaults['arrival_store_middle_header_text']           = '#333';
     $defaults['arrival_store_main_header_bg']               = '#fcb700';
     $defaults['arrival_store_main_header_text']             = '#222';
+    $defaults['arrival_store_header_search_category_text']  = esc_html__('All Categories','arrival-store');
+    $defaults['arrival_store_header_search_placeholder']    = esc_html__('Search entire store here','arrival-store');
+    $defaults['arrival_store_header_search_submit_label']   = esc_html__('Search','arrival-store');
 
 
     
@@ -175,6 +181,7 @@ if(! function_exists('arrival_store_after_top_header')){
         $default                            = arrival_store_get_default_theme_options();
         $_after_top_header_enable           = get_theme_mod('arrival_after_top_header_enable',$default['arrival_after_top_header_enable']);
         $arrival_store_middle_header_phone  = get_theme_mod('arrival_store_middle_header_phone',$default['arrival_store_middle_header_phone']);
+        $arrival_store_middle_header_phone_text = get_theme_mod('arrival_store_middle_header_phone_text',$default['arrival_store_middle_header_phone_text']);
         
         if( 'no' == $_after_top_header_enable ){
             return;
@@ -204,7 +211,7 @@ if(! function_exists('arrival_store_after_top_header')){
                             ?>
                         </div>
                         <div class="content-wrapp">
-                            <div class="title"><?php esc_html_e('Hotline Free:','arrival-store'); ?></div>
+                            <div class="title"><?php echo esc_html($arrival_store_middle_header_phone_text); ?></div>
                             <div class="phone"><?php echo esc_html($arrival_store_middle_header_phone); ?></div>
                         </div>
                     </div>
@@ -235,6 +242,11 @@ if(!function_exists ('arrival_store_product_search')){
             return;
         }    
 
+        $default                                    = arrival_store_get_default_theme_options();
+        $arrival_store_header_search_category_text  = get_theme_mod('arrival_store_header_search_category_text',$default['arrival_store_header_search_category_text']);
+        $arrival_store_header_search_placeholder    = get_theme_mod('arrival_store_header_search_placeholder',$default['arrival_store_header_search_placeholder']);
+        $arrival_store_header_search_submit_label   = get_theme_mod('arrival_store_header_search_submit_label',$default['arrival_store_header_search_submit_label']);
+
         $args = array(
             'number'     => '',
             'orderby'    => 'name',
@@ -242,7 +254,7 @@ if(!function_exists ('arrival_store_product_search')){
             'hide_empty' => true
         );
         $product_categories = get_terms( 'product_cat', $args ); 
-        $categories_show    = '<option value="0">'.esc_html__('All Categories','arrival-store').'</option>';
+        $categories_show    = '<option value="0">'.$arrival_store_header_search_category_text.'</option>';
         $check = '';
         if(is_search()){
             if(isset($_GET['term']) && $_GET['term']!=''){
@@ -250,7 +262,7 @@ if(!function_exists ('arrival_store_product_search')){
             }
         }
         $checked = '';
-        $allcat = esc_html__('All Categories','arrival-store');
+        $allcat = $arrival_store_header_search_category_text;
         $categories_show .= '<optgroup class="fs-advance-search" label="'.esc_attr($allcat).'">';
         foreach($product_categories as $category){
             if(isset($category->slug)){
@@ -267,8 +279,8 @@ if(!function_exists ('arrival_store_product_search')){
                         <select class="op_search_product false" name="term">'.$categories_show.'</select>
                      </div>
                      <div class="op_search_form">
-                         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .esc_attr__('search entire store here','arrival-store'). '" autocomplete="off"/>
-                         <button type="submit" id="searchsubmit">'.esc_html__('Search','arrival-store').'</button>
+                         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .$arrival_store_header_search_placeholder. '" autocomplete="off"/>
+                         <button type="submit" id="searchsubmit">'.$arrival_store_header_search_submit_label.'</button>
                          <input type="hidden" name="post_type" value="product" />
                          <input type="hidden" name="taxonomy" value="product_cat" />
                      </div>
@@ -401,26 +413,33 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
          if ( ! class_exists( 'WooCommerce' ) )
             return;
 
-        $product_categories = get_terms( 'product_cat');
-        $count              = count($product_categories);  
-
+        $product_categories     = get_terms( 'product_cat');
+        $count                  = count($product_categories);  
+        $default                = arrival_store_get_default_theme_options();
+        $_header_category_text  = get_theme_mod('arrival_store_header_category_text',$default['arrival_store_header_category_text']);
+        $_header_categories     = get_theme_mod('arrival_store_header_categories');
+        
         ?>
         <div class="browse-category-wrap">
             <div class="browse-category" tabindex="0">
                 <?php echo arrival_get_icon_svg('menu-bars'); ?>
                 <span class="cat-btn-title">
-                <?php esc_html_e('SHOP BY DEPARTMENT','arrival-store'); ?>
+                <?php echo esc_html($_header_category_text); ?>
                 </span>
                 <?php echo arrival_get_icon_svg('arrow_down'); ?>
             </div>
             <div class="categorylist">
                <ul>
                 <?php 
+                
+                if( !empty($_header_categories)):
+                foreach( $_header_categories as $cat_id   ) {
 
-                foreach( $product_categories as $product_category   ) {
-                        $cat_name   = $product_category->name;
-                        $cat_id     = $product_category->term_id;
-                        $cat_count  =  $product_category->count;
+                        $cat_id     = absint($cat_id);
+                        $term       = get_term_by( 'id', $cat_id, 'product_cat' );
+                        $cat_name   = $term->name;
+                        $cat_count  = $term->count;
+
                         ?>
                         <li>
                             <a href="<?php echo get_term_link($cat_id);?>">
@@ -428,7 +447,9 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
                                 <?php echo esc_html($cat_name); ?> <span><?php echo absint($cat_count);?></span>
                             </a>
                         </li>
-                <?php } ?>
+                <?php } 
+                endif;
+                ?>
                
                 </ul>
             </div>
@@ -456,7 +477,7 @@ if( ! function_exists('arrival_store_mob_nav')){
                     <span class="text"><?php esc_html_e('Close Menu','arrival-store'); ?></span>
                     <span class="icon-wrapp"><?php echo arrival_get_icon_svg('cross',18); ?></span>
                 </button>
-                <nav arial-label="Mobile" role="navigation" tabindex="1">
+                <nav class="avl-store-mob clear clearfix" arial-label="Mobile" role="navigation" tabindex="1">
                 <?php 
                     wp_nav_menu(
                         array(
@@ -555,3 +576,40 @@ if( ! function_exists('arrival_store_update_wishlist_count') ){
         
     }
 }
+
+
+function arrival_store_sanitize_checkbox( $values ) {
+
+    $multi_values = !is_array( $values ) ? explode( ',', $values ) : $values;
+
+    return !empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
+}
+
+/**
+* Get all product categories
+*
+*/
+if( ! function_exists('arrival_store_product_catogory')):
+    function arrival_store_product_catogory(){
+
+        if( ! class_exists('woocommerce')){
+            return;
+        }
+
+        $product_categories = get_terms( 'product_cat');
+
+        $cats = array();
+
+        foreach( $product_categories as $product_category   ) {
+            $cat_name   = $product_category->name;
+            $cat_id     = $product_category->term_id;
+        
+            $cats[$cat_id] =  $cat_name;
+            
+        }
+
+        return $cats;
+
+    }
+endif;
+

@@ -34,8 +34,13 @@ if( ! function_exists('arrival_store_dynamic_styles')):
 			background: <?php echo arrival_sanitize_color($arrival_store_middle_header_text);?>
 		}
 
-		.main-header-wrapp.boxed .container, .main-header-wrapp.full{
+		.main-header-wrapp.boxed .container, .main-header-wrapp.full,
+		body.arrival-store-main .main-header-wrapp .mob-outer-wrapp{
 			background: <?php echo arrival_sanitize_color($arrival_store_main_header_bg);?>
+		}
+		body.arrival-store-main .main-header-wrapp .mob-outer-wrapp,
+		.main-header-wrapp .browse-category-wrap{
+			border-color: <?php echo arrival_sanitize_color($arrival_store_main_header_bg);?>
 		}
 
 		.main-header-wrapp.boxed .container, .main-header-wrapp.full,.main-header-wrapp .container .main-navigation .primary-menu-container>ul>li>a,.arrival-custom-element ul li a{
