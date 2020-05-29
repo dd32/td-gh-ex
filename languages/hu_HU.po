@@ -1,11 +1,11 @@
-# Copyright (C) 2015 the Catch Themes Team
+# Copyright (C) 2016-2020 the Catch Themes Team
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-11-15 11:55-0800\n"
-"PO-Revision-Date: 2019-11-15 11:55-0800\n"
+"POT-Creation-Date: 2020-05-28 17:26-0700\n"
+"PO-Revision-Date: 2020-05-28 17:26-0700\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Dinnye <pdinnye@gmail.com>\n"
 "Language: hu_HU\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:17

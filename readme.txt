@@ -1,9 +1,10 @@
 === Adventurous ===
 Contributors: catchthemes
 Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
-Requires at least: 4.8
-Tested up to: 5.3
-Stable tag: 3.3
+Requires at least: 5.1
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 3.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,8 +56,10 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 3.3.1 (Released: May 28, 2020) =
+* Updated: readme.txt and style.css as per the new requirements
+
 = 3.3 (Released: November 15, 2019) =
-* Added: Automatic Updates using license key
 * Bug Fixed: Sub menu issue on hover
 * Bug Fixed: Header image by default set to 100%
 
