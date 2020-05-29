@@ -1,11 +1,11 @@
-# Copyright (C) 2012 the Catch Themes Team
+# Copyright (C) 2012-2020 the Catch Themes Team
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box Pro\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-08-26 20:23-0700\n"
-"PO-Revision-Date: 2019-08-26 20:23-0700\n"
+"POT-Creation-Date: 2020-05-28 17:40-0700\n"
+"PO-Revision-Date: 2020-05-28 17:40-0700\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
