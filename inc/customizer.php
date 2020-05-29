@@ -46,6 +46,52 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'panel' => 'advance_blogging_panel_id'
 	) );
 
+	// Preloader
+	$wp_customize->add_setting( 'advance_blogging_preloader_hide',array(
+		'default' => true,
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_blogging_preloader_hide',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Preloader','advance-blogging' ),
+        'section' => 'advance_blogging_left_right'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_preloader_type',array(
+        'default'   => 'center-square',
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_blogging_preloader_type', array(
+		'label' => __( 'Preloader Type','advance-blogging' ),
+		'section' => 'advance_blogging_left_right',
+		'type'  => 'select',
+		'settings' => 'advance_blogging_preloader_type',
+		'choices' => array(
+		    'center-square' => __('Center Square','advance-blogging'),
+		    'chasing-square' => __('Chasing Square','advance-blogging'),
+	    ),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_preloader_color', array(
+	    'default' => '#333333',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_blogging_preloader_color', array(
+  		'label' => 'Preloader Color',
+	    'section' => 'advance_blogging_left_right',
+	    'settings' => 'advance_blogging_preloader_color',
+  	)));
+
+  	$wp_customize->add_setting( 'advance_blogging_preloader_bg_color', array(
+	    'default' => '#fff',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_blogging_preloader_bg_color', array(
+  		'label' => 'Preloader Background Color',
+	    'section' => 'advance_blogging_left_right',
+	    'settings' => 'advance_blogging_preloader_bg_color',
+  	)));
+
 	$wp_customize->add_setting('advance_blogging_width_options',array(
         'default' => __('Full Layout','advance-blogging'),
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
@@ -80,7 +126,7 @@ function advance_blogging_customize_register( $wp_customize ) {
         ),
     ));
 
-    $font_array = array(
+    $advance_blogging_font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' =>'Acme', 
@@ -215,7 +261,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	$wp_customize->add_setting('advance_blogging_paragraph_font_size',array(
@@ -251,7 +297,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -276,7 +322,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -301,7 +347,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'h1 Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -338,7 +384,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'h2 Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -375,7 +421,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'h3 Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -412,7 +458,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'h4 Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -449,7 +495,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'h5 Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -486,7 +532,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	    'section'  => 'advance_blogging_typography',
 	    'label'    => __( 'h6 Fonts','advance-blogging'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_blogging_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -511,7 +557,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_blogging_topbar_hide',array(
-		'default' => 'true',
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_blogging_topbar_hide',array(
@@ -617,7 +663,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//home page slider
 	$wp_customize->add_section( 'advance_blogging_slider_section' , array(
-    	'title'      => __( 'Slider Settings', 'advance-blogging' ),
+    	'title'  => __( 'Slider Settings', 'advance-blogging' ),
 		'priority'   => null,
 		'panel' => 'advance_blogging_panel_id'
 	) );
@@ -631,7 +677,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting('advance_blogging_slider_arrows',array(
-      'default' => 'false',
+      'default' => false,
       'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_slider_arrows',array(
@@ -1211,6 +1257,41 @@ function advance_blogging_customize_register( $wp_customize ) {
             '4'     => __('Four', 'advance-blogging')
         ),
     ));
+
+    $wp_customize->add_setting('advance_blogging_copyright_alignment',array(
+        'default' => __('Center','advance-blogging'),
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_blogging_copyright_alignment',array(
+        'type' => 'select',
+        'label' => __('Copyright Alignment','advance-blogging'),
+        'section' => 'advance_blogging_footer',
+        'choices' => array(
+            'Left' => __('Left','advance-blogging'),
+            'Right' => __('Right','advance-blogging'),
+            'Center' => __('Center','advance-blogging'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_blogging_copyright_fontsize',array(
+		'default'	=> 16,
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));	
+	$wp_customize->add_control('advance_blogging_copyright_fontsize',array(
+		'label'	=> __('Copyright Font Size','advance-blogging'),
+		'section'	=> 'advance_blogging_footer',
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_blogging_copyright_top_bottom_padding',array(
+		'default'	=> 15,
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));	
+	$wp_customize->add_control('advance_blogging_copyright_top_bottom_padding',array(
+		'label'	=> __('Copyright Top Bottom Padding','advance-blogging'),
+		'section'	=> 'advance_blogging_footer',
+		'type'		=> 'number'
+	));
 
     $wp_customize->selective_refresh->add_partial(
 		'advance_blogging_footer_copy',

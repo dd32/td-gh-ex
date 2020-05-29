@@ -18,17 +18,17 @@ get_header(); ?>
 					<?php if( get_theme_mod('advance_blogging_slider_arrows') != ''){?>
 						<div class="slider">
 						  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod( 'advance_blogging_slider_speed',3000)) ?>"> 
-							    <?php $slider_pages = array();
+							    <?php $advance_blogging_slider_pages = array();
 							      for ( $count = 1; $count <= 4; $count++ ) {
 							        $mod = intval( get_theme_mod( 'advance_blogging_slider_page' . $count ));
 							        if ( 'page-none-selected' != $mod ) {
-							          $slider_pages[] = $mod;
+							          $advance_blogging_slider_pages[] = $mod;
 							        }
 							      }
-							      if( !empty($slider_pages) ) :
+							      if( !empty($advance_blogging_slider_pages) ) :
 							        $args = array(
 							          'post_type' => 'page',
-							          'post__in' => $slider_pages,
+							          'post__in' => $advance_blogging_slider_pages,
 							          'orderby' => 'post__in'
 							        );
 							        $query = new WP_Query( $args );
@@ -71,9 +71,9 @@ get_header(); ?>
 					<?php if( get_theme_mod('advance_blogging_blogcategory_setting') != ''){?>
 						<div class="cat-post">
 							<?php 
-							$catData = get_theme_mod('advance_blogging_blogcategory_setting');
-				            if($catData){              
-				                $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'advance-blogging')));?>
+							$advance_blogging_catData = get_theme_mod('advance_blogging_blogcategory_setting');
+				            if($advance_blogging_catData){              
+				                $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_blogging_catData ,'advance-blogging')));?>
 				              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
 				              	<div class="abt-img-box">   
 			                      	<?php the_post_thumbnail(); ?>
@@ -103,9 +103,9 @@ get_header(); ?>
 				<div class="col-lg-8 col-md-8">
 					<div class="row">
 						<?php 
-						$catData = get_theme_mod('advance_blogging_latest_post_setting');
-			            if($catData){              
-			                $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'advance-blogging')));?>
+						$advance_blogging_catData = get_theme_mod('advance_blogging_latest_post_setting');
+			            if($advance_blogging_catData){              
+			                $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_blogging_catData ,'advance-blogging')));?>
 			              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
 			                 	<div class="col-lg-6 col-md-6">
 			                 		<div class="post-section">

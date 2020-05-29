@@ -164,8 +164,8 @@ function advance_blogging_widgets_init() {
 	) );
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('advance_blogging_footer_widget_layout', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$advance_blogging_widget_areas = get_theme_mod('advance_blogging_footer_widget_layout', '4');
+	for ($i=1; $i<=$advance_blogging_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'advance-blogging' ) . $i,
 			'id'            => 'footer-' . $i,
@@ -334,7 +334,7 @@ function advance_blogging_scripts() {
 
 		$advance_blogging_theme_color = get_theme_mod('advance_blogging_theme_color', '');
 
-		$custom_css ='
+		$advance_blogging_custom_css ='
 			p,span{
 			    color:'.esc_html($advance_blogging_paragraph_color).'!important;
 			    font-family: '.esc_html($advance_blogging_paragraph_font_family).'!important;
@@ -403,10 +403,10 @@ function advance_blogging_scripts() {
 			}
 		';	
 
-	wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-blogging-basic-style',$advance_blogging_custom_css );
 
 	require get_parent_theme_file_path( '/tc-style.php' );
-	wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-blogging-basic-style',$advance_blogging_custom_css );
 	wp_enqueue_script( 'advance-blogging-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
@@ -414,11 +414,6 @@ function advance_blogging_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	/* Enqueue the Dashicons script */
-	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_style('advance-blogging-ie', get_template_directory_uri().'/css/ie.css', array('advance-blogging-basic-style') );
-	wp_style_add_data( 'advance-blogging-ie', 'conditional', 'IE' );
 }
 add_action( 'wp_enqueue_scripts', 'advance_blogging_scripts' );
 

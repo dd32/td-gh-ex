@@ -95,14 +95,14 @@ function advance_blogging_customize_logo_resize( $html ) {
 
 		// add the CSS
 		$css = '
-<style>
-.custom-logo {
-	height: ' . $img['height'] . 'px;
-	max-height: ' . $max['height'] . 'px;
-	max-width: ' . $max['width'] . 'px;
-	width: ' . $img['width'] . 'px;
-}
-</style>';
+			<style>
+			.custom-logo {
+				height: ' . $img['height'] . 'px;
+				max-height: ' . $max['height'] . 'px;
+				max-width: ' . $max['width'] . 'px;
+				width: ' . $img['width'] . 'px;
+			}
+			</style>';
 
 		$html = $css . $html;
 	}

@@ -25,7 +25,7 @@ function advance_blogging_search_close() {
 
 	$(window).scroll(function(){
 		var sticky = $('.sticky-header'),
-			scroll = $(window).scrollTop();
+		scroll = $(window).scrollTop();
 
 		if (scroll >= 100) sticky.addClass('fixed-header');
 		else sticky.removeClass('fixed-header');
@@ -46,6 +46,10 @@ function advance_blogging_search_close() {
 			}, 600);
 			return false;
 	    });
+	});
+
+	$(window).load(function() {
+		$(".preloader").delay(2000).fadeOut("slow");
 	});
 
 })( jQuery );

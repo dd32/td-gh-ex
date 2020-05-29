@@ -22,10 +22,30 @@
   } else {
     do_action( 'wp_body_open' );
   }?>
-  
+  <?php if(get_theme_mod('advance_blogging_preloader_hide',true)){ ?>
+    <?php if(get_theme_mod( 'advance_blogging_preloader_type','center-square') == 'center-square'){ ?>
+      <div class='preloader'>
+        <div class='preloader-squares'>
+        <div class='square'></div>
+        <div class='square'></div>
+        <div class='square'></div>
+        <div class='square'></div>
+      </div>
+    </div>
+    <?php }else if(get_theme_mod( 'advance_blogging_preloader_type') == 'chasing-square') {?>    
+      <div class='preloader'>
+        <div class='preloader-chasing-squares'>
+          <div class='square'></div>
+          <div class='square'></div>
+          <div class='square'></div>
+          <div class='square'></div>
+        </div>
+      </div>
+    <?php }?>
+  <?php }?>
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'advance-blogging' ); ?></a>
-    <?php if( get_theme_mod('advance_blogging_topbar_hide',true) != ''){ ?>
+    <?php if( get_theme_mod('advance_blogging_topbar_hide') != ''){ ?>
       <div class="topbar">
         <div class="container">
           <div class="row">

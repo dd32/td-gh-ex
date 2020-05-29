@@ -10,12 +10,12 @@
 
 <footer role="contentinfo">
     <?php //Set widget areas classes based on user choice
-        $widget_areas = get_theme_mod('advance_blogging_footer_widget_layout', '4');
-        if ($widget_areas == '3') {
+        $advance_blogging_widget_areas = get_theme_mod('advance_blogging_footer_widget_layout', '4');
+        if ($advance_blogging_widget_areas == '3') {
             $cols = 'col-lg-4 col-md-4';
-        } elseif ($widget_areas == '4') {
+        } elseif ($advance_blogging_widget_areas == '4') {
             $cols = 'col-lg-3 col-md-3';
-        } elseif ($widget_areas == '2') {
+        } elseif ($advance_blogging_widget_areas == '2') {
             $cols = 'col-lg-6 col-md-6';
         } else {
             $cols = 'col-lg-12 col-md-12';
@@ -57,10 +57,10 @@
     </div>
 
     <?php if( get_theme_mod( 'advance_blogging_show_back_to_top',true) != '') { ?>
-        <?php $scroll_lay = get_theme_mod( 'advance_blogging_back_to_top_alignment','Right');
-            if($scroll_lay == 'Left'){ ?>
+        <?php $advance_blogging_scroll_lay = get_theme_mod( 'advance_blogging_back_to_top_alignment','Right');
+            if($advance_blogging_scroll_lay == 'Left'){ ?>
                <a href="#" class="scrollup left"><span><?php esc_html_e('Back to Top', 'advance-blogging'); ?><i class="fas fa-arrow-right"></i></span><span class="screen-reader-text"><?php esc_html_e('Back to Top', 'advance-blogging'); ?></span></a>
-            <?php }else if($scroll_lay == 'Center'){ ?>
+            <?php }else if($advance_blogging_scroll_lay == 'Center'){ ?>
               <a href="#" class="scrollup center"><span><?php esc_html_e('Back to Top', 'advance-blogging'); ?><i class="fas fa-arrow-right"></i></span><span class="screen-reader-text"><?php esc_html_e('Back to Top', 'advance-blogging'); ?></span></a>
             <?php }else{ ?>
               <a href="#" class="scrollup right"><span><?php esc_html_e('Back to Top', 'advance-blogging'); ?><i class="fas fa-arrow-right"></i></span><span class="screen-reader-text"><?php esc_html_e('Back to Top', 'advance-blogging'); ?></span></a>

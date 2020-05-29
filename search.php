@@ -10,8 +10,8 @@ get_header(); ?>
 <main id="main" role="main" class="wrapper-box">
     <div class="container">
         <?php
-        $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
-        if($left_right == 'Left Sidebar'){ ?>
+        $advance_blogging_left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
+        if($advance_blogging_left_right == 'Left Sidebar'){ ?>
             <div class="row">
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
                 <div class="col-lg-8 col-md-8">
@@ -45,7 +45,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="clearfix"></div>
-        <?php }else if($left_right == 'Right Sidebar'){ ?>
+        <?php }else if($advance_blogging_left_right == 'Right Sidebar'){ ?>
             <div class="row">
                 <div class="col-lg-8 col-md-8">
                     <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
@@ -78,7 +78,7 @@ get_header(); ?>
                 </div>
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
             </div>
-        <?php }else if($left_right == 'One Column'){ ?>            
+        <?php }else if($advance_blogging_left_right == 'One Column'){ ?>            
             <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
                 /* Start the Loop */
@@ -106,7 +106,7 @@ get_header(); ?>
                 ?>
                 <div class="clearfix"></div>
             </div>
-        <?php }else if($left_right == 'Three Columns'){ ?>
+        <?php }else if($advance_blogging_left_right == 'Three Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
                 <div class="col-lg-6 col-md-6">
@@ -140,7 +140,7 @@ get_header(); ?>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
             </div>
             <div class="clearfix"></div>            
-        <?php }else if($left_right == 'Four Columns'){ ?>
+        <?php }else if($advance_blogging_left_right == 'Four Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
                 <div class="col-lg-3 col-md-3">
@@ -175,7 +175,7 @@ get_header(); ?>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-3' ); ?></div>
             </div>
-        <?php }else if($left_right == 'Grid Layout'){ ?>
+        <?php }else if($advance_blogging_left_right == 'Grid Layout'){ ?>
             <div class="row">
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
