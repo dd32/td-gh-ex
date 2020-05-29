@@ -1,10 +1,10 @@
 /*
 Theme Name: Multishop
-Theme URI: http://fasterthemes.com/wordpress-themes/multishop
+Theme URI: https://fasterthemes.com/wordpress-themes/multishop
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
-Description: Multishop is a twitter bootstrap based responsive theme mainly designed for WooCommerce based e-commerce websites. But, Multishop theme can also be used for developing business or personal websites as well as it contains all the features which a standard WordPress theme should have. As Multishop theme is built on top of Twitter Bootstrap framework so your website will be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need. Pro version of this theme is also available which has several awesome options like Color options, Font Options , Google Analytics inbuilt code panel, Slider options, more speed optimized code for faster loading and a lot more options to worth having them.
-Version: 1.5.2
+Author URI: https://fasterthemes.com/
+Description: Multishop is a twitter bootstrap based responsive theme mainly designed for WooCommerce based e-commerce websites. But this can be used for developing business or personal websites as well as it contains all the features which a standard WordPress theme should have. As Multishop theme is built on top of Twitter Bootstrap framework so your website will be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, customizer options etc in order to get it customized as per your needs. Pro version of this theme is also available which has several awesome options like Color options, Font Options, Google Analytics inbuilt code panel, Slider options, more speed optimized code for faster loading and a lot more options to worth having them. Step by step documentation with Dummy Data of Multishop theme is available for free at: https://fasterthemes.com/documentation/multishop/
+Version: 2.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
@@ -166,7 +166,6 @@ header {
 	font-size: 15px;
 	color: #313131;
 	padding: 0 15px !important;
-	text-transform: uppercase;
 }
 .multishop-menu a:hover, .multishop-menu a:focus, .multishop-menu .active a {
 	color: #c80000;
@@ -292,7 +291,6 @@ footer {
 	font-size: 14px;
 	margin-bottom: 45px;
 	border-bottom: none;
-	text-transform: uppercase;
 }
 .footer-post ul li {
 	list-style: none;
@@ -304,7 +302,6 @@ footer {
 	width: 100%;
 	float: left;
 	color: #fff;
-	text-transform: capitalize;
 }
 .footer-post ul li a:hover {
 	color: #c80000;
@@ -315,7 +312,6 @@ footer {
 .foot-copy-right p {
 	color: #fff;
 	font-size: 14px;
-	text-transform: capitalize;
 	margin-bottom: 0px;
 }
 .site-title-text > h1{
@@ -431,7 +427,6 @@ footer {
     font-size: 14px;
     margin-top: 20px;
     padding: 8px 15px;
-    text-transform: capitalize;
 }
 .readmore-btn:hover{
 	border: 1px solid #c80000;
@@ -485,7 +480,6 @@ footer {
 .form-submit{
     color: #363f48;
     font-weight: bold;
-    text-transform: uppercase;
     transition: all 0.5s ease-in-out 0s;
     width:14%;
 }
@@ -689,7 +683,6 @@ textarea:focus{
 	font-size: 14px;
 	border-bottom: 1px solid #B0B0B0;
 	padding-bottom: 10px;
-	text-transform: uppercase;
 	margin-top: 0px;
 }
 .main-sidebar .textwidget img, .main-sidebar .textwidget select {
@@ -793,7 +786,6 @@ textarea:focus{
 	color: #FFFFFF;
 	font-size: 14px;
 	padding-bottom: 20px;
-	text-transform: uppercase;
 	margin-top: 30px;
 }
 .multishop-footer .textwidget img, .multishop-footer .textwidget select {
@@ -863,7 +855,6 @@ textarea:focus{
 	font-size: 16px;
 	font-weight: bold;
 	margin: 5px 0 0;
-	text-transform: uppercase;
 	padding-left: 5px;
 }
 .multishop-breadcrumb a {
@@ -941,7 +932,6 @@ textarea:focus{
 	font-size: 14px;
 	font-weight: bold;
 	padding-bottom: 11px;
-	text-transform: capitalize;
 	width: 100%;
 }
 .multishop-recentpost span {
@@ -1108,7 +1098,7 @@ embed, iframe, object, video, .alignnone.size-full {
 }
 .multishop-home-section h2 {
 	color: #ffffff;
-	font-size: 36px;
+	font-size: 30px;
 	text-align: center;
 }
 .multishop-home-section p {
@@ -1490,7 +1480,6 @@ embed, iframe, object, video, .alignnone.size-full {
 	font-size: 14px;
 	margin-top: 0;
 	padding: 10px 15px;
-	text-transform: uppercase;
 }
 .addcart-red-btn:hover{
 	color:#fff;
