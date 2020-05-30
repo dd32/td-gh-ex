@@ -320,18 +320,29 @@ class interface_custom_tag_widget extends WP_Widget {
 		
 		$widget_redirecturl = apply_filters( 'widget_redirecturl', empty( $instance['widget_redirecturl'] ) ? '' : $instance['widget_redirecturl'], $instance, $this->id_base );
 
-		echo $before_widget;
-		if ( !empty( $widget_primary ) ) { echo '<div class="promotional-text">' . esc_html( $widget_primary ); } ?> <span> <?php echo esc_html( $widget_secondary ); ?> </span> <?php echo '</div>';?> <a class="call-to-action" href="<?php echo esc_html($widget_redirecturl); ?>" title="<?php echo esc_attr($redirect_text); ?>"><?php echo esc_attr( $redirect_text ); ?></a>
-<?php
+		echo $before_widget; ?>
+		<div class="promotional-text">
+			<?php
+			if ( !empty($widget_primary) ) {
+				echo esc_html($widget_primary);
+			}
+			if ( !empty($widget_secondary) ) {
+				echo '<span>' . esc_html($widget_secondary) . '</span>';
+			} ?>
+		</div><!-- .promotional-text -->
+		<?php if ( !empty($redirect_text) && !empty($widget_redirecturl) ) { ?>
+			<a class="call-to-action" href="<?php echo esc_html($widget_redirecturl);?>" title="<?php echo esc_attr($redirect_text);?>"><?php echo esc_html($redirect_text);
+				?></a>
+		<?php }
 		echo $after_widget;
 	}
 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['widget_primary'] = esc_textarea($new_instance['widget_primary']);
-		$instance['widget_secondary'] = esc_textarea($new_instance['widget_secondary']);
-		$instance['widget_redirecturl'] = esc_url($new_instance['widget_redirecturl']);
-		$instance['redirect_text'] =  strip_tags($new_instance['redirect_text']);
+		$instance['widget_primary'] = sanitize_textarea_field($new_instance['widget_primary']);
+		$instance['widget_secondary'] = sanitize_textarea_field($new_instance['widget_secondary']);
+		$instance['widget_redirecturl'] = esc_url_raw($new_instance['widget_redirecturl']);
+		$instance['redirect_text'] =  sanitize_text_field($new_instance['redirect_text']);
 		
 		$instance['filter'] = isset($new_instance['filter']);
 		return $instance;
@@ -440,9 +451,9 @@ class interface_custom_tag_widget extends WP_Widget {
 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
-		$instance['redirect_recenturl'] = esc_url($new_instance['redirect_recenturl']);
-		$instance['redirect_recentwork'] =  strip_tags($new_instance['redirect_recentwork']);
+		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
+		$instance['redirect_recenturl'] = esc_url_raw($new_instance['redirect_recenturl']);
+		$instance['redirect_recentwork'] =  sanitize_text_field($new_instance['redirect_recentwork']);
 		for( $i=0; $i<3; $i++ ) {
 			$var = 'page_id'.$i;
 			$instance[ $var] = absint( $new_instance[ $var ] );
@@ -482,10 +493,14 @@ class interface_custom_tag_widget extends WP_Widget {
 		) );
 		echo $before_widget;
 		echo '<div class="column clearfix">';
-			if ( !empty( $title ) ) { echo '<div class="one-fourth">' . $before_title . esc_html( $title ) . $after_title; ?>
-<p><?php echo esc_textarea( $text ); ?></p>
-<a class="call-to-action" href="<?php echo esc_html($redirect_recenturl); ?>" title="<?php echo esc_attr($redirect_recentwork); ?>"><?php echo esc_attr( $redirect_recentwork ); ?></a> <!-- .call-to-action --> 
-<?php echo  '</div>';  }
+			if ( !empty( $title ) ) {
+				echo '<div class="one-fourth">' . $before_title . esc_html( $title ) . $after_title; ?>
+				<p><?php echo esc_textarea( $text ); ?></p>
+				<?php if ( !empty($redirect_recentwork) && !empty($redirect_recenturl) ) { ?>
+					<a class="call-to-action" href="<?php echo esc_url($redirect_recenturl); ?>" title="<?php echo esc_attr($redirect_recentwork); ?>"><?php echo esc_html( $redirect_recentwork ); ?></a> <!-- .call-to-action -->
+				<?php } ?>
+				<?php echo '</div><!-- .one-fourth -->';
+			}
 		  		
 		   		$j = 1;
 	 			while( $get_featured_pages->have_posts() ):$get_featured_pages->the_post();

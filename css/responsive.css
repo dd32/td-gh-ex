@@ -179,6 +179,9 @@
 	.toggled-on .nav-menu {
 		display: block;
 	}
+	.back-to-top {
+		right: 15px;
+	}
 	#access {
 		float: none;
 	}
@@ -223,9 +226,16 @@
 	#access ul li.current-menu-item ul li a:hover {
 		background-color: inherit;
 	}
+	#access ul li ul li ul a,
+	#access ul li.current-menu-item ul li ul a,
+	#access ul li ul li.current-menu-item ul a,
+	#access ul li.current_page_ancestor ul li ul a,
+	#access ul li.current-menu-ancestor ul li ul a,
+	#access ul li.current_page_item ul li ul a {
+		padding-left: 25px;
+	}
 	#access ul li ul li ul {
-		left: 0;
-		padding-left: 6px;
+		left: auto;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
@@ -341,8 +351,10 @@
 	}
 	.widget_promotional_bar .promotional-text,
 	.widget_promotional_bar .call-to-action {
-		float: none;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
 		width: 100%;
+		max-width: 100%;
 	}
 	.widget_promotional_bar .call-to-action {
 		margin-top: 10px;
@@ -388,6 +400,28 @@
 		padding-top: 10px;
 		text-align: center;
 	}
+
+	/* Gutenberg Support */
+	.wp-block-media-text.is-stacked-on-mobile:not(.has-background) .wp-block-media-text__content {
+		margin-top: 15px;
+	}
+	.wp-block-media-text:not(.has-background).is-stacked-on-mobile .wp-block-media-text__content {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.wp-block-media-text.has-background .wp-block-media-text__content {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.wp-block-media-text.is-stacked-on-mobile {
+		display: block;
+	}
+	.has-large-font-size {
+		font-size: calc(13px + 9px);
+	}
+	.has-huge-font-size {
+		font-size: calc(13px + 16px);
+	}
 }
 
 /* All Mobile landscape size and All Mini Tablet Portrait size smaller than standard 768 and larger than 480 (devices and browsers) */
@@ -432,6 +466,94 @@
 	.custom-gallery #main .one-fourth {
 		margin-left: 14px;
 		width: 203px;
+	}
+}
+
+@media (max-width: 479px) {
+	figure.wp-block-image, 
+	.wp-block-image figure {
+		margin-bottom: 20px;
+	}
+	.wp-block-pullquote.alignleft,
+	.wp-block-embed.alignleft,
+	.wp-block-button.alignleft,
+	.wp-block-table.alignleft,
+	.wp-block-audio.alignleft,
+	.wp-block-file.alignleft,
+	.wp-block-cover.alignleft,
+	#content .wp-block-gallery.alignleft,
+	.wp-block-image figure.alignleft {
+		margin-right: 0;
+		float: none;
+	}
+	.wp-block-pullquote.alignright,
+	.wp-block-embed.alignright,
+	.wp-block-table.alignright,
+	.wp-block-button.alignright,
+	.wp-block-audio.alignright,
+	.wp-block-file.alignright,
+	.wp-block-cover.alignright,
+	#content .wp-block-gallery.alignright,
+	.wp-block-image figure.alignright {
+		margin-left: 0;
+		float: none;
+	}
+	.wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignright,
+	.wp-block-embed.alignleft,
+	.wp-block-embed.alignright,
+	.wp-block-audio.alignleft,
+	.wp-block-audio.alignright,
+	.wp-block-file.alignleft,
+	.wp-block-file.alignright,
+	.wp-block-cover.alignleft,
+	.wp-block-cover.alignright,
+	.wp-block-image figure.alignleft,
+	.wp-block-image figure.alignright,
+	.wp-block-table.alignleft, 
+	.wp-block-table.alignright,
+	.wp-block-button.alignleft,
+	.wp-block-button.alignright,
+	.wp-block-audio {
+		margin-bottom: 20px;
+	}
+	.wp-block-gallery.alignleft,
+	.wp-block-gallery.alignright,
+	.wp-block-embed.alignleft,
+	.wp-block-embed.alignright,
+	.wp-block-cover.alignleft,
+	.wp-block-cover.alignright,
+	.wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignright {
+		max-width: 100%;
+	}
+	.wp-block-file.alignleft,
+	.wp-block-file.alignright,
+	.wp-block-audio.alignleft,
+	.wp-block-audio.alignright,
+	.wp-block-button.alignleft,
+	.wp-block-button.alignright {
+		display: block;
+		text-align: center;
+	}
+	.wp-block-audio audio {
+		min-width: 290px;
+	}
+	.site-main .wp-block-gallery {
+		margin-bottom: 5px;
+	}
+	.has-medium-font-size, 
+	.wp-block-quote.is-large p, 
+	.wp-block-quote.is-style-large p, 
+	.wp-block-pullquote p, 
+	.wp-block-pullquote.is-style-solid-color blockquote p {
+		font-size: calc(13px + 2px);
+	}
+	.has-large-font-size {
+		font-size: calc(13px + 6px);
+	}
+	.has-huge-font-size {
+		font-size: calc(13px + 12px);
 	}
 }
 

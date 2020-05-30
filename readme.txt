@@ -1,10 +1,13 @@
 === Interface ===
 
-Contributors: Theme Horse Team
-Version: 3.0.7
+Contributors: themehorse
+Requires at least: 4.7
+Requires PHP: 5.2
+Tested up to: 5.4.1
+Stable tag: 3.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, e-commerce, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blog, e-commerce, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 == Description ==
 
@@ -34,6 +37,12 @@ GNU General Public License for more details.
 * Other all resources, Copyright Theme Horse, MIT/GPL2
 
 == CHANGE LOG ==
+
+= 3.0.8 =
+* Fix - Conditions checked before rendering the PromoBox/Recent Work widget's elements
+* Feature - Support Right-To-Left (RTL) Language direction
+* Update - Gutenberg Style support added
+* Update - style.css minor tweak
 
 = 3.0.7 =
 * Feature - Privacy Policy page link added in footer.
