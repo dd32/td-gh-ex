@@ -1,10 +1,13 @@
 === Attitude ===
 
-Contributors: Theme Horse Team
-Version: 4.0.1
+Contributors: themehorse
+Requires at least: 4.7
+Requires PHP: 5.2
+Tested up to: 5.4.1
+Stable tag: 4.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, e-commerce, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blog, e-commerce, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 == Description ==
 
@@ -59,6 +62,12 @@ GNU General Public License for more details.
 * This is added to help the users to use those ids in the slider option as mentioned above.
 
 == Change Log ==
+
+= 4.0.2 =
+* Fix - Conditions checked before rendering the PromoBox widget's elements
+* Feature - Support Right-To-Left (RTL) Language direction
+* Update - Gutenberg Style support added
+* Update - style.css minor tweak
 
 = 4.0.1 =
 * Feature - Privacy Policy page link added in footer.

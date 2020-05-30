@@ -384,9 +384,11 @@ class attitude_Widget_Testimonial extends WP_Widget {
 		$byline = apply_filters( 'widget_byline', empty( $instance['byline'] ) ? '' : $instance['byline'], $instance, $this->id_base );
 
 		echo $before_widget;
-		if ( !empty( $title ) ) { echo $before_title . esc_html( $title ) . $after_title; } ?>
-		<div class="testimonial-icon"></div>
-		<div class="testimonial-post"><?php echo esc_textarea( $text ); ?></div>
+		if ( !empty( $title ) ) { echo $before_title . esc_html( $title ) . $after_title; }
+			if ( !empty( $text ) ) { ?>
+				<div class="testimonial-icon"></div>
+				<div class="testimonial-post"><?php echo esc_textarea( $text ); ?></div>
+			<?php } ?>
 		<div class="testimonial-author">
 			<span><?php echo esc_html( $name ); ?></span>
 			<?php echo esc_html( $byline ); ?>
@@ -450,11 +452,19 @@ class attitude_promobox_widget extends WP_Widget {
 		$widget_redirecturl = apply_filters('widget_redirecturl', empty($instance['widget_redirecturl'])?'':$instance['widget_redirecturl'], $instance, $this->id_base);
 		echo $before_widget; ?>
 		<div class="promotional_bar_content" <?php if(!empty($promotional_img_background)){ ?> style="background-image:url('<?php echo esc_url($promotional_img_background);?>');" <?php } ?> >
-		<?php
-			if (!empty($widget_primary)) {echo '<div class="promotional-text">'.esc_html($widget_primary);}?> <span> <?php echo esc_html($widget_secondary);
-			?> </span> <?php echo '</div><!-- .promotional-text -->';
-			?> <a class="call-to-action" href="<?php echo esc_html($widget_redirecturl);?>" title="<?php echo $redirect_text;?>"><?php echo esc_html($redirect_text);
-			?></a>
+			<div class="promotional-text">
+				<?php 
+				if ( !empty($widget_primary) ) {
+					echo esc_html($widget_primary);
+				} 
+				if ( !empty($widget_secondary) ) {
+					echo '<span>' . esc_html($widget_secondary) . '</span>';
+				} ?>
+			</div><!-- .promotional-text -->
+			<?php if ( !empty($redirect_text) && !empty($widget_redirecturl) ) { ?>
+				<a class="call-to-action" href="<?php echo esc_html($widget_redirecturl);?>" title="<?php echo esc_attr($redirect_text);?>"><?php echo esc_html($redirect_text);
+				?></a>
+			<?php } ?>
 		</div><!-- .promotional_bar_content -->
 		<?php
 		echo $after_widget;
