@@ -1,13 +1,13 @@
 /*
 Theme Name: Medics
-Theme URI: https://fasterthemes.com/wordpress-themes/Medics
+Theme URI: https://fasterthemes.com/wordpress-themes/medics
 Author: FasterThemes
 Author URI: https://fasterthemes.com/
-Description: Medics is a lightweight, faster, clean, super flexible and bootstrap based responsive theme mainly designed for doctors and hospitals but can be used in any business or personal website as well. Medics Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built and recent posts are touch friendly slider based on owl carousel. Pro or Paid version includes custom post types for managing team (doctors), slider on the home page and many more features !
-Version: 1.7.1
+Description: Medics is a lightweight, faster, clean, super flexible and bootstrap based responsive theme mainly designed for doctors and hospitals but can be used in any business or personal website as well. Medics Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.Medics theme has got custom widgets, customizer options etc in order to get it customized as per your needs. Home page layout contains in-built and recent posts are touch friendly slider based on owl carousel. Pro or Paid version includes custom post types for managing team (doctors), slider on the home page and many more features! Step by step documentation and dummy data of Medics theme is available for free at: https://fasterthemes.com/documentation/medics/
+Version: 2.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Medics Theme, Copyright 2017 fasterthemes.com
+Medics Theme, Copyright 2020 fasterthemes.com
 Medics is distributed under the terms of the GNU GPL
 Tags: right-sidebar, left-sidebar, theme-options, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images, translation-ready
 Text Domain: medics
@@ -126,7 +126,6 @@ nav.navigation.pagination .nav-links a {
     background-color: transparent;
     border: 1px solid #f1f1f1;
     font-size: 14px;
-    font-weight: bold;
     height: 27px;
     margin: 3px 1px 0;
     padding: 3px 0 0 10px;
@@ -140,7 +139,6 @@ nav.navigation.pagination .nav-links a {
     background-color: transparent;
     border: 1px solid #f1f1f1;
     font-size: 14px;
-    font-weight: bold;
     height: 27px;
     margin: 3px 1px 0;
     padding: 3px 0 0 10px;
@@ -185,7 +183,6 @@ nav.navigation.pagination .nav-links a {
 	font-size:16px;
 	color:#313131;
 	padding: 18px 14px !important;
-	text-transform: uppercase;
 	border-bottom:2px solid rgba(0, 0, 0, 0);
 }
 .medics-menu a:hover, 
@@ -516,7 +513,6 @@ nav.navigation.pagination .nav-links a {
 	font-size:24px;
 	color:#000000;
 	margin: 20px 0px 0;
-	text-transform: uppercase;
 }
 .full-line-title {
     border-top: 1px solid #E9E9E9;
@@ -730,10 +726,9 @@ nav.navigation.pagination .nav-links a {
 .main-sidebar .sidebar-title h1 {
     border-bottom: 1px dashed #606060;
     color: #00C2E5;
-    font-size: 22px;
+    font-size: 18px;
     margin-bottom: 15px;
     padding-bottom: 5px;
-    text-transform: uppercase;
 }
 .main-sidebar h1 {
     color: #212121;
@@ -744,7 +739,7 @@ nav.navigation.pagination .nav-links a {
 }
 .main-sidebar ul li a {
     color: #181818;
-    font-size: 16px;
+    font-size: 14px;
 }
 .main-sidebar ul li {
     border-bottom: 1px solid #E9E9E9;
@@ -852,7 +847,6 @@ nav.navigation.pagination .nav-links a {
     font-size: 16px;
     margin-bottom: 15px;
     padding: 10px 30px;
-    text-transform: uppercase;
 }
 .single-blogtitle h1{
 	color:#000000;
@@ -907,7 +901,6 @@ nav.navigation.pagination .nav-links a {
     color: #000000;
     font-size: 18px;
     margin-bottom: 26px;
-    text-transform: uppercase;
 }
 #comments > ul {
     padding: 0;
@@ -922,7 +915,6 @@ nav.navigation.pagination .nav-links a {
     font-size: 16px;
     margin-bottom: 15px;
     padding: 10px 30px;
-    text-transform: uppercase;
 }
 .comment-box .comment-col-1 {
     float: left;
@@ -982,7 +974,6 @@ nav.navigation.pagination .nav-links a {
     background-color:transparent;
     border: 1px solid #f1f1f1;
     font-size: 14px;
-    font-weight: bold;
     height: 22px;
     margin: 3px 0 0;
     padding: 2px 0 0 8px;
@@ -1035,7 +1026,6 @@ nav.navigation.pagination .nav-links a {
     font-size: 16px;
     margin-bottom: 14px;
     padding: 4px 8px;
-    text-transform: uppercase;
 }
 .main-sidebar .textwidget img,
 .main-sidebar .textwidget select {
@@ -1159,7 +1149,6 @@ margin-bottom:20px;
     font-size: 28px;
     margin-bottom: 3px;
     text-align: center;
-    text-transform: uppercase;
 	margin-top:20px;
 	padding-top:20px;
 	clear:both;
@@ -1333,7 +1322,7 @@ margin-bottom:20px;
 }
 .blog-contan-col-2  p {
     color: #343434;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 24px;
     margin-bottom: 15px;
 }
@@ -1387,11 +1376,10 @@ margin-bottom:20px;
 
 .home-banner .item > h1 {
     color: #FFFFFF;
-    font-size: 40px;
+    font-size: 28px;
     margin-left: 20%;
     position: absolute;
     text-align: left;
-    text-transform: uppercase;
     top: 31px;
     width: 40%;
     z-index: 999;
