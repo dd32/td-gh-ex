@@ -31,7 +31,6 @@ if(!class_exists('Aglee_Lite_Welcome')) :
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'aglee-lite'),
 					'recommended_plugins' => esc_html__('Recommended Plugins', 'aglee-lite'),
-					//'actions_required' => esc_html__('Required Plugins', 'aglee-lite'),
 					'demo_import' => esc_html__('Import Demo', 'aglee-lite'),
 					'support' => esc_html__('Support', 'aglee-lite'),
 					'changelog' => esc_html__('Changelog', 'aglee-lite'),

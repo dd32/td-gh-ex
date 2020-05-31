@@ -108,3 +108,17 @@ function aglee_lite_admin_scripts() {
 }
 add_action('admin_enqueue_scripts', 'aglee_lite_admin_scripts');
 endif;
+
+/**
+ * Function for excerpt length
+ */
+if( ! function_exists( 'aglee_lite_get_excerpt_content' ) ):
+    function aglee_lite_get_excerpt_content( $limit ) {
+
+        $striped_contents = strip_shortcodes( get_the_content() );
+        $striped_content = strip_tags( $striped_contents );
+        $limit_content = mb_substr( $striped_content, 0 , $limit );
+       
+        return $limit_content;
+    }
+endif;

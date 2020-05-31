@@ -46,7 +46,10 @@ $aglee_lite_blog_display_type = get_theme_mod('blog_post_layout','blog_image_lar
                         <img src="<?php echo esc_url($aglee_lite_img_src[0]); ?>" />
                     </a>
                     <?php } ?>
-                    <div class="blog-excerpt"><?php the_excerpt(); ?></div>
+                    <div class="blog-excerpt">
+                    <?php $agele_excerpt_length = get_theme_mod( 'agelee_archive_excerpt_lenght', '200' );
+                    echo aglee_lite_get_excerpt_content( $agele_excerpt_length ); // WPCS: XSS OK
+                    ?></div>
                     <div class="blog-bottom-content">
                         <span class="blog_author"><?php echo get_the_author();?></span>
                         <span class="blog_post_date"><?php echo get_the_date(); ?></span>

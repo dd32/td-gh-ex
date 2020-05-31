@@ -3,9 +3,9 @@
 Contributors: 8degreethemes
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, threaded-comments, featured-images, custom-header, translation-ready, rtl-language-support
 Requires at least: 4.0
-Tested up to: 5.3
+Tested up to: 5.4.1
 Requires PHP: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +62,12 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+
+= 1.1.3 - 31st May, 2020 =
+** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.
+** Added Exceprt Length Option in Blog Settings
+
+
 = 1.1.2 - 31st March, 2020 =
 ** Added Feature Image Show Hide Options for Single Post
 ** Added MetaData Show Hide Options for Single Post

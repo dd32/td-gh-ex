@@ -363,6 +363,28 @@ $wp_customize -> add_control(
     )
 );
 
+/**
+* Length of archive excerpt
+*/
+$wp_customize->add_setting( 'agelee_archive_excerpt_lenght', array(
+        'default'               => '200',
+        'sanitize_callback' => 'aglee_sanitize_number',
+    )
+);
+$wp_customize->add_control('agelee_archive_excerpt_lenght', array(
+        'type'              => 'number',
+        'priority'        => 30,
+        'label'             => esc_html__( 'Excerpt length', 'aglee-lite' ),
+        'description'   => esc_html__( 'Choose number of words in archive pages.', 'aglee-lite' ),
+        'section'           => 'layout_category_blog_section',
+        'input_attrs'     => array(
+            'min'   => 10,
+            'max'   => 100,
+            'step'  => 1
+        )
+    )
+);
+
 
 //Layout of Default Layout page only
 $wp_customize -> add_section(
@@ -1307,6 +1329,12 @@ $wp_customize -> add_control(
         'type' => 'text'
     )
 );
+
+// Number
+function aglee_sanitize_number( $input ) {
+    $output = intval($input);
+     return $output;
+}
 
 //General dropdown sanitize for integer value
 function aglee_lite_sanitize_dropdown_general( $input ) {
