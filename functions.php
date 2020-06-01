@@ -1,14 +1,15 @@
 <?php
 add_action( 'after_setup_theme', 'bands_setup' );
 function bands_setup() {
-load_theme_textdomain( 'services', get_template_directory() . '/languages' );
+load_theme_textdomain( 'bands' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'custom-logo' );
 $defaults = array( 'header-text' => false );
 add_theme_support( 'custom-header', $defaults );
-add_theme_support( 'custom-background' );
+$defaults = array( 'default-color' => 'ffffff' );
+add_theme_support( 'custom-background', $defaults );
 add_theme_support( 'html5', array( 'search-form' ) );
 global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 1920;
@@ -77,19 +78,6 @@ $('#new-topic').hide();
 });
 </script>
 <?php
-}
-}
-add_filter( 'document_title_separator', 'bands_document_title_separator' );
-function bands_document_title_separator( $sep ) {
-$sep = "|";
-return $sep;
-}
-add_filter( 'the_title', 'bands_title' );
-function bands_title( $title ) {
-if ( $title == '' ) {
-return '&rarr;';
-} else {
-return $title;
 }
 }
 if ( ! function_exists( 'wp_body_open' ) ) {
@@ -220,7 +208,7 @@ new WP_Customize_Color_Control(
 $wp_customize,
 'header_color',
 array(
-'label' => esc_html__( 'Header Text Color', 'bands' ),
+'label' => esc_html__( 'Content Headers Color', 'bands' ),
 'section' => 'colors',
 'settings' => 'bands_header_color'
 )
@@ -236,7 +224,7 @@ array(
 $wp_customize->add_setting(
 'bands_header_font',
 array(
-'default' => 'Helvetica',
+'default' => 'Roboto',
 'sanitize_callback' => 'sanitize_text_field',
 'transport' => 'postMessage'
 )
@@ -246,7 +234,7 @@ new WP_Customize_Control(
 $wp_customize,
 'header_font',
 array(
-'label' => esc_html__( 'Header Text Font', 'bands' ),
+'label' => esc_html__( 'Content Headers Font', 'bands' ),
 'description' => esc_html__( 'If adding a Google font, make sure to capitalize all words, save, and then refresh to preview.', 'bands' ),
 'section' => 'bands_fonts',
 'settings' => 'bands_header_font'

@@ -2,10 +2,13 @@
 Theme Name: Bands
 Author: BandsWP
 Description: Dedicated theme for bands.
-Version: 0.4
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
+Version: 0.5
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
 License: GNU General Public License v3 or Later
 License URI: https://www.gnu.org/licenses/gpl.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Text Domain: bands
 
 Bands WordPress Theme © 2019-2020 BandsWP
@@ -85,7 +88,7 @@ table{width:100%;margin:30px 0}
 #fmenu li{display:inline-block;margin:10px}
 
 #search{float:right}
-#search .search-field{width:36px;height:36px;color:transparent;padding:10px;border-color:transparent;margin-top:0;background-color:#transparent;background-image:url(images/find-light.png);cursor:pointer}
+#search .search-field{width:36px;height:36px;color:transparent;padding:10px;border-color:transparent;margin-top:0;background-color:#transparent;background-image:url(images/find-white.png);cursor:pointer}
 #search .search-field:focus{width:200px;color:#fff;border-color:#007acc;cursor:text}
 .widget-container .search-field{width:100%}
 .error404 .entry-content .search-field, .search .entry-content .search-field{width:200px;margin-top:30px}
