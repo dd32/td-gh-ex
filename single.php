@@ -34,7 +34,7 @@ get_header();
 					}
 				}
 				
-				do_action('attesa_after_single_post_content');
+				attesa_after_single_post_content();
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :

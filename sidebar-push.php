@@ -18,8 +18,8 @@ if ( ! is_active_sidebar( attesa_get_push_sidebar() ) || ! attesa_check_bar('pus
 		<div class="close-ham-inner"></div>
 	</div>
 	<div class="nano-content">
-	<?php do_action('attesa_before_push_sidebar'); ?>
+	<?php attesa_before_push_sidebar(); ?>
 	<?php dynamic_sidebar( attesa_get_push_sidebar() ); ?>
-	<?php do_action('attesa_after_push_sidebar'); ?>
+	<?php attesa_after_push_sidebar(); ?>
 	</div>
 </aside><!-- #secondary -->

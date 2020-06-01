@@ -57,7 +57,7 @@ get_header();
 					<?php
 				endif;
 
-				do_action('attesa_posts_navigation');
+				attesa_posts_navigation();
 			
 			endif;
 

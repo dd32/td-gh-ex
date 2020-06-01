@@ -301,6 +301,11 @@ function attesa_register_elementor_locations( $elementor_theme_manager ) {
 add_action( 'elementor/theme/register_locations', 'attesa_register_elementor_locations' );
 
 /**
+ * Load the theme hooks
+ */
+require get_template_directory() . '/inc/theme-hooks.php';
+
+/**
  * Template for the header
  */
 require get_template_directory() . '/inc/partials/com-header.php';

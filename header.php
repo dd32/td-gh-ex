@@ -21,13 +21,7 @@
 </head>
 
 <body <?php body_class(); ?> <?php attesa_schema_markup('body'); ?>>
-<?php 
-if ( function_exists( 'wp_body_open' ) ) {
-    wp_body_open();
-} else {
-    do_action( 'wp_body_open' );
-}
-?>
+<?php wp_body_open(); ?>
 <?php if(attesa_options('_show_loader', '') == 1 ) : ?>
 	<div class="attesaLoader">
 		<?php echo wp_kses(attesa_loadingPage(), attesa_allowed_html()); ?>
@@ -44,16 +38,16 @@ if ( function_exists( 'wp_body_open' ) ) {
 			$attesa_submenuEffect = apply_filters( 'attesa_submenu_effect', attesa_options('_submenu_effect', '') ); ?>
 			<header id="masthead" <?php echo esc_attr(attesa_logo_on_scroll()); ?> class="site-header topbarscroll<?php echo esc_attr($attesa_topBarScroll); ?> <?php echo $attesa_stickyHeader ? 'withSticky' : 'noSticky' ?> <?php echo $attesa_stickyHeaderMobile ? 'yesMobile' : 'nonMobile' ?> <?php echo $attesa_showTopBarMobile ? 'inMobile' : 'noMobile' ?> <?php echo $attesa_submenuEffect ? 'withSubEffect' : 'noSubEffect' ?>" <?php attesa_schema_markup('header'); ?>>
 				
-				<?php do_action( 'attesa_top_bar' ); ?>
+				<?php attesa_top_bar(); ?>
 					
-				<?php do_action( 'attesa_header' ); ?>
+				<?php attesa_header(); ?>
 					
 			</header><!-- #masthead -->
 		<?php endif; ?>
 		
-		<?php do_action( 'attesa_big_featured_image_style' ); ?>
+		<?php attesa_big_featured_image_style(); ?>
 		
 		<div id="content" class="site-content">
-		<?php do_action('attesa_before_site_content'); ?>
 		<?php attesa_the_breadcrumb(); ?>
+		<?php attesa_before_site_content(); ?>
 		<div class="attesa-content-container">

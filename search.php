@@ -42,7 +42,7 @@ get_header();
 					</div><!-- .blog-entries -->
 					<?php
 
-					do_action('attesa_posts_navigation');
+					attesa_posts_navigation();
 				
 				endif;
 

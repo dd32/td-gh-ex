@@ -11,19 +11,19 @@
 
 ?>
 		</div><!-- #content -->
-		<?php do_action('attesa_after_site_content'); ?>
+		<?php attesa_after_site_content(); ?>
 		</div><!-- .attesa-content-container -->
 
 		<footer id="colophon" class="site-footer" <?php attesa_schema_markup('footer'); ?>>
-			<?php do_action('attesa_before_footer_section'); ?>
+			<?php attesa_before_footer_section(); ?>
 			<?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) : ?>
 				<div class="mainFooter">
 				
-					<?php do_action('attesa_footer_widgets'); ?>
+					<?php attesa_footer_widgets(); ?>
 					
 					<?php 
 					if (attesa_options('_show_subfooter', '1')) {
-						do_action('attesa_sub_footer');
+						attesa_sub_footer();
 					}
 					?>
 					

@@ -10,10 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php do_action('attesa_before_post_content'); ?>
+	<?php attesa_before_post_content(); ?>
 	<?php $attesa_featImagePosts = apply_filters( 'attesa_post_featured_image_style', attesa_options('_featimage_style_posts', 'content') ); ?>
 	<header class="entry-header">
-		<?php do_action('attesa_entry_header'); ?>
+		<?php attesa_entry_header(); ?>
 	</header><!-- .entry-header -->
 	<?php
 		if ('post' === get_post_type() && $attesa_featImagePosts == 'content') {
@@ -39,5 +39,5 @@
 	<footer class="entry-footer">
 		<?php attesa_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-	<?php do_action('attesa_after_post_content'); ?>
+	<?php attesa_after_post_content(); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

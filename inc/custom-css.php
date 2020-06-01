@@ -784,8 +784,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			}
 			@media all and (max-width: 1025px) {
 				.main-navigation ul ul a,
-				.main-navigation ul li .indicator:before,
-				ul.attesa-categories-list li a {
+				.main-navigation ul li .indicator:before {
 					color: '.esc_html($generalTextColor).' !important;
 				}
 			}';
@@ -846,9 +845,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				color: '.esc_html($generalBackgroundColor).' !important;
 			}
 			@media all and (max-width: 1025px) {
-				.attesa-main-menu-container,
-				.attesa-categories-list-container,
-				.attesa-categories-list-container ul.attesa-categories-list {
+				.attesa-main-menu-container {
 					background-color: '.esc_html($generalBackgroundColor).';
 				}
 				.main-navigation >div ul li.attesaMenuButton a,
@@ -898,10 +895,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-breadcrumbs,
 			.rank-math-breadcrumb,
 			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
-			.wp-block-image,
-			ul.attesa-categories-list,
-			.attesa-close-blog-categories-menu,
-			ul.attesa-categories-list ul {
+			.wp-block-image {
 				background-color: '.esc_html($alternativeBackgroundColor).';
 			}
 			.tagcloud a,
@@ -940,8 +934,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			#edd_sl_license_sites thead th,
 			body.edd-page legend,
 			.site-social-widget .attesa-social,
-			.woocommerce-MyAccount-navigation ul li.is-active,
-			ul.attesa-categories-list > li > a:before {
+			.woocommerce-MyAccount-navigation ul li.is-active {
 				background-color: '.esc_html($generalBorderColor).';
 			}
 			input[type="text"],
@@ -1019,11 +1012,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.wp-block-image,
 			ul.woocommerce-thankyou-order-details li,
 			.woocommerce-MyAccount-navigation ul li,
-			.awp-ajax-search.shortcode .awp-search-results ul li,
-			ul.attesa-categories-list,
-			ul.attesa-categories-list ul,
-			ul.attesa-categories-list ul a,
-			.attesa-close-blog-categories-menu {
+			.awp-ajax-search.shortcode .awp-search-results ul li {
 				border-color: '.esc_html($generalBorderColor).';
 			}
 			.star-rating:before {
@@ -1033,10 +1022,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.main-navigation li,
 				.main-navigation ul li .indicator,
 				.main-navigation > div > ul > li > ul.sub-menu,
-				.attesa-main-menu-container,
-				ul.attesa-categories-list li,
-				ul.attesa-categories-list li .indicator,
-				ul.attesa-categories-list ul.children {
+				.attesa-main-menu-container {
 					border-color: '.esc_html($generalBorderColor).';
 				}
 			}';

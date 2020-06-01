@@ -20,11 +20,11 @@ get_header();
 
 					<div class="page-content">
 					
-						<?php do_action('attesa_filter_before_text_404'); ?>
+						<?php attesa_filter_before_text_404(); ?>
 						
 						<p class="errorDesc"><?php echo apply_filters('attesa_filter_custom_text_404', esc_html__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'attesa' )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 
-						<?php do_action('attesa_filter_after_text_404'); ?>
+						<?php attesa_filter_after_text_404(); ?>
 
 						<?php
 						if (attesa_404_show_search_form()) {

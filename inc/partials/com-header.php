@@ -60,6 +60,7 @@ function attesa_get_top_bar() {
 							echo attesa_show_social_network('top'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						}
 					?>
+					<?php attesa_inside_top_bar_left(); ?>
 				</div>
 				<div class="top-block-right <?php echo $invertPosition ? 'invert' : ''; ?>">
 					<?php if ($showSearchButton) : ?>
@@ -109,6 +110,7 @@ function attesa_get_top_bar() {
 						<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'top-menu', 'depth' => 1, 'fallback_cb' => false ) ); ?>
 					</nav>
 					<?php endif; ?>
+					<?php attesa_inside_top_bar_right(); ?>
 				</div>
 			</div>
 		</div>
@@ -551,7 +553,7 @@ function attesa_get_big_featured_image_style() {
 				if ($featImageTitle == 'insideheader') {
 					the_title( '<div class="attesaFeatBoxTitle"><h1 class="entry-title" '. attesa_get_schema_markup('headline') .'>', '</h1></div>' );
 				}
-				do_action('attesa_inside_feat_box_post');
+				attesa_inside_feat_box_post();
 			?>
 			</div>
 			<div class="attesaFeatBoxOpacityPost"></div>
@@ -571,7 +573,7 @@ function attesa_get_big_featured_image_style() {
 				if ($featImageTitle == 'insideheader') {
 					the_title( '<div class="attesaFeatBoxTitle"><h1 class="entry-title" '. attesa_get_schema_markup('headline') .' >', '</h1></div>' );
 				}
-				do_action('attesa_inside_feat_box_page');
+				attesa_inside_feat_box_page();
 			?>
 			</div>
 			<div class="attesaFeatBoxOpacityPage"></div>
@@ -585,6 +587,9 @@ function attesa_get_big_featured_image_style() {
 		$fixedFeatImage = attesa_options('_featimage_style_pages_fixed', '');
 		?>
 		<div class="attesaFeatBox <?php echo $overlayFeatImage ? 'withOverlayMenu' : 'noOverlayMenu' ?>" style="background-image: url(<?php echo esc_url($src[0]); ?>);height:<?php echo intval($heightFeatImage); ?>px; background-attachment: <?php echo $fixedFeatImage ? 'fixed' : 'scroll' ?>">
+			<div class="attesaFeatBoxContainer">
+				<?php attesa_inside_feat_box_blog(); ?>
+			</div>
 			<div class="attesaFeatBoxOpacityPost"></div>
 		</div>
 		<?php
@@ -596,9 +601,12 @@ function attesa_get_big_featured_image_style() {
 		$fixedFeatImage = attesa_options('_featimage_style_pages_fixed', '');
 		?>
 		<div class="attesaFeatBox <?php echo $overlayFeatImage ? 'withOverlayMenu' : 'noOverlayMenu' ?>" style="background-image: url(<?php echo esc_url($src[0]); ?>);height:<?php echo intval($heightFeatImage); ?>px; background-attachment: <?php echo $fixedFeatImage ? 'fixed' : 'scroll' ?>">
+			<div class="attesaFeatBoxContainer">
+				<?php attesa_inside_feat_box_shop_page(); ?>
+			</div>
 			<div class="attesaFeatBoxOpacityPost"></div>
 		</div>
 		<?php
 	}
-	do_action( 'attesa_additional_cases_big_featured_images' );
+	attesa_additional_cases_big_featured_images();
 }

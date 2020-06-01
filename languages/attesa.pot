@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2020-05-18 19:37+0100\n"
-"PO-Revision-Date: 2020-05-18 19:37+0100\n"
+"POT-Creation-Date: 2020-06-01 17:58+0100\n"
+"PO-Revision-Date: 2020-06-01 17:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Footer 4"
 msgstr ""
 
-#: header.php:38
+#: header.php:32
 msgid "Skip to content"
 msgstr ""
 
@@ -1493,7 +1493,7 @@ msgstr ""
 msgid "Mobile menu style"
 msgstr ""
 
-#: inc/customizer.php:2067 inc/partials/com-header.php:133
+#: inc/customizer.php:2067 inc/partials/com-header.php:135
 msgid "Menu"
 msgstr ""
 
@@ -1517,8 +1517,8 @@ msgstr ""
 msgid "Push menu"
 msgstr ""
 
-#: inc/customizer.php:2120 inc/partials/com-header.php:236
-#: inc/partials/com-header.php:373
+#: inc/customizer.php:2120 inc/partials/com-header.php:238
+#: inc/partials/com-header.php:375
 msgid "Close menu"
 msgstr ""
 

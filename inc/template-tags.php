@@ -13,7 +13,7 @@ if ( ! function_exists( 'attesa_posted_on' ) ) :
 	 */
 	function attesa_posted_on() {
 		
-		do_action( 'attesa_before_posted_on' );
+		attesa_before_posted_on();
 		
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -54,7 +54,7 @@ if ( ! function_exists( 'attesa_posted_on' ) ) :
 			echo '</span>';
 		}
 		
-		do_action( 'attesa_after_posted_on' );
+		attesa_after_posted_on();
 
 	}
 endif;
@@ -65,7 +65,7 @@ if ( ! function_exists( 'attesa_entry_footer' ) ) :
 	 */
 	function attesa_entry_footer() {
 		
-		do_action( 'attesa_before_entry_footer' );
+		attesa_before_entry_footer();
 		
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
@@ -97,7 +97,7 @@ if ( ! function_exists( 'attesa_entry_footer' ) ) :
 			'</span>'
 		);
 		
-		do_action( 'attesa_after_entry_footer' );
+		attesa_after_entry_footer();
 		
 	}
 endif;

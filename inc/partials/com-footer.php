@@ -9,7 +9,7 @@ function attesa_get_footer_widgets() {
 		<?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) ) : ?>
 			<div class="footerArea">
 				<div class="attesaFooterWidget <?php echo esc_attr($footerNumbers); ?>">
-					<?php do_action('attesa_before_footer_widgets'); ?>
+					<?php attesa_before_footer_widgets() ?>
 					<div class="attesa-footer-container">
 						<?php if ($footerNumbers == 'onecol'): ?>
 							<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -67,7 +67,7 @@ function attesa_get_footer_widgets() {
 							<?php endif; ?>
 						<?php endif; ?>
 					</div>
-					<?php do_action('attesa_after_footer_widgets'); ?>
+					<?php attesa_after_footer_widgets(); ?>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -86,7 +86,7 @@ function attesa_get_sub_footer() {
 				if ($copyrightText || is_customize_preview()): ?>
 					<span class="custom"><?php echo do_shortcode(wp_kses_post($copyrightText)); ?></span>
 				<?php endif; ?>
-				<?php do_action('attesa_footer_credits'); ?>
+				<?php attesa_footer_credits(); ?>
 			</div><!-- .site-info -->
 			<div class="site-social">
 				<?php 
@@ -94,7 +94,7 @@ function attesa_get_sub_footer() {
 				if ($showInFooter == 1) {
 					echo attesa_show_social_network('footer'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
-				do_action('attesa_after_social_footer');
+				attesa_after_social_footer();
 				?>
 			</div><!-- .site-social -->
 		</div>
@@ -104,7 +104,7 @@ function attesa_get_sub_footer() {
 				<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu', 'depth' => 1, 'fallback_cb' => false ) ); ?>
 			</nav>
 		<?php endif; ?>
-		<?php do_action('attesa_after_last_bottom_area'); ?>
+		<?php attesa_after_last_bottom_area(); ?>
 	</div>
 	<?php
 }
