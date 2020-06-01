@@ -423,6 +423,7 @@ a.bg-light:focus, a.bg-light:hover {
     background-color: #ffffff;
     padding: 0.313rem 1.3rem;
     border-radius: 50px;
+	text-align: center;
 }
 .navbar .nav .menu-item .nav-link.add-menu:hover, 
 .navbar .nav .menu-item .nav-link.add-menu:focus {
