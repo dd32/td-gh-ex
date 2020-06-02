@@ -2,8 +2,8 @@
 
 Contributors: spicethemes
 Requires at least: 4.7
-Tested up to: 5.0.2
-Stable tag: 1.8
+Tested up to: 5.4.1
+Stable tag: 1.8.1
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -25,6 +25,9 @@ Content is a responsive, multi-purpose WordPress theme. It’s flexible and suit
 Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
 == Changelog ==
+
+= 1.8.1 ==
+1. Added "Requires at least", "Tested up to", "Requires PHP fields" in the style.css.
 
 = 1.8 ==
 1. Implement the Accessibility including skip to content and keyboard navigation.
