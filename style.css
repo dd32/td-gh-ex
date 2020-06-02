@@ -3,15 +3,17 @@ Theme Name: Commodore
 Text Domain: commodore
 Description: Simple and lightweight responsive theme in the style of the good old Commodore 64. The search box has been modified - just type and press Return to search - classic blinking cursor included!
 Author: United Networks
-Version: 1.90
-Tags: two-columns, one-column, right-sidebar, custom-menu, custom-header, editor-style, threaded-comments, featured-image-header
-Subject: blog, entertainment, education
+Version: 1.91
+Tags: two-columns, one-column, right-sidebar, custom-menu
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Theme URI: https://unitednetworksonline.com/wordpress-themes/
 Author URI: https://unitednetworksonline.com
-*/
 
+This Theme Bundles the Following Third Party Resources
+Font is C64 by style64.org, GNU License
+Source: http://style64.org/c64-truetype
+*/
 
 @font-face {
  font-family: c64;
@@ -122,15 +124,13 @@ body.has_sidebar .content {
  position: relative;
  display: inline-block;
  vertical-align: top;
- cursor: none;
- left: 0px;
+ animation: blinker 0.8s step-start infinite;
 }
-
-img.attachment-large {
-  margin: 0 auto;
-  width: 100%;
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
-
 
 section {
  display: block;
@@ -313,21 +313,17 @@ hr.clearfix {
  padding: 15px;
 }
 
-.pie_search_form #s, form#searchform #s {
+.pie_search_form #s {
  left: -1000px;
  position: absolute;
  border: 0 none;
  background: transparent none;
- color: #A6A1FF;
+ color: #dddddd;
  font-family: c64,courier,monospaced;
  font-size: 14px;
  line-height: 1.7em;
- text-align: left;
 }
 
-form#searchform {
-    text-align: left;
-}
 #terminal {
  margin: 1px 1px 15px;
  cursor: text;
@@ -349,7 +345,7 @@ form#searchform {
 }
 
 #getter {
- margin: 24px;
+ margin: 1px;
 }
 
 .menu li {
@@ -385,7 +381,6 @@ code {
  font-family: c64,courier,monospaced;
  font-size: 10px;
 }
-
 
 /* Standard Smartphones */
 @media only screen and (max-width: 767px) {
