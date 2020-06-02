@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 3.0.1 ==
+1. Added "Requires at least", "Tested up to", "Requires PHP fields" in the style.css.
+
 = 3.0 ==
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Changed the screenshot image.
