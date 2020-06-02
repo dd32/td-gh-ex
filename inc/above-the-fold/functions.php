@@ -4,7 +4,7 @@ function semper_fi_lite_above_the_fold() {
     
     function semper_fi_lite_above_the_fold_html() {
         
-        if ( is_page() && !is_paged() && absint ( get_theme_mod( 'square_boxes_enable_1' , false ) ) ) {
+        if ( ( is_page() && !is_paged() && absint ( get_theme_mod( 'square_boxes_enable_1' , false ) ) ) || ( is_home() && absint ( get_theme_mod( 'square_boxes_enable_1' , true ) ) ) ) {
         
             require get_parent_theme_file_path( '/inc/above-the-fold/html.php' );
             
@@ -13,7 +13,6 @@ function semper_fi_lite_above_the_fold() {
     }
 
     add_action( 'semper_fi_lite_front_page_after_header', 'semper_fi_lite_above_the_fold_html' );
-    //add_action( 'semper_fi_lite_index_after_header', 'semper_fi_lite_above_the_fold_html' );
     
     
     function semper_fi_lite_above_the_fold_css() {

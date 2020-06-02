@@ -12,10 +12,8 @@
 
                 <div class="menu-trick">
 
-                    <a aria-label="This button locks the menu open, until clicked closed" class="enable-drop-down" href="#display-menu"><?php _e( 'Open' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
-
-                    <a aria-label="This buton closes the menu when locked open" class="disable-drop-down" href="#hide-menu"><?php _e( 'Close' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
-
+                    <a aria-label="<?php _e( 'This button locks the menu open' , 'semper-fi-lite' ); ?>" class="enable-drop-down"><?php _e( 'Open' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
+                    
                 </div>
     <?php do_action( 'semper_fi_lite_navigation_social_icons' ); ?>
 

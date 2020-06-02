@@ -8,14 +8,6 @@
  */
 
 
-
-// Bind JS handlers to instantly live-preview changes.
-function semper_fi_lite_customize_preview_js() {
-    wp_enqueue_script( 'sempperfi-customize-preview', get_theme_file_uri( '/inc/customizer/customize-preview.js' ), array( 'customize-preview' ), wp_get_theme()->get( 'Version' ) , true );
-}
-add_action( 'customize_preview_init', 'semper_fi_lite_customize_preview_js' );
-
-
 // The following is "Schwarttzy's Customizer", an array generated customzier
 function semper_fi_lite_customize_register( $wp_customize ) {
     

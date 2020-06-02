@@ -20,7 +20,7 @@
 
             <h4><?php _e( 'So what can we do?' , 'semper-fi-lite' ); ?></h4>
 
-            <p><?php _e( 'For starters, you could just head to the' , 'semper-fi-lite' ); ?> <a href="<?php echo home_url();  ?>"><?php _e( 'home page' , 'semper-fi-lite' ); ?></a></p>
+            <p><?php _e( 'For starters, you could just head to the' , 'semper-fi-lite' ); ?> <a href="<?php echo esc_url( home_url() );  ?>"><?php _e( 'home page' , 'semper-fi-lite' ); ?></a></p>
             
         </main>
             

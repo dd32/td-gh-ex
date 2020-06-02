@@ -32,7 +32,9 @@ if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
             <h2 class='header-text' itemprop="headline"><?php echo esc_attr( get_theme_mod( 'blog_title_text_1' , __( 'Blog' , 'semper-fi-lite' ) ) ); ?></h2>
             <?php if ( is_customize_preview() ) echo '<div class="customizer-title-image"></div><div class="customizer-title-image-2"></div>'; ?>
 
-        </header><?php } ?>
+        </header><?php } 
+
+        if ( is_home() && !is_page() ) { ?><div id="link-skipped"></div><?php } ?>
 
         <section id="the-posts"><?php
 

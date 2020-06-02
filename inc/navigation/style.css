@@ -44,18 +44,14 @@ nav#display-menu:hover #hide-menu {
     height: calc(100vh - 32px);
 }
 
-nav#display-menu:hover #hide-menu:target {
+nav#display-menu:hover:not(:focus-within) #hide-menu:target {
     height: 5em;
 }
 
-nav#display-menu:not(:focus-within) #hide-menu:target > h3,
-nav#display-menu:not(:focus-within) #hide-menu:target > div ul.social,
-nav#display-menu:not(:focus-within) #hide-menu:target > ul.navigation,
-nav#display-menu:not(:focus-within) #hide-menu:target > ul.navigation-widgets,
-nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > h3,
-nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > div ul.social,
-nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > ul.navigation,
-nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > ul.navigation-widgets {
+nav#display-menu:not(:focus-within):not(:hover) #hide-menu > h3,
+nav#display-menu:not(:focus-within):not(:hover) #hide-menu > div ul.social,
+nav#display-menu:not(:focus-within):not(:hover) #hide-menu > ul.navigation,
+nav#display-menu:not(:focus-within):not(:hover) #hide-menu > ul.navigation-widgets {
     display: none;
 }
 
@@ -256,12 +252,6 @@ nav#display-menu ul.navigation li li a {
     width: 19.5em;
 }
 
-nav#display-menu ul.navigation.dontrememberwhyihavethis li li:last-of-type a {
-    margin: 0;
-    padding-left: 3em;
-    text-align: center;
-}
-
 nav#display-menu ul.navigation li a:focus,
 nav#display-menu ul.navigation li a:hover {
     color: #c52b30;
@@ -275,8 +265,7 @@ nav#display-menu .menu-trick {
     width: 5em;
 }
 
-nav#display-menu .enable-drop-down,
-nav#display-menu .disable-drop-down {
+nav#display-menu .enable-drop-down {
     color: #aaaaaa;
     font-size: 1em;
     font-weight: bold;
@@ -288,27 +277,16 @@ nav#display-menu .disable-drop-down {
     top: 0em;
 }
 
-nav#display-menu .disable-drop-down {
-    padding: 1.25em;
-}
 
 nav#display-menu .enable-drop-down:focus,
-nav#display-menu .disable-drop-down:focus,
-nav#display-menu .enable-drop-down:hover,
-nav#display-menu .disable-drop-down:hover {
+nav#display-menu .enable-drop-down:hover {
     color: #c52b30;
 }
 
-nav#display-menu:target .enable-drop-down,
-nav#display-menu:hover #hide-menu:not(:target) .enable-drop-down,
-nav#display-menu:not(:target):not(:hover) .disable-drop-down,
-nav#display-menu:not(:target):hover #hide-menu:not(:target) .disable-drop-down,
-nav#display-menu #hide-menu:target .disable-drop-down {
+nav#display-menu:focus-within .enable-drop-down,
+nav#display-menu:hover .enable-drop-down,
+nav#display-menu:target .enable-drop-down {
     display: none;
-}
-
-nav#display-menu:not(:target):hover #hide-menu:not(:target) .enable-drop-down {
-    display: block;
 }
 
 nav#display-menu h3 {

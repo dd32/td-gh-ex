@@ -6,9 +6,9 @@ Version: 115
 Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 5.6
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Stable tag: 115
+License: GNU General Public License, version 3 (AGPLv3)
+License URI: http://opensource.org/licenses/AGPL-3.0
+Stable tag: 116
 Tags: blog, custom-colors, custom-logo, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, portfolio, theme-options, threaded-comments, translation-ready
 Text Domain: semper-fi-lite
 
@@ -82,6 +82,14 @@ to represent the company, product, or service to which they refer.**
 
 
 == Changelog ==
+
+= 116 =
+* Menu no longer locks closed or open, instead is hover/focus based only
+* 404 had a missing escaped
+* Readme had mistakenly had wrong licensing information
+* Fixed skip-link when front-page isn't selected
+* Fixed 404 error in customizer with none existant javascript file for customizer
+* CSS Style had miss labeled text domain
 
 = 115 =
 * Added forum link back in style description, accidently got deleted
@@ -177,6 +185,9 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 116 =
+* Ajustment to the menu and minor bugs taken care of
 
 = 115 =
 * Minor tweaks in the code to fix obscure bugs and one none translatable text

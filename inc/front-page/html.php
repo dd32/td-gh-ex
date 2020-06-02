@@ -35,12 +35,14 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
         </header>
 
+        <div id="link-skipped"></div>
+
         <main id="the-article" itemprop="articleBody" style="background-image:url(<?php semper_fi_lite_image( 'main_background_img_1' , '/inc/single/images/eeeeee-mouse-chocolate-lab-tennis-ball-300x300.jpg' , 300 , 300 ); ?>);" >
-            
+
             <?php edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); ?>
-                
+
             <?php do_action( 'semper_fi_lite_content_data' ); ?>
-            
+
             <?php the_content(); ?>
 
             <?php wp_link_pages( array( 'before' => __( 'Pages: ' , 'semper-fi-lite' ) , 'after' => '</br>' ) ); if ( is_customize_preview() ) echo '<div class="customizer"></div>'; ?>
