@@ -4,7 +4,7 @@ Theme URI: https://www.themehorse.com/themes/interface
 Author: Theme Horse
 Author URI: https://www.themehorse.com
 Description: Interface is a Simple, Clean and Flat Responsive Business WordPress Theme. It is easily customizable with numerous theme options via Customize. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like WooCommerce, bbPress and many more. It is also translation ready. Available Translation: Russian. Get free support at https://www.themehorse.com/support-forum/ and view beautiful demo site at https://www.themehorse.com/preview/interface
-Version: 3.0.8
+Version: 3.0.9
 Requires PHP: 5.2
 Tested up to: 5.4.1
 License: GPLv2 or later
@@ -2733,6 +2733,7 @@ blockquote.wp-block-quote,
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
 	width: auto;
+	max-width: 100%;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
