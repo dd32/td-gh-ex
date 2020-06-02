@@ -3,8 +3,8 @@ Theme Name: RedPro
 Theme URI: http://fasterthemes.com/wordpress-themes/redpro
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Description: Redpro is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
-Version: 5.0.0
+Description: RedPro is simple, lightweight and adaptable WordPress Theme for bloggers and professionals. It is clean, super flexible, fast in loading and bootstrap based responsive theme for business or personal blog websites. RedPro Theme was developed specially for simple red-colored blogging websites in mind. It has got custom widgets, customizer options etc in order to get it customized as per your needs. Step by step documentation is here: https://fasterthemes.com/documentation/redpro/
+Version: 5.1.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, one-column, two-columns, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
@@ -283,6 +283,12 @@ h1 small {
 .clear-fix {
 	clear: both;
 }
+a.custom-logo-link img.custom-logo {
+    max-width: 300px;
+    margin-top: 12px;
+    width: 100%;
+    height: auto;
+}
 /*============= E N D -- H E A D E R -- C S S ===========*/
 /*==================== M E N U -- C S S =============*/
 .menu-ommune, .menu-ommune ul {
@@ -339,7 +345,7 @@ h1 small {
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
-.menu-ommune li:hover > ul {
+.menu-ommune li:hover > ul, .menu-ommune li:focus > ul {
 	opacity: 1;
 	visibility: visible;
 	margin: 0;
@@ -589,7 +595,6 @@ h1 small {
 }
 .feature-thumbnail-large {
 	margin-bottom: 10px;
-	float: left;
 	padding-right: 20px;
 }
 .feature-thumbnail-large img {
@@ -629,6 +634,9 @@ h1 small {
 .post-meta-author a {
 	font-size: 14px;
 	color: #000000;
+}
+.post-meta-author i.fa {
+    margin-left: 5px;
 }
 .post-category, .post-author, .post-comment {
 	float: left;
@@ -1023,6 +1031,10 @@ a.twitter-icon:hover {
 .head_title {
 	font-size: 30px !important;
 }
+a.custom-logo-link img.custom-logo {
+    margin: 5px 0;
+    max-width: 250px;
+}
 .widget {
 	margin-top: 8%;
 }
@@ -1161,7 +1173,6 @@ footer .row a {
 .page .main article.post {
 	 border-bottom: none;
 }
-.screen-reader-text{display: none;}
 .nav-links a, .nav-links span {
 	position: relative;
     float: left;
@@ -1347,4 +1358,48 @@ footer .row a {
 }
 .navbar-header a h2.site-title, .navbar-header a h6.site-description{
 	padding: 0 15px;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    white-space: nowrap;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px; 
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+.post-meta nav.navigation.post-navigation {
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px;
+}
+.post-meta nav.navigation.post-navigation .nav-links {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+.post-meta nav.navigation.post-navigation .nav-previous {
+    float: left;
+}
+.post-meta nav.navigation.post-navigation .nav-next {
+    float: right;
 }

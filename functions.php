@@ -20,7 +20,7 @@ function redpro_breadcrumbs() {
     if (is_single()) {
    echo "<li>";
    $category = get_the_category();
-   echo '<a rel="category" title="View all posts in '.esc_html($category[0]->cat_name).'" href="'.esc_url(site_url()).'/?cat='.$category[0]->term_id.'">'.esc_html($category[0]->cat_name).'</a>';
+   echo '<a rel="category" title="View all posts in '.esc_html($category[0]->cat_name).'" href="'.esc_url(home_url('/?cat='.$category[0]->term_id)).'">'.esc_html($category[0]->cat_name).'</a>';
    echo "</li>";
      echo "<li class='active'>";
      echo get_the_title();
@@ -172,20 +172,21 @@ function redpro_entry_meta() {
 	);
 	
 	if ( $tag_list ) {
-        $utility_text = __( '<ul><li><i class="fa fa-folder-open"></i> %1$s</li><li> <i class="fa fa-calendar"></i> %3$s </li><li><i class="fa fa-user"></i> %4$s </li> %2$s <li> <i class="fa fa-comment"></i> '.get_comments_number().'</li></ul>', 'redpro' );
+        $utility_text = /* translators: 1:Category , 2:Tag list, 3: Date, 4: author */__( '<ul><li><i class="fa fa-folder-open"></i> %1$s</li><li> <i class="fa fa-calendar"></i> %3$s </li><li><i class="fa fa-user"></i> %4$s </li> %2$s <li> <i class="fa fa-comment"></i> %5$s </li></ul>', 'redpro' );
     } elseif ( $category_list ) {
-        $utility_text = __( '<ul><li><i class="fa fa-folder-open"></i> %1$s </li><li><i class="fa fa-calendar"></i> %3$s </li><li><i class="fa fa-user"></i> %4$s</li> %2$s <li><i class="fa fa-comment"></i> '.get_comments_number().'</li></ul>', 'redpro' );
+        $utility_text = /* translators: 1:Category , 2:Tag list, 3: Date, 4: author */__( '<ul><li><i class="fa fa-folder-open"></i> %1$s </li><li><i class="fa fa-calendar"></i> %3$s </li><li><i class="fa fa-user"></i> %4$s</li> %2$s <li><i class="fa fa-comment"></i> %5$s </li></ul>', 'redpro' );
     } else {
-        $utility_text = __( '<ul><li><i class="fa fa-calendar"></i> %3$s</li><li> <i class="fa fa-user"></i> %4$s</li> %2$s <li> <i class="fa fa-comment"></i> '.get_comments_number().'</li></ul>', 'redpro' );
+        $utility_text = /* translators: 1:Category , 2:Tag list, 3: Date, 4: author */__( '<ul><li><i class="fa fa-calendar"></i> %3$s</li><li> <i class="fa fa-user"></i> %4$s</li> %2$s <li> <i class="fa fa-comment"></i> %5$s </li></ul>', 'redpro' );
     }
 
-
+    $arr = array('time' => array('datetime' => true,),'span' => array('class' => true,), 'a' => array('href' => true,'title' => true,), 'i' => array('class'=>true));
 	printf(
-		$utility_text,
-		$category_list,
-		$tag_list,
-		$date,
-		$author
+		wp_kses($utility_text,$arr),
+		wp_kses($category_list,$arr),
+		wp_kses($tag_list,$arr),
+		wp_kses($date,$arr),
+		wp_kses($author,$arr),
+		esc_html(get_comments_number())
 	);
 }
 endif;
@@ -272,7 +273,7 @@ add_filter( 'excerpt_more', 'redpro_read_more' );
  */
 function redpro_scripts_styles() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.0.1');
-	wp_enqueue_script( 'respond', get_template_directory_uri() . '/js/respond.js', array('jquery'));
+	
 	wp_enqueue_script( 'function', get_template_directory_uri() . '/js/function.js', array('jquery'), '1.0.0');
 
 	
@@ -295,7 +296,7 @@ if ( ! function_exists( 'redpro_comment' ) ) :
  *
  */
 function redpro_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+	
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -399,6 +400,12 @@ $fields['comment_field']
 return $fields;
 } 
 
+
+if( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}
 /*** customizer ***/
 require_once('functions/theme-customizer.php');
 /*** TGM Class***/

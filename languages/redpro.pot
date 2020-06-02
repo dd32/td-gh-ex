@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: RedPro V4.0.2\n"
-"POT-Creation-Date: 2018-07-20 19:15+0530\n"
+"POT-Creation-Date: 2020-06-01 18:27+0530\n"
 "PO-Revision-Date: 2014-12-18 15:06+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -119,7 +119,7 @@ msgstr ""
 msgid ""
 "<ul><li><i class=\"fa fa-folder-open\"></i> %1$s</li><li> <i class=\"fa fa-"
 "calendar\"></i> %3$s </li><li><i class=\"fa fa-user\"></i> %4$s </li> %2$s "
-"<li> <i class=\"fa fa-comment\"></i> "
+"<li> <i class=\"fa fa-comment\"></i> %5$s </li></ul>"
 msgstr ""
 
 #: functions.php:177
@@ -127,71 +127,71 @@ msgstr ""
 msgid ""
 "<ul><li><i class=\"fa fa-folder-open\"></i> %1$s </li><li><i class=\"fa fa-"
 "calendar\"></i> %3$s </li><li><i class=\"fa fa-user\"></i> %4$s</li> %2$s "
-"<li><i class=\"fa fa-comment\"></i> "
+"<li><i class=\"fa fa-comment\"></i> %5$s </li></ul>"
 msgstr ""
 
 #: functions.php:179
 #, php-format
 msgid ""
 "<ul><li><i class=\"fa fa-calendar\"></i> %3$s</li><li> <i class=\"fa fa-user"
-"\"></i> %4$s</li> %2$s <li> <i class=\"fa fa-comment\"></i> "
+"\"></i> %4$s</li> %2$s <li> <i class=\"fa fa-comment\"></i> %5$s </li></ul>"
 msgstr ""
 
-#: functions.php:206
+#: functions.php:207
 msgid "Content Sidebar"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:209
 msgid "Additional sidebar that appears on the right."
 msgstr ""
 
-#: functions.php:216
+#: functions.php:217
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:218 functions.php:228 functions.php:238
+#: functions.php:219 functions.php:229 functions.php:239
 msgid "Appears on footer side"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:227
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:237
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:267
+#: functions.php:268
 msgid "Read more"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:306
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:308
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:323
 msgid "Post author "
 msgstr ""
 
-#: functions.php:325
+#: functions.php:326
 msgid "Reply"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:368
 msgctxt "comment form placeholder"
 msgid "First Name"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 msgctxt "comment form placeholder"
 msgid "Email Id"
 msgstr ""
 
-#: functions.php:392
+#: functions.php:393
 msgctxt "comment form placeholder"
 msgid "Comment"
 msgstr ""
@@ -714,6 +714,10 @@ msgstr ""
 msgid "Enter Copyright Text"
 msgstr ""
 
+#: header.php:10
+msgid "Skip to content"
+msgstr ""
+
 #: index.php:38
 msgid "BY : "
 msgstr ""
@@ -726,7 +730,15 @@ msgstr ""
 msgid "No Results Found"
 msgstr ""
 
-#: single.php:51
+#: single.php:32
+msgid " Previous"
+msgstr ""
+
+#: single.php:33
+msgid "Next "
+msgstr ""
+
+#: single.php:56
 msgid "Pages:"
 msgstr ""
 

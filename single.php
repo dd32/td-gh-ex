@@ -27,10 +27,15 @@
           <?php while ( have_posts() ) : the_post(); ?>
           <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="post-meta">
-            <nav class="redpro-nav">
-                <span class="redpro-nav-previous"><?php previous_post_link(); ?></span>
-                <span class="redpro-nav-next"><?php next_post_link(); ?></span>
-			</nav><!-- .nav-single -->
+              <?php /* Pagignation Start */
+                    the_post_navigation( array(
+                    'type'  => 'list','prev_text' => '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.esc_html__( ' Previous', 'redpro' ),
+                    'next_text' => esc_html__( 'Next ', 'redpro' ).'<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                    'screen_reader_text' => ' ',                         
+                    ) ); 
+                    
+                    /* Pagignation End*/ ?>
+            
               <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
               <!--end / post-date-->
               <div class="post-meta-author">

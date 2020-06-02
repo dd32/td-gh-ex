@@ -6,6 +6,8 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'redpro' ); ?></a>
 <header class="header">
   <div class="navbar navbar-inverse " role="navigation">
     <div class="container">
@@ -38,4 +40,5 @@
   </div> 
   <!--end / nav--> 
 </header>
+<div class="clearfix" id="content"></div>
 <!--end / header-->

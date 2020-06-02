@@ -3,7 +3,8 @@ Theme Name: RedPro
 Theme URI: http://fasterthemes.com/wordpress-themes/redpro
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Description: RedPro is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
+Description: RedPro is simple, lightweight and adaptable WordPress Theme for bloggers and professionals. It is clean, super flexible, fast in loading and bootstrap based responsive theme for business or personal blog websites. RedPro Theme was developed specially for simple red-colored blogging websites in mind. It has got custom widgets, customizer options etc in order to get it customized as per your needs. Step by step documentation is here: https://fasterthemes.com/documentation/redpro/
+
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: Red, left-sidebar, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
@@ -14,13 +15,13 @@ Tags: Red, left-sidebar, right-sidebar, one-column, two-columns, fluid-layout, r
 
 == Theme Description ==
 
-RedPro is simple, lightweight and adaptable WordPress Theme for bloggers and professionals. It is Responsive Web Design to view in various devices. Reasons to use redpro Theme : Responsive Web Design, Custom Menu, Easy Theme Options for social Links (Facebook, Twitter etc) and easy to change sidebar postion. 
+RedPro is simple, lightweight and adaptable WordPress Theme for bloggers and professionals. It is clean, super flexible, fast in loading and bootstrap based responsive theme for business or personal blog websites. RedPro Theme was developed specially for simple red-colored blogging websites in mind. It has got custom widgets, customizer options etc in order to get it customized as per your needs. Step by step documentation is here: https://fasterthemes.com/documentation/redpro/
 
 
 
 == Features ==
 
-Responsive design(Bootstrap), Theme Options, Custom Widgets, Custom Menu, supports social media, Left-sidebar, Right-Sidebar, Full-width.
+Responsive design(Bootstrap), Customize Options, Custom Widgets, Custom Menu, supports social media, Left-sidebar, Right-Sidebar, Full-width.
 
 
 
@@ -49,10 +50,12 @@ Version 4.0.3 (02 Jan 2017)
 Version 5.0.0 (20 July 2018)
     i) Misc Chagne.
 
+Version 5.1.0 (02 June 2020)
+    i) Misc Chagne.
+    ii) Escaping files and update css and js files.
+
 
 == Installation ==
-
-
 
 1. Primary:
 
@@ -84,24 +87,7 @@ Version 5.0.0 (20 July 2018)
 
 
 
-6. Change Logo and Favicon:
-
- = Login to your wp-admin area and go to Appearance -> Theme Options.
-
- = Select "Basic Settings" Tab.
-
- = Upload the logo, that you require & Enter Introduction text for right of Your Theme.
-
-
-
-7. Social Media:
-
- = Login to your wp-admin area and go to Appearance -> Theme Options.
-
- = Select "Social Settings" tab
-
- = Here you can add your Facebook and Twitter URLs which appear in the footer.
- 
+6. In order to change logo, favicon amd other customization options please visit Appearance => Customize menu in WordPress admin panel.
   
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -109,16 +95,8 @@ License and Copyrights for Resources used in this theme
  
 
 	 i)   Social icons and other graphics used in this theme are under GPL v2 License have been created by our team.
-	ii)   For the Administration Panel, we have used our own custom options panel, which is under GPL v2 license. 
-   iii)   We have used 1 External font from Google Webfonts: Lato which is under SIL Open Font License v1.1.
-	iv)   The bootstrap files which we used are licensed under the Apache License v2.0
-	 v)   respond.min js file is licensed under MIT/GPL2.
+    ii)   We have used 1 External font from Google Webfonts: Lato which is under SIL Open Font License v1.1.
+	iii)   The bootstrap files which we used are licensed under the Apache License v2.0
+	iv)   respond.min js file is licensed under MIT/GPL2.
 	
 	For any help you can mail us at support[at]fasterthemes.com
-
----------------------------------------------------------
-TGM Plugin license and link
----------------------------------------------------------
-
- license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation	
