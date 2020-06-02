@@ -4,7 +4,7 @@ Theme URI: https://www.themehorse.com/themes/attitude
 Author: Theme Horse
 Author URI: https://www.themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options via Customize. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like WooCommerce, bbPress and many more. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support at https://www.themehorse.com/support-forum/ and view beautiful demo site at https://www.themehorse.com/preview/attitude
-Version: 4.0.2
+Version: 4.0.3
 Requires PHP: 5.2
 Tested up to: 5.4.1
 License: GPLv2 or later
@@ -802,8 +802,7 @@ a.more-link:hover {
 	max-width: 100%;
 	border: 2px solid #fff;
 	text-align: center;
-	height: 28px;
-	padding: 8px 15px 0;
+	padding: 8px 15px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	-webkit-border-radius: 3px;
@@ -2655,9 +2654,6 @@ blockquote.wp-block-quote,
 	   float: none;
 	   margin-left: 0;
 	   width: 100%;
-	}
-	.slogan-wrap .slogan {
-		width: 77.5%;
 	}
 	.no-sidebar-template #content {
 		margin: 0 ;
