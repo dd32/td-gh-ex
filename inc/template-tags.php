@@ -14,9 +14,9 @@
  * @return bool
  */
 function automobile_hub_categorized_blog() {
-	$category_count = get_transient( 'automobile_hub_categories' );
+	$automobile_hub_category_count = get_transient( 'automobile_hub_categories' );
 
-	if ( false === $category_count ) {
+	if ( false === $automobile_hub_category_count ) {
 		// Create an array of all the categories that are attached to posts.
 		$categories = get_categories( array(
 			'fields'     => 'ids',
@@ -26,9 +26,9 @@ function automobile_hub_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$category_count = count( $categories );
+		$automobile_hub_category_count = count( $categories );
 
-		set_transient( 'automobile_hub_categories', $category_count );
+		set_transient( 'automobile_hub_categories', $automobile_hub_category_count );
 	}
 
 	// Allow viewing case of 0 or 1 categories in post preview.
@@ -36,7 +36,7 @@ function automobile_hub_categorized_blog() {
 		return true;
 	}
 
-	return $category_count > 1;
+	return $automobile_hub_category_count > 1;
 }
 
 if ( ! function_exists( 'automobile_hub_the_custom_logo' ) ) :

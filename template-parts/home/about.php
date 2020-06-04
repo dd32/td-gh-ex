@@ -13,15 +13,15 @@
       <h3><?php echo esc_html(get_theme_mod('automobile_hub_about_tittle','')); ?></h3>
     <?php }?>
     <div class="row">
-      <?php $about_page = array();
+      <?php $automobile_hub_about_page = array();
         $mod = absint( get_theme_mod( 'automobile_hub_about_page' ));
         if ( 'page-none-selected' != $mod ) {
-          $about_page[] = $mod;
+          $automobile_hub_about_page[] = $mod;
         }
-      if( !empty($about_page) ) :
+      if( !empty($automobile_hub_about_page) ) :
         $args = array(
           'post_type' => 'page',
-          'post__in' => $about_page,
+          'post__in' => $automobile_hub_about_page,
           'orderby' => 'post__in'
         );
         $query = new WP_Query( $args );

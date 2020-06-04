@@ -3,26 +3,26 @@
 	$automobile_hub_tp_color_option = get_theme_mod('automobile_hub_tp_color_option');
 	$automobile_hub_tp_color_option_link = get_theme_mod('automobile_hub_tp_color_option_link');
 
-	$tp_theme_css = '';
+	$automobile_hub_tp_theme_css = '';
 
 	if($automobile_hub_tp_color_option != false){
-		$tp_theme_css .='#theme-sidebar button[type="submit"], #footer button[type="submit"],.prev.page-numbers, .next.page-numbers,.page-numbers,#comments input[type="submit"],.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,span.meta-nav,.headerbox i, .more-btn i,.headerbox i:after,#theme-sidebar .tagcloud a:hover,
+		$automobile_hub_tp_theme_css .='#theme-sidebar button[type="submit"], #footer button[type="submit"],.prev.page-numbers, .next.page-numbers,.page-numbers,#comments input[type="submit"],.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,span.meta-nav,.headerbox i, .more-btn i,.headerbox i:after,#theme-sidebar .tagcloud a:hover,
 		#slider .carousel-control-prev-icon, #slider .carousel-control-next-icon{';
-			$tp_theme_css .='background-color: '.esc_html($automobile_hub_tp_color_option).';';
-		$tp_theme_css .='}';
+			$automobile_hub_tp_theme_css .='background-color: '.esc_html($automobile_hub_tp_color_option).';';
+		$automobile_hub_tp_theme_css .='}';
 	}
 	if($automobile_hub_tp_color_option != false){
-		$tp_theme_css .='p.infotext,a,.main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,.main-navigation a:hover,#theme-sidebar h3,.search-box i,.headerbox i:hover,.social-media i:hover,#about h3{';
-			$tp_theme_css .='color: '.esc_html($automobile_hub_tp_color_option).';';
-		$tp_theme_css .='}';
+		$automobile_hub_tp_theme_css .='p.infotext,a,.main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,.main-navigation a:hover,#theme-sidebar h3,.search-box i,.headerbox i:hover,.social-media i:hover,#about h3{';
+			$automobile_hub_tp_theme_css .='color: '.esc_html($automobile_hub_tp_color_option).';';
+		$automobile_hub_tp_theme_css .='}';
 	}
 	if($automobile_hub_tp_color_option != false){
-		$tp_theme_css .='#footer .tagcloud a:hover,.serach_inner form.search-form{';
-			$tp_theme_css .='border-color: '.esc_html($automobile_hub_tp_color_option).';';
-		$tp_theme_css .='}';
+		$automobile_hub_tp_theme_css .='#footer .tagcloud a:hover,.serach_inner form.search-form{';
+			$automobile_hub_tp_theme_css .='border-color: '.esc_html($automobile_hub_tp_color_option).';';
+		$automobile_hub_tp_theme_css .='}';
 	}
 	if($automobile_hub_tp_color_option_link != false){
-		$tp_theme_css .='a:hover,#theme-sidebar a:hover{';
-			$tp_theme_css .='color: '.esc_html($automobile_hub_tp_color_option_link).';';
-		$tp_theme_css .='}';
+		$automobile_hub_tp_theme_css .='a:hover,#theme-sidebar a:hover{';
+			$automobile_hub_tp_theme_css .='color: '.esc_html($automobile_hub_tp_color_option_link).';';
+		$automobile_hub_tp_theme_css .='}';
 	}

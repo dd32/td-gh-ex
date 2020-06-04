@@ -11,8 +11,8 @@ get_header(); ?>
 <div class="container">
 	<main id="tp_content" role="main">
 		<div id="primary" class="content-area">
-			<?php $sidebar_layout = get_theme_mod( 'automobile_hub_sidebar_page_layout','right');
-		    if($sidebar_layout == 'left'){ ?>
+			<?php $automobile_hub_sidebar_layout = get_theme_mod( 'automobile_hub_sidebar_page_layout','right');
+		    if($automobile_hub_sidebar_layout == 'left'){ ?>
 		        <div class="row">
 		          	<div class="col-md-4 col-sm-4" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 		          	<div class="col-md-8 col-sm-8">
@@ -30,7 +30,7 @@ get_header(); ?>
 		          	</div>
 		        </div>
 		        <div class="clearfix"></div>
-		    <?php }else if($sidebar_layout == 'right'){ ?>
+		    <?php }else if($automobile_hub_sidebar_layout == 'right'){ ?>
 		        <div class="row">
 		          	<div class="col-md-8 col-sm-8">
 			            <?php while ( have_posts() ) : the_post();
@@ -47,7 +47,7 @@ get_header(); ?>
 		          	</div>
 		          	<div class="col-md-4 col-sm-4" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 		        </div>
-		    <?php }else if($sidebar_layout == 'full'){ ?>
+		    <?php }else if($automobile_hub_sidebar_layout == 'full'){ ?>
 		        <div class="full">
 		            <?php while ( have_posts() ) : the_post();
 

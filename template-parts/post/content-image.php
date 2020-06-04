@@ -32,7 +32,7 @@
         <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_hub_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_hub_excerpt_count','35')))); ?></p>
         <?php if(get_theme_mod('automobile_hub_remove_read_button',true) != ''){ ?>
           <div class="readmore-btn">
-            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'automobile-hub' ); ?>"><?php echo esc_html(get_theme_mod('automobile_hub_read_more_text','Read More','automobile-hub'));?></a>
+            <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'automobile-hub' ); ?>"><?php echo esc_html(get_theme_mod('automobile_hub_read_more_text',__('Read More','automobile-hub')));?></a>
           </div>
         <?php }?>
       </div>

@@ -413,6 +413,46 @@ function automobile_hub_customize_register( $wp_customize ) {
             'Same Line' => __('Same Line','automobile-hub')
         ),
 	) );
+
+	$wp_customize->add_setting('automobile_hub_per_columns',array(
+		'default'=> 3,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('automobile_hub_per_columns',array(
+		'label'	=> __('Product Per Row','automobile-hub'),
+		'section'=> 'woocommerce_product_catalog',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('automobile_hub_product_per_page',array(
+		'default'=> 9,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('automobile_hub_product_per_page',array(
+		'label'	=> __('Product Per Page','automobile-hub'),
+		'section'=> 'woocommerce_product_catalog',
+		'type'=> 'number'
+	));
+
+    $wp_customize->add_setting('automobile_hub_product_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_product_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Shop page sidebar','automobile-hub'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_single_product_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_single_product_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Product page sidebar','automobile-hub'),
+       'section' => 'woocommerce_product_catalog',
+    ));
 }
 add_action( 'customize_register', 'automobile_hub_customize_register' );
 

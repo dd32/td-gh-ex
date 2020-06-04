@@ -16,7 +16,12 @@
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( esc_html__( 'Ready to publish your first post', 'automobile-hub' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<p>
+				<?php
+				/* translators: %s: Post editor URL. */
+				printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'automobile-hub' ), esc_url( admin_url( 'post-new.php' ) ) );
+				?>
+			</p>
 
 		<?php else : ?>
 

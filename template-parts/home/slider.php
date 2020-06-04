@@ -12,17 +12,17 @@
 
 <section id="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-    <?php $slide_pages = array();
+    <?php $automobile_hub_slide_pages = array();
       for ( $count = 1; $count <= 4; $count++ ) {
         $mod = intval( get_theme_mod( 'automobile_hub_slider_page' . $count ));
         if ( 'page-none-selected' != $mod ) {
-          $slide_pages[] = $mod;
+          $automobile_hub_slide_pages[] = $mod;
         }
       }
-      if( !empty($slide_pages) ) :
+      if( !empty($automobile_hub_slide_pages) ) :
         $args = array(
           'post_type' => 'page',
-          'post__in' => $slide_pages,
+          'post__in' => $automobile_hub_slide_pages,
           'orderby' => 'post__in'
         );
         $query = new WP_Query( $args );
