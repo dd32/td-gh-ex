@@ -314,6 +314,7 @@ class Attire {
 			'main_nav_bg'                    => '#435ec4',
 			'menuhbg_color'                  => '#ffffff',
 			'menuht_color'                   => '#000000',
+			'menu_dropdown_bg_color'         => '#ffffff',
 			'menu_dropdown_font_color'       => '#000000',
 			'menu_dropdown_hover_bg'         => '#435ec4',
 			'menu_dropdown_hover_font_color' => '#ffffff',
@@ -358,4 +359,4 @@ class Attire {
 
 		return $this->attire_defaults;
 	}
-} 
+}

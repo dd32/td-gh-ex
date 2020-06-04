@@ -253,11 +253,19 @@ class AttireThemeEngine {
 
 		/**
 		 *
+		 * Fixed-width site layout width
+		 *
+		 */
+        $container_width = esc_attr( $theme_mod['container_width'] );
+		$main_layout_width = esc_attr( $theme_mod['main_layout_width'] );
+		$css             .= "@media screen and (min-width: 1200px) {body #mainframe.layout-fixed-width{max-width:{$main_layout_width}px;min-width:{$container_width}px;}}";
+
+		/**
+		 *
 		 * Container Width
 		 *
 		 */
 
-		$container_width = esc_attr( $theme_mod['container_width'] );
 		$css             .= "@media screen and (min-width: 1200px) {.container{max-width:{$container_width}px;}}";
 
 		/**
@@ -495,7 +503,10 @@ class AttireThemeEngine {
 		$main_nav_dd_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
 		$css            .= "header .mainmenu > .dropdown > li, .default-menu.navbar-light .nav-search .form-control,.attire-mbl-menu .dropdown-menu li{{$main_nav_dd_bg};}"; // Search box bg color + main nav dd bg
 
-		$main_nav_dd_text = 'color:' . esc_attr( $theme_mod['menu_dropdown_font_color'] );
+		$main_nav_dd_bg = 'background:' . esc_attr( $theme_mod['menu_dropdown_bg_color'] );
+		$css              .= "header .mainmenu .dropdown-menu{{$main_nav_dd_bg};}"; // Dropdown + search field input text color
+
+        $main_nav_dd_text = 'color:' . esc_attr( $theme_mod['menu_dropdown_font_color'] );
 		$css              .= "header .mainmenu > .dropdown li *, .default-menu.navbar-light .nav-search .form-control,.attire-mbl-menu .dropdown-menu li a{{$main_nav_dd_text};}"; // Dropdown + search field input text color
 
 		$css                  .= '@media screen and (min-width: 1000px) {';

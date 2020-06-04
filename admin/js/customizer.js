@@ -22,13 +22,13 @@
                 if ($('style#' + themeModName).length) {
                     console.log(themeModName);
                     try {
-                        $('style#' + themeModName).html(selector + '{' + propertyName + ':' + newVal + unit + ';}');
+                        $('style#' + themeModName).html(selector + '{' + propertyName + ':' + newVal + unit + ' !important;}');
                     } catch (err) {
                         console.log(err);
                     }
                 } else {
                     try {
-                        $('head').append('<style id="' + themeModName + '">' + selector + '{' + propertyName + ':' + newVal + unit + ';}</style>');
+                        $('head').append('<style id="' + themeModName + '">' + selector + '{' + propertyName + ':' + newVal + unit + '!important;}</style>');
                     } catch (err) {
                         console.log(err);
                     }
@@ -103,6 +103,22 @@
 
     }
 
+    function setMainLayoutType(themeModName, selector) {
+        wp.customize('attire_options[' + themeModName + ']', function (value) {
+            value.bind(function (newVal) {
+                if (newVal === 'layout-fixed-width') {
+                    $(selector).removeClass('container-fluid');
+                    $(selector).addClass('layout-fixed-width');
+                }
+                else {
+                    $(selector).removeClass('layout-fixed-width');
+                    $(selector).addClass('container-fluid');
+                }
+            })
+        })
+
+    }
+
     wp.customize('attire_options[heading_font_size]', function (value) {
         value.bind(function (newValue) {
             $('.site-logo,.footer-logo').each(function () {
@@ -163,6 +179,7 @@
     setCss('main_nav_bg', '.short-nav .collapse.navbar-collapse, .long-nav', 'background-color');
     setCss('menuhbg_color', 'header .mainmenu > .menu-item:hover, header .mainmenu > .menu-item.active,header .mainmenu > .dropdown ul li *', 'background-color');
     setCss('menuht_color', 'header .mainmenu > .menu-item:hover > a,header .mainmenu > .menu-item.active > a,header .mainmenu > .menu-item:hover > .dropdown-toggler,header .mainmenu > .menu-item.active > .dropdown-toggler', 'color');
+    setCss('menu_dropdown_bg_color', 'header .mainmenu .dropdown-menu', 'background');
     setCss('menu_dropdown_font_color', 'header .mainmenu > .dropdown ul li *', 'color');
     setCss('menu_dropdown_hover_bg', 'header .dropdown ul li:hover a.dropdown-item', 'background-color');
     setCss('menu_dropdown_hover_font_color', 'header .dropdown ul li:hover a.dropdown-item', 'color');
@@ -309,7 +326,8 @@
     setVisibility('attire_single_post_post_navigation', '.meta-list li.post-navs');
 
     setCss('container_width', '.container', 'max-width');
-    setContainerType('main_layout_type', '#mainframe');
+    setCss('main_layout_width', 'body #mainframe.layout-fixed-width', 'max-width');
+    setMainLayoutType('main_layout_type', '#mainframe');
     setContainerType('header_content_layout_type', 'header .header-contents');
     setContainerType('body_content_layout_type', '.attire-content');
     setContainerType('footer_widget_content_layout_type', '.footer-widgets-outer');

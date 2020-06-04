@@ -757,10 +757,7 @@ function attire_customizer_style()
         'jquery',
         'customize-controls'
     ), false, true);
-    if(defined('WPDM_Version')){
-        wp_enqueue_script('chosen', plugins_url('/download-manager/assets/js/chosen.jquery.min.js'), array('jquery'));
-        wp_enqueue_style('chosen-css', plugins_url('/download-manager/assets/css/chosen.css'));
-    }
+
 }
 
 add_action('customize_controls_enqueue_scripts', 'attire_customizer_style');
@@ -768,19 +765,7 @@ add_action('customize_controls_enqueue_scripts', 'attire_customizer_style');
 add_action("customize_controls_print_styles", function (){
     ?>
     <style>
-        .chosen-container.chosen-container-single {
-            max-width: 100%;
-        }
-        .chosen-container-single .chosen-single div b::after {
-            content: "\f333";
-            font-family: "dashicons";
-            font-size: 8pt;
-            height: 10px !important;
-            left: -2px;
-            position: absolute;
-            top: 0px;
-            width: 10px !important;
-        }
+
     </style>
 <?php
 });
@@ -802,12 +787,7 @@ add_action("customize_controls_print_scripts", function (){
                     }
                 });
             });
-            var csn = 0;
-            $('body').on('click', function(){
-                if(csn) return;
-                $('select').chosen();
-                csn = 1;
-            });
+
         });
     </script>
     <?php

@@ -37,13 +37,13 @@ class AttireMetaBoxes {
                 'post_type' => 'page'
             ),
             'attire-page-header' => array(
-                'title'     => __( 'Page Header', 'attire' ),
-                'callback'  => array( $this, 'PageHeader' ),
+                'title'     => __( 'Header & Footer', 'attire' ),
+                'callback'  => array( $this, 'headerFooter' ),
                 'position'  => 'side',
                 'priority'  => 'core',
                 'post_type' => 'page'
             ),
-		 
+
 		);
 		$this->meta_boxes = apply_filters( "attire_metabox", $this->meta_boxes );
 
@@ -155,19 +155,10 @@ class AttireMetaBoxes {
             <?php
         }
 
-        function PageHeader( $post ){
-            $meta = get_post_meta( $post->ID, 'attire_post_meta', true );
-            $hide_site_header = isset($meta['hide_site_header']) ? (int)$meta['hide_site_header'] : 0;
-            $page_header = isset($meta['page_header']) ? (int)$meta['page_header'] : -1;
-            wp_nonce_field( 'attire_page_header_nonce', 'attire_page_header_nonce' );
-            echo "<div class='w3eden' style='padding-top: 10px'><div class='form-group'>";
-            echo '<select class="form-control wpdm-custom-select" id="page_header" name="attire_post_meta[page_header]">';
-            echo '<option  value="-1"  ' . selected( -1,  $page_header, false) . '>' . __( 'Theme Default', 'attire' ) . '</option>';
-            echo '<option  value="1"  ' . selected( 1,  $page_header, false) . '>' . __( 'Show', 'attire' ) . '</option>';
-            echo '<option  value="0"  ' . selected( 0,  $page_header, false) . '> ' . __( 'Hide', 'attire' ) . '</option>';
-            echo '</select></div>';
-            echo "<div class='panel panel-default'><div class='panel-heading'>".__('Site Header', 'attire')."</div><div class='panel-body'><input type='hidden' name='attire_post_meta[hide_site_header]' value='0'><input style='margin: -2px 3px 0 0' type='checkbox' ".checked(1, $hide_site_header, false)." name='attire_post_meta[hide_site_header]' value='1' id='htm'> <label style='font-weight: normal' for='htm'> ".__("Hide Top Menu", "attire")."</label></div></div>";
-            echo '</div>';
+        function headerFooter( $post ){
+
+	        include dirname(__DIR__).'/admin/metaboxes/header-footer.php';
+
         }
 
 

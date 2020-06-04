@@ -7,6 +7,13 @@ do_action(ATTIRE_THEME_PREFIX . "body_content_after");
 
 $canshow = AttireThemeEngine::NextGetOption('attire_back_to_top_visibility', 'show');
 $canshow = $canshow === 'show' ? ' canshow' : '';
+
+$meta = get_post_meta( get_the_ID(), 'attire_post_meta', true );
+// For page specific settings
+$ph_active = !isset($meta['page_header']) || (int)$meta['page_header'] === -1 ? $ph_active : (int)$meta['page_header'];
+
+$hide_site_footer = !isset($meta['hide_site_footer']) || (int)$meta['hide_site_footer'] === 0 ? 0 : (int)$meta['hide_site_footer'];
+
 ?>
 
 </div> <!-- END: attire-content div -->
@@ -14,6 +21,7 @@ $canshow = $canshow === 'show' ? ' canshow' : '';
     <i class="fas fa-angle-up"></i>
 </a>
 <?php
+if(!$hide_site_footer){
 $num_widget = (int)AttireThemeEngine::NextGetOption('footer_widget_number', '3');
 if ($num_widget !== 0) {
     do_action(ATTIRE_THEME_PREFIX . "before_footer_widget_area");
@@ -41,6 +49,11 @@ if ($num_widget !== 0) {
 do_action(ATTIRE_THEME_PREFIX . "before_footer");
 
 ?>
+
+<div class="footer-div">
+    <?php AttireThemeEngine::FooterStyle(); ?>
+</div>
+<?php } ?>
 <div class="modal fade" id="attire-search-modal" tabindex="-1" role="dialog" aria-labelledby="attire-search-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered border-0" role="document">
         <div class="modal-content bg-transparent border-0">
@@ -56,10 +69,10 @@ do_action(ATTIRE_THEME_PREFIX . "before_footer");
                         <label class="custom-control-label" for="spage"><?php _e('Page', 'attire'); ?></label>
                     </div>
                     <?php if(post_type_exists('wpdmpro')){ ?>
-                    <div class="custom-control custom-switch custom-control-inline">
-                        <input type="checkbox" id="wpdmpro" name="post_type[]" value="wpdmpro" class="custom-control-input">
-                        <label class="custom-control-label" for="wpdmpro"><?php _e('Downloads', 'attire'); ?></label>
-                    </div>
+                        <div class="custom-control custom-switch custom-control-inline">
+                            <input type="checkbox" id="wpdmpro" name="post_type[]" value="wpdmpro" class="custom-control-input">
+                            <label class="custom-control-label" for="wpdmpro"><?php _e('Downloads', 'attire'); ?></label>
+                        </div>
                     <?php } ?>
                     <?php if(post_type_exists('product')){ ?>
                         <div class="custom-control custom-switch custom-control-inline">
@@ -82,12 +95,8 @@ do_action(ATTIRE_THEME_PREFIX . "before_footer");
     </div>
 </div>
 
-<div class="footer-div">
-    <?php AttireThemeEngine::FooterStyle(); ?>
-</div>
 <?php
 wp_footer(); ?>
 </div><!-- #Mainframe-->
-
 </body>
 </html>

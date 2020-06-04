@@ -16,6 +16,11 @@ body #mainframe {
     padding: 0;
 }
 
+body #mainframe.layout-fixed-width{
+    margin: 0 auto;
+    background: #ffffff;
+}
+
 h1,
 h2,
 h3,
@@ -465,6 +470,9 @@ span[id*=more-]:before {
 
 #search-top .dropdown-item {
     padding: 0;
+}
+.form-control.input-search{
+    border: 1px solid #ffffff;
 }
 
 .mobile-search {
@@ -2021,7 +2029,7 @@ article.post.product:before {
     font-size: 12px;
     letter-spacing: +.6px;
     font-weight: 500;
-    color: #c5cde0;
+    color: rgba(255, 255, 255, 0.68);
 }
 
 #theme-user-dashboard .udb-item.selected {
