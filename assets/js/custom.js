@@ -2,7 +2,7 @@ jQuery(function($){
   "use strict";
   $('.menu > ul').superfish({
     delay:       500,
-    animation:   {opacity:'show',height:'show'},  
+    animation:   {opacity:'show',height:'show'},
     speed:       'fast'
   });
   $('.search-box span a').click(function(){

@@ -159,7 +159,7 @@ function adventure_travelling_scripts() {
 	wp_enqueue_style( 'adventure-travelling-style', get_stylesheet_uri() );
 	require get_parent_theme_file_path( '/tp-theme-color.php' );
 	require get_parent_theme_file_path( '/tp-body-width-layout.php' );
-	wp_add_inline_style( 'adventure-travelling-style',$tp_theme_css );
+	wp_add_inline_style( 'adventure-travelling-style',$adventure_travelling_tp_theme_css );
 
 	// Fontawesome
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome-all.css' ) );
@@ -195,18 +195,24 @@ function adventure_travelling_string_limit_words($string, $word_limit) {
 }
 
 function adventure_travelling_sanitize_dropdown_pages( $page_id, $setting ) {
-  // Ensure $input is an absolute integer.
-  $page_id = absint( $page_id );
-  // If $page_id is an ID of a published page, return it; otherwise, return the default.
-  return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+	$page_id = absint( $page_id );
+	return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'adventure_travelling_loop_columns');
-	if (!function_exists('adventure_travelling_loop_columns')) {
-		function adventure_travelling_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('adventure_travelling_loop_columns')) {
+	function adventure_travelling_loop_columns() {
+		$columns = get_theme_mod( 'adventure_travelling_per_columns', 3 );
+		return $columns;
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'adventure_travelling_per_page', 20 );
+function adventure_travelling_per_page( $cols ) {
+  	$cols = get_theme_mod( 'adventure_travelling_product_per_page', 9 );
+	return $cols;
 }
 
 /**

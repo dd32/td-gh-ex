@@ -461,6 +461,46 @@ function adventure_travelling_customize_register( $wp_customize ) {
             'Same Line' => __('Same Line','adventure-travelling')
         ),
 	) );
+
+	$wp_customize->add_setting('adventure_travelling_per_columns',array(
+		'default'=> 3,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('adventure_travelling_per_columns',array(
+		'label'	=> __('Product Per Row','adventure-travelling'),
+		'section'=> 'woocommerce_product_catalog',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('adventure_travelling_product_per_page',array(
+		'default'=> 9,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('adventure_travelling_product_per_page',array(
+		'label'	=> __('Product Per Page','adventure-travelling'),
+		'section'=> 'woocommerce_product_catalog',
+		'type'=> 'number'
+	));
+
+    $wp_customize->add_setting('adventure_travelling_product_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_product_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Shop page sidebar','adventure-travelling'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_single_product_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_single_product_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Product page sidebar','adventure-travelling'),
+       'section' => 'woocommerce_product_catalog',
+    ));
 }
 add_action( 'customize_register', 'adventure_travelling_customize_register' );
 

@@ -16,9 +16,9 @@
     <div class="row">
       <div class="col-lg-6 col-md-6">
         <?php
-          $postdata = get_theme_mod('adventure_travelling_static_blog_1');
-            if($postdata){
-            $args = array( 'name' => esc_html( $postdata ,'adventure-travelling'));
+          $adventure_travelling_postdata = get_theme_mod('adventure_travelling_static_blog_1');
+            if($adventure_travelling_postdata){
+            $args = array( 'name' => esc_html( $adventure_travelling_postdata ,'adventure-travelling'));
           $query = new WP_Query( $args );
           if ( $query->have_posts() ) :
             while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -39,9 +39,9 @@
       <div class="col-lg-6 col-md-6">
         <div class="row">
           <?php
-            $postdata = get_theme_mod('adventure_travelling_static_blog_2');
-              if($postdata){
-              $args = array( 'name' => esc_html( $postdata ,'adventure-travelling'));
+            $adventure_travelling_postdata = get_theme_mod('adventure_travelling_static_blog_2');
+              if($adventure_travelling_postdata){
+              $args = array( 'name' => esc_html( $adventure_travelling_postdata ,'adventure-travelling'));
             $query = new WP_Query( $args );
             if ( $query->have_posts() ) :
               while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -68,9 +68,9 @@
         </div>
         <div class="row">
           <?php
-            $postdata = get_theme_mod('adventure_travelling_static_blog_3');
-              if($postdata){
-              $args = array( 'name' => esc_html( $postdata ,'adventure-travelling'));
+            $adventure_travelling_postdata = get_theme_mod('adventure_travelling_static_blog_3');
+              if($adventure_travelling_postdata){
+              $args = array( 'name' => esc_html( $adventure_travelling_postdata ,'adventure-travelling'));
             $query = new WP_Query( $args );
             if ( $query->have_posts() ) :
               while ( $query->have_posts() ) : $query->the_post(); ?>

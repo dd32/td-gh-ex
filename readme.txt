@@ -1,9 +1,10 @@
 === Adventure Travelling ===
 Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, post-formats, threaded-comments, translation-ready, blog, news, portfolio
-Requires at least: 4.9
-Tested up to: 5.4
-Stable tag: 0.7.3
+Requires at least: 5.0
+Tested up to: 5.4.1
+Requires PHP: 7.2.14
+Stable tag: 0.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +98,10 @@ Installation
 = 0.7.3 =
 	* Added wp_body_open() function in header.php.
 	* Added prefixing in menu js.
+
+= 0.7.4 =
+	* Done the proper prefixing.
+	* Added Woocommerce Product Settigs
 
 == Resources ==
 

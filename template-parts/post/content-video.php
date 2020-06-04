@@ -46,7 +46,7 @@
       <p><?php $excerpt = get_the_excerpt(); echo esc_html( adventure_travelling_string_limit_words( $excerpt, esc_attr(get_theme_mod('adventure_travelling_excerpt_count','35')))); ?></p>
       <?php if(get_theme_mod('adventure_travelling_remove_read_button',true) != ''){ ?>
         <div class="readmore-btn">
-          <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'adventure-travelling' ); ?>"><?php echo esc_html(get_theme_mod('adventure_travelling_read_more_text','Read More','adventure-travelling'));?></a>
+          <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'adventure-travelling' ); ?>"><?php echo esc_html(get_theme_mod('adventure_travelling_read_more_text',__('Read More','adventure-travelling')));?></a>
         </div>
       <?php }?>
     </div>
