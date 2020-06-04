@@ -139,3 +139,7 @@ Source: http://materializecss.com/
 = 1.1.0 =
 * 13 May 2020
 * Major Issues fixed based on .org review standard
+
+= 1.2.0 =
+* 2 june 2020
+*Issues fixed based on .org review standard

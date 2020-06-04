@@ -319,28 +319,6 @@ define( 'auto_car_VERSION', '1.0.0' );
         return true;
     }
 
-if ( ! function_exists ( 'auto_car_demo_import_files' ) ) {
-
-    function auto_car_demo_import_files()
-    {
-        return array(
-            array(
-                'import_file_name' => __('Demo One', 'auto-car'),
-                'import_file_url' => esc_url('https://codethemes.co//wp-content/uploads/theme_updates/demo_content/auto-car/Nat4rMBh.xml'),
-                'import_widget_file_url' => esc_url('https://codethemes.co//wp-content/uploads/theme_updates/demo_content/auto-car/T287JgpA.wie'),
-                'import_customizer_file_url' => esc_url('https://codethemes.co//wp-content/uploads/theme_updates/demo_content/auto-car/M7Qd2qzR.dat'),
-                'import_preview_image_url' => esc_url('https://codethemes.co//wp-content/uploads/theme_updates/demo_content/auto-car/screenshot.png'),
-                'import_notice' => __( 'After you import this demo, you will have to choose the Home Page separately from customizer.', 'auto-car' ),
-                'preview_url' => esc_url('https://demo.codethemes.co/auto-car/'),
-            ),
-             
-            
-           
-        );
-    }
-
-    add_filter('pt-ocdi/import_files', 'auto_car_demo_import_files');
-}
 
 add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
