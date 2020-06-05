@@ -1,16 +1,3 @@
-(function( $ ) {
-	/**** Hidden search box ***/
-	jQuery('document').ready(function($){
-		jQuery('.search-box ').click(function(){
-	        jQuery(".serach_outer").slideDown(100);
-	    });
-
-	    jQuery('.closepop').click(function(){
-	        jQuery(".serach_outer").slideUp(100);
-	    });
-	});
-})( jQuery );
-
 // scroll
 jQuery(document).ready(function () {
 	jQuery(window).scroll(function () {

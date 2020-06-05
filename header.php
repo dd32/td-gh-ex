@@ -8,7 +8,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'aagaz-startup' ) ); ?>">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -67,22 +66,22 @@
 								<div class="col-lg-5 col-md-5">
 									<div class="social-icon">
 										<?php if( get_theme_mod( 'aagaz_startup_facebook_url') != '') { ?>
-										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','aagaz-startup' );?></span></a>
+										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','aagaz-startup' );?></span></a>
 										<?php } ?>
 										<?php if( get_theme_mod( 'aagaz_startup_twitter_url') != '') { ?>
-										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','aagaz-startup' );?></span></a>
+										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','aagaz-startup' );?></span></a>
 										<?php } ?>
 										<?php if( get_theme_mod( 'aagaz_startup_linkedin_url') != '') { ?>
-										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','aagaz-startup' );?></span></a>
+										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','aagaz-startup' );?></span></a>
 										<?php } ?>
 										<?php if( get_theme_mod( 'aagaz_startup_pinterest_url') != '') { ?>
-										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','aagaz-startup' );?></span></a>
+										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','aagaz-startup' );?></span></a>
 										<?php } ?>
 										<?php if( get_theme_mod( 'aagaz_startup_insta_url') != '') { ?>
-										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','aagaz-startup' );?></span></a>
+										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','aagaz-startup' );?></span></a>
 										<?php } ?>
 										<?php if( get_theme_mod( 'aagaz_startup_youtube_url') != '') { ?>
-										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','aagaz-startup' );?></span></a>
+										    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','aagaz-startup' );?></span></a>
 										<?php } ?>
 									</div>
 								</div>

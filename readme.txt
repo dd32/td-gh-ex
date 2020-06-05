@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-
 Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 7.2.14
-Stable tag: 0.4.6
+Stable tag: 0.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,7 +107,11 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Added show related post by categories and tags option in post settings.
   * Added show / hide option for single post featured image option.
   * Updated POT file.
-  
+
+= 0.4.7 =
+  * Changed searchform code.
+  * Resolved code errors.
+
 == Resources ==
 
 Aagaz Startup WordPress Theme, Copyright 2019 ThemesEye

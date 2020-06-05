@@ -55,5 +55,5 @@
 </article>
 
 <?php if (get_theme_mod('aagaz_startup_related_posts',true) != '') {
-  get_template_part( 'template-parts/post/related-posts' );
+  	get_template_part( 'template-parts/post/related-posts' );
 }

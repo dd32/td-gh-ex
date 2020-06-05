@@ -474,7 +474,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_preloader_types',array(
         'default' => __('Default','aagaz-startup'),
-        'sanitize_callback' => 'sanitize_text_field'
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_preloader_types',array(
         'type' => 'radio',
@@ -525,7 +525,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	// Button Settings
 	$wp_customize->add_section( 'aagaz_startup_button_option', array(
-		'title' => 'Button',
+		'title' => __('Button','aagaz-startup'),
 		'panel' => 'aagaz_startup_panel_id',
 	));
 
@@ -1106,7 +1106,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_pagination_option', array(
         'default'			=> __('Default','aagaz-startup'),
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control( 'aagaz_startup_pagination_option', array(
         'section' => 'aagaz_startup_blog_post',
@@ -1135,7 +1135,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_show_related_post', array(
         'default' => 'categories',
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control( 'aagaz_startup_show_related_post', array(
         'section' => 'aagaz_startup_related_post_section',

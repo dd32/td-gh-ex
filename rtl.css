@@ -446,7 +446,7 @@ a:focus, input:focus, textarea:focus, button:focus, .woocommerce form .form-row 
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
-.search-box a:focus{
+.search-body a:focus{
 	outline: 1px dotted #fff;
   	border-bottom: 1px solid #fff;
 }
@@ -634,7 +634,7 @@ a:active {
 .page-template-home-custom .fixed-header #header{
   box-shadow: -2px 2px 10px 0px #2d2d2d;
 }
-.fixed-header .search-box{
+.fixed-header .search-body{
 	margin:0 20px;
 }
 
@@ -814,14 +814,14 @@ a:active {
 	margin-top: 2px;
 	display: inline-block;
 }
-.serach_inner {
+.searchform-inner {
 	position: absolute;
 	top: 60%;
 	transform: translateY(-50%);
 	width: 100%;
 	padding: 20px;
 }
-.serach_inner .search-form .search-submit {
+.searchform-inner .search-form .search-submit {
     bottom: 0;
     padding: 12px;
     position: absolute;
@@ -829,7 +829,7 @@ a:active {
     font-weight: 600;
     left: 0;
 }
-.search-box {
+.search-body {
 	padding: 30px 12px;
     background: #000;
 }
@@ -850,7 +850,7 @@ a:active {
 	color: #bbb;
 	cursor: pointer;
 }
-.serach_inner form.search-form {
+.searchform-inner form.search-form {
 	display: table;
 	border: 1px solid #bababf;
 	padding: 0;
@@ -876,7 +876,7 @@ input.search-field {
     background: #fff;
     width: 95%;
 }
-.serach_inner input.search-field {
+.searchform-inner input.search-field {
 	border: none;
 }
 #mastheader .search-submit span .screen-reader-text{
@@ -912,7 +912,7 @@ input.search-field {
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.search-box span i {
+.search-body span i {
     color: #fff;
     background: #252424;
     font-size: 15px;
@@ -2925,7 +2925,7 @@ p > object:only-child {
 	.widget_calendar th, .widget_calendar td{
 		padding: 3px;
 	}
-	.search-box{
+	.search-body{
 		text-align: center;
 	    padding: 15px 12px;
 	}
@@ -2947,10 +2947,10 @@ p > object:only-child {
 	#slider .carousel-control-next{
 		right: 17%;
 	}
-	.search-box{
+	.search-body{
 		padding:30px 8px;
 	}
-	.fixed-header .search-box{
+	.fixed-header .search-body{
 		margin:0;
 		padding: 30px 20px;
 	}
@@ -3575,7 +3575,7 @@ p > object:only-child {
 		width: 47.75% !important;
 		float: right;
 	}
-	.fixed-header .search-box {
+	.fixed-header .search-body {
 	    margin: 0 30px;
 	}
 }
@@ -3598,7 +3598,7 @@ p > object:only-child {
 	#slider .carousel-caption{
 		top:34%;
 	}
-	.search-box a{
+	.search-body a{
 		color: #fff;
 	}
 	.readbutton a{
@@ -3621,7 +3621,7 @@ p > object:only-child {
 	    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
 	    border-radius: 3px;
 	}
-	.serach_inner .search-form .search-submit{
+	.searchform-inner .search-form .search-submit{
 		padding: 13px;
 	}
 	.serach_outer:before {

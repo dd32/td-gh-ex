@@ -3,7 +3,7 @@
  * Displays top navigation
  */
 ?>
-<div class="header-menu <?php if( get_theme_mod( 'aagaz_startup_fixed_header') != '' || get_theme_mod( 'aagaz_startup_enable_disable_fixed_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+<div class="header-menu <?php if( get_theme_mod( 'aagaz_startup_fixed_header', false) != '' || get_theme_mod( 'aagaz_startup_enable_disable_fixed_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
 	<div class="row m-0">
 		<div class="col-lg-11 col-md-10">
 			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'aagaz-startup' ); ?>">
@@ -18,18 +18,18 @@
 				) ); ?>				
 			</nav>
 		</div>
-		<div class="col-lg-1 col-md-2">
-			<div class="search-box">
-				<a href="#"><i class="fas fa-search"></i>
-		     		<span class="screen-reader-text"><?php esc_html_e( 'Search','aagaz-startup' );?></span>
-		     	</a>
-		    </div>
+		<div class="col-lg-1 col-md-1">
+			<div class="search-body">
+				<button type="button" data-toggle="modal" data-target="#myModal"><i class="<?php echo esc_attr(get_theme_mod('tafri_travel_search_icon','fas fa-search')); ?>"></i></button>
+			</div>
 		</div>
 	</div>
-	<div class="serach_outer">
-	    <div class="serach_inner">
-      		<?php get_search_form(); ?>
-	    </div>
-	    <a href="#main" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','aagaz-startup' );?></span></a>
-	</div>
+	<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="searchform-inner">
+				<?php get_search_form(); ?>
+			</div>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+		</div>
+    </div>
 </div>

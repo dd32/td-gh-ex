@@ -15,7 +15,7 @@
       <div class="post-image">
         <?php the_post_thumbnail(); ?>
       </div>
-      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
       <?php if( get_theme_mod( 'aagaz_startup_date_hide',true) != '' || get_theme_mod( 'aagaz_startup_comment_hide',true) != '' || get_theme_mod( 'aagaz_startup_author_hide',true) != '') { ?>
         <div class="post-info">
           <?php if( get_theme_mod( 'aagaz_startup_date_hide',true) != '') { ?>
@@ -48,7 +48,7 @@
           <?php the_post_thumbnail(); ?>
         </div>
         <div class="<?php if(has_post_thumbnail()) { ?>col-lg-6 col-md-12 pl-0"  <?php } else { ?>col-lg-12 col-md-12" <?php } ?>>
-          <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+          <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
           <?php if( get_theme_mod( 'aagaz_startup_date_hide',true) != '' || get_theme_mod( 'aagaz_startup_comment_hide',true) != '' || get_theme_mod( 'aagaz_startup_author_hide',true) != '') { ?>
             <div class="post-info">
               <?php if( get_theme_mod( 'aagaz_startup_date_hide',true) != '') { ?>

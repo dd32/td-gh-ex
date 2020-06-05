@@ -58,11 +58,11 @@ get_header(); ?>
         endif;?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-          <span class="screen-reader-text"><?php esc_attr_e( 'Previous','aagaz-startup' );?></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Previous','aagaz-startup' );?></span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-          <span class="screen-reader-text"><?php esc_attr_e( 'Next','aagaz-startup' );?></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Next','aagaz-startup' );?></span>
         </a>
       </div> 
       <div class="clearfix"></div>

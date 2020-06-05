@@ -6,13 +6,13 @@
 <?php //Set widget areas classes based on user choice
     $aagaz_startup_widget_areas = get_theme_mod('aagaz_startup_footer_widget', '4');
     if ($aagaz_startup_widget_areas == '3') {
-      $cols = 'col-lg-4 col-md-4';
+      	$cols = 'col-lg-4 col-md-4';
     } elseif ($aagaz_startup_widget_areas == '4') {
-      $cols = 'col-lg-3 col-md-3';
+      	$cols = 'col-lg-3 col-md-3';
     } elseif ($aagaz_startup_widget_areas == '2') {
-      $cols = 'col-lg-6 col-md-6';
+      	$cols = 'col-lg-6 col-md-6';
     } else {
-      $cols = 'col-lg-12 col-md-12';
+      	$cols = 'col-lg-12 col-md-12';
     }
 ?>
 <aside class="widget-area">
