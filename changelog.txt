@@ -1,6 +1,11 @@
 iFeature Changelog
 
 ****************************
+Version 7.2.0 (06/05/20)
+- Added - Support for Gutenberg Blocks
+- Added - Full-Width Gutenberg Template
+- Fixed - Minor issues
+
 Version 7.1 (08/21/19)
 - Fixed various Theme Sniffer and Theme Checker issues.
 

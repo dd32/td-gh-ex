@@ -761,7 +761,7 @@ function ifeature_cc_customize( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ifeature_cc_options[email_url]',
 		array(
-			'sanitize_callback' => 'esc_url_raw',
+			'sanitize_callback' => 'sanitize_email',
 			'type'              => 'option',
 		)
 	);
@@ -923,7 +923,7 @@ function ifeature_cc_customize( $wp_customize ) {
 		$wp_customize->add_setting(
 			'ifeature_cc_options[sidebar_images]',
 			array(
-				'default'           => $imagepath . '2cr.png',
+				'default'           => 'right_sidebar',
 				'type'              => 'option',
 				'sanitize_callback' => 'ifeature_cc_text_sanitization',
 			)

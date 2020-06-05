@@ -7,7 +7,7 @@
 .wp-block-freeform.block-library-rich-text__tinymce p,
 .wp-block-paragraph.editor-rich-text__tinymce.mce-content-body,
 .wp-block-paragraph.editor-rich-text__tinymce,
-.editor-styles-wrapper p,
+body .editor-styles-wrapper p,
 .edit-post-visual-editor p.wp-block-subhead,
 .wp-block-subhead.editor-rich-text__tinymce.mce-content-body,
 .wp-block-subhead.editor-rich-text__tinymce,
@@ -20,41 +20,48 @@
  * Heading styles
  * -----------------------------------------------------------
  */
+.editor-styles-wrapper h1,
 .wp-block-freeform.block-library-rich-text__tinymce h1,
 .wp-block-heading h1.editor-rich-text__tinymce {
 	font-size: 2.75em;
 	line-height: 1;
 }
 
+.editor-styles-wrapper h2,
 .wp-block-freeform.block-library-rich-text__tinymce h2,
 .wp-block-heading h2.editor-rich-text__tinymce {
 	font-size: 2.25em;
 	line-height: 1.2;
 }
 
+.editor-styles-wrapper h3,
 .wp-block-freeform.block-library-rich-text__tinymce h3,
 .wp-block-heading h3.editor-rich-text__tinymce {
 	font-size: 1.75em;
 	line-height: 1.6;
 }
 
+.editor-styles-wrapper h4,
 .wp-block-freeform.block-library-rich-text__tinymce h4,
 .wp-block-heading h4.editor-rich-text__tinymce {
 	font-size: 1.25em;
 	line-height: 1.14;
 }
 
+.editor-styles-wrapper h5,
 .wp-block-freeform.block-library-rich-text__tinymce h5,
 .wp-block-heading h5.editor-rich-text__tinymce {
 	font-size: 1em;
 	line-height: 1.43;
 }
 
+.editor-styles-wrapper h6,
 .wp-block-freeform.block-library-rich-text__tinymce h6,
 .wp-block-heading h6.editor-rich-text__tinymce {
 	font-size: 0.85em;
 	line-height: 1.68;
 }
+
 .editor-post-title__block .editor-post-title__input{
 	font-size: 2.25em !important;
 	font-weight: 400;
@@ -81,6 +88,7 @@
  */
 .wp-block-freeform.block-library-rich-text__tinymce pre,
 .editor-block-list__block-edit pre,
+body .editor-styles-wrapper pre,
 .wp-block-preformatted pre.editor-rich-text__tinymce.mce-content-body,
 .wp-block-verse pre.editor-rich-text__tinymce.mce-content-body{
  	font-size: 0.85em;
@@ -190,8 +198,8 @@ table.mce-item-table tr.odd{
  * -----------------------------------------------------------
  */
 .wp-block-freeform.block-library-rich-text__tinymce blockquote,
-.wp-block-quote,
-.wp-block-quote:not(.is-large):not(.is-style-large) {
+.editor-styles-wrapper .wp-block-quote,
+.editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large) {
 	background-color: #f6f6f6;
 	border: 0;
 	padding: 3px;
@@ -199,28 +207,28 @@ table.mce-item-table tr.odd{
  	margin: 1.3em .65em;
 }
 
-.wp-block-quote p,
-.wp-block-quote:not(.is-large):not(.is-style-large) p {
+.editor-styles-wrapper .wp-block-quote p,
+ .editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large) p {
 	margin: 10px;
 	font-size: .95em
 }
 
 
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
+.editor-styles-wrapper .wp-block-quote.is-large,
+ .editor-styles-wrapper .wp-block-quote.is-style-large {
 	font-size: 1.558em;
 }
 
-.wp-block-quote__citation.editor-rich-text__tinymce.mce-content-body {
+.editor-styles-wrapper .wp-block-quote__citation.editor-rich-text__tinymce.mce-content-body {
 	font-size: 0.9em;
 }
 
-.wp-block-quote.is-large .wp-block-quote__citation.editor-rich-text__tinymce.mce-content-body,
-.wp-block-quote.is-style-large .wp-block-quote__citation.editor-rich-text__tinymce.mce-content-body {
+.editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation.editor-rich-text__tinymce.mce-content-body,
+.editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation.editor-rich-text__tinymce.mce-content-body {
 	font-size: 1.168em;
 }
 
-.wp-block-quote__citation:before {
+.editor-styles-wrapper .wp-block-quote__citation:before {
 	content: '\2014';
 	margin: 0 5px;
 }

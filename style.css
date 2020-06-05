@@ -3,8 +3,8 @@ Theme Name: iFeature
 Theme URI: https://cyberchimps.com/ifeature-free/
 Author: CyberChimps
 Author URI: https://www.cyberchimps.com/
-Description: iFeature 7.1 is a fully-responsive, Gutenberg compatible, translation-ready, universal professional theme. Catering to e-commerce sites, blogging, personal profiles and more. iFeature's touch-friendly drag-and-drop elements allow you to set up a professional website in minutes. When it comes to responsive elements and drag-and-drop options, CyberChimps not only pioneered, but continues to innovate these elements for the greater WordPress community. iFeature 6.5 lets you create responsive websites that you can control on any touch-friendly device, including: iPad, iPhone and Android devices. With options on a per-page basis, this theme allows you to control the look and feel of every page. iFeature has sticky header menu. It has option available to exclude categories from blog page. You can also display author bio for each post. Includes a Testimonial section so you can highlight positive feedback from your customers and boost conversion. Includes a team section to display your team members details. Two types of footer widgets layout available. For Support - <a href="https://cyberchimps.com/forum/free/ifeature/"> Support forum</a> (https://cyberchimps.com/forum/free/ifeature/). View <a href="http://demos.cyberchimps.com/ifeature/">iFeature Demo</a> (http://demos.cyberchimps.com/ifeature/). CyberChimps - Themes You Can Trust
-Version: 7.1
+Description: iFeature is a fully-responsive, Gutenberg compatible, translation-ready, universal professional theme. Catering to e-commerce sites, blogging, personal profiles and more. iFeature's touch-friendly drag-and-drop elements allow you to set up a professional website in minutes. When it comes to responsive elements and drag-and-drop options, CyberChimps not only pioneered, but continues to innovate these elements for the greater WordPress community. iFeature lets you create responsive websites that you can control on any touch-friendly device, including: iPad, iPhone and Android devices. With options on a per-page basis, this theme allows you to control the look and feel of every page. iFeature has sticky header menu. It has option available to exclude categories from blog page. You can also display author bio for each post. Includes a Testimonial section so you can highlight positive feedback from your customers and boost conversion. Includes a team section to display your team members details. Two types of footer widgets layout available. For Support - <a href="https://cyberchimps.com/forum/free/ifeature/"> Support forum</a> (https://cyberchimps.com/forum/free/ifeature/). View <a href="http://demos.cyberchimps.com/ifeature/">iFeature Demo</a> (http://demos.cyberchimps.com/ifeature/). CyberChimps - Themes You Can Trust
+Version: 7.2.0
 Tags: blog, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, post-formats, theme-options, sticky-post, full-width-template, footer-widgets, threaded-comments, translation-ready, e-commerce, portfolio
 Text Domain: ifeature
 License: GNU General Public License version 3
@@ -109,8 +109,8 @@ header#cc-header {
 	margin-right: 0;
 	margin-bottom: 6px;
 	margin-left: 5px;
-	width: 20px;
-	height: 20px;
+	width: 1.5em;
+	height: 1.5em;
 	font-size: 1em;
 	padding: 0;
 	line-height: 1.5;
@@ -188,6 +188,10 @@ header #search #searchform {
 
 #navigation {
 	margin-bottom: 30px;
+}
+
+.page-template-full-width-page #navigation {
+	margin-bottom: 0;
 }
 
 .main-navigation.navbar {
@@ -417,6 +421,12 @@ article.post, article.page, article.attachment {
 	overflow: hidden;
 	-webkit-box-shadow: 0px 1px 0px 0px #adadad;
 	box-shadow: 0px 1px 0px 0px #adadad;
+}
+
+.page-template-full-width-page article.page {
+	margin-bottom: 0;
+	border: none;
+    overflow: initial;
 }
 
 .entry-content {
@@ -1621,10 +1631,10 @@ h2.box-widget-title {
 }
 
 
-.entry-content ol,
-.entry-content ul,
-.entry-summary ol,
-.entry-summary ul{
+.entry-content ol:not(.blocks-gallery-grid),
+.entry-content ul:not(.blocks-gallery-grid),
+.entry-summary ol:not(.blocks-gallery-grid),
+.entry-summary ul:not(.blocks-gallery-grid) {
 	margin-left: 2.9em;
 }
 
@@ -1635,6 +1645,8 @@ h2.box-widget-title {
 	display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 audio, canvas, video {
@@ -1696,4 +1708,38 @@ h6 {
 }
 pre {
 	font-size: 0.85em;
+}
+
+.hentry h1,.hentry h2,.hentry h3,.hentry h4,.hentry h5,.hentry h6,
+.alignwide,
+.aligncenter,
+div.wp-block-cover.aligncenter {
+	clear: both;
+}
+
+@media (min-width: 769px) {
+
+	.page-template-full-width-page #content.span12 .alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		max-width: 100vw;
+	}
+
+	.page-template-full-width-page #content.span12 .alignwide {
+		margin-left: calc(25% - 25vw);
+		margin-right: calc(25% - 25vw);
+		max-width: 100vw;
+	}
+
+	.page-template-full-width-page #content.span12 [class*="__inner-container"] .alignwide,
+	.page-template-full-width-page #content.span12 [class*="__inner-container"] .alignfull {
+		max-width: 100%;
+		margin: inherit;
+		width: inherit;
+	}
+
+	.page-template-full-width-page #content.span12 > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.wp-block-separator),
+	.page-template-full-width-page #content.span12 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.wp-block-separator) {
+		max-width: 100%;
+	}
 }

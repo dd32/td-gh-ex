@@ -413,7 +413,6 @@ if ( ! class_exists( 'Ifeature_Hooks' ) ) {
 			$url = ( Ifeature_Helper::ifeature_cc_get_option( 'custom_logo_url' ) === '1' ) ? Ifeature_Helper::ifeature_cc_get_option( 'custom_logo_url_link' ) : esc_url( home_url() );
 			if ( Ifeature_Helper::ifeature_cc_get_option( 'custom_logo' ) === '1' ) {
 				$logo = Ifeature_Helper::ifeature_cc_get_option( 'custom_logo_uploader' );
-				error_log('==>>'.$logo);
 				?>
 				<div id="logo">
 					<a href="<?php echo $url; ?>" title="<?php echo get_bloginfo( 'name' ); ?>"><img src="<?php echo stripslashes( $logo ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>"></a>
@@ -498,8 +497,11 @@ if ( ! class_exists( 'Ifeature_Hooks' ) ) {
 					$title = ( isset( $social[ $key ]['title'] ) ) ? $social[ $key ]['title'] : $key;
 
 					// Create the output.
-					$output .= '<a href="' . esc_url( $social[ $key ]['url'] ) . '"' . ( 'email' !== $key ? ' target="_blank"' : '' )
-						. ' title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
+					if ( 'email' !== $key ) {
+						$output .= '<a href="mailto:' . esc_html( $social[ $key ]['url'] ) . '" title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
+					} else {
+						$output .= '<a href="' . esc_url( $social[ $key ]['url'] ) . '" title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
+					}
 				}
 			}
 

@@ -36,7 +36,6 @@ if ( ! class_exists( 'Ifeature_Helper' ) ) {
 		 */
 		public static function ifeature_cc_get_option( $name, $default = false ) {
 			$options = get_option( 'ifeature_cc_options' );
-			error_log(print_r($options,1));
 			if ( isset( $options[ $name ] ) ) {
 				return $options[ $name ];
 			}
@@ -254,6 +253,10 @@ if ( ! class_exists( 'Ifeature_Helper' ) ) {
 			$layout_type  = ( $layout_type ) ? $layout_type : 'right_sidebar';
 			$content_span = ( 1 === $wide_sidebar ) ? __CLASS__ . '::ifeature_cc_class_span8' : __CLASS__ . '::ifeature_cc_class_span9';
 			$sidebar_span = ( 1 === $wide_sidebar ) ? __CLASS__ . '::ifeature_cc_class_span4' : __CLASS__ . '::ifeature_cc_class_span3';
+
+			if ( is_page_template( 'templates/full-width-page.php' ) ) {
+				$layout_type = 'full_width';
+			}
 
 			switch ( $layout_type ) {
 				case 'full_width':

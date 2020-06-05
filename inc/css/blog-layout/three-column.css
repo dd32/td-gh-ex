@@ -1,9 +1,19 @@
-.blog .article-wrapper, .blog article.post {
-    width: 31%;
+
+.blog .article-wrapper,
+.blog article.post {
+    box-sizing: border-box;
     display: inline-block;
-    vertical-align: top;
     padding-left: 9px;
     padding-right: 9px;
+    position: relative;
+    margin-right: 30px;
+    vertical-align: top;
+    width: calc((100% / 3) - 25px);
+}
+
+.blog .article-wrapper:nth-child(3n),
+.blog article.post:nth-child(3n) {
+    margin-right: 0;
 }
 
 .blog .page-title {
@@ -28,14 +38,14 @@
     width:30%;
     }
 }
-  
+
 @media screen and (max-width: 980px) and (min-width: 850px) {
 .blog .article-wrapper, .blog article.post {
     padding-left: 8px;
     padding-right: 8px;
     }
 }
-   
+
 @media (max-width: 360px) {
 .blog .article-wrapper, .blog article.post {
     width: 94%;

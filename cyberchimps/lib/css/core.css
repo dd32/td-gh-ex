@@ -34,6 +34,10 @@
 	width: 100%;
 }
 
+.page-template-full-width-page .container-full-width#page_section_section {
+    background: #fdfdfd;
+}
+
 .container-full-width:before, .container-full-width:after {
 	display: table;
 	content: "";
