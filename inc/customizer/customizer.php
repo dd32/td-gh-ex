@@ -47,7 +47,7 @@ function agency_plus_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Agency Plus Pro', 'agency-plus' ),
 				'pro_text' => esc_html__( 'Buy Pro', 'agency-plus' ),
-				'pro_url'  => 'https://www.wpconcern.com/downloads/agency-plus/',
+				'pro_url'  => 'https://ithemer.com/themes/agency-plus-pro/',
 				'priority'  => 1,
 			)
 		)

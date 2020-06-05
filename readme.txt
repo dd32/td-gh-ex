@@ -1,10 +1,10 @@
 === Agency Plus ===
 
-Contributors: wpconcern
+Contributors: ithemer
 Requires at least: 5.2
 Requires PHP: 5.6.20
 Tested up to: 5.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,15 @@ Agency Plus is distributed under the terms of the GNU GPL
 Agency Plus includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.4 - June 5 2020 =
+* Footer changes
+* Blog mobile width
+* Demo link changes
+* Required header fields for style.css
+
+= 1.0.3 - Apr 13 2020 =
+* Footer changes
 
 = 1.0.3 - Apr 13 2020 =
 * Fix minor issues

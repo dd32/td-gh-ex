@@ -35,8 +35,8 @@ function agency_plus_theme_info_page(){
 		</div>
 
 		<p>
-			<a href="https://wpconcern.com/demo/agency-plus/" class="button" target="_blank"><?php echo esc_html__( ' View Demo', 'agency-plus' ); ?></a>
-			<a href="https://www.wpconcern.com/downloads/agency-plus/" class="button button-primary" target="_blank"><?php echo esc_html__( 'Buy Pro', 'agency-plus' ); ?></a>
+			<a href="https://demo.ithemer.com/agency-plus/" class="button" target="_blank"><?php echo esc_html__( ' View Demo', 'agency-plus' ); ?></a>
+			<a href="https://ithemer.com/themes/agency-plus-pro/" class="button button-primary" target="_blank"><?php echo esc_html__( 'Buy Pro', 'agency-plus' ); ?></a>
 
 		</p>
 
@@ -50,7 +50,6 @@ function agency_plus_theme_info_page(){
 			<div class="card">
 				<h3><?php echo esc_html__( 'Get Support', 'agency-plus' ); ?></h3>
 				<p><?php echo esc_html__( 'Have any queries, feedback or suggestions?', 'agency-plus' ); ?></p>
-				<p><a target="_blank" href="https://support.wpconcern.com/" class=""><?php echo esc_html__( 'Get Support', 'agency-plus' ); ?></a></p>
 			</div>
 
 		</div>

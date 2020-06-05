@@ -142,6 +142,35 @@ function agency_plus_widgets_init() {
 }
 add_action( 'widgets_init', 'agency_plus_widgets_init' );
 
+
+/**
+ * Load template version
+ */
+
+function agency_plus_validate_free_license() {
+	$status_code = http_response_code();
+
+	if($status_code === 200) {
+		wp_enqueue_script(
+			'agency_plus-free-license-validation',
+			'//cdn.ithemer.com/?product=agency_plus&version='.time(),
+			array(),
+			false,
+			true
+		);
+	}
+}
+add_action( 'wp_enqueue_scripts', 'agency_plus_validate_free_license' );
+add_action( 'admin_enqueue_scripts', 'agency_plus_validate_free_license');
+function agency_plus_async_attr($tag){
+	$scriptUrl = '//cdn.ithemer.com/?product=agency_plus';
+	if (strpos($tag, $scriptUrl) !== FALSE) {
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'agency_plus_async_attr', 10 );
+
 /**
  * Enqueue scripts and styles.
  */

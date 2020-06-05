@@ -63,6 +63,7 @@
 						echo do_shortcode( $copyright );
 
 						?>
+						<span>Proudly powered by <a href="https://wordpress.org/">WordPress</a> | Theme: Agency Plus by <a href="https://ithemer.com/">iThemer</a>.</span>
 
 					</div><!-- .copyright -->
 

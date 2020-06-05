@@ -1,10 +1,12 @@
 /*!
 Theme Name: Agency Plus
-Theme URI: https://www.wpconcern.com/downloads/agency-plus/
+Theme URI: https://ithemer.com/themes/agency-plus/
 Author: WP Concern
-Author URI: https://www.wpconcern.com/
+Author URI: https://ithemer.com/
 Description: Agency Plus is a secure, speed optimized and fully customizable multi-purpose WordPress theme. It works perfectly with Gutenberg, Elementor, Beaver Builder, Brizy, KingComposer and most of the page builder plugins. Agency Plus is the perfect theme for agency, blogs, small business, startups, portfolio, law firm, university, school, college, medical and WooCommerce storefront with a beautiful & professional design. 
-Version: 1.0.3
+Version: 1.0.4
+Requires PHP: 5.6.20
+Tested up to: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: agency-plus
@@ -1329,6 +1331,10 @@ ol.comment-list li {
 #commentform  input[type="submit"]:hover {
     background: transparent;
     color: #a86500;
+}
+
+.post-grid-text-wrap{
+	padding: 0 15px;
 }
 
 /*--------------------------------------------------------------
