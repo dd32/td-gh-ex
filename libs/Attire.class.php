@@ -272,6 +272,7 @@ class Attire {
 			'footer_style' => 'footer4',
 
 			'main_layout_type'                  => 'container-fluid',
+			'main_layout_width'                  => '1300',
 			'header_content_layout_type'        => 'container',
 			'body_content_layout_type'          => 'container',
 			'footer_widget_content_layout_type' => 'container',

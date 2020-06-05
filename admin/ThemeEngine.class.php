@@ -257,7 +257,7 @@ class AttireThemeEngine {
 		 *
 		 */
         $container_width = esc_attr( $theme_mod['container_width'] );
-		$main_layout_width = esc_attr( $theme_mod['main_layout_width'] );
+		$main_layout_width = isset($theme_mod['main_layout_width']) ? esc_attr( $theme_mod['main_layout_width'] ) : '1300';
 		$css             .= "@media screen and (min-width: 1200px) {body #mainframe.layout-fixed-width{max-width:{$main_layout_width}px;min-width:{$container_width}px;}}";
 
 		/**
@@ -503,6 +503,7 @@ class AttireThemeEngine {
 		$main_nav_dd_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
 		$css            .= "header .mainmenu > .dropdown > li, .default-menu.navbar-light .nav-search .form-control,.attire-mbl-menu .dropdown-menu li{{$main_nav_dd_bg};}"; // Search box bg color + main nav dd bg
 
+        $theme_mod['menu_dropdown_bg_color'] = isset($theme_mod['menu_dropdown_bg_color']) ? $theme_mod['menu_dropdown_bg_color'] : '#ffffff';
 		$main_nav_dd_bg = 'background:' . esc_attr( $theme_mod['menu_dropdown_bg_color'] );
 		$css              .= "header .mainmenu .dropdown-menu{{$main_nav_dd_bg};}"; // Dropdown + search field input text color
 

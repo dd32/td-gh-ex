@@ -10,8 +10,6 @@ $canshow = $canshow === 'show' ? ' canshow' : '';
 
 $meta = get_post_meta( get_the_ID(), 'attire_post_meta', true );
 // For page specific settings
-$ph_active = !isset($meta['page_header']) || (int)$meta['page_header'] === -1 ? $ph_active : (int)$meta['page_header'];
-
 $hide_site_footer = !isset($meta['hide_site_footer']) || (int)$meta['hide_site_footer'] === 0 ? 0 : (int)$meta['hide_site_footer'];
 
 ?>
