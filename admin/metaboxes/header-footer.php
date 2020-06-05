@@ -10,7 +10,7 @@ if (!defined("ABSPATH")) die();
 $meta = get_post_meta($post->ID, 'attire_post_meta', true);
 $hide_site_header = isset($meta['hide_site_header']) ? (int)$meta['hide_site_header'] : 0;
 $page_header = isset($meta['page_header']) ? (int)$meta['page_header'] : -1;
-$hide_site_footer = isset($meta['hide_site_footer']) ? (int)$meta['hide_site_footer'] : -1;
+$hide_site_footer = isset($meta['hide_site_footer']) ? (int)$meta['hide_site_footer'] : 0;
 
 wp_nonce_field('attire_page_header_nonce', 'attire_page_header_nonce');
 
@@ -26,12 +26,12 @@ wp_nonce_field('attire_page_header_nonce', 'attire_page_header_nonce');
     </div>
     <div class="form-group">
         <input type='hidden' name='attire_post_meta[hide_site_header]' value='0'>
-        <input style='margin: -2px 3px 0 0' type='checkbox' <?php checked(1, $hide_site_header, false) ?> name='attire_post_meta[hide_site_header]' value='1' id='htm'>
+        <input style='margin: -2px 3px 0 0' type='checkbox' <?php checked(1, $hide_site_header) ?> name='attire_post_meta[hide_site_header]' value='1' id='htm'>
         <label style='font-weight: normal' for='htm'><?php echo __("Hide Top Menu", "attire"); ?></label>
     </div>
     <div class="form-group">
         <input type='hidden' name='attire_post_meta[hide_site_footer]' value='0'>
-        <input style='margin: -2px 3px 0 0' type='checkbox' <?php checked(1, $hide_site_footer, false) ?> name='attire_post_meta[hide_site_footer]' value='1' id='htm1'>
+        <input style='margin: -2px 3px 0 0' type='checkbox' <?php checked(1, $hide_site_footer) ?> name='attire_post_meta[hide_site_footer]' value='1' id='htm1'>
         <label style='font-weight: normal' for='htm1'><?php echo __("Hide Site Footer", "attire"); ?></label>
     </div>
 </div>
