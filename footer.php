@@ -1,6 +1,6 @@
 <!-- Footer Section -->
 <?php 
-$appointment_options=theme_setup_data();
+$appointment_options=appointment_theme_setup_data();
 $footer_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
 if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
 <div class="footer-section">
@@ -20,7 +20,7 @@ if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
 			<div class="col-md-8">
 				<div class="footer-copyright">
 					<?php if( $footer_setting['footer_menu_bar_enabled'] == 0) { ?>
-					<?php echo $footer_setting[ 'footer_copyright_text']; ?>
+					<?php echo wp_kses_post($footer_setting[ 'footer_copyright_text']); ?>
 					</a>
 					<?php } // end if ?>
 				</div>

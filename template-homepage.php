@@ -1,24 +1,14 @@
-		<?php 
-		/**
-		Template Name: Home Page
-		*/
-		
-		get_header();
-		//****** get index static banner  ********
-		get_template_part('index', 'slider');
-		
-		//****** Orange Sidebar Area ********
-		get_sidebar('orange');
-				
-		//****** get index service  ********				
-		get_template_part('index', 'service');
-		
-		//****** get Home call out
-		get_template_part('index','home-callout'); 	
+<?php
+// Template Name: Home Page
 
-		//****** get index News  ********
-		get_template_part('index', 'news');
-				
-		get_footer();
-		
-		?>
+get_header();
+$appointment_options = appointment_theme_setup_data();
+$news_setting = wp_parse_args(get_option('appointment_options', array()), $appointment_options);?>
+<div id="wrap"></div>	
+<div class="clearfix"></div>
+<?php
+do_action('appointment_sections', false);
+if ($news_setting['home_blog_enabled'] == 0) {
+    get_template_part('index', 'news');
+}
+get_footer();?>		

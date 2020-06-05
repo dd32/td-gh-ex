@@ -1,99 +1,42 @@
-Appointment Theme README.
+=== Appointment ===
+
+Contributors: priyanshumittal
+Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
+Requires at least: 4.5
+Tested up to: 5.4.1
+Stable tag: 2.8
+Requires PHP: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+== Description ==
 
 Appointment WordPress Theme is a fully responsive and translation ready theme that allows you to create stunning blogs and websites. Theme is well suited for companies, law firms, travel, photography, recipe, design, art, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablets friendly. It has various options in WordPress Customizer to change look of the theme. Theme customizer can be used to add your own custom header, favicon, logo, slides, services, callout and many more . In the premium version you can add different type of slides like video, aside, quote, status and standard all have a different HTML look. Number of inbuilt widgets, sidebars support for WPML, Polylang translation WordPress Plugins, Contact Form 7, portfolio template, contact us , portfolio column layouts and many sections on business homepage template. Appointment theme comes with Spanish translation. Other translations / locals yet to come. Just navigate to Appearance / Customize to start customizing.
- 
-Appointment supports featured post slider based on the concept of custom post types.
-Author: Priyanshu Mittal,Shahid Mansuri,Vibhore Purandey and Akhilesh Nagar.
-Theme Homepage Url: http://www.appointpress.com/theme/appointment
 
-About:
-Appointment a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.appointpress.com). 
+== Installation ==
 
-The CSS, XHTML and design is released under GPL:
-http://www.opensource.org/licenses/gpl-license.php
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
+== Keyboard navigation ==
 
-Appointment supports Custom Menu, Widgets and 
-the following extra features:
+Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
- - Pre-installed menu and content colors
- - Responsive
- - Custom sidebars
- - Support for post thumbnails
- - Similar posts feature
- - 4 widgetized areas in the footer
- - Slideshow using Post Meta  
- - Custom footer
- - Translation Ready 
- 
+== License ==
 
-# Basic Setup of the Theme.
------------------------------------
-Fresh installation!
+Appointment WordPress Theme, Copyright (C) 2019, Webriti
+Appointment Pro is distributed under the terms of the GNU GPL
 
-1. Upload the Appointment Theme folder to your wp-content/themes folder.
-2. Activate the theme from the WP Dashboard.
-3. Done!
-=== Images ===
-
-All images in Appointment are licensed under the terms of the GNU GPL.
-
-# Top Navigation Menu:
-- Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
-- Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
-
-=============Page Templates======================
-1. Contact  Page Tempalte:- Create a page as you do in WordPress and select the page template with the name 'Contact'
-
-
-===========Front Page Added with the theme=================
-1 It has header(logo + menus),slider, services,recent comments widgets and footer.
-
-==================Featued Slider=============
-For adding your custom Images in the slider you just need to add the information to the meta box , placed just below the post editor.
-
-======Site Title and Description=============
-Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
-	
-Support
--------
-
-Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
-Appointment WordPress Theme bundles the following third-party resources:
-
-Slider Image
-URL: http://pixabay.com/en/office-home-office-creative-apple-581131/
-Source:http://pixabay.com
-License: CC0 Public Domain
-
-URL: http://pixabay.com/en/startup-start-up-notebooks-creative-593354/
-Source:http://pixabay.com
-License: CC0 Public Domain
-
-URL: http://pixabay.com/en/iphone-6-apple-ios-iphone-ios-8-458159/
-Source:http://pixabay.com
-License: CC0 Public Domain
-
-Page Header Image
-URL: http://pixabay.com/en/home-office-workstation-office-336377/
-Source:http://pixabay.com
-License: CC0 Public Domain
-
-Home call out Overlay Image
-URL: http://pixabay.com/en/office-meeting-business-partners-336368/
-Source:http://pixabay.com
-License: CC0 Public Domain
-
-Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io
-
-
-
-# --- EOF --- #
-============================Change Log================================
+== Changelog ==
+@Version 2.8
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Declared all the licenses.
+3. Changed the screenshot image.
+4. Move the homepage sections from theme to companion plugin.
+5. Removed the custom header support.
+6. Fixed all the other issues.
 @Version 2.7.8
 1.Move Trustworthy Websites setting from customizer to About Appointment Theme option
 @Version 2.7.7
@@ -342,4 +285,49 @@ Source: http://fontawesome.io
 @Version 1.0
 released
 
-# --- EOF --- #
+Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
+
+Appointment supports Custom Menu, Widgets and 
+the following extra features:
+
+ - Pre-installed menu and content colors
+ - Responsive
+ - Custom sidebars
+ - Support for post thumbnails
+ - Similar posts feature
+ - 4 widgetized areas in the footer
+ - Slideshow using Post Meta  
+ - Custom footer
+ - Translation Ready 
+
+Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
+
+== External resources ==
+
+Font Awesome: 
+Copyright: (c) Dave Gandy
+License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
+Source: https://fontawesome.com
+
+Bootstrap:
+Copyright: (c) Twitter
+License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+Source: http://getbootstrap.com
+
+Custom control - Dropdown Select2:
+Copyright: Anthony Hortin
+License: GNU General Public License v2 or later
+Source: https://github.com/maddisondesigns/customizer-custom-controls
+
+Customizer Notify:
+Copyright: (c) Mikesetzer
+License: Under GNU General Public License
+Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
+
+== Images ==
+* Image used in the screenshot
+License CC0 Public Domain
+https://pxhere.com/en/photo/912411
+
+* Images on /images folder
+Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

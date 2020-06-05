@@ -5,7 +5,7 @@ Template Name: Fullwidth
 get_header();
 get_template_part('index','banner');
 ?>
-<div class="page-builder">
+<div class="page-builder" id="wrap">
 	<div class="container">
 		<div class="row">
 			<!-- Blog Area -->

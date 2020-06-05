@@ -9,13 +9,13 @@
 					<div class="page-title">
 						<h1>
 						<?php 
-						printf(_e('Author Archive','appointment').' '.'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' ); ?>
+						printf(esc_html__('Author Archive','appointment').' '.'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_html( get_the_author() ) . '" rel="me">' . esc_html(get_the_author()) . '</a>' ); ?>
 						</h1>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<ul class="page-breadcrumb">
-						<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs();?>
+						<?php if (function_exists('appointment_custom_breadcrumbs')) appointment_custom_breadcrumbs();?>
 					</ul>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 <!-- /Page Title Section -->
 <div class="clearfix"></div>
 <!-- /Page Title Section ---->
-<div class="page-builder">
+<div class="page-builder" id="wrap">
 	<div class="container">
 		<div class="row">
 		

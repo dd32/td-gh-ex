@@ -14,20 +14,63 @@ jQuery(document).ready(function() {
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             mobileTest = true;
         }
-
-        hoverDropdown(width, mobileTest);
+        appointment_navbarSubmenu(width);
+        appointment_hoverDropdown(width, mobileTest);
 
         jQuery(window).resize(function() {
             var width = Math.max(jQuery(window).width(), window.innerWidth);
-            hoverDropdown(width, mobileTest);
+            appointment_hoverDropdown(width, mobileTest);
         });
 
+        /* ---------------------------------------------- /*
+         * Navbar submenu
+         /* ---------------------------------------------- */
+
+        function appointment_navbarSubmenu(width) {
+            if (width > 1100) {
+                jQuery('.navbar-default .navbar-nav > li.dropdown').hover(function() {
+                    var MenuLeftOffset  = jQuery(this).offset().left;
+                    var Menu1LevelWidth = jQuery('.dropdown-menu', jQuery(this)).width();
+                    if (width - MenuLeftOffset < Menu1LevelWidth * 2) {
+                        jQuery(this).children('.dropdown-menu').addClass('leftauto');
+                    } else {
+                        jQuery(this).children('.dropdown-menu').removeClass('leftauto');
+                    }
+                    if (jQuery('.dropdown', jQuery(this)).length > 0) {
+                        var Menu2LevelWidth = jQuery('.dropdown-menu', jQuery(this)).width();
+                        if (width - MenuLeftOffset - Menu1LevelWidth < Menu2LevelWidth) {
+                            jQuery(this).children('.dropdown-menu').addClass('left-side');
+                        } else {
+                            jQuery(this).children('.dropdown-menu').removeClass('left-side');
+                        }
+                    }
+                });
+
+                 jQuery('.navbar-default .navbar-nav > li.dropdown a').focus(function() {
+                    var MenuLeftOffsets  = jQuery(this).parent().offset().left;
+                    var Menu1LevelWidth = jQuery('.dropdown-menu', jQuery(this).parent()).width();
+                    if (width - MenuLeftOffsets < Menu1LevelWidth * 2) {
+                        jQuery(this).parent().children('.dropdown-menu').addClass('leftauto');
+                    } else {
+                        jQuery(this).parent().children('.dropdown-menu').removeClass('leftauto');
+                    }
+                    if (jQuery('.dropdown', jQuery(this).parent()).length > 0) {
+                        var Menu2LevelWidth = jQuery('.dropdown-menu', jQuery(this).parent()).width();
+                        if (width - MenuLeftOffsets - Menu1LevelWidth < Menu2LevelWidth) {
+                            jQuery(this).parent().children('.dropdown-menu').addClass('left-side');
+                        } else {
+                            jQuery(this).parent().children('.dropdown-menu').removeClass('left-side');
+                        }
+                    }
+                });
+            }
+        }
 
         /* ---------------------------------------------- /*
          * Navbar hover dropdown on desctop
          /* ---------------------------------------------- */
 
-        function hoverDropdown(width, mobileTest) {
+        function appointment_hoverDropdown(width, mobileTest) {
             if ((width > 1100) && (mobileTest !== true)) {
                 jQuery('.dropdown-menu').removeAttr("style");
                 var delay = 0;
@@ -55,19 +98,37 @@ jQuery(document).ready(function() {
                 });
             }
         }
-       
-       jQuery('li.dropdown').find('a').each(function (){
-          var link = jQuery(this).attr('href');
-              if (link==='' || link==="#") {
-                jQuery(this).on('click', function(){
-                if( jQuery(window).width() < 1100) {
-                    jQuery('li.dropdown,li.dropdown-submenu').removeClass('open');
-                    jQuery(this).next().slideToggle();
-                }
-                return false;
-                }); 
-              }
-    });
+
+          /* ---------------------------------------------- /*
+         * Navbar focus dropdown on desktop
+         /* ---------------------------------------------- */
+
+           
+            const topLevelLinks = document.querySelectorAll('.navbar .navbar-nav > li.dropdown a');
+            topLevelLinks.forEach(link => {
+              link.addEventListener('focus', function(e) {
+                this.parentElement.classList.add('open')
+                e.preventDefault();
+
+                e.target.parentElement.querySelectorAll( ".open" ).forEach( e =>
+                    e.classList.remove( "open" ) );
+              })             
+
+            })
+
+            jQuery('li a').focus(function() { 
+
+             jQuery(this).parent().siblings().removeClass('open');
+
+            });
+
+            jQuery('a,input').bind('focus', function() {
+             if(!jQuery(this).closest(".menu-item").length ) {
+                topLevelLinks.forEach(link => {
+                link.parentElement.classList.remove('open')
+            })
+            }
+        })
         
         jQuery('li.dropdown').find('.caret').each(function(){
             jQuery(this).on('click', function(){
@@ -79,7 +140,3 @@ jQuery(document).ready(function() {
             });
         });
 });
-	   
-
-	
-	  

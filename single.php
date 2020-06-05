@@ -2,7 +2,7 @@
 get_header();
 get_template_part('index','banner'); ?>
 <!-- Blog Section Right Sidebar -->
-<div class="page-builder">
+<div class="page-builder" id="wrap">
 	<div class="container">
 		<div class="row">
 		
@@ -14,14 +14,14 @@ get_template_part('index','banner'); ?>
 		while(have_posts()) { the_post();
 		get_template_part('content',''); ?>
 				<!--Blog Author-->
-				<div class="comment-title"><h3><?php _e('About the author','appointment'); ?></h3></div>
+				<div class="comment-title"><h3><?php esc_html_e('About the author','appointment'); ?></h3></div>
 				<div class="blog-author">
 					<div class="media">
 						<div class="pull-left">
 							<?php echo get_avatar( get_the_author_meta( 'ID') , 200); ?>
 						</div>
 						<div class="media-body">
-							<h2> <?php the_author(); ?> <span> <?php $user = new WP_User( get_the_author_meta( 'ID' ) ); echo $user->roles[0];?> </span></h2>
+							<h2> <?php the_author(); ?> <span> <?php $user = new WP_User( get_the_author_meta( 'ID' ) ); echo esc_html($user->roles[0]);?> </span></h2>
 							<p><?php the_author_meta( 'description' ); //the_author_description(); ?> </p>
 							<ul class="blog-author-social">
 							   <?php			

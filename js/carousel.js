@@ -1,28 +1,21 @@
 jQuery(document).ready(function(){
+jQuery('#carousel-example-generic').carousel({
+  pause:"hover",
+  keyboard: true
+  })
 
-		//	Project Scroll Js	
-		jQuery('#newCarousel .item').each(function(){
-				
-		  var next = $(this).next();
-		  if (!next.length) {
-			next = $(this).siblings(':first');
-		  }
-		  next.children(':first-child').clone().appendTo($(this));
-		  
-		  for (var i=0;i<1;i++) {
-			next=next.next();
-			if (!next.length) {
-				next = $(this).siblings(':first');
-			}
-			
-			next.children(':first-child').clone().appendTo($(this));
-		  }
-		});
-		
-
-		
-		
-		
+jQuery('#carousel-example-generic a').each(function(){
+	  jQuery(this).on('focus', function(){
+	  	jQuery('#carousel-example-generic').carousel('pause')
+	  })
 });
-			
-		
+jQuery('a,input').each(function(){
+	  jQuery(this).on('focus', function(){
+	  	  if(!jQuery(this).closest(".item").length ) {
+	  	jQuery('#carousel-example-generic').carousel('cycle')
+	     }
+	  })
+});
+
+});
+	
