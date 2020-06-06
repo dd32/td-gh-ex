@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2020-04-21 18:06+0100\n"
-"PO-Revision-Date: 2020-04-21 18:06+0100\n"
+"POT-Creation-Date: 2020-06-06 17:56+0100\n"
+"PO-Revision-Date: 2020-06-06 17:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -127,64 +127,64 @@ msgstr ""
 msgid "WordPress Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:48
+#: functions.php:51
 msgid "Primary"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:96
 msgid "Small"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:97
 msgid "S"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:102
 msgid "Regular"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:103
 msgid "M"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:108
 msgid "Large"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:109
 msgid "L"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:114
 msgid "Larger"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:115
 msgid "XL"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:144
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:143 functions.php:152 functions.php:161 functions.php:170
-#: functions.php:179
+#: functions.php:146 functions.php:155 functions.php:164 functions.php:173
+#: functions.php:182
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:150
+#: functions.php:153
 msgid "Push Sidebar"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:162
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:171
 msgid "Footer Center"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:180
 msgid "Footer Right"
 msgstr ""
 
@@ -654,72 +654,80 @@ msgstr ""
 msgid "Spotify URL"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:366
+msgid "WhatsApp URL"
+msgstr ""
+
+#: inc/customizer.php:395
 msgid "Open social links"
 msgstr ""
 
-#: inc/customizer.php:396
+#: inc/customizer.php:401
 msgid "Same window"
 msgstr ""
 
-#: inc/customizer.php:397
+#: inc/customizer.php:402
 msgid "New Window"
 msgstr ""
 
-#: inc/customizer.php:658
+#: inc/customizer.php:664
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:667
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:664
+#: inc/customizer.php:670
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:667
+#: inc/customizer.php:673
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:670
+#: inc/customizer.php:676
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:679
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:676
+#: inc/customizer.php:682
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:679
+#: inc/customizer.php:685
 msgid "Tumblr"
 msgstr ""
 
-#: inc/customizer.php:682
+#: inc/customizer.php:688
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer.php:685
+#: inc/customizer.php:691
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:688
+#: inc/customizer.php:694
 msgid "Xing"
 msgstr ""
 
-#: inc/customizer.php:691
+#: inc/customizer.php:697
 msgid "Reddit"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:700
 msgid "Twitch"
 msgstr ""
 
-#: inc/customizer.php:697
+#: inc/customizer.php:703
 msgid "Spotify"
+msgstr ""
+
+#: inc/customizer.php:706
+msgid "WhatsApp"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:72

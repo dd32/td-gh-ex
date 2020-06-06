@@ -360,6 +360,11 @@ function ansia_custom_settings_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Spotify URL', 'ansia')
 	);
+	$socialmedia[] = array(
+	'slug'=>'_whatsappurl', 
+	'default' => '',
+	'label' => __('WhatsApp URL', 'ansia')
+	);
 	foreach( $socialmedia as $ansia_theme_options ) {
 		// SETTINGS
 		$wp_customize->add_setting(
@@ -650,6 +655,7 @@ if( ! function_exists('ansia_show_social_network')){
 		$redditURL = ansia_options('_redditurl', '');
 		$twitchURL = ansia_options('_twitchurl', '');
 		$spotifyURL = ansia_options('_spotifyurl', '');
+		$whatsappURL = ansia_options('_whatsappurl', '');
 		?>
 		<div class="ansia-social-button <?php echo $position == 'sidebar' ? 'inSidebar' : 'inFooter' ?>">
 			<?php if ($position == 'float') : ?>
@@ -695,6 +701,9 @@ if( ! function_exists('ansia_show_social_network')){
 			<?php endif; ?>
 			<?php if ($spotifyURL) : ?>
 				<a class="ansia-social" href="<?php echo esc_url($spotifyURL); ?>" target="<?php echo esc_attr($openLinks); ?>" <?php echo esc_attr($attribute); ?> title="<?php esc_attr_e( 'Spotify', 'ansia' ); ?>"><i class="fa fa-spotify spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Spotify', 'ansia' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if ($whatsappURL) : ?>
+				<a class="ansia-social" href="<?php echo esc_url($whatsappURL); ?>" target="<?php echo esc_attr($openLinks); ?>" <?php echo esc_attr($attribute); ?> title="<?php esc_attr_e( 'WhatsApp', 'ansia' ); ?>"><i class="fa fa-whatsapp spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'WhatsApp', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 		</div>
 		<?php

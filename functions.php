@@ -34,6 +34,9 @@ if ( ! function_exists( 'ansia_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+		
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -190,6 +193,9 @@ add_action( 'widgets_init', 'ansia_widgets_init' );
  */
 function ansia_scripts() {
 	wp_enqueue_style( 'ansia-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
+	if ( class_exists( 'WooCommerce' ) ) {
+		wp_enqueue_style( 'ansia-woocommerce', get_template_directory_uri() .'/css/woocommerce.min.css', array(), wp_get_theme()->get('Version'));
+	}
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css',array(), '4.7.0');
 	$query_args = array(
 		'family' => 'Playfair+Display:400,700%7CMuli:400,700',
