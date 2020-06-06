@@ -1,20 +1,20 @@
 == Besty ==
 Theme Name: Besty
-Theme URI: https://fasterthemes.com/wordpress-themes/Besty
-Description: Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got theme options to easily manage logo, social media links, footer text etc.
+Theme URI: https://fasterthemes.com/wordpress-themes/besty
+Description: Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got customizer options to easily manage logo, social media links, footer text etc.
 Author: FasterThemes
 Author URI: https://fasterthemes.com/
 Tags: custom-menu, right-sidebar, full-width-template, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns , translation-ready
-Version: 1.4.1
+Version: 1.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Besty Theme, Copyright 2017 fasterthemes.com
+Besty Theme, Copyright 2020 fasterthemes.com
 Besty is distributed under the terms of the GNU GPL
 
 This theme, like WordPress, is licensed under the Faster Themes.
 
 == Theme Description ==
-Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got theme options to easily manage logo, social media links, footer text etc.
+Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got customizer options to easily manage logo, social media links, footer text etc.
 
 == Features ==
 Responsive design(Bootstrap), Fluid Layout (Masonry) ,Theme Options, Custom Widgets, Custom Menu, Left-sidebar, template, Full-width template.
@@ -51,30 +51,23 @@ TGM Plugin license and link
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
 ---------------------------------------------------------
- 
-			
-		i)Administration Panel
-		===========
-		Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-		License: GNU General Public License v2
-
-		ii)Fonts
+ 		i)Fonts
 		===========
 		Istok Web - http://fonts.googleapis.com/css?family=Istok+Web
 		They are under SIL Open Font.
 			
-		iii)Bootstrap files
+		ii)Bootstrap files
 		===========
 		we used are licensed under the Apache License v3.1.1
 		Bootstrap - http://getbootstrap.com
 		Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-		iv) respond.min js file
+		iii) respond.min js file
 		============
 		we used are licensed under MIT/GPL2.
 		Version - v1.3.0
 
-		v) Images
+		iv) Images
 		============
 
 		http://pixabay.com/en/bestynt-table-dinner-dining-402036/  - Public Domain CC0 License
