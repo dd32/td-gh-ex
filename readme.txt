@@ -3,12 +3,10 @@ Theme Name: Booster
 Theme URI: https://fasterthemes.com/wordpress-themes/Booster
 Author: FasterThemes
 Author URI: https://fasterthemes.com/
-Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
-and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
-social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
-It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
+Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons, Individual Consultants and any other creative websites and blogs. It's got developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly.It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
+
 Tags: Right-sidebar, one-column, two-columns, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
-version: 2.0.1
+version: 2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the FasterThemes.
@@ -18,10 +16,7 @@ Booster is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic
 
 == Theme Description ==
 
-Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
-and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
-social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
-It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
+Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants and any other creative websites and blogs. It's got developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly.It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
 
 == Features ==
 
@@ -45,25 +40,8 @@ Right-sidebar, one-column, two-columns, theme-options, full-width-template, stic
  = The template files should be there now: /wp-content/themes/booster/index.php (example).
 3. Log into your WP admin panel and click on "Appearance". Go to "Themes" tab.
 4. Now click on "booster" to activate the theme.
-5. Complete all of the required inputs in the theme Options page (in the WP admin panel) and click "Save".
-6. Change Logo and Favicon:
- = Login to your wp-admin area and go to Appearance -> FT Options.
- = Select "Basic Settings" Tab.
- = Upload the logo, that you require & Enter Introduction text for right of Your Theme.
-7. Social Media:
- = Login to your wp-admin area and go to Appearance -> FT Options.
- = Select "Social Settings" tab
- = Here you can add your Facebook, Twitter, Linkedin URLs which appear in the header.
-8. Home Slider:
- = Login to your wp-admin area and go to Appearance -> FT Options.
- = Select "Home Slider" tab
- = Here you can add your slider image and slider link . 
- 
-== Settings of home page ==
-1. Setup home page slider : Open wp-admin then set from Appearance -> FT Options -> Home Slider
-   Then add slide image and slide link for slider image.
-2. Setup of 'Welcome' and 'Why choose me' sections : First you need to open Appearance -> FT Options -> Home Settings
-	then you can input content and images for these sections.
+5. To customize logo, favicon etc, please visit Appearance => Customize menu of your WordPress admin panel.
+
 
 == Images used in Screenshot.png/ Demo site ==
 If you want to use images used in screenshot.png or the images which are on our demo site : http://booster.fasterthemes.com/
@@ -88,11 +66,4 @@ License and Copyrights for Resources used in this theme
 	v)   The bootstrap files which we used are licensed under the Apache License v2.0
 	
 	
-	For any help you can mail us at support[at]fasterthemes.com
-
----------------------------------------------------------
-TGM Plugin license and link
----------------------------------------------------------
-
- license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation
+For any help you can mail us at support[at]fasterthemes.com

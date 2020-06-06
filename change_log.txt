@@ -60,3 +60,6 @@ Version 2.0 (04 Jan 2017)
 Version 2.0.1 (13 Dec 2018)
 	i) Fix css issue
 	i) Fix some changes
+
+Version 2.1 (06 June 2020)
+	i) Minor changes
