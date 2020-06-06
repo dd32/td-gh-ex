@@ -1,5 +1,28 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+
+= 2.1.4=
+* Released: June 06, 2020
+* Woocommerce style fix for single product pages
+
+= 2.1.2=
+* Released: January 17, 2020
+* New: Added option to auto display the set featured image below post title. Available in Customizer -> Post Settings
+
+= 2.1.1=
+* Released: November 18, 2019
+* Fix: Image Captions alignment
+* WordPress 5.3 compatibility
+
+= 2.1=
+* Released: June 20, 2019
+* Fix: RTL language style fixes
+
+= 2.0.1 =
+* Released: June 9, 2019
+* Fix: Updated Readme.txt file as per WordPress guidelines
+* Fix: Removed background shadow from nav bar
+
 -------------- 05 June 2019 ----------------
 
 
