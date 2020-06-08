@@ -134,7 +134,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Left Sidebar', 'attire' ),
 			'id'            => 'left',
 			'description'   => esc_html__( 'Left Sidebar', 'attire' ),
-			'before_widget' => '<div class="widget widget-default">',
+			'before_widget' => '<div id="%1$s" class="widget widget-default %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-heading widget-title">',
 			'after_title'   => '</h4>'
@@ -144,7 +144,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Right Sidebar', 'attire' ),
 			'id'            => 'right',
 			'description'   => esc_html__( 'Right Sidebar', 'attire' ),
-			'before_widget' => '<div class="widget widget-default">',
+			'before_widget' => '<div id="%1$s" class="widget widget-default %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
@@ -154,7 +154,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Footer1', 'attire' ),
 			'id'            => 'footer1',
 			'description'   => esc_html__( 'Footer1', 'attire' ),
-			'before_widget' => '<div class="footer-widget  widget">',
+			'before_widget' => '<div id="%1$s" class="footer-widget  widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
@@ -164,7 +164,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Footer2', 'attire' ),
 			'id'            => 'footer2',
 			'description'   => esc_html__( 'Footer2', 'attire' ),
-			'before_widget' => '<div class="footer-widget  widget">',
+			'before_widget' => '<div id="%1$s" class="footer-widget  widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
@@ -174,7 +174,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Footer3', 'attire' ),
 			'id'            => 'footer3',
 			'description'   => esc_html__( 'Footer3', 'attire' ),
-			'before_widget' => '<div class="footer-widget  widget">',
+			'before_widget' => '<div id="%1$s" class="footer-widget  widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
@@ -183,7 +183,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Footer4', 'attire' ),
 			'id'            => 'footer4',
 			'description'   => esc_html__( 'Footer4', 'attire' ),
-			'before_widget' => '<div class="footer-widget  widget">',
+			'before_widget' => '<div id="%1$s" class="footer-widget  widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
@@ -192,7 +192,7 @@ class AttireThemeEngine {
 			'name'          => esc_html__( 'Footer5', 'attire' ),
 			'id'            => 'footer5',
 			'description'   => esc_html__( 'Footer5', 'attire' ),
-			'before_widget' => '<div class="footer-widget  widget">',
+			'before_widget' => '<div id="%1$s" class="footer-widget  widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'

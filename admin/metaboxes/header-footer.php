@@ -19,9 +19,9 @@ wp_nonce_field('attire_page_header_nonce', 'attire_page_header_nonce');
     <div class='form-group'>
         <label><?php _e('Page Header', 'attire') ?></label>
         <select class="form-control wpdm-custom-select" id="page_header" name="attire_post_meta[page_header]">
-            <option value="-1" <?php selected(-1, $page_header, false) ?>><?php _e('Theme Default', 'attire') ?></option>
-            <option value="1" <?php selected(1, $page_header, false) ?>><?php _e('Show', 'attire') ?></option>
-            <option value="0" <?php selected(0, $page_header, false) ?>> <?php _e('Hide', 'attire') ?></option>
+            <option value="-1" <?php selected(-1, $page_header) ?>><?php _e('Theme Default', 'attire') ?></option>
+            <option value="1" <?php selected(1, $page_header) ?>><?php _e('Show', 'attire') ?></option>
+            <option value="0" <?php selected(0, $page_header) ?>> <?php _e('Hide', 'attire') ?></option>
         </select>
     </div>
     <div class="form-group">
