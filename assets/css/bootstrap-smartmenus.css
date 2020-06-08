@@ -192,6 +192,11 @@ a.bg-light:focus, a.bg-light:hover {
 	}
 }
 @media (max-width: 500px) { 
+	.navbar-brand img.custom-logo {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
 	.navbar-brand, .sticky-navbar-brand {
 		float: none;
 	}
