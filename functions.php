@@ -267,7 +267,9 @@ true
 }
 add_action( 'customize_preview_init', 'bands_customizer_preview' );
 function bands_customizer_fonts_preview() {
+if ( !empty( get_theme_mod( 'bands_header_font' ) ) ) {
 wp_enqueue_style( 'bands-google-fonts', 'https://fonts.googleapis.com/css?family=' . esc_html( ucwords( str_replace( ' ', '+', get_theme_mod( 'bands_header_font' ) ) ) ) . '' );
+}
 }
 add_action( 'customize_preview_init', 'bands_customizer_fonts_preview' );
 add_action( 'wp_enqueue_scripts', 'bands_customizer_fonts_preview' );
