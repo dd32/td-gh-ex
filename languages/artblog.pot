@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
-"Last-Translator: WP Concern<info@wpconcern.com>\n"
+"Last-Translator: WP Concern<ithemer.com@gmail.com>\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: "
 "__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
@@ -365,7 +365,7 @@ msgid "Artblog"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://www.wpconcern.com/downloads/artblog/"
+msgid "https://ithemer.com/themes/artblog/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -384,7 +384,7 @@ msgid "WP Concern"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.wpconcern.com/"
+msgid "https://ithemer.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme

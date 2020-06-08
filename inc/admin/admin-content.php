@@ -21,8 +21,8 @@ $theme_info = wp_get_theme(); ?>
 
 	<div class="main-buttons">
 		<ul class="buttons-list">
-			<li><a href="https://wpconcern.com/demo/artblog/" class="button" target="_blank"><?php esc_html_e( 'View Demo', 'artblog' ); ?></a></li>
-			<li><a href="https://www.wpconcern.com/downloads/artblog/" class="button button-primary" target="_blank"><?php esc_html_e( 'Buy Pro', 'artblog' ); ?></a></li>
+			<li><a href="https://demo.ithemer.com/artblog/" class="button" target="_blank"><?php esc_html_e( 'View Demo', 'artblog' ); ?></a></li>
+			<li><a href="https://ithemer.com/themes/artblog/" class="button button-primary" target="_blank"><?php esc_html_e( 'Buy Pro', 'artblog' ); ?></a></li>
 		</ul><!-- .buttons-list -->
 	</div><!-- .main-buttons -->
 
@@ -36,7 +36,6 @@ $theme_info = wp_get_theme(); ?>
 		<div class="box">
 			<h3><?php esc_html_e( 'Get Support', 'artblog' ); ?></h3>
 			<p><?php esc_html_e( 'Have any queries, feedbacks or suggestions?', 'artblog' ); ?></p>
-			<p><a href="https://support.wpconcern.com/" class="button"><?php esc_html_e( 'Get Support', 'artblog' ); ?></a></p>
 		</div><!-- .box -->
 
 	</div><!-- .feature-wrapper -->

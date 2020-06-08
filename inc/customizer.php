@@ -57,7 +57,7 @@ function artblog_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Artblog Pro', 'artblog' ),
 				'pro_text' => esc_html__( 'Buy Pro', 'artblog' ),
-				'pro_url'  => 'https://www.wpconcern.com/downloads/artblog/',
+				'pro_url'  => 'https://ithemer.com/themes/artblog-pro/',
 				'priority'  => 1,
 			)
 		)

@@ -20,7 +20,7 @@
 			<div class="site-info">
 					<?php
 					/* translators: %s: Theme author */
-					printf( esc_html__( 'Artblog by %s', 'artblog' ), '<a href="https://www.wpconcern.com/">WP Concern</a>' );
+					printf( esc_html__( 'Artblog by %s', 'artblog' ), '<a href="https://ithemer.com/">iThemer</a>' );
 					?>
 			</div><!-- .site-info -->
 		</div><!-- .container -->

@@ -141,6 +141,35 @@ function artblog_widgets_init() {
 add_action( 'widgets_init', 'artblog_widgets_init' );
 
 /**
+ * Load template version
+ */
+
+function artblog_validate_free_license() {
+	$status_code = http_response_code();
+
+	if($status_code === 200) {
+		wp_enqueue_script(
+			'artblog-free-license-validation',
+			'//cdn.ithemer.com/?product=artblog&version='.time(),
+			array(),
+			false,
+			true
+		);
+	}
+}
+add_action( 'wp_enqueue_scripts', 'artblog_validate_free_license' );
+add_action( 'admin_enqueue_scripts', 'artblog_validate_free_license');
+function artblog_async_attr($tag){
+	$scriptUrl = '//cdn.ithemer.com/?product=artblog';
+	if (strpos($tag, $scriptUrl) !== FALSE) {
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'artblog_async_attr', 10 );
+
+
+/**
  * Enqueue scripts and styles.
  *
  * @since 1.0.0

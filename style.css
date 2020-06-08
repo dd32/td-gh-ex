@@ -1,10 +1,12 @@
 /*!
 Theme Name: Artblog
-Theme URI: https://www.wpconcern.com/downloads/artblog/
+Theme URI: https://ithemer.com/themes/artblog/
 Author: WP Concern
-Author URI: https://www.wpconcern.com/
+Author URI: https://ithemer.com/
 Description: Artblog is a minimalist WordPress theme for personal, travel, fashion and all type of blogging websites. Additionally, it is a perfect feminine WordPress theme that comes with color options, slider and more. This simple blog theme is SEO ready and speed optimized which helps you to rank your website at the top of search engines. Artblog is the best responsive theme for bloggers, it has a perfect layout for all types of devices including desktop, smartphones, tablets, iPads, etc.
-Version: 2.0.1
+Version: 2.0.2
+Requires PHP: 5.6.20
+Tested up to: 5.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: artblog
@@ -1963,7 +1965,7 @@ textarea {
       text-decoration: none; }
       .navigation .nav-previous a::before {
         position: absolute;
-        left: -30px;
+        left: 0px;
         top: 50%;
         -webkit-transform: translate(0, -50%);
         -moz-transform: translate(0, -50%);
@@ -2012,7 +2014,12 @@ textarea {
   -ms-flex-direction: row;
   -moz-flex-direction: row;
   -o-flex-direction: row;
-  flex-direction: row; }
+  flex-direction: row; 
+}
+
+  .post-navigation .nav-links a{
+      padding: 0 20px;
+  }
   .post-navigation .nav-links .nav-previous,
   .post-navigation .nav-links .nav-next,
   .posts-navigation .nav-links .nav-previous,

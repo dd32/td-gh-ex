@@ -1,10 +1,10 @@
 === Artblog ===
 
-Contributors: wpconcern
+Contributors: wpconcern, ithemer
 Requires at least: 5.2
 Requires PHP: 5.6.20
 Tested up to: 5.4
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,12 @@ Artblog is a minimalist WordPress theme for personal, travel, fashion and all ty
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 2.0.2 - June 8 2020 =
+* Footer changes
+* Few CSS tweaks
+* Demo link changes
+* Required header fields for style.css
 
 = 2.0.1 - Apr 9 2020 =
 * Fix minor issues
