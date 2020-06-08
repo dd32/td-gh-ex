@@ -131,12 +131,12 @@ $config = array(
                 'network'     => 'live',
             ),
             
-               'weForms'           => array(
-                'title'       => 'weForms',
-                'description' => auto_car_get_wporg_plugin_description( 'weforms' ),
+               'contact-form-7'           => array(
+                'title'       => 'Contact Form 7',
+                'description' => auto_car_get_wporg_plugin_description( 'contact-form-7' ),
                 'check'       => ( defined( 'CONTACT_VERSION' ) || ! auto_car_check_passed_time( '259200' ) ),
-                'plugin_slug' => 'weforms',
-                'id'          => 'weforms',
+                'plugin_slug' => 'contact-form-7',
+                'id'          => 'contact-form-7',
                 'network'     => 'live',
             ),
             

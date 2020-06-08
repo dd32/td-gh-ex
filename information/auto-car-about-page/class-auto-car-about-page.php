@@ -165,8 +165,8 @@ if ( ! class_exists( 'auto_car_About_Page' ) ) {
 				$actions_count = $this->get_required_actions();
                 foreach ($actions_count as $a=>$r) {
                     $active_slug= $r['plugin_slug'];
-                    if($active_slug == 'weforms')
-                        $active_slug='wp-weforms';
+                    if($active_slug == 'contact-form-7')
+                        $active_slug='wp-contact-form-7';
                     if(is_plugin_active($r['plugin_slug'].'/'.$active_slug.'.php')){
                         unset($actions_count[$a]);
                     }
@@ -264,8 +264,8 @@ if ( ! class_exists( 'auto_car_About_Page' ) ) {
 								$actions_count = $this->get_required_actions();
                                 foreach ($actions_count as $a=>$r) {
                                     $active_slug= $r['plugin_slug'];
-                                    if($active_slug == 'weforms')
-                                        $active_slug='wp-weforms';
+                                    if($active_slug == 'contact-form-7')
+                                        $active_slug='wp-contact-form-7';
                                     if(is_plugin_active($r['plugin_slug'].'/'.$active_slug.'.php')){
                                         unset($actions_count[$a]);
                                     }
@@ -343,8 +343,8 @@ if ( ! class_exists( 'auto_car_About_Page' ) ) {
 			} elseif ( $slug == 'adblock-notify-by-bweb' ) {
 				$plugin_root_file = 'adblock-notify';
 			}
-            elseif ( $slug == 'weforms' ) {
-                $plugin_root_file = 'wp-weforms';
+            elseif ( $slug == 'contact-form-7' ) {
+                $plugin_root_file = 'wp-contact-form-7';
             }
 			else {
 				$plugin_root_file = $slug;

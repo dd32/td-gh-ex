@@ -6,8 +6,8 @@
  */
 function create_action_link( $state, $slug ) {
     $active_slug= $slug;
-    if($slug =='weforms')
-        $active_slug='weforms';
+    if($slug =='contact-form-7')
+        $active_slug='wp-contact-form-7';
 	switch ( $state ) {
 		case 'install':
 			return wp_nonce_url(
