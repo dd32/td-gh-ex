@@ -62,6 +62,7 @@ function kadence_setup() {
 		)
 	);
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'responsive-embeds' );
 }
 add_action( 'after_setup_theme', 'kadence_setup' );
 

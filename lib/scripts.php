@@ -11,7 +11,7 @@
 function pinnacle_scripts() {
 	global $pinnacle;
 
-	wp_enqueue_style( 'pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '178' );
+	wp_enqueue_style( 'pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '179' );
 	if ( isset( $pinnacle['skin_stylesheet'] ) && ! empty( $pinnacle['skin_stylesheet'] ) ) {
 		$skin = $pinnacle['skin_stylesheet'];
 	} else {
@@ -23,7 +23,7 @@ function pinnacle_scripts() {
 		wp_enqueue_style( 'pinnacle_child', get_stylesheet_uri(), false, null );
 	}
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'pinnacle_rtl', get_template_directory_uri() . '/assets/css/rtl.css', false, '178' );
+		wp_enqueue_style( 'pinnacle_rtl', get_template_directory_uri() . '/assets/css/rtl.css', false, '179' );
 	}
 	if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

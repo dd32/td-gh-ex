@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.9 | 8th June 2020 = 
+* Fix: Youtube Embed.
+
 = 1.7.8 | 22nd May 2020 = 
 * Update: Gutenberg styling.
 * Update: Redux Framework code.
