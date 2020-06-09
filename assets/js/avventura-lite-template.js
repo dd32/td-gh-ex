@@ -142,28 +142,29 @@ jQuery.noConflict()(function($){
 	});
 
 /* ===============================================
-   Header search 
+   Open header search 
    =============================================== */
+
+	function avventura_lite_open_search_form() {
+		$('.header-search .search-form').addClass('is-open');
+		$('body').addClass('no-scrolling');
+		return false;
+	}
 	
-	$('.header-search i').click(function(){
+	$( ".header-search a.open-search-form").on("focus", avventura_lite_open_search_form);
+	$( ".header-search a.open-search-form").on("click", avventura_lite_open_search_form);
 
-		$(this).prev('.search-form').find('input[type=text]').focus().val('');
+/* ===============================================
+   Close header search 
+   =============================================== */
 
-		if( !$('.header-search .search-form').hasClass('is-open')) {
-			
-			$('.header-search .search-form').addClass('is-open');
-			$('body').addClass('no-scrolling');
-			return false;
-		
-		} else {	
-			
-			$('.header-search .search-form').removeClass('is-open');
-			$('body').removeClass('no-scrolling');
-		
-		}
-
-    });
-
+	function avventura_lite_close_search_form() {
+		$('.header-search .search-form').removeClass('is-open');
+		$('body').removeClass('no-scrolling');
+	}
+	
+	$( ".header-search a.close-search-form").on("focus", avventura_lite_close_search_form);
+	$( ".header-search a.close-search-form").on("click", avventura_lite_close_search_form);
 
 /* ===============================================
    Footer fix
@@ -175,7 +176,8 @@ jQuery.noConflict()(function($){
 		$('#wrapper').css({'padding-bottom':footerHeight});
 	
 	}
-	
+
+	$( window ).load(avventura_lite_footer);
 	$( document ).ready(avventura_lite_footer);
 	$( window ).resize(avventura_lite_footer);
 

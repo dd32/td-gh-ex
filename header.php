@@ -56,8 +56,8 @@ if ( function_exists('wp_body_open') ) {
 						?>
             
 						<div class="header-search"> 
+							<a class="open-search-form" href="#search-form"><i class="fa fa-search" aria-hidden="true"></i></a>
 							<div class="search-form"><?php get_search_form();?></div>
-                            <i class="fa fa-search" aria-hidden="true"></i>
 						</div>
             
 						<div class="clear"></div>

@@ -5,7 +5,7 @@ Theme URI: https://www.themeinprogress.com/avventura-elegant-beauty-wordpress-sh
 Description: Avventura Lite is an elegant and beauty WordPress theme, perfect for writers, bloggers and photographers. Avventura Lite is also fully compatible with Contact Form 7 and WooCommerce plugin and is optimized for mobile devices.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 1.2.3
+Version: 1.2.4
 Requires PHP: 5.3
 Tested up to: 5.4
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, full-width-template, grid-layout, blog, e-commerce, photography
@@ -554,6 +554,19 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 .header-search i {
 	font-size:14px;
 	cursor:pointer;
+}
+
+.header-search a i {
+	color:#616161;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	-o-transition: color .3s ease;
+	transition: color .3s ease;
+}
+
+.header-search a:focus i ,
+.header-search a:hover i {
+	color:#d14a2b
 }
 
 .header-search {

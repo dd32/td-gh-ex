@@ -19,6 +19,6 @@ if ( avventura_lite_is_sidebar_area() == true ) : ?>
     <form role="search" method="get" id="header-searchform" action="<?php echo esc_url(home_url('/')); ?>">
 		<input type="text" placeholder="<?php esc_attr_e( 'Type here & click enter.',"avventura-lite" ) ?>" name="s" id="header-s" autocomplete="off" />
     </form>
-    <i class="fa fa-times searchform-close-button"></i>
+    <a class="close-search-form" href="#close-search-form"><i class="fa fa-times searchform-close-button"></i></a>
     
 <?php endif; ?>
