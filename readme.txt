@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 2.1 =
+* Footer Widget Area option added
+
 = 2.0 =
 * Minor changes in Rate us notice
 

@@ -6,6 +6,9 @@
  * @since 0.1
  */
 ?>
+<?php $footer_widget = get_theme_mod( 'astral_footer_toggle','1' );
+if($footer_widget) {
+?>
 <footer class="footer py-md-5 pt-md-3 pb-sm-5">
 	<?php
 	/* 
@@ -16,6 +19,7 @@
 	do_action( 'astral_footer_widget_area' );
 	?>
 </footer>
+<?php } ?>
 <div class="cpy-right text-center mwa-theme">
 	<?php
 	/* 

@@ -149,6 +149,20 @@ class astral_Customizer extends astral_Abstract_Main {
 			'priority'   => 35,
 		) );
 
+		$wp_customize->add_setting( 'astral_footer_toggle',
+			array(
+				'type'              => 'theme_mod',
+				'default'           => '1',
+				'sanitize_callback' => 'astral_sanitize_checkbox'
+			)
+		);
+		$wp_customize->add_control( new astral_Toggle_Switch_Custom_control( $wp_customize, 'astral_footer_toggle',
+			array(
+				'label' => __( 'Footer Widget Area', 'astral' ),
+				'section' => 'astral_footer'
+			)
+		) );
+
 		$wp_customize->add_setting( 'footer_text', array(
 			'type'              => 'theme_mod',
 			'default'           => '',
