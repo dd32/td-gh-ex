@@ -14,7 +14,6 @@
 <?php 
 	$hide_show_copyright = get_theme_mod('hide_show_copyright','1');	
 	$copyright_content = get_theme_mod('copyright_content');
-	$hide_show_scroller = get_theme_mod('hide_show_scroller','1');
 ?>
 
 <section id="footer-copyright">
@@ -35,9 +34,7 @@
 							 } 
 						 } 
 						?>
-					<?php if($hide_show_scroller == '1') { ?>
 						<a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
-					<?php } ?>
 				</div>
 			</div>
 			 <div class="col-md-6">
