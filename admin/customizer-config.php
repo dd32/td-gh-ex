@@ -1220,11 +1220,30 @@ $attire_options = array(
         'default' => false,
         'section' => 'header_image'
     ),
+    'ph_breadcrumb' => array(
+        'label' => __('Show Breadcrumb', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'checkbox',
+        'default' => false,
+        'section' => 'header_image'
+    ),
     'ph_bg_color' => array(
         'label' => __('Page Header Background Color', 'attire'),
         'transport' => 'postMessage',
         'type' => 'color',
         'default' => '',
+        'section' => 'header_image'
+    ),
+    'ph_overlay_opacity' => array(
+        'label' => __('BG Color Overlay Opacity', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'range',
+        'default' => 0,
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 100,
+            'step' => 1,
+        ),
         'section' => 'header_image'
     ),
     'ph_text_color' => array(
@@ -1247,7 +1266,7 @@ $attire_options = array(
         'section' => 'header_image'
     ),
 
-    'ph_bg_height' => array(
+    /*'ph_bg_height' => array(
         'label' => __('Page Header Height', 'attire'),
         'transport' => 'postMessage',
         'type' => 'range',
@@ -1256,6 +1275,42 @@ $attire_options = array(
             'min' => 60,
             'max' => 2000,
             'step' => 5,
+        ),
+        'section' => 'header_image'
+    ),*/
+    'ph_bg_padding_top' => array(
+        'label' => __('Page Header Padding Top', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'range',
+        'default' => 20,
+        'input_attrs' => array(
+            'min' => 20,
+            'max' => 600,
+            'step' => 1,
+        ),
+        'section' => 'header_image'
+    ),
+    'ph_bg_padding_bottom' => array(
+        'label' => __('Page Header Padding Bottom', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'range',
+        'default' => 20,
+        'input_attrs' => array(
+            'min' => 20,
+            'max' => 600,
+            'step' => 1,
+        ),
+        'section' => 'header_image'
+    ),
+    'ph_margin_bottom' => array(
+        'label' => __('Page Header Margin Bottom', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'range',
+        'default' => 20,
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 200,
+            'step' => 1,
         ),
         'section' => 'header_image'
     )

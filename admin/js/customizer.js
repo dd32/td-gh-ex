@@ -11,7 +11,7 @@
 
     function setCss(themeModName, selector, propertyName) {
         var unit = '';
-        var px = ['font-size', 'max-width', 'min-width', 'width', 'min-height', 'max-height', 'height'];
+        var px = ['font-size', 'max-width', 'min-width', 'width', 'min-height', 'max-height', 'height', 'margin-bottom', 'padding-top', 'padding-bottom'];
         if (px.indexOf(propertyName) > -1) {
             unit = 'px';
         }
@@ -309,11 +309,15 @@
 
     setVisibility('ph_active', '.page_header_wrap');
     setVisibility('ph_show_on_fp', 'home .page_header_wrap');
+    setVisibility('ph_breadcrumb', '#breadcrumbs');
     setCss('ph_bg_color', '.page_header_wrap', 'background-color');
     setCss('ph_text_color', '.page_header_wrap *', 'color');
     //setCss('ph_text_align', '.page_header_wrap *', 'text-align');
-    setCss('ph_text_align', '#cph_title', 'text-align');
+    setCss('ph_text_align', '#cph_title, #breadcrumbs', 'text-align');
     setCss('ph_bg_height', '.page_header_wrap', 'min-height');
+    setCss('ph_bg_padding_top', '.page_header_wrap', 'padding-top');
+    setCss('ph_bg_padding_bottom', '.page_header_wrap', 'padding-bottom');
+    setCss('ph_margin_bottom', '.page_header_wrap', 'margin-bottom');
     //setCss('ph_bg_height', '.page_header_wrap', 'line-height');
 
 

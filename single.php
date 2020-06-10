@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 get_header();
 $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_position', 'after-title' );
+$page_header_active = AttireThemeEngine::NextGetOption( 'ph_active', false );
 
 ?>
     <div class="row">
@@ -17,14 +18,20 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
 
 				while ( have_posts() ): the_post(); ?>
                 <div class="single-post-content mb-3">
-					<?php the_post_thumbnail( 'full' ); ?><br>
-                    <div class="">
-                    <h1><?php
+                    <?php if(has_post_thumbnail()) { ?>
+                     <div class="mb-3">
+					    <?php the_post_thumbnail( 'full' ); ?>
+                     </div>
+                    <?php } ?>
+                    <?php if( !$page_header_active ) { ?>
+                    <h1 class="single-post-title">
+                        <?php
 						do_action( ATTIRE_THEME_PREFIX . 'before_post_title' );
 						the_title();
 						do_action( ATTIRE_THEME_PREFIX . 'after_post_title' );
-						?></h1>
-
+						?>
+                    </h1>
+                    <?php } ?>
 					<?php
 					if ( $meta_position === 'after-title' ) {
 						get_template_part( 'single', 'post-meta' );
@@ -42,7 +49,7 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
 
 
                     </div>
-                    </div>
+                   v
                     <?php
                     if ( $meta_position === 'after-content' ) {
                         get_template_part( 'single', 'post-meta' );

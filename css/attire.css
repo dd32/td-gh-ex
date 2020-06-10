@@ -69,7 +69,7 @@ table:not(.table),
 table:not(.table) td,
 table:not(.table) tr,
 table:not(.table) th {
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 5px;
 }
 
@@ -78,16 +78,6 @@ table:not(.table) th {
 .calendar_wrap tr,
 .calendar_wrap th {
     border: none;
-}
-
-select {
-    /*-webkit-appearance: none;*/
-    /*-moz-appearance: none;*/
-    /*appearance: none;*/
-    /*font-family: inherit;*/
-    /*font-size: inherit;*/
-    /*line-height: inherit;*/
-    /*padding: 7px;*/
 }
 
 li {
@@ -158,11 +148,11 @@ input:focus {
 input[type="submit"]:not(.btn),
 input[type="reset"]:not(.btn) {
     color: #ffffff;
-    background: #435ec4;
+    background: var(--color-main-nav-bg);
     padding: 10px 20px;
     font-weight: 500;
     letter-spacing: 1px;
-    border: 1px solid #435ec4;
+    border: 1px solid var(--color-main-nav-bg);
     border-radius: .25rem;
     transition: all ease-in-out 400ms;
 }
@@ -171,14 +161,13 @@ button:hover:not(.btn),
 input[type="submit"]:not(.btn):hover,
 input[type="reset"]:not(.btn):hover {
     cursor: pointer;
-    background: #4966d6;
+    opacity: 0.7;
 }
 
 button:hover:not(.btn):active,
 input[type="submit"]:not(.btn):focus,
 input[type="reset"]:not(.btn):focus {
-    cursor: pointer;
-    background: #354a9c;
+    opacity: 1;
 }
 
 .checkbox,
@@ -210,13 +199,12 @@ th {
 }
 
 blockquote {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 25px;
     font-style: italic;
     position: relative;
     margin: 25px 0;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0px;
+    border-radius: 0;
     font-size: 13pt;
 }
 
@@ -235,6 +223,29 @@ blockquote p {
 blockquote cite {
     font-size: 11px;
     color: #999999;
+}
+
+blockquote::before {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    border-top: 3px solid #0AA159;
+    border-left: 3px solid #0AA159;
+}
+blockquote::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    border-bottom: 3px solid #0AA159;
+    border-right: 3px solid #0AA159;
 }
 
 .post-author-info .author-name {
@@ -389,7 +400,7 @@ span[id*=more-]:before {
     top: 20px;
     font-size: 12pt;
     padding: 7px 10px;
-    background: #435ec4;
+    background: var(-color-main-nav-bg);
     width: 35px;
     border-radius: 3px;
 }
@@ -470,7 +481,7 @@ span[id*=more-]:before {
 #search-top .dropdown-item {
     padding: 0;
 }
-.form-control.input-search{
+.modal .form-control.input-search{
     border: 1px solid #ffffff;
 }
 
@@ -731,6 +742,7 @@ header .widget-search-form {
 .widget .list-group .list-group-item:last-child{
     border-bottom: 0;
 }
+.sidebar .widget_recent_comments ul li,
 .sidebar .widget_recent_entries ul li,
 .sidebar .widget_meta ul li,
 .sidebar .widget_categories ul li,
@@ -740,17 +752,19 @@ header .widget-search-form {
     padding: 10px 20px;
     margin: 0 -20px;
 }
+.sidebar .widget_recent_comments ul li,
 .sidebar .widget_categories ul li,
 .sidebar .widget_archive ul li,
 .sidebar .widget_recent_entries ul li{
     padding-left: 40px;
 }
+.sidebar .widget_recent_comments ul li:before,
 .sidebar .widget_categories ul li:before,
 .sidebar .widget_archive ul li:before,
 .sidebar .widget_recent_entries ul li:before{
     content: "\f15c";
     color: var(--color-main-nav-bg);
-    opacity: 0.3;
+    opacity: 0.4;
     font-family: "Font Awesome 5 Free";
     position: absolute;
     left: 20px;
@@ -761,6 +775,9 @@ header .widget-search-form {
 }
 .sidebar .widget_categories ul li:before{
     content: "\f07c";
+}
+.sidebar .widget_recent_comments ul li:before{
+    content: "\f086";
 }
 .navbar .nav-item a {
     white-space: nowrap;
@@ -1375,7 +1392,7 @@ header li.nav-item:not(.desktop-search) a {
     display: inline-block;
     letter-spacing: 0;
     padding: 7px 15px;
-    background: #435ec4;
+    background: var(-color-main-nav-bg);
     color: #ffffff;
     border-radius: 2px;
 }
@@ -1501,7 +1518,7 @@ a.footer-logo {
 }
 
 .commentlist .bypostauthor .card {
-    border-color: #435ec4;
+    border-color: var(-color-main-nav-bg);
 }
 
 .widget ul li {
@@ -1590,6 +1607,20 @@ a.footer-logo {
 
 .page_header_wrap > * {
     height: auto;
+}
+
+ul#breadcrumbs {
+    margin-top: 6px;
+}
+ul#breadcrumbs li{
+    display: inline-block;
+}
+ul#breadcrumbs li .fas{
+    margin: 0 4px !important;
+    opacity: 0.6;
+}
+ul#breadcrumbs li strong{
+    font-weight: 600;
 }
 
 /* END : Page Header */

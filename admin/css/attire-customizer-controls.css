@@ -38,7 +38,7 @@ label {
     position: relative;
 }
 
-input, input[type=checkbox], input[type=text], input[type=number], textarea {
+input, input[type=text], input[type=number], textarea {
     width: 100%;
     margin-left: 0;
     border-radius: 3px;
@@ -72,17 +72,22 @@ input[type=range]:focus {
     outline: none !important;
 }
 
+input[type=range]{
+    background-color: rgba(81, 124, 191, 0.4);
+    border: 0;
+}
 input[type=range]:hover {
-    background-color: #2e86b9;
+    background-color: rgb(81, 124, 191);
+    border: 0;
 }
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-color: #2e86b9;
+    background-color: #16aaff;
     width: 15px;
     height: 15px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
 
 input[type="range"]::-moz-range-track {
@@ -110,38 +115,66 @@ input[type="range"]::-webkit-slider-thumb {
     width: 15px;
     height: 15px;
     border: none;
-    border-radius: 15px;
-    background-color: #2e86b9;
+    border-radius: 3px;
+    background-color: #16aaff;
 }
 
 input[type="range"]::-moz-range-thumb {
     width: 15px;
     height: 15px;
     border: none;
-    border-radius: 15px;
-    background-color: #2e86b9;
+    border-radius: 3px;
+    background-color: #16aaff;
 }
 
 input[type="range"]::-ms-thumb {
     width: 15px;
     height: 15px;
-    border-radius: 15px;
+    border-radius: 3px;
     border: 0;
-    background-color: #2e86b9;
+    background-color: #16aaff;
 }
 
-input[type=checkbox] {
-    margin-right: 10px;
-    float: left;
-    margin-top: 0;
-    width: 25px;
-    height: 25px;
-    margin-top: 2px;
+input[type="checkbox"]{
+    border-radius: 2px;
+    box-shadow: none;
+    transition: all ease-in-out 400ms;
+    margin: 0 5px 0;
+    position: relative;
+    border: 0 !important;
+    background: url('data:image/svg+xml;utf8,<svg class="bi bi-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/> </svg>');
+    vertical-align: text-top
+}
+input[type="checkbox"]:checked{
+    border: 0 !important;
+    transition: all ease-in-out 400ms;
+    background: url('checked.svg');
+}
+input[type="checkbox"]::before {
+    display: none; !important;
+    content: "\f560";
+    margin: 0.05rem 0 0 -.65rem;
+    height: 1.3125rem;
+    width: 1.3125rem;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 800;
+    font-size: 10px;
+    color: transparent;
+    transition: all ease-in-out 400ms;
+    position: absolute;
 }
 
-input[type=checkbox]:checked:before {
-    color: #2E86B9;
-    float: none;
+input[type="checkbox"]:checked::before{
+    color: #3399ff;
+    display: none;
+}
+input[type="radio"]{ transition: all ease-in-out 400ms; }
+input[type="radio"]:checked{
+    border: 1px solid #3399ff !important;
+}
+input[type="radio"]:checked::before{
+    background-color: #3399ff !important;
+    transition: all ease-in-out 400ms;
 }
 
 .customize-control-title {
@@ -157,9 +190,8 @@ input[type=checkbox]:checked:before {
 .customize-control-checkbox {
     font-weight: 600;
     font-size: 12px;
-    text-transform: uppercase;
     border: 1px solid #EEEEEE;
-    background-color: #FDFDFD;
+    background-color: #ffffff;
     margin-bottom: -1px;
     padding: 6px 10px;
     border-radius: 2px;
@@ -425,4 +457,7 @@ Copyright (c) 2015 Daniel Eden
 #accordion-section-attire_write_review .accordion-section-title{
     background-color:#ffe184;
     color:#222222;
+}
+#sub-accordion-section-header_image .customize-inside-control-row {
+    margin-left: 0;
 }

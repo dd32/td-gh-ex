@@ -68,7 +68,7 @@ $page_width = isset( $meta['layout_page'] ) && $meta['layout_page'] !== 'default
 	<?php do_action( ATTIRE_THEME_PREFIX . "after_header" ); ?>
     <?php } ?>
     <!--        Page Header        -->
-	<?php if ( $ph_active && $ph_show_on_fp && ( is_page() || is_home() ) ) {
+	<?php if ( $ph_active && $ph_show_on_fp ) {
 		do_action( ATTIRE_THEME_PREFIX . "before_page_header" );
 		?>
         <div class="page_header_wrap">
