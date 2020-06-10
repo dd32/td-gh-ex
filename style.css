@@ -6,7 +6,7 @@ Author URI: http://devrix.com/
 Description: Our Masonry theme is based on the popular and efficient grid library, suitable for creatives, photographers or bloggers.
 Although its nice interface and features make it an ideal WordPress theme for almost anything, Masonry has been optimized for all
 devices thanks to our latest responsive, mobile-first design techniques.
-Version: 1.3.3
+Version: 1.3.4
 License: GNU General Public License v2 or higher
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: masonry
@@ -581,7 +581,6 @@ body {
 	.comment-meta,
 	.wp-caption-text,
 	.comment-reply-title,
-	.thread_comments,
 	.site-main .comment-navigation,
 	.site-main .paging-navigation,
 	.site-main .post-navigation {
@@ -906,7 +905,6 @@ select {
 
 /* Button links */
 
-.thread_comments,
 .comment-reply-link {
 	background-color: rgba(0, 0, 0, 0.1);
 	border: 2px solid transparent;
@@ -919,7 +917,6 @@ select {
 	text-align: center;
 }
 
-.thread_comments,
 .comment-reply-link:hover {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: #18e4e2;
@@ -2405,4 +2402,3 @@ elements that were hidden (via .neverending) before */
 		margin-top: 10px;
 	}
 }
-

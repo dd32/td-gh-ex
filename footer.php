@@ -35,7 +35,7 @@
 				// translators: themen name and creator (company)
 				esc_html__( 'Theme: %1$s by %2$s.', 'masonry' ),
 				'Masonry',
-				'<a esc_url( href="http://devrix.com/themes/masonry/" title="Masonry WordPress Theme" rel="designer">DevriX</a>'
+				'<a esc_url( href="http://devrix.com/themes/masonry/ )" title="Masonry WordPress Theme" rel="designer">DevriX</a>'
 			);
 			?>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'masonry' ) ); ?>">
