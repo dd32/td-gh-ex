@@ -96,8 +96,8 @@ function automobile_car_dealer_widgets_init() {
 	) );
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$automobile_car_dealer_widget_areas = get_theme_mod('footer_widget_areas', '4');
+	for ($i=1; $i<=$automobile_car_dealer_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Widget ', 'automobile-car-dealer' ) . $i,
 			'id'            => 'footer-' . $i,

@@ -7,20 +7,16 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width">
-<link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'automobile-car-dealer' ) ); ?>">
-<?php wp_head(); ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width">
+  <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-
   <?php if ( function_exists( 'wp_body_open' ) ) {
     wp_body_open(); 
   } else { 
     do_action( 'wp_body_open' ); 
   } ?>
-
   <?php if(get_theme_mod('automobile_car_dealer_preloader',true)){ ?>
     <div class="frame">
       <div class="loader">
@@ -38,7 +34,7 @@
           <div class="col-lg-3 col-md-7 logo_bar">
             <div class="logo">
               <?php if ( has_custom_logo() ) : ?>
-              <div class="site-logo"><?php the_custom_logo(); ?></div>
+                <div class="site-logo"><?php the_custom_logo(); ?></div>
               <?php endif; ?>
               <?php $blog_info = get_bloginfo( 'name' ); ?>
               <?php if ( ! empty( $blog_info ) ) : ?>
@@ -61,8 +57,8 @@
                 <?php }?>
               <?php endif; ?>      
             </div>
-            <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-              <button role="tab" onclick="automobile_car_dealer_responsive_menu_open()"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
+            <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+              <button role="tab" onclick="automobile_car_dealer_responsive_menu_open()" class="mobiletoggle"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
               </button>
             </div>
           </div>
@@ -70,39 +66,45 @@
             <div class="topbar row m-0">
               <div class="col-lg-7 col-md-7">
                 <?php if( get_theme_mod( 'automobile_car_dealer_mail','' ) != '') { ?>
-                <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span>
+                  <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span>
                 <?php }?>
                 <?php if( get_theme_mod( 'automobile_car_dealer_phone','' ) != '') { ?>
-                <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span>
+                  <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span>
                 <?php }?>
               </div>
               <div class="col-lg-4 col-md-4">
                 <div class="socialbox">
                   <?php if( get_theme_mod( 'automobile_car_dealer_cont_facebook') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_facebook','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_facebook_icon','fab fa-facebook-f')); ?>"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','automobile-car-dealer' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_facebook','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_facebook_icon','fab fa-facebook-f')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','automobile-car-dealer' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'automobile_car_dealer_cont_twitter') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_twitter','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_twitter_icon','fab fa-twitter')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','automobile-car-dealer' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_twitter','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_twitter_icon','fab fa-twitter')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','automobile-car-dealer' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'automobile_car_dealer_pinterest') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_pinterest','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_pinterest_icon','fab fa-pinterest')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','automobile-car-dealer' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_pinterest','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_pinterest_icon','fab fa-pinterest')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','automobile-car-dealer' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'automobile_car_dealer_tumblr') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_tumblr','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_tumblr_icon','fab fa-tumblr')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr','automobile-car-dealer' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_tumblr','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_tumblr_icon','fab fa-tumblr')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','automobile-car-dealer' );?></span></a>
                   <?php } ?>
                 </div>
               </div>
-              <div class="col-lg-1 col-md-1">
+              <div class="col-lg-1 col-md-1 col-6">
                 <div class="search-box">
-                  <a href="#search"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_search_icon','fa fa-search')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Search','automobile-car-dealer'); ?></span></a>
+                  <button type="button" data-toggle="modal" data-target="#myModal"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_search_icon','fa fa-search')); ?>"></i></button>
                 </div>
               </div>
             </div>
-            <div id="search">
-              <?php get_search_form(); ?>
-              <button href="#" class="close">X<span class="screen-reader-text"><?php esc_html_e('Close','automobile-car-dealer'); ?></span></button>
+            <div class="modal fade-in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-body">
+                  <div class="serach_inner">
+                    <?php get_search_form(); ?>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
             </div>
-            <div class="<?php if( get_theme_mod( 'automobile_car_dealer_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+            <div class="<?php if( get_theme_mod( 'automobile_car_dealer_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
               <div class="row m-0">
                 <div class="col-lg-9 col-md-6 padding0">
                   <div id="navbar-header" class="menu-brand">
@@ -128,16 +130,16 @@
                     <?php }?>
                     <div class="socialbox">
                       <?php if( get_theme_mod( 'automobile_car_dealer_cont_facebook') != '') { ?>
-                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_facebook','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_facebook_icon','fab fa-facebook-f')); ?>"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','automobile-car-dealer' );?></span></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_facebook','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_facebook_icon','fab fa-facebook-f')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','automobile-car-dealer' );?></span></a>
                       <?php } ?>
                       <?php if( get_theme_mod( 'automobile_car_dealer_cont_twitter') != '') { ?>
-                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_twitter','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_twitter_icon','fab fa-twitter')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','automobile-car-dealer' );?></span></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_twitter','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_twitter_icon','fab fa-twitter')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','automobile-car-dealer' );?></span></a>
                       <?php } ?>
                       <?php if( get_theme_mod( 'automobile_car_dealer_pinterest') != '') { ?>
-                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_pinterest','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_pinterest_icon','fab fa-pinterest')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','automobile-car-dealer' );?></span></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_pinterest','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_pinterest_icon','fab fa-pinterest')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','automobile-car-dealer' );?></span></a>
                       <?php } ?>
                       <?php if( get_theme_mod( 'automobile_car_dealer_tumblr') != '') { ?>
-                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_tumblr','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_tumblr_icon','fab fa-tumblr')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr','automobile-car-dealer' );?></span></a>
+                        <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_tumblr','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_tumblr_icon','fab fa-tumblr')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','automobile-car-dealer' );?></span></a>
                       <?php } ?>
                     </div>
                     <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="automobile_car_dealer_responsive_menu_close()"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_close_icon','fas fa-times')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','automobile-car-dealer'); ?></span></a>

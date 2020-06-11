@@ -9,22 +9,83 @@ jQuery(function($){
 });
 
 function automobile_car_dealer_responsive_menu_open() {
-	document.getElementById("navbar-header").style.width = "250px";
+	window.mobileMenu=true;
+	jQuery(".menu-brand").addClass('show');
 }
 function automobile_car_dealer_responsive_menu_close() {
-  document.getElementById("navbar-header").style.width = "0";
+	window.mobileMenu=false;
+	jQuery(".menu-brand").removeClass('show');
 }
 
-/**** Hidden search box ***/
-jQuery(document).ready(function(){
-	jQuery('a[href="#search"]').on('click', function(event) {
-		jQuery('#search').addClass('open');
-	});            
-	jQuery('#search, #search button.close').on('click', function(event) {
-		if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-			jQuery(this).removeClass('open');
+jQuery(document).ready(function () {
+
+	window.currentfocus=null;
+  	automobile_car_dealer_checkfocusdElement();
+	var body = document.querySelector('body');
+	body.addEventListener('keyup', automobile_car_dealer_check_tab_press);
+	var gotoHome = false;
+	var gotoClose = false;
+	window.mobileMenu=false;
+ 	function automobile_car_dealer_checkfocusdElement(){
+	 	if(window.currentfocus=document.activeElement.className){
+		 	window.currentfocus=document.activeElement.className;
+	 	}
+ 	}
+	function automobile_car_dealer_check_tab_press(e) {
+		"use strict";
+		// pick passed event or global event object if passed one is empty
+		e = e || event;
+		var activeElement;
+
+		if(window.innerWidth < 999){
+			if (e.keyCode == 9) {
+				if(window.mobileMenu){
+					if (!e.shiftKey) {
+						if(gotoHome) {
+							jQuery( "#navbar-header input.search-field" ).focus();
+						}
+					}
+					if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
+						gotoHome = true;
+					} else {
+						gotoHome = false;
+					}
+
+			}else{
+
+					if(window.currentfocus=="mobiletoggle"){
+						jQuery( "" ).focus();
+					}
+				}
+			}
 		}
-	});            
+		if (e.shiftKey && e.keyCode == 9) {
+			if(window.innerWidth < 999){
+				if(window.currentfocus=="header-search"){
+					jQuery(".mobiletoggle").focus();
+				}else{
+					if(window.mobileMenu){
+						if(gotoClose){
+							jQuery("a.closebtn.responsive-menu").focus();
+						}
+						if (jQuery( "#navbar-header input.search-field" ).is(":focus")) {
+							gotoClose = true;
+						} else {
+							gotoClose = false;
+					}
+				
+				}else{
+
+					if(window.mobileMenu){
+					}
+				}
+
+				}
+			}
+		}
+	 	automobile_car_dealer_checkfocusdElement();
+	}
+
 });
 
 // scroll
@@ -58,11 +119,11 @@ jQuery(function($){
 (function( $ ) {
 
 	$(window).scroll(function(){
-	  var sticky = $('.sticky-header'),
-	      scroll = $(window).scrollTop();
+		var sticky = $('.sticky-header'),
+		scroll = $(window).scrollTop();
 
-	  if (scroll >= 100) sticky.addClass('fixed-header');
-	  else sticky.removeClass('fixed-header');
+		if (scroll >= 100) sticky.addClass('fixed-header');
+		else sticky.removeClass('fixed-header');
 	});
 
 })( jQuery );

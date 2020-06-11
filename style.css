@@ -4,7 +4,9 @@ Theme URI: https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
 Author: Buywptemplates
 Author URI: https://www.buywptemplates.com
 Description: Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly, robust WordPress theme by Buywptemplates is perfect for dealers of new or used cars, motorbikes, and motorcycles. Its Mega Menu allows showcasing the portfolio of products in best possible ways. Simple and adaptable car Dealer WordPress Theme is clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business process right from browsing till purchase. It supports different languages such as ARABIC, GERMAN, SPANISH, FRENCH, ITALIAN, RUSSIAN, CHINESE, and TURKISH. Demo: https://www.buywptemplates.com/automobile-car-dealer-pro
-Version: 0.5
+Tested up to: 5.4.1
+Requires PHP: 7.2.14
+Version: 0.5.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: automobile-car-dealer
@@ -227,42 +229,120 @@ section{
 }
 h2 .section-title { 
   font-size:30px;
-  font-weight:700;/*
-  padding:0 0 45px 0;*/
+  font-weight:700;
   text-align:center;
-  display:table;/*
-  margin-bottom:50px;*/
+  display:table;
 }
 /*----------------- SEARCH POPUP ----------------*/
-input:focus{
-  outline: 1px dotted #000;
-  border: 1px solid #000;
+.serach_inner label {
+  width: 88%;
+  margin-bottom: 0;
 }
-.search-box i:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
+.modal-content{
+  background: transparent;
+  border: 0;
 }
-#search {
+.modal-dialog{
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  pointer-events: all;
+}
+.modal-body{
+  height: 100%;
+  padding-right: 0;
   position: fixed;
   top: 0px;
   right: 0px;
   width: 100%;
   height: 100%;
-  background: black;
-  -webkit-transition: all 0.5s ease-in-out;
-     -moz-transition: all 0.5s ease-in-out;
-      -ms-transition: all 0.5s ease-in-out;
-       -o-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out;
-  -webkit-transform: translate(0px, -100%) scale(0, 0);
-     -moz-transform: translate(0px, -100%) scale(0, 0);
-      -ms-transform: translate(0px, -100%) scale(0, 0);
-       -o-transform: translate(0px, -100%) scale(0, 0);
-          transform: translate(0px, -100%) scale(0, 0);    
-  opacity: 0;
+  background: #000;
+}
+.close {
+  position: absolute;
+  top: 20%;
+  transform: translateY(-50%);
+  right: 0;
+  text-align: right;
+  margin-right: 28px;
+  font-size: 35px;
+  padding: 4px 0 0 0;
+  color: #fff;
+  cursor: pointer;
+  opacity: 1;
+  border: none;
+}
+.close:focus, .close:hover {
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  opacity: 1;
+}
+.close:focus{
+  outline: 1px dotted #fff;
+  border: 1px solid #fff;
+}
+.serach_inner{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%) !important;
+}
+.serach_inner form.search-form {
+ margin-bottom: 0px;
+}
+.serach_inner input.search-field {
+  border: 1px solid;
+  padding: 10px;
+  float: left;
+  width: 100%;
+}
+input.search-field {
+  border: none;
+  padding: 10px;
+  width: auto;
+  float: left;
+  border: 1px solid;  
+}
+.search-box {
+  text-align: right;
+}
+.search-box button{
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+.search-box i {
+  color: #252525;
+  cursor: pointer;
+}
+.modal-body input[type="search"] {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -51px;
+  width: 60%;
+  margin-left: 20%;
+  color: #000;
+  font-size: 25px;
+  font-weight: 300;
+  padding: 10px;
+  border: none;
+  text-transform: uppercase;
+  background: #fff;
+}
+.modal-body input[type="submit"] {
   display: none;
 }
-#search.open {
+.modal-backdrop{
+  position: relative;
+  opacity: 0;
+}
+input:focus{
+  outline: 1px dotted #000;
+  border: 1px solid #000;
+}
+.modal-body.open {
   -webkit-transform: translate(0px, 0px) scale(1, 1);
      -moz-transform: translate(0px, 0px) scale(1, 1);
       -ms-transform: translate(0px, 0px) scale(1, 1);
@@ -271,43 +351,6 @@ input:focus{
   opacity: 1;
   z-index: 999999999;
   display: block;
-}
-#search input[type="search"] {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -51px;
-  width: 60%;
-  margin-left: 20%;
-  color: #000;  
-  font-size: 25px;
-  font-weight: 300;
-  padding: 10px;
-  border:none;
-  text-transform: uppercase;
-  background: #fff;
-}
-#search input[type="search"]::placeholder{
-  color:#000;
-}
-#search .close {
-  position: fixed;
-  top: 55px;
-  right: 55px;
-  opacity: 1;
-  font-size: 25px;
-  color: #fff;
-}
-#search input[type="submit"] {
-  display: none;
-}
-.search-box i {
-  color: #252525;
-  cursor: pointer;
-}
-input:focus{
-  outline: 1px dotted #000;
-  border: 1px solid #000;
 }
 #sidebar button, .footer-wp button{
   padding: 9px 12px;
@@ -319,27 +362,6 @@ input:focus{
   width: 100%;
   color: #fff;
   font-weight: bold;
-}
-.search-box i:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
-}
-button.search-submit {
-  border: 0;
-  background: transparent;
-}
-input.search-field {
-  border: none;
-  padding: 4px 0;
-  background: transparent;
-  width: 100%;
-}
-.menubar .social-media a:hover{
-  color:#3890cb;
-}
-.serach_inner input[type="search"],
-.serach_inner label {
-  width: 89%;
 }
 /* --------- SLIDER--------- */
 #slider .carousel-control-next-icon,
@@ -574,7 +596,7 @@ ul.list_nav {
   display: none;
   position: absolute;
   min-width: 215px;
-  z-index: 9999;
+  z-index: 99;
   top: 60px;
   -webkit-transition: max-height 3s ease-in-out;
   -moz-transition:max-height 3s ease-in-out;
@@ -2078,6 +2100,10 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
     outline: 1px dotted #fff;
     border-bottom: 1px solid #fff;
   }
+  .primary-navigation ul li a:focus{
+    background: none !important;
+    color: #000 !important;
+  }
   .toggle-menu {
     display: none;
     position: absolute;
@@ -2096,15 +2122,21 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
   }
   .menu-brand {
     height: 100%;
+    overflow-x: hidden;
     width: 0;
     position: fixed;
     z-index: 9999999;
     top: 0;
     left: 0;
     background-color: #252525;
-    overflow-x: hidden;
-    transition: 0.5s;
+    visibility: hidden;
+    transition: 0.5s width ease-in-out;
     padding-top: 60px;
+  }
+  .menu-brand.show{
+    visibility: visible;
+    width: 250px;
+    transition: 0.5s width ease-in-out;
   }
   .menu-brand .closebtn {
     position: absolute;

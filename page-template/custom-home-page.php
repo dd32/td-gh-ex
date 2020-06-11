@@ -11,17 +11,17 @@ get_header(); ?>
   <?php if( get_theme_mod('automobile_car_dealer_slider_hide',true) != ''){ ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_page = array();
+        <?php $automobile_car_dealer_slider_page = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'automobile_car_dealer_slider' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_page[] = $mod;
+              $automobile_car_dealer_slider_page[] = $mod;
             }
           }
-          if( !empty($slider_page) ) :
+          if( !empty($automobile_car_dealer_slider_page) ) :
           $args = array(
             'post_type' => 'page',
-            'post__in' => $slider_page,
+            'post__in' => $automobile_car_dealer_slider_page,
             'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
@@ -53,11 +53,11 @@ get_header(); ?>
         endif;?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_previous_icon','fas fa-chevron-left')); ?>" ></i></span>
-          <span class="screen-reader-text"><?php esc_attr_e( 'Previous','automobile-car-dealer' );?></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Previous','automobile-car-dealer' );?></span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_next_icon','fas fa-chevron-right')); ?>" ></i></span>
-          <span class="screen-reader-text"><?php esc_attr_e( 'Next','automobile-car-dealer' );?></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Next','automobile-car-dealer' );?></span>
         </a>
       </div>  
       <div class="clearfix"></div>
@@ -75,9 +75,9 @@ get_header(); ?>
         <div class="row m-0">
           <div class="col-md-7 col-sm-7">
             <?php
-            $postData =  get_theme_mod('automobile_car_dealer_project_single_post');
-            if($postData){
-              $args = array( 'name' => esc_html($postData ,'automobile-car-dealer'));
+            $automobile_car_dealer_postData =  get_theme_mod('automobile_car_dealer_project_single_post');
+            if($automobile_car_dealer_postData){
+              $args = array( 'name' => esc_html($automobile_car_dealer_postData ,'automobile-car-dealer'));
             $query = new WP_Query( $args );
             if ( $query->have_posts() ) :
               while ( $query->have_posts() ) : $query->the_post(); ?>
