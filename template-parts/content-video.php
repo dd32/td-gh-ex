@@ -22,7 +22,7 @@
   }
 ?> 
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
-  <h2 class="ecomercepost-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+  <h2 class="ecomercepost-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
   <div class="metabox">
     <?php if( get_theme_mod( 'bb_ecommerce_store_date_hide',true) != '') { ?>
       <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>

@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 get_header(); ?>
 

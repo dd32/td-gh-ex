@@ -2,7 +2,7 @@
 /**
  * Ecommerce Store Theme Customizer
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 
 /**
@@ -928,7 +928,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));
 
 	for ( $count = 1; $count <= 4; $count++ ) {
-
+		
 		// Add color scheme setting and control.
 		$wp_customize->add_setting( 'bb_ecommerce_store_slider' . $count, array(
 			'default'           => '',
@@ -1178,7 +1178,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_ecommerce_store_blog_post_description_option',array(
-    	'default'   => 'Excerpt Content',
+    	'default'   => __('Excerpt Content','bb-ecommerce-store'),
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_blog_post_description_option',array(

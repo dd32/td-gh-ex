@@ -6,7 +6,7 @@
  * and the comment form. The actual display of comments is
  * located in the inc/template-tags.php file.
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 
 /*

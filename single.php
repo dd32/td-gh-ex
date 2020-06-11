@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 
 get_header(); ?>

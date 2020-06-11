@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 ?>
 

@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 get_header(); ?>
 

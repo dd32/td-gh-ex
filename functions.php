@@ -2,7 +2,7 @@
 /**
  * Ecommerce Store functions and definitions
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 
 /**

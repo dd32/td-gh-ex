@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Ecommerce Store
+ * @package BB Ecommerce Store
  */
 
 if ( ! function_exists( 'bb_ecommerce_store_the_attached_image' ) ) :
