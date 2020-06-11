@@ -54,25 +54,22 @@
         </div>
         <div class="social-media col-lg-6 col-md-1 col-1">
           <?php if( get_theme_mod( 'bb_wedding_bliss_youtube_url' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','bb-wedding-bliss' );?></span></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','bb-wedding-bliss' );?></span></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_facebook_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','bb-wedding-bliss' );?></span></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','bb-wedding-bliss' );?></span></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_twitter_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','bb-wedding-bliss' );?></span></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','bb-wedding-bliss' );?></span></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_rss_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'RSS','bb-wedding-bliss' );?></span></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'RSS','bb-wedding-bliss' );?></span></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_insta_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-wedding-bliss' );?></span></a>
-          <?php } ?>
-          <?php if( get_theme_mod( 'bb_wedding_bliss_google_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_google_url','' ) ); ?>"><i class="fab fa-google-plus-g" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','bb-wedding-bliss' );?></span></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','bb-wedding-bliss' );?></span></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_pint_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','bb-wedding-bliss' );?></span></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','bb-wedding-bliss' );?></span></a>
           <?php } ?>
         </div>
       </div>
@@ -80,7 +77,6 @@
     <div class="clear"></div>
   </div>
 </footer>  
-
 <?php if( get_theme_mod( 'bb_wedding_bliss_enable_disable_scroll',true) != '' || get_theme_mod( 'bb_wedding_bliss_responsive_scroll',true) != '') { ?>
   <?php $bb_wedding_bliss_theme_lay = get_theme_mod( 'bb_wedding_bliss_scroll_setting','Right');
   if($bb_wedding_bliss_theme_lay == 'Left'){ ?>

@@ -1175,7 +1175,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_wedding_bliss_blog_post_description_option',array(
-    	'default'   => 'Excerpt Content',
+    	'default'   =>  __('Excerpt Content','bb-wedding-bliss'),
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_blog_post_description_option',array(

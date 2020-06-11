@@ -17,7 +17,7 @@
     <?php } ?>
     <div class="new-text <?php 
       if(has_post_thumbnail()) { ?>col-lg-6 col-md-6 "<?php } else { ?>col-lg-12 col-md-12"<?php } ?>>
-      <h2><a href="<?php echo esc_url( get_permalink() );?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>   
+      <h2><a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>   
       <?php if(get_theme_mod('bb_wedding_bliss_blog_post_description_option') == 'Full Content'){ ?>
         <?php the_content(); ?>
       <?php }

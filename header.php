@@ -13,7 +13,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-wedding-bliss' ) ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -63,7 +62,7 @@
                 </div>
                 <div class="col-lg-8 col-md-3 col-3">
                   <div class="toggle-menu responsive-menu">
-                    <button onclick="bb_wedding_bliss_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-wedding-bliss'); ?></span></button>
+                    <button class="mobiletoggle" onclick="bb_wedding_bliss_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-wedding-bliss'); ?></span></button>
                   </div>
                   <div id="menu-sidebar" class="nav sidebar">
                     <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-wedding-bliss' ); ?>">
@@ -79,22 +78,22 @@
                       <div id="contact-info">
                         <div class="social-media">
                           <?php if( get_theme_mod( 'bb_wedding_bliss_youtube_url' ) != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','bb-wedding-bliss' );?></span></a>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','bb-wedding-bliss' );?></span></a>
                           <?php } ?>
                           <?php if( get_theme_mod( 'bb_wedding_bliss_facebook_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','bb-wedding-bliss' );?></span></a>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','bb-wedding-bliss' );?></span></a>
                           <?php } ?>
                           <?php if( get_theme_mod( 'bb_wedding_bliss_twitter_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','bb-wedding-bliss' );?></span></a>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','bb-wedding-bliss' );?></span></a>
                           <?php } ?>
                           <?php if( get_theme_mod( 'bb_wedding_bliss_rss_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'RSS','bb-wedding-bliss' );?></span></a>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'RSS','bb-wedding-bliss' );?></span></a>
                           <?php } ?>
                           <?php if( get_theme_mod( 'bb_wedding_bliss_insta_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-wedding-bliss' );?></span></a>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','bb-wedding-bliss' );?></span></a>
                           <?php } ?>
                           <?php if( get_theme_mod( 'bb_wedding_bliss_pint_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','bb-wedding-bliss' );?></span></a>
+                            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','bb-wedding-bliss' );?></span></a>
                           <?php } ?>
                         </div>
                         <?php get_search_form();?>
@@ -103,17 +102,21 @@
                     </nav>
                   </div>
                 </div>
-                <div class="col-lg-1 col-md-1">
-                  <a href="#" onclick="bb_wedding_bliss_search_open()" class="search-box">
-                    <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','bb-wedding-bliss' );?></span>
-                  </a>
+                <div class="col-lg-1 col-md-1 col-6">
+                  <div class="search-box">
+                    <button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
+                  </div>
                 </div>
               </div>
-              <div class="serach_outer">
-                <div class="serach_inner">
-                  <?php get_search_form(); ?>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-body">
+                    <div class="serach_inner">
+                      <?php get_search_form(); ?>
+                    </div>
+                  </div>
+                  <button type="button" class="closepop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
                 </div>
-                <a href="#maincontent" onclick="bb_wedding_bliss_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','bb-wedding-bliss' );?></span></a>
               </div>
             </div>
           </div>
