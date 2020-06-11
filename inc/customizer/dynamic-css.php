@@ -252,7 +252,7 @@ function ashe_true_false( $option ) {
 			background: '. esc_html(ashe_options( 'colors_content_accent' )) .';
 		}
 
-		a:hover {
+		a:not(.header-logo-a):hover {
 			color: '. esc_html(ashe_hex2rgba( ashe_options( 'colors_content_accent' ), 0.8 )) .';
 		}
 

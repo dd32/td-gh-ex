@@ -20,10 +20,10 @@
 					
 					<?php if ( is_home() || is_front_page() ) : ?>
 					<h1>
-						<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
+						<a href="<?php echo esc_url( home_url('/') ); ?>" class="header-logo-a"><?php echo bloginfo( 'title' ); ?></a>
 					</h1>
 					<?php else : ?>
-					<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
+					<a href="<?php echo esc_url( home_url('/') ); ?>" class="header-logo-a"><?php echo bloginfo( 'title' ); ?></a>
 					<?php endif; ?>
 
 				<?php endif; ?>
