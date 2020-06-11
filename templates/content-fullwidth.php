@@ -62,7 +62,7 @@
                 $slidewidth = $slide_sidebar;
             
           } ?>
-          <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0" itemscope="" itemtype="http://schema.org/BlogPosting">
+          <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0">
               <div class="row">
                   <?php if($postsummery == 'img_landscape') { 
                             $textsize = 'col-md-12'; 
@@ -72,7 +72,7 @@
                               $image = aq_resize($thumbnailURL,$slidewidth, false);
                               if(empty($image)) { $image = $thumbnailURL; } ?>
                               <div class="col-md-12">
-                                  <div class="imghoverclass img-margin-center" itemprop="image">
+                                  <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                       <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
@@ -88,7 +88,7 @@
                               $image = aq_resize($thumbnailURL, 360, 360, true);
                               if(empty($image)) { $image = $thumbnailURL; } ?>
                                 <div class="<?php echo $portraitimg;?>">
-                                    <div class="imghoverclass img-margin-center" itemprop="image">
+                                    <div class="imghoverclass img-margin-center">
                                         <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                             <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                         </a> 
@@ -167,13 +167,13 @@
                           <?php get_template_part('templates/entry', 'meta-author'); ?>
                           <header>
                             <a href="<?php the_permalink() ?>">
-                              <h3 class="entry-title" itemprop="name headline">
+                              <h3 class="entry-title">
                                 <?php the_title(); ?>
                               </h3>
                             </a>
                             <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                           </header>
-                          <div class="entry-content" itemprop="description">
+                          <div class="entry-content">
                               <?php the_excerpt(); ?>
                           </div>
                       </div><!-- Text size -->

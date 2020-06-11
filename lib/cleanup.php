@@ -58,6 +58,16 @@ function pinnacle_caption($output, $attr, $content) {
 }
 add_filter('img_caption_shortcode', 'pinnacle_caption', 10, 3);
 
+/**
+ * Wrap embedded media
+ */
+function virtue_embed_wrap( $cache, $url, $attr = '', $post_ID = '' ) {
+  if ( ! has_blocks() ) {
+    $cache = '<div class="entry-content-asset videofit">' . $cache . '</div>';
+  }
+  return $cache;
+}
+add_filter( 'embed_oembed_html', 'virtue_embed_wrap', 90, 4 );
 
 
 /**

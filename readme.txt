@@ -4,7 +4,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Pinnacle is a bold theme with versatile options and multiple styles. This theme is loaded with features and tools that allow full creativity to be released into a unique site. Built with a modern flat design, its fully responsive layout make for easy navigation on mobile/tablet displays. Pinnacle is perfect for any kind of business, online store, portfolio, or personal site. It is fully compatible with woocommerce and gives you a unique layout for an ecommerce site. Pinnacle was built and designed by <a href="http://kadencethemes.com/">Kadence Themes</a>.
+Pinnacle is a bold theme with versatile options and multiple styles. This theme is loaded with features and tools that allow full creativity to be released into a unique site. Built with a modern flat design, its fully responsive layout make for easy navigation on mobile/tablet displays. Pinnacle is perfect for any kind of business, online store, portfolio, or personal site. It is fully compatible with woocommerce and gives you a unique layout for an ecommerce site. Pinnacle was built and designed by <a href="http://kadencewp.com/">Kadence WP</a>.
 
 == Features ==
 * Woocommerce
@@ -24,13 +24,50 @@ Yes, go here: http://docs.kadencethemes.com/pinnacle/
 
 = Is there demo content available? =
 
-Yes, go here: http://www.kadencethemes.com/kadence-themes-demo-content/
+Yes, go here: http://www.kadencewp.com/kadence-themes-demo-content/
 
 = Is there a free support form for this theme? =
 
 Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
+
+= 1.7.10 | 10th June 2020 = 
+* Update: Polish translation
+
+= 1.7.9 | 8th June 2020 = 
+* Fix: Youtube Embed.
+
+= 1.7.8 | 22nd May 2020 = 
+* Update: Gutenberg styling.
+* Update: Redux Framework code.
+
+= 1.7.7 | 21st February 2020 = 
+* Fix: Similar Portfolio not defaulting correctly.
+* Fix: Hide similar/recent title if carousel is empty.
+
+= 1.7.7 | 21st February 2020 = 
+* Fix: PHP 7.4 issue.
+
+= 1.7.6 | 16th December 2019 = 
+* Update: Fix notice dismiss off screen.
+
+= 1.7.5 | 12th December 2019 = 
+* Update: Font page template, make sure logic forces the latest posts to show if it's set as "Your homepage displays: Your latest posts"
+* Update: Fix php notices.
+* Update: Remove all admin notice styling.
+
+= 1.7.4 | 26th November 2019 = 
+* Update: Gutenberg css.
+* Add: Home Call to action tag option.
+
+= 1.7.3 | 8th April 2019 = 
+* Update: Gutenberg css.
+* Update: Notice in WooCommerce.
+* Update: Woo 3.6 support.
+
+= 1.7.2 | 6th Feb 2019 = 
+* Update: Woocommerce 3.5.5 support.
 
 = 1.7.1 | 18th December 2018 = 
 * Update: Block Editor Tweaks.

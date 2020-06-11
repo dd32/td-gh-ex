@@ -187,6 +187,11 @@ function pinnacle_editor_dynamic_css() {
 				font-family: ' . esc_attr( $pinnacle['font_p']['font-family'] ) . ';
 			}';
 		}
+		if ( isset( $pinnacle['post_background'] ) && ! empty( $pinnacle['post_background'] ) ) {
+			echo '.block-editor-page .edit-post-visual-editor {
+				background: ' . esc_attr( $pinnacle['post_background']['background-color'] ) . ';
+			}';
+		}
 		echo '</style>';
 	}
 }
