@@ -13,7 +13,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-mobile-application' ) ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

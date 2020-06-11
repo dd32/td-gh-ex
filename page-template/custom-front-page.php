@@ -19,14 +19,14 @@ get_header(); ?>
             }
           }
           if( !empty($bb_mobile_application_slider_pages) ) :
-          $args = array(
+            $args = array(
               'post_type' => 'page',
               'post__in' => $bb_mobile_application_slider_pages,
               'orderby' => 'post__in'
-          );
-          $query = new WP_Query( $args );
-          if ( $query->have_posts() ) :
-            $i = 1;
+            );
+            $query = new WP_Query( $args );
+            if ( $query->have_posts() ) :
+              $i = 1;
         ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -46,7 +46,7 @@ get_header(); ?>
           wp_reset_postdata();?>
         </div>
         <?php else : ?>
-        <div class="no-postfound"></div>
+          <div class="no-postfound"></div>
         <?php endif;
         endif;?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -94,7 +94,7 @@ get_header(); ?>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>
                     </div>
                 <?php endwhile;
-              wp_reset_postdata();
+                wp_reset_postdata();
               } ?>        
               <div class="clearfix"></div>
             </div>
