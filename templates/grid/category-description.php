@@ -8,7 +8,7 @@ if ( !empty( $category_description ) ) : ?>
 <div class="category-description">  
 
 	<h3><?php echo esc_html( $category_name ); ?></h3>
-	<p><?php echo esc_html( $category_description ); ?></p>
+	<p><?php echo ''. $category_description; ?></p>
 
 </div>
 <?php endif; ?>
