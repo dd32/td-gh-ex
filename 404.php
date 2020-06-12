@@ -13,7 +13,7 @@ get_header(); ?>
 			<p class="text-404"><?php echo esc_html(get_theme_mod('advance_pet_care_content_404_page',__('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','advance-pet-care')));?></p>
 			<?php if( get_theme_mod('advance_pet_care_button_404_page','Back to Home Page') != ''){ ?>
 				<div class="read-moresec">
-	        		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php echo esc_html(get_theme_mod('advance_pet_care_button_404_page',__('Back to Home Page','advance-pet-care')));?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-pet-care' ); ?></span></a>
+	        		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php echo esc_html(get_theme_mod('advance_pet_care_button_404_page',__('Back to Home Page','advance-pet-care')));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_pet_care_button_404_page',__('Back to Home Page','advance-pet-care')));?></span></a>
 	        	</div>
         	<?php } ?>
 			<div class="clearfix"></div>
