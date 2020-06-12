@@ -1,21 +1,21 @@
-=== Ariele ===
+=== Ariele Lite ===
 
 Contributors: roughpixels
 Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
 == Copyright ==
 
-Ariele WordPress Theme, Copyright (c) 2020 https://www.roughpixels.com
-Ariele is distributed under the terms of the GNU GPL
+Ariele Lite WordPress Theme, Copyright (c) 2020 https://www.roughpixels.com
+Ariele Lite is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Ariele is designed for bloggers who are deeply enthusiastic when writing. Whether it's for the purist blogger or websites that are editorial-based, we put emphasis on your writing, even without featured images. You will be in company with other elite blog sites when you beging to build with Ariele. If you absolutely need a theme designed specifically with that in mind, Ariele is the perfect blog theme for you!
+Ariele Lite is designed for bloggers who are deeply enthusiastic when writing. Whether it's for the purist blogger or websites that are editorial-based, we put emphasis on your writing, even without featured images. You will be in company with other elite blog sites when you beging to build with Ariele Lite. If you absolutely need a theme designed specifically with that in mind, Ariele Lite is the perfect blog theme for you!
 
 == Screenshots ==
 1. Main screenshot for the theme on the theme list section of the admin
@@ -30,20 +30,20 @@ Ariele is designed for bloggers who are deeply enthusiastic when writing. Whethe
 
 == Documentation ==
 
-Ariele offers you detailed documentation to help you get started with this theme. With step-by-step guidance, including screenshots, every feature of Ariele is included in our tutorials found on our website:
+Ariele Lite offers you detailed documentation to help you get started with this theme. With step-by-step guidance, including screenshots, every feature of Ariele is included in our tutorials found on our website:
 
 https://www.roughpixels.com/documentation/
 
 
 == Credits ==
 
-Ariele uses the following third-party resources and coding (including modified code)
+Ariele Lite uses the following third-party resources and coding (including modified code)
 
 * Main Navigation - Twenty Sixteen Theme 
 	Copyright 2014-2018 WordPress.org
 	GNU General Public License v2 or later
 	https://www.gnu.org/licenses/gpl-2.0.html
-	Menu code modified by: BloggingThemeStyles.com
+	Menu code modified by: roughpixels.com
 	
 * Normalize.css, 
 	Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
@@ -56,13 +56,6 @@ Ariele uses the following third-party resources and coding (including modified c
 
 * Font Awesome 4.7.0 by @davegandy - https://fontawesome.com - @fontawesome
 	License - https://fontawesome.com/license (Font: SIL OFL 1.1, CSS: MIT License)	
-
-* Theme Info Page
-	Consulting WordPress Theme, 
-	Copyright 2017-2018 Think Up Themes Ltd
-	Consulting is distributed under the terms of the GNU GPL
-	https://www.gnu.org/licenses/gpl-3.0.en.html
-
 	
 == Photos ==
 
@@ -76,6 +69,32 @@ Ariele uses the following third-party resources and coding (including modified c
 	License: Creative Commons CC0 - Free for commercial use.
 	https://creativecommons.org/publicdomain/zero/1.0/
 	
+* Widget Image 1 - https://pxhere.com/en/photo/726422
+	Copyright (c) 2017
+	License: Creative Commons CC0 - Free for commercial use.
+	https://creativecommons.org/publicdomain/zero/1.0/
+	
+* Widget Image 2 - https://pxhere.com/en/photo/765924
+	Copyright (c) 2017
+	License: Creative Commons CC0 - Free for commercial use.
+	https://creativecommons.org/publicdomain/zero/1.0/
+		
+* Widget Image 3 - https://pxhere.com/en/photo/31043
+	Copyright (c) 2017
+	License: Creative Commons CC0 - Free for commercial use.
+	https://creativecommons.org/publicdomain/zero/1.0/
+		
+* Widget Image 4 - https://pxhere.com/en/photo/151622
+	Copyright (c) 2017
+	License: Creative Commons CC0 - Free for commercial use.
+	https://creativecommons.org/publicdomain/zero/1.0/
+	
+* Widget Image 5 - https://pxhere.com/en/photo/1175576
+	Copyright (c) 2017
+	License: Creative Commons CC0 - Free for commercial use.
+	https://creativecommons.org/publicdomain/zero/1.0/
+	
+
 	
 == Changelog ==
 
@@ -94,6 +113,18 @@ Removed - for now removed features.
 Fixed - for any bug fixes.
 Security - in case of vulnerabilities.
 
+
+## [1.0.2] - 2020-06-11
+
+*Changed - Updated the theme screenshot
+*Changed - Added missing image credits to the readme file
+*Fixed - Setting excerpts for the blog were not working
+
+
+## [1.0.1] - 2020-06-05
+
+*Changed - Removed some credits for code snippets no longer used.
+*Changed - Updated the theme name from the readme.txt file from Ariele to Ariele Lite
 
 ## [1.0.0]
 

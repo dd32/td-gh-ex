@@ -55,7 +55,12 @@ $ariele_lite_blog_layout = get_theme_mod( 'ariele_lite_blog_layout', 'classic' )
 				</header>
 
 				<?php		
-						the_content( ariele_lite_move_more_link() );													
+						if ( true == esc_attr(get_theme_mod( 'ariele_lite_use_excerpt', false ) ) ) {
+							the_excerpt();				
+						} else {				
+							the_content( ariele_lite_move_more_link() );
+						}	
+																		
 						get_template_part( 'template-parts/navigation/nav', 'paged' );
 				?>
 			</div>
