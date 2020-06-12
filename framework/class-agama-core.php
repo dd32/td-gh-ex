@@ -57,6 +57,7 @@ class Core {
 
         add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
         add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
+        add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'admin_scripts' ] );
         add_action( 'after_setup_theme', [ $this, 'agama_setup' ] );
         add_action( 'tgmpa_register', [ $this, 'tgmpa_register' ] );
         add_action( 'wp_footer', [ $this, 'footer_scripts' ] );
