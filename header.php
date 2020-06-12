@@ -54,6 +54,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 				$vkURL = get_theme_mod('semplicemente_theme_options_vkurl', '#');
 				$xingURL = get_theme_mod('semplicemente_theme_options_xingurl', '');
 				$twitchURL = get_theme_mod('semplicemente_theme_options_twitchurl', '');
+				$spotifyURL = get_theme_mod('semplicemente_theme_options_spotifyurl', '');
+				$whatsappURL = get_theme_mod('semplicemente_theme_options_whatsappurl', '');
 				$emailURL = get_theme_mod('semplicemente_theme_options_emailurl', '');
 			?>
 
@@ -102,6 +104,14 @@ if ( function_exists( 'wp_body_open' ) ) {
 					
 					<?php if (!empty($twitchURL )) : ?>
 						<a href="<?php echo esc_url($twitchURL ); ?>" title="<?php esc_attr_e( 'Twitch', 'semplicemente' ); ?>"><i class="fa fa-twitch spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'semplicemente' ); ?></span></i></a>
+					<?php endif; ?>
+					
+					<?php if (!empty($spotifyURL )) : ?>
+						<a href="<?php echo esc_url($spotifyURL ); ?>" title="<?php esc_attr_e( 'Spotify', 'semplicemente' ); ?>"><i class="fa fa-spotify spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Spotify', 'semplicemente' ); ?></span></i></a>
+					<?php endif; ?>
+					
+					<?php if (!empty($whatsappURL )) : ?>
+						<a href="<?php echo esc_url($whatsappURL ); ?>" title="<?php esc_attr_e( 'WhatsApp', 'semplicemente' ); ?>"><i class="fa fa-whatsapp spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'WhatsApp', 'semplicemente' ); ?></span></i></a>
 					<?php endif; ?>
 					
 					<?php if (!empty($emailURL)) : ?>

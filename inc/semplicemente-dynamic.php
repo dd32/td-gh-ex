@@ -122,6 +122,16 @@ function semplicemente_custom_settings_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Twitch URL', 'semplicemente')
 	);
+	$socialmedia[] = array(
+	'slug'=>'spotifyurl', 
+	'default' => '',
+	'label' => __('Spotify URL', 'semplicemente')
+	);
+	$socialmedia[] = array(
+	'slug'=>'whatsappurl', 
+	'default' => '',
+	'label' => __('WhatsApp URL', 'semplicemente')
+	);
 	
 	foreach( $socialmedia as $semplicemente_theme_options ) {
 		// SETTINGS
