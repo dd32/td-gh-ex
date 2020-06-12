@@ -22,7 +22,6 @@ function advance_it_company_customize_register($wp_customize) {
 	));	
 
 	// font array
-
 	$advance_it_company_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
@@ -1245,7 +1244,7 @@ function advance_it_company_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_it_company_blog_post_description_option',array(
-    	'default'   => 'Excerpt Content',
+    	'default'   => __('Excerpt Content','advance-it-company'),
         'sanitize_callback' => 'advance_it_company_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_it_company_blog_post_description_option',array(

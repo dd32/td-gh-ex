@@ -20,7 +20,7 @@
 		$advance_it_company_custom_css .='}';
 	}
 	if($advance_it_company_theme_color_first != false){
-		$advance_it_company_custom_css .='.serach_inner form.search-form, #footer input[type="search"], .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .pagination a:hover, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button,.woocommerce .quantity .qty{';
+		$advance_it_company_custom_css .=' #footer input[type="search"], .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .pagination a:hover, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button,.woocommerce .quantity .qty{';
 			$advance_it_company_custom_css .='border-color: '.esc_html($advance_it_company_theme_color_first).';';
 		$advance_it_company_custom_css .='}';
 	}

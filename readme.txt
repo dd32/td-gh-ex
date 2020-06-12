@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 7.2.14
-Stable tag: 0.4.6
+Stable tag: 0.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,6 +115,11 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Added scroll to top icon font size.
 * Added font size and allignment options for copyright text.
 * Updated POT file.
+
+= 0.4.7 =
+* Resolved menu focus error.
+* Resolved Search focus error.
+* Resolved errors.
 
 == Resources ==
 
