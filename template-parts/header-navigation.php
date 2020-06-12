@@ -6,14 +6,14 @@
  */
 ?>
 
-<div id="header" class="<?php if( get_theme_mod( 'advance_startup_sticky_header') != '' || get_theme_mod( 'advance_startup_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+<div id="header" class="<?php if( get_theme_mod( 'advance_startup_sticky_header',false) != '' || get_theme_mod( 'advance_startup_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
   <div class="main-menu">
     <div class="container">
       <div class="menu-color">
         <div class="row ">
           <div class="col-lg-11 col-md-12">
             <div class="toggle-menu responsive-menu">
-              <button role="tab" onclick="advance_startup_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-startup'); ?></span></button>
+              <button class="mobiletoggle" role="tab" onclick="advance_startup_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-startup'); ?></span></button>
             </div>
             <div id="menu-sidebar" class="nav side-menu">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-startup' ); ?>">
@@ -46,19 +46,16 @@
                 <?php get_search_form();?>
                 <div class="social-icons">
                   <?php if( get_theme_mod( 'advance_startup_facebook_url') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-startup' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-startup' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'advance_startup_twitter_url') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-startup' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-startup' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'advance_startup_youtube_url') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-startup' );?></span></a>
-                  <?php } ?>
-                  <?php if( get_theme_mod( 'advance_startup_google_plus_url') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-startup' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-startup' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'advance_startup_linkedin_url') != '') { ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-startup' );?></span></a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-startup' );?></span></a>
                   <?php } ?>
                 </div>
               </div>

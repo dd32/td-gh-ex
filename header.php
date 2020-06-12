@@ -13,7 +13,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-startup' ) ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -57,16 +56,16 @@
             <div class="col-lg-4 col-md-6">
               <div class="social-icons">
                 <?php if( get_theme_mod( 'advance_startup_facebook_url') != '') { ?>
-                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-startup' );?></span></a>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-startup' );?></span></a>
                 <?php } ?>
                 <?php if( get_theme_mod( 'advance_startup_twitter_url') != '') { ?>
-                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-startup' );?></span></a>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-startup' );?></span></a>
                 <?php } ?>
                 <?php if( get_theme_mod( 'advance_startup_youtube_url') != '') { ?>
-                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-startup' );?></span></a>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-startup' );?></span></a>
                 <?php } ?>
                 <?php if( get_theme_mod( 'advance_startup_linkedin_url') != '') { ?>
-                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-startup' );?></span></a>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-startup' );?></span></a>
                 <?php } ?>
               </div>
             </div>
@@ -104,7 +103,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="talk-btn">
               <?php if ( get_theme_mod('advance_startup_top_button_text','') != "" ) {?>
-                <a href="<?php echo esc_html(get_theme_mod('advance_startup_top_button_url')); ?>"><?php echo esc_html(get_theme_mod('advance_startup_top_button_text','')); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_attr_e( 'Button','advance-startup' );?></span></a>
+                <a href="<?php echo esc_html(get_theme_mod('advance_startup_top_button_url')); ?>"><?php echo esc_html(get_theme_mod('advance_startup_top_button_text','')); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'Button','advance-startup' );?></span></a>
               <?php }?>
             </div>
           </div>
