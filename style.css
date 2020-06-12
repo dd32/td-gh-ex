@@ -4,7 +4,9 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
-Version: 0.4.2
+Tested up to: 5.4.1
+Requires PHP: 7.2.14
+Version: 0.4.3
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-portfolio
@@ -72,8 +74,9 @@ a:focus,
 a:hover{
 	text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus,
-.woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row textarea:focus{
+a:focus, input:focus, textarea:focus, .toggle-menu button:focus,
+.woocommerce form .form-row input.input-text:focus, 
+.woocommerce form .form-row textarea:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
@@ -1704,8 +1707,14 @@ h1.page-title {
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    transition: 0.5s;
+    visibility: hidden;
     padding-top: 60px;
+    transition: 0.5s;
+  }
+  .sidebar.display{
+    visibility: visible;
+    width: 100%;
+    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;

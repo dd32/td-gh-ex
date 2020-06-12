@@ -13,7 +13,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-portfolio' ) ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -59,7 +58,7 @@
             </div>
             <div class="col-lg-8 col-md-8 col-3">
               <div class="toggle-menu responsive-menu">
-                <button role="tab" onclick="advance_portfolio_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-portfolio'); ?></span></button>
+                <button role="tab" class="mobiletoggle" onclick="advance_portfolio_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-portfolio'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-portfolio' ); ?>">
@@ -75,7 +74,7 @@
                   <div id="contact-info">
                     <?php get_search_form();?>
                   </div>
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_portfolio_resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-portfolio'); ?></span></a>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_portfolio_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-portfolio'); ?></span></a>
                 </nav>
               </div>
             </div>

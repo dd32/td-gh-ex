@@ -31,22 +31,22 @@ get_header(); ?>
           <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_banner_excerpt_length','25')))); ?></p>                  
           <div class="social-media">
             <?php if( get_theme_mod( 'advance_portfolio_facebook_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-portfolio' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-portfolio' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_portfolio_twitter_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-portfolio' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-portfolio' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_portfolio_linkedin_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-portfolio' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-portfolio' );?></span></a>
             <?php } ?>                    
             <?php if( get_theme_mod( 'advance_portfolio_insta_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-portfolio' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-portfolio' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_portfolio_youtube_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-portfolio' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-portfolio' );?></span></a>
             <?php } ?>                                         
             <?php if( get_theme_mod( 'advance_portfolio_behance_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_behance_url','' ) ); ?>"><i class="fab fa-behance"></i><span class="screen-reader-text"><?php esc_attr_e( 'Behance','advance-portfolio' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_behance_url','' ) ); ?>"><i class="fab fa-behance"></i><span class="screen-reader-text"><?php esc_html_e( 'Behance','advance-portfolio' );?></span></a>
             <?php } ?>
           </div>
           <div class="clearfix"></div>
