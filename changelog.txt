@@ -1,6 +1,10 @@
 iFeature Changelog
 
 ****************************
+Version 7.2.1 (06/12/20)
+- Added - Starter content for new users
+- Added - Vimeo social link
+
 Version 7.2.0 (06/05/20)
 - Added - Support for Gutenberg Blocks
 - Added - Full-Width Gutenberg Template

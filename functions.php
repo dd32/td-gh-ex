@@ -143,10 +143,12 @@ if ( ! function_exists( 'ifeature_comment' ) ) :
 									<time pubdate datetime="<?php comment_time( 'c' ); ?>">
 										<?php
 										/* translators: 1: date, 2: time */
-										printf( __( '%1$s at %2$s', 'ifeature' ), get_comment_date(), get_comment_time() ); ?>
+										printf( __( '%1$s at %2$s', 'ifeature' ), get_comment_date(), get_comment_time() );
+										?>
 									</time>
 								</a>
-								<?php edit_comment_link( __( '(Edit)', 'ifeature' ), ' ' );
+								<?php
+								edit_comment_link( __( '(Edit)', 'ifeature' ), ' ' );
 								?>
 							</div>
 							<!-- .comment-meta .commentmetadata -->
@@ -155,7 +157,17 @@ if ( ! function_exists( 'ifeature_comment' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php
+							comment_reply_link(
+								array_merge(
+									$args,
+									array(
+										'depth'     => $depth,
+										'max_depth' => $args['max_depth'],
+									)
+								)
+							);
+							?>
 						</div>
 						<!-- .reply -->
 					</article><!-- #comment-## -->
@@ -170,7 +182,8 @@ endif; // Ends check for ifeature_cc_comment().
  * Set up next and previous post links for lite themes only.
  */
 function ifeature_next_previous_posts() {
-	if( get_next_posts_link() || get_previous_posts_link() ): ?>
+	if ( get_next_posts_link() || get_previous_posts_link() ) :
+		?>
 		<div class="more-content">
 			<div class="row-fluid">
 				<div class="span6 previous-post">
@@ -181,7 +194,7 @@ function ifeature_next_previous_posts() {
 				</div>
 			</div>
 		</div>
-	<?php
+		<?php
 	endif;
 }
 
@@ -313,7 +326,7 @@ function ifeature_skin_color_options( $options ) {
 	$options = array(
 		'default' => $imagepath . 'default.png',
 		'green'   => $imagepath . 'green.png',
-		'legacy'   => $imagepath . 'legacy.png',
+		'legacy'  => $imagepath . 'legacy.png',
 	);
 
 	return $options;
@@ -368,7 +381,7 @@ function ifeature_typography_faces( $faces ) {
 function ifeature_typography_styles( $styles ) {
 	$styles = array(
 		'normal' => 'Normal',
-		'bold' => 'Bold',
+		'bold'   => 'Bold',
 	);
 
 	return $styles;
@@ -407,6 +420,7 @@ add_filter( 'ifeature_cc_entry_meta_sep', 'ifeature_seperator' );
 
 /**
  * Add imenu section
+ *
  * @param  array $sections Sections.
  */
 function ifeature_sections_filter( $sections ) {
@@ -415,7 +429,7 @@ function ifeature_sections_filter( $sections ) {
 			'id'      => 'ifeature_cc_imenu_section',
 			'label'   => __( 'iMenu Options', 'ifeature' ),
 			'heading' => 'ifeature_cc_header_heading',
-		)
+		),
 	);
 	$sections     = array_merge( $sections, $new_sections );
 
@@ -572,7 +586,7 @@ function ifeature_upgrade_bar() {
 		</p>
 
 	</div>
-<?php
+	<?php
 }
 
 add_action( 'admin_init', 'ifeature_remove_upgrade_bar' );
@@ -603,6 +617,17 @@ function ifeature_title_setup() {
 	add_theme_support( 'responsive-embeds' );
 
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+
+	/*
+	 * Adds starter content to highlight the theme on fresh sites.
+	 * This is done conditionally to avoid loading the starter content on every
+	 * page load, as it is a one-off operation only needed once in the customizer.
+	 */
+	if ( is_customize_preview() ) {
+		require dirname( __FILE__ ) . '/inc/starter-content.php';
+		add_theme_support( 'starter-content', ifeature_get_starter_content() );
+	}
+
 }
 add_action( 'after_setup_theme', 'ifeature_title_setup' );
 
@@ -1006,11 +1031,12 @@ function ifeature_typography_h3() {
 }
 /**
  * Ifeature_customize_edit_links
+ *
  * @param  object $wp_customize Customizer options.
  */
 function ifeature_customize_edit_links( $wp_customize ) {
 
-	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	$wp_customize->selective_refresh->add_partial(
@@ -1171,12 +1197,12 @@ function ifeature_exclude_post_cat_recentpost_widget( $array ) {
 		}
 	}
 
-	$array['cat']=array($s);
-	//$exclude = array( 'cat' => $s );
+	$array['cat'] = array( $s );
+	// $exclude = array( 'cat' => $s );
 
 	return $array;
 }
-add_filter( "widget_posts_args", "ifeature_exclude_post_cat_recentpost_widget" );
+add_filter( 'widget_posts_args', 'ifeature_exclude_post_cat_recentpost_widget' );
 
 if ( ! function_exists( 'ifeature_exclude_post_cat' ) ) :
 	/**
@@ -1227,7 +1253,6 @@ function ifeature_byline_author() {
 				<a href="' . $auther_posts_url . '" title="' . $auther_link_title . '" rel="avatar">' . get_avatar( get_the_author_meta( 'ID' ), 20 ) . '</a>
 			</span>
 		</span>'
-
 	);
 
 	if ( $show_author ) {
@@ -1405,7 +1430,7 @@ function ifeature_blog_templates() {
 	$vat = array(
 		'full_width'    => $imagepath . '1col.png',
 		'right_sidebar' => $imagepath . '2cr.png',
-		'three-column'  => get_template_directory_uri() . '/images/3col.png'
+		'three-column'  => get_template_directory_uri() . '/images/3col.png',
 	);
 	return $vat;
 }
@@ -1417,19 +1442,21 @@ function ifeature_featured_image() {
 
 		$show = ( Ifeature_Helper::ifeature_cc_get_option( 'post_featured_images', 1 ) ) ? Ifeature_Helper::ifeature_cc_get_option( 'post_featured_images', 1 ) : false;
 
-
-	if( $show ):
-		if( has_post_thumbnail() ): ?>
+	if ( $show ) :
+		if ( has_post_thumbnail() ) :
+			?>
 			<div class="featured-image">
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'ifeature' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<?php the_post_thumbnail( apply_filters( 'ifeature_cc_post_thumbnail_size', 'full' ) ); // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound ?>
 				</a>
 			</div>
-		<?php    endif;
+			<?php
+		   endif;
 	endif;
 }
 
-/*function ifeature_ifeature_cc_selected_blog_elements() {
+/*
+function ifeature_ifeature_cc_selected_blog_elements() {
 	$options = array(
 			'boxes_lite'     => __( 'Boxes Lite', 'ifeature' ),
 			"portfolio_lite" => __( 'Portfolio Lite', 'ifeature' ),
@@ -1456,3 +1483,197 @@ function ifeature_ifeature_cc_selected_page_elements() {
 add_filter( 'ifeature_cc_elements_draganddrop_page_options', 'ifeature_cc_selected_page_elements' );
 add_filter( 'ifeature_cc_elements_draganddrop_page_options', 'ifeature_ifeature_cc_selected_page_elements' );
 */
+
+/**
+ * Add Ask For Review Admin Notice.
+ */
+function ifeature_ask_for_review_notice() {
+
+	if ( isset( $_GET['page'] ) && 'responsive' === $_GET['page'] ) {
+		return;
+	}
+
+	if ( false === get_option( 'ifeature-theme-old-setup' ) ) {
+		set_transient( 'ifeature_theme_ask_review_flag', true, MONTH_IN_SECONDS );
+		update_option( 'ifeature-theme-old-setup', true );
+	} elseif ( false === get_transient( 'ifeature_theme_ask_review_flag' ) && false === get_option( 'ifeature_theme_review_notice_dismissed' ) ) {
+
+		$image_path = get_template_directory_uri() . '/images/ifeature.jpg';
+		echo sprintf(
+			'<div class="notice notice-warning ask-for-review-notice">
+             					<div class="notice-image">
+									<img src="%1$s" class="custom-logo" alt="iFeature" itemprop="logo">
+								</div>
+								<div class="notice-content">
+									<div class="notice-heading">
+										%3$s
+									</div>
+									%4$s<br />
+									<div class="ifeature-review-notice-container">
+										<a href="%2$s" class="ifeature-notice-close ifeature-review-notice button-primary" target="_blank">
+										%5$s
+										</a>
+										<span class="dashicons dashicons-calendar"></span>
+										<a href="?ifeature-theme-review-notice-change-timeout=true" data-repeat-notice-after="60" class="ifeature-notice-close ifeature-review-notice">
+										%6$s
+										</a>
+										<span class="dashicons dashicons-smiley"></span>
+										<a href="?ifeature-theme-review-notice-dismissed=true" class="ifeature-notice-close ifeature-review-notice">
+										%7$s
+										</a>
+									</div>
+								</div>
+								<div>
+									<a href="?ifeature-theme-review-notice-dismissed=true">Dismiss</a>
+
+								</div>
+         					</div>',
+			esc_url( $image_path ),
+			'https://wordpress.org/support/theme/ifeature/reviews/#new-post',
+			__( 'Hi! Thanks for using the iFeature theme.', 'ifeature' ),
+			__( 'Can you please do us a favor and give us a 5-star rating? Your feedback keeps us motivated and helps us grow the iFeature community.', 'ifeature' ),
+			__( 'Ok, you deserve it', 'ifeature' ),
+			__( 'Nope, maybe later', 'ifeature' ),
+			__( 'I already did', 'ifeature' )
+		);
+		do_action( 'tag_review' );
+	}
+}
+add_action( 'admin_notices', ( 'ifeature_ask_for_review_notice' ) );
+
+/**
+ * Removed Ask For Review Admin Notice when dismissed.
+ */
+function ifeature_theme_notice_dismissed() {
+	if ( isset( $_GET['ifeature-theme-review-notice-dismissed'] ) ) {
+		update_option( 'ifeature_theme_review_notice_dismissed', true );
+		wp_safe_redirect( remove_query_arg( array( 'ifeature-theme-review-notice-dismissed' ), wp_get_referer() ) );
+	}
+}
+add_action( 'admin_init', ( 'ifeature_theme_notice_dismissed' ) );
+
+/**
+ * Removed Ask For Review Admin Notice when dismissed.
+ */
+function ifeature_theme_notice_change_timeout() {
+	if ( isset( $_GET['ifeature-theme-review-notice-change-timeout'] ) ) {
+		set_transient( 'ifeature_theme_ask_review_flag', true, DAY_IN_SECONDS );
+		wp_safe_redirect( remove_query_arg( array( 'ifeature-theme-review-notice-change-timeout' ), wp_get_referer() ) );
+	}
+}
+add_action( 'admin_init', ( 'ifeature_theme_notice_change_timeout' ) );
+
+/**
+ * Add styling for ifeature_ask_for_review_notice function.
+ */
+function ifeature_add_review_styling() {
+	?>
+	<style>
+		.ask-for-review-notice {
+			display:flex;
+			padding: 15px;
+		}
+
+		.notice-image {
+			align-self: center;
+		}
+
+		.notice-content {
+			padding-left: 20px;
+		}
+
+		.ifeature-review-notice-container .dashicons {
+			margin-left: 10px;
+			padding-right: 5px !important;
+		}
+
+		.ifeature-review-notice-container {
+			display: flex;
+			align-items: center;
+			padding-top: 10px;
+		}
+
+		.ifeature-review-notice-container .dashicons {
+			font-size: 1.4em;
+			padding-right: 10px;
+		}
+
+		.ifeature-review-notice-container a {
+			padding-right: 5px;
+			text-decoration: none;
+		}
+
+		.ifeature-review-notice-container .dashicons:first-child {
+			padding-right: 0;
+		}
+
+		.notice-image img {
+			max-width: 90px;
+		}
+
+		.notice-content .notice-heading {
+			padding-bottom: 5px;
+		}
+
+		.notice-content {
+			margin-right: 12%;
+		}
+
+		.notice-container {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+		}
+
+		#ifeature-sites-on-active .notice-image img {
+			max-width: 60px;
+			margin-right: 5px;
+		}
+
+		#ifeature-sites-on-active .notice-content .notice-heading {
+			margin: 0 0 8px;
+			padding: 0;
+			font-weight: bolder;
+			font-size: 1.3em;
+			color: #2e4453;
+		}
+
+		#ifeature-sites-on-active .notice-content p {
+			padding-top: 0;
+			margin-top: 0;
+			margin-bottom: 6px;
+		}
+
+		#ifeature-sites-on-active .notice-container {
+			padding: 18px 0 18px;
+			align-items: start;
+		}
+
+		#ifeature-sites-on-active .button.button-hero {
+			font-size: 13px;
+			min-height: 30px;
+			line-height: 26px;
+			padding: 0 12px;
+			height: 30px;
+		}
+
+		#ifeature-sites-on-active .ifeature-review-notice-container {
+			padding-top: 5px;
+		}
+
+		#ifeature-sites-on-active .button-primary {
+			box-shadow: 0 1px 0 #006799;
+		}
+
+		#ifeature-sites-on-active .button.updating-message:before,
+		#ifeature-sites-on-active .button.updated-message:before,
+		#ifeature-sites-on-active .button.installed:before,
+		#ifeature-sites-on-active .button.installing:before {
+			margin: 4px -1px 0px 5px;
+		}
+	</style>
+	<?php
+}
+add_action( 'admin_head', ( 'ifeature_add_review_styling' ) );

@@ -458,6 +458,9 @@ if ( ! class_exists( 'Ifeature_Hooks' ) ) {
 			$social['twitterbird']['set']   = Ifeature_Helper::ifeature_cc_get_option( 'social_twitter', 'checked' );
 			$social['twitterbird']['title'] = 'twitter';
 			$social['twitterbird']['url']   = Ifeature_Helper::ifeature_cc_get_option( 'twitter_url' );
+			$social['vimeo']['set']         = Ifeature_Helper::ifeature_cc_get_option( 'social_vimeo', 'checked' );
+			$social['vimeo']['title']       = 'vimeo';
+			$social['vimeo']['url']         = Ifeature_Helper::ifeature_cc_get_option( 'vimeo_url' );
 			$social['facebook']['set']      = Ifeature_Helper::ifeature_cc_get_option( 'social_facebook', 'checked' );
 			$social['facebook']['url']      = Ifeature_Helper::ifeature_cc_get_option( 'facebook_url' );
 			$social['googleplus']['set']    = Ifeature_Helper::ifeature_cc_get_option( 'social_google', 'checked' );
@@ -497,11 +500,7 @@ if ( ! class_exists( 'Ifeature_Hooks' ) ) {
 					$title = ( isset( $social[ $key ]['title'] ) ) ? $social[ $key ]['title'] : $key;
 
 					// Create the output.
-					if ( 'email' !== $key ) {
-						$output .= '<a href="mailto:' . esc_html( $social[ $key ]['url'] ) . '" title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
-					} else {
-						$output .= '<a href="' . esc_url( $social[ $key ]['url'] ) . '" title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
-					}
+					$output .= '<a href="' . esc_url( $social[ $key ]['url'] ) . '" title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
 				}
 			}
 
@@ -933,7 +932,7 @@ if ( ! class_exists( 'Ifeature_Hooks' ) ) {
 				$width = intval( Ifeature_Helper::ifeature_cc_get_option( 'max_width' ) );
 				$key   = ( Ifeature_Helper::ifeature_cc_get_option( 'responsive_design', 'checked' ) ) ? 'max-width' : 'width';
 				if ( $width < 400 || empty( $width ) ) {
-					$container_styles[ $key ] = 1020;
+					$container_styles[ $key ] = 1140;
 				} else {
 					$container_styles[ $key ] = $width;
 				}

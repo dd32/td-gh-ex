@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License version 3.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: iFeature 7.2.0\n"
+"Project-Id-Version: iFeature 7.2.1\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/contact/\n"
-"POT-Creation-Date: 2020-06-05 11:26:25+00:00\n"
+"POT-Creation-Date: 2020-06-12 14:04:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr ""
 "x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Textdomain-Support: yes\n"
 
-#: cyberchimps/options/options-customizer.php:2323
+#: cyberchimps/options/options-customizer.php:2364
 msgid "404"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #: content.php:37 content.php:53 cyberchimps/functions.php:403
-#: functions.php:1424
+#: functions.php:1449
 msgid "Permalink to %s"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgid "Posted on %s"
 msgstr ""
 
 #: cyberchimps/functions.php:284 cyberchimps/functions.php:1244
-#: functions.php:1210
+#: functions.php:1236
 msgid "View all posts by %s"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgid "Page %s"
 msgstr ""
 
 #: cyberchimps/functions.php:699 cyberchimps/functions.php:739
-#: cyberchimps/options/options-customizer.php:2289
+#: cyberchimps/options/options-customizer.php:2330
 msgid "Read More..."
 msgstr ""
 
@@ -202,7 +202,7 @@ msgid "Install the \"WPForms Lite\" plugin"
 msgstr ""
 
 #: cyberchimps/hooks/class-cyberchimps-hooks.php:57
-#: cyberchimps/options/options-customizer.php:2928 elements/init.php:47
+#: cyberchimps/options/options-customizer.php:2969 elements/init.php:47
 msgid "Post Page"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgid "Our Blog"
 msgstr ""
 
 #: cyberchimps/hooks/class-cyberchimps-hooks.php:255
-#: cyberchimps/options/options-customizer.php:2955
+#: cyberchimps/options/options-customizer.php:2996
 msgid "Logo + Icons"
 msgstr ""
 
@@ -231,12 +231,12 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
-#: cyberchimps/init.php:185 cyberchimps/options/options-customizer.php:2413
+#: cyberchimps/init.php:185 cyberchimps/options/options-customizer.php:2454
 msgid "Footer Widgets"
 msgstr ""
 
 #: cyberchimps/options/meta-box-class/meta-box.php:34
-#: cyberchimps/options/options-customizer.php:937
+#: cyberchimps/options/options-customizer.php:978
 msgid "Select Page Layout"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgid "Page Elements"
 msgstr ""
 
 #: cyberchimps/options/meta-box-class/meta-box.php:54
-#: cyberchimps/options/options-customizer.php:2926
+#: cyberchimps/options/options-customizer.php:2967
 msgid "Boxes"
 msgstr ""
 
@@ -258,14 +258,14 @@ msgid "Page"
 msgstr ""
 
 #: cyberchimps/options/meta-box-class/meta-box.php:56
-#: cyberchimps/options/options-customizer.php:1325
-#: cyberchimps/options/options-customizer.php:2927 elements/init.php:46
+#: cyberchimps/options/options-customizer.php:1366
+#: cyberchimps/options/options-customizer.php:2968 elements/init.php:46
 #: elements/init.php:61
 msgid "Portfolio Lite"
 msgstr ""
 
 #: cyberchimps/options/meta-box-class/meta-box.php:57
-#: cyberchimps/options/options-customizer.php:2929 elements/init.php:48
+#: cyberchimps/options/options-customizer.php:2970 elements/init.php:48
 #: elements/init.php:63
 msgid "Slider Lite"
 msgstr ""
@@ -455,417 +455,425 @@ msgstr ""
 msgid "Instagram URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:866
+#: cyberchimps/options/options-customizer.php:872
+msgid "Display Vimeo?"
+msgstr ""
+
+#: cyberchimps/options/options-customizer.php:892
+msgid "Vimeo URL"
+msgstr ""
+
+#: cyberchimps/options/options-customizer.php:907
 msgid "Contact Elements"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:881 elements/contact-us.php:160
+#: cyberchimps/options/options-customizer.php:922 elements/contact-us.php:160
 msgid "Contact Number"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:898
-#: cyberchimps/options/options-customizer.php:969
+#: cyberchimps/options/options-customizer.php:939
+#: cyberchimps/options/options-customizer.php:1010
 msgid "Blog"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:899
+#: cyberchimps/options/options-customizer.php:940
 msgid "Several settings for Blog"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:909
+#: cyberchimps/options/options-customizer.php:950
 msgid "Blog Option"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:910
+#: cyberchimps/options/options-customizer.php:951
 msgid "Blog elements configuration"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:958
+#: cyberchimps/options/options-customizer.php:999
 msgid "Blog Title"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:978
+#: cyberchimps/options/options-customizer.php:1019
 msgid "Blog Title Text"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:996
-#: cyberchimps/options/options-customizer.php:1939
-#: cyberchimps/options/options-customizer.php:2086
+#: cyberchimps/options/options-customizer.php:1037
+#: cyberchimps/options/options-customizer.php:1980
+#: cyberchimps/options/options-customizer.php:2127
 msgid "Post Format Icons"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1014
-#: cyberchimps/options/options-customizer.php:2104
-#: cyberchimps/options/options-customizer.php:2268
+#: cyberchimps/options/options-customizer.php:1055
+#: cyberchimps/options/options-customizer.php:2145
+#: cyberchimps/options/options-customizer.php:2309
 msgid "Post Excerpts"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1032
-#: cyberchimps/options/options-customizer.php:2287
+#: cyberchimps/options/options-customizer.php:1073
+#: cyberchimps/options/options-customizer.php:2328
 msgid "Read More Text"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1050
-#: cyberchimps/options/options-customizer.php:2306
+#: cyberchimps/options/options-customizer.php:1091
+#: cyberchimps/options/options-customizer.php:2347
 msgid "Excerpt Length"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1068
-#: cyberchimps/options/options-customizer.php:1921
-#: cyberchimps/options/options-customizer.php:2122
+#: cyberchimps/options/options-customizer.php:1109
+#: cyberchimps/options/options-customizer.php:1962
+#: cyberchimps/options/options-customizer.php:2163
 msgid "Featured Images"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1086
-#: cyberchimps/options/options-customizer.php:1957
-#: cyberchimps/options/options-customizer.php:2140
+#: cyberchimps/options/options-customizer.php:1127
+#: cyberchimps/options/options-customizer.php:1998
+#: cyberchimps/options/options-customizer.php:2181
 msgid "Post Byline Author"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1104
-#: cyberchimps/options/options-customizer.php:1975
-#: cyberchimps/options/options-customizer.php:2158
+#: cyberchimps/options/options-customizer.php:1145
+#: cyberchimps/options/options-customizer.php:2016
+#: cyberchimps/options/options-customizer.php:2199
 msgid "Post Byline Categories"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1122
-#: cyberchimps/options/options-customizer.php:1993
-#: cyberchimps/options/options-customizer.php:2176
+#: cyberchimps/options/options-customizer.php:1163
+#: cyberchimps/options/options-customizer.php:2034
+#: cyberchimps/options/options-customizer.php:2217
 msgid "Post Byline Date"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1140
-#: cyberchimps/options/options-customizer.php:2011
-#: cyberchimps/options/options-customizer.php:2194
+#: cyberchimps/options/options-customizer.php:1181
+#: cyberchimps/options/options-customizer.php:2052
+#: cyberchimps/options/options-customizer.php:2235
 msgid "Post Byline Comments"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1158
-#: cyberchimps/options/options-customizer.php:2029
-#: cyberchimps/options/options-customizer.php:2212
+#: cyberchimps/options/options-customizer.php:1199
+#: cyberchimps/options/options-customizer.php:2070
+#: cyberchimps/options/options-customizer.php:2253
 msgid "Post Byline Tags"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1172
+#: cyberchimps/options/options-customizer.php:1213
 msgid "Exclude Categories from Blog page"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1173
+#: cyberchimps/options/options-customizer.php:1214
 msgid ""
 "Please choose the post categories that should not be displayed on the blog "
 "page"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1192
+#: cyberchimps/options/options-customizer.php:1233
 msgid "Blog Slider Lite"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1193
+#: cyberchimps/options/options-customizer.php:1234
 msgid ""
 "Slider Lite limits you to a total of 3 images throughout your whole site. "
 "Upgrade to %1$s to be able to create more images. Categorize them and "
 "display each category on a different page."
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1193
-#: cyberchimps/options/options-customizer.php:1326
-#: cyberchimps/options/options-customizer.php:1646
+#: cyberchimps/options/options-customizer.php:1234
+#: cyberchimps/options/options-customizer.php:1367
+#: cyberchimps/options/options-customizer.php:1687
 msgid "Pro"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1210
+#: cyberchimps/options/options-customizer.php:1251
 msgid "Upload Slider Image 1"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1229
+#: cyberchimps/options/options-customizer.php:1270
 msgid "Slide 1 URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1249
+#: cyberchimps/options/options-customizer.php:1290
 msgid "Upload Slider Image 2"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1268
+#: cyberchimps/options/options-customizer.php:1309
 msgid "Slide 2 URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1288
+#: cyberchimps/options/options-customizer.php:1329
 msgid "Upload Slider Image 3"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1307
+#: cyberchimps/options/options-customizer.php:1348
 msgid "Slide 3 URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1326
+#: cyberchimps/options/options-customizer.php:1367
 msgid ""
 "Portfolio Lite limits you to a total of 4 items throughout your whole site. "
 "Upgrade to %1$s to be able to create as many portfolio items as you like. "
 "Categorize them and display each category on a different page."
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1344
+#: cyberchimps/options/options-customizer.php:1385
 #: elements/portfolio-lite.php:40
 msgid "First Portfolio Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1363
+#: cyberchimps/options/options-customizer.php:1404
 #: elements/portfolio-lite.php:46
 msgid "First Portfolio Image Caption"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1382
+#: cyberchimps/options/options-customizer.php:1423
 msgid "Show First Porfolio Link"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1400
+#: cyberchimps/options/options-customizer.php:1441
 msgid "First Porfolio URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1420
+#: cyberchimps/options/options-customizer.php:1461
 #: elements/portfolio-lite.php:69
 msgid "Second Portfolio Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1439
+#: cyberchimps/options/options-customizer.php:1480
 #: elements/portfolio-lite.php:75
 msgid "Second Portfolio Image Caption"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1458
+#: cyberchimps/options/options-customizer.php:1499
 msgid "Show Second Porfolio Link"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1476
+#: cyberchimps/options/options-customizer.php:1517
 msgid "Second Porfolio URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1496
+#: cyberchimps/options/options-customizer.php:1537
 #: elements/portfolio-lite.php:98
 msgid "Third Portfolio Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1515
+#: cyberchimps/options/options-customizer.php:1556
 #: elements/portfolio-lite.php:104
 msgid "Third Portfolio Image Caption"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1534
+#: cyberchimps/options/options-customizer.php:1575
 msgid "Show Third Porfolio Link"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1552
+#: cyberchimps/options/options-customizer.php:1593
 msgid "Third Porfolio URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1572
+#: cyberchimps/options/options-customizer.php:1613
 msgid "Forth Portfolio Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1591
+#: cyberchimps/options/options-customizer.php:1632
 msgid "Forth Portfolio Image Caption"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1610
+#: cyberchimps/options/options-customizer.php:1651
 msgid "Show Forth Porfolio Link"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1628
+#: cyberchimps/options/options-customizer.php:1669
 msgid "Forth Porfolio URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1645 elements/init.php:45
+#: cyberchimps/options/options-customizer.php:1686 elements/init.php:45
 #: elements/init.php:60
 msgid "Boxes Lite"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1646
+#: cyberchimps/options/options-customizer.php:1687
 msgid ""
 "Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
 "Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
 "them and display each category on a different page."
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1664
+#: cyberchimps/options/options-customizer.php:1705
 msgid "First Box Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1683
+#: cyberchimps/options/options-customizer.php:1724
 msgid "First Link URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1701
+#: cyberchimps/options/options-customizer.php:1742
 msgid "First Box Text"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1721
+#: cyberchimps/options/options-customizer.php:1762
 msgid "Second Box Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1740
+#: cyberchimps/options/options-customizer.php:1781
 msgid "Second Link URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1758
+#: cyberchimps/options/options-customizer.php:1799
 msgid "Second Box Text"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1778
+#: cyberchimps/options/options-customizer.php:1819
 msgid "Third Box Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1797
+#: cyberchimps/options/options-customizer.php:1838
 msgid "Third Link URL"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1815
+#: cyberchimps/options/options-customizer.php:1856
 msgid "Third Box Text"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1833
+#: cyberchimps/options/options-customizer.php:1874
 msgid "Template"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1834
+#: cyberchimps/options/options-customizer.php:1875
 msgid "Several settings for Template"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1845
+#: cyberchimps/options/options-customizer.php:1886
 msgid "Single Post"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1865
-#: cyberchimps/options/options-customizer.php:2066
-#: cyberchimps/options/options-customizer.php:2248
-#: cyberchimps/options/options-customizer.php:2343
+#: cyberchimps/options/options-customizer.php:1906
+#: cyberchimps/options/options-customizer.php:2107
+#: cyberchimps/options/options-customizer.php:2289
+#: cyberchimps/options/options-customizer.php:2384
 msgid "Sidebar Options"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1885
+#: cyberchimps/options/options-customizer.php:1926
 msgid "Post Author Bio"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:1903
+#: cyberchimps/options/options-customizer.php:1944
 msgid "Post Title"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2046
+#: cyberchimps/options/options-customizer.php:2087
 msgid "Archive"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2228 searchform.php:18
+#: cyberchimps/options/options-customizer.php:2269 searchform.php:18
 msgid "Search"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2363
+#: cyberchimps/options/options-customizer.php:2404
 msgid "Custom 404 Title"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2381
+#: cyberchimps/options/options-customizer.php:2422
 msgid "Custom 404 Content"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2398
+#: cyberchimps/options/options-customizer.php:2439
 msgid "Footer"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2430
+#: cyberchimps/options/options-customizer.php:2471
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2444
+#: cyberchimps/options/options-customizer.php:2485
 msgid "Layout"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2459
+#: cyberchimps/options/options-customizer.php:2500
 msgid "Responsive Design"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2476
+#: cyberchimps/options/options-customizer.php:2517
 msgid "Responsive Videos"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2493
+#: cyberchimps/options/options-customizer.php:2534
 msgid "Gallery Lightbox"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2510
+#: cyberchimps/options/options-customizer.php:2551
 msgid "Wide Sidebar"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2512
+#: cyberchimps/options/options-customizer.php:2553
 msgid "Only works on layouts with 1 sidebar"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2531
+#: cyberchimps/options/options-customizer.php:2572
 msgid "Max Width"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2543
+#: cyberchimps/options/options-customizer.php:2584
 msgid "Design"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2566
+#: cyberchimps/options/options-customizer.php:2607
 msgid "Skin Color"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2590
+#: cyberchimps/options/options-customizer.php:2631
 msgid "Text Color"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2612
+#: cyberchimps/options/options-customizer.php:2653
 msgid "Link Color"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2634
+#: cyberchimps/options/options-customizer.php:2675
 msgid "Link Hover Color"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2670
+#: cyberchimps/options/options-customizer.php:2711
 msgid "Typography"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2690
+#: cyberchimps/options/options-customizer.php:2731
 msgid "Typography Size"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2712
+#: cyberchimps/options/options-customizer.php:2753
 msgid "Typography Style"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2760
+#: cyberchimps/options/options-customizer.php:2801
 msgid "Typography Face"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2781
+#: cyberchimps/options/options-customizer.php:2822
 msgid "Enter Google font"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2801
+#: cyberchimps/options/options-customizer.php:2842
 msgid "Font Family for headings"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2822
+#: cyberchimps/options/options-customizer.php:2863
 msgid "Google font for headings"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2844
+#: cyberchimps/options/options-customizer.php:2885
 msgid "Background Image"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2919
+#: cyberchimps/options/options-customizer.php:2960
 msgid "Drag & Drop Blog Elements"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2948
+#: cyberchimps/options/options-customizer.php:2989
 msgid "Drag & Drop Header Elements"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2956
+#: cyberchimps/options/options-customizer.php:2997
 msgid "Logo + Search"
 msgstr ""
 
-#: cyberchimps/options/options-customizer.php:2957 functions.php:284
+#: cyberchimps/options/options-customizer.php:2998 functions.php:297
 msgid "Logo"
 msgstr ""
 
@@ -1183,7 +1191,7 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:114 functions.php:149
+#: functions.php:114 functions.php:151
 msgid "(Edit)"
 msgstr ""
 
@@ -1200,74 +1208,96 @@ msgstr ""
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:257
 msgid "iFeature Responsive Drag and Drop WordPress Theme"
 msgstr ""
 
-#: functions.php:416 functions.php:512
+#: functions.php:430 functions.php:526
 msgid "iMenu Options"
 msgstr ""
 
-#: functions.php:435 functions.php:528
+#: functions.php:449 functions.php:542
 msgid "Menu Home Icon"
 msgstr ""
 
-#: functions.php:547
+#: functions.php:561
 msgid "Searchbar"
 msgstr ""
 
-#: functions.php:568
+#: functions.php:582
 msgid ""
 "Welcome to iFeature! Get 30%% off on %1$s using Coupon Code <span "
 "style=\"color:red\">IFEATURE30</span>"
 msgstr ""
 
-#: functions.php:634 functions.php:803
+#: functions.php:659 functions.php:828
 msgid "Menu Background Color"
 msgstr ""
 
-#: functions.php:655 functions.php:813
+#: functions.php:680 functions.php:838
 msgid "Menu Hover Color"
 msgstr ""
 
-#: functions.php:676 functions.php:823
+#: functions.php:701 functions.php:848
 msgid "Menu Text Color"
 msgstr ""
 
-#: functions.php:694 functions.php:833
+#: functions.php:719 functions.php:858
 msgid "Gradient Design"
 msgstr ""
 
-#: functions.php:717 functions.php:842
+#: functions.php:742 functions.php:867
 msgid "Choose a skin"
 msgstr ""
 
-#: functions.php:737
+#: functions.php:762
 msgid "Sticky Header"
 msgstr ""
 
-#: functions.php:766 functions.php:859
+#: functions.php:791 functions.php:884
 msgid "Choose Footer Widgets Layout"
 msgstr ""
 
-#: functions.php:786
+#: functions.php:811
 msgid "Skin Options"
 msgstr ""
 
-#: functions.php:804
+#: functions.php:829
 msgid "Select menu background color"
 msgstr ""
 
-#: functions.php:814
+#: functions.php:839
 msgid "Select menu hover color"
 msgstr ""
 
-#: functions.php:824
+#: functions.php:849
 msgid "Select color for menu text"
 msgstr ""
 
-#: functions.php:1222
+#: functions.php:1248
 msgid "by "
+msgstr ""
+
+#: functions.php:1533
+msgid "Hi! Thanks for using the iFeature theme."
+msgstr ""
+
+#: functions.php:1534
+msgid ""
+"Can you please do us a favor and give us a 5-star rating? Your feedback "
+"keeps us motivated and helps us grow the iFeature community."
+msgstr ""
+
+#: functions.php:1535
+msgid "Ok, you deserve it"
+msgstr ""
+
+#: functions.php:1536
+msgid "Nope, maybe later"
+msgstr ""
+
+#: functions.php:1537
+msgid "I already did"
 msgstr ""
 
 #: image.php:65
@@ -1292,6 +1322,14 @@ msgstr ""
 
 #: inc/admin-about.php:53
 msgid "Leave a star rating"
+msgstr ""
+
+#: inc/starter-content.php:34
+msgid "Starter_Home"
+msgstr ""
+
+#: inc/starter-content.php:151
+msgid "Primary"
 msgstr ""
 
 #: no-results.php:19
@@ -1333,24 +1371,25 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "iFeature is a fully-responsive, Gutenberg compatible, translation-ready, "
-"universal professional theme. Catering to e-commerce sites, blogging, "
-"personal profiles and more. iFeature's touch-friendly drag-and-drop "
-"elements allow you to set up a professional website in minutes. When it "
-"comes to responsive elements and drag-and-drop options, CyberChimps not "
-"only pioneered, but continues to innovate these elements for the greater "
-"WordPress community. iFeature lets you create responsive websites that you "
-"can control on any touch-friendly device, including: iPad, iPhone and "
-"Android devices. With options on a per-page basis, this theme allows you to "
-"control the look and feel of every page. iFeature has sticky header menu. "
-"It has option available to exclude categories from blog page. You can also "
-"display author bio for each post. Includes a Testimonial section so you can "
-"highlight positive feedback from your customers and boost conversion. "
-"Includes a team section to display your team members details. Two types of "
-"footer widgets layout available. For Support - <a "
-"href=\"https://cyberchimps.com/forum/free/ifeature/\"> Support forum</a> "
-"(https://cyberchimps.com/forum/free/ifeature/). View <a "
-"href=\"http://demos.cyberchimps.com/ifeature/\">iFeature Demo</a> "
-"(http://demos.cyberchimps.com/ifeature/). CyberChimps - Themes You Can Trust"
+"and a multipurpose professional theme. The theme is perfectly designed for "
+"e-commerce sites, blogging, personal profiles, startups, and more. "
+"iFeature's touch-friendly drag-and-drop elements allow you to set up a "
+"professional website in minutes. When it comes to responsive elements and "
+"drag-and-drop options, CyberChimps not only pioneered but continues to "
+"innovate these elements for the greater WordPress community. The theme "
+"works well with all major page builders like- Elementor, Brizy, Beaver "
+"Builder, Visual Composer, SiteOrigin, Divi, etc. With options on a per-page "
+"basis, this theme allows you to control the look and feel of every page. "
+"iFeature has a sticky header menu and has options available to exclude "
+"categories from the blog page. You can also display author bio for each "
+"post. Includes a Testimonial section so you can highlight positive feedback "
+"from your customers and boost conversion. Includes a team section to "
+"display your team members’ details. Two types of footer widgets layout "
+"available. Features: #Responsive #Starter Data #WooCommerce Ready #LMS "
+"Ready (Sensei, LearnDash) #RTL #Translations Ready # WPML Compatible "
+"#Retina Logo #Layout Settings #Transparent Headers #White Label #Site/Blog "
+"Layouts #Unlimited Colors #Custom spacing. View iFeature Demo "
+"(http://demos.cyberchimps.com/ifeature/)"
 msgstr ""
 
 #. Author of the plugin/theme

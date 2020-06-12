@@ -855,6 +855,47 @@ function ifeature_cc_customize( $wp_customize ) {
 		)
 	);
 
+	// Add Vimeo Setting.
+
+	$wp_customize->add_setting(
+		'ifeature_cc_options[social_vimeo]',
+		array(
+			'sanitize_callback' => 'ifeature_cc_sanitize_checkbox',
+			'type'              => 'option',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'social_vimeo',
+			array(
+				'label'    => __( 'Display Vimeo?', 'ifeature' ),
+				'section'  => 'ifeature_cc_social_media',
+				'settings' => 'ifeature_cc_options[social_vimeo]',
+				'type'     => 'checkbox',
+			)
+		)
+	);
+	$wp_customize->add_setting(
+		'ifeature_cc_options[vimeo_url]',
+		array(
+			'sanitize_callback' => 'esc_url_raw',
+			'type'              => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'vimeo_url',
+			array(
+				'label'    => __( 'Vimeo URL', 'ifeature' ),
+				'section'  => 'ifeature_cc_social_media',
+				'settings' => 'ifeature_cc_options[vimeo_url]',
+			)
+		)
+	);
+
 	// Add contact section
 
 	$wp_customize->add_section(
@@ -2519,7 +2560,7 @@ function ifeature_cc_customize( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ifeature_cc_options[max_width]',
 		array(
-			'default'           => apply_filters( 'ifeature_cc_max_width_default', '1020' ),
+			'default'           => apply_filters( 'ifeature_cc_max_width_default', '1140' ),
 			'type'              => 'option',
 			'sanitize_callback' => 'absint',
 		)

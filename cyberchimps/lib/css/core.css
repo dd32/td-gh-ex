@@ -159,6 +159,10 @@ a.symbol.twitterbird:before {
 	content: "\f099";
 }
 
+a.symbol.vimeo:before {
+	content: "\f27d";
+}
+
 a.symbol.instagram:before {
 	content: "\f16d";
 }

@@ -1,7 +1,7 @@
 === iFeature ===
 Contributors: CyberChimps
 Requires at least: WordPress 5.0
-Tested up to: WordPress 5.2
+Tested up to: WordPress 5.4.2
 Requires PHP: 7.0
 Version: 7.1
 License: GPLv3 or later
@@ -16,6 +16,14 @@ iFeature is a fully-responsive, Gutenberg compatible, translation-ready, univers
 == Frequently Asked Questions ==
 
 == Changelog ==
+Version 7.2.1 (06/12/20)
+- Added - Starter content for new users
+- Added - Vimeo social link
+
+Version 7.2.0 (06/05/20)
+- Added - Support for Gutenberg Blocks
+- Added - Full-Width Gutenberg Template
+- Fixed - Minor issues
 
 Version 7.1 (08/28/19)
 - Fixed various Theme Sniffer and Theme Checker issues.
