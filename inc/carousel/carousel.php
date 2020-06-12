@@ -45,7 +45,7 @@
 			<div class="carousel container">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<div class="carousel-block">
-							<?php if(function_exists('yasr_get_overall_rating') && function_exists('cfs') && (CFS()->get('show_stars') == 1)) { 
+							<?php if(function_exists('cfs') && (CFS()->get('show_stars') == 1)) { 
 								echo do_shortcode('[yasr_overall_rating]');
 							} ?>
 							<?php if ( has_post_thumbnail() ) : ?>
