@@ -3,9 +3,9 @@ Contributors: emtiaz51921
 Author URI: https://imtiazshamim.com/
 Donate link:
 Requires at least: 4.0
-Tested up to: 5.3.1
+Tested up to: 5.4.1
 Requires PHP: 5.5
-Stable tag: 2.2.5
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-colors, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
@@ -147,6 +147,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 
 == Changelog ==
+
+= 3.0.2 - June 13 2020 =
+* Add theme support for the plugin: Getwid - Gutenberg Blocks
 
 = 3.0.1 - March 28 2020 =
 * Customizer color control added to change theme colors.

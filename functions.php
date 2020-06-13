@@ -360,3 +360,8 @@ require get_template_directory() . '/inc/widgets/class-aari-aboutme-widget.php';
  * Dynamic style
  */
 require get_template_directory() . '/inc/dynamic-style.php';
+
+/**
+ * Recommend Plugin
+ */
+require get_template_directory() . '/recommend-plugins/aari-recommend-plugins.php';
