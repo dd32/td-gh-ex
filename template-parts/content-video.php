@@ -21,7 +21,7 @@
   }
 ?>
 <article class="page-box">
-  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title()); ?></a></h2>
+  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title()); ?></a></h2>
   <?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '' || get_theme_mod( 'advance_fitness_gym_date_hide',true) != '' || get_theme_mod( 'advance_fitness_gym_comment_hide',true) != '') { ?>
     <div class="metabox">
       <?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '') { ?>

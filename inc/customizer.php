@@ -817,6 +817,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 
     //Sticky Header
 	$wp_customize->add_setting( 'advance_fitness_gym_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_fitness_gym_sticky_header',array(
@@ -1183,7 +1184,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_fitness_gym_blog_post_description_option',array(
-    	'default'   => 'Excerpt Content',
+    	'default'   => __('Excerpt Content','advance-fitness-gym'),
         'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_fitness_gym_blog_post_description_option',array(
