@@ -1091,7 +1091,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_blog_post_description_option',array(
-    	'default'   => 'Excerpt Content',
+    	'default'   => __('Excerpt Content','advance-ecommerce-store'),
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_blog_post_description_option',array(
