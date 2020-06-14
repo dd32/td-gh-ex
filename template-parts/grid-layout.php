@@ -15,7 +15,7 @@
 <div class="col-lg-4 col-md-4">
   <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="page-box">
-      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
       <?php if( get_theme_mod( 'advance_business_author_hide',true) != '' || get_theme_mod( 'advance_business_date_hide',true) != '' || get_theme_mod( 'advance_business_comment_hide',true) != '') { ?>
         <div class="metabox">
           <?php if( get_theme_mod( 'advance_business_author_hide',true) != '') { ?>
