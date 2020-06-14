@@ -476,10 +476,10 @@ function advance_automobile_customize_register($wp_customize) {
 		'section'  => 'woocommerce_product_catalog',
 		'type'     => 'select',
 		'choices'  => array(
-						'2' => '2',
-						'3' => '3',
-						'4' => '4',
-						'5' => '5',
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+			'5' => '5',
 		),
 	)  );
 
@@ -495,10 +495,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_top_bottom_wooproducts_padding',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control( 'advance_automobile_top_bottom_wooproducts_padding',	array(
 		'label' => esc_html__( 'Top Bottom Product Padding','advance-automobile' ),
@@ -513,10 +510,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_left_right_wooproducts_padding',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control( 'advance_automobile_left_right_wooproducts_padding',	array(
 		'label' => esc_html__( 'Right Left Product Padding','advance-automobile' ),
@@ -531,10 +525,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_wooproducts_border_radius',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_wooproducts_border_radius',array(
 		'label' => esc_html__( 'Product Border Radius','advance-automobile' ),
@@ -549,10 +540,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_wooproducts_box_shadow',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_wooproducts_box_shadow',array(
 		'label' => esc_html__( 'Product Box Shadow','advance-automobile' ),
@@ -573,10 +561,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_top_bottom_product_button_padding',array(
 		'default' => 10,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_top_bottom_product_button_padding',	array(
 		'label' => esc_html__( 'Product Button Top Bottom Padding','advance-automobile' ),
@@ -592,10 +577,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_left_right_product_button_padding',array(
 		'default' => 16,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_left_right_product_button_padding',array(
 		'label' => esc_html__( 'Product Button Right Left Padding','advance-automobile' ),
@@ -610,10 +592,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_automobile_product_button_border_radius',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_product_button_border_radius',array(
 		'label' => esc_html__( 'Product Button Border Radius','advance-automobile' ),
@@ -824,6 +803,7 @@ function advance_automobile_customize_register($wp_customize) {
 
     //Sticky Header
 	$wp_customize->add_setting( 'advance_automobile_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_automobile_sticky_header',array(
@@ -1311,7 +1291,7 @@ function advance_automobile_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_automobile_footer_widget_areas',array(
-        'default'           => '4',
+        'default'           => 4,
         'sanitize_callback' => 'advance_automobile_sanitize_choices',
     ));
     $wp_customize->add_control('advance_automobile_footer_widget_areas',array(
