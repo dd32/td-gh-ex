@@ -1207,7 +1207,7 @@ function advance_coaching_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_coaching_blog_post_description_option',array(
-    	'default'   => 'Excerpt Content',
+    	'default'   => __('Excerpt Content','advance-coaching'),
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_blog_post_description_option',array(

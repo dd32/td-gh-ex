@@ -14,7 +14,7 @@ get_header(); ?>
 			<p class="text-404"><?php echo esc_html(get_theme_mod('advance_coaching_content_404_page',__('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','advance-coaching')));?></p>
 			<?php if( get_theme_mod('advance_coaching_button_404_page','Back to Home Page') != ''){ ?>
 				<div class="read-moresec">
-	        		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php echo esc_html(get_theme_mod('advance_coaching_button_404_page',__('Back to Home Page','advance-coaching')));?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-coaching' ); ?></span></a>
+	        		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php echo esc_html(get_theme_mod('advance_coaching_button_404_page',__('Back to Home Page','advance-coaching')));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_coaching_button_404_page',__('Back to Home Page','advance-coaching')));?></span></a>
 	        	</div>
         	<?php } ?>
 			<div class="clearfix"></div>

@@ -12,7 +12,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-coaching' ) ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -59,7 +58,7 @@
               <div class="col-lg-3 col-md-3">
                 <div class="request-btn">
                   <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
-                    <span><a href="<?php echo esc_url(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_attr_e( 'Requestbtn','advance-coaching' );?></span></span>
+                    <span><a href="<?php echo esc_url(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_html_e( 'Requestbtn','advance-coaching' );?></span></span>
                   <?php }?>
                 </div>
               </div>
@@ -118,7 +117,7 @@
                                 ?>
                                 <div class="request-btn">
                                   <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
-                                    <span><a href="<?php echo esc_url(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_attr_e( 'Requestbtn','advance-coaching' );?></span></span>
+                                    <span><a href="<?php echo esc_url(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_html_e( 'Requestbtn','advance-coaching' );?></span></span>
                                   <?php }?>
                                 </div>
                                 <?php get_search_form();?>
