@@ -114,6 +114,11 @@ function nnfy_register_required_plugins() {
 			'slug'      => 'yith-woocommerce-wishlist', 
 			'required'  => false,
 		),
+		array(
+			'name'      => esc_html__('One Click Demo Import', '99fy'), 
+			'slug'      => 'one-click-demo-import', 
+			'required'  => false,
+		),
 		// HashBar
 		array(
 			'name'      => esc_html__('HashBar','99fy'), 

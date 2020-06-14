@@ -3,7 +3,7 @@
 Contributors: hasthemes, htplugins, devitemsllc
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.4.1-trunk
-Version: 3.1.5
+Version: 3.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Elementor, WooCommerce, WooLentor, retail, shop, shopping, fashion, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options

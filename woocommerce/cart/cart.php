@@ -137,7 +137,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             	<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', '99fy' ); ?>"><?php esc_html_e( 'Update Cart', '99fy' ); ?></button>
 
             	<?php $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) ); ?>
-                <a href="<?php echo esc_url( $shop_page_url ); ?>"><?php esc_attr_e( 'Continue Shopping', '99fy' ); ?></a>
+                <a href="<?php echo esc_url( $shop_page_url ); ?>"><?php esc_html_e( 'Continue Shopping', '99fy' ); ?></a>
             </div>
 
             <?php if ( wc_coupons_enabled() ) { ?>
