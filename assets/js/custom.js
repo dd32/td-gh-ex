@@ -67,23 +67,6 @@
 			navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]	
         });
 		
-		
-		//Search Popup Box
-		
-		jQuery(function () {
-			jQuery('a[href="#search-popup"]').on('click', function(event) {
-				event.preventDefault();
-				jQuery('#search-popup').addClass('open');
-				jQuery('#search-popup > form > input[type="search-popup"]').focus();
-			});
-			
-			jQuery('#search-popup, #search-popup button.close').on('click keyup', function(event) {
-				if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-					jQuery(this).removeClass('open');
-				}
-			});
-		});
-		
 		 
 	});
 	

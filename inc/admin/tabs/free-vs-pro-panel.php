@@ -209,7 +209,7 @@
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 			  </tr>
 			  <tr>
-				 <td><a target="_blank" href="<?php echo 'https://themearile.com/arilewp-pro-theme/';?>"><img src="<?php echo get_template_directory_uri();  ?>/inc/admin/images/advance-features.png" class="free_vs_pro_banner"></a></td>
+				 <td><a target="_blank" href="<?php echo 'https://themearile.com/arilewp-pro-theme/';?>"><img src="<?php echo esc_url ( ARILEWP_PARENT_INC_URI.'/admin/images/advance-features.png' ); ?>" class="free_vs_pro_banner"></a></td>
 				 <td colspan="2" class="ti-about-page-text-right"><a href="<?php echo 'https://themearile.com/arilewp-pro-theme/';?>" target="_blank" class="button button-primary button-hero"><?php esc_html_e('Get ArileWP Pro', 'arilewp'); ?></a></td>
 			  </tr>
 		   </tbody>

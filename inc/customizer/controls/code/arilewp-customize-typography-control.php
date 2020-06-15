@@ -36,7 +36,7 @@ class ArileWP_Customizer_Typography_Control extends WP_Customize_Control {
 				<?php
 				// Get Standard font options
 				if ( $std_fonts = arilewp_standard_fonts() ) { ?>
-					<optgroup label="<?php esc_html_e( 'Standard Fonts', 'arilewp' ); ?>">
+					<optgroup label="<?php esc_attr_e( 'Standard Fonts', 'arilewp' ); ?>">
 						<?php
 						// Loop through font options and add to select
 						foreach ( $std_fonts as $font ) { ?>
@@ -47,7 +47,7 @@ class ArileWP_Customizer_Typography_Control extends WP_Customize_Control {
 
 				// Google font options
 				if ( $google_fonts = arilewp_google_fonts_array() ) { ?>
-					<optgroup label="<?php esc_html_e( 'Google Fonts', 'arilewp' ); ?>">
+					<optgroup label="<?php esc_attr_e( 'Google Fonts', 'arilewp' ); ?>">
 						<?php
 						// Loop through font options and add to select
 						foreach ( $google_fonts as $font ) { ?>
