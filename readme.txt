@@ -1,17 +1,17 @@
 === Benevolent ===
 
 Contributors: raratheme
-Requires at least: WordPress 4.7
+Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.3.2
-Stable tag: 1.2.4
+Tested up to: 5.4.2
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
 == Description ==
 
-Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.rarathemes.com/benevolent/, documentation at https://docs.rarathemes.com/docs/benevolent/ and get support at https://rarathemes.com/support-forum/.
+Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://rarathemes.com/previews/?theme=benevolent/, documentation at https://docs.rarathemes.com/docs/benevolent/ and get support at https://rarathemes.com/support-forum/.
 
 
 == Installation ==
@@ -115,30 +115,48 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 
 External resources linked to the theme.
-* Raleway Font by through Google Font 
-https://www.google.com/fonts/specimen/Raleway
-*Font Awesome
-https://fortawesome.github.io/Font-Awesome/
 
 # Images
 All images are under Creative Commons Public Domain deed CC0.    
 
-https://pixabay.com/en/person-woman-india-fields-plantage-690245/
+Source:
+    - https://pxhere.com/en/photo/890073
+
+License: CCO
+    - https://pxhere.com/en/license
 
 Other images are self taken or self created and are GPL compatible.
 
-# JS
-All the JS are licensed under GPLv2 or later
-https://jqueryui.com/tabs/
-http://flexslider.woothemes.com/
-https://github.com/bfintal/Counter-Up/blob/master/LICENSE
-https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+# Benevolent bundles the following third-party resources:
+ 
+    * normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
+        - License: MIT
+        - Source: https://necolas.github.io/normalize.css/
 
-* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+    * Font Awesome icons, Copyright Dave Gandy
+        - Icons License: CC BY 4.0 
+        - Fonts License: SIL OFL 1.1 
+        - Source: http://fontawesome.io/
 
+    * TGMPA, Copyright (c) 2011, Thomas Griffin
+        - License: GPL-2.0+
+        - Source: http://tgmpluginactivation.com/
 
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+    * Owl-carousel, Copyright 2013-2017 David Deutsch 
+        - License : MIT, Version 2.2.1
+        - Source  : https://owlcarousel2.github.io/OwlCarousel2
 
+    * Owl Carousel v2 Accessibility Layer, © Geoffrey Roberts 2016
+        - License : MIT
+        - Source  : https://github.com/rtrvrtg/owlcarousel2-a11ylayer/blob/master/LICENSE
+
+    * Jquery Counterup, Copyright 2013, Benjamin Intal
+        - License: GPL-2.0+, Version 1.0
+        - Source: https://github.com/bfintal/Counter-Up
+
+    * waypoint, Copyright (c) 2011-2014 Caleb Troughton
+        - License: MIT License
+        - Source: https://github.com/imakewebthings/jquery-waypoints
 
 All other resources and theme elements are licensed under the GPLv2 or later
 
@@ -154,6 +172,18 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    
+    1.2.5
+    * Fixed calendar widget design issue for WordPress 5.4.2
+    * Fixed menu accessibility
+    * Fixed schema issue 
+    * Added static page content when homepage sections are disabled
+    * Added tested up to and require php in style header
+    * Replaced owl carousel aria with owlcarousel2 a11ylayer
+    * Updated breadcrumbs
+    * Changed demo link
+    * Removed publisher and image from schema
+
     1.2.4
     * Added fallback svg.
     * Added comment fields as required.

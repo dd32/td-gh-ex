@@ -11,7 +11,7 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head itemtype="http://schema.org/WebSite">
+<head itemtype="https://schema.org/WebSite">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -20,7 +20,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 <?php wp_body_open(); ?>
 <div id="page" class="site">	
     <a class="skip-link screen-reader-text" href="#acc-content"><?php esc_html_e( 'Skip to content (Press Enter)', 'benevolent' ); ?></a>
@@ -35,7 +35,7 @@
                 }else{
                     $add_class = '';
                 }?>
-                <div class="site-branding <?php echo esc_attr( $add_class ); ?>" itemscope itemtype="http://schema.org/Organization">
+                <div class="site-branding <?php echo esc_attr( $add_class ); ?>" itemscope itemtype="https://schema.org/Organization">
                 
                     <?php if( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
                         echo '<div class="site-logo">';
@@ -66,12 +66,12 @@
             </div>
         </div> <!-- container -->
         <div class="mobile-menu">
-            <nav class="primary-menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav class="primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                     <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
                 </nav><!-- #site-navigation -->
             <?php if( has_nav_menu( 'secondary' ) ) { ?>
                 
-                <nav class="secondary-menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <nav class="secondary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                     <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
                 </nav><!-- #site-navigation -->
                 <?php } ?>
@@ -81,7 +81,7 @@
 
 
 
-	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
         
         <div class="header-top">
             <div class="container">
@@ -91,7 +91,7 @@
     			    <a id="responsive-secondary-menu-button" href="javascript:void(0);"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
     			</div>
                 
-                <nav id="top-navigation" class="secondary-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <nav id="top-navigation" class="secondary-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
         		</nav><!-- #site-navigation -->
                 <?php } ?>
@@ -112,7 +112,7 @@
                 }else{
                     $add_class = '';
                 }?>
-                <div class="site-branding <?php echo esc_attr( $add_class ); ?>" itemscope itemtype="http://schema.org/Organization">
+                <div class="site-branding <?php echo esc_attr( $add_class ); ?>" itemscope itemtype="https://schema.org/Organization">
                 
                     <?php if( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
                         echo '<div class="site-logo">';
@@ -134,7 +134,7 @@
         		</div><!-- .site-branding -->
                 
                 <div class="right-panel">
-                    <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
                     </nav><!-- #site-navigation -->
 

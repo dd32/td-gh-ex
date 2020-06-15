@@ -49,7 +49,7 @@ if ( ! class_exists('Benevolent_Social_Links') ) {
 			
 			if( $facebook || $twitter || $pinterest || $linkedin || $googleplus || $instagram || $youtube ){ 
 			echo $args['before_widget'];
-			echo $args['before_title'] . apply_filters( 'the_title', $title ) . $args['after_title'];
+			echo $args['before_title'] . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $args['after_title'];
 			?>
 				<ul class="social-networks">
 					<?php if( $facebook ){ ?>
@@ -94,43 +94,43 @@ if ( ! class_exists('Benevolent_Social_Links') ) {
 			?>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo esc_url( $facebook ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>"><?php _e( 'Facebook', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'facebook' ) ); ?>" type="text" value="<?php echo esc_url( $facebook ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Twitter', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text" value="<?php echo esc_url( $twitter ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>"><?php _e( 'Twitter', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter' ) ); ?>" type="text" value="<?php echo esc_url( $twitter ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'pinterest' ); ?>"><?php _e( 'Pinterest', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'pinterest' ); ?>" name="<?php echo $this->get_field_name( 'pinterest' ); ?>" type="text" value="<?php echo esc_url( $pinterest ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'pinterest' ) ); ?>"><?php _e( 'Pinterest', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'pinterest' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'pinterest' ) ); ?>" type="text" value="<?php echo esc_url( $pinterest ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e( 'LinkedIn', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" type="text" value="<?php echo esc_url( $linkedin ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'linkedin' ) ); ?>"><?php _e( 'LinkedIn', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'linkedin' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'linkedin' ) ); ?>" type="text" value="<?php echo esc_url( $linkedin ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'google_plus' ); ?>"><?php _e( 'Google Plus', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'google_plus' ); ?>" name="<?php echo $this->get_field_name( 'google_plus' ); ?>" type="text" value="<?php echo esc_url( $googleplus ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'google_plus' ) ); ?>"><?php _e( 'Google Plus', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'google_plus' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'google_plus' ) ); ?>" type="text" value="<?php echo esc_url( $googleplus ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'instagram' ); ?>"><?php _e( 'Instagram', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'instagram' ); ?>" name="<?php echo $this->get_field_name( 'instagram' ); ?>" type="text" value="<?php echo esc_url( $instagram ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'instagram' ) ); ?>"><?php _e( 'Instagram', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'instagram' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'instagram' ) ); ?>" type="text" value="<?php echo esc_url( $instagram ); ?>" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'YouTube', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text" value="<?php echo esc_url( $youtube ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'youtube' ) ); ?>"><?php _e( 'YouTube', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'youtube' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'youtube' ) ); ?>" type="text" value="<?php echo esc_url( $youtube ); ?>" />
 			</p>
 			<?php 
 		}
@@ -150,13 +150,13 @@ if ( ! class_exists('Benevolent_Social_Links') ) {
 			$instance = array();
 			
 			$instance['title']      = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : __( 'Subscribe & Follow', 'benevolent' );
-			$instance['facebook']   = ! empty( $new_instance['facebook'] ) ? esc_url( $new_instance['facebook'] ) : '';
-			$instance['twitter']    = ! empty( $new_instance['twitter'] ) ? esc_url( $new_instance['twitter'] ) : '';
-			$instance['pinterest']  = ! empty( $new_instance['pinterest'] ) ? esc_url( $new_instance['pinterest'] ) : '';
-			$instance['linkedin']   = ! empty( $new_instance['linkedin'] ) ? esc_url( $new_instance['linkedin'] ) : '';
-			$instance['google_plus']= ! empty( $new_instance['google_plus'] ) ? esc_url( $new_instance['google_plus'] ) : '';
-			$instance['instagram']  = ! empty( $new_instance['instagram'] ) ? esc_url( $new_instance['instagram'] ) : '';
-			$instance['youtube']    = ! empty( $new_instance['youtube'] ) ? esc_url( $new_instance['youtube'] ) : '';
+			$instance['facebook']   = ! empty( $new_instance['facebook'] ) ? esc_url_raw( $new_instance['facebook'] ) : '';
+			$instance['twitter']    = ! empty( $new_instance['twitter'] ) ? esc_url_raw( $new_instance['twitter'] ) : '';
+			$instance['pinterest']  = ! empty( $new_instance['pinterest'] ) ? esc_url_raw( $new_instance['pinterest'] ) : '';
+			$instance['linkedin']   = ! empty( $new_instance['linkedin'] ) ? esc_url_raw( $new_instance['linkedin'] ) : '';
+			$instance['google_plus']= ! empty( $new_instance['google_plus'] ) ? esc_url_raw( $new_instance['google_plus'] ) : '';
+			$instance['instagram']  = ! empty( $new_instance['instagram'] ) ? esc_url_raw( $new_instance['instagram'] ) : '';
+			$instance['youtube']    = ! empty( $new_instance['youtube'] ) ? esc_url_raw( $new_instance['youtube'] ) : '';
 			
 			return $instance;
 					

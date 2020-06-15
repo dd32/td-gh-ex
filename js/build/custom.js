@@ -52,8 +52,6 @@ jQuery(document).ready(function($){
         delay: 10,
         time: 1000
     });
-   
-   $( "#tabs" ).tabs();
 
    //Responsive navigation
    $('.main-navigation').prepend('<span class="close"></span>');
@@ -112,7 +110,7 @@ jQuery(document).ready(function($){
        $(this).parents("li").removeClass("focus");
    });
 
-   $("#site-navigation ul li a").focus(function(){
+   $(".main-navigation ul li a").focus(function(){
        $(this).parents("li").addClass("focus");
    }).blur(function(){
        $(this).parents("li").removeClass("focus");

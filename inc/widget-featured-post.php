@@ -52,7 +52,8 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 				echo $args['before_widget'];
 				while( $qry->have_posts() ){
 					$qry->the_post();
-					echo $args['before_title'] . apply_filters( 'widget_title', get_the_title() ) . $args['after_title']; 
+					$title = get_the_title();
+					echo $args['before_title'] . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $args['after_title']; 
 				?>
 					<?php if( has_post_thumbnail() && $show_thumbnail ){ ?>                    
 					<div class="img-holder">
@@ -102,27 +103,27 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 			
 			?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'post_list' ); ?>"><?php esc_html_e( 'Posts', 'benevolent' ); ?></label>
-				<select name="<?php echo $this->get_field_name( 'post_list' ); ?>" id="<?php echo $this->get_field_id( 'post_list' ); ?>" class="widefat">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'post_list' ) ); ?>"><?php esc_html_e( 'Posts', 'benevolent' ); ?></label>
+				<select name="<?php echo esc_attr( $this->get_field_name( 'post_list' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'post_list' ) ); ?>" class="widefat">
 					<?php
 					foreach ( $postlist as $single_post ) { ?>
-						<option value="<?php echo $single_post['value']; ?>" id="<?php echo $this->get_field_id( $single_post['label'] ); ?>" <?php selected( $single_post['value'], $post_list ); ?>><?php echo $single_post['label']; ?></option>
+						<option value="<?php echo esc_attr( $single_post['value'] ); ?>" id="<?php echo esc_attr( $this->get_field_id( $single_post['label'] ) ); ?>" <?php selected( $single_post['value'], $post_list ); ?>><?php echo esc_html( $single_post['label'] ); ?></option>
 					<?php } ?>
 				</select>
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id( 'readmore' ); ?>"><?php esc_html_e( 'Read More Text', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'readmore' ); ?>" name="<?php echo $this->get_field_name( 'readmore' ); ?>" type="text" value="<?php echo esc_attr( $read_more ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'readmore' ) ); ?>"><?php esc_html_e( 'Read More Text', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'readmore' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'readmore' ) ); ?>" type="text" value="<?php echo esc_attr( $read_more ); ?>" />
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'excerpt_char' ); ?>"><?php esc_html_e( 'Excerpt Word Count', 'benevolent' ); ?></label> 
-				<input class="widefat" id="<?php echo $this->get_field_id( 'excerpt_char' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_char' ); ?>" type="text" value="<?php echo esc_attr( $excerpt_char ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'excerpt_char' ) ); ?>"><?php esc_html_e( 'Excerpt Word Count', 'benevolent' ); ?></label> 
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'excerpt_char' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'excerpt_char' ) ); ?>" type="text" value="<?php echo esc_attr( $excerpt_char ); ?>" />
 			</p>
 			
 			<p>
-				<input id="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>" name="<?php echo $this->get_field_name( 'show_thumbnail' ); ?>" type="checkbox" value="1" <?php checked( '1', $show_thumbnail ); ?>/>
-				<label for="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>"><?php esc_html_e( 'Show Post Thumbnail', 'benevolent' ); ?></label>
+				<input id="<?php echo esc_attr( $this->get_field_id( 'show_thumbnail' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_thumbnail' ) ); ?>" type="checkbox" value="1" <?php checked( '1', $show_thumbnail ); ?>/>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'show_thumbnail' ) ); ?>"><?php esc_html_e( 'Show Post Thumbnail', 'benevolent' ); ?></label>
 			</p>
 			
 			<?php 
@@ -144,8 +145,8 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 			
 			$instance['readmore']       = ! empty( $new_instance['readmore'] ) ? strip_tags( $new_instance['readmore'] ) : __( 'Read More', 'benevolent' );
 			$instance['excerpt_char']   = ! empty( $new_instance['excerpt_char'] ) ? absint( $new_instance['excerpt_char'] ) : 20 ;
-			$instance['post_list']      = ! empty( $new_instance['post_list'] ) ? esc_attr( $new_instance['post_list'] ) : 1;
-			$instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? esc_attr( $new_instance['show_thumbnail'] ) : '';
+			$instance['post_list']      = ! empty( $new_instance['post_list'] ) ? absint( $new_instance['post_list'] ) : 1;
+			$instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? absint( $new_instance['show_thumbnail'] ) : '';
 			
 			return $instance;
 					

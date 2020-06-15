@@ -19,7 +19,7 @@ function benevolent_customizer_theme_info( $wp_customize ) {
     
    	$theme_info = '';
 	$theme_info .= '<h3 class="sticky_title">' . __( 'Need help?', 'benevolent' ) . '</h3>';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View demo', 'benevolent' ) . ': </label><a href="' . esc_url( 'https://demo.rarathemes.com/benevolent/' ) . '" target="_blank">' . __( 'here', 'benevolent' ) . '</a></span><br />';
+    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View demo', 'benevolent' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/previews/?theme=benevolent/' ) . '" target="_blank">' . __( 'here', 'benevolent' ) . '</a></span><br />';
 	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View documentation', 'benevolent' ) . ': </label><a href="' . esc_url( 'https://docs.rarathemes.com/docs/benevolent/' ) . '" target="_blank">' . __( 'here', 'benevolent' ) . '</a></span><br />';
 	
     $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Support ticket', 'benevolent' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/support-ticket/' ) . '" target="_blnak">' . __( 'here', 'benevolent' ) . '</a></span><br />';

@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'right-sidebar' ) || is_search() ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+<aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="https://schema.org/WPSideBar">
 	<?php dynamic_sidebar( 'right-sidebar' ); ?>
 </aside><!-- #secondary -->

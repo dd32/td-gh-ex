@@ -3,8 +3,10 @@ Theme Name: Benevolent
 Theme URI: https://rarathemes.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
-Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.rarathemes.com/benevolent/, documentation at https://docs.rarathemes.com/docs/benevolent/ and get support at https://rarathemes.com/support-forum/. 
-Version: 1.2.4
+Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://rarathemes.com/previews/?theme=benevolent/, documentation at https://docs.rarathemes.com/docs/benevolent/ and get support at https://rarathemes.com/support-forum/. 
+Version: 1.2.5
+Requires PHP: 5.6
+Tested up to: 5.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -695,24 +697,24 @@ select:focus{
     left: 0;
     width: 250px;
     background: #000;
-    display: none;
+    margin-left: -99999px;
 }
 
-.site-header .secondary-navigation ul li:hover ul,
-.site-header .secondary-navigation ul li:focus ul {
-    display: block;
+.site-header .secondary-navigation ul li:hover > ul,
+.site-header .secondary-navigation ul li:focus > ul {
+    margin-left: 0;
 }
 
 
-.site-header .secondary-navigation ul li:focus-within ul {
-    display: block;
+.site-header .secondary-navigation ul li:focus-within > ul {
+    margin-left: 0;
 }
 
-.site-header .secondary-navigation ul li.focus ul {
-    display: block;
+.site-header .secondary-navigation ul li.focus > ul {
+    margin-left: 0;
 }
 
-.site-header .secondary-navigation ul li:hover ul ul {
+/*.site-header .secondary-navigation ul li:hover ul ul {
     display: none;
 }
 
@@ -734,7 +736,7 @@ select:focus{
 
 .site-header .secondary-navigation ul ul li.focus ul {
     display: block;
-}
+}*/
 
 .site-header .secondary-navigation ul ul li {
     float: none;
@@ -859,19 +861,19 @@ a:active {
     background: #fff;
     width: 230px;
     margin: 0;
-    display: none;
+    margin-left: -99999px;
 }
 
 .main-navigation ul li:hover > ul {
-    display: block;
+    margin-left: 0;
 }
 
 .main-navigation ul li:focus-within > ul {
-    display: block;
+    margin-left: 0;
 }
 
 .main-navigation ul li.focus > ul {
-    display: block;
+    margin-left: 0;
 }
 
 .main-navigation ul ul li:hover>ul {
@@ -2056,6 +2058,12 @@ object {
     line-height: 17px;
     overflow: hidden;
 }
+#crumbs .separator{
+    margin: 0 5px;
+}
+#crumbs span:last-child .separator{
+    display: none;
+}
 
 .site-content {
     padding: 24px 0 80px;
@@ -2909,7 +2917,53 @@ object {
     height: 44px;
     text-align: center;
     background: #e3e3e3;
-    border: 3px solid #f4f4f4
+    border: 3px solid #f4f4f4;
+}
+.widget.widget_calendar .wp-calendar-table{
+    margin: 0;
+}
+.widget.widget_calendar .wp-calendar-nav{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-prev,
+.widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-next{
+    width: 42%;
+}
+.widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-prev a,
+.widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-next a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 7px;
+    display: inline-block;
+    background: #E3E3E3;
+    font-size: 16px;
+}
+
+footer .widget.widget_calendar .wp-calendar-nav{
+    background: #E3E3E3;
+}
+footer .widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-prev,
+footer .widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-next{
+    border: 1px solid #f4f4f4;
+    border-top: none;
+}
+footer .widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-prev{
+    border-left: none;
+}
+footer .widget.widget_calendar .wp-calendar-nav .wp-calendar-nav-next{
+    border-right: none;
 }
 
 .site-footer .widget.widget_calendar td {

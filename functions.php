@@ -7,10 +7,10 @@
  * @package Benevolent
  */
 
-$theme_data = wp_get_theme();
-if( ! defined( 'BENEVOLENT_THEME_VERSION' ) ) define( 'BENEVOLENT_THEME_VERSION', $theme_data->get( 'Version' ) );
-if( ! defined( 'BENEVOLENT_THEME_NAME' ) ) define( 'BENEVOLENT_THEME_NAME', $theme_data->get( 'Name' ) );
-if( ! defined( 'BENEVOLENT_THEME_TEXTDOMAIN' ) ) define( 'BENEVOLENT_THEME_TEXTDOMAIN', $theme_data->get( 'TextDomain' ) );
+$benevolent_theme_data = wp_get_theme();
+if( ! defined( 'BENEVOLENT_THEME_VERSION' ) ) define( 'BENEVOLENT_THEME_VERSION', $benevolent_theme_data->get( 'Version' ) );
+if( ! defined( 'BENEVOLENT_THEME_NAME' ) ) define( 'BENEVOLENT_THEME_NAME', $benevolent_theme_data->get( 'Name' ) );
+if( ! defined( 'BENEVOLENT_THEME_TEXTDOMAIN' ) ) define( 'BENEVOLENT_THEME_TEXTDOMAIN', $benevolent_theme_data->get( 'TextDomain' ) );
 
 if ( ! function_exists( 'benevolent_setup' ) ) :
 /**
@@ -199,22 +199,18 @@ add_action( 'widgets_init', 'benevolent_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function benevolent_scripts() {
-	
+function benevolent_scripts() {	
 	$build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
-    $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-    $benevolent_query_args = array(
-		'family' => 'Raleway:400,600,700,500',
-	);
-    wp_enqueue_style( 'benevolent-google-fonts', add_query_arg( $benevolent_query_args, "//fonts.googleapis.com/css" ) );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	
+    wp_enqueue_style( 'benevolent-google-fonts', benevolent_fonts_url() );
     wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css' . $build . '/owl.carousel' . $suffix . '.css', '', '2.2.1' );
     wp_enqueue_style( 'benevolent-style', get_stylesheet_uri() );
     
     wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
     wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.6.3', false );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true );
-    wp_enqueue_script( 'owl-carousel-aria', get_template_directory_uri() . '/js' . $build . '/owl.carousel.aria' . $suffix . '.js', array('owl-carousel'), '2.0.0', true );	
-	wp_enqueue_script( 'tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array('jquery'), '1.11.4', true );
+    wp_enqueue_script( 'owlcarousel2-a11ylayer', get_template_directory_uri() . '/js' . $build . '/owlcarousel2-a11ylayer' . $suffix . '.js', array('owl-carousel'), '0.2.1', true );
     wp_enqueue_script( 'waypoint', get_template_directory_uri() . '/js' . $build . '/waypoint' . $suffix . '.js', array('jquery'), '1.6.2', true );
     wp_enqueue_script( 'counterup', get_template_directory_uri() . '/js' . $build . '/jquery.counterup' . $suffix . '.js', array('jquery', 'waypoint'), '1.0', true );
     wp_register_script( 'benevolent-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), BENEVOLENT_THEME_VERSION, true );
@@ -279,7 +275,7 @@ function benevolent_admin_notice(){
             <div class="notice-wrapper">
                 <div class="notice-text">
                     <h3><?php esc_html_e( 'Congratulations!', 'benevolent' ); ?></h3>
-                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'benevolent' ), $name ) ; ?></p>
+                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'benevolent' ), esc_html( $name ) ) ; ?></p>
                     <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=benevolent-getting-started' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'benevolent' ); ?></a></p>
                     <p class="dismiss-link"><strong><a href="?benevolent_admin_notice=1"><?php esc_html_e( 'Dismiss', 'benevolent' ); ?></a></strong></p>
                 </div>
@@ -301,16 +297,6 @@ function benevolent_update_admin_notice(){
 }
 endif;
 add_action( 'admin_init', 'benevolent_update_admin_notice' );
-
-if( ! function_exists( 'benevolent_restore_admin_notice' ) ) :
-/**
- * Restoring admin notice on theme switch
- */
-function benevolent_restore_admin_notice(){
-    update_option( 'benevolent_admin_notice', false );
-}
-endif;
-add_action( 'after_switch_theme', 'benevolent_restore_admin_notice' );
 
 /**
  * Custom template tags for this theme.
@@ -361,10 +347,12 @@ require get_template_directory() . '/inc/widget-social-links.php';
  * Getting Started
 */
 require get_template_directory() . '/inc/getting-started/getting-started.php';
+
 /**
  * Theme Info
  */
 require get_template_directory() . '/inc/info.php';
+
 /**
 * Recommended Plugins
 */

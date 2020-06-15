@@ -28,7 +28,7 @@
     <div class="panel-aside">
         <h4><?php printf( esc_html__( 'View Our %1$s Demo', 'benevolent' ), BENEVOLENT_THEME_NAME ); ?></h4>
         <p><?php esc_html_e( 'Visit the demo to get more idea about our theme design and its features.', 'benevolent' ); ?></p>
-        <a class="button button-primary" href="<?php echo esc_url( 'https://demo.rarathemes.com/' . BENEVOLENT_THEME_TEXTDOMAIN . '/' ); ?>" title="<?php esc_attr_e( 'Visit the Demo', 'benevolent' ); ?>" target="_blank">
+        <a class="button button-primary" href="<?php echo esc_url( 'https://rarathemes.com/previews/?theme=' . BENEVOLENT_THEME_TEXTDOMAIN . '/' ); ?>" title="<?php esc_attr_e( 'Visit the Demo', 'benevolent' ); ?>" target="_blank">
             <?php esc_html_e( 'View Demo', 'benevolent' ); ?>
         </a>
     </div><!-- .panel-aside -->

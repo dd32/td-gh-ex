@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Benevolent 1.2.4\n"
+"Project-Id-Version: Benevolent 1.2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/benevolent\n"
-"POT-Creation-Date: 2020-01-29 09:54:21+00:00\n"
+"POT-Creation-Date: 2020-06-15 07:27:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,23 +13,23 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: 404.php:19
+#: 404.php:16 404.php:18
 msgid "Error 404"
 msgstr ""
 
-#: 404.php:20
+#: 404.php:19
 msgid "Page Not Found"
 msgstr ""
 
-#: 404.php:21
+#: 404.php:20
 msgid "This page could not be found on the server."
 msgstr ""
 
-#: 404.php:22
+#: 404.php:21
 msgid "Return to Homepage"
 msgstr ""
 
-#: archive.php:40 inc/extras.php:158 index.php:46 search.php:42
+#: archive.php:40 index.php:46 search.php:42
 msgid "Page"
 msgstr ""
 
@@ -81,21 +81,21 @@ msgstr ""
 msgid "Footer Four"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:277
 msgid "Congratulations!"
 msgstr ""
 
-#: functions.php:282
+#: functions.php:278
 msgid ""
 "%1$s is now installed and ready to use. Click below to see theme "
 "documentation, plugins to install and other details to get started."
 msgstr ""
 
-#: functions.php:283
+#: functions.php:279
 msgid "Go to the getting started."
 msgstr ""
 
-#: functions.php:284
+#: functions.php:280
 msgid "Dismiss"
 msgstr ""
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Animation Speed"
 msgstr ""
 
-#: inc/customizer.php:271 inc/extras.php:301
+#: inc/customizer.php:271 inc/extras.php:362
 msgid "Learn More"
 msgstr ""
 
@@ -372,7 +372,7 @@ msgid "Blog Section Content"
 msgstr ""
 
 #: inc/customizer.php:1075 inc/widget-featured-post.php:41
-#: inc/widget-featured-post.php:98 inc/widget-featured-post.php:145
+#: inc/widget-featured-post.php:99 inc/widget-featured-post.php:146
 #: sections/section-blog.php:11 template-parts/content.php:66
 msgid "Read More"
 msgstr ""
@@ -461,7 +461,7 @@ msgstr ""
 msgid "Show current"
 msgstr ""
 
-#: inc/customizer.php:1482 inc/extras.php:67
+#: inc/customizer.php:1482 inc/extras.php:70
 msgid "Home"
 msgstr ""
 
@@ -469,7 +469,7 @@ msgstr ""
 msgid "Breadcrumb Home Text"
 msgstr ""
 
-#: inc/customizer.php:1500 inc/extras.php:66
+#: inc/customizer.php:1500 inc/extras.php:69
 msgid ">"
 msgstr ""
 
@@ -489,36 +489,36 @@ msgstr ""
 msgid "Enable Social Icons in Header"
 msgstr ""
 
-#: inc/customizer.php:1556 inc/extras.php:186 inc/widget-social-links.php:56
+#: inc/customizer.php:1556 inc/extras.php:247 inc/widget-social-links.php:56
 #: inc/widget-social-links.php:102
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:1574 inc/extras.php:188 inc/widget-social-links.php:58
+#: inc/customizer.php:1574 inc/extras.php:249 inc/widget-social-links.php:58
 #: inc/widget-social-links.php:107
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:1592 inc/extras.php:190 inc/widget-social-links.php:60
+#: inc/customizer.php:1592 inc/extras.php:251 inc/widget-social-links.php:60
 #: inc/widget-social-links.php:112
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:1610 inc/extras.php:192 inc/widget-social-links.php:117
+#: inc/customizer.php:1610 inc/extras.php:253 inc/widget-social-links.php:117
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/customizer.php:1628 inc/extras.php:194 inc/widget-social-links.php:64
+#: inc/customizer.php:1628 inc/extras.php:255 inc/widget-social-links.php:64
 #: inc/widget-social-links.php:122
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:1646 inc/extras.php:196 inc/widget-social-links.php:66
+#: inc/customizer.php:1646 inc/extras.php:257 inc/widget-social-links.php:66
 #: inc/widget-social-links.php:127
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:1664 inc/extras.php:198 inc/widget-social-links.php:68
+#: inc/customizer.php:1664 inc/extras.php:259 inc/widget-social-links.php:68
 #: inc/widget-social-links.php:132
 msgid "YouTube"
 msgstr ""
@@ -543,37 +543,70 @@ msgstr ""
 msgid "Copyright Info"
 msgstr ""
 
-#: inc/customizer.php:1787
+#: inc/customizer.php:1784
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/extras.php:89
-msgid "Search Result"
-msgstr ""
-
-#: inc/extras.php:229
-msgid ""
-"<b class=\"fn\" itemprop=\"creator\" itemscope "
-"itemtype=\"http://schema.org/Person\">%s</b>"
-msgstr ""
-
-#: inc/extras.php:232
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/extras.php:238
-msgid "(Edit)"
-msgstr ""
-
-#: inc/extras.php:483
-msgid "&copy; "
-msgstr ""
-
-#: inc/extras.php:483
+#: inc/extras.php:117 inc/extras.php:119 inc/extras.php:125 inc/extras.php:130
+#: inc/extras.php:544
 msgid "Y"
 msgstr ""
 
-#: inc/extras.php:491
+#: inc/extras.php:119
+msgid "m"
+msgstr ""
+
+#: inc/extras.php:119 inc/extras.php:127
+msgid "F"
+msgstr ""
+
+#: inc/extras.php:121
+msgid "d"
+msgstr ""
+
+#: inc/extras.php:199
+msgid "Search Results for \""
+msgstr ""
+
+#: inc/extras.php:199
+msgid "\""
+msgstr ""
+
+#: inc/extras.php:205
+msgid "Page %s"
+msgstr ""
+
+#: inc/extras.php:222
+msgid "404 Error - Page not Found"
+msgstr ""
+
+#: inc/extras.php:224
+msgid " (Page"
+msgstr ""
+
+#: inc/extras.php:224
+msgid ")"
+msgstr ""
+
+#: inc/extras.php:290
+msgid ""
+"<b class=\"fn\" itemprop=\"creator\" itemscope "
+"itemtype=\"https://schema.org/Person\">%s</b>"
+msgstr ""
+
+#: inc/extras.php:293
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/extras.php:299
+msgid "(Edit)"
+msgstr ""
+
+#: inc/extras.php:544
+msgid "&copy; "
+msgstr ""
+
+#: inc/extras.php:552
 msgid "Benevolent | Developed By "
 msgstr ""
 
@@ -581,35 +614,35 @@ msgstr ""
 msgid "Rara Theme"
 msgstr ""
 
-#: inc/extras.php:493
+#: inc/extras.php:554
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/extras.php:493
+#: inc/extras.php:554
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/extras.php:634
+#: inc/extras.php:678
 msgid "Name*"
 msgstr ""
 
-#: inc/extras.php:634 inc/extras.php:638
+#: inc/extras.php:678 inc/extras.php:682
 msgid "Name"
 msgstr ""
 
-#: inc/extras.php:635
+#: inc/extras.php:679
 msgid "Email*"
 msgstr ""
 
-#: inc/extras.php:635 inc/extras.php:640
+#: inc/extras.php:679 inc/extras.php:684
 msgid "Email"
 msgstr ""
 
-#: inc/extras.php:642
+#: inc/extras.php:686
 msgid "Website"
 msgstr ""
 
-#: inc/extras.php:655
+#: inc/extras.php:699
 msgid "Comment"
 msgstr ""
 
@@ -955,15 +988,15 @@ msgstr ""
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/metabox.php:23
+#: inc/metabox.php:24
 msgid "Right sidebar (default)"
 msgstr ""
 
-#: inc/metabox.php:28
+#: inc/metabox.php:29
 msgid "No sidebar"
 msgstr ""
 
-#: inc/metabox.php:40
+#: inc/metabox.php:39
 msgid "Choose Sidebar Template"
 msgstr ""
 
@@ -1355,23 +1388,23 @@ msgstr ""
 msgid "A Featured Post Widget"
 msgstr ""
 
-#: inc/widget-featured-post.php:86
+#: inc/widget-featured-post.php:87
 msgid "--choose--"
 msgstr ""
 
-#: inc/widget-featured-post.php:105
+#: inc/widget-featured-post.php:106
 msgid "Posts"
 msgstr ""
 
-#: inc/widget-featured-post.php:115
+#: inc/widget-featured-post.php:116
 msgid "Read More Text"
 msgstr ""
 
-#: inc/widget-featured-post.php:119
+#: inc/widget-featured-post.php:120
 msgid "Excerpt Word Count"
 msgstr ""
 
-#: inc/widget-featured-post.php:125 inc/widget-popular-post.php:123
+#: inc/widget-featured-post.php:126 inc/widget-popular-post.php:123
 #: inc/widget-recent-post.php:123
 msgid "Show Post Thumbnail"
 msgstr ""
@@ -1495,9 +1528,10 @@ msgid ""
 "faster page load time and has a secure and clean code. The theme is also "
 "translation ready. Designed with visitor engagement in mind, Benevolent "
 "helps you to easily and intuitively create professional and appealing "
-"websites. Check the demo at https://demo.rarathemes.com/benevolent/, "
-"documentation at https://docs.rarathemes.com/docs/benevolent/ and get "
-"support at https://rarathemes.com/support-forum/."
+"websites. Check the demo at "
+"https://rarathemes.com/previews/?theme=benevolent/, documentation at "
+"https://docs.rarathemes.com/docs/benevolent/ and get support at "
+"https://rarathemes.com/support-forum/."
 msgstr ""
 
 #. Author URI of the plugin/theme
@@ -1506,6 +1540,14 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Home Page"
+msgstr ""
+
+#: inc/extras.php:789
+#. translators: If there are characters in your language that are not supported
+#. by Raleway, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Raleway font: on or off"
+msgid "on"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:1121
