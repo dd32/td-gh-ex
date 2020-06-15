@@ -346,7 +346,7 @@ if (!Array.from) {
         return;
       }
       if ( this.options.addIcon && 0 === $_external_icon.length ) {
-        this.$_el.after('<span class="' + self.options.iconClassName + '">');
+        this.$_el.append('<span class="' + self.options.iconClassName + '">');
       }
       if ( this.options.newTab && '_blank' != this.$_el.attr('target') )
         this.$_el.attr('target' , '_blank');
@@ -3723,11 +3723,26 @@ var czrapp = czrapp || {};
                     var $candidates = $('[class*=fa-]');
                     if ( $candidates.length < 1 )
                       return;
+                    var hasPreloadSupport = function( browser ) {
+                        var link = document.createElement('link');
+                        var relList = link.relList;
+                        if (!relList || !relList.supports)
+                          return false;
+                        return relList.supports('preload');
+                    };
                     if ( $('head').find( '[href*="font-awesome.min.css"]' ).length < 1 ) {
                         var link = document.createElement('link');
+
+                        link.onload = function() {
+                            this.onload=null;
+                            _.delay( function() {
+                                link.setAttribute('rel', 'stylesheet');
+                                $('body').removeClass('hu-fa-not-loaded');
+                            }, 500 );
+                        };
                         link.setAttribute('href', HUParams.fontAwesomeUrl );
                         link.setAttribute('id', 'hu-font-awesome');
-                        link.setAttribute('rel', 'stylesheet' );
+                        link.setAttribute('rel', hasPreloadSupport() ? 'preload' : 'stylesheet' );
                         link.setAttribute('as', 'style');
                         document.getElementsByTagName('head')[0].appendChild(link);
                     }
