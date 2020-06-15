@@ -165,6 +165,16 @@ function annina_color_primary_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Twitch URL', 'annina')
 	);
+	$socialmedia[] = array(
+	'slug'=>'spotifyurl',
+	'default' => '',
+	'label' => __('Spotify URL', 'annina')
+	);
+	$socialmedia[] = array(
+	'slug'=>'whatsappurl',
+	'default' => '',
+	'label' => __('WhatsApp URL', 'annina')
+	);
 	
 	foreach( $socialmedia as $annina_theme_options ) {
 		// SETTINGS
