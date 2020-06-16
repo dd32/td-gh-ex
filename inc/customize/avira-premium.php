@@ -28,9 +28,9 @@ function avira_premium_setting( $wp_customize ) {
 			</div>
 			<div>
 				<ul>
-					<li><a href="http://docs.speciatheme.com/themes/avira-free/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/documentation.png"></a></li>
+					<li><a href="http://docs.speciatheme.com/themes/avira-free/" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/documentation.png"></a></li>
 					
-					<li><a href="https://wordpress.org/support/theme/avira/reviews/#new-post" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/rating.png"></a></li>
+					<li><a href="https://wordpress.org/support/theme/avira/reviews/#new-post" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/rating.png"></a></li>
 				</ul>
 			</div>
 		<?php
