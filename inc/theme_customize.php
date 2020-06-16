@@ -392,8 +392,8 @@ function theme_get_customizer_css() {
     $menuborder_color = get_theme_mod( 'menuborder_color', '' );
     if ( ! empty( $menuborder_color ) ) {
       ?>
-	nav li, aside ul.menu li a
-	{
+	nav li a, aside ul.menu li a
+	{ 
 		border-color:<?php echo $menuborder_color; ?>!important;
 	}
 

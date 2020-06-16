@@ -1,10 +1,13 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: https://www.northern-web-coders.de/blog/2019/07/northern-web-coders-3-2/
-Description: Northern-Web-Coders 3.2 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
+Theme URI: https://www.northern-web-coders.de/blog/2020/06/northern-web-coders-3-3/
+Description: Northern-Web-Coders 3.3 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
 Author: Kai Ackermann
 Author URI: http://www.design-coding.de
-Version: 3.2
+Version: 3.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 5.2.4
 Tags: one-column, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, wide-blocks 
 Text Domain: northern-web-coders
 License: GNU/GPL Version 2 or later
@@ -44,12 +47,12 @@ License URI: http://www.gnu.org/licenses/gpl.html
 body
 {
    font-family:'Roboto', sans-serif;
-   line-height: 1em;
    background: #ffffff;
    margin-top: 2%;
    overflow-x: hidden;
    width:100%;
    height:100%;
+
 }
 
 /*header*/
@@ -131,9 +134,9 @@ aside
    margin-right : calc( -70vw / 2 + 100% / 2 );
    width: 70vw;
    max-width: 1000%;
-   color: #3F3F3F;
-   font-size: 16px;
-   line-height: 170%;
+   line-height: 1.5;
+   font-size: 17px;
+
    background:transparent;
    float: left;
 }
@@ -172,10 +175,24 @@ aside
    margin-bottom: 15px
 }
 
-#content ul:not(.wp-block-gallery)
+#content ul
+{
+   margin-left: 20px;
+   margin-top: 5px;
+margin-bottom: 15px;
+}
+
+ul.wp-block-latest-posts li
 {
    margin-left: 20px;
    margin-bottom: 15px
+}
+
+
+
+#content ul.blocks-gallery-grid
+{
+   margin-left: 0;
 }
 
 #wrapper p.justify-text 
@@ -260,6 +277,14 @@ font-size: 15px
    padding-top: 10px
 }
 
+#content .wp-block-search
+{
+   margin: 0 0 60px 0;
+   height: 32px;   
+   width: 100%;
+float: left;
+}
+
 #content h1,
 #content h2,
 #content h3,
@@ -326,7 +351,7 @@ font-size: 15px
 
 #content a, #content code, #content pre
 {
-   color: #516170;
+	color: inherit;
 }
 
 #content blockquote
@@ -335,7 +360,38 @@ font-size: 15px
    font-weight: bold;
    font-size: 20px;
    padding: 5px;
-   border-left: 3px solid #dfdfdf
+   border-left: 3px dotted #dfdfdf
+}
+
+#content blockquote p, #content blockquote cite
+{
+   margin: 5px;
+   
+}
+
+#content .wp-block-pullquote blockquote {
+   border: none;
+}
+
+.wp-block-pullquote::before {
+   background: #fff;
+   border-radius: 50%;
+   color: #cd2653;
+   content: "”";
+   display: block;
+   font-size: 6.2rem;
+   font-weight: 500;
+   line-height: 1.2;
+   margin: 0 auto 1.5rem auto;
+   text-align: center;
+   height: 4.4rem;
+   width: 4.4rem;
+
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	max-width: 100%;
+	text-align: inherit;
 }
 
 #content pre {
@@ -510,7 +566,11 @@ footer#footer p span#left
    margin: 0 0 10px 0;
    clear: none;
 }
-
+.gallery img {
+  border: none;
+  height: auto;
+  max-width: 90%;
+}
 #content .attachment img {
    display: block;
    margin: 0 auto;
@@ -626,6 +686,12 @@ img.wp-smiley
    background:  transparent;
    width:calc(100% - 6%);
    display: block
+}
+
+#wp-comment-cookies-consent
+{
+float:left;
+margin: -2px 3px 0 0;
 }
 
 .comment-respond
@@ -1136,7 +1202,7 @@ form#commentform select
 .button
 {
    background: #77A464 !important;
-   color: #fff !important;
+
 }
 
 ul.products
@@ -1151,9 +1217,25 @@ p.has-drop-cap:not(:focus):first-letter {
    font-size:4.0em;
 }
 
-.wp-block-cover .wp-block-cover-text
+.wp-block-cover
 {
-   font-size: 30px
+margin: 15px;
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+	width: calc(100% - 4rem);
+	padding: 2rem 0;
+}
+
+.wp-block-cover p
+{
+font-size: 30px;
+
+}
+
+.wp-block-cover .wp-block-cover-text
+{   
+   color: #fff !important;
 }
 
 .wp-block-cover .wp-block-cover-text strong
@@ -1166,11 +1248,17 @@ p.has-drop-cap:not(:focus):first-letter {
    font-style: italic;
 }
 
-.wp-block-button a,
-.wp-block-file__button
+.wp-block-button
 {
-   color: #fff !important;
+margin:15px
 }
+
+a.wp-block-file__button
+{color: #fff !important;}
+
+
+
+
 
 .alignfull,
 .wp-block-gallery.alignfull 
@@ -1303,4 +1391,5 @@ aside
    margin-right : calc( -80vw / 2 + 100% / 2 );
    width: 80vw;
 }} 
+
 

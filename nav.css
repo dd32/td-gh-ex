@@ -62,7 +62,7 @@ nav ul.sub-menu {
    position: absolute;
    top: 100%;
    left: 0;
-   min-width: 250px;
+   min-width: 200px;
    z-index: 3000;
    background: #dfdfdf;
    display: none;
@@ -163,7 +163,7 @@ aside ul.menu input
 #navbox nav {
    position:absolute;
    left:-100%;
-   width:100%;
+   width:300px;
    height:100%;
    margin:0;
    z-index:5;

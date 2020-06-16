@@ -12,6 +12,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+ <?php wp_body_open(); ?>
 <?php if ( wp_is_mobile() ) : ?>
 <div id="mobile-background"></div>
 <?php endif; ?>
@@ -23,8 +24,9 @@
 if ( function_exists( 'the_custom_logo' ) ) {
     the_custom_logo();
 }
-?>  <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>">
 <?php bloginfo('name'); ?></a><em><?php bloginfo('description'); ?></em></h1>
+
 
 <?php if ( has_header_image() ) { ?>
 <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" id="headerpic" />

@@ -139,7 +139,11 @@ if ( $wp_rewrite->using_permalinks() )
 function northern_the_breadcrumb() {
     echo(_e("You are here:", 'northern-web-coders'));
     echo ' <a href="';
-    echo home_url();
+    echo esc_url(home_url());
+
+
+
+
     echo '">';
     bloginfo('name');
     echo "</a> ";
