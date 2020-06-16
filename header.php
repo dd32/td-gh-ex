@@ -53,6 +53,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 			$tumblrURL = get_theme_mod('storto_theme_options_tumblrurl', '#');
 			$vkURL = get_theme_mod('storto_theme_options_vkurl', '#');
 			$twitchURL = get_theme_mod('storto_theme_options_twitchurl', '');
+			$spotifyURL = get_theme_mod('storto_theme_options_spotifyurl', '');
+			$whatsappURL = get_theme_mod('storto_theme_options_whatsappurl', '');
 		?>
 		<div class="socialLine smallPart">
 			<?php if (!empty($facebookURL)) : ?>
@@ -84,6 +86,12 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<?php endif; ?>
 			<?php if (!empty($twitchURL)) : ?>
 				<a href="<?php echo esc_url($twitchURL); ?>" title="<?php esc_attr_e( 'Twitch', 'storto' ); ?>"><i class="fa spaceRightDouble fa-twitch"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'storto' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if (!empty($spotifyURL)) : ?>
+				<a href="<?php echo esc_url($spotifyURL); ?>" title="<?php esc_attr_e( 'Spotify', 'storto' ); ?>"><i class="fa spaceRightDouble fa-spotify"><span class="screen-reader-text"><?php esc_html_e( 'Spotify', 'storto' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if (!empty($whatsappURL)) : ?>
+				<a href="<?php echo esc_url($whatsappURL); ?>" title="<?php esc_attr_e( 'WhatsApp', 'storto' ); ?>"><i class="fa spaceRightDouble fa-whatsapp"><span class="screen-reader-text"><?php esc_html_e( 'WhatsApp', 'storto' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($hideSearch == 1 ) : ?>
 				<a href="#" class="top-search" aria-hidden="true"><i class="fa spaceRightDouble fa-search"></i></a>

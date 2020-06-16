@@ -2,8 +2,8 @@
 Contributors: CrestaProject
 Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.6.0
+Tested up to: 5.4
+Stable tag: 1.6.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -175,4 +175,9 @@ Storto is a simple and modern WordPress Theme useful for blog or personal page. 
 
 = Version 1.6.0 =
 * Added Twitch social icon
+* Minor bug fixes
+
+= Version 1.6.1 =
+* Added an option to add custom Copyright Text
+* Added Spotify and WhatsApp social icon
 * Minor bug fixes

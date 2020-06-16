@@ -10,12 +10,11 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info smallPart">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'storto' ) ); ?>">
 			<?php
-			/* translators: %s: WordPress name */
-			printf( esc_html__( 'Proudly powered by %s', 'storto' ), 'WordPress' );
-			?>
-			</a>
+			$copyrightText = get_theme_mod('storto_theme_options_copyrighttext', '&copy; '.date('Y').' '. get_bloginfo('name'));
+			if ($copyrightText || is_customize_preview()): ?>
+				<span class="custom"><?php echo wp_kses($copyrightText, storto_allowed_html()); ?></span>
+			<?php endif; ?>
 			<span class="sep"> | </span>
 			<?php
 			/* translators: 1: theme name, 2: theme developer */

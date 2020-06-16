@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Storto\n"
-"POT-Creation-Date: 2020-02-21 18:22+0100\n"
-"PO-Revision-Date: 2020-02-21 18:22+0100\n"
+"POT-Creation-Date: 2020-06-16 17:16+0100\n"
+"PO-Revision-Date: 2020-06-16 17:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -173,107 +173,105 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:13
-msgid "https://wordpress.org/"
-msgstr ""
-
-#. translators: %s: WordPress name
-#: footer.php:16
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
 #. translators: 1: theme name, 2: theme developer
-#: footer.php:22
+#: footer.php:21
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:49
+#: functions.php:52
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:58
 msgid "Small"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:59
 msgid "S"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:64
 msgid "Regular"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:65
 msgid "M"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:70
 msgid "Large"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:71
 msgid "L"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:76
 msgid "Larger"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:77
 msgid "XL"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:127
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:59
+#: header.php:61
 msgid "Facebook"
 msgstr ""
 
-#: header.php:62
+#: header.php:64
 msgid "Twitter"
 msgstr ""
 
-#: header.php:65
+#: header.php:67
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:68
+#: header.php:70
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:71
+#: header.php:73
 msgid "Instagram"
 msgstr ""
 
-#: header.php:74
+#: header.php:76
 msgid "YouTube"
 msgstr ""
 
-#: header.php:77
+#: header.php:79
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:80
+#: header.php:82
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:83
+#: header.php:85
 msgid "VK"
 msgstr ""
 
-#: header.php:86
+#: header.php:88
 msgid "Twitch"
 msgstr ""
 
+#: header.php:91
+msgid "Spotify"
+msgstr ""
+
 #: header.php:94
+msgid "WhatsApp"
+msgstr ""
+
+#: header.php:102
 msgid "Type and hit enter..."
 msgstr ""
 
-#: header.php:99
+#: header.php:107
 msgid "Select a page..."
 msgstr ""
 
@@ -337,75 +335,87 @@ msgstr ""
 msgid "Twitch URL"
 msgstr ""
 
-#: inc/storto-dynamic.php:147
+#: inc/storto-dynamic.php:117
+msgid "Spotify URL"
+msgstr ""
+
+#: inc/storto-dynamic.php:122
+msgid "WhatsApp URL"
+msgstr ""
+
+#: inc/storto-dynamic.php:157
 msgid "Show Search Button"
 msgstr ""
 
-#: inc/storto-dynamic.php:161
+#: inc/storto-dynamic.php:168 inc/storto-dynamic.php:179
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/storto-dynamic.php:193
 msgid "Get Gigante WP Theme for only"
 msgstr ""
 
-#: inc/storto-dynamic.php:166
+#: inc/storto-dynamic.php:198
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/storto-dynamic.php:169
+#: inc/storto-dynamic.php:201
 msgid "Get Gigante Theme"
 msgstr ""
 
-#: inc/storto-dynamic.php:173
+#: inc/storto-dynamic.php:205
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/storto-dynamic.php:174
+#: inc/storto-dynamic.php:206
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/storto-dynamic.php:175
+#: inc/storto-dynamic.php:207
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/storto-dynamic.php:176
+#: inc/storto-dynamic.php:208
 msgid "Font switcher"
 msgstr ""
 
-#: inc/storto-dynamic.php:177
+#: inc/storto-dynamic.php:209
 msgid "Loading Page"
 msgstr ""
 
-#: inc/storto-dynamic.php:178
+#: inc/storto-dynamic.php:210
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/storto-dynamic.php:179
+#: inc/storto-dynamic.php:211
 msgid "Post views counter"
 msgstr ""
 
-#: inc/storto-dynamic.php:180
+#: inc/storto-dynamic.php:212
 msgid "Post format"
 msgstr ""
 
-#: inc/storto-dynamic.php:181
+#: inc/storto-dynamic.php:213
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/storto-dynamic.php:182
+#: inc/storto-dynamic.php:214
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/storto-dynamic.php:183
+#: inc/storto-dynamic.php:215
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/storto-dynamic.php:184
+#: inc/storto-dynamic.php:216
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/storto-dynamic.php:185
+#: inc/storto-dynamic.php:217
 msgid "And much more..."
 msgstr ""
 
-#: inc/storto-dynamic.php:191
+#: inc/storto-dynamic.php:223
 msgid "More features? Upgrade to PRO"
 msgstr ""
 

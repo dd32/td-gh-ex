@@ -111,6 +111,16 @@ function storto_custom_settings_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Twitch URL', 'storto')
 	);
+	$socialmedia[] = array(
+	'slug'=>'spotifyurl', 
+	'default' => '',
+	'label' => __('Spotify URL', 'storto')
+	);
+	$socialmedia[] = array(
+	'slug'=>'whatsappurl', 
+	'default' => '',
+	'label' => __('WhatsApp URL', 'storto')
+	);
 	
 	foreach( $socialmedia as $storto_theme_options ) {
 		// SETTINGS
@@ -149,6 +159,28 @@ function storto_custom_settings_register( $wp_customize ) {
         'settings'   => 'storto_theme_options_hidesearch',
         'type'       => 'checkbox',
     ) );
+	
+	/*
+	Copyright Text
+	=====================================================
+	*/
+	$wp_customize->add_section( 'cresta_copyright_text', array(
+	     'title'    => esc_html__( 'Copyright Text', 'storto' ),
+	     'priority' => 50,
+	) );
+	
+	$wp_customize->add_setting('storto_theme_options_copyrighttext', array(
+		'sanitize_callback' => 'storto_sanitize_text',
+		'default'    => '&copy; '.date('Y').' '. get_bloginfo('name'),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control('storto_theme_options_copyrighttext', array(
+		'label'      => __( 'Copyright Text', 'storto' ),
+		'section'    => 'cresta_copyright_text',
+		'settings'   => 'storto_theme_options_copyrighttext',
+		'type'       => 'text',
+	) );
 	
 	/*
 	Upgrade to PRO
@@ -205,6 +237,113 @@ function storto_custom_settings_register( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'storto_custom_settings_register' );
+
+function storto_sanitize_text( $input ) {
+	return wp_kses($input, storto_allowed_html());
+}
+
+if( ! function_exists('storto_allowed_html')){
+	function storto_allowed_html() {
+		$allowed_tags = array(
+			'a' => array(
+				'class' => array(),
+				'id'    => array(),
+				'href'  => array(),
+				'rel'   => array(),
+				'title' => array(),
+				'target' => array(),
+			),
+			'abbr' => array(
+				'title' => array(),
+			),
+			'b' => array(),
+			'blockquote' => array(
+				'cite'  => array(),
+			),
+			'cite' => array(
+				'title' => array(),
+			),
+			'code' => array(),
+			'del' => array(
+				'datetime' => array(),
+				'title' => array(),
+			),
+			'dd' => array(),
+			'div' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'dl' => array(),
+			'dt' => array(),
+			'em' => array(),
+			'h1' => array(
+				'class' => array(),
+			),
+			'h2' => array(
+				'class' => array(),
+			),
+			'h3' => array(
+				'class' => array(),
+			),
+			'h4' => array(
+				'class' => array(),
+			),
+			'h5' => array(
+				'class' => array(),
+			),
+			'h6' => array(
+				'class' => array(),
+			),
+			'i' => array(
+				'class' => array(),
+			),
+			'br' => array(),
+			'img' => array(
+				'alt'    => array(),
+				'class'  => array(),
+				'height' => array(),
+				'src'    => array(),
+				'width'  => array(),
+			),
+			'li' => array(
+				'class' => array(),
+			),
+			'ol' => array(
+				'class' => array(),
+			),
+			'p' => array(
+				'class' => array(),
+			),
+			'q' => array(
+				'cite' => array(),
+				'title' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'strike' => array(),
+			'strong' => array(),
+			'ul' => array(
+				'class' => array(),
+			),
+			'iframe' => array(
+				'width' => array(),
+				'height' => array(),
+				'src' => array(),
+				'frameborder' => array(),
+				'allow' => array(),
+				'style' => array(),
+				'name' => array(),
+				'id' => array(),
+				'class' => array(),
+			),
+		);
+		return $allowed_tags;
+	}
+}
 
 /**
  * Add Custom CSS to Header 

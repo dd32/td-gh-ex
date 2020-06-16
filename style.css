@@ -4,12 +4,14 @@ Theme URI: https://crestaproject.com/downloads/storto/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
 Description: Storto: Simple and Modern WordPress Theme created by CrestaProject.com. Compatible with Gutenberg. Live demo https://crestaproject.com/demo/storto/
-Version: 1.6.0
+Version: 1.6.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storto
 Domain Path: /languages/
 Tags: two-columns, left-sidebar, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, blog, news
+Tested up to: 5.4
+Requires PHP: 5.6
 */
 
 /*--------------------------------------------------------------
@@ -928,7 +930,6 @@ span.overlay-img:hover {
 .archive .format-aside .entry-title {
 	display: none;
 }
-
 /*--------------------------------------------------------------
 10.3 Comments
 --------------------------------------------------------------*/
@@ -936,6 +937,7 @@ span.overlay-img:hover {
 	word-wrap: break-word;
 }
 .bypostauthor {
+	display: block;
 }
 .comments-title {
 	margin-bottom: 1.5em;

@@ -35,6 +35,9 @@ function storto_setup() {
 	add_theme_support( 'title-tag' );
 	
 	add_theme_support( 'customize-selective-refresh-widgets' );
+	
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
