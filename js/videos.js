@@ -19,11 +19,11 @@ return this.each(function () {
 var selectors = [
 'iframe[src*="youtube.com"]',
 'iframe[src*="youtube-nocookie.com"]',
+'iframe[src*="tiktok.com"]',
 'iframe[src*="player.vimeo.com"]',
 'iframe[src*="dailymotion.com"]',
 'iframe[src*="metacafe.com"]',
 'iframe[src*="player.twitch.tv"]',
-'iframe[src*="vine.co"]',
 'iframe[src*="liveleak.com"]',
 'iframe[src*="kickstarter.com"][src*="video.html"]',
 'object',

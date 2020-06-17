@@ -3,9 +3,9 @@ Theme Name: Bands
 Theme URI: https://bandswp.com/#
 Author: BandsWP
 Author URI: https://bandswp.com/
-Description: Dedicated theme for bands, musicians, or audio artists of any kind. "Play from your ****ing heart!" — Bill Hicks
+Description: Dedicated theme for bands, musicians, or audio artists of any kind. FREE FEATURES: Responsive, SEO-friendly, Translation-ready, Custom Logo, Custom Header Image, Custom Background Image, Custom Colors, Custom Google Font, Custom Menus (2), Custom Widget Areas (3), Custom Page Templates (2), Featured Images, WooCommerce Integration, and bbPress Integration. PRO FEATURES: Custom Hero, Custom Slider, Custom Twitter Feed, Custom Social Icons (including: Facebook, Twitter, Instagram, Pinterest, YouTube, Twitch, Apple, Google Play, Google Podcasts, Spotify, SoundCloud, Bandcamp, and Stitcher), Custom Page Header Images, Social Sharing Links, Breadcrumbs, Shortcodes, Contact Form, Layered Content Sections, Custom Copyright, Custom Header Scripts, Custom Body Scripts, Custom Footer Scripts, Settings Import/Export, Drag & Drop Page Builder, Speed Optimization, Unlimited Use, Updates for Life, and Support for Life. "Play from your ****ing heart!" — Bill Hicks
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Version: 0.7
+Version: 1.0
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 7.0
@@ -19,7 +19,7 @@ Bands is distributed under the terms of the GNU GPL
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}html{scroll-behavior:smooth}body{line-height:1}a{text-decoration-skip-ink:auto}a[href^="tel"]{color:inherit;text-decoration:none}button{outline:0}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}q{display:inline;font-style:italic}q:before{content:'"';font-style:normal}q:after{content:'"';font-style:normal}textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"]{-webkit-appearance:none;appearance:none;border-radius:0}input[type="search"]{-webkit-appearance:textfield}table{border-collapse:collapse;border-spacing:0}th,td{padding:2px}big{font-size:120%}small,sup,sub{font-size:80%}sup{vertical-align:super}sub{vertical-align:sub}dd{margin-left:20px}kbd,tt{font-family:courier;font-size:12px}ins{text-decoration:underline}del,strike,s{text-decoration:line-through}dt{font-weight:bold}address,cite,var{font-style:italic}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;transition:all 0.5s ease}
 
-body{font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:16px;font-weight:300;color:#fff;line-height:normal;letter-spacing:0.5px;word-wrap:break-word;background:#111}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:16px;font-weight:300;color:#fff;line-height:normal;letter-spacing:0.5px;word-wrap:break-word;background:#111}
 
 body.custom-background #container{padding:0;margin:5%;background:rgba(0,0,0,0.9)}
 
@@ -100,7 +100,7 @@ table{width:100%;margin:30px 0}
 #new-topic, #subscription-toggle{margin-bottom:30px;float:right}
 .post, #fmenu, #fsidebar, .widget-container, .search article{margin-bottom:60px}
 .post:last-of-type{margin-bottom:0}
-#site-title a{font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:30px;font-weight:bold;color:#fff;text-decoration:none;line-height:40px;display:inline}
+#site-title a{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:30px;font-weight:bold;color:#fff;text-decoration:none;line-height:50px;display:inline}
 #site-title h1{margin-bottom:0}
 #site-description{font-size:40px;font-weight:bold;color:#fff;text-align:center;text-transform:uppercase;padding:20%}
 .single h1.entry-title a{color:#777;text-decoration:none}

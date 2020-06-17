@@ -273,3 +273,4 @@ wp_enqueue_style( 'bands-google-fonts', 'https://fonts.googleapis.com/css?family
 }
 add_action( 'customize_preview_init', 'bands_customizer_fonts_preview' );
 add_action( 'wp_enqueue_scripts', 'bands_customizer_fonts_preview' );
+require_once( get_stylesheet_directory() . '/plugins/plugin-activation.php' );
