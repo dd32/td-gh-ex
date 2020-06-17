@@ -7,7 +7,7 @@ function axis_magazine_pro_btn_customizer_settings( $wp_customize ){
 	$wp_customize->add_section( new Axis_Magazine_Customize_Section_Pro( $wp_customize,'axis-magazine-pro-btn-section', array(
 				'priority' => 0,
 				'pro_text' => esc_html__( 'Upgrade to Pro', 'axis-magazine' ),
-				'pro_url'  => esc_url('https://zidithemes.tumblr.com/post/189552213279/axis-magazine-pro')
+				'pro_url'  => esc_url('https://zidithemes.com/axis-magazine-pro/')
 			)
 		)
 	);

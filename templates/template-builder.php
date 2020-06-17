@@ -2,10 +2,10 @@
 /**
  * The template for displaying pages
  *
- * @version    0.0.17
+ * @version    0.0.18
  * @package    axis-magazine
  * @author     Zidithemes
- * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
+ * @copyright  Copyright (C) 2020 zidithemes.com All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
  * TEMPLATE NAME: Page Builder Template 

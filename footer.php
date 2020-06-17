@@ -2,10 +2,10 @@
 /**
  * The template for displaying widgets in the footer
  *
- * @version    0.0.17
+ * @version    0.0.18
  * @package    axis-magazine
  * @author     Zidithemes
- * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
+ * @copyright  Copyright (C) 2020 zidithemes.com. All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
  * 
@@ -41,7 +41,7 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
                     
                     <div class="footer-items site-info">
                     	<div class="site-info-inner">
-                    	<a href="<?php echo esc_url( __( 'http://zidithemes.tumblr.com', 'axis-magazine' ) ); ?>"><?php esc_html_e( 'Theme by Zidithemes', 'axis-magazine' ); ?></a>
+                    	<a href="<?php echo esc_url( __( 'http://zidithemes.com', 'axis-magazine' ) ); ?>"><?php esc_html_e( 'Theme by Zidithemes', 'axis-magazine' ); ?></a>
                     	</div>
                     </div>
 
