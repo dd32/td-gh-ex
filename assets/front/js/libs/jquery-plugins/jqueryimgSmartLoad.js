@@ -36,48 +36,67 @@
           //with intersecting cointainers:
           //- to avoid race conditions
           //- to avoid multi processing in general
-          skipImgClass = 'tc-smart-load-skip';
+          skipImgClass = 'tc-smart-loaded';
 
 
       function Plugin( element, options ) {
             this.element = element;
-            this.options = $.extend( {}, defaults, options) ;
-            //add .tc-smart-load-skip to the excludeImg
+            this.options = $.extend( {}, defaults, options);
+
+            //add .tc-smart-loaded to the excludeImg
             if ( _.isArray( this.options.excludeImg ) ) {
                   this.options.excludeImg.push( '.'+skipImgClass );
             } else {
                   this.options.excludeImg = [ '.'+skipImgClass ];
             }
+            this.options.excludeImg = _.uniq( this.options.excludeImg );
+            this.imgSelectors = 'img[' + this.options.attribute[0] + ']:not('+ this.options.excludeImg.join() +')';
 
             this._defaults = defaults;
             this._name = pluginName;
             this.init();
+
+            var self = this;
+
+            // April 2020 : this event has been added to solve the problem of images not lazy loaded in ajax content appended to containers with an existing instance of the Plugin
+            // see https://github.com/presscustomizr/hueman/issues/880
+            $(this.element).on('trigger-smartload', function() {
+                  self._maybe_trigger_load( 'trigger-smartload' );
+            });
       }
+
+      Plugin.prototype._getImgs = function() {
+            return $( this.imgSelectors, this.element );
+      };
 
 
       //can access this.element and this.option
-      Plugin.prototype.init = function () {
-            var self        = this,
-                $_imgs   = $( 'img[' + this.options.attribute[0] + ']:not('+ this.options.excludeImg.join() +')' , this.element );
+      Plugin.prototype.init = function() {
+            var self        = this;
 
             this.increment  = 1;//used to wait a little bit after the first user scroll actions to trigger the timer
             this.timer      = 0;
 
-
-            $_imgs
-                  //avoid intersecting cointainers to parse the same images
-                  .addClass( skipImgClass )
-                  //attach action to the load event
-                  .bind( 'load_img', {}, function() {
-                        self._load_img(this);
-                  });
+            // Bind with delegation
+            // April 2020 : implemented for https://github.com/presscustomizr/hueman/issues/880
+            $('body').on( 'load_img', self.imgSelectors , function() {
+                    // has this image been lazy loaded ?
+                    if ( true === $(this).data('czr-smart-loaded' ) )
+                      return;
+                    self._load_img(this);
+            });
 
             //the scroll event gets throttled with the requestAnimationFrame
-            $(window).scroll( function( _evt ) { self._better_scroll_event_handler( $_imgs, _evt ); } );
+            $(window).scroll( function( _evt ) { self._better_scroll_event_handler( _evt ); } );
             //debounced resize event
-            $(window).resize( _.debounce( function( _evt ) { self._maybe_trigger_load( $_imgs, _evt ); }, 100 ) );
-            //on load
-            this._maybe_trigger_load( $_imgs );
+            $(window).resize( _.debounce( function( _evt ) { self._maybe_trigger_load( _evt ); }, 100 ) );
+
+            //on DOM ready
+            this._maybe_trigger_load( 'dom-ready');
+
+            // April 2020 : flag so we can check whether his element has been lazyloaded
+            // implemented for https://github.com/presscustomizr/hueman/issues/880
+            $(this.element).data('smartLoadDone', true );
       };
 
 
@@ -87,12 +106,12 @@
       * @return : void
       * scroll event performance enhancer => avoid browser stack if too much scrolls
       */
-      Plugin.prototype._better_scroll_event_handler = function( $_imgs , _evt ) {
+      Plugin.prototype._better_scroll_event_handler = function( _evt ) {
             var self = this;
             if ( ! this.doingAnimation ) {
                   this.doingAnimation = true;
                   window.requestAnimationFrame(function() {
-                        self._maybe_trigger_load( $_imgs , _evt );
+                        self._maybe_trigger_load( _evt );
                         self.doingAnimation = false;
                   });
             }
@@ -104,13 +123,23 @@
       * @param : current event
       * @return : void
       */
-      Plugin.prototype._maybe_trigger_load = function( $_imgs , _evt ) {
+      Plugin.prototype._maybe_trigger_load = function(_evt ) {
             var self = this,
-                //get the visible images list
-                _visible_list = $_imgs.filter( function( ind, _img ) { return self._is_visible( _img ,  _evt ); } );
+                $_imgs = self._getImgs(),
+                _visible_list;
+
+            if ( !_.isObject( $_imgs) || _.isEmpty( $_imgs ) )
+              return;
+
+            //get the visible images list
+            _visible_list = $_imgs.filter( function( ind, _img ) { return self._is_visible( _img ,  _evt ); } );
+
             //trigger load_img event for visible images
             _visible_list.map( function( ind, _img ) {
-                  $(_img).trigger( 'load_img' );
+                  // trigger a lazy load if image not processed yet
+                  if ( true !== $(_img).data( 'czr-smart-loaded' ) ) {
+                        $(_img).trigger('load_img');
+                  }
             });
       };
 
@@ -149,10 +178,13 @@
                 _sizes   = $_img.attr( this.options.attribute[2] ),
                 self = this;
 
+            if ( $_img.parent().hasClass('smart-loading') )
+              return;
+
             $_img.parent().addClass('smart-loading');
 
             $_img.unbind('load_img')
-                  .hide()
+                  //.hide()
                   //https://api.jquery.com/removeAttr/
                   //An attribute to remove; as of version 1.7, it can be a space-separated list of attributes.
                   //minimum supported wp version (3.4+) embeds jQuery 1.7.2
@@ -162,8 +194,8 @@
                   .attr( 'src', _src )
                   .load( function () {
                         //prevent executing this twice on an already smartloaded img
-                        if ( ! $_img.hasClass('tc-smart-loaded') ) {
-                              $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded');
+                        if ( !$_img.hasClass(skipImgClass) ) {
+                              $_img.fadeIn(self.options.fadeIn_options).addClass(skipImgClass);
                         }
                         //Following would be executed twice if needed, as some browsers at the
                         //first execution of the load callback might still have not actually loaded the img

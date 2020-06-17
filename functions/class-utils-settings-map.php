@@ -97,7 +97,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           'hu_site_identity_sec',
           'hu_general_design_sec',
           'hu_comments_sec',
-          'hu_smoothscroll_sec',
+          //'hu_smoothscroll_sec',//<=Removed in march 2020
           'hu_mobiles_sec',
           'hu_search_sec',
           'hu_social_links_sec',
@@ -439,19 +439,20 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     /*-----------------------------------------------------------------------------------------------------
                                    SMOOTH SCROLL SECTION
     ------------------------------------------------------------------------------------------------------*/
-    function hu_smoothscroll_sec() {
-      return array(
-          'smoothscroll' => array(
-                'default'   => 1,
-                'control'   => 'HU_controls',
-                'label'     => __('Enable Smooth Scrolling', 'hueman'),
-                'section'   => 'smoothscroll_sec',
-                'type'      => 'nimblecheck',
-                'notice'    => __( "This option enables a smoother page scroll." , 'hueman' )
+    // Removed in march 2020
+    // function hu_smoothscroll_sec() {
+    //   return array(
+    //       'smoothscroll' => array(
+    //             'default'   => 1,
+    //             'control'   => 'HU_controls',
+    //             'label'     => __('Enable Smooth Scrolling', 'hueman'),
+    //             'section'   => 'smoothscroll_sec',
+    //             'type'      => 'nimblecheck',
+    //             'notice'    => __( "This option enables a smoother page scroll." , 'hueman' )
 
-          )
-      );
-    }
+    //       )
+    //   );
+    // }
 
 
     /*-----------------------------------------------------------------------------------------------------
@@ -539,8 +540,16 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'     => 'performance_sec',
                 'type'        => 'nimblecheck'
           ),
+          // To be implemented for https://github.com/presscustomizr/hueman/issues/881
+          // 'use_fa_icons'  =>  array(
+          //       'default'       => 1,
+          //       'control'     =>  'HU_controls',
+          //       'label'       => __( 'Use Font Awesome icons' , 'hueman' ),
+          //       'section'     => 'performance_sec',
+          //       'type'        => 'nimblecheck'
+          // ),
           'defer_font_awesome'  =>  array(
-                'default'       => 0,
+                'default'       => 1,
                 'control'     =>  'HU_controls',
                 'label'       => __( 'Defer loading Font Awesome icons' , 'hueman' ),
                 'section'     => 'performance_sec',
@@ -675,6 +684,32 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'nimblecheck',
                 'notice'    => __('Upload a header image (supported formats : .jpg, .png, .gif, svg, svgz). This will disable header title/logo, site description, header ads widget' , 'hueman')
           ),
+
+          // april 2020 : 2 options added for https://github.com/presscustomizr/hueman/issues/877
+          'header-img-full-width' => array(
+                'default'   => 1,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Image fills 100% of the width' , 'hueman' ),
+                'section'   => 'header_image_sec',
+                'type'      => 'nimblecheck'
+          ),
+          'header-img-natural-height' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Use the original image height' , 'hueman' ),
+                'section'   => 'header_image_sec',
+                'type'      => 'nimblecheck'
+          ),
+          // 'header-img-height' => array(
+          //       'default'   => 400,
+          //       'control'   => 'HU_controls',
+          //       'label'     => __( 'Set image\'s max height' , 'hueman' ),
+          //       'section'   => 'header_image_sec',
+          //       'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
+          //       'type'      => 'number' ,
+          //       'step'      => 1,
+          //       'min'       => 0,
+          // ),
           'logo-title-on-header-image' => array(
                 'default'   => 0,
                 'control'   => 'HU_controls',
@@ -1275,6 +1310,14 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
             'type'      => 'nimblecheck',
             'priority'  => 71,
           ),
+          'post-list-meta-author' => array(
+            'default'   => 0,
+            'control'   => 'HU_controls',
+            'label'     => __('Display author', 'hueman'),
+            'section'   => 'content_blog_sec',
+            'type'      => 'nimblecheck',
+            'priority'  => 72,
+          ),
       );
     }
 
@@ -1306,9 +1349,9 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'skoped' => false// implemented initally not skopable in jan-2020, see ctx_get_excluded_settings()
           ),
           'singular-post-cropped-feat-img' => array(
-                'default'   => 1,
+                'default'   => 0,
                 'control'   => 'HU_controls',
-                'label'     => __( 'Used cropped image (720x340 pixels on desktops)', 'hueman' ),
+                'label'     => __( 'Used cropped image ( max 1320x500 on desktops)', 'hueman' ),
                 'section'   => 'content_single_sec',
                 'type'      => 'nimblecheck',
                 'priority'  => 10,
@@ -1399,9 +1442,9 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'notice'    => __( 'Display the page\'s featured image when it is set' , 'hueman')
           ),
           'singular-page-cropped-feat-img' => array(
-                'default'   => 1,
+                'default'   => 0,
                 'control'   => 'HU_controls',
-                'label'     => __( 'Used cropped image (720x340 pixels on desktops)', 'hueman' ),
+                'label'     => __( 'Used cropped image (max 1320x500 on desktops)', 'hueman' ),
                 'section'   => 'content_page_sec',
                 'type'      => 'nimblecheck'
           ),
@@ -1529,7 +1572,15 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                   'type'      => 'nimblecheck',
                   'priority'  => 110,
                   'notice'     => __( 'Display the primary sidebar above the content column on smartphone mobile devices (480px).', 'hueman' ),
-            )
+            ),
+            'sl-in-sidebar' => array(
+                'default'   => 1,
+                'control'   => 'HU_controls',
+                'label'     => __('Display social links in the primary sidebar', 'hueman'),
+                'section'   => 'sidebars_design_sec',
+                'type'      => 'nimblecheck',
+                'priority'  => 120,
+            ),
 
       );
     }
@@ -1633,6 +1684,14 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'footer_design_sec',
                 'priority'  => 40,
                 'transport' => 'postMessage'
+          ),
+          'sl-in-footer' => array(
+                'default'   => 1,
+                'control'   => 'HU_controls',
+                'label'     => __('Display social links in the footer', 'hueman'),
+                'section'   => 'footer_design_sec',
+                'type'      => 'nimblecheck',
+                'priority'  => 50
           ),
       );
     }
@@ -1885,11 +1944,12 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 /*---------------------------------------------------------------------------------------------
         -> PANEL : ADVANCED
         ----------------------------------------------------------------------------------------------*/
-        'smoothscroll_sec'         => array(
-              'title'    => __( 'Smooth Scroll', 'hueman' ),
-              'priority' => 10,
-              'panel'   => 'hu-advanced-panel'
-        ),
+        // Removed in march 2020
+        // 'smoothscroll_sec'         => array(
+        //       'title'    => __( 'Smooth Scroll', 'hueman' ),
+        //       'priority' => 10,
+        //       'panel'   => 'hu-advanced-panel'
+        // ),
         'mobiles_sec'         => array(
               'title'    => __( 'Mobile Devices', 'hueman' ),
               'priority' => 20,
