@@ -34,7 +34,7 @@ if (!empty($intro_pages)):
                                  <h2><?php the_title(); ?></h2>
                             </div>    
                                 <div class="about-wrapper">
-                                    <p><?php echo esc_attr($excerpt); ?></p>
+                                    <p><?php echo esc_html($excerpt); ?></p>
                                     <a href="<?php echo esc_url(get_permalink($intro_pages)) ?>"
                                        class="btn btn-default"><?php esc_html_e('Read More', 'auto-car'); ?></a>
                                 </div>

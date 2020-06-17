@@ -75,6 +75,7 @@ $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
                             endif; ?>
                         </div><!-- .site-branding -->
                         <!-- Collect the nav links, forms, and other content for toggling -->
+                        <?php if ( has_nav_menu( 'primary' ) ) { ?>
                         <div class="collapse navbar-collapse" id="navbar-collapse">
 
                             <?php
@@ -89,6 +90,7 @@ $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
                             ?>
 
                         </div><!-- End navbar-collapse -->
+                        <?php } ?>
                     </nav>
                 </div>
             </div>

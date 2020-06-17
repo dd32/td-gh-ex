@@ -308,14 +308,14 @@ if (!function_exists('robolist_lite_blog_post_format')) {
                     <?php if(is_page_template('page-templates/template-home.php')): ?>
                         <div class="post-img-meta">
                             <a href="<?php echo esc_url(get_category_link($category[0]->term_id)); ?>"
-                               class="post-cat"><?php echo esc_attr($category[0]->name); ?></a>
+                               class="post-cat"><?php echo esc_html($category[0]->name); ?></a>
                             <h3 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
                             </h3>
                         </div>
                     <?php endif; ?>
                     <div class="post-format-gallery">
                         <?php foreach ($image_url as $key => $images) { ?>
-                            <div class="slider-item" style="background-image: url('<?php echo esc_url($images); ?>');" alt="<?php echo esc_attr($attachment->post_excerpt); ?>">
+                            <div class="slider-item" style="background-image: url('<?php echo esc_url($images); ?>');" alt="<?php echo esc_html($attachment->post_excerpt); ?>">
                             </div>
                         <?php } ?>
                     </div>
@@ -336,7 +336,7 @@ if (!function_exists('robolist_lite_blog_post_format')) {
 
                     <div class="post-img-meta">
                         <a href="<?php echo esc_url(get_category_link($category[0]->term_id)); ?>"
-                           class="post-cat"><?php echo esc_attr($category[0]->name); ?></a>
+                           class="post-cat"><?php echo esc_html($category[0]->name); ?></a>
                         <h3 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
                         </h3>
                     </div>

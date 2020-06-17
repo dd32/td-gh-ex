@@ -17,14 +17,14 @@ require_once get_template_directory() . '/information/auto-car-about-page/class-
 */
 $config = array(
 	// Menu name under Appearance.
-	'menu_name'           => apply_filters( 'auto_car_about_page_filter', __( 'About auto car', 'auto-car' ), 'menu_name' ),
+	'menu_name'           => apply_filters( 'auto_car_about_page_filter', __( 'About Auto Car', 'auto-car' ), 'menu_name' ),
 	// Page title.
-	'page_name'           => apply_filters( 'auto_car_about_page_filter', __( 'About auto car', 'auto-car' ), 'page_name' ),
+	'page_name'           => apply_filters( 'auto_car_about_page_filter', __( 'About Auto Car', 'auto-car' ), 'page_name' ),
 	// Main welcome title
 	/* translators: s - theme name */
-	'welcome_title'       => apply_filters( 'auto_car_about_page_filter', sprintf( __( 'Welcome to %s! - Version ', 'auto-car' ), 'auto-car' ), 'welcome_title' ),
+	'welcome_title'       => apply_filters( 'auto_car_about_page_filter', sprintf( __( 'Welcome to %s! - Version ', 'auto-car' ), 'Auto-Car' ), 'welcome_title' ),
 	// Main welcome content
-	'welcome_content'     => apply_filters( 'auto_car_about_page_filter', esc_html__( 'auto car is a responsive multipurpose WordPress theme created keeping multipurpose functionality in mind which caters the website building needs. It is simple yet powerful and versatile multi purpose theme which is not only focused on corporate or business. It is also one of the ideal platforms for initiating any type of projects like agency, events, portfolio, eCommerce, blogs, and so on. Built in with the painstaking attention, auto car provides an aesthetic design and quality performance to enrich the visitors\' experience, hence, helps to take your business to the next level. If you are against of seeking help from the developer, then you may. It also consists dozens of pre-made custom elements. The complete outside the box Elementer Pro Page Builder Plugin is there to efficiently customize the most of the elements of the theme. Wow, the theme has both Elementor elements and pre-made Custom Elements, which means endless possibilities and extensions. With the help of these elements, you can effortlessly create niche focused or any kind of website.', 'auto-car' ), 'welcome_content' ),
+	'welcome_content'     => apply_filters( 'auto_car_about_page_filter', esc_html__( 'Auto Car is a free WordPress theme created for Automobile dealers and resellers. Use this to provide a better interface for you automobile website.', 'auto-car' ), 'welcome_content' ),
 	/**
 	 * Tabs array.
 	 *
