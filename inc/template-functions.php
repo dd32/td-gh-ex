@@ -395,6 +395,13 @@ if( ! function_exists('attesa_register_all_social_network')){
 				'name' => __('Spotify', 'attesa'),
 				'icon' => $iconPrefix .' fa-spotify',
 			),
+			'spotify' => array (
+				'slug' => '_whatsappurl',
+				'default' => '',
+				'label' => __('WhatsApp URL', 'attesa'),
+				'name' => __('WhatsApp', 'attesa'),
+				'icon' => $iconPrefix .' fa-whatsapp',
+			),
 		);
 		return apply_filters('attesa_social_network_register', $social);
 	}
@@ -519,6 +526,28 @@ function attesa_add_additional_google_fonts_heading($headingFonts) {
 	return array_merge($headingFonts,$newFonts);
 }
 */
+
+/* Register Standard/Custom Fonts */
+if( ! function_exists('attesa_standard_and_custom_fonts')){
+	function attesa_standard_and_custom_fonts() {
+		$attesa_standard_fonts_array = array (
+			'Arial : sans-serif' => esc_html__( 'Arial', 'attesa'),
+			'Arial Black : sans-serif' => esc_html__( 'Arial Black', 'attesa'),
+			'Comic Sans MS : sans-serif' => esc_html__( 'Comic Sans MS', 'attesa'),
+			'Impact : sans-serif' => esc_html__( 'Impact', 'attesa'),
+			'Lucida Sans Unicode : sans-serif' => esc_html__( 'Lucida Sans Unicode', 'attesa'),
+			'Tahoma : sans-serif' => esc_html__( 'Tahoma', 'attesa'),
+			'Trebuchet MS : sans-serif' => esc_html__( 'Trebuchet MS', 'attesa'),
+			'Verdana : sans-serif' => esc_html__( 'Verdana', 'attesa'),
+			'Georgia : serif' => esc_html__( 'Georgia', 'attesa'),
+			'Palatino Linotype : serif' => esc_html__( 'Palatino Linotype', 'attesa'),
+			'Times New Roman : serif' => esc_html__( 'Times New Roman', 'attesa'),
+			'Courier New : monospace' => esc_html__( 'Courier New', 'attesa'),
+			'Lucida Console : monospace' => esc_html__( 'Lucida Console', 'attesa'),
+		);
+		return apply_filters('attesa_custom_fonts_register', $attesa_standard_fonts_array);
+	}
+}
 
 /* Create a string with all social network used */
 if( ! function_exists('attesa_all_social_network_used')){

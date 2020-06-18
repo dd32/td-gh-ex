@@ -34,15 +34,21 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			/* Choose the fonts */
 			$disableGoogleFonts = attesa_options('_disable_google_fonts', '');
 			if (empty($disableGoogleFonts)) {
-				$googleFontHeading = attesa_options('_googlefont_heading', 'Quicksand : sans-serif');
-				$googleFontText = attesa_options('_googlefont_text', 'Quicksand : sans-serif');
-				$piecesHead = explode(" : ", $googleFontHeading);
-				$piecesText = explode(" : ", $googleFontText);
+				$FontHeading = attesa_options('_googlefont_heading', 'Quicksand : sans-serif');
+				$FontText = attesa_options('_googlefont_text', 'Quicksand : sans-serif');
 			} else {
-				$standardFontHeading = attesa_options('_standardfont_heading', 'Arial : sans-serif');
-				$standardFontText = attesa_options('_standardfont_text', 'Arial : sans-serif');
-				$piecesHead = explode(" : ", $standardFontHeading);
-				$piecesText = explode(" : ", $standardFontText);
+				$FontHeading = attesa_options('_standardfont_heading', 'Arial : sans-serif');
+				$FontText = attesa_options('_standardfont_text', 'Arial : sans-serif');
+			}
+			if (strpos($FontHeading, ' : ') !== false) {
+				$piecesHead = explode(" : ", $FontHeading);
+			} else {
+				$piecesHead = explode(" : ", $FontHeading . ' : serif');
+			}
+			if (strpos($FontText, ' : ') !== false) {
+				$piecesText = explode(" : ", $FontText);
+			} else {
+				$piecesText = explode(" : ", $FontText . ' : serif');
 			}
 			$attesa_custom_css .= '
 				h1,

@@ -36,3 +36,7 @@
     float: right;
 	font-size: 150%;
 }
+#accordion-section-manager_attesa_license_button_expired h3{
+	color: #ffffff !important;
+    background-color: #ff6a64 !important;
+}

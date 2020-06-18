@@ -455,7 +455,7 @@ function attesa_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'attesa_sanitize_checkbox'
     ) );
 	$wp_customize->add_control('attesa_theme_options[_disable_google_fonts]', array(
-        'label'      => __( 'Disable Google Fonts and use standard fonts', 'attesa' ),
+        'label'      => __( 'Disable Google Fonts and use standard/custom fonts', 'attesa' ),
         'section'    => 'section_attesa_theme_options_typography',
         'settings'   => 'attesa_theme_options[_disable_google_fonts]',
         'type'       => 'checkbox',
@@ -507,21 +507,7 @@ function attesa_customize_register( $wp_customize ) {
         'type'       => 'select',
 		'active_callback' => 'attesa_is_googlefont_disable',
 		'priority' => 5,
-		'choices' => array(
-			'Arial : sans-serif' => esc_html__( 'Arial', 'attesa'),
-			'Arial Black : sans-serif' => esc_html__( 'Arial Black', 'attesa'),
-			'Comic Sans MS : sans-serif' => esc_html__( 'Comic Sans MS', 'attesa'),
-			'Impact : sans-serif' => esc_html__( 'Impact', 'attesa'),
-			'Lucida Sans Unicode : sans-serif' => esc_html__( 'Lucida Sans Unicode', 'attesa'),
-			'Tahoma : sans-serif' => esc_html__( 'Tahoma', 'attesa'),
-			'Trebuchet MS : sans-serif' => esc_html__( 'Trebuchet MS', 'attesa'),
-			'Verdana : sans-serif' => esc_html__( 'Verdana', 'attesa'),
-			'Georgia : serif' => esc_html__( 'Georgia', 'attesa'),
-			'Palatino Linotype : serif' => esc_html__( 'Palatino Linotype', 'attesa'),
-			'Times New Roman : serif' => esc_html__( 'Times New Roman', 'attesa'),
-			'Courier New : monospace' => esc_html__( 'Courier New', 'attesa'),
-			'Lucida Console : monospace' => esc_html__( 'Lucida Console', 'attesa'),
-		),
+		'choices' => attesa_standard_and_custom_fonts()
     ) );
 	/* Text Standard Fonts */
 	$wp_customize->add_setting('attesa_theme_options[_standardfont_text]', array(
@@ -537,21 +523,7 @@ function attesa_customize_register( $wp_customize ) {
         'type'       => 'select',
 		'active_callback' => 'attesa_is_googlefont_disable',
 		'priority' => 6,
-		'choices' => array(
-			'Arial : sans-serif' => esc_html__( 'Arial', 'attesa'),
-			'Arial Black : sans-serif' => esc_html__( 'Arial Black', 'attesa'),
-			'Comic Sans MS : sans-serif' => esc_html__( 'Comic Sans MS', 'attesa'),
-			'Impact : sans-serif' => esc_html__( 'Impact', 'attesa'),
-			'Lucida Sans Unicode : sans-serif' => esc_html__( 'Lucida Sans Unicode', 'attesa'),
-			'Tahoma : sans-serif' => esc_html__( 'Tahoma', 'attesa'),
-			'Trebuchet MS : sans-serif' => esc_html__( 'Trebuchet MS', 'attesa'),
-			'Verdana : sans-serif' => esc_html__( 'Verdana', 'attesa'),
-			'Georgia : serif' => esc_html__( 'Georgia', 'attesa'),
-			'Palatino Linotype : serif' => esc_html__( 'Palatino Linotype', 'attesa'),
-			'Times New Roman : serif' => esc_html__( 'Times New Roman', 'attesa'),
-			'Courier New : monospace' => esc_html__( 'Courier New', 'attesa'),
-			'Lucida Console : monospace' => esc_html__( 'Lucida Console', 'attesa'),
-		),
+		'choices' => attesa_standard_and_custom_fonts()
     ) );
 	/* Heading font size section */
 	$wp_customize->add_setting('attesa_theme_options[_heading_font_size]', array(

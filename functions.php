@@ -348,6 +348,13 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
+ * Custom Fonts plugin support.
+ */
+if ( class_exists( 'Bsf_Custom_Fonts' ) ) {
+	require get_template_directory() . '/inc/third/custom-fonts.php';
+}
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
