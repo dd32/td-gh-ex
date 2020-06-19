@@ -168,7 +168,12 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'slug'=>'spotifyurl', 
 	'default' => '',
 	'label' => __('Spotify URL', 'blogghiamo')
-	);
+	); 
+	$socialmedia[] = array(
+	'slug'=>'whatsappurl', 
+	'default' => '',
+	'label' => __('WhatsApp URL', 'blogghiamo')
+	); 
 	
 	foreach( $socialmedia as $blogghiamo_theme_options ) {
 		// SETTINGS

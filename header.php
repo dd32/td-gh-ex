@@ -60,6 +60,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				$imdbURL = get_theme_mod('blogghiamo_theme_options_imdburl', '');
 				$twitchURL = get_theme_mod('blogghiamo_theme_options_twitchurl', '');
 				$spotifyURL = get_theme_mod('blogghiamo_theme_options_spotifyurl', '');
+				$whatsappURL = get_theme_mod('blogghiamo_theme_options_whatsappurl', '');
 				$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 			?>
 
@@ -126,6 +127,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 					
 					<?php if (!empty($spotifyURL)) : ?>
 						<a href="<?php echo esc_url($spotifyURL); ?>" title="<?php esc_attr_e( 'Spotify', 'blogghiamo' ); ?>"><i class="fa fa-spotify spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Spotify', 'blogghiamo' ); ?></span></i></a>
+					<?php endif; ?>
+					
+					<?php if (!empty($whatsappURL)) : ?>
+						<a href="<?php echo esc_url($whatsappURL); ?>" title="<?php esc_attr_e( 'WhatsApp', 'blogghiamo' ); ?>"><i class="fa fa-whatsapp spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'WhatsApp', 'blogghiamo' ); ?></span></i></a>
 					<?php endif; ?>
 					
 					<?php if (!empty($emailURL)) : ?>
