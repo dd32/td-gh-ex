@@ -16,32 +16,59 @@
     <body <?php body_class(); ?> >
 
         <?php wp_body_open(); ?>
-        <a class="skip-link screen-reader-text" href="#wrap"><?php esc_html_e('Skip to content', 'appointment'); ?></a>	
-        <!--Logo & Menu Section-->	
+        <a class="skip-link screen-reader-text" href="#wrap"><?php esc_html_e('Skip to content', 'appointment'); ?></a> 
+        <!--Logo & Menu Section-->  
         <nav class="navbar navbar-default">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+
                     <?php
-                    the_custom_logo();
-                    ?>
-                    <div class="site-branding-text logo-link-url">
+                    if (!has_custom_logo()) {
+                        $logo = $header_setting['upload_image_logo'];
+                        $logo_id = attachment_url_to_postid($logo);
+                        $logo_alt = get_post_meta($logo_id, '_wp_attachment_image_alt', true);
+                        $logo_title = get_the_title($logo_id);
 
-                        <h1 class="site-title" style="margin: 0px;" ><a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home" >
-
-                                <div class=appointment_title_head>
-                                    <?php bloginfo('name'); ?>
-                                </div>
-                            </a>
-                        </h1>
-
-                        <?php
-                        $appointment_description = get_bloginfo('description', 'display');
-                        if ($appointment_description || is_customize_preview()) :
+                        if ($header_setting['enable_header_logo_text'] == 1) {
+                            echo "<div class=appointment_title_head>" . get_bloginfo() . "</div>";
+                        } if ($header_setting['enable_header_logo_text'] == '' && $logo != '') {
                             ?>
-                            <p class="site-description"><?php echo $appointment_description; ?></p>
-                        <?php endif; ?>
-                    </div>
+                            <img class="img-responsive" src="<?php echo $logo; ?>" style="height:50px; width:200px;" alt="<?php
+                            if (!empty($logo_alt)) {
+                                echo $logo_alt;
+                            } else {
+                                echo get_bloginfo('name');
+                            }
+                            ?>"/>
+                                 <?php
+                             }
+                         } else {
+                             if ($header_setting['enable_header_logo_text'] != 'nomorenow') {
+                                 $header_setting['appointment_options']['enable_header_logo_text'] = 'nomorenow';
+                                 update_option('appointment_options', $header_setting);
+                             }
+
+                             the_custom_logo();
+                             ?>
+                        <div class="site-branding-text logo-link-url">
+
+                            <h1 class="site-title" style="margin: 0px;" ><a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home" >
+
+                                    <div class=appointment_title_head>
+                                        <?php bloginfo('name'); ?>
+                                    </div>
+                                </a>
+                            </h1>
+
+                            <?php
+                            $appointment_description = get_bloginfo('description', 'display');
+                            if ($appointment_description || is_customize_preview()) :
+                                ?>
+                                <p class="site-description"><?php echo $appointment_description; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php } ?>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only"><?php esc_html_e('Toggle navigation', 'appointment'); ?></span>
                         <span class="icon-bar"></span>
@@ -99,6 +126,6 @@
                     ?>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-        </nav>	
-        <!--/Logo & Menu Section-->	
+        </nav>  
+        <!--/Logo & Menu Section--> 
         <div class="clearfix"></div>

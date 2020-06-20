@@ -1,4 +1,6 @@
 == Changelog ==
+@Version 2.8.1
+1. Added child themes compatibility for existing users.
 @Version 2.8
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.

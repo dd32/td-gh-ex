@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment\n"
-"POT-Creation-Date: 2020-06-03 19:18+0530\n"
+"POT-Creation-Date: 2020-06-20 15:25+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,9 +65,8 @@ msgstr ""
 #: admin/inc/class-webriti-about-page.php:105
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing Appointment Lite! To take full advantage of "
-"the best our theme can offer, please make sure you visit our %1$s welcome "
-"page %2$s"
+"Appointment theme is installed. To take full advantage of the features this "
+"theme has to offer visit our %1$s welcome page %2$s"
 msgstr ""
 
 #: admin/inc/class-webriti-about-page.php:106
@@ -679,6 +678,11 @@ msgstr ""
 msgid "Category Archive"
 msgstr ""
 
+#: child_theme_compatible.php:47 functions/breadcrumbs/breadcrumbs.php:6
+#: functions/menu/default_menu_walker.php:20 index-banner.php:19
+msgid "Home"
+msgstr ""
+
 #: class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr ""
@@ -1198,22 +1202,17 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:16 functions.php:193 functions.php:209
+#: content.php:16 functions.php:194 functions.php:210
 msgid "Read More"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:118
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:168 functions/breadcrumbs/breadcrumbs.php:102
+#: functions.php:169 functions/breadcrumbs/breadcrumbs.php:102
 #: functions/breadcrumbs/breadcrumbs.php:108
 msgid "Page"
-msgstr ""
-
-#: functions/breadcrumbs/breadcrumbs.php:6
-#: functions/menu/default_menu_walker.php:20 index-banner.php:19
-msgid "Home"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:25
@@ -1544,7 +1543,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:46
+#: header.php:73
 msgid "Toggle navigation"
 msgstr ""
 

@@ -8,7 +8,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-                            <h1 class="appointment-info-title text-center"><?php echo esc_html__('Trustworthy Websites Details','appointment'); ?><?php if( !empty($appointment['Version']) ): ?> <sup id="appointment-theme-version"><?php echo esc_attr( $appointment['Version'] ); ?> </sup><?php endif; ?></h1>
+                            <h1 class="appointment-info-title text-center"><?php echo esc_html__('Trustworthy Websites Details','appointment'); ?><?php if( !empty($appointment['Version']) ): ?> <sup id="appointment-theme-version"><?php echo esc_html( $appointment['Version'] ); ?> </sup><?php endif; ?></h1>
 			</div>
 		</div>
 		<div class="row">

@@ -102,7 +102,7 @@ if (!class_exists('Appointment_About_Page')) {
 			$theme_info = wp_get_theme();
 			?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing Appointment Lite! To take full advantage of the best our theme can offer, please make sure you visit our %1\$s welcome page %2\$s", 'appointment' ), '<a href="' . esc_url( admin_url( 'themes.php?page=appointment-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( "Appointment theme is installed. To take full advantage of the features this theme has to offer visit our %1\$s welcome page %2\$s", 'appointment' ), '<a href="' . esc_url( admin_url( 'themes.php?page=appointment-welcome' ) ) . '">', '</a>' ); ?></p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=appointment-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with Appointment Lite', 'appointment' ); ?></a></p>
 			</div>
 		<?php

@@ -25,6 +25,7 @@ require( APPOINTMENT_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
 require( APPOINTMENT_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 
 require_once APPOINTMENT_TEMPLATE_DIR . '/class-tgm-plugin-activation.php';
+require_once('child_theme_compatible.php');
 
 add_action('tgmpa_register', 'appointment_register_required_plugins');
 
