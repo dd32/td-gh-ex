@@ -135,8 +135,14 @@ if ( ! function_exists( 'spacious_setup' ) ) :
 		// Support for selective refresh widgets in Customizer
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Gutenberg layout support.
+		// Gutenberg wide layout support.
 		add_theme_support( 'align-wide' );
+
+		// Gutenberg block styles support.
+		add_theme_support( 'wp-block-styles' );
+
+		// Gutenberg responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
 
 		// Define and register starter content to showcase the theme on new sites.
 		$starter_content = array(
@@ -353,7 +359,7 @@ endif;
 add_action( 'after_setup_theme', 'spacious_setup' );
 
 // Theme version.
-$spacious_theme = wp_get_theme();
+$spacious_theme = wp_get_theme('spacious');
 define( 'SPACIOUS_THEME_VERSION', $spacious_theme->get( 'Version' ) );
 
 /**
@@ -407,13 +413,6 @@ require_once SPACIOUS_WIDGETS_DIR . '/widgets.php';
  * Detect plugin. For use on Front End only.
  */
 include_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-/**
- * Load Demo Importer Configs.
- */
-if ( class_exists( 'TG_Demo_Importer' ) ) {
-	require_once get_template_directory() . '/inc/demo-config.php';
-}
 
 /**
  * Assign the Spacious version to a variable.
