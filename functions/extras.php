@@ -296,7 +296,7 @@ if ( !function_exists( 'azuma_edd_search_form' ) ) {
 	function azuma_edd_search_form() {
 		?>
 
-		<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+		<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<label>
 				<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'azuma' ); ?></span>
 				<input type="search" class="search-field" placeholder="<?php echo esc_attr__( 'Search downloads&hellip;', 'azuma' ); ?>" value="<?php echo get_search_query();?>" name="s" />

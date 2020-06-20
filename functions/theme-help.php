@@ -16,7 +16,7 @@ function azuma_add_theme_help_page() {
 	$theme = wp_get_theme();
 
 	add_theme_page(
-		sprintf( esc_html__( 'Welcome to %1$s %2$s', 'azuma' ), $theme->get( 'Name' ), $theme->get( 'Version' ) ), esc_html__( 'Theme Help', 'azuma' ), 'edit_theme_options', 'azuma', 'azuma_display_theme_help_page'
+		sprintf( esc_html__( 'Welcome to %1$s %2$s', 'azuma' ), $theme->get( 'Name' ), $theme->get( 'Version' ) ), esc_html__( 'Azuma Help', 'azuma' ), 'edit_theme_options', 'azuma', 'azuma_display_theme_help_page'
 	);
 }
 
@@ -74,6 +74,30 @@ function azuma_display_theme_help_page() {
 						<p>
 							<a href="<?php echo esc_url( wp_customize_url() ); ?>" class="button button-primary">
 								<?php esc_html_e( 'Customize Theme', 'azuma' ); ?>
+							</a>
+						</p>
+					</div>
+
+					<div class="section">
+						<h4><?php esc_html_e( 'Demo Content', 'azuma' ); ?></h4>
+
+						<p class="about">
+							<?php
+							/* translators: %s: theme name. */
+							printf( esc_html__( 'Import %s demo content and Starter Sites.', 'azuma' ), $theme->get( 'Name' ) ); ?>
+						</p>
+						<?php
+						if ( class_exists( 'Starter_Sites' ) ) {
+							$plugin_page = 'starter-sites';
+							$plugin_text = esc_html__( 'View Demo Content', 'azuma' );
+						} else {
+							$plugin_page = 'tgmpa-install-plugins';
+							$plugin_text = esc_html__( 'Get Starter Sites Plugin', 'azuma' );
+						}
+						?>
+						<p>
+							<a href="<?php echo esc_url( get_admin_url() . 'themes.php?page=' . $plugin_page ); ?>" class="button button-primary">
+								<?php echo $plugin_text; ?>
 							</a>
 						</p>
 					</div>

@@ -547,3 +547,17 @@ require get_template_directory() . '/functions/customizer.php';
 if ( is_admin() ) {
 	require get_template_directory() . '/functions/theme-help.php';
 }
+
+/**
+ * TGM Plugin activation.
+ */
+require_once get_template_directory() . '/functions/class-tgm-plugin-activation.php';
+function azuma_reg_plugin() {
+	$plugins[] = array(
+		'name'		=> esc_html__( 'Starter Sites', 'azuma' ),
+		'slug'		=> 'starter-sites',
+		'required'	=> false,
+	);
+	tgmpa( $plugins);
+}
+add_action( 'tgmpa_register', 'azuma_reg_plugin' );

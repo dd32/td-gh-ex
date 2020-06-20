@@ -1331,7 +1331,7 @@ class Azuma_Icon_Choices extends WP_Customize_Control{
 
                 <ul id="icon-box<?php echo esc_html( $func_append ); ?>" class="icon-list">
 				<form class="icon-search-input" action="#">
-					<input id="input<?php echo esc_html( $func_append ); ?>" class="" type="text" placeholder="<?php esc_html_e( 'Search...', 'azuma' ); ?>">
+					<input id="input<?php echo esc_html( $func_append ); ?>" class="" type="text" placeholder="<?php esc_attr_e( 'Search...', 'azuma' ); ?>">
 				</form>
                 	<?php
                 	$fontawesome_array = azuma_fontawesome_array_all();
