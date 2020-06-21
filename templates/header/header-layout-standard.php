@@ -67,9 +67,9 @@
         <?php if ( topshop_is_woocommerce_activated() ) : ?>
             <?php if ( !get_theme_mod( 'topshop-header-remove-acc' ) ) : ?>
                 <?php if ( is_user_logged_in() ) { ?>
-                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php _e( 'My Account','topshop' ); ?>"><?php _e( 'My Account','topshop' ); ?></a></div>
+                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php esc_attr_e( 'My Account','topshop' ); ?>"><?php esc_html_e( 'My Account','topshop' ); ?></a></div>
                 <?php } else { ?>
-                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php _e( 'Login','topshop' ); ?>"><?php _e( 'Sign In / Register','topshop' ); ?></a></div>
+                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php esc_attr_e( 'Login','topshop' ); ?>"><?php esc_html_e( 'Sign In / Register','topshop' ); ?></a></div>
                 <?php } ?>
             <?php endif; ?>
             <?php if ( !get_theme_mod( 'topshop-header-remove-cart' ) ) : ?>
@@ -79,7 +79,7 @@
                             <?php echo sprintf( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count(), 'topshop' ), WC()->cart->get_cart_contents_count() ); ?><span> - <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
                         </span>
                         <span class="header-cart-checkout <?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
-                            <i class="fa <?php echo ( get_theme_mod( 'topshop-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'topshop-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
+                            <i class="fas <?php echo ( get_theme_mod( 'topshop-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'topshop-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
                         </span>
                     </a>
                     
@@ -107,10 +107,10 @@
     </nav><!-- #site-navigation -->
 <?php else : ?>
     <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'topshop-sticky-header' ) ) ? sanitize_html_class( 'header-stick' ) : ''; ?>" role="navigation">
-        <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'topshop' ); ?></span></button>
+        <button class="header-menu-button"><i class="fas fa-bars"></i><span><?php esc_html_e( 'Menu', 'topshop' ); ?></span></button>
         <div id="main-menu" class="main-menu-container">
             <div class="main-menu-inner">
-                <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                <button class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></button>
                 <div class="site-container">
                     <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
                     <div class="clearboth"></div>

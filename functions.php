@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.27' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.28' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -224,6 +224,28 @@ endif; // topshop_is_woocommerce_activated
 if ( topshop_is_woocommerce_activated() ) {
     require get_template_directory() . '/includes/inc/woocommerce-inc.php';
 }
+
+/**
+ * Add classes to the blog list for styling.
+ */
+function topshop_blog_post_classes( $classes ) {
+	global $topshop_current_class;
+	
+	if ( is_home() || is_archive() || is_search() ) :
+		if ( 'blog-post-alt-layout' == get_theme_mod( 'topshop-blog-layout', customizer_library_get_default( 'topshop-blog-layout' ) ) ) :
+			$classes[] = $topshop_current_class;
+			$topshop_current_class = ( 'blog-alt-odd' == $topshop_current_class ) ? sanitize_html_class( 'blog-alt-even' ) : sanitize_html_class( 'blog-alt-odd' );
+		endif;
+    endif;
+    
+    if ( has_post_thumbnail() ) :
+        $classes[] = sanitize_html_class( 'has-post-thumbnail' );
+    endif;
+
+	return $classes;
+}
+$topshop_current_class = sanitize_html_class( 'blog-alt-odd' );
+add_filter ( 'post_class' , 'topshop_blog_post_classes' );
 
 /**
  * Adjust is_home query if topshop-blog-cats is set

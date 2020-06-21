@@ -2,41 +2,42 @@
 /**
  * @package topshop
  */
-$images = get_posts( array("numberposts"=>-1,"post_type"=>"attachment","post_mime_type"=>"image","orderby" => "menu_order", "order" => "ASC","post_parent"=>$post->ID) );
-$has_img = 'post-no-img';
-if ( has_post_thumbnail() ) {
-    $has_img = '';
-} ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( $has_img . ' blog-post-side-layout' ); ?>>
+$images = get_posts( array("numberposts"=>-1,"post_type"=>"attachment","post_mime_type"=>"image","orderby" => "menu_order", "order" => "ASC","post_parent"=>$post->ID) ); ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
     <?php
-    if ( get_theme_mod( 'topshop-blog-list-image-type' ) == 'blog-use-images-loop' ) : ?>
-        <div class="post-loop-images">
-            
-            <div class="post-loop-images-carousel-wrapper post-loop-images-carousel-wrapper-remove">
-                <div class="post-loop-images-prev"><i class="fa fa-angle-left"></i></div>
-                <div class="post-loop-images-next"><i class="fa fa-angle-right"></i></div>
+    if ( has_post_thumbnail() ) :
+        if ( get_theme_mod( 'topshop-blog-list-image-type' ) == 'blog-use-images-loop' ) : ?>
+            <div class="post-loop-images">
                 
-                <div class="post-loop-images-carousel post-loop-images-carousel-remove">
+                <div class="post-loop-images-carousel-wrapper post-loop-images-carousel-wrapper-remove">
+                    <div class="post-loop-images-prev"><i class="fa fa-angle-left"></i></div>
+                    <div class="post-loop-images-next"><i class="fa fa-angle-right"></i></div>
                     
-                    <?php
-                    foreach ( $images as $image ) {
-                        $title = $image->post_title;
-                        $thumbimage = wp_get_attachment_image_src( $image->ID, 'topshop_blog_img_side' ); ?>
-                        <div><img src="<?php echo $thumbimage[0]; ?>" alt="<?php echo esc_html( $title ) ?>" /></div>
-                    <?php
-                    } ?>
-                
+                    <div class="post-loop-images-carousel post-loop-images-carousel-remove">
+                        
+                        <?php
+                        foreach ( $images as $image ) {
+                            $title = $image->post_title;
+                            $thumbimage = wp_get_attachment_image_src( $image->ID, 'full' ); ?>
+                            <div><img src="<?php echo $thumbimage[0]; ?>" alt="<?php echo esc_html( $title ) ?>" /></div>
+                        <?php
+                        } ?>
+                    
+                    </div>
+                    
                 </div>
                 
             </div>
-            
-        </div>
-    <?php else : ?>
-        <div class="post-loop-images">
-            <?php echo get_the_post_thumbnail( get_the_ID(), 'topshop_blog_img_side' ); ?>
-        </div>
-    <?php endif; ?>
+        <?php
+        else : ?>
+            <div class="post-loop-images">
+                <?php echo get_the_post_thumbnail( get_the_ID(), 'full' ); ?>
+            </div>
+        <?php
+        endif;
+    endif; ?>
     
     <div class="post-loop-content">
     

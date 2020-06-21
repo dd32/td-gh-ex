@@ -7,6 +7,21 @@
  * @package topshop
  */
 
+/**
+ * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+ */
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Fire the wp_body_open action.
+	 */
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 */
+		do_action( 'wp_body_open' );
+	}
+endif;
+
 if ( ! function_exists( 'topshop_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.

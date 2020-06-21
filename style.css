@@ -4,7 +4,9 @@ Theme URI: https://kairaweb.com/wordpress-theme/topshop/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: TopShop is the perfect theme for all users from the beginner to the developer. Being a quick and simple to setup responsive multipurpose WordPress theme, TopShop is very flexible and can be used for any website from a simple blog displaying your personal portfolio, to a corporate business website for your agency, online community, restaurant or real estate purposes, to selling products for your fully functional online eCommerce store. Simply turn TopShop into an online shop by installing the WooCommerce plugin and start selling online in no time at all. TopShop features a simple, clean, minimal and elegant style design which will work perfectly for almost any kind of store. TopShop integrates seamlessly with top popular free plugins such as WooCommerce, for an online eCommerce store, SiteOrigin's drag and drop Page Builder, along with our multiple page templates, for building any type of page layout needed, and lots more. Go on... Give it a try!
-Version: 1.3.27
+Version: 1.3.28
+Tested up to: 5.4.2
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -1312,11 +1314,14 @@ header.entry-header .entry-title {
     box-shadow: none;
 }
 
-/* -------- Post Images Carousel -------- */
+/* -------- Blog Left Layout -------- */
+.blog-post-side-layout article.type-post {
+    display: flex;
+    align-items: flex-start;
+}
 .blog-post-side-layout .post-loop-images {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     width: 32%;
-    float: left;
     border-radius: 3px;
     overflow: hidden;
 }
@@ -1324,18 +1329,85 @@ header.entry-header .entry-title {
 	display: block;
 	margin: 0;
 }
-.post-no-img .post-loop-images {
-    display: none;
-}
 .blog-post-side-layout .post-loop-content {
-    width: 68%;
-    padding: 6px 0 4px 3.5%;
-    float: left;
+    flex: 1;
+    padding: 10px 0;
 }
-.blog-post-side-layout.post-no-img .post-loop-content {
-    width: 100%;
-    padding: 20px 0;
-    float: none;
+.blog-post-side-layout .has-post-thumbnail .post-loop-content {
+    padding-left: 25px;
+}
+/* -------- Blog Right Layout -------- */
+.blog-post-right-layout article.type-post {
+    display: flex;
+    align-items: flex-start;
+}
+.blog-post-right-layout .post-loop-images {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    width: 32%;
+    border-radius: 3px;
+    overflow: hidden;
+    order: 2;
+}
+.blog-post-right-layout .post-loop-images img {
+	display: block;
+	margin: 0;
+}
+.blog-post-right-layout .post-loop-content {
+    flex: 1;
+    padding: 10px 0;
+    order: 1;
+}
+.blog-post-right-layout .has-post-thumbnail .post-loop-content {
+    padding-right: 25px;
+}
+/* -------- Blog Alternate Layout -------- */
+.blog-post-alt-layout article.type-post {
+    display: flex;
+    align-items: flex-start;
+}
+.blog-post-alt-layout .post-loop-images {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    width: 32%;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.blog-post-alt-layout .post-loop-images img {
+	display: block;
+	margin: 0;
+}
+.blog-post-alt-layout .post-loop-content {
+    flex: 1;
+    padding: 10px 0;
+    order: 1;
+}
+.blog-post-alt-layout .blog-alt-odd .post-loop-images {
+    order: 1;
+}
+.blog-post-alt-layout .blog-alt-even .post-loop-images {
+    order: 2;
+}
+.blog-post-alt-layout .blog-alt-odd .post-loop-content {
+    order: 2;
+}
+.blog-post-alt-layout .blog-alt-even .post-loop-content {
+    order: 1;
+}
+.blog-post-alt-layout .has-post-thumbnail.blog-alt-odd .post-loop-content {
+    padding-left: 25px;
+}
+.blog-post-alt-layout .has-post-thumbnail.blog-alt-even .post-loop-content {
+    padding-right: 25px;
+}
+/* -------- Blog Top Layout -------- */
+.blog-post-top-layout article.type-post {
+    display: flex;
+    flex-direction: column;
+}
+.blog-post-top-layout .post-loop-images {
+	margin: 0 0 22px;
+}
+.blog-post-top-layout .post-loop-images-carousel img {
+	display: inline-block;
 }
 
 .post-loop-images-carousel-wrapper {
@@ -1954,6 +2026,21 @@ body.page-template-template-gutenberg {
     }
     .site-footer-widgets ul li.widget:last-child {
         padding: 0 0 10px !important;
+    }
+
+    .topshop-list-wrap article.type-post {
+        flex-direction: column !important;
+    }
+    .topshop-list-wrap .post-loop-images,
+    .topshop-list-wrap .post-loop-content {
+        width: auto !important;
+        margin: 0 auto 20px;
+    }
+    .topshop-list-wrap .post-loop-images {
+        order: 1 !important;
+    }
+    .topshop-list-wrap .post-loop-content {
+        order: 2 !important;
     }
     
 }

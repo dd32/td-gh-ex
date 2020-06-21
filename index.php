@@ -28,20 +28,24 @@ get_header(); ?>
         
         <?php get_template_part( '/templates/titlebar' ); ?>
 
-		<?php if ( have_posts() ) : ?>
+        <?php if ( have_posts() ) : ?>
+        
+        <div class="topshop-list-wrap <?php echo sanitize_html_class( get_theme_mod( 'topshop-blog-layout', customizer_library_get_default( 'topshop-blog-layout' ) ) ); ?>">
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+                <?php /* Start the Loop */ ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content' );
-				?>
+                    <?php
+                        /* Include the Post-Format-specific template for the content.
+                        * If you want to override this in a child theme, then include a file
+                        * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                        */
+                        get_template_part( 'content' );
+                    ?>
 
-			<?php endwhile; ?>
+                <?php endwhile; ?>
+
+            </div>
 
 			<?php topshop_paging_nav(); ?>
 

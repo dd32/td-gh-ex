@@ -48,7 +48,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-logo',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Add Site Logo and Title & Tagline in Logo area', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />- Add Site Logo and Title & Tagline in Logo area', 'topshop' )
     );
     
     
@@ -123,7 +123,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-layout',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Select custom font for Main Navigation<br />- Edit the Main Navigation font size- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon<br />- Add shortcode for better Product search (an added plugin)', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />- Display WEBSITE LOADER while site loads<br />- Select custom font for Main Navigation<br />- Edit the Main Navigation font size- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon<br />- Add shortcode for better Product search (an added plugin)', 'topshop' )
     );
     
     
@@ -169,7 +169,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-slider',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change Slider scroll effect<br />- Link slide to single post<br />- Remove slider text<br />- Stop slider auto scroll', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />- Change Slider scroll effect<br />- Link slide to single post<br />- Remove slider text<br />- Stop slider auto scroll', 'topshop' )
     );
     
     // Slider Settings
@@ -182,6 +182,20 @@ function customizer_library_topshop_options() {
         'panel' => $panel
     );
     
+    $choices = array(
+        'blog-post-side-layout' => __( 'Left Layout', 'topshop' ),
+        'blog-post-right-layout' => __( 'Right Layout', 'topshop' ),
+        'blog-post-alt-layout' => __( 'Alternate Layout', 'topshop' ),
+        'blog-post-top-layout' => __( 'Top Layout', 'topshop' )
+    );
+    $options['topshop-blog-layout'] = array(
+        'id' => 'topshop-blog-layout',
+        'label'   => __( 'Blog Post Layout', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => 'blog-post-side-layout'
+    );
     $options['topshop-single-remove-pag'] = array(
         'id' => 'topshop-single-remove-pag',
         'label'   => __( 'Remove links to Next & Previous posts on Blog single pages', 'topshop' ),
@@ -239,7 +253,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-blog',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layouts<br />- Set Blog, Archive & Single pages to Left Sidebar<br />- Set Blog, Archive & Single pages to full width<br />- Set WooCommerce Shop, Archive & Product pages to Left Sidebar<br />- Set WooCommerce Shop, Archive & Product pages to Full Width', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />- AJAX Load More Posts button<br />- AJAX Load More Posts as user scrolls | Infinite Scroll<br />- Neat Numeric Pagination<br />- Select between blog side or top layouts<br />- Set Blog, Archive & Single pages to Left Sidebar<br />- Set Blog, Archive & Single pages to full width<br />- Set WooCommerce Shop, Archive & Product pages to Left Sidebar<br />- Set WooCommerce Shop, Archive & Product pages to Full Width', 'topshop' )
     );
     
     // Slider Settings
@@ -264,7 +278,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-footer',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers 3 different footer layouts<br />- Advanced Custom Footer layout to specify columns and column widths', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />- Premium offers 3 different footer layouts<br />- Advanced Custom Footer layout to specify columns and column widths', 'topshop' )
     );
 
     // WooCommerce style Layout
@@ -687,7 +701,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-social',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />Premium offers over 20 different social icons to add to your site, as well as the setting to add any custom icon you may need.', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />Premium offers over 20 different social icons to add to your site, as well as the setting to add any custom icon you may need.', 'topshop' )
     );
     
     
@@ -737,7 +751,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-website',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change the site attribution text to your own', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />- Change the site attribution text to your own', 'topshop' )
     );
 
     // Colors
@@ -768,7 +782,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-colors',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
+        'description' => __( '<b>TopShop Premium includes:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
     );
     
     // Plugin Support

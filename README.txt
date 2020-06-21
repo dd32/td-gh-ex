@@ -39,11 +39,10 @@ FontAwesome - Copyright 2012 Dave Gandy
 License: MIT License
 http://fontawesome.io/license/
 
-* The Photo in screenshot.png is from unsplash.com and licensed Creative Commons 0 (CC0)
-* Photos in the TopShop demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
-* Photos in the TopShop demo slider are from unsplash.com and licensed Creative Commons 0 (CC0)
-Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
-https://unsplash.com/license
+* The Photo in screenshot.png is from un-splash.com and licensed Creative Commons 0 (CC0)
+* Photos in the TopShop demo site are from un-splash.com and licensed Creative Commons 0 (CC0)
+* Photos in the TopShop demo slider are from un-splash.com and licensed Creative Commons 0 (CC0)
+Un-splash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
 
 == Installation ==
 
@@ -69,6 +68,17 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1100 wide and 420 high.
 
 == Changelog ==
+
+#### 1.3.28
+* Styling fixes/tweaks
+* Added missing escape & translation functions
+* Added required wp_body_open tag
+* Added 2 new blog layouts
+* Updated the language .pot file
+* PREMIUM: Added NEW Website Loader
+* PREMIUM: Added NEW AJAX load blog posts with Load More button
+* PREMIUM: Added NEW AJAX load blog posts as user scrolls
+* PREMIUM: Added new Numeric Pagination for Blog Posts
 
 #### 1.3.27
 * Styling fixes/tweaks
