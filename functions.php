@@ -95,6 +95,14 @@ if ( ! function_exists( 'arilewp_setup' ) ) :
 		 * Custom background support.
 		 */
 		add_theme_support( 'custom-background' );
+		
+		/**
+		* Set default content width.
+		*/
+		if ( ! isset( $content_width ) ) {
+			$content_width = 800;
+		}
+		
 	}
 endif;
 add_action( 'after_setup_theme', 'arilewp_setup' );
@@ -199,11 +207,6 @@ define( 'ARILEWP_PARENT_CUSTOMIZER_DIR', ARILEWP_PARENT_INC_DIR . '/customizer' 
 $arilewp_theme = wp_get_theme();
 define( 'ARILEWP_THEME_VERSION', $arilewp_theme->get( 'Version' ) );
 define ( 'ARILEWP_THEME_NAME', $arilewp_theme->get( 'Name' ) );
-
-// Set default content width.
-if ( ! isset( $content_width ) ) {
-	$content_width = 800;
-}
 
 /**
  * Implement the Custom Header feature.
