@@ -314,5 +314,20 @@ jQuery.noConflict()(function($){
 	
 	});
 
+/* ===============================================
+   fitVids
+   =============================================== */
 
+	function anna_lite_embed() {
+
+		$('#wrapper').imagesLoaded(function () {
+			$('.embed-container, .video-container, .maps-container').fitVids();
+			anna_lite_masonry();
+		});
+		
+	}
+
+	$(window).load(anna_lite_embed);
+	$(document).ready(anna_lite_embed);
+	
 });          

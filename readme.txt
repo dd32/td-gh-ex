@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,12 @@ Anna Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Anna Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.2 =
+Release date - June, 22 - 2020
+
+* Added - FitVids plugin
+* Edit - Code optimized
 
 = 1.2.1 =
 Release date - April, 18 - 2020
@@ -168,6 +174,9 @@ Slick Slider By Ken Wheeler - https://github.com/kenwheeler/slick/
 
 jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
 * jquery.easing.js v1.3 - Licensed under BSD License ( Applies to jquery.easing.js file in /anna-lite/assets/js/ )
+
+FitVids By Chris Coyier and Dave Rupert -  http://daverupert.com
+* jquery.fitvids v1.1 - Licensed under WTFPL license ( Applies to jquery.fitvids.js file in /anna-lite/assets/js/ )
 
 jQuery Nicescroll By InuYaksa - https://nicescroll.areaaperta.com/
 * jquery.nicescroll.js v3.7.6 - Licensed under MIT license ( Applies to jquery.nicescroll.js file in /anna-lite/assets/js/ )
