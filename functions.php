@@ -8,7 +8,7 @@ if ( is_admin() ):
 endif;
 add_action( 'after_setup_theme', 'atlast_business_setup' );
 function atlast_business_setup() {
-	load_theme_textdomain( 'nothing-personal', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'atlast-business', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_editor_style( get_template_directory_uri() . '/assets/css/main-styles.css' );
 	add_post_type_support( 'page', 'excerpt' );
@@ -18,7 +18,6 @@ function atlast_business_setup() {
 		'flex-height'   => true,
 		'height'        => 850,
 		'width'         => 1980,
-		'default-image' => get_template_directory_uri() . '/images/cropped-header-atlast.jpg',
 	) );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 50,
@@ -52,9 +51,9 @@ function atlast_business_setup() {
 
 	register_nav_menus(
 		array(
-			'main-menu'      => __( 'Main Menu', 'nothing-personal' ),
-			'top-menu'       => __( 'Top Menu', 'nothing-personal' ),
-			'copyright-menu' => __( 'Copyright Menu', 'nothing-personal' )
+			'main-menu'      => __( 'Main Menu', 'atlast-business' ),
+			'top-menu'       => __( 'Top Menu', 'atlast-business' ),
+			'copyright-menu' => __( 'Copyright Menu', 'atlast-business' )
 		)
 	);
 }
@@ -158,8 +157,8 @@ add_action( 'widgets_init', 'atlast_business_widgets_init' );
 function atlast_business_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'Header sidebar', 'nothing-personal' ),
-		'description'   => __( ' In this sidebar you can use widgets eg the smart widget slider etc and it will be shown in the header container. This widget\'s area visibility is controlled via the header visibility options in Customize > Atlast Business Options > Header Options > Do you want the header image to appear to all pages / posts etc?', 'nothing-personal' ),
+		'name'          => __( 'Header sidebar', 'atlast-business' ),
+		'description'   => __( ' In this sidebar you can use widgets eg the smart widget slider etc and it will be shown in the header container. This widget\'s area visibility is controlled via the header visibility options in Customize > Atlast Business Options > Header Options > Do you want the header image to appear to all pages / posts etc?', 'atlast-business' ),
 		'id'            => 'header-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget widget-container %2$s">',
 		'after_widget'  => "</section>",
@@ -168,8 +167,8 @@ function atlast_business_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Main sidebar', 'nothing-personal' ),
-		'description'   => __( ' The main sidebar.', 'nothing-personal' ),
+		'name'          => __( 'Main sidebar', 'atlast-business' ),
+		'description'   => __( ' The main sidebar.', 'atlast-business' ),
 		'id'            => 'primary-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget widget-container %2$s">',
 		'after_widget'  => "</section>",
@@ -179,8 +178,8 @@ function atlast_business_widgets_init() {
 
 
 	register_sidebar( array(
-		'name'          => __( 'Top Bar Sidebar', 'nothing-personal' ),
-		'description'   => __( 'Sidebar at the top bar', 'nothing-personal' ),
+		'name'          => __( 'Top Bar Sidebar', 'atlast-business' ),
+		'description'   => __( 'Sidebar at the top bar', 'atlast-business' ),
 		'id'            => 'topbar-sidebar',
 		'before_widget' => '<section id="%1$s" class="topbar-widget widget-container %2$s">',
 		'after_widget'  => "</section>",
@@ -189,8 +188,8 @@ function atlast_business_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Team Member sidebar', 'nothing-personal' ),
-		'description'   => __( 'This sidebar appears only in the single team member page.', 'nothing-personal' ),
+		'name'          => __( 'Team Member sidebar', 'atlast-business' ),
+		'description'   => __( 'This sidebar appears only in the single team member page.', 'atlast-business' ),
 		'id'            => 'team-member-sidebar',
 		'before_widget' => '<section id="%1$s" class="topbar-widget widget-container %2$s">',
 		'after_widget'  => "</section>",
@@ -200,8 +199,8 @@ function atlast_business_widgets_init() {
 
 
 	register_sidebar( array(
-		'name'          => __( 'Footer sidebar', 'nothing-personal' ),
-		'description'   => __( ' This sidebar appears in the footer. You can use the customizer to select the layout this sidebar', 'nothing-personal' ),
+		'name'          => __( 'Footer sidebar', 'atlast-business' ),
+		'description'   => __( ' This sidebar appears in the footer. You can use the customizer to select the layout this sidebar', 'atlast-business' ),
 		'id'            => 'footer-sidebar',
 		'before_widget' => '<section id="%1$s" class="col-3 col-sm-6 col-xs-12 footer-widget %2$s">',
 		'after_widget'  => "</section>",
@@ -247,7 +246,7 @@ if ( ! function_exists( 'atlast_business_comment' ) ):
                             </time>
 
 							<?php if ( $comment->comment_approved == '0' ) : ?>
-                                <p class="comment-meta-item"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'nothing-personal' ); ?></p>
+                                <p class="comment-meta-item"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'atlast-business' ); ?></p>
 							<?php endif; ?>
                         </div>
 
@@ -268,7 +267,7 @@ if ( ! function_exists( 'atlast_business_comment' ) ):
 							) ) ) ?>
                         </div>
 
-						<?php edit_comment_link( '<p class="comment-meta-item">' . __( 'Edit this comment', 'nothing-personal' ) . '</p>', '', '' ); ?>
+						<?php edit_comment_link( '<p class="comment-meta-item">' . __( 'Edit this comment', 'atlast-business' ) . '</p>', '', '' ); ?>
                     </div>
 
 
@@ -336,7 +335,7 @@ function atlast_business_register_required_plugins() {
 	);
 
 	$config = array(
-		'id'           => 'nothing-personal',
+		'id'           => 'atlast-business',
 		// Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',
 		// Default absolute path to bundled plugins.
@@ -354,76 +353,76 @@ function atlast_business_register_required_plugins() {
 		// Message to output right before the plugins table.
 
 		'strings' => array(
-			'page_title' => __( 'Install Required Plugins', 'nothing-personal' ),
-			'menu_title' => __( 'Install Plugins', 'nothing-personal' ),
+			'page_title' => __( 'Install Required Plugins', 'atlast-business' ),
+			'menu_title' => __( 'Install Plugins', 'atlast-business' ),
 
-			'installing' => __( 'Installing Plugin: %s', 'nothing-personal' ),
+			'installing' => __( 'Installing Plugin: %s', 'atlast-business' ),
 
-			'updating'                        => __( 'Updating Plugin: %s', 'nothing-personal' ),
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'nothing-personal' ),
+			'updating'                        => __( 'Updating Plugin: %s', 'atlast-business' ),
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'atlast-business' ),
 			'notice_can_install_required'     => _n_noop(
 
 				'This theme requires the following plugin: %1$s.',
 				'This theme requires the following plugins: %1$s.',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'notice_can_install_recommended'  => _n_noop(
 
 				'This theme recommends the following plugin: %1$s.',
 				'This theme recommends the following plugins: %1$s.',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'notice_ask_to_update'            => _n_noop(
 
 				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'notice_ask_to_update_maybe'      => _n_noop(
 
 				'There is an update available for: %1$s.',
 				'There are updates available for the following plugins: %1$s.',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'notice_can_activate_required'    => _n_noop(
 
 				'The following required plugin is currently inactive: %1$s.',
 				'The following required plugins are currently inactive: %1$s.',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'notice_can_activate_recommended' => _n_noop(
 
 				'The following recommended plugin is currently inactive: %1$s.',
 				'The following recommended plugins are currently inactive: %1$s.',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'install_link'                    => _n_noop(
 				'Begin installing plugin',
 				'Begin installing plugins',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'update_link'                     => _n_noop(
 				'Begin updating plugin',
 				'Begin updating plugins',
-				'nothing-personal'
+				'atlast-business'
 			),
 			'activate_link'                   => _n_noop(
 				'Begin activating plugin',
 				'Begin activating plugins',
-				'nothing-personal'
+				'atlast-business'
 			),
-			'return'                          => __( 'Return to Required Plugins Installer', 'nothing-personal' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'nothing-personal' ),
-			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'nothing-personal' ),
+			'return'                          => __( 'Return to Required Plugins Installer', 'atlast-business' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'atlast-business' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'atlast-business' ),
 
-			'plugin_already_active' => __( 'No action taken. Plugin %1$s was already active.', 'nothing-personal' ),
+			'plugin_already_active' => __( 'No action taken. Plugin %1$s was already active.', 'atlast-business' ),
 
-			'plugin_needs_higher_version' => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'nothing-personal' ),
+			'plugin_needs_higher_version' => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'atlast-business' ),
 
-			'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'nothing-personal' ),
-			'dismiss'                        => __( 'Dismiss this notice', 'nothing-personal' ),
-			'notice_cannot_install_activate' => __( 'There are one or more required or recommended plugins to install, update or activate.', 'nothing-personal' ),
-			'contact_admin'                  => __( 'Please contact the administrator of this site for help.', 'nothing-personal' ),
+			'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'atlast-business' ),
+			'dismiss'                        => __( 'Dismiss this notice', 'atlast-business' ),
+			'notice_cannot_install_activate' => __( 'There are one or more required or recommended plugins to install, update or activate.', 'atlast-business' ),
+			'contact_admin'                  => __( 'Please contact the administrator of this site for help.', 'atlast-business' ),
 
 			'nag_type' => '',
 			// Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
@@ -433,46 +432,3 @@ function atlast_business_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-
-/*
- * Import the demo data
- */
-function atlast_business_import_demo() {
-	return array(
-		array(
-			'import_file_name'             => esc_html__( 'Demo Import', 'nothing-personal' ),
-			'local_import_file'            => trailingslashit( get_template_directory() ) . 'demo_data/atlastbusiness.wordpress.2018-05-21.xml',
-			'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'demo_data/atlast-business-widgets.wie',
-			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'demo_data/atlast-business-export.dat',
-			'import_notice'                => __( 'After importing this data everything will be in place like the demo.', 'nothing-personal' ),
-			'preview_url'                  => esc_url( 'https://akisthemes.com/demos/nothing-personal-theme-demo/' ),
-		)
-	);
-}
-
-add_filter( 'pt-ocdi/import_files', 'atlast_business_import_demo' );
-/*
- * Import HomePage, Blog and menus
- */
-function atlast_business_after_demo_import() {
-	$main_menu      = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
-	$copyright_menu = get_term_by( 'name', 'Copyright Menu', 'nav_menu' );
-	$top_bar_menu   = get_term_by( 'name', 'Top Bar Menu', 'nav_menu' );
-	set_theme_mod( 'nav_menu_locations', array(
-			'main-menu'      => $main_menu->term_id,
-			'top-menu'       => $top_bar_menu->term_id,
-			'copyright-menu' => $copyright_menu->term_id,
-		)
-	);
-
-
-	$front_page_id = get_page_by_title( 'Frontpage' );
-	$blog_page_id  = get_page_by_title( 'Blog' );
-
-	update_option( 'show_on_front', 'page' );
-	update_option( 'page_on_front', $front_page_id->ID );
-	update_option( 'page_for_posts', $blog_page_id->ID );
-
-}
-
-add_action( 'pt-ocdi/after_import', 'atlast_business_after_demo_import' );

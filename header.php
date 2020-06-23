@@ -6,7 +6,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>
 <?php do_action( 'atlast_business_before_header' );
 $prefix        = atlast_business_get_prefix();
 $topbar_enable = esc_attr( get_theme_mod( $prefix . '_topbar_enable', '0' ) );

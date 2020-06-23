@@ -1,14 +1,15 @@
 === Atlast Business WordPress Theme ===
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
-Tested up to: WordPress 5.1.1
-Version: 1.5.8.5
+Tested up to: WordPress 5.4.2
+Version: 1.6.0.0
+Required PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
 
 == Description ==
-Description: Atlast Business theme (now full compatible with the Smart Slider plugin) contains over 35 customizer settings , one click demo content installation ,sliders, galleries and countless other features. With its companion plugin you can have over 70 colorpicker options to style each section. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://akisthemes.com/docs/atlast-business-documentation/) and you can find a fully working demo here (https://akisthemes.info/demos/atlast-business/). Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
+Description: Atlast Business theme (now full compatible with the Smart Slider plugin) contains over 35 customizer settings ,sliders, galleries and countless other features. With its companion plugin you can have over 70 colorpicker options to style each section. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://akisthemes.com/docs/atlast-business-documentation/) and you can find a fully working demo here (https://akisthemes.info/demos/atlast-business/). Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
 * Mobile-first, Responsive Layout
 * Custom Colors
 * Slider
@@ -85,34 +86,10 @@ TGM Plugin activation class by Thomas Griffin v 2.6.1
 License: GPLv2
 Source: http://tgmpluginactivation.com/
 
-Image used in screenshot.png: A photo (https://www.pexels.com/photo/architecture-buildings-business-city-325185/)
- by by Rawpixel.com (https://rawpixel.com),
+
+Image used in screenshot.png: A photo (https://stocksnap.io/photo/macbook-laptop-KQHC0T8GSY)
+ by Claudiu Sergiu Danaila (https://stocksnap.io),
  licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/) / https://stocksnap.io/license
-
- Demo Data items are licensed under the GPLv2 license
- - atlast-business-export.dat is licensed under the GPLv2 license
- - atlastbusiness.wordpress.2018-02-26.xml is licensed under the GPLv2 license
- - justwp.io-widgets.wie is licensed under the GPLv2 license
-
-The following images:
-- A photo (https://www.pexels.com/photo/apple-computer-desk-laptop-209151/ ) -- by pixabay, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/silhouette-man-person-stars-12567/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://www.pexels.com/photo/computer-cup-desk-drink-434337/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://pixabay.com/en/city-buildings-skyscrapers-towers-1030834/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/colleagues-cooperation-fist-bump-fists-398532/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/marketing-office-working-business-33999/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/box-business-celebrate-celebration-296878/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/adult-beard-boy-casual-220453/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/face-facial-hair-fine-looking-guy-614810/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://pixabay.com/en/student-typing-keyboard-text-woman-849825/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://pixabay.com/en/christmas-holiday-yuletide-workshop-3013762/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://pixabay.com/en/ux-prototyping-design-webdesign-788002/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://stocksnap.io/photo/EAP0KLXBA8) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://stocksnap.io/photo/VP98M357OV) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://www.pexels.com/photo/white-and-gray-magic-keyboard-933151/) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://stocksnap.io/photo/GCBKO6CFTA) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo (https://www.pexels.com/photo/men-s-wearing-black-suit-jacket-and-pants-937481/) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
 == Notes ==
 
@@ -131,7 +108,6 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 - Fixed missing icon font from widget list
 - Escaped "get_permalink()" function with esc_url - all instances
 - All header buttons and texts are now disabled upon the theme activation
-- All dummy content from Unsplash.com was replaced
 - Added new sanitization functions for some of the Customizer's elements
 - Fixed transparent menu when the page has not a header image assigned.
 
@@ -267,4 +243,12 @@ Removed unnecessary files
 = Version 1.5.8.5 =
 - Added support for responsive embeds.
 - Changed h2 from the header to h1 for better SEO.
-- Fixed CSS styles.
+- Fixed CSS styles
+
+= Version 1.6.0.0 =
+- Latest WordPress.org compatibility fixes
+- Compatibility check with WordPress v5.4.2
+- Compatibility check with the Atlast Business Styling Customizer
+- Fixed wrong text-domain
+- Better Sanitization Methods
+- Remove demo installation per latest guidelines. 
