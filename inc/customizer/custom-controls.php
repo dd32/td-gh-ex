@@ -82,7 +82,7 @@ class Archie_Pro_Dropdown_Taxonomies_Control extends WP_Customize_Control {
       <?php endif; ?>
        <select <?php $this->link(); ?>>
 			<?php
-			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), '--None--' );
+			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '---None---', 'archie' ) );
 			?>
 			<?php if ( ! empty( $taxonomies ) ) :  ?>
             <?php foreach ( $taxonomies as $key => $tax ) :  ?>
@@ -167,7 +167,7 @@ class Archie_Pro_Dropdown_Category_Control extends WP_Customize_Control {
       <?php endif; ?>
        <select <?php $this->link(); ?> multiple>
 			<?php
-			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), '--None--' );
+			printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '---None---', 'archie' ) );
 			?>
 			<?php if ( ! empty( $taxonomies ) ) :  ?>
             <?php foreach ( $taxonomies as $key => $tax ) :  ?>

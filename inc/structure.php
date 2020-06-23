@@ -168,7 +168,8 @@ if ( ! function_exists( 'archie_site_navigation' ) ) :
 	                $search .= '</div><!-- #search --></li>';
                 endif;
 
-        		$defaults = array(
+        		        	
+        		wp_nav_menu( array(
         			'theme_location' => 'primary',
         			'container' => 'div',
         			'menu_class' => 'menu nav-menu',
@@ -176,9 +177,7 @@ if ( ! function_exists( 'archie_site_navigation' ) ) :
         			'echo' => true,
         			'fallback_cb' => 'archie_menu_fallback_cb',
         			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $search . '</ul>',
-        		);
-        	
-        		wp_nav_menu( $defaults );
+        		) );
         	?>
 		</nav><!-- #site-navigation -->
 		<?php
@@ -232,7 +231,7 @@ if ( ! function_exists( 'archie_header_image' ) ) :
 		 <div id="page-detail" class="relative">
             <div class="wrapper">
                 <header class="page-header">
-                	<?php echo archie_custom_header_banner_title(); ?>
+                	<?php archie_custom_header_banner_title(); ?>
                 </header><!-- .page-header -->
             </div><!-- .wrapper -->
         </div><!--#page-detail -->
