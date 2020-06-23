@@ -1,9 +1,9 @@
 == Auto Store ==
-Contributors: Tsvetomir Tsvetanov
+Contributors: seosbg
 Tags: two-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, threaded-comments, blog, news, portfolio
-Requires at least: 4.7
-Tested up to: 4.7
-Stable tag: 1.2.1
+Requires at least: 5.4
+Tested up to: 5.4
+Stable tag: 1.2.2
 Author URI: https://seosthemes.com/
 Theme URI: https://seosthemes.com/auto-store
 License: GNU General Public License version 3.0
@@ -42,7 +42,24 @@ Auto Store includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.2.2- June 23 2020 =
+* ADDED: Tested up to
+* ADDED: Requires PHP
+* ADDED: <?php wp_body_open(); ?>
+* DELETE: changelog file
+
+= 1.2.1 - June 30 2018 =
+* FIXED: Home Page CSS Isuue
+
+= 1.2.0 - June 15 2018 =
+* ADDED: Premium Feature
+* CHANGE: Autor URL
+
 = 1.1.9 - June 12 2018 =
+* ADDED: New Screenshot
+* CHANGE: Sidebar Colors
+
+= 1.1.8 - June 3 2018 =
 * Initial release
 
 == Credits ==
@@ -60,21 +77,6 @@ Auto Store includes support for Infinite Scroll in Jetpack.
 * Jquery Aniview - https://github.com/jjcosgrove/jquery-aniview/blob/master/LICENSE - MIT License
 
 
- Images used in Screenshot are licensed under Creative Commons Zero License:
-
-
- * Peter H - https://pixabay.com/en/rolls-royce-limousine-luxury-wealth-3366960/ CC0 1.0 License
- * Peter H - https://pixabay.com/en/ford-mustang-v8-67-ford-mustang-2705402/ CC0 1.0 License
- * Heribert - https://pixabay.com/en/opel-olympia-1935-1937-2920765/ CC0 1.0 License
- * Brockenhexe - https://pixabay.com/en/oldtimer-bulli-vw-auto-cult-2585110/ CC0 1.0 License
- * Jill Wellington - https://pixabay.com/en/vintage-car-red-old-automobile-852237/ CC0 1.0 License
- * Wälz - https://pixabay.com/en/oldtimer-bmw-auto-old-classic-pkw-3387960/ CC0 1.0 License
- * Wälz - https://pixabay.com/en/oldtimer-buick-buick-eight-auto-3387998/ CC0 1.0 License
- * Gerhard Gellinger - https://pixabay.com/en/vehicle-traffic-auto-packard-coupe-2477747/ CC0 1.0 License
- * VABo2040 - https://pixabay.com/en/kids-boys-urchins-bullies-dump-3396749/ CC0 1.0 License
- * Mystic Art Design - https://pixabay.com/en/auto-sports-car-luxury-racing-car-2209439/ CC0 1.0 License
- * Pexels - https://pixabay.com/en/vw-bully-vw-bus-camper-antique-1868890/ CC0 1.0 License
- * Mike - https://pixabay.com/en/mercedes-benz-car-auto-transport-3395531/
  
  
    

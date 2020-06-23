@@ -624,10 +624,10 @@ Sidebar Options
 			class seos_Customize extends WP_Customize_Control {
 				public function render_content() { ?>
 				<div class="seos-info"> 
-						<a href="<?php echo esc_url( 'https://seosthemes.com/auto-store/' ); ?>" title="<?php esc_attr_e( 'Auto Store Pro', 'auto-store' ); ?>" target="_blank">
+						<a href="<?php echo esc_url( '//seosthemes.com/auto-store/' ); ?>" title="<?php esc_attr_e( 'Auto Store Pro', 'auto-store' ); ?>" target="_blank">
 						<?php _e( 'Pro Feature', 'auto-store' ); ?>
 						</a>
-						<br /><br /><a href="<?php echo esc_url( 'https://seosthemes.info/auto-store-wordpress-theme/' ); ?>" title="<?php esc_attr_e( 'Check demo here.', 'auto-store' ); ?>" target="_blank">
+						<br /><br /><a href="<?php echo esc_url( '//seosthemes.info/auto-store-wordpress-theme/' ); ?>" title="<?php esc_attr_e( 'Check demo here.', 'auto-store' ); ?>" target="_blank">
 						<?php _e( 'Check demo here.', 'auto-store' ); ?>
 						</a>						
 				</div>
