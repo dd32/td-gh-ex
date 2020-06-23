@@ -16,7 +16,7 @@
 	?>
 
 	<?php
-	if ( is_single() || is_home() ) { ?>
+	if ( is_single() || is_home() || is_author() || is_category() || is_tag() || is_archive() ) { ?>
         <div class="metabox">
             <span class="entry-date"><i class="fa fa-calendar"></i><?php echo esc_html( get_the_date() ); ?></span>
 

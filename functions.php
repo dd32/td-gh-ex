@@ -213,7 +213,7 @@ class astral_Font_Control extends WP_Customize_Control
 			$i = 0; ?>
    <select <?php $this->link(); ?> >
    <?php foreach( $items as $item) { $i++; $str = $item['family']; ?>
-    <option  value="<?php echo esc_attr($str); ?>" <?php if($this->value()== $str) echo 'selected="selected"';?>><?php echo esc_attr($str); ?></option>
+    <option  value="<?php echo esc_attr($str); ?>" <?php if($this->value()== $str) echo 'selected="selected"';?>><?php echo esc_html($str); ?></option>
    <?php } ?>
     </select>
 	<?php 

@@ -98,7 +98,7 @@ if (!function_exists('astral_display_theme')) {
 				</div>		
 			</div>
 			<div class="col-md-4">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/astral-custom-home-page.png">
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/astral-custom-home-page.png">
 			</div>
 		</div>
 	</div>

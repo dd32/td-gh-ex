@@ -70,7 +70,7 @@ if ( ! function_exists( 'astral_breadcrumb' ) ) :
                         <li class="breadcrumb-item " aria-current="page"><?php echo single_cat_title(); ?></li>
 					<?php } ?>
 
-					<?php if ( is_archive() ) { ?>
+					<?php if ( is_archive() && ! is_tag() && ! is_author() ) { ?>
                         <li class="breadcrumb-item " aria-current="page">
 							<?php if ( is_day() ) :
 								/* translators: %s: date. */
@@ -82,7 +82,7 @@ if ( ! function_exists( 'astral_breadcrumb' ) ) :
 								/* translators: %s: year. */
 								printf( esc_html__( 'Yearly Archives: %s', 'astral' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'astral' ) ) . '</span>' );
 							else :
-								esc_html_e( 'Archives', 'astral' );
+								//esc_html_e( 'Archives', 'astral' );
 							endif; ?>
                         </li>
 					<?php } ?>

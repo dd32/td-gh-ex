@@ -19,7 +19,9 @@ do_action( 'astral_top_banner' );
 * 
 * @hooked astral_breadcrumb_area
 */
-do_action( 'astral_breadcrumb_area' );
+if( get_theme_mod( 'astral_breadcrumb_toggle','1' ) ) :
+do_action( 'astral_breadcrumb_area' ); 
+endif;
 ?>
 <div id="content">
     <section class="align-blog" id="blog">

@@ -31,9 +31,11 @@ if($footer_widget) {
 	?>
 </div>
 <!-- scroll top icon -->
+<?php if(get_theme_mod( 'astral_scrollup_toggle','1' )) : ?>
 <a href="#" id="scroll" class="move-top text-center scrollup" style="">
     <div class="circle"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 </a>
+<?php endif; ?>
 <?php get_template_part('google', 'font'); ?>
 <?php get_template_part('custom','css') ?>
 <?php wp_footer(); ?>

@@ -76,6 +76,34 @@ class astral_Customizer extends astral_Abstract_Main {
 			  )
 		   )
 		);
+
+		$wp_customize->add_setting( 'astral_breadcrumb_toggle',
+			array(
+				'type'              => 'theme_mod',
+				'default'           => '1',
+				'sanitize_callback' => 'astral_sanitize_checkbox'
+			)
+		);
+		$wp_customize->add_control( new astral_Toggle_Switch_Custom_control( $wp_customize, 'astral_breadcrumb_toggle',
+			array(
+				'label' => __( 'Breadcrumb Display On/Off', 'astral' ),
+				'section' => 'astral_general_settings'
+			)
+		) );
+
+		$wp_customize->add_setting( 'astral_scrollup_toggle',
+			array(
+				'type'              => 'theme_mod',
+				'default'           => '1',
+				'sanitize_callback' => 'astral_sanitize_checkbox'
+			)
+		);
+		$wp_customize->add_control( new astral_Toggle_Switch_Custom_control( $wp_customize, 'astral_scrollup_toggle',
+			array(
+				'label' => __( 'Scroll To Top Display On/Off', 'astral' ),
+				'section' => 'astral_general_settings'
+			)
+		) );
 		
 		/* header section */
 		$wp_customize->add_section( 'astral_header', array(

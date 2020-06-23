@@ -6,8 +6,9 @@
  * @since 0.1
  */
 get_header();
-do_action( 'astral_top_banner' ); ?>
-    <!-- breadcrumbs -->
+do_action( 'astral_top_banner' ); 
+/* breadcrumbs */
+if( get_theme_mod( 'astral_breadcrumb_toggle','1' ) ) : ?>
     <nav aria-label="breadcrumb">
 		<?php if ( have_posts() ) { ?>
             <ol class="breadcrumb d-flex justify-content-center">
@@ -19,7 +20,7 @@ do_action( 'astral_top_banner' ); ?>
 		<?php } ?>
     </nav>
     <!-- //breadcrumbs -->
-    </nav>
+<?php endif; ?>
     <!-- blog post-->
     <section class="align-blog" id="blog">
         <div class="container">
