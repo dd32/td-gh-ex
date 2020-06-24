@@ -29,7 +29,7 @@ if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
 
         <header id="blog-title-and-image" style="background-image: url('<?php semper_fi_lite_image( 'blog_background_img_1' , '/inc/blog/images/Schwarttzy-Australia-Noosa-Beach-1920x1080.jpg' , 1920 , 1080 ); ?>');">
 
-            <h2 class='header-text' itemprop="headline"><?php echo esc_attr( get_theme_mod( 'blog_title_text_1' , __( 'Blog' , 'semper-fi-lite' ) ) ); ?></h2>
+            <h2 class='header-text' itemprop="headline"><?php echo esc_html( get_theme_mod( 'blog_title_text_1' , __( 'Blog' , 'semper-fi-lite' ) ) ); ?></h2>
             <?php if ( is_customize_preview() ) echo '<div class="customizer-title-image"></div><div class="customizer-title-image-2"></div>'; ?>
 
         </header><?php } 
@@ -72,7 +72,7 @@ if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
 
                     <h4 itemprop="headline">
 
-                        <a href="<?php the_permalink(); ?>" itemprop="mainEntityOfPage"><?php if ( get_the_title() ) { the_title(); } else { _e( '(No Title)' , 'semper-fi-lite' ); } ?></a>
+                        <a href="<?php the_permalink(); ?>" itemprop="mainEntityOfPage"><?php the_title(); ?></a>
 
                     </h4>
 
@@ -100,7 +100,7 @@ if ( $semper_fi_lite_blog_wp_query->have_posts() ) :
 
                     </div>
 
-                    <meta itemprop="name" content="<?php bloginfo('name'); ?>">
+                    <meta itemprop="name" content="<?php esc_attr( bloginfo('name') ); ?>">
 
                 </div>
 

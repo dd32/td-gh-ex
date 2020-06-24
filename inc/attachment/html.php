@@ -5,7 +5,7 @@
             
                 <img src="<?php echo esc_url( wp_get_attachment_image_url( get_the_ID() , 'full' ) ); ?>" class="featured_image" />
                 
-                <h2 class='header-text'><?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite' ); } ?></h2>
+                <h2 class='header-text'><?php the_title(); ?></h2>
             
             </header>
             

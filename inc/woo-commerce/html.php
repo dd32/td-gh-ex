@@ -1,6 +1,6 @@
     <article id="title-image-content" itemtype="http://schema.org/Product" itemscope>
 		
-		<meta itemprop="name" content="<?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite' ); } ?>" />
+		<meta itemprop="name" content="<?php the_title(); ?>" />
 		
 <?php $semper_fi_lite_woocommce_product = wc_get_product( get_the_ID() ); ?>
 
@@ -24,7 +24,7 @@
                 
                 <span>
                     
-                    <?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?>
+                    <?php the_title(); ?>
                 
                 </span>
             

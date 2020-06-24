@@ -400,7 +400,7 @@ nav#display-menu .woocommerce-mini-cart__buttons {
     padding: 0 1em 1em;
 }
 
-@media screen and ( max-width:782px ){
+@media screen and ( max-width:782.1px ){
     
     .admin-bar nav#display-menu {
         
@@ -408,7 +408,9 @@ nav#display-menu .woocommerce-mini-cart__buttons {
         
     }
     
-    .admin-bar nav#display-menu:target #hide-menu {
+    .admin-bar nav#display-menu:target #hide-menu,
+    .admin-bar nav#display-menu:hover #hide-menu,
+    .admin-bar nav#display-menu:focus-within #hide-menu {
         
         height: calc( 100vh - 46px );
         
@@ -416,23 +418,25 @@ nav#display-menu .woocommerce-mini-cart__buttons {
     
 }
 
-@media screen and ( max-width:600px ){
+@media screen and ( max-width:600.1px ){
     
     .nojq {
         
-        top: -46px !important;
+        position: fixed !important;
         
     }
     
     .admin-bar nav#display-menu {
         
-        top: 0px;
+        top: 46px;
         
     }
     
-    .admin-bar nav#display-menu:target #hide-menu {
+    .admin-bar nav#display-menu:target #hide-menu,
+    .admin-bar nav#display-menu:hover #hide-menu,
+    .admin-bar nav#display-menu:focus-within #hide-menu {
         
-        height: 100vh;
+        height: calc( 100vh - 46px);
         
     }
     

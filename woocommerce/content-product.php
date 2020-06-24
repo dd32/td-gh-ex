@@ -40,7 +40,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
                 <h5>
 
-                    <a href="<?php the_permalink() ?>"><span itemprop="name" content="<?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite' ); } ?>" ><?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite' ); } ?></span></a>
+                    <a href="<?php the_permalink() ?>"><span itemprop="name" content="<?php the_title(); ?>" ><?php the_title(); ?></span></a>
 
                 </h5>
 

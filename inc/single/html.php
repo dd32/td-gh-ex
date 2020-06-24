@@ -22,7 +22,7 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     
                 </div>
 <?php endif; ?>
-                <h2 class='header-text' itemprop="headline"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></h2>
+                <h2 class='header-text' itemprop="headline"><?php the_title(); ?></h2>
             
             </header>
             
@@ -32,7 +32,7 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 
                 <?php the_content(); ?>
 
-                <?php wp_link_pages( array('before' => '<p>Pages: ', 'after' => '</p>') ); ?>
+                <?php wp_link_pages( array('before' => esc_html__( '<p>Pages: ' , 'semper-fi-lite' ) , 'after' => '</p>') ); ?>
             
             </main>
     

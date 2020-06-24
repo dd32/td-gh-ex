@@ -16,7 +16,7 @@
                 
                 if ( is_404() ) { ?>
 
-                <h3><?php _e( 'Next we have a list of all the pages that the website contains.' , 'semper-fi-lite' ); ?></h3>
+                <h3><?php esc_html_e( 'Next we have a list of all the pages that the website contains.' , 'semper-fi-lite' ); ?></h3>
 
                 <ul class="post-categories" >
 

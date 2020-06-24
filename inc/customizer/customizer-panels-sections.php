@@ -9,7 +9,7 @@
 
 // Change Name of Background Image to just Background
 $wp_customize->add_section( 'background_image', array(
-    'title'     => 'Background',
+    'title'     => __( 'Background' , 'semper-fi-lite' ),
     'priority'  => '9', ) );
 
 // Array for duplicate Paneles

@@ -96,6 +96,17 @@ function semper_fi_lite_custom_image_sizes( $size_names ) {
 if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 
 
+// For Blank Titles
+add_filter( 'the_title', 'semper_fi_lite_custom_post_title' );
+function semper_fi_lite_custom_post_title( $title ) {
+    if ( $title == '' ) {
+        return esc_html__( '(No Title)', 'semper-fi-lite' );
+    } else {
+        return $title;
+    }
+}
+
+
 // Set the length of the excerpt to 100
 add_filter( 'excerpt_length', 'semper_fi_lite_custom_excerpt_length', 999 );
 function semper_fi_lite_custom_excerpt_length( $length ) {
@@ -108,7 +119,7 @@ function semper_fi_lite_custom_excerpt_length( $length ) {
 add_filter('excerpt_more', 'semper_fi_lite_custom_excerpt_more');
 function semper_fi_lite_custom_excerpt_more( $more ) {
     if ( is_admin() ) return $more;
-    return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading  &rarr;' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
+    return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. esc_html__( 'Continue Reading  &rarr;' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
 }
 
 

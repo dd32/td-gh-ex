@@ -83,6 +83,18 @@ to represent the company, product, or service to which they refer.**
 
 == Changelog ==
 
+= 119 =
+* Added wp_body_open() to the theme
+* Added Requires PHP and Tested up to in the style.css
+
+= 118 =
+* Issue fixed when logged in the menu would display under the Admin bar
+* added a lot fo esc_html and esc_attr to everything to improve securtiy
+* created a title filter function to reduce code usage simplfy future changes
+
+= 117 =
+* on 404 error page video wasn't scaling properly on mobile view
+
 = 116 =
 * Menu no longer locks closed or open, instead is hover/focus based only
 * 404 had a missing escaped
@@ -185,6 +197,12 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 119 =
+* Updated theme to meet new requirements
+
+= 118 =
+* Increased Security and a menu fix
 
 = 116 =
 * Ajustment to the menu and minor bugs taken care of

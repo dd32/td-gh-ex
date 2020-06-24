@@ -25,19 +25,19 @@ if ( !is_paged() ) : while ( have_posts() ) : the_post(); ?>
                 </div>
 
 <?php endif; ?>
-                <h2 class='header-text' itemprop="headline"><?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite'); } ?></h2>
+                <h2 class='header-text' itemprop="headline"><?php the_title(); ?></h2>
             
             </header>
             
             <main id="the-article" itemprop="articleBody" style="background-image:url(<?php semper_fi_lite_image( 'main_background_img_1' , '/inc/single/images/eeeeee-mouse-chocolate-lab-tennis-ball-300x300.jpg' , 300 , 300 ); ?>);" >
             
-                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); endif; elseif ( !function_exists( 'is_cart' ) ) : edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); endif; ?>
+                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : edit_post_link( esc_html__( 'Edit this Post' , 'semper-fi-lite' ) ); endif; elseif ( !function_exists( 'is_cart' ) ) : edit_post_link( esc_html__( 'Edit this Post' , 'semper-fi-lite' ) ); endif; ?>
                 
                 <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : ?><?php do_action( 'semper_fi_lite_content_data' ); ?><?php endif; elseif ( !function_exists( 'is_cart' ) ) : do_action( 'semper_fi_lite_content_data' ); endif; ?>
                 
                 <?php the_content(); ?>
 
-                <?php wp_link_pages( array('before' => __( 'Pages: ' , 'semper-fi-lite' ) , 'after' => '</br>') ); if ( is_customize_preview() ) echo '<div class="customizer"></div>'; ?>
+                <?php wp_link_pages( array('before' => esc_html__( 'Pages: ' , 'semper-fi-lite' ) , 'after' => '</br>') ); if ( is_customize_preview() ) echo '<div class="customizer"></div>'; ?>
             
             </main>
             

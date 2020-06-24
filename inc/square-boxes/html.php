@@ -3,7 +3,7 @@
 
     <article id="square-boxes">
 
-        <?php if ( ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) && ( !is_customize_preview() ) ) : ?><a href="<?php echo get_admin_url(); ?>customize.php" title="<?php _e( 'Only the Admin and Editor can see this Link' , 'semper-fi-lite' ); ?>"><?php _e( 'Edit Square Boxes?' , 'semper-fi-lite' ); ?></a>
+        <?php if ( ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) && ( !is_customize_preview() ) ) : ?><a href="<?php echo get_admin_url(); ?>customize.php" title="<?php esc_attr_e( 'Only the Admin and Editor can see this Link' , 'semper-fi-lite' ); ?>"><?php esc_html_e( 'Edit Square Boxes?' , 'semper-fi-lite' ); ?></a>
         <?php endif; ?>
 
 <?php if ( absint ( get_theme_mod( 'square_boxes_display_1' , true ) ) ) : ?>
