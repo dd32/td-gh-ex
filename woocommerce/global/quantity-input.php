@@ -26,7 +26,7 @@ if ( $max_value && $min_value === $max_value ) {
 	$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'semper-fi-lite' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'semper-fi-lite' );
 	?>
     <?php do_action( 'woocommerce_before_quantity_input_field' ); ?>
-    <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
+    <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_html( $label ); ?></label>
     <input
         type="number"
         id="<?php echo esc_attr( $input_id ); ?>"

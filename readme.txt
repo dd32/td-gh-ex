@@ -2,9 +2,9 @@
 
 Theme Name: Semper Fi Lite
 Contributors: Schwarttzy
-Version: 115
+Version: 119
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 5.6
 License: GNU General Public License, version 3 (AGPLv3)
 License URI: http://opensource.org/licenses/AGPL-3.0
@@ -84,6 +84,7 @@ to represent the company, product, or service to which they refer.**
 == Changelog ==
 
 = 119 =
+* Coupple of excaping functions were using the wrong attribute, esc_attr instead of esc_html
 * Added wp_body_open() to the theme
 * Added Requires PHP and Tested up to in the style.css
 
@@ -198,8 +199,8 @@ to represent the company, product, or service to which they refer.**
 
 == Upgrade Notice ==
 
-= 119 =
-* Updated theme to meet new requirements
+= 120 =
+* Fixed issue with wrong escing function used, Updated theme to meet new requirements
 
 = 118 =
 * Increased Security and a menu fix

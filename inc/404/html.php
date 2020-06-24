@@ -20,7 +20,7 @@
 
             <h4><?php esc_html_e( 'So what can we do?' , 'semper-fi-lite' ); ?></h4>
 
-            <p><?php esc_html_e( 'For starters, you could just head to the' , 'semper-fi-lite' ); ?> <a href="<?php echo esc_url( home_url() );  ?>"><?php esc_attr_e( 'Home Page' , 'semper-fi-lite' ); ?></a></p>
+            <p><?php esc_html_e( 'For starters, you could just head to the' , 'semper-fi-lite' ); ?> <a href="<?php echo esc_url( home_url() );  ?>"><?php esc_html_e( 'Home Page' , 'semper-fi-lite' ); ?></a></p>
             
         </main>
             
