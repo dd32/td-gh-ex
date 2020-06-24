@@ -781,3 +781,10 @@ blockquote.wp-block-quote {
     background: #fafafa;
     padding: 15px;
 }
+
+@media only screen and (max-width: 768px){
+	.list-layout .post-content-wrap,
+	.list-layout .post-thumb{
+		width: 100%;
+	}
+}

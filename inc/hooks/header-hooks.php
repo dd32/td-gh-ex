@@ -310,8 +310,10 @@ if(! function_exists('arrival_mob_nav')){
 	$default 						= arrival_get_default_theme_options();
 	$arrival_main_nav_right_content = get_theme_mod('arrival_main_nav_right_content',$default['arrival_main_nav_right_content']);
 	$_cart_display_position 		= get_theme_mod('arrival_cart_display_position',$default['arrival_cart_display_position']);
+	$arrival_top_header_enable 		= get_theme_mod('arrival_top_header_enable',$default['arrival_top_header_enable']);
+
 	?>
-	<div class="mob-outer-wrapp">
+	<div class="mob-outer-wrapp <?php echo esc_attr($arrival_top_header_enable)?>">
 	<div class="container clearfix">
 		<?php arrival_site_logo(); ?>
 		<button class="toggle toggle-wrapp">

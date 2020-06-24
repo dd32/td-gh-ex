@@ -1234,9 +1234,10 @@ if( ! function_exists('arrival_header_title_display') ){
         if( !is_home() && is_front_page() ){
             return;
         }
-        $default                    = arrival_get_default_theme_options();
-        $_page_header_layout        = get_theme_mod('arrival_page_header_layout',$default['arrival_page_header_layout']);
-        $_breadcrumb_overlay_disable = get_theme_mod('arrival_breadcrumb_overlay_disable',$default['arrival_breadcrumb_overlay_disable']);
+        $default                        = arrival_get_default_theme_options();
+        $_page_header_layout            = get_theme_mod('arrival_page_header_layout',$default['arrival_page_header_layout']);
+        $_breadcrumb_overlay_disable    = get_theme_mod('arrival_breadcrumb_overlay_disable',$default['arrival_breadcrumb_overlay_disable']);
+        $arrival_top_header_enable      = get_theme_mod('arrival_top_header_enable',$default['arrival_top_header_enable']);
 
         $overlay_div = '';
         if( $_breadcrumb_overlay_disable == true  ){
@@ -1251,7 +1252,7 @@ if( ! function_exists('arrival_header_title_display') ){
         }
 
         ?> 
-        <div class="arrival-breadcrumb-wrapper ">
+        <div class="arrival-breadcrumb-wrapper <?php echo esc_attr($arrival_top_header_enable)?>">
 
             <?php 
             if( $_page_header_layout == 'layout-two' ){

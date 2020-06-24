@@ -83,6 +83,26 @@ $('body').on('click touchstart keypress','.mob-nav-wrapp .sub-toggle-children',f
     
 });
 
+/**
+* Close the menu by clicking the link if parallax scrolling menu is enabled
+*
+* @since1.3.5
+*
+*/
+if( 'yes' == enableOnepageMenu ){
+
+    
+     $('body').on('vclick touchstart keypress','.mob-nav-wrapp nav ul li', function()  {
+    setTimeout(function(){
+        $('.site-header').toggleClass('toggled-on');
+        $('body').toggleClass('toggled-modal');
+  }, 500);
+    });
+
+    
+    
+}
+
 
 $(".post-thumb").fitVids({
      customSelector: "iframe[src^='https://w.soundcloud.com']"

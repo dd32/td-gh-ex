@@ -20,6 +20,9 @@
         clear: none;
         margin-left: 3.5%;
     }
+    .top-right-wrapp {
+        display: flex;
+    }
     
     header .cart-wrapper{
         display: block;
@@ -44,7 +47,14 @@
         position: absolute !important;
         left: 0;
         right: 0;
+        z-index: 1;
 	}
+    .mob-outer-wrapp.on{
+        position: relative !important;
+    }
+    .arrival-breadcrumb-wrapper.off {
+        padding-top: 75px;
+    }
 	.menu-toggle {
 		display: block;
 	}
