@@ -98,3 +98,13 @@ function automotive_centre_category_transient_flusher() {
 }
 add_action( 'edit_category', 'automotive_centre_category_transient_flusher' );
 add_action( 'save_post',     'automotive_centre_category_transient_flusher' );
+
+
+add_theme_support( 'admin-bar', array( 'callback' => 'automotive_centre_my_admin_bar_css') );
+function automotive_centre_my_admin_bar_css(){
+?>
+<style type="text/css" media="screen">	
+	html body { margin-top: 0px !important; }
+</style>
+<?php
+}

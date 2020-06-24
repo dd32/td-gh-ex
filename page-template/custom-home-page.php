@@ -35,7 +35,7 @@ get_header(); ?>
             <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
-                <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_slider_excerpt_number','30')))); ?></p>
                 <div class="slider-btn">
                   <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'LEARN MORE', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'LEARN MORE','automotive-centre' );?></span></a>
@@ -52,11 +52,11 @@ get_header(); ?>
       endif;?>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-        <span class="screen-reader-text"><?php esc_attr_e( 'Previous','automotive-centre' );?></span>
+        <span class="screen-reader-text"><?php esc_html_e( 'Previous','automotive-centre' );?></span>
       </a>
       <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-        <span class="screen-reader-text"><?php esc_attr_e( 'Next','automotive-centre' );?></span>
+        <span class="screen-reader-text"><?php esc_html_e( 'Next','automotive-centre' );?></span>
       </a>
     </div>
     <div class="clearfix"></div>

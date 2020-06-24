@@ -4,7 +4,9 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version: 0.4.1
+Tested up to: 5.4.2
+Requires PHP: 7.2.14
+Version: 0.4.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -85,11 +87,18 @@ select:focus{
   border-bottom: 1px solid #000;
   text-decoration:none !important;
 } 
-.logo h1 a:focus, .logo p.site-title a:focus, .serach_inner input.search-field:focus, .serach_inner input.search-submit:focus, a.closepop:focus{
+.logo h1 a:focus, .logo p.site-title a:focus, 
+.serach_inner input.search-field:focus, 
+.serach_inner input.search-submit:focus, 
+button.close:focus,.toggle-nav button:focus, 
+.search-box button:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
   text-decoration:none !important;
 } 
+.close:focus, .close:hover {
+  color: #fff;
+}
 ul{ 
   margin:0 0 0 15px; 
   padding:0;
@@ -311,40 +320,50 @@ p.site-description {
 }
 
 /*----------------- SEARCH POPUP ----------------*/
-.serach_inner label {
-  width: 80%;
+.modal-backdrop {
+  position: static;
 }
-.serach_outer {
-  position: fixed;
-  width: 100%;
+.modal-content{
+  background: transparent;
+  border: 0;
+}
+.modal-dialog{
+  max-width: 100%;
   height: 100%;
-  overflow: hidden;
-  transition: 0.5s;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0, 0.8);
-  display: none;
+  margin: 0;
+  pointer-events: all;
 }
-.serach_inner {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+.modal-body{
+  height: 100%;
+  padding: 0;
 }
-.closepop {
+.modal{
+  background-color: rgba(27, 27, 27, 0.8);
+  z-index: 999999;
+}
+.search-box button {
+  background: transparent;
+  border: 0;
+}
+.close {
   position: absolute;
   top: 20%;
   transform: translateY(-50%);
   right: 0;
   text-align: right;
   margin-right: 28px;
+  font-size: 35px;
+  color: #fff;
+  opacity: 1;
 }
-.serach_outer i {
-  font-size: 24px;
-  padding: 4px 0 0 0;
-  color: #bbb;
-  cursor: pointer;
+.serach_inner label {
+  width: 80%;
+}
+.serach_inner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }
 .serach_inner form.search-form {
  display: table;
@@ -1867,15 +1886,21 @@ section.related.products h2 {
   }
   .sidenav {
     height: 100%;
-    width: 0;
+    width: 100%;
     position: fixed;
-    z-index: 1; 
+    z-index: 999999;
     left: 0;
-    top: 0;
+    top: -110%;
     overflow-x: hidden; 
-    transition: 0.5s;
     overflow-y: scroll;
     background: #fff ;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    cursor: zoom-in;
+  }
+  .sidenav.show {
+    visibility: visible;
+    top:0%;
   }
   .sidenav .closebtn {
     position: absolute;
@@ -1976,13 +2001,6 @@ section.related.products h2 {
     opacity: 0;
     left: 0px;
     width: 0px;
-  }
-  #mySidenav {
-    transition: all 0.5s ease-in-out;
-    cursor: zoom-in;
-    z-index: 999999;
-    width: 100%;
-    top: -110%;
   }
   .sf-arrows .sf-with-ul:hover:after,
   .main-navigation ul li li:hover .sf-with-ul:after{

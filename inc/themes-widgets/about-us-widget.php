@@ -79,8 +79,8 @@ class Automotive_Centre_About_Widget extends WP_Widget {
 		<p>
 		<label for="<?php echo esc_attr($this->get_field_id( 'upload_image' )); ?>"><?php esc_html_e( 'Image Url:','automotive-centre'); ?></label>
 		<?php
-			if ( $instance['upload_image'] != '' ) :
-			echo '<img class="custom_media_image" src="' . esc_url($instance['upload_image']) . '" style="margin:10px 0;padding:0;max-width:100%;float:left;display:inline-block" /><br />';
+			if ( $upload_image != '' ) :
+			echo '<img class="custom_media_image" src="' . esc_url($upload_image) . '" style="margin:10px 0;padding:0;max-width:100%;float:left;display:inline-block" /><br />';
 			endif;
 		?>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'upload_image' ) ); ?>" name="<?php echo esc_attr($this->get_field_name( 'upload_image' )); ?>" type="text" value="<?php echo esc_url( $upload_image ); ?>" />

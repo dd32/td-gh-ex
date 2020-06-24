@@ -15,31 +15,31 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		?>
 		<div class="widget">
-		<?php
-		
-		$title = $instance['title'];
-		$title = apply_filters('widget_title', esc_html($instance['title']));
-		$facebook = $instance['facebook'];
-        $twitter = $instance['twitter'];
-        $google = $instance['google'];
-        $linkedin = $instance['linkedin'];
-        $pinterest = $instance['pinterest'];
-        $tumblr = $instance['tumblr'];
-        $instagram = $instance['instagram'];
-        $youtube = $instance['youtube'];
+			<?php
+			
+			$title = $instance['title'];
+			$title = apply_filters('widget_title', esc_html($instance['title']));
+			$facebook = $instance['facebook'];
+	        $twitter = $instance['twitter'];
+	        $google = $instance['google'];
+	        $linkedin = $instance['linkedin'];
+	        $pinterest = $instance['pinterest'];
+	        $tumblr = $instance['tumblr'];
+	        $instagram = $instance['instagram'];
+	        $youtube = $instance['youtube'];
 
-        echo '<div class="custom-social-icons">';
-        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($instance['title']); ?></h3><?php } ?>
-        <?php if(!empty($facebook) ){ ?><a class="custom_facebook fff" href="<?php echo esc_url($instance['facebook']); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($twitter) ){ ?><a class="custom_twitter" href="<?php echo esc_url($instance['twitter']); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($google) ){ ?><a class="custom_google" href="<?php echo esc_url($instance['google']); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($linkedin) ){ ?><a class="custom_linkedin" href="<?php echo esc_url($instance['linkedin']); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($pinterest) ){ ?><a class="custom_pinterest" href="<?php echo esc_url($instance['pinterest']); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($tumblr) ){ ?><a class="custom_tumblr" href="<?php echo esc_url($instance['tumblr']); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($instagram) ){ ?><a class="custom_instagram" href="<?php echo esc_url($instance['instagram']); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','automotive-centre' );?></span></a><?php } ?>
-        <?php if(!empty($youtube) ){ ?><a class="custom_youtube" href="<?php echo esc_url($instance['youtube']); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','automotive-centre' );?></span></a><?php } ?>
-        <?php echo '</div>';
-		?>
+	        echo '<div class="custom-social-icons">';
+	        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($instance['title']); ?></h3><?php } ?>
+	        <?php if(!empty($facebook) ){ ?><a class="custom_facebook fff" href="<?php echo esc_url($instance['facebook']); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($twitter) ){ ?><a class="custom_twitter" href="<?php echo esc_url($instance['twitter']); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($google) ){ ?><a class="custom_google" href="<?php echo esc_url($instance['google']); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_html_e( 'Google','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($linkedin) ){ ?><a class="custom_linkedin" href="<?php echo esc_url($instance['linkedin']); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($pinterest) ){ ?><a class="custom_pinterest" href="<?php echo esc_url($instance['pinterest']); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($tumblr) ){ ?><a class="custom_tumblr" href="<?php echo esc_url($instance['tumblr']); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($instagram) ){ ?><a class="custom_instagram" href="<?php echo esc_url($instance['instagram']); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','automotive-centre' );?></span></a><?php } ?>
+	        <?php if(!empty($youtube) ){ ?><a class="custom_youtube" href="<?php echo esc_url($instance['youtube']); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','automotive-centre' );?></span></a><?php } ?>
+	        <?php echo '</div>';
+			?>
 		</div>
 		<?php
 	}

@@ -18,7 +18,7 @@
 		            }
 	          	?>
 	        </div>
-	        <h2 class="section-title"><?php the_title();?></h2>
+	        <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
 	        <div class="new-text">
 	        	<div class="entry-content">
 	        		<p>

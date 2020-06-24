@@ -317,12 +317,6 @@ function automotive_centre_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-/* admin bar */
-function automotive_centre_my_filter_head(){
-	remove_action('wp_head','_admin_bar_bump_cb');
-}
-add_action('get_header','automotive_centre_my_filter_head');
-
 //define
 define('AUTOMOTIVE_FREE_THEME_DOC',__('https://www.vwthemesdemo.com/docs/free-automotive/','automotive-centre'));
 define('AUTOMOTIVE_SUPPORT',__('https://wordpress.org/support/theme/automotive-centre/','automotive-centre'));

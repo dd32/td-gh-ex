@@ -23,7 +23,7 @@
           </div>
         <?php } ?>
         <div class="new-text <?php if(has_post_thumbnail()) { ?>col-lg-6 col-md-6"<?php } else { ?>col-lg-12 col-md-12"<?php } ?>>
-          <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+          <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
           <?php if( get_theme_mod( 'automotive_centre_toggle_postdate',true) != '' || get_theme_mod( 'automotive_centre_toggle_author',true) != '' || get_theme_mod( 'automotive_centre_toggle_comments',true) != '') { ?>
             <div class="post-info">
               <?php if(get_theme_mod('automotive_centre_toggle_postdate',true)==1){ ?>
@@ -62,7 +62,7 @@
       </div>
     <?php }else if($automotive_centre_theme_lay == 'Center'){ ?>
       <div class="service-text">
-        <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+        <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
         <div class="box-image">
           <?php the_post_thumbnail(); ?>
         </div>
@@ -106,7 +106,7 @@
         <div class="box-image">
           <?php the_post_thumbnail(); ?>
         </div>
-        <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+        <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
         <?php if( get_theme_mod( 'automotive_centre_toggle_postdate',true) != '' || get_theme_mod( 'automotive_centre_toggle_author',true) != '' || get_theme_mod( 'automotive_centre_toggle_comments',true) != '') { ?>
           <div class="post-info">
             <?php if(get_theme_mod('automotive_centre_toggle_postdate',true)==1){ ?>

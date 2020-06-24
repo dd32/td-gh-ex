@@ -800,6 +800,14 @@ msgstr ""
 msgid 'Slider Image Opacity'
 msgstr ""
 
+#: inc/customizer.php:412
+msgid 'Slider Height'
+msgstr ""
+
+#: inc/customizer.php:413
+msgid 'Specify the slider height (px).'
+msgstr ""
+
 #: inc/customizer.php:333
 msgid 'About us Settings'
 msgstr ""
@@ -978,6 +986,26 @@ msgstr ""
 
 #: inc/customizer.php:948
 msgid 'Add Scroll to Top Icon'
+msgstr ""
+
+#: inc/customizer.php:973
+msgid 'Icon Font Size'
+msgstr ""
+
+#: inc/customizer.php:987
+msgid 'Icon Top Bottom Padding'
+msgstr ""
+
+#: inc/customizer.php:1001
+msgid 'Icon Width'
+msgstr ""
+
+#: inc/customizer.php:1015
+msgid 'Icon Height'
+msgstr ""
+
+#: inc/customizer.php:1032
+msgid 'Icon Border Radius'
 msgstr ""
 
 #: inc/customizer.php:508
