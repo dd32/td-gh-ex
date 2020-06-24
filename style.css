@@ -1,630 +1,597 @@
-/*-------------------------------------------------------   
-
-    Theme Name: Baena
-    Text Domain: baena
-    Version: 1.0.2
-    Description: Baena is a feature-packed WordPress creative theme that gives you full control over the fonts and colors on your site. Built from scratch with the new Block Editor in mind, it makes it easy to create attractive layouts on both posts and pages. This flexibility makes Baena suitable for almost any type of website. The fonts and colors in the theme can be easily modified within the Customizer, allowing you to create a unique look for your website.
-    Tags: blog, portfolio, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template
-    Author: Berni Bernal
-    Author URI: https://www.bernibernal.com/
-    Theme URI: https://www.bernibernal.com/conoceme/    
-    License: GNU General Public License version 2.0
-    License URI: http://www.gnu.org/licenses/gpl-2.0.html
-    
-    All files, unless otherwise stated, are released under the GNU General Public License
-    version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-    
-------------------------------------------------------- 
-
-    0.  CSS Reset
-    1.  Document Setup
-    2.  Element Base
-    3.  Helper Classes
-    4.  Site Header
-    5.  Menu Modal
-    6.  Search Modal
-    7.  Page Templates
-        a.  Template: Cover Template
-        b.  Template: Only Content
-        c.  Template: Full Width
-        d.  Template: Full Width with Only Content
-    8. Post: Archive
-    9. Post: Single
-    10. Blocks
-    11. Entry Content
-    12. Comments
-    13. Site Pagination
-    14. Error 404
-    15. WooCommerce
-    16. Widgets
-    17. Site Footer
-    18. Media Queries
-
------------------------------------------------------------------------------------ */
-
-
-/* -------------------------------------------------------------------------------- */
-/*  0. CSS Reset
-/* -------------------------------------------------------------------------------- */
-
-
-.rtl {}
-.home {}
-.blog {}
-.archive {}
-.date {}
-.search {}
-.paged {}
-.attachment {}
-.error404 {}
-.single postid-(id) {}
-.attachmentid-(id) {}
-.attachment-(mime-type) {}
-.author {}
-.author-(user_nicename) {}
-.category {}
-.category-(slug) {}
-.tag {}
-.tag-(slug) {}
-.page-parent {}
-.page-child parent-pageid-(id) {}
-.page-template page-template-(template file name) {}
-.search-results {}
-.search-no-results {}
-.logged-in {}
-.paged-(page number) {}
-.single-paged-(page number) {}
-.page-paged-(page number) {}
-.category-paged-(page number) {}
-.tag-paged-(page number) {}
-.date-paged-(page number) {}
-.author-paged-(page number) {}
-.search-paged-(page number) {}
-
-.post-id {}
-.post {}
-.page {}
-.attachment {}
-.sticky {}
-.hentry {}
-.category-misc {}
-.category-example {}
-.tag-news {}
-.tag-wordpress {}
-.tag-markup {}
-.format-image {}
-.format-gallery {}
-.format-chat {}
-.format-link {}
-.format-quote {}
-.format-status {}
-.format-video {}
-
-.post-id {}
-.post {}
-.page {}
-.attachment {}
-.sticky {}
-.hentry {}
-.category-misc {}
-.category-example {}
-.tag-news {}
-.tag-wordpress {}
-.tag-markup {}
-.format-image {}
-.format-gallery {}
-.format-chat {}
-.format-link {}
-.format-quote {}
-.format-status {}
-.format-video {}
-
-#header .main-menu{} // container class
-#header .main-menu ul {} // container class first unordered list
-#header .main-menu ul ul {} //unordered list within an unordered list
-#header .main-menu li {} // each navigation item
-#header .main-menu li a {} // each navigation item anchor
-#header .main-menu li ul {} // unordered list if there is drop down items
-#header .main-menu li li {} // each drop down navigation item
-#header .main-menu li li a {} // each drap down navigation item anchor
-.current_page_item{} // Class for Current Page
-.current-cat{} // Class for Current Category
-.current-menu-item{} // Class for any other current Menu Item
-.menu-item-type-taxonomy{} // Class for a Category
-.menu-item-type-post_type{} // Class for Pages
-.menu-item-type-custom{} // Class for any custom item that you added
-.menu-item-home{} // Class for the Home Link
-
-.entry-content img {}
-.alignleft, img.alignleft {}
-.alignright, img.alignright {}
-.aligncenter, img.aligncenter {}
-.alignnone, img.alignnone {}
-.wp-caption {}
-.wp-caption img {}
-.wp-caption p.wp-caption-text {}
-.wp-smiley {}
-blockquote.left {}
-blockquote.right {}
-.gallery dl {}
-.gallery dt {}
-.gallery dd {}
-.gallery dl a {}
-.gallery dl img {}
-.gallery-caption {}
-.size-full {}
-.size-large {}
-.size-medium {}
-.size-thumbnail {}
-
-.widget {}
-#searchform {}
-.widget_search {}
-.screen-reader-text {}
-.widget_meta {}
-.widget_meta ul {}
-.widget_meta ul li {}
-.widget_meta ul li a {}
-.widget_links {}
-.widget_links ul {}
-.widget_links ul li {}
-.widget_links ul li a {}
-.widget_archive {}
-.widget_archive ul {}
-.widget_archive ul li {} 
-.widget_archive ul li a {}
-.widget_archive select {}
-.widget_archive option {}
-.widget_pages {}
-.widget_pages ul {}
-.widget_pages ul li {}
-.widget_pages ul li a {}
-.widget_links {}
-.widget_links li:after {}
-.widget_links li:before {}
-.widget_tag_cloud {}
-.widget_tag_cloud a {}
-.widget_tag_cloud a:after {}
-.widget_tag_cloud a:before {}
-.widget_calendar {}
-#calendar_wrap {}
-#calendar_wrap th {}
-#calendar_wrap td {}
-#wp-calendar tr td {}
-#wp-calendar caption {}
-#wp-calendar a {}
-#wp-calendar #today {}
-#wp-calendar #prev {}
-#wp-calendar #next {}
-#wp-calendar #next a {}
-#wp-calendar #prev a {}
-.widget_categories {}
-.widget_categories ul {}
-.widget_categories ul li {} 
-.widget_categories ul ul.children {}
-.widget_categories a {}
-.widget_categories select{}
-.widget_categories select#cat {}
-.widget_categories select.postform {}
-.widget_categories option {}
-.widget_categories .level-0 {}
-.widget_categories .level-1 {}
-.widget_categories .level-2 {}
-.widget_categories .level-3 {}
-.recentcomments {}
-#recentcomments {}
-#recentcomments li {}
-#recentcomments li a {}
-.widget_recent_comments {}
-.widget_recent_entries {}
-.widget_recent_entries ul {}
-.widget_recent_entries ul li {}
-.widget_recent_entries ul li a {}
-.textwidget {}
-.widget_text {}
-.textwidget p {}
-.widget_pages ul, .widget_archive ul {}
-
-.commentlist .reply {}
-.commentlist .reply a {}
-.commentlist .alt {}
-.commentlist .odd {}
-.commentlist .even {}
-.commentlist .thread-alt {}
-.commentlist .thread-odd {}
-.commentlist .thread-even {}
-.commentlist li ul.children .alt {}
-.commentlist li ul.children .odd {}
-.commentlist li ul.children .even {}
-.commentlist .vcard {}
-.commentlist .vcard cite.fn {}
-.commentlist .vcard span.says {}
-.commentlist .vcard img.photo {}
-.commentlist .vcard img.avatar {}
-.commentlist .vcard cite.fn a.url {}
-.commentlist .comment-meta {} 
-.commentlist .comment-meta a {}
-.commentlist .commentmetadata {}
-.commentlist .commentmetadata a {}
-.commentlist .parent {}
-.commentlist .comment {}
-.commentlist .children {}
-.commentlist .pingback {}
-.commentlist .bypostauthor {}
-.commentlist .comment-author {}
-.commentlist .comment-author-admin {}
-.commentlist {}
-.commentlist li {}
-.commentlist li p {}
-.commentlist li ul {}
-.commentlist li ul.children li {}
-.commentlist li ul.children li.alt {}
-.commentlist li ul.children li.byuser {}
-.commentlist li ul.children li.comment {}
-.commentlist li ul.children li.depth-{id} {}
-.commentlist li ul.children li.bypostauthor {}
-.commentlist li ul.children li.comment-author-admin {}
-#cancel-comment-reply {}
-#cancel-comment-reply a {}
-
-#respond { } 
-#reply-title { } 
-#cancel-comment-reply-link { }
-#commentform { } 
-#author { } 
-#email { } 
-#url { } 
-#comment 
-#submit
-.comment-notes { } 
-.required { }
-.comment-form-author { }
-.comment-form-email { } 
-.comment-form-url { }
-.comment-form-comment { } 
-.form-allowed-tags { } 
-.form-submit
-
-.size-auto, 
-.size-full,
-.size-large,
-.size-medium,
-.size-thumbnail {
-    max-width: 100%;
-    height: auto;
-}
-
-.right-sidebar{}
-
-
-/* --------------------------------------------------------------------------------------------- */
-/*  1. Document Setup
-/* --------------------------------------------------------------------------------------------- */
-*{
-    margin:0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing:border-box;
-}
-img, embed, object, video{max-width: 100%; display: block;height: auto;}
-
-
-.grid{
-	max-width: 980px;
-	margin:0 auto;
-}
-.main{padding-top:0px;overflow:hidden;}
-
-.esection {padding: 20px;}
-.father-col{margin: 0 -10px;}
-.father-col > * > * { padding:0px 10px;}
-
-.col-70{
-	float: left;
-	width: 70%;
-}
-.col-30{
-	float: left;
-	width: 30%;
-}
-.col-50{
-    float: left;
-    width: 50%;
-}
-
-.col-33 div h1{min-height: 90px;}
-
-.col-33,
-footer .widget{
-	float: left;
-	width: 33.3%;
-}
-
-body{
-    font-family: 'Quicksand', sans-serif;
-}
-
-header{background-color: #ccc}
-footer{background-color: #cddc39}
-
-a{color:black;}
-a:hover{text-decoration: underline;}
-
-/* Copy Cookies ------------------------ */
-div#copyright {text-align: center;}
-
-/* Skip Link --------------------------------- */
-
-.skip-link {
-    position: absolute;
-    left: -9999rem;
-    top: 2.5rem;
-}
-
-.skip-link:focus {
-    display: block;
-    left: 6px;
-    top: 7px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    z-index: 100000;
-    right: auto;
-}
-
-/* --------------------------------------------------------------------------------------------- */
-/*  2. Element Base
-/* --------------------------------------------------------------------------------------------- */
-
-/*Slides JS-----------------------------------*/
-#slides{position:relative;}
-.thumb{background-color: rgba(205, 220, 57, 0.5);}
-.slidesjs-pagination{font-size: 0}
-
-.slidesjs-navigation {
-    position: absolute;
-    top: 50%;
-    z-index: 100;
-    margin-top: -66px;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-}
-.slidesjs-previous {
-    left: 20px;
-    font-size: 0;
-}
-.slidesjs-next {
-    right: -20px;
-    font-size: 0;
-}
-
-/*Arrow CSS*/
-.slidesjs-next:before{
-    content: "";
-    display: block;
-    width: 0px;
-    height: 0px;
-    
-    border-right: 25px solid transparent;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 25px solid #cddc39;
-}
-.slidesjs-previous{
-  color: #cddc39;
-  width: 30px;
-  height: 5px;
-  background-color: currentColor;
-}
-.slidesjs-previous:before  {
-  content: '';
-  position: absolute;
-  left: 1px;
-  top: -5px;
-  width: 10px;
-  height: 10px;
-  border-top: solid 5px currentColor;
-  border-right: solid 5px currentColor;
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
-/*End Slides JS*/
-
-/*Menu Button---------------------------------*/
-.mena-bar{
-    width: 35px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 50px;
-    right: 20px;
-    background-color: white;
-    border: 2px solid #cddc39;
-    border-radius: 100%;
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    padding: 14px 10px;
-    z-index: 999999;
-}
-.one, .two, .three {
-    width: 100%;
-    height: 5px;
-    background-color: #cddc39;
-    margin-top:2px;
-    transition: all 0.5s;
-}
-.mena{
-    display: none;
-}
-
-.showm .two{opacity:0;}
-.showm .one{transform: rotate(45deg) translate(5px, 5px);}
-.showm .three{transform: rotate(-45deg) translate(6px, -6px);}
-.showm .mena{
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1111111;
-    top: 0;
-    left: 0;
-    background-color: rgba(205, 220, 57, 0.88);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.mena .menu{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.mena ul li a {
-    text-align: center;
-    display: block;
-    padding: 8px;
-    font-size: 18px; 
-}
-
-.topbar .mena li {display: block;}
-.topbar .mena li a{color:white;}
-/*End Menu Button*/
-
-/*Menu Principal---------------------------------*/
-.main-menu li, .dropdown-menu li{display: inline-block;}
-.main-menu li a, .dropdown-menu li a{display: block; color:black;}
-
-
-.dropdown-menu{display: none;}
-.dropdown-menu .menu{
-    height: 100%;
-    width: auto;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    background-color: #cddc39;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-
-}
-.dropdown-menu li{display: inline;}
-.dropdown-menu li a {
-    display: block;
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    transition: 0.3s;
-}
-
-/*End Menu Principal*/
-
-/*Arrow from TOP---------------------------------*/
-.goup{
-    position: fixed;
-    bottom: 42px;
-    right: 127px;
-}
-.arrow-up.icon {
-    color: #000;
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 3px;
-    width: 1px;
-    height: 16px;
-    background-color: currentColor;
-}
-.arrow-up.icon:before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 1px;
-    width: 10px;
-    height: 10px;
-    border-top: solid 1px currentColor;
-    border-right: solid 1px currentColor;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-/*End Arrow from TOP*/
-
-/*Accessibility*/
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus,
-button:focus, nav:focus {
-  outline: -webkit-focus-ring-color auto 1px;
-}
-
-/* --------------------------------------------------------------------------------------------- */
-/*  13. Pagination
-/* --------------------------------------------------------------------------------------------- */
-.pager{margin-top:20px;}
-
-
-/* --------------------------------------------------------------------------------------------- */
-/*  18. Media Queries
-/* --------------------------------------------------------------------------------------------- */
-
-@media screen and (max-width:992px) {
-/* Whidth--------------------------- */
-    .col-30,.col-70 {width: 100%;}
-    .mena-bar{right: 60px;}
-}
-
-@media screen and (max-width:768px) {
-/* Width--------------------------- */
-.col-33, footer .widget{width: 100%;}
-
-/* Menu --------------------------- */
-    .dropdown-menu{display: block;}
-    .main-menu{display: none;}
-
-    label {cursor: pointer;}
-    .open-hide{
-        width: 40px;
-        height: 40px;
-        display: block;
-        background-image: url('assets/img/open.svg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        position: absolute; 
-    }
-    .show{
-      background-image: url('assets/img/close.svg');
-      background-size: 15px;
-      background-color: #fff;
-      position: absolute;
-      top: 64px;
-      left: 310px;
-      z-index: 9999999;
-    }
-
-    #menu-toggle {display: none;}
-    .submenu-content {display: none;}
-    #menu-toggle:checked + .submenu-content {display: block;}
-    .menu-menu-superior-container {background: #cc9933;}
-
-    nav .menu-item {position: relative;}
-    .menu-menu-superior-container li a {
-        text-decoration: none;
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 700;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 10px;
-        display: block;
-        font-size: 20px;
-    }
-    ul#menu-menu-superior-1 {
-        width: 170px;
-        margin: 65px auto;
-    }
-
+/*-------------------------------------------------------   
+
+    Theme Name: Baena
+    Text Domain: baena
+    Version: 1.0.3
+    Description: Baena is a feature-packed WordPress creative theme that gives you full control over the fonts and colors on your site. Built from scratch with the new Block Editor in mind, it makes it easy to create attractive layouts on both posts and pages. This flexibility makes Baena suitable for almost any type of website. The fonts and colors in the theme can be easily modified within the Customizer, allowing you to create a unique look for your website.
+    Tags: blog, portfolio, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template
+    Author: Berni Bernal
+    Author URI: https://www.bernibernal.com/
+    Theme URI: https://wordpress.org/themes/baena/  
+    License: GNU General Public License version 2.0
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Requires PHP: 5.4
+    Tested up to: 5.4.1
+    
+    This theme is licensed under the GPL.
+    All files, unless otherwise stated, are released under the GNU General Public License
+    version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+    
+------------------------------------------------------- 
+
+    0.  CSS Reset
+    1.  Document Setup
+    2.  Element Base
+    3.  Helper Classes
+    4.  Site Header
+    5.  Menu Modal
+    6.  Search Modal
+    7.  Page Templates
+        a.  Template: Cover Template
+        b.  Template: Only Content
+        c.  Template: Full Width
+        d.  Template: Full Width with Only Content
+    8. Post: Archive
+    9. Post: Single
+    10. Blocks
+    11. Entry Content
+    12. Comments
+    13. Site Pagination
+    14. Error 404
+    15. WooCommerce
+    16. Widgets
+    17. Site Footer
+    18. Media Queries
+
+----------------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------------- */
+/*  0. CSS Reset
+/* -------------------------------------------------------------------------------- */
+
+
+.rtl {}
+.home {}
+.blog {}
+.archive {}
+.date {}
+.search {}
+.paged {}
+.attachment {}
+.error404 {}
+.single postid-(id) {}
+.attachmentid-(id) {}
+.attachment-(mime-type) {}
+.author {}
+.author-(user_nicename) {}
+.category {}
+.category-(slug) {}
+.tag {}
+.tag-(slug) {}
+.page-parent {}
+.page-child parent-pageid-(id) {}
+.page-template page-template-(template file name) {}
+.search-results {}
+.search-no-results {}
+.logged-in {}
+.paged-(page number) {}
+.single-paged-(page number) {}
+.page-paged-(page number) {}
+.category-paged-(page number) {}
+.tag-paged-(page number) {}
+.date-paged-(page number) {}
+.author-paged-(page number) {}
+.search-paged-(page number) {}
+
+.post-id {}
+.post {}
+.page {}
+.attachment {}
+.sticky {}
+.hentry {}
+.category-misc {}
+.category-example {}
+.tag-news {}
+.tag-wordpress {}
+.tag-markup {}
+.format-image {}
+.format-gallery {}
+.format-chat {}
+.format-link {}
+.format-quote {}
+.format-status {}
+.format-video {}
+
+.post-id {}
+.post {}
+.page {}
+.attachment {}
+.sticky {}
+.hentry {}
+.category-misc {}
+.category-example {}
+.tag-news {}
+.tag-wordpress {}
+.tag-markup {}
+.format-image {}
+.format-gallery {}
+.format-chat {}
+.format-link {}
+.format-quote {}
+.format-status {}
+.format-video {}
+
+#header .main-menu{} // container class
+#header .main-menu ul {} // container class first unordered list
+#header .main-menu ul ul {} //unordered list within an unordered list
+#header .main-menu li {} // each navigation item
+#header .main-menu li a {} // each navigation item anchor
+#header .main-menu li ul {} // unordered list if there is drop down items
+#header .main-menu li li {} // each drop down navigation item
+#header .main-menu li li a {} // each drap down navigation item anchor
+.current_page_item{} // Class for Current Page
+.current-cat{} // Class for Current Category
+.current-menu-item{} // Class for any other current Menu Item
+.menu-item-type-taxonomy{} // Class for a Category
+.menu-item-type-post_type{} // Class for Pages
+.menu-item-type-custom{} // Class for any custom item that you added
+.menu-item-home{} // Class for the Home Link
+
+.entry-content img {}
+.alignleft, img.alignleft {}
+.alignright, img.alignright {}
+.aligncenter, img.aligncenter {}
+.alignnone, img.alignnone {}
+.wp-caption {}
+.wp-caption img {}
+.wp-caption p.wp-caption-text {}
+.wp-smiley {}
+blockquote.left {}
+blockquote.right {}
+.gallery dl {}
+.gallery dt {}
+.gallery dd {}
+.gallery dl a {}
+.gallery dl img {}
+.gallery-caption {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+.widget {}
+#searchform {}
+.widget_search {}
+.screen-reader-text {}
+.widget_meta {}
+.widget_meta ul {}
+.widget_meta ul li {}
+.widget_meta ul li a {}
+.widget_links {}
+.widget_links ul {}
+.widget_links ul li {}
+.widget_links ul li a {}
+.widget_archive {}
+.widget_archive ul {}
+.widget_archive ul li {} 
+.widget_archive ul li a {}
+.widget_archive select {}
+.widget_archive option {}
+.widget_pages {}
+.widget_pages ul {}
+.widget_pages ul li {}
+.widget_pages ul li a {}
+.widget_links {}
+.widget_links li:after {}
+.widget_links li:before {}
+.widget_tag_cloud {}
+.widget_tag_cloud a {}
+.widget_tag_cloud a:after {}
+.widget_tag_cloud a:before {}
+.widget_calendar {}
+#calendar_wrap {}
+#calendar_wrap th {}
+#calendar_wrap td {}
+#wp-calendar tr td {}
+#wp-calendar caption {}
+#wp-calendar a {}
+#wp-calendar #today {}
+#wp-calendar #prev {}
+#wp-calendar #next {}
+#wp-calendar #next a {}
+#wp-calendar #prev a {}
+.widget_categories {}
+.widget_categories ul {}
+.widget_categories ul li {} 
+.widget_categories ul ul.children {}
+.widget_categories a {}
+.widget_categories select{}
+.widget_categories select#cat {}
+.widget_categories select.postform {}
+.widget_categories option {}
+.widget_categories .level-0 {}
+.widget_categories .level-1 {}
+.widget_categories .level-2 {}
+.widget_categories .level-3 {}
+.recentcomments {}
+#recentcomments {}
+#recentcomments li {}
+#recentcomments li a {}
+.widget_recent_comments {}
+.widget_recent_entries {}
+.widget_recent_entries ul {}
+.widget_recent_entries ul li {}
+.widget_recent_entries ul li a {}
+.textwidget {}
+.widget_text {}
+.textwidget p {}
+.widget_pages ul, .widget_archive ul {}
+
+.commentlist .reply {}
+.commentlist .reply a {}
+.commentlist .alt {}
+.commentlist .odd {}
+.commentlist .even {}
+.commentlist .thread-alt {}
+.commentlist .thread-odd {}
+.commentlist .thread-even {}
+.commentlist li ul.children .alt {}
+.commentlist li ul.children .odd {}
+.commentlist li ul.children .even {}
+.commentlist .vcard {}
+.commentlist .vcard cite.fn {}
+.commentlist .vcard span.says {}
+.commentlist .vcard img.photo {}
+.commentlist .vcard img.avatar {}
+.commentlist .vcard cite.fn a.url {}
+.commentlist .comment-meta {} 
+.commentlist .comment-meta a {}
+.commentlist .commentmetadata {}
+.commentlist .commentmetadata a {}
+.commentlist .parent {}
+.commentlist .comment {}
+.commentlist .children {}
+.commentlist .pingback {}
+.commentlist .bypostauthor {}
+.commentlist .comment-author {}
+.commentlist .comment-author-admin {}
+.commentlist {}
+.commentlist li {}
+.commentlist li p {}
+.commentlist li ul {}
+.commentlist li ul.children li {}
+.commentlist li ul.children li.alt {}
+.commentlist li ul.children li.byuser {}
+.commentlist li ul.children li.comment {}
+.commentlist li ul.children li.depth-{id} {}
+.commentlist li ul.children li.bypostauthor {}
+.commentlist li ul.children li.comment-author-admin {}
+#cancel-comment-reply {}
+#cancel-comment-reply a {}
+
+#respond { } 
+#reply-title { } 
+#cancel-comment-reply-link { }
+#commentform { } 
+#author { } 
+#email { } 
+#url { } 
+#comment 
+#submit
+.comment-notes { } 
+.required { }
+.comment-form-author { }
+.comment-form-email { } 
+.comment-form-url { }
+.comment-form-comment { } 
+.form-allowed-tags { } 
+.form-submit
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+.right-sidebar{}
+
+
+/* --------------------------------------------------------------------------------------------- */
+/*  1. Document Setup
+/* --------------------------------------------------------------------------------------------- */
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing:border-box;
+}
+img, embed, object, video{max-width: 100%; display: block;height: auto;}
+
+
+.grid{
+	max-width: 980px;
+	margin:0 auto;
+}
+.main{padding-top:0px;overflow:hidden;}
+
+.esection {padding: 20px;}
+.father-col{margin: 0 -10px;}
+.father-col > * > * { padding:0px 10px;}
+
+.col-70{
+	float: left;
+	width: 70%;
+}
+.col-30{
+	float: left;
+	width: 30%;
+}
+.col-50{
+    float: left;
+    width: 50%;
+}
+
+.col-33 div h1{min-height: 90px;}
+
+.col-33,
+footer .widget{
+	float: left;
+	width: 33.3%;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+header{background-color: #ccc}
+footer{background-color: #cddc39}
+
+a{color:black;}
+a:hover{text-decoration: underline;}
+
+/* Copy Cookies ------------------------ */
+div#copyright {text-align: center;}
+
+/* Skip Link --------------------------------- */
+
+.skip-link {
+    position: absolute;
+    left: -9999rem;
+    top: 2.5rem;
+    z-index: 999999999;
+}
+
+.skip-link:focus {
+    left: 2.5rem;
+    text-decoration: none;
+
+    background: #007C89;
+    border: none;
+    border-radius: .3rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .8888em;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    padding: 1.175em 1.75em;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity .15s linear;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/*  2. Element Base
+/* --------------------------------------------------------------------------------------------- */
+
+/*Slides JS-----------------------------------*/
+#slides{position:relative;}
+.thumb{background-color: rgba(205, 220, 57, 0.5);}
+.slidesjs-pagination{font-size: 0}
+
+.slidesjs-navigation {
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    margin-top: -66px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+.slidesjs-previous {
+    left: 20px;
+    font-size: 0;
+}
+.slidesjs-next {
+    right: -20px;
+    font-size: 0;
+}
+
+/*Arrow CSS*/
+.slidesjs-next:before{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    
+    border-right: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid #cddc39;
+}
+.slidesjs-previous{
+  color: #cddc39;
+  width: 30px;
+  height: 5px;
+  background-color: currentColor;
+}
+.slidesjs-previous:before  {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-top: solid 5px currentColor;
+  border-right: solid 5px currentColor;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+/*End Slides JS*/
+
+/*Menu Principal---------------------------------*/
+.main-menu li, .dropdown-menu li{display: inline-block;}
+.main-menu li a, .dropdown-menu li a{display: block; color:black;}
+
+
+.dropdown-menu{display: none;}
+.dropdown-menu .menu{
+    height: 100%;
+    width: auto;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #cddc39;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+.dropdown-menu li{display: inline;}
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: 0.3s;
+}
+/*End Menu Principal*/
+
+/*NEW MENU*/
+/* The sidebar menu */
+.new-menu .sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 666; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #cddc39; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  padding: 60px 0px;
+}
+
+/* The sidebar links */
+.new-menu .sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.new-menu .sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.new-menu .sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.new-menu .openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #cddc39;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.new-menu .openbtn:hover {
+  background-color: white;
+  color:#cddc39;
+}
+
+.new-menu{display: none;}
+
+/*END NEW MENU*/
+
+
+/*Arrow from TOP---------------------------------*/
+.goup{
+    position: fixed;
+    bottom: 42px;
+    right: 127px;
+}
+.arrow-up.icon {
+    color: #000;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 3px;
+    width: 1px;
+    height: 16px;
+    background-color: currentColor;
+}
+.arrow-up.icon:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 1px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+/*End Arrow from TOP*/
+
+/*Accessibility*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+button:focus, nav:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/*  13. Pagination
+/* --------------------------------------------------------------------------------------------- */
+.pager{margin-top:20px;}
+
+
+/* --------------------------------------------------------------------------------------------- */
+/*  18. Media Queries
+/* --------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width:992px) {
+/* Whidth--------------------------- */
+    .col-30,.col-70 {width: 100%;}
+    .mena-bar{right: 60px;}
+}
+
+@media screen and (max-width:768px) {
+/* Width--------------------------- */
+.col-33, footer .widget{width: 100%;}
+
+/* Menu --------------------------- */
+    .new-menu{display: block;}
+    .main-menu{display: none;}
+
+
 }
