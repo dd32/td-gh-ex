@@ -31,9 +31,6 @@ get_header(); ?>
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
-						<?php if($hide_title_text != 1) { ?>
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-                        <?php } ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">

@@ -12,7 +12,7 @@ $top_phone = '';
 $top_email = '';
 
 $top_phone = esc_attr(get_theme_mod('top_phone', of_get_option('top_bar_phone', '1-000-123-4567')));
-$top_email = esc_attr(get_theme_mod('top_email', of_get_option('top_bar_email', 'email@i-create.com')));
+$top_email = esc_attr(get_theme_mod('top_email', of_get_option('top_bar_email', 'email@yourdomain.com')));
 $itrans_logo = get_theme_mod( 'logo', of_get_option('itrans_logo_image', get_template_directory_uri() . '/images/logo.png') );
 $itrans_slogan = esc_attr(get_theme_mod('banner_text', of_get_option('itrans_slogan')));
 
@@ -21,10 +21,13 @@ $other_front_slider = esc_attr(get_theme_mod('other_front_slider', ''));
 
 global $post; 
 
+$hide_title_text = '';
 $no_page_header = 0;
 if ( function_exists( 'rwmb_meta' ) ) { 
 	$no_page_header = rwmb_meta('itrans_no_page_header');
+	$hide_title_text = rwmb_meta('itrans_hide_title_text');	
 }
+
  
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -47,6 +50,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<div id="page" class="hfeed site">
     	
         <?php if ( $top_phone || $top_email || itransform_social_icons() ) : ?>
@@ -160,7 +164,28 @@ if ( function_exists( 'rwmb_meta' ) ) {
         ?>	
 			<div class="iheader">
 				<div class="titlebar">
-					<?php 
+             
+					<?php
+						if ( is_home() && ! is_paged() && $itrans_slogan )
+							echo $itrans_slogan;
+                        elseif( is_archive() ) {
+                            echo '<h1 class="entry-title">';
+                                    the_archive_title();                						
+                            echo '</h1>';
+                        } elseif ( is_search() ) {
+                            echo '<h1 class="entry-title">';
+                                esc_attr(printf( __( 'Search Results for: %s', 'i-transform' ), get_search_query() ));					
+                            echo '</h1>';
+                        } else {
+							if($hide_title_text != 1) {
+								echo '<h1 class="entry-title">';
+								the_title();
+								echo '</h1>';
+							}
+                        }
+    
+                    ?>                    
+					<?php
 						if( function_exists('bcn_display')  && !$hide_bread )
 						{
 					?>
@@ -170,19 +195,8 @@ if ( function_exists( 'rwmb_meta' ) ) {
 					?>
 						</div>
 					<?php		
-						} else {
-					?>               
-					<h1>
-						<?php if ( $itrans_slogan ) : ?>
-							<?php echo $itrans_slogan; ?>
-						<?php //else : ?> 
-							<?php //printf( __( 'Welcome To ', 'i-transform' ) ); ?><?php //bloginfo( 'name' ); ?>   
-						<?php endif; ?>
-					</h1>
-					<?php
-						}
+						}                    
 					?>
-
 				</div>
 			</div>
         	

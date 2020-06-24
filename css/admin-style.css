@@ -1,0 +1,57 @@
+.promo-2 {
+	position: relative;
+}
+.promo-2 .promo-wrap {
+	display: block;
+	width: 96%;
+	position: relative;
+	border: 1px solid #f7f7f7;
+	background-color: #FFFFFF;
+	padding: 16px 0px;
+}
+.promo-2 .promo-wrap a {
+	display: block;
+	padding: 12px;
+	background-color: #990;
+	color: #FFF;
+	margin-bottom: 6px;
+	text-align: center;
+	text-decoration: none;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0s;	
+}
+
+
+.promo-2 .promo-wrap a:nth-child(1) {
+	background-color: #5d5a5a;
+}
+
+.promo-2 .promo-wrap a:nth-child(2) {
+	background-color: #706d97;
+}
+
+
+.promo-2 .promo-wrap a:nth-child(3) {
+	background-color: #bd8fdb;
+}
+
+.promo-2 .promo-wrap a:nth-child(4) {
+	background-color: #dade63;
+}
+
+.promo-2 .promo-wrap a:hover {
+	background-color: #474747;
+	color: #FFFFFF;
+}
+
+.promo-2 .promo-wrap .donate {
+	text-align: center;
+	padding-top: 16px;
+}
+
+.promo-2 .promo-wrap .donate td {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}

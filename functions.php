@@ -65,6 +65,9 @@ function itransform_setup() {
 	 */
 	load_theme_textdomain( 'i-transform', get_template_directory() . '/languages' );	
 	
+	add_theme_support( 'editor-styles');
+	//add_theme_support( 'dark-editor-style' ); 
+	add_theme_support( 'wp-block-styles' );	
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
@@ -685,6 +688,10 @@ function itransform_remove_wc_breadcrumbs() {
 }
 
 add_theme_support( 'woocommerce' );
+	
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
 
 
 require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
@@ -760,6 +767,19 @@ function itransform_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+
+/**
+ * Enqueue the customizer stylesheet.
+ */
+function itransform_enqueue_customizer_stylesheet() {
+
+	wp_register_style( 'itransform-customizer-css', get_template_directory_uri() . '/css/admin-style.css', NULL, NULL, 'all' );
+	wp_enqueue_style( 'itransform-customizer-css' );
+
+}
+add_action( 'customize_controls_print_styles', 'itransform_enqueue_customizer_stylesheet' );
+
 
 // i-transform admin notice
 add_action('admin_notices', 'itransform_admin_notice_005');

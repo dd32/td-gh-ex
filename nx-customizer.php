@@ -199,7 +199,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'top_phone',
+        'settings'  => 'top_phone',
         'label'    => __( 'Phone Number', 'i-transform' ),
         'section'  => 'basic',
         'default'  => of_get_option('top_bar_phone', '1-000-123-4567'),		
@@ -209,7 +209,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'top_email',
+        'settings'  => 'top_email',
         'label'    => __( 'Email Address', 'i-transform' ),
         'section'  => 'basic',
         'default'  => sanitize_email(of_get_option('top_bar_email', 'email@i-create.com')),
@@ -219,7 +219,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'upload',
-		'setting'     => 'logo',
+		'settings'     => 'logo',
 		'label'       => __( 'Site header logo', 'i-transform' ),
 		'description' => __( 'Width 280px, height 72px max. Upload logo for header', 'i-transform' ),
         'section'  => 'basic',
@@ -229,7 +229,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'banner_text',
+        'settings'  => 'banner_text',
         'label'    => __( 'Banner Text', 'i-transform' ),
         'section'  => 'basic',
         'default'  => of_get_option('itrans_slogan', 'Banner Text Here'),
@@ -239,7 +239,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'color',
-		'setting'     => 'primary_color',
+		'settings'     => 'primary_color',
 		'label'       => __( 'Primary Color', 'i-transform' ),
 		'description' => __( 'Choose your theme color', 'i-transform' ),
 		'section'     => 'layout',
@@ -249,7 +249,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'radio-image',
-		'setting'     => 'blog_layout',
+		'settings'     => 'blog_layout',
 		'label'       => __( 'Blog Posts Layout', 'i-transform' ),
 		'description' => __( '(Choose blog posts layout (one column/two column)', 'i-transform' ),
 		'section'     => 'layout',
@@ -263,7 +263,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'full_content',
+		'settings'     => 'full_content',
 		'label'       => __( 'Show Full Content', 'i-transform' ),
 		'description' => __( 'Show full content on blog pages', 'i-transform' ),
 		'section'     => 'layout',
@@ -273,7 +273,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'wide_layout',
+		'settings'     => 'wide_layout',
 		'label'       => __( 'Boxed Layout', 'i-transform' ),
 		'description' => __( 'Turn ON/OFF boxed layout', 'i-transform' ),
 		'section'     => 'layout',
@@ -295,10 +295,23 @@ function itransform_custom_setting( $controls ) {
             'position' => 'left-top',
         ),
         'priority'    => 4,
-        'output'      => 'body',
+        //'output'      => 'body',
+		'output' => array(
+			array(
+				'element'  => 'body',
+			),
+		),
+		'default'     => array(
+			'background-color'      => 'rgba(255,255,255, 1)',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'scroll',
+		),		
         'required'  => array(
             array(
-                'setting'  => 'wide_layout',
+                'settings'  => 'wide_layout',
                 'operator' => '==',
                 'value'    => 1,
             ),
@@ -307,7 +320,7 @@ function itransform_custom_setting( $controls ) {
 	/*
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'sidebar_side',
+		'settings'     => 'sidebar_side',
 		'label'       => __( 'Main Sidebar on left (default sidebar appears on right)', 'i-transform' ),
 		'description' => __( 'move the main sidebar position to left', 'i-transform' ),
 		'section'     => 'layout',
@@ -317,7 +330,7 @@ function itransform_custom_setting( $controls ) {
 	*/
 	$controls[] = array(
 		'type'        => 'textarea',
-		'setting'     => 'itrans_extra_style',
+		'settings'     => 'itrans_extra_style',
 		'label'       => __( 'Additional style', 'i-transform' ),
 		'description' => __( 'add extra style(CSS) codes here', 'i-transform' ),
 		'section'     => 'layout',
@@ -329,7 +342,7 @@ function itransform_custom_setting( $controls ) {
 	/*
 	$controls[] = array(
 		'type'        => 'color',
-		'setting'     => 'site_bg_color',
+		'settings'     => 'site_bg_color',
 		'label'       => __( 'Background Color (Boxed Layout)', 'i-transform' ),
 		'description' => __( 'Choose your background color', 'i-transform' ),
 		'section'     => 'layout',
@@ -344,7 +357,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_facebook',
+        'settings'  => 'itrans_social_facebook',
         'label'    => __( 'Facebook', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),		
         'section'  => 'social',
@@ -354,7 +367,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_twitter',
+        'settings'  => 'itrans_social_twitter',
         'label'    => __( 'Twitter', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),			
         'section'  => 'social',
@@ -364,7 +377,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_flickr',
+        'settings'  => 'itrans_social_flickr',
         'label'    => __( 'Flickr', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),			
         'section'  => 'social',
@@ -374,7 +387,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_feed',
+        'settings'  => 'itrans_social_feed',
         'label'    => __( 'RSS', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),			
         'section'  => 'social',
@@ -384,7 +397,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_instagram',
+        'settings'  => 'itrans_social_instagram',
         'label'    => __( 'Instagram', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),			
         'section'  => 'social',
@@ -394,7 +407,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_googleplus',
+        'settings'  => 'itrans_social_googleplus',
         'label'    => __( 'Google Plus', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),			
         'section'  => 'social',
@@ -404,7 +417,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_social_youtube',
+        'settings'  => 'itrans_social_youtube',
         'label'    => __( 'YouTube', 'i-transform' ),
 		'description' => __( 'Empty the field to remove the icon', 'i-transform' ),			
         'section'  => 'social',
@@ -416,7 +429,7 @@ function itransform_custom_setting( $controls ) {
 
 	$controls[] = array(
 		'type'        => 'slider',
-		'setting'     => 'itrans_sliderspeed',
+		'settings'     => 'itrans_sliderspeed',
 		'label'       => __( 'Slide Duration', 'i-transform' ),
 		'description' => __( 'Slide visibility in second', 'i-transform' ),
 		'section'     => 'slidersettings',
@@ -441,13 +454,25 @@ function itransform_custom_setting( $controls ) {
             'position' => 'left-top',
         ),
         'priority'    => 4,
-        'output'      => '.ibanner',
+        //'output'      => '.ibanner',
+		'output' => array(
+			array(
+				'element'  => '.site .ibanner, .site .da-dots span.da-dots-current',
+			),
+		),
+		'default'     => array(
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'scroll',
+		),			
     );		
 	
 	// Slide1
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide1_title',
+        'settings'  => 'itrans_slide1_title',
         'label'    => __( 'Slide1 Title', 'i-transform' ),
         'section'  => 'slide1',
 		'default'  => of_get_option('itrans_slide1_title', 'Multi-Purpose WP Theme'),			
@@ -455,7 +480,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'textarea',
-		'setting'     => 'itrans_slide1_desc',
+		'settings'     => 'itrans_slide1_desc',
 		'label'       => __( 'Slide1 Description', 'i-transform' ),
 		'section'     => 'slide1',
 		'default'  => of_get_option('itrans_slide1_desc', 'To start setting up i-transform go to Appearance &gt; Customize. Make sure you have installed recommended plugin &rdquo;TemplatesNext Toolkit&rdquo; by going appearance &gt; install plugin.'),			
@@ -463,7 +488,7 @@ function itransform_custom_setting( $controls ) {
 	);
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide1_linktext',
+        'settings'  => 'itrans_slide1_linktext',
         'label'    => __( 'Slide1 Link text', 'i-transform' ),
         'section'  => 'slide1',
 		'default'  => of_get_option('itrans_slide1_linktext', 'Know More'),		
@@ -471,7 +496,7 @@ function itransform_custom_setting( $controls ) {
     );
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide1_linkurl',
+        'settings'  => 'itrans_slide1_linkurl',
         'label'    => __( 'Slide1 Link URL', 'i-transform' ),
         'section'  => 'slide1',
 		'default'  => of_get_option('itrans_slide1_linkurl', 'http://templatesnext.org/itrans/'),		
@@ -479,7 +504,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'upload',
-		'setting'     => 'itrans_slide1_image',
+		'settings'     => 'itrans_slide1_image',
 		'label'       => __( 'Slide1 Image', 'i-transform' ),
         'section'  	  => 'slide1',
 		'default'  => of_get_option('itrans_slide1_image', get_template_directory_uri() . '/images/slide-1.jpg'),
@@ -491,7 +516,7 @@ function itransform_custom_setting( $controls ) {
 	// Slide2
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide2_title',
+        'settings'  => 'itrans_slide2_title',
         'label'    => __( 'Slide2 Title', 'i-transform' ),
         'section'  => 'slide2',
 		'default'  => of_get_option('itrans_slide2_title', 'Live Edit With Customizer'),		
@@ -499,7 +524,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'textarea',
-		'setting'     => 'itrans_slide2_desc',
+		'settings'     => 'itrans_slide2_desc',
 		'label'       => __( 'Slide2 Description', 'i-transform' ),
 		'section'     => 'slide2',
 		'default'  => of_get_option('itrans_slide2_desc', 'Setup your theme from Appearance &gt; Customize , boxed/wide layout, unlimited color, custom background, blog layout, social links, additiona css styling, phone number and email id, etc.'),		
@@ -507,7 +532,7 @@ function itransform_custom_setting( $controls ) {
 	);
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide2_linktext',
+        'settings'  => 'itrans_slide2_linktext',
         'label'    => __( 'Slide2 Link text', 'i-transform' ),
         'section'  => 'slide2',
 		'default'  => of_get_option('itrans_slide2_linktext', 'Know More'),		
@@ -515,7 +540,7 @@ function itransform_custom_setting( $controls ) {
     );
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide2_linkurl',
+        'settings'  => 'itrans_slide2_linkurl',
         'label'    => __( 'Slide2 Link URL', 'i-transform' ),
         'section'  => 'slide2',
 		'default'  => of_get_option('itrans_slide2_linkurl', 'https://wordpress.org/'),		
@@ -523,7 +548,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'upload',
-		'setting'     => 'itrans_slide2_image',
+		'settings'     => 'itrans_slide2_image',
 		'label'       => __( 'Slide2 Image', 'i-transform' ),
         'section'  	  => 'slide2',
 		'default'  => of_get_option('itrans_slide2_image', get_template_directory_uri() . '/images/slide-2.jpg'),
@@ -535,7 +560,7 @@ function itransform_custom_setting( $controls ) {
 	// Slide3
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide3_title',
+        'settings'  => 'itrans_slide3_title',
         'label'    => __( 'Slide3 Title', 'i-transform' ),
         'section'  => 'slide3',
 		'default'  => of_get_option('itrans_slide3_title', 'Portfolio, Testimonial, Services...'),		
@@ -543,7 +568,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'textarea',
-		'setting'     => 'itrans_slide3_desc',
+		'settings'     => 'itrans_slide3_desc',
 		'label'       => __( 'Slide3 Description', 'i-transform' ),
 		'section'     => 'slide3',
 		'default'  => of_get_option('itrans_slide3_desc', 'Once you install and activate the plugin &rdquo; TemplatesNext Toolkit &rdquo; Use the [tx] button on your editor to create the columns, services, portfolios, testimonials and custom sliders.'),		
@@ -551,7 +576,7 @@ function itransform_custom_setting( $controls ) {
 	);
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide3_linktext',
+        'settings'  => 'itrans_slide3_linktext',
         'label'    => __( 'Slide3 Link text', 'i-transform' ),
         'section'  => 'slide3',
 		'default'  => of_get_option('itrans_slide3_linktext', 'Know More'),			
@@ -559,7 +584,7 @@ function itransform_custom_setting( $controls ) {
     );
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide3_linkurl',
+        'settings'  => 'itrans_slide3_linkurl',
         'label'    => __( 'Slide3 Link URL', 'i-transform' ),
         'section'  => 'slide3',
 		'default'  => of_get_option('itrans_slide3_linkurl', 'https://wordpress.org/'),		
@@ -567,7 +592,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'upload',
-		'setting'     => 'itrans_slide3_image',
+		'settings'     => 'itrans_slide3_image',
 		'label'       => __( 'Slide3 Image', 'i-transform' ),
         'section'  	  => 'slide3',
 		'default'  => of_get_option('itrans_slide3_image', get_template_directory_uri() . '/images/slide-3.jpg'),
@@ -579,7 +604,7 @@ function itransform_custom_setting( $controls ) {
 	// Slide2
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide4_title',
+        'settings'  => 'itrans_slide4_title',
         'label'    => __( 'Slide4 Title', 'i-transform' ),
         'section'  => 'slide4',
 		'default'  => of_get_option('itrans_slide4_title', 'Customize Your pages'),		
@@ -587,7 +612,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'textarea',
-		'setting'     => 'itrans_slide4_desc',
+		'settings'     => 'itrans_slide4_desc',
 		'label'       => __( 'Slide4 Description', 'i-transform' ),
 		'section'     => 'slide4',
 		'default'  => of_get_option('itrans_slide4_desc', 'Customize your pages with page options (meta). Use default theme slider or itrans slider or any 3rd party slider on any page'),		
@@ -595,7 +620,7 @@ function itransform_custom_setting( $controls ) {
 	);
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide4_linktext',
+        'settings'  => 'itrans_slide4_linktext',
         'label'    => __( 'Slide4 Link text', 'i-transform' ),
         'section'  => 'slide4',
 		'default'  => of_get_option('itrans_slide4_linktext', 'Know More'),		
@@ -603,7 +628,7 @@ function itransform_custom_setting( $controls ) {
     );
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'itrans_slide4_linkurl',
+        'settings'  => 'itrans_slide4_linkurl',
         'label'    => __( 'Slide4 Link URL', 'i-transform' ),
         'section'  => 'slide4',
 		'default'  => of_get_option('itrans_slide4_linkurl', 'https://wordpress.org/'),		
@@ -611,7 +636,7 @@ function itransform_custom_setting( $controls ) {
     );
 	$controls[] = array(
 		'type'        => 'upload',
-		'setting'     => 'itrans_slide4_image',
+		'settings'     => 'itrans_slide4_image',
 		'label'       => __( 'Slide4 Image', 'i-transform' ),
         'section'  	  => 'slide4',
 		'default'  => of_get_option('itrans_slide4_image', get_template_directory_uri() . '/images/slide-4.jpg'),
@@ -623,7 +648,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'slider_stat',
+		'settings'     => 'slider_stat',
 		'label'       => __( 'Turn ON/OFF i-transform Slider', 'i-transform' ),
 		'description' => __( 'Turn Off or On to hide/show default i-transform slider', 'i-transform' ),
 		'section'     => 'blogpage',
@@ -633,7 +658,7 @@ function itransform_custom_setting( $controls ) {
 	
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'other_front_slider',
+        'settings'  => 'other_front_slider',
         'label'    => __( 'Other Slider Shortcode', 'i-transform' ),
         'section'  => 'blogpage',
 		'default'  => '',		
@@ -645,7 +670,7 @@ function itransform_custom_setting( $controls ) {
 /*	
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'hide_login',
+		'settings'     => 'hide_login',
 		'label'       => __( 'Hide Topnav Login', 'i-transform' ),
 		'description' => __( 'Hide login menu item from top nav', 'i-transform' ),
 		'section'     => 'woocomm',
@@ -655,7 +680,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'hide_cart',
+		'settings'     => 'hide_cart',
 		'label'       => __( 'Hide Topnav Cart', 'i-transform' ),
 		'description' => __( 'Hide cart from top nav', 'i-transform' ),
 		'section'     => 'woocomm',
@@ -665,7 +690,7 @@ function itransform_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'switch',
-		'setting'     => 'normal_search',
+		'settings'     => 'normal_search',
 		'label'       => __( 'Turn On Normal Search', 'i-transform' ),
 		'description' => __( 'Product only search will be turned off.', 'i-transform' ),
 		'section'     => 'woocomm',
@@ -676,7 +701,7 @@ function itransform_custom_setting( $controls ) {
 	/*
     $controls[] = array(
         'type'     => 'text',
-        'setting'  => 'blogslide_scode',
+        'settings'  => 'blogslide_scode',
         'label'    => __( 'Other Slider Shortcode', 'i-transform' ),
         'section'  => 'blogpage',
         'default'  => '',
@@ -690,7 +715,7 @@ function itransform_custom_setting( $controls ) {
 	// Off
 	$controls[] = array(
 		'type'        => 'toggle',
-		'setting'     => 'toggle_demo',
+		'settings'     => 'toggle_demo',
 		'label'       => __( 'This is the label', 'i-transform' ),
 		'description' => __( 'This is the control description', 'i-transform' ),
 		'section'     => 'blogpage',
@@ -713,22 +738,6 @@ function itransform_custom_setting( $controls ) {
                 <a href="http://templatesnext.org/ispirit/landing/forums/" target="_blank">Support</a>                                 
                 <!-- <a href="http://templatesnext.org/itrans/docs">Documentation</a> -->
                 <a href="http://templatesnext.org/ispirit/landing/" target="_blank">Go Premium</a>                
-                <div class="donate">                
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="M2HN47K2MQHAN">
-                    <table>
-                    <tr><td><input type="hidden" name="on0" value="If you like my work, you can buy me">If you like my work, you can buy me</td></tr><tr><td><select name="os0">
-                        <option value="a cup of coffee">1 cup of coffee $10.00 USD</option>
-                        <option value="2 cup of coffee">2 cup of coffee $20.00 USD</option>
-                        <option value="3 cup of coffee">3 cup of coffee $30.00 USD</option>
-                    </select></td></tr>
-                    </table>
-                    <input type="hidden" name="currency_code" value="USD">
-                    <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                    </form>
-                </div>                                                                          
             </div>
         </div>
 		</div>',

@@ -15,7 +15,7 @@
  	/* CUSTOM CSS OUTPUT
  	================================================== */
  	if (!function_exists('itransform_custom_styles')) { 
-		function ione_custom_styles() {
+		function itransform_custom_styles() {
 			
 			global  $ione_data;
 			global $post;	
@@ -26,7 +26,7 @@
 			$menu_font_size = "13";
 			$primary_color = "#3787be";
 
-			$primary_color = get_theme_mod('primary_color', of_get_option('itrans_color_scheme'));
+			$primary_color = get_theme_mod('primary_color', '#3787be' );
 			
 			if ( $primary_color == 'blue' )
 			{
@@ -163,7 +163,7 @@
 			echo "</style>". "\n";
 		}
 	
-		add_action('wp_head', 'ione_custom_styles');
+		add_action('wp_head', 'itransform_custom_styles');
 	}
 	
 	/* CUSTOM JS OUTPUT

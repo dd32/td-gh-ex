@@ -15,8 +15,6 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-
 					<div class="entry-meta">
 						<?php
 							$published_text = __( '<span class="attachment-meta">Published on <time class="entry-date" datetime="%1$s">%2$s</time> in <a href="%3$s" title="Return to %4$s" rel="gallery">%5$s</a></span>', 'i-transform' );

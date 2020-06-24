@@ -33,7 +33,7 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 	<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<header class="entry-header">
-                    	<h1 class="entry-title"><?php the_title(); ?></h1>
+
 						<div class="entry-thumbnail tx-slider" data-delay="8000">
 						<?php                        
 							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
