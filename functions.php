@@ -304,6 +304,13 @@ if ( class_exists( 'LearnPress' ) ) {
 }
 
 /**
+ * WPML
+ */
+if ( class_exists( 'SitePress' ) ) {
+	require get_template_directory() . '/inc/wpml/class-airi-wpml.php';
+}
+
+/**
  * TGMPA
  */
 require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';

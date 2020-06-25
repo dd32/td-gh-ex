@@ -345,7 +345,7 @@ class Airi_Blog extends Widget_Base {
 		$query = new \WP_Query( array(
 			'posts_per_page'      => $settings['number'],
 			'no_found_rows'       => true,
-			'post_stairis'         => 'publish',
+			'post_status'         => 'publish',
 			'ignore_sticky_posts' => true,
 			'cat' 			      => $cats
 		) ); ?>

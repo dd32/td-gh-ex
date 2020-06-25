@@ -200,3 +200,14 @@ function airi_get_comments_number() {
 	}
 	echo '</span>';
 }
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Shim for wp_body_open() function
+	 */
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedFunctionFound
+	function wp_body_open() {
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+		do_action( 'wp_body_open' );
+	}
+}
