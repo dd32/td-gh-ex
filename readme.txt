@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 2.0.23
-Version: 2.0.23
+Stable tag: 2.0.24
+Version: 2.0.24
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
@@ -98,19 +98,27 @@ Source: https://github.com/soderlind/class-customizer-toggle-control
 License -  GNU GENERAL PUBLIC LICENSE (https://www.gnu.org/licenses/)
 Source: https://github.com/soderlind/class-customizer-toggle-control
 
-12) Screenshot Image
+12) Customizer Repeater Control
+=================================================================================================
+License -  MIT LICENSE (https://github.com/cristian-ungureanu/customizer-repeater/blob/production/LICENSE)
+Source: https://github.com/cristian-ungureanu/customizer-repeater
+
+13) Screenshot Image
 =================================================================================================
 Screenshot Image
 URL: https://pxhere.com/en/photo/1446785
 Source: https://pxhere.com
 License: CC0 Public Domain
 
-13) Image Folder Images
+14) Image Folder Images
 =================================================================================================
 All other Images have been used in images folder, Created by Nayra Themes. Also they are GPL Licensed and free to use and free to redistribute further.
 
 
 == Changelog ==
+
+@version 2.0.24
+* Customizer Repeater Control Licence Added
 
 @version 2.0.23
 * Tested With WordPress 5.4.2
