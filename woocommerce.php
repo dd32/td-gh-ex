@@ -3,7 +3,7 @@
 <?php get_template_part('index', 'breadcrumb'); ?>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
-<div class="container">
+<div class="container" id="content">
 	<div class="row">		
 		<!--Blog Area-->
 		<div class="<?php if(is_active_sidebar('woocommerce')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >

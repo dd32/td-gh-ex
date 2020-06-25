@@ -7,7 +7,7 @@ get_header(); ?>
 <?php get_template_part('index', 'breadcrumb'); ?>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
-<div class="container">
+<div class="container" id="content">
 	<div class="row">		
 		<!--Blog Area-->
 		<div class="col-md-12">

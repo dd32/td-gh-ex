@@ -1,5 +1,5 @@
 <div class="page-mycarousel">
-	<img src="<?php echo get_template_directory_uri(); ?>/images/page-header-bg.jpg"  class="img-responsive">
+	<img src="<?php echo esc_url(WALLSTREET_TEMPLATE_DIR_URI);?>/images/page-header-bg.jpg"  class="img-responsive">
 	<div class="container page-title-col">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ol class="breadcrumbs">
-						<?php if (function_exists('webriti_custom_breadcrumbs')) webriti_custom_breadcrumbs();?>
+						<?php if (function_exists('wallstreet_custom_breadcrumbs')) wallstreet_custom_breadcrumbs();?>
 					</ol>
 				</div>
 			</div>	

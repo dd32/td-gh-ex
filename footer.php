@@ -1,5 +1,5 @@
 <!-- Footer Widget Secton -->
-<?php $wallstreet_pro_options=theme_data_setup();
+<?php $wallstreet_pro_options=wallstreet_theme_data_setup();
 	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); ?>
 <div class="footer_section">
 
@@ -22,7 +22,7 @@
 					<?php } if($current_options['social_media_instagram_link']!='') { ?>
 					<li><a href="<?php echo esc_url( $current_options['social_media_instagram_link'] ); ?>"><i class="fa fa-instagram"></i></a></li>					
 					<?php } ?>
-				</div></ul>
+				</ul></div>
 				<?php } ?>
 	
 	<div class="container">
@@ -35,7 +35,7 @@
         <div class="row">
 			<div class="col-md-12">
 				<div class="footer-copyright">
-					<p><?php echo $current_options['footer_copyright'];?> 
+					<p><?php echo wp_kses_post($current_options['footer_copyright']);?> 
 				</p>
 				</div>
 			</div>

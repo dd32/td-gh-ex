@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <!-- Page Title Section -->
 <div class="page-mycarousel">
-	<img src="<?php echo get_template_directory_uri(); ?>/images/page-header-bg.jpg"  class="img-responsive">
+	<img src="<?php echo esc_url(WALLSTREET_TEMPLATE_DIR_URI);?>/images/page-header-bg.jpg"  class="img-responsive">
 	<div class="container page-title-col">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<h1><?php printf( __( 'Author Archive', 'wallstreet' ), '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' ); ?></h1>		
+				<h1><?php printf( esc_html__( 'Author Archive', 'wallstreet' ), '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_html( get_the_author() ) . '" rel="me">' . esc_html(get_the_author()) . '</a>' ); ?></h1>		
 			</div>	
 		</div>
 	</div>
@@ -14,7 +14,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ol class="breadcrumbs">
-						<?php if (function_exists('webriti_custom_breadcrumbs')) webriti_custom_breadcrumbs();?>
+						<?php if (function_exists('wallstreet_custom_breadcrumbs')) wallstreet_custom_breadcrumbs();?>
 					</ol>
 				</div>
 			</div>	
@@ -23,7 +23,7 @@
 </div>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
-<div class="container author">
+<div class="container author" id="content">
 	<div class="row">
 
 		<div class="<?php if(is_active_sidebar('sidebar_primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
@@ -38,15 +38,15 @@
 				<?php } ?>
 				<div class="clear"></div>
 				<div class="blog-post-title">
-					<div class="blog-post-date"><span class="date"><a href="<?php the_permalink();?>"><?php echo get_the_date('j'); ?> <small><?php echo get_the_date('M'); ?></small></a></span>
+					<div class="blog-post-date"><span class="date"><a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"><?php echo esc_html(get_the_date());?></a></span>
 						<span class="comment"><i class="fa fa-comment"></i><?php comments_number('0', '1','%'); ?></span>
 					</div>
 					<div class="blog-post-title-wrapper">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<?php the_content( __('Read More','wallstreet' ) ); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'wallstreet' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__('Page', 'wallstreet' ), 'after' => '</div>' ) ); ?>
 						<div class="blog-post-detail">
-							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
+							<a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();
 							if(!empty($tag_list)) { ?>
 							<div class="blog-tags">

@@ -1,16 +1,46 @@
 /*
-* Theme Name: Wallstreet
-* Theme URI: https://webriti.com/wallstreet-lite-version-details-page/
-* Description: WallStreet is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In WallStreet Lite, you can easily set a Featured Banner / Slide, Social Icons in the header, Contact Information, Services, Portfolio, and a 4-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get 2 color skins (Lite and Dark), 10 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of WallStreet theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/wallstreet
-* Version: 1.8
-* Author: webriti
-* Author URI: https://www.webriti.com
-* Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready,featured-images, blog, photography, entertainment,footer-widgets
-* License: GNU General Public License v3.0
-* License URI: http://www.gnu.org/licenses/gpl-3.0.html
-* Copyright (c) 2016 webriti. All rights reserved.
-* Text Domain: wallstreet
+Theme Name: Wallstreet
+Theme URI: https://webriti.com/wallstreet-lite-version-details-page/
+Author: webriti
+Author URI: https://www.webriti.com
+Description: WallStreet is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In WallStreet Lite, you can easily set a Featured Banner / Slide, Social Icons in the header, Contact Information, Services, Portfolio, and a 4-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get 2 color skins (Lite and Dark), 10 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of WallStreet theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/wallstreet
+Version: 1.9
+Requires at least: 4.5
+Tested up to: 5.4.1
+Requires PHP: 5.4
+Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wallstreet
 */
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Common
+2.0 Header Top Section
+3.0 Homepage Flex Slider Section
+4.0 Homepage Service Section
+5.0 Homepage Portfolio Section
+6.0 Home Blog Section Css
+7.0 Tweet Section Css
+8.0 Footer Widgte Section
+9.0 Page Header Css
+10.0 Blog Section Css
+11.0 Sidebar Section Css
+12.0 Blog Detail Section Css
+13.0 comment Section
+14.0 Comment Form Section
+15.0 Table
+16.0 404 page
+17.0 Woocommerce Css
+18.0 WOOCOMMERCE SINGLE PRODUCT CSS
+19.0 Skip Link
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Common
+--------------------------------------------------------------*/
 
 body {
     background-color: #2a2c33;
@@ -20,7 +50,11 @@ body {
     line-height: 1.42857;
 	margin: 0;
 }
-/*Header Top Section--------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+2.0 Header Top Section
+--------------------------------------------------------------*/
+
 .header-top-area {
 	padding: 0;
 	min-height: 45px;
@@ -84,7 +118,14 @@ body {
     padding-right: 7px;
 }
 .head-contact-info a{color:#fff;}
-/*Homepage Flex Slider Section--------------------------------------------------------------------------*/ 
+.site-description{
+    color:#fff;
+}
+
+/*--------------------------------------------------------------
+3.0 Homepage Flex Slider Section
+--------------------------------------------------------------*/
+
 .homepage_mycarousel {
    height: 100%;
 	width: 100%;
@@ -196,7 +237,10 @@ body {
 	max-height: 750px;
 }
 
-/*Homepage Service Section--------------------------------------------------------------------------*/ 
+/*--------------------------------------------------------------
+4.0 Homepage Service Section
+--------------------------------------------------------------*/
+
 .section_heading_title {
     background-position: center top;
     background-repeat: no-repeat;
@@ -392,7 +436,10 @@ body {
 	text-align: center;
 }
 
-/*Homepage Portfolio Section--------------------------------------------------------------------------*/ 
+/*--------------------------------------------------------------
+5.0 Homepage Portfolio Section
+--------------------------------------------------------------*/
+
 .portfolio-section {
 	margin: 0;
     padding: 70px 0 20px;
@@ -516,7 +563,10 @@ body {
     vertical-align: middle;
 }
 
-/*Blog Section Css----------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+6.0 Home Blog Section Css
+--------------------------------------------------------------*/
+
 .home-blog-section {
     padding: 70px 0 20px;
 }
@@ -627,7 +677,10 @@ body {
     transition: all 0.4s ease 0s;
 }
 
-/*Tweet Section Css---------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+7.0 Tweet Section Css
+--------------------------------------------------------------*/
+
 .tweet-section {
 	background: url("./images/tweet-bg.jpg");
 	background-repeat: no-repeat;
@@ -707,7 +760,10 @@ body {
     
     transition: all 0.4s ease 0s;
 }
-/*Footer Widgte Section-----------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+8.0 Footer Widgte Section
+--------------------------------------------------------------*/
 
 .footer_section {
     margin: 0px 0 0;
@@ -881,7 +937,10 @@ body {
     white-space: nowrap;
 }
 
-/*Page Header Css---------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+9.0 Page Header Css
+--------------------------------------------------------------*/
+
 .page-mycarousel { position: relative; box-shadow: 0 7px 10px -10px #000; z-index: 2; margin: 0 0 80px; }
 .page-mycarousel img { margin: 0 auto; }
 .page-title-col { 
@@ -932,8 +991,9 @@ body {
 .breadcrumbs > li { font-size: 7px; line-height: 10px; }
 } 
 
-
-/*Blog Section Css---------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.0 Blog Section Css
+--------------------------------------------------------------*/
 
 .blog-section-left {
 	float: none;
@@ -1033,21 +1093,20 @@ body {
     float: left;
     font-family:'Roboto';
 	font-weight:700;
-    height: 102px;
     margin-left: 0;
-    margin-right: 3.5%;
+    margin-right: 2.3%;
 	margin-bottom: 25px;
-    width: 60px;
+    width: 85px;
 }
 .blog-post-date span.date a {
-	font-family:'Roboto';
-	font-weight:400;
-	display: block;
-    font-size: 36px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    display: block;
+    font-size: 16px;
     line-height: 35px;
     margin-bottom: 0px;
-	padding: 2px 0 3px;
-	text-align: center;
+    padding: 2px 0 3px;
+    text-align: center;
 }
 .blog-post-date span.date >a small{
     display: block;
@@ -1073,7 +1132,7 @@ body {
 }
 .blog-post-title-wrapper {
     float: left;
-    width: 86.5%;
+    width: 84.5%;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1213,7 +1272,10 @@ a.blog-btn {
     white-space: nowrap;
 }
 .page-links a{background-color: #2a2c33;}
-/*Sidebar Section Css---------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+11.0 Sidebar Section Css
+--------------------------------------------------------------*/
 
 /* Edit by Harish For Sidebar Section*/
 .sidebar-section {
@@ -1397,15 +1459,15 @@ a.blog-btn {
 }
 .search_widget_input{
 	border-radius: 0;
+    display: inline-block;
     font-family:'Roboto';
 	font-weight:500;
     font-size: 14px;
     line-height: 20px;
-    margin: 25px 0px 15px 0px;
+    margin: 25px 0px 0px 0px;
     height: 46px;
-    padding: 10px 16px;
+    padding: 10px 120px 10PX 16PX;
     background-image: none;
-    display: block;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     width: 100%;
 }
@@ -1425,9 +1487,11 @@ a.blog-btn {
     margin-right: 0px;
     padding: 11px 29px;
     text-align: center;
-	
-    vertical-align: middle;
+	vertical-align: middle;
     white-space: nowrap;
+    position: absolute;
+    right: 36px;
+    margin-top: 26px;
 }
 /* For Search Box Error Message */
 .search_error{
@@ -1584,7 +1648,7 @@ a.blog-btn {
 .post-media-sidebar p{
     font-family:'Roboto';
 	font-weight:300;
-	`font-size: 15px;
+	font-size: 15px;
     line-height: 22px;
     margin-bottom: 5px;
     margin-top: 0;
@@ -1677,7 +1741,11 @@ a.readmore{
     vertical-align: baseline;
     white-space: nowrap;
 }
-/*Blog Detail Section Css-----------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+12.0 Blog Detail Section Css
+--------------------------------------------------------------*/
+
 .blog-blockquote {
 	float: left;
 	width: 100%;
@@ -1775,7 +1843,11 @@ a.readmore{
 .blog-author-social li > a{
 	color: #ffffff;
 }
-/*comment Section*/
+
+/*--------------------------------------------------------------
+13.0 comment Section
+--------------------------------------------------------------*/
+
 .comment-section {
 	float: none;
 	margin: 0 0 50px;
@@ -1858,7 +1930,12 @@ a.readmore{
 	font-weight:400;
 	display: inline-block;
 }
-/*Comment Form Section*/
+
+/*--------------------------------------------------------------
+14.0 Comment Form Section
+--------------------------------------------------------------*/
+
+
 .comment-form-section {
 	float: none;
 	margin: 0 0 80px;
@@ -1983,7 +2060,11 @@ a.readmore{
 	margin: 0px 0px 10px 0px;
 }
 
-/*Table*/
+/*--------------------------------------------------------------
+15.0 Table
+--------------------------------------------------------------*/
+
+
 .table-section {
 	margin-bottom: 60px;
 }
@@ -2119,7 +2200,11 @@ td.text-right {
 	line-height: 30px;
 	margin: 0 0 5px;
 }
-/**** added by harish for 404 page ******/
+
+/*--------------------------------------------------------------
+16.0 404 page
+--------------------------------------------------------------*/
+
 .error_404 { 
 	font-family:'Roboto';
 	font-weight:300;
@@ -2147,7 +2232,7 @@ td.text-right {
 font-family:'Roboto';
 font-weight:400;
 font-size: 38px;
-line-height: 40px;
+line-height: 25px;
 }
 .blog-post-title-wrapper > dl > dt,
 .blog-post-title-wrapper-full > dl > dt,
@@ -2281,7 +2366,8 @@ line-height: 40px;
 
 /* Wordpres Core Classes Need to be define all the Times*/
 
-.sticky{}
+.sticky{background-color: #03b9a2 !important;}
+.post.sticky ul li a{color:#c7254e;}
 cite{ font-style: italic !important; }
 .aligncenter{display: block; margin: 0 auto;}
 .alignright{float: right;}
@@ -2518,16 +2604,11 @@ ul ul, ol ul, ul ol, ol ol {
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
+   clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
     height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
     width: 1px;
+    overflow: hidden;
     word-wrap: normal !important;
 }
 
@@ -2548,7 +2629,6 @@ ul ul, ol ul, ul ol, ol ol {
 	color: #21759b;
 	display: block;
 	font-size: 14px;
-	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
 	left: 5px;
@@ -2574,7 +2654,7 @@ ul ul, ol ul, ul ol, ol ol {
 }
 .blog-post-meta a {
 	font-size: 12px;
-    padding: 5px 20px 5px 0;
+    padding: 5px 5px 5px 0;
     transition: all 0.3s ease 0s;
 	color: #e5e5e5;
 }
@@ -2605,7 +2685,10 @@ ul ul, ol ul, ul ol, ol ol {
     color: #ffffff;
 }
 
-/* Woocommerce Css ------------------------------------------------------------------------------------------------------------- */
+/*--------------------------------------------------------------
+17.0 Woocommerce Css
+--------------------------------------------------------------*/
+
 .woocommerce { font-family: 'Roboto'; }
 .woocommerce-ordering select { background-color: transparent; padding: 12px 10px; height: 46px; }
 .woocommerce ul.products li.product h3 { font-size: 1.2286em; letter-spacing: 0.5px; padding: 0.2em 0; text-align: center; font-family: 'Roboto'; font-weight: 400; }
@@ -2845,9 +2928,9 @@ li.cat-item { padding: 5px 0; }
 .woocommerce-order-received .blog-post-title-wrapper{width:100%; float:none;}
 /*End of Woocommerce css*/
 
-/*===================================================================================*/
-/*	WOOCOMMERCE SINGLE PRODUCT CSS
-/*===================================================================================*/
+/*--------------------------------------------------------------
+18.0 WOOCOMMERCE SINGLE PRODUCT CSS
+--------------------------------------------------------------*/
 
 .single-product .pswp__button { background-color: transparent; }
 .single-product div.product { position: relative; overflow: hidden; }
@@ -2982,3 +3065,55 @@ color: #e5e5e5 !important;
 {
     width:100%;
 }
+
+/*--------------------------------------------------------------
+19.0 Skip Link
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.wallstreet-screen-reader {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+}
+
+.wallstreet-screen-reader:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+.navbar .navbar-nav > li > a:focus,.dropdown-menu > li > a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+@media (max-width: 1100px){
+.caret {
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.dropdown-menu {
+    position: initial !important;
+    float: none !important;
+}}

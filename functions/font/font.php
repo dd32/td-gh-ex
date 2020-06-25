@@ -24,4 +24,3 @@ function wallstreet_scripts_styles() {
     wp_enqueue_style( 'wallstreet-fonts', wallstreet_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'wallstreet_scripts_styles' );
-?>

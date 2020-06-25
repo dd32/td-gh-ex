@@ -1,20 +1,19 @@
-		<?php 
-		/**
-		Template Name: Home Page
-		*/
-		get_header();
-		//****** Get Feature Image ********//
-		get_template_part('index', 'static-banner');
+<?php
 
-		//****** get index service  ********
-		get_template_part('index', 'service');
-		
-		//****** get index portfolio  ********
-		get_template_part('index', 'portfolio');
-		
+// Template Name: Home Page
+
+get_header();
+$wallstreet_options=wallstreet_theme_data_setup();
+$current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_options );?>
+<div id="content">
+	<?php
+		do_action('wallstreet_sections', false);
+
 		//****** get index blog  ********
-		get_template_part('index', 'blog');
-
-		get_footer(); 
-		
-		?>
+		if ($current_options['blog_section_enabled'] ==true) {
+		    get_template_part('index', 'blog');
+		}
+	?>
+</div>
+<?php 
+get_footer();

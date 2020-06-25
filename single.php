@@ -3,7 +3,7 @@
 <?php get_template_part('index', 'breadcrumb'); ?>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
-<div class="container">
+<div class="container" id="content">
 	<div class="row">
 		
 		<!--Blog Area-->
@@ -22,25 +22,25 @@
 				<?php } ?>
 				<div class="clear"></div>
 				<div class="blog-post-title">
-					<div class="blog-post-date"><span class="date"><a href="<?php the_permalink();?>"><?php echo get_the_date('j'); ?> <small><?php echo get_the_date('M'); ?></small></a></span>
+					<div class="blog-post-date"><span class="date"><a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"><?php echo esc_html(get_the_date());?></a></span>
 						<span class="comment"><i class="fa fa-comment"></i><?php comments_number('0', '1','%'); ?></span>
 					</div>
 					<div class="blog-post-title-wrapper">
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'wallstreet' ), 'after' => '</div>' ) ); ?>
+						<h2><?php the_title();?></h2>
+						<?php the_content();?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__('Page', 'wallstreet' ), 'after' => '</div>' ) ); ?>
 						<div class="blog-post-meta">
-							<a id="blog-author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
+							<a id="blog-author" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();
 							if(!empty($tag_list)) { ?>
 							<div class="blog-tags">
-								<i class="fa fa-tags"></i><?php the_tags('', ', ', ''); ?>
+								<i class="fa fa-tags"></i><?php the_tags('',',',''); ?>
 							</div>
 							<?php } ?>
 							<?php 	$cat_list = get_the_category_list();
 							if(!empty($cat_list)) { ?>
 							<div class="blog-tags">
-								<i class="fa fa-star"></i><?php the_category(', '); ?>
+								<i class="fa fa-star"></i><?php the_category(','); ?>
 							</div>
 							<?php } ?>
 						</div>

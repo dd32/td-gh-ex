@@ -1,57 +1,41 @@
-Wallstreet.
+=== WallStreet ===
+
+Contributors: priyanshumittal
+Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
+Requires at least: 4.5
+Tested up to: 5.4.1
+Stable tag: 1.9
+Requires PHP: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Description ==
 
 WallStreet is a Business WordPress Theme that contains a lot of features for customizing your website as you need. Already thousands of users loving this theme because it is designed for multiple businesses like corporates, firms, law firms, digital media agency, architecture firm, personal, portfolio and freelancer's website. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In WallStreet Lite, you can easily set Featured Banner / Slide, Social Icons in Header, Contact Information, Services, Portfolio, 4 column widgetized footer. Couple of page templates are added one is Homepage and the second one is full width page template. In the premium version, you will get 2 color skins Lite and Dark, 10 predefined color schemes, feature for creating your custom color scheme, an eye-catching slider, Services, Testimonial’s, Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. You will get Various page templates  like About, Service, Portfolio, Blog and Contact Us. The theme has supports for popular  plugins like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of WallStreet theme comes with various locales. Other translations / locals yet to come. Check premium version theme demo at http://webriti.com/demo/wp/wallstreet
 
+== Installation ==
 
-Author: Priyanshu Mittal,Shahid Mansuri and Harish Lodha.
-Theme Homepage Url:http://webriti.com/demo/wp/wallstreet/
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-About:
-wallstreet a theme for business, consultancy firms etc  by Webriti (Author URI: http://www.webriti.com). 
+== Keyboard navigation ==
 
-The CSS, XHTML and design is released under GPL:
-http://www.opensource.org/licenses/gpl-license.php
+When the focus comes on any menu that has dropdown menus it is opening by pressing Enter key. Once you go to the child menu, the dropdown menu is closing by pressing the Esc key. For reverse movement, it is working by pressing Shift+Tab key. It is working on dropdown menus when the dropdown menu opened.
 
-Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
-Wallstreet supports Custom Menu, Widgets and 
-the following extra features:
+== License ==
 
- - Pre-installed menu and content colors
- - Responsive
- - Custom sidebars
- - Support for post thumbnails
- - Similar posts feature
- - 4 widgetized areas in the footer
- - Customise Front Page 
- - Custom footer
- - Translation Ready 
- 
-
-# Basic Setup of the Theme.
------------------------------------
-Fresh installation!
-
-1. Upload the wallstreet Theme folder to your wp-content/themes folder.
-2. Activate the theme from the WP Dashboard.
-3. Done!
-=== Images ===
-
-All images in wallstreet-Pro are licensed under the terms of the GNU GPL.
-
-# Top Navigation Menu:
-- Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
-- Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
-
-===========Front Page Added with the theme=================
-1 It has header(logo + menus),Home Featured Image, services,recent comments widgets and footer.
-
-======Site Title and Description=============
-Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
+Wallstreet WordPress Theme, Copyright (C) 2019, Webriti
+Wallstreet Pro is distributed under the terms of the GNU GPL
 	
-Support
--------
-
-Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+== Changelog ==
+@Version 1.9
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Declared all the licenses.
+3. Changed the screenshot image.
+4. Move the homepage sections from theme to companion plugin.
+5. Added About theme page.
+6. Fixed all the other issues.
 @Version 1.8
 1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 @Version 1.7.9.1
@@ -231,70 +215,39 @@ Removed translation-ready tag
 @Version 0.1
 released
 
-Wallstreet WordPress Theme, Copyright 2014 Priyanshu Mittal
-Wallstreet is distributed under the terms of the GNU GPL
+Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see .
-
+Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 Wallstreet WordPress Theme bundles the following third-party resources:
 
+== External resources ==
+
+Font Awesome: 
+Copyright: (c) Dave Gandy
+License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
+Source: https://fontawesome.com
+
+Bootstrap:
+Copyright: (c) Twitter
+License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+Source: http://getbootstrap.com
+
+Customizer Notify:
+Copyright: (c) Mikesetzer
+License: Under GNU General Public License
+Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
+
+== Images ==
+
 Screenshot: Image used in screenshot By Andrew Ruiz
-URL: https://unsplash.com/photos/bI2j1olMXUA/download
-Source: http://unsplash.com
-License: GPL
-
-Portfolio Image
-1. https://pixabay.com/en/person-human-girl-female-face-1041904/ 
-2. https://pixabay.com/en/rescue-helicopter-red-aircraft-922465/
-3. https://pixabay.com/en/norway-mountain-sky-blue-water-772991/
-4. https://pixabay.com/en/dress-girl-beautiful-woman-hands-864107/
-Source:http://pixabay.com
-LIcense: CC0 Public Domain
-
-Service Image
-1. https://pixabay.com/en/cop-policewoman-colleagues-funny-1016218/
-2. https://pixabay.com/en/veterinarian-animals-funny-1050812/
-Source:pixabay.com
+URL: https://pxhere.com/en/photo/1521347
+Source: https://pxhere.com
 License: CC0 Public Domain
 
-Slider Image
-URL: https://unsplash.com/photos/bI2j1olMXUA/download
-Source: http://unsplash.com
-License: GPL
-
 Page Header Image
-Source:http://pixabay.com
-LIcense: CC0 Public Domain
+Source: https://pxhere.com/en/photo/1437705
+License: CC0 Public Domain
 
-
-Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io
-
-Bootstrap v3.1.1 (http://getbootstrap.com) Copyright 2011-2014 Twitter, Inc.
-Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-Source: http://getbootstrap.com
-	
-List Of Roboto Fonts Used:
-1 Roboto Regular
-2 Roboto Black
-3 Roboto Light
-4 Roboto Medium
-5 Roboto Thin
-
-Roboto Fonts: http://www.google.com/fonts/specimen/Roboto) by Christian Robertson
-Licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html
-
-# --- EOF --- #
+* Images on /images folder
+Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

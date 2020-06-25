@@ -1,12 +1,12 @@
 <!-- wallstreet Blog Section ---->
-<?php $wallstreet_pro_options=theme_data_setup();
+<?php $wallstreet_pro_options=wallstreet_theme_data_setup();
 	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options );
  if($current_options['blog_section_enabled'] == true) { ?>	
 <div class="container home-blog-section">
 	<div class="row">
 		<div class="section_heading_title">
 		<?php if($current_options['home_blog_heading']) { ?>
-			<h1><?php echo $current_options['home_blog_heading']; ?></h1>
+			<h1><?php echo esc_html($current_options['home_blog_heading']); ?></h1>
 		<?php } ?>
 		<?php if($current_options['home_blog_description']) { ?>
 			<div class="pagetitle-separator">
@@ -14,7 +14,7 @@
 					<div class="pagetitle-separator-box"></div>
 				</div>
 			</div>
-			<p><?php echo $current_options['home_blog_description']; ?></p>
+			<p><?php echo esc_html($current_options['home_blog_description']); ?></p>
 		<?php } ?>
 		</div>
 	</div>
@@ -37,20 +37,22 @@
 					</div>
 					<div class="home-blog-info">						
 						<div class="home-blog-post-detail">
-							<span class="date"><?php echo get_the_date(); ?> </span>
-							<span class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comment"></i><?php comments_number( 'No Comments', '1 comments', '% comments' ); ?></a></span>
-												
+							<span class="date"><?php echo esc_html( get_the_date() ); ?> </span>
+							<span class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comment"></i><?php comments_number ( esc_html__('No comments','wallstreet'), esc_html__( '1 comment','wallstreet'), esc_html__('% Comments','wallstreet') ); ?></a></span>
+											
 						</div>
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>		
-						<div class="home-blog-description"><p><?php echo get_the_excerpt(); ?></p></div>
-						<div class="home-blog-btn"><a href="<?php the_permalink(); ?>"><?php _e('Read More','wallstreet'); ?></a></div>							
+						<div class="home-blog-description"><p><?php echo esc_html(get_the_excerpt()); ?></p></div>
+						<div class="home-blog-btn"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','wallstreet'); ?></a></div>							
 					</div>
 				</div>
 			</div>
 			<?php if($j%3==0){ echo "<div class='clearfix'></div>"; } $j++; endwhile; 
-			} else  {
-			echo "<div class='post_message'>No Posts to show.</div>";
-			} ?>
+			} else  { ?>
+				<div class='post_message'>
+					<?php esc_html_e('No Posts to show.','wallstreet');?>
+				</div>
+			<?php } ?>
 	</div>
 </div><!-- /wallstreet Blog Section ---->
 <?php } ?>

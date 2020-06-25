@@ -1,5 +1,5 @@
 /* -----@Media screen Responsive css created by Shahid - Scientech IT ------------------------------------------------------------------------------------------------------- */
-@media only screen and (max-width: 960px) and (min-width: 200px) { 
+@media only screen and (min-width: 1100px) and (max-width: 1200px){
 .navbar-wrapper { position: relative !important; }
 .navbar .navbar-nav > li > a { padding: 25px 19px; }
 .navbar-inverse { background-color: #2a2c33; }
@@ -7,6 +7,7 @@
 
 @media only screen and (min-width: 960px) and (max-width: 1200px) {
 /*Flexslider--------------------------*/
+.navbar-toggle { margin-top: 32px;}
 .flex-slider-center {
     top: 31%;
     width: 910px;
@@ -62,14 +63,7 @@
 	padding: 8px;
 	font-size: 12px;
 }
-
-
-
-
-
 }
-
-
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 /*Flexslider--------------------------*/
@@ -137,10 +131,7 @@
 .flexslider:hover .flex-next {
     right: 30px;
 }
-/*Menu Dropdown--------------*/
-.navbar-right {
-	float: left !important;
-} 
+ 
 /*About Page----------------*/
 .about-section img {
 	margin: 0 0 50px;
@@ -385,10 +376,19 @@
 /* for small size screen all the nested comments comes at the same hierarchical level*/
 .comment-section ul.children{padding-left:0px;}	
 	
-} 
+}
 
-
-@media only screen and (min-width: 200px) and (max-width: 480px) {
+@media only screen and (min-width: 200px) and (max-width: 1200px) {
+.navbar .navbar-nav > li > a {
+	padding: 15px 20px;
+	font-size: 14px;
+	transition: all 0.4s ease 0s;
+}}
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+.head-contact-social {
+	display: none;
+}}
+@media only screen and (min-width: 200px) and (max-width: 768px) {
 /*Header Top Area----------------*/	
 .slide-text-bg3 {
     padding: 0;
@@ -397,9 +397,7 @@
     float: none;
     text-align: center;
 }	
-.head-contact-social {
-	display: none;
-}
+
 .head-contact-info li {
 	margin-right: 10px;
 	margin-left: 10px
@@ -489,11 +487,7 @@
 	border: 1px solid transparent;
 	border-radius: 0px;
 }	
-.navbar .navbar-nav > li > a {
-	padding: 15px 20px;
-	font-size: 14px;
-	transition: all 0.4s ease 0s;
-}	
+	
 .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, 
 .navbar .navbar-nav > .open > a, .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus, 
 .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
@@ -721,3 +715,13 @@
 /* for small size screen all the nested comments comes at the same hierarchical level*/
 .comment-section ul.children{padding-left:0px;}
 }
+@media (max-width: 1099px){
+.navbar-nav .open .dropdown .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}}
