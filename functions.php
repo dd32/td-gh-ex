@@ -233,10 +233,10 @@ function attesa_scripts() {
 	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		wp_enqueue_style( 'font-awesome-4', get_template_directory_uri() .'/css/font-awesome'.$min.'.css', array(), '4.7.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.13.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.13.1');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five_comp') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.13.0');
-		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.13.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.13.1');
+		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.13.1');
 	}
 	
 	$disableGoogleFonts = attesa_options('_disable_google_fonts', '');
