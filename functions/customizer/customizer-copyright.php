@@ -3,13 +3,13 @@
 	$wp_customize->add_panel( 'elitepress_copyright_setting', array(
 		'priority'       => 800,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Footer settings', 'elitepress'),
+		'title'      => esc_html__('Footer settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'copyright_section_one',
         array(
-            'title' => __('Footer copyright settings','elitepress'),
+            'title' => esc_html__('Footer copyright settings','elitepress'),
             'priority' => 35,
 			'panel' => 'elitepress_copyright_setting',
         )
@@ -19,19 +19,19 @@
 	$wp_customize->add_setting(
     'elitepress_lite_options[footer_copyright_text]',
     array(
-       'default' => '<p>'.__('©2017 All Rights Reserved - Webriti. - Designed and Developed by','elitepress').'<a href="http://www.webriti.com/" target="_blank">'.__('Webriti','elitepress').'</a></p>',
+       'default' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">ElitePress</a> by Webriti', 'elitepress' ).'</p>',
 		'type' =>'option',
 		'sanitize_callback' => 'elitepress_copyright_sanitize_text'
 		
-    )
-);
-$wp_customize->add_control(
-    'elitepress_lite_options[footer_copyright_text]',
-    array(
-        'label' => __('Copyright text','elitepress'),
-        'section' => 'copyright_section_one',
-        'type' => 'textarea',
-    ));
+	    )
+	);
+	$wp_customize->add_control(
+	    'elitepress_lite_options[footer_copyright_text]',
+	    array(
+	        'label' => esc_html__('Copyright text','elitepress'),
+	        'section' => 'copyright_section_one',
+	        'type' => 'textarea',
+	    ));
 	
 	
 	$wp_customize->add_setting(
@@ -39,38 +39,23 @@ $wp_customize->add_control(
     array(
         'default' => true ,
 		'type' =>'option',
-		'sanitize_callback' => 'elitepress_copyright_sanitize_text'
+		'sanitize_callback' => 'elitepress_sanitize_checkbox'
 		
-    )
-);
-$wp_customize->add_control(
-    'elitepress_lite_options[footer_menu_bar_enabled]',
-    array(
-        'label' => __('Enable Footer Menu Bar','elitepress'),
-        'section' => 'copyright_section_one',
-        'type' => 'checkbox',
-    ));
-	
-// adding upgrade to por message for slider
-	class WP_Footer_pro_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-    }
-	
-	
+	    )
+	);
+	$wp_customize->add_control(
+	    'elitepress_lite_options[footer_menu_bar_enabled]',
+	    array(
+	        'label' => esc_html__('Enable Footer Menu Bar','elitepress'),
+	        'section' => 'copyright_section_one',
+	        'type' => 'checkbox',
+	));
+		
 	function elitepress_copyright_sanitize_text( $input ) {
 
     return wp_kses_post( force_balance_tags( $input ) );
 
-}
-	
-	function elitepress_copyright_sanitize_html( $input ) {
-
-    return force_balance_tags( $input );
+	}
 
 }
-}
-add_action( 'customize_register', 'elitepress_copyright_customizer' );
-?>
+add_action( 'customize_register', 'elitepress_copyright_customizer' );?>

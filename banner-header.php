@@ -1,6 +1,6 @@
 <?php
 get_header();
-$elitepress_lite_options=theme_data_setup(); 
+$elitepress_lite_options=elitepress_theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
 
 
@@ -35,22 +35,25 @@ $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array(
   $h1=get_post_meta( $post->ID, 'banner_title', true );
   $bd=get_post_meta( $post->ID, 'banner_description', true );
   }
-  ?>
+
+if (get_post_meta( get_the_ID(), 'banner_chkbx', true )) { ?>
 <div class="page-title-section">		
 	<div class="overlay">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="page-title">
-					<h1><?php if($h1!=''){ echo esc_attr($h1); } else{ 
-					_e("Title",'elitepress');} ?></h1>
+					<h1><?php if($h1!=''){ echo esc_html($h1); } else{ 
+					esc_html_e("Title",'elitepress');} ?></h1>
 					<div class="page-title-seprator"></div>
-					 <p><?php if($bd!=''){ echo esc_attr($bd);}  
+					 <p><?php if($bd!=''){ echo esc_html($bd);}  
 					 else { 
-					 echo 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait'; }?></p>
+					 echo esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait','elitepress'); }?></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<?php } ?>
+<div class="clearfix"></div>

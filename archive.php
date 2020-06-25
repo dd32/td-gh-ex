@@ -14,14 +14,19 @@
 					<?php if ( have_posts() ) : ?>
 					<h1 class="archive-title">
 					<?php if ( is_day() ) : ?>
-					<?php  _e( "Daily Archive", 'elitepress' ); echo ' '; echo (get_the_date()); ?>
+					<?php  esc_html_e( "Daily Archive", 'elitepress' ); echo ' '; echo (get_the_date()); ?>
 					<?php elseif ( is_month() ) : ?>
-					<?php  _e( "Monthly Archive", 'elitepress' ); echo ' '; echo (get_the_date( 'F Y' )); ?>
-					<?php elseif ( is_year() ) : ?>
-					<?php  _e( "Yearly Archive", 'elitepress' ); echo ' ';  echo (get_the_date( 'Y' )); ?>
-					<?php else : ?>
-					<?php _e( "Blog Archive", 'elitepress' ); ?>
-					<?php endif; ?>
+					<?php 
+				        $elitepress_monthly_text = __('Monthly Archive','elitepress');
+				        printf( esc_html__( '%1$s %2$s', 'elitepress' ), esc_html($elitepress_monthly_text), esc_html(get_the_date()) ); ?>
+				        <?php elseif ( is_year() ) : ?>
+				        <?php 
+				        $elitepress_yearly_text = __('Yearly Archive','elitepress');
+				        printf( esc_html__( '%1$s %2$s', 'elitepress' ), esc_html($elitepress_yearly_text), esc_html(get_the_date()) ); ?>
+        
+						<?php else : ?>
+						<?php esc_html_e( "Blog Archive","elitepress"); ?>
+						<?php endif; ?>
 					</h1>
 					<?php 
 					if ( have_posts() ) :

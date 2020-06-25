@@ -13,7 +13,7 @@ get_header(); ?>
 			<div class="<?php elitepress_post_layout_class(); ?>" >
 				<div class="site-content">
 					<h1 class="archive-title">
-					<?php  _e( "Category  Archive", 'elitepress' ); echo ' '; echo single_cat_title( '', false ); ?>
+					<?php  esc_html_e( "Category  Archive", 'elitepress' ); echo ' '; echo single_cat_title( '', false ); ?>
 					</h1>
 					<?php 
 					if ( have_posts() ) :

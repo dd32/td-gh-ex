@@ -1,4 +1,4 @@
-<?php $elitepress_lite_options=theme_data_setup(); 
+<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
 if( $current_options['blog_section_enabled']== true ) { ?>
 <!-- Blog Section -->
@@ -9,10 +9,10 @@ if( $current_options['blog_section_enabled']== true ) { ?>
 			<div class="col-md-12 col-sm-12">
 				<div class="section-header">
 					<?php if($current_options['blog_title']) { ?>
-					<h3 class="section-title"><?php echo $current_options['blog_title']; ?></h3>
+					<h3 class="section-title"><?php echo esc_html($current_options['blog_title']); ?></h3>
 					<?php }
 					if($current_options['blog_description']) { ?>
-					<p class="section-subtitle"><?php echo $current_options['blog_description']; ?></p>
+					<p class="section-subtitle"><?php echo esc_html($current_options['blog_description']); ?></p>
 					<?php } ?>
 				</div>
 			</div>		
@@ -21,10 +21,9 @@ if( $current_options['blog_section_enabled']== true ) { ?>
 		
 		<!-- blog -->
 		<div class="row">
-			<?php 
-			$post_type = 'post';
+			<?php
 			$args = array(
-			'post_type' => $post_type, 'posts_per_page' => 3);
+			'post_type' => 'post', 'posts_per_page' => 3);
 			$blog_query = null;
 			$blog_query = new WP_Query($args);
 			if($blog_query->have_posts())
@@ -36,7 +35,7 @@ if( $current_options['blog_section_enabled']== true ) { ?>
 				$defalt_arg =array('class' => "img-responsive"); ?>
 					<div class="post-thumbnail">
 					<?php the_post_thumbnail('', $defalt_arg); ?>
-						<div class="entry-date"><h2><?php echo get_the_date('j'); ?></h2><span><?php echo get_the_date('M'); ?></span></div>
+						<div class="entry-date"><span><?php echo esc_html(get_the_date()); ?></span></div>
 					</div>
 					<?php } ?>
 					<div class="blog-info">
@@ -44,12 +43,14 @@ if( $current_options['blog_section_enabled']== true ) { ?>
 							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						</header>						
 						<div class="entry-content">
-							<p><?php echo get_home_blog_excerpt(); ?></p>
+							<p><?php echo elitepress_get_home_blog_excerpt(); ?></p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php endwhile; } ?>
+			<?php endwhile;
+			wp_reset_postdata();
+			} ?>
 
 		</div>
 		<!-- /blog -->

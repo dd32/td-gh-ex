@@ -7,12 +7,12 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_panel( 'banner_page', array(
 		'priority'       => 900,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Banner settings', 'elitepress'),
+		'title'      => esc_html__('Banner settings', 'elitepress'),
 	) );
 	
 	/* Category Banner */
 	$wp_customize->add_section( 'category_banner' , array(
-		'title'      => __('Category', 'elitepress'),
+		'title'      => esc_html__('Category', 'elitepress'),
 		'panel'  => 'banner_page',
    	) );
 	
@@ -21,7 +21,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_title_category]',
     array(
-        'default' => __('Category title','elitepress'),
+        'default' => esc_html__('Category title','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -30,7 +30,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_title_category]',
     array(
-        'label' => __('Title','elitepress'),
+        'label' => esc_html__('Title','elitepress'),
         'section' => 'category_banner',
         'type' => 'text',
     )
@@ -40,7 +40,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_description_category]',
     array(
-        'default' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
+        'default' => esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -49,7 +49,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_description_category]',
     array(
-        'label' => __('Description','elitepress'),
+        'label' => esc_html__('Description','elitepress'),
         'section' => 'category_banner',
         'type' => 'text',
     )
@@ -58,7 +58,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	
 	/* Archive Banner */
 	$wp_customize->add_section( 'archive_banner' , array(
-		'title'      => __('Archive', 'elitepress'),
+		'title'      => esc_html__('Archive', 'elitepress'),
 		'panel'  => 'banner_page',
    	) );
 	
@@ -67,7 +67,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_title_archive]',
     array(
-        'default' => __('Archive title','elitepress'),
+        'default' => esc_html__('Archive title','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -76,7 +76,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_title_archive]',
     array(
-        'label' => __('Title','elitepress'),
+        'label' => esc_html__('Title','elitepress'),
         'section' => 'archive_banner',
         'type' => 'text',
     )
@@ -86,7 +86,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_description_archive]',
     array(
-        'default' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
+        'default' =>esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -95,7 +95,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_description_archive]',
     array(
-        'label' => __('Description','elitepress'),
+        'label' => esc_html__('Description','elitepress'),
         'section' => 'archive_banner',
         'type' => 'text',
     )
@@ -104,7 +104,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	
 	/* Author Banner */
 	$wp_customize->add_section( 'author_banner' , array(
-		'title'      => __('Author', 'elitepress'),
+		'title'      => esc_html__('Author', 'elitepress'),
 		'panel'  => 'banner_page',
    	) );
 	
@@ -113,7 +113,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_title_author]',
     array(
-        'default' => __('Author title','elitepress'),
+        'default' => esc_html__('Author title','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -122,7 +122,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_title_author]',
     array(
-        'label' => __('Title','elitepress'),
+        'label' => esc_html__('Title','elitepress'),
         'section' => 'author_banner',
         'type' => 'text',
     )
@@ -132,7 +132,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_description_author]',
     array(
-        'default' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
+        'default' => esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -141,7 +141,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_description_author]',
     array(
-        'label' => __('Description','elitepress'),
+        'label' => esc_html__('Description','elitepress'),
         'section' => 'author_banner',
         'type' => 'text',
     )
@@ -150,7 +150,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	
 	/* 404 page Banner */
 	$wp_customize->add_section( 'banner_404_banner' , array(
-		'title'      => __('404', 'elitepress'),
+		'title'      => esc_html__('404', 'elitepress'),
 		'panel'  => 'banner_page',
    	) );
 	
@@ -159,7 +159,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_title_404]',
     array(
-        'default' => __('404 title','elitepress'),
+        'default' => esc_html__('404 title','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -168,7 +168,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_title_404]',
     array(
-        'label' => __('Title','elitepress'),
+        'label' => esc_html__('Title','elitepress'),
         'section' => 'banner_404_banner',
         'type' => 'text',
     )
@@ -178,7 +178,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_description_404]',
     array(
-        'default' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
+        'default' => esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -187,7 +187,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_description_404]',
     array(
-        'label' => __('Description','elitepress'),
+        'label' => esc_html__('Description','elitepress'),
         'section' => 'banner_404_banner',
         'type' => 'text',
     )
@@ -196,7 +196,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	
 	///* Tag Banner */
 	$wp_customize->add_section( 'tag_banner' , array(
-		'title'      => __('Tag', 'elitepress'),
+		'title'      => esc_html__('Tag', 'elitepress'),
 		'panel'  => 'banner_page',
    	) );
 	
@@ -205,7 +205,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_title_tag]',
     array(
-        'default' => __('Tag title','elitepress'),
+        'default' => esc_html__('Tag title','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -214,7 +214,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_title_tag]',
     array(
-        'label' => __('Title','elitepress'),
+        'label' => esc_html__('Title','elitepress'),
         'section' => 'tag_banner',
         'type' => 'text',
     )
@@ -224,7 +224,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_description_tag]',
     array(
-        'default' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
+        'default' => esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -233,7 +233,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_description_tag]',
     array(
-        'label' => __('Description','elitepress'),
+        'label' => esc_html__('Description','elitepress'),
         'section' => 'tag_banner',
         'type' => 'text',
     )
@@ -244,7 +244,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	
 	///* Search Banner */
 	$wp_customize->add_section( 'search_banner' , array(
-		'title'      => __('Search', 'elitepress'),
+		'title'      => esc_html__('Search', 'elitepress'),
 		'panel'  => 'banner_page',
    	) );
 	
@@ -253,7 +253,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_title_search]',
     array(
-        'default' => __('Search title','elitepress'),
+        'default' => esc_html__('Search title','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -262,7 +262,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_title_search]',
     array(
-        'label' => __('Title','elitepress'),
+        'label' => esc_html__('Title','elitepress'),
         'section' => 'search_banner',
         'type' => 'text',
     )
@@ -272,7 +272,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_setting(
     'elitepress_lite_options[banner_description_search]',
     array(
-        'default' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
+        'default' => esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -281,7 +281,7 @@ function elitepress_banner_page_customizer( $wp_customize ){
 	$wp_customize->add_control(
     'elitepress_lite_options[banner_description_search]',
     array(
-        'label' => __('Description','elitepress'),
+        'label' => esc_html__('Description','elitepress'),
         'section' => 'search_banner',
         'type' => 'text',
     )

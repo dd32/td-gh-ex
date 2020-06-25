@@ -1,4 +1,4 @@
-<?php $elitepress_lite_options=theme_data_setup(); 
+<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
 <?php if(is_page_template('blog-left-sidebar.php')) {?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-right'); ?>>
@@ -10,7 +10,7 @@ $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array(
 $defalt_arg =array('class' => "img-responsive"); ?>
 <figure class="post-thumbnail">
 				<?php if(is_active_sidebar('sidebar_primary')){ the_post_thumbnail('', $defalt_arg); } ?>
-				<div class="entry-date"><h2><?php echo get_the_date('j'); ?></h2><span><?php echo get_the_date('M'); ?></span></div>
+				<div class="entry-date"><span><?php echo esc_html(get_the_date()); ?></span></div>
 	</figure><?php } ?>	
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -18,5 +18,5 @@ $defalt_arg =array('class' => "img-responsive"); ?>
 	</header>
 <?php elitepress_post_meta_content(); ?>
 	<div class="entry-content"><?php the_content( __('Read More','elitepress' ) ); ?></div>
-	<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'elitepress' ), 'after' => '</div>' ) ); ?>
+	<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__('Page', 'elitepress' ), 'after' => '</div>' ) ); ?>
 </article>

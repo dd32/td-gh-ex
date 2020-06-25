@@ -1,19 +1,19 @@
 <?php function elitepress_theme_style_customizer( $wp_customize ) {
 	
 //Theme color
-class WP_color_Customize_Control extends WP_Customize_Control {
+class elitepress_WP_color_Customize_Control extends WP_Customize_Control {
 public $type = 'new_menu';
 
        function render_content()
        
 	   {
-	   echo '<h3>'.__('Theme Color','elitepress').'</h3>';
+	   echo '<h3>'.esc_html__('Theme Color','elitepress').'</h3>';
 		  $name = '_customize-color-radio-' . $this->id; 
 		  foreach($this->choices as $key => $value ) {
             ?>
                <label>
-				<input type="radio" value="<?php echo $key; ?>" name="<?php echo esc_attr( $name ); ?>" data-customize-setting-link="<?php echo esc_attr( $this->id ); ?>" <?php if($this->value() == $key){ echo 'checked="checked"'; } ?>>
-				<img <?php if($this->value() == $key){ echo 'class="color_scheem_active"'; } ?> src="<?php echo get_template_directory_uri(); ?>/images/bg-patterns/<?php echo $value; ?>" alt="<?php echo esc_attr( $value ); ?>" />
+				<input type="radio" value="<?php echo esc_attr($key); ?>" name="<?php echo esc_attr( $name ); ?>" data-customize-setting-link="<?php echo esc_attr( $this->id ); ?>" <?php if($this->value() == $key){ echo 'checked="checked"'; } ?>>
+				<img <?php if($this->value() == $key){ echo 'class="color_scheem_active"'; } ?> src="<?php echo esc_url(ELITEPRESS_TEMPLATE_DIR_URI); ?>/images/bg-patterns/<?php echo $value; ?>" alt="<?php echo esc_attr( $value ); ?>" />
 				</label>
 				
             <?php
@@ -32,16 +32,16 @@ public $type = 'new_menu';
 
 }
 $wp_customize->add_section( 'header_image' , array(
-		'title'      => __('Theme style setting', 'elitepress'),
+		'title'      => esc_html__('Theme style setting', 'elitepress'),
 		'priority'   => 190,
    	) );
 	
 	$wp_customize->add_setting(
     'elitepress_lite_options[layout_selector]',
     array(
-        'default' => __('wide','elitepress'),
+        'default' => esc_html__('wide','elitepress'),
 		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'elitepress_sanitize_select',
 		
     )
 	);
@@ -50,7 +50,7 @@ $wp_customize->add_section( 'header_image' , array(
     'elitepress_lite_options[layout_selector]',
     array(
         'type' => 'select',
-        'label' => __('Theme Layout','elitepress'),
+        'label' => esc_html__('Theme Layout','elitepress'),
         'section' => 'header_image',
 		'sanitize_callback' => 'sanitize_text_field',
 		'choices' => array('wide'=>'wide', 'boxed'=>'boxed'),
@@ -58,33 +58,23 @@ $wp_customize->add_section( 'header_image' , array(
 	
     $wp_customize->add_setting(
 	'elitepress_lite_options[webriti_stylesheet]', array(
-        'default'        => 'default.css',
+        'default'        => esc_html__('default','elitepress'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'elitepress_sanitize_radio',
     ));
     
-	$wp_customize->add_control(new WP_color_Customize_Control($wp_customize,'elitepress_lite_options[webriti_stylesheet]',
+	$wp_customize->add_control(new elitepress_WP_color_Customize_Control($wp_customize,'elitepress_lite_options[webriti_stylesheet]',
 	array(
-        'label'   => 'Theme Color Schemes',
+        'label'   => esc_html__('Theme Color Schemes','elitepress'),
         'section' => 'header_image',
 		'type' => 'radio',
 		'choices' => array(
-			'default.css' => 'blue.png',
-			'bittersweet.css' => 'default.png',
+			'default' => 'blue.png',
+			'bittersweet' => 'default.png',
     )
 	)));
-	
-	
-	// adding upgrade to por message for slider
-	class WP_theme_style_pro_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-		
-    }
-	
+
 	
 }
 	add_action( 'customize_register', 'elitepress_theme_style_customizer' );

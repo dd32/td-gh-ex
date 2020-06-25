@@ -107,7 +107,7 @@ body.boxed { width: 100%; }
 
 } 
 
-@media only screen and (min-width: 200px) and (max-width: 480px) {
+@media only screen and (min-width: 200px) and (max-width: 1100px) {
 
 .navbar-collapse.in { overflow: hidden; }
 .container > .navbar-header, .container-fluid > .navbar-header, 

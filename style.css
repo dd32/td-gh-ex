@@ -4,12 +4,47 @@ Theme URI: https://webriti.com/elitepress-wordpress-theme-lite/
 Author: Webriti
 Author URI: https://webriti.com/
 Description: ElitePress is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In ElitePress Lite, you can easily set Social Icons in the header, Contact Information, Services, Portfolio, and a 3-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get a boxed layout, 7 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of ElitePress theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/elitepress
-Version:  1.8.3
+Version:  1.9
+Requires at least: 4.5
+Tested up to: 5.4.2
+Requires PHP: 5.4
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready , custom-background, sticky-post, right-sidebar, featured-images, blog, footer-widgets
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl.html
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: elitepress
 */
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Common
+2.0 Top Header
+	2.1 Top Header Social Icons
+	2.2 Top Header Contact Info 
+3.0 Header top Widget Styles
+4.0 Site Logo
+5.0 Theme Slider Section
+6.0 Homepage Top Callout
+7.0 Section Header Title
+8.0 Service Section
+9.0 Portfolio Section
+10.0 Homepage Blog Section
+11.0 Footer Widget Section
+12.0 Page Title Section
+13.0 Blog
+	13.1 Blog Section
+	13.1 Blog Detail Section
+14.0 Sidebar Section
+15.0 404 Page
+16.0 Wp Default Core classes
+17.0 Contact Form 7
+18.0 Page Scroll To Top Button
+19.0 Skip Link
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Common
+--------------------------------------------------------------*/
 
 body {
     padding:0;
@@ -32,7 +67,11 @@ p, .entry-content { font-family: 'Lato', Sans-serif; font-weight: 400; font-size
 img { display: block; max-width: 100%; height: auto; }
 .bg-white { background-color: #fff !important; border: 0 none !important; }
 
-/* Top Header Social Icons css---------------------------------------------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+2.1 Top Header Social Icons
+--------------------------------------------------------------*/
+
 .header-section { background-color: #FFFFFF; }
 .header-section .widget { margin: 35px 0; }
 .header-info .widget.elitepress_header_widget { margin: 7px 0; }
@@ -69,7 +108,12 @@ img { display: block; max-width: 100%; height: auto; }
 .head-contact-social li > a:before { display: none; }
 .head-contact-social li > a > i { font-size: 15px; line-height: 2.4; color: #FFFFFF; }
 .head-contact-info { display: block; float: right; margin: 10px 0 10px; padding: 0; }
-/* Top Header Contact Info css--------------------------------------------------------------------------------------------- */
+
+
+/*--------------------------------------------------------------
+2.2 Top Header Contact Info
+--------------------------------------------------------------*/
+
 .contact-area { margin: 0px; padding: 0px; }
 .contact-icon { float: left; margin: 0 18px 0 0; padding: 0; }
 .contact-icon i { font-size: 30px; transition: all 0.3s ease-in-out 0s; }
@@ -100,7 +144,11 @@ img { display: block; max-width: 100%; height: auto; }
 	#top-header-sidebar-right .contact-area, .contact-area .contact-icon { float: none; text-align: center; }
 } 
 
-/*Header top Widget Styles------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+3.0 Header top Widget Styles
+--------------------------------------------------------------*/
+
 .header-info .widget-title, 
 .header-info a, 
 .header-info a:hover, 
@@ -159,12 +207,19 @@ img { display: block; max-width: 100%; height: auto; }
     box-shadow: 0 3px 0 0 #0a0b0c; 
 }
 
-/* Site Logo --------------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+4.0 Site Logo
+--------------------------------------------------------------*/
+
 .site-logo { margin: 35px 0 34px 0; }
 .site-logo h1 { font-family: 'Lato', sans-serif; font-weight: 400; margin: 0; text-transform: uppercase; }
 .site-logo h1 > a > span { color: #c5c5c5; }
 
-/* Theme Slider Section css--------------------------------------------------------------------------------------------- */
+/*--------------------------------------------------------------
+5.0 Theme Slider Section
+--------------------------------------------------------------*/
+
 .homepage-mycarousel { height: 100%; margin-bottom: 0px; position: relative; width: 100%; }
 .flexslider .slides > li > img { margin: 0 auto; }
 .flex-slider-center {	
@@ -239,7 +294,10 @@ img { display: block; max-width: 100%; height: auto; }
 .flex-btn:hover:after, .flex-btn:active:after {height: 100%;} 
 .btn1:hover { border-radius: 0px; }
 
-/*Homepage Top Callout Css------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+6.0 Homepage Top Callout
+--------------------------------------------------------------*/
+
 .top-callout-section { background: #22262c; margin: 0px; width: 100%; padding: 35px 0; }
 .top-callout-section h2 { color: #ffffff; font-family: "Lato"; font-weight:400; line-height: 33px; margin: 0 0 10px; font-size: 27px; letter-spacing: 1px; }
 .top-callout-section p { color: #bdbdbd; font-size: 18px; margin: 0px; }
@@ -264,7 +322,11 @@ img { display: block; max-width: 100%; height: auto; }
 	white-space: nowrap;
 }
 
-/*Section Header Title Css---------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+7.0 Section Header Title
+--------------------------------------------------------------*/
+
 .section-header { margin: 0 0 60px; clear: both; }
 .section-title {
     color: #FFFFFF;
@@ -293,7 +355,11 @@ img { display: block; max-width: 100%; height: auto; }
 .section-title:before { border-color: rgba(243, 101, 187, 0); border-width: 22px; margin-top: -22px; }
 .section-subtitle { position: relative; line-height: 23px; margin: 0; z-index: 100; }
 
-/*Service Section Css---------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+8.0 Service Section
+--------------------------------------------------------------*/
+
 .service { margin: 0px; padding: 80px 0 30px;}
 .service-box {
 	background: #ffffff;
@@ -341,7 +407,7 @@ img { display: block; max-width: 100%; height: auto; }
 	font-weight: 600;
     font-size: 15px;
     line-height: 20px;
-    margin: 3px 0 0px;
+    margin: 3px 3px 0px;
 	letter-spacing: 1px;
     padding: 0;
     transition: all 0.2s ease 0s;
@@ -366,7 +432,11 @@ img { display: block; max-width: 100%; height: auto; }
 .col-md-4:nth-child(3n+1){ clear: left; }
 .col-md-6:nth-child(2n+1){ clear: left; }
 
-/*Portfolio Section Css---------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+9.0 Portfolio Section
+--------------------------------------------------------------*/
+
 .portfolio { background-color: #f7f8fa; border-top: 1px solid #e6e7e9; border-bottom: 1px solid #e6e7e9; margin: 0; padding: 80px 0px 30px; }
 .portfolio-area { margin: 0 0 50px; }
 .portfolio-info {
@@ -411,7 +481,11 @@ img { display: block; max-width: 100%; height: auto; }
 	transform: scale(1.10);
 }
 
-/*Homepage Blog Section Css here---------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+10.0 Homepage Blog Section 
+--------------------------------------------------------------*/
+
 .home-blog { margin: 0px; padding: 80px 0 30px; }
 .home-blog .post { background-color: transparent; border: 0; border-radius: 0; margin: 0 0 50px; transition: all 0.3s ease 0s; }
 .home-blog .post:hover { box-shadow: 0 8px 6px -3px rgba(0, 0, 0, 0.3); }
@@ -441,7 +515,11 @@ img { display: block; max-width: 100%; height: auto; }
 .home-blog .entry-header .entry-title { margin: 0 0 16px; }
 .home-blog .entry-header .entry-title > a { font-weight: 600; }
 
-/*Footer Widget Section Css here---------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+11.0 Footer Widget Section
+--------------------------------------------------------------*/
+
 .site-footer { margin: 0px; padding: 50px 0 0px; background-color: #1d1d1d; }
 .footer-contact-info { border-bottom: 1px dashed #a8b5c1; display: block; padding: 0 0 30px; text-align: center; width: 100%; }
 .footer-contact-info h2 { color: #8c97a1; text-align: center; font-family: "Lato"; font-weight:400; margin: 0 0 25px; display: block; letter-spacing: 1px; }
@@ -469,7 +547,11 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-menu-links li:last-child { border-right: 0; margin-right: 0px; }
 .footer-menu-links li > a { color: #ffffff; font-family: 'Lato'; font-weight: 500; font-size: 15px; line-height: 20px; transition: all 0.3s ease 0s; letter-spacing: 1px; }
 
-/*Page Title Section Css------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+12.0 Page Title Section
+--------------------------------------------------------------*/
+
 .page-title-section {
     height: 100%;
     margin: 0px;
@@ -492,12 +574,16 @@ img { display: block; max-width: 100%; height: auto; }
 .page-title p { color: #eeeeee; font-size: 18px; line-height: 27px; letter-spacing: 1px; padding: 0; text-align: center; }
 .page-title-seprator { background-color: #fff; height: 4px;	margin: 17px auto 17px;	width: 50px; }
 
-/*Blog Section Css-----------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+13.1 Blog Section
+--------------------------------------------------------------*/
+
 .blog-section { margin: 0; padding: 80px 0 20px; }
 .site-content .post { background-color: #ffffff; border-bottom: 1px dashed #c5d1dc; margin-bottom: 60px; padding: 0; }
 .blog-left { margin-right: 10px; }
 .post-thumbnail { margin: 0 0 21px; margin-top: 0px; width: 100%; overflow: hidden; position: relative; }
-.entry-date { left: 0px; bottom: 0; position: absolute; text-align: center; padding: 7px 5px 5px; width: 77px; height: 77px; }
+.entry-date { left: 0px; bottom: 0; position: absolute; text-align: center; padding: 7px 5px 5px;width: 125px;height: 40px;}
 .entry-date h2 { color: #ffffff; font-family: 'Lato'; font-weight: 600; text-align: center; margin: 0; }
 .entry-date span { color: #ffffff; font-family: 'Lato'; font-weight: 700; font-size: 14px; line-height: 25px; text-align: center; letter-spacing: 1px; margin: 0px; }
 .site-content .post .entry-header { display: block; margin: 0 0 6px; padding: 0; }
@@ -568,7 +654,11 @@ img { display: block; max-width: 100%; height: auto; }
 .page-template-fullwidth .blog-section { padding-bottom: 60px; }
 .page-template-default .site-content { padding-bottom: 40px; }
 
-/*Blog Detail Section Css------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+13.2 Blog Detail Section
+--------------------------------------------------------------*/
+
 /*Blog Author Info*/
 .author-info {
 	background-color: #f5f6f8;
@@ -607,7 +697,7 @@ img { display: block; max-width: 100%; height: auto; }
 .author-avatar { float: none; margin: 4px 30px 7px 0px; }   
 }
 /*Comment Section*/
-.comment-section { background-color: #transparent; float: none;	margin: 0 0 10px; padding: 0px;	margin-right: 10px; }
+.comment-section { background-color: transparent; float: none;	margin: 0 0 10px; padding: 0px;	margin-right: 10px; }
 .comment-title { border-bottom: 1px solid #d6dfdf; display: block; margin: 0 0 30px; padding: 0 0 15px; }
 .comment-title h3 { font-weight: 600; letter-spacing: 1px; margin: 0px; }
 .comment-box { margin: 0px !important; padding: 0px 0 0; position: relative; }
@@ -647,7 +737,11 @@ img { display: block; max-width: 100%; height: auto; }
 .comment-form .blog-form-group-textarea, .contact-form-group-textarea { display: inline-block; margin-bottom: 20px; vertical-align: middle; width: 99.3%; }
 .blog-form-group, .contact-form-group, .contact-form-group-textarea { margin: 0px 5px 20px 0px; }
 
-/*Sidebar Section Css---------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+14.0 Sidebar Section
+--------------------------------------------------------------*/
+
 .sidebar-section-right { background-color: transparent; border-left: 1px dashed #c5d1dc; margin-top: 0px; margin-bottom: 70px; margin-left: 0; padding: 0 0px 0 30px; }
 .sidebar-widget { margin-bottom: 70px; margin-top: 0; overflow: hidden; padding: 0px; }
 .sidebar-widget:last-child { margin-bottom: 0px; }
@@ -694,7 +788,11 @@ img { display: block; max-width: 100%; height: auto; }
 	margin: 0 0 5px;
 }
 
-/*404 Page Css-------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+15.0 404 Page
+--------------------------------------------------------------*/
+
 .error-section { margin: 40px 0 0px; padding: 0px 0 0px; }
 .error_404 { clear: both; text-align: center; padding: 30px 0 70px; }
 .error_404 h1 { color: #2a2e34; font-size: 170px; line-height: 160px; margin: 20px 0; font-family: 'Motley'; }
@@ -892,7 +990,12 @@ input#pwbox-1168{
 .rsswidget { font-weight: 500; }
 .rsswidget a { color:hsl(208, 6%, 59%); }
 .rssSummary { padding: 5px 0 5px; font-weight: 400; line-height: 25px; font-family: 'Lato'; font-weight:700; }
-/* Wp Default Core classes ------------------------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+16.0 Wp Default Core classes
+--------------------------------------------------------------*/
+
 /* Blockquote*/
 blockquote { 
 	font-family: 'Lato', Sans-serif;
@@ -1036,7 +1139,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 /*Additional Important need*/
 .wp-caption .wp-caption-text { margin: 0 0 20px !important; } 
 /*Image Alignment*/
-.sticky{}
+.sticky{ background-color: #fafad2!important;padding: 20px!important;}
 cite{ font-style: italic !important; }
 .alignleft { display: inline; float: left; }
 .alignright { display: inline; float: right; }
@@ -1163,7 +1266,11 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
 }
 .page-links a:hover { text-decoration: none; }
 
-/*Contact Form 7 CSS-----------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+17.0 Contact Form 7
+--------------------------------------------------------------*/
+
 .wpcf7-form label { display: block; margin: 0 0 15px; }
 .wpcf7-form .wpcf7-form-control-wrap { display: block; margin: 5px 0 0; }
 .wpcf7-form .wpcf7-list-item-label { font-weight: 400; }
@@ -1183,7 +1290,10 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
 	border: 0 none;
 }
 
-/*Page Scroll To Top Button-----------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+18.0 Page Scroll To Top Button
+--------------------------------------------------------------*/
+
 .hc_scrollup {
     color: #ffffff;
     border-radius: 0px;
@@ -1201,3 +1311,42 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
 }
 .hc_scrollup:hover { opacity: 1; }
 .hc_scrollup i { font-size: 18px; }
+
+
+/*--------------------------------------------------------------
+19.0 Skip Link
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.elitepress-screen-reader {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+}
+
+.elitepress-screen-reader:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+.navbar-toggle:focus,.open > a:focus,textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;}

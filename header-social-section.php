@@ -1,5 +1,5 @@
 <!-- Header social & Contact Info -->
-<?php $elitepress_lite_options=theme_data_setup();
+<?php $elitepress_lite_options=elitepress_theme_data_setup();
 		$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); 
 		$pro_slider_data1 = get_option('elitepress_lite_options');
 	if(!isset($pro_slider_data1['contact_email']))
@@ -10,15 +10,15 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div id="top-header-sidebar-left">
-					<?php if( is_active_sidebar('home-header-sidebar_left') ) { ?>
-					<?php  dynamic_sidebar( 'home-header-sidebar_left' ); ?>
+					<?php if( is_active_sidebar('home-header_left') ) { ?>
+					<?php  dynamic_sidebar( 'home-header_left' ); ?>
 					<?php } ?>				
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div id="top-header-sidebar-right">
-					<?php if( is_active_sidebar('home-header-sidebar_right') ) { ?>
-					<?php  dynamic_sidebar( 'home-header-sidebar_right' ); ?>
+					<?php if( is_active_sidebar('home-header_right') ) { ?>
+					<?php  dynamic_sidebar( 'home-header_right' ); ?>
 					<?php } ?>
 				</div>
 			</div>
@@ -32,12 +32,12 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div id="top-header-sidebar-left">
-					<?php  dynamic_sidebar( 'home-header-sidebar_left' ); ?>
+					<?php  dynamic_sidebar( 'home-header_left' ); ?>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div id="top-header-sidebar-right">
-					<?php  dynamic_sidebar( 'home-header-sidebar_right' ); ?>
+					<?php  dynamic_sidebar( 'home-header_right' ); ?>
 				</div>
 			</div>
 		</div>		
@@ -89,13 +89,13 @@
 			<?php if($current_options['contact_address_settings']==true) { ?>
 				<ul class="head-contact-info">
 					<?php if($current_options['contact_email']){ ?>
-					<li><a href="mailto:<?php echo $current_options['contact_email'];?>"><?php echo $current_options['contact_email'];?><i class="fa fa-envelope"></i></a></li>
+					<li><a href="mailto:<?php echo esc_url($current_options['contact_email']);?>"><?php echo esc_html($current_options['contact_email']);?><i class="fa fa-envelope"></i></a></li>
 					<?php } ?>
 					<?php if(($current_options['contact_email']) && ($current_options['contact_phone_number'])){ ?>
-					<li><span class="line"><?php echo '&#124'; ?></span></li>
+					<li><span class="line"><?php echo esc_html__('&#124','elitepress'); ?></span></li>
 					<?php } ?>
 					<?php if($current_options['contact_phone_number']){ ?>
-					<li><i class="fa fa-phone"></i><?php echo $current_options['contact_phone_number']; ?></li>
+					<li><i class="fa fa-phone"></i><?php echo esc_html($current_options['contact_phone_number']); ?></li>
 					<?php } ?>
 				</ul>
 			</div>

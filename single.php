@@ -10,7 +10,7 @@ get_template_part('banner','header');
 				<div class="site-content">
 				<?php 
 					while(have_posts()) { the_post();
-					 get_template_part('content',''); ?>
+					 get_template_part('content','single'); ?>
 					<!--Blog Author Info-->
 					<div class="author-info">
 						

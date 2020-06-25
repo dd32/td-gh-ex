@@ -9,12 +9,10 @@ jQuery(window).load(function(){
 			animation: "slide",
 			animationSpeed: 1500,
 			direction: "horizontal",
-			directionNav: true, 
-			//prevText: "Previous",          
-			//nextText: "Next",
+			directionNav: true,
 			easing: "swing",  
 			
-			
+			keyboard:true,
 			controlNav: true,			
 			slideshowSpeed: 3000,
 			pauseOnHover: true, 
@@ -24,5 +22,17 @@ jQuery(window).load(function(){
 			}			
 		  });
 		  
+		  jQuery('.flexslider a').each(function(){
+	  jQuery(this).on('focus', function(){
+	  	jQuery('.flexslider').flexslider('pause')
+	  })
+});
+jQuery('a,input').each(function(){
+	  jQuery(this).on('focus', function(){
+	  	  if(!jQuery(this).closest(".flexslider").length ) {
+	  	jQuery('.flexslider').flexslider('play')
+	  	}
+	  })
+});
 		  
 		});

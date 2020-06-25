@@ -36,14 +36,14 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 		<?php endif; ?>
 
 		<?php if ( ! empty( $this->description ) ) : ?>
-			<span class="description customize-control-description"><?php echo $this->description; ?></span>
+			<span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
 		<?php endif; ?>
 
 		<div id="<?php echo esc_attr( "input_{$this->id}" ); ?>">
 
 			<?php foreach ( $this->choices as $value => $args ) : ?>
 
-				<input type="radio" disabled value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( "_customize-radio-{$this->id}" ); ?>" id="<?php echo esc_attr( "{$this->id}-{$value}" ); ?>" <?php $this->link(); ?> <?php checked( $this->value(), $value ); ?> />
+				<input type="radio" disabled value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( "_customize-radio-{$this->id}" ); ?>" id="<?php echo esc_attr( "{$this->id}-{$value}" ); ?>" <?php esc_url($this->link()); ?> <?php checked( $this->value(), $value ); ?> />
 
 				<label for="<?php echo esc_attr( "{$this->id}-{$value}" ); ?>">
 					<?php if ( ! empty( $args['label'] ) ) { ?>
@@ -160,112 +160,27 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 	$wp_customize->add_panel( 'header_options', array(
 		'priority'       => 200,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header settings', 'elitepress'),
+		'title'      => esc_html__('Header settings', 'elitepress'),
 	) );
 	
-	
-	/* favicon option */
-    $wp_customize->add_section( 'elitepress_favicon' , array(
-      'title'       => __('Site favicon', 'elitepress' ),
-      'priority'    => 300,
-	  'panel'  => 'header_options',
-    ) );
-    
-    $wp_customize->add_setting('elitepress_lite_options[upload_image_favicon]', array(
-      'sanitize_callback' => 'esc_url_raw',
-	   'capability'     => 'edit_theme_options',
-	   'type' => 'option', 
-    ) );
-    
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'elitepress_lite_options[upload_image_favicon]', array(
-      'label'    => __('Site favicon', 'elitepress' ),
-      'section'  => 'elitepress_favicon',
-    ) ) );
-	
-	
-	//Header logo setting
-	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header logo settings', 'elitepress'),
-		'panel'  => 'header_options',
-		'priority'   => 400,
-   	) );
-	$wp_customize->add_setting(
-		'elitepress_lite_options[upload_image_logo]'
-		, array(
-        'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
-		'type' => 'option',
-    ));
-	
-	$wp_customize->add_control(
-		   new WP_Customize_Image_Control(
-			   $wp_customize,
-			   'elitepress_lite_options[upload_image_logo]',
-			   array(
-				   'label'          => __('Upload logo','elitepress' ),
-				   'section'        => 'header_logo',
-				   'priority'   => 50,
-			   )
-		   )
-	);
-	
-	//Enable/Disable logo text
-	$wp_customize->add_setting(
-    'elitepress_lite_options[text_title]',array(
-	'default'    => false,
-	'sanitize_callback' => 'sanitize_text_field',
-	'type' => 'option'
-	));
-
-	$wp_customize->add_control(
-    'elitepress_lite_options[text_title]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Show Logo text','elitepress'),
-        'section' => 'header_logo',
-		'priority'   => 100,
-    )
-	);
-	
-	
-	//Logo width
-	
-	$wp_customize->add_setting(
-    'elitepress_lite_options[width]',array(
-	'sanitize_callback' => 'sanitize_text_field',
-	'default' => 100,
-	'type' => 'option',
-	
-	));
-
-	$wp_customize->add_control(
-    'elitepress_lite_options[width]',
-    array(
-        'type' => 'text',
-        'label' => __('Enter Logo width','elitepress'),
-        'section' => 'header_logo',
-		'priority'   => 400,
-    )
-	);
-	
-	//Logo Height
-	$wp_customize->add_setting(
-    'elitepress_lite_options[height]',array(
-	'sanitize_callback' => 'sanitize_text_field',
-	'default' => 50,
-	'type'=>'option',
-	
-	));
-
-	$wp_customize->add_control(
-    'elitepress_lite_options[height]',
-    array(
-        'type' => 'text',
-        'label' => __('Enter Logo Height','elitepress'),
-        'section' => 'header_logo',
-		'priority'   =>410,
-    )
-	);
+	// Header logo text checkbox
+    $wp_customize->add_setting(
+            'header_text',
+            array(
+                'theme_supports'    => array( 'custom-logo', 'header-text' ),
+                'default'           => false,
+                'sanitize_callback' => 'absint',
+            )
+        );
+    $wp_customize->add_control(
+        'header_text',
+        array(
+            'label'    => esc_html__( 'Display Site Title and Tagline', 'elitepress'),
+            'section'  => 'title_tagline',
+            'settings' => 'header_text',
+            'type'     => 'checkbox',
+        )
+    ); 
 	
     $wp_customize->add_setting(
 	'elitepress_lite_options[google_analytics]', array(
@@ -274,7 +189,7 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[google_analytics]', array(
-        'label'   => __('Google tracking code', 'elitepress'),
+        'label'   => esc_html__('Google tracking code', 'elitepress'),
         'section' => 'header_logo',
         'type'    => 'textarea',
 		'priority'   => 412,
@@ -283,7 +198,7 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 	
 	//Custom css
 	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom CSS', 'elitepress'),
+		'title'      => esc_html__('Custom CSS', 'elitepress'),
 		'panel'  => 'header_options',
 		'priority'   => 100,
    	) );
@@ -291,11 +206,11 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 	'elitepress_lite_options[webrit_custom_css]'
 		, array(
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_filter_nohtml_kses',
 		'type'=> 'option',
     ));
     $wp_customize->add_control( 'elitepress_lite_options[webrit_custom_css]', array(
-        'label'   => __('Custom CSS', 'elitepress'),
+        'label'   => esc_html__('Custom CSS', 'elitepress'),
         'section' => 'custom_css',
         'type' => 'textarea',
 		'priority'   => 100,
@@ -315,53 +230,22 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 	
 	//Show and hide Header Search Bar
 	$wp_customize->add_setting(
-	'elitepress_lite_options[header_search_bar_enabled]'
-    ,
+	'elitepress_lite_options[header_search_bar_enabled]' ,
     array(
         'default' => true,
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'elitepress_sanitize_checkbox',
 		'type' => 'option',
     )	
 	);
 	$wp_customize->add_control(
     'elitepress_lite_options[header_search_bar_enabled]',
     array(
-        'label' => __('Enable search bar on header','elitepress'),
+        'label' => esc_html__('Enable search bar on header','elitepress'),
         'section' => 'header_search_bar',
         'type' => 'checkbox',
     )
 	);
 	
-		// adding upgrade to por message for slider
-	class WP_Header_pro_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-    }
-	
-	}
-	add_action( 'customize_register', 'elitepress_header_customizer' );
-	
-	function elitepress_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
-    }
-
-    function elitepress_sanitize_radio( $input, $setting ){
-         
-            //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-            $input = sanitize_key($input);
- 
-            //get the list of possible radio box options 
-            $choices = $setting->manager->get_control( $setting->id )->choices;
-                             
-            //return input if valid or return default option
-            return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
-             
-    }
-	
-	
-	
-	?>
+}
+add_action( 'customize_register', 'elitepress_header_customizer' );	?>

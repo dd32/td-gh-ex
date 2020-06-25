@@ -9,7 +9,7 @@ get_template_part('banner','header'); ?>
 				<div class="site-content">
 				<?php if ( have_posts() ) { ?>
 				<h1 class="archive-title">
-				<?php printf( __("Search results for %s",'elitepress'), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( esc_html__("Search results for %s",'elitepress'), '<span>' . get_search_query() . '</span>' ); ?>
 				</h1>
 				<?php 
 				if ( have_posts() ) :
@@ -29,9 +29,9 @@ get_template_part('banner','header'); ?>
 				</div>
 				<?php } else { ?>
 				<div class="search_error">
-					<div class="search_err_heading"><h2><?php _e( "Nothing Found", 'elitepress' ); ?></h2> </div>
+					<div class="search_err_heading"><h2><?php esc_html_e( "Nothing Found", 'elitepress' ); ?></h2> </div>
 					<div class="elegent_searching">
-						<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'elitepress' ); ?></p>
+						<p><?php esc_html_e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'elitepress' ); ?></p>
 					</div>
 				</div>
 			<?php get_search_form();

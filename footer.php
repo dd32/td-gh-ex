@@ -1,4 +1,4 @@
-<?php $elitepress_lite_options=theme_data_setup(); 
+<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); 
 if ( is_active_sidebar( 'footer_widget_area' ) ) { ?>
 <!-- Footer Section -->
@@ -19,7 +19,7 @@ if ( is_active_sidebar( 'footer_widget_area' ) ) { ?>
 		<div class="row">
 			<div class="col-md-7">
 				<div class="footer-copyright">
-					<?php echo $current_options['footer_copyright_text'];?>
+					<?php echo wp_kses_post($current_options['footer_copyright_text']);?>
 				</div>
 			</div>
 			<div class="col-md-5">
@@ -30,7 +30,7 @@ if ( is_active_sidebar( 'footer_widget_area' ) ) { ?>
 					'container'  => 'nav-collapse collapse navbar-inverse-collapse',
 					'menu_class' => 'footer-menu-links',
 					'fallback_cb' => 'webriti_fallback_page_menu',
-					'walker' => new webriti_nav_walker()
+					'walker' => new elitepress_nav_walker()
 					)
 				);	
 			?>

@@ -11,7 +11,7 @@ get_template_part('index', 'banner');
 				<div class="site-content">
 					<div id="post-<?php the_ID(); ?>" <?php post_class('blog-full'); ?>>
 					<div class="entry-content"><?php the_post(); the_content( __('Read More','elitepress' ) ); ?></div>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'elitepress' ), 'after' => '</div>' ) ); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__('Page', 'elitepress' ), 'after' => '</div>' ) ); ?>
 					</div>
 				</div>
 			</div>

@@ -16,15 +16,15 @@ if ( get_post_meta($postid, 'banner_chkbx', true) || get_post_meta($postid, 'ban
 				<div class="col-md-12">
 					<div class="page-title">
 						<?php if( get_post_meta($postid, 'banner_title', true)) { ?>
-						<h1><?php echo get_post_meta($postid, 'banner_title', true); ?></h1>
+						<h1><?php echo esc_html(get_post_meta($postid, 'banner_title', true)); ?></h1>
 						<div class="page-title-seprator"></div>
 						<?php } else { ?>
 						<h1><?php the_title(); ?></h1>
 						<?php } ?>
 						<?php if( get_post_meta($postid, 'banner_description', true)) { ?>
-						<p><?php echo get_post_meta($postid, 'banner_description', true); ?></p>
+						<p><?php echo esc_html(get_post_meta($postid, 'banner_description', true)); ?></p>
 						<?php } else { ?>
-						<p><?php echo 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.'; ?></p>
+						<p><?php esc_html_e('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'); ?></p>
 						<?php }  ?>
 					</div>
 				</div>
@@ -43,7 +43,7 @@ if ( get_post_meta($postid, 'banner_chkbx', true) || get_post_meta($postid, 'ban
 					<?php 	
 					while(have_posts()):the_post();
 					global $more;
-					$more = 0;
+					//$more = 0;
 					get_template_part('content',''); 
 					endwhile; ?>
 					<div class="paginations">

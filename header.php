@@ -4,25 +4,21 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />    
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<?php $elitepress_lite_options=theme_data_setup(); 
-	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
-	<?php if($current_options['upload_image_favicon']!=''){ ?>
-	<link rel="shortcut icon" href="<?php  echo esc_url($current_options['upload_image_favicon']); ?>" /> 
-	<?php } ?>
 	<?php wp_head(); ?>
 </head>
-	<?php
+	<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
+	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
 	if($current_options['layout_selector'] == "boxed")
 	{ $class="boxed"; }
 	else
 	{ $class="wide"; }
 	?>
 <body <?php body_class($class); ?> >
-<!-- Wrapper -->
-<div id="wrapper">
+<?php wp_body_open(); ?>
+<a class="skip-link elitepress-screen-reader" href="#wrapper"><?php esc_html_e('Skip to content', 'elitepress'); ?></a>
+
 <!-- Header Section -->
 <header class="header-section">
-
 	
 	<?php get_template_part('header','social-section'); ?>
 	
@@ -32,4 +28,7 @@
 	
 	
 </header>	
-<!-- /Header Section -->	
+<!-- /Header Section -->
+
+<!-- Wrapper -->
+<div id="wrapper">
