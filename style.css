@@ -3,14 +3,69 @@ Theme Name: Rambo
 Theme URI:  https://webriti.com/rambo-lite-version-details-page/
 Author: Webriti
 Author URI: https://webriti.com/
-Tags: full-width-template, threaded-comments, right-sidebar, left-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, portfolio, photography, footer-widgets
+Tags: full-width-template, threaded-comments, right-sidebar, left-sidebar, one-column, custom-menu, sticky-post, translation-ready, featured-images, blog, photography, footer-widgets
 Description: Rambo is an ideal WordPress theme for those who wish to create an impressive web presence. Rambo is easy to use, provides everything you need to create great looking website. It is professional, smooth and sleek, with a clean modern layout, for almost any business types: agency, freelance, blog, startup, portfolio, corporate, firms, law firms, digital media agency , architecture firms, real estate firms, food , fashion etc etc. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the modern devices like mobiles, tablets, laptops etc. In Rambo Lite, you can easily set Featured Banner, Services, Portfolio and 4 column widgetized footer. Page templates like Homepage, Full Width Page and Blog left sidebar template will be there. In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language. Check premium version theme demo at http://webriti.com/demo/wp/rambo
-Version: 1.9.1
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl.html
+Version: 2.0
+Requires at least: 4.5
+Tested up to: 5.4.2
+Requires PHP: 5.4
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v2 or later
 Text Domain: rambo
 */
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Common
+2.0 Top Header
+3.0 Homepage Banner
+4.0 Five Column css
+5.0 Logo
+6.0 Menu
+7.0 Homerpage Service
+8.0 Featured Portfolio Project
+9.0 Lated News
+10.0 PURCHASE NOW SECTION
+11.0 ABOUT US PAGE
+12.0 WIDGET SECTION
+	12.1 SIDEBAR TAG CLOUD 
+13.0 FOOTER SECTION	
+14.0 BLOG PAGE
+	14.1 BLOG SINGLE POST
+15.0 SIDEBAR
+16.0 GRID SYSTEM PAGE	
+17.0 TPOGRAPHY
+18.0 SHORTCODE PAGE
+19.0 BUTTONS
+20.0 TABS
+21.0 DROPCAP
+22.0 IMAGE WITH PARAGRAPH
+23.0 SERVICE PAGE
+	23.1 OUR MAIN SERVICE
+24.0 NEW FEATURES
+25.0 PORTFOLIO PAGE SHOWCASE OVERLAY
+26.0 PPAGINATION & PAGER
+27.0 PORTFOLIO DETAIL PAGE
+28.0 TEMPLATE COLOR SCHEME 
+29.0 SIDEBAR WIDGET LINKS CSS
+30.0 TABLE CSS
+31.0 SIDEBAR WIDGET CSS
+32.0 FOOTER & HEADER TOP WIDGET
+33.0 CALLOUT WIDGET
+34.0 JATPACK GALLERY 
+35.0 WOOCOMMERCE CSS
+	35.1 WOOCOMMERCE SIDEBAR WIDGETS
+36.0 CF7 (CONTACT FORM)
+37.0 WIDGET STYLE - ALL WIDGETIZED SECTION
+38.0 SCREEN READERS
+39.0 COLUMN CLEARFIX
+Skip to content
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Common
+--------------------------------------------------------------*/
 body {
 	margin: 0;
 	font-family: "Roboto", sans-serif;
@@ -20,7 +75,9 @@ body {
 	background-color: hsl(0, 100%, 100%);
 }
 
-/* Top header details------------------------------------------------------------*/
+/*--------------------------------------------------------------
+2.0 Top Header
+--------------------------------------------------------------*/
 .top-header-widget { background-color: #21202e; padding: 0 15px; } 
 .top-header-widget ul { margin: 10px 0; } 
 .top-header-widget .span4:nth-child(3) .rambo_header_info_widget .header-contact-info { text-align: right; }
@@ -46,7 +103,10 @@ div.boxed {
 }
 .caroufredsel_wrapper { height: 200px !important; }
 
-/* ---Homepage Slider Css--------------------------------------------------------- */
+/*--------------------------------------------------------------
+3.0 Homepage Banner
+--------------------------------------------------------------*/
+
 .main_slider {
 	background-color: #c4c4ce; 
 	border-top: 2px solid #EEEEEE;
@@ -224,7 +284,10 @@ div.boxed {
 	/* } */
 /* }  */
 
-/*---------------------Five Column css--------------------*/
+
+/*--------------------------------------------------------------
+4.0 Five Column css
+--------------------------------------------------------------*/
 
 @media (min-width: 1200px) {
 	.five-column .span2 { width: 210px; }
@@ -243,17 +306,17 @@ div.boxed {
 }
 
 
-/*===================================================================================*/
-/*  LOGO CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+5.0 Logo
+--------------------------------------------------------------*/
 
 .logo-title { font-family: 'Philosopher'; font-weight: 400; font-size: 60px; line-height: 50px; white-space: normal; display: block; vertical-align: middle; }
 .logo-title small { color: #4d4e4f; font-size: 38px; line-height: normal; }
 .brand img.custom-logo { margin: 4px 0 0; }
 
-/*===================================================================================*/
-/*  MENU CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+6.0 Menu
+--------------------------------------------------------------*/
 
 .navbar { margin: 14px 0 14px !important; }
 .navbar .nav { top: 0px; padding: 0; }
@@ -301,7 +364,7 @@ div.boxed {
 }
 .dropdown-menu li { padding: 0; }
 .dropdown-menu > li > a {
-	color: #74838B;
+	color: #74838B !important;
 	border-bottom: 1px solid #c3c6c7;
 	font-family: 'Roboto';
 	font-weight:400;
@@ -352,7 +415,7 @@ a { text-decoration: none; }
 .dropup, .dropdown:hover { position: relative; color: #ffffff !important; text-decoration: none; } 
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
+.dropdown-menu > .active > a:focus ,.navbar .nav .dropdown-menu > li.dropdown.open > .dropdown-toggle{
 	color: #74838B !important;
 	text-decoration: none;
 	background-color: #f3f5f6;
@@ -364,9 +427,9 @@ a { text-decoration: none; }
 }  
 .navbar .nav > .active > a .caret { border-top: 4px solid #ffffff; }
 
-/*===================================================================================*/
-/*  HOMEPAGE SERVICE SECTION CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+7.0 Homerpage Service
+--------------------------------------------------------------*/
 
 .sidebar-service div[class*="rambo_feature_page_widget"] .widget-title { margin: 0px 0 10px; }
 .home_service{
@@ -423,9 +486,9 @@ a { text-decoration: none; }
 	display: block;
 }
 
-/*===================================================================================*/
-/*  FEATURED PORTFOLIO PROJECTS CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+8.0 Featured Portfolio Project
+--------------------------------------------------------------*/
 
 .portfolio_main_content, .additional_section_one {
 	background-color: #f6f5f5;
@@ -474,9 +537,10 @@ a.featured_port_projects_btn:hover { padding: 3px 18px; color: #ffffff; backgrou
 .section-title { margin: 0 0 18px; }
 .section-subtitle { margin: 0; }
 
-/*===================================================================================*/
-/*  LATEST NEWS CSS 
-/*===================================================================================*/
+
+/*--------------------------------------------------------------
+9.0 Lated News
+--------------------------------------------------------------*/
 
 .for_mobile, .additional_section_two { padding: 45px 15px 0px; }
 .latest_news_title { border-bottom: 2px solid #EEEEEE; display: block; margin: 0 0 25px; }
@@ -489,10 +553,9 @@ a.featured_port_projects_btn:hover { padding: 3px 18px; color: #ffffff; backgrou
 .icon-spacing { margin-right: 9px; }
 .icon-circle:before { color: #333333; }
 
-/*===================================================================================*/
-/*  PURCHASE NOW SECTION CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+10.0 PURCHASE NOW SECTION
+--------------------------------------------------------------*/
 .purchase_main_content { padding: 25px 15px 25px; }
 .purchase_now_content, .purchase_main_content { color: inherit; font-size: 14px; font-weight: 400; line-height: 30px; }
 .purchase_now_content .widget_title h2, .purchase_now_content .widget_title h2 a.rsswidget, .purchase_now_content .wp-caption-text { color: #ffffff; }
@@ -543,10 +606,9 @@ a.featured_port_projects_btn:hover { padding: 3px 18px; color: #ffffff; backgrou
 .span12.widget_rambo_site_bottom_intro_widget .span3 { width: 100%; }
 }
 
-/*===================================================================================*/
-/*  ABOUT US PAGE CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+11.0 ABOUT US PAGE 
+--------------------------------------------------------------*/
 .page_head {
 	color: #ffffff;
 	font-family: 'Roboto';
@@ -579,8 +641,7 @@ a.featured_port_projects_btn:hover { padding: 3px 18px; color: #ffffff; backgrou
 .Search_btn, .search-btn { color: #ffffff; border: 0 none; padding: 7px 15px; }
 .hero-unit-small {
 	background-color: #535354;
-	padding: 13px 15px;
-	margin-bottom: 50px; 
+	padding: 13px 15px; 
 	font-size: 14px;
 	font-weight: 200;
 	line-height: 30px;
@@ -683,10 +744,10 @@ a.skype { background: url("images/skype_circle_icon.png") no-repeat scroll 0 0 t
 .client_section { background: none repeat scroll 0 0 #FAFAFA; float: left; margin-bottom: 10px; margin-left: 0; margin-top: 0; width: auto; }
 .client_logo { width: 129px; float: left; display: block; }
 .client_logo li a { float: left; height: 130px; margin-right: 0px; text-decoration: none; width: 130px; }
-/*===================================================================================*/
-/*  WIDGET SECTION CSS 
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+12.0 WIDGET SECTION 
+--------------------------------------------------------------*/
 .hero-widgets-section {
 	background-color: #2a2b2e;
 	padding: 38px 15px 3px;
@@ -749,12 +810,9 @@ a.skype { background: url("images/skype_circle_icon.png") no-repeat scroll 0 0 t
 }
 .usefull_link a:hover{ color: #7b7b7b; }
 
-
-
-/*===================================================================================*/
-/*  SIDEBAR TAG CLOUD CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+12.1 SIDEBAR TAG CLOUD 
+--------------------------------------------------------------*/
 .tagcloud { width:100%; }
 .tagcloud a { 
 	display: inline-block;
@@ -787,10 +845,9 @@ a.aboutus_readmore {
 a.aboutus_readmore:hover { color: #ffffff; background-color: #3e3f41; padding: 3px 18px; }
 .widget_con_detail { margin-bottom: 5px !important; font-size: 15px !important; }
 
-/*===================================================================================*/
-/*  FOOTER SECTION CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+13.0 FOOTER SECTION
+-------------------------------------------------------------- */
 .footer-section {
 	border-top: 1px solid #6a6a6b;
 	background-color: #36373a;
@@ -840,10 +897,9 @@ a.aboutus_readmore:hover { color: #ffffff; background-color: #3e3f41; padding: 3
 	opacity: 0.5;
 }
 
-/*===================================================================================*/
-/*  BLOG PAGE 1 CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+14.0 BLOG PAGE
+-------------------------------------------------------------- */
 .blog_section {
 	background-color: #f9f9f9;
 	border: 1px solid #dddcdc;
@@ -896,11 +952,10 @@ a.blog_section_readmore:hover{ background: #3e3f41; color: #ffffff; padding: 3px
 .blog_tags a{ color: #767676; margin-right: 7px; font-size: 14px; }
 .tags_alignment{ margin: 14px 0px 0px 0px !important; }
 
-/*===================================================================================*/
-/*  BLOG PAGE 2 CSS 
-/*===================================================================================*/
 
-.blog_section2{ background-color: #ffffff; border-bottom: 1px solid #EBEAEA; padding: 0 0 15px; margin-bottom: 50px; overflow: hidden; }
+.blog_section2, .post.format-standard{ background-color: #ffffff; border-bottom: 1px solid #EBEAEA; padding: 0 0 15px; margin-bottom: 50px; overflow: hidden; }
+.post.format-standard.sticky { background-color: #efefef;}
+.post.format-standard.sticky h2, .post.format-standard.sticky .blog_section2_comment, .post.format-standard.sticky p { padding-left: 7px; padding-right: 5px; padding-top: 10px}
 .blog_pull_img2 { margin-right: 0px !important; }
 .blog_section2_img{
 	transition: opacity .3s ease-out;
@@ -911,7 +966,7 @@ a.blog_section_readmore:hover{ background: #3e3f41; color: #ffffff; padding: 3px
 }
 .blog_section2_img:hover{ opacity: .7; }
 .blog_section2 h2, .blog_single_post h2 { font-family: 'Roboto'; word-wrap: break-word; margin: 0px 0 14px; width: 100%; }
-.blog_section2 h2 a, .blog_single_post h2 a { color: #555555; margin-left: 0px; }
+.blog_section2 h2 a, .blog_single_post h2 a, .post.format-standard h2 a { color: #555555; margin-left: 2px; }
 .blog_section2 h2 a:hover, .blog_single_post h2 a:hover{ color: #6c6c6c; }
 .blog_section2 p, .blog_single_post p {
 	color: #767676;
@@ -926,7 +981,7 @@ a.blog_section_readmore:hover{ background: #3e3f41; color: #ffffff; padding: 3px
 }
 .blog_section2_comment { border-bottom: 1px solid #ebeaea; border-top: 1px solid #ebeaea; margin: 0px 0 10px; overflow: hidden; padding: 7px 0; }
 a.post-comment { padding: 5px 0px 5px 0px; }
-.blog_section2_comment a { color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 14px; padding: 5px 30px 5px 0px; word-wrap: break-word; }
+.blog_section2_comment a , .blog_section2_comment span{ color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 14px; padding: 5px 30px 5px 0px !important; word-wrap: break-word; }
 .blog_section2_comment a:nth-child(2) { padding: 0; }
 .blog_section2_comment a:hover{ color: #535354; }
 .blog_section2_comment a i{ color: #535354; }
@@ -944,7 +999,7 @@ a.blog_section2_readmore:hover,.more-link:hover{ color: #ffffff; background: #3e
 .pagination_section{ padding: 0px; margin-bottom: 50px; } 
 #read_more{margin-top: 20px;}
 
-.blog_single_post h2, .blog_section2 h2, .blog_section h2 { font-size:26px; line-height:30px; color: #555555; overflow:hidden; }
+.blog_single_post h2, .blog_section2 h2, .blog_section h2 { font-size:26px; line-height:36px; color: #555555; overflow:hidden; }
 .blog_single_post h1, .blog_section2 h1, .blog_section h1 { font-size:28px; line-height:30px; color: #555555; }
 .blog_single_post h3, .blog_section2 h3, .blog_section h3 { font-size:24px; line-height:28px; color: #555555; }
 .blog_single_post h4, .blog_section2 h4, .blog_section h4 { font-size:22px; line-height:30px; color: #555555; }
@@ -956,9 +1011,9 @@ dt {font-weight: bold;font-size: 17.5px;margin-top:15px;}
 dd {margin-left: 10px;font-size: 17.5px;}
 .blog_section2 address { display: block; font-style: italic; line-height: 1.71429; margin: 0 0 1.71429rem; }
 
-/*===================================================================================*/
-/*  BLOG SINGLE POST CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+14.1 BLOG SINGLE POST
+-------------------------------------------------------------- */
 
 .blog_single_post{ background-color: #ffffff; border: 0px; padding: 0 0 0px; margin-bottom: 50px; float: left; width:100%; }
 .blog_single_post  blockquote,.span6  blockquote{ margin: 15px 0px 15px 0px; padding: 15px 20px 15px 20px; float: left; }
@@ -1036,10 +1091,9 @@ dd {margin-left: 10px;font-size: 17.5px;}
 .comment_mn p { margin: 0 0 10px; }
 .comment_mn { margin: 0 0 40px; }
 
-/*===================================================================================*/
-/*  SIDEBAR CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+15.0 SIDEBAR
+-------------------------------------------------------------- */
 .sidebar_widget{ margin-left: 20px; margin-top: 0px; margin-bottom: 50px; overflow: hidden; }
 .sidebar_widget_title { border-bottom: 2px solid #EEEEEE; display: block; margin: 0 0 20px; }
 .sidebar_widget_title h2, .sidebar_widget_title h2 a, 
@@ -1160,10 +1214,9 @@ dd {margin-left: 10px;font-size: 17.5px;}
 .sidebar_widget p.widget_con_detail { color: #767676; }
 .usefull_link a { border-bottom: 1px solid hsl(0, 0%, 87%); color: #767676; }
 
-/*===================================================================================*/
-/*  GRID SYSTEM PAGE CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+16.0 GRID SYSTEM PAGE
+-------------------------------------------------------------- */
 .grid_head_title { border-bottom: 2px solid #EEEEEE; border-bottom: 2px solid #EEEEEE; display: block; margin: 0 0 15px; }
 .grid_head_title h3 {
 	color: #555555;
@@ -1179,10 +1232,9 @@ dd {margin-left: 10px;font-size: 17.5px;}
 }
 .grid_coloumn{ margin-bottom: 55px; }
 
-/*===================================================================================*/
-/*  TPOGRAPHY CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+17.0 TPOGRAPHY
+-------------------------------------------------------------- */
 .blog_single_post .typography_heading h1,
 .blog_single_post .typography_heading h2,
 .blog_single_post .typography_heading h3,
@@ -1198,17 +1250,10 @@ dd {margin-left: 10px;font-size: 17.5px;}
 .blog_single_post .typography_heading p{ font-family: 'Roboto'; font-weight: 400; line-height: 22px; font-size: 15px; margin: 0 0 24px; }
 .typography_heading p:last-child{ font-family: 'Roboto'; font-weight: 400; line-height: 22px; font-size: 15px; margin: 0 0 0px; }
 
-/*===================================================================================*/
-/*  BLOCKQUOTE CSS 
-/*===================================================================================*/
-
 .typography_coloumn blockquote { background-color: #F9F9F9; margin: 0 0 28px; padding: 15px 20px; width: auto; }
 .typography_coloumn blockquote span { color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 15px; line-height: 22px; margin-bottom: 0; }
 .typography_coloumn blockquote small { color: #979696; display: block; font-size: 14px; font-style: italic; line-height: 20px; margin-top: 5px; }
 
-/*===================================================================================*/
-/*  PARAGRAPH CSS 
-/*===================================================================================*/
 
 .para_large{ color: #767676; font-family: 'Roboto'; font-weight: 300; font-size: 20px; line-height: 30px; margin: 0 0 20px; }
 .para_tooltip{ color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 15px; line-height: 22px; margin: 0 0 20px; }
@@ -1220,9 +1265,6 @@ p.text_warning{ color: #c09853; font-family: 'Roboto';font-weight: 400; font-siz
 p.text_info{ color: #3a87ad; font-family: 'Roboto';font-weight: 400; font-size: 14px; line-height: 20px; margin: 0 0 20px; width: 100%; }
 p.text_succes{ color: #468847; font-family: 'Roboto';font-weight: 400; font-size: 14px; line-height: 20px; margin: 0 0 20px; width: 100%; }
 
-/*===================================================================================*/
-/*  UNORDERED & ORDERED CSS 
-/*===================================================================================*/
 
 .unordered_list, .ordered_list{ float: none; width: 100%; }
 .unordered_list h3, .ordered_list h3{ font-family: 'Roboto';font-weight: 400; font-size: 18px; line-height: 20px; margin: 0 0 20px; width: 100%; }
@@ -1241,9 +1283,6 @@ ul.unstyled li { line-height: 20px; margin: 0px; }
 .para_icons{ color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 15px; margin: 0 0 20px; }
 .para_icons:last-child{ margin: 0px; } 
 
-/*===================================================================================*/
-/*  TABLE 
-/*===================================================================================*/
 
 .table{ color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 15px; width: 100%; margin-bottom: 20px; }
 .table thead tr th, .table tr th { font-family: 'Roboto';font-weight: 400; }
@@ -1253,16 +1292,17 @@ ul.unstyled li { line-height: 20px; margin: 0px; }
 .table tr:nth-child(2n+1) { background-color: #f8f8f8; }
 .table tr:nth-child(2n) { background-color: #ffffff; }
 
-/*===================================================================================*/
-/*  SHORTCODE PAGE CSS 
-/*===================================================================================*/
+
+/*--------------------------------------------------------------
+18.0 SHORTCODE PAGE 
+-------------------------------------------------------------- */
 
 .shortcode_section { margin-bottom: 50px; }
 .shortcode_head_title { border-bottom: 2px solid #EEEEEE; display: block; margin: 0 0 30px; }
 
-/*===================================================================================*/
-/*  BUTTONS CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+19.0 BUTTONS
+-------------------------------------------------------------- */
 
 .button_large{
 	color: #ffffff;
@@ -1470,9 +1510,9 @@ ul.unstyled li { line-height: 20px; margin: 0px; }
 	background-repeat: repeat-x;
 }
 
-/*===================================================================================*/
-/*  TABS CSS
-/*===================================================================================*/
+/*--------------------------------------------------------------
+20.0 TABS
+-------------------------------------------------------------- */
 
 .short_tabs > .active > a, .short_tabs  > .active > a:hover, .short_tabs  > .active > a:focus {
 	color: #ffffff !important;
@@ -1492,9 +1532,9 @@ ul.unstyled li { line-height: 20px; margin: 0px; }
 }
 .short_tabs > li { margin-bottom: 0px !important; } 
 
-/*===================================================================================*/
-/*  DROPCAP 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+21.0 DROPCAP
+-------------------------------------------------------------- */
 
 .dropcap_square_content p { color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 15px; line-height: 20px; margin-bottom: 25px; margin-top: 0; }
 .dropcap_square_content p span {
@@ -1563,18 +1603,18 @@ ul.unstyled li { line-height: 20px; margin: 0px; }
 	width: 45px;
 }
 
-/*===================================================================================*/
-/*  IMAGE WITH PARAGRAPH 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+22.0 IMAGE WITH PARAGRAPH
+------------------------------------------------------------*/
 
 .para_img_left{ border: 1px solid #cccaca; width: 150px; height: 150px; margin: 0 10px 18px 0; }
 .para_img_right{ border: 1px solid #cccaca; width: 150px; height: 150px; margin: 0 0px 20px 18px; }
 .para_head_title { color: #555555; margin: 0 0 10px; font-family: 'Roboto';font-weight: 400; font-size: 20px; line-height: 20px; }
 .para_content { margin: 0 0 10px; line-height: 22px; }
 
-/*===================================================================================*/
-/*  SERVICE PAGE CSS  
-/*===================================================================================*/
+/*--------------------------------------------------------------
+23.0 SERVICE PAGE
+------------------------------------------------------------*/
 
 .home_service_section { padding: 50px 15px 0; }
 .service_section { margin: 0 0 70px; }
@@ -1607,9 +1647,9 @@ a.continue_readmore{ font-size: 13px; padding: 3px 15px; transition: all 0.5s ea
 a.continue_readmore:hover{ color: #555555; }
 a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: italic; padding: 0 5px; }
 
-/*===================================================================================*/
-/*  OUR MAIN SERVICE CSS 
-/*===================================================================================*/
+/*--------------------------------------------------------------
+23.1 OUR MAIN SERVICE
+------------------------------------------------------------*/
 
 .our_main_service_section{ margin: 0 0 50px; }
 .our_main_ser_icon > .pull-left { margin-right: 12px; }
@@ -1621,10 +1661,9 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 .media-icon-bg { color: #555555; }
 
 
-/*===================================================================================*/
-/*  NEW FEATURES CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+24.0 NEW FEATURES
+------------------------------------------------------------*/
 .features_tabs { margin-bottom: 0px !important; border: 0px !important; }
 .features_tabs > .active > a, .features_tabs  > .active > a:hover, .features_tabs  > .active > a:focus {
 	color: #ffffff !important;
@@ -1647,10 +1686,10 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 .features_tabs_content_area p{ margin-bottom: 0px !important; }
 .features_tabs_content_area h2{ color: #555555; line-height: 20px; font-size: 24px; font-family: 'Roboto'; font-weight: 300; margin: 5px 0 18px; }
 
-/*===================================================================================*/
-/*  PORTFOLIO PAGE SHOWCASE OVERLAY CSS 
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+25.0 PORTFOLIO PAGE SHOWCASE OVERLAY
+------------------------------------------------------------*/
 .portfolio_section{ margin-bottom: 50px; }
 .portfolio_column{ margin-bottom: 30px; }
 .portfolio_showcase { position: relative; padding: 0px; }
@@ -1720,10 +1759,6 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 .portfolio_caption h3 a:hover { color: #777777; }
 .portfolio_caption small { color: #9e9c9c; font-size: 15px; line-height: 25px; word-wrap:break-word; }
 
-/*===================================================================================*/
-/*  PORTFOLIO FILTER TABS CSS 
-/*===================================================================================*/
-
 .portfolio_tabs li.active > a { color:#fff!important; }
 .portfolio_tabs li.active > a { color: #fff!important; }
 .portfolio_tabs li a:hover ,.portfolio_tabs li.active{ color:#fff!important; }
@@ -1743,10 +1778,9 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 .portfolio_tabs_section{ margin-bottom: 15px; margin-left: 30px; }
 .main_portfolio_section{ margin-bottom: 50px; }
 
-/*===================================================================================*/
-/*  PAGINATION & PAGER CSS
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+26.0 PPAGINATION & PAGER
+------------------------------------------------------------*/
 .pagination ul li a.active,.pagination > ul > li > a:hover{
 	background-attachment: scroll;
 	background-clip: border-box;
@@ -1790,10 +1824,10 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 	background-color:#db2723;
 	color:#fff;
 }
-/*===================================================================================*/
-/*  PORTFOLIO DETAIL PAGE
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+27.0 PORTFOLIO DETAIL PAGE
+------------------------------------------------------------*/
 .porfolio_detail_title { border-bottom: 2px solid #EEEEEE; display: block; margin: 0 0 35px; }
 .portfolio_detail_sidebar { margin-bottom: 30px; }
 .portfolio-detail-pagi { margin-bottom: 27px; margin-left: 20px; padding-left: 0; overflow: hidden; }
@@ -1813,10 +1847,9 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 .portfolio-detail-description { border-top: 1px solid #DEDEDE; margin-bottom: 27px; margin-left: 20px; overflow: hidden; padding-top: 27px; }
 .portfolio-detail-description p{ color: #767676; font-family: 'Roboto'; font-weight: 400; font-size: 15px; line-height: 24px; margin: 0 0 5px; }
 
-/*===================================================================================*/
-/*  TEMPLATE COLOR SCHEME 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+28.0 TEMPLATE COLOR SCHEME 
+------------------------------------------------------------*/
 #panel { position: fixed; top:143px; z-index: 9999; }
 #panel ::selection { background: transparent !important; color: #FFF; }
 /* Gecko/Mozilla */
@@ -1869,11 +1902,9 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 #panel .open{ display: block; width:36px; height:36px; float: right; margin: 0px 0px 0px 0px; z-index: 1000; position: relative; }
 #panel .open span{ height: 36px; width: 36px; text-align: center; display: block; position: relative; background-color:#2C2C2C; }
 
-
-/*===================================================================================*/
-/*  SIDEBAR WIDGET LINKS CSS 
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+29.0 SIDEBAR WIDGET LINKS CSS 
+------------------------------------------------------------*/
 .sidebar_widget ul { padding: 0; }
 .sidebar_widget ul li { 
 	border-bottom: 1px solid #dedede; 
@@ -1901,10 +1932,10 @@ a.continue_readmore cite{ font-family: 'Roboto'; font-weight: 700; font-style: i
 .tagcloud a:hover{background-color: #cdcdcd;}
 .textwidget { font-family: 'Roboto'; font-weight: 400; color: #767676; font-size: 14px; margin-bottom: 15px; }
 .sidebar .spoontalk-sociamedia-icons-widget .alignment { text-align: left; }
-/*===================================================================================*/
-/*  TABLE CSS
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+30.0 TABLE CSS
+------------------------------------------------------------*/
 table {
 	border: 1px solid #dddddd;
 	border-collapse: separate;
@@ -1931,20 +1962,20 @@ table th {
 	border-top: 1px solid #dddddd;
 }
 
-/*===================================================================================*/
-/*  SIDEBAR WIDGET CSS
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+31.0 SIDEBAR WIDGET CSS
+------------------------------------------------------------*/
 #wp-calendar{ border: 1px solid #dedede; width: 100%; }
 #wp-calendar caption{ color: #ffffff; font-family: 'Roboto'; font-weight: 400; font-size: 16px; padding: 10px; }
 #wp-calendar thead tr th { color: #555555; border: 0px; padding: 10px; font-family: 'Roboto'; font-weight: 700; font-size: 15px; text-align: center; }
 #wp-calendar tbody tr td { border: 1px solid #dedede; color: #555555; padding: 10px; font-family: 'Roboto'; font-weight: 400; font-size: 15px; line-height: 20px; text-align: center; }
 #wp-calendar tfoot tr td{ color: #555555; border: 0px; padding: 10px; font-family: 'Roboto'; font-weight: 700; font-size: 15px; }
 
-/*===================================================================================*/
-/*  FOOTER & HEADER TOP WIDGET CSS 
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+32.0 FOOTER & HEADER TOP WIDGET 
+------------------------------------------------------------*/
 .footer_widget #wp-calendar, .top-header-widget #wp-calendar{ width: 100%; border: 1px solid #36373b; }
 .footer_widget #wp-calendar caption{ background-color: #36373b; }
 .footer_widget #wp-calendar thead tr th, .footer-section .widget_title h2, 
@@ -1974,10 +2005,9 @@ table th {
 .footer_widget .sidebar_pull:last-child { border-bottom: 1px solid transparent; }
 .team_section .span3 { margin-bottom: 20px; }
 
-/*===================================================================================*/
-/*  CALLOUT WIDGET CSS
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+33.0 CALLOUT WIDGET
+------------------------------------------------------------*/
 .callout_main_content{
 	background-color: #f6f5f5;
 	border-bottom: 1px solid #D1CFCF;
@@ -2008,17 +2038,16 @@ table th {
 }
 .callout_now_btn:hover { background-color: #333333 !important; color: #ffffff; padding: 12px 50px; }
 
-/*===================================================================================*/
-/*  JATPACK GALLERY CSS
-/*===================================================================================*/
+/*--------------------------------------------------------------
+34.0 JATPACK GALLERY CSS
+------------------------------------------------------------*/
 
 .tiled-gallery-item img { opacity:1; -wekbit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
 .tiled-gallery-item img:hover { opacity: 0.8; }
 
-/*===================================================================================*/
-/*  WOOCOMMERCE CSS
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+35.0 WOOCOMMERCE CSS
+--------------------------------------------------------*/
 .woocommerce .woocommerce-result-count { margin: 1em 0 1em; }
 .woocommerce .products ul, .woocommerce ul.products { margin: 0; }
 .woocommerce ul.products li.product h3 { text-align: center; margin: .2em 0 1.2em; padding: .2em 0; font-weight: 600; }
@@ -2190,10 +2219,9 @@ table th {
 .woocommerce .page-title { margin: 0; }
 .woocommerce div.product div.images div.thumbnails { margin-left: 0; }
 
-/*===================================================================================*/
-/*  WOOCOMMERCE SIDEBAR WIDGETS
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+35.1 WWOOCOMMERCE SIDEBAR WIDGETS
+--------------------------------------------------------*/
 .price_slider { margin-bottom: 1em; }
 .price_slider_amount { text-align: right; line-height: 2.4em; font-size: 0.8751em; }
 .price_slider_amount .button { font-size: 1.15em; float: left; }
@@ -2312,10 +2340,9 @@ li.cat-item { padding: 5px 0; }
 }
 .owl-item .item .cart .add_to_cart_button:hover { color: #ffffff !important; }
 
-/*===================================================================================*/
-/*  CF7 (CONTACT FORM) - CSS
-/*===================================================================================*/
-
+/*--------------------------------------------------------------
+36.0 CF7 (CONTACT FORM)
+--------------------------------------------------------*/
 .wpcf7-form { width: 100%; }
 .wpcf7-form input[type="select"], 
 .wpcf7-form input[type="email"],
@@ -2325,10 +2352,10 @@ li.cat-item { padding: 5px 0; }
 .wpcf7-form textarea { width: 100%; margin: 0; }
 .wpcf7-form-control-wrap { display: block; margin: 6px 0 20px; }
 
-/*===================================================================================*/
-/*  WIDGET STYLE - ALL WIDGETIZED SECTION
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+37.0 WIDGET STYLE - ALL WIDGETIZED SECTION
+--------------------------------------------------------*/
 .purchase_now_content .widget_title h2 { border-bottom: 2px solid #ffffff; }
 .purchase_now_content .widget_rambo_site_intro_widget, 
 .callout_now_content .widget_rambo_site_bottom_intro_widget { 
@@ -2423,10 +2450,6 @@ div[class*="widget_rambo_feature_page_widget"] .icon_align_center, div[class*="r
 .aboutus_testimonial.widget_rambo_project_widget h3 { margin: 20px 0px; }
 .aboutus_testimonial.widget_rambo_project_widget h3 a { color: #555555; }
 
-/*===================================================================================*/
-/*  ADDES COLOR SPECIFIC CSS BY 18-2-2015/Wednesday
-/*===================================================================================*/
-
 .sidebar_widget .usefull_link a {  
 	display: block;
 	font-family: 'Roboto';
@@ -2456,10 +2479,10 @@ p input[type="submit"] {
     color: #ffffff;
 }
 
-/*===================================================================================*/
-/*  SCREEN READERS CSS
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+38.0 SCREEN READERS
+--------------------------------------------------------*/
 .screen-reader-text {
 	border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -2501,10 +2524,10 @@ p input[type="submit"] {
 	z-index: 100000; /* Above WP toolbar. */
 }
 
-/*===================================================================================*/
-/*  COLUMN CLEARFIX CSS
-/*===================================================================================*/
 
+/*--------------------------------------------------------------
+39.0 COLUMN CLEARFIX
+--------------------------------------------------------*/
 .span3:nth-child(4n+1){ clear: left; }
 .span4:nth-child(3n+1){ clear: left; }
 .span6:nth-child(2n+1){ clear: left; }
@@ -2614,58 +2637,69 @@ overflow:hidden;
     padding: 10px 30px;
 }
 
-/*===================================================================================*/
-/*  TEMPLATE SWITCHER COLOR SCHEME CSS
-/*===================================================================================*/
+/*--------------------------------------------------------------
+40.0 Skip to content
+--------------------------------------------------------*/
+.rambo-screen-reader {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
 
-#style-switcher h3 { color: #BDBDBD; font-family: 'Roboto'; font-size: 14px; font-weight: 600; margin: 10px 0 10px 1px; border-bottom: 1px solid #434242; }
-#style-switcher {
-	background-color: #2c2c2c;
-	width: 205px;
-	position:fixed;
-	top: 140px;
-	z-index: 999;
-	border-radius: 0 0 3px 0;
-	left: -206px;
-	border: 0px;
-	border-left: 0;
-	border-top: 0;
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.8);
-	padding-top: 0px;
-}
-#style-switcher div { padding: 3px 18px 15px; }
-#style-switcher h2 {
-	background-color: #2C2C2C;
-	color: #fff;
-	font-weight: bold;
-	font-size: 14px;
-	padding: 0 0 0 20px;
-	margin:0;
-	line-height:40px;
-	font-family: 'Roboto';
-	font-weight:400;
-}
-#style-switcher h2 a {	
-	background-color: #2c2c2c;
+.rambo-screen-reader:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
 	display: block;
-	height: 40px;
-	position: absolute;
-	right: -43px;
-	font-size:16px;
-	text-align:center;
-	color:#fff;
-	top: 0;
-	width: 43px;
-	text-decoration:none;
-	border-radius: 0 3px 3px 0;
-}	
-.colors { list-style:none; margin: 0 0px 10px 0; padding: 0; overflow: hidden; }
-.colors li { float:left; margin: 4px 2px 0 2px; }
-.colors li a { display: block; width: 29px; height: 29px; cursor: pointer; border-radius: 1px; } 
-.layout-style select, .header-style select { width: 164px; padding: 2px 5px; color: #888; cursor: pointer; border-radius: 2px; font-size: 13px; margin: 2px 0 2px 2px; }	
-.layout-style, .header-style { padding: 0 !important; }
-.onclick_blue { background-color: #46B1E1; }
-.onclick_green { background-color: #6EBB25; }
-.onclick_orange { background-color: #ff4c2f; }
-.onclick_pink { background-color: #eb2071; }
-body{ position: unset !important; }
+	font-size: 13px;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+.navbar .dropdown-menu.leftauto .dropdown-menu {
+    border: 0;
+    right: 100%;
+    left: auto !important;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: thin dotted #333 !important;
+    outline: 5px auto -webkit-focus-ring-color !important;
+    outline-offset: -2px;
+}
+.blog_pull_img2{display: block;
+    margin: 1px !important;}
+    .collapse {
+    visibility: hidden;
+}
+.collapse.in {
+    visibility: visible;
+}   
+@media (min-width: 786px){
+.collapse {
+    visibility: visible !important;
+}}
+.navbar-toggle .icon-bar {background-color: #f5f5f5;}
+.navbar .site-description{margin: 0;}
+.logo-link-url .site-title a{display: block;}
+.post h2{margin-top: 2px;margin-left: 3px; }
+.blog-sidebar{  margin: 0;
+    padding: 50px 0 20px;}

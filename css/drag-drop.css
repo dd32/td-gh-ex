@@ -125,7 +125,7 @@ list-style-type: none;
  
  #accordion-section-team_settings_section .accordion-section-title:after, #accordion-section-shop_section_settings .accordion-section-title:after,#accordion-section-client_settings .accordion-section-title:after, #accordion-section-site_intro_bottom_settings .accordion-section-title:after,#accordion-section-rambo_pro_typography_setting_section .accordion-section-title:after{content: "\f160";}
   
- #customize-control-quality_pro_options-back_image label img
+ #customize-control-rambo_pro_options-back_image label img
  { border:2px solid #ccc;}
  
  .color_scheem_active{
@@ -141,7 +141,7 @@ list-style-type: none;
 #accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
 
 #accordion-section-rambo_help_section .accordion-section-title:after, 
-#accordion-section-rambo_email_course_section.accordion-section-title:after {color:#fff !important; }
+#accordion-section-email_course_section.accordion-section-title:after {color:#fff !important; }
 
 
 .button.button-blue-secondary {
@@ -162,9 +162,9 @@ list-style-type: none;
 	 text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
 }
 
-#accordion-section-rambo_email_course_section h3{ font-size: 14px;font-weight: 700;  background-color: #0d6db8 !important;border-color: #ef9c28;
+#accordion-section-email_course_section h3{ font-size: 14px;font-weight: 700;  background-color: #0d6db8 !important;border-color: #ef9c28;
 color: #fff !important;}
- #accordion-section-rambo_email_course_section h3:after{ color: #fff !important; }
+ #accordion-section-email_course_section h3:after{ color: #fff !important; }
 .upsell-feature-list li{line-height: 24px;margin-bottom: 20px;font-size:14px; }
 .upsell-pro-badge{font-weight: bold;background: #a7a7a7;color: #fff;text-transform: uppercase;padding: 2px 6px 2px 7px;letter-spacing: .1px;font-size: 12px;border-radius: 3px;margin-right: 10px;}
 #customize-theme-controls ul #customize-control-fur_support {margin-bottom: 0px !important;}

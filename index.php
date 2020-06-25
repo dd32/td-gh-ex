@@ -1,24 +1,18 @@
-<?php get_template_part('banner','strip');
-//For post
-$slider_enable_post = sanitize_text_field( get_post_meta( get_the_ID(), 'slider_enable_post', true ));
-if($slider_enable_post == true){
-get_template_part('index','slider');
-}
-?>
+<?php get_template_part('banner','strip');?>
+<div id="content">
 <div class="container">
 	<!-- Blog Section Content -->
 	<div class="row-fluid">
+		<div class="blog-sidebar">
 		<!-- Blog Main -->
-		<div class="<?php if( is_active_sidebar('sidebar-primary')) echo "span8"; else echo "span12";?> Blog_main">
+		<div class="<?php if( is_active_sidebar('sidebar-1')) echo "span8"; else echo "span12";?> Blog_main">
 			<?php 
-				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$args = array( 'post_type' => 'post','paged'=>$paged);		
+				$blog_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$args = array( 'post_type' => 'post','paged'=>$blog_page);		
 				$post_type_data = new WP_Query( $args );
 					while($post_type_data->have_posts()):
-					$post_type_data->the_post();
-					global $more;
-					$more = 0;?>
-					<div class="blog_section2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					$post_type_data->the_post();?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					
 					<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
 					<?php if(has_post_thumbnail()): ?>
@@ -27,25 +21,26 @@ get_template_part('index','slider');
 					</a>
 					<?php endif; ?>
 					
-					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-					</h2>
+					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 					<div class="blog_section2_comment">
-						<a href="<?php the_permalink(); ?>"><i class="fa fa-calendar icon-spacing"></i><?php the_time('M j,Y');?></a>
-						<a href="<?php the_permalink(); ?>"><i class="fa fa-comments icon-spacing"></i><?php comments_popup_link( __('Leave a comment', 'rambo' ) ); ?></a>
-						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><i class="fa fa-user icon-spacing"></i> <?php _e("By",'rambo');?>&nbsp;<?php the_author();?></a>
+						<i class="fa fa-calendar icon-spacing"></i><a href="<?php echo esc_url( home_url('/') ); ?><?php echo esc_html(date( 'Y/m' , strtotime( get_the_date() )) ); ?>"><?php echo esc_html(get_the_date());?></a>
+						<i class="fa fa-comments icon-spacing"></i><?php comments_popup_link( esc_html__('Leave a comment', 'rambo' ) ); ?>
+						<i class="fa fa-user icon-spacing"></i> <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php esc_html_e("By",'rambo');?>&nbsp;<?php the_author();?></a>
 					</div>
 					<?php  the_content( __('Read More','rambo') ); ?>
-					<?php $posttags = get_the_tags();?>
-					<?php if ($posttags) { ?>
+					
+					<?php if(has_tag()) { ?>
 					<p class="tags_alignment">
-					<span class="blog_tags"><i class="fa fa-tags"></i><a href="<?php the_permalink(); ?>"><?php the_tags(__('Tags','rambo'));?></a></span>
+					<span class="blog_tags"><i class="fa fa-tags"></i><?php the_tags('',', ');?></span>
 					</p>
 					<?php }  wp_link_pages( $args ); ?>
 			</div>
-			<?php endwhile; ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 			<?php rambo_post_pagination(); // call post pagination ?>
 		</div>
 		 <?php get_sidebar();?>
+		</div>
 	</div>
+</div>
 </div>
 <?php get_footer();?>

@@ -8,13 +8,13 @@
 	
 	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
 	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
-	
-	define('WEBRITI_THEME_OPTIONS_PATH',WEBRITI_TEMPLATE_DIR_URI.'/functions/theme_options');
+
 	require_once('theme_setup_data.php');
+	require_once('child_theme_compatible.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus	
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); // all js and css file for rambo-pro	
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); 
 	
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
 	
@@ -34,29 +34,79 @@
 	//Customizer
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro_feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_slider_panel.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_site_intro.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_service_panel.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_project.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recent_news.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_copyright.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
-	
-	
-	// Rambo Info Page
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');
-	
-	//require( WEBRITI_THEME_FUNCTIONS_PATH . '/excerpt/excerpt.php' ); // for Excerpt Length
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
+	require_once (WEBRITI_THEME_FUNCTIONS_PATH . '/class-tgm-plugin-activation.php');
+
+	add_action( 'tgmpa_register', 'rambo_register_required_plugins' );
+
+	/**
+	 * Register the required plugins for this theme.
+	 *
+	 * In this example, we register five plugins:
+	 * - one included with the TGMPA library
+	 * - two from an external source, one from an arbitrary source, one from a GitHub repository
+	 * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+	 *
+	 * The variables passed to the `tgmpa()` function should be:
+	 * - an array of plugin arrays;
+	 * - optionally a configuration array.
+	 * If you are not changing anything in the configuration array, you can remove the array and remove the
+	 * variable from the function call: `tgmpa( $plugins );`.
+	 * In that case, the TGMPA default settings will be used.
+	 *
+	 * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+	 */
+	function rambo_register_required_plugins() {
+		/*
+		 * Array of plugin arrays. Required keys are name and slug.
+		 * If the source is NOT from the .org repo, then source is also required.
+		 */
+		$plugins = array(
+			 // This is an example of how to include a plugin from the WordPress Plugin Repository.
+	        array(
+	            'name'      => 'Contact Form 7',
+	            'slug'      => 'contact-form-7',
+	            'required'  => false,
+	        ),
+	        array(
+	            'name'      => 'Webriti Companion',
+	            'slug'      => 'webriti-companion',
+	            'required'  => false,
+	        ),
+
+		);
+
+		/*
+		 * Array of configuration settings. Amend each line as needed.
+		 *
+		 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+		 * strings available, please help us make TGMPA even better by giving us access to these translations or by
+		 * sending in a pull-request with .po file(s) with the translations.
+		 *
+		 * Only uncomment the strings in the config array if you want to customize the strings.
+		 */
+		$config = array(
+			'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+			'default_path' => '',                      // Default absolute path to bundled plugins.
+			'menu'         => 'tgmpa-install-plugins', // Menu slug.
+			'has_notices'  => true,                    // Show admin notices or not.
+			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+			'message'      => '',                      // Message to output right before the plugins table.
+		);
+
+		tgmpa( $plugins, $config );
+	}
 	
 	global $resetno; //user for reset function
 	//content width
 	if ( ! isset( $content_width ) ) $content_width = 900;	
 	
 	//wp title tag starts here
-	function webriti_head( $title, $sep )
+	function rambo_head( $title, $sep )
 	{	global $paged, $page;		
 		if ( is_feed() )
 			return $title;
@@ -71,17 +121,17 @@
 			$title = "$title $sep " . sprintf( _e('Page','rambo'), max( $paged, $page ) );
 		return $title;
 	}	
-	add_filter( 'wp_title', 'webriti_head', 10,2 );
+	add_filter( 'wp_title', 'rambo_head', 10,2 );
 
 	function rambo_customizer_css() {
 		wp_enqueue_style( 'rambo-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
 	}
 	add_action( 'admin_init', 'rambo_customizer_css' );
 	
-		add_action( 'after_setup_theme', 'webriti_setup' ); 	
-		function webriti_setup()
+		add_action( 'after_setup_theme', 'rambo_setup' ); 	
+		function rambo_setup()
 		{	// Load text domain for translation-ready
-			load_theme_textdomain( 'rambo', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );	
+			load_theme_textdomain( 'rambo', WEBRITI_TEMPLATE_DIR . '/languages' );	
 			
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		add_theme_support( 'woocommerce' );//woocommerce
@@ -92,76 +142,44 @@
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		
+		add_editor_style();
+
 		//Custom logo
 	
 		add_theme_support( 'custom-logo' , array(
 	
 	   'class'       => 'navbar-brand',
-	   
-	   'width'       => 200,
-	   
+	   'width'       => 300,
 	   'height'      => 50,
-	   
 	   'flex-width' => false,
-	   
 	   'flex-height' => false,
+	   'header-text' => array( 'site-title', 'site-description' ),
 	   
 		) );
 		
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menu( 'primary', __( 'Primary Menu', 'rambo' ) );
+		register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'rambo' ) );
 		
 		// setup admin pannel defual data for index page
-		$rambo_pro_theme=theme_data_setup();
+		$rambo_pro_theme=rambo_theme_data_setup();
+
+		 //About Theme
+   		 $theme = wp_get_theme(); // gets the current theme
+		if ('Rambo' == $theme->name) {
+        if (is_admin()) {
+            require get_template_directory() . '/admin/admin-init.php';
+        }
+   	 }
 	}
 	
 // change custom logo link class
-	add_filter('get_custom_logo','change_logo_class');
-	function change_logo_class($html)
+	add_filter('get_custom_logo','rambo_change_logo_class');
+	function rambo_change_logo_class($html)
 	{
 		$html = str_replace('class="custom-logo-link"', 'class="brand"', $html);
 		return $html;
 	}
 
-function rambo_import_files() {
-  return array(
-    array(
-      'import_file_name'           => 'Demo Import 1',
-      'categories'                 => array( 'Category 1', 'Category 2' ),
-      'import_file_url'            => 'https://webriti.com/themes/dummydata/rambo/lite/rambo-content.xml',
-      'import_widget_file_url'     => 'https://webriti.com/themes/dummydata/rambo/lite/rambo-widget.json',
-      'import_customizer_file_url' => 'https://webriti.com/themes/dummydata/rambo/lite/rambo-customize.dat',
-	  'import_preview_image_url'   => 'https://preview.c9users.io/imranali_13/rambo-import/screenshot.png',
-      'import_notice'              => sprintf(__( 'Click the big blue button to start the dummy data import process.</br></br>Please be patient while WordPress imports all the content.</br></br>
-			<h3> Recommend Plugins</h3>Rambo theme supports following plugins.</br> </br><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact form 7</a> </l1> </br> <li> <a href="https://wordpress.org/plugins/woocommerce/"> WooCommerce </a> </li><li> <a href="https://wordpress.org/plugins/spoontalk-social-media-icons-widget/"> Spoon talk social media icon </a></li>', 'rambo' )),
-			),
-    	
-    	
-    	
-	);
-}
-add_filter( 'pt-ocdi/import_files', 'rambo_import_files' );
-
-
-function rambo_after_import_setup() {
-
-	// Menus to assign after import.
-	$main_menu   = get_term_by( 'name', 'Main Menu', 'nav_menu' );
-
-	set_theme_mod( 'nav_menu_locations', array(
-		'primary'   => $main_menu->term_id,
-	));
-	
- // Assign front page and posts page (blog page).
-    $front_page_id = get_page_by_title( 'Home' );
-    $blog_page_id  = get_page_by_title( 'Blog' );
-
-    update_option( 'show_on_front', 'page' );
-    update_option( 'page_on_front', $front_page_id->ID );
-    update_option( 'page_for_posts', $blog_page_id->ID );	
-	
-}
-add_action( 'pt-ocdi/after_import', 'rambo_after_import_setup' );
 
 //Cerate enwueu function in customizer setting
 function rambo_customize_preview_js() {
@@ -170,55 +188,20 @@ function rambo_customize_preview_js() {
 add_action( 'customize_preview_init', 'rambo_customize_preview_js' );
 
 
+if ( ! function_exists( 'wp_body_open' ) ) {
 
-function rambo_one_click_demo_import_activation_redirect( $plugin ) {
-	
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	if ( is_plugin_active( 'one-click-demo-import/one-click-demo-import.php' ) ):
-			$plugin_installed = get_option('rambo-plugin'); 
-		if(!$plugin_installed){
-				update_option('rambo-plugin','activated');
-		 exit( wp_redirect( admin_url( 'themes.php?page=pt-one-click-demo-import' ) ) );
-			}
-	endif;
-	
-	
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 */
+		do_action( 'wp_body_open' );
+	}
 }
-add_action( 'activated_plugin', 'rambo_one_click_demo_import_activation_redirect' );
 
-
-function rambo_one_click_demo_import_detect_plugin_deactivation() {
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	$pluginList = get_option( 'active_plugins' );
-$plugin = 'one-click-demo-import/one-click-demo-import.php'; 
-if ( in_array( $plugin , $pluginList ) ) {
-	
-		delete_option('rambo-plugin');
-	
-}		
-	
-}
-add_action( 'deactivated_plugin', 'rambo_one_click_demo_import_detect_plugin_deactivation');
-
-function wc_hide_page_title()
+function rambo_hide_page_title()
 {
     if( !is_shop() ) // is_shop is the conditional tag
         return true;
 }
-add_filter( 'woocommerce_show_page_title', 'wc_hide_page_title' );
-
-add_action('admin_head', 'my_custom_fonts');
-
-function my_custom_fonts() {
-  echo '<style>
-    #sidebar-service {
-    display: none !important;
-}
-#site-intro-area {
-    display: none !important;
-}
-
-  </style>';
-}
-
+add_filter( 'woocommerce_show_page_title', 'rambo_hide_page_title' );
 ?>

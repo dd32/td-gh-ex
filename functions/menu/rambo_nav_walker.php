@@ -1,6 +1,6 @@
 <?php
 /** nav-menu-walker.php */
-class webriti_nav_walker extends Walker_Nav_Menu {	
+class Rambo_nav_walker extends Walker_Nav_Menu {	
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
@@ -34,7 +34,7 @@ class webriti_nav_walker extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		$item_output .= '<a class="dropdown-toggle" '. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= ($args->has_children && $depth == 0) ? '<b class="caret"></b></a>' : '</a>';
+		$item_output .= ($args->has_children && $depth >= 0) ? '<b class="caret"></b></a>' : '</a>';
 		$item_output .= $args->after;
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -83,11 +83,11 @@ class webriti_nav_walker extends Walker_Nav_Menu {
 		call_user_func_array(array($this, 'end_el'), $cb_args);
 	}
 }
-function webriti_nav_menu_css_class( $classes ) {
+function rambo_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
 		$classes[]	=	'active';
 
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'webriti_nav_menu_css_class' );
+add_filter( 'nav_menu_css_class', 'rambo_nav_menu_css_class' );
 ?>

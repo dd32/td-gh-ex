@@ -14,8 +14,8 @@ class rambo_feature_page_widget extends WP_Widget{
 	function __construct() {
 		parent::__construct(
 			'rambo_feature_page_widget', // Base ID
-			__('WBR : Page Widget', 'rambo'), // Name
-			array( 'description' => __( 'Feature Page item widget', 'rambo'), ) // Args
+			esc_html__('WBR : Page Widget', 'rambo'), // Name
+			array( 'description' => esc_html__( 'Feature Page item widget', 'rambo'), ) // Args
 		);
 	}
 	
@@ -43,7 +43,7 @@ class rambo_feature_page_widget extends WP_Widget{
 				
 						echo '<h2 class="widget-title">';
 							
-							echo $title;
+							echo esc_html($title);
 
 						echo '</h4>';
 						
@@ -78,7 +78,7 @@ class rambo_feature_page_widget extends WP_Widget{
 					
 						echo '<h2 class="widget-title">';
 							
-							echo $title;
+							echo esc_html($title);
 								
 							
 						echo '</h4>';
@@ -107,10 +107,10 @@ class rambo_feature_page_widget extends WP_Widget{
 		
 		
 		?>
-		 <p>
-			<label for="<?php echo $this->get_field_id( 'selected_page' ); ?>"><?php _e('Select Pages','rambo' ); ?></label> 
-			<select class="widefat" id="<?php echo $this->get_field_id( 'selected_page' ); ?>" name="<?php echo $this->get_field_name( 'selected_page' ); ?>">
-			<option value>---<?php _e('Select','rambo');?>---</option>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id( 'selected_page' )); ?>"><?php esc_html_e('Select Pages','rambo' ); ?></label> 
+			<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'selected_page' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'selected_page' )); ?>">
+			<option value>---<?php esc_html_e('Select','rambo');?>---</option>
 				<?php
 					$selected_page = $instance['selected_page'];
 					$pages = get_pages($selected_page); 				
@@ -128,12 +128,12 @@ class rambo_feature_page_widget extends WP_Widget{
 			<br/>
 		</p>
 		<p>
-		<input class="checkbox" type="checkbox" <?php if($instance['hide_image']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'hide_image' ); ?>" name="<?php echo $this->get_field_name( 'hide_image' ); ?>" /> 
-		<label for="<?php echo $this->get_field_id( 'hide_image' ); ?>"><?php _e('Hide featured image','rambo' ); ?></label>
+		<input class="checkbox" type="checkbox" <?php if($instance['hide_image']==true){ echo 'checked'; } ?> id="<?php echo esc_attr($this->get_field_id( 'hide_image' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'hide_image' )); ?>" /> 
+		<label for="<?php echo esc_attr($this->get_field_id( 'hide_image' )); ?>"><?php esc_html_e('Hide featured image','rambo' ); ?></label>
 		</p>
 		<p>
-		<input class="checkbox" type="checkbox" <?php if($instance['above_title']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'above_title' ); ?>" name="<?php echo $this->get_field_name( 'above_title' ); ?>" /> 
-		<label for="<?php echo $this->get_field_id( 'above_title' ); ?>"><?php _e( 'Display image above title','rambo' ); ?></label>
+		<input class="checkbox" type="checkbox" <?php if($instance['above_title']==true){ echo 'checked'; } ?> id="<?php echo esc_attr($this->get_field_id( 'above_title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'above_title' )); ?>" /> 
+		<label for="<?php echo esc_attr($this->get_field_id( 'above_title' )); ?>"><?php esc_html_e( 'Display image above title','rambo' ); ?></label>
 		</p>
 		<?php 
 	}
@@ -141,9 +141,9 @@ class rambo_feature_page_widget extends WP_Widget{
 	public function update( $new_instance, $old_instance ) {
 		
 		$instance = array();
-		$instance['selected_page'] = ( ! empty( $new_instance['selected_page'] ) ) ? $new_instance['selected_page'] : '';
-		$instance['hide_image'] = ( ! empty( $new_instance['hide_image'] ) ) ? $new_instance['hide_image'] : '';
-		$instance['above_title'] = ( ! empty( $new_instance['above_title'] ) ) ? $new_instance['above_title'] : '';
+		$instance['selected_page'] = ( ! empty( $new_instance['selected_page'] ) ) ? intval($new_instance['selected_page']) : '';
+		$instance['hide_image'] = ( ! empty( $new_instance['hide_image'] ) ) ? rambo_sanitize_checkbox($new_instance['hide_image']) : '';
+		$instance['above_title'] = ( ! empty( $new_instance['above_title'] ) ) ? rambo_sanitize_checkbox($new_instance['above_title']) : '';
 		return $instance;
 	}
 }

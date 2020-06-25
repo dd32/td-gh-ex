@@ -1,0 +1,2032 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: "
+"Blank WordPress Pot "
+"v1.0.0\n"
+"POT-Creation-Date: "
+"2020-06-25 13:13+0530\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Your "
+"Name <you@example.com>\n"
+"Language-Team: Your Team "
+"<translations@example."
+"com>\n"
+"Report-Msgid-Bugs-To: "
+"Translator Name "
+"<translations@example."
+"com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/"
+"plain; charset=UTF-8\n"
+"Content-Transfer-"
+"Encoding: 8bit\n"
+"Plural-Forms: "
+"nplurals=2; plural=n != "
+"1;\n"
+"X-Textdomain-Support: "
+"yesX-Generator: Poedit "
+"1.6.4\n"
+"X-Poedit-SourceCharset: "
+"UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;esc_html_e;"
+"esc_html_x:1,2c;"
+"esc_html__;esc_attr_e;"
+"esc_attr_x:1,2c;"
+"esc_attr__;_ex:1,2c;"
+"_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;"
+"_n:1,2;_n_noop:1,2;"
+"__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Language: en_US\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-"
+"SearchPath-0: .\n"
+
+#: 404.php:8
+#: banner-strip.php:18
+msgid ""
+"Oops! Page not found"
+msgstr ""
+
+#: 404.php:10
+msgid ""
+"We are sorry, but the "
+"page you are looking for "
+"does not exist."
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:71
+#: admin/inc/include-companion.php:42
+#: admin/inc/plugin-include-control.php:40
+msgid "Installing"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:72
+#: admin/inc/include-companion.php:43
+#: admin/inc/plugin-include-control.php:41
+#: functions/customizer-notify/rambo-customizer-notify.php:111
+msgid "Activating"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:73
+#: admin/inc/include-companion.php:44
+#: admin/inc/plugin-include-control.php:42
+msgid "Error"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:84
+msgid "About rambo Theme"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:85
+#, php-format
+msgid ""
+"Welcome to %1$s %2$s"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:99
+#, php-format
+msgid ""
+"Rambo theme is "
+"installed. To take full "
+"advantage of the "
+"features this theme has "
+"to offer visit our %1$s "
+"welcome page %2$s"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:100
+msgid ""
+"Get started with Rambo "
+"Lite"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:213
+msgid ""
+"See changelog below:"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:265
+#: admin/tab-pages/getting-started.php:13
+msgid "Getting Started"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:270
+#: functions/customizer/customizer_recommended_plugin.php:16
+msgid "Recommended Actions"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:278
+msgid "Why Upgrade to PRO?"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:285
+msgid "Free vs Pro"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:291
+msgid "Changelog"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:369
+#, php-format
+msgid "Install %s Now"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:371
+#: admin/inc/include-companion.php:82
+msgid "Install & Activate"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:388
+#, php-format
+msgid "Activate %s Now"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:390
+#: functions/class-tgm-plugin-activation.php:2726
+#: functions/customizer/customizer_recommended_plugin.php:19
+msgid "Activate"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:393
+#: functions/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:502
+#: admin/inc/include-companion.php:81
+#: admin/inc/include-companion.php:98
+msgid "Webriti Companion"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:505
+msgid ""
+"It is highly recommended "
+"that you install the "
+"Webriti Companion plugin "
+"to have access to the "
+"advance Frontpage "
+"sections and other theme "
+"features"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:509
+msgid "Contact Form 7"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:512
+msgid ""
+"it is recommended that "
+"you install the Contact "
+"Form 7 plugin to show "
+"contact form on pages"
+msgstr ""
+
+#: admin/inc/include-companion.php:80
+msgid ""
+"Webriti Companion plugin "
+"is required to take "
+"advantage of this "
+"theme's features in the "
+"customizer."
+msgstr ""
+
+#: admin/inc/include-companion.php:81
+msgid ""
+"Install Webriti "
+"Companion Now"
+msgstr ""
+
+#: admin/inc/include-companion.php:97
+msgid ""
+"You have installed "
+"Webriti Companion "
+"Plugin. Activate it to "
+"take advantage of this "
+"theme's features in the "
+"customizer."
+msgstr ""
+
+#: admin/inc/include-companion.php:98
+msgid ""
+"Activate Webriti "
+"Companion now"
+msgstr ""
+
+#: admin/inc/include-companion.php:99
+msgid "Activate Now"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:8
+msgid "Features"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:13
+msgid "Frontpage Sections"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:14
+msgid ""
+"You will find number of "
+"sections on front-page"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:18
+msgid ""
+"Page Templates Support"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:19
+msgid ""
+"Various Page Template "
+"included in rambo "
+"Premium Theme."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:24
+msgid ""
+"No of Section on Homepage"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:25
+msgid ""
+"Theme have many sections "
+"on Front page."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:30
+#: admin/tab-pages/useful_plugins.php:108
+msgid ""
+"Jetpack Gallery Support"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:31
+msgid ""
+"Create Awesome Gallery "
+"with Overlay"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:35
+msgid "Mobile Friendly"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:36
+msgid ""
+"Responsive  layout in "
+"all devices."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:40
+msgid "Portfolio"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:41
+msgid ""
+"Create Categorized "
+"Portfolio by using "
+"portfolio 2,3,4 column "
+"templates. Also show "
+"Diffrent set of "
+"portfolio on diffrent "
+"page. "
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:45
+msgid ""
+"Contact Form Support"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:46
+msgid ""
+"Default WordPress "
+"Contact Form and Contact "
+"Form 7 support. Add the "
+"forms using predefined "
+"Contact Page Templates"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:50
+#: admin/tab-pages/useful_plugins.php:10
+msgid "SEO Friendly URL"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:51
+msgid ""
+"This feature allow you "
+"to change custom post "
+"type slug names in the "
+"url."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:55
+#: admin/tab-pages/useful_plugins.php:81
+msgid ""
+"Mulitple Color Schemes"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:56
+msgid ""
+"Enjoy with 5 preset "
+"color schemes. You can "
+"also create custom skin "
+"without adding any code."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:60
+msgid "Google Map"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:61
+msgid ""
+"Display your Shop and "
+"Business location on "
+"your website. Support "
+"for all the Google Map "
+"plugins which generates "
+"shortcode.  "
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:66
+msgid "WPML Support"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:67
+msgid ""
+"Create Multilingual "
+"Website. Support for "
+"famous plugin like: "
+"WPML / Polylang "
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:72
+msgid "Support Forum"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:73
+msgid ""
+"Get instant 24x7 support "
+"on Our Support Forum."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:84
+msgid "Rambo Lite"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:88
+msgid ""
+"Banner Image, Services "
+"[Unlimited Services], No "
+"of 4 Projects, Latest "
+"News, 3 Column Footer "
+"Widgetizeds area"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:89
+msgid ""
+"Blog Left Sidebar, Full "
+"Width Template"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:90
+msgid "4"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:92
+msgid ""
+"Simple Thumbnail Gallery"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:101
+msgid ""
+"On WordPress.org Support "
+"Forum"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:113
+msgid "Rambo Pro"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:117
+msgid ""
+"Slider [Unlimited "
+"Slides], Site Intro, "
+"Service [Unlimited "
+"Services], Projects "
+"[Unlimited Products], "
+"Latest News, Footer "
+"Callout and 3 Column "
+"Footer Widgetizeds area"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:118
+msgid ""
+"Custom Homepage, About "
+"Us, Service, Portfolio "
+"2,3 and 4 column, Blog "
+"Left & Right Sidebar, "
+"Blog Full Width, Page "
+"Left & Right Sidebar, "
+"Page Left Sidebar, Page "
+"Right Sidebar, Page Full "
+"Width and Contact Page"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:119
+msgid "7"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:121
+msgid ""
+"Overlay Effects Gallery"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:130
+msgid ""
+"Premium Support Forum"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:141
+msgid "Get rambo PRO Now!"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:6
+msgid ""
+"Rambo is an ideal "
+"WordPress theme for "
+"those who wish to create "
+"an impressive web "
+"presence. Rambo is easy "
+"to use, provides "
+"everything you need to "
+"create great looking "
+"website. It is "
+"professional, smooth and "
+"sleek, with a clean "
+"modern layout, for "
+"almost any business "
+"types: agency, "
+"freelance, blog, "
+"startup, portfolio, "
+"corporate, firms, law "
+"firms, digital media "
+"agency , architecture "
+"firms, real estate "
+"firms, food , fashion "
+"etc etc. The theme is "
+"developed using "
+"Bootstrap 3 CSS "
+"framework that makes it "
+"friendly for all the "
+"modern devices like "
+"mobiles, tablets, "
+"laptops etc."
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:7
+msgid ""
+"In Rambo Lite, you can "
+"easily set Featured "
+"Banner, Services, "
+"Portfolio and 4 column "
+"widgetized footer. Page "
+"templates like Homepage, "
+"Full Width Page and Blog "
+"left sidebar template "
+"will be there."
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:8
+msgid ""
+"In the premium version, "
+"you will get caption "
+"Slider, Site Intro, "
+"unlimited Services, "
+"unlimited Projects, "
+"Latest News, Footer "
+"Callout, Wide & Boxed "
+"Layout, 5 predefined "
+"color schemes, feature "
+"for creating custom "
+"color scheme and Layout "
+"Manager. Page templates "
+"like About Us, Services, "
+"Portfolio, Contact Us "
+"etc are there. The theme "
+"supports popular plugins "
+"like WPML, Polylang, "
+"Contact Form 7, WP "
+"Google Maps and JetPack "
+"Gallery Extensions. Just "
+"navigate to Appearance > "
+"Customize to start "
+"customizing. Both the "
+"lite and premium version "
+"of Rambo themes are "
+"completely translated in "
+"Spanish Language."
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:16
+msgid ""
+"Need to take full "
+"advantage of all the "
+"features Go to the "
+"customizer. Go to the "
+"customizer to configure "
+"theme settings."
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:19
+msgid "Go to Customizer"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:25
+msgid "Rambo Theme"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:31
+msgid "Useful Links"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:36
+msgid "Lite Demo"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:38
+msgid "View Pro"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:41
+msgid ""
+"Premium Theme Support"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:45
+msgid "Rate This Theme"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:48
+msgid "Support"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:5
+msgid "Why Upgrade to Pro?"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:11
+msgid ""
+"This feature helps you "
+"to rename the slug names "
+"from the URL allowing "
+"you to make it SEO "
+"friendly."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:18
+msgid "Testimonial Feature"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:19
+msgid ""
+"Testimonials are a "
+"powerful way to gain "
+"credibility. You can "
+"display testimonial with "
+"carousel effect. You can "
+"display testimonial on "
+"About page template."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:27
+msgid ""
+"Multi Level Navigation"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:28
+msgid ""
+"Beautifully style "
+"navigation/menu in rambo "
+"Theme. You can make "
+"multi level menu. Multi "
+"Level menu means that "
+"you can create sub menu."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:36
+msgid "Front Page Settings"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:37
+msgid ""
+"Rambo Premium theme "
+"comes with Homepage "
+"Settings. You can easily "
+"display Homepage on "
+"front."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:45
+msgid "Service Features"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:46
+msgid ""
+"HomePage Service section "
+"is created via Service "
+"Menu is situated in "
+"WordPress Menu on the "
+"left side. You can "
+"display unlimited "
+"services, you want "
+"having support for "
+"thousands of Font "
+"Awesome Icons, custom "
+"icons and service "
+"description and service "
+"link. Display your all "
+"services on a page using "
+"Service Page Template"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:54
+msgid "Portfolio Features"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:55
+msgid ""
+"Showcase any number of "
+"projects in the "
+"portfolio. Theme will "
+"provide you an option "
+"for creating 2,3,4 "
+"cloumn grid layout by "
+"using portfolio 2,3,4 "
+"column layout templates "
+"respectively. If you "
+"have number of projects "
+"to show than these "
+"templates will be the "
+"answer. You can also "
+"create categorised "
+"portfolio, which "
+"displays all the "
+"portfolio categories on "
+"single place. In fact we "
+"have coded in such a "
+"manner so that you can "
+"create any number of "
+"different set of "
+"portfolios."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:63
+msgid "Latest News Section"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:64
+msgid ""
+"Commonly this section is "
+"used to display  Latest "
+"News, Announcement and "
+"Events type of content. "
+"Since this section is "
+"created via News Sidebar "
+"you can easily use other "
+"WordPress widgets. "
+"Powerful styling of all "
+"the sidebar areas on "
+"HomePage makes this "
+"theme very flexible. "
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:71
+msgid "Team Feature"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:72
+msgid ""
+"Team features are a "
+"powerful way to display "
+"your team member with "
+"carousel slider. Use the "
+"rambo: Team Widget for "
+"showing team member."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:82
+msgid ""
+"You will get 5 "
+"predefined color skins "
+"and you can even make "
+"yours favorite color "
+"schemes using Custom "
+"Color Setting in the "
+"Customizer."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:90
+msgid "Well Documented"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:91
+msgid ""
+"We provide good  "
+"knowledge base articles "
+"which helps you to "
+"create an effective "
+"wesbite. You can visit "
+"these articles on our  "
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:92
+msgid "Help Section"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:100
+msgid "Custom widget "
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:101
+msgid ""
+"Building website with "
+"our custom widgets is "
+"very simple. Just place "
+"them in inside the "
+"available Sidebar or "
+"even in the content"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:109
+msgid ""
+"The native WordPress "
+"image gallery displays "
+"as a grid of image "
+"thumbnails. If you want "
+"to show overlay effects "
+"on the gallery images? "
+"You need to install"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:109
+msgid "Jetpack plugin,"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:109
+msgid ""
+"Using Jetpack you can "
+"create four types of "
+"gallery style like Tiled "
+"Mosaic, Square Tiles, "
+"Circles and Tiled "
+"Columns. See gallery "
+"look on rambo theme demo."
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:109
+msgid "Click Here"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:118
+msgid "Translation Ready"
+msgstr ""
+
+#: admin/tab-pages/useful_plugins.php:119
+msgid ""
+"Theme supports  yet "
+"another famous plugin "
+"WPML / Polylang. With "
+"the help of this support "
+"you can create website "
+"in multiple languages."
+msgstr ""
+
+#: archive.php:10
+msgid "Daily Archive"
+msgstr ""
+
+#: archive.php:12
+msgid "Monthly Archive"
+msgstr ""
+
+#: archive.php:14
+msgid "Yearly Archive"
+msgstr ""
+
+#: archive.php:16
+msgid "Blog Archive"
+msgstr ""
+
+#: archive.php:24
+#: author.php:14
+#: banner-strip.php:29
+#: category.php:13
+#: searchform.php:2
+#: searchform.php:3
+#: tag.php:14
+#: woocommerce.php:15
+msgid "Search"
+msgstr ""
+
+#: archive.php:25
+#: author.php:15
+#: banner-strip.php:30
+#: category.php:14
+#: tag.php:15
+#: woocommerce.php:16
+msgid "Go"
+msgstr ""
+
+#: archive.php:58
+#: author.php:47
+#: blog-left-sidebar.php:29
+#: category.php:47
+#: index.php:27
+#: search.php:20
+#: single.php:20 tag.php:47
+msgid "Leave a comment"
+msgstr ""
+
+#: archive.php:59
+#: author.php:48
+#: blog-left-sidebar.php:30
+#: category.php:48
+#: functions/template-tags.php:10
+#: index.php:28
+#: search.php:21
+#: single.php:21 tag.php:48
+msgid "By"
+msgstr ""
+
+#: archive.php:70
+#: author.php:59
+#: blog-left-sidebar.php:32
+#: category.php:59
+#: child_theme_compatible.php:35
+#: fullwidth.php:18
+#: index.php:30 page.php:37
+#: single.php:23 tag.php:58
+#: theme_setup_data.php:35
+msgid "Read More"
+msgstr ""
+
+#: author.php:8
+#, php-format
+msgid "Author Archive %s"
+msgstr ""
+
+#: banner-strip.php:11
+#, php-format
+msgid ""
+"Search results for %s"
+msgstr ""
+
+#: banner-strip.php:14
+#: child_theme_compatible.php:138
+#: functions/menu/default_menu_walker.php:23
+msgid "Home"
+msgstr ""
+
+#: category.php:8
+msgid "Category Archive"
+msgstr ""
+
+#: child_theme_compatible.php:33
+#: theme_setup_data.php:33
+msgid "Responsive WP theme"
+msgstr ""
+
+#: child_theme_compatible.php:47
+#: theme_setup_data.php:49
+msgid ""
+"Featured Portfolio "
+"Projects"
+msgstr ""
+
+#: child_theme_compatible.php:69
+#: theme_setup_data.php:71
+msgid ""
+"Rambo is a clean and "
+"fully responsive "
+"Template."
+msgstr ""
+
+#: child_theme_compatible.php:70
+#: theme_setup_data.php:72
+msgid "Purchase Now"
+msgstr ""
+
+#: child_theme_compatible.php:76
+#: child_theme_compatible.php:100
+#: theme_setup_data.php:44
+#: theme_setup_data.php:78
+#: theme_setup_data.php:102
+msgid ""
+"Check out our Main "
+"Services which we offer "
+"to every client"
+msgstr ""
+
+#: child_theme_compatible.php:79
+msgid ""
+"Copyright @ 2018 - "
+"RAMBO. Designed by <a "
+"href=\"http://webriti.com"
+"\" rel=\"nofollow\" "
+"target=\"_blank\"> "
+"Webriti</a>"
+msgstr ""
+
+#: child_theme_compatible.php:99
+#: theme_setup_data.php:43
+#: theme_setup_data.php:101
+msgid "Our Services"
+msgstr ""
+
+#: child_theme_compatible.php:108
+#: functions/customizer/customizer_recent_news.php:41
+#: functions/widget/rambo-sidebar-latest-news.php:32
+#: functions/widget/rambo-sidebar-latest-news.php:77
+#: theme_setup_data.php:110
+msgid "Latest News"
+msgstr ""
+
+#: comments.php:2
+msgid ""
+"This post is password "
+"protected. Enter the "
+"password to view any "
+"comments."
+msgstr ""
+
+#: comments.php:8
+msgid "Comments"
+msgstr ""
+
+#: comments.php:14
+#: comments.php:25
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:15
+#: comments.php:26
+msgid ""
+"&larr; Older Comments"
+msgstr ""
+
+#: comments.php:16
+#: comments.php:27
+msgid ""
+"Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:31
+msgid "Comments are closed"
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgid ""
+"You must be <a href=\"%s"
+"\">logged in</a> to post "
+"a comment"
+msgstr ""
+
+#: comments.php:60
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:60
+msgid "Logout"
+msgstr ""
+
+#: comments.php:62
+msgid "Send Message"
+msgstr ""
+
+#: comments.php:64
+msgid "Leave a Reply"
+msgstr ""
+
+#: functions.php:121
+msgid "Page"
+msgstr ""
+
+#: functions.php:161
+msgid "Primary Menu"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:327
+msgid ""
+"Install Required Plugins"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:330
+#, php-format
+msgid ""
+"Installing Plugin: %s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:333
+msgid ""
+"Something went wrong "
+"with the plugin API."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:336
+#, php-format
+msgid ""
+"This theme requires the "
+"following plugin: %1$s."
+msgid_plural ""
+"This theme requires the "
+"following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:342
+#, php-format
+msgid ""
+"This theme recommends "
+"the following plugin: "
+"%1$s."
+msgid_plural ""
+"This theme recommends "
+"the following plugins: "
+"%1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin "
+"needs to be updated to "
+"its latest version to "
+"ensure maximum "
+"compatibility with this "
+"theme: %1$s."
+msgid_plural ""
+"The following plugins "
+"need to be updated to "
+"their latest version to "
+"ensure maximum "
+"compatibility with this "
+"theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:354
+#, php-format
+msgid ""
+"There is an update "
+"available for %1$s."
+msgid_plural ""
+"There are updates "
+"available for the "
+"following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:360
+#, php-format
+msgid ""
+"The following required "
+"plugin is currently "
+"inactive: %1$s."
+msgid_plural ""
+"The following required "
+"plugins are currently "
+"inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:366
+#, php-format
+msgid ""
+"The following "
+"recommended plugin is "
+"currently inactive: %1$s."
+msgid_plural ""
+"The following "
+"recommended plugins are "
+"currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:371
+msgid ""
+"Begin installing plugin"
+msgid_plural ""
+"Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:376
+msgid ""
+"Begin updating plugin"
+msgid_plural ""
+"Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:381
+msgid ""
+"Begin activating plugin"
+msgid_plural ""
+"Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:385
+msgid ""
+"Return to Required "
+"Plugins Installer"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:386
+#: functions/class-tgm-plugin-activation.php:827
+#: functions/class-tgm-plugin-activation.php:2533
+#: functions/class-tgm-plugin-activation.php:3580
+msgid ""
+"Return to the Dashboard"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:387
+#: functions/class-tgm-plugin-activation.php:3159
+msgid ""
+"Plugin activated "
+"successfully."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:388
+#: functions/class-tgm-plugin-activation.php:2952
+msgid ""
+"The following plugin was "
+"activated successfully:"
+msgid_plural ""
+"The following plugins "
+"were activated "
+"successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:390
+#, php-format
+msgid ""
+"No action taken. Plugin "
+"%1$s was already active."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A "
+"higher version of %s is "
+"needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:394
+#, php-format
+msgid ""
+"All plugins installed "
+"and activated "
+"successfully. %1$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more "
+"required or recommended "
+"plugins to install, "
+"update or activate."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:397
+msgid ""
+"Please contact the "
+"administrator of this "
+"site for help."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:522
+msgid ""
+"This plugin needs to be "
+"updated to be compatible "
+"with your theme."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin "
+"package does not contain "
+"a folder with the "
+"desired slug and "
+"renaming did not work."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:934
+#: functions/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the "
+"plugin provider and ask "
+"them to package their "
+"plugin according to the "
+"WordPress guidelines."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin "
+"package consists of more "
+"than one file, but the "
+"files are not packaged "
+"in a folder."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:1121
+#: functions/class-tgm-plugin-activation.php:2948
+msgctxt ""
+"plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2292
+msgid ""
+"WordPress Repository"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2319
+msgid ""
+"Installed But Not "
+"Activated"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2327
+msgid ""
+"Required Update Not "
+"Available"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt ""
+"Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid ""
+"All <span class=\"count"
+"\">(%s)</span>"
+msgid_plural ""
+"All <span class=\"count"
+"\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid ""
+"To Install <span class="
+"\"count\">(%s)</span>"
+msgid_plural ""
+"To Install <span class="
+"\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid ""
+"Updates Available <span "
+"class=\"count\">(%s)</"
+"span>"
+msgid_plural ""
+"Updates Available <span "
+"class=\"count\">(%s)</"
+"span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid ""
+"To Activate <span class="
+"\"count\">(%s)</span>"
+msgid_plural ""
+"To Activate <span class="
+"\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:2482
+msgctxt ""
+"as in: \"version nr "
+"unknown\""
+msgid "unknown"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2498
+msgid ""
+"Minimum required version:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2533
+msgid ""
+"No plugins to install, "
+"update or activate."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2684
+msgid ""
+"Upgrade message from the "
+"plugin author:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2757
+msgid ""
+"No plugins were selected "
+"to be installed. No "
+"action taken."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2759
+msgid ""
+"No plugins were selected "
+"to be updated. No action "
+"taken."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2800
+msgid ""
+"No plugins are available "
+"to be installed at this "
+"time."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2802
+msgid ""
+"No plugins are available "
+"to be updated at this "
+"time."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2908
+msgid ""
+"No plugins were selected "
+"to be activated. No "
+"action taken."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2934
+msgid ""
+"No plugins are available "
+"to be activated at this "
+"time."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3158
+msgid ""
+"Plugin activation failed."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid ""
+"Updating Plugin %1$s "
+"(%2$d/%3$d)"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid ""
+"An error occurred while "
+"installing %1$s: <strong>"
+"%2$s</strong>."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid ""
+"The installation of %1$s "
+"failed."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and "
+"activation process is "
+"starting. This process "
+"may take a while on some "
+"hosts, so please be "
+"patient."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid ""
+"%1$s installed and "
+"activated successfully."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3509
+#: functions/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3509
+#: functions/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3510
+msgid ""
+"All installations and "
+"activations have been "
+"completed."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid ""
+"Installing and "
+"Activating Plugin %1$s "
+"(%2$d/%3$d)"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process "
+"is starting. This "
+"process may take a while "
+"on some hosts, so please "
+"be patient."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid ""
+"%1$s installed "
+"successfully."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3518
+msgid ""
+"All installations have "
+"been completed."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid ""
+"Installing Plugin %1$s "
+"(%2$d/%3$d)"
+msgstr ""
+
+#: functions/commentbox/comment-function.php:13
+msgid "Reply"
+msgstr ""
+
+#: functions/commentbox/comment-function.php:29
+msgid ""
+"Your comment is awaiting "
+"moderation."
+msgstr ""
+
+#: functions/customizer/customizer_copyright.php:8
+msgid ""
+"Footer copyright settings"
+msgstr ""
+
+#: functions/customizer/customizer_copyright.php:13
+#: functions/customizer/customizer_copyright.php:27
+msgid "Copyright text"
+msgstr ""
+
+#: functions/customizer/customizer_copyright.php:20
+#: theme_setup_data.php:81
+msgid ""
+"<a href=\"https://"
+"wordpress.org\">Proudly "
+"powered by WordPress</a> "
+"| Theme: <a href="
+"\"https://webriti.com\" "
+"rel=\"nofollow\">Rambo</"
+"a> by Webriti"
+msgstr ""
+
+#: functions/customizer/customizer_header.php:8
+msgid "Header settings"
+msgstr ""
+
+#: functions/customizer/customizer_header.php:16
+#: functions/customizer/customizer_header.php:25
+#: functions/customizer/customizer_header.php:38
+msgid "Custom CSS"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:13
+#: functions/customizer/customizer_pro_feature.php:17
+#: functions/customizer/customizer_pro_feature.php:21
+#: functions/customizer/customizer_pro_feature.php:25
+#: functions/customizer/customizer_pro_feature.php:29
+#: functions/customizer/customizer_pro_feature.php:33
+#: functions/customizer/customizer_pro_feature.php:37
+#: functions/customizer/customizer_pro_feature.php:41
+#: functions/customizer/customizer_pro_feature.php:45
+#: functions/customizer/customizer_pro_feature.php:49
+#: functions/customizer/customizer_pro_feature.php:53
+#: functions/customizer/customizer_pro_feature.php:57
+#: functions/customizer/customizer_pro_feature.php:61
+msgid "PRO"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:14
+msgid ""
+"Advance Theme Style "
+"Settings"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:18
+msgid "Slider Settings"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:22
+msgid ""
+"Portfolio Management"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:26
+msgid "Team Section"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:30
+msgid "Shop Section"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:34
+msgid "Client Section"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:38
+msgid ""
+"Call To Action Section"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:42
+msgid ""
+"Latest News Settings"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:46
+msgid ""
+"Multiple Page Templates"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:50
+msgid "Typography Settings"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:54
+msgid "Section Reordering"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:58
+msgid ""
+"Support for WPML / "
+"Polylang"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:62
+msgid "Quality Support"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:65
+msgid "UPGRADE TO PRO"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:72
+msgid "View PRO Details"
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:99
+msgid ""
+"Select among predefined "
+"color skins, you can "
+"even create yours "
+"without writing any CSS "
+"code."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:102
+msgid ""
+"Pro version theme comes "
+"with add multiple slides "
+"in slider and you can "
+"select the slider "
+"enable / disable option, "
+"slider animation etc."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:105
+msgid ""
+"Portfolio section, "
+"select column layout, "
+"templates , archives "
+"with 3 possible layouts."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:108
+msgid ""
+"Show all your team "
+"members, clients, Shop "
+"products and call to "
+"action on the frontpage."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:111
+msgid ""
+"Theme comes with hide/"
+"show post meta from "
+"latest news section."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:114
+msgid ""
+"Theme comes with "
+"multiple page settings "
+"like about us, service "
+"etc."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:117
+msgid ""
+"Typography will helps "
+"you to manage custom "
+"fonts like paragraph "
+"font, menu font etc."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:120
+msgid ""
+"Theme Layout manager "
+"will helps you to "
+"rearrange the sections."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:123
+msgid ""
+"Translation ready "
+"supporting popular "
+"plugins WPML / Polylang."
+msgstr ""
+
+#: functions/customizer/customizer_pro_feature.php:126
+msgid ""
+"Dedicated support, "
+"various widget and "
+"sidebar management."
+msgstr ""
+
+#: functions/customizer/customizer_recent_news.php:11
+msgid ""
+"Homepage section settings"
+msgstr ""
+
+#: functions/customizer/customizer_recent_news.php:16
+msgid ""
+"Latest news settings"
+msgstr ""
+
+#: functions/customizer/customizer_recent_news.php:32
+msgid "Hide news section"
+msgstr ""
+
+#: functions/customizer/customizer_recent_news.php:49
+#: functions/widget/rambo-sidebar-latest-news.php:82
+msgid "Title"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:17
+msgid "Recommended Plugin"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:18
+msgid ""
+"Install and Activate"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:20
+msgid "Deactivate"
+msgstr ""
+
+#: functions/template-tags.php:9
+msgid "leave a comment"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:12
+#: functions/widget/custom-sidebar.php:14
+msgid "Sidebar widget area"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:24
+msgid ""
+"Homepage project section "
+"- sidebar"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:26
+msgid ""
+"Use the Project Widget "
+"to add project type "
+"content"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:34
+#: functions/widget/custom-sidebar.php:36
+msgid ""
+"Woocommerce sidebar "
+"widget area"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:46
+#: functions/widget/custom-sidebar.php:48
+msgid "Footer widget area"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:57
+#: functions/widget/custom-sidebar.php:59
+msgid ""
+"Footer social icon "
+"sidebar area"
+msgstr ""
+
+#: functions/widget/rambo-register-page-widget.php:17
+msgid "WBR : Page Widget"
+msgstr ""
+
+#: functions/widget/rambo-register-page-widget.php:18
+msgid ""
+"Feature Page item widget"
+msgstr ""
+
+#: functions/widget/rambo-register-page-widget.php:111
+msgid "Select Pages"
+msgstr ""
+
+#: functions/widget/rambo-register-page-widget.php:113
+msgid "Select"
+msgstr ""
+
+#: functions/widget/rambo-register-page-widget.php:132
+msgid "Hide featured image"
+msgstr ""
+
+#: functions/widget/rambo-register-page-widget.php:136
+msgid ""
+"Display image above title"
+msgstr ""
+
+#: functions/widget/rambo-sidebar-latest-news.php:16
+msgid ""
+"WBR : Sidebar Latest News"
+msgstr ""
+
+#: functions/widget/rambo-sidebar-latest-news.php:17
+msgid ""
+"The Recent post display "
+"on your site"
+msgstr ""
+
+#: functions/widget/rambo-sidebar-latest-news.php:86
+msgid ""
+"Number of pages to show"
+msgstr ""
+
+#: functions/widget/rambo-site-intro-widget.php:15
+msgid ""
+"WBR : Call To Action Top"
+msgstr ""
+
+#: functions/widget/rambo-site-intro-widget.php:16
+msgid ""
+"Display the Site Intro "
+"Section."
+msgstr ""
+
+#: functions/widget/rambo-site-intro-widget.php:74
+msgid "Description"
+msgstr ""
+
+#: functions/widget/rambo-site-intro-widget.php:77
+msgid "Button Text"
+msgstr ""
+
+#: functions/widget/rambo-site-intro-widget.php:80
+msgid "Button Link"
+msgstr ""
+
+#: functions/widget/rambo-site-intro-widget.php:86
+msgid ""
+"Open link in new tab"
+msgstr ""
+
+#: header.php:13
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:33
+msgid "Toggle navigation"
+msgstr ""
+
+#: search.php:28
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:30
+msgid ""
+"Sorry, but nothing "
+"matched your search "
+"criteria. Please try "
+"again with some "
+"different keywords."
+msgstr ""
+
+#: tag.php:8
+#, php-format
+msgid "Tag Archive %s"
+msgstr ""
+
+#: theme_setup_data.php:34
+msgid ""
+"We are a group of "
+"passionate designers and "
+"developers who really "
+"love creating awesome "
+"WordPress themes & "
+"giving support."
+msgstr ""
+
+#: theme_setup_data.php:50
+msgid ""
+"Maecenas sit amet "
+"tincidunt elit. "
+"Pellentesque habitant "
+"morbi tristique senectus "
+"et netus et Nulla "
+"facilisi."
+msgstr ""
+
+#: theme_setup_data.php:116
+msgid "Mobile Apps"
+msgstr ""
+
+#: theme_setup_data.php:117
+msgid ""
+"A set of pieces of "
+"creative work collected "
+"to be shown to potential "
+"customers or employers; "
+"\"the artist had put "
+"together a portfolio of "
+"his work\""
+msgstr ""
+
+#: theme_setup_data.php:120
+msgid "Super Baby"
+msgstr ""
+
+#: theme_setup_data.php:121
+#: theme_setup_data.php:125
+#: theme_setup_data.php:129
+msgid ""
+"A set of pieces of "
+"creative work collected "
+"to be shown to potential "
+"customers or employers; "
+"\"the artist had put "
+"together a portfolio of "
+"his work\";"
+msgstr ""
+
+#: theme_setup_data.php:124
+msgid "Coffee Break"
+msgstr ""
+
+#: theme_setup_data.php:128
+msgid "Beautiful Birds"
+msgstr ""
+
+#: woocommerce.php:9
+msgid "Shop"
+msgstr ""

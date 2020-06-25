@@ -1,9 +1,11 @@
 <?php
 get_template_part('banner','strip');?>
 <!-- Container -->
+<div id="content">
 <div class="container">
 	<!-- Blog Section Content -->
 	<div class="row-fluid">
+	<div class="blog-sidebar">
 		<!-- Blog Single Page -->
 		<?php if ( class_exists( 'WooCommerce' ) ) {
 					
@@ -12,14 +14,14 @@ get_template_part('banner','strip');?>
 					}
 					else{ 
 				
-					echo '<div class="span'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).' Blog_main">'; 
+					echo '<div class="span'.( !is_active_sidebar( "sidebar-1" ) ?"12" :"8" ).' Blog_main">'; 
 					
 					}
 					
 				}
 				else{ 
 				
-					echo '<div class="span'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).' Blog_main">';
+					echo '<div class="span'.( !is_active_sidebar( "sidebar-1" ) ?"12" :"8" ).' Blog_main">';
 					
 					}
 					?>
@@ -53,6 +55,7 @@ get_template_part('banner','strip');?>
 					get_sidebar(); 
 					
 					}?>
-	</div>
+	</div></div>
+</div>
 </div>
 <?php get_footer();?>

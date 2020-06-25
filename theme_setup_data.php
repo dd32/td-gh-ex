@@ -1,26 +1,16 @@
 <?php
 /*---------------------------------------------------------------------------------*
  * @file           theme_stup_data.php
- * @package        Rambopro
+ * @package        Rambo
  * @copyright      2013 webriti
  * @license        license.txt
  * @author       :	webriti
- * @filesource     wp-content/themes/rambo-pro/theme_setup_data.php
+ * @filesource     wp-content/themes/rambo/theme_setup_data.php
  *	Admin  & front end defual data file 
  *-----------------------------------------------------------------------------------*/ 
-function theme_data_setup()
+function rambo_theme_data_setup()
 {
-	
-	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/project";
-	$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
-	return $rambo_pro_theme_options  = array(
-			//Logo and Fevicon header			
-			'rambopro_stylesheet'=>'default.css',			
-			'upload_image_logo'=>'',
-			'height'=>'50',
-			'width'=>'150',
-			'rambo_texttitle'=>true,
-			'upload_image_favicon'=>'',
+	return $rambo_pro_theme_options  = array(		
 			'webrit_custom_css'=>'',
 			'rambo_custom_css'=>'',
 			
@@ -39,9 +29,9 @@ function theme_data_setup()
 			
 			//Slide
 			'home_slider_enabled'=>true,
-			'slider_post' => $slider_image,
+			'slider_post' => WEBRITI_TEMPLATE_DIR_URI .'/images/slider.png',
 			'slider_title' => __('Responsive WP theme','rambo'),
-			'slider_text' => 'We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.',
+			'slider_text' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','rambo'),
 			'slider_readmore_text' => __('Read More','rambo'),
 			'readmore_text_link' => '#',
 			'readmore_target' => false,
@@ -50,12 +40,14 @@ function theme_data_setup()
 			// service
 			'home_service_enabled'=>false,
 			'service_list' => 4,
+			'service_title' => __('Our Services','rambo'),
+			'service_description' => __('Check out our Main Services which we offer to every client','rambo'),
 			
 			// project 
 			'home_projects_enabled' => false,
 			'project_protfolio_enabled'=>false,
 			'project_heading_one'=> __('Featured Portfolio Projects','rambo'),
-			'project_tagline'=>'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
+			'project_tagline'=>__('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
 			// home project 
 			'project_list'=>4,
 			
@@ -86,7 +78,7 @@ function theme_data_setup()
 			'service_section_descritpion'=> __('Check out our Main Services which we offer to every client','rambo'),
 			
 			/** footer customization **/
-			'footer_copyright' => sprintf(__('Copyright @ 2018 - RAMBO. Designed by <a href="http://webriti.com" rel="nofollow" target="_blank"> Webriti</a>','rambo')),
+			'footer_copyright' => sprintf(__('<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Rambo</a> by Webriti', 'rambo')),
 
 			/* Footer social media */
 			'footer_social_media_enabled'=>false,
@@ -120,21 +112,21 @@ function theme_data_setup()
 			
 			//Projects Section Settings
 			'home_projects_enabled' => true,
-			'project_one_thumb' => $portfolio_image .'/port1.jpg',
+			'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png',
 			'project_one_title' => __('Mobile Apps','rambo'),
-			'project_one_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
+			'project_one_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work"','rambo'),
 		
-		    'project_two_thumb' => $portfolio_image .'/port2.jpg',
+		    'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb1.png',
 			'project_two_title' => __('Super Baby','rambo'), 
-			'project_two_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
+			'project_two_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
-			'project_three_thumb' => $portfolio_image .'/port3.jpg',
+			'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb2.png',
 			'project_three_title' => __('Coffee Break','rambo'),
-			'project_three_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
+			'project_three_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
-			'project_four_thumb' => $portfolio_image .'/port4.jpg',
+			'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb3.png',
 			'project_four_title' => __('Beautiful Birds','rambo'),
-			'project_four_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
+			'project_four_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 
 		);
 }

@@ -2,25 +2,22 @@
 function rambo_scripts()
 {	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 	/*Template Color Scheme CSs*/
-	/*Font Awesome CSS*/
 	wp_enqueue_style('rambo-style', get_stylesheet_uri() );
 	wp_enqueue_style ('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');
-	//bootstrap css
-	wp_enqueue_style('default', WEBRITI_TEMPLATE_DIR_URI . '/css/default.css');
+	wp_enqueue_style('rambo-default', WEBRITI_TEMPLATE_DIR_URI . '/css/default.css');
 	wp_enqueue_style ('font-awesome',WEBRITI_TEMPLATE_DIR_URI .'/css/font-awesome/css/font-awesome.css');
-
-	wp_enqueue_style ('element',WEBRITI_TEMPLATE_DIR_URI.'/css/element.css');
-	wp_enqueue_style ('bootstrap-responsive',WEBRITI_TEMPLATE_DIR_URI .'/css/bootstrap-responsive.css'); //boot rsp css
-	wp_enqueue_style ('docs',WEBRITI_TEMPLATE_DIR_URI .'/css/docs.css'); //docs css
+	wp_enqueue_style ('rambo-element',WEBRITI_TEMPLATE_DIR_URI.'/css/element.css');
+	wp_enqueue_style ('bootstrap-responsive',WEBRITI_TEMPLATE_DIR_URI .'/css/bootstrap-responsive.css');
+	wp_enqueue_style ('rambo-docs',WEBRITI_TEMPLATE_DIR_URI .'/css/docs.css');
 	
 	/*Style Media Css*/
-	wp_enqueue_style ('style-media',WEBRITI_TEMPLATE_DIR_URI .'/css/style-media.css'); //Style-Media
+	wp_enqueue_style ('rambo-style-media',WEBRITI_TEMPLATE_DIR_URI .'/css/style-media.css'); //Style-Media
 			
 	//Template Color Scheme Js	
-	wp_enqueue_script('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/bootstrap.min.js',array('jquery'));
-	wp_enqueue_script('Bootstrap-transtiton',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/menu.js');
+	wp_enqueue_script('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap.min.js',array('jquery'));
+	wp_enqueue_script('rambo-menu',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/menu.js');
 	
-	wp_enqueue_script('Bootstrap-transtiton',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap-transition.js');
+	wp_enqueue_script('bootstrap-transtiton',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap-transition.js');
 	/*Color Schemes*/
 	
 	
@@ -37,7 +34,7 @@ add_action( 'admin_enqueue_scripts', 'rambo_enqueue_script_function' );
 	add_action('wp_head','rambo_enqueue_custom_css');
 	function rambo_enqueue_custom_css()
 	{
-	$rambo_theme_options = theme_data_setup();
+	$rambo_theme_options = rambo_theme_data_setup();
 	$rambo_current_options = wp_parse_args(  get_option( 'rambo_theme_options', array() ), $rambo_theme_options );
 	if($rambo_current_options['rambo_custom_css']!='') {  ?>
 	<style type="text/css">

@@ -1,4 +1,4 @@
-/* -----Add additional css created by Shahid----- */
+/* ----- additional css ----- */
 @media (max-width: 767px) { #slider-carousel .item.active > div { display:block; } }
 @media (min-width: 767px) and (max-width: 992px ) { #slider-carousel .item.active > div { display:block; } }
 
@@ -59,11 +59,10 @@ body{padding-left:0 !important; padding-right:0 !important;}
 .woocommerce span.onsale { left: 25px; }
 .products ul.products { padding: 0; }
 .page-template-about-us .main_space { margin-bottom: 10px; }
-.navbar .brand { padding: 0px 15px ; }
+.navbar .brand { padding: 0px 15px ;}
 .blog_section2_comment a { padding: 6px; }  
 .newsletter_btn { display:block; } 
 form#searchform { margin: 0; }
-.search_head.pull-right { float: none; }
 .Blog_main .tiled-gallery { margin: 0 0px 20px; }
 #myformdata { padding: 0 15px; }
 .wpcf7-form { width: 95%; }
@@ -71,6 +70,9 @@ form#searchform { margin: 0; }
 .blog_section { margin: 0 15px 50px; }
 .blog_single_post { margin-left: 15px; margin-right: 15px; float: none; width: auto; }
 .woocommerce-product-search input[type="search"] { width: 80%; }
+.navbar .brand {text-align: center;float: unset;}
+.navbar h1,.navbar .site-description{text-align: center;}
+.navbar .btn-navbar{margin: 0 auto !important;float: unset;}
 
 }
 
@@ -103,3 +105,23 @@ form#searchform { margin: 0; }
 .dropup, .dropdown:hover { position: relative; color: #ffffff !important; text-decoration: none; background-color: transparent !important; } 
 .about_space .pull-right { float: none; margin-bottom: 0px; }
 }
+@media (min-width: 979px) {
+.logo-link-url {
+    display: inline-block;
+    float: left;
+}}
+@media only screen and (min-width: 979px) and (max-width: 1100px) {.navbar .btn-navbar{margin-top: 15px;}}
+@media (max-width: 1100px){
+.caret {
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}}
+@media (min-width: 1100px) {
+  .dropdown-submenu .caret{display: none;}
+}
+@media (max-width: 1100px) {.dropdown-submenu > a:after {display: none;}
+.nav .dropdown-submenu .dropdown-toggle .caret  {
+        border-top: 4px solid #db2723 !important;
+}}

@@ -12,8 +12,8 @@ class rambo_site_intro_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'rambo_site_intro_widget', // Base ID
-			__('WBR : Call To Action Top', 'rambo'), // Name
-			array( 'description' => __( 'Display the Site Intro Section.', 'rambo' ), ) // Args
+			esc_html__('WBR : Call To Action Top', 'rambo'), // Name
+			array( 'description' => esc_html__( 'Display the Site Intro Section.', 'rambo' ), ) // Args
 		);
 	}
 
@@ -38,13 +38,13 @@ class rambo_site_intro_widget extends WP_Widget {
 		
 				
 					<div class="span8">		
-						<h1><?php echo  $instance[ 'description' ];?></h1>
+						<h1><?php echo  esc_html($instance[ 'description' ]);?></h1>
 					</div>
 					<div class="span4">
 						<?php
 						if(($instance['site_intro_link'])!=null){
 					
-						echo '<a class="purchase_now_btn" href="'.$instance['site_intro_link'].'" '.($instance['site_intro_target']==true?'target="_blank"':'').' >'.$instance['site_intro_text'].'
+						echo '<a class="purchase_now_btn" href="'.esc_url($instance['site_intro_link']).'" '.($instance['site_intro_target']==true?'target="_blank"':'').' >'.esc_html($instance['site_intro_text']).'
 					    </a>';					    
 						}
 						?>
@@ -71,19 +71,19 @@ class rambo_site_intro_widget extends WP_Widget {
 		?>
 		
 		
-		<h4 for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Description','rambo' ); ?></h4>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" type="text" value="<?php if($instance[ 'description' ]) echo esc_attr($instance[ 'description' ]);?>" />
+		<h4 for="<?php echo esc_attr($this->get_field_id( 'description' )); ?>"><?php esc_html_e( 'Description','rambo' ); ?></h4>
+		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'description' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'description' )); ?>" type="text" value="<?php if($instance[ 'description' ]) echo esc_attr($instance[ 'description' ]);?>" />
 		
-		<h4 for="<?php echo $this->get_field_id( 'site_intro_text' ); ?>"><?php _e('Button Text','rambo' ); ?></h4>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'site_intro_text' ); ?>" name="<?php echo $this->get_field_name( 'site_intro_text' ); ?>" type="text" value="<?php if($instance[ 'site_intro_text' ]) echo esc_attr($instance[ 'site_intro_text' ]);?>" />
+		<h4 for="<?php echo esc_attr($this->get_field_id( 'site_intro_text' )); ?>"><?php esc_html_e('Button Text','rambo' ); ?></h4>
+		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'site_intro_text' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'site_intro_text' )); ?>" type="text" value="<?php if($instance[ 'site_intro_text' ]) echo esc_attr($instance[ 'site_intro_text' ]);?>" />
 		
-		<h4 for="<?php echo $this->get_field_id( 'site_intro_link' ); ?>"><?php _e('Button Link','rambo' ); ?></h4>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'site_intro_link' ); ?>" name="<?php echo $this->get_field_name( 'site_intro_link' ); ?>" type="text" value="<?php if($instance[ 'site_intro_link' ]) echo esc_attr($instance[ 'site_intro_link' ]);?>" />
+		<h4 for="<?php echo esc_attr($this->get_field_id( 'site_intro_link' )); ?>"><?php esc_html_e('Button Link','rambo' ); ?></h4>
+		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'site_intro_link' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'site_intro_link' )); ?>" type="text" value="<?php if($instance[ 'site_intro_link' ]) echo esc_attr($instance[ 'site_intro_link' ]);?>" />
 		
 		<p>
-		<input class="checkbox" type="checkbox" <?php if($instance['site_intro_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'site_intro_target' ); ?>" name="<?php echo $this->get_field_name( 'site_intro_target' ); ?>" /> 
-		<label for="<?php echo $this->get_field_id( 'site_intro_target' ); ?>">
-		<?php _e('Open link in new tab','rambo' ); ?></label>
+		<input class="checkbox" type="checkbox" <?php if($instance['site_intro_target']==true){ echo 'checked'; } ?> id="<?php echo esc_attr($this->get_field_id( 'site_intro_target' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'site_intro_target' )); ?>" /> 
+		<label for="<?php echo esc_attr($this->get_field_id( 'site_intro_target' )); ?>">
+		<?php esc_html_e('Open link in new tab','rambo' ); ?></label>
 		</p>
 		
 		
@@ -104,16 +104,16 @@ class rambo_site_intro_widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		
-		$instance['description'] = ( ! empty( $new_instance['description'] ) ) ? strip_tags( $new_instance['description'] ) : '';		
+		$instance['description'] = ( ! empty( $new_instance['description'] ) ) ? sanitize_text_field( $new_instance['description'] ) : '';		
 
 		
-		$instance['site_intro_text'] = ( ! empty( $new_instance['site_intro_text'] ) ) ? strip_tags( $new_instance['site_intro_text'] ) : '';
+		$instance['site_intro_text'] = ( ! empty( $new_instance['site_intro_text'] ) ) ? sanitize_text_field( $new_instance['site_intro_text'] ) : '';
 
 		
-		$instance['site_intro_link'] = ( ! empty( $new_instance['site_intro_link'] ) ) ? strip_tags( $new_instance['site_intro_link'] ) : '';		
+		$instance['site_intro_link'] = ( ! empty( $new_instance['site_intro_link'] ) ) ? esc_url_raw( $new_instance['site_intro_link'] ) : '';		
 				
 
-		$instance['site_intro_target'] = ( ! empty( $new_instance['site_intro_target'] ) ) ? strip_tags( $new_instance['site_intro_target'] ) : '';		
+		$instance['site_intro_target'] = ( ! empty( $new_instance['site_intro_target'] ) ) ? rambo_sanitize_checkbox( $new_instance['site_intro_target'] ) : '';		
 		
 		return $instance;
 	}

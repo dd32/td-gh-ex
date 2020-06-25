@@ -5,7 +5,7 @@ function rambo_header_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'header_options', array(
 		'priority'       => 125,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header settings', 'rambo'),
+		'title'      => esc_html__('Header settings', 'rambo'),
 	) );
 		
 		// custom css
@@ -13,7 +13,7 @@ function rambo_header_customizer( $wp_customize ) {
 			
 			//Custom css
 			$wp_customize->add_section( 'custom_css' , array(
-				'title'      => __('Custom CSS','rambo'),
+				'title'      => esc_html__('Custom CSS','rambo'),
 				'panel'  => 'header_options',
 				'priority'   => 100,
 			) );
@@ -22,7 +22,7 @@ function rambo_header_customizer( $wp_customize ) {
 			
 			//Custom css
 			$wp_customize->add_section( 'custom_css_section' , array(
-				'title'      => __('Custom CSS', 'rambo'),
+				'title'      => esc_html__('Custom CSS', 'rambo'),
 				'panel'  => 'header_options',
 				'priority'   => 100,
 			) );
@@ -32,11 +32,10 @@ function rambo_header_customizer( $wp_customize ) {
 					'default'        => '',
 					'capability'     => 'edit_theme_options',
 					'sanitize_callback'    => 'wp_filter_nohtml_kses',
-					'sanitize_js_callback' => 'wp_filter_nohtml_kses',
 					'type'=> 'option',
 				));
 				$wp_customize->add_control( 'rambo_pro_theme_options[webrit_custom_css]', array(
-					'label'   => __('Custom CSS', 'rambo'),
+					'label'   => esc_html__('Custom CSS', 'rambo'),
 					'section' => 'custom_css_section',
 					'type' => 'textarea',
 				));

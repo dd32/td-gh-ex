@@ -6,14 +6,14 @@ get_header();
     <div class="row-fluid about_space">
 	 <div class="span8">
       <h2 class="page_head">
-			<?php esc_attr_e('Shop','rambo' ); ?>
+			<?php esc_html_e('Shop','rambo' ); ?>
 	  </h2>
 	  </div>
 	  <div class="span4">
 		  <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<div class="input-append search_head pull-right">
 			  <input type="text" name="s" id="s" placeholder="<?php esc_attr_e('Search','rambo' ); ?>" />
-			  <button type="submit" class="Search_btn" name="submit" ><?php esc_attr_e("Go", 'rambo' ); ?></button>
+			  <button type="submit" class="Search_btn" name="submit" ><?php esc_html_e("Go", 'rambo' ); ?></button>
 			</div>
 		  </form>
 	  </div>
@@ -23,9 +23,10 @@ get_header();
 <!-- /Page Title Section -->
 <div class="clearfix"></div>
 <!-- Blog Section with Sidebar -->
+<div id="content">
 <div class="container">
 	<div class="row">
-		
+		<div class="blog-sidebar">
 			<!-- Blog Area -->
 			<div class="span<?php echo (  is_active_sidebar('woocommerce') ? '8' : '12' ); ?>">
 				<div id="post-<?php the_ID(); ?>">
@@ -36,7 +37,8 @@ get_header();
 			<!--Sidebar Area-->
 			<?php get_sidebar('woocommerce'); ?>
 			<!--Sidebar Area-->
-	</div>
+	</div></div>
+</div>
 </div>
 <!-- /Blog Section with Sidebar -->
 <?php get_footer(); ?>

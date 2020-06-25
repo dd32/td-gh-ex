@@ -4,14 +4,13 @@ if ( ! function_exists( 'rambo_comment' ) ) :
 
 function rambo_comment( $comment, $args, $depth ) 
 {
-	$GLOBALS['comment'] = $comment;
 
 	//get theme data
 	global $comment_data;
 
 	//translations
 	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
-	__('Reply','rambo');?>
+	esc_html__('Reply','rambo');?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 		<div id="comment-<?php comment_ID(); ?>" class="comment-body <?php if ($comment->comment_approved == '0') echo 'pending-comment'; ?> clearfix">
           <div class="media comment_box">
@@ -27,7 +26,7 @@ function rambo_comment( $comment, $args, $depth )
     	    </div>
 			</h4>
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.','rambo'); ?></em>
+			<em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.','rambo'); ?></em>
 			<br/>
 			<?php endif; ?>
     	    <p><?php comment_text() ;?></p><!-- /comment-text -->

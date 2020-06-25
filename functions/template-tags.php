@@ -5,9 +5,9 @@ if ( ! function_exists( 'rambo_post_meta_content' ) ) :
 function rambo_post_meta_content()
 { ?>
 <div class="blog_section2_comment">
-    <a href="<?php the_permalink(); ?>"><i class="fa fa-calendar icon-spacing"></i><?php the_time(get_option('date_format'));?></a>
-    <a href="<?php the_permalink(); ?>"><i class="fa fa-comments icon-spacing"></i><?php comments_popup_link(__('leave a comment','rambo') ); ?></a>
-    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><i class="fa fa-user icon-spacing"></i> <?php _e("By",'rambo');?>&nbsp;<?php the_author();?></a>
+    <i class="fa fa-calendar icon-spacing"></i><a href="<?php echo esc_url( home_url('/') ); ?><?php echo esc_html(date( 'Y/m' , strtotime( get_the_date() )) ); ?>"><?php the_time(get_option('date_format'));?></a>
+    <i class="fa fa-comments icon-spacing"></i><a href="<?php the_permalink(); ?>"><?php comments_popup_link(esc_html__('leave a comment','rambo') ); ?></a>
+    <i class="fa fa-user icon-spacing"></i><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php esc_html_e("By",'rambo');?>&nbsp;<?php the_author();?></a>
 </div>
 <?php } endif; 
 // check weither the function with the same name exsist or not
@@ -46,7 +46,7 @@ if(has_post_thumbnail()):?>
 if(!function_exists( 'rambo_post_layout_class' )) :
 
 function rambo_post_layout_class(){
-if( is_active_sidebar('sidebar-primary')) echo "span8"; else echo "span12";
+if( is_active_sidebar('sidebar-1')) echo "span8"; else echo "span12";
 } endif;
 
 //Call Permalink Exerpt 

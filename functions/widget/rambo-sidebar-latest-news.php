@@ -13,8 +13,8 @@ class rambo_sidbar_latest_news_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'rambo_sidbar_latest_news_widget', // Base ID
-			__('WBR : Sidebar Latest News', 'rambo'), // Name
-			array( 'description' => __('The Recent post display on your site', 'rambo' ), ) // Args
+			esc_html__('WBR : Sidebar Latest News', 'rambo'), // Name
+			array( 'description' => esc_html__('The Recent post display on your site', 'rambo' ), ) // Args
 		);
 	}
 
@@ -27,6 +27,14 @@ class rambo_sidbar_latest_news_widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+		if(empty($instance['title']))
+		{
+			$instance['title']= esc_html__('Latest News','rambo');
+		}
+		if(empty($instance['number_of_posts']))
+		{
+			$instance['number_of_posts']='';
+		}
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$number_of_posts = apply_filters( 'widget_title', $instance['number_of_posts'] );
 		if($number_of_posts=='') { $number_of_posts = 5; }
@@ -34,21 +42,21 @@ class rambo_sidbar_latest_news_widget extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 		echo $args['before_title'] . $title . $args['after_title']; ?>		
-		<?php $loop = new WP_Query(array( 'post_type' => 'post', 'showposts' => $number_of_posts ));
+		<?php $loop = new WP_Query(array( 'post_type' => 'post','ignore_sticky_posts' => 1, 'showposts' => $number_of_posts ));
 			if( $loop->have_posts() ) : 
 			while ( $loop->have_posts() ) : $loop->the_post();?>				
 					<div class="media sidebar_pull">
                         <?php $defalt_arg =array('class' => "media-object sidebar_img" )?>
 							<?php if(has_post_thumbnail()):?>
-							<a class="pull-left sidebar_pull_img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"  ><?php the_post_thumbnail('blog_sidbar_image_recent', $defalt_arg); ?></a>
+							<a class="pull-left sidebar_pull_img" href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_date());?>"  ><?php the_post_thumbnail('blog_sidbar_image_recent', $defalt_arg); ?></a>
 							<?php endif;?>
                         <div class="media-body">
-							<h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
-							<span class="sidebar_calender"><i class="fa fa-calendar sidebar_icon"></i> <?php echo get_the_date( 'M j, Y' ); ?></span>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+							<span class="sidebar_calender"><i class="fa fa-calendar sidebar_icon"></i> <?php echo esc_html(get_the_date()); ?></span>
 						</div>
                     </div>					
 			<?php endwhile; ?>		
-			<?php endif; ?>		
+			<?php endif; wp_reset_postdata();?>		
 		<?php		
 		echo $args['after_widget']; // end of sidbar usefull links widget		
 	}
@@ -66,17 +74,17 @@ class rambo_sidbar_latest_news_widget extends WP_Widget {
 			$number_of_posts = $instance[ 'number_of_posts' ];
 		}
 		else {
-			$title = __( 'Latest News', 'rambo' );
+			$title = esc_html__( 'Latest News', 'rambo' );
 			$number_of_posts = 5;
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title','rambo' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php esc_html_e( 'Title','rambo' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'number_of_posts' ); ?>"><?php _e('Number of pages to show','rambo' ); ?></label> 
-		<input size="3" maxlength="2"id="<?php echo $this->get_field_id( 'number_of_posts' ); ?>" name="<?php echo $this->get_field_name( 'number_of_posts' ); ?>" type="text" value="<?php echo esc_attr( $number_of_posts ); ?>" />
+		<label for="<?php echo esc_attr($this->get_field_id( 'number_of_posts' )); ?>"><?php esc_html_e('Number of pages to show','rambo' ); ?></label> 
+		<input size="3" maxlength="2"id="<?php echo esc_attr($this->get_field_id( 'number_of_posts' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'number_of_posts' )); ?>" type="text" value="<?php echo esc_attr( $number_of_posts ); ?>" />
 		</p>		
 		<?php 
 	}
@@ -93,8 +101,8 @@ class rambo_sidbar_latest_news_widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['number_of_posts'] = ( ! empty( $new_instance['number_of_posts'] ) ) ? strip_tags( $new_instance['number_of_posts'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance['number_of_posts'] = ( ! empty( $new_instance['number_of_posts'] ) ) ? intval( $new_instance['number_of_posts'] ) : '';
 		return $instance;
 	}
 
