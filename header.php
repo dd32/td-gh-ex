@@ -9,6 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 
 	<!-- Preloader -->
 	<?php get_template_part( 'templates/header/preloader' ); ?>

@@ -30,7 +30,11 @@ function ashe_customize_register( $wp_customize ) {
 		$number = absint( $number );
 
 		// return default if not integer
-		return ( $number ? $number : $setting->default );
+		if ( $setting->id === 'ashe_options[featured_slider_amount]' ) {
+			return ( $number < 6 ? $number : $setting->default );
+		} else {
+			return ( $number ? $number : $setting->default );
+		}
 
 	}
 
@@ -606,8 +610,6 @@ function ashe_customize_register( $wp_customize ) {
 ** Site Identity =====
 */
 
-	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 
 	// Logo Width
 	ashe_number_absint_control( 'title_tagline', 'logo_width', esc_html__( 'Width', 'ashe' ), array( 'step' => '10' ), 'postMessage', 8 );
@@ -761,7 +763,7 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_select_control( 'featured_slider', 'category', esc_html__( 'Select Category', 'ashe' ), $slider_cats, 'refresh', 6 );
 
 	// Amount
-	ashe_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'ashe' ), array( 'step' => '1', 'min' => '1', 'max' => '5' ), 'refresh', 10 );
+	ashe_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'ashe' ), array( 'step' => '1', 'max' => '5' ), 'refresh', 10 );
 
 	// Navigation
 	ashe_checkbox_control( 'featured_slider', 'navigation', esc_html__( 'Show Navigation Arrows', 'ashe' ), 'refresh', 25 );
@@ -864,17 +866,17 @@ function ashe_customize_register( $wp_customize ) {
 	// Post Pagination
 	ashe_select_control( 'blog_page', 'post_pagination', esc_html__( 'Post Pagination', 'ashe' ), $post_pagination, 'refresh', 5 );
 
+	// Show Drop Caps
+	ashe_checkbox_control( 'blog_page', 'show_dropcaps', esc_html__( 'Show Drop Caps (First Big Letter)', 'ashe' ), 'refresh', 6 );
+
 	// Show Categories
-	ashe_checkbox_control( 'blog_page', 'show_categories', esc_html__( 'Show Categories', 'ashe' ), 'refresh', 6 );
+	ashe_checkbox_control( 'blog_page', 'show_categories', esc_html__( 'Show Categories', 'ashe' ), 'refresh', 7 );
 
 	// Show Date
-	ashe_checkbox_control( 'blog_page', 'show_date', esc_html__( 'Show Date', 'ashe' ), 'refresh', 7 );
+	ashe_checkbox_control( 'blog_page', 'show_date', esc_html__( 'Show Date', 'ashe' ), 'refresh', 8 );
 
 	// Show Comments
 	ashe_checkbox_control( 'blog_page', 'show_comments', esc_html__( 'Show Comments', 'ashe' ), 'refresh', 9 );
-
-	// Show Drop Caps
-	ashe_checkbox_control( 'blog_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'ashe' ), 'refresh', 11 );
 
 	// Show Author
 	ashe_checkbox_control( 'blog_page', 'show_author', esc_html__( 'Show Author', 'ashe' ), 'refresh', 13 );
@@ -935,6 +937,9 @@ function ashe_customize_register( $wp_customize ) {
 		'priority'	 => 31,
 		'capability' => 'edit_theme_options'
 	) );
+
+	// Show Featured Image
+	ashe_checkbox_control( 'single_page', 'show_featured_image', esc_html__( 'Show Featured Image', 'ashe' ), 'refresh', 5 );
 
 	// Show Categories
 	ashe_checkbox_control( 'single_page', 'show_categories', esc_html__( 'Show Categories', 'ashe' ), 'refresh', 5 );
@@ -1201,7 +1206,7 @@ add_action( 'customize_preview_init', 'ashe_customize_preview_js' );
 function ashe_panels_js() {
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
 	wp_enqueue_style( 'ashe-customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
-	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.1', true );
 
 }
 add_action( 'customize_controls_enqueue_scripts', 'ashe_panels_js' );

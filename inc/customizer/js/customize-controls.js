@@ -116,10 +116,10 @@
 
 		// Blog Page
 		ashe_customizer_label( 'blog_page_post_description', 'General', 'https://www.youtube.com/watch?v=DgtVfFQo7H8' );
-		ashe_customizer_label( 'blog_page_show_categories', 'Post Elements', '' );
+		ashe_customizer_label( 'blog_page_show_dropcaps', 'Post Elements', '' );
 
 		// Single Page
-		ashe_customizer_label( 'single_page_show_categories', 'Post Elements', '' );
+		ashe_customizer_label( 'single_page_show_featured_image', 'Post Elements', '' );
 		ashe_customizer_label( 'single_page_related_title', 'Post Footer', '' );
 		
 		// Social Media

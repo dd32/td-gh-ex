@@ -11,9 +11,13 @@ if ( have_posts() ) :
 
 ?>	
 
+
+
+	<?php if ( ashe_options( 'single_page_show_featured_image' ) === true ) : ?>
 	<div class="post-media">
 		<?php the_post_thumbnail('ashe-full-thumbnail'); ?>
 	</div>
+	<?php endif; ?>
 
 	<header class="post-header">
 

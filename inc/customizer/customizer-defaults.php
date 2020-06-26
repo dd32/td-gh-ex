@@ -61,6 +61,7 @@ function ashe_options( $control ) {
 		'blog_page_show_reddit' => false,
 		'blog_page_show_tumblr' => false,
 		'blog_page_related_orderby' => 'related',
+		'single_page_show_featured_image' => true,
 		'single_page_show_categories' => true,
 		'single_page_show_date' => true,
 		'single_page_show_author' => true,

@@ -141,7 +141,7 @@
 */
 
 	asheLivePreview( 'title_tagline_logo_width', function( val ) {
-		$('.header-logo a').css( 'max-width', val +'px' );
+		$( '.logo-img' ).css( 'max-width', val +'px' );
 	});
 
 	asheLivePreview( 'main_nav_mini_logo_width', function( val ) {
