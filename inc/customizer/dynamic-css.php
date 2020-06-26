@@ -595,6 +595,37 @@ $css = '';
 		}
 	}
 
+	// Instagram Widget
+	if ( 'theme' === bard_options( 'general_instagram_style' ) ) {
+		$css .= '
+			.bard-instagram-widget #sb_instagram {
+			  max-width: none !important;
+			}
+
+			.bard-instagram-widget #sbi_images {
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: flex;
+			}
+
+			.bard-instagram-widget #sbi_images .sbi_photo {
+			  height: auto !important;
+			}
+
+			.bard-instagram-widget #sbi_images .sbi_photo img {
+			  display: block !important;
+			}
+
+			.bard-widget #sbi_images .sbi_photo {
+			  height: auto !important;
+			}
+
+			.bard-widget #sbi_images .sbi_photo img {
+			  display: block !important;
+			}
+		';
+	}
+
 
 /*
 ** Top Bar =====

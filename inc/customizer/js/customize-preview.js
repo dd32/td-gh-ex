@@ -183,7 +183,7 @@
 */
 
 	bardLivePreview( 'title_tagline_logo_width', function( val ) {
-		$('.header-logo a').css( 'max-width', val +'px' );
+		$( '.logo-img' ).css( 'max-width', val +'px' );
 	});
 
 

@@ -31,7 +31,9 @@
 
 				<?php endif; ?>
 				
+				<?php if ( '' !== get_bloginfo( 'description' ) ) : ?>
 				<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
+				<?php endif; ?>
 				
 			</div>
 

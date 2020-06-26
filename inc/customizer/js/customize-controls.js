@@ -88,6 +88,7 @@
 		bard_customizer_label( 'general_sidebar_width', 'General', 'https://www.youtube.com/watch?v=8rvjmsWy_Ok' );
 		bard_customizer_label( 'general_home_layout', 'Page Layouts', '' );
 		bard_customizer_label( 'general_header_width', 'Boxed Controls', '' );
+		bard_customizer_label( 'general_instagram_style', 'Instagram Widget', '' );
 
 		// Page Header
 		bard_customizer_checkbox_label( 'header_image_label', 'https://www.youtube.com/watch?v=9K27xZgVaVo' );
@@ -110,10 +111,10 @@
 
 		// Blog Page
 		bard_customizer_label( 'blog_page_full_width_post', 'General', '' );
-		bard_customizer_label( 'blog_page_show_categories', 'Post Elements', '' );
+		bard_customizer_label( 'blog_page_show_dropcaps', 'Post Elements', '' );
 
 		// Single Page
-		bard_customizer_label( 'single_page_show_categories', 'Post Elements', '' );
+		bard_customizer_label( 'single_page_show_featured_image', 'Post Elements', '' );
 		bard_customizer_label( 'single_page_related_title', 'Post Footer', '' );
 		
 		// Social Media

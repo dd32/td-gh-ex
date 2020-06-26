@@ -16,7 +16,7 @@ $next_post = get_adjacent_post(false, '', false);
 		<div>
 			<span><i class="fas fa-long-arrow-alt-left"></i>&nbsp;<?php esc_html_e( 'Previous', 'bard' ) ?></span>
 			<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr($prev_post->post_title); ?>">
-				<h5><?php echo esc_attr( $prev_post->post_title ); ?></h5>
+				<h5><?php echo esc_html( $prev_post->post_title ); ?></h5>
 			</a>
 		</div>
 	</div>
@@ -31,7 +31,7 @@ $next_post = get_adjacent_post(false, '', false);
 		<div>
 			<span><?php esc_html_e( 'Newer', 'bard' ) ?>&nbsp;<i class="fas fa-long-arrow-alt-right"></i></span>
 			<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr($next_post->post_title); ?>">
-				<h5><?php echo esc_attr( $next_post->post_title ); ?></h5>		
+				<h5><?php echo esc_html( $next_post->post_title ); ?></h5>		
 			</a>
 		</div>
 	</div>

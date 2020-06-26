@@ -261,6 +261,16 @@
     color: inherit !important;
   }
 
+  .bard-instagram-widget #sb_instagram {
+    max-width: none !important;
+  }
+
+  .bard-instagram-widget #sbi_images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .bard-instagram-widget .meks-instagram-widget > div,
   .bard-instagram-widget #sbi_images > div {
     display: none !important;

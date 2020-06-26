@@ -471,7 +471,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			<a href="<?php echo esc_url( bard_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '1' ); ?></span>
 				<?php if ( $title ) : ?>
-				<span><?php echo esc_attr(bard_options( 'social_media_title_1' )); ?></span>
+				<span><?php echo esc_html(bard_options( 'social_media_title_1' )); ?></span>
 				<?php endif ;?>
 			</a>
 		<?php endif; ?>
@@ -480,7 +480,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			<a href="<?php echo esc_url( bard_options( 'social_media_url_2' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '2' ); ?></span>
 				<?php if ( $title ) : ?>
-				<span><?php echo esc_attr(bard_options( 'social_media_title_2' )); ?></span>
+				<span><?php echo esc_html(bard_options( 'social_media_title_2' )); ?></span>
 				<?php endif ;?>
 			</a>
 		<?php endif; ?>
@@ -489,7 +489,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			<a href="<?php echo esc_url( bard_options( 'social_media_url_3' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '3' ); ?></span>
 				<?php if ( $title ) : ?>
-				<span><?php echo esc_attr(bard_options( 'social_media_title_3' )); ?></span>
+				<span><?php echo esc_html(bard_options( 'social_media_title_3' )); ?></span>
 				<?php endif ;?>
 			</a>
 		<?php endif; ?>
@@ -498,7 +498,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			<a href="<?php echo esc_url( bard_options( 'social_media_url_4' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '4' ); ?></span>
 				<?php if ( $title ) : ?>
-				<span><?php echo esc_attr(bard_options( 'social_media_title_4' )); ?></span>
+				<span><?php echo esc_html(bard_options( 'social_media_title_4' )); ?></span>
 				<?php endif ;?>
 			</a>
 		<?php endif; ?>

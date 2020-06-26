@@ -109,98 +109,98 @@ function bard_about_page_output() {
 
 				<div class="column-width-4">
 					<div class="active-style"><?php esc_html_e( 'Active', 'bard' ); ?></div>
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/main.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/main.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Main', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/demo/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/food.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/food.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Food', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/food/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/lifestyle.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/lifestyle.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Lifestyle', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/lifestyle/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/dark.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/dark.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Dark', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-black/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>	
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img1.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img1.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 1', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/typography-v1/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img2.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img2.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 2', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/sample-v3/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img3.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img3.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 3', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns2-sidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img4.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img4.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 4', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/sample-v5/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img5.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img5.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 5', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-colorful/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img6.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img6.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 6', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns4/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img7.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img7.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 7', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns3-sidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img8.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img8.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 8', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-black-white/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img9.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img9.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 9', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns3-nsidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>
 				<div class="column-width-4">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/img10.jpg'; ?>" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/img10.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 10', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns2-nsidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>

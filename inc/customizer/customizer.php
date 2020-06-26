@@ -506,6 +506,14 @@ function bard_customize_register( $wp_customize ) {
 	// Footer Width
 	bard_select_control( 'general', 'footer_width', esc_html__( 'Footer Width', 'bard' ), $boxed_width, 'refresh', 33 );
 
+	$instagram_style = array(
+		'theme' => esc_html__( 'Theme', 'bard' ),
+		'default' => esc_html__( 'Default', 'bard' ),
+	);
+
+	// Instagram Style
+	bard_select_control( 'general', 'instagram_style', esc_html__( 'Style', 'bard' ), $instagram_style, 'refresh', 34 );
+
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_general_layouts', array(
 		'sanitize_callback' => 'bard_sanitize_custom_control'
@@ -773,17 +781,17 @@ function bard_customize_register( $wp_customize ) {
 	// Post Pagination
 	bard_select_control( 'blog_page', 'post_pagination', esc_html__( 'Post Pagination', 'bard' ), $post_pagination, 'refresh', 5 );
 
+	// Show Drop Caps
+	bard_checkbox_control( 'blog_page', 'show_dropcaps', esc_html__( 'Show Drop Caps (First Big Letter)', 'bard' ), 'refresh', 6 );
+
 	// Show Categories
-	bard_checkbox_control( 'blog_page', 'show_categories', esc_html__( 'Show Categories', 'bard' ), 'refresh', 6 );
+	bard_checkbox_control( 'blog_page', 'show_categories', esc_html__( 'Show Categories', 'bard' ), 'refresh', 7 );
 
 	// Show Date
-	bard_checkbox_control( 'blog_page', 'show_date', esc_html__( 'Show Date', 'bard' ), 'refresh', 7 );
+	bard_checkbox_control( 'blog_page', 'show_date', esc_html__( 'Show Date', 'bard' ), 'refresh', 8 );
 
 	// Show Comments
 	bard_checkbox_control( 'blog_page', 'show_comments', esc_html__( 'Show Comments', 'bard' ), 'refresh', 9 );
-
-	// Show Drop Caps
-	bard_checkbox_control( 'blog_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'bard' ), 'refresh', 11 );
 
 	// Show Author
 	bard_checkbox_control( 'blog_page', 'show_author', esc_html__( 'Show Author', 'bard' ), 'refresh', 16 );
@@ -825,17 +833,20 @@ function bard_customize_register( $wp_customize ) {
 		'capability' => 'edit_theme_options'
 	) );
 
+	// Show Featured Image
+	bard_checkbox_control( 'single_page', 'show_featured_image', esc_html__( 'Show Featured Image', 'bard' ), 'refresh', 5 );
+
+	// Show Drop Caps
+	bard_checkbox_control( 'single_page', 'show_dropcaps', esc_html__( 'Show Drop Caps (First Big Letter)', 'bard' ), 'refresh', 6 );
+
 	// Show Categories
-	bard_checkbox_control( 'single_page', 'show_categories', esc_html__( 'Show Categories', 'bard' ), 'refresh', 5 );
+	bard_checkbox_control( 'single_page', 'show_categories', esc_html__( 'Show Categories', 'bard' ), 'refresh', 7 );
 
 	// Show Date
-	bard_checkbox_control( 'single_page', 'show_date', esc_html__( 'Show Date', 'bard' ), 'refresh', 7 );
+	bard_checkbox_control( 'single_page', 'show_date', esc_html__( 'Show Date', 'bard' ), 'refresh', 8 );
 
 	// Show Comments
 	bard_checkbox_control( 'single_page', 'show_comments', esc_html__( 'Show Comments', 'bard' ), 'refresh', 10 );
-
-	// Show Drop Caps
-	bard_checkbox_control( 'single_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'bard' ), 'refresh', 13 );
 	
 	// Show Author
 	bard_checkbox_control( 'single_page', 'show_author', esc_html__( 'Show Author', 'bard' ), 'refresh', 15 );
@@ -1083,7 +1094,7 @@ add_action( 'customize_preview_init', 'bard_customize_preview_js' );
 */
 function bard_panels_js() {
 	wp_enqueue_style( 'bard-customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
-	wp_enqueue_script( 'bard-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'bard-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.1', true );
 
 }
 add_action( 'customize_controls_enqueue_scripts', 'bard_panels_js' );
