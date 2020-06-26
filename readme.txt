@@ -2,9 +2,9 @@
 Contributors: Luzuk
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, full-width-template, threaded-comments, translation-ready, blog, e-commerce, news
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,13 +48,21 @@ Akhada Fitness Gym bundles the following third-party resources:
   - License: Free to use and abuse under the MIT license. v1.7.9 
   - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 
-* Stocksnap Images, 
+* PxHere Images, 
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://stocksnap.io/license
+	Source: https://pxhere.com/en/license
 
-	Slider image, Copyright Hermes Rivera
+	Banner image
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://stocksnap.io/photo/M5791YB6J9
+	Source: https://pxhere.com/en/photo/615778
+
+  Service image 1
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://pxhere.com/en/photo/714756
+
+  Service image 2
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://pxhere.com/en/photo/624429
 
 * Customizer Pro
   - Justin Tadlock 
@@ -89,3 +97,13 @@ Akhada Fitness Gym bundles the following third-party resources:
   - Resolved some theme errors.
   - Added Show/Hide Site Title & Tagline option.
   - Updated pot file.
+
+= 0.4.2 =
+  - Changed whole theme layout.
+  - Changed theme screenshot.
+  - Changed theme colors.
+  - Changed theme screenshot & its image urls.
+  - done prefixing of global variables.
+  - Resolved some theme errors.
+  - Resolved menu focus error.
+  - Updated Pot file.

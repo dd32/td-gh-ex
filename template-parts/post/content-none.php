@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for displaying a message that posts cannot be found
- * @package WordPress
+ * 
  * @subpackage akhada-fitness-gym
  * @since 1.0
  * @version 1.4

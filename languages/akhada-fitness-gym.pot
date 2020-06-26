@@ -36,40 +36,40 @@ msgstr ""
 msgid 'Comments are closed.'
 msgstr ""
 
-#: template-parts/footer/site-info.php:13 
+#: template-parts/footer/site-info.php:12
 msgid 'By Luzuk'
 msgstr ""
 
-#: header.php:29
+#: header.php:26
 msgid 'Skip to Content'
 msgstr ""
 
-#: header.php:78
+#: header.php:75
 msgid 'Open Menu'
 msgstr ""
 
-#: header.php:81
+#: header.php:78
 msgid 'Top Menu'
 msgstr ""
 
-#: header.php:91
+#: header.php:88
 msgid 'Close Menu'
 msgstr ""
 
-#: searchform.php:17
+#: searchform.php:16
 msgid 'Search for:'
 msgstr ""
 
-#: searchform.php:18
-#: searchform.php:20
+#: searchform.php:17
+#: searchform.php:19
 msgid 'Search'
 msgstr ""
 
-#: searchform.php:18
+#: searchform.php:17
 msgid 'placeholder'
 msgstr ""
 
-#: searchform.php:20
+#: searchform.php:19
 msgid 'submit button'
 msgstr ""
 
@@ -303,108 +303,108 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: inc/customizer.php:18
+#: inc/customizer.php:17
 msgid 'Show / Hide Site Title'
 msgstr ""
 
-#: inc/customizer.php:28
+#: inc/customizer.php:27
 msgid 'Show / Hide Site Tagline'
 msgstr ""
 
-#: inc/customizer.php:36
+#: inc/customizer.php:35
 msgid 'Theme Settings'
 msgstr ""
 
-#: inc/customizer.php:37
+#: inc/customizer.php:36
 msgid "Description of what this panel does."
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:40
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:48
-#: inc/customizer.php:59
+#: inc/customizer.php:47
+#: inc/customizer.php:58
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/customizer.php:55
+#: inc/customizer.php:54
 msgid 'Do you want this section'
 msgstr ""
 
-#: inc/customizer.php:58
+#: inc/customizer.php:57
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:59
 msgid "One Column"
 msgstr ""
 
-#: inc/customizer.php:61
+#: inc/customizer.php:60
 msgid "Three Columns"
 msgstr ""
 
-#: inc/customizer.php:62
+#: inc/customizer.php:61
 msgid "Four Columns"
 msgstr ""
 
-#: inc/customizer.php:63
+#: inc/customizer.php:62
 msgid "Grid Layout"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:68
 msgid 'Contact Details'
 msgstr ""
 
-#: inc/customizer.php:79
+#: inc/customizer.php:78
 msgid 'Email Address'
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:89
 msgid 'Address'
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:97
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:112
+#: inc/customizer.php:108
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:116
 msgid 'Our Services'
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:117
 msgid 'This section will appear below the slider.'
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:126
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:143
+#: inc/customizer.php:138
 msgid 'Select Service Page'
 msgstr ""
 
-#: inc/customizer.php:151
-#: inc/customizer.php:162
+#: inc/customizer.php:146
+#: inc/customizer.php:157
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:189
 msgid 'Front Page Section %d Content'
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:190
 msgid 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.'
 msgstr ""
 
-#: inc/customizer.php:314
+#: inc/customizer.php:309
 msgid 'Akhada Fitness Pro'
 msgstr ""
 
-#: inc/customizer.php:315
+#: inc/customizer.php:310
 msgid 'Go Pro'
 msgstr ""

@@ -2,7 +2,6 @@
 /**
  * Additional features to allow styling of the templates
  *
- * @package WordPress
  * @subpackage akhada-fitness-gym
  * @since 1.0
  */

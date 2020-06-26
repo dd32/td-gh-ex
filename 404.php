@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying 404 pages (not found)
- * @package WordPress
+ * 
  * @subpackage akhada-fitness-gym
  * @since 1.0
  * @version 0.3

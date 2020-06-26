@@ -2,7 +2,6 @@
 /**
  * akhada-fitness-gym: Customizer
  *
- * @package WordPress
  * @subpackage akhada-fitness-gym
  * @since 1.0
  */
@@ -64,56 +63,84 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 	        ),
 	));
 
-	// Contact Details
-	$wp_customize->add_section( 'akhada_fitness_gym_contact_details', array(
-    	'title'      => __( 'Contact Details', 'akhada-fitness-gym' ),
+	// Social Icons
+	$wp_customize->add_section( 'akhada_fitness_gym_social_icons', array(
+    	'title'      => __( 'Social Icons', 'akhada-fitness-gym' ),
 		'priority'   => null,
 		'panel' => 'akhada_fitness_gym_panel_id'
 	) );
 
-	$wp_customize->add_setting('akhada_fitness_gym_mail',array(
+	$wp_customize->add_setting('akhada_fitness_gym_facebook',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	));	
-	$wp_customize->add_control('akhada_fitness_gym_mail',array(
-		'label'	=> __('Email Address','akhada-fitness-gym'),
-		'section'=> 'akhada_fitness_gym_contact_details',
-		'setting'=> 'akhada_fitness_gym_mail',
-		'type'=> 'text'
+	$wp_customize->add_control('akhada_fitness_gym_facebook',array(
+		'label'	=> __('Add Facebook Link','akhada-fitness-gym'),
+		'section'=> 'akhada_fitness_gym_social_icons',
+		'setting'=> 'akhada_fitness_gym_facebook',
+		'type'=> 'url'
 	));	
 
-	$wp_customize->add_setting('akhada_fitness_gym_location',array(
+	$wp_customize->add_setting('akhada_fitness_gym_twitter',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	));	
-	$wp_customize->add_control('akhada_fitness_gym_location',array(
-		'label'	=> __('Address','akhada-fitness-gym'),
-		'section'=> 'akhada_fitness_gym_contact_details',
-		'setting'=> 'akhada_fitness_gym_location',
-		'type'=> 'text'
+	$wp_customize->add_control('akhada_fitness_gym_twitter',array(
+		'label'	=> __('Add Twitter Link','akhada-fitness-gym'),
+		'section'=> 'akhada_fitness_gym_social_icons',
+		'setting'=> 'akhada_fitness_gym_twitter',
+		'type'=> 'url'
 	));
 
-	//slider
-	$wp_customize->add_section( 'akhada_fitness_gym_slider_section' , array(
-    	'title'      => __( 'Slider Settings', 'akhada-fitness-gym' ),
+	$wp_customize->add_setting('akhada_fitness_gym_instagram',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));	
+	$wp_customize->add_control('akhada_fitness_gym_instagram',array(
+		'label'	=> __('Add Instagram Link','akhada-fitness-gym'),
+		'section'=> 'akhada_fitness_gym_social_icons',
+		'setting'=> 'akhada_fitness_gym_instagram',
+		'type'=> 'url'
+	));
+
+	$wp_customize->add_setting('akhada_fitness_gym_linkedin',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));	
+	$wp_customize->add_control('akhada_fitness_gym_linkedin',array(
+		'label'	=> __('Add Linkedin Link','akhada-fitness-gym'),
+		'section'=> 'akhada_fitness_gym_social_icons',
+		'setting'=> 'akhada_fitness_gym_linkedin',
+		'type'=> 'url'
+	));
+
+	$wp_customize->add_setting('akhada_fitness_gym_youtube',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	));	
+	$wp_customize->add_control('akhada_fitness_gym_youtube',array(
+		'label'	=> __('Add Youtube Link','akhada-fitness-gym'),
+		'section'=> 'akhada_fitness_gym_social_icons',
+		'setting'=> 'akhada_fitness_gym_youtube',
+		'type'=> 'url'
+	));
+
+	// Banner
+	$wp_customize->add_section( 'akhada_fitness_gym_banner_section' , array(
+    	'title'      => __( 'Banner Section', 'akhada-fitness-gym' ),
 		'priority'   => null,
 		'panel' => 'akhada_fitness_gym_panel_id'
 	) );
 
-	for ( $count = 1; $count <= 4; $count++ ) {
-
-		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'akhada_fitness_gym_slider' . $count, array(
-			'default'           => '',
-			'sanitize_callback' => 'akhada_fitness_gym_sanitize_dropdown_pages'
-		) );
-
-		$wp_customize->add_control( 'akhada_fitness_gym_slider' . $count, array(
-			'label'    => __( 'Select Slide Image Page', 'akhada-fitness-gym' ),
-			'section'  => 'akhada_fitness_gym_slider_section',
-			'type'     => 'dropdown-pages'
-		) );
-	}
+	$wp_customize->add_setting( 'akhada_fitness_gym_slider', array(
+		'default'           => '',
+		'sanitize_callback' => 'akhada_fitness_gym_sanitize_dropdown_pages'
+	) );
+	$wp_customize->add_control( 'akhada_fitness_gym_slider', array(
+		'label'    => __( 'Select Banner Page', 'akhada-fitness-gym' ),
+		'section'  => 'akhada_fitness_gym_banner_section',
+		'type'     => 'dropdown-pages'
+	) );
 
 	//OUR services
 	$wp_customize->add_section('akhada_fitness_gym_service_section',array(
@@ -133,18 +160,28 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 		'type'		=> 'text'
 	));
 
-	for ( $count = 0; $count <= 3; $count++ ) {
-
-		$wp_customize->add_setting( 'akhada_fitness_gym_service' . $count, array(
-			'default'           => '',
-			'sanitize_callback' => 'absint'
-		));
-		$wp_customize->add_control( 'akhada_fitness_gym_service' . $count, array(
-			'label'    => __( 'Select Service Page', 'akhada-fitness-gym' ),
-			'section'  => 'akhada_fitness_gym_service_section',
-			'type'     => 'dropdown-pages'
-		));
+	$categories = get_categories();
+	$cats = array();
+	$i = 0;
+	$cat_pst[]= 'select';
+	foreach($categories as $category){
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cat_pst[$category->slug] = $category->name;
 	}
+
+	$wp_customize->add_setting('akhada_fitness_gym_service_category',array(
+		'default'	=> 'select',
+		'sanitize_callback' => 'akhada_fitness_gym_sanitize_choices',
+	));
+	$wp_customize->add_control('akhada_fitness_gym_service_category',array(
+		'type'    => 'select',
+		'choices' => $cat_pst,
+		'label' => __('Select Category to display Post','akhada-fitness-gym'),
+		'section' => 'akhada_fitness_gym_service_section',
+	));
 
 	//Footer
     $wp_customize->add_section( 'akhada_fitness_gym_footer', array(
@@ -313,7 +350,7 @@ final class Akhada_Fitness_Gym_Customize {
 					'priority' => 9,
 					'title'    => esc_html__( 'Akhada Fitness Pro', 'akhada-fitness-gym' ),
 					'pro_text' => esc_html__( 'Go Pro','akhada-fitness-gym' ),
-					'pro_url'  => esc_url( 'https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/' ),
+					'pro_url'  => esc_url( 'https://www.luzuk.com/products/akhada-fitness-wordpress-theme/' ),
 				)
 			)
 		);

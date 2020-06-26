@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all single posts
- * @package WordPress
+ * 
  * @subpackage akhada-fitness-gym
  * @since 1.0
  * @version 0.3
@@ -14,12 +14,12 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-		    $layout_option = get_theme_mod( 'akhada_fitness_gym_theme_options','Right Sidebar');
-		    if($layout_option == 'Left Sidebar'){ ?>
+		    $akhada_fitness_gym_layout_option = get_theme_mod( 'akhada_fitness_gym_theme_options','Right Sidebar');
+		    if($akhada_fitness_gym_layout_option == 'Left Sidebar'){ ?>
 		    	<div class="row">
 			        <div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 			        <div class="content_area col-lg-8 col-md-8">
-				    	<section id="post_section" class="">
+				    	<section id="post_section" >
 							<?php
 							/* Start the Loop */
 							while ( have_posts() ) : the_post();
@@ -42,7 +42,7 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="clearfix"></div>
-			<?php }else if($layout_option == 'Right Sidebar'){ ?>
+			<?php }else if($akhada_fitness_gym_layout_option == 'Right Sidebar'){ ?>
 				<div class="row">
 					<div class="content_area col-lg-8 col-md-8">
 						<section id="post_section" class="">
@@ -68,7 +68,7 @@ get_header(); ?>
 					</div>
 					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 				</div>
-			<?php }else if($layout_option == 'One Column'){ ?>
+			<?php }else if($akhada_fitness_gym_layout_option == 'One Column'){ ?>
 				<div class="content_area">
 					<section id="post_section" class="">
 						<?php
@@ -91,7 +91,7 @@ get_header(); ?>
 						?>
 					</section>
 				</div>
-			<?php }else if($layout_option == 'Three Columns'){ ?>	
+			<?php }else if($akhada_fitness_gym_layout_option == 'Three Columns'){ ?>	
 				<div class="row">
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>	
 					<div class="content_area col-lg-6 col-md-6">
@@ -118,7 +118,7 @@ get_header(); ?>
 					</div>
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				</div>
-			<?php }else if($layout_option == 'Four Columns'){ ?>
+			<?php }else if($akhada_fitness_gym_layout_option == 'Four Columns'){ ?>
 				<div class="row">
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
 					<div class="content_area col-lg-3">
@@ -146,7 +146,7 @@ get_header(); ?>
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 			        <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
 		        </div>
-		    <?php }else if($layout_option == 'Grid Layout'){ ?>
+		    <?php }else if($akhada_fitness_gym_layout_option == 'Grid Layout'){ ?>
 		    	<div class="row">
 			    	<div id="" class="content_area col-lg-8 col-md-8">
 						<section id="post_section" class="">

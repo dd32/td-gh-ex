@@ -711,7 +711,7 @@ a .nav-title,
 /* --------- MENUS CSS --------- */
 #sidelong-menu {
   display: inline;
-  background: #687b22;
+  background: #ffcb21;
 }
 ul.list_nav {
   margin: 0 auto;
@@ -753,7 +753,7 @@ ul.list_nav {
 .nav-menu ul ul a{
   color: #fff;
   padding: 10px;
-  background: #687b22;
+  background: #ffcb21;
   transition: all 0.5s ease 0s;
 }
 .nav-menu ul ul a:hover{
@@ -807,7 +807,7 @@ ul.list_nav {
     letter-spacing: 1px
 }
 .top-header {
-    background-color: #5e750f;
+    background-color: #ffcb21;
     padding: 8px 0;
     border-bottom: solid 1px #aaa;
 }
@@ -818,7 +818,7 @@ ul.list_nav {
 	margin-left: 5px;
 }
 #header{
-	background-color: #687b22;
+	background-color: #ffcb21;
 }
 .nav input[type="search"]{
   margin:10px 0;
@@ -858,7 +858,7 @@ ul.list_nav {
 	font-size: 14px;
 	font-weight: 800;
 	padding: 10px 16px;
-	background: #7b9328;
+	background: #ffcb21;
 	color: #fff;
 	border-radius: 50%;
 }
@@ -886,10 +886,10 @@ ul.list_nav {
   color: #fff;
 }
 .more-btn a:hover {
-  background: #2b2b2b;
+  background: #404040;
 }
 .more-btn a {
-  	background: #687b22;
+  	background: #ffcb21;
   	color: #fff;
 	padding: 8px 20px;
 	font-weight: 600;
@@ -917,7 +917,7 @@ ul.list_nav {
 }
 .service-main-box h3 {
     font-size: 16px;
-    color: #2b2b2b;
+    color: #404040;
     font-weight: 500;
     padding: 10px 0;
 }
@@ -925,7 +925,7 @@ ul.list_nav {
     font-size: 12px;
 }
 .service-main-box a {
-    color: #687b22;
+    color: #ffcb21;
     font-weight: 500;
     letter-spacing: 0;
     font-size: 15px;
@@ -936,7 +936,7 @@ ul.list_nav {
     padding: 5px;
 }
 .woocommerce span.onsale{
-	background: #687b22;
+	background: #ffcb21;
 	padding: 0;
 }
 .products li {
@@ -959,7 +959,7 @@ h2.woocommerce-loop-product__title,
 }
 
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
-	background: #687b22;
+	background: #ffcb21;
 	color: #fff !important;
 	border-radius: 0;
 }
@@ -981,7 +981,7 @@ nav.woocommerce-MyAccount-navigation ul {
     list-style: none;
 }
 nav.woocommerce-MyAccount-navigation ul li {
-    background: #687b22;
+    background: #ffcb21;
     padding: 12px;
     margin-bottom: 10px;
 }
@@ -1188,7 +1188,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	position: relative;
 }
 .sticky .article_content {
-    border: solid 2px #7b9328;
+    border: solid 2px #ffcb21;
 }
 .post:not(.sticky) .icon-thumb-tack {
 	display: none;
@@ -1208,7 +1208,7 @@ body.page:not(.akhada-fitness-gym-front-page) .entry-title {
 }
 
 .entry-title a {
-	color: #7b9328;
+	color: #ffcb21;
 	text-decoration: none;
 	margin-right: -2px;
 }
@@ -1283,7 +1283,7 @@ h3.entry-title a {
 
 .prev.page-numbers,
 .next.page-numbers {
-	background-color: #7b9328;
+	background-color: #ffcb21;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: inline-block;
@@ -1328,7 +1328,7 @@ p.link-more {
 }
 a.more-link {
     color: #fff;
-    background: #7b9328;
+    background: #ffcb21;
     padding: 6px 10px;
     float: right;
 }
@@ -1596,7 +1596,7 @@ nav.social-navigation :hover {
 /*----------- Footer --------------*/
 .site-footer {
 	border-top: 1px solid #eee;
-	background: #2b2b2b;
+	background: #404040;
 }
 
 .site-footer .wrap {
@@ -1636,7 +1636,7 @@ nav.social-navigation :hover {
 }
 .copyright {
     padding: 15px 0px;
-    background: #687b22;
+    background: #ffcb21;
 }
 
 /*------- Comments ------------*/
@@ -1763,7 +1763,7 @@ h3.widget-title {
 }
 #sidebar h3.widget-title {
     padding: 10px;
-    background-color: #687b22;
+    background-color: #ffcb21;
     color: #fff;
     font-size: 15px;
     letter-spacing: 2px;
@@ -1982,7 +1982,7 @@ div#sidebar a {
 	width: 24px;
 }
 button.search-submit{
-	background-color: #687b22;
+	background-color: #ffcb21;
 	font-weight: normal;
     letter-spacing: 1px;
 }
@@ -2356,7 +2356,7 @@ object {
 
 .site-footer {
 	font-size: 16px;
-	background: #2b2b2b;
+	background: #404040;
 	color: #fff;
 }
 
@@ -2440,7 +2440,7 @@ object {
     background: none !important;
   }
   .nav-menu .current_page_item > a, .nav-menu .current-menu-item > a, .nav-menu .current_page_ancestor > a {
-    color: #687b22;
+    color: #ffcb21;
     background: #fff !important;
   }
   .sf-arrows .sf-with-ul:after{
@@ -2479,7 +2479,7 @@ object {
     border-bottom: 1px solid #fff;
   }
   .nav-menu ul li a:hover{
-	color: #687b22;
+	color: #ffcb21;
     background: #fff !important;
   }
   .sf-arrows .sf-with-ul:after:active ul{

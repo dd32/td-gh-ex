@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages
- * @package WordPress
+ * 
  * @subpackage akhada-fitness-gym
  * @since 1.0
  * @version 0.3

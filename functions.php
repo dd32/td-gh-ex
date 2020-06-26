@@ -2,7 +2,7 @@
 /**
  * akhada-fitness-gym functions and definitions
  *
- * @package WordPress
+ * 
  * @subpackage akhada-fitness-gym
  * @since 1.0
  */
@@ -164,10 +164,10 @@ add_action( 'widgets_init', 'akhada_fitness_gym_widgets_init' );
 function akhada_fitness_gym_fonts_url(){
 	$font_url = '';
 	$font_family = array();
-	$font_family[] = 'Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
+	$font_family[] = 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
 
 	$query_args = array(
-		'family'	=> urlencode(implode('|',$font_family)),
+		'family'	=> rawurlencode(implode('|',$font_family)),
 	);
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
@@ -238,9 +238,9 @@ function akhada_fitness_gym_sanitize_choices( $input, $setting ) {
 }
 
 //footer Link
-define('AKHADA_FITNESS_GYM_LIVE_DEMO',__('https://www.luzuk.com/demo/akhada-fitness/','akhada-fitness-gym'));
-define('AKHADA_FITNESS_GYM_PRO_DOCS',__('https://luzuk.com/demo/akhada-fitness/documentation/','akhada-fitness-gym'));
-define('AKHADA_FITNESS_GYM_BUY_NOW',__('https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_LIVE_DEMO',__('https://www.luzukdemo.com/demo/akhada-fitness/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_PRO_DOCS',__('https://www.luzukdemo.com/demo/akhada-fitness/documentation/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_BUY_NOW',__('https://www.luzuk.com/products/akhada-fitness-wordpress-theme/','akhada-fitness-gym'));
 define('AKHADA_FITNESS_GYM_SUPPORT',__('https://wordpress.org/support/theme/akhada-fitness-gym/','akhada-fitness-gym'));
 define('AKHADA_FITNESS_GYM_CREDIT',__('https://www.luzuk.com/themes/free-fitness-wordpress-theme/','akhada-fitness-gym'));
 

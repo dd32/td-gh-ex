@@ -1,7 +1,7 @@
 <?php
 /**
  * Custom template tags for this theme
- * @package WordPress
+ * 
  * @subpackage akhada-fitness-gym
  * @since 1.0
  */

@@ -2,7 +2,6 @@
 /**
  * Displays footer site info
  *
- * @package WordPress
  * @subpackage akhada-fitness-gym
  * @since 1.0
  * @version 1.4

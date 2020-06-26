@@ -3,8 +3,10 @@ Theme Name: Akhada Fitness Gym
 Theme URI: https://www.luzuk.com/themes/free-fitness-wordpress-theme/
 Author: Luzuk
 Author URI: https://www.luzuk.com/
-Description: Akhada Fitness Gym is an impactful, modern and stylish WordPress theme dedicatedly designed for gyms, fitness centres, yoga classes, weight loss centres, personal trainers, aerobics and workout centres. Use it for spa, health and wellness centre, physiotherapy, health consultancy and other fitness related sites with perfect ease. The theme has clean design with user-friendly interface to help user find what they are looking for within few seconds of their landing. It is a responsive theme looking beautiful on all mobiles, tablets and desktops. This fitness theme is cross-browser compatible, translation ready and retina ready looking crisp on every device. It allows customization for almost every part of the theme. With banners and life-size sliders, make the site all the more attractive. Multiple page and blog layouts, template structure, slides, unlimited colours give the option to make your site personalize. The theme is search engine optimized giving higher rank to your site in Google search. Among various sections, testimonial section will speak for your work and services. Faster page loading is what makes the site compatible to today’s speeding world. Videos, audios, columns, various file formats and other things and embedded using shortcodes to make coding clean and secure. Use this theme to make people go crazy for fitness. Demo: https://luzuk.com/demo/akhada-fitness/
-Version: 0.4.1
+Description: Akhada Fitness Gym is an impactful, modern and stylish WordPress theme dedicatedly designed for gyms, fitness centres, yoga classes, weight loss centres, personal trainers, aerobics and workout centres. Use it for spa, health and wellness centre, physiotherapy, health consultancy and other fitness related sites with perfect ease. The theme has clean design with user-friendly interface to help user find what they are looking for within few seconds of their landing. It is a responsive theme looking beautiful on all mobiles, tablets and desktops. This fitness theme is cross-browser compatible, translation ready and retina ready looking crisp on every device. It allows customization for almost every part of the theme. With banners and life-size sliders, make the site all the more attractive. Multiple page and blog layouts, template structure, slides, unlimited colours give the option to make your site personalize. The theme is search engine optimized giving higher rank to your site in Google search. Among various sections, testimonial section will speak for your work and services. Faster page loading is what makes the site compatible to today’s speeding world. Videos, audios, columns, various file formats and other things and embedded using shortcodes to make coding clean and secure. Use this theme to make people go crazy for fitness. Demo: https://www.luzukdemo.com/demo/akhada-fitness/
+Tested up to: 5.4.2
+Requires PHP: 7.2.14
+Version: 0.4.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: akhada-fitness-gym
@@ -23,7 +25,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 
 article,
@@ -38,6 +40,11 @@ section {
 h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
+}
+p{
+	line-height: 1.8;
+	font-size: 16px;
+	margin-bottom: 0;
 }
 
 figcaption,
@@ -80,9 +87,7 @@ a:focus, input:focus, textarea:focus, button:focus,
 	outline: 1px dotted #000;
 	border-bottom: 1px dotted #000;
 }
-.copyright a:focus, .site-footer a:focus, .site-footer button:focus,
-#slider .read-btn a:focus, .nav-menu ul ul a:focus, #top-header input:focus,
-#top-header button:focus{
+.copyright a:focus, .site-footer a:focus, .site-footer button:focus{
 	outline-color: #fff;
 	border-bottom-color: #fff;
 }
@@ -479,13 +484,13 @@ input[type="checkbox"] + label {
 button,
 input[type="button"],
 input[type="submit"] {
-	background-color: #222;
+	background-color: #ffcb21;
 	border: 0;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #fff;
+	color: #404040;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 14px;
@@ -510,28 +515,6 @@ input[type="reset"].secondary,
 input[type="submit"].secondary {
 	background-color: #ddd;
 	color: #222;
-}
-
-button:hover,
-button:focus,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-	background: #767676;
-}
-
-button.secondary:hover,
-button.secondary:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="button"].secondary:hover,
-input[type="button"].secondary:focus,
-input[type="reset"].secondary:hover,
-input[type="reset"].secondary:focus,
-input[type="submit"].secondary:hover,
-input[type="submit"].secondary:focus {
-	background: #bbb;
 }
 
 /* Placeholder text color -- selectors need to be separate to work. */
@@ -600,7 +583,6 @@ dd {
 
 table {
 	border-collapse: collapse;
-	margin: 0 0 1.5em;
 	width: 100%;
 }
 
@@ -719,7 +701,7 @@ a .nav-title,
 /* --------- MENUS CSS --------- */
 #sidelong-menu {
   display: inline;
-  background: #687b22;
+  background: #ffcb21;
 }
 ul.list_nav {
   margin: 0 auto;
@@ -727,57 +709,53 @@ ul.list_nav {
   display: block;
 }
 .nav-menu ul{
-  margin:10px 0;
-  padding:0;
-  font-weight:400;
-  font-size:14px;
-  text-transform: uppercase;
-  font-weight:bold; 
+	margin: 10px 0;
+	padding: 0;
 }
 .nav-menu li{
-  display:inline-block;
-  margin:0;
-  position:relative;
+	display:inline-block;
+	margin:0;
+	position:relative;
 }
 .nav-menu ul li a{
-  color:#fff;
-  padding:15px;
-  font-size: 14px;
-  display:block;
-  text-transform: uppercase;
-  font-weight: 500;
+	color: #404040;
+	padding:15px 10px;
+	font-size: 14px;
+	display:block;
+	font-weight: 600;
 }
 .nav-menu ul ul{
-  display: none;
-  position: absolute;
-  min-width: 215px;
-  z-index: 9999;
-  border: 1px solid #fff;
+	display: none;
+	position: absolute;
+	min-width: 215px;
+	z-index: 9999999;
+	margin: 0;
+	border: 1px solid #fff;
 }
 .nav-menu ul ul ul{
-  left: 216px;
-  top: 0;
+	left: 216px;
+	top: 0;
 }
 .nav-menu ul ul a{
-  color: #fff;
-  padding: 10px;
-  background: #687b22;
-  transition: all 0.5s ease 0s;
+	color: #404040;
+	padding: 10px;
+	background: #ffcb21;
+	transition: all 0.5s ease 0s;
 }
-.nav-menu ul ul a:hover{
-	background: #000;
+.nav-menu ul li a:hover{
+	background: #404040;
 	color: #fff;
 }
 .nav-menu ul ul li{
-  float: none;
-  display: block;
-  text-align: left;
-  border-left: none;
-  border-right: none !important;
-  padding: 0;
+	float: none;
+	display: block;
+	text-align: left;
+	border-left: none;
+	border-right: none !important;
+	padding: 0;
 }
 .nav-menu ul li:hover > ul{
-  display: block;
+	display: block;
 }
 
 /*--------------- SUPERFISH MENU ---------------------------*/
@@ -808,32 +786,17 @@ ul.list_nav {
 }
 
 /*------------- Navigation -------------*/
-.top {
-    text-align: right;
-    color: #fff;
-    font-size: 12px;
-    letter-spacing: 1px
-}
-.top-header {
-    background-color: #5e750f;
-    padding: 8px 0;
-    border-bottom: solid 1px #aaa;
-}
-.top span {
-    margin-right: 10px;
-}
-.top i{
-	margin-right: 5px;
-}
 #header{
-	background-color: #687b22;
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
 }
-.nav input[type="search"]{
-  margin:10px 0;
-  padding:5px;
+.head-menu {
+    background: url(assets/images/menu-bg.png) no-repeat center;
+    background-size: 100% 100%;
+    padding: 0 40px;
 }
 .logo{
-	padding: 10px 0;
+	padding: 5px 0;
 }
 .logo h1,
 .logo p.site-title {
@@ -844,64 +807,89 @@ ul.list_nav {
 }
 .logo h1 a,
 .logo p.site-title a {
-    color: #fff;
+    color: #404040;
+}
+.social-icons i {
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid;
+    margin-left: 5px;
+    color: #666;
+}
+.social-icons i.fab.fa-facebook-f{
+	padding: 10px 12px;
+}
+.social-icons i.fab.fa-twitter,
+.social-icons i.fab.fa-youtube{
+	padding: 10px 8px;
+}
+.social-icons i.fab.fa-instagram{
+	padding: 10px 9px;
+}
+.social-icons{
+	margin: 18px 0;
+	text-align: right;
+}
+.social-icons i:hover{
+	background: #ffcb21;
+	color: #404040;
+	border-color: #ffcb21;
 }
 
 /* --------- SLIDER--------- */
-#slider{ 
-  max-width:100%; 
-  margin:auto; 
-  padding:0;
-  background: #000;
+#banner{ 
+	max-width:100%; 
+	background: url('assets/images/bannerbg.jpg') no-repeat right;
+	position: relative;
+    background-size: 100% 100%;
 }
-#slider img {
-  width: 100%;
-  opacity: 0.7;
+#banner:after{
+	content: "";
+    background: url(assets/images/bannerline.png) no-repeat right;
+    width: 250px;
+    height: 10px;
+    padding: 12px;
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    left: 55%;
+    margin-top: -13px;
 }
-#slider .carousel-item-next,#slider .carousel-item-prev,#slider .carousel-item.active {
-  display: block !important;
+#banner img {
+    width: 55%;
+    display: inline-block;
 }
-#slider .carousel-control-prev-icon, #slider .carousel-control-next-icon{
-	background-image: none;
-	font-size: 14px;
-	font-weight: 800;
-	padding: 10px 16px;
-	background: #7b9328;
-	color: #fff;
-	border-radius: 50%;
+#banner .banner-content {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    left: 60%;
 }
-#slider .carousel-control-next, #slider .carousel-control-prev{
-  opacity: 1;
-}
-.carousel-control-next-icon, .carousel-control-prev-icon{
-  width: auto;
-  height: auto;
-}
-#slider .carousel-caption{
-  top: 50%;
-  transform: translateY(-50%);  
-}
-#slider .inner_carousel h1 {
-  	margin: 0;
-    font-size: 40px;
+#banner h1 {
+  	margin: 0 0 10px;
+    font-size: 45px;
     letter-spacing: 1px;
-    color: #fff;
-    font-weight: 700;
+    color: #404040;
+    font-weight: 900;
     text-transform: uppercase;
 }
-#slider .inner_carousel {
-  text-align: center;
-  color: #fff;
+#banner p{
+	font-size: 15px;
 }
 .more-btn a:hover {
-  background: #2b2b2b;
+	background: #404040;
+	color: #fff;
 }
 .more-btn a {
-  	background: #687b22;
-  	color: #fff;
-	padding: 8px 20px;
+  	background: #ffcb21;
+  	color: #404040;
+	padding: 10px 20px;
 	font-weight: 600;
-	border-radius: 30px;
+	font-size: 15px;
+}
+.more-btn a i{
+	margin-left: 10px;
 }
 .more-btn{
   margin: 25px 0;
@@ -914,29 +902,73 @@ ul.list_nav {
     letter-spacing: 1px;
 }
 #our-services h2 {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 35px;
+    font-weight: 700;
     letter-spacing: 1px;
     padding: 15px 0;
+    color: #282828;
 }
-.service-main-box {
-    padding: 15px;
-    border: solid 1px #dcdcdc;
+#our-services h2:after{
+	content: "";
+    background: url(assets/images/titleline.png);
+    display: block;
+    width: 250px;
+    height: 10px;
+    padding: 12px;
+    margin: 6px 0 0 38%;
+}
+.service-main-box{
+	padding: 0;
+	box-shadow: 0px 0px 10px #eee;
+}
+.service-image{
+	width: 50%;
+	float: left;
+}
+.service-content {
+	width: 50%;
+	float: right;
+    padding: 20px;
+}
+.service-main-box:hover {
+	background: #ffcb21;
+	box-shadow: none;
+}
+.service-image img{
+	width: 100%;
+}
+.service-main-box:nth-child(4n + 3) .service-image,
+.service-main-box:nth-child(4n + 4) .service-image {
+	float: right;
+}
+.service-main-box:nth-child(4n + 3) .service-content,
+.service-main-box:nth-child(4n + 4) .service-content {
+	float: left;
 }
 .service-main-box h3 {
-    font-size: 16px;
-    color: #2b2b2b;
-    font-weight: 500;
-    padding: 10px 0;
+    font-size: 20px;
+    color: #404040;
+    font-weight: 600;
+    padding: 0 0 10px;
+    margin: 0;
+    text-transform: uppercase;
 }
 .service-main-box p {
-    font-size: 12px;
+    font-size: 13px;
 }
-.service-main-box a {
-    color: #687b22;
-    font-weight: 500;
+.service-main-box .service-content a {
+    color: #404040;
+    font-weight: 600;
     letter-spacing: 0;
-    font-size: 15px;
+    font-size: 14px;
+    margin-top: 8px;
+    display: inline-block;
+}
+.service-main-box:hover .service-content a{
+	color: #404040;
+}
+.service-main-box .service-content a i{
+	margin-left: 5px;
 }
 
 /* Woocommerce */
@@ -944,8 +976,9 @@ ul.list_nav {
     padding: 5px;
 }
 .woocommerce span.onsale{
-	background: #687b22;
+	background: #ffcb21;
 	padding: 0;
+	color: #404040;
 }
 .products li {
     border: solid 1px #dcdcdc;
@@ -967,12 +1000,12 @@ h2.woocommerce-loop-product__title,
 }
 
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
-	background: #687b22;
-	color: #fff !important;
+	background: #ffcb21;
+	color: #404040;
 	border-radius: 0;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
-	background: #000;
+	background: #404040;
 	color: #fff;
 }
 .woocommerce .quantity .qty {
@@ -989,12 +1022,13 @@ nav.woocommerce-MyAccount-navigation ul {
     list-style: none;
 }
 nav.woocommerce-MyAccount-navigation ul li {
-    background: #687b22;
+    background: #ffcb21;
     padding: 12px;
     margin-bottom: 10px;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-	color: #fff;
+	color: #404040;
+	font-weight: 500;
 }
 .woocommerce form .form-row .required{
 	color: #c5501a;
@@ -1026,7 +1060,7 @@ body.has-header-video .site-title a {
 }
 
 .site-description {
-	color: #fff;
+	color: #404040;
 	font-size: 13px;
 	margin-bottom: 0;
 }
@@ -1196,7 +1230,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	position: relative;
 }
 .sticky .article_content {
-    border: solid 2px #7b9328;
+    border: solid 2px #ffcb21;
 }
 .post:not(.sticky) .icon-thumb-tack {
 	display: none;
@@ -1216,7 +1250,7 @@ body.page:not(.akhada-fitness-gym-front-page) .entry-title {
 }
 
 .entry-title a {
-	color: #7b9328;
+	color: #404040;
 	text-decoration: none;
 	margin-left: -2px;
 }
@@ -1291,14 +1325,14 @@ h3.entry-title a {
 
 .prev.page-numbers,
 .next.page-numbers {
-	background-color: #7b9328;
+	background-color: #ffcb21;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: inline-block;
 	font-size: 15px;
 	line-height: 1;
 	padding: 0.25em 0.5em 0.4em;
-	color: #fff;
+	color: #404040;
     box-shadow: 1px 3px 7px #bbb;
     font-weight: normal;
 }
@@ -1336,7 +1370,7 @@ p.link-more {
 }
 a.more-link {
     color: #fff;
-    background: #7b9328;
+    background: #ffcb21;
     padding: 6px 10px;
     float: left;
 }
@@ -1406,7 +1440,7 @@ body:not(.akhada-fitness-gym-front-page) .entry-header {
 
 .article_content {
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 15px;
 	border: 1px solid #dcdcdc;
 }
 
@@ -1604,7 +1638,7 @@ nav.social-navigation :hover {
 /*----------- Footer --------------*/
 .site-footer {
 	border-top: 1px solid #eee;
-	background: #2b2b2b;
+	background: #404040;
 }
 
 .site-footer .wrap {
@@ -1644,7 +1678,7 @@ nav.social-navigation :hover {
 }
 .copyright {
     padding: 15px 0px;
-    background: #687b22;
+    background: #ffcb21;
 }
 
 /*------- Comments ------------*/
@@ -1747,6 +1781,7 @@ nav.social-navigation :hover {
 }
 
 .form-submit {
+	margin-top: 10px;
 	text-align: right;
 }
 
@@ -1759,7 +1794,7 @@ nav.social-navigation :hover {
 #sidebar .widget {
 	margin-bottom: 3em;
 	border: solid 1px #dcdcdc;
-    padding: 15px;
+    padding: 12px;
 }
 h3.widget-title {
 	color: #fff;
@@ -1771,11 +1806,11 @@ h3.widget-title {
 }
 #sidebar h3.widget-title {
     padding: 10px;
-    background-color: #687b22;
-    color: #fff;
-    font-size: 15px;
+    background-color: #ffcb21;
+    color: #404040;
+    font-size: 18px;
     letter-spacing: 2px;
-    font-weight: 600;
+    font-weight: 700;
 }
 #sidebar h3.widget-title a{
 	color: #fff;
@@ -1990,7 +2025,7 @@ div#sidebar a {
 	width: 24px;
 }
 button.search-submit{
-	background-color: #687b22;
+	background-color: #ffcb21;
 	font-weight: normal;
     letter-spacing: 1px;
 }
@@ -2364,12 +2399,16 @@ object {
 
 .site-footer {
 	font-size: 16px;
-	background: #2b2b2b;
+	background: #404040;
 	color: #fff;
 }
 
-.site-footer a {
+.site-footer a{
 	color: #fff;
+}
+.site-info p, .site-info a {
+	color: #404040;
+	font-weight: 500;
 }
 
 /*--------- Media --------------*/
@@ -2377,125 +2416,121 @@ object {
 	.sf-arrows .sf-with-ul{
 		padding:10px;
 	}
-  .nav-menu .nav ul li a:focus,
-  a.closebtn.responsive-menu:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
-  }
-  .toggle-menu {
-    display: none;
-    cursor: pointer;
-    margin: 15px 0;
-    z-index: 999999;
-    text-align: right;
-  }
-  .toggle-menu i {
-    font-size: 32px;
-    color: #fff;
-  }
-  .toggle-menu button {
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 9999999;
-    top: 0;
-    left: 0;
-    background-color: #252525;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 30px;
-    margin-left: 50px;
-    display: block;
-    padding: 10px;
-    color: #ffffff;
-    border: none;
-    background: transparent;
-  }
-  .sidenav #primary-site-navigation {
-    width: 100%;
-  }
-  .toggle-menu span{
-    font-size:30px;
-    cursor:pointer; 
-    text-align: right;
-  }
-  .toggle-menu{
-    display: block;
-  }
-  .nav-menu ul ul li{
-    display: block;
-  }
-  .nav-menu .nav ul li{
-    border-top:1px #303030 solid; 
-    display:block;
-  }
-  .nav ul li a{
-    padding: 10px;
-    display:block;
-    color:#ffffff;
-    border: none;
-    background: none !important;
-  }
-  .nav-menu .current_page_item > a, .nav-menu .current-menu-item > a, .nav-menu .current_page_ancestor > a {
-    color: #687b22;
-    background: #fff !important;
-  }
-  .sf-arrows .sf-with-ul:after{
-  	right: 20px;
-  }
-  .nav ul li ul li a:before{
-    content:"\00BB \00a0";
-  }
-  .nav ul li ul li a{
-    padding-left:20px !important;
-  }
-  .nav ul li ul li ul li a{
-    padding-left:30px !important;
-  } 
-  .nav-menu ul ul{
-    position: static;
-    width: 100%;
-    border: none;
-  }
-  .nav-menu li{
-    padding: 0;
-    display: block;
-  }
-  .main-header-box{
-    padding-bottom: 15px;
-  }
-  #sidelong-menu {
-    text-align: left;
-    display: inline;
-  }
-  .main-menu-navigation {
-    padding: 0px 10px;
-  }
-  .nav-menu .sub-menu > li > a:focus, .nav ul li a:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
-  }
-  .nav-menu ul li a:hover{
-	color: #687b22;
-    background: #fff !important;
-  }
-  .sf-arrows .sf-with-ul:after:active ul{
-  	display: block;
-  }
-  .sf-arrows .sf-with-ul:after{
-  	top: 12px;
-  }
+	.toggle-menu {
+		display: none;
+		cursor: pointer;
+		margin: 15px 0;
+		z-index: 999999;
+		text-align: right;
+	}
+	.toggle-menu i {
+		font-size: 32px;
+		color: #404040;
+	}
+	.toggle-menu button {
+		background: transparent;
+		border: none;
+		padding: 0;
+	}
+	.sidenav {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 9999999;
+		top: 0;
+		left: 0;
+		background-color: #252525;
+		overflow-x: hidden;
+		transition: 0.5s width ease-in-out;
+		padding-top: 60px;
+		visibility: hidden;
+	}
+	.sidenav.open{
+		visibility: visible;
+		width: 250px;
+		transition: 0.5s width ease-in-out;
+	}
+	.sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 30px;
+		margin-left: 50px;
+		display: block;
+		padding: 10px;
+		color: #404040;
+		border: none;
+		background: transparent;
+	}
+	.sidenav #primary-site-navigation {
+		width: 100%;
+	}
+	.toggle-menu span{
+		font-size:30px;
+		cursor:pointer; 
+		text-align: right;
+	}
+	.toggle-menu{
+		display: block;
+	}
+	.nav-menu ul ul li{
+		display: block;
+	}
+	.nav-menu .nav ul li{
+		border-top:1px #303030 solid; 
+		display:block;
+	}
+	.nav ul li a{
+		padding: 10px;
+		display:block;
+		color: #404040;
+		border: none;
+		background: none !important;
+	}
+	.nav-menu .current_page_item > a, 
+	.nav-menu .current-menu-item > a, 
+	.nav-menu .current_page_ancestor > a,
+	.nav-menu ul li a:hover {
+		color: #fff;
+		background: #404040 !important;
+	}
+	.sf-arrows .sf-with-ul:after{
+		right: 20px;
+	}
+	.nav ul li ul li a:before{
+		content:"\00BB \00a0";
+	}
+	.nav ul li ul li a{
+		padding-left:20px !important;
+	}
+	.nav ul li ul li ul li a{
+		padding-left:30px !important;
+	} 
+	.nav-menu ul ul{
+		position: static;
+		width: 100%;
+		border: none;
+	}
+	.nav-menu li{
+		padding: 0;
+		display: block;
+	}
+	.main-header-box{
+		padding-bottom: 15px;
+	}
+	#sidelong-menu {
+		text-align: left;
+		display: inline;
+	}
+	.main-menu-navigation {
+		padding: 0px 10px;
+	}
+	.sf-arrows .sf-with-ul:after:active ul{
+		display: block;
+	}
+	.sf-arrows .sf-with-ul:after{
+		top: 12px;
+	}
 }
 @media screen and (min-width: 20em) {
 
@@ -2520,7 +2555,8 @@ object {
 	h2,
 	.home.blog .entry-title,
 	.page .panel-content .recent-posts .entry-title {
-		font-size: 26px;
+		font-size: 25px;
+		font-weight: 700;
 	}
 
 	h3 {
@@ -2647,21 +2683,11 @@ object {
 		max-height: 200px;
 	}
 
-	.site-title {
-		font-size: 36px;
-	}
-
-	.site-description {
-		font-size: 15px;
-	}
-
 	/* Front Page */
-
 	.panel-content .wrap {
 		padding-bottom: 4.5em;
 		padding-top: 6em;
 	}
-
 	.panel-image {
 		height: 100vh;
 		max-height: 1200px;
@@ -2952,7 +2978,6 @@ object {
 	.has-sidebar .entry-content blockquote.alignleft {
 		margin-left: -20%;
 	}
-
 	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column .entry-content blockquote.alignright,
@@ -2962,23 +2987,59 @@ object {
 }
 
 @media screen and ( max-width: 768px){
-	#slider .inner_carousel p{
+	.service-main-box:nth-child(even) .service-content,
+	.service-main-box:nth-child(odd) .service-image {
+	    float: left;
+	}
+	.service-main-box:nth-child(even) .service-image,
+	.service-main-box:nth-child(odd) .service-content{
+		float: right;
+	}
+	#banner h1{
+		font-size: 30px;
+	}
+	#banner p{
 		display: none;
 	}
-	.service-main-box {
-	    margin-bottom: 15px;
+	.widget_calendar th, .widget_calendar td{
+		padding: 2px;
 	}
 }
-
-@media screen and (max-width:720px) {
-  .top{
-  	text-align: center;
-  }
-  .top span{
-  	margin-bottom: 10px;
-  	display: block;
-  }
-  #slider .inner_carousel h1{
-  	display: none;
-  }
+@media screen and (max-width: 500px) {
+	#banner h1{
+		display: none;
+	}
+	#banner:after{
+		width: 100px;
+	}
+	#our-services h2:after{
+		width: 100px;
+		margin: 0 auto;
+	}
+	.more-btn a {
+	    padding: 10px;
+    	font-size: 12px;
+	}
+	.toggle-menu, .social-icons{
+		text-align: center;
+	}
+	.toggle-menu{
+		padding: 8px 10px;
+		margin: 10px 0;
+		background: #ffcb21;
+	    line-height: 1;
+    	display: inline-block;
+	}
+	.service-main-box:nth-child(even) .service-content, 
+	.service-main-box:nth-child(odd) .service-image,
+	.service-main-box:nth-child(even) .service-image, 
+	.service-main-box:nth-child(odd) .service-content{
+		float: none;
+		width: 100%;
+	}
+	.head-menu {
+		background: #fff;
+		padding: 0 15px;
+		text-align: right;
+	}
 }
