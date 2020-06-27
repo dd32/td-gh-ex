@@ -51,6 +51,7 @@ function themonic_setup() {
 	set_post_thumbnail_size( 660, 9999 ); // Unlimited height, soft crop
 	//Defining home page thumbnail size
 	add_image_size('excerpt-thumbnail', 200, 140, true);
+	add_image_size('excerpt-thumbnail-mobile', 380, 200, true);
 }
 endif; //Iconic One setup
 add_action( 'after_setup_theme', 'themonic_setup' );
@@ -290,7 +291,15 @@ function themonic_entry_meta() {
 	);
 }
 endif;
-
+/* Responsive images for mobiles */
+function iconic_one_image_sizes_attr( $sizes, $size ) {
+	$width = $size[0];
+	if ( $width <= 440 && is_home() ){
+		$sizes = '(max-width: 440px) 380px, 200px, (max-width: 767px) large, (max-width: 1027px) large';
+	}
+	return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'iconic_one_image_sizes_attr', 10, 2 );
 /*
  * WordPress body class Extender :
  * 1. Using a full-width layout without widgets.
@@ -346,5 +355,3 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
 
 require_once( get_template_directory() . '/inc/iconic-one-options.php' );
 require_once( get_template_directory() . '/inc/extra-functions.php' );
-
-

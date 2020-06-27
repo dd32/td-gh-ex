@@ -34,8 +34,8 @@ function iconic_one_options_display() {
 			<div id="icon-themes" class="icon32"></div> 
 				<h2>Iconic One Theme Options</h2>
 					<p>
-						<a href="http://themonic.com/iconic-one-pro/">
-						<img style='margin-left:0px;' src="<?php echo get_template_directory_uri(); ?>/img/themonic.png" alt="Iconic One"></a>
+						<a href="https://themonic.com/iconic-one-pro/">
+						<img style='margin-left:0px;' src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/themonic.png" alt="Iconic One"></a>
 					</p>
 					<div class="hotitle" style='background: #fff; padding:5px; margin-top:10px; line-height:1.2;'><h1>Thank You for Choosing Iconic One</h1></div>
 				
@@ -47,15 +47,15 @@ function iconic_one_options_display() {
 <div style="clear:both;">
 <div style="background:#FFFFFF;float:right;padding:30px 0px 0px 40px; border-left:1px solid #e1e1e1; margin:10px;max-width:41%;">
 <img style='margin-left:0px;' src="http://demo.themonic.com/io-pro/wp-content/uploads/2013/07/logo.png" alt="">
-<h3><a style="text-decoration:none;" href="http://demo.themonic.com/io-pro/">Pro Version Demo</a></h3>
-<h3><a style="text-decoration:none;" href="http://themonic.com/iconic-one-pro/">Pro Version Features</a></h3>
-<a href="http://themonic.com/plans-and-pricing/"><img style='margin-left:0px;' src="<?php echo get_template_directory_uri(); ?>/img/iopbuy.png" alt=""></a>
+<h3><a style="text-decoration:none;" href="https://demo.themonic.com/io-pro/">Pro Version Demo</a></h3>
+<h3><a style="text-decoration:none;" href="https://themonic.com/iconic-one-pro/">Pro Version Features</a></h3>
+<a href="https://themonic.com/plans-and-pricing/"><img style='margin-left:0px;' src="<?php echo esc_url( get_template_directory_uri()); ?>/img/iopbuy.png" alt=""></a>
 
 <br .../>
 </div>
 <h2>Iconic One Quick Start Guide</h2> 
-<h3><a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference. | Read <a style="text-decoration:none;" href="http://themonic.com/iconic-one/">FAQs</a> for common issues. </h3>
-<h4>Latest Update: January 7, 2019</h4>
+<h3><a style="text-decoration:none;" href="https://demo.themonic.com/io/">Official Demo</a> for reference. | Read <a style="text-decoration:none;" href="https://themonic.com/iconic-one/">FAQs</a> for common issues. </h3>
+<h4>Latest Update: June 27, 2020</h4>
 -- <b> Improved Woocommerce support</b> -- <b>Gutenberg support</b> ( Use Full Width page template with Gutenberg to create any type of page )
 <h4>Setup Menu</h4> 
 This is the first step: Configure the Main Navigation menu for mobile view by
@@ -88,21 +88,21 @@ The first thing you will notice about Iconic One is its blazing fast rendering, 
 Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO,
 It utilizes latest HTML 5, CSS3 for creating the awesomeness that looks good on every browser and is future ready.
 <h3>Support</h3>
-Support is free, access the <a href="http://themonic.com/support/">Support Here</a>.
-You can also <a href="http://themonic.com/feedback/.">report issues and feedback</a> and help us in improving the theme.
+Support is free, access the <a href="https://themonic.com/support/">Support Here</a>.
+You can also <a href="https://themonic.com/feedback/.">report issues and feedback</a> and help us in improving the theme.
 <h3>Further Development and Roadmap</h3>
 Iconic One has been handcrafted with utmost care and love, we hope that you will love this theme, kindly support us by rating
 the theme 5 stars, if there are any issue/bugs simply head to the support section to report them and we will do our best to fix those issues.
 <br .../><br .../>
-More than 500 hours have already been spent in development and fine tuning Iconic One. Based on your <a href="http://themonic.com/feedback/.">feedback</a> we will add the most wanted
+More than 500 hours have already been spent in development and fine tuning Iconic One. Based on your <a href="https://themonic.com/feedback/.">feedback</a> we will add the most wanted
 features for further improvement.
 <br .../><br .../>
 This is just the beginning.<br .../><br .../>
 - Shashank Singh
 <br .../>Iconic One Developer<br .../><br .../>
 <br .../>
-<a href="http://themonic.com/iconic-one-pro/">
-<img style='margin-left:0px;' src="http://demo.themonic.com/io/wp-content/uploads/2013/06/io.jpg" alt=""></a>
+<a href="https://themonic.com/iconic-one-pro/">
+<img style='margin-left:0px;' src="https://demo.themonic.com/io/wp-content/uploads/2013/06/io.jpg" alt=""></a>
 
 
 

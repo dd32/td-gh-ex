@@ -4,7 +4,10 @@ Theme URI: https://themonic.com/iconic-one/
 Author: Themonic
 Author URI: https://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 2.1.4
+Version: 2.1.5
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Tested up to: 5.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-menu, custom-logo, full-width-template, rtl-language-support, theme-options, custom-colors, flexible-header, translation-ready, news, e-commerce, sticky-post, featured-images, threaded-comments
@@ -1414,6 +1417,40 @@ img#wpstats {
     height: 32px;
     width: 32px;
 }
+#wp-calendar td#today {
+    font-weight: bold;
+    color: #0099ff;
+}
+#calendar_wrap {
+    padding: 15px;
+    border: 1px solid #f1f1f1;
+	font-family: arial, ubuntu;
+}
+#wp-calendar caption {
+    font-weight: bold;
+}
+#calendar_wrap a {
+    color: #0099ff;
+}
+#wp-calendar td {
+    border: 1px solid #f1f1f1;
+    display: table-cell;
+    text-align: center;
+}
+#wp-calendar tr {
+    border: 1px solid #f1f1f1;
+}
+#wp-calendar th {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+span.wp-calendar-nav-prev {
+	line-height: 2;
+}
+#wp-calendar thead {
+    background: #f7f7f7;
+}
 /* new responsive selectnav.js css */
 	.selectnav { display: none; }
 	select.selectnav {
@@ -1700,8 +1737,11 @@ img#wpstats {
     margin-bottom: 10px;
 }
 .alignleft.wp-post-image {
-    width: auto;
+    width: 100%;
 	float:none;
+}
+img.alignleft {
+    margin: 8px 0 0 0;
 }
 .entry-summary {
 	text-align:center;

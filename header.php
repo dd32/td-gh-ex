@@ -25,11 +25,12 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<header id="masthead" class="site-header" role="banner">
 			<?php if ( get_theme_mod( 'themonic_logo' ) ) : ?>
@@ -37,23 +38,9 @@
 		<div class="themonic-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'themonic_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 		</div>
-	<?php if( get_theme_mod( 'iconic_one_social_activate' ) == '1') { ?>	
-		<div class="socialmedia">
-			<?php if( get_theme_mod( 'twitter_url' ) !== '' ) { ?>
-				<a href="<?php echo esc_url( get_theme_mod( 'twitter_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" alt="Follow us on Twitter"/></a> 
-			<?php } ?>
-			<?php if( get_theme_mod( 'facebook_url' ) !== '' ) { ?>
-					<a href="<?php echo esc_url( get_theme_mod( 'facebook_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Follow us on Facebook"/></a>
-			<?php } ?>
-			<?php if( get_theme_mod( 'plus_url' ) !== '' ) { ?>
-					<a href="<?php echo esc_url(get_theme_mod( 'plus_url', 'default_value' ) ); ?>" rel="author" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/gplus.png" alt="Follow us on Google Plus"/></a>
-			<?php } ?>
-			<?php if( get_theme_mod( 'rss_url' ) !== '' ) { ?>
-			<a class="rss" href="<?php echo esc_url( get_theme_mod( 'rss_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/rss.png" alt="Follow us on rss"/></a>			
-			<?php } ?>
-		</div>
-	<?php } ?>	
-
+		<?php if( get_theme_mod( 'iconic_one_social_activate' ) == '1') { ?>
+				<?php iop_social_icons() ?>
+		<?php } ?>
 		<?php else : ?>
 		<div class="io-title-description">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -62,22 +49,9 @@
 				 <a class="site-description"><?php bloginfo( 'description' ); ?></a>
 				<?php } ?>
 		</div>
-	<?php if( get_theme_mod( 'iconic_one_social_activate' ) == '1') { ?>
-		<div class="socialmedia">
-			<?php if( get_theme_mod( 'twitter_url' ) !== '' ) { ?>
-				<a href="<?php echo esc_url( get_theme_mod( 'twitter_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" alt="Follow us on Twitter"/></a> 
-			<?php } ?>
-			<?php if( get_theme_mod( 'facebook_url' ) !== '' ) { ?>
-					<a href="<?php echo esc_url( get_theme_mod( 'facebook_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Follow us on Facebook"/></a>
-			<?php } ?>
-			<?php if( get_theme_mod( 'plus_url' ) !== '' ) { ?>
-					<a href="<?php echo esc_url(get_theme_mod( 'plus_url', 'default_value' ) ); ?>" rel="author" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/gplus.png" alt="Follow us on Google Plus"/></a>
-			<?php } ?>
-			<?php if( get_theme_mod( 'rss_url' ) !== '' ) { ?>
-			<a class="rss" href="<?php echo esc_url( get_theme_mod( 'rss_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/rss.png" alt="Follow us on rss"/></a>			
-			<?php } ?>
-		</div>
-	<?php } ?>	
+		<?php if( get_theme_mod( 'iconic_one_social_activate' ) == '1') { ?>
+				<?php iop_social_icons() ?>
+		<?php } ?>	
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="themonic-nav" role="navigation">
