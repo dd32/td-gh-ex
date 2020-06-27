@@ -195,7 +195,7 @@ class Ariele_Recent_Posts extends WP_Widget {
     <label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>"><?php esc_html_e( 'Order by:', 'ariele-lite' ); ?></label>
     <select id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>">
         <?php foreach ( $this->orderby as $slug => $name ) : ?>
-        <option value="<?php echo esc_attr( $slug ); ?>" <?php selected( $instance['orderby'], $slug ); ?>><?php echo esc_attr( $name ); ?></option>
+        <option value="<?php echo esc_attr( $slug ); ?>" <?php selected( $instance['orderby'], $slug ); ?>><?php echo esc_html( $name ); ?></option>
         <?php endforeach; ?>
     </select>
 </p>

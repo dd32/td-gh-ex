@@ -129,8 +129,10 @@ function ariele_lite_inline_styles($custom) {
 	.main-navigation li:hover > a,	.main-navigation li.focus > a {color:" . esc_attr($ariele_lite_menu_hover_links) . ";}
 	.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a,.widget_nav_menu .current-menu-item a, .widget_pages .current-menu-item a {border-color:" . esc_attr($ariele_lite_menu_active_link_border) . ";}	
 	.dropdown-toggle:hover,.dropdown-toggle:focus {color:" . esc_attr($ariele_lite_submenu_dropdown_arrow_hover) . ";}		
-	@media (min-width: 768px){.main-navigation ul ul { background:" . esc_attr($ariele_lite_submenu_dropdown_bg) . ";}}	
-	.main-navigation ul ul a:hover {color:" . esc_attr($ariele_lite_submenu_link_hover) . ";} }
+	@media (min-width: 768px){
+	.main-navigation ul ul { background:" . esc_attr($ariele_lite_submenu_dropdown_bg) . ";}	
+	.main-navigation ul ul a:hover {color:" . esc_attr($ariele_lite_submenu_link_hover) . ";} 
+	}
 	.single .nav-links {background:" . esc_attr($ariele_lite_single_nav_bg) . "; }
 	.single .nav-links a,.single .nav-links a:visited {color:" . esc_attr($ariele_lite_single_nav_text) . ";}
 	#topbar .social-menu a, #topbar .social-menu a:visited, #topbar-right .fa-search:before {color:" . esc_attr($ariele_lite_topbar_social_icon) . ";}

@@ -2,9 +2,9 @@
 
 Contributors: roughpixels
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -113,19 +113,21 @@ Removed - for now removed features.
 Fixed - for any bug fixes.
 Security - in case of vulnerabilities.
 
+## [1.0.3] - 2020-06-11
+*Fixed - Extra curly bracket found on the inline styles
+*Fixed - Fixed an escaping string in the recent posts widget
+*Removed - A recent posts feature was removed
+*Added - The Tested Up To was added to the stylesheet
+* Added - Opening Body Tag was added to the header.php file.
 
 ## [1.0.2] - 2020-06-11
-
 *Changed - Updated the theme screenshot
 *Changed - Added missing image credits to the readme file
 *Fixed - Setting excerpts for the blog were not working
 
-
 ## [1.0.1] - 2020-06-05
-
 *Changed - Removed some credits for code snippets no longer used.
 *Changed - Updated the theme name from the readme.txt file from Ariele to Ariele Lite
 
 ## [1.0.0]
-
 - Theme release as first version
