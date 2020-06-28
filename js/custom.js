@@ -8,17 +8,12 @@ jQuery(function($){
 });
 
 function advance_blogging_menu_open() {
-	document.getElementById("menu-sidebar").style.width = "250px";
+	window.respMenu=true;
+	jQuery(".side-menu").addClass('open');
 }
 function advance_blogging_menu_close() {
-	document.getElementById("menu-sidebar").style.width = "0";
-}
-
-function advance_blogging_search_open() {
-	jQuery(".serach_outer").animate({width: '100%'});
-}
-function advance_blogging_search_close() {
-	jQuery(".serach_outer").animate({width: '0'});
+	window.respMenu=false;
+	jQuery(".side-menu").removeClass('open');
 }
 
 (function( $ ) {
@@ -53,3 +48,59 @@ function advance_blogging_search_close() {
 	});
 
 })( jQuery );
+
+jQuery(window).load(function() {
+	window.currentfocus=null;
+	advance_blogging_checkfocusdElement();
+	var body = document.querySelector('body');
+	body.addEventListener('keyup', advance_blogging_check_tab_press);
+	var gotoHome = false;
+	var gotoClose = false;
+	window.respMenu=false;
+	function advance_blogging_checkfocusdElement(){
+	    if(window.currentfocus=document.activeElement.className){
+	        window.currentfocus=document.activeElement.className;
+	    }
+	}
+	function advance_blogging_check_tab_press(e) {
+	    "use strict";
+	    e = e || event;
+	    var activeElement;
+
+	    if(window.innerWidth < 999){
+		    if (e.keyCode == 9) {
+		        if(window.respMenu){
+				    if (!e.shiftKey) {
+				        if(gotoHome) {
+				            jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).focus();
+				        }
+				    }
+				    if (jQuery("a.closebtn").is(":focus")) {
+				        gotoHome = true;
+				    } else {
+				        gotoHome = false;
+				    }
+		    	}
+		    }
+	    }
+	    if (e.shiftKey && e.keyCode == 9) {
+		    if(window.innerWidth < 999){
+			    if(window.currentfocus=="header-search"){
+			        jQuery("button.mobiletoggle").focus();
+			    }else{
+				    if(window.respMenu){
+				        if(gotoClose){
+				        	jQuery("a.closebtn").focus();
+				        }
+				        if(jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).is(":focus")) {
+				            gotoClose = true;
+				        } else {
+				            gotoClose = false;
+				        }
+				    }
+			    }
+		    }
+	    }
+	    advance_blogging_checkfocusdElement();
+	}
+});

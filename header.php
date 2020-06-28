@@ -12,7 +12,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-blogging' ) ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
@@ -26,12 +25,12 @@
     <?php if(get_theme_mod( 'advance_blogging_preloader_type','center-square') == 'center-square'){ ?>
       <div class='preloader'>
         <div class='preloader-squares'>
-        <div class='square'></div>
-        <div class='square'></div>
-        <div class='square'></div>
-        <div class='square'></div>
+          <div class='square'></div>
+          <div class='square'></div>
+          <div class='square'></div>
+          <div class='square'></div>
+        </div>
       </div>
-    </div>
     <?php }else if(get_theme_mod( 'advance_blogging_preloader_type') == 'chasing-square') {?>    
       <div class='preloader'>
         <div class='preloader-chasing-squares'>
@@ -51,37 +50,39 @@
           <div class="row">
             <div class="col-lg-11 col-md-10 col-8 social-icons ">
               <?php if( get_theme_mod( 'advance_blogging_facebook_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_twitter_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_tumblr_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_tumblr_url','' ) ); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_tumblr_url','' ) ); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_pinterest_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_linkedin_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_insta_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_youtube_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-blogging' );?></span></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-blogging' );?></span></a>
               <?php } ?>
             </div>
             <div class="search-box col-lg-1 col-md-2 col-4">
-              <span class="search-icon"><a href="#" onclick="advance_blogging_search_open()"><i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></span>
+              <span class="search-icon"><button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button></span>
+            </div>
+            <div class="modal fade-in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="serach_inner">
+                  <?php get_search_form(); ?>
+                </div>
+                <button type="button" class="closepop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
             </div>
           </div>  
-          <div class="serach_outer">
-            <div class="serach_inner">
-              <?php get_search_form(); ?>
-            </div>
-            <div class="closepop"><a href="#" onclick="advance_blogging_search_close()"><i class="far fa-window-close"></i><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></div>
-          </div>
         </div>
       </div>
     <?php }?>
@@ -118,7 +119,7 @@
               <div class="toggle-menu responsive-menu">
                 <button role="tab" onclick="advance_blogging_menu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-blogging'); ?></span></button>
               </div>
-              <div id="menu-sidebar" class="nav sidebar">
+              <div id="menu-sidebar" class="nav side-menu">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-blogging' ); ?>">
                   <?php 
                     wp_nav_menu( array( 
@@ -130,8 +131,8 @@
                     ) ); 
                   ?>
                   <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_blogging_menu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-blogging'); ?></span></a>
-              </nav>
-            </div>
+                </nav>
+              </div>
               <div class="clear"></div>
             </div>
             <div class="col-lg-2 col-md-2 col-6 cart m-0">

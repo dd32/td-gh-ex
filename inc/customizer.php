@@ -859,16 +859,16 @@ function advance_blogging_customize_register( $wp_customize ) {
 	$cats = array();
 	$i = 0;
 	foreach($categories as $category){
-	if($i==0){
-	$default = $category->slug;
-	$i++;
-	}
-	$cats[$category->slug] = $category->name;
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cats[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('advance_blogging_blogcategory_setting',array(
 		'default'	=> 'select',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'advance_blogging_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_blogging_blogcategory_setting',array(
 		'type'    => 'select',
@@ -897,16 +897,16 @@ function advance_blogging_customize_register( $wp_customize ) {
 	$cats = array();
 	$i = 0;
 	foreach($categories as $category){
-	if($i==0){
-	$default = $category->slug;
-	$i++;
-	}
-	$cats[$category->slug] = $category->name;
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cats[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('advance_blogging_latest_post_setting',array(
 		'default'	=> 'select',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'advance_blogging_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_blogging_latest_post_setting',array(
 		'type'    => 'select',
