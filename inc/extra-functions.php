@@ -38,7 +38,5 @@ function iop_social_icons() { ?>
 			<a class="rss" href="<?php echo esc_url( get_theme_mod( 'rss_url', 'default_value' ) ); ?>" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri()); ?>/img/rss.png" alt="Follow us on rss"/></a>			
 			<?php } ?>
 		</div>
-		<?php }	
-
+		<?php }
 ?>
-
