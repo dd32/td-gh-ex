@@ -315,18 +315,18 @@ $thinkup_general_fixedlayoutswitch = thinkup_var ( 'thinkup_general_fixedlayouts
 
 	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 
-		$args =  array(
-			'container_class' => 'responsive-links nav-collapse collapse',
-			'container_id'    => 'header-responsive-inner',
-			'menu_class'      => '',
-			'theme_location'  => 'header_menu',
-			'walker'          => new thinkup_nav_menu_responsive(),
-			'fallback_cb'     => 'thinkup_input_responsivefall',
-		);
-
 		echo '<div id="header-responsive">',
-		     wp_nav_menu( $args ),
-		     '</div>';
+		    wp_nav_menu(
+				array(
+					'container_class' => 'responsive-links nav-collapse collapse',
+					'container_id'    => 'header-responsive-inner',
+					'menu_class'      => '',
+					'theme_location'  => 'header_menu',
+					'walker'          => new thinkup_nav_menu_responsive(),
+					'fallback_cb'     => 'thinkup_input_responsivefall',
+				)
+			),
+		    '</div>';
 	}
 }
 
