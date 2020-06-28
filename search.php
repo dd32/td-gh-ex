@@ -40,9 +40,11 @@ get_header(); ?>
 
 						endif;
 					?>
-					<div class="navigation">
-		                <?php aagaz_startup_pagination_type(); ?>
-	       	 		</div>
+					<?php if( get_theme_mod( 'aagaz_startup_show_post_pagination',true) != '') { ?>
+						<div class="navigation">
+			                <?php aagaz_startup_pagination_type(); ?>
+		       	 		</div>
+		       	 	<?php } ?>
 				</div>
 			<?php }else if($aagaz_startup_layout_setting == 'Right Sidebar'){ ?>
 				<div class="col-lg-8 col-md-8">
@@ -64,9 +66,11 @@ get_header(); ?>
 
 						endif;
 					?>
-					<div class="navigation">
-		                <?php aagaz_startup_pagination_type(); ?>
-	       	 		</div>
+					<?php if( get_theme_mod( 'aagaz_startup_show_post_pagination',true) != '') { ?>
+						<div class="navigation">
+			                <?php aagaz_startup_pagination_type(); ?>
+		       	 		</div>
+		       	 	<?php } ?>
 				</div>
 				<div id="sidebox" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebox-1'); ?>
@@ -91,9 +95,11 @@ get_header(); ?>
 
 						endif;
 					?>
-					<div class="navigation">
-		                <?php aagaz_startup_pagination_type(); ?>
-	       	 		</div>
+					<?php if( get_theme_mod( 'aagaz_startup_show_post_pagination',true) != '') { ?>
+						<div class="navigation">
+			                <?php aagaz_startup_pagination_type(); ?>
+		       	 		</div>
+		       	 	<?php } ?>
 				</div>
 			<?php }else if($aagaz_startup_layout_setting == 'Grid Layout'){ ?>
 				<div class="col-lg-9 col-md-9">
@@ -116,9 +122,11 @@ get_header(); ?>
 
 							endif;
 						?>
-						<div class="navigation">
-			                <?php aagaz_startup_pagination_type(); ?>
-		       	 		</div>
+						<?php if( get_theme_mod( 'aagaz_startup_show_post_pagination',true) != '') { ?>
+							<div class="navigation">
+				                <?php aagaz_startup_pagination_type(); ?>
+			       	 		</div>
+			       	 	<?php } ?>
 		       	 	</div>
 				</div>
 				<div id="sidebox" class="col-lg-3 col-md-3">
@@ -145,10 +153,11 @@ get_header(); ?>
 
 					endif;
 					?>
-					
-					<div class="navigation">
-		                <?php aagaz_startup_pagination_type(); ?>
-	       	 		</div>
+					<?php if( get_theme_mod( 'aagaz_startup_show_post_pagination',true) != '') { ?>
+						<div class="navigation">
+			                <?php aagaz_startup_pagination_type(); ?>
+		       	 		</div>
+		       	 	<?php } ?>
 				</div>
 				<div id="sidebox" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebox-1'); ?>

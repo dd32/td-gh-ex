@@ -60,8 +60,14 @@ if ( post_password_required() ) {
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'aagaz-startup' ); ?></p>
 	<?php
-	endif;
+	endif;?>
 
-	comment_form();
+	<?php
+		comment_form( array(
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'  => '</h2>',
+			'title_reply' => esc_html(get_theme_mod('aagaz_startup_comment_form_heading',__('Leave a Reply','aagaz-startup' )) ),
+			'label_submit' => esc_html(get_theme_mod('aagaz_startup_comment_button_text',__('Post Comment','aagaz-startup' )) ),
+		) );
 	?>
 </div>

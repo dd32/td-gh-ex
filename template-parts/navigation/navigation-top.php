@@ -20,7 +20,7 @@
 		</div>
 		<div class="col-lg-1 col-md-1">
 			<div class="search-body">
-				<button type="button" data-toggle="modal" data-target="#myModal"><i class="<?php echo esc_attr(get_theme_mod('tafri_travel_search_icon','fas fa-search')); ?>"></i></button>
+				<button type="button" data-toggle="modal" data-target="#myModal"><i class="<?php echo esc_attr(get_theme_mod('aagaz_startup_search_icon','fas fa-search')); ?>"></i></button>
 			</div>
 		</div>
 	</div>

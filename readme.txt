@@ -2,9 +2,9 @@
 Contributors: ThemesEye
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.7
+Stable tag: 0.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,13 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 = 0.4.7 =
   * Changed searchform code.
   * Resolved code errors.
+
+= 0.4.8 =
+  * Added option for comment form heading.
+  * Added option for comment submit button text.
+  * Added width option for comment form.
+  * Added Meta Box Seperator for single post.
+  * Added show / hide post pagination.
 
 == Resources ==
 

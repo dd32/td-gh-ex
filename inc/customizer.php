@@ -1034,6 +1034,18 @@ function aagaz_startup_customize_register( $wp_customize ) {
        'section' => 'aagaz_startup_blog_post'
     ));
 
+    $wp_customize->add_setting( 'aagaz_startup_seperator_metabox', array(
+		'default'   => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'aagaz_startup_seperator_metabox', array(
+		'label'       => esc_html__( 'Single Post Meta Box Seperator','aagaz-startup' ),
+		'section'     => 'aagaz_startup_blog_post',
+		'description' => __('Add the seperator for meta box. Example: ",",  "|", "/", etc. ','aagaz-startup'),
+		'type'        => 'text',
+		'settings'    => 'aagaz_startup_seperator_metabox',
+	) );
+
     $wp_customize->add_setting('aagaz_startup_blog_post_layout',array(
         'default' => __('Default','aagaz-startup'),
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
@@ -1104,6 +1116,16 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'type'=> 'text'
 	));
 
+	$wp_customize->add_setting('aagaz_startup_show_post_pagination',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_show_post_pagination',array(
+       'type' => 'checkbox',
+       'label' => __('Post Pagination','aagaz-startup'),
+       'section' => 'aagaz_startup_blog_post'
+    ));
+
 	$wp_customize->add_setting( 'aagaz_startup_pagination_option', array(
         'default'			=> __('Default','aagaz-startup'),
         'sanitize_callback'	=> 'aagaz_startup_sanitize_choices'
@@ -1116,6 +1138,44 @@ function aagaz_startup_customize_register( $wp_customize ) {
             'Default'  => __( 'Default', 'aagaz-startup' ),
             'next-prev' => __( 'Next / Previous', 'aagaz-startup' ),
     )));
+
+    $wp_customize->add_setting('aagaz_startup_comment_form_heading',array(
+       'default' => __('Leave a Reply','aagaz-startup'),
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_comment_form_heading',array(
+       'type' => 'text',
+       'label' => __('Comment Form Heading','aagaz-startup'),
+       'section' => 'aagaz_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting('aagaz_startup_comment_button_text',array(
+       'default' => __('Post Comment','aagaz-startup'),
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_comment_button_text',array(
+       'type' => 'text',
+       'label' => __('Comment Submit Button Text','aagaz-startup'),
+       'section' => 'aagaz_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'aagaz_startup_comment_form_size',array(
+		'default' => 100,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('aagaz_startup_comment_form_size',	array(
+		'label' => esc_html__( 'Comment Form Size','aagaz-startup' ),
+		'section' => 'aagaz_startup_blog_post',
+		'type' => 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 100,
+			'step' => 1,
+		),
+	));
 
     // related post setting
     $wp_customize->add_section('aagaz_startup_related_post_section',array(
