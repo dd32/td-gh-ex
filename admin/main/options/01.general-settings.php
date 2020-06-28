@@ -286,17 +286,18 @@ function thinkup_input_responsivehtml() {
 $thinkup_general_fixedlayoutswitch = thinkup_var ( 'thinkup_general_fixedlayoutswitch' );
 
 	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
-		
-		$args = array(
-			'theme_location' => 'header_menu',
-			'items_wrap'     => '<select onchange="location = this.options[this.selectedIndex].value;"><option value="#">' . __( 'Navigation', 'engrave-lite') . '</option>%3$s</select>',
-			'container'      => false,
-			'echo'           => false,
-			'walker'         => new thinkup_nav_menu_responsive(),
-			'depth'          => 0,
-			'fallback_cb'     => 'thinkup_input_responsivefall',
-		);
-		$menu = strip_tags(wp_nav_menu( $args ), '<div>, <select>, <option>' );
+
+		$menu = strip_tags(wp_nav_menu(
+			array(
+				'theme_location' => 'header_menu',
+				'items_wrap'     => '<select onchange="location = this.options[this.selectedIndex].value;"><option value="#">' . __( 'Navigation', 'engrave-lite') . '</option>%3$s</select>',
+				'container'      => false,
+				'echo'           => false,
+				'walker'         => new thinkup_nav_menu_responsive(),
+				'depth'          => 0,
+				'fallback_cb'     => 'thinkup_input_responsivefall',
+			)
+		), '<div>, <select>, <option>' );
 
 		if ( has_nav_menu( 'header_menu' ) ) {
 			echo '<div id="header-responsive">' . $menu . '</div>';
