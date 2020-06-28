@@ -335,6 +335,14 @@ function themonic_body_class( $classes ) {
 }
 add_filter( 'body_class', 'themonic_body_class' );
 
+/* For backwards compatibility with versions of WordPress older than 5.2. */
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
 /*
  * Adjusts content_width value for full-width and single image attachment
  * templates, and when there are no active widgets in the sidebar.
