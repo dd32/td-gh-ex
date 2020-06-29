@@ -19,7 +19,7 @@ function advance_business_mostrar_guide() {
 
 <div class="wrapper-info">
 	<div class="header">
-	 	<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="<?php esc_html(the_title()); ?> post thumbnail image">
+	 	<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="<?php esc_attr(the_title()); ?> post thumbnail image">
 	 	<h2><?php esc_html_e('Welcome to Advance Business Theme', 'advance-business'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-business'); ?></p>
 		<div class="main-button">
@@ -47,11 +47,11 @@ function advance_business_mostrar_guide() {
 				</ul>
 		  	</div>
 		  	<div class="doc-image">
-		  		<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="<?php esc_html(the_title()); ?> post thumbnail image">	
+		  		<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="<?php esc_attr(the_title()); ?> post thumbnail image">	
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">
-					<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="<?php esc_html(the_title()); ?> post thumbnail image">	
+					<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="<?php esc_attr(the_title()); ?> post thumbnail image">	
 			    </div>
 			    <div class="image-docs1">
 				    <ul>
@@ -70,7 +70,7 @@ function advance_business_mostrar_guide() {
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">
-	  			<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.jpg" alt="<?php esc_html(the_title()); ?> post thumbnail image">
+	  			<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.jpg" alt="<?php esc_attr(the_title()); ?> post thumbnail image">
 	  			<p><?php esc_html_e( 'This WordPress theme for business is dynamic, modern, powerful and well-structured, serving a vast range of businesses from small to medium and large scale without any glitches. It can be used by businesses, start-up ventures, digital agencies, corporate giants, promotional firms, investment agencies, marketing and sales target businesses and online shops and businesses. The base of the theme is strengthened by Bootstrap framework which facilitates its easy usage. It gives all the flexibility to design a solid website with many different layouts of pages, blogs, header, footer and sidebars. This WordPress theme for business has an intuitive business design to impart the professionalism that your business follows with unlimited colours and numerous Google fonts making your work of giving the website a serious tone further easy. It is full of widgetized areas where you can stuff different components.This WordPress theme for business is blessed with many modern website designing tools, features and functionality that is enough to make the site exclusive and outstanding. Its responsive layout looks gorgeous on varying screen sizes. It is unarguably cross-browser compatible and translation ready. It offers deep customization to give full power in your hands to change its colour, background, header, footer, menu, font size and many other elements. With the embedded social media icons, your website will get an easy access to everyones life through smartphones. You can include posts in a variety of formats like images, gallery, videos, links etc. in this WordPress theme for business. This purpose oriented theme has various sections each of which can be enabled or disabled according to your wish. It offers premium membership wherein you get access to seamless customer support and regular theme updates.', 'advance-business' ); ?></p>
 	  		</div>
 	  		<div class="col-4">
