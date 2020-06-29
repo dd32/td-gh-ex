@@ -68,7 +68,7 @@ get_header(); ?>
         <?php if( get_theme_mod('advance_coaching_title') != ''){ ?>
           <div class="coaching-title">
             <h2><?php echo esc_html(get_theme_mod('advance_coaching_title','')); ?></h2>
-            <img src="<?php echo esc_url(get_theme_mod('advance_coaching_sec_border',get_template_directory_uri().'/images/border.png')); ?>" alt="<?php esc_html_e('Border Image','advance-coaching'); ?>" role="img">
+            <img src="<?php echo esc_url(get_theme_mod('advance_coaching_sec_border',get_template_directory_uri().'/images/border.png')); ?>" alt="<?php esc_attr_e('Border Image','advance-coaching'); ?>" role="img">
           </div>
         <?php } ?>
         <div class="row">

@@ -1206,6 +1206,16 @@ function advance_coaching_customize_register($wp_customize) {
        'section' => 'advance_coaching_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_coaching_show_featured_image_single_post',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_coaching_show_featured_image_single_post',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Image','advance-coaching'),
+       'section' => 'advance_coaching_blog_post'
+    ));
+
     $wp_customize->add_setting('advance_coaching_blog_post_description_option',array(
     	'default'   => __('Excerpt Content','advance-coaching'),
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
@@ -1260,6 +1270,42 @@ function advance_coaching_customize_register($wp_customize) {
 		'section'=> 'advance_coaching_blog_post',
 		'type'=> 'text'
 	));
+
+	//no Result Found
+	$wp_customize->add_section('advance_coaching_noresult_found',array(
+		'title'	=> __('No Result Found','advance-coaching'),
+		'panel' => 'advance_coaching_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_coaching_nosearch_found_title',array(
+		'default'=> __('Nothing Found','advance-coaching'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_coaching_nosearch_found_title',array(
+		'label'	=> __('No Result Found Title','advance-coaching'),
+		'section'=> 'advance_coaching_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_coaching_nosearch_found_content',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','advance-coaching'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_coaching_nosearch_found_content',array(
+		'label'	=> __('No Result Found Content','advance-coaching'),
+		'section'=> 'advance_coaching_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_coaching_show_noresult_search',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_coaching_show_noresult_search',array(
+       'type' => 'checkbox',
+       'label' => __('No Result search','advance-coaching'),
+       'section' => 'advance_coaching_noresult_found'
+    ));
 
 	//footer
 	$wp_customize->add_section('advance_coaching_footer_section', array(
@@ -1344,6 +1390,21 @@ function advance_coaching_customize_register($wp_customize) {
 			'max'              => 50,
         ),
         'type' => 'number',
+	));
+
+	$wp_customize->add_setting('advance_coaching_copyright_padding',array(
+		'default'=> 20,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_coaching_copyright_padding',array(
+		'label'	=> __('Copyright Padding','advance-coaching'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_coaching_footer_section',
+		'type'=> 'number'
 	));
 	
 	$wp_customize->add_setting('advance_coaching_enable_disable_scroll',array(

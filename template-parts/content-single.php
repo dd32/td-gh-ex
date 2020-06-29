@@ -14,11 +14,13 @@
 ?>
 <article class="page-box-single">
   <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h1>
-  <?php 
-    if(has_post_thumbnail()) {?>
-      <div class="box-image">
-        <?php the_post_thumbnail(); ?>
-      </div>
+  <?php if( get_theme_mod( 'advance_coaching_show_featured_image_single_post',true) != '') { ?>
+    <?php 
+      if(has_post_thumbnail()) {?>
+        <div class="box-image">
+          <?php the_post_thumbnail(); ?>
+        </div>
+    <?php } ?>
   <?php } ?>
   <div class="new-text">
     <div class="entry-content"><?php the_content();?></div>
