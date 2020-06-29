@@ -3,8 +3,10 @@ Theme Name: Bakes And Cakes
 Theme URI: https://rarathemes.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
-Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://demo.rarathemes.com/bakes-and-cakes/, documentation at https://docs.rarathemes.com/docs/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
-Version: 1.2.2
+Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://rarathemes.com/previews/?theme=bakes-and-cakes, documentation at https://docs.rarathemes.com/docs/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
+Version: 1.2.3
+Requires PHP: 5.6
+Tested up to: 5.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
@@ -598,7 +600,11 @@ a:active {
     /*display: none;*/
     margin-left: -99999px;
 }
-
+@media only screen and (max-width: 1024px){
+    .main-navigation ul ul{
+        margin-left: 0;
+    } 
+}
 .main-navigation ul ul ul {
     left: 100%;
     top: 0;

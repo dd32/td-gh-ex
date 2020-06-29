@@ -28,7 +28,7 @@
     <div class="panel-aside">
         <h4><?php esc_html_e( 'View Our Bakes And Cakes Demo', 'bakes-and-cakes' ); ?></h4>
         <p><?php esc_html_e( 'Visit the demo to get more idea about our theme design and its features.', 'bakes-and-cakes' ); ?></p>
-        <a class="button button-primary" href="<?php echo esc_url( 'https://demo.rarathemes.com/bakes-and-cakes/' ); ?>" title="<?php esc_attr_e( 'Visit the Demo', 'bakes-and-cakes' ); ?>" target="_blank">
+        <a class="button button-primary" href="<?php echo esc_url( 'https://rarathemes.com/previews/?theme=bakes-and-cakes' ); ?>" title="<?php esc_attr_e( 'Visit the Demo', 'bakes-and-cakes' ); ?>" target="_blank">
             <?php esc_html_e( 'View Demo', 'bakes-and-cakes' ); ?>
         </a>
     </div><!-- .panel-aside -->

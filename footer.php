@@ -12,7 +12,7 @@ $enabled_sections = bakes_and_cakes_get_sections();
 
 if( is_home() || ! $enabled_sections || ! ( is_front_page()  || is_page_template( 'template-home.php' ) ) ){ echo '</div></div>'; } ?>
 	
-	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
 		
 		<div class="container">
 

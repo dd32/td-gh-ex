@@ -70,11 +70,11 @@ function bakes_and_cakes_breadcrumbs_cb() {
     $showCurrent = get_theme_mod( 'bakes_and_cakes_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $delimiter   = get_theme_mod( 'bakes_and_cakes_breadcrumb_separator', __( '>', 'bakes-and-cakes' ) ); // delimiter between crumbs
     $home        = get_theme_mod( 'bakes_and_cakes_breadcrumb_home_text', __( 'Home', 'bakes-and-cakes' ) ); // text for the 'Home' link
-    $before      = '<span class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">'; // tag before the current crumb
+    $before      = '<span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">'; // tag before the current crumb
     $after       = '</span>'; // tag after the current crumb
       
     $depth = 1;    
-    echo '<div id="crumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url() ) . '" class="home_crumb"><span itemprop="name">' . esc_html( $home ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+    echo '<div id="crumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url() ) . '" class="home_crumb"><span itemprop="name">' . esc_html( $home ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
         if( is_home() && ! is_front_page() ){            
             $depth = 2;
             if( $showCurrent ) echo $before . '<span itemprop="name">' . esc_html( single_post_title( '', false ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;          
@@ -83,7 +83,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
             $thisCat = get_category( get_query_var( 'cat' ), false );
             if( $show_front === 'page' && $post_page ){ //If static blog post page is set
                 $p = get_post( $post_page );
-                echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_permalink( $post_page ) ) . '"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_permalink( $post_page ) ) . '"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                 $depth ++;  
             }
 
@@ -96,7 +96,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
                     if( is_object( $parent_obj ) ){
                         $term_url    = get_term_link( $parent_obj->term_id );
                         $term_name   = $parent_obj->name;
-                        echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                        echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                         $depth ++;
                     }
                 }
@@ -116,15 +116,15 @@ function bakes_and_cakes_breadcrumbs_cb() {
             if( $showCurrent ) echo $before . '<span itemprop="name">' . esc_html( $userdata->display_name ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;  
         }elseif( is_day() ){            
             $depth = 2;
-            echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+            echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
             $depth ++;
-            echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'bakes-and-cakes' ) ), get_the_time( __( 'm', 'bakes-and-cakes' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'F', 'bakes-and-cakes' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+            echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'bakes-and-cakes' ) ), get_the_time( __( 'm', 'bakes-and-cakes' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'F', 'bakes-and-cakes' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
             $depth ++;
             if( $showCurrent ) echo $before .'<span itemprop="name">'. esc_html( get_the_time( __( 'd', 'bakes-and-cakes' ) ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
              
         }elseif( is_month() ){            
             $depth = 2;
-            echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+            echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'bakes-and-cakes' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
             $depth++;
             if( $showCurrent ) echo $before .'<span itemprop="name">'. esc_html( get_the_time( __( 'F', 'bakes-and-cakes' ) ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;      
         }elseif( is_year() ){            
@@ -151,11 +151,11 @@ function bakes_and_cakes_breadcrumbs_cb() {
                     foreach ( $ancestors as $ancestor ) {
                         $ancestor = get_term( $ancestor, 'product_cat' );    
                         if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-                            echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                            echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                             $depth++;
                         }
                     }
-                    echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_term_link( $main_term ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $main_term->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                    echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $main_term ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $main_term->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                 }
             
                 if( $showCurrent ) echo $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
@@ -168,7 +168,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
                 
                 if( $show_front === 'page' && $post_page ){ //If static blog post page is set
                     $p = get_post( $post_page );
-                    echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';  
+                    echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';  
                     $depth++;
                 }
                 
@@ -194,7 +194,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
                         if( is_object( $cat_obj ) ){
                             $term_url    = get_term_link( $cat_obj->term_id );
                             $term_name   = $cat_obj->name;
-                            echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                            echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                             $depth ++;
                         }
                     }
@@ -218,7 +218,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
                 }
                 $breadcrumbs = array_reverse( $breadcrumbs );
                 for ( $i = 0; $i < count( $breadcrumbs); $i++ ){
-                    echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_permalink( $breadcrumbs[$i] ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_title( $breadcrumbs[$i] ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /></span>';
+                    echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $breadcrumbs[$i] ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_title( $breadcrumbs[$i] ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /></span>';
                     if ( $i != count( $breadcrumbs ) - 1 ) echo ' <span class="separator">' . esc_html( $delimiter ) . '</span> ';
                     $depth++;
                 }
@@ -249,7 +249,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
                 foreach ( $ancestors as $ancestor ) {
                     $ancestor = get_term( $ancestor, 'product_cat' );    
                     if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-                        echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                        echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                         $depth ++;
                     }
                 }
@@ -272,7 +272,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
             $depth = 2;
             $post_type = get_post_type_object(get_post_type());
             if( get_query_var('paged') ){
-                echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_post_type_archive_link( $post_type->name ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $post_type->label ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" />';
+                echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_post_type_archive_link( $post_type->name ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $post_type->label ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" />';
                 echo ' <span class="separator">' . $delimiter . '</span></span> ' . $before . sprintf( __('Page %s', 'bakes-and-cakes'), get_query_var('paged') ) . $after;
             }elseif( is_archive() ){
                 echo $before .'<a itemprop="item" href="' . esc_url( get_post_type_archive_link( $post_type->name ) ) . '"><span itemprop="name">'. esc_html( $post_type->label ) .'</span></a><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
@@ -286,7 +286,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
             if( $cat ){
                 $cat = $cat[0];
                 echo get_category_parents( $cat, TRUE, ' <span class="separator">' . $delimiter . '</span> ');
-                echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_permalink( $parent ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $parent->post_title ) . '<span></a><meta itemprop="position" content="'. absint( $depth ).'" />' . ' <span class="separator">' . $delimiter . '</span></span>';
+                echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $parent ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $parent->post_title ) . '<span></a><meta itemprop="position" content="'. absint( $depth ).'" />' . ' <span class="separator">' . $delimiter . '</span></span>';
             }
             if( $showCurrent ) echo $before .'<a itemprop="item" href="' . esc_url( get_the_permalink() ) . '"><span itemprop="name">'. esc_html( get_the_title() ) .'</span></a><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;   
         }elseif ( is_404() ){
@@ -616,7 +616,7 @@ function bakes_and_cakes_single_post_schema() {
         $schema_type = ! empty( $custom_logo_id ) && has_post_thumbnail( $post->ID ) ? "BlogPosting" : "Blog";
 
         $args = array(
-            "@context"  => "http://schema.org",
+            "@context"  => "https://schema.org",
             "@type"     => $schema_type,
             "mainEntityOfPage" => array(
                 "@type" => "WebPage",
@@ -797,3 +797,19 @@ function bakes_and_cakes_get_fallback_svg( $post_thumbnail, $echo = true ) {
     }
 }
 endif;
+
+/**
+ * Function to exclude posts in blog index page
+ */
+function bakes_and_cakes_exclude_posts_for_blogpage( $query ) {
+    $show_on_front   = get_option( 'show_on_front' );
+    $ed_slider       = get_theme_mod( 'bakes_and_cakes_ed_slider' );
+	$slider_category = get_theme_mod( 'bakes_and_cakes_slider_cat' );
+
+    if ( ! is_admin() && $query->is_home() && $query->is_main_query() && $ed_slider && 'posts' == $show_on_front ) {
+        if( $slider_category ){
+            $query->set( 'category__not_in', $slider_category );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'bakes_and_cakes_exclude_posts_for_blogpage' );
