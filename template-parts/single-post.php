@@ -28,27 +28,29 @@
 			<?php } ?>
 		</div>
 	<?php }?>
-	<?php if(has_post_thumbnail()) { ?>
-	    <hr>
-	    <div class="feature-box">   
-	      <?php the_post_thumbnail(); ?>
-	    </div>
-	    <hr>                    
-	    <?php } ?> 
-	    <div class="entry-content">
-	      <?php the_content(); ?> 
-	    </div>   
-	    <?php if( get_theme_mod( 'bb_mobile_application_tags_hide',true) != '') { ?>
-		    <div class="tags"><p><?php
-		      if( $tags = get_the_tags() ) {
-		        echo '<i class="fas fa-tags"></i>';
-		        echo '<span class="meta-sep"></span>';
-		        foreach( $tags as $content_tag ) {
-		          $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
-		          echo '<a href="' . esc_url(get_term_link( $content_tag, $content_tag->taxonomy )) . '">' . esc_html($content_tag->name) . '</a>' . esc_html($sep);
-		        }
-		      } ?></p></div>
-	    <?php } ?>    
+	<?php if( get_theme_mod( 'bb_mobile_application_show_featured_image_single_post',true) != '') { ?>
+		<?php if(has_post_thumbnail()) { ?>
+		    <hr>
+		    <div class="feature-box">   
+	      		<?php the_post_thumbnail(); ?>
+		    </div>
+		    <hr>                    
+	    <?php } ?>
+	<?php } ?>  
+    <div class="entry-content">
+      <?php the_content(); ?> 
+    </div>   
+    <?php if( get_theme_mod( 'bb_mobile_application_tags_hide',true) != '') { ?>
+	    <div class="tags"><p><?php
+	      if( $tags = get_the_tags() ) {
+	        echo '<i class="fas fa-tags"></i>';
+	        echo '<span class="meta-sep"></span>';
+	        foreach( $tags as $content_tag ) {
+	          $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
+	          echo '<a href="' . esc_url(get_term_link( $content_tag, $content_tag->taxonomy )) . '">' . esc_html($content_tag->name) . '</a>' . esc_html($sep);
+	        }
+	      } ?></p></div>
+    <?php } ?>    
     <?php
 
 	wp_link_pages( array(
