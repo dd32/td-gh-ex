@@ -15,7 +15,7 @@
 				<?php
 				$copyrightText = get_theme_mod('semplicemente_theme_options_copyrighttext', '&copy; '.date('Y').' '. get_bloginfo('name'));
 				if ($copyrightText || is_customize_preview()): ?>
-					<span class="custom"><?php echo wp_kses($copyrightText, semplicemente_allowed_html()); ?></span>
+					<span class="custom"><?php echo do_shortcode(wp_kses_post($copyrightText)); ?></span>
 				<?php endif; ?>
 				<span class="sep"> | </span>
 				<?php
