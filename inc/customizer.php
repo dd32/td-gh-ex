@@ -1183,6 +1183,16 @@ function advance_fitness_gym_customize_register($wp_customize) {
        'section' => 'advance_fitness_gym_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_fitness_gym_show_featured_image_single_post',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_fitness_gym_show_featured_image_single_post',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Image','advance-fitness-gym'),
+       'section' => 'advance_fitness_gym_blog_post'
+    ));
+
     $wp_customize->add_setting('advance_fitness_gym_blog_post_description_option',array(
     	'default'   => __('Excerpt Content','advance-fitness-gym'),
         'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
@@ -1236,6 +1246,42 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'label'	=> __('Add Button Text','advance-fitness-gym'),		'section'=> 'advance_fitness_gym_blog_post',
 		'type'=> 'text'
 	));
+
+	//no Result Found
+	$wp_customize->add_section('advance_fitness_gym_noresult_found',array(
+		'title'	=> __('No Result Found','advance-fitness-gym'),
+		'panel' => 'advance_fitness_gym_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_fitness_gym_nosearch_found_title',array(
+		'default'=> __('Nothing Found','advance-fitness-gym'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_nosearch_found_title',array(
+		'label'	=> __('No Result Found Title','advance-fitness-gym'),
+		'section'=> 'advance_fitness_gym_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_nosearch_found_content',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','advance-fitness-gym'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_nosearch_found_content',array(
+		'label'	=> __('No Result Found Content','advance-fitness-gym'),
+		'section'=> 'advance_fitness_gym_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_show_noresult_search',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_fitness_gym_show_noresult_search',array(
+       'type' => 'checkbox',
+       'label' => __('No Result search','advance-fitness-gym'),
+       'section' => 'advance_fitness_gym_noresult_found'
+    ));
 
 	//footer
 	$wp_customize->add_section('advance_fitness_gym_footer_section', array(
@@ -1320,6 +1366,21 @@ function advance_fitness_gym_customize_register($wp_customize) {
 			'max'              => 50,
         ),
         'type' => 'number',
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_copyright_padding',array(
+		'default'=> 15,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_copyright_padding',array(
+		'label'	=> __('Copyright Padding','advance-fitness-gym'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_fitness_gym_footer_section',
+		'type'=> 'number'
 	));
 
 	$wp_customize->add_setting('advance_fitness_gym_enable_disable_scroll',array(

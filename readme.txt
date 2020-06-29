@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, post-formats, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.8
+Stable tag: 0.4.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -124,6 +124,11 @@ Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPres
 
 = 0.4.8 =
   * Resolved errors.
+
+= 0.4.9 =
+  * Added no search found settings.
+  * Added copyright padding.
+  * Added show and hide single post image.
 
 == Resources ==
 

@@ -8,13 +8,15 @@
  */
 ?>
 <header role="banner">
-	<h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-fitness-gym' ); ?></h2>
+	<h2 class="entry-title"><?php echo esc_html(get_theme_mod('advance_fitness_gym_nosearch_found_title',__('Nothing Found','advance-fitness-gym')));?></h2>
 </header>
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 	<p><?php printf( esc_html__( 'Ready to publish your first post? Get started here.', 'advance-fitness-gym' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 	<?php elseif ( is_search() ) : ?>
-		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'advance-fitness-gym' ); ?></p><br />
-		<?php get_search_form(); ?>
+		<p><?php echo esc_html(get_theme_mod('advance_fitness_gym_nosearch_found_content',__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','advance-fitness-gym')));?></p><br />
+		<?php if( get_theme_mod( 'advance_fitness_gym_show_noresult_search',true) != '') { ?>
+			<?php get_search_form(); ?>
+		<?php } ?>
 	<?php else : ?>
 	<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-fitness-gym' ); ?></p><br />
 	<div class="read-moresec">
