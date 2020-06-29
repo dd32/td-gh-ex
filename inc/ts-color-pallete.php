@@ -4,61 +4,49 @@
 
 	$advance_education_custom_css = '';
 
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .=' input[type="submit"], .read-moresec a:hover, .top-header .account-btn a:hover, .time, #slider i, #slider .inner_carousel .readbtn a, .read-more-btn a,  #footer input[type="submit"], .copyright, #footer .tagcloud a:hover,.woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover,#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, #sidebar ul li:hover:before, #menu-sidebar input[type="submit"], #footer .woocommerce a.button:hover, #footer .woocommerce button.button:hover, .tags p a:hover, .meta-nav:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{';
-			$advance_education_custom_css .='background-color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='a,h1,h2,h3,h4,h5,h6, input[type="search"], .read-moresec a, .logo a, .top-header .account-btn a, .mail i,.phone i, .search-box i, #slider .inner_carousel .readbtn a:hover, #courses h3 i, .cat-posts a, .page-box h4, .read-more-btn a:hover, .page-box .metabox,.page-box-single .metabox, section h4, #comments a time, .woocommerce-message::before, .woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce .quantity .qty, #sidebar caption, #sidebar h3, h1.entry-title,h1.page-title, .pagination span,.pagination a, .pagination .current, #sidebar h3.widget-title a,.metabox a, .new-text a, #footer li a:hover, p.logged-in-as a, single.page-box-single h3 a, .entry-content p a, div#div-comment-1 a, .nav-next a, #courses h2 i, .comment-meta a, h2.entry-title, h2.page-title, nav-links span,.page-template-custom-front-page .search-box i, tr.woocommerce-cart-form__cart-item.cart_item a, span.tagged_as a, a.shipping-calculator-button, #sidebar ul li a:hover,#sidebar ul li:hover, #sidebar ul li:active, #sidebar ul li:focus, #sidebar ul li:hover a,#contact-info .account-btn a, .page-box-single h1, .tags i, .tags p a, .meta-nav{';
-			$advance_education_custom_css .='color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='.main-menu{';
-			$advance_education_custom_css .='border-bottom-color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='.woocommerce-message{';
-			$advance_education_custom_css .='border-top-color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='.cat_body, h3.title-btn{';
-			$advance_education_custom_css .='border-right-color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='.top-header .account-btn a, .serach_inner form.search-form, #slider .inner_carousel .readbtn a, #slider .inner_carousel .readbtn a:hover, .cat-posts a, .read-more-btn a, .read-more-btn a:hover, #footer input[type="search"], .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce .quantity .qty, .pagination a:hover, .pagination .current,#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button,#contact-info .account-btn a, .tags p a{';
-			$advance_education_custom_css .='border-color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='.primary-navigation ul ul li:first-child{';
-			$advance_education_custom_css .='border-top-color: '.esc_html($advance_education_theme_color).';';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='#comments input[type="submit"].submit, nav.woocommerce-MyAccount-navigation ul li, #sidebar ul li a:hover:before{';
-			$advance_education_custom_css .='background-color: '.esc_html($advance_education_theme_color).'!important;';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='.logo p,page-box-single h1, #sidebar ul li a:active, #sidebar ul li a:focus, .read-more-btn a:hover{';
-			$advance_education_custom_css .='color: '.esc_html($advance_education_theme_color).'!important;';
-		$advance_education_custom_css .='}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='#sidebar aside{
-			box-shadow: -12px 12px 0 0 '.esc_html($advance_education_theme_color).';
-		}';
-	}
-	if($advance_education_theme_color != false){
-		$advance_education_custom_css .='#sidebar aside{
-			box-shadow: 0 3px 3px '.esc_html($advance_education_theme_color).';
-		}';
-	}
+	$advance_education_custom_css .=' input[type="submit"], .read-moresec a:hover, .top-header .account-btn a:hover, .time, #slider i, #slider .inner_carousel .readbtn a, .read-more-btn a,  #footer input[type="submit"], .copyright, #footer .tagcloud a:hover,.woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover,#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, #sidebar ul li:hover:before, #menu-sidebar input[type="submit"], #footer .woocommerce a.button:hover, #footer .woocommerce button.button:hover, .tags p a:hover, .meta-nav:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{';
+		$advance_education_custom_css .='background-color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='a,h1,h2,h3,h4,h5,h6, input[type="search"], .read-moresec a, .logo a, .top-header .account-btn a, .mail i,.phone i, .search-box i, #slider .inner_carousel .readbtn a:hover, #courses h3 i, .cat-posts a, .page-box h4, .read-more-btn a:hover, .page-box .metabox,.page-box-single .metabox, section h4, #comments a time, .woocommerce-message::before, .woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce .quantity .qty, #sidebar caption, #sidebar h3, h1.entry-title,h1.page-title, .pagination span,.pagination a, .pagination .current, #sidebar h3.widget-title a,.metabox a, .new-text a, #footer li a:hover, p.logged-in-as a, single.page-box-single h3 a, .entry-content p a, div#div-comment-1 a, .nav-next a, #courses h2 i, .comment-meta a, h2.entry-title, h2.page-title, nav-links span,.page-template-custom-front-page .search-box i, tr.woocommerce-cart-form__cart-item.cart_item a, span.tagged_as a, a.shipping-calculator-button, #sidebar ul li a:hover,#sidebar ul li:hover, #sidebar ul li:active, #sidebar ul li:focus, #sidebar ul li:hover a,#contact-info .account-btn a, .page-box-single h1, .tags i, .tags p a, .meta-nav{';
+		$advance_education_custom_css .='color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='.main-menu{';
+		$advance_education_custom_css .='border-bottom-color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='.woocommerce-message{';
+		$advance_education_custom_css .='border-top-color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='.cat_body, h3.title-btn{';
+		$advance_education_custom_css .='border-right-color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='.top-header .account-btn a, .serach_inner form.search-form, #slider .inner_carousel .readbtn a, #slider .inner_carousel .readbtn a:hover, .cat-posts a, .read-more-btn a, .read-more-btn a:hover, #footer input[type="search"], .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce .quantity .qty, .pagination a:hover, .pagination .current,#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button,#contact-info .account-btn a, .tags p a{';
+		$advance_education_custom_css .='border-color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='.primary-navigation ul ul li:first-child{';
+		$advance_education_custom_css .='border-top-color: '.esc_html($advance_education_theme_color).';';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='#comments input[type="submit"].submit, nav.woocommerce-MyAccount-navigation ul li, #sidebar ul li a:hover:before{';
+		$advance_education_custom_css .='background-color: '.esc_html($advance_education_theme_color).'!important;';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='.logo p,page-box-single h1, #sidebar ul li a:active, #sidebar ul li a:focus, .read-more-btn a:hover{';
+		$advance_education_custom_css .='color: '.esc_html($advance_education_theme_color).'!important;';
+	$advance_education_custom_css .='}';
+
+	$advance_education_custom_css .='#sidebar aside{
+		box-shadow: -12px 12px 0 0 '.esc_html($advance_education_theme_color).';
+	}';
+
+	$advance_education_custom_css .='#sidebar aside{
+		box-shadow: 0 3px 3px '.esc_html($advance_education_theme_color).';
+	}';
 
 	// media
 	$advance_education_custom_css .='@media screen and (max-width:1000px) {';
@@ -186,18 +174,14 @@
 	/*------------------------------ Button Settings option-----------------------*/
 	$advance_education_button_padding_top_bottom = get_theme_mod('advance_education_button_padding_top_bottom');
 	$advance_education_button_padding_left_right = get_theme_mod('advance_education_button_padding_left_right');
-	if($advance_education_button_padding_top_bottom != false || $advance_education_button_padding_left_right != false){
-		$advance_education_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"], .cat-posts a{';
-			$advance_education_custom_css .='padding-top: '.esc_html($advance_education_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_education_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_education_button_padding_left_right).'px; padding-right: '.esc_html($advance_education_button_padding_left_right).'px; display:inline-block;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"], .cat-posts a{';
+		$advance_education_custom_css .='padding-top: '.esc_html($advance_education_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_education_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_education_button_padding_left_right).'px; padding-right: '.esc_html($advance_education_button_padding_left_right).'px; display:inline-block;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_button_border_radius = get_theme_mod('advance_education_button_border_radius');
-	if($advance_education_button_border_radius != false){
-		$advance_education_custom_css .='.new-text .read-more-btn a,#slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"], .cat-posts a{';
-			$advance_education_custom_css .='border-radius: '.esc_html($advance_education_button_border_radius).'px;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.new-text .read-more-btn a,#slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"], .cat-posts a{';
+		$advance_education_custom_css .='border-radius: '.esc_html($advance_education_button_border_radius).'px;';
+	$advance_education_custom_css .='}';
 
 	/*--------------Responsive Setting --------------------*/
 	$advance_education_stickyheader = get_theme_mod( 'advance_education_responsive_sticky_header', false);
@@ -299,25 +283,19 @@
 
 	/*------------ Woocommerce Settings  --------------*/
 	$advance_education_top_bottom_product_button_padding = get_theme_mod('advance_education_top_bottom_product_button_padding', 10);
-	if($advance_education_top_bottom_product_button_padding != false){
-		$advance_education_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_education_custom_css .='padding-top: '.esc_html($advance_education_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_education_top_bottom_product_button_padding).'px;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_education_custom_css .='padding-top: '.esc_html($advance_education_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_education_top_bottom_product_button_padding).'px;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_left_right_product_button_padding = get_theme_mod('advance_education_left_right_product_button_padding', 16);
-	if($advance_education_left_right_product_button_padding != false){
-		$advance_education_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_education_custom_css .='padding-left: '.esc_html($advance_education_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_education_left_right_product_button_padding).'px;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_education_custom_css .='padding-left: '.esc_html($advance_education_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_education_left_right_product_button_padding).'px;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_product_button_border_radius = get_theme_mod('advance_education_product_button_border_radius', 0);
-	if($advance_education_product_button_border_radius != false){
-		$advance_education_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_education_custom_css .='border-radius: '.esc_html($advance_education_product_button_border_radius).'px;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_education_custom_css .='border-radius: '.esc_html($advance_education_product_button_border_radius).'px;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_show_related_products = get_theme_mod('advance_education_show_related_products',true);
 	if($advance_education_show_related_products == false){
@@ -334,32 +312,24 @@
 	}
 
 	$advance_education_top_bottom_wooproducts_padding = get_theme_mod('advance_education_top_bottom_wooproducts_padding',0);
-	if($advance_education_top_bottom_wooproducts_padding != false){
-		$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_education_custom_css .='padding-top: '.esc_html($advance_education_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_education_top_bottom_wooproducts_padding).'px !important;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_education_custom_css .='padding-top: '.esc_html($advance_education_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_education_top_bottom_wooproducts_padding).'px !important;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_left_right_wooproducts_padding = get_theme_mod('advance_education_left_right_wooproducts_padding',0);
-	if($advance_education_left_right_wooproducts_padding != false){
-		$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_education_custom_css .='padding-left: '.esc_html($advance_education_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_education_left_right_wooproducts_padding).'px !important;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_education_custom_css .='padding-left: '.esc_html($advance_education_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_education_left_right_wooproducts_padding).'px !important;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_wooproducts_border_radius = get_theme_mod('advance_education_wooproducts_border_radius',0);
-	if($advance_education_wooproducts_border_radius != false){
-		$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_education_custom_css .='border-radius: '.esc_html($advance_education_wooproducts_border_radius).'px;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_education_custom_css .='border-radius: '.esc_html($advance_education_wooproducts_border_radius).'px;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_wooproducts_box_shadow = get_theme_mod('advance_education_wooproducts_box_shadow',0);
-	if($advance_education_wooproducts_box_shadow != false){
-		$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_education_custom_css .='box-shadow: '.esc_html($advance_education_wooproducts_box_shadow).'px '.esc_html($advance_education_wooproducts_box_shadow).'px '.esc_html($advance_education_wooproducts_box_shadow).'px #eee;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_education_custom_css .='box-shadow: '.esc_html($advance_education_wooproducts_box_shadow).'px '.esc_html($advance_education_wooproducts_box_shadow).'px '.esc_html($advance_education_wooproducts_box_shadow).'px #eee;';
+	$advance_education_custom_css .='}';
 
 	/*-------------- Footer Text -------------------*/
 	$advance_education_copyright_content_align = get_theme_mod('advance_education_copyright_content_align');
@@ -370,18 +340,19 @@
 	}
 
 	$advance_education_footer_content_font_size = get_theme_mod('advance_education_footer_content_font_size', 16);
-	if($advance_education_footer_content_font_size != false){
-		$advance_education_custom_css .='.copyright p{';
-			$advance_education_custom_css .='font-size: '.esc_html($advance_education_footer_content_font_size).'px !important;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='.copyright p{';
+		$advance_education_custom_css .='font-size: '.esc_html($advance_education_footer_content_font_size).'px !important;';
+	$advance_education_custom_css .='}';
+
+	$advance_education_copyright_padding = get_theme_mod('advance_education_copyright_padding', 15);
+	$advance_education_custom_css .='.copyright{';
+		$advance_education_custom_css .='padding-top: '.esc_html($advance_education_copyright_padding).'px; padding-bottom: '.esc_html($advance_education_copyright_padding).'px;';
+	$advance_education_custom_css .='}';
 
 	$advance_education_footer_widget_bg_color = get_theme_mod('advance_education_footer_widget_bg_color');
-	if($advance_education_footer_widget_bg_color != false){
-		$advance_education_custom_css .='#footer{';
-			$advance_education_custom_css .='background-color: '.esc_html($advance_education_footer_widget_bg_color).';';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='#footer{';
+		$advance_education_custom_css .='background-color: '.esc_html($advance_education_footer_widget_bg_color).';';
+	$advance_education_custom_css .='}';
 
 	$advance_education_footer_widget_bg_image = get_theme_mod('advance_education_footer_widget_bg_image');
 	if($advance_education_footer_widget_bg_image != false){
@@ -392,11 +363,9 @@
 
 	// scroll to top
 	$advance_education_scroll_font_size_icon = get_theme_mod('advance_education_scroll_font_size_icon', 22);
-	if($advance_education_scroll_font_size_icon != false){
-		$advance_education_custom_css .='#scroll-top .fas{';
-			$advance_education_custom_css .='font-size: '.esc_html($advance_education_scroll_font_size_icon).'px;';
-		$advance_education_custom_css .='}';
-	}
+	$advance_education_custom_css .='#scroll-top .fas{';
+		$advance_education_custom_css .='font-size: '.esc_html($advance_education_scroll_font_size_icon).'px;';
+	$advance_education_custom_css .='}';
 
 
 

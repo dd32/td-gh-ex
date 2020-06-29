@@ -15,9 +15,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="page-box-single">
     <h1><?php esc_html(the_title());?></h1>
-    <div class="box-img">
-      <?php the_post_thumbnail(); ?>
-    </div>
+    <?php if( get_theme_mod( 'advance_education_show_featured_image_single_post',true) != '') { ?>
+      <div class="box-img">
+        <?php the_post_thumbnail(); ?>
+      </div>
+    <?php } ?>
     <div class="new-text">
       <?php if( get_theme_mod( 'advance_education_date_hide',true) != '' || get_theme_mod( 'advance_education_comment_hide',true) != '' || get_theme_mod( 'advance_education_author_hide',true) != '') { ?>
         <div class="metabox">

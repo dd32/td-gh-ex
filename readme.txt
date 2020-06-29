@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.8
+Stable tag: 0.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,6 +122,13 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 = 0.4.8 =
 * Resolved menu focus error.
 * Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
+= 0.4.9 =
+* Resolved errors.
+* Added no search found settings.
+* Added copyright padding.
+* Added show and hide single post image.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
 == Resources ==
 

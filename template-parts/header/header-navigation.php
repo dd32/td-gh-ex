@@ -63,7 +63,7 @@
                 <?php } ?>
                 <?php get_search_form();?>
                 <div class="account-btn">
-                  <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_attr_e( 'MY ACCOUNT','advance-education' );?></span></a>
+                  <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'MY ACCOUNT','advance-education' );?></span></a>
                 </div>
               </div>
               <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_education_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-education'); ?></span></a>

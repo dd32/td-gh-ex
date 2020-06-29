@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-05-25 12:53+0530\n"
+"PO-Revision-Date: 2020-06-25 18:55+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -147,7 +147,7 @@ msgstr "MON COMPTE"
 msgid "Open Menu"
 msgstr "Ouvrir le menu"
 
-#: no-results.php:11
+#: no-results.php:11 inc/customizer.php:1196
 msgid "Nothing Found"
 msgstr "rien n'a été trouvé"
 
@@ -237,7 +237,7 @@ msgstr "Post précédent:"
 #: page-template/custom-front-page:40 template-parts/content-audio.php:66
 #: template-parts/content-gallery.php:55 template-parts/content-image.php:44
 #: template-parts/content-video.php:65 template-parts/content.php:44
-#: template-parts/grid-layout.php:38 inc/customizer.php:1170
+#: template-parts/grid-layout.php:38 inc/customizer.php:1180
 msgid "READ MORE"
 msgstr "LIRE LA SUITE"
 
@@ -551,8 +551,8 @@ msgstr "Sélectionnez la page Image de diapositive"
 msgid "Size of image should be 1600 x 633"
 msgstr "La taille de l'image doit être de 1600 x 633"
 
-#: inc/customizer.php:890 inc/customizer.php:899 inc/customizer.php:1240
-#: inc/customizer.php:1283
+#: inc/customizer.php:890 inc/customizer.php:899 inc/customizer.php:1286
+#: inc/customizer.php:1344
 msgid "Left"
 msgstr "La gauche"
 
@@ -560,12 +560,12 @@ msgstr "La gauche"
 msgid "Slider Content Alignment"
 msgstr "Alignement du contenu du curseur"
 
-#: inc/customizer.php:898 inc/customizer.php:1285
+#: inc/customizer.php:898 inc/customizer.php:1346
 msgid "Center"
 msgstr "Centre"
 
-#: inc/customizer.php:900 inc/customizer.php:1241 inc/customizer.php:1275
-#: inc/customizer.php:1284
+#: inc/customizer.php:900 inc/customizer.php:1287 inc/customizer.php:1336
+#: inc/customizer.php:1345
 msgid "Right"
 msgstr "Droit"
 
@@ -654,46 +654,74 @@ msgid "Single Post Tags"
 msgstr "Tags de publication unique"
 
 #: inc/customizer.php:1133
+msgid "Single Post Image"
+msgstr "Image de poste unique"
+
+#: inc/customizer.php:1143
 msgid "Post Description Length"
 msgstr "Description du message Longueur"
 
-#: inc/customizer.php:1136
+#: inc/customizer.php:1146
 msgid "No Content"
 msgstr "Pas de contenu"
 
-#: inc/customizer.php:1137
+#: inc/customizer.php:1138 inc/customizer.php:1147
 msgid "Excerpt Content"
 msgstr "Extrait du contenu"
 
-#: inc/customizer.php:1138
+#: inc/customizer.php:1148
 msgid "Full Content"
 msgstr "Contenu complet"
 
-#: inc/customizer.php:1147
+#: inc/customizer.php:1157
 msgid "Excerpt length"
 msgstr "Extrait longueur"
 
-#: inc/customizer.php:1159
+#: inc/customizer.php:1169
 msgid "..."
 msgstr "..."
 
-#: inc/customizer.php:1163
+#: inc/customizer.php:1173
 msgid "Post Excerpt Indicator Option"
 msgstr "Option d'indicateur de post-extrait"
 
-#: inc/customizer.php:1174
+#: inc/customizer.php:1184
 msgid "Add Button Text"
 msgstr "Ajouter un texte de bouton"
 
-#: inc/customizer.php:1181
+#: inc/customizer.php:1191
+msgid "No Result Found"
+msgstr "Aucun résultat trouvé"
+
+#: inc/customizer.php:1200
+msgid "No Result Found Title"
+msgstr "Aucun résultat trouvé Titre"
+
+#: inc/customizer.php:1206
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, mais rien ne correspond à vos termes de recherche. Veuillez "
+"réessayer avec d'autres mots-clés."
+
+#: inc/customizer.php:1210
+msgid "No Result Found Content"
+msgstr "Aucun résultat trouvé Contenu"
+
+#: inc/customizer.php:1221
+msgid "No Result search"
+msgstr "Aucune recherche de résultat"
+
+#: inc/customizer.php:1227
 msgid "Footer Text"
 msgstr "Texte de pied de page"
 
-#: inc/customizer.php:1192
+#: inc/customizer.php:1238
 msgid "Footer widget area"
 msgstr "Zone de widget de pied de page"
 
-#: inc/customizer.php:1194
+#: inc/customizer.php:1240
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -701,62 +729,66 @@ msgstr ""
 "Sélectionnez le nombre de zones de widget que vous souhaitez dans le pied de "
 "page. Après cela, accédez à Apparence> Widgets et ajoutez vos widgets."
 
-#: inc/customizer.php:1196
+#: inc/customizer.php:1242
 msgid "One"
 msgstr "Un"
 
-#: inc/customizer.php:1197
+#: inc/customizer.php:1243
 msgid "Two"
 msgstr "Deux"
 
-#: inc/customizer.php:1198
+#: inc/customizer.php:1244
 msgid "Three"
 msgstr "Trois"
 
-#: inc/customizer.php:1199
+#: inc/customizer.php:1245
 msgid "Four"
 msgstr "Quatre"
 
-#: inc/customizer.php:1208
+#: inc/customizer.php:1254
 msgid "Footer Widget Background Color"
 msgstr "Couleur d'arrière-plan du widget de pied de page"
 
-#: inc/customizer.php:1217
+#: inc/customizer.php:1263
 msgid "Footer Widget Background Image"
 msgstr "Image d'arrière-plan du widget de pied de page"
 
-#: inc/customizer.php:1226
+#: inc/customizer.php:1272
 msgid "Copyright Text"
 msgstr "Texte de copyright"
 
-#: inc/customizer.php:1232 inc/customizer.php:1242
+#: inc/customizer.php:1278 inc/customizer.php:1288
 msgid "center"
 msgstr "centre"
 
-#: inc/customizer.php:1237
+#: inc/customizer.php:1283
 msgid "Copyright Text Alignment"
 msgstr "Alignement du texte du droit d'auteur"
 
-#: inc/customizer.php:1254
+#: inc/customizer.php:1300
 msgid "Copyright Font Size"
 msgstr "Taille de police du copyright"
 
-#: inc/customizer.php:1270
+#: inc/customizer.php:1300
+msgid "Copyright Padding"
+msgstr "Rembourrage du droit d'auteur"
+
+#: inc/customizer.php:1331
 msgid "Show / Hide Scroll To Top"
 msgstr "Afficher / masquer Faire défiler vers le haut"
 
-#: inc/customizer.php:1280
+#: inc/customizer.php:1341
 msgid "Scroll Back to Top Position"
 msgstr "Revenir en haut de la page"
 
-#: inc/customizer.php:1297
+#: inc/customizer.php:1358
 msgid "Scroll Icon Font Size"
 msgstr "Icône de défilement Taille de police"
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1448
 msgid "Education Pro Theme"
 msgstr "Education Pro Theme"
 
-#: inc/customizer.php:1309
+#: inc/customizer.php:1449
 msgid "Go Pro"
 msgstr "Go Pro"
