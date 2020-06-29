@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-05-02 14:23+0530\n"
+"PO-Revision-Date: 2020-06-25 17:12+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: tr\n"
@@ -189,7 +189,7 @@ msgstr "ALIŞVERİŞ KARTI"
 msgid "Top Menu"
 msgstr "Üst Menü"
 
-#: no-results.php:11
+#: no-results.php:11 inc/customizer.php:1165
 msgid "Nothing Found"
 msgstr "Hiçbirşey Bulunamadı"
 
@@ -400,6 +400,144 @@ msgstr "H6 Yazı Tipleri"
 msgid "H6 Font Size"
 msgstr "H6 Yazı Tipi Boyutu"
 
+#: inc/customizer.php:435 inc/customizer.php:444
+msgid "Transparent Background"
+msgstr "Saydam Arka Plan"
+
+#: inc/customizer.php:440
+msgid "Background Type"
+msgstr "Arkaplan Türü"
+
+#: inc/customizer.php:443
+msgid "With Background"
+msgstr "Arkaplanlı"
+
+#: inc/customizer.php:455
+msgid "Show / Hide Related Product"
+msgstr "İlgili Ürünü Göster / Gizle"
+
+#: inc/customizer.php:465
+msgid "Show / Hide Product Border"
+msgstr "Ürün Kenarlığını Göster / Gizle"
+
+#: inc/customizer.php:475
+msgid "Display Product Per Columns"
+msgstr "Sütun Başına Ürünü Görüntüle"
+
+#: inc/customizer.php:491
+msgid "Display Product Per Page"
+msgstr "Sayfa Başına Ürünü Görüntüle"
+
+#: inc/customizer.php:504
+msgid "Top Bottom Product Padding"
+msgstr "Üst Alt Ürün Dolgusu"
+
+#: inc/customizer.php:522
+msgid "Right Left Product Padding"
+msgstr "Sağ Sol Ürün Dolgusu"
+
+#: inc/customizer.php:540
+msgid "Product Border Radius"
+msgstr "Ürün Kenarlık Yarıçapı"
+
+#: inc/customizer.php:558
+msgid "Product Box Shadow"
+msgstr "Ürün Box Shadow"
+
+#: inc/customizer.php:569
+msgid "Product Button Settings"
+msgstr "Ürün Düğmesi Ayarları"
+
+#: inc/customizer.php:582
+msgid "Product Button Top Bottom Padding"
+msgstr "Ürün Düğmesi Üst Alt Dolgu"
+
+#: inc/customizer.php:601
+msgid "Product Button Right Left Padding"
+msgstr "Ürün Düğmesi Sağ Sol Dolgu"
+
+#: inc/customizer.php:619
+msgid "Product Button Border Radius"
+msgstr "Ürün Butonu Sınır Yarıçapı"
+
+#: inc/customizer.php:632
+msgid "Theme Color Option"
+msgstr "Tema Rengi Seçeneği"
+
+#: inc/customizer.php:641
+msgid "One can change complete theme color on just one click."
+msgstr "Tek bir tıklamayla tam tema rengini değiştirebilirsiniz."
+
+#: inc/customizer.php:648
+msgid "Layout Settings"
+msgstr "Düzen Ayarları"
+
+#: inc/customizer.php:658
+msgid "Show / Hide Preloader"
+msgstr "Ön Yükleyiciyi Göster / Gizle"
+
+#: inc/customizer.php:668 inc/customizer.php:1003
+msgid "Sticky Header"
+msgstr "Yapışkan Başlık"
+
+#: inc/customizer.php:678
+msgid "Show / Hide Woocommerce Page Sidebar"
+msgstr "Woocommerce Sayfa Kenar Çubuğunu Göster / Gizle"
+
+#: inc/customizer.php:688
+msgid "Show / Hide Single Product Page Sidebar"
+msgstr "Tek Ürün Sayfası Kenar Çubuğunu Göster / Gizle"
+
+#: inc/customizer.php:693 inc/customizer.php:702 inc/customizer.php:720
+#: inc/customizer.php:726 inc/customizer.php:735
+msgid "Right Sidebar"
+msgstr "Sağ Kenar Çubuğu"
+
+#: inc/customizer.php:698
+msgid "Change Layouts"
+msgstr "Düzenleri Değiştir"
+
+#: inc/customizer.php:701 inc/customizer.php:719
+msgid "Left Sidebar"
+msgstr "Sol Kenar Çubuğu"
+
+#: inc/customizer.php:703 inc/customizer.php:709 inc/customizer.php:711
+#: inc/customizer.php:721
+msgid "One Column"
+msgstr "Bir Sütun"
+
+#: inc/customizer.php:704
+msgid "Grid Layout"
+msgstr "Izgara Düzeni"
+
+#: inc/customizer.php:716
+msgid "Single Page Layouts"
+msgstr "Tek Sayfa Düzenleri"
+
+#: inc/customizer.php:731
+msgid "Single Post Layouts"
+msgstr "Tek Gönderi Düzenleri"
+
+#: inc/customizer.php:741 inc/customizer.php:750
+msgid "Default"
+msgstr "Varsayılan"
+
+#: inc/customizer.php:746
+msgid "Container Box"
+msgstr "Konteyner Kutusu"
+
+#: inc/customizer.php:747
+msgid "Here you can change the Width layout."
+msgstr "Burada Genişlik düzenini değiştirebilirsiniz."
+
+#: inc/customizer.php:751
+msgid "Container"
+msgstr "konteyner"
+
+#: inc/customizer.php:752
+msgid "Box Container"
+msgstr "Kutu Konteyneri"
+
 #: inc/customizer.php:758
 msgid "Button Option"
 msgstr "Düğme Seçeneği"
@@ -428,7 +566,8 @@ msgstr "Kaydırıcıyı Göster / Gizle"
 msgid "Select Slide Image Page"
 msgstr "Slayt Görüntüsü Sayfasını Seçin"
 
-#: inc/customizer.php:840 inc/customizer.php:849 inc/customizer.php:1252
+#: inc/customizer.php:840 inc/customizer.php:849 inc/customizer.php:1255
+#: inc/customizer.php:1313
 msgid "Left"
 msgstr "Ayrıldı"
 
@@ -436,11 +575,12 @@ msgstr "Ayrıldı"
 msgid "Slider Content Alignment"
 msgstr "Kaydırıcı İçeriği Hizalaması"
 
-#: inc/customizer.php:848 inc/customizer.php:1254
+#: inc/customizer.php:848 inc/customizer.php:1315
 msgid "Center"
 msgstr "merkez"
 
-#: inc/customizer.php:850 inc/customizer.php:1244 inc/customizer.php:1253
+#: inc/customizer.php:850 inc/customizer.php:1256 inc/customizer.php:1305
+#: inc/customizer.php:1314
 msgid "Right"
 msgstr "Sağ"
 
@@ -492,10 +632,6 @@ msgstr "404 Sayfa Düğmesi"
 msgid "Responsive Setting"
 msgstr "Duyarlı Ortam"
 
-#: inc/customizer.php:1003
-msgid "Sticky Header"
-msgstr "Yapışkan Başlık"
-
 #: inc/customizer.php:1013
 msgid "Slider"
 msgstr "kaydırıcı"
@@ -533,50 +669,78 @@ msgid "Single Post Tags"
 msgstr "Tek Gönderi Etiketleri"
 
 #: inc/customizer.php:1099
+msgid "Single Post Image"
+msgstr "Tek Gönderi Resmi"
+
+#: inc/customizer.php:1109
 msgid "Post Description Length"
 msgstr "Mesaj Açıklama Uzunluk"
 
-#: inc/customizer.php:1102
+#: inc/customizer.php:1112
 msgid "No Content"
 msgstr "İçerik yok"
 
-#: inc/customizer.php:1103
+#: inc/customizer.php:1104 inc/customizer.php:1113
 msgid "Excerpt Content"
 msgstr "Alıntı İçeriği"
 
-#: inc/customizer.php:1104
+#: inc/customizer.php:1114
 msgid "Full Content"
 msgstr "Tam İçerik"
 
-#: inc/customizer.php:1116
+#: inc/customizer.php:1126
 msgid "Excerpt length"
 msgstr "Alıntı uzunluğu"
 
-#: inc/customizer.php:1128
+#: inc/customizer.php:1138
 msgid "..."
 msgstr "..."
 
-#: inc/customizer.php:1132
+#: inc/customizer.php:1142
 msgid "Post Excerpt Indicator Option"
 msgstr "Alıntı Sonrası Göstergesi Seçeneği"
 
-#: inc/customizer.php:1139
+#: inc/customizer.php:1149
 msgid "Read More"
 msgstr "Daha fazla oku"
 
-#: inc/customizer.php:1143
+#: inc/customizer.php:1153
 msgid "Add Button Text"
 msgstr "Düğme Metni Ekle"
 
-#: inc/customizer.php:1150
+#: inc/customizer.php:1160
+msgid "No Result Found"
+msgstr "Sonuç bulunamadı"
+
+#: inc/customizer.php:1169
+msgid "No Result Found Title"
+msgstr "Sonuç Bulunamadı Başlık"
+
+#: inc/customizer.php:1175
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Maalesef arama terimlerinizle hiçbir şey eşleşmedi. Lütfen farklı anahtar "
+"kelimelerle tekrar deneyin."
+
+#: inc/customizer.php:1179
+msgid "No Result Found Content"
+msgstr "Sonuç Bulunamadı İçeriği"
+
+#: inc/customizer.php:1190
+msgid "No Result search"
+msgstr "Sonuç araması yok"
+
+#: inc/customizer.php:1196
 msgid "Footer Text"
 msgstr "Altbilgi metni"
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1207
 msgid "Footer widget area"
 msgstr "Altbilgi widget alanı"
 
-#: inc/customizer.php:1163
+#: inc/customizer.php:1209
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -584,38 +748,66 @@ msgstr ""
 "Altbilgide istediğiniz widget alanı sayısını seçin. Bundan sonra Görünüm> "
 "Widget'lar'a gidin ve widget'larınızı ekleyin."
 
-#: inc/customizer.php:1165
+#: inc/customizer.php:1211
 msgid "One"
 msgstr "Bir"
 
-#: inc/customizer.php:1166
+#: inc/customizer.php:1212
 msgid "Two"
 msgstr "İki"
 
-#: inc/customizer.php:1167
+#: inc/customizer.php:1213
 msgid "Three"
 msgstr "Üç"
 
-#: inc/customizer.php:1168
+#: inc/customizer.php:1214
 msgid "Four"
 msgstr "dört"
 
-#: inc/customizer.php:1239
+#: inc/customizer.php:1223
+msgid "Footer Widget Background Color"
+msgstr "Altbilgi Widget'ı Arka Plan Rengi"
+
+#: inc/customizer.php:1232
+msgid "Footer Widget Background Image"
+msgstr "Altbilgi Widget'ı Arka Plan Görüntüsü"
+
+#: inc/customizer.php:1241
+msgid "Copyright Text"
+msgstr "Telif Hakkı Metni"
+
+#: inc/customizer.php:1247 inc/customizer.php:1257
+msgid "center"
+msgstr "merkez"
+
+#: inc/customizer.php:1252
+msgid "Copyright Text Alignment"
+msgstr "Telif Hakkı Metni Hizalaması"
+
+#: inc/customizer.php:1269
+msgid "Copyright Font Size"
+msgstr "Telif Hakkı Yazı Tipi Boyutu"
+
+#: inc/customizer.php:1284
+msgid "Copyright Padding"
+msgstr "Telif Hakkı Dolgusu"
+
+#: inc/customizer.php:1300
 msgid "Show / Hide Scroll To Top"
 msgstr "Yukarı Kaydırma Göster / Gizle"
 
-#: inc/customizer.php:1249
+#: inc/customizer.php:1310
 msgid "Scroll Back to Top Position"
 msgstr "Üst Pozisyona Geri Dön"
 
-#: inc/customizer.php:1266
+#: inc/customizer.php:1327
 msgid "Scroll Icon Font Size"
 msgstr "Kaydırma Simgesi Yazı Tipi Boyutu"
 
-#: inc/customizer.php:1357
+#: inc/customizer.php:1418
 msgid "Ecommerce Pro"
 msgstr "E-ticaret Pro"
 
-#: inc/customizer.php:1358
+#: inc/customizer.php:1419
 msgid "Go Pro"
 msgstr "Profesyonel Olun"

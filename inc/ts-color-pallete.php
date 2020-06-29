@@ -328,6 +328,11 @@
 		$advance_ecommerce_store_custom_css .='}';
 	}
 
+	$advance_ecommerce_store_copyright_padding = get_theme_mod('advance_ecommerce_store_copyright_padding', 15);
+	$advance_ecommerce_store_custom_css .='.copyright{';
+		$advance_ecommerce_store_custom_css .='padding-top: '.esc_html($advance_ecommerce_store_copyright_padding).'px; padding-bottom: '.esc_html($advance_ecommerce_store_copyright_padding).'px;';
+	$advance_ecommerce_store_custom_css .='}';
+
 	$advance_ecommerce_store_footer_widget_bg_color = get_theme_mod('advance_ecommerce_store_footer_widget_bg_color');
 	if($advance_ecommerce_store_footer_widget_bg_color != false){
 		$advance_ecommerce_store_custom_css .='#footer{';

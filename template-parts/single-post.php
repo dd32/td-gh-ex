@@ -27,13 +27,15 @@
 	      <?php } ?>
 	    </div>
 	<?php }?>
-	<?php if(has_post_thumbnail()) { ?>
-    <hr>
-    <div class="feature-box">   
-      <?php the_post_thumbnail(); ?>
-    </div>
-    <hr>                    
-    <?php } ?> 
+	<?php if( get_theme_mod( 'advance_ecommerce_store_show_featured_image_single_post',true) != '') { ?>
+		<?php if(has_post_thumbnail()) { ?>
+	    <hr>
+	    <div class="feature-box">   
+      		<?php the_post_thumbnail(); ?>
+	    </div>
+	    <hr>                    
+	    <?php } ?> 
+	<?php } ?>
     <div class="entry-content">
       <?php the_content(); ?>     
     </div> 
