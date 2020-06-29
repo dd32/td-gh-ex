@@ -117,7 +117,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     );
 
 	//Typography
-	
 	$wp_customize->add_section( 'bb_ecommerce_store_typography', array(
     	'title'      => __( 'Typography', 'bb-ecommerce-store' ),
 		'panel' => 'bb_ecommerce_store_panel_id'
@@ -1177,6 +1176,16 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
        'section' => 'bb_ecommerce_store_blog_post'
     ));
 
+    $wp_customize->add_setting('bb_ecommerce_store_show_featured_image_single_post',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_show_featured_image_single_post',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Image','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_blog_post'
+    ));
+
     $wp_customize->add_setting('bb_ecommerce_store_blog_post_description_option',array(
     	'default'   => __('Excerpt Content','bb-ecommerce-store'),
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
@@ -1231,6 +1240,42 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'section'=> 'bb_ecommerce_store_blog_post',
 		'type'=> 'text'
 	));
+
+	//no Result Found
+	$wp_customize->add_section('bb_ecommerce_store_noresult_found',array(
+		'title'	=> __('No Result Found','bb-ecommerce-store'),
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));	
+
+	$wp_customize->add_setting('bb_ecommerce_store_nosearch_found_title',array(
+		'default'=> __('Nothing Found','bb-ecommerce-store'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_nosearch_found_title',array(
+		'label'	=> __('No Result Found Title','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_nosearch_found_content',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','bb-ecommerce-store'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_nosearch_found_content',array(
+		'label'	=> __('No Result Found Content','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_show_noresult_search',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_show_noresult_search',array(
+       'type' => 'checkbox',
+       'label' => __('No Result search','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_noresult_found'
+    ));
 
 	//footer
 	$wp_customize->add_section('bb_ecommerce_store_footer_section',array(
@@ -1315,6 +1360,21 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 			'max'              => 50,
         ),
         'type' => 'number',
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_copyright_padding',array(
+		'default'=> 15,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_copyright_padding',array(
+		'label'	=> __('Copyright Padding','bb-ecommerce-store'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'bb_ecommerce_store_footer_section',
+		'type'=> 'number'
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_enable_disable_scroll',array(

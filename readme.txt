@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, post-formats, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -185,6 +185,11 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
 
 = 1.5.3 =
   * Resolved errors.
+
+= 1.5.4 =
+  * Added no search found settings.
+  * Added copyright padding.
+  * Added show and hide single post image.
 
 == Resources ==
 

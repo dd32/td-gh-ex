@@ -25,12 +25,14 @@
       <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'bb-ecommerce-store'), __('0 Comments', 'bb-ecommerce-store'), __('% Comments', 'bb-ecommerce-store') ); ?> </span>
     <?php } ?>
   </div>
-  <?php if(has_post_thumbnail()) { ?>
-    <hr>
-    <div class="feature-box">   
-      <?php the_post_thumbnail(); ?>
-    </div>
-    <hr>                    
+  <?php if( get_theme_mod( 'bb_ecommerce_store_show_featured_image_single_post',true) != '') { ?>
+    <?php if(has_post_thumbnail()) { ?>
+      <hr>
+      <div class="feature-box">   
+        <?php the_post_thumbnail(); ?>
+      </div>
+      <hr>                    
+    <?php } ?>
   <?php } ?> 
   <div class="entry-content">
     <?php the_content(); ?>

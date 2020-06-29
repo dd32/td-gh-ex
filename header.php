@@ -35,12 +35,12 @@
           <div class="row">
             <div class="top-contact col-lg-3 col-md-3">
               <?php if( get_theme_mod( 'bb_ecommerce_store_contact','' ) != '') { ?>
-              <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span>
+                <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span>
               <?php } ?>
             </div>
             <div class="top-contact col-lg-3 col-md-4">
               <?php if( get_theme_mod( 'bb_ecommerce_store_email','' ) != '') { ?>
-              <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span>
+                <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span>
               <?php } ?>
             </div>
             <div class="social-media col-lg-6 col-md-5">

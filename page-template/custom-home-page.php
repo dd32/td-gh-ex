@@ -37,7 +37,7 @@ get_header(); ?>
 		                    <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
 			                    <?php
 			                    if ( $image ) {
-				                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php esc_html(the_title()); ?>" role="img" />';
+				                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php esc_attr(the_title()); ?>" role="img" />';
 				                }
 			                    echo esc_html( $product_category->name ); ?><span class="screen-reader-text"><?php esc_html_e( 'Product Category','bb-ecommerce-store' );?></span></a></li>
 		                    	<?php
