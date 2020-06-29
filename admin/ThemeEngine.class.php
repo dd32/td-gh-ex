@@ -52,7 +52,7 @@ class AttireThemeEngine {
 
 		}
 
-		if ( ! $post_id && !is_search()) {
+		if ( ! $post_id && !is_search() && !is_post_type_archive()) {
 			return;
 		}
 
@@ -120,6 +120,9 @@ class AttireThemeEngine {
             <?php echo wp_filter_nohtml_kses($css); ?>
             }
 
+            .page_header_wrap a{
+                <?php echo $text_color; ?>
+            }
             <?php echo esc_attr($selector).' *'; ?>
             {
                 text-align: <?php echo $ph_text_align; ?>;
@@ -717,7 +720,7 @@ class AttireThemeEngine {
 			$post_id = get_option( 'page_for_posts' );
 			$title   = get_the_title( $post_id );
 		} elseif(is_archive()) {
-            $title = get_queried_object()->name;
+            $title = is_post_type_archive() ? post_type_archive_title('', false) : single_term_title('', false);
         } elseif(is_search()) {
             $title = sprintf(__('Search Regsult for %s', 'attire'), "“".esc_attr(get_query_var('s')."”"));
         } elseif ( $post ) {

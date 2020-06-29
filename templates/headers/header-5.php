@@ -105,7 +105,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                             <div class="media-body">
                                 <div id="header-search-field">
                                     <?php if($search_form_visibility === 'hide'){ ?>
-                                    <form class="p-0 m-0" method="get" action="<?php echo home_url('/') ?>">
+                                    <form class="p-0 m-0" method="get" action="<?php echo esc_url(home_url('/')) ?>">
                                         <?php if(function_exists('WC')){ ?>
                                             <input type="hidden" name="post_type" value="product" />
                                         <?php } else if(function_exists('WPDM')) { ?>

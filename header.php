@@ -14,8 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!--BODY STARTS HERE-->
 
 <body <?php body_class( 'attire' ); ?> <?php  AttireThemeEngine::AttireBodySchema(); ?> >
-
 <?php
+if(function_exists('wp_body_open')) wp_body_open();
+
 /**
  * Add anything immediately after body tag
  */

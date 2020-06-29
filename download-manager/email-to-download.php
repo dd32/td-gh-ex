@@ -38,7 +38,7 @@ list($_color) = explode(" ", $color);
     }
 </style>
 <div id="<?php echo $section_id;?>" class="<?php echo $section_id;?>">
-<form id="<?php echo $form_id; ?>" class="<?php echo $form_id; ?>" method=post action="<?php echo home_url('/'); ?>" style="font-weight:normal;font-size:12px;padding:0px;margin:0px">
+<form id="<?php echo $form_id; ?>" class="<?php echo $form_id; ?>" method=post action="<?php echo esc_url(home_url('/')); ?>" style="font-weight:normal;font-size:12px;padding:0px;margin:0px">
 
         <div class="wpdm-email-to-download">
             <h3><?php echo isset($params['title']) ? $params['title'] : ''; ?></h3>
@@ -78,7 +78,7 @@ list($_color) = explode(" ", $color);
             var nocache = new Date().getMilliseconds();
 
             $(this).ajaxSubmit({
-                url: '<?php echo home_url('/?__=');?>' + nocache,
+                url: '<?php echo esc_url(home_url('/?__='));?>' + nocache,
                 success:function(res){
 
                     WPDM.unblockUI('.<?php echo $section_id; ?>');

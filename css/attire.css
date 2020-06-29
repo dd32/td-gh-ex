@@ -11,7 +11,7 @@ body {
     letter-spacing: 0.5px;
     vertical-align: baseline;
 }
-
+#commentform input[type="text"]
 body #mainframe {
     padding: 0;
 }
@@ -1504,13 +1504,22 @@ a.footer-logo {
 
 #commentform input,
 #commentform textarea {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    border: 0 !important;
+    box-shadow: none !important;
 }
-
-#commentform input[type=text] {
-    width: 33%;
-    display: inline-block;
+#commentform .card,
+#commentform .card .card-footer{
+    border-color: #dddddd !important;
+}
+#commentform .card .card-footer{
+    background: #f8f8f8;
+}
+.row.comment-form-row.no-gutters .col-md-4.field-email,
+.row.comment-form-row.no-gutters .col-md-4.field-url {
+    border-left: 1px solid #ddd;
+}
+.row.comment-form-row.no-gutters .col-md-4:nth-child(1){
+    border-left: 0 !important;
 }
 
 .comment .card #respond {
@@ -2099,11 +2108,15 @@ article.post.product:before {
     font-size: 12px;
     letter-spacing: +.6px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#theme-user-dashboard #wpdm-dashboard-sidebar .udb-item:hover, .w3eden #wpdm-dashboard-sidebar .adp-item:hover{
+    color: rgba(255, 255, 255, 0.8);
 }
 
 #theme-user-dashboard .udb-item.selected {
-    color: #97f27d !important;
+    color: #ffffff !important;
 }
 
 #theme-user-dashboard.user-dashboard #wpdm-dashboard-sidebar i {
@@ -2124,7 +2137,7 @@ article.post.product:before {
     font-family: var(--wpdm-font);
     letter-spacing: 0;
     font-size: 14px;
-    color: #fff;
+    color: rgba(0, 0, 0, 0.2);
     margin: 15px 0 15px 0;
     font-weight: 700;
 }

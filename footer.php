@@ -56,7 +56,7 @@ do_action(ATTIRE_THEME_PREFIX . "before_footer");
     <div class="modal-dialog modal-dialog-centered border-0" role="document">
         <div class="modal-content bg-transparent border-0">
 
-            <form action="<?php echo home_url('/') ?>">
+            <form action="<?php echo esc_url(home_url('/')) ?>">
                 <div class="form-group text-white">
                     <div class="custom-control custom-switch custom-control-inline">
                         <input checked="checked" type="checkbox" id="spost" name="post_type[]" value="post" class="custom-control-input">

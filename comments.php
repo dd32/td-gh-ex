@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( ATTIRE_THEME_PREFIX . 'before_comments' );
 ?>
 
-    <div id="comments">
+    <div id="comments" class="w3eden">
 <?php if ( post_password_required() ) : ?>
     <p class="nopassword"><?php echo esc_html__( 'This post is password protected. Enter the password to view any comments.', 'attire' ); ?></p>
     </div>
@@ -46,9 +46,9 @@ endif;
 
 $commenter = wp_get_current_commenter();
 $fields    = array(
-	'author' => '<input class="col-lg-12 form-control" required="required" placeholder="' . esc_attr__( 'Name', 'attire' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"/>',
-	'email'  => '<input class="col-lg-12 form-control" required="required" placeholder="' . esc_attr__( 'Email', 'attire' ) . ' *" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '"/>',
-	'url'    => '<input class="col-lg-12 form-control" placeholder="' . esc_attr__( 'Website', 'attire' ) . '" id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) . '"/>',
+	'author' => '<input class="form-control" required="required" placeholder="' . esc_attr__( 'Name', 'attire' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"/>',
+	'email'  => '<input class="form-control" required="required" placeholder="' . esc_attr__( 'Email', 'attire' ) . ' *" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '"/>',
+	'url'    => '<input class="form-control" placeholder="' . esc_attr__( 'Website', 'attire' ) . '" id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) . '"/>',
 );
 
 $args = array(
@@ -64,8 +64,9 @@ $args = array(
 	'title_reply_to'    => apply_filters( 'attire_title_reply_to', esc_html__( 'Leave a Reply to %s', 'attire' ) ),
 	'cancel_reply_link' => apply_filters( 'attire_cancel_reply_link', esc_html__( 'Cancel reply', 'attire' ) ),
 	'label_submit'      => apply_filters( 'attire_label_submit', esc_html__( 'Post Comment', 'attire' ) ),
+	'class_submit'      => 'btn btn-info btn-lg',
 );
-comment_form( $args ); ?>
+Attire::comment_form( $args ); ?>
 
     </div><!-- #comments -->
 

@@ -49,7 +49,6 @@ $page_header_active = AttireThemeEngine::NextGetOption( 'ph_active', false );
 
 
                     </div>
-                   v
                     <?php
                     if ( $meta_position === 'after-content' ) {
                         get_template_part( 'single', 'post-meta' );

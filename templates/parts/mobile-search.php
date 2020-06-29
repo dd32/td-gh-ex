@@ -8,7 +8,7 @@
 
 if(!defined("ABSPATH")) die();
 ?>
-<form action="<?php echo home_url('/'); ?>">
+<form action="<?php echo esc_url(home_url('/')); ?>">
     <div class="input-group">
         <input type="text" placeholder="<?php _e('Search...', 'attire'); ?>" name="s" class="form-control" />
         <div class="input-group-append">

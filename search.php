@@ -23,7 +23,7 @@ if(!is_array($post_types)) $post_types = array( $post_types );
                     <h2 class="search-result-title m-0 p-0"><?php echo __( 'Search result for: ', 'attire' ) . esc_html( get_search_query() ) ?></h2>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo home_url('/') ?>">
+                    <form action="<?php echo esc_url(home_url('/')) ?>">
                         <div class="form-group">
                             <div class="custom-control custom-switch custom-control-inline">
                                 <input <?php checked(1, in_array('post', $post_types)) ?> type="checkbox" id="spost-srp" name="post_type[]" value="post" class="custom-control-input">
