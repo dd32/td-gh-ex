@@ -1228,6 +1228,16 @@ function advance_automobile_customize_register($wp_customize) {
        'section' => 'advance_automobile_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_automobile_show_featured_image_single_post',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_show_featured_image_single_post',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Image','advance-automobile'),
+       'section' => 'advance_automobile_blog_post'
+    ));
+
 	$wp_customize->add_setting('advance_automobile_blog_post_description_option',array(
     	'default'   => __('Excerpt Content','advance-automobile'), 
         'sanitize_callback' => 'advance_automobile_sanitize_choices'
@@ -1282,6 +1292,42 @@ function advance_automobile_customize_register($wp_customize) {
 		'section'=> 'advance_automobile_blog_post',
 		'type'=> 'text'
 	));
+
+	//no Result Found
+	$wp_customize->add_section('advance_automobile_noresult_found',array(
+		'title'	=> __('No Result Found','advance-automobile'),
+		'panel' => 'advance_automobile_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_automobile_nosearch_found_title',array(
+		'default'=> __('Nothing Found','advance-automobile'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_nosearch_found_title',array(
+		'label'	=> __('No Result Found Title','advance-automobile'),
+		'section'=> 'advance_automobile_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_automobile_nosearch_found_content',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','advance-automobile'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_nosearch_found_content',array(
+		'label'	=> __('No Result Found Content','advance-automobile'),
+		'section'=> 'advance_automobile_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_automobile_show_noresult_search',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_show_noresult_search',array(
+       'type' => 'checkbox',
+       'label' => __('No Result search','advance-automobile'),
+       'section' => 'advance_automobile_noresult_found'
+    ));
 
 	//footer
 	$wp_customize->add_section('advance_automobile_footer_section', array(
@@ -1366,6 +1412,21 @@ function advance_automobile_customize_register($wp_customize) {
 			'max'              => 50,
         ),
         'type' => 'number',
+	));
+
+	$wp_customize->add_setting('advance_automobile_copyright_padding',array(
+		'default'=> 15,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_copyright_padding',array(
+		'label'	=> __('Copyright Padding','advance-automobile'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_automobile_footer_section',
+		'type'=> 'number'
 	));
 
 	$wp_customize->add_setting('advance_automobile_enable_disable_scroll',array(

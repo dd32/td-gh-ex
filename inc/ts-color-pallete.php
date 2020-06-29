@@ -5,70 +5,56 @@
 
 	$advance_automobile_custom_css = '';
 
-	if($advance_automobile_theme_color_first != false){
-		$advance_automobile_custom_css .='input[type="submit"], .top-header, #slider i, #slider .inner_carousel .read-btn a, .address, .owl-carousel .owl-nav .owl-prev i, .owl-carousel .owl-nav .owl-next i, #category .explore-btn a, #footer .tagcloud a:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.copyright, #footer input[type="submit"], .read-more-btn a:hover, .main-navigation ul ul, #contact-info, #comments a.comment-reply-link, #footer form.woocommerce-product-search button, #footer .woocommerce a.button, #footer .widget_price_filter .price_slider_amount .button, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{';
-			$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_theme_color_first).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_first != false){
-		$advance_automobile_custom_css .='h1,h2,h4,h5,h6, input[type="search"], .read-moresec a, .address i,.time i, .owl-carousel .owl-nav .owl-prev i:hover, .owl-carousel .owl-nav .owl-next i:hover,  section h4, section .innerlightbox,.copyright, #comments a time,.woocommerce div.product span.price, .woocommerce .quantity .qty, #sidebar caption, #sidebar h3, #content-ts h2, #content-ts h3,.copyright, h3.widget-title a, .nav-previous a, p.logged-in-as a, .nav-next a, .new-text p a, h2.woocommerce-loop-product__title, .content-ts h3, .content-ts h2,.woocommerce-info::before, .new-text h2 a, .primary-navigation ul ul li:hover > a , .metabox a:hover, #sidebar ul li a:hover,  #comments a, #category .text-content h3{';
-			$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_first).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_first != false){
-		$advance_automobile_custom_css .='.read-moresec a,  #footer input[type="search"], .woocommerce .quantity .qty{';
-			$advance_automobile_custom_css .='border-color: '.esc_html($advance_automobile_theme_color_first).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_first != false){
-		$advance_automobile_custom_css .='.woocommerce-info, .primary-navigation ul ul{';
-			$advance_automobile_custom_css .='border-top-color: '.esc_html($advance_automobile_theme_color_first).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_first != false){
-		$advance_automobile_custom_css .='#sidebar ul li a:hover, #sidebar ul li a:focus{';
-			$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_first).';';
-		$advance_automobile_custom_css .='}';
-	} 
+	$advance_automobile_custom_css .='input[type="submit"], .top-header, #slider i, #slider .inner_carousel .read-btn a, .address, .owl-carousel .owl-nav .owl-prev i, .owl-carousel .owl-nav .owl-next i, #category .explore-btn a, #footer .tagcloud a:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.copyright, #footer input[type="submit"], .read-more-btn a:hover, .main-navigation ul ul, #contact-info, #comments a.comment-reply-link, #footer form.woocommerce-product-search button, #footer .woocommerce a.button, #footer .widget_price_filter .price_slider_amount .button, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{';
+		$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_theme_color_first).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='h1,h2,h4,h5,h6, input[type="search"], .read-moresec a, .address i,.time i, .owl-carousel .owl-nav .owl-prev i:hover, .owl-carousel .owl-nav .owl-next i:hover,  section h4, section .innerlightbox,.copyright, #comments a time,.woocommerce div.product span.price, .woocommerce .quantity .qty, #sidebar caption, #sidebar h3, #content-ts h2, #content-ts h3,.copyright, h3.widget-title a, .nav-previous a, p.logged-in-as a, .nav-next a, .new-text p a, h2.woocommerce-loop-product__title, .content-ts h3, .content-ts h2,.woocommerce-info::before, .new-text h2 a, .primary-navigation ul ul li:hover > a , .metabox a:hover, #sidebar ul li a:hover,  #comments a, #category .text-content h3{';
+		$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_first).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='.read-moresec a,  #footer input[type="search"], .woocommerce .quantity .qty{';
+		$advance_automobile_custom_css .='border-color: '.esc_html($advance_automobile_theme_color_first).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='.woocommerce-info, .primary-navigation ul ul{';
+		$advance_automobile_custom_css .='border-top-color: '.esc_html($advance_automobile_theme_color_first).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='#sidebar ul li a:hover, #sidebar ul li a:focus{';
+		$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_first).';';
+	$advance_automobile_custom_css .='}';
 	
 	/*---------------------------Theme color option-------------------*/
 	$advance_automobile_theme_color_second = get_theme_mod('advance_automobile_theme_color_second');
 
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='.read-moresec a:hover, #slider .inner_carousel .read-btn a:hover, .time, #category .explore-btn a:hover, #footer, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,#sidebar input[type="submit"], .read-more-btn a, .primary-navigation li a:hover, .primary-navigation li:hover a, #menu-sidebar input[type="submit"], #sidebar form.woocommerce-product-search button, .primary-navigation a:focus, .toggle-menu i{';
-			$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_theme_color_second).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='#comments input[type="submit"].submit, nav.woocommerce-MyAccount-navigation ul li, #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current, .toggle a, .book-btn a{';
-			$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_theme_color_second).'!important;';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='.logo a,.search-box i, #slider .inner_carousel h2 , #slider .inner_carousel, .page-box .metabox,.page-box-single .metabox,.metabox a, .woocommerce-message::before, h1.entry-title,h1.page-title,  .page-box h4, .new-text h4 a,#slider .inner_carousel h1, #category h2, .primary-navigation a{';
-			$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_second).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='#header .main-menu{';
-			$advance_automobile_custom_css .='border-bottom-color: '.esc_html($advance_automobile_theme_color_second).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='.woocommerce-message{';
-			$advance_automobile_custom_css .='border-top-color: '.esc_html($advance_automobile_theme_color_second).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='.page-box, #sidebar aside, #sidebar input[type="search"],#sidebar form.woocommerce-product-search button{';
-			$advance_automobile_custom_css .='border-color: '.esc_html($advance_automobile_theme_color_second).';';
-		$advance_automobile_custom_css .='}';
-	}
-	if($advance_automobile_theme_color_second != false){
-		$advance_automobile_custom_css .='.logo p, .page-box-single h3, #sidebar ul li a:active, span.post-title, p.logged-in-as a{';
-			$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_second).'!important;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.read-moresec a:hover, #slider .inner_carousel .read-btn a:hover, .time, #category .explore-btn a:hover, #footer, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,#sidebar input[type="submit"], .read-more-btn a, .primary-navigation li a:hover, .primary-navigation li:hover a, #menu-sidebar input[type="submit"], #sidebar form.woocommerce-product-search button, .primary-navigation a:focus, .toggle-menu i{';
+		$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_theme_color_second).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='#comments input[type="submit"].submit, nav.woocommerce-MyAccount-navigation ul li, #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current, .toggle a, .book-btn a{';
+		$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_theme_color_second).'!important;';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='.logo a,.search-box i, #slider .inner_carousel h2 , #slider .inner_carousel, .page-box .metabox,.page-box-single .metabox,.metabox a, .woocommerce-message::before, h1.entry-title,h1.page-title,  .page-box h4, .new-text h4 a,#slider .inner_carousel h1, #category h2, .primary-navigation a{';
+		$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_second).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='#header .main-menu{';
+		$advance_automobile_custom_css .='border-bottom-color: '.esc_html($advance_automobile_theme_color_second).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='.woocommerce-message{';
+		$advance_automobile_custom_css .='border-top-color: '.esc_html($advance_automobile_theme_color_second).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='.page-box, #sidebar aside, #sidebar input[type="search"],#sidebar form.woocommerce-product-search button{';
+		$advance_automobile_custom_css .='border-color: '.esc_html($advance_automobile_theme_color_second).';';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_custom_css .='.logo p, .page-box-single h3, #sidebar ul li a:active, span.post-title, p.logged-in-as a{';
+		$advance_automobile_custom_css .='color: '.esc_html($advance_automobile_theme_color_second).'!important;';
+	$advance_automobile_custom_css .='}';
 
 	// media
 	$advance_automobile_custom_css .='@media screen and (max-width:1000px) {';
@@ -187,18 +173,14 @@
 	/*------------- Button Settings option-------------------*/
 	$advance_automobile_button_padding_top_bottom = get_theme_mod('advance_automobile_button_padding_top_bottom');
 	$advance_automobile_button_padding_left_right = get_theme_mod('advance_automobile_button_padding_left_right');
-	if($advance_automobile_button_padding_top_bottom != false || $advance_automobile_button_padding_left_right != false){
-		$advance_automobile_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .read-btn a, #comments .form-submit input[type="submit"],#category .explore-btn a{';
-			$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_automobile_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_automobile_button_padding_left_right).'px; padding-right: '.esc_html($advance_automobile_button_padding_left_right).'px; display:inline-block;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .read-btn a, #comments .form-submit input[type="submit"],#category .explore-btn a{';
+		$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_automobile_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_automobile_button_padding_left_right).'px; padding-right: '.esc_html($advance_automobile_button_padding_left_right).'px; display:inline-block;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_button_border_radius = get_theme_mod('advance_automobile_button_border_radius');
-	if($advance_automobile_button_border_radius != false){
-		$advance_automobile_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .read-btn a, #comments .form-submit input[type="submit"], #category .explore-btn a{';
-			$advance_automobile_custom_css .='border-radius: '.esc_html($advance_automobile_button_border_radius).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .read-btn a, #comments .form-submit input[type="submit"], #category .explore-btn a{';
+		$advance_automobile_custom_css .='border-radius: '.esc_html($advance_automobile_button_border_radius).'px;';
+	$advance_automobile_custom_css .='}';
 
 	/*-----------------Responsive Setting -----------------*/
 	$advance_automobile_stickyheader = get_theme_mod( 'advance_automobile_responsive_sticky_header', false);
@@ -301,25 +283,19 @@
 	/*------------ Woocommerce Settings  --------------*/
 
 	$advance_automobile_top_bottom_product_button_padding = get_theme_mod('advance_automobile_top_bottom_product_button_padding', 10);
-	if($advance_automobile_top_bottom_product_button_padding != false){
-		$advance_automobile_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_automobile_top_bottom_product_button_padding).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_automobile_top_bottom_product_button_padding).'px;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_left_right_product_button_padding = get_theme_mod('advance_automobile_left_right_product_button_padding', 16);
-	if($advance_automobile_left_right_product_button_padding != false){
-		$advance_automobile_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_automobile_custom_css .='padding-left: '.esc_html($advance_automobile_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_automobile_left_right_product_button_padding).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_automobile_custom_css .='padding-left: '.esc_html($advance_automobile_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_automobile_left_right_product_button_padding).'px;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_product_button_border_radius = get_theme_mod('advance_automobile_product_button_border_radius', 0);
-	if($advance_automobile_product_button_border_radius != false){
-		$advance_automobile_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_automobile_custom_css .='border-radius: '.esc_html($advance_automobile_product_button_border_radius).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_automobile_custom_css .='border-radius: '.esc_html($advance_automobile_product_button_border_radius).'px;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_show_related_products = get_theme_mod('advance_automobile_show_related_products',true);
 	if($advance_automobile_show_related_products == false){
@@ -336,32 +312,24 @@
 	}
 
 	$advance_automobile_top_bottom_wooproducts_padding = get_theme_mod('advance_automobile_top_bottom_wooproducts_padding',0);
-	if($advance_automobile_top_bottom_wooproducts_padding != false){
-		$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_automobile_top_bottom_wooproducts_padding).'px !important;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_automobile_top_bottom_wooproducts_padding).'px !important;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_left_right_wooproducts_padding = get_theme_mod('advance_automobile_left_right_wooproducts_padding',0);
-	if($advance_automobile_left_right_wooproducts_padding != false){
-		$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_automobile_custom_css .='padding-left: '.esc_html($advance_automobile_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_automobile_left_right_wooproducts_padding).'px !important;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_automobile_custom_css .='padding-left: '.esc_html($advance_automobile_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_automobile_left_right_wooproducts_padding).'px !important;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_wooproducts_border_radius = get_theme_mod('advance_automobile_wooproducts_border_radius',0);
-	if($advance_automobile_wooproducts_border_radius != false){
-		$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_automobile_custom_css .='border-radius: '.esc_html($advance_automobile_wooproducts_border_radius).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_automobile_custom_css .='border-radius: '.esc_html($advance_automobile_wooproducts_border_radius).'px;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_wooproducts_box_shadow = get_theme_mod('advance_automobile_wooproducts_box_shadow',0);
-	if($advance_automobile_wooproducts_box_shadow != false){
-		$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_automobile_custom_css .='box-shadow: '.esc_html($advance_automobile_wooproducts_box_shadow).'px '.esc_html($advance_automobile_wooproducts_box_shadow).'px '.esc_html($advance_automobile_wooproducts_box_shadow).'px #e4e4e4;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_automobile_custom_css .='box-shadow: '.esc_html($advance_automobile_wooproducts_box_shadow).'px '.esc_html($advance_automobile_wooproducts_box_shadow).'px '.esc_html($advance_automobile_wooproducts_box_shadow).'px #e4e4e4;';
+	$advance_automobile_custom_css .='}';
 
 	/*-------------- Footer Text -------------------*/
 	$advance_automobile_copyright_content_align = get_theme_mod('advance_automobile_copyright_content_align');
@@ -372,18 +340,19 @@
 	}
 
 	$advance_automobile_footer_content_font_size = get_theme_mod('advance_automobile_footer_content_font_size', 16);
-	if($advance_automobile_footer_content_font_size != false){
-		$advance_automobile_custom_css .='.copyright p{';
-			$advance_automobile_custom_css .='font-size: '.esc_html($advance_automobile_footer_content_font_size).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='.copyright p{';
+		$advance_automobile_custom_css .='font-size: '.esc_html($advance_automobile_footer_content_font_size).'px;';
+	$advance_automobile_custom_css .='}';
+
+	$advance_automobile_copyright_padding = get_theme_mod('advance_automobile_copyright_padding', 15);
+	$advance_automobile_custom_css .='.copyright{';
+		$advance_automobile_custom_css .='padding-top: '.esc_html($advance_automobile_copyright_padding).'px; padding-bottom: '.esc_html($advance_automobile_copyright_padding).'px;';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_footer_widget_bg_color = get_theme_mod('advance_automobile_footer_widget_bg_color');
-	if($advance_automobile_footer_widget_bg_color != false){
-		$advance_automobile_custom_css .='#footer{';
-			$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_footer_widget_bg_color).';';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='#footer{';
+		$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_footer_widget_bg_color).';';
+	$advance_automobile_custom_css .='}';
 
 	$advance_automobile_footer_widget_bg_image = get_theme_mod('advance_automobile_footer_widget_bg_image');
 	if($advance_automobile_footer_widget_bg_image != false){
@@ -394,8 +363,6 @@
 
 	// scroll to top
 	$advance_automobile_scroll_font_size_icon = get_theme_mod('advance_automobile_scroll_font_size_icon', 22);
-	if($advance_automobile_scroll_font_size_icon != false){
-		$advance_automobile_custom_css .='#scroll-top .fas{';
-			$advance_automobile_custom_css .='font-size: '.esc_html($advance_automobile_scroll_font_size_icon).'px;';
-		$advance_automobile_custom_css .='}';
-	}
+	$advance_automobile_custom_css .='#scroll-top .fas{';
+		$advance_automobile_custom_css .='font-size: '.esc_html($advance_automobile_scroll_font_size_icon).'px;';
+	$advance_automobile_custom_css .='}';
