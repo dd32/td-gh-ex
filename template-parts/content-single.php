@@ -13,9 +13,11 @@
   $archive_day   = get_the_time('d'); 
 ?> 
 <article class="page-box-single">
-  <div class="box-img">
-    <?php the_post_thumbnail(); ?>
-  </div>
+  <?php if( get_theme_mod( 'advance_pet_care_show_featured_image_single_post',true) != '') { ?>
+    <div class="box-img">
+      <?php the_post_thumbnail(); ?>
+    </div>
+  <?php } ?>
   <div class="new-text">
     <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h1>
     <?php if( get_theme_mod( 'advance_pet_care_date_hide',true) != '' || get_theme_mod( 'advance_pet_care_date_hide',true) != '' || get_theme_mod( 'advance_pet_care_date_hide',true) != '') { ?>

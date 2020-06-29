@@ -5,60 +5,49 @@
 
 	$advance_pet_care_custom_css = '';
 
-	if($advance_pet_care_theme_color_first != false){
-		$advance_pet_care_custom_css .='input[type="submit"], .cart_icon i, #slider .inner_carousel .get-apt-btn a:hover,#welcome .discover-btn a:hover, #footer input[type="submit"], .copyright, #footer .tagcloud a:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, #comments a.comment-reply-link, .meta-nav:hover,.primary-navigation li a:hover, .read-more-btn a:hover, .tags p a:hover, #footer form.woocommerce-product-search button{';
-			$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_theme_color_first).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_first != false){
-		$advance_pet_care_custom_css .='h4,h5,h6, .read-moresec a,section h4, section .innerlightbox, #comments a time,.woocommerce div.product span.price, .woocommerce .quantity .qty, h3.widget-title a, #footer li a:hover, .new-text h1 a,.new-text h2 a, .pet-top i, .comment-meta.commentmetadata a, a.added_to_cart.wc-forward, span.tagged_as a, #comments p a,  .primary-navigation ul ul a, .primary-navigation ul ul a:hover, .tags i, .metabox a:hover, .primary-navigation a:focus,.new-text p a,.entry-content a , #comments p a, #commentform p a, .woocommerce-MyAccount-content a, nav.woocommerce-MyAccount-navigation a, .woocommerce-info a, tr.woocommerce-cart-form__cart-item.cart_item a, a.shipping-calculator-button{';
-			$advance_pet_care_custom_css .='color: '.esc_html($advance_pet_care_theme_color_first).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_first != false){
-		$advance_pet_care_custom_css .='.read-moresec a, #footer input[type="search"], .woocommerce .quantity .qty, .primary-navigation ul ul, .read-more-btn a:hover, .tags p a:hover,.tags p a, #footer form.woocommerce-product-search button{';
-			$advance_pet_care_custom_css .='border-color: '.esc_html($advance_pet_care_theme_color_first).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_first != false){
-		$advance_pet_care_custom_css .='.primary-navigation ul ul li:first-child{';
-			$advance_pet_care_custom_css .='border-top-color: '.esc_html($advance_pet_care_theme_color_first).';';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='input[type="submit"], .cart_icon i, #slider .inner_carousel .get-apt-btn a:hover,#welcome .discover-btn a:hover, #footer input[type="submit"], .copyright, #footer .tagcloud a:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, #comments a.comment-reply-link, .meta-nav:hover,.primary-navigation li a:hover, .read-more-btn a:hover, .tags p a:hover, #footer form.woocommerce-product-search button{';
+		$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_theme_color_first).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='h4,h5,h6, .read-moresec a,section h4, section .innerlightbox, #comments a time,.woocommerce div.product span.price, .woocommerce .quantity .qty, h3.widget-title a, #footer li a:hover, .new-text h1 a,.new-text h2 a, .pet-top i, .comment-meta.commentmetadata a, a.added_to_cart.wc-forward, span.tagged_as a, #comments p a,  .primary-navigation ul ul a, .primary-navigation ul ul a:hover, .tags i, .metabox a:hover, .primary-navigation a:focus,.new-text p a,.entry-content a , #comments p a, #commentform p a, .woocommerce-MyAccount-content a, nav.woocommerce-MyAccount-navigation a, .woocommerce-info a, tr.woocommerce-cart-form__cart-item.cart_item a, a.shipping-calculator-button{';
+		$advance_pet_care_custom_css .='color: '.esc_html($advance_pet_care_theme_color_first).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='.read-moresec a, #footer input[type="search"], .woocommerce .quantity .qty, .primary-navigation ul ul, .read-more-btn a:hover, .tags p a:hover,.tags p a, #footer form.woocommerce-product-search button{';
+		$advance_pet_care_custom_css .='border-color: '.esc_html($advance_pet_care_theme_color_first).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='.primary-navigation ul ul li:first-child{';
+		$advance_pet_care_custom_css .='border-top-color: '.esc_html($advance_pet_care_theme_color_first).';';
+	$advance_pet_care_custom_css .='}';
+
 
 	/*---------------------------Theme color option-------------------*/
 	$advance_pet_care_theme_color_second = get_theme_mod('advance_pet_care_theme_color_second');
 
-	if($advance_pet_care_theme_color_second != false){
-		$advance_pet_care_custom_css .='.read-moresec a:hover, #header .main-menu, #slider i, #slider .inner_carousel .get-apt-btn a, #welcome .discover-btn a, .read-more-btn a, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover,.pagination .current, .pagination a:hover, #menu-sidebar input[type="submit"], #sidebar form.woocommerce-product-search button{';
-			$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_theme_color_second).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_second != false){
-		$advance_pet_care_custom_css .='nav.woocommerce-MyAccount-navigation ul li, #sidebar ul li a:hover:before, #comments input[type="submit"].submit{';
-			$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_theme_color_second).'!important;';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_second != false){
-		$advance_pet_care_custom_css .='.woocommerce-message::before, .logo a, .pet-top p.color{';
-			$advance_pet_care_custom_css .='color: '.esc_html($advance_pet_care_theme_color_second).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_second != false){
-		$advance_pet_care_custom_css .='.woocommerce-message{';
-			$advance_pet_care_custom_css .='border-top-color: '.esc_html($advance_pet_care_theme_color_second).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_second != false){
-		$advance_pet_care_custom_css .='.read-more-btn a, .read-moresec a:hover, #sidebar form.woocommerce-product-search button{';
-			$advance_pet_care_custom_css .='border-color: '.esc_html($advance_pet_care_theme_color_second).';';
-		$advance_pet_care_custom_css .='}';
-	}
-	if($advance_pet_care_theme_color_second != false){
-		$advance_pet_care_custom_css .='#sidebar ul li a:hover, #sidebar ul li a:active, #sidebar ul li a:focus{';
-			$advance_pet_care_custom_css .='color: '.esc_html($advance_pet_care_theme_color_second).'!important;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.read-moresec a:hover, #header .main-menu, #slider i, #slider .inner_carousel .get-apt-btn a, #welcome .discover-btn a, .read-more-btn a, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover,.pagination .current, .pagination a:hover, #menu-sidebar input[type="submit"], #sidebar form.woocommerce-product-search button{';
+		$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_theme_color_second).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='nav.woocommerce-MyAccount-navigation ul li, #sidebar ul li a:hover:before, #comments input[type="submit"].submit{';
+		$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_theme_color_second).'!important;';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='.woocommerce-message::before, .logo a, .pet-top p.color{';
+		$advance_pet_care_custom_css .='color: '.esc_html($advance_pet_care_theme_color_second).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='.woocommerce-message{';
+		$advance_pet_care_custom_css .='border-top-color: '.esc_html($advance_pet_care_theme_color_second).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='.read-more-btn a, .read-moresec a:hover, #sidebar form.woocommerce-product-search button{';
+		$advance_pet_care_custom_css .='border-color: '.esc_html($advance_pet_care_theme_color_second).';';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_custom_css .='#sidebar ul li a:hover, #sidebar ul li a:active, #sidebar ul li a:focus{';
+		$advance_pet_care_custom_css .='color: '.esc_html($advance_pet_care_theme_color_second).'!important;';
+	$advance_pet_care_custom_css .='}';
 
 	// media
 	$advance_pet_care_custom_css .='@media screen and (max-width:1000px) {';
@@ -172,18 +161,14 @@
 	/*------------------------------ Button Settings option-----------------------*/
 	$advance_pet_care_button_padding_top_bottom = get_theme_mod('advance_pet_care_button_padding_top_bottom');
 	$advance_pet_care_button_padding_left_right = get_theme_mod('advance_pet_care_button_padding_left_right');
-	if($advance_pet_care_button_padding_top_bottom != false || $advance_pet_care_button_padding_left_right != false){
-		$advance_pet_care_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .get-apt-btn a, #comments .form-submit input[type="submit"], #welcome .discover-btn a{';
-			$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_pet_care_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_pet_care_button_padding_left_right).'px; padding-right: '.esc_html($advance_pet_care_button_padding_left_right).'px; display:inline-block;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .get-apt-btn a, #comments .form-submit input[type="submit"], #welcome .discover-btn a{';
+		$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_pet_care_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_pet_care_button_padding_left_right).'px; padding-right: '.esc_html($advance_pet_care_button_padding_left_right).'px; display:inline-block;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_button_border_radius = get_theme_mod('advance_pet_care_button_border_radius');
-	if($advance_pet_care_button_border_radius != false){
-		$advance_pet_care_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .get-apt-btn a, #comments .form-submit input[type="submit"], #welcome .discover-btn a{';
-			$advance_pet_care_custom_css .='border-radius: '.esc_html($advance_pet_care_button_border_radius).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .get-apt-btn a, #comments .form-submit input[type="submit"], #welcome .discover-btn a{';
+		$advance_pet_care_custom_css .='border-radius: '.esc_html($advance_pet_care_button_border_radius).'px;';
+	$advance_pet_care_custom_css .='}';
 
 	/*-----------------------------Responsive Setting --------------------*/
 	$advance_pet_care_stickyheader = get_theme_mod( 'advance_pet_care_responsive_sticky_header',false);
@@ -289,25 +274,19 @@
 
 	/*------------ Woocommerce Settings  --------------*/
 	$advance_pet_care_top_bottom_product_button_padding = get_theme_mod('advance_pet_care_top_bottom_product_button_padding', 10);
-	if($advance_pet_care_top_bottom_product_button_padding != false){
-		$advance_pet_care_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_pet_care_top_bottom_product_button_padding).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_pet_care_top_bottom_product_button_padding).'px;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_left_right_product_button_padding = get_theme_mod('advance_pet_care_left_right_product_button_padding', 16);
-	if($advance_pet_care_left_right_product_button_padding != false){
-		$advance_pet_care_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_pet_care_custom_css .='padding-left: '.esc_html($advance_pet_care_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_pet_care_left_right_product_button_padding).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_pet_care_custom_css .='padding-left: '.esc_html($advance_pet_care_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_pet_care_left_right_product_button_padding).'px;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_product_button_border_radius = get_theme_mod('advance_pet_care_product_button_border_radius', 0);
-	if($advance_pet_care_product_button_border_radius != false){
-		$advance_pet_care_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$advance_pet_care_custom_css .='border-radius: '.esc_html($advance_pet_care_product_button_border_radius).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$advance_pet_care_custom_css .='border-radius: '.esc_html($advance_pet_care_product_button_border_radius).'px;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_show_related_products = get_theme_mod('advance_pet_care_show_related_products',true);
 	if($advance_pet_care_show_related_products == false){
@@ -324,32 +303,24 @@
 	}
 
 	$advance_pet_care_top_bottom_wooproducts_padding = get_theme_mod('advance_pet_care_top_bottom_wooproducts_padding',0);
-	if($advance_pet_care_top_bottom_wooproducts_padding != false){
-		$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_pet_care_top_bottom_wooproducts_padding).'px !important;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_pet_care_top_bottom_wooproducts_padding).'px !important;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_left_right_wooproducts_padding = get_theme_mod('advance_pet_care_left_right_wooproducts_padding',0);
-	if($advance_pet_care_left_right_wooproducts_padding != false){
-		$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_pet_care_custom_css .='padding-left: '.esc_html($advance_pet_care_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_pet_care_left_right_wooproducts_padding).'px !important;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_pet_care_custom_css .='padding-left: '.esc_html($advance_pet_care_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_pet_care_left_right_wooproducts_padding).'px !important;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_wooproducts_border_radius = get_theme_mod('advance_pet_care_wooproducts_border_radius',0);
-	if($advance_pet_care_wooproducts_border_radius != false){
-		$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_pet_care_custom_css .='border-radius: '.esc_html($advance_pet_care_wooproducts_border_radius).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_pet_care_custom_css .='border-radius: '.esc_html($advance_pet_care_wooproducts_border_radius).'px;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_wooproducts_box_shadow = get_theme_mod('advance_pet_care_wooproducts_box_shadow',0);
-	if($advance_pet_care_wooproducts_box_shadow != false){
-		$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_pet_care_custom_css .='box-shadow: '.esc_html($advance_pet_care_wooproducts_box_shadow).'px '.esc_html($advance_pet_care_wooproducts_box_shadow).'px '.esc_html($advance_pet_care_wooproducts_box_shadow).'px #eee;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$advance_pet_care_custom_css .='box-shadow: '.esc_html($advance_pet_care_wooproducts_box_shadow).'px '.esc_html($advance_pet_care_wooproducts_box_shadow).'px '.esc_html($advance_pet_care_wooproducts_box_shadow).'px #eee;';
+	$advance_pet_care_custom_css .='}';
 
 	/*-------------- Footer Text -------------------*/
 	$advance_pet_care_copyright_content_align = get_theme_mod('advance_pet_care_copyright_content_align');
@@ -360,18 +331,19 @@
 	}
 
 	$advance_pet_care_footer_content_font_size = get_theme_mod('advance_pet_care_footer_content_font_size', 16);
-	if($advance_pet_care_footer_content_font_size != false){
-		$advance_pet_care_custom_css .='.copyright p{';
-			$advance_pet_care_custom_css .='font-size: '.esc_html($advance_pet_care_footer_content_font_size).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='.copyright p{';
+		$advance_pet_care_custom_css .='font-size: '.esc_html($advance_pet_care_footer_content_font_size).'px;';
+	$advance_pet_care_custom_css .='}';
+
+	$advance_pet_care_copyright_padding = get_theme_mod('advance_pet_care_copyright_padding', 15);
+	$advance_pet_care_custom_css .='.copyright{';
+		$advance_pet_care_custom_css .='padding-top: '.esc_html($advance_pet_care_copyright_padding).'px; padding-bottom: '.esc_html($advance_pet_care_copyright_padding).'px;';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_footer_widget_bg_color = get_theme_mod('advance_pet_care_footer_widget_bg_color');
-	if($advance_pet_care_footer_widget_bg_color != false){
-		$advance_pet_care_custom_css .='#footer{';
-			$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_footer_widget_bg_color).';';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='#footer{';
+		$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_footer_widget_bg_color).';';
+	$advance_pet_care_custom_css .='}';
 
 	$advance_pet_care_footer_widget_bg_image = get_theme_mod('advance_pet_care_footer_widget_bg_image');
 	if($advance_pet_care_footer_widget_bg_image != false){
@@ -382,8 +354,6 @@
 
 	// scroll to top
 	$advance_pet_care_scroll_font_size_icon = get_theme_mod('advance_pet_care_scroll_font_size_icon', 22);
-	if($advance_pet_care_scroll_font_size_icon != false){
-		$advance_pet_care_custom_css .='#scroll-top .fas{';
-			$advance_pet_care_custom_css .='font-size: '.esc_html($advance_pet_care_scroll_font_size_icon).'px;';
-		$advance_pet_care_custom_css .='}';
-	}
+	$advance_pet_care_custom_css .='#scroll-top .fas{';
+		$advance_pet_care_custom_css .='font-size: '.esc_html($advance_pet_care_scroll_font_size_icon).'px;';
+	$advance_pet_care_custom_css .='}';
