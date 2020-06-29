@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArileWP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-01 12:17+0000\n"
+"POT-Creation-Date: 2020-06-27 12:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-5.3.2"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
 
 #: comments.php:26
 #, php-format
@@ -62,7 +62,7 @@ msgstr ""
 msgid "04 Unique Header Styles."
 msgstr ""
 
-#: inc/admin/getting-started.php:159
+#: inc/admin/getting-started.php:164
 msgid "1 Year Free Updates"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "24/7 HelpDesk Professional Support"
 msgstr ""
 
-#: inc/admin/getting-started.php:166
+#: inc/admin/getting-started.php:171
 msgid "4 Unique Header Layouts"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-getting-start-plugin-helper.php:97
-#: inc/customizer/arilewp-customizer-options.php:199
+#: inc/customizer/arilewp-customizer-options.php:200
 msgid "Activate"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Add new field"
 msgstr ""
 
-#: inc/admin/getting-started.php:152
+#: inc/admin/getting-started.php:157
 msgid "Additional Css Box"
 msgstr ""
 
@@ -128,11 +128,11 @@ msgstr ""
 msgid "Advance Typography with Google Fonts Support"
 msgstr ""
 
-#: inc/admin/getting-started.php:169
+#: inc/admin/getting-started.php:174
 msgid "Advanced Blog Layouts"
 msgstr ""
 
-#: inc/admin/getting-started.php:165
+#: inc/admin/getting-started.php:170
 msgid "Advanced Typography"
 msgstr ""
 
@@ -199,15 +199,15 @@ msgid ""
 "Elementor page builder to create, edit and updates page designs as per the "
 "requirement. ArileWP also supports popular free and premium WordPress "
 "plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, "
-"Google Analytics and much more. Check the demo of ArileWP Pro https://demo."
-"themearile.com/?theme=ArileWP%20Pro"
+"Google Analytics and much more. Check the demo of ArileWP Pro https:"
+"//themearile.com/arilewp-pro-theme/."
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:15
 msgid "ArileWP Pro"
 msgstr ""
 
-#: inc/admin/getting-started.php:155
+#: inc/admin/getting-started.php:160
 msgid "ArileWP Pro Theme Features"
 msgstr ""
 
@@ -227,7 +227,7 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: inc/admin/getting-started.php:150
+#: inc/admin/getting-started.php:155
 msgid "Blog Options"
 msgstr ""
 
@@ -284,7 +284,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: inc/admin/getting-started.php:141
+#: inc/admin/getting-started.php:146
 msgid "Colors Options"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/admin/getting-started.php:206
+#: inc/admin/getting-started.php:211
 #, php-format
 msgid "Congratulations, Welcome to %1$s Theme"
 msgstr ""
@@ -338,7 +338,7 @@ msgstr ""
 msgid "Customizer Repeater"
 msgstr ""
 
-#: inc/admin/getting-started.php:160
+#: inc/admin/getting-started.php:165
 msgid "Dark & Light Layout Styles"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgid "Dark Color Style."
 msgstr ""
 
 #: inc/admin/class-getting-start-plugin-helper.php:112
-#: inc/customizer/arilewp-customizer-options.php:200
+#: inc/customizer/arilewp-customizer-options.php:201
 msgid "Deactivate"
 msgstr ""
 
@@ -441,23 +441,23 @@ msgstr ""
 msgid "Footer Copyright Enable/Disable"
 msgstr ""
 
-#: inc/admin/getting-started.php:151
+#: inc/admin/getting-started.php:156
 msgid "Footer Options"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:122
 msgid "Footer Sidebar Four"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:119
 msgid "Footer Sidebar One"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:121
 msgid "Footer Sidebar Three"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:120
 msgid "Footer Sidebar Two"
 msgstr ""
 
@@ -481,7 +481,7 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-#: inc/admin/getting-started.php:119
+#: inc/admin/getting-started.php:124
 msgid "Free Vs Pro"
 msgstr ""
 
@@ -515,7 +515,7 @@ msgstr ""
 msgid "Get ArileWP Pro"
 msgstr ""
 
-#: inc/admin/getting-started.php:210
+#: inc/admin/getting-started.php:215
 msgid "Get started with ArileWP"
 msgstr ""
 
@@ -523,7 +523,7 @@ msgstr ""
 msgid "Get Support"
 msgstr ""
 
-#: inc/admin/getting-started.php:101
+#: inc/admin/getting-started.php:106
 msgid "Getting Started"
 msgstr ""
 
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Go to the Customizer"
 msgstr ""
 
-#: inc/admin/getting-started.php:161
+#: inc/admin/getting-started.php:166
 msgid "Google Font Support"
 msgstr ""
 
@@ -612,7 +612,7 @@ msgid ""
 msgstr ""
 
 #. %s: plugin name
-#: inc/customizer/arilewp-customizer-options.php:193
+#: inc/customizer/arilewp-customizer-options.php:194
 #, php-format
 msgid ""
 "If you want to show all the features and business sections of the FrontPage. "
@@ -628,7 +628,7 @@ msgstr ""
 msgid "Image type"
 msgstr ""
 
-#: inc/customizer/arilewp-customizer-options.php:198
+#: inc/customizer/arilewp-customizer-options.php:199
 msgid "Install and Activate"
 msgstr ""
 
@@ -682,12 +682,16 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: inc/admin/getting-started.php:137
+#: inc/admin/getting-started.php:142
 msgid "Links to Customizer Options"
 msgstr ""
 
-#: inc/admin/getting-started.php:157
+#: inc/admin/getting-started.php:162
 msgid "Live Customizer"
+msgstr ""
+
+#: comments.php:65
+msgid "Log out of this account"
 msgstr ""
 
 #: comments.php:65
@@ -718,7 +722,7 @@ msgstr ""
 msgid "Menu Style"
 msgstr ""
 
-#: inc/admin/getting-started.php:139
+#: inc/admin/getting-started.php:144
 msgid "Menus Options"
 msgstr ""
 
@@ -734,7 +738,7 @@ msgstr ""
 msgid "Mobile Friendly Design"
 msgstr ""
 
-#: inc/admin/getting-started.php:158 inc/admin/tabs/free-vs-pro-panel.php:146
+#: inc/admin/getting-started.php:163 inc/admin/tabs/free-vs-pro-panel.php:146
 msgid "Multilingual Ready"
 msgstr ""
 
@@ -783,7 +787,7 @@ msgstr ""
 msgid "Page Header Enable/Disable"
 msgstr ""
 
-#: inc/admin/getting-started.php:140
+#: inc/admin/getting-started.php:145
 msgid "Page Header Options"
 msgstr ""
 
@@ -795,7 +799,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: inc/admin/getting-started.php:171
+#: inc/admin/getting-started.php:176
 msgid "Priority Support"
 msgstr ""
 
@@ -807,7 +811,7 @@ msgstr ""
 msgid "Pro"
 msgstr ""
 
-#: inc/admin/getting-started.php:148
+#: inc/admin/getting-started.php:153
 msgid "Project Options"
 msgstr ""
 
@@ -839,7 +843,7 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/admin/getting-started.php:106
+#: inc/admin/getting-started.php:111
 msgid "Recommended Actions"
 msgstr ""
 
@@ -847,7 +851,7 @@ msgstr ""
 msgid "Recommended actions"
 msgstr ""
 
-#: inc/customizer/arilewp-customizer-options.php:197
+#: inc/customizer/arilewp-customizer-options.php:198
 msgid "Recommended Plugin"
 msgstr ""
 
@@ -868,7 +872,7 @@ msgstr ""
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/admin/getting-started.php:163 inc/admin/tabs/free-vs-pro-panel.php:113
+#: inc/admin/getting-started.php:168 inc/admin/tabs/free-vs-pro-panel.php:113
 msgid "RTL Support"
 msgstr ""
 
@@ -880,7 +884,7 @@ msgstr ""
 msgid "Search results for"
 msgstr ""
 
-#: inc/admin/getting-started.php:167 inc/admin/tabs/free-vs-pro-panel.php:163
+#: inc/admin/getting-started.php:172 inc/admin/tabs/free-vs-pro-panel.php:163
 msgid "Section Reordering"
 msgstr ""
 
@@ -888,7 +892,7 @@ msgstr ""
 msgid "SEO (Search Engine Optimization) Ready"
 msgstr ""
 
-#: inc/admin/getting-started.php:147
+#: inc/admin/getting-started.php:152
 msgid "Service Options"
 msgstr ""
 
@@ -913,7 +917,7 @@ msgstr ""
 msgid "Sidebar Layout"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:118
 msgid "Sidebar Widget Area"
 msgstr ""
 
@@ -921,11 +925,11 @@ msgstr ""
 msgid "Single Blog Pages"
 msgstr ""
 
-#: inc/admin/getting-started.php:138
+#: inc/admin/getting-started.php:143
 msgid "Site Logo"
 msgstr ""
 
-#: header.php:23
+#: header.php:26
 msgid "Skip to content"
 msgstr ""
 
@@ -933,7 +937,7 @@ msgstr ""
 msgid "Slide Content Format"
 msgstr ""
 
-#: inc/admin/getting-started.php:145
+#: inc/admin/getting-started.php:150
 msgid "Slider Options"
 msgstr ""
 
@@ -975,7 +979,7 @@ msgstr ""
 msgid "Sticky"
 msgstr ""
 
-#: inc/admin/getting-started.php:156
+#: inc/admin/getting-started.php:161
 msgid "Sticky Header"
 msgstr ""
 
@@ -999,7 +1003,7 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
-#: inc/admin/getting-started.php:124 inc/admin/tabs/support-and-review.php:11
+#: inc/admin/getting-started.php:129 inc/admin/tabs/support-and-review.php:11
 msgid "Support"
 msgstr ""
 
@@ -1007,7 +1011,7 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: inc/admin/getting-started.php:149
+#: inc/admin/getting-started.php:154
 msgid "Testimonial Options"
 msgstr ""
 
@@ -1016,7 +1020,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: inc/admin/getting-started.php:208
+#: inc/admin/getting-started.php:213
 #, php-format
 msgid ""
 "Thank you for choosing ArileWP theme. To take full advantage of the complete "
@@ -1041,7 +1045,7 @@ msgstr ""
 msgid "Theme Color Skins"
 msgstr ""
 
-#: inc/admin/getting-started.php:146
+#: inc/admin/getting-started.php:151
 msgid "Theme Info Area Options"
 msgstr ""
 
@@ -1064,6 +1068,10 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
+#: template-parts/site-navbar.php:12
+msgid "Toggle navigation"
+msgstr ""
+
 #: inc/admin/tabs/free-vs-pro-panel.php:155
 msgid "Top Header Bar Support"
 msgstr ""
@@ -1076,11 +1084,11 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
-#: inc/admin/getting-started.php:142
+#: inc/admin/getting-started.php:147
 msgid "Typography Options"
 msgstr ""
 
-#: inc/admin/getting-started.php:168
+#: inc/admin/getting-started.php:173
 msgid "Unlimited Business Sections"
 msgstr ""
 
@@ -1088,7 +1096,7 @@ msgstr ""
 msgid "Unlimited Color Options"
 msgstr ""
 
-#: inc/admin/getting-started.php:162
+#: inc/admin/getting-started.php:167
 msgid "Unlimited Color Schemes"
 msgstr ""
 
@@ -1096,7 +1104,7 @@ msgstr ""
 msgid "Upload Image"
 msgstr ""
 
-#: inc/admin/getting-started.php:114
+#: inc/admin/getting-started.php:119
 msgid "Useful Plugins"
 msgstr ""
 
@@ -1106,7 +1114,7 @@ msgid ""
 "of the theme."
 msgstr ""
 
-#: inc/admin/getting-started.php:170
+#: inc/admin/getting-started.php:175
 msgid "Video Tutorial"
 msgstr ""
 
@@ -1147,7 +1155,7 @@ msgstr ""
 msgid "Wide & Boxed Layout"
 msgstr ""
 
-#: inc/admin/getting-started.php:164
+#: inc/admin/getting-started.php:169
 msgid "Wide & Boxed Layouts"
 msgstr ""
 
@@ -1159,7 +1167,7 @@ msgstr ""
 msgid "WooCommerce Ready"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:126
 msgid "WooCommerce Sidebar"
 msgstr ""
 

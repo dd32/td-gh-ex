@@ -62,7 +62,7 @@
 		'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 		'comment_field'=> '<div class="form-group"><label>'.__("Comment",'arilewp').'</label>
 		<textarea id="comments" rows="5" class="form-control" name="comment" type="text"></textarea></div>',		
-		'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as",'arilewp' ).' '.'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. ' '. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__("Logout",'arilewp').'</a>' . '</p>',
+		'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as",'arilewp' ).' '.'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. ' '. '<a href="'. wp_logout_url( get_permalink() ).'" title="'. esc_attr__("Log out of this account",'arilewp').'">'.__("Logout",'arilewp').'</a>' . '</p>',
 		'id_submit'=> 'send_button',
 		'label_submit'=>__( 'Submit','arilewp'),
 		'comment_notes_after'=> '',
