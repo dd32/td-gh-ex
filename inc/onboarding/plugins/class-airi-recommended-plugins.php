@@ -162,4 +162,4 @@ class Airi_Recommended_Plugins {
 	}
 }
 
-$admin = new Airi_Recommended_Plugins();
+$airi_admin = new Airi_Recommended_Plugins();

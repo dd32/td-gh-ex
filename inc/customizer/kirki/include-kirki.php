@@ -8,13 +8,13 @@
 
 if ( ! class_exists( 'Kirki' ) ) {
 
-	if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'Kirki_Installer_Section' ) ) {
+	if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'Airi_Kirki_Installer_Section' ) ) {
 		/**
 		 * Recommend the installation of Kirki using a custom section.
 		 *
 		 * @see WP_Customize_Section
 		 */
-		class Kirki_Installer_Section extends WP_Customize_Section {
+		class Airi_Kirki_Installer_Section extends WP_Customize_Section {
 
 			/**
 			 * Customize section type.
@@ -67,14 +67,14 @@ if ( ! class_exists( 'Kirki' ) ) {
 		}
 	}
 
-	if ( ! function_exists( 'kirki_installer_register' ) ) {
+	if ( ! function_exists( 'airi_kirki_installer_register' ) ) {
 		/**
 		 * Registers the section, setting & control for the kirki installer.
 		 *
 		 * @param object $wp_customize The main customizer object.
 		 */
-		function kirki_installer_register( $wp_customize ) {
-			$wp_customize->add_section( new Kirki_Installer_Section( $wp_customize, 'kirki_installer', array(
+		function airi_kirki_installer_register( $wp_customize ) {
+			$wp_customize->add_section( new Airi_Kirki_Installer_Section( $wp_customize, 'kirki_installer', array(
 				'title'      => '',
 				'capability' => 'install_plugins',
 				'priority'   => 0,
@@ -88,7 +88,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 			) );
 
 		}
-		add_action( 'customize_register', 'kirki_installer_register' );
+		add_action( 'customize_register', 'airi_kirki_installer_register' );
 	}
 }
 

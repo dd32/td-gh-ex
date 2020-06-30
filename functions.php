@@ -98,7 +98,7 @@ add_action( 'after_setup_theme', 'airi_setup' );
  * @global int $content_width
  */
 function airi_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'airi_content_width', 1170 );
+	$GLOBALS['content_width'] = apply_filters( 'airi_content_width', 1170 ); // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
 }
 add_action( 'after_setup_theme', 'airi_content_width', 0 );
 
