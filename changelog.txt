@@ -1,6 +1,9 @@
-Altitude
+Altitude Lite
 **************
-version 2.0 (12/21/2018)
+Version 3.0.0
+- Made child theme of Responsive theme
+
+Version 2.0 (12/21/2018)
 - Improved theme look and feel
 - Added Gutenberg support
 

@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', 'altitude_lite_woocommerce_setup' );
  * @return void
  */
 function altitude_lite_woocommerce_scripts() {
-	wp_enqueue_style( 'altitude-lite-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_enqueue_style( 'altitude-lite-woocommerce-style', get_stylesheet_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
