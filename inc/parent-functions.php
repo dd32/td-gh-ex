@@ -138,7 +138,7 @@ function book_landing_page_customizer_theme_info( $wp_customize ) {
     $theme_info = '<p>';
 
     /* translators: 1: string, 2: preview url, 3: string */
-    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Demo Link : ', 'author-landing-page' ), esc_url( __( 'https://demo.rarathemes.com/author-landing-page/', 'author-landing-page' ) ), esc_html__( 'Click here.', 'author-landing-page' ) );
+    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Demo Link : ', 'author-landing-page' ), esc_url( __( 'https://rarathemes.com/previews/?theme=author-landing-page', 'author-landing-page' ) ), esc_html__( 'Click here.', 'author-landing-page' ) );
 
     $theme_info .= '</p><p>';
 

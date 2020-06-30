@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Author Landing Page 1.0.4\n"
+"Project-Id-Version: Author Landing Page 1.0.5\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/theme/author-landing-page\n"
-"POT-Creation-Date: 2020-05-14 08:36:17+00:00\n"
+"POT-Creation-Date: 2020-06-30 08:15:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +52,7 @@ msgid "Demo Link : "
 msgstr ""
 
 #: inc/parent-functions.php:141
-msgid "https://demo.rarathemes.com/author-landing-page/"
+msgid "https://rarathemes.com/previews/?theme=author-landing-page"
 msgstr ""
 
 #: inc/parent-functions.php:141 inc/parent-functions.php:146
@@ -150,10 +150,11 @@ msgid ""
 "Google and other search engines. Furthermore, this theme is fully "
 "compatible with the popular WooCommerce plugin to allow you to sell your "
 "book via your website. Check demo at "
-"https://demo.rarathemes.com/author-landing-page/ and documentation at "
-"https://docs.rarathemes.com/docs/author-landing-page/. Read theme details "
-"at https://rarathemes.com/wordpress-themes/author-landing-page/ and get "
-"free support at https://rarathemes.com/support-ticket/."
+"https://rarathemes.com/previews/?theme=author-landing-page and "
+"documentation at https://docs.rarathemes.com/docs/author-landing-page/. "
+"Read theme details at "
+"https://rarathemes.com/wordpress-themes/author-landing-page/ and get free "
+"support at https://rarathemes.com/support-ticket/."
 msgstr ""
 
 #. Author of the plugin/theme
