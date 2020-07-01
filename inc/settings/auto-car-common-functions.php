@@ -241,8 +241,8 @@ if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 
 
 
-if (!function_exists('robolist_lite_blog_post_format')) {
-    function robolist_lite_blog_post_format($post_format, $post_id)
+if (!function_exists('auto_car_blog_post_format')) {
+    function auto_car_blog_post_format($post_format, $post_id)
     {
 
         global $post;

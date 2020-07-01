@@ -14,7 +14,6 @@
 
 get_header();
 $auto_car_settings = auto_car_get_theme_options();
-$check_sidebar = $auto_car_settings['auto_car_sidebar_display'];
 $sidebar_status = $auto_car_settings['auto_car_sidebar_status'];
 $col = 8;
 if (is_active_sidebar('layout_pro_left_sidebar') && is_active_sidebar('auto_car_main_sidebar'))

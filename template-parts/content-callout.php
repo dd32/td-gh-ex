@@ -46,7 +46,7 @@ $auto_car_settings = auto_car_get_theme_options();
 
                 <a href="<?php the_permalink();?>"><h3 class="title"><?php the_title(); ?></h3></a>
                 <p class="description">
-                    <?php echo esc_attr($excerpt); ?>
+                    <?php echo esc_html($excerpt); ?>
                 </p>
             </div>
         </div>

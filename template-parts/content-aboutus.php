@@ -41,7 +41,7 @@ if (!empty($intro_pages)):
                             </div>
                     <div class="col-md-6 pull-left">
                         <div class="pic">
-                        <img src="<?php echo wp_kses_post($image_style); ?>" alt="<?php echo esc_attr($img_alt); ?>">
+                        <img src="<?php echo esc_html($image_style); ?>" alt="<?php echo esc_attr($img_alt); ?>">
                     </div>
                     </div>
                             <?php                            

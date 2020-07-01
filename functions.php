@@ -187,12 +187,12 @@ add_action('customize_register', 'auto_car_customize_register');
 /**
  * Enqueue script for custom customize control.
  */
-function theme_slug_custom_customize_enqueue()
+function auto_car_custom_customize_enqueue()
 {
     wp_enqueue_style('auto-car-customizer-style', trailingslashit(get_template_directory_uri()) . 'inc/customizer/css/customizer-control.css');
 }
 
-add_action('customize_controls_enqueue_scripts', 'theme_slug_custom_customize_enqueue');
+add_action('customize_controls_enqueue_scripts', 'auto_car_custom_customize_enqueue');
 
 
 /******************* auto car Header Display *************************/
@@ -319,15 +319,6 @@ define( 'auto_car_VERSION', '1.0.0' );
         return true;
     }
 
-
-add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
-
-function change_existing_currency_symbol( $currency_symbol, $currency ) {
-     switch( $currency ) {
-          case 'NPR': $currency_symbol = 'NPR '; break;
-     }
-     return $currency_symbol;
-}
 
 if (!function_exists('auto_car_is_url')):
     function auto_car_is_url($uri)

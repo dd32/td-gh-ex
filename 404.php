@@ -18,7 +18,7 @@ get_header();
 
                             <section class="error-404 not-found">
                                 <header class="page-header">
-                                    <h2>4<span>0</span>4</h2>
+                                    <h2><?php  esc_html_e('4','auto-car'); ?><span><?php  esc_html_e('0','auto-car'); ?></span><?php  esc_html_e('4','auto-car'); ?></h2>
                                     <h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'auto-car'); ?></h1>
                                 </header><!-- .page-header -->
                                 <div class="page-content">

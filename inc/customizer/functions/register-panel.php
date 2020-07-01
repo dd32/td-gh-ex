@@ -16,7 +16,7 @@ function auto_car_customize_register_options( $wp_customize ) {
 		'description' => '',
 	) );
 }
-function layout_pro_register_theme_panel($wp_customize)
+function auto_car_register_theme_panel($wp_customize)
 {
     $wp_customize->add_panel( 'layout_pro_options_panel', array(
         'priority' => 2,
@@ -26,7 +26,7 @@ function layout_pro_register_theme_panel($wp_customize)
         'description' => '',
     ) );
 }
-add_action('customize_register','layout_pro_register_theme_panel');
+add_action('customize_register','auto_car_register_theme_panel');
 
 add_action( 'customize_register', 'auto_car_customize_register_featuredcontent' );
 function auto_car_customize_register_featuredcontent( $wp_customize ) {

@@ -139,6 +139,18 @@
 /* All Mobile Screen ( smaller than 768px )
 ================================================== */
 @media only screen and (max-width: 767px) {
+	.navbar-nav .dropdown-menu,.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children>.dropdown-sub{
+		display: none !important;
+		opacity:  0;
+	}
+	.navbar li.menu-item-has-children:hover .dropdown-menu, .navbar li.menu-item-has-children:focus .dropdown-menu, .navbar li.menu-item-has-children:focus-within .dropdown-menu {
+	    opacity:  1;
+	    display: block !important;
+	}
+.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children:hover .dropdown-sub,.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children:focus .dropdown-sub,.navbar li.menu-item-has-children .dropdown-menu li.menu-item-has-children:focus-within .dropdown-sub{
+	opacity:  1;
+	 display: block !important;
+}
 	nav#footer-navigation{
 		width: 100%;
 	}

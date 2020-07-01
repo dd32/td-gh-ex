@@ -52,15 +52,7 @@ $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
                 <div class="row">
                     <nav id="primary-nav" class="navbar navbar-default">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#navbar-collapse" aria-expanded="false">
-                                <span class="sr-only"><?php echo esc_html__('Toggle navigation', 'auto-car'); ?></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
+
                         <div class="site-branding">
                             <?php
                             the_custom_logo();
@@ -74,6 +66,15 @@ $breadcrumb_metabox = get_post_meta(get_the_ID(),'_my_custom_field', true); }
                                 <?php
                             endif; ?>
                         </div><!-- .site-branding -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target="#navbar-collapse" aria-expanded="false">
+                                <span class="sr-only"><?php echo esc_html__('Toggle navigation', 'auto-car'); ?></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <?php if ( has_nav_menu( 'primary' ) ) { ?>
                         <div class="collapse navbar-collapse" id="navbar-collapse">

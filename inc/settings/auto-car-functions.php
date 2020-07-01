@@ -8,13 +8,6 @@
 
 
 /********************* CONTINUE READING LINKS FOR EXCERPT *********************************/
-if (! function_exists('auto_car_continue_reading')) {
-	function auto_car_continue_reading() {
-		 return '&hellip; ';
-	}
-	add_filter('excerpt_more', 'auto_car_continue_reading');
-}
-
 /***************** USED CLASS FOR BODY TAGS ******************************/
 if (! function_exists('auto_car_body_class')) {
 	function auto_car_body_class($classes) {
@@ -77,9 +70,8 @@ if (! function_exists('auto_car_page_sliders')) {
                         <?php } else {
                             $image_style = "";
                         }
-                        // $excerpt                     = substr(get_the_excerpt(), 0 , 160);
                         ?>
-                    <div class="slider-item slider1" <?php echo wp_kses_post($image_style); ?>">
+                    <div class="slider-item slider1" <?php echo esc_html($image_style); ?>">
                         <div class="container">
                             <div class="banner-text-wrap">
                                 <h2><?php the_title(); ?></h2>
@@ -109,10 +101,8 @@ if (! function_exists('auto_car_scripts')) {
 		$auto_car_settings = auto_car_get_theme_options();
 		wp_enqueue_style('auto-car-css', get_template_directory_uri().'/assets/css/auto-car.css');
 		wp_enqueue_style( 'auto-car-style', get_stylesheet_uri() );
-		// wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css');
 		wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js', array('jquery'), false, true);
 		wp_enqueue_script('slick-jquery', get_template_directory_uri().'/assets/js/slick.min.js', array('jquery'), false, true);
-//		wp_enqueue_script('auto-car-main', get_template_directory_uri().'/assets/js/auto-car.js', array('jquery'), false, true);
 		wp_enqueue_script('jquery-sticky', get_template_directory_uri().'/assets/sticky/jquery.sticky.min.js', array('jquery'), false, true);
 		wp_enqueue_script('auto-car-app', get_template_directory_uri().'/assets/js/app.js', array('jquery'), false, true);
 		
@@ -396,6 +386,3 @@ function auto_car_breadcrumb()
     <?php
 }
 }
-
-
-// 

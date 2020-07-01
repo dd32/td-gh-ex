@@ -39,7 +39,7 @@ final class auto_car_Discount_Customize {
 		add_action( 'customize_register', array( $this, 'sections' ) );
 
 		// Register scripts and styles for the controls.
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_control_scripts' ), 0 );
+		
 	}
 
 	/**
@@ -76,12 +76,7 @@ final class auto_car_Discount_Customize {
 	 * @access public
 	 * @return void
 	 */
-	public function enqueue_control_scripts() {
 
-//		wp_enqueue_script( 'auto-car-lite-customize-controls', get_template_directory_uri() . '/inc/customizer/assets/customizer.js', array( 'customize-controls' ) );
-
-//		wp_enqueue_style( 'auto-car-lite-customize-controls',get_template_directory_uri() . '/inc/customizer/css/customizer-control.css' );
-	}
 }
 
 // Doing this customizer thang!

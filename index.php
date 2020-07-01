@@ -14,7 +14,6 @@
 
 get_header();
 $auto_car_settings = auto_car_get_theme_options();
-$check_sidebar = $auto_car_settings['auto_car_sidebar_display'];
 $sidebar_status = $auto_car_settings['auto_car_sidebar_status'];
 $col = auto_car_check_sidebar();
 $content_col = 12 - $col;
