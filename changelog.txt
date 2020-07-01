@@ -1,5 +1,8 @@
 Altitude Lite
 **************
+Version 3.0.1
+- Fix - Minor bug fixes
+
 Version 3.0.0
 - Made child theme of Responsive theme
 

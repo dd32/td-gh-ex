@@ -1,19 +1,19 @@
-@charset "UTF-8";
-/*!
-Theme Name: Altitude Lite
-* Theme URI:	https://cyberchimps.com/altitude
-Author: CyberChimps
-Author URI: http://cyberchimps.com/
-Description: Altitude is a Gutenberg compatible free WordPress theme. This theme is perfect for lawyers, attorneys, and related business owners.
-Version: 3.0.0
-Template: responsive
-License: GNU General Public License v2 or later
-* License URI:	https://www.gnu.org/licenses/gpl-3.0.en.html
-Text Domain: altitude-lite
-* Tested up to: 5.4.2
-* Requires PHP: 5.6
-Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-*/
+/**
+ * Theme name:	Altitude Lite
+ * Version:		3.0.1
+ * Theme URI:	https://cyberchimps.com/altitude/
+ * Author:		CyberChimps
+ * Author URI:	https://cyberchimps.com
+ * Description:	100% responsive sleek-modern WordPress theme with the full-width header image. This theme is perfect for lawyers, attorneys, and similar business owners. Altitude theme has all features that a WordPress theme needs to set up a beautiful WordPress website.#Speed Optimized: Altitude theme is optimized for speed, so you won’t lose visitors from them waiting for your site to load. Faster the load time, better the user experience. #Parallax effect: The parallax effect included with Altitude adds a beautiful visual pop to the screen. Impress your visitors with a fly-in header image. #Easy To Use: Altitude is a clean and simple WordPress theme. You can easily set up your website using the theme customizer. Altitude lite is integrated with SlideDeck3, a comprehensive and easy to use slider plugin. You can use this plugin to add a fullscreen slider or a carousel that pops up in a lightbox to draw special attention to the best content. Altitude lite is easily translatable into any language with WPML and you can even create multilingual websites. Choose from over 40 languages for your site and start translating content. The theme is accessible and follows WCAG 2.0 standards. It meets the AA level which is essential for usability. The theme meets all required and recommended accessibility guidelines include keyboard navigation, controls, skip links, content links, forms, headings, contrasts, images, media, and screen reader text. You can check the demo at https://demos.cyberchimps.com/altitude-lite/
+ * Tags: 		blog, grid-layout, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, e-commerce, portfolio, rtl-language-support, post-formats
+ * License:		GNU General Public License v3 or later
+ * License URI:	https://www.gnu.org/licenses/gpl-3.0.en.html
+ * Text domain:	altitude-lite
+ * Tested up to: 5.4.2
+ * Requires PHP: 5.6
+ * Template:    responsive
+ */
+
 /**
  * Reset CSS styles
  * -----------------------------------------------------------------------------

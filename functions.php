@@ -7,8 +7,8 @@
  * @package altitude-lite
  */
 
-if ( file_exists( get_stylesheet_directory_uri() . '/premium/functions.php' ) ) {
-	require get_stylesheet_directory_uri() . '/premium/functions.php';
+if ( file_exists( get_stylesheet_directory() . '/premium/functions.php' ) ) {
+	require_once get_stylesheet_directory() . '/premium/functions.php';
 }
 
 if ( ! function_exists( 'altitude_lite_setup' ) ) :
@@ -188,11 +188,11 @@ require 'inc/wp-head-hooks.php';
 
 
 
-if ( file_exists( get_stylesheet_directory_uri() . '/premium/functions.php' ) ) {
+if ( file_exists( get_stylesheet_directory() . '/premium/functions.php' ) ) {
 	/**
 	 * Autoimport functionality included
 	 */
-	require get_stylesheet_directory_uri() . '/assets/autoimport/options-init.php';
+	require_once get_stylesheet_directory() . '/assets/autoimport/options-init.php';
 }
 
 
@@ -211,14 +211,14 @@ require 'inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	include get_stylesheet_directory_uri() . '/inc/jetpack.php';
+	require_once get_stylesheet_directory() . '/inc/jetpack.php';
 }
 
 /**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	include get_stylesheet_directory_uri() . '/inc/woocommerce.php';
+	require_once get_stylesheet_directory() . '/inc/woocommerce.php';
 }
 
 /**
