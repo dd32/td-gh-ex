@@ -17,13 +17,13 @@
                     <?php if ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-actual' ) : ?>
                         <img src="<?php echo get_the_post_thumbnail_url( $home_page_id ); ?>" />
                     <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-extra-small' ) : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_extra_small.gif" />
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_extra_small.gif" />
                     <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-small' ) : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_small.gif" />
                     <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-large' ) : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large.gif" />
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_large.gif" />
                     <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_medium.gif" />
                     <?php endif; ?>
                     
                 </div> <!-- .page-fimage-banner -->
@@ -86,11 +86,11 @@
                                 <?php endif; ?>
                                 
                                     <?php if ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-small' ) : ?>
-                                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_small.gif" />
                                     <?php elseif ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-large' ) : ?>
-                                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large.gif" />
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_large.gif" />
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_medium.gif" />
                                     <?php endif; ?>
                                     
                                     <?php if ( !get_theme_mod( 'avant-slider-remove-title', customizer_library_get_default( 'avant-slider-remove-title' ) ) ) : ?>
@@ -154,11 +154,11 @@
                     <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slider_default_01.jpg);">
                         
                         <?php if ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-small' ) : ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_small.gif" />
                         <?php elseif ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-large' ) : ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large.gif" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_large.gif" />
                         <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_medium.gif" />
                         <?php endif; ?>
                         
                         <?php if ( !get_theme_mod( 'avant-slider-remove-title', customizer_library_get_default( 'avant-slider-remove-title' ) ) ) : ?>

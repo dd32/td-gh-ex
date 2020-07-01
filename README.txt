@@ -39,11 +39,9 @@ Copyright 2017, Thomas Griffin, GNU GENERAL PUBLIC LICENSE, https://github.com/T
 Customizer Library v1.3.0, https://github.com/devinsays/customizer-library/
 Copyright 2015, Devin Price, The Theme Foundry, GPL-2.0+, https://github.com/devinsays/customizer-library/blob/master/customizer-library.php
 
-Images used from Pixabay are released under Creative Commons CC0, https://pixabay.com/
-Image in Screenshot.png: CCO by freephotocc, https://pixabay.com/en/fashion-glasses-go-pro-female-1478810/
-Image in Default Slider Demo, /images/demo/slider_default_01.jpg: CCO by freephotocc, https://pixabay.com/en/fashion-glasses-go-pro-female-1478810/
-Pixabay - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
-https://pixabay.com/en/service/terms/
+Image in Screenshot.png: CCO by Kristin Hardwick, https://stocksnap.io/photo/flatlay-camera-IOIY3BOPCV
+Image in Default Slider Demo, /images/demo/slider_default_01.jpg: CCO by Kristin Hardwick, https://stocksnap.io/photo/flatlay-camera-IOIY3BOPCV
+https://stocksnap.io/license/
 
 == Installation ==
 
@@ -67,6 +65,16 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1400 wide and 700 high.
 
 == Changelog ==
+
+#### 1.1.41
+* Style tweaks/fixes
+* Fix comments spacing with CSS
+* Changed help link to display only for admin
+* Updated theme images to use StockSnap.io images
+* Updated the screenshot.png
+* Updated the language .pot file
+* PREMIUM: NEW: Added new Ajax Load More posts button for Blog Pages
+* PREMIUM: NEW: Added new Ajax Load More posts on Scroll for Blog Pages / Infinity Scroll
 
 #### 1.1.40
 * Style tweaks/fixes

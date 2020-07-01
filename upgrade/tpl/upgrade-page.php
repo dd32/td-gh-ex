@@ -53,6 +53,16 @@
                 </div>
 
                 <div class="avant-upgrade-block">
+                    <div class="avant-upgrade-block-sliderimg-top">
+                        <h4><?php esc_html_e( 'Avant Premium offers AJAX load more for your blog', 'avant' ); ?></h4>
+                        <?php esc_html_e( 'Add an AJAX button to load more posts, or offer infinity scroll to load posts as your user scrolls', 'avant' ); ?>
+                    </div>
+                    <div class="avant-upgrade-block-sliderimg">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/upgrade/images/loadmore.jpg' ); ?>" alt="<?php esc_attr_e( 'Avant - AJAX Load More', 'avant' ); ?>" />
+                    </div>
+                </div>
+
+                <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
                         <?php esc_html_e( 'View the Avant Premium Demo, and try out all the settings neatly built into the Customizer', 'avant' ); ?>
                     </div>
@@ -63,7 +73,7 @@
                     </div>
                 </div>
                 
-                <div class="avant-upgrade-block avant-upgrade-block-alt">
+                <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
                         <?php esc_html_e( 'Download a working Child Theme for Avant', 'avant' ); ?><br />
                         <?php printf( __( 'Or learn more on creating/editing a <a href="%s" target="_blank">Child Theme</a>', 'avant' ) , 'https://codex.wordpress.org/Child_Themes' ); ?>
@@ -75,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="avant-upgrade-block">
+                <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
                         <?php esc_html_e( 'See what we suggest when building your website.', 'avant' ); ?><br />
                     </div>
@@ -86,7 +96,7 @@
                     </div>
                 </div>
                 
-                <div class="avant-upgrade-block avant-upgrade-block-alt">
+                <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
                         <?php esc_html_e( 'We have on-growing documentation on setting up your website with the Avant theme', 'avant' ); ?>
                     </div>
@@ -97,7 +107,7 @@
                     </div>
                 </div>
                 
-                <div class="avant-upgrade-block">
+                <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
                         <?php esc_html_e( 'Have you enjoyed using Avant?', 'avant' ); ?><br />
                         <?php printf( __( 'Please help by giving us a rating on WordPress.org :)', 'avant' ) , 'https://kairaweb.com/' ); ?>
@@ -190,10 +200,22 @@
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
 
             <ul>
+                <li class="upgrade-changelog-v">#### 1.1.41</li>
+                <li>Style tweaks/fixes</li>
+                <li>Fix comments spacing with CSS</li>
+                <li>Changed help link to display only for admin</li>
+                <li>Updated theme images to use StockSnap.io images</li>
+                <li>Updated the screenshot.png</li>
+                <li>Updated the language .pot file</li>
+                <li><span>PREMIUM: NEW:</span> Added new Ajax Load More posts button for Blog Pages</li>
+                <li><span>PREMIUM: NEW:</span> Added new Ajax Load More posts on Scroll for Blog Pages / Infinity Scroll</li>
+            </ul>
+
+            <ul>
                 <li class="upgrade-changelog-v">#### 1.1.40</li>
                 <li>Style tweaks/fixes</li>
                 <li>Mobile Navigation fix</li>
-                <li><span>Premium: FIX:</span> js error loading caroufredsel for NEW shortcode slider</li>
+                <li><span>PREMIUM: FIX:</span> js error loading caroufredsel for NEW shortcode slider</li>
             </ul>
 
             <ul>
@@ -222,8 +244,8 @@
                 <li>Added support & backwards compatibility for new wp_body_open hook</li>
                 <li>Change Skip Link Focus js to functions file, too small to load own file</li>
                 <li>Updated language .pot file</li>
-                <li><span>Premium: NEW</span> Added Full Site Loader to Avant - Customize -> Avant Theme Settings -> Site Layout</li>
-                <li><span>Premium: NEW</span> Customize design and loader icon of new Site Loader feature</li>
+                <li><span>PREMIUM: NEW</span> Added Full Site Loader to Avant - Customize -> Avant Theme Settings -> Site Layout</li>
+                <li><span>PREMIUM: NEW</span> Customize design and loader icon of new Site Loader feature</li>
             </ul>
 
             <ul>
@@ -238,8 +260,8 @@
                 <li>Style fixes/tweaks</li>
                 <li>Added Customizer note</li>
                 <li>Updated language .pot file</li>
-                <li><span>Premium:</span> Added Numberic Pagination for Blog List & search pages</li>
-                <li><span>Premium:</span> Added extra settings for new Numeric Pagination</li>
+                <li><span>PREMIUM:</span> Added Numberic Pagination for Blog List & search pages</li>
+                <li><span>PREMIUM:</span> Added extra settings for new Numeric Pagination</li>
             </ul>
 
             <ul>
@@ -255,7 +277,7 @@
                 <li>JS bug fix in WP Customizer</li>
                 <li>Remove old deprecated JS code</li>
                 <li>Updated language .pot file</li>
-                <li><span>Premium:</span> Added Spotify to theme Social Links</li>
+                <li><span>PREMIUM:</span> Added Spotify to theme Social Links</li>
             </ul>
 
             <ul>
@@ -264,7 +286,7 @@
                 <li>Added WooCustomizer as a recommended plugin in TGM</li>
                 <li>Fixed broken help links</li>
                 <li>Updated language .pot file</li>
-                <li><span>Premium:</span> Edited Page Layouts import functionlaity</li>
+                <li><span>PREMIUM:</span> Edited Page Layouts import functionlaity</li>
             </ul>
 
             <ul>
@@ -281,10 +303,10 @@
                 <li class="upgrade-changelog-v">#### 1.1.28</li>
                 <li>Style fixes/tweaks</li>
                 <li>Updated language .pot file</li>
-                <li><span>Premium:</span> Added Airbnb to Social Links</li>
-                <li><span>Premium:</span> Added Kickstarter to Social Links</li>
-                <li><span>Premium:</span> Added setting to show a single post author blocks</li>
-                <li><span>Premium:</span> Added settings to change the design of the author block</li>
+                <li><span>PREMIUM:</span> Added Airbnb to Social Links</li>
+                <li><span>PREMIUM:</span> Added Kickstarter to Social Links</li>
+                <li><span>PREMIUM:</span> Added setting to show a single post author blocks</li>
+                <li><span>PREMIUM:</span> Added settings to change the design of the author block</li>
             </ul>
 
             <p>See Readme.txt file for older changelogs</p>

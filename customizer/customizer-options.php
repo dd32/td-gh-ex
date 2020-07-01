@@ -554,6 +554,12 @@ function customizer_library_avant_options() {
         'type'    => 'text',
         'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br /><br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.<br /><br />Get the ID at <b>Posts -> Categories</b>.', 'avant' )
     );
+    $options['avant-note-pagination'] = array(
+        'id' => 'avant-note-pagination',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( '<b>NEW: Avant Pro Blog Pagination:</b><br />- Ajax Load New Posts with \'Load More\' button<br />- Ajax Load new posts as user Scrolls | Infinite Scroll<br />- Neat Numeric/Numbered Pagination', 'avant' )
+    );
 
     $options['avant-remove-blog-title'] = array(
         'id' => 'avant-remove-blog-title',
@@ -574,7 +580,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-blog',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Avant Proemium now includes a FREE slider plugin<br />- Change Blog Pagination to Numberic Pagination<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & archives to use post summary<br />- Extra summary settings<br />- Set custom Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling (Image or Post layouts)', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Avant Premium now includes a FREE slider plugin<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & archives to use post summary<br />- Extra summary settings<br />- Set custom Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling (Image or Post layouts)', 'avant' )
     );
 
     $section = 'avant-blog-section-post';

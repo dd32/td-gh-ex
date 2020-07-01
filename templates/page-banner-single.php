@@ -8,13 +8,13 @@ $single_page_id = get_the_ID(); ?>
         <?php if ( get_theme_mod( 'avant-single-page-fimage-size' ) == 'avant-single-page-fimage-size-actual' ) : ?>
             <?php the_post_thumbnail( 'full', $single_page_id ); ?>
         <?php elseif ( get_theme_mod( 'avant-single-page-fimage-size' ) == 'avant-single-page-fimage-size-extra-small' ) : ?>
-            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_extra_small.gif" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_extra_small.gif" />
         <?php elseif ( get_theme_mod( 'avant-single-page-fimage-size' ) == 'avant-single-page-fimage-size-small' ) : ?>
-            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_small.gif" />
         <?php elseif ( get_theme_mod( 'avant-single-page-fimage-size' ) == 'avant-single-page-fimage-size-large' ) : ?>
-            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large.gif" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_large.gif" />
         <?php else : ?>
-            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_medium.gif" />
         <?php endif; ?>
         
     </div> <!-- .page-fimage-banner -->

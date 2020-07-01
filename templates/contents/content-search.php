@@ -23,12 +23,12 @@
 						    <?php if ( has_post_thumbnail() ) : ?>
 						    	<img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID, $avant_image_cut ) ); ?>" alt="<?php the_title(); ?>" />
 						    <?php else : ?>
-					    		<img src="<?php echo get_template_directory_uri(); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
+					    		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
 					    	<?php endif; ?>
 					    	
 					    <?php else : ?>
 					    
-							<img src="<?php echo get_template_directory_uri(); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
 							
 						<?php endif; ?>
 					
@@ -94,12 +94,12 @@
 					    <?php if ( has_post_thumbnail() ) : ?>
 					    	<img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID, $avant_image_cut ) ); ?>" alt="<?php the_title(); ?>" />
 					    <?php else : ?>
-				    		<img src="<?php echo get_template_directory_uri(); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
+				    		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
 				    	<?php endif; ?>
 				    	
 				    <?php else : ?>
 				    
-						<img src="<?php echo get_template_directory_uri(); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
+						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/blank_blocks_img.png" alt="<?php the_title(); ?>" />
 						
 					<?php endif; ?>
 					

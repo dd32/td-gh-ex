@@ -10,7 +10,12 @@
 	            </ul>
 	        <?php else : ?>
 	        	<div class="site-footer-no-widgets">
-	        		<?php _e( 'Add your own widgets here', 'avant' ); ?>
+                    <?php
+                    if ( is_user_logged_in() ) :
+                        if ( current_user_can( 'administrator' ) ) :
+                            printf( __( 'Add your own <a href="%s">widgets here</a>', 'avant' ) , admin_url( 'widgets.php' ) );
+                        endif;
+                    endif; ?>
 	        	</div>
 	    	<?php endif; ?>
             <div class="clearboth"></div>

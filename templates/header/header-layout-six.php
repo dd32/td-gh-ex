@@ -57,7 +57,7 @@ global $woocommerce; ?>
 			<?php else : ?>
 			
 				<nav id="site-navigation" class="main-navigation avant-nav-style-plain <?php echo ( get_theme_mod( 'avant-header-nav-align' ) ) ? sanitize_html_class( get_theme_mod( 'avant-header-nav-align' ) ) : sanitize_html_class( 'avant-nav-align-right' ); ?>" role="navigation">
-					<button class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'avant-header-menu-text', __( 'menu', 'avant' ) ) ); ?></span></button>
+					<button class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_html( get_theme_mod( 'avant-header-menu-text', __( 'menu', 'avant' ) ) ); ?></span></button>
 					<div id="main-menu" class="main-menu-container">
                         <div class="main-menu-inner">
                             <button class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></button>
