@@ -74,8 +74,14 @@ if ( ! function_exists( 'accelerate_setup' ) ) :
 		// Supporting title tag via add_theme_support (since WordPress 4.1)
 		add_theme_support( 'title-tag' );
 
-		// Gutenberg layout support.
+		// Gutenberg align wide layout support.
 		add_theme_support( 'align-wide' );
+
+		// Gutenberg block layout support.
+		add_theme_support( 'wp-block-styles' );
+
+		// Gutenberg editor support.
+		add_theme_support( 'responsive-embeds' );
 
 		// Added WooCommerce support.
 		add_theme_support( 'woocommerce' );
@@ -180,7 +186,7 @@ define( 'ACCELERATE_ADMIN_JS_URL', ACCELERATE_ADMIN_URL . '/js' );
 define( 'ACCELERATE_ADMIN_CSS_URL', ACCELERATE_ADMIN_URL . '/css' );
 
 // Theme version.
-$accelerate_theme = wp_get_theme();
+$accelerate_theme = wp_get_theme('accelerate');
 define( 'ACCELERATE_THEME_VERSION', $accelerate_theme->get( 'Version' ) );
 
 
@@ -195,11 +201,12 @@ require_once( ACCELERATE_ADMIN_DIR . '/meta-boxes.php' );
 /** Load Widgets and Widgetized Area */
 require_once( ACCELERATE_WIDGETS_DIR . '/widgets.php' );
 
+
 /**
- * Load Demo Importer Configs.
+ * Add the Elementor compatibility file
  */
-if ( class_exists( 'TG_Demo_Importer' ) ) {
-	require get_template_directory() . '/inc/demo-config.php';
+if ( defined( 'ELEMENTOR_VERSION' ) ) {
+	require_once( ACCELERATE_INCLUDES_DIR . '/elementor/elementor.php' );
 }
 
 /**
@@ -215,6 +222,7 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-accelerate-admin.php';
 	require get_template_directory() . '/inc/admin/class-accelerate-tdi-notice.php';
 	require get_template_directory() . '/inc/admin/class-accelerate-dashboard.php';
+	require get_template_directory() . '/inc/admin/class-accelerate-theme-review-notice.php';
 }
 
 include_once ABSPATH . 'wp-admin/includes/plugin.php';
