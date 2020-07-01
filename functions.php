@@ -85,6 +85,7 @@ if (!function_exists('bappi_setup')) :
 		$args = array(
 			'default-image'      => '',
 			'width'              => 1000,
+			'default-text-color' => 'B2DF82',
 			'height'             => 125,
 			'flex-width'         => true,
 			'flex-height'        => true,
@@ -142,9 +143,11 @@ function bappi_widgets_init()
 add_action('widgets_init', 'bappi_widgets_init');
 
 // Load Dash Icon 
-add_action('wp_enqueue_scripts', function () {
+add_action('wp_enqueue_scripts', 'bappi_load_dashicon');
+function bappi_load_dashicon()
+{
 	wp_enqueue_style('dashicons');
-});
+}
 
 /**
  * Enqueue scripts and styles.
@@ -190,4 +193,4 @@ if (defined('JETPACK__VERSION')) {
 }
 
 // Handle Customizer settings.
-require get_template_directory() . '/classes/class-sparax-customizer.php';
+require get_template_directory() . '/classes/class-bappi-customizer.php';

@@ -41,7 +41,7 @@ class bappi_customize
                 'type'       => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
                 'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
                 'transport'  => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'sanitize_hex_color',
             )
         );
 
@@ -55,11 +55,6 @@ class bappi_customize
                 'priority'   => 9, //Determines the order this control appears in for the specified section
                 'section'    => 'colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
             )
-        ));
-        $wp_customize->add_setting('header_textcolor', array(
-            'default'   => '#B2DF82',
-            'transport' => 'postMessage',
-            'sanitize_callback' => 'esc_attr',
         ));
 
         $wp_customize->add_setting('show_header_center', array(

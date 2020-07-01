@@ -17,19 +17,7 @@
  *
  * @uses bappi_header_style()
  */
-// Header Image Support
-// function bappi_custom_header_setup()
-// {
-// 	add_theme_support('custom-header', apply_filters('bappi_custom_header_args', array(
-// 		'default-image'          => '',
-// 		'default-text-color'     => '000000',
-// 		'width'                  => 1000,
-// 		'height'                 => 250,
-// 		'flex-height'            => true,
-// 		'wp-head-callback'       => 'bappi_header_style',
-// 	)));
-// }
-// add_action('after_setup_theme', 'bappi_custom_header_setup');
+
 
 if (!function_exists('bappi_header_style')) :
 	/**
@@ -78,7 +66,7 @@ endif;
 
 function bappi_customize_css()
 {
-?>
+	?>
 	<style type="text/css">
 		/* Normal background color and text */
 		.main-navigation>div,

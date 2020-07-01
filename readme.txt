@@ -1,37 +1,51 @@
 === Bappi ===
-
 Contributors: b-07
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
+Tested up to: 5.3
 Requires at least: 4.5
-Tested up to: 5.4.1
 Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 == Description ==
 
-A simple hacker style theme.
-
-== Installation ==
-
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-bappi includes support for Infinite Scroll in Jetpack.
+Bappi is free theme for wordpress user. Its a theme who want to think different developer friendly environment. This theme has high visual appeal. So that everything will be very clear. Bappi is very net and clean theme.
 
 == Changelog ==
+= 1.0 =
+* Released: November 10, 2019
 
-= 1.0 - May 12 2015 =
-* Initial release
+Initial release
 
-== Credits ==
+== Copyright ==
 
-* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+Bappi WordPress Theme, Copyright 2019-2020 WordPress.org
+Bappi is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+
+Bappi bundles the following third-party resources:
+
+Image for theme screenshot, Copyright Jason Blackeye
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/4B83RD7BV9
+
+Code from Twenty Nineteen
+Copyright (c) 2018-2020 WordPress.org
+License: GPLv2
+Source: https://wordpress.org/themes/twentytwenty/
+Included a functions part called keepFocusInModal:
+- keepFocusInModal();
+
+Underscores 
+https://underscores.me/, (C) 2012-2019 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+

@@ -65,17 +65,21 @@
 
 
 						<nav id="site-navigation" class="main-navigation">
-							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+							<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 
 								<span class="dashicons dashicons-menu"></span>
 
 							</button>
+
+
+
 							<?php
 							wp_nav_menu(array(
 								'theme_location' => 'menu-1',
 								'menu_id'        => 'primary-menu',
 							));
 							?>
+
 						</nav><!-- #site-navigation -->
 					</div>
 				</div><!-- .site-branding -->
