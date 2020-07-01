@@ -338,7 +338,7 @@ function app_landing_page_single_post_schema() {
         $schema_type = ! empty( $custom_logo_id ) && has_post_thumbnail( $post->ID ) ? "BlogPosting" : "Blog";
 
         $args = array(
-            "@context"  => "http://schema.org",
+            "@context"  => "https://schema.org",
             "@type"     => $schema_type,
             "mainEntityOfPage" => array(
                 "@type" => "WebPage",

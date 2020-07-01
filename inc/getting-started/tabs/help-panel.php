@@ -28,7 +28,7 @@
     <div class="panel-aside">
         <h4><?php printf( esc_html__( 'View Our %1$s Demo', 'app-landing-page' ), APP_LANDING_PAGE_THEME_NAME ); ?></h4>
         <p><?php esc_html_e( 'Visit the demo to get more idea about our theme design and its features.', 'app-landing-page' ); ?></p>
-        <a class="button button-primary" href="<?php echo esc_url( 'https://demo.rarathemes.com/' . APP_LANDING_PAGE_THEME_TEXTDOMAIN . '/' ); ?>" title="<?php esc_attr_e( 'Visit the Demo', 'app-landing-page' ); ?>" target="_blank">
+        <a class="button button-primary" href="<?php echo esc_url( 'https://rarathemes.com/previews/?theme=' . APP_LANDING_PAGE_THEME_TEXTDOMAIN . '' ); ?>" title="<?php esc_attr_e( 'Visit the Demo', 'app-landing-page' ); ?>" target="_blank">
             <?php esc_html_e( 'View Demo', 'app-landing-page' ); ?>
         </a>
     </div><!-- .panel-aside -->

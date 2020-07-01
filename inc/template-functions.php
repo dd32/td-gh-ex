@@ -61,9 +61,9 @@ if( ! function_exists( 'app_landing_page_header_cb' ) ) :
 */
 function app_landing_page_header_cb(){
     ?>   
-    <header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
         <div class="container">
-            <div class="site-branding" itemscope itemtype="http://schema.org/Organization">
+            <div class="site-branding" itemscope itemtype="https://schema.org/Organization">
                 <?php 
                     if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
                         the_custom_logo();
@@ -93,7 +93,7 @@ function app_landing_page_header_cb(){
               <span></span>
             </div>
             
-            <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
             </nav><!-- #site-navigation -->
         </div>
@@ -119,12 +119,12 @@ function app_landing_page_breadcrumbs_cb() {
     $showCurrent = get_theme_mod( 'app_landing_page_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $delimiter   = get_theme_mod( 'app_landing_page_breadcrumb_separator', __( '>', 'app-landing-page' ) ); // delimiter between crumbs
     $home        = get_theme_mod( 'app_landing_page_breadcrumb_home_text', __( 'Home', 'app-landing-page' ) ); // text for the 'Home' link
-    $before      = '<span class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">'; // tag before the current crumb
+    $before      = '<span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">'; // tag before the current crumb
     $after       = '</span>'; // tag after the current crumb
       
     $depth = 1;  
     if( $ed_breadcrumb ){  
-      echo '<div id="crumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url() ) . '" class="home_crumb"><span itemprop="name">' . esc_html( $home ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+      echo '<div id="crumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url() ) . '" class="home_crumb"><span itemprop="name">' . esc_html( $home ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
           if( is_home() && ! is_front_page() ){            
               $depth = 2;
               if( $showCurrent ) echo $before . '<span itemprop="name">' . esc_html( single_post_title( '', false ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;          
@@ -133,7 +133,7 @@ function app_landing_page_breadcrumbs_cb() {
               $thisCat = get_category( get_query_var( 'cat' ), false );
               if( $show_front === 'page' && $post_page ){ //If static blog post page is set
                   $p = get_post( $post_page );
-                  echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_permalink( $post_page ) ) . '"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                  echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_permalink( $post_page ) ) . '"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                   $depth ++;  
               }
 
@@ -146,7 +146,7 @@ function app_landing_page_breadcrumbs_cb() {
                       if( is_object( $parent_obj ) ){
                           $term_url    = get_term_link( $parent_obj->term_id );
                           $term_name   = $parent_obj->name;
-                          echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                          echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                           $depth ++;
                       }
                   }
@@ -166,15 +166,15 @@ function app_landing_page_breadcrumbs_cb() {
               if( $showCurrent ) echo $before . '<span itemprop="name">' . esc_html( $userdata->display_name ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;  
           }elseif( is_day() ){            
               $depth = 2;
-              echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'app-landing-page' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'app-landing-page' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+              echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'app-landing-page' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'app-landing-page' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
               $depth ++;
-              echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'app-landing-page' ) ), get_the_time( __( 'm', 'app-landing-page' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'F', 'app-landing-page' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+              echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'app-landing-page' ) ), get_the_time( __( 'm', 'app-landing-page' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'F', 'app-landing-page' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
               $depth ++;
               if( $showCurrent ) echo $before .'<span itemprop="name">'. esc_html( get_the_time( __( 'd', 'app-landing-page' ) ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
                
           }elseif( is_month() ){            
               $depth = 2;
-              echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'app-landing-page' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'app-landing-page' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+              echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'app-landing-page' ) ) ) ) . '"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'app-landing-page' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
               $depth++;
               if( $showCurrent ) echo $before .'<span itemprop="name">'. esc_html( get_the_time( __( 'F', 'app-landing-page' ) ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;      
           }elseif( is_year() ){            
@@ -201,11 +201,11 @@ function app_landing_page_breadcrumbs_cb() {
                       foreach ( $ancestors as $ancestor ) {
                           $ancestor = get_term( $ancestor, 'product_cat' );    
                           if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-                              echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                              echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                               $depth++;
                           }
                       }
-                      echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_term_link( $main_term ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $main_term->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                      echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $main_term ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $main_term->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                   }
               
                   if( $showCurrent ) echo $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
@@ -218,7 +218,7 @@ function app_landing_page_breadcrumbs_cb() {
                   
                   if( $show_front === 'page' && $post_page ){ //If static blog post page is set
                       $p = get_post( $post_page );
-                      echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';  
+                      echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';  
                       $depth++;
                   }
                   
@@ -244,7 +244,7 @@ function app_landing_page_breadcrumbs_cb() {
                           if( is_object( $cat_obj ) ){
                               $term_url    = get_term_link( $cat_obj->term_id );
                               $term_name   = $cat_obj->name;
-                              echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                              echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="' . esc_url( $term_url ) . '"><span itemprop="name">' . esc_html( $term_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                               $depth ++;
                           }
                       }
@@ -268,7 +268,7 @@ function app_landing_page_breadcrumbs_cb() {
                   }
                   $breadcrumbs = array_reverse( $breadcrumbs );
                   for ( $i = 0; $i < count( $breadcrumbs); $i++ ){
-                      echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_permalink( $breadcrumbs[$i] ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_title( $breadcrumbs[$i] ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /></span>';
+                      echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $breadcrumbs[$i] ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_title( $breadcrumbs[$i] ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /></span>';
                       if ( $i != count( $breadcrumbs ) - 1 ) echo ' <span class="separator">' . esc_html( $delimiter ) . '</span> ';
                       $depth++;
                   }
@@ -299,7 +299,7 @@ function app_landing_page_breadcrumbs_cb() {
                   foreach ( $ancestors as $ancestor ) {
                       $ancestor = get_term( $ancestor, 'product_cat' );    
                       if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-                          echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
+                          echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                           $depth ++;
                       }
                   }
@@ -322,7 +322,7 @@ function app_landing_page_breadcrumbs_cb() {
               $depth = 2;
               $post_type = get_post_type_object(get_post_type());
               if( get_query_var('paged') ){
-                  echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_post_type_archive_link( $post_type->name ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $post_type->label ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" />';
+                  echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_post_type_archive_link( $post_type->name ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $post_type->label ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" />';
                   echo ' <span class="separator">' . $delimiter . '</span></span> ' . $before . sprintf( __('Page %s', 'app-landing-page'), get_query_var('paged') ) . $after;
               }elseif( is_archive() ){
                   echo $before .'<a itemprop="item" href="' . esc_url( get_post_type_archive_link( $post_type->name ) ) . '"><span itemprop="name">'. esc_html( $post_type->label ) .'</span></a><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
@@ -336,7 +336,7 @@ function app_landing_page_breadcrumbs_cb() {
               if( $cat ){
                   $cat = $cat[0];
                   echo get_category_parents( $cat, TRUE, ' <span class="separator">' . $delimiter . '</span> ');
-                  echo '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="' . esc_url( get_permalink( $parent ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $parent->post_title ) . '<span></a><meta itemprop="position" content="'. absint( $depth ).'" />' . ' <span class="separator">' . $delimiter . '</span></span>';
+                  echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $parent ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $parent->post_title ) . '<span></a><meta itemprop="position" content="'. absint( $depth ).'" />' . ' <span class="separator">' . $delimiter . '</span></span>';
               }
               if( $showCurrent ) echo $before .'<a itemprop="item" href="' . esc_url( get_the_permalink() ) . '"><span itemprop="name">'. esc_html( get_the_title() ) .'</span></a><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;   
           }elseif ( is_404() ){
@@ -574,7 +574,7 @@ if( ! function_exists( 'app_landing_page_footer_start' ) ) :
  * @since 1.0.1
 */
 function app_landing_page_footer_start(){
-    echo '<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">';
+    echo '<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">';
     echo '<div class="container">';
 }
 endif;

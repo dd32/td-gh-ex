@@ -1,17 +1,17 @@
 === App Landing Page ===
 
 Contributors: raratheme
-Requires at least: WordPress 4.7
+Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.4.1
-Stable tag: 1.1.4
+Tested up to: 5.4.2
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
 
 == Description ==
 
-App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://docs.rarathemes.com/docs/app-landing-page/
+App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://rarathemes.com/previews/?theme=app-landing-page and documentation at https://docs.rarathemes.com/docs/app-landing-page/
 
 == Installation ==
 	
@@ -205,6 +205,11 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
 == Change Log ==    
+    1.1.5
+    * Fixed schema issue
+    * Added tested up to and require php
+    * Changed demo link
+
     1.1.4
     * Fixed calendar widget design issue for WordPress 5.4.1.
     * Fixed menu accessibility.

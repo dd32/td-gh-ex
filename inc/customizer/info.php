@@ -20,7 +20,7 @@ function app_landing_page_customizer_theme_info( $wp_customize ) {
     
     $theme_info  = '';
 	$theme_info .= '<h3 class="sticky_title">' . __( 'Need help?', 'app-landing-page' ) . '</h3>';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View demo', 'app-landing-page' ) . ': </label><a href="' . esc_url( 'https://demo.rarathemes.com/app-landing-page/' ) . '" target="_blank">' . __( 'here', 'app-landing-page' ) . '</a></span><br />';
+    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View demo', 'app-landing-page' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/previews/?theme=app-landing-page' ) . '" target="_blank">' . __( 'here', 'app-landing-page' ) . '</a></span><br />';
 	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'View documentation', 'app-landing-page' ) . ': </label><a href="' . esc_url( 'https://docs.rarathemes.com/docs/app-landing-page/' ) . '" target="_blank">' . __( 'here', 'app-landing-page' ) . '</a></span><br />';
     $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Support ticket', 'app-landing-page' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/support-ticket/' ) . '" target="_blank">' . __( 'here', 'app-landing-page' ) . '</a></span><br />';
 	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Rate this theme', 'app-landing-page' ) . ': </label><a href="' . esc_url( 'https://wordpress.org/support/theme/app-landing-page/reviews/' ) . '" target="_blank">' . __( 'here', 'app-landing-page' ) . '</a></span><br />';
