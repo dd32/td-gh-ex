@@ -131,14 +131,13 @@
 /**
  * Remove activate button and replace with activation in progress button.
  *
- * @package Hestia
  */
 
 
 jQuery( document ).ready(
 	function ($) {
 		$( 'body' ).on(
-			'click', ' .hestia-install-plugin ', function () {
+			'click', ' .quality-install-plugin ', function () {
 				var slug = $( this ).attr( 'data-slug' );
 
 				wp.updates.installPlugin(

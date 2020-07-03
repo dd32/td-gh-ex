@@ -12,13 +12,13 @@
 		</div>
 			<?php } ?>
 <?php
-	$quality_pro_options=theme_data_setup(); 
+	$quality_pro_options=quality_theme_data_setup(); 
 	$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
 <div class="row">
 		<div class="col-md-12">
 			<div class="site-info">
 				<?php if($current_options['footer_copyright_text']!='') { ?>
-		<?php echo $current_options['footer_copyright_text']; } ?>
+		<?php echo wp_kses_post($current_options['footer_copyright_text']); } ?>
 			</div>
 		</div>			
 </div>

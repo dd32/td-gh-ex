@@ -95,7 +95,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'quality' ); ?></strong></p>
-		<p><?php esc_html_e( 'We provide good knowledge-base articles to help you create effective websites. You can visit these articles through our', 'quality' ); ?><a href="http://webriti.com/help/category/themes/quality/" target="_blank"><?php esc_html_e('Help Section', 'quality'); ?></a></p>
+                <p><?php esc_html_e( 'We provide good knowledge-base articles to help you create effective websites. You can visit these articles through our', 'quality' ); ?><a href="<?php echo esc_url('http://webriti.com/help/category/themes/quality/') ?>" target="_blank"><?php esc_html_e('Help Section', 'quality'); ?></a></p>
 		<hr>
 	</div>
 	</div>

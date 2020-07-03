@@ -1,4 +1,14 @@
 == Changelog ==
+
+@Version 2.6
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Declared all the licenses.
+3. Changed the screenshot image.
+4. Fixed all the other issues.
+
+@Version 2.5.1
+1. Remove custom-header code from functions.php file.
+
 @Version 2.5
 1. Remove Site favicon setting from Header setting in customizer.
 2. Move Header logo setting from Header settings to Site identity.
@@ -10,16 +20,16 @@
 2. Add breadcrumb section in 404 page.
 
 @Version 2.4
-Remove Lock Icons and Create list of features mentioned in View PRO details tab.
+1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 
 @Version 2.3.2.1
-Added upgrade to pro link in missing pro settings.
+1. Added upgrade to pro link in missing pro settings.
 
 @Version 2.3.2
-Added the customizer selective refresh for the footer copyright.
+1. Added the customizer selective refresh for the footer copyright.
 
 @Version 2.3.1
-Corrected Sanitization issue
+1. Corrected Sanitization issue
 
 @version 2.3
 1. Remove duplicate post title on single view.
@@ -175,7 +185,7 @@ Corrected Sanitization issue
 3. Add HTML Sanitization copyright and blog section.
 
 @Version 1.2
-customizer added
+1. customizer added
 
 @version 1.1
 1. All social links initialised with the # value.

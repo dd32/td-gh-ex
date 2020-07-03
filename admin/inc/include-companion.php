@@ -5,8 +5,8 @@
  *
  */
 
-$hide_install = get_option('quality_hide_customizer_companion_notice', false);
-if (!function_exists('webriti_companion') && !$hide_install) {
+$quality_hide_install = get_option('quality_hide_customizer_companion_notice', false);
+if (!function_exists('webriti_companion') && !$quality_hide_install) {
 	if (class_exists('WP_Customize_Section') && !class_exists('Quality_Companion_Installer_Section')) {
 		/**
 		 * Recommend the installation of Quality Companion using a custom section.
@@ -42,7 +42,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 						'installing' => esc_html__('Installing', 'quality'),
 						'activating' => esc_html__('Activating', 'quality'),
 						'error'      => esc_html__('Error', 'quality'),
-						'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+						'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 					)
 				);
 			}
@@ -78,7 +78,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 						$plugin_install_url = wp_nonce_url($plugin_install_url, 'install-plugin_webriti-companion');
 					 ?>
 						<p><?php esc_html_e('Webriti Companion plugin is required to take advantage of this theme\'s features in the customizer.', 'quality');?></p>
-						<a class="webriti-plugin-install install-now button-secondary button" data-slug="webriti-companion" href="<?php echo esc_url_raw($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install Webriti Companion Now', 'quality');?>" data-name="<?php esc_attr_e('Webriti Companion', 'quality'); ?>">
+						<a class="webriti-plugin-install install-now button-secondary button" data-slug="webriti-companion" href="<?php echo esc_url($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install Webriti Companion Now', 'quality');?>" data-name="<?php esc_attr_e('Webriti Companion', 'quality'); ?>">
 							<?php esc_html_e('Install & Activate', 'quality');?>
 						</a>
 					<?php else: ?>
@@ -95,7 +95,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 							);
 						?>
 						<p><?php esc_html_e('You have installed Webriti Companion Plugin. Activate it to take advantage of this theme\'s features in the customizer.', 'quality');?></p>
-						<a class="webriti-plugin-activate activate-now button-primary button" data-slug="webriti-companion" href="<?php echo esc_url_raw($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate Webriti Companion now', 'quality');?>" data-name="<?php esc_attr_e('Webriti Companion', 'quality'); ?>">
+						<a class="webriti-plugin-activate activate-now button-primary button" data-slug="webriti-companion" href="<?php echo esc_url($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate Webriti Companion now', 'quality');?>" data-name="<?php esc_attr_e('Webriti Companion', 'quality'); ?>">
 							<?php esc_html_e('Activate Now', 'quality');?>
 						</a>
 					<?php endif;?>

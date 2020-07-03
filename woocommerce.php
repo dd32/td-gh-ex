@@ -18,4 +18,4 @@ get_header(); quality_breadcrumbs();
 </section>
 <!-- /Blog Section with Sidebar -->
 <?php 
-get_footer(); ?>
+get_footer();

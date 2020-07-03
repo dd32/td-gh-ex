@@ -19,10 +19,10 @@ class Quality_Customizer_Notify_Section extends WP_Customize_Section {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-			$needs = is_plugin_active( $slug . '/' . $slug . '.php' ) ? 'deactivate' : 'activate';
+                        $needs = function_exists( 'webriti_companion_activate' ) ? 'deactivate' : 'activate';
 
 			return array(
-				'status' => is_plugin_active( $slug . '/' . $slug . '.php' ),
+				'status' => function_exists( 'webriti_companion_activate' ),
 				'needs'  => $needs,
 			);
 		}

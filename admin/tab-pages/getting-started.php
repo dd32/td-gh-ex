@@ -46,7 +46,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="quality-tab-pane-half quality-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/quality.png'; ?>" alt="<?php esc_html_e( 'Quality Theme', 'quality' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/quality.png'; ?>" alt="<?php esc_attr_e( 'Quality Theme', 'quality' ); ?>" />
 				</div>
 			</div>	
 		</div>
@@ -58,21 +58,21 @@ $customizer_url = admin_url() . 'customize.php' ;
                 <div class="quality-tab-pane-half quality-tab-pane-first-half">
                     <a href="<?php echo esc_url('https://demo.webriti.com/?theme=Quality'); ?>" target="_blank"  class="info-block">
                     	<div class="dashicons dashicons-desktop info-icon"></div>
-                    	<p class="info-text"><?php echo __('Lite Demo','quality'); ?></p>
+                    	<p class="info-text"><?php echo esc_html__('Lite Demo','quality'); ?></p>
                 	</a>
                     <a href="<?php echo esc_url('https://demo.webriti.com/?theme=Quality%20Pro'); ?>" target="_blank"  class="info-block">
                     	<div class="dashicons dashicons-book-alt info-icon"></div>
-                    	<p class="info-text"><?php echo __('PRO Demo','quality'); ?></p>
+                    	<p class="info-text"><?php echo esc_html__('PRO Demo','quality'); ?></p>
                     </a>        
                 </div>
                 <div class="quality-tab-pane-half quality-tab-pane-first-half">
                     <a href="<?php echo esc_url('https://wordpress.org/support/view/theme-reviews/quality'); ?>" target="_blank"  class="info-block">
                     	<div class="dashicons dashicons-smiley info-icon"></div>
-                    	<p class="info-text"><?php echo __('Your feedback is valuable to us','quality'); ?></p>
+                    	<p class="info-text"><?php echo esc_html__('Your feedback is valuable to us','quality'); ?></p>
                     </a>
                     <a href="<?php echo esc_url('https://webriti.com/quality/'); ?>" target="_blank"  class="info-block">
                     	<div class="dashicons dashicons-book-alt info-icon"></div>
-                    	<p class="info-text"><?php echo __('Premium Theme Details','quality'); ?></p>
+                    	<p class="info-text"><?php echo esc_html__('Premium Theme Details','quality'); ?></p>
                     </a>
                 </div>
             </div>        

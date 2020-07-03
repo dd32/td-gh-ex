@@ -114,4 +114,3 @@ quality_breadcrumbs();
 
 <?php
 get_footer();
-?>

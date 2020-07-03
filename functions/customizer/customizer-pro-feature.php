@@ -1,6 +1,6 @@
 <?php //Pro Details
 function quality_pro_feature_customizer( $wp_customize ) {
-class WP_Pro__Feature_Customize_Control extends WP_Customize_Control {
+class Quality_Pro__Feature_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';
     /**
     * Render the control's content.
@@ -10,66 +10,66 @@ class WP_Pro__Feature_Customize_Control extends WP_Customize_Control {
     <div class="quality-pro-features-customizer">
     <ul class="quality-pro-features">
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Advance Theme Style Settings','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Advance Theme Style Settings','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Slider Settings','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Slider Settings','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Portfolio Management','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Portfolio Management','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Testimonial Section','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Testimonial Section','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Team Section','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Team Section','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Client Section','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Client Section','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Shop Section','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Shop Section','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Footer Callout Section','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Footer Callout Section','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Section Reordering','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Section Reordering','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Multiple Page Templates','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Multiple Page Templates','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Typography Settings','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Typography Settings','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Support for WPML / Polylang','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Support for WPML / Polylang','quality' ); ?>
         </li>
         <li>
-            <span class="quality-pro-label"><?php _e( 'PRO','quality' ); ?></span>
-            <?php _e( 'Quality Support','quality' ); ?>
+            <span class="quality-pro-label"><?php esc_html_e( 'PRO','quality' ); ?></span>
+            <?php esc_html_e( 'Quality Support','quality' ); ?>
         </li>
     </ul>
-    <a target="_blank" href="<?php echo 'https://webriti.com/quality/';?>" class="quality-pro-button button-primary"><?php _e( 'UPGRADE TO PRO','quality' ); ?></a>
+    <a target="_blank" href="<?php echo esc_url('https://webriti.com/quality/');?>" class="quality-pro-button button-primary"><?php esc_html_e( 'UPGRADE TO PRO','quality' ); ?></a>
     <hr>
 </div>
     <?php
     }
 }
 $wp_customize->add_section( 'quality_pro_feature_section' , array(
-		'title'      => __('View PRO Details', 'quality'),
+		'title'      => esc_html__('View PRO Details', 'quality'),
 		'priority'   => 1,
    	) );
 
@@ -80,12 +80,12 @@ $wp_customize->add_setting(
 		'sanitize_callback' => 'sanitize_text_field',
     )	
 );
-$wp_customize->add_control( new WP_Pro__Feature_Customize_Control( $wp_customize, 'upgrade_pro_feature', array(
+$wp_customize->add_control( new Quality_Pro__Feature_Customize_Control( $wp_customize, 'upgrade_pro_feature', array(
 		'section' => 'quality_pro_feature_section',
 		'setting' => 'upgrade_pro_feature',
     ))
 );
-class WP_Feature_document_Customize_Control extends WP_Customize_Control {
+class Quality_Feature_document_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';
     /**
     * Render the control's content.
@@ -96,34 +96,34 @@ class WP_Feature_document_Customize_Control extends WP_Customize_Control {
      <div class="quality-pro-content">
         <ul class="quality-pro-des">
             <li> 
-                <?php _e('Select among predefined color skins, you can even create yours without writing any CSS code.','quality');?>
+                <?php esc_html_e('Select among predefined color skins, you can even create yours without writing any CSS code.','quality');?>
             </li>
             <li> 
-                <?php _e('Pro version theme comes with add multiple slides in slider and you can select the slider enable / disable option, slider animation etc.','quality');?>
+                <?php esc_html_e('Pro version theme comes with add multiple slides in slider and you can select the slider enable / disable option, slider animation etc.','quality');?>
             </li>
             <li> 
-                <?php _e('Portfolio section, templates , archives with 3 possible layouts.','quality');?>
+                <?php esc_html_e('Portfolio section, templates , archives with 3 possible layouts.','quality');?>
             </li>
             <li> 
-                <?php _e('Show all your testimonials, team members, clients and Shop products on the frontpage.','quality');?>
+                <?php esc_html_e('Show all your testimonials, team members, clients and Shop products on the frontpage.','quality');?>
             </li>
             <li> 
-                <?php _e('Pro version theme comes with footer callout section, In this section you can manage the section and button setting.','quality');?>
+                <?php esc_html_e('Pro version theme comes with footer callout section, In this section you can manage the section and button setting.','quality');?>
             </li>
             <li> 
-                <?php _e('Theme Layout manager will helps you to rearrange the sections.','quality');?>
+                <?php esc_html_e('Theme Layout manager will helps you to rearrange the sections.','quality');?>
             </li>
             <li> 
-                <?php _e('Theme comes with multiple page settings like about us, service, contact etc.','quality');?>
+                <?php esc_html_e('Theme comes with multiple page settings like about us, service, contact etc.','quality');?>
             </li>
             <li> 
-                <?php _e('Typography will helps you to manage custom fonts like paragraph font, menu font etc.','quality');?>
+                <?php esc_html_e('Typography will helps you to manage custom fonts like paragraph font, menu font etc.','quality');?>
             </li>
             <li> 
-                <?php _e('Translation ready supporting popular plugins WPML / Polylang.','quality');?>
+                <?php esc_html_e('Translation ready supporting popular plugins WPML / Polylang.','quality');?>
             </li>
             <li> 
-                <?php _e('Dedicated support, various widget and sidebar management.','quality');?>
+                <?php esc_html_e('Dedicated support, various widget and sidebar management.','quality');?>
             </li>
         </ul>
      </div>
@@ -138,7 +138,7 @@ $wp_customize->add_setting(
 		'sanitize_callback' => 'sanitize_text_field',
     )	
 );
-$wp_customize->add_control( new WP_Feature_document_Customize_Control( $wp_customize, 'doc_Review_feature', array(	
+$wp_customize->add_control( new Quality_Feature_document_Customize_Control( $wp_customize, 'doc_Review_feature', array(	
 		'section' => 'quality_pro_feature_section',
 		'setting' => 'doc_Review_feature',
     ))
@@ -146,4 +146,3 @@ $wp_customize->add_control( new WP_Feature_document_Customize_Control( $wp_custo
 
 }
 add_action( 'customize_register', 'quality_pro_feature_customizer' );
-?>

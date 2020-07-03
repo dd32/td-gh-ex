@@ -29,4 +29,4 @@ quality_breadcrumbs();
 </section>
 	<!-- /News & Sidebar Section ---->	
 <?php 
-get_footer(); ?>
+get_footer();

@@ -35,4 +35,3 @@ quality_breadcrumbs(); ?>
 </section>
 <?php 
 get_footer();
-?>

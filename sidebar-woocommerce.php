@@ -2,8 +2,7 @@
 /**
  * side bar template
  *
- * @package WordPress
- * @subpackage Spicepress
+ * @subpackage Webriti
  */
 ?>
 <?php if ( is_active_sidebar( 'woocommerce' ) ): ?>

@@ -4,9 +4,9 @@ function quality_widgets_init() {
 		
 /*sidebar*/
 register_sidebar( array(
-		'name' => __('Sidebar widget area', 'quality' ),
+		'name' => esc_html__('Sidebar widget area', 'quality' ),
 		'id' => 'sidebar-primary',
-		'description' => __('Sidebar widget area', 'quality' ),
+		'description' => esc_html__('Sidebar widget area', 'quality' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -14,9 +14,9 @@ register_sidebar( array(
 	) );
 	
 register_sidebar( array(
-		'name' => __('Footer widget area', 'quality' ),
+		'name' => esc_html__('Footer widget area', 'quality' ),
 		'id' => 'footer-widget-area',
-		'description' => __('Footer widget area', 'quality' ),
+		'description' => esc_html__('Footer widget area', 'quality' ),
 		'before_widget' => '<div class="col-md-3"><aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside></div>',
 		'before_title' => '<h4 class="widget-title">',
@@ -24,13 +24,12 @@ register_sidebar( array(
 	) );
 	
 	register_sidebar( array(
-	'name' => __('WooCommerce sidebar widget area', 'quality' ),
+	'name' => esc_html__('WooCommerce sidebar widget area', 'quality' ),
 	'id' => 'woocommerce',
-	'description' => __( 'WooCommerce sidebar widget area', 'quality' ),
+	'description' => esc_html__( 'WooCommerce sidebar widget area', 'quality' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h4 class="widget-title">',
 	'after_title' => '</h4>',
 	) );
-}	                     
-?>
+}

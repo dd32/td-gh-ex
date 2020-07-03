@@ -12,8 +12,8 @@ quality_breadcrumbs(); ?>
 				<?php endwhile; ?>
 				<?php else : ?>
 					
-				<h2><?php esc_attr_e('Nothing Found', 'quality'); ?></h2>
-				<p><?php esc_attr_e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.','quality'); ?></p>
+				<h2><?php esc_html_e('Nothing Found', 'quality'); ?></h2>
+				<p><?php esc_html_e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.','quality'); ?></p>
 				<div class="paginations">
 					<!-- Pagination -->			
 					<?php
@@ -34,4 +34,4 @@ quality_breadcrumbs(); ?>
 		</div>
 	</div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

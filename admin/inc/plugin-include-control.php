@@ -40,7 +40,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Quality_Plugin_Instal
 					'installing' => esc_html__('Installing', 'quality'),
 					'activating' => esc_html__('Activating', 'quality'),
 					'error'      => esc_html__('Error', 'quality'),
-					'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+					'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 				)
 			);
 		}
@@ -56,8 +56,8 @@ if (class_exists('WP_Customize_Control') && !class_exists('Quality_Plugin_Instal
 				return;
 			}
 			
-			$hide_install = get_option('quality_hide_customizer_notice_'.$this->slug,  false);
-			if($hide_install){
+			$quality_hide_install_this = get_option('quality_hide_customizer_notice_'.$this->slug,  false);
+			if($quality_hide_install_this){
 				return;
 			}
 
@@ -65,23 +65,19 @@ if (class_exists('WP_Customize_Control') && !class_exists('Quality_Plugin_Instal
 			if(!is_object($quality_about_page)){
 				return;
 			}
-			
-			$path = $quality_about_page->get_plugin_basename_from_slug($this->slug);
-			if($quality_about_page->is_plugin_active($path)){
-				return;
-			}
-			?>
+
+                        ?>
 			<div class="webriti-plugin-install-control">
 				<span class="webriti-customizer-notification-dismiss" id="<?php echo esc_attr($this->slug); ?>-install-dismiss" data-slug="<?php echo esc_attr($this->slug); ?>"> <i class="fa fa-times"></i></span>
 				<?php if ( ! empty( $this->label ) ) : ?>
 		            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		        <?php endif; ?>
 		        <?php if ( ! empty( $this->description ) ) : ?>
-		            <span class="description customize-control-description"><?php echo $this->description ; ?></span>
+		            <span class="description customize-control-description"><?php echo wp_kses_post($this->description) ; ?></span>
 		        <?php endif; ?>
 				<?php 
 					$button = $webriti_about_page->get_plugin_buttion($this->slug, $this->name);
-					echo $button['button'];
+					echo wp_kese_post($button['button']);
 				?>
 				<div style="clear: both;"></div>
 			</div>
@@ -90,7 +86,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Quality_Plugin_Instal
 	}
 }
 
-function webriti_hide_customizer_notice(){
+function quality_hide_customizer_notice(){
 	if(isset($_POST['webriti_plugin_slug']) && !empty($_POST['webriti_plugin_slug'])){
 		$plugin_slug = sanitize_text_field($_POST['webriti_plugin_slug']);
 		update_option('webriti_hide_customizer_notice_'.$plugin_slug, true);
@@ -98,4 +94,4 @@ function webriti_hide_customizer_notice(){
 	}
 	wp_die();
 }
-add_action('wp_ajax_webriti_hide_customizer_notice', 'webriti_hide_customizer_notice');
+add_action('wp_ajax_webriti_hide_customizer_notice', 'quality_hide_customizer_notice');

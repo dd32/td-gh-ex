@@ -167,7 +167,7 @@
     border-left: 2px solid #ebebeb;
 	text-align:center;
 }
-}
+
 .quality-fre-pro table th {
     padding-bottom: 30px;
 	font-size:19px;
@@ -250,7 +250,7 @@
 
 /*Breakpoints*/
 
-}
+
 @media (max-width: 782px) {
   #github.quality-tab-pane .quality-tab-pane-half hr {
     display:block;

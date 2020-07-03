@@ -4,17 +4,17 @@
 ?>
 <div id="recommended_actions" class="quality-tab-pane panel-close">
 	<div class="action-list">
-		<?php if($actions): foreach ($actions as $key => $action): ?>
-		<div class="action" id="<?php echo esc_attr($action['id']); ?>">
+		<?php if($actions): foreach ($actions as $key => $actionValue): ?>
+		<div class="action" id="<?php echo esc_attr($actionValue['id']); ?>">
 			<div class="recommended_box col-md-6 col-sm-6 col-xs-12">
-				<img width="772" height="180" src="<?php echo QUALITY_TEMPLATE_DIR_URI.'/images/'.str_replace(' ', '-', strtolower($action['title'])).'.png';?>">
+				<img width="772" height="180" src="<?php echo esc_url(QUALITY_TEMPLATE_DIR_URI).'/images/'.str_replace(' ', '-', strtolower($actionValue['title'])).'.png';?>">
 				<div class="action-inner">
-					<h3 class="action-title"><?php echo esc_html($action['title']); ?></h3>
-					<div class="action-desc"><?php echo wp_kses_post($action['desc']); ?></div>
-					<?php echo $action['link']; ?>
+					<h3 class="action-title"><?php echo esc_html($actionValue['title']); ?></h3>
+					<div class="action-desc"><?php echo esc_html ($actionValue['desc']); ?></div>
+					<?php echo $actionValue['link']; ?>
 					<div class="action-watch">
-						<?php if(!$action['is_done']): ?>
-							<?php if(!isset($actions_todo[$action['id']]) || !$actions_todo[$action['id']]): ?>
+						<?php if(!$actionValue['is_done']): ?>
+							<?php if(!isset($actions_todo[$actionValue['id']]) || !$actions_todo[$actionValue['id']]): ?>
 								<span class="dashicons dashicons-visibility"></span>
 							<?php else: ?>
 								<span class="dashicons dashicons-hidden"></span>

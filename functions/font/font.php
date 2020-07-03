@@ -24,4 +24,3 @@ function quality_scripts_styles() {
     wp_enqueue_style( 'quality-fonts', quality_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'quality_scripts_styles' );
-?>
