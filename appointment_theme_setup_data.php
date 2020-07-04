@@ -6,7 +6,7 @@ function appointment_theme_setup_data()
 	'upload_image_favicon' => '',
 	'header_one_name' => '' ,
 	'header_one_text' => '' ,
-	'text_title' => 0 ,
+	'text_title' => 1 ,
 	'height' => '50',
 	'width' => '50',
 	'enable_header_logo_text' => '',

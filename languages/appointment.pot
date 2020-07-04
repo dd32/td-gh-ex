@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment\n"
-"POT-Creation-Date: 2020-06-20 15:25+0530\n"
+"POT-Creation-Date: 2020-07-04 14:33+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -678,7 +678,7 @@ msgstr ""
 msgid "Category Archive"
 msgstr ""
 
-#: child_theme_compatible.php:47 functions/breadcrumbs/breadcrumbs.php:6
+#: child_theme_compatible.php:26 functions/breadcrumbs/breadcrumbs.php:6
 #: functions/menu/default_menu_walker.php:20 index-banner.php:19
 msgid "Home"
 msgstr ""
@@ -1202,15 +1202,15 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:16 functions.php:194 functions.php:210
+#: content.php:16 functions.php:195 functions.php:211
 msgid "Read More"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:119
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:169 functions/breadcrumbs/breadcrumbs.php:102
+#: functions.php:170 functions/breadcrumbs/breadcrumbs.php:102
 #: functions/breadcrumbs/breadcrumbs.php:108
 msgid "Page"
 msgstr ""
@@ -1259,18 +1259,18 @@ msgstr ""
 #: functions/customizer/customizer-copyright.php:216
 #: functions/customizer/customizer-copyright.php:251
 #: functions/customizer/customizer-header.php:75
-#: functions/customizer/customizer-header.php:114
-#: functions/customizer/customizer-header.php:150
+#: functions/customizer/customizer-header.php:113
+#: functions/customizer/customizer-header.php:148
 msgid "Open link in new tab"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:130
-#: functions/customizer/customizer-header.php:96
+#: functions/customizer/customizer-header.php:95
 msgid "Twitter URL"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:164
-#: functions/customizer/customizer-header.php:132
+#: functions/customizer/customizer-header.php:130
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -1282,21 +1282,16 @@ msgstr ""
 msgid "Skype URL"
 msgstr ""
 
-#: functions/customizer/customizer-header.php:8
+#: functions/customizer/customizer-header.php:9
 msgid "Header settings"
 msgstr ""
 
-#: functions/customizer/customizer-header.php:16
+#: functions/customizer/customizer-header.php:17
 msgid "Social links"
 msgstr ""
 
-#: functions/customizer/customizer-header.php:36
+#: functions/customizer/customizer-header.php:37
 msgid "Hide Header Social icons"
-msgstr ""
-
-#: functions/customizer/customizer-header.php:156
-#: functions/customizer/customizer-header.php:169
-msgid "Custom CSS"
 msgstr ""
 
 #: functions/customizer/customizer-news.php:9
@@ -1543,7 +1538,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:73
+#: header.php:75
 msgid "Toggle navigation"
 msgstr ""
 

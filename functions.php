@@ -26,6 +26,7 @@ require( APPOINTMENT_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_
 
 require_once APPOINTMENT_TEMPLATE_DIR . '/class-tgm-plugin-activation.php';
 require_once('child_theme_compatible.php');
+require_once('appointment_theme_setup_data.php');
 
 add_action('tgmpa_register', 'appointment_register_required_plugins');
 
@@ -110,7 +111,7 @@ function appointment_setup() {
         'height' => 50,
         'width' => 200,
         'flex-width' => true,
-        'header-text' => array( 'site-title', 'site-description' ),
+        'header-text' => array('site-title', 'site-description'),
             )
     );
     add_theme_support('post-thumbnails'); //supports featured image
@@ -235,9 +236,20 @@ add_action('pt-ocdi/after_import', 'appointment_after_import_setup');
 
 if (!function_exists('wp_body_open')) {
 
-            function wp_body_open() {
-                do_action('wp_body_open');
-            }
+    function wp_body_open() {
+        do_action('wp_body_open');
+    }
 
-        }
-?>
+}
+
+//Custom CSS compatibility
+$appointment_options = appointment_theme_setup_data();
+$appointment_current_options = wp_parse_args(get_option('appointment_options', array()), $appointment_options);
+if ($appointment_current_options['webrit_custom_css'] != '' && $appointment_current_options['webrit_custom_css'] != 'nomorenow') {
+    $css = '';
+    $css .= $appointment_current_options['webrit_custom_css'];
+    $css .= (string) wp_get_custom_css(get_stylesheet());
+    $appointment_current_options['webrit_custom_css'] = 'nomorenow';
+    update_option('appointment_options', $appointment_current_options);
+    wp_update_custom_css_post($css, array());
+}

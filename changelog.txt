@@ -1,4 +1,7 @@
 == Changelog ==
+@Version 2.8.2
+1. Added additional CSS box of core WordPress.
+2. Fixed logo backward compatibility issue.
 @Version 2.8.1
 1. Added child themes compatibility for existing users.
 @Version 2.8

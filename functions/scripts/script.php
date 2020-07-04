@@ -33,20 +33,6 @@ function appointment_custmizer_style() {
 
 add_action('customize_controls_print_styles', 'appointment_custmizer_style');
 
-add_action('wp_head', 'appointment_head_enqueue_custom_css');
-
-function appointment_head_enqueue_custom_css() {
-    $appointment_options = appointment_theme_setup_data();
-    $custom_css = wp_parse_args(get_option('appointment_options', array()), $appointment_options);
-    if ($custom_css['webrit_custom_css'] != '') {
-        ?>
-        <style>
-        <?php echo $custom_css['webrit_custom_css']; ?>
-        </style>
-        <?php
-    }
-}
-
 // define the customize_controls_enqueue_scripts callback
 function appointment_custom_customize_enqueue() {
     wp_enqueue_script('appointment_custom-customize', APPOINTMENT_TEMPLATE_DIR_URI . '/js/custom.customize.js', array('jquery', 'customize-controls'), true);

@@ -1,30 +1,9 @@
 <?php 
 function theme_setup_data()
   	{
-	return $appointment_options=array(
-	//Header Settings
-	'upload_image_favicon' => '',
-	'header_one_name' => '' ,
-	'header_one_text' => '' ,
-	'text_title' => 0 ,
-	'height' => '50',
-	'width' => '50',
-	'enable_header_logo_text' => '',
-	'upload_image_logo' => '',
-	'social_media_facebook_link' => '#',
-	'social_media_twitter_link' => '#',
-	'social_media_linkedin_link' => '#',
-	'header_social_media_enabled' => 0,
-	'facebook_media_enabled' => 1,
-	'twitter_media_enabled' => 1,
-	'linkedin_media_enabled' => 1,
-	'webrit_custom_css' => '',
-	);
+	return $appointment_options=appointment_theme_setup_data();
   	}
-  
   ?>
-
-  
 <?php
   // code for default_menu_walker.php 
 function appointment_page_menu_args1($args) {

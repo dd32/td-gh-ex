@@ -24,7 +24,8 @@
                 <div class="navbar-header">
 
                     <?php
-                    if (!has_custom_logo()) {
+                    
+                    if (!has_custom_logo() && $header_setting['enable_header_logo_text'] != 'nomorenow') {
                         $logo = $header_setting['upload_image_logo'];
                         $logo_id = attachment_url_to_postid($logo);
                         $logo_alt = get_post_meta($logo_id, '_wp_attachment_image_alt', true);
@@ -45,13 +46,15 @@
                              }
                          } else {
                              if ($header_setting['enable_header_logo_text'] != 'nomorenow') {
-                                 $header_setting['appointment_options']['enable_header_logo_text'] = 'nomorenow';
+                                 $header_setting['enable_header_logo_text'] = 'nomorenow';
                                  update_option('appointment_options', $header_setting);
                              }
 
                              the_custom_logo();
                              ?>
-                        <div class="site-branding-text logo-link-url">
+                        
+                    <?php } ?>
+                            <div class="site-branding-text logo-link-url">
 
                             <h1 class="site-title" style="margin: 0px;" ><a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home" >
 
@@ -68,7 +71,6 @@
                                 <p class="site-description"><?php echo $appointment_description; ?></p>
                             <?php endif; ?>
                         </div>
-                    <?php } ?>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only"><?php esc_html_e('Toggle navigation', 'appointment'); ?></span>
                         <span class="icon-bar"></span>

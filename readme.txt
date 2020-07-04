@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 2.8.1
+Stable tag: 2.8.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ Appointment WordPress Theme, Copyright (C) 2019, Webriti
 Appointment Pro is distributed under the terms of the GNU GPL
 
 == Changelog ==
+@Version 2.8.2
+1. Added additional CSS box of core WordPress.
+2. Fixed logo backward compatibility issue.
 @Version 2.8.1
 1. Added child themes compatibility for existing users.
 @Version 2.8
