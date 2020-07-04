@@ -4,7 +4,7 @@
  * @package Automobile Car Dealer
  */
 ?>
-    <?php if( get_theme_mod( 'automobile_car_dealer_hide_show_scroll',true) != '') { ?>
+    <?php if( get_theme_mod( 'automobile_car_dealer_hide_show_scroll', true) != '' || get_theme_mod( 'automobile_car_dealer_display_scrolltop', true) != '') { ?>
         <?php $automobile_car_dealer_theme_lay = get_theme_mod( 'automobile_car_dealer_footer_options','Right');
         if($automobile_car_dealer_theme_lay == 'Left align'){ ?>
             <a href="#" id="scrollbutton" class="left"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>

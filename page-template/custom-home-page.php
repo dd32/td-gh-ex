@@ -8,7 +8,7 @@ get_header(); ?>
 <main id="skip_content" role="main">
   <?php do_action( 'automobile_car_dealer_above_slider' ); ?>
 
-  <?php if( get_theme_mod('automobile_car_dealer_slider_hide',true) != ''){ ?>
+  <?php if( get_theme_mod('automobile_car_dealer_slider_hide',false) != '' || get_theme_mod( 'automobile_car_dealer_display_slider',false) != ''){ ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
         <?php $automobile_car_dealer_slider_page = array();
@@ -34,13 +34,15 @@ get_header(); ?>
                 <?php the_post_thumbnail(); ?>
                 <div class="carousel-caption">
                   <div class="inner_carousel">
-                    <h1><?php esc_html(the_title()); ?></h1>
+                    <h1><?php the_title(); ?></h1>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_slider_excerpt_number','30')))); ?></p>
-                    <?php if( get_theme_mod('automobile_car_dealer_slider_button_text','READ MORE') != ''){ ?>
-                      <div class="slide-button">
-                        <a class="read-more" href="<?php esc_url(the_permalink()); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_button_icon','fas fa-long-arrow-alt-right')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?></span></a>
-                      </div> 
-                    <?php }?>   
+                    <?php if (get_theme_mod( 'automobile_car_dealer_show_slider_button',true) != '' || get_theme_mod( 'automobile_car_dealer_display_slider_button',true) != ''){ ?>
+                      <?php if( get_theme_mod('automobile_car_dealer_slider_button_text','READ MORE') != ''){ ?>
+                        <div class="slide-button">
+                          <a class="read-more" href="<?php the_permalink(); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_button_icon','fas fa-long-arrow-alt-right')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?></span></a>
+                        </div> 
+                      <?php }?>  
+                    <?php } ?>
                   </div>
                 </div>
               </div>
@@ -83,7 +85,7 @@ get_header(); ?>
               while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="mainbox">
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_about_excerpt_number','25')))); ?></p>
-                  <a href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                 </div>
               <?php endwhile; 
             wp_reset_postdata();?>
@@ -104,7 +106,7 @@ get_header(); ?>
                     <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                   </div>
                   <div class="col-md-8 col-sm-8">
-                    <h3><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h3>
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_category_excerpt_number','15')))); ?></p>
                   </div>
                 </div>

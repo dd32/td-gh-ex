@@ -63,6 +63,31 @@ add_action( 'after_setup_theme', 'automobile_car_dealer_setup' );
     }
 }
 
+function automobile_car_dealer_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
+function automobile_car_dealer_sanitize_email( $email, $setting ) {
+	$email = sanitize_email( $email );
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function automobile_car_dealer_sanitize_select( $input, $setting ) {
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+function automobile_car_dealer_sanitize_checkbox( $input ) {
+	// Boolean check 
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
 /* Theme Widgets Setup */
 function automobile_car_dealer_widgets_init() {
 	register_sidebar( array(

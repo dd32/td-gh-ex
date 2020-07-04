@@ -9,26 +9,26 @@ jQuery(function($){
 });
 
 function automobile_car_dealer_responsive_menu_open() {
-	window.mobileMenu=true;
+	window.automobile_car_dealer_mobileMenu=true;
 	jQuery(".menu-brand").addClass('show');
 }
 function automobile_car_dealer_responsive_menu_close() {
-	window.mobileMenu=false;
+	window.automobile_car_dealer_mobileMenu=false;
 	jQuery(".menu-brand").removeClass('show');
 }
 
 jQuery(document).ready(function () {
 
-	window.currentfocus=null;
+	window.automobile_car_dealer_currentfocus=null;
   	automobile_car_dealer_checkfocusdElement();
-	var body = document.querySelector('body');
-	body.addEventListener('keyup', automobile_car_dealer_check_tab_press);
-	var gotoHome = false;
-	var gotoClose = false;
-	window.mobileMenu=false;
+	var automobile_car_dealer_body = document.querySelector('body');
+	automobile_car_dealer_body.addEventListener('keyup', automobile_car_dealer_check_tab_press);
+	var automobile_car_dealer_gotoHome = false;
+	var automobile_car_dealer_gotoClose = false;
+	window.automobile_car_dealer_mobileMenu=false;
  	function automobile_car_dealer_checkfocusdElement(){
-	 	if(window.currentfocus=document.activeElement.className){
-		 	window.currentfocus=document.activeElement.className;
+	 	if(window.automobile_car_dealer_currentfocus=document.activeElement.className){
+		 	window.automobile_car_dealer_currentfocus=document.activeElement.className;
 	 	}
  	}
 	function automobile_car_dealer_check_tab_press(e) {
@@ -39,21 +39,21 @@ jQuery(document).ready(function () {
 
 		if(window.innerWidth < 999){
 			if (e.keyCode == 9) {
-				if(window.mobileMenu){
+				if(window.automobile_car_dealer_mobileMenu){
 					if (!e.shiftKey) {
-						if(gotoHome) {
+						if(automobile_car_dealer_gotoHome) {
 							jQuery( "#navbar-header input.search-field" ).focus();
 						}
 					}
 					if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
-						gotoHome = true;
+						automobile_car_dealer_gotoHome = true;
 					} else {
-						gotoHome = false;
+						automobile_car_dealer_gotoHome = false;
 					}
 
 			}else{
 
-					if(window.currentfocus=="mobiletoggle"){
+					if(window.automobile_car_dealer_currentfocus=="mobiletoggle"){
 						jQuery( "" ).focus();
 					}
 				}
@@ -61,22 +61,22 @@ jQuery(document).ready(function () {
 		}
 		if (e.shiftKey && e.keyCode == 9) {
 			if(window.innerWidth < 999){
-				if(window.currentfocus=="header-search"){
+				if(window.automobile_car_dealer_currentfocus=="header-search"){
 					jQuery(".mobiletoggle").focus();
 				}else{
-					if(window.mobileMenu){
-						if(gotoClose){
+					if(window.automobile_car_dealer_mobileMenu){
+						if(automobile_car_dealer_gotoClose){
 							jQuery("a.closebtn.responsive-menu").focus();
 						}
 						if (jQuery( "#navbar-header input.search-field" ).is(":focus")) {
-							gotoClose = true;
+							automobile_car_dealer_gotoClose = true;
 						} else {
-							gotoClose = false;
+							automobile_car_dealer_gotoClose = false;
 					}
 				
 				}else{
 
-					if(window.mobileMenu){
+					if(window.automobile_car_dealer_mobileMenu){
 					}
 				}
 

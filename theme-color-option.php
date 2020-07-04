@@ -226,3 +226,102 @@
 	$automobile_car_dealer_custom_css .='.primary-navigation a{';
 		$automobile_car_dealer_custom_css .='font-size: '.esc_html($automobile_car_dealer_menu_font_size_option).'px;';
 	$automobile_car_dealer_custom_css .='}';
+
+	// Responsive Media
+	$automobile_car_dealer_slider = get_theme_mod( 'automobile_car_dealer_display_slider',false);
+	if($automobile_car_dealer_slider == true && get_theme_mod( 'automobile_car_dealer_slider_hide', false) == false){
+    	$automobile_car_dealer_custom_css .='#slider{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} ';
+	}
+    if($automobile_car_dealer_slider == true){
+    	$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='#slider{';
+			$automobile_car_dealer_custom_css .='display:block;';
+		$automobile_car_dealer_custom_css .='} }';
+	}else if($automobile_car_dealer_slider == false){
+		$automobile_car_dealer_custom_css .='@media screen and (max-width:575px){';
+		$automobile_car_dealer_custom_css .='#slider{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} }';
+	}
+
+	$automobile_car_dealer_sliderbutton = get_theme_mod( 'automobile_car_dealer_display_slider_button',true);
+	if($automobile_car_dealer_sliderbutton == true && get_theme_mod( 'automobile_car_dealer_show_slider_button',true) != true){
+    	$automobile_car_dealer_custom_css .='.slide-button{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} ';
+	}
+    if($automobile_car_dealer_sliderbutton == true){
+    	$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='.slide-button{';
+			$automobile_car_dealer_custom_css .='display:block;';
+		$automobile_car_dealer_custom_css .='} }';
+	}else if($automobile_car_dealer_sliderbutton == false){
+		$automobile_car_dealer_custom_css .='@media screen and (max-width:575px){';
+		$automobile_car_dealer_custom_css .='.slide-button{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} }';
+	}
+
+	$automobile_car_dealer_sidebar = get_theme_mod( 'automobile_car_dealer_display_sidebar',true);
+    if($automobile_car_dealer_sidebar == true){
+    	$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='#sidebar{';
+			$automobile_car_dealer_custom_css .='display:block;';
+		$automobile_car_dealer_custom_css .='} }';
+	}else if($automobile_car_dealer_sidebar == false){
+		$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='#sidebar{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} }';
+	}
+
+	$automobile_car_dealer_scroll = get_theme_mod( 'automobile_car_dealer_display_scrolltop', true);
+	if($automobile_car_dealer_scroll == true && get_theme_mod( 'automobile_car_dealer_hide_show_scroll',true) != true){
+    	$automobile_car_dealer_custom_css .='#scrollbutton i{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} ';
+	}
+    if($automobile_car_dealer_scroll == true){
+    	$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='#scrollbutton i{';
+			$automobile_car_dealer_custom_css .='display:block;';
+		$automobile_car_dealer_custom_css .='} }';
+	}else if($automobile_car_dealer_scroll == false){
+		$automobile_car_dealer_custom_css .='@media screen and (max-width:575px){';
+		$automobile_car_dealer_custom_css .='#scrollbutton i{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} }';
+	}
+
+	$automobile_car_dealer_preloader = get_theme_mod( 'automobile_car_dealer_display_preloader',true);
+	if($automobile_car_dealer_preloader == true && get_theme_mod( 'automobile_car_dealer_preloader',true) != true){
+    	$automobile_car_dealer_custom_css .='.frame{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} ';
+	}
+    if($automobile_car_dealer_preloader == true){
+    	$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='.frame{';
+			$automobile_car_dealer_custom_css .='display:block;';
+		$automobile_car_dealer_custom_css .='} }';
+	}else if($automobile_car_dealer_preloader == false){
+		$automobile_car_dealer_custom_css .='@media screen and (max-width:575px){';
+		$automobile_car_dealer_custom_css .='.frame{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} }';
+	}
+
+	$automobile_car_dealer_fixed_header = get_theme_mod( 'automobile_car_dealer_display_fixed_header',true);
+    if($automobile_car_dealer_fixed_header == true){
+    	$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='.fixed-header{';
+			$automobile_car_dealer_custom_css .='display:block;';
+		$automobile_car_dealer_custom_css .='} }';
+	}else if($automobile_car_dealer_fixed_header == false){
+		$automobile_car_dealer_custom_css .='@media screen and (max-width:575px) {';
+		$automobile_car_dealer_custom_css .='.fixed-header{';
+			$automobile_car_dealer_custom_css .='display:none;';
+		$automobile_car_dealer_custom_css .='} }';
+	}

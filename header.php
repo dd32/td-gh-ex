@@ -17,7 +17,7 @@
   } else { 
     do_action( 'wp_body_open' ); 
   } ?>
-  <?php if(get_theme_mod('automobile_car_dealer_preloader',true)){ ?>
+  <?php if(get_theme_mod('automobile_car_dealer_preloader',true) != '' || get_theme_mod( 'automobile_car_dealer_display_preloader',true) != ''){ ?>
     <div class="frame">
       <div class="loader">
         <div class="dot-1"></div>
@@ -57,7 +57,7 @@
                 <?php }?>
               <?php endif; ?>      
             </div>
-            <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+            <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_display_fixed_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
               <button role="tab" onclick="automobile_car_dealer_responsive_menu_open()" class="mobiletoggle"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
               </button>
             </div>

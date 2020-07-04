@@ -636,281 +636,317 @@ msgstr ""
 msgid "Show / Hide slider"
 msgstr ""
 
-#: inc/customizer.php:946
+#: inc/customizer.php:944
+msgid "Show / Hide Slider Button"
+msgstr ""
+
+#: inc/customizer.php:956
 msgid "Select Slide Image Page"
 msgstr ""
 
-#: inc/customizer.php:958
+#: inc/customizer.php:968
 msgid "Slider Previous Icon"
 msgstr ""
 
-#: inc/customizer.php:970
+#: inc/customizer.php:980
 msgid "Slider Next Icon"
 msgstr ""
 
-#: inc/customizer.php:982
+#: inc/customizer.php:992
 msgid "Slider Button Icon"
 msgstr ""
 
-#: inc/customizer.php:989
+#: inc/customizer.php:999
+msgid "READ MORE"
+msgstr ""
+
+#: inc/customizer.php:1003
 msgid "Slider Button Text"
 msgstr ""
 
-#: inc/customizer.php:1000
-#: inc/customizer.php:1008
+#: inc/customizer.php:1010
+#: inc/customizer.php:1018
 msgid "Center"
 msgstr ""
 
-#: inc/customizer.php:1005
+#: inc/customizer.php:1015
 msgid "Slider Content Layout"
 msgstr ""
 
-#: inc/customizer.php:1009
+#: inc/customizer.php:1019
 msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:1010
+#: inc/customizer.php:1020
 msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:1023
+#: inc/customizer.php:1033
 msgid "Slider Content Limit"
 msgstr ""
 
-#: inc/customizer.php:1040
+#: inc/customizer.php:1050
 msgid "Slider Image Opacity"
 msgstr ""
 
-#: inc/customizer.php:1060
+#: inc/customizer.php:1070
 msgid "Our Project Section"
 msgstr ""
 
-#: inc/customizer.php:1061
+#: inc/customizer.php:1071
 msgid "Add Our Project sections below."
 msgstr ""
 
-#: inc/customizer.php:1070
+#: inc/customizer.php:1080
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:1090
+#: inc/customizer.php:1100
 msgid "Select post"
 msgstr ""
 
-#: inc/customizer.php:1113
+#: inc/customizer.php:1123
 msgid "Select Category to display Latest Post"
 msgstr ""
 
-#: inc/customizer.php:1126
+#: inc/customizer.php:1136
 msgid "Project Content Limit"
 msgstr ""
 
-#: inc/customizer.php:1146
+#: inc/customizer.php:1156
 msgid "Category Content Limit"
 msgstr ""
 
-#: inc/customizer.php:1159
+#: inc/customizer.php:1169
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:1168
+#: inc/customizer.php:1178
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/customizer.php:1177
+#: inc/customizer.php:1187
 msgid "Footer Background Image"
 msgstr ""
 
-#: inc/customizer.php:1187
+#: inc/customizer.php:1197
 msgid "Footer widget area"
 msgstr ""
 
-#: inc/customizer.php:1189
+#: inc/customizer.php:1199
 msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets"
 msgstr ""
 
-#: inc/customizer.php:1191
+#: inc/customizer.php:1201
 msgid "One"
 msgstr ""
 
-#: inc/customizer.php:1192
+#: inc/customizer.php:1202
 msgid "Two"
 msgstr ""
 
-#: inc/customizer.php:1193
+#: inc/customizer.php:1203
 msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:1194
+#: inc/customizer.php:1204
 msgid "Four"
 msgstr ""
 
-#: inc/customizer.php:1204
+#: inc/customizer.php:1214
 msgid "Enable / Disable Back To Top"
 msgstr ""
 
-#: inc/customizer.php:1214
+#: inc/customizer.php:1224
 msgid "Back to Top Icon"
 msgstr ""
 
-#: inc/customizer.php:1226
+#: inc/customizer.php:1236
 msgid "Back To Top Icon Font Size"
 msgstr ""
 
-#: inc/customizer.php:1236
-#: inc/customizer.php:1245
+#: inc/customizer.php:1246
+#: inc/customizer.php:1255
 msgid "Right align"
 msgstr ""
 
-#: inc/customizer.php:1241
+#: inc/customizer.php:1251
 msgid "Back To Top"
 msgstr ""
 
-#: inc/customizer.php:1244
+#: inc/customizer.php:1254
 msgid "Left align"
 msgstr ""
 
-#: inc/customizer.php:1246
+#: inc/customizer.php:1256
 msgid "Center align"
 msgstr ""
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1266
 msgid "Top Bottom Scroll Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1271
+#: inc/customizer.php:1281
 msgid "Left Right Scroll Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1296
 msgid "Back to Top Border Radius (px)"
 msgstr ""
 
-#: inc/customizer.php:1300
+#: inc/customizer.php:1310
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:1302
+#: inc/customizer.php:1312
 msgid "Add some text for footer like copyright etc."
 msgstr ""
 
-#: inc/customizer.php:1308
-msgid "404 Page Not Found / No Result"
+#: inc/customizer.php:1318
+msgid "Responsive Media"
 msgstr ""
 
-#: inc/customizer.php:1313
-msgid "404 Not Found"
+#: inc/customizer.php:1328
+msgid "Display Slider"
 msgstr ""
 
-#: inc/customizer.php:1317
-msgid "404 Heading"
-msgstr ""
-
-#: inc/customizer.php:1323
-msgid "Looks like you have taken a wrong turn. Dont worry it happens to the best of us."
-msgstr ""
-
-#: inc/customizer.php:1327
-msgid "404 Content"
-msgstr ""
-
-#: inc/customizer.php:1333
-msgid "Back to Home Page"
-msgstr ""
-
-#: inc/customizer.php:1337
-msgid "404 Button"
-msgstr ""
-
-#: inc/customizer.php:1343
-msgid "Nothing Found"
-msgstr ""
-
-#: inc/customizer.php:1347
-msgid "No Search Results Heading"
+#: inc/customizer.php:1338
+msgid "Display Slider Button"
 msgstr ""
 
 #: inc/customizer.php:1348
-msgid "The search page heading display when no results are found."
-msgstr ""
-
-#: inc/customizer.php:1354
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid "Display Sidebar"
 msgstr ""
 
 #: inc/customizer.php:1358
-msgid "No Search Results Text"
+msgid "Display Scroll To Top"
 msgstr ""
 
-#: inc/customizer.php:1359
-msgid "The search page text display when no results are found."
-msgstr ""
-
-#: inc/customizer.php:1366
-msgid "Woocommerce Settings"
-msgstr ""
-
-#: inc/customizer.php:1367
-msgid "The below settings are apply on woocommerce pages."
+#: inc/customizer.php:1368
+msgid "Display Sticky Header"
 msgstr ""
 
 #: inc/customizer.php:1378
-msgid "Product per columns"
+msgid "Display Preloader"
 msgstr ""
 
-#: inc/customizer.php:1394
-msgid "Product per page"
+#: inc/customizer.php:1384
+msgid "404 Page Not Found / No Result"
 msgstr ""
 
-#: inc/customizer.php:1405
-msgid "Enable / Disable shop page sidebar"
+#: inc/customizer.php:1389
+msgid "404 Not Found"
 msgstr ""
 
-#: inc/customizer.php:1415
-msgid "Enable / Disable product page sidebar"
+#: inc/customizer.php:1393
+msgid "404 Heading"
 msgstr ""
 
-#: inc/customizer.php:1425
-msgid "Enable / Disable Related product"
+#: inc/customizer.php:1399
+msgid "Looks like you have taken a wrong turn. Dont worry it happens to the best of us."
+msgstr ""
+
+#: inc/customizer.php:1403
+msgid "404 Content"
+msgstr ""
+
+#: inc/customizer.php:1409
+msgid "Back to Home Page"
+msgstr ""
+
+#: inc/customizer.php:1413
+msgid "404 Button"
+msgstr ""
+
+#: inc/customizer.php:1419
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/customizer.php:1423
+msgid "No Search Results Heading"
+msgstr ""
+
+#: inc/customizer.php:1424
+msgid "The search page heading display when no results are found."
+msgstr ""
+
+#: inc/customizer.php:1430
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: inc/customizer.php:1434
+msgid "No Search Results Text"
 msgstr ""
 
 #: inc/customizer.php:1435
+msgid "The search page text display when no results are found."
+msgstr ""
+
+#: inc/customizer.php:1442
+msgid "Woocommerce Settings"
+msgstr ""
+
+#: inc/customizer.php:1443
+msgid "The below settings are apply on woocommerce pages."
+msgstr ""
+
+#: inc/customizer.php:1454
+msgid "Product per columns"
+msgstr ""
+
+#: inc/customizer.php:1470
+msgid "Product per page"
+msgstr ""
+
+#: inc/customizer.php:1481
+msgid "Enable / Disable shop page sidebar"
+msgstr ""
+
+#: inc/customizer.php:1491
+msgid "Enable / Disable product page sidebar"
+msgstr ""
+
+#: inc/customizer.php:1501
+msgid "Enable / Disable Related product"
+msgstr ""
+
+#: inc/customizer.php:1511
 msgid "Button Top Bottom Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1450
+#: inc/customizer.php:1526
 msgid "Button Right Left Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1465
+#: inc/customizer.php:1541
 msgid "Button Border Radius (px)"
 msgstr ""
 
-#: inc/customizer.php:1480
+#: inc/customizer.php:1556
 msgid "Enable / Disable product border"
 msgstr ""
 
-#: inc/customizer.php:1490
+#: inc/customizer.php:1566
 msgid "Product Top Bottom Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1505
+#: inc/customizer.php:1581
 msgid "Product Right Left Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1520
+#: inc/customizer.php:1596
 msgid "Product Border Radius (px)"
 msgstr ""
 
-#: inc/customizer.php:1535
+#: inc/customizer.php:1611
 msgid "Product Box Shadow (px)"
 msgstr ""
 
-#: inc/customizer.php:1622
+#: inc/customizer.php:1698
 msgid "Automobile Pro"
 msgstr ""
 
-#: inc/customizer.php:1623
+#: inc/customizer.php:1699
 msgid "Go Pro"
 msgstr ""
 
