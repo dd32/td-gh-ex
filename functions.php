@@ -437,6 +437,7 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
 
                         $cat_id     = absint($cat_id);
                         $term       = get_term_by( 'id', $cat_id, 'product_cat' );
+                        if( ! is_wp_error($term) ){
                         $cat_name   = $term->name;
                         $cat_count  = $term->count;
 
@@ -447,7 +448,7 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
                                 <?php echo esc_html($cat_name); ?> <span><?php echo absint($cat_count);?></span>
                             </a>
                         </li>
-                <?php } 
+                <?php }} 
                 endif;
                 ?>
                
@@ -503,7 +504,7 @@ if( ! function_exists('arrival_store_mob_nav')){
 */
 add_filter( 'body_class', 'arrival_store_body_class' );
 if(! function_exists('arrival_store_body_class')){
-    function arrival_store_body_class(){
+    function arrival_store_body_class($classes){
         $classes[] = 'arrival-store-main';
         
         return $classes;

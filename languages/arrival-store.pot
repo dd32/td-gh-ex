@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arrival Store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-29 13:29+0000\n"
+"POT-Creation-Date: 2020-07-04 15:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.0; wp-5.4.1"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
 
 #: functions.php:145
 msgid "All Categories"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Categories Title"
 msgstr ""
 
-#: functions.php:477
+#: functions.php:478
 msgid "Close Menu"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Middle Header Text"
 msgstr ""
 
-#: functions.php:471
+#: functions.php:472
 msgid "Mobile Menu"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:523
+#: functions.php:524
 msgid "Primary"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 msgid "Select categories to display on header"
 msgstr ""
 
-#: functions.php:525
+#: functions.php:526
 msgid "Shop Additional Menus"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Text for top header left"
 msgstr ""
 
-#: functions.php:524
+#: functions.php:525
 msgid "Top"
 msgstr ""
 

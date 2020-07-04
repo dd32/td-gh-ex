@@ -1,3 +1,6 @@
+=== v1.0.5 ===
+- Minor bugs fixed
+
 === v1.0.4 ===
 - Added translation options for default header texts
 - Added option to select categories for shop header
