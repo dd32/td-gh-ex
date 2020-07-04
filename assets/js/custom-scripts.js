@@ -63,6 +63,12 @@ jQuery(document).ready(function ($) {
      
     $('.site-header').toggleClass('toggled-on');
     $('body').toggleClass('toggled-modal');
+
+    if( $(this).hasClass('close-wrapp') ){
+        arrivalElFocus('.mob-outer-wrapp .toggle-wrapp');
+    }else{
+        arrivalElFocus('.toggle.close-wrapp.toggle-wrapp');
+    }
    
  });
 
@@ -123,6 +129,16 @@ if( 'yes' == smoothScrollEnable ){
 }
 
 
+// Elements to focus after modals are closed.
+function arrivalElFocus(focusElement){
+     var _doc = document;
+     setTimeout( function() {
+
+    focusElement = _doc.querySelector( focusElement );
+    focusElement.focus();
+
+    }, 200 );
+}
 
 
 arrivalFocusTab();

@@ -9,9 +9,8 @@
 
 $default  = arrival_get_default_theme_options();
 
-$_single_post_sidebars = get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
 
-if ( ! is_active_sidebar( 'sidebar-1' )  || ($_single_post_sidebars == 'no_sidebar') ) {
+if ( ! is_active_sidebar( 'sidebar-1' )  &&  ! is_active_sidebar( 'sidebar-2' ) ) {
         return;
 }else{
 	get_sidebar('right');

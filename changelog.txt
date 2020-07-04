@@ -1,3 +1,7 @@
+=== v1.3.6 ===
+- Refined keyboard navigation
+- Fixed WooCommerce sidebar issue
+
 === v1.3.5 ===
 - Fixed parallax scrolling menus on mobile devices
 - Fixed minor responsive issues
