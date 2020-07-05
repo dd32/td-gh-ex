@@ -4154,6 +4154,17 @@ $jsonfonts = <<<FONTS
   },
   {
    
+   "family": "Jost",
+   "category": "display",
+   "variants": [
+    "300",
+    "400",
+    "600",
+    "800"
+   ]
+  },
+  {
+   
    "family": "Joti One",
    "category": "display",
    "variants": [
@@ -8016,6 +8027,16 @@ $jsonfonts = <<<FONTS
    "category": "handwriting",
    "variants": [
     "400"
+   ]
+  },
+  {
+   
+   "family": "Sen",
+   "category": "handwriting",
+   "variants": [
+    "400", 
+    "700", 
+    "800"
    ]
   },
   {

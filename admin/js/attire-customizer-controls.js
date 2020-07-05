@@ -28,5 +28,11 @@
         $('<br><hr/>').insertBefore('li#customize-control-body_font span.customize-control-title');
         $('<br><hr/>').insertBefore('li#customize-control-widget_content_font span.customize-control-title');
         $('<br><hr/>').insertBefore('li#customize-control-menu_dropdown_font span.customize-control-title');
+
+        $('body').on('hove', '#_customize-input-heading_font', function () {
+            $('#_customize-input-heading_font').chosen();
+        });
+
+
     });
 })(jQuery);
