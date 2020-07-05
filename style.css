@@ -1,7 +1,7 @@
 /*
 Theme Name: Minamaze
 Text Domain: minamaze
-Version: 1.7.5
+Version: 1.7.6
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
@@ -1807,7 +1807,7 @@ color: #FFF;
 ----------------------------------------------------------------------------- */
 #notification {
 	position: relative;
-	z-index:999999;
+	z-index: 99999;
 	width: 100%;
 	margin: 0 auto;
 	background: #364BE6;
