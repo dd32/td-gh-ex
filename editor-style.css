@@ -353,8 +353,17 @@ object {
 	display: block;
 	margin: 0 auto;
 }
+
 .wp-caption-text,
-.wp-block-image figcaption {
+.wp-block-image figcaption,
+.blocks-gallery-caption,
+.wp-block-embed figcaption {
+	text-align: center;
+	margin: 16px 0;
+	color: inherit;
+	line-height: inherit;
+	font-size: 16px;
+}
 	text-align: center;
 	margin: 16px 0;
 	color: inherit;
@@ -425,6 +434,15 @@ a:hover,
 a:focus,
 a:active {
 	color: #2c12ed;
+	text-decoration: none;
+}
+
+
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
 	text-decoration: none;
 }
 

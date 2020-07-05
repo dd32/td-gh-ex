@@ -276,7 +276,7 @@ function arbutus_scripts() {
 
 	wp_enqueue_script( 'arbutus-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery', 'jquery-masonry' ), '20160717', true );
 
-	wp_enqueue_script( 'arbutus-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20200507', true );
+	wp_enqueue_script( 'arbutus-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20200616', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

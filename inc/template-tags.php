@@ -193,7 +193,7 @@ function arbutus_gallery_excerpt() {
 			'<span class="screen-reader-text">' . esc_html( get_the_title() ) .
 			' </span><span class="meta-nav" aria-hidden="true"> &rarr;</span>' );
 	} else {
-		$title = esc_html( get_the_title() ) . '<span class="meta-nav" aria-hidden="true" aria-hidden="true">&rarr;</span>';
+		$title = esc_html( get_the_title() ) . '<span class="meta-nav" aria-hidden="true">&rarr;</span>';
 	}
 	echo '<li class="gallery-excerpt-item"><a href="' . esc_url( get_the_permalink() ) . '" class="excerpt-more button" rel="bookmark">' . $title . '</a></li>';
 	echo '</ul>';
@@ -243,7 +243,7 @@ function arbutus_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Paging navigation', 'arbutus' ); ?>">
+	<nav class="navigation paging-navigation" role="navigation" aria-label="<?php esc_attr( _x( 'Paging', 'paging navigation', 'arbutus' ) ); ?>">
 		<div class="inner">
 			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
@@ -276,7 +276,7 @@ function arbutus_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Post navigation', 'arbutus' ); ?>">
+	<nav class="navigation post-navigation" role="navigation" aria-label="<?php esc_attr( _x( 'Post', 'post navigation', 'arbutus' ) ); ?>">
 		<div class="inner">
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
@@ -371,6 +371,10 @@ add_action( 'save_post',     'arbutus_category_transient_flusher' );
 function arbutus_footer_credits() {
 	$sep_span = '<span class="sep" role="separator" aria-hidden="true"> | </span>';
 	?>&copy <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="footer-copy-name"><?php echo esc_html( get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ) ); ?></a>
+	<?php if ( '' !== get_privacy_policy_url() ) { ?>
+		<span class="privacy-policy">
+			<?php echo $sep_span; the_privacy_policy_link(); ?>
+		</span>
 	<?php if( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
 		<span class="wordpress-credit" <?php if ( ! get_theme_mod( 'powered_by_wp', true ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
 			<?php echo $sep_span; ?><a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'arbutus' ), 'WordPress' ); ?></a>

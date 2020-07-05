@@ -49,7 +49,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Comment navigation', 'arbutus' ); ?>">
+		<nav id="comment-nav-above" class="comment-navigation" role="navigation" aria-label="<?php esc_attr( _x( 'Comment', 'comment navigation', 'arbutus' ) ); ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'arbutus' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '<span aria-hidden="true">&larr;</span> Older Comments', 'arbutus' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span aria-hidden="true">&rarr;</span>', 'arbutus' ) ); ?></div>
@@ -76,6 +76,11 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'arbutus' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 'comment_notes_after' => '', 'title_reply' => '' ) ); ?>
+	<?php comment_form( array(
+		'comment_notes_after' => '',
+		'title_reply' => '',
+		'title_reply_before' => '',
+		'title_reply_after' => ''
+	) ); ?>
 
 </div><!-- #comments -->

@@ -4,9 +4,10 @@ Theme URI: http://themes.halsey.co/arbutus/
 Author: Nick Halsey
 Author URI: https://celloexpressions.com/
 Description: Arbutus is a minimalist photography theme that transforms your site into a visually stimulating canvas of cleanly layered images and content. Meticulously designed with simplicity in mind, Arbutus displays your content with no distractions. Arbutus features opinionated post format designs so that all types of content can be displayed in a way that captures the attention of your viewers. The home page includes an optional header image or video, which is displayed in a large featured section with your site logo, title, and tagline. Arbutus is a theme that emphasizes images and content through a simple modern design, providing a site experience that your users are sure to enjoy.
-Version: 1.1.3
+Version: 1.1.4
 Requires PHP: 5.6
 Requires at least: 5.2
+Tested up to: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arbutus
@@ -672,12 +673,16 @@ object {
 	margin-bottom: 24px;
 	max-width: 100%;
 }
+
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 0 auto;
 }
+
 .wp-caption-text,
-.wp-block-image figcaption {
+.wp-block-image figcaption,
+.blocks-gallery-caption,
+.wp-block-embed figcaption {
 	text-align: center;
 	margin: 16px 0;
 	color: inherit;
@@ -875,6 +880,7 @@ a:active,
 	text-decoration: none;
 	color: hsl(220, 0%, 100%);
 	border-bottom: 0 solid currentColor;
+	height: 64px;
 }
 
 .main-nav li > a:hover,
@@ -891,7 +897,7 @@ a:active,
 	display: none;
 	position: absolute;
 	background: hsl(220, 10%, 13%);
-	width: 200px;
+	width: 272px;
 	text-align: center;
 }
 
@@ -1918,6 +1924,21 @@ input.search-field {
 }
 
 @media screen and (max-width:600px) {
+	.main-nav {
+		float: none;
+		max-width: 100%;
+	}
+	
+	.main-nav li {
+		max-width: 100%;
+	}
+
+	.main-nav li a {
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	}
+
 	.inner {
 		padding: 0 12px;
 	}

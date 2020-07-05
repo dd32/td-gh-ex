@@ -5,7 +5,7 @@ Requires at least: 5.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GPLv2 or later
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 Description: Arbutus is a minimalist photography theme that transforms your site into a visually stimulating canvas of cleanly layered images and content.
 
 == Description ==
