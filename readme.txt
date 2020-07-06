@@ -1,59 +1,66 @@
-----------------------------------
-Design Theme
-----------------------------------
-Version: 	2.3
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== D5 Design ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: d5creation
+Tags: two-columns, right-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.6
+Stable tag: 2.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+D5 Design Responsive Corporate and Community Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License of the Theme.
+== Description ==
 
-1. slide-image1.jpg and screenshot.png are edited from the following images
-	License: Public Domain CC0, Author: OpenClips, Source: http://pixabay.com/en/monitor-screen-display-computer-160135/
-	License: Public Domain CC0, Author:OpenClips, Source: http://pixabay.com/en/laptop-notebook-computer-black-158648/
-	License: Public Domain CC0, Author: OpenClips, Source: http://pixabay.com/en/ipad-tablet-tablet-computer-147691/
-	License: Public Domain CC0, Author: OpenClips, Source: http://pixabay.com/en/phone-iphone-cell-phone-apple-158244/	
+Design is WordPress Latest Version Ready CSS3 Powered super elegant and Professional Responsive Theme. Design is for Smart Companies and Persons who love to innovate. Customizable Background and Them Options will give the WordPress Driven Site an attractive look. Right and Footer Sidebar will be usable for showing the widgets. Full Wide page can be used for showing showcase or other pages. Pro version of Design Theme has more than 100 Options which will give you the opportunity to customize almost all the features of this Theme with extra functionality. Youc can find the Theme Page Here: https://d5creation.com/theme/design/. A demo of Design Theme can be found here: http://demo.d5creation.com/themes/?theme=Design
 
-2. thumb-back.jpg 
-	License: Public Domain CC0, Author: OpenClips, Source: http://pixabay.com/en/pencils-colored-pencil-box-157972/
-	License: Public Domain CC0, Author:blickpixel, Source: http://pixabay.com/en/pencils-colored-pencils-447475/
+== Frequently Asked Questions ==
 
-All other Image Files Copyright 2012-2017: D5 Creation (www.d5creation.com) and distributed under the terms of the GNU GPL
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Banner Image, Featured Images, Featured Contents etc. 
 
-The width and height of Main menu is fixed. So please design your menu items in such way that will fit with the container. 
+= Why is Design? =
+Design Theme is for Personal, Corporate, Community, Forum and Multipurpose Websites
 
-Changelog Version 2.3
-====================================
-- Code Cleanup
-- Narrow Width Template Added
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites and Even for Smart Blogs
 
-Changelog Version 2.0
-====================================
-The 2.0  is a Major Version
-- Added Customize for Theme Options
-- Removed Options Framework
-- Added Translation Features
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
-Changelog 1.9
-------------------------------------
-- Options Framework Update
-- Code Cleanup
+== Changelog ==
 
+= 2.5 =
+* Code Cleanup
+* Security Enhancement
+* Style Improvement
 
-Changelog 1.7.2
-------------------------------------
-- Image Files' Licensing Issues Fixed. Used D5 Creation's own Images
+= 2.3 =
+* Code Cleanup
+* Narrow Width Template Added
 
+= 2.0 =
+* Added Customize for Theme Options
+* Removed Options Framework
+* Added Translation Features
 
-Changelog 1.7.1
-------------------------------------
-- Front Page Blog/Page Option added
-- Some Style Updated
-- Some Images Updated
+= 1.9 =
+* Options Framework Update
+* Code Cleanup
 
+= 1.0 =
+* Initial Release
+
+== Resources ==
+
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
+
+* screenshot.png:
+Source: Own Images
+License: CC0, Copyright (c) Not Mentioned
+License Url : https://creativecommons.org/publicdomain/zero/1.0/

@@ -4,44 +4,30 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
-?>
 
-<div class="featured-boxs">
+$fimages = '';
+foreach (range(1, 3) as $fboxn) {
+	$fimage = '';
+	$fimagelink = '#'; $fimageimg = '';
+	$fimagelink = design_get_option('featured-link'.$fboxn, '#');
+	$fimageimg = design_get_option('featured-image'.$fboxn, '');
+	if($fimageimg) $fimages .= '<span class="featured-box"><a href="'.esc_url($fimagelink).'"><img src="'.esc_url($fimageimg).'"/><span class="read-more"></span></a></span>';	
+}
+if($fimages) echo '<div class="featured-boxs">'.$fimages.'</div><div class="sep3">...</div>';
 
-<span class="featured-box">
-<a href="<?php echo esc_url(design_get_option('featured-link1', '#')); ?>">
-<img src="<?php echo esc_url(design_get_option('featured-image1', get_template_directory_uri() . '/images/featured-image1.jpg')) ?>"/>
-<span class="read-more">Read more...</span>
-</a>
-</span>
-<span class="featured-box">
-<a href="<?php echo esc_url(design_get_option('featured-link2', '#')); ?>">
-<img src="<?php echo esc_url(design_get_option('featured-image2', get_template_directory_uri() . '/images/featured-image2.jpg')) ?>"/>
-<span class="read-more">Read more...</span>
-</a>
-</span>
+$fcontents = '';
+foreach (range(1, 2) as $fcon) {
+	$fcontent = '';
+	$fimagelink = '#'; $fcontenttitle1 = ''; $fcontenttitle2 = ''; $fcontentdes = '';
+	$fcontentlink = design_get_option('fcontent-link'.$fcon, '#');
+	$fcontenttitle1 = design_get_option('fcontent01-title'.$fcon, '');
+	$fcontenttitle2 = design_get_option('fcontent02-title'.$fcon, '');
+	if($fcontenttitle2) $fcontenttitle2 = '<span>'.esc_textarea($fcontenttitle2).'</span>';
+	if($fcontenttitle1 || $fcontenttitle1) $fcontenttitle1 = '<h2>'.esc_textarea($fcontenttitle1).$fcontenttitle2.'</h2>';
+	$fcontentdes = design_get_option('fcontent-description'.$fcon, '');
+	if($fcontentdes) $fcontentdes ='<p>'.esc_textarea($fcontentdes).'</p>';
+	
+	if($fcontenttitle1 || $fcontentdes) $fcontents .= '<span class="featured-content'.$fcon.'">'.$fcontenttitle1.$fcontentdes.'<a href="'.esc_url($fcontentlink).'" class="read-more"></a></span>';
+}
 
-<span class="featured-box">
-<a href="<?php echo esc_url(design_get_option('featured-link3', '#')); ?>">
-<img src="<?php echo esc_url(design_get_option('featured-image3', get_template_directory_uri() . '/images/featured-image3.jpg')) ?>"/>
-<span class="read-more">Read more...</span>
-</a>
-</span>
-
-</div> <!-- featured-boxs -->
-
-<div class="sep3">sep</div>
-
-<span class="featured-content1">
-<h2><?php echo esc_textarea(design_get_option('fcontent01-title1', 'Design a Smart Theme by ')); ?><span> <?php echo esc_textarea(design_get_option('fcontent02-title1', 'D5 Creation')); ?></span></h2>
-<p><?php echo esc_textarea(design_get_option('fcontent-description1', 'The Customizable Background and other options of Design Theme will give the WordPress Driven Site an attractive look.  Design Theme is super elegant and Professional Responsive which will create the business widely expressed.')); ?></p>
-<a href="<?php echo esc_url(design_get_option('fcontent-link1', '#')); ?>" class="read-more">Read more...</a>
-</span>
-
-<span class="featured-content2">
-<h2><?php echo esc_textarea(design_get_option('fcontent01-title2', 'Design a Smart Theme by ')); ?><span> <?php echo esc_textarea(design_get_option('fcontent02-title2', 'D5 Creation')); ?></span></h2>
-<p><?php echo esc_textarea(design_get_option('fcontent-description2', 'The Customizable Background and other options of Design Theme will give the WordPress Driven Site an attractive look.  Design Theme is super elegant and Professional Responsive which will create the business widely expressed.')); ?></p>
-<a href="<?php echo esc_url(design_get_option('fcontent-link2', '#')); ?>" class="read-more">Read more...</a>
-</span>
-
-<div class="sep2">sep</div>
+if($fcontents) echo $fcontents.'<div class="sep2">...</div>';

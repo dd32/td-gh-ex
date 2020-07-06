@@ -5,10 +5,6 @@
 	Since Design 1.0
 */
 ?>
-
-
-
-
 </div> <!-- conttainer -->
 <div id="footer">
 

@@ -1,10 +1,27 @@
-jQuery(document).ready(function(){ jQuery("#design-main-menu ul ul").css({display: "none"}); jQuery('#design-main-menu ul li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });
-
-jQuery(document).ready(function(){ jQuery("ul.lboxd ul").css({display: "none"}); jQuery('ul.lboxd li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });
-
-jQuery(document).ready(function(){
-        jQuery('#f-post-page').click(function() {
-            jQuery('#f-post-page-container').css("display", "block");
-			jQuery('#f-post-page').css("display", "none");
-          });
-    });
+jQuery(document).ready(function(){ 'use strict';
+								  
+	jQuery("#main-menu-con ul ul").css({display: "none"}); 
+	jQuery('#main-menu-con ul li').hover( function() {
+		if ( jQuery(this).closest('#main-menu-con').hasClass('mainmenuconx') ) {
+			jQuery(this).find('ul:first').stop(true, true).slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected');
+		}
+	}, function() { 
+		if ( jQuery(this).closest('#main-menu-con').hasClass('mainmenuconx') ) {
+			jQuery(this).find('ul:first').stop(true, true).slideUp(200); jQuery(this).removeClass('selected'); 
+		}
+	});	
+								  
+	jQuery('.main-menu-items > li').addClass('top-level-menu');							  
+	jQuery(".page_item_has_children").addClass("menu-item-has-children");
+	jQuery(".page_item_has_children .children").addClass("sub-menu");
+	jQuery("#main-menu-con .menu-item-home").removeClass("current-menu-item current_page_item");							  
+								  
+	jQuery( "#main-menu-con a" ).focusin(function() { 
+		if ( jQuery(this).closest('#main-menu-con').hasClass('mainmenuconx') ) {
+			jQuery(this).closest('.top-level-menu').siblings().find('.sub-menu').stop(true, true).slideUp(200);		
+			jQuery(this).next('.sub-menu').stop(true, true).slideToggle(200).parent().siblings().find('.sub-menu').stop(true, true).slideUp(200); 
+		}
+	});								  
+								  
+								  
+});

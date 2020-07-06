@@ -6,7 +6,7 @@ function design_customize_register($wp_customize){
     $wp_customize->add_section('design_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('DESIGN OPTIONS', 'd5-design'),
+		'title'    		=> esc_html__('DESIGN OPTIONS', 'd5-design'),
         'description'   => '<div class="infohead"><span class="donation"> Design is CSS3 Powered and WordPress Latest Version Ready Responsive Theme
 <br />
 <br />
@@ -14,15 +14,14 @@ You can Learn More about the Features from the <a href="'. esc_url('https://d5cr
 <br />
 <br />
 You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/themes/?theme=Design').'" target="_blank"><strong>From Here</strong></a></span></div>'
-    ));
-	
+    ));	
  
  	  
 //  Banner Image/ Slide Image
 
 		
     $wp_customize->add_setting('design[banner-image]', array(
-        'default'           => get_template_directory_uri() . '/images/slide-image/slide-image1.jpg',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -31,18 +30,17 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'banner-image', array(
-        'label'    			=> __('Banner Image', 'd5-design'),
+        'label'    			=> esc_html__('Banner Image', 'd5-design'),
         'section'  			=> 'design_options',
         'settings' 			=> 'design[banner-image]',
-		'description'   	=> __('Upload an image for the Front Page Banner.950px X 300px image is recommended', 'd5-design')
+		'description'   	=> esc_html__('Upload an image for the Front Page Banner.950px X 300px image is recommended', 'd5-design')
 		
     )));
-	
 	
 
 // Front Page Heading
     $wp_customize->add_setting('design[heading_text]', array(
-        'default'        	=> __('WordPress is web software you can use to create a beautiful website or blog','d5-design'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -50,7 +48,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_heading_text' , array(
-        'label'      => __('Front Page Heading', 'd5-design'),
+        'label'      => esc_html__('Front Page Heading', 'd5-design'),
         'section'    => 'design_options',
         'settings'   => 'design[heading_text]'
     ));
@@ -66,10 +64,10 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_fsidebar', array(
-        'label'      => __('Show the Footer Sidebar', 'd5-design'),
+        'label'      => esc_html__('Show the Footer Sidebar', 'd5-design'),
         'section'    => 'design_options',
         'settings'   => 'design[fsidebar]',
-		'description' => __('Uncheck this if you do not want to show the footer sidebar (Widgets) automatically','d5-design'),
+		'description' => esc_html__('Uncheck this if you do not want to show the footer sidebar (Widgets) automatically','d5-design'),
 		'type' 		 => 'checkbox'
     ));
 	
@@ -78,7 +76,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
 	  
 //  Featured Image
     $wp_customize->add_setting('design[featured-image'. $fbsinumber .']', array(
-        'default'           => get_template_directory_uri() . '/images/featured-image' . $fbsinumber . '.jpg',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -87,10 +85,10 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'featured-image'. $fbsinumber, array(
-        'label'    			=> __('Featured Image', 'd5-design') . '-' . $fbsinumber,
+        'label'    			=> esc_html__('Featured Image', 'd5-design') . '-' . $fbsinumber,
         'section'  			=> 'design_options',
         'settings' 			=> 'design[featured-image'. $fbsinumber .']',
-		'description'   	=> __('Upload an image for the Featured Box. 270px X 200px image is recommended','d5-design')
+		'description'   	=> esc_html__('Upload an image for the Featured Box. 270px X 200px image is recommended','d5-design')
     )));
   
 
@@ -104,7 +102,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_featured-link' . $fbsinumber  , array(
-        'label'      => __('Featured Link', 'd5-design') . '-' . $fbsinumber,
+        'label'      => esc_html__('Featured Link', 'd5-design') . '-' . $fbsinumber,
         'section'    => 'design_options',
         'settings'   => 'design[featured-link' . $fbsinumber .']'
     ));
@@ -117,7 +115,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
   
 // Featured Image Title
     $wp_customize->add_setting('design[fcontent01-title' . $fbsinumberd . ']', array(
-        'default'        	=> __('Design a Smart Theme by','d5-design'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -125,14 +123,14 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_fcontent01-title' . $fbsinumberd, array(
-        'label'      => __('Featured Title First Part, Black Color', 'd5-design'). '-' . $fbsinumberd,
+        'label'      => esc_html__('Featured Title First Part, Black Color', 'd5-design'). '-' . $fbsinumberd,
         'section'    => 'design_options',
         'settings'   => 'design[fcontent01-title' . $fbsinumberd .']'
     ));
 
 
  	$wp_customize->add_setting('design[fcontent02-title' . $fbsinumberd . ']', array(
-        'default'        	=> __('D5 Creation','d5-design'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -140,14 +138,14 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_fcontent02-title' . $fbsinumberd, array(
-        'label'      => __('Featured Title Second Part, Orange Color', 'd5-design'). '-' . $fbsinumberd,
+        'label'      => esc_html__('Featured Title Second Part, Orange Color', 'd5-design'). '-' . $fbsinumberd,
         'section'    => 'design_options',
         'settings'   => 'design[fcontent02-title' . $fbsinumberd .']'
     ));
 
 // Featured Image Description
     $wp_customize->add_setting('design[fcontent-description' . $fbsinumberd . ']', array(
-        'default'        	=> __('The Customizable Background and other options of Design Theme will give the WordPress Driven Site an attractive look.  Design Theme is super elegant and Professional Responsive which will create the business widely expressed','d5-design'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -155,7 +153,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_fcontent-description' . $fbsinumberd  , array(
-        'label'      => __('Featured Description', 'd5-design') . '-' . $fbsinumberd,
+        'label'      => esc_html__('Featured Description', 'd5-design') . '-' . $fbsinumberd,
         'section'    => 'design_options',
         'settings'   => 'design[fcontent-description' . $fbsinumberd .']',
 		'type' 		 => 'textarea'
@@ -171,7 +169,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_fcontent-link' . $fbsinumberd  , array(
-        'label'      => __('Featured Link', 'd5-design') . '-' . $fbsinumberd,
+        'label'      => esc_html__('Featured Link', 'd5-design') . '-' . $fbsinumberd,
         'section'    => 'design_options',
         'settings'   => 'design[fcontent-link' . $fbsinumberd .']'
     ));
@@ -180,7 +178,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
   
  //  Quote Text
     $wp_customize->add_setting('design[bottom-quotation]', array(
-        'default'        	=> __('All the developers of D5 Creation have come from the disadvantaged part or group of the society. All have established themselves after a long and hard struggle in their life ----- D5 Creation Team',  'd5-design'),
+        'default'        	=> '',
     	'sanitize_callback' => 'esc_textarea',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
@@ -188,7 +186,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_bottom-quotation', array(
-        'label'      => __('Quote Text', 'd5-design'),
+        'label'      => esc_html__('Quote Text', 'd5-design'),
         'section'    => 'design_options',
         'settings'   => 'design[bottom-quotation]',
 		'type' 		 => 'textarea'
@@ -198,7 +196,7 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
 
 //  Front Page Post
     $wp_customize->add_setting('design[fpost]', array(
-        'default'        	=> '1',
+        'default'        	=> '',
     	'sanitize_callback' => 'esc_html',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
@@ -206,15 +204,15 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control('design_fpost', array(
-        'label'      => __('Do not show any Posts or Page in the Front Page', 'd5-design'),
+        'label'      => esc_html__('Do not show any Posts or Page in the Front Page', 'd5-design'),
         'section'    => 'design_options',
         'settings'   => 'design[fpost]',
-		'description' => __('Check the Box if you do not want to show any Posts or Page in the Front Page','d5-design'),
+		'description' => esc_html__('Check the Box if you do not want to show any Posts or Page in the Front Page','d5-design'),
 		'type' 		 => 'checkbox'
     ));
 	
 	$wp_customize->add_setting('design[feat-image]', array(
-        'default'           => get_template_directory_uri() . '/images/thumb-back.jpg',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -223,10 +221,10 @@ You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/them
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'feat-image', array(
-        'label'    			=> __('Featured Image Background with Posts/Pages', 'd5-design') . '-' . $fbsinumber,
+        'label'    			=> esc_html__('Featured Image Background with Posts/Pages', 'd5-design') . '-' . $fbsinumber,
         'section'  			=> 'design_options',
         'settings' 			=> 'design[feat-image]',
-		'description'   	=> __('Upload an image for the Featured Image Background.600px X 200px image is recommended','d5-design')
+		'description'   	=> esc_html__('Upload an image for the Featured Image Background.600px X 200px image is recommended','d5-design')
     )));
 
 

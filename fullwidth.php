@@ -17,7 +17,7 @@ get_header(); ?>
  <div class="entrytext">
  <?php the_content(); ?>
  </div><div class="clear"> </div>
- <?php edit_post_link(__('Edit This Entry','d5-design'), '<p>', '</p>'); ?>
+ <?php edit_post_link(esc_html__('Edit This Entry','d5-design'), '<p>', '</p>'); ?>
 <?php comments_template(); ?>
  <?php endwhile; endif; ?>
  

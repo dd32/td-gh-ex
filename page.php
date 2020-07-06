@@ -18,15 +18,15 @@
  <div class="thumb"><?php the_post_thumbnail(); ?></div>
  <?php the_content(); ?>
 
-				<?php wp_link_pages(array('before' => '<p><strong>'.__('Pages:','d5-design').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php wp_link_pages(array('before' => '<p><strong>'.esc_html__('Pages:','d5-design').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
         <?php endwhile; ?><div class="clear"> </div>
-	 <?php edit_post_link(__('Edit This Entry','d5-design'), '<p>', '</p>'); ?>
+	 <?php edit_post_link(esc_html__('Edit This Entry','d5-design'), '<p>', '</p>'); ?>
 	<?php comments_template(); ?>
 	<?php else: ?>
-		<p><?php _e('Sorry, no pages matched your criteria', 'd5-design'); ?></p>
+		<p><?php esc_html_e('Sorry, no pages matched your criteria', 'd5-design'); ?></p>
 	<?php endif; ?>
 	</div>
 
