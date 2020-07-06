@@ -17,7 +17,7 @@ if( function_exists('nnfy_get_option') ){
     $footer_copyright = nnfy_get_option( 'nnfy_footer_copyright_status', get_the_ID(), false );
 }
 
-if ( is_plugin_active( '99fy-pro/nnfy_pro.php' ) ){
+if ( nnfy_has_pro() ){
 
     $footer_brand = get_option( 'nnfy_footer_copyright_brand');
 

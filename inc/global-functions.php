@@ -50,3 +50,8 @@ function nnfy_fallback( ) {
 		<li><a href="<?php echo admin_url('nav-menus.php'); ?>"><?php echo esc_html__('Create Menu','99fy'); ?></a></li>
 	</ul>
 <?php endif; } }
+
+
+function nnfy_has_pro() {
+	return defined( 'NNFYPRO_VERSION' );
+}
