@@ -22,7 +22,6 @@ function vantage_page_menu_args( $args ) {
 endif;
 add_filter( 'wp_page_menu_args', 'vantage_page_menu_args' );
 
-
 if ( ! function_exists( 'vantage_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
@@ -43,8 +42,9 @@ function vantage_body_classes( $classes ) {
 
 	$is_full_width_template = is_page_template( 'templates/template-full.php' ) || is_page_template( 'templates/template-full-notitle.php' );
 	if ( ! $is_full_width_template ) {
-		$wc_shop_sidebar = vantage_is_woocommerce_active() && is_shop() && is_active_sidebar( 'shop' );
-		if ( ! is_active_sidebar('sidebar-1') && ! $wc_shop_sidebar ) {
+		// Is WooCommerce active, is the Shop sidebar populated, are we viewing a WooCommerce page?
+		$wc_shop_sidebar = vantage_is_woocommerce_active() && is_active_sidebar( 'shop' ) && is_woocommerce();
+		if ( ! is_active_sidebar( 'sidebar-1' ) && ! $wc_shop_sidebar ) {
 			$classes[] = 'no-sidebar';
 		}
 		else {
@@ -60,11 +60,11 @@ function vantage_body_classes( $classes ) {
 		$classes[] = 'so-vantage-mobile-device';
 	}
 	$mega_menu_active = function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' );
-	if ( siteorigin_setting('navigation_menu_search') && ! $mega_menu_active ) {
+	if ( siteorigin_setting( 'navigation_menu_search' ) && ! $mega_menu_active ) {
 		$classes[] = 'has-menu-search';
 	}
 
-	if ( siteorigin_setting('layout_force_panels_full') ) {
+	if ( siteorigin_setting( 'layout_force_panels_full' ) ) {
 		$classes[] = 'panels-style-force-full';
 	}
 
@@ -88,7 +88,6 @@ function vantage_body_classes( $classes ) {
 endif;
 add_filter( 'body_class', 'vantage_body_classes' );
 
-
 if ( ! function_exists( 'vantage_enhanced_image_navigation' ) ) :
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
@@ -107,7 +106,6 @@ function vantage_enhanced_image_navigation( $url, $id ) {
 }
 endif;
 add_filter( 'attachment_link', 'vantage_enhanced_image_navigation', 10, 2 );
-
 
 if ( ! function_exists( 'vantage_wp_title' ) ) :
 /**
@@ -137,7 +135,6 @@ function vantage_wp_title( $title, $sep ) {
 }
 endif;
 add_filter( 'wp_title', 'vantage_wp_title', 10, 2 );
-
 
 if ( ! function_exists( 'vantage_footer_widget_style' ) ) :
 /**
