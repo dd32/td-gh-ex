@@ -6,6 +6,18 @@ Tested with WordPress 5.4.2
 Tested with WooCommerce 4.2.2
 
 Added:
+- Backwards Compatibility for wp_body_open()
+
+
+
+
+----------------
+= 3.0.5(22.06.2020) =
+
+Tested with WordPress 5.4.2
+Tested with WooCommerce 4.2.2
+
+Added:
 - WordPress 5.2 support for wp_body_open()
 - Support for editor style
 
