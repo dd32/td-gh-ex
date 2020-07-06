@@ -82,7 +82,7 @@ function arilewp_save_sidebar_layout( $post_id ){
     foreach( $arilewp_sidebar_layout as $field ){  
         //Execute this saving function
         $old = get_post_meta( $post_id, '_sidebar_layout', true ); 
-        $new = sanitize_text_field( $_POST['arilewp_sidebar_layout'] );
+        $new = isset( $_POST['arilewp_sidebar_layout'] ) ? sanitize_key( $_POST['arilewp_sidebar_layout'] ) : 'right-sidebar';
         if( $new && $new != $old ) {  
             update_post_meta( $post_id, '_sidebar_layout', $new );  
         }elseif( '' == $new && $old ) {  
