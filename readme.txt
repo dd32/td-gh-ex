@@ -4,7 +4,7 @@ Contributors: roughpixels
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -112,6 +112,21 @@ Deprecated - for soon-to-be removed features.
 Removed - for now removed features.
 Fixed - for any bug fixes.
 Security - in case of vulnerabilities.
+
+## [1.0.4] - 2020-07-6
+* Fixed - Removing logo in the customizer was not bringing back the site title and tagline
+* Fixed - Wrong thumbnail missing image file name was corrected due to a 404 error.
+* Fixed - Escaping corrected on the post author link and name within the template-tags file.
+* Changed - Thumbnail size naming was named ariele instead of ariele-lite
+* Removed - A related posts snippet of code was removed as this is taken out of the Lite version.
+* Removed - A placeholder image for related posts deleted.
+* Removed - Related Posts thumbnail size removed from the functions file.
+* Removed - Post formats were taken out of the Lite version, including post format archive titles.
+* Removed - Thumbnail size for the minimal blog layout option (not available in the Lite version)
+* Removed - Odd Even classes on posts no longer needed; from the template-functions file.
+* Removed - Recent Posts admin stylesheet removed - not needed.
+* Removed - ariele.pot file not needed for the Lite version.
+* Removed - An older variable from the blog options removed from the top of the index template file.
 
 ## [1.0.3] - 2020-06-11
 *Fixed - Extra curly bracket found on the inline styles

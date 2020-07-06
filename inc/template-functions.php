@@ -70,17 +70,6 @@ function ariele_lite_body_classes( $classes ) {
 add_filter( 'body_class', 'ariele_lite_body_classes' );
 
 
-// Add odd even classes to post article	
-function ariele_lite_post_class ( $classes ) {
-   global $current_class;
-   $classes[] = $current_class;
-   $current_class = ($current_class == 'odd') ? 'even' : 'odd';
-   return $classes;
-}
-add_filter ( 'post_class' , 'ariele_lite_post_class' );
-global $current_class;
-$current_class = 'odd';
-
 /**
  * Add CSS class to image navigation links.
  *
@@ -113,9 +102,13 @@ add_action( 'wp_head', 'ariele_lite_pingback_header' );
 // Replaces the excerpt "Read More" text by a link
 function ariele_lite_excerpt_more($more) {
 	global $post;
-		if ( false == esc_attr(get_theme_mod( 'ariele_lite_hide_excerpt_more_link', false ) ) ) {   
-			return '&hellip;<p class="excerpt-more-link-wrapper"><a class="excerpt-more-link" href="'. esc_url(get_permalink($post->ID)) . '">' . esc_html__( 'Read More', 'ariele-lite' ) . '</a></p>';
-		}
+		if ( false == esc_attr(get_theme_mod( 'ariele_lite_hide_excerpt_more_link', false ) ) ) {  
+			if ( is_admin() ) :
+				return $more;
+			else :
+				return '&hellip;<p class="excerpt-more-link-wrapper"><a class="excerpt-more-link" href="'. esc_url(get_permalink($post->ID)) . '">' . esc_html__( 'Read More', 'ariele-lite' ) . '</a></p>';
+		endif;
+	}
 }
 add_filter('excerpt_more', 'ariele_lite_excerpt_more');
 	
@@ -131,13 +124,3 @@ function ariele_lite_custom_excerpt_length( $length ) {
 	}
 add_filter( 'excerpt_length', 'ariele_lite_custom_excerpt_length', 999 );
 
-
-/* ---------------------------------------------------------------------------------------------
-	CUSTOM EXCERPTS FOR RELATED POSTS
-	Adds custom excerpts to the related posts - full post view
-	--------------------------------------------------------------------------------------------- */
- if ( ! function_exists( 'ariele_lite_related_post_excerpts' ) ) :
-function ariele_lite_related_post_excerpts($limit) {
-    return '<p class="related-post-content">' . wp_trim_words(get_the_excerpt(), esc_attr($limit), '&hellip;</p>');
-}
-endif;

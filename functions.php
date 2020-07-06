@@ -53,34 +53,22 @@ if ( ! function_exists( 'ariele_lite_setup' ) ) :
 
 		// create featured images for the classic blog style
 		if( esc_attr(get_theme_mod( 'ariele_lite_classic_thumbnails', false ) ) ) :
-			add_image_size( 'ariele-classic', 700, 450, true );
+			add_image_size( 'ariele-lite-classic', 700, 450, true );
 		endif;	
 		
 		// create featured images for the wide blog style
 		if( esc_attr(get_theme_mod( 'ariele_lite_wide_thumbnails', false ) ) ) :
-			add_image_size( 'ariele-wide', 960, 600, true );
+			add_image_size( 'ariele-lite-wide', 960, 600, true );
 		endif;			
 		
 		// create recent posts thumbnails
-		add_image_size( 'ariele-recent-thumbnail', 60, 60, true );		
-		
-		// create related post thumbnails
-		add_image_size( 'ariele-related-posts', 220, 140, true );
+		add_image_size( 'ariele-lite-recent-thumbnail', 60, 60, true );		
 		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'ariele-lite' ),
 			'footer' => esc_html__( 'Footer', 'ariele-lite' ),
 			'social' => esc_html__( 'Social', 'ariele-lite' ),
-		) );
-
-		// Add support for post formats.
-		add_theme_support( 'post-formats', array(
-			'image',
-			'video',
-			'gallery',
-			'audio',
-			'quote',
 		) );	
 		
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.

@@ -53,7 +53,7 @@ if ( ! function_exists( 'ariele_lite_avatar_posted_by' ) ) :
 		$author_id     = $post->post_author;
 		$author_avatar = get_avatar( $author_id, 36 );
 		
-		$byline = '<a class="url fn n" href="'.get_author_posts_url( $post->post_author).'">'. get_the_author_meta( 'display_name',$post->post_author).'</a>';
+		$byline = '<a class="url fn n" href="'. esc_attr(get_author_posts_url( $post->post_author)).'">'. esc_html(get_the_author_meta( 'display_name',$post->post_author) ) .'</a>';
 		
 		printf( 
 		'<li class="post-author-avatar">%1$s</li><li class="post-author byline">' . __( 'by', 'ariele-lite' ) . ' %2$s</li>', $author_avatar, $byline );
@@ -176,21 +176,11 @@ if ( ! function_exists( 'ariele_lite_post_thumbnail' ) ) :
         <?php	
 						// Set the featured image based on the blog layout and thumbnail creation setting
 						$ariele_lite_blog_layout = get_theme_mod( 'ariele_lite_blog_layout', 'classic' );	
-						switch ( esc_attr($ariele_lite_blog_layout ) ) {				
-						
-							case "minimal-left":
-							case "minimal-right":
-								// minimal left or right sidebar
-								the_post_thumbnail( 'ariele-minimal', array(
-									'alt' => the_title_attribute(
-										array( 'echo' => false )
-									),
-								) );	
-							break;						
+						switch ( esc_attr($ariele_lite_blog_layout ) ) {	
 										
 							case "wide":
 								// wide blog
-								the_post_thumbnail( 'ariele-wide', array(
+								the_post_thumbnail( 'ariele-lite-wide', array(
 									'alt' => the_title_attribute(
 										array( 'echo' => false )
 									),
@@ -200,7 +190,7 @@ if ( ! function_exists( 'ariele_lite_post_thumbnail' ) ) :
 							case "classic-left":		
 							default:
 							// classic left or right default blog
-								the_post_thumbnail( 'ariele-classic', array(
+								the_post_thumbnail( 'ariele-lite-classic', array(
 								'alt' => the_title_attribute(
 									array( 'echo' => false )
 									),
@@ -313,20 +303,7 @@ function ariele_lite_get_the_archive_title( $title ) {
         } elseif ( is_tag() ){
             $title = single_tag_title( '', false );
        
-		} if ( is_tax( 'post_format' ) ) {
-			if ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-				$title = esc_html_x( 'Galleries', 'post format archive title', 'ariele-lite' );
-				} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-				$title = esc_html_x( 'Images', 'post format archive title', 'ariele-lite' );
-				} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-				$title = esc_html_x( 'Videos', 'post format archive title', 'ariele-lite' );
-				} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-				$title = esc_html_x( 'Quote', 'post format archive title', 'ariele-lite' );
-				} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-				$title = esc_html_x( 'Audio', 'post format archive title', 'ariele-lite' );
-			}	   
-	   
-	   } elseif( is_author() ){
+		} elseif( is_author() ){
             $title = '<span class="vcard">' . get_the_author() . '</span>';
         } elseif ( is_year() ) {
             $title = get_the_date( __( 'Y', 'ariele-lite' ) );

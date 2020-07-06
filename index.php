@@ -5,8 +5,6 @@
  * It is used to display a page when nothing more specific matches a query. E.g., it puts together the home page when no home.php file exists.
  * @package Ariele_Lite
  */
-
-$bloglayout = esc_attr(get_theme_mod( 'ariele_lite_blog_layout', 'blog1' ));
  
 get_header();
 ?>

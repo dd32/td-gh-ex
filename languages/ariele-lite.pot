@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ariele\n"
-"POT-Creation-Date: 2020-06-06 13:01-0700\n"
+"POT-Creation-Date: 2020-07-06 03:31-0700\n"
 "PO-Revision-Date: 2019-11-20 22:40-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Copyright &copy;"
 msgstr ""
 
-#: footer.php:29 inc/template-tags.php:332
+#: footer.php:29 inc/template-tags.php:309
 msgid "Y"
 msgstr ""
 
@@ -85,123 +85,123 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:69
 msgid "Primary"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:70
 msgid "Footer"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:71
 msgid "Social"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:149
 msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:154
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:236
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:249
+#: functions.php:237
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:331
+#: functions.php:319
 msgid "Red"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:324
 msgid "Brown"
 msgstr ""
 
-#: functions.php:341
+#: functions.php:329
 msgid "Taupe"
 msgstr ""
 
-#: functions.php:346
+#: functions.php:334
 msgid "Black"
 msgstr ""
 
-#: functions.php:351
+#: functions.php:339
 msgid "Grey"
 msgstr ""
 
-#: functions.php:356
+#: functions.php:344
 msgid "Beige"
 msgstr ""
 
-#: functions.php:361
+#: functions.php:349
 msgid "White"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:358
 msgctxt "Name of the small font size in Gutenberg"
 msgid "Small"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:359
 msgctxt "Short name of the small font size in the Gutenberg editor."
 msgid "S"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:364
 msgctxt "Name of the regular font size in Gutenberg"
 msgid "Regular"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:365
 msgctxt "Short name of the regular font size in the Gutenberg editor."
 msgid "R"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:370
 msgctxt "Name of the medium font size in Gutenberg"
 msgid "Medium"
 msgstr ""
 
-#: functions.php:383
+#: functions.php:371
 msgctxt "Short name of the medium font size in the Gutenberg editor."
 msgid "M"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:376
 msgctxt "Name of the large font size in Gutenberg"
 msgid "Large"
 msgstr ""
 
-#: functions.php:389
+#: functions.php:377
 msgctxt "Short name of the large font size in the Gutenberg editor."
 msgid "L"
 msgstr ""
 
-#: functions.php:394
+#: functions.php:382
 msgctxt "Name of the larger font size in Gutenberg"
 msgid "Larger"
 msgstr ""
 
-#: functions.php:395
+#: functions.php:383
 msgctxt "Short name of the larger font size in the Gutenberg editor."
 msgid "XL"
 msgstr ""
 
-#: header.php:22
+#: header.php:24
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:52
+#: header.php:54
 msgid "Menu"
 msgstr ""
 
-#: header.php:55
+#: header.php:57
 msgid "Primary Menu"
 msgstr ""
 
@@ -930,8 +930,8 @@ msgstr ""
 msgid "Blog Intro (Front Page)"
 msgstr ""
 
-#: inc/customizer.php:1501 inc/template-functions.php:117
-#: inc/template-tags.php:250 inc/template-tags.php:261
+#: inc/customizer.php:1501 inc/template-functions.php:109
+#: inc/template-tags.php:240 inc/template-tags.php:251
 msgid "Read More"
 msgstr ""
 
@@ -949,14 +949,6 @@ msgstr ""
 
 #: inc/customizer.php:1535
 msgid "Your Copyright Name"
-msgstr ""
-
-#: inc/related-posts.php:12
-msgid "You may also like these posts"
-msgstr ""
-
-#: inc/related-posts.php:25
-msgid "related-post"
 msgstr ""
 
 #: inc/sidebars.php:14
@@ -1051,46 +1043,21 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:229
+#: inc/template-tags.php:219
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:318
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:320
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:322
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:324
-msgctxt "post format archive title"
-msgid "Quote"
-msgstr ""
-
-#: inc/template-tags.php:326
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:334
+#: inc/template-tags.php:311
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:336
+#: inc/template-tags.php:313
 msgid "F j, Y"
 msgstr ""
 
 #. translators: %s: Name of title
-#: inc/template-tags.php:344
+#: inc/template-tags.php:321
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
@@ -1115,39 +1082,39 @@ msgstr ""
 msgid "random"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:49
+#: inc/widgets/recent-posts.php:37
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:125
+#: inc/widgets/recent-posts.php:113
 msgid "Untitled Post"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:188
+#: inc/widgets/recent-posts.php:176
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:191
+#: inc/widgets/recent-posts.php:179
 msgid "Number of posts to show:"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:195
+#: inc/widgets/recent-posts.php:183
 msgid "Order by:"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:204
+#: inc/widgets/recent-posts.php:192
 msgid "Category:"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:207
+#: inc/widgets/recent-posts.php:195
 msgid "All Categories"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:216
+#: inc/widgets/recent-posts.php:204
 msgid "Tags (separated by commas):"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:220
+#: inc/widgets/recent-posts.php:208
 msgid "Display post date?"
 msgstr ""
 

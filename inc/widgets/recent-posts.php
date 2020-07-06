@@ -19,21 +19,9 @@ class Ariele_Recent_Posts extends WP_Widget {
      'comments_num' => esc_html__( 'number of comments', 'ariele-lite' ),
      'random'       => esc_html__( 'random', 'ariele-lite' )
     );
-    
-    add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+
   }
   
-  /**
-* Enqueue admin widgets page scripts and styles.
-   *
-   * @access public
-   */ 
-  public function admin_enqueue_scripts( $hook ) {
-    if ( 'widgets.php' != $hook )
-          return;
-
-    //wp_enqueue_style( 'ariele-widget-recent-posts-css', get_template_directory_uri() . '/assets/css/widget-recent-posts.css', array(), null); 
-  }
   
   /**
    * Output the HTML for this widget.
@@ -110,14 +98,14 @@ class Ariele_Recent_Posts extends WP_Widget {
 
         <?php if ( has_post_thumbnail() ) : ?>
         <div class="recent-post-thumbnail">
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('ariele-recent-thumbnail', array('class' => 'recent-post-image')); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('ariele-lite-recent-thumbnail', array('class' => 'recent-post-image')); ?></a>
         </div>
         <?php else : ?>
         <div class="recent-post-thumbnail">
-            <img src="<?php echo esc_url( get_template_directory_uri()); ?>/images/recent-placeholder.png" alt="<?php the_title(); ?>" />
+            <img src="<?php echo esc_url( get_template_directory_uri()); ?>/images/no-recent.png" alt="<?php the_title_attribute(); ?>" />
         </div>
         <?php endif; ?>
-
+		
         <header class="widget-post-content">
             <?php 
             if( ! get_the_title() ) {
@@ -189,7 +177,7 @@ class Ariele_Recent_Posts extends WP_Widget {
     <input id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"></p>
 
 <p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'ariele-lite' ); ?></label>
-    <input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo absint( $instance['number'] ); ?>" size="3"></p>
+    <input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $instance['number'] ); ?>" size="3"></p>
 
 <p>
     <label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>"><?php esc_html_e( 'Order by:', 'ariele-lite' ); ?></label>

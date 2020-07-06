@@ -28,24 +28,24 @@
 
                 <?php if ( has_custom_logo() ) : 
 						the_custom_logo();  				
-					else : ?>
+					endif; ?>
 
                 <?php if (is_front_page() && false == esc_attr(get_theme_mod( 'ariele_lite_hide_site_title', false ) ) ) : ?>
-                <h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <?php else : ?>
-                <?php if (  false == esc_attr(get_theme_mod( 'ariele_lite_hide_site_title', false ) ) ) : ?>
-                <p id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                <?php	endif;  ?>
+					<?php if (  false == esc_attr(get_theme_mod( 'ariele_lite_hide_site_title', false ) ) ) : ?>
+					<p id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php	endif;  ?>
                 <?php endif; ?>
 
                 <?php	if (  false == esc_attr(get_theme_mod( 'ariele_lite_hide_site_desc', false ) ) ) :
 						$ariele_lite_description = get_bloginfo( 'description', 'display' );
 							if ( $ariele_lite_description || is_customize_preview() ) : ?>
-                <p id="site-description"><?php echo $ariele_lite_description; ?></p>
+						<p id="site-description"><?php echo $ariele_lite_description; ?></p>
                 <?php 
 						endif;
 					endif; 
-				endif; ?>
+				?>
 
             </div>
 
