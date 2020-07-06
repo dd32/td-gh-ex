@@ -263,7 +263,12 @@ require get_template_directory().'/inc/global-functions.php';
 require get_template_directory().'/inc/comment-form.php';
 
 /*
- Woocommerce config
+	image-resize 
+*/
+require get_template_directory().'/inc/aq_resizer.php';
+
+/*
+ 	Woocommerce config
 */
 require get_template_directory().'/inc/woo-config.php';
 require get_template_directory().'/inc/custom-meta-box.php';

@@ -10,13 +10,27 @@
  */
 
 $footer_top = $footer_copyright = false;
+$footer_copywright_brand_custom = false;
 
 if( function_exists('nnfy_get_option') ){
     $footer_top = nnfy_get_option( 'nnfy_footer_top_status', get_the_ID(), false );
     $footer_copyright = nnfy_get_option( 'nnfy_footer_copyright_status', get_the_ID(), false );
 }
 
-$footer_copyright_text = get_option( 'nnfy_footer_copyright_text', sprintf( __( 'Copyright &copy; %1$s %2$s All Right Reserved.','99fy'), date('Y'), '99Fy' ) );
+if ( is_plugin_active( '99fy-pro/nnfy_pro.php' ) ){
+
+    $footer_brand = get_option( 'nnfy_footer_copyright_brand');
+
+    $footer_copyright_brand = ( $footer_brand ? $footer_brand : esc_html__('Built with 99fy by HasThemes', '99fy' ));
+
+    $footer_copyright_text = get_option( 'nnfy_footer_copyright_text', sprintf( __( 'Copyright &copy; %1$s %2$s All Right Reserved','99fy'), date('Y'), '99fy' ) ).' | '.$footer_copyright_brand;
+}else{
+    
+    $url = sprintf('<a href="%1$s">%2$s</a>', esc_url('https://hasthemes.com/woocommerce-themes/99fy-pro/'), esc_html__( 'Built with 99fy by HasThemes', '99fy' ) );
+
+    $footer_copyright_text = get_option( 'nnfy_footer_copyright_text', sprintf( __( 'Copyright &copy; %1$s %2$s All Right Reserved.','99fy'), date('Y'), '99fy' ) ).' | '.$url;
+}
+
 
 ?>
 
@@ -91,7 +105,9 @@ $footer_copyright_text = get_option( 'nnfy_footer_copyright_text', sprintf( __( 
         <div class="ht-row">
             <div class="ht-col-lg-12 ht-col-xs-12">
                 <div class="copyright ht-text-center">
-                    <?php echo wp_kses_post( $footer_copyright_text ); ?>
+                    <?php 
+                        echo wp_kses_post( $footer_copyright_text ); 
+                    ?>
                 </div>
             </div>
         </div>

@@ -15,22 +15,18 @@ for($i = 1; $i <= $blog_col_size; $i++){
     switch ($blog_col_size) {
         case '1':
             $col_class = 'ht-col-xs-12 ht-col-lg-12';
-            $nnfybl_image_size = 'full';
             break;
 
         case '2':
             $col_class = 'ht-col-xs-12 ht-col-sm-6 ht-col-lg-6';
-            $nnfybl_image_size = 'nnfy_blog_grid_thumb';
             break;
 
         case '4':
             $col_class = 'ht-col-xs-12 ht-col-sm-6 ht-col-lg-3';
-            $nnfybl_image_size = 'nnfy_blog_grid_thumb';
             break;
         
         default:
             $col_class = 'ht-col-xs-12 ht-col-sm-6 ht-col-lg-4';
-            $nnfybl_image_size = 'nnfy_blog_grid_thumb';
             break;
     }
  }
