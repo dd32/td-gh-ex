@@ -87,5 +87,5 @@ Source: https://fonts.google.com/specimen/Roboto+Condensed
 License: Open Font License 
 
 == Image Used ==
-https://pixabay.com/en/adult-break-business-caucasian-2449725/
+https://pxhere.com/en/photo/764641
 CC0 Public Domain
