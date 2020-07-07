@@ -75,7 +75,15 @@ function ashe_about_page_output() {
 						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'ashe' ); ?>
 					</p>
 
-					<a href="<?php echo esc_url('https://wp-royal.com/themes/ashe/democontent/ashe_free_demo_content.html?ref=ashe-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'ashe' ); ?></a>
+					<?php if ( is_plugin_active( 'ashe-extra/ashe-extra.php' ) ) : ?>
+						<a href="<?php echo admin_url( '/admin.php?page=ashe-extra' ); ?>" class="button button-primary demo-import"><?php esc_html_e( 'Go to Import page', 'ashe' ); ?></a>
+					<?php elseif ( ashe_check_installed_plugin( 'ashe-extra', 'ashe-extra' ) ) : ?>
+						<button class="button button-primary demo-import" id="ashe-demo-content-act"><?php esc_html_e( 'Activate Demo Import Plugin', 'ashe' ); ?></button>
+					<?php else: ?>
+						<button class="button button-primary demo-import" id="ashe-demo-content-inst"><?php esc_html_e( 'Install Demo Import Plugin', 'ashe' ); ?></button>
+					<?php endif; ?>
+
+					<a style="display: none;" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/democontent/ashe_free_demo_content.html?ref=ashe-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -552,7 +560,7 @@ function ashe_plugin_auto_activation() {
 	// Get the list of currently active plugins (Most likely an empty array)
 	$active_plugins = (array) get_option( 'active_plugins', array() );
 
-	array_push( $active_plugins, 'one-click-demo-import/one-click-demo-import.php' );
+	array_push( $active_plugins, 'ashe-extra/ashe-extra.php' );
 
 	// Set the new plugin list in WordPress
 	update_option( 'active_plugins', $active_plugins );

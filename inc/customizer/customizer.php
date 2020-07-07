@@ -837,6 +837,20 @@ function ashe_customize_register( $wp_customize ) {
 	// Link #3 Image
 	ashe_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'ashe' ), 600, 340, 'refresh', 25 );
 
+	// Pro Version
+	$wp_customize->add_setting( 'pro_version_featured_links', array(
+		'sanitize_callback' => 'ashe_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new Ashe_Customize_Pro_Version ( $wp_customize,
+			'pro_version_featured_links', array(
+				'section'	  => 'ashe_featured_links',
+				'type'		  => 'pro_options',
+				'label' 	  => esc_html__( 'Feat. Links Options ', 'ashe' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/ashe/customizer/free/featured-links.html?ref=ashe-free-featured-links' ),
+				'priority'	  => 100
+			)
+		)
+	);
 
 /*
 ** Blog Page =====
