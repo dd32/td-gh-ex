@@ -243,7 +243,7 @@ function arbutus_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation" aria-label="<?php esc_attr( _x( 'Paging', 'paging navigation', 'arbutus' ) ); ?>">
+	<nav class="navigation paging-navigation" role="navigation" aria-label="<?php esc_attr_e( _x( 'Paging', 'paging navigation', 'arbutus' ) ); ?>">
 		<div class="inner">
 			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
@@ -276,7 +276,7 @@ function arbutus_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation" aria-label="<?php esc_attr( _x( 'Post', 'post navigation', 'arbutus' ) ); ?>">
+	<nav class="navigation post-navigation" role="navigation" aria-label="<?php esc_attr_e( _x( 'Post', 'post navigation', 'arbutus' ) ); ?>">
 		<div class="inner">
 			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'arbutus' ); ?></h1>
 			<div class="nav-links">
@@ -375,11 +375,11 @@ function arbutus_footer_credits() {
 		<span class="privacy-policy">
 			<?php echo $sep_span; the_privacy_policy_link(); ?>
 		</span>
-	<?php if( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
+	<?php } if ( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
 		<span class="wordpress-credit" <?php if ( ! get_theme_mod( 'powered_by_wp', true ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
 			<?php echo $sep_span; ?><a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'arbutus' ), 'WordPress' ); ?></a>
 		</span>
-	<?php } if( get_theme_mod( 'theme_meta', false ) || is_customize_preview() ) { ?>
+	<?php } if ( get_theme_mod( 'theme_meta', false ) || is_customize_preview() ) { ?>
 		<span class="theme-credit" <?php if ( ! get_theme_mod( 'theme_meta', false ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
 			<?php echo $sep_span; ?><?php printf( __( 'Theme: %1$s by %2$s.', 'arbutus' ), 'Arbutus', '<a href="https://celloexpressions.com/" rel="designer">Nick Halsey</a>' ); ?>
 		</span>
