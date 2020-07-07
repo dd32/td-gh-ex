@@ -19,11 +19,11 @@
 			<?php get_search_form(); ?>
 		</div>
 		<div id="archives" class="widget">
-			<h3 class="widget-title"><?php esc_html_e( 'Archives', 'shopstore' ); ?></h3>
+			<h3 class="widget-title"><?php esc_html_e( 'Archives', 'bc-business-consulting' ); ?></h3>
 			<ul><?php wp_get_archives( array( 'type' => 'monthly' ) ); ?></ul>
 		</div>
 		<div id="meta" class="widget">
-			<h3 class="widget-title"><?php esc_html_e( 'Meta', 'shopstore' ); ?></h3>
+			<h3 class="widget-title"><?php esc_html_e( 'Meta', 'bc-business-consulting' ); ?></h3>
 			<ul>
 				<?php wp_register(); ?>
 				<li><?php wp_loginout(); ?></li>

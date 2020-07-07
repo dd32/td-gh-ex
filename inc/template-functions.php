@@ -273,7 +273,7 @@ if( ! function_exists( 'bc_business_consulting_nav_action' ) ) :
                         
                         <div class="navbar-header">
                             <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                                <span class="sr-only"><?php echo esc_attr__( 'Toggle navigation', 'bc-business-consulting' );?></span>
+                                <span class="sr-only"><?php echo esc_html__( 'Toggle navigation', 'bc-business-consulting' );?></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
