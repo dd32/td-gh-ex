@@ -1,4 +1,7 @@
 *** Advocator Lite Changelog ***
+= 1.2, 2020-07-07
+* Tested and support for WordPress 5.4.1
+
 = 1.1 - 2019-03-14
 
 	* Support for WordPress 5.1, block editor styles and Gutenberg

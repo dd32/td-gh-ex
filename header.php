@@ -18,7 +18,12 @@
 </head>
 
 <body <?php body_class('advocator'); ?>>
-
+<?PHP
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+} ?>
 <div class="top_header_wrap contain-to-grid">
 
   <div class="row">
@@ -34,7 +39,7 @@
 
       <?php } else { ?>
 
-        <a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php bloginfo('name'); ?>"></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php bloginfo('name'); ?>"></a>
 
       <?php } // end logo ?>
 

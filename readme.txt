@@ -4,8 +4,9 @@ Donate link: https://rescuethemes.com
 Tags: custom-menu, translation-ready, threaded-comments, theme-options, two-columns, custom-colors, featured-images, right-sidebar,responsive-layout
 
 Requires at least: 4.1
-Tested up to: 5.1
-Stable tag: 1.1
+Tested up to: 5.4.2
+Requires PHP: 5.6.20
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +145,9 @@ Logo Image - http://demo.rescuethemes.com/advocator/wp-content/uploads/sites/2/2
 Copyright: @jamigibbs
 
 == Changelog ==
+
+= 1.2, 2020-07-07
+* Tested and support for WordPress 5.4.1
 
 = 1.1 - 2019-03-14
 
