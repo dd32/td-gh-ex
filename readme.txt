@@ -88,5 +88,4 @@ License: Open Font License
 
 == Image Used ==
 https://pixabay.com/en/adult-break-business-caucasian-2449725/
-All are Licensed under CC0
-
+CC0 Public Domain
