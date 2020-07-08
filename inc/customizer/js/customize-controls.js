@@ -110,7 +110,7 @@
 		bard_customizer_label( 'featured_links_title_3', 'Featured Link #3', '' );
 
 		// Blog Page
-		bard_customizer_label( 'blog_page_full_width_post', 'General', '' );
+		bard_customizer_label( 'blog_page_full_width_post', 'General', 'https://www.youtube.com/watch?v=v6LhYA4nYpQ&t=1s' );
 		bard_customizer_label( 'blog_page_show_dropcaps', 'Post Elements', '' );
 
 		// Single Page

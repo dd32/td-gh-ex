@@ -15,11 +15,11 @@ jQuery( document ).ready( function ($) {
             };
 
             wp.updates.installPlugin({
-                slug: 'one-click-demo-import',
+                slug: 'bard-extra',
                 success: function(){
                     $.post(ajaxurl, data, function(response) {
                         $('#bard-demo-content-inst').html( 'Redirecting...' );
-                        window.location.replace( baseURL + '/themes.php?page=pt-one-click-demo-import' );
+                        window.location.replace( baseURL + '/admin.php?page=bard-extra' );
                     })
                 }
             });
@@ -38,7 +38,7 @@ jQuery( document ).ready( function ($) {
 
             $.post(ajaxurl, data, function(response) {
                 $('#bard-demo-content-act').html( 'Redirecting...' );
-                window.location.replace( baseURL + '/themes.php?page=pt-one-click-demo-import' );
+                window.location.replace( baseURL + '/admin.php?page=bard-extra' );
             })
 
         }

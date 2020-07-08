@@ -80,6 +80,10 @@ add_action( 'after_setup_theme', 'bard_setup' );
 ** Notice after Theme Activation and Update.
 */
 function bard_activation_notice() {
+	if ( isset($_GET['page']) ) {
+		return;
+	}
+
 	global $pagenow;
 	global $current_user;
 

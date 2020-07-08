@@ -80,7 +80,15 @@ function bard_about_page_output() {
 						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'bard' ); ?>
 					</p>
 
-					<a href="<?php echo esc_url('https://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'bard' ); ?></a>
+					<?php if ( is_plugin_active( 'bard-extra/bard-extra.php' ) ) : ?>
+						<a href="<?php echo admin_url( '/admin.php?page=bard-extra' ); ?>" class="button button-primary demo-import"><?php esc_html_e( 'Go to Import page', 'bard' ); ?></a>
+					<?php elseif ( bard_check_installed_plugin( 'bard-extra', 'bard-extra' ) ) : ?>
+						<button class="button button-primary demo-import" id="bard-demo-content-act"><?php esc_html_e( 'Activate Demo Import Plugin', 'bard' ); ?></button>
+					<?php else: ?>
+						<button class="button button-primary demo-import" id="bard-demo-content-inst"><?php esc_html_e( 'Install Demo Import Plugin', 'bard' ); ?></button>
+					<?php endif; ?>
+
+					<a style="display:none;" href="<?php echo esc_url('https://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'bard' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -475,7 +483,7 @@ function bard_recommended_plugin( $slug, $filename ) {
 			<?php else : ?>
 			<a class="install-now button-primary" href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin='. $slug ), 'install-plugin_'. $slug ) ); ?>" >
 				<?php esc_html_e( 'Install Now', 'bard' ); ?>
-			</a>							
+			</a>
 			<?php endif; ?>
 		</div>
 		<div class="desc column-description">
@@ -532,6 +540,19 @@ function bard_call_plugin_api( $slug ) {
 	return $call_api;
 }
 
+// Install/Activate Demo Import Plugin 
+function bard_plugin_auto_activation() {
+
+	// Get the list of currently active plugins (Most likely an empty array)
+	$active_plugins = (array) get_option( 'active_plugins', array() );
+
+	array_push( $active_plugins, 'bard-extra/bard-extra.php' );
+
+	// Set the new plugin list in WordPress
+	update_option( 'active_plugins', $active_plugins );
+
+}
+add_action( 'wp_ajax_bard_plugin_auto_activation', 'bard_plugin_auto_activation' );
 
 // enqueue ui CSS/JS
 function bard_enqueue_about_page_scripts($hook) {
