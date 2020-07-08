@@ -1,77 +1,68 @@
-----------------------------------
-Theme:		D5 COLORFUL
-----------------------------------
-Version: 	2.5
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== D5 COLORFUL ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: d5creation
+Tags: two-columns, left-sidebar, custom-menu, custom-background, threaded-comments, featured-images, sticky-post, translation-ready, blog, portfolio, photography 
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.6
+Stable tag: 2.7
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 	GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+COLORFUL Theme for Blogs
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. 
+== Description ==
 
-All the PHP Code, Images and other particulars included with this product are licensed under the same License: GNU General Public License v2 or later.
+COLORFUL is a simple blog theme with colorful background and designed with colorful ancient matters. You can use this theme for your blog.  Left and Footer Sidebar will show your WidGets
 
+== Frequently Asked Questions ==
 
-	top-image.jpg, bottom-image.jpg, screenshot.png
+= Why is COLORFUL? =
+COLORFUL Theme is for Personal, Corporate, Community Blog Websites
 
-	Author:		PublicDomainPictures
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/note-paper-cork-board-message-15493/
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites but it is designed for Blogs
 
-	Author:		PublicDomainPictures
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/note-paper-yellow-cartoon-notes-37460/
-
-	Author:		D5 Creation
-	License:	Public Domain CC0
-
-	Author:		weinstock
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/glass-marble-colorful-green-pearl-96237/
-
-	Author:		Comfreak
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/apple-fruit-sweet-delicious-356037/
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
-All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
+== Changelog ==
 
+= 2.7 =
+* Code Cleanup
+* Images Update
+* Style Improvement
 
+= 1.8 =
+* Theme URL Change
+* Added Theme About Page
 
-Limitation: You can add only two widgets in the footer sidebar. The footer sidebar's hight is fixed. So, please consider the limitation of height during using the Widgets.
+= 1.7 =
+* Code Cleanup
+* Translation Ready
 
-Changelog: 2.5
-==================
-- Custom Background Added
+= 1.5.1 =
+* New Image added for revised design
+* Some Functionality changed
+* Unnecessary Files removed
 
-Changelog: 2.1
-==================
-- Code Cleanup
+= 1.5 =
+* Some Functions Updated
+* Unnecessary Functions Removed
+* Necssary updates for the Latest WordPress
 
-Changelog: 1.8
-==================
-- Theme URL Change
-- Added Theme About Page
+= 1.0 =
+* Initial Release
 
-Changelog: 1.7
-==================
-- Code Cleanup
-- Translation Ready
+== Resources ==
 
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
 
-Changelog: 1.5.1
-==================
-- New Image added for revised design
-- Some Functionality changed
-- Unnecessary Files removed
-
-
-Changelog: 1.5
-==================
-- Some Functions Updated
-- Unnecessary Functions Removed
-- Necssary updates for the Latest WordPress
+* screenshot.png, bottom-image.jpg, top-image.jpg, middle-image,jpg, bottom-wedget.jpg:
+Source: Own Images
+License: CC0, Copyright (c) D5 Creation
+License Url : https://creativecommons.org/publicdomain/zero/1.0/

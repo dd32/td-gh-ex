@@ -22,6 +22,7 @@
 	register_nav_menus( array( 'main-menu' => 'Main Menu' ) );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( "title-tag" );
+	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style', ));
 
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width;
@@ -63,9 +64,17 @@
 	
 	wp_enqueue_script( 'colorful-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_enqueue_style('colorful-gfonts', '//fonts.googleapis.com/css?family=Creepster', false );
+		
+	wp_enqueue_script( 'd5-colorful-html5', get_template_directory_uri().'/js/html5.js');
+    wp_script_add_data( 'd5-colorful-html5', 'conditional', 'lt IE 9' );	
 	
 	}
 	add_action( 'wp_enqueue_scripts', 'colorful_enqueue_scripts' );
+
+//Multi-level pages menu  
+	function d5_colorful_page_menu() {
+		echo '<div id="mainmenuparent" class="mainmenu-parent"><ul id="main-menu-items-con" class="main-menu-items">'; wp_list_pages(array('sort_column'  => 'menu_order, post_title', 'title_li'  => '' )); echo '</ul></div>';
+	}
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 	function colorful_page_menu_args( $args ) {
@@ -79,7 +88,7 @@
 	function colorful_widgets_init() {
 
 	register_sidebar( array(
-		'name' =>  __('Primary Sidebar','d5-colorful'), 
+		'name' =>  esc_html__('Primary Sidebar','d5-colorful'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -88,7 +97,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  __('Secondary Sidebar', 'd5-colorful'),
+		'name' =>  esc_html__('Secondary Sidebar', 'd5-colorful'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -97,7 +106,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  __('Footer Area', 'd5-colorful'),
+		'name' =>  esc_html__('Footer Area', 'd5-colorful'),
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -114,7 +123,7 @@
 	add_filter('the_title', 'colorful_title');
 	function colorful_title($title) {
         if ( '' == $title ) {
-            return __('(Untitled)', 'd5-colorful');
+            return esc_html__('(Untitled)', 'd5-colorful');
         } else {
             return $title;
         }

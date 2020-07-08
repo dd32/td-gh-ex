@@ -15,17 +15,17 @@
 			<div class="content-ver-sep"> </div>
             <div class="entrytext">
  <?php the_post_thumbnail('thumbnail'); ?>
- <?php the_content('<p class="read-more">'. __('Read the rest of this page &raquo;', 'd5-colorful').'</p>'); ?>
+ <?php the_content('<p class="read-more">'. esc_html__('Read the rest of this page &raquo;', 'd5-colorful').'</p>'); ?>
 
-				<?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','d5-colorful'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php wp_link_pages(array('before' => esc_html__('<p><strong>Pages:</strong> ','d5-colorful'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>
-	<?php edit_post_link(__('Edit This Entry','d5-colorful'), '<p>', '</p>'); ?>
+	<?php edit_post_link(esc_html__('Edit This Entry','d5-colorful'), '<p>', '</p>'); ?>
 	<?php comments_template('', true); ?>
 	<?php else: ?>
-		<p><?php _e('Sorry, no pages matched your criteria','d5-colorful'); ?></p>
+		<p><?php esc_html_e('Sorry, no pages matched your criteria','d5-colorful'); ?></p>
 	<?php endif; ?>
 	</div>
 
