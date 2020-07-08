@@ -12,7 +12,7 @@ function benzer_premium_setting( $wp_customize ) {
 	Buttons
 	=========================================*/
 	
-	class WP_Buttons_Customize_Control extends WP_Customize_Control {
+	class Benzer_Buttons_Customize_Control extends WP_Customize_Control {
 	public $type = 'upgrade_premium';
 
 	   function render_content() {
@@ -28,9 +28,9 @@ function benzer_premium_setting( $wp_customize ) {
 			</div>
 			<div>
 				<ul>
-					<li><a href="http://docs.speciatheme.com/themes/benzer-free/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/documentation.png"></a></li>
+					<li><a href="http://docs.speciatheme.com/themes/benzer-free/" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/documentation.png"></a></li>
 					
-					<li><a href="https://wordpress.org/support/theme/benzer/reviews/#new-post" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rating.png"></a></li>
+					<li><a href="https://wordpress.org/support/theme/benzer/reviews/#new-post" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/rating.png"></a></li>
 				</ul>
 			</div>
 		<?php
@@ -45,7 +45,7 @@ function benzer_premium_setting( $wp_customize ) {
 			)	
 		);
 	
-		$wp_customize->add_control( new WP_Buttons_Customize_Control( $wp_customize, 'premium_info_buttons', array(
+		$wp_customize->add_control( new Benzer_Buttons_Customize_Control( $wp_customize, 'premium_info_buttons', array(
 				'section' => 'upgrade_premium',
 				'setting' => 'premium_info_buttons',
 			))
