@@ -3,7 +3,7 @@
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
 Tested up to: WordPress 5.4.2
-Version: 1.9.7.91
+Version: 1.9.7.92
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -66,37 +66,70 @@ Header Image, Copyright StockSnap
 https://pixabay.com/en/trees-plants-woods-fence-park-2561373/
 
 First Post, Copyright rawpixel
-https://pixabay.com/en/adventure-carefree-casual-caucasian-2579921/
+https://pxhere.com/en/photo/1389877
 
 About Me Widget, Copyright rawpixel
-https://pixabay.com/en/freedom-holding-relax-2218621/
+https://pxhere.com/en/photo/1389875
 
 Starter Content Image Credits
-https://pixabay.com/en/beach-beautiful-beetle-classic-1853939/
-https://pixabay.com/en/beach-girls-relax-sunshine-455752/
-https://pixabay.com/en/golden-gate-bridge-women-back-1030999/
-https://pixabay.com/en/freedom-holding-relax-2218621/
-https://pixabay.com/en/computer-browser-research-study-2562651/
-https://pixabay.com/en/people-woman-girl-clothing-eye-2563491/
-https://pixabay.com/en/berries-cream-food-fruits-plate-1845626/
-https://pixabay.com/en/cake-cappuccino-ceramic-coffee-cup-1839134/
-https://pixabay.com/en/sugar-succulent-pastry-home-made-3119424/
-https://pixabay.com/en/pancake-schaumomelette-omelette-1984716/
-https://pixabay.com/en/wave-surfer-sport-sea-surf-water-1246560/
-https://pixabay.com/en/summer-holiday-beach-love-2434933/
-https://pixabay.com/en/adult-body-close-up-exercise-fit-1867743/
-https://pixabay.com/en/sunset-dusk-sky-clouds-lightning-2459855/
-https://pixabay.com/en/tree-lake-reflection-water-calm-736881/
+https://pxhere.com/en/photo/1173579
+
+https://pxhere.com/en/photo/316
+
+https://pxhere.com/en/photo/671673
+
+https://pxhere.com/en/photo/1389875
+
+https://pxhere.com/en/photo/1616368
+
+https://pxhere.com/en/photo/1184024
+
+https://pxhere.com/en/photo/1269378
+
+https://pxhere.com/en/photo/56762
+
+https://pxhere.com/en/photo/826911
+
+https://pxhere.com/en/photo/1373793
+
+https://pxhere.com/en/photo/36534
+
+https://pxhere.com/en/photo/1485883
+
+https://pxhere.com/en/photo/1268051
+
+https://www.pexels.com/photo/lake-surrounded-by-mountains-during-golden-hour-1126382/
+
+https://pxhere.com/en/photo/1327746
+
 https://www.youtube.com/watch?v=huqJUghX26Y
-https://pixabay.com/en/people-woman-wall-fashion-beauty-2576968/
-https://pixabay.com/en/girl-woman-joy-of-life-dance-2940655/
-https://pixabay.com/en/feet-shoes-footwear-relax-1209636/
-https://pixabay.com/en/flora-flower-arrangement-flower-pot-1866615/
-https://pixabay.com/en/hallstatt-austria-village-town-2519649/
-https://pixabay.com/en/adult-breakfast-bedroom-blanket-1867769/
-https://pixabay.com/en/road-street-highway-travel-way-498288/
-https://pixabay.com/en/young-woman-model-female-attractive-1208269/
-https://pixabay.com/en/adult-breakfast-bedroom-blanket-1867769/
-https://pixabay.com/en/boy-beach-sand-shore-water-waves-925319/
-https://pixabay.com/en/ocean-beach-girl-waves-horizon-1149981/
-https://pixabay.com/en/photographer-tourist-snapshot-407068/
+
+https://www.pexels.com/photo/woman-wearing-floral-dress-while-sitting-on-bed-3586911/
+
+https://www.pexels.com/photo/woman-standing-wearing-red-dress-2609741/
+
+https://pxhere.com/en/photo/596255
+
+https://pxhere.com/en/photo/1170347
+
+https://pxhere.com/en/photo/899944
+
+https://pxhere.com/en/photo/1364606
+
+https://pxhere.com/en/photo/780150
+
+https://pxhere.com/en/photo/123809
+
+https://pxhere.com/en/photo/1364606
+
+https://pxhere.com/en/photo/860480
+
+https://pxhere.com/en/photo/118569
+
+https://pxhere.com/en/photo/948941
+
+https://www.pexels.com/photo/architecture-austria-building-church-356807/
+
+https://www.pexels.com/photo/person-wearing-white-helmet-riding-on-motorcycle-3699259/
+
+https://pxhere.com/en/photo/1604510
