@@ -1,4 +1,4 @@
-<?php $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() ); ?>
+<?php $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() ); ?>
 <!-- Footer Section -->
 <footer class="footer-sidebar">	
 	<!-- Footer Widgets -->	
@@ -20,7 +20,7 @@
 				<div class="col-md-7">
 				<?php 
 				if( $current_options['footer_copyright_text'] != '' ) { ?>
-				<?php echo $current_options['footer_copyright_text']; ?>
+				<?php echo wp_kses_post($current_options['footer_copyright_text']); ?>
 				<?php } ?>
 				</div>
 			</div>
@@ -29,6 +29,7 @@
 	<!-- Copyrights -->	
 	
 </footer>
+</div>
 <!-- /End of Footer Section -->
 
 <!--Scroll To Top--> 

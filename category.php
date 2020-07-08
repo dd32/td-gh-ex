@@ -1,11 +1,10 @@
 <?php
 /**
  * The category template file
- * @package WordPress
  */
 get_header();
 
-$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() ); 
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() ); 
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -14,8 +13,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 			<div class="col-md-6">
 				<div class="page-title">
 					<h2><?php 
-						printf( __( '%1$s %2$s', 'busiprof' ), $current_options['category_prefix'], single_cat_title( '', false ) ); ?></h2>
-					<p><?php bloginfo('description');?></p>
+						printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['category_prefix'], single_cat_title( '', false ) ); ?></h2>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -30,6 +28,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 <div class="clearfix"></div>
 
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section>		
 	<div class="container">
 		<div class="row">
@@ -50,8 +49,8 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busiprof'),
-						'next_text'          => __('Next','busiprof'),
+						'prev_text'          => esc_html__('Previous','busiprof'),
+						'next_text'          => esc_html__('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>
@@ -66,6 +65,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 		</div>	
 	</div>
 </section>
+</div>
 <!-- End of Blog & Sidebar Section -->
  
 <div class="clearfix"></div>

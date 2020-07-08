@@ -10,29 +10,59 @@
 	<?php endif; ?>
 
 <?php wp_head(); 
-$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() );
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() );
 ?>	
 </head>
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>	
+<div id="page" class="site">
+	<a class="skip-link busiprof-screen-reader" href="#content"><?php esc_html_e( 'Skip to content', 'busiprof' ); ?></a>
 <!-- Navbar -->	
 <nav class="navbar navbar-default">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" class="brand">
-				<?php
-				if( $current_options['enable_logo_text'] == true ){
-					bloginfo('name');
-				}else{
-				?>
+			<?php
+			if( ($current_options['enable_logo_text'] == true) && ($current_options['enable_logo_text'] != 'nomorenow') &&  (!has_custom_logo()) )
+			{
+				echo '<a class="navbar-brand" href="'.esc_url(home_url( '/' )).'" class="brand">';
+				bloginfo('name');
+				echo '</a>';
+			}
+			elseif (($current_options['upload_image'] !="") && ($current_options['enable_logo_text'] != 'nomorenow') && (!has_custom_logo()))
+			{	
+			?>
+			<a class="navbar-brand" href="<?php echo esc_url(home_url( '/' )); ?>" class="brand">
 				<img alt="<?php bloginfo("name"); ?>" src="<?php echo ( esc_url($current_options['upload_image']) ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' ); ?>" 
 				alt="<?php bloginfo("name"); ?>"
 				class="logo_imgae" style="width:<?php echo esc_html($current_options['width']).'px'; ?>; height:<?php echo esc_html($current_options['height']).'px'; ?>;">
-				<?php } ?>
 			</a>
+			<?php	
+			}
+			else
+			{
+				$current_options['enable_logo_text'] = 'nomorenow';
+                update_option('busiprof_theme_options', $current_options);
+				if(has_custom_logo()):
+				echo '<span class="navbar-brand">';	
+				the_custom_logo();
+				echo '</span>';
+			endif;
+			?>
+			<div class="custom-logo-link-url">
+	    	<h1 class="site-title"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" ><?php bloginfo( 'name' ); ?></a>
+	    	</h1>
+	    	<?php
+				$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; ?></p>
+					<?php endif; ?>
+			</div>
+			<?php
+			}
+			?>	
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
+				<span class="sr-only"><?php esc_html_e('Toggle navigation','busiprof');?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -47,7 +77,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 				'container'  => 'nav-collapse collapse navbar-inverse-collapse',
 				'menu_class' => 'nav navbar-nav navbar-right',
 				'fallback_cb' => 'busiprof_fallback_page_menu',
-				'walker' => new busiprof_nav_walker()) 
+				'walker' => new Busiprof_nav_walker()) 
 				); 
 			?>			
 		</div>

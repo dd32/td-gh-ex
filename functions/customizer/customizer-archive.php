@@ -3,7 +3,7 @@
 	$wp_customize->add_section(
         'breadcrumbs_setting',
         array(
-            'title' => __('Archive page title','busiprof'),
+            'title' => esc_html__('Archive page title','busiprof'),
             'description' =>'',
 			'priority' => 126,
 			)
@@ -12,7 +12,7 @@
 		$wp_customize->add_setting(
 		'busiprof_theme_options[archive_prefix]',
 		array(
-			'default' => __('Archive','busiprof'),
+			'default' => esc_html__('Archive','busiprof'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 			'type' => 'option',
@@ -21,7 +21,7 @@
 		$wp_customize->add_control(
 		'busiprof_theme_options[archive_prefix]',
 		array(
-			'label' => __('Archive','busiprof'),
+			'label' => esc_html__('Archive','busiprof'),
 			'section' => 'breadcrumbs_setting',
 			'type' => 'text',
 		)
@@ -31,14 +31,14 @@
 	$wp_customize->add_setting(
     'busiprof_theme_options[category_prefix]',
     array(
-        'default' => __('Category','busiprof'),
+        'default' => esc_html__('Category','busiprof'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'busiprof_theme_options[category_prefix]',array(
-    'label'   => __('Category','busiprof'),
+    'label'   => esc_html__('Category','busiprof'),
     'section' => 'breadcrumbs_setting',
 	 'type' => 'text'
 	));
@@ -46,14 +46,14 @@
 	$wp_customize->add_setting(
     'busiprof_theme_options[author_prefix]',
     array(
-        'default' => __('All posts by','busiprof'),
+        'default' => esc_html__('All posts by','busiprof'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'busiprof_theme_options[author_prefix]',array(
-    'label'   => __('Author','busiprof'),
+    'label'   => esc_html__('Author','busiprof'),
     'section' => 'breadcrumbs_setting',
 	 'type' => 'text'
 	));
@@ -61,14 +61,14 @@
 	$wp_customize->add_setting(
     'busiprof_theme_options[tag_prefix]',
     array(
-        'default' => __('Tag','busiprof'),
+        'default' => esc_html__('Tag','busiprof'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'busiprof_theme_options[tag_prefix]',array(
-    'label'   => __('Tag','busiprof'),
+    'label'   => esc_html__('Tag','busiprof'),
     'section' => 'breadcrumbs_setting',
 	 'type' => 'text'
 	));
@@ -77,14 +77,14 @@
 	$wp_customize->add_setting(
     'busiprof_theme_options[search_prefix]',
     array(
-        'default' => __('Search results for','busiprof'),
+        'default' => esc_html__('Search results for','busiprof'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 		'type'	=> 'option',
 		)
 	);	
 	$wp_customize->add_control( 'busiprof_theme_options[search_prefix]',array(
-    'label'   => __('Search','busiprof'),
+    'label'   => esc_html__('Search','busiprof'),
     'section' => 'breadcrumbs_setting',
 	 'type' => 'text',
 	));
@@ -92,14 +92,14 @@
 	$wp_customize->add_setting(
     'busiprof_theme_options[404_prefix]',
     array(
-        'default' => __('404','busiprof'),
+        'default' => esc_html__('404','busiprof'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 		'type'	=> 'option',
 		)
 	);	
 	$wp_customize->add_control( 'busiprof_theme_options[404_prefix]',array(
-    'label'   => __('404','busiprof'),
+    'label'   => esc_html__('404','busiprof'),
     'section' => 'breadcrumbs_setting',
 	 'type' => 'text'
 	));
@@ -108,14 +108,14 @@
 	$wp_customize->add_setting(
     'busiprof_theme_options[shop_prefix]',
     array(
-        'default' => __('Shop','busiprof'),
+        'default' => esc_html__('Shop','busiprof'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'busiprof_template_page_sanitize_text',
 		'type'	=> 'option',
 		)
 	);	
 	$wp_customize->add_control( 'busiprof_theme_options[shop_prefix]',array(
-    'label'   => __('Shop','busiprof'),
+    'label'   => esc_html__('Shop','busiprof'),
     'section' => 'breadcrumbs_setting',
 	 'type' => 'text'
 	));
@@ -127,5 +127,4 @@ add_action( 'customize_register', 'busiprof_archive_page_customizer' );
 			return wp_kses_post( force_balance_tags( $input ) );
 
 	}
-
 ?>

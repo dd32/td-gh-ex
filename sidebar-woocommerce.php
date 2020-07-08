@@ -2,8 +2,6 @@
 /**
  * side bar template
  *
- * @package WordPress
- * @subpackage spasalon
  */
 ?>
 

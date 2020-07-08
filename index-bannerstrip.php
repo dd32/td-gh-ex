@@ -1,5 +1,5 @@
 <?php
-$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() );
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() );
  ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -12,7 +12,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 						
 						if( is_shop() ){
 			
-						printf( __( '%1$s %2$s', 'busiprof' ), $current_options['shop_prefix'], single_tag_title( '', false ));
+						printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['shop_prefix'], single_tag_title( '', false ));
 						} elseif(is_archive()){
 						
 							the_archive_title(); 
@@ -20,15 +20,14 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 							
 						}
 						else if( is_home() ){
-							
-							wp_title(' ');
+							esc_html_e('Home', 'busiprof' );
 							
 						}
 						elseif( is_search() ){
-							printf( __( '%1$s %2$s', 'busiprof' ), $current_options['search_prefix'], get_search_query() );
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['search_prefix'], get_search_query() );
 						}
 						elseif( is_404() ){
-							printf( __( '%1$s', 'busiprof' ), $current_options['404_prefix']);
+							printf( esc_html($current_options['404_prefix']));
 						}
 						
 						else{ 
@@ -36,7 +35,6 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 							the_title(); 
 						}  
 						?></h2>
-					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>
 			<div class="col-md-6">

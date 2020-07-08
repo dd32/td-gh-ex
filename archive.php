@@ -1,12 +1,11 @@
 <?php
 /**
- * The archive template file
- * @package WordPress
+ * The template for displaying archive page
  */
  
 get_header(); 
 
-$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() );
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() );
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -16,25 +15,21 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 				<div class="page-title">
 					<h2><?php if ( is_day() ) :
 			
-							printf( __( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], get_the_date() );
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], esc_html(get_the_date()) );
 						  
 						 elseif ( is_month() ) : 
 						 
-							printf( __( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], get_the_date('F Y') );
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], esc_html(get_the_date()) );
 							 
 						 elseif ( is_year() ) :
 						 
-							printf( __( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], get_the_date('Y') );						 
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], esc_html(get_the_date()) );						 
 						 
 						else : 
-						
-							 _e( $current_options['archive_prefix'] , 'busiprof' );
-							 
-							 
+							esc_html_e( "Blog Archive", 'busiprof' );
 						 endif; 
 						 ?>
 				    </h2>
-					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -49,6 +44,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 <div class="clearfix"></div>
 
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section>		
 	<div class="container">
 		<div class="row">
@@ -69,8 +65,8 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busiprof'),
-						'next_text'          => __('Next','busiprof'),
+						'prev_text'          => esc_html__('Previous','busiprof'),
+						'next_text'          => esc_html__('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>
@@ -85,6 +81,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 		</div>	
 	</div>
 </section>
+</div>
 <!-- End of Blog & Sidebar Section -->
  
 <div class="clearfix"></div>

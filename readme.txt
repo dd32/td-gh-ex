@@ -1,3 +1,14 @@
+== BusiProf ==
+
+Contributors: priyanshumittal
+Requires at least: 4.5
+Tested up to: 5.4.2
+Stable tag: 2.2
+Requires PHP: 5.4
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v2 or later
+
+== Description ==
 BusiProf Theme README.
 
 Busiprof is a business WordPress theme.  Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof
@@ -33,9 +44,16 @@ Fresh installation!
 1. Upload the BusiProf Theme folder to your wp-content/themes folder.
 2. Activate the theme from the WP Dashboard.
 3. Done!
+
 === Images ===
 
 All images in BusiProf are licensed under the terms of the GNU GPL.
+
+
+== Keyboard navigation ==
+
+Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
+
 
 # Top Navigation Menu:
 - Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
@@ -54,6 +72,13 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+
+@version 2.2
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Declared all the licenses.
+3. Changed the screenshot image.
+4. Move the homepage sections from theme to companion plugin.
+5. Fixed all the other issues.
 @version 2.1.1
 1. Add recent blog setting
 @version 2.1
@@ -251,59 +276,28 @@ Small Styling added for Options Panel.
 released
 
 
+== Credits ==
 
+Font Awesome:
+Copyright: (c) Dave Gandy
+License: https://fontawesome.com/license ( Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License )
+Source: https://fontawesome.com
 
-Spicy WordPress Theme, Copyright 2014 Priyanshu Mittal
-Spicy is distributed under the terms of the GNU GPL
+Bootstrap: 
+Copyright: (c) Twitter
+License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+Source: http://getbootstrap.com
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+FlexSlider
+Copyright 2012 WooThemes
+License: Under the GPLv2 license
+Source: http://www.woothemes.com/flexslider/
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+Customizer Notify:
+Copyright: (c) Mikesetzer
+License: Under GNU General Public License
+Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see .
-
-BusiProf WordPress Theme bundles the following third-party resources:
-
-Screenshot: Image used in screenshot By Stocksnap
-URL: https://pixabay.com/en/people-man-work-office-business-2572981/
-
-Slider Banner Image: Image used in screenshot By FirmBee
-URL: https://pixabay.com/p-667280/?no_redirect
-
-Portfolio Image :
- 
-1. https://pixabay.com/en/balloon-heart-love-romance-sky-1046658/
-
-2. https://pixabay.com/en/computer-macbook-tablet-editing-767781/
-
-3. https://pixabay.com/en/man-reading-touchscreen-blog-791049/
-
-4. https://pixabay.com/en/carriage-clock-timepiece-time-797833/
-
-Testimonial Image :
-
-1. https://pixabay.com/en/runner-race-competition-female-888016/
-
-2. https://pixabay.com/en/girl-sitting-posing-trees-woods-535877/
-
-
-
-Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license
-Source: http://fontawesome.io
-
-Bootstrap v2.3.0  Copyright 2012 Twitter, Inc.
-Licensed under APACHE License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
-
-Font License
-    Applies to all desktop and webfont files in the following directory: /fonts/.
-    License: SIL OFL 1.1
-    URL: http://scripts.sil.org/OFL
-# --- EOF --- #
+Image used in the Screenshot
+License - CC0 Public domain
+Source - https://pxhere.com/en/photo/1223786

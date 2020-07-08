@@ -1,14 +1,14 @@
 <?php
 /**
  * The search template file
- * @package WordPress
- */
+*/
  
 get_header(); 
 get_template_part('index', 'bannerstrip'); // banner strip
 ?>
 
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section>		
 	<div class="container">
 		<div class="row">
@@ -24,16 +24,16 @@ get_template_part('index', 'bannerstrip'); // banner strip
 						
 					endwhile;
 					else : ?>
-					<h2><?php _e( "Nothing Found", 'busiprof' ); ?></h2>
-					<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'busiprof' ); ?>
+					<h2><?php esc_html_e( "Nothing Found", 'busiprof' ); ?></h2>
+					<p><?php esc_html_e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'busiprof' ); ?>
 					</p>
 					<!-- Pagination -->			
 					<div class="paginations">
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busiprof'),
-						'next_text'          => __('Next','busiprof'),
+						'prev_text'          => esc_html__('Previous','busiprof'),
+						'next_text'          => esc_html__('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>
@@ -48,6 +48,7 @@ get_template_part('index', 'bannerstrip'); // banner strip
 		</div>	
 	</div>
 </section>
+</div>
 <!-- End of Blog & Sidebar Section -->
  
 <div class="clearfix"></div>

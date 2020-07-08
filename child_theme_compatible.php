@@ -1,16 +1,8 @@
 <?php
-/*---------------------------------------------------------------------------------*
- * @file           theme_stup_data.php
- * @package        Busiprof
- * @copyright      2013 Busiprof
- * @license        license.txt
- * @filesource     wp-content/themes/Busiprof/theme_setup_data.php
- *	Admin  & front end defual data file 
- *-----------------------------------------------------------------------------------*/ 
- 
-function busiprof_theme_setup_data()
+function theme_setup_data()
 {
-		$template_uri = plugins_url(). '/webriti-companion/inc/busiprof/img/';
+		$template_uri = BUSI_TEMPLATE_DIR_URI. '/images/default/';	
+		
 		return $busiprof_theme_options = array(
 		
 			'front_page'  => 'yes',
@@ -61,9 +53,8 @@ function busiprof_theme_setup_data()
 			'client_desc' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof'),
 			
 			'busiprof_custom_css' =>"",
-
+			
 			'footer_copyright_text' => sprintf(__('<p><a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">BusiProf</a> by Webriti</p>', 'busiprof')),
-
 			
 			'footer_social_media_enabled'=>'on',
 			'footer_twitter_link' =>"#",
@@ -115,22 +106,22 @@ function busiprof_theme_setup_data()
 			
 			
 			'project_title_one' => __('Business cards','busiprof'), //project title one
-			'project_thumb_one' =>$template_uri .'rec_project.jpg', //project thumbnail one
+			'project_thumb_one' =>$template_uri .'/rec_project.jpg', //project thumbnail one
 			'project_text_one'  => __('Graphic design & web design','busiprof'), //project text-description one
 			'project_one_url' => '#',
 			
 			'project_title_two' => __('Business cards','busiprof'), //project title two
-			'project_thumb_two' =>$template_uri .'rec_project2.jpg', //project thumbnail two
+			'project_thumb_two' =>$template_uri .'/rec_project2.jpg', //project thumbnail two
 			'project_text_two'  => __('Graphic design & web design','busiprof'), //project text-description two
 			'project_two_url' => '#',
 			
 			'project_title_three' => __('Business cards','busiprof'), //project title three
-			'project_thumb_three' =>$template_uri .'rec_project3.jpg', //project thumbnail three
+			'project_thumb_three' =>$template_uri .'/rec_project3.jpg', //project thumbnail three
 			'project_text_three'  => __('Graphic design & web design','busiprof'), //project text-description three
 			'project_three_url' => '#',
 			
 			'project_title_four' => __('Business cards','busiprof'), //project title three
-			'project_thumb_four' =>$template_uri .'rec_project4.jpg', //project thumbnail three
+			'project_thumb_four' =>$template_uri .'/rec_project4.jpg', //project thumbnail three
 			'project_text_four'  => __('Graphic design & web design','busiprof'), //project text-description three
 			'project_four_url' => '#',
 			

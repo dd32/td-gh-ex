@@ -4,6 +4,7 @@ get_header();
 get_template_part('index', 'bannerstrip');
 ?>
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section>		
 	<div class="container">
 		<div class="row">
@@ -22,6 +23,7 @@ get_template_part('index', 'bannerstrip');
 		</div>	
 	</div>
 </section>
+</div>
 <!-- End of Blog & Sidebar Section -->
  
 <div class="clearfix"></div>

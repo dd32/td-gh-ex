@@ -1,22 +1,48 @@
 /*
 * Theme Name: Busiprof
 * Theme URI: https://webriti.com/busiprof-premium-wordpress-theme-1/
-* Description: Busiprof WordPress Theme is a fully responsive and translation-ready theme that allows you to create stunning blogs and websites. The theme is well suited for companies, law firms,ecommerce, finance, agency, travel, photography, recipes, design, arts, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablet friendly. It has various options in the WordPress Customizer to change the look of the theme. The theme customizer can be used to add your own favicon, logo, feature slide, services, 2 testimonial slider, blog, callout and much more. In the premium version you can add unlimited slides. There are a number of in-built widgets and support for various popular plugins like WPML, the Polylang Translation WordPress Plugin, Woocommerce and Contact Form 7. 10 beautifully designed templates like About Us, Services, Portfolio 2/3/4 column, Portfolio with Category, Portfolio Archive, Blog Left/Right Sidebar, Blog Fullwidth, Full Width Page, Contact Us and many useful sections for business using the Homepage template. Busiprof theme comes with various Locales. Just navigate to Appearance / Customize to start customizing.  
-* Version: 2.1.1
+* Description: Busiprof WordPress Theme is a fully responsive and translation-ready theme that allows you to create stunning blogs and websites. The theme is well suited for companies, law firms,ecommerce, finance, agency, travel, photography, recipes, design, arts, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablet friendly. It has various options in the WordPress Customizer to change the look of the theme. The theme customizer can be used to add your own favicon, logo, feature slide, services, 2 testimonial slider, blog, callout and much more. In the premium version you can add unlimited slides. There are a number of in-built widgets and support for various popular plugins like WPML, the Polylang Translation WordPress Plugin, Woocommerce and Contact Form 7. 10 beautifully designed templates like About Us, Services, Blog Right Sidebar, Blog Fullwidth, Full Width Page, Contact Us and many useful sections for business using the Homepage template. Busiprof theme comes with various Locales. Just navigate to Appearance / Customize to start customizing.  
+* Version: 2.2
 * Author: webriti
 * Author URI: https://www.webriti.com
-* Tags: one-column, two-columns, full-width-template, threaded-comments, right-sidebar, custom-menu, sticky-post, translation-ready, featured-images, blog, theme-options, portfolio, footer-widgets, e-commerce
-* License: GNU General Public License v3.0
-* License URI: http://www.gnu.org/licenses/gpl.html
-* Copyright (c) 2013 Webriti. All rights reserved.
-* http://www.webriti.com
+* Tags: one-column, two-columns, full-width-template, threaded-comments, right-sidebar, custom-menu, sticky-post, translation-ready, featured-images, blog, theme-options, footer-widgets, e-commerce
+* Requires at least: 4.5
+* Tested up to: 5.4.2
+* Requires PHP: 5.4
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* License: GNU General Public License v2 or later
 * Text Domain: 	busiprof
 * Slug: busiprof 	
 */
-/* Additional css 
--------------------------------------------------- */
-/* Navbar Menus Style */
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Common
+2.0 Flex Slider with Thumbnails Css
+3.0 Section Title
+4.0 Breadcrumb
+5.0 Common Css
+6.0 Service Section
+7.0 Portfolio Section
+8.0 Paginations
+9.0 Home Blog Section
+10.0 Testimonial Section
+11.0 404 Error Page
+12.0 Blog Section
+	12.1 Blog Page
+13.0 Widgets Section
+14.0 Page Scrollup
+15.0 Woocommerce	
+	15.1 Woocommerce Single product css
+16.0 Skip to content
+--------------------------------------------------------------*/
+
+
+
+/*===================================================================================*/
+/*	1.0 Common
+/*===================================================================================*/
 body {
 	background: #ffffff;
     color: #737f85;
@@ -53,11 +79,12 @@ a, a:hover, a:focus { transition: all 0.3s ease 0s; text-decoration: none; }
 img, .wp-post-image { display: block; height: auto; max-width: 100%; }
 ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; padding: 6px 0; vertical-align: top; }
 
-/* Header Top Title Css------------------------------------------------------------------------------------------------------------------------ */ 
 .header-title { background-color: #222629; color: #ffffff; font-family: 'Droid Sans'; text-align: center; padding: 15px; }
 .header-title h2 { color: #ffffff; font-family: 'Droid Sans'; font-size: 26px; font-weight: 400; margin: 0; text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); }
  
-/* Flex Slider with Thumbnails Css ------------------------------------------------------------------------------------------------------------------------------ */ 
+/*===================================================================================*/
+/*	2.0 Flex Slider with Thumbnails Css
+/*===================================================================================*/
 #main { margin: 0; overflow: hidden; }
 .slider { 
 	position: relative; 
@@ -106,7 +133,9 @@ ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; pa
 .flex-btn:hover, .flex-btn:focus { background-color: #64b445; }
 .flex-btn:hover, .flex-btn:focus { background-color: rgba(92, 162, 223, 0.9); }
 
-/* Section Title Css --------------------------------------------------------------------------------------------------------------- */
+/*===================================================================================*/
+/*	3.0 Section Title
+/*===================================================================================*/
 .section-title { margin: 0 0 37px; padding: 0 15px; display: block; text-align: center; }
 .section-title .section-heading { font-family: 'Droid Sans'; color: #354656; font-weight: 400; margin: 0px 0 6px; }
 .section-title p, .section-title-small p { color: #9ea5a1; font-family: "Droid Serif"; font-weight: 400; font-style: italic; margin: 0; }
@@ -116,7 +145,6 @@ ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; pa
 .section-title-mini .section-heading { font-weight: 400; margin: 0px; }
 .section-title-mini .section-heading span { color: #737f85; font-size: 14px; line-height: 25px; }
 
-/* Page Title Css -------------------------------------------------------------------------------------------------------------------------- */
 .page-header {	
 	background-color: #fefeff;
     background-image: linear-gradient(to bottom, #fefeff, #f4f6f7);
@@ -129,7 +157,9 @@ ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; pa
 .page-title h2 { margin: 0; font-weight: 400; word-wrap: break-word; }
 .page-title p { font-family: "Droid Serif"; font-style: italic; }
 
-/* Page breadcrumb Css -------------------------------------------------------------------------------------------------------------------------- */
+/*===================================================================================*/
+/*	4.0 Breadcrumb
+/*===================================================================================*/
 
 .page-breadcrumb {
 	list-style: none outside none;
@@ -145,7 +175,9 @@ ul li, ol li { color: #737f85; font-size: 15px; line-height: 24px; margin: 0; pa
 .page-breadcrumb > li + li:before { color: #ffffff; padding: 0 5px; }
 .page-breadcrumb > li a:hover, .page-breadcrumb > li a:focus {color: #5ca2df; }
 
-/* Common Css Css ------------------------------------------------------------------------------------------------------------------ */
+/*===================================================================================*/
+/*	5.0 Common Css
+/*===================================================================================*/
 #section { margin: 0; padding: 60px 0 20px; }
 .width-lg { width: 80px; }
 .width-sm { width: 60px; }
@@ -164,7 +196,9 @@ a.rsswidget::before { display: none; }
 .tweet-text { display: block; }
 .tweet-text span { display: block; font-size: 14px; color: #abb6bc; }  
 
-/* Service Section Css ----------------------------------------------------------------------------------------------------------- */
+/*===================================================================================*/
+/*	6.0 Service Section
+/*===================================================================================*/
 .service .post { 
 	background-color: #f7f7f7; 
 	border: 1px solid #e4e8ea; 
@@ -228,7 +262,10 @@ a.rsswidget::before { display: none; }
 .other-service .entry-header .entry-title > a { color: #404b56; }
 .other-service .entry-header .entry-title > a:hover { color: #2a7bc1; }
 
-/* Portfolio Section Css ----------------------------------------------------------------------------------------------------------- */
+
+/*===================================================================================*/
+/*	7.0 Portfolio Section
+/*===================================================================================*/
 .bg-color { background: #f7f7f7; border-top: 1px solid #e4e8ea; border-bottom: 1px solid #e4e8ea; }
 .portfolio-tabs { border-top: 1px solid #e4e8ea; border-bottom: 1px solid #e4e8ea; text-align: center; margin: 0 0 25px; padding: 8px 0; }
 .portfolio-tabs li { display: inline-block; list-style: outside none none; margin: 0 10px; padding: 0; }
@@ -304,7 +341,9 @@ a.rsswidget::before { display: none; }
 }
 .portfolio .paginations { padding: 0 0 35px; }
 
-/* Paginations Css ---------------------------------------------------------------------------------------------------------------------------- */
+/*===================================================================================*/
+/*	8.0 Paginations
+/*===================================================================================*/
 .paginations { margin: 0px; text-align: center; }
 .paginations a {	
 	background: #eff1f2 none repeat scroll 0 0;
@@ -349,7 +388,9 @@ a.rsswidget::before { display: none; }
 	color:#fff;
 }
 
-/* Home Blog Section Css ------------------------------------------------------------------------------------------------------------- */
+/*===================================================================================*/
+/*	9.0 Home Blog Section
+/*===================================================================================*/
 .home-post { margin: 0 0 20px; }
 .home-post .post { margin: 0 0 20px; padding-bottom: 20px; border-bottom: 1px solid #e4e8ea; }
 .home-post .post .post-thumbnail { float: left; margin: 0 20px 0 0; overflow: hidden; }
@@ -372,16 +413,15 @@ a.rsswidget::before { display: none; }
 .home-post .entry-date a { color: #b4babe; }
 .home-post-img img { height: 80px; }
 
-/* Home Blog Section Css ------------------------------------------------------------------------------------------------------------- */
 .home-post-latest { margin: 0 0 0px; padding-bottom: 0 !important; }
 .home-post-latest .post { margin: 0 0 40px; }
 .home-post-latest .post .post-thumbnail { float: left; margin: 0 25px 0 0; overflow: hidden; width: 200px; }
 .home-post-latest .post .post-thumbnail img { transition: all 0.5s ease 0s; border-radius: 1%; }
 .home-post-latest .post:hover .post-thumbnail img { opacity: 0.9; }
 .home-post-latest .post .entry-header { display: block; margin: 0 0 18px; padding: 0; }
-.home-post-latest .post .entry-header .entry-title { font-size: 20px; margin: 0; } 
+.home-post-latest .post .entry-header .entry-title { font-size: 20px; margin: 0 2px; } 
 .home-post-latest .entry-header .entry-title > a { color: #404b56; }
-.home-post-latest .entry-meta { margin: -6px 0 17px; }
+.home-post-latest .entry-meta { margin: 0px 0 17px; }
 .home-post-latest .entry-meta a { letter-spacing: 0; }
 .home-post-latest .post:nth-last-child(2) { margin: 0 0 10px; }
 .home-post-latest .entry-date:before, .home-post-latest .comments-link:before, 
@@ -391,7 +431,10 @@ a.rsswidget::before { display: none; }
 .home-post-latest .entry-meta > span { margin-right: 13px; }
 .home-post-latest .post p { margin: 0 0 20px; }
 
-/* Testimonial Section Css --------------------------------------------------------------------------------------------------------------------- */
+
+/*===================================================================================*/
+/*	10.0 Testimonial Section
+/*===================================================================================*/
 .testimonial .post { margin: 0 0 40px; }
 .testimonial .post .post-thumbnail { float: left; margin: 0 20px 0 0; overflow: hidden; position: relative; height: 80px; }
 .testimonial .post .post-thumbnail img { transition: all 0.5s ease 0s; }
@@ -485,7 +528,6 @@ a.rsswidget::before { display: none; }
 .home-post-img img{height:80px;}
 
 
-/* Testimonial Section Css --------------------------------------------------------------------------------------------------------------------- */
 .testimonial .post { margin: 0 0 40px; }
 .testimonial .post .post-thumbnail { float: left; margin: 0 20px 0 0; overflow: hidden; position: relative; }
 .testimonial .post .post-thumbnail img { transition: all 0.5s ease 0s; }
@@ -596,7 +638,6 @@ a.rsswidget::before { display: none; }
 .testi-nav:hover a:before { color: #ffffff; }
 .testi-nav a.testi-next:before { content: '\f105'; }
 
-/* Testimonial Pager --------------------------------------------------------------------------------------------------------------*/
 .testi-pager { margin-top: 66px !important; }
 .testi-pager .carousel-indicators li {
 	background-color: transparent; border: 2px solid #344656;
@@ -609,7 +650,9 @@ a.rsswidget::before { display: none; }
 }
 .testi-pager .carousel-indicators .active { background-color: #344656; border: 2px solid #344656; margin: 1px; }
 
-/*404 Error Page Css-----------------------------------------------------------------------------------------------------------------------------*/
+/*===================================================================================*/
+/*	11.0 404 Error Page
+/*===================================================================================*/
 .error-404 { clear: both; text-align: center; padding: 30px 0 100px; }
 .error-404 h1 { font-size: 190px; line-height: 190px; margin: 0 0 5px; transition: all 1 ease-out 0s; }
 .error-404:hover H1 { color: #51555c; }
@@ -617,7 +660,10 @@ a.rsswidget::before { display: none; }
 .error-404 p { font-family: "Droid Serif"; font-style: italic; color: #9ea5a1; }
 .error-404 .btn-wrap { margin: 25px 0 0; }
 
-/* Blog Section Css ------------------------------------------------------------------------------------------------------------- */
+
+/*===================================================================================*/
+/*	12.0 Blog Section
+/*===================================================================================*/
 .home-post { margin: 0 0 20px; }
 .home-post .post { margin: 0 0 20px; padding-bottom: 20px; border-bottom: 1px solid #e4e8ea; }
 .home-post .post .post-thumbnail { float: left; margin: 0 20px 0 0; overflow: hidden; }
@@ -639,10 +685,14 @@ a.rsswidget::before { display: none; }
 }
 .home-post .entry-date a { color: #b4babe; }
 
-/*Blog Page Css -----------------------------------------------------------------------------------------------------*/
+/*===================================================================================*/
+/*	12.1 Blog Page
+/*===================================================================================*/
 .site-content { margin: 0; padding: 60px 0 60px; border-left: 3px solid #e4e8ea; }
+.site-content .sticky { background: #efefef;} 
 .page-content { margin: 0; padding: 60px 0 60px; }
 .site-content .post { margin: 0 0 40px; padding: 0 0 40px 30px; border-bottom: 1px solid #e4e8ea; position: relative; }
+.site-content .post .wp-block-embed__wrapper{overflow: hidden;}
 .site-content .post:last-child { margin: 0 0 40px; }
 .site-content .post .entry-header { display: block; margin: 0 0 6px; padding: 0; }
 .site-content .entry-header .entry-title { font-size: 20px; line-height: 25px; font-weight: 400; margin: 0; word-wrap:break-word;}
@@ -663,7 +713,7 @@ a.rsswidget::before { display: none; }
 .site-content .more-link { margin: 0; padding: 5px 18px; }
 .entry-meta { margin: 0 0 18px; display: block; }
 .entry-meta > span { margin-right: 25px; }
-.entry-meta a { 
+.entry-meta a, .comments-link { 
 	color: #737f85; 
 	font-size: 13px; 
 	line-height: 20px; 
@@ -746,7 +796,9 @@ form.comment-form .submit{ margin:0 15px; }
 .form-group label { display: block; font-size: 15px; font-weight: 500; line-height: 20px; margin: 0 0 11px; }
 .form-group input[type="submit"], .form-group button { margin-top: 15px; }
 
-/*All Widgets Section--------------------------------------------------------------------------------------------------------------------------*/
+/*===================================================================================*/
+/*	13.0 Widgets Section
+/*===================================================================================*/
 .sidebar { 
 	background-color: #f8f8f8;
     background-image: -moz-linear-gradient(left center , #f8f8f8, #ffffff);
@@ -870,7 +922,6 @@ form.comment-form .submit{ margin:0 15px; }
 .social li > a > i { color: #FFFFFF; font-size: 14px; line-height: 2.2; }
 .widget .social li { background-color: #4b453f; } 
 
-/*Footer Sidebar Widget Section----------------------------------------------------------------------------------------------------------------*/
 .footer-sidebar { background-color: #344656; margin: 0; padding: 55px 0 0px; width: 100%; }
 .footer-sidebar .widget { color: #d3dee8; border-bottom: 0 none; display: block; margin: 0px; padding: 0 0 60px; }
 .footer-sidebar .widget p { color: #d3dee8; }
@@ -925,7 +976,9 @@ form.comment-form .submit{ margin:0 15px; }
 .site-info p a:hover, .site-info p a:focus { color: #2a7bc1; }
 .site-info .social { float: right; }
 
-/*Page Scrollup Css-------------------------------------------------------------------------------------------------------*/
+/*===================================================================================*/
+/*	14.0 Page Scrollup
+/*===================================================================================*/
 .scrollup {
 	background-color: #5b6f7f;
     border-radius: 10%;
@@ -958,7 +1011,10 @@ form.comment-form .submit{ margin:0 15px; }
 	margin: 0px; 		
 }
 
-/* Woocommerce Css*/
+
+/*===================================================================================*/
+/*	15.0 Woocommerce
+/*===================================================================================*/
 .woocommerce ul.products li.product .onsale {
     left: auto;
     margin: 0;
@@ -1026,11 +1082,9 @@ li.mini_cart_item  a::before{ display:none;}
 .service .col-sm-6:nth-child(2n+1){ clear:left; } 
 }
 
-
 /*===================================================================================*/
-/*	WOOCOMMERCE SINGLE PRODUCT CSS
-/*===================================================================================*/
-
+/*	15.1 WOOCOMMERCE SINGLE PRODUCT CSS
+/*===================================================================================*/ 
 .single-product .pswp__button { background-color: transparent; }
 .single-product div.product { position: relative; overflow: hidden; }
 .single-product div.product:after,.single-product div.product:before {
@@ -1151,3 +1205,60 @@ li.mini_cart_item  a::before{ display:none;}
 .woocommerce-product-gallery .flex-control-nav {
     display: block;
 }
+
+/*--------------------------------------------------------------
+16.0 Skip to content
+--------------------------------------------------------*/
+.busiprof-screen-reader {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.busiprof-screen-reader:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 13px;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+.navbar .dropdown-menu.leftauto .dropdown-menu {
+    border: 0;
+    right: 100%;
+    left: auto !important;
+}
+.navbar-toggle:focus,.dropdown-menu > .active > a:focus,.open a:focus,textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: -webkit-focus-ring-color auto 1px !important;
+    outline-color: -webkit-focus-ring-color !important;
+    outline-style: auto;
+    outline-width: 1px;
+    outline: thin dotted;
+}
+.post .post-thumbnail a{
+display: block;
+    margin: 1px;
+}
+.custom-logo-link-url{display: inline-block;padding-top:15px;}
+ .custom-logo-link-url .site-title{ margin: 0 0 5px;}
+.custom-logo-link-url .site-title .navbar-brand{float: unset;padding:0;} (edited) 

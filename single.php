@@ -7,6 +7,7 @@ get_template_part('index', 'bannerstrip');
 <div class="clearfix"></div>
 
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section>		
 	<div class="container">
 		<div class="row">
@@ -50,5 +51,6 @@ get_template_part('index', 'bannerstrip');
 		</div>	
 	</div>
 </section>
+</div>
 <!-- End of Blog & Sidebar Section -->
 <?php get_footer(); ?>

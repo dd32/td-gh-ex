@@ -1,33 +1,19 @@
 <?php
-/*
- * @file           comment-function.php
- * @package        Busiprof
- * @author         Webriti
- * @copyright      2013 Webrit
- * @license        license.txt
- * @filesource     wp-content/themes/Busiprof/comment-function.php
-*/	
 // code for comment
 if ( ! function_exists( 'busiprof_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own appointment(), and that function will be used instead.
- *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since appointment
  */
 function busiprof_comment( $comment, $args, $depth ) {
-	
-	$GLOBALS['comment'] = $comment;
 
 //get theme data
 global $comment_data;
 
 //translations
-$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','busiprof');
+$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','busiprof');
 ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 				
@@ -38,11 +24,11 @@ $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['tra
 					<div class="media-body">		
                     <!-- /comment-avatar -->
                     <div class="comment-content">
-						<h5 class="fn"><?php printf(__('%s','busiprof'), get_comment_author_link()) ?><span>|</span>
-						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="datetime"><?php echo get_comment_date(); ?></a></h5>
+						<h5 class="fn"><?php printf(('%s'), get_comment_author_link()) ?><span>|</span>
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ))  ?>" class="datetime"><?php echo esc_html(get_comment_date()); ?></a></h5>
                     <!-- /comment-meta -->
                     <?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'busiprof' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'busiprof' ); ?></em>
 					<br />
 				<?php endif; ?>
     	                <p>

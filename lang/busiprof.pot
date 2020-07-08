@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Busiprof\n"
-"POT-Creation-Date: 2019-08-30 12:27+0530\n"
+"POT-Creation-Date: 2020-07-08 17:34+0530\n"
 "PO-Revision-Date: 2019-03-12 18:11+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,114 +21,270 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:14 functions/breadcrumbs/breadcrumbs.php:103
+#: 404.php:15 functions/breadcrumbs/breadcrumbs.php:103
 msgid "Error 404"
 msgstr ""
 
-#: 404.php:15
+#: 404.php:16
 msgid "Oops! Page not found"
 msgstr ""
 
-#: 404.php:16
+#: 404.php:17
 msgid "We are sorry, but the page you are looking for does not exist."
 msgstr ""
 
-#: 404.php:17
+#: 404.php:18
 msgid "Go Back"
 msgstr ""
 
-#: archive.php:19 archive.php:23 archive.php:27 author.php:17 category.php:17
-#: index-bannerstrip.php:15 index-bannerstrip.php:28 tag.php:16
+#: archive.php:18 archive.php:22 archive.php:26 author.php:16 category.php:16
+#: index-bannerstrip.php:15 index-bannerstrip.php:27 tag.php:15
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: archive.php:72 author.php:54 category.php:53 index.php:26 search.php:35
-#: tag.php:52
+#: archive.php:29
+msgid "Blog Archive"
+msgstr ""
+
+#: archive.php:68 author.php:53 category.php:52 index.php:27 search.php:35
+#: tag.php:51
 msgid "Previous"
 msgstr ""
 
-#: archive.php:73 author.php:55 category.php:54 index.php:27 search.php:36
-#: tag.php:53
+#: archive.php:69 author.php:54 category.php:53 index.php:28 search.php:36
+#: tag.php:52
 msgid "Next"
 msgstr ""
 
-#: comments.php:11
+#: child_theme_compatible.php:29 theme_setup_data.php:37
+msgid "Busiprof: the perfect WordPress theme for an app and web developer"
+msgstr ""
+
+#: child_theme_compatible.php:31 child_theme_compatible.php:36
+#: theme_setup_data.php:39 theme_setup_data.php:44
+msgid "Responsive WP theme"
+msgstr ""
+
+#: child_theme_compatible.php:32 child_theme_compatible.php:37
+#: child_theme_compatible.php:53 child_theme_compatible.php:69
+#: child_theme_compatible.php:82 child_theme_compatible.php:135
+#: child_theme_compatible.php:140 theme_setup_data.php:40
+#: theme_setup_data.php:45 theme_setup_data.php:61 theme_setup_data.php:78
+#: theme_setup_data.php:91 theme_setup_data.php:144 theme_setup_data.php:149
+msgid ""
+"We are a group of passionate designers and developers who really love "
+"creating awesome WordPress themes & giving support."
+msgstr ""
+
+#: child_theme_compatible.php:33 child_theme_compatible.php:38 content.php:44
+#: index-blog.php:53 theme_setup_data.php:41 theme_setup_data.php:46
+msgid "Read More"
+msgstr ""
+
+#: child_theme_compatible.php:52 theme_setup_data.php:60
+msgid "Meet our clients"
+msgstr ""
+
+#: child_theme_compatible.php:57
+#: functions/customizer/custo_general_settings.php:49 theme_setup_data.php:65
+msgid ""
+"<p><a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | "
+"Theme: <a href=\"https://webriti.com\" rel=\"nofollow\">BusiProf</a> by "
+"Webriti</p>"
+msgstr ""
+
+#: child_theme_compatible.php:68 theme_setup_data.php:77
+msgid "Recent Projects"
+msgstr ""
+
+#: child_theme_compatible.php:76 child_theme_compatible.php:105
+#: theme_setup_data.php:85 theme_setup_data.php:114
+msgid "More Services"
+msgstr ""
+
+#: child_theme_compatible.php:81 theme_setup_data.php:90
+msgid "Awesome Services"
+msgstr ""
+
+#: child_theme_compatible.php:108 child_theme_compatible.php:113
+#: child_theme_compatible.php:118 child_theme_compatible.php:123
+#: theme_setup_data.php:117 theme_setup_data.php:122 theme_setup_data.php:127
+#: theme_setup_data.php:132
+msgid "Business cards"
+msgstr ""
+
+#: child_theme_compatible.php:110 child_theme_compatible.php:115
+#: child_theme_compatible.php:120 child_theme_compatible.php:125
+#: theme_setup_data.php:119 theme_setup_data.php:124 theme_setup_data.php:129
+#: theme_setup_data.php:134
+msgid "Graphic design & web design"
+msgstr ""
+
+#: child_theme_compatible.php:131 theme_setup_data.php:140
+msgid "Our Testimonials"
+msgstr ""
+
+#: child_theme_compatible.php:132 child_theme_compatible.php:143
+#: child_theme_compatible.php:146
+#: functions/customizer/custo_sections_settings.php:55 theme_setup_data.php:141
+#: theme_setup_data.php:152 theme_setup_data.php:155
+msgid "We are a group of passionate designers & developers"
+msgstr ""
+
+#: child_theme_compatible.php:136 child_theme_compatible.php:141
+#: theme_setup_data.php:145 theme_setup_data.php:150
+msgid "Natalie Portman"
+msgstr ""
+
+#: child_theme_compatible.php:137 child_theme_compatible.php:142
+#: theme_setup_data.php:146 theme_setup_data.php:151
+msgid "(Sales & Marketing)"
+msgstr ""
+
+#: child_theme_compatible.php:145
+#: functions/customizer/custo_sections_settings.php:46 theme_setup_data.php:154
+msgid "Recent Blog"
+msgstr ""
+
+#: child_theme_compatible.php:150 theme_setup_data.php:159
+msgid "378 Kingston Court"
+msgstr ""
+
+#: child_theme_compatible.php:151 theme_setup_data.php:160
+msgid "West New York, NJ 07093"
+msgstr ""
+
+#: child_theme_compatible.php:152 theme_setup_data.php:161
+msgid "973-960-4715"
+msgstr ""
+
+#: child_theme_compatible.php:153 theme_setup_data.php:162
+msgid "0276-758645"
+msgstr ""
+
+#: child_theme_compatible.php:154 theme_setup_data.php:163
+msgid "info@busiprof.com"
+msgstr ""
+
+#: child_theme_compatible.php:155 theme_setup_data.php:164
+msgid "https://www.busiprof.com"
+msgstr ""
+
+#: child_theme_compatible.php:178
+#: functions/customizer/customizer-archive.php:15
+#: functions/customizer/customizer-archive.php:24 theme_setup_data.php:187
+msgid "Archive"
+msgstr ""
+
+#: child_theme_compatible.php:179
+#: functions/customizer/customizer-archive.php:34
+#: functions/customizer/customizer-archive.php:41 theme_setup_data.php:188
+msgid "Category"
+msgstr ""
+
+#: child_theme_compatible.php:180
+#: functions/customizer/customizer-archive.php:49 theme_setup_data.php:189
+msgid "All posts by"
+msgstr ""
+
+#: child_theme_compatible.php:181
+#: functions/customizer/customizer-archive.php:64
+#: functions/customizer/customizer-archive.php:71 theme_setup_data.php:190
+msgid "Tag"
+msgstr ""
+
+#: child_theme_compatible.php:182 functions/breadcrumbs/breadcrumbs.php:28
+#: functions/customizer/customizer-archive.php:80 theme_setup_data.php:191
+msgid "Search results for"
+msgstr ""
+
+#: child_theme_compatible.php:183
+#: functions/customizer/customizer-archive.php:95
+#: functions/customizer/customizer-archive.php:102 theme_setup_data.php:192
+msgid "404"
+msgstr ""
+
+#: child_theme_compatible.php:184
+#: functions/customizer/customizer-archive.php:111
+#: functions/customizer/customizer-archive.php:118 theme_setup_data.php:193
+msgid "Shop"
+msgstr ""
+
+#: comments.php:2
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:15
+#: comments.php:6
 msgid "Comment"
 msgstr ""
 
-#: comments.php:18 comments.php:28
+#: comments.php:9 comments.php:19
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:19 comments.php:29
+#: comments.php:10 comments.php:20
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:20 comments.php:30
+#: comments.php:11 comments.php:21
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:38
+#: comments.php:29
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:35
 msgid "Name"
 msgstr ""
 
-#: comments.php:45
+#: comments.php:36
 msgid "Email"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:44
+msgid "Message"
+msgstr ""
+
+#: comments.php:45
 msgid "Logged in as"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:45
+msgid "Logout of this account"
+msgstr ""
+
+#: comments.php:45
 msgid "Logout"
 msgstr ""
 
-#: comments.php:56
+#: comments.php:47
 msgid "Send Message"
 msgstr ""
 
-#: comments.php:58 index-blog.php:41
+#: comments.php:49 index-blog.php:41
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:27
+#: content.php:26
 msgid "Leave a comment"
 msgstr ""
 
-#: content.php:37 index-blog.php:53 theme_setup_data.php:42
-#: theme_setup_data.php:47
-msgid "Read More"
-msgstr ""
-
-#: functions.php:75
+#: functions.php:143
 msgid "Primary Menu"
 msgstr ""
 
 #. Template Name of the plugin/theme
 #: functions/breadcrumbs/breadcrumbs.php:6
-#: functions/menu/default_menu_walker.php:23
+#: functions/menu/default_menu_walker.php:23 index-bannerstrip.php:23
 msgid "Home"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:25
 msgid "Archive by category"
-msgstr ""
-
-#: functions/breadcrumbs/breadcrumbs.php:28
-#: functions/customizer/customizer-archive.php:80
-msgid "Search results for"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:95
@@ -143,170 +299,466 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions/commentbox/comment-function.php:30
+#: functions/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: functions/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: functions/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: functions/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: functions/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: functions/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: functions/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: functions/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: functions/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:386
+#: functions/class-tgm-plugin-activation.php:827
+#: functions/class-tgm-plugin-activation.php:2533
+#: functions/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:387
+#: functions/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:388
+#: functions/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: functions/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: functions/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: functions/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:934
+#: functions/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:1121
+#: functions/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: functions/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2327
+msgid "Required Update Not Available"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: functions/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: functions/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: functions/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: functions/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Updates Available <span class=\"count\">(%s)</span>"
+msgid_plural "Updates Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: functions/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: functions/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: functions/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: functions/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2726
+#: functions/customizer/customizer_recommended_plugin.php:19
+msgid "Activate"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: functions/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: functions/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: functions/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: functions/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3509
+#: functions/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3509
+#: functions/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: functions/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: functions/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: functions/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: functions/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions/commentbox/comment-function.php:16
 msgid "Reply"
 msgstr ""
 
-#: functions/commentbox/comment-function.php:41
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: functions/commentbox/comment-function.php:45
+#: functions/commentbox/comment-function.php:31
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions/customizer-repeater/class/customizer-repeater-control.php:29
-msgid "Add new field"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:34
-msgid "Customizer Repeater"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:234
-#: functions/customizer-repeater/class/customizer-repeater-control.php:336
-msgid "Color"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:242
-#: functions/customizer-repeater/class/customizer-repeater-control.php:344
-#: functions/customizer/custo_sections_settings.php:64
-#: functions/customizer/custo_sections_settings.php:199
-#: functions/customizer/custo_sections_settings.php:303
-#: functions/customizer/custo_sections_settings.php:613
-#: functions/customizer/custo_sections_settings.php:653
-msgid "Title"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:249
-#: functions/customizer-repeater/class/customizer-repeater-control.php:351
-msgid "Subtitle"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:256
-#: functions/customizer/custo_sections_settings.php:79
-#: functions/customizer/custo_sections_settings.php:218
-#: functions/customizer/custo_sections_settings.php:318
-#: functions/customizer/custo_sections_settings.php:368
-#: functions/customizer/custo_sections_settings.php:432
-#: functions/customizer/custo_sections_settings.php:495
-#: functions/customizer/custo_sections_settings.php:557
-#: functions/customizer/custo_sections_settings.php:622
-#: functions/customizer/custo_sections_settings.php:662
-msgid "Description"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:264
-#: functions/customizer-repeater/class/customizer-repeater-control.php:366
-msgid "Designation"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:277
-#: functions/customizer-repeater/class/customizer-repeater-control.php:374
-#: functions/customizer-repeater/class/customizer-repeater-control.php:503
-#: functions/customizer-repeater/class/customizer-repeater-control.php:525
-#: functions/customizer/custo_sections_settings.php:382
-#: functions/customizer/custo_sections_settings.php:446
-#: functions/customizer/custo_sections_settings.php:509
-#: functions/customizer/custo_sections_settings.php:571
-msgid "Link"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:285
-#: functions/customizer-repeater/class/customizer-repeater-control.php:381
-msgid "Shortcode"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:309
-#: functions/customizer-repeater/class/customizer-repeater-control.php:398
-msgid "Delete field"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:358
-msgid "Text"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:432
-msgid "Open link in new tab:"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:443
-#: functions/customizer-repeater/class/customizer-repeater-control.php:479
-msgid "Icon"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:448
-#, php-format
-msgid ""
-"Note: Some icons may not be displayed here. You can see the full list of "
-"icons at %1$s."
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:449
-msgid "http://fontawesome.io/icons/"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:466
-#: functions/customizer-repeater/class/customizer-repeater-control.php:480
-#: functions/customizer/custo_sections_settings.php:46
-#: functions/customizer/custo_sections_settings.php:349
-#: functions/customizer/custo_sections_settings.php:412
-#: functions/customizer/custo_sections_settings.php:476
-#: functions/customizer/custo_sections_settings.php:539
-msgid "Image"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:469
-msgid "Upload Image"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:476
-msgid "Image type"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:481
-msgid "None"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:489
-msgid "Social icons"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:506
-#: functions/customizer-repeater/class/customizer-repeater-control.php:536
-msgid "Remove Icon"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:511
-#: functions/customizer-repeater/class/customizer-repeater-control.php:544
-msgid "Add Icon"
-msgstr ""
-
-#: functions/customizer/cust_pro.php:13
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: functions/customizer/cust_pro.php:20
-msgid "Important Links"
-msgstr ""
-
-#: functions/customizer/cust_pro.php:46
-msgid "ADD YOUR REVIEW"
-msgstr ""
-
-#: functions/customizer/cust_pro.php:73
-msgid "DOCUMENTATION"
-msgstr ""
-
-#: functions/customizer/cust_pro.php:77
-msgid ""
-"The Pro Version gives you more opportunities to enhance your site and "
-"business. In order to create effective online presence one have to showcase "
-"their wide range of products, have to use contact us enquiry form, have to "
-"make effective about us page, have to introduce team members, etc etc . The "
-"pro version will give it all. Buy the pro version and give us a chance to "
-"serve you better."
+#: functions/customizer-notify/busiprof-customizer-notify.php:111
+msgid "Activating"
 msgstr ""
 
 #: functions/customizer/custo_general_settings.php:8
@@ -321,278 +773,61 @@ msgstr ""
 msgid "Enable front page"
 msgstr ""
 
-#: functions/customizer/custo_general_settings.php:42
-msgid "Custom logo"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:50
-msgid "Upload logo"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:59
-msgid "Enter Logo Width"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:68
-msgid "Enter Logo Height"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:80
-msgid "Enable logo text"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:87
-#: functions/customizer/custo_general_settings.php:97
-msgid "Custom CSS"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:105
-msgid "Footer copyright settings"
-msgstr ""
-
-#: functions/customizer/custo_general_settings.php:114
-msgid "Copyright text"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:13
-msgid "Homepage section settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:18
-msgid "Slider settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:26
-msgid "Enable slider"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:58 theme_setup_data.php:40
-#: theme_setup_data.php:45
-msgid "Responsive WP theme"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:73
-#: functions/customizer/custo_sections_settings.php:210
-#: functions/customizer/custo_sections_settings.php:312 theme_setup_data.php:41
-#: theme_setup_data.php:46 theme_setup_data.php:62 theme_setup_data.php:79
-#: theme_setup_data.php:92 theme_setup_data.php:145 theme_setup_data.php:150
-msgid ""
-"We are a group of passionate designers and developers who really love "
-"creating awesome WordPress themes & giving support."
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:90
-msgid "Read more"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:96
-#: functions/customizer/custo_sections_settings.php:256
-msgid "Button Text"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:106
-msgid "#"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:112
-#: functions/customizer/custo_sections_settings.php:266
-msgid "Button Link"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:128
-msgid "Open link in new tab"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:135
-msgid "Infobar settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:143
-msgid "Enable Infobar"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:154 theme_setup_data.php:38
-msgid "Busiprof: the perfect WordPress theme for an app and web developer"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:157
-msgid "Infobar text"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:164
-msgid "Service settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:175
-msgid "Enable Services on homepage"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:190 theme_setup_data.php:91
-msgid "Awesome Services"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:236
-msgid "Service content"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:239
-msgid "Add new Service"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:240
-msgid "Service"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:253 theme_setup_data.php:86
-#: theme_setup_data.php:115
-msgid "More Services"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:276
-msgid "Project settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:285
-msgid "Enable Home Project section"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:297 theme_setup_data.php:78
-msgid "Recent Projects"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:328
-#: functions/customizer/custo_sections_settings.php:391
-#: functions/customizer/custo_sections_settings.php:455
-#: functions/customizer/custo_sections_settings.php:518
-#: theme_setup_data.php:118 theme_setup_data.php:123 theme_setup_data.php:128
-#: theme_setup_data.php:133
-msgid "Business cards"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:334
-msgid "Project One"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:362
-#: functions/customizer/custo_sections_settings.php:426
-#: functions/customizer/custo_sections_settings.php:489
-#: functions/customizer/custo_sections_settings.php:551
-#: theme_setup_data.php:120 theme_setup_data.php:125 theme_setup_data.php:130
-#: theme_setup_data.php:135
-msgid "Graphic design & web design"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:397
-msgid "Project Two"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:461
-msgid "Project Three"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:524
-msgid "Project Four"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:578
-msgid "Recent Blog setting"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:587
-msgid "Enable Home Blog section"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:591
-#: functions/customizer/custo_sections_settings.php:603
-#: functions/customizer/custo_sections_settings.php:643
+#: functions/customizer/custo_general_settings.php:35
+#: functions/customizer/custo_sections_settings.php:27
+#: functions/customizer/custo_sections_settings.php:39
 msgid "ON"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:592
-#: functions/customizer/custo_sections_settings.php:604
-#: functions/customizer/custo_sections_settings.php:644
+#: functions/customizer/custo_general_settings.php:36
+#: functions/customizer/custo_sections_settings.php:28
+#: functions/customizer/custo_sections_settings.php:40
 msgid "OFF"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:599
+#: functions/customizer/custo_general_settings.php:43
+msgid "Footer copyright settings"
+msgstr ""
+
+#: functions/customizer/custo_general_settings.php:52
+msgid "Copyright text"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:9
+msgid "Homepage section settings"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:14
+msgid "Recent Blog setting"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:23
+msgid "Enable Home Blog section"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:35
 msgid "Enable Home Blog meta"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:610
-#: theme_setup_data.php:155
-msgid "Recent Blog"
+#: functions/customizer/custo_sections_settings.php:49
+msgid "Title"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:619
-#: functions/customizer/custo_sections_settings.php:659
-#: theme_setup_data.php:142 theme_setup_data.php:153 theme_setup_data.php:156
-msgid "We are a group of passionate designers & developers"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:631
-msgid "Testimonial settings"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:639
-msgid "Enable Home Testimonial section"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:650
-msgid "<b>Our</b> Testimonials"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:673
-msgid "Testimonial content"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:675
-msgid "Add new Testimonial"
-msgstr ""
-
-#: functions/customizer/custo_sections_settings.php:676
-msgid "Testimonial"
+#: functions/customizer/custo_sections_settings.php:58
+msgid "Description"
 msgstr ""
 
 #: functions/customizer/customizer-archive.php:6
 msgid "Archive page title"
 msgstr ""
 
-#: functions/customizer/customizer-archive.php:15
-#: functions/customizer/customizer-archive.php:24
-msgid "Archive"
-msgstr ""
-
-#: functions/customizer/customizer-archive.php:34
-#: functions/customizer/customizer-archive.php:41
-msgid "Category"
-msgstr ""
-
-#: functions/customizer/customizer-archive.php:49
-msgid "All posts by"
-msgstr ""
-
 #: functions/customizer/customizer-archive.php:56
 msgid "Author"
 msgstr ""
 
-#: functions/customizer/customizer-archive.php:64
-#: functions/customizer/customizer-archive.php:71
-msgid "Tag"
-msgstr ""
-
-#: functions/customizer/customizer-archive.php:87 searchform.php:14
-#: searchform.php:15
+#: functions/customizer/customizer-archive.php:87 searchform.php:2
+#: searchform.php:3
 msgid "Search"
-msgstr ""
-
-#: functions/customizer/customizer-archive.php:95
-#: functions/customizer/customizer-archive.php:102
-msgid "404"
-msgstr ""
-
-#: functions/customizer/customizer-archive.php:111
-#: functions/customizer/customizer-archive.php:118
-msgid "Shop"
 msgstr ""
 
 #: functions/customizer/customizer-pro-feature.php:13
@@ -704,37 +939,20 @@ msgstr ""
 msgid "Dedicated support, various widget and sidebar management."
 msgstr ""
 
-#: functions/customizer/customizer.php:86
-#: functions/customizer/customizer.php:135 index-services.php:179
-msgid "Web Design"
+#: functions/customizer/customizer_recommended_plugin.php:16
+msgid "Recommended Actions"
 msgstr ""
 
-#: functions/customizer/customizer.php:87
-#: functions/customizer/customizer.php:96
-#: functions/customizer/customizer.php:105
-#: functions/customizer/customizer.php:115
-#: functions/customizer/customizer.php:136
-#: functions/customizer/customizer.php:145
-#: functions/customizer/customizer.php:154
-#: functions/customizer/customizer.php:164 index-services.php:193
-msgid ""
-"It is a long established fact that a reader will be distracted by the "
-"readable content of a page when looking at its layout."
+#: functions/customizer/customizer_recommended_plugin.php:17
+msgid "Recommended Plugin"
 msgstr ""
 
-#: functions/customizer/customizer.php:95
-#: functions/customizer/customizer.php:144 index-services.php:179
-msgid "Unique Elements"
+#: functions/customizer/customizer_recommended_plugin.php:18
+msgid "Install and Activate"
 msgstr ""
 
-#: functions/customizer/customizer.php:104
-#: functions/customizer/customizer.php:153 index-services.php:179
-msgid "User Friendly"
-msgstr ""
-
-#: functions/customizer/customizer.php:114
-#: functions/customizer/customizer.php:163 index-services.php:179
-msgid "24/7 Support"
+#: functions/customizer/customizer_recommended_plugin.php:20
+msgid "Deactivate"
 msgstr ""
 
 #: functions/widgets/custom-widgets.php:7
@@ -752,18 +970,12 @@ msgstr ""
 msgid "WooCommerce sidebar area"
 msgstr ""
 
-#: index-bannerstrip.php:31
-#, php-format
-msgid "%1$s"
+#: header.php:19
+msgid "Skip to content"
 msgstr ""
 
-#: index-testimonials.php:100
-msgid ""
-"We are a group of passionate designers and developers who really love "
-"creating awesome WordPress themes & giving support. Widest laborum dolo "
-"rumes fugats untras. Ethar omnis iste natus error sit voluptatem "
-"accusantiexplicabo. Nemo enim ipsam eque porro quisquam est, qui dolorem "
-"ipsum am quaerat voluptatem..."
+#: header.php:65
+msgid "Toggle navigation"
 msgstr ""
 
 #: search.php:27
@@ -774,18 +986,6 @@ msgstr ""
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
-msgstr ""
-
-#: theme_setup_data.php:61
-msgid "Meet our clients"
-msgstr ""
-
-#: theme_setup_data.php:141
-msgid "Our Testimonials"
-msgstr ""
-
-#: theme_setup_data.php:147 theme_setup_data.php:152
-msgid "(Sales & Marketing)"
 msgstr ""
 
 #. Theme Name of the plugin/theme

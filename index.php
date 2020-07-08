@@ -3,6 +3,7 @@ get_header();
 get_template_part('index', 'bannerstrip');
 ?>
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section>		
 	<div class="container">
 		<div class="row">
@@ -23,8 +24,8 @@ get_template_part('index', 'bannerstrip');
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busiprof'),
-						'next_text'          => __('Next','busiprof'),
+						'prev_text'          => esc_html__('Previous','busiprof'),
+						'next_text'          => esc_html__('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>
@@ -39,6 +40,7 @@ get_template_part('index', 'bannerstrip');
 		</div>	
 	</div>
 </section>
+</div>
 <!-- End of Blog & Sidebar Section -->
 
 <div class="clearfix"></div>

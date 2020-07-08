@@ -20,13 +20,13 @@ function busiprof_fallback_page_menu( $args = array() ) {
 	// Show Home in the menu
 	if ( ! empty($args['show_home']) ) {
 		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-			$text = __('Home','busiprof');
+			$text = esc_html__('Home','busiprof');
 		else
 			$text = $args['show_home'];
 		$class = '';
 		if ( is_front_page() && !is_paged() )
 			$class = 'class="current_page_item"';
-		$menu .= '<li ' . $class . '><a href="' . home_url( '/' ) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+		$menu .= '<li ' . $class . '><a href="' . esc_url(home_url( '/' )) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 		// If the front page is a page, add it to the exclude list
 		if (get_option('show_on_front') == 'page') {
 			if ( !empty( $list_args['exclude'] ) ) {
@@ -65,7 +65,7 @@ class busiprof_walker_page_menu extends Walker_Page{
 			$indent = '';
 
 		extract($args, EXTR_SKIP);
-		$css_class = array('page_item', 'page-item-'.$page->ID);
+		$css_class = array('menu-item page_item', 'page-item-'.$page->ID);
 		if ( !empty($current_page) ) {
 			$_current_page = get_post( $current_page );
 			if ( in_array( $page->ID, $_current_page->ancestors ) )
@@ -78,9 +78,13 @@ class busiprof_walker_page_menu extends Walker_Page{
 			$css_class[] = 'current_page_parent';
 		}
 
+		if (isset($args['pages_with_children'][$page->ID]) && $depth >= 0) {
+            $link_after = ' <b class="caret"></b>';
+        }
+
 		$css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
 
-		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+		$output .= $indent . '<li class="' . $css_class . '"><a href="' . esc_url(get_permalink($page->ID)) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
 
 		if ( !empty($show_date) ) {
 			if ( 'modified' == $show_date )
