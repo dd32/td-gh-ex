@@ -3,7 +3,7 @@
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
 Tested up to: WordPress 5.4.2
-Version: 1.9.7.92
+Version: 1.9.7.93
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -58,7 +58,6 @@ Sticky-kit, Leaf Corcoran 2015
 Licenses: WTFPL
 Source: http://leafo.net/sticky-kit/
 
-
 Image Credits (screenshot.png):
 License: https://pixabay.com/en/service/terms/#usage
 
@@ -98,15 +97,15 @@ https://pxhere.com/en/photo/1485883
 
 https://pxhere.com/en/photo/1268051
 
-https://www.pexels.com/photo/lake-surrounded-by-mountains-during-golden-hour-1126382/
+https://stocksnap.io/photo/trees-landscape-LRCLSUE3EV
 
 https://pxhere.com/en/photo/1327746
 
 https://www.youtube.com/watch?v=huqJUghX26Y
 
-https://www.pexels.com/photo/woman-wearing-floral-dress-while-sitting-on-bed-3586911/
+https://stocksnap.io/photo/people-woman-1XSBGU6WE1
 
-https://www.pexels.com/photo/woman-standing-wearing-red-dress-2609741/
+https://stocksnap.io/photo/white-wall-U2CLPC1BKA
 
 https://pxhere.com/en/photo/596255
 
@@ -128,8 +127,8 @@ https://pxhere.com/en/photo/118569
 
 https://pxhere.com/en/photo/948941
 
-https://www.pexels.com/photo/architecture-austria-building-church-356807/
+https://pxhere.com/en/photo/807724
 
-https://www.pexels.com/photo/person-wearing-white-helmet-riding-on-motorcycle-3699259/
+https://pxhere.com/en/photo/101222
 
 https://pxhere.com/en/photo/1604510
