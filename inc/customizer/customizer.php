@@ -84,6 +84,10 @@ function bard_customize_register( $wp_customize ) {
 			$section_id = $section;
 		}
 
+		if ( $id === 'merge_menu' ) {
+			$section_id = 'bard_responsive';
+		} 
+
 		$wp_customize->add_setting( 'bard_options['. $section .'_'. $id .']', array(
 			'default'	 => bard_options( $section .'_'. $id),
 			'type'		 => 'option',
@@ -641,9 +645,6 @@ function bard_customize_register( $wp_customize ) {
 	// Show Search Icon
 	bard_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'bard' ), 'refresh', 15 );
 
-	// Merge to Responsive Menu
-	bard_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top and Main Menus', 'bard' ), 'refresh', 17 );
-
 
 /*
 ** Featured Slider =====
@@ -1075,7 +1076,32 @@ function bard_customize_register( $wp_customize ) {
 
 	// Preloading Animation
 	bard_checkbox_control( 'preloader', 'label', esc_html__( 'Preloading Animation', 'bard' ), 'refresh', 1 );
+
+
+/*
+** Responsive =====
+*/
+
+	// add Responsive section
+	$wp_customize->add_section( 'bard_responsive' , array(
+		'title'		  => esc_html__( 'Responsive', 'bard' ),
+		'description' => esc_html__( 'These options will only apply to Mobile devices.', 'bard' ),
+		'priority'	  => 50,
+		'capability'  => 'edit_theme_options'
+	) );
+
+
+	// Merge to Responsive Menu
+	bard_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top and Main Menus', 'bard' ), 'refresh', 1 );
 	
+	// Featured Slider
+	bard_checkbox_control( 'responsive', 'featured_slider', esc_html__( 'Show Featured Slider', 'bard' ), 'refresh', 3 );
+
+	// Featured Links
+	bard_checkbox_control( 'responsive', 'featured_links', esc_html__( 'Show Featured Links', 'bard' ), 'refresh', 5 );
+
+	// Related Posts
+	bard_checkbox_control( 'responsive', 'related_posts', esc_html__( 'Show Related Posts', 'bard' ), 'refresh', 7 );
 
 }
 add_action( 'customize_register', 'bard_customize_register' );

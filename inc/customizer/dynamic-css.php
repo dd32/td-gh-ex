@@ -974,6 +974,43 @@ $css = '';
 
 
 /*
+** Responsive =====
+*/
+	// Featured Slider
+	if ( bard_options( 'responsive_featured_slider' ) !== true ) {
+		$css .= '
+		@media screen and ( max-width: 768px ) {
+			.featured-slider-area {
+				display: none;
+			}
+		}
+		';
+	}
+
+	// Featured Links
+	if ( bard_options( 'responsive_featured_links' ) !== true ) {
+		$css .= '
+		@media screen and ( max-width: 768px ) {
+			#featured-links {
+				display: none;
+			}
+		}
+		';
+	}
+
+	// Related Posts
+	if ( bard_options( 'responsive_related_posts' ) !== true ) {
+		$css .= '
+		@media screen and ( max-width: 640px ) {
+			.related-posts {
+				display: none;
+			}
+		}
+		';
+	}
+
+
+/*
 ** Typography =====
 */
 	// Logo & Tagline

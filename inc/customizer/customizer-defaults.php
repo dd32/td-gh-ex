@@ -83,7 +83,10 @@ function bard_options( $control ) {
 		'page_footer_logo' => '',
 		'page_footer_copyright' => '',
 		'page_footer_show_scrolltop' => true,
-		'preloader_label' => false
+		'preloader_label' => false,
+		'responsive_featured_slider' => true,
+		'responsive_featured_links' => false,
+		'responsive_related_posts' => false
 	);
 
 	// merge defaults and options

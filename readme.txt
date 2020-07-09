@@ -3,7 +3,7 @@
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
 Tested up to: WordPress 5.4.2
-Version: 1.7
+Version: 1.7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, flexible-header, full-width-template, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -61,36 +61,70 @@ Source: http://leafo.net/sticky-kit/
 
 
 Image Credits (screenshot.png):
-License: https://pixabay.com/en/service/terms/#usage
+
+https://stocksnap.io/license
+
+https://pxhere.com/en/license
 
 Header Image, Copyright StockSnap
-https://pixabay.com/en/desktop-table-wooden-wood-desk-3303831/
+
+https://stocksnap.io/photo/sea-nature-R0V3TI62Q9
+
 
 Starter Content Image Credits
-https://pixabay.com/en/girl-lady-woman-women-asia-female-1160441/
-https://pixabay.com/en/food-restaurant-menu-asia-dinner-1050813/
-https://pixabay.com/en/white-sand-desert-highland-2564612/
-https://pixabay.com/en/skateboard-skateboarding-690269/
-https://pixabay.com/en/adult-couple-holding-hands-fashion-1866798/
-https://pixabay.com/en/people-female-girl-sexy-walking-2593339/
-https://pixabay.com/en/woman-hand-aerial-art-botanic-3208045/
-https://pixabay.com/en/holiday-travel-vacation-summer-2880261/
-https://pixabay.com/en/beach-girl-landscape-leisure-1867617/
-https://pixabay.com/en/wall-outside-people-girl-female-2559749/
-https://pixabay.com/en/aerial-background-beverage-blue-3203072/
-https://pixabay.com/en/guy-man-male-people-back-walk-2608550/
-https://pixabay.com/en/shore-freedom-tranquil-scene-ocean-2910692/
-https://pixabay.com/en/yoghurt-milk-floating-eat-dessert-3293359/
-https://pixabay.com/en/strawberry-raspberry-fruits-food-2563664/
-https://pixabay.com/en/food-breakfast-healthy-green-milk-2569257/
-https://pixabay.com/en/street-road-desert-dry-drought-351481/
-https://pixabay.com/en/lifeguard-shack-station-beach-1209187/
-https://pixabay.com/en/sunset-dusk-sky-clouds-lightning-2459855/
-https://pixabay.com/en/spaghetti-pasta-noodles-italian-2931846/
-https://pixabay.com/en/sea-ocean-water-waves-nature-2574490/
-https://pixabay.com/en/sea-nature-horizon-blue-sky-2564090/
-https://pixabay.com/en/beach-sky-travel-summer-sea-2480569/
-https://pixabay.com/en/vacations-beach-summer-sun-2478035/
-https://pixabay.com/en/florence-italy-church-tuscany-1655830/
-https://pixabay.com/en/cup-beverage-hands-holding-drink-1031774/
-https://pixabay.com/en/yacht-boat-travel-people-girl-2562375/
+
+https://pxhere.com/en/photo/829819
+
+https://pxhere.com/en/photo/674478
+
+https://stocksnap.io/photo/white-sand-G87AL8KRMW
+
+https://pxhere.com/en/photo/101659
+
+https://pxhere.com/en/photo/1268676
+
+https://pxhere.com/en/photo/79519
+
+https://pxhere.com/en/photo/1568863
+
+https://stocksnap.io/photo/background-fashion-NJTXPQXCOD
+
+https://pxhere.com/en/photo/83312
+
+https://pxhere.com/en/photo/1536563
+
+https://pxhere.com/en/photo/1430841
+
+https://stocksnap.io/photo/guy-man-1HH5ZHYI3F
+
+https://pxhere.com/en/photo/1484161
+
+https://pxhere.com/en/photo/609326
+
+https://stocksnap.io/photo/strawberry-raspberry-PO80QPCZPH
+
+https://stocksnap.io/photo/food-breakfast-79H5DWE31P
+
+https://pxhere.com/en/photo/212
+
+https://pxhere.com/en/photo/123285
+
+https://stocksnap.io/photo/trees-landscape-LRCLSUE3EV
+
+https://pxhere.com/en/photo/1613810
+
+https://stocksnap.io/photo/sea-ocean-52N1OFVZ9H
+
+https://stocksnap.io/photo/sea-nature-R0V3TI62Q9
+
+https://www.pexels.com/photo/beach-blue-clouds-coast-533961/
+
+https://pxhere.com/en/photo/1602646
+
+https://pxhere.com/en/photo/496377
+
+https://pxhere.com/en/photo/1054859
+
+https://stocksnap.io/photo/people-girl-3JB16W5EHG
+
+https://www.pexels.com/photo/man-in-white-dress-shirt-wearing-eyeglasses-3814446/

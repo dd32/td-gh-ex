@@ -119,8 +119,13 @@
     margin-right: 7px;
   }
 
-  #featured-links {
-    display: none;
+  #featured-links .featured-link {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px;
+  }
+  #featured-links .featured-link:last-of-type {
+    margin-bottom: 0;
   }
 
   .comments-area {
