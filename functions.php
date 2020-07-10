@@ -614,3 +614,14 @@ if( ! function_exists('arrival_store_product_catogory')):
     }
 endif;
 
+/**
+* Remove widget area After Top Header
+*
+* @since 1.0.6
+*/
+add_action('widgets_init','arrival_store_remove_widget',12);
+if( ! function_exists('arrival_store_remove_widget')){
+    function arrival_store_remove_widget(){
+        unregister_sidebar('top-header-after');
+    }
+}

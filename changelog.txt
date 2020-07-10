@@ -1,4 +1,8 @@
 === v1.0.5 ===
+- Removed sidebar area (After Top Header)
+
+
+=== v1.0.5 ===
 - Minor bugs fixed
 
 === v1.0.4 ===
