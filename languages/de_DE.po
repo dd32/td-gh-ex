@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-05-01 11:32+0530\n"
+"PO-Revision-Date: 2020-06-18 12:33+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -188,7 +188,7 @@ msgstr "Nächster Beitrag"
 
 #: template-parts/single-post.php:73 template-parts/single-post.php:74
 msgid "Previous post"
-msgstr "Vorherigen Post"
+msgstr "Vorheriger Beitrag"
 
 #: functions.php:32 functions.php:104
 msgid "Primary Menu"
@@ -439,7 +439,7 @@ msgstr "h6 Schriftgröße"
 
 #: inc/customizer.php:552
 msgid "Top Header"
-msgstr "Top Header"
+msgstr "Oberer Header"
 
 #: inc/customizer.php:553
 msgid "Add Header Content here"
@@ -451,7 +451,7 @@ msgstr "Topbar ein- / ausblenden"
 
 #: inc/customizer.php:575
 msgid "Sticky Header"
-msgstr "Sticky Header"
+msgstr "klebriger Header"
 
 #: inc/customizer.php:592
 msgid "Add Facebook link"
@@ -506,7 +506,7 @@ msgid "Slider Excerpt length"
 msgstr "Slider Auszugslänge"
 
 #: inc/customizer.php:746 inc/customizer.php:755 inc/customizer.php:803
-#: inc/customizer.php:1238 inc/customizer.php:1270
+#: inc/customizer.php:1238 inc/customizer.php:1288 inc/customizer.php:1522
 msgid "Left"
 msgstr "Links"
 
@@ -514,13 +514,13 @@ msgstr "Links"
 msgid "Slider Content Alignment"
 msgstr "Ausrichtung des Schiebereglerinhalts"
 
-#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1262
-#: inc/customizer.php:1272
+#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1280
+#: inc/customizer.php:1290
 msgid "Center"
 msgstr "Center"
 
 #: inc/customizer.php:756 inc/customizer.php:818 inc/customizer.php:1230
-#: inc/customizer.php:1239 inc/customizer.php:1271
+#: inc/customizer.php:1239 inc/customizer.php:1289 inc/customizer.php:1523
 msgid "Right"
 msgstr "Richtig"
 
@@ -610,13 +610,13 @@ msgstr "Beitrags-Button Text"
 
 #: inc/customizer.php:1012
 msgid "Top Bottom Button Padding"
-msgstr "Top Bottom Button Padding"
+msgstr "Polsterung der oberen unteren Tasten"
 
 #: inc/customizer.php:1027
 msgid "Left Right Button Padding"
 msgstr "Links Rechts Knopfpolsterung"
 
-#: inc/customizer.php:1042 inc/customizer.php:1415
+#: inc/customizer.php:1042 inc/customizer.php:1433
 msgid "Button Border Radius"
 msgstr "Schaltflächenrandradius"
 
@@ -704,11 +704,19 @@ msgstr "Zurück / Oben-Schaltfläche ein- / ausblenden"
 msgid "Back to Top Button Alignment"
 msgstr "Zurück zum Anfang der Tastenausrichtung"
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1249
+msgid "Footer Background Color"
+msgstr "Fußzeile Hintergrundfarbe"
+
+#: inc/customizer.php:1258
+msgid "Footer Background Image"
+msgstr "Fußzeile Hintergrundbild"
+
+#: inc/customizer.php:1268
 msgid "Footer widget layout"
 msgstr "Layout des Fußzeilen-Widgets"
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1270
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -716,94 +724,110 @@ msgstr ""
 "Wählen Sie die Anzahl der gewünschten Widget-Bereiche in der Fußzeile aus. "
 "Gehen Sie danach zu Darstellung> Widgets und fügen Sie Ihre Widgets hinzu."
 
-#: inc/customizer.php:1254
+#: inc/customizer.php:1272
 msgid "One"
 msgstr "Eins"
 
-#: inc/customizer.php:1255
+#: inc/customizer.php:1273
 msgid "Two"
 msgstr "Zwei"
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1274
 msgid "Three"
 msgstr "Drei"
 
-#: inc/customizer.php:1257
+#: inc/customizer.php:1275
 msgid "Four"
 msgstr "Vier"
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1285
 msgid "Copyright Alignment"
 msgstr "Urheberrechtsausrichtung"
 
-#: inc/customizer.php:1281
+#: inc/customizer.php:1299
 msgid "Copyright Font Size"
 msgstr "Copyright Schriftgröße"
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1309
 msgid "Copyright Top Bottom Padding"
 msgstr "Copyright oben Unten Polsterung"
 
-#: inc/customizer.php:1309
-msgid "Text"
-msgstr "Text"
+#: inc/customizer.php:1327
+msgid "Copyright Text"
+msgstr "Copyright-Text"
 
-#: inc/customizer.php:1317
+#: inc/customizer.php:1335
 msgid "Additional WooCommerce Options"
 msgstr "Zusätzliche WooCommerce-Optionen"
 
-#: inc/customizer.php:1330
+#: inc/customizer.php:1348
 msgid "Product per row"
 msgstr "Produkt pro Reihe"
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1363
 msgid "Product per page"
 msgstr "Produkt pro Seite"
 
-#: inc/customizer.php:1356
+#: inc/customizer.php:1374
 msgid "Enable / Disable Shop page sidebar"
 msgstr "Aktivieren / Deaktivieren der Seitenleiste der Shop-Seite"
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1384
 msgid "Enable / Disable Product page sidebar"
 msgstr "Aktivieren / Deaktivieren der Seitenleiste der Produktseite"
 
-#: inc/customizer.php:1376
+#: inc/customizer.php:1394
 msgid "Enable / Disable Related product"
 msgstr "Aktivieren / Deaktivieren des zugehörigen Produkts"
 
-#: inc/customizer.php:1385
+#: inc/customizer.php:1403
 msgid "Button Top Bottom Padding"
 msgstr "Knopf oben unten Polsterung"
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1418
 msgid "Button Right Left Padding"
 msgstr "Taste Rechts Links Polsterung"
 
-#: inc/customizer.php:1431
+#: inc/customizer.php:1449
 msgid "Enable / Disable product border"
 msgstr "Produktgrenze aktivieren / deaktivieren"
 
-#: inc/customizer.php:1440
+#: inc/customizer.php:1458
 msgid "Product Top Bottom Padding"
 msgstr "Produkt oben unten Polsterung"
 
-#: inc/customizer.php:1455
+#: inc/customizer.php:1473
 msgid "Product Right Left Padding"
 msgstr "Produkt rechts links Polsterung"
 
-#: inc/customizer.php:1470
+#: inc/customizer.php:1488
 msgid "Product Border Radius"
 msgstr "Produktrandradius"
 
-#: inc/customizer.php:1485
+#: inc/customizer.php:1503
 msgid "Product Box Shadow"
 msgstr "Produktbox Schatten"
 
-#: inc/customizer.php:1575
+#: inc/customizer.php:1519
+msgid "Sale badge Position"
+msgstr "Verkaufsabzeichen Position"
+
+#: inc/customizer.php:1532
+msgid "Sale Top Bottom Padding"
+msgstr "SVerkauf oben unten Polsterung"
+
+#: inc/customizer.php:1547
+msgid "Sale Right Left Padding"
+msgstr "Verkauf rechts links Polsterung"
+
+#: inc/customizer.php:1562
+msgid "Sale Border Radius"
+msgstr "Verkauf Grenzradius"
+
+#: inc/customizer.php:1652
 msgid "Advance Blogging"
 msgstr "Fortschrittliches Bloggen"
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1653
 msgid "Go Pro"
 msgstr "Gehen Sie Pro"

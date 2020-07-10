@@ -4,7 +4,6 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +133,21 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added search modal code.
 * Resolved some theme errors.
 
+= 0.7.6 =
+* Added Sale badge position option.
+* Added Sale badge top bottom padding option.
+* Added Sale badge left right padding option.
+* Added Sale badge border radius option.
+* Added footer background color option.
+* Added footer background image option.
+* Added Back to Top Button Text option.
+* Added sanitize_callback function input type.
+* Prefixing done in custom.js
+* Removed "esc_html" from echoing function
+* Added triple license of Font Awesome.
+* Removed stable tag from readme.txt
+* Updated all .po files.
+
 == Resources ==
 
 Advance Blogging WordPress Theme, Copyright 2018 ThemesCaliber
@@ -152,7 +166,7 @@ Theme is Built using the following resource bundles.
 	-- Davegandy
 	-- copyright July 12, 2018, Davegandy
 	-- https://github.com/FortAwesome/Font-Awesome.git
-	-- License: Font Awesome Free License v5.0.0
+	-- License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 	-- https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 - Customizer Pro 

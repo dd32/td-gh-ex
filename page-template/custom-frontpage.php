@@ -38,11 +38,11 @@ get_header(); ?>
 							    <div class="carousel-inner" role="listbox">
 							      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 							        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-							            <a href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+							            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
 		          				        <div class="carousel-caption">
 								            <div class="inner_carousel">
 								            	<?php if( get_theme_mod('advance_blogging_slider_title',true) != ''){ ?>
-								            		<h1><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h1>
+								            		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
 								            	<?php }?>
 								                <?php if( get_theme_mod('advance_blogging_slider_content',true) != ''){ ?>
 								                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,esc_attr(get_theme_mod('advance_blogging_slider_excerpt','35')) ) ); ?></p>
@@ -79,7 +79,7 @@ get_header(); ?>
 			                      	<?php the_post_thumbnail(); ?>
 			                      	<div class="cat-box">
 			                      		<div class="cat-border">
-				                       		<h2><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+				                       		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
 				                      		<p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,18 ) ); ?></p>
 				                      	</div>
 			                      	</div>
@@ -121,7 +121,7 @@ get_header(); ?>
 													</div>
 												<?php } ?>
 											</div>
-					                      	<h3><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h3>
+					                      	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
 					                      	<p><?php the_excerpt(); ?></p>
 					                    </div>
 					                    <div class="button-post">

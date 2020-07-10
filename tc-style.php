@@ -175,3 +175,39 @@
 			$advance_blogging_custom_css .='text-align:right;';
 		$advance_blogging_custom_css .='}';
 	}
+
+	/*------- Wocommerce sale css -----*/
+	$advance_blogging_woocommerce_sale_top_padding = get_theme_mod('advance_blogging_woocommerce_sale_top_padding');
+	$advance_blogging_woocommerce_sale_left_padding = get_theme_mod('advance_blogging_woocommerce_sale_left_padding');
+	$advance_blogging_custom_css .=' .woocommerce span.onsale{';
+		$advance_blogging_custom_css .='padding-top: '.esc_html($advance_blogging_woocommerce_sale_top_padding).'px; padding-bottom: '.esc_html($advance_blogging_woocommerce_sale_top_padding).'px; padding-left: '.esc_html($advance_blogging_woocommerce_sale_left_padding).'px; padding-right: '.esc_html($advance_blogging_woocommerce_sale_left_padding).'px;';
+	$advance_blogging_custom_css .='}';
+
+	$advance_blogging_woocommerce_sale_border_radius = get_theme_mod('advance_blogging_woocommerce_sale_border_radius', 50);
+	$advance_blogging_custom_css .='.woocommerce span.onsale{';
+		$advance_blogging_custom_css .='border-radius: '.esc_html($advance_blogging_woocommerce_sale_border_radius).'px;';
+	$advance_blogging_custom_css .='}';
+
+	$advance_blogging_sale_position = get_theme_mod( 'advance_blogging_sale_position','right');
+    if($advance_blogging_sale_position == 'left'){
+		$advance_blogging_custom_css .='.woocommerce ul.products li.product .onsale{';
+			$advance_blogging_custom_css .='left: -10px; right: auto;';
+		$advance_blogging_custom_css .='}';
+	}else if($advance_blogging_sale_position == 'right'){
+		$advance_blogging_custom_css .='.woocommerce ul.products li.product .onsale{';
+			$advance_blogging_custom_css .='left: auto; right: 0;';
+		$advance_blogging_custom_css .='}';
+	}
+
+	// footer background css
+	$advance_blogging_footer_background_color = get_theme_mod('advance_blogging_footer_background_color');
+	$advance_blogging_custom_css .='.footertown{';
+		$advance_blogging_custom_css .='background-color: '.esc_html($advance_blogging_footer_background_color).';';
+	$advance_blogging_custom_css .='}';
+
+	$advance_blogging_footer_background_img = get_theme_mod('advance_blogging_footer_background_img');
+	if($advance_blogging_footer_background_img != false){
+		$advance_blogging_custom_css .='.footertown{';
+			$advance_blogging_custom_css .='background: url('.esc_html($advance_blogging_footer_background_img).') no-repeat; background-size: cover; background-attachment: fixed;';
+		$advance_blogging_custom_css .='}';
+	}

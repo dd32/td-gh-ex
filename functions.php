@@ -467,6 +467,15 @@ function advance_blogging_credit_link() {
     echo "<a href=".esc_url(ADVANCE_BLOGGING_SITE_URL)." target='_blank'>".esc_html__('Blogging WordPress Theme','advance-blogging')."</a>";
 }
 
+function advance_blogging_sanitize_checkbox( $input ) {
+	// Boolean check 
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
+function advance_blogging_sanitize_float( $input ) {
+    return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
 /* Custom template tags for this theme. */
 require get_template_directory() . '/inc/template-tags.php';
 

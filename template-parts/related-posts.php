@@ -68,7 +68,7 @@ $related_posts = advance_blogging_related_posts_function(); ?>
 				                <?php } ?>
 				            </div>
 				            <div class="box-content">
-				                <h3><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h3>
+				                <h3><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
 				                <?php if(get_theme_mod('advance_blogging_post_content') == 'Full Content'){ ?>
 				                    <?php the_content(); ?>
 				                <?php }
@@ -78,7 +78,7 @@ $related_posts = advance_blogging_related_posts_function(); ?>
 				                    <?php }?>
 				                <?php }?>
 				                <?php if ( get_theme_mod('advance_blogging_post_button_text','READ MORE') != '' ) {?>
-				                    <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?></span></a>
+				                    <a href="<?php the_permalink(); ?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?></span></a>
 				                <?php }?>
 				            </div>
 				            <div class="clearfix"></div> 

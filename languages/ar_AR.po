@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-05-01 11:31+0530\n"
+"PO-Revision-Date: 2020-06-18 12:31+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -350,7 +350,7 @@ msgstr "حجم خط الفقرة"
 
 #: inc/customizer.php:284
 msgid "\"a\" Tag Color"
-msgstr "\"أ\" لون العلامة"
+msgstr "لون العلامة"
 
 #: inc/customizer.php:298
 msgid "\"a\" Tag Fonts"
@@ -505,7 +505,7 @@ msgid "Slider Excerpt length"
 msgstr "طول مقتطف المنزلق"
 
 #: inc/customizer.php:746 inc/customizer.php:755 inc/customizer.php:803
-#: inc/customizer.php:1238 inc/customizer.php:1270
+#: inc/customizer.php:1238 inc/customizer.php:1288 inc/customizer.php:1522
 msgid "Left"
 msgstr "اليسار"
 
@@ -513,13 +513,13 @@ msgstr "اليسار"
 msgid "Slider Content Alignment"
 msgstr "محاذاة محتوى شريط التمرير"
 
-#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1262
-#: inc/customizer.php:1272
+#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1280
+#: inc/customizer.php:1290
 msgid "Center"
 msgstr "مركز"
 
 #: inc/customizer.php:756 inc/customizer.php:818 inc/customizer.php:1230
-#: inc/customizer.php:1239 inc/customizer.php:1271
+#: inc/customizer.php:1239 inc/customizer.php:1289 inc/customizer.php:1523
 msgid "Right"
 msgstr "حق"
 
@@ -615,7 +615,7 @@ msgstr "حشو الزر السفلي العلوي"
 msgid "Left Right Button Padding"
 msgstr "زر ترك الزر الأيمن لليسار"
 
-#: inc/customizer.php:1042 inc/customizer.php:1415
+#: inc/customizer.php:1042 inc/customizer.php:1433
 msgid "Button Border Radius"
 msgstr "نصف قطر حد الزر"
 
@@ -703,11 +703,19 @@ msgstr "إظهار / إخفاء عودة إلى أعلى الزر"
 msgid "Back to Top Button Alignment"
 msgstr "العودة إلى أعلى محاذاة الزر"
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1249
+msgid "Footer Background Color"
+msgstr "لون خلفية التذييل"
+
+#: inc/customizer.php:1258
+msgid "Footer Background Image"
+msgstr "صورة خلفية التذييل"
+
+#: inc/customizer.php:1268
 msgid "Footer widget layout"
 msgstr "تخطيط القطعة تذييل"
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1270
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -715,94 +723,110 @@ msgstr ""
 "حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى Appearance> "
 "Widgets وأضف Widgets."
 
-#: inc/customizer.php:1254
+#: inc/customizer.php:1272
 msgid "One"
 msgstr "واحد"
 
-#: inc/customizer.php:1255
+#: inc/customizer.php:1273
 msgid "Two"
 msgstr "اثنان"
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1274
 msgid "Three"
 msgstr "ثلاثة"
 
-#: inc/customizer.php:1257
+#: inc/customizer.php:1275
 msgid "Four"
 msgstr "أربعة"
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1285
 msgid "Copyright Alignment"
 msgstr "محاذاة حقوق النشر"
 
-#: inc/customizer.php:1281
+#: inc/customizer.php:1299
 msgid "Copyright Font Size"
 msgstr "حجم خط حقوق التأليف والنشر"
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1309
 msgid "Copyright Top Bottom Padding"
 msgstr "حقوق التأليف والنشر أسفل الحشو"
 
-#: inc/customizer.php:1309
-msgid "Text"
-msgstr "نص"
+#: inc/customizer.php:1327
+msgid "Copyright Text"
+msgstr "نص حقوق النشر"
 
-#: inc/customizer.php:1317
+#: inc/customizer.php:1335
 msgid "Additional WooCommerce Options"
 msgstr "خيارات WooCommerce إضافية"
 
-#: inc/customizer.php:1330
+#: inc/customizer.php:1348
 msgid "Product per row"
 msgstr "المنتج لكل صف"
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1363
 msgid "Product per page"
 msgstr "المنتج لكل صفحة"
 
-#: inc/customizer.php:1356
+#: inc/customizer.php:1374
 msgid "Enable / Disable Shop page sidebar"
 msgstr "تمكين / تعطيل الشريط الجانبي لصفحة المتجر"
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1384
 msgid "Enable / Disable Product page sidebar"
 msgstr "تمكين / تعطيل الشريط الجانبي لصفحة المنتج"
 
-#: inc/customizer.php:1376
+#: inc/customizer.php:1394
 msgid "Enable / Disable Related product"
 msgstr "تمكين / تعطيل المنتج ذي الصلة"
 
-#: inc/customizer.php:1385
+#: inc/customizer.php:1403
 msgid "Button Top Bottom Padding"
 msgstr "حشو الزر العلوي السفلي"
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1418
 msgid "Button Right Left Padding"
 msgstr "زر اليسار الأيمن الحشو"
 
-#: inc/customizer.php:1431
+#: inc/customizer.php:1449
 msgid "Enable / Disable product border"
 msgstr "تمكين / تعطيل حدود المنتج"
 
-#: inc/customizer.php:1440
+#: inc/customizer.php:1458
 msgid "Product Top Bottom Padding"
 msgstr "حشو أسفل المنتج العلوي"
 
-#: inc/customizer.php:1455
+#: inc/customizer.php:1473
 msgid "Product Right Left Padding"
 msgstr "الحشو الأيمن المنتج اليسار"
 
-#: inc/customizer.php:1470
+#: inc/customizer.php:1488
 msgid "Product Border Radius"
 msgstr "نصف قطر حدود المنتج"
 
-#: inc/customizer.php:1485
+#: inc/customizer.php:1503
 msgid "Product Box Shadow"
 msgstr "ظل صندوق المنتج"
 
-#: inc/customizer.php:1575
+#: inc/customizer.php:1519
+msgid "Sale badge Position"
+msgstr "موضع شارة البيع"
+
+#: inc/customizer.php:1532
+msgid "Sale Top Bottom Padding"
+msgstr "بيع أعلى الحشو السفلي"
+
+#: inc/customizer.php:1547
+msgid "Sale Right Left Padding"
+msgstr "تخفيضات المساحة المتروكة لليمين"
+
+#: inc/customizer.php:1562
+msgid "Sale Border Radius"
+msgstr "بيع نصف قطر الحدود"
+
+#: inc/customizer.php:1652
 msgid "Advance Blogging"
 msgstr "مقدما التدوين"
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1653
 msgid "Go Pro"
 msgstr "جو برو"

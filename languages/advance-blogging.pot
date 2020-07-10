@@ -584,7 +584,8 @@ msgstr ""
 #: inc/customizer.php:755
 #: inc/customizer.php:803
 #: inc/customizer.php:1238
-#: inc/customizer.php:1270
+#: inc/customizer.php:1288
+#: inc/customizer.php:1522
 msgid "Left"
 msgstr ""
 
@@ -594,8 +595,8 @@ msgstr ""
 
 #: inc/customizer.php:754
 #: inc/customizer.php:1240
-#: inc/customizer.php:1262
-#: inc/customizer.php:1272
+#: inc/customizer.php:1280
+#: inc/customizer.php:1290
 msgid "Center"
 msgstr ""
 
@@ -603,7 +604,8 @@ msgstr ""
 #: inc/customizer.php:818
 #: inc/customizer.php:1230
 #: inc/customizer.php:1239
-#: inc/customizer.php:1271
+#: inc/customizer.php:1289
+#: inc/customizer.php:1523
 msgid "Right"
 msgstr ""
 
@@ -789,106 +791,130 @@ msgstr ""
 msgid "Back to Top Button Alignment"
 msgstr ""
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1249
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/customizer.php:1258
+msgid "Footer Background Image"
+msgstr ""
+
+#: inc/customizer.php:1268
 msgid "Footer widget layout"
 msgstr ""
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1270
 msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
 msgstr ""
 
-#: inc/customizer.php:1254
+#: inc/customizer.php:1272
 msgid "One"
 msgstr ""
 
-#: inc/customizer.php:1255
+#: inc/customizer.php:1273
 msgid "Two"
 msgstr ""
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1274
 msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:1257
+#: inc/customizer.php:1275
 msgid "Four"
 msgstr ""
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1285
 msgid "Copyright Alignment"
 msgstr ""
 
-#: inc/customizer.php:1281
+#: inc/customizer.php:1299
 msgid "Copyright Font Size"
 msgstr ""
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1309
 msgid "Copyright Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1309
-msgid "Text"
+#: inc/customizer.php:1327
+msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:1317
+#: inc/customizer.php:1335
 msgid "Additional WooCommerce Options"
 msgstr ""
 
-#: inc/customizer.php:1330
+#: inc/customizer.php:1348
 msgid "Product per row"
 msgstr ""
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1363
 msgid "Product per page"
 msgstr ""
 
-#: inc/customizer.php:1356
+#: inc/customizer.php:1374
 msgid "Enable / Disable Shop page sidebar"
 msgstr ""
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1384
 msgid "Enable / Disable Product page sidebar"
 msgstr ""
 
-#: inc/customizer.php:1376
+#: inc/customizer.php:1394
 msgid "Enable / Disable Related product"
 msgstr ""
 
-#: inc/customizer.php:1385
+#: inc/customizer.php:1403
 msgid "Button Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1418
 msgid "Button Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1415
+#: inc/customizer.php:1433
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1431
+#: inc/customizer.php:1449
 msgid "Enable / Disable product border"
 msgstr ""
 
-#: inc/customizer.php:1440
+#: inc/customizer.php:1458
 msgid "Product Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1455
+#: inc/customizer.php:1473
 msgid "Product Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1470
+#: inc/customizer.php:1488
 msgid "Product Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1485
+#: inc/customizer.php:1503
 msgid "Product Box Shadow"
 msgstr ""
 
-#: inc/customizer.php:1575
+#: inc/customizer.php:1519
+msgid "Sale badge Position"
+msgstr ""
+
+#: inc/customizer.php:1532
+msgid "Sale Top Bottom Padding"
+msgstr ""
+
+#: inc/customizer.php:1547
+msgid "Sale Right Left Padding"
+msgstr ""
+
+#: inc/customizer.php:1562
+msgid "Sale Border Radius"
+msgstr ""
+
+#: inc/customizer.php:1652
 msgid "Advance Blogging"
 msgstr ""
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1653
 msgid "Go Pro"
 msgstr "" 

@@ -49,7 +49,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	// Preloader
 	$wp_customize->add_setting( 'advance_blogging_preloader_hide',array(
 		'default' => true,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_blogging_preloader_hide',array(
     	'type' => 'checkbox',
@@ -558,7 +558,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_blogging_topbar_hide',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_blogging_topbar_hide',array(
     	'type' => 'checkbox',
@@ -568,7 +568,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//Sticky Header
 	$wp_customize->add_setting( 'advance_blogging_sticky_header',array(
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_blogging_sticky_header',array(
     	'type' => 'checkbox',
@@ -678,7 +678,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_slider_arrows',array(
       'default' => false,
-      'sanitize_callback'	=> 'sanitize_text_field'
+      'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
 	));
 	$wp_customize->add_control('advance_blogging_slider_arrows',array(
 	      'type' => 'checkbox',
@@ -703,7 +703,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_slider_title',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
 	));
 	$wp_customize->add_control('advance_blogging_slider_title',array(
 	   'type' => 'checkbox',
@@ -713,7 +713,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_slider_content',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
 	));
 	$wp_customize->add_control('advance_blogging_slider_content',array(
 	   'type' => 'checkbox',
@@ -724,10 +724,7 @@ function advance_blogging_customize_register( $wp_customize ) {
     //Slider excerpt
 	$wp_customize->add_setting( 'advance_blogging_slider_excerpt', array(
 		'default'              => 35,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_blogging_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_blogging_slider_excerpt', array(
 		'label' => esc_html__( 'Slider Excerpt length','advance-blogging' ),
@@ -767,7 +764,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_slider_top_spacing', array(
 		'default'  => '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_slider_top_spacing', array(
 		'label' => esc_html__( 'Top','advance-blogging' ),
@@ -782,7 +779,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_slider_bottom_spacing', array(
 		'default'  => '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_slider_bottom_spacing', array(
 		'label' => esc_html__( 'Bottom','advance-blogging' ),
@@ -797,7 +794,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_slider_left_spacing', array(
 		'default'  => '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_slider_left_spacing', array(
 		'label' => esc_html__( 'Left','advance-blogging'),
@@ -812,7 +809,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_slider_right_spacing', array(
 		'default'  => '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_slider_right_spacing', array(
 		'label' => esc_html__('Right','advance-blogging'),
@@ -827,7 +824,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_slider_speed', array(
 		'default'  => 3000,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_slider_speed', array(
 		'label' => esc_html__('Slider Speed','advance-blogging'),
@@ -923,7 +920,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_date_hide',array(
        'default' => 'false',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_date_hide',array(
        'type' => 'checkbox',
@@ -933,7 +930,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_author_hide',array(
        'default' => 'false',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_author_hide',array(
        'type' => 'checkbox',
@@ -943,7 +940,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_comment_hide',array(
        'default' => 'false',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_comment_hide',array(
        'type' => 'checkbox',
@@ -968,7 +965,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'advance_blogging_post_excerpt_length', array(
 		'default'              => 20,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_post_excerpt_length', array(
 		'label' => esc_html__( 'Post Excerpt Length','advance-blogging' ),
@@ -1006,7 +1003,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_top_button_padding',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_top_button_padding',array(
 		'label'	=> __('Top Bottom Button Padding','advance-blogging'),
@@ -1021,7 +1018,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_left_button_padding',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_left_button_padding',array(
 		'label'	=> __('Left Right Button Padding','advance-blogging'),
@@ -1036,7 +1033,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_button_border_radius', array(
 		'default'=> '0',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control('advance_blogging_button_border_radius', array(
         'label'  => __('Button Border Radius','advance-blogging'),
@@ -1057,7 +1054,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_feature_image',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_feature_image',array(
        'type' => 'checkbox',
@@ -1067,7 +1064,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_tags',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_tags',array(
        'type' => 'checkbox',
@@ -1077,7 +1074,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_comment',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_comment',array(
        'type' => 'checkbox',
@@ -1087,7 +1084,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_nav_links',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_nav_links',array(
        'type' => 'checkbox',
@@ -1117,7 +1114,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_related_posts',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_related_posts',array(
        'type' => 'checkbox',
@@ -1137,7 +1134,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'advance_blogging_related_post_count', array(
 		'default' => 3,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	) );
 	$wp_customize->add_control( 'advance_blogging_related_post_count', array(
 		'label' => esc_html__( 'Related Posts Count','advance-blogging' ),
@@ -1218,12 +1215,22 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_show_back_to_top',array(
         'default' => 'true',
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
 	));
 	$wp_customize->add_control('advance_blogging_show_back_to_top',array(
      	'type' => 'checkbox',
       	'label' => __('Show/Hide Back to Top Button','advance-blogging'),
       	'section' => 'advance_blogging_footer',
+	));
+
+	$wp_customize->add_setting('advance_blogging_back_to_top_text',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));	
+	$wp_customize->add_control('advance_blogging_back_to_top_text',array(
+		'label'	=> __('Back to Top Button Text','advance-blogging'),
+		'section'	=> 'advance_blogging_footer',
+		'type'		=> 'text'
 	));
 
 	$wp_customize->add_setting('advance_blogging_back_to_top_alignment',array(
@@ -1240,6 +1247,24 @@ function advance_blogging_customize_register( $wp_customize ) {
             'Center' => __('Center','advance-blogging'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_blogging_footer_background_color', array(
+		'default'           => '#000',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_blogging_footer_background_color', array(
+		'label'    => __('Footer Background Color', 'advance-blogging'),
+		'section'  => 'advance_blogging_footer',
+	)));
+
+	$wp_customize->add_setting('advance_blogging_footer_background_img',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'advance_blogging_footer_background_img',array(
+        'label' => __('Footer Background Image','advance-blogging'),
+        'section' => 'advance_blogging_footer'
+	)));
 
 	$wp_customize->add_setting('advance_blogging_footer_widget_layout',array(
         'default'           => '4',
@@ -1275,7 +1300,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_copyright_fontsize',array(
 		'default'	=> 16,
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float',
 	));	
 	$wp_customize->add_control('advance_blogging_copyright_fontsize',array(
 		'label'	=> __('Copyright Font Size','advance-blogging'),
@@ -1285,7 +1310,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_copyright_top_bottom_padding',array(
 		'default'	=> 15,
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float',
 	));	
 	$wp_customize->add_control('advance_blogging_copyright_top_bottom_padding',array(
 		'label'	=> __('Copyright Top Bottom Padding','advance-blogging'),
@@ -1306,7 +1331,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));	
 	$wp_customize->add_control('advance_blogging_footer_copy',array(
-		'label'	=> __('Text','advance-blogging'),
+		'label'	=> __('Copyright Text','advance-blogging'),
 		'section'=> 'advance_blogging_footer',
 		'setting'=> 'advance_blogging_footer_copy',
 		'type'=> 'text'
@@ -1339,7 +1364,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_product_per_page',array(
 		'default'	=> '9',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
 	));	
 	$wp_customize->add_control('advance_blogging_product_per_page',array(
 		'label'	=> __('Product per page','advance-blogging'),
@@ -1349,7 +1374,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('advance_blogging_shop_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_shop_sidebar',array(
        'type' => 'checkbox',
@@ -1359,7 +1384,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_product_page_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_product_page_sidebar',array(
        'type' => 'checkbox',
@@ -1369,7 +1394,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_related_product',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_related_product',array(
        'type' => 'checkbox',
@@ -1379,7 +1404,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_button_padding_top',array(
 		'default' => 10,
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control( 'advance_blogging_woocommerce_button_padding_top',	array(
 		'label' => esc_html__( 'Button Top Bottom Padding','advance-blogging' ),
@@ -1394,7 +1419,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_button_padding_right',array(
 	 	'default' => 20,
-	 	'sanitize_callback' => 'sanitize_text_field'
+	 	'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_woocommerce_button_padding_right',	array(
 	 	'label' => esc_html__( 'Button Right Left Padding','advance-blogging' ),
@@ -1409,7 +1434,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_button_border_radius',array(
 		'default' => 0,
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_woocommerce_button_border_radius',array(
 		'label' => esc_html__( 'Button Border Radius','advance-blogging' ),
@@ -1424,7 +1449,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('advance_blogging_woocommerce_product_border',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_blogging_woocommerce_product_border',array(
        'type' => 'checkbox',
@@ -1434,7 +1459,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_padding_top',array(
 		'default' => 10,
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_woocommerce_product_padding_top', array(
 		'label' => esc_html__( 'Product Top Bottom Padding','advance-blogging' ),
@@ -1449,7 +1474,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_padding_right',array(
 		'default' => 10,
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_woocommerce_product_padding_right', array(
 		'label' => esc_html__( 'Product Right Left Padding','advance-blogging' ),
@@ -1464,7 +1489,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_border_radius',array(
 		'default' => 0,
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control('advance_blogging_woocommerce_product_border_radius',array(
 		'label' => esc_html__( 'Product Border Radius','advance-blogging' ),
@@ -1479,10 +1504,69 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_box_shadow',array(
 		'default' => 0,
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
 	));
 	$wp_customize->add_control( 'advance_blogging_woocommerce_product_box_shadow',array(
 		'label' => esc_html__( 'Product Box Shadow','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting('advance_blogging_sale_position',array(
+        'default' => 'right',
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_blogging_sale_position',array(
+        'type' => 'select',
+        'label' => __('Sale badge Position','advance-blogging'),
+        'section' => 'advance_blogging_woocommerce_options',
+        'choices' => array(
+            'left' => __('Left','advance-blogging'),
+            'right' => __('Right','advance-blogging'),
+        ),
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_sale_top_padding',array(
+		'default' => 0,
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
+	));
+	$wp_customize->add_control( 'advance_blogging_woocommerce_sale_top_padding',	array(
+		'label' => esc_html__( 'Sale Top Bottom Padding','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_sale_left_padding',array(
+	 	'default' => 0,
+	 	'sanitize_callback' => 'advance_blogging_sanitize_float'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_sale_left_padding',	array(
+	 	'label' => esc_html__( 'Sale Right Left Padding','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+	 	'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+	 		'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_sale_border_radius',array(
+		'default' => 50,
+		'sanitize_callback' => 'advance_blogging_sanitize_float'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_sale_border_radius',array(
+		'label' => esc_html__( 'Sale Border Radius','advance-blogging' ),
 		'type' => 'number',
 		'section' => 'advance_blogging_woocommerce_options',
 		'input_attrs' => array(

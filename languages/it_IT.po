@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-05-01 11:37+0530\n"
+"PO-Revision-Date: 2020-06-18 13:14+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -506,7 +506,7 @@ msgid "Slider Excerpt length"
 msgstr "Cursore Lunghezza estratto"
 
 #: inc/customizer.php:746 inc/customizer.php:755 inc/customizer.php:803
-#: inc/customizer.php:1238 inc/customizer.php:1270
+#: inc/customizer.php:1238 inc/customizer.php:1288 inc/customizer.php:1522
 msgid "Left"
 msgstr "Sinistra"
 
@@ -514,13 +514,13 @@ msgstr "Sinistra"
 msgid "Slider Content Alignment"
 msgstr "Allineamento del contenuto del dispositivo di scorrimento"
 
-#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1262
-#: inc/customizer.php:1272
+#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1280
+#: inc/customizer.php:1290
 msgid "Center"
 msgstr "Centro"
 
 #: inc/customizer.php:756 inc/customizer.php:818 inc/customizer.php:1230
-#: inc/customizer.php:1239 inc/customizer.php:1271
+#: inc/customizer.php:1239 inc/customizer.php:1289 inc/customizer.php:1523
 msgid "Right"
 msgstr "Destra"
 
@@ -616,7 +616,7 @@ msgstr "Imbottitura pulsante superiore inferiore"
 msgid "Left Right Button Padding"
 msgstr "Imbottitura pulsante sinistro destro"
 
-#: inc/customizer.php:1042 inc/customizer.php:1415
+#: inc/customizer.php:1042 inc/customizer.php:1433
 msgid "Button Border Radius"
 msgstr "Raggio bordo pulsante"
 
@@ -704,11 +704,19 @@ msgstr "Mostra / Nascondi pulsante Torna all'inizio"
 msgid "Back to Top Button Alignment"
 msgstr "Torna all'inizio Allineamento dei pulsanti"
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1249
+msgid "Footer Background Color"
+msgstr "Colore sfondo piè di pagina"
+
+#: inc/customizer.php:1258
+msgid "Footer Background Image"
+msgstr "Piè di pagina immagine di sfondo"
+
+#: inc/customizer.php:1268
 msgid "Footer widget layout"
 msgstr "Layout del widget piè di pagina"
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1270
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -716,94 +724,110 @@ msgstr ""
 "Seleziona il numero di aree del widget che desideri nel piè di pagina. "
 "Successivamente, vai su Aspetto> Widget e aggiungi i tuoi widget."
 
-#: inc/customizer.php:1254
+#: inc/customizer.php:1272
 msgid "One"
 msgstr "Una"
 
-#: inc/customizer.php:1255
+#: inc/customizer.php:1273
 msgid "Two"
 msgstr "Due"
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1274
 msgid "Three"
 msgstr "Tre"
 
-#: inc/customizer.php:1257
+#: inc/customizer.php:1275
 msgid "Four"
 msgstr "quattro"
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1285
 msgid "Copyright Alignment"
 msgstr "Allineamento del copyright"
 
-#: inc/customizer.php:1281
+#: inc/customizer.php:1299
 msgid "Copyright Font Size"
 msgstr "Dimensione carattere copyright"
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1309
 msgid "Copyright Top Bottom Padding"
 msgstr "Imbottitura inferiore superiore del copyright"
 
-#: inc/customizer.php:1309
-msgid "Text"
-msgstr "Testo"
+#: inc/customizer.php:1327
+msgid "Copyright Text"
+msgstr "Testo sul copyright"
 
-#: inc/customizer.php:1317
+#: inc/customizer.php:1335
 msgid "Additional WooCommerce Options"
 msgstr "Opzioni aggiuntive di WooCommerce"
 
-#: inc/customizer.php:1330
+#: inc/customizer.php:1348
 msgid "Product per row"
 msgstr "Prodotto per riga"
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1363
 msgid "Product per page"
 msgstr "Prodotto per pagina"
 
-#: inc/customizer.php:1356
+#: inc/customizer.php:1374
 msgid "Enable / Disable Shop page sidebar"
 msgstr "Abilita / disabilita la barra laterale della pagina Negozio"
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1384
 msgid "Enable / Disable Product page sidebar"
 msgstr "Abilita / disabilita la barra laterale della pagina del prodotto"
 
-#: inc/customizer.php:1376
+#: inc/customizer.php:1394
 msgid "Enable / Disable Related product"
 msgstr "Abilita / Disabilita prodotto correlato"
 
-#: inc/customizer.php:1385
+#: inc/customizer.php:1403
 msgid "Button Top Bottom Padding"
 msgstr "Imbottitura inferiore superiore pulsante"
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1418
 msgid "Button Right Left Padding"
 msgstr "Pulsante imbottitura destra sinistra"
 
-#: inc/customizer.php:1431
+#: inc/customizer.php:1449
 msgid "Enable / Disable product border"
 msgstr "Abilita / disabilita il bordo del prodotto"
 
-#: inc/customizer.php:1440
+#: inc/customizer.php:1458
 msgid "Product Top Bottom Padding"
 msgstr "Imbottitura inferiore superiore del prodotto"
 
-#: inc/customizer.php:1455
+#: inc/customizer.php:1473
 msgid "Product Right Left Padding"
 msgstr "Imbottitura destra del prodotto sinistra"
 
-#: inc/customizer.php:1470
+#: inc/customizer.php:1488
 msgid "Product Border Radius"
 msgstr "Raggio del bordo del prodotto"
 
-#: inc/customizer.php:1485
+#: inc/customizer.php:1503
 msgid "Product Box Shadow"
 msgstr "Scatola del prodotto Shadow"
 
-#: inc/customizer.php:1575
+#: inc/customizer.php:1519
+msgid "Sale badge Position"
+msgstr "Posizione del badge di vendita"
+
+#: inc/customizer.php:1532
+msgid "Sale Top Bottom Padding"
+msgstr "Vendita imbottitura inferiore superiore"
+
+#: inc/customizer.php:1547
+msgid "Sale Right Left Padding"
+msgstr "Vendita imbottitura destra sinistra"
+
+#: inc/customizer.php:1562
+msgid "Sale Border Radius"
+msgstr "Raggio del bordo di vendita"
+
+#: inc/customizer.php:1652
 msgid "Advance Blogging"
 msgstr "Advance Blogging"
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1653
 msgid "Go Pro"
 msgstr "Go Pro"
