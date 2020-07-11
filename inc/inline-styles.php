@@ -77,7 +77,7 @@ function ariele_lite_inline_styles($custom) {
 	.post-categories a,.post-categories a:visited {background: " . esc_attr($ariele_lite_post_categories_bg) . "; color: " . esc_attr($ariele_lite_post_categories_label) . ";}
 	.post-categories a:hover, .post-categories a:focus {background: " . esc_attr($ariele_lite_post_categories_hover_bg) . "; color: " . esc_attr($ariele_lite_post_categories_hover_label) . ";}		
 	#blog-description, #category-description, #page-intro {color: " . esc_attr($ariele_lite_page_intros) . ";}	
-	.widget_meta li, .widget_recent_entries li, .widget_recent_comments li, .widget_archive li, .widget_categories li {border-color: " . esc_attr($ariele_lite_widget_list_line) . ";}	
+	.widget_meta li, .widget_recent_entries li, .widget_recent_comments li, .widget_pages li, .widget_archive li, .widget_categories li, .widget_pages .children {border-color: " . esc_attr($ariele_lite_widget_list_line) . ";}	
 	.tag-list a, .tag-list a:visited {background: " . esc_attr($ariele_lite_post_tags_bg) . "; color: " . esc_attr($ariele_lite_post_tags_label) . ";}	
 	.tag-list a:hover, .tag-list a:focus {background: " . esc_attr($ariele_lite_post_tags_hover_bg) . "; color: " . esc_attr($ariele_lite_post_tags_hover_label) . ";}	
 	.ribbon-featured {background: " . esc_attr($ariele_lite_featured_bg) . "; color: " . esc_attr($ariele_lite_featured_text) . ";}	

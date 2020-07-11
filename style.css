@@ -4,7 +4,7 @@
 	Author: Rough Pixels
 	Author URI: https://www.roughpixels.com
 	Description: Ariele Lite is designed for bloggers who are deeply enthusiastic when writing. Whether it's for the purist blogger or websites that are editorial-based, we put emphasis on your writing. You will be in company with other elite blog sites when you begin to build with Ariele Lite, especially if you take advantage of the Gutenberg block editor! If you absolutely need a theme designed specifically with that in mind, Ariele Lite is the perfect blogging theme for you! Enjoy unlimited colour options, multiple blog layouts, a bonus Recent Posts widget with thubnails, live previews using the built-in theme customizer, and a whole lot more!
-	Version: 1.0.4
+	Version: 1.0.5
 	Requires PHP: 5.6.0
 	Tested up to: 5.4.2
 	Text Domain: ariele-lite
@@ -1110,7 +1110,7 @@ pre code {
 
 .page-links {
     clear: both;
-    margin: 0 0 1.5rem;
+    margin: 1rem 0 0;
 }
 
 /* entry titles */
@@ -2450,16 +2450,22 @@ object {
     border-top: 1px solid #ededed;
 }
 
+.widget ul.children li {
+    padding: 0 0 0 1rem;
+}
+
 .widget_pages:not(.children) li:first-child {
     border-top: none;
 }
 
 .widget_pages a {
-    font-weight: 600;
-    padding: 5px 0;
+    padding: 0.688rem 0;
     display: inline-block;
 }
-
+.widget_pages .children a {
+    font-weight: 400;
+	    padding: 0 0 0.5rem;
+}
 .widget_pages .children li:first-child a {
     padding-top: 10px;
 }
@@ -2468,9 +2474,7 @@ object {
     padding-bottom: 10px;
 }
 
-.widget_pages .children a {
-    font-weight: 400;
-}
+
 
 .widget_pages .children a:before {
     content: "\2013";
@@ -2540,6 +2544,7 @@ object {
 .widget_text ul li,
 .widget_text ol li {
     border: none;
+	margin-bottom: 0.25rem;
 }
 
 .widget_text ul li:last-child,
@@ -2549,6 +2554,8 @@ object {
 
 .widget_text ul li ul {
     margin: 0 0 0 1.5em;
+    margin: 0.25rem 0 0.25rem 1.5rem;
+    list-style: circle;
 }
 
 .widget_text ul li li {

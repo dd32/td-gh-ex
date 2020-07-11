@@ -45,7 +45,9 @@ while ( have_posts() ) : the_post(); ?>
 	} 
 	?>	
 	<div class="entry-content post-width">
-		<?php	the_content();?>			
+		<?php	the_content();
+			get_template_part( 'template-parts/navigation/nav', 'paged' );
+			?>			
 	</div>
 	<div id="entry-footer" class="post-width">
 	<?php if ( false == esc_attr(get_theme_mod( 'ariele_lite_hide_post_tags', false ) ) ) {

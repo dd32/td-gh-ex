@@ -4,7 +4,7 @@ Contributors: roughpixels
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -112,6 +112,14 @@ Deprecated - for soon-to-be removed features.
 Removed - for now removed features.
 Fixed - for any bug fixes.
 Security - in case of vulnerabilities.
+
+## [1.0.5] - 2020-10-7
+
+* Changed - Made a few adjustments to layout of align left and right elements when using the boxed layout.
+* Changed - Nested lists in widget sidebars has a few new adjustments.
+* Fixed - Added missing alignwide and alignfull styling for posts; pages were OK.
+* Fixed - Full post was missing the navigation for split post content.
+
 
 ## [1.0.4] - 2020-07-6
 * Fixed - Removing logo in the customizer was not bringing back the site title and tagline
