@@ -59,10 +59,17 @@ h5.azuma-accordion-section-title{
     content: "\f470";
 }
 
-.azuma-accordion-section-paragraph{
+.azuma-accordion-section-paragraph,
+.azuma-accordion-section-paragraph-large{
 	padding: 0px 10px 11px 14px;
 	line-height: 16px;
 	margin: 0 -12px 0;
+}
+
+.azuma-accordion-section-paragraph-large{
+	background: #0073aa;
+	color: #fff;
+	font-style: italic;
 }
 
 [id*="customize-control-fs_"].customize-control,

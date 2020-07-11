@@ -1021,11 +1021,6 @@ if ( !function_exists( 'azuma_google_fonts_array' ) ) {
 }
 
 
-
-
-
-
-/*
 if ( !function_exists( 'azuma_edd_supports' ) ) {
 	function azuma_edd_supports( $supports ) {
 		$supports[] = 'comments';
@@ -1033,19 +1028,19 @@ if ( !function_exists( 'azuma_edd_supports' ) ) {
 	}
 }
 add_filter('edd_download_supports', 'azuma_edd_supports');
-*/
-
-
-
-
-
-
 
 
 /**
  * Remove the purchase link at the bottom of the single download page.
  */
 remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+
+/**
+ * Remove EDD reviews from directly after the content.
+ */
+if ( class_exists( 'EDD_Reviews' ) ) {
+	remove_filter( 'the_content', array( edd_reviews(), 'load_frontend' ) );
+}
 
 
 if ( !function_exists( 'azuma_edd_thumbnail' ) ) {

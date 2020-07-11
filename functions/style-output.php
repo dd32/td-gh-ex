@@ -157,6 +157,10 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 
 			$css[] = '.featured-post .featured-icon{box-shadow: 0px 0px 0px 4px rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
 
+			$css[] = '.edd-single-wrap .entry-details,.edd-review-vote,.edd-reviews-not-allowed,.edd-reviews-vendor-feedback-item-wrap{background: rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.05);}';
+
+			$css[] = '.edd-reviews-vendor-feedback-item,.edd-reviews-vendor-feedback-item .wp-post-image,.edd-review-shortcode-body{border-color: rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.05);}';
+
 			$css[] = '@media only screen and (max-width: 1024px){#site-navigation{background:' . $hi_color2 . ';}}';
 			
 		}

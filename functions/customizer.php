@@ -1026,6 +1026,26 @@ if ( function_exists( 'EDD' ) ) {
 	);
 
 	$wp_customize->add_setting(
+		'edd_archive_heading',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Large(
+			$wp_customize,
+			'edd_archive_heading',
+			array(
+				'settings'		=> 'edd_archive_heading',
+				'section'		=> 'edd_section',
+				'label'			=> esc_html__( 'Download Archives', 'azuma' ),
+				'description'	=> esc_html__( 'Main downloads page, product archives, categories, search results', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'grid_layout_edd',
 		array(
 			'default'			=> '4',
@@ -1040,7 +1060,7 @@ if ( function_exists( 'EDD' ) ) {
 		array(
 			'type' => 'radio',
 			'label' => esc_html__( 'Downloads - Grid Layout', 'azuma' ),
-			'description' => esc_html__( 'Download product archives, categories, search results. Note: pages using [downloads] shortcode should use columns option e.g. [downloads columns="4"]', 'azuma' ),
+			'description' => esc_html__( 'Note: pages using [downloads] shortcode should use columns option e.g. [downloads columns="4"]', 'azuma' ),
 			'section' => 'edd_section',
 			'settings' => 'grid_layout_edd',
 			'choices' => array(
@@ -1123,7 +1143,48 @@ if ( function_exists( 'EDD' ) ) {
 	);
 
 	$wp_customize->add_setting(
-		'heading_edd_sidebar',
+		'edd_single_heading',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Large(
+			$wp_customize,
+			'edd_single_heading',
+			array(
+				'settings'		=> 'edd_single_heading',
+				'section'		=> 'edd_section',
+				'label'			=> esc_html__( 'Single Downloads', 'azuma' ),
+				'description'	=> esc_html__( 'The single download page', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_img',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_img',
+		array(
+			'label'		=> esc_html__( 'Download Image', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'edd_section',
+			'choices'	=> array(
+				''	=> esc_html__( 'Before content', 'azuma' ),
+				'meta'	=> esc_html__( 'In the product information area', 'azuma' ),
+				'off'	=> esc_html__( 'Do not show the image', 'azuma' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'heading_edd_meta',
 		array(
 			'default'			=> '',
 			'sanitize_callback' => 'azuma_sanitize_text'
@@ -1131,6 +1192,146 @@ if ( function_exists( 'EDD' ) ) {
 	);
 	$wp_customize->add_control(
 		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_edd_meta',
+			array(
+				'section'		=> 'edd_section',
+				'label'	=> esc_html__( 'Product Information', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_rating',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_rating',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Display Average Rating', 'azuma' ),
+			'description'	=> esc_html__( 'Requires **Easy Digital Downloads - Reviews** plugin', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_sl_version',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_sl_version',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Display Current Version', 'azuma' ),
+			'description'	=> esc_html__( 'Requires **Easy Digital Downloads - Software Licensing** plugin', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_author',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_author',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Display Author Name', 'azuma' ),
+			'description'	=> esc_html__( 'The name of the download author', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_date',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_date',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Display Date', 'azuma' ),
+			'description'	=> esc_html__( 'Date the download was published', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_cats',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_cats',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Display Categories', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_tags',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_tags',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Display Tags', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_layout',
+		array(
+			'default'			=> 'right',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_layout',
+		array(
+			'label'		=> esc_html__( 'Layout', 'azuma' ),
+			'description'		=> esc_html__( 'Location of the price, buy button, and product information.', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'edd_section',
+			'choices'	=> array(
+				'right'	=> esc_html__( 'Right', 'azuma' ),
+				'left'	=> esc_html__( 'Left', 'azuma' ),
+				'below'	=> esc_html__( 'Below', 'azuma' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'heading_edd_sidebar',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Large(
 			$wp_customize,
 			'heading_edd_sidebar',
 			array(
@@ -1372,7 +1573,7 @@ class Azuma_Customize_Heading_Large extends WP_Customize_Control {
             <h3 class="azuma-accordion-section-title"><?php echo esc_html( $this->label ); ?></h3>
         <?php endif; ?>
         <?php if ( !empty( $this->description ) ) : ?>
-            <p class="azuma-accordion-section-paragraph"><?php echo esc_html( $this->description ); ?></p>
+            <p class="azuma-accordion-section-paragraph-large"><?php echo esc_html( $this->description ); ?></p>
         <?php endif; ?>
     <?php }
 }
