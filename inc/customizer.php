@@ -3,7 +3,7 @@
  * ajaira Theme Customizer.
  *
  * @package ajaira
- */
+ */ 
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -127,7 +127,7 @@ function ajaira_customize_register( $wp_customize ) {
 				$social_link_color[ 'slug' ], array(
 					'default' => $social_link_color['default'],
 					'type'   => 'option',
-					'sanitize_callback' => 'social_link_color'
+					'sanitize_callback' => 'sanitize_hex_color'
 				)
 			);
 
