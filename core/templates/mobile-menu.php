@@ -18,15 +18,19 @@ if (!function_exists('avventura_lite_mobile_menu_function')) {
         <div id="sidebar-wrapper">
             
             <div id="scroll-sidebar" class="clearfix">
-				
-                <div class="mobile-navigation"><i class="fa fa-times open"></i></div>	
-				
-                <div class="mobilemenu-box">
-					<nav id="mobilemenu"><?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?></nav> 
-				</div>
+
+                <div class="wrap">
+	                
+	                <div class="mobile-navigation"><i class="fa fa-times open"></i></div>	
+
+	                <div class="mobilemenu-box">
+						<nav id="mobilemenu"><?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?></nav> 
+					</div>
+	                
+	                <?php do_action('avventura_lite_scroll_sidebar');?>
                 
-                <?php do_action('avventura_lite_scroll_sidebar');?>
-                
+            	</div>
+
             </div>
         
         </div>

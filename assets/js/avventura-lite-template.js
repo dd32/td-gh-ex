@@ -74,11 +74,43 @@ jQuery.noConflict()(function($){
    SCROLL SIDEBAR
    =============================================== */
 
+	function avventura_lite_scrool() {
+		
+		if ( $(window).width() < 992 ) {
+
+			$("#scroll-sidebar").niceScroll(".wrap", {
+				cursorwidth: "10px",
+				cursorborder: "1px solid #fff",
+				railpadding: {
+					top: 0,
+					left: 0,
+					bottom: 0,
+					right: 0
+				}
+			});
+
+			$('nav#mobilemenu ul > li > a').click(function(){
+				setTimeout(function(){
+				  $("#scroll-sidebar").getNiceScroll().resize();
+				}, 500);
+			});
+
+		} else {
+			$("#scroll-sidebar").getNiceScroll().remove();
+		}
+
+	}
+   
+	$(document).ready(function(){
+		avventura_lite_scrool();
+	});
+
+	$(window).resize(function(){
+		avventura_lite_scrool();
+	});
+
 	$(window).load(function() {
 
-		$("#scroll-sidebar").niceScroll({smoothscroll: false});
-		$("#scroll-sidebar").getNiceScroll().hide();
-		
 		$("#header .mobile-navigation").click(function() {
 
 			$('#overlay-body').fadeIn(600).addClass('visible');
@@ -146,13 +178,19 @@ jQuery.noConflict()(function($){
    =============================================== */
 
 	function avventura_lite_open_search_form() {
+		
 		$('.header-search .search-form').addClass('is-open');
 		$('body').addClass('no-scrolling');
+		setTimeout(function(){
+		   $('.search-form  #header-searchform input#header-s').filter(':visible').focus();
+		}, 100);
+
 		return false;
 	}
-	
-	$( ".header-search a.open-search-form").on("focus", avventura_lite_open_search_form);
+
 	$( ".header-search a.open-search-form").on("click", avventura_lite_open_search_form);
+
+
 
 /* ===============================================
    Close header search 
@@ -163,8 +201,69 @@ jQuery.noConflict()(function($){
 		$('body').removeClass('no-scrolling');
 	}
 	
-	$( ".header-search a.close-search-form").on("focus", avventura_lite_close_search_form);
 	$( ".header-search a.close-search-form").on("click", avventura_lite_close_search_form);
+
+/* ===============================================
+   TRAP TAB FOCUS ON MODAL SEARCH
+   ============================================= */
+	
+	$('.search-form  #header-searchform :input').on('keydown', function (e) { 
+	    if ($("this:focus") && (e.which == 9)) {
+	        e.preventDefault();
+	        $(this).blur();
+	        $('.search-form a.close-search-form').focus();
+
+	    }
+	});
+
+	$('.search-form  a.close-search-form').on('keydown', function (e) { 
+	    if ($("this:focus") && (e.which == 9)) {
+	        e.preventDefault();
+	        $(this).blur();
+	        $('.search-form  #header-searchform :input').focus();
+
+	    }
+	});
+
+/* ===============================================
+   TRAP TAB FOCUS ON MODAL SIDEBAR
+   ============================================= */
+
+	const focusableElements = [
+	  'button',
+	  '[href]',
+	  'input',
+	  'select',
+	  'textarea',
+	  'textarea',
+	  '[tabindex]:not([tabindex="-1"])',
+	];
+
+	$.each(focusableElements, function(index, value) {
+		
+		var elements = $('#scroll-sidebar').find(value);
+		var firstEl = elements[0];
+		var lastEl = elements[ elements.length - 1 ];
+
+		$(document).on('keydown', function (event) { 
+
+			var tabKey = event.keyCode === 9;
+			var shiftKey = event.shiftKey;
+			var activeEl = document.activeElement;
+
+			if ( ! shiftKey && tabKey && lastEl === activeEl ) {
+				event.preventDefault();
+				firstEl.focus();
+			}
+
+			if ( shiftKey && tabKey && firstEl === activeEl ) {
+				event.preventDefault();
+				lastEl.focus();
+			}
+
+		});
+
+	});
 
 /* ===============================================
    Footer fix

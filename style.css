@@ -5,7 +5,7 @@ Theme URI: https://www.themeinprogress.com/avventura-elegant-beauty-wordpress-sh
 Description: Avventura Lite is an elegant and beauty WordPress theme, perfect for writers, bloggers and photographers. Avventura Lite is also fully compatible with Contact Form 7 and WooCommerce plugin and is optimized for mobile devices.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 1.2.5
+Version: 1.2.6
 Requires PHP: 5.3
 Tested up to: 5.4
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, full-width-template, grid-layout, blog, e-commerce, photography
@@ -169,6 +169,7 @@ code {
 	white-space:normal !important;
 }
 
+a:focus,
 button:hover ,
 button:active ,
 button:focus ,
@@ -178,8 +179,8 @@ input:focus ,
 textarea:hover ,
 textarea:active ,
 textarea:focus {
-	outline:none !important;
-	text-decoration:none !important;
+	outline:thin dotted red !important;
+
 }
 
 ::selection {
@@ -209,7 +210,6 @@ a:hover {
 }
 
 a:focus {
-	outline: thin dotted;
     text-decoration: underline;
 }
 
@@ -287,10 +287,15 @@ a:focus {
    BUTTONS
    =============================================== */
 
-.read-more { 
+.read-more-wrapper { 
 	display:block;
-	margin:40px 0 0 0;
+	margin:30px 0 0 0;
 	text-align:center;
+}
+
+.read-more { 
+	display:inline-block;
+	padding: 5px
 }
 
 span.button,
@@ -582,13 +587,14 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 .header-search .search-form {
 	position:fixed;
 	top:0;
-	right:0;
-	width:0;
+	right:-100%;
+	width:100%;
 	height:100%;
 	padding:0;
 	z-index:1001;
-	-webkit-transition-property: width, height, -webkit-transform;
-    transition-property: width, height, transform;
+	visibility: hidden;
+	-webkit-transition-property: all , -webkit-transform;
+    transition-property: all , transform;
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
@@ -598,8 +604,9 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 }
 
 .header-search .search-form.is-open {
-	width:100%;
+	right:0;
 	height:100%;
+	visibility: visible;
 }
 
 .header-search .search-form #header-searchform input[type=text] {
@@ -643,16 +650,24 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 	padding:0;
 }
 
-.header-search .search-form i.searchform-close-button {
-	position:absolute;
-	font-size:25px;
+.header-search .search-form a.close-search-form {
+	width: 26px;
+    height: 26px;
+	line-height:26px;
+    margin: auto;
+    display: block;
 	top:50px;
+	position:absolute;
+	margin-left:-13px;
+	left:50%;
+}
+
+.header-search .search-form i.searchform-close-button {
+	font-size:25px;
 	width:26px;
 	height:26px;
 	line-height:26px;
 	text-align:center;
-	margin-left:-13px;
-	left:50%;
 	color:#ddd !important;
 	opacity:0;
 	-webkit-transition: transform .2s linear; 
@@ -863,7 +878,7 @@ body.is_customizer_panel.logged-in #sidebar-wrapper #scroll-sidebar {
 body.logged-in.customizer_active #sidebar-wrapper #scroll-sidebar {
 	left:-300px; 
 	width:300px;
-	overflow:hidden;
+	overflow:auto !important;
 	background:#2D3032; 
 	position:fixed;
 	visibility: hidden; 
@@ -874,6 +889,24 @@ body.logged-in.customizer_active #sidebar-wrapper #scroll-sidebar {
 	-o-transition: 0.6s;
 	transition: 0.6s;
 	top:0;
+}
+
+#sidebar-wrapper #scroll-sidebar::-webkit-scrollbar {
+	width: 15px;
+	height: 15px;
+}
+
+#sidebar-wrapper #scroll-sidebar::-webkit-scrollbar-track-piece  {
+	background-color: #2D3032;
+}
+
+#sidebar-wrapper #scroll-sidebar::-webkit-scrollbar-thumb:vertical {
+	height: 30px;
+	background-color: #444;
+}
+
+#sidebar-wrapper #scroll-sidebar .wrap {
+	z-index:999;
 }
 
 body.overlay-active #wrapper {
@@ -2717,6 +2750,10 @@ tr:nth-child(2n+2) {
 
 	body.scroll_header #top_sidebar {
 		margin-top:0;
+	}
+
+	#sidebar-wrapper #scroll-sidebar {
+		overflow:hidden !important;
 	}
 
 	#sidebar .sidebar-box {

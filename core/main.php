@@ -623,7 +623,7 @@ if (!function_exists('avventura_lite_customize_excerpt_more')) {
 	
 			endif;
 	
-			return $content. '<a '. wp_kses($container, $allowed) . ' href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_attr__('Read More','avventura-lite').'"> <span class="'.esc_attr($class).'">'.$button.'</span></a>';
+			return $content . '<div class="read-more-wrapper"><a '. wp_kses($container, $allowed) . ' href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_attr__('Read More','avventura-lite').'"> <span class="'.esc_attr($class).'">'.$button.'</span></a></div>';
 	
 		endif;
 		
