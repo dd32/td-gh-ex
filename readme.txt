@@ -47,7 +47,7 @@ This theme is bundled with Modernizr
 CHANGELOG
 =================================
 
-Version 1.4
+Version 1.5
  * Updated footer links with nofollow attribute
 
 Version 1.3

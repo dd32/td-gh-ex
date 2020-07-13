@@ -276,53 +276,53 @@ if ( ! function_exists( 'hostmarks_apply_color' ) ) :
 	<style id="hostmarks-color-settings">
 	<?php if ( get_theme_mod('hostmarks_header_bg') ) : ?>
 		header[role=banner] {
-			background-color: <?php echo get_theme_mod('hostmarks_header_bg'); ?>;
+			background-color: <?php echo esc_attr(get_theme_mod('hostmarks_header_bg')); ?>;
 		}
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_alt_blog_intro') ) : ?>
 		.copy-blue-box {
-			background-color: <?php echo get_theme_mod('hostmarks_alt_blog_intro'); ?>;
+			background-color: <?php echo esc_attr(get_theme_mod('hostmarks_alt_blog_intro')); ?>;
 		}
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_post_title_color') ) : ?>
 		a, a:visited, body.page .entry-title, body.single .entry-title, .not-found .entry-title { 
-			color: <?php echo get_theme_mod('hostmarks_post_title_color'); ?>;
+			color: <?php echo esc_attr(get_theme_mod('hostmarks_post_title_color')); ?>;
 		}
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_body_text_color') ) : ?>
 		body, select, input, textarea, .entry-meta a, .category-archive-meta a, .more-link:hover, #sidebar .widget li a, .commentlist .vcard cite.fn a:hover, a:hover {   
-			color: <?php echo get_theme_mod('hostmarks_body_text_color'); ?>;
+			color: <?php echo esc_attr(get_theme_mod('hostmarks_body_text_color')); ?>;
 		}
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_divider_color') ) : ?>
 		#main { 
-			border-right: 1px solid <?php echo get_theme_mod('hostmarks_divider_color'); ?>;
+			border-right: 1px solid <?php echo esc_attr(get_theme_mod('hostmarks_divider_color')); ?>;
 		}
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_comment_title') ) : ?>
 		#comments-title, #reply-title {
-			color: <?php echo get_theme_mod('hostmarks_comment_title'); ?>;
+			color: <?php echo esc_attr(get_theme_mod('hostmarks_comment_title')); ?>;
 		}
 		#respond #submit {
-			background-color: <?php echo get_theme_mod('hostmarks_comment_title'); ?>;
+			background-color: <?php echo esc_attr(get_theme_mod('hostmarks_comment_title')); ?>;
 		}
 	
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_widget_title_bg') ) : ?>
 		.pagination li a:hover, .pagination li.active a, #sidebar .widget-title {
-			background-color: <?php echo get_theme_mod('hostmarks_widget_title_bg'); ?>;
+			background-color: <?php echo esc_attr(get_theme_mod('hostmarks_widget_title_bg')); ?>;
 		}
 	<?php endif; ?>
 	
 	<?php if ( get_theme_mod('hostmarks_footer_bg') ) : ?>
 		footer[role=contentinfo] {
-			background-color: <?php echo get_theme_mod('hostmarks_footer_bg'); ?>;
+			background-color: <?php echo esc_attr(get_theme_mod('hostmarks_footer_bg')); ?>;
 		}
 	<?php endif; ?>
 	</style>
