@@ -21,8 +21,8 @@ $arilewp_menu_container_size = get_theme_mod('arilewp_menu_container_size', 'con
 							 'container_class' => 'collapse navbar-collapse',
 							 'container_id' => 'navbarNavDropdown',
 							 'menu_class'      => 'nav navbar-nav m-right-auto',
-							 'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-							 'walker'          => new wp_bootstrap_navwalker()
+							 'fallback_cb'     => 'arilewp_bootstrap_navwalker::fallback',
+							 'walker'          => new arilewp_bootstrap_navwalker()
 						) );
 					?>
 				
