@@ -703,6 +703,10 @@ msgstr ""
 msgid 'Sticky Header'
 msgstr ""
 
+#: inc/customizer.php:198
+msgid "Sticky Header Padding"
+msgstr ""
+
 #: inc/customizer.php:159
 msgid 'Show / Hide Search'
 msgstr ""
@@ -788,6 +792,10 @@ msgstr ""
 msgid 'Slider image size (1500 x 650)'
 msgstr ""
 
+#: inc/customizer.php:301
+msgid 'Add Slider Button Text'
+msgstr ""
+
 #: inc/customizer.php:278
 msgid 'Slider Content Layouts'
 msgstr ""
@@ -826,6 +834,10 @@ msgstr ""
 
 #: inc/customizer.php:370
 msgid 'About Excerpt length'
+msgstr ""
+
+#: inc/customizer.php:301
+msgid 'Add About Button Text'
 msgstr ""
 
 #: inc/customizer.php:383
@@ -930,6 +942,10 @@ msgstr ""
 
 #: inc/customizer.php:779
 msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:788
+msgid "Social Icons Settings"
 msgstr ""
 
 #: inc/customizer.php:789

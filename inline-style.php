@@ -231,6 +231,15 @@
 		$automotive_centre_custom_css .='} }';
 	}
 
+	/*-------------- Sticky Header Padding ----------------*/
+
+	$automotive_centre_sticky_header_padding = get_theme_mod('automotive_centre_sticky_header_padding');
+	if($automotive_centre_sticky_header_padding != false){
+		$automotive_centre_custom_css .='.header-fixed{';
+			$automotive_centre_custom_css .='padding: '.esc_html($automotive_centre_sticky_header_padding).';';
+		$automotive_centre_custom_css .='}';
+	}
+
 	/*------------------ Search Settings -----------------*/
 	
 	$automotive_centre_search_padding_top_bottom = get_theme_mod('automotive_centre_search_padding_top_bottom');
@@ -311,6 +320,43 @@
 	if($automotive_centre_scroll_to_top_border_radius != false){
 		$automotive_centre_custom_css .='.scrollup i{';
 			$automotive_centre_custom_css .='border-radius: '.esc_html($automotive_centre_scroll_to_top_border_radius).'px;';
+		$automotive_centre_custom_css .='}';
+	}
+
+	/*----------------Social Icons Settings ------------------*/
+
+	$automotive_centre_social_icon_font_size = get_theme_mod('automotive_centre_social_icon_font_size');
+	if($automotive_centre_social_icon_font_size != false){
+		$automotive_centre_custom_css .='#sidebar .custom-social-icons i, #footer .custom-social-icons i{';
+			$automotive_centre_custom_css .='font-size: '.esc_html($automotive_centre_social_icon_font_size).';';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_social_icon_padding = get_theme_mod('automotive_centre_social_icon_padding');
+	if($automotive_centre_social_icon_padding != false){
+		$automotive_centre_custom_css .='#sidebar .custom-social-icons i, #footer .custom-social-icons i{';
+			$automotive_centre_custom_css .='padding: '.esc_html($automotive_centre_social_icon_padding).';';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_social_icon_width = get_theme_mod('automotive_centre_social_icon_width');
+	if($automotive_centre_social_icon_width != false){
+		$automotive_centre_custom_css .='#sidebar .custom-social-icons i, #footer .custom-social-icons i{';
+			$automotive_centre_custom_css .='width: '.esc_html($automotive_centre_social_icon_width).';';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_social_icon_height = get_theme_mod('automotive_centre_social_icon_height');
+	if($automotive_centre_social_icon_height != false){
+		$automotive_centre_custom_css .='#sidebar .custom-social-icons i, #footer .custom-social-icons i{';
+			$automotive_centre_custom_css .='height: '.esc_html($automotive_centre_social_icon_height).';';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_social_icon_border_radius = get_theme_mod('automotive_centre_social_icon_border_radius');
+	if($automotive_centre_social_icon_border_radius != false){
+		$automotive_centre_custom_css .='#sidebar .custom-social-icons i, #footer .custom-social-icons i{';
+			$automotive_centre_custom_css .='border-radius: '.esc_html($automotive_centre_social_icon_border_radius).'px;';
 		$automotive_centre_custom_css .='}';
 	}
 

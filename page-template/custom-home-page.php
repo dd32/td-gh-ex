@@ -37,9 +37,11 @@ get_header(); ?>
               <div class="inner_carousel">
                 <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_slider_excerpt_number','30')))); ?></p>
-                <div class="slider-btn">
-                  <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'LEARN MORE', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'LEARN MORE','automotive-centre' );?></span></a>
-                </div>
+                <?php if( get_theme_mod('automotive_centre_slider_button_text','LEARN MORE') != ''){ ?>
+                  <div class="slider-btn">
+                    <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_theme_mod('automotive_centre_slider_button_text',__('LEARN MORE','automotive-centre')));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('automotive_centre_slider_button_text',__('LEARN MORE','automotive-centre')));?></span></a>
+                  </div>
+                <?php } ?>
               </div>
             </div>
           </div>
@@ -93,9 +95,11 @@ get_header(); ?>
                   <h3><?php the_title(); ?></h3>
                   <hr>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_about_excerpt_number','30')))); ?></p>
-                  <div class="more-btn">
-                    <a href="<?php the_permalink(); ?>"><?php esc_html_e('LEARN MORE','automotive-centre'); ?><span class="screen-reader-text"><?php esc_html_e( 'LEARN MORE','automotive-centre' );?></span></a>
-                  </div>
+                  <?php if( get_theme_mod('automotive_centre_about_button_text','LEARN MORE') != ''){ ?>
+                    <div class="more-btn">
+                      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('automotive_centre_about_button_text',__('LEARN MORE','automotive-centre')));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('automotive_centre_about_button_text',__('LEARN MORE','automotive-centre')));?></span></a>
+                    </div>
+                  <?php } ?>
                 </div>
                 <div class="col-lg-5 col-md-5">
                   <?php the_post_thumbnail(); ?>

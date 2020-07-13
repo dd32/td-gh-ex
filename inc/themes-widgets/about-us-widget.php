@@ -13,45 +13,45 @@ class Automotive_Centre_About_Widget extends WP_Widget {
 	}
 	
 	public function widget( $args, $instance ) {
-		?>				
-		<div class="widget">
+		?>
+		<aside class="widget">
 			<?php
-			$title = apply_filters('widget_title', esc_html($instance['title']));
-			$author = $instance['author'];
-			$designation = $instance['designation'];
-			$description = apply_filters('widget_description', esc_html($instance['description']));
-			$read_more_url = $instance['read_more_url'];
-			$read_more_text = $instance['read_more_text'];
-			$upload_image = $instance['upload_image'];			
+			$title = isset( $instance['title'] ) ? $instance['title'] : '';
+			$author = isset( $instance['author'] ) ? $instance['author'] : '';
+			$designation = isset( $instance['designation'] ) ? $instance['designation'] : '';
+			$description = isset( $instance['description'] ) ? $instance['description'] : '';
+			$read_more_url = isset( $instance['read_more_url'] ) ? $instance['read_more_url'] : '';
+			$read_more_text = isset( $instance['read_more_text'] ) ? $instance['read_more_text'] : '';
+			$upload_image = isset( $instance['upload_image'] ) ? $instance['upload_image'] : '';
 
 	        echo '<div class="custom-about-us">';
-	        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($instance['title']); ?></h3><?php } ?>
-	        <?php if($upload_image): ?>
-      			<img src="<?php echo esc_url($upload_image); ?>" alt="">
-			<?php endif; ?>
-			<?php if(!empty($author) ){ ?><p class="custom_author"><?php echo esc_html($instance['author']); ?></p><?php } ?>
-			<?php if(!empty($designation) ){ ?><p class="custom_designation"><?php echo esc_html($instance['designation']); ?></p><?php } ?>
-	        <?php if(!empty($description) ){ ?><p class="custom_desc"><?php echo esc_html($instance['description']); ?></p><?php } ?>
-	        <?php if(!empty($read_more_url) ){ ?><div class="more-button"><a class="custom_read_more" href="<?php echo esc_url($instance['read_more_url']); ?>"><?php if(!empty($read_more_text) ){ ?><?php echo esc_html($instance['read_more_text']); ?><?php } ?></a></div><?php } ?>	        
+	        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($title); ?></h3><?php } ?>
+		        <?php if($upload_image): ?>
+	      			<img src="<?php echo esc_url($upload_image); ?>" alt="">
+				<?php endif; ?>
+				<?php if(!empty($author) ){ ?><p class="custom_author"><?php echo esc_html($author); ?></p><?php } ?>
+				<?php if(!empty($designation) ){ ?><p class="custom_designation"><?php echo esc_html($designation); ?></p><?php } ?>
+		        <?php if(!empty($description) ){ ?><p class="custom_desc"><?php echo esc_html($description); ?></p><?php } ?>
+		        <?php if(!empty($read_more_url) ){ ?><div class="more-button"><a class="custom_read_more" href="<?php echo esc_url($read_more_url); ?>"><?php if(!empty($read_more_text) ){ ?><?php echo esc_html($read_more_text); ?><?php } ?></a></div><?php } ?>
 	        <?php echo '</div>';
 			?>
-		</div>
+		</aside>
 		<?php
 	}
 	
-	public function form( $instance ) {
+	// Widget Backend 
+	public function form( $instance ) {	
 
-		$title= ''; $author = ''; $designation = ''; $description= ''; $read_more_text = ''; $read_more_url = ''; $upload_image = ''; 
-		
-		isset($instance['title']) ? $title = $instance['title'] : null;
-		isset($instance['author']) ? $author = $instance['author'] : null;
-		isset($instance['designation']) ? $designation = $instance['designation'] : null;
-		isset($instance['description']) ? $description = $instance['description'] : null;
-		isset($instance['read_more_url']) ? $read_more_url = $instance['read_more_url'] : null;
-		isset($instance['read_more_text']) ? $read_more_text = $instance['read_more_text'] : null;
-		isset($instance['upload_image']) ? $upload_image = $instance['upload_image'] : null;		
-		?>
+		$title= ''; $author = ''; $designation = ''; $description= ''; $read_more_text = ''; $read_more_url = ''; $upload_image = '';
 
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
+		$author = isset( $instance['author'] ) ? $instance['author'] : '';
+		$designation = isset( $instance['designation'] ) ? $instance['designation'] : '';
+		$description = isset( $instance['description'] ) ? $instance['description'] : '';
+		$read_more_url = isset( $instance['read_more_url'] ) ? $instance['read_more_url'] : '';
+		$read_more_text = isset( $instance['read_more_text'] ) ? $instance['read_more_text'] : '';
+		$upload_image = isset( $instance['upload_image'] ) ? $instance['upload_image'] : '';
+	?>
 		<p>
         <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:','automotive-centre'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
@@ -88,6 +88,7 @@ class Automotive_Centre_About_Widget extends WP_Widget {
 		<?php 
 	}
 	
+	// Updating widget replacing old instances with new
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();	
 		$instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
@@ -101,7 +102,7 @@ class Automotive_Centre_About_Widget extends WP_Widget {
 		return $instance;
 	}
 }
-
+// Register and load the widget
 function automotive_centre_about_custom_load_widget() {
 	register_widget( 'Automotive_Centre_About_Widget' );
 }

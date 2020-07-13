@@ -4,7 +4,6 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.3
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -112,6 +111,14 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 = 0.4.3 =
 * Resolved Themes check error.
 
+= 0.4.4 =
+* Added social Icons font size, padding & border radius option in customizer.
+* Added social Icons width & height option in customizer.
+* Added sticky header padding option in customizer.
+* Added slider & about button text option in customizer.
+* Resolved Widgets errors.
+* Updated language folder.
+
 == Resources ==
 
 Automotive Centre WordPress Theme, Copyright 2019 VWthemes
@@ -130,7 +137,7 @@ Theme is Built using the following resource bundles.
 * Davegandy
 * copyright July 12, 2018, Davegandy
 * https://github.com/FortAwesome/Font-Awesome.git
-* License: Font Awesome Free License v5.0.0
+* License: http://fontawesome.com/license - Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License.
 * https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 = Customizer Pro =

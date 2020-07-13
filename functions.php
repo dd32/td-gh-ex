@@ -309,6 +309,18 @@ function automotive_centre_sanitize_choices( $input, $setting ) {
     }
 }
 
+function automotive_centre_sanitize_email( $email, $setting ) {
+	// Strips out all characters that are not allowable in an email address.
+	$email = sanitize_email( $email );
+
+	// If $email is a valid email, return it; otherwise, return the default.
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function automotive_centre_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
 /* Excerpt Limit Begin */
 function automotive_centre_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));

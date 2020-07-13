@@ -1,9 +1,9 @@
 function automotive_centre_menu_open_nav() {
-	window.responsiveMenu=true;
+	window.automotive_centre_responsiveMenu=true;
 	jQuery(".sidenav").addClass('show');
 }
 function automotive_centre_menu_close_nav() {
-	window.responsiveMenu=false;
+	window.automotive_centre_responsiveMenu=false;
  	jQuery(".sidenav").removeClass('show');
 }
 
@@ -17,16 +17,16 @@ jQuery(function($){
 });
 
 jQuery(document).ready(function () {
-	window.currentfocus=null;
+	window.automotive_centre_currentfocus=null;
   	automotive_centre_checkfocusdElement();
-	var body = document.querySelector('body');
-	body.addEventListener('keyup', automotive_centre_check_tab_press);
-	var gotoHome = false;
-	var gotoClose = false;
-	window.responsiveMenu=false;
+	var automotive_centre_body = document.querySelector('body');
+	automotive_centre_body.addEventListener('keyup', automotive_centre_check_tab_press);
+	var automotive_centre_gotoHome = false;
+	var automotive_centre_gotoClose = false;
+	window.automotive_centre_responsiveMenu=false;
  	function automotive_centre_checkfocusdElement(){
-	 	if(window.currentfocus=document.activeElement.className){
-		 	window.currentfocus=document.activeElement.className;
+	 	if(window.automotive_centre_currentfocus=document.activeElement.className){
+		 	window.automotive_centre_currentfocus=document.activeElement.className;
 	 	}
  	}
  	function automotive_centre_check_tab_press(e) {
@@ -36,42 +36,42 @@ jQuery(document).ready(function () {
 
 		if(window.innerWidth < 999){
 		if (e.keyCode == 9) {
-			if(window.responsiveMenu){
+			if(window.automotive_centre_responsiveMenu){
 			if (!e.shiftKey) {
-				if(gotoHome) {
+				if(automotive_centre_gotoHome) {
 					jQuery( ".main-menu ul:first li:first a:first-child" ).focus();
 				}
 			}
 			if (jQuery("a.closebtn.mobile-menu").is(":focus")) {
-				gotoHome = true;
+				automotive_centre_gotoHome = true;
 			} else {
-				gotoHome = false;
+				automotive_centre_gotoHome = false;
 			}
 
 		}else{
 
-			if(window.currentfocus=="responsivetoggle"){
+			if(window.automotive_centre_currentfocus=="responsivetoggle"){
 				jQuery( "" ).focus();
 			}}}
 		}
 		if (e.shiftKey && e.keyCode == 9) {
 		if(window.innerWidth < 999){
-			if(window.currentfocus=="header-search"){
+			if(window.automotive_centre_currentfocus=="header-search"){
 				jQuery(".responsivetoggle").focus();
 			}else{
-				if(window.responsiveMenu){
-				if(gotoClose){
+				if(window.automotive_centre_responsiveMenu){
+				if(automotive_centre_gotoClose){
 					jQuery("a.closebtn.mobile-menu").focus();
 				}
 				if (jQuery( ".main-menu ul:first li:first a:first-child" ).is(":focus")) {
-					gotoClose = true;
+					automotive_centre_gotoClose = true;
 				} else {
-					gotoClose = false;
+					automotive_centre_gotoClose = false;
 				}
 			
 			}else{
 
-			if(window.responsiveMenu){
+			if(window.automotive_centre_responsiveMenu){
 			}}}}
 		}
 	 	automotive_centre_checkfocusdElement();

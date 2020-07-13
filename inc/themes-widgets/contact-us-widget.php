@@ -14,43 +14,44 @@ class Automotive_Centre_Contact_Widget extends WP_Widget {
 	
 	public function widget( $args, $instance ) {
 		?>
-		<div class="widget">
+		<aside class="widget">
 			<?php
-			$title = apply_filters('widget_title', esc_html($instance['title']));
-			$phone = apply_filters('widget_phone', esc_html($instance['phone']));
-			$email = apply_filters('widget_email', esc_html($instance['email']));
-			$address = apply_filters('widget_address', esc_html($instance['address']));
-			$timing = apply_filters('widget_timing', esc_html($instance['timing']));
-			$longitude = apply_filters('widget_longitude', esc_html($instance['longitude']));
-			$latitude = apply_filters('widget_latitude', esc_html($instance['latitude']));
-			$contact_form = apply_filters('contact_form', esc_html($instance['contact_form']));
+			$title = isset( $instance['title'] ) ? $instance['title'] : '';
+			$phone = isset( $instance['phone'] ) ? $instance['phone'] : '';
+			$email = isset( $instance['email'] ) ? $instance['email'] : '';
+			$address = isset( $instance['address'] ) ? $instance['address'] : '';
+			$timing = isset( $instance['timing'] ) ? $instance['timing'] : '';
+			$longitude = isset( $instance['longitude'] ) ? $instance['longitude'] : '';
+			$latitude = isset( $instance['latitude'] ) ? $instance['latitude'] : '';
+			$contact_form = isset( $instance['contact_form'] ) ? $instance['contact_form'] : '';
 
 	        echo '<div class="custom-contact-us">';
-	        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($instance['title']); ?></h3><?php } ?>
-	        <?php if(!empty($phone) ){ ?><p><span class="custom_details"><?php esc_html_e('Phone Number: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($instance['phone']); ?></span></p><?php } ?>
-	        <?php if(!empty($email) ){ ?><p><span class="custom_details"><?php esc_html_e('Email ID: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($instance['email']); ?></span></p><?php } ?>
-	        <?php if(!empty($address) ){ ?><p><span class="custom_details"><?php esc_html_e('Address: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($instance['address']); ?></span></p><?php } ?> 
-	        <?php if(!empty($timing) ){ ?><p><span class="custom_details"><?php esc_html_e('Opening Time: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($instance['timing']); ?></span></p><?php } ?>
-	        <?php if(!empty($longitude) ){ ?><embed width="100%" height="200px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<?php echo esc_html($instance['longitude']); ?>,<?php echo esc_html($instance['latitude']); ?>&hl=es;z=14&amp;output=embed"></embed><?php } ?>
-	        <?php if(!empty($contact_form) ){ ?><?php echo do_shortcode($instance['contact_form']); ?><?php } ?>
+	        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($title); ?></h3><?php } ?>
+		        <?php if(!empty($phone) ){ ?><p><span class="custom_details"><?php esc_html_e('Phone Number: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($phone); ?></span></p><?php } ?>
+		        <?php if(!empty($email) ){ ?><p><span class="custom_details"><?php esc_html_e('Email ID: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($email); ?></span></p><?php } ?>
+		        <?php if(!empty($address) ){ ?><p><span class="custom_details"><?php esc_html_e('Address: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($address); ?></span></p><?php } ?> 
+		        <?php if(!empty($timing) ){ ?><p><span class="custom_details"><?php esc_html_e('Opening Time: ','automotive-centre'); ?></span><span class="custom_desc"><?php echo esc_html($timing); ?></span></p><?php } ?>
+		        <?php if(!empty($longitude) ){ ?><embed width="100%" height="200px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<?php echo esc_html($longitude); ?>,<?php echo esc_html($latitude); ?>&hl=es;z=14&amp;output=embed"></embed><?php } ?>
+		        <?php if(!empty($contact_form) ){ ?><?php echo do_shortcode($contact_form); ?><?php } ?>
 	        <?php echo '</div>';
 			?>
-		</div>
+		</aside>
 		<?php
 	}
-	 
+	
+	// Widget Backend 
 	public function form( $instance ) {
 
 		$title= ''; $phone= ''; $email = ''; $address = ''; $timing = ''; $longitude = ''; $latitude = ''; $contact_form = ''; 
 		
-		isset($instance['title']) ? $title = $instance['title'] : null;
-		isset($instance['phone']) ? $phone = $instance['phone'] : null;
-		isset($instance['email']) ? $email = $instance['email'] : null;
-		isset($instance['address']) ? $address = $instance['address'] : null;
-		isset($instance['timing']) ? $timing = $instance['timing'] : null;
-		isset($instance['longitude']) ? $longitude = $instance['longitude'] : null;
-		isset($instance['latitude']) ? $latitude = $instance['latitude'] : null;
-		isset($instance['contact_form']) ? $contact_form = $instance['contact_form'] : null;
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
+		$phone = isset( $instance['phone'] ) ? $instance['phone'] : '';
+		$email = isset( $instance['email'] ) ? $instance['email'] : '';
+		$address = isset( $instance['address'] ) ? $instance['address'] : '';
+		$timing = isset( $instance['timing'] ) ? $instance['timing'] : '';
+		$longitude = isset( $instance['longitude'] ) ? $instance['longitude'] : '';
+		$latitude = isset( $instance['latitude'] ) ? $instance['latitude'] : '';
+		$contact_form = isset( $instance['contact_form'] ) ? $instance['contact_form'] : '';
 		
 		?>
 
@@ -90,6 +91,7 @@ class Automotive_Centre_Contact_Widget extends WP_Widget {
 		<?php 
 	}
 	
+	// Updating widget replacing old instances with new
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();	
 		$instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
@@ -104,7 +106,7 @@ class Automotive_Centre_Contact_Widget extends WP_Widget {
 		return $instance;
 	}
 }
-
+// Register and load the widget
 function automotive_centre_contact_custom_load_widget() {
 	register_widget( 'Automotive_Centre_Contact_Widget' );
 }
