@@ -345,16 +345,16 @@ if ( ! function_exists( 'wp_fanzone_apply_color' ) ) :
 	<style id="color-settings">
 	<?php if ( get_theme_mod('wp_fanzone_theme_color') ) : ?>
 		.btn-info, .btn-default, .main-navigation li:hover > a, .main-navigation ul ul a, .main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .navbar-toggle .icon-bar, .main-navigation .current_page_ancestor > a, #copyright, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], .widget-title h4, .pagination .fa, #footer .widget_calendar thead tr, .site-info, footer .widget_calendar thead tr{
-			background-color:<?php echo get_theme_mod('wp_fanzone_theme_color'); ?>;
+			background-color:<?php echo esc_url(get_theme_mod('wp_fanzone_theme_color')); ?>;
 			}
 		.top-bar, .btn-info, .nav_container, #footer, .navbar-default .navbar-toggle, footer#colophon{
-			border-color:<?php echo get_theme_mod('wp_fanzone_theme_color'); ?>;
+			border-color:<?php echo esc_url(get_theme_mod('wp_fanzone_theme_color')); ?>;
 		}
 		aside ul li a, .pagination a, h4.author-title a, .author-info a, cite.fn, a.comment-reply-link, comment-meta a, a.comment-edit-link, .logged-in-as a, .widget_tag_cloud a, .widget_calendar td a, .widget_calendar td a, footer .meta-info span, footer .meta-info a, footer ul li a:hover, .meta-info a:hover, ul li.recentcomments, .post_box a.meta-comment:hover, .entry a:hover, .entry a:focus, .entry a, #breadcrumbs a, #breadcrumbs a:hover, .meta-info, .post a{
-		color:<?php echo get_theme_mod('wp_fanzone_theme_color'); ?>;
+		color:<?php echo esc_attr(get_theme_mod('wp_fanzone_theme_color')); ?>;
 		}
 		.arrow-right{
-			border-left: 10px solid <?php echo get_theme_mod('wp_fanzone_theme_color'); ?>;
+			border-left: 10px solid <?php echo esc_attr(get_theme_mod('wp_fanzone_theme_color')); ?>;
 		}
 	<?php endif; ?>
 	</style>

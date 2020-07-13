@@ -4,7 +4,10 @@ Theme URI: https://wpdevshed.com/wp-fanzone-theme/
 Author: WP Dev Shed
 Author URI: http://wpdevshed.com
 Description: WP Fan Zone was designed orginally with sports fans and bloggers in mind, but it could easily be used for any type of blog or magazine style site that wants to feature images and content. It is fully responsive, comes with two main menus, and widget areas for all page types. It also has customization options for social media links, color scheme and author bios, plus a simple banner widget for putting ads in the header.
-Version: 3.1
+Version: 3.2
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-fanzone

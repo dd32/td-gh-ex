@@ -227,7 +227,7 @@ function wp_fanzone_breadcrumb() {
     echo '<ul id="breadcrumbs">';
     if (!is_home()) {
         echo '<li><a href="';
-        echo home_url();
+        echo esc_url(home_url());
         echo '">';
         echo 'Home';
         echo '</a></li><li class="separator"> / </li>';
