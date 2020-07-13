@@ -70,6 +70,17 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 					font-family: '.esc_html($piecesText[0]).', '.esc_html($piecesText[1]).';
 				}
 			';
+			/* Check if logo on scroll is enabled */
+			$attesa_stickyHeader = apply_filters( 'attesa_sticky_header_scroll', attesa_options('_sticky_header', '1') );
+			$logoOnScroll = apply_filters( 'attesa_logo_on_scroll_filter', attesa_options('_logo_on_scroll', '') );
+			$headerFormat = attesa_options('_header_format','compat');
+			if ( has_custom_logo() && $logoOnScroll && $attesa_stickyHeader && $headerFormat != 'featuredtitle' ) {
+				$attesa_custom_css .= '
+					header.site-header.menuMinor .attesa-logo img {
+						content: url('.esc_url($logoOnScroll).');
+					}
+				';
+			}
 			/* Set custom max-width for content, side content and sidebar */
 			$max_width = apply_filters( 'attesa_max_width_site_content', attesa_options('_max_width', '1240') );
 			$width_content = apply_filters( 'attesa_width_site_content', attesa_options('_width_content', '67') );

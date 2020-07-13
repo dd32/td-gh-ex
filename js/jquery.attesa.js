@@ -179,11 +179,6 @@
 			function setMenu() {
 				if ( (!mobileDetect && $('header.site-header').hasClass('withSticky')) || (mobileDetect && $('header.site-header').hasClass('yesMobile')) ) {
 					$('header.site-header').addClass('fixed');
-					if($('header#masthead').attr('data-logo-on-scroll')){
-						var $logoOriginal = $('.attesa-logo img').attr('src'),
-							$logoOriginalSrcset = $('.attesa-logo img').attr('srcset'),
-							$logoOnScroll = $('header#masthead').attr('data-logo-on-scroll');
-					}
 					if ($('body').is('.headerFeatImage, .attesa-full-width') ) {
 						if ($('body').hasClass('withOverlayMenu') ) {
 							$('.attesaFeatBox, body.attesa-full-width #content.site-content').css('margin-top', $('.nav-top').outerHeight() + 'px');
@@ -202,31 +197,11 @@
 								if ($filter.hasClass('topbarscrollhide')) {
 									$filter.css( 'margin-top', '-' + $topHeight + 'px' );
 								}
-								if($('header#masthead').attr('data-logo-on-scroll')){
-									if ($logoOnScroll && $logoOriginal) {
-										$('.attesa-logo img').fadeOut(125, function() {
-											$('.attesa-logo img').attr('src',$logoOnScroll);
-											if($('.attesa-logo img').attr('srcset')){
-												$('.attesa-logo img').attr('srcset',$logoOnScroll);
-											}
-										}).fadeIn(125);
-									}
-								}
 								$('body').addClass('menuMinor');
 							} else if ($filter.hasClass('menuMinor') && $(window).scrollTop() <= 0 ) {
 								$filter.removeClass('menuMinor');
 								$('body').removeClass('menuMinor');
 								$filter.css( 'margin-top', '0px' );
-								if($('header#masthead').attr('data-logo-on-scroll')){
-									if ($logoOnScroll && $logoOriginal) {
-										$('.attesa-logo img').fadeOut(125, function() {
-											$('.attesa-logo img').attr('src',$logoOriginal);
-											if($('.attesa-logo img').attr('srcset')){
-												$('.attesa-logo img').attr('srcset',$logoOriginalSrcset);
-											}
-										}).fadeIn(125);
-									}
-								}
 							}
 						});
 					}

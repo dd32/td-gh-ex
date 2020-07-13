@@ -36,7 +36,7 @@
 			$attesa_topBarScroll = apply_filters( 'attesa_choose_top_nav', attesa_options('_topbar_scroll', 'hide') );
 			$attesa_showTopBarMobile = apply_filters( 'attesa_show_top_bar_mobile', attesa_options('_show_topbar_mobile', '1') );
 			$attesa_submenuEffect = apply_filters( 'attesa_submenu_effect', attesa_options('_submenu_effect', '') ); ?>
-			<header id="masthead" <?php echo esc_attr(attesa_logo_on_scroll()); ?> class="site-header topbarscroll<?php echo esc_attr($attesa_topBarScroll); ?> <?php echo $attesa_stickyHeader ? 'withSticky' : 'noSticky' ?> <?php echo $attesa_stickyHeaderMobile ? 'yesMobile' : 'nonMobile' ?> <?php echo $attesa_showTopBarMobile ? 'inMobile' : 'noMobile' ?> <?php echo $attesa_submenuEffect ? 'withSubEffect' : 'noSubEffect' ?>" <?php attesa_schema_markup('header'); ?>>
+			<header id="masthead" class="site-header topbarscroll<?php echo esc_attr($attesa_topBarScroll); ?> <?php echo $attesa_stickyHeader ? 'withSticky' : 'noSticky' ?> <?php echo $attesa_stickyHeaderMobile ? 'yesMobile' : 'nonMobile' ?> <?php echo $attesa_showTopBarMobile ? 'inMobile' : 'noMobile' ?> <?php echo $attesa_submenuEffect ? 'withSubEffect' : 'noSubEffect' ?>" <?php attesa_schema_markup('header'); ?>>
 				
 				<?php attesa_top_bar(); ?>
 					
