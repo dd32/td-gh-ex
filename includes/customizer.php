@@ -267,13 +267,13 @@ if ( ! function_exists( 'wp_newsstream_apply_color' ) ) :
 	<style id="color-settings">
 	<?php if ( get_theme_mod('wp_newsstream_theme_color') ) : ?>
 		.btn-default, .navbar-default .navbar-toggle .icon-bar, .nav_container, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], #footer .widget_calendar thead tr, #copyright, .btn-info, .pagination .fa, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a, .dropdown-menu .sub-menu a, .navbar-default .navbar-nav > li, .main-navigation, .main-navigation ul ul a, .navbar-toggle .icon-bar, .main-navigation ul > li, .main-navigation ul ul.children >li > a, .main-navigation ul ul.sub-menu >li > a, .skdslider ul.slide-navs li.current-slide{
-			background-color:<?php echo get_theme_mod('wp_newsstream_theme_color'); ?>;
+			background-color:<?php echo esc_attr(get_theme_mod('wp_newsstream_theme_color')); ?>;
 			}
 		.btn-info, .nav_container, #footer, .navbar-default .navbar-toggle, .post_box{
-			border-color: <?php echo get_theme_mod('wp_newsstream_theme_border_color'); ?>;
+			border-color: <?php echo esc_attr(get_theme_mod('wp_newsstream_theme_border_color')); ?>;
 		}
 		a, a:hover, a:focus .logo h1 span, .logo a, .fan-sociel-media a.btn:hover, .meta-info a:hover, .post_box a.meta-comment:hover,  aside ul li a, a.comment-reply-link, ul li.recentcomments, cite.fn, cite.fn a, footer ul li a, .widget_calendar td a {
-		color:<?php echo get_theme_mod('wp_newsstream_theme_color'); ?>;
+		color:<?php echo esc_attr(get_theme_mod('wp_newsstream_theme_color')); ?>;
 		}
 		h2.post_title a{
 		<?php

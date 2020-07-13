@@ -10,7 +10,7 @@ if(!function_exists('wp_newsstream_breadcrumb')) {
 		echo '<ul id="breadcrumbs">';
 		if (!is_home()) {
 			echo '<li><a href="';
-			echo home_url();
+			echo esc_url(home_url());
 			echo '">';
 			echo '<i class="fa fa-home"></i>Home';
 			echo '</a></li><li class="separator"> / </li>';

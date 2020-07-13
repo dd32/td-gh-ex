@@ -4,7 +4,10 @@ Theme URI: https://wpdevshed.com/news-stream-theme/
 Author: WP Dev Shed
 Author URI: https://wpdevshed.com/
 Description: WP News Stream is a responsive blog style theme, with some handy customization options to make it your own. The primary theme color, background color and image can be easily controlled via the admin. Upload your own logo, set your social media links and choose whether to display author bios. The home page slider will display posts from the category of your choice. There's also a widget space in the header so you can easily add your own banner code.
-Version: 2.1
+Version: 2.2
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-news-stream

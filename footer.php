@@ -22,7 +22,7 @@
                         <div class="col-md-12">                    
                         <?php echo __('&copy; ', 'wp-news-stream') . esc_attr( get_bloginfo( 'name', 'display' ) );  ?>
                         <?php if(is_home() && !is_paged()){?>            
-                            <?php echo __(' - Built with','wp-news-stream'); ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-news-stream' ) ); ?>" target="_blank"><?php printf( esc_html( '%s', 'wp-news-stream' ), 'WordPress' ); ?></a><span><?php esc_html_e(' and ','wp-news-stream'); ?></span><a href="<?php echo esc_url( __( 'https://wpdevshed.com/news-stream-theme/', 'wp-news-stream' ) ); ?>" target="_blank"><?php printf( esc_html( '%s', 'wp-news-stream' ), 'WP News Stream' ); ?></a>
+                            <?php echo __(' - Built with','wp-news-stream'); ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-news-stream' ) ); ?>" rel="nofollow" target="_blank"><?php printf( esc_html( '%s', 'wp-news-stream' ), 'WordPress' ); ?></a><span><?php esc_html_e(' and ','wp-news-stream'); ?></span><a href="<?php echo esc_url( __( 'https://wpdevshed.com/news-stream-theme/', 'wp-news-stream' ) ); ?>" rel="nofollow" target="_blank"><?php printf( esc_html( '%s', 'wp-news-stream' ), 'WP News Stream' ); ?></a>
                         <?php } ?>
                         </div>
                     </div>

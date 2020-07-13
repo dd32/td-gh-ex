@@ -68,6 +68,9 @@ This theme uses Bootstrap as a design tool
  * Copyright (c) 2011-2014 Twitter, Inc
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
+Version 2.2
+* Updated footer links with nofollow attribute
+
 Version 2.1
  * updated style.css, footer.php, custom-header.php, header.php, customizer.php, functions.php
  * updated logo customizer
