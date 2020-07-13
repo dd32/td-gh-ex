@@ -73,6 +73,8 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 2.2
+* Updated footer links with nofollow attribute
 Version 2.1
  * updated footer.php
 
