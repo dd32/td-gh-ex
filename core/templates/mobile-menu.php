@@ -20,9 +20,11 @@ if (!function_exists('avventura_lite_mobile_menu_function')) {
             <div id="scroll-sidebar" class="clearfix">
 
                 <div class="wrap">
-	                
-	                <div class="mobile-navigation"><i class="fa fa-times open"></i></div>	
 
+                	<a class="mobile-navigation" href="#modal-sidebar">
+                		<i class="fa fa-times open"></i>
+                	</a>
+                	
 	                <div class="mobilemenu-box">
 						<nav id="mobilemenu"><?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?></nav> 
 					</div>

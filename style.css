@@ -5,7 +5,7 @@ Theme URI: https://www.themeinprogress.com/avventura-elegant-beauty-wordpress-sh
 Description: Avventura Lite is an elegant and beauty WordPress theme, perfect for writers, bloggers and photographers. Avventura Lite is also fully compatible with Contact Form 7 and WooCommerce plugin and is optimized for mobile devices.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 1.2.6
+Version: 1.2.7
 Requires PHP: 5.3
 Tested up to: 5.4
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, full-width-template, grid-layout, blog, e-commerce, photography
@@ -374,13 +374,6 @@ span.button:hover ,
 	top:0;
 }
 
-#header i {
-	-webkit-transition: color .3s ease, transform .2s linear;
-	-moz-transition: color .3s ease, transform .2s linear; 
-	-o-transition: color .3s ease, transform .2s linear;
-	transition: color .3s ease, transform .2s linear;
-}
-
 #logo-wrapper {
 	padding:50px 0;
 }
@@ -445,7 +438,7 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 	border-bottom: solid 1px #f1f1f1;
 }
 
-#header-wrapper.light #header i {
+#header-wrapper.light #header .mobile-navigation {
 	color:#616161;
 }
 
@@ -455,7 +448,8 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
     border-top: solid 1px #fff;
 }
 
-#header-wrapper.light #header .header-cart a.cart-contents { 
+#header-wrapper.light #header .header-cart a.cart-contents,
+#header-wrapper.light #header .header-search a.open-search-form { 
 	color:#616161;
 }
 
@@ -503,7 +497,7 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 	border-bottom: solid 1px #444;
 }
 
-#header-wrapper.dark #header i {
+#header-wrapper.dark #header .mobile-navigation {
 	color:#fff;
 }
 
@@ -513,7 +507,8 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
     border-top: solid 1px #212121;
 }
 
-#header-wrapper.dark #header .header-cart a.cart-contents { 
+#header-wrapper.dark #header .header-cart a.cart-contents ,
+#header-wrapper.dark #header .header-search a.open-search-form { 
 	color:#fff; 
 }
 
@@ -562,7 +557,6 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 }
 
 .header-search a i {
-	color:#616161;
 	-webkit-transition: color .3s ease;
 	-moz-transition: color .3s ease;
 	-o-transition: color .3s ease;
@@ -928,10 +922,10 @@ body.logged-in.customizer_active.overlay-active #sidebar-wrapper #scroll-sidebar
     float: none;
     margin-left: 50px;
     padding: 0;
+    color:#fff;
 }
 
 #sidebar-wrapper #scroll-sidebar .mobile-navigation i {
-	color:#fff;
 	-webkit-transition: transform .2s linear; 
 	-moz-transition: transform .2s linear; 
 	-o-transition: transform .2s linear; 

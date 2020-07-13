@@ -36,8 +36,10 @@ if ( function_exists('wp_body_open') ) {
                                     
 					<div class="col-md-12" >
 
-						<div class="mobile-navigation"><i class="fa fa-bars"></i></div>
-                    
+                        <a class="mobile-navigation" href="#modal-sidebar">
+                            <i class="fa fa-bars"></i>
+                        </a>
+
 						<?php 
 						
 						if ( 
