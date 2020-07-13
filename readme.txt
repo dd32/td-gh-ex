@@ -3,8 +3,8 @@
 Contributors: postmagthemes
 Tags: blog, news, entertainment, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, theme-options, threaded-comments
 Requires at least: 4.5
-Tested up to: 5.2.3
-Stable tag: 1.0.7
+Tested up to: 5.4.2
+Stable tag: 1.1.0
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,10 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+
+= 1.1.0 - july 13 2020 =
+* single page clearfix added, main news slider in all page,tesetd up to added, list item for order list fixed.
+
 = 1.0.9 - feb 12 2020 =
 * List item further enhanced.
 
@@ -64,35 +68,6 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 = 1.0.0 - May 23 2019 =
 * Initial release
-
-== Upgrade Notice ==
-
-= 1.0.9 - feb 12 2020 =
-* List item further enhanced.
-
-= 1.0.8 - feb 10 2020 =
-* List item further enhanced, text area increased up to 100%
-
-= 1.0.7 - Dec 30 2019 =
-* List item is linedup with description in single page.
-
-= 1.0.6 - Sept 18 2019 =
-* insert page break in content-single and content-page, add skip link and all links are approachable via keyboard
-
-= 1.0.5 - August 12 2019 =
-* min height CSS adjusted in small news and others
-
-= 1.0.4 - June 23 2019 =
-* Footer special link bug fixed, sidebar widget CSS adjusted
-
-= 1.0.3 - June 7 2019 =
-* Menu bug fix with arrow mark, text jusity added in page , site title bug fix, hyper link in adv add.
-
-= 1.0.2 - May 30 2019 =
-* Footer missed post image alligned for mobile view, footer spelling fix, footer contact info link changed, text justify added in page
-
-= 1.0.1 - May 23 2019 =
-* Pro best news link was updated.
 
 == Images Resources ==
 All images are licensed under Creative Commons Zero (CC0) license.

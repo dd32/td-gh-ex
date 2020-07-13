@@ -299,7 +299,7 @@ p {
 	transition: all 0.3s ease-in-out;
 }
 ul {
-    list-style: none;
+    list-style: disc;
     margin-bottom: 0;
 }
 a,button,input,textarea{

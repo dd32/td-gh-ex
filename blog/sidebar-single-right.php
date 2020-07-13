@@ -1,3 +1,5 @@
+<?php get_template_part( 'sections/section','news-slider' ); ?>
+
 <section class="news-single section news-style1 category off-white">
 	<div class="container">
 		<div class="row">
