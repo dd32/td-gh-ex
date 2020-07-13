@@ -47,15 +47,18 @@ This theme is bundled with Modernizr
 CHANGELOG
 =================================
 
-verion 1.3
+Version 1.4
+ * Updated footer links with nofollow attribute
+
+Version 1.3
  * fixed style.css, alt_blog_mason.php, functions.php, footer.php, header.php, alt_blog_template.php, content-alt_blog.php, content-mason.php
  * updated logo customizer
 
-verion 1.2
+Version 1.2
  * fixes on function.php
 
 
-verion 1.1
+Version 1.1
  * edit property style on style.css line 1033 - line 1045
    - 	#full-width-content p {
 		color:#fff;
