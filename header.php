@@ -11,6 +11,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <?php if ( ! get_theme_mod('wp_barrister_shadow') ) {
 	$shadow_class = ' class="wpb-shadow"';

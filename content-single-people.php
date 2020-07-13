@@ -24,7 +24,7 @@
          ?>
             <div class="peoplethumb"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $th_image; ?></a></div>
         <?php } else { ?>
-			<div class="peoplethumb"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/profile-default.png" alt="" /></a></div>
+			<div class="peoplethumb"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/library/images/profile-default.png" alt="" /></a></div>
 		<?php } ?>
     <?php endif; ?>
     

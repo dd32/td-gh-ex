@@ -430,11 +430,11 @@ if ( ! function_exists( 'wp_barrister_apply_color' ) ) :
 	<?php if ( get_theme_mod('wp_barrister_theme_color') ) : ?>
 		
 		a, a:visited, .entry-title a, .entry-title a:visited, #reply-title, #sidebar .widget-title, #sidebar .widget-title a, body.page .grid-box .entry-header a, body.page .grid-box .entry-header a:hover, .people-phone, .people-email, #wp-calendar caption {
-			color: <?php echo get_theme_mod('wp_barrister_theme_color'); ?>;
+			color: <?php echo esc_attr(get_theme_mod('wp_barrister_theme_color')); ?>;
 		}
 		
 		#social-media a, #search-icon, #wpb-banner, body.page .entry-header, body.single .entry-header, .post-content ol > li:before, .post-content ul > li:before, .pagination li a:hover, .pagination li.active a, .commentlist .comment-reply-link, .commentlist .comment-reply-login, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], footer[role=contentinfo] {
-			background-color: <?php echo get_theme_mod('wp_barrister_theme_color'); ?>;
+			background-color: <?php echo esc_attr(get_theme_mod('wp_barrister_theme_color')); ?>;
 		}
 		
 	<?php endif; ?>
