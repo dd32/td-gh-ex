@@ -61,6 +61,10 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.2.1
+
+* Updated footer links with nofollow attribute
+
 Version 1.1
  * updated header.php, content-gallery.php, functions.php, footer.php, style.css
  * updated logo customizer
