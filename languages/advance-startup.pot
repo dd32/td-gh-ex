@@ -759,133 +759,165 @@ msgstr ""
 msgid 'Single Post Tags'
 msgstr ""
 
-#: inc/customizer.php:1211
-#: inc/customizer.php:1220
-msgid 'Excerpt Content'
-msgstr ""
-
 #: inc/customizer.php:1216
-msgid 'Post Description Length'
-msgstr ""
-
-#: inc/customizer.php:1219
-msgid 'No Content'
+msgid 'Single Post Image'
 msgstr ""
 
 #: inc/customizer.php:1221
+#: inc/customizer.php:1230
+msgid 'Excerpt Content'
+msgstr ""
+
+#: inc/customizer.php:1226
+msgid 'Post Description Length'
+msgstr ""
+
+#: inc/customizer.php:1229
+msgid 'No Content'
+msgstr ""
+
+#: inc/customizer.php:1231
 msgid 'Full Content'
 msgstr ""
 
-#: inc/customizer.php:1233
+#: inc/customizer.php:1243
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:1245
+#: inc/customizer.php:1255
 msgid '...'
 msgstr ""
 
-#: inc/customizer.php:1249
+#: inc/customizer.php:1259
 msgid 'Post Excerpt Indicator Option'
 msgstr ""
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1266
 msgid 'READ MORE'
 msgstr ""
 
-#: inc/customizer.php:1260
+#: inc/customizer.php:1270
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:1267
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:1278
-msgid 'Footer widget area'
-msgstr ""
-
-#: inc/customizer.php:1280
-msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+#: inc/customizer.php:1277
+msgid "No Result Found"
 msgstr ""
 
 #: inc/customizer.php:1282
-msgid 'One'
+msgid "Nothing Found"
 msgstr ""
 
-#: inc/customizer.php:1283
-msgid 'Two'
+#: inc/customizer.php:1286
+msgid "No Result Found Title"
 msgstr ""
 
-#: inc/customizer.php:1284
-msgid 'Three'
+#: inc/customizer.php:1292
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: inc/customizer.php:1285
-msgid 'Four'
+#: inc/customizer.php:1296
+msgid "No Result Found Content"
 msgstr ""
 
-#: inc/customizer.php:1294
-msgid 'Footer Widget Background Color'
+#: inc/customizer.php:1307
+msgid "No Result search"
 msgstr ""
 
-#: inc/customizer.php:1303
-msgid 'Footer Widget Background Image'
+#: inc/customizer.php:1313
+msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:1312
-msgid 'Copyright Text'
-msgstr ""
-
-#: inc/customizer.php:1318
-#: inc/customizer.php:1328
-msgid 'center'
-msgstr ""
-
-#: inc/customizer.php:1323
-msgid 'Copyright Text Alignment '
+#: inc/customizer.php:1324
+msgid 'Footer widget area'
 msgstr ""
 
 #: inc/customizer.php:1326
-msgid 'Left'
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:1327
-msgid 'Right'
+#: inc/customizer.php:1328
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:1329
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:1330
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:1331
+msgid 'Four'
 msgstr ""
 
 #: inc/customizer.php:1340
-msgid 'Copyright Font Size'
+msgid 'Footer Widget Background Color'
 msgstr ""
 
-#: inc/customizer.php:1356
-msgid 'Show / Hide Scroll Top Button'
+#: inc/customizer.php:1349
+msgid 'Footer Widget Background Image'
 msgstr ""
 
-#: inc/customizer.php:1361
-#: inc/customizer.php:1370
-msgid 'Right'
+#: inc/customizer.php:1358
+msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:1366
-msgid 'Scroll Back to Top Position'
+#: inc/customizer.php:1364
+#: inc/customizer.php:1374
+msgid 'center'
 msgstr ""
 
 #: inc/customizer.php:1369
+msgid 'Copyright Text Alignment '
+msgstr ""
+
+#: inc/customizer.php:1372
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1371
+#: inc/customizer.php:1373
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:1386
+msgid 'Copyright Font Size'
+msgstr ""
+
+#: inc/customizer.php:1401
+msgid 'Copyright Padding'
+msgstr ""
+
+#: inc/customizer.php:1417
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:1422
+#: inc/customizer.php:1431
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:1427
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:1430
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:1432
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:1383
+#: inc/customizer.php:1444
 msgid 'Scroll Icon Font Size'
 msgstr ""
 
-#: inc/customizer.php:1474
+#: inc/customizer.php:1535
 msgid 'Startup Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:1475
+#: inc/customizer.php:1536
 msgid 'Go Pro'
 msgstr ""

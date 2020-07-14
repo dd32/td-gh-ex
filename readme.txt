@@ -2,9 +2,8 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +105,14 @@ Advance Startup is a resourceful, feature-rich, stylish and versatile startup Wo
 * Resolved menu focus error.
 * Resolved errors.
 
+= 0.4.3 =
+* Added no search found settings.
+* Added copyright padding.
+* Added show and hide single post image.
+* Added the license of font awesome in readme.txt.
+* Done with prefixing in custom.js.
+* Changed sanitize callback function.
+
 == Resources ==
 
 Advance Startup WordPress Theme, Copyright 2019 Themeshopy
@@ -140,7 +147,7 @@ Theme is Built using the following resource bundles.
 	- Davegandy
 	- copyright July 12, 2018, Davegandy
 	- https://github.com/FortAwesome/Font-Awesome.git
-	- License: Font Awesome Free License v5.0.0
+	- License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 	- https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 3. Customizer Pro 

@@ -316,7 +316,7 @@ function advance_startup_customize_register($wp_customize) {
 		'label'	=> __('h3 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
 		'setting'	=> 'advance_startup_h3_font_size',
-		'type'	=> 'text'
+		'type'	=> 'text',
 	));
 
 	// This is H4 Color picker setting
@@ -353,7 +353,7 @@ function advance_startup_customize_register($wp_customize) {
 		'label'	=> __('h4 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
 		'setting'	=> 'advance_startup_h4_font_size',
-		'type'	=> 'text'
+		'type'	=> 'text',
 	));
 
 	// This is H5 Color picker setting
@@ -390,7 +390,7 @@ function advance_startup_customize_register($wp_customize) {
 		'label'	=> __('h5 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
 		'setting'	=> 'advance_startup_h5_font_size',
-		'type'	=> 'text'
+		'type'	=> 'text',
 	));
 
 	// This is H6 Color picker setting
@@ -427,7 +427,7 @@ function advance_startup_customize_register($wp_customize) {
 		'label'	=> __('h6 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
 		'setting'	=> 'advance_startup_h6_font_size',
-		'type'	=> 'text'
+		'type'	=> 'text',
 	));
 
   	$wp_customize->add_setting('advance_startup_background_skin_mode',array(
@@ -447,7 +447,7 @@ function advance_startup_customize_register($wp_customize) {
 	// woocommerce section
 	$wp_customize->add_setting('advance_startup_show_related_products',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_show_related_products',array(
        'type' => 'checkbox',
@@ -457,7 +457,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_show_wooproducts_border',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_show_wooproducts_border',array(
        'type' => 'checkbox',
@@ -484,7 +484,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_wooproducts_per_page',array(
 		'default'	=> 9,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));	
 	$wp_customize->add_control('advance_startup_wooproducts_per_page',array(
 		'label'	=> __('Display Product Per Page','advance-startup'),
@@ -494,10 +494,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_top_bottom_wooproducts_padding',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control( 'advance_startup_top_bottom_wooproducts_padding',	array(
 		'label' => esc_html__( 'Top Bottom Product Padding','advance-startup' ),
@@ -512,10 +509,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_left_right_wooproducts_padding',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control( 'advance_startup_left_right_wooproducts_padding',	array(
 		'label' => esc_html__( 'Right Left Product Padding','advance-startup' ),
@@ -525,15 +519,12 @@ function advance_startup_customize_register($wp_customize) {
 			'max' => 50,
 			'step' => 1,
 		),
-		'type'		=> 'number'
+		'type'		=> 'number',
 	));
 
 	$wp_customize->add_setting( 'advance_startup_wooproducts_border_radius',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_number_range',
 	));
 	$wp_customize->add_control('advance_startup_wooproducts_border_radius',array(
 		'label' => esc_html__( 'Product Border Radius','advance-startup' ),
@@ -548,10 +539,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_wooproducts_box_shadow',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_number_range',
 	));
 	$wp_customize->add_control('advance_startup_wooproducts_box_shadow',array(
 		'label' => esc_html__( 'Product Box Shadow','advance-startup' ),
@@ -572,10 +560,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_top_bottom_product_button_padding',array(
 		'default' => 10,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control('advance_startup_top_bottom_product_button_padding',	array(
 		'label' => esc_html__( 'Product Button Top Bottom Padding','advance-startup' ),
@@ -591,10 +576,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_left_right_product_button_padding',array(
 		'default' => 16,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control('advance_startup_left_right_product_button_padding',array(
 		'label' => esc_html__( 'Product Button Right Left Padding','advance-startup' ),
@@ -609,10 +591,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_product_button_border_radius',array(
 		'default' => 30,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_number_range',
 	));
 	$wp_customize->add_control('advance_startup_product_button_border_radius',array(
 		'label' => esc_html__( 'Product Button Border Radius','advance-startup' ),
@@ -662,7 +641,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_preloader_option',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_preloader_option',array(
        'type' => 'checkbox',
@@ -672,7 +651,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting( 'advance_startup_shop_page_sidebar',array(
 		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_startup_shop_page_sidebar',array(
     	'type' => 'checkbox',
@@ -682,7 +661,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_wocommerce_single_page_sidebar',array(
 		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_startup_wocommerce_single_page_sidebar',array(
     	'type' => 'checkbox',
@@ -761,7 +740,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_button_padding_top_bottom',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control('advance_startup_button_padding_top_bottom',array(
 		'label'	=> __('Top and Bottom Padding','advance-startup'),
@@ -776,7 +755,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_button_padding_left_right',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control('advance_startup_button_padding_left_right',array(
 		'label'	=> __('Left and Right Padding','advance-startup'),
@@ -791,7 +770,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_startup_button_border_radius', array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_startup_button_border_radius', array(
 		'label'       => esc_html__( 'Button Border Radius','advance-startup' ),
@@ -815,7 +794,7 @@ function advance_startup_customize_register($wp_customize) {
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_startup_display_topbar',array(
 		'default' => true,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_startup_display_topbar',array(
     	'type' => 'checkbox',
@@ -826,7 +805,7 @@ function advance_startup_customize_register($wp_customize) {
     //Sticky Header
 	$wp_customize->add_setting( 'advance_startup_sticky_header',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_startup_sticky_header',array(
     	'type' => 'checkbox',
@@ -836,7 +815,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_mail1',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'advance_startup_sanitize_email',
 	));
 	$wp_customize->add_control('advance_startup_mail1',array(
 		'label'	=> __('Mail Address','advance-startup'),
@@ -846,7 +825,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_phone1',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'advance_startup_sanitize_phone_number',
 	));
 	$wp_customize->add_control('advance_startup_phone1',array(
 		'label'	=> __('Phone Number','advance-startup'),
@@ -946,7 +925,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_slider_hide',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_slider_hide',array(
        'type' => 'checkbox',
@@ -970,7 +949,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_startup_slider_content_alignment',array(
-    'default' => __('Center','advance-startup'),
+    	'default' => __('Center','advance-startup'),
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_slider_content_alignment',array(
@@ -987,10 +966,7 @@ function advance_startup_customize_register($wp_customize) {
     //Slider excerpt
 	$wp_customize->add_setting( 'advance_startup_slider_excerpt_length', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_startup_slider_excerpt_length', array(
 		'label'       => esc_html__( 'Slider Excerpt length','advance-startup' ),
@@ -1113,7 +1089,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_responsive_sticky_header',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_responsive_sticky_header',array(
        'type' => 'checkbox',
@@ -1123,7 +1099,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_responsive_slider',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_responsive_slider',array(
        'type' => 'checkbox',
@@ -1133,7 +1109,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_responsive_scroll',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_responsive_scroll',array(
        'type' => 'checkbox',
@@ -1143,7 +1119,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_responsive_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_responsive_sidebar',array(
        'type' => 'checkbox',
@@ -1153,7 +1129,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_responsive_preloader',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_responsive_preloader',array(
        'type' => 'checkbox',
@@ -1169,7 +1145,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_date_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_date_hide',array(
        'type' => 'checkbox',
@@ -1179,7 +1155,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_comment_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_comment_hide',array(
        'type' => 'checkbox',
@@ -1189,7 +1165,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_author_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_author_hide',array(
        'type' => 'checkbox',
@@ -1199,11 +1175,21 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_startup_tags_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_startup_tags_hide',array(
        'type' => 'checkbox',
        'label' => __('Single Post Tags','advance-startup'),
+       'section' => 'advance_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_startup_show_featured_image_single_post',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_startup_show_featured_image_single_post',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Image','advance-startup'),
        'section' => 'advance_startup_blog_post'
     ));
 
@@ -1224,10 +1210,7 @@ function advance_startup_customize_register($wp_customize) {
 
     $wp_customize->add_setting( 'advance_startup_excerpt_number', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_startup_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-startup' ),
@@ -1261,6 +1244,42 @@ function advance_startup_customize_register($wp_customize) {
 		'section'=> 'advance_startup_blog_post',
 		'type'=> 'text'
 	));
+
+	//no Result Found
+	$wp_customize->add_section('advance_startup_noresult_found',array(
+		'title'	=> __('No Result Found','advance-startup'),
+		'panel' => 'advance_startup_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_startup_nosearch_found_title',array(
+		'default'=> __('Nothing Found','advance-startup'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_startup_nosearch_found_title',array(
+		'label'	=> __('No Result Found Title','advance-startup'),
+		'section'=> 'advance_startup_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_startup_nosearch_found_content',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','advance-startup'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_startup_nosearch_found_content',array(
+		'label'	=> __('No Result Found Content','advance-startup'),
+		'section'=> 'advance_startup_noresult_found',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_startup_show_noresult_search',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_startup_show_noresult_search',array(
+       'type' => 'checkbox',
+       'label' => __('No Result search','advance-startup'),
+       'section' => 'advance_startup_noresult_found'
+    ));
 
 	//Footer
 	$wp_customize->add_section('advance_startup_footer_section', array(
@@ -1331,10 +1350,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_footer_content_font_size',array(
 		'default'=> 16,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control('advance_startup_footer_content_font_size',array(
 		'label' => esc_html__( 'Copyright Font Size','advance-startup' ),
@@ -1347,9 +1363,24 @@ function advance_startup_customize_register($wp_customize) {
         'type' => 'number',
 	));
 
+	$wp_customize->add_setting('advance_startup_copyright_padding',array(
+		'default'=> 15,
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
+	));
+	$wp_customize->add_control('advance_startup_copyright_padding',array(
+		'label'	=> __('Copyright Padding','advance-startup'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_startup_footer_section',
+		'type'=> 'number'
+	));
+
 	$wp_customize->add_setting('advance_startup_enable_disable_scroll',array(
         'default' => true,
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
 	));
 	$wp_customize->add_control('advance_startup_enable_disable_scroll',array(
      	'type' => 'checkbox',
@@ -1374,10 +1405,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_startup_scroll_font_size_icon',array(
 		'default'=> 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_startup_sanitize_float',
 	));
 	$wp_customize->add_control('advance_startup_scroll_font_size_icon',array(
 		'label'	=> __('Scroll Icon Font Size','advance-startup'),
