@@ -19,6 +19,17 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php
+	//wp_body_open hook from WordPress 5.2
+	if ( function_exists( 'wp_body_open' ) ) {
+	    wp_body_open();
+	} else {
+		do_action( 'wp_body_open' );
+	}
+?>
+<a class="skip-link screen-reader-text" href="#sitemain">
+	<?php _e( 'Skip to content', 'atmosphere-lite' ); ?>
+</a>
 <?php if ( is_active_sidebar( 'headtopleft' ) || is_active_sidebar( 'headtopright' ) ) : ?>
 <div class="header_top">
 	<div class="container">

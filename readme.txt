@@ -1,11 +1,12 @@
 ﻿=== Atmosphere Lite ===
 
 Contributors: AlexaThemes
-Requires at least: WordPress 4.4  
-Tested up to: WordPress 4.9.8
+Requires at least: 4.4  
+Tested up to: 5.4.2
+Requires PHP: 7.2.14
 Version: 1.1.4
 License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: two-columns,right-sidebar,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments
 
 == Description ==
@@ -35,17 +36,6 @@ Theme is built using the following resource bundles:
 		License : http://www.gnu.org/licenses/gpl-2.0.html
 		Copyright 2016, Justin Tadlock	justintadlock.com
 		
-*       Details of images used in Screenshot:
-        
-*       Slider Images Are Pixabay Images:  
-		
-		https://pixabay.com/en/cupcakes-dessert-frosting-food-690040/
-		
-		
-		Copyright 2017, Pixabay
-		https://pixabay.com/ 
-		Pixabay provides images under CC0 license
- 		CC0 license: https://creativecommons.org/share-your-work/public-domain/cc0
 			
 *       atmosphere/css/font-awesome.css 
 
@@ -83,3 +73,6 @@ For any help you can mail us at support[at]alexathemes.com
 
 = 1.1.4 =
 *     Changed readme file and resolved few css issues.
+
+== 1.1.5 ==
+*     Added skip to content button and added required tags in style.css file.

@@ -4,14 +4,15 @@ Theme URI: https://alexathemes.net/themes/atmosphere-restaurant-wordpress-theme/
 Author: AlexaThemes
 Author URI: https://alexathemes.net
 Description: Atmosphere Lite theme is a responsive restaurant WordPress theme. This theme is a completely gorgeous and visually pristine, professionally graphically designed and very carefully crafted, thoroughly thought out and entirely engaging and inviting, warm and welcoming, technologically resourceful and easy to use, flexible and modern responsive WordPress restaurant and café theme. This theme has few options in customizer and its fully responsive. This theme is compatible with the latest version of WordPress and plugins like contact form 7 and wocommerce.
-
-Version: 1.1.4
+Tested up to: 5.4.2
+Requires PHP: 7.2.14
+Version: 1.1.5
 License: GNU General Public License
-License URI: license.txt
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: atmosphere-lite
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, custom-logo
 
-Atmosphere Lite WordPress Theme has been created by AlexaThemes(alexathemes.net), 2017.
+Atmosphere Lite WordPress Theme has been created by AlexaThemes(alexathemes.net), 2020.
 Atmosphere Lite WordPress Theme is released under the terms of GNU GPL
 */
 
@@ -629,4 +630,47 @@ h2.section-title{
 }
 h2.entry-title{
 	font-family:'Montserrat', sans-serif;
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#sitemain[tabindex="-1"]:focus {
+  outline: 0;
 }
