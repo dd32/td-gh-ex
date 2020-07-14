@@ -112,6 +112,15 @@
   /*Mobile Menu*/
   let NavMenu = $(".nav-menu");
   let MenuItem = $(".menu-item");
+  let MenuButton =
+    // if ($(".menu-item").hasClass(".menu-item-has-children")) {
+    //   let prefenditem = `<button class='submenu-control'>v</button>`;
+    //   $(".menu-item").prefend(prefenditem);
+    // }
+    $("body").on(".submenu-controller", "click", function () {
+      console.log("trst");
+    });
+
   MenuItem.on("click", function (e) {
     e = window.event || e;
     e.stopPropagation();
@@ -140,38 +149,68 @@
     }.bind(this)
   );
   function keepFocusInModal() {
-		var _doc = document;
+    var _doc = document;
 
-		_doc.addEventListener( 'keydown', function( event ) {
-			var toggleTarget,menuToggleEl,acElParent, modal, selectors, elements, menuType, bottomMenu, activeEl, lastEl, firstEl, tabKey, shiftKey,
-      menuToggleEl = $('.menu-toggle');
-      clickedEl = menuToggleEl.data('clicked', true)
+    _doc.addEventListener("keydown", function (event) {
+      var toggleTarget,
+        menuToggleEl,
+        acElParent,
+        modal,
+        selectors,
+        elements,
+        menuType,
+        bottomMenu,
+        activeEl,
+        lastEl,
+        firstEl,
+        tabKey,
+        shiftKey,
+        menuToggleEl = $(".menu-toggle");
+      clickedEl = menuToggleEl.data("clicked", true);
 
-			if ( clickedEl && _doc.body.classList.contains( 'showing-menu' ) ) {
-				selectors = 'input, a, button';
-				modal = _doc.querySelector( '.menu');
+      if (clickedEl && _doc.body.classList.contains("showing-menu")) {
+        selectors = "input, a, button";
+        modal = _doc.querySelector(".menu");
 
-				elements = modal.querySelectorAll( selectors );
-        elements = Array.prototype.slice.call( elements );
-      
-				lastEl = elements[ elements.length - 1 ];
-				firstEl = elements[0];
-				activeEl = _doc.activeElement;
-				tabKey = event.keyCode === 9;
+        elements = modal.querySelectorAll(selectors);
+        elements = Array.prototype.slice.call(elements);
+
+        lastEl = elements[elements.length - 1];
+        firstEl = elements[0];
+
+        activeEl = _doc.activeElement;
+        // var tagettagname = activeEl.tagName;
+        // tagettagname = tagettagname.toLowerCase();
+        // console.log("atr", tagettagname);
+        // if (activeEl) {
+        //   console.log("ACTIVE ELEMENT", event);
+        // }
+        tabKey = event.keyCode === 9;
         shiftKey = event.shiftKey;
-    
-				if ( ! shiftKey && tabKey && lastEl === activeEl ) {
-					event.preventDefault();
+
+        if (!shiftKey && tabKey && lastEl === activeEl) {
+          event.preventDefault();
           firstEl.focus();
           menuToggleEl.focus();
-				}
+          console.log("first");
+        }
 
-				if ( shiftKey && tabKey && firstEl === activeEl ) {
-					event.preventDefault();
-          lastEl.focus();  
-				}
-			}
-		} );
+        if (shiftKey && tabKey && firstEl === activeEl) {
+          event.preventDefault();
+          lastEl.focus();
+          menuToggleEl.focus();
+          console.log("eel");
+        }
+      }
+    });
   }
-  keepFocusInModal()
+  keepFocusInModal();
+
+  $(document).ready(function () {
+    $(".menu-toggle").on("click", function () {
+      $(
+        "<button class='submenu-controller dashicons dashicons-arrow-down-alt2'></button>"
+      ).insertBefore($(".sub-menu"));
+    });
+  });
 })(jQuery);

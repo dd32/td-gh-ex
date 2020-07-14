@@ -1,6 +1,6 @@
 === Bappi ===
 Contributors: b-07
-Tested up to: 5.3
+Tested up to: 5.4.2
 Requires at least: 4.5
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -35,9 +35,9 @@ GNU General Public License for more details.
 
 Bappi bundles the following third-party resources:
 
-Image for theme screenshot, Copyright Jason Blackeye
+Image for theme screenshot, Copyright Bappi
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://stocksnap.io/photo/4B83RD7BV9
+	Source: Local Host
 
 Code from Twenty Nineteen
 Copyright (c) 2018-2020 WordPress.org

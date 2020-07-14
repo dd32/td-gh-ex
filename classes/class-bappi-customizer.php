@@ -57,11 +57,16 @@ class bappi_customize
             )
         ));
 
+        function bappi_sanitizer($sanitizrfunc)
+        {
+            return filter_var($sanitizrfunc, FILTER_SANITIZE_NUMBER_INT);
+        };
         $wp_customize->add_setting('show_header_center', array(
             'default'    => '0',
             'transport' => 'postMessage',
-            'sanitize_callback' => 'esc_attr', // Sanitize input
+            'sanitize_callback' => 'bappi_sanitizer', // Sanitize input
         ));
+
 
         $wp_customize->add_control(
             new WP_Customize_Control(
