@@ -8,26 +8,26 @@ jQuery(function($){
 });
 
 function advance_fitness_gym_resmenu_open() {
-  window.mobileMenu=true;
+  window.advance_fitness_gym_mobileMenu=true;
   jQuery(".sidebar").addClass('display');
 }
 function advance_fitness_gym_resmenu_close() {
-  window.mobileMenu=false;
+  window.advance_fitness_gym_mobileMenu=false;
   jQuery(".sidebar").removeClass('display');
 }
 
 jQuery(document).ready(function () {
 
-  window.currentfocus=null;
+  window.advance_fitness_gym_currentfocus=null;
   advance_fitness_gym_checkfocusdElement();
-  var body = document.querySelector('body');
-  body.addEventListener('keyup', advance_fitness_gym_check_tab_press);
-  var gotoHome = false;
-  var gotoClose = false;
-  window.mobileMenu=false;
+  var advance_fitness_gym_body = document.querySelector('body');
+  advance_fitness_gym_body.addEventListener('keyup', advance_fitness_gym_check_tab_press);
+  var advance_fitness_gym_gotoHome = false;
+  var advance_fitness_gym_gotoClose = false;
+  window.advance_fitness_gym_mobileMenu=false;
   function advance_fitness_gym_checkfocusdElement(){
-    if(window.currentfocus=document.activeElement.className){
-      window.currentfocus=document.activeElement.className;
+    if(window.advance_fitness_gym_currentfocus=document.activeElement.className){
+      window.advance_fitness_gym_currentfocus=document.activeElement.className;
     }
   }
   function advance_fitness_gym_check_tab_press(e) {
@@ -38,20 +38,20 @@ jQuery(document).ready(function () {
 
     if(window.innerWidth < 999){
       if (e.keyCode == 9) {
-        if(window.mobileMenu){
+        if(window.advance_fitness_gym_mobileMenu){
           if (!e.shiftKey) {
-            if(gotoHome) {
+            if(advance_fitness_gym_gotoHome) {
               jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).focus();
             }
           }
           if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
-            gotoHome = true;
+            advance_fitness_gym_gotoHome = true;
           } else {
-            gotoHome = false;
+            advance_fitness_gym_gotoHome = false;
           }
 
         }else{
-          if(window.currentfocus=="mobiletoggle"){
+          if(window.advance_fitness_gym_currentfocus=="mobiletoggle"){
             jQuery( "" ).focus();
           }
         }
@@ -59,22 +59,22 @@ jQuery(document).ready(function () {
     }
     if (e.shiftKey && e.keyCode == 9) {
       if(window.innerWidth < 999){
-        if(window.currentfocus=="header-search"){
+        if(window.advance_fitness_gym_currentfocus=="header-search"){
           jQuery(".mobiletoggle").focus();
         }else{
-          if(window.mobileMenu){
-            if(gotoClose){
+          if(window.advance_fitness_gym_mobileMenu){
+            if(advance_fitness_gym_gotoClose){
               jQuery("a.closebtn.responsive-menu").focus();
             }
             if (jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).is(":focus")) {
-              gotoClose = true;
+              advance_fitness_gym_gotoClose = true;
             } else {
-              gotoClose = false;
+              advance_fitness_gym_gotoClose = false;
           }
         
         }else{
 
-          if(window.mobileMenu){
+          if(window.advance_fitness_gym_mobileMenu){
           }
         }
 

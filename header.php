@@ -72,7 +72,7 @@
             <div class="logo col-lg-3 col-md-9 col-9">
               <?php if ( has_custom_logo() ) : ?>
                 <div class="site-logo"><?php the_custom_logo(); ?></div>
-                <?php else: ?>
+                <?php endif; ?>
                 <?php $blog_info = get_bloginfo( 'name' ); ?>
                 <?php if ( ! empty( $blog_info ) ) : ?>
                   <?php if ( is_front_page() && is_home() ) : ?>
@@ -88,7 +88,6 @@
                 <p class="site-description">
                   <?php echo esc_html($description); ?>
                 </p>
-              <?php endif; ?>
               <?php endif; ?>
             </div>
             <div class="col-lg-9 col-md-3 col-3 ">
