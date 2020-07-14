@@ -334,6 +334,11 @@
 		$advance_portfolio_custom_css .='}';
 	}
 
+	$advance_portfolio_copyright_padding = get_theme_mod('advance_portfolio_copyright_padding', 15);
+	$advance_portfolio_custom_css .='.copyright{';
+		$advance_portfolio_custom_css .='padding-top: '.esc_html($advance_portfolio_copyright_padding).'px; padding-bottom: '.esc_html($advance_portfolio_copyright_padding).'px;';
+	$advance_portfolio_custom_css .='}';
+
 	$advance_portfolio_footer_widget_bg_color = get_theme_mod('advance_portfolio_footer_widget_bg_color');
 	if($advance_portfolio_footer_widget_bg_color != false){
 		$advance_portfolio_custom_css .='#footer{';

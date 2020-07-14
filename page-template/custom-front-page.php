@@ -27,7 +27,7 @@ get_header(); ?>
           <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
         </div>
         <div class="box-content">
-          <h1><?php esc_html(the_title()); ?></h1>
+          <h1><?php the_title(); ?></h1>
           <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_banner_excerpt_length','25')))); ?></p>                  
           <div class="social-media">
             <?php if( get_theme_mod( 'advance_portfolio_facebook_url') != '') { ?>
@@ -78,7 +78,7 @@ get_header(); ?>
                 if ( $query->have_posts() ) :
                   while ( $query->have_posts() ) : $query->the_post(); ?>
                   <div class="box-image text-center">
-                    <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                    <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                   </div>
                 <?php endwhile; 
                 wp_reset_postdata();?>
@@ -94,7 +94,7 @@ get_header(); ?>
               if ( $query->have_posts() ) :
                 while ( $query->have_posts() ) : $query->the_post(); ?>
                   <div class="box-image text-center">
-                    <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                    <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                   </div>                
                 <?php endwhile; 
                 wp_reset_postdata();?>
@@ -110,7 +110,7 @@ get_header(); ?>
             if ( $query->have_posts() ) :
               while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="image-box">
-                  <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                  <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                 </div>
               <?php endwhile; 
               wp_reset_postdata();?>
@@ -126,7 +126,7 @@ get_header(); ?>
           if ( $query->have_posts() ) :
             while ( $query->have_posts() ) : $query->the_post(); ?>
               <div class="box-image text-center">
-                <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
               </div>
             <?php endwhile; 
             wp_reset_postdata();?>

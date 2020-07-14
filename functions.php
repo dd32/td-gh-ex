@@ -278,7 +278,6 @@ function advance_portfolio_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-
 /*radio button sanitization*/
 function advance_portfolio_sanitize_choices($input, $setting) {
 	global $wp_customize;
@@ -288,6 +287,23 @@ function advance_portfolio_sanitize_choices($input, $setting) {
 	} else {
 		return $setting->default;
 	}
+}
+
+function advance_portfolio_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
+function advance_portfolio_sanitize_float( $input ) {
+	return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
+function advance_portfolio_sanitize_number_range( $number, $setting ) {
+	$number = absint( $number );
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
 }
 
 // Change number or products per row to 3

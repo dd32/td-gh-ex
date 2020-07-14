@@ -22,13 +22,13 @@
   }
 ?>
 <article class="page-box">
-  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
   <?php if( get_theme_mod( 'advance_portfolio_author_hide',true) != '' || get_theme_mod( 'advance_portfolio_date_hide',true) != '' || get_theme_mod( 'advance_portfolio_comment_hide',true) != '') { ?>
     <div class="metabox">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-6">
           <?php if( get_theme_mod( 'advance_portfolio_author_hide',true) != '') { ?>
-            <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
+            <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
           <?php } ?>
         </div>
         <div class="date-option col-lg-6 col-md-6 col-6">

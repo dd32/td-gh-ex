@@ -14,7 +14,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
-        <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+        <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
         <div class="entry-attachment">
             <div class="attachment">
                 <?php advance_portfolio_the_attached_image(); ?>
