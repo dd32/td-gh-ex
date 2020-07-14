@@ -33,10 +33,10 @@ get_header(); ?>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php esc_html(the_title()); ?></h1>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_pet_care_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_pet_care_slider_excerpt_length','15')))); ?></p>
                   <div class="get-apt-btn">
-                    <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html_e('GET APPOINTMENT','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'GET APPOINTMENT','advance-pet-care' );?></span></a>
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('GET APPOINTMENT','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'GET APPOINTMENT','advance-pet-care' );?></span></a>
                   </div>
                 </div>
               </div>
@@ -78,10 +78,10 @@ get_header(); ?>
                 <?php the_post_thumbnail(); ?>              
               </div>
               <div class="col-lg-7 col-md-7">
-                <h2><?php esc_html(the_title()); ?></h2>
+                <h2><?php the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>            
                 <div class ="discover-btn">
-                  <a href="<?php esc_url(the_permalink()); ?>"><span><?php echo esc_html('DISCOVER MORE','advance-pet-care'); ?></span><span class="screen-reader-text"><?php esc_html_e( 'DISCOVER MORE','advance-pet-care' );?></span></a>
+                  <a href="<?php the_permalink(); ?>"><span><?php echo esc_html('DISCOVER MORE','advance-pet-care'); ?></span><span class="screen-reader-text"><?php esc_html_e( 'DISCOVER MORE','advance-pet-care' );?></span></a>
                 </div>                
               </div>
             <?php endwhile; 
