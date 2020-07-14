@@ -4,7 +4,6 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +126,11 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Added show and hide single post image.
 * Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
+= 0.4.9 =
+* Added the license of font awesome in readme.txt.
+* Done with prefixing in custom.js.
+* Changed sanitize callback function.
+
 == Resources ==
 
 Advance IT Company WordPress Theme, Copyright 2019 Themeshopy
@@ -161,7 +165,7 @@ Theme is Built using the following resource bundles.
 	- Davegandy
 	- copyright July 12, 2018, Davegandy
 	- https://github.com/FortAwesome/Font-Awesome.git
-	- License: Font Awesome Free License v5.0.0
+	- License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 	- https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 3. Customizer Pro 

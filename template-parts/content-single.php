@@ -13,7 +13,7 @@
   $archive_day   = get_the_time('d'); 
 ?>  
 <article class="page-box-single">
-  <h1><?php esc_html(the_title());?></h1>
+  <h1><?php the_title();?></h1>
   <?php if( get_theme_mod( 'advance_it_company_show_featured_image_single_post',true) != '') { ?>
     <div class="box-img">
       <?php the_post_thumbnail(); ?>
@@ -29,7 +29,7 @@
           <span class="entry-comments"><i class="fas fa-comments"></i><?php comments_number( __('0 Comments','advance-it-company'), __('0 Comments','advance-it-company'), __('% Comments','advance-it-company') ); ?></span>
         <?php } ?>
         <?php if( get_theme_mod( 'advance_it_company_author_hide',true) != '') { ?>
-          <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
+          <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
         <?php } ?>
       </div>
     <?php }?>

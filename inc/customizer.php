@@ -137,7 +137,7 @@ function advance_it_company_customize_register($wp_customize) {
 	$wp_customize->add_setting('advance_it_company_paragraph_font_family',array(
 	  'default' => '',
 	  'capability' => 'edit_theme_options',
-	  'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	  'sanitize_callback' => 'advance_it_company_sanitize_choices',
 	));
 	$wp_customize->add_control(
 	    'advance_it_company_paragraph_font_family', array(
@@ -447,7 +447,7 @@ function advance_it_company_customize_register($wp_customize) {
 	// woocommerce section
 	$wp_customize->add_setting('advance_it_company_show_related_products',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_show_related_products',array(
        'type' => 'checkbox',
@@ -457,7 +457,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_show_wooproducts_border',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_show_wooproducts_border',array(
        'type' => 'checkbox',
@@ -484,7 +484,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_wooproducts_per_page',array(
 		'default'	=> 9,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));	
 	$wp_customize->add_control('advance_it_company_wooproducts_per_page',array(
 		'label'	=> __('Display Product Per Page','advance-it-company'),
@@ -494,10 +494,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_top_bottom_wooproducts_padding',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control( 'advance_it_company_top_bottom_wooproducts_padding',	array(
 		'label' => esc_html__( 'Top Bottom Product Padding','advance-it-company' ),
@@ -512,10 +509,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_left_right_wooproducts_padding',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control( 'advance_it_company_left_right_wooproducts_padding',	array(
 		'label' => esc_html__( 'Right Left Product Padding','advance-it-company' ),
@@ -530,10 +524,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_wooproducts_border_radius',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_it_company_sanitize_number_range',
 	));
 	$wp_customize->add_control('advance_it_company_wooproducts_border_radius',array(
 		'label' => esc_html__( 'Product Border Radius','advance-it-company' ),
@@ -548,10 +539,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_wooproducts_box_shadow',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_it_company_sanitize_number_range',
 	));
 	$wp_customize->add_control('advance_it_company_wooproducts_box_shadow',array(
 		'label' => esc_html__( 'Product Box Shadow','advance-it-company' ),
@@ -572,10 +560,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_top_bottom_product_button_padding',array(
 		'default' => 10,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_top_bottom_product_button_padding',	array(
 		'label' => esc_html__( 'Product Button Top Bottom Padding','advance-it-company' ),
@@ -591,10 +576,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_left_right_product_button_padding',array(
 		'default' => 16,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_left_right_product_button_padding',array(
 		'label' => esc_html__( 'Product Button Right Left Padding','advance-it-company' ),
@@ -609,10 +591,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_product_button_border_radius',array(
 		'default' => 3,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'advance_it_company_sanitize_number_range',
 	));
 	$wp_customize->add_control('advance_it_company_product_button_border_radius',array(
 		'label' => esc_html__( 'Product Button Border Radius','advance-it-company' ),
@@ -661,7 +640,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_preloader_option',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_preloader_option',array(
        'type' => 'checkbox',
@@ -671,7 +650,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting( 'advance_it_company_shop_page_sidebar',array(
 		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_it_company_shop_page_sidebar',array(
     	'type' => 'checkbox',
@@ -681,7 +660,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_wocommerce_single_page_sidebar',array(
 		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_it_company_wocommerce_single_page_sidebar',array(
     	'type' => 'checkbox',
@@ -760,7 +739,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_button_padding_top_bottom',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_button_padding_top_bottom',array(
 		'label'	=> __('Top and Bottom Padding','advance-it-company'),
@@ -775,7 +754,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_button_padding_left_right',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_button_padding_left_right',array(
 		'label'	=> __('Left and Right Padding','advance-it-company'),
@@ -790,7 +769,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting( 'advance_it_company_button_border_radius', array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_it_company_button_border_radius', array(
 		'label'       => esc_html__( 'Button Border Radius','advance-it-company' ),
@@ -814,7 +793,7 @@ function advance_it_company_customize_register($wp_customize) {
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_it_company_display_topbar',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_it_company_display_topbar',array(
     	'type' => 'checkbox',
@@ -825,7 +804,7 @@ function advance_it_company_customize_register($wp_customize) {
     //Sticky Header
 	$wp_customize->add_setting( 'advance_it_company_sticky_header',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ) );
     $wp_customize->add_control('advance_it_company_sticky_header',array(
     	'type' => 'checkbox',
@@ -845,7 +824,7 @@ function advance_it_company_customize_register($wp_customize) {
 	
 	$wp_customize->add_setting('advance_it_company_mail1',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_email',
 	));
 	$wp_customize->add_control('advance_it_company_mail1',array(
 		'label'	=> __('Mail Address','advance-it-company'),
@@ -865,7 +844,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_phone1',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_phone_number',
 	));
 	$wp_customize->add_control('advance_it_company_phone1',array(
 		'label'	=> __('Phone Number','advance-it-company'),
@@ -965,7 +944,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_slider_hide',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_slider_hide',array(
        'type' => 'checkbox',
@@ -1006,10 +985,7 @@ function advance_it_company_customize_register($wp_customize) {
     //Slider excerpt
 	$wp_customize->add_setting( 'advance_it_company_slider_excerpt_length', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_it_company_slider_excerpt_length', array(
 		'label'       => esc_html__( 'Slider Excerpt length','advance-it-company' ),
@@ -1149,7 +1125,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_responsive_sticky_header',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_responsive_sticky_header',array(
        'type' => 'checkbox',
@@ -1159,7 +1135,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_responsive_slider',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_responsive_slider',array(
        'type' => 'checkbox',
@@ -1169,7 +1145,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_responsive_scroll',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_responsive_scroll',array(
        'type' => 'checkbox',
@@ -1179,7 +1155,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_responsive_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_responsive_sidebar',array(
        'type' => 'checkbox',
@@ -1189,7 +1165,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_responsive_preloader',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_responsive_preloader',array(
        'type' => 'checkbox',
@@ -1205,7 +1181,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_date_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_date_hide',array(
        'type' => 'checkbox',
@@ -1215,7 +1191,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_comment_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_comment_hide',array(
        'type' => 'checkbox',
@@ -1225,7 +1201,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_author_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_author_hide',array(
        'type' => 'checkbox',
@@ -1235,7 +1211,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_tags_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_tags_hide',array(
        'type' => 'checkbox',
@@ -1245,7 +1221,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting('advance_it_company_show_featured_image_single_post',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_show_featured_image_single_post',array(
        'type' => 'checkbox',
@@ -1270,7 +1246,7 @@ function advance_it_company_customize_register($wp_customize) {
 
     $wp_customize->add_setting( 'advance_it_company_excerpt_number', array(
 		'default'              => 20,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	) );
 	$wp_customize->add_control( 'advance_it_company_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-it-company' ),
@@ -1333,7 +1309,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_show_noresult_search',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
     ));
     $wp_customize->add_control('advance_it_company_show_noresult_search',array(
        'type' => 'checkbox',
@@ -1410,10 +1386,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_footer_content_font_size',array(
 		'default'=> 16,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_footer_content_font_size',array(
 		'label' => esc_html__( 'Copyright Font Size','advance-it-company' ),
@@ -1428,7 +1401,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_copyright_padding',array(
 		'default'=> 15,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_copyright_padding',array(
 		'label'	=> __('Copyright Padding','advance-it-company'),
@@ -1443,7 +1416,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_enable_disable_scroll',array(
         'default' => true,
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
 	));
 	$wp_customize->add_control('advance_it_company_enable_disable_scroll',array(
      	'type' => 'checkbox',
@@ -1468,10 +1441,7 @@ function advance_it_company_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_it_company_scroll_font_size_icon',array(
 		'default'=> 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'advance_it_company_sanitize_float',
 	));
 	$wp_customize->add_control('advance_it_company_scroll_font_size_icon',array(
 		'label'	=> __('Scroll Icon Font Size','advance-it-company'),
