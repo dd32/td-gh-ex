@@ -4,7 +4,6 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,6 +132,11 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added show and hide single post image.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
+= 0.5 =
+* Added the license of font awesome in readme.txt.
+* Done with prefixing in custom.js.
+* Changed sanitize callback function.
+
 == Resources ==
 
 Advance Automobile WordPress Theme, Copyright 2018 Themeshopy
@@ -167,7 +171,7 @@ Theme is Built using the following resource bundles.
 	- Davegandy
 	- copyright July 12, 2018, Davegandy
 	- https://github.com/FortAwesome/Font-Awesome.git
-	- License: Font Awesome Free License v5.0.0
+	- License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 	- https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 3. Customizer Pro 
