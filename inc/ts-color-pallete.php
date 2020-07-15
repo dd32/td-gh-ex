@@ -4,45 +4,35 @@
 
 	$bb_wedding_bliss_custom_css = '';
 
-	if($bb_wedding_bliss_theme_color_first != false){
-		$bb_wedding_bliss_custom_css .='.pagination a:hover, .pagination .current, #footer input[type="submit"], .blogbutton-small:hover, .blogbutton-small, .meta-nav:hover,.tags p a:hover ,#comments a.comment-reply-link,#comments input[type="submit"].submit, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button,#sidebar .tagcloud a:hover, #footer .tagcloud a:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, #footer .woocommerce a.button, #footer .woocommerce a.button:hover, #footer .woocommerce button.button {';
-			$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
-	if($bb_wedding_bliss_theme_color_first != false){
-		$bb_wedding_bliss_custom_css .='.social-media i:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, nav.woocommerce-MyAccount-navigation ul li a, #slider .inner_carousel h2 a, #sidebar h3, #sidebar input[type="submit"], span.tagged_as a, #footer li a:hover, #love-Story h3, .heading-line h3, input[type="submit"], .our-services .page-box h4 a:hover,.primary-navigation ul ul a,.tags i,.metabox a:hover,#sidebar ul li a:hover, #slider .inner_carousel h1 a{';
-			$bb_wedding_bliss_custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.pagination a:hover, .pagination .current, #footer input[type="submit"], .blogbutton-small:hover, .blogbutton-small, .meta-nav:hover,.tags p a:hover ,#comments a.comment-reply-link,#comments input[type="submit"].submit, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button,#sidebar .tagcloud a:hover, #footer .tagcloud a:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, #footer .woocommerce a.button, #footer .woocommerce a.button:hover, #footer .woocommerce button.button {';
+		$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
+	$bb_wedding_bliss_custom_css .='}';
+
+	$bb_wedding_bliss_custom_css .='.social-media i:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, nav.woocommerce-MyAccount-navigation ul li a, #slider .inner_carousel h2 a, #sidebar h3, #sidebar input[type="submit"], span.tagged_as a, #footer li a:hover, #love-Story h3, .heading-line h3, input[type="submit"], .our-services .page-box h4 a:hover,.primary-navigation ul ul a,.tags i,.metabox a:hover,#sidebar ul li a:hover, #slider .inner_carousel h1 a{';
+		$bb_wedding_bliss_custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
+	$bb_wedding_bliss_custom_css .='}';
+
+	$bb_wedding_bliss_custom_css .='.primary-navigation ul ul, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{';
+		$bb_wedding_bliss_custom_css .='border-color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
+	$bb_wedding_bliss_custom_css .='}';
+
+	$bb_wedding_bliss_custom_css .='.primary-navigation ul ul{';
+		$bb_wedding_bliss_custom_css .='border-top-color: '.esc_html($bb_wedding_bliss_theme_color_first).'!important;';
+	$bb_wedding_bliss_custom_css .='}';
 	
-	if($bb_wedding_bliss_theme_color_first != false){
-		$bb_wedding_bliss_custom_css .='.primary-navigation ul ul, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{';
-			$bb_wedding_bliss_custom_css .='border-color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
-
-	if($bb_wedding_bliss_theme_color_first != false){
-		$bb_wedding_bliss_custom_css .='.primary-navigation ul ul{';
-			$bb_wedding_bliss_custom_css .='border-top-color: '.esc_html($bb_wedding_bliss_theme_color_first).'!important;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
-
+	// second theme color
 	$bb_wedding_bliss_theme_color_second = get_theme_mod('bb_wedding_bliss_theme_color_second');
-	if($bb_wedding_bliss_theme_color_second != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .abovecopyright, #sidebar h3, #sidebar input[type="submit"], .pagination a, .pagination span, input[type="submit"], .hvr-sweep-to-right:before{';
-			$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
-	if($bb_wedding_bliss_theme_color_second != false){
-		$bb_wedding_bliss_custom_css .='.blogbutton-small, input.search-field,.tags p a {';
-			$bb_wedding_bliss_custom_css .='border-color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
-	if($bb_wedding_bliss_theme_color_second != false){
-		$bb_wedding_bliss_custom_css .='.pagination .current, .blogbutton-small, .our-services .page-box h4 a,.meta-nav,.tags p a {';
-			$bb_wedding_bliss_custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .abovecopyright, #sidebar h3, #sidebar input[type="submit"], .pagination a, .pagination span, input[type="submit"], .hvr-sweep-to-right:before{';
+		$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
+	$bb_wedding_bliss_custom_css .='}';
+
+	$bb_wedding_bliss_custom_css .='.blogbutton-small, input.search-field,.tags p a {';
+		$bb_wedding_bliss_custom_css .='border-color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
+	$bb_wedding_bliss_custom_css .='}';
+
+	$bb_wedding_bliss_custom_css .='.pagination .current, .blogbutton-small, .our-services .page-box h4 a,.meta-nav,.tags p a {';
+		$bb_wedding_bliss_custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
+	$bb_wedding_bliss_custom_css .='}';
 
 	/*---------------------------Width Layout -------------------*/
 	$bb_wedding_bliss_theme_lay = get_theme_mod( 'bb_wedding_bliss_theme_options','Default');
@@ -153,18 +143,14 @@
 	/*------------------------------ Button Settings option-----------------------*/
 	$bb_wedding_bliss_button_padding_top_bottom = get_theme_mod('bb_wedding_bliss_button_padding_top_bottom');
 	$bb_wedding_bliss_button_padding_left_right = get_theme_mod('bb_wedding_bliss_button_padding_left_right');
-	if($bb_wedding_bliss_button_padding_top_bottom != false || $bb_wedding_bliss_button_padding_left_right != false){
-		$bb_wedding_bliss_custom_css .='.blogbutton-small, #comments .form-submit input[type="submit"]{';
-			$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_button_padding_top_bottom).'px; padding-bottom: '.esc_html($bb_wedding_bliss_button_padding_top_bottom).'px; padding-left: '.esc_html($bb_wedding_bliss_button_padding_left_right).'px; padding-right: '.esc_html($bb_wedding_bliss_button_padding_left_right).'px; display:inline-block;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.blogbutton-small, #comments .form-submit input[type="submit"]{';
+		$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_button_padding_top_bottom).'px; padding-bottom: '.esc_html($bb_wedding_bliss_button_padding_top_bottom).'px; padding-left: '.esc_html($bb_wedding_bliss_button_padding_left_right).'px; padding-right: '.esc_html($bb_wedding_bliss_button_padding_left_right).'px; display:inline-block;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_button_border_radius = get_theme_mod('bb_wedding_bliss_button_border_radius');
-	if($bb_wedding_bliss_button_border_radius != false){
-		$bb_wedding_bliss_custom_css .='.blogbutton-small, #comments .form-submit input[type="submit"], .hvr-sweep-to-right:before, .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active{';
-			$bb_wedding_bliss_custom_css .='border-radius: '.esc_html($bb_wedding_bliss_button_border_radius).'px;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.blogbutton-small, #comments .form-submit input[type="submit"], .hvr-sweep-to-right:before, .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active{';
+		$bb_wedding_bliss_custom_css .='border-radius: '.esc_html($bb_wedding_bliss_button_border_radius).'px;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	/*-----------------------------Responsive Setting --------------------*/
 	$bb_wedding_bliss_stickyheader = get_theme_mod( 'bb_wedding_bliss_responsive_sticky_header',false);
@@ -266,25 +252,19 @@
 
 	/*------------ Woocommerce Settings  --------------*/
 	$bb_wedding_bliss_top_bottom_product_button_padding = get_theme_mod('bb_wedding_bliss_top_bottom_product_button_padding', 14);
-	if($bb_wedding_bliss_top_bottom_product_button_padding != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($bb_wedding_bliss_top_bottom_product_button_padding).'px;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($bb_wedding_bliss_top_bottom_product_button_padding).'px;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_left_right_product_button_padding = get_theme_mod('bb_wedding_bliss_left_right_product_button_padding', 26);
-	if($bb_wedding_bliss_left_right_product_button_padding != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$bb_wedding_bliss_custom_css .='padding-left: '.esc_html($bb_wedding_bliss_left_right_product_button_padding).'px; padding-right: '.esc_html($bb_wedding_bliss_left_right_product_button_padding).'px;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$bb_wedding_bliss_custom_css .='padding-left: '.esc_html($bb_wedding_bliss_left_right_product_button_padding).'px; padding-right: '.esc_html($bb_wedding_bliss_left_right_product_button_padding).'px;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_product_button_border_radius = get_theme_mod('bb_wedding_bliss_product_button_border_radius', 0);
-	if($bb_wedding_bliss_product_button_border_radius != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-			$bb_wedding_bliss_custom_css .='border-radius: '.esc_html($bb_wedding_bliss_product_button_border_radius).'px;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$bb_wedding_bliss_custom_css .='border-radius: '.esc_html($bb_wedding_bliss_product_button_border_radius).'px;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_show_related_products = get_theme_mod('bb_wedding_bliss_show_related_products',true);
 	if($bb_wedding_bliss_show_related_products == false){
@@ -301,32 +281,24 @@
 	}
 
 	$bb_wedding_bliss_top_bottom_wooproducts_padding = get_theme_mod('bb_wedding_bliss_top_bottom_wooproducts_padding',10);
-	if($bb_wedding_bliss_top_bottom_wooproducts_padding != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($bb_wedding_bliss_top_bottom_wooproducts_padding).'px !important;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($bb_wedding_bliss_top_bottom_wooproducts_padding).'px !important;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_left_right_wooproducts_padding = get_theme_mod('bb_wedding_bliss_left_right_wooproducts_padding',10);
-	if($bb_wedding_bliss_left_right_wooproducts_padding != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$bb_wedding_bliss_custom_css .='padding-left: '.esc_html($bb_wedding_bliss_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($bb_wedding_bliss_left_right_wooproducts_padding).'px !important;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$bb_wedding_bliss_custom_css .='padding-left: '.esc_html($bb_wedding_bliss_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($bb_wedding_bliss_left_right_wooproducts_padding).'px !important;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_wooproducts_border_radius = get_theme_mod('bb_wedding_bliss_wooproducts_border_radius',0);
-	if($bb_wedding_bliss_wooproducts_border_radius != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$bb_wedding_bliss_custom_css .='border-radius: '.esc_html($bb_wedding_bliss_wooproducts_border_radius).'px;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$bb_wedding_bliss_custom_css .='border-radius: '.esc_html($bb_wedding_bliss_wooproducts_border_radius).'px;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_wooproducts_box_shadow = get_theme_mod('bb_wedding_bliss_wooproducts_box_shadow',0);
-	if($bb_wedding_bliss_wooproducts_box_shadow != false){
-		$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$bb_wedding_bliss_custom_css .='box-shadow: '.esc_html($bb_wedding_bliss_wooproducts_box_shadow).'px '.esc_html($bb_wedding_bliss_wooproducts_box_shadow).'px '.esc_html($bb_wedding_bliss_wooproducts_box_shadow).'px #eee;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$bb_wedding_bliss_custom_css .='box-shadow: '.esc_html($bb_wedding_bliss_wooproducts_box_shadow).'px '.esc_html($bb_wedding_bliss_wooproducts_box_shadow).'px '.esc_html($bb_wedding_bliss_wooproducts_box_shadow).'px #eee;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	/*-------------- Footer Text -------------------*/
 	$bb_wedding_bliss_copyright_content_align = get_theme_mod('bb_wedding_bliss_copyright_content_align');
@@ -337,18 +309,19 @@
 	}
 
 	$bb_wedding_bliss_footer_content_font_size = get_theme_mod('bb_wedding_bliss_footer_content_font_size', 16);
-	if($bb_wedding_bliss_footer_content_font_size != false){
-		$bb_wedding_bliss_custom_css .='.copyright p{';
-			$bb_wedding_bliss_custom_css .='font-size: '.esc_html($bb_wedding_bliss_footer_content_font_size).'px !important;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='.copyright p{';
+		$bb_wedding_bliss_custom_css .='font-size: '.esc_html($bb_wedding_bliss_footer_content_font_size).'px !important;';
+	$bb_wedding_bliss_custom_css .='}';
+
+	$bb_wedding_bliss_copyright_padding = get_theme_mod('bb_wedding_bliss_copyright_padding', 15);
+	$bb_wedding_bliss_custom_css .='.abovecopyright{';
+		$bb_wedding_bliss_custom_css .='padding-top: '.esc_html($bb_wedding_bliss_copyright_padding).'px; padding-bottom: '.esc_html($bb_wedding_bliss_copyright_padding).'px;';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_footer_widget_bg_color = get_theme_mod('bb_wedding_bliss_footer_widget_bg_color');
-	if($bb_wedding_bliss_footer_widget_bg_color != false){
-		$bb_wedding_bliss_custom_css .='#footer{';
-			$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_footer_widget_bg_color).';';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='#footer{';
+		$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_footer_widget_bg_color).';';
+	$bb_wedding_bliss_custom_css .='}';
 
 	$bb_wedding_bliss_footer_widget_bg_image = get_theme_mod('bb_wedding_bliss_footer_widget_bg_image');
 	if($bb_wedding_bliss_footer_widget_bg_image != false){
@@ -359,8 +332,6 @@
 
 	// scroll to top
 	$bb_wedding_bliss_scroll_font_size_icon = get_theme_mod('bb_wedding_bliss_scroll_font_size_icon', 22);
-	if($bb_wedding_bliss_scroll_font_size_icon != false){
-		$bb_wedding_bliss_custom_css .='#scroll-top .fas{';
-			$bb_wedding_bliss_custom_css .='font-size: '.esc_html($bb_wedding_bliss_scroll_font_size_icon).'px;';
-		$bb_wedding_bliss_custom_css .='}';
-	}
+	$bb_wedding_bliss_custom_css .='#scroll-top .fas{';
+		$bb_wedding_bliss_custom_css .='font-size: '.esc_html($bb_wedding_bliss_scroll_font_size_icon).'px;';
+	$bb_wedding_bliss_custom_css .='}';

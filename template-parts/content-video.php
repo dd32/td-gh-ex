@@ -34,7 +34,7 @@
       ?>
     <?php }?>
     <div class="new-text">
-      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>   
+      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>   
       <?php if(get_theme_mod('bb_wedding_bliss_blog_post_description_option') == 'Full Content'){ ?>
         <?php the_content(); ?>
       <?php }

@@ -730,116 +730,148 @@ msgstr ""
 msgid 'Single Post Tags'
 msgstr ""
 
-#: inc/customizer.php:1210
-#: inc/customizer.php:1219
-msgid 'Excerpt Content'
-msgstr ""
-
 #: inc/customizer.php:1183
-msgid 'Post Description Length'
-msgstr ""
-
-#: inc/customizer.php:1186
-msgid 'No Content'
+msgid 'Single Post Image'
 msgstr ""
 
 #: inc/customizer.php:1188
+#: inc/customizer.php:1197
+msgid 'Excerpt Content'
+msgstr ""
+
+#: inc/customizer.php:1193
+msgid 'Post Description Length'
+msgstr ""
+
+#: inc/customizer.php:1196
+msgid 'No Content'
+msgstr ""
+
+#: inc/customizer.php:1198
 msgid 'Full Content'
 msgstr ""
 
-#: inc/customizer.php:1200
+#: inc/customizer.php:1210
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1222
 msgid '...'
 msgstr ""
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1226
 msgid 'Post Excerpt Indicator Option'
 msgstr ""
 
-#: inc/customizer.php:1223
+#: inc/customizer.php:1233
 msgid 'READ MORE'
 msgstr ""
 
-#: inc/customizer.php:1227
+#: inc/customizer.php:1237
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:1234
-msgid 'Footer Text'
-msgstr ""
-
 #: inc/customizer.php:1244
-msgid 'Footer widget area'
-msgstr ""
-
-#: inc/customizer.php:1246
-msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
-msgstr ""
-
-#: inc/customizer.php:1248
-msgid 'One'
+msgid "No Result Found"
 msgstr ""
 
 #: inc/customizer.php:1249
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/customizer.php:1253
+msgid "No Result Found Title"
+msgstr ""
+
+#: inc/customizer.php:1259
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: inc/customizer.php:1263
+msgid "No Result Found Content"
+msgstr ""
+
+#: inc/customizer.php:1274
+msgid "No Result search"
+msgstr ""
+
+#: inc/customizer.php:1280
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:1290
+msgid 'Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:1292
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:1294
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:1295
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1296
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:1251
+#: inc/customizer.php:1297
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:1260
+#: inc/customizer.php:1306
 msgid 'Footer Widget Background Color'
 msgstr ""
 
-#: inc/customizer.php:1269
+#: inc/customizer.php:1315
 msgid 'Footer Widget Background Image'
 msgstr ""
 
-#: inc/customizer.php:1278
+#: inc/customizer.php:1324
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1337
 msgid 'Copyright Font Size'
 msgstr ""
 
-#: inc/customizer.php:1307
+#: inc/customizer.php:1352
+msgid 'Copyright Padding'
+msgstr ""
+
+#: inc/customizer.php:1368
 msgid 'Show / Hide Scroll Top Button'
 msgstr ""
 
-#: inc/customizer.php:1312
-#: inc/customizer.php:1321
+#: inc/customizer.php:1373
+#: inc/customizer.php:1382
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:1317
+#: inc/customizer.php:1378
 msgid 'Scroll Back to Top Position'
 msgstr ""
 
-#: inc/customizer.php:1320
+#: inc/customizer.php:1381
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1322
+#: inc/customizer.php:1383
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:1334
+#: inc/customizer.php:1395
 msgid 'Scroll Icon Font Size'
 msgstr ""
 
-#: inc/customizer.php:1425
+#: inc/customizer.php:1486
 msgid 'Upgrade to Pro'
 msgstr ""
 
-#: inc/customizer.php:1426
+#: inc/customizer.php:1487
 msgid 'Go Pro'
 msgstr ""

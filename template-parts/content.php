@@ -10,8 +10,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="page-box">
+		<?php 
+      		if(has_post_thumbnail()) { ?>
+			<div class="box-image col-lg-6 col-md-6">
+				<?php the_post_thumbnail();  ?>
+			</div>
+	    <?php } ?>
 	  	<div class="new-text">
-		    <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>   
+		    <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>   
 		    <?php if(get_theme_mod('bb_wedding_bliss_blog_post_description_option') == 'Full Content'){ ?>
 		        <?php the_content(); ?>
 		      <?php }
