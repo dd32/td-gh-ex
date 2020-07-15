@@ -3,8 +3,8 @@ Contributors: ayatemplates
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu,
 featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets,
 full-width-template, editor-style
-Tested up to: 5.3
-Stable tag: 1.0.2
+Tested up to: 5.4.1
+Stable tag: 1.1.5
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
 License: GPLv2 or later
@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+== 1.1.5 =
+* update 'Requires PHP' tag in style.css
 
 = 1.1.4 =
 * Blocks CSS updates for WordPress 5.3
