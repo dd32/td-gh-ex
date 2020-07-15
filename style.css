@@ -5,7 +5,7 @@ Theme URI: https://www.themeinprogress.com/avventura-elegant-beauty-wordpress-sh
 Description: Avventura Lite is an elegant and beauty WordPress theme, perfect for writers, bloggers and photographers. Avventura Lite is also fully compatible with Contact Form 7 and WooCommerce plugin and is optimized for mobile devices.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 1.2.7
+Version: 1.2.8
 Requires PHP: 5.3
 Tested up to: 5.4
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, full-width-template, grid-layout, blog, e-commerce, photography
@@ -169,16 +169,26 @@ code {
 	white-space:normal !important;
 }
 
-a:focus,
-button:hover ,
-button:active ,
-button:focus ,
-input:hover ,
-input:active ,
-input:focus ,
-textarea:hover ,
-textarea:active ,
-textarea:focus {
+#wrapper a:focus,
+#wrapper button:hover ,
+#wrapper button:active ,
+#wrapper button:focus ,
+#wrapper input:hover ,
+#wrapper input:active ,
+#wrapper input:focus ,
+#wrapper textarea:hover ,
+#wrapper textarea:active ,
+#wrapper textarea:focus ,
+#sidebar-wrapper a:focus,
+#sidebar-wrapper button:hover ,
+#sidebar-wrapper button:active ,
+#sidebar-wrapper button:focus ,
+#sidebar-wrapper input:hover ,
+#sidebar-wrapper input:active ,
+#sidebar-wrapper input:focus ,
+#sidebar-wrapper textarea:hover ,
+#sidebar-wrapper textarea:active ,
+#sidebar-wrapper textarea:focus {
 	outline:thin dotted red !important;
 
 }

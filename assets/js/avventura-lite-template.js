@@ -12,7 +12,7 @@ jQuery.noConflict()(function($){
 	"use strict";
 
 /* ===============================================
-   HEADER CART
+   Header cart
    ============================================= */
 	
 	$('div.header-cart').hover(
@@ -27,7 +27,7 @@ jQuery.noConflict()(function($){
 	);
 	
 /* ===============================================
-   FIXED HEADER
+   Header fix
    =============================================== */
 
 	function avventura_lite_header() {
@@ -71,10 +71,25 @@ jQuery.noConflict()(function($){
 	$( window ).resize(avventura_lite_header);
 
 /* ===============================================
-   SCROLL SIDEBAR
+   Footer fix
    =============================================== */
 
-	function avventura_lite_scrool() {
+	function avventura_lite_footer() {
+	
+		var footerHeight = $('#footer').innerHeight();
+		$('#wrapper').css({'padding-bottom':footerHeight});
+	
+	}
+
+	$( window ).load(avventura_lite_footer);
+	$( document ).ready(avventura_lite_footer);
+	$( window ).resize(avventura_lite_footer);
+
+/* ===============================================
+   Scroll sidebar
+   =============================================== */
+
+	function avventura_lite_scroll() {
 		
 		if ( $(window).width() < 992 ) {
 
@@ -102,11 +117,11 @@ jQuery.noConflict()(function($){
 	}
    
 	$(document).ready(function(){
-		avventura_lite_scrool();
+		avventura_lite_scroll();
 	});
 
 	$(window).resize(function(){
-		avventura_lite_scrool();
+		avventura_lite_scroll();
 	});
 
 	$(window).load(function() {
@@ -116,7 +131,11 @@ jQuery.noConflict()(function($){
 			$('#overlay-body').fadeIn(600).addClass('visible');
 			$('body').addClass('overlay-active').addClass('no-scrolling');
 			$('#wrapper').addClass('open-sidebar');
-
+		
+		    setTimeout(function(){
+				$('#scroll-sidebar a.mobile-navigation').focus();
+    		},100);
+		
 		});
 
 		if ( $(window).width() < 992 ) {
@@ -190,8 +209,6 @@ jQuery.noConflict()(function($){
 
 	$( ".header-search a.open-search-form").on("click", avventura_lite_open_search_form);
 
-
-
 /* ===============================================
    Close header search 
    =============================================== */
@@ -208,7 +225,7 @@ jQuery.noConflict()(function($){
    ============================================= */
 	
 	$('.search-form  #header-searchform :input').on('keydown', function (e) { 
-	    if ($("this:focus") && (e.which == 9)) {
+	    if ($("this:focus") && (e.which === 9)) {
 	        e.preventDefault();
 	        $(this).blur();
 	        $('.search-form a.close-search-form').focus();
@@ -217,7 +234,7 @@ jQuery.noConflict()(function($){
 	});
 
 	$('.search-form  a.close-search-form').on('keydown', function (e) { 
-	    if ($("this:focus") && (e.which == 9)) {
+	    if ($("this:focus") && (e.which === 9)) {
 	        e.preventDefault();
 	        $(this).blur();
 	        $('.search-form  #header-searchform :input').focus();
@@ -228,8 +245,8 @@ jQuery.noConflict()(function($){
 /* ===============================================
    TRAP TAB FOCUS ON MODAL SIDEBAR
    ============================================= */
-
-	const focusableElements = [
+	
+	var focusableElements = [
 	  'button',
 	  '[href]',
 	  'input',
@@ -242,6 +259,7 @@ jQuery.noConflict()(function($){
 	$.each(focusableElements, function(index, value) {
 		
 		var elements = $('#scroll-sidebar').find(value);
+		
 		var firstEl = elements[0];
 		var lastEl = elements[ elements.length - 1 ];
 
@@ -265,20 +283,6 @@ jQuery.noConflict()(function($){
 
 	});
 
-/* ===============================================
-   Footer fix
-   =============================================== */
-
-	function avventura_lite_footer() {
-	
-		var footerHeight = $('#footer').innerHeight();
-		$('#wrapper').css({'padding-bottom':footerHeight});
-	
-	}
-
-	$( window ).load(avventura_lite_footer);
-	$( document ).ready(avventura_lite_footer);
-	$( window ).resize(avventura_lite_footer);
 
 /* ===============================================
    Scroll to top Plugin
