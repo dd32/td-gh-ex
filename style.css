@@ -5,13 +5,14 @@ Theme URI: https://ayatemplates.com/product/ayabiostorelite
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayaclub
-Version: 1.1.3
+Version: 1.1.4
 Text Domain: ayabiostorelite
 Tags: e-commerce, news, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
+Tested up to: 5.4.1
 */
 
 /* general styles */
@@ -119,9 +120,6 @@ article,
 	line-height:1.5;
 }
 
-.jcarousel-skin h3 {
-	font-size:16px;
-}
 
 h1, h2, h3, h4, h5, h6{
 	font-weight:400;
@@ -191,11 +189,21 @@ video {
     height: auto !important;
 }
 
-.vimeo-iframe {
-    margin-bottom:0;
+.vimeo-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+  	height: 0;
 }
 
-.col iframe {
+.vimeo-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+iframe {
     max-width: 100%;
 }
 
@@ -270,12 +278,16 @@ ol > li {
 	margin:0;
 }
 
-ol {
+article ol {
 	padding:0 0 0 30px;
 }
 
-ul {
+article ul {
 	padding:0 0 0 15px;
+}
+
+ul, ol {
+	padding:0;
 }
 
 
@@ -488,14 +500,58 @@ article ul > li:before {
 	clear:both;
 }
 
-.single-social-widget {	
-	padding:1px 0 0 0;
-	margin:1px 0 0 0;
+.single-social-widget {
 	clear:both;
 }
 
+.single-social-widget .social32 {
+	float:left;
+}
+
 .single-social-widget p {
-	margin-left:5px;
+	line-height:40px;
+	font-size:14px;
+}
+
+.single-social-widget .facebook32:before {
+	content: "\f09a";
+	color:#FFFFFF;
+	background-color:#3B5998;
+}
+
+.single-social-widget .twitter32:before {
+	content: "\f099";
+	color:#FFFFFF;
+	background-color:#00ACEE;
+}
+
+.single-social-widget .rss32:before {
+	content: "\f09e";
+	color:#FFFFFF;
+	background-color:#EE802F;
+}
+
+.single-social-widget .instagram32:before {
+	color:#FFFFFF;
+	background: #d6249f;
+  	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.single-social-widget .facebook32:before,
+.single-social-widget .twitter32:before,
+.single-social-widget .rss32:before,
+.single-social-widget .instagram32:before {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+.single-social-widget .social32 a {
+	width:100%;
+	height: auto;
 }
 
 #infoTxt {
@@ -583,7 +639,7 @@ article,
 }
 
 #footer-main .post-date {
-	margin:0 0 0 14px;
+	margin:0 0 5px 0;
 }
 
 .col ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
@@ -967,19 +1023,7 @@ article,
 	display:inline-block;
 }
 
-.single-social-widget {
-	clear:both;
-	height:45px;
-}
 
-.single-social-widget .social32,
-.single-social-widget p {
-	float:left;
-}
-
-.single-social-widget p {
-	line-height:32px;
-}
 
 input[type="text"],
 input[type="email"],
@@ -1002,7 +1046,8 @@ button {
 input[type="submit"],
 button,
 .btn,
-#main .button {
+#main .button,
+#main #respond input[type="submit"] {
 	padding:12px 16px;
 	text-decoration:none;
 	font-weight:normal;
@@ -1026,7 +1071,8 @@ button,
 input[type="submit"]:hover,
 button:hover,
 #main .button:hover,
-.btn:hover {
+.btn:hover,
+#main #respond input[type="submit"]:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #fcb934 0%, #24d8d8 100%);
 	background-image: -moz-linear-gradient(top, #fcb934 0%, #24d8d8 100%);
@@ -1057,7 +1103,6 @@ blockquote:before,
 q:before {
 	font-family:'FontAwesome';
 	content: "\f10d";
-	color:#DEDEDE;
 	font-size:36px;
 	float:left;
 	margin:0 1% 0 0;
@@ -1091,7 +1136,7 @@ blockquote, figure {
 .navigation .page-numbers {
 	padding:5px 11px;
 	border:1px solid #dddddd;
-	margin-right:10px;
+	margin:0 10px 10px 0;
 	-webkit-border-radius:2px;
 	-moz-border-radius:2px;
 	-ms-border-radius:2px;
@@ -1104,7 +1149,7 @@ blockquote, figure {
 	text-decoration:none;
 	background:#dddddd !important;
 	text-align:center;
-	margin-right:10px;
+	margin:0 10px 10px 0;
 	-webkit-border-radius:2px;
 	-moz-border-radius:2px;
 	-ms-border-radius:2px;
@@ -1534,10 +1579,7 @@ blockquote, figure {
 	content: "\f008";
 }
 
-/* thumbnails */
-img.wp-post-image {
-	margin:0 5px 5px 0;
-}
+
 
 /* calendar widget */
 .widget_calendar {
@@ -1759,21 +1801,6 @@ img.wp-post-image {
 .post-date {
 	display:block;
 	margin:0 0 5px 15px;
-}
-
-.advanced-text-icon {
-	text-align:center;
-	font-size:18px;
-}
-
-.advanced-text-content {
-	padding:0;
-	font-size:16px;
-}
-
-.advanced-text-button-wrapper {
-	text-align:right;
-	margin-bottom:5px;
 }
 
 #page-header {
@@ -2201,6 +2228,21 @@ div.author-info-box p:nth-of-type(2) {
 }
 
 /* WooCommerce */
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2,
+.woocommerce-page .col2-set .col-1,
+.woocommerce-page .col2-set .col-2 {
+	max-width:50%;
+}
+
+.woocommerce-input-wrapper {
+	width:100%;
+}
+
+.mini_cart_item a.remove {
+	float:left;
+	margin-right: 5px;
+}
 .woocommerce ul.cart_list li img,
 .woocommerce ul.product_list_widget li img {
 	width:50%;
@@ -2272,6 +2314,8 @@ div.author-info-box p:nth-of-type(2) {
 	-o-border-radius:2px !important;
 	border-radius:2px !important;
 }
+
+
 
 .woocommerce #content input.button,
 .woocommerce #respond input#submit,
@@ -2378,12 +2422,59 @@ div.author-info-box p:nth-of-type(2) {
 
 .product_list_widget  li {
 	float:left;
-	width:23%;
+	width:24%;
 	margin-right:1%;
 }
 
 .product_list_widget li:nth-child(4n + 1) {
 	clear:both;
+}
+
+#sidebar .product_list_widget  li {
+	float:left;
+	width:47%;
+	margin:0 2% 10px 0;
+}
+
+#sidebar .product_list_widget li:nth-child(2n + 1) {
+	clear:both;
+}
+
+/* WooCommerce Ratings */
+.woocommerce .woocommerce-product-rating .star-rating {
+    margin: 0 4px 0 0 !important;
+    font-size: 18px !important;
+}
+
+.single-product .woocommerce-product-rating {
+	margin-top:5px;
+}
+
+.single-product .count-rating,
+.single-product .woocommerce-review-link {
+	float:left;
+	margin-right:5px;
+	margin-top:-2px;
+}
+
+@media screen and (min-width: 800px) {
+	.woocommerce #review_form #respond p {
+		margin-right:20px;
+	}
+
+	.woocommerce #review_form #respond textarea {
+		width:425px;
+	}
+
+	.woocommerce #review_form #respond .comment-form-author,
+	.woocommerce #review_form #respond .comment-form-email {
+		width:200px;
+	}
+
+	.woocommerce #review_form #respond #commentform input[type="text"],
+	.woocommerce #review_form #respond #commentform input[type="email"] {
+		width:195px;
+	}
 }
 
 @media screen and (max-width: 799px) {
@@ -2429,8 +2520,9 @@ form.cart {
 	margin-left:0 !important;
 }
 
-.product_list_widget .amount {
-	display:block;
+.product_list_widget .button {
+	display:table !important;
+	margin-bottom: 10px !important;
 }
 
 #hdrtop-cart-subcontent .product_list_widget .amount {
@@ -2458,12 +2550,16 @@ form.cart {
 	margin-bottom:0 !important;
 }
 
+.product_list_widget del {
+	display:inline-flex;
+}
+
 .product_list_widget #content input.button,
 .product_list_widget #respond input#submit,
 .product_list_widget a.button,
 .product_list_widget button.button,
 .product_list_widget input.button,
-a.wc-forward,
+#cart-popup-content a.wc-forward,
 a.live-preview-button {
 	background-image:-webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#e0dadf));
 	background-image:-webkit-linear-gradient(#f7f6f7,#e0dadf);
@@ -2473,7 +2569,7 @@ a.live-preview-button {
     border: 1px solid #c8bfc6;
     border-radius: 2px;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.075) inset, 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: #5e5e5e;
+    color: #444444 !important;
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
@@ -3345,8 +3441,6 @@ article .wp-block-video figcaption,
 article .wp-block-image figcaption,
 article .wp-block-gallery .blocks-gallery-image figcaption,
 article .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: 0.71111em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
@@ -4264,6 +4358,12 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		float:left;
 		width:48%;
 	}
+
+	.col3c {
+		margin: 0 auto !important;
+		float: none;
+		display: block;
+	}
 	
 	.col2a,
 	.col3a,
@@ -4417,7 +4517,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	#page-header-content,
 	#header-content-wrapper {
 		margin:0 auto;
-		width:1160px;
+		width:960px;
 	}
 	
 	.slider-content-container,
@@ -4429,7 +4529,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
     #footer-content-wrapper,
     #footer-bottom-content-wrapper {
         margin:0 auto;
-        width:1150px;
+        width:950px;
     }
 
 	#main-content,
