@@ -275,8 +275,12 @@ blockquote.alignright p {
 
 img {
 	height: auto;
-	max-width: 474px;
+	max-width: 100%;
 	vertical-align: middle;
+}
+
+.editor-styles-wrapper img {
+	max-width: 100% !important;
 }
 
 .tagcloud {
