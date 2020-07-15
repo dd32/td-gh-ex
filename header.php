@@ -86,23 +86,22 @@
             <div class="logo col-lg-3 col-md-3">
               <?php if ( has_custom_logo() ) : ?>
                 <div class="site-logo"><?php the_custom_logo(); ?></div>
-                <?php else: ?>
-                <?php $blog_info = get_bloginfo( 'name' ); ?>
-                <?php if ( ! empty( $blog_info ) ) : ?>
-                  <?php if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                  <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                  <?php endif; ?>
+              <?php endif; ?>
+              <?php $blog_info = get_bloginfo( 'name' ); ?>
+              <?php if ( ! empty( $blog_info ) ) : ?>
+                <?php if ( is_front_page() && is_home() ) : ?>
+                  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <?php else : ?>
+                  <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
                 <?php endif; ?>
-                <?php
-                $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) :
-                  ?>
+              <?php endif; ?>
+              <?php
+              $description = get_bloginfo( 'description', 'display' );
+              if ( $description || is_customize_preview() ) :
+                ?>
                 <p class="site-description">
                   <?php echo esc_html($description); ?>
                 </p>
-              <?php endif; ?>
               <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -115,7 +114,7 @@
                 <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt"></i><span class="screen-reader-text"><?php esc_html_e('My Account','advance-ecommerce-store'); ?></span></a>
               <?php } 
               else { ?>
-                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
               <?php } ?>
             </div>
             <div class="col-lg-2 col-md-2 col-6 cart_icon ">
