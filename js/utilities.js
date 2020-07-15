@@ -8,7 +8,7 @@ jQuery( document ).ready(function() {
 
     // add support of browsers which don't support focus-within
     jQuery('#navmain > div > ul > li > a:not(.login-form-icon):not(.search-form-icon), #navmain > div > ul > li > ul > li > a, #navmain > div > ul > li > ul > li > ul > li > a, .mega-menu-sub-menu')
-      .hover(function() {
+      .bind('hover focus', function() {
         jQuery(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
         jQuery(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
 
@@ -41,9 +41,9 @@ jQuery( document ).ready(function() {
         // show search popup content when focus on search popup link if hidden on iterate back (shift + tab)
         if (jQuery(this).closest('#navmain > div > ul > li').find('#search-popup-content').length && jQuery('#search-popup-content').css('right') == '-99999px')
           jQuery('#search-popup-content').css('right', 'auto');
-      }, function() {
-        jQuery(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
-        jQuery(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
+      }).bind('mouseleave blur', function() {
+          jQuery(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
+          jQuery(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
     });										
 	} else {
 
