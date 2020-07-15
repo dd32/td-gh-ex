@@ -40,11 +40,10 @@ FontAwesome - Copyright 2012 Dave Gandy
 License: MIT License
 http://fontawesome.io/license/
 
-* All Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
-* All Photos in the Slider Demo are from unsplash.com and licensed Creative Commons 0 (CC0)
-* All Photos in the Albar Demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
-Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
-https://unsplash.com/license
+Image in screenshot.png: CCO by Bonnie Moreland, https://stocksnap.io/photo/canoe-lake-O5VETKRCGP
+Image in /images/demo/slide_demo_01.jpg: CCO by Bonnie Moreland, https://stocksnap.io/photo/canoe-lake-O5VETKRCGP
+Image in /images/demo/slide_demo_01.jpg: CCO by Bob Richards, https://stocksnap.io/photo/rocky-mountain-HWGBH04CZO
+https://stocksnap.io/license/
 
 == Installation ==
 
@@ -67,6 +66,15 @@ View the settings under Appearance -> ALBAR Settings.
 3. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.7.73
+* Style fixes/tweaks
+* Updated screenshot.png
+* Updated Font Awesome & all icons
+* Fixed some escaped & sanitization functions
+* Added wp_body_open function for newer WP compatibility
+* Added WooCustomizer as a recommended plugin
+* Updated language .pot file
 
 #### 1.7.72
 * Minor tweaks & fixes

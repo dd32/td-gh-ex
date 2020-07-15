@@ -26,8 +26,8 @@ class alba_carousel extends WP_Widget {
 		$output .= $args['before_title'];
 			
 $output .= '<div class="alba-carousel-wrapper columns-' . esc_attr( $instance['columns'] ) . ' alba-carousel-remove-load" data-columns="' . esc_attr( $instance['columns'] ) . '">
-				<div class="alba-carousel-arrow-prev"><i class="fa fa-angle-left"></i></div>
-				<div class="alba-carousel-arrow-next"><i class="fa fa-angle-right"></i></div>
+				<div class="alba-carousel-arrow-prev"><i class="fas fa-angle-left"></i></div>
+				<div class="alba-carousel-arrow-next"><i class="fas fa-angle-right"></i></div>
 				
 				<div id="" class="alba-carousel alba-carousel-remove">';
 				
@@ -58,11 +58,11 @@ $output .= '<div class="alba-carousel-wrapper columns-' . esc_attr( $instance['c
                 $output .= '<div class="alba-carousel-block-meta">';
         						
                             if ( 'post' == get_post_type() ) :
-                    $output .= '<i class="fa fa-calendar"></i> ' . get_the_date();
+                    $output .= '<i class="fas fa-calendar"></i> ' . get_the_date();
                             endif;
                             
                             //if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
-                    $output .= '<span class="comments-link"><i class="fa fa-comments"></i>' . get_comments_number( __( '0', 'albar' ), __( '1', 'albar' ), __( '%', 'albar' ) ) . '</span>';
+                    $output .= '<span class="comments-link"><i class="fas fa-comments"></i>' . get_comments_number( __( '0', 'albar' ), __( '1', 'albar' ), __( '%', 'albar' ) ) . '</span>';
                             //endif;
                                 
         		$output .= '</div>';

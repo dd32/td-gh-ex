@@ -177,7 +177,7 @@ function kaira_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a><span class="byline"><span class="author vcard"> <i class="fa fa-user"></i> <a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'albar' ),
+	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a><span class="byline"><span class="author vcard"> <i class="fas fa-user"></i> <a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'albar' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		$time_string,
@@ -212,6 +212,21 @@ function kaira_categorized_blog() {
 		return false;
 	}
 }
+
+/**
+ * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+ */
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Fire the wp_body_open action.
+	 */
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 */
+		do_action( 'wp_body_open' );
+	}
+endif;
 
 /**
  * Flush out the transients used in kaira_categorized_blog

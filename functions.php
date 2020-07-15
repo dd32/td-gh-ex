@@ -4,7 +4,7 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.72' );
+define( 'KAIRA_THEME_VERSION' , '1.7.73' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -259,7 +259,7 @@ function kaira_scripts() {
         wp_enqueue_style( 'albar-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
     
-    wp_enqueue_style( 'albar-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
+    wp_enqueue_style( 'albar-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/all.min.css', array(), '5.9.0' );
 	wp_enqueue_style( 'albar-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
     
 	wp_enqueue_script( 'albar-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
@@ -334,10 +334,10 @@ function kaira_register_required_plugins() {
             'required'  => false,
         ),
         array(
-            'name'      => __( 'Linkt', 'albar' ),
-            'slug'      => 'linkt',
-            'required'  => false,
-        ),
+			'name'      => __( 'WooCustomizer', 'albar' ),
+			'slug'      => 'woocustomizer',
+			'required'  => false,
+		),
         array(
             'name'      => __( 'HubSpot', 'albar' ),
             'slug'      => 'leadin',
@@ -368,7 +368,7 @@ function kaira_recommended_plugin_notice() {
         echo '<div class="updated albar-conica-notice"><p>';
         printf( __( '<a href="%1$s" class="albar-conica-notice-close"></a></p>', 'albar' ), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
             <?php printf( __( '<p style="color: red;">LATEST UPDATE: Requires WooCommerce 3.3 or more</p><p>We recommend rather trying out our NEW Power theme, Avant - <a href="%1$s" class="albar-notice-a">Download and try Avant now</a> Currently on a <a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">flash sale for only $19</a></p><p>With 7 header layouts, 5 Blog layouts and 3 Footer layouts, full website color options and lots of other customization settings, you\'ll be able to create the perfect site. All built within the WordPress Customizer.<br /><b>If not, Albar will still work and we will keep it updated.</b></p>', 'albar' ), admin_url( 'theme-install.php?search=avant' ) ); ?>
-            <a href="<?php echo esc_url( admin_url( 'theme-install.php?search=avant' ) ); ?>" class="albar-conica-img"><img src="<?php echo get_template_directory_uri(); ?>/images/conica-screenshot.png" alt="<?php esc_attr_e( 'Try out Avant instead', 'albar' ); ?>" /></a>
+            <a href="<?php echo esc_url( admin_url( 'theme-install.php?search=avant' ) ); ?>" class="albar-conica-img"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/conica-screenshot.png" alt="<?php esc_attr_e( 'Try out Avant instead', 'albar' ); ?>" /></a>
         <?php
         echo '</p></div>';
     }

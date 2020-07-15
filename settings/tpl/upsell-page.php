@@ -27,8 +27,8 @@
                 </span>
             </div>
             <div class="premium-albar-block-right">
-                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-header-one.jpg" alt="Albar header layout one" /><br /><br />
-                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-header-two.jpg" alt="Albar header layout two" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/settings/images/albar-header-one.jpg" alt="Albar header layout one" /><br /><br />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/settings/images/albar-header-two.jpg" alt="Albar header layout two" />
             </div>
             <div class="clearboth"></div>
         </div>
@@ -41,7 +41,7 @@
                 </span>
             </div>
             <div class="premium-albar-block-right">
-                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-sticky-header.jpg" alt="Albar sticky header" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/settings/images/albar-sticky-header.jpg" alt="Albar sticky header" />
             </div>
             <div class="clearboth"></div>
         </div>
@@ -54,7 +54,7 @@
                 </span>
             </div>
             <div class="premium-albar-block-right">
-                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-slider-transitions.jpg" alt="Albar slider transitions" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/settings/images/albar-slider-transitions.jpg" alt="Albar slider transitions" />
             </div>
             <div class="clearboth"></div>
         </div>
@@ -67,7 +67,7 @@
                 </span>
             </div>
             <div class="premium-albar-block-right">
-                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-blog-layout.jpg" alt="Albar blog layout" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/settings/images/albar-blog-layout.jpg" alt="Albar blog layout" />
             </div>
             <div class="clearboth"></div>
         </div>
@@ -80,7 +80,7 @@
                 </span>
             </div>
             <div class="premium-albar-block-right">
-                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-woocommerce-styling.jpg" alt="Albar WooCommerce Styling" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/settings/images/albar-woocommerce-styling.jpg" alt="Albar WooCommerce Styling" />
             </div>
             <div class="clearboth"></div>
         </div>

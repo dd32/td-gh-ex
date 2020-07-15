@@ -38,10 +38,10 @@
             <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             <div class="entry-meta">
                 <?php if ( 'post' == get_post_type() ) : ?>
-                    <i class="fa fa-calendar"></i> <?php kaira_posted_on(); ?>
+                    <i class="fas fa-calendar"></i> <?php kaira_posted_on(); ?>
                 <?php endif; ?>
                 <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-                    <span class="comments-link"><i class="fa fa-comments"></i>  <?php comments_popup_link( __( '0 comments', 'albar' ), __( '1 Comment', 'albar' ), __( '% Comments', 'albar' ) ); ?></span>
+                    <span class="comments-link"><i class="fas fa-comments"></i>  <?php comments_popup_link( __( '0 comments', 'albar' ), __( '1 Comment', 'albar' ), __( '% Comments', 'albar' ) ); ?></span>
                 <?php endif; ?>
             </div>
         </header>
@@ -56,7 +56,7 @@
                 $categories_list = get_the_category_list( __( ', ', 'albar' ) );
                 if ( $categories_list && kaira_categorized_blog() ) : ?>
                 <span class="cat-links">
-                    <i class="fa fa-list"></i> <?php printf( __( 'Posted in %1$s', 'albar' ), $categories_list ); ?>
+                    <i class="fas fa-list"></i> <?php printf( __( 'Posted in %1$s', 'albar' ), $categories_list ); ?>
                 </span>
                 <?php endif; ?>
 
@@ -64,7 +64,7 @@
                 $tags_list = get_the_tag_list( '', __( ', ', 'albar' ) );
                 if ( $tags_list ) : ?>
                 <span class="tags-links">
-                    <i class="fa fa-tags"></i> <?php printf( __( 'Tags %1$s', 'albar' ), $tags_list ); ?>
+                    <i class="fas fa-tags"></i> <?php printf( __( 'Tags %1$s', 'albar' ), $tags_list ); ?>
                 </span>
                 <?php endif; ?>
             </div>

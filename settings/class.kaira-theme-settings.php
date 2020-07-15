@@ -25,7 +25,7 @@ class Kaira_theme_settings {
         $this->sections['social']   = __( 'Social Links', 'albar' );
         $this->sections['website']   = __( 'Website Text', 'albar' );
         
-		$this->sections['premium']     = __( '', 'albar' );
+		$this->sections['premium']     = '';
 		
 		add_action( 'admin_menu', array( &$this, 'kaira_add_pages' ) );
         
@@ -283,7 +283,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-one'] = array(
             'section' => 'general',
             'title'   => __( 'Header Layout', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -304,7 +304,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-two'] = array(
             'section' => 'general',
             'title'   => __( 'Sticky Header', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -343,7 +343,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-three'] = array(
             'section' => 'slider',
             'title'   => __( 'Slider Transitions', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -385,7 +385,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-three-two'] = array(
             'section' => 'slider',
             'title'   => __( 'Remove Slider Text', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -478,7 +478,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-four'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Layout', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'upsell',
             'std'     => ''
         );
@@ -517,126 +517,126 @@ class Kaira_theme_settings {
         $this->settings['kra-social-email'] = array(
             'section' => 'social',
             'title'   => __( 'Email Address', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'text',
             'std'     => ''
         );
         $this->settings['kra-social-skype'] = array(
             'section' => 'social',
             'title'   => __( 'Skype', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'text',
             'std'     => ''
         );
         $this->settings['kra-social-facebook'] = array(
             'section' => 'social',
             'title'   => __( 'Facebook', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-twitter'] = array(
             'section' => 'social',
             'title'   => __( 'Twitter', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-google-plus'] = array(
             'section' => 'social',
             'title'   => __( 'Google Plus', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-youtube'] = array(
             'section' => 'social',
             'title'   => __( 'YouTube', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-instagram'] = array(
             'section' => 'social',
             'title'   => __( 'Instagram', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-pinterest'] = array(
             'section' => 'social',
             'title'   => __( 'Pinterest', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-linkedin'] = array(
             'section' => 'social',
             'title'   => __( 'LinkedIn', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-tumblr'] = array(
             'section' => 'social',
             'title'   => __( 'Tumblr', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-medium'] = array(
             'section' => 'social',
             'title'   => __( 'Medium', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-etsy'] = array(
             'section' => 'social',
             'title'   => __( 'Etsy', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-yelp'] = array(
             'section' => 'social',
             'title'   => __( 'Yelp', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-behance'] = array(
             'section' => 'social',
             'title'   => __( 'Behance', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-slack'] = array(
             'section' => 'social',
             'title'   => __( 'Slack', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-houzz'] = array(
             'section' => 'social',
             'title'   => __( 'Houzz', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-vk'] = array(
             'section' => 'social',
             'title'   => __( 'VK', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-flickr'] = array(
             'section' => 'social',
             'title'   => __( 'Flickr', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
@@ -647,28 +647,28 @@ class Kaira_theme_settings {
         $this->settings['kra-website-txt-address'] = array(
             'section' => 'website',
             'title'   => __( 'Address', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'text',
             'std'     => 'Incolm Place, Cape Town, South Africa'
         );
         $this->settings['kra-website-txt-email-txt'] = array(
             'section' => 'website',
             'title'   => __( 'Header Email Text', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'text',
             'std'     => 'Email Us'
         );
         $this->settings['kra-website-txt-email'] = array(
             'section' => 'website',
             'title'   => __( 'Email Address', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'text',
             'std'     => 'hello@albar.com'
         );
         $this->settings['kra-website-txt-phone'] = array(
             'section' => 'website',
             'title'   => __( 'Phone Number', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'text',
             'std'     => '+27 82 444 4444'
         );
@@ -682,7 +682,7 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-upsell-five'] = array(
             'section' => 'website',
             'title'   => __( 'Footer Copy Text', 'albar' ),
-            'desc'    => __( '', 'albar' ),
+            'desc'    => '',
             'type'    => 'upsell',
             'std'     => ''
         );

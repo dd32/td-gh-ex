@@ -1,7 +1,7 @@
 <div class="wrap upgrade-page-wrap">
     
     <h2 class="upgrade-page-title">
-        <?php _e( 'About Albar', 'albar' ); ?>
+        <?php esc_html_e( 'About Albar', 'albar' ); ?>
     </h2>
     
     <div class="upgrade-page-inner-wrap">
@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/theme/albar/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Albar Premium </span><em>$15</em>', 'albar' ) ); ?>
+                    <?php printf( __( '<span>Albar Premium </span><em>$18</em>', 'albar' ) ); ?>
                 </a>
             </div>
             
@@ -48,7 +48,7 @@
                     <?php printf( __( "If you've enjoyed using our Albar theme to build your website, then you should love the premium version which comes with a bunch of extra features for a low cost of <strong>$20</strong>.<br /><br />With Albar premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'albar' ) ); ?>
                 </div>
                 <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-payment.png" alt="<?php _e( 'Upgrade to Premium', 'albar' ); ?>" />
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/upgrade/images/upgrade-payment.png" alt="<?php _e( 'Upgrade to Premium', 'albar' ); ?>" />
                 </div>
                 <div class="clearboth"></div>
             </div>
@@ -59,7 +59,7 @@
                     <?php printf( __( "Once you upgrade to Albar Premium, you'll then support and move over to our premium updates system which will ensure Albar works with all future versions of WordPress that are released.", 'albar' ) ); ?>
                 </div>
                 <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-updates.png" alt="<?php _e( 'Continued Updates', 'albar' ); ?>" />
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/upgrade/images/upgrade-updates.png" alt="<?php _e( 'Continued Updates', 'albar' ); ?>" />
                 </div>
                 <div class="clearboth"></div>
             </div>
@@ -70,7 +70,7 @@
                     <?php printf( __( "Upgrading to albar Premium will also give you prioritized support, ensuring we get to your queries first.<br /><br />We have a growing <a href='https://kairaweb.com/support/' target='_blank'>support forum</a> on our website as well as <a href='https://kairaweb.com/support-contact/' target='_blank'>email support</a> to sort out any queries you may have.", 'albar' ) ); ?>
                 </div>
                 <div class="upgrade-page-left-box-right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-support.png" alt="<?php _e( 'Get Premium Support', 'albar' ); ?>" />
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/upgrade/images/upgrade-support.png" alt="<?php _e( 'Get Premium Support', 'albar' ); ?>" />
                 </div>
                 <div class="clearboth"></div>
             </div>

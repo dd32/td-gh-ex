@@ -62,7 +62,7 @@ class alba_heading extends WP_Widget {
         
         <p>
             <label for="<?php echo $this->get_field_id( 'heading-text' ) ?>"><?php echo __( 'Heading Text', 'albar' ) ?></label>
-            <textarea class="widefat" name="<?php echo $this->get_field_name( 'heading-text' ) ?>" id="<?php echo $this->get_field_id( 'heading-text' ) ?>"><?php echo esc_attr( $instance['heading-text'] ) ?></textarea>
+            <textarea class="widefat" name="<?php echo $this->get_field_name( 'heading-text' ) ?>" id="<?php echo $this->get_field_id( 'heading-text' ) ?>"><?php echo esc_html( $instance['heading-text'] ) ?></textarea>
         </p>
 		
 		<p>

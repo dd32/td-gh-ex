@@ -18,32 +18,32 @@ endif; ?>
                         if ( kaira_is_woocommerce_activated() ) { ?>
                             
                             <?php if ( is_user_logged_in() ) { ?>
-                                <div class="site-header-right-link"><i class="fa fa-user"></i> <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','albar'); ?>"><?php _e('My Account','albar'); ?></a></div>
+                                <div class="site-header-right-link"><i class="fas fa-user"></i> <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','albar'); ?>"><?php _e('My Account','albar'); ?></a></div>
                             <?php } else { ?>
-                                <div class="site-header-right-link"><i class="fa fa-user"></i> <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','albar'); ?>"><?php _e('Sign In / Register','albar'); ?></a></div>
+                                <div class="site-header-right-link"><i class="fas fa-user"></i> <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','albar'); ?>"><?php _e('Sign In / Register','albar'); ?></a></div>
                             <?php } ?>
                         
                         <?php
                         } ?>
                         
-                        <i class="fa fa-map-marker"></i> <?php echo wp_kses_post( kaira_theme_option( 'kra-website-txt-address' ) ) ?>
+                        <i class="fas fa-map-marker-alt"></i> <?php echo wp_kses_post( kaira_theme_option( 'kra-website-txt-address' ) ) ?>
                         
                     </div>
                     <?php endif; ?>
                     <div class="site-top-bar-right">
                         <?php if ( kaira_theme_option( 'kra-website-txt-email' ) ) : ?>
-                        <i class="fa fa-envelope-o"></i> <a href="<?php echo esc_url( 'mailto:' . antispambot( kaira_theme_option( 'kra-website-txt-email' ), 1 ) ) ?>"><?php echo ( kaira_theme_option( 'kra-website-txt-email-txt' ) ) ? esc_attr( kaira_theme_option( 'kra-website-txt-email-txt' ) ) : _e( 'Email', 'albar' ); ?></a>
+                        <i class="fas fa-envelope"></i> <a href="<?php echo esc_url( 'mailto:' . antispambot( kaira_theme_option( 'kra-website-txt-email' ), 1 ) ) ?>"><?php echo ( kaira_theme_option( 'kra-website-txt-email-txt' ) ) ? esc_attr( kaira_theme_option( 'kra-website-txt-email-txt' ) ) : _e( 'Email', 'albar' ); ?></a>
                         <?php endif; ?>
                         
                         <?php if ( kaira_theme_option( 'kra-website-txt-phone' ) ) : ?>
-                        <i class="fa fa-phone"></i> <?php echo wp_kses_post( kaira_theme_option( 'kra-website-txt-phone' ) ) ?>
+                        <i class="fas fa-phone"></i> <?php echo wp_kses_post( kaira_theme_option( 'kra-website-txt-phone' ) ) ?>
                         <?php endif; ?>
                         
                         <?php if ( kaira_is_woocommerce_activated() ) : ?>
                             <div class="header-cart">
                                 <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php _e('View your shopping cart', 'albar'); ?>">
                                     <span class="header-cart-checkout <?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
-                                        <i class="fa fa-shopping-cart"></i>
+                                        <i class="fas fa-shopping-cart"></i>
                                         <span><?php echo sprintf( _n( '%d item', '%d items', $woocommerce->cart->cart_contents_count, 'albar' ), $woocommerce->cart->cart_contents_count); ?></span>
                                     </span>
                                 </a>
@@ -52,7 +52,7 @@ endif; ?>
                         
                         <?php if ( kaira_theme_option( 'kra-header-search' ) == 1 ) : ?>
                             <div class="search-button">
-                                <i class="fa fa-search"></i>
+                                <i class="fas fa-search"></i>
                             </div>
                         <?php endif; ?>
                         
@@ -79,9 +79,9 @@ endif; ?>
                             <?php get_template_part( '/includes/inc/social-links' ); ?>
                         </div>
                         <nav id="site-navigation" class="navigation-main" role="navigation">
-                            <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo _e( 'Menu', 'albar' ); ?></span></span>
+                            <span class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo _e( 'Menu', 'albar' ); ?></span></span>
                             <div id="main-menu" class="main-menu-container">
-                                <div class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></div>
+                                <div class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></div>
                                 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
                             </div>
                         </nav><!-- #site-navigation -->

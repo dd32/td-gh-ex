@@ -17,7 +17,7 @@
 	<?php endif; ?>
 	<div class="footer-bottom-bar site-pad">
 		
-        <?php printf( __( '<div class="site-container"><div class="scroll-to-top"><i class="fa fa-angle-up"></i></div><div class="footer-left">Theme: %1$s by %2$s', 'albar' ), 'Albar', '<a href="http://www.kairaweb.com/" rel="designer">Kaira</a></div><div class="footer-right">' ); ?>
+        <?php printf( __( '<div class="site-container"><div class="scroll-to-top"><i class="fas fa-angle-up"></i></div><div class="footer-left">Theme: %1$s by %2$s', 'albar' ), 'Albar', '<a href="http://www.kairaweb.com/" rel="designer">Kaira</a></div><div class="footer-right">' ); ?>
 			
 			<?php get_template_part( '/includes/inc/social-links' ); ?>
 			

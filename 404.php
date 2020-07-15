@@ -11,7 +11,7 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 				
 				<article id="post-0" class="post not-found">
-                    <i class="fa fa-ban"></i>
+                    <i class="fas fa-ban"></i>
                     
 					<header class="entry-header">
 						<h1 class="entry-title"><?php echo wp_kses_post( kaira_theme_option( 'kra-website-error-head' ) ) ?></h1>

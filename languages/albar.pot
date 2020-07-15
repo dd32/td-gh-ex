@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2019-08-29 15:30+0200\n"
+"POT-Creation-Date: 2020-07-15 09:11+0200\n"
 "PO-Revision-Date: 2016-08-20 13:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -149,7 +149,7 @@ msgstr ""
 #: footer.php:20
 #, php-format
 msgid ""
-"<div class=\"site-container\"><div class=\"scroll-to-top\"><i class=\"fa fa-"
+"<div class=\"site-container\"><div class=\"scroll-to-top\"><i class=\"fas fa-"
 "angle-up\"></i></div><div class=\"footer-left\">Theme: %1$s by %2$s"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: functions.php:337
-msgid "Linkt"
+msgid "WooCustomizer"
 msgstr ""
 
 #: functions.php:342
@@ -784,8 +784,9 @@ msgstr ""
 #, php-format
 msgid ""
 "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</a><span class=\"byline"
-"\"><span class=\"author vcard\"> <i class=\"fa fa-user\"></i> <a class=\"url "
-"fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+"\"><span class=\"author vcard\"> <i class=\"fas fa-user\"></i> <a class="
+"\"url fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></"
+"span>"
 msgstr ""
 
 #: includes/inc/template-tags.php:185
@@ -1508,7 +1509,7 @@ msgid "About Albar"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:13
-msgid "<span>Albar Premium </span><em>$15</em>"
+msgid "<span>Albar Premium </span><em>$18</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:18
