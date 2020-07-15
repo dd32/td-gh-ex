@@ -4,7 +4,7 @@ Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-background, cus
 custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments,
 translation-ready, sticky-post, theme-options, footer-widgets, full-width-template,
 front-page-post-form
-Tested up to: 5.3
+Tested up to: 5.4.1
 Stable tag: 1.2.0
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.6 =
+* Bug fix: make main menu accessible for keyboard navigation under IE and Edge browsers
 
 = 1.3.5 =
 * move 'Requires PHP' and 'Requires at least' tags into style.css
