@@ -148,13 +148,13 @@
 
     // add support of browsers which don't support focus-within
     $('#navmain > div > ul > li > a:not(.login-form-icon):not(.search-form-icon), #navmain > div > ul > li > ul > li > a, #navmain > div > ul > li > ul > li > ul > li > a, .mega-menu-sub-menu')
-      .hover(function() {
+      .bind('hover focus', function() {
         $(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
         $(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
 
         if (!$(this).parent().find('#cart-popup-content').length && $('#cart-popup-content').css('z-index') != '-1')
           $('#cart-popup-content').css('z-index', '-1');
-      }, function() {
+      }).bind('mouseleave blur', function() {
         $(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
         $(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
     });										
