@@ -4,7 +4,6 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -128,6 +127,11 @@ Advance Business is a powerful, bold, flexible, dynamic and neatly-structured bu
   * Added copyright padding.
   * Added show and hide single post image.
 
+= 0.4.9 =
+  * Added the license of font awesome in readme.txt.
+  * Done with prefixing in custom.js.
+  * Changed sanitize callback function.
+
 == Resources ==
 
 Advance Business WordPress Theme, Copyright 2018 Themeshopy
@@ -146,7 +150,7 @@ Theme is Built using the following resource bundles.
     - Davegandy
     - copyright July 12, 2018, Davegandy
     - https://github.com/FortAwesome/Font-Awesome.git
-    - License: Font Awesome Free License v5.0.0
+    - License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
     - https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 3. Customizer Pro 

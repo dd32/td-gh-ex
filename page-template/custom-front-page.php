@@ -34,10 +34,10 @@ get_header(); ?>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php esc_html(the_title()); ?></h1>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_business_slider_excerpt_length','20')))); ?></p>
                   <div class="know-btn">
-                    <a href="<?php esc_url(the_permalink()); ?>"> <?php echo esc_html_e('READ MORE','advance-business'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-business' ); ?></span></a>
+                    <a href="<?php the_permalink(); ?>"> <?php echo esc_html_e('READ MORE','advance-business'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-business' ); ?></span></a>
                   </div>
                 </div>
               </div>
@@ -70,48 +70,48 @@ get_header(); ?>
         <div class="contact-box">
           <div class="row">
             <div class="col-lg-4 col-md-4">
-              <?php if( get_theme_mod( 'advance_business_location','' ) != '') { ?>
-              <div class="contact">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3">
-                    <i class="fas fa-map"></i>
-                  </div>
-                  <div class="col-lg-9 col-md-9">
-                    <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_location_title','')); ?> </p>
-                    <p><?php echo esc_html( get_theme_mod('advance_business_location','')); ?></p>
+              <?php if( get_theme_mod( 'advance_business_location','' ) != '' || get_theme_mod( 'advance_business_location_title','' ) != '') { ?>
+                <div class="contact">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                      <i class="fas fa-map"></i>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                      <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_location_title','')); ?> </p>
+                      <p><?php echo esc_html( get_theme_mod('advance_business_location','')); ?></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               <?php } ?>
             </div>
             <div class="col-lg-4 col-md-4">
-              <?php if( get_theme_mod( 'advance_business_email','' ) != '') { ?>
-              <div class="contact">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-9 col-md-9">
-                    <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_email_title','')); ?> </p>
-                    <p><?php echo esc_html( get_theme_mod('advance_business_email','') ); ?></p>                    
+              <?php if( get_theme_mod( 'advance_business_email','' ) != '' || get_theme_mod( 'advance_business_email_title','' ) != '') { ?>
+                <div class="contact">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                      <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_email_title','')); ?> </p>
+                      <p><?php echo esc_html( get_theme_mod('advance_business_email','') ); ?></p>                    
+                    </div>
                   </div>
                 </div>
-              </div>
               <?php } ?>
             </div>
             <div class="col-lg-4 col-md-4">
-             <?php if( get_theme_mod( 'advance_business_contact','' ) != '') { ?>
-              <div class="contact">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-lg-9 col-md-9">
-                    <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_contact_title','')); ?> </p>
-                    <p><?php echo esc_html( get_theme_mod('advance_business_contact','')); ?></p>                    
+             <?php if( get_theme_mod( 'advance_business_contact','' ) != '' || get_theme_mod( 'advance_business_contact_title','' ) != '') { ?>
+                <div class="contact">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                      <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_contact_title','')); ?> </p>
+                      <p><?php echo esc_html( get_theme_mod('advance_business_contact','')); ?></p>                    
+                    </div>
                   </div>
                 </div>
-              </div>
               <?php } ?>
             </div>
           </div>
@@ -145,7 +145,7 @@ get_header(); ?>
                   </div>
                   <div class="col-lg-6 col-md-6 p-0">
                     <div class="project_content">
-                      <a href="<?php esc_url(the_permalink()); ?>"><h3><?php esc_html(the_title()); ?></h3><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                      <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3><span class="screen-reader-text"><?php the_title(); ?></span></a>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt,12 ) ); ?></p>
                       <div class="know-btn">
                         <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Know More', 'advance-business' ); ?>"><?php esc_html_e('Know More','advance-business'); ?><i class="fas fa-angle-double-right"></i>
