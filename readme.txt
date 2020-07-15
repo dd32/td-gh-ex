@@ -4,7 +4,6 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-c
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -131,6 +130,11 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Added copyright padding.
   * Added show and hide single post image.
 
+= 0.5 =
+  * Added the license of font awesome in readme.txt.
+  * Done with prefixing in custom.js.
+  * Changed sanitize callback function.
+
 == Resources ==
 
 Advance Coaching WordPress Theme, Copyright 2018 Themeshopy
@@ -138,23 +142,40 @@ Advance Coaching is distributed under the terms of the GNU GPL
 
 Theme is Built using the following resource bundles.
 
-* CSS bootstrap.css
-  -- Copyright 2011-2018 The Bootstrap Authors
-  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
-    
-* JS bootstrap.js
-  -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+1. Bootstrap 
+  - Mark Otto
+  - copyright 2011-2020, Mark Otto
+  - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
+  - License: Code released under the MIT License. v4.4.1
+  - https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-* Free to use and abuse under the MIT license.
-  -- http://www.opensource.org/licenses/mit-license.php
-  -- font-awesome.css and fonts folder
-  Font Awesome 5.0.0 by @davegandy - http://fontawesome.io - @fontawesome
-  -- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+2. Font-Awesome 
+  - Davegandy
+  - copyright July 12, 2018, Davegandy
+  - https://github.com/FortAwesome/Font-Awesome.git
+  - License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+  - https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
-* Customizer Pro, Copyright 2016 © Justin Tadlock.
-  License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-  Source: https://github.com/justintadlock/trt-customizer-pro
+3. Customizer Pro 
+  - Justin Tadlock
+  - Copyright 2016, Justin Tadlock
+  - https://github.com/justintadlock/trt-customizer-pro.git
+  - License: GNU General Public License v2.0
+  - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+4. Superfish 
+  - Joeldbirch
+  - Copyright 2013, Justin Tadlock
+  - https://github.com/joeldbirch/superfish.git
+  - License: Free to use and abuse under the MIT license. v1.7.9
+  - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
+
+5. SmoothScroll
+  - Balazs Galambosi
+  - Copyright 2010-2015, Balazs Galambosi
+  - http://www.smoothscroll.net/
+  - License: Licensed under the terms of the MIT license.
+  - https://github.com/gblazex/smoothscroll-for-websites/blob/master/LICENSE
 
 * Screenshot Images.
   License: CC0 1.0 Universal (CC0 1.0) 

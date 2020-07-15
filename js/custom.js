@@ -9,26 +9,26 @@ jQuery(function($){
 });
 
 function advance_coaching_resmenu_open() {
-  window.mobileMenu=true;
+  window.advance_coaching_mobileMenu=true;
   jQuery(".sidebar").addClass('display');
 }
 function advance_coaching_resmenu_close() {
-  window.mobileMenu=false;
+  window.advance_coaching_mobileMenu=false;
   jQuery(".sidebar").removeClass('display');
 }
 
 jQuery(document).ready(function () {
 
-  window.currentfocus=null;
+  window.advance_coaching_currentfocus=null;
   advance_coaching_checkfocusdElement();
-  var body = document.querySelector('body');
-  body.addEventListener('keyup', advance_coaching_check_tab_press);
-  var gotoHome = false;
-  var gotoClose = false;
-  window.mobileMenu=false;
+  var advance_coaching_body = document.querySelector('body');
+  advance_coaching_body.addEventListener('keyup', advance_coaching_check_tab_press);
+  var advance_coaching_gotoHome = false;
+  var advance_coaching_gotoClose = false;
+  window.advance_coaching_mobileMenu=false;
   function advance_coaching_checkfocusdElement(){
-    if(window.currentfocus=document.activeElement.className){
-      window.currentfocus=document.activeElement.className;
+    if(window.advance_coaching_currentfocus=document.activeElement.className){
+      window.advance_coaching_currentfocus=document.activeElement.className;
     }
   }
   function advance_coaching_check_tab_press(e) {
@@ -39,21 +39,21 @@ jQuery(document).ready(function () {
 
     if(window.innerWidth < 999){
       if (e.keyCode == 9) {
-        if(window.mobileMenu){
+        if(window.advance_coaching_mobileMenu){
           if (!e.shiftKey) {
-            if(gotoHome) {
+            if(advance_coaching_gotoHome) {
               jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).focus();
             }
           }
           if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
-            gotoHome = true;
+            advance_coaching_gotoHome = true;
           } else {
-            gotoHome = false;
+            advance_coaching_gotoHome = false;
           }
 
       }else{
 
-          if(window.currentfocus=="mobiletoggle"){
+          if(window.advance_coaching_currentfocus=="mobiletoggle"){
             jQuery( "" ).focus();
           }
         }
@@ -61,22 +61,22 @@ jQuery(document).ready(function () {
     }
     if (e.shiftKey && e.keyCode == 9) {
       if(window.innerWidth < 999){
-        if(window.currentfocus=="header-search"){
+        if(window.advance_coaching_currentfocus=="header-search"){
           jQuery(".mobiletoggle").focus();
         }else{
-          if(window.mobileMenu){
-            if(gotoClose){
+          if(window.advance_coaching_mobileMenu){
+            if(advance_coaching_gotoClose){
               jQuery("a.closebtn.responsive-menu").focus();
             }
             if (jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).is(":focus")) {
-              gotoClose = true;
+              advance_coaching_gotoClose = true;
             } else {
-              gotoClose = false;
+              advance_coaching_gotoClose = false;
           }
         
         }else{
 
-          if(window.mobileMenu){
+          if(window.advance_coaching_mobileMenu){
           }
         }
 

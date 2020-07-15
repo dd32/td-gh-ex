@@ -32,10 +32,10 @@ get_header(); ?>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php esc_html(the_title()); ?></h1>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_coaching_slider_excerpt_length','20')))); ?></p>
                   <div class="read-btn">
-                    <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span></a>
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span></a>
                   </div>
                 </div>
               </div>
@@ -81,14 +81,14 @@ get_header(); ?>
                 <div class="box">
                   <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                   <div class="box-content">
-                    <h4 class="title"><?php esc_html(the_title()); ?></h4>
+                    <h4 class="title"><?php the_title(); ?></h4>
                     <p class="description">
                       <?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt,15 ) ); ?>
                     </p> 
                   </div>
                 </div>
                 <div class="read-more">
-                  <a href="<?php esc_url(the_permalink()); ?>" class="blogbutton-small"><?php esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span>
+                  <a href="<?php the_permalink(); ?>" class="blogbutton-small"><?php esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span>
                   </a>
                 </div>
               </div> 
