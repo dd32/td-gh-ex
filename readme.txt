@@ -3,7 +3,7 @@ Contributors: ayatemplates
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header,
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
-Tested up to: 5.3
+Tested up to: 5.4.1
 Stable tag: 1.2.1
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
@@ -41,6 +41,9 @@ Installation using 'Add New Theme'
 
 
 == Changelog ==
+
+= 1.2.8 =
+* Main Menu: fix issue with keyboard navigation under IE and Edge
 
 = 1.2.7 =
 * Blocks CSS updates for WordPress 5.3

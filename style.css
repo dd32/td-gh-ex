@@ -4,13 +4,14 @@ Description: AyaEstate is Fully Responsive WordPress Theme. Features include Ani
 Theme URI: https://ayatemplates.com/product/ayaestate
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.2.7
+Version: 1.2.8
 Text Domain: ayaestate
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
+Tested up to: 5.4.1
 */
 
 /* general styles */
@@ -151,9 +152,6 @@ article,
 	line-height:1.5;
 }
 
-.jcarousel-skin h3 {
-	font-size:16px;
-}
 
 h1, h2, h3, h4, h5, h6{
 	font-weight:400;
@@ -286,12 +284,16 @@ ol > li {
 	margin:0;
 }
 
-ol {
+article ol {
 	padding:0 0 0 30px;
 }
 
-ul {
+article ul {
 	padding:0 0 0 15px;
+}
+
+ul, ol {
+	padding:0;
 }
 
 .widget > ul,
@@ -450,14 +452,58 @@ article ul > li:before {
 	padding-left:10px;
 }
 
-.single-social-widget {	
-	padding:1px 0 0 0;
-	margin:1px 0 0 0;
+.single-social-widget {
 	clear:both;
 }
 
+.single-social-widget .social32 {
+	float:left;
+}
+
 .single-social-widget p {
-	margin-left:5px;
+	line-height:40px;
+	font-size:14px;
+}
+
+.single-social-widget .facebook32:before {
+	content: "\f09a";
+	color:#FFFFFF;
+	background-color:#3B5998;
+}
+
+.single-social-widget .twitter32:before {
+	content: "\f099";
+	color:#FFFFFF;
+	background-color:#00ACEE;
+}
+
+.single-social-widget .rss32:before {
+	content: "\f09e";
+	color:#FFFFFF;
+	background-color:#EE802F;
+}
+
+.single-social-widget .instagram32:before {
+	color:#FFFFFF;
+	background: #d6249f;
+  	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.single-social-widget .facebook32:before,
+.single-social-widget .twitter32:before,
+.single-social-widget .rss32:before,
+.single-social-widget .instagram32:before {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+.single-social-widget .social32 a {
+	width:100%;
+	height: auto;
 }
 
 #infoTxt {
@@ -567,12 +613,15 @@ button {
 input[type="submit"],
 button,
 .btn,
-#main .button {
+#main .button,
+#main #respond input[type="submit"],
+#main-content-wrapper .woocommerce .checkout-button,
+#main-content-wrapper .woocommerce #place_order {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
 	border:none;
-	color:#ffffff;
+	color:#ffffff !important;
 	background-image: -ms-linear-gradient(top, #aa0100 0%, #a81010 100%);
 	background-image: -moz-linear-gradient(top, #aa0100 0%, #a81010 100%);
 	background-image: -o-linear-gradient(top, #aa0100 0%, #a81010 100%);
@@ -592,7 +641,10 @@ button,
 input[type="submit"]:hover,
 button:hover,
 #main .button:hover,
-.btn:hover {
+.btn:hover,
+#main #respond input[type="submit"]:hover,
+#main-content-wrapper .woocommerce .checkout-button:hover,
+#main-content-wrapper .woocommerce #place_order:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #a81010 0%, #aa0100 100%);
 	background-image: -moz-linear-gradient(top, #a81010 0%, #aa0100 100%);
@@ -668,7 +720,7 @@ blockquote, figure {
 	text-decoration:none;
 	background:#dddddd !important;
 	text-align:center;
-	margin-right:10px;
+	margin:0 10px 10px 0;
 	-webkit-border-radius:1px;
 	-moz-border-radius:1px;
 	-ms-border-radius:1px;
@@ -950,10 +1002,7 @@ pre {
 	display:inline;
 }
 
-/* thumbnails */
-img.wp-post-image {
-	margin:0 5px 5px 0;
-}
+
 
 /* calendar widget */
 .widget_calendar {
@@ -2028,8 +2077,6 @@ article .wp-block-video figcaption,
 article .wp-block-image figcaption,
 article .wp-block-gallery .blocks-gallery-image figcaption,
 article .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: 0.71111em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
@@ -2865,6 +2912,12 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		float:left;
 		width:48%;
 	}
+
+	.col3c {
+		margin: 0 auto !important;
+		float: none;
+		display: block;
+	}
 	
 	.col2a,
 	.col3a,
@@ -3013,14 +3066,14 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 
 	#header-content-wrapper {
 		margin:0 auto;
-		width:1160px;
+		width:960px;
 	}
 
 	#main-content-wrapper,
     #footer-content-wrapper,
     #footer-bottom-content-wrapper {
         margin:0 auto;
-        width:1150px;
+        width:950px;
     }
 
     #main-content-full {
