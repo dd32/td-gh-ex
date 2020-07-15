@@ -34,10 +34,10 @@ get_header(); ?>
               <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php esc_html(the_title()); ?></h1>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_education_slider_excerpt_length','20')))); ?></p>
                   <div class="readbtn">
-                    <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html_e('READ MORE','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-education' );?></span></a>
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-education' );?></span></a>
                   </div>
                 </div>
               </div>
@@ -89,17 +89,17 @@ get_header(); ?>
                     <div class="cat-posts ">
                       <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                       <div class="cat_body">
-                        <h3 class="title"><?php esc_html(the_title()); ?></h3>
+                        <h3 class="title"><?php the_title(); ?></h3>
                         <p class="description">
                           <?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt,12 ) ); ?>
                         </p> 
                         <div class="theme_button">
-                          <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html_e('APPLY NOW','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'APPLY NOW','advance-education' );?></span>
+                          <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('APPLY NOW','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'APPLY NOW','advance-education' );?></span>
                           </a>
                         </div>
                       </div>
                     </div>
-                    <h3 class="title-btn"><?php esc_html(the_title()); ?></h3>
+                    <h3 class="title-btn"><?php the_title(); ?></h3>
                   </div>
                 </div> 
               <?php endwhile;
