@@ -4,13 +4,14 @@ Description: AyaMagazine is Fully Responsive Magazine WordPress Theme perfect fo
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamagazine
-Version: 1.2.2
+Version: 1.2.3
 Text Domain: ayamagazine
 Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
+Tested up to: 5.4.1
 */
 
 /* general styles */
@@ -152,9 +153,6 @@ article,
 	line-height:1.5;
 }
 
-.jcarousel-skin h3 {
-	font-size:16px;
-}
 
 h1, h2, h3, h4, h5, h6{
 	font-weight:400;
@@ -289,12 +287,16 @@ ol > li {
 	margin:0;
 }
 
-ol {
+article ol {
 	padding:0 0 0 30px;
 }
 
-ul {
+article ul {
 	padding:0 0 0 15px;
+}
+
+ul, ol {
+	padding:0;
 }
 
 .widget > ul,
@@ -508,7 +510,7 @@ article ul > li:before {
 }
 
 #footer-main .post-date {
-	margin:0 0 0 14px;
+	margin:0 0 5px 0;
 }
 
 .footer-title {
@@ -557,7 +559,8 @@ button {
 input[type="submit"],
 button,
 .btn,
-#main .button {
+#main .button,
+#main #respond input[type="submit"] {
 	padding:12px 16px;
 	text-decoration:none;
 	font-weight:normal;
@@ -581,7 +584,8 @@ button,
 input[type="submit"]:hover,
 button:hover,
 #main .button:hover,
-.btn:hover {
+.btn:hover,
+#main #respond input[type="submit"]:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #FF9318 0%, #E86165 100%);
 	background-image: -moz-linear-gradient(top, #FF9318 0%, #E86165 100%);
@@ -608,7 +612,6 @@ blockquote:before,
 q:before {
 	font-family:'FontAwesome';
 	content: "\f10d";
-	color:#DEDEDE;
 	font-size:36px;
 	float:left;
 	margin:0 1% 0 0;
@@ -653,7 +656,7 @@ blockquote, figure {
 	text-decoration:none;
 	background:#dddddd !important;
 	text-align:center;
-	margin-right:10px;
+	margin:0 10px 10px 0;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	-ms-border-radius:5px;
@@ -1046,10 +1049,7 @@ blockquote, figure {
 	content: "\f008";
 }
 
-/* thumbnails */
-img.wp-post-image {
-	margin:0 5px 5px 0;
-}
+
 
 /* calendar widget */
 .widget_calendar {
@@ -2135,8 +2135,6 @@ article .wp-block-video figcaption,
 article .wp-block-image figcaption,
 article .wp-block-gallery .blocks-gallery-image figcaption,
 article .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: 0.71111em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
@@ -3030,7 +3028,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	#page-header-content,
 	#header-content-wrapper {
 		margin:0 auto;
-		width:1160px;
+		width:960px;
 	}
 	
 	.slider-content-container,
@@ -3041,7 +3039,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
     #footer-content-wrapper,
     #footer-bottom-content-wrapper    {
         margin:0 auto;
-        width:1150px;
+        width:950px;
     }
 
 	
