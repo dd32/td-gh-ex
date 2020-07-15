@@ -3,7 +3,7 @@ Contributors: ayatemplates
 Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background, custom-logo,
 custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
 sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
-Tested up to: 5.3
+Tested up to: 5.4.1
 Stable tag: 1.0.6
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.3 =
+* Main Menu: fix issue with keyboard navigation under IE and Edge
 
 = 1.3.2 =
 * Blocks CSS updates for WordPress 5.3
