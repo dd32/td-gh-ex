@@ -379,7 +379,6 @@ function bb_ecommerce_store_sanitize_dropdown_pages( $page_id, $setting ) {
 }
 
 /*radio button sanitization*/
-
  function bb_ecommerce_store_sanitize_choices( $input, $setting ) {
     global $wp_customize; 
     $control = $wp_customize->get_control( $setting->id ); 
@@ -388,6 +387,32 @@ function bb_ecommerce_store_sanitize_dropdown_pages( $page_id, $setting ) {
     } else {
         return $setting->default;
     }
+}
+
+function bb_ecommerce_store_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
+function bb_ecommerce_store_sanitize_email( $email, $setting ) {
+	$email = sanitize_email( $email );
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function bb_ecommerce_store_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
+function bb_ecommerce_store_sanitize_float( $input ) {
+	return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
+function bb_ecommerce_store_sanitize_number_range( $number, $setting ) {
+	$number = absint( $number );
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
 }
 
 // Change number or products per row to 3
