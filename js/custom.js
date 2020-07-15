@@ -9,26 +9,26 @@ jQuery(function($){
 });
 
 function bb_mobile_application_resmenu_open() {
-  	window.mobileMenu=true;
+  	window.bb_mobile_application_mobileMenu=true;
 	jQuery(".sidebar").addClass('display');
 }
 function bb_mobile_application_resmenu_close() {
-  	window.mobileMenu=false;
+  	window.bb_mobile_application_mobileMenu=false;
 	jQuery(".sidebar").removeClass('display');
 }
 
 jQuery(document).ready(function () {
 
-	window.currentfocus=null;
+	window.bb_mobile_application_currentfocus=null;
   	bb_mobile_application_checkfocusdElement();
-	var body = document.querySelector('body');
-	body.addEventListener('keyup', bb_mobile_application_check_tab_press);
-	var gotoHome = false;
-	var gotoClose = false;
-	window.mobileMenu=false;
+	var bb_mobile_application_body = document.querySelector('body');
+	bb_mobile_application_body.addEventListener('keyup', bb_mobile_application_check_tab_press);
+	var bb_mobile_application_gotoHome = false;
+	var bb_mobile_application_gotoClose = false;
+	window.bb_mobile_application_mobileMenu=false;
  	function bb_mobile_application_checkfocusdElement(){
-	 	if(window.currentfocus=document.activeElement.className){
-		 	window.currentfocus=document.activeElement.className;
+	 	if(window.bb_mobile_application_currentfocus=document.activeElement.className){
+		 	window.bb_mobile_application_currentfocus=document.activeElement.className;
 	 	}
  	}
 	function bb_mobile_application_check_tab_press(e) {
@@ -39,21 +39,21 @@ jQuery(document).ready(function () {
 
 		if(window.innerWidth < 999){
 			if (e.keyCode == 9) {
-				if(window.mobileMenu){
+				if(window.bb_mobile_application_mobileMenu){
 					if (!e.shiftKey) {
-						if(gotoHome) {
+						if(bb_mobile_application_gotoHome) {
 							jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).focus();
 						}
 					}
 					if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
-						gotoHome = true;
+						bb_mobile_application_gotoHome = true;
 					} else {
-						gotoHome = false;
+						bb_mobile_application_gotoHome = false;
 					}
 
 			}else{
 
-					if(window.currentfocus=="mobiletoggle"){
+					if(window.bb_mobile_application_currentfocus=="mobiletoggle"){
 						jQuery( "" ).focus();
 					}
 				}
@@ -61,22 +61,22 @@ jQuery(document).ready(function () {
 		}
 		if (e.shiftKey && e.keyCode == 9) {
 			if(window.innerWidth < 999){
-				if(window.currentfocus=="header-search"){
+				if(window.bb_mobile_application_currentfocus=="header-search"){
 					jQuery(".mobiletoggle").focus();
 				}else{
-					if(window.mobileMenu){
-						if(gotoClose){
+					if(window.bb_mobile_application_mobileMenu){
+						if(bb_mobile_application_gotoClose){
 							jQuery("a.closebtn.responsive-menu").focus();
 						}
 						if (jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).is(":focus")) {
-							gotoClose = true;
+							bb_mobile_application_gotoClose = true;
 						} else {
-							gotoClose = false;
+							bb_mobile_application_gotoClose = false;
 					}
 				
 				}else{
 
-					if(window.mobileMenu){
+					if(window.bb_mobile_application_mobileMenu){
 					}
 				}
 

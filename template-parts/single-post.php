@@ -13,14 +13,14 @@
   $archive_day   = get_the_time('d'); 
 ?>
 <article class="page-box-single">
-	<h1><?php esc_html(the_title()); ?></h1>
+	<h1><?php the_title(); ?></h1>
 	<?php if( get_theme_mod( 'bb_mobile_application_date_hide',true) != '' || get_theme_mod( 'bb_mobile_application_author_hide',true) != '' || get_theme_mod( 'bb_mobile_application_comment_hide',true) != '') { ?>
 		<div class="metabox">
 			<?php if( get_theme_mod( 'bb_mobile_application_date_hide',true) != '') { ?>
 				<span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
 			<?php } ?>
 			<?php if( get_theme_mod( 'bb_mobile_application_author_hide',true) != '') { ?>
-				<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?></a>
+				<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
 				</span>
 			<?php } ?>
 			<?php if( get_theme_mod( 'bb_mobile_application_comment_hide',true) != '') { ?>

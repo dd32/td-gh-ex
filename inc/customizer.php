@@ -448,7 +448,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	// woocommerce section
 	$wp_customize->add_setting('bb_mobile_application_show_related_products',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_show_related_products',array(
        'type' => 'checkbox',
@@ -458,7 +458,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_show_wooproducts_border',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_show_wooproducts_border',array(
        'type' => 'checkbox',
@@ -485,7 +485,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_wooproducts_per_page',array(
 		'default'	=> 9,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));	
 	$wp_customize->add_control('bb_mobile_application_wooproducts_per_page',array(
 		'label'	=> __('Display Product Per Page','bb-mobile-application'),
@@ -495,10 +495,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_top_bottom_wooproducts_padding',array(
 		'default' => 10,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control( 'bb_mobile_application_top_bottom_wooproducts_padding',	array(
 		'label' => esc_html__( 'Top Bottom Product Padding','bb-mobile-application' ),
@@ -513,10 +510,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_left_right_wooproducts_padding',array(
 		'default' => 10,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control( 'bb_mobile_application_left_right_wooproducts_padding',	array(
 		'label' => esc_html__( 'Right Left Product Padding','bb-mobile-application' ),
@@ -531,10 +525,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_wooproducts_border_radius',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'bb_mobile_application_sanitize_number_range',
 	));
 	$wp_customize->add_control('bb_mobile_application_wooproducts_border_radius',array(
 		'label' => esc_html__( 'Product Border Radius','bb-mobile-application' ),
@@ -549,10 +540,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_wooproducts_box_shadow',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'bb_mobile_application_sanitize_number_range',
 	));
 	$wp_customize->add_control('bb_mobile_application_wooproducts_box_shadow',array(
 		'label' => esc_html__( 'Product Box Shadow','bb-mobile-application' ),
@@ -573,10 +561,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_top_bottom_product_button_padding',array(
 		'default' => 12,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_top_bottom_product_button_padding',	array(
 		'label' => esc_html__( 'Product Button Top Bottom Padding','bb-mobile-application' ),
@@ -591,10 +576,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_left_right_product_button_padding',array(
 		'default' => 12,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_left_right_product_button_padding',array(
 		'label' => esc_html__( 'Product Button Right Left Padding','bb-mobile-application' ),
@@ -609,10 +591,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_product_button_border_radius',array(
 		'default' => 0,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'bb_mobile_application_sanitize_number_range',
 	));
 	$wp_customize->add_control('bb_mobile_application_product_button_border_radius',array(
 		'label' => esc_html__( 'Product Button Border Radius','bb-mobile-application' ),
@@ -650,7 +629,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_preloader_option',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_preloader_option',array(
        'type' => 'checkbox',
@@ -660,7 +639,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_sticky_header',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ) );
     $wp_customize->add_control('bb_mobile_application_sticky_header',array(
     	'type' => 'checkbox',
@@ -670,7 +649,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'bb_mobile_application_shop_page_sidebar',array(
 		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ) );
     $wp_customize->add_control('bb_mobile_application_shop_page_sidebar',array(
     	'type' => 'checkbox',
@@ -680,7 +659,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_wocommerce_single_page_sidebar',array(
 		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ) );
     $wp_customize->add_control('bb_mobile_application_wocommerce_single_page_sidebar',array(
     	'type' => 'checkbox',
@@ -761,7 +740,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_button_padding_top_bottom',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_button_padding_top_bottom',array(
 		'label'	=> __('Top and Bottom Padding','bb-mobile-application'),
@@ -776,7 +755,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_button_padding_left_right',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_button_padding_left_right',array(
 		'label'	=> __('Left and Right Padding','bb-mobile-application'),
@@ -791,7 +770,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bb_mobile_application_button_border_radius', array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	) );
 	$wp_customize->add_control( 'bb_mobile_application_button_border_radius', array(
 		'label'       => esc_html__( 'Button Border Radius','bb-mobile-application' ),
@@ -812,7 +791,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_slider_hide_show',array(
       'default' => false,
-      'sanitize_callback'	=> 'sanitize_text_field'
+      'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
 	));
 	$wp_customize->add_control('bb_mobile_application_slider_hide_show',array(
 	  'type' => 'checkbox',
@@ -853,10 +832,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
     //Slider excerpt
 	$wp_customize->add_setting( 'bb_mobile_application_slider_excerpt_length', array(
 		'default'              => 10,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	) );
 	$wp_customize->add_control( 'bb_mobile_application_slider_excerpt_length', array(
 		'label'       => esc_html__( 'Slider Excerpt length','bb-mobile-application' ),
@@ -1021,7 +997,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_responsive_sticky_header',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_sticky_header',array(
        'type' => 'checkbox',
@@ -1031,7 +1007,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_responsive_slider',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_slider',array(
        'type' => 'checkbox',
@@ -1041,7 +1017,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_responsive_scroll',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_scroll',array(
        'type' => 'checkbox',
@@ -1051,7 +1027,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_responsive_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_sidebar',array(
        'type' => 'checkbox',
@@ -1061,7 +1037,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_responsive_preloader',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_preloader',array(
        'type' => 'checkbox',
@@ -1077,7 +1053,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_date_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_date_hide',array(
        'type' => 'checkbox',
@@ -1087,7 +1063,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_comment_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_comment_hide',array(
        'type' => 'checkbox',
@@ -1097,7 +1073,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_author_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_author_hide',array(
        'type' => 'checkbox',
@@ -1107,7 +1083,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_tags_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_tags_hide',array(
        'type' => 'checkbox',
@@ -1117,7 +1093,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('bb_mobile_application_show_featured_image_single_post',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_show_featured_image_single_post',array(
        'type' => 'checkbox',
@@ -1142,10 +1118,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'bb_mobile_application_excerpt_number', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	) );
 	$wp_customize->add_control( 'bb_mobile_application_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','bb-mobile-application' ),
@@ -1208,7 +1181,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_show_noresult_search',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
     ));
     $wp_customize->add_control('bb_mobile_application_show_noresult_search',array(
        'type' => 'checkbox',
@@ -1284,10 +1257,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_footer_content_font_size',array(
 		'default'=> 16,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_footer_content_font_size',array(
 		'label' => esc_html__( 'Copyright Font Size','bb-mobile-application' ),
@@ -1302,7 +1272,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_copyright_padding',array(
 		'default'=> 15,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_copyright_padding',array(
 		'label'	=> __('Copyright Padding','bb-mobile-application'),
@@ -1317,7 +1287,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_enable_disable_scroll',array(
         'default' => true,
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
 	));
 	$wp_customize->add_control('bb_mobile_application_enable_disable_scroll',array(
      	'type' => 'checkbox',
@@ -1342,10 +1312,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_scroll_font_size_icon',array(
 		'default'=> 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'bb_mobile_application_sanitize_float',
 	));
 	$wp_customize->add_control('bb_mobile_application_scroll_font_size_icon',array(
 		'label'	=> __('Scroll Icon Font Size','bb-mobile-application'),

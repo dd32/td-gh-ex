@@ -375,6 +375,23 @@ function bb_mobile_application_sanitize_choices( $input, $setting ) {
     }
 }
 
+function bb_mobile_application_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
+function bb_mobile_application_sanitize_float( $input ) {
+	return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
+function bb_mobile_application_sanitize_number_range( $number, $setting ) {
+	$number = absint( $number );
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+}
+
 /* Excerpt Limit Begin */
 function bb_mobile_application_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit+1));

@@ -34,7 +34,7 @@
       </div>
     <?php }?>
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
-      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+      <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
       <?php if(get_theme_mod('bb_mobile_application_blog_post_description_option') == 'Full Content'){ ?>
         <?php the_content(); ?>
       <?php }
@@ -44,7 +44,7 @@
         <?php }?>
       <?php }?>
       <?php if( get_theme_mod('bb_mobile_application_button_text','Read More') != ''){ ?>
-        <a href="<?php esc_url(the_permalink()); ?>" class="read-more-box" title="<?php esc_attr_e('Read More','bb-mobile-application'); ?>"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?></span></a> 
+        <a href="<?php the_permalink(); ?>" class="read-more-box" title="<?php esc_attr_e('Read More','bb-mobile-application'); ?>"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?></span></a> 
       <?php }?>
     </div>
     <div class="clearfix"></div>
