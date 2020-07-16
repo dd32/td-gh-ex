@@ -4,8 +4,8 @@
   		<footer>
         <!-- Feel free to remove the credit below, but we'd love it if you would leave it in! -->
   			<p>
-  				&copy; <?php  echo date("Y")  ?> <?php  bloginfo('name'); ?> | <strong><?php printf( __( 'Commodore by', 'Commodore' ),''); ?></strong> <a href="<?php echo esc_url('http://unitednetworksonline.com/wordpress-themes/'); ?>" title="<?php esc_attr_e( 'United Networks', 'Commodore' ); ?>"><strong><?php printf( __( 'United Networks', 'Commodore' ),''); ?></strong></a><br />
-  				<a href="<?php  bloginfo('rss2_url'); ?>"><?php _e("Entries (RSS)","Commodore"); ?></a> <?php _e("and","Commodore"); ?> <a href="<?php  bloginfo('comments_rss2_url'); ?>"><?php _e("Comments (RSS)","Commodore"); ?></a>
+  				&copy; <?php  echo date("Y")  ?> <?php  bloginfo('name'); ?> | <strong><?php printf( __( 'Commodore by', 'commodore' ),''); ?></strong> <a href="<?php echo esc_url('http://unitednetworksonline.com/wordpress-themes/'); ?>" title="<?php esc_attr_e( 'United Networks', 'commodore' ); ?>"><strong><?php printf( __( 'United Networks', 'commodore' ),''); ?></strong></a><br />
+  				<a href="<?php  bloginfo('rss2_url'); ?>"><?php _e("Entries (RSS)","commodore"); ?></a> <?php _e("and","commodore"); ?> <a href="<?php  bloginfo('comments_rss2_url'); ?>"><?php _e("Comments (RSS)","commodore"); ?></a>
   			</p>
   		</footer>
   		<?php  wp_footer(); ?>

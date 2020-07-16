@@ -1,20 +1,15 @@
 Theme Name: Commodore
-Text Domain: commodore
 Description: Simple and lightweight responsive theme in the style of the good old Commodore 64. The search box has been modified - just type and press Return to search - classic blinking cursor included!
-Requires at least: 5.0
-Tested up to: 5.4
-Stable tag: 1.91
-Requires PHP: 5.6
 Author: United Networks
-Version: 1.91
+Text Domain: commodore
 Tags: blue, light, two-columns, one-column, right-sidebar, fixed-width, custom-menu, responsive
-License: GNU General Public License v2.0
+License: GNU General Public License v2.0 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Theme URI: https://unitednetworksonline.com/wordpress-themes/
 Author URI: https://unitednetworksonline.com
-Based on the Terminally theme by Stinkyink: http://www.stinkyinkshop.co.uk/themes/
-C64 Font: http://style64.org/c64-truetype
-C64 Font License: http://style64.org/c64-truetype/license
+Based on the Terminally theme by Stinkyink: https://wordpress.org/themes/terminally/
+C64 Font: https://fontstruct.com/fontstructions/show/1336244/petscii-commodore
+C64 Font License: http://scripts.sil.org/OFL
 
 == Frequently Asked Questions ==
 
@@ -27,11 +22,11 @@ Yes, that is the color of the old school Commodore computer screen.
 
 == Upgrade Notice ==
 
-= 1.91 =
+= 1.92 =
 This is the latest update. It is recommended you upgrade as soon as possible.
 
 == Change Log ==
-1.91 - 05/23/20 - Major modernization of code. Compatible with latest version of WordPress.
+1.92 - 07/16/20 - Major modernization of code. Compatible with latest version of WordPress. Font replaced with a new version under the OFL font license.
 1.7 - 08/29/16 - This is a minor update that brings Commodore inline with the latest WordPress requirements, making it WordPress 4.6 compatible!
 1.6 - 05/20/15 - The 1.6 update includes a responsive layout for phones, full support for WordPress 4.2 and higher, and code and performance improvements. So much changed under the hood that we skipped v1.5!
 1.4 - 08/18/13 - Code now HTML5 and CSS3 Valid! Slightly modified post titles on homepage and article pages. WordPress 3.6 compatible. Minor code adjustments.

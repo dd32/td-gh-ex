@@ -1,6 +1,6 @@
-
+/* @version 1.00 */
 function flipcursor(nosettime) {
-	document.getElementsById('container').style.cursor = none;
+	var cursor=document.getElementById("cursor");
 	if (cursor.style.visibility == 'hidden') {
 		cursor.style.visibility = '';
 	} else {
