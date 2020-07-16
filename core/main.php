@@ -613,9 +613,12 @@ if (!function_exists('avventura_lite_customize_excerpt_more')) {
 	
 			endif;
 
-			if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
+			if ( 
+				( $pos=strpos($post->post_content, '<!--more-->') ) && 
+				!has_excerpt($post->ID)
+			): 
 			
-				$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
+				$content = apply_filters( 'the_content', get_the_content());
 			
 			else:
 			
