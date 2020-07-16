@@ -26,6 +26,7 @@ endif;
 
 if ( ! function_exists( 'astral_page_start' ) ) :
 	function astral_page_start() {
+		if(get_theme_mod('astral_topbar_toggle','1')) { 
 		$astral_phoneno = get_theme_mod( 'astral_phoneno' );
 		$astral_address = get_theme_mod( 'astral_address' );
 		$astral_email   = get_theme_mod( 'astral_email' ); ?>
@@ -47,6 +48,7 @@ if ( ! function_exists( 'astral_page_start' ) ) :
                 </div>
             </div>
         </div>
+    	<?php } ?>
         <header id="home" <?php if ( has_header_image() ) { ?> style="background-image:url(<?php echo esc_url( get_header_image() ); ?>)" <?php } ?>>
             <div class="container">
                 <div class="row">

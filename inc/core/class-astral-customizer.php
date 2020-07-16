@@ -445,6 +445,20 @@ class astral_Customizer extends astral_Abstract_Main {
 			'priority'   => 35,
 		) );
 
+		$wp_customize->add_setting( 'astral_topbar_toggle',
+			array(
+				'type'              => 'theme_mod',
+				'default'           => '1',
+				'sanitize_callback' => 'astral_sanitize_checkbox'
+			)
+		);
+		$wp_customize->add_control( new astral_Toggle_Switch_Custom_control( $wp_customize, 'astral_topbar_toggle',
+			array(
+				'label' => __( 'Topbar On/Off', 'astral' ),
+				'section' => 'astral_contact'
+			)
+		) );
+
 		$wp_customize->add_setting( 'astral_phoneno', array(
 				'type'              => 'theme_mod',
 				'default'           => '',

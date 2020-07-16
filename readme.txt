@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 2.3 =
+* Topbar on/off option added
+
 = 2.2 =
 * Breadcrumb option added
 * Scroll to top option added
