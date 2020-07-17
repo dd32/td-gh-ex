@@ -307,12 +307,12 @@ function baw_sidebar_width () {
 	if((get_theme_mod('sidebar_width') && (get_theme_mod('sidebar_position') != 'no')) && is_active_sidebar('sidebar-1')) {
 		
 		$baw_content_width = 100;
-		$baw_sidebar_width = get_theme_mod('sidebar_width');
+		$baw_sidebar_width = esc_html(get_theme_mod('sidebar_width'));
 		$baw_sidebar_sum = $baw_content_width - $baw_sidebar_width;
 
 		?>
 		<style>
-			#content #secondary {width: <?php echo get_theme_mod('sidebar_width'); ?>% !important;}
+			#content #secondary {width: <?php echo esc_html(get_theme_mod('sidebar_width')); ?>% !important;}
 			#content #primary {width: <?php echo $baw_sidebar_sum; ?>% !important;}
 		</style>
 		
@@ -347,25 +347,17 @@ function baw_heade_image_zoom_speed () { ?>
 	-webkit-animation: header-image 
 	<?php 
 	if (get_theme_mod('header_zoom_speed')) { 
-		echo get_theme_mod('header_zoom_speed'); 
+		echo esc_html(get_theme_mod('header_zoom_speed')); 
 	} else 
 		echo "20";
 	?>s ease-out both; 
 	animation: header-image
 	<?php
 	if (get_theme_mod('header_zoom_speed')) {
-		echo get_theme_mod('header_zoom_speed'); 
+		echo esc_html(get_theme_mod('header_zoom_speed')); 
 	} else
 		echo "20";
 	?>s ease-out 0s 1 normal both running;
 <?php	
 }
 
-/**
- * Favicon
- */
-function baw_shortcut_icon () { ?>
-	<link rel="shortcut icon" type="image/x-icon" href="<?php site_icon_url(); ?>" />
-	<?php
-}
-add_action('wp_head','baw_shortcut_icon', 1);

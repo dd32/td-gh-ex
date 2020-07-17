@@ -23,7 +23,7 @@ function bawwp_tgmpa_register() {
 		'domain'       => 'bawwp',
 		'menu'         => 'install-required-plugins',
 		'has_notices'  => true,
-		'is_automatic' => true,
+		'is_automatic' => false,
 		'dismissable'  => true,
 	) );
 

@@ -18,8 +18,8 @@ if( ! defined( 'ABSPATH' ) ) {
 </head>
 
 <body <?php body_class(); ?>>
+        <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } else { do_action( 'wp_body_open' ); } ?>
 		<?php baw_before_header (); ?><!-- Go to /inc/before-header.php -->
-
 		<?php baw_header (); ?><!-- Go to /inc/header-top.php -->
 		<?php baw_custom_breadcrumbs(); ?>		
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'baw' ); ?></a>

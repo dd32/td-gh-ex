@@ -49,7 +49,7 @@ if( ! defined( 'ABSPATH' ) ) {
 			</div>		
 		<div class="site-info">
 		<?php if(get_theme_mod('baw_copyright')) {
-			echo get_theme_mod('code_copyright_text');
+			echo esc_html(get_theme_mod('code_copyright_text'));
 		}
 		else { ?>
 			<a class="powered" href="<?php echo esc_url( __( 'https://wordpress.org/', 'baw' ) ); ?>">

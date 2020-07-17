@@ -10,17 +10,17 @@ if (get_theme_mod('activate_before_header')) {
 	<div class="before-header">
 		<div class="left-top">
 			<?php if (get_theme_mod('header_email')) { ?>
-				<div class="h-email" itemprop="email"><span class="dashicons dashicons-email-alt"> </span> <?php echo get_theme_mod('header_email'); ?></div>
+				<div class="h-email" itemprop="email"><span class="dashicons dashicons-email-alt"> </span> <?php echo esc_html(get_theme_mod('header_email')); ?></div>
 			<?php } ?>
 			<?php if (get_theme_mod('header_address')) { ?>
-				<div class="h-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span class="dashicons dashicons-location"> </span> <?php echo get_theme_mod('header_address'); ?></div>
+				<div class="h-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span class="dashicons dashicons-location"> </span> <?php echo esc_html(get_theme_mod('header_address')); ?></div>
 			<?php } ?>
 			<?php if (get_theme_mod('header_phone')) { ?>
-				<div class="h-phone" itemprop="telephone"><span class="dashicons dashicons-phone"> </span> <?php echo get_theme_mod('header_phone'); ?></div>
+				<div class="h-phone" itemprop="telephone"><span class="dashicons dashicons-phone"> </span> <?php echo esc_html(get_theme_mod('header_phone')); ?></div>
 			<?php } ?>
 			<?php if (get_theme_mod('activate_search_icon')) { ?>
 			<div class="search-top">
-				<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+				<form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url( '/' )); ?>">
 					<label>
 					<button class="button-primary button-search"><i class="dashicons dashicons-search"></i><span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'baw' ) ?></span></button>
 						<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'baw' ) ?></span>

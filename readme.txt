@@ -5,7 +5,7 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, rtl-l
 
 Requires at least: 5.3.2
 Tested up to: 5.3.2
-Stable tag: 1.2.0
+Stable tag: 1.2.2
 Author URI: https://seosthemes.com
 Theme URI: https://seosthemes.com/black-and-white-wordpress-theme/
 License: GNU General Public License version 3.0
@@ -36,6 +36,15 @@ score includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+
+= 1.2.2 - July 18 2020 =
+* ADDED: KIRKI 3.1.4
+* ADDED: Tested up to: 5.3.2
+* ADDED: wp_body_open
+* CHANGE: Plugin 'is_automatic' => false
+* FIXED: esc_html 
+* FIXED: Favicon Issue 
+
 = 1.2.1 - March 22 2019 =
 * FIXED: Header Image Issue
 
@@ -63,7 +72,6 @@ score includes support for Infinite Scroll in Jetpack.
 * Jquery Aniview - https://github.com/jjcosgrove/jquery-aniview/blob/master/LICENSE - MIT License
 
 
-* rawpixel - https://pixabay.com/photos/пишеща-машина-стар-азбука-2242164/- CC0 1.0 License
  
   Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2.

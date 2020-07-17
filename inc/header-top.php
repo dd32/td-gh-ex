@@ -42,7 +42,7 @@ function baw_header () {
 	<div class="all-header">
     	<div class="s-shadow"></div>
 		<?php if (get_theme_mod('header_image_position') == 'default') { ?>
-		<img id="masthead" class="header-image" style="<?php baw_heade_image_zoom_speed (); ?>" src='<?php echo get_template_directory_uri() . '/images/header.jpg'; ?>' alt="header image"/>	
+		<img id="masthead" class="header-image" style="<?php baw_heade_image_zoom_speed (); ?>" src='<?php echo esc_url(get_template_directory_uri()) . '/images/header.jpg'; ?>' alt="header image"/>	
 		<?php } ?>
 		<?php if (get_theme_mod('header_image_position') == 'real') { ?>
 		<img id="masthead" class="header-image" style="<?php baw_heade_image_zoom_speed (); ?>" src='<?php header_image(); ?>' alt="header image"/>	
