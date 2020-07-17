@@ -15,7 +15,6 @@ External resources linked to the theme.
 Resources packed within the theme.
 * Genericons by Joen Asmussen http://genericons.com/
   Licensed under the GPL, version 2 or later http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
-* Image used as deafault header image(s) and used in the screenshot are from public domain http://unsplash.com/
 * Custom js file is our own creation and is licensed under the same license as this theme.
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer | GPL v2 Licensed
@@ -64,6 +63,11 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.3.5 -2020-07-15 =
+* Enhancement - Gutenberg compatibility.
+* Tweak       - Change http protocol to https.
+* Remove - Unrequired deprecated demo config for theme demo lists.
+
 = Version 1.3.4 -2020-05-22 =
 * Add   - Required header fields: `Tested up to` and `Requires PHP` in style.css.
 * Tweak - Add and improve theme-related notices.
