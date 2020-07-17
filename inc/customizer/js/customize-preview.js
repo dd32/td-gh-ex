@@ -187,7 +187,7 @@
 	// convert hex color to rgba
 	function asheHex2Rgba( hex, opacity ) {
 		if ( typeof(hex) === 'undefined' ) {
-		 return;
+			return;
 		}
 
 		var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec( hex ),

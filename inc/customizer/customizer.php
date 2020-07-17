@@ -398,6 +398,7 @@ function ashe_customize_register( $wp_customize ) {
 	$skin_select = array(
 		'default' => esc_html__( 'Default', 'ashe' ),
 		'dark' => esc_html__( 'Dark', 'ashe' ),
+		'box' => esc_html__( 'Box', 'ashe' ),
 	);
 
 	// Skin Select
@@ -1210,7 +1211,7 @@ add_action( 'customize_register', 'ashe_customize_register' );
 ** Bind JS handlers to instantly live-preview changes
 */
 function ashe_customize_preview_js() {
-	wp_enqueue_script( 'ashe-customize-preview', get_theme_file_uri( '/inc/customizer/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+	wp_enqueue_script( 'ashe-customize-preview', get_theme_file_uri( '/inc/customizer/js/customize-preview.js' ), array( 'customize-preview' ), '1.1', true );
 }
 add_action( 'customize_preview_init', 'ashe_customize_preview_js' );
 
@@ -1221,6 +1222,5 @@ function ashe_panels_js() {
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
 	wp_enqueue_style( 'ashe-customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
 	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.1', true );
-
 }
 add_action( 'customize_controls_enqueue_scripts', 'ashe_panels_js' );

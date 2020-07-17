@@ -198,6 +198,18 @@
 
 
 	/*
+	** Skins
+	*/
+	$('#customize-control-ashe_options-skins_select').find('select').change(function(){
+		if ( 'box' === $(this).val() ) {
+			$('#customize-control-background_color').find('.color-picker-hex').val( '#f9f9f9').trigger('keyup');
+		} else {
+			$('#customize-control-background_color').find('.color-picker-hex').val( '#ffffff').trigger('keyup');
+		}
+	});
+
+
+	/*
 	** Fixes
 	*/
 	$('#customize-control-display_header_text').find('input').change(function(){
@@ -207,4 +219,5 @@
 	});
 
 	}); // wp.customize ready
+
 })( jQuery );
