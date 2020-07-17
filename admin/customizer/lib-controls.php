@@ -703,7 +703,7 @@
 				),
 			);
 		}
-		$xplus = site_url( '/wp-admin/themes.php?page=WeaverX', 'relative' );
+		$xplus = home_url( '/wp-admin/themes.php?page=WeaverX', 'relative' );
 		$weaversite = '//shop.weavertheme.com';
 		$opt[$root . 'extra-plus'] = array (
 			'control' => array ( 'control_type' => 'WeaverX_Misc_Control',
@@ -720,7 +720,7 @@
 		if ( $link == 'default' ) {
 			$link = esc_html__( 'Weaver Xtreme Admin Panel', 'weaver-xtreme' );
 		}
-		return '<a href="' . site_url( '/wp-admin/themes.php?page=WeaverX', 'relative' ) . '" title="' . $link . " target=" . $target . '">' . $link . '</a>';
+		return '<a href="' . home_url( '/wp-admin/themes.php?page=WeaverX', 'relative' ) . '" title="' . $link . " target=" . $target . '">' . $link . '</a>';
 	}
 
 	function weaverx_cz_line() {

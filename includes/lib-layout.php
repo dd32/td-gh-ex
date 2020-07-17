@@ -430,14 +430,8 @@ function weaverx_page_lead( $who, $archive = false ) {
 
 	get_header( $who );
 
-	if ( $who == 'woocommerce' ) {
-		$body_classes = get_body_class();
-		if ( in_array( 'single-product', $body_classes ) ) {    // Single product page - treat as page
-			$sb_layout = weaverx_sb_layout( $who );
-		} else {        // Archive like page
-			$sb_layout = weaverx_sb_layout_archive( $who );
-		}
-	} elseif ( $archive ) {
+
+	if ( $archive ) {
 		$sb_layout = weaverx_sb_layout_archive( $who );
 	} else {
 		$sb_layout = weaverx_sb_layout( $who );
@@ -548,7 +542,14 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 	//
 	// possible values: 'right', 'right-top', 'left', 'left-top', 'split', 'split-top', 'one-column'
 
-	$per_page = $is_index ? '' : weaverx_get_per_page_value( '_pp_page_layout' );
+
+	$per_page = '';
+
+	if ($who == 'woocommerce' ) {
+		$per_page = weaverx_get_per_post_value( '_pp_page_layout' );
+	} else if ( ! $per_page ) {
+		$per_page = $is_index ? '' : weaverx_get_per_page_value( '_pp_page_layout' );
+	}
 
 	//if ( $who == 'blog' ) weaverx_alert( 'sb-layout blog: ' . $per_page );
 
@@ -565,10 +566,6 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 	$layout = ( $per_page ) ? $per_page : weaverx_getopt_default( 'layout_' . $who, 'default' );
 
 	// weaverx_debug_comment( "weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}" );
-
-	if ( $who == 'woocommerce' ) {
-		$layout = weaverx_getopt( 'layout_page', 'default' );
-	}
 
 	if ( $layout == 'default' ) {
 		$layout = weaverx_getopt( 'layout_default', 'right' );

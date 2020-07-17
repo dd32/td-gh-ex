@@ -194,7 +194,7 @@ function weaverx_output_early_style() {
 		$put .= "{$block_sel},{$mce_sel}{$css}\n";
 	}
 
-	return $put;
+	return apply_filters('weaverx_early_editor_style', $put );
 } //# early style
 
 function weaverx_output_edit_style( $editor = 'mce' ) {
@@ -576,7 +576,7 @@ tr th, thead th {color: inherit;background:none;font-weight:normal;line-height:n
 
 	$put .= "}\n";
 
-	return $put;
+	return apply_filters('weaverx_editor_style', $put);
 }
 
 /** generate general font styling */
@@ -682,8 +682,6 @@ function weaverx_mce_css_add_style( $default_style ) {
 	weaverx_check_editor_style();        // see if we need an update...
 
 	$updir = wp_upload_dir();
-	// make relative for https: - doesn't work right...
-	// return parse_url( trailingslashit( $updir['baseurl'] ) . 'weaverx-subthemes/style-weaverxt.css',PHP_URL_PATH );
 
 	$dir = trailingslashit( $updir['basedir'] ) . 'weaverx-subthemes/editor-style-wvrx.css';
 

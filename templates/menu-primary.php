@@ -1,9 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// note - the default menu is handled in weaverx_page_menu() in filters.php
-
-$menuw = apply_filters( 'weaverx_menu_name','primary' );
+// (Code refactored for Version 4.3.5)
 
 if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 	&& !weaverx_is_checked_page_opt( '_pp_hide_menus' ) ) {
@@ -48,8 +46,6 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 
 	$left = weaverx_getopt( 'm_primary_html_left' );
 	$right = weaverx_getopt( 'm_primary_html_right' );
-
-
 
 	if ( $left ) {
 		$hide = ' ' . weaverx_getopt( 'm_primary_hide_left' );
@@ -114,45 +110,34 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 			$menu_class .= ' menu-alignleft';
 	}
 
-	if ( weaverx_getopt ( 'm_primary_move' ) )
+	if ( weaverx_getopt( 'm_primary_move' ) ) {
 		$nav_class = 'menu-primary menu-primary-moved menu-type-standard';
-	else
+	} else {
 		$nav_class = 'menu-primary menu-primary-standard menu-type-standard';
+	}
 
-	if ( weaverx_getopt( 'm_primary_fixedtop' ) == 'fixed-top' ) {	// really is a drop-down value, so need to check for === for backward compat.
+	if ( weaverx_getopt( 'm_primary_fixedtop' ) == 'fixed-top' ) {    // really is a drop-down value, so need to check for === for backward compat.
 		$class .= ' wvrx-fixedtop';
 		$nav_class .= ' wvrx-primary-fixedtop';
 	}
 
 	echo "\n\n" . '<div id="nav-primary" class="' . $nav_class . '"' . weaverx_schema( 'menu' ) . ">\n";
 
-	$args = array(
-		'fallback_cb' 	 => 'weaverx_page_menu',
-		'theme_location'  => $menuw,
-		'menu_class'      => $menu_class,
-		'container'       => 'div',
-		'container_class' => 'wvrx-menu-container ' . $class,
-		'items_wrap'      => $left . $right .
-				'<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>'
-	);
-
-
 	$alt_menu = weaverx_get_per_page_value( '_pp_alt_primary_menu' );
-	if ( $alt_menu != '' ) {
-		$args['theme_location'] = '';
-		$args['menu'] = wp_get_nav_menu_object( $alt_menu );
-	} else {
-		$locations = get_nav_menu_locations();							// note - the default menu is handled in weaverx_page_menu() in filters.php
-		if ( isset( $locations[ $menuw ] ) ) {
-			$the_menu = wp_get_nav_menu_object( $locations[ $menuw ] );
-			if ( ! empty( $the_menu ) ) {
-				$args['fallback_cb'] = '';
-				$args['walker'] = new weaverx_Walker_Nav_Menu();
-			}
-		}
-	}
 
-	wp_nav_menu( $args );
+	$the_menu = wp_get_nav_menu_object( $alt_menu ? $alt_menu :'primary' );
+
+	wp_nav_menu(
+		array(
+			'fallback_cb'     => 'weaverx_page_menu',       // Only called if $the_menu is empty, shows default menu
+			'theme_location'  => 'primary',
+			'menu'            => $the_menu,
+			'menu_class'      => $menu_class,
+			'container'       => 'div',
+			'container_class' => 'wvrx-menu-container ' . $class,
+			'items_wrap'      => $left . $right .
+			                     '<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>',
+		) );
 
 	echo "</div><div class='clear-menu-primary-end' style='clear:both;'></div><!-- /.menu-primary -->\n\n";
 
@@ -164,4 +149,4 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 		}
 	}
 }
-?>
+

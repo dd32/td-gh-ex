@@ -613,7 +613,7 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 				'panel'   => $panel,
 				'title'   => esc_html__( 'Background', 'weaver-xtreme' ),
 				'options' => array(
-					'_bg_fullsite_url' => array(
+					'_bg_full_s_url' => array(
 						'setting' => array(
 							'transport'         => 'postMessage',
 							'sanitize_callback' => 'esc_url_raw',

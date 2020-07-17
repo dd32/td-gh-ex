@@ -54,12 +54,11 @@ function weaverx_do_admin() {
 	weaverx_check_support_plugin_version();
 
 	weaverx_clear_both();
-	$site_url = get_admin_url();
-	$site_url = str_replace( 'http://', '//', $site_url );
-	$site_url = str_replace( 'https://', '//', $site_url );
-	//$site_url = '';
-	$ret_url         = str_replace( '/', '%2F', $site_url );
-	$customizer_link = $site_url . '/customize.php?return=' . $ret_url . 'themes.php%3Fpage%3DWeaverX';
+	$link_url = get_admin_url();
+	$link_url = str_replace( 'http://', '//', $link_url );
+	$link_url = str_replace( 'https://', '//', $link_url );
+	$ret_url         = str_replace( '/', '%2F', $link_url );
+	$customizer_link = $link_url . '/customize.php?return=' . $ret_url . 'themes.php%3Fpage%3DWeaverX';
 
 	if ( ! weaverx_getopt( '_disable_customizer' ) ) {
 		?>

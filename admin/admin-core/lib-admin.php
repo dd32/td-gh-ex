@@ -452,7 +452,7 @@ if ( ! function_exists( 'weaverxplus_plugin_installed' ) ) {
 do_action( 'weaverx_check_licenses' );
 
 ?>
-	<span class="submit"><input class="button-primary" type="submit" name="weaverx_clear_messages" value="<?php echo esc_html__( 'Clear Messages', 'weaver-xtreme'); ?>"/></span>
+	<span class="submit"><input class="button-primary" type="submit" name="weaverx_clear_messages" value="<?php echo esc_attr__( 'Clear Messages', 'weaver-xtreme'); ?>"/></span>
 	<?php weaverx_nonce_field( 'weaverx_clear_messages' ); ?>
 </form> <!-- resetweaverx_form -->
 	<?php

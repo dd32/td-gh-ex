@@ -1,13 +1,15 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// This code similar to primary menu
-
-$menuw = apply_filters( 'weaverx_menu_name','secondary' );
+// This code similar to primary menu (Code refactored for Version 4.3.5)
 
 $alt_menu = weaverx_get_per_page_value( '_pp_alt_secondary_menu' );
 
-if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide' && ( has_nav_menu( $menuw ) || $alt_menu != '' )  && !weaverx_is_checked_page_opt( '_pp_hide_menus' ) ) {
+if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide'
+    && ( has_nav_menu( 'secondary' ) || $alt_menu != '' )
+	&& !weaverx_is_checked_page_opt( '_pp_hide_menus' ) ) {
+
+	weaverx_clear_both( 'menu-secondary' );
 
 	$class = weaverx_menu_class( 'm_secondary' );
 
@@ -32,8 +34,10 @@ if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide' && ( has_nav_menu( $menuw ) 
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
-		if ( weaverx_getopt( 'use_smartmenus' ) ) {							// ==================  SMART MENUS
+	if ( weaverx_getopt( 'use_smartmenus' ) )
+	{							// ==================  SMART MENUS ( make any changes in default menu version, too in filters.php )
 		$hamburger = apply_filters( 'weaverx_mobile_menu_name',weaverx_getopt( 'm_secondary_hamburger' ) );
+
 		if ( $hamburger == '' ) {
 			$alt = weaverx_getopt( 'mobile_alt_label' );
 			if ( $alt == '' )
@@ -41,8 +45,9 @@ if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide' && ( has_nav_menu( $menuw ) 
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";		// +since: 3.1.10: remove empty href=""
+		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
+
 	$menu_class = apply_filters( 'weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'secondary' );
 
 	$align = weaverx_getopt( 'm_secondary_align' );
@@ -67,11 +72,11 @@ if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide' && ( has_nav_menu( $menuw ) 
 			$menu_class .= ' menu-alignleft';
 	}
 
-
-	if ( weaverx_getopt ( 'm_secondary_move' ) )
+	if ( weaverx_getopt( 'm_secondary_move' ) ) {
 		$nav_class = 'menu-secondary menu-secondary-moved menu-type-standard';
-	else
+	} else {
 		$nav_class = 'menu-secondary menu-secondary-standard menu-type-standard';
+	}
 
 	if ( weaverx_getopt( 'm_secondary_fixedtop' ) == 'fixed-top' ) {
 		$class .= ' wvrx-fixedtop';
@@ -80,26 +85,21 @@ if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide' && ( has_nav_menu( $menuw ) 
 
 	echo "\n\n" . '<div id="nav-secondary" class="' . $nav_class . '"' . weaverx_schema( 'menu' ) . ">\n";
 
+	$the_menu = wp_get_nav_menu_object( $alt_menu ? $alt_menu :'secondary' );
 
-	$args = array(
-		'fallback_cb'     => '',
-		'theme_location'  => $menuw,
-		'menu_class'      => $menu_class,
-		'container'       => 'div',
-		'container_class' => 'wvrx-menu-container ' . $class,
-		'items_wrap'      => $left . $right . '<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>',
-		'walker'		 => new weaverx_Walker_Nav_Menu()
-	);
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'secondary',
+			'menu'            => $the_menu,
+			'menu_class'      => $menu_class,
+			'container'       => 'div',
+			'container_class' => 'wvrx-menu-container ' . $class,
+			'items_wrap'      => $left . $right .
+			                     '<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>',
+			'walker'          => new weaverx_Walker_Nav_Menu(),
+		) );
 
-
-	if ( $alt_menu != '' ) {
-		$args['theme_location'] = '';
-		$args['menu'] = wp_get_nav_menu_object( $alt_menu );
-	}
-
-	wp_nav_menu( $args );
-
-	echo "\n</div><div class='clear-menu-secondary-end' style='clear:both;'></div><!-- /.menu-secondary -->\n\n";
+	echo "</div><div class='clear-menu-secondary-end' style='clear:both;'></div><!-- /.menu-secondary -->\n\n";
 
 	if ( weaverx_getopt( 'use_smartmenus' ) ) {
 		if ( function_exists( 'weaverxplus_plugin_installed' ) )

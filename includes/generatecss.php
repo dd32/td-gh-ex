@@ -544,7 +544,7 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 
 
 	/* Comments */
-	weaverx_put_rule_if_checked( $sout, 'form_allowed_tags', '#commentform .form-allowed-tags {display:block;}' );
+	weaverx_put_rule_if_checked( $sout, 'form_allowed_tags', '#commentform .form-allowed-tags, .commentform-allowed-tags {display:block;}' );
 
 	$b_c = weaverx_getopt( 'border_color' );    //
 	if ( ! $b_c ) {

@@ -8,6 +8,7 @@
 if ( current_user_can( 'edit_posts' ) ) {
 
 	add_action( 'admin_menu', 'weaverx_add_admin', 5 );
+
 	weaverx_load_admin_aux();
 
 	do_action( 'weaverx_check_updates' );

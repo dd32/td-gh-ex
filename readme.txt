@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.1
 Tested up to: 5.4
-Stable tag: 4.3.4
+Stable tag: 4.3.6
 
 == Description ==
 
@@ -642,3 +642,9 @@ Tweak: added shortcode processing the Weaver Xtreme's Header Logo/HTML option
 Tweak: no longer need custom excerpt filter
 Fix: Continue Reading for short text before <!-- more -->
 Update/fix: recognize iPad for iOS 13.3
+
+= Version 4.3.5 =
+Tweak: added 'weaverx_editor_style' and 'weaverx_early_editor_style'
+Fix: Added "allowed html tags" option back. It had been removed by WP since 3.something.
+Fix: Proper display of Woocommerce products on List (Archive) views, and Single View.
+Updates: Meet some new WordPress theme requirements (e.g., wp_body_open)

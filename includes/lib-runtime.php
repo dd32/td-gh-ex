@@ -730,7 +730,7 @@ function weaverx_add_ie_scripts() {
 function weaverx_media_lib_button( $fillin = '' ) {
 	?>
 	&nbsp;&larr;&nbsp;
-	<a style='text-decoration:none;' title="<?php echo esc_html__( 'Select image from Media Library. Click \'Insert into Post\' to paste url here.', 'weaver-xtreme'); ?>" alt="media" href="javascript:weaverx_media_lib( '<?php echo $fillin; ?>' );"><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
+	<a style='text-decoration:none;' title="<?php echo esc_attr__( 'Select image from Media Library. Click \'Insert into Post\' to paste url here.', 'weaver-xtreme'); ?>" alt="media" href="javascript:weaverx_media_lib( '<?php echo $fillin; ?>' );"><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
 	<?php
 }
 

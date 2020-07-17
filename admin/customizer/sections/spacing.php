@@ -943,7 +943,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'm_primary_align' => weaverx_cz_select(
 						__( 'Align Primary Menu Bar', 'weaver-xtreme' ),
 						__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
-						'weaverx_cz_choices_align_menu', 'float-left'
+						'weaverx_cz_choices_align_menu', 'left'
 					),
 
 					'm_primary_menu_bar_pad_dec' => array(
@@ -1055,7 +1055,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'm_secondary_align' => weaverx_cz_select(
 						__( 'Align Secondary Menu Bar', 'weaver-xtreme' ),
 						__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
-						'weaverx_cz_choices_align_menu', 'float-left'
+						'weaverx_cz_choices_align_menu', 'left'
 					),
 
 					'm_secondary_menu_bar_pad_dec' => array(
