@@ -10,7 +10,7 @@ get_header(); ?>
 			<?php
 				while ( have_posts() ) : the_post();?>
 		            <?php the_post_thumbnail(); ?>
-					<h1><?php esc_html(the_title()); ?></h1>
+					<h1><?php the_title(); ?></h1>
 					<div class="entry-content"><p><?php the_content(); ?></p></div>
 					
 					<?php

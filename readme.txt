@@ -4,7 +4,6 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +118,14 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Added Meta Box Seperator for single post.
   * Added show / hide post pagination.
 
+= 0.4.9 =
+  * Added Meta Box Seperator for Blog post.
+  * Added copyright text font size option.
+  * Changed font awesome license from readme.txt.
+  * Removed L7 from readme.txt.
+  * Changed sanitize callback function.
+  * Updated POT file.
+
 == Resources ==
 
 Aagaz Startup WordPress Theme, Copyright 2019 ThemesEye
@@ -142,35 +149,42 @@ Twenty Seventeen WordPress Theme is distributed under the terms of the GNU GPL
 
 Aagaz Startup bundles the following third-party resources:
 
-* CSS bootstrap.css
-  Copyright 2011-2018 The Bootstrap Authors
-  https://github.com/twbs/bootstrap/blob/master/LICENSE
+** Bootstrap 
+    - Mark Otto
+    - copyright 2011-2020, Mark Otto
+    - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
+    - License: Code released under the MIT License. v4.4.1
+    - https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-* JS bootstrap.js
-  Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  https://github.com/twbs/bootstrap/blob/master/LICENSE
+** Font-Awesome 
+    - Davegandy
+    - copyright July 12, 2018, Davegandy
+    - https://github.com/FortAwesome/Font-Awesome.git
+    - License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+    - https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
-* The Font Awesome font is licensed under the SIL OFL 1.1:
-  http://scripts.sil.org/OFL
-  Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
-  https://opensource.org/licenses/mit-license.html
+** Customizer Pro 
+    - Justin Tadlock
+    - Copyright 2016, Justin Tadlock
+    - https://github.com/justintadlock/trt-customizer-pro.git
+    - License: GNU General Public License v2.0
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-* Customizer Pro, Copyright 2016 © Justin Tadlock.
-  License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-  Source: https://github.com/justintadlock/trt-customizer-pro
+** HTML5  
+    - Alexander Farkas (aFarkas)
+    - Copyright 2014 Alexander Farkas
+    - https://github.com/aFarkas/html5shiv
+    - License: MIT/GPL2
+    - https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
 
-* HTML5 Shiv, Copyright 2014 Alexander Farkas
-  Licenses: MIT/GPL2
-  Source: https://github.com/aFarkas/html5shiv
+** Stocksnap Images, 
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/license
 
-* Stocksnap Images, 
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/license
+    Slider Image, Copyright Bruce Mars
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/3LTVJMIIKW
 
-  Slider Image, Copyright Bruce Mars
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/3LTVJMIIKW
-
-  About Us Image, Copyright Domenico Loia
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/IHIHTFK8YH
+    About Us Image, Copyright Domenico Loia
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/IHIHTFK8YH

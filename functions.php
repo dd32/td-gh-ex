@@ -342,6 +342,35 @@ function aagaz_startup_sanitize_choices( $input, $setting ) {
     }
 }
 
+function aagaz_startup_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
+function aagaz_startup_sanitize_float( $input ) {
+	return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
+function aagaz_startup_sanitize_number_range( $number, $setting ) {
+	$number = absint( $number );
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+}
+
+function aagaz_startup_sanitize_email( $email, $setting ) {
+	// Strips out all characters that are not allowable in an email address.
+	$email = sanitize_email( $email );
+
+	// If $email is a valid email, return it; otherwise, return the default.
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function aagaz_startup_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'aagaz_startup_loop_columns');
 	if (!function_exists('aagaz_startup_loop_columns')) {

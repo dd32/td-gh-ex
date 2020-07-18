@@ -346,6 +346,11 @@
 		$aagaz_startup_custom_css .='padding-top: '.esc_html($aagaz_startup_copyright_top_bottom_padding).'px; padding-bottom: '.esc_html($aagaz_startup_copyright_top_bottom_padding).'px;';
 	$aagaz_startup_custom_css .='}';
 
+	$aagaz_startup_footer_text_font_size = get_theme_mod('aagaz_startup_footer_text_font_size', 16);
+	$aagaz_startup_custom_css .='.site-info{';
+		$aagaz_startup_custom_css .='font-size: '.esc_html($aagaz_startup_footer_text_font_size).'px;';
+	$aagaz_startup_custom_css .='}';
+
 	// comment settings
 	$aagaz_startup_comment_button_text = get_theme_mod('aagaz_startup_comment_button_text', 'Post Comment');
 	if($aagaz_startup_comment_button_text == ''){

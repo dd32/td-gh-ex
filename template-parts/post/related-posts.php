@@ -64,7 +64,7 @@ $related_posts = aagaz_startup_related_posts_function(); ?>
 							    <?php the_post_thumbnail(); ?>
 						 	</div>
 				 		<?php } ?>
-				 		<h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h3>
+				 		<h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
 				        <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('aagaz_startup_post_excerpt_suffix','{...}') ); ?></p></div>
 					  	<?php if( get_theme_mod('aagaz_startup_button_text','READ MORE') != ''){ ?>
 						  	<div class="post-link">

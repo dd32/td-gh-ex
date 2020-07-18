@@ -454,7 +454,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	//Sticky Header
 	$wp_customize->add_setting( 'aagaz_startup_fixed_header',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ) );
     $wp_customize->add_control('aagaz_startup_fixed_header',array(
     	'type' => 'checkbox',
@@ -464,7 +464,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_loader_setting',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_loader_setting',array(
        'type' => 'checkbox',
@@ -531,7 +531,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_top_bottom_padding',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	));
 	$wp_customize->add_control('aagaz_startup_top_bottom_padding',array(
 		'label'	=> __('Top and Bottom Padding ','aagaz-startup'),
@@ -546,7 +546,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_left_right_padding',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	));
 	$wp_customize->add_control('aagaz_startup_left_right_padding',array(
 		'label'	=> __('Left and Right Padding','aagaz-startup'),
@@ -561,7 +561,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_border_radius', array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	) );
 	$wp_customize->add_control( 'aagaz_startup_border_radius', array(
 		'label'       => esc_html__( 'Button Border Radius','aagaz-startup' ),
@@ -607,7 +607,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_show_hide_topbar',array(
 		'default' => false,
-      	'sanitize_callback'	=> 'sanitize_text_field'
+      	'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ) );
     $wp_customize->add_control('aagaz_startup_show_hide_topbar',array(
     	'type' => 'checkbox',
@@ -617,8 +617,8 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_contact_number',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_phone_number'
+	)); 
 	$wp_customize->add_control('aagaz_startup_contact_number',array(
 		'label'	=> __('Add Phone Number','aagaz-startup'),
 		'section'	=> 'aagaz_startup_contact_details',
@@ -628,7 +628,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_email_address',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_email'
 	));	
 	$wp_customize->add_control('aagaz_startup_email_address',array(
 		'label'	=> __('Add Email','aagaz-startup'),
@@ -712,7 +712,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_slider_arrows',array(
         'default' => false,
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
 	));
 	$wp_customize->add_control('aagaz_startup_slider_arrows',array(
      	'type' => 'checkbox',
@@ -722,7 +722,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_slider_title',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_slider_title',array(
        'type' => 'checkbox',
@@ -732,7 +732,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_slider_content',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_slider_content',array(
        'type' => 'checkbox',
@@ -742,7 +742,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_slider_button',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_slider_button',array(
        'type' => 'checkbox',
@@ -765,10 +765,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_slider_speed',array(
 		'default' => 3000,
-		'transport' => 'refresh',
-		'type' => 'theme_mod',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'aagaz_startup_sanitize_number_range',
 	));
 	$wp_customize->add_control( 'aagaz_startup_slider_speed',array(
 		'label' => esc_html__( 'Slider Speed','aagaz-startup' ),
@@ -818,10 +815,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_slider_excerpt_number', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'aagaz_startup_sanitize_number_range',
 	) );
 	$wp_customize->add_control( 'aagaz_startup_slider_excerpt_number', array(
 		'label'       => esc_html__( 'Slider Excerpt length','aagaz-startup' ),
@@ -920,7 +914,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_enable_disable_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_sidebar',array(
        'type' => 'checkbox',
@@ -930,7 +924,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_enable_disable_topbar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_topbar',array(
        'type' => 'checkbox',
@@ -940,7 +934,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_enable_disable_fixed_header',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_fixed_header',array(
        'type' => 'checkbox',
@@ -950,7 +944,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_enable_disable_slider',array(
        'default' => false,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_slider',array(
        'type' => 'checkbox',
@@ -960,7 +954,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_show_hide_slider_button',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_show_hide_slider_button',array(
        'type' => 'checkbox',
@@ -970,7 +964,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_enable_disable_scrolltop',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_scrolltop',array(
        'type' => 'checkbox',
@@ -986,7 +980,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_date_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_date_hide',array(
        'type' => 'checkbox',
@@ -996,7 +990,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_comment_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_comment_hide',array(
        'type' => 'checkbox',
@@ -1006,7 +1000,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('aagaz_startup_author_hide',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_author_hide',array(
        'type' => 'checkbox',
@@ -1014,36 +1008,16 @@ function aagaz_startup_customize_register( $wp_customize ) {
        'section' => 'aagaz_startup_blog_post'
     ));
 
-    $wp_customize->add_setting('aagaz_startup_tags_hide',array(
-       'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
-    ));
-    $wp_customize->add_control('aagaz_startup_tags_hide',array(
-       'type' => 'checkbox',
-       'label' => __('Single Post Tags','aagaz-startup'),
-       'section' => 'aagaz_startup_blog_post'
-    ));
-
-    $wp_customize->add_setting('aagaz_startup_single_post_image',array(
-       'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
-    ));
-    $wp_customize->add_control('aagaz_startup_single_post_image',array(
-       'type' => 'checkbox',
-       'label' => __('Single Post Featured Image','aagaz-startup'),
-       'section' => 'aagaz_startup_blog_post'
-    ));
-
-    $wp_customize->add_setting( 'aagaz_startup_seperator_metabox', array(
+    $wp_customize->add_setting( 'aagaz_startup_blog_post_metabox_seperator', array(
 		'default'   => '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
-	$wp_customize->add_control( 'aagaz_startup_seperator_metabox', array(
-		'label'       => esc_html__( 'Single Post Meta Box Seperator','aagaz-startup' ),
+	$wp_customize->add_control( 'aagaz_startup_blog_post_metabox_seperator', array(
+		'label'       => esc_html__( 'Blog Post Meta Box Seperator','aagaz-startup' ),
 		'section'     => 'aagaz_startup_blog_post',
 		'description' => __('Add the seperator for meta box. Example: ",",  "|", "/", etc. ','aagaz-startup'),
 		'type'        => 'text',
-		'settings'    => 'aagaz_startup_seperator_metabox',
+		'settings'    => 'aagaz_startup_blog_post_metabox_seperator',
 	) );
 
     $wp_customize->add_setting('aagaz_startup_blog_post_layout',array(
@@ -1078,10 +1052,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'aagaz_startup_excerpt_number', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	) );
 	$wp_customize->add_control( 'aagaz_startup_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','aagaz-startup' ),
@@ -1118,7 +1089,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_show_post_pagination',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_show_post_pagination',array(
        'type' => 'checkbox',
@@ -1161,10 +1132,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'aagaz_startup_comment_form_size',array(
 		'default' => 100,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'aagaz_startup_sanitize_number_range',
 	));
 	$wp_customize->add_control('aagaz_startup_comment_form_size',	array(
 		'label' => esc_html__( 'Comment Form Size','aagaz-startup' ),
@@ -1177,6 +1145,44 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		),
 	));
 
+	// Single post setting
+    $wp_customize->add_section('aagaz_startup_single_post_section',array(
+		'title'	=> __('Single Post Settings','aagaz-startup'),
+		'panel' => 'aagaz_startup_panel_id',
+	));	
+
+	$wp_customize->add_setting('aagaz_startup_tags_hide',array(
+       'default' => true,
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('aagaz_startup_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','aagaz-startup'),
+       'section' => 'aagaz_startup_single_post_section'
+    ));
+
+    $wp_customize->add_setting('aagaz_startup_single_post_image',array(
+       'default' => true,
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('aagaz_startup_single_post_image',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Featured Image','aagaz-startup'),
+       'section' => 'aagaz_startup_single_post_section'
+    ));
+
+    $wp_customize->add_setting( 'aagaz_startup_seperator_metabox', array(
+		'default'   => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'aagaz_startup_seperator_metabox', array(
+		'label'       => esc_html__( 'Single Post Meta Box Seperator','aagaz-startup' ),
+		'section'     => 'aagaz_startup_single_post_section',
+		'description' => __('Add the seperator for meta box. Example: ",",  "|", "/", etc. ','aagaz-startup'),
+		'type'        => 'text',
+		'settings'    => 'aagaz_startup_seperator_metabox',
+	) );
+
     // related post setting
     $wp_customize->add_section('aagaz_startup_related_post_section',array(
 		'title'	=> __('Related Post Settings','aagaz-startup'),
@@ -1185,7 +1191,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_related_posts',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
     ));
     $wp_customize->add_control('aagaz_startup_related_posts',array(
        'type' => 'checkbox',
@@ -1194,7 +1200,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
 	$wp_customize->add_setting( 'aagaz_startup_show_related_post', array(
-        'default' => 'categories',
+        'default' => __(' By Categories', 'aagaz-startup'),
         'sanitize_callback'	=> 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control( 'aagaz_startup_show_related_post', array(
@@ -1218,7 +1224,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
    	$wp_customize->add_setting('aagaz_startup_change_related_posts_number',array(
 		'default'=> 3,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	));
 	$wp_customize->add_control('aagaz_startup_change_related_posts_number',array(
 		'label'	=> __('Change Related Post Number','aagaz-startup'),
@@ -1255,24 +1261,9 @@ function aagaz_startup_customize_register( $wp_customize ) {
         ),
     )); 
 
-	$wp_customize->add_setting('aagaz_startup_copyright_top_bottom_padding',array(
-		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control('aagaz_startup_copyright_top_bottom_padding',array(
-		'label'	=> __('Copyright Top and Bottom Padding','aagaz-startup'),
-		'input_attrs' => array(
-            'step'             => 1,
-			'min'              => 0,
-			'max'              => 50,
-        ),
-		'section'=> 'aagaz_startup_footer',
-		'type'=> 'number'
-	));
-
 	$wp_customize->add_setting('aagaz_startup_hide_show_scroll',array(
         'default' => true,
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
 	));
 	$wp_customize->add_control('aagaz_startup_hide_show_scroll',array(
      	'type' => 'checkbox',
@@ -1298,7 +1289,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_scroll_top_fontsize',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'    => 'aagaz_startup_sanitize_number_range',
 	));
 	$wp_customize->add_control('aagaz_startup_scroll_top_fontsize',array(
 		'label'	=> __('Scroll To Top Font Size','aagaz-startup'),
@@ -1313,7 +1304,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_scroll_top_bottom_padding',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	));
 	$wp_customize->add_control('aagaz_startup_scroll_top_bottom_padding',array(
 		'label'	=> __('Scroll Top Bottom Padding ','aagaz-startup'),
@@ -1328,7 +1319,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_scroll_left_right_padding',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	));
 	$wp_customize->add_control('aagaz_startup_scroll_left_right_padding',array(
 		'label'	=> __('Scroll Left Right Padding','aagaz-startup'),
@@ -1343,7 +1334,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aagaz_startup_scroll_border_radius', array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
 	) );
 	$wp_customize->add_control( 'aagaz_startup_scroll_border_radius', array(
 		'label'       => esc_html__( 'Scroll To Top Border Radius','aagaz-startup' ),
@@ -1365,6 +1356,36 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'section'	=> 'aagaz_startup_footer',
 		'setting'	=> 'aagaz_startup_footer_text',
 		'type'		=> 'text'
+	));
+
+	$wp_customize->add_setting('aagaz_startup_copyright_top_bottom_padding',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_copyright_top_bottom_padding',array(
+		'label'	=> __('Copyright Top and Bottom Padding','aagaz-startup'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'aagaz_startup_footer',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('aagaz_startup_footer_text_font_size',array(
+		'default'=> 16,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_footer_text_font_size',array(
+		'label'	=> __('Footer Text Font Size','aagaz-startup'),
+		'section'=> 'aagaz_startup_footer',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'type'=> 'number'
 	));
 
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
