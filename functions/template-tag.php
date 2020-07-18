@@ -6,7 +6,7 @@
 // banner strip tag
 function spasalon_page_banner_strip(){
 	
-	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 	$call_us         = $current_options['call_us'];
 	$call_us_text    = $current_options['call_us_text']; 
 	
@@ -15,41 +15,41 @@ function spasalon_page_banner_strip(){
 	
 	Global $post;
 	
-	$my_meta = array();
+	$spasalon_meta = array();
 	
 	if( is_front_page() || is_home() ){
-		$my_meta         = get_post_meta( get_option('page_for_posts') ,'_my_meta', TRUE );
+		$spasalon_meta         = get_post_meta( get_option('page_for_posts') ,'_spasalon_meta', TRUE );
 	}else{
-	$my_meta         = get_post_meta( get_the_ID() ,'_my_meta', TRUE );
+	$spasalon_meta         = get_post_meta( get_the_ID() ,'_spasalon_meta', TRUE );
 	}
 	
 	if( is_404() ){
 		$h1              = $current_options['banner_title_one_404'];
 		$h2              = $current_options['banner_title_two_404'];
 		$bd              = $current_options['banner_description_404'];
-		//$my_meta['banner_enable']=true;
-		$my_meta=true;
+		//$spasalon_meta['banner_enable']=true;
+		$spasalon_meta=true;
 	}
 	elseif( is_category() ){
 		$h1              = $current_options['banner_title_one_category'];
 		$h2              = $current_options['banner_title_two_category'];
 		$bd              = $current_options['banner_description_category'];
-		//$my_meta['banner_enable']=true;
-		$my_meta=true;
+		//$spasalon_meta['banner_enable']=true;
+		$spasalon_meta=true;
 	}
 	elseif( is_search() ){
 		$h1              = $current_options['banner_title_one_search'];
 		$h2              = $current_options['banner_title_two_search'];
 		$bd              = $current_options['banner_description_search'];
-		//$my_meta['banner_enable']=true;
-		$my_meta=true;
+		//$spasalon_meta['banner_enable']=true;
+		$spasalon_meta=true;
 	}
 	elseif( is_tag() ){
 		$h1              = $current_options['banner_title_one_tag'];
 		$h2              = $current_options['banner_title_two_tag'];
 		$bd              = $current_options['banner_description_tag'];
-		//$my_meta['banner_enable']=true;
-		$my_meta=true;
+		//$spasalon_meta['banner_enable']=true;
+		$spasalon_meta=true;
 	}
 	elseif( is_archive() ){
 		
@@ -64,8 +64,8 @@ function spasalon_page_banner_strip(){
 			$bd              = $current_options['banner_description_author'];
 		}
 		
-		//$my_meta['banner_enable']=true;
-		$my_meta=true;
+		//$spasalon_meta['banner_enable']=true;
+		$spasalon_meta=true;
 	}
 	else{
 		
@@ -75,32 +75,32 @@ function spasalon_page_banner_strip(){
 					$h1              = $current_options['banner_title_one_woo'];
 					$h2              = $current_options['banner_title_two_woo'];
 					$bd              = $current_options['banner_description_woo'];
-					//$my_meta['banner_enable']=true;
-					$my_meta=true;
+					//$spasalon_meta['banner_enable']=true;
+					$spasalon_meta=true;
 				}
 				else{
 					
-					if(!empty($my_meta)){
-						$h1              = ( array_key_exists("heading_one",$my_meta) ? $my_meta['heading_one']        : '' );
-						$h2              = ( array_key_exists("heading_two",$my_meta) ? $my_meta['heading_two']        : '' );
-						$bd              = ( array_key_exists("banner_description",$my_meta) ? $my_meta['banner_description'] : '' );
+					if(!empty($spasalon_meta)){
+						$h1              = ( array_key_exists("heading_one",$spasalon_meta) ? $spasalon_meta['heading_one']        : '' );
+						$h2              = ( array_key_exists("heading_two",$spasalon_meta) ? $spasalon_meta['heading_two']        : '' );
+						$bd              = ( array_key_exists("banner_description",$spasalon_meta) ? $spasalon_meta['banner_description'] : '' );
 						}
 						else{
-							//$my_meta['banner_enable']=false;
-							$my_meta=true;
+							//$spasalon_meta['banner_enable']=false;
+							$spasalon_meta=true;
 						}
 				}
 				
 			}else{
 					
-					if(!empty($my_meta)){
-						$h1              = ( array_key_exists("heading_one",$my_meta) ? $my_meta['heading_one']        : '' );
-						$h2              = ( array_key_exists("heading_two",$my_meta) ? $my_meta['heading_two']        : '' );
-						$bd              = ( array_key_exists("banner_description",$my_meta) ? $my_meta['banner_description'] : '' );
+					if(!empty($spasalon_meta)){
+						$h1              = ( array_key_exists("heading_one",$spasalon_meta) ? $spasalon_meta['heading_one']        : '' );
+						$h2              = ( array_key_exists("heading_two",$spasalon_meta) ? $spasalon_meta['heading_two']        : '' );
+						$bd              = ( array_key_exists("banner_description",$spasalon_meta) ? $spasalon_meta['banner_description'] : '' );
 						}
 						else{
-							//$my_meta['banner_enable']=false;
-							$my_meta=true;
+							//$spasalon_meta['banner_enable']=false;
+							$spasalon_meta=true;
 						}
 				}
 		
@@ -108,8 +108,8 @@ function spasalon_page_banner_strip(){
 	
 	if( $current_options['spa_bannerstrip_enable']=='yes' )
 	{
-		//if( isset($my_meta['banner_enable'])==true && ( $h1 != '' || $h2 != '' ) ) {
-	if( $my_meta ==true && ( $h1 != '' || $h2 != '' ) ) {
+		//if( isset($spasalon_meta['banner_enable'])==true && ( $h1 != '' || $h2 != '' ) ) {
+	if( $spasalon_meta ==true && ( $h1 != '' || $h2 != '' ) ) {
 		echo '<section id="spa-page-header">';
 			echo '<div class="container">';
 			
@@ -117,17 +117,17 @@ function spasalon_page_banner_strip(){
 				
 					echo '<div class="col-md-3">';
 						echo '<div class="title">';
-							echo '<h4>'.$h1.'</h4><h1>'.$h2.'</h1>';
+							echo '<h4>'.esc_html($h1).'</h4><h1>'.esc_html($h2).'</h1>';
 						echo '</div>';
 					echo '</div>';
 					
 					echo '<div class="col-md-6">';
-						echo '<p class="description">'.$bd.'</p>';
+						echo '<p class="description">'.esc_html($bd).'</p>';
 					echo '</div>';
 					
 					echo '<div class="col-md-3">';
 						echo '<div class="addr-detail">';
-							echo '<address>'.$call_us_text.' <strong>'.$call_us.'</strong></address>';
+							echo '<address>'.esc_html($call_us_text).' <strong>'.esc_html($call_us).'</strong></address>';
 						echo '</div>';
 					echo '</div>';		
 				echo '</div>';
@@ -166,7 +166,7 @@ endif;
 
 
 
-function get_homepage_product_excerpt($content)
+function spasalon_get_homepage_product_excerpt($content)
 {
 		$excerpt = $content;
 		$excerpt = strip_tags(preg_replace(" (\[.*?\])",'',$excerpt));
@@ -187,7 +187,7 @@ function get_homepage_product_excerpt($content)
 function spasalon_pink_banner_strip() 
 {
 	
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 $call_us         = $current_options['call_us'];
 $call_us_text    = $current_options['call_us_text']; 	
 if( $current_options['spa_bannerstrip_enable']=='yes' )
@@ -207,10 +207,10 @@ if ( get_post_meta($postid, 'spa-page-banner-h1', true) || get_post_meta($postid
 				<div class="col-md-3">
 					<div class="title">
 						<?php if( get_post_meta($postid, 'spa-page-banner-h1', true)) : ?>
-						<h4><?php echo get_post_meta($postid, 'spa-page-banner-h1', true); ?></h4>
+						<h4><?php echo esc_html(get_post_meta($postid, 'spa-page-banner-h1', true)); ?></h4>
 						<?php endif; ?>
 						<?php if(get_post_meta($postid,'spa-page-banner-h2', true)): ?>
-						<h1><?php echo get_post_meta($postid,'spa-page-banner-h2', true); ?></h1>
+						<h1><?php echo esc_html(get_post_meta($postid,'spa-page-banner-h2', true)); ?></h1>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -218,13 +218,13 @@ if ( get_post_meta($postid, 'spa-page-banner-h1', true) || get_post_meta($postid
 				<div class="col-md-6">
 					<?php if(get_post_meta($postid, 'spa-page-description', true)) :?>
 					<p class="description">
-					<?php echo get_post_meta($postid, 'spa-page-description', true);?>
+					<?php echo esc_html(get_post_meta($postid, 'spa-page-description', true));?>
 					</p>
 					<?php endif; ?>
 				</div>
 				<div class="col-md-3">
 					<div class="addr-detail">
-					<address><?php echo $call_us_text; ?><strong><?php echo $call_us; ?></strong></address>
+					<address><?php echo esc_html($call_us_text); ?><strong><?php echo esc_html($call_us); ?></strong></address>
 					</div>
 				</div>		
 			</div>
@@ -233,5 +233,4 @@ if ( get_post_meta($postid, 'spa-page-banner-h1', true) || get_post_meta($postid
 <div class="clearfix"></div>
 <?php
 }
-} }
-?>
+} }?>

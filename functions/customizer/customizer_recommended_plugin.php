@@ -1,15 +1,13 @@
 <?php
 /* Notifications in customizer */
 
-
-require get_template_directory() . '/functions/customizer-notify/spasalon-customizer-notify.php';
-
+require SPASALON_TEMPLATE_DIR . '/functions/customizer-notify/spasalon-customizer-notify.php';
 
 $config_customizer = array(
 	'recommended_plugins'       => array(
 		'webriti-companion' => array(
 			'recommended' => true,
-			'description' => sprintf('Install and activate <strong>Webriti Companion</strong> plugin for taking full advantage of all the features this theme has to offer %s.', 'spasalon'),
+			'description' => sprintf( esc_html__( 'Install and activate the %s plugin to take full advantage of all the features this theme has to offer.', 'spasalon' ), sprintf( '<strong>%s</strong>', 'Webriti Companion' ) ),
 		),
 	),
 	'recommended_actions'       => array(),
@@ -19,6 +17,4 @@ $config_customizer = array(
 	'activate_button_label'     => esc_html__( 'Activate', 'spasalon' ),
 	'deactivate_button_label'   => esc_html__( 'Deactivate', 'spasalon' ),
 );
-Spasalon_Customizer_Notify::init( apply_filters( 'spasalon_customizer_notify_array', $config_customizer ) );
-
-?>
+Spasalon_Customizer_Notify::init( apply_filters( 'spasalon_customizer_notify_array', $config_customizer ) );?>

@@ -1,129 +1,41 @@
+=== Spasalon ===
+
+Contributors: priyanshumittal
+Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
+Requires at least: 4.5
+Tested up to: 5.4.2
+Stable tag: 2.1
+Requires PHP: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Description ==
+
 SpaSalon is a Full Responsive Multi-Purpose Theme suitable for spa, salons, beauty, care, girly, hair, health, hospitality, massage, medical, parlor, physiotherapy, wellness, yoga, health blog  and for any type of business's. Spasalon is a fast, lightweight, mobile responsive WordPress theme built with speed, SEO and usability in mind. Theme has 9 widget ready areas which helps you in creating any type of site, support for drop-down menus, in built core widgets and contact form 7 styling support. Create your website exactly the way you want it using the Customizer and see your changes take place right in front of you before publishing. Create an effective online shop presence since theme have a support for very famous plugin, WooCommerce. Separate Woocommerce Sidebar added in the shop pages so that you can add different set of widgets from default templates. Premium version of Spasalon Theme supports Contact Form 7 and Google Maps plugin, offers you more number of widget ready areas, built in core widgets like Team Widget, Services Widget, Product Slider Widget etc, number of predefined template like about us , contact us, portfolio etc and even you can customize the layouts of sidebars on Business Template without adding a single line of code. Navigate to Appearance / Customize to start customizing. 
 
-Spasalon has very creatively designed home page.
-Author: Priyanshu Mittal, Shahid Mansuri, Vibhor Purandare, hari maliya and Akhilesh Nagar.
+== Installation ==
 
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-The CSS, XHTML and design is released under GPL:
-http://www.opensource.org/licenses/gpl-license.php
+== Keyboard navigation ==
 
-Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
+Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
-====== Features ======
+== License ==
 
- - Pre-installed menu and content colors
- - Responsive
- - Custom sidebars
- - Featured Banner Image  
- - Translation Ready 
- 
+Spasalon WordPress Theme, Copyright (C) 2019, Webriti
+Spasalon Pro is distributed under the terms of the GNU GPL
 
-# Basic Setup of the Theme.
------------------------------------
-Fresh installation!
+== Changelog ==
 
-1. Upload the Spasalon Theme folder to your wp-content/themes folder.
-2. Activate the theme from the WP Dashboard.
-3. Done!
-
-=== Images ===
-
-All images in Spasalon are licensed under the terms of the GNU GPL.
-
-# Top Navigation Menu:
-
-- Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
-- Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
-
-=============Page Templates======================
-1. Contact  Page Tempalte:- Create a page as you do in WordPress and select the page template with the name 'Contact'.
-2. Full width Page template:- No sidebar involve.
-
-
-===========Front Page Added with the theme=================
-1 It has header(logo + menus),Feature Banner , Intro Tag line, Feature Services and Product Section .
-
-==================Home Page Settings=============
-This is the main catch with the theme which can be configured very easily via theme options panel.
-
-
-License
--------
-
-Spasalon WordPress Theme, Copyright 2014 Priyanshu Mittal
-Spasalon is distributed under the terms of the GNU GPL
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see .
-
-Spasalon WordPress Theme bundles the following third-party resources:
-
-Screenshot & Banner Image : CCO by skeeze
-Screenshot Image...
-https://pixabay.com/en/wellness-massage-reiki-285590/
-
-Banner Images...
-https://pixabay.com/en/wellness-massage-reiki-285590/
-
-Slider Banner Thumbnail Image : CCO by rhythmuswege
-https://pixabay.com/en/wellness-massage-sound-massage-285588/
-
-
-Service Images: CCO by nnoeki
-https://pixabay.com/en/wellness-massage-relax-relaxing-589770/
-
-Project Images : CCO by kerdkanno
-1. https://pixabay.com/en/lemon-basil-hairy-natural-spice-906141/
-
-Demo Images: CCO by Pixels
-
-https://www.pexels.com/photo/hearts-valentine-painting-fingernails-nail-polish-37553/
-
-https://www.pexels.com/photo/towels-rolled-208504/
-
-https://www.pexels.com/photo/bath-blur-brush-candles-275765/
-
-https://www.pexels.com/photo/apartment-architecture-bed-bedroom-279701/
-
-https://www.pexels.com/photo/adult-art-beauty-blur-310278/
-
-https://www.pexels.com/photo/adult-architecture-beautiful-building-341004/
-
-https://www.pexels.com/photo/adult-attractive-beautiful-cute-371160/
-
-https://www.pexels.com/photo/buildings-city-exercise-girl-374632/
-
-https://www.pexels.com/photo/attractive-beautiful-beauty-brunette-581815/
-
-
-Font Awesome...
-Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io
-
-Bootstrap...
-* Bootstrap (http://bootstrapdocs.com/v3.0.2/docs/)
-* Copyright (c) 2011-2014 Twitter, Inc
-* Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE		
-		
-----------------------------------------------------------------------
-Support
--------
-
-Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
-
-
-============================Change Log================================
+@Version 2.1
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Declared all the licenses.
+3. Changed the screenshot image.
+4. Fixed escaping and sanitizing issues.
+5. Fixed all the other issues.
 @Version 2.0.1
 1. Move Trustworthy Websites setting from customizer to About Spasalon Theme option.
 @Version 2.0
@@ -327,5 +239,41 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 9. Some layout specfic issues resolved.
 @Version 1.0
 released
+
+Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
+
+== External resources ==
+
+Font Awesome: 
+Copyright: (c) Dave Gandy
+License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
+Source: https://fontawesome.com
+
+Bootstrap:
+Copyright: (c) Twitter
+License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+Source: http://getbootstrap.com
+
+Customizer Notify:
+Copyright: (c) Mikesetzer
+License: Under GNU General Public License
+Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
+
+FlexSlider:
+Copyright 2012 WooThemes
+License: Under the GPLv2 license
+Source: http://www.woothemes.com/flexslider/
+
+Roboto Font:
+Copyright: (c) Typographer Mediengestaltung
+Licenses: Licensed under the 1001Fonts Free For Commercial Use License (FFC)
+Source: https://www.1001fonts.com/marketing-script-font.html
+
+== Images ==
+
+Screenshot Image
+URL: https://pxhere.com/en/photo/982394
+Source: https://pxhere.com
+License: CC0 Public Domain
 
 # --- EOF --- #

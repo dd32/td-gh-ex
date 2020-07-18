@@ -23,5 +23,4 @@ function spasalon_fonts_url() {
 function spasalon_scripts_styles() {
     wp_enqueue_style( 'spasalon-fonts', spasalon_fonts_url(), array(), null );
 }
-add_action( 'wp_enqueue_scripts', 'spasalon_scripts_styles' );
-?>
+add_action( 'wp_enqueue_scripts', 'spasalon_scripts_styles' );?>

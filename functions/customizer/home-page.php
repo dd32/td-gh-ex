@@ -8,13 +8,31 @@ function spasalon_homepage_customizer($wp_customize)
 	$wp_customize->add_panel( 'section_settings', array(
 		'priority'       => 125,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Homepage section settings', 'spasalon'),
+		'title'      => esc_html__('Homepage section settings', 'spasalon'),
 	) );
 
+	// Header logo text checkbox
+    $wp_customize->add_setting(
+            'header_text',
+            array(
+                'theme_supports'    => array( 'custom-logo', 'header-text' ),
+                'default'           => false,
+                'sanitize_callback' => 'absint',
+            )
+        );
+    $wp_customize->add_control(
+        'header_text',
+        array(
+            'label'    => esc_html__( 'Display Site Title and Tagline', 'spasalon'),
+            'section'  => 'title_tagline',
+            'settings' => 'header_text',
+            'type'     => 'checkbox',
+        )
+    ); 
 
 	/* settings */
 		$wp_customize->add_section( 'news_settings' , array(
-			'title'      => __('News section', 'spasalon'),
+			'title'      => esc_html__('News section', 'spasalon'),
 			'panel'  => 'section_settings',
 			'priority'       => 4,
 		) );
@@ -22,12 +40,12 @@ function spasalon_homepage_customizer($wp_customize)
 			// news enable / disable 
 			$wp_customize->add_setting( 'spa_theme_options[enable_news]' , array(
 			'default' => true,
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'spasalon_sanitize_checkbox',
 			'type'=>'option'
 			) );
 			
 			$wp_customize->add_control('spa_theme_options[enable_news]' , array(
-			'label'          => __('Enable News section', 'spasalon' ),
+			'label'          => esc_html__('Enable News section', 'spasalon' ),
 			'section'        => 'news_settings',
 			'type'           => 'checkbox',
 			) );
@@ -35,11 +53,11 @@ function spasalon_homepage_customizer($wp_customize)
 			// news layout
 			$wp_customize->add_setting( 'spa_theme_options[news_layout]' , array(
 			'default' => 2,
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'spasalon_sanitize_select',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[news_layout]' , array(
-			'label'          => __('Select column layout', 'spasalon' ),
+			'label'          => esc_html__('Select column layout', 'spasalon' ),
 			'section'        => 'news_settings',
 			'type'           => 'select',
 			'choices' => array(
@@ -51,12 +69,12 @@ function spasalon_homepage_customizer($wp_customize)
 			
 			// news title
 			$wp_customize->add_setting( 'spa_theme_options[news_title]' , array(
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option',
-			'default' => __('Our Latest News & Events','spasalon'),
+			'default' => esc_html__('Our Latest News & Events','spasalon'),
 			) );
 			$wp_customize->add_control('spa_theme_options[news_title]' , array(
-			'label'          => __( 'Title', 'spasalon' ),
+			'label'          => esc_html__( 'Title', 'spasalon' ),
 			'section'        => 'news_settings',
 			'type'           => 'text'
 			) );
@@ -64,23 +82,16 @@ function spasalon_homepage_customizer($wp_customize)
 			// news desc
 			$wp_customize->add_setting( 'spa_theme_options[news_contents]' , array(
 			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			'default' => 'The SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.',
+			'sanitize_callback' => 'sanitize_textarea_field',
+			'default' => esc_html__('The SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','spasalon'),
 			
 			) );
 			$wp_customize->add_control('spa_theme_options[news_contents]' , array(
-			'label'          => __( 'Description', 'spasalon' ),
+			'label'          => esc_html__( 'Description', 'spasalon' ),
 			'section'        => 'news_settings',
 			'type'           => 'textarea'
 			) );
 }
-
-function spasalon_home_page_sanitize_text( $input ) {
-
-			return wp_kses_post( force_balance_tags( $input ) );
-
-			}
-			
 			
 /**
  * Add selective refresh for Front page section section controls.
@@ -101,5 +112,4 @@ $wp_customize->selective_refresh->add_partial( 'spa_theme_options[news_contents]
 	
 	
 }
-
-add_action( 'customize_register', 'spasalon_register_news_section_partials' );			
+add_action( 'customize_register', 'spasalon_register_news_section_partials' );?>			

@@ -1,65 +1,48 @@
 <?php
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 */
+		do_action( 'wp_body_open' );
+	}
+}
+
 // Global variables define
-
-define('WEBRITI_TEMPLATE_DIR_URI' , get_template_directory_uri() );	
-
-define('WEBRITI_TEMPLATE_DIR' , get_template_directory() );
-
-define('WEBRITI_THEME_FUNCTIONS_PATH' , WEBRITI_TEMPLATE_DIR.'/functions');
-
+define('SPASALON_TEMPLATE_DIR_URI' , get_template_directory_uri() );
+define('SPASALON_TEMPLATE_DIR' , get_template_directory() );
+define('SPASALON_THEME_FUNCTIONS_PATH' , SPASALON_TEMPLATE_DIR.'/functions');
 define( 'WEBR_FRAMEWORK_DIR', get_template_directory_uri().'/functions' );
 
-
-
 // Theme functions file including
+require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/spasalon_default_data.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/scripts/script.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/menu/spasalon_nav_walker.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/widget/sidebars.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/banner-settings.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/general-settings.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/home-page.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/class-tgm-plugin-activation.php');
 
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/default_data.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/script.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/sidebars.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/banner-settings.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/general-settings.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/home-page.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/metabox.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/wbr-register-page-widget.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/wbr-news-widget.php');
-
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/post-widget.php');
-
+require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/font/font.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/meta-box/metabox.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/template-tag.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/widget/wbr-register-page-widget.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/widget/wbr-news-widget.php');
+require( SPASALON_THEME_FUNCTIONS_PATH . '/widget/post-widget.php');
 // Spasalon Info Page
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/spasalon-info/welcome-screen.php');
+//require( SPASALON_THEME_FUNCTIONS_PATH . '/spasalon-info/welcome-screen.php');
 
 function spasalon_customizer_css() {
-	wp_enqueue_style( 'spasalon-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	wp_enqueue_style( 'spasalon-customizer-info', SPASALON_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
 }
 add_action( 'admin_init', 'spasalon_customizer_css' );
-
-$repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
-	if ( file_exists( $repeater_path ) ) {
-	require_once( $repeater_path );
-	}
 
 if ( ! function_exists( 'spasalon_setup' ) ) :
 
@@ -70,105 +53,71 @@ function spasalon_setup() {
 	 * Translations can be filed in the /languages/ directory.
 	 */
 	
-	load_theme_textdomain( 'spasalon', get_template_directory() . '/lang' );
-
-	
-	
-	
-	// Add default posts and comments RSS feed links to head.
-	
-	add_theme_support( 'automatic-feed-links' );
-
-	
-	
+	load_theme_textdomain( 'spasalon', get_template_directory() . '/languages' );	
+	// Add default posts and comments RSS feed links to head.	
+	add_theme_support( 'automatic-feed-links' );	
 	/*
 	 * Let WordPress manage the document title.
 	 */
 	 
-	add_theme_support( 'title-tag' );
-	
-	
-	
-	
+	add_theme_support( 'title-tag' );	
 	// supports featured image
 	
-	add_theme_support( 'post-thumbnails' );
-
-	
-	
-	// This theme uses wp_nav_menu() in two locations.
-	
+	add_theme_support( 'post-thumbnails' );	
+	// This theme uses wp_nav_menu() in two locations.	
 	register_nav_menus( array(
 	
-		'primary' => __( 'Primary Menu', 'spasalon' ),
+		'primary' => esc_html__( 'Primary Menu', 'spasalon' ),		
+		'footer'  => esc_html__( 'Footer Menu', 'spasalon' ),
 		
-		'footer'  => __( 'Footer Menu', 'spasalon' ),
-		
-	) );
-	
-	
-	// woocommerce support
-	
-	add_theme_support( 'woocommerce' );
-	
+	) );	
+	// woocommerce support	
+	add_theme_support( 'woocommerce' );	
 	// Woocommerce Gallery Support
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
-	
-	
-	
-	//Custom logo
-	
+	add_theme_support( 'wc-product-gallery-slider' );	
+	//Custom logo	
 	add_theme_support( 'custom-logo' , array(
 	
-	   'class'       => 'navbar-brand',
-	   
-	   'width'       => 150,
-	   
-	   'height'      => 35,
-	   
-	   'flex-width' => false,
-	   
+	   'class'       => 'navbar-brand',	   
+	   'width'       => 150,	   
+	   'height'      => 35,	   
+	   'flex-width' => true,	   
 	   'flex-height' => false,
+	   'header-text' => array( 'site-title', 'site-description' ),
 	   
 	) );
-	
+	add_editor_style();
+	$theme = wp_get_theme(); // gets the current theme
+	if ( 'Spasalon' == $theme->name )
+	{
+	 	if ( is_admin() ) {
+			require SPASALON_TEMPLATE_DIR . '/admin/admin-init.php';
+		}
+	}
 }
 endif; // spasalon_setup
-
 add_action( 'after_setup_theme', 'spasalon_setup' );
 
 
-
-
 // Replace logo Anchor class
-
-add_filter('get_custom_logo', 'custom_logo_output', 10);
-
-function custom_logo_output( $html ){
-	
-	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
-	
-return $html;
-
+add_filter('get_custom_logo', 'spasalon_custom_logo_output', 10);
+function spasalon_custom_logo_output( $html ){	
+	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );	
+	return $html;
 }
 
 // excerpt length
-
 function spasalon_excerpt_length( $length ) {
-	
-	return 20;
-	
+	return 20;	
 }
-
 add_filter( 'excerpt_length', 'spasalon_excerpt_length', 999 );
 
 
 function spasalon_inline_style() {
-	$custom_css              = '';
-	
-$current_options = wp_parse_args(  get_option( 'spa_theme_options'));
+	$custom_css= '';	
+	$current_options = wp_parse_args(  get_option( 'spa_theme_options'));
 	$spasalon_service_content = ! empty($current_options['spasalon_service_content']) ? $current_options['spasalon_service_content'] : json_encode(
 			array(
 				array(
@@ -209,68 +158,40 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options'));
 add_action( 'wp_enqueue_scripts', 'spasalon_inline_style' );
 
 // Replaces the excerpt "more" text by a link
-
-function new_excerpt_more($more) {
-	
-    global $post;
-	
+function spasalon_new_excerpt_more($more) {	
+    global $post;	
 	$link = sprintf( '<p><a href="%1$s" class="more-link">%2$s</a></p>',
-	
-		esc_url( get_permalink( get_the_ID() ) ),
-		
-		sprintf( __( 'Read More' , 'spasalon' ) )
+					esc_url( get_permalink( get_the_ID() ) ),		
+					sprintf( esc_html__( 'Read More' , 'spasalon' ) )
 		
 	);
-	
-	return ' &hellip; ' . $link;
-	
+	return ' &hellip; ' . $link;	
 }
+add_filter('excerpt_more', 'spasalon_new_excerpt_more');
 
-add_filter('excerpt_more', 'new_excerpt_more');
-
-
-
-
-
-function modify_read_more_link() {
+function spasalon_modify_read_more_link() {
 	
-	global $post;
-	
-	$link = '<a class="more-link" href="' . get_permalink() . '">'.__( 'Read More' , 'spasalon' ).'</a>';
-	
+	global $post;	
+	$link = '<a class="more-link" href="'.esc_url(get_permalink()).'">'.esc_html__( 'Read More' , 'spasalon' ).'</a>';	
     return $link;
 }
-add_filter( 'the_content_more_link', 'modify_read_more_link' );
+add_filter( 'the_content_more_link', 'spasalon_modify_read_more_link' );
 
-
-
-
-
-// content width 
-
-function spasalon_content_width() {
-	
+// content width
+function spasalon_content_width() {	
 	$GLOBALS['content_width'] = apply_filters( 'spasalon_content_width', 960 );
-	
 }
-
 add_action( 'after_setup_theme', 'spasalon_content_width', 0 );
 
 
 // custom css 
-
 function spasalon_custom_css_function(){
 	
-	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
-	
+	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 	echo '<style>';
-	
 	echo $current_options['spa_custom_css'];
-	
 	echo '</style>';
-	
 	echo '<style>';
-	
 	echo '
 	
 		h1, .h1 { 
@@ -358,7 +279,6 @@ function spasalon_custom_css_function(){
 			font-style: '.$current_options['widget_title_fontstyle'].';
 		}
 	';
-	
 	echo '</style>';
 		
 	}
@@ -373,5 +293,78 @@ function spasalon_remove_wiget() {
     display: none !important;
 }
 </style>';
+}
+
+add_action( 'tgmpa_register', 'spasalon_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function spasalon_register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+	// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+            'name' => 'Contact Form 7',
+            'slug' => 'contact-form-7',
+            'required' => false,
+        ),
+		array(
+           'name' => 'Webriti Companion',
+            'slug' => 'webriti-companion',
+            'required' => false,
+        )
+	);
+
+	/*
+	 * Array of configuration settings. Amend each line as needed.
+	 *
+	 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+	 * strings available, please help us make TGMPA even better by giving us access to these translations or by
+	 * sending in a pull-request with .po file(s) with the translations.
+	 *
+	 * Only uncomment the strings in the config array if you want to customize the strings.
+	 */
+	$config = array(
+		'id'           => 'spasalon',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+	);
+
+	tgmpa( $plugins, $config );
+}
+
+//Custom CSS compatibility
+$spasalon_options = spasalon_default_data();
+$spasalon_current_options = wp_parse_args(get_option('spa_theme_options', array()), $spasalon_options);
+if ($spasalon_current_options['spa_custom_css'] != '' && $spasalon_current_options['spa_custom_css'] != 'nomorenow') {
+    $css = '';
+    $css .= $spasalon_current_options['spa_custom_css'];
+    $css .= (string) wp_get_custom_css(get_stylesheet());
+    $spasalon_current_options['spa_custom_css'] = 'nomorenow';
+    update_option('spa_theme_options', $spasalon_current_options);
+    wp_update_custom_css_post($css, array());
 }
 ?>

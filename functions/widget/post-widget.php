@@ -1,24 +1,31 @@
 <?php 
-add_action( 'widgets_init','wdl_post_widget'); 
-function wdl_post_widget() 
+add_action( 'widgets_init','spasalon_post_widget'); 
+function spasalon_post_widget() 
 { 
-	return   register_widget( 'wdl_post_widget' );
+	return   register_widget( 'spasalon_post_widget' );
 }
 
-class wdl_post_widget extends WP_Widget {
+class spasalon_post_widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct(
-			'wdl_post_widget', // Base ID
-			__('WBR : Latest Posts', 'spasalon'), // Name
-			array( 'description' => __( 'Latest posts widget', 'spasalon' ), ) // Args
+			'spasalon_post_widget', // Base ID
+			esc_html__('WBR : Latest Posts', 'spasalon'), // Name
+			array( 'description' => esc_html__( 'Latest posts widget', 'spasalon' ), ) // Args
 		);
 	}
 
 	public function widget( $args , $instance ) {
 		
 		echo $args['before_widget'];
-		
+		if(empty($instance['title']))
+		{
+			$instance['title']= esc_html__('Latest News','spasalon');
+		}
+		if(empty($instance['post_show']))
+		{
+			$instance['post_show']='';
+		}
 		if($instance['title']){
 		echo $args['before_title'] . $instance['title'] . $args['after_title'];
 		}
@@ -39,14 +46,14 @@ class wdl_post_widget extends WP_Widget {
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</h5>
 					</div>
-					<span class="entry-date"><?php echo  get_the_date( 'M j,Y' ); ?></span>
+					<span class="entry-date"><?php echo esc_html(get_the_date()); ?></span>
 				</div>
 			</div>
 			<?php
 			endwhile;
 		
 		endif;
-		
+		wp_reset_postdata();
 		echo $args['after_widget']; 	
 	}
 
@@ -57,13 +64,13 @@ class wdl_post_widget extends WP_Widget {
 		?>
 		
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title','spasalon' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+		<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php esc_html_e('Title','spasalon' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		
 		<p>
-		<label for="<?php echo $this->get_field_id( 'post_show' ); ?>"><?php _e('No posts to show','spasalon' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'post_show' ); ?>" name="<?php echo $this->get_field_name( 'post_show' ); ?>" type="text" value="<?php echo esc_attr( $instance['post_show'] ); ?>" />
+		<label for="<?php echo esc_attr($this->get_field_id( 'post_show' )); ?>"><?php esc_html_e('No posts to show','spasalon' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'post_show' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'post_show' )); ?>" type="text" value="<?php echo esc_attr( $instance['post_show'] ); ?>" />
 		</p>
 		
 		<?php 
@@ -72,10 +79,10 @@ class wdl_post_widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? $new_instance['title'] : '';
-		$instance['post_show'] = ( ! empty( $new_instance['post_show'] ) ) ? $new_instance['post_show'] : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field($new_instance['title']) : '';
+		$instance['post_show'] = ( ! empty( $new_instance['post_show'] ) ) ? intval($new_instance['post_show']) : '';
 		
 		return $instance;
 	}
 
-} // class
+} ?>

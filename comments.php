@@ -5,16 +5,14 @@ if ( post_password_required() ) {
 ?>
 
 <?php
-if( !function_exists('webriti_comments') ):
-function webriti_comments( $comment, $args, $depth ){
-	
-	$GLOBALS['comment'] = $comment;
+if( !function_exists('spasalon_comments') ):
+function spasalon_comments( $comment, $args, $depth ){
 	
 	//get theme data
 	global $comment_data;
 	
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','spasalon');
+	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','spasalon');
 	?>
 	<div id="comment-<?php comment_ID(); ?>" <?php comment_class('media comments'); ?>>
 	
@@ -25,11 +23,11 @@ function webriti_comments( $comment, $args, $depth ){
 		<div class="media-body">
 			<div class="comment-content">
 			
-				<h5 class="fn"><?php comment_author(); ?> 
+				<h5 class="fn"><?php esc_html(comment_author()); ?> 
 				
 					<a href="#" class="datetime">
-						<time datetime="<?php  echo comment_time('g:i a'); ?>">
-						<?php echo comment_date('M j, Y');?> <?php _e('at','spasalon') ?> <?php  echo comment_time('g:i a'); ?>
+						<time datetime="<?php  echo esc_html(comment_time('g:i a')); ?>">
+						<?php echo esc_html(comment_date('M j, Y'));?> <?php esc_html_e('at','spasalon') ?> <?php  echo esc_html(comment_time('g:i a')); ?>
 						</time>
 					</a>
 			
@@ -77,18 +75,18 @@ endif;
 	?>
 	</h3>
 	
-	<?php wp_list_comments( array( 'callback' => 'webriti_comments' ) ); ?>
+	<?php wp_list_comments( array( 'callback' => 'spasalon_comments' ) ); ?>
 	
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e('Comment navigation','spasalon'); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'spasalon' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'spasalon' ) ); ?></div>
+			<h1 class="assistive-text"><?php esc_html_e('Comment navigation','spasalon'); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'spasalon' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'spasalon' ) ); ?></div>
 		</nav>
 		<?php }  
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 		?>
-	<p class="no-comments"><?php _e('Comments are closed.', 'spasalon' ); ?></p>
+	<p class="no-comments"><?php esc_html_e('Comments are closed.', 'spasalon' ); ?></p>
 	<?php endif; ?>				
 </div>
 <!--/End of Comments-->

@@ -79,20 +79,20 @@ class Spasalon_Customizer_Notify {
 	public function setup_actions() {
 
 		// Register the section
-		add_action( 'customize_register', array( $this, 'spasalon_plugin_notification_customize_register' ) );
+		add_action( 'customize_register', array( $this, 'plugin_notification_customize_register' ) );
 
 		// Enqueue scripts and styles
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'spasalon_customizer_notify_scripts_for_customizer' ), 0 );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_notify_scripts_for_customizer' ), 0 );
 
 		/* ajax callback for dismissable recommended actions */
-		add_action( 'wp_ajax_spasalon_customizer_notify_dismiss_action', array( $this, 'spasalon_customizer_notify_dismiss_recommended_action_callback' ) );
+		add_action( 'wp_ajax_spasalon_customizer_notify_dismiss_action', array( $this, 'customizer_notify_dismiss_recommended_action_callback' ) );
 
-		add_action( 'wp_ajax_ti_customizer_notify_dismiss_recommended_plugins', array( $this, 'spasalon_customizer_notify_dismiss_recommended_plugins_callback' ) );
+		add_action( 'wp_ajax_ti_customizer_notify_dismiss_recommended_plugins', array( $this, 'customizer_notify_dismiss_recommended_plugins_callback' ) );
 
 	}
 
 	
-	public function spasalon_customizer_notify_scripts_for_customizer() {
+	public function customizer_notify_scripts_for_customizer() {
 
 		wp_enqueue_style( 'spasalon-customizer-notify-css', get_template_directory_uri() . '/functions/customizer-notify/css/spasalon-customizer-notify.css', array());
 
@@ -115,7 +115,7 @@ class Spasalon_Customizer_Notify {
 	}
 
 	
-	public function spasalon_plugin_notification_customize_register( $wp_customize ) {
+	public function plugin_notification_customize_register( $wp_customize ) {
 
 		
 		require_once get_template_directory() . '/functions/customizer-notify/spasalon-customizer-notify-section.php';
@@ -138,7 +138,7 @@ class Spasalon_Customizer_Notify {
 	}
 
 	
-	public function spasalon_customizer_notify_dismiss_recommended_action_callback() {
+	public function customizer_notify_dismiss_recommended_action_callback() {
 
 		global $spasalon_customizer_notify_recommended_actions;
 
@@ -181,7 +181,7 @@ class Spasalon_Customizer_Notify {
 	}
 
 	
-	public function spasalon_customizer_notify_dismiss_recommended_plugins_callback() {
+	public function customizer_notify_dismiss_recommended_plugins_callback() {
 
 		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
 
@@ -204,4 +204,4 @@ class Spasalon_Customizer_Notify {
 		die(); 
 	}
 
-}
+}?>

@@ -1,8 +1,8 @@
 <?php
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 $news_layout = 12 / $current_options['news_layout'];
 
-if( $current_options['enable_news'] == true ):
+if( $current_options['enable_news'] == true):
 ?>
 <!-- Blog Section -->
 <section id="section" class="home-post">
@@ -15,13 +15,13 @@ if( $current_options['enable_news'] == true ):
 					
 					<?php if( $current_options['news_title'] != '' ): ?>
 					<h1 class="section-title">
-						<?php echo $current_options['news_title']; ?>
+						<?php echo esc_html($current_options['news_title']); ?>
 					</h1>
 					<?php endif; ?>
 					
 					<?php if( $current_options['news_contents'] != '' ): ?>
 					<p class="section-subtitle">
-						<?php echo $current_options['news_contents']; ?>
+						<?php echo esc_html($current_options['news_contents']); ?>
 					</p>
 					<?php endif; ?>
 					
@@ -31,11 +31,11 @@ if( $current_options['enable_news'] == true ):
 		<!-- /Section Title -->	
 		
 		
-		<?php if( is_active_sidebar('sidebar-news') ): ?>
+		<?php if( is_active_sidebar('news-widget-section') ): ?>
 		
 		<div class="row">
 		
-			<?php dynamic_sidebar('sidebar-news'); ?>
+			<?php dynamic_sidebar('news-widget-section'); ?>
 			
 		</div>
 		
@@ -49,9 +49,14 @@ if( $current_options['enable_news'] == true ):
 				$i = 1;
 				
 				
-				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+				//$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				
-				$args = array( 'post_type' => 'post','ignore_sticky_posts' => 1 , 'posts_per_page' => 4,'paged' => $paged );
+				$args = array(
+				 'post_type' => 'post',
+				 'ignore_sticky_posts' => 1 ,
+				  'posts_per_page' => 4,
+				  //'paged' => $paged 
+				);
 				
 				$post_type_data = new WP_Query( $args );
 				
@@ -64,11 +69,7 @@ if( $current_options['enable_news'] == true ):
 					<?php if( has_post_thumbnail() ): ?>
 						<figure class="post-thumbnail">
 							<span class="entry-date">
-								<div class="date"><?php echo get_the_date('j'); ?> 
-									<div class="month-year">
-										<?php echo get_the_date('M'); ?>
-									</div>
-								</div>
+								<?php echo esc_html(get_the_date()); ?>									
 							</span>
 							
 							<?php 
@@ -103,6 +104,7 @@ if( $current_options['enable_news'] == true ):
 				endwhile;
 
 				endif;
+				wp_reset_postdata();
 				?>
 				
 			<!-- /Blog Post -->	

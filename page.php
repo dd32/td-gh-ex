@@ -1,13 +1,12 @@
 <?php
 /**
  * single page detail file
- * @package WordPress
  * @subpackage spasalon
  */
  
 get_header(); 
-$my_meta = get_post_meta( get_the_ID() ,'_my_meta', TRUE );
-if( isset($my_meta['banner_enable'])==true ) {
+$spasalon_meta = get_post_meta( get_the_ID() ,'_spasalon_meta', TRUE );
+if( isset($spasalon_meta['banner_enable'])==true ) {
 spasalon_page_banner_strip();
 }
 else
@@ -15,7 +14,6 @@ else
 spasalon_pink_banner_strip(); // banner strip
 }
 ?>
-
 <!-- Blog & Sidebar Section -->
 <section id="section">		
 	<div class="container">
@@ -30,14 +28,14 @@ spasalon_pink_banner_strip(); // banner strip
 					}
 					else{ 
 				
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-1" ) ?"12" :"8" ).'">'; 
 					
 					}
 					
 				}
 				else{ 
 				
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-1" ) ?"12" :"8" ).'">';
 					
 					} ?>
 				<div class="site-content">

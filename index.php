@@ -5,17 +5,15 @@
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
- *
- * @package WordPress
  * @subpackage spasalon
  */
  
 get_header();
-$my_meta = array();
+$spasalon_meta = array();
 if( is_front_page() || is_home() ){
-	$my_meta         = get_post_meta( get_option('page_for_posts') ,'_my_meta', TRUE );
+	$spasalon_meta         = get_post_meta( get_option('page_for_posts') ,'_spasalon_meta', TRUE );
 }
-if( isset($my_meta['banner_enable'])==true ) {
+if( isset($spasalon_meta['banner_enable'])==true ) {
 spasalon_page_banner_strip();
 }
 else
@@ -46,8 +44,8 @@ spasalon_pink_banner_strip(); // banner strip
 						<?php						
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','spasalon'),
-						'next_text'          => __('Next','spasalon')
+						'prev_text'          => esc_html__('Previous','spasalon'),
+						'next_text'          => esc_html__('Next','spasalon')
 						) ); ?>
 						</div>
 						

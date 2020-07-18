@@ -1,7 +1,6 @@
 <?php
 /**
  * single page detail file
- * @package WordPress
  * @subpackage spasalon
  */
  

@@ -3,25 +3,25 @@
  * Feature Page Widget
  *
  */
-add_action('widgets_init','wbr_feature_page_widget');
+add_action('widgets_init','spasalon_feature_page_widget');
 
-function wbr_feature_page_widget(){
+function spasalon_feature_page_widget(){
 	
-	return register_widget('wbr_feature_page_widget');
+	return register_widget('spasalon_feature_page_widget');
 }
 
 
-class wbr_feature_page_widget extends WP_Widget{
+class spasalon_feature_page_widget extends WP_Widget{
 	
 	function __construct() {
 		
 		parent::__construct(
 		
-			'wbr_feature_page_widget', // Base ID
+			'spasalon_feature_page_widget', // Base ID
 			
-			__('WBR: Page widget', 'spasalon'), // Name
+			esc_html__('WBR: Page widget', 'spasalon'), // Name
 			
-			array( 'description' => __( 'Featured page item widget', 'spasalon'), ) // Args
+			array( 'description' => esc_html__( 'Featured page item widget', 'spasalon'), ) // Args
 			
 		);
 	}
@@ -53,7 +53,7 @@ class wbr_feature_page_widget extends WP_Widget{
 					
 						echo '<h4 class="entry-title">';
 							
-							echo $title;
+							echo esc_html($title);
 
 						echo '</h4>';
 						
@@ -81,7 +81,7 @@ class wbr_feature_page_widget extends WP_Widget{
 						echo '<h4 class="entry-title">';
 							
 						
-								echo $title;
+								echo esc_html($title);
 								
 							
 						echo '</h4>';
@@ -122,9 +122,9 @@ class wbr_feature_page_widget extends WP_Widget{
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'selected_page' ); ?>"><?php _e( 'Select pages','spasalon' ); ?></label> 
+			<label for="<?php echo esc_attr($this->get_field_id( 'selected_page' )); ?>"><?php esc_html_e( 'Select pages','spasalon' ); ?></label> 
 			
-			<select class="widefat" id="<?php echo $this->get_field_id( 'selected_page' ); ?>" name="<?php echo $this->get_field_name( 'selected_page' ); ?>">
+			<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'selected_page' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'selected_page' )); ?>">
 				
 				<option value>--Select--</option>
 				
@@ -160,9 +160,9 @@ class wbr_feature_page_widget extends WP_Widget{
 		
 		<p>
 		
-		<input class="checkbox" type="checkbox" <?php if($instance['hide_image']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'hide_image' ); ?>" name="<?php echo $this->get_field_name( 'hide_image' ); ?>" /> 
+		<input class="checkbox" type="checkbox" <?php if($instance['hide_image']==true){ echo 'checked'; } ?> id="<?php echo esc_attr($this->get_field_id( 'hide_image' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'hide_image' )); ?>" /> 
 		
-		<label for="<?php echo $this->get_field_id( 'hide_image' ); ?>"><?php _e( 'Hide featured image','spasalon' ); ?></label>
+		<label for="<?php echo esc_attr($this->get_field_id( 'hide_image' )); ?>"><?php esc_html_e( 'Hide featured image','spasalon' ); ?></label>
 		
 		</p>
 		
@@ -170,9 +170,9 @@ class wbr_feature_page_widget extends WP_Widget{
 		
 		<p>
 		
-		<input class="checkbox" type="checkbox" <?php if($instance['below_title']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'below_title' ); ?>" name="<?php echo $this->get_field_name( 'below_title' ); ?>" /> 
+		<input class="checkbox" type="checkbox" <?php if($instance['below_title']==true){ echo 'checked'; } ?> id="<?php echo esc_attr($this->get_field_id( 'below_title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'below_title' )); ?>" /> 
 		
-		<label for="<?php echo $this->get_field_id( 'below_title' ); ?>"><?php _e( 'Display image below title','spasalon' ); ?></label>
+		<label for="<?php echo esc_attr($this->get_field_id( 'below_title' )); ?>"><?php esc_html_e( 'Display image below title','spasalon' ); ?></label>
 		
 		</p>
 		
@@ -185,14 +185,13 @@ class wbr_feature_page_widget extends WP_Widget{
 		
 		$instance = array();
 		
-		$instance['selected_page'] = ( ! empty( $new_instance['selected_page'] ) ) ? $new_instance['selected_page'] : '';
+		$instance['selected_page'] = ( ! empty( $new_instance['selected_page'] ) ) ? intval($new_instance['selected_page']) : '';
 		
-		$instance['hide_image'] = ( ! empty( $new_instance['hide_image'] ) ) ? $new_instance['hide_image'] : '';
+		$instance['hide_image'] = ( ! empty( $new_instance['hide_image'] ) ) ? spasalon_sanitize_checkbox($new_instance['hide_image']) : '';
 		
-		$instance['below_title'] = ( ! empty( $new_instance['below_title'] ) ) ? $new_instance['below_title'] : '';
+		$instance['below_title'] = ( ! empty( $new_instance['below_title'] ) ) ? spasalon_sanitize_checkbox($new_instance['below_title']) : '';
 		
 		return $instance;
 	}
 	
-}
-?>
+}?>

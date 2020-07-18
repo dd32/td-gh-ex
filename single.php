@@ -1,13 +1,12 @@
 <?php
 /**
  * single post detail file
- * @package WordPress
  * @subpackage spasalon
  */
  
 get_header(); 
-$my_meta = get_post_meta( get_the_ID() ,'_my_meta', TRUE );
-if( isset($my_meta['banner_enable'])==true ) {
+$spasalon_meta = get_post_meta( get_the_ID() ,'_spasalon_meta', TRUE );
+if( isset($spasalon_meta['banner_enable'])==true ) {
 spasalon_page_banner_strip();
 }
 else

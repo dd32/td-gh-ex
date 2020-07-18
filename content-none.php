@@ -3,7 +3,7 @@
 	<div class="media-body"> 
 	
 		<div class="entry-header">
-			<h3 class="entry-title"><?php _e('Nothing Found', 'spasalon' ); ?></h3>
+			<h3 class="entry-title"><?php esc_html_e('Nothing Found', 'spasalon' ); ?></h3>
 		</div>
 		
 		<div class="entry-content">
@@ -14,13 +14,13 @@
 			
 			<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.','spasalon' ); ?></p>
+			<p><?php esc_html_e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.','spasalon' ); ?></p>
 			
 			<?php get_search_form(); ?>
 
 			<?php else : ?>
 
-				<p><?php _e("It seems we can't find what you are looking for. Perhaps searching can help.","spasalon"); ?></p>
+				<p><?php esc_html_e("It seems we can't find what you are looking for. Perhaps searching can help.","spasalon"); ?></p>
 				<?php get_search_form(); ?>
 
 			<?php endif; ?>

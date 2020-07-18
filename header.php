@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?> >
 <head>	
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-	
+    <meta http-equiv="x-ua-compatible" content="ie=edge">	
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<a class="skip-link spasalon-screen-reader" href="#wrapper"><?php esc_html_e('Skip to content', 'spasalon'); ?></a>
 
 <?php 
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 ?>
 <!-- Navbar -->	
 <nav class="navbar navbar-default">
@@ -26,36 +26,62 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 				if( has_custom_logo() ) {
 					
 					the_custom_logo();  // Spasaloon custom logo support
-					
-				} else {
-					
-					echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
-					
-					if( $current_options['upload_image'] == '' ) {
-						
-						bloginfo('name');   // if no custom logo than print bloginfo name
-						
-					}
-					
-					else {
-						
-						$current_options['upload_image'] = ( $current_options['upload_image'] != '' ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' );
-						
-						$current_options['width'] = ( $current_options['width'] != '' ? $current_options['width'] : 150 );
-						
-						$current_options['height'] = ( $current_options['height'] != '' ? $current_options['height'] : 35 );
-						
-						echo '<img alt="'.get_bloginfo("name").'" src="'.$current_options['upload_image'].'" class="img-responsive" style="width:'.$current_options['width'].'px; height:'.$current_options['height'].'px;">';
-					
-					}
-					
-					echo '</a>';
+					if(get_theme_mod('header_text')==true) {
+							if((get_option('blogname')!='') || (get_option('blogdescription')!='')):
+								if(get_option('blogname')!=''):
+							    	echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
+							    	bloginfo( 'name' );
+							    	echo '</a>';
+						    	endif;
+								$description = get_bloginfo( 'description', 'display' );
+								if(get_option('blogdescription')!='')
+								{
+									if ( $description || is_customize_preview() ) : ?>
+										<p class="site-description"><?php echo $description; ?></p>
+									<?php endif;
+								}
+							endif;
+						}	 
 					
 				}
-			
+				elseif(get_theme_mod('header_text')==true) {
+						if((get_option('blogname')!='') || (get_option('blogdescription')!='')):
+							if(get_option('blogname')!=''):
+						    	echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
+						    	bloginfo( 'name' );
+						    	echo '</a>';
+					    	endif;
+							$description = get_bloginfo( 'description', 'display' );
+							if(get_option('blogdescription')!='')
+							{
+								if ( $description || is_customize_preview() ) : ?>
+									<p class="site-description"><?php echo $description; ?></p>
+								<?php endif;
+							}
+						endif;
+					}
+				elseif( $current_options['upload_image']!='' && !(has_custom_logo()) ) {
+						
+					$current_options['upload_image'] = ( $current_options['upload_image'] != '' ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' );
+					
+					$current_options['width'] = ( $current_options['width'] != '' ? $current_options['width'] : 150 );
+					
+					$current_options['height'] = ( $current_options['height'] != '' ? $current_options['height'] : 35 );
+						echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
+						echo '<img alt="'.esc_attr(get_bloginfo("name")).'" src="'.esc_url($current_options['upload_image']).'" class="img-responsive" style="width:'.esc_html($current_options['width']).'px; height:'.esc_html($current_options['height']).'px;">';
+						echo '</a>';
+					}
+					
+				elseif(!(has_custom_logo()) && get_theme_mod('header_text')==false && $current_options['upload_image']=='') {
+						
+						echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
+						bloginfo('name');   // if no custom logo than print bloginfo name
+						echo '</a>';
+						
+					}
 				?>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only"><?php echo 'Toggle navigation'; ?></span>
+				<span class="sr-only"><?php esc_html_e('Toggle navigation','spasalon'); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -66,18 +92,12 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<?php 
 			
-				wp_nav_menu( array(
-				
-				'theme_location' => 'primary',
-				
-				'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-				
-				'menu_class' => 'nav navbar-nav navbar-right',
-				
-				'fallback_cb' => 'webriti_fallback_page_menu',
-				
-				'walker' => new webriti_nav_walker()) 
-				
+				wp_nav_menu( array(				
+				'theme_location' => 'primary',				
+				'container'  => 'nav-collapse collapse navbar-inverse-collapse',				
+				'menu_class' => 'nav navbar-nav navbar-right',				
+				'fallback_cb' => 'spasalon_fallback_page_menu',				
+				'walker' => new spasalon_nav_walker()) 				
 				);  // primary support menu
 				
 			?>
@@ -87,3 +107,4 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 <!-- End of Navbar -->
 
 <div class="clearfix"></div>
+<div id="wrapper">

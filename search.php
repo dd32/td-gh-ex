@@ -1,7 +1,6 @@
 <?php
 /**
  * The search template file
- * @package WordPress
  * @subpackage spasalon
  */
  
@@ -23,7 +22,7 @@ spasalon_page_banner_strip(); // banner strip
 						<header class="page-header">
 						
 							<h1 class="page-title">
-								<?php printf( __( 'Search results for %s', 'spasalon' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+								<?php printf( __( 'Search results for %s', 'spasalon' ), '<span>' .get_search_query(). '</span>' ); ?>
 							</h1>
 							
 						</header><!-- .page-header -->
@@ -38,8 +37,8 @@ spasalon_page_banner_strip(); // banner strip
 						<?php						
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','spasalon'),
-						'next_text'          => __('Next','spasalon')
+						'prev_text'          => esc_html__('Previous','spasalon'),
+						'next_text'          => esc_html__('Next','spasalon')
 						) ); ?>
 						</div>
 						

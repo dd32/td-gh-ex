@@ -1,18 +1,64 @@
 /*
-* Theme Name: Spasalon
-* Theme URI: https://webriti.com/spasalon-lite-description/
-* Description: SpaSalon is a fully responsive multi-purpose theme, best suitable for SPAs, salons, beauty, care, hair, health, hospitality, massage, medical, parlor, physiotherapy, wellness, yoga, health blogs, and for any type of business. SpaSalon is fast and lightweight, and built with speed, SEO and usability in mind. SpaSalon has 9 widget-ready areas to help you create any type of site. It supports drop-down menus, built-in widgets, and Contact Form 7 styling. Make your website exactly the way you want it: using the Customizer, you see the changes take place right in front of you, before publishing. You can also create an effective online shop presence, since SpaSalon supports WooCommerce, and separate WooCommerce sidebars were added to the shop pages, to add different sets of widgets from the default templates. SpaSalon PRO supports Contact Form 7 and Google Maps; offers you more widget-ready areas and built-in widgets for Teams, Services, Product Sliders, etc. SpaSalon PRO also includes a number of predefined templates (about us, contact us, portfolio etc.) and even let's you customize the layout of the sidebars on the Business Template without adding a single line of code. Navigate to Appearance > Customize to start personalizing SpaSalon.
-* Version: 2.0.1
-* Author: webriti
-* Author URI: https://www.webriti.com
-* Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
-* License: GNU General Public License v3.0
-* License URI: http://www.gnu.org/licenses/gpl-3.0.html
-* Copyright (c) 2013 webriti. All rights reserved.
-* Text Domain: spasalon
+Theme Name: Spasalon
+Theme URI: https://webriti.com/spasalon-lite-description/
+Description: SpaSalon is a fully responsive multi-purpose theme, best suitable for SPAs, salons, beauty, care, hair, health, hospitality, massage, medical, parlor, physiotherapy, wellness, yoga, health blogs, and for any type of business. SpaSalon is fast and lightweight, and built with speed, SEO and usability in mind. SpaSalon has 9 widget-ready areas to help you create any type of site. It supports drop-down menus, built-in widgets, and Contact Form 7 styling. Make your website exactly the way you want it: using the Customizer, you see the changes take place right in front of you, before publishing. You can also create an effective online shop presence, since SpaSalon supports WooCommerce, and separate WooCommerce sidebars were added to the shop pages, to add different sets of widgets from the default templates. SpaSalon PRO supports Contact Form 7 and Google Maps; offers you more widget-ready areas and built-in widgets for Teams, Services, Product Sliders, etc. SpaSalon PRO also includes a number of predefined templates (about us, contact us, portfolio etc.) and even let's you customize the layout of the sidebars on the Business Template without adding a single line of code. Navigate to Appearance > Customize to start personalizing SpaSalon.
+Version: 2.1
+Requires at least: 4.5
+Tested up to: 5.4.2
+Requires PHP: 5.4
+Author: webriti
+Author URI: https://www.webriti.com
+Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: spasalon
 */
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 COMMON
+2.0 SLIDER
+	2.1 FLEX SLIDER CSS
+	2.2 THUMBNAILS OF SLIDERS CSS
+	2.3 CAPTION OF SLIDER
+3.0 SECTION TITLE CSS
+4.0 SERVICE SECTION CSS
+5.0 BLOG SECTION CSS
+6.0 HOMEPAGE PRODUCT SECTION CSS
+7.0 PAGINATION'S CSS
+8.0 PRODUCT PAGE SECTION CSS
+9.0 WIDGETS
+	9.1 ALL WIDGETS SECTION CSS
+	9.2 TABLE WIDGET
+	9.3 RECENT COMMENT WIDGET
+	9.4 TAGS WIDGET CSS
+	9.5 RSS WIDGET CSS
+	9.6 CUSTOM POST WIDGET CSS
+	9.7 CUSTOM ADDRESS WIDGET CSS
+	9.8 SOCIAL MEDIA WIDGET CSS
+	9.9 FOOTER SIDEBAR WIDGET CSS
+10.0 FOOTER COPYRIGHTS CSS
+11.0 BLOG
+	11.1 BLOG PAGE CSS
+	11.2 BLOG PAGE DETAIL CSS
+12.0 COMMENT
+	12.1 COMMENT SECTION CSS
+	12.2 COMMENT FORM CSS
+13.0 CONTACT CSS
+14.0 SHORTCODE CSS
+15.0 PAGE SCROLLUP CSS
+16.0 ADDITIONAL CSS
+17.0 WOCOMMERCE CSS
+18.0 THEME WIDGETIZED CSS
+19.0 WOOCOMMERCE SINGLE PRODUCT CSS
+20.0 SKIP LINK
 
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 COMMON
+--------------------------------------------------------------*/
 body {
 	background: #ffffff;
     color: #626668;
@@ -53,7 +99,7 @@ h1.txt-black { color: #202020; text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.6)
 .txt-black p{ color: #202020; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6); }
 .border-double { border-top: 4px double #e2e2e2; }
 /*===================================================================================*/
-/*	FLEX SLIDER CSS
+/*	2.1 FLEX SLIDER CSS
 /*===================================================================================*/
 
 #main { margin: 0; overflow: hidden; }
@@ -96,7 +142,7 @@ h1.txt-black { color: #202020; text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.6)
 
 
 /*===================================================================================*/
-/*	THUMBNAILS OF SLIDERS CSS
+/*	2.2 THUMBNAILS OF SLIDERS CSS
 /*===================================================================================*/
 
 #main .thumb-caption-detail { background: #fff; bottom: 0; left: 0; position: absolute; right: 0;  width: 1140px; /* margin: 0 auto; */ z-index: 99999;  }
@@ -178,7 +224,7 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 }
 
 /*===================================================================================*/
-/*	CAPTION OF SLIDER
+/*	2.3 CAPTION OF SLIDER
 /*===================================================================================*/
 
 .caption-overlay { 
@@ -216,7 +262,7 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 
 
 /*===================================================================================*/
-/*	SECTION TITLE CSS
+/*	3.0 SECTION TITLE CSS
 /*===================================================================================*/
 
 .section-header { margin: 0 0 60px; padding: 0 15px; display: block; text-align: center; }
@@ -224,7 +270,7 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 .section-subtitle { color: #959595; font-weight: 400; margin: 0; }
 
 /*===================================================================================*/
-/*  SERVICE SECTION CSS
+/*  4.0 SERVICE SECTION CSS
 /*===================================================================================*/
 
 #service_content_section .col-md-3:nth-child(4n+1){ clear:left; }
@@ -243,7 +289,7 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 .products .post:hover .post-thumbnail img { -webkit-transform: none; -moz-transform: none; transform: none; opacity: 1; }
 
 .entry-header { display: block; margin: 0 0 20px; padding: 0; }
-.entry-header .entry-title { font-weight: 500; }
+.entry-header .entry-title { font-weight: 500; margin-left: 2px;}
 .entry-header .entry-title > a { color: #4b453f; }
 .post-thumbnail i { 
 	color: #ffffff;
@@ -269,7 +315,7 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 } 
 
 /*===================================================================================*/
-/*  BLOG SECTION CSS
+/*  5.0 BLOG SECTION CSS
 /*===================================================================================*/
 
 .home-post .entry-header .entry-title { border-bottom: 1px solid #eae7e4; margin: 0 0 14px; padding: 0 0 13px; }
@@ -277,7 +323,7 @@ span.entry-date {
 	background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
     color: #ffffff;
     top: 0;
-	width: 55px;
+	width: 150px;
 	padding: 6px 10px;
     position: absolute;
 	letter-spacing: 0px;
@@ -308,7 +354,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  HOMEPAGE PRODUCT SECTION CSS
+/*  6.0 HOMEPAGE PRODUCT SECTION CSS
 /*===================================================================================*/
 
 .bg-color { background: #f6f2ec; }
@@ -394,7 +440,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 }
 
 /*===================================================================================*/
-/*  PAGINATION'S CSS
+/*  7.0 PAGINATION'S CSS
 /*===================================================================================*/
 
 .paginations { margin: 30px 0 40px; text-align: center; }
@@ -458,7 +504,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 }
 
 /*===================================================================================*/
-/*  PRODUCT PAGE SECTION CSS
+/*  8.0 PRODUCT PAGE SECTION CSS
 /*===================================================================================*/
 
 .product-title { font-weight: 400; margin: 0 0 20px; }
@@ -508,7 +554,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 }
 
 /*===================================================================================*/
-/*  ALL WIDGETS SECTION CSS
+/*  9.1 ALL WIDGETS SECTION CSS
 /*===================================================================================*/
 
 .sidebar { margin: 0px; padding: 0px; }
@@ -529,7 +575,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 	
 /*===================================================================================*/
-/*  TABLE WIDGET
+/*  9.2 TABLE WIDGET
 /*===================================================================================*/
 .widget .calendar_wrap { background-color: #ffffff; border: 1px solid #eae7e4; padding: 5px; border-radius: 3px; }
 .widget table { 
@@ -561,26 +607,26 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  RECENT COMMENT WIDGET
+/*  9.3 RECENT COMMENT WIDGET
 /*===================================================================================*/
 .widget .comment-author-link a { font-weight: 600; }
 
 
 /*===================================================================================*/
-/*  TAGS WIDGET CSS
+/*  9.4 TAGS WIDGET CSS
 /*===================================================================================*/
 .tagcloud { margin: 0; padding: 0; display: block; }
 .tagcloud a { color: #626668; display: inline-block; margin: 0 10px 10px 0; line-height: 25px; }
 
 
 /*===================================================================================*/
-/*  RSS WIDGET CSS
+/*  9.5 RSS WIDGET CSS
 /*===================================================================================*/
 .widget-title .rsswidget { color: #36404a; }
 
 
 /*===================================================================================*/
-/*  CUSTOM POST WIDGET CSS
+/*  9.6 CUSTOM POST WIDGET CSS
 /*===================================================================================*/
 .sidebar .widget .post, .footer-sidebar .widget .post { border-bottom: 1px solid #eae7e4; margin: 0 0 20px; padding: 0 0 20px; }
 .sidebar .widget .post:last-child, .footer-sidebar .widget .post:last-child { margin: 0px; padding: 0; border-bottom: 0 none; }
@@ -605,7 +651,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 .sidebar .widget .post-thumbnail img, .footer-sidebar .widget .post-thumbnail img { transition: all 0.3s ease-in-out 0s; }
 
 /*===================================================================================*/
-/*  CUSTOM ADDRESS WIDGET CSS
+/*  9.7 CUSTOM ADDRESS WIDGET CSS
 /*===================================================================================*/
 .widget em { font-size: 15px; line-height: 25px; color: #626668; margin-bottom: 5px; display: block; font-style: normal; }
 .widget .phone-info::before, 
@@ -625,7 +671,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  SOCIAL MEDIA WIDGET CSS
+/*  9.8 SOCIAL MEDIA WIDGET CSS
 /*===================================================================================*/
 .widget .social { margin: 0; padding: 10px 0 0; }
 .widget .social li {
@@ -651,7 +697,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  FOOTER SIDEBAR WIDGET CSS
+/*  9.9 FOOTER SIDEBAR WIDGET CSS
 /*===================================================================================*/
 /*.footer-sidebar { background-color: #f6f2ec; margin: 15px 0 0; padding: 60px 0 0px; width: 100%; }*/
 .empty-footer-sidebar {background-color: #f6f2ec; padding: 60px 0 0px; width: 100%; }
@@ -674,7 +720,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  FOOTER COPYRIGHTS CSS
+/*  10.0 FOOTER COPYRIGHTS CSS
 /*===================================================================================*/
 
 .site-info { background: #ffffff; margin: 0; padding: 20px 0; } 
@@ -686,18 +732,18 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  BLOG PAGE CSS
+/*  11.1 BLOG PAGE CSS
 /*===================================================================================*/
 
 .site-content { margin: 0; padding: 0; }
 .site-content .post { margin: 0 0 65px; }
 .site-content .post:last-child { margin: 0 0 40px; }
-.site-content .post .post-thumbnail { width: 150px; margin: 0px 30px 0px 0; overflow: hidden; float: left; display: block; border-radius: 2px; }
+.site-content .post .post-thumbnail { width: 150px; margin: 2px 30px 0px 2px; overflow: hidden; float: left; display: block; border-radius: 2px; }
 .site-content .more-link { margin: 0; }
 
 
 /*===================================================================================*/
-/*  BLOG PAGE DETAIL CSS
+/*  11.2 BLOG PAGE DETAIL CSS
 /*===================================================================================*/
 
 .site-content .post .post-thumbnail-full, 
@@ -707,7 +753,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  COMMENT SECTION CSS
+/*  12.1 COMMENT SECTION CSS
 /*===================================================================================*/
 
 .comments-area { margin: 0 0 40px; padding: 0 5px 0px 0; font-family: 'Roboto', sans-serif; border-bottom: 1px solid #e9e9e9; }
@@ -723,7 +769,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  COMMENT FORM CSS
+/*  12.2 COMMENT FORM CSS
 /*===================================================================================*/
 
 .comment-form { margin: 0px; padding: 30px 5px 40px 0; }
@@ -733,7 +779,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  CONTACT CSS
+/*  13.0 CONTACT CSS
 /*===================================================================================*/
 
 .google-map { margin: 5px 0 30px; }
@@ -758,7 +804,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  SHORTCODE CSS
+/*  14.0 SHORTCODE CSS
 /*===================================================================================*/
 
 .alert { margin: 0; }
@@ -774,7 +820,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  PAGE SCROLLUP CSS
+/*  15.0 PAGE SCROLLUP CSS
 /*===================================================================================*/
 
 .scrollup {
@@ -795,7 +841,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  ADDITIONAL CSS
+/*  16.0 ADDITIONAL CSS
 /*===================================================================================*/
 
 .paginations .screen-reader-text{ display:none; }
@@ -803,7 +849,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  WOCOMMERCE CSS
+/*  17.0 WOCOMMERCE CSS
 /*===================================================================================*/
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content { background-color: #e0e0e0; }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle { background-color: #b9b9b9; }
@@ -829,7 +875,7 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 
 
 /*===================================================================================*/
-/*  THEME WIDGETIZED CSS - 31 JULY 2016 - SHAHID
+/*  18.0 THEME WIDGETIZED CSS - 31 JULY 2016 - SHAHID
 /*===================================================================================*/
 
 /*Service Section*/
@@ -847,7 +893,7 @@ div[class*="wbr_feature_page_widget"] p .more-link { margin: 24px 0 0; }
 
 /*Footer Sidebar*/
 .footer-sidebar .widget .more-link, .footer-sidebar .widget .more-link:hover { color: #ffffff; }
-.footer-sidebar span.entry-date { width: 40px; padding: 5px; }
+.footer-sidebar span.entry-date { width: 60px;font-size: 10px;padding: 0; }
 .footer-sidebar span.entry-date .date { font-weight: 500; font-size: 18px; line-height: 25px; }
 .footer-sidebar span.entry-date .month-year { font-size: 12px; line-height: 15px; padding: 0; }
 
@@ -903,7 +949,10 @@ div[class*="wbr_feature_page_widget"] p .more-link { margin: 24px 0 0; }
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
-.sticky{}
+.sticky {
+    background-color: #FAFAD2!important;
+    padding: 20px!important;
+}
 .bypostauthor{}
 
 /* Main Slider Thumbnails Area */
@@ -972,7 +1021,7 @@ bottom: 0em;
 }
 
 /*===================================================================================*/
-/*	WOOCOMMERCE SINGLE PRODUCT CSS
+/*	19.0 WOOCOMMERCE SINGLE PRODUCT CSS
 /*===================================================================================*/
 
 .single-product .pswp__button { background-color: transparent; }
@@ -1094,4 +1143,47 @@ bottom: 0em;
 
 .woocommerce-product-gallery .flex-control-nav {
     display: block;
+}
+
+/*--------------------------------------------------------------
+20.0 Skip Link
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.spasalon-screen-reader {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+}
+
+.spasalon-screen-reader:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+.navbar-toggle:focus,.open > a:focus,textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: thin dotted !important;
+    outline: 5px auto -webkit-focus-ring-color !important;
+    outline-offset: -2px;}
+.navbar-default .dropdown-menu.leftauto .dropdown-menu {
+    border: 0;
+    right: 100%;
+    left: auto !important;
 }

@@ -1,5 +1,5 @@
 <?php 
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 ?>
 <!-- Footer Section -->
 <footer class="footer-sidebar">	
@@ -62,8 +62,10 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 				</div>
 				
 				<div class="col-md-5">
+				<?php 
+				if($current_options['footer_menu_enabled'] == true ) :?>
 					<ul class="footer-links">
-					  <?php  
+					  	<?php 
 						wp_nav_menu( 
 							array(  
 								'menu'           => 'footer-menu',
@@ -72,12 +74,12 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 								'container'      => false,
 								'menu_class'     => '',
 								'menu_id'        =>'FooterMenu',
-							   'fallback_cb'     => 'webriti_fallback_page_menu',
-								'walker'         => new webriti_nav_walker()
+							   'fallback_cb'     => 'spasalon_fallback_page_menu',
+								'walker'         => new spasalon_nav_walker()
 							)
-						);
-						?>
+						);?>
 					</ul>
+				<?php endif;?>
 				</div>
 				
 			</div>
@@ -87,11 +89,10 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 	
 </footer>
 <!-- /End of Footer Section -->
-
+</div>
 <!--Scroll To Top--> 
 <a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/End of Scroll To Top--> 	
 <?php wp_footer(); ?>
 </body>
 </html>
-

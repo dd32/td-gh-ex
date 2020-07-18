@@ -1,29 +1,28 @@
 <?php
-
 /**
  * Feature news Widget
  *
  */
  
-add_action('widgets_init','wbr_news_widget');
+add_action('widgets_init','spasalon_news_widget');
 
-function wbr_news_widget(){
+function spasalon_news_widget(){
 	
-	return register_widget('wbr_news_widget');
+	return register_widget('spasalon_news_widget');
 	
 }
 
-class wbr_news_widget extends WP_Widget{
+class spasalon_news_widget extends WP_Widget{
 	
 	function __construct() {
 		
 		parent::__construct(
 		
-			'wbr_news_widget', // Base ID
+			'spasalon_news_widget', // Base ID
 			
-			__('WBR: Recent news widget', 'spasalon'), // Name
+			esc_html__('WBR: Recent news widget', 'spasalon'), // Name
 			
-			array( 'description' => __( 'To display your recent post', 'spasalon'), ) // Args
+			array( 'description' => esc_html__( 'To display your recent post', 'spasalon'), ) // Args
 			
 		);
 	}
@@ -65,17 +64,7 @@ class wbr_news_widget extends WP_Widget{
 						<figure class="post-thumbnail">
 						
 							<span class="entry-date">
-							
-								<div class="date"><?php echo get_the_date('j'); ?> 
-								
-									<div class="month-year">
-									
-										<?php echo get_the_date('M'); ?>
-										
-									</div>
-									
-								</div>
-								
+							<?php echo esc_html(get_the_date()); ?>			
 							</span>
 							
 							<?php 
@@ -128,7 +117,7 @@ class wbr_news_widget extends WP_Widget{
 				endwhile;
 
 			endif;
-			
+			wp_reset_postdata();
 			echo '</div>';
 	}
 	
@@ -141,10 +130,9 @@ class wbr_news_widget extends WP_Widget{
 		$instance['news_column'] = isset($instance['news_column']) ? $instance['news_column'] : 2;
 		
 		?>
-
 		<p>
-			<label for="<?php echo $this->get_field_id( 'news_cat' ); ?>"><?php _e( 'Select post category','spasalon' ); ?></label> 
-			<select class="widefat" id="<?php echo $this->get_field_id( 'news_cat' ); ?>" name="<?php echo $this->get_field_name( 'news_cat' ); ?>">
+			<label for="<?php echo esc_attr($this->get_field_id( 'news_cat' )); ?>"><?php esc_html_e( 'Select post category','spasalon' ); ?></label> 
+			<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'news_cat' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'news_cat' )); ?>">
 				<option value>--Select--</option>
 				<?php
 
@@ -176,8 +164,8 @@ class wbr_news_widget extends WP_Widget{
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'news_column' ); ?>"><?php _e( 'Select column layout','spasalon' ); ?></label> 
-			<select class="widefat" id="<?php echo $this->get_field_id( 'news_column' ); ?>" name="<?php echo $this->get_field_name( 'news_column' ); ?>">
+			<label for="<?php echo esc_attr($this->get_field_id( 'news_column' )); ?>"><?php esc_html_e( 'Select column layout','spasalon' ); ?></label> 
+			<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'news_column' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'news_column' )); ?>">
 				<option value> -- Select Column -- </option>
 				<?php
 					for( $i = 1; $i<=4; $i++ ) {
@@ -194,10 +182,9 @@ class wbr_news_widget extends WP_Widget{
 			<br/>
 			
 		</p>
-		
 		<p>
-		<label for="<?php echo $this->get_field_id( 'exclude_post_id' ); ?>"><?php _e( 'Exclude post id ( like : 1,2,3 )', 'spasalon' ); ?></label> 
-		<textarea style="width:100%;" rows="5" id="<?php echo $this->get_field_id( 'exclude_post_id' ); ?>" name="<?php echo $this->get_field_name( 'exclude_post_id' ); ?>"><?php echo $instance['exclude_post_id']; ?></textarea>
+		<label for="<?php echo esc_attr($this->get_field_id( 'exclude_post_id' )); ?>"><?php esc_html_e( 'Exclude post id ( like : 1,2,3 )', 'spasalon' ); ?></label> 
+		<textarea style="width:100%;" rows="5" id="<?php echo esc_attr($this->get_field_id( 'exclude_post_id' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'exclude_post_id' )); ?>"><?php echo esc_html($instance['exclude_post_id']); ?></textarea>
 		</p>
 		
 		<?php 
@@ -207,12 +194,12 @@ class wbr_news_widget extends WP_Widget{
 		
 		$instance = array();
 		
-		$instance['news_cat'] = ( ! empty( $new_instance['news_cat'] ) ) ? $new_instance['news_cat'] : '';
+		$instance['news_cat'] = ( ! empty( $new_instance['news_cat'] ) ) ? intval($new_instance['news_cat']) : '';
 		
-		$instance['exclude_post_id'] = ( ! empty( $new_instance['exclude_post_id'] ) ) ? $new_instance['exclude_post_id'] : '';
+		$instance['exclude_post_id'] = ( ! empty( $new_instance['exclude_post_id'] ) ) ? sanitize_textarea_field($new_instance['exclude_post_id']) : '';
 		
-		$instance['news_column'] = ( ! empty( $new_instance['news_column'] ) ) ? $new_instance['news_column'] : '';
+		$instance['news_column'] = ( ! empty( $new_instance['news_column'] ) ) ? intval($new_instance['news_column']) : '';
 		
 		return $instance;
 	}
-}
+}?>
