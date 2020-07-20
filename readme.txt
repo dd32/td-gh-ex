@@ -4,7 +4,7 @@ Contributors: postmagthemes
 Tags: blog, news, entertainment, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, theme-options, threaded-comments
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,8 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.1.1 - july 2020 =
+* list item for  blog sidebar dot is not shown.
 
 = 1.1.0 - july 13 2020 =
 * single page clearfix added, main news slider in all page,tesetd up to added, list item for order list fixed.
