@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
-Version: 1.7.6
+Version: 1.7.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-logo, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -78,6 +78,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.7.7
+- Fixed:   Accessibility links in header now appear correctly. Issue where header cut of link is now fixed.
 
 = 1.7.6
 - Fixed:   Logo changes now reflected in customizer preview.
