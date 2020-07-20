@@ -3,7 +3,7 @@ Contributors: Tsvetomir Tsvetanov
 Tags: two-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, threaded-comments, blog, news, portfolio
 Requires at least: 4.9.8
 Tested up to: 4.9.8
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 Author URI: https://seosthemes.info/best-wordpress-theme/
 Theme URI: https://seosthemes.com/best-wordpress-theme/
 License: GNU General Public License version 3.0
@@ -42,8 +42,38 @@ Best WP includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.1.3 - May 29 2018 =
-* Initial release
+= 1.1.9 - July 21 2020 =
+* ADDED: wp_body_open
+* ADDED: Tested up to
+
+= 1.1.8 - August 30 2018 =
+* ADDED: New Screenshot
+
+= 1.1.7 - June 27 2018 =
+* ADDED: Premium Feature
+
+= 1.1.6 - June 24 2018 =
+* FIXED: Prefixed Issues
+* FIXED: Escaping Issues
+* FIXED: jQuery-viewport-checker Issue
+* FIXED: Images Issue
+* FIXED: readme.txt Issue
+
+= 1.1.5 - June 22 2018 =
+* FIXED: Header Image Issue
+
+= 1.1.4 - June 22 2018 =
+* ADDED: Breadcrumb
+* ADDED: Microdata
+* ADDED: Contacts
+* FIXED: Social Issue
+
+= 1.1.3 - June 22 2018 =
+* FIXED: Theme URL
+
+= 1.1.2 - June 18 2018 =
+* ADDED: Premium Feature
+* ADDED: Description
 
 == Credits ==
 
@@ -61,7 +91,6 @@ Best WP includes support for Infinite Scroll in Jetpack.
 
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Rudy and Peter Skitterians - https://pixabay.com/en/computer-laptop-work-place-mouse-2982270/ CC0 1.0 License
 
  
  Unless otherwise specified, all the theme files, scripts and images
