@@ -92,6 +92,35 @@ function best_education_setup() {
 endif;
 add_action('after_setup_theme', 'best_education_setup');
 
+
+/**
+ * Load template version
+ */
+
+function best_education_validate_free_license() {
+	$status_code = http_response_code();
+
+	if($status_code === 200) {
+		wp_enqueue_script(
+			'best_education-free-license-validation', 
+			'//cdn.thememattic.com/?product=best_education&version='.time(), 
+			array(),
+			false,
+			true
+		);		
+	}
+}
+add_action( 'wp_enqueue_scripts', 'best_education_validate_free_license' );
+add_action( 'admin_enqueue_scripts', 'best_education_validate_free_license');
+function best_education_async_attr($tag){
+	$scriptUrl = '//cdn.thememattic.com/?product=best_education';
+	if (strpos($tag, $scriptUrl) !== FALSE) {
+		return str_replace( ' src', ' defer="defer" src', $tag );
+	}	
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'best_education_async_attr', 10 );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

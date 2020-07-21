@@ -3,8 +3,8 @@
 Contributors: Thememattic
 
 Requires at least: 4.0
-Tested up to: 5.2
-Stable tag: 1.0.9
+Tested up to: 5.4.2
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,10 @@ Best Education is distributed under the terms of the GNU GPL
 = 1.0.9 - Feb 17 2020 =
 = Removed Theme About Page =
 
+= 1.1.0 - June 24 2020 =
+= Added Requires PHP & Tested up to in Style.css
+= Updated tested up to 5.4.2 and updated WP compatibility
+
 == Credits ==
 
 Underscores:
@@ -139,9 +143,6 @@ TGM-Plugin-Activation:
 Author: Thomas Griffin (thomasgriffinmedia.com)
 URL:  https://github.com/TGMPA/TGM-Plugin-Activation
 License: GNU General Public License, version 2
-
-== Image Used ==
-https://pixabay.com/en/johns-hopkins-university-gilman-hall-1590925/
 
 All are Licensed under CC0
 
