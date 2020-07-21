@@ -3,9 +3,9 @@ Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, news, photography
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 Requires PHP: 5.3
-License: GPLv2 or later
+License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Nova Lite is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework.
@@ -15,10 +15,16 @@ Nova Lite is a responsive clean Tumblog Wordpress Theme, based on Bootstrap fram
 Nova Lite is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 
 Created by ThemeinProgress, http://www.themeinprogress.com
-Nova Lite WordPress Theme, Copyright 2019 ThemeinProgress.
+Nova Lite WordPress Theme, Copyright 2020 ThemeinProgress.
 Nova Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.3.8 =
+Release date - July, 21 - 2020
+
+* Tested with WordPress 5.4
+* Edit - Code optimized
 
 = 1.3.7 =
 Release date - April, 18 - 2020

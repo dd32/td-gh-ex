@@ -56,10 +56,10 @@
                             <p> <?php esc_html_e( 'You can repeat your search with the following form.',"nova-lite" ) ?> </p>
                         
                             <section class="contact-form searchform">
-                                <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                                <form method="get" id="searchform" action="<?php echo esc_url(home_url( '/' )); ?>">
                                      <div>
-                                     <input type="text" placeholder="<?php esc_html_e( 'Search here', 'nova-lite' ) ?>"  name="s" id="s" class="input-search"/>
-                                     <input type="submit" id="searchsubmit" class="button-search" value="<?php esc_html_e( 'Search', 'nova-lite' ) ?>" />
+                                     <input type="text" placeholder="<?php esc_attr_e( 'Search here', 'nova-lite' ) ?>"  name="s" id="s" class="input-search"/>
+                                     <input type="submit" id="searchsubmit" class="button-search" value="<?php esc_attr_e( 'Search', 'nova-lite' ) ?>" />
                                      </div>
                                 </form>
                             <div class="clear"></div>  
