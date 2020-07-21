@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: * Customizr v4.2.9\n"
+"Project-Id-Version: * Customizr v4.3.0\n"
 "Report-Msgid-Bugs-To: https://presscustomizr.com/contact/\n"
-"POT-Creation-Date: 2020-07-16 13:26:59+00:00\n"
+"POT-Creation-Date: 2020-07-21 13:57:14+00:00\n"
 "PO-Revision-Date: 2016-08-31 16:05+0200\n"
 "Last-Translator: Nicolas <contact@themesandco.com>\n"
 "Language-Team: Angel Calzado <angelcalzado@sintaxisweb.es>\n"
@@ -1540,18 +1540,18 @@ msgstr ""
 
 #: build/free/customizr/core/core-settings-map.php:1248
 #: build/free/customizr/core/core-settings-map.php:1260
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:552
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:570
 #: core/core-settings-map.php:1248 core/core-settings-map.php:1260
-#: core/czr-base-fmk/czr-base-fmk.php:552
+#: core/czr-base-fmk/czr-base-fmk.php:570
 msgid "Yes"
 msgstr ""
 
 #: build/free/customizr/core/core-settings-map.php:1249
 #: build/free/customizr/core/core-settings-map.php:1261
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:552
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:570
 #: build/free/customizr/inc/czr-front-ccat.php:4084
 #: core/core-settings-map.php:1249 core/core-settings-map.php:1261
-#: core/czr-base-fmk/czr-base-fmk.php:552
+#: core/czr-base-fmk/czr-base-fmk.php:570
 #: inc/_dev/parts/class-content-headings.php:329 inc/czr-front-ccat.php:4084
 msgid "No"
 msgstr "Sin"
@@ -3517,8 +3517,8 @@ msgid "Link"
 msgstr ""
 
 #: build/free/customizr/core/czr-admin-ccat.php:2448
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:242
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:543
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:260
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:561
 #: build/free/customizr/core/czr-customize-ccat.php:856
 #: build/free/customizr/core/czr-customize-ccat.php:866
 #: build/free/customizr/core/front/models/modules/common/class-model-breadcrumb.php:624
@@ -3538,8 +3538,8 @@ msgstr ""
 #: core/_dev/_admin/class-admin-meta_boxes.php:1518
 #: core/_dev/_czr/class-czr-resources.php:221
 #: core/_dev/_czr/class-czr-resources.php:231 core/czr-admin-ccat.php:2448
-#: core/czr-base-fmk/czr-base-fmk.php:242
-#: core/czr-base-fmk/czr-base-fmk.php:543 core/czr-customize-ccat.php:856
+#: core/czr-base-fmk/czr-base-fmk.php:260
+#: core/czr-base-fmk/czr-base-fmk.php:561 core/czr-customize-ccat.php:856
 #: core/czr-customize-ccat.php:866
 #: core/front/models/modules/common/class-model-breadcrumb.php:624
 #: core/front/models/modules/common/class-model-breadcrumb.php:657
@@ -3601,157 +3601,188 @@ msgstr ""
 msgid "Slider documentation"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:243
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:209
+#: core/czr-base-fmk/czr-base-fmk.php:209
+msgid "Clear"
+msgstr ""
+
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:210
+#: core/czr-base-fmk/czr-base-fmk.php:210
+#, fuzzy
+msgid "Clear color"
+msgstr "Color del tema"
+
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:211
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:273
+#: core/czr-base-fmk/czr-base-fmk.php:211
+#: core/czr-base-fmk/czr-base-fmk.php:273
+#, fuzzy
+msgid "Default"
+msgstr "Por Defecto (gris)"
+
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:212
+#: core/czr-base-fmk/czr-base-fmk.php:212
+#, fuzzy
+msgid "Select default color"
+msgstr "Seleccionar un dise&ntilde;o"
+
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:213
+#: core/czr-base-fmk/czr-base-fmk.php:213
+#, fuzzy
+msgid "Select Color"
+msgstr "Configuraci&oacute;n de enlaces a redes sociales"
+
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:214
+#: core/czr-base-fmk/czr-base-fmk.php:214
+#, fuzzy
+msgid "Color value"
+msgstr "Color"
+
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:261
 #: build/free/customizr/core/czr-customize-ccat.php:857
 #: build/free/customizr/inc/czr-front-ccat.php:776
 #: build/free/customizr/inc/czr-front-ccat.php:783
 #: core/_dev/_czr/class-czr-resources.php:222
-#: core/czr-base-fmk/czr-base-fmk.php:243 core/czr-customize-ccat.php:857
+#: core/czr-base-fmk/czr-base-fmk.php:261 core/czr-customize-ccat.php:857
 #: inc/_dev/parts/class-header-menu.php:129
 #: inc/_dev/parts/class-header-menu.php:136 inc/czr-front-ccat.php:776
 #: inc/czr-front-ccat.php:783
 msgid "Close"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:244
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:262
 #: build/free/customizr/core/czr-customize-ccat.php:858
 #: core/_dev/_czr/class-czr-resources.php:223
-#: core/czr-base-fmk/czr-base-fmk.php:244 core/czr-customize-ccat.php:858
+#: core/czr-base-fmk/czr-base-fmk.php:262 core/czr-customize-ccat.php:858
 msgid "Not set"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:245
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:263
 #: build/free/customizr/core/czr-customize-ccat.php:862
 #: build/free/customizr/core/czr-modules/social-links/index.php:78
 #: build/free/customizr/core/czr-modules/social-links/social_links_module.php:80
 #: core/_dev/_czr/class-czr-resources.php:227
-#: core/czr-base-fmk/czr-base-fmk.php:245 core/czr-customize-ccat.php:862
+#: core/czr-base-fmk/czr-base-fmk.php:263 core/czr-customize-ccat.php:862
 #: core/czr-modules/social-links/index.php:78
 #: core/czr-modules/social-links/social_links_module.php:80
 msgid "Done !"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:247
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:265
 #: build/free/customizr/core/czr-customize-ccat.php:864
 #: build/free/customizr/core/czr-customize-ccat.php:884
 #: core/_dev/_czr/class-czr-resources.php:229
 #: core/_dev/_czr/class-czr-resources.php:249
-#: core/czr-base-fmk/czr-base-fmk.php:247 core/czr-customize-ccat.php:864
+#: core/czr-base-fmk/czr-base-fmk.php:265 core/czr-customize-ccat.php:864
 #: core/czr-customize-ccat.php:884
 #, fuzzy
 msgid "Learn more about this in the documentation"
 msgstr "Vea la documentaci&oacute;n del tema."
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:248
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:266
 #: build/free/customizr/core/czr-customize-ccat.php:885
 #: core/_dev/_czr/class-czr-resources.php:250
-#: core/czr-base-fmk/czr-base-fmk.php:248 core/czr-customize-ccat.php:885
+#: core/czr-base-fmk/czr-base-fmk.php:266 core/czr-customize-ccat.php:885
 #, fuzzy
 msgid "Settings"
 msgstr "Ajuste de las im&aacute;genes"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:249
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:267
 #: build/free/customizr/core/czr-customize-ccat.php:886
 #: core/_dev/_czr/class-czr-resources.php:251
-#: core/czr-base-fmk/czr-base-fmk.php:249 core/czr-customize-ccat.php:886
+#: core/czr-base-fmk/czr-base-fmk.php:267 core/czr-customize-ccat.php:886
 msgid "Options for"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:252
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:257
-#: core/czr-base-fmk/czr-base-fmk.php:252
-#: core/czr-base-fmk/czr-base-fmk.php:257
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:270
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:275
+#: core/czr-base-fmk/czr-base-fmk.php:270
+#: core/czr-base-fmk/czr-base-fmk.php:275
 #, fuzzy
 msgid "Select Image"
 msgstr "Diapositiva"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:253
-#: core/czr-base-fmk/czr-base-fmk.php:253
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:271
+#: core/czr-base-fmk/czr-base-fmk.php:271
 #, fuzzy
 msgid "Change Image"
 msgstr "Diapositiva"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:254
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:543
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:272
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:561
 #: build/free/customizr/core/czr-customize-ccat.php:1479
 #: core/_dev/_czr/controls/class-upload-control.php:68
-#: core/czr-base-fmk/czr-base-fmk.php:254
-#: core/czr-base-fmk/czr-base-fmk.php:543 core/czr-customize-ccat.php:1479
+#: core/czr-base-fmk/czr-base-fmk.php:272
+#: core/czr-base-fmk/czr-base-fmk.php:561 core/czr-customize-ccat.php:1479
 msgid "Remove"
 msgstr "Quitar"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:255
-#: core/czr-base-fmk/czr-base-fmk.php:255
-#, fuzzy
-msgid "Default"
-msgstr "Por Defecto (gris)"
-
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:256
-#: core/czr-base-fmk/czr-base-fmk.php:256
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:274
+#: core/czr-base-fmk/czr-base-fmk.php:274
 #, fuzzy
 msgid "No image selected"
 msgstr "Ninguna imagen seleccionada"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:258
-#: core/czr-base-fmk/czr-base-fmk.php:258
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:276
+#: core/czr-base-fmk/czr-base-fmk.php:276
 #, fuzzy
 msgid "Choose Image"
 msgstr "Elegir un deslizador (slider)"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:260
-#: core/czr-base-fmk/czr-base-fmk.php:260
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:278
+#: core/czr-base-fmk/czr-base-fmk.php:278
 #, fuzzy
 msgid "Customizing"
 msgstr "Personalizar"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:453
-#: core/czr-base-fmk/czr-base-fmk.php:453
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:471
+#: core/czr-base-fmk/czr-base-fmk.php:471
 msgid "ac_set_ajax_czr_tmpl => Security check failed."
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:525
-#: core/czr-base-fmk/czr-base-fmk.php:525
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:543
+#: core/czr-base-fmk/czr-base-fmk.php:543
 msgid "Add New"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:530
-#: core/czr-base-fmk/czr-base-fmk.php:530
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:548
+#: core/czr-base-fmk/czr-base-fmk.php:548
 msgid "Cancel"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:530
-#: core/czr-base-fmk/czr-base-fmk.php:530
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:548
+#: core/czr-base-fmk/czr-base-fmk.php:548
 #, fuzzy
 msgid "Add it"
 msgstr "a&ntilde;adir widgets"
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:551
-#: core/czr-base-fmk/czr-base-fmk.php:551
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:569
+#: core/czr-base-fmk/czr-base-fmk.php:569
 msgid "Are you sure you want to remove : <strong>{{ data.title }} ?</strong>"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1667
-#: core/czr-base-fmk/czr-base-fmk.php:1667
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1685
+#: core/czr-base-fmk/czr-base-fmk.php:1685
 msgid "Set a custom url"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1701
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1901
-#: core/czr-base-fmk/czr-base-fmk.php:1701
-#: core/czr-base-fmk/czr-base-fmk.php:1901
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1719
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1919
+#: core/czr-base-fmk/czr-base-fmk.php:1719
+#: core/czr-base-fmk/czr-base-fmk.php:1919
 msgid "ajax_load_available_items => Security check failed."
 msgstr ""
 
 #. translators: %d: ID of a post
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1822
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:2031
-#: core/czr-base-fmk/czr-base-fmk.php:1822
-#: core/czr-base-fmk/czr-base-fmk.php:2031
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1840
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:2049
+#: core/czr-base-fmk/czr-base-fmk.php:1840
+#: core/czr-base-fmk/czr-base-fmk.php:2049
 msgid "#%d (no title)"
 msgstr ""
 
-#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1965
-#: core/czr-base-fmk/czr-base-fmk.php:1965
+#: build/free/customizr/core/czr-base-fmk/czr-base-fmk.php:1983
+#: core/czr-base-fmk/czr-base-fmk.php:1983
 #, fuzzy
 msgid "No results found."
 msgstr "Resultados de la b&uacute;squeda por:"
@@ -6717,9 +6748,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Choose a font"
 #~ msgstr "Elegir una p&aacute;gina"
-
-#~ msgid "Color"
-#~ msgstr "Color"
 
 #~ msgid "feed"
 #~ msgstr "Canal"
