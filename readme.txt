@@ -1,18 +1,21 @@
 === ARzine ===
 
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
-
-Requires at least: 4.5
-Tested up to: 5.1
-Stable tag:1.7.4
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Contributors: priyanshumittal
+Tags: full-width-template, grid-layout, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
+Requires at least: 4.7
+Tested up to: 5.4.2
+Stable tag: 1.8
+Requires PHP: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A starter theme called ARzine.
 
 == Description ==
 
 Arzine is a responsive, multi-purpose WordPress theme. It’s flexible and suitable for agencies, blogs, business, corporate or portfolios. Customization is easy and straight-forward, with options provided that allow you to setup your site to perfectly fit your desired online presence. Arzine offers a beautifully designed masonry blog layout. For more details, visit this link https://wordpress.org/themes/busiprof/. We hope you will find the Arzine theme useful.
+In the Arzine child theme, Blog Masonry layout is there that is not present in the parent theme. Posts on the main page are showing in the masonry layout.
+
 
 == Installation ==
 
@@ -20,11 +23,20 @@ Arzine is a responsive, multi-purpose WordPress theme. It’s flexible and suita
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
+== Keyboard navigation ==
+
+Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
+
 
 == Changelog ==
+
+= 1.8
+* Implement the Accessibility including skip to content and keyboard navigation.
+* Declared all the licenses.
+* Changed the screenshot image.
+* Fixed all the other issues.
+
 = 1.7.4
 * Added Archive page title setting.
 
@@ -40,23 +52,20 @@ Arzine is a responsive, multi-purpose WordPress theme. It’s flexible and suita
 = 1.7
 * Added Blog Masonry layout.
 
-== Credits ==
 
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+== External Resources ==
 
-== License and Credits ==
+Masonry JS:
+Copyright: (C) 2007 Free Software Foundation
+License: Under the GNU General Public License v3.0 
+Source: https://github.com/jmlp-131092/mp-mansory.js
 
-Bootstrap
-Source: http://getbootstrap.com
-License: Licensed under MIT License
-License URI: https://github.com/twbs/bootstrap/blob/master/LICENSE
+== Images ==
+* Image used in the Screenshots
+License CC0 Public Domain
+https://pxhere.com/en/photo/1456485
+https://pxhere.com/en/photo/1448333
+https://pxhere.com/en/photo/555607
+https://pxhere.com/en/photo/714512
 
-Images used from Pixels.
-Pixels provides images under CC0 license
-
-/* Blog Masonry Image */
-https://www.pexels.com/photo/black-and-silver-film-camera-on-brown-wooden-surface-733853/
-https://www.pexels.com/photo/woman-standing-bear-tall-grass-852860/
-https://www.pexels.com/photo/wood-coffee-camera-desk-16510/
-https://www.pexels.com/photo/academic-adolescent-bookcase-books-207708/
-https://www.pexels.com/photo/adult-art-artistic-attractive-235462/
+# --- EOF --- #

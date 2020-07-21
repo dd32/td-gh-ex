@@ -1,13 +1,18 @@
 /*
-Theme Name:   ARzine
- Description:  Arzine is a responsive, multi-purpose WordPress theme. It’s flexible and suitable for agencies, blogs, business, corporate or portfolios. Customization is easy and straight-forward, with options provided that allow you to setup your site to perfectly fit your desired online presence. Arzine offers a beautifully designed masonry blog layout. For more details, visit this link https://wordpress.org/themes/busiprof/. We hope you will find the Arzine theme useful. 
- Author:       webriti
- Author URI:   https://www.webriti.com
- Theme URI:    https://webriti.com/arzine-wordpress-page/
- Template:     busiprof
- Version:      1.7.4
- Tags: 		   full-width-template, grid-layout, threaded-comments, two-columns,  right-sidebar, sticky-post, custom-menu, translation-ready, blog, portfolio, footer-widgets, featured-images, featured-image-header, custom-header
- Text Domain: arzine
+Theme Name: ARzine
+Description: Arzine is a responsive, multi-purpose WordPress theme. It’s flexible and suitable for agencies, blogs, business, corporate or portfolios. Customization is easy and straight-forward, with options provided that allow you to setup your site to perfectly fit your desired online presence. Arzine offers a beautifully designed masonry blog layout. For more details, visit this link https://wordpress.org/themes/busiprof/. We hope you will find the Arzine theme useful.
+Author: webriti
+Author URI: https://www.webriti.com
+Theme URI: https://webriti.com/arzine-wordpress-page/
+Template: busiprof
+Version: 1.8
+Tags: full-width-template, grid-layout, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: arzine
 */
 
 /*Blog Masonry Css--------------------------------------------------------------------*/
@@ -18,12 +23,12 @@ iframe{max-width:100%;}
     background-color: transparent;
     min-height: 100px;
     padding: 0px;
-    margin: 0px;	
+    margin: 0px;
 }
 .masonry-content { padding: 30px; }
 .site-content#blog-masonry { border-left: none; padding: 60px 0 30px; }
 .site-content#blog-masonry .post { background: #fdfdfd; padding: 0; transition: 0.3s; box-shadow: 0 0px 30px 0 rgba(0,0,0,0.1); border: 0 none; }
-@media screen and (min-width: 768px) { 
+@media screen and (min-width: 768px) {
 	.site-content#blog-masonry .post {
 		-webkit-transition: all 500ms;
 		-moz-transition: all 500ms;
@@ -83,16 +88,40 @@ iframe{max-width:100%;}
 	white-space: normal;
     position: absolute;
 	bottom: 20px;
-    left: 0px;   
+    left: 0px;
 	margin-right: 30px;
 	margin-left: 30px;
 }
 .site-content .post .post-thumbnail { margin: 0; display: block; position:relative; }
 .site-content#blog-masonry .cat-links a { padding-right: 5px; }
 .site-content#blog-masonry .cat-links a:last-child { padding-right: 0px; }
-.site-content#blog-masonry .cat-links a, 
-.site-content#blog-masonry .cat-links a:hover, 
+.site-content#blog-masonry .cat-links a,
+.site-content#blog-masonry .cat-links a:hover,
 .site-content#blog-masonry .cat-links a:focus { color: #fff; }
 .site-content#blog-masonry .entry-title { line-height: 30px; font-weight: 600; }
 
 .site-content#blog-masonry .col-md-6:nth-child(2n+1) { clear: none !important; }
+
+article.sticky{
+ 	background-color:#5ca2df5c !important;
+ }
+
+.page-title.archive {
+	margin: 10px;
+}
+.page-title.author {
+	margin: 10px;
+}
+.page-title.category {
+	margin: 10px;
+}
+.page-title.tag {
+	margin: 10px;
+}
+.page-title.homepg {
+	margin: 10px;
+}
+
+.post .post-thumbnail a {
+    display: inline-block;
+}

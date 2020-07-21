@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ARzine\n"
-"POT-Creation-Date: 2019-03-11 17:48+0530\n"
+"POT-Creation-Date: 2020-07-21 18:15+0530\n"
 "PO-Revision-Date: 2019-03-11 17:47+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,28 +21,40 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive.php:20 archive.php:24 archive.php:28 author.php:17 category.php:18
+#. translators: 1. Archive Prefix, 2. date.
+#. translators: 1. Author Prefix, 2. Author.
+#. translators: 1. Category Prefix, 2. Category title.
+#. translators: 1. Tag Prefix, 2. Tag title.
+#: archive.php:19 archive.php:23 archive.php:27 author.php:17 category.php:18
 #: tag.php:18
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: archive.php:75 author.php:53 category.php:54 front-page.php:100 index.php:26
-#: search.php:35 tag.php:54
+#: archive.php:31
+msgid "Archive Blog"
+msgstr ""
+
+#: archive.php:76 author.php:55 category.php:56 front-page.php:109 index.php:27
+#: search.php:35 tag.php:56
 msgid "Previous"
 msgstr ""
 
-#: archive.php:76 author.php:54 category.php:55 front-page.php:101 index.php:27
-#: search.php:36 tag.php:55
+#: archive.php:77 author.php:56 category.php:57 front-page.php:110 index.php:28
+#: search.php:36 tag.php:57
 msgid "Next"
 msgstr ""
 
-#: content.php:28 front-page.php:76 single.php:60
+#: content.php:29 front-page.php:85 single.php:59
 msgid "Read More"
 msgstr ""
 
-#: content.php:35 front-page.php:83
+#: content.php:36 front-page.php:92
 msgid "by"
+msgstr ""
+
+#: front-page.php:14
+msgid "Home"
 msgstr ""
 
 #: search.php:27
@@ -55,7 +67,7 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: single.php:50
+#: single.php:49
 msgid "Leave a comment"
 msgstr ""
 

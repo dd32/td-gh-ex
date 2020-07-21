@@ -1,13 +1,12 @@
 /*
 * Author: Busiprof Theme
-* Created by: Shahid (Scientech IT)
+* Created by: Rajkamal (Scientech IT)
 * Framework: Twitter Bootstrap 3.3.6
 * Copyright (c) 2016
 * Date: 15 Feb, 2016
 * http://www.webriti.com
 * Name: custom.css
 */
-
 
 /* Menu Section css---------------------------------------------------------------------------------- */ 
 .navbar {
@@ -166,7 +165,7 @@
 }
 
 /*Start Toggle Menu Css*/
-@media (min-width: 991px) {
+@media (min-width: 1100px) {
   .navbar-toggle { display: none !important; }
 }
 @media (min-width: 991px) and (max-width: 1024px) { 
@@ -176,7 +175,7 @@
 	.navbar-default .navbar-nav > li > a { font-size: 13px; padding: 10px; }	
 	.dropdown-menu > li > a { font-size: 13px; line-height: 18px; }
 }
-@media (min-width: 768px) and (max-width: 990px) {
+@media (min-width: 768px) and (max-width: 1100px) {
 	.navbar-nav .open .dropdown-menu {
 		position: static;
 		float: none;
@@ -202,10 +201,10 @@
 	.navbar-default .navbar-nav > li > a { font-size: 13px; padding: 15px; }
 	.dropdown-menu > li > a { font-size: 13px; line-height: 18px; }
 	
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #777; }
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #fff; }
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		color: #333;
+		color: #fff;
 		background-color: transparent;
 	}
   
@@ -213,7 +212,7 @@
 /*End Toggle Css*/
 
 
-/*Widget Css-----------------------------------------------Added by Shahid--------------------------------------------------------------------*/
+/*Widget Css-----------------------------------------------Added by Rajkamal--------------------------------------------------------------------*/
 /*Rss Widget*/
 .rss-date, .widget_rss cite { display: block; color: #abb6bc; font-size: 13px; line-height: 25px; padding: 5px 0; }
 .rsswidget { font-weight: 500; }
@@ -467,7 +466,7 @@ input[type="text"].search_btn {
 /* Contact Form 7*/
 .wpcf7 p { margin-top: 10px; }
 
-/*Media Screen Css---------------------------------------------------Added by Shahid-----------------------------------------------------------*/
+/*Media Screen Css---------------------------------------------------Added by Rajkamal-----------------------------------------------------------*/
 
 @media only screen and (min-width: 960px) and (max-width: 1200px) { 
 /*Flexslider*/
@@ -644,3 +643,12 @@ ins span {
 a.added_to_cart{color:#5ca2df;}
 
 .woocommerce .order_details li { font-size: 11px;}
+@media (max-width: 767px){
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fff;
+}
+.navbar-header{text-align:center;}
+.navbar-default .navbar-toggle {
+    text-align: center;
+    float: none;
+}}
