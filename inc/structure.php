@@ -206,7 +206,7 @@ if ( ! function_exists( 'architectonic_site_navigation' ) ) :
 	                $search .= '</div><!-- #search --></li>';
                 endif;
 
-        		$defaults = array(
+        		wp_nav_menu( array(
         			'theme_location' => 'primary',
         			'container' => 'div',
         			'menu_class' => 'menu nav-menu',
@@ -214,9 +214,7 @@ if ( ! function_exists( 'architectonic_site_navigation' ) ) :
         			'echo' => true,
         			'fallback_cb' => 'architectonic_menu_fallback_cb',
         			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $search . '</ul>',
-        		);
-        	
-        		wp_nav_menu( $defaults );
+        		) );
         	?>
 		</nav><!-- #site-navigation -->
 		<?php
@@ -294,7 +292,7 @@ if ( ! function_exists( 'architectonic_header_image' ) ) :
             	</div><!--#wp-custom-header -->
 
                 <header class="page-header">
-                	<?php echo architectonic_custom_header_banner_title(); ?>
+                	<?php architectonic_custom_header_banner_title(); ?>
                 </header><!-- .page-header -->
             </div><!-- .wrapper -->
         </div><!--#header-image -->
@@ -381,7 +379,7 @@ if ( ! function_exists( 'architectonic_footer_site_info' ) ) :
 		$options = architectonic_get_theme_options();
 		$search = array( '[the-year]', '[site-link]' );
 
-        $replace = array( date( 'Y' ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+        $replace = array( date( 'Y' ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_html( get_bloginfo( 'name', 'display' ) ) . '</a>' );
 
         $options['copyright_text'] = str_replace( $search, $replace, $options['copyright_text'] );
 

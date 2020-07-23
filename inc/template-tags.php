@@ -25,15 +25,15 @@ if ( ! function_exists( 'architectonic_posted_on' ) ) :
 		}
 
 		$time_string = sprintf( $time_string,
-			get_the_date( DATE_W3C, $id ),
-			get_the_date( 'd', $id ),
-			get_the_date( 'M', $id ),
-			get_the_modified_date( DATE_W3C, $id ),
-			get_the_modified_date( '', $id )
+			esc_attr(get_the_date( DATE_W3C, $id )),
+			esc_html(get_the_date( 'd', $id )),
+			esc_htnl(get_the_date( 'M', $id )),
+			esc_attr(get_the_modified_date( DATE_W3C, $id )),
+			esc_html(get_the_modified_date( '', $id ))
 		);
 
-		$year = get_the_date( 'Y' );
-		$month = get_the_date( 'm' );
+		$year = get_the_date( 'Y', $id );
+		$month = get_the_date( 'm', $id );
 
 		// Wrap the time string in a link, and preface it with 'Posted on'.
 		printf(

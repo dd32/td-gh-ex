@@ -32,6 +32,7 @@ function architectonic_post_choices() {
     foreach ( $posts as $post ) {
         $choices[ $post->ID ] = $post->post_title;
     }
+    wp_reset_postdata();
     return  $choices;
 }
 

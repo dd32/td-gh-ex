@@ -73,6 +73,7 @@ if ( ! class_exists( 'Architectonic_Latest_Post' ) ) :
 
             <?php
             endforeach;
+            wp_reset_postdata();
             echo '</ul>';
             echo $args['after_widget'];
         }

@@ -29,7 +29,7 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
+			$comments_number = absint(get_comments_number());
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
 				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'architectonic' ), get_the_title() );
