@@ -65,6 +65,8 @@ if ( post_password_required() )
 		comment_form( array(
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
+			'title_reply' => esc_html(get_theme_mod('automobile_car_dealer_title_comment_form',__('Leave a Reply','automobile-car-dealer' )) ),
+			'label_submit' => esc_html(get_theme_mod('automobile_car_dealer_comment_form_button_content',__('Post Comment','automobile-car-dealer' )) ),
 		) );
 	?>
 </div>

@@ -149,6 +149,16 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 * Done with global scope in custom.js.
 * Updated mo and po files of different languages.
 
+= 0.5.3 =
+* added enable / disable featured image in single post.
+* added enable / disable single tags option.
+* added meta seperator Single post option.
+* added comment form title option.
+* added comment submit button text option.
+* added comment form width option.
+* added enable / disable single post pagination option.
+* updated mo and po files of different languages.
+
 == Resources ==
 
 Automobile Car Dealer WordPress Theme, Copyright 2017 Buywptemplates

@@ -325,3 +325,23 @@
 			$automobile_car_dealer_custom_css .='display:none;';
 		$automobile_car_dealer_custom_css .='} }';
 	}
+
+	//  comment form width
+	$automobile_car_dealer_comment_form_width = get_theme_mod( 'automobile_car_dealer_comment_form_width');
+	$automobile_car_dealer_custom_css .='#comments textarea{';
+		$automobile_car_dealer_custom_css .='width: '.esc_html($automobile_car_dealer_comment_form_width).'%;';
+	$automobile_car_dealer_custom_css .='}';
+
+	$automobile_car_dealer_title_comment_form = get_theme_mod('automobile_car_dealer_title_comment_form', 'Leave a Reply');
+	if($automobile_car_dealer_title_comment_form == ''){
+		$automobile_car_dealer_custom_css .='#comments h2#reply-title {';
+			$automobile_car_dealer_custom_css .='display: none;';
+		$automobile_car_dealer_custom_css .='}';
+	}
+
+	$automobile_car_dealer_comment_form_button_content = get_theme_mod('automobile_car_dealer_comment_form_button_content', 'Post Comment');
+	if($automobile_car_dealer_comment_form_button_content == ''){
+		$automobile_car_dealer_custom_css .='#comments p.form-submit {';
+			$automobile_car_dealer_custom_css .='display: none;';
+		$automobile_car_dealer_custom_css .='}';
+	}
