@@ -30,9 +30,12 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	opacity:0px;
+	opacity:0;
 	z-index:1;
 	
+}
+.product-wrap:hover .hover_hide img.woo-entry-image-secondary{
+	opacity: 1!important;
 }
 .product-wrap:hover .hover_hide img.attachment-woocommerce_thumbnail{
 	opacity:0;

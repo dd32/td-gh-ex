@@ -3,7 +3,7 @@ Contributors: athemeart
 Requires at least: 5.0
 Tested up to: 5.5.4
 Requires PHP: 7.0
-Stable tag: 1.8
+Stable tag: 1.9
 Template:  BC Business Consulting
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -48,6 +48,10 @@ BC Business Consulting  WordPress Theme is distributed under the terms of the GN
 * https://www.pexels.com/photo/black-framed-hippie-sunglasses-701877/ ( CC0 License )
 
 == Changelog ==
+
+= 1.9 =
+* Fixed woocommcer product hover
+
 = 1.4 =
 * check with Woocommerce version 3.9.2  
  
