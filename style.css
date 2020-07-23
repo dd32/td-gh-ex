@@ -3,8 +3,8 @@ Theme Name: RCG Forest
 Theme URI: https://rcgoncalves.pt/project/rcg-forest/
 Author: Rui Carlos Gonçalves
 Author URI: https://rcgoncalves.pt/
-Description: A simple green theme (v2).  New version of the theme, with a responsive design, using HTML5 and CSS3, and providing support for recent WordPress features, such as featured images, custom menus, custom background, or custom page templates.  (This theme was originally inspired on Green Grapes theme.  The code base of the current version was adapted from TwentyTwelve theme.)
-Version: 2.3.0
+Description: A simple green theme, with a responsive design, using HTML5 and CSS3, and providing support for WordPress features, such as featured images, custom menus, custom background, or custom page templates.  (This theme was originally inspired on Green Grapes theme.  The code base of the current version was adapted from TwentyTwelve theme.)
+Version: 3.0.0
 Requires at least: 4.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
@@ -16,8 +16,8 @@ Text Domain: rcg-forest
 RCG Forest WordPress Theme, Copyright 2020, Rui Carlos Gonçalves
 Derived from Twenty Twelve, Copyright 2012, the WordPress team
 RCG Forest is distributed under the terms of the GNU GPL v2
-forest.png header image, Copyright 2012, Rui Carlos Gonçalves
-forest.png header image is distributed under the terms of the GNU GPL v2
+forest.jpg header image, Copyright 2012, Rui Carlos Gonçalves
+forest.jpg header image is distributed under the terms of the GNU GPL v2
 */
 
 /* Reset
@@ -821,8 +821,9 @@ footer[role="contentinfo"] a:hover {
 .entry-content li,
 .comment-body li,
 .mu_register li {
-	margin: 0 0 0 28px;
-	margin: 0 0 0 2rem;
+	list-style: square;
+	margin-left: 16px;
+	margin-left: 1.142857142rem;
 }
 .entry-content blockquote,
 .comment-body blockquote {
@@ -833,6 +834,10 @@ footer[role="contentinfo"] a:hover {
 	margin: 0 2rem 1rem 2rem;
 	padding-left: 12px;
 	padding-left: 0.8571428571rem;
+}
+.entry-content q,
+.comment-body q {
+	font-style: italic;
 }
 .entry-content blockquote p:last-child,
 .comment-body blockquote p:last-child {

@@ -3,17 +3,26 @@ Contributors: rcgoncalves
 Requires at least: 4.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 2.3.0
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
-A simple green theme (v2).  New version of the theme, with a responsive design, using HTML5 and CSS3, and providing support for recent WordPress features, such as featured images, custom menus, custom background, or custom page templates.
+A simple green theme, with a responsive design, using HTML5 and CSS3, and providing support for WordPress features, such as featured images, custom menus, custom background, or custom page templates.
 (This theme was originally inspired on Green Grapes theme.  The code base of the current version was adapted from TwentyTwelve theme.)
 
 
 == Changelog ==
+
+= 3.0.0 =
+Changed:
+* Improve CSS.
+* Update header image to double dimensions.
+* Change header image format to JPEG to reduce file size.
+
+Removed:
+* Drop support for IE 7 and IE 8.
 
 = 2.3.0 =
 Added:
@@ -167,5 +176,4 @@ Changed:
 
 
 == Resources ==
-* forest.png © 2012 Rui Carlos Gonçalves, GPL2
-* html5.js © 2014 Alexander Farkas, MIT/GPL2
+* forest.jpg © 2012 Rui Carlos Gonçalves, GPL2
