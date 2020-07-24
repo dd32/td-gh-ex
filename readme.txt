@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, threaded
 Requires at least: 4.7
 Tested up to: 5.4.1
 Requires PHP: 5.6
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,6 +88,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 	Contact Form 7 is recommended to use for contact forms for contact page.
 
 == Changelog ==
+
+= 1.1.6 - Jul 24 2020 =
+* Fixed undefined function issue
 
 = 1.1.5 - Jul 20 2020 =
 * Added wp_body_open hook

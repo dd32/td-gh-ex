@@ -18,6 +18,7 @@ function architectonic_page_choices() {
     foreach ( $pages as $page ) {
         $choices[ $page->ID ] = $page->post_title;
     }
+    
     return  $choices;
 }
 

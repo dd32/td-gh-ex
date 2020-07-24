@@ -27,7 +27,7 @@ if ( ! function_exists( 'architectonic_posted_on' ) ) :
 		$time_string = sprintf( $time_string,
 			esc_attr(get_the_date( DATE_W3C, $id )),
 			esc_html(get_the_date( 'd', $id )),
-			esc_htnl(get_the_date( 'M', $id )),
+			esc_html(get_the_date( 'M', $id )),
 			esc_attr(get_the_modified_date( DATE_W3C, $id )),
 			esc_html(get_the_modified_date( '', $id ))
 		);

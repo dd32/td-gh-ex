@@ -135,6 +135,11 @@ class Architectonic_MetaBox {
     <?php 
     }
 
+    private function sanitize($input, $choices){
+        return ( array_key_exists( $input, $choices ) ? sanitize_key( $input ) : '');
+    }
+
+
     /**
      * Save custom metabox data
      * 
@@ -159,7 +164,7 @@ class Architectonic_MetaBox {
         foreach ( $this->fields as $field ) {      
             // Checks for input and sanitizes/saves if needed
             if( isset( $_POST[ $field ] ) ) {
-                update_post_meta( $post_id, $field, sanitize_text_field( wp_unslash( $_POST[ $field ] ) ) );
+                update_post_meta( $post_id, $field, $this->sanitize( wp_unslash( $_POST[ $field ] ) ) );
             }
         } // end foreach         
     }
