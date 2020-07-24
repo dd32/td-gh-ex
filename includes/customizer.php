@@ -107,7 +107,7 @@ $wp_customize->add_setting('promax_homecat',
 		'default'			=> 'enable',
 		'type'				=> 'theme_mod',
 		'capability'		=> 'edit_theme_options',
-	//	'transport' => 'postMessage',
+		'transport' => 'postMessage',
 		'sanitize_callback'	=> 'promax_sanitize_select'
 	));
 $wp_customize->add_control('promax_homecat',
@@ -266,7 +266,7 @@ $wp_customize->add_control(new WP_customize_control ($wp_customize,'promax_copyr
 //Website width						 
 $wp_customize->add_setting('promax_website_width',array(
 		'default'		=> '1200',
-		'sanitize_callback'	=> 'promax_sanitize_number_absint'
+		'sanitize_callback'	=> 'absint'
 		));
 $wp_customize->add_control('promax_website_width',array(
 			'label' => __('Website Width Control','promax'),
@@ -474,13 +474,33 @@ $wp_customize->add_control('promax_quick_checkout_text',array(
 					'none' => __('-','promax'),
 					'facebook' => __('Facebook','promax'),
 					'twitter' => __('Twitter','promax'),
-					//'google-plus-square' => __('Google Plus','promax'),
+					'google' => __('Google','promax'),
 					'instagram' => __('Instagram','promax'),
 					'rss' => __('RSS Feeds','promax'),
 					'vine' => __('Vine','promax'),
 					'vimeo' => __('Vimeo','promax'),
 					'youtube' => __('Youtube','promax'),
+					'etsy' => __('Etsy','promax'),
 					'flickr' => __('Flickr','promax'),
+					'whatsapp' => __('WhatsApp','promax'),
+					'vk' => __('VK','promax'),
+					'wordpress' => __('WordPress','promax'),
+					'tumblr' => __('Tumblr','promax'),
+					'telegram' => __('Telegram','promax'),
+					'windows' => __('Windows','promax'),
+					'tripadvisor' => __('Trip Advisor','promax'),
+					'stumbleupon' => __('StumbleUpon','promax'),
+					'stack-overflow' => __('Stack Overflow','promax'),
+					'snapchat-ghost' => __('Snapchat','promax'),
+					'skype' => __('Skype','promax'),
+					'reddit-alien' => __('Reddit','promax'),
+					'github' => __('Github','promax'),
+					'dropbox' => __('Dropbox','promax'),
+					'btc' => __('Bitcoin','promax'),
+					'apple' => __('Apple','promax'),
+					'amazon' => __('Amazon','promax'),
+					'android' => __('Android','promax'),
+					'pinterest-p' => __('Pinterest','promax'),
 				);
 				
 	$social_count = count($social_networks);
@@ -521,13 +541,33 @@ $wp_customize->add_control('promax_quick_checkout_text',array(
 					'none' ,
 					'facebook',
 					'twitter',
-					//'google-plus-square',
+					'google',
 					'instagram',
 					'rss',
 					'vine',
 					'vimeo',
 					'youtube',
-					'flickr'
+					'etsy',
+					'flickr',
+					'whatsapp',
+					'vk',
+					'wordpress',
+					'tumblr',
+					'telegram',
+					'windows',
+					'tripadvisor',
+					'stumbleupon',
+					'stack-overflow',
+					'snapchat-ghost',
+					'skype',
+					'reddit-alien',
+					'github',
+					'dropbox',
+					'btc',
+					'apple',
+					'amazon',
+					'android',
+					'pinterest-p'
 				);
 		if ( in_array($input, $social_networks) )
 			return $input;

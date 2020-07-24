@@ -23,7 +23,7 @@
 					promax_site_description(); ?>	
 		</div>		
 		
-		<div id="banner-top"><?php if ( !dynamic_sidebar('headerban') ) :  endif; ?>
+		<div id="banner-top"><?php if ( !dynamic_sidebar('headerban') ) : dynamic_sidebar('headerban');  endif; ?>
 		</div>		
     </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
@@ -36,4 +36,4 @@
 	if (get_theme_mod('promax_topnavi') !=='disable') { get_template_part('template-parts/menu'); } ?>
 <?php if (get_theme_mod('promax_main_navi') !=='disable') { get_template_part('template-parts/nav-menu'); } ?>
 <div class="promaxwid">
-<?php if ( !dynamic_sidebar('belownaviwid') ) :  endif; ?></div>
+<?php if ( !dynamic_sidebar('belownaviwid') ) : dynamic_sidebar('belownaviwid');  endif; ?></div>

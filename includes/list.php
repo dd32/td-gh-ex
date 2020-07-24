@@ -8,7 +8,7 @@
 } ?>
 	</div>			<div class="entry">
 <?php promax_excerpt('promax_excerptlength_index', 'promax_excerptmore'); ?>
-			</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php esc_attr_e('Continue reading', 'promax'); ?></span></a>
+			</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php esc_html_e('Continue reading', 'promax'); ?></span></a>
 	</article>
 <?php else : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,7 +16,7 @@
 			
 		<div class="entry">
 		<?php promax_excerpt('promax_excerptlength_index', 'promax_excerptmore'); ?>
-		</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php esc_attr_e('Continue reading', 'promax'); ?></span></a>
+		</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php esc_html_e('Continue reading', 'promax'); ?></span></a>
 	</article>
 <?php endif; ?>
 <span class="postmeta_box">

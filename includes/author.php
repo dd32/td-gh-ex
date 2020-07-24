@@ -1,5 +1,5 @@
 <div id="author-bio">
-	<h3><?php esc_attr_e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
+	<h3><?php esc_html_e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
 <?php echo get_avatar( get_the_author_meta('ID'), 64 ); ?>
        <?php the_author_meta('description'); ?>                        
 </div>

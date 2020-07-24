@@ -381,7 +381,7 @@ function promax_addtocart_button_func() {
         // echo content.
 		global $product;
 		$pid = $product->get_id();
-		$quicklink = WC()->cart->get_checkout_url();
+		$quicklink = wc_get_checkout_url();
         echo '<div class="button quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_html(get_theme_mod('promax_quick_checkout_text',__('Quick Checkout','promax'))).'</a></div>';
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'promax_addtocart_button_func' );
@@ -405,7 +405,7 @@ $the_query = new WP_Query( $promax_args );
 while ( $the_query->have_posts() ) : $the_query->the_post();
 			 ?>
 <div class="latest-post">
-	<?php if ( has_post_thumbnail() ) {the_post_thumbnail('promax-latestpostthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
+	<?php if ( has_post_thumbnail() ) {the_post_thumbnail('promax-latestpostthumb');} else { ?><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/thumb.jpg" />
 <?php } ?> 
 	 <a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><br />
 	 <div class="clear"></div>
@@ -426,7 +426,7 @@ if ( get_theme_mod('promax_author' ) !=='disable' ) {
 	function promax_author_profile(){
 	?>
 <div id="author-bio">
-	<h3><?php esc_attr_e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
+	<h3><?php esc_html_e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
 <?php echo get_avatar( get_the_author_meta('ID'), 64 ); ?>
        <?php the_author_meta('description'); ?>                        
 </div>
@@ -448,4 +448,13 @@ if ( get_theme_mod('promax_authstamp' ) !=='disable') {
 	echo promax_meta_author();
 	?></span><?php }
 	add_action( 'promax_thumbnail_bottom', 'promax_thumbnail_bottom_date_author' );
+}
+
+
+
+function promax_fallbackcb( $args )
+{
+ ?>
+  <ul id="menu"><li><a href="/">Home</a></li><li><a href="/wp-admin/nav-menus.php">Set primary menu</a></li></ul>
+  <?php
 }

@@ -19,7 +19,7 @@ also suggestion are welcome
 
 --------------------------------------------------------
 How to Install theme: if you are getting any error or don't know installation then read below tutorial
-http://www.wrock.org/documentation-install-wordpress-premium-theme-without-data-loss/
+https://www.insertcart.com/product/promax-wordpress-theme/
 
 --------------------------------------------------------
 
