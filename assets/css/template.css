@@ -997,9 +997,10 @@ h3#reply-title small, .logged-in-as {
 
 .woocommerce-product-search input[type=search],
 #searchform input[type=text], 
-#searchform input[type=text], 
+#searchform input[type=email], 
 #searchform textarea,
 .comment-form input[type=text], 
+.comment-form input[type=email], 
 .comment-form textarea {
 	padding: 15px 2%;
 	background:#fafafa;

@@ -48,7 +48,7 @@
                             
                     <section class="contact-form searchform">
                         
-                        <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                        <form method="get" id="searchform" action="<?php echo esc_url(home_url( '/' )); ?>">
                             <div>
                                 <input type="text" placeholder="<?php esc_attr_e( 'Search here', "alhena-lite" ) ?>"  name="s" id="s" class="input-search"/>
                                 <input type="submit" id="searchsubmit" class="button-search" value="<?php esc_attr_e( 'Search', "alhena-lite" ) ?>" />

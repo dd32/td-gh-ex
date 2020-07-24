@@ -50,7 +50,7 @@ if (!function_exists('alhena_lite_masonry_function')) {
                             
 						<section class="contact-form">
                             
-							<form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+							<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<input type="text" value="<?php esc_attr_e( 'Search', "alhena-lite" ) ?>" name="s" id="s" class="input-search"/>
 							<input type="submit" id="searchsubmit" class="button-search" value="<?php esc_attr_e( 'Search', "alhena-lite" ) ?>" />
 							</form>
