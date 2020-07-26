@@ -131,6 +131,14 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Done with prefixing in custom.js.
 * Changed sanitize callback function.
 
+= 0.5 =
+* Added enable/disable site title.
+* Added enable/disable tagline.
+* Added separator option for metabox in blog post.
+* Changed all number type style in customizer.
+* Resolved login page error.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance IT Company WordPress Theme, Copyright 2019 Themeshopy

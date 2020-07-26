@@ -22,6 +22,7 @@ function advance_it_company_customize_register($wp_customize) {
 	));	
 
 	// font array
+
 	$advance_it_company_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
@@ -1280,6 +1281,20 @@ function advance_it_company_customize_register($wp_customize) {
 		'section'=> 'advance_it_company_blog_post',
 		'type'=> 'text'
 	));
+
+    $wp_customize->add_setting( 'advance_it_company_metabox_separator_blog_post', array(
+		'default'   => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_it_company_metabox_separator_blog_post', array(
+		'label'       => esc_html__( 'Meta Box Separator','advance-it-company' ),
+		'input_attrs' => array(
+            'placeholder' => __( 'Add Meta Separator. e.g.: "|", "/", etc.', 'advance-it-company' ),
+        ),
+		'section'     => 'advance_it_company_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_it_company_metabox_separator_blog_post',
+	) );
 
 	//no Result Found
 	$wp_customize->add_section('advance_it_company_noresult_found',array(

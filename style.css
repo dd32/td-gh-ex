@@ -6,7 +6,7 @@ Author URI: https://www.themeshopy.com/
 Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. Demo: https://www.themeshopy.com/advance-it-company-pro/
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Version: 0.4.9
+Version: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-it-company
@@ -693,9 +693,6 @@ input.search-field {
   background: none;
   border:none;
 }
-.search-box {
-  margin: 8px 0px;
-}
 .serach_inner input[type="submit"]{
   text-indent: -9999px;
   z-index: 9999;
@@ -732,9 +729,6 @@ input.search-field {
 }
 a.search-box{
   color: #000;
-}
-.search-box {
-  margin: 8px 0px;
 }
 /* --------- Slider --------- */
 #slider{ 
@@ -947,9 +941,8 @@ a.search-box{
 .metabox span,
 .metabox span a {
   color:#272b46;
-  margin-right: 24px;
   font-size: 15px;
-  margin-right: 10px;
+  padding: 0 5px;
 }
 .metabox i {
   margin-right: 7px;
@@ -1543,6 +1536,9 @@ a.shipping-calculator-button, nav.woocommerce-MyAccount-navigation ul li a,tr.wo
 }
 .woocommerce-cart table.cart td.actions .coupon .input-text{
   font-size: 10px;
+}
+.woocommerce #customer_login .col-1, .woocommerce #customer_login .col-2 {
+  max-width: 100%;
 }
 #footer .woocommerce.widget_shopping_cart .cart_list li{
   padding: 0 0 10px 2em;
