@@ -31,6 +31,26 @@ function bb_mobile_application_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('bb_mobile_application_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_mobile_application_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','bb-mobile-application'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('bb_mobile_application_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_mobile_application_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_mobile_application_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','bb-mobile-application'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'bb_mobile_application_logo_customize_register' );
 

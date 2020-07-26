@@ -40,19 +40,23 @@
               <?php endif; ?>
               <?php $blog_info = get_bloginfo( 'name' ); ?>
               <?php if ( ! empty( $blog_info ) ) : ?>
-                <?php if ( is_front_page() && is_home() ) : ?>
-                  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php else : ?>
-                  <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                <?php endif; ?>
+                <?php if( get_theme_mod('bb_mobile_application_site_title',true) != ''){ ?>
+                  <?php if ( is_front_page() && is_home() ) : ?>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                  <?php else : ?>
+                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                  <?php endif; ?>
+                <?php }?>
               <?php endif; ?>
               <?php
               $description = get_bloginfo( 'description', 'display' );
               if ( $description || is_customize_preview() ) :
                 ?>
-                <p class="site-description">
-                  <?php echo esc_html($description); ?>
-                </p>
+                <?php if( get_theme_mod('bb_mobile_application_tagline',true) != ''){ ?>
+                  <p class="site-description">
+                    <?php echo esc_html($description); ?>
+                  </p>
+                <?php }?>
               <?php endif; ?>
             </div>
             <div class="menubox col-lg-8 col-md-3 col-3">

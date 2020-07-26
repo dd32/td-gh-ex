@@ -17,11 +17,11 @@
 	<?php if( get_theme_mod( 'bb_mobile_application_date_hide',true) != '' || get_theme_mod( 'bb_mobile_application_author_hide',true) != '' || get_theme_mod( 'bb_mobile_application_comment_hide',true) != '') { ?>
 		<div class="metabox">
 			<?php if( get_theme_mod( 'bb_mobile_application_date_hide',true) != '') { ?>
-				<span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
+				<span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('bb_mobile_application_metabox_separator_blog_post') ); ?>
 			<?php } ?>
 			<?php if( get_theme_mod( 'bb_mobile_application_author_hide',true) != '') { ?>
 				<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
-				</span>
+				</span><?php echo esc_html( get_theme_mod('bb_mobile_application_metabox_separator_blog_post') ); ?>
 			<?php } ?>
 			<?php if( get_theme_mod( 'bb_mobile_application_comment_hide',true) != '') { ?>
 				<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>

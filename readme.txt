@@ -205,6 +205,14 @@ Trying to create an interactive website with the help of a flexible option? If s
   * Done with prefixing in custom.js.
   * Changed sanitize callback function.
 
+= 1.3.9 =
+  * Added enable/disable site title.
+  * Added enable/disable tagline.
+  * Added separator option for metabox in single blog post.
+  * Changed all number type style in customizer.
+  * Resolved login page error.
+  * Updated POT file.
+
 == Resources ==
 
 BB Mobile Application WordPress Theme, Copyright 2018 ThemeShopy
