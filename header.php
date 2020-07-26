@@ -16,7 +16,8 @@
 </head>
 
 <body <?php body_class(); ?> >
-
+  	<?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to Content', 'green-eye' ); ?></a>
   <?php if (is_front_page()): ?>
   <div id="header-fpage"><div class="header-content">
 <!-- Site Titele and Description Goes Here -->
@@ -39,17 +40,36 @@
 </div></div>                
 <div class="clear"> </div>        
         <!-- Slide Goes Here -->
- 
-	<div id="iebanner"><div id="iebcontent">
-    <div id="iefc">
-    <h3 class="ibcon"><?php echo green_get_option ( 'slide-image1-title', 'This is a Test Image Title'); ?></h3>
-    <p class="ibcon"><?php echo green_get_option('slide-image1-caption', 'This is a Test Image for GREEN EYE Theme. If you feel any problem please contact with D5 Creation.'); ?></p>
-    <?php if (green_get_option('slide-image1-link', '#')): ?><a class="jms-link" href="<?php echo green_get_option('slide-image1-link', '#'); ?>">Read more</a><?php endif; ?>
-    </div><div id="iesc">
-    <img class="ibcon" src="<?php echo green_get_option('slide-image1', get_template_directory_uri() . '/images/slide-image/1.png'); ?>" />
-    </div></div></div>	
+        
+<?php
+$sldttl = green_get_option ( 'slide-image1-title', '');
+if($sldttl) $sldttl = '<h3 class="ibcon">'.esc_textarea($sldttl).'</h3>';
+	
+$sldcap = green_get_option('slide-image1-caption', '');
+if($sldcap) $sldcap = '<p class="ibcon">'.esc_textarea($sldcap).'</p>';
+	
+$sldlink = green_get_option('slide-image1-link', '#');
+if($sldlink) $sldlink = '<a class="jms-link" href="'.esc_url($sldlink).'">'.esc_html__('Read more', 'green-eye').'</a>';	
+	
+$sldimg = green_get_option('slide-image1', '');
+if($sldimg) $sldimg = '<div id="iesc"><img class="ibcon" src="'.esc_url($sldimg).'" /></div>'; 
+	
+if($sldttl || $sldcap || $sldimg ): ?>
+	
+<div id="iebanner">
+   <div id="iebcontent">
+		<div id="iefc">
+			<?php echo $sldttl.$sldcap.$sldlink; ?>		
+		</div>
+		<?php echo $sldimg; ?>
+   </div>
+</div>	
+	
+<?php endif;
+	
+?>
 
-<div id ="header" class="large">
+<div id ="header" class="large fpheader">
       <div class ="header-content">
 		<nav id="green-main-menu">
 		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'm-menu', 'fallback_cb' => 'green_page_menu'  )); ?>

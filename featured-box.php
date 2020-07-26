@@ -4,28 +4,21 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
-?>
-
-<div id="featured-boxs">
-
-<?php 
-$fboxclm = array("1","2","3","4","5","6","7","8");
-foreach ($fboxclm as $fboxn) { 
-if ( green_get_option('fbox-show' . $fboxn, '1') == '1' ) : ?>
-
-<span class="featured-box"> 
-
-<?php if (green_get_option('featured-image' . $fboxn, get_template_directory_uri() . '/images/featured-image.png') != '' ): ?>
-<img class="box-image" src="<?php echo green_get_option('featured-image' . $fboxn, get_template_directory_uri() . '/images/featured-image.png'); ?>"/>
-<?php ; endif; ?>
-
-<h3><?php echo green_get_option('featured-title' . $fboxn, 'GREEN Environment'); ?></h3>
-
-<p><?php echo green_get_option('featured-description' . $fboxn , 'The Color changing options of GREEN will give the WordPress Driven Site an attractive look. green is super elegant and Professional Responsive Theme which will create the business widely expressed.'); ?></p>
-</span>
 
 
+$fboxs = '';
+foreach (range(1, 8) as $fboxn) {
+	$boxv = green_get_option('fbox-show' . $fboxn, '1');
+	if(!$boxv) continue;
+	$fbox = '';
+	$fimg = green_get_option('featured-image' . $fboxn, '');
+	if($fimg) $fbox .= '<img class="box-image" src="'.esc_url($fimg).'"/>';
+	$fttl = green_get_option('featured-title' . $fboxn, '');
+	if($fttl) $fbox .= '<h3>'.esc_textarea($fttl).'</h3>';
+	$fdes = green_get_option('featured-description' . $fboxn , ''); 
+	if($fdes) $fbox .= '<p>'.esc_textarea($fdes).'</p>';
+	
+	if($fbox) $fboxs .= '<span class="featured-box">'.$fbox.'</span>';	
+}
 
-<?php ; endif; } ; ?>
-
-</div> <!-- featured-boxs -->
+if($fboxs) echo '<div id="featured-boxs">'.$fboxs.'</div><div class="content-ver-sep"> </div><br/><br/>';

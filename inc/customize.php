@@ -6,14 +6,14 @@ function green_customize_register($wp_customize){
     $wp_customize->add_section('green_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('GREEN EYE OPTIONS', 'green-eye'),
-        'description'   => ' <div class="infohead">' . __('We appreciate an','green-eye') . ' <a href="http://wordpress.org/support/view/theme-reviews/green-eye" target="_blank">' . __('Honest Review','green-eye') . '</a> ' . __('of this Theme if you Love our Work','green-eye') . '<br /> <br />
+		'title'    		=> esc_html__('GREEN EYE OPTIONS', 'green-eye'),
+        'description'   => ' <div class="infohead">' . esc_html__('We appreciate an','green-eye') . ' <a href="http://wordpress.org/support/view/theme-reviews/green-eye" target="_blank">' . esc_html__('Honest Review','green-eye') . '</a> ' . __('of this Theme if you Love our Work','green-eye') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting 3D Slide and 100+ Advanced Features? Try ','green-eye') . '<a href="' . esc_url('https://d5creation.com/theme/green-eye/') .'
-" target="_blank"><strong>' . __('GREEN EYE Extend','green-eye') . '</strong></a><br /> <br /> 
+' . esc_html__('Need More Features and Options including Exciting 3D Slide and 100+ Advanced Features? Try ','green-eye') . '<a href="' . esc_url('https://d5creation.com/theme/green-eye/') .'
+" target="_blank"><strong>' . esc_html__('GREEN EYE Extend','green-eye') . '</strong></a><br /> <br /> 
         
         
-' . __('You can Visit the GREEN EYE Extend ','green-eye') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=GREEN%20 EYE') .'" target="_blank"><strong>' . __('Demo Here','green-eye') . '</strong></a> 
+' . esc_html__('You can Visit the GREEN EYE Extend ','green-eye') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=GREEN%20 EYE') .'" target="_blank"><strong>' . esc_html__('Demo Here','green-eye') . '</strong></a> 
         </div>		
 		'
     ));
@@ -23,7 +23,7 @@ function green_customize_register($wp_customize){
 	  
 //  Slide Image
     $wp_customize->add_setting('green[slide-image'. $opsinumber .']', array(
-        'default'           => get_template_directory_uri() . '/images/slide-image/1' . '.png',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -32,15 +32,15 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'slide-image'. $opsinumber, array(
-        'label'    			=> __('Sliding Image', 'green-eye') . '-' . $opsinumber,
+        'label'    			=> esc_html__('Sliding Image', 'green-eye') . '-' . $opsinumber,
         'section'  			=> 'green_options',
         'settings' 			=> 'green[slide-image'. $opsinumber .']',
-		'description'   	=> __('400px X 400px image is recommended','green-eye')
+		'description'   	=> esc_html__('400px X 400px image is recommended','green-eye')
     )));
   
 // Slide Image Title
     $wp_customize->add_setting('green[slide-image' . $opsinumber . '-title]', array(
-        'default'        	=> __('This is a Test Image Title','green-eye'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -48,7 +48,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_slide-image' . $opsinumber . '-title' , array(
-        'label'      => __('Image Title', 'green-eye') . '-' . $opsinumber,
+        'label'      => esc_html__('Image Title', 'green-eye') . '-' . $opsinumber,
         'section'    => 'green_options',
         'settings'   => 'green[slide-image' . $opsinumber .'-title]'
     ));
@@ -56,7 +56,7 @@ function green_customize_register($wp_customize){
 
 // Image Description
     $wp_customize->add_setting('green[slide-image' . $opsinumber . '-caption]', array(
-        'default'        	=> __('This is a Test Slide for GREEN EYE Theme. If you feel any problem please contact with D5 Creation','green-eye'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -64,7 +64,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_slide-image' . $opsinumber . '-caption' , array(
-        'label'      => __('Image Description', 'green-eye') . '-' . $opsinumber,
+        'label'      => esc_html__('Image Description', 'green-eye') . '-' . $opsinumber,
         'section'    => 'green_options',
         'settings'   => 'green[slide-image' . $opsinumber .'-caption]',
 		'type' 		 => 'textarea'
@@ -80,7 +80,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_slide-image' . $opsinumber . '-link' , array(
-        'label'      => __('Image Link', 'green-eye') . '-' . $opsinumber,
+        'label'      => esc_html__('Image Link', 'green-eye') . '-' . $opsinumber,
         'section'    => 'green_options',
         'settings'   => 'green[slide-image' . $opsinumber .'-link]',
 		'description'   	=> 'Input the URL where the image will redirect the visitors'
@@ -90,7 +90,7 @@ function green_customize_register($wp_customize){
  
 // Front Page Heading
     $wp_customize->add_setting('green[heading_text]', array(
-        'default'        	=> __('Welcome to the World of Creativity!','green-eye'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -98,22 +98,22 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_heading_text' , array(
-        'label'      => __('Front Page Heading', 'green-eye'),
+        'label'      => esc_html__('Front Page Heading', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[heading_text]'
     ));
 	
 // Front Page Heading Description
     $wp_customize->add_setting('green[heading_des]', array(
-        'default'        	=> __('You can use GREEN EYE Extend Theme for more options, more functions and more visual elements. Extend Version has come with simple color customization option','green-eye'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
 
     ));
 
     $wp_customize->add_control('green_heading_des' , array(
-        'label'      => __('Front Page Heading Description', 'green-eye'),
+        'label'      => esc_html__('Front Page Heading Description', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[heading_des]',
 		'type' 		 => 'textarea'
@@ -125,7 +125,7 @@ function green_customize_register($wp_customize){
 	  
 //  Featured Image
     $wp_customize->add_setting('green[featured-image'. $fbsinumber .']', array(
-        'default'           => get_template_directory_uri() . '/images/featured-image.png',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -134,15 +134,15 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'featured-image'. $fbsinumber, array(
-        'label'    			=> __('Featured Image', 'green-eye') . '-' . $fbsinumber,
+        'label'    			=> esc_html__('Featured Image', 'green-eye') . '-' . $fbsinumber,
         'section'  			=> 'green_options',
         'settings' 			=> 'green[featured-image'. $fbsinumber .']',
-		'description'   	=> __('Upload an image for the Featured Box. 200px X 100px image is recommended','green-eye')
+		'description'   	=> esc_html__('Upload an image for the Featured Box. 200px X 100px image is recommended','green-eye')
     )));
   
 // Featured Image Title
     $wp_customize->add_setting('green[featured-title' . $fbsinumber . ']', array(
-        'default'        	=> __('GREEN EYE Theme for Small Business','green-eye'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -150,7 +150,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_featured-title' . $fbsinumber, array(
-        'label'      => __('Featured Title', 'green-eye'). '-' . $fbsinumber,
+        'label'      => esc_html__('Featured Title', 'green-eye'). '-' . $fbsinumber,
         'section'    => 'green_options',
         'settings'   => 'green[featured-title' . $fbsinumber .']'
     ));
@@ -158,7 +158,7 @@ function green_customize_register($wp_customize){
 
 // Featured Image Description
     $wp_customize->add_setting('green[featured-description' . $fbsinumber . ']', array(
-        'default'        	=> __('The Color changing options of GREEN EYE will give the WordPress Driven Site an attractive look. GREEN EYE is super elegant and Professional Responsive Theme which will create the business widely expressed','green-eye'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -166,7 +166,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_featured-description' . $fbsinumber  , array(
-        'label'      => __('Featured Description', 'green-eye') . '-' . $fbsinumber,
+        'label'      => esc_html__('Featured Description', 'green-eye') . '-' . $fbsinumber,
         'section'    => 'green_options',
         'settings'   => 'green[featured-description' . $fbsinumber .']',
 		'type' 		 => 'textarea'
@@ -176,7 +176,7 @@ function green_customize_register($wp_customize){
   
  //  Quote Text
     $wp_customize->add_setting('green[bottom-quotation]', array(
-        'default'        	=> __('All the developers of D5 Creation have come from the disadvantaged part or group of the society. All have established themselves after a long and hard struggle in their life ----- D5 Creation Team',  'green-eye'),
+        'default'        	=> '',
     	'sanitize_callback' => 'esc_textarea',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
@@ -184,7 +184,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_bottom-quotation', array(
-        'label'      => __('Quote Text', 'green-eye'),
+        'label'      => esc_html__('Quote Text', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[bottom-quotation]',
 		'type' 		 => 'textarea'
@@ -201,7 +201,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_responsive', array(
-        'label'      => __('Use Responsive Layout', 'green-eye'),
+        'label'      => esc_html__('Use Responsive Layout', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[responsive]',
 		'description' => __('Check the Box if you want the Responsive Layout of your Website','green-eye'),
@@ -219,7 +219,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_gplus-link', array(
-        'label'      => __('Google Plus Link', 'green-eye'),
+        'label'      => esc_html__('Google Plus Link', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[gplus-link]'
     ));
@@ -235,7 +235,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_li-link', array(
-        'label'      => __('Linked In Link', 'green-eye'),
+        'label'      => esc_html__('Linked In Link', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[li-link]'
     ));
@@ -250,7 +250,7 @@ function green_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('green_feed-link', array(
-        'label'      => __('Feed or Blog Link', 'green-eye'),
+        'label'      => esc_html__('Feed or Blog Link', 'green-eye'),
         'section'    => 'green_options',
         'settings'   => 'green[feed-link]'
     ));

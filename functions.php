@@ -7,12 +7,10 @@
 
 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
-	function green_about_page() { 
-	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'green_d5_themes' );
-	add_theme_page( 'GREEN EYE Options', 'GREEN EYE Options', 'edit_theme_options', 'theme-about', 'green_theme_about' ); 
+	function green_about_page() { 	
+	add_theme_page( esc_html__('GREEN EYE Options','green-eye'), esc_html__('GREEN EYE Options','green-eye'), 'edit_theme_options', 'theme-about', 'green_theme_about' ); 
 	}
 	add_action('admin_menu', 'green_about_page');
-	function green_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
 	function green_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
 	
 	function green_setup() {
@@ -24,7 +22,7 @@
 // 	Tell WordPress for the Feed Link
 	add_theme_support( 'automatic-feed-links' );
 	add_editor_style();
-	register_nav_menus( array( 'main-menu' => __('Main Menu', 'green-eye') ) );
+	register_nav_menus( array( 'main-menu' => esc_html__('Main Menu', 'green-eye') ) );
 		
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	 
@@ -105,12 +103,12 @@
 	
 	function green_excerpt_more($more) {
        global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'. __('Read More ...','green-eye') . '</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'. esc_html__('Read More ...','green-eye') . '</a>';
 	}
 	add_filter('excerpt_more', 'green_excerpt_more');
 	
 	// Content Type Showing
-	function green_content() { the_content(__('<span class="read-more">Read More ...</span>','green-eye')); }
+	function green_content() { the_content('<span class="read-more">'.esc_html__('Read More ...','green-eye').'</span>'); }
 	function green_creditline() { echo '<span class="credit">| GREEN EYE Theme by: <a href="'.esc_url('https://d5creation.com').'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 
 
@@ -118,7 +116,7 @@
 function green_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __('Primary Sidebar','green-eye'), 
+		'name' => esc_html__('Primary Sidebar','green-eye'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -127,7 +125,7 @@ function green_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' =>  __('Secondary Sidebar', 'green-eye'),
+		'name' =>  esc_html__('Secondary Sidebar', 'green-eye'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -136,9 +134,9 @@ function green_widgets_init() {
 	) );
 	 
 	register_sidebar( array(
-		'name' => __('Footer Area One', 'green-eye'),
+		'name' => esc_html__('Footer Area One', 'green-eye'),
 		'id' => 'sidebar-3',
-		'description' => 'An optional widget area for your site footer', 
+		'description' => esc_html__('An optional widget area for your site footer', 'green-eye'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -146,9 +144,9 @@ function green_widgets_init() {
 	) );
 	    
 	register_sidebar( array(
-		'name' => __('Footer Area Two', 'green-eye'),
+		'name' => esc_html__('Footer Area Two', 'green-eye'),
 		'id' => 'sidebar-4',
-		'description' => 'An optional widget area for your site footer',
+		'description' => esc_html__('An optional widget area for your site footer', 'green-eye'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -156,9 +154,9 @@ function green_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Three','green-eye'),
+		'name' => esc_html__('Footer Area Three','green-eye'),
 		'id' => 'sidebar-5',
-		'description' => 'An optional widget area for your site footer', 
+		'description' => esc_html__('An optional widget area for your site footer', 'green-eye'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -167,9 +165,9 @@ function green_widgets_init() {
 	
 	
 	register_sidebar( array(
-		'name' =>  __('Footer Area Four', 'green-eye'),
+		'name' =>  esc_html__('Footer Area Four', 'green-eye'),
 		'id' => 'sidebar-6',
-		'description' =>  'An optional widget area for your site footer', 
+		'description' =>  esc_html__('An optional widget area for your site footer', 'green-eye'), 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -185,7 +183,7 @@ function green_widgets_init() {
 	add_filter('the_title', 'green_title');
 	function green_title($title) {
         if ( '' == $title ) {
-            return '(Untitled)';
+            return esc_html__('(Untitled)','green-eye');
         } else {
             return $title;
         }

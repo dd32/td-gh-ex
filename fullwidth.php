@@ -17,7 +17,7 @@ get_header(); ?>
  <?php the_post_thumbnail('thumbnail'); ?>
  <?php green_content(); ?>
  </div><div class="clear"> </div>
- <?php edit_post_link(__('Edit This Entry','green-eye'), '<p>', '</p>'); ?>
+ <?php edit_post_link(esc_html__('Edit This Entry','green-eye'), '<p>', '</p>'); ?>
  <?php if (green_get_option ('cpage', '' ) != '1' ): comments_template('', true); endif;?>
  <?php endwhile; endif; ?>
  

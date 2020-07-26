@@ -10,7 +10,7 @@
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number(__('No Comments','green-eye'), __('One Comment','green-eye'), __('% Comments','green-eye') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="comments"><?php comments_number(esc_html__('No Comments','green-eye'), esc_html__('One Comment','green-eye'), esc_html__('% Comments','green-eye') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist" >
 		<?php wp_list_comments(); ?>
 	</ol>
@@ -24,7 +24,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark"><?php echo __('Comments are Closed', 'green-eye'); ?></p>
+		<p class="watermark"><?php echo esc_html__('Comments are Closed', 'green-eye'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

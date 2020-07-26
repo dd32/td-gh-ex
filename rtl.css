@@ -7,17 +7,21 @@ Author URI: https://d5creation.com/
 
 Description: GREEN EYE is a CSS3 Powered and WordPress Latest Version Ready Responsive Theme for Environment Friendly Institutions or Companies running on Green Energy. GREEN EYE is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices. You can Visit the GREEN EYE Demo Here: http://demo.d5creation.com/themes/?theme=GREEN%20EYE
 
-Version: 1.9
+Version: 2.1
 
 Tags: two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options, blog, portfolio, entertainment, translation-ready 
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-GREEN WordPress Theme, Copyright 2013-2018: D5 Creation (www.d5creation.com)
+GREEN WordPress Theme, Copyright 2012-2020: D5 Creation (www.d5creation.com)
 GREEN is distributed under the terms of the GNU GPL
 
 Text Domain: green-eye
+
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.4.2
 
 */
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -78,14 +82,13 @@ img.site-logol, h1.site-logol {
 
 img.site-logos, h1.site-logos {
 	float:right;
-	float:right;
 }
 
 #content {
 	float:right;
 }
 
-#left-sidebar {
+#right-sidebar {
 	float:left;
 }
 
@@ -109,13 +112,9 @@ img.site-logos, h1.site-logos {
 	float:right;
 }
 
-.m-menu ul li:hover > ul {
+.m-menu ul li:hover > ul, .m-menu ul li:focus > ul {
 	right:189px;
 	left: auto;
-}
-
-.m-menu ul {
-	background:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#0d7200), color-stop(37%,#0f8200), color-stop(100%,#045600));
 }
 
 .m-menu ul ul {
@@ -161,16 +160,6 @@ img.site-logos, h1.site-logos {
 	background:url("images/listiconf.png") no-repeat scroll left center/7px 9px transparent;
 }
 
-#footer-widget {
-	float:right;
-}
-
-#footer-sidebar .widgets {
-	margin-right:6%;
-	float:right;
-	margin-left: auto;
-}
-
 #footer-sidebar .widget li {
 	background:url("images/listiconf.png") no-repeat scroll right 7px/10px 10px transparent;
 	padding:5px 17px 5px 0;
@@ -182,6 +171,13 @@ ul, ol {
 
 address {
 	text-align:left;
+}
+
+/* ================ Calendar ============== */
+
+#wp-calendar a {
+	right: 0;
+	left: auto;
 }
 
 input[type="text"],
@@ -331,4 +327,3 @@ ul.lboxd ul {
 	right: 5px;
 	left: auto;
 }
-

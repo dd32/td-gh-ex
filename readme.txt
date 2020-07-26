@@ -1,51 +1,67 @@
-----------------------------------
-GREEN EYE
-----------------------------------
-Version: 	1.9
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== GREEN EYE ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: d5creation
+Tags: two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options, blog, portfolio, entertainment, translation-ready 
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.6
+Stable tag: 2.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+GREEN EYE Responsive Corporate and Natural Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images, Icons and other particulars included with this product are licensed under the same License of the Theme. All Images, Icons are created by D5 Creation, Copyright: D5 Creation and License: GNU General Public License v2 or later
+== Description ==
 
-themefeatures.png - FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome/
-innovation.png - https://pixabay.com/en/woman-model-ipad-happiness-joy-692799/
-premium.png, newspress.png, simplicity.png - https://pixabay.com/en/model-girl-beauty-bella-fashion-456964/
-screenshot.png - https://pixabay.com/en/business-model-woman-message-girl-841174/
+GREEN EYE is a CSS3 Powered and WordPress Latest Version Ready Responsive Theme for Environment Friendly Institutions or Companies running on Green Energy. GREEN EYE is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices. You can Visit the GREEN EYE Demo Here: http://demo.d5creation.com/themes/?theme=GREEN%20EYE
 
-Instructions:
-- You can change the logo from WP-Admin > Appearance > Header
-- You can change the Banner Image/ Slide Images and Front Page Contents from WP-Admin > Appearance > Simplicity Options
-- You can Activate the Responsive Layout from WP-Admin > Appearance > Simplicity Options
-- You can hide the Posts or Pages in Front Page from  WP-Admin > Appearance > Simplicity Options
+== Frequently Asked Questions ==
 
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Slide, Featured Images and Other Contents there. 
 
-Changelog
-================
+= Why is GREEN EYE? =
+GREEN EYE Theme is for Personal, Corporate, Community, Forum and Multipurpose Websites
 
-Version 1.9
-=============================
-- Style Error Correction
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites and Even for Smart Blogs
 
-Version 1.7
-=============================
-- Code Cleanup
-
-Version 1.5.2
-=============================
-- Fix the Slide Title Changing Problem 
-
-Version 1.5
-=============================
-The 1.5 Version is a Major Version
-- Added Customize for Theme Options
-- Removed Options Framework
-- Translation Ready
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
+== Changelog ==
 
+= 2.1 =
+* Code Cleanup
+* Security Enhancement
+* Style Improvement
+
+= 1.9 =
+* Style Error Correction
+
+= 1.7 =
+* Code Cleanup
+
+= 1.5.2 =
+* Fix the Slide Title Changing Problem 
+
+= 1.5 =
+* Added Customize for Theme Options
+* Removed Options Framework
+* Translation Ready
+
+= 1.0 =
+* Initial Release
+
+== Resources ==
+
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
+
+* screenshot.png:
+Source: https://pxhere.com/en/photo/715891
+License: CC0, Copyright (c) Not Mentioned
+License Url : https://pxhere.com/en/license
