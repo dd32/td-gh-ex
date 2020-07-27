@@ -247,8 +247,7 @@ require ARILEWP_PARENT_INC_DIR . '/class-bootstrap-navwalker.php';
  * Pgge layout setting.
  */
  
-$theme = wp_get_theme();
-	if ( 'ArileWP' == $theme->name) {
+if ( 'ArileWP' == $arilewp_theme->name) {
 	if ( is_admin() ) {
 		require ARILEWP_PARENT_INC_DIR . '/admin/getting-started.php';
 	}
