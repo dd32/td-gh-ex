@@ -134,6 +134,14 @@ Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPres
   * Done with prefixing in custom.js.
   * Changed sanitize callback function.
 
+= 0.5.1 =
+  * Added enable/disable site title.
+  * Added enable/disable tagline.
+  * Added separator option for metabox in blog post.
+  * Changed all number type style in customizer.
+  * Resolved login page error.
+  * Updated POT file.
+
 == Resources ==
 
 Advance Fitness Gym WordPress Theme, Copyright 2018 Themeshopy

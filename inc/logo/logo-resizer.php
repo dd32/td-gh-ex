@@ -31,6 +31,26 @@ function advance_fitness_gym_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('advance_fitness_gym_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_fitness_gym_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_fitness_gym_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','advance-fitness-gym'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('advance_fitness_gym_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_fitness_gym_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_fitness_gym_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','advance-fitness-gym'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'advance_fitness_gym_logo_customize_register' );
 
