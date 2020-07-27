@@ -5349,6 +5349,13 @@ blockquote.wp-block-quote.is-large p {
 	font-style: normal;
 }
 
+/* =============== Block Editor Support ============== */
+
+a.wp-block-button__link:not(.has-text-color),
+.wrapper a.wp-block-button__link:not(.has-text-color) { /* without this, ends up with wrong default text color */
+	color:		#fff;
+}
+
 /* =================== Code =================== */
 
 /* =================== Preformatted =================== */
@@ -5383,12 +5390,12 @@ code {
 
 /* =================== Cover Images =================== */
 
-.wp-block-cover-image { /* make them tall */
-	min-height: 50vw;
-	height:     100%;
+#content .wp-block-cover.alignleft {
+	margin: 0 1.5em 0 0;
 }
 
-.wp-block-cover-image.has-parallax { /* this makes a nice looking parallax window */
+
+.wp-block-cover.has-parallax{ /* this makes a nice looking parallax window */
 	min-height: 25vw;
 }
 
@@ -5398,12 +5405,12 @@ code {
  * Weaver Xtreme detects iOS devices and defines .is-ios for those devices. This rule
  * changes cover images to scroll instead of fixed which has much nicer display.
  */
-.is-ios .wp-block-cover-image.has-parallax {
+.is-ios .wp-block-cover.has-parallax {
 	background-attachment: scroll !important;
 }
 
 
-.wp-block-cover-image.has-background-dim {
+.wp-block-cover.has-background-dim {
 }
 
 #content .wp-block-cover-image.has-parallax { /* no margin for wide parallax images  */
@@ -5431,6 +5438,9 @@ hr {
 	width:  auto;
 }
 
+#content .wp-block-gallery.alignleft {
+	margin: 0 1.5em 0 0;
+}
 
 ul.wp-block-gallery {
 	clear: both;

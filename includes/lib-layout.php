@@ -430,7 +430,6 @@ function weaverx_page_lead( $who, $archive = false ) {
 
 	get_header( $who );
 
-
 	if ( $archive ) {
 		$sb_layout = weaverx_sb_layout_archive( $who );
 	} else {
@@ -550,8 +549,6 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 	} else if ( ! $per_page ) {
 		$per_page = $is_index ? '' : weaverx_get_per_page_value( '_pp_page_layout' );
 	}
-
-	//if ( $who == 'blog' ) weaverx_alert( 'sb-layout blog: ' . $per_page );
 
 	if ( $who == '404' ) {
 		$who = 'search';

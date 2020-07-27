@@ -121,7 +121,7 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 			add_editor_style( array(
 				'editor-style.css',        // classic editor
 				'assets/css/blocks-editor-base-style' . WEAVERX_MINIFY . '.css',    // gutenberg
-				WEAVERX_GOOGLE_FONTS_URL,
+			WEAVERX_GOOGLE_FONTS_URL,
 			) );    // from settings.php - in %7C format
 		} else {
 			weaverx_check_editor_style();        // see if we need an update...

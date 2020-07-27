@@ -636,7 +636,7 @@ function weaverx_enqueue_gutenberg_block_editor_assets() {
 
 	$css_path = trailingslashit( $updir['baseurl'] ) . 'weaverx-subthemes/block-editor-style-wvrx.css';
 
-	if ( weaverx_f_exists( $css_file ) ) {  // add dynamically generated editor CSS if the file exists
+	if (  weaverx_f_exists( $css_file ) ) {  // add dynamically generated editor CSS if the file exists
 		$css_path = str_replace( array( 'http:', 'https:' ), '', $css_path );       // strip the http: if there, just use the //
 		wp_enqueue_style( 'weaverx_gutenberg_wvrx_style', $css_path, array(), WEAVERX_VERSION );   // fixup CSS for current theme settings
 	}

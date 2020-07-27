@@ -445,25 +445,29 @@ tr th, thead th {color: inherit;background:none;font-weight:normal;line-height:n
 		if ( $val != '' && $val != 'disc' ) {
 			if ( $val != 'custom' ) {
 				$put .= "ul {list-style-type:{$val} !important;}\n";
+				//$put .= ".block-editor-block-breadcrumb ul {list-style-type:{$val} !important;}\n";
 			}
 		}
 	}
 
 	if ( ( $val = weaverx_getopt( 'content_p_list_dec' ) ) ) {    // list/paragraph margin
 		if ( $val != '' ) {
-			$put .= "ul, ol, p {margin-bottom:{$val}em !important;}\n";
+			//$put .= ".block-editor-editor-skeleton__content ul, .block-editor-editor-skeleton__content ol, .block-editor-editor-skeleton__content p {margin-bottom:{$val}em;}\n";
+			$put .= "ul, ol, p {margin-bottom:{$val}em;}\n";
 		}
 	}
 
 	if ( ( $val = weaverx_getopt( 'content_block_margin_T' ) ) ) {    // block top
 		if ( $val != '' ) {
 			$put .= "*[class^=\"wp-block-\"]{margin-top:{$val}em !important;}\n";
+			$put .= ".wp-block-cover {margin-top:0 !important;}\n";
 		}
 	}
 
 	if ( ( $val = weaverx_getopt( 'content_block_margin_B' ) ) ) {    // block bottom
 		if ( $val != '' ) {
 			$put .= "*[class^=\"wp-block-\"]{margin-bottom:{$val}em !important;}\n";
+			$put .= ".wp-block-cover {margin-bottom:0 !important;}\n";
 		}
 	}
 

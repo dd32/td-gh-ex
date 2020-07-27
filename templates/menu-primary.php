@@ -11,7 +11,6 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 
 	$class = weaverx_menu_class( 'm_primary' );
 
-
 	$logo = '';
 
 	if ( weaverx_getopt( 'm_primary_logo_left' ) ) {
@@ -125,11 +124,31 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 
 	$alt_menu = weaverx_get_per_page_value( '_pp_alt_primary_menu' );
 
-	$the_menu = wp_get_nav_menu_object( $alt_menu ? $alt_menu :'primary' );
+	$the_menu = null;           // all except if replacement menu
+	$cb = true;
+	$walker = null;             // our walker handles alternative cursors
 
+	if ( $alt_menu != '' ) {
+		$the_menu = wp_get_nav_menu_object( $alt_menu );
+		$cb = false;
+	} else {
+		$locations = get_nav_menu_locations();
+		if (  $locations && isset( $locations['primary'] ) ) {
+			$use_menu = wp_get_nav_menu_object( $locations[ 'primary' ] );
+			if ( ! empty( $use_menu ) )
+				$cb = false;
+		}
+	}
+
+	if ( ! $cb ) {
+		$fb_cb = null;
+		$walker = new weaverx_Walker_Nav_Menu();
+	} else {
+		$fb_cb = 'weaverx_page_menu';
+		$walker = null;
+	}
 	wp_nav_menu(
 		array(
-			'fallback_cb'     => 'weaverx_page_menu',       // Only called if $the_menu is empty, shows default menu
 			'theme_location'  => 'primary',
 			'menu'            => $the_menu,
 			'menu_class'      => $menu_class,
@@ -137,6 +156,8 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 			'container_class' => 'wvrx-menu-container ' . $class,
 			'items_wrap'      => $left . $right .
 			                     '<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>',
+			'fallback_cb'     => $fb_cb,
+			'walker'          => $walker,
 		) );
 
 	echo "</div><div class='clear-menu-primary-end' style='clear:both;'></div><!-- /.menu-primary -->\n\n";

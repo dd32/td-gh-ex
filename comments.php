@@ -86,11 +86,12 @@ if ( comments_open() || ( $c_count > 0 && ! weaverx_getopt_checked( 'hide_old_co
 	<?php
 	if ( comments_open() ) {
 		comment_form();
+		?>
+		<p class="commentform-allowed-tags" >HTML tags allowed in your comment: <?php echo allowed_tags(); ?> </p>
+		<?php
 	}
 
-	if ( true ) { ?>
-		<p class="commentform-allowed-tags" >HTML tags allowed in your comment: <?php echo allowed_tags(); ?> </p>
-	<?php }
+
 
 	weaverx_inject_area( 'postcomments' );
 	echo "</div><!-- #comments -->\n";

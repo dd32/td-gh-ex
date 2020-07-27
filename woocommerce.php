@@ -35,3 +35,4 @@ weaverx_sb_postcontent( 'page' );
 
 weaverx_page_tail( 'page', $sb_layout );    // end of page wrap
 
+

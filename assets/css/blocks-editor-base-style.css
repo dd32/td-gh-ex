@@ -98,6 +98,12 @@ body {
 	font-family: inherit;
 }
 
+/* =================== Block Button ================= */
+
+a.wp-block-button__link {	/* default needs to be white */
+	color:		#fff;
+}
+
 /* =================== Pullquotes =================== */
 
 .wp-block-pullquote {

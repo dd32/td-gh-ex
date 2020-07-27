@@ -60,7 +60,7 @@ do_action( 'weaverx_alt_theme', $GLOBALS['weaverx_page_who'] );
 </head>
 
 <body <?php body_class(); echo weaverx_schema( 'body' ); ?>>
-<?php wp_body_open(); ?>
+<?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
 <a href="#page-bottom" id="page-top">&darr;</a> <!-- add custom CSS to use this page-bottom link -->
 <div id="wvrx-page-width">&nbsp;</div>
 <!--googleoff: all-->

@@ -59,7 +59,6 @@ if ( $paged == 1 ) {    // only show on the first page
 		weaverx_edit_link();
 	}
 }
-//weaverx_edit_link();
 echo "\n<!-- PwP: End Page content -->\n";
 
 
@@ -68,15 +67,14 @@ $top_of_pwp = ob_get_clean();            // now get the top sidebar, etc.
 if ( post_password_required() ) {
 	get_template_part( 'templates/infobar' );    // put the info bar now that the posts info is available
 	echo $top_of_pwp;
-	// every thing done, so allow comments?
-	// comments_template( '', true );
+
 	weaverx_sb_postcontent( 'blog' );
 	?>
 	</div><!-- #content -->
 	<?php
 	weaverx_sidebar_after( $sb_layout, 'blog' );
 	?>
-	<div class="clear-container-end" style="clear:both"></div><</div></div><!-- /#container-end, #container -->
+	<div class="clear-container-end" style="clear:both"></div></div></div><!-- /#container-end, #container -->
 	<?php
 	weaverx_get_footer( 'blog' );
 
@@ -101,51 +99,26 @@ if ( post_password_required() ) {
 		} else {
 			$fargs = '';
 		}
-
 		$qargs = atw_posts_get_qargs( $fargs, array() );
-		query_posts( apply_filters('weaverx_pwp_wp_query',$args) );
-
+		$wp_queryw = new WP_Query( apply_filters( 'weaverx_pwp_wp_query', $qargs ) );
 	} else {
 		$args = weaverx_setup_post_args( $args );    // setup custom fields for this page
-		query_posts( apply_filters('weaverx_pwp_wp_query',$args) );
+		$wp_queryw = new WP_Query( apply_filters('weaverx_pwp_wp_query', $args) );
 	}
 
-	/**
-	 * need to fix sticky post handling - perhaps start with this code:
-	 * https://stackoverflow.com/questions/19814320/wordpress-query-to-show-only-sticky-posts
-	 *
-	 * // get sticky posts from DB
-	 * $sticky = get_option('sticky_posts');
-	 * // check if there are any
-	 * if (!empty($sticky)) {
-	 * // optional: sort the newest IDs first
-	 * rsort($sticky);
-	 * // override the query
-	 * $args = array(
-	 * 'post__in' => $sticky
-	 * );
-	 * query_posts($args);
-	 * // the loop
-	 * while (have_posts()) {
-	 * the_post();
-	 * // your code
-	 * }
-	 * }
-	 */
 
 	// now have to put the sidebar
 	get_template_part( 'templates/infobar' );    // put the info bar now that the posts info is available
-	echo $top_of_pwp;
+	echo wp_kses_post( $top_of_pwp );
 
 
-	if ( have_posts() ) {                // same loop as index.php
+	if ( $wp_queryw->have_posts() ) {                // same loop as index.php
 		global $weaverx_sticky;
-
 
 		weaverx_content_nav( 'nav-above' );
 		$sticky_posts = false;
 
-		// really ugly kludge. This code is copied from WP's WP_Query code. If you specify filters,
+		// If you specify filters,
 		// then the sticky post code is essentially ignored by WP, so we have to do this ourselves.
 		// So - if there are sticky posts, we have to move them to the top of the posts list, and
 		// manually add 'sticky' to the post's class. (1/11/12)
@@ -157,18 +130,18 @@ if ( post_password_required() ) {
 		     ) ) {    // move sticky posts when cat or tag filters?
 			// Put sticky posts at the top of the posts array
 			$sticky_posts = get_option( 'sticky_posts' );
-			global $page;
+
 			if ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) ) {
 				$num_posts = count( $wp_query->posts );
 				$sticky_offset = 0;
 				// Loop over posts and relocate stickies to the front.
 				for ( $i = 0; $i < $num_posts; $i ++ ) {
-					if ( in_array( $wp_query->posts[ $i ]->ID, $sticky_posts ) ) {
-						$sticky_post = $wp_query->posts[ $i ];
+					if ( in_array( $wp_queryw->posts[ $i ]->ID, $sticky_posts ) ) {
+						$sticky_post = $wp_queryw->posts[ $i ];
 						// Remove sticky from current position
-						array_splice( $wp_query->posts, $i, 1 );
+						array_splice( $wp_queryw->posts, $i, 1 );
 						// Move to front, after other stickies
-						array_splice( $wp_query->posts, $sticky_offset, 0, array( $sticky_post ) );
+						array_splice( $wp_queryw->posts, $sticky_offset, 0, array( $sticky_post ) );
 						// Increment the sticky offset. The next sticky will be placed at this offset.
 						$sticky_offset ++;
 					}
@@ -197,8 +170,8 @@ if ( post_password_required() ) {
 
 		weaverx_post_count_clear();
 		echo( "<div class=\"wvrx-posts\">\n" );
-		while ( have_posts() ) {
-			the_post();
+		while ( $wp_queryw->have_posts() ) {
+			$wp_queryw->the_post();
 
 			weaverx_post_count_bump();
 

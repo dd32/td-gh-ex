@@ -85,7 +85,7 @@ if ( weaverx_getopt( 'm_secondary_hide' ) != 'hide'
 
 	echo "\n\n" . '<div id="nav-secondary" class="' . $nav_class . '"' . weaverx_schema( 'menu' ) . ">\n";
 
-	$the_menu = wp_get_nav_menu_object( $alt_menu ? $alt_menu :'secondary' );
+	$the_menu = wp_get_nav_menu_object( $alt_menu ? $alt_menu : 'secondary' );
 
 	wp_nav_menu(
 		array(
