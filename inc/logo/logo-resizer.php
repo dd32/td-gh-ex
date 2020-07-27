@@ -31,6 +31,26 @@ function advance_business_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('advance_business_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_business_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_business_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','advance-business'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('advance_business_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_business_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_business_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','advance-business'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'advance_business_logo_customize_register' );
 
