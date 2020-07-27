@@ -31,6 +31,26 @@ function advance_pet_care_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('advance_pet_care_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_pet_care_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_pet_care_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','advance-pet-care'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('advance_pet_care_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_pet_care_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_pet_care_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','advance-pet-care'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'advance_pet_care_logo_customize_register' );
 

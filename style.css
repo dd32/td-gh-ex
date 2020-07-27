@@ -6,7 +6,7 @@ Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, deeply customizable and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Version: 0.5.8
+Version: 0.5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -290,6 +290,9 @@ input[type="submit"] {
   color: #000 !important;
   text-align:center;
   margin: 0;
+}
+.site-logo {
+  text-align: center;
 }
 /*preloader*/
 
@@ -924,9 +927,8 @@ p.logged-in-as a{
   clear:both;
 }
 .metabox span {
-  margin-right: 24px;
   font-size: 15px;
-  margin-right: 10px;
+  padding: 0 5px;
 }
 .metabox i {
   margin-right: 5px;
@@ -1426,6 +1428,9 @@ span.posted_in a{
 }
 .woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
   line-height: 20px;
+}
+.woocommerce #customer_login .col-1, .woocommerce #customer_login .col-2 {
+  max-width: 100%;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
   top:70%;
