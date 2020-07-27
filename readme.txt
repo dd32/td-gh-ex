@@ -135,6 +135,13 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Done with prefixing in custom.js.
   * Changed sanitize callback function.
 
+= 0.5.1 =
+  * Added enable/disable site title.
+  * Added enable/disable tagline.
+  * Changed all number type style in customizer.
+  * Resolved login page error.
+  * Updated POT files.
+
 == Resources ==
 
 Advance Coaching WordPress Theme, Copyright 2018 Themeshopy
