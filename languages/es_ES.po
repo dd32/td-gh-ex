@@ -7,23 +7,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-06-25 18:52+0530\n"
+"PO-Revision-Date: 2020-07-27 11:36+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: es\n"
 "X-Poedit-SearchPath-0: ../../advance-education\n"
 
-#: 404.php:13 inc/customizer.php:996
+#: 404.php:13 inc/customizer.php:972
 msgid "404 Not Found"
 msgstr "404 no encontrado"
 
-#: 404.php:14 inc/customizer.php:1006
+#: 404.php:14 inc/customizer.php:982
 msgid ""
 "Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens "
 "to the best of us."
@@ -31,7 +31,7 @@ msgstr ""
 "Parece que has tomado un giro equivocado. No te preocupes y demonios, nos "
 "pasa a los mejores."
 
-#: 404.php:17 inc/customizer.php:1016
+#: 404.php:17 inc/customizer.php:992
 msgid "Back to Home Page"
 msgstr "Volver a la página de inicio"
 
@@ -147,7 +147,7 @@ msgstr "MI CUENTA"
 msgid "Open Menu"
 msgstr "Menú abierto"
 
-#: no-results.php:11 inc/customizer.php:1196
+#: no-results.php:11 inc/customizer.php:1186
 msgid "Nothing Found"
 msgstr "Nada Encontrado"
 
@@ -237,7 +237,7 @@ msgstr "Publicación anterior:"
 #: page-template/custom-front-page:40 template-parts/content-audio.php:66
 #: template-parts/content-gallery.php:55 template-parts/content-image.php:44
 #: template-parts/content-video.php:65 template-parts/content.php:44
-#: template-parts/grid-layout.php:38 inc/customizer.php:1180
+#: template-parts/grid-layout.php:38 inc/customizer.php:1156
 msgid "READ MORE"
 msgstr "LEE MAS"
 
@@ -385,319 +385,323 @@ msgstr "Mostrar producto por columnas"
 msgid "Display Product Per Page"
 msgstr "Mostrar producto por página"
 
-#: inc/customizer.php:504
+#: inc/customizer.php:501
 msgid "Top Bottom Product Padding"
 msgstr "Acolchado de producto superior inferior"
 
-#: inc/customizer.php:522
+#: inc/customizer.php:516
 msgid "Right Left Product Padding"
 msgstr "Acolchado de producto derecho izquierdo"
 
-#: inc/customizer.php:540
+#: inc/customizer.php:531
 msgid "Product Border Radius"
 msgstr "Radio del borde del producto"
 
-#: inc/customizer.php:558
+#: inc/customizer.php:546
 msgid "Product Box Shadow"
 msgstr "Caja de producto Shadow"
 
-#: inc/customizer.php:569
+#: inc/customizer.php:557
 msgid "Product Button Settings"
 msgstr "Configuración del botón del producto"
 
-#: inc/customizer.php:582
+#: inc/customizer.php:567
 msgid "Product Button Top Bottom Padding"
 msgstr "Botón del producto Acolchado superior inferior"
 
-#: inc/customizer.php:601
+#: inc/customizer.php:583
 msgid "Product Button Right Left Padding"
 msgstr "Botón del producto Acolchado derecho e izquierdo"
 
-#: inc/customizer.php:619
+#: inc/customizer.php:598
 msgid "Product Button Border Radius"
 msgstr "Radio del borde del botón del producto"
 
-#: inc/customizer.php:632
+#: inc/customizer.php:611
 msgid "Theme Color Option"
 msgstr "Opción de color del tema"
 
-#: inc/customizer.php:641
+#: inc/customizer.php:620
 msgid "One can change complete theme color on just one click."
 msgstr "Se puede cambiar el color completo del tema con solo un clic."
 
-#: inc/customizer.php:648
+#: inc/customizer.php:627
 msgid "Layout Settings"
 msgstr "opciones de diseño"
 
-#: inc/customizer.php:659
+#: inc/customizer.php:638
 msgid "Show / Hide Preloader"
 msgstr "Mostrar / Ocultar precargador"
 
-#: inc/customizer.php:669
+#: inc/customizer.php:648
 msgid "Show / Hide Shop Page Sidebar"
 msgstr "Mostrar / Ocultar barra lateral de página de tienda"
 
-#: inc/customizer.php:679
+#: inc/customizer.php:658
 msgid "Show / Hide Single Product Page Sidebar"
 msgstr "Mostrar / Ocultar barra lateral de página de producto único"
 
-#: inc/customizer.php:685 inc/customizer.php:694 inc/customizer.php:710
-#: inc/customizer.php:716 inc/customizer.php:725
+#: inc/customizer.php:664 inc/customizer.php:673 inc/customizer.php:689
+#: inc/customizer.php:695 inc/customizer.php:704
 msgid "Right Sidebar"
 msgstr "Barra lateral derecha"
 
-#: inc/customizer.php:690
+#: inc/customizer.php:669
 msgid "Change Layouts"
 msgstr "Cambiar diseños"
 
-#: inc/customizer.php:693 inc/customizer.php:709
+#: inc/customizer.php:672 inc/customizer.php:688
 msgid "Left Sidebar"
 msgstr "Barra lateral izquierda"
 
-#: inc/customizer.php:695 inc/customizer.php:701 inc/customizer.php:711
-#: inc/customizer.php:726
+#: inc/customizer.php:674 inc/customizer.php:680 inc/customizer.php:690
+#: inc/customizer.php:705
 msgid "One Column"
 msgstr "Una columna"
 
-#: inc/customizer.php:696
+#: inc/customizer.php:675
 msgid "Grid Layout"
 msgstr "Diseño de cuadrícula"
 
-#: inc/customizer.php:706
+#: inc/customizer.php:685
 msgid "Single Page Layouts"
 msgstr "Diseños de página única"
 
-#: inc/customizer.php:721
+#: inc/customizer.php:700
 msgid "Single Post Layouts"
 msgstr "Diseños de publicaciones individuales"
 
-#: inc/customizer.php:731 inc/customizer.php:740
+#: inc/customizer.php:710 inc/customizer.php:719
 msgid "Default"
 msgstr "Defecto"
 
-#: inc/customizer.php:736
+#: inc/customizer.php:715
 msgid "Container Box"
 msgstr "Caja de contenedor"
 
-#: inc/customizer.php:737
+#: inc/customizer.php:716
 msgid "Here you can change the Width layout."
 msgstr "Aquí puede cambiar el diseño de Ancho."
 
-#: inc/customizer.php:741
+#: inc/customizer.php:720
 msgid "Container"
 msgstr "Envase"
 
-#: inc/customizer.php:742
+#: inc/customizer.php:721
 msgid "Box Container"
 msgstr "Caja contenedor"
 
-#: inc/customizer.php:748
 msgid "Button Option"
 msgstr "Opción de botón"
 
-#: inc/customizer.php:757
 msgid "Top and Bottom Padding"
 msgstr "Acolchado Superior e Inferior"
 
-#: inc/customizer.php:772
 msgid "Left and Right Padding"
 msgstr "Acolchado Izquierdo y Derecho"
 
-#: inc/customizer.php:787
 msgid "Button Border Radius"
 msgstr "Radio del borde del botón"
 
-#: inc/customizer.php:799
+#: inc/customizer.php:778
 msgid "Topbar Section"
 msgstr "Sección de barra superior"
 
-#: inc/customizer.php:800
+#: inc/customizer.php:779
 msgid "Add topbar content"
 msgstr "Agregar contenido de la barra superior"
 
-#: inc/customizer.php:812
+#: inc/customizer.php:791
 msgid "Show / Hide Topbar"
 msgstr "Mostrar / Ocultar barra superior"
 
-#: inc/customizer.php:823 inc/customizer.php:1037
+#: inc/customizer.php:802 inc/customizer.php:1013
 msgid "Sticky Header"
 msgstr "Encabezado pegajoso"
 
-#: inc/customizer.php:832
+#: inc/customizer.php:811
 msgid "Mail Address"
 msgstr "Correo Electronico"
 
-#: inc/customizer.php:842
+#: inc/customizer.php:821
 msgid "Phone Number"
 msgstr "Número de teléfono"
 
-#: inc/customizer.php:852
+#: inc/customizer.php:831
 msgid "Timing Text"
 msgstr "Texto de tiempo"
 
-#: inc/customizer.php:859
+#: inc/customizer.php:838
 msgid "Slider Settings"
 msgstr "Configuración del control deslizante"
 
-#: inc/customizer.php:870
+#: inc/customizer.php:849
 msgid "Show / Hide slider"
 msgstr "Mostrar / Ocultar control deslizante"
 
-#: inc/customizer.php:881
+#: inc/customizer.php:860
 msgid "Select Slide Image Page"
 msgstr "Seleccionar página de imagen de diapositiva"
 
-#: inc/customizer.php:882
+#: inc/customizer.php:861
 msgid "Size of image should be 1600 x 633"
 msgstr "El tamaño de la imagen debe ser 1600 x 633."
 
-#: inc/customizer.php:890 inc/customizer.php:899 inc/customizer.php:1286
-#: inc/customizer.php:1344
+#: inc/customizer.php:869 inc/customizer.php:878 inc/customizer.php:1276
+#: inc/customizer.php:1331
 msgid "Left"
 msgstr "Izquierdo"
 
-#: inc/customizer.php:895
+#: inc/customizer.php:874
 msgid "Slider Content Alignment"
 msgstr "Alineación de contenido del control deslizante"
 
-#: inc/customizer.php:898 inc/customizer.php:1346
+#: inc/customizer.php:877 inc/customizer.php:1333
 msgid "Center"
 msgstr "Centrar"
 
-#: inc/customizer.php:900 inc/customizer.php:1287 inc/customizer.php:1336
-#: inc/customizer.php:1345
+#: inc/customizer.php:879 inc/customizer.php:1277 inc/customizer.php:1323
+#: inc/customizer.php:1332
 msgid "Right"
 msgstr "Derecho"
 
-#: inc/customizer.php:913
+#: inc/customizer.php:889
 msgid "Slider Excerpt length"
 msgstr "Longitud del extracto del deslizador"
 
-#: inc/customizer.php:930
+#: inc/customizer.php:906
 msgid "Slider Image Opacity"
 msgstr "Slider Image Opacity"
 
-#: inc/customizer.php:950
+#: inc/customizer.php:926
 msgid "Popular Courses"
 msgstr "Cursos Populares"
 
-#: inc/customizer.php:951
+#: inc/customizer.php:927
 msgid "Add section below."
 msgstr "Añadir sección a continuación."
 
-#: inc/customizer.php:960
+#: inc/customizer.php:936
 msgid "Section Title"
 msgstr "Sección de título"
 
-#: inc/customizer.php:984
+#: inc/customizer.php:960
 msgid "Select Category to display post"
 msgstr "Seleccione la categoría para mostrar la publicación"
 
-#: inc/customizer.php:985
+#: inc/customizer.php:961
 msgid "Size of image should be 370 x 240"
 msgstr "El tamaño de la imagen debe ser 370 x 240"
 
-#: inc/customizer.php:991
+#: inc/customizer.php:967
 msgid "404 Page"
 msgstr "404 página"
 
-#: inc/customizer.php:1000
+#: inc/customizer.php:976
 msgid "404 Page Title"
 msgstr "Título de la página 404"
 
-#: inc/customizer.php:1010
+#: inc/customizer.php:986
 msgid "404 Page Content"
 msgstr "404 Contenido de la página"
 
-#: inc/customizer.php:1020
+#: inc/customizer.php:996
 msgid "404 Page Button"
 msgstr "404 Botón de página"
 
-#: inc/customizer.php:1027
+#: inc/customizer.php:1003
 msgid "Responsive Setting"
 msgstr "Ambiente receptivo"
 
-#: inc/customizer.php:1047
+#: inc/customizer.php:1023
 msgid "Slider"
 msgstr "Control deslizante"
 
-#: inc/customizer.php:1057
+#: inc/customizer.php:1033
 msgid "Scroll To Top"
 msgstr "Vuelve al comienzo"
 
-#: inc/customizer.php:1067
+#: inc/customizer.php:1043
 msgid "Sidebar"
 msgstr "Barra lateral"
 
-#: inc/customizer.php:1077
+#: inc/customizer.php:1053
 msgid "Preloader"
 msgstr "Precargador"
 
-#: inc/customizer.php:1083
+#: inc/customizer.php:1059
 msgid "Blog Page Settings"
 msgstr "Configuración de la página del blog"
 
-#: inc/customizer.php:1093
+#: inc/customizer.php:1069
 msgid "Post Date"
 msgstr "Fecha de publicación"
 
-#: inc/customizer.php:1103
+#: inc/customizer.php:1079
 msgid "Comments"
 msgstr "Comentarios"
 
-#: inc/customizer.php:1113
+#: inc/customizer.php:1089
 msgid "Author"
 msgstr "Autor"
 
-#: inc/customizer.php:1123
+#: inc/customizer.php:1099
 msgid "Single Post Tags"
 msgstr "Etiquetas de publicaciones individuales"
 
-#: inc/customizer.php:1133
+#: inc/customizer.php:1109
 msgid "Single Post Image"
 msgstr "Imagen de publicación única"
 
-#: inc/customizer.php:1143
+#: inc/customizer.php:1119
 msgid "Post Description Length"
 msgstr "Descripción de la publicación Longitud"
 
-#: inc/customizer.php:1146
+#: inc/customizer.php:1122
 msgid "No Content"
 msgstr "Sin contenido"
 
-#: inc/customizer.php:1138 inc/customizer.php:1147
+#: inc/customizer.php:1114 inc/customizer.php:1123
 msgid "Excerpt Content"
 msgstr "Extracto de contenido"
 
-#: inc/customizer.php:1148
+#: inc/customizer.php:1124
 msgid "Full Content"
 msgstr "Contenido completo"
 
-#: inc/customizer.php:1157
+#: inc/customizer.php:1133
 msgid "Excerpt length"
 msgstr "Longitud del extracto"
 
-#: inc/customizer.php:1169
+#: inc/customizer.php:1145
 msgid "..."
 msgstr "..."
 
-#: inc/customizer.php:1173
+#: inc/customizer.php:1149
 msgid "Post Excerpt Indicator Option"
 msgstr "Opción de indicador de extracto posterior"
 
-#: inc/customizer.php:1184
+#: inc/customizer.php:1160
 msgid "Add Button Text"
 msgstr "Agregar texto de botón"
 
-#: inc/customizer.php:1191
+#: inc/customizer.php:1160
+msgid "Meta Box Separator"
+msgstr "Separador Meta Box"
+
+#: inc/customizer.php:1172
+msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
+msgstr "Añadir Meta Separator. por ejemplo: \"|\", \"/\", etc."
+
+#: inc/customizer.php:1181
 msgid "No Result Found"
 msgstr "No se han encontrado resultados"
 
-#: inc/customizer.php:1200
+#: inc/customizer.php:1190
 msgid "No Result Found Title"
 msgstr "Título sin resultado encontrado"
 
-#: inc/customizer.php:1206
+#: inc/customizer.php:1196
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -705,23 +709,23 @@ msgstr ""
 "Lo sentimos, pero nada coincide con sus términos de búsqueda. Intente "
 "nuevamente con algunas palabras clave diferentes."
 
-#: inc/customizer.php:1210
+#: inc/customizer.php:1200
 msgid "No Result Found Content"
 msgstr "Sin resultado Contenido encontrado"
 
-#: inc/customizer.php:1221
+#: inc/customizer.php:1211
 msgid "No Result search"
 msgstr "Búsqueda sin resultado"
 
-#: inc/customizer.php:1227
+#: inc/customizer.php:1217
 msgid "Footer Text"
 msgstr "Texto de pie de página"
 
-#: inc/customizer.php:1238
+#: inc/customizer.php:1228
 msgid "Footer widget area"
 msgstr "Área de widget de pie de página"
 
-#: inc/customizer.php:1240
+#: inc/customizer.php:1230
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -729,66 +733,66 @@ msgstr ""
 "Seleccione el número de áreas de widgets que desea en el pie de página. "
 "Después de eso, ve a Apariencia> Widgets y agrega tus widgets."
 
-#: inc/customizer.php:1242
+#: inc/customizer.php:1232
 msgid "One"
 msgstr "Uno"
 
-#: inc/customizer.php:1243
+#: inc/customizer.php:1233
 msgid "Two"
 msgstr "Dos"
 
-#: inc/customizer.php:1244
+#: inc/customizer.php:1234
 msgid "Three"
 msgstr "Tres"
 
-#: inc/customizer.php:1245
+#: inc/customizer.php:1235
 msgid "Four"
 msgstr "Cuatro"
 
-#: inc/customizer.php:1254
+#: inc/customizer.php:1244
 msgid "Footer Widget Background Color"
 msgstr "Color de fondo del widget de pie de página"
 
-#: inc/customizer.php:1263
+#: inc/customizer.php:1253
 msgid "Footer Widget Background Image"
 msgstr "Imagen de fondo del widget de pie de página"
 
-#: inc/customizer.php:1272
+#: inc/customizer.php:1262
 msgid "Copyright Text"
 msgstr "Texto de copyright"
 
-#: inc/customizer.php:1278 inc/customizer.php:1288
+#: inc/customizer.php:1268 inc/customizer.php:1278
 msgid "center"
 msgstr "centrar"
 
-#: inc/customizer.php:1283
+#: inc/customizer.php:1273
 msgid "Copyright Text Alignment"
 msgstr "Alineación de texto de copyright"
 
-#: inc/customizer.php:1300
+#: inc/customizer.php:1287
 msgid "Copyright Font Size"
 msgstr "Tamaño de fuente de copyright"
 
-#: inc/customizer.php:1300
+#: inc/customizer.php:1302
 msgid "Copyright Padding"
 msgstr "Relleno de copyright"
 
-#: inc/customizer.php:1331
+#: inc/customizer.php:1318
 msgid "Show / Hide Scroll To Top"
 msgstr "Mostrar / Ocultar Desplazarse hacia arriba"
 
-#: inc/customizer.php:1341
+#: inc/customizer.php:1328
 msgid "Scroll Back to Top Position"
 msgstr "Desplazarse hacia atrás a la posición superior"
 
-#: inc/customizer.php:1358
+#: inc/customizer.php:1342
 msgid "Scroll Icon Font Size"
 msgstr "Icono de desplazamiento Tamaño de fuente"
 
-#: inc/customizer.php:1448
+#: inc/customizer.php:1432
 msgid "Education Pro Theme"
 msgstr "Education Pro Theme"
 
-#: inc/customizer.php:1449
+#: inc/customizer.php:1433
 msgid "Go Pro"
 msgstr "Go Pro"

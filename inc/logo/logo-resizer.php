@@ -31,6 +31,26 @@ function advance_education_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('advance_education_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_education_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_education_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','advance-education'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('advance_education_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_education_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_education_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','advance-education'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'advance_education_logo_customize_register' );
 
