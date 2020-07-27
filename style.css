@@ -6,7 +6,7 @@ Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Version: 0.5
+Version: 0.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
@@ -1603,6 +1603,9 @@ span.woocommerce-input-wrapper{
 .woocommerce-cart table.cart td.actions .coupon .input-text{
   font-size: 11px;
   padding: 7px;
+}
+.woocommerce #customer_login .col-1, .woocommerce #customer_login .col-2 {
+  max-width: 100%;
 }
 #footer .woocommerce.widget_shopping_cart .cart_list li{
   padding: 0 0 0 2em;

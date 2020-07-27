@@ -535,7 +535,7 @@ function advance_automobile_customize_register($wp_customize) {
 			'max' => 50,
 			'step' => 1,
 		),
-		'type'		=> 'range'
+		'type' => 'range'
 	));
 
 	$wp_customize->add_setting( 'advance_automobile_wooproducts_box_shadow',array(
@@ -606,8 +606,9 @@ function advance_automobile_customize_register($wp_customize) {
 	));
 
 	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_automobile_theme_color_option', 
-		array( 'panel' => 'advance_automobile_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-automobile' ) )
+	$wp_customize->add_section( 'advance_automobile_theme_color_option', array( 
+		'panel' => 'advance_automobile_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-automobile' ) )
 	);
 
   	$wp_customize->add_setting( 'advance_automobile_theme_color_first', array(
@@ -1286,6 +1287,20 @@ function advance_automobile_customize_register($wp_customize) {
 		'section'=> 'advance_automobile_blog_post',
 		'type'=> 'text'
 	));
+
+	$wp_customize->add_setting( 'advance_automobile_metabox_separator_blog_post', array(
+		'default'   => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_automobile_metabox_separator_blog_post', array(
+		'label'       => esc_html__( 'Meta Box Separator','advance-automobile' ),
+		'input_attrs' => array(
+            'placeholder' => __( 'Add Meta Separator. e.g.: "|", "/", etc.', 'advance-automobile' ),
+        ),
+		'section'     => 'advance_automobile_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_automobile_metabox_separator_blog_post',
+	) );
 
 	//no Result Found
 	$wp_customize->add_section('advance_automobile_noresult_found',array(
