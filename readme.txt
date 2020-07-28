@@ -143,6 +143,14 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Done with prefixing in custom.js.
 * Changed sanitize callback function.
 
+= 0.6.3 =
+* Added enable/disable site title.
+* Added enable/disable tagline.
+* Added separator option for metabox in blog post.
+* Changed all number type style in customizer.
+* Resolved login page error.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance Ecommerce Store WordPress Theme, Copyright 2018 Themeshopy
