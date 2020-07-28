@@ -359,6 +359,36 @@ function ashe_about_page_output() {
 
 			</div>
 
+			<div class="three-columns-wrap">
+
+				<br>
+
+				<div class="column-width-3">
+					<h3>
+						<span class="dashicons dashicons-admin-appearance"></span>
+						<?php esc_html_e( 'Child Theme', 'ashe' ); ?>
+					</h3>
+					<p>
+						<?php esc_html_e( 'The best way to customize Ashe Theme code.', 'ashe' ); ?>
+						<hr>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'ashe' ); ?></a>
+					</p>
+				</div>
+
+				<div class="column-width-3">
+					<h3>
+						<span class="dashicons dashicons-groups"></span>
+						<?php esc_html_e( 'Facebook Group', 'ashe' ); ?>
+					</h3>
+					<p>
+						<?php esc_html_e( 'Join our community on Facebook to stay up to date.', 'ashe' ); ?>
+						<hr>
+						<a target="_blank" href="<?php echo esc_url('https://www.facebook.com/Best-Wordpress-Themes-By-Wp-Royal-1903331756560958/'); ?>"><?php esc_html_e( 'Join Now', 'ashe' ); ?></a>
+					</p>
+				</div>
+
+			</div>
+
 		<?php elseif ( $active_tab == 'ashe_tab_5' ) : ?>
 
 			<br><br>

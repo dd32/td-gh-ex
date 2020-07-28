@@ -320,7 +320,9 @@ function ashe_true_false( $option ) {
 		}
 		.single-navigation i:hover,
 		.page-content .submit:hover,
+		.ashe-boxed-style .page-content .submit:hover,
 		.page-content .blog-pagination.numeric a:hover,
+		.ashe-boxed-style .page-content .blog-pagination.numeric a:hover,
 		.page-content .blog-pagination.numeric span,
 		.page-content .blog-pagination.load-more a:hover,
 		.page-content .ashe-subscribe-box input[type="submit"]:hover,
@@ -492,7 +494,8 @@ function ashe_true_false( $option ) {
 			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_nav_family' ) ) ."';
 		}
 
-		#mobile-menu li {
+		#mobile-menu li,
+		.mobile-menu-btn a {
 			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_nav_family' ) ) ."';
 		}
 	";
@@ -513,7 +516,8 @@ function ashe_true_false( $option ) {
 		$css .= "
 			#top-menu li a,
 			#main-menu li a,
-			#mobile-menu li {
+			#mobile-menu li,
+			.mobile-menu-btn a {
 				text-transform: uppercase;
 			}
 		";
@@ -1048,12 +1052,15 @@ function ashe_true_false( $option ) {
 		.page-content .woocommerce input.button:hover,
 		.page-content .woocommerce a.button:hover,
 		.page-content .woocommerce a.button.alt:hover,
+		.ashe-boxed-style .page-content .woocommerce a.button.alt:hover,
 		.page-content .woocommerce button.button.alt:hover,
 		.page-content .woocommerce input.button.alt:hover,
 		.page-content .woocommerce #respond input#submit.alt:hover,
 		.woocommerce .page-content .woocommerce-message .button:hover,
 		.woocommerce .page-content a.button.alt:hover,
 		.woocommerce .page-content button.button.alt:hover,
+		.ashe-boxed-style.woocommerce .page-content button.button.alt:hover,
+		.ashe-boxed-style.woocommerce .page-content #respond input#submit:hover,
 		.woocommerce .page-content #respond input#submit:hover,
 		.woocommerce .page-content .widget_price_filter .button:hover,
 		.woocommerce .page-content .woocommerce-message .button:hover,

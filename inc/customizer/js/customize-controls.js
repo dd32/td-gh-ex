@@ -198,25 +198,61 @@
 
 
 	/*
+	** Responsive
+	*/
+		var menuButtonText = $('#customize-control-ashe_options-responsive_mobile_icon_text');
+
+		$('#customize-control-ashe_options-responsive_menu_icon').find('select').change(function(){
+			if ( 'text' === $(this).val() ) {
+				menuButtonText.show();
+			} else {
+				menuButtonText.hide();
+			}
+		});
+
+		// On Load
+		if ( 'text' === $('#customize-control-ashe_options-responsive_menu_icon').find('select').val() ) {
+			menuButtonText.show();
+		} else {
+			menuButtonText.hide();
+		}
+
+
+	/*
 	** Skins
 	*/
-	$('#customize-control-ashe_options-skins_select').find('select').change(function(){
-		if ( 'box' === $(this).val() ) {
-			$('#customize-control-background_color').find('.color-picker-hex').val( '#f9f9f9').trigger('keyup');
+		var darkModeControls = $('#customize-control-ashe_options-skins_dark_mode, #customize-control-dark_mode_note, #customize-control-dark_mode_divider');
+
+		$('#customize-control-ashe_options-skins_select').find('select').change(function(){
+			if ( 'box' === $(this).val() ) {
+				$('#customize-control-background_color').find('.color-picker-hex').val('#f9f9f9').trigger('keyup');
+			} else {
+				$('#customize-control-background_color').find('.color-picker-hex').val('#ffffff').trigger('keyup');
+			}
+
+			if ( 'dark' === $(this).val() ) {
+				darkModeControls.hide();
+			} else {
+				darkModeControls.show();
+			}
+		});
+
+		// On Load
+		if ( 'dark' === $('#customize-control-ashe_options-skins_select').find('select').val() ) {
+			darkModeControls.hide();
 		} else {
-			$('#customize-control-background_color').find('.color-picker-hex').val( '#ffffff').trigger('keyup');
+			darkModeControls.show();
 		}
-	});
 
 
 	/*
 	** Fixes
 	*/
-	$('#customize-control-display_header_text').find('input').change(function(){
-		var blogname = $('#customize-control-blogname').find('input').val();
-		$('#customize-control-blogname').find('input').val( blogname + ' ').trigger('keyup');
-		$('#customize-control-blogname').find('input').val( blogname ).trigger('keyup');
-	});
+		$('#customize-control-display_header_text').find('input').change(function(){
+			var blogname = $('#customize-control-blogname').find('input').val();
+			$('#customize-control-blogname').find('input').val( blogname + ' ').trigger('keyup');
+			$('#customize-control-blogname').find('input').val( blogname ).trigger('keyup');
+		});
 
 	}); // wp.customize ready
 

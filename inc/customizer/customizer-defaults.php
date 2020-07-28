@@ -4,6 +4,7 @@ function ashe_options( $control ) {
 
 	$ashe_defaults = array(
 		'skins_select' => 'default',
+		'skins_dark_mode' => true,
 		'colors_content_accent' => '#ca9b52',
 		'colors_content_bg' => '#ffffff',
 		'colors_header_bg' => '#ffffff',
@@ -86,7 +87,9 @@ function ashe_options( $control ) {
 		'preloader_label' => false,
 		'responsive_featured_slider' => true,
 		'responsive_featured_links' => false,
-		'responsive_related_posts' => false
+		'responsive_related_posts' => false,
+		'responsive_menu_icon' => 'chevron-down',
+		'responsive_mobile_icon_text' => 'Menu',
 	);
 
 	// merge defaults and options

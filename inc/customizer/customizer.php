@@ -356,6 +356,15 @@ function ashe_customize_register( $wp_customize ) {
 		}
 	}
 
+	// Control Divider
+	class Ashe_Customize_Control_Divider extends WP_Customize_Control {
+		public $type = 'control_divider';
+
+		public function render_content() {
+			echo '<hr>';
+		}
+	}
+
 
 
 /*
@@ -414,6 +423,36 @@ function ashe_customize_register( $wp_customize ) {
 				'type'		=> 'control_note',
 				'label' 	=> esc_html__( 'After activating non-default skin, you will NOT be able to take control over skin colors. These options are only available in the Ashe PRO.', 'ashe' ),
 				'priority'	=> 2
+			)
+		)
+	);
+
+	// Dark Mode Divider
+	$wp_customize->add_setting( 'dark_mode_divider', array(
+		'sanitize_callback' => 'ashe_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new Ashe_Customize_Control_Divider ( $wp_customize,
+			'dark_mode_divider', array(
+				'section'	=> 'ashe_skins',
+				'type'		=> 'control_divider',
+				'priority'	=> 3
+			)
+		)
+	);
+
+	// Dark Mode
+	ashe_checkbox_control( 'skins', 'dark_mode', esc_html__( 'Show Dark Mode Switcher', 'ashe' ), 'refresh', 4 );
+
+	// Dark Mode Note
+	$wp_customize->add_setting( 'dark_mode_note', array(
+		'sanitize_callback' => 'ashe_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new Ashe_Customize_Control_Note ( $wp_customize,
+			'dark_mode_note', array(
+				'section'	=> 'ashe_skins',
+				'type'		=> 'control_note',
+				'label' 	=> esc_html__( 'Switcher icon will be added to the right of the Navigation Menu. When the Dark Mode is enabled color controls will NOT work except Accent Color control. Dark Mode design reduces the light emitted by device screens while maintaining the minimum color contrast ratios required for readability.', 'ashe' ),
+				'priority'	=> 5
 			)
 		)
 	);
@@ -1201,7 +1240,19 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Related Posts
 	ashe_checkbox_control( 'responsive', 'related_posts', esc_html__( 'Show Related Posts', 'ashe' ), 'refresh', 7 );
-	
+
+	// Mobile Menu Icons Array
+	$mobile_menu_icons = array(
+		'chevron-down' 			 => 'Arrow',
+		'text' 					 => 'Text',
+	);
+
+	// Select Mobile Menu Icon
+	ashe_select_control( 'responsive', 'menu_icon', esc_html__( 'Select Mobile Menu Icon', 'ashe' ), $mobile_menu_icons, 'refresh', 9 );
+
+	// Mobile Menu Text
+	ashe_text_control( 'responsive', 'mobile_icon_text', esc_html__( 'Menu Button Text', 'ashe' ), 'refresh', 11 );
+
 
 }
 add_action( 'customize_register', 'ashe_customize_register' );
@@ -1221,6 +1272,6 @@ add_action( 'customize_preview_init', 'ashe_customize_preview_js' );
 function ashe_panels_js() {
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
 	wp_enqueue_style( 'ashe-customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
-	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.1', true );
+	wp_enqueue_script( 'ashe-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.2', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'ashe_panels_js' );
