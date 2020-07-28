@@ -22,6 +22,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	) );
 
 	// font array
+	
 	$bb_ecommerce_store_font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
@@ -475,10 +476,10 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'section'  => 'woocommerce_product_catalog',
 		'type'     => 'select',
 		'choices'  => array(
-						'2' => '2',
-						'3' => '3',
-						'4' => '4',
-						'5' => '5',
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+			'5' => '5',
 		),
 	)  );
 
@@ -615,7 +616,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
-  		'label' => 'Color Option',
+  		'label' => __('Color Option', 'bb-ecommerce-store' ),
   		'description' => __('One can change complete theme color on just one click.', 'bb-ecommerce-store'),
 	    'section' => 'bb_ecommerce_store_theme_color_option',
 	    'settings' => 'bb_ecommerce_store_theme_color',
@@ -1216,6 +1217,20 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'section'=> 'bb_ecommerce_store_blog_post',
 		'type'=> 'text'
 	));
+
+	$wp_customize->add_setting( 'bb_ecommerce_store_metabox_separator_blog_post', array(
+		'default'   => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'bb_ecommerce_store_metabox_separator_blog_post', array(
+		'label'       => esc_html__( 'Meta Box Separator','bb-ecommerce-store' ),
+		'input_attrs' => array(
+            'placeholder' => __( 'Add Meta Separator. e.g.: "|", "/", etc.', 'bb-ecommerce-store' ),
+        ),
+		'section'     => 'bb_ecommerce_store_blog_post',
+		'type'        => 'text',
+		'settings'    => 'bb_ecommerce_store_metabox_separator_blog_post',
+	) );
 
 	//no Result Found
 	$wp_customize->add_section('bb_ecommerce_store_noresult_found',array(

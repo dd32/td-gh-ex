@@ -195,6 +195,14 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
   * Done with prefixing in custom.js.
   * Changed sanitize callback function.
 
+= 1.5.6 =
+  * Added enable/disable site title.
+  * Added enable/disable tagline.
+  * Added separator option for metabox in blog post.
+  * Changed all number type style in customizer.
+  * Resolved login page error.
+  * Updated POT file.
+
 == Resources ==
 
 BB Ecommerce Store WordPress Theme, Copyright (C) 2017, ThemeShopy

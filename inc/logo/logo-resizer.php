@@ -31,6 +31,26 @@ function bb_ecommerce_store_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_ecommerce_store_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','bb-ecommerce-store'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('bb_ecommerce_store_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_ecommerce_store_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','bb-ecommerce-store'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'bb_ecommerce_store_logo_customize_register' );
 
