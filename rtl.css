@@ -17,8 +17,9 @@ caption, th, td { text-align: right; }
     left: inherit;
 }
 
-.menu-social ul,
-.search-toggle { float: left; }
+.extra-menu {
+    float: left;
+}
 
 .main-navigation ul ul { 
     right: 0;

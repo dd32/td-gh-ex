@@ -25,40 +25,48 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
- 
-				printf( _nx( 'One comment:', '%1$s comments:', get_comments_number(), 'comments title', 'simone' ),
-					number_format_i18n( get_comments_number() )
-                                );
+			$simone_comment_count = get_comments_number();
+			if ( '1' === $simone_comment_count ) {
+				esc_html_e( 'One comment:', 'simone' );
+			} else {
+				printf(
+					__( '%s comments:', 'simone' ),
+					number_format_i18n( $simone_comment_count )
+				);
+			}
 			?>
 		</h2>
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-                                        'avatar_size'=> 50,
-				) );
+				wp_list_comments(
+					array(
+						'style'       => 'ol',
+						'short_ping'  => true,
+						'avatar_size' => 50,
+					)
+				);
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through. ?>
 		<nav id="comment-nav-below" class="comment-navigation clear" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'simone' ); ?></h1>
+			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'simone' ); ?></h2>
 			<div class="nav-previous"><?php previous_comments_link( sprintf( '<i class="fa fa-arrow-circle-o-left">%s</i> ', __( 'Older Comments', 'simone' ) ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( sprintf( '<i class="fa fa-arrow-circle-o-right">%s</i> ', __( 'Newer Comments', 'simone' ) ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+		<?php endif; // check for comment navigation. ?>
 
-	<?php endif; // have_comments() ?>
+	<?php endif; // have_comments(). ?>
 
 	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && '0' !== get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) {
+		?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'simone' ); ?></p>
-	<?php endif; ?>
-
-	<?php comment_form(); ?>
+		<?php
+	}
+	comment_form();
+	?>
 
 </div><!-- #comments -->

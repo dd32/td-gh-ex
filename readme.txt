@@ -1,17 +1,40 @@
 === Simone ===
-Contributors: Morten Rand-Hendriksen et.al.
-Tags: white, black, blue, light, one-column, two-columns, right-sidebar, responsive-layout, accessibility-ready, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready, rtl-language-support
+Contributors: poena
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 5.4
 License: GPL 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simone is a responsive modern design theme designed and developed by Morten Rand-Hendriksen.
+Simone is a responsive modern design theme orignally designed and developed by 
+[Morten Rand-Hendriksen](http://mor10.com) available from the [WordPress Theme Directory]
+(http://wordpress.org/themes/simone/).
 
-Simone\'s design is focussed on typography and aims to put the content front and center. Fonts are large and clear and scale according to screen width. On wider screens blockquotes and images can be aligned left and right to break out of the main stream and get a pull-quote effect. The featured images are responsive through the use of the <picture> element resulting in appropriate image sizes being loaded to fit individual screen sizes.
+The theme was adopted by Carolina Nymark in 2020, since Morten no longer had time to maintain it.
+
+
+Simone\'s design is focussed on typography and aims to put the content front and center. 
+Fonts are large and clear and scale according to screen width. 
+On wider screens blockquotes and images can be aligned left and right to break out of the main stream 
+and get a pull-quote effect.
+The featured images are responsive through the use of the <picture> element resulting in appropriate 
+image sizes being loaded to fit individual screen sizes.
 
 
 == Changelog ==
+
+=== 2.1.2 ===
+Improved escaping.
+Code style changes to better match WordPress coding standards.
+Corrected license information and credits for assets.
+Replaced the screenshot image, to follow the theme directory requirements.
+Updated Enquire to v2.1.6 and included the non minified version.
+Updated Superfish and included the non minified version.
+
+Accessbility improvements:
+Updated the search toggle in the menu to fix a problem with the focus/tab order.
+Markup changes to the post navigation, where a heading that was only used for styling was removed.
+Reduced the number of H1 headings.
+Added underlines to links in the comment content.
 
 === 2.1.1 ===
 - Update to Font Awesome 4.5.0
@@ -115,7 +138,9 @@ Simone ships with English as the default language. Translations are available fo
 - Turkish (tr_TR via Mehmet Yurtar)
 
 === RTL language support ===
-Simone ships with full RTL language support. All relevant content is reversed including menus, menu position, search bars, and other features. Sidebar can be left in its default position or moved to the left through the customizer.
+Simone ships with full RTL language support. All relevant content is reversed including menus, menu position, 
+search bars, and other features. Sidebar can be left in its default position or moved to the left through the 
+customizer.
 
 === Customizer Options ===
 Extended options available from the Customizer:
@@ -145,23 +170,44 @@ The social menu is inspired by this [article by Justin Tadlock](http://justintad
 Simone ships with three border options for images and other elements that can be applied by adding a class to the desired element. The classes add a 1px solid border around the current element. The classes are .border-black (black), .border-gray (#b9b9b9 or 25% gra), and .border-custom (defaults to header color but is overridden by custom link color in Customizer). These classes are added to allow the user to add borders in a semantic and standards based way.
 
 === Licenses and External Assets ===
+
+Simone
+====================================
+Simone WordPress Theme, joint copyright 2014-2020 Morten Rand-Hendriksen & Carolina Nymark 2020.
 Simone is distributed under the terms of the GNU GPL v2
 
 Simone\'s code base started out as _s (http://underscores.me) as it were on February 6, 2014.
+(C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
-The theme features three custom fonts:
+Twenty Fourteen
+Twenty Fourteen WordPress Theme, Copyright 2013-2020 WordPress.org & Automattic.com
+Twenty Fourteen is Distributed under the terms of the GNU GPL
+
+Fonts:
 Lato: http://www.google.com/fonts/specimen/Lato SIL Open Font Licence 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 PT Serif: http://www.google.com/fonts/specimen/PT+Serif SIL Open Font Licence 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
-FontAwesome: Published under various licenses http://fortawesome.github.io/Font-Awesome/license/
 
-The accessible main menu is powered by Superfish. MIT License https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
-Responsive triggers for Superfish and Masonry powered by Enquire.js. MIT Licence http://wicky.nillia.ms/enquire.js/#license
-Responsive featured images powered by Picturefill http://scottjehl.github.io/picturefill/
+FontAwesome: 
+https://fontawesome.com/
+Icons — CC BY 4.0 License
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons packaged as .svg and .js files types.
+Fonts — SIL OFL 1.1 License
+In the Font Awesome Free download, the SIL OFL license applies to all icons packaged as web and desktop font files.
+Code — MIT License
+In the Font Awesome Free download, the MIT license applies to all non-font and non-icon files.
 
-Images used in screenshot are by the theme author and published under the CC by-nc-nd 2.0 license:
-Background: Cherry Blossom Tree - https://www.flickr.com/photos/mor10/13933662411/
-On-device grabs: Distressed Mailboxes, New Orleans - https://www.flickr.com/photos/mor10/5874760659/
+The accessible main menu is powered by Superfish. 
+https://github.com/joeldbirch/superfish/
+Dual licensed under the MIT and GPL licenses:
+http://www.opensource.org/licenses/mit-license.php
+http://www.gnu.org/licenses/gpl.html
 
+
+Responsive triggers for Superfish and Masonry powered by Enquire.js. 
+MIT Licence http://wicky.nillia.ms/enquire.js/#license
+
+Responsive featured images powered by Picturefill http://scottjehl.github.io/picturefill/ 
+License: MIT
 
 === Namesake ===
 Simone is named after philosopher Simone de Beauvoir: http://en.wikipedia.org/wiki/Simone_de_Beauvoir

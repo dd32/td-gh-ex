@@ -46,10 +46,10 @@ function simone_wp_title( $title, $sep ) {
 	if ( is_feed() ) {
 		return $title;
 	}
-	
+
 	global $page, $paged;
 
-	// Add the blog name
+	// Add the blog name.
 	$title .= get_bloginfo( 'name', 'display' );
 
 	// Add the blog description for the home/front page.
@@ -58,7 +58,7 @@ function simone_wp_title( $title, $sep ) {
 		$title .= " $sep $site_description";
 	}
 
-	// Add a page number if necessary:
+	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', 'simone' ), max( $paged, $page ) );
 	}

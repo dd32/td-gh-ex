@@ -1,20 +1,23 @@
 /*
 Theme Name: Simone
-Theme URI: http://mor10.com/simone-wordpress-theme/
-Author: Morten Rand-Hendriksen
-Author URI: http://mor10.com/
+Theme URI: 
+Author: Carolina Nymark
+Author URI: https://themesbycarolina.com
 Description: Simone is a responsive, accessible, high-resolution theme featuring custom header and custom link colors, large images, and easy to read typography that scales to fit all screens. Other features include keyboard accessible navigation, optional social menu, sidebar- and footer widgets, no-sidebar page template, Aside post format, and collapsible author profile box. Simone is translation ready and ships in English with translations in Catalan, Chinese (simplified), Dutch, Finnish, French, German, Hungarian, Italian, Norwegian Bokmål, Persian, Russian, Spanish, Swedish, and Turkish.
-Version: 2.1.1
+Version: 2.1.2
+Tested up to: 5.4
+Requires at least: 3.8
+Requires PHP: 5.0
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simone
 Domain Path: /languages/
-Tags: white, black, blue, light, one-column, two-columns, right-sidebar, responsive-layout, accessibility-ready, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready, rtl-language-support
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready, rtl-language-support
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Simone is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Simone is based on Underscores http://underscores.me/, (C) 2012-2020 Automattic, Inc.
 
 CSS structure 2.0 onwards based on http://mdo.github.io/code-guide/#css-syntax
 
@@ -578,8 +581,17 @@ a:active {
 5.3 Social Menu
 --------------------------------------------------------------*/
 
-.menu-social ul {
+.extra-menu {
     float: right;
+    display: flex;
+}
+
+.menu-social {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-social ul {
     text-align: center;
     list-style: none;
 }
@@ -659,6 +671,10 @@ a:active {
 /*--------------------------------------------------------------
 5.4 Paging Navigation
 --------------------------------------------------------------*/
+
+.nav-links a {
+    font-weight: 900;
+}
 
 .site-main .comment-navigation,
 .site-main .paging-navigation,
@@ -917,30 +933,44 @@ a:focus.page-numbers{
 /* Header search */
 
 .search-toggle {
-    float: right;
+    display: inline-block;
     width: 54px;
     height: 54px;
-    padding: 12px;
     margin-right: 20px;
     color: #fff;
     text-align: center;
     cursor: pointer;
 }
 
-.search-toggle:hover,
-.search-toggle.active {
+.search-toggle a {
+    width: 54px;
+    height: 54px;
+    padding: 5px;
+}
+
+.search-toggle a:hover,
+.search-toggle a:focus,
+.search-toggle a.active {
     background: #4d4d4d;
     background: hsl(0, 0%, 30%);
 }
 
-.search-toggle .screen-reader-text {
-    top: 0;
-    right: 0;
+.search-toggle a::before {
+    content: '\f002';
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 5px 0 5px;
+    font-family: 'Fontawesome';
+    font-size: 20px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
 }
+
 .search-box-wrapper {
     z-index: 2;
     width: 100%;
 }
+
 .search-box {
     padding: 1em;
     background: #4d4d4d;
@@ -1105,6 +1135,15 @@ a:focus.page-numbers{
 .page-links {
     margin: 0 0 1.5em;
     clear: both;
+    font-family: 'Lato', sans-serif;
+}
+
+.post-page-numbers {
+    padding: .3em;
+}
+
+.post-page-numbers:hover {
+    text-decoration: none;
 }
 
 .entry-title {
@@ -1498,7 +1537,16 @@ ol.children { list-style-type: none; }
 
 .comment-list ol { margin-left: 50px; }
 
-.comment-content a { word-wrap: break-word; }
+.trackback .comment-body a,
+.comment-content a {
+    word-wrap: break-word;
+    text-decoration: underline;
+}
+
+.trackback .comment-body a:hover,
+.comment-content a:hover {
+    text-decoration: none;
+}
 
 .reply {
     font-weight: 600;
