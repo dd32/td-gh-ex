@@ -60,6 +60,8 @@ if ( post_password_required() )
 		comment_form( array(
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
+			'title_reply' => esc_html(get_theme_mod('advance_blogging_comment_title',__('Leave a Reply','advance-blogging' )) ),
+			'label_submit' => esc_html(get_theme_mod('advance_blogging_comment_submit_text',__('Post Comment','advance-blogging' )) ),
 		) );
 	?>
 </div>

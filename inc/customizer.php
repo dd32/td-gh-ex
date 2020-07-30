@@ -1082,6 +1082,42 @@ function advance_blogging_customize_register( $wp_customize ) {
        'section' => 'advance_blogging_single_post'
     ));
 
+    $wp_customize->add_setting( 'advance_blogging_comment_width', array(
+		'default' => 100,
+		'sanitize_callback'	=> 'advance_blogging_sanitize_float'
+	) );
+	$wp_customize->add_control( 'advance_blogging_comment_width', array(
+		'label' => __( 'Comment Textarea Width', 'advance-blogging'),
+		'section' => 'advance_blogging_single_post',
+		'type' => 'number',
+		'settings' => 'advance_blogging_comment_width',
+		'input_attrs' => array(
+			'step' => 1,
+			'min' => 0,
+			'max' => 100,
+		),
+	) );
+
+    $wp_customize->add_setting('advance_blogging_comment_title',array(
+       'default' => __('Leave a Reply','advance-blogging'),
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_comment_title',array(
+       'type' => 'text',
+       'label' => __('Comment form Title','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_comment_submit_text',array(
+       'default' => __('Post Comment','advance-blogging'),
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_comment_submit_text',array(
+       'type' => 'text',
+       'label' => __('Comment Button Text','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
     $wp_customize->add_setting('advance_blogging_nav_links',array(
        'default' => true,
        'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
@@ -1163,7 +1199,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
     //404 page settings
 	$wp_customize->add_section('advance_blogging_404_page',array(
-		'title'	=> __('404 Page Settings','advance-blogging'),
+		'title'	=> __('404 & No Result Page Settings','advance-blogging'),
 		'priority'	=> null,
 		'panel' => 'advance_blogging_panel_id',
 	));
@@ -1197,6 +1233,36 @@ function advance_blogging_customize_register( $wp_customize ) {
        'label' => __('404 Page Button Text','advance-blogging'),
        'section' => 'advance_blogging_404_page'
     ));
+
+    $wp_customize->add_setting('advance_blogging_no_result_title',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_no_result_title',array(
+       'type' => 'text',
+       'label' => __('No Result Page Title','advance-blogging'),
+       'section' => 'advance_blogging_404_page'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_no_result_text',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_no_result_text',array(
+       'type' => 'text',
+       'label' => __('No Result Page Text','advance-blogging'),
+       'section' => 'advance_blogging_404_page'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_show_search_form',array(
+        'default' => true,
+        'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
+	));
+	$wp_customize->add_control('advance_blogging_show_search_form',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show/Hide Search Form','advance-blogging'),
+      	'section' => 'advance_blogging_404_page',
+	));
 
 	//Footer
 	$wp_customize->add_section('advance_blogging_footer',array(

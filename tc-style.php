@@ -211,3 +211,23 @@
 			$advance_blogging_custom_css .='background: url('.esc_html($advance_blogging_footer_background_img).') no-repeat; background-size: cover; background-attachment: fixed;';
 		$advance_blogging_custom_css .='}';
 	}
+
+	/*---- Comment form ----*/
+	$advance_blogging_comment_width = get_theme_mod('advance_blogging_comment_width', '100');
+	$advance_blogging_custom_css .='#comments textarea{';
+		$advance_blogging_custom_css .=' width:'.esc_html($advance_blogging_comment_width).'%;';
+	$advance_blogging_custom_css .='}';
+
+	$advance_blogging_comment_submit_text = get_theme_mod('advance_blogging_comment_submit_text', 'Post Comment');
+	if($advance_blogging_comment_submit_text == ''){
+		$advance_blogging_custom_css .='#comments p.form-submit {';
+			$advance_blogging_custom_css .='display: none;';
+		$advance_blogging_custom_css .='}';
+	}
+
+	$advance_blogging_comment_title = get_theme_mod('advance_blogging_comment_title', 'Leave a Reply');
+	if($advance_blogging_comment_title == ''){
+		$advance_blogging_custom_css .='#comments h2#reply-title {';
+			$advance_blogging_custom_css .='display: none;';
+		$advance_blogging_custom_css .='}';
+	}

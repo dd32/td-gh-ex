@@ -508,28 +508,42 @@ a.button.wc-backward,
   display: none;
 }
 /*-----------------Search pop up----------------*/
-.search-image {
-  background: url(images/searchicon.png);
-  background-repeat: no-repeat;
-  padding: 10px 20px;
+.search-box button{
+  background: transparent;
+  border: 0;
+}
+.modal-dialog{
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  pointer-events: all;
+}
+.modal-open{
+  overflow: visible;
+}
+.modal-open,
+.modal-open .modal{
+  padding-left: 0 !important;
+}
+.modal{
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  animation-timing-function: ease;
+}
+@keyframes slidein {
+  from {
+    width: 0%; 
+  }
+  to {
+    width: 100%;
+  }
 }
 .serach_inner label {
   width: 75%;
 }
-.serach_outer {
-  position: fixed;
-  height: 100%;
-  background: #000000b3;
-  overflow: hidden;
-  transition: 0.9s;
-  z-index: 999;
-  top: 0;
-  right: 0;
-  display: block;
-}
 .serach_inner {
   position: absolute;
-  top: 60%;
+  top: 50%;
   transform: translateY(-50%);
   width: 100%;
 }
@@ -537,29 +551,23 @@ a.button.wc-backward,
   position: absolute;
   top: 20%;
   transform: translateY(-50%);
-  width: 100%;
-  left: 0;
+  left: 5%;
   text-align: left;
-  margin-left: 30px;
-}
-.closepop a i {
+  background: transparent;
+  border: 0;
   font-size: 40px;
   color: #fff;
 }
-.serach_outer i {
-  font-size: 24px;
-  padding: 4px 0 0 0;
-  color: #000;
-  cursor: pointer;
+.closepop:focus, .closepop:hover {
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  opacity: 1;
 }
-.serach_inner form.search-form {
-  display: table;
-  padding: 0;
-  border-radius: 0;
-  background: #ffffff;
-  margin: 0 auto;
-  max-width: 700px;
-  width: 100%;
+.closepop:focus, .search-box button:focus,
+.primary-navigation ul li a:focus, .toggle-menu button:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
 }
 .serach_inner form.search-form {
   display: table;
@@ -585,7 +593,7 @@ a.button.wc-backward,
 }
 .serach_inner input.search-submit {
   padding: 8px 35px;
-  margin: 5px 0;
+  display: inline-block;
   font-size: 20px;
 }
 button.search-submit {
@@ -846,7 +854,7 @@ span.entry-comments i,
   padding: 15px;
   position: relative;
   bottom: 118px;
-  width: 65px;
+  width: 66px;
   color: #fff;
 }
 hr.metahr {
@@ -1049,6 +1057,9 @@ a.woocommerce-privacy-policy-link,
   color: #fff;
   border-color: #db0607;
 }
+.col-1, .col-2 {
+  max-width: 100%;
+}
 
 /*---- Wocommerce widget css ----*/
 #sidebar .widget_shopping_cart_content,
@@ -1111,7 +1122,7 @@ a.woocommerce-privacy-policy-link,
   position: fixed;
   display: none;
   bottom: 108px;
-  left: 0;
+  left: 15px;
   margin:0;
   font-size: 18px;
   font-weight: 600;
@@ -1119,12 +1130,12 @@ a.woocommerce-privacy-policy-link,
   text-shadow: -1px 1px #fff;
 }
 .scrollup.left{
-  right: 0;
+  right: 15px;
   left: auto;
 }
 .scrollup.center{
-  right: 25%;
-  left: 25%;
+  right: 45%;
+  left: 45%;
 }
 .scrollup:focus,
 .scrollup:hover{
@@ -1370,6 +1381,9 @@ a.woocommerce-privacy-policy-link,
 /* Comments BOX */
 #comments{
   margin-top: 25px;
+}
+#comments label{
+  display: block;
 }
 #comments ol{
   list-style:none;
@@ -1774,20 +1788,26 @@ span.post-page-numbers.current {
     background: transparent;
     border: none;
   }
-  .sidebar {
+  .side-menu {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 9999999;
     top: 0;
     left: 0;
+    visibility: hidden;
     background-color: #db0607;
-    overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.5s width ease-in-out;
     padding-top: 60px;
     box-shadow: -2px 2px 10px 0px #2d2d2d;
+    overflow-y: scroll;
   }
-  .sidebar .closebtn {
+  .side-menu.open{
+    visibility: visible;
+    width: 250px;
+    transition: 0.5s width ease-in-out;
+  }
+  .side-menu .closebtn {
     position: absolute;
     top: 0;
     left: 25px;
@@ -1798,7 +1818,7 @@ span.post-page-numbers.current {
     border:none;
     background: transparent;
   }
-  .sidebar #primary-site-navigation {
+  .side-menu #primary-site-navigation {
     width: 100%;
   }
   .toggle-menu span{

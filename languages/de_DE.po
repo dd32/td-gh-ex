@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-06-18 12:33+0530\n"
+"PO-Revision-Date: 2020-07-18 12:00+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: 404.php:13
 msgid "404 Not Found"
-msgstr "404 Nicht gefunden"
+msgstr "Kommentar Titel"
 
 #: 404.php:16
 msgid ""
@@ -43,6 +43,14 @@ msgstr "Kommentartitel"
 msgid "Comments are closed."
 msgstr "Kommentarfunktion ist geschlossen."
 
+#: comments.php:63 inc/customizer.php:1102
+msgid "Leave a Reply"
+msgstr "Hinterlasse eine Antwort"
+
+#: comments.php:64 inc/customizer.php:1112
+msgid "Post Comment"
+msgstr "Kommentar hinzufügen"
+
 #: footer.php:53 functions.php:99
 msgid "By ThemesCaliber"
 msgstr "Nach ThemesCaliber"
@@ -51,51 +59,51 @@ msgstr "Nach ThemesCaliber"
 msgid "Back to Top"
 msgstr "Zurück nach oben"
 
-#: header.php:47
+#: header.php:46
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: header.php:54
+#: header.php:53
 msgid "Facebook"
 msgstr "Facebook"
 
-#: header.php:57
+#: header.php:56
 msgid "Twitter"
 msgstr "Twitter"
 
-#: header.php:60
+#: header.php:59
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:63
+#: header.php:62
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:66
+#: header.php:65
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: header.php:69
+#: header.php:68
 msgid "Instagram"
 msgstr "Instagram"
 
-#: header.php:72
+#: header.php:71
 msgid "Youtube"
 msgstr "Youtube"
 
-#: header.php:119
+#: header.php:120
 msgid "Open Menu"
 msgstr "Menü öffnen"
 
-#: header.php:122
+#: header.php:123
 msgid "Top Menu"
 msgstr "Hauptmenü"
 
-#: header.php:132
+#: header.php:133
 msgid "Close Menu"
 msgstr "Menü schließen"
 
-#: header.php:139
+#: header.php:140
 msgid "CART"
 msgstr "WAGEN"
 
@@ -501,222 +509,250 @@ msgstr "Titel des Schiebereglers ein- / ausblenden"
 msgid "Show / Hide slider Content"
 msgstr "Inhalt des Schiebereglers ein- / ausblenden"
 
-#: inc/customizer.php:733
+#: inc/customizer.php:730
 msgid "Slider Excerpt length"
 msgstr "Slider Auszugslänge"
 
-#: inc/customizer.php:746 inc/customizer.php:755 inc/customizer.php:803
-#: inc/customizer.php:1238 inc/customizer.php:1288 inc/customizer.php:1522
+#: inc/customizer.php:743 inc/customizer.php:752 inc/customizer.php:800
+#: inc/customizer.php:1311 inc/customizer.php:1361 inc/customizer.php:1594
 msgid "Left"
 msgstr "Links"
 
-#: inc/customizer.php:751
+#: inc/customizer.php:748
 msgid "Slider Content Alignment"
 msgstr "Ausrichtung des Schiebereglerinhalts"
 
-#: inc/customizer.php:754 inc/customizer.php:1240 inc/customizer.php:1280
-#: inc/customizer.php:1290
+#: inc/customizer.php:751 inc/customizer.php:1313 inc/customizer.php:1353
+#: inc/customizer.php:1363
 msgid "Center"
 msgstr "Center"
 
-#: inc/customizer.php:756 inc/customizer.php:818 inc/customizer.php:1230
-#: inc/customizer.php:1239 inc/customizer.php:1289 inc/customizer.php:1523
+#: inc/customizer.php:753 inc/customizer.php:815 inc/customizer.php:1303
+#: inc/customizer.php:1312 inc/customizer.php:1362 inc/customizer.php:1596
 msgid "Right"
 msgstr "Richtig"
 
-#: inc/customizer.php:764
+#: inc/customizer.php:761
 msgid "Slider Content Spacing"
 msgstr "Slider-Inhaltsabstand"
 
-#: inc/customizer.php:773
+#: inc/customizer.php:770
 msgid "Top"
 msgstr "oben"
 
-#: inc/customizer.php:788
+#: inc/customizer.php:785
 msgid "Bottom"
 msgstr "Unterseite"
 
-#: inc/customizer.php:833
+#: inc/customizer.php:830
 msgid "Slider Speed"
 msgstr "Slider-Geschwindigkeit"
 
-#: inc/customizer.php:845
+#: inc/customizer.php:842
 msgid "Category Post"
 msgstr "Kategorie Beitrag"
 
-#: inc/customizer.php:846
+#: inc/customizer.php:843
 msgid "This section will appear below the slider."
 msgstr "Dieser Abschnitt wird unter dem Schieberegler angezeigt."
 
-#: inc/customizer.php:876 inc/customizer.php:914
+#: inc/customizer.php:873 inc/customizer.php:911
 msgid "Select Category to display Latest Post"
 msgstr "Wählen Sie Kategorie, um den neuesten Beitrag anzuzeigen"
 
-#: inc/customizer.php:877
+#: inc/customizer.php:874
 msgid "Category Image Size (300x225 )"
 msgstr "Kategorie Bildgröße (300x225)"
 
-#: inc/customizer.php:883
+#: inc/customizer.php:880
 msgid "Latest Post"
 msgstr "Neuester Beitrag"
 
-#: inc/customizer.php:884
+#: inc/customizer.php:881
 msgid "This section will appear below the category post."
 msgstr "Dieser Abschnitt wird unter dem Kategoriebeitrag angezeigt."
 
-#: inc/customizer.php:920
+#: inc/customizer.php:917
 msgid "Post Settings"
 msgstr "Post-Einstellungen"
 
-#: inc/customizer.php:930
+#: inc/customizer.php:927
 msgid "Enable / Disable Post Date"
 msgstr "Post-Datum aktivieren / deaktivieren"
 
-#: inc/customizer.php:940
+#: inc/customizer.php:937
 msgid "Enable / Disable Post Author"
 msgstr "Post Author aktivieren / deaktivieren"
 
-#: inc/customizer.php:950
+#: inc/customizer.php:947
 msgid "Enable / Disable Post Comments"
 msgstr "Post-Kommentare aktivieren / deaktivieren"
 
-#: inc/customizer.php:955 inc/customizer.php:965
+#: inc/customizer.php:952 inc/customizer.php:962
 msgid "Excerpt Content"
 msgstr "Auszug Inhalt"
 
-#: inc/customizer.php:960
+#: inc/customizer.php:957
 msgid "Post Content Type"
 msgstr "Inhaltstyp posten"
 
-#: inc/customizer.php:963
+#: inc/customizer.php:960
 msgid "No Content"
 msgstr "Kein Inhalt"
 
-#: inc/customizer.php:964
+#: inc/customizer.php:961
 msgid "Full Content"
 msgstr "Voller Inhalt"
 
-#: inc/customizer.php:974
+#: inc/customizer.php:971
 msgid "Post Excerpt Length"
 msgstr "Länge nach dem Auszug"
 
-#: inc/customizer.php:990
+#: inc/customizer.php:987
 msgid "Excerpt Suffix"
 msgstr "Auszugssuffix"
 
-#: inc/customizer.php:1001
+#: inc/customizer.php:998
 msgid "Post Button Text"
 msgstr "Beitrags-Button Text"
 
-#: inc/customizer.php:1012
+#: inc/customizer.php:1009
 msgid "Top Bottom Button Padding"
 msgstr "Polsterung der oberen unteren Tasten"
 
-#: inc/customizer.php:1027
+#: inc/customizer.php:1024
 msgid "Left Right Button Padding"
 msgstr "Links Rechts Knopfpolsterung"
 
-#: inc/customizer.php:1042 inc/customizer.php:1433
+#: inc/customizer.php:1039 inc/customizer.php:1506
 msgid "Button Border Radius"
 msgstr "Schaltflächenrandradius"
 
-#: inc/customizer.php:1054
+#: inc/customizer.php:1051
 msgid "Single Post Settings"
 msgstr "Einstellungen für einzelne Beiträge"
 
-#: inc/customizer.php:1064
+#: inc/customizer.php:1061
 msgid "Enable / Disable Feature Image"
 msgstr "Feature-Image aktivieren / deaktivieren"
 
-#: inc/customizer.php:1074
+#: inc/customizer.php:1071
 msgid "Enable / Disable Tags"
 msgstr "Tags aktivieren / deaktivieren"
 
-#: inc/customizer.php:1084
+#: inc/customizer.php:1081
 msgid "Enable / Disable Comment"
 msgstr "Kommentar aktivieren / deaktivieren"
 
-#: inc/customizer.php:1094
+#: inc/customizer.php:1090
+msgid "Comment Textarea Width"
+msgstr "Kommentar Textbereich Breite"
+
+#: inc/customizer.php:1107
+msgid "Comment form Title"
+msgstr "Kommentarformular Titel"
+
+#: inc/customizer.php:1117
+msgid "Comment Button Text"
+msgstr "Text der Kommentarschaltfläche"
+
+#: inc/customizer.php:1127
 msgid "Enable / Disable Nav Links"
 msgstr "Aktivieren / Deaktivieren von Navigationsverbindungen"
 
-#: inc/customizer.php:1104
+#: inc/customizer.php:1137
 msgid "Previous Navigation Text"
 msgstr "Vorheriger Navigationstext"
 
-#: inc/customizer.php:1114
+#: inc/customizer.php:1147
 msgid "Next Navigation Text"
 msgstr "Nächster Navigationstext"
 
-#: inc/customizer.php:1124
+#: inc/customizer.php:1157
 msgid "Enable / Disable Related Posts"
 msgstr "Aktivieren / Deaktivieren verwandter Beiträge"
 
-#: inc/customizer.php:1134
+#: inc/customizer.php:1167
 msgid "Related Posts Title"
 msgstr "Verwandte Beiträge Titel"
 
-#: inc/customizer.php:1143
+#: inc/customizer.php:1176
 msgid "Related Posts Count"
 msgstr "Verwandte Beiträge Anzahl"
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1194
 msgid "Related Posts Order By"
 msgstr "Verwandte Beiträge Bestellen nach"
 
-#: inc/customizer.php:1163
+#: inc/customizer.php:1196
 msgid "Categories"
 msgstr "Kategorien"
 
-#: inc/customizer.php:1164
+#: inc/customizer.php:1197
 msgid "Tags"
 msgstr "Stichworte"
 
-#: inc/customizer.php:1169
-msgid "404 Page Settings"
-msgstr "404 Seiteneinstellungen"
+#: inc/customizer.php:1202
+msgid "404 & No Result Page Settings"
+msgstr "404 & Keine Ergebnisseiteneinstellungen"
 
-#: inc/customizer.php:1180
+#: inc/customizer.php:1213
 msgid "404 Page Title"
 msgstr "404 Seitentitel"
 
-#: inc/customizer.php:1190
+#: inc/customizer.php:1223
 msgid "404 Page Text"
 msgstr "404 Seitentext"
 
-#: inc/customizer.php:1200
+#: inc/customizer.php:1233
 msgid "404 Page Button Text"
 msgstr "404 Seitentasten Text"
 
-#: inc/customizer.php:1206
+#: inc/customizer.php:1243
+msgid "No Result Page Title"
+msgstr "Kein Ergebnisseitentitel"
+
+#: inc/customizer.php:1253
+msgid "No Result Page Text"
+msgstr "Kein Ergebnisseitentext"
+
+#: inc/customizer.php:1263
+msgid "Show/Hide Search Form"
+msgstr "Suchformular ein- / ausblenden"
+
+#: inc/customizer.php:1269
 msgid "Footer Section"
 msgstr "Fußzeile"
 
-#: inc/customizer.php:1207
+#: inc/customizer.php:1270
 msgid "This section will appear in the footer."
 msgstr "Dieser Abschnitt wird in der Fußzeile angezeigt."
 
-#: inc/customizer.php:1225
+#: inc/customizer.php:1288
 msgid "Show/Hide Back to Top Button"
 msgstr "Zurück / Oben-Schaltfläche ein- / ausblenden"
 
-#: inc/customizer.php:1235
+#: inc/customizer.php:1297
+msgid "Back to Top Button Text"
+msgstr "Zurück zum oberen Schaltflächentext"
+
+#: inc/customizer.php:1308
 msgid "Back to Top Button Alignment"
 msgstr "Zurück zum Anfang der Tastenausrichtung"
 
-#: inc/customizer.php:1249
+#: inc/customizer.php:1322
 msgid "Footer Background Color"
 msgstr "Fußzeile Hintergrundfarbe"
 
-#: inc/customizer.php:1258
+#: inc/customizer.php:1331
 msgid "Footer Background Image"
 msgstr "Fußzeile Hintergrundbild"
 
-#: inc/customizer.php:1268
+#: inc/customizer.php:1341
 msgid "Footer widget layout"
 msgstr "Layout des Fußzeilen-Widgets"
 
-#: inc/customizer.php:1270
+#: inc/customizer.php:1343
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -724,110 +760,110 @@ msgstr ""
 "Wählen Sie die Anzahl der gewünschten Widget-Bereiche in der Fußzeile aus. "
 "Gehen Sie danach zu Darstellung> Widgets und fügen Sie Ihre Widgets hinzu."
 
-#: inc/customizer.php:1272
+#: inc/customizer.php:1345
 msgid "One"
 msgstr "Eins"
 
-#: inc/customizer.php:1273
+#: inc/customizer.php:1346
 msgid "Two"
 msgstr "Zwei"
 
-#: inc/customizer.php:1274
+#: inc/customizer.php:1347
 msgid "Three"
 msgstr "Drei"
 
-#: inc/customizer.php:1275
+#: inc/customizer.php:1348
 msgid "Four"
 msgstr "Vier"
 
-#: inc/customizer.php:1285
+#: inc/customizer.php:1358
 msgid "Copyright Alignment"
 msgstr "Urheberrechtsausrichtung"
 
-#: inc/customizer.php:1299
+#: inc/customizer.php:1372
 msgid "Copyright Font Size"
 msgstr "Copyright Schriftgröße"
 
-#: inc/customizer.php:1309
+#: inc/customizer.php:1382
 msgid "Copyright Top Bottom Padding"
 msgstr "Copyright oben Unten Polsterung"
 
-#: inc/customizer.php:1327
+#: inc/customizer.php:1400
 msgid "Copyright Text"
 msgstr "Copyright-Text"
 
-#: inc/customizer.php:1335
+#: inc/customizer.php:1408
 msgid "Additional WooCommerce Options"
 msgstr "Zusätzliche WooCommerce-Optionen"
 
-#: inc/customizer.php:1348
+#: inc/customizer.php:1421
 msgid "Product per row"
 msgstr "Produkt pro Reihe"
 
-#: inc/customizer.php:1363
+#: inc/customizer.php:1436
 msgid "Product per page"
 msgstr "Produkt pro Seite"
 
-#: inc/customizer.php:1374
+#: inc/customizer.php:1447
 msgid "Enable / Disable Shop page sidebar"
 msgstr "Aktivieren / Deaktivieren der Seitenleiste der Shop-Seite"
 
-#: inc/customizer.php:1384
+#: inc/customizer.php:1457
 msgid "Enable / Disable Product page sidebar"
 msgstr "Aktivieren / Deaktivieren der Seitenleiste der Produktseite"
 
-#: inc/customizer.php:1394
+#: inc/customizer.php:1467
 msgid "Enable / Disable Related product"
 msgstr "Aktivieren / Deaktivieren des zugehörigen Produkts"
 
-#: inc/customizer.php:1403
+#: inc/customizer.php:1476
 msgid "Button Top Bottom Padding"
 msgstr "Knopf oben unten Polsterung"
 
-#: inc/customizer.php:1418
+#: inc/customizer.php:1491
 msgid "Button Right Left Padding"
 msgstr "Taste Rechts Links Polsterung"
 
-#: inc/customizer.php:1449
+#: inc/customizer.php:1522
 msgid "Enable / Disable product border"
 msgstr "Produktgrenze aktivieren / deaktivieren"
 
-#: inc/customizer.php:1458
+#: inc/customizer.php:1531
 msgid "Product Top Bottom Padding"
 msgstr "Produkt oben unten Polsterung"
 
-#: inc/customizer.php:1473
+#: inc/customizer.php:1546
 msgid "Product Right Left Padding"
 msgstr "Produkt rechts links Polsterung"
 
-#: inc/customizer.php:1488
+#: inc/customizer.php:1561
 msgid "Product Border Radius"
 msgstr "Produktrandradius"
 
-#: inc/customizer.php:1503
+#: inc/customizer.php:1576
 msgid "Product Box Shadow"
 msgstr "Produktbox Schatten"
 
-#: inc/customizer.php:1519
+#: inc/customizer.php:1592
 msgid "Sale badge Position"
 msgstr "Verkaufsabzeichen Position"
 
-#: inc/customizer.php:1532
+#: inc/customizer.php:1605
 msgid "Sale Top Bottom Padding"
 msgstr "SVerkauf oben unten Polsterung"
 
-#: inc/customizer.php:1547
+#: inc/customizer.php:1620
 msgid "Sale Right Left Padding"
 msgstr "Verkauf rechts links Polsterung"
 
-#: inc/customizer.php:1562
+#: inc/customizer.php:1635
 msgid "Sale Border Radius"
 msgstr "Verkauf Grenzradius"
 
-#: inc/customizer.php:1652
+#: inc/customizer.php:1725
 msgid "Advance Blogging"
 msgstr "Fortschrittliches Bloggen"
 
-#: inc/customizer.php:1653
+#: inc/customizer.php:1726
 msgid "Go Pro"
 msgstr "Gehen Sie Pro"

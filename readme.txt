@@ -148,6 +148,15 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Removed stable tag from readme.txt
 * Updated all .po files.
 
+= 0.8 =
+* Added Comment Form Width option.
+* Added Comment title option.
+* Added Comment button text option.
+* Added No Result Page Title option.
+* Added No Result Page text option.
+* Added Show/Hide Search Form option.
+* Updated all .po files.
+
 == Resources ==
 
 Advance Blogging WordPress Theme, Copyright 2018 ThemesCaliber

@@ -33,7 +33,8 @@ li#customize-control-advance_blogging_related_product,
 li#customize-control-advance_blogging_woocommerce_button_border_radius,
 li#customize-control-advance_blogging_woocommerce_product_box_shadow,
 li#customize-control-advance_blogging_back_to_top_alignment,
-li#customize-control-advance_blogging_footer_widget_layout {
+li#customize-control-advance_blogging_footer_widget_layout,
+li#customize-control-advance_blogging_404_button_text {
   border-bottom: 1px solid #b2b1b1;
   padding-bottom: 10px;
 }
