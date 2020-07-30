@@ -1,4 +1,6 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php $post_class = ( true == ashe_options('blog_page_show_dropcaps') ) ? 'blog-post ashe-dropcaps' : 'blog-post'; ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
 
 <?php
 

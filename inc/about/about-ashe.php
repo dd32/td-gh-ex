@@ -83,7 +83,7 @@ function ashe_about_page_output() {
 						<button class="button button-primary demo-import" id="ashe-demo-content-inst"><?php esc_html_e( 'Install Demo Import Plugin', 'ashe' ); ?></button>
 					<?php endif; ?>
 
-					<a style="display: none;" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/democontent/ashe_free_demo_content.html?ref=ashe-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'ashe' ); ?></a>
+					<a href="<?php echo esc_url('https://youtu.be/IVMSVpFlfy4') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -217,7 +217,7 @@ function ashe_about_page_output() {
 
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://youtu.be/ih0A79PY9bc"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://youtu.be/IVMSVpFlfy4"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-ashe&tab=ashe_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
@@ -383,7 +383,7 @@ function ashe_about_page_output() {
 					<p>
 						<?php esc_html_e( 'Join our community on Facebook to stay up to date.', 'ashe' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://www.facebook.com/Best-Wordpress-Themes-By-Wp-Royal-1903331756560958/'); ?>"><?php esc_html_e( 'Join Now', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('https://www.facebook.com/groups/408037686363411'); ?>"><?php esc_html_e( 'Join Now', 'ashe' ); ?></a>
 					</p>
 				</div>
 

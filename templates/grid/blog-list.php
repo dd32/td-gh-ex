@@ -20,10 +20,12 @@
 			// if is preview (boat post)
 			if ( ! ( ashe_is_preview() && get_the_ID() == 19 ) ) :
 
+			$post_class = ( true == ashe_options('blog_page_show_dropcaps') ) ? 'blog-post clear-fix ashe-dropcaps' : 'blog-post clear-fix';
+
 			echo '<li>';
 
 			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post clear-fix'); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
 				
 				<div class="post-media">
 					<a href="<?php echo esc_url( get_permalink() ); ?>"></a>
