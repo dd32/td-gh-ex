@@ -88,7 +88,7 @@ function bard_about_page_output() {
 						<button class="button button-primary demo-import" id="bard-demo-content-inst"><?php esc_html_e( 'Install Demo Import Plugin', 'bard' ); ?></button>
 					<?php endif; ?>
 
-					<a style="display:none;" href="<?php echo esc_url('https://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'bard' ); ?></a>
+					<a href="<?php echo esc_url('https://youtu.be/_XnzQ_nU7r8') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'bard' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -223,7 +223,7 @@ function bard_about_page_output() {
 
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Demo Content', 'bard' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://youtu.be/RklpwEktXH4"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://youtu.be/_XnzQ_nU7r8"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
 					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-bard&tab=bard_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'bard' ); ?></a>
 				</div>
 				<div class="column-width-4">
@@ -354,6 +354,36 @@ function bard_about_page_output() {
 						<?php esc_html_e( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'bard' ); ?>
 						<hr>
 						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/bard-free-changelog/?ref=bard-free-backend-about-changelog/'); ?>"><?php esc_html_e( 'Changelog', 'bard' ); ?></a>
+					</p>
+				</div>
+
+			</div>
+
+			<div class="three-columns-wrap">
+
+				<br>
+
+				<div class="column-width-3">
+					<h3>
+						<span class="dashicons dashicons-admin-appearance"></span>
+						<?php esc_html_e( 'Child Theme', 'bard' ); ?>
+					</h3>
+					<p>
+						<?php esc_html_e( 'The best way to customize Bard Theme code.', 'bard' ); ?>
+						<hr>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'bard' ); ?></a>
+					</p>
+				</div>
+
+				<div class="column-width-3">
+					<h3>
+						<span class="dashicons dashicons-groups"></span>
+						<?php esc_html_e( 'Facebook Group', 'bard' ); ?>
+					</h3>
+					<p>
+						<?php esc_html_e( 'Join our community on Facebook to stay up to date.', 'bard' ); ?>
+						<hr>
+						<a target="_blank" href="<?php echo esc_url('https://www.facebook.com/groups/408037686363411'); ?>"><?php esc_html_e( 'Join Now', 'bard' ); ?></a>
 					</p>
 				</div>
 
