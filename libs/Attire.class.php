@@ -4,17 +4,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+global $__attire;
+
 class Attire {
 
 	public $attire_defaults;
+	public $theme_options;
 
 	function __construct() {
 		$this->RegisterNavMenus();
 		$this->Filters();
 		$this->Actions();
-
+        $this->themeOptions();
 		add_action( 'after_setup_theme', array( $this, 'ThemeSetup' ) );
 	}
+
+	function themeOptions(){
+        $theme_mod = get_option( 'attire_options' );
+        $defaults = $this->getAttireDefaults();
+        if(!is_array($theme_mod)) $theme_mod = [];
+        foreach ($defaults as $key => $value){
+            if(!isset($theme_mod[$key]))
+                $theme_mod[$key] = $value;
+        }
+        $this->theme_options  = $theme_mod;
+        return $theme_mod;
+    }
 
 	/**
 	 * Usage: Load language file
@@ -28,14 +43,33 @@ class Attire {
 	}
 
 	function Actions() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueueScripts' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueuePriorityScripts' ), 1 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueueThemeStyles' ), 1 );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueueScripts' ) );
 	}
 
-    function enqueuePriorityScripts()
+    function enqueueThemeStyles()
     {
         wp_register_style('font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/fontawesome/css/all.min.css');
         wp_enqueue_style('font-awesome');
+
+        wp_register_script( 'attire-sticky', ATTIRE_TEMPLATE_URL . '/js/jquery.sticky.js', array('jquery'), null, true );
+        wp_enqueue_script( 'attire-sticky' );
+
+        wp_register_style( 'attire-responsive', ATTIRE_TEMPLATE_URL . '/css/responsive.css' );
+        wp_enqueue_style( 'attire-responsive' );
+
+        wp_register_style( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/css/bootstrap.min.css' );
+        wp_enqueue_style( 'bootstrap' );
+
+        wp_register_style( 'attire-main', get_stylesheet_uri(), array( 'bootstrap', 'attire-responsive' ) );
+        wp_enqueue_style( 'attire-main' );
+
+        wp_register_style( 'attire-woocommerce', ATTIRE_TEMPLATE_URL . '/css/woocommerce.css' );
+        if ( class_exists( 'WooCommerce' ) )
+            wp_enqueue_style( 'attire-woocommerce' );
+
+        wp_register_style( 'attire', ATTIRE_TEMPLATE_URL . '/css/attire.min.css' );
+        wp_enqueue_style( 'attire' );
     }
 
 
@@ -43,11 +77,12 @@ class Attire {
 	 * @usage Load all necessary scripts & styles
 	 */
 	function enqueueScripts() {
-		$theme_mod = get_option( 'attire_options' );
+		$theme_mod = self::themeOptions();
 
 		// Font Options ( From Customizer Typography Options )
 		$family[] = sanitize_text_field( $theme_mod['heading_font'] );
 		$family[] = sanitize_text_field( $theme_mod['body_font'] );
+		$family[] = sanitize_text_field( $theme_mod['button_font'] );
 		$family[] = sanitize_text_field( $theme_mod['widget_title_font'] );
 		$family[] = sanitize_text_field( $theme_mod['widget_content_font'] );
 		$family[] = sanitize_text_field( $theme_mod['menu_top_font'] );
@@ -60,48 +95,13 @@ class Attire {
 		$cssimport = '//fonts.googleapis.com/css?family=' . implode( "|", $family );
 		$cssimport = str_replace( '||', '|', $cssimport );
 
+        wp_register_style( 'attire-google-fonts', $cssimport, array(), null );
+        wp_enqueue_style( 'attire-google-fonts' );
+
         wp_enqueue_script( 'jquery' );
 
-        //attire-mbl-menu
-
-		//wp_register_script( 'attire-gn-classie', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/classie.js', array(), null, true );
-		//wp_enqueue_script( 'attire-gn-classie' );
-
-		//wp_register_script( 'attire-gn-gnm', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/gnmenu.js', array(), null, true );
-		//wp_enqueue_script( 'attire-gn-gnm' );
-
-
-		wp_register_script( 'attire-sticky', ATTIRE_TEMPLATE_URL . '/js/jquery.sticky.js', array('jquery'), null, true );
-		wp_enqueue_script( 'attire-sticky' );
-
-		wp_register_style( 'attire-responsive', ATTIRE_TEMPLATE_URL . '/css/responsive.css' );
-		wp_enqueue_style( 'attire-responsive' );
-
-		wp_register_style( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/css/bootstrap.min.css' );
-		wp_enqueue_style( 'bootstrap' );
-
-		wp_register_style( 'attire-main', get_stylesheet_uri(), array( 'bootstrap', 'attire-responsive' ) );
-		wp_enqueue_style( 'attire-main' );
-
-		//wp_register_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/fontawesome/css/all.min.css' );
-		//wp_enqueue_style( 'font-awesome' );
-
-		wp_register_style( 'attire-google-fonts', $cssimport, array(), null );
-		wp_enqueue_style( 'attire-google-fonts' );
-
-        wp_register_style( 'attire-woocommerce', ATTIRE_TEMPLATE_URL . '/css/woocommerce.css' );
-        if ( class_exists( 'WooCommerce' ) )
-            wp_enqueue_style( 'attire-woocommerce' );
-
-		wp_register_style( 'attire', ATTIRE_TEMPLATE_URL . '/css/attire.css' );
-		wp_enqueue_style( 'attire' );
-
-		wp_register_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array(), null, true );
-		wp_enqueue_script( 'popper' );
-
-		wp_register_script( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/js/bootstrap.min.js', array(
+		wp_register_script( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/js/bootstrap.bundle.js', array(
 			'jquery',
-			'popper'
 		), null, true );
 		wp_enqueue_script( 'bootstrap' );
 
@@ -241,12 +241,12 @@ class Attire {
         add_image_size( 'attire-card-image', 600, 400, array( 'center', 'top' ) );
 
 		if ( ! get_option( 'attire_options' ) ) {
-			add_option( 'attire_options', $this->GetAttireDefaults() );
+			add_option( 'attire_options', $this->getAttireDefaults() );
 		}
 	}
 
 
-	public function GetAttireDefaults() {
+	public function getAttireDefaults() {
 		$this->attire_defaults = array(
 			'footer_widget_number' => '3',
 			'copyright_info'       => '&copy;' . esc_attr__( 'Copyright ', 'attire' ) . date( 'Y' ) . '.',
@@ -287,11 +287,17 @@ class Attire {
 
 			'heading_font'        => 'Rubik:400,400i,500,700',
 			'heading_font_size'   => '25',
+			'heading2_font_size'   => '21',
+			'heading3_font_size'   => '17',
+			'heading4_font_size'   => '14',
 			'heading_font_weight' => '700',
 
 			'body_font'        => 'Rubik:400,400i,500,700',
 			'body_font_size'   => '14',
 			'body_font_weight' => '400',
+
+			'button_font'        => 'Sen:400,700,800',
+			'button_font_weight' => '700',
 
 			'widget_title_font'        => 'Rubik:400,400i,500,700',
 			'widget_title_font_size'   => '14',
@@ -776,4 +782,147 @@ class Attire {
          */
         do_action( 'comment_form_after' );
     }
+
+
+    /**
+     * @param $var
+     * @param $index
+     * @param array $params
+     * @return array|bool|float|int|mixed|string|string[]|null
+     */
+
+    function valueOf($var, $index, $params = [])
+    {
+        $index = explode("/" , $index );
+        $default = is_string($params) ? $params : '';
+        $default = is_array($params) && isset($params['default']) ? $params['default'] : $default;
+        if(count($index) > 1){
+            $val = $var;
+            foreach ($index as $key){
+                $val = is_array($val) && isset($val[$key])?$val[$key]:'__not__set__';
+                if($val === '__not__set__') return $default;
+            }
+        } else
+            $val = isset($var[$index[0]]) ? $var[$index[0]] : $default;
+
+        if(is_array($params) && isset($params['validate'])) {
+            if (!is_array($val))
+                $val = $this->sanitizeVar($val, $params['validate']);
+            else
+                $val = $this->sanitizeArray($val, $params['validate']);
+        }
+
+        return $val;
+    }
+
+    /**
+     * @usage Validate and sanitize input data
+     * @param $var
+     * @param array $params
+     * @return int|null|string
+     */
+    function queryVar($var, $params = array())
+    {
+        $_var = explode("/" , $var );
+        if(count($_var) > 1){
+            $val = $_REQUEST;
+            foreach ($_var as $key){
+                $val = is_array($val) && isset($val[$key])?$val[$key]:false;
+            }
+        } else
+            $val = isset($_REQUEST[$var]) ? $_REQUEST[$var] : ( isset($params['default']) ? $params['default'] : null );
+        $validate = is_string($params) ? $params : '';
+        $validate = is_array($params) && isset($params['validate']) ? $params['validate'] : $validate;
+
+        if(!is_array($val))
+            $val = $this->sanitizeVar($val, $validate);
+        else
+            $val = $this->sanitizeArray($val, $validate);
+
+        return $val;
+    }
+
+    /**
+     * Sanitize an array or any single value
+     * @param $array
+     * @return mixed
+     */
+    function sanitizeArray($array, $sanitize = 'kses'){
+        if(!is_array($array)) return esc_attr($array);
+        foreach ($array as $key => &$value){
+            $validate = is_array($sanitize) && isset($sanitize[$key]) ? $sanitize[$key] : $sanitize;
+            if(is_array($value))
+                $this->sanitizeArray($value, $validate);
+            else {
+                $value = $this->sanitizeVar($value, $validate);
+            }
+            $array[$key] = &$value;
+        }
+        return $array;
+    }
+
+    /**
+     * Sanitize any single value
+     * @param $value
+     * @return string
+     */
+    function sanitizeVar($value, $sanitize = 'kses'){
+        if(is_array($value))
+            return $this->sanitizeArray($value, $sanitize);
+        else {
+            switch ($sanitize){
+                case 'int':
+                case 'num':
+                    return (int)$value;
+                    break;
+                case 'double':
+                case 'float':
+                    return (double)($value);
+                    break;
+                case 'txt':
+                case 'str':
+                    $value = esc_attr($value);
+                    break;
+                case 'kses':
+                    $allowedtags = wp_kses_allowed_html();
+                    $allowedtags['div'] = array('class' => true);
+                    $allowedtags['strong'] = array('class' => true);
+                    $allowedtags['b'] = array('class' => true);
+                    $allowedtags['i'] = array('class' => true);
+                    $allowedtags['a'] = array('class' => true, 'href' => true);
+                    $value = wp_kses($value, $allowedtags);
+                    break;
+                case 'serverpath':
+                    $value = realpath($value);
+                    $value = str_replace("\\", "/", $value);
+                    break;
+                case 'txts':
+                    $value = sanitize_textarea_field($value);
+                    break;
+                case 'url':
+                    $value = esc_url($value);
+                    break;
+                case 'filename':
+                    $value = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '_', $value);
+                    $value = mb_ereg_replace("([\.]+)", '_', $value);
+                    break;
+                case 'html':
+
+                    break;
+                default:
+                    $value = esc_sql(esc_attr($value));
+                    break;
+            }
+        }
+        return $value;
+    }
+
+
+}
+
+$__attire = new Attire();
+
+function WPATTIRE(){
+    global $__attire;
+    return $__attire;
 }
