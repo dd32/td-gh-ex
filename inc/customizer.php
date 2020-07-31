@@ -445,6 +445,165 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'settings' => 'aagaz_startup_theme_color',
   	)));
 
+  	// woocommerce Options
+	$wp_customize->add_section( 'aagaz_startup_shop_page_options', array(
+    	'title'      => __( 'Shop Page Settings', 'aagaz-startup' ),
+		'panel' => 'aagaz_startup_panel_id'
+	) );
+
+	$wp_customize->add_setting('aagaz_startup_display_related_products',array(
+       'default' => true,
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('aagaz_startup_display_related_products',array(
+       'type' => 'checkbox',
+       'label' => __('Related Product','aagaz-startup'),
+       'section' => 'aagaz_startup_shop_page_options',
+    ));
+
+    $wp_customize->add_setting('aagaz_startup_shop_products_border',array(
+       'default' => true,
+       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('aagaz_startup_shop_products_border',array(
+       'type' => 'checkbox',
+       'label' => __('Product Border','aagaz-startup'),
+       'section' => 'aagaz_startup_shop_page_options',
+    ));
+
+	$wp_customize->add_setting( 'aagaz_startup_woocommerce_product_per_columns' , array(
+		'default'           => 3,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'aagaz_startup_sanitize_choices',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'aagaz_startup_woocommerce_product_per_columns', array(
+		'label'    => __( 'Total Products Per Columns', 'aagaz-startup' ),
+		'section'  => 'aagaz_startup_shop_page_options',
+		'type'     => 'radio',
+		'choices'  => array(
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+		),
+	) ) );
+
+	$wp_customize->add_setting('aagaz_startup_woocommerce_product_per_page',array(
+		'default'	=> 9,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));	
+	$wp_customize->add_control('aagaz_startup_woocommerce_product_per_page',array(
+		'label'	=> __('Total Products Per Page','aagaz-startup'),
+		'section'	=> 'aagaz_startup_shop_page_options',
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_page_top_padding',array(
+		'default' => 10,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control( 'aagaz_startup_shop_page_top_padding',	array(
+		'label' => esc_html__( 'Product Padding (Top Bottom)','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_page_left_padding',array(
+		'default' => 10,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control( 'aagaz_startup_shop_page_left_padding',	array(
+		'label' => esc_html__( 'Product Padding (Right Left)','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_page_border_radius',array(
+		'default' => 0,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_shop_page_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_page_box_shadow',array(
+		'default' => 0,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_shop_page_box_shadow',array(
+		'label' => esc_html__( 'Product Shadow','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_button_padding_top',array(
+		'default' => 9,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_shop_button_padding_top',	array(
+		'label' => esc_html__( 'Button Padding (Top Bottom)','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number',
+
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_button_padding_left',array(
+		'default' => 16,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_shop_button_padding_left',array(
+		'label' => esc_html__( 'Button Padding (Right Left)','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'type'		=> 'number',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_shop_button_border_radius',array(
+		'default' => 25,
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_shop_button_border_radius',array(
+		'label' => esc_html__( 'Button Border Radius','aagaz-startup' ),
+		'section' => 'aagaz_startup_shop_page_options',
+		'type'		=> 'number',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
   	//Layout Settings
 	$wp_customize->add_section( 'aagaz_startup_width_layout', array(
     	'title'      => __( 'Layout Settings', 'aagaz-startup' ),
@@ -617,8 +776,8 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_contact_number',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'aagaz_startup_sanitize_phone_number'
-	)); 
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
 	$wp_customize->add_control('aagaz_startup_contact_number',array(
 		'label'	=> __('Add Phone Number','aagaz-startup'),
 		'section'	=> 'aagaz_startup_contact_details',
@@ -628,7 +787,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('aagaz_startup_email_address',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'aagaz_startup_sanitize_email'
+		'sanitize_callback'	=> 'sanitize_text_field'
 	));	
 	$wp_customize->add_control('aagaz_startup_email_address',array(
 		'label'	=> __('Add Email','aagaz-startup'),

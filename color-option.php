@@ -371,4 +371,54 @@
 		$aagaz_startup_custom_css .='width: '.esc_html($aagaz_startup_comment_form_size).'%;';
 	$aagaz_startup_custom_css .='}';
 
+	/*------------ Woocommerce Settings  --------------*/
+	$aagaz_startup_shop_button_padding_top = get_theme_mod('aagaz_startup_shop_button_padding_top', 9);
+	$aagaz_startup_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$aagaz_startup_custom_css .='padding-top: '.esc_html($aagaz_startup_shop_button_padding_top).'px; padding-bottom: '.esc_html($aagaz_startup_shop_button_padding_top).'px;';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_shop_button_padding_left = get_theme_mod('aagaz_startup_shop_button_padding_left', 16);
+	$aagaz_startup_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
+		$aagaz_startup_custom_css .='padding-left: '.esc_html($aagaz_startup_shop_button_padding_left).'px; padding-right: '.esc_html($aagaz_startup_shop_button_padding_left).'px;';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_shop_button_border_radius = get_theme_mod('aagaz_startup_shop_button_border_radius',25);
+	$aagaz_startup_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{';
+		$aagaz_startup_custom_css .='border-radius: '.esc_html($aagaz_startup_shop_button_border_radius).'px;';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_display_related_products = get_theme_mod('aagaz_startup_display_related_products',true);
+	if($aagaz_startup_display_related_products == false){
+		$aagaz_startup_custom_css .='.related.products{';
+			$aagaz_startup_custom_css .='display: none;';
+		$aagaz_startup_custom_css .='}';
+	}
+
+	$aagaz_startup_shop_products_border = get_theme_mod('aagaz_startup_shop_products_border', true);
+	if($aagaz_startup_shop_products_border == false){
+		$aagaz_startup_custom_css .='.woocommerce .products li{';
+			$aagaz_startup_custom_css .='border: none;';
+		$aagaz_startup_custom_css .='}';
+	}
+
+	$aagaz_startup_shop_page_top_padding = get_theme_mod('aagaz_startup_shop_page_top_padding',10);
+	$aagaz_startup_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$aagaz_startup_custom_css .='padding-top: '.esc_html($aagaz_startup_shop_page_top_padding).'px !important; padding-bottom: '.esc_html($aagaz_startup_shop_page_top_padding).'px !important;';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_shop_page_left_padding = get_theme_mod('aagaz_startup_shop_page_left_padding',10);
+	$aagaz_startup_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$aagaz_startup_custom_css .='padding-left: '.esc_html($aagaz_startup_shop_page_left_padding).'px !important; padding-right: '.esc_html($aagaz_startup_shop_page_left_padding).'px !important;';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_shop_page_border_radius = get_theme_mod('aagaz_startup_shop_page_border_radius',0);
+	$aagaz_startup_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$aagaz_startup_custom_css .='border-radius: '.esc_html($aagaz_startup_shop_page_border_radius).'px;';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_shop_page_box_shadow = get_theme_mod('aagaz_startup_shop_page_box_shadow',0);
+	$aagaz_startup_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+		$aagaz_startup_custom_css .='box-shadow: '.esc_html($aagaz_startup_shop_page_box_shadow).'px '.esc_html($aagaz_startup_shop_page_box_shadow).'px '.esc_html($aagaz_startup_shop_page_box_shadow).'px #e4e4e4;';
+	$aagaz_startup_custom_css .='}';
+
 

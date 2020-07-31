@@ -359,32 +359,28 @@ function aagaz_startup_sanitize_number_range( $number, $setting ) {
 	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
 }
 
-function aagaz_startup_sanitize_email( $email, $setting ) {
-	// Strips out all characters that are not allowable in an email address.
-	$email = sanitize_email( $email );
-
-	// If $email is a valid email, return it; otherwise, return the default.
-	return ( ! is_null( $email ) ? $email : $setting->default );
-}
-
-function aagaz_startup_sanitize_phone_number( $phone ) {
-	return preg_replace( '/[^\d+]/', '', $phone );
-}
-
-// Change number or products per row to 3
-add_filter('loop_shop_columns', 'aagaz_startup_loop_columns');
-	if (!function_exists('aagaz_startup_loop_columns')) {
-	function aagaz_startup_loop_columns() {
-		return 3; // 3 products per row
-	}
-}
-
 /* Excerpt Limit Begin */
 function aagaz_startup_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));
 	if(count($words) > $word_limit)
 	array_pop($words);
 	return implode(' ', $words);
+}
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'aagaz_startup_loop_columns');
+if (!function_exists('aagaz_startup_loop_columns')) {
+	function aagaz_startup_loop_columns() {
+		$columns = get_theme_mod( 'aagaz_startup_woocommerce_product_per_columns', 3 );
+		return $columns; // 3 products per row
+	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'aagaz_startup_shop_per_page', 20 );
+function aagaz_startup_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'aagaz_startup_woocommerce_product_per_page', 9 );
+	return $cols;
 }
 
 function aagaz_startup_sanitize_dropdown_pages( $page_id, $setting ) {
