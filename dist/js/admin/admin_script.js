@@ -1,0 +1,1 @@
+"use strict";!function(a){a(function(){$switchBox=a(".switch_checkbox"),$switchBox.click(function(t){var i=a(this).attr("for"),c=a(this).closest("tr");setTimeout(function(){var t=a("#"+i).prop("checked");a('input[name="'+i+'"]').val(Number(t)),void 0!==c.attr("data-disable")&&c.attr("data-disable",Number(t))},10)})})}(jQuery);

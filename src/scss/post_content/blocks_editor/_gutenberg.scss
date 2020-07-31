@@ -1,0 +1,61 @@
+// 全体の幅
+.wp-block {
+    max-width: 900px;
+}
+
+// フォント
+.editor-styles-wrapper {
+    font-size: 16px;
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif !important;
+}
+
+// 本文エリア
+.block-editor-writing-flow {
+
+
+    // padding大きく
+    [data-align="full"] {
+
+        & > .wp-block-cover,
+        & > .wp-block-group {
+            padding: 4em;
+        }
+    }
+
+}
+
+//aligncenterにclearが付くようになったので、それに合わせる
+[data-align="center"] {
+    clear: both;
+}
+
+
+// ブロックの「Move To」モードで出てくる ::before のバーが崩れないように、CSS強める
+#wpbody .is-block-moving-mode {
+
+    .wp-block.is-selected {
+
+        &::before {
+            position: absolute;
+            top: -14px;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            z-index: 0;
+            display: inline;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-top: 4px solid var(--wp-admin-theme-color);
+            border-radius: 2px;
+            transform: none;
+            content: "";
+        }
+    }
+}
