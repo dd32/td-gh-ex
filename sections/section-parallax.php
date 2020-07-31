@@ -8,7 +8,7 @@
 ?>
 
 <!-- Section Parallax -->
-<section class="mb-5 at-about-parallax <?php if ( false == get_theme_mod('atomy_enable_full_width_parallax', false) ):?>container-fluid pl-0 pr-0<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_parallax', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+<section class="mb-5 at-about-parallax <?php if ( false == get_theme_mod('atomy_enable_full_width_parallax', false) ):?>container-fluid pl-0 pr-0<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_parallax', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     <div class="at-box-parallax">
        <div class="at-second-img-parallax"></div>
           <div class="at-text-parallax">

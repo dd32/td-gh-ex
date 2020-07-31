@@ -178,7 +178,7 @@ if (class_exists('WP_Customize_Control')) {
 				   <?php foreach ( $this->choices as $key => $value ) { ?>
 						<label class="radio-button-label">
 							<input type="radio" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $key ), $this->value() ); ?>/>
-							<span><?php echo esc_attr( $value ); ?></span>
+							<span><?php echo esc_html( $value ); ?></span>
 						</label>
 					<?php	} ?>
 			   </div>
@@ -308,7 +308,7 @@ if (class_exists('WP_Customize_Control')) {
 		?>
 			<div class="simple-notice-custom-control-pr">
 				<?php if( !empty( $this->label ) ) { ?>
-					<span class="customize-control-title"><?php echo esc_attr( $this->label ); ?></span>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if( !empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>

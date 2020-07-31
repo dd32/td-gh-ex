@@ -7,7 +7,7 @@
 */
 ?> 
 
-<section class="at_portfolio_2 <?php if ( false == get_theme_mod('atomy_enable_full_width_portfolio', true) ):?>container-fluid<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_portfolio', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">  
+<section class="at_portfolio_2 <?php if ( false == get_theme_mod('atomy_enable_full_width_portfolio', true) ):?>container-fluid<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_portfolio', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">  
 <h2 class="<?php echo esc_attr(get_theme_mod('at_text_align_title_portfolio'));?> mb-2 col-md-12" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_title_portfolio_section','no-effect'));?>" data-aos-duration="500">
 <?php echo esc_html(get_theme_mod( 'at_title_portfolio_section',__('Portfolio','atomy')));?>
 </h2>

@@ -8,7 +8,7 @@
 ?>
 
 <!-- Section Category -->
-<section class="<?php if ( false == get_theme_mod('atomy_enable_full_width_category', true) ):?>container-fluid pr-2<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_category', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?> at-content-woocommerce-page-single-product">
+<section class="<?php if ( false == get_theme_mod('atomy_enable_full_width_category', true) ):?>container-fluid pr-2<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_category', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?> at-content-woocommerce-page-single-product">
 <h2 class="mb-5 mr-2 <?php echo esc_attr(get_theme_mod('at_text_align_title_category'));?> at_contr_title_category_shop" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_title_category_section','no-effect'));?>" data-aos-duration="500">
 <?php echo esc_html(get_theme_mod( 'at_category_shop_title'));?>	
 </h2> 

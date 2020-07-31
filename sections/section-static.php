@@ -8,7 +8,7 @@
 ?>
 
 <!-- Section Static -->
-<section class="at-header-media  pb-5 <?php if ( false == get_theme_mod('atomy_enable_full_width_static', true) ):?>container-fluid pl-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_static', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+<section class="at-header-media  pb-5 <?php if ( false == get_theme_mod('atomy_enable_full_width_static', true) ):?>container-fluid pl-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_static', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
 	<div class="row">
     <?php the_custom_header_markup() ?>
 </div>

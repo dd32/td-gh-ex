@@ -82,7 +82,7 @@
                             <?php 
                             if ( $atomy_count > 0 ) {
                             ?>
-                            <span class="cart-contents-count"><?php echo esc_attr( $atomy_count,'atomy' ); ?></span>
+                            <span class="cart-contents-count"><?php echo esc_html( $atomy_count,'atomy' ); ?></span>
                            <?php  }?>
                            </a>
                           </li>
@@ -94,7 +94,7 @@
             </div>
         </div>
     </div>
-    <div class="at-div-header <?php if ( false == get_theme_mod('atomy_enable_full_menu_header', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+    <div class="at-div-header <?php if ( false == get_theme_mod('atomy_enable_full_menu_header', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_menu_header', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     </div> 
     <!-- Second Nav Menu -->
     <header class="shop_header_area">
@@ -153,7 +153,7 @@
                             <?php 
                             if ( $atomy_count > 0 ) {
                             ?>
-                            <span class="cart-contents-count"><?php echo esc_attr( $atomy_count,'atomy' ); ?></span>
+                            <span class="cart-contents-count"><?php echo esc_html( $atomy_count,'atomy' ); ?></span>
                            <?php  }?>
                            </a>
                           </li>
@@ -164,7 +164,7 @@
                 </div>
     </div>
     </header>
-    <div class="at-border-top-menu <?php if ( false == get_theme_mod('atomy_enable_full_menu_header', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_menu_header', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+    <div class="at-border-top-menu <?php if ( false == get_theme_mod('atomy_enable_full_menu_header', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_menu_header', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     </div>
 
 

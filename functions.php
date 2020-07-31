@@ -721,13 +721,13 @@ function atomy_add_script() {
 		wp_enqueue_script(  'notice-update' );
 }
 
-if( get_option( 'atomy_4_dismiss_notice' ) != true ) {
+if( get_option( 'atomy_5_dismiss_notice' ) != true ) {
 
 add_action( 'admin_notices', 'atomy_add_dismissible' );
 }
 function atomy_add_dismissible() {
   ?>
-   <div class='notice notice-success atomy-4-dismiss-notice atomy-class-update is-dismissible'>
+   <div class='notice notice-success atomy-5-dismiss-notice atomy-class-update is-dismissible'>
 	   <div class="df-logo">
 		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
 	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
@@ -764,9 +764,9 @@ function atomy_add_dismissible() {
   <?php
 }
 
-add_action( 'wp_ajax_atomy_4_dismiss_notice', 'atomy_4_dismiss_notice' );
-function atomy_4_dismiss_notice() {
-update_option( 'atomy_4_dismiss_notice', true );
+add_action( 'wp_ajax_atomy_5_dismiss_notice', 'atomy_5_dismiss_notice' );
+function atomy_5_dismiss_notice() {
+update_option( 'atomy_5_dismiss_notice', true );
 }
 
 /*  Demo Import

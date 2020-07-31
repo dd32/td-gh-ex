@@ -15,7 +15,7 @@
 <!-- Effect Hover Icon 3 -->
 <?php get_template_part('ateffecthover/services/atico3/at',esc_attr(get_theme_mod('at_effect_hover_ico_3','no-effect')));?>
  
-<section class="<?php if ( false == get_theme_mod('atomy_enable_full_width_services', true) ):?>container-fluid pl-0 pr-0<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_services', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?> at-services-margin pt-5 pb-5">
+<section class="<?php if ( false == get_theme_mod('atomy_enable_full_width_services', true) ):?>container-fluid pl-0 pr-0<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_services', true) ):?><?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?> at-services-margin pt-5 pb-5">
 <div class="row at-services mr-0 ml-0">
 <h2 class="<?php echo esc_attr(get_theme_mod('at_text_align_title_services'));?> pb-5 col-md-12 pt-5" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_title_services_section','no-effect'));?>" data-aos-duration="500" data-aos-offset="200">
 <?php echo esc_html(get_theme_mod( 'at_title_services_section',__('Our Services','atomy')));?>

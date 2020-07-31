@@ -2,11 +2,11 @@
 
 Thema Name: Atomy
 Contributors: franchidesign
-Version: 1.1.2
+Version: 1.1.3
 Requires at least: 4.7
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Text Domain: atomy
 License:  GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -199,11 +199,9 @@ Copyright (c) 2016 Dmitry Semenov; */
 
 All the images in the Atomy demos were taken from:
 
-https://unsplash.com/
 
 https://www.pexels.com/
 
-https://pixabay.com/
 
 https://pxhere.com/
 
