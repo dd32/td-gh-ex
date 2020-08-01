@@ -4,7 +4,7 @@ Contributors: roughpixels
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -113,7 +113,13 @@ Removed - for now removed features.
 Fixed - for any bug fixes.
 Security - in case of vulnerabilities.
 
-## [1.0.5] - 2020-10-7
+## [1.0.6] - 2020-08-1
+
+* Fixed - Featured label on posts was not changing from the colour settings.
+* Added - New setting to disable the greyscale on gallery images.
+* Changed - The  translation .pot file updated.
+
+## [1.0.5] - 2020-07-10
 
 * Changed - Made a few adjustments to layout of align left and right elements when using the boxed layout.
 * Changed - Nested lists in widget sidebars has a few new adjustments.
@@ -121,7 +127,7 @@ Security - in case of vulnerabilities.
 * Fixed - Full post was missing the navigation for split post content.
 
 
-## [1.0.4] - 2020-07-6
+## [1.0.4] - 2020-06-12
 * Fixed - Removing logo in the customizer was not bringing back the site title and tagline
 * Fixed - Wrong thumbnail missing image file name was corrected due to a 404 error.
 * Fixed - Escaping corrected on the post author link and name within the template-tags file.

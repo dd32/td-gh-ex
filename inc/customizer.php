@@ -495,6 +495,22 @@ function ariele_lite_cats() {
 		'section'  => 'ariele_lite_theme_options',
 	) );
 
+	// Disable gallery greyscale
+	$wp_customize->add_setting( 'ariele_lite_greyscale_images',	array(
+		'default' => false,
+		'sanitize_callback' => 'ariele_lite_sanitize_checkbox',
+	) );  
+	$wp_customize->add_control( 'ariele_lite_greyscale_images', array(
+		'type'     => 'checkbox',
+		'label'    => esc_html__( 'Disable Gallery Greyscale', 'ariele-lite' ),
+		'description' => esc_html__( 'This lets you turn off the greyscale (greyed out images) styling.', 'ariele-lite' ),
+		'section'  => 'ariele_lite_theme_options',
+	) );
+
+
+
+
+
 	// Separator 
 	$wp_customize->add_setting(	'ariele_lite_separator3',	array(
 			'sanitize_callback' => 'wp_filter_nohtml_kses',

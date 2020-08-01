@@ -66,7 +66,7 @@ function ariele_lite_inline_styles($custom) {
 	.hentry { background: " . esc_attr($ariele_lite_content_bg) . "; }
 	.hentry, #related-posts, #comments, #inset-top-sidebar, #inset-bottom-sidebar { border-color: " . esc_attr($ariele_lite_content_border) . "; }	
 	#breadcrumbs-sidebar, #breadcrumbs-sidebar a, #breadcrumbs-sidebar a:visited {color: " . esc_attr($ariele_lite_breadcrumbs_text) . ";}
-	.archive-prefix {color: " . esc_attr($ariele_lite_archive_prefix) . ";}
+	.archive-prefix.color-accent {color: " . esc_attr($ariele_lite_archive_prefix) . ";}
 	h1, h2, h3, h4, h5, h6, .entry-title a, .entry-title a:visited {color: " . esc_attr($ariele_lite_headings) . ";}
 	.entry-title a:focus, .entry-title a:hover {color: " . esc_attr($ariele_lite_headings_hover) . ";}	
 	.entry-meta a:focus, .entry-meta a:hover {color: " . esc_attr($ariele_lite_meta_hover) . ";}
@@ -80,7 +80,7 @@ function ariele_lite_inline_styles($custom) {
 	.widget_meta li, .widget_recent_entries li, .widget_recent_comments li, .widget_pages li, .widget_archive li, .widget_categories li, .widget_pages .children {border-color: " . esc_attr($ariele_lite_widget_list_line) . ";}	
 	.tag-list a, .tag-list a:visited {background: " . esc_attr($ariele_lite_post_tags_bg) . "; color: " . esc_attr($ariele_lite_post_tags_label) . ";}	
 	.tag-list a:hover, .tag-list a:focus {background: " . esc_attr($ariele_lite_post_tags_hover_bg) . "; color: " . esc_attr($ariele_lite_post_tags_hover_label) . ";}	
-	.ribbon-featured {background: " . esc_attr($ariele_lite_featured_bg) . "; color: " . esc_attr($ariele_lite_featured_text) . ";}	
+	.featured-media .featured-label {background: " . esc_attr($ariele_lite_featured_bg) . "; color: " . esc_attr($ariele_lite_featured_text) . ";}	
 	.tag-cloud-link {border-color: " . esc_attr($ariele_lite_tagcloud_border) . "; }
 	.tag-cloud-link:hover {background: " . esc_attr($ariele_lite_tagcloud_hover_bg) . "; border-color: " . esc_attr($ariele_lite_tagcloud_hover_bg) . "; color: " . esc_attr($ariele_lite_tagcloud_hover_text) . ";}
 	#footer-sidebars {background: " . esc_attr($ariele_lite_footer_sidebar_bg) . "; color: " . esc_attr($ariele_lite_footer_sidebar_text) . ";}
@@ -154,6 +154,15 @@ function ariele_lite_inline_styles($custom) {
 	$custom .= "button, .button:visited,button[disabled]:hover, button[disabled]:focus, input[type=button], input[type=button][disabled]:hover, input[type=button][disabled]:focus, input[type=reset], input[type=reset][disabled]:hover, input[type=reset][disabled]:focus, input[type=submit], input[type=submit][disabled]:hover, input[type=submit][disabled]:focus, .widget button.search-submit:focus, .widget button.search-submit:hover  {background: " . esc_attr($ariele_lite_button) . "; color: " . esc_attr($ariele_lite_button_label) . ";}	
 	.button:hover,button:hover, button:focus, input[type=button]:hover, input[type=button]:focus, input[type=reset]:hover, input[type=reset]:focus, input[type=submit]:hover, input[type=submit]:focus, .widget button.search-submit  {background: " . esc_attr($ariele_lite_button_hover) . "; color: " . esc_attr($ariele_lite_button_label_hover) . ";}	
 	"."\n";
+ 
+ // Misc.
+	 if ( true == esc_attr(get_theme_mod( 'ariele_lite_greyscale_images', false ) ) ) { 
+	 $custom .= ".gallery-icon img  {    filter: grayscale(0); }
+	 "."\n";	
+	 }
+	
+ 
+ 
  
 // END CUSTOM CSS
 //Output all the styles
