@@ -4,7 +4,7 @@ Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, 
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, front-page-post-form
 Tested up to: 5.4.1
-Stable tag: 1.7.5
+Stable tag: 1.9.3
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
 License: GPLv2 or later
@@ -43,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.9.3 =
+* update screenshot images with CC0 license
 
 = 1.9.2 =
 * Bug fix: make main menu accessible for keyboard navigation under IE and Edge browsers
@@ -200,8 +203,8 @@ fGymm is distributed under the terms of the GNU GPL
 * js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © 2015 @StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
-* images/slider/2.jpg, © 2016 @Pexels https://pixabay.com/en/man-person-power-strength-strong-1282232/, CC0
-* images/slider/3.jpg, © 2016 @xusenru https://pixabay.com/en/girl-in-the-gym-training-apparatus-1391368/, CC0
+* images/slider/1.jpg, © 2017 @PxHere https://pxhere.com/en/photo/860263, CC0
+* images/slider/2.jpg, © 2017 @PxHere https://pxhere.com/en/photo/915257, CC0
+* images/slider/3.jpg, © 2017 @PxHere https://pxhere.com/en/photo/624429, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
-* screenshot.png (slider image), © 2015 @StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
+* screenshot.png (slider image), © 2017 @PxHere https://pxhere.com/en/photo/860263, CC0
