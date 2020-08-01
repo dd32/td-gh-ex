@@ -4,7 +4,7 @@ Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, cust
 custom-header, custom-menu, featured-images, post-formats, threaded-comments,
 sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 Tested up to: 5.4.1
-Stable tag: 1.9.4
+Stable tag: 2.1.2
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
 License: GPLv2 or later
@@ -48,6 +48,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 2.1.2 =
+* update screenshot images with CC0 license
 
 = 2.1.1 =
 * Bug fix: make main menu accessible for keyboard navigation under IE and Edge browsers
@@ -187,8 +190,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © 2017 @Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
-* images/slider/2.jpg, © 2017 @HeyouRelax https://pixabay.com/en/lego-figure-person-boy-little-one-2158115/, CC0
-* images/slider/3.jpg, © 2017 @aitoff https://pixabay.com/en/pirate-lego-robber-criminal-theft-2129571/, CC0
-* screenshot.png (column images), © 2017 @HeyouRelax https://pixabay.com/en/lego-figure-person-boy-little-one-2158115/, CC0
-* screenshot.png (slider image), © 2017 @Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
+* images/slider/1.jpg, © 2017 @PxHere https://pxhere.com/en/photo/601614, CC0
+* images/slider/2.jpg, © 2017 @PxHere https://pxhere.com/en/photo/1215149, CC0
+* images/slider/3.jpg, © 2017 @PxHere https://pxhere.com/en/photo/1380352, CC0
+* screenshot.png (slider image), © 2017 @PxHere https://pxhere.com/en/photo/601614, CC0

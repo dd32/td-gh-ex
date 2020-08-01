@@ -14,7 +14,7 @@ jQuery( document ).ready(function() {
 
         // hide cart mini cart popup content when focus menu links if hidden on iterate back (shift + tab)
         if (jQuery(this).closest('#navmain > div > ul > li').find('#cart-popup-content').length == 0 && jQuery('#cart-popup-content').css('z-index') != '-1')
-          jQuery('#cart-popup-content').css('z-index', '-1');
+          jQuery('#cart-popup-content').css('z-index', '-1').css('opacity', '0');
 
         // hide cart login popup content when focus menu links if hidden on iterate back (shift + tab)
         if (jQuery(this).closest('#navmain > div > ul > li').find('#login-popup-content').length == 0 && jQuery('#login-popup-content').css('z-index') != '-1')
@@ -31,7 +31,7 @@ jQuery( document ).ready(function() {
           var rightPos = (jQuery(window).width() - (rootLi.offset().left + rootLi.outerWidth()));
           var topPos = rootLi.offset().top - jQuery(window).scrollTop() + rootLi.outerHeight();
 
-          jQuery('#cart-popup-content').css('z-index', '5000').css('right', rightPos).css('top', topPos);
+          jQuery('#cart-popup-content').css('z-index', '5000').css('right', rightPos).css('top', topPos).css('opacity', '1');
         }
 
         // show login popup content when focus on login popup link if hidden on iterate back (shift + tab)
@@ -244,22 +244,22 @@ function fkidd_initHeaderIconsEvents() {
         var rightPos = (jQuery(window).width() - (jQuery(this).offset().left + jQuery(this).outerWidth()));
         var topPos = jQuery(this).offset().top - jQuery(window).scrollTop() + jQuery(this).outerHeight(); 
 
-        jQuery('#cart-popup-content').css('z-index', '5000').css('right', rightPos).css('top', topPos);
+        jQuery('#cart-popup-content').css('z-index', '5000').css('right', rightPos).css('top', topPos).css('opacity', '1');
       }
     });
     
     jQuery('#cart-popup-content').on('mouseleave', function(){
     
-      jQuery('#cart-popup-content').css('z-index', '-1');
+      jQuery('#cart-popup-content').css('z-index', '-1').css('opacity', '0');
     });
 
     jQuery('#main-content-wrapper, #home-content-wrapper').on('focusin', function(){
     
       if (jQuery('#cart-popup-content').css('z-index') != '-1')
-        jQuery('#cart-popup-content').css('z-index', '-1');
+        jQuery('#cart-popup-content').css('z-index', '-1').css('opacity', '0');
 
       if (jQuery('#navmain > div > ul').css('z-index') != '-1') {
-        jQuery('#navmain > div > ul').css('z-index', '-1');  
+        jQuery('#navmain > div > ul').css('z-index', '-1').css('opacity', '0');  
       }
 
     });
