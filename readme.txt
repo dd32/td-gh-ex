@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.2 =
+* update used images with CC0 license
+
 = 1.2.1 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -123,7 +126,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/slippry.js, © 2015 Lukas Jakob Hafner - @saftsaak, Thomas Hurd - @SeenNotHurd, MIT
-* images/slider/1.jpg, © StockSnap https://pixabay.com/en/people-woman-travel-adventure-trek-2591874/, CC0
-* images/slider/2.jpg, © Pexels https://pixabay.com/en/beach-bushes-daylight-fashion-1867881/, CC0
-* images/slider/3.jpg, © dreamypixel https://pixabay.com/en/hiker-standing-woman-top-journey-918473/, CC0
-* screenshot.png (slide img), © StockSnap https://pixabay.com/en/people-woman-travel-adventure-trek-2591874/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/868964, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1267948, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/697812, CC0
+* screenshot.png (slide img), ©2017 @Pxhere https://pxhere.com/en/photo/868964, CC0
