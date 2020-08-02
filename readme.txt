@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.4 =
+* update used images with CC0 license
+
 = 1.2.3 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -134,9 +137,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/photostack.js, © Codrops, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © 2016 @famhud https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/595592, CC0
 * images/slider/2.jpg, © 2018 @AyaTemplates ayatemplates.com, CC0
-* images/slider/3.jpg, © 2017 @ReneBoinski https://pixabay.com/en/skogar-museum-iceland-grass-roofs-1989483/, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/736197, CC0
 * images/slider/4.jpg, © 2018 @AyaTemplates ayatemplates.com, CC0
-* images/slider/5.jpg, © 2017 @darrenquigley32 https://pixabay.com/en/aurora-borealis-iceland-northern-2173562/, CC0
-* screenshot.png (slider image), © 2016 @famhud https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/, CC0
+* images/slider/5.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1209671, CC0
+* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/595592, CC0
