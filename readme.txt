@@ -43,6 +43,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.3 =
+* update used images with CC0 license
+
 = 1.2.2 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
