@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.9 =
+* update used images with CC0 license
+
 = 1.2.8 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -153,12 +156,12 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.carousel-3d.min.js, © 2015 PAIO co., MIT
 * js/jquery.waitforimages.js, © 2014 Alex Dickson, MIT
 * js/modernizr.js, © Faruk Ates, Paul Irish, Alex Sexton, BSD and MIT
-* images/slider/1.jpg, © 2014 @geralt http://pixabay.com/en/man-businessman-consider-face-head-404376/, CC0
-* images/slider/2.jpg, © 2012 @PublicDomainPictures http://pixabay.com/en/beautiful-business-computer-female-15728/, CC0
-* images/slider/3.jpg, © 2014 @geralt http://pixabay.com/en/man-face-head-circle-structure-335401/, CC0
-* images/slider/4.jpg, © 2014 @fill http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/, CC0
-* images/slider/5.jpg, © 2015 @MagicDesk http://pixabay.com/en/meeting-room-table-screen-730679/, CC0
-* screenshot.png, © 2014 @fill http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/, CC0
-* screenshot.png, © 2015 @geralt https://pixabay.com/en/woman-face-photomontage-faces-789146/, CC0
-* screenshot.png, © 2016 @Free-Photos https://pixabay.com/en/records-album-vinyl-retro-soul-1148927/, CC0
-* screenshot.png, © 2015 @Free-Photos https://pixabay.com/en/vinyl-records-store-shopping-retro-945396/, CC0
+* images/slider/1.jpg, © 2018 @Pxhere https://pxhere.com/en/photo/1437647, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1260574, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/948715, CC0
+* images/slider/4.jpg, © 2019 @Pxhere https://pxhere.com/en/photo/1584859, CC0
+* images/slider/5.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/735694, CC0
+* screenshot.png, © 2019 @Pxhere https://pxhere.com/en/photo/1584859, CC0
+* screenshot.png, © 2017 @Pxhere https://pxhere.com/en/photo/956358, CC0
+* screenshot.png, © 2017 @Pxhere https://pxhere.com/en/photo/684576, CC0
+* screenshot.png, © 2017 @Pxhere https://pxhere.com/en/photo/868625, CC0
