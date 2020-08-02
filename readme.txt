@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
 Tested up to: 5.4
-Stable tag: 4.3.7
+Stable tag: 4.3.8
 
 == Description ==
 
@@ -658,3 +658,6 @@ Tweak: block cover, block gallery margins, text color
 
 = Version 4.3.7 =
 Fix: Page with Posts template failing to show paging links.
+
+= Version 4.3.8 =
+Fix: PwP paging links for Previous/Next
