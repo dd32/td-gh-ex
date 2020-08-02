@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.3 =
+* update used images with CC0 license
+
 = 1.2.2 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -130,7 +133,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.slicebox.js, © 2012 Codrops, MIT
 * js/modernizr.custom.46884.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/modernizr.custom.46884.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
-* images/slider/1.jpg, © 2014 @Free-Photos https://pixabay.com/en/home-office-workstation-office-336378/, CC0
-* images/slider/2.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/startup-start-up-notebooks-creative-593335/, CC0
-* images/slider/3.jpg, © 2014 @markusspiske https://pixabay.com/en/computer-mouse-office-co-working-582045/, CC0
-* screenshot.png (slider image), © 2014 @Free-Photos https://pixabay.com/en/home-office-workstation-office-336378/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1338927, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/764672, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/767599, CC0
+* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/1338927, CC0
