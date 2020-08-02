@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.9 =
+* update used images with CC0 license
+
 = 1.2.8 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -150,6 +153,6 @@ Installation using 'Add New Theme'
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (thumbnail), © 2016 @Giovanni_cg https://pixabay.com/en/render-graphic-architecture-3d-1477041/, CC0
-* screenshot.png (sidebar), © 2018 @qimono https://pixabay.com/en/apartment-view-interior-room-3564955/, CCO
-* screenshot.png (sidebar), © 2016 @Pexels https://pixabay.com/en/architecture-building-driveway-1867187/, CCO
+* screenshot.png (thumbnail), © 2017 @Pxhere https://pxhere.com/en/photo/599836, CC0
+* screenshot.png (sidebar), © 2017 @Pxhere https://pxhere.com/en/photo/599832, CCO
+* screenshot.png (sidebar), © 2017 @Pxhere https://pxhere.com/en/photo/1364746, CCO
