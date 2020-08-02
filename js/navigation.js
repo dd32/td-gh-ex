@@ -1,4 +1,4 @@
-/* global screenReaderText */
+/* global agency_starter_screenReaderText */
 /**
  * Theme functions file.
  *
@@ -20,7 +20,7 @@
 			'aria-expanded': false
 		} ).append( $( '<span />', {
 			'class': 'screen-reader-text',
-			text: screenReaderText.expand
+			text: agency_starter_screenReaderText.expand
 		} ) );
 
 		container.find( '.menu-item-has-children > a' ).after( dropdownToggle );
@@ -43,7 +43,7 @@
 			// jscs:disable
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			// jscs:enable
-			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === agency_starter_screenReaderText.expand ? agency_starter_screenReaderText.collapse : agency_starter_screenReaderText.expand );
 		} );
 		
 		container.find( '.dropdown-toggle' ).keyup( function( e ) {
@@ -57,7 +57,7 @@
 			// jscs:disable
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			// jscs:enable
-			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === agency_starter_screenReaderText.expand ? agency_starter_screenReaderText.collapse : agency_starter_screenReaderText.expand );
 		} );		
 		
 		

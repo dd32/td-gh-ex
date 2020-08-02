@@ -88,6 +88,18 @@
 		'label' => __('Slider Height','agency-starter' ),
 		'section' => 'slider_section',
 		'type'=>'number',
-		) );		
+		) );
+		
+		//slider style
+		$wp_customize->add_setting( 'slider_shape_devider' , array(
+		'default'    => 1,
+		'sanitize_callback' => 'agency_starter_sanitize_checkbox',
+		));
+		
+		$wp_customize->add_control('slider_shape_devider' , array(
+		'label' => __('Slider Shape Devider','agency-starter' ),
+		'section' => 'slider_section',
+		'type'=>'checkbox',
+		) );			
 
 				

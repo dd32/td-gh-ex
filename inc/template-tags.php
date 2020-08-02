@@ -411,7 +411,7 @@ function agency_starter_add_search_form_to_menu($items, $args) {
   global $woocommerce;
   
   return $items .'<li class="menu-item menu-item-type-custom menu-item-object-custom">'.
-  '<a id="woo-cart-menu-item" class="cart-contents" href="'.esc_url(wc_get_cart_url()).'"><span class="cart-contents-count fa fa-shopping-bag">&nbsp;('.$woocommerce->cart->cart_contents_count.')</span></a></li>';
+  '<a id="woo-cart-menu-item" class="cart-contents" href="'.esc_url(wc_get_cart_url()).'"><span class="cart-contents-count fa fa-shopping-bag"><span>'.absint($woocommerce->cart->cart_contents_count).'</span></span></a></li>';
 }
 
 if(class_exists('woocommerce')) {
@@ -426,7 +426,7 @@ function agency_starter_wc_cart_count() {
 	global $woocommerce; 
 	?>
     <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('Cart View', 'agency-starter'); ?>">
-	<span class="cart-contents-count fa fa-shopping-bag">&nbsp;(<?php echo esc_html($woocommerce->cart->cart_contents_count); ?>)</span>
+	<span class="cart-contents-count fa fa-shopping-bag"><span><?php echo absint($woocommerce->cart->cart_contents_count); ?></span></span>
     </a> 
     <?php
 	
@@ -446,7 +446,7 @@ function agency_starter_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
     <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View Cart', 'agency-starter'); ?>">
-    <span class="cart-contents-count fa fa-shopping-bag">&nbsp;(<?php echo esc_html($woocommerce->cart->cart_contents_count); ?>)&nbsp;</span>
+    <span class="cart-contents-count fa fa-shopping-bag"><span><?php echo esc_html($woocommerce->cart->cart_contents_count); ?></span></span>
     </a> 
     <?php
 	$cart_fragments['a.cart-contents'] = ob_get_clean();

@@ -6,6 +6,7 @@ $agency_starter_tel= get_theme_mod('header_telephone', '');
 if ($agency_starter_email !='' || $agency_starter_address !='' || $agency_starter_tel !='' || (has_nav_menu( 'social' )) )  {
 ?>
 <div class="contact-ribbon col-xs-12">
+ <div class="container">
 	<div class="row">
 	
 		<div class="col-sm-8 contact-info-container">
@@ -57,7 +58,7 @@ if ($agency_starter_email !='' || $agency_starter_address !='' || $agency_starte
 				</nav><!-- .social-navigation -->
 			<?php endif; ?>
 		</div>
-		
+	  </div>
 	</div>
 </div>
 

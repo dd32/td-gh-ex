@@ -26,10 +26,10 @@ if(get_theme_mod("box_layout_mode", false))	echo '<div class="box-layout-style">
 		<?php get_template_part( 'templates/header', 'banner' ); ?>
 		
 		<header id="masthead" class="site-header" role="banner" >
-			
-			<div id="site-header-main" class="site-header-main">
 
 			<?php get_template_part( 'templates/contact', 'section' ); ?>
+					
+			<div id="site-header-main" class="site-header-main">
 			
 			<?php if (get_theme_mod('header_layout_2',0)) : ?>
 				<?php get_template_part( 'templates/header', 'list' ); ?>			

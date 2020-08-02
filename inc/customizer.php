@@ -72,7 +72,7 @@ function agency_starter_customize_register( $wp_customize ) {
  * @link      https://github.com/WPTRT/customize-section-button
  */
 
-class agency_starter_Button extends WP_Customize_Section {
+class Agency_Starter_Button extends WP_Customize_Section {
 
 
 	public $type = 'wptrt-button';
@@ -125,13 +125,13 @@ class agency_starter_Button extends WP_Customize_Section {
 	<?php }
 }
 
-	$wp_customize->register_section_type( agency_starter_Button::class );
-
+	$wp_customize->register_section_type( Agency_Starter_Button::class );
+	 
 	$wp_customize->add_section(
-		new agency_starter_Button( $wp_customize, 'agency-starter', [
+		new Agency_Starter_Button( $wp_customize, 'agency-starter', [
 			'title'       => __( 'Premium Features', 'agency-starter' ),
 			'button_text' => __( 'Learn More', 'agency-starter' ),
-			'button_url'  => 'https://wpfreetheme.space/product/agency-starter-pro/'
+			'button_url'  => agency_starter_theme_uri(),
 		] )
 	);
 
@@ -467,7 +467,7 @@ class agency_starter_Button extends WP_Customize_Section {
 	//header tel
 	$wp_customize->add_setting('header_telephone' , array(
 		'default'    => '1-000-123-4567',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'agency_starter_sanitize_phone_number',
 	));
 	
 	
@@ -506,6 +506,28 @@ class agency_starter_Button extends WP_Customize_Section {
 		'section' => 'theme_header',
 		'type'=> 'text',
 	) );
+	
+	
+	// header contacts, social bg color
+	$wp_customize->add_setting(
+		'header_contact_social_bg_color',
+		array(
+			'default'           => '#000',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'refresh',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_contact_social_bg_color',
+			array(
+				'label'   => __( 'Header Contact Background Color', 'agency-starter' ),
+				'section' => 'theme_header',
+			)
+		)
+	);	
 	
 	
 	// 5 Typography
@@ -586,7 +608,7 @@ class agency_starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'footer_text_color',
 		array(
-			'default'           => '#eaeaea',
+			'default'           => '#54595f',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -611,7 +633,7 @@ class agency_starter_Button extends WP_Customize_Section {
 	
 
 	$wp_customize->add_setting('footer_border' , array(
-		'default'    => 0,
+		'default'    => 1,
 		'sanitize_callback' => 'absint',
 	));
 
@@ -626,7 +648,7 @@ class agency_starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'footer_bg_color',
 		array(
-			'default'           => '#e8a200',
+			'default'           => '#fff',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -804,4 +826,8 @@ function agency_starter_rgba_sanitization_callback( $value ) {
 	}
 	// If no match was found, return an empty string.
 	return '';
+}
+
+function agency_starter_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
 }

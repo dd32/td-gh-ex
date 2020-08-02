@@ -3,7 +3,8 @@
  * Agency Starter functions
  * Since Version 1.0
  */
- 
+
+
 if ( ! function_exists( 'agency_starter_setup' ) ) :
 
 	function agency_starter_setup() {
@@ -88,6 +89,15 @@ if ( ! function_exists( 'agency_starter_setup' ) ) :
 	
 endif; // agency_starter_setup
 add_action( 'after_setup_theme', 'agency_starter_setup' );
+
+/*  
+ * Theme uri can be changed in child themes by overriding function
+ */
+if (!function_exists('agency_starter_theme_uri')) {
+	function agency_starter_theme_uri(){
+		return 'https://wpfreetheme.space/product/agency-starter-theme/';
+	}
+}
 
 
 add_action( 'after_setup_theme', 'agency_starter_default_header' );
@@ -253,8 +263,8 @@ if ( ! function_exists( 'agency_starter_fonts_url' ) ) :
 		if ( 'off' !== $typography ) {
 			$font_families = array();
 			
-			$font_families[] = get_theme_mod('heading_font', 'Google Sans').':300,400,500';
-			$font_families[] = get_theme_mod('body_font', 'Lora').':300,400,500';
+			$font_families[] = get_theme_mod('heading_font', 'Roboto').':300,400,500';
+			$font_families[] = get_theme_mod('body_font', 'Google Sans').':300,400,500';
 			
 	 
 			$query_args = array(
@@ -336,7 +346,7 @@ function agency_starter_scripts() {
 
 	wp_localize_script(
 		'agency-starter-script',
-		'screenReaderText',
+		'agency_starter_screenReaderText',
 		array(
 			'expand'   => esc_html__( 'Expand child menu', 'agency-starter' ),
 			'collapse' => esc_html__( 'Collapse child menu', 'agency-starter' ),

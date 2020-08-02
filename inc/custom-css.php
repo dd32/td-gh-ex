@@ -8,8 +8,8 @@ function agency_starter_get_theme_css( ) {
 
 	/* fonts */
 	
-	$header_font = get_theme_mod('heading_font', 'Google Sans');
-	$body_font = get_theme_mod('body_font', 'Lora');
+	$header_font = get_theme_mod('heading_font', 'Roboto');
+	$body_font = get_theme_mod('body_font', 'Google Sans');
 	
 	/* colors */
 	
@@ -20,20 +20,22 @@ function agency_starter_get_theme_css( ) {
 
 	$colors['primary_color'] = get_theme_mod('primary_color', '#ffb404');
 	
-	$colors['footer_text_color'] = get_theme_mod('footer_text_color', '#eaeaea');
+	$colors['footer_text_color'] = get_theme_mod('footer_text_color', '#54595f');
 	
 	/* Convert main text hex color to rgba */
 	$main_text_color_rgb = agency_starter_hex2rgb( $colors['main_text_color'] );
 	$border_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $main_text_color_rgb );	
 	$colors['border_color'] = $border_color;
-	
-	$footer_bg_color = get_theme_mod('footer_bg_color', '#e8a200');
+
 	$header_bg_color = get_theme_mod('header_bg_color', '#fff');
 	$colors['header_text_color'] = get_theme_mod('header_text_color', '#333333');
+	$colors['header_contact_bg_color'] = get_theme_mod('header_contact_social_bg_color', '#000');
 	
 	$hero_border = get_theme_mod('hero_border', 1);
 	
-	$footer_border = get_theme_mod('footer_border', 0);
+	$footer_bg_color = get_theme_mod('footer_bg_color', '#fff');
+	
+	$footer_border = get_theme_mod('footer_border', 1);
 	
 	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', 'rgba(231,173,36,0)');
 	
@@ -47,7 +49,11 @@ function agency_starter_get_theme_css( ) {
 	
 	.category-navigation > ul > li > a {
 		color:unset;	
-	}	
+	}
+	
+	.cart-contents-count span {
+		background-color:".$colors['primary_color'].";
+	}
 	
 	.woocommerce a.add_to_cart_button, 
 	.woocommerce a.add_to_cart_button:focus, 
@@ -75,7 +81,10 @@ function agency_starter_get_theme_css( ) {
 		background-color: #008040;
 		color: #fff;
 	}
-		
+	
+	.site-header .contact-ribbon { 
+		background-color: ".$colors['header_contact_bg_color'].";
+	}
 					
 	.site-header { 
 		background-image: url(".esc_url( get_header_image() ).");
@@ -84,6 +93,14 @@ function agency_starter_get_theme_css( ) {
 		background-position: center top;
 		box-shadow: 0 1px 5px #eee;
 		background-attachment: fixed;				
+	}
+	
+	.site-header .contact-info a.tel-link,
+	.site-header .contact-info  a.email-link,
+	.site-header .contact-info,
+	.site-header .contact-info .fa,
+	.site-header .social-navigation a {
+		color:#fff;
 	}
 	
 	#site-navigation.sticky-nav {
@@ -95,7 +112,7 @@ function agency_starter_get_theme_css( ) {
 		background-color: ".$footer_bg_color.";
 		background-size: cover;
 		background-position: center bottom;	
-		border-top: ".$footer_border."px solid ".$colors['primary_color'].";
+		border-top: ".$footer_border."px solid #eaeaea;
 	}
 	
 	.footer-text .widget-title, 
@@ -178,11 +195,6 @@ function agency_starter_get_theme_css( ) {
 	.menu-toggle,
 	.menu-toggle.toggled-on,
 	.dropdown-toggle:after,
-	.site-header-main .contact-info a.tel-link,
-	.site-header-main .contact-info  a.email-link,
-	.site-header-main .contact-info,
-	.site-header-main .contact-info .fa,
-	.site-header-main .social-navigation a,
 	.hero-callout .callout-title,
 	.hero-callout .callout-section-desc {
 		color: ".$colors['header_text_color'].";
@@ -493,7 +505,7 @@ function agency_starter_get_theme_css( ) {
 		.main-navigation.sticky-nav li:focus > a {
 			color: #fff; 
 			background-color: ".$colors['primary_color'].";
-			border-radius: 24px;
+			border-radius: 2px;
 		}
 		
 		#site-navigation.sticky-nav { background-color: ".$header_bg_color."; }

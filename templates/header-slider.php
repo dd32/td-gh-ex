@@ -101,14 +101,17 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
     <?php
 		endwhile;
 		wp_reset_postdata();
+		if(get_theme_mod('slider_shape_devider' , 1)){
 	?>
 	
-	<svg class="section_divider" viewBox="0 24 150 28" preserveAspectRatio="none">
- 	<defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
-    <g class="section_divider_parallax">
-	   <use xlink:href="#gentle-wave" x="50" y="6" fill="#fff"/>  
-	  </g>
-	</svg>
+		<svg class="section_divider" viewBox="0 24 150 28" preserveAspectRatio="none">
+		<defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+		<g class="section_divider_parallax">
+		   <use xlink:href="#gentle-wave" x="50" y="6" fill="#fff"/>  
+		  </g>
+		</svg>
+	
+	<?php } ?>
 
 </div>
 	<?php if($count>1): ?>

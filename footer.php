@@ -49,7 +49,7 @@
 
 			<div class="col-md-6 col-sm-6">
 				<div class="site-info">
-						<div><a href="http://wpfreetheme.space"><?php echo esc_html(get_theme_mod('footer_text', esc_html__('Copyright Text' ,'agency-starter')) ); ?></a></div>
+						<div><a href="http://wpfreetheme.space"><?php echo esc_html(get_theme_mod('footer_text', '') ); ?></a></div>
 				</div><!-- .site-info -->
 			</div>
 					

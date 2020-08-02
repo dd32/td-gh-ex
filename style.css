@@ -1,11 +1,12 @@
 /*
 Author: wpbusinessthemes
 Theme Name: Agency Starter
+Theme URI: https://wpfreetheme.space/product/agency-starter-theme/
 Author URI: https://wpfreetheme.space/
-Version: 1.0.1
+Version: 1.0.2
 Requires PHP: 5.6
 Tested up to: 5.4.2
-Description: Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpfreetheme.space/product/agency-starter-pro/
+Description: Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpfreetheme.space/product/agency-starter-theme/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog, e-commerce, theme-options
@@ -2966,7 +2967,7 @@ p > video {
 
 @media screen and (max-width: 56.875em) {
 
-	.site-header-main .contact-info {
+	.site-header .contact-info {
 		text-align:center;
 	}
 	
@@ -3565,17 +3566,17 @@ p > video {
  */
 
 @media screen and (min-width: 61.5625em) {
-	
 
-	.site-header-main .contact-info div {
+
+	.site-header .contact-info div {
 		float: left;
 	}
 		
-	.site-header-main .contact-info {
+	.site-header .contact-info {
 		float: left;
 	}	
 	
-	.site-header-main .social-navigation {
+	.site-header .social-navigation {
 		float:right;
 	}	
 	
@@ -4478,9 +4479,7 @@ p > video {
  */
  
 .contact-ribbon { 
-	clear:both;
-	padding-top: 10px;
-	padding-bottom: 10px;	
+	clear:both;	
 }
 .contact-info-container {
 	margin-left: -14px;
@@ -4489,37 +4488,38 @@ p > video {
 .social-navigation-container {
 	margin-right: -15px;
 }
-.site-header-main .contact-info {
+.site-header .contact-info {
 	padding: 4px 0px 3px;
 }
-.site-header-main .contact-info a { }
+.site-header .contact-info a { }
 
-.site-header-main .contact-info div {
+.site-header .contact-info div {
     margin-right: 10px;
 }
 
-.site-header-main .contact-info .fa {
+.site-header .contact-info .fa {
     font-size: 1.2em;
     margin-right: 5px;
     vertical-align: middle;
 }
 
-.site-header-main .contact-info .phone .fa {
-    font-size: 1.5em;
+.site-header .contact-info .phone .fa {
+    font-size: 1.2em;
 }
 
-.site-header-main .contact-info .address {
+.site-header .contact-info .address {
     display: inline-block;
     font-style: normal;
   	margin-right: 9px;
 }
 
-.site-header-main .social-navigation a {
+.site-header .social-navigation a {
 	border-color: transparent;
 }
 
-.site-header-main .social-navigation li {
+.site-header .social-navigation li {
 	margin-right:0px;
+	margin-bottom: 0px;
 }
 
 .contact-ribbon .fa,
@@ -5202,7 +5202,17 @@ button.header-search-button {
 
 /* cart icon */
 .cart-contents-count.fa:before {
-	font-size:18px;
+	font-size:17px;
+}
+
+.cart-contents-count span {
+	color: #fff;
+	padding: 2px 4px;
+	border-radius: 24px;
+	position: absolute;
+	top: 0px;
+	font-size: 13px;
+	box-shadow: 0px 1px 2px 1px #f2f2f2;
 }
 
 .scroll-to-top {
