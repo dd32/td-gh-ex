@@ -40,6 +40,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.2 =
+* update used images with CC0 license
+
 = 1.2.1 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -118,7 +121,7 @@ Installation using 'Add New Theme'
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (above cols img), © 2017 @Myriams-Fotos https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
-* screenshot.png (col img), © 2017 @congerdesign https://pixabay.com/en/book-old-book-read-used-2363881/, CC0
-* screenshot.png (col img), © 2017 @Sundine https://pixabay.com/en/book-flowers-read-white-dreams-2436058/, CC0
-* screenshot.png (col img), © 2017 @congerdesign https://pixabay.com/en/book-read-relax-meadow-book-pages-2304389/, CC0
+* screenshot.png (above cols img), © 2017 @Pxhere https://pxhere.com/en/photo/860339, CC0
+* screenshot.png (col img), © 2017 @Pxhere https://pxhere.com/en/photo/817620, CC0
+* screenshot.png (col img), © 2017 @Pxhere https://pxhere.com/en/photo/974863, CC0
+* screenshot.png (col img), © 2017 @Pxhere https://pxhere.com/en/photo/1391274, CC0
