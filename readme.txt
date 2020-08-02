@@ -40,6 +40,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.0 =
+* update used images with CC0 license
+
 = 1.1.9 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -112,7 +115,7 @@ Installation using 'Add New Theme'
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (above cols), © 2016 @Oakapplehabdash https://pixabay.com/en/handmade-craft-sewing-hobby-1153614/, CC0
-* screenshot.png (col), © 2017 @nicolettazanella https://pixabay.com/en/frame-weaving-lana-thread-handmade-3019254/, CC0
-* screenshot.png (col), © 2017 @silviarita https://pixabay.com/en/soap-horsetail-salt-blossom-bloom-2333412/, CC0
-* screenshot.png (col), © 2016 @LubosHouska https://pixabay.com/en/potter-ceramics-clay-circle-1139047/, CC0
+* screenshot.png (above cols), © 2017 @Pxhere https://pxhere.com/en/photo/660225, CC0
+* screenshot.png (col), © 2017 @Pxhere https://pxhere.com/en/photo/495246, CC0
+* screenshot.png (col), © 2017 @Pxhere https://pxhere.com/en/photo/662695, CC0
+* screenshot.png (col), © 2017 @Pxhere https://pxhere.com/en/photo/1292576, CC0
