@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.3.4 =
+* update used images with CC0 license
+
 = 1.3.3 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -163,9 +166,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.ba-cond.js, © 2009 Ben Alman, MIT
 * js/jquery.ba-cond.min.js, © 2009 Ben Alman, MIT
 * js/jquery.slitslider.js, © 2012 Codrops, MIT
-* images/slider/1.jpg, © 2018 @PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
-* images/slider/2.jpg, © 2015 @geralt https://pixabay.com/en/banner-header-gull-bird-fly-1090835/, CC0
-* images/slider/3.jpg, © 2016 @Devanath https://pixabay.com/en/silhouette-blur-red-focus-sun-1304141/, CC0
-* images/slider/4.jpg, © 2016 @kalhh https://pixabay.com/en/sunset-water-grass-sky-1487258/, CC0
-* images/slider/5.jpg, © 2014 @RalfBeck https://pixabay.com/en/sun-fireball-sunset-sea-evening-sky-404062/, CC0
-* screenshot.png (slide img), © 2018 @PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1382503, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/514434, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/626294, CC0
+* images/slider/4.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1031152, CC0
+* images/slider/5.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/798749, CC0
+* screenshot.png (slide img), © 2017 @Pxhere https://pxhere.com/en/photo/1382503, CC0
