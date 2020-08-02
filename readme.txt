@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.3.0 =
+* update used images with CC0 license
+
 = 1.2.9 =
 * update used images with CC0 license
 
