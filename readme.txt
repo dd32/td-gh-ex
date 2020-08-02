@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.4 =
+* update used images with CC0 license
+
 = 1.2.3 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -127,7 +130,7 @@ Installation using 'Add New Theme'
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (thumbnail image), © freestocks.org https://unsplash.com/photos/VFs2fZEVkXo, CC0
-* screenshot.png (thumbnail image), © Toa Heftiba https://unsplash.com/photos/5WbYFH0kf_8, CC0
-* screenshot.png (sidebar image), © 2017 @Hope_first https://pixabay.com/en/pink-magazine-gloss-zephyr-sweet-2791366/, CC0
-* screenshot.png (sidebar image), © 2017 StockSnap https://pixabay.com/en/green-plant-white-table-work-desk-2599771/, CC0
+* screenshot.png (thumbnail image), © 2017 @Pxhere https://pxhere.com/en/photo/722791, CC0
+* screenshot.png (thumbnail image), © 2017 @Pxhere https://pxhere.com/en/photo/722800, CC0
+* screenshot.png (sidebar image), © 2017 @Pxhere https://pxhere.com/en/photo/722963, CC0
+* screenshot.png (sidebar image), © 2017 @Pxhere https://pxhere.com/en/photo/876097, CC0
