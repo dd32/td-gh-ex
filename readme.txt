@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.4 =
+* update used images with CC0 license
+
 = 1.2.3 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -133,9 +136,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.imgslider.js, © 2012 Codrops, MIT
 * js/modernizr.custom.26887.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Alexander Farkas, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/modernizr.custom.26887.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Alexander Farkas, Patrick Kettner, Stu Cox, Richard Herrera, MIT
-* images/slider/1.jpg, © 2014 @DarkoStojanovic https://pixabay.com/en/doctor-medical-medicine-health-563428/, CC0
-* images/slider/2.jpg, © 2017 @stevepb https://pixabay.com/en/schuessler-minerals-2867822/, CC0
-* images/slider/3.jpg, © 2018 @typographyimages https://pixabay.com/en/cosmetic-oil-essential-oil-3493928/, CC0
-* images/slider/4.jpg, © 2018 @mohamed_hassan https://pixabay.com/en/essential-oil-flower-plant-nature-3532970/, CC0
-* images/slider/5.jpg, © 2016 @sasint https://pixabay.com/en/hospital-clinic-lamp-light-room-1822457/, CC0
-* screenshot.png (slider image), © 2017 @stevepb https://pixabay.com/en/schuessler-minerals-2867822/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/917205, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/896038, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/970050, CC0
+* images/slider/4.jpg, © 2018 @Pxhere https://pxhere.com/en/photo/1437457, CC0
+* images/slider/5.jpg, © 2020 @Pxhere https://pxhere.com/en/photo/1620247, CC0
+* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/896038, CC0
