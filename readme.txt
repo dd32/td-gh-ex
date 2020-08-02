@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+== 1.1.6 =
+* update used images with CC0 license
+
 == 1.1.5 =
 * update 'Requires PHP' tag in style.css
 
@@ -105,4 +108,4 @@ AyaGreen WordPress Theme bundles the following third-party resources:
 
 == Resources ==
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* screenshot.png (slider image), © 2014 @sonnydelrosario https://pixabay.com/en/beach-wind-farm-bangui-ilocos-norte-375069/, CC0
+* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/1377161, CC0
