@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.2 =
+* update used images with CC0 license
+
 = 1.2.1 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -122,7 +125,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Twenty Nineteen 1.4 (Code Block CSS), © 2018 - 2019 wordpressdotorg, GNU v2.0
 * Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* images/slider/1.jpg, © 2016 @Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
-* images/slider/2.jpg, © 2014 @gollosojov23 https://pixabay.com/en/coffee-cup-drink-espresso-hot-3348813/, CC0
-* images/slider/3.jpg, © 2015 @Free-Photos https://pixabay.com/en/coffee-cup-drink-espresso-caffeine-690054/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/847370, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/663297, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/826266, CC0
 * screenshot.png (slider img), © 2016 @Pexels https://pxhere.com/bg/photo/847370, CC0
