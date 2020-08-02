@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.4 =
+* update used images with CC0 license
+
 = 1.2.3 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -134,6 +137,6 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * images/slider/1.jpg, © 2018 AyaTemplates, CC0
-* images/slider/2.jpg, © 2015 @Lalmch https://pixabay.com/en/computer-macbook-tablet-editing-767781/, CC0
-* images/slider/3.jpg, © 2015 @picjumbo_com https://pixabay.com/en/student-notebook-female-study-type-865073/, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/730629, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/730845, CC0
 * screenshot.png (slider image), © 2018 @AyaTemplates, CC0
