@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.3.3 =
+* update used images with CC0 license
+
 = 1.3.2 =
 * Main Menu: fix issue with keyboard navigation under IE and Edge
 
@@ -167,9 +170,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * js/modernizr.custom.46884.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/jquery.slicebox.js, © 2012 Codrops, MIT
-* images/slider/1.jpg, © 2016 @jeonghwaryu0 https://pixabay.com/en/hand-laptop-freelance-computer-1757224/, CC0
-* images/slider/2.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/startup-start-up-notebooks-creative-593335/, CC0
-* images/slider/3.jpg, © 2014 @markusspiske https://pixabay.com/en/computer-mouse-office-co-working-582045/, CC0
-* screenshot.png (slider img), © 2016 @jeonghwaryu0 https://pixabay.com/en/hand-laptop-freelance-computer-1757224/, CC0
-* screenshot.png (sidebar img 1), © 2018 @darkmoon1968 https://pixabay.com/en/notepad-mobile-phone-notebook-table-3316997/, CC0
-* screenshot.png (sidebar img 2), © 2018 @darkmoon1968 https://pixabay.com/en/laptop-computer-business-table-3317007/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1032559, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/764672, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/767599, CC0
+* screenshot.png (slider img), © 2017 @Pxhere https://pxhere.com/en/photo/1032559, CC0
+* screenshot.png (sidebar img 1), © 2020 @Pxhere https://pxhere.com/en/photo/1622682, CC0
+* screenshot.png (sidebar img 2), © 2018 @Pxhere https://pxhere.com/en/photo/1442613, CC0
