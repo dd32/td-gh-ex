@@ -63,6 +63,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+== 1.1.3 =
+* update used images with CC0 license
+
 == 1.1.2 =
 * update 'Requires PHP' tag in style.css
 
@@ -116,7 +119,7 @@ AyaClub is distributed under the terms of the GNU General Public License v2
 
 == Resources ==
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* screenshot.png (slide), © Mariamichelle https://pixabay.com/en/beauty-salon-hair-dresser-table-3277314/, CC0
-* screenshot.png (col 1), © jonas-svidras https://pixabay.com/en/beautiful-woman-beauty-bright-3116587/, CC0
-* screenshot.png (col 2), © Starkvisuals https://pixabay.com/en/hair-lipstick-girl-fashion-model-2537564/, CC0
-* screenshot.png (col 3), © terribileclaudio https://pixabay.com/en/models-hair-salons-sexy-hair-3740625/, CC0
+* screenshot.png (slide), © 2018 @Pxhere https://pxhere.com/en/photo/1538693, CC0
+* screenshot.png (col 1), © 2018 @Pxhere https://pxhere.com/en/photo/1427193, CC0
+* screenshot.png (col 2), © 2020 @Pxhere https://pxhere.com/en/photo/1620450, CC0
+* screenshot.png (col 3), © 2017 @Pxhere https://pxhere.com/en/photo/601444, CC0
