@@ -40,6 +40,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.9 =
+* update used images with CC0 license
+
 = 1.2.8 =
 * fix issue with IE and Edge browsers with keyboard navigation of main menu
 
@@ -145,7 +148,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * assets/js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
 * assets/css/animate.css, © 2017 Daniel Eden, MIT
 * assets/js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © 2013 @12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
-* images/slider/2.jpg, © 2017 @Alexas_Fotos https://pixabay.com/en/gallery-women-images-despair-2932005/, CC0
-* images/slider/3.jpg, © 2013 @12019 https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/, CC0
-* screenshot.png (slider image), © 2013 @12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1121404, CC0
+* images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/525351, CC0
+* images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1121281, CC0
+* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/1121404, CC0
