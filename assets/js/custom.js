@@ -18,6 +18,13 @@
             }
         });
 		
+		jQuery(".theme-main-slider").focusin(function(){
+			jQuery('.navbar-collapse').removeClass('show');
+		});
+		jQuery(".theme-page-header-area").focusin(function(){
+			jQuery('.navbar-collapse').removeClass('show');
+		});
+		
 		
 		/* ---------------------------------------------- /*
          * Scroll top
