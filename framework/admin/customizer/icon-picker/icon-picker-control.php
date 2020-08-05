@@ -17,7 +17,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 	class Kirki_Controls_Agama_Icon_Picker_Control extends WP_Customize_Control {
         public $type    = 'agip';
         public function enqueue() {
-            $uri = get_template_directory_uri() . '/framework/admin/modules/icon-picker/';
+            $uri = get_template_directory_uri() . '/framework/admin/customizer/icon-picker/';
             
             // Deregister FontAwesome if enqueued by third party plugins.
             wp_deregister_style( 'font-awesome' );

@@ -19,7 +19,7 @@ if( ! defined( 'ABSPATH' ) ) {
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
+			<?php if ( ! is_page_template( 'templates/front-page.php' ) ) : ?>
 			<?php the_post_thumbnail(); ?>
 			<?php endif; ?>
 			<?php if( ! is_front_page() && ! get_theme_mod( 'agama_breadcrumb', false ) ): ?>

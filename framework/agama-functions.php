@@ -203,7 +203,7 @@ function agama_return_image_src( $thumb_size ) {
  * @return string
  */
 function agama_is_page_template( $page ) {
-	if( is_page_template( 'page-templates/'.$page ) ) {
+	if( is_page_template( 'templates/'.$page ) ) {
 		return true;
 	}
 	return false;

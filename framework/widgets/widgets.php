@@ -5,9 +5,6 @@ if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Include Free Widgets
-get_template_part( 'framework/widgets/widget-about' );
-
 /**
  * Register Widgets & Sidebars
  * 
@@ -80,28 +77,6 @@ if( ! class_exists( 'Agama_Widgets' ) ) {
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			) );
-            
-            /**
-             * Register Page Widgets
-             *
-             * @since 1.3.8
-             */
-            if( ! is_admin() || is_customize_preview() ) {
-                $pages = get_pages();
-                if( is_array( $pages ) ) {
-                    foreach( $pages as $page ) {
-                        register_sidebar( array(
-                            'name'          => $page->post_title,
-                            'id'            => 'page-widget-' . esc_attr( $page->ID ),
-                            'description'   => esc_attr__( 'Appears on', 'agama' ) .' '. esc_html( $page->post_title ),
-                            'before_widget' => '<div id="%1$s" class="page-widget %2$s">',
-                            'after_widget'  => '</div>',
-                            'before_title'  => '<h2 class="widget-title">',
-                            'after_title'   => '</h2>',
-                        ) );
-                    }
-                }
-            }
              
 		}
 	}

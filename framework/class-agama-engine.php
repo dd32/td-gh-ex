@@ -134,11 +134,11 @@ class Engine {
         if( ! defined( 'AGAMA_IMG' ) )
               define( 'AGAMA_IMG', AGAMA_URI . 'assets/img/' );
 
-        if( ! defined( 'AGAMA_MODULES_DIR' ) )
-              define( 'AGAMA_MODULES_DIR', AGAMA_FMW . 'admin/modules/' );
+        if( ! defined( 'AGAMA_CUSTOMIZER_DIR' ) )
+              define( 'AGAMA_CUSTOMIZER_DIR', AGAMA_FMW . 'admin/customizer/' );
 
-        if( ! defined( 'AGAMA_MODULES_URI' ) ) 
-              define( 'AGAMA_MODULES_URI', AGAMA_URI . 'framework/admin/modules/' );
+        if( ! defined( 'AGAMA_CUSTOMIZER_URI' ) ) 
+              define( 'AGAMA_CUSTOMIZER_URI', AGAMA_URI . 'framework/admin/customizer/' );
     }
     
     /**
@@ -151,12 +151,11 @@ class Engine {
      * @return void
      */
     private function get_template_parts() {
-        get_template_part( 'framework/admin/admin-init' );
+        get_template_part( 'framework/admin/class-admin-setup' );
         get_template_part( 'framework/class-agama-filters' );
         get_template_part( 'framework/agama-actions' );
         get_template_part( 'framework/agama-functions' );
         get_template_part( 'framework/class-agama-inline-style' );
-        get_template_part( 'framework/class-agama-plugin-activation' );
         get_template_part( 'framework/class-agama-helper' );
 		get_template_part( 'framework/class-agama-slider' );
 		get_template_part( 'framework/class-agama' );
@@ -164,7 +163,6 @@ class Engine {
 		get_template_part( 'framework/class-agama-breadcrumb' );
 		get_template_part( 'framework/class-agama-frontpage-boxes' );
 		get_template_part( 'framework/widgets/widgets' );
-        get_template_part( 'framework/admin/customizer/builder/class-agama-page-builder' );
     }
     
 }

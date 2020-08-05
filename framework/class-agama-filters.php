@@ -140,17 +140,17 @@ class Filters {
         }
 
         // Template full-width class.
-        if( is_page_template( 'page-templates/template-full-width.php' ) ) { 
+        if( is_page_template( 'templates/template-full-width.php' ) ) { 
             $classes[] = 'template-full-width'; 
         }
 
         // Template fluid class.
-        if( is_page_template( 'page-templates/template-fluid.php' ) ) { 
+        if( is_page_template( 'templates/template-fluid.php' ) ) { 
             $classes[] = 'template-fluid'; 
         }
 
         // Template empty class.
-        if( is_page_template( 'page-templates/template-empty.php' ) ) {
+        if( is_page_template( 'templates/template-empty.php' ) ) {
             $classes[] = 'template-empty';
         }
 

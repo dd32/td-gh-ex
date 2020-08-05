@@ -68,8 +68,8 @@ final class Agama_Customizer_Upsell {
     public function sections( $manager ) {
 
         // Load custom sections.
-        get_template_part( 'framework/admin/modules/agama-upsell/class-agama-customize-theme-info-main' );
-        get_template_part( 'framework/admin/modules/agama-upsell/class-agama-customize-upsell-section' );
+        get_template_part( 'framework/admin/customizer/agama-upsell/class-agama-customize-theme-info-main' );
+        get_template_part( 'framework/admin/customizer/agama-upsell/class-agama-customize-upsell-section' );
 
         // Register custom section types.
         $manager->register_section_type( 'Agama_Customizer_Theme_Info_Main' );
@@ -187,14 +187,14 @@ final class Agama_Customizer_Upsell {
 
         wp_enqueue_script( 
             'agama-upsell-js', 
-            AGAMA_MODULES_URI . 'agama-upsell/js/agama-upsell-customize-controls.js', 
+            AGAMA_CUSTOMIZER_URI . 'agama-upsell/js/agama-upsell-customize-controls.js', 
             [ 'customize-controls' ], 
             Agama()->version() 
         );
 
         wp_enqueue_style( 
             'agama-theme-info-style', 
-            AGAMA_MODULES_URI . 'agama-upsell/css/style.css', 
+            AGAMA_CUSTOMIZER_URI . 'agama-upsell/css/style.css', 
             [], 
             Agama()->version()
         );

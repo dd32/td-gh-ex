@@ -67,7 +67,5 @@ if( ! defined( 'ABSPATH' ) ) {
 		<div id="main" class="wrapper"> 
 			<div class="vision-row tv-row">
 
-                <?php do_action( 'agama_customize_build_page_action_start' ); ?>
-
 				<?php Agama_Helper::get_front_page_boxes(); ?>
 				

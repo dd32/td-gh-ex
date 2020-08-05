@@ -3,6 +3,14 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.5.7 05 August 2020 =
+* Added "template-parts" folder and moved proper template part files there.
+* Updated Kirki framework to the latest version.
+* Updated theme translation files.
+* Renamed few files for better understating.
+* Renamed folder "page-templates" to "templates".
+* Removed completely the widget page builder code and it's files.
+
 = 1.5.6 - 12 June 2020 =
 * Updated Kirki framework to the latest version.
 * Updated translation files.

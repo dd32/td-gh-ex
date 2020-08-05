@@ -13,11 +13,9 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include necessary files.
-get_template_part( 'framework/admin/customizer/controls/control-editor' );
-get_template_part( 'framework/admin/modules/icon-picker/icon-picker-control' );
-get_template_part( 'framework/admin/partial-refresh' );
-get_template_part( 'framework/admin/modules/agama-upsell/class-customize' );
-get_template_part( 'framework/admin/extra' );
+get_template_part( 'framework/admin/class-partial-refresh' );
+get_template_part( 'framework/admin/customizer/icon-picker/icon-picker-control' );
+get_template_part( 'framework/admin/customizer/agama-upsell/class-customize' );
 
 // Disable Kirki Telemetry Module
 add_filter( 'kirki_telemetry', '__return_false' );
@@ -66,20 +64,6 @@ add_action( 'customize_register', 'agama_customize_register' );
     Kirki::add_config( 'agama_options', array(
         'option_type' => 'theme_mod',
         'capability'  => 'edit_theme_options'
-    ) );
-############################################################
-# PAGE BUILDER SECTION
-############################################################
-    Kirki::add_section( 'agama_page_builder_section', array(
-        'title'     => esc_attr__( 'Page Builder', 'agama' ),
-        'priority'  => 1
-    ) );
-    Kirki::add_field( 'agama_options', array(
-        'label'     => esc_attr__( 'Page to Build', 'agama' ),
-        'tooltip'   => esc_attr__( 'Select page to build.', 'agama' ),
-        'section'   => 'agama_page_builder_section',
-        'settings'  => 'agama_page_builder_page',
-        'type'      => 'dropdown-pages'
     ) );
 #########################################################
 # SITE IDENTITY PANEL
@@ -2791,7 +2775,7 @@ function agama_customize_css() { ?>
 	}
 	<?php endif; ?>
         
-    <?php if( is_page_template( 'page-templates/template-fluid.php' ) ): ?>
+    <?php if( is_page_template( 'templates/template-fluid.php' ) ): ?>
     div#page { padding: 0; }
     .vision-row { max-width: 100%; }
     <?php endif; ?>
@@ -2887,20 +2871,6 @@ function customize_styles_agama_support( $input ) { ?>
         .accordion-section.control-section.control-panel.control-panel-default h3:before,
         .accordion-section.control-section.control-section-kirki-default h3:before {
             font-family: FontAwesome;
-        }
-        #accordion-section-agama_page_builder_section {
-            position: relative;
-        }
-        #accordion-section-agama_page_builder_section h3:before {
-            content: '\f0f7';
-        }
-        #accordion-section-agama_page_builder_section:after {
-            content: '\new' !important;
-            position: absolute;
-            top: 12px;
-            right: 30px;
-            color: red;
-            z-index: 1;
         }
         #accordion-panel-agama_site_identity_panel h3:before {
             content: '\f2ba';
