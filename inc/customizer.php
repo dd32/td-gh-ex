@@ -299,6 +299,22 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 			'no'  => __( 'No', 'apex' )
 		)
 	) );
+	// setting - featured image captions
+	$wp_customize->add_setting( 'featured_image_captions', array(
+		'default'           => 'no',
+		'sanitize_callback' => 'ct_apex_sanitize_yes_no_settings'
+	) );
+	// control - featured image captions
+	$wp_customize->add_control( 'featured_image_captions', array(
+		'label'    => __( 'Show the Featured Image caption on the post page?', 'apex' ),
+		'section'  => 'apex_additional',
+		'settings' => 'featured_image_captions',
+		'type'     => 'radio',
+		'choices' => array(
+			'yes' => __( 'Yes', 'apex' ),
+			'no'  => __( 'No', 'apex' )
+		)
+	) );
 
 	/***** Custom CSS *****/
 
@@ -392,7 +408,7 @@ function ct_apex_sanitize_phone( $input ) {
 }
 
 function ct_apex_customize_preview_js() {
-	if ( !function_exists( 'ct_apex_pro_init' ) ) {
+	if ( !function_exists( 'ct_apex_pro_init' ) && !(isset($_GET['mailoptin_optin_campaign_id']) || isset($_GET['mailoptin_email_campaign_id'])) ) {
 		$url = 'https://www.competethemes.com/apex-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Apex%20Pro%20-%20Customizer';
 		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Customize Colors with Apex Pro <span>&rarr;</span></a></div>')</script>";
 		echo apply_filters('ct_apex_customizer_ad', $content);
