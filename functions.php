@@ -221,9 +221,6 @@ function ariele_lite_scripts() {
 
 	// Stylesheets
 	wp_enqueue_style( 'ariele-style', get_stylesheet_uri() );
-
-	// Skip to link
-	wp_enqueue_script( 'empt-skip-link-focus-fix', get_template_directory_uri() . '/js' . $build . '/skip-link-focus-fix' . $suffix . '.js', array(), null, true );
 	
 	// Main navigation
 	wp_enqueue_script( 'ariele-menu', get_template_directory_uri() . '/js' . $build . '/menu' . $suffix . '.js', array( 'jquery' ), null, true );		
