@@ -1,5 +1,8 @@
 == Changelog ==
 
+@version 2.0.1
+1. Changed the content of the screenshot.
+
 @version 2.0
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.

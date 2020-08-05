@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 2.0
+Stable tag: 2.0.1
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -38,6 +38,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.1
+1. Changed the content of the screenshot.
 
 @version 2.0
 1. Implement the Accessibility including skip to content and keyboard navigation.
