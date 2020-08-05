@@ -3,40 +3,16 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 2.2
+Stable tag: 2.2.1
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
 
 == Description ==
-BusiProf Theme README.
 
-Busiprof is a business WordPress theme.  Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof
+Busiprof is a business WordPress theme. Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof
 
-Author: Webriti
-
-About:
-BusiProf a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.webriti.com). 
-
-The CSS, XHTML and design is released under GPL:
-http://www.opensource.org/licenses/gpl-license.php
-
-Feel free to use as you please. I would be very pleased if you could keep the Author-link in the footer. Thanks and enjoy.
-
-Busiprof supports Custom Menu, Widgets and 
-the following extra features:
-
- - Pre-installed menu and content colors
- - Responsive
- - Custom sidebars
- - Support for post thumbnails
- - Similar posts feature
- - 4 widgetized areas in the footer
- - Customise Front Page 
- - Custom footer
- - Translation Ready 
  
-
 # Basic Setup of the Theme.
 -----------------------------------
 Fresh installation!
@@ -44,10 +20,6 @@ Fresh installation!
 1. Upload the BusiProf Theme folder to your wp-content/themes folder.
 2. Activate the theme from the WP Dashboard.
 3. Done!
-
-=== Images ===
-
-All images in BusiProf are licensed under the terms of the GNU GPL.
 
 
 == Keyboard navigation ==
@@ -59,20 +31,25 @@ Keyboard navigation is working properly in the forward direction by using the ta
 - Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
 - Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
 
-=============Page Templates======================
+============= Page Templates ======================
 1. Contact  Page Tempalte:- Create a page as you do in WordPress and select the page template with the name 'Contact'
 
 
-===========Front Page Added with the theme=================
+=========== Front Page Added with the theme =================
 1 It has header(logo + menus),Home Featured Image, services,recent comments widgets and footer.
 
-======Site Title and Description=============
+====== Site Title and Description =============
 Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
 	
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+
+== Changelog ==
+
+@version 2.2.1
+1. Changed the content of the screenshot.
 @version 2.2
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.
@@ -276,7 +253,7 @@ Small Styling added for Options Panel.
 released
 
 
-== Credits ==
+== External resources ==
 
 Font Awesome:
 Copyright: (c) Dave Gandy
@@ -297,6 +274,9 @@ Customizer Notify:
 Copyright: (c) Mikesetzer
 License: Under GNU General Public License
 Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
+
+
+== Images ==
 
 Image used in the Screenshot
 License - CC0 Public domain
