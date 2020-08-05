@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 1.9
+Stable tag: 1.9.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,9 @@ ElitePress WordPress Theme, Copyright (C) 2019, Webriti
 ElitePress Pro is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@version 1.9.1
+1. Changed the content of the screenshot.
 @version 1.9
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.
