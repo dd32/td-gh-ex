@@ -19,14 +19,7 @@
 				<div class="row">
 					<div class="col-md-7">
 						<p class="site-copyright">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'articlepress' ) ); ?>">
-								<?php
-								/* translators: %s: CMS name, i.e. WordPress. */
-								printf( esc_html__( 'Proudly powered by %s', 'articlepress' ), 'WordPress' );
-								?>
-							</a>
-							<span class="sep"> | </span>
-								&copy; <?php esc_html( the_date( 'Y' )); ?> <?php esc_html( bloginfo( 'title' ) ) ;?> <?php esc_html_e('Designed by', 'articlepress') ?> <a href="<?php esc_url( __( 'https://themeasia.net', 'articlepress' ) ); ?>"><?php esc_html_e( 'ThemeAsia','articlepress' ) ?></a>
+							&copy; <?php esc_html( the_date( 'Y' )); ?> <?php esc_html( bloginfo( 'title' ) ) ;?> <?php esc_html_e('Designed by', 'articlepress') ?> <a href="<?php esc_url( __( 'https://themeasia.net', 'articlepress' ) ); ?>"><?php esc_html_e( 'ThemeAsia','articlepress' ) ?></a>
 						</p>
 					</div>
 
