@@ -360,25 +360,30 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		)
 	);
 	
-	// layout 2
-	$wp_customize->add_setting( 'header_layout_2' , array(
-		'default'    => 0,
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'agency_starter_sanitize_checkbox',
+	// header layout
+	
+	$wp_customize->add_setting( 'header_layout' , array(
+		'default'    => '1',
+		'sanitize_callback' => 'agency_starter_sanitize_select',
 	));
 
-	$wp_customize->add_control('header_layout_2' , array(
-		'label' => __('Set Header List Layout','agency-starter' ),
+	$wp_customize->add_control('header_layout' , array(
+		'label' => __('Select Header Layout', 'agency-starter' ),
 		'section' => 'theme_header',
-		'type'=> 'checkbox',
-	));	
+		'type' => 'select',
+		'choices' => array(
+			'0' => __('Default', 'agency-starter' ),
+			'1' => __('WooCommerce', 'agency-starter' ),
+			'2' => __('List', 'agency-starter' ),
+		),
+	) );		
 	
 	// woo menubar background
  
 		$wp_customize->add_setting(
 			'woocommerce_menubar_color',
 			array(
-				'default'     => 'rgba(231,173,36,0)',
+				'default'     => '#ce0c0c',
 				'type'        => 'theme_mod',			
 				'transport'   => 'refresh',
 				'sanitize_callback' => 'agency_starter_rgba_sanitization_callback',
@@ -391,7 +396,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 				$wp_customize,
 				'woocommerce_menubar_color',
 				array(
-					'label'         =>  __('Menubar Background (Header List Layout)','agency-starter' ),
+					'label'         =>  __('Menubar Background (WooCommerce & List Layout)','agency-starter' ),
 					'section'       => 'theme_header',
 					'settings'      => 'woocommerce_menubar_color',
 					'show_opacity'  => true, // Optional.
@@ -404,7 +409,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'woocommerce_menubar_text_color',
 		array(
-			'default'           => '#1e1e1e',
+			'default'           => '#fff',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -415,7 +420,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 			$wp_customize,
 			'woocommerce_menubar_text_color',
 			array(
-				'label'   => __( 'Menu Color (Header List Layout) ', 'agency-starter' ),
+				'label'   => __( 'Menu Color (WooCommerce & List Layout) ', 'agency-starter' ),
 				'section' => 'theme_header',
 			)
 		)

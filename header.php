@@ -27,27 +27,36 @@ if(get_theme_mod("box_layout_mode", false))	echo '<div class="box-layout-style">
 		
 		<header id="masthead" class="site-header" role="banner" >
 
-			<?php get_template_part( 'templates/contact', 'section' ); ?>
-					
-			<div id="site-header-main" class="site-header-main">
+			<?php 
+			get_template_part( 'templates/contact', 'section' );
 			
-			<?php if (get_theme_mod('header_layout_2',0)) : ?>
-				<?php get_template_part( 'templates/header', 'list' ); ?>			
-			<?php else: ?>
-				<?php get_template_part( 'templates/header', 'default' ); ?>			
-			<?php endif; ?>
+			$business_starter_header = get_theme_mod('header_layout', 1);
 			
-			<?php if(is_front_page()): ?>
-				<?php get_template_part( 'templates/header', 'hero' ); ?>
-			<?php endif; ?>
+			if ($business_starter_header == 0) {
+			    echo '<div id="site-header-main" class="site-header-main">';
+				get_template_part( 'templates/header', 'default' );
+				//woocommerce layout
+			} else if($business_starter_header == 1 && class_exists('WooCommerce')){
+				get_template_part( 'templates/woocommerce', 'header' ); 
+				//list layout
+			} else if ($business_starter_header == 2){
+				get_template_part( 'templates/header', 'list' );
+			} else {
+				//default layout
+				echo '<div id="site-header-main" class="site-header-main">';
+				get_template_part( 'templates/header', 'default' );
+			}
 			
+			if(is_front_page()){
+				get_template_part( 'templates/header', 'hero' );
+				get_template_part( 'templates/header', 'shortcode' );
+			}
 			
-			<?php if(is_front_page()): ?>
-				<?php get_template_part( 'templates/header', 'shortcode' ); ?>
-			<?php endif; ?>				
-			
-			</div><!-- .site-header-main -->
-		
+			/* end header div in default header layouts */
+			if ($business_starter_header == 0) {
+				echo '</div><!-- .site-header-main -->';
+			}
+			?>		
 
 		</header><!-- .site-header -->
 		

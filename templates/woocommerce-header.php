@@ -2,8 +2,8 @@
   <!--start header-->
   <div class="container header-full-width">
     <div class="row vertical-center">
-      <div class="col-sm-12 header-layout-2">
-        <div class="site-branding">
+      <div class="col-sm-5">
+        <div class="site-branding vertical-center">
           <?php agency_starter_the_custom_logo(); ?>
           <div class="site-info-container">
             <?php if ( is_front_page() && is_home() ) : ?>
@@ -15,19 +15,61 @@
               <?php bloginfo( 'name' ); ?>
               </a></p>
             <?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) :
-				?>
+				endif;
+	
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) :
+					?>
             <p class="site-description"><?php echo esc_html($description); ?></p>
             <?php endif; ?>
           </div>
         </div>
         <!-- .site-branding -->
       </div>
+      <div class="col-sm-7">
+        <div class="woo-search">
+          <?php if ( class_exists( 'WooCommerce' ) ) { ?>
+          <div class="header-search-form">
+            <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+              <select class="header-search-select" name="product_cat">
+                <option value="">
+                <?php esc_html_e( 'All Categories', 'agency-starter' ); ?>
+                </option>
+                <?php
+								/*
+								 * @package envo-ecommerce
+								 * @subpackage agency-starter
+								 */
+								$args = array(
+									'taxonomy'     => 'product_cat',
+									'orderby'      => 'date',
+									'order'      	=> 'ASC',
+									'show_count'   => 1,
+									'pad_counts'   => 0,
+									'hierarchical' => 1,
+									'title_li'     => '',
+									'hide_empty'   => 1,
+								);
+								$categories = get_categories( $args);
+								foreach ( $categories as $category ) {
+									$option = '<option value="' . esc_attr( $category->category_nicename ) . '">';
+									$option .= esc_html( $category->cat_name );
+									$option .= ' (' . absint( $category->category_count ) . ')';
+									$option .= '</option>';
+									echo ($option); 
+								}
+								?>
+              </select>
+              <input type="hidden" name="post_type" value="product" />
+              <input class="header-search-input" name="s" type="text" placeholder="<?php esc_attr_e( 'Search products...', 'agency-starter' ); ?>"/>
+              <button class="header-search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+          </div>
+          <?php } ?>
+        </div>
+      </div>
     </div>
-    <!--end .column-->
+    <!--end .row-->
   </div>
   <!--end .container-->
 </div>

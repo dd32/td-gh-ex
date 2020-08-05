@@ -77,6 +77,8 @@ Image used in screenshot & default header :
 * Source: https://pxhere.com/en/photo/559565
 
 == Changelog ==
+= 1.0.3 =
+* Fixed css and added multiple header layouts
 
 = 1.0.1 =
 * Fixed escaping issues

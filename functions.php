@@ -472,3 +472,42 @@ function agency_starter_customizer_styles() { ?>
 add_action( 'customize_controls_print_styles', 'agency_starter_customizer_styles', 999 );
 
 
+define ('agency_starter_theme_url', 'https://wpfreetheme.space/product/agency-starter-theme/');
+define ('agency_starter_tutorial', 'https://wpfreetheme.space/wordpress/');
+/*
+ * https://developer.wordpress.org/reference/hooks/admin_notices/
+ * Displays theme info / quick help 
+ */
+if ( isset( $_GET['hide_admin_notice'] ) ) {
+		update_option('hide_admin_notice', 'true');
+} else {
+	$agency_starter_info = get_option('hide_admin_notice', 'false');
+	if ($agency_starter_info != 'true'){ 
+		add_action( 'admin_notices', 'agency_starter_help_notice' );
+	}
+}
+
+delete_option('header_layout');
+
+if(!function_exists('agency_starter_help_notice')):
+
+function agency_starter_help_notice() {
+    $class = 'notice notice-info is-dismissible';
+    $message = __( 'Great customizations, See Appearance - Customise - Theme options. ', 'agency-starter' );
+ 	$dismiss = __( 'Hide the Notice', 'agency-starter');
+	$tutorial = __( 'Tutorials', 'agency-starter');
+	$pro_notice =  __( 'Jump start with Free Demos & Learn More', 'agency-starter');
+    printf( '<div class="%1$s"> <p><strong><span>%2$s</span></strong> &nbsp;&nbsp; 
+	<strong><a href="%3$s" target="_blank"  class="dismiss-notice" style="color:#1b864a;text-transform: uppercase;">%4$s</a></strong> &nbsp;&nbsp;
+	<strong><a href="%5$s" target="_blank"  class="dismiss-notice">%6$s</a></strong> &nbsp;&nbsp;
+	<em><a href="?hide_admin_notice" target="_self"  class="dismiss-notice">%7$s</a></em> </p></div>', 
+	esc_attr( $class ), 
+	esc_html( $message ), 
+	esc_url( agency_starter_theme_url ), 
+	esc_html( $pro_notice ), 
+	esc_url( agency_starter_tutorial ), 
+	esc_html( $tutorial ),
+	esc_html( $dismiss ) ); 
+}
+
+endif;

@@ -37,9 +37,9 @@ function agency_starter_get_theme_css( ) {
 	
 	$footer_border = get_theme_mod('footer_border', 1);
 	
-	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', 'rgba(231,173,36,0)');
+	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', '#ce0c0c');
 	
-	$woocommerce_menubar_text = get_theme_mod('woocommerce_menubar_text_color', '#1e1e1e');
+	$woocommerce_menubar_text = get_theme_mod('woocommerce_menubar_text_color', '#fff');
 	
 	return "
 	
@@ -84,6 +84,7 @@ function agency_starter_get_theme_css( ) {
 	
 	.site-header .contact-ribbon { 
 		background-color: ".$colors['header_contact_bg_color'].";
+		margin-bottom: 10px;
 	}
 					
 	.site-header { 
