@@ -383,7 +383,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		$wp_customize->add_setting(
 			'woocommerce_menubar_color',
 			array(
-				'default'     => '#ce0c0c',
+				'default'     => '#fff',
 				'type'        => 'theme_mod',			
 				'transport'   => 'refresh',
 				'sanitize_callback' => 'agency_starter_rgba_sanitization_callback',
@@ -409,7 +409,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'woocommerce_menubar_text_color',
 		array(
-			'default'           => '#fff',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -517,7 +517,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'header_contact_social_bg_color',
 		array(
-			'default'           => '#000',
+			'default'           => '#dd3333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
