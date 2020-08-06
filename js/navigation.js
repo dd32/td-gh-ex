@@ -166,6 +166,7 @@
         tabKey,
         shiftKey,
         menuToggleEl = $(".menu-toggle");
+        let toggleselector = _doc.querySelector(".menu-toggle");
       clickedEl = menuToggleEl.data("clicked", true);
 
       if (clickedEl && _doc.body.classList.contains("showing-menu")) {
@@ -191,16 +192,28 @@
         if (!shiftKey && tabKey && lastEl === activeEl) {
           event.preventDefault();
           firstEl.focus();
-          menuToggleEl.focus();
+          // menuToggleEl.focus();
           console.log("first");
         }
+        // if(tabKey && lastEl === activeEl){
+        //   menuToggleEl.focus();
+        //   console.log("another");
+        // }
 
         if (shiftKey && tabKey && firstEl === activeEl) {
           event.preventDefault();
           lastEl.focus();
           menuToggleEl.focus();
-          console.log("eel");
+          
         }
+        
+        console.log('active element', activeEl);
+        if(shiftKey && tabKey && toggleselector === activeEl){
+          event.preventDefault();
+             lastEl.focus();
+        }
+
+      
       }
     });
   }
