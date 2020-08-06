@@ -31,6 +31,26 @@ function advance_portfolio_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('advance_portfolio_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_portfolio_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_portfolio_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','advance-portfolio'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('advance_portfolio_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_portfolio_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_portfolio_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','advance-portfolio'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'advance_portfolio_logo_customize_register' );
 

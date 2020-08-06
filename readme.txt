@@ -119,6 +119,13 @@ Advance Portfolio is a clean, sleek and creative WordPress theme for building a 
   * Done with prefixing in custom.js.
   * Changed sanitize callback function.
 
+= 0.4.5 =
+  * Added enable/disable site title.
+  * Added enable/disable tagline.
+  * Changed all number type style in customizer.
+  * Resolved login page error.
+  * Updated POT file.
+
 == Resources ==
 
 Advance Portfolio WordPress Theme, Copyright 2018 Themeshopy
