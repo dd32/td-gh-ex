@@ -67,6 +67,11 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.74
+* Style fixes/tweaks
+* PHP fixes for child theme compatibility
+* Updated language .pot file
+
 #### 1.7.73
 * Style fixes/tweaks
 * Updated screenshot.png

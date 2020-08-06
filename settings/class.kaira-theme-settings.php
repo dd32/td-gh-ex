@@ -752,7 +752,7 @@ class Kaira_theme_settings {
 	* jQuery Tabs
 	*/
 	public function load_kaira_scripts() {
-        wp_register_script( 'kaira-theme-admin-js', get_stylesheet_directory_uri() . '/settings/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'iris', 'wp-color-picker' ), false, 1 );
+        wp_register_script( 'kaira-theme-admin-js', get_template_directory_uri() . '/settings/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'iris', 'wp-color-picker' ), false, 1 );
         wp_enqueue_script( 'kaira-theme-admin-js' );
         wp_enqueue_media();
 	}
@@ -762,7 +762,7 @@ class Kaira_theme_settings {
 	*/
 	public function load_kaira_styles() {
         wp_enqueue_style( 'wp-color-picker' );
-        wp_register_style( 'kaira-theme-admin-css', get_stylesheet_directory_uri() . '/settings/css/kaira-admin.css' );
+        wp_register_style( 'kaira-theme-admin-css', get_template_directory_uri() . '/settings/css/kaira-admin.css' );
         wp_enqueue_style( 'kaira-theme-admin-css' );
 	}
 	
