@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.4 =
+* updating slider images with CC0 license
+
 = 1.2.3 =
 * update used images with CC0 license
 
@@ -133,7 +136,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.slicebox.js, © 2012 Codrops, MIT
 * js/modernizr.custom.46884.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/modernizr.custom.46884.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
-* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1338927, CC0
+* images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1374298, CC0
 * images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/764672, CC0
 * images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/767599, CC0
-* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/1338927, CC0
+* screenshot.png (slider image), © 2017 @Pxhere https://pxhere.com/en/photo/1374298, CC0
