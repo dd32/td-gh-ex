@@ -17,10 +17,10 @@
 	<?php if( get_theme_mod( 'bb_wedding_bliss_date_hide',true) != '' || get_theme_mod( 'bb_wedding_bliss_author_hide',true) != '' || get_theme_mod( 'bb_wedding_bliss_comment_hide',true) != '') { ?>
 		<div class="metabox">
 			<?php if( get_theme_mod( 'bb_wedding_bliss_date_hide',true) != '') { ?>
-				<span class="entry-date"><i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><span>|</span>
+				<span class="entry-date"><i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('bb_wedding_bliss_metabox_separator_blog_post','|') ); ?>
 			<?php } ?>
 			<?php if( get_theme_mod( 'bb_wedding_bliss_author_hide',true) != '') { ?>
-	        	<span class="entry-author"><i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span><span>|</span>
+	        	<span class="entry-author"><i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span><?php echo esc_html( get_theme_mod('bb_wedding_bliss_metabox_separator_blog_post','|') ); ?>
 	        <?php } ?>
 	        <?php if( get_theme_mod( 'bb_wedding_bliss_comment_hide',true) != '') { ?>
 	        	<span class="entry-comments"><i class="fa fa-comments" aria-hidden="true"></i> <?php comments_number( __('0 Comment', 'bb-wedding-bliss'), __('0 Comments', 'bb-wedding-bliss'), __('% Comments', 'bb-wedding-bliss') ); ?> </span>

@@ -37,8 +37,14 @@ li#customize-control-logo_size {
     background: #fff;
     padding: 4px;
 }
-input#_customize-input-bb_wedding_bliss_button_padding_top_bottom, input#_customize-input-bb_wedding_bliss_button_padding_left_right,
-input#_customize-input-bb_wedding_bliss_button_border_radius{
+input#_customize-input-bb_wedding_bliss_button_padding_top_bottom, 
+input#_customize-input-bb_wedding_bliss_button_padding_left_right,
+input#_customize-input-bb_wedding_bliss_button_border_radius,
+input#_customize-input-bb_wedding_bliss_copyright_padding,
+input#_customize-input-bb_wedding_bliss_scroll_font_size_icon,
+input#_customize-input-bb_wedding_bliss_footer_content_font_size,
+input#_customize-input-bb_wedding_bliss_excerpt_number,
+input#_customize-input-bb_wedding_bliss_slider_excerpt_length{
   width: 30%;
   float:right;
 }

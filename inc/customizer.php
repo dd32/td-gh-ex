@@ -1213,6 +1213,20 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'type'=> 'text'
 	));
 
+	$wp_customize->add_setting( 'bb_wedding_bliss_metabox_separator_blog_post', array(
+		'default'   => '|',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'bb_wedding_bliss_metabox_separator_blog_post', array(
+		'label'       => esc_html__( 'Meta Box Separator','bb-wedding-bliss' ),
+		'input_attrs' => array(
+            'placeholder' => __( 'Add Meta Separator. e.g.: "|", "/", etc.', 'bb-wedding-bliss' ),
+        ),
+		'section'     => 'bb_wedding_bliss_blog_post',
+		'type'        => 'text',
+		'settings'    => 'bb_wedding_bliss_metabox_separator_blog_post',
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('bb_wedding_bliss_noresult_found',array(
 		'title'	=> __('No Result Found','bb-wedding-bliss'),

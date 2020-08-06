@@ -31,6 +31,26 @@ function bb_wedding_bliss_theme_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('bb_wedding_bliss_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_wedding_bliss_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Site Title','bb-wedding-bliss'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('bb_wedding_bliss_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_wedding_bliss_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Tagline','bb-wedding-bliss'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'bb_wedding_bliss_theme_logo_customize_register' );
 
