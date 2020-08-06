@@ -21,7 +21,7 @@ function belleza_sanitize_checkbox( $checked ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 		
 	$wp_customize->add_setting('color_scheme', array(
-		'default' => '#e3a79f',
+		'default' => '#da8175',
 		'sanitize_callback'	=> 'sanitize_hex_color',
 	));
 	
@@ -189,7 +189,7 @@ function belleza_css(){
 				#sidebar ul li a:hover,
 				.main-nav ul li a:hover,
 				.blog-post h3.entry-title{
-					color:<?php echo esc_attr(get_theme_mod('color_scheme','#e3a79f')); ?>;
+					color:<?php echo esc_attr(get_theme_mod('color_scheme','#da8175')); ?>;
 				}
 				a.blog-more:hover,
 				.nav-links .current, 
@@ -201,7 +201,7 @@ function belleza_css(){
 				.section-box .sec-left a,
 				a.read-more:hover,
 				h3.widget-title{
-					background-color:<?php echo esc_attr(get_theme_mod('color_scheme','#e3a79f')); ?>;
+					background-color:<?php echo esc_attr(get_theme_mod('color_scheme','#da8175')); ?>;
 				}
 				.header{
 					background-color:<?php echo esc_attr(get_theme_mod('headerbg-color','#ffffff')); ?>;
@@ -213,7 +213,7 @@ function belleza_css(){
 					background-color:<?php echo esc_attr(get_theme_mod('footbg-color','#0e0e0e')); ?>;
 				}
 				#slider .top-bar .slide-button:hover{
-					color:<?php echo esc_attr(get_theme_mod('color_scheme','#4c387f')); ?>;
+					color:<?php echo esc_attr(get_theme_mod('color_scheme','#da8175')); ?>;
 				}
 		</style>
 	<?php }

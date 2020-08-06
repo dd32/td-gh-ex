@@ -11,7 +11,7 @@
 
     <div class="entry-content">
         <div class="postmeta">
-            <div class="post-date"><?php echo esc_attr(get_the_date()); ?></div><!-- post-date -->
+            <div class="post-date"><?php echo esc_html(get_the_date()); ?></div><!-- post-date -->
             <div class="post-comment"> | <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
             <div class="clear"></div>
         </div><!-- postmeta -->

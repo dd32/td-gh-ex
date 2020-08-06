@@ -4,15 +4,16 @@ Theme URI: https://alexathemes.net/themes/salon-wordpress-theme/
 Author: AlexaThemes
 Author URI: https://alexathemes.net
 Description:  Belleza salon WordPress theme are specially designed for Salons, wellness center & Spa. Creating a website for such business is the best idea to grow your business value. Salon theme is very easy to customize, having many features to make your theme beautiful. Excellence Salon WordPress theme will splendidly coordinate any undertaking in the field of Beauty Industry like Hairstyling, Cosmetology, Massage, Spa and Beauty Care. This theme is fully functional and having options in customizer also its a fully responsive and working well on all screen resolutions. This theme is compatible with the latest version of WordPress and some plugins like woocommerce and contact form 7.
-
-Version: 1.0
+Tested up to: 5.4.2
+Requires PHP: 7.2.14
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: belleza
 Tags:  right-sidebar, custom-background, custom-header, custom-menu, featured-images, theme-options, threaded-comments, custom-logo, blog, full-width-template, e-commerce, portfolio
 
 Belleza is based on Underscores theme(Underscores is distributed under the terms of the GNU GPL v2 or later).
-Belleza WordPress Theme has been created by AlexaThemes(alexathemes.net), 2018.
+Belleza WordPress Theme has been created by AlexaThemes(alexathemes.net), 2020.
 Belleza WordPress Theme is released under the terms of GNU GPL
 */
 
@@ -542,14 +543,14 @@ form.search-form {
 }
 input.search-field,
 .post-password-form input[type=password] {
-    border: 1px #eee solid;
-    padding: 4px;
+    border: 1px #ccc solid;
+    padding: 10px 18px;
 }
 input.search-submit,
 .post-password-form input[type=submit] {
     border: none;
     color: #ffffff;
-    padding: 4px 10px;
+    padding: 10px 15px;
     cursor: pointer;
 }
 aside.widget {
@@ -701,4 +702,46 @@ ul.errormsg li {
 }
 footer.entry-meta {
     clear: left;
+}
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#sitemain[tabindex="-1"]:focus {
+  outline: 0;
 }

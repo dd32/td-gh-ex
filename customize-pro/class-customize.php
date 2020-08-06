@@ -52,7 +52,7 @@ final class Belleza_Customize {
 	 */
 	public function sections( $manager ) {
 		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'customize-pro/section-pro.php' );
+		get_template_part( 'customize-pro/section', 'pro' );
 		// Register custom section types.
 		$manager->register_section_type( 'Belleza_Customize_Section_Pro' );
 		// Register sections.

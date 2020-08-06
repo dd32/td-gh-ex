@@ -44,7 +44,7 @@ get_header();
     <div class="top-bar">
     	<h2><a href="<?php the_permalink(); ?>"><?php echo esc_html($title); ?></a></h2>
     	<?php the_excerpt(); ?>
-        <a class="slide-button" href="<?php the_permalink(); ?>"><?php echo esc_attr(get_theme_mod('slide_text',__('Get Started','belleza')));?></a>
+        <a class="slide-button" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('slide_text',__('Get Started','belleza')));?></a>
     </div>
 </div>      
     <?php $i++; } ?>       
