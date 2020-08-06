@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -48,6 +48,8 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 
 == Changelog ==
 
+@version 2.2.2
+1. Checking technical issue.
 @version 2.2.1
 1. Changed the content of the screenshot.
 @version 2.2
