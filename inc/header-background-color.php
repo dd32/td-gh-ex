@@ -61,11 +61,6 @@ function adonis_custom_header_and_background() {
 			'thumbnail_url' => '%s/assets/images/header-image-275x155.jpg',
 			'description'   => esc_html__( 'Default Header Image', 'adonis' ),
 		),
-		'second-image' => array(
-			'url'           => '%s/assets/images/header-image-1.jpg',
-			'thumbnail_url' => '%s/assets/images/header-image-1-275x155.jpg',
-			'description'   => esc_html__( 'Another Header Image', 'adonis' ),
-		),
 	) );
 }
 add_action( 'after_setup_theme', 'adonis_custom_header_and_background' );

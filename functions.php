@@ -385,7 +385,7 @@ add_action( 'wp_head', 'adonis_javascript_detection', 0 );
 function adonis_scripts() {
 	wp_enqueue_style( 'adonis-fonts', adonis_fonts_url(), array(), null );
 
-	wp_enqueue_style( 'adonis-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'adonis-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'adonis-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'adonis-style' ), '1.0' );
@@ -411,38 +411,6 @@ function adonis_scripts() {
 
 	if ( adonis_check_section( $enable_slider ) || adonis_check_section( $enable_testimonial ) || adonis_check_section( $enable_logo ) ) {
 		wp_enqueue_script( 'jquery-cycle2', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
-
-		$transition_effects = array(
-			get_theme_mod( 'adonis_slider_transition_effects', 'fade' ),
-		);
-
-		/**
-		 * Condition checks for additional slider transition plugins
-		 */
-		// Scroll Vertical transition plugin addition.
-		if ( in_array( 'scrollVert', $transition_effects, true ) ) {
-			wp_enqueue_script( 'jquery-cycle2-scrollVert', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery-cycle2' ), '2.1.5', true );
-		}
-
-		// Flip transition plugin addition.
-		if ( in_array( 'flipHorz', $transition_effects, true ) || in_array( 'flipVert', $transition_effects, true ) ) {
-			wp_enqueue_script( 'jquery-cycle2-flip', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery-cycle2' ), '2.1.5', true );
-		}
-
-		// Shuffle transition plugin addition.
-		if ( in_array( 'tileSlide', $transition_effects, true ) || in_array( 'tileBlind', $transition_effects, true ) ) {
-			wp_enqueue_script( 'jquery-cycle2-tile', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery-cycle2' ), '2.1.5', true );
-		}
-
-		// Shuffle transition plugin addition.
-		if ( in_array( 'shuffle', $transition_effects, true ) ) {
-			wp_enqueue_script( 'jquery-cycle2-shuffle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery-cycle2' ), '2.1.5', true );
-		}
-
-		// Carousel transition plugin addition.
-		if ( adonis_check_section( $enable_logo ) ) {
-			wp_enqueue_script( 'jquery-cycle2-carousel', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/jquery.cycle/jquery.cycle2.carousel.min.js', array( 'jquery-cycle2' ), '2.1.5', true );
-		}
 	}
 
 	// Enqueue fitvid if JetPack is not installed.

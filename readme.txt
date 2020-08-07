@@ -2,9 +2,9 @@
 Contributors: catchthemes
 Tags: two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Requires at least: 5.1
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.3.9
+Stable tag: 1.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,11 @@ You can check our Theme Demo at https://catchthemes.com/demo/adonis/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.4 (Released: August 07, 2020) =
+* Updated: All images
+* Updated: Screenshot
+* Updated: Readme
 
 = 1.3.9 (Released: May 27, 2020) =
 * Updated: readme.txt and style.css as per the new requirements
@@ -142,16 +147,10 @@ Adonis is distributed under the terms of the GNU GPL
 	All images are licensed under [CC0] (https://creativecommons.org/publicdomain/zero/1.0/)
 
 	Screenshot Logo
-		* https://unsplash.com/photos/rDEOVtE7vOs
+		* https://stocksnap.io/photo/female-model-KQECHSBAOC
 
 	Header Image and Screenshot main image
-		* https://www.pexels.com/photo/two-vehicles-on-desert-dunes-909654/
-
-	Logo Slider Background
-		* https://www.pexels.com/photo/adult-architect-blueprint-business-416405/
-
-	Stats Background
-		* https://www.pexels.com/photo/macbook-pro-with-person-s-hand-on-top-884450/
+		* https://stocksnap.io/photo/sky-water-QMXZFZZ6WM
 
 	All other images are self-shot by Catch Themes and released under same license as theme.
 

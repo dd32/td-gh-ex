@@ -18,7 +18,6 @@ if ( ! function_exists( 'adonis_featured_slider' ) ) :
 
 		if ( adonis_check_section( $enable_slider ) ) {
 			$type       = get_theme_mod( 'adonis_slider_type', 'category' );
-			$transition_effect = get_theme_mod( 'adonis_slider_transition_effect', 'fade' );
 			$transition_length = get_theme_mod( 'adonis_slider_transition_length', 1 );
 			$transition_delay  = get_theme_mod( 'adonis_slider_transition_delay', 4 );
 			$image_loader      = get_theme_mod( 'adonis_slider_image_loader', true );
@@ -31,7 +30,7 @@ if ( ! function_exists( 'adonis_featured_slider' ) ) :
 							data-cycle-pause-on-hover="true"
 							data-cycle-swipe="true"
 							data-cycle-auto-height=container
-							data-cycle-fx="' . esc_attr( $transition_effect ) . '"
+							data-cycle-fx="fade"
 							data-cycle-speed="' . esc_attr( $transition_length * 1000 ) . '"
 							data-cycle-timeout="' . esc_attr( $transition_delay * 1000 ) . '"
 							data-cycle-loader=false

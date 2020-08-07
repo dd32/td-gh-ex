@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adonis\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-26 22:31-0700\n"
+"POT-Creation-Date: 2020-08-07 01:21-0400\n"
 "PO-Revision-Date: 2016-12-07 00:45-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -650,8 +650,8 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: ../inc/customizer/contact-info.php:37 ../inc/customizer/logo-slider.php:47
-#: ../inc/customizer/stats.php:48 ../inc/widget-social-icons.php:116
+#: ../inc/customizer/contact-info.php:37 ../inc/customizer/logo-slider.php:46
+#: ../inc/customizer/stats.php:47 ../inc/widget-social-icons.php:116
 msgid "Title"
 msgstr ""
 
@@ -694,9 +694,9 @@ msgid "Address Title"
 msgstr ""
 
 #: ../inc/customizer/contact-info.php:119
-#: ../inc/customizer/featured-slider.php:121 ../inc/customizer/helpers.php:126
-#: ../inc/customizer/hero-content.php:36 ../inc/customizer/logo-slider.php:87
-#: ../inc/customizer/stats.php:89 ../inc/template-functions.php:318
+#: ../inc/customizer/featured-slider.php:109 ../inc/customizer/helpers.php:126
+#: ../inc/customizer/hero-content.php:36 ../inc/customizer/logo-slider.php:86
+#: ../inc/customizer/stats.php:88 ../inc/template-functions.php:318
 #: ../template-parts/content/content-page.php:29
 #: ../template-parts/content/content-single.php:41
 #: ../template-parts/hero-content/post-type-hero.php:72
@@ -800,19 +800,19 @@ msgid "For CPT heading and sub-heading, go %1$shere%2$s"
 msgstr ""
 
 #: ../inc/customizer/featured-content.php:69
-#: ../inc/customizer/featured-slider.php:88 ../inc/customizer/stats.php:69
+#: ../inc/customizer/featured-slider.php:76 ../inc/customizer/stats.php:68
 msgid "Save and refresh the page if No of items is changed"
 msgstr ""
 
 #: ../inc/customizer/featured-content.php:74
-#: ../inc/customizer/featured-slider.php:94
-#: ../inc/customizer/logo-slider.php:72 ../inc/customizer/services.php:91
-#: ../inc/customizer/stats.php:74
+#: ../inc/customizer/featured-slider.php:82
+#: ../inc/customizer/logo-slider.php:71 ../inc/customizer/services.php:91
+#: ../inc/customizer/stats.php:73
 msgid "No of Items"
 msgstr ""
 
 #: ../inc/customizer/featured-content.php:87
-#: ../inc/customizer/featured-slider.php:107
+#: ../inc/customizer/featured-slider.php:95
 #: ../inc/customizer/hero-content.php:58 ../inc/customizer/services.php:104
 msgid "Display Content"
 msgstr ""
@@ -842,88 +842,44 @@ msgstr ""
 msgid "Featured Slider"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:35
-msgid "Transition Effect"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:46
-#: ../inc/customizer/featured-slider.php:61
+#: ../inc/customizer/featured-slider.php:34
+#: ../inc/customizer/featured-slider.php:49
 msgid "seconds(s)"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:50
+#: ../inc/customizer/featured-slider.php:38
 msgid "Transition Delay"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:65
+#: ../inc/customizer/featured-slider.php:53
 msgid "Transition Length"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:76
+#: ../inc/customizer/featured-slider.php:64
 msgid "Image Loader"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:138
-msgid "Fade"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:139
-msgid "Fade Out"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:140
-msgid "None"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:141
-msgid "Scroll Horizontal"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:142
-msgid "Scroll Vertical"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:143
-msgid "Flip Horizontal"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:144
-msgid "Flip Vertical"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:145
-msgid "Tile Slide"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:146
-msgid "Tile Blind"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:147
-msgid "Shuffle"
-msgstr ""
-
-#: ../inc/customizer/featured-slider.php:161
+#: ../inc/customizer/featured-slider.php:125
 msgid "True"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:162
+#: ../inc/customizer/featured-slider.php:126
 msgid "Wait"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:163
+#: ../inc/customizer/featured-slider.php:127
 msgid "False"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:177
+#: ../inc/customizer/featured-slider.php:141
 msgid "Show Excerpt"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:178
+#: ../inc/customizer/featured-slider.php:142
 msgid "Full Content"
 msgstr ""
 
-#: ../inc/customizer/featured-slider.php:179
+#: ../inc/customizer/featured-slider.php:143
 msgid "Hide Content"
 msgstr ""
 
@@ -1020,7 +976,7 @@ msgstr ""
 msgid "Check to disable title"
 msgstr ""
 
-#: ../inc/customizer/logo-slider.php:15 ../inc/customizer/logo-slider.php:44
+#: ../inc/customizer/logo-slider.php:15 ../inc/customizer/logo-slider.php:43
 #: ../template-parts/logo-slider/display-logo-slider.php:18
 msgid "Logo Slider"
 msgstr ""
@@ -1029,15 +985,15 @@ msgstr ""
 msgid "Enable Logo Slider on"
 msgstr ""
 
-#: ../inc/customizer/logo-slider.php:37 ../inc/customizer/stats.php:38
+#: ../inc/customizer/logo-slider.php:36 ../inc/customizer/stats.php:37
 msgid "Background Image"
 msgstr ""
 
-#: ../inc/customizer/logo-slider.php:56 ../inc/customizer/stats.php:58
+#: ../inc/customizer/logo-slider.php:55 ../inc/customizer/stats.php:57
 msgid "Sub Title"
 msgstr ""
 
-#: ../inc/customizer/logo-slider.php:67 ../inc/customizer/services.php:86
+#: ../inc/customizer/logo-slider.php:66 ../inc/customizer/services.php:86
 msgid "Save and refresh the page if No. of Items is changed"
 msgstr ""
 
@@ -1077,7 +1033,7 @@ msgid ""
 "Content Type Enabled"
 msgstr ""
 
-#: ../inc/customizer/stats.php:15 ../inc/customizer/stats.php:45
+#: ../inc/customizer/stats.php:15 ../inc/customizer/stats.php:44
 #: ../template-parts/stats/display-stats.php:18
 msgid "Stats"
 msgstr ""
@@ -1279,12 +1235,12 @@ msgstr ""
 msgid "Upgrade Now"
 msgstr ""
 
-#: ../inc/featured-slider.php:42
+#: ../inc/featured-slider.php:41
 #: ../template-parts/testimonial/display-testimonial.php:65
 msgid "Previous Slide"
 msgstr ""
 
-#: ../inc/featured-slider.php:43
+#: ../inc/featured-slider.php:42
 #: ../template-parts/testimonial/display-testimonial.php:71
 msgid "Next Slide"
 msgstr ""
@@ -1293,15 +1249,11 @@ msgstr ""
 msgid "Default Header Image"
 msgstr ""
 
-#: ../inc/header-background-color.php:67
-msgid "Another Header Image"
-msgstr ""
-
-#: ../inc/header-background-color.php:133
+#: ../inc/header-background-color.php:128
 msgid "Play background video"
 msgstr ""
 
-#: ../inc/header-background-color.php:136
+#: ../inc/header-background-color.php:131
 msgid "Pause background video"
 msgstr ""
 

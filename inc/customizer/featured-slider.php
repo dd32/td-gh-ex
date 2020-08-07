@@ -27,18 +27,6 @@ function adonis_slider_options( $wp_customize ) {
 	);
 
 	adonis_register_option( $wp_customize, array(
-			'name'              => 'adonis_slider_transition_effect',
-			'default'           => 'fade',
-			'sanitize_callback' => 'adonis_sanitize_select',
-			'active_callback'   => 'adonis_is_slider_active',
-			'choices'           => adonis_slider_transition_effects(),
-			'label'             => esc_html__( 'Transition Effect', 'adonis' ),
-			'section'           => 'adonis_featured_slider',
-			'type'              => 'select',
-		)
-	);
-
-	adonis_register_option( $wp_customize, array(
 			'name'              => 'adonis_slider_transition_delay',
 			'default'           => '4',
 			'sanitize_callback' => 'absint',
@@ -126,30 +114,6 @@ function adonis_slider_options( $wp_customize ) {
 	} // End for().
 }
 add_action( 'customize_register', 'adonis_slider_options' );
-
-
-/**
- * Returns an array of feature slider transition effects
- *
- * @since Adonis 0.1
- */
-function adonis_slider_transition_effects() {
-	$options = array(
-		'fade'       => esc_html__( 'Fade', 'adonis' ),
-		'fadeout'    => esc_html__( 'Fade Out', 'adonis' ),
-		'none'       => esc_html__( 'None', 'adonis' ),
-		'scrollHorz' => esc_html__( 'Scroll Horizontal', 'adonis' ),
-		'scrollVert' => esc_html__( 'Scroll Vertical', 'adonis' ),
-		'flipHorz'   => esc_html__( 'Flip Horizontal', 'adonis' ),
-		'flipVert'   => esc_html__( 'Flip Vertical', 'adonis' ),
-		'tileSlide'  => esc_html__( 'Tile Slide', 'adonis' ),
-		'tileBlind'  => esc_html__( 'Tile Blind', 'adonis' ),
-		'shuffle'    => esc_html__( 'Shuffle', 'adonis' ),
-	);
-
-	return apply_filters( 'adonis_slider_transition_effects', $options );
-}
-
 
 /**
  * Returns an array of featured slider image loader options

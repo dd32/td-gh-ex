@@ -229,13 +229,13 @@ add_filter( 'comment_form_default_fields', 'adonis_comment_form_fields' );
 function adonis_sections_bg_css() {
 	$css = array();
 
-	$logo_slider_bg = get_theme_mod( 'adonis_logo_slider_bg_image', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'assets/images/clients-section-bg.jpg' );
+	$logo_slider_bg = get_theme_mod( 'adonis_logo_slider_bg_image' );
 
 	if ( $logo_slider_bg ) {
 		$css[] = '#clients-section { background-image: url( "' . esc_url( $logo_slider_bg ) . '" ); }';
 	}
 
-	$stats_bg = get_theme_mod( 'adonis_stats_bg_image', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/images/numbers-section-bg.jpg' );
+	$stats_bg = get_theme_mod( 'adonis_stats_bg_image' );
 
 	if ( $stats_bg ) {
 		$css[] = '#numbers-section { background-image: url( "' . esc_url( $stats_bg ) . '" ); }';

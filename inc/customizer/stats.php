@@ -31,7 +31,6 @@ function adonis_stats_options( $wp_customize ) {
 
 	adonis_register_option( $wp_customize, array(
 			'name'              => 'adonis_stats_bg_image',
-			'default'           => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/images/numbers-section-bg.jpg',
 			'sanitize_callback' => 'esc_url_raw',
 			'active_callback'   => 'adonis_is_stats_active',
 			'custom_control'    => 'WP_Customize_Image_Control',

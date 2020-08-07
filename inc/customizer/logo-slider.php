@@ -30,7 +30,6 @@ function adonis_logo_slider_options( $wp_customize ) {
 
 	adonis_register_option( $wp_customize, array(
 			'name'              => 'adonis_logo_slider_bg_image',
-			'default'           => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/images/clients-section-bg.jpg',
 			'sanitize_callback' => 'esc_url_raw',
 			'active_callback'   => 'adonis_is_logo_slider_active',
 			'custom_control'    => 'WP_Customize_Image_Control',

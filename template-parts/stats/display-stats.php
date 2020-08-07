@@ -23,7 +23,7 @@ $classes[] = esc_attr( $layout );
 $classes[] = esc_attr( $type );
 $classes[] = 'section';
 
-$stats_bg_image = get_theme_mod( 'adonis_stats_bg_image', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'assets/images/numbers-section-bg.jpg' );
+$stats_bg_image = get_theme_mod( 'adonis_stats_bg_image' );
 
 if ( $stats_bg_image ) {
 	$classes[] = 'background-image';

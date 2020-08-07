@@ -21,7 +21,7 @@ $sub_title = get_theme_mod( 'adonis_logo_slider_sub_title' );
 $classes[] = $type;
 $classes[] = 'section';
 
-$logo_slider_bg = get_theme_mod( 'adonis_logo_slider_bg_image', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'assets/images/clients-section-bg.jpg' );
+$logo_slider_bg = get_theme_mod( 'adonis_logo_slider_bg_image' );
 
 if ( $logo_slider_bg ) {
 	$classes[] = 'background-image';
