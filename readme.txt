@@ -32,48 +32,6 @@ ArticlePress is a top notch music WordPress theme. Suitable for Blogging,Informa
 ArticlePress includes support for Infinite Scroll in Jetpack.
 
 
-== Changelog ==
-
-= 1.0.0 - 06/11/2019 =
-* Initial release
-
-= 1.0.4 - 06/26/2019 =
-* Fixed WP reviewer request
-
-= 1.0.5 - 07/07/2019 =
-* Fixed WP reviewer request
-
-= 1.0.7 - 07/07/2019 =
-* Fixed WP reviewer request
-
-= 1.0.8 - 07/31/2019 =
-* Fixed WP reviewer request
-
-
-== Upgrade Notice ==
-= 1.0.0 =
-First release the Theme
-
-= 1.0.4 =
-* Fixed WP reviewer request
-
-= 1.0.5 =
-* Fixed WP reviewer request
-
-= 1.0.7 =
-* Fixed WP reviewer request
-
-= 1.0.8 =
-* Fixed WP reviewer request
-Disable the footer social icons in default.
-GPL license URL Add
-Remove rtl.css file
-Remove readme.md file
-add //wp_body_open hook from WordPress 5.2
-remove the layout folder and language
-Validate your readme file
-Remove wp_enqueue_script( 'jquery' );
-
 
 == Copyright ==
 
