@@ -248,6 +248,25 @@ function annina_color_primary_register( $wp_customize ) {
         'settings'   => 'annina_theme_options_masonrybig',
         'type'       => 'checkbox',
     ) );
+	
+	/*
+	Enable Smooth Scroll
+	=====================================================
+	*/
+	$wp_customize->add_setting('annina_theme_options_smoothscroll', array(
+        'default'    => '1',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'annina_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('annina_theme_options_smoothscroll', array(
+        'label'      => __( 'Enable Smooth Scroll', 'annina' ),
+        'section'    => 'cresta_annina_options',
+        'settings'   => 'annina_theme_options_smoothscroll',
+        'type'       => 'checkbox',
+    ) );
+	
 	/*
 	Copyright text
 	=====================================================

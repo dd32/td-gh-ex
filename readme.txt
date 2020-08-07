@@ -2,8 +2,8 @@
 Contributors: crestaproject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, blog, news
 Requires at least: 4.5
-Tested up to: 5.4
-Stable tag: 1.7.7
+Tested up to: 5.5
+Stable tag: 1.7.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,10 @@ Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry 
 	7. PxHere https://pxhere.com/en/photo/1476815 licensed under CC0
 
 == Changelog ==
+= Version 1.7.8 =
+* Added possibility to disable smooth scroll script
+* Improved compatibility with WordPress 5.5
+
 = Version 1.7.7 =
 * Now copyright text accepts shortcodes
 

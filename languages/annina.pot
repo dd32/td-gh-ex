@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2020-07-08 18:44+0100\n"
-"PO-Revision-Date: 2020-07-08 18:44+0100\n"
+"POT-Creation-Date: 2020-08-07 11:22+0100\n"
+"PO-Revision-Date: 2020-08-07 11:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -442,7 +442,7 @@ msgstr ""
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:343 inc/annina-dynamic.php:293
+#: inc/admin/annina-admin-page.php:343 inc/annina-dynamic.php:312
 msgid "Loading Page"
 msgstr ""
 
@@ -450,7 +450,7 @@ msgstr ""
 msgid "Infinite scroll"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:353 inc/annina-dynamic.php:292
+#: inc/admin/annina-admin-page.php:353 inc/annina-dynamic.php:311
 msgid "Font switcher"
 msgstr ""
 
@@ -466,11 +466,11 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:373 inc/annina-dynamic.php:295
+#: inc/admin/annina-admin-page.php:373 inc/annina-dynamic.php:314
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:378 inc/annina-dynamic.php:297
+#: inc/admin/annina-admin-page.php:378 inc/annina-dynamic.php:316
 msgid "7 Shortcodes"
 msgstr ""
 
@@ -478,11 +478,11 @@ msgstr ""
 msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:388 inc/annina-dynamic.php:299
+#: inc/admin/annina-admin-page.php:388 inc/annina-dynamic.php:318
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:393 inc/annina-dynamic.php:300
+#: inc/admin/annina-admin-page.php:393 inc/annina-dynamic.php:319
 msgid "Information About Author Box"
 msgstr ""
 
@@ -578,59 +578,63 @@ msgstr ""
 msgid "Last Post Box Big?"
 msgstr ""
 
-#: inc/annina-dynamic.php:262
+#: inc/annina-dynamic.php:264
+msgid "Enable Smooth Scroll"
+msgstr ""
+
+#: inc/annina-dynamic.php:281
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/annina-dynamic.php:263
+#: inc/annina-dynamic.php:282
 msgid "Get the PRO version to remove CrestaProject Credits"
 msgstr ""
 
-#: inc/annina-dynamic.php:277
+#: inc/annina-dynamic.php:296
 msgid "Get Annina PRO WP Theme for only"
 msgstr ""
 
-#: inc/annina-dynamic.php:282
+#: inc/annina-dynamic.php:301
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/annina-dynamic.php:285
+#: inc/annina-dynamic.php:304
 msgid "Get Annina PRO Theme"
 msgstr ""
 
-#: inc/annina-dynamic.php:289
+#: inc/annina-dynamic.php:308
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/annina-dynamic.php:290
+#: inc/annina-dynamic.php:309
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/annina-dynamic.php:291
+#: inc/annina-dynamic.php:310
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/annina-dynamic.php:294
+#: inc/annina-dynamic.php:313
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/annina-dynamic.php:296
+#: inc/annina-dynamic.php:315
 msgid "Post format"
 msgstr ""
 
-#: inc/annina-dynamic.php:298
+#: inc/annina-dynamic.php:317
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/annina-dynamic.php:301
+#: inc/annina-dynamic.php:320
 msgid "Sticky Sidebar"
 msgstr ""
 
-#: inc/annina-dynamic.php:302
+#: inc/annina-dynamic.php:321
 msgid "And much more..."
 msgstr ""
 
-#: inc/annina-dynamic.php:308
+#: inc/annina-dynamic.php:327
 msgid "More features? Upgrade to PRO"
 msgstr ""
 
