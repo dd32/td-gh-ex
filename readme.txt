@@ -2,9 +2,9 @@
 Contributors: catchthemes
 Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
 Requires at least: 5.1
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.3.1
+Stable tag: 3.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,11 @@ You can check our Theme Demo at https://catchthemes.com/demo/adventurous/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.3.2 (Released: August 07, 2020) =
+* Updated: All images
+* Updated: Screenshot
+* Updated: Readme
 
 = 3.3.1 (Released: May 28, 2020) =
 * Updated: readme.txt and style.css as per the new requirements
@@ -299,15 +304,14 @@ Adventurous is distributed under the terms of the GNU GPL
 * Images
     All images are licensed under [CC0] (https://creativecommons.org/publicdomain/zero/1.0/)
 
-    Demo Image and Screenshot image are from http://pixabay.com and is Licensed under CC0 licenses
-    Slider 1: http://pixabay.com/en/tiger-zoo-cat-predator-114550/
-    Slider 2: http://pixabay.com/en/tiger-sumatran-sumatran-tiger-164905/
-    Featured 1: http://pixabay.com/en/mountain-risk-caution-sport-247932/
-    Featured 2: http://pixabay.com/en/rhino-nepal-national-park-chitwan-381/
-    Featured 3: http://pixabay.com/en/nepal-yak-tibetan-ox-last-animal-419/
-    Featured 4: http://pixabay.com/en/rafting-white-water-rafting-293542/
-    Header Image 1: http://pixabay.com/en/road-asphalt-space-sky-clouds-220058/
-    Header Image 2: http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/
+    Demo Image and Screenshot image are from https://stocksnap.io/ and is Licensed under CC0 licenses
+    Slider 1: https://stocksnap.io/photo/swan-river-7VITJYYH6K
+    Slider 2: https://stocksnap.io/photo/green-grass-M918JQ9QJV
+    Featured 1: https://stocksnap.io/photo/lion-animal-59MITCJOK0
+    Featured 2: https://stocksnap.io/photo/zebra-animal-6VQBKILEX9
+    Featured 3: https://stocksnap.io/photo/bird-animal-91ZUL14TJL
+    Featured 4: https://stocksnap.io/photo/eagle-bird-LO3BJLFANG
+    Header Image: https://stocksnap.io/photo/swan-river-7VITJYYH6K
 
     All other images are self-shot by Catch Themes and released under same license as theme.
 

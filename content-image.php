@@ -20,7 +20,7 @@ $moretag = $options['more_tag_text'];
     
         <header class="entry-header">
             <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'adventurous' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-            <h3 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'Image' ) ); ?>" title="<?php esc_attr_e( 'All Image Posts', 'adventurous' ); ?>"><?php esc_attr_e( 'Image', 'adventurous' ); ?></a></h3>
+            <h3 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'Image' ) ); ?>" title="<?php esc_attr_e( 'All Image Posts', 'adventurous' ); ?>"><?php esc_html_e( 'Image', 'adventurous' ); ?></a></h3>
         </header><!-- .entry-header -->  
     	
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>

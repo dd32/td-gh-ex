@@ -24,7 +24,7 @@ $moretag = $options['more_tag_text'];
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'adventurous_status_avatar', '60' ) ); ?>
                 <h2 class="entry-title"><?php the_author(); ?></h2>
             </header>
-            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'status' ) ); ?>" title="<?php esc_attr_e( 'All Status Posts', 'adventurous' ); ?>"><?php esc_attr_e( 'Status', 'adventurous' ); ?></a></h2>
+            <h2 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'status' ) ); ?>" title="<?php esc_attr_e( 'All Status Posts', 'adventurous' ); ?>"><?php esc_html_e( 'Status', 'adventurous' ); ?></a></h2>
 		</div><!-- .entry-header -->
 
 		<div class="entry-content">

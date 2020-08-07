@@ -28,17 +28,11 @@ function adventurous_custom_header_setup() {
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
-		'highway' => array(
+		'swan' => array(
 			'url' => '%s/images/demo/header-1-1600x400.jpg',
 			'thumbnail_url' => '%s/images/demo/header-1-320x66.jpg',
 			/* translators: header image description */
 			'description' => __( 'Highway', 'adventurous' )
-		),
-		'buddha' => array(
-			'url' => '%s/images/demo/header-2-1600x400.jpg',
-			'thumbnail_url' => '%s/images/demo/header-2-320x66.jpg',
-			/* translators: header image description */
-			'description' => __( 'Buddha', 'adventurous' )
 		),
 	) );
 

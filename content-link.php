@@ -20,7 +20,7 @@ $moretag = $options['more_tag_text'];
 	<div class="entry-container post-format">
     
         <header class="entry-format">
-        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'adventurous' ); ?>"><?php esc_attr_e( 'Link', 'adventurous' ); ?></a>
+        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'adventurous' ); ?>"><?php esc_html_e( 'Link', 'adventurous' ); ?></a>
         </header>
         
         <div class="entry-content">

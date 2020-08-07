@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-28 17:26-0700\n"
-"PO-Revision-Date: 2020-05-28 17:26-0700\n"
+"POT-Creation-Date: 2020-08-07 01:05-0400\n"
+"PO-Revision-Date: 2020-08-07 01:05-0400\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -113,25 +113,13 @@ msgstr "Editar"
 msgid "All Audio Posts"
 msgstr "Todas as postagens de áudio"
 
-#: ../content-audio.php:21
-msgid "Audio"
-msgstr "Áudio"
-
 #: ../content-chat.php:22
 msgid "All Chat Posts"
 msgstr "Todas as postagens do chat"
 
-#: ../content-chat.php:22
-msgid "Chat"
-msgstr "Chat"
-
 #: ../content-gallery.php:25
 msgid "All Gallery Posts"
 msgstr "Todas as postagens da galeria"
-
-#: ../content-gallery.php:25
-msgid "Gallery"
-msgstr "Galeria"
 
 #: ../content-gallery.php:42
 #, php-format
@@ -144,17 +132,9 @@ msgstr[1] "Esta galeria contém <a %1$s>%2$s fotografias</a>."
 msgid "All Image Posts"
 msgstr "Todas as postagens com imagem"
 
-#: ../content-image.php:23
-msgid "Image"
-msgstr "Imagem"
-
 #: ../content-link.php:23
 msgid "All Link Posts"
 msgstr "Todas as postagens com link"
-
-#: ../content-link.php:23
-msgid "Link"
-msgstr "Link"
 
 #: ../content-single.php:45 ../content.php:65
 msgid "% Replies"
@@ -174,17 +154,9 @@ msgstr "Ver todas as postagens de %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "All Status Posts"
 msgstr "O status de todas as postagens"
 
-#: ../content-status.php:27
-msgid "Status"
-msgstr "Status"
-
 #: ../content-video.php:24
 msgid "All Video Posts"
 msgstr "Todas as postagens com vídeo"
-
-#: ../content-video.php:24
-msgid "Video"
-msgstr "Vídeo"
 
 #: ../content.php:23
 msgid "Featured post"
@@ -257,10 +229,6 @@ msgstr "Ambos os comentários e trackbacks estão atualmente fechados."
 #: ../inc/adventurous-custom-header.php:35
 msgid "Highway"
 msgstr "Rodovia"
-
-#: ../inc/adventurous-custom-header.php:41
-msgid "Buddha"
-msgstr "Buddha"
 
 #: ../inc/adventurous-default-options.php:96
 msgid "Copyright"
@@ -674,6 +642,30 @@ msgstr "Pesquisar"
 #: ../sidebar.php:64
 msgid "Archives"
 msgstr "Arquivos"
+
+#~ msgid "Audio"
+#~ msgstr "Áudio"
+
+#~ msgid "Chat"
+#~ msgstr "Chat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galeria"
+
+#~ msgid "Image"
+#~ msgstr "Imagem"
+
+#~ msgid "Link"
+#~ msgstr "Link"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgid "Buddha"
+#~ msgstr "Buddha"
 
 #~ msgid "Adventurous Options"
 #~ msgstr "Opções do Adventurous"

@@ -27,7 +27,7 @@ function adventurous_scripts() {
 	/**
 	 * Loads up main stylesheet.
 	 */
-	wp_enqueue_style( 'adventurous-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'adventurous-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/genericons/genericons.css', false, '3.4.1' );
