@@ -39,9 +39,9 @@ get_header();
 										}
 									?>
 								</h4>
-								<h2 class="single-page-title">
+								<h1 class="single-page-title">
 									<?php the_title(); ?>
-								</h2>
+								</h1>
 								<div class="single-page-content">
 									<p class="single-page-text">
 										<?php the_content(); ?>

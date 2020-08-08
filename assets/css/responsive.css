@@ -32,6 +32,9 @@
 		border-top: 1px solid #a295f5;
 		margin-top: 21px !important;
 	}
+	a.navbar-brand img {
+		width: 180px;
+	}
 }
 
 @media ( max-width:768px ) {
