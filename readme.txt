@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, news, photography
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 Requires PHP: 5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,11 @@ Nova Lite WordPress Theme, Copyright 2020 ThemeinProgress.
 Nova Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.3.9 =
+Release date - August, 08 - 2020
+
+* Fixed - Reflected Cross Site Scripting on search template (CVE-2020-17362, Thanks to Talip Karabas)
 
 = 1.3.8 =
 Release date - July, 21 - 2020
@@ -93,10 +98,10 @@ Bootstrap By Twitter, Inc - http://getbootstrap.com
 jQuery FlexSlider By WooThemes - http://www.woothemes.com/flexslider/
 * flexslider.css - Licensed under GPLv2 license ( Applies to flexslider.css file in /nova-lite/assets/css/ )
 
-jQuery Nivo Slider By Dev7studios - https://github.com/Codeinwp/Nivo-Slider-jQuery 
+jQuery Nivo Slider By Dev7studios - https://github.com/Codeinwp/Nivo-Slider-jQuery
 * nivoslider.css v3.2 - Licensed under MIT license ( Applies to nivoslider.css file in /nova-lite/assets/css/ )
 
-prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
 * prettyPhoto.css v3.1.6 - Licensed under GPLv2 or Creative Commons 2.5 license ( Applies to prettyPhoto.css file in /nova-lite/assets/css/ )
 
 jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
