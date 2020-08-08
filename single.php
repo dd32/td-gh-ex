@@ -47,6 +47,11 @@ get_header();
 										<?php the_content(); ?>
 									</p>
 								</div>
+								
+								<!-- Post Tag -->
+								<div class="post-tags">
+									<i class="fas fa-tags"><span class="tag-list"></i> <?php the_tags(); ?></span>
+								</div>
 							</div>
 							
 							<?php 
