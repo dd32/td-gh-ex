@@ -22,13 +22,23 @@
 
 	<div class="entry-content">
 		<?php
+
+			
+		if ( is_home() || is_category() || is_archive() ) {
+		
+			the_excerpt('');
+		
+		} else {
+		
 			/* translators: %s: Name of current post */
 			the_content(
 				sprintf(
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'agency-starter' ),
 					esc_html(get_the_title())
 				)
-			);
+			);		
+		
+		}			
 
 			wp_link_pages(
 				array(

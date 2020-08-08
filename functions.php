@@ -85,6 +85,59 @@ if ( ! function_exists( 'agency_starter_setup' ) ) :
 		// Indicate widget sidebars can use selective refresh in the Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		
+		
+		// Define and register starter content to showcase the theme on new sites.
+		$starter_content = array(
+			'widgets'     => array(
+				// Place three core-defined widgets in the sidebar area.
+				'sidebar-1' => array(
+					'search',
+					'categories',
+					'archives',
+				),
+		
+				// Add business info widget to the footer 1 area.
+				'footer-sidebar-1' => array(
+					'text_about',
+				),
+		
+				// Put widgets in the footer 2 area.
+				'footer-sidebar-2' => array(
+					'recent-posts',				
+				),
+				// Putwidgets in the footer 3 area.
+				'footer-sidebar-3' => array(
+					'categories',				
+				),
+				// Put widgets in the footer 4 area.
+				'footer-sidebar-4' => array(				
+					'search',				
+				),
+												
+			),
+			
+			'nav_menus' => array(
+					'primary' => array(
+						'name' => __( 'Top Menu', 'agency-starter' ),
+					),
+					'social' => array(
+						'name' => __( 'Social Links Menu', 'agency-starter' ),
+						'items' => array(
+							'link_yelp',
+							'link_facebook',
+							'link_twitter',
+							'link_instagram',
+							'link_email',
+						),
+					),
+				),	
+		);
+
+
+
+	 
+	add_theme_support( 'starter-content', $starter_content );
+		
 	}
 	
 endif; // agency_starter_setup
@@ -357,6 +410,7 @@ add_action( 'wp_enqueue_scripts', 'agency_starter_scripts' );
 
 
 
+
 /**
  * Enqueue styles for the block-based editor.
  */
@@ -367,17 +421,34 @@ function agency_starter_block_editor_styles() {
 add_action( 'enqueue_block_editor_assets', 'agency_starter_block_editor_styles' );
 
 
+
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	require get_template_directory() .'/inc/color-picker/alpha-color-picker.php';
+}
+
+
+
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer.php'; 
 
 
+// Display fontawesome search icon in menus and toggle search form 
+add_filter('wp_nav_menu_items', 'agency_starter_search_form', 10, 2);
+
+function agency_starter_search_form($items, $args) {
+if( $args->theme_location == 'primary' )
+       $items .= '<li class="menu-search-popup" tabindex="0" ><a class="search_icon"><i class="fa fa-search"></i></a><div  class="spicewpsearchform" >'. get_search_form(false) .'</div></li></ul>';
+       return $items;
+}
 
 
 /**
@@ -511,3 +582,11 @@ function agency_starter_help_notice() {
 }
 
 endif;
+
+/* 
+ * custom excerpt length 
+ */
+function agency_starter_length($length){
+	return 80;
+}
+add_filter('excerpt_length', 'agency_starter_length');

@@ -13,7 +13,16 @@
 
 	<div class="entry-content">
 		<?php
-		the_content();
+		
+		if ( is_home() || is_category() || is_archive() ) {
+		
+			the_excerpt('');
+		
+		} else {
+		
+			the_content();
+		
+		}
 
 		wp_link_pages(
 			array(

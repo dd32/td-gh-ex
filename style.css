@@ -3,7 +3,7 @@ Author: wpbusinessthemes
 Theme Name: Agency Starter
 Theme URI: https://wpfreetheme.space/product/agency-starter-theme/
 Author URI: https://wpfreetheme.space/
-Version: 1.0.4
+Version: 1.0.5
 Requires PHP: 5.6
 Tested up to: 5.4.2
 Description: Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpfreetheme.space/product/agency-starter-theme/
@@ -1808,7 +1808,6 @@ blockquote:after,
 }
 
 .site-description {
-	display: none;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: 400;
@@ -2983,6 +2982,10 @@ p > video {
 		justify-content: center;
 	}
 	
+	.spicewpsearchform{
+		width:100%;
+	}
+	
 	.woo-search { text-align:center; }
 	
 	.site-info {
@@ -3292,6 +3295,10 @@ p > video {
 	}
 	
 	.header-search-form { float:right; }
+	
+	.spicewpsearchform{
+		min-width:350px;
+	}
 
 	.site-header { }
 
@@ -5369,4 +5376,68 @@ button.header-search-button {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+
+
+/****************
+ * search form  *
+ ****************/
+ 
+.menu-search-popup {
+	margin-left:6px;
+} 
+.spicewpsearchform{
+	position: absolute;
+	right: 0;
+	top: 100%;
+	margin-top: 1px;
+	z-index: 9999;
+	background: #fff;
+	padding: 20px;
+	box-shadow: 2px 1px 4px #eee;
+	border-radius: 6px;
+	display:none;
+}
+#spicewpsearchform input[type="text"] {
+    width: 78%;
+    height: auto;
+    border: 1px solid #5ca2df;
+    padding: 11px 12px;
+    border-radius: 0px !important; 
+    }
+#spicewpsearchform input[type="submit"] {
+    line-height: 1;
+    padding: 14px 20px;
+    border-radius: 0px;
+    height: auto;
+    font-size: 15px;
+    display: inline-block;
+    border: 1px solid #5ca2df;
+}
+#spicewpsearchform:before {
+    border-color: transparent transparent #d05353;
+    border-style: solid;
+    border-width: 0.5em;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 22px;
+    top: -20px;
+    z-index: 10;
+}
+
+/**Css for image search icon**/
+.spicewpsearch_icon {
+   background-image: url('images/search-icon.png');
+   background-repeat: no-repeat;
+   padding: 0 0 0 36px;
+   background-position: 5px center;
+   background-color: transparent;
+   background-size: 18px 18px;
+       
+}
+
+.menu-search-popup:hover .spicewpsearchform,
+.menu-search-popup:focus-within .spicewpsearchform  {
+	display:block;
 }

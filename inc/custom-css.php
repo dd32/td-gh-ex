@@ -37,9 +37,9 @@ function agency_starter_get_theme_css( ) {
 	
 	$footer_border = get_theme_mod('footer_border', 1);
 	
-	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', '#ce0c0c');
+	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', '#fff');
 	
-	$woocommerce_menubar_text = get_theme_mod('woocommerce_menubar_text_color', '#fff');
+	$woocommerce_menubar_text = get_theme_mod('woocommerce_menubar_text_color', '#333333');
 	
 	return "
 	
@@ -107,7 +107,8 @@ function agency_starter_get_theme_css( ) {
 	#site-navigation.sticky-nav {
 		background-size: cover;
 	
-	}	
+	}
+
 		
 	.site-footer {
 		background-color: ".$footer_bg_color.";
@@ -515,16 +516,18 @@ function agency_starter_get_theme_css( ) {
 		.sticky-nav {
 			background-color: ".$woocommerce_menubar.";
 		}
+
 		
 		#woocommerce-layout-menu .main-navigation .primary-menu > li > a {
-			color: ".$woocommerce_menubar_text.";			
-		}
-		
-		#woocommerce-layout-menu .main-navigation .primary-menu > li > a:focus, 
-		#woocommerce-layout-menu .main-navigation .primary-menu > li > a:hover {
-			color: #fff;			
+			color: ".$woocommerce_menubar_text.";	
 		}		
+	
+		#woocommerce-layout-menu .main-navigation li:hover > a:hover,
+		#woocommerce-layout-menu .main-navigation li:hover > a:focus {
+			color: #fff; 
+			background-color: ".$colors['primary_color'].";
 		
+		}	
 		.main-navigation li {
 			border-color: ".$colors['main_text_color']."; /* Fallback for IE7 and IE8 */
 			border-color: ".$colors['border_color'].";

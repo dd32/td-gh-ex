@@ -159,7 +159,8 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		);
 	}
 	
-	require get_template_directory() .'/inc/color-picker/alpha-color-picker.php';
+	
+
 	
 	/***************** 
 	 * Theme options *
@@ -392,7 +393,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		
 		// background Alpha Color Picker control
 		$wp_customize->add_control(
-			new agency_starter_Customize_Alpha_Color_Control(
+			new Agency_Starter_Customize_Alpha_Color_Control(
 				$wp_customize,
 				'woocommerce_menubar_color',
 				array(
