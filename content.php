@@ -6,24 +6,24 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( ! is_single() && has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail(); ?>
-			</a>	
-		</div>	
+			</a>
+		</div>
 	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting('blog_post_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
-		</div>				
+		</div>
 	<?php endif; ?>
 	<header class="entry-header">
-		<?php if ( is_single() ) : ?>	
+		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php else : ?>
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-		<?php endif; ?>	
+		<?php endif; ?>
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php puro_posted_on(); ?>
@@ -35,8 +35,8 @@
 		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt(); else the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
-				'after'  => '</div>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
+				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 			) );

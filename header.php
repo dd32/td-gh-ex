@@ -29,9 +29,9 @@
 	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_center_logo' ) ) { echo ' center-logo'; } if ( ! siteorigin_setting( 'header_display_tagline' ) ) { echo ' no-tagline'; } if ( siteorigin_setting( 'navigation_responsive_menu' ) ) { echo ' responsive-menu'; } ?>" role="banner">
 		<div class="site-header-inner">
 			<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php puro_display_logo(); ?></a>
+				<?php puro_display_logo(); ?>
 				<?php if ( siteorigin_setting( 'header_display_tagline' ) ) { ?>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 				<?php } ?>
 			</div><!-- .site-branding-->
 			<?php do_action( 'puro_before_nav' ); ?>
@@ -47,3 +47,5 @@
 	<div id="content" class="site-content">
 
 	<?php puro_render_slider(); ?>
+
+	<?php do_action( 'puro_content_top' ); ?>

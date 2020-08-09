@@ -14,9 +14,9 @@
  */
 function puro_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'puro_infinite_scroll_render',
-		'footer'    => 'page',
+		'container'      => 'main',
+		'render'         => 'puro_infinite_scroll_render',
+		'footer'         => 'page',
 		'posts_per_page' => 8
 	) );
 }
@@ -34,7 +34,7 @@ function puro_infinite_scroll_render() {
 			wc_get_template_part( 'content', 'product' );
 		}
 		echo '</ul>';
-	} else {	
+	} else {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :

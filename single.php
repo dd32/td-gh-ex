@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<?php if ( siteorigin_setting('navigation_post_nav') ) the_post_navigation(); ?>
 
-			<?php if ( siteorigin_setting( 'blog_post_author_box' ) ) puro_author_box(); ?>			
+			<?php if ( siteorigin_setting( 'blog_post_author_box' ) ) puro_author_box(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

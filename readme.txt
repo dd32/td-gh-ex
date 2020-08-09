@@ -4,8 +4,9 @@ Contributors: Misplon
 
 Tags: one-column, two-columns, right-sidebar, custom-menu, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
+Tested up to: 5.5
 Requires at least: 4.7
-Tested up to: 5.2
+Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,7 +56,6 @@ Available icons:
 * Flickr
 * Foursquare
 * GitHub
-* Google Plus
 * Instagram
 * LinkedIn
 * Pinterest
@@ -95,42 +95,53 @@ Puro WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012
 
 == Images ==
 
-Screenshot Waves and Rocks image sourced from http://unsplash.com by Angelina Odemchuk licensed under CC0 1.0 Universal (CC0 1.0) (http://creativecommons.org/publicdomain/zero/1.0/).
+City smartphone image sourced from [PxHere](https://pxhere.com/en/photo/734367) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 == Bundled Resources ==
 
-FitVids, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-Licensed under the WTFPL license
-Source: https://github.com/davatron5000/FitVids.js/
+FitVids, Copyright 2013 Chris Coyier
+Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+[Source](http://fitvidsjs.com/)
 
 Flexie, Copyright 2010 Richard Herrera
 Licensed under the MIT License
-Source: https://github.com/doctyper/flexie
+[Source](https://github.com/doctyper/flexie)
 
-FontAwesome by Dave Gandy 
+Font Awesome by Dave Gandy - http://fontawesome.io
 Font released under the SIL OFL 1.1, CSS released under the MIT License.
+[Source](https://github.com/FortAwesome/Font-Awesome)
 
-HTML5 Shiv, Copyright 2014 Alexander Farkas (aFarkas)
-Licensed under a dual license system (MIT or GPL version 2)
-Source: https://github.com/aFarkas/html5shiv
+HTML5 Shiv, Copyright 2011 Alexander Farkas
+Released under a dual MIT/GPL2 License
+[Source](https://code.google.com/p/html5shiv/)
 
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
-Source: https://github.com/necolas/normalize.css/
+[Source](https://github.com/necolas/normalize.css/)
 
 Selectivizr, Copyright Keith Clark
-Licensed under the MIT License
-Source: https://github.com/keithclark/selectivizr
+Released under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](https://github.com/keithclark/selectivizr)
 
 TinyColor, Copyright (c), Brian Grinstead
-Licensed under the [MIT License](http://opensource.org/licenses/MIT)
-Source: https://github.com/bgrins/TinyColor
+Released under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](https://github.com/bgrins/TinyColor)
 
 == SiteOrigin Settings ==
 
 This theme makes use of the SiteOrigin Settings Framework contained in the /inc folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.2.0 - 09 August 2020 =
+* Removed Google Plus icon.
+* Minor code formatting enhancements.
+* Added new `puro_content_top` action hook.
+* Changed post meta date format to respect the WordPress user selected format.
+* Added Block Editor admin width.
+* Updated selectivizr to `v1.0.3b`.
+* Improved the logo and site title HTML markup.
+* Optimized and improved site title, logo and menu CSS and alignment.
 
 = 1.1.8 - 22 September 2019 =
 * Removed duplicate logo link when core logo used.

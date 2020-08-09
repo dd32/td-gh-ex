@@ -4,7 +4,10 @@ Author: Puro
 Author URI: https://purothemes.com/
 Theme URI: https://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina-ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="https://purothemes.com/documentation/puro-theme/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="https://purothemes.com/support/forum/puro/">support forum</a> (https://purothemes.com/support/forum/puro/).
-Version: 1.1.8
+Version: 1.2.0
+Tested Up To: 5.5
+Requires At Least: 4.7
+Requires PHP: 5.6.20
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -76,6 +79,8 @@ or a child theme.
 	20.1 - SiteOrigin Post Carousel Widget
 21.0 - JW Player
 --------------------------------------------------------------*/
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
 /*--------------------------------------------------------------
 1.0 - Reset
 --------------------------------------------------------------*/
@@ -187,7 +192,6 @@ body:not(.resp) #page {
       padding-right: 0;
       padding-left: 0;
       width: 100%; } }
-
 #secondary {
   box-sizing: border-box;
   border-color: #e5e5e5;
@@ -201,7 +205,6 @@ body:not(.resp) #page {
   @media (max-width: 48rem) {
     .resp #secondary {
       width: 100%; } }
-
 @media (max-width: 48rem) {
   .resp.sidebar #secondary {
     border-color: #e5e5e5;
@@ -243,7 +246,6 @@ Full Width Page - Unconstrained Content - No Title
     .page-template-page-templatesfull-width-no-title-php #primary #main,
     .error404 #primary #main {
       max-width: 100%; } }
-
 .page-template-page-templatesfull-width-unconstrained-content-php #primary #main,
 .page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary #main {
   margin-right: auto;
@@ -450,8 +452,7 @@ table {
     border: 1px solid #e5e5e5;
     padding: 0.5em; }
     @media (max-width: 30rem) {
-      .resp table th, .resp
-      table td {
+      .resp table th, .resp table td {
         padding: 2%; } }
   table th {
     font-weight: 600; }
@@ -686,7 +687,6 @@ a {
   @media (max-width: 48rem) {
     .resp .responsive-menu.center-logo .main-navigation {
       margin-top: 0; } }
-
 /*--------------------------------------------------------------
 6.3 - Responsive Menu
 --------------------------------------------------------------*/
@@ -701,7 +701,7 @@ a {
   padding: 0;
   position: absolute;
   right: 0;
-  top: 2.1875rem; }
+  top: 11px; }
   .responsive-menu .menu-toggle:after {
     content: "\f0c9";
     font-family: "FontAwesome";
@@ -715,6 +715,7 @@ a {
 
 .responsive-menu .main-navigation.toggled {
   height: auto;
+  padding-top: 10px;
   margin-bottom: 1.78571em;
   max-width: 100%;
   width: 100%; }
@@ -726,8 +727,7 @@ a {
     .responsive-menu .main-navigation.toggled ul > li[class*=children] .sub-menu li,
     .responsive-menu .main-navigation.toggled ul > li[class*=children] .children li {
       margin-bottom: 2px; }
-    .responsive-menu .main-navigation.toggled ul > li[class*=children].up > .sub-menu,
-    .responsive-menu .main-navigation.toggled ul > li[class*=children].up > .children {
+    .responsive-menu .main-navigation.toggled ul > li[class*=children].up > .sub-menu, .responsive-menu .main-navigation.toggled ul > li[class*=children].up > .children {
       display: block; }
     .responsive-menu .main-navigation.toggled ul > li[class*=children].up a {
       margin-bottom: 0 !important; }
@@ -833,25 +833,19 @@ a {
   float: left;
   position: relative; }
   @media (max-width: 48rem) {
-    .resp .comment-navigation .nav-previous, .resp
-    .paging-navigation .nav-previous, .resp
-    .post-navigation .nav-previous {
+    .resp .comment-navigation .nav-previous, .resp .paging-navigation .nav-previous, .resp .post-navigation .nav-previous {
       float: none;
       margin-bottom: 1.6875em;
       width: 100%; } }
-
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
   float: right;
   position: relative; }
   @media (max-width: 48rem) {
-    .resp .comment-navigation .nav-next, .resp
-    .paging-navigation .nav-next, .resp
-    .post-navigation .nav-next {
+    .resp .comment-navigation .nav-next, .resp .paging-navigation .nav-next, .resp .post-navigation .nav-next {
       float: none;
       width: 100%; } }
-
 .comment-navigation .nav-previous a:before, .comment-navigation .nav-next a:after, .post-navigation .nav-previous a:before, .post-navigation .nav-next a:after {
   font-family: 'FontAwesome';
   font-size: 0.8125em; }
@@ -1370,7 +1364,6 @@ article {
     @media (max-width: 30rem) {
       .resp .entry-header .entry-meta .author, .resp .entry-header .entry-meta .cat-links, .resp .entry-header .entry-meta .tags-links, .resp .entry-header .entry-meta .comments-link, .resp .entry-header .entry-meta .edit-link {
         display: none; } }
-
 .sticky .entry-header .entry-meta .entry-date {
   display: none; }
 
@@ -1497,7 +1490,6 @@ article {
     .resp .page-header h1 {
       font-size: 23px;
       font-size: 1.4375rem; } }
-
 .format-chat .entry-content {
   background: #f2f2f2;
   color: #0d0d0d;
@@ -1528,24 +1520,20 @@ article {
       float: none;
       padding-right: 0;
       width: 100%; } }
-
 .puro-left-thumb-loop .featured-image .entry-header,
 .puro-left-thumb-loop .featured-image .entry-content {
   box-sizing: border-box;
   float: left;
   width: 75%; }
   @media (max-width: 48rem) {
-    .resp .puro-left-thumb-loop .featured-image .entry-header, .resp
-    .puro-left-thumb-loop .featured-image .entry-content {
+    .resp .puro-left-thumb-loop .featured-image .entry-header, .resp .puro-left-thumb-loop .featured-image .entry-content {
       float: none;
       width: 100%; } }
-
 .puro-left-thumb-loop .featured-image .entry-header .entry-title {
   margin-top: -0.4em; }
   @media (max-width: 48rem) {
     .resp .puro-left-thumb-loop .featured-image .entry-header .entry-title {
       margin: 0; } }
-
 /*--------------------------------------------------------------
 11.3 - Left Medium Post Loop
 --------------------------------------------------------------*/
@@ -1559,24 +1547,20 @@ article {
       float: none;
       padding-right: 0;
       width: 100%; } }
-
 .puro-left-medium-loop .featured-image .entry-header,
 .puro-left-medium-loop .featured-image .entry-content {
   box-sizing: border-box;
   float: left;
   width: 55%; }
   @media (max-width: 48rem) {
-    .resp .puro-left-medium-loop .featured-image .entry-header, .resp
-    .puro-left-medium-loop .featured-image .entry-content {
+    .resp .puro-left-medium-loop .featured-image .entry-header, .resp .puro-left-medium-loop .featured-image .entry-content {
       float: none;
       width: 100%; } }
-
 .puro-left-medium-loop .featured-image .entry-header .entry-title {
   margin-top: -0.4em; }
   @media (max-width: 48rem) {
     .resp .puro-left-medium-loop .featured-image .entry-header .entry-title {
       margin: 0; } }
-
 /*--------------------------------------------------------------
 11.4 - Asides
 --------------------------------------------------------------*/
@@ -1849,44 +1833,46 @@ object {
   padding: 2.53125em 0;
   position: relative;
   width: 100%; }
-  .site-header:not(.center-logo) .site-header-inner {
+  .site-header .site-header-inner {
     display: table;
     position: relative;
     width: 100%; }
   .site-header .site-branding {
     box-sizing: border-box;
+    display: table-cell;
     margin: 0;
     max-width: 40%;
-    padding-right: 1.6875em; }
-    .site-header:not(.center-logo) .site-branding {
-      display: table-cell;
-      vertical-align: middle; }
-    .site-header .site-branding img {
-      margin-top: 0.625em; }
-    .site-header .site-branding h1.site-title {
+    padding-right: 1.6875em;
+    vertical-align: middle; }
+    .site-header .site-branding a {
+      display: block; }
+    .site-header .site-branding h1.site-title,
+    .site-header .site-branding p.site-title {
       font-size: 41px;
       font-size: 2.5625rem;
       font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
       font-weight: bold;
       letter-spacing: -1px;
+      line-height: normal;
       margin: 0; }
-      .center-logo h1.site-title {
-        line-height: normal; }
-      .site-header .site-branding h1.site-title a {
+      .site-header .site-branding h1.site-title a,
+      .site-header .site-branding p.site-title a {
         color: #333;
+        line-height: normal;
         text-decoration: none; }
-    .site-header .site-branding h2.site-description {
+    .site-header .site-branding p.site-description {
       font-size: 16px;
       font-size: 1rem;
       color: #999;
       font-weight: normal;
       line-height: 1.6875em;
-      margin: -0.375em 0 0.25em; }
-  .site-header.center-logo .site-branding {
-    max-width: 100%;
-    text-align: center;
-    width: 100%; }
-
+      margin: 0 0 0.25em; }
+  @media (min-width: 48rem) {
+    .site-header.center-logo .site-branding {
+      display: block;
+      max-width: 100%;
+      text-align: center;
+      width: 100%; } }
 @media (max-width: 48rem) {
   .resp .site-header:not(.responsive-menu) .site-branding {
     display: table-row;
@@ -1950,6 +1936,14 @@ object {
       .site-footer .site-info a:hover,
       .site-footer .theme-attribution a:hover {
         color: #2ac176; }
+    .site-footer .site-info span:after,
+    .site-footer .theme-attribution span:after {
+      content: "\002d";
+      display: inline-block;
+      padding: 0 5px; }
+    .site-footer .site-info span:last-of-type:after,
+    .site-footer .theme-attribution span:last-of-type:after {
+      content: none; }
   .site-footer .social-links-menu {
     float: right;
     margin-top: 1.6875em; }

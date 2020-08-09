@@ -179,7 +179,7 @@ a {
 		padding: 0;
 		position: absolute;
 		right: 0;
-		top: 2.1875rem;
+		top: 11px;
 
 		&:after {
 			content: "\f0c9";
@@ -199,6 +199,7 @@ a {
 
 	.main-navigation.toggled {
 		height: auto;
+		padding-top: 10px;
 		margin-bottom: 1.78571em;
 		max-width: 100%;
 		width: 100%;
@@ -419,7 +420,7 @@ a {
 	@media (max-width: $medium) {
 		.resp & {
 			float: none;
-			width: 100%; 
+			width: 100%;
 		}
 	}
 }
@@ -548,7 +549,7 @@ a {
 				font-family: $icon-font;
 				font-size: 1.125rem;
 				vertical-align: top;
-			}	
+			}
 
 			a:hover:before {
 				color: $highlight-color;
@@ -564,11 +565,11 @@ a {
 
 			a[href*="behance.net"]:before {
 				content: "\f1b4";
-			}	
+			}
 
 			a[href*="bitbucket.org"]:before {
 				content: "\f171";
-			}			
+			}
 
 			a[href*="codepen.io"]:before {
 				content: "\f1cb";
@@ -641,7 +642,7 @@ a {
 
 			a[href*="soundcloud.com"]:before {
 				content: "\f1be";
-			}			
+			}
 
 			a[href*="stackexchange.com"]:before {
 				content: "\f18d";
@@ -657,7 +658,7 @@ a {
 
 			a[href*="trello.com"]:before {
 				content: "\f181";
-			}					
+			}
 
 			a[href*="tumblr.com"]:before {
 				content: "\f173";

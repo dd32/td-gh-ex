@@ -28,8 +28,3 @@ function siteorigin_metaslider_install_link(){
 		return 'http://downloads.wordpress.org/plugin/ml-slider.zip';
 	}
 }
-
-function siteorigin_metaslider_affiliate(){
-	return 'http://bit.ly/meta-slider';
-}
-add_filter('metaslider_hoplink', 'siteorigin_metaslider_affiliate');

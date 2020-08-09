@@ -7,11 +7,11 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1.8' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.2.0' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
-if ( file_exists( get_template_directory() . '/premium/functions.php' ) ){
+if ( file_exists( get_template_directory() . '/premium/functions.php' ) ) {
 	include get_template_directory() . '/premium/functions.php';
 } else {
 	include get_template_directory() . '/upgrade/upgrade.php';
@@ -53,16 +53,16 @@ function puro_setup() {
 	 */
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$content_width = 771; /* pixels */
-	}			 
-	function puro_adjust_content_width() {	 
+		$content_width = 771;
+	}
+	function puro_adjust_content_width() {
 		global $content_width;
 
-	    if ( is_page_template( 'page-templates/full-width-unconstrained-content.php' ) || is_page_template( 'page-templates/full-width-unconstrained-content-no-title.php' ) ) {
-	        $content_width = 1080; /* pixels */
-	    }
+		if ( is_page_template( 'page-templates/full-width-unconstrained-content.php' ) || is_page_template( 'page-templates/full-width-unconstrained-content-no-title.php' ) ) {
+			$content_width = 1080;
+		}
 	}
-	add_action( 'template_redirect', 'puro_adjust_content_width' );  	
+	add_action( 'template_redirect', 'puro_adjust_content_width' );
 
 	/*
 	 * Make theme available for translation.
@@ -79,7 +79,7 @@ function puro_setup() {
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
 	 */
-	add_theme_support( 'title-tag' );	
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -115,11 +115,11 @@ function puro_setup() {
 	 * Support the Page Builder plugin.
 	 */
 	add_theme_support( 'siteorigin-panels', array(
-		'margin-sides' => 41,
-		'margin-bottom' => 41,
-		'home-page' => true,
+		'margin-sides'      => 41,
+		'margin-bottom'     => 41,
+		'home-page'         => true,
 		'home-page-default' => false,
-		'home-template' => 'page-templates/full-width-unconstrained-content-no-title.php',
+		'home-template'     => 'page-templates/full-width-unconstrained-content-no-title.php',
 	) );
 
 	define( 'SITEORIGIN_THEME_PREMIUM_URL', admin_url( 'themes.php?page=premium_upgrade' ) );
@@ -137,7 +137,7 @@ function puro_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'puro' ),
 		'id'            => 'sidebar-1',
-		'description'	=> esc_html__( 'Visible on posts and pages that use the default template.', 'puro' ),
+		'description'   => esc_html__( 'Visible on posts and pages that use the default template.', 'puro' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -146,12 +146,12 @@ function puro_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'puro' ),
 		'id'            => 'sidebar-2',
-		'description'	=> esc_html__( 'A column will be automatically assigned to each widget inserted.', 'puro' ),
+		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted.', 'puro' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) );	
+	) );
 }
 add_action( 'widgets_init', 'puro_widgets_init' );
 
@@ -168,7 +168,7 @@ function puro_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.3.0' );
 
 	// Theme JavaScript.
-	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );		
+	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );
 
 	// Skip link focus fix.
 	wp_enqueue_script( 'puro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SITEORIGIN_THEME_VERSION, $in_footer );
@@ -179,7 +179,7 @@ function puro_scripts() {
 	}
 
 	// Mobile Menu Collapse Localisation.
-	wp_localize_script( 'puro-responsive-menu', 'puro_resp_menu_params', array( 'collapse' => siteorigin_setting( 'navigation_responsive_menu_collapse' ) ) );	
+	wp_localize_script( 'puro-responsive-menu', 'puro_resp_menu_params', array( 'collapse' => siteorigin_setting( 'navigation_responsive_menu_collapse' ) ) );
 
 	// FitVids.	
 	if ( ! ( function_exists( 'has_blocks' ) && has_blocks() ) && siteorigin_setting( 'layout_fitvids' ) ) {
@@ -200,10 +200,18 @@ function puro_scripts() {
 	wp_script_add_data( 'puro-html5', 'conditional', 'lt IE 9' );
 
 	// Selectivizr.
-	wp_enqueue_script( 'puro-selectivizr', get_template_directory_uri() . '/js/selectivizr' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '1.0.2' );
-	wp_script_add_data( 'puro-selectivizr', 'conditional', '(gte IE 6)&(lte IE 8)' );	
+	wp_enqueue_script( 'puro-selectivizr', get_template_directory_uri() . '/js/selectivizr' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '1.0.3b' );
+	wp_script_add_data( 'puro-selectivizr', 'conditional', '(gte IE 6)&(lte IE 8)' );
 }
 add_action( 'wp_enqueue_scripts', 'puro_scripts' );
+
+/**
+ * Enqueue Block Editor styles.
+ */
+function puro_block_editor_styles() {
+	wp_enqueue_style( 'puro-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
+}
+add_action( 'enqueue_block_editor_assets', 'puro_block_editor_styles' );
 
 /**
  * Filter the comment form.
@@ -214,7 +222,7 @@ add_action( 'wp_enqueue_scripts', 'puro_scripts' );
  */
 function puro_comment_form_defaults( $defaults ) {
 	if ( siteorigin_setting( 'comments_comment_form_tags' ) ) {
-		$defaults['comment_notes_after'] = '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'puro' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>';	
+		$defaults['comment_notes_after'] = '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'puro' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>';
 	}
 	
 	return $defaults;
@@ -225,7 +233,7 @@ add_filter( 'comment_form_defaults', 'puro_comment_form_defaults', 5 );
  * Filter the excerpt length.
  */
 function puro_custom_excerpt_length( $length ) {
-    return absint( siteorigin_setting( 'blog_excerpt_length' ) );
+	return absint( siteorigin_setting( 'blog_excerpt_length' ) );
 }
 add_filter( 'excerpt_length', 'puro_custom_excerpt_length', 999 );
 
@@ -248,19 +256,19 @@ add_filter( 'excerpt_more', 'puro_excerpt_more' );
  */
 function puro_footer_widgets_params( $params ) {
 
-    $sidebar_id = $params[0]['id'];
+	$sidebar_id = $params[0]['id'];
 
-    if ( $sidebar_id == 'sidebar-2' ) {
+	if ( $sidebar_id == 'sidebar-2' ) {
 
-        $total_widgets = wp_get_sidebars_widgets();
-        $sidebar_widgets = count( $total_widgets[$sidebar_id] );
+		$total_widgets = wp_get_sidebars_widgets();
+		$sidebar_widgets = count( $total_widgets[$sidebar_id] );
 
-        $params[0]['before_widget'] = str_replace( 'class="', 'class="widget-count-' . floor($sidebar_widgets) . ' ', $params[0]['before_widget'] );
-    }
+		$params[0]['before_widget'] = str_replace( 'class="', 'class="widget-count-' . floor($sidebar_widgets) . ' ', $params[0]['before_widget'] );
+	}
 
-    return $params;
+	return $params;
 }
-add_filter( 'dynamic_sidebar_params','puro_footer_widgets_params' );
+add_filter( 'dynamic_sidebar_params', 'puro_footer_widgets_params' );
 
 /**
 * Handles the site title, copyright symbol and year string replace for the Footer Copyright theme option.
@@ -268,8 +276,8 @@ add_filter( 'dynamic_sidebar_params','puro_footer_widgets_params' );
 function puro_footer_copyright_text_sub( $copyright ) {
 	$site_title = '<a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a>';
 	return str_replace(
-		array('{site-title}', '{copyright}', '{year}'),
-		array($site_title, '&copy;', date('Y')),
+		array( '{site-title}', '{copyright}', '{year}' ),
+		array( $site_title, '&copy;', date('Y') ),
 		$copyright
 	);
 }
@@ -279,11 +287,11 @@ add_filter( 'puro_copyright_text', 'puro_footer_copyright_text_sub' );
  * Render the home page slider.
  */
 function puro_render_slider() {
-	if( is_front_page() && $GLOBALS['wp_query']->get('paged') == 0 ) {
+	if ( is_front_page() && $GLOBALS['wp_query']->get('paged') == 0 ) {
 
-		if(substr(siteorigin_setting('home_slider'), 0, 5) == 'meta:' && class_exists('MetaSliderPlugin')){
-			$slider_id = intval(substr(siteorigin_setting('home_slider'), 5));
-			echo do_shortcode("[metaslider id='".$slider_id."']");
+		if (substr(siteorigin_setting('home_slider'), 0, 5) == 'meta:' && class_exists( 'MetaSliderPlugin' ) ) {
+			$slider_id = intval( substr(siteorigin_setting( 'home_slider' ), 5 ) );
+			echo do_shortcode( "[metaslider id='".$slider_id."']" );
 		}
 	}
 }
@@ -331,10 +339,10 @@ function puro_responsive_menu_css() {
 		@media (max-width: <?php echo intval( $mobile_resolution ) ?>px) {
 			.site-branding { float: left }
 			.rtl .site-branding { float: right; padding-right: 0 }
-			.responsive-menu .main-navigation ul { display: none } 
+			.responsive-menu .main-navigation ul { display: none }
 			.responsive-menu .menu-toggle { display: block }
 			.main-navigation { float: right }
-		}			
+		}
 	</style>
 	<?php
 }

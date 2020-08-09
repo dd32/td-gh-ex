@@ -3,24 +3,24 @@
 --------------------------------------------------------------*/
 .site-footer {
 	border-top-style: solid;
-  	border-top-width: 0.0625em;
-  	margin-top: 5.0625em;
-  	padding-top: 3.3125em;	
+	border-top-width: 0.0625em;
+	margin-top: 5.0625em;
+	padding-top: 3.3125em;
 	padding-bottom: 3.375em;
 	border-color: $border-color;
-	 
+
 	@for $i from 1 through 10 {
 		$margin: ($i - 1) * 2.5;
-		
+
 		.widget-count-#{$i} {
-			width: (100% - $margin) / $i;			
+			width: (100% - $margin) / $i;
 		}
-	}	
+	}
 
 	.widget {
 		box-sizing: content-box;
-		margin-right: 2.5%; 
-		float: left;			
+		margin-right: 2.5%;
+		float: left;
 
 		&:last-of-type {
 				margin-right: 0;
@@ -30,7 +30,7 @@
 			@at-root .resp .site-footer .widget {
 				width: 100%;
 			}
-		}				
+		}
 	}
 
 	ul {
@@ -40,23 +40,39 @@
 	.site-info, 
 	.theme-attribution {
 		@include font-size(0.8125);
-		color: $text-secondary-color; 
+		color: $text-secondary-color;
 		float: left;
 		line-height: 2.07692em;
-		margin-top: 1.6875em; 
+		margin-top: 1.6875em;
 		text-align: left;
-		
+
 		a {
 			color: $text-secondary-color;
-			
+
 			&:hover {
-				color: $highlight-color;	
+				color: $highlight-color;
+			}
+		}
+
+		span {
+
+			&:after {
+				content: "\002d";
+				display: inline-block;
+				padding: 0 5px;
+			}
+
+			&:last-of-type {
+
+				&:after {
+					content: none;
+				}
 			}
 		}
 	}
 
 	.social-links-menu {
 		float: right;
-		margin-top: 1.6875em; 
+		margin-top: 1.6875em;
 	}
 }

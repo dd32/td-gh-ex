@@ -28,18 +28,18 @@ function puro_body_classes( $classes ) {
 	// Add a class if the sidebar isn't active.
 	if ( ! is_active_sidebar( 'sidebar-1') ) {
 		$classes[] = 'one-column';
-	}	
-	
+	}
+
 	// Add a class if responsive layout is enabled.
 	if ( siteorigin_setting( 'layout_responsive' ) ) {
 		$classes[] = 'resp';
 	}
-	
+
 	// Add a class if the sidebar is active.
 	if ( is_active_sidebar( 'sidebar-1') ) {
 		 $classes[] = 'sidebar';
 	}
-	
+
 	return $classes;
 }
 add_filter( 'body_class', 'puro_body_classes' );

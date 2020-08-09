@@ -22,7 +22,7 @@ function puro_pagination() {
 			<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'puro' ); ?></h1>
 			<?php if ( function_exists( 'wp_pagenavi' ) ) : ?>
 				<?php wp_pagenavi(); ?>
-			<?php else : ?>			
+			<?php else : ?>
 			<div class="nav-links">
 			<?php
 			global $wp_query;

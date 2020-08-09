@@ -12,8 +12,8 @@
 	<?php if ( has_post_thumbnail() && siteorigin_setting('pages_page_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
-		</div>			
-	<?php endif; ?>		
+		</div>
+	<?php endif; ?>
 		<header class="page-header">
 			<h1 class="page-title"><?php the_title(); ?></h1>
 		</header><!-- .entry-header -->
@@ -22,8 +22,8 @@
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
-					'after'  => '</div>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
+					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
 				) );
