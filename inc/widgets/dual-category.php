@@ -193,7 +193,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 							<?php if ( has_post_thumbnail() ) { ?>
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
 							<?php } else { ?>
-								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
 							<?php } ?>
 
 						<?php the_title( sprintf( '<h3 class="genpost-entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>						
@@ -218,7 +218,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 								<?php if ( has_post_thumbnail() ) { ?>
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'small-thumb', array('title' => get_the_title()) ); ?></a>
 								<?php } else { ?>
-									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
 								<?php } ?>
 							</div>
 							<div class="ams-details">
@@ -253,7 +253,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 							<?php if ( has_post_thumbnail() ) { ?>
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
 							<?php } else { ?>
-								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
 							<?php } ?>
 
 						<?php the_title( sprintf( '<h3 class="genpost-entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>						
@@ -278,7 +278,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 								<?php if ( has_post_thumbnail() ) { ?>
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'small-thumb', array('title' => get_the_title()) ); ?></a>
 								<?php } else { ?>
-									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
 								<?php } ?>
 							</div>
 							<div class="ams-details">

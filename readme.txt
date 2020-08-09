@@ -2,9 +2,9 @@
 
 Contributors: Pubudu Malalasekara
 Requires at least: 4.2
-Tested up to: 5.2.2
+Tested up to: 5.5
 Requires PHP: 5.2
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,11 @@ And there are 3 posts widgets.
 Drag and drop these widgets to above two widget areas and arrange them as you like.
 
 == Changelog ==
+
+= 2.2.4 =
+* Awaken is successfully tested with WordPress 5.5
+* Few fixes according to the Theme Check plugin.
+* Removed Awaken Theme customizer option for site favicon since WordPress has default Site Icon option.
 
 = 2.2.3 =
 * Added wp_body_open() function into header.
@@ -219,27 +224,27 @@ Resources packed within the theme.
 * TGM Plugin activation library by Thomas Griffin is licensed under the GPL-2.0 or later license.http://tgmpluginactivation.com/#license
 * Other custom js files are our own creation and is licensed under the same license as this theme. 
 * Images in the screenshot *
-	Image 1 - http://pixabay.com/en/urban-people-crowd-citizens-438393/
-	Image 1 - License - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+	Image 1 - https://pxhere.com/en/photo/938709
+	Image 1 - License - https://creativecommons.org/publicdomain/zero/1.0/
 	
-	Image 2 - http://pixabay.com/en/taxi-cab-taxicab-taxi-cab-new-york-238478/
-	Image 2 - License - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+	Image 2 - https://pxhere.com/en/photo/997770
+	Image 2 - License - https://creativecommons.org/publicdomain/zero/1.0/
 	
-	Image 3 - http://pixabay.com/en/girl-summer-sun-stroll-sunset-380621/
-	Image 3 - License - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+	Image 3 - https://pxhere.com/en/photo/956833
+	Image 3 - License - https://creativecommons.org/publicdomain/zero/1.0/
 	
-	Image 4 - http://pixabay.com/en/keyboard-apple-input-keys-hardware-338505/
-	Image 4 - License - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+	Image 4 - https://pxhere.com/en/photo/970502
+	Image 4 - License - https://creativecommons.org/publicdomain/zero/1.0/
 	
-	Image 5 - http://pixabay.com/en/live-concert-concert-stage-people-455762/
-	Image 5 - License - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+	Image 5 - https://pxhere.com/en/photo/315
+	Image 5 - License - https://creativecommons.org/publicdomain/zero/1.0/
 
  Image used for default placeholder thumbnail creation.
- 	- http://pixabay.com/en/photo-lens-lenses-photographer-old-256888/
- 	- License - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+ 	- https://pxhere.com/en/photo/992476
+ 	- License - https://creativecommons.org/publicdomain/zero/1.0/
  
  Image used for default 300x250 placeholder image creation.
-	- http://pixabay.com/en/urban-people-crowd-citizens-438393/
-	- License - http://creativecommons.org/publicdomain/zero/1.0/deed.en 	
+	- https://pxhere.com/en/photo/938709
+	- License - https://creativecommons.org/publicdomain/zero/1.0/ 	
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.

@@ -82,45 +82,6 @@ function awaken_customize_register( $wp_customize ) {
         )
     );
 
-    // Site favicon
-	$wp_customize->add_setting(
-        'site_favicon',
-        array(
-            'sanitize_callback' => 'awaken_sanitize_image'
-        ) 
-    ); 
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'site_favicon',
-            array(
-                'label'         => __( 'Upload a favicon', 'awaken' ),
-                'section'       => 'title_tagline',
-                'settings'      => 'site_favicon',
-                'description' 	=> __( 'Upload a favicon for your website.', 'awaken' ),
-            )
-        )
-    );
-
-    // Display site favicon?
-    $wp_customize->add_setting(
-		'display_site_favicon',
-		array(
-			'default'			=> false,
-			'sanitize_callback'	=> 'awaken_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control(
-		'display_site_favicon',
-		array(
-			'settings'		=> 'display_site_favicon',
-			'section'		=> 'title_tagline',
-			'type'			=> 'checkbox',
-			'label'			=> __( 'Display site favicon?', 'awaken' ),
-		)
-	);
-
-
     /**
      * General settings section.
      */

@@ -164,10 +164,12 @@ add_action( 'after_setup_theme', 'awaken_setup' );
  * This function Contains All The scripts that Will be Loaded in the Theme Header including Custom Javascript, Custom CSS, etc.
  */
 function awaken_initialize_header() {
+
+	$custom_css = get_theme_mod( 'custom_css', '' );
 	
 	//CSS Begins
 	echo "<style>";
-		echo get_theme_mod( 'custom_css', '' );	
+		echo wp_strip_all_tags( $custom_css );	
 	echo "</style>";
 	//CSS Ends
 	
@@ -288,8 +290,8 @@ add_action( 'widgets_init', 'awaken_widgets_init' );
  * Enqueue scripts and styles.
  */
 function awaken_scripts() {
-	
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0' );
+
+	wp_enqueue_style( 'awaken-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0' );
 
 	wp_enqueue_style( 'bootstrap.css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'all' );
 	
@@ -392,24 +394,6 @@ function awaken_option_panel_style() {
 	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin.css', false );
 }
 add_action( 'admin_enqueue_scripts', 'awaken_option_panel_style' );
-
-
-/**
- * Activate a favicon for the website.
- */
-function awaken_favicon() {
-
-	if ( get_theme_mod( 'display_site_favicon', false ) ) {
-		$favicon = get_theme_mod( 'site_favicon', '' );
-		$awaken_favicon_output = '';
-		if ( !empty( $favicon ) ) {
-			$awaken_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $favicon ).'" type="image/x-icon" />';
-		}
-		echo $awaken_favicon_output;
-	}
-}
-add_action( 'admin_head', 'awaken_favicon' );
-add_action( 'wp_head', 'awaken_favicon' );
 
 /**
 * Add flex slider.

@@ -103,7 +103,7 @@ class Awaken_Tabbed_Widget extends WP_Widget {
 						<?php if ( has_post_thumbnail() ) { ?>
 							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'small-thumb', array('title' => get_the_title()) ); ?></a>
 						<?php } else { ?>
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
 						<?php } ?>
 					</div>
 					<div class="ams-details">

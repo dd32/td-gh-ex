@@ -12,7 +12,7 @@
 	<?php } else { ?>
 		<figure class="genpost-featured-image">
 			<a href="<?php the_permalink(); ?>">
-				<img src="<?php echo get_template_directory_uri() . '/images/thumbnail-default.jpg'; ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/images/thumbnail-default.jpg'; ?>" />
 			</a>
 		</figure>
 	<?php } ?>
