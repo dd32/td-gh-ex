@@ -176,7 +176,7 @@ class Bam_Tabbed_Widget extends WP_Widget {
 					$tags = get_tags();             
 					if($tags) {               
 						foreach ( $tags as $tag ): ?>    
-							<span><a href="<?php echo esc_url( get_term_link( $tag ) ); ?>"><?php echo esc_attr( $tag->name ); ?></a></span>           
+							<span><a href="<?php echo esc_url( get_term_link( $tag ) ); ?>"><?php echo esc_html( $tag->name ); ?></a></span>           
 							<?php     
 						endforeach;       
 					} else {          

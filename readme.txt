@@ -2,9 +2,9 @@
 
 Contributors: pubudu-malalasekara
 Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.2
-Stable tag: 1.1.2
+Tested up to: 5.5
+Requires PHP: 5.3
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,13 @@ Bam is a great flexible theme for blogging sites.
 Bam supports all the major plugins.
 
 == Changelog ==
+
+= 1.1.3 =
+* Bam is successfully tested with WordPress 5.5
+* Fixed menu toggle color not applying issue.
+* Fixed footer widget title color not applying issue.
+* Fixed single post line height control not working issue.
+* Few fixes related to the Theme Check plugin.
 
 = 1.1.2 =
 * Added FitVids jquery library to support responsive videos.

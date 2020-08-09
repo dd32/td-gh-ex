@@ -968,7 +968,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if ( ! empty( $link_color ) && '#ffffff' != $link_color ) {
                     $css .= '
-                        .site-header.default-style .main-navigation ul li a, .bam-search-button-icon { color: '. $link_color .'; }
+                        .site-header.default-style .main-navigation ul li a, .bam-search-button-icon, .menu-toggle { color: '. $link_color .'; }
                     ';
                 }
 
@@ -1078,7 +1078,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if ( ! empty( $link_color ) && '#ffffff' != $link_color ) {
                     $css .= '
-                        .site-header.horizontal-style .main-navigation ul li a, .bam-search-button-icon { color: '. $link_color .'; }
+                        .site-header.horizontal-style .main-navigation ul li a, .bam-search-button-icon, .menu-toggle { color: '. $link_color .'; }
                     ';
                 }
 

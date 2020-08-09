@@ -18,6 +18,8 @@
 .entry-content {
 	margin: 2em 0 0;
 	line-height: 1.7;
+	word-wrap: break-word;
+	-ms-word-wrap: break-word;
 }
 
 .page-links {

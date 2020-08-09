@@ -337,6 +337,7 @@ if ( ! class_exists( 'Bam_Footer_Customizer' ) ) :
             // widget area text color.
             if ( ! empty( $widget_area_text_color ) && '#eeeeee' != $widget_area_text_color ) {
                 $css .= '
+                    .footer-widget-area .widget-title,
                     .footer-widget-area .widget {
                         color: '. $widget_area_text_color .';
                     }

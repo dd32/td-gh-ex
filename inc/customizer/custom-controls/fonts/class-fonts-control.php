@@ -28,7 +28,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
                     // Standard Fonts.
                     if ( $standard_fonts = bam_get_standard_fonts() ) { ?>
-                        <optgroup label="<?php esc_html_e( 'Standard Fonts', 'bam' ); ?>">
+                        <optgroup label="<?php esc_attr_e( 'Standard Fonts', 'bam' ); ?>">
                             <?php
                             // Add each font to the list
                             foreach ( $standard_fonts as $font ) { ?>
@@ -39,7 +39,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
                     
                     // Google Fonts.
                     if ( $google_fonts = bam_get_google_fonts() ) { ?>
-                        <optgroup label="<?php esc_html_e( 'Standard Fonts', 'bam' ); ?>">
+                        <optgroup label="<?php esc_attr_e( 'Google Fonts', 'bam' ); ?>">
                             <?php
                             // Add each font to the list
                             foreach ( $google_fonts as $font ) { ?>

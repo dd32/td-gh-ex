@@ -157,7 +157,7 @@ if ( ! class_exists( 'Bam_Typography_Customizer' ) ) :
 
                 'single_post_body'  => array(
                     'title'     => esc_html__( 'Single Post Content', 'bam' ),
-                    'target'    => '.single-post article.type-post',
+                    'target'    => '.bam-single-post .entry-content',
                     'defaults'  => array(
                         'font-size'     => array(
                             'desktop'   => '18px'
