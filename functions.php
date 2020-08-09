@@ -166,8 +166,8 @@ function adventure_travelling_scripts() {
 
 	wp_enqueue_script( 'jquery-superfish', get_theme_file_uri( '/assets/js/jquery.superfish.js' ), array( 'jquery' ), '2.1.2', true );
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array( 'jquery' ), true );
-
 	wp_enqueue_script( 'adventure-travelling-custom-scripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), true);
+	wp_enqueue_script( 'adventure-travelling-focus-nav', get_template_directory_uri() . '/assets/js/focus-nav.js', array('jquery'), true);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -213,6 +213,23 @@ add_filter( 'loop_shop_per_page', 'adventure_travelling_per_page', 20 );
 function adventure_travelling_per_page( $cols ) {
   	$cols = get_theme_mod( 'adventure_travelling_product_per_page', 9 );
 	return $cols;
+}
+
+function adventure_travelling_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
+function adventure_travelling_sanitize_email( $email, $setting ) {
+	// Strips out all characters that are not allowable in an email address.
+	$email = sanitize_email( $email );
+
+	// If $email is a valid email, return it; otherwise, return the default.
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function adventure_travelling_sanitize_checkbox( $input ) {
+	// Boolean check 
+	return ( ( isset( $input ) && true == $input ) ? true : false );
 }
 
 /**

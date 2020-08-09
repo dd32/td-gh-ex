@@ -1,6 +1,15 @@
+function adventure_travelling_open_nav() {
+  window.adventure_travelling_responsiveMenu=true;
+  jQuery(".sidenav").addClass('show');
+}
+function adventure_travelling_close_nav() {
+  window.adventure_travelling_responsiveMenu=false;
+  jQuery(".sidenav").removeClass('show');
+}
+
 jQuery(function($){
   "use strict";
-  $('.menu > ul').superfish({
+  $('.menu-nav > ul').superfish({
     delay:       500,
     animation:   {opacity:'show',height:'show'},
     speed:       'fast'
@@ -9,14 +18,6 @@ jQuery(function($){
     $(".serach_outer").toggle();
   });
 });
-
-/* Mobile responsive Menu*/
-function adventure_travelling_open_nav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-function adventure_travelling_close_nav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
 
 jQuery(function($){
   $(window).scroll(function(){

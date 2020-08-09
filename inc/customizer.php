@@ -114,7 +114,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_remove_date',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_date',array(
        'type' => 'checkbox',
@@ -124,7 +124,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_remove_author',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_author',array(
        'type' => 'checkbox',
@@ -134,7 +134,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_remove_comments',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_comments',array(
        'type' => 'checkbox',
@@ -144,7 +144,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_remove_tags',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_tags',array(
        'type' => 'checkbox',
@@ -154,7 +154,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_remove_read_button',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_read_button',array(
        'type' => 'checkbox',
@@ -229,7 +229,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('adventure_travelling_mail',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'adventure_travelling_sanitize_email'
 	));	
 	$wp_customize->add_control('adventure_travelling_mail',array(
 		'label'	=> __('Add Mail Address','adventure-travelling'),
@@ -249,7 +249,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('adventure_travelling_call',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'adventure_travelling_sanitize_phone_number'
 	));	
 	$wp_customize->add_control('adventure_travelling_call',array(
 		'label'	=> __('Add Phone Number','adventure-travelling'),
@@ -321,7 +321,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('adventure_travelling_slider_arrows',array(
        'default' => 'false',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_slider_arrows',array(
        'type' => 'checkbox',
@@ -429,7 +429,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('adventure_travelling_site_title',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_site_title',array(
        'type' => 'checkbox',
@@ -439,7 +439,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_site_tagline',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_site_tagline',array(
        'type' => 'checkbox',
@@ -484,7 +484,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_product_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_product_sidebar',array(
        'type' => 'checkbox',
@@ -494,7 +494,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('adventure_travelling_single_product_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_single_product_sidebar',array(
        'type' => 'checkbox',

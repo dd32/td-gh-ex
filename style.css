@@ -4,7 +4,7 @@ Theme URI: https://www.themespride.com/themes/free-travel-agency-wordpress-theme
 Author: ThemesPride
 Author URI: https://www.themespride.com/
 Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. Demo: https://themespride.com/tp-adventure-traveling-pro/
-Version: 0.7.4
+Version: 0.7.5
 Tested up to: 5.4.1
 Requires PHP: 7.2.14
 License: GPLv2 or later
@@ -284,18 +284,18 @@ ul.list_nav {
 .main-navigation .current_page_ancestor > a{
   color: #ffcc05;
 }
-.main-navigation .menu > ul > li.highlight{
+.main-navigation .menu-nav > ul > li.highlight{
   background-color: #ffcc05;
 }
-.main-navigation .menu > ul > li.highlight:hover{
+.main-navigation .menu-nav > ul > li.highlight:hover{
   background: transparent;
 }
-.menubar.scrolled .menu > ul > li:hover > a:after,
-.menubar.scrolled .menu > ul > li.current_page_item > a:after,
-.menubar.scrolled .menu > ul > li.current-menu-item > a:after{
+.menubar.scrolled .menu-nav > ul > li:hover > a:after,
+.menubar.scrolled .menu-nav > ul > li.current_page_item > a:after,
+.menubar.scrolled .menu-nav > ul > li.current-menu-item > a:after{
   height: 2px;
 }
-.menu > ul > li.exoplanet-search:after{
+.menu-nav > ul > li.exoplanet-search:after{
   background: transparent !important;
 }
 .main-navigation ul ul li:hover > a{
@@ -389,8 +389,8 @@ Post Pages
 }
 .box-image img,
 .box-content img {
-width: 100%;
-height: auto;
+  width: 100%;
+  height: auto;
 }
 .box-info i {
   margin-right: 5px;
@@ -1230,20 +1230,34 @@ Media Queries
     font-size: 30px;
     color: #fff;
   }
+  .toggle-nav button{
+    background: transparent;
+    border: none;
+    font-size:30px;
+    text-align: right;
+  }
+  .toggle-nav button:focus{
+    outline: -webkit-focus-ring-color auto 1px;
+  }
   .sidenav {
     height: 100%;
-    width: 0;
+    width: 100%;
     position: fixed;
-    z-index: 9999999;
-    top: 0;
-    right: 0;
-    background-color: #1c1c1c;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    z-index: 999999;
+    left: 0;
+    top: -110%;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    background: #151515;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    cursor: zoom-in;
+  }
+  .sidenav.show {
+    visibility: visible;
+    top:0%;
   }
   .sidenav a {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
     color: #818181;
     display: block;
@@ -1257,17 +1271,11 @@ Media Queries
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
     display: block;
     color: #ffffff;
   }
   .sidenav #site-navigation {
     width: 100%;
-  }
-  .toggle-nav span{
-    font-size:30px;
-    cursor:pointer; 
-    text-align: right;
   }
   .toggle-nav{
     display: block;
@@ -1279,7 +1287,7 @@ Media Queries
   .main-navigation a{
     color: #444;
   }
-  .main-navigation .menu{
+  .main-navigation .menu-nav{
     float: none;
     text-align: center;
   }
@@ -1287,12 +1295,12 @@ Media Queries
   #masthead.scrolled .main-navigation ul ul li{
     display: block;
   }
-  .main-navigation .menu > ul > li.highlight{
+  .main-navigation .menu-nav > ul > li.highlight{
     background: transparent !important;
   }
-  .menu > ul > li:hover:before, 
-  .menu > ul > li.current_page_item:before, 
-  .menu > ul > li.current-menu-item:before{
+  .menu-nav > ul > li:hover:before, 
+  .menu-nav > ul > li.current_page_item:before, 
+  .menu-nav > ul > li.current-menu-item:before{
     display: none;
   }
   .sf-arrows .sf-with-ul:after{
@@ -1341,7 +1349,7 @@ Media Queries
     box-shadow: none;
   }
   .main-navigation li{
-    padding: 15px 0;
+    padding: 0;
   }
   .scrolled{
     position: static;
