@@ -19,12 +19,13 @@ jQuery(function($){
 });
 
 // ===== Mobile responsive Menu ==== 
-function automobile_hub_open_nav() {
-  document.getElementById("mySidenav").style.width = "250px";
+function automobile_hub_menu_open_nav() {
+  window.automobile_hub_responsiveMenu=true;
+  jQuery(".sidenav").addClass('show');
 }
-
-function automobile_hub_close_nav() {
-  document.getElementById("mySidenav").style.width = "0";
+function automobile_hub_menu_close_nav() {
+  window.automobile_hub_responsiveMenu=false;
+  jQuery(".sidenav").removeClass('show');
 }
 
 // ===== Menu Scroll ==== 

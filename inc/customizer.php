@@ -114,7 +114,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_remove_date',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_remove_date',array(
        'type' => 'checkbox',
@@ -124,7 +124,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_remove_author',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_remove_author',array(
        'type' => 'checkbox',
@@ -134,7 +134,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_remove_comments',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_remove_comments',array(
        'type' => 'checkbox',
@@ -144,7 +144,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_remove_tags',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_remove_tags',array(
        'type' => 'checkbox',
@@ -154,7 +154,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_remove_read_button',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_remove_read_button',array(
        'type' => 'checkbox',
@@ -209,7 +209,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('automobile_hub_mail',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'automobile_hub_sanitize_email'
 	));	
 	$wp_customize->add_control('automobile_hub_mail',array(
 		'label'	=> __('Add Mail Address','automobile-hub'),
@@ -229,7 +229,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('automobile_hub_call',array(
 		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'automobile_hub_sanitize_phone_number'
 	));	
 	$wp_customize->add_control('automobile_hub_call',array(
 		'label'	=> __('Add Phone Number','automobile-hub'),
@@ -301,7 +301,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('automobile_hub_slider_arrows',array(
        'default' => 'false',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_slider_arrows',array(
        'type' => 'checkbox',
@@ -381,7 +381,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('automobile_hub_site_title',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_site_title',array(
        'type' => 'checkbox',
@@ -391,7 +391,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_site_tagline',array(
        'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_site_tagline',array(
        'type' => 'checkbox',
@@ -436,7 +436,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_product_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_product_sidebar',array(
        'type' => 'checkbox',
@@ -446,7 +446,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('automobile_hub_single_product_sidebar',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
     ));
     $wp_customize->add_control('automobile_hub_single_product_sidebar',array(
        'type' => 'checkbox',

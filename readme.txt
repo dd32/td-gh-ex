@@ -2,9 +2,8 @@
 Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, post-formats, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +65,10 @@ Installation
     . Done the proper prefixing.
     . Added Woocommerce Product Settigs
 
+= 0.2.1 =
+    . Added proper sanitization function.
+    . Added focus on mobile menu.
+
 == Resources ==
 
 Automobile Hub WordPress Theme, Copyright 2018 ThemesPride
@@ -95,7 +98,7 @@ License: bootstrap is licensed under the MIT License
 Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 Font Awesome icons, Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
+License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 Source: http://fontawesome.io/
 
 JS Superfish

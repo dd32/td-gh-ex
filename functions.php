@@ -168,6 +168,8 @@ function automobile_hub_scripts() {
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array( 'jquery' ), true );
 
 	wp_enqueue_script( 'automobile-hub-custom-scripts', get_template_directory_uri() . '/assets/js/automobile-hub-custom.js', array('jquery'), true);
+
+	wp_enqueue_script( 'automobile-hub-focus-nav', get_template_directory_uri() . '/assets/js/focus-nav.js', array('jquery'), true);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -215,6 +217,23 @@ add_filter( 'loop_shop_per_page', 'automobile_hub_per_page', 20 );
 function automobile_hub_per_page( $cols ) {
   	$cols = get_theme_mod( 'automobile_hub_product_per_page', 9 );
 	return $cols;
+}
+
+function automobile_hub_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
+function automobile_hub_sanitize_email( $email, $setting ) {
+	// Strips out all characters that are not allowable in an email address.
+	$email = sanitize_email( $email );
+
+	// If $email is a valid email, return it; otherwise, return the default.
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function automobile_hub_sanitize_checkbox( $input ) {
+	// Boolean check 
+	return ( ( isset( $input ) && true == $input ) ? true : false );
 }
 
 /**

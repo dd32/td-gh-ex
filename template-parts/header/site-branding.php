@@ -72,7 +72,7 @@
             <div class="col-lg-8 col-md-8">
               <p class="cart_no infotext">
                 <?php global $woocommerce; ?>
-                <a href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'shopping cart','automobile-hub' ); ?>"><?php esc_html_e('CART ITEM','automobile-hub'); ?></a>
+                <a href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_attr_e( 'shopping cart','automobile-hub' ); ?>"><?php esc_html_e('CART ITEM','automobile-hub'); ?></a>
               </p>
               <p class="cart-value simplep"> <?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?> - <?php echo esc_sql( $woocommerce->cart->get_cart_total() ); ?></p>
             </div>
