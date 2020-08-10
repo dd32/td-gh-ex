@@ -3,10 +3,10 @@ Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, news
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 2.4.4
+Stable tag: 2.4.6
 Requires PHP: 5.3
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Alhena Lite offers a creative twist to a corporate and ecommerce WordPress theme.
 
@@ -15,10 +15,15 @@ Alhena Lite offers a creative twist to a corporate and ecommerce WordPress theme
 Alhena Lite offers a creative twist to a corporate and ecommerce WordPress theme. This theme gives you the ability to customize your site’s and now is compatible with WooCommerce plugin, to manage your e-commerce and shop site, with a beautiful masonry layout. The theme is a responsive design, supporting all modern browsers (Firefox, Chrome, Safari, Opera and IE 8, 9, and 10) and is developed using HTML5 and CSS3.
 
 Created by ThemeinProgress, http://www.themeinprogress.com
-Alhena Lite WordPress Theme, Copyright 2019 ThemeinProgress.
-Alhena Lite is distributed under the terms of the GPLv2 or later
+Alhena Lite WordPress Theme, Copyright 2020 ThemeinProgress.
+Alhena Lite is distributed under the terms of the GPLv3 or later
 
 == Changelog ==
+
+= 2.4.6 =
+Release date - August, 10 - 2020
+
+* Fixed - Reflected Cross Site Scripting on search template (Thanks to Talip Karabas)
 
 = 2.4.5 =
 Release date - July, 24 - 2020

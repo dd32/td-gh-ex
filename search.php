@@ -8,7 +8,7 @@
                     
 				<div class="col-md-12">
         
-					<h1><?php esc_html_e( '<span>Search </span> results for', "alhena-lite" ) ?> <strong><?php echo $s; ?> </strong></h1>
+					<h1><?php esc_html_e( '<span>Search </span> results for', "alhena-lite" ) ?> <strong><?php echo htmlentities($s); ?> </strong></h1>
                     
 				</div>
         
