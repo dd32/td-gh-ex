@@ -314,54 +314,6 @@ function astra_attr( $context, $attributes = array(), $args = array() ) {
 }
 
 /**
- * Ninja Forms compatibility id.
- *
- * @since 1.6.9
- *
- * @return int Compatibility id.
- */
-function astra_filter_ninja_forms_comp_id() {
-	return 1115254;
-};
-
-add_filter( 'ninja_forms_affiliate_id', 'astra_filter_ninja_forms_comp_id' );
-
-/**
- * Change upgrade link for wpforms.
- *
- * @param string $url upgrade launch page URL.
- * @return String updated upgrade link.
- */
-function astra_wpforms_upgrade_link( $url ) {
-	return 'https://shareasale.com/r.cfm?b=834775&u=1115254&m=64312&urllink=&afftrack=' . rawurlencode( $url );
-}
-
-add_filter( 'wpforms_upgrade_link', 'astra_wpforms_upgrade_link' );
-
-/**
- * Added referal ID to social snap upgrade link.
- *
- * @param string $link social snap upgrade link.
- * @return String social snap upgrade link
- */
-function astra_filter_socialsnap_upgrade_link( $link ) {
-	return 'https://socialsnap.com/?ref=352';
-}
-
-add_filter( 'socialsnap_upgrade_link', 'astra_filter_socialsnap_upgrade_link' );
-
-/**
- * Update GiveWP's "Add-ons" link.
- *
- * Compatibility to change the link according to their needs.
- */
-function astra_givewp_upgrade_link() {
-	return 'https://givewp.com/ref/412';
-}
-
-add_action( 'give_addon_menu_item_url', 'astra_givewp_upgrade_link' );
-
-/**
  * Get instance of WP_Filesystem.
  *
  * @since 2.1.0
@@ -379,7 +331,7 @@ function astra_filesystem() {
  * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
  * @return $wp_customize
  */
-function remove_controls( $wp_customize ) {
+function astra_remove_controls( $wp_customize ) {
 
 	if ( defined( 'ASTRA_EXT_VER' ) && version_compare( ASTRA_EXT_VER, '2.4.0', '<=' ) ) {
 		$layout = array(
@@ -399,34 +351,4 @@ function remove_controls( $wp_customize ) {
 	return $wp_customize;
 }
 
-add_filter( 'astra_customizer_configurations', 'remove_controls', 99 );
-
-/**
- * Pass theme specific stats to BSF analytics.
- *
- * @since 2.4.3
- * @param array $default_stats Default stats array.
- * @return array $default_stats Default stats with Theme specific stats array.
- */
-function astra_add_theme_specific_stats( $default_stats ) {
-	$default_stats['astra_settings'] = array(
-		'version'             => ASTRA_THEME_VERSION,
-		'breadcrumb-position' => astra_get_option( 'breadcrumb-position', false ),
-		'mobile-menu-style'   => astra_get_option( 'mobile-menu-style', false ),
-	);
-	return $default_stats;
-}
-
-add_filter( 'bsf_core_stats', 'astra_add_theme_specific_stats' );
-
-/**
- * HubSpot Plugin compatibility.
- *
- * @since 2.4.4
- * @return string Compatibility string.
- */
-function astra_get_hubspot_comp_code() {
-	return 'WsZfC';
-}
-
-add_filter( 'leadin_affiliate_code', 'astra_get_hubspot_comp_code' );
+add_filter( 'astra_customizer_configurations', 'astra_remove_controls', 99 );
