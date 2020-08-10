@@ -63,7 +63,7 @@
 							</div>
 								<ul class="meta-info">
 									 <li class="post-date"><a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"><i class="fa fa-calendar"></i> <?php echo esc_html(get_the_date('j M, Y')); ?></a></li>
-									<li class="posted-by"><i class="icofont icofont-user"></i> <?php esc_html_e('By','arowana'); ?> <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php esc_html(the_author()); ?></a></li>
+									<li class="posted-by"><i class="fa fa-user"></i> <?php esc_html_e('By','arowana'); ?> <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php esc_html(the_author()); ?></a></li>
 								</ul>
 						</article>
 					</div>
