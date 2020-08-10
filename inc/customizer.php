@@ -15,6 +15,24 @@ function figureground_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
+	// Add the archive content display setting and control, using a core section.
+	$wp_customize->add_setting( 'archive_excerpt' , array(
+		'default'			=> 'content',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'figureground_sanitize_archive_display',
+	) );
+	
+	$wp_customize->add_control( 'archive_excerpt', array(
+		'label'			=> __( 'Archive Views Display', 'figureground' ),
+		'description'	=> __( 'Post content will be displayed as an excerpt or the full content on the home/blog page, date archives, and category/tag pages.', 'figureground' ),
+		'section'		=> 'static_front_page',
+		'type'			=> 'radio',
+		'choices'		=> array(
+			'content'	=> __( 'Full Content', 'figureground' ),
+			'excerpt'		=> __( 'Excerpts', 'figureground' ),
+		),
+	) );
+
 	// Add the footer/copyright information section, settings & controls.
 	$wp_customize->add_section( 'footer' , array(
 		'title'	   => __( 'Footer', 'figureground' ),
@@ -259,7 +277,7 @@ add_action( "update_option_theme_mods_$figureground_theme", 'figureground_rebuil
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function figureground_customize_preview_js() {
-	wp_enqueue_script( 'figureground_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20190115', true );
+	wp_enqueue_script( 'figureground_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20200706', true );
 }
 add_action( 'customize_preview_init', 'figureground_customize_preview_js' );
 
@@ -279,6 +297,21 @@ function figureground_sanitize_type( $type ) {
 	return $type;
 }
 
+/**
+ * Sanitize the archive display value.
+ *
+ * @since Figure/Ground 1.0
+ *
+ * @param string $layout Type.
+ * @return string Filtered type (orthogonal|circular).
+ */
+function figureground_sanitize_archive_display( $type ) {
+	if ( ! in_array( $type, array( 'content', 'excerpt' ) ) ) {
+		$type = 'content';
+	}
+
+	return $type;
+}
 /**
  * Sanitize a checkbox input to 1 or 0.
  *

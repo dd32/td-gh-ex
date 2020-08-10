@@ -64,7 +64,7 @@ get_header();
 							'after'  => '</div>',
 						) );
 					?>
-					<nav role="navigation" id="image-navigation" class="image-navigation">
+					<nav role="navigation" id="image-navigation" class="image-navigation" aria-label="<?php esc_attr_e( 'Image navigation', 'figureground' ); ?>">
 						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'figureground' ) ); ?></div>
 						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'figureground' ) ); ?></div>
 					</nav><!-- #image-navigation -->

@@ -49,6 +49,9 @@ var fg = {};
 		} else {
 			$( '#figureground-animation-toggle' ).hide();
 		}
+
+		// Initialize clocks.
+		clocks.init();
 	};
 
 	// Run the initial iterations of the orthogonal animation.

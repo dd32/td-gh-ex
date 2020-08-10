@@ -4,13 +4,16 @@ Theme URI: http://themes.halsey.co/figureground
 Author: Nick Halsey
 Author URI: https://celloexpressions.com/
 Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a responsive 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and alternate "Circular" and "Orthogonal" modes. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site logo, a search bar, and a togglable menu. Wide and full-width images break across the canvas with support for the block editor (Gutenberg). From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
-Version: 2.2
+Version: 2.3
+Requires PHP: 5.6
+Requires at least: 5.2
+Tested up to: 5.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: figureground
-Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, wide-blocks
 
-Figure/Ground WordPress Theme, Copyright 2019 Nick Halsey.
+Figure/Ground WordPress Theme, Copyright 2020 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Figure/Ground is distributed under the terms of the GNU GPL.
 
@@ -532,7 +535,7 @@ a:active {
 }
 
 .wp-caption.alignleft,
-.wp-block-iimage .alignleft {
+.wp-block-image .alignleft {
 	margin-right: 16px;
 }
 
@@ -1582,6 +1585,10 @@ footer.entry-meta li {
 	cursor: pointer;
 }
 
+.entry-meta .empty {
+	display: none;
+}
+
 .site-main article:nth-child(odd) footer.entry-meta li:nth-child(even),
 .site-main article:nth-child(even) footer.entry-meta li:nth-child(odd) {
 	color: #222;
@@ -1641,6 +1648,15 @@ footer.entry-meta li.edit-link a:before {
 	-webkit-font-smoothing: antialiased;
 }
 
+.entry-meta .clock-canvas {
+	float: left;
+	max-height: 64px;
+	max-width: 64px;
+	margin: 0;
+	padding: 6px;
+	cursor: default;
+}
+
 /* Only show the number of comments, visually */
 .comments-link:not(.has-comments) a {
     clip-path: polygon(0 0, 64px 0, 64px 64px, 0 64px); /* Icon only */
@@ -1662,11 +1678,12 @@ footer.entry-meta li.edit-link a:before {
 
 footer.entry-meta li.post-author:before {
 	content: '\f304';
-	display: none; /* Show avatar instead... */
+	display: none; /* Show avatar instead */
 }
 
 footer.entry-meta li.posted-on a:before {
 	content: '\f303';
+	display: none; /* Show clock instead */
 }
 
 footer.entry-meta li.post-categories:before {
@@ -2259,6 +2276,11 @@ article:nth-child(odd) .wp-playlist-light .wp-playlist-item .wp-playlist-caption
 .image-navigation {
 	font-size: 24px;
 	line-height: 36px;
+}
+
+.excerpt-more.button {
+	float: right;
+	margin-right: 64px;
 }
 
 /* =Comments

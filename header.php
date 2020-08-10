@@ -18,6 +18,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} else {
+	do_action( 'wp_body_open' );
+} ?>
 <div class="skip-link"><a href="#content" class="screen-reader-text "><?php _e( 'Skip to content', 'figureground' ); ?></a></div>
 <canvas id="figure-ground" role="img" aria-label="<?php esc_attr_e( 'Solid/void dynamic background graphic', 'figureground' ); ?>"></canvas>
 <?php if ( 0 < absint( get_theme_mod( 'fg_speed', 0 ) || is_customize_preview() ) ) {
@@ -41,7 +46,7 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main navigation', 'figureground' ); ?>">
 				<button type="button" class="menu-toggle"><span class="screen-reader-text"><?php _e( 'Menu', 'figureground' ); ?></span></button>
 
 				<?php wp_nav_menu( array(

@@ -1,9 +1,10 @@
 === Figure/Ground ===
 Contributors: celloexpressions
 Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks
-Requires at least: 4.5
-Tested up to: 5.1
-Stable tag: 2.2
+Requires at least: 5.2
+Requires PHP: 5.6
+Tested up to: 5.5
+Stable tag: 2.3
 Description: Figure/Ground is a bold blogging theme featuring a dynamic background and extensive customization options. 
 License: GPLv2
 
@@ -33,7 +34,7 @@ The following options are available for this theme, via the Customizer:
 
 The following features are also available:
 * Featured images.
-* Post formats: aside, image, galery, video, audio, quote, and link formats get special treatment and extra-big icons.
+* Post formats: aside, image, gallery, video, audio, quote, and link formats get special treatment and big icons.
 * Custom styling for galleries, audio and video players, and playlists, which are also included in the editor styles.
 * Images get special treatment and really stand out in the highly abstract, artistic design of Figure/Ground. Accordingly, featured images and single-view image pages display large images without unnecessary padding or other chrome.
 * Abundant iconography (via Genericons), in post meta, post formats, archive page headers, and more.
@@ -54,9 +55,12 @@ It is extremely important that your two selected Figure/Ground colors have adequ
 Additionally, contrast between accent colors and their respective figure/ground colors is checked and adjusted as needed.
 
 == Copyrights & License ==
-Figure/Ground WordPress Theme, Copyright 2019 Nick Halsey.
+Figure/Ground WordPress Theme, Copyright 2020 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Figure/Ground is distributed under the terms of the GNU GPL.
+
+Bundled Images are by Nick Halsey, Copyright 2020, licensed under GPLv2 or later.
+Figure/Ground is a sister theme to the Linework theme by Nick Halsey.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -77,6 +81,11 @@ Genericons are licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://genericons.com
 
 == Changelog ==
+= 2.3 =
+* Add option to show excerpts or full post contents on archive pages.
+* Make clock icons dynmic to reflect actual post times.
+* Updates for WordPress 5.2 - 5.5.
+
 = 2.2 =
 * Sync setting defaults in customizer and on front end.
 * Fix keyboard naviation for menu toggle on certain browsers and menu types.

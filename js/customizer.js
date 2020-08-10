@@ -94,6 +94,8 @@
 	// updated with Selective Refresh a few seconds later.
 	wp.customize( 'fg_color_light', function( value ) {
 		value.bind( function( to ) {
+			window.fg.settings.bcolor = to;
+			window.clocks.init();
 			// Update custom color CSS
 			var style = $( '#figureground-colors' ),
 			    color = style.data( 'fg_color_light' ),
@@ -109,6 +111,7 @@
 		value.bind( function( to ) {
 			window.fg.settings.color = to;
 			window.fg.init();
+			window.clocks.init();
 			// Update custom color CSS
 			var style = $( '#figureground-colors' ),
 			    color = style.data( 'fg_color_dark' ),

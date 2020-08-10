@@ -289,7 +289,15 @@ a:focus {
 	outline: thin dotted;
 }
 
-.editor-block-list__layout .editor-block-list__block ::selection {
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	text-decoration: none;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block ::selection {
 	background: #aaf;
 	color: #222;
 }
@@ -338,7 +346,8 @@ a:focus {
  * ----------------------------------------------------------------------------
  */
 
-.alignleft {
+.alignleft,
+.wp-block-image .alignleft {
 	display: inline;
 	float: left;
 	margin-right: 16px;
@@ -359,7 +368,7 @@ a:focus {
 }
 
 .wp-caption.alignleft,
-.wp-block-iimage .alignleft {
+.wp-block-image .alignleft {
 	margin-right: 16px;
 }
 

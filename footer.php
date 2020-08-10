@@ -10,7 +10,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<?php if ( is_active_sidebar( 'main' ) ) : ?>
 			<div class="widgets-container" role="complementary">
 				<div class="widget-area">
@@ -18,7 +18,7 @@
 				</div><!-- .widget-area -->
 			</div><!-- .widgets-container -->
 		<?php endif; ?>
-		<div class="site-info">
+		<div class="site-info" role="contentinfo">
 			<?php figureground_footer_credits(); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

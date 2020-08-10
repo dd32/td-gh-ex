@@ -15,11 +15,13 @@ function figureground_post_meta() {
 	if ( has_post_format() && in_array( get_post_format(), array( 'aside', 'image', 'gallery', 'video', 'audio', 'quote', 'link' ) ) ) {
 		$format = get_post_format();
 		echo '<li class="post-format-icon"><a class="post-format-link" href="' . get_post_format_link( $format ) . '">View all ' . $format . ' posts</a></li>';
+	} else {
+		echo '<li class="post-format-icon empty"></li>';
 	}
 	
 	// Author
-	if( is_multi_author() ) {
-		printf( __( '<li class="post-author">%1$s</li>', 'figureground' ),
+	if ( is_multi_author() ) {
+		printf( '<li class="post-author">%1$s</li>',
 			sprintf( '<a href="%1$s" title="%2$s">%3$s<span class="author-name">%4$s</span></a>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_attr( sprintf( __( 'View all posts by %s', 'figureground' ), get_the_author() ) ),
@@ -27,9 +29,19 @@ function figureground_post_meta() {
 				esc_html( get_the_author() )
 			)
 		);
+	} else {
+		echo '<li class="post-author empty"></li>';
 	}
 
 	// Date/time
+	// Clock time icon.
+	$clock = sprintf( '<canvas class="clock-canvas" aria-hidden="true" title="%1$s" data-minute="%2$s" data-hour="%3$s"></canvas>',
+		esc_attr( get_the_time() ),
+		absint( get_the_time( 'i' ) ),
+		absint( get_the_time( 'g' ) )
+	);
+
+	// Date text and screen reader text.	
 	$time_string = '<span class="screen-reader-text">' . __( 'Posted on: ', 'figureground' ) . '</span>';
 	$time_string .= '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -45,9 +57,8 @@ function figureground_post_meta() {
 	);
 
 	printf( __( '<li class="posted-on">%1$s</li>', 'figureground' ),
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		$clock . sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
 			$time_string
 		)
 	);
@@ -112,22 +123,22 @@ function figureground_content_nav( $nav_id ) {
 	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 
 	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'figureground' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'figureground' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'figureground' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav" aria-hidden="true">' . _x( '&larr;', 'Previous post link', 'figureground' ) . '</span>&nbsp;%title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title&nbsp;<span class="meta-nav" aria-hidden="true">' . _x( '&rarr;', 'Next post link', 'figureground' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'figureground' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav" aria-hidden="true">&larr;</span> Older posts', 'figureground' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'figureground' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav" aria-hidden="true">&rarr;</span>', 'figureground' ) ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -265,10 +276,10 @@ function figureground_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
+	// Date text and screen reader text.
 	printf( __( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>', 'figureground' ),
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
 			$time_string
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
@@ -322,7 +333,11 @@ function figureground_footer_credits() {
 	do_action( 'figureground_credits' ); 
 	$sep_span = '<span class="sep" role="separator" aria-hidden="true"> | </span>'; ?>
 	&copy <?php echo date('Y'); ?> <a href="<?php esc_attr( home_url() ); ?>" id="footer-copy-name"><?php echo esc_html( get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ) ); ?></a>
-	<?php if ( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
+	<?php if ( '' !== get_privacy_policy_url() ) { ?>
+		<span class="privacy-policy">
+			<?php echo $sep_span; the_privacy_policy_link(); ?>
+		</span>
+	<?php } if ( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
 		<span class="wordpress-credit" <?php if ( ! get_theme_mod( 'powered_by_wp', true ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
 			<?php echo $sep_span; ?><a href="https://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'figureground' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'figureground' ), 'WordPress' ); ?></a>
 		</span>
@@ -330,8 +345,5 @@ function figureground_footer_credits() {
 		<span class="theme-credit" <?php if ( ! get_theme_mod( 'theme_meta', false ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
 			<?php echo $sep_span; printf( __( 'Theme: %1$s by %2$s.', 'figureground' ), 'Figure/Ground', '<a href="https://celloexpressions.com/" rel="designer">Nick Halsey</a>' ); ?>
 		</span>
-	<?php if ( function_exists( 'the_privacy_policy_link' ) ) {
-			the_privacy_policy_link( $sep_span, '' );
-		}
-	}
+	<?php }
 }

@@ -26,14 +26,19 @@
 	<?php else : ?>
 	<div class="entry-content">
 		<?php /* translators: %s is the post title */
-		the_content( sprintf( __( 'Continue reading %s', 'figureground' ),
-			'<span class="screen-reader-text">' . get_the_title() .
-			' </span><span class="meta-nav">&rarr;</span>' ) ); ?>
-		<?php
+		// False post format = standard/default post format. Always show content for other formats.
+		if ( false !== get_post_format() || 'content' === get_theme_mod( 'archive_excerpt', 'content' ) ) {
+			the_content( sprintf( __( 'Continue reading %s', 'figureground' ),
+				'<span class="screen-reader-text">' . get_the_title() .
+				' </span><span class="meta-nav" aria-hidden="true">&rarr;</span>' ) );
+				
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'figureground' ),
 				'after'  => '</div>',
 			) );
+		} else {
+			the_excerpt();
+		}
 		?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>

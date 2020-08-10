@@ -37,7 +37,7 @@ function figureground_setup() {
 
 	// Switches default core markup for search form, comment form, and comments
 	// to output valid HTML5.
-	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style', 'navigation-widgets' ) );
 
 	/**
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -169,6 +169,10 @@ function figureground_setup() {
 			),
 		)
 	);
+
+	// Disable gradients.
+	add_theme_support( 'disable-custom-gradients' );
+	add_theme_support( 'editor-gradient-presets', array() );
 }
 endif; // figureground_setup
 add_action( 'after_setup_theme', 'figureground_setup' );
@@ -205,7 +209,10 @@ function figureground_scripts() {
 	wp_enqueue_script( 'figureground-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20190203', true );
 
 	// Load Figure/Ground animation.
-	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array(), '20190115', false );
+	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array( 'jquery' ), '20190115', false );
+
+	// Load clock icons.
+	wp_enqueue_script( 'figureground-clocks', get_template_directory_uri() . '/js/clocks.js', array( 'figureground' ), '20200706', false );
 
 	// Load theme options to pass to the Figure/Ground script.
 	$type = esc_html( get_theme_mod( 'fg_type', 'rhombus' ) );
@@ -216,6 +223,7 @@ function figureground_scripts() {
 	$delay = absint( get_theme_mod( 'fg_speed', 0 ) );
 	$initial = absint( get_theme_mod( 'fg_initial', 320 ) );
 	$color = sanitize_hex_color( get_theme_mod( 'fg_color_dark', '#222' ) );
+	$bcolor = sanitize_hex_color( get_theme_mod( 'fg_color_light', '#f7f7ec' ) );
 
 	// Pass data to JS.
 	$settings = array(
@@ -227,6 +235,7 @@ function figureground_scripts() {
 		'delay'   => $delay,
 		'initial' => $initial,
 		'color'   => $color,
+		'bcolor'  => $bcolor,
 	);
 
 	wp_localize_script( 'figureground', 'figureGroundSettings', $settings );
@@ -289,6 +298,33 @@ function figureground_content_width() {
 	}
 }
 add_action( 'template_redirect', 'figureground_content_width' );
+
+/**
+ * Customize the excerpt display.
+ */
+function figureground_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
+
+	global $post;
+	
+	$title = sprintf ( __( 'Read more %s', 'arbutus' ),
+		'<span class="screen-reader-text">' . esc_html( get_the_title() ) .
+		' </span><span class="meta-nav" aria-hidden="true"> &rarr;</span>' );
+
+	return '&hellip;<div><a class="excerpt-more button" href="' . esc_url( get_permalink( $post->ID ) ) . '">' . $title . '</a></div>';
+}
+add_filter( 'excerpt_more', 'figureground_excerpt_more' );
+
+function figureground_excerpt_length( $length ) {
+	if ( is_admin() ) {
+		return $length;
+	}
+
+	return 60;
+}
+add_filter( 'excerpt_length', 'figureground_excerpt_length' );
 
 /**
  * Custom template tags for this theme.
