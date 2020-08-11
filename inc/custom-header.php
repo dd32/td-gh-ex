@@ -285,7 +285,7 @@ if ( ! function_exists( 'audioman_header_media_text' ) ):
 
 				<?php if ( $header_media_url_text ) : ?>
 					<span class="more-link">
-						<a href="<?php echo esc_url( $header_media_url ); ?>" target="<?php echo get_theme_mod( 'audioman_header_url_target' ) ? '_blank' : '_self'; ?>" class="readmore"><?php echo esc_html( $header_media_url_text ); ?><span class="screen-reader-text"><?php echo wp_kses_post( $header_media_url_text ); ?></span></a>
+						<a href="<?php echo esc_url( $header_media_url ); ?>" target="<?php echo esc_attr( get_theme_mod( 'audioman_header_url_target' ) ) ? '_blank' : '_self'; ?>" class="readmore"><?php echo esc_html( $header_media_url_text ); ?><span class="screen-reader-text"><?php echo wp_kses_post( $header_media_url_text ); ?></span></a>
 					</span>
 				<?php endif; ?>
 			<?php endif; ?>

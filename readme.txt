@@ -1,9 +1,10 @@
 === Audioman ===
 Contributors: catchthemes
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
-Requires at least: 4.9
-Tested up to: 5.4
-Stable tag: 2.0.9
+Requires at least: 5.1
+Tested up to: 5.5
+Requires PHP: 5.6
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,7 +44,13 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
-= 2.0.9 (Released: March 12, 2020) =
+= 2.1 (Released: August 11, 2020) =
+* Updated: French translation by Charles GIRARDIN
+* Updated: Header Image
+* Updated: Screenshot
+* Updated: Readme
+
+= 2.0.9 (Released: April 27, 2020) =
 * Added: French translation by Charles GIRARDIN
 
 = 2.0.8 (Released: March 12, 2020) =
@@ -166,10 +173,7 @@ Audioman is distributed under the terms of the GNU GPL
 	All images are licensed under [CC0] (https://creativecommons.org/publicdomain/zero/1.0/)
 
 	Header Image and Screenshot main image
-		* https://pixabay.com/en/an-pierle-white-velvet-band-876094/
-
-	Alternate Header Image
-		* https://www.pexels.com/photo/guitarist-of-greyscale-photo-210922/
+		* https://stocksnap.io/photo/people-man-YQHGESQ5DN
 
 	All other images are self-shot by Catch Themes and released under same license as theme.
 

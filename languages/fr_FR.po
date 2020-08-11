@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audioman\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-04-27 00:20-0700\n"
-"PO-Revision-Date: 2020-04-27 00:20-0700\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-08-11 12:05-0400\n"
+"PO-Revision-Date: 2020-08-11 12:06-0400\n"
+"Last-Translator: Charles Girardin <girardin.charles.57@gmail.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -184,7 +184,7 @@ msgstr "développer le menu enfant"
 msgid "collapse child menu"
 msgstr "réduire le menu enfant"
 
-#: ../functions.php:630 ../functions.php:653 ../functions.php:680
+#: ../functions.php:605 ../functions.php:628 ../functions.php:655
 msgid "Continue reading"
 msgstr "Continuer la lecture"
 
@@ -209,12 +209,12 @@ msgstr "%1$sRésultat de recherche pour: %2$s"
 #: ../inc/breadcrumb.php:27
 #, php-format
 msgid "%1$sPosts tagged %2$s"
-msgstr "%1$sPublications taggées %2$s"
+msgstr "%1$sArticles taggés %2$s"
 
 #: ../inc/breadcrumb.php:29
 #, php-format
 msgid "%1$sView all posts by %2$s"
-msgstr "%1$sVoir toutes les publications de %2$s"
+msgstr "%1$sVoir tous les articles par %2$s"
 
 #: ../inc/breadcrumb.php:30 ../inc/json-ld-schema.php:30
 msgid "Error 404"
@@ -866,7 +866,7 @@ msgstr "Réinitialiser tous les paramètres"
 
 #: ../inc/customizer/customizer.php:59
 msgid "Check to reset all settings to default"
-msgstr "Vérifier pour remettre tous les paramètres à leur valeur par défaut"
+msgstr "Cocher pour remettre tous les paramètres à leur valeur par défaut"
 
 #: ../inc/customizer/customizer.php:70 ../inc/customizer/customizer.php:78
 msgid "Important Links"
@@ -875,7 +875,9 @@ msgstr "Liens importants"
 #: ../inc/customizer/featured-content.php:19
 #, php-format
 msgid "For all Featured Content Options for Audioman Theme, go %1$shere%2$s"
-msgstr "Pour toutes les options pour le thème Audioman, aller %1$sici%2$s"
+msgstr ""
+"Pour toutes les options de contenu en vedette pour le thème Audioman, allez "
+"%1$sici%2$s"
 
 #: ../inc/customizer/featured-content.php:30
 #: ../inc/customizer/featured-content.php:119
@@ -915,7 +917,7 @@ msgstr ""
 
 #: ../inc/customizer/featured-content.php:104
 msgid "No of Featured Content"
-msgstr "Pas de contenu à l'honneur"
+msgstr "Nombre de contenu à l'honneur"
 
 #: ../inc/customizer/featured-slider.php:16
 msgid "Featured Slider"
@@ -931,7 +933,7 @@ msgstr ""
 
 #: ../inc/customizer/featured-slider.php:44
 msgid "No of Slides"
-msgstr "Pas de diapositives"
+msgstr "Nombre de diapositives"
 
 #: ../inc/customizer/featured-slider.php:59
 #: ../inc/customizer/hero-content.php:36 ../inc/customizer/playlist.php:47
@@ -967,7 +969,7 @@ msgid ""
 "Header Image will be used as a fallback while the video loads "
 msgstr ""
 "Si vous ajoutez une vidéo, elle n'apparaîtra que sur la page d'accueil/la "
-"page de garde. Les autres pages utiliseront l'image de l'en-tête/publication/"
+"page de garde. Les autres pages utiliseront l'image de l'en-tête/article/"
 "page en fonction de l'option choisie. L'image d'en-tête sera utilisée comme "
 "solution de repli pendant le chargement de la vidéo "
 
@@ -982,7 +984,7 @@ msgstr "Excepté la page d'accueil"
 
 #: ../inc/customizer/header-media.php:23
 msgid "Excluding Homepage, Page/Post Featured Image"
-msgstr "Excepté la page d'accueil, Page et de l'image de Publication"
+msgstr "Excepté la page d'accueil, Page et de l'image de l'article"
 
 #: ../inc/customizer/header-media.php:24 ../inc/customizer/header-media.php:68
 #: ../inc/customizer/helpers.php:95
@@ -991,11 +993,11 @@ msgstr "Site entier"
 
 #: ../inc/customizer/header-media.php:25
 msgid "Entire Site, Page/Post Featured Image"
-msgstr "Site entier, Page et image de Publication"
+msgstr "Site entier, Page et image de l'article"
 
 #: ../inc/customizer/header-media.php:26
 msgid "Pages and Posts"
-msgstr "Pages et publications"
+msgstr "Pages et articles"
 
 #: ../inc/customizer/header-media.php:27 ../inc/customizer/helpers.php:96
 msgid "Disabled"
@@ -1043,11 +1045,11 @@ msgstr "Texte de l'url de média d'en-tête"
 
 #: ../inc/customizer/header-media.php:115
 msgid "Check to Open Link in New Window/Tab"
-msgstr "Choisir pour ouvrir le lien dans une nouvelle fenêtre/onglet"
+msgstr "Cocher pour ouvrir le lien dans une nouvelle fenêtre/onglet"
 
 #: ../inc/customizer/helpers.php:109
 msgid "Default(Older Posts/Newer Posts)"
-msgstr "Défaut (Anciennes publications/Nouvelles publications)"
+msgstr "Défaut (Anciens articles/Nouveaux articles)"
 
 #: ../inc/customizer/helpers.php:110
 msgid "Numeric"
@@ -1055,7 +1057,7 @@ msgstr "Numérique"
 
 #: ../inc/customizer/helpers.php:132
 msgid "-- Select --"
-msgstr "-- Selectionnez --"
+msgstr "-- Sélectionnez --"
 
 #: ../inc/customizer/helpers.php:135
 #, php-format
@@ -1157,7 +1159,7 @@ msgstr "Fil d'Ariane"
 
 #: ../inc/customizer/theme-options.php:31
 msgid "Check to enable Breadcrumb"
-msgstr "Choisir pour activer le fil d'Ariane"
+msgstr "Cocher pour activer le fil d'Ariane"
 
 #: ../inc/customizer/theme-options.php:39
 msgid "News"
@@ -1165,7 +1167,7 @@ msgstr "Nouvelles"
 
 #: ../inc/customizer/theme-options.php:41
 msgid "Latest Posts Title"
-msgstr "Titre des dernières publications"
+msgstr "Titre des derniers articles"
 
 #: ../inc/customizer/theme-options.php:48
 msgid "Layout Options"
@@ -1223,8 +1225,8 @@ msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
-"Seuls les publications appartenant aux catégories sélectionnées ici seront "
-"affichées sur la première page"
+"Seuls les articles appartenant aux catégories sélectionnées ici seront "
+"affichés sur la première page"
 
 #: ../inc/customizer/theme-options.php:135
 msgid "Homepage / Frontpage Options"
@@ -1281,15 +1283,11 @@ msgstr "Diapo suivante"
 msgid "Default Header Image"
 msgstr "Image d'en-tête par défaut"
 
-#: ../inc/header-background-color.php:54
-msgid "Alternate Header Image"
-msgstr "Autre image d'en-tête"
-
-#: ../inc/header-background-color.php:66
+#: ../inc/header-background-color.php:61
 msgid "Play background video"
 msgstr "Jouer la vidéo de fond"
 
-#: ../inc/header-background-color.php:67
+#: ../inc/header-background-color.php:62
 msgid "Pause background video"
 msgstr "Pause de la vidéo de fond"
 
@@ -1303,11 +1301,11 @@ msgstr "Résultats de recherche pour: "
 
 #: ../inc/json-ld-schema.php:28
 msgid "Posts tagged "
-msgstr "Publications taggées "
+msgstr "Articles taggés "
 
 #: ../inc/json-ld-schema.php:29
 msgid "View all posts by "
-msgstr "Voir toutes les publications de "
+msgstr "Voir toutes les articles de "
 
 #: ../inc/metabox/metabox.php:68
 msgid "Enable"
@@ -1327,7 +1325,7 @@ msgstr "Options Audioman"
 
 #: ../inc/template-functions.php:123
 msgid "Scroll Up"
-msgstr "Rretour vers le haut"
+msgstr "Retour vers le haut"
 
 #: ../inc/template-functions.php:149
 msgid "Prev"
@@ -1401,7 +1399,7 @@ msgstr "<span class=\"date-label\">Publié dans </span>"
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL, 3: Privacy Policy Link"
 msgid "Copyright &copy; %1$s %2$s %3$s"
-msgstr "Droit d’auteur et copie; %1$s %2$s %3$s"
+msgstr "Droit d’auteur &copy; %1$s %2$s %3$s"
 
 #: ../inc/template-tags.php:242
 msgid "by"
@@ -1456,10 +1454,8 @@ msgid "&mdash; Select &mdash;"
 msgstr "&mdash; Sélectionner &mdash;"
 
 #: ../index.php:24
-#, fuzzy
-#| msgid "Recent posts"
 msgid "Recent Posts"
-msgstr "Publications récentes"
+msgstr "Articles récents"
 
 #: ../product-searchform.php:10
 msgid "Search for:"
@@ -1477,15 +1473,15 @@ msgstr "Recherche"
 
 #: ../single.php:23
 msgid "Previous Post"
-msgstr "Précédente publication"
+msgstr "Article Précédent"
 
 #: ../single.php:23
 msgid "Prev Post"
-msgstr "Préc. publication"
+msgstr "Article Préc"
 
 #: ../single.php:24
 msgid "Next Post"
-msgstr "Nouvelle publication"
+msgstr "Nouvel article"
 
 #: ../template-parts/biography.php:26
 msgid "Author:"
@@ -1494,15 +1490,14 @@ msgstr "Auteur:"
 #: ../template-parts/biography.php:33
 #, php-format
 msgid "View all posts by %s"
-msgstr "Voir toutes les publications de %s"
+msgstr "Voir tous les articles de %s"
 
 #: ../template-parts/content/content-none.php:25
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Prêt à publier votre première publication? <a href=\"%1$s\">Commencez ici</"
-"a>."
+"Prêt à publier votre premier article? <a href=\"%1$s\">Commencez ici</a>."
 
 #: ../template-parts/content/content-none.php:38
 msgid ""
@@ -1567,10 +1562,11 @@ msgid "In The News"
 msgstr "Dans les nouvelles"
 
 #: ../template-parts/testimonial/display-testimonial.php:64
-#, fuzzy
-#| msgid "Previous Post"
 msgid "Previous"
-msgstr "Précédente publication"
+msgstr "Précédent"
+
+#~ msgid "Alternate Header Image"
+#~ msgstr "Autre image d'en-tête"
 
 #~ msgid "Précédent"
 #~ msgstr "Précédent"
