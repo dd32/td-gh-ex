@@ -93,7 +93,7 @@ function simplecatch_scripts_method() {
 	/**
 	 * Loads up main stylesheet.
 	 */
-	wp_enqueue_style( 'simple-catch-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'simple-catch-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/genericons/genericons.css', array(), '3.4.1' );
@@ -349,7 +349,7 @@ if ( ! function_exists( 'simplecatch_header_title' ) ) :
 			<?php endif; ?>
 			<?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="<?php echo $description_class; ?>"><?php echo $description; ?></p>
+				<p class="<?php echo $description_class; ?>"><?php echo esc_html( $description ); ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding-text -->
 	<?php
