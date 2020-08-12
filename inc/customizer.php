@@ -11,7 +11,6 @@ function unlimited_add_customizer_content( $wp_customize ) {
 	// check if exists in case user has no pages
 	if ( is_object( $wp_customize->get_section( 'static_front_page' ) ) ) {
 		$wp_customize->get_section( 'static_front_page' )->priority = 5;
-		$wp_customize->get_section( 'static_front_page' )->title    = __( 'Front Page', 'unlimited' );
 	}
 
 	/***** Add PostMessage Support *****/
@@ -112,9 +111,7 @@ function unlimited_add_customizer_content( $wp_customize ) {
 
 			$label = ucfirst( $social_site );
 
-			if ( $social_site == 'google-plus' ) {
-				$label = __('Google Plus', 'unlimited');
-			} elseif ( $social_site == 'rss' ) {
+			if ( $social_site == 'rss' ) {
 				$label = __('RSS', 'unlimited');
 			} elseif ( $social_site == 'soundcloud' ) {
 				$label = __('SoundCloud', 'unlimited');
@@ -516,9 +513,9 @@ function ct_unlimited_sanitize_phone( $input ) {
 }
 
 function ct_unlimited_customize_preview_js() {
-	if ( !function_exists( 'ct_unlimited_pro_init' ) ) {
+	if ( !function_exists( 'ct_unlimited_pro_init' ) && !(isset($_GET['mailoptin_optin_campaign_id']) || isset($_GET['mailoptin_email_campaign_id'])) ) {
 		$url = 'https://www.competethemes.com/unlimited-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Unlimited%20Pro%20-%20Customizer';
-		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Get New Layouts with Unlimited Pro <span>&rarr;</span></a></div>')</script>";
+		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Customize Colors with Unlimited Pro <span>&rarr;</span></a></div>')</script>";
 		echo apply_filters('ct_unlimited_customizer_ad', $content);
 	}
 }

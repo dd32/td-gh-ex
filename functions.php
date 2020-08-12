@@ -60,7 +60,6 @@ if ( ! function_exists( 'unlimited_theme_setup' ) ) {
 
 		// Gutenberg - wide & full images
 		add_theme_support( 'align-wide' );
-		add_theme_support( 'align-full' );
 
 		// Gutenberg - add support for editor styles
 		add_theme_support('editor-styles');
@@ -203,7 +202,7 @@ if ( ! function_exists( 'unlimited_update_comment_field' ) ) {
 		return $comment_field;
 	}
 }
-add_filter( 'comment_form_field_comment', 'unlimited_update_comment_field' );
+add_filter( 'comment_form_field_comment', 'unlimited_update_comment_field', 7 );
 
 if ( ! function_exists( 'unlimited_remove_comments_notes_after' ) ) {
 	function unlimited_remove_comments_notes_after( $defaults ) {
@@ -215,6 +214,10 @@ add_action( 'comment_form_defaults', 'unlimited_remove_comments_notes_after' );
 
 if ( ! function_exists( 'ct_unlimited_filter_read_more_link' ) ) {
 	function ct_unlimited_filter_read_more_link( $custom = false ) {
+
+		if ( is_feed() ) {
+			return;
+		}
 		global $post;
 		$ismore             = strpos( $post->post_content, '<!--more-->' );
 		$read_more_text     = get_theme_mod( 'read_more_text' );
@@ -353,7 +356,6 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 			'foursquare'    => 'unlimited_foursquare_profile',
 			'github'        => 'unlimited_github_profile',
 			'goodreads'			=> 'unlimited_goodreads_profile',
-			'google-plus'   => 'unlimited_google_plus_profile',
 			'google-wallet' => 'unlimited_google-wallet_profile',
 			'hacker-news'   => 'unlimited_hacker-news_profile',
 			'medium'        => 'unlimited_medium_profile',
@@ -673,10 +675,6 @@ if ( ! function_exists( 'unlimited_add_meta_elements' ) ) {
 }
 add_action( 'wp_head', 'unlimited_add_meta_elements', 1 );
 
-/* Move the WordPress generator to a better priority. */
-remove_action( 'wp_head', 'wp_generator' );
-add_action( 'wp_head', 'wp_generator', 1 );
-
 if ( ! function_exists( 'unlimited_infinite_scroll_render' ) ) {
 	function unlimited_infinite_scroll_render() {
 		while ( have_posts() ) {
@@ -689,6 +687,13 @@ if ( ! function_exists( 'unlimited_infinite_scroll_render' ) ) {
 if ( ! function_exists( 'unlimited_get_content_template' ) ) {
 	function unlimited_get_content_template() {
 
+		// Get bbpress.php for all bbpress pages
+		if ( function_exists( 'is_bbpress' ) ) {
+			if ( is_bbpress() ) {
+				get_template_part( 'content/bbpress' );
+				return;
+			} 
+		}
 		if ( is_home() || is_archive() ) {
 			get_template_part( 'content-archive', get_post_type() );
 		} else {
@@ -768,3 +773,38 @@ function ct_unlimited_output_last_updated_date() {
 			}
 	}
 }
+
+//----------------------------------------------------------------------------------
+// Add support for Elementor headers & footers
+//----------------------------------------------------------------------------------
+function ct_unlimited_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_location( 'header' );
+	$elementor_theme_manager->register_location( 'footer' );
+}
+add_action( 'elementor/theme/register_locations', 'ct_unlimited_register_elementor_locations' ); 
+
+//----------------------------------------------------------------------------------
+// Output standard post pagination
+//----------------------------------------------------------------------------------
+if ( ! function_exists( ( 'ct_unlimited_pagination' ) ) ) {
+  function ct_unlimited_pagination() {
+    // Never output pagination on bbpress pages
+    if ( function_exists( 'is_bbpress' ) ) {
+      if ( is_bbpress() ) {
+        return;
+      } 
+    }
+    // Output pagination if Jetpack not installed, otherwise check if infinite scroll is active before outputting
+    if ( !class_exists( 'Jetpack' ) ) {
+      the_posts_pagination( array(
+        'prev_text' => esc_html__( 'Previous', 'unlimited' ),
+        'next_text' => esc_html__( 'Next', 'unlimited' )
+      ) );
+    } elseif ( !Jetpack::is_module_active( 'infinite-scroll' ) ) {
+      the_posts_pagination( array(
+        'prev_text' => esc_html__( 'Previous', 'unlimited' ),
+        'next_text' => esc_html__( 'Next', 'unlimited' )
+      ) );
+    }
+	}
+} 
