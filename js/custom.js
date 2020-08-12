@@ -33,11 +33,9 @@
         });
         
         // Show / Hide Search
-        $( '.menu-search' ).toggle( function(){
+        $( '.menu-search' ).on( 'click', function() {
             $( 'body').addClass( 'show-site-search' );
             $( '.search-block input.search-field' ).focus();
-        },function(){
-            $( 'body').removeClass( 'show-site-search' );
         });
 
         // Scroll To Top Button Functionality

@@ -66,6 +66,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.42
+* Style tweaks/fixes
+* Fixes for compatibility with WP 5.5
+* Gutenberg Editor CSS fix
+* Updated the language .pot file
+* PREMIUM: Improvements on Website Loader
+* PREMIUM: Improvements on AJAX Blog Post loader
+* PREMIUM: Improvements on Blog Infinity Scroll
+
 #### 1.1.41
 * Style tweaks/fixes
 * Fix comments spacing with CSS
