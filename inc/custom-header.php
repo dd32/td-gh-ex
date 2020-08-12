@@ -298,7 +298,7 @@ function catchbox_header_details() {
 
 		$description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) : ?>
-			<p id="site-description"><?php echo $description; ?></p>
+			<p id="site-description"><?php echo esc_html( $description ); ?></p>
 		<?php endif; ?>	
    	</div><!-- #hgroup -->
 <?php

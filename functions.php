@@ -737,7 +737,7 @@ function catchbox_scripts_method() {
 	}
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'catchbox-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'catchbox-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'catchbox-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'catchbox-style' ), '1.0' );
