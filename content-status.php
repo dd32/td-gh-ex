@@ -17,7 +17,7 @@
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'catcheverest_status_avatar', '60' ) ); ?>
                 <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
             </header>
-            <h3 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'status' ) ); ?>" title="<?php esc_attr_e( 'All Status Posts', 'catch-everest' ); ?>"><?php esc_attr_e( 'Status', 'catch-everest' ); ?></a></h3>
+            <h3 class="entry-format"><a href="<?php echo esc_url( get_post_format_link( 'status' ) ); ?>" title="<?php esc_attr_e( 'All Status Posts', 'catch-everest' ); ?>"><?php esc_html_e( 'Status', 'catch-everest' ); ?></a></h3>
 		</div><!-- .entry-header -->
 
 		<div class="entry-content">

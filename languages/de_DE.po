@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-28 18:02-0700\n"
-"PO-Revision-Date: 2020-05-28 18:02-0700\n"
+"POT-Creation-Date: 2020-08-12 12:14-0400\n"
+"PO-Revision-Date: 2020-08-12 12:14-0400\n"
 "Last-Translator: \n"
 "Language-Team: Stephan Ermann <info@bewegungsfelder.de>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -102,10 +102,6 @@ msgstr "Bearbeiten"
 msgid "All Audio Posts"
 msgstr "Alle Audio Beiträge"
 
-#: ../content-audio.php:17
-msgid "Audio"
-msgstr "Audio"
-
 #: ../content-audio.php:27 ../content-gallery.php:38 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:51
 #: ../image.php:86
@@ -116,17 +112,9 @@ msgstr "Seiten:"
 msgid "All Chat Posts"
 msgstr "Alle Chat Beiträge"
 
-#: ../content-chat.php:17
-msgid "Chat"
-msgstr "Chat"
-
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
 msgstr "Alle Galerie Beiträge"
-
-#: ../content-gallery.php:17
-msgid "Gallery"
-msgstr "Galerie"
 
 #: ../content-gallery.php:29 ../content-gallery.php:33 ../content.php:19
 #, php-format
@@ -144,33 +132,17 @@ msgstr[1] "Diese Galerie enthält <a %1$s>%2$s  Bilder </a>."
 msgid "All Image Posts"
 msgstr "Alle Bilder Beiträge"
 
-#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1084
-msgid "Image"
-msgstr "Bilder"
-
 #: ../content-link.php:16
 msgid "All Link Posts"
 msgstr "Alle Links Beiträge"
-
-#: ../content-link.php:16
-msgid "Link"
-msgstr "Link"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
 msgstr "Alle Status Beiträge"
 
-#: ../content-status.php:20
-msgid "Status"
-msgstr "Status"
-
 #: ../content-video.php:17
 msgid "All Video Posts"
 msgstr "Alle Video Beiträge"
-
-#: ../content-video.php:17
-msgid "Video"
-msgstr "Video"
 
 #: ../content.php:14
 msgid "Featured"
@@ -874,6 +846,10 @@ msgstr "ausgewähltes Bild"
 msgid "Featured Content #%s"
 msgstr "Angezeigter Inhalt #%s"
 
+#: ../inc/panel/customizer/customizer.php:1084
+msgid "Image"
+msgstr "Bilder"
+
 #: ../inc/panel/customizer/customizer.php:1105
 msgid "Link URL"
 msgstr "Link URL"
@@ -1170,6 +1146,24 @@ msgstr "Suche"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Archive"
+
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Chat"
+#~ msgstr "Chat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galerie"
+
+#~ msgid "Link"
+#~ msgstr "Link"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Video"
+#~ msgstr "Video"
 
 #~ msgid "Check to Reset Layout"
 #~ msgstr "Anklicken um Layout zurückzusetzen"

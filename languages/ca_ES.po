@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-28 18:02-0700\n"
-"PO-Revision-Date: 2020-05-28 18:02-0700\n"
+"POT-Creation-Date: 2020-08-12 12:14-0400\n"
+"PO-Revision-Date: 2020-08-12 12:14-0400\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language: ca_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -102,10 +102,6 @@ msgstr "Edita"
 msgid "All Audio Posts"
 msgstr "Totes les entrades d'àudio"
 
-#: ../content-audio.php:17
-msgid "Audio"
-msgstr "Àudio"
-
 #: ../content-audio.php:27 ../content-gallery.php:38 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:51
 #: ../image.php:86
@@ -116,17 +112,9 @@ msgstr "Pàgines:"
 msgid "All Chat Posts"
 msgstr "Totes les entrades de xat"
 
-#: ../content-chat.php:17
-msgid "Chat"
-msgstr "Xat"
-
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
 msgstr "Totes les entrades de galeria"
-
-#: ../content-gallery.php:17
-msgid "Gallery"
-msgstr "Galeria"
 
 #: ../content-gallery.php:29 ../content-gallery.php:33 ../content.php:19
 #, php-format
@@ -144,33 +132,17 @@ msgstr[1] "Aquesta galeria conté <a %1$s>%2$s fotos</a>."
 msgid "All Image Posts"
 msgstr "Totes les entrades d'imatge"
 
-#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1084
-msgid "Image"
-msgstr "Imatge"
-
 #: ../content-link.php:16
 msgid "All Link Posts"
 msgstr "Totes les entrades d'enllaç"
-
-#: ../content-link.php:16
-msgid "Link"
-msgstr "Enllaç"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
 msgstr "Totes les entrades d'estat"
 
-#: ../content-status.php:20
-msgid "Status"
-msgstr "Estat"
-
 #: ../content-video.php:17
 msgid "All Video Posts"
 msgstr "Totes les entrades de vídeo"
-
-#: ../content-video.php:17
-msgid "Video"
-msgstr "Vídeo"
 
 #: ../content.php:14
 msgid "Featured"
@@ -854,6 +826,10 @@ msgstr "Contingut destacat %s"
 msgid "Featured Content #%s"
 msgstr "Contingut destacat %s"
 
+#: ../inc/panel/customizer/customizer.php:1084
+msgid "Image"
+msgstr "Imatge"
+
 #: ../inc/panel/customizer/customizer.php:1105
 msgid "Link URL"
 msgstr "URL"
@@ -1145,6 +1121,24 @@ msgstr "Cerca"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Arxius"
+
+#~ msgid "Audio"
+#~ msgstr "Àudio"
+
+#~ msgid "Chat"
+#~ msgstr "Xat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galeria"
+
+#~ msgid "Link"
+#~ msgstr "Enllaç"
+
+#~ msgid "Status"
+#~ msgstr "Estat"
+
+#~ msgid "Video"
+#~ msgstr "Vídeo"
 
 #~ msgid "Select Sidebar layout"
 #~ msgstr "Escull el Disposició de barra lateral"

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-28 18:02-0700\n"
-"PO-Revision-Date: 2020-05-28 18:02-0700\n"
+"POT-Creation-Date: 2020-08-12 12:15-0400\n"
+"PO-Revision-Date: 2020-08-12 12:15-0400\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: ZCW <conanla@qq.com>\n"
 "Language: zh_CN\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -100,10 +100,6 @@ msgstr "编辑"
 msgid "All Audio Posts"
 msgstr "所有音频文章"
 
-#: ../content-audio.php:17
-msgid "Audio"
-msgstr "音频"
-
 #: ../content-audio.php:27 ../content-gallery.php:38 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:51
 #: ../image.php:86
@@ -114,17 +110,9 @@ msgstr "页码："
 msgid "All Chat Posts"
 msgstr "所有聊天文章"
 
-#: ../content-chat.php:17
-msgid "Chat"
-msgstr "聊天"
-
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
 msgstr "所有图片集文章"
-
-#: ../content-gallery.php:17
-msgid "Gallery"
-msgstr "图片集"
 
 #: ../content-gallery.php:29 ../content-gallery.php:33 ../content.php:19
 #, php-format
@@ -142,33 +130,17 @@ msgstr[1] "这个照片集有<a %1$s>%2$s张照片</a>."
 msgid "All Image Posts"
 msgstr "所有图片文章"
 
-#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1084
-msgid "Image"
-msgstr "图片"
-
 #: ../content-link.php:16
 msgid "All Link Posts"
 msgstr "所有链接文章"
-
-#: ../content-link.php:16
-msgid "Link"
-msgstr "链接"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
 msgstr "所有状态文章"
 
-#: ../content-status.php:20
-msgid "Status"
-msgstr "状态"
-
 #: ../content-video.php:17
 msgid "All Video Posts"
 msgstr "所有视频文章"
-
-#: ../content-video.php:17
-msgid "Video"
-msgstr "视频"
 
 #: ../content.php:14
 msgid "Featured"
@@ -851,6 +823,10 @@ msgstr "Featured Content #%s"
 msgid "Featured Content #%s"
 msgstr "Featured Content #%s"
 
+#: ../inc/panel/customizer/customizer.php:1084
+msgid "Image"
+msgstr "图片"
+
 #: ../inc/panel/customizer/customizer.php:1105
 msgid "Link URL"
 msgstr "链接地址"
@@ -1138,6 +1114,24 @@ msgstr "搜索"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "文章存档"
+
+#~ msgid "Audio"
+#~ msgstr "音频"
+
+#~ msgid "Chat"
+#~ msgstr "聊天"
+
+#~ msgid "Gallery"
+#~ msgstr "图片集"
+
+#~ msgid "Link"
+#~ msgstr "链接"
+
+#~ msgid "Status"
+#~ msgstr "状态"
+
+#~ msgid "Video"
+#~ msgstr "视频"
 
 #~ msgid "Select Sidebar layout"
 #~ msgstr "选择边栏布局"

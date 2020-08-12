@@ -20,7 +20,7 @@ function catcheverest_scripts() {
 	/**
 	 * Loads up main stylesheet.
 	 */
-	wp_enqueue_style( 'catcheverest-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'catcheverest-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'catcheverest-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'catcheverest-style' ), '1.0' );
@@ -349,7 +349,7 @@ function catcheverest_header_left() { ?>
 
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
-					<p id="site-description"><?php echo $description; ?></p>
+					<p id="site-description"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 
             </div><!-- #hgroup -->

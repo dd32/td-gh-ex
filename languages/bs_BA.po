@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-28 18:01-0700\n"
-"PO-Revision-Date: 2020-05-28 18:02-0700\n"
+"POT-Creation-Date: 2020-08-12 12:14-0400\n"
+"PO-Revision-Date: 2020-08-12 12:14-0400\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: bs\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:18
@@ -105,10 +105,6 @@ msgstr "Uredi"
 msgid "All Audio Posts"
 msgstr "All Audio Posts"
 
-#: ../content-audio.php:17
-msgid "Audio"
-msgstr "Audio"
-
 #: ../content-audio.php:27 ../content-gallery.php:38 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:51
 #: ../image.php:86
@@ -119,17 +115,9 @@ msgstr "Stranice:"
 msgid "All Chat Posts"
 msgstr "All Chat Posts"
 
-#: ../content-chat.php:17
-msgid "Chat"
-msgstr "Chat"
-
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
 msgstr "All Gallery Posts"
-
-#: ../content-gallery.php:17
-msgid "Gallery"
-msgstr "Galerija"
 
 #: ../content-gallery.php:29 ../content-gallery.php:33 ../content.php:19
 #, php-format
@@ -148,33 +136,17 @@ msgstr[2] "Ova galerija sadrži <a %1$s>%2$s fotografija</a>."
 msgid "All Image Posts"
 msgstr "All Image Posts"
 
-#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1084
-msgid "Image"
-msgstr "Slika"
-
 #: ../content-link.php:16
 msgid "All Link Posts"
 msgstr "All Link Posts"
-
-#: ../content-link.php:16
-msgid "Link"
-msgstr "Link"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
 msgstr "All Status Posts"
 
-#: ../content-status.php:20
-msgid "Status"
-msgstr "Status"
-
 #: ../content-video.php:17
 msgid "All Video Posts"
 msgstr "All Video Posts"
-
-#: ../content-video.php:17
-msgid "Video"
-msgstr "Video"
 
 #: ../content.php:14
 msgid "Featured"
@@ -857,6 +829,10 @@ msgstr "Featured Content #%s"
 msgid "Featured Content #%s"
 msgstr "Featured Content #%s"
 
+#: ../inc/panel/customizer/customizer.php:1084
+msgid "Image"
+msgstr "Slika"
+
 #: ../inc/panel/customizer/customizer.php:1105
 msgid "Link URL"
 msgstr "Link URL"
@@ -1148,6 +1124,24 @@ msgstr "Traži"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Arhive"
+
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Chat"
+#~ msgstr "Chat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galerija"
+
+#~ msgid "Link"
+#~ msgstr "Link"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Video"
+#~ msgstr "Video"
 
 #~ msgid "Select Sidebar layout"
 #~ msgstr "Select Sidebar layout"

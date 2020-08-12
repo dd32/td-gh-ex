@@ -2,9 +2,9 @@
 Contributors: catchthemes
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 5.1
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.3.2
+Stable tag: 3.3.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,11 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 3.3.3 (Released: August 12, 2020) =
+* Bug Fixed: Theme check issues
+* Updated: Readme
+* Updated: Screenshot and other images
 
 = 3.3.2 (Released: May 28, 2020) =
 * Updated: readme.txt and style.css as per the new requirements
@@ -384,7 +389,7 @@ Catch Everest is distributed under the terms of the GNU GPL
 * Images
 	Unless otherwise specified, all Images are self shot by Catch Themes
 	Copyright: Catch Themes, catchthemes.com
-		1) http://pixabay.com/en/nepal-himalayas-mount-everest-414/ - Slider Image is from PixaBay.com and is released under the CC0 license
+		1) https://stocksnap.io/photo/mountain-highland-V6SL90D0E9 - Slider Image is from stockssnap.io com and is released under the CC0 license
 
 * JS Files
 	1. Menu script uses Tinynav script (http://tinynav.viljamis.com) licensed under MIT and Slect Box Script (http://www.bulgaria-web-developers.com/projects/javascript/selectbox/) lincensed under MIT/GPL2 license

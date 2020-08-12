@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-28 18:02-0700\n"
+"POT-Creation-Date: 2020-08-12 12:14-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
@@ -100,10 +100,6 @@ msgstr "Bewerken"
 msgid "All Audio Posts"
 msgstr "Alle geluidsberichten"
 
-#: ../content-audio.php:17
-msgid "Audio"
-msgstr "Geluid"
-
 #: ../content-audio.php:27 ../content-gallery.php:38 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:51
 #: ../image.php:86
@@ -114,17 +110,9 @@ msgstr "Pagina's:"
 msgid "All Chat Posts"
 msgstr "Alle chatberichten"
 
-#: ../content-chat.php:17
-msgid "Chat"
-msgstr "Chat"
-
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
 msgstr "Alle galerijberichten"
-
-#: ../content-gallery.php:17
-msgid "Gallery"
-msgstr "Galerij"
 
 #: ../content-gallery.php:29 ../content-gallery.php:33 ../content.php:19
 #, php-format
@@ -142,33 +130,17 @@ msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto's</a>"
 msgid "All Image Posts"
 msgstr "Alle fotoberichten"
 
-#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1084
-msgid "Image"
-msgstr "Foto"
-
 #: ../content-link.php:16
 msgid "All Link Posts"
 msgstr "Alle linkberichten"
-
-#: ../content-link.php:16
-msgid "Link"
-msgstr "Links"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
 msgstr "Alle statusberichten"
 
-#: ../content-status.php:20
-msgid "Status"
-msgstr "Status"
-
 #: ../content-video.php:17
 msgid "All Video Posts"
 msgstr "Alle videoberichten"
-
-#: ../content-video.php:17
-msgid "Video"
-msgstr "Video"
 
 #: ../content.php:14
 msgid "Featured"
@@ -853,6 +825,10 @@ msgstr "Uitgelichte content #%s"
 msgid "Featured Content #%s"
 msgstr "Uitgelichte content #%s"
 
+#: ../inc/panel/customizer/customizer.php:1084
+msgid "Image"
+msgstr "Foto"
+
 #: ../inc/panel/customizer/customizer.php:1105
 msgid "Link URL"
 msgstr "Link URL"
@@ -1145,6 +1121,24 @@ msgstr "Zoeken"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Archieven"
+
+#~ msgid "Audio"
+#~ msgstr "Geluid"
+
+#~ msgid "Chat"
+#~ msgstr "Chat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galerij"
+
+#~ msgid "Link"
+#~ msgstr "Links"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Video"
+#~ msgstr "Video"
 
 #~ msgid "Select Sidebar layout"
 #~ msgstr "Select Sidebar layout"
