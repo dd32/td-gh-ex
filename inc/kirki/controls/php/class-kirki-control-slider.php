@@ -6,8 +6,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -36,13 +36,15 @@ class Kirki_Control_Slider extends Kirki_Control_Base {
 	 */
 	public function to_json() {
 		parent::to_json();
-
-		$this->json['choices'] = wp_parse_args( $this->json['choices'], array(
-			'min'    => '0',
-			'max'    => '100',
-			'step'   => '1',
-			'suffix' => '',
-		) );
+		$this->json['choices'] = wp_parse_args(
+			$this->json['choices'],
+			array(
+				'min'    => '0',
+				'max'    => '100',
+				'step'   => '1',
+				'suffix' => '',
+			)
+		);
 	}
 
 	/**

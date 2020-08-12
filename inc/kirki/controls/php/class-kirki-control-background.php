@@ -7,8 +7,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -54,7 +54,7 @@ class Kirki_Control_Background extends Kirki_Control_Base {
 				<h4><?php esc_html_e( 'Background Image', 'i-transform' ); ?></h4>
 				<div class="attachment-media-view background-image-upload">
 					<# if ( data.value['background-image'] ) { #>
-						<div class="thumbnail thumbnail-image"><img src="{{ data.value['background-image'] }}" alt="" /></div>
+						<div class="thumbnail thumbnail-image"><img src="{{ data.value['background-image'] }}"/></div>
 					<# } else { #>
 						<div class="placeholder"><?php esc_html_e( 'No File Selected', 'i-transform' ); ?></div>
 					<# } #>

@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       2.0
  */
 
@@ -40,10 +40,12 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				if ( ! in_array( $key, array( 'variant', 'font-weight', 'font-style' ), true ) && ! isset( $this->json['default'][ $key ] ) ) {
 					unset( $this->json['value'][ $key ] );
 				}
+
 				// Fix for https://wordpress.org/support/topic/white-font-after-updateing-to-3-0-16.
 				if ( ! isset( $this->json['default'][ $key ] ) ) {
 					unset( $this->json['value'][ $key ] );
 				}
+
 				// Fix for https://github.com/aristath/kirki/issues/1405.
 				if ( isset( $this->json['default'][ $key ] ) && false === $this->json['default'][ $key ] ) {
 					unset( $this->json['value'][ $key ] );
@@ -73,7 +75,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 
 		<div class="wrapper">
 
-			<# if ( data.default['font-family'] ) { #>
+			<# if ( ! _.isUndefined( data.default['font-family'] ) ) { #>
 				<# data.value['font-family'] = data.value['font-family'] || data['default']['font-family']; #>
 				<# if ( data.choices['fonts'] ) { data.fonts = data.choices['fonts']; } #>
 				<div class="font-family">
@@ -94,7 +96,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				<# } #>
 			<# } #>
 
-			<# if ( data.default['font-size'] ) { #>
+			<# if ( ! _.isUndefined( data.default['font-size'] ) ) { #>
 				<# data.value['font-size'] = data.value['font-size'] || data['default']['font-size']; #>
 				<div class="font-size">
 					<h5><?php esc_html_e( 'Font Size', 'i-transform' ); ?></h5>
@@ -102,7 +104,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['line-height'] ) { #>
+			<# if ( ! _.isUndefined( data.default['line-height'] ) ) { #>
 				<# data.value['line-height'] = data.value['line-height'] || data['default']['line-height']; #>
 				<div class="line-height">
 					<h5><?php esc_html_e( 'Line Height', 'i-transform' ); ?></h5>
@@ -110,7 +112,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['letter-spacing'] ) { #>
+			<# if ( ! _.isUndefined( data.default['letter-spacing'] ) ) { #>
 				<# data.value['letter-spacing'] = data.value['letter-spacing'] || data['default']['letter-spacing']; #>
 				<div class="letter-spacing">
 					<h5><?php esc_html_e( 'Letter Spacing', 'i-transform' ); ?></h5>
@@ -118,7 +120,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['word-spacing'] ) { #>
+			<# if ( ! _.isUndefined( data.default['word-spacing'] ) ) { #>
 				<# data.value['word-spacing'] = data.value['word-spacing'] || data['default']['word-spacing']; #>
 				<div class="word-spacing">
 					<h5><?php esc_html_e( 'Word Spacing', 'i-transform' ); ?></h5>
@@ -126,7 +128,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['text-align'] ) { #>
+			<# if ( ! _.isUndefined( data.default['text-align'] ) ) { #>
 				<# data.value['text-align'] = data.value['text-align'] || data['default']['text-align']; #>
 				<div class="text-align">
 					<h5><?php esc_html_e( 'Text Align', 'i-transform' ); ?></h5>
@@ -165,11 +167,12 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['text-transform'] ) { #>
+			<# if ( ! _.isUndefined( data.default['text-transform'] ) ) { #>
 				<# data.value['text-transform'] = data.value['text-transform'] || data['default']['text-transform']; #>
 				<div class="text-transform">
 					<h5><?php esc_html_e( 'Text Transform', 'i-transform' ); ?></h5>
 					<select {{{ data.inputAttrs }}} id="kirki-typography-text-transform-{{{ data.id }}}">
+						<option value=""<# if ( '' === data.value['text-transform'] ) { #>selected<# } #>></option>
 						<option value="none"<# if ( 'none' === data.value['text-transform'] ) { #>selected<# } #>><?php esc_html_e( 'None', 'i-transform' ); ?></option>
 						<option value="capitalize"<# if ( 'capitalize' === data.value['text-transform'] ) { #>selected<# } #>><?php esc_html_e( 'Capitalize', 'i-transform' ); ?></option>
 						<option value="uppercase"<# if ( 'uppercase' === data.value['text-transform'] ) { #>selected<# } #>><?php esc_html_e( 'Uppercase', 'i-transform' ); ?></option>
@@ -180,11 +183,12 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['text-decoration'] ) { #>
+			<# if ( ! _.isUndefined( data.default['text-decoration'] ) ) { #>
 				<# data.value['text-decoration'] = data.value['text-decoration'] || data['default']['text-decoration']; #>
 				<div class="text-decoration">
 					<h5><?php esc_html_e( 'Text Decoration', 'i-transform' ); ?></h5>
 					<select {{{ data.inputAttrs }}} id="kirki-typography-text-decoration-{{{ data.id }}}">
+						<option value=""<# if ( '' === data.value['text-decoration'] ) { #>selected<# } #>></option>
 						<option value="none"<# if ( 'none' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_html_e( 'None', 'i-transform' ); ?></option>
 						<option value="underline"<# if ( 'underline' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_html_e( 'Underline', 'i-transform' ); ?></option>
 						<option value="overline"<# if ( 'overline' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_html_e( 'Overline', 'i-transform' ); ?></option>
@@ -195,7 +199,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['margin-top'] ) { #>
+			<# if ( ! _.isUndefined( data.default['margin-top'] ) ) { #>
 				<# data.value['margin-top'] = data.value['margin-top'] || data['default']['margin-top']; #>
 				<div class="margin-top">
 					<h5><?php esc_html_e( 'Margin Top', 'i-transform' ); ?></h5>
@@ -203,7 +207,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( data.default['margin-bottom'] ) { #>
+			<# if ( ! _.isUndefined( data.default['margin-bottom'] ) ) { #>
 				<# data.value['margin-bottom'] = data.value['margin-bottom'] || data['default']['margin-bottom']; #>
 				<div class="margin-bottom">
 					<h5><?php esc_html_e( 'Margin Bottom', 'i-transform' ); ?></h5>
@@ -211,7 +215,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( false !== data.default['color'] && data.default['color'] ) { #>
+			<# if ( ! _.isUndefined( data.default['color'] ) && false !== data.default['color'] ) { #>
 				<# data.value['color'] = data.value['color'] || data['default']['color']; #>
 				<div class="color">
 					<h5><?php esc_html_e( 'Color', 'i-transform' ); ?></h5>
@@ -233,7 +237,6 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 	 * @return array
 	 */
 	protected function format_variants_array( $variants ) {
-
 		$all_variants   = Kirki_Fonts::get_all_variants();
 		$final_variants = array();
 		foreach ( $variants as $variant ) {

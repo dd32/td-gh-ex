@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       2.1
  */
 
@@ -58,7 +58,6 @@ class Kirki_Control_Dimensions extends Kirki_Control_Base {
 	 * @access public
 	 */
 	public function enqueue() {
-
 		wp_enqueue_style( 'kirki-styles', trailingslashit( Kirki::$url ) . 'controls/css/styles.css', array(), KIRKI_VERSION );
 		wp_localize_script( 'kirki-script', 'dimensionskirkiL10n', $this->l10n() );
 	}
@@ -112,32 +111,31 @@ class Kirki_Control_Dimensions extends Kirki_Control_Base {
 	 */
 	protected function l10n() {
 		return array(
-			'left-top'       => esc_attr__( 'Left Top', 'i-transform' ),
-			'left-center'    => esc_attr__( 'Left Center', 'i-transform' ),
-			'left-bottom'    => esc_attr__( 'Left Bottom', 'i-transform' ),
-			'right-top'      => esc_attr__( 'Right Top', 'i-transform' ),
-			'right-center'   => esc_attr__( 'Right Center', 'i-transform' ),
-			'right-bottom'   => esc_attr__( 'Right Bottom', 'i-transform' ),
-			'center-top'     => esc_attr__( 'Center Top', 'i-transform' ),
-			'center-center'  => esc_attr__( 'Center Center', 'i-transform' ),
-			'center-bottom'  => esc_attr__( 'Center Bottom', 'i-transform' ),
-			'font-size'      => esc_attr__( 'Font Size', 'i-transform' ),
-			'font-weight'    => esc_attr__( 'Font Weight', 'i-transform' ),
-			'line-height'    => esc_attr__( 'Line Height', 'i-transform' ),
-			'font-style'     => esc_attr__( 'Font Style', 'i-transform' ),
-			'letter-spacing' => esc_attr__( 'Letter Spacing', 'i-transform' ),
-			'word-spacing'   => esc_attr__( 'Word Spacing', 'i-transform' ),
-			'top'            => esc_attr__( 'Top', 'i-transform' ),
-			'bottom'         => esc_attr__( 'Bottom', 'i-transform' ),
-			'left'           => esc_attr__( 'Left', 'i-transform' ),
-			'right'          => esc_attr__( 'Right', 'i-transform' ),
-			'center'         => esc_attr__( 'Center', 'i-transform' ),
-			'size'           => esc_attr__( 'Size', 'i-transform' ),
-			'height'         => esc_attr__( 'Height', 'i-transform' ),
-			'spacing'        => esc_attr__( 'Spacing', 'i-transform' ),
-			'width'          => esc_attr__( 'Width', 'i-transform' ),
-			'height'         => esc_attr__( 'Height', 'i-transform' ),
-			'invalid-value'  => esc_attr__( 'Invalid Value', 'i-transform' ),
+			'left-top'       => esc_html__( 'Left Top', 'i-transform' ),
+			'left-center'    => esc_html__( 'Left Center', 'i-transform' ),
+			'left-bottom'    => esc_html__( 'Left Bottom', 'i-transform' ),
+			'right-top'      => esc_html__( 'Right Top', 'i-transform' ),
+			'right-center'   => esc_html__( 'Right Center', 'i-transform' ),
+			'right-bottom'   => esc_html__( 'Right Bottom', 'i-transform' ),
+			'center-top'     => esc_html__( 'Center Top', 'i-transform' ),
+			'center-center'  => esc_html__( 'Center Center', 'i-transform' ),
+			'center-bottom'  => esc_html__( 'Center Bottom', 'i-transform' ),
+			'font-size'      => esc_html__( 'Font Size', 'i-transform' ),
+			'font-weight'    => esc_html__( 'Font Weight', 'i-transform' ),
+			'line-height'    => esc_html__( 'Line Height', 'i-transform' ),
+			'font-style'     => esc_html__( 'Font Style', 'i-transform' ),
+			'letter-spacing' => esc_html__( 'Letter Spacing', 'i-transform' ),
+			'word-spacing'   => esc_html__( 'Word Spacing', 'i-transform' ),
+			'top'            => esc_html__( 'Top', 'i-transform' ),
+			'bottom'         => esc_html__( 'Bottom', 'i-transform' ),
+			'left'           => esc_html__( 'Left', 'i-transform' ),
+			'right'          => esc_html__( 'Right', 'i-transform' ),
+			'center'         => esc_html__( 'Center', 'i-transform' ),
+			'size'           => esc_html__( 'Size', 'i-transform' ),
+			'spacing'        => esc_html__( 'Spacing', 'i-transform' ),
+			'width'          => esc_html__( 'Width', 'i-transform' ),
+			'height'         => esc_html__( 'Height', 'i-transform' ),
+			'invalid-value'  => esc_html__( 'Invalid Value', 'i-transform' ),
 		);
 	}
 }
