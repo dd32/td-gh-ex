@@ -27,7 +27,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 					'hide_empty'       => false,
 					'show_option_none' => false,
 					'hide_if_empty'    => false,
-					'show_option_all'  => __( 'All Categories', 'catch-base' )
+					'show_option_all'  => esc_html__( 'All Categories', 'catch-base' )
 				)
 			);
 
@@ -47,39 +47,39 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
             $important_links = array(
 							'theme_instructions' => array(
 								'link'	=> esc_url( 'https://catchthemes.com/theme-instructions/catch-base/' ),
-								'text' 	=> __( 'Theme Instructions', 'catch-base' ),
+								'text' 	=> esc_html__( 'Theme Instructions', 'catch-base' ),
 								),
 							'support' => array(
 								'link'	=> esc_url( 'https://catchthemes.com/support/' ),
-								'text' 	=> __( 'Support', 'catch-base' ),
+								'text' 	=> esc_html__( 'Support', 'catch-base' ),
 								),
 							'changelog' => array(
 								'link'	=> esc_url( 'https://catchthemes.com/changelogs/catch-base-theme/' ),
-								'text' 	=> __( 'Changelog', 'catch-base' ),
+								'text' 	=> esc_html__( 'Changelog', 'catch-base' ),
 								),
 							'donate' => array(
 								'link'	=> esc_url( 'https://catchthemes.com/donate/' ),
-								'text' 	=> __( 'Donate Now', 'catch-base' ),
+								'text' 	=> esc_html__( 'Donate Now', 'catch-base' ),
 								),
 							'review' => array(
 								'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catch-base' ),
-								'text' 	=> __( 'Review', 'catch-base' ),
+								'text' 	=> esc_html__( 'Review', 'catch-base' ),
 								),
 							'facebook' => array(
 								'link'	=> esc_url( 'https://www.facebook.com/catchthemes/' ),
-								'text' 	=> __( 'Facebook', 'catch-base' ),
+								'text' 	=> esc_html__( 'Facebook', 'catch-base' ),
 								),
 							'twitter' => array(
 								'link'	=> esc_url( 'https://twitter.com/catchthemes/' ),
-								'text' 	=> __( 'Twitter', 'catch-base' ),
+								'text' 	=> esc_html__( 'Twitter', 'catch-base' ),
 								),
 							'gplus' => array(
 								'link'	=> esc_url( 'https://plus.google.com/+Catchthemes/' ),
-								'text' 	=> __( 'Google+', 'catch-base' ),
+								'text' 	=> esc_html__( 'Google+', 'catch-base' ),
 								),
 							'pinterest' => array(
 								'link'	=> esc_url( 'http://www.pinterest.com/catchthemes/' ),
-								'text' 	=> __( 'Pinterest', 'catch-base' ),
+								'text' 	=> esc_html__( 'Pinterest', 'catch-base' ),
 								),
 							);
 			foreach ( $important_links as $important_link) {

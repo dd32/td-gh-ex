@@ -15,18 +15,20 @@
 	var k;
 	for (k = 0; k < container.length; k++) {
 		menu = container[k].getElementsByTagName( 'ul' )[0];
+		if ( menu ) {
+			menu.setAttribute( 'aria-expanded', 'false' );
+			if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+				menu.className += ' nav-menu';
+			}
 
-		//console.log(menu.className);
+			// Get all the link elements within the menu.
+			links    = menu.getElementsByTagName( 'a' );
 
-		menu.setAttribute( 'aria-expanded', 'false' );
-
-		// Get all the link elements within the menu.
-		links    = menu.getElementsByTagName( 'a' );
-
-		// Each time a menu link is focused or blurred, toggle focus.
-		for ( i = 0, len = links.length; i < len; i++ ) {
-			links[i].addEventListener( 'focus', toggleFocus, true );
-			links[i].addEventListener( 'blur', toggleFocus, true );
+			// Each time a menu link is focused or blurred, toggle focus.
+			for ( i = 0, len = links.length; i < len; i++ ) {
+				links[i].addEventListener( 'focus', toggleFocus, true );
+				links[i].addEventListener( 'blur', toggleFocus, true );
+			}
 		}
 	}
 

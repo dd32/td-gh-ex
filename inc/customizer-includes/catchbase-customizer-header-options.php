@@ -22,7 +22,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[enable_featured_header_image]', array(
 			'choices'  	=> catchbase_enable_featured_header_image_options(),
-			'label'		=> __( 'Enable Featured Header Image on ', 'catch-base' ),
+			'label'		=> esc_html__( 'Enable Featured Header Image on ', 'catch-base' ),
 			'section'   => 'header_image',
 	        'settings'  => 'catchbase_theme_options[enable_featured_header_image]',
 	        'type'	  	=> 'select',
@@ -38,7 +38,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_control( 'catchbase_theme_options[featured_image_size]', array(
 		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
 		'choices'  	=> catchbase_featured_image_size_options(),
-		'label'		=> __( 'Page/Post Featured Header Image Size', 'catch-base' ),
+		'label'		=> esc_html__( 'Page/Post Featured Header Image Size', 'catch-base' ),
 		'section'   => 'header_image',
 		'settings'  => 'catchbase_theme_options[featured_image_size]',
 		'type'	  	=> 'select',
@@ -53,7 +53,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_alt]', array(
 		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
-		'label'		=> __( 'Featured Header Image Alt/Title Tag ', 'catch-base' ),
+		'label'		=> esc_html__( 'Featured Header Image Alt/Title Tag ', 'catch-base' ),
 		'section'   => 'header_image',
         'settings'  => 'catchbase_theme_options[featured_header_image_alt]',
         'type'	  	=> 'text',
@@ -68,7 +68,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_url]', array(
 		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
-		'label'				=> __( 'Featured Header Image Link URL', 'catch-base' ),
+		'label'				=> esc_html__( 'Featured Header Image Link URL', 'catch-base' ),
 		'section'   		=> 'header_image',
         'settings'  		=> 'catchbase_theme_options[featured_header_image_url]',
         'type'	  			=> 'text',
@@ -83,7 +83,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_base]', array(
 		'active_callback' 	=> 'catchbase_is_featured_header_image_enabled',
-		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'catch-base' ),
+		'label'    	=> esc_html__( 'Check to Open Link in New Window/Tab', 'catch-base' ),
 		'section'  	=> 'header_image',
 		'settings' 	=> 'catchbase_theme_options[featured_header_image_base]',
 		'type'     	=> 'checkbox',

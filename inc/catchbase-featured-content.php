@@ -275,7 +275,7 @@ function catchbase_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$catchbase_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
+						<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
 						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -286,7 +286,7 @@ function catchbase_page_content( $options ) {
 					if ( '' != $catchbase_first_image ) {
 						$catchbase_page_content .= '
 						<figure class="featured-homepage-image">
-							<a href="' . esc_url( get_permalink() ) . '" title=""' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
+							<a href="' . esc_url( get_permalink() ) . '" title=""' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
 								'. $catchbase_first_image .'
 							</a>
 						</figure>';

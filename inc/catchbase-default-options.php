@@ -53,7 +53,7 @@ function catchbase_get_default_theme_options() {
 
 		//Excerpt Options
 		'excerpt_length'									=> '40',
-		'excerpt_more_text'									=> __( 'Read More ...', 'catch-base' ),
+		'excerpt_more_text'									=> esc_html__( 'Read More ...', 'catch-base' ),
 
 		//Homepage / Frontpage Settings
 		'front_page_category'								=> '0',
@@ -63,14 +63,14 @@ function catchbase_get_default_theme_options() {
 
 		//Promotion Headline Options
 		'promotion_headline_option'							=> 'homepage',
-		'promotion_headline'								=> __( 'Catch Base is a Premium Responsive WordPress Theme', 'catch-base' ),
-		'promotion_subheadline'								=> __( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'catch-base' ),
-		'promotion_headline_button'							=> __( 'Reviews', 'catch-base' ),
+		'promotion_headline'								=> esc_html__( 'Catch Base is a Premium Responsive WordPress Theme', 'catch-base' ),
+		'promotion_subheadline'								=> esc_html__( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'catch-base' ),
+		'promotion_headline_button'							=> esc_html__( 'Reviews', 'catch-base' ),
 		'promotion_headline_url'							=> esc_url( 'http://wordpress.org/support/view/theme-reviews/catch-base' ),
 		'promotion_headline_target'							=> 1,
 
 		//Search Options
-		'search_text'										=> __( 'Search...', 'catch-base' ),
+		'search_text'										=> esc_html__( 'Search...', 'catch-base' ),
 
 		//Basic Color Options
 		'color_scheme' 										=> 'light',
@@ -92,7 +92,6 @@ function catchbase_get_default_theme_options() {
 		//Featured Slider Options
 		'featured_slider_option'							=> 'homepage',
 		'featured_slider_image_loader'						=> 'true',
-		'featured_slide_transition_effect'					=> 'fadeout',
 		'featured_slide_transition_delay'					=> '4',
 		'featured_slide_transition_length'					=> '1',
 		'featured_slider_type'								=> 'demo-featured-slider',
@@ -113,9 +112,9 @@ function catchbase_get_default_theme_options() {
  */
 function catchbase_featured_slider_image_loader() {
 	$color_scheme_options = array(
-		'true'  => __( 'True', 'catch-base' ),
-		'wait'  => __( 'Wait', 'catch-base' ),
-		'false' => __( 'False', 'catch-base' ),
+		'true'  => esc_html__( 'True', 'catch-base' ),
+		'wait'  => esc_html__( 'Wait', 'catch-base' ),
+		'false' => esc_html__( 'False', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_color_schemes', $color_scheme_options );
@@ -128,8 +127,8 @@ function catchbase_featured_slider_image_loader() {
  */
 function catchbase_color_schemes() {
 	$color_scheme_options = array(
-		'light' => __( 'Light', 'catch-base' ),
-		'dark'  => __( 'Dark', 'catch-base' ),
+		'light' => esc_html__( 'Light', 'catch-base' ),
+		'dark'  => esc_html__( 'Dark', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_color_schemes', $color_scheme_options );
@@ -143,10 +142,10 @@ function catchbase_color_schemes() {
  */
 function catchbase_layouts() {
 	$layout_options = array(
-		'left-sidebar' 	=> __( 'Primary Sidebar, Content', 'catch-base' ),
-		'right-sidebar' => __( 'Content, Primary Sidebar', 'catch-base' ),
-		'three-columns'	=> __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'catch-base' ),
-		'no-sidebar'	=> __( 'No Sidebar ( Content Width )', 'catch-base' ),
+		'left-sidebar' 	=> esc_html__( 'Primary Sidebar, Content', 'catch-base' ),
+		'right-sidebar' => esc_html__( 'Content, Primary Sidebar', 'catch-base' ),
+		'three-columns'	=> esc_html__( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'catch-base' ),
+		'no-sidebar'	=> esc_html__( 'No Sidebar ( Content Width )', 'catch-base' ),
 	);
 	return apply_filters( 'catchbase_layouts', $layout_options );
 }
@@ -159,8 +158,8 @@ function catchbase_layouts() {
  */
 function catchbase_get_archive_content_layout() {
 	$layout_options = array(
-		'excerpt-featured-image' => __( 'Show Excerpt', 'catch-base' ),
-		'full-content'           => __( 'Show Full Content (No Featured Image)', 'catch-base' ),
+		'excerpt-featured-image' => esc_html__( 'Show Excerpt', 'catch-base' ),
+		'full-content'           => esc_html__( 'Show Full Content (No Featured Image)', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_get_archive_content_layout', $layout_options );
@@ -174,13 +173,13 @@ function catchbase_get_archive_content_layout() {
  */
 function catchbase_enable_featured_header_image_options() {
 	$enable_featured_header_image_options = array(
-		'homepage'               => __( 'Homepage / Frontpage', 'catch-base' ),
-		'exclude-home'           => __( 'Excluding Homepage', 'catch-base' ),
-		'exclude-home-page-post' => __( 'Excluding Homepage, Page/Post Featured Image', 'catch-base' ),
-		'entire-site'            => __( 'Entire Site', 'catch-base' ),
-		'entire-site-page-post'  => __( 'Entire Site, Page/Post Featured Image', 'catch-base' ),
-		'pages-posts'            => __( 'Pages and Posts', 'catch-base' ),
-		'disabled'               => __( 'Disabled', 'catch-base' ),
+		'homepage'               => esc_html__( 'Homepage / Frontpage', 'catch-base' ),
+		'exclude-home'           => esc_html__( 'Excluding Homepage', 'catch-base' ),
+		'exclude-home-page-post' => esc_html__( 'Excluding Homepage, Page/Post Featured Image', 'catch-base' ),
+		'entire-site'            => esc_html__( 'Entire Site', 'catch-base' ),
+		'entire-site-page-post'  => esc_html__( 'Entire Site, Page/Post Featured Image', 'catch-base' ),
+		'pages-posts'            => esc_html__( 'Pages and Posts', 'catch-base' ),
+		'disabled'               => esc_html__( 'Disabled', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_enable_featured_header_image_options', $enable_featured_header_image_options );
@@ -194,9 +193,9 @@ function catchbase_enable_featured_header_image_options() {
  */
 function catchbase_featured_image_size_options() {
 	$featured_image_size_options = array(
-		'full'   => __( 'Full Image', 'catch-base' ),
-		'large'  => __( 'Large Image', 'catch-base' ),
-		'slider' => __( 'Slider Image', 'catch-base' ),
+		'full'   => esc_html__( 'Full Image', 'catch-base' ),
+		'large'  => esc_html__( 'Large Image', 'catch-base' ),
+		'slider' => esc_html__( 'Slider Image', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_image_size_options', $featured_image_size_options );
@@ -210,9 +209,9 @@ function catchbase_featured_image_size_options() {
  */
 function catchbase_featured_slider_content_options() {
 	$featured_slider_content_options = array(
-		'homepage' 		=> __( 'Homepage / Frontpage', 'catch-base' ),
-		'entire-site' 	=> __( 'Entire Site', 'catch-base' ),
-		'disabled'		=> __( 'Disabled', 'catch-base' ),
+		'homepage' 		=> esc_html__( 'Homepage / Frontpage', 'catch-base' ),
+		'entire-site' 	=> esc_html__( 'Entire Site', 'catch-base' ),
+		'disabled'		=> esc_html__( 'Disabled', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_slider_content_options', $featured_slider_content_options );
@@ -226,8 +225,8 @@ function catchbase_featured_slider_content_options() {
  */
 function catchbase_featured_content_types() {
 	$featured_content_types = array(
-		'demo-featured-content' => __( 'Demo', 'catch-base' ),
-		'featured-page-content' => __( 'Page', 'catch-base' ),
+		'demo-featured-content' => esc_html__( 'Demo', 'catch-base' ),
+		'featured-page-content' => esc_html__( 'Page', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_content_types', $featured_content_types );
@@ -241,8 +240,8 @@ function catchbase_featured_content_types() {
  */
 function catchbase_featured_content_layout_options() {
 	$featured_content_layout_option = array(
-		'layout-three' => __( '3 columns', 'catch-base' ),
-		'layout-four'  => __( '4 columns', 'catch-base' ),
+		'layout-three' => esc_html__( '3 columns', 'catch-base' ),
+		'layout-four'  => esc_html__( '4 columns', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_content_layout_options', $featured_content_layout_option );
@@ -255,9 +254,9 @@ function catchbase_featured_content_layout_options() {
  */
 function catchbase_featured_content_show() {
 	$featured_content_show_option = array(
-		'excerpt' 		=> __( 'Show Excerpt', 'catch-base' ),
-		'full-content' 	=> __( 'Show Full Content', 'catch-base' ),
-		'hide-content' 	=> __( 'Hide Content', 'catch-base' ),
+		'excerpt' 		=> esc_html__( 'Show Excerpt', 'catch-base' ),
+		'full-content' 	=> esc_html__( 'Show Full Content', 'catch-base' ),
+		'hide-content' 	=> esc_html__( 'Hide Content', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_content_show', $featured_content_show_option );
@@ -270,36 +269,12 @@ function catchbase_featured_content_show() {
  */
 function catchbase_featured_slider_types() {
 	$featured_slider_types = array(
-		'demo-featured-slider' => __( 'Demo', 'catch-base' ),
-		'featured-page-slider' => __( 'Page', 'catch-base' ),
+		'demo-featured-slider' => esc_html__( 'Demo', 'catch-base' ),
+		'featured-page-slider' => esc_html__( 'Page', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_featured_slider_types', $featured_slider_types );
 }
-
-
-/**
- * Returns an array of feature slider transition effects
- *
- * @since Catch Base 1.0
- */
-function catchbase_featured_slide_transition_effects() {
-	$featured_slide_transition_effects = array(
-		'fade' 		=> __( 'Fade', 'catch-base' ),
-		'fadeout' 	=> __( 'Fade Out', 'catch-base' ),
-		'none' 		=> __( 'None', 'catch-base' ),
-		'scrollHorz'=> __( 'Scroll Horizontal', 'catch-base' ),
-		'scrollVert'=> __( 'Scroll Vertical', 'catch-base' ),
-		'flipHorz'	=> __( 'Flip Horizontal', 'catch-base' ),
-		'flipVert'	=> __( 'Flip Vertical', 'catch-base' ),
-		'tileSlide'	=> __( 'Tile Slide', 'catch-base' ),
-		'tileBlind'	=> __( 'Tile Blind', 'catch-base' ),
-		'shuffle'	=> __( 'Shuffle', 'catch-base' ),
-	);
-
-	return apply_filters( 'catchbase_featured_slide_transition_effects', $featured_slide_transition_effects );
-}
-
 
 /**
  * Returns an array of color schemes registered for catchbase.
@@ -308,10 +283,10 @@ function catchbase_featured_slide_transition_effects() {
  */
 function catchbase_get_pagination_types() {
 	$pagination_types = array(
-		'default'                => __( 'Default(Older Posts/Newer Posts)', 'catch-base' ),
-		'numeric'                => __( 'Numeric', 'catch-base' ),
-		'infinite-scroll-click'  => __( 'Infinite Scroll (Click)', 'catch-base' ),
-		'infinite-scroll-scroll' => __( 'Infinite Scroll (Scroll)', 'catch-base' ),
+		'default'                => esc_html__( 'Default(Older Posts/Newer Posts)', 'catch-base' ),
+		'numeric'                => esc_html__( 'Numeric', 'catch-base' ),
+		'infinite-scroll-click'  => esc_html__( 'Infinite Scroll (Click)', 'catch-base' ),
+		'infinite-scroll-scroll' => esc_html__( 'Infinite Scroll (Scroll)', 'catch-base' ),
 	);
 
 	return apply_filters( 'catchbase_get_pagination_types', $pagination_types );
@@ -325,11 +300,11 @@ function catchbase_get_pagination_types() {
  */
 function catchbase_single_post_image_layout_options() {
 	$single_post_image_layout_options = array(
-		'large'             => __( 'Large', 'catch-base' ),
-		'medium'            => __( 'Medium', 'catch-base' ),
-		'full-size'         => __( 'Full size', 'catch-base' ),
-		'slider-image-size' => __( 'Slider Image Size', 'catch-base' ),
-		'disabled'          => __( 'Disabled', 'catch-base' ),
+		'large'             => esc_html__( 'Large', 'catch-base' ),
+		'medium'            => esc_html__( 'Medium', 'catch-base' ),
+		'full-size'         => esc_html__( 'Full size', 'catch-base' ),
+		'slider-image-size' => esc_html__( 'Slider Image Size', 'catch-base' ),
+		'disabled'          => esc_html__( 'Disabled', 'catch-base' ),
 	);
 	return apply_filters( 'catchbase_single_post_image_layout_options', $single_post_image_layout_options );
 }
@@ -490,27 +465,27 @@ function catchbase_metabox_layouts() {
 		'default' 	=> array(
 			'id' 	=> 'catchbase-layout-option',
 			'value' => 'default',
-			'label' => __( 'Default', 'catch-base' ),
+			'label' => esc_html__( 'Default', 'catch-base' ),
 		),
 		'left-sidebar' 	=> array(
 			'id' 	=> 'catchbase-layout-option',
 			'value' => 'left-sidebar',
-			'label' => __( 'Primary Sidebar, Content', 'catch-base' ),
+			'label' => esc_html__( 'Primary Sidebar, Content', 'catch-base' ),
 		),
 		'right-sidebar' => array(
 			'id' 	=> 'catchbase-layout-option',
 			'value' => 'right-sidebar',
-			'label' => __( 'Content, Primary Sidebar', 'catch-base' ),
+			'label' => esc_html__( 'Content, Primary Sidebar', 'catch-base' ),
 		),
 		'three-columns'	=> array(
 			'id' 	=> 'catchbase-layout-option',
 			'value' => 'three-columns',
-			'label' => __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'catch-base' ),
+			'label' => esc_html__( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'catch-base' ),
 		),
 		'no-sidebar'	=> array(
 			'id' 	=> 'catchbase-layout-option',
 			'value' => 'no-sidebar',
-			'label' => __( 'No Sidebar ( Content Width )', 'catch-base' ),
+			'label' => esc_html__( 'No Sidebar ( Content Width )', 'catch-base' ),
 		),
 	);
 	return apply_filters( 'catchbase_layouts', $layout_options );
@@ -526,17 +501,17 @@ function catchbase_metabox_header_featured_image_options() {
 		'default' => array(
 			'id'		=> 'catchbase-header-image',
 			'value' 	=> 'default',
-			'label' 	=> __( 'Default', 'catch-base' ),
+			'label' 	=> esc_html__( 'Default', 'catch-base' ),
 		),
 		'enable' => array(
 			'id'		=> 'catchbase-header-image',
 			'value' 	=> 'enable',
-			'label' 	=> __( 'Enable', 'catch-base' ),
+			'label' 	=> esc_html__( 'Enable', 'catch-base' ),
 		),
 		'disable' => array(
 			'id'		=> 'catchbase-header-image',
 			'value' 	=> 'disable',
-			'label' 	=> __( 'Disable', 'catch-base' )
+			'label' 	=> esc_html__( 'Disable', 'catch-base' )
 		)
 	);
 	return apply_filters( 'header_featured_image_options', $header_featured_image_options );
@@ -553,27 +528,27 @@ function catchbase_metabox_featured_image_options() {
 		'default' => array(
 			'id'		=> 'catchbase-featured-image',
 			'value' 	=> 'default',
-			'label' 	=> __( 'Default', 'catch-base' ),
+			'label' 	=> esc_html__( 'Default', 'catch-base' ),
 		),
 		'featured' => array(
 			'id'		=> 'catchbase-featured-image',
 			'value' 	=> 'featured',
-			'label' 	=> __( 'Featured Image', 'catch-base' )
+			'label' 	=> esc_html__( 'Featured Image', 'catch-base' )
 		),
 		'full' => array(
 			'id' => 'catchbase-featured-image',
 			'value' => 'full',
-			'label' => __( 'Full Image', 'catch-base' )
+			'label' => esc_html__( 'Full Image', 'catch-base' )
 		),
 		'slider' => array(
 			'id' => 'catchbase-featured-image',
 			'value' => 'slider',
-			'label' => __( 'Slider Image', 'catch-base' )
+			'label' => esc_html__( 'Slider Image', 'catch-base' )
 		),
 		'disable' => array(
 			'id' => 'catchbase-featured-image',
 			'value' => 'disable',
-			'label' => __( 'Disable Image', 'catch-base' )
+			'label' => esc_html__( 'Disable Image', 'catch-base' )
 		)
 	);
 	return apply_filters( 'featured_image_options', $featured_image_options );

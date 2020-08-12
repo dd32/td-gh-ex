@@ -51,7 +51,7 @@ endif;
 add_action( 'catchbase_before_wp_head', 'catchbase_head', 10 );
 
 
-if ( ! function_exists( 'catchbase_doctype_start' ) ) :
+if ( ! function_exists( 'catchbase_page_start' ) ) :
 	/**
 	 * Start div id #page
 	 *

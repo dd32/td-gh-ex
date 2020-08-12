@@ -27,24 +27,24 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 function catchbase_widgets_init() {
 	//Primary Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'catch-base' ),
+		'name'          => esc_html__( 'Primary Sidebar', 'catch-base' ),
 		'id'            => 'primary-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the primary sidebar if you are using a two or three column site layout option.', 'catch-base' ),
+		'description'	=> esc_html__( 'This is the primary sidebar if you are using a two or three column site layout option.', 'catch-base' ),
 	) );
 
 	//Secondary Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Secondary Sidebar', 'catch-base' ),
+		'name'          => esc_html__( 'Secondary Sidebar', 'catch-base' ),
 		'id'            => 'secondary-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the secondary sidebar if you are using a three column site layout option.', 'catch-base' ),
+		'description'	=> esc_html__( 'This is the secondary sidebar if you are using a three column site layout option.', 'catch-base' ),
 	) );
 
 	$footer_sidebar_number = 3; //Number of footer sidebars
@@ -78,7 +78,7 @@ class Catchbase_social_icons_widget extends WP_Widget {
 		parent::__construct(
 			'catchbase_social_icons', // Base ID
 			__( 'CT: Social Icons', 'catch-base' ), // Name
-			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'catch-base' ) ) // Args
+			array( 'description' => esc_html__( 'Use this widget to add Social Icons as a widget. ', 'catch-base' ) ) // Args
 		);
 	}
 

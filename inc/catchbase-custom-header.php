@@ -42,7 +42,7 @@ if ( ! function_exists( 'catchbase_custom_header' ) ) :
 		'default-text-color'     => $default_header_color,
 
 		// Header image default
-		'default-image'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/buddha.jpg',
+		'default-image'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/header-image.jpg',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 400,

@@ -52,7 +52,7 @@ function catchbase_customize_register( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( 'catchbase_theme_options[logo_disable]', array(
-			'label'    => __( 'Check to disable logo', 'catch-base' ),
+			'label'    => esc_html__( 'Check to disable logo', 'catch-base' ),
 			'priority' => 100,
 			'section'  => 'title_tagline',
 			'settings' => 'catchbase_theme_options[logo_disable]',
@@ -67,7 +67,7 @@ function catchbase_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
 			'active_callback' 	=> 'catchbase_is_logo_enabled',
-			'label'				=> __( 'Logo', 'catch-base' ),
+			'label'				=> esc_html__( 'Logo', 'catch-base' ),
 			'priority'			=> 101,
 			'section'   		=> 'title_tagline',
 	        'settings'  		=> 'catchbase_theme_options[logo]',
@@ -81,7 +81,7 @@ function catchbase_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( 'catchbase_logo_alt_text', array(
 			'active_callback' 	=> 'catchbase_is_logo_enabled',
-			'label'    			=> __( 'Logo Alt Text', 'catch-base' ),
+			'label'    			=> esc_html__( 'Logo Alt Text', 'catch-base' ),
 			'priority'			=> 102,
 			'section' 			=> 'title_tagline',
 			'settings' 			=> 'catchbase_theme_options[logo_alt_text]',
@@ -97,7 +97,7 @@ function catchbase_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[move_title_tagline]', array(
 		'active_callback' 	=> 'catchbase_is_logo_enabled',
-		'label'    			=> __( 'Check to move Site Title and Tagline before logo', 'catch-base' ),
+		'label'    			=> esc_html__( 'Check to move Site Title and Tagline before logo', 'catch-base' ),
 		'priority' 			=> function_exists( 'has_custom_logo' ) ? 10 : 103,
 		'section'  			=> 'title_tagline',
 		'settings' 			=> 'catchbase_theme_options[move_title_tagline]',
@@ -115,7 +115,7 @@ function catchbase_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[color_scheme]', array(
 		'choices'  => catchbase_color_schemes(),
-		'label'    => __( 'Color Scheme', 'catch-base' ),
+		'label'    => esc_html__( 'Color Scheme', 'catch-base' ),
 		'priority' => 5,
 		'section'  => 'colors',
 		'settings' => 'catchbase_theme_options[color_scheme]',
@@ -140,9 +140,9 @@ function catchbase_customize_register( $wp_customize ) {
 
 	// Reset all settings to default
 	$wp_customize->add_section( 'catchbase_reset_all_settings', array(
-		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catch-base' ),
+		'description'	=> esc_html__( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catch-base' ),
 		'priority' 		=> 700,
-		'title'    		=> __( 'Reset all settings', 'catch-base' ),
+		'title'    		=> esc_html__( 'Reset all settings', 'catch-base' ),
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[reset_all_settings]', array(
@@ -153,7 +153,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[reset_all_settings]', array(
-		'label'    => __( 'Check to reset all settings to default', 'catch-base' ),
+		'label'    => esc_html__( 'Check to reset all settings to default', 'catch-base' ),
 		'section'  => 'catchbase_reset_all_settings',
 		'settings' => 'catchbase_theme_options[reset_all_settings]',
 		'type'     => 'checkbox',
@@ -163,7 +163,7 @@ function catchbase_customize_register( $wp_customize ) {
 	//Important Links
 	$wp_customize->add_section( 'important_links', array(
 		'priority' 		=> 999,
-		'title'   	 	=> __( 'Important Links', 'catch-base' ),
+		'title'   	 	=> esc_html__( 'Important Links', 'catch-base' ),
 	) );
 
 	/**
@@ -174,7 +174,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Catchbase_Important_Links( $wp_customize, 'important_links', array(
-        'label'   	=> __( 'Important Links', 'catch-base' ),
+        'label'   	=> esc_html__( 'Important Links', 'catch-base' ),
          'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',

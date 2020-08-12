@@ -50,7 +50,7 @@ function catchbase_featured_slider() {
 						    data-cycle-pause-on-hover="true"
 						    data-cycle-swipe="true"
 						    data-cycle-auto-height=container
-						    data-cycle-fx="'. esc_attr( $options['featured_slide_transition_effect'] ) .'"
+						    data-cycle-fx="fadeout"
 							data-cycle-speed="'. esc_attr( $options['featured_slide_transition_length'] ) * 1000 .'"
 							data-cycle-timeout="'. esc_attr( $options['featured_slide_transition_delay'] ) * 1000 .'"
 							data-cycle-loader="'. esc_attr( $imageloader ) .'"
@@ -178,7 +178,7 @@ function catchbase_page_slider( $options ) {
 
 			$i++;
 
-			$title_attribute =the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) );
+			$title_attribute =the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) );
 
 			$excerpt = get_the_excerpt();
 
@@ -187,7 +187,7 @@ function catchbase_page_slider( $options ) {
 			<article class="'.$classes.'">
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
-					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
+					$output .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
 						'. get_the_post_thumbnail( $post->ID, 'catchbase_slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'attached-page-image' ) ).'
 					</a>';
 				}
@@ -203,7 +203,7 @@ function catchbase_page_slider( $options ) {
 						$catchbase_image =	$catchbase_first_image;
 					}
 
-					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
+					$output .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
 						'. $catchbase_image .'
 					</a>';
 				}
@@ -213,7 +213,7 @@ function catchbase_page_slider( $options ) {
 				<div class="entry-container">
 					<header class="entry-header">
 						<h2 class="entry-title">
-							<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
+							<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
 						</h2>
 						<div class="assistive-text">'.catchbase_page_post_meta().'</div>
 					</header>';

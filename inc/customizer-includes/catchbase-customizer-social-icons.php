@@ -16,15 +16,15 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	// Social Icons
 	$wp_customize->add_panel( 'catchbase_social_links', array(
 	    'capability'     => 'edit_theme_options',
-	    'description'	=> __( 'Note: Enter the url for correponding social networking website', 'catch-base' ),
+	    'description'	=> esc_html__( 'Note: Enter the url for correponding social networking website', 'catch-base' ),
 	    'priority'       => 600,
-		'title'    		 => __( 'Social Links', 'catch-base' ),
+		'title'    		 => esc_html__( 'Social Links', 'catch-base' ),
 	) );
 
 	$wp_customize->add_section( 'catchbase_social_links', array(
 		'panel'			=> 'catchbase_social_links',
 		'priority' 		=> 1,
-		'title'   	 	=> __( 'Social Links', 'catch-base' ),
+		'title'   	 	=> esc_html__( 'Social Links', 'catch-base' ),
 	) );
 
 	$catchbase_social_icons 	=	catchbase_get_social_icons_list();
@@ -37,7 +37,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 				) );
 
 			$wp_customize->add_control( 'catchbase_theme_options['. $key .']', array(
-				'description'	=> __( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'catch-base' ),
+				'description'	=> esc_html__( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'catch-base' ),
 				'label'    		=> $value['label'],
 				'section'  		=> 'catchbase_social_links',
 				'settings' 		=> 'catchbase_theme_options['. $key .']',

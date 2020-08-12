@@ -1,9 +1,10 @@
 === Catch Base ===
 Contributors: catchthemes
 Tags: blog, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
-Requires at least: 4.8
-Tested up to: 5.2.2
-Stable tag: 3.3
+Requires at least: 5.1
+Tested up to: 5.5
+Requires PHP: 5.6
+Stable tag: 3.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -139,6 +140,13 @@ Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.4 (Released: August 12, 2020) =
+* Bug Fixed: Keyboard navigation js issue
+* Removed: Cycle slider shuffle not compatible with theme check so it has been removed
+* Updated: Screenshot and other images
+* Updated: Theme Check Issues
+* Updated: Translation function escaping
 
 = 3.3 (Released: August 26, 2019) =
 * Added: Support for wp_body_open action
@@ -395,10 +403,9 @@ Catch Base is distributed under the terms of the GNU GPL
 
 * Images
     Images used are released under the CC0 license
-    1. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
-    2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 1st slider image and screenshot image
-    3. http://pixabay.com/en/bridge-sun-manhattan-brooklyn-370562/ - 2nd slider image
-    4. All other images are self shot image by (CatchThemes.com)
+    1. https://stocksnap.io/photo/urban-city-SAO7ORQI34 - header image, 1st slider image and screenshot image
+    2. https://stocksnap.io/photo/sea-ocean-9BQBFM3STL  -  2nd slider image
+    3. All other images are self shot image by (CatchThemes.com)
 
 * Font Icons
     Genericons by Automattic, Inc.

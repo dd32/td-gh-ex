@@ -1,11 +1,11 @@
-# Copyright (C) 2018 Catch Themes
+# Copyright (C) 2012-2020 Catch Themes
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base 2.8.4\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-08-26 21:27-0700\n"
+"POT-Creation-Date: 2020-08-12 12:01-0400\n"
 "PO-Revision-Date: 2016-12-07 14:27-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -89,8 +89,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:556
-#: ../inc/catchbase-core.php:575 ../inc/catchbase-core.php:701
+#: ../content-page.php:35 ../inc/catchbase-core.php:535
+#: ../inc/catchbase-core.php:554 ../inc/catchbase-core.php:680
 msgid "Edit"
 msgstr ""
 
@@ -135,98 +135,98 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../inc/catchbase-core.php:524
+#: ../inc/catchbase-core.php:503
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/catchbase-core.php:533
+#: ../inc/catchbase-core.php:512
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/catchbase-core.php:534
+#: ../inc/catchbase-core.php:513
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:556
+#: ../inc/catchbase-core.php:535
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/catchbase-core.php:566
+#: ../inc/catchbase-core.php:545
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:572
+#: ../inc/catchbase-core.php:551
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/catchbase-core.php:579
+#: ../inc/catchbase-core.php:558
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/catchbase-core.php:682
+#: ../inc/catchbase-core.php:661
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:689
+#: ../inc/catchbase-core.php:668
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:697
+#: ../inc/catchbase-core.php:676
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/catchbase-core.php:697
+#: ../inc/catchbase-core.php:676
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/catchbase-core.php:697
+#: ../inc/catchbase-core.php:676
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/catchbase-core.php:718 ../inc/catchbase-core.php:726
+#: ../inc/catchbase-core.php:697 ../inc/catchbase-core.php:705
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/catchbase-core.php:721
+#: ../inc/catchbase-core.php:700
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:729
+#: ../inc/catchbase-core.php:708
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1390
+#: ../inc/catchbase-core.php:1369
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1408
+#: ../inc/catchbase-core.php:1387
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1409
+#: ../inc/catchbase-core.php:1388
 msgid "By"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1450
+#: ../inc/catchbase-core.php:1429
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1451
+#: ../inc/catchbase-core.php:1430
 msgid "Next post:"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1453
+#: ../inc/catchbase-core.php:1432
 msgid "&larr; Previous"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1454
+#: ../inc/catchbase-core.php:1433
 msgid "Previous post:"
 msgstr ""
 
@@ -252,374 +252,334 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:116
+#: ../inc/catchbase-default-options.php:115
 msgid "True"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:117
+#: ../inc/catchbase-default-options.php:116
 msgid "Wait"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:118
+#: ../inc/catchbase-default-options.php:117
 msgid "False"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:131
+#: ../inc/catchbase-default-options.php:130
 msgid "Light"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:132
+#: ../inc/catchbase-default-options.php:131
 msgid "Dark"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:146
-#: ../inc/catchbase-default-options.php:498
+#: ../inc/catchbase-default-options.php:145
+#: ../inc/catchbase-default-options.php:473
 msgid "Primary Sidebar, Content"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:147
-#: ../inc/catchbase-default-options.php:503
+#: ../inc/catchbase-default-options.php:146
+#: ../inc/catchbase-default-options.php:478
 msgid "Content, Primary Sidebar"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:148
-#: ../inc/catchbase-default-options.php:508
+#: ../inc/catchbase-default-options.php:147
+#: ../inc/catchbase-default-options.php:483
 msgid "Three Columns ( Secondary Sidebar, Content, Primary Sidebar )"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:149
-#: ../inc/catchbase-default-options.php:513
+#: ../inc/catchbase-default-options.php:148
+#: ../inc/catchbase-default-options.php:488
 msgid "No Sidebar ( Content Width )"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:162
-#: ../inc/catchbase-default-options.php:258
+#: ../inc/catchbase-default-options.php:161
+#: ../inc/catchbase-default-options.php:257
 msgid "Show Excerpt"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:163
+#: ../inc/catchbase-default-options.php:162
 msgid "Show Full Content (No Featured Image)"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:177
-#: ../inc/catchbase-default-options.php:213
+#: ../inc/catchbase-default-options.php:176
+#: ../inc/catchbase-default-options.php:212
 msgid "Homepage / Frontpage"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:178
+#: ../inc/catchbase-default-options.php:177
 msgid "Excluding Homepage"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:179
+#: ../inc/catchbase-default-options.php:178
 msgid "Excluding Homepage, Page/Post Featured Image"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:180
-#: ../inc/catchbase-default-options.php:214
+#: ../inc/catchbase-default-options.php:179
+#: ../inc/catchbase-default-options.php:213
 msgid "Entire Site"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:181
+#: ../inc/catchbase-default-options.php:180
 msgid "Entire Site, Page/Post Featured Image"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:182
+#: ../inc/catchbase-default-options.php:181
 msgid "Pages and Posts"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:183
-#: ../inc/catchbase-default-options.php:215
-#: ../inc/catchbase-default-options.php:332
+#: ../inc/catchbase-default-options.php:182
+#: ../inc/catchbase-default-options.php:214
+#: ../inc/catchbase-default-options.php:307
 msgid "Disabled"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:197
-#: ../inc/catchbase-default-options.php:566
+#: ../inc/catchbase-default-options.php:196
+#: ../inc/catchbase-default-options.php:541
 msgid "Full Image"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:198
+#: ../inc/catchbase-default-options.php:197
 msgid "Large Image"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:199
-#: ../inc/catchbase-default-options.php:571
+#: ../inc/catchbase-default-options.php:198
+#: ../inc/catchbase-default-options.php:546
 msgid "Slider Image"
+msgstr ""
+
+#: ../inc/catchbase-default-options.php:228
+#: ../inc/catchbase-default-options.php:272
+msgid "Demo"
 msgstr ""
 
 #: ../inc/catchbase-default-options.php:229
 #: ../inc/catchbase-default-options.php:273
-msgid "Demo"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:230
-#: ../inc/catchbase-default-options.php:274
 msgid "Page"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:244
+#: ../inc/catchbase-default-options.php:243
 msgid "3 columns"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:245
+#: ../inc/catchbase-default-options.php:244
 msgid "4 columns"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:259
+#: ../inc/catchbase-default-options.php:258
 msgid "Show Full Content"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:260
+#: ../inc/catchbase-default-options.php:259
 msgid "Hide Content"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:288
-msgid "Fade"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:289
-msgid "Fade Out"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:290
-msgid "None"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:291
-msgid "Scroll Horizontal"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:292
-msgid "Scroll Vertical"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:293
-msgid "Flip Horizontal"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:294
-msgid "Flip Vertical"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:295
-msgid "Tile Slide"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:296
-msgid "Tile Blind"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:297
-msgid "Shuffle"
-msgstr ""
-
-#: ../inc/catchbase-default-options.php:311
+#: ../inc/catchbase-default-options.php:286
 msgid "Default(Older Posts/Newer Posts)"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:312
+#: ../inc/catchbase-default-options.php:287
 msgid "Numeric"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:313
+#: ../inc/catchbase-default-options.php:288
 msgid "Infinite Scroll (Click)"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:314
+#: ../inc/catchbase-default-options.php:289
 msgid "Infinite Scroll (Scroll)"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:328
+#: ../inc/catchbase-default-options.php:303
 msgid "Large"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:329
+#: ../inc/catchbase-default-options.php:304
 msgid "Medium"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:330
+#: ../inc/catchbase-default-options.php:305
 msgid "Full size"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:331
+#: ../inc/catchbase-default-options.php:306
 msgid "Slider Image Size"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:347
+#: ../inc/catchbase-default-options.php:322
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:351
+#: ../inc/catchbase-default-options.php:326
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:355
+#: ../inc/catchbase-default-options.php:330
 msgid "Googleplus"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:359 ../inc/catchbase-social-icons.php:37
+#: ../inc/catchbase-default-options.php:334 ../inc/catchbase-social-icons.php:37
 msgid "Email"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:363
+#: ../inc/catchbase-default-options.php:338
 msgid "Feed"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:367
+#: ../inc/catchbase-default-options.php:342
 msgid "WordPress"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:371
+#: ../inc/catchbase-default-options.php:346
 msgid "GitHub"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:375
+#: ../inc/catchbase-default-options.php:350
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:379
+#: ../inc/catchbase-default-options.php:354
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:383
+#: ../inc/catchbase-default-options.php:358
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:387
+#: ../inc/catchbase-default-options.php:362
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:391
+#: ../inc/catchbase-default-options.php:366
 msgid "YouTube"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:395
+#: ../inc/catchbase-default-options.php:370
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:399
+#: ../inc/catchbase-default-options.php:374
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:403
+#: ../inc/catchbase-default-options.php:378
 msgid "PollDaddy"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:407
+#: ../inc/catchbase-default-options.php:382
 msgid "CodePen"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:411
+#: ../inc/catchbase-default-options.php:386
 msgid "Path"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:415
+#: ../inc/catchbase-default-options.php:390
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:419
+#: ../inc/catchbase-default-options.php:394
 msgid "Skype"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:423
+#: ../inc/catchbase-default-options.php:398
 msgid "Digg"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:427
+#: ../inc/catchbase-default-options.php:402
 msgid "Reddit"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:431
+#: ../inc/catchbase-default-options.php:406
 msgid "Stumbleupon"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:435
+#: ../inc/catchbase-default-options.php:410
 msgid "Pocket"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:439
+#: ../inc/catchbase-default-options.php:414
 msgid "DropBox"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:443
+#: ../inc/catchbase-default-options.php:418
 msgid "Spotify"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:447
+#: ../inc/catchbase-default-options.php:422
 msgid "Foursquare"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:451
+#: ../inc/catchbase-default-options.php:426
 msgid "Twitch"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:455
+#: ../inc/catchbase-default-options.php:430
 msgid "Website"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:459
+#: ../inc/catchbase-default-options.php:434
 msgid "Phone"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:463
+#: ../inc/catchbase-default-options.php:438
 msgid "Handset"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:467
+#: ../inc/catchbase-default-options.php:442
 msgid "Cart"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:471
+#: ../inc/catchbase-default-options.php:446
 msgid "Cloud"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:475
+#: ../inc/catchbase-default-options.php:450
 msgid "Link"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:493
-#: ../inc/catchbase-default-options.php:529
-#: ../inc/catchbase-default-options.php:556
+#: ../inc/catchbase-default-options.php:468
+#: ../inc/catchbase-default-options.php:504
+#: ../inc/catchbase-default-options.php:531
 msgid "Default"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:534
+#: ../inc/catchbase-default-options.php:509
 msgid "Enable"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:539
+#: ../inc/catchbase-default-options.php:514
 msgid "Disable"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:561
+#: ../inc/catchbase-default-options.php:536
 msgid "Featured Image"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:576
+#: ../inc/catchbase-default-options.php:551
 msgid "Disable Image"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:591
+#: ../inc/catchbase-default-options.php:566
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:591
-#: ../inc/catchbase-default-options.php:594
+#: ../inc/catchbase-default-options.php:566
+#: ../inc/catchbase-default-options.php:569
 msgid "Y"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:594
+#: ../inc/catchbase-default-options.php:569
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:597
+#: ../inc/catchbase-default-options.php:572
 msgid "by"
 msgstr ""
 
@@ -803,7 +763,7 @@ msgid "Display Content"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:184
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:172
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:155
 msgid "Featured Page"
 msgstr ""
 
@@ -821,24 +781,20 @@ msgstr ""
 msgid "Enable Slider on"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:61
-msgid "Transition Effect"
-msgstr ""
-
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:77
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:96
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:60
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:79
 msgid "seconds(s)"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:81
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:64
 msgid "Transition Delay"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:100
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:83
 msgid "Transition Length"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:115
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:98
 msgid ""
 "True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
 "are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
@@ -846,20 +802,20 @@ msgid ""
 "available."
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:117
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:100
 msgid "Image Loader"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:133
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:116
 msgid "Select Slider Type"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:148
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:131
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:155
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:138
 msgid "No of Slides"
 msgstr ""
 
