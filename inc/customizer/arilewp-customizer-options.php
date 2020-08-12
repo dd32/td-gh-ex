@@ -187,9 +187,9 @@ $activate_theme_data = wp_get_theme(); // getting current theme data
 $activate_theme = $activate_theme_data->name; 
 if( 'InteriorPress' != $activate_theme ){  
  
-require get_template_directory() . '/inc/customizer/customizer-notice/class-customizer-notice.php';
+require get_template_directory() . '/inc/customizer/customizer-notice/arilewp-customizer-notify.php';
 
-$config_customizer = array(
+$arilewp_config_customizer = array(
     'recommended_plugins' => array( 
         'arile-extra' => array(
             'recommended' => true,
@@ -199,10 +199,12 @@ $config_customizer = array(
             ),
         ),
     ),
-    'recommended_plugins_title' => esc_html__( 'Recommended Plugin', 'arilewp' ),
-    'install_button_label'      => esc_html__( 'Install and Activate', 'arilewp' ),
-    'activate_button_label'     => esc_html__( 'Activate', 'arilewp' ),
-    'deactivate_button_label'   => esc_html__( 'Deactivate', 'arilewp' ),
+	'recommended_actions'       => array(),
+	'recommended_actions_title' => esc_html__( 'Recommended Actions', 'arilewp' ),
+	'recommended_plugins_title' => esc_html__( 'Recommended Plugin', 'arilewp' ),
+	'install_button_label'      => esc_html__( 'Install and Activate', 'arilewp' ),
+	'activate_button_label'     => esc_html__( 'Activate', 'arilewp' ),
+	'arilewp_deactivate_button_label'   => esc_html__( 'Deactivate', 'arilewp' ),
 );
-ArileWP_Customizer_Notice::init( apply_filters( 'arilewp_customizer_notice_array', $config_customizer ) );
+ArileWP_Customizer_Notify::init( apply_filters( 'arilewp_customizer_notify_array', $arilewp_config_customizer ) );
 }

@@ -228,7 +228,7 @@ jQuery(document).ready(function () {
         return false;
     });
     media_upload('.customizer-repeater-custom-media-button');
-    jQuery('.custom-media-url').live('change', function () {
+    jQuery('.custom-media-url').on('change', function () {
         customizer_repeater_refresh_general_control_values();
         return false;
     });

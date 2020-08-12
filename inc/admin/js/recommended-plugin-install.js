@@ -21,7 +21,7 @@ jQuery( document ).ready(
 					var slug = button.attr( 'data-slug' );
 					var url = button.attr( 'href' );
 					var redirect = $( button ).data( 'redirect' );
-					button.text( wp.updates.l10n.installing );
+					button.text( arilewp_start_page.installing );
 					button.addClass( 'updating-message' );
 					wp.updates.installPlugin(
 						{

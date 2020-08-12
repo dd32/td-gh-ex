@@ -19,8 +19,18 @@ class ArileWP_Customize_Base_Control extends WP_Customize_Control {
 	public function enqueue() {
 
 		// Color picker alpha.
-		wp_enqueue_script( 'wp-color-picker-alpha', ARILEWP_PARENT_INC_URI . '/customizer/controls/js/wp-color-picker-alpha.js', array( 'wp-color-picker' ), '1.0.0', true );
-		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script( 'wp-color-picker-alpha', ARILEWP_PARENT_INC_URI . '/customizer/controls/js/wp-color-picker-alpha.js', array( 'wp-color-picker' ), '2.1.3', true );
+		
+		$color_picker_strings = array(
+			'clear'            => __( 'Clear', 'arilewp' ),
+			'clearAriaLabel'   => __( 'Clear color', 'arilewp' ),
+			'defaultString'    => __( 'Default', 'arilewp' ),
+			'defaultAriaLabel' => __( 'Select default color', 'arilewp' ),
+			'pick'             => __( 'Select Color', 'arilewp' ),
+			'defaultLabel'     => __( 'Color value', 'arilewp' ),
+		);
+		wp_localize_script( 'wp-color-picker-alpha', 'wpColorPickerL10n', $color_picker_strings );
+		wp_enqueue_script( 'wp-color-picker-alpha' );
 
 		// Scripts for nesting panel/section.
 		wp_enqueue_script( 'arilewp-extend-customizer', ARILEWP_PARENT_INC_URI . '/customizer/assets/js/extend-customizer.js', array( 'jquery' ), false, true );
