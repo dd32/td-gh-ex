@@ -44,6 +44,11 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.7 - 2020-08-13 =
+* Enhancement - Update http protocol to https to prevent not secure issue.
+* Tweak   - Add and improve theme-related notices.
+* Remove  - TGMPA library to recommend plugins
+
 = Version 1.4.6 - 2020-07-01 =
 * Feature - Support for Elementor.
 * Add     - Required header fields: `Tested up to` and `Requires PHP` in style.css.
