@@ -52,5 +52,7 @@ if( get_theme_mod( 'topshop-social-custom-class' ) && get_theme_mod( 'topshop-so
 endif;
 
 if( get_theme_mod( 'topshop-header-search' ) ) :
-    echo '<i class="fa fa-search search-btn"></i>';
+    if ( get_theme_mod( 'topshop-show-header-top-bar', customizer_library_get_default( 'topshop-show-header-top-bar' ) ) ) :
+        echo '<i class="fa fa-search search-btn"></i>';
+    endif;
 endif; ?>

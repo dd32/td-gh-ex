@@ -30,11 +30,9 @@
         });
         
         // Search Show / Hide
-        $(".search-btn").toggle(function(){
-            $(".search-block").animate( { bottom: '-=70' }, 150 );
+        $(".search-btn").on( 'click', function() {
+            $(".search-block").animate( { bottom: '-68px' }, 150 );
             $(".search-block .search-field").focus();
-        },function(){
-            $(".search-block").animate( { bottom: '+=70' }, 150 );
         });
         
         // Scroll To Top Button Functionality
@@ -49,6 +47,14 @@
             }
         });
 		
+    });
+
+    // Hide Search if user clicks outside
+    $( document ).mouseup( function (e) {
+        var container = $( '.search-block' );
+        if ( !container.is( e.target ) && container.has( e.target ).length === 0 ) {
+            $(".site-top-bar .search-block").animate( { bottom: '20px' }, 150 );
+        }
     });
     
     $(window).resize(function () {
