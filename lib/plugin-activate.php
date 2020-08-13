@@ -20,10 +20,10 @@ function pinnacle_kadence_toolkit_notice() {
 	}
 	$installed_plugins = get_plugins();
 	if ( ! isset( $installed_plugins['virtue-toolkit/virtue_toolkit.php'] ) ) {
-		$button_label = esc_html__( 'Install Kadence Toolkit', 'pinnacle' );
+		$button_label = esc_html__( 'Install Pinnacle Toolkit', 'pinnacle' );
 		$data_action  = 'install';
 	} elseif ( ! Pinnacle_Plugin_Check::active_check( 'virtue-toolkit/virtue_toolkit.php' ) ) {
-		$button_label = esc_html__( 'Activate Kadence Toolkit', 'pinnacle' );
+		$button_label = esc_html__( 'Activate Pinnacle Toolkit', 'pinnacle' );
 		$data_action  = 'activate';
 	} else {
 		return;
@@ -43,7 +43,7 @@ function pinnacle_kadence_toolkit_notice() {
 	?>
 	<div class="notice updated kt-plugin-install-notice-wrapper" style="position: relative;">
 		<h3 class="kt-notice-title"><?php echo esc_html__( 'Thanks for choosing the Pinnacle Theme', 'pinnacle' ); ?></h3>
-		<p class="kt-notice-description"><?php /* translators: %s: <strong> */ printf( esc_html__( 'To take full advantage of the Pinnacle Theme please install the %1$sKadence Toolkit%2$s, this adds extra settings and features.', 'pinnacle' ), '<strong>', '</strong>' ); ?></p>
+		<p class="kt-notice-description"><?php /* translators: %s: <strong> */ printf( esc_html__( 'To take full advantage of the Pinnacle Theme please install the %1$sPinnacle Toolkit%2$s, this adds extra settings and features.', 'pinnacle' ), '<strong>', '</strong>' ); ?></p>
 		<p class="submit">
 			<a class="button button-primary kt-install-toolkit-btn" data-redirect-url="<?php echo esc_url( admin_url( 'themes.php?page=kadence_welcome_page' ) ); ?>" data-activating-label="<?php echo esc_attr__( 'Activating...', 'pinnacle' ); ?>" data-activated-label="<?php echo esc_attr__( 'Activated', 'pinnacle' ); ?>" data-installing-label="<?php echo esc_attr__( 'Installing...', 'pinnacle' ); ?>" data-installed-label="<?php echo esc_attr__( 'Installed', 'pinnacle' ); ?>" data-action="<?php echo esc_attr( $data_action ); ?>" data-install-url="<?php echo esc_attr( $install_link ); ?>" data-activate-url="<?php echo esc_attr( $activation_link ); ?>"><?php echo esc_html( $button_label ); ?></a>
 			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'virtue-kadence-toolkit-plugin-notice', 'install' ), 'virtue_toolkit_hide_notices_nonce', '_notice_nonce' ) ); ?>" style="    display: flex; text-decoration: none;" class="notice-dismiss kt-close-notice"><?php esc_html_e( 'Dismiss', 'pinnacle' ); ?></a>
@@ -138,7 +138,7 @@ function pinnacle_register_required_plugins() {
 
 	$plugins = array(
 		array(
-			'name'               => 'Kadence Toolkit', // The plugin name.
+			'name'               => 'Virtue/Ascend/Pinnacle Toolkit', // The plugin name.
 			'slug'               => 'virtue-toolkit', // The plugin slug (typically the folder name).
 			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.

@@ -66,14 +66,3 @@ function kadence_setup() {
 }
 add_action( 'after_setup_theme', 'kadence_setup' );
 
-/**
- * Pinnacle fallback for old favicon support.
- */
-function pinnacle_fav_output() {
-	// Keep for fallback.
-	global $pinnacle;
-	if ( isset( $pinnacle['pinnacle_custom_favicon']['url'] ) && ! empty( $pinnacle['pinnacle_custom_favicon']['url'] ) ) {
-		echo '<link rel="shortcut icon" type="image/x-icon" href="' . esc_url( $pinnacle['pinnacle_custom_favicon']['url'] ) . '" />';
-	}
-}
-add_action( 'wp_head', 'pinnacle_fav_output', 5 );

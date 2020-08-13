@@ -426,7 +426,7 @@ pauseText:"Pause",playText:"Play",controlsContainer:"",manualControls:"",sync:""
 
 	if (sf.ios) {
 		// iOS click won't bubble to body, attach to closest possible
-		$(window).load(function() {
+		$(window).on( 'load', function(){
 			$('body').children().on('click', $.noop);
 		});
 	}

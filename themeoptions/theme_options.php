@@ -2705,14 +2705,6 @@ if ( ! class_exists( 'Redux' ) ) {
 			'desc' => "<div class='redux-info-field'><h3>" . __( 'Misc Settings', 'pinnacle' ) . '</h3></div>',
 			'fields' => array(
 				array(
-					'id' => 'pinnacle_custom_favicon',
-					'type' => 'media',
-					'preview' => true,
-					'customizer' => true,
-					'title' => __( 'Custom Favicon', 'pinnacle' ),
-					'subtitle' => __( 'Upload a 16px x 16px png/gif/ico image that will represent your website favicon.', 'pinnacle' ),
-				),
-				array(
 					'id' => 'footer_text',
 					'type' => 'textarea',
 					'customizer' => true,
