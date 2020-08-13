@@ -1,132 +1,135 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> >
-<head>
-	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php 
-	$appointment_options=theme_setup_data(); 
-	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options);
-	if($header_setting['upload_image_favicon']!=''){ ?>
-	<link rel="shortcut icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" /> 
-	<?php } ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <head>
+        <meta charset="<?php bloginfo('charset'); ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php
+        $appointment_red_header_settings = wp_parse_args(get_option('appointment_options', array()), appointment_theme_setup_data());
+        ?>
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-	<?php wp_head(); ?>
-	</head>
-	<body <?php body_class(); ?> >
+        <?php wp_head(); ?>
+    </head>
+    <body <?php body_class(); ?> >
+        <?php wp_body_open(); ?>
+        <a class="skip-link screen-reader-text" href="#wrap"><?php esc_html_e('Skip to content', 'appointment-red'); ?></a> 
+        <!--Logo & Menu Section-->  
+        <?php
+        $appointment_red_header_setting = wp_parse_args(get_option('appointment_options', array()), appointment_red_default_data());
+        if ($appointment_red_header_setting['header_layout_setting'] == 'default') {
+            $appointment_red_navbarstyle = 'navbar navbar-default';
+        } elseif ($appointment_red_header_setting['header_layout_setting'] == 'sticky') {
+            $appointment_red_navbarstyle = 'navbar navbar2 navbar-default navbar2';
+        }
+        ?>
+        <nav class="<?php echo esc_attr($appointment_red_navbarstyle); ?>">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <?php
+                    if (!has_custom_logo() && $appointment_red_header_settings['enable_header_logo_text'] != 'nomorenow') {
+                        $appointment_red_logo = $appointment_red_header_settings['upload_image_logo'];
+                        $appointment_red_logo_id = attachment_url_to_postid($appointment_red_logo);
+                        $appointment_red_logo_alt = get_post_meta($appointment_red_logo_id, '_wp_attachment_image_alt', true);
+                        $appointment_red_logo_title = get_the_title($appointment_red_logo_id);
 
-<?php if ( get_header_image() != '') {?>
-<div class="header-img">
-	<div class="header-content">
-		<?php if($header_setting['header_one_name'] != '') { ?>
-		<h1><?php echo $header_setting['header_one_name'];?></h1>
-		<?php }  if($header_setting['header_one_text'] != '') { ?>
-		<h3><?php echo $header_setting['header_one_text'];?></h3>
-		<?php } ?>
-	</div>
-	<img class="img-responsive" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-</div>
-<?php } ?>
-<!--Logo & Menu Section-->	
-<nav class="navbar navbar-default">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-				<?php 
-				$logo = $header_setting['upload_image_logo'];
-				$logo_id = attachment_url_to_postid($logo);
-				$logo_alt = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
-				$logo_title = get_the_title($logo_id);
-				if($header_setting['text_title'] == 1) 
-				{ ?>
-				<h1>
-					<?php if($header_setting['enable_header_logo_text'] == 0) 
-					{?>
-						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php if($logo != ''){ if(!empty($logo_title)){ echo $logo_title; } else { echo get_bloginfo('name'); } } else { echo get_bloginfo('name'); } ?>">
-					<?php 
-					} 
-					else
-					{ ?>
-						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" >	
-					<?php 
-					} ?>
-					
-					<?php
-					 if($header_setting['enable_header_logo_text'] == 1) 
-					{ echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>"; }
-					elseif($logo!='') 
-					{ ?>
-						<img class="img-responsive" src="<?php echo $logo; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;" alt="<?php if(!empty($logo_alt)){ echo $logo_alt; } else { echo get_bloginfo('name'); }?>"/>
-						<?php 
-					} else { ?>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/red.png" alt="<?php echo bloginfo('name'); ?>">
-					<?php } ?>
-				</a></h1>
-				<?php } ?>	
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only"><?php echo 'Toggle navigation'; ?></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-		
-		<?php 
-				$facebook = $header_setting['social_media_facebook_link'];
-				$twitter = $header_setting['social_media_twitter_link'];
-				$linkdin = $header_setting['social_media_linkedin_link'];
-				
-				$social = '<ul id="%1$s" class="%2$s">%3$s';
-				if($header_setting['header_social_media_enabled'] == 0 )
-				{
-					$social .= '<ul class="head-contact-social">';
+                        if ($appointment_red_header_settings['enable_header_logo_text'] == '' && $appointment_red_logo != '') {
+                            ?>
+                            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home" >
+                                <img class="img-responsive" src="<?php echo esc_url($appointment_red_logo); ?>" style="height:50px; width:200px;" alt="<?php
+                                if (!empty($appointment_red_logo_alt)) {
+                                    echo esc_attr($appointment_red_logo_alt);
+                                } else {
+                                    echo esc_attr(get_bloginfo('name'));
+                                }
+                                ?>"/></a>
+                                <?php
+                            }
+                        } else {
+                            if ($appointment_red_header_settings['enable_header_logo_text'] != 'nomorenow') {
+                                $appointment_red_header_settings['enable_header_logo_text'] = 'nomorenow';
+                                update_option('appointment_options', $appointment_red_header_settings);
+                            }
 
-					if($header_setting['social_media_facebook_link'] != '') {
-					$social .= '<li class="facebook"><a href="'.$facebook.'"';
-						if($header_setting['facebook_media_enabled']==1)
-						{
-						 $social .= 'target="_blank"';
-						}
-					$social .='><i class="fa fa-facebook"></i></a></li>';
-					}
-					if($header_setting['social_media_twitter_link']!='') {
-					$social .= '<li class="twitter"><a href="'.$twitter.'"';
-						if($header_setting['twitter_media_enabled']==1)
-						{
-						 $social .= 'target="_blank"';
-						}
-					$social .='><i class="fa fa-twitter"></i></a></li>';
-					
-					}
-					if($header_setting['social_media_linkedin_link']!='') {
-					$social .= '<li class="linkedin"><a href="'.$linkdin.'"';
-						if($header_setting['linkedin_media_enabled']==1)
-						{
-						 $social .= 'target="_blank"';
-						}
-					$social .='><i class="fa fa-linkedin"></i></a></li>';
-					}
-					$social .='</ul>'; 
-					
-			}
-			$social .='</ul>'; 
-		
-		?>
+                            the_custom_logo();
+                            ?>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<?php wp_nav_menu( array(  
-				'theme_location' => 'primary',
-				'container'  => '',
-				'menu_class' => 'nav navbar-nav navbar-right',
-				'fallback_cb' => 'webriti_fallback_page_menu',
-				'items_wrap'  => $social,
-				'walker' => new webriti_nav_walker()
-				 ) );
-				?>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
-</nav>	
-<!--/Logo & Menu Section-->	
-<div class="clearfix"></div>
+                    <?php } ?>
+                    <div class="site-branding-text logo-link-url">
+
+                        <h1 class="site-title" style="margin: 0px;" ><a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home" >
+
+                                <div class=appointment_title_head>
+                                    <?php bloginfo('name'); ?>
+                                </div>
+                            </a>
+                        </h1>
+
+                        <?php
+                        $appointment_red_description = get_bloginfo('description', 'display');
+                        if ($appointment_red_description || is_customize_preview()) :
+                            ?>
+                            <p class="site-description"><?php echo $appointment_red_description; ?></p>
+                        <?php endif; ?>
+                    </div>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only"><?php esc_html_e('Toggle navigation', 'appointment-red'); ?></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <?php
+                $appointment_red_facebook = $appointment_red_header_settings['social_media_facebook_link'];
+                $appointment_red_twitter = $appointment_red_header_settings['social_media_twitter_link'];
+                $appointment_red_linkdin = $appointment_red_header_settings['social_media_linkedin_link'];
+
+                $appointment_red_social = '<ul id="%1$s" class="%2$s">%3$s';
+                if ($appointment_red_header_settings['header_social_media_enabled'] == 0) {
+                    $appointment_red_social .= '<ul class="head-contact-social">';
+
+                    if ($appointment_red_header_settings['social_media_facebook_link'] != '') {
+                        $appointment_red_social .= '<li class="facebook"><a href="' . esc_url($appointment_red_facebook) . '"';
+                        if ($appointment_red_header_settings['facebook_media_enabled'] == 1) {
+                            $appointment_red_social .= 'target="_blank"';
+                        }
+                        $appointment_red_social .= '><i class="fa fa-facebook"></i></a></li>';
+                    }
+                    if ($appointment_red_header_settings['social_media_twitter_link'] != '') {
+                        $appointment_red_social .= '<li class="twitter"><a href="' . esc_url($appointment_red_twitter) . '"';
+                        if ($appointment_red_header_settings['twitter_media_enabled'] == 1) {
+                            $appointment_red_social .= 'target="_blank"';
+                        }
+                        $appointment_red_social .= '><i class="fa fa-twitter"></i></a></li>';
+                    }
+                    if ($appointment_red_header_settings['social_media_linkedin_link'] != '') {
+                        $appointment_red_social .= '<li class="linkedin"><a href="' . esc_url($appointment_red_linkdin) . '"';
+                        if ($appointment_red_header_settings['linkedin_media_enabled'] == 1) {
+                            $appointment_red_social .= 'target="_blank"';
+                        }
+                        $appointment_red_social .= '><i class="fa fa-linkedin"></i></a></li>';
+                    }
+                    $appointment_red_social .= '</ul>';
+                }
+                $appointment_red_social .= '</ul>';
+                ?>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container' => '',
+                        'menu_class' => 'nav navbar-nav navbar-right',
+                        'fallback_cb' => 'appointment_fallback_page_menu',
+                        'items_wrap' => $appointment_red_social,
+                        'walker' => new appointment_nav_walker()
+                    ));
+                    ?>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>  
+        <!--/Logo & Menu Section--> 
+        <div class="clearfix"></div>

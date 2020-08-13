@@ -13,15 +13,18 @@
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover,
 .dropdown-menu .active > a:focus {
-    background-color: #db2723;
+    background-color: #db2723 !important;
+}
+.navbar-default {
+    background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	background-color: #db2723;
-	color:#fff;
+    background-color: #db2723;
+    color: #fff !important;
 }
-.dropdown-menu > li > a { border-bottom: 1px solid #c8221e; }
+.dropdown-menu > li > a { border-bottom: 1px solid #c8221e !important; }
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus { background-color: #c8221e; }
+.dropdown-menu > li > a:focus { background-color: #c8221e !important; }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #db2723 !important; } 
 }
@@ -92,4 +95,16 @@ blockquote {border-left: 5px solid #db2723;}
 
 .header-contact-info2 a {
     color: #ffffff;
+}
+@media (min-width: 1101px){
+.navbar2.navbar-default .navbar-nav > .open > a {
+    color: #db2723;
+}}
+.navbar2 .logo-link-url .navbar-brand .appointment_title_head,.navbar2 .logo-link-url p {
+    color: #ffffff;
+}
+
+.dropdown-menu > li > a {
+    border-bottom: 1px solid #c8221e !important;
+    background-color: #db2723 !important;
 }
