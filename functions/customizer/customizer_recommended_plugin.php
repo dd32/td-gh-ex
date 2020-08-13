@@ -5,7 +5,7 @@
 require get_template_directory() . '/functions/customizer-notify/appointment-customizer-notify.php';
 
 
-$config_customizer = array(
+$appointment_config_customizer = array(
 	'recommended_plugins'       => array(
 		'webriti-companion' => array(
 			'recommended' => true,
@@ -19,6 +19,4 @@ $config_customizer = array(
 	'activate_button_label'     => esc_html__( 'Activate', 'appointment' ),
 	'deactivate_button_label'   => esc_html__( 'Deactivate', 'appointment' ),
 );
-appointment_Customizer_Notify::init( apply_filters( 'appointment_customizer_notify_array', $config_customizer ) );
-
-?>
+appointment_Customizer_Notify::init( apply_filters( 'appointment_customizer_notify_array', $appointment_config_customizer ) );

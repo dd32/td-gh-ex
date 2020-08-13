@@ -1,4 +1,8 @@
 == Changelog ==
+@Version 2.8.3
+1. Fixed some style-related issues.
+2. Fixed Skip to content link for IE11 browser.
+3. Changed the screenshot.
 @Version 2.8.2
 1. Added additional CSS box of core WordPress.
 2. Fixed logo backward compatibility issue.

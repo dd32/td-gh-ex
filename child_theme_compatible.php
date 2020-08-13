@@ -206,4 +206,3 @@ function appointment_nav_menu_css_class1( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'appointment_nav_menu_css_class1' );
-?>

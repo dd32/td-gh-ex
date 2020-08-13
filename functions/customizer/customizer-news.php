@@ -61,7 +61,7 @@ function appointment_news_customizer($wp_customize) {
     $wp_customize->add_setting(
             'appointment_options[blog_heading]',
             array(
-                'default' => esc_html__('Latest news', 'appointment'),
+                'default' => esc_html__('Proin euismod', 'appointment'),
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'appointment_news_sanitize_html',
                 'type' => 'option',
@@ -76,7 +76,7 @@ function appointment_news_customizer($wp_customize) {
     $wp_customize->add_setting(
             'appointment_options[blog_description]',
             array(
-                'default' => esc_html__('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.','appointment'),
+                'default' => esc_html__('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.', 'appointment'),
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'appointment_news_sanitize_html',
                 'type' => 'option',
@@ -106,9 +106,9 @@ function appointment_news_customizer($wp_customize) {
                     'placeholder' => esc_html__('Please select category', 'appointment'),
                     'multiselect' => true,
                 ),
-            )));
+    )));
 
-    
+
 
     //Select number of latest news on front page
 
@@ -129,11 +129,10 @@ function appointment_news_customizer($wp_customize) {
                 'section' => 'news_section_settings',
                 'choices' => array(2 => 2, 4 => 4, 6 => 6, 8 => 8, 10 => 10, 12 => 12, 14 => 14, 16 => 16),
     ));
-
-    function appointment_news_sanitize_html($input) {
-        return wp_kses_post( force_balance_tags( $input ) );
-    }
-
 }
 
 add_action('customize_register', 'appointment_news_customizer');
+
+function appointment_news_sanitize_html($input) {
+    return wp_kses_post(force_balance_tags($input));
+}

@@ -103,15 +103,16 @@ jQuery(document).ready(function() {
          * Navbar focus dropdown on desktop
          /* ---------------------------------------------- */
 
-           
-            const topLevelLinks = document.querySelectorAll('.navbar .navbar-nav > li.dropdown a');
-            topLevelLinks.forEach(link => {
-              link.addEventListener('focus', function(e) {
+     const topLevelLinks = Array.prototype.slice.call(document.querySelectorAll(".navbar-default .navbar-nav > li.dropdown a"), 0);
+          topLevelLinks.forEach(function(link){
+             return link.addEventListener('focus', function(e) {
                 this.parentElement.classList.add('open')
                 e.preventDefault();
-
-                e.target.parentElement.querySelectorAll( ".open" ).forEach( e =>
-                    e.classList.remove( "open" ) );
+                var div_list = e.target.parentElement.querySelectorAll( ".open" );
+                var div_array = Array.prototype.slice.call(div_list);
+                  div_array.forEach(function(e){
+                   return e.classList.remove( "open" )
+                });
               })             
 
             })
@@ -122,10 +123,10 @@ jQuery(document).ready(function() {
 
             });
 
-            jQuery('a,input').bind('focus', function() {
+           jQuery('a,input').bind('focus', function() {
              if(!jQuery(this).closest(".menu-item").length ) {
-                topLevelLinks.forEach(link => {
-                link.parentElement.classList.remove('open')
+                topLevelLinks.forEach(function(link){
+                return link.parentElement.classList.remove('open')
             })
             }
         })

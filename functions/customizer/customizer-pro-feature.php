@@ -129,4 +129,3 @@ $wp_customize->add_control( new Appointment_Feature_document_Customize_Control( 
 
 }
 add_action( 'customize_register', 'appointment_pro_feature_customizer' );
-?>

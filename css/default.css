@@ -22,6 +22,9 @@
 .dropdown-menu .active > a:focus {
     background-color: #ee591f !important;
 }
+.navbar-default {
+    background-color: transparent;
+}
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	background-color: #ee591f !important;
 }
@@ -39,14 +42,6 @@
 .dropdown-menu > li > a { border-bottom: 1px solid #c64412 !important;background-color: #ee591f !important; }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus { background-color: #c64412 !important; } 
-
-@media (max-width: 1100px){
-.caret {
-     position: absolute;
-    right: 0;
-    margin-top: 10px;
-    margin-right: 10px;
-}}
 
 /*Background colors */
 .callout-btn2, a.works-btn, 

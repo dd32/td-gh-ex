@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment\n"
-"POT-Creation-Date: 2020-07-04 14:33+0530\n"
+"POT-Creation-Date: 2020-08-08 18:36+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -587,7 +587,7 @@ msgid "slide"
 msgstr ""
 
 #: appointment_theme_setup_data.php:33
-msgid "Our services"
+msgid "Lorem Ipsum"
 msgstr ""
 
 #: appointment_theme_setup_data.php:34
@@ -600,7 +600,7 @@ msgstr ""
 #: appointment_theme_setup_data.php:36 appointment_theme_setup_data.php:39
 #: appointment_theme_setup_data.php:42 appointment_theme_setup_data.php:45
 #: appointment_theme_setup_data.php:48 appointment_theme_setup_data.php:51
-msgid "Easy to use"
+msgid "Quam in nibh"
 msgstr ""
 
 #: appointment_theme_setup_data.php:37 appointment_theme_setup_data.php:40
@@ -612,7 +612,7 @@ msgid ""
 msgstr ""
 
 #: appointment_theme_setup_data.php:56
-msgid "Want to say hey or find out more?"
+msgid "Etiam eu nisi quis lectus bibend?"
 msgstr ""
 
 #: appointment_theme_setup_data.php:57
@@ -622,16 +622,16 @@ msgid ""
 msgstr ""
 
 #: appointment_theme_setup_data.php:59
-msgid "Purchase Now"
+msgid "Morbi fermentum"
 msgstr ""
 
 #: appointment_theme_setup_data.php:62
-msgid "Get in Touch"
+msgid "Fringilla in Magna"
 msgstr ""
 
 #: appointment_theme_setup_data.php:69
 #: functions/customizer/customizer-news.php:64
-msgid "Latest news"
+msgid "Proin euismod"
 msgstr ""
 
 #: appointment_theme_setup_data.php:70
@@ -1501,13 +1501,13 @@ msgstr ""
 #: functions/widgets/appointment_info_widget.php:42
 #: functions/widgets/appointment_info_widget.php:63
 #: functions/widgets/appointment_info_widget.php:82
-msgid "Have a question? Call us now"
+msgid "Lorem Ipsum? dolor sit"
 msgstr ""
 
 #: functions/widgets/appointment_info_widget.php:47
 #: functions/widgets/appointment_info_widget.php:75
 #: functions/widgets/appointment_info_widget.php:89
-msgid "+82 334 843 52"
+msgid "+99 999 999 99"
 msgstr ""
 
 #: functions/widgets/appointment_info_widget.php:84
@@ -1538,7 +1538,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:75
+#: header.php:77
 msgid "Toggle navigation"
 msgstr ""
 

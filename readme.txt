@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
 Requires at least: 4.5
 Tested up to: 5.4.2
-Stable tag: 2.8.2
+Stable tag: 2.8.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,10 +26,15 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Appointment WordPress Theme, Copyright (C) 2019, Webriti
-Appointment Pro is distributed under the terms of the GNU GPL
+Appointment WordPress Theme, Copyright (C) 2013-2020, priyanshumittal
+Appointment is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 2.8.3
+1. Fixed some style-related issues.
+2. Fixed Skip to content link for IE11 browser.
+3. Changed the screenshot.
 @Version 2.8.2
 1. Added additional CSS box of core WordPress.
 2. Fixed logo backward compatibility issue.
@@ -330,6 +335,7 @@ License: Under GNU General Public License
 Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
 
 == Images ==
+
 * Image used in the screenshot
 License CC0 Public Domain
 https://pxhere.com/en/photo/912411

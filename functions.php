@@ -246,10 +246,28 @@ if (!function_exists('wp_body_open')) {
 $appointment_options = appointment_theme_setup_data();
 $appointment_current_options = wp_parse_args(get_option('appointment_options', array()), $appointment_options);
 if ($appointment_current_options['webrit_custom_css'] != '' && $appointment_current_options['webrit_custom_css'] != 'nomorenow') {
-    $css = '';
-    $css .= $appointment_current_options['webrit_custom_css'];
-    $css .= (string) wp_get_custom_css(get_stylesheet());
+    $appointment_old_custom_css = '';
+    $appointment_old_custom_css .= $appointment_current_options['webrit_custom_css'];
+    $appointment_old_custom_css .= (string) wp_get_custom_css(get_stylesheet());
     $appointment_current_options['webrit_custom_css'] = 'nomorenow';
     update_option('appointment_options', $appointment_current_options);
-    wp_update_custom_css_post($css, array());
+    wp_update_custom_css_post($appointment_old_custom_css, array());
 }
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function appointment_skip_link_focus_fix() {
+    // The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+    ?>
+    <script>
+    /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+    </script>
+    <?php
+}
+add_action( 'wp_print_footer_scripts', 'appointment_skip_link_focus_fix' );
