@@ -56,10 +56,10 @@ class Core {
         $this->migrate_options();
 
         add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
-        add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'admin_scripts' ] );
+        add_action( 'customize_controls_print_scripts', [ $this, 'customize_controls_scripts' ] );
         add_action( 'after_setup_theme', [ $this, 'agama_setup' ] );
         add_action( 'wp_footer', [ $this, 'footer_scripts' ] );
+        
     }
 
     /**
@@ -171,18 +171,21 @@ class Core {
         wp_localize_script( 'agama-functions', 'agama', $translation_array );
         wp_enqueue_script( 'agama-functions' );
     }
-
+    
     /**
-     * Admin Scripts
+     * Customize Scripts
      *
-     * Enqueue admin scripts and styles.
+     * Hook is triggered within the <head></head> section of the theme customizer.
      *
-     * @since 1.4.1
+     * @since 1.5.8
      */
-    function admin_scripts() {
-
-        wp_enqueue_script( 'agama-admin', AGAMA_JS . 'admin.js', [ 'jquery' ], Agama()->version() );
-
+    function customize_controls_scripts() {
+        
+        /**
+         * Enqueue FontAwesome into Customizer <head></head>
+         */
+        wp_enqueue_style( 'agama-fontawesome', AGAMA_CSS . 'font-awesome.min.css', [], Agama()->version() );
+        
     }
 
     /**
@@ -345,6 +348,7 @@ class Core {
             }
         }
     }
+    
 }
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

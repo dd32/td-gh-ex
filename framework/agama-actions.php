@@ -87,59 +87,20 @@ if( ! function_exists( 'agama_breadcrumb' ) ) :
 endif;
 add_action( 'agama/after_header_wrapper', 'agama_breadcrumb', 30 );
 
-/**
- * Build Page Action Start
- *
- * @since 1.3.8
- */
-if( ! function_exists( 'agama_customize_build_page_action_start' ) ) {
-    function agama_customize_build_page_action_start() {
-        global $post;
-        
-        if( is_object( $post ) ) {
-            $widget = 'page-widget-'. esc_attr( $post->ID );
-        } else {
-            $widget = '';
-        }
-        
-        if( is_customize_preview() && is_page() && ! is_active_sidebar( $widget ) ) {
-            
-            $html  = '<div class="agama-build-page-wrapper tv-row">';
-                $html .= '<div class="agama-build-page-action" data-id="sidebar-widgets-page-widget-'. esc_attr( $post->ID ) .'">';
-                    $html .= esc_html__( 'You can replace this page with Agama Widgets.', 'agama' );
-                    $html .= '<a class="add-new-widget">'. esc_html__( 'Add Widgets', 'agama' ) .'</a>';
-                $html .= '</div>';
-        
-            echo $html;
-            
-        }
+if ( ! function_exists( 'agama_frontpage_boxes' ) ) :
+    /**
+     * Front Page Boxes
+     *
+     * Initialize the front page boxes class.
+     *
+     * @since 1.5.8
+     * @return mixed
+     */
+    function agama_frontpage_boxes() {
+        \Agama\Front_Page_boxes::get_instance();
     }
-}
-add_action( 'agama_customize_build_page_action_start', 'agama_customize_build_page_action_start' );
-
-/**
- * Build Page Action End
- *
- * @since 1.3.8
- */
-if( ! function_exists( 'agama_customize_build_page_action_end' ) ) {
-    function agama_customize_build_page_action_end() {
-        global $post;
-        
-        if( is_object( $post ) ) {
-            $widget = 'page-widget-'. esc_attr( $post->ID );
-        } else {
-            $widget = '';
-        }
-        
-        if( is_customize_preview() && is_page() && ! is_active_sidebar( $widget ) ) {
-            
-            echo '</div><!-- Agama Build Page Wrapper End -->';
-            
-        }
-    }
-}
-add_action( 'agama_customize_build_page_action_end', 'agama_customize_build_page_action_end' );
+endif;
+add_action( 'agama/before_content', 'agama_frontpage_boxes', 10 );
 
 /**
  * Get Page Permalink via Ajax

@@ -51,10 +51,13 @@ final class Agama_Customizer_Upsell {
     private function setup_actions() {
 
         // Register panels, sections, settings, controls, and partials.
-        add_action( 'customize_register', array( $this, 'sections' ) );
+        add_action( 'customize_register', [ $this, 'sections' ] );
+        
+        // Register upsell fields.
+        $this->fields();
 
         // Register scripts and styles for the controls.
-        add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_control_scripts' ), 0 );
+        add_action( 'customize_controls_enqueue_scripts', [ $this, 'enqueue_control_scripts' ], 0 );
     }
 
     /**
@@ -126,24 +129,6 @@ final class Agama_Customizer_Upsell {
             )
         );
         
-        // Front Page Boxes Sections Upsell.
-        $manager->add_section(
-            new Agama_Customizer_Upsell_Section(
-                $manager, 
-                'agama-upsell-frontpage-boxes-sections', 
-                array(
-                    'panel'       => 'agama_frontpage_boxes_panel',
-                    'priority'    => 500,
-                    'options'     => array(
-                        esc_html__( 'Front Page Box #5', 'agama' ),
-                        esc_html__( 'Front Page Box #6', 'agama' ),
-                        esc_html__( 'Front Page Box #7', 'agama' ),
-                        esc_html__( 'Front Page Box #8', 'agama' ),
-                    )
-                )
-            )
-        );
-        
         // WooCommerce Sections Upsell.
         $manager->add_section(
             new Agama_Customizer_Upsell_Section(
@@ -174,6 +159,244 @@ final class Agama_Customizer_Upsell {
                 )
             )
         );
+    }
+    
+    /**
+     * Sets up the customizer upsell fields.
+     *
+     * @since  1.5.8
+     * @access public
+     * @return void
+     */
+    public function fields() {
+        
+        get_template_part( 'framework/admin/customizer/agama-upsell/class-customizer-upsell-field-control' );
+        /**
+         * General -> Body
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'background_image',
+            'settings'  => 'agama_general_body_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Background Animate', 'agama' ),
+            'priority'  => 999
+        ] );
+        /**
+         * General -> Skins
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_general_skins_section',
+            'settings'  => 'agama_general_skins_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Links Color', 'agama' ),
+                __( 'Links Hover Color', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * General -> Comments
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_comments_section',
+            'settings'  => 'agama_General_comments_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Enable / Disable Comments', 'agama' ),
+            'priority'  => 999
+        ] );
+        /**
+         * General -> Extra
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_extra_section',
+            'settings'  => 'agama_general_extra_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Development Mode', 'agama' ),
+                __( 'Rich Snipets', 'agama' ),
+                __( 'Custom jQuery Head', 'agama' ),
+                __( 'Custom jQuery Footer', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Layout -> General
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_layout_general_section',
+            'settings'  => 'agama_layout_general_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Layout Width', 'agama' ),
+            'priority'  => 999
+        ] );
+        /**
+         * Sidebar
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_layout_sidebar_section',
+            'settings'  => 'agama_layout_sidebar_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Heading Typography', 'agama' ),
+                __( 'Body Typography', 'agama' ),
+                __( 'Links Color', 'agama' ),
+                __( 'Links Hover Color', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Header -> General
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_header_section',
+            'settings'  => 'agama_header_general_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Top Border Style', 'agama' ),
+                __( 'Top Border Color', 'agama' ),
+                __( 'Inner Margin (V2)', 'agama' ),
+                __( 'Search Icon', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Header -> Logo
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_header_logo_section',
+            'settings'  => 'agama_header_logo_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Logo Align', 'agama' ),
+                __( 'Logo Shrinked Height', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Header Styling
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_header_styling_section',
+            'settings'  => 'agama_header_styling_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Background Image', 'agama' ),
+                __( 'Background Image Repeat', 'agama' ),
+                __( 'Background Image Size', 'agama' ),
+                __( 'Background Image Attachment', 'agama' ),
+                __( 'Background Image Position', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Navigation -> Mobile
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_nav_mobile_section',
+            'settings'  => 'agama_navigation_mobile_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Background Color', 'agama' ),
+            'priority'  => 999
+        ] );
+        /**
+         * Breadcrumb
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_breadcrumb_section',
+            'settings'  => 'agama_breadcrumb_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Breadcrumb Height', 'agama' ),
+                __( 'Breadcrumb Prefix', 'agama' ),
+                __( 'Breadcrumb Separator', 'agama' ),
+                __( 'Post Categories', 'agama' ),
+                __( 'Post Archives', 'agama' ),
+                __( 'Background Image', 'agama' ),
+                __( 'Background Image Repeat', 'agama' ),
+                __( 'Background Image Size', 'agama' ),
+                __( 'Background Image Attachment', 'agama' ),
+                __( 'Background Image Position', 'agama' ),
+                __( 'Links Hover Color', 'agama' ),
+                __( 'Breadcrumb Typography', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Front Page Boxes
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_frontpage_boxes_section',
+            'settings'  => 'agama_frontpage_boxes_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Unlocks 4 more boxes.', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Blog -> General
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_blog_general_section',
+            'settings'  => 'agama_blog_general_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Featured Images Crop', 'agama' ),
+                __( 'Images Hover Effect', 'agama' ),
+                __( 'LightBox', 'agama' ),
+                __( 'Pagination', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Blog -> Single Post
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_blog_single_post_section',
+            'settings'  => 'agama_blog_single_post_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Post Titles', 'agama' ),
+                __( 'Post Meta', 'agama' ),
+                __( 'Post Tags', 'agama' ),
+                __( 'Post Navigation', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Blog -> Post Meta
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_blog_post_meta_section',
+            'settings'  => 'agama_blog_post_meta_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Post Views Counter', 'agama' ),
+            'priority'  => 999
+        ] );
+        /**
+         * Footer -> General
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_footer_general_section',
+            'settings'  => 'agama_footer_general_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => [
+                __( 'Social Icons Color', 'agama' ),
+                __( 'Social Icons Hover Color', 'agama' ),
+                __( 'Copyright Typography', 'agama' )
+            ],
+            'priority'  => 999
+        ] );
+        /**
+         * Footer -> Styling
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_footer_styling_section',
+            'settings'  => 'agama_footer_styling_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Footer Background Image', 'agama' ),
+            'priority'  => 999
+        ] );
     }
 
     /**

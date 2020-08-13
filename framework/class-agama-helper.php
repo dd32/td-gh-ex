@@ -54,15 +54,6 @@ class Agama_Helper {
 	}
 	
 	/**
-	 * Render Agama Frontpage Boxes
-	 *
-	 * @since 1.2.9
-	 */
-	public static function get_front_page_boxes() {
-		Agama_Front_Page_Boxes::init();
-	}
-	
-	/**
 	 * Data Animate
 	 *
 	 * @since 1.2.8

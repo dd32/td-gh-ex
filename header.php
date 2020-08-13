@@ -66,6 +66,13 @@ if( ! defined( 'ABSPATH' ) ) {
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper"> 
 			<div class="vision-row tv-row">
-
-				<?php Agama_Helper::get_front_page_boxes(); ?>
+                <?php
+                /**
+                 * Hook: agama/before_content
+                 *
+                 * @hooked agama_frontpage_boxes - 10
+                 *
+                 * @since 1.5.8
+                 */
+                do_action( 'agama/before_content' ); ?>
 				

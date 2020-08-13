@@ -3,7 +3,17 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
-= 1.5.7 05 August 2020 =
+= 1.5.8 - 12 August 2020 =
+* Updated Kirki framework to the latest version.
+* Updated the Agama upsell code.
+* Updated theme translation files.
+* Added support for Agama PRO plugin.
+* Added agama/before_content action hook.
+* Added agama/after_content action hook.
+* Rewritten frontpage boxes code.
+* Removed admin.js file from assets.
+
+= 1.5.7 - 05 August 2020 =
 * Added "template-parts" folder and moved proper template part files there.
 * Updated Kirki framework to the latest version.
 * Updated theme translation files.

@@ -14,8 +14,11 @@ if( ! defined( 'ABSPATH' ) ) {
 
 // Include necessary files.
 get_template_part( 'framework/admin/class-partial-refresh' );
-get_template_part( 'framework/admin/customizer/icon-picker/icon-picker-control' );
-get_template_part( 'framework/admin/customizer/agama-upsell/class-customize' );
+
+// If Agama PRO plugin not active include the upsell class.
+if ( ! class_exists( 'Agama\PRO\Plugin' ) ) {
+    get_template_part( 'framework/admin/customizer/agama-upsell/class-customize' );
+}
 
 // Disable Kirki Telemetry Module
 add_filter( 'kirki_telemetry', '__return_false' );
@@ -165,16 +168,6 @@ add_action( 'customize_register', 'agama_customize_register' );
             ]
         ]
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_title_tagline_typo_upsell',
-        'section'     => 'agama_title_tagline_typo',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Site Title Shrinked Typography</li>' .  
-                         '</ul>' . 
-                         '</div>'
-    ] );
 #######################################################
 # GENERAL PANEL
 #######################################################
@@ -229,16 +222,6 @@ add_action( 'customize_register', 'agama_customize_register' );
             ]
         ]
     ] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_general_body_upsell',
-        'section'     => 'background_image',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Background Animate</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
     #########################################################
     # GENERAL SKINS SECTION
     #########################################################
@@ -286,17 +269,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'transport'		=> 'auto',
 		'default'		=> '#ac32e4'
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_general_skins_upsell',
-        'section'     => 'agama_general_skins_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Links Color</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Links Hover Color</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
     #######################################################
     # SEARCH PAGE SECTION
     #######################################################
@@ -335,16 +307,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_general_comments_upsell',
-        'section'     => 'agama_comments_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Enable / Disable Comments</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
     #################################################
     # EXTRA SECTION
     #################################################
@@ -368,19 +330,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_general_extra_upsell',
-        'section'     => 'agama_extra_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Development Mode</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Rich Snippets</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Custom jQuery Head</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Custom jQuery Footer</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
     ########################################
     # GENERAL ADDITIONAL CSS SECTION
     ########################################
@@ -417,16 +366,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		],
 		'default'		=> 'fullwidth'
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_layout_general_upsell',
-        'section'     => 'agama_layout_general_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Layout Width</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
     ##########################################################
     # LAYOUT SIDEBAR SECTION
     ##########################################################
@@ -447,19 +386,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		],
 		'default'	=> 'right'
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_layout_sidebar_upsell',
-        'section'     => 'agama_layout_sidebar_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Heading Typography</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Body Typography</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Links Color</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Links Hover Color</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
 ###################################################################################
 # HEADER
 ###################################################################################
@@ -584,19 +510,6 @@ add_action( 'customize_register', 'agama_customize_register' );
         ],
 		'default'		   => '3'
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_header_general_upsell',
-        'section'     => 'agama_header_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Top Border Style</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Top Border Color</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Inner Margin (H-V2)</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Search Icon</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
 	#######################################################
 	# HEADER LOGO SECTION
 	#######################################################
@@ -765,17 +678,6 @@ add_action( 'customize_register', 'agama_customize_register' );
             )
         )
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_header_logo_upsell',
-        'section'     => 'agama_header_logo_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Logo Align</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Logo Shrinked Max-Height</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
 	##########################################
 	# HEADER IMAGE SECTION
 	##########################################
@@ -987,20 +889,6 @@ add_action( 'customize_register', 'agama_customize_register' );
             ]
         ]
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_header_styling_upsell',
-        'section'     => 'agama_header_styling_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Repeat</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Size</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Attachment</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Position</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
 ###############################################
 # NAVIGATIONS PANEL
 ###############################################
@@ -1208,17 +1096,6 @@ add_action( 'customize_register', 'agama_customize_register' );
                 'property' => 'background-color'
             ]
         ]
-    ] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_navigation_mobile_upsell',
-        'section'     => 'agama_nav_mobile_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Top Navigation</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Color</li>' . 
-                         '</ul>' . 
-                         '</div>'
     ] );
 #########################################
 # MENUS PANEL
@@ -1656,27 +1533,6 @@ add_action( 'customize_register', 'agama_customize_register' );
             ]
         ]
 	] );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_breadcrumb_upsell',
-        'section'     => 'agama_breadcrumb_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Breadcrumb Height</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Breadcrumb Prefix</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Breadcrumb Separator</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Post Categories</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Post Archives</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Repeat</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Size</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Attachment</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Background Image Position</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Links Hover Color</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Breadcrumb Typography</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
 ###################################################################################
 # FRONTPAGE BOXES
 ###################################################################################
@@ -1723,482 +1579,89 @@ add_action( 'customize_register', 'agama_customize_register' );
         'type'          => 'text',
         'default'       => esc_html__( 'Front Page Boxes', 'agama' )
     ) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 1
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_1', array(
-		'title'			=> __( 'Front Page Box #1', 'agama' ),
+    ####################################
+    # FRONTPAGE BOXES
+    ####################################
+    Kirki::add_section( 'agama_frontpage_boxes_section', [
+		'title'			=> __( 'Boxes', 'agama' ),
 		'capability'	=> 'edit_theme_options',
 		'priority'		=> 60,
 		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Enable', 'agama' ),
-        'tooltip'       => __( 'If disabled the front page box #1 will be hidden.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_1',
-		'settings'		=> 'agama_frontpage_box_1_enable',
-		'type'			=> 'switch',
-		'default'		=> false
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Title', 'agama' ),
-		'tooltip'	        => __( 'Write box custom title.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_1',
-		'settings'		    => 'agama_frontpage_box_1_title',
-		'type'			    => 'text',
-		'default'           => __( 'Responsive Layout', 'agama' ),
-        'partial_refresh'   => array(
-            'agama_frontpage_box_1_title' => array(
-                'selector'          => '.fbox-1 h2',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_1_title' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Select Icon', 'agama' ),
-		'tooltip'	        => __( 'Select desired box icon.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_1',
-		'settings'		    => 'agama_frontpage_box_1_icon',
-		'type'			    => 'agip',
-		'default'		    => 'fa-tablet',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_1_icon' => array(
-                'selector'          => '.fbox-1 span.fbox-icon',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_1_icon' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Icon Color', 'agama' ),
-		'tooltip'	    => __( 'Select icon color.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_1',
-		'settings'		=> 'agama_frontpage_box_1_icon_color',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '.fbox-1 i',
-				'property'	=> 'color'
-			)
-		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> '.fbox-1 i',
-				'function'	=> 'css',
-				'property'	=> 'color'
-			)
-		),
-		'default'		=> '#ac32e4'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Image', 'agama' ),
-		'tooltip'	        => __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
-		'section'		    => 'agama_frontpage_boxes_section_1',
-		'settings'		    => 'agama_frontpage_1_img',
-		'type'			    => 'image'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Icon / Image URL', 'agama' ),
-		'tooltip'	    => __( 'Add box icon / image custom url. Ex: http://google.com', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_1',
-		'settings'		=> 'agama_frontpage_box_1_icon_url',
-		'type'			=> 'text'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Box Text', 'agama' ),
-		'tooltip'	        => __( 'Write box custom text.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_1',
-		'settings'		    => 'agama_frontpage_box_1_text',
-		'type'			    => 'textarea',
-		'default'		    => 'Powerful Layout with Responsive functionality that can be adapted to any screen size.',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_1_text' => array(
-                'selector'          => '.fbox-1 p',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_1_desc' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Animated', 'agama' ),
-		'tooltip'	    => __( 'Enable box loading animation.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_1',
-		'settings'		=> 'agama_frontpage_box_1_animated',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Box Animation', 'agama' ),
-		'tooltip'		    => __( 'Select box appear loading animation.', 'agama' ),
-		'section'			=> 'agama_frontpage_boxes_section_1',
-		'settings'			=> 'agama_frontpage_box_1_animation',
-		'type'				=> 'select',
-		'choices'			=> AgamaAnimate::choices(),
-		'active_callback'	=> array(
-			array(
-				'setting'	=> 'agama_frontpage_box_1_animated',
-				'operator'	=> '==',
-				'value'		=> true
-			)
-		),
-		'default'			=> 'fadeInLeft'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 2
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_2', array(
-		'title'			=> __( 'Front Page Box #2', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Enable', 'agama' ),
-        'tooltip'       => __( 'If disabled the front page box #2 will be hidden.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_2',
-		'settings'		=> 'agama_frontpage_box_2_enable',
-		'type'			=> 'switch',
-		'default'		=> false
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Title', 'agama' ),
-		'tooltip'	        => __( 'Write box custom title.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_2',
-		'settings'		    => 'agama_frontpage_box_2_title',
-		'type'			    => 'text',
-		'default'		    => 'Endless Possibilities',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_2_title' => array(
-                'selector'          => '.fbox-2 h2',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_2_title' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Select Icon', 'agama' ),
-		'tooltip'	        => __( 'Select desired box icon.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_2',
-		'settings'		    => 'agama_frontpage_box_2_icon',
-		'type'			    => 'agip',
-		'default'		    => 'fa-cogs',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_2_icon' => array(
-                'selector'          => '.fbox-2 span.fbox-icon',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_2_icon' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Icon Color', 'agama' ),
-		'tooltip'	    => __( 'Select icon color.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_2',
-		'settings'		=> 'agama_frontpage_box_2_icon_color',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '.fbox-2 i',
-				'property'	=> 'color'
-			)
-		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> '.fbox-2 i',
-				'function'	=> 'css',
-				'property'	=> 'color'
-			)
-		),
-		'default'		=> '#ac32e4'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Image', 'agama' ),
-		'tooltip'	    => __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
-		'section'		=> 'agama_frontpage_boxes_section_2',
-		'settings'		=> 'agama_frontpage_2_img',
-		'type'			=> 'image'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Icon / Image URL', 'agama' ),
-		'tooltip'	    => __( 'Add box icon / image custom url. Ex: http://google.com', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_2',
-		'settings'		=> 'agama_frontpage_box_2_icon_url',
-		'type'			=> 'text'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Box Text', 'agama' ),
-		'tooltip'	        => __( 'Write custom text.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_2',
-		'settings'		    => 'agama_frontpage_box_2_text',
-		'type'			    => 'textarea',
-		'default'		    => 'Complete control on each & every element that provides endless customization possibilities.',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_2_text' => array(
-                'selector'          => '.fbox-2 p',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_2_desc' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Animated', 'agama' ),
-		'tooltip'	    => __( 'Enable box appear loading animation.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_2',
-		'settings'		=> 'agama_frontpage_box_2_animated',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Box Animation', 'agama' ),
-		'tooltip'		    => __( 'Select box appear loading animation.', 'agama' ),
-		'section'			=> 'agama_frontpage_boxes_section_2',
-		'settings'			=> 'agama_frontpage_box_2_animation',
-		'type'				=> 'select',
-		'choices'			=> AgamaAnimate::choices(),
-		'active_callback'	=> array(
-			array(
-				'setting'	=> 'agama_frontpage_box_2_animated',
-				'operator'	=> '==',
-				'value'		=> true
-			)
-		),
-		'default'			=> 'fadeInDown'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 3
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_3', array(
-		'title'			=> __( 'Front Page Box #3', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Enable', 'agama' ),
-        'tooltip'       => __( 'If disabled the front page box #3 will be hidden.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_box_3_enable',
-		'type'			=> 'switch',
-		'default'		=> false
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title', 'agama' ),
-		'tooltip'	    => __( 'Write box custom title.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_box_3_title',
-		'type'			=> 'text',
-		'default'		=> 'Boxed & Wide Layouts',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_3_title' => array(
-                'selector'          => '.fbox-3 h2',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_3_title' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Select Icon', 'agama' ),
-		'tooltip'	    => __( 'Select desired box icon.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_box_3_icon',
-		'type'			=> 'agip',
-		'default'		=> 'fa-laptop',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_3_icon' => array(
-                'selector'          => '.fbox-3 span.fbox-icon',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_3_icon' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Icon Color', 'agama' ),
-		'tooltip'	    => __( 'Select icon color.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_box_3_icon_color',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '.fbox-3 i',
-				'property'	=> 'color'
-			)
-		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> '.fbox-3 i',
-				'function'	=> 'css',
-				'property'	=> 'color'
-			)
-		),
-		'default'		=> '#ac32e4'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Image', 'agama' ),
-		'tooltip'	    => __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_3_img',
-		'type'			=> 'image'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Icon / Image URL', 'agama' ),
-		'tooltip'	    => __( 'Add box icon / image custom url. Ex: http://google.com', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_box_3_icon_url',
-		'type'			=> 'text'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Box Text', 'agama' ),
-		'tooltip'	        => __( 'Write box custom text.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_3',
-		'settings'		    => 'agama_frontpage_box_3_text',
-		'type'			    => 'textarea',
-		'default'		    => 'Stretch your Website to the Full Width or make it boxed to surprise your visitors.',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_3_text' => array(
-                'selector'          => '.fbox-3 p',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_3_desc' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Animated', 'agama' ),
-		'tooltip'	    => __( 'Enable box appear loading animation.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_3',
-		'settings'		=> 'agama_frontpage_box_3_animated',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Box Animation', 'agama' ),
-		'tooltip'		    => __( 'Select box appear loading animation.', 'agama' ),
-		'section'			=> 'agama_frontpage_boxes_section_3',
-		'settings'			=> 'agama_frontpage_box_3_animation',
-		'type'				=> 'select',
-		'choices'			=> AgamaAnimate::choices(),
-		'active_callback'	=> array(
-			array(
-				'setting'	=> 'agama_frontpage_box_3_animated',
-				'operator'	=> '==',
-				'value'		=> true
-			)
-		),
-		'default'			=> 'fadeInUp'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 4
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_4', array(
-		'title'			=> __( 'Front Page Box #4', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Enable', 'agama' ),
-        'tooltip'       => __( 'If disabled the front page box #4 will be hidden.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_box_4_enable',
-		'type'			=> 'switch',
-		'default'		=> false
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title', 'agama' ),
-		'tooltip'	    => __( 'Write box custom title.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_box_4_title',
-		'type'			=> 'text',
-		'default'		=> 'Powerful Performance',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_4_title' => array(
-                'selector'          => '.fbox-4 h2',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_4_title' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Select Icon', 'agama' ),
-		'tooltip'	    => __( 'Select desired box icon.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_box_4_icon',
-		'type'			=> 'agip',
-		'default'		=> 'fa-magic',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_4_icon' => array(
-                'selector'          => '.fbox-4 span.fbox-icon',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_4_icon' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Icon Color', 'agama' ),
-		'tooltip'	    => __( 'Select icon color.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_box_4_icon_color',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '.fbox-4 i',
-				'property'	=> 'color'
-			)
-		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> '.fbox-4 i',
-				'function'	=> 'css',
-				'property'	=> 'color'
-			)
-		),
-		'default'		=> '#ac32e4'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Image', 'agama' ),
-		'tooltip'	    => __('You can use image instead of FontAwesome icon, just upload it here.', 'agama'),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_4_img',
-		'type'			=> 'image'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Icon / Image URL', 'agama' ),
-		'tooltip'	    => __( 'Add box icon / image custom url. Ex: http://google.com', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_box_4_icon_url',
-		'type'			=> 'text'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Box Text', 'agama' ),
-		'tooltip'	        => __( 'Write box custom text.', 'agama' ),
-		'section'		    => 'agama_frontpage_boxes_section_4',
-		'settings'		    => 'agama_frontpage_box_4_text',
-		'type'			    => 'textarea',
-		'default'		    => 'Optimized code that are completely customizable and deliver unmatched fast performance.',
-        'partial_refresh'   => array(
-            'agama_frontpage_box_4_text' => array(
-                'selector'          => '.fbox-4 p',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_fbox_4_desc' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Box Animated', 'agama' ),
-		'tooltip'	    => __( 'Enable box appear loading animation.', 'agama' ),
-		'section'		=> 'agama_frontpage_boxes_section_4',
-		'settings'		=> 'agama_frontpage_box_4_animated',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Box Animation', 'agama' ),
-		'tooltip'		    => __( 'Select box appear loading animation.', 'agama' ),
-		'section'			=> 'agama_frontpage_boxes_section_4',
-		'settings'			=> 'agama_frontpage_box_4_animation',
-		'type'				=> 'select',
-		'choices'			=> AgamaAnimate::choices(),
-		'active_callback'	=> array(
-			array(
-				'setting'	=> 'agama_frontpage_box_4_animated',
-				'operator'	=> '==',
-				'value'		=> true
-			)
-		),
-		'default'			=> 'fadeInRight'
-	) );
+	] );
+    Kirki::add_field( 'agama_options', [
+        'type' => 'repeater',
+        'label' => esc_html__( 'Boxes', 'agama' ),
+        'section' => 'agama_frontpage_boxes_section',
+        'priority' => 10,
+        'row_label' => [
+            'type' => 'field',
+            'value' => esc_html__( 'Front Page Box', 'agama' ),
+            'field' => 'title'
+        ],
+        'button_label' => esc_html__( 'Add New', 'agama' ),
+        'settings' => 'agama_frontpage_boxes',
+        'default' => [],
+        'fields' => [
+            'title' => [
+                'type'        => 'text',
+                'label'       => esc_html__( 'Box Title', 'agama' ),
+                'description' => esc_html__( 'The box title.', 'agama' ),
+                'default'     => '',
+            ],
+            'image' => [
+                'type'        => 'image',
+                'label'       => esc_html__( 'Box Image', 'agama' ),
+                'description' => esc_html__( 'Upload box image.', 'agama' ),
+                'choices'     => [
+                    'save_as' => 'url'
+                ],
+                'default'     => ''
+            ],
+            'icon'  => [
+                'type'        => 'text',
+                'label'       => esc_html__( 'Box Icon', 'agama' ),
+                'description' => sprintf( '%s <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">%s</a> %s', esc_html__( 'Enter the', 'agama' ), 'FontAwesome', esc_html__( 'icon name. ex: "fa-tablet"', 'agama' ) ),
+                'default'     => '',
+            ],
+            'icon_color' => [
+                'type'        => 'color',
+                'label'       => esc_html__( 'Icon Color', 'agama' ),
+                'description' => esc_html__( 'Select icon color.', 'agama' ),
+                'default'     => '#ac32e4'
+            ],
+            'url' => [
+                'type'        => 'link',
+                'label'       => esc_html__( 'Box Image/Icon URL', 'agama' ),
+                'description' => esc_html__( 'Enter box icon/image url.', 'agama' ),
+                'default'     => ''
+            ],
+            'text' => [
+                'type'        => 'textarea',
+                'label'       => esc_html__( 'Box Text', 'agama' ),
+                'description' => esc_html__( 'Enter box text.', 'agama' ),
+                'default'     => ''
+            ],
+            'animated' => [
+                'type'        => 'checkbox',
+                'label'       => esc_html__( 'Is box animated?', 'agama' ),
+                'default'     => false
+            ],
+            'animation' => [
+                'type'        => 'select',
+                'label'       => esc_html__( 'Animation', 'agama' ),
+                'description' => esc_html__( 'Select box animation.', 'agama' ),
+                'choices'     => AgamaAnimate::choices(),
+                'default'     => 'bounce'
+            ],
+            'animation_delay' => [
+                'type'        => 'number',
+                'label'       => esc_html__( 'Animation Delay', 'agama' ),
+                'description' => esc_html__( 'Select animation delay in miliseconds.', 'agama' ),
+                'default'     => 100
+            ]
+        ],
+        'choices' => apply_filters( 'agama/frontpage_boxes_choices', [ 'limit' => 4 ] )
+    ] );
 ###################################################################################
 # BLOG
 ###################################################################################
@@ -2316,19 +1779,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		),
 		'default'		=> 'button'
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_blog_general_upsell',
-        'section'     => 'agama_blog_general_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Featured Images Crop</li>' .  
-                         '<li><span class="upsell-pro-label"></span> Images Hover Effect</li>' .   
-                         '<li><span class="upsell-pro-label"></span> LightBox</li>' .  
-                         '<li><span class="upsell-pro-label"></span> Pagination</li>' .  
-                         '</ul>' . 
-                         '</div>'
-    ] );
 	############################################################
 	# BLOG SINGLE POST SECTION
 	############################################################
@@ -2345,19 +1795,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_blog_single_post_upsell',
-        'section'     => 'agama_blog_single_post_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Post Titles</li>' .  
-                         '<li><span class="upsell-pro-label"></span> Post Meta</li>' .   
-                         '<li><span class="upsell-pro-label"></span> Post Tags</li>' .  
-                         '<li><span class="upsell-pro-label"></span> Post Navigation</li>' .  
-                         '</ul>' . 
-                         '</div>'
-    ] );
 	##########################################################
 	# BLOG POST META SECTION
 	##########################################################
@@ -2434,16 +1871,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		),
 		'default'		=> true
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_blog_post_meta_upsell',
-        'section'     => 'agama_blog_post_meta_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Post Views Counter</li>' .    
-                         '</ul>' . 
-                         '</div>'
-    ] );
 ############################################################
 # SOCIAL ICONS
 ############################################################
@@ -2636,18 +2063,6 @@ add_action( 'customize_register', 'agama_customize_register' );
             )
         )
 	) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_footer_general_upsell',
-        'section'     => 'agama_footer_general_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Social Icons Color</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Social Icons Hover Color</li>' . 
-                         '<li><span class="upsell-pro-label"></span> Copyright Typography</li>' . 
-                         '</ul>' . 
-                         '</div>'
-    ] );
     ##########################################################
     #   FOOTER STYLING SECTION
     ##########################################################
@@ -2730,16 +2145,6 @@ add_action( 'customize_register', 'agama_customize_register' );
         ),
         'default'       => '#cddeee'
     ) );
-    Kirki::add_field( 'agama_options', [
-        'type'        => 'custom',
-        'settings'    => 'agama_footer_styling_upsell',
-        'section'     => 'agama_footer_styling_section',
-        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
-                         '<ul class="themevision-upsell-features">' . 
-                         '<li><span class="upsell-pro-label"></span> Footer Background Image</li>' .  
-                         '</ul>' . 
-                         '</div>'
-    ] );
 #######################################
 # REMOVE SECTIONS
 #######################################

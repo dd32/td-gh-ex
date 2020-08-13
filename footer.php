@@ -2,21 +2,30 @@
 /**
  * The template for displaying the footer
  *
- * Contains footer content and the closing of the #main and #page div elements.
+ * Contains footer content and the closing of the #agama-main-wrapper and #page div elements.
  *
- * @package Theme-Vision
- * @subpackage Agama
- * @since Agama 1.0
+ * @author      Theme Vision <support@theme-vision.com>
+ * @package     Theme Vision
+ * @subpackage  Agama
+ * @since       1.0.0
  */
 
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit;
-}  ?>
+}
 
-			</div><!-- Vision Row End -->
-		  </div>
-	   </div>
+/**
+ * Hook: agama/after_content
+ *
+ * @hooked none
+ *
+ * @since 1.5.8
+ */
+do_action( 'agama/after_content' ); ?>
+</div><!-- .vision-row.tv-row -->
+</div><!-- #main.wrapper -->
+</div><!-- #page.site -->
 	
 	<?php 
 	if( 
@@ -25,7 +34,6 @@ if( ! defined( 'ABSPATH' ) ) {
 		is_active_sidebar( 'footer-widget-3' ) || 
 		is_active_sidebar( 'footer-widget-4' )
 	  ): ?>
-	<!-- Footer Widgets Start -->
 	<div class="footer-widgets">
         <div class="tv-container">
             <div class="tv-row">
@@ -56,10 +64,9 @@ if( ! defined( 'ABSPATH' ) ) {
 
             </div>
         </div>
-	</div><!-- Footer Widgets End -->
+	</div><!-- .footer-widgets -->
 	<?php endif; ?>
 	
-	<!-- Footer Start -->
 	<footer id="agama-footer" class="tv-d-block" role="contentinfo">
 		<div class="tv-container tv-p-0 tv-d-flex tv-justify-content-between tv-align-items-center">
 			
@@ -74,9 +81,9 @@ if( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 			
 		</div>
-	</footer><!-- Footer End -->
+	</footer><!-- #agama-footer -->
 	
-</div><!-- Main Wrapper End -->
+</div><!-- #agama-main-wrapper -->
 
 <?php if( get_theme_mod('agama_to_top', true) ): ?>
 	<?php echo sprintf( '<a id="%s"><i class="%s"></i></a>', 'toTop', 'fa fa-angle-up' ); ?>

@@ -80,14 +80,6 @@ class Setup {
          */
         $plugins = [
             [
-                'name'              => 'Agama PRO',
-                'slug'              => 'agama-pro',
-                'required'          => false,
-                'force_activation'  => false,
-                'source'            => 'https://update.theme-vision.com/agama-pro.zip',
-                'external_url'      => 'https://theme-vision.com/agama-pro/'
-            ],
-            [
                 'name'              => 'Elementor',
                 'slug'              => 'elementor',
                 'required'          => false,
