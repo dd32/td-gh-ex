@@ -18,13 +18,15 @@ jQuery(function ($) {
         if($('.admin-bar').length)
             topspace = 30;
 
-        var header = document.getElementById("myHeader");
-        var sticky = header.offsetTop;
+        console.log(topspace);
+
+        var sticky = $('.stickable')[0].offsetTop;
         window.onscroll = function() {
+            console.log(window.pageYOffset);
             if (window.pageYOffset > sticky) {
-                $('.stickable').addClass("sticky");
+                $('nav.stickable').addClass("fixed-top");
             } else {
-                $('.stickable').removeClass("sticky");
+                $('nav.stickable').removeClass("fixed-top");
             }
         };
 
