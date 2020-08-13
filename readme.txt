@@ -1,8 +1,11 @@
--------------------------------------------------------
-    Ascend Theme Licensing:
--------------------------------------------------------
-
-Licensed under the General Public License V3
+=== Ascend ===
+Contributors: britner
+Tags: two-columns, one-column, custom-colors, custom-logo, editor-style, custom-menu, featured-images, custom-background, threaded-comments, translation-ready, theme-options, e-commerce, rtl-language-support, post-formats, footer-widgets, grid-layout, right-sidebar, left-sidebar.
+Requires at least: 5.2
+Tested up to: 5.5.0
+Requires PHP: 5.6
+License: GNU General Public License v3.0 (or later)
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 -------------------------------------------------------
     Description:
@@ -27,6 +30,9 @@ Yes, go here: https://www.kadencewp.com/kadence-themes-demo-content/
 -------------------------------------------------------
 
 = Theme Name: Ascend =
+
+= Version 1.4.6 | 13nd August 2020 =
+* Update: 5.5 support.
 
 = Version 1.4.5 | 22nd January 2020 =
 * Update: Social Widget with aria-label
@@ -425,10 +431,10 @@ Source: http://getbootstrap.com
 DebouncedResize licensed under the MIT license.
 Source: https://github.com/louisremi/jquery-smartresize
 
-* Photos in screenshot from https://unsplash.com/ under license Creative Commons Zero https://unsplash.com/license
-** Mountains : https://unsplash.com/@inf1783?photo=N7-wxyaIxFs
-** Campfire: https://unsplash.com/@royaannmiller?photo=Rdsc2L517iQ
-** Moutains2 : https://unsplash.com/@mbandoch?photo=mkdI8JN6sDU
+* Photos in screenshot from https://stocksnap.io/ under license Creative Commons Zero https://stocksnap.io/license
+** Mountains : https://stocksnap.io/photo/highland-trees-QXLU3F7QXX
+** Campfire: https://stocksnap.io/photo/wood-fire-PBB6NER08E
+** Moutains2 : https://stocksnap.io/photo/mountains-road-0BJXEHZBXK
 
 
 

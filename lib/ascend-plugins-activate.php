@@ -19,10 +19,10 @@ function ascend_kadence_toolkit_notice() {
 	}
 	$installed_plugins = get_plugins();
 	if ( ! isset( $installed_plugins['virtue-toolkit/virtue_toolkit.php'] ) ) {
-		$button_label = esc_html__( 'Install Kadence Toolkit', 'ascend' );
+		$button_label = esc_html__( 'Install Ascend Toolkit', 'ascend' );
 		$data_action  = 'install';
 	} elseif ( ! Ascend_Plugin_Check::active_check( 'virtue-toolkit/virtue_toolkit.php' ) ) {
-		$button_label = esc_html__( 'Activate Kadence Toolkit', 'ascend' );
+		$button_label = esc_html__( 'Activate Ascend Toolkit', 'ascend' );
 		$data_action  = 'activate';
 	} else {
 		return;
@@ -142,7 +142,7 @@ function ascend_register_required_plugins() {
 	$suggested = array();
 
 	$suggested[] = array(
-			'name'     				=> 'Kadence Toolkit', // The plugin name
+			'name'     				=> 'Virtue/Ascend/Pinnacle Toolkit', // The plugin name
 			'slug'     				=> 'virtue-toolkit', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.8',

@@ -1001,7 +1001,7 @@ if( !kt_isMobile.any() ) {
 		
 	});
 }
-jQuery( window ).load(function () {
+jQuery(window).on( 'load', function(){
 	jQuery('body').animate({'opacity' : 1});
 });
 /*
