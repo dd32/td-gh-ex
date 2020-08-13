@@ -17,8 +17,19 @@ jQuery(function ($) {
         var topspace = 0;
         if($('.admin-bar').length)
             topspace = 30;
-        $(".stickable").sticky({topSpacing: topspace });
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        window.onscroll = function() {
+            if (window.pageYOffset > sticky) {
+                $('.stickable').addClass("sticky");
+            } else {
+                $('.stickable').removeClass("sticky");
+            }
+        };
+
     }
+
 
 
     // END: Sticky menu
@@ -42,13 +53,13 @@ jQuery(function ($) {
 
         if ($(_this).next('ul').css('display') === 'none') {
             $(_this).next('ul').css('display', 'grid');
-            $(_this).children('i').removeClass('fa-caret-down');
-            $(_this).children('i').addClass('fa-caret-up');
+            $(_this).children('i').removeClass('fa-angle-down');
+            $(_this).children('i').addClass('fa-angle-up');
 
         } else {
             $(_this).next('ul').css('display', 'none');
-            $(_this).children('i').removeClass('fa-caret-up');
-            $(_this).children('i').addClass('fa-caret-down');
+            $(_this).children('i').removeClass('fa-angle-up');
+            $(_this).children('i').addClass('fa-angle-down');
         }
     }
 
@@ -60,8 +71,8 @@ jQuery(function ($) {
 
     $('.navbar-toggler').on('click', function () {
         $('.dropdown-menu').css('display', 'none');
-        $('.dropdown-toggler').children('i').removeClass('fa-caret-up');
-        $('.dropdown-toggler').children('i').addClass('fa-caret-down');
+        $('.dropdown-toggler').children('i').removeClass('fa-angle-up');
+        $('.dropdown-toggler').children('i').addClass('fa-angle-down');
     });
 
     // END : Responsive JS

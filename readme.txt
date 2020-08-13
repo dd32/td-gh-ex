@@ -19,6 +19,11 @@ Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurp
 
 == Changelog ==
 
+= 1.5.1 - 2020.08.13 =
+* Added a new option to upload custom logo for mobile menu
+* Fixed header background issue with the mobile menu header
+* Fixed an issue with post meta display
+
 = 1.5.0 - 2020.08.11 =
 * Fixed an issue with the post navigation links
 * Fixed an styling issue with the comment form

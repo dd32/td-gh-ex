@@ -35,7 +35,7 @@ p {
     font-size: 14px;
     font-weight: 200;
     letter-spacing: 0.5px;
-    line-height: 25px;
+    line-height: 1.6;
     margin-bottom: 15px;
     word-spacing: 1px;
     word-wrap: break-word;
@@ -692,7 +692,7 @@ header .dropdown-menu li {
     margin-right: 1px;
 }
 
-.dropdown-menu .fa-caret-down {
+.dropdown-menu .fa-angle-down {
     transform: rotate(-90deg);
 }
 
