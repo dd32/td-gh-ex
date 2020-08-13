@@ -1,10 +1,14 @@
 /*Theme Menus*/
+.navbar-default { background-color: transparent; border-color: #e7e7e7; }
 .navbar .navbar-nav > .open > a,
 .navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus,
 .navbar .navbar-nav > li > a:hover,
 .navbar .navbar-nav > li > a:focus {
 	color: #7aa228;
+}
+.dropdown-menu > li > a {
+    background-color: #7AA228 !important;
 }
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover,
@@ -21,7 +25,7 @@
 }
 .dropdown-menu > li > a { border-bottom: 1px solid #649403; }
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus { background-color: #649403; }
+.dropdown-menu > li > a:focus { background-color: #649403 !important; }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #7aa228 !important; } 
 }
