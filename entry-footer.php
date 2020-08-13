@@ -1,6 +1,6 @@
 <footer class="entry-meta">
 	<?php
-	if ( in_array( get_post_format(), array( 'aside', 'link', 'status', 'quote' ) ) ) {
+	if ( in_array( get_post_format(), array( 'aside', 'link', 'status', 'quote' ) ) || ! get_the_title()  ) {
 		sempress_posted_on();
 	} else {
 		_e( 'Posted', 'sempress' );
@@ -26,6 +26,8 @@
 		<?php printf( __( 'Tagged %1$s', 'sempress' ), $tags_list ); ?>
 	</span>
 	<?php endif; // End if $tags_list ?>
+
+	<?php do_action( 'sempress_entry_footer' ); ?>
 
 	<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 	<span class="sep"> | </span>

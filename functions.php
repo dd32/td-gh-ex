@@ -23,13 +23,6 @@
  */
 
 /**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 670; /* pixels */
-}
-
-/**
  * Set a default theme color array for WP.com.
  */
 $themecolors = array(
@@ -132,6 +125,8 @@ if ( ! function_exists( 'sempress_setup' ) ) :
 
 		// Nicer WYSIWYG editor
 		add_editor_style( 'css/editor-style.css' );
+
+		add_filter( 'use_default_gallery_style', '__return_false' );
 	}
 endif; // sempress_setup
 
@@ -219,19 +214,19 @@ function sempress_customize_css() {
 	global $themecolors;
 ?>
 	<style type="text/css" id="sempress-custom-colors">
-		body { text-shadow: 0 1px 0 <?php echo get_theme_mod( 'sempress_shadowcolor', '#' . $themecolors['shadow'] ); ?>; }
-		body, a { color: <?php echo get_theme_mod( 'sempress_textcolor', '#' . $themecolors['text'] ); ?>; }
+		body { text-shadow: 0 1px 0 <?php echo esc_attr( get_theme_mod( 'sempress_shadowcolor', '#' . $themecolors['shadow'] ) ); ?>; }
+		body, a { color: <?php echo esc_attr( get_theme_mod( 'sempress_textcolor', '#' . $themecolors['text'] ) ); ?>; }
 		.widget, #access {
-			border-bottom: 1px solid <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?>;
-			-moz-box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
-			-webkit-box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
-			box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
+			border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'sempress_bordercolor', 'inherit' ) ); ?>;
+			-moz-box-shadow: <?php echo esc_attr( get_theme_mod( 'sempress_shadowcolor', 'inherit' ) ); ?> 0 1px 0 0;
+			-webkit-box-shadow: <?php echo esc_attr( get_theme_mod( 'sempress_shadowcolor', 'inherit' ) ); ?> 0 1px 0 0;
+			box-shadow: <?php echo esc_attr( get_theme_mod( 'sempress_shadowcolor', 'inherit' ) ); ?> 0 1px 0 0;
 		}
 		article.comment {
-			border-top: 1px solid <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?>;
-			-moz-box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
-			-webkit-box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
-			box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
+			border-top: 1px solid <?php echo esc_attr( get_theme_mod( 'sempress_shadowcolor', 'inherit' ) ); ?>;
+			-moz-box-shadow: <?php echo esc_attr( get_theme_mod( 'sempress_bordercolor', 'inherit' ) ); ?> 0 -1px 0 0;
+			-webkit-box-shadow: <?php echo esc_attr( get_theme_mod( 'sempress_bordercolor', 'inherit' ) ); ?> 0 -1px 0 0;
+			box-shadow: <?php echo esc_attr( get_theme_mod( 'sempress_bordercolor', 'inherit' ) ); ?> 0 -1px 0 0;
 		}
 	</style>
 <?php
@@ -449,8 +444,19 @@ function sempress_the_post_thumbnail( $before = '', $after = '' ) {
 			$class = 'alignright';
 		}
 
+		$class .= ' photo';
+
+		$post_format = get_post_format();
+
+		// use `u-photo` on photo/gallery posts
+		if ( in_array( $post_format, array( 'image', 'gallery' ) ) ) {
+			$class .= ' u-photo';
+		} else { // otherwise use `u-featured`
+			$class .= ' u-featured';
+		}
+
 		echo $before;
-		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class . ' photo u-photo', 'itemprop' => 'image' ) );
+		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class, 'itemprop' => 'image' ) );
 		echo $after;
 	}
 }
@@ -462,39 +468,14 @@ function sempress_the_post_thumbnail( $before = '', $after = '' ) {
  * @since SemPress 1.3.0
  */
 function sempress_content_width() {
+	global $content_width;
+	$content_width = 670; /* pixels */
+
 	if ( is_page_template( 'full-width-page.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
-		global $content_width;
 		$content_width = 880;
 	}
-
-	/*
-	if ( has_post_format( 'image' ) || has_post_format( 'video' ) || is_attachment() ) {
-		global $content_width;
-		$content_width = 668;
-	}
-	*/
 }
 add_action( 'template_redirect', 'sempress_content_width' );
-
-/**
- * replace post-title with id when empty
- *
- * @since SemPress 1.4.6
- *
- * @param string $title the post-title
- * @param int $id the post-id
- * @return string the filtered post-title
- */
-function sempress_the_title( $title, $id ) {
-	// if title is empty, return the id
-	if ( empty( $title ) ) {
-		return "#$id";
-	}
-
-	return $title;
-}
-add_filter( 'the_title', 'sempress_the_title', 10, 2 );
-
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on
@@ -563,6 +544,18 @@ require( get_template_directory() . '/inc/semantics.php' );
  * Adds back compat handling for older WP versions
  */
 require( get_template_directory() . '/inc/compat.php' );
+
+if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
+	/**
+	 * Adds Indieweb Syndcation Links
+	 * if github.com/dshanske/syndication-links is activated
+	 */
+	require( get_template_directory() . '/int/syndication-links.php' );
+}
+
+if ( class_exists( 'Post_Kinds_Plugin' ) ) {
+	require( get_template_directory() . '/int/post-kinds.php' );
+}
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and SemPress.

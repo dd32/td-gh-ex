@@ -9,7 +9,7 @@
 get_header(); ?>
 
 		<section id="primary">
-			<main id="content" role="main">
+			<main id="content" role="main"<?php sempress_main_class(); ?>>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -22,7 +22,7 @@ get_header(); ?>
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'search' ); ?>
+					<?php get_template_part( 'content', get_post_format() ? get_post_format() : get_post_type() ); ?>
 
 				<?php endwhile; ?>
 
