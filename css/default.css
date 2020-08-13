@@ -13,15 +13,18 @@
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover,
 .dropdown-menu .active > a:focus {
-    background-color: #395ca3;
+    background-color: #395ca3 !important;
+}
+.navbar-default {
+	background-color: transparent; 
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	background-color: #395ca3;
 	color:#fff;
 }
-.dropdown-menu > li > a { border-bottom: 1px solid #2a4987; }
+.dropdown-menu > li > a { border-bottom: 1px solid #2a4987 !important; }
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus { background-color: #2a4987; }
+.dropdown-menu > li > a:focus { background-color: #2a4987 !important; }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #395ca3 !important; } 
 }
@@ -93,3 +96,55 @@ blockquote {border-left: 5px solid #395ca3;}
 .header-contact-info2 a {
     color: #ffffff;
 }
+
+/*Header navbar*/
+.navbar.navbar3 .navbar-nav > .open > a .sub-arrow::after {
+	color: #ee591f;
+}
+.navbar3 .dropdown:not(.active) .dropdown-toggle:hover .sub-arrow::after,
+.navbar3 .dropdown:not(.active) .dropdown-toggle:focus .sub-arrow::after,
+.navbar.navbar3 .navbar-nav > .open > a .sub-arrow::after {
+	color: #395ca3;
+}
+.navbar.navbar3 .navbar-nav > .active.open > a,
+.navbar.navbar3 .navbar-nav > .active.open > a:hover,
+.navbar.navbar3 .navbar-nav > .active.open > a:focus {background-color: #395ca3; color: #ffffff; }
+.navbar.navbar3 .navbar-nav > .open > a,
+.navbar.navbar3 .navbar-nav > .open > a:hover,
+.navbar.navbar3 .navbar-nav > .open > a:focus { background-color: #ffffff; color: #395ca3; }
+.navbar.navbar3 .navbar-nav > li > a:hover,
+.navbar.navbar3 .navbar-nav > li > a:focus { background-color: #ffffff; color: #395ca3; }
+.navbar-default.navbar3 .navbar-nav > li > a { color: #ffffff; }
+.navbar-default.navbar3 .navbar-nav > .active > a, 
+.navbar-default.navbar3 .navbar-nav > .active > a:hover, 
+.navbar-default.navbar3 .navbar-nav > .active > a:focus {
+	color: #ffffff; background-color: #395ca3 !important;
+}
+.navbar3 .search-box-outer a:hover {color: #395ca3}
+
+/*Service Section*/
+.service-section2 .service-area i.fa {color: #395ca3;}
+.service-section2 .service-area::before {background-color: #395ca3;}
+
+@media (max-width: 1100px){
+.caret {
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}}
+.dropdown-menu > li > a {
+background-color: #395ca3 !important;
+}
+.dropdown-menu > li.open > a {
+background-color: #2a4987 !important;
+}
+@media (max-width: 767px){
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fff !important;
+    background-color: transparent;
+}}
+@media (max-width: 767px){
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fff !important;
+}}

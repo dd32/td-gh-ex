@@ -1,4 +1,47 @@
-Appointment Blue is the child version of Appointment theme.
+=== Appointment Blue ===
+
+Contributors: priyanshumittal
+Tags: full-width-template, threaded-comments, two-columns, right-sidebar, left-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
+Requires at least: 4.5
+Tested up to: 5.4.2
+Stable tag: 1.2
+Requires PHP: 5.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+== Description ==
+
+A Business theme which is ideal for creating a corporate / business website. Appointment Blue theme is a child theme of the Appointment theme and is the Blue color variation. Those who need a blue background-based theme can use this child theme. Appointment Blue theme comes with various locales.
+In the appointment blue child theme, a new header variation and a different service section variation are there that are not in the parent theme.
+
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+
+== Keyboard navigation ==
+
+Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
+
+
+== License ==
+
+Appointment Blue WordPress Theme, Copyright (C) 2015-2020, priyanshumittal
+Appointment Blue is distributed under the terms of the GNU GPL
+
+
+== Changelog ==
+
+@Version 1.2
+1. Implement the Accessibility including skip to content and keyboard navigation.
+2. Changed the screenshot image.
+3. Changed the Header section variation and Service section variation.
+4. Fixed escaping and sanitizing issues.
+5. Fixed all the other issues.
 @version 1.1.7.2
 1. Add alt tag on logo.
 @version 1.1.7.1
@@ -22,5 +65,23 @@ Appointment Blue is the child version of Appointment theme.
 @version 1.1
 1. Add Default Pagination.
 2. Solved Styling issue.
+@version 1.0.1
+1. Updated the Theme URI.
+@Version 1.0
+released
+
+Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
 
 
+== External resources ==
+
+Custom control - Image Radio Button Custom Control:
+Copyright: Anthony Hortin
+License: GNU General Public License v2 or later
+Source: https://github.com/maddisondesigns/customizer-custom-controls
+
+== Images ==
+
+* Image used in the screenshot
+License CC0 Public Domain
+https://pxhere.com/en/photo/912411
