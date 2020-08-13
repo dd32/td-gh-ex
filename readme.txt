@@ -2,8 +2,8 @@
 Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 1.2.9
+Tested up to: 5.5
+Stable tag: 1.3.0
 Requires PHP: 5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,10 +15,16 @@ Avventura Lite is an elegant and beauty WordPress theme, perfect for writers, bl
 Avventura Lite is an elegant and beauty WordPress theme, perfect for writers, bloggers and photographers. Avventura Lite is also fully compatible with Contact Form 7 and WooCommerce plugin and is optimized for mobile devices.
 
 Created by ThemeinProgress, http://www.themeinprogress.com
-Avventura Lite WordPress Theme, Copyright 2019 ThemeinProgress.
+Avventura Lite WordPress Theme, Copyright 2020 ThemeinProgress.
 Avventura Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.3.0 =
+Release date - August, 13 - 2020
+
+* Tested with WordPress 5.5
+* Updated - WooCommerce templates
 
 = 1.2.9 =
 Release date - July, 16 - 2020
