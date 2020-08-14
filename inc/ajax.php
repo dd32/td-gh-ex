@@ -18,8 +18,8 @@ $countsettings = isset( $_REQUEST[ 'count_section' ] ) ? sanitize_text_field( wp
             <label><?php esc_html_e( 'Page', 'accesspress-parallax' ) ?></label>
             <select class="parallax_section_page" name="accesspress_parallax[parallax_section][<?php echo esc_attr( $countsettings ); ?>][page]" class="of-input">
                 <option value=""><?php esc_html_e( 'Select a page:', 'accesspress-parallax' ) ?></option>
-                <?php foreach ( $options_pages_obj as $page ) { ?>
-                    <option value="<?php echo absint( $page->ID ); ?>"><?php echo esc_html( $page->post_title ); ?></option>
+                <?php foreach ( $options_pages_obj as $page_data ) { ?>
+                    <option value="<?php echo absint( $page_data->ID ); ?>"><?php echo esc_html( $page_data->post_title ); ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -62,7 +62,7 @@ $countsettings = isset( $_REQUEST[ 'count_section' ] ) ? sanitize_text_field( wp
         <div class="inline-label">
             <label class=""><?php esc_html_e( 'Background Image', 'accesspress-parallax' ) ?></label>
             <input type="text" placeholder="No file chosen" value="" name="accesspress_parallax[parallax_section][<?php echo esc_attr( $countsettings ); ?>][image]" class="upload" id="parallax_section">
-            <input type="button" value="<?php esc_html_e( 'Upload', 'accesspress-parallax' ) ?>" class="upload-button button" id="upload-parallax_section">
+            <input type="button" value="<?php esc_attr_e( 'Upload', 'accesspress-parallax' ) ?>" class="upload-button button" id="upload-parallax_section">
             <div id="parallax_section-image" class="screenshot"></div>
         </div>
 

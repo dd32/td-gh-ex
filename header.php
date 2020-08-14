@@ -20,8 +20,9 @@
         if ( function_exists( 'wp_body_open' ) ) {
            wp_body_open();
         } ?>
+        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-parallax' ); ?></a>
         <div id="page" class="hfeed site">
-            <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-parallax' ); ?></a>
+            
             <?php
             if ( accesspress_parallax_of_get_option( 'show_social' ) == 1 ):
                 do_action( 'accesspress_social' );
@@ -64,9 +65,9 @@
                                         foreach ( $sections as $single_sections ):
                                             if ( $single_sections[ 'layout' ] != "action_template" && $single_sections[ 'layout' ] != "blank_template" && $single_sections[ 'layout' ] != "googlemap_template" && !empty( $single_sections[ 'page' ] ) ) :
                                                 $title_id = apply_filters( 'accesspress_translate_id', $single_sections[ 'page' ] );
-                                                $title = get_the_title( $title_id );
+                                                $title_text = get_the_title( $title_id );
                                                 ?>
-                                                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo esc_attr( $single_sections[ 'page' ] ); ?>"><?php echo esc_html( $title ); ?></a></li>
+                                                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo esc_attr( $single_sections[ 'page' ] ); ?>"><?php echo esc_html( $title_text ); ?></a></li>
                                                 <?php
                                             endif;
                                         endforeach;

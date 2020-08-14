@@ -11,7 +11,7 @@ get_header();?>
 
     if ( !empty( $sections ) ):
         foreach ( $sections as $section ) :
-            $page = get_post( $section[ 'page' ] );
+            $page_data = get_post( $section[ 'page' ] );
             $overlay = $section[ 'overlay' ];
             $image = $section[ 'image' ];
             $layout = $section[ 'layout' ];
@@ -20,7 +20,7 @@ get_header();?>
             ?>
 
             <?php if ( !empty( $section[ 'page' ] ) ): ?>
-                <section class="parallax-section clearfix<?php echo esc_attr( $googlemapclass ) . " " . esc_attr( $layout ); ?>" id="<?php echo "section-" . absint( $page->ID ); ?>">
+                <section class="parallax-section clearfix<?php echo esc_attr( $googlemapclass ) . " " . esc_attr( $layout ); ?>" id="<?php echo "section-" . absint( $page_data->ID ); ?>">
                     <?php if ( !empty( $image ) && $overlay != "overlay0" ) : ?>
                         <div class="overlay"></div>
                     <?php endif; ?>

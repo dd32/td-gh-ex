@@ -4,12 +4,15 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
 Description: Create beautiful one page / parallax website for your business, online shop, agency or any type with AccessPress Parallax. Theme is fully Gutenberg / Elementor friendly and consists of 6 demo (starter site content) built in Elementor in just one click.
-Version: 3.9
+Version: 4.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-parallax
 Domain Path: /languages/
 Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -84,7 +87,6 @@ td {
     font-style: inherit;
     font-weight: inherit;
     margin: 0;
-    outline: 0;
     padding: 0;
     vertical-align: baseline;
 }
@@ -367,16 +369,6 @@ input[type="submit"] {
     height: 36px;
 }
 
-/* button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-    outline: 0;
-} */
 
 input[type="text"],
 input[type="email"],
@@ -426,7 +418,6 @@ input[type="color"]:focus,
 textarea:focus,
 select:focus {
     color: #111;
-    outline: 0;
 }
 
 input[type="text"],
@@ -464,9 +455,6 @@ Links
 a {
     color: #E66432;
     text-decoration: none;
-}
-a:focus {
-    outline: 1px dotted;
 }
 
 /*--------------------------------------------------------------
@@ -1588,7 +1576,6 @@ Main SLider
     position: absolute;
     top: 50%;
     margin-top: -50px;
-    outline: 0;
     width: 28px;
     height: 100px;
     padding: 0;
@@ -1626,7 +1613,6 @@ Main SLider
     width: 20px;
     height: 8px;
     margin: 0 5px;
-    outline: 0;
     padding: 0;
     line-height: 8px;
     border-radius: 0;
@@ -3552,6 +3538,8 @@ button.toggle {
     padding: 0;
     text-transform: none;
 }
-button.toggle.menu-toggle:focus {
-    outline: 1px dashed #333;
+
+
+.main-navigation ul li:focus-within > ul {
+    display: block;
 }

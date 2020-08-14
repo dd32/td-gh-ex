@@ -6,7 +6,7 @@
 	get_template_part('/welcome/welcome');
 
 	/** Plugins **/
-	$plugins = array(
+	$plugins_args = array(
 		// *** Companion Plugins
 		'companion_plugins' => array(
 
@@ -32,11 +32,7 @@
 					'filename' 	=> 'woocommerce.php',
 					'class' 	=> 'WooCommerce',
 				),
-				'newsletter-optin-box' => array(
-					'slug'      => 'newsletter-optin-box',
-					'filename' 	=> 'noptin.php',
-					'class' 	=> 'Noptin',
-				)
+				
 			),
 			'pro_plug' => array(
 
@@ -101,4 +97,4 @@
 	/**
 	 * Initiating Welcome Page
 	*/
-	$my_theme_wc_page = new Accesspress_Parallax_Welcome( $plugins, $strings );
+	$my_theme_wc_page = new Accesspress_Parallax_Welcome( $plugins_args, $strings );

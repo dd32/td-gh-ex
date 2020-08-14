@@ -17,11 +17,11 @@ $wp_customize->add_control(
 
 $accesspress_parallax_social_icons = accesspress_parallax_social_icon_lists();
 
-foreach ( $accesspress_parallax_social_icons as $id => $label ) {
+foreach ( $accesspress_parallax_social_icons as $key => $label ) {
 
-    $wp_customize->add_setting( 'accesspress_parallax[' . $id . ']', array( 'default' => '', 'type' => 'option', 'sanitize_callback' => 'esc_url' ) );
+    $wp_customize->add_setting( 'accesspress_parallax[' . $key . ']', array( 'default' => '', 'type' => 'option', 'sanitize_callback' => 'esc_url' ) );
     $wp_customize->add_control(
-            'accesspress_parallax[' . $id . ']', array(
+            'accesspress_parallax[' . $key . ']', array(
         'label' => $label,
         'type' => 'text',
         'section' => 'accesspress_parallax_social_settings',

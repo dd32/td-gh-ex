@@ -1,12 +1,19 @@
 === Accesspress Parallax ===
-Contributors: AccessPress Themes
+Contributors: Access Keys
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5
+Stable tag : 4.0
 Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
-Requires PHP: 5.3
-Requires at least: 4.5
-Tested up to: 5.3.2
-Stable tag: 3.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+AccessPress Parallax is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 
 Install Steps:
@@ -19,7 +26,7 @@ Install Steps:
 
 ------------------------------------------
 
-JS Files
+External Files
     HTML5-Shiv: MIT and GPL licenses
     https://code.google.com/p/html5shiv/
     
@@ -50,6 +57,11 @@ JS Files
     Smooth Scroll JS: MIT Licenses
     https://gist.github.com/galambalazs/6477177/
 
+    Slick Slider: MIT License
+    http://github.com/kenwheeler/slick
+
+    Animate.css : MIT license
+    http://daneden.me/animate
 
 -------------------------------------------
 Fonts
@@ -65,31 +77,19 @@ Fonts
     License: SIL Open Font License, 1.1
 
 -------------------------------------------
-Images
-    All the images used are from http://pixabay.com and are fully GPL compatible.
-    http://pixabay.com/en/sunset-afterglow-landscape-208771/
-    https://unsplash.com/photos/tAKXap853rY/
+== Screenshots ==
 
-    Slider Image
-    http://www.pexels.com/photo/154/
-    http://www.pexels.com/photo/2170/
+Stocksnap Images
+License: CC0 Universal (CC0)
+Source: https://stocksnap.io/license
 
 
-    Background Image
-    http://www.pexels.com/photo/1883/
-    http://www.pexels.com/photo/2255/
-    http://www.pexels.com/photo/3578/
-    http://www.pexels.com/photo/3545/
 
-    Portfolio Image
-    http://www.pexels.com/photo/2059/
-    http://www.pexels.com/photo/2818/
-    http://www.pexels.com/photo/232/
-    http://www.pexels.com/photo/2242/
-    http://www.pexels.com/photo/2170/
-    http://www.pexels.com/photo/2886/
-    http://www.pexels.com/photo/3510/
-    http://www.pexels.com/photo/3521/
+Lee Campbell
+License: CC0 Universal
+Source: https://stocksnap.io/photo/office-work-N0ZRKV9CI6
+
+    
 
 ---------------------------------------------
 == Changelog ==
@@ -268,7 +268,7 @@ Images
 
 = 1.25.3 =
 ** Indonesian Translation Added
-Contributer - Rio Bermano <riobermano92@gmail.com>
+Contributor - Rio Bermano <riobermano92@gmail.com>
 
 = 1.25.2 =
 ** Added the theme support for title tag and removed the hardcoded title tag

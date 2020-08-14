@@ -15,7 +15,7 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 			public $strings 			= array(); // Common Display Strings
 
 			
-			public function __construct( $plugins, $strings ) {
+			public function __construct( $plugins_arg, $strings ) {
 				/** Useful Variables **/
 				$theme = wp_get_theme();
 				$this->theme_name = $theme->Name;
@@ -24,9 +24,9 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 				$this->theme_description = $theme->description;
 
 				/** Plugins **/
-				$this->req_plugins = $plugins['required_plugins'];
-				$this->actions_req = $plugins['req_plugins'];
-				$this->companion_plugins = $plugins['companion_plugins'];
+				$this->req_plugins = $plugins_arg['required_plugins'];
+				$this->actions_req = $plugins_arg['req_plugins'];
+				$this->companion_plugins = $plugins_arg['companion_plugins'];
 
 				/** Tabs **/
 				$this->tab_sections = array(
@@ -121,7 +121,7 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 										<span class="dashicons dashicons-feedback"></span>
 										<?php printf(esc_html__( 'Starter site demos!', 'accesspress-parallax' )) ?>
 									</h3>
-									<p><?php printf( wp_kses_post( 'You\'ve  got 3 choices of great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-parallax' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
+									<p><?php printf( wp_kses_post( 'You\'ve  got 6 choices of great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-parallax' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
 								</div>
 								<div>
 									<div class="button-wrapper">

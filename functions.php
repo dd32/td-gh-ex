@@ -260,12 +260,3 @@ if ( !function_exists( 'accesspress_parallax_of_get_option' ) ) {
     }
 
 }
-
-
-
-/**
- * Implement the Elementor
- */
-if ( defined( 'ELEMENTOR_VERSION' ) ) {
-    require get_template_directory() . '/inc/elementor/elementor.php';
-}

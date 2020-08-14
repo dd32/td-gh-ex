@@ -8,27 +8,27 @@
 
 		if( $plugin['host_type'] == 'bundled' ) {
 
-			$status = $this->get_plugin_active($plugin);
+			$status_arg = $this->get_plugin_active($plugin);
 
-			switch($status) {
+			switch($status_arg) {
 				case 'install' :
 					$btn_class = 'install-offline button';
 					$label = $this->strings['install_n_activate'];
-					$link = $plugin['location'];
+					$link_arg = $plugin['location'];
 					$info = $plugin['info'];
 					break;
 
 				case 'inactive' :
 					$btn_class = 'deactivate button';
 					$label = $this->strings['deactivate'];
-					$link = $plugin['location'];
+					$link_arg = $plugin['location'];
 					$info = $plugin['info'];
 					break;
 
 				case 'active' :
 					$btn_class = 'activate button button-primary';
 					$label = $this->strings['activate'];
-					$link = $plugin['location'];
+					$link_arg = $plugin['location'];
 					$info = $plugin['info'];
 					break;
 			}
@@ -40,34 +40,34 @@
 					<p><?php echo esc_html( $info ); ?></p>
 
 					<span class="plugin-action-btn plugin-card-<?php echo esc_attr($plugin['slug']); ?>" action_button>
-						<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file='<?php echo esc_attr($plugin['filename']); ?>' data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_attr($link); ?>"><?php echo esc_html($label); ?></a>
+						<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file='<?php echo esc_attr($plugin['filename']); ?>' data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_attr($link_arg); ?>"><?php echo esc_html($label); ?></a>
 					</span>
 				</div>
 			<?php endif; ?>
 			<?php
 		} elseif( $plugin['host_type'] == 'remote' ) {
 			
-			$status = $this->get_plugin_active($plugin);
+			$status_arg = $this->get_plugin_active($plugin);
 
-			switch($status) {
+			switch($status_arg) {
 				case 'install' :
 					$btn_class = 'install-offline button';
 					$label = $this->strings['install_n_activate'];
-					$link = $plugin['location'];
+					$link_arg = $plugin['location'];
 					$info = $plugin['info'];
 					break;
 
 				case 'inactive' :
 					$btn_class = 'deactivate button';
 					$label = $this->strings['deactivate'];
-					$link = '#';
+					$link_arg = '#';
 					$info = $plugin['info'];
 					break;
 
 				case 'active' :
 					$btn_class = 'activate button button-primary';
 					$label = $this->strings['activate'];
-					$link = '#';
+					$link_arg = '#';
 					$info = $plugin['info'];
 					break;
 			}
@@ -79,7 +79,7 @@
 					<p><?php echo esc_html($info); ?></p>
 
 					<span class="plugin-action-btn plugin-card-<?php echo esc_attr($plugin['slug']); ?>" action_button>
-						<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file='<?php echo esc_attr($plugin['filename']); ?>' data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_attr($link); ?>"><?php echo esc_html($label); ?></a>
+						<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file='<?php echo esc_attr($plugin['filename']); ?>' data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_attr($link_arg); ?>"><?php echo esc_html($label); ?></a>
 					</span>
 				</div>
 			<?php endif; ?>
@@ -90,10 +90,10 @@
 			if(!isset($info->errors)) :
 
 				$icon_url = $this->check_for_icon($info->icons);
-				$status = $this->get_plugin_active($plugin);
-				$btn_url = $this->generate_plugin_url($status, $plugin);
+				$status_arg = $this->get_plugin_active($plugin);
+				$btn_url = $this->generate_plugin_url($status_arg, $plugin);
 
-				switch($status) {
+				switch($status_arg) {
 					case 'install' :
 						$btn_class = 'install button';
 						$label = $this->strings['install_n_activate'];
@@ -109,7 +109,7 @@
 						$label = $this->strings['activate'];
 						break;
 				}
-				$path = WP_PLUGIN_DIR.'/'.esc_attr($plugin['slug']).'/'.esc_attr($plugin['filename']);
+				$path_link = WP_PLUGIN_DIR.'/'.esc_attr($plugin['slug']).'/'.esc_attr($plugin['filename']);
 				?>
 
 				<?php if( isset( $plugin['class'] ) && !class_exists( $plugin['class'] ) ) : ?>

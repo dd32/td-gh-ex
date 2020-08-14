@@ -121,7 +121,7 @@ add_filter( 'body_class', 'accesspress_is_parallax' );
 //Dynamic styles on header
 function accesspress_header_styles_scripts() {
     $sections = array();
-    $sections = accesspress_parallax_get_plx_sections(); // accesspress_parallax_of_get_option('parallax_section');
+    $sections = accesspress_parallax_get_plx_sections();
     $custom_css = accesspress_parallax_of_get_option( 'custom_css' );
     $slider_overlay = accesspress_parallax_of_get_option( 'slider_overlay' );
     $image_url = get_template_directory_uri() . "/images/";
@@ -232,14 +232,7 @@ function accesspress_social_cb() {
                 <?php } ?>
     </div>
 
-    <script>
-        jQuery(document).ready(function ($) {
-            $(window).resize(function () {
-                var socialHeight = $('.social-icons').outerHeight();
-                $('.social-icons').css('margin-top', -(socialHeight / 2));
-            }).resize();
-        });
-    </script>
+    
     <?php
 }
 
