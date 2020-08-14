@@ -144,6 +144,21 @@ if( ! function_exists('arrival_store_customizer_settings')):
 	      ) ) );
 
 
+		$wp_customize->add_setting( $prefix.'_enable_product_categories', array(
+	        'default'             => $default[$prefix.'_enable_product_categories'],
+	        'sanitize_callback'   => 'arrival_sanitize_switch',
+        
+      	) );
+
+		$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_enable_product_categories', array(
+		        'label'         => esc_html__( 'Enable Product Categories', 'arrival-store' ),
+		        'section'       => $prefix.'_main_header_options_panel',
+		        'choices'       => array(
+		          'yes'        => esc_html__( 'Yes', 'arrival-store' ),
+		          'no'        => esc_html__( 'No', 'arrival-store' ),
+		        )
+		      ) ) );
+
 		$wp_customize->add_setting( $prefix.'_header_category_text', array(
 	        'default'             => $default[$prefix.'_header_category_text'],
 	        'sanitize_callback'   => 'sanitize_text_field',
@@ -159,7 +174,6 @@ if( ! function_exists('arrival_store_customizer_settings')):
 
 		//product categories
 		$wp_customize->add_setting( $prefix.'_header_categories', array(
-			'default'           => $prefix.'_header_categories',
 			'sanitize_callback' => 'arrival_store_sanitize_checkbox'
 		));
 
@@ -175,6 +189,78 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		);
 
 		}
+
+		/**
+		* Additional header settings
+		* @since 1.0.7
+		*/
+		$wp_customize->add_setting( $prefix.'_additional_settings_separator', array(
+        	'sanitize_callback'   => 'sanitize_text_field',        
+     	 ) );
+
+		$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_additional_settings_separator', array(
+	        'label'         => esc_html__( 'Additional Options', 'arrival-store' ),
+	        'section'       => $prefix.'_main_header_options_panel',
+	      ) ) );
+
+		//enable or disable top header
+		$wp_customize->add_setting( 'arrival_top_header_enable', array(
+	        'default'             => $default['arrival_top_header_enable'],
+	        'sanitize_callback'   => 'arrival_sanitize_enable_disable',
+        
+      	) );
+
+		$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize,'arrival_top_header_enable', array(
+		        'label'         => esc_html__( 'Enable Top Header', 'arrival-store' ),
+		        'section'       => $prefix.'_main_header_options_panel',
+		        'choices'       => array(
+		          'on'        => esc_html__( 'Yes', 'arrival-store' ),
+		          'off'        => esc_html__( 'No', 'arrival-store' ),
+		        )
+		      ) ) );
+
+		//my cart translation
+		$wp_customize->add_setting( $prefix.'_header_cart_text', array(
+	        'default'             => $default[$prefix.'_header_cart_text'],
+	        'sanitize_callback'   => 'sanitize_text_field',
+        
+      	) );
+
+		$wp_customize->add_control( $prefix.'_header_cart_text', array(
+	        'label'          => esc_html__( 'Cart Translation Text', 'arrival-store' ),
+	        'section'        => $prefix.'_main_header_options_panel',
+	        'type'			 => 'text'
+	        
+	      ) );
+
+		//compare translation
+		$wp_customize->add_setting( $prefix.'_header_compare_text', array(
+	        'default'             => $default[$prefix.'_header_compare_text'],
+	        'sanitize_callback'   => 'sanitize_text_field',
+        
+      	) );
+
+		$wp_customize->add_control( $prefix.'_header_compare_text', array(
+	        'label'          => esc_html__( 'Compare Translation Text', 'arrival-store' ),
+	        'section'        => $prefix.'_main_header_options_panel',
+	        'type'			 => 'text'
+	        
+	      ) );
+
+		//wishlist translation
+		$wp_customize->add_setting( $prefix.'_header_wishlist_text', array(
+	        'default'             => $default[$prefix.'_header_wishlist_text'],
+	        'sanitize_callback'   => 'sanitize_text_field',
+        
+      	) );
+
+		$wp_customize->add_control( $prefix.'_header_wishlist_text', array(
+	        'label'          => esc_html__( 'Wishlist Translation Text', 'arrival-store' ),
+	        'section'        => $prefix.'_main_header_options_panel',
+	        'type'			 => 'text'
+	        
+	      ) );
+
 
 
 		//header styles

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arrival Store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-04 15:47+0000\n"
+"POT-Creation-Date: 2020-08-14 02:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.0; wp-5.4.2"
+"X-Loco-Version: 2.4.2; wp-5.5"
+
+#: customizer.php:202
+msgid "Additional Options"
+msgstr ""
 
 #: functions.php:145
 msgid "All Categories"
@@ -35,16 +39,32 @@ msgid ""
 "the market."
 msgstr ""
 
+#: customizer.php:230
+msgid "Cart Translation Text"
+msgstr ""
+
 #: customizer.php:98
 msgid "Categories Title"
 msgstr ""
 
-#: functions.php:478
+#: functions.php:493
 msgid "Close Menu"
 msgstr ""
 
-#: functions.php:355
+#: functions.php:150
 msgid "Compare"
+msgstr ""
+
+#: customizer.php:244
+msgid "Compare Translation Text"
+msgstr ""
+
+#: customizer.php:154
+msgid "Enable Product Categories"
+msgstr ""
+
+#: customizer.php:214
+msgid "Enable Top Header"
 msgstr ""
 
 #: customizer.php:61
@@ -55,7 +75,7 @@ msgstr ""
 msgid "Header Options"
 msgstr ""
 
-#: customizer.php:186
+#: customizer.php:272
 msgid "Header Styles"
 msgstr ""
 
@@ -75,15 +95,15 @@ msgstr ""
 msgid "Info Text"
 msgstr ""
 
-#: customizer.php:249
+#: customizer.php:335
 msgid "Main Header Background"
 msgstr ""
 
-#: customizer.php:261
+#: customizer.php:347
 msgid "Main Header Text"
 msgstr ""
 
-#: customizer.php:224
+#: customizer.php:310
 msgid "Middle Header Background"
 msgstr ""
 
@@ -91,31 +111,35 @@ msgstr ""
 msgid "Middle Header options"
 msgstr ""
 
-#: customizer.php:236
+#: customizer.php:322
 msgid "Middle Header Text"
 msgstr ""
 
-#: functions.php:472
+#: functions.php:487
 msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:149
 msgid "My Cart"
 msgstr ""
 
-#: functions.php:349
+#: functions.php:357
 msgid "My Compare"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:386
 msgid "My Wishlist"
+msgstr ""
+
+#: customizer.php:158 customizer.php:218
+msgid "No"
 msgstr ""
 
 #: customizer.php:60
 msgid "Phone Number"
 msgstr ""
 
-#: customizer.php:74 customizer.php:154
+#: customizer.php:74 customizer.php:169
 msgid "Phone Title"
 msgstr ""
 
@@ -124,11 +148,11 @@ msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:524
+#: functions.php:539
 msgid "Primary"
 msgstr ""
 
-#: customizer.php:142 customizer.php:170
+#: customizer.php:142 customizer.php:184
 msgid "Product Categories"
 msgstr ""
 
@@ -157,11 +181,11 @@ msgstr ""
 msgid "Search Submit Button Label"
 msgstr ""
 
-#: customizer.php:171
+#: customizer.php:185
 msgid "Select categories to display on header"
 msgstr ""
 
-#: functions.php:526
+#: functions.php:541
 msgid "Shop Additional Menus"
 msgstr ""
 
@@ -173,22 +197,30 @@ msgstr ""
 msgid "Text for top header left"
 msgstr ""
 
-#: functions.php:525
+#: functions.php:540
 msgid "Top"
 msgstr ""
 
-#: customizer.php:198
+#: customizer.php:284
 msgid "Top Header Background"
 msgstr ""
 
-#: customizer.php:210
+#: customizer.php:296
 msgid "Top Header Text"
 msgstr ""
 
-#: functions.php:381
+#: functions.php:151
 msgid "Wishlist"
+msgstr ""
+
+#: customizer.php:258
+msgid "Wishlist Translation Text"
 msgstr ""
 
 #. Author of the theme
 msgid "WPoperation"
+msgstr ""
+
+#: customizer.php:157 customizer.php:217
+msgid "Yes"
 msgstr ""

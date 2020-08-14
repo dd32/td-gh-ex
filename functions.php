@@ -145,7 +145,10 @@ endif;
     $defaults['arrival_store_header_search_category_text']  = esc_html__('All Categories','arrival-store');
     $defaults['arrival_store_header_search_placeholder']    = esc_html__('Search entire store here','arrival-store');
     $defaults['arrival_store_header_search_submit_label']   = esc_html__('Search','arrival-store');
-
+    $defaults['arrival_store_enable_product_categories']    = 'yes';
+    $defaults['arrival_store_header_cart_text']             = esc_html__('My Cart','arrival-store');
+    $defaults['arrival_store_header_compare_text']          = esc_html__('Compare','arrival-store');
+    $defaults['arrival_store_header_wishlist_text']         = esc_html__('Wishlist','arrival-store');
 
     
 
@@ -284,6 +287,7 @@ if(!function_exists ('arrival_store_product_search')){
                          <input type="hidden" name="post_type" value="product" />
                          <input type="hidden" name="taxonomy" value="product_cat" />
                      </div>
+                     <div class="search-content"></div>
                 </form>';           
         return $form;
          
@@ -308,9 +312,12 @@ add_action('arrival_cart_icon_disp','arrival_store_cart_icon');
 add_action('arrival_header_cart_text','arrival_store_cart_text');
 if( ! function_exists('arrival_store_cart_text') ){
     function arrival_store_cart_text(){
+
+        $default                    = arrival_store_get_default_theme_options();
+        $_header_cart_text          = get_theme_mod('arrival_store_header_cart_text',$default['arrival_store_header_cart_text']);
     ?>
         <div class="text">
-            <?php esc_html_e('My Cart','arrival-store'); ?>
+            <?php echo esc_html($_header_cart_text); ?>
         </div>
     <?php
     }
@@ -338,7 +345,8 @@ if( ! function_exists('arrival_store_header_compare')){
         }
 
         global $yith_woocompare;
-
+        $default                    = arrival_store_get_default_theme_options();
+        $_header_compare_text       = get_theme_mod('arrival_store_header_compare_text',$default['arrival_store_header_compare_text']);
 
         $fs_yith_count = $yith_woocompare->obj->products_list;
         $fs_yith_count = count($fs_yith_count);
@@ -352,7 +360,7 @@ if( ! function_exists('arrival_store_header_compare')){
                         <?php echo absint($fs_yith_count); ?>
                     </span>
                 </a>
-                <span class="text"><?php esc_html_e('Compare','arrival-store'); ?></span>
+                <span class="text"><?php echo esc_html($_header_compare_text); ?></span>
             </span>
         </div>
 <?php
@@ -369,6 +377,9 @@ if( ! function_exists('arrival_store_header_wishlist') ){
             return;
         }
 
+        $default                    = arrival_store_get_default_theme_options();
+        $_header_wishlist_text      = get_theme_mod('arrival_store_header_wishlist_text',$default['arrival_store_header_wishlist_text']);
+
         $wishlist_count = YITH_WCWL()->count_products();
         ?>
         <div class="fs-wishlist-wrap fs-icon-header">
@@ -378,7 +389,7 @@ if( ! function_exists('arrival_store_header_wishlist') ){
                     <?php echo absint($wishlist_count); ?>
                 </span>
             </a>
-            <div class="text"><?php esc_html_e('Wishlist','arrival-store'); ?></div>
+            <div class="text"><?php echo esc_html($_header_wishlist_text); ?></div>
         </div>
 <?php 
     }
@@ -413,12 +424,16 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
          if ( ! class_exists( 'WooCommerce' ) )
             return;
 
-        $product_categories     = get_terms( 'product_cat');
-        $count                  = count($product_categories);  
-        $default                = arrival_store_get_default_theme_options();
-        $_header_category_text  = get_theme_mod('arrival_store_header_category_text',$default['arrival_store_header_category_text']);
-        $_header_categories     = get_theme_mod('arrival_store_header_categories');
+        $product_categories         = get_terms( 'product_cat');
+        $count                      = count($product_categories);  
+        $default                    = arrival_store_get_default_theme_options();
+        $_header_category_text      = get_theme_mod('arrival_store_header_category_text',$default['arrival_store_header_category_text']);
+        $_header_categories         = get_theme_mod('arrival_store_header_categories');
+        $_enable_product_categories = get_theme_mod('arrival_store_enable_product_categories',$default['arrival_store_enable_product_categories']);
         
+        if( $_enable_product_categories == 'no' ){
+            return;
+        }
         ?>
         <div class="browse-category-wrap">
             <div class="browse-category" tabindex="0">
@@ -431,7 +446,7 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
             <div class="categorylist">
                <ul>
                 <?php 
-                
+
                 if( !empty($_header_categories)):
                 foreach( $_header_categories as $cat_id   ) {
 
