@@ -13,11 +13,11 @@
 get_header(); 
 global $post;
 if(is_front_page()){
-	$post_id = get_option('page_on_front');
+	$postID = get_option('page_on_front');
 }else{
-	$post_id = $post->ID;
+	$postID = $post->ID;
 }
-$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
+$post_class = get_post_meta( $postID, 'accesspresslite_sidebar_layout', true );
 ?>
 
 <div class="ak-container">
@@ -55,4 +55,4 @@ get_sidebar('left');
 
 get_sidebar('right'); ?>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

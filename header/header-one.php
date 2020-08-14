@@ -30,7 +30,7 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 				do_action( 'accesspresslite_social_links' ); 
 				}
 
-				$show_search  = isset( $accesspresslite_settings[ 'show_search' ] ) ? $accesspresslite_settings[ 'show_search' ] : '';
+				$show_search  = isset( $accesspresslite_settings[ 'show_search' ] ) ? $accesspresslite_settings[ 'show_search' ] : true;
 				if($show_search == 1){ ?>
 				<div class="ak-search">
 					<?php get_search_form(); ?>
@@ -43,7 +43,7 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 		
 		<nav id="site-navigation" class="main-navigation <?php do_action( 'accesspresslite_menu_alignment' ); ?>">
 			<div class="ak-container">
-				<div class="menu-toggle" tabindex="0"><?php esc_html_e( 'Menu', 'accesspress-lite' ); ?></div>
+				<button class="menu-toggle btn-transparent-toggle"><?php esc_html_e( 'Menu', 'accesspress-lite' ); ?></button>
 
 				<?php wp_nav_menu( array( 
 				'theme_location' => 'primary' ) ); ?>

@@ -48,4 +48,4 @@ $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true
 	get_sidebar('right'); ?>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();

@@ -14,19 +14,16 @@ $show_events  	= isset( $accesspresslite_settings[ 'rightsidebar_show_latest_eve
 $testimonial_category  	= isset( $accesspresslite_settings[ 'testimonial_cat' ] ) ? $accesspresslite_settings[ 'testimonial_cat' ] : '';
 $show_testimonials  	= isset( $accesspresslite_settings[ 'rightsidebar_show_testimonials' ] ) ? $accesspresslite_settings[ 'rightsidebar_show_testimonials' ] : '';
 
-//$event_category = $accesspresslite_settings['event_cat'];
-//$show_events = $accesspresslite_settings['rightsidebar_show_latest_events'];
-//$testimonial_category = $accesspresslite_settings['testimonial_cat'];
-//$show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
+
 $post_class = "";
 
 if(!empty($post)){
 	if(is_front_page()){
-		$post_id = get_option('page_on_front');
+		$postID = get_option('page_on_front');
 	}else{
-		$post_id = $post->ID;
+		$postID = $post->ID;
 	}
-	$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
+	$post_class = get_post_meta( $postID, 'accesspresslite_sidebar_layout', true );
 }
 
 if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class) || is_archive()){
@@ -53,9 +50,8 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-thumbnail', false ); 
 						?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-						<?php } else { ?>
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
+							
 						
 						<div class="event-date">
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
@@ -110,7 +106,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
                             <?php }?>
 		        		</div>
-                        <?php $home_template = $accesspresslite_settings['accesspresslite_home_template']; 
+                        <?php $home_template = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one'; 
                             if($home_template == 'template_two') { ?>
         					<div class="testimoinal-client-name"><?php the_title(); ?></div>
                             <?php } ?>
@@ -139,4 +135,4 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 			<?php dynamic_sidebar( 'right-sidebar' ); ?>
 		<?php endif; ?>
 	</div><!-- #secondary -->
-<?php } ?>
+<?php }

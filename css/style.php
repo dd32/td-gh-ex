@@ -5,7 +5,7 @@
 		$settings = wp_parse_args($old_settings, $accesspresslite_options);
         $tpl_color = $settings['template_color'];
         
-        $tpl_layout = $settings['accesspresslite_home_template'];
+        $tpl_layout = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
         $custom_css = "";
         if( $tpl_color ) {
             

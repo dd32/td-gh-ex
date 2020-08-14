@@ -377,7 +377,6 @@ input[type="submit"]:hover{
 /*---------check-now-section---------*/
 
 .body_template_two #call-to-action {
-	background: url('../images/check-now-bg.png');
 	text-align: center;
 	padding: 80px 0;
 }

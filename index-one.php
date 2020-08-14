@@ -1,8 +1,9 @@
 <?php 
+
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
-$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : '';
+$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : 'Default';
 $accesspresslite_welcome_post_id  = isset( $accesspresslite_settings[ 'welcome_post' ] ) ? $accesspresslite_settings[ 'welcome_post' ] : '';
 $accesspresslite_event_category  = isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
 $featured_section_title  = isset( $accesspresslite_settings[ 'featured_section_title' ] ) ? $accesspresslite_settings[ 'featured_section_title' ] : '';
@@ -15,15 +16,6 @@ $accesspresslite_featured_bar  = isset( $accesspresslite_settings[ 'featured_bar
 
 
 
-//$accesspresslite_layout = $accesspresslite_settings['accesspresslite_home_page_layout'];
-//$accesspresslite_welcome_post_id = $accesspresslite_settings['welcome_post'];
-//$accesspresslite_event_category = $accesspresslite_settings['event_cat'];
-//$featured_post1 = $accesspresslite_settings['featured_post1'];
-//$featured_post2 = $accesspresslite_settings['featured_post2'];
-//$featured_post3 = $accesspresslite_settings['featured_post3'];
-//$show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
-//$testimonial_category = $accesspresslite_settings['testimonial_cat'];
-//$accesspresslite_featured_bar = $accesspresslite_settings['featured_bar'];
 $accesspresslite_welcome_post_char = (isset($accesspresslite_settings['welcome_post_char']) ? $accesspresslite_settings['welcome_post_char'] : 650 );
 $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_event_number']) ? $accesspresslite_settings['show_event_number'] : 3 ) ;
 $big_icons  = isset( $accesspresslite_settings[ 'big_icons' ] ) ? $accesspresslite_settings[ 'big_icons' ] : '';
@@ -39,8 +31,10 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 <section id="top-section" class="ak-container">
 <div id="welcome-text" class="clearfix <?php echo esc_attr($welcome_class); ?>">
 	<?php
+
 		
 			if(!empty($accesspresslite_welcome_post_id)){
+				
 			$posttype = get_post_type($accesspresslite_welcome_post_id);
 			$postparam = ($posttype == 'page') ? 'page_id': 'p';
 			$args = array(
@@ -72,7 +66,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 					if($welcome_post_content == 0 || empty($welcome_post_content)){ ?>
 						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char )); ?></p>
 						<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
-							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['welcome_post_readmore']); ?></a>
+							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_html($accesspresslite_settings['welcome_post_readmore']); ?></a>
 						<?php } 
 					}else{ 
 						the_content();
@@ -113,9 +107,8 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-thumbnail', false ); 
 						?>
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-						<?php } else { ?>
-						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
-						<?php } ?>
+						<?php }  ?>
+						
 						
 						<?php 
 						$show_eventdate  = isset( $accesspresslite_settings[ 'show_eventdate' ] ) ? $accesspresslite_settings[ 'show_eventdate' ] : '';
@@ -177,10 +170,8 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 							?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-							<?php }else { ?>
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
-							<?php } 
-							?>
+							<?php } ?>
+							
 						</a>
 					</figure>
 					<?php } ?>	
@@ -200,7 +191,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<div class="featured-content">
 						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 260 )); ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_html($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
 					</div>
 				<?php endwhile;
@@ -235,10 +226,8 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 							?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-							<?php }else { ?>
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
-							<?php } 
-							?>
+							<?php } ?>
+							
 						</a>
 					</figure>
 					<?php } ?>	
@@ -258,7 +247,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<div class="featured-content">
 						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 260 )); ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_html($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
 					</div>
 				<?php endwhile;
@@ -291,10 +280,8 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 							?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-							<?php }else { ?>
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
-							<?php } 
-							?>
+							<?php } ?>
+							
 						</a>
 					</figure>
 					<?php } ?>	
@@ -314,7 +301,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<div class="featured-content">
 						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 260 )); ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_html($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
 					</div>
 				<?php endwhile;
@@ -439,4 +426,4 @@ wp_reset_query(); ?>
 		</div>
 	</div>
 </section>
-<?php endif; ?>
+<?php endif;

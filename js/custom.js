@@ -15,7 +15,8 @@ jQuery(function($){
   });
   jQuery('.commentmetadata').after('<div class="clear"></div>');
 
-  jQuery('body').on('click keypress','.menu-toggle',function(){
+  jQuery('body').on('click keypress','.menu-toggle',function(e){
+    e.preventDefault();
     jQuery('#site-navigation .menu').slideToggle('slow');
   });
     
@@ -33,4 +34,25 @@ jQuery(function($){
     });
     $('#secondary-right, #primary').theiaStickySidebar({additionalMarginTop: 35});
     $('#secondary-left, #primary').theiaStickySidebar({additionalMarginTop: 35});
+
+
+
+/**
+* Slider scripts
+*
+*/
+
+jQuery('.bx-slider').bxSlider({
+  adaptiveHeight: true,
+  pager: accesspresslite_loc_script.pager,
+  controls: accesspresslite_loc_script.controls,
+  mode: accesspresslite_loc_script.mode,
+  auto : accesspresslite_loc_script.auto,
+  pause: accesspresslite_loc_script.pause,
+  speed: accesspresslite_loc_script.speed
+  
+});
+
+
+
  });

@@ -44,4 +44,4 @@ get_header(); ?>
 
 <?php get_sidebar('right'); ?>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

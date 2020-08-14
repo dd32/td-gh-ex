@@ -150,4 +150,4 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-<?php endif; ?>
+<?php endif;

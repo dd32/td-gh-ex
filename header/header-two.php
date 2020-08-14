@@ -28,7 +28,7 @@ $menu_align            = isset( $accesspresslite_settings[ 'menu_alignment' ] ) 
                 <div class="social_search_container">
                     <div class="search_right">
                         <?php
-                        $show_search = isset( $accesspresslite_settings[ 'show_search' ] ) ? $accesspresslite_settings[ 'show_search' ] : '';
+                        $show_search = isset( $accesspresslite_settings[ 'show_search' ] ) ? $accesspresslite_settings[ 'show_search' ] : true;
 
                         if($show_search == 1 || $show_search == ''){ ?>
             				<div class="ak-search">
@@ -66,7 +66,7 @@ $menu_align            = isset( $accesspresslite_settings[ 'menu_alignment' ] ) 
     			</a>
     		</div><!-- .site-branding -->
             <?php } ?>
-            <div class="menu-toggle" tabindex="0"><?php esc_html_e( 'Menu', 'accesspress-lite' ); ?></div>
+            <button class="menu-toggle btn-transparent-toggle"><?php esc_html_e( 'Menu', 'accesspress-lite' ); ?></button>
                 <div class="menu-menu-1-container_wraper">
     				<?php wp_nav_menu( array( 
     				'theme_location' => 'primary' ) ); ?>

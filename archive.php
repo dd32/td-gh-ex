@@ -112,4 +112,4 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 
 <?php get_sidebar('right'); ?>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

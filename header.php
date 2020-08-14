@@ -26,11 +26,12 @@ if ( function_exists( 'wp_body_open' ) ) {
 <?php
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
+$home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
 //$home_template = $accesspresslite_settings['accesspresslite_home_template'];
 ?>
+<a class="skip-link screen-reader-text" href="#home-content"><?php esc_html_e( 'Skip to content', 'accesspress-lite' ); ?></a>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-lite' ); ?></a>
+	
 	<header id="masthead" class="site-header">
     <?php
         if($home_template == 'template_two' || $home_template == ''){

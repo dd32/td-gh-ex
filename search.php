@@ -36,4 +36,4 @@ get_header(); ?>
 
 <?php get_sidebar('right'); ?>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

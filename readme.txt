@@ -1,13 +1,21 @@
-﻿License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-AccessPress Lite WordPress Theme, Copyright 2014 http://wordpresssuperexpress.com
-AccessPress Lite is distributed under the terms of the GNU GPL v3
-Tested up to: 5.4.1
-Stable tag: 2.88
-Contributors: Access Keys
+﻿=== AccessPress Lite ===
 
-Install Steps:
---------------
+Contributors: Access Keys
+Tested up to: 5.5
+Requires PHP: 5.6
+Requires at least: 4.7
+Stable tag: 2.89
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, rtl-language-support, blog, education, portfolio
+
+Accesspress Lite WordPress Theme, Copyright 2014 http://accesspressthemes.com/
+AccessPress Lite is distributed under the terms of the GNU GPL v3
+Accesspress Lite is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+
+== Installation ==
+
 
 1. Activate the theme
 2. Go to the Theme Option page
@@ -15,6 +23,9 @@ Install Steps:
 
 
 ------------------------------------------
+
+AccessPress Lite bundles the following third-party resources:
+
 
 JS Files
     HTML5-Shiv: MIT and GPL licenses
@@ -33,7 +44,7 @@ JS Files
     https://github.com/WeCodePixels/theia-sticky-sidebar
 
 
--------------------------------------------
+
 Fonts
     Font Awesome: MIT and GPL licenses
     http://fontawesome.io/license/
@@ -44,27 +55,38 @@ Fonts
     Lato
     http://www.fontsquirrel.com/license/lato
 
----------------------------------------------
-Images
-    All the images used are from http://pixabay.com, http://unsplash.com/ or self taken are fully GPL compatible.
-    http://pixabay.com/en/business-office-chef-170645/
-    http://pixabay.com/en/beautiful-face-female-girl-happy-19075/
-    http://pixabay.com/en/board-blank-border-couple-empty-84420/
-    http://pixabay.com/en/teacher-lecturer-writer-counselor-99741/
-    
-    https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
-    
-    http://pixabay.com/en/money-bills-calculator-save-256312/
-    http://pixabay.com/en/architecture-banking-blue-building-19171/
-    http://pixabay.com/en/keyboard-apple-input-keys-hardware-338510/
-    http://pixabay.com/en/calculator-office-pen-178124/
 
-    http://unsplash.com/post/71169983328/download-by-craig-garner
-    http://unsplash.com/post/86352115939/download-by-sylwia-bartyzel
-    http://unsplash.com/post/82304768990/download-by-kristian-karlsson
-    http://pixabay.com/en/advert-advertising-banner-blank-84408/
 
-    http://pixabay.com/en/key-metal-home-security-wedding-96233/
+== Screenshots ==
+
+Stocksnap Images
+License: CC0 Universal (CC0)
+Source: https://stocksnap.io/license
+
+
+Burst
+License: CC0 Universal
+Source:  https://stocksnap.io/photo/laptop-business-DRHFQYCYRY
+
+One Idea LLC
+License: CC0 Universal
+Source:  https://stocksnap.io/photo/building-perspective-4Y13GGXBSO
+
+Matt Moloney
+License: CC0 Universal
+Source:  https://stocksnap.io/photo/paperwork-desk-A5DG6YREVH
+
+Michal Kulesza
+License: CC0 Universal
+Source:  https://stocksnap.io/photo/filefolders-business-6RHKEELJ8F
+
+Wilfred Iven
+License: CC0 Universal
+Source:  https://stocksnap.io/photo/macbook-laptop-HHZ5NPNR1T
+
+
+All other images are designed by AccessPress Themes
+
 
 == Changelog ==
 

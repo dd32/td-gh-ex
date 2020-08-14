@@ -1,7 +1,7 @@
 <?php 
 $accesspresslite_options  = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : '';
+$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : 'Default';
 $accesspresslite_welcome_post_id  = isset( $accesspresslite_settings[ 'welcome_post' ] ) ? $accesspresslite_settings[ 'welcome_post' ] : '';
 $accesspresslite_event_category  = isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
 $featured_section_title  = isset( $accesspresslite_settings[ 'featured_section_title' ] ) ? $accesspresslite_settings[ 'featured_section_title' ] : '';
@@ -17,8 +17,7 @@ $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_even
 $big_icons  = isset( $accesspresslite_settings[ 'big_icons' ] ) ? $accesspresslite_settings[ 'big_icons' ] : '';
 $disable_event  = isset( $accesspresslite_settings[ 'disable_event' ] ) ? $accesspresslite_settings[ 'disable_event' ] : '';
 
-// $big_icons = $accesspresslite_settings['big_icons'];
-// $disable_event = $accesspresslite_settings['disable_event'];
+
 
 if($disable_event == 1){
 	$welcome_class = "full-width";
@@ -57,7 +56,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	    					<?php if($accesspresslite_settings['welcome_post_content'] == 0 || empty($accesspresslite_settings['welcome_post_content'])){ ?>
 	    						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char )); ?></p>
 	    						<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
-	    							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['welcome_post_readmore']); ?></a>
+	    							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_html($accesspresslite_settings['welcome_post_readmore']); ?></a>
 	    						<?php } 
 	    					}else{ 
 	    						the_content();
@@ -78,7 +77,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 
 	<section id="mid-section" class="ak-container">
 	<?php if($featured_section_title){ ?>
-	<h2><?php echo esc_attr($featured_section_title); ?></h2>
+	<h2><?php echo esc_html($featured_section_title); ?></h2>
 	<?php }
 	if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
 	    ?><div class="feature_wrap clearfix"><?php 
@@ -114,10 +113,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 								?>
 								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-								<?php }else { ?>
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
-								<?php } 
-								?>
+								<?php } ?>
 							
 						</figure>
 						<?php } ?>	
@@ -176,10 +172,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 								?>
 								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-								<?php }else { ?>
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
-								<?php } 
-								?>
+								<?php } ?>
 							
 						</figure>
 						<?php } ?>	
@@ -237,10 +230,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 								?>
 								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-								<?php }else { ?>
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
-								<?php } 
-								?>
+								<?php } ?>
 							
 						</figure>
 						<?php } ?>	
@@ -309,9 +299,8 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
     						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'template_two_event_home', false ); 
     						?>
     						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-    						<?php } else { ?>
-    						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
-    						<?php } ?>
+    						<?php }  ?>
+    						
     						</a>
     					</figure>
     	        	</div>

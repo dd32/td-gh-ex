@@ -25,7 +25,7 @@ if(!class_exists('Accesspress_Lite_Welcome')) :
 
 				/** Plugins **/
 				$this->free_plugins = $plugins['recommended_plugins']['free_plugins'];
-				$this->pro_plugins = $plugins['recommended_plugins']['pro_plugins'];
+				//$this->pro_plugins = $plugins['recommended_plugins']['pro_plugins'];
 				$this->req_plugins = $plugins['required_plugins'];
 				$this->actions_req = $plugins['req_plugins'];
 				$this->companion_plugins = $plugins['companion_plugins'];

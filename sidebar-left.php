@@ -18,11 +18,11 @@ $post_class = "";
 
 if(!empty($post)){
 	if(is_front_page()){
-		$post_id = get_option('page_on_front');
+		$postID = get_option('page_on_front');
 	}else{
-		$post_id = $post->ID;
+		$postID = $post->ID;
 	}
-	$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
+	$post_class = get_post_meta( $postID, 'accesspresslite_sidebar_layout', true );
 }
 
 if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
@@ -49,9 +49,8 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-thumbnail', false ); 
 						?>
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
-						<?php } else { ?>
-						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
+						
 						
 						<div class="event-date">
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
@@ -77,34 +76,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 	        <?php wp_reset_postdata(); ?>
 	        </aside>
 	        <?php
-	        } else { ?>
-	        <aside id="latest-events" class="clearfix">
-	        <h3 class="widget-title">Latest Events/News</h3>
-		        <?php for ( $event_count=1 ; $event_count < 4 ; $event_count++ ) { ?>
-		        <div class="event-list clearfix">
-						<figure class="event-thumbnail">
-							<a href="#"><img src="<?php echo esc_url(get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'); ?>" alt="<?php echo 'event'.esc_attr($event_count); ?>">
-							<div class="event-date">
-								<span class="event-date-day"><?php echo esc_html($event_count); ?></span>
-								<span class="event-date-month"><?php echo "Mar"; ?></span>
-							</div>
-							</a>
-						</figure>	
-
-						<div class="event-detail">
-			        		<h4 class="event-title">
-			        			<a href="#">Title of the event-<?php echo esc_html($event_count); ?></a>
-			        		</h4>
-
-			        		<div class="event-excerpt">
-			        			Lorem Ipsum is simply dummy text of the printing and..
-			        		</div>
-		        		</div>
-		        	</div>
-		        <?php } ?>
-		        <a class="all-events" href="#">View All Events</a>
-		        </aside>
-	        <?php } 
+	        } 
 	        }?>
 
 
@@ -143,32 +115,11 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			<?php endwhile; ?>
 	        </div>
 	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
-            <a class="all-testimonial" href="<?php echo esc_url(get_category_link( esc_attr($testimonial_category) )); ?>"><?php echo esc_attr($accesspresslite_settings['view_all_text']); ?></a>
+            <a class="all-testimonial" href="<?php echo esc_url(get_category_link( esc_attr($testimonial_category) )); ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?></a>
             <?php } ?>
 	        
 	        <?php wp_reset_postdata(); 
-			}else{ 
-			$client_name=array("","Linda Lee","George Bailey","Micheal Warner");
-			?>
-			<div class="testimonial-wrap">
-			<h3 class="widget-title">Testimonial</h3>
-				<?php for ($testimonial_count=1 ; $testimonial_count < 4 ; $testimonial_count++) { ?>
-			        	<div class="testimonial-list clearfix">
-			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo esc_url(get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg'); ?>" alt="<?php echo esc_html($client_name[$testimonial_count]); ?>">
-			        		</div>
-
-			        		<div class="testimonial-excerpt">
-			        			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer..
-			        		</div>
-			        		<div class="clearfix"></div>
-			        	<div class="testimoinal-client-name"><?php echo esc_html($client_name[$testimonial_count]); ?></div>
-			        	</div>
-						
-				<?php } ?>
-				</div>
-			<a class="all-testimonial" href="#">View All Testimonials</a>
-			<?php } ?>
+			}?>
 			</aside>
 			<?php } ?>
 		
@@ -177,4 +128,4 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			<?php dynamic_sidebar( 'left-sidebar' ); ?>
 		<?php endif; ?>
 	</div><!-- #secondary -->
-<?php } ?>
+<?php } 
