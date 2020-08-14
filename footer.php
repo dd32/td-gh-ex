@@ -39,7 +39,7 @@
 						<?php
 						$copyrightText = ansia_options('_copyright_text', '&copy; '.date('Y').' '. get_bloginfo('name'));
 						if ($copyrightText || is_customize_preview()): ?>
-							<span class="custom"><?php echo wp_kses($copyrightText, ansia_allowed_html()); ?></span>
+							<span class="custom"><?php echo do_shortcode(wp_kses_post($copyrightText)); ?></span>
 						<?php endif; ?>
 						<span class="sep"> | </span>
 						<?php
