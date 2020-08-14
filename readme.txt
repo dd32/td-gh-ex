@@ -19,6 +19,9 @@ Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurp
 
 == Changelog ==
 
+= 1.5.3 - 2020.08.15 =
+* Fixed an issue with menu hover color
+
 = 1.5.2 - 2020.08.13 =
 * Fixed the issue with the sticky menu
 
