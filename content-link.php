@@ -20,7 +20,7 @@ $moretag = $options['more_tag_text'];
 	<div class="entry-container post-format">
     
         <header class="entry-format">
-        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'catch-kathmandu' ); ?>"><?php esc_attr_e( 'Link', 'catch-kathmandu' ); ?></a>
+        	<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php esc_attr_e( 'All Link Posts', 'catch-kathmandu' ); ?>"><?php esc_html_e( 'Link', 'catch-kathmandu' ); ?></a>
         </header>
         
         <div class="entry-content">

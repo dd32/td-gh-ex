@@ -30,7 +30,7 @@ function catchkathmandu_scripts() {
 	/**
 	 * Loads up main stylesheet.
 	 */
-	wp_enqueue_style( 'catchkathmandu-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'catchkathmandu-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	/**
 	 * Add Genericons font, used in the main stylesheet.

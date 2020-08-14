@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-04 23:08-0700\n"
-"PO-Revision-Date: 2020-05-04 23:08-0700\n"
+"POT-Creation-Date: 2020-08-14 02:51-0400\n"
+"PO-Revision-Date: 2020-08-14 02:51-0400\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language: ca_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -111,25 +111,13 @@ msgstr "Edita"
 msgid "All Audio Posts"
 msgstr "Totes les entrades d'àudio"
 
-#: ../content-audio.php:21
-msgid "Audio"
-msgstr "Àudio"
-
 #: ../content-chat.php:22
 msgid "All Chat Posts"
 msgstr "Totes les entrades de xat"
 
-#: ../content-chat.php:22
-msgid "Chat"
-msgstr "Xat"
-
 #: ../content-gallery.php:25
 msgid "All Gallery Posts"
 msgstr "Totes les entrades de galeria"
-
-#: ../content-gallery.php:25
-msgid "Gallery"
-msgstr "Galeria"
 
 #: ../content-gallery.php:42
 #, php-format
@@ -142,17 +130,9 @@ msgstr[1] "Aquesta galeria conté <a %1$s>%2$s fotos</a>."
 msgid "All Image Posts"
 msgstr "Totes les entrades d'imatge"
 
-#: ../content-image.php:23 ../inc/panel/customizer/customizer.php:1288
-msgid "Image"
-msgstr "Imatge"
-
 #: ../content-link.php:23
 msgid "All Link Posts"
 msgstr "Totes les entrades d'enllaç"
-
-#: ../content-link.php:23
-msgid "Link"
-msgstr "Enllaç"
 
 #: ../content-single.php:46 ../content.php:65
 msgid "% Replies"
@@ -172,17 +152,9 @@ msgstr "Mostra totes les entrades de %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "All Status Posts"
 msgstr "Totes les entrades d'estat"
 
-#: ../content-status.php:27
-msgid "Status"
-msgstr "Estat"
-
 #: ../content-video.php:24
 msgid "All Video Posts"
 msgstr "Totes les entrades de vídeo"
-
-#: ../content-video.php:24
-msgid "Video"
-msgstr "Vídeo"
 
 #: ../content.php:23
 msgid "Featured post"
@@ -1037,6 +1009,10 @@ msgstr ""
 msgid "Featured Content #%s"
 msgstr "Contingut destacat %s"
 
+#: ../inc/panel/customizer/customizer.php:1288
+msgid "Image"
+msgstr "Imatge"
+
 #: ../inc/panel/customizer/customizer.php:1308
 msgid "Link URL"
 msgstr "URL"
@@ -1234,6 +1210,24 @@ msgstr "Cerca"
 #: ../sidebar.php:36
 msgid "Archives"
 msgstr "Arxius"
+
+#~ msgid "Audio"
+#~ msgstr "Àudio"
+
+#~ msgid "Chat"
+#~ msgstr "Xat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galeria"
+
+#~ msgid "Link"
+#~ msgstr "Enllaç"
+
+#~ msgid "Status"
+#~ msgstr "Estat"
+
+#~ msgid "Video"
+#~ msgstr "Vídeo"
 
 #~ msgid "Catch Kathmandu Options"
 #~ msgstr "Opcions de Catch Kathmandu"

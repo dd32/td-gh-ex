@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-04 23:08-0700\n"
-"PO-Revision-Date: 2020-05-04 23:08-0700\n"
+"POT-Creation-Date: 2020-08-14 02:51-0400\n"
+"PO-Revision-Date: 2020-08-14 02:51-0400\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -111,25 +111,13 @@ msgstr "Editar"
 msgid "All Audio Posts"
 msgstr "Todos los post de Audio"
 
-#: ../content-audio.php:21
-msgid "Audio"
-msgstr "Audio"
-
 #: ../content-chat.php:22
 msgid "All Chat Posts"
 msgstr "Todos los mensajes de Chat"
 
-#: ../content-chat.php:22
-msgid "Chat"
-msgstr "Chat"
-
 #: ../content-gallery.php:25
 msgid "All Gallery Posts"
 msgstr "Todos los mensajes de galeria"
-
-#: ../content-gallery.php:25
-msgid "Gallery"
-msgstr "Galeria"
 
 #: ../content-gallery.php:42
 #, php-format
@@ -142,17 +130,9 @@ msgstr[1] "Esta galeria contiene <a %1$s>%2$s imagenes</a>."
 msgid "All Image Posts"
 msgstr "Todos los mensajes de imagen"
 
-#: ../content-image.php:23 ../inc/panel/customizer/customizer.php:1288
-msgid "Image"
-msgstr "Imagen"
-
 #: ../content-link.php:23
 msgid "All Link Posts"
 msgstr "Todos los mensajes de enlace"
-
-#: ../content-link.php:23
-msgid "Link"
-msgstr "Enlace"
 
 #: ../content-single.php:46 ../content.php:65
 msgid "% Replies"
@@ -172,17 +152,9 @@ msgstr "Ver todos los mensajes %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "All Status Posts"
 msgstr "Todos los mensajes de estado"
 
-#: ../content-status.php:27
-msgid "Status"
-msgstr "Estado"
-
 #: ../content-video.php:24
 msgid "All Video Posts"
 msgstr "Todos los mensajes de vídeo"
-
-#: ../content-video.php:24
-msgid "Video"
-msgstr "Video"
 
 #: ../content.php:23
 msgid "Featured post"
@@ -1037,6 +1009,10 @@ msgstr ""
 msgid "Featured Content #%s"
 msgstr "Contenido Destacado #%s"
 
+#: ../inc/panel/customizer/customizer.php:1288
+msgid "Image"
+msgstr "Imagen"
+
 #: ../inc/panel/customizer/customizer.php:1308
 msgid "Link URL"
 msgstr "Link URL"
@@ -1235,6 +1211,24 @@ msgstr "Buscar"
 #: ../sidebar.php:36
 msgid "Archives"
 msgstr "Archivos"
+
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Chat"
+#~ msgstr "Chat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galeria"
+
+#~ msgid "Link"
+#~ msgstr "Enlace"
+
+#~ msgid "Status"
+#~ msgstr "Estado"
+
+#~ msgid "Video"
+#~ msgstr "Video"
 
 #~ msgid "Catch Kathmandu Options"
 #~ msgstr "Catch Kathmandu Options"

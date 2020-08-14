@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-05-04 23:09-0700\n"
+"POT-Creation-Date: 2020-08-14 02:52-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
@@ -109,25 +109,13 @@ msgstr "Bewerken"
 msgid "All Audio Posts"
 msgstr "Alle geluidsberichten"
 
-#: ../content-audio.php:21
-msgid "Audio"
-msgstr "Geluid"
-
 #: ../content-chat.php:22
 msgid "All Chat Posts"
 msgstr "Alle chatberichten"
 
-#: ../content-chat.php:22
-msgid "Chat"
-msgstr "Chat"
-
 #: ../content-gallery.php:25
 msgid "All Gallery Posts"
 msgstr "Alle galerijberichten"
-
-#: ../content-gallery.php:25
-msgid "Gallery"
-msgstr "Galerij"
 
 #: ../content-gallery.php:42
 #, php-format
@@ -140,17 +128,9 @@ msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto's</a>"
 msgid "All Image Posts"
 msgstr "Alle fotoberichten"
 
-#: ../content-image.php:23 ../inc/panel/customizer/customizer.php:1288
-msgid "Image"
-msgstr "Foto"
-
 #: ../content-link.php:23
 msgid "All Link Posts"
 msgstr "Alle linkberichten"
-
-#: ../content-link.php:23
-msgid "Link"
-msgstr "Links"
 
 #: ../content-single.php:46 ../content.php:65
 msgid "% Replies"
@@ -171,17 +151,9 @@ msgstr ""
 msgid "All Status Posts"
 msgstr "Alle statusberichten"
 
-#: ../content-status.php:27
-msgid "Status"
-msgstr "Status"
-
 #: ../content-video.php:24
 msgid "All Video Posts"
 msgstr "Alle videoberichten"
-
-#: ../content-video.php:24
-msgid "Video"
-msgstr "Video"
 
 #: ../content.php:23
 msgid "Featured post"
@@ -1034,6 +1006,10 @@ msgstr ""
 msgid "Featured Content #%s"
 msgstr "Uitgelichte content #%s"
 
+#: ../inc/panel/customizer/customizer.php:1288
+msgid "Image"
+msgstr "Foto"
+
 #: ../inc/panel/customizer/customizer.php:1308
 msgid "Link URL"
 msgstr "Link URL"
@@ -1232,6 +1208,24 @@ msgstr "Zoeken"
 #: ../sidebar.php:36
 msgid "Archives"
 msgstr "Archieven"
+
+#~ msgid "Audio"
+#~ msgstr "Geluid"
+
+#~ msgid "Chat"
+#~ msgstr "Chat"
+
+#~ msgid "Gallery"
+#~ msgstr "Galerij"
+
+#~ msgid "Link"
+#~ msgstr "Links"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Video"
+#~ msgstr "Video"
 
 #~ msgid "Catch Kathmandu Options"
 #~ msgstr "Catch Kathmandu opties"
