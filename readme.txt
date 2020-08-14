@@ -47,6 +47,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.2.0 2020-08-14 =
+* Tweak - Add and improve theme-related notices.
+* Remove - TGMPA library to recommend plugins
+
 = Version 1.1.9 2020-07-10 =
 * Enhancement - Gutenberg compatibility.
 * Add - Required header fields: `Tested up to` and `Requires PHP` in style.css.
