@@ -44,7 +44,7 @@ if ( post_password_required() ) {
 		 * to help cue sighted users with learning disabilities concerning the use of the links
 		 */
 		?>
-		<nav id="comment-nav-below" class="navigation" role="navigation" aria-labelledby="comment-navigation">
+		<nav id="comment-nav-below" class="navigation" aria-labelledby="comment-navigation">
 			<h3 class="screen-reader-text" id="comment-navigation"><?php _e( 'Comment navigation', 'universal' ); ?></h3>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'universal' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'universal' ) ); ?></div>

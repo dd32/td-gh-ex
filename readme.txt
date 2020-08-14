@@ -3,8 +3,9 @@ Contributors: joedolson
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 4.0.5
-Tested up to: 4.2
-Stable tag: 1.0.1
+Tested up to: 5.5
+Stable tag: 1.0.2
+Requires PHP: 5.3
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -37,6 +38,13 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Update for current theme check standards.
+* Eliminate extraneous H1 headings.
+* Remove .widget-inner, as it breaks layouts when widgets with no titles are used.
+* Misc. code layout changes.
 
 = 1.0.1 =
 
@@ -133,7 +141,7 @@ Nothing yet!
 
 = You created this theme as a demo theme; can I use it for my site as it is? =
 
-Absolutely. This is a full-fledged, highly extensible theme, and you should be able to create a great web site using it. It's not just a demo!
+Absolutely. This is a full-fledged, extensible theme, and you should be able to create a great web site using it. It's not just a demo!
 
 = Where can I find some useful accessibility resources? =
 
