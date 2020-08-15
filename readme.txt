@@ -4,7 +4,7 @@ Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, 
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.3.3
+Stable tag: 3.3.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 3.3.4 (Released: August 14, 2020) =
+* Fix: WP 5.5 compatbility for jquery
 
 = 3.3.3 (Released: August 12, 2020) =
 * Bug Fixed: Theme check issues
