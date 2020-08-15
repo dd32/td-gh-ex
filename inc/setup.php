@@ -54,6 +54,7 @@ function graphene_setup() {
 		
 	// Add custom image sizes selectively
 	add_image_size( 'graphene_slider', graphene_get_slider_image_width(), $graphene_settings['slider_height'], true );
+	add_image_size( 'graphene_featured_image', $content_width, 0, false );
 
 	if ( get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes']) {
 		$pane_width = floor( $content_width / 2 );

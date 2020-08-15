@@ -25,10 +25,10 @@ get_header();
     ?>
 </h1>
 
-<div class="post clearfix post_404">
-    <div class="entry clearfix">
+<div class="post  post_404">
+    <div class="entry">
         <h2><?php _e( 'Error 404 - Page Not Found', 'graphene' ); ?></h2>
-        <div class="entry-content clearfix">
+        <div class="entry-content">
             <p><?php _e( 'Sorry, I\'ve looked everywhere but I can\'t find the page you\'re looking for.', 'graphene' ); ?></p>
             <p><?php _e( 'If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:', 'graphene' ); ?></p>
             
@@ -36,10 +36,10 @@ get_header();
         </div>
     </div>
 </div>
-<div class="post clearfix post_404_search">
-	<div class="entry clearfix"> 
+<div class="post post_404_search">
+	<div class="entry"> 
 	<h2><?php _e( 'Automated search', 'graphene' ); ?></h2>   
-        <div class="entry-content clearfix">
+        <div class="entry-content">
             <p>
             <?php printf( __( 'Searching for the terms <strong>%s</strong> ...', 'graphene' ), $search_term_q ); ?>
             </p>

@@ -308,15 +308,6 @@ button[type="submit"] {
 .btn:hover {
     color: #fff;
 }
-.btn-white,
-.btn-white.focus,
-.btn-white:focus,
-.btn-white:hover {
-    background: #fff;
-    color: #4F2D69;
-    text-shadow: none;
-    border: 1px solid #4F2D69;
-}
 .btn-sm {
     font-size: 12px;
     line-height: 30px;

@@ -391,7 +391,6 @@ add_action( 'wp_head', 'graphene_custom_style' );
  * appropriate head element for the favicon
 */
 function graphene_favicon(){
-	
 	/* If user has set a WordPress site icon, use that and remove the previous Graphene favicon settings */
 	if ( get_option( 'site_icon' ) ) {
 		$current_settings = get_option( 'graphene_settings' );
@@ -402,16 +401,7 @@ function graphene_favicon(){
 			global $graphene_settings;
 			$graphene_settings = graphene_get_settings();
 		}
-		return;
 	}
-
-	global $graphene_settings;
-	if ( $graphene_settings['favicon_url'] ) { ?>
-		<link rel="icon" href="<?php echo $graphene_settings['favicon_url']; ?>" type="image/x-icon" />
-	<?php
-    } elseif ( is_file( ABSPATH . 'favicon.ico' ) ){ ?>
-		<link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon" />
-	<?php }
 }
 add_action( 'wp_head', 'graphene_favicon' );
 

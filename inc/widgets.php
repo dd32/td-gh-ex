@@ -7,7 +7,7 @@ function graphene_add_widget_fields( $widget, $return, $instance ) {
     $instance['device_display'] = isset( $instance['device_display'] ) ? $instance['device_display'] : 'both';
 
     ?>
-        <p class="display-option">
+        <p class="graphene-widget-field display-option">
         	<label for="<?php echo $widget->get_field_id( 'device_display' ); ?>">
                 <?php _e( 'Display on:', 'graphene' ); ?>
             </label>

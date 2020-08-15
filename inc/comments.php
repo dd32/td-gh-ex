@@ -87,6 +87,7 @@ function graphene_comment_args( $defaults ){
 								<label for="comment" class="sr-only"></label>
 								<textarea name="comment" class="form-control" id="comment" cols="40" rows="10" aria-required="true" placeholder="' . esc_attr__( 'Your message', 'graphene' ) . '"></textarea>
 							</div>',
+		'submit_button'	=> '<input name="%1$s" type="submit" id="%2$s" class="%3$s btn" value="%4$s" />'
 	);
 	return array_merge( $defaults, $args );
 }
@@ -132,7 +133,7 @@ if ( ! function_exists( 'graphene_get_comment_count' ) ) :
 */
 function graphene_get_comment_count( $type = 'comments', $only_approved_comments = true, $top_level = false ){
 	if ( ! get_the_ID() ) return;
-	if 		( $type == 'comments' ) 	$type_sql = 'comment_type = ""';
+	if 		( $type == 'comments' ) 	$type_sql = 'comment_type IN ("", "comment")';
 	elseif 	( $type == 'pings' )		$type_sql = 'comment_type != ""';
 	elseif 	( $type == 'review' ) 		$type_sql = 'comment_type = "review"';
 	elseif 	( $type == 'trackbacks' ) 	$type_sql = 'comment_type = "trackback"';
@@ -308,7 +309,7 @@ function graphene_comment_meta( $comment, $args = array(), $depth = 1 ){
  * Modify the HTML output of the comment reply link
  */
 function graphene_comment_reply_link( $link, $args, $comment, $post ){
-	$link = str_replace( 'comment-reply', 'btn btn-white btn-xs comment-reply', $link );
+	$link = str_replace( 'comment-reply', 'btn btn-xs comment-reply', $link );
 	return $link;
 }
 add_filter( 'comment_reply_link', 'graphene_comment_reply_link', 10, 4 );
@@ -318,7 +319,7 @@ add_filter( 'comment_reply_link', 'graphene_comment_reply_link', 10, 4 );
  * Modify the HTML output of the cancel comment reply link
  */
 function graphene_cancel_comment_reply_link( $formatted_link, $link, $text ){
-	$formatted_link = str_replace( '<a', '<a class="btn btn-white btn-sm"', $formatted_link );
+	$formatted_link = str_replace( '<a', '<a class="btn btn-sm"', $formatted_link );
 	return $formatted_link;
 }
 add_filter( 'cancel_comment_reply_link', 'graphene_cancel_comment_reply_link', 10, 3 );

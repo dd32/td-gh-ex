@@ -18,6 +18,8 @@
         </h1>
 		
 		<?php graphene_entry_meta(); ?>
+
+		<?php graphene_featured_image(); ?>
 		
 		<?php /* Post content */ ?>
 		<div class="entry-content clearfix">

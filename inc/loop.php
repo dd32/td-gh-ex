@@ -962,7 +962,7 @@ function graphene_entry_meta(){
 	
 	$meta = apply_filters( 'graphene_entry_meta', $meta, $post_id );
 	if ( $meta ) : ?>
-	    <ul class="post-meta">
+	    <ul class="post-meta clearfix">
 	    	<?php foreach ( $meta as $item ) : if ( isset( $item['icon'] ) ) $item['class'] .= ' has-icon'; ?>
 	        <li class="<?php echo esc_attr( $item['class'] ); ?>">
 	        	<?php 
@@ -1199,30 +1199,35 @@ function graphene_header_image(){
 /**
  * Display the post's featured image
  */
-function graphene_featured_image(){
+function graphene_featured_image( $force = false ){
 	global $graphene_settings;
 	
-	if ( ! has_post_thumbnail() ) return;
+	$has_featured_image = true;
+	if ( $graphene_settings['hide_post_featured_image'] && ! $force ) $has_featured_image = false;
+	if ( ! has_post_thumbnail() ) $has_featured_image = false;
+	else {
+		/* Check if featured image size is at least as wide as the content area width */
+		global $content_width;
+		$featured_image_id = get_post_thumbnail_id();
+		$featured_image = wp_get_attachment_metadata( $featured_image_id );
+		if ( $featured_image['width'] < $content_width ) $has_featured_image = false;
+	}
 
-	/* Check if featured image size is at least as wide as the content area width */
-	global $content_width;
-	$featured_image_id = get_post_thumbnail_id();
-	$featured_image = wp_get_attachment_metadata( $featured_image_id );
-	if ( $featured_image['width'] < $content_width ) return;
-	?>
-		<div class="featured-image">
-			<?php the_post_thumbnail(); ?>
-			<?php 
-				/* Featured image caption */
-				$featured_image = get_post( $featured_image_id );
-				if ( $featured_image->post_excerpt ) { 
-			?>
-				<div class="caption"><i class="fa fa-camera"></i> <?php echo $featured_image->post_excerpt; ?></div>
-			<?php } 
-				do_action( 'graphene_featured_image' );
-			?>
-		</div>
-	<?php
+	if ( $has_featured_image ) :
+?>
+	<div class="featured-image">
+		<?php the_post_thumbnail( 'graphene_featured_image' ); ?>
+		<?php 
+			/* Featured image caption */
+			$featured_image = get_post( $featured_image_id );
+			if ( $featured_image->post_excerpt ) { 
+		?>
+			<div class="caption"><i class="fa fa-camera"></i> <?php echo $featured_image->post_excerpt; ?></div>
+		<?php } 
+			do_action( 'graphene_featured_image' );
+		?>
+	</div>
+	<?php endif;
 }
 
 

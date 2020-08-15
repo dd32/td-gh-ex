@@ -284,10 +284,6 @@ function graphene_get_customizer_validator_settings(){
 	/* Footer widget options */
 	$validator_settings['footerwidget_column']	= 'absint';
 		
-	/* Miscellaneous options */
-	$validator_settings['favicon_url']	= 'esc_url_raw';
-	$validator_settings['custom_css']	= 'graphene_validate_css';
-
 	/* Advanced options */
 	$validator_settings['widget_hooks'] = 'graphene_validate_multiple_checkboxes';
 

@@ -22,34 +22,42 @@
             <?php if ( ! $graphene_settings['hide_top_bar'] ) : ?>
                 <div id="top-bar" class="row clearfix <?php if ( $graphene_settings['light_header'] ) echo 'light'; ?>">
                     <?php graphene_container_wrapper( 'start' ); ?>
-                        <div class="col-md-12 top-bar-items">
-                            <?php 
-                                if ( $graphene_settings['slider_as_header'] ) { 
-                                    if ( ! is_front_page() ) echo '<a href="' . apply_filters( 'graphene_header_link' , home_url() ) . '" title="' . esc_attr__( 'Go back to the front page', 'graphene' ) . '">';
-                                    echo '<h1 class="logo">'; graphene_header_image(); echo '</h1>';
-                                    if ( ! is_front_page() ) echo '</a>';
-                                } 
-                            ?>
 
-                            <?php do_action( 'graphene_before_feed_icon' ); ?>
-                            <?php if ( stripos( $graphene_settings['social_media_location'], 'top-bar' ) !== false ) : ?>
-                                <?php graphene_social_profiles(); ?>
-                            <?php endif; ?>
-
-                            <?php /* Search form */ if ( ( $search_box_location = $graphene_settings['search_box_location'] ) && $search_box_location == 'top_bar' || $search_box_location == '' ) : ?>
-                                <button type="button" class="search-toggle navbar-toggle collapsed" data-toggle="collapse" data-target="#top_search">
-                                    <span class="sr-only"><?php _e( 'Toggle search form', 'graphene' ); ?></span>
-                                    <i class="fa fa-search-plus"></i>
-                                </button>
-
-                                <div id="top_search">
-                                    <?php get_search_form(); ?>
-                                    <?php do_action( 'graphene_top_search' ); ?>
-                                </div>
-                            <?php endif; ?>
+                        <?php if ( ! dynamic_sidebar( 'top-bar' ) ) : ?>
                             
-                            <?php do_action( 'graphene_top_bar' ); ?>
-                        </div>
+                            <div class="col-md-12 top-bar-items">
+                                <?php 
+                                    if ( $graphene_settings['slider_as_header'] ) { 
+                                        if ( ! is_front_page() ) echo '<a href="' . apply_filters( 'graphene_header_link' , home_url() ) . '" title="' . esc_attr__( 'Go back to the front page', 'graphene' ) . '">';
+                                        echo '<h1 class="logo">'; graphene_header_image(); echo '</h1>';
+                                        if ( ! is_front_page() ) echo '</a>';
+                                    } 
+                                ?>
+
+                                <?php do_action( 'graphene_before_feed_icon' ); ?>
+                                <?php if ( stripos( $graphene_settings['social_media_location'], 'top-bar' ) !== false ) : ?>
+                                    <?php graphene_social_profiles(); ?>
+                                <?php endif; ?>
+
+                                <?php /* Search form */ if ( ( $search_box_location = $graphene_settings['search_box_location'] ) && $search_box_location == 'top_bar' || $search_box_location == '' ) : ?>
+                                    <button type="button" class="search-toggle navbar-toggle collapsed" data-toggle="collapse" data-target="#top_search">
+                                        <span class="sr-only"><?php _e( 'Toggle search form', 'graphene' ); ?></span>
+                                        <i class="fa fa-search-plus"></i>
+                                    </button>
+
+                                    <div id="top_search" class="top-search-form">
+                                        <?php get_search_form(); ?>
+                                        <?php do_action( 'graphene_top_search' ); ?>
+                                    </div>
+                                <?php endif; ?>
+                                
+                                <?php do_action( 'graphene_top_bar' ); ?>
+                            </div>
+
+                        <?php endif; ?>
+
+                        <?php do_action( 'graphene_top_bar' ); ?>
+
                     <?php graphene_container_wrapper( 'end' ); ?>
                 </div>
             <?php endif; ?>

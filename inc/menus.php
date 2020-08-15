@@ -188,6 +188,8 @@ class graphene_Menu_Item_Custom_Fields {
 				</p>
 			<?php
 		endforeach;
+
+		remove_action( 'wp_nav_menu_item_custom_fields', array( __CLASS__, '_fields' ), 10, 4 );
 	}
 
 

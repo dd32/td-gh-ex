@@ -139,11 +139,18 @@ function graphene_import_file() {
 	 * appears to be returning the mime type as text/html in multisite instead of the expected text/plain
 	 */
 	$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/plain' ) ) );
+
+	/**
+	 * Temporarily disable changing mime type as WordPress does not allow using upload_mimes filter in themes
+	 */
+	/*
 	if ( isset( $import_file['error'] ) ) {
 		add_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
 		$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/html' ) ) );
 		remove_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
 	}
+	*/
+
 	if ( isset( $import_file['error'] ) ) wp_die( $import_file['error'] );
 
 	/* Get filesystem credentials to read the file */

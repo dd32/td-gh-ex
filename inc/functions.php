@@ -37,7 +37,7 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 			
 			$header_img = array( $header_img, $dimension[0], $dimension[1] );
 
-		} else {
+		} else if ( $header_img ) {
 			if ( $image_id = graphene_get_attachment_id_from_src( $header_img ) ) {
 				$image = wp_get_attachment_image_src( $image_id, $size );
 				if ( $image ) {
@@ -61,11 +61,17 @@ endif;
  */
 function graphene_get_attachment_id_from_src( $image_src ) {
 
-	global $wpdb;
-	$query = $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE guid='%s'", $image_src );
-	$id = $wpdb->get_var($query);
-	return $id;
-	
+	global $wpdb, $graphene_attachment_src_id;
+
+	if ( ! isset( $graphene_attachment_src_id ) ) $graphene_attachment_src_id = array();
+
+	if ( ! array_key_exists( $image_src,  $graphene_attachment_src_id ) ) {
+		$query = $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'attachment' AND guid='%s' LIMIT 1", $image_src );
+		$id = $wpdb->get_var( $query );
+		$graphene_attachment_src_id[$image_src] = $id;
+	}
+
+	return $graphene_attachment_src_id[$image_src];
 }
 
 
@@ -199,7 +205,13 @@ add_filter( 'body_class', 'graphene_body_class' );
 /**
  * Add Social Media icons in top bar
 */
-function graphene_social_profiles(){
+function graphene_social_profiles( $args = array() ) {
+	$defaults = array(
+		'classes'	=> array( 'social-profiles' )
+	);
+	$args = wp_parse_args( $args, $defaults );
+	extract( $args, EXTR_SKIP );
+
     global $graphene_settings;
 
     /* Loop through the registered custom social media */
@@ -207,7 +219,7 @@ function graphene_social_profiles(){
 	if ( ! $social_profiles || ( is_array( $social_profiles ) && in_array( false, $social_profiles ) ) ) return;
 	if ( empty( $social_profiles ) ) return;
 	?>
-	<ul class="social-profiles">
+	<ul class="<?php echo join( ' ', $classes ); ?>">
 		<?php
 			$count = 1;
 		    foreach ( $social_profiles as $social_key => $social_profile ) : 

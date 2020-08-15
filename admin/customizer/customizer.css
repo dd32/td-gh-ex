@@ -11,9 +11,6 @@
 	font-size: 11px;
 	line-height: 16px;
 }
-#customize-control-graphene_settings-custom_css .CodeMirror {
-	height: 400px;
-}
 .customize-control .graphene-text input {
 	width: auto !important;
 }

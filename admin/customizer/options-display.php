@@ -92,6 +92,13 @@ function graphene_customizer_display_options( $wp_customize ){
 		'priority'	=> 3,
 	) );
 
+	$wp_customize->add_control( 'graphene_settings[hide_post_featured_image]', array(
+		'type' 		=> 'checkbox',
+		'section' 	=> 'graphene-display-posts',
+		'label' 	=> __( 'Hide featured image', 'graphene' ),
+		'priority'	=> 3,
+	) );
+
 	$wp_customize->add_control( 'graphene_settings[hide_post_commentcount]', array(
 		'type' 		=> 'checkbox',
 		'section' 	=> 'graphene-display-posts',

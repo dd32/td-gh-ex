@@ -16,7 +16,7 @@
 	#top-bar .social-profiles {
 		margin: 5px 0;
 	}
-	#top-bar #top_search {
+	#top-bar .top-search-form {
 		height: 0px;
 		float: none;
 		padding: 0 15px;
@@ -28,11 +28,19 @@
 		overflow: hidden;
 		background: rgba(0,0,0,0.2);
 	}
-	#top-bar #top_search.in {
+	#top-bar .top-search-form.in {
 		height: 48px;
 	}
-	#top_search .searchform {
+	.top-search-form .searchform {
 		margin: 7px 0;
+	}
+	#top-bar .text-alignleft,
+	#top-bar .text-alignright {
+		text-align: center;
+	}
+	#top-bar .text,
+	.top-bar-menu {
+		margin: 0.5em 0;
 	}
 	.search-toggle {
 		margin: 0 -15px 0 0;
@@ -70,7 +78,7 @@
 	.header_desc {
 		display: none;
 	}
-	.navbar #top_search {
+	.navbar .top-search-form {
 		margin: 0;
 	}
 	.navbar-toggle {
@@ -198,6 +206,9 @@
 	}
 	.gallery dt {
 		margin-top: 0;
+	}
+	.entry .featured-image .caption {
+		padding: .5em 1em;
 	}
 	.entry-author {
 		text-align: center;

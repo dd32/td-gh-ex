@@ -163,6 +163,7 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 	'hide_post_commentcount' 	=> false,
 	'hide_post_cat' 			=> false,
 	'hide_post_tags' 			=> false,
+	'hide_post_featured_image'	=> true,
 	'hide_author_bio'			=> false,
 	'hide_post_nav'				=> false,
 	'post_nav_in_term'			=> false,

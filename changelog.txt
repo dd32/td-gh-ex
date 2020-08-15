@@ -4,6 +4,17 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.8 [15-08-2020]
+	* Added: Option to show featured image at the top of posts
+	* Various performance optimisations
+	* Fixed: Comments does not appear in front end with WordPress 5.5
+	* Fixed: Random image selected if no header image is defined in settings
+	* Fixed: Locally-loaded Google Fonts do not have "font-display: swap" applied
+	* Fixed: Double menu icon field
+	* Removed: htmlshiv.js and respond.js
+	* Removed: Favicon option since this is now managed by WordPress
+	* Removed: .map files
+
 Version 2.7.6 [15-05-2020]
 	* Fixed: Unable to turn off Yoast SEO breadcrumbs
 	* Fixed: Alignment issues in Customizer when using RTL languages
