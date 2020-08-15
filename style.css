@@ -6,7 +6,7 @@ Author URI: https://www.themeseye.com/
 Description: Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, IT companies, web development agencies, digital marketing agencies, business startups, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen and can translate into Arabic, Chinese, French, German and Spanish languages. The theme offers multiple options in most of the elements be it header and footer layout, menu style, blog formats or gallery layout. Demo: https://themeseye.com/demo/aagaz-startup-pro/
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Version: 0.5
+Version: 0.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aagaz-startup
@@ -251,7 +251,6 @@ label {
 	display: inline-block;
 	font-weight: 800;
 	margin: 0;
-	width: 100%;
 }
 .page-content label{
 	width: 50%;
@@ -756,13 +755,13 @@ a:active {
     background: #9fcd55;
     padding: 10px;
 }
-.topbar span.call,
-.topbar span.email {
+.topbar a.call,
+.topbar a.email {
     color: #323c47;
     font-size: 14px;
 }
-.topbar span.call i,
-.topbar span.email i {
+.topbar a.call i,
+.topbar a.email i {
     padding-right: 8px;
 }
 .social-icon {
@@ -2203,6 +2202,7 @@ button.search-submit:hover {
 .widget-area caption,
 .widget-area th{
     color: #000;
+    width: 100%;
 }
 .site-footer .widget-area p,
 .site-footer .widget-area label,

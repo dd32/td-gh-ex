@@ -1039,6 +1039,32 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'type'     => 'dropdown-pages'
 	) );
 
+	//no Result Setting
+	$wp_customize->add_section('aagaz_startup_no_result_setting',array(
+		'title'	=> __('No Results Settings','aagaz-startup'),
+		'panel' => 'aagaz_startup_panel_id',
+	));	
+
+	$wp_customize->add_setting('aagaz_startup_no_search_result_title',array(
+		'default'=> __('Nothing Found','aagaz-startup'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_no_search_result_title',array(
+		'label'	=> __('No Search Results Title','aagaz-startup'),
+		'section'=> 'aagaz_startup_no_result_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('aagaz_startup_no_search_result_content',array(
+		'default'=> __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','aagaz-startup'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_no_search_result_content',array(
+		'label'	=> __('No Search Results Content','aagaz-startup'),
+		'section'=> 'aagaz_startup_no_result_setting',
+		'type'=> 'text'
+	));
+
 	//404 Page Setting
 	$wp_customize->add_section('aagaz_startup_page_not_found_setting',array(
 		'title'	=> __('Page Not Found Settings','aagaz-startup'),
@@ -1269,41 +1295,6 @@ function aagaz_startup_customize_register( $wp_customize ) {
             'next-prev' => __( 'Next / Previous', 'aagaz-startup' ),
     )));
 
-    $wp_customize->add_setting('aagaz_startup_comment_form_heading',array(
-       'default' => __('Leave a Reply','aagaz-startup'),
-       'sanitize_callback'	=> 'sanitize_text_field'
-    ));
-    $wp_customize->add_control('aagaz_startup_comment_form_heading',array(
-       'type' => 'text',
-       'label' => __('Comment Form Heading','aagaz-startup'),
-       'section' => 'aagaz_startup_blog_post'
-    ));
-
-    $wp_customize->add_setting('aagaz_startup_comment_button_text',array(
-       'default' => __('Post Comment','aagaz-startup'),
-       'sanitize_callback'	=> 'sanitize_text_field'
-    ));
-    $wp_customize->add_control('aagaz_startup_comment_button_text',array(
-       'type' => 'text',
-       'label' => __('Comment Submit Button Text','aagaz-startup'),
-       'section' => 'aagaz_startup_blog_post'
-    ));
-
-    $wp_customize->add_setting( 'aagaz_startup_comment_form_size',array(
-		'default' => 100,
-		'sanitize_callback'    => 'aagaz_startup_sanitize_number_range',
-	));
-	$wp_customize->add_control('aagaz_startup_comment_form_size',	array(
-		'label' => esc_html__( 'Comment Form Size','aagaz-startup' ),
-		'section' => 'aagaz_startup_blog_post',
-		'type' => 'range',
-		'input_attrs' => array(
-			'min' => 0,
-			'max' => 100,
-			'step' => 1,
-		),
-	));
-
 	// Single post setting
     $wp_customize->add_section('aagaz_startup_single_post_section',array(
 		'title'	=> __('Single Post Settings','aagaz-startup'),
@@ -1341,6 +1332,41 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'type'        => 'text',
 		'settings'    => 'aagaz_startup_seperator_metabox',
 	) );
+
+	$wp_customize->add_setting('aagaz_startup_comment_form_heading',array(
+       'default' => __('Leave a Reply','aagaz-startup'),
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_comment_form_heading',array(
+       'type' => 'text',
+       'label' => __('Comment Form Heading','aagaz-startup'),
+       'section' => 'aagaz_startup_single_post_section'
+    ));
+
+    $wp_customize->add_setting('aagaz_startup_comment_button_text',array(
+       'default' => __('Post Comment','aagaz-startup'),
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_comment_button_text',array(
+       'type' => 'text',
+       'label' => __('Comment Submit Button Text','aagaz-startup'),
+       'section' => 'aagaz_startup_single_post_section'
+    ));
+
+    $wp_customize->add_setting( 'aagaz_startup_comment_form_size',array(
+		'default' => 100,
+		'sanitize_callback'    => 'aagaz_startup_sanitize_number_range',
+	));
+	$wp_customize->add_control('aagaz_startup_comment_form_size',	array(
+		'label' => esc_html__( 'Comment Form Size','aagaz-startup' ),
+		'section' => 'aagaz_startup_single_post_section',
+		'type' => 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 100,
+			'step' => 1,
+		),
+	));
 
     // related post setting
     $wp_customize->add_section('aagaz_startup_related_post_section',array(
@@ -1419,6 +1445,24 @@ function aagaz_startup_customize_register( $wp_customize ) {
             '4'     => __('Four', 'aagaz-startup')
         ),
     )); 
+
+    $wp_customize->add_setting( 'aagaz_startup_footer_widget_background', array(
+	    'default' => '#262525',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aagaz_startup_footer_widget_background', array(
+  		'label' => __('Footer Widget Background','aagaz-startup'),
+	    'section' => 'aagaz_startup_footer',
+  	)));
+
+  	$wp_customize->add_setting('aagaz_startup_footer_widget_image',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'aagaz_startup_footer_widget_image',array(
+        'label' => __('Footer Widget Background Image','aagaz-startup'),
+        'section' => 'aagaz_startup_footer'
+	)));
 
 	$wp_customize->add_setting('aagaz_startup_hide_show_scroll',array(
         'default' => true,

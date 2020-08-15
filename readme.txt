@@ -135,6 +135,14 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Added border radius option for shop page product buttons.
   * Added arabic, spanish, german, chinese and french languages POT file.
 
+= 0.5.1 =
+  * Added change option for no search result title.
+  * Added change option for no search result content.
+  * Added background option for footer widget.
+  * Added image option for footer widget.
+  * Done with clickable Phone no and email id.
+  * Updated arabic, spanish, german, chinese and french languages POT file.
+
 == Resources ==
 
 Aagaz Startup WordPress Theme, Copyright 2019 ThemesEye

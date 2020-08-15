@@ -11,7 +11,7 @@ get_header(); ?>
 				<h1 class="search-title">
 					<?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','aagaz-startup'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 			<?php else : ?>
-				<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'aagaz-startup' ); ?></h1>
+				<h1 class="page-title"><?php echo esc_html(get_theme_mod('aagaz_startup_no_search_result_title',__('Nothing Found','aagaz-startup')));?></h1>
 			<?php endif; ?>
 		</header>
 		<div class="row">
@@ -34,7 +34,7 @@ get_header(); ?>
 
 						else : ?>
 
-							<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aagaz-startup' ); ?></p>
+							<p><?php echo esc_html(get_theme_mod('aagaz_startup_no_search_result_content',__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','aagaz-startup')));?></p>
 							<?php
 								get_search_form();
 
@@ -60,7 +60,7 @@ get_header(); ?>
 
 						else : ?>
 
-							<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aagaz-startup' ); ?></p>
+							<p><?php echo esc_html(get_theme_mod('aagaz_startup_no_search_result_content',__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','aagaz-startup')));?></p>
 							<?php
 								get_search_form();
 
@@ -89,7 +89,7 @@ get_header(); ?>
 
 						else : ?>
 
-							<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aagaz-startup' ); ?></p>
+							<p><?php echo esc_html(get_theme_mod('aagaz_startup_no_search_result_content',__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','aagaz-startup')));?></p>
 							<?php
 								get_search_form();
 
@@ -116,7 +116,7 @@ get_header(); ?>
 
 							else : ?>
 
-								<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aagaz-startup' ); ?></p>
+								<p><?php echo esc_html(get_theme_mod('aagaz_startup_no_search_result_content',__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','aagaz-startup')));?></p>
 								<?php
 									get_search_form();
 
@@ -146,7 +146,7 @@ get_header(); ?>
 
 					else : ?>
 
-					<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'aagaz-startup' ); ?></p>
+					<p><?php echo esc_html(get_theme_mod('aagaz_startup_no_search_result_content',__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','aagaz-startup')));?></p>
 
 					<?php
 						get_search_form();

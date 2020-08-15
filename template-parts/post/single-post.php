@@ -33,6 +33,9 @@
 				<?php if( get_theme_mod( 'aagaz_startup_comment_hide',true) != '') { ?>
 					<i class="fas fa-comments"></i><span class="entry-comments"><?php comments_number( __('0 Comments','aagaz-startup'), __('0 Comments','aagaz-startup'), __('% Comments','aagaz-startup') ); ?></span>
 				<?php } ?>
+		        <?php if( get_theme_mod( 'aagaz_startup_post_time',false) != '' ) { ?>
+	          		<span class="entry-time"><i class="fas fa-clock"></i> <?php echo esc_html( get_the_time() ); ?></span>
+		        <?php }?>
 			</div>
 		<?php } ?>
 		<h1><?php the_title(); ?></h1>

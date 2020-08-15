@@ -55,12 +55,12 @@
 							<div class="row">
 								<div class="col-lg-3 col-md-3">
 									<?php if( get_theme_mod( 'aagaz_startup_contact_number','' ) != '') { ?>
-						                <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('aagaz_startup_contact_number','' )); ?></span>
+						                <a class="call" href="tel:<?php echo esc_url( get_theme_mod('aagaz_startup_contact_number','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('aagaz_startup_contact_number','' )); ?><span class="screen-reader-text"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('aagaz_startup_contact_number','' )); ?></span></a>
 						            <?php } ?>
 								</div>
 								<div class="col-lg-4 col-md-4">
 						            <?php if( get_theme_mod( 'aagaz_startup_email_address','' ) != '') { ?>
-						                <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('aagaz_startup_email_address','') ); ?></span>
+						                <a class="email" href="mailto:<?php echo esc_url( get_theme_mod('aagaz_startup_email_address','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('aagaz_startup_email_address','') ); ?><span class="screen-reader-text"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('aagaz_startup_email_address','') ); ?></span></a>
 						            <?php } ?>
 						        </div>
 								<div class="col-lg-5 col-md-5">

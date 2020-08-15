@@ -421,4 +421,17 @@
 		$aagaz_startup_custom_css .='box-shadow: '.esc_html($aagaz_startup_shop_page_box_shadow).'px '.esc_html($aagaz_startup_shop_page_box_shadow).'px '.esc_html($aagaz_startup_shop_page_box_shadow).'px #e4e4e4;';
 	$aagaz_startup_custom_css .='}';
 
+	// footer widget background
+	$aagaz_startup_footer_widget_background = get_theme_mod('aagaz_startup_footer_widget_background', '#262525');
+	$aagaz_startup_custom_css .='.site-footer{';
+		$aagaz_startup_custom_css .='background-color: '.esc_html($aagaz_startup_footer_widget_background).';';
+	$aagaz_startup_custom_css .='}';
+
+	$aagaz_startup_footer_widget_image = get_theme_mod('aagaz_startup_footer_widget_image');
+	if($aagaz_startup_footer_widget_image != false){
+		$aagaz_startup_custom_css .='.site-footer{';
+			$aagaz_startup_custom_css .='background: url('.esc_html($aagaz_startup_footer_widget_image).');';
+		$aagaz_startup_custom_css .='}';
+	}
+
 
