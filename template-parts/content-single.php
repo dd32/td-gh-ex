@@ -42,7 +42,14 @@ $show_image_option   = $saraswati_blog_theme_options['saraswati-blog-single-feat
 	      </div><!-- .post-info -->
 	      <div class="shape1"></div>
 	      <div class="entry-content">
-	          <?php the_content(); ?>                             
+	          <?php the_content();
+			  
+			  wp_link_pages( array(
+				  'before' => '<div class="page-links">' . esc_html__( 'Pages:','ample-business' ),
+				  'after'  => '</div>',
+			  ) );
+			  
+			  ?>                             
 	      </div><!-- .entry-summary -->
 	     
 	    </div><!-- .post-content -->

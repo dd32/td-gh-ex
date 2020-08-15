@@ -67,7 +67,13 @@ $continue_reading_text   = $saraswati_blog_theme_options['saraswati-blog-continu
 							<?php } ?>
 
 
-							<p><?php echo esc_html( wp_trim_words(get_the_content(),$excerpt_length));?> </p>
+							<p>
+								<?php echo esc_html( wp_trim_words(get_the_content(),$excerpt_length));
+								wp_link_pages( array(
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:','ample-business' ),
+									'after'  => '</div>',
+								) );
+								?> </p>
 							<div class="text-center more-link-wrap"><a href="<?php the_permalink(); ?>" class="btn btn-default"><?php echo esc_html( $continue_reading_text ); ?></a></div>
 						</div>
 					</div>
