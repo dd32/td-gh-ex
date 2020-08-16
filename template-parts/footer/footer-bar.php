@@ -54,7 +54,8 @@ if ( ! empty( $content_order_lists ) ) :
                                         'menu_id'       => 'footer-bar-nav',
                                         'container'     => 'ul',
                                         'menu_class'    => 'd-flex flex-wrap justify-content-center align-items-center p-0 m-0 ls-none',
-                                        'depth'         => 1
+                                        'depth'         => 1,
+                                        'theme_location' => 'footer-menu',
                                     ));
                                 }
                                 else {

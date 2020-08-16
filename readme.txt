@@ -3,8 +3,8 @@
 Contributors: Precise Themes
 Tags: two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.8
-Tested up to: 4.8
-Stable tag: 1.0.6
+Tested up to: 5.5
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,7 +61,7 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
    Libre Baskerville by Impallari Type - https://fonts.google.com/specimen/Libre+Baskerville
    License: Open Font License
 
-== Images ==
+== Screenshots ==
 1. By: Jean van der Meulenmx-16
    License: Pexels license
    Source: https://www.pexels.com/photo/photo-of-bedroom-1454806/
@@ -75,6 +75,9 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
    Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 == Changelog ==
+
+Version 1.0.7 
+* Kirki framework update
 
 Version 1.0.6 - 2020-02-09
 * Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
