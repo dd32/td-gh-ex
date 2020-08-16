@@ -9,7 +9,7 @@ get_header(); ?>
   
   <?php if( get_theme_mod( 'advance_fitness_gym_slider_hide', false) != '' || get_theme_mod( 'advance_fitness_gym_responsive_slider', false) != '') { ?>
     <section id="slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_fitness_gym_slider_speed_option', 3000)); ?>"> 
         <?php $advance_fitness_gym_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_fitness_gym_slider_page' . $count ));

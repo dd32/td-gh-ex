@@ -323,6 +323,12 @@
 		$advance_fitness_gym_custom_css .='font-size: '.esc_html($advance_fitness_gym_scroll_font_size_icon).'px;';
 	$advance_fitness_gym_custom_css .='}';
 
+	// Slider Height 
+	$advance_fitness_gym_slider_image_height = get_theme_mod('advance_fitness_gym_slider_image_height');
+	$advance_fitness_gym_custom_css .='#slider img{';
+		$advance_fitness_gym_custom_css .='height: '.esc_html($advance_fitness_gym_slider_image_height).'px;';
+	$advance_fitness_gym_custom_css .='}';
+
 
 
 

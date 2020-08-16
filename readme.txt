@@ -142,6 +142,13 @@ Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPres
   * Resolved login page error.
   * Updated POT file.
 
+= 0.5.2 =
+  * Added slider speed option.
+  * Added slider height option.
+  * Added “Call-able” Link.
+  * Done Email Address Clickable.
+  * Updated POT file.
+
 == Resources ==
 
 Advance Fitness Gym WordPress Theme, Copyright 2018 Themeshopy

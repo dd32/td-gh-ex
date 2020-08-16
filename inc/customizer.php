@@ -967,6 +967,31 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_fitness_gym_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_fitness_gym_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_fitness_gym_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-fitness-gym' ),
+		'section' => 'advance_fitness_gym_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_slider_image_height',array(
+		'default'=> __('550','advance-fitness-gym'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-fitness-gym'),
+		'section'=> 'advance_fitness_gym_slider',
+		'type'=> 'text'
+	));
+
 	//Products Service
 	$wp_customize->add_section( 'advance_fitness_gym_services_section' , array(
     	'title'      => __( 'Services', 'advance-fitness-gym' ),

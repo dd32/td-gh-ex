@@ -6,7 +6,7 @@ Author URI: https://www.themeshopy.com/
 Description: Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPress theme for gyms, fitness clubs, yoga classes, weight loss centres, personal trainers, aerobics classes, healthcare centres, spa, workout studios, zumba classes, physiotherapists, health consultants and all the fitness freaks who are on a mission to make people healthy and fit. This multipurpose theme has an inviting design to make people turn their heads towards your website at least once. The Bootstrap framework gives a strong base with responsive layout yielding a beautiful look on different sizes of mobiles, tablets and desktops. Facility for customization is provided right at your fingertips, through theme customizer, without requiring any coding knowledge. Advance Fitness Gym loads on all browsers and can be translated into numerous local and international languages. It is optimized for search engines and integrated with social media icons. It offers interactive features and animated transitions to make the site stand apart among others. With multiple layouts for header, footer and sidebars, you can style your website to suit your brand. It comes with thorough documentation that will let you make the most of your website irrespective of your skills. Demo: https://themeshopy.com/advance-fitness-gym-pro/
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Version: 0.5.1
+Version: 0.5.2
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-fitness-gym
@@ -432,6 +432,9 @@ input#pwbox-1168 {
 }
 #contact-info{
   display: none;
+}
+.contact a, .mail a{
+  color: #fff;
 }
 /* ---------Middle Header--------- */
 .logo{
@@ -1692,9 +1695,10 @@ iframe{
   #menu-sidebar .socialbox {
     text-align: center !important;
   }
-	.contact span {
+	.contact a {
     display: inline-block;
     margin: 0;
+    color: #fff;
 	}
 	section .innerlightbox {
 		padding: 0;
@@ -1944,7 +1948,7 @@ iframe{
   .search-box i{
     display: none;
   }
-  .book-btn a, .mail i, .mail span, .socialbox a{
+  .book-btn a, .mail i, .mail a, .socialbox a{
     color: #fff !important;
     font-size: 15px;
     font-weight: 600;
@@ -1971,6 +1975,7 @@ iframe{
     color: #fff;
     padding-bottom:15px;
     font-weight: 500;
+    text-transform: lowercase;
   }
   #menu-sidebar #contact-info .mail i, #menu-sidebar #contact-info .contact i{
     padding-right: 10px;
@@ -2012,5 +2017,8 @@ iframe{
   }
   .primary-navigation ul ul li:hover > a, .primary-navigation ul li a:hover{
     color: #fff !important;
+  }
+  .mail a{
+    text-transform: lowercase;
   }
 }
