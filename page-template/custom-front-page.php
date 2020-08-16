@@ -10,7 +10,7 @@ get_header(); ?>
 
   <?php if( get_theme_mod('bb_mobile_application_slider_hide_show', false) != '' || get_theme_mod('bb_mobile_application_responsive_slider', false) != ''){ ?> 
     <section id="slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('bb_mobile_application_slider_speed_option', 3000)); ?>"> 
         <?php $bb_mobile_application_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'bb_mobile_application_slider' . $count ));
@@ -37,9 +37,11 @@ get_header(); ?>
                 <h1><?php the_title();?></h1>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt, esc_attr(get_theme_mod('bb_mobile_application_slider_excerpt_length','10')))); ?></p>
               </div>
-              <div class="know-btn">
-                <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('KNOW MORE','bb-mobile-application'); ?><span class="screen-reader-text"><?php esc_html_e( 'KNOW MORE','bb-mobile-application' );?></span></a>
-              </div> 
+              <?php if( get_theme_mod('bb_mobile_application_slider_button','KNOW MORE') != ''){ ?>
+                <div class="know-btn">
+                  <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('bb_mobile_application_slider_button','KNOW MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('bb_mobile_application_slider_button','KNOW MORE'));?></span></a>
+                </div> 
+              <?php } ?>
             </div>
           </div>
           <?php $i++; endwhile; 

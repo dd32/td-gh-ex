@@ -213,6 +213,12 @@ Trying to create an interactive website with the help of a flexible option? If s
   * Resolved login page error.
   * Updated POT file.
 
+= 1.4 =
+  * Added slider speed option.
+  * Added slider height option.
+  * Added option to change slider button text.
+  * Updated POT file.
+
 == Resources ==
 
 BB Mobile Application WordPress Theme, Copyright 2018 ThemeShopy

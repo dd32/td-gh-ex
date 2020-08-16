@@ -369,4 +369,10 @@
 		$bb_mobile_application_custom_css .='font-size: '.esc_html($bb_mobile_application_scroll_font_size_icon).'px;';
 	$bb_mobile_application_custom_css .='}';
 
+	// Slider Height 
+	$bb_mobile_application_slider_image_height = get_theme_mod('bb_mobile_application_slider_image_height');
+	$bb_mobile_application_custom_css .='#slider img{';
+		$bb_mobile_application_custom_css .='height: '.esc_html($bb_mobile_application_slider_image_height).'px;';
+	$bb_mobile_application_custom_css .='}';
+
 
