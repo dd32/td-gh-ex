@@ -301,5 +301,11 @@
 		$bb_ecommerce_store_custom_css .='font-size: '.esc_html($bb_ecommerce_store_scroll_font_size_icon).'px;';
 	$bb_ecommerce_store_custom_css .='}';
 
+	// Slider Height 
+	$bb_ecommerce_store_slider_image_height = get_theme_mod('bb_ecommerce_store_slider_image_height');
+	$bb_ecommerce_store_custom_css .='#slider img{';
+		$bb_ecommerce_store_custom_css .='height: '.esc_html($bb_ecommerce_store_slider_image_height).'px;';
+	$bb_ecommerce_store_custom_css .='}';
+
 
 

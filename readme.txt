@@ -203,6 +203,14 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
   * Resolved login page error.
   * Updated POT file.
 
+= 1.5.7 =
+  * Added slider speed option.
+  * Added slider height option.
+  * Added option to change slider button text.
+  * Added “Call-able” Link.
+  * Done Email Address Clickable. 
+  * Updated POT file.
+
 == Resources ==
 
 BB Ecommerce Store WordPress Theme, Copyright (C) 2017, ThemeShopy

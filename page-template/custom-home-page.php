@@ -56,7 +56,7 @@ get_header(); ?>
 				
 				<?php if( get_theme_mod('bb_ecommerce_store_slider_hide_show', false) != '' || get_theme_mod('bb_ecommerce_store_responsive_slider', false) != ''){ ?>
 					<section id="slider">
-					  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+					  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('bb_ecommerce_store_slider_speed_option', 3000)); ?>"> 
 						    <?php $bb_ecommerce_store_slider_pages = array();
 						      	for ( $count = 1; $count <= 4; $count++ ) {
 							        $mod = intval( get_theme_mod( 'bb_ecommerce_store_slider' . $count ));
@@ -81,9 +81,11 @@ get_header(); ?>
 						          	<div class="carousel-caption">
 							            <div class="inner_carousel">
 							              	<h1><?php the_title();?></h1>
-							              	<div class="more-btn">            
-					                        	<a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?></span></a>
-					                        </div>		            
+							              	<?php if( get_theme_mod('bb_ecommerce_store_slider_button','READ MORE') != ''){ ?>
+								              	<div class="more-btn">            
+						                        	<a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('bb_ecommerce_store_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('bb_ecommerce_store_slider_button','READ MORE'));?></span></a>
+						                        </div>
+						                    <?php } ?>		            
 							            </div>
 						          	</div>
 						        </div>

@@ -960,6 +960,41 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	),
 	));
 
+	$wp_customize->add_setting( 'bb_ecommerce_store_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'bb_ecommerce_store_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'bb_ecommerce_store_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','bb-ecommerce-store' ),
+		'section' => 'bb_ecommerce_store_slidersettings',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_slider_image_height',array(
+		'default'=> __('550','bb-ecommerce-store'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_slider_image_height',array(
+		'label'	=> __('Slider Image Height','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_slidersettings',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_slider_button',array(
+		'default'=> __('READ MORE','bb-ecommerce-store'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_slider_button',array(
+		'label'	=> __('Slider Button','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_slidersettings',
+		'type'=> 'text'
+	));
+
 	// SERVICES
 	$wp_customize->add_section('bb_ecommerce_store_services',array(
 		'title'	=> __('Services','bb-ecommerce-store'),

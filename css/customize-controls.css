@@ -30,7 +30,8 @@ input#_customize-input-logo_size,
 input#_customize-input-bb_ecommerce_store_excerpt_number,
 input#_customize-input-bb_ecommerce_store_wooproducts_border_radius,
 input#_customize-input-bb_ecommerce_store_wooproducts_box_shadow,
-input#_customize-input-bb_ecommerce_store_product_button_border_radius{
+input#_customize-input-bb_ecommerce_store_product_button_border_radius,
+input#_customize-input-bb_ecommerce_store_slider_speed_option{
     width: 100%;
 }
 li#customize-control-logo_size {

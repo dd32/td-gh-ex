@@ -711,273 +711,293 @@ msgstr ""
 msgid 'Slider Image Opacity'
 msgstr ""
 
-#: inc/customizer.php:965
-msgid 'Services'
+#: inc/customizer.php:968
+msgid "Slider Speed Option"
 msgstr ""
 
-#: inc/customizer.php:966
-msgid 'This section will appear below the slider.'
+#: inc/customizer.php:979
+msgid "550"
+msgstr ""
+
+#: inc/customizer.php:983
+msgid "Slider Image Height"
 msgstr ""
 
 #: inc/customizer.php:989
+msgid "READ MORE"
+msgstr ""
+
+#: inc/customizer.php:993
+msgid "Slider Button"
+msgstr ""
+
+#: inc/customizer.php:1000
+msgid 'Services'
+msgstr ""
+
+#: inc/customizer.php:1001
+msgid 'This section will appear below the slider.'
+msgstr ""
+
+#: inc/customizer.php:1024
 msgid 'Select Category to display post'
 msgstr ""
 
-#: inc/customizer.php:995
+#: inc/customizer.php:1030
 msgid 'Products'
 msgstr ""
 
-#: inc/customizer.php:996
+#: inc/customizer.php:1031
 msgid 'This section will appear below the services.'
 msgstr ""
 
-#: inc/customizer.php:1005
+#: inc/customizer.php:1040
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:1016
+#: inc/customizer.php:1051
 msgid 'Select Page'
 msgstr ""
 
-#: inc/customizer.php:1023
+#: inc/customizer.php:1058
 msgid "404 Page"
 msgstr ""
 
-#: inc/customizer.php:1028
+#: inc/customizer.php:1063
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/customizer.php:1032
+#: inc/customizer.php:1067
 msgid "404 Page Title"
 msgstr ""
 
-#: inc/customizer.php:1038
+#: inc/customizer.php:1073
 msgid "Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us."
 msgstr ""
 
-#: inc/customizer.php:1042
+#: inc/customizer.php:1077
 msgid "404 Page Content"
 msgstr ""
 
-#: inc/customizer.php:1048
+#: inc/customizer.php:1083
 msgid "Back to Home Page"
 msgstr ""
 
-#: inc/customizer.php:1052
+#: inc/customizer.php:1087
 msgid "404 Page Button"
 msgstr ""
 
-#: inc/customizer.php:1059
+#: inc/customizer.php:1094
 msgid "Responsive Setting"
 msgstr ""
 
-#: inc/customizer.php:1069
+#: inc/customizer.php:1104
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:1079
+#: inc/customizer.php:1114
 msgid "Slider"
 msgstr ""
 
-#: inc/customizer.php:1089
+#: inc/customizer.php:1124
 msgid "Scroll To Top"
 msgstr ""
 
-#: inc/customizer.php:1099
+#: inc/customizer.php:1134
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer.php:1109
+#: inc/customizer.php:1144
 msgid "Preloader"
 msgstr ""
 
-#: inc/customizer.php:1115
+#: inc/customizer.php:1150
 msgid 'Blog Page Settings'
 msgstr ""
 
-#: inc/customizer.php:1125
+#: inc/customizer.php:1160
 msgid 'Post Date'
 msgstr ""
 
-#: inc/customizer.php:1135
+#: inc/customizer.php:1170
 msgid 'Comments'
 msgstr ""
 
-#: inc/customizer.php:1145
+#: inc/customizer.php:1180
 msgid 'Author'
 msgstr ""
 
-#: inc/customizer.php:1155
+#: inc/customizer.php:1190
 msgid 'Single Post Tags'
 msgstr ""
 
-#: inc/customizer.php:1165
+#: inc/customizer.php:1200
 msgid 'Single Post Image'
 msgstr ""
 
-#: inc/customizer.php:1175
+#: inc/customizer.php:1210
 msgid 'Post Description Length'
 msgstr ""
 
-#: inc/customizer.php:1198
+#: inc/customizer.php:1213
 msgid 'No Content'
 msgstr ""
 
-#: inc/customizer.php:1170
-#: inc/customizer.php:1179
+#: inc/customizer.php:1205
+#: inc/customizer.php:1214
 msgid 'Excerpt Content'
 msgstr ""
 
-#: inc/customizer.php:1180
+#: inc/customizer.php:1215
 msgid 'Full Content'
 msgstr ""
 
-#: inc/customizer.php:1189
+#: inc/customizer.php:1224
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:1201
+#: inc/customizer.php:1236
 msgid '...'
 msgstr ""
 
-#: inc/customizer.php:1205
+#: inc/customizer.php:1240
 msgid 'Post Excerpt Indicator Option'
 msgstr ""
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1247
 msgid 'READ MORE'
 msgstr ""
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1251
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:1226
+#: inc/customizer.php:1261
 msgid 'Meta Box Separator'
 msgstr ""
 
-#: inc/customizer.php:1228
+#: inc/customizer.php:1263
 msgid 'Add Meta Separator. e.g.: "|", "/", etc.'
 msgstr ""
 
-#: inc/customizer.php:1237
+#: inc/customizer.php:1272
 msgid "No Result Found"
 msgstr ""
 
-#: inc/customizer.php:1242
+#: inc/customizer.php:1277
 msgid "Nothing Found"
 msgstr ""
 
-#: inc/customizer.php:1246
+#: inc/customizer.php:1281
 msgid "No Result Found Title"
 msgstr ""
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1287
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1291
 msgid "No Result Found Content"
 msgstr ""
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1302
 msgid "No Result search"
 msgstr ""
 
-#: inc/customizer.php:1273
+#: inc/customizer.php:1308
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:1284
+#: inc/customizer.php:1319
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1321
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:1288
+#: inc/customizer.php:1323
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:1289
+#: inc/customizer.php:1324
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:1290
+#: inc/customizer.php:1325
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1326
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:1300
+#: inc/customizer.php:1335
 msgid 'Footer Widget Background Color'
 msgstr ""
 
-#: inc/customizer.php:1309
+#: inc/customizer.php:1344
 msgid 'Footer Widget Background Image'
 msgstr ""
 
-#: inc/customizer.php:1318
+#: inc/customizer.php:1353
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:1324
-#: inc/customizer.php:1334
+#: inc/customizer.php:1359
+#: inc/customizer.php:1369
 msgid 'center'
 msgstr ""
 
-#: inc/customizer.php:1329
+#: inc/customizer.php:1364
 msgid 'Copyright Text Alignment '
 msgstr ""
 
-#: inc/customizer.php:1332
+#: inc/customizer.php:1367
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1333
+#: inc/customizer.php:1368
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:1343
+#: inc/customizer.php:1378
 msgid 'Copyright Font Size'
 msgstr ""
 
-#: inc/customizer.php:1358
+#: inc/customizer.php:1393
 msgid 'Copyright Padding'
 msgstr ""
 
-#: inc/customizer.php:1374
+#: inc/customizer.php:1409
 msgid 'Show / Hide Scroll Top Button'
 msgstr ""
 
-#: inc/customizer.php:1379
-#: inc/customizer.php:1388
+#: inc/customizer.php:1414
+#: inc/customizer.php:1423
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:1384
+#: inc/customizer.php:1419
 msgid 'Scroll Back to Top Position'
 msgstr ""
 
-#: inc/customizer.php:1387
+#: inc/customizer.php:1422
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1389
+#: inc/customizer.php:1424
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:1398
+#: inc/customizer.php:1433
 msgid 'Scroll Icon Font Size'
 msgstr ""
 
-#: inc/customizer.php:1489
+#: inc/customizer.php:1524
 msgid 'BB Ecommerce Pro'
 msgstr ""
 
-#: inc/customizer.php:1490
+#: inc/customizer.php:1525
 msgid 'Go Pro'
 msgstr ""
