@@ -1,7 +1,7 @@
 === Cherish ===
 Contributors: Poena
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
 License: Dual license: GNU General Public License v2 or later, and MIT License
 License URI: https://www.gnu.org/licenses/gpl-2.0.html, https://opensource.org/licenses/MIT
@@ -33,6 +33,11 @@ You can optionally choose to not upgrade to the latest version,
 but you will then miss out on any new features that are added.
 
 == Changelog ==
+
+=1.8 2020-08-16=
+Added required items to style.css.
+Added license file.
+
 
 =1.7 2020-04-19=
 Added an option to add a custom link for the logo.
@@ -135,8 +140,8 @@ inc/ -contains the javascripts and customizer file.
 fonts/ -contains Font Awesome files.
 
 == Resources Used In This Theme ==
-All included photos where taken by the theme author and are licensed as public domain. Copyright Carolina Nymark 2015-2019.
-All images where created by the theme author and are licensed as public domain, Copyright Carolina Nymark 2015-2019.
+All included photos where taken by the theme author and are licensed as public domain. Copyright Carolina Nymark 2015-2020.
+All images where created by the theme author and are licensed as public domain, Copyright Carolina Nymark 2015-2020.
 -Except the mobile menu icon that is created by Font Awesome.
 
 Font Awesome by @davegandy - https://fontawesome.com - @fontawesome
@@ -158,8 +163,8 @@ License: MIT
 
 Cherish is a derivative work of:
 Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc. License: GNU General Public License v2 or later
-Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2019 WordPress.org, GNU General Public License v2 or later
-Twenty Nineteen https://wordpress.org/themes/twentynineteen/ Copyright 2018-2019 WordPress.org, GNU General Public License v2 or later
+Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2020 WordPress.org, GNU General Public License v2 or later
+Twenty Nineteen https://wordpress.org/themes/twentynineteen/ Copyright 2018-2020 WordPress.org, GNU General Public License v2 or later
 
 Sanitization
 Copyright (c) 2015-2019, WordPress Theme Review Team
