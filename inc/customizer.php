@@ -15,7 +15,7 @@
 
 function articlepress_customize_register( $wp_customize ) {
 
-	// Footer Social Icon
+	//=========================== Footer Social Icon
 	$wp_customize->add_section( 'footer_socail_icon', array(
 		'title'		=> esc_html__( 'Footer Socail Icon', 'articlepress' ),
 		'priority'	=> '30'
@@ -32,7 +32,6 @@ function articlepress_customize_register( $wp_customize ) {
 		'label'		=>	esc_html__( 'Icon Show / Hide', 'articlepress' ),
 		'type'		=>	'checkbox'
 	));
-
 
 
 	// Facebook
@@ -73,6 +72,37 @@ function articlepress_customize_register( $wp_customize ) {
 		'type'		=>	'url'
 	));
 
+
+
+	//=========================== Blog Settings
+	$wp_customize->add_section( 'blog_settings', array(
+		'title'		=> esc_html__( 'Blog Settings', 'articlepress' ),
+		'priority'	=> '30'
+	));
+
+	// Read More Button
+	$wp_customize->add_setting( 'blog_post_readmore_button_show_hide', array(
+		'default'  	=>	1,
+		'transport'	=>	'refresh',
+		'sanitize_callback'  => 'blog_post_readmore_button_show_hide_sanitize'
+	));
+	$wp_customize->add_control( 'blog_post_readmore_button_show_hide', array(
+		'section'	=> 	'blog_settings',
+		'label'		=>	esc_html__( 'Read More Button Show / Hide', 'articlepress' ),
+		'type'		=>	'checkbox'
+	));
+	
+	// Read More Text Chnage
+	$wp_customize->add_setting( 'blog_post_readmore_text_change', array(
+		'default'  	=>	'Continue reading',
+		'transport'	=>	'refresh',
+		'sanitize_callback'  => 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 'blog_post_readmore_text_change', array(
+		'section'	=> 	'blog_settings',
+		'label'		=>	esc_html__( 'Read More Text', 'articlepress' ),
+		'type'		=>	'text'
+	));
 
 
 
@@ -125,6 +155,13 @@ add_action( 'customize_preview_init', 'articlepress_customize_preview_js' );
 // Icon show hide Sanitize Value
 if ( ! function_exists( 'footer_socail_icon_show_hide_sanitize' ) ){
     function footer_socail_icon_show_hide_sanitize( $checked ) {
+        return ( ( isset( $checked ) && true == $checked ) ? true : false );
+    }
+}
+
+// Blog Read More Button SHow Hide
+if ( ! function_exists( 'blog_post_readmore_button_show_hide_sanitize' ) ){
+    function blog_post_readmore_button_show_hide_sanitize( $checked ) {
         return ( ( isset( $checked ) && true == $checked ) ? true : false );
     }
 }
