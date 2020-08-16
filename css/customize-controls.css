@@ -15,7 +15,8 @@ input#_customize-input-logo_size,
 input#_customize-input-advance_pet_care_excerpt_number,
 input#_customize-input-advance_pet_care_wooproducts_border_radius,
 input#_customize-input-advance_pet_care_wooproducts_box_shadow,
-input#_customize-input-advance_pet_care_product_button_border_radius{
+input#_customize-input-advance_pet_care_product_button_border_radius,
+input#_customize-input-advance_pet_care_slider_speed_option{
     width: 100%;
 }
 li#customize-control-logo_size {

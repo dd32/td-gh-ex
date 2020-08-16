@@ -7,14 +7,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-07-25 16:30+0530\n"
+"PO-Revision-Date: 2020-08-11 11:18+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: ar\n"
@@ -24,13 +24,13 @@ msgstr ""
 msgid "Not Found"
 msgstr "لم يتم العثور على"
 
-#: 404.php:13 inc/customizer.php:1060
+#: 404.php:13 inc/customizer.php:1095
 msgid ""
 "Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens "
 "to the best of us."
 msgstr "لم يتم العثور على"
 
-#: 404.php:16 inc/customizer.php:1070
+#: 404.php:16 inc/customizer.php:1105
 msgid "Back to Home Page"
 msgstr "يبدو أنك اتخذت منعطفا وهليبا خاطئين. لا تقلق و hellip يحدث لأفضل منا."
 
@@ -172,7 +172,7 @@ msgstr "بحثبحث"
 msgid "serach-outer"
 msgstr "ناخب البحث"
 
-#: no-results.php:12 inc/customizer.php:1264
+#: no-results.php:12 inc/customizer.php:1299
 msgid "Nothing Found"
 msgstr "لم يتم العثور على شيء"
 
@@ -230,7 +230,7 @@ msgstr "0 تعليق"
 #: template-parts/content-audio.php:65 template-parts/content-gallery.php:55
 #: template-parts/content-image.php:44 template-parts/content-video.php:66
 #: template-parts/content.php:44 template-parts/grid-layout.php:38
-#: inc/customizer.php:1234
+#: inc/customizer.php:1269
 msgid "READ MORE"
 msgstr "قراءة المزيد"
 
@@ -540,7 +540,7 @@ msgstr "أضف محتوى الشريط العلوي"
 msgid "Show / Hide Topbar"
 msgstr "إظهار / إخفاء الشريط العلوي"
 
-#: inc/customizer.php:812 inc/customizer.php:1091
+#: inc/customizer.php:812 inc/customizer.php:1126
 msgid "Sticky Header"
 msgstr "رأس مثبت"
 
@@ -608,8 +608,8 @@ msgstr "حدد صفحة صورة الشريحة"
 msgid "Size of image should be 1600 x 633"
 msgstr "يجب أن يكون حجم الصورة 1600 × 633"
 
-#: inc/customizer.php:963 inc/customizer.php:972 inc/customizer.php:1354
-#: inc/customizer.php:1406
+#: inc/customizer.php:963 inc/customizer.php:972 inc/customizer.php:1389
+#: inc/customizer.php:1444
 msgid "Left"
 msgstr "اليسار"
 
@@ -617,12 +617,12 @@ msgstr "اليسار"
 msgid "Slider Content Alignment"
 msgstr "محاذاة محتوى شريط التمرير"
 
-#: inc/customizer.php:971 inc/customizer.php:1411
+#: inc/customizer.php:971 inc/customizer.php:1446
 msgid "Center"
 msgstr "مركز"
 
-#: inc/customizer.php:973 inc/customizer.php:1355 inc/customizer.php:1401
-#: inc/customizer.php:1410
+#: inc/customizer.php:973 inc/customizer.php:1390 inc/customizer.php:1436
+#: inc/customizer.php:1445
 msgid "Right"
 msgstr "حق"
 
@@ -634,131 +634,151 @@ msgstr "شريط التمرير مقتطف الطول"
 msgid "Slider Image Opacity"
 msgstr "شريط التمرير عتامة الصورة"
 
-#: inc/customizer.php:1020
+#: inc/customizer.php:1023
+msgid "Slider Speed Option"
+msgstr "خيار سرعة المنزلق"
+
+#: inc/customizer.php:1034
+msgid "550"
+msgstr "خمسة مائة و خمسون"
+
+#: inc/customizer.php:1038
+msgid "Slider Image Height"
+msgstr "ارتفاع صورة المنزلق"
+
+#: inc/customizer.php:1044
+msgid "GET APPOINTMENT"
+msgstr "احصل على موعد"
+
+#: inc/customizer.php:1048
+msgid "Slider Button"
+msgstr "زر المنزلق"
+
+#: inc/customizer.php:1055
 msgid "Welcome Section"
 msgstr "قسم الترحيب"
 
-#: inc/customizer.php:1021
+#: inc/customizer.php:1056
 msgid "Add Welcome sections below."
 msgstr "أضف أقسام الترحيب أدناه."
 
-#: inc/customizer.php:1039
+#: inc/customizer.php:1074
 msgid "Select post"
 msgstr "اختيار وظيفة"
 
-#: inc/customizer.php:1045
+#: inc/customizer.php:1080
 msgid "404 Page"
 msgstr "404 صفحة"
 
-#: inc/customizer.php:1050
+#: inc/customizer.php:1085
 msgid "404 Not Found"
 msgstr "404 غير موجود"
 
-#: inc/customizer.php:1054
+#: inc/customizer.php:1089
 msgid "404 Page Title"
 msgstr "404 عنوان الصفحة"
 
-#: inc/customizer.php:1064
+#: inc/customizer.php:1099
 msgid "404 Page Content"
 msgstr "404 محتوى الصفحة"
 
-#: inc/customizer.php:1074
+#: inc/customizer.php:1109
 msgid "404 Page Button"
 msgstr "404 زر الصفحة"
 
-#: inc/customizer.php:1081
+#: inc/customizer.php:1116
 msgid "Responsive Setting"
 msgstr "إعداد متجاوب"
 
-#: inc/customizer.php:1101
+#: inc/customizer.php:1136
 msgid "Slider"
 msgstr "المنزلق"
 
-#: inc/customizer.php:1111
+#: inc/customizer.php:1146
 msgid "Metabox"
 msgstr "ميتابوكس"
 
-#: inc/customizer.php:1121
+#: inc/customizer.php:1156
 msgid "Sidebar"
 msgstr "الشريط الجانبي"
 
-#: inc/customizer.php:1131
+#: inc/customizer.php:1166
 msgid "Preloader"
 msgstr "التحميل المسبق"
 
-#: inc/customizer.php:1137
+#: inc/customizer.php:1172
 msgid "Blog Page Settings"
 msgstr "إعدادات صفحة المدونة"
 
-#: inc/customizer.php:1147
+#: inc/customizer.php:1182
 msgid "Post Date"
 msgstr "تاريخ آخرتاريخ آخر"
 
-#: inc/customizer.php:1157
+#: inc/customizer.php:1192
 msgid "Comments"
 msgstr "تعليقات"
 
-#: inc/customizer.php:1167
+#: inc/customizer.php:1202
 msgid "Author"
 msgstr "مؤلف"
 
-#: inc/customizer.php:1177
+#: inc/customizer.php:1212
 msgid "Single Post Tags"
 msgstr "علامات مشاركة واحدة"
 
-#: inc/customizer.php:1187
+#: inc/customizer.php:1222
 msgid "Single Post Image"
 msgstr "صورة مشاركة واحدة"
 
-#: inc/customizer.php:1197
+#: inc/customizer.php:1232
 msgid "Post Description Length"
 msgstr "طول وصف المشاركة"
 
-#: inc/customizer.php:1200
+#: inc/customizer.php:1235
 msgid "No Content"
 msgstr "لا يوجد محتوى"
 
-#: inc/customizer.php:1192 inc/customizer.php:1201
+#: inc/customizer.php:1227 inc/customizer.php:1236
 msgid "Excerpt Content"
 msgstr "محتوى مقتطف"
 
-#: inc/customizer.php:1202
+#: inc/customizer.php:1237
 msgid "Full Content"
 msgstr "المحتوى الكامل"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1246
 msgid "Excerpt length"
 msgstr "طول مقتطفطول مقتطف"
 
-#: inc/customizer.php:1223
+#: inc/customizer.php:1258
 msgid "..."
 msgstr "..."
 
-#: inc/customizer.php:1227
+#: inc/customizer.php:1262
 msgid "Post Excerpt Indicator Option"
 msgstr "خيار مؤشر مقتطفات ما بعد"
 
-#: inc/customizer.php:1238
+#: inc/customizer.php:1273
 msgid "Add Button Text"
 msgstr "إضافة نص الزر"
 
-#: inc/customizer.php:1248
+#: inc/customizer.php:1283
 msgid "Meta Box Separator"
 msgstr "فاصل مربع التعريف"
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1285
 msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
 msgstr "إضافة فاصل التعريف. على سبيل المثال: \"|\" ، \"/\" ، إلخ."
 
-#: inc/customizer.php:1259
+#: inc/customizer.php:1294
 msgid "No Result Found"
 msgstr "لم يتم العثور على نتائج"
 
-#: inc/customizer.php:1268
+#: inc/customizer.php:1303
 msgid "No Result Found Title"
 msgstr "لم يتم العثور على عنوان نتيجة"
 
-#: inc/customizer.php:1274
+#: inc/customizer.php:1309
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -766,23 +786,23 @@ msgstr ""
 "آسف ، ولكن لا شيء يطابق مصطلحات البحث. أرجو المحاولة مرة أخرى بإستخدام كلمات "
 "أخرى."
 
-#: inc/customizer.php:1278
+#: inc/customizer.php:1313
 msgid "No Result Found Content"
 msgstr "لم يتم العثور على نتيجة للمحتوى"
 
-#: inc/customizer.php:1289
+#: inc/customizer.php:1324
 msgid "No Result search"
 msgstr "لا نتائج بحث"
 
-#: inc/customizer.php:1295
+#: inc/customizer.php:1330
 msgid "Footer Text"
 msgstr "نص التذييل"
 
-#: inc/customizer.php:1306
+#: inc/customizer.php:1341
 msgid "Footer widget area"
 msgstr "منطقة القطعة تذييل"
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1343
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -790,66 +810,66 @@ msgstr ""
 "حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى Appearance> "
 "Widgets وأضف Widgets."
 
-#: inc/customizer.php:1310
+#: inc/customizer.php:1345
 msgid "One"
 msgstr "واحد"
 
-#: inc/customizer.php:1311
+#: inc/customizer.php:1346
 msgid "Two"
 msgstr "اثنان"
 
-#: inc/customizer.php:1312
+#: inc/customizer.php:1347
 msgid "Three"
 msgstr "ثلاثة"
 
-#: inc/customizer.php:1313
+#: inc/customizer.php:1348
 msgid "Four"
 msgstr "أربعة"
 
-#: inc/customizer.php:1322
+#: inc/customizer.php:1357
 msgid "Footer Widget Background Color"
 msgstr "لون خلفية تذييل القطعة"
 
-#: inc/customizer.php:1331
+#: inc/customizer.php:1366
 msgid "Footer Widget Background Image"
 msgstr "صورة خلفية القطعة تذييل"
 
-#: inc/customizer.php:1340
+#: inc/customizer.php:1375
 msgid "Copyright Text"
 msgstr "نص حقوق النشر"
 
-#: inc/customizer.php:1346 inc/customizer.php:1356
+#: inc/customizer.php:1381 inc/customizer.php:1391
 msgid "center"
 msgstr "مركز"
 
-#: inc/customizer.php:1351
+#: inc/customizer.php:1386
 msgid "Copyright Text Alignment"
 msgstr "محاذاة نص حقوق النشر"
 
-#: inc/customizer.php:1365
+#: inc/customizer.php:1400
 msgid "Copyright Font Size"
 msgstr "حجم خط حقوق التأليف والنشر"
 
-#: inc/customizer.php:1380
+#: inc/customizer.php:1415
 msgid "Copyright Padding"
 msgstr "حشو حقوق التأليف والنشر"
 
-#: inc/customizer.php:1396
+#: inc/customizer.php:1431
 msgid "Show / Hide Scroll Top Button"
 msgstr "إظهار / إخفاء زر التمرير العلوي"
 
-#: inc/customizer.php:1416
+#: inc/customizer.php:1441
 msgid "Scroll Back to Top Position"
 msgstr "قم بالتمرير إلى أعلى الموضع"
 
-#: inc/customizer.php:1420
+#: inc/customizer.php:1455
 msgid "Scroll Icon Font Size"
 msgstr "حجم الخط رمز التمرير"
 
-#: inc/customizer.php:1510
+#: inc/customizer.php:1545
 msgid "Pet Care Theme"
 msgstr "موضوع رعاية الحيوانات الأليفة"
 
-#: inc/customizer.php:1511
+#: inc/customizer.php:1546
 msgid "Go Pro"
 msgstr "جو برو"

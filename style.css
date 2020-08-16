@@ -6,7 +6,7 @@ Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, deeply customizable and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
 Tested up to: 5.4.2
 Requires PHP: 7.2.14
-Version: 0.5.9
+Version: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -454,14 +454,14 @@ input[type="submit"] {
 .phone i{
   margin-right: 5px;
 }
-.phone{
+.phone a{
   font-size: 14px;
   text-align: center;
-  background: #b65741;
+  color : #fff;
 }
-.mail {
+.mail a{
   font-size: 14px;
-  background: #b65741;
+  color: #fff;
 }
 .pet-top .address,
 .pet-top .time{
@@ -2144,11 +2144,20 @@ iframe {
   .primary-navigation ul ul li:first-child{
     border-top: none;
   }
-  #contact-info form.search-form ,#contact-info, #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn{
+  #menu-sidebar .phone a, #contact-info form.search-form ,#contact-info, #menu-sidebar .social-icons a, #menu-sidebar .mail a, #menu-sidebar .book-btn{
     display: block;
   }
   .top-header, .search-box ,.top-header .social-icons, .top-header .mail, .top-header .book-btn{
     display: none;
+  }
+  #menu-sidebar .mail a{
+    text-transform: lowercase;
+    font-weight: 500;
+    padding: 10px;
+  }
+  #menu-sidebar .phone a{
+    padding: 10px;
+    margin: 0;
   }
   #menu-sidebar .social-icons a{
     padding:0px;
@@ -2211,6 +2220,7 @@ iframe {
   .social-icons{
     text-align: center;
     margin-top: 10px;
+    display: inline-flex;
   }
   .sf-arrows .sf-with-ul:after{
     position: absolute;

@@ -143,6 +143,14 @@ Advance Pet Care is a robust, reliable and clean WordPress theme for animal care
 * Resolved login page error.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
+= 0.6 =
+* Added slider speed option.
+* Added slider height option.
+* Added option to change slider button text.
+* Added “Call-able” Link.
+* Done Email Address Clickable. 
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance Pet Care WordPress Theme, Copyright 2018 Themeshopy
