@@ -4,7 +4,7 @@ Contributors: WPinterface
 
 Requires at least:4.0
 Tested up to: 5.3
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Advance Blog is distributed under the terms of the GNU GPL
 Advance Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
+
+= 1.1.3 - [15-Aug-2020] =
+* Added tested up to tag.
 
 = 1.1.2 - [25-April-2020] =
 * fixed keyboard navigation and other quick fixes.
@@ -70,10 +73,9 @@ Advance Blog includes support for Jetpack's Infinite Scroll as well as other fea
 
 
 == Credits ==
-
-This theme uses [https://www.pexels.com/photo/alone-buildings-city-cityscape-220444/] created by Pixabay [https://www.pexels.com/u/pixabay/] which is licensed under Creative Commons Zero (CC0) license [https://creativecommons.org/publicdomain/zero/1.0/]
-This theme uses [https://www.pexels.com/photo/red-painted-woman-illustration-50595/] created by Pixabay [https://www.pexels.com/u/pixabay/] which is licensed under Creative Commons Zero (CC0) license [https://creativecommons.org/publicdomain/zero/1.0/]
-
+https://stocksnap.io/photo/architecture-building-TANQZM2HEP
+https://stocksnap.io/photo/woman-attractive-YTLT81RVSE
+Image Released under Creative Commons CC0 license.
 
 * Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
