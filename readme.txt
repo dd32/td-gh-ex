@@ -1,10 +1,9 @@
 === Bunny ===
 Contributors: poena
+Version: 2.2
 Requires at least: 5.0
-Tested up to: 5.4
-Version: 2.1
+Tested up to: 5.5
 Requires PHP: 5.6
-Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar, blog
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -34,6 +33,9 @@ Under the Theme Options panel and the 'Arc Settings' section you will find the s
 Set a small number for a high arc, and high number for a low arc.
 
 == Changelog ==
+
+= 2.2 2020-08-16 =
+Added required items to style.css
 
 = 2.1 2020-04-19 =
 Updated links, tested up to, and dates.
