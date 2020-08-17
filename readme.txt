@@ -1,7 +1,7 @@
 === ArtGallery ===
 Contributors: customizablethemes
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
-Tested up to: 5.4.1
+Tested up to: 5.5
 Stable tag: 1.1.2
 License: License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,6 +39,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.0 =
+* updates for WordPress ver. 5.5
 
 = 1.2.9 =
 * update used images with CC0 license
