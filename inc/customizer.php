@@ -871,6 +871,41 @@ function advance_business_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_business_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_business_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_business_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-business' ),
+		'section' => 'advance_business_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_business_slider_image_height',array(
+		'default'=> __('550','advance-business'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-business'),
+		'section'=> 'advance_business_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_business_slider_button',array(
+		'default'=> __('READ MORE','advance-business'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_slider_button',array(
+		'label'	=> __('Slider Button','advance-business'),
+		'section'=> 'advance_business_slider',
+		'type'=> 'text'
+	));
+
 	//Contact Detail section
 	$wp_customize->add_section('advance_business_contact_detail',array(
 		'title'	=> __('Contact Detail Section','advance-business'),

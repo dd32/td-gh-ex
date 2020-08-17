@@ -10,7 +10,7 @@ get_header(); ?>
 
   <?php if( get_theme_mod( 'advance_business_slider_hide', false) != '' || get_theme_mod( 'advance_business_responsive_slider', false) != '') { ?>
     <section id="slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_business_slider_speed_option', 3000)); ?>"> 
         <?php $advance_business_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_business_slider_page' . $count ));
@@ -36,9 +36,11 @@ get_header(); ?>
                 <div class="inner_carousel">
                   <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_business_slider_excerpt_length','20')))); ?></p>
-                  <div class="know-btn">
-                    <a href="<?php the_permalink(); ?>"> <?php echo esc_html_e('READ MORE','advance-business'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-business' ); ?></span></a>
-                  </div>
+                  <?php if( get_theme_mod('advance_business_slider_button','READ MORE') != ''){ ?>
+                    <div class="know-btn">
+                      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_business_slider_button','READ MORE'));?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_business_slider_button','READ MORE'));?></span></a>
+                    </div>
+                  <?php } ?>
                 </div>
               </div>
             </div>
@@ -93,7 +95,7 @@ get_header(); ?>
                     </div>
                     <div class="col-lg-9 col-md-9">
                       <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_email_title','')); ?> </p>
-                      <p><?php echo esc_html( get_theme_mod('advance_business_email','') ); ?></p>                    
+                      <a href="mailto:<?php echo esc_url( get_theme_mod('advance_business_email','') ); ?>"><?php echo esc_html( get_theme_mod('advance_business_email','') ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_business_email','') ); ?></span></a>                    
                     </div>
                   </div>
                 </div>
@@ -108,7 +110,7 @@ get_header(); ?>
                     </div>
                     <div class="col-lg-9 col-md-9">
                       <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_contact_title','')); ?> </p>
-                      <p><?php echo esc_html( get_theme_mod('advance_business_contact','')); ?></p>                    
+                      <a href="tel:<?php echo esc_url( get_theme_mod('advance_business_contact','' )); ?>"><?php echo esc_html( get_theme_mod('advance_business_contact','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_business_contact','')); ?></span></a>                    
                     </div>
                   </div>
                 </div>

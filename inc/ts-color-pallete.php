@@ -342,5 +342,11 @@
 		$advance_business_custom_css .='font-size: '.esc_html($advance_business_scroll_font_size_icon).'px;';
 	$advance_business_custom_css .='}';
 
+	// Slider Height 
+	$advance_business_slider_image_height = get_theme_mod('advance_business_slider_image_height');
+	$advance_business_custom_css .='#slider img{';
+		$advance_business_custom_css .='height: '.esc_html($advance_business_slider_image_height).'px;';
+	$advance_business_custom_css .='}';
+
 
 

@@ -140,6 +140,14 @@ Advance Business is a powerful, bold, flexible, dynamic and neatly-structured bu
   * Resolved login page error.
   * Updated POT file.
 
+= 0.5.1 =
+  * Added slider speed option.
+  * Added slider height option.
+  * Added option to change slider button text.
+  * Added “Call-able” Link.
+  * Done Email Address Clickable. 
+  * Updated POT file.
+
 == Resources ==
 
 Advance Business WordPress Theme, Copyright 2018 Themeshopy
