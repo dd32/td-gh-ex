@@ -162,7 +162,7 @@
 
     // add support of browsers which don't support focus-within
     $('#navmain > div > ul > li > a:not(.login-form-icon):not(.search-form-icon), #navmain > div > ul > li > ul > li > a, #navmain > div > ul > li > ul > li > ul > li > a, .mega-menu-sub-menu')
-      .bind('hover focus', function() {
+      .bind('mouseenter focus', function() {
         $(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
         $(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
 

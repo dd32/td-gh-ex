@@ -1,7 +1,7 @@
 === AyaClub ===
 Contributors: ayatemplates
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
-Tested up to: 5.4.1
+Tested up to: 5.5
 Stable tag: 1.0.9
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
@@ -39,6 +39,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.9 =
+* updates for WordPress ver. 5.5
 
 = 1.2.8 =
 * update used images with CC0 license
