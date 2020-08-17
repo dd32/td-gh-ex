@@ -3,7 +3,7 @@ Contributors: tishonator
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, front-page-post-form
-Tested up to: 5.4.1
+Tested up to: 5.5
 Stable tag: 1.9.3
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
@@ -43,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.9.4 =
+* updates for WordPress ver. 5.5
 
 = 1.9.3 =
 * update screenshot images with CC0 license
