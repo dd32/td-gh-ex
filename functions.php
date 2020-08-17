@@ -94,7 +94,10 @@ if ( ! function_exists( 'arilewp_setup' ) ) :
 		/**
 		 * Custom background support.
 		 */
-		add_theme_support( 'custom-background' );
+		add_theme_support( 'custom-background', apply_filters( 'arilewp_custom_background_args', array(
+			'default-color' => 'f3f8fe',
+			'default-image' => '',
+		) ) );
 		
 		/**
 		* Set default content width.
