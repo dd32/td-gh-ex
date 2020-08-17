@@ -1,16 +1,17 @@
 === Banquet Hall ===
 
-Contributors: SKT Themes
-Requires at least: WordPress 4.5  
-Tested up to: WordPress 5.2.2
-Version: 1.0
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+Contributors: sonalsinha21
+Requires at least: 5.0
+Requires PHP:  5.6
+Tested up to: 5.5
+Version: 1.1
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/license-list.html#GPLv2   
 Tags: two-columns,right-sidebar,full-width-template,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments,featured-images,footer-widgets,rtl-language-support,custom-logo,editor-style,custom-header,blog,photography,portfolio
 
 == Description ==
 
-Banquet Hall is marriage, wedding, celebration, events, conference, campaigns, fundraisers, music band event, DJ night, commemoration, festivals, enjoyment, parties, meetings, encounter, jubiliation, revelry, carnival, presentation, marital, engagement, ring, naming ceremony. Since the theme is pictoral can be used for portfolio and photographers as well. Interior designers, architects, speakers, online coaches and business houses can also make use of this theme. Compatible with WooCommerce, page builders.
+Banquet Hall is marriage, wedding, celebration, events, conference, campaigns, fundraisers, music band event, DJ night, commemoration, festivals, enjoyment, parties, meetings, encounter, jubiliation, revelry, carnival, presentation, marital, engagement, ring, naming ceremony. It is multipurpose template and comes with a ready to import Elementor template plugin as add on which allows to import 63+ design templates for making use in home and other inner pages. Use it to create any type of business, personal, blog and eCommerce website. It is fast, flexible, simple and fully customizable. WooCommerce ready designs. Since the theme is pictoral can be used for portfolio and photographers as well. Interior designers, architects, speakers, online coaches and business houses can also make use of this theme.
  
 == Theme Resources == 
 
@@ -134,5 +135,8 @@ License URL: http://www.gnu.org/licenses/gpl-2.0.html
 For any help you can mail us at support[at]sktthemes.com
 
 == Changelog ==
+= 1.1 =
+*      Updated theme as per latest theme check and added SKT Templates plugin via TGM
+
 = 1.0 =
 *      Initial version release. 

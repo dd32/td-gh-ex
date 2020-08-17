@@ -17,6 +17,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php do_action( 'wp_body_open' ); ?>
 <!--HEADER INFO AREA STARTS-->
 <?php 
 $header_contactnumber = get_theme_mod('header_contactnumber');
@@ -45,7 +46,7 @@ $hidetopbar = get_theme_mod('hide_header_topbar', 1);
     </div>
     <?php } ?>
     <div id="topmenu">
-    	         <div class="toggle"><a class="toggleMenu" href="#" style="display:none;"><?php esc_attr_e('Menu','banquet-hall'); ?></a></div> 
+    	         <div class="toggle"><a class="toggleMenu" href="#" style="display:none;"><?php esc_html_e('Menu','banquet-hall'); ?></a></div> 
         <div class="sitenav">
           <?php wp_nav_menu( array('theme_location' => 'primary') ); ?>         
         </div><!-- .sitenav-->          

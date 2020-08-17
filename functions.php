@@ -290,3 +290,42 @@ function banquet_hall_wp_admin_style($hook) {
 		wp_enqueue_style( 'banquet-hall-admin-style', get_template_directory_uri() . '/css/banquet-hall-admin-style.css' );
 }
 add_action( 'admin_enqueue_scripts', 'banquet_hall_wp_admin_style' );
+
+// WordPress wp_body_open backward compatibility
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}
+
+/**
+ * Include the Plugin_Activation class.
+ */
+
+require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+add_action( 'tgmpa_register', 'banquet_hall_register_required_plugins' );
+ 
+function banquet_hall_register_required_plugins() {
+	$plugins = array(
+		array(
+			'name'      => 'SKT Templates',
+			'slug'      => 'skt-templates',
+			'required'  => false,
+		) 				
+	);
+
+	$config = array(
+		'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'skt-install-plugins', // Menu slug.
+		'parent_slug'  => 'themes.php',            // Parent menu slug.
+		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+	);
+
+	tgmpa( $plugins, $config );
+}
