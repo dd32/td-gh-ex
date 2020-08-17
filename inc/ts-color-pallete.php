@@ -355,6 +355,12 @@
 		$advance_ecommerce_store_custom_css .='}';
 	}
 
+	// Slider Height 
+	$advance_ecommerce_store_slider_image_height = get_theme_mod('advance_ecommerce_store_slider_image_height');
+	$advance_ecommerce_store_custom_css .='#slider img{';
+		$advance_ecommerce_store_custom_css .='height: '.esc_html($advance_ecommerce_store_slider_image_height).'px;';
+	$advance_ecommerce_store_custom_css .='}';
+
 
 
 

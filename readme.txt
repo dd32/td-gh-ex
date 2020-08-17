@@ -151,6 +151,12 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Resolved login page error.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
+= 0.6.4 =
+* Added slider speed option.
+* Added slider height option.
+* Added option to change slider button text.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance Ecommerce Store WordPress Theme, Copyright 2018 Themeshopy

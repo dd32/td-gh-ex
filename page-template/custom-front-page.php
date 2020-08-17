@@ -51,7 +51,7 @@ get_header(); ?>
           <?php do_action( 'advance_ecommerce_store_before_slider' ); ?>
           <?php if( get_theme_mod( 'advance_ecommerce_store_slider_hide', false) != '' || get_theme_mod( 'advance_ecommerce_store_responsive_slider', false) != '') { ?>
           <div id="slider">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_ecommerce_store_slider_speed_option', 3000)); ?>">
               <?php $advance_ecommerce_store_slider_pages = array();
                 for ( $count = 1; $count <= 4; $count++ ) {
                   $mod = intval( get_theme_mod( 'advance_ecommerce_store_slider_page' . $count ));
@@ -78,9 +78,11 @@ get_header(); ?>
                         <h1><?php the_title(); ?></h1>
                         <hr class="slidehr">
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','15')))); ?></p>
-                        <div class="more-btn">              
-                          <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-ecommerce-store' ); ?></span></a>
-                        </div>
+                        <?php if( get_theme_mod('advance_ecommerce_store_slider_button','READ MORE') != ''){ ?>
+                          <div class="more-btn">              
+                            <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_slider_button','READ MORE'));?></span></a>
+                          </div>
+                        <?php } ?>
                       </div>
                     </div>
                   </div>

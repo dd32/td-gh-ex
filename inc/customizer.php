@@ -871,6 +871,41 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_ecommerce_store_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_ecommerce_store_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_ecommerce_store_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-ecommerce-store' ),
+		'section' => 'advance_ecommerce_store_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_ecommerce_store_slider_image_height',array(
+		'default'=> __('550','advance-ecommerce-store'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_ecommerce_store_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-ecommerce-store'),
+		'section'=> 'advance_ecommerce_store_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_ecommerce_store_slider_button',array(
+		'default'=> __('READ MORE','advance-ecommerce-store'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_ecommerce_store_slider_button',array(
+		'label'	=> __('Slider Button','advance-ecommerce-store'),
+		'section'=> 'advance_ecommerce_store_slider',
+		'type'=> 'text'
+	));
+
 	//Products Service
 	$wp_customize->add_section( 'advance_ecommerce_store_services_section' , array(
     	'title'      => __( 'Product Services', 'advance-ecommerce-store' ),
