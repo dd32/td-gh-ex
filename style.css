@@ -1,12 +1,12 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: https://www.northern-web-coders.de/blog/2020/06/northern-web-coders-3-3/
-Description: Northern-Web-Coders 3.3 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
+Theme URI: https://www.northern-web-coders.de/blog/2020/08/northern-web-coders-3-4/
+Description: Northern-Web-Coders 3.4 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
 Author: Kai Ackermann
-Author URI: http://www.design-coding.de
-Version: 3.3
+Author URI: https://www.design-coding.de
+Version: 3.4
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.2.4
 Tags: one-column, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, wide-blocks 
 Text Domain: northern-web-coders
@@ -44,15 +44,15 @@ License URI: http://www.gnu.org/licenses/gpl.html
       url('fonts/roboto-v18-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
+html, body {overflow-x:hidden}
+
 body
 {
    font-family:'Roboto', sans-serif;
    background: #ffffff;
    margin-top: 2%;
-   overflow-x: hidden;
    width:100%;
    height:100%;
-
 }
 
 /*header*/
@@ -117,7 +117,7 @@ img#headerpic
    margin-right : calc( -100vw / 2 + 100% / 2 );
    width: 100vw;
    max-width: 1000%;
-   margin-bottom: -1px;
+   margin-bottom: 10px;
 }
 
 #wrapper
@@ -136,7 +136,6 @@ aside
    max-width: 1000%;
    line-height: 1.5;
    font-size: 17px;
-
    background:transparent;
    float: left;
 }
@@ -179,7 +178,7 @@ aside
 {
    margin-left: 20px;
    margin-top: 5px;
-margin-bottom: 15px;
+   margin-bottom: 15px;
 }
 
 ul.wp-block-latest-posts li
@@ -187,8 +186,6 @@ ul.wp-block-latest-posts li
    margin-left: 20px;
    margin-bottom: 15px
 }
-
-
 
 #content ul.blocks-gallery-grid
 {
@@ -245,7 +242,7 @@ margin: 25px 0 25px 0;
 {
    color: #000;
    font-weight: bold;
-font-size: 15px
+   font-size: 15px
 }
 
 #content h2.storytitle
@@ -282,7 +279,7 @@ font-size: 15px
    margin: 0 0 60px 0;
    height: 32px;   
    width: 100%;
-float: left;
+   float: left;
 }
 
 #content h1,
@@ -349,9 +346,20 @@ float: left;
    margin-bottom: 10px;
 }
 
-#content a, #content code, #content pre
+#content article p a, 
+#content article ul li  a, 
+#content article ol li  a,
+#content article dl dd a,
+#content .storytitle a, 
+#content .commentlink a, 
+#content code,
+#content pre,
+#content .wp-block-file a,
+#content a.more-link,
+#content table a,
+#content figcaption a
 {
-	color: inherit;
+   color: inherit;
 }
 
 #content blockquote
@@ -366,10 +374,9 @@ float: left;
 #content blockquote p, #content blockquote cite
 {
    margin: 5px;
-   
 }
 
-#content .wp-block-pullquote blockquote {
+#content .wp-block-pullquote blockquote, fieldset {
    border: none;
 }
 
@@ -390,8 +397,8 @@ float: left;
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
-	max-width: 100%;
-	text-align: inherit;
+   max-width: 100%;
+   text-align: inherit;
 }
 
 #content pre {
@@ -430,14 +437,14 @@ float: left;
 
 #content form.post-password-form input
 {
-border: 1px solid #dfdfdf;
+   border: 1px solid #dfdfdf;
    display: block;
    min-height: 30px;
    line-height: 30px;
    background: #fff;
    border: 1px solid #dfdfdf;
    padding: 0 10px;
-margin-bottom: 10px;
+   margin-bottom: 10px;
 }
 
 #content form.post-password-form input:nth-child(2):hover
@@ -464,12 +471,17 @@ nav.woocommerce-pagination ul.page-numbers li a
    color: #000 !important
 }
 
+.product_type_simple, .button.button
+{
+   color: #fff !important;
+   background: #77A464 !important;
+}
+
 #content div.pagenav ul,
 .attachment div.pagenav
 {
    margin-left: 0;
 }
-
 
 #content div.pagenav li
 {
@@ -491,7 +503,6 @@ nav.woocommerce-pagination ul.page-numbers li a
 {
    color: #FF5D4C;
 }
-
 
 /*footer*/
 footer#footer
@@ -594,7 +605,6 @@ img {
    height: auto;
 }
 
-
 aside .wp-caption.alignnone
 {
    margin: 10px 20px 30px 0;
@@ -628,6 +638,25 @@ a img.alignleft {
    margin: 5px 20px 25px 0;
 }
 
+
+
+.wp-block-cover.alignwide,
+.wp-block-cover.alignfull, 
+.wp-block-cover.aligncenter {
+   margin-bottom: 25px;
+}
+
+
+.wp-block-cover.alignleft {
+   float:left;
+   margin: 5px 20px 25px 0;
+}
+
+.wp-block-cover.alignright {
+   float:right;
+   margin: 5px 0 25px 20px;
+}
+
 .wp-caption,
 .entry-caption  {
    background: transparent;
@@ -635,10 +664,6 @@ a img.alignleft {
    padding: 7px 5px 5px;
    text-align: center;
    clear: both;
-}
-
-.wp-caption.alignleft {
-   margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignright {
@@ -677,7 +702,6 @@ img.wp-smiley
 }
 
 /* comments*/
-
 #comments
 {
    float: left;
@@ -690,8 +714,8 @@ img.wp-smiley
 
 #wp-comment-cookies-consent
 {
-float:left;
-margin: -2px 3px 0 0;
+   float:left;
+   margin: -2px 3px 0 0;
 }
 
 .comment-respond
@@ -773,15 +797,12 @@ div.reply
    background: #F8F8F8;
    margin-bottom: 10px;
    padding: 10px 10px  10px 10px;
-
 }
 
 .bypostauthor
 {
    border: 2px solid #3F3F3F;
 }
-
-
 
 #respond
 {
@@ -880,6 +901,10 @@ a.comment-reply-link {
    font-weight: bold;
 }
 
+a#cancel-comment-reply-link
+{
+margin-left: 10px}
+
 nav.comment-navigation
 {
    background: #E3E3E3;
@@ -901,20 +926,15 @@ span.required
    display: inline;
 }
 
-
-
-
-
-
 li.wp-block-latest-comments__comment
 {
-margin: 0 0 0 0;
+   margin: 0 0 0 0;
 }
 
 li.wp-block-latest-comments__comment img.avatar
 {
-float: left;
-margin: 0 0 -90px 0;
+   float: left;
+   margin: 0 0 -90px 0;
 }
 
 ol.wp-block-latest-comments article
@@ -932,13 +952,7 @@ ol.wp-block-latest-comments footer
 {
    margin: -10px 0 0 0;
 }
-
-
-
-
-
-
-
+ 
 /*aside*/
 aside
 {
@@ -972,12 +986,10 @@ aside h3
    word-wrap: break-word;
 }
 
-
 aside .textwidget
 {
    margin-bottom: 35px;  
 }
-
 
 aside .custom-html-widget,
 aside .textwidget p
@@ -985,7 +997,6 @@ aside .textwidget p
    font-size: 16px;
    padding: 10px;
 }
-
 
 aside .tagcloud{
    color: #464646;
@@ -1058,7 +1069,6 @@ aside select
    background: #fff;
    font-weight: bold;
 }
-
 
 aside ul
 {
@@ -1182,7 +1192,6 @@ label.screen-reader-text
    display: none
 }
 
-
 #review_form_wrapper
 {
    padding: 2% 3% 4% 3%;
@@ -1191,7 +1200,6 @@ label.screen-reader-text
 
 form.woocommerce-ordering select,
 form#commentform select
-
 {
    border: 0;
    line-height: 35px;
@@ -1199,10 +1207,11 @@ form#commentform select
    font-weight: bold;
 }
 
-.button
+form#commentform input#author,
+form#commentform input#email,
+form#commentform input#url
 {
-   background: #77A464 !important;
-
+   width: 50%
 }
 
 ul.products
@@ -1217,51 +1226,26 @@ p.has-drop-cap:not(:focus):first-letter {
    font-size:4.0em;
 }
 
-.wp-block-cover
-{
-margin: 15px;
-}
-
-.wp-block-cover .wp-block-cover__inner-container {
-	width: calc(100% - 4rem);
-	padding: 2rem 0;
-}
-
-.wp-block-cover p
-{
-font-size: 30px;
-
-}
-
-.wp-block-cover .wp-block-cover-text
-{   
-   color: #fff !important;
-}
-
-.wp-block-cover .wp-block-cover-text strong
-{   
-   font-weight: bold;
-}
-
-.wp-block-cover .wp-block-cover-text em
-{   
-   font-style: italic;
-}
 
 .wp-block-button
 {
-margin:15px
+   margin:15px
 }
 
 a.wp-block-file__button
-{color: #fff !important;}
+{
+   color: #fff !important;
+}
 
+/* Block: Cover ------------------------------ */
 
-
-
+.wp-block-cover
+{
+   margin-left:-16px
+}
 
 .alignfull,
-.wp-block-gallery.alignfull 
+.wp-block-gallery .alignfull 
 {
    margin-left  : calc( -100vw / 2 + 100% / 2 );
    margin-right : calc( -100vw / 2 + 100% / 2 );
@@ -1277,11 +1261,10 @@ a.wp-block-file__button
    max-width: 1000%;
 }
 
-.alignwide,
-.wp-block-gallery.alignwide {
-   margin-left  : calc( -80vw / 2 + 100% / 2 );
-   margin-right : calc( -80vw / 2 + 100% / 2 );
-   width: 80vw;
+.wp-block-gallery .alignwide{
+   margin-left  : calc( -90vw / 2 + 100% / 2 );
+   margin-right : calc( -90vw / 2 + 100% / 2 );
+   width: 90vw;
    max-width: 1000%;
 }
 
@@ -1336,21 +1319,61 @@ figcaption {
    padding: 0 7px
 }
 
-
 @media (max-width: 600px) {
+#content,
+aside
+{
+   margin-left  : calc( -90vw / 2 + 100% / 2 );
+   margin-right : calc( -90vw / 2 + 100% / 2 );
+   width: 90vw;
+   max-width: 1000%;
+   line-height: 1.5;
+   font-size: 17px;
+   background:transparent;
+   float: left;
+}
+
+#content article
+{
+   margin: 0 0 45px 0;
+   padding: 2% 3% 4% 3%;
+   background:  transparent;
+   width:calc(100% - 6%);
+   display: block
+}
+}
+
+
+@media (max-width: 400px) {
+.wp-block-cover.alignleft {
+   float:left;
+   margin: 5px 0 25px 0;
+   width: 88%
+}
+.wp-block-cover.alignright {
+   float:right;
+   margin: 5px 0 25px 0;
+   width: 88%
+}
+
+form#commentform input#author,
+form#commentform input#email,
+form#commentform input#url
+{
+   width: 80%
+}
+
 aside form#searchform input#s
 {
-   width: 100%;
-   border: 0;
-   margin-bottom: 5px
+   min-width: 34%;
 }
 
 aside form#searchform input#searchsubmit
 {
-   width: 100%;
-   float: left;
-}}
+   min-width: 24%;
 
+}
+}
 
 @media (min-width: 600px) 
 {
@@ -1364,8 +1387,7 @@ aside form#searchform input#searchsubmit
 
 @media (max-width: 700px) 
 {
-header#header a.custom-logo-link
-{
+header#header a.custom-logo-link {
    float: none;
    margin: 0 auto;
    display: block;
@@ -1375,14 +1397,6 @@ header#header a.custom-logo-link
 
 
 @media screen and (max-width: 940px) {
-
-.alignwide,
-.wp-block-gallery.alignwide {
-   margin-left  : calc( -85vw / 2 + 100% / 2 );
-   margin-right : calc( -85vw / 2 + 100% / 2 );
-   width: 85vw;
-}
-
 header#header,
 #content,
 aside
@@ -1391,5 +1405,7 @@ aside
    margin-right : calc( -80vw / 2 + 100% / 2 );
    width: 80vw;
 }} 
+
+
 
 
