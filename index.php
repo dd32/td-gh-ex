@@ -16,11 +16,9 @@
 get_header();
 
 $bappi_area_class = 'content-area';
-if (is_active_sidebar('sidebar-1')) {
-	$bappi_area_class = 'content-area';
-} else {
+if (!is_active_sidebar('sidebar-1')) {
 	$bappi_area_class = 'content-area content-center';
-}
+} 
 
 ?>
 

@@ -5,7 +5,7 @@ Theme URI:
 Author: Bappi
 Author URI: https://bappi.blog/
 Description: A simple hacker style theme.
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 5.5
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1185,6 +1185,14 @@ a,
 }
 .submenu-controller:focus {
 	border: 1px dotted #b2df82;
+}
+/* ---------------------------------------
+	Sidebar 
+--------------------------------------- */
+.no-sidebar .content-area{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
 /*------------------------------------------
 	Mobile Navigation

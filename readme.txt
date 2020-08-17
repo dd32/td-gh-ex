@@ -1,8 +1,8 @@
 === Bappi ===
 Contributors: b-07
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires at least: 4.5
-Stable tag: 1.0.0
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
