@@ -1003,6 +1003,41 @@ function advance_coaching_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_coaching_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_coaching_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_coaching_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-coaching' ),
+		'section' => 'advance_coaching_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_coaching_slider_image_height',array(
+		'default'=> __('550','advance-coaching'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_coaching_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-coaching'),
+		'section'=> 'advance_coaching_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_coaching_slider_button',array(
+		'default'=> __('READ MORE','advance-coaching'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_coaching_slider_button',array(
+		'label'	=> __('Slider Button','advance-coaching'),
+		'section'=> 'advance_coaching_slider',
+		'type'=> 'text'
+	));
+
 	//Service Section
 	$wp_customize->add_section('advance_coaching_category',array(
 		'title'	=> __('Service Section','advance-coaching'),

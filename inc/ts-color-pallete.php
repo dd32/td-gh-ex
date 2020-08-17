@@ -352,3 +352,9 @@
 	$advance_coaching_custom_css .='#scroll-top .fas{';
 		$advance_coaching_custom_css .='font-size: '.esc_html($advance_coaching_scroll_font_size_icon).'px;';
 	$advance_coaching_custom_css .='}';
+
+	// Slider Height 
+	$advance_coaching_slider_image_height = get_theme_mod('advance_coaching_slider_image_height');
+	$advance_coaching_custom_css .='#slider img{';
+		$advance_coaching_custom_css .='height: '.esc_html($advance_coaching_slider_image_height).'px;';
+	$advance_coaching_custom_css .='}';

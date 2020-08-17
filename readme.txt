@@ -142,6 +142,14 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Resolved login page error.
   * Updated POT files.
 
+= 0.5.2 =
+  * Added slider speed option.
+  * Added slider height option.
+  * Added option to change slider button text.
+  * Added “Call-able” Link.
+  * Done Email Address Clickable. 
+  * Updated POT files.
+
 == Resources ==
 
 Advance Coaching WordPress Theme, Copyright 2018 Themeshopy
