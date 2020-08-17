@@ -10,7 +10,7 @@ get_header(); ?>
 
   <?php if( get_theme_mod( 'advance_automobile_slider_hide', false) != '' || get_theme_mod( 'advance_automobile_responsive_slider', false) != '') { ?>
     <section id="slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_automobile_slider_speed_option', 3000)); ?>"> 
         <?php $advance_automobile_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_automobile_slider_page' . $count ));
@@ -36,9 +36,11 @@ get_header(); ?>
                 <div class="inner_carousel">
                   <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_automobile_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_automobile_slider_excerpt_length','20')))); ?></p>
-                  <div class="read-btn">
-                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-automobile' );?></span></a>
-                  </div>
+                  <?php if( get_theme_mod('advance_automobile_slider_button','READ MORE') != ''){ ?>
+                    <div class="read-btn">
+                      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_automobile_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_automobile_slider_button','READ MORE'));?></span></a>
+                    </div>
+                  <?php } ?>
                 </div>
               </div>
             </div>
@@ -118,7 +120,7 @@ get_header(); ?>
                     <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_call','')); ?></p>
                   <?php } ?>
                   <?php if( get_theme_mod('advance_automobile_call1') != ''){ ?>
-                    <p><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></p>
+                    <a href="tel:<?php echo esc_url( get_theme_mod('advance_automobile_call1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></span></a>
                   <?php } ?>
                 </div>
               </div>

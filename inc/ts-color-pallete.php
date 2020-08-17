@@ -366,3 +366,9 @@
 	$advance_automobile_custom_css .='#scroll-top .fas{';
 		$advance_automobile_custom_css .='font-size: '.esc_html($advance_automobile_scroll_font_size_icon).'px;';
 	$advance_automobile_custom_css .='}';
+
+	// Slider Height 
+	$advance_automobile_slider_image_height = get_theme_mod('advance_automobile_slider_image_height');
+	$advance_automobile_custom_css .='#slider img{';
+		$advance_automobile_custom_css .='height: '.esc_html($advance_automobile_slider_image_height).'px;';
+	$advance_automobile_custom_css .='}';

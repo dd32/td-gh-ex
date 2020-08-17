@@ -37,7 +37,7 @@
               <div class="col-lg-4 col-md-4">
                 <div class="mail">
                   <?php if( get_theme_mod('advance_automobile_mail1') != ''){ ?>
-                    <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?></span>
+                    <a href="mailto:<?php echo esc_url( get_theme_mod('advance_automobile_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?></span></a>
                   <?php } ?>
                 </div>
               </div>
@@ -115,9 +115,7 @@
                   ?>
                   <div id="contact-info">
                     <div class="mail">
-                      <?php if( get_theme_mod('advance_automobile_mail1') != ''){ ?>
-                        <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?></span>
-                      <?php } ?>
+                      <a href="mailto:<?php echo esc_url( get_theme_mod('advance_automobile_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?></span></a>
                     </div>
                     <?php get_search_form();?>
                     <div class="book-btn">

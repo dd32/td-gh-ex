@@ -798,7 +798,7 @@ function advance_automobile_customize_register($wp_customize) {
     ) );
     $wp_customize->add_control('advance_automobile_display_topbar',array(
     	'type' => 'checkbox',
-        'label' => __( 'Show / Hide Topbar','advance-automobile' ),
+        'label' => __( 'Topbar','advance-automobile' ),
         'section' => 'advance_automobile_topbar'
     ));
 
@@ -974,6 +974,41 @@ function advance_automobile_customize_register($wp_customize) {
 		'0.8' =>  esc_attr('0.8','advance-automobile'),
 		'0.9' =>  esc_attr('0.9','advance-automobile')
 	),
+	));
+
+	$wp_customize->add_setting( 'advance_automobile_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_automobile_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_automobile_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-automobile' ),
+		'section' => 'advance_automobile_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_automobile_slider_image_height',array(
+		'default'=> __('550','advance-automobile'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-automobile'),
+		'section'=> 'advance_automobile_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_automobile_slider_button',array(
+		'default'=> __('READ MORE','advance-automobile'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_slider_button',array(
+		'label'	=> __('Slider Button','advance-automobile'),
+		'section'=> 'advance_automobile_slider',
+		'type'=> 'text'
 	));
 
 	//contact details

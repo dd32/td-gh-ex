@@ -145,6 +145,14 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Resolved login page error.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
+= 0.5.2 =
+* Added slider speed option.
+* Added slider height option.
+* Added option to change slider button text.
+* Added “Call-able” Link.
+* Done Email Address Clickable. 
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance Automobile WordPress Theme, Copyright 2018 Themeshopy
