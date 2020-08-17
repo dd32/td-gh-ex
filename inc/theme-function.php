@@ -149,3 +149,12 @@ if ( ! function_exists( 'wp_body_open' ) ) {
         do_action( 'wp_body_open' );
     }
 }
+
+/**
+ * Register and enqueue a custom stylesheet in the WordPress admin.
+ */
+function astral_enqueue_custom_admin_style() {
+        wp_register_style( 'astral_custom_admin_css', get_template_directory_uri() . '/css/admin-themes.css' );
+        wp_enqueue_style( 'astral_custom_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'astral_enqueue_custom_admin_style' );

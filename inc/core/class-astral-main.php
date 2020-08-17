@@ -126,12 +126,13 @@ class astral_main {
 			)
 		);
 
+		$astral_widget_column = get_theme_mod( 'astral_widget_column','4' );
 		register_sidebar(
 			array(
 				'id'            => 'footer-widget',
 				'name'          => __( 'Footer Widget Area', 'astral' ),
 				'description'   => __( 'Sidebar for footer.', 'astral' ),
-				'before_widget' => '<div id="%1$s" class="mwa_footer_widget col-lg-4 col-md-6 mt-lg-0 mt-4">',
+				'before_widget' => '<div id="%1$s" class="mwa_footer_widget col-lg-'.$astral_widget_column.' col-md-6 mt-lg-0 mt-4">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="mb-3 f_title">',
 				'after_title'   => '</h3>',

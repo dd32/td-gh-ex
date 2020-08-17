@@ -2,6 +2,7 @@
     text-align: left;
 }
 .about-wrap img {
+    margin-top: 25px;
     box-shadow: 0px 0px 32px 14px #ccccccbf;
 }
 p.pro-feature {
@@ -18,6 +19,7 @@ p.desc {
 }
 section#tabs {
     padding-top: 10px;
+    padding-bottom: 20px;
 }
 .wrap.elw-page-welcome.about-wrap.seting-page {
     margin: 0;
@@ -35,15 +37,18 @@ span.astral-title {
 .about-wrap h2 {
     margin: 21px 0;
 }
+.mywebapp-info h3 {
+    color: #fff;
+}
 .info-box {
     padding: 100px;
 }
 .info-box p {
-    font-size: 17px;
-    text-align: left;
+    color: #fff;
+    font-size: 16px;
 }
 .info-box {
-    background: rgba(221, 240, 249, 0.8);
+    background: rgb(21 62 77);
     border: 1px solid #ccc9;
     padding: 12px;
 }
@@ -62,18 +67,20 @@ a.customize-btn {
     text-decoration: none;
 }
 a.support-btn {
-	display: initial;
+    display: initial;
     margin: 0 auto;
-	border-radius: 4px;
     color: #fff;
-    background: #153e4d;
-    padding: 10px;
+    background: #ffc107;
+    padding: 12px;
     text-decoration: none;
 }
 .info-box1 {
-    background: rgba(221, 240, 249, 0.8);
-    border: 1px solid #ccc9;
+    /*background: rgba(221, 240, 249, 0.8);
+    border: 1px solid #ccc9;*/
     padding: 0px 0px 57px;
+}
+div#nav-tabContent {
+    border: 1px solid #cccccc7d;
 }
 h3.support {
     padding: 10px;
@@ -85,34 +92,85 @@ h3.support {
     font-weight: 400;
 }
 p.support-text {
-    padding: 40px 40px 10px;
-    text-align: center;
+    padding:  25px 12px 0px;
 }
 p.support-text1 {
-    padding: 0 30px;
-    text-align: center;
+    padding: 0 12px;
 }
 /* .col-md-12.document {
     margin-left: 15px;
 } */
 .mywebapp-info {
-    margin-top: 35px;
+    /* margin-top: 35px; */
     text-align: center;
-    padding: 45px 45px 74px;
-    background: #e3f3fa;
+    padding: 0px 45px 35px;
+    background: #153e4d;
 }
 a.mywebapp-btn {
-	display: initial;
+    display: initial;
     margin: 0 auto;
-	border-radius: 4px;
+    font-weight: 600;
     color: #fff;
-    background: #153e4d;
-    padding: 10px;
+    background: #ffc107;
+    padding: 12px;
     text-decoration: none;
+    font-size: 16px;
 }
 .mywebapp-info p {
     margin-bottom: 34px;
 }
 a.add_page {
     padding-left: 14px;
+}
+
+button#astral-demo-content-inst {
+    background: #ffc107;
+    border-color: #ffc107;
+    border-radius: 0;
+    padding: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+a.demo_btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    background: #ffc107;
+    border-color: #ffc107;
+}
+.Customize a.demo_btn {
+    margin-left: 0;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #e7e7e7;
+    border-radius: 0;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: #495057;
+}
+a.nav-link:focus {
+    color: #124964;
+    box-shadow: none !important;
+    outline: 1px solid transparent;
+}
+
+.ocdi__response .notice-info {
+    display: none !important;
+}
+
+a.button.button-primary.demo-import {
+    background: #ffc107;
+    border-color: #ffc107;
+    border-radius: 0;
+    padding: 6px;
+    font-size: 14px;
+    font-weight: 600;
 }

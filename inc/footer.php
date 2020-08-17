@@ -16,8 +16,9 @@ if ( ! function_exists( 'astral_footer_widget' ) ) :
 				if ( is_active_sidebar( 'footer-widget' ) ) {
 					dynamic_sidebar( 'footer-widget' );
 				} else {
+					$astral_widget_column = get_theme_mod( 'astral_widget_column','4' );
 					$args = array(
-						'before_widget' => '<div class="mwa_footer_widget col-lg-4 col-md-6 mt-lg-0 mt-4">',
+						'before_widget' => '<div class="mwa_footer_widget col-lg-'.$astral_widget_column.' col-md-6 mt-lg-0 mt-4">',
 						'after_widget'  => '</div>',
 						'before_title'  => '<h3 class="mb-3 f_title">',
 						'after_title'   => '</h3>'

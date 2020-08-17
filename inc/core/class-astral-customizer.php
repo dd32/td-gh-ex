@@ -191,6 +191,30 @@ class astral_Customizer extends astral_Abstract_Main {
 			)
 		) );
 
+		$wp_customize->add_setting( 'astral_widget_column',
+		   array(
+			  'type'              => 'theme_mod',
+			  'default' => '',
+			  'sanitize_callback' => 'absint',
+			  'capability'        => 'edit_theme_options',
+		   )
+		);
+		
+		$wp_customize->add_control( 'astral_widget_column',
+		   array(
+			  'label' => __( 'Footer Widget Column','astral' ),
+			  'section' => 'astral_footer',
+			  'priority' => 10,
+			  'type' => 'select',
+			  'capability' => 'edit_theme_options',
+			  'choices' => array( 
+				 '6' => __( '2-Column','astral' ),
+				 '4' => __( '3-Column','astral' ),
+				 '3' => __( '4-Column','astral' ),
+			  )
+		   )
+		);
+
 		$wp_customize->add_setting( 'footer_text', array(
 			'type'              => 'theme_mod',
 			'default'           => '',

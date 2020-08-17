@@ -37,7 +37,7 @@ if($footer_widget) {
 </a>
 <?php endif; ?>
 <?php get_template_part('google', 'font'); ?>
-<?php get_template_part('custom','css') ?>
+<?php get_template_part('custom','css') ?> 
 <?php wp_footer(); ?>
 </body>
 </html>
