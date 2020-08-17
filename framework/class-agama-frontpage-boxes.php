@@ -73,7 +73,7 @@ class Front_Page_Boxes {
     function __construct() {
         
         $this->label = get_theme_mod( 'agama_frontpage_boxes_heading',  __( 'Front Page Boxes', 'agama' ) );
-        $this->boxes = get_theme_mod( 'agama_frontpage_boxes' );
+        $this->boxes = get_theme_mod( 'agama_frontpage_boxes_repeater', [] );
         
         /**
          * Render the content.
@@ -187,36 +187,36 @@ class Front_Page_Boxes {
                     <h1><?php echo esc_html( $this->label ); ?></h1>
                 </div>
             <?php endif; ?>
-            <?php if ( ! empty( $this->boxes ) ) : foreach ( $this->boxes as $box ) : ?>
+            <?php foreach ( $this->boxes as $box ) : ?>
                 <div <?php $this->attributes( $box ); ?>>
-                    
+
                     <?php if ( $box['url'] ) : ?>
                     <a href="<?php echo esc_url( $box['url'] ); ?>">
                     <?php endif; ?>
-                        
+
                         <?php if ( ! empty( $box['image'] ) ) : ?>
                         <img src="<?php echo esc_url( $this->image( $box['image'] ) ); ?>" 
                              alt="<?php echo esc_attr( $box['title'] ); ?>">
                         <?php endif; ?>
-                        
+
                         <?php if ( ! empty( $box['icon'] ) ) : ?>
                         <i <?php $this->icon_attributes( $box ); ?>></i>
                         <?php endif; ?>
-                        
+
                     <?php if ( $box['url'] ) : ?>
                     </a>
                     <?php endif; ?>
-                    
+
                     <?php if ( ! empty( $box['title'] ) ) : ?>
                     <h2><?php echo esc_html( $box['title'] ); ?></h2>
                     <?php endif; ?>
-                    
+
                     <?php if ( ! empty( $box['text'] ) ) : ?>
                     <p><?php echo esc_html( $box['text'] ); ?></p>
                     <?php endif; ?>
-                    
+
                 </div>
-            <?php endforeach; endif; ?>
+            <?php endforeach; ?>
         </div><!-- #frontpage-boxes -->
         <?php
         endif;

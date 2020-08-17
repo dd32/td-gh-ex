@@ -2,6 +2,8 @@ Agama WordPress Theme, Copyright 2015 - 2021 theme-vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.5.9 - 17 August 2020 =
+* Fixed bugs related to front page boxes and customizer loading issue.
 
 = 1.5.8 - 12 August 2020 =
 * Updated Kirki framework to the latest version.

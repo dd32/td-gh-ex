@@ -57,7 +57,6 @@ function agama_customize_register( $wp_customize ) {
             'render_callback' => [ 'Agama_Partial_Refresh', 'header_image' ]
         ]
     );
-    
 }
 add_action( 'customize_register', 'agama_customize_register' );
 
@@ -1551,14 +1550,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'panel'			=> 'agama_frontpage_boxes_panel'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Enable ?', 'agama' ),
-		'tooltip'	    => __( 'Global enable | disable.', 'agama' ),
-		'settings'		=> 'agama_frontpage_boxes',
-		'section'		=> 'agama_frontpage_general_section',
-		'type'			=> 'switch',
-		'default'		=> false
-	) );
-	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Visibility', 'agama' ),
 		'tooltip'	    => __( 'Select where you want front page boxes to be visible.', 'agama' ),
 		'section'		=> 'agama_frontpage_general_section',
@@ -1599,7 +1590,7 @@ add_action( 'customize_register', 'agama_customize_register' );
             'field' => 'title'
         ],
         'button_label' => esc_html__( 'Add New', 'agama' ),
-        'settings' => 'agama_frontpage_boxes',
+        'settings' => 'agama_frontpage_boxes_repeater',
         'default' => [],
         'fields' => [
             'title' => [
