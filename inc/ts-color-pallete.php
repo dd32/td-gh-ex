@@ -338,6 +338,12 @@
 		$advance_it_company_custom_css .='font-size: '.esc_html($advance_it_company_scroll_font_size_icon).'px;';
 	$advance_it_company_custom_css .='}';
 
+	// Slider Height 
+	$advance_it_company_slider_image_height = get_theme_mod('advance_it_company_slider_image_height');
+	$advance_it_company_custom_css .='#slider img{';
+		$advance_it_company_custom_css .='height: '.esc_html($advance_it_company_slider_image_height).'px;';
+	$advance_it_company_custom_css .='}';
+
 
 
 

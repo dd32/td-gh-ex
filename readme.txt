@@ -139,6 +139,14 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Resolved login page error.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
+= 0.5.1 =
+* Added slider speed option.
+* Added slider height option.
+* Added option to change slider button text.
+* Added “Call-able” Link.
+* Done Email Address Clickable. 
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance IT Company WordPress Theme, Copyright 2019 Themeshopy

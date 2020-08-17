@@ -1024,6 +1024,41 @@ function advance_it_company_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_it_company_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_it_company_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_it_company_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-it-company' ),
+		'section' => 'advance_it_company_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_it_company_slider_image_height',array(
+		'default'=> __('550','advance-it-company'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_it_company_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-it-company'),
+		'section'=> 'advance_it_company_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_it_company_slider_button',array(
+		'default'=> __('READ MORE','advance-it-company'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_it_company_slider_button',array(
+		'label'	=> __('Slider Button','advance-it-company'),
+		'section'=> 'advance_it_company_slider',
+		'type'=> 'text'
+	));
+
 	//How it works Section
 	$wp_customize->add_section('advance_it_company_post_category',array(
 		'title'	=> __('How it works Section','advance-it-company'),
