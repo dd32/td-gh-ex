@@ -66,6 +66,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.43
+* JS updates for removal of jQuery in WP 5.5
+
 #### 1.1.42
 * Style tweaks/fixes
 * Fixes for compatibility with WP 5.5

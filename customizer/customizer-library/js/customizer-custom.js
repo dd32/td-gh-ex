@@ -4,7 +4,7 @@
  */
 ( function( $ ) {
     
-    $( window ).load( function() {
+    $( window ).on('load',function () { 
         
         // Show / Hide Fonts Google/Websafe settings
         avant_websafe_check();

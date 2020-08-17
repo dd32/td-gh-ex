@@ -57,7 +57,7 @@
         }
     });
     
-    $(window).load(function() {
+    $(window).on('load',function () {
         $( '.side-aligned-social' ).removeClass( 'hide-side-social' );
     });
     

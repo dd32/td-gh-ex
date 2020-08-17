@@ -21,7 +21,7 @@
         
     }).resize();
     
-    $(window).load(function() {
+    $(window).on('load',function () {
         
         avant_upgrade_ratings_slider();
         

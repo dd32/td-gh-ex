@@ -4,7 +4,7 @@
  */
 ( function( $ ) {
     
-    $(window).load(function() {
+    $(window).on('load',function () {
         
         // Initialize the Masonry plugin
         var grid = $( '.blog-blocks-wrap-inner' ).masonry({

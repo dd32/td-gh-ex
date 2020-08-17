@@ -10,7 +10,7 @@
         
     }).resize();
     
-    $(window).load(function() {
+    $(window).on('load',function () {
         
         avant_home_slider();
         
