@@ -223,3 +223,14 @@ function athemes_category_transient_flusher() {
 }
 add_action( 'edit_category', 'athemes_category_transient_flusher' );
 add_action( 'save_post',     'athemes_category_transient_flusher' );
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Shim for wp_body_open() function
+	 */
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedFunctionFound
+	function wp_body_open() {
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+		do_action( 'wp_body_open' );
+	}
+}

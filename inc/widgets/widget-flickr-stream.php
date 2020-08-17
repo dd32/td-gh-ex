@@ -9,7 +9,6 @@
 /**
  * Adds aThemes_Flickr_Stream widget.
  */
-add_action( 'widgets_init', create_function( '', 'register_widget( "athemes_flickr_stream" );' ) );
 class aThemes_Flickr_Stream extends WP_Widget {
 
 	/**

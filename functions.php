@@ -115,6 +115,12 @@ function athemes_widgets_init() {
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
 	) );
+
+	register_widget( 'aThemes_Preview_Post' );
+	register_widget( 'aThemes_Tabs' );
+	register_widget( 'aThemes_Flickr_Stream' );
+	register_widget( 'aThemes_Media_Embed' );
+	register_widget( 'aThemes_Social_Icons' );
 }
 add_action( 'widgets_init', 'athemes_widgets_init' );
 

@@ -9,7 +9,6 @@
 /**
  * Adds aThemes_Media_Embed widget.
  */
-add_action( 'widgets_init', create_function( '', 'register_widget( "athemes_media_embed" );' ) );
 class aThemes_Media_Embed extends WP_Widget {
 
 	/**

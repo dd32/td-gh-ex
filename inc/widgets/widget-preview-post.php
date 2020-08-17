@@ -9,7 +9,6 @@
 /**
  * Adds aThemes_Preview_Post widget.
  */
-add_action( 'widgets_init', create_function( '', 'register_widget( "athemes_preview_post" );' ) );
 class aThemes_Preview_Post extends WP_Widget {
 
 	/**

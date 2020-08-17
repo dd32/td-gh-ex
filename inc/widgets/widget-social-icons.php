@@ -9,7 +9,6 @@
 /**
  * Adds aThemes_Social_Icons widget.
  */
-add_action( 'widgets_init', create_function( '', 'register_widget( "athemes_social_icons" );' ) );
 class aThemes_Social_Icons extends WP_Widget {
 
 	/**

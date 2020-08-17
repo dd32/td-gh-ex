@@ -9,7 +9,6 @@
 /**
  * Adds aThemes_Tabs widget.
  */
-add_action( 'widgets_init', create_function( '', 'register_widget( "athemes_tabs" );' ) );
 class aThemes_Tabs extends WP_Widget {
 
 	/**
