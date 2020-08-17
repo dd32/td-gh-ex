@@ -3,7 +3,7 @@ Contributors: ayatemplates
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header,
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
-Tested up to: 5.4.1
+Tested up to: 5.5
 Stable tag: 1.1.4
 Requires PHP: 5.6.0
 Requires at least: 4.8.0
@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.2.4 =
+* updates for WordPress ver. 5.5
 
 = 1.2.3 =
 * update used images with CC0 license
