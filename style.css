@@ -20,7 +20,7 @@ Resource Fonts: Raleway, by The League of Movable Type, under SIL Open Font Lice
 
 Author: Robert Toth
 Author URI: https://toth-illustration.com
-Version: 1.4
+Version: 1.4.1
 Requires at least: 4.5
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -813,19 +813,23 @@ input,
 textarea,
 select{
 	display:block;
-	font-size: 100%;
 	font-family: inherit;
 	overflow: auto;
 	outline: none;
 	border: none;
-	padding:0.5em;
 	background:#FFF;
 	border:1px solid #DDD;
 	color:#555;
+	font-size:14px;
+}
+
+textarea{
+	padding:0.5em;
 }
 
 input{
 	height:32px;
+	padding:0.5em;
 }
 
 button,
@@ -859,7 +863,6 @@ textarea{
 }
 
 #searchtextarea{
-    font-size: 100%;
 	max-width: 200px;
 	color: #999;
 }
@@ -868,14 +871,18 @@ textarea{
     	display: none;
 }
 
+input[type=file] {
+	display:inline;
+}
+
+input[type=file],
 input[type="submit"] {
-    font-size:100% !important;
 	background:#555;
-	text-transform: uppercase;
 	font-weight:bold;
+	text-transform: uppercase;
 	letter-spacing:1px;
 	margin:0.5em 0.5px 0.5em 0px !important;
-	padding:0.5em 2em !important;
+	padding:0 2em !important;
 	border:none !important;
 	color:#FFF !important;
 }

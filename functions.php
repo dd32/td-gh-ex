@@ -38,6 +38,9 @@ $defaults = array(
 	'default-color'          => '#EEEEEE',
 	'default-image' => '%1$s/img/bridge.jpg',
 	'wp-head-callback'       => '_custom_background_cb',
+	'default-repeat'         => 'no-repeat',
+	'default-position-x'     => 'center',
+	'default-attachment'     => 'fixed',
 );
 add_theme_support( 'custom-background', $defaults );
 
