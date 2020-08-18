@@ -108,3 +108,17 @@ function automotive_centre_my_admin_bar_css(){
 </style>
 <?php
 }
+
+/**
+ * Posts pagination.
+ */
+if ( ! function_exists( 'automotive_centre_blog_posts_pagination' ) ) {
+	function automotive_centre_blog_posts_pagination() {
+		$pagination_type = get_theme_mod( 'automotive_centre_blog_pagination_type', 'blog-page-numbers' );
+		if ( $pagination_type == 'blog-page-numbers' ) {
+			the_posts_pagination();
+		} else {
+			the_posts_navigation();
+		}
+	}
+}

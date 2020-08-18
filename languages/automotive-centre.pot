@@ -667,14 +667,6 @@ msgstr ""
 msgid 'Here you can change the sidebar layout for pages.'
 msgstr ""
 
-#: inc/customizer.php:95
-msgid 'Shop Page Sidebar'
-msgstr ""
-
-#: inc/customizer.php:106
-msgid 'Single Product Sidebar'
-msgstr ""
-
 #: inc/customizer.php:117
 msgid 'Pre-Loader'
 msgstr ""
@@ -816,6 +808,10 @@ msgstr ""
 msgid 'Specify the slider height (px).'
 msgstr ""
 
+#: inc/customizer.php:412
+msgid "Slider Transition Speed"
+msgstr ""
+
 #: inc/customizer.php:333
 msgid 'About us Settings'
 msgstr ""
@@ -890,6 +886,22 @@ msgstr ""
 
 #: inc/customizer.php:613
 msgid 'Add Excerpt Suffix'
+msgstr ""
+
+#: inc/customizer.php:656
+msgid "Show / Hide Blog Pagination"
+msgstr ""
+
+#: inc/customizer.php:656
+msgid "Blog Pagination"
+msgstr ""
+
+#: inc/customizer.php:656
+msgid "Numeric"
+msgstr ""
+
+#: inc/customizer.php:656
+msgid "Older Posts/Newer Posts"
 msgstr ""
 
 #: inc/customizer.php:623
@@ -1026,6 +1038,30 @@ msgstr ""
 
 #: inc/customizer.php:508
 msgid 'Scroll To Top'
+msgstr ""
+
+#: inc/customizer.php:1141
+msgid "WooCommerce Layout"
+msgstr ""
+
+#: inc/customizer.php:1153
+msgid 'Shop Page Sidebar'
+msgstr ""
+
+#: inc/customizer.php:1174
+msgid 'Single Product Sidebar'
+msgstr ""
+
+#: inc/customizer.php:1178
+msgid "Products Per Page"
+msgstr ""
+
+#: inc/customizer.php:1182
+msgid "Products Per Row"
+msgstr ""
+
+#: inc/customizer.php:1185
+msgid "Display on shop page"
 msgstr ""
 
 #: inc/customizer.php:593

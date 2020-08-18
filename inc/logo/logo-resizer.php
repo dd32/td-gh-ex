@@ -8,11 +8,9 @@ function automotive_centre_logo_customize_register( $wp_customize ) {
 	// Logo Resizer additions
 	$wp_customize->add_setting( 'logo_size', array(
 		'default'              => 50,
-		'type'                 => 'theme_mod',
 		'theme_supports'       => 'custom-logo',
 		'transport'            => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'    => 'automotive_centre_sanitize_number_range'
 	) );
 
 	$wp_customize->add_control( 'logo_size', array(

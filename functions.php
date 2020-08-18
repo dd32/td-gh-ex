@@ -309,6 +309,19 @@ function automotive_centre_sanitize_choices( $input, $setting ) {
     }
 }
 
+function automotive_centre_sanitize_float( $input ) {
+	return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
+function automotive_centre_sanitize_number_range( $number, $setting ) {
+	$number = absint( $number );
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+}
+
 function automotive_centre_sanitize_email( $email, $setting ) {
 	// Strips out all characters that are not allowable in an email address.
 	$email = sanitize_email( $email );
@@ -350,9 +363,16 @@ if ( ! function_exists( 'automotive_centre_credit' ) ) {
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'automotive_centre_loop_columns');
 	if (!function_exists('automotive_centre_loop_columns')) {
-		function automotive_centre_loop_columns() {
-		return 3; // 3 products per row
+	function automotive_centre_loop_columns() {
+		return get_theme_mod( 'automotive_centre_products_per_row', '3' ); 
+		// 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'automotive_centre_products_per_page' );
+function automotive_centre_products_per_page( $cols ) {
+  	return  get_theme_mod( 'automotive_centre_products_per_page',9);
 }
 
 /* Implement the Custom Header feature. */

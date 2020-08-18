@@ -11,7 +11,7 @@ get_header(); ?>
   <?php if( get_theme_mod( 'automotive_centre_slider_hide_show') != '') { ?>
 
   <section id="slider">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod( 'automotive_centre_slider_speed',3000)) ?>"> 
       <?php $automotive_centre_slider_pages = array();
         for ( $count = 1; $count <= 4; $count++ ) {
           $mod = intval( get_theme_mod( 'automotive_centre_slider_page' . $count ));

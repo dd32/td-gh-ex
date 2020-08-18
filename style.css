@@ -4,9 +4,9 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 7.2.14
-Version: 0.4.4
+Version: 0.4.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -1023,6 +1023,32 @@ h1.page-title {
 .related-post .post-main-box{
   margin-bottom: 10%;
 }
+.nav-previous a{
+  padding: 15px 15px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 13px;
+  font-weight: bold;
+  text-align: left;
+  background: #010203;
+}
+.nav-next a{
+  padding: 15px 15px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 13px;
+  font-weight: bold;
+  text-align: right;
+  background: #010203;
+}
+.nav-previous a:hover, .nav-next a:hover {
+  background: #88d055;
+  color: #fff;
+  transition-duration: 0.5s;
+}
+.navigation {
+  margin-bottom: 30px;
+}
 /* --------- POST --------- */
 h2#reply-title {
   text-align: left;
@@ -1396,7 +1422,9 @@ h2#reply-title {
   font-size:14px;
   line-height:13px;
   float:right;
-  font-weight:bold;width:100%;
+  font-weight:bold;
+  width:100%;
+  margin-bottom: 20px;
 } 
 .pagination span, .pagination a {
   display:block;
@@ -1442,8 +1470,7 @@ h2#reply-title {
   position: absolute !important; 
 }
 .post-navigation a { 
-  color: #010203; 
-  display: block; 
+  color: #010203;
 }
 .post-navigation span { 
   display: block; 
@@ -1540,7 +1567,16 @@ h2#reply-title {
 /*------single-post-pagination------*/
 .post-navigation a {
   color: #1a1a1a;
-  display: block;
+}
+.single-post .nav-previous a,
+.single-post .nav-next a{
+  color: #000;
+  background: transparent;
+}
+.single-post .nav-previous a:hover,
+.single-post .nav-next a:hover {
+  color: #88d055;
+  background: transparent;
 }
 .nav-next {
   float: right;
@@ -1774,9 +1810,6 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
 h3#order_review_heading{
   margin-top: 10px;
 }
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-  width: 29%;
-}
 section.related.products h2 {
   text-align: left;
   margin: 10px 0;
@@ -1794,6 +1827,45 @@ section.related.products h2 {
 .admin-bar .home-page-header{
   margin-top: 32px;
 }
+.woocommerce input#password{
+  border: 1px solid #bcbcbc;
+}
+.woocommerce-page form .password-input{
+  width: 100%;
+}
+.woocommerce label {
+  width: 100%;
+}
+.woocommerce nav.woocommerce-pagination ul li a {
+  display: block;
+  margin: 2px 2px 2px 0;
+  padding: 12px 15px;
+  text-decoration: none;
+  width: auto;
+  color: #fff;
+  background: #010203;
+  transition: background .15s ease-in-out;
+  font-weight: bold;
+}
+.woocommerce nav.woocommerce-pagination ul li a:hover{
+  background: #88d055;
+  color: #fff;
+}
+.woocommerce nav.woocommerce-pagination ul li span.current{
+  padding: 12px 15px;
+  background: #88d055;
+  color: #fff;
+  font-weight: normal;
+}
+.woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li{
+  border: none;
+  float: none;
+  overflow: unset;
+}
+.woocommerce nav.woocommerce-pagination {
+  text-align: center;
+  margin-bottom: 20px;
+} 
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width:720px) {
   #slider .inner_carousel,.logo,

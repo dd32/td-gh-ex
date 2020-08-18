@@ -31,17 +31,12 @@ get_header(); ?>
               get_template_part( 'no-results' ); 
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                'prev_text' => __( 'Previous page', 'automotive-centre' ),
-                'next_text' => __( 'Next page', 'automotive-centre' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-              ) );
-            ?>
+          <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+            <div class="navigation">
+              <?php automotive_centre_blog_posts_pagination(); ?>
               <div class="clearfix"></div>
-          </div>
+            </div>
+          <?php } ?>
         </div>
       </div>
       <div class="clearfix"></div>
@@ -62,17 +57,12 @@ get_header(); ?>
               get_template_part( 'no-results' ); 
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                'prev_text' => __( 'Previous page', 'automotive-centre' ),
-                'next_text' => __( 'Next page', 'automotive-centre' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-              ) );
-            ?>
+          <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+            <div class="navigation">
+              <?php automotive_centre_blog_posts_pagination(); ?>
               <div class="clearfix"></div>
-          </div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-4 col-md-4" id="sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
       </div>
@@ -92,17 +82,12 @@ get_header(); ?>
             get_template_part( 'no-results' ); 
           endif; 
         ?>
-        <div class="navigation">
-          <?php
-            // Previous/next page navigation.
-            the_posts_pagination( array(
-              'prev_text' => __( 'Previous page', 'automotive-centre' ),
-              'next_text' => __( 'Next page', 'automotive-centre' ),
-              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-            ) );
-          ?>
-          <div class="clearfix"></div>
-        </div>
+        <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+          <div class="navigation">
+            <?php automotive_centre_blog_posts_pagination(); ?>
+            <div class="clearfix"></div>
+          </div>
+        <?php } ?>
       </div>
     <?php }else if($automotive_centre_theme_lay == 'Three Columns'){ ?>
       <div class="row m-0">
@@ -122,17 +107,12 @@ get_header(); ?>
               get_template_part( 'no-results' ); 
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                'prev_text' => __( 'Previous page', 'automotive-centre' ),
-                'next_text' => __( 'Next page', 'automotive-centre' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-              ) );
-            ?>
+          <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+            <div class="navigation">
+              <?php automotive_centre_blog_posts_pagination(); ?>
               <div class="clearfix"></div>
-          </div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-3 col-md-3" id="sidebar"><?php dynamic_sidebar('sidebar-2');?></div>
       </div>
@@ -154,17 +134,12 @@ get_header(); ?>
               get_template_part( 'no-results' ); 
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-                // Previous/next page navigation.
-              the_posts_pagination( array(
-                'prev_text' => __( 'Previous page', 'automotive-centre' ),
-                'next_text' => __( 'Next page', 'automotive-centre' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-              ) );
-            ?>
+          <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+            <div class="navigation">
+              <?php automotive_centre_blog_posts_pagination(); ?>
               <div class="clearfix"></div>
-          </div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-3 col-md-3" id="sidebar"><?php dynamic_sidebar('sidebar-2');?></div>
         <div class="col-lg-3 col-md-3" id="sidebar"><?php dynamic_sidebar('sidebar-3');?></div>
@@ -188,17 +163,12 @@ get_header(); ?>
               endif; 
             ?>
           </div>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                'prev_text' => __( 'Previous page', 'automotive-centre' ),
-                'next_text' => __( 'Next page', 'automotive-centre' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-              ) );
-            ?>
+          <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+            <div class="navigation">
+              <?php automotive_centre_blog_posts_pagination(); ?>
               <div class="clearfix"></div>
-          </div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-3 col-md-3" id="sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
       </div>
@@ -219,17 +189,12 @@ get_header(); ?>
               get_template_part( 'no-results' ); 
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                'prev_text' => __( 'Previous page', 'automotive-centre' ),
-                'next_text' => __( 'Next page', 'automotive-centre' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'automotive-centre' ) . ' </span>',
-              ) );
-            ?>
+          <?php if( get_theme_mod( 'automotive_centre_blog_pagination_hide_show',true) != '') { ?>
+            <div class="navigation">
+              <?php automotive_centre_blog_posts_pagination(); ?>
               <div class="clearfix"></div>
-          </div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-4 col-md-4" id="sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
       </div>
