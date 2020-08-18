@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.12 | 17th August 2020 = 
+* Fix: Bug with slider.
+
 = 1.7.11 | 13th August 2020 = 
 * Update: 5.5 support.
 

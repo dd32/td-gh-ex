@@ -13,7 +13,7 @@
     redux.field_objects.kad_slides.init = function( selector ) {
 
         if ( !selector ) {
-            selector = $( document ).find( '.redux-container-kad_slides' );
+            selector = $( document ).find( ".redux-group-tab:visible" ).find( '.redux-container-kad_slides' );
         }
 
         $( selector ).each(
@@ -45,7 +45,7 @@
                         $( this ).parent().siblings().find( 'textarea' ).val( '' );
                         $( this ).parent().siblings().find( 'input[type="hidden"]' ).val( '' );
 
-                        var slideCount = $( this ).parents( '.redux-container-slides:first' ).find( '.redux-slides-accordion-group' ).length;
+                        var slideCount = $( this ).parents( '.redux-container-kad_slides:first' ).find( '.redux-slides-accordion-group' ).length;
 
                         if ( slideCount > 1 ) {
                             $( this ).parents( '.redux-slides-accordion-group:first' ).slideUp(

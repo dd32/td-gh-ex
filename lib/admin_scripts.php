@@ -6,9 +6,9 @@
 
 function pinnacle_admin_scripts() {
 	wp_register_script( 'kadence-toolkit-install', get_template_directory_uri() . '/assets/js/admin-activate.js', false, 155 );
-	wp_enqueue_style( 'kt_admin_css', get_template_directory_uri() . '/assets/css/kt_adminstyles.css', false, 155, false );
+	wp_enqueue_style( 'kt_admin_css', get_template_directory_uri() . '/assets/css/kt_adminstyles.css', false, 157, false );
 
-	wp_enqueue_script( 'kad_admin_js', get_template_directory_uri() . '/assets/js/kad_adminscripts.js', false, 156, false );
+	wp_enqueue_script( 'kad_admin_js', get_template_directory_uri() . '/assets/js/kad_adminscripts.js', false, 157, false );
 }
 
 add_action( 'admin_enqueue_scripts', 'pinnacle_admin_scripts' );
