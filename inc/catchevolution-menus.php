@@ -232,7 +232,7 @@ function catchevolution_footer_menu() {
                     ?>
                     <div class="mobile-menu-anchor">
                         <button id="menu-toggle-footer" class="genericon genericon-menu">
-                            <span class="<?php echo esc_attr( $labelclass ); ?>"><?php echo esc_attr( $label ); ?></span>
+                            <span class="<?php echo esc_attr( $labelclass ); ?>"><?php echo esc_html( $label ); ?></span>
                         </button>
                     </div><!-- .mobile-menu-anchor -->
                 </div><!-- #mobile-footer-menu -->

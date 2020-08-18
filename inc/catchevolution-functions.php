@@ -21,7 +21,7 @@ function catchevolution_scripts_method() {
 	$page_id = $wp_query->get_queried_object_id();
 
 	// Enqueue catchevolution Sytlesheet
-	wp_enqueue_style( 'catch-evolution-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'catch-evolution-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'catch-evolution-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'catch-evolution-style' ), '1.0' );
@@ -535,6 +535,7 @@ function catchevolution_pass_slider_value() {
 	);
 
 }//catchevolution_pass_slider_value
+add_action( 'wp_enqueue_scripts', 'catchevolution_pass_slider_value' );
 
 
 if ( ! function_exists( 'catchevolution_sliders' ) ) :
@@ -575,14 +576,14 @@ function catchevolution_sliders() {
 			));
 
 			$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
-				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
+				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title() ) );
 
 				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
 
 				$catchevolution_sliders .= '
 				<div class="'.$classes.'">
 					<a href="' . esc_url( get_permalink() ) . '" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
-						'.get_the_post_thumbnail( $post->ID, 'featured-slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
+						'.get_the_post_thumbnail().'
 					</a>
 					<div class="featured-text">
 						<div class="featured-text-wrap">'
@@ -602,46 +603,6 @@ function catchevolution_sliders() {
 	echo $catchevolution_sliders;
 }
 endif; //catchevolution_sliders
-
-
-if ( ! function_exists( 'catchevolution_default_sliders' ) ) :
-/**
- * Shows Default Slider Demo if there is not iteam in Featured Post Slider
- */
-function catchevolution_default_sliders() {
-	//delete_transient( 'catchevolution_default_sliders' );
-
-	// This function passes the value of slider effect to js file
-    if ( function_exists( 'catchevolution_pass_slider_value' ) ) {
-      	catchevolution_pass_slider_value();
-  	}
-
-	if ( !$catchevolution_default_sliders = get_transient( 'catchevolution_default_sliders' ) ) {
-		echo '<!-- refreshing cache -->';
-		$catchevolution_default_sliders = '
-		<div id="slider">
-			<section id="slider-wrap">
-				<div class="slides displayblock">
-					<div class="featured-img">
-						<span><img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider/slider-1.jpg" class="pngfix wp-post-image" alt="Featured Image-1" title="Featured Image-1"></span>
-					</div>
-				</div> <!-- .slides -->
-				<div class="slides displaynone">
-					<div class="featured-img">
-						<span><img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider/slider-2.jpg" class="pngfix wp-post-image" alt="Featured Image-2" title="Featured Image-2"></span>
-					</div>
-				</div> <!-- .slides -->
-			</section> <!-- .slider-wrap -->
-			<div id="controllers">
-			</div><!-- #controllers -->
-		</div><!-- #slider -->';
-
-	set_transient( 'catchevolution_default_sliders', $catchevolution_default_sliders, 86940 );
-	}
-	echo $catchevolution_default_sliders;
-}
-endif; //catchevolution_default_sliders
-
 
 if ( ! function_exists( 'catchevolution_slider_display' ) ) :
 /**
@@ -665,9 +626,6 @@ function catchevolution_slider_display() {
 		// Select Slider
 		if ( !empty( $featuredslider ) ) {
 			catchevolution_sliders();
-		}
-		else {
-			catchevolution_default_sliders();
 		}
 
 	endif;

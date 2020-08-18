@@ -1,9 +1,10 @@
 = Catch Evolution =
 Contributors: catchthemes
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
-Requires at least: 4.8
-Tested up to: 5.4
-Stable tag: 4.0
+Requires at least: 5.1
+Tested up to: 5.5
+Requires PHP: 5.6
+Stable tag: 4.1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,10 +66,15 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 4.1 (Released: August 17, 2020) =
+* Bug Fixed: JS reference error
+* Updated: Screenshot
+* Updated: Readme
+
 = 4.0 (Released: May 14, 2020) =
 * Added: Gutenberg compatible (Support for Block Editor)
 * Updated: Editor style
-* Updated: Customizer reset button moved to bottom
+* Updated: Customizer reset button moved to the bottom
 
 = 3.0.7 (Released: April 05, 2020) =
 * Added: Support for wp_body_open action
@@ -314,9 +320,8 @@ Catch Evolution is distributed under the terms of the GNU GPL
 	http://genericons.com/
 
 * Images
-	Images used in the demo site and the screenshot are from PixaBay.com and are released under the CC0 license
+	Images used in the demo site and the screenshot are from stocksnap.io and are released under the CC0 license
 	The screenshot's visible images are as follow:
-	1) http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
-	2) http://pixabay.com/en/window-wooden-window-old-window-100934/ - 1st slider image
-	3) http://pixabay.com/en/flower-flowers-nature-plant-orchid-179004/ - 2nd slider image
+	1) https://stocksnap.io/photo/stars-sky-QEMARDUP9S - header image
+	2) https://stocksnap.io/photo/old-barn-8GQRWBFOCZ - slider image in screenshot
 	All other images are selfshot by CatchThemes team, licensed uner GPL3 license
