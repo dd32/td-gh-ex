@@ -3,7 +3,7 @@ Contributors: Access Keys
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.5
-Stable tag : 4.0
+Stable tag : 4.1
 Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -93,6 +93,14 @@ Source: https://stocksnap.io/photo/office-work-N0ZRKV9CI6
 
 ---------------------------------------------
 == Changelog ==
+
+= 4.1 =
+** Minor bugs fixed
+
+
+= 4.0 =
+** Removed all elementor elements to a separate plugin
+
 
 = 3.9 =
 ** Minor CSS improvements

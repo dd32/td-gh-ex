@@ -97,7 +97,7 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 			 
              global $pagenow;
 
-            if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+            if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
              add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
              }
 				
@@ -107,7 +107,7 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 			public function welcome_admin_notice_display() {
 				global $pagenow;
 
-				if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="updated apwelcome-an notice notice-success is-dismissible">
 						<h2><?php printf(esc_html__( 'Welcome!', 'accesspress-parallax' )) ?></h2>

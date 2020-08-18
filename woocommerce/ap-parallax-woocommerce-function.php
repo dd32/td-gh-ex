@@ -53,3 +53,24 @@ if ( !function_exists( 'accesspress_parallax_woo_body_class' ) ) {
     }
 
 }
+
+
+ if ( !function_exists('accesspress_parallax_get_product_categories') ) {
+        function accesspress_parallax_get_product_categories() {
+
+            $options = array();
+
+            $terms = get_terms( array( 
+                'taxonomy'      => 'product_cat',
+                'hide_empty'    => true,
+            ));
+
+            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                foreach ( $terms as $term ) {
+                    $options[ $term->term_id ] = $term->name.' ('.$term->count.')';
+                }
+            }
+
+            return $options;
+        }
+    }

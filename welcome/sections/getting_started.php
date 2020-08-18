@@ -1,6 +1,6 @@
 	<div class="theme-steps-list-wrap two-col">
 
-		<div class="theme-steps col">
+		<div class="theme-steps col col-full">
 			<div class="step-1-right recommend-col">
 				<h3><?php echo esc_html__('Links to Customizer Settings', 'accesspress-parallax'); ?></h3>
 				<div class="item-wrap">
@@ -11,41 +11,36 @@
 					'text' => __( 'Upload Logo', 'accesspress-parallax' ),
 					'link' => add_query_arg( array( 'autofocus[section]' => 'title_tagline' ), admin_url( 'customize.php' ) ),
 				),
+
 				array(
-					'icon' => 'dashicons-admin-home',
-					'text' => __( 'HomePage Settings', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[panel]' => 'apwelcome_homepage_settings_panel' ), admin_url( 'customize.php' ) ),
-				),
-				array(
-					'icon' => 'dashicons-external',
-					'text' => __( 'Section Reorder', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'menu_order_section' ), admin_url( 'customize.php' ) ),
-				),
-				array(
-					'icon' => 'dashicons-menu',
-					'text' => __( 'Menu Options', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'menu_settings_section' ), admin_url( 'customize.php' ) ),
-				),
-				array(
-					'icon' => 'dashicons-update',
-					'text' => __( 'Preloader Options', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'apwelcome_preloader_section' ), admin_url( 'customize.php' ) ),
-				),
-				array(
-					'icon' => 'dashicons-admin-appearance',
-					'text' => __( 'Template Color', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'apwelcome_tpl_color_section' ), admin_url( 'customize.php' ) ),
-				),
-				array(
-					'icon' => 'dashicons-align-center',
-					'text' => __( 'Footer Options', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[panel]' => 'apwelcome_footer_settings_panel' ), admin_url( 'customize.php' ) ),
+					'icon' => 'dashicons-format-gallery',
+					'text' => __( 'Header Settings', 'accesspress-parallax' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'accesspress_parallax_header_settings' ), admin_url( 'customize.php' ) ),
 				),
 
 				array(
+					'icon' => 'dashicons-admin-home',
+					'text' => __( 'HomePage Settings', 'accesspress-parallax' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'accesspress_parallax_plx_settings' ), admin_url( 'customize.php' ) ),
+				),
+				
+				array(
+					'icon' => 'dashicons-menu',
+					'text' => __( 'Menu Options', 'accesspress-parallax' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'nav_menus' ), admin_url( 'customize.php' ) ),
+				),
+				
+				array(
+					'icon' => 'dashicons-admin-appearance',
+					'text' => __( 'Template Color', 'accesspress-parallax' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'colors' ), admin_url( 'customize.php' ) ),
+				),
+				
+
+				array(
 					'icon' => 'dashicons-format-aside',
-					'text' => __( 'Layout Options', 'accesspress-parallax' ),
-					'link' => add_query_arg( array( 'autofocus[panel]' => 'apwelcome_design_settings_panel' ), admin_url( 'customize.php' ) ),
+					'text' => __( 'General Settings', 'accesspress-parallax' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'accesspress_parallax_general_settings_panel' ), admin_url( 'customize.php' ) ),
 				),
 			); 
 			foreach ( $data as $customizer_item ) {

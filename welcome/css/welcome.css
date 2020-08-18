@@ -835,3 +835,11 @@ a.buy-pro-btn:hover{
 .free_vs_pro .three-col .col:hover{
    background: #EEE;
 }
+
+.theme-steps.col.col-full {
+    width: 100%;
+}
+.about-wrap .accesspress-badge span {
+    position: absolute;
+    left: 10%;
+}
