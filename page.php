@@ -5,6 +5,8 @@ Template Name: With Comments
 ?>
 
 <?php get_header(); ?>
+
+<?php get_template_part( 'menu'); ?>
  
 <div id="content">
 

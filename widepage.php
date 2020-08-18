@@ -5,6 +5,8 @@ Template Name: Wide, no sidebars
 ?>
 
 <?php get_header(); ?>
+
+<?php get_template_part( 'menu'); ?>
  
     <div id="content2">
 

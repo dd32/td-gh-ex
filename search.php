@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-<div id="content">
+<?php get_template_part( 'menu'); ?>
 
+<div id="content">
 
 	<div id="cat-description"><h1><?php _e('Search results','redesign'); ?></h1></div>
 

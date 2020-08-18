@@ -36,10 +36,8 @@ add_theme_support( 'custom-logo' );
 //CUSTOM BACKGROUND
 $defaults = array(
 	'default-color'          => '#EEEEEE',
-	'default-image' => get_template_directory_uri() . '/img/background.png',
+	'default-image' => '%1$s/img/bridge.jpg',
 	'wp-head-callback'       => '_custom_background_cb',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => ''
 );
 add_theme_support( 'custom-background', $defaults );
 
