@@ -53,7 +53,10 @@
 </div><!-- #page -->
 
 
+<!-- Scroll To top -->
+<?php if( get_theme_mod('articlepress_scrolltotop_button') ): ?>
 <span class="scrolltotop"><i class="fas fa-long-arrow-alt-up"></i></span>
+<?php endif ?>
 
 <?php wp_footer(); ?>
 

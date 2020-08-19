@@ -19,7 +19,5 @@ jQuery(document).ready(function( $ ) {
     }
     scrollToTop('.scrolltotop i');
 
-    
-
 	
 }(jQuery));
