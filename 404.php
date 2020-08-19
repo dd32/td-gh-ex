@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'menu'); ?>
+
    <div id="content">
 	
 	<div class="post-404">
