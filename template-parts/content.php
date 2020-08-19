@@ -40,7 +40,7 @@
 		<!-- Blog Content -->
 		<p class="blog-text">
 			<?php 
-				echo wp_trim_words( get_the_content(), 40, NULL );
+				echo wp_trim_words( get_the_content(), 25, NULL );
 			?>
 		</p>
 		
