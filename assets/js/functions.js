@@ -228,7 +228,7 @@ var THEMEVISION = THEMEVISION || {};
 				}
 				// If Particles Enabled
 				if( agama.slider_particles == true ) {
-					THEMEVISION.initialize.particles( agama.slider_particles_circle_color, agama.slider_particles_lines_color );
+					THEMEVISION.initialize.particles( agama.slider_particles_colors.circles, agama.slider_particles_colors.lines );
 				}
 			}
 		},
@@ -536,7 +536,10 @@ var THEMEVISION = THEMEVISION || {};
 		
 		header_image: function() {
 			if( agama.headerImage && agama.header_image_particles == true ) {
-				THEMEVISION.initialize.particles( agama.header_img_particles_c_color, agama.header_img_particles_l_color );
+				THEMEVISION.initialize.particles( 
+                    agama.header_image_particles_colors.circles, 
+                    agama.header_image_particles_colors.lines 
+                );
 			}
 		}
 		

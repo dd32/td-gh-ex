@@ -1,125 +1,253 @@
 <?php 
+/**
+ * Slider
+ *
+ * The Agama slider class.
+ *
+ * @author      Theme Vision <support@theme-vision.com>
+ * @package     Theme Vision
+ * @subpackage  Agama
+ * @since       1.2.9
+ * @since       1.6.0 Updated the code.
+ */
+
+namespace Agama;
 
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-/**
- * Agama Slider Class
- *
- * @since 1.2.9
- */
-class Agama_Slider {
-	
-	/**
-	 * Slider Initialization
-	 *
-	 * @since 1.2.9
-	 */
-	public static function init() {
-		self::render();
-	}
-	
-	/**
-	 * Get Slider Options
-	 *
-	 * @since 1.2.9
-	 */
-	private static function get_options() {
-		global $button, $enabled, $visibility, $particles, $slide;
-		
-		$enabled 	= esc_attr( get_theme_mod( 'agama_slider_enable', false ) );
-		$visibility	= esc_attr( get_theme_mod( 'agama_slider_visibility', 'homepage' ) );
-		$particles	= esc_attr( get_theme_mod( 'agama_slider_particles', true ) );
-		
-		$slide['1']['img']			= esc_url( get_theme_mod( 'agama_slider_image_1' ) );
-		$slide['2']['img']			= esc_url( get_theme_mod( 'agama_slider_image_2' ) );
-		$slide['1']['title']		= esc_attr( get_theme_mod( 'agama_slider_title_1', 'Welcome to Agama' ) );
-		$slide['2']['title']		= esc_attr( get_theme_mod( 'agama_slider_title_2', 'Welcome to Agama' ) );
-		$slide['1']['animate'] 		= esc_attr( get_theme_mod( 'agama_slider_title_animation_1', 'bounceInLeft' ) );
-		$slide['2']['animate'] 		= esc_attr( get_theme_mod( 'agama_slider_title_animation_2', 'bounceInLeft' ) );
-		$slide['1']['title_color']	= esc_attr( get_theme_mod( 'agama_slider_title_color_1', '#fff' ) );
-		$slide['2']['title_color']	= esc_attr( get_theme_mod( 'agama_slider_title_color_2', '#fff' ) );
-		$button['1']['title'] 		= esc_attr( get_theme_mod( 'agama_slider_button_title_1', 'Learn More' ) );
-		$button['2']['title'] 		= esc_attr( get_theme_mod( 'agama_slider_button_title_2', 'Learn More' ) );
-		$button['1']['animate']		= esc_attr( get_theme_mod( 'agama_slider_button_animation_1', 'bounceInRight' ) );
-		$button['2']['animate']		= esc_attr( get_theme_mod( 'agama_slider_button_animation_2', 'bounceInRight' ) );
-		$button['1']['url'] 		= esc_url( get_theme_mod( 'agama_slider_button_url_1', '#' ) );
-		$button['2']['url'] 		= esc_url( get_theme_mod( 'agama_slider_button_url_2', '#' ) );
-	}
-	
-	/**
-	 * Render Agama Slider
-	 *
-	 * @since 1.2.9
-	 */
-	private static function render() {
-		global $button, $enabled, $visibility, $particles, $slide;
-		
-		self::get_options();
-		
-		if( $enabled && $visibility == 'homepage' && is_home() || 
-			$enabled && $visibility == 'frontpage' && is_front_page() 
-		) {
-			echo '<div id="agama-slider-wrapper">';
-				if( $particles ) {
-					echo '<div id="particles-js" class="agama-particles"></div>';
-				}
-				echo '<div id="agama_slider" class="camera_wrap">';
-					if( $slide['1']['img'] ) {
-						echo '<div data-src="'. $slide['1']['img'] .'" data-alt="'. $slide['1']['title'] .'">';
-							echo '<div class="slide-content slide-1">';
-								echo '<div class="slide-content-cell">';
-									echo '<div class="tv-container">';
-										echo '<div class="tv-row">';
-											echo '<div class="tv-col-md-12 tv-col-sm-12 tv-col-xs-12">';
-												if( $slide['1']['title'] ) {
-													echo '<h2 class="slide-title animated '. $slide['1']['animate'] .'" style="color:'. $slide['1']['title_color'] .';">';
-														echo $slide['1']['title'];
-													echo '</h2>';
-												}
-												if( $button['1']['title'] ) {
-													echo '<a href="'. $button['1']['url'] .'" class="button button-3d button-rounded button-xlarge animated '. $button['1']['animate'] .'">';
-														echo $button['1']['title'];
-													echo '</a>';
-												}
-											echo '</div>';
-										echo '</div>';
-									echo '</div>';
-								echo '</div>';
-							echo '</div>';
-						echo '</div>';
-					}
-					if( $slide['2']['img'] ) {
-						echo '<div data-src="'. $slide['2']['img'] .'" data-alt="'. $slide['2']['title'] .'">';
-							echo '<div class="slide-content slide-2">';
-								echo '<div class="slide-content-cell">';
-									echo '<div class="tv-container">';
-										echo '<div class="tv-row">';
-											echo '<div class="tv-col-md-12 tv-col-sm-12 tv-col-xs-12">';
-												if( $slide['2']['title'] ) {
-													echo '<h2 class="slide-title animated '. $slide['2']['animate'] .'" style="color:'. $slide['2']['title_color'] .';">';
-														echo $slide['2']['title'];
-													echo '</h2>';
-												}
-												if( $button['2']['title'] ) {
-													echo '<a href="'. $button['2']['url'] .'" class="button button-3d button-rounded button-xlarge animated '. $button['2']['animate'] .'">';
-														echo $button['2']['title'];
-													echo '</a>';
-												}
-											echo '</div>';
-										echo '</div>';
-									echo '</div>';
-								echo '</div>';
-							echo '</div>';
-						echo '</div>';
-					}
-				echo '</div>';
-			echo '</div>';
-		}
-	}
-	
+class Slider {
+    
+    /**
+     * Visibility
+     *
+     * The slider visibility.
+     *
+     * @since 1.6.0
+     * @return string
+     */
+    protected $visibility;
+    
+    /**
+     * Particles
+     *
+     * Check if the slider particles are enabled.
+     *
+     * @since 1.6.0
+     * @return bool
+     */
+    protected $particles;
+    
+    /**
+     * Slides
+     *
+     * The slider array slides holder.
+     *
+     * @since 1.6.0
+     * @return array
+     */
+    protected $slides;
+    
+    /**
+     * Instance
+     *
+     * Single instance of this object.
+     *
+     * @since 1.6.0
+     * @access public
+     * @return null|object
+     */
+    public static $instance = null;
+    
+    /**
+     * Get Instance
+     *
+     * Access the single instance of this class.
+     *
+     * @since 1.6.0
+     * @access public
+     * @return object
+     */
+    public static function get_instance() {
+        if ( null === self::$instance ) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+    
+    /**
+     * Class Constructor
+     */
+    function __construct() {
+        
+        $this->visibility = get_theme_mod( 'agama_slider_visibility', 'homepage' );
+        $this->particles = get_theme_mod( 'agama_slider_particles', true );
+        $this->slides = get_theme_mod( 'agama_slider_slides_repeater', [] );
+        
+        /**
+         * Render the content.
+         */
+        $this->render_content();
+        
+    }
+    
+    /**
+     * Visibility
+     *
+     * Check where the slider should be shown.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return bool
+     */
+    private function visibility() {
+        if ( 'homepage' == $this->visibility && is_home() || 'frontpage' == $this->visibility && is_front_page() ) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Image
+     *
+     * Format the image properly for use in img src attribute.
+     *
+     * @param int|string (required) The image ID or URL.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return string
+     */
+    private function image( $image ) {
+        if ( is_numeric( $image ) ) {
+            $URL = wp_get_attachment_image_src( $image, 'full' );
+            $URL = $URL[0]; // Return the attachment URL.
+        } else {
+            $URL = $image;
+        }
+        return $URL;
+    }
+    
+    /**
+     * Title Attributes
+     *
+     * Format the slider title attributes.
+     *
+     * @param array $slide (required) The slide arguments.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return string
+     */
+    private function title_attributes( $slide ) {
+        if ( ! empty( $slide['title_animation'] ) ) {
+            $class = 'slide-title animated ' . $slide['title_animation'];
+        } else {
+            $class = 'slide-title';
+        }
+        
+        $attributes['class'] = 'class="' . esc_attr( $class ) .'"';
+        
+        if ( ! empty( $slide['title_color'] ) ) {
+            $attributes['color'] = 'style="color:' . esc_attr( $slide['title_color'] ) .';"';
+        }
+        
+        echo implode( ' ', $attributes );
+    }
+    
+    /**
+     * Button Attributes
+     *
+     * Format the slider button attributes.
+     *
+     * @param array $slide (required) The slide arguments.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return string
+     */
+    private function button_attributes( $slide ) {
+        if ( ! empty( $slide['button_link'] ) ) {
+            $attributes['href'] = 'href="' . esc_url( $slide['button_link'] ) .'"';
+        } else {
+            $attributes['href'] = 'href="#"';    
+        }
+        
+        if ( ! empty( $slide['button_animation'] ) ) {
+            $class = 'button button-3d button-rounded button-xlarge animated ' . $slide['button_animation'];
+        } else {
+            $class = 'button button-3d button-rounded button-xlarge';
+        }
+        
+        $attributes['class'] = 'class="' . esc_attr( $class ) .'"';
+        
+        if ( ! empty( $slide['button_color'] ) ) {
+            $attributes['color'] = 'style="color:'. esc_attr( $slide['button_color'] ) .';border-color:'. esc_attr( $slide['button_color'] ) .';"';
+        }
+        
+        $attributes['onmouseover'] = "onmouseover=this.style.color='#fff';this.style.backgroundColor='{$slide['button_color']}'";
+        $attributes['onmouseout'] = "onmouseout=this.style.color='{$slide['button_color']}';this.style.backgroundColor='transparent'";
+        
+        echo implode( ' ', $attributes );
+    }
+    
+    /**
+     * Render Content
+     *
+     * Render the front page boxes content.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return mixed
+     */
+    private function render_content() {
+        if ( ! empty( $this->slides ) && $this->visibility ) : ?>
+            <div id="agama-slider-wrapper">
+                
+                <?php if ( $this->particles ) : ?>
+                    <div id="particles-js" class="agama-particles"></div>
+                <?php endif; ?>
+                
+                <div id="agama_slider" class="camera_wrap">
+                    <?php foreach ( $this->slides as $slide ) : ?>
+                        
+                        <div data-src="<?php echo esc_url( $this->image( $slide['image'] ) ); ?>" 
+                             data-alt="<?php echo esc_attr( $slide['title'] ); ?>">
+                            <div class="slide-content">
+                                <div class="slide-content-cell">
+                                    <div class="tv-container">
+                                        <div class="tv-row">
+                                            <div class="tv-col-md-12 tv-col-sm-12 tv-col-xs-12">
+                                                
+                                                <?php if ( ! empty( $slide['title'] ) ) : ?>
+                                                    <h2 <?php $this->title_attributes( $slide ); ?>>
+														<?php echo esc_html( $slide['title'] ); ?>
+													</h2>
+                                                <?php endif; ?>
+                                                
+                                                <?php if ( ! empty( $slide['button_title'] ) ) : ?>
+                                                    <a <?php $this->button_attributes( $slide ); ?>>
+                                                        <?php echo esc_html( $slide['button_title'] ); ?>
+                                                    </a>
+                                                <?php endif; ?>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <?php endforeach; ?>
+                </div>
+                
+            </div>
+        <?php
+        endif;
+    }
+    
 }
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

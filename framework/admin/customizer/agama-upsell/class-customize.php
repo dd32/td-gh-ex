@@ -100,32 +100,39 @@ final class Agama_Customizer_Upsell {
                     'panel'     => 'agama_general_panel',
                     'priority'  => 500,
                     'options'   => [
-                        __( 'Headings', 'agama' ),
-                        __( 'Preloader', 'agama' )
+                        __( 'Get More Options', 'agama' )
                     ]
                 ]
             )
         );
-
-        // Slider Sections Upsell.
+        
+        // Typography Section Upsell
         $manager->add_section(
             new Agama_Customizer_Upsell_Section(
-                $manager, 
-                'agama-upsell-slider-sections', 
-                array(
-                    'panel'       => 'agama_slider_panel',
-                    'priority'    => 500,
-                    'options'     => array(
-                        esc_html__( 'Slide #3', 'agama' ),
-                        esc_html__( 'Slide #4', 'agama' ),
-                        esc_html__( 'Slide #5', 'agama' ),
-                        esc_html__( 'Slide #6', 'agama' ),
-                        esc_html__( 'Slide #7', 'agama' ),
-                        esc_html__( 'Slide #8', 'agama' ),
-                        esc_html__( 'Slide #9', 'agama' ),
-                        esc_html__( 'Slide #10', 'agama' ),
-                    )
-                )
+                $manager,
+                'agama-upsell-typography-sections',
+                [
+                    'panel'     => 'agama_typography_panel',
+                    'priority'  => 500,
+                    'options'   => [
+                        __( 'Get More Options', 'agama' )
+                    ]
+                ]
+            )
+        );
+        
+        // Colors & Styling Section Upsell
+        $manager->add_section(
+            new Agama_Customizer_Upsell_Section(
+                $manager,
+                'agama-upsell-colors-sections',
+                [
+                    'panel'     => 'agama_colors_panel',
+                    'priority'  => 500,
+                    'options'   => [
+                        __( 'Get More Options', 'agama' )
+                    ]
+                ]
             )
         );
         
@@ -175,10 +182,10 @@ final class Agama_Customizer_Upsell {
          * General -> Body
          */
         Kirki::add_field( 'agama_options', [
-            'section'   => 'background_image',
+            'section'   => 'agama_colors_body_section',
             'settings'  => 'agama_general_body_upsell',
             'type'      => 'agama-upsell',
-            'default'   => __( 'Background Animate', 'agama' ),
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -188,10 +195,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_general_skins_section',
             'settings'  => 'agama_general_skins_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Links Color', 'agama' ),
-                __( 'Links Hover Color', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -201,7 +205,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_comments_section',
             'settings'  => 'agama_General_comments_upsell',
             'type'      => 'agama-upsell',
-            'default'   => __( 'Enable / Disable Comments', 'agama' ),
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -211,12 +215,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_extra_section',
             'settings'  => 'agama_general_extra_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Development Mode', 'agama' ),
-                __( 'Rich Snipets', 'agama' ),
-                __( 'Custom jQuery Head', 'agama' ),
-                __( 'Custom jQuery Footer', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -226,7 +225,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_layout_general_section',
             'settings'  => 'agama_layout_general_upsell',
             'type'      => 'agama-upsell',
-            'default'   => __( 'Layout Width', 'agama' ),
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -236,12 +235,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_layout_sidebar_section',
             'settings'  => 'agama_layout_sidebar_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Heading Typography', 'agama' ),
-                __( 'Body Typography', 'agama' ),
-                __( 'Links Color', 'agama' ),
-                __( 'Links Hover Color', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -251,12 +245,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_header_section',
             'settings'  => 'agama_header_general_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Top Border Style', 'agama' ),
-                __( 'Top Border Color', 'agama' ),
-                __( 'Inner Margin (V2)', 'agama' ),
-                __( 'Search Icon', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -266,10 +255,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_header_logo_section',
             'settings'  => 'agama_header_logo_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Logo Align', 'agama' ),
-                __( 'Logo Shrinked Height', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -279,13 +265,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_header_styling_section',
             'settings'  => 'agama_header_styling_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Background Image', 'agama' ),
-                __( 'Background Image Repeat', 'agama' ),
-                __( 'Background Image Size', 'agama' ),
-                __( 'Background Image Attachment', 'agama' ),
-                __( 'Background Image Position', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -295,7 +275,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_nav_mobile_section',
             'settings'  => 'agama_navigation_mobile_upsell',
             'type'      => 'agama-upsell',
-            'default'   => __( 'Background Color', 'agama' ),
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -305,20 +285,17 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_breadcrumb_section',
             'settings'  => 'agama_breadcrumb_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Breadcrumb Height', 'agama' ),
-                __( 'Breadcrumb Prefix', 'agama' ),
-                __( 'Breadcrumb Separator', 'agama' ),
-                __( 'Post Categories', 'agama' ),
-                __( 'Post Archives', 'agama' ),
-                __( 'Background Image', 'agama' ),
-                __( 'Background Image Repeat', 'agama' ),
-                __( 'Background Image Size', 'agama' ),
-                __( 'Background Image Attachment', 'agama' ),
-                __( 'Background Image Position', 'agama' ),
-                __( 'Links Hover Color', 'agama' ),
-                __( 'Breadcrumb Typography', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
+            'priority'  => 999
+        ] );
+        /**
+         * Slider -> Slides
+         */
+        Kirki::add_field( 'agama_options', [
+            'section'   => 'agama_slider_slides_section',
+            'settings'  => 'agama_slider_slides_upsell',
+            'type'      => 'agama-upsell',
+            'default'   => __( 'Get More Slides', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -328,9 +305,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_frontpage_boxes_section',
             'settings'  => 'agama_frontpage_boxes_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Unlocks 4 more boxes.', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -340,12 +315,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_blog_general_section',
             'settings'  => 'agama_blog_general_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Featured Images Crop', 'agama' ),
-                __( 'Images Hover Effect', 'agama' ),
-                __( 'LightBox', 'agama' ),
-                __( 'Pagination', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -355,12 +325,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_blog_single_post_section',
             'settings'  => 'agama_blog_single_post_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Post Titles', 'agama' ),
-                __( 'Post Meta', 'agama' ),
-                __( 'Post Tags', 'agama' ),
-                __( 'Post Navigation', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -370,7 +335,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_blog_post_meta_section',
             'settings'  => 'agama_blog_post_meta_upsell',
             'type'      => 'agama-upsell',
-            'default'   => __( 'Post Views Counter', 'agama' ),
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -380,11 +345,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_footer_general_section',
             'settings'  => 'agama_footer_general_upsell',
             'type'      => 'agama-upsell',
-            'default'   => [
-                __( 'Social Icons Color', 'agama' ),
-                __( 'Social Icons Hover Color', 'agama' ),
-                __( 'Copyright Typography', 'agama' )
-            ],
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
         /**
@@ -394,7 +355,7 @@ final class Agama_Customizer_Upsell {
             'section'   => 'agama_footer_styling_section',
             'settings'  => 'agama_footer_styling_upsell',
             'type'      => 'agama-upsell',
-            'default'   => __( 'Footer Background Image', 'agama' ),
+            'default'   => __( 'Get More Options', 'agama' ),
             'priority'  => 999
         ] );
     }

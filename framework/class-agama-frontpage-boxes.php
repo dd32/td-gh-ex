@@ -31,6 +31,16 @@ class Front_Page_Boxes {
     protected $label;
     
     /**
+     * Visibility
+     *
+     * The boxes visibility.
+     *
+     * @since 1.6.0
+     * @return string
+     */
+    protected $visibility;
+    
+    /**
      * Boxes
      *
      * The boxes arguments holder.
@@ -73,6 +83,7 @@ class Front_Page_Boxes {
     function __construct() {
         
         $this->label = get_theme_mod( 'agama_frontpage_boxes_heading',  __( 'Front Page Boxes', 'agama' ) );
+        $this->visibility = get_theme_mod( 'agama_frontpage_boxes_visibility', 'homepage' );
         $this->boxes = get_theme_mod( 'agama_frontpage_boxes_repeater', [] );
         
         /**
@@ -80,6 +91,26 @@ class Front_Page_Boxes {
          */
         $this->render_content();
         
+    }
+    
+    /**
+     * Visibility
+     *
+     * Check where the front page should be shown.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return bool
+     */
+    private function visibility() {
+        if ( 
+            'homepage' == $this->visibility && is_home() || 
+            'frontpage' == $this->visibility && is_front_page() ||
+            'allpages' == $this->visibility 
+        ) {
+            return true;
+        }
+        return false;
     }
     
     /**
@@ -180,44 +211,44 @@ class Front_Page_Boxes {
      * @return mixed
      */
     private function render_content() {
-        if ( ! empty( $this->boxes ) ) : ?>
-        <div id="frontpage-boxes" class="tv-row">
-            <?php if ( ! empty( $this->label ) ) : ?>
-                <div class="tv-col-md-12">
-                    <h1><?php echo esc_html( $this->label ); ?></h1>
-                </div>
-            <?php endif; ?>
-            <?php foreach ( $this->boxes as $box ) : ?>
-                <div <?php $this->attributes( $box ); ?>>
+        if ( ! empty( $this->boxes ) && $this->visibility() ) : ?>
+            <div id="frontpage-boxes" class="tv-row">
+                <?php if ( ! empty( $this->label ) ) : ?>
+                    <div class="tv-col-md-12">
+                        <h1><?php echo esc_html( $this->label ); ?></h1>
+                    </div>
+                <?php endif; ?>
+                <?php foreach ( $this->boxes as $box ) : ?>
+                    <div <?php $this->attributes( $box ); ?>>
 
-                    <?php if ( $box['url'] ) : ?>
-                    <a href="<?php echo esc_url( $box['url'] ); ?>">
-                    <?php endif; ?>
-
-                        <?php if ( ! empty( $box['image'] ) ) : ?>
-                        <img src="<?php echo esc_url( $this->image( $box['image'] ) ); ?>" 
-                             alt="<?php echo esc_attr( $box['title'] ); ?>">
+                        <?php if ( $box['url'] ) : ?>
+                        <a href="<?php echo esc_url( $box['url'] ); ?>">
                         <?php endif; ?>
 
-                        <?php if ( ! empty( $box['icon'] ) ) : ?>
-                        <i <?php $this->icon_attributes( $box ); ?>></i>
+                            <?php if ( ! empty( $box['image'] ) ) : ?>
+                            <img src="<?php echo esc_url( $this->image( $box['image'] ) ); ?>" 
+                                 alt="<?php echo esc_attr( $box['title'] ); ?>">
+                            <?php endif; ?>
+
+                            <?php if ( ! empty( $box['icon'] ) ) : ?>
+                            <i <?php $this->icon_attributes( $box ); ?>></i>
+                            <?php endif; ?>
+
+                        <?php if ( $box['url'] ) : ?>
+                        </a>
                         <?php endif; ?>
 
-                    <?php if ( $box['url'] ) : ?>
-                    </a>
-                    <?php endif; ?>
+                        <?php if ( ! empty( $box['title'] ) ) : ?>
+                        <h2><?php echo esc_html( $box['title'] ); ?></h2>
+                        <?php endif; ?>
 
-                    <?php if ( ! empty( $box['title'] ) ) : ?>
-                    <h2><?php echo esc_html( $box['title'] ); ?></h2>
-                    <?php endif; ?>
+                        <?php if ( ! empty( $box['text'] ) ) : ?>
+                        <p><?php echo esc_html( $box['text'] ); ?></p>
+                        <?php endif; ?>
 
-                    <?php if ( ! empty( $box['text'] ) ) : ?>
-                    <p><?php echo esc_html( $box['text'] ); ?></p>
-                    <?php endif; ?>
-
-                </div>
-            <?php endforeach; ?>
-        </div><!-- #frontpage-boxes -->
+                    </div>
+                <?php endforeach; ?>
+            </div><!-- #frontpage-boxes -->
         <?php
         endif;
     }

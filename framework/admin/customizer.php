@@ -46,10 +46,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
  */
 function agama_customize_register( $wp_customize ) {
     
-    $wp_customize->get_setting( 'blogname' )->transport           = 'postMessage';
-    $wp_customize->get_setting( 'blogdescription' )->transport    = 'postMessage';
-    $wp_customize->get_setting( 'header_image' )->transport       = 'postMessage';
-    $wp_customize->get_setting( 'header_image_data'  )->transport = 'postMessage';
+    $wp_customize->get_section( 'title_tagline' )->priority         = 2;
+    $wp_customize->get_setting( 'blogname' )->transport             = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport       = 'postMessage';
+    $wp_customize->get_control( 'background_image' )->section       = 'agama_colors_body_section';
+    $wp_customize->get_control( 'background_preset' )->section      = 'agama_colors_body_section';
+    $wp_customize->get_control( 'background_position' )->section    = 'agama_colors_body_section';
+    $wp_customize->get_control( 'background_size' )->section        = 'agama_colors_body_section';
+    $wp_customize->get_control( 'background_repeat' )->section      = 'agama_colors_body_section';
+    $wp_customize->get_control( 'background_attachment' )->section  = 'agama_colors_body_section';
+    $wp_customize->get_setting( 'header_image' )->transport         = 'postMessage';
+    $wp_customize->get_setting( 'header_image_data'  )->transport   = 'postMessage';
     $wp_customize->selective_refresh->add_partial(
         'header_image',
         [
@@ -67,106 +74,6 @@ add_action( 'customize_register', 'agama_customize_register' );
         'option_type' => 'theme_mod',
         'capability'  => 'edit_theme_options'
     ) );
-#########################################################
-# SITE IDENTITY PANEL
-#########################################################
-    Kirki::add_panel( 'agama_site_identity_panel', array(
-        'title' => esc_attr__( 'Site Identity', 'agama' )
-    ) );
-    ###########################################
-    # TITLE & TAGLINE GENERAL SECTION
-    ###########################################
-    Kirki::add_section( 'title_tagline', array(
-        'title' => esc_attr__( 'General', 'agama' ),
-        'panel' => 'agama_site_identity_panel'
-    ) );
-    #################################################################
-    # TITLE & TAGLINE STYLING SECTION
-    #################################################################
-    Kirki::add_section( 'agama_title_tagline_styling_section', [
-        'title'         => esc_attr__( 'Styling', 'agama' ),
-        'panel'         => 'agama_site_identity_panel'
-    ] );
-    Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Site Identity Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Select site identity color.', 'agama' ),
-		'section'		=> 'agama_title_tagline_styling_section',
-		'settings'		=> 'agama_header_logo_color',
-		'type'			=> 'color',
-        'transport'		=> 'auto',
-        'default'		=> '#bdbdbd',
-		'output'		=> [
-			[
-				'element'	=> '#masthead h1 a',
-				'property'	=> 'color'
-			]
-		]
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Site Identity Hover Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Select site identity hover color.', 'agama' ),
-		'section'		=> 'agama_title_tagline_styling_section',
-		'settings'		=> 'agama_header_logo_hover_color',
-		'type'			=> 'color',
-        'transport'		=> 'auto',
-        'default'		=> '#333',
-		'output'		=> [
-			[
-				'element'	=> '#masthead h1 a:hover',
-				'property'	=> 'color'
-			]
-		]
-	] );
-    ################################################
-	# TITLE TAGLINE TYPOGRAPHY SECTION
-	################################################
-	Kirki::add_section( 'agama_title_tagline_typo', [
-		'title'			=> esc_attr__( 'Typography', 'agama' ),
-		'panel'			=> 'agama_site_identity_panel'
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Site Title Font', 'agama' ),
-		'tooltip'	        => esc_attr__( 'Select site title font.', 'agama' ),
-		'section'		    => 'agama_title_tagline_typo',
-		'settings'		    => 'agama_logo_font',
-		'type'			    => 'typography',
-        'transport'         => 'auto',
-		'default'			=> [
-			'font-family' 	=> 'Montserrat',
-            'variant'       => '900',
-			'font-size'		=> '35px'
-		],
-        'output'			=> [
-			[
-				'element' 	=> '#masthead:not(.shrinked) .site-title a'
-			]
-		]
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Site Title Shrinked', 'agama' ),
-		'tooltip'	        => esc_attr__( 'Select header shrinked site title font size.', 'agama' ),
-		'section'		    => 'agama_title_tagline_typo',
-		'settings'		    => 'agama_logo_shrink_font',
-		'type'			    => 'typography',
-        'transport'         => 'auto',
-        'default'		    => [
-            'font-family'   => 'Montserrat',
-            'variant'       => '900',
-			'font-size'	    => '28px'
-		],
-		'output'		    => [
-			[
-				'element'   => '#masthead.shrinked .site-title a'
-			]
-		],
-        'active_callback'   => [
-            [
-                'setting'   => 'agama_header_style',
-                'operator'  => '!==',
-                'value'     => 'default'
-            ]
-        ]
-	] );
 #######################################################
 # GENERAL PANEL
 #######################################################
@@ -174,100 +81,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'title'			=> esc_attr__( 'General', 'agama' ),
 		'priority'		=> 10
 	) );
-    ########################################################
-    # GENERAL BODY SECTION
-    ########################################################
-    Kirki::add_section( 'background_image', [
-		'title'			=> esc_attr__( 'Body', 'agama' ),
-		'panel'			=> 'agama_general_panel'
-	] );
-    Kirki::add_field( 'agama_options', [
-        'label'     => esc_attr__( 'Body Font', 'agama' ),
-        'tooltip'   => esc_attr__( 'Customize body font.', 'agama' ),
-        'section'   => 'background_image',
-        'settings'  => 'agama_body_font',
-        'type'      => 'typography',
-        'transport' => 'auto',
-        'default'   => [
-            'font-family'       => 'Raleway',
-            'variant'           => '400',
-            'font-size'         => '14px',
-            'line-height'       => '1',
-            'letter-spacing'    => '0',
-            'subsets'           => [],
-            'color'             => '#747474',
-            'text-transform'    => 'none',
-            'text-align'        => 'left'
-        ],
-        'output' => [
-            [
-                'element' => 'body'
-            ]
-        ],
-        'priority' => 1
-    ] );
-    Kirki::add_field( 'agama_options', [
-        'label'     => esc_attr__( 'Background Color', 'agama' ),
-        'tooltip'   => esc_attr__( 'Select body background color.', 'agama' ),
-        'section'   => 'background_image',
-        'settings'  => 'agama_body_background_color',
-        'type'      => 'color',
-        'transport' => 'auto',
-        'default'   => '#e6e6e6',
-        'output'    => [
-            [
-                'element'   => 'body',
-                'property'  => 'background-color'
-            ]
-        ]
-    ] );
-    #########################################################
-    # GENERAL SKINS SECTION
-    #########################################################
-    Kirki::add_section( 'agama_general_skins_section', array(
-        'title'         => __( 'Skins', 'agama' ),
-        'panel'         => 'agama_general_panel'
-    ) );
-    Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Skin', 'agama' ),
-		'tooltip'	    => __( 'Select theme skin.', 'agama' ),
-		'section'		=> 'agama_general_skins_section',
-		'settings'		=> 'agama_skin',
-		'type'			=> 'select',
-		'choices'		=> array(
-			'light'		=> __( 'Light', 'agama' ),
-			'dark'		=> __( 'Dark', 'agama' )
-		),
-		'default'		=> 'light'
-	) );
-	Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Primary Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Set theme primary color.', 'agama' ),
-		'section'		=> 'agama_general_skins_section',
-		'settings'		=> 'agama_primary_color',
-		'type'			=> 'color',
-        'transport'     => 'auto',
-		'output'		=> [
-			[
-				'element'	=> 'a:hover, .mobile-menu-toggle-label, .vision-search-submit:hover, .entry-title a:hover, .entry-meta a:not(.button):hover, .entry-content a:hover, .comment-content a:hover, .single-line-meta a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, .comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-header header a:hover, .tagcloud a:hover, footer[role="contentinfo"] a:hover',
-				'property'	=> 'color'
-			],
-			[
-				'element'	=> '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner::before, .mobile-menu-toggle-inner::after, .woocommerce span.onsale, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .loader-ellips__dot',
-				'property'	=> 'background-color'
-			],
-            [
-                'element'   => '#masthead:not(.header_v1), ul.agama-navigation ul:not(.mega-menu-column)',
-                'property'  => 'border-top-color'
-            ],
-			[
-				'element'	=> '#masthead.header_v2, .tagcloud a:hover, .wpcf7-text:focus, .wpcf7-email:focus, .wpcf7-textarea:focus',
-				'property'	=> 'border-color'
-			],
-		],
-		'transport'		=> 'auto',
-		'default'		=> '#ac32e4'
-	] );
     #######################################################
     # SEARCH PAGE SECTION
     #######################################################
@@ -337,6 +150,841 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'capability'	=> 'edit_theme_options',
         'panel'         => 'agama_general_panel'
 	) );
+######################################################
+# TYPOGRAPHY PANEL
+######################################################
+    Kirki::add_panel( 'agama_typography_panel', [
+        'title'     => __( 'Typography', 'agama' ),
+        'priority'  => 20
+    ] );
+    ##########################################################
+    # TYPOGRAPHY SITE TITLE SECTION
+    ##########################################################
+    Kirki::add_section( 'agama_typography_site_title_section', [
+		'title'			=> esc_attr__( 'Site Title', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_typography_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			    => esc_attr__( 'Site Title', 'agama' ),
+		'tooltip'	        => esc_attr__( 'Customize site title font.', 'agama' ),
+		'section'		    => 'agama_typography_site_title_section',
+		'settings'		    => 'agama_logo_font',
+		'type'			    => 'typography',
+        'transport'         => 'auto',
+		'default'			=> [
+			'font-family' 	=> 'Montserrat',
+            'variant'       => '900',
+			'font-size'		=> '35px'
+		],
+        'output'			=> [
+			[
+				'element' 	=> '#masthead:not(.shrinked) .site-title a'
+			]
+		]
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			    => esc_attr__( 'Site Title Shrinked', 'agama' ),
+		'tooltip'	        => esc_attr__( 'Customize header shrinked site title font size.', 'agama' ),
+		'section'		    => 'agama_typography_site_title_section',
+		'settings'		    => 'agama_logo_shrink_font',
+		'type'			    => 'typography',
+        'transport'         => 'auto',
+        'default'		    => [
+            'font-family'   => 'Montserrat',
+            'variant'       => '900',
+			'font-size'	    => '28px'
+		],
+		'output'		    => [
+			[
+				'element'   => '#masthead.shrinked .site-title a'
+			]
+		],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'default'
+            ]
+        ]
+	] );
+    ##########################################################
+    # TYPOGRAPHY BODY SECTION
+    ##########################################################
+    Kirki::add_section( 'agama_typography_body_section', [
+		'title'			=> esc_attr__( 'Body', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_typography_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'     => esc_attr__( 'Body Font', 'agama' ),
+        'tooltip'   => esc_attr__( 'Customize body font.', 'agama' ),
+        'section'   => 'agama_typography_body_section',
+        'settings'  => 'agama_body_font',
+        'type'      => 'typography',
+        'transport' => 'auto',
+        'default'   => [
+            'font-family'       => 'Raleway',
+            'variant'           => '400',
+            'font-size'         => '14px',
+            'line-height'       => '1',
+            'letter-spacing'    => '0',
+            'subsets'           => [],
+            'color'             => '#747474',
+            'text-transform'    => 'none',
+            'text-align'        => 'left'
+        ],
+        'output' => [
+            [
+                'element' => 'body'
+            ]
+        ]
+    ] );
+    ##########################################################
+    # TYPOGRAPHY NAVIGATION TOP SECTION
+    ##########################################################
+    Kirki::add_section( 'agama_typography_navigation_top_section', [
+		'title'			=> esc_attr__( 'Navigation Top', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_typography_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'             => esc_attr__( 'Font', 'agama' ),
+        'tooltip'           => esc_attr__( 'Customize top navigation font.', 'agama' ),
+        'section'           => 'agama_typography_navigation_top_section',
+        'settings'          => 'agama_navigation_top_font',
+        'type'              => 'typography',
+        'transport'         => 'auto',
+        'output'            => [
+            [
+                'element'   => '#agama-top-nav a'    
+            ]
+        ],
+        'default' => [
+            'font-family'       => 'Roboto Condensed',
+            'variant'           => '700',
+            'font-size'         => '14px',
+            'letter-spacing'    => '0',
+            'text-transform'    => 'uppercase'
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'agama_header_style',
+                'operator' => '!==',
+                'value'    => 'transparent'
+            ]
+        ]
+    ] );
+    ##########################################################
+    # TYPOGRAPHY NAVIGATION PRIMARY SECTION
+    ##########################################################
+    Kirki::add_section( 'agama_typography_navigation_primary_section', [
+		'title'			=> esc_attr__( 'Navigation Primary', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_typography_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'                 => esc_attr__( 'Font', 'agama' ),
+        'tooltip'               => esc_attr__( 'Customize primary navigation font.', 'agama' ),
+        'section'               => 'agama_typography_navigation_primary_section',
+        'settings'              => 'agama_navigation_primary_font',
+        'type'                  => 'typography',
+        'transport'             => 'auto',
+        'output'                => [
+            [
+                'element'       => '#agama-primary-nav a'    
+            ]
+        ],
+        'default'               => [
+            'font-family'       => 'Roboto Condensed',
+            'variant'           => '700',
+            'font-size'         => '14px',
+            'letter-spacing'    => '0',
+            'text-transform'    => 'uppercase'
+        ]
+    ] );
+     ##########################################################
+    # TYPOGRAPHY NAVIGATION MOBILE SECTION
+    ##########################################################
+    Kirki::add_section( 'agama_typography_navigation_mobile_section', [
+		'title'			=> esc_attr__( 'Navigation Mobile', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_typography_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'             => esc_attr__( 'Font', 'agama' ),
+        'tooltip'           => esc_attr__( 'Customize mobile navigation font.', 'agama' ),
+        'section'           => 'agama_typography_navigation_mobile_section',
+        'settings'          => 'agama_mobile_navigation_font',
+        'type'              => 'typography',
+        'transport'         => 'auto',
+        'output'            => [
+            [
+                'element'   => '#agama-mobile-nav a'    
+            ],
+            [
+                'element'   => '#agama-mobile-nav ul > li.menu-item-has-children.open > a'
+            ],
+            [
+                'element'   => '#agama-mobile-nav ul > li > ul li.menu-item-has-children > a'
+            ]
+        ],
+        'default'               => [
+            'font-family'       => 'Roboto Condensed',
+            'variant'           => '700',
+            'font-size'         => '14px',
+            'letter-spacing'    => '0',
+            'text-transform'    => 'uppercase'
+        ]
+    ] );
+######################################################
+# COLORS & STYLING PANEL
+######################################################
+    Kirki::add_panel( 'agama_colors_panel', [
+        'title'     => __( 'Colors & Styling', 'agama' ),
+        'priority'  => 20
+    ] );
+    ######################################################
+    # COLORS GENERAL SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_general_section', [
+		'title'			=> esc_attr__( 'General', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> __( 'Skin', 'agama' ),
+		'tooltip'	    => __( 'Select theme skin.', 'agama' ),
+		'section'		=> 'agama_colors_general_section',
+		'settings'		=> 'agama_skin',
+		'type'			=> 'select',
+		'choices'		=> [
+			'light'		=> __( 'Light', 'agama' ),
+			'dark'		=> __( 'Dark', 'agama' )
+		],
+		'default'		=> 'light'
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			=> esc_attr__( 'Primary Color', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Set theme primary color.', 'agama' ),
+		'section'		=> 'agama_colors_general_section',
+		'settings'		=> 'agama_primary_color',
+		'type'			=> 'color',
+        'transport'     => 'auto',
+		'output'		=> [
+			[
+				'element'	=> 'a:hover, .mobile-menu-toggle-label, .vision-search-submit:hover, .entry-title a:hover, .entry-meta a:not(.button):hover, .entry-content a:hover, .comment-content a:hover, .single-line-meta a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, .comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-header header a:hover, .tagcloud a:hover, footer[role="contentinfo"] a:hover',
+				'property'	=> 'color'
+			],
+			[
+				'element'	=> '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner::before, .mobile-menu-toggle-inner::after, .woocommerce span.onsale, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .loader-ellips__dot',
+				'property'	=> 'background-color'
+			],
+            [
+                'element'   => '#masthead:not(.header_v1), ul.agama-navigation ul:not(.mega-menu-column)',
+                'property'  => 'border-top-color'
+            ],
+			[
+				'element'	=> '#masthead.header_v2, .tagcloud a:hover, .wpcf7-text:focus, .wpcf7-email:focus, .wpcf7-textarea:focus',
+				'property'	=> 'border-color'
+			],
+		],
+		'transport'		=> 'auto',
+		'default'		=> '#ac32e4'
+	] );
+    ######################################################
+    # COLORS SITE TITLE SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_site_title_section', [
+		'title'			=> esc_attr__( 'Site Title', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => esc_html__( 'Site Title', 'agama' ),
+        'tooltip'       => esc_html__( 'Customize site title colors.', 'agama' ),
+        'section'       => 'agama_colors_site_title_section',
+        'settings'      => 'agama_site_title_colors',
+        'type'          => 'multicolor',
+        'transport'     => 'auto',
+        'choices'       => [
+            'normal'    => esc_html__( 'Normal', 'agama' ),
+            'hover'     => esc_html__( 'Hover', 'agama' )
+        ],
+        'default'       => [
+            'normal'    => '#bdbdbd',
+            'hover'     => '#333333'
+        ],
+        'output'        => [
+            [
+                'choice'    => 'normal',
+                'element'   => '#masthead h1 a',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '#masthead h1 a:hover',
+                'property'  => 'color'
+            ]
+        ]
+    ] );
+    ######################################################
+    # COLORS BODY SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_body_section', [
+		'title'			=> esc_attr__( 'Body', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'     => esc_attr__( 'Background Colors', 'agama' ),
+        'tooltip'   => esc_attr__( 'Select body background color.', 'agama' ),
+        'section'   => 'agama_colors_body_section',
+        'settings'  => 'agama_body_background_colors',
+        'type'      => 'multicolor',
+        'transport' => 'postMessage',
+        'choices'   => [
+            'left'  => esc_html__( 'Left', 'agama' ),
+            'right' => esc_html__( 'Right', 'agama' )
+        ],
+        'default'   => [
+            'left'  => '#e6e6e6',
+            'right' => '#e6e6e6'
+        ],
+        'priority' => 1
+    ] );
+    ######################################################
+    # COLORS HEADER SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_header_section', [
+		'title'			=> esc_attr__( 'Header', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			    => esc_attr__( 'Header Background Color', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Doesn\'t work with header V1 style.', 'agama' ),
+		'section'		    => 'agama_colors_header_section',
+		'settings'		    => 'agama_header_bg_color',
+		'type'			    => 'color',
+        'transport'         => 'auto',
+        'choices'           => [
+            'alpha'		    => true
+        ],
+        'default'		    => 'rgba(255, 255, 255, 1)',
+		'output'		    => [
+			[
+				'element'	=> '#masthead:not(.header_v1)',
+				'property'	=> 'background-color'
+			],
+			[
+				'element'	=> '#masthead nav:not(.mobile-menu) ul li ul',
+				'property'	=> 'background-color'
+			]
+		],
+		'active_callback'   => [
+            [
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'transparent'
+            ]
+        ]
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			    => esc_attr__( 'Header Shrinked BG Color', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Work\'s only with header V1 & V3.', 'agama' ),
+		'section'		    => 'agama_colors_header_section',
+		'settings'		    => 'agama_header_shrink_bg_color',
+		'type'			    => 'color',
+        'choices'           => [
+            'alpha'		    => true
+        ],
+		'transport'		    => 'auto',
+		'output'		    => [
+			[
+				'element'	=> '#masthead.shrinked, #masthead.shrinked nav ul li ul',
+				'property'	=> 'background-color'
+			],
+            [
+                'element'   => '#masthead.shrinked #agama-mobile-nav ul',
+                'property'  => 'background-color'
+            ]
+		],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'default'
+            ]
+        ],
+		'default'		    => 'rgba(255, 255, 255, .9)'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> esc_attr__( 'Header Borders Color', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Select header borders color.', 'agama' ),
+		'section'		=> 'agama_colors_header_section',
+		'settings'		=> 'agama_header_border_color',
+		'type'			=> 'color',
+        'transport'		=> 'auto',
+        'choices'       => [
+            'alpha'	    => true
+        ],
+        'default'		=> 'rgba(238, 238, 238, 1)',
+		'output'		=> [
+			[
+				'element'	=> '.header_v2 #agama-primary-nav, #agama-top-social li',
+				'property'	=> 'border-color'
+			],
+            [
+                'element'   => '.agama-top-nav-wrapper',
+                'property'  => 'box-shadow',
+                'prefix'    => '0 1px 4px 0 '
+            ]
+		],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'transparent'
+            ]
+        ]
+	] );
+    ######################################################
+    # COLORS HEADER IMAGE SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_header_image_section', [
+		'title'			=> esc_attr__( 'Header Image', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> __( 'Enable particles?', 'agama' ),
+		'settings'		=> 'agama_header_image_particles',
+		'section'		=> 'agama_colors_header_image_section',
+		'type'			=> 'checkbox',
+		'default'		=> true
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			    => __( 'Particles Colors', 'agama' ),
+		'tooltip'	        => __( 'Select header image particles colors.', 'agama' ),
+		'settings'		    => 'agama_header_image_particles_colors',
+		'section'		    => 'agama_colors_header_image_section',
+		'type'			    => 'multicolor',
+        'choices'           => [
+            'lines'         => __( 'Lines', 'agama' ),
+            'circles'       => __( 'Circles', 'agama' )
+        ],
+		'default'		    => [
+            'lines'         => '#ac32e4',
+            'circles'       => '#fff'
+        ],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_image_particles',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> __( 'Enable background overlay?', 'agama' ),
+		'settings'		=> 'agama_header_image_overlay',
+		'section'		=> 'agama_colors_header_image_section',
+		'type'			=> 'checkbox',
+		'default'		=> true
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			    => __( 'Background Overlay Colors', 'agama' ),
+		'tooltip'	        => __( 'Select header image background overlay colors.', 'agama' ),
+		'settings'		    => 'agama_header_image_background',
+		'section'		    => 'agama_colors_header_image_section',
+		'type'			    => 'multicolor',
+        'transport'         => 'postMessage',
+        'choices'           => [
+            'left'          => __( 'Left', 'agama' ),
+            'right'         => __( 'Right', 'agama' )
+        ],
+		'default'		    => [
+            'left'          => 'rgba(160,47,212,0.8)',
+            'right'         => 'rgba(69,104,220,0.8)'
+        ],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_image_overlay',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
+	] );
+    ######################################################
+    # COLORS NAVIGATION TOP SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_navigation_top_section', [
+		'title'			=> esc_attr__( 'Navigation Top', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'             => esc_html__( 'Links Color', 'agama' ),
+        'tooltip'           => esc_attr__( 'Customize navigation top links color.', 'agama' ),
+        'settings'          => 'agama_navigation_top_links_color',
+        'section'           => 'agama_colors_navigation_top_section',
+        'type'              => 'multicolor',
+        'transport'         => 'auto',
+        'choices'           => [
+            'normal'        => esc_html__( 'Normal', 'agama' ),
+            'visited'       => esc_html__( 'Visited', 'agama' ),
+            'hover'         => esc_html__( 'Hover', 'agama' ),
+            'active'        => esc_html__( 'Active', 'agama' )
+        ],
+        'default'           => [
+            'normal'        => '#757575',
+            'visited'       => '#757575',
+            'hover'         => '#333333',
+            'active'        => '#333333'
+        ],
+        'output'            => [
+            [
+                'choice'    => 'normal',
+                'element'   => '#agama-top-nav a',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'visited',
+                'element'   => '#agama-top-nav a:visited',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '#agama-top-nav a:hover',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'active',
+                'element'   => '#agama-top-nav a:active',
+                'property'  => 'color'
+            ]
+        ],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'transparent'
+            ]
+        ]
+    ] );
+    ######################################################
+    # COLORS NAVIGATION PRIMARY SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_navigation_primary_section', [
+		'title'			=> esc_attr__( 'Navigation Primary', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'             => esc_html__( 'Links Color', 'agama' ),
+        'tooltip'           => esc_attr__( 'Customize navigation primary links color.', 'agama' ),
+        'settings'          => 'agama_navigation_primary_links_color',
+        'section'           => 'agama_colors_navigation_primary_section',
+        'type'              => 'multicolor',
+        'transport'         => 'auto',
+        'choices'           => [
+            'normal'        => esc_html__( 'Normal', 'agama' ),
+            'visited'       => esc_html__( 'Visited', 'agama' ),
+            'hover'         => esc_html__( 'Hover', 'agama' ),
+            'active'        => esc_html__( 'Active', 'agama' )
+        ],
+        'default'           => [
+            'normal'        => '#757575',
+            'visited'       => '#757575',
+            'hover'         => '#333333',
+            'active'        => '#333333'
+        ],
+        'output'            => [
+            [
+                'choice'    => 'normal',
+                'element'   => '#agama-primary-nav a',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'visited',
+                'element'   => '#agama-primary-nav a:visited',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '#agama-primary-nav a:hover',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'active',
+                'element'   => '#agama-primary-nav a:active',
+                'property'  => 'color'
+            ]
+        ]
+    ] );
+    ######################################################
+    # COLORS NAVIGATION MOBILE SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_navigation_mobile_section', [
+		'title'			=> esc_attr__( 'Navigation Mobile', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'     => esc_attr__( 'Mobile Menu Icon Color', 'agama' ),
+        'tootlip'   => esc_attr__( 'Customize mobile menu icon color.', 'agama' ),
+        'settings'  => 'agama_nav_mobile_menu_icon_color',
+        'section'   => 'agama_colors_navigation_mobile_section',
+        'transport' => 'auto',
+        'type'      => 'color',
+        'output'    => [
+            [
+                'element'  => 'button.mobile-menu-toggle, .mobile-menu-toggle-label',
+                'property' => 'color'
+            ],
+            [
+                'element'  => '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner:before, .mobile-menu-toggle-inner:after',
+                'property' => 'background-color'
+            ]
+        ]
+    ] );
+    Kirki::add_field( 'agama_options', [
+        'label'             => esc_html__( 'Links Color', 'agama' ),
+        'tooltip'           => esc_attr__( 'Customize navigation mobile links color.', 'agama' ),
+        'settings'          => 'agama_navigation_mobile_links_color',
+        'section'           => 'agama_colors_navigation_mobile_section',
+        'type'              => 'multicolor',
+        'transport'         => 'auto',
+        'choices'           => [
+            'normal'        => esc_html__( 'Normal', 'agama' ),
+            'visited'       => esc_html__( 'Visited', 'agama' ),
+            'hover'         => esc_html__( 'Hover', 'agama' ),
+            'active'        => esc_html__( 'Active', 'agama' )
+        ],
+        'default'           => [
+            'normal'        => '#757575',
+            'visited'       => '#757575',
+            'hover'         => '#333333',
+            'active'        => '#333333'
+        ],
+        'output'            => [
+            [
+                'choice'    => 'normal',
+                'element'   => '#agama-mobile-nav a',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'visited',
+                'element'   => '#agama-mobile-nav a:visited',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '#agama-mobile-nav a:hover',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'active',
+                'element'   => '#agama-mobile-nav a:active',
+                'property'  => 'color'
+            ]
+        ]
+    ] );
+    ######################################################
+    # COLORS BREADCRUMB SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_breadcrumb_section', [
+		'title'			=> esc_attr__( 'Breadcrumb', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> esc_attr__( 'Background Color', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Select breadcrumb background color.', 'agama' ),
+		'section'		=> 'agama_colors_breadcrumb_section',
+		'settings'		=> 'agama_breadcrumb_bg_color',
+		'type'			=> 'color',
+        'transport'     => 'auto',
+		'default'		=> '#F5F5F5',
+        'output'        => [
+            [
+                'element'   => '#page-title',
+                'property'  => 'background-color'
+            ]
+        ]
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			=> esc_attr__( 'Font Color', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Select breadcrumb font color.', 'agama' ),
+		'section'		=> 'agama_colors_breadcrumb_section',
+		'settings'		=> 'agama_breadcrumb_text_color',
+		'type'			=> 'color',
+        'transport'     => 'auto',
+		'default'		=> '#444',
+        'output'        => [
+            [
+                'element'  => '#page-title h1, .breadcrumb > .active',
+                'property' => 'color'
+            ]
+        ]
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			=> esc_attr__( 'Links Color', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Select breadcrumb links color.', 'agama' ),
+		'section'		=> 'agama_colors_breadcrumb_section',
+		'settings'		=> 'agama_breadcrumb_links_color',
+		'type'			=> 'color',
+        'transport'     => 'auto',
+		'default'		=> '#444',
+        'output'        => [
+            [
+                'element'  => '#page-title a',
+                'property' => 'color'
+            ]
+        ]
+	] );
+    ######################################################
+    # COLORS SLIDER SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_slider_section', [
+		'title'			=> esc_attr__( 'Slider', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> esc_html__( 'Enable background overlay?', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Enable slider background color overlay.', 'agama' ),
+		'section'		=> 'agama_colors_slider_section',
+		'settings'		=> 'agama_slider_overlay',
+		'type'			=> 'checkbox',
+		'default'		=> true
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'				=> esc_html__( 'Background Overlay Color', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Set custom overlay background color.', 'agama' ),
+		'section'			=> 'agama_colors_slider_section',
+		'settings'			=> 'agama_slider_overlay_bg_color',
+        'transport'         => 'auto',
+		'type'				=> 'color',
+		'choices'     		=> [
+			'alpha' 		=> true
+		],
+		'active_callback'	=> [
+			[
+				'setting'	=> 'agama_slider_overlay',
+				'operator'	=> '==',
+				'value'		=> true
+			]
+		],
+		'output'			=> [
+            [
+                'element'	=> '.camera_overlayer',
+                'property'	=> 'background'
+            ]
+		],
+		'default'			=> 'rgba(26,131,192,0.5)'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> esc_html__( 'Enable the particles?', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Enable particles on slider ?', 'agama' ),
+		'settings'		=> 'agama_slider_particles',
+		'section'		=> 'agama_colors_slider_section',
+		'type'			=> 'checkbox',
+		'default'		=> true
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => esc_html__( 'Particles Colors', 'agama' ),
+        'tooltip'       => esc_attr__( 'Select particles colors.', 'agama' ),
+        'settings'      => 'agama_slider_particles_colors',
+        'section'       => 'agama_colors_slider_section',
+        'type'          => 'multicolor',
+        'choices'       => [
+            'circles'   => esc_html__( 'Circles', 'agama' ),
+            'lines'     => esc_html__( 'Lines', 'agama' )
+        ],
+        'default'       => [
+            'circles'   => '#ac32e4',
+            'lines'     => '#ac32e4'
+        ],
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_slider_particles',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
+    ] );
+    ######################################################
+    # COLORS FOOTER SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_footer_section', [
+		'title'			=> esc_attr__( 'Footer', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> esc_html__( 'Widget Area Background Colors', 'agama' ),
+		'tooltip'	    => esc_html__( 'Customize the footer widget area background colors.', 'agama' ),
+		'section'		=> 'agama_colors_footer_section',
+		'settings'		=> 'agama_footer_widgets_background_colors',
+		'type'			=> 'multicolor',
+        'transport'		=> 'postMessage',
+        'choices'       => [
+            'left'      => esc_html__( 'Left', 'agama' ),
+            'right'     => esc_html__( 'Right', 'agama' )
+        ],
+		'default'		=> [
+            'left'      => '#314150',
+            'right'     => '#314150'
+        ]
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			=> esc_html__( 'Footer Area Background Colors', 'agama' ),
+		'tooltip'	    => esc_html__( 'Customize the footer area background colors.', 'agama' ),
+		'section'		=> 'agama_colors_footer_section',
+		'settings'		=> 'agama_footer_background_colors',
+		'type'			=> 'multicolor',
+        'transport'		=> 'postMessage',
+        'choices'       => [
+            'left'      => esc_html__( 'Left', 'agama' ),
+            'right'     => esc_html__( 'Right', 'agama' )
+        ],
+		'default'		=> [
+            'left'      => '#293744',
+            'right'     => '#293744'
+        ]
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => esc_html__( 'Copyright Links Color', 'agama' ),
+        'tooltip'       => esc_html__( 'Set custom color for copyright links in footer area.', 'agama' ),
+        'section'       => 'agama_colors_footer_section',
+        'settings'      => 'agama_footer_site_info_links_color',
+        'type'          => 'color',
+        'transport'     => 'auto',
+        'output'        => [
+            [
+                'element'   => 'footer .site-info a',
+                'property'  => 'color'
+            ]
+        ],
+        'default'       => '#cddeee'
+    ] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => esc_html__( 'Social Icons Color', 'agama' ),
+        'tooltip'       => esc_html__( 'Set custom color for social icons in footer area.', 'agama' ),
+        'section'       => 'agama_colors_footer_section',
+        'settings'      => 'agama_footer_social_icons_color',
+        'type'          => 'color',
+        'transport'     => 'auto',
+        'output'        => [
+            [
+                'element'   => 'footer .social a',
+                'property'  => 'color'
+            ]
+        ],
+        'default'       => '#cddeee'
+    ] );
 ######################################################
 # LAYOUT PANEL
 ######################################################
@@ -685,78 +1333,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'panel'			=> 'agama_header_panel',
         'capability'    => 'edit_theme_options'
 	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			=> __( 'Enable particles?', 'agama' ),
-		'settings'		=> 'agama_header_image_particles',
-		'section'		=> 'header_image',
-		'type'			=> 'checkbox',
-		'default'		=> true,
-		'priority'		=> 1
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => __( 'Particle Circles Color', 'agama' ),
-		'tooltip'	        => __( 'Set particles custom circles color ?', 'agama' ),
-		'settings'		    => 'agama_header_image_particles_circle_color',
-		'section'		    => 'header_image',
-		'type'			    => 'color',
-		'default'		    => '#fff',
-		'priority'		    => 1,
-        'active_callback'   => [
-            [
-                'setting'   => 'agama_header_image_particles',
-                'operator'  => '==',
-                'value'     => true
-            ]
-        ]
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => __( 'Particles Lines Color', 'agama' ),
-		'tooltip'	        => __( 'Set particles custom lines color', 'agama' ),
-		'settings'		    => 'agama_header_image_particles_lines_color',
-		'section'		    => 'header_image',
-		'type'			    => 'color',
-		'default'		    => '#ac32e4',
-		'priority'		    => 1,
-        'active_callback'   => [
-            [
-                'setting'   => 'agama_header_image_particles',
-                'operator'  => '==',
-                'value'     => true
-            ]
-        ]
-	] );
-    Kirki::add_field( 'agama_options', [
-		'label'			=> __( 'Enable background overlay?', 'agama' ),
-		'settings'		=> 'agama_header_image_overlay',
-		'section'		=> 'header_image',
-		'type'			=> 'checkbox',
-		'default'		=> true,
-		'priority'		=> 1
-	] );
-    Kirki::add_field( 'agama_options', [
-		'label'			    => __( 'Background', 'agama' ),
-		'tooltip'	        => __( 'Select header image background overlay colors.', 'agama' ),
-		'settings'		    => 'agama_header_image_background',
-		'section'		    => 'header_image',
-		'type'			    => 'multicolor',
-        'transport'         => 'postMessage',
-        'choices'           => [
-            'left'          => __( 'Left', 'agama' ),
-            'right'         => __( 'Right', 'agama' )
-        ],
-		'default'		    => [
-            'left'          => 'rgba(160,47,212,0.8)',
-            'right'         => 'rgba(69,104,220,0.8)'
-        ],
-		'priority'		    => 1,
-        'active_callback'   => [
-            [
-                'setting'   => 'agama_header_image_overlay',
-                'operator'  => '==',
-                'value'     => true
-            ]
-        ]
-	] );
     Kirki::add_field( 'agama_options', [
         'label'         => __( 'Viewport Height (vh)', 'agama' ),
         'description'   => __( 'Set header image viewport height.', 'agama' ),
@@ -792,102 +1368,6 @@ add_action( 'customize_register', 'agama_customize_register' );
         'default'       => 'waves',
         'priority'      => 1
     ] );
-    ##########################################################
-    # HEADER STYLING SECTION
-    ##########################################################
-    Kirki::add_section( 'agama_header_styling_section', [
-        'title'      => esc_attr__( 'Styling', 'agama' ),
-        'panel'      => 'agama_header_panel',
-        'capability' => 'edit_theme_options'
-    ] );
-    Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Header Background Color', 'agama' ),
-		'tooltip'		    => esc_attr__( 'Doesn\'t work with header V1 style.', 'agama' ),
-		'section'		    => 'agama_header_styling_section',
-		'settings'		    => 'agama_header_bg_color',
-		'type'			    => 'color',
-        'transport'         => 'auto',
-        'choices'           => [
-            'alpha'		    => true
-        ],
-        'default'		    => 'rgba(255, 255, 255, 1)',
-		'output'		    => [
-			[
-				'element'	=> '#masthead:not(.header_v1)',
-				'property'	=> 'background-color'
-			],
-			[
-				'element'	=> '#masthead nav:not(.mobile-menu) ul li ul',
-				'property'	=> 'background-color'
-			]
-		],
-		'active_callback'   => [
-            [
-                'setting'   => 'agama_header_style',
-                'operator'  => '!==',
-                'value'     => 'transparent'
-            ]
-        ]
-	] );
-    Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Header Shrinked BG Color', 'agama' ),
-		'tooltip'		    => esc_attr__( 'Work\'s only with header V1 & V3.', 'agama' ),
-		'section'		    => 'agama_header_styling_section',
-		'settings'		    => 'agama_header_shrink_bg_color',
-		'type'			    => 'color',
-        'choices'           => [
-            'alpha'		    => true
-        ],
-		'transport'		    => 'auto',
-		'output'		    => [
-			[
-				'element'	=> '#masthead.shrinked, #masthead.shrinked nav ul li ul',
-				'property'	=> 'background-color'
-			],
-            [
-                'element'   => '#masthead.shrinked #agama-mobile-nav ul',
-                'property'  => 'background-color'
-            ]
-		],
-        'active_callback'   => [
-            [
-                'setting'   => 'agama_header_style',
-                'operator'  => '!==',
-                'value'     => 'default'
-            ]
-        ],
-		'default'		    => 'rgba(255, 255, 255, .9)'
-	] );
-    Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Header Borders Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Select header borders color.', 'agama' ),
-		'section'		=> 'agama_header_styling_section',
-		'settings'		=> 'agama_header_border_color',
-		'type'			=> 'color',
-        'transport'		=> 'auto',
-        'choices'       => [
-            'alpha'	    => true
-        ],
-        'default'		=> 'rgba(238, 238, 238, 1)',
-		'output'		=> [
-			[
-				'element'	=> '.header_v2 #agama-primary-nav, #agama-top-social li',
-				'property'	=> 'border-color'
-			],
-            [
-                'element'   => '.agama-top-nav-wrapper',
-                'property'  => 'box-shadow',
-                'prefix'    => '0 1px 4px 0 '
-            ]
-		],
-        'active_callback'   => [
-            [
-                'setting'   => 'agama_header_style',
-                'operator'  => '!==',
-                'value'     => 'transparent'
-            ]
-        ]
-	] );
 ###############################################
 # NAVIGATIONS PANEL
 ###############################################
@@ -895,118 +1375,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'title'			=> __( 'Navigations', 'agama' ),
 		'priority'		=> 40
 	) );
-	###################################################
-	# NAVIGATION TOP SECTION
-	###################################################
-	Kirki::add_section( 'agama_nav_top_section', [
-		'title'		 => esc_attr__( 'Navigation Top', 'agama' ),
-		'panel'		 => 'agama_nav_panel',
-		'capability' => 'edit_theme_options'
-	] );
-    Kirki::add_field( 'agama_options', [
-        'label'             => esc_attr__( 'Font', 'agama' ),
-        'tooltip'           => esc_attr__( 'Customize top navigation font.', 'agama' ),
-        'section'           => 'agama_nav_top_section',
-        'settings'          => 'agama_navigation_top_font',
-        'type'              => 'typography',
-        'transport'         => 'auto',
-        'output'            => [
-            [
-                'element'   => '#agama-top-nav a'    
-            ]
-        ],
-        'default' => [
-            'font-family'       => 'Roboto Condensed',
-            'variant'           => '700',
-            'font-size'         => '14px',
-            'letter-spacing'    => '0',
-            'color'             => '#757575',
-            'text-transform'    => 'uppercase'
-        ]
-    ] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Links Hover Color', 'agama' ),
-		'tooltip'	        => esc_attr__( 'Select navigation top links hover color.', 'agama' ),
-		'settings'		    => 'agama_nav_top_hover_color',
-		'section'		    => 'agama_nav_top_section',
-		'type'			    => 'color',
-        'transport'         => 'auto',
-		'output'		    => [
-			[
-				'element'	=> '#agama-top-nav a:hover',
-				'property'	=> 'color'
-			],
-            [
-                'element'   => '#agama-top-nav li.current-menu-ancestor a',
-                'property'  => 'color'
-            ],
-            [
-                'element'   => '#agama-top-nav li.current-menu-item a',
-                'property'  => 'color'
-            ],
-            [
-                'element'   => '#agama-top-nav li.current_page_item a',
-                'property'  => 'color'
-            ]
-		],
-		'default'		    => '#333'
-	] );
-	#######################################################
-	# NAVIGATION PRIMARY SECTION
-	#######################################################
-	Kirki::add_section( 'agama_nav_primary_section', [
-		'title'			=> esc_attr__( 'Navigation Primary', 'agama' ),
-		'panel'			=> 'agama_nav_panel',
-		'capability'	=> 'edit_theme_options'
-	] );
-    Kirki::add_field( 'agama_options', [
-        'label'                 => esc_attr__( 'Font', 'agama' ),
-        'tooltip'               => esc_attr__( 'Customize primary navigation font.', 'agama' ),
-        'section'               => 'agama_nav_primary_section',
-        'settings'              => 'agama_navigation_primary_font',
-        'type'                  => 'typography',
-        'transport'             => 'auto',
-        'output'                => [
-            [
-                'element'       => '#agama-primary-nav a'    
-            ]
-        ],
-        'default'               => [
-            'font-family'       => 'Roboto Condensed',
-            'variant'           => '700',
-            'font-size'         => '14px',
-            'letter-spacing'    => '0',
-            'color'             => '#bdbdbd',
-            'text-transform'    => 'uppercase'
-        ]
-    ] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Links Hover Color', 'agama' ),
-		'tooltip'	        => esc_attr__( 'Select navigation primary links hover color.', 'agama' ),
-		'settings'		    => 'agama_nav_primary_hover_color',
-		'section'		    => 'agama_nav_primary_section',
-		'type'			    => 'color',
-        'transport'         => 'auto',
-		'output'		    => [
-			[
-				'element'	=> '#agama-primary-nav a:hover',
-				'property'	=> 'color'
-			],
-            [
-                'element'   => '#agama-primary-nav li.current-menu-ancestor a',
-                'property'  => 'color'
-            ],
-            [
-                'element'   => '#agama-primary-nav li.current-menu-item a',
-                'property'  => 'color'
-            ],
-            [
-                'element'   => '#agama-primary-nav li.current_page_item a',
-                'property'  => 'color'
-            ]
-		],
-		'default'		    => '#333'
-	] );
 	######################################################
 	# NAVIGATION MOBILE SECTION
 	######################################################
@@ -1016,61 +1384,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'capability'	=> 'edit_theme_options'
 	] );
     Kirki::add_field( 'agama_options', [
-        'label'             => esc_attr__( 'Font', 'agama' ),
-        'tooltip'           => esc_attr__( 'Customize mobile navigation font.', 'agama' ),
-        'section'           => 'agama_nav_mobile_section',
-        'settings'          => 'agama_mobile_navigation_font',
-        'type'              => 'typography',
-        'transport'         => 'auto',
-        'output'            => [
-            [
-                'element'   => '#agama-mobile-nav a'    
-            ],
-            [
-                'element'   => '#agama-mobile-nav ul > li.menu-item-has-children.open > a'
-            ],
-            [
-                'element'   => '#agama-mobile-nav ul > li > ul li.menu-item-has-children > a'
-            ]
-        ],
-        'default'               => [
-            'font-family'       => 'Roboto Condensed',
-            'variant'           => '700',
-            'font-size'         => '14px',
-            'letter-spacing'    => '0',
-            'color'             => '#757575',
-            'text-transform'    => 'uppercase'
-        ]
-    ] );
-	Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Links Hover Color', 'agama' ),
-		'tooltip'	        => esc_attr__( 'Select mobile menu links hover color.', 'agama' ),
-		'settings'		    => 'agama_nav_mobile_hover_color',
-		'section'		    => 'agama_nav_mobile_section',
-		'type'			    => 'color',
-        'transport'         => 'auto',
-        'default'		    => '#333',
-		'output'		    => [
-			[
-				'element'	=> '#agama-mobile-nav a:hover',
-				'property'	=> 'color',
-				'suffix'	=> '!important'
-			],
-            [
-                'element'   => '#agama-mobile-nav li.current-menu-ancestor a',
-                'property'  => 'color'
-            ],
-            [
-                'element'   => '#agama-mobile-nav li.current-menu-item a',
-                'property'  => 'color'
-            ],
-            [
-                'element'   => '#agama-mobile-nav li.current_page_item a',
-                'property'  => 'color'
-            ]
-		]
-	] );
-    Kirki::add_field( 'agama_options', [
 		'label'			=> esc_attr__( 'Menu Icon Title', 'agama' ),
 		'tooltip'	    => esc_attr__( 'Set custom mobile menu title.', 'agama' ),
 		'settings'		=> 'agama_nav_mobile_icon_title',
@@ -1078,24 +1391,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'type'			=> 'text',
 		'default'		=> ''
 	] );
-    Kirki::add_field( 'agama_options', [
-        'label'     => esc_attr__( 'Mobile Menu Icon Color', 'agama' ),
-        'tootlip'   => esc_attr__( 'Customize mobile menu icon color.', 'agama' ),
-        'settings'  => 'agama_nav_mobile_menu_icon_color',
-        'section'   => 'agama_nav_mobile_section',
-        'transport' => 'auto',
-        'type'      => 'color',
-        'output'    => [
-            [
-                'element'  => 'button.mobile-menu-toggle, .mobile-menu-toggle-label',
-                'property' => 'color'
-            ],
-            [
-                'element'  => '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner:before, .mobile-menu-toggle-inner:after',
-                'property' => 'background-color'
-            ]
-        ]
-    ] );
 #########################################
 # MENUS PANEL
 #########################################
@@ -1120,47 +1415,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'capability'	=> 'edit_theme_options'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Enable', 'agama' ),
-		'tooltip'	    => __( 'Enable slider ?', 'agama' ),
-		'section'		=> 'agama_slider_general_section',
-		'settings'		=> 'agama_slider_enable',
-		'type'			=> 'switch',
-		'default'		=> false
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Overlay', 'agama' ),
-		'tooltip'	    => __( 'Enable slider overlay ?', 'agama' ),
-		'section'		=> 'agama_slider_general_section',
-		'settings'		=> 'agama_slider_overlay',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Overlay BG Color', 'agama' ),
-		'tooltip'		    => __( 'Set custom overlay background color.', 'agama' ),
-		'section'			=> 'agama_slider_general_section',
-		'settings'			=> 'agama_slider_overlay_bg_color',
-		'type'				=> 'color',
-		'choices'     		=> array(
-			'alpha' 		=> true
-		),
-		'active_callback'	=> array(
-			array(
-				'setting'	=> 'agama_slider_overlay',
-				'operator'	=> '==',
-				'value'		=> true
-			)
-		),
-		'output'			=> array(
-            array(
-                'element'	=> '.camera_overlayer',
-                'property'	=> 'background'
-            )
-		),
-		'default'			=> 'rgba(26,131,192,0.5)'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Height', 'agama' ),
+		'label'			=> __( 'Slider Height', 'agama' ),
 		'tooltip'	    => __( 'Set slider height in pixels (px). Set 0 for full screen slider.', 'agama' ),
 		'section'		=> 'agama_slider_general_section',
 		'settings'		=> 'agama_slider_height',
@@ -1173,7 +1428,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'default'		=> '0'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Time', 'agama' ),
+		'label'			=> __( 'Sliding Time', 'agama' ),
 		'tooltip'	    => __( 'Milliseconds between the end of the sliding effect and the start of the nex one. 1000ms = 1sec', 'agama' ),
 		'section'		=> 'agama_slider_general_section',
 		'settings'		=> 'agama_slider_time',
@@ -1197,260 +1452,84 @@ add_action( 'customize_register', 'agama_customize_register' );
 		),
 		'default'		=> 'homepage'
 	) );
-	############################################################
-	# PARTICLES SECTION
-	############################################################
-	Kirki::add_section( 'agama_slider_particles_section', array(
-		'title'			=> __( 'Particles', 'agama' ),
+    ###################################################
+	# SLIDES SECTION
+	###################################################
+	Kirki::add_section( 'agama_slider_slides_section', [
+		'title'			=> esc_html__( 'Slides', 'agama' ),
 		'panel'			=> 'agama_slider_panel',
 		'capability'	=> 'edit_theme_options'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Particles', 'agama' ),
-		'tooltip'	    => __( 'Enable particles on slider ?', 'agama' ),
-		'settings'		=> 'agama_slider_particles',
-		'section'		=> 'agama_slider_particles_section',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Particle Circles Color', 'agama' ),
-		'tooltip'	    => __( 'Set particles custom circles color ?', 'agama' ),
-		'settings'		=> 'agama_slider_particles_circle_color',
-		'section'		=> 'agama_slider_particles_section',
-		'type'			=> 'color',
-		'default'		=> '#ac32e4'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Particles Lines Color', 'agama' ),
-		'tooltip'	    => __( 'Set particles custom lines color', 'agama' ),
-		'settings'		=> 'agama_slider_particles_lines_color',
-		'section'		=> 'agama_slider_particles_section',
-		'type'			=> 'color',
-		'default'		=> '#ac32e4'
-	) );
-	###################################################
-	# SLIDE 1 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_1_section', array(
-		'title'			=> __( 'Slide #1', 'agama' ),
-		'panel'			=> 'agama_slider_panel',
-		'capability'	=> 'edit_theme_options'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Image', 'agama' ),
-		'settings'		=> 'agama_slider_image_1',
-		'section'		=> 'agama_slide_1_section',
-		'type'			=> 'image'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Title', 'agama' ),
-		'tooltip'	    => __( 'Add custom slide title. If empty the title will be hidden.', 'agama' ),
-		'section'		    => 'agama_slide_1_section',
-		'settings'		    => 'agama_slider_title_1',
-		'type'			    => 'text',
-		'default'		    => __( 'Welcome to Agama', 'agama' ),
-        'partial_refresh'   => array(
-            'agama_slider_title_1'  => array(
-                'selector'          => '.slide-1 h2.slide-title',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_slide_1_title' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title Animation', 'agama' ),
-		'tooltip'	    => __( 'Select title slide animation.', 'agama' ),
-		'section'		=> 'agama_slide_1_section',
-		'settings'		=> 'agama_slider_title_animation_1',
-		'type'			=> 'select',
-		'choices'		=> AgamaAnimate::choices(),
-		'default'		=> 'bounceInLeft'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title Color', 'agama' ),
-		'tooltip'	    => __( 'Select slide title color.', 'agama' ),
-		'section'		=> 'agama_slide_1_section',
-		'settings'		=> 'agama_slider_title_color_1',
-		'type'			=> 'color',
-		'default'		=> '#fff'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Slider Content Top Distance', 'agama' ),
-		'tooltip'	    => __( 'Set slider content top distance in %.', 'agama' ),
-		'section'		=> 'agama_slide_1_section',
-		'settings'		=> 'agama_slider_content_top_1',
-		'type'			=> 'slider',
-		'choices'		=> array(
-			'step'		=> '1',
-			'min'		=> '0',
-			'max'		=> '100'
-		),
-		'default'		=> '40'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Button Title', 'agama' ),
-		'tooltip'	        => __( 'Set custom button title. If empty the button will be hidden.', 'agama' ),
-		'section'		    => 'agama_slide_1_section',
-		'settings'		    => 'agama_slider_button_title_1',
-		'type'			    => 'text',
-		'default'		    => __( 'Learn More', 'agama' ),
-        'partial_refresh'   => array(
-            'agama_slider_button_title_1' => array(
-                'selector'          => '.slide-1 a.button',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_slide_1_button' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Button Animation', 'agama' ),
-		'tooltip'	    => __( 'Select button slide animation.', 'agama' ),
-		'section'		=> 'agama_slide_1_section',
-		'settings'		=> 'agama_slider_button_animation_1',
-		'type'			=> 'select',
-		'choices'		=> AgamaAnimate::choices(),
-		'default'		=> 'bounceInRight'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Button URL', 'agama' ),
-		'tooltip'	    => __( 'Set button url.', 'agama' ),
-		'section'		=> 'agama_slide_1_section',
-		'settings'		=> 'agama_slider_button_url_1',
-		'type'			=> 'text',
-		'default'		=> '#'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Button BG Color', 'agama' ),
-		'tooltip'	    => __( 'Select button background color.', 'agama' ),
-		'section'		=> 'agama_slide_1_section',
-		'settings'		=> 'agama_slider_button_bg_color_1',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '#agama_slider .slide-1 a.button',
-				'property'	=> 'color'
-			),
-			array(
-				'element'	=> '#agama_slider .slide-1 a.button',
-				'property'	=> 'border-color'
-			),
-			array(
-				'element'	=> '#agama_slider .slide-1 a.button:hover',
-				'property'	=> 'background-color'
-			)
-		),
-		'default'		=> '#ac32e4'
-	) );
-	###################################################
-	# SLIDE 2 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_2_section', array(
-		'title'			=> __( 'Slide #2', 'agama' ),
-		'panel'			=> 'agama_slider_panel',
-		'capability'	=> 'edit_theme_options'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Image', 'agama' ),
-		'settings'		=> 'agama_slider_image_2',
-		'section'		=> 'agama_slide_2_section',
-		'type'			=> 'image'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title', 'agama' ),
-		'tooltip'	    => __( 'Add custom slide title. If empty the title will be hidden.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_title_2',
-		'type'			=> 'text',
-		'default'		=> __( 'Welcome to Agama', 'agama' ),
-        'partial_refresh'   => array(
-            'agama_slider_title_2'  => array(
-                'selector'          => '.slide-2 h2.slide-title',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_slide_2_title' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title Animation', 'agama' ),
-		'tooltip'	    => __( 'Select title slide animation.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_title_animation_2',
-		'type'			=> 'select',
-		'choices'		=> AgamaAnimate::choices(),
-		'default'		=> 'bounceInLeft'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Title Color', 'agama' ),
-		'tooltip'	    => __( 'Select slide title color.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_title_color_2',
-		'type'			=> 'color',
-		'default'		=> '#fff'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Slider Content Top Distance', 'agama' ),
-		'tooltip'	    => __( 'Set slider content top distance in %.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_content_top_2',
-		'type'			=> 'slider',
-		'choices'		=> array(
-			'step'		=> '1',
-			'min'		=> '0',
-			'max'		=> '100'
-		),
-		'default'		=> '40'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Button Title', 'agama' ),
-		'tooltip'	    => __( 'Set custom button title. If empty the button will be hidden.', 'agama' ),
-		'section'		    => 'agama_slide_2_section',
-		'settings'		    => 'agama_slider_button_title_2',
-		'type'			    => 'text',
-		'default'		    => __( 'Learn More', 'agama' ),
-        'partial_refresh'   => array(
-            'agama_slider_button_title_2' => array(
-                'selector'          => '.slide-2 a.button',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_slide_2_button' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Button Animation', 'agama' ),
-		'tooltip'	    => __( 'Select button slide animation.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_button_animation_2',
-		'type'			=> 'select',
-		'choices'		=> AgamaAnimate::choices(),
-		'default'		=> 'bounceInRight'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Button URL', 'agama' ),
-		'tooltip'	    => __( 'Set button url.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_button_url_2',
-		'type'			=> 'text',
-		'default'		=> '#'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Button BG Color', 'agama' ),
-		'tooltip'	    => __( 'Select button background color.', 'agama' ),
-		'section'		=> 'agama_slide_2_section',
-		'settings'		=> 'agama_slider_button_bg_color_2',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '#agama_slider .slide-2 a.button',
-				'property'	=> 'color'
-			),
-			array(
-				'element'	=> '#agama_slider .slide-2 a.button',
-				'property'	=> 'border-color'
-			),
-			array(
-				'element'	=> '#agama_slider .slide-2 a.button:hover',
-				'property'	=> 'background-color'
-			)
-		),
-		'default'		=> '#ac32e4'
-	) );
+	] );
+    Kirki::add_field( 'agama_options', [
+        'type' => 'repeater',
+        'label' => esc_html__( 'Slides', 'agama' ),
+        'section' => 'agama_slider_slides_section',
+        'priority' => 10,
+        'row_label' => [
+            'type' => 'field',
+            'value' => esc_html__( 'Slide', 'agama' ),
+            'field' => 'title'
+        ],
+        'button_label' => esc_html__( 'Add New', 'agama' ),
+        'settings' => 'agama_slider_slides_repeater',
+        'default' => [],
+        'fields' => [
+            'image' => [
+                'type'        => 'image',
+                'label'       => esc_html__( 'Box Image', 'agama' ),
+                'description' => esc_html__( 'Upload box image.', 'agama' ),
+                'choices'     => [
+                    'save_as' => 'url'
+                ],
+                'default'     => ''
+            ],
+            'title' => [
+                'type'        => 'text',
+                'label'       => esc_html__( 'Title', 'agama' ),
+                'description' => esc_html__( 'The box title.', 'agama' ),
+                'default'     => esc_html__( 'Welcome to Agama', 'agama' )
+            ],
+            'title_color' => [
+                'type'        => 'color',
+                'label'       => esc_html__( 'Title Color', 'agama' ),
+                'description' => esc_html__( 'Select slide title color.', 'agama' ),
+                'default'     => '#fff'
+            ],
+            'title_animation' => [
+                'type'        => 'select',
+                'label'       => esc_html__( 'Title Animation', 'agama' ),
+                'description' => esc_html__( 'Select slide title animation in.', 'agama' ),
+                'choices'     => AgamaAnimate::choices(),
+                'default'     => 'bounce',
+            ],
+            'button_title' => [
+                'type'        => 'text',
+                'label'       => esc_html__( 'Button Title', 'agama' ),
+                'description' => esc_html__( 'Enter the slide button title.', 'agama' ),
+                'default'     => esc_html__( 'Learn More', 'agama' )
+            ],
+            'button_link' => [
+                'type'        => 'link',
+                'label'       => esc_html__( 'Button Link', 'agama' ),
+                'description' => esc_html__( 'Add custom button link.', 'agama' ),
+                'default'     => ''
+            ],
+            'button_color' => [
+                'type'        => 'color',
+                'label'       => esc_html__( 'Button Color', 'agama' ),
+                'description' => esc_html__( 'Select button color.'. 'agama' ),
+                'default'     => '#ac32e4'
+            ],
+            'button_animation' => [
+                'type'        => 'select',
+                'label'       => esc_html__( 'Button Animation', 'agama' ),
+                'description' => esc_html__( 'Select button animation in.', 'agama' ),
+                'choices'     => AgamaAnimate::choices(),
+                'default'     => 'bounce'
+            ]
+        ],
+        'choices' => apply_filters( 'agama/slider_repeater_choices', [ 'limit' => 2 ] )
+    ] );
 ###################################################################################
 # BREADCRUMB
 ###################################################################################
@@ -1487,51 +1566,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		),
 		'default'		=> 'mini'
 	) );
-	Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Background Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Select breadcrumb background color.', 'agama' ),
-		'section'		=> 'agama_breadcrumb_section',
-		'settings'		=> 'agama_breadcrumb_bg_color',
-		'type'			=> 'color',
-        'transport'     => 'auto',
-		'default'		=> '#F5F5F5',
-        'output'        => [
-            [
-                'element'   => '#page-title',
-                'property'  => 'background-color'
-            ]
-        ]
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Font Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Select breadcrumb font color.', 'agama' ),
-		'section'		=> 'agama_breadcrumb_section',
-		'settings'		=> 'agama_breadcrumb_text_color',
-		'type'			=> 'color',
-        'transport'     => 'auto',
-		'default'		=> '#444',
-        'output'        => [
-            [
-                'element'  => '#page-title h1, .breadcrumb > .active',
-                'property' => 'color'
-            ]
-        ]
-	] );
-	Kirki::add_field( 'agama_options', [
-		'label'			=> esc_attr__( 'Links Color', 'agama' ),
-		'tooltip'	    => esc_attr__( 'Select breadcrumb links color.', 'agama' ),
-		'section'		=> 'agama_breadcrumb_section',
-		'settings'		=> 'agama_breadcrumb_links_color',
-		'type'			=> 'color',
-        'transport'     => 'auto',
-		'default'		=> '#444',
-        'output'        => [
-            [
-                'element'  => '#page-title a',
-                'property' => 'color'
-            ]
-        ]
-	] );
 ###################################################################################
 # FRONTPAGE BOXES
 ###################################################################################
@@ -1998,13 +2032,6 @@ add_action( 'customize_register', 'agama_customize_register' );
         )
     ) );
 ###################################################################################
-# WOOCOMMERCE
-###################################################################################
-    Kirki::add_panel( 'woocommerce', array(
-        'title'     => __( 'WooCommerce', 'agama' ),
-        'priority'  => 110
-    ) );
-###################################################################################
 # WIDGETS PANEL
 ###################################################################################
     Kirki::add_panel( 'widgets', array(
@@ -2014,19 +2041,15 @@ add_action( 'customize_register', 'agama_customize_register' );
 ###################################################################################
 # FOOTER
 ###################################################################################
-    Kirki::add_panel( 'agama_footer_panel', [
-        'title'         => esc_attr__( 'Footer', 'agama' ),
-        'priority'      => 130
-    ] );
-	Kirki::add_section( 'agama_footer_general_section', array(
-		'title'			=> __( 'General', 'agama' ),
+	Kirki::add_section( 'agama_footer_section', [
+		'title'			=> esc_html__( 'Footer', 'agama' ),
 		'capability'	=> 'edit_theme_options',
-        'panel'         => 'agama_footer_panel'
-	) );
+        'priority'      => 130
+	] );
     Kirki::add_field( 'agama_options', [
-		'label'			    => esc_attr__( 'Enable Social Icons', 'agama' ),
+		'label'			    => esc_attr__( 'Enable footer social icons?', 'agama' ),
 		'tooltip'	        => esc_attr__( 'Enable social icons in footer right area.', 'agama' ),
-		'section'		    => 'agama_footer_general_section',
+		'section'		    => 'agama_footer_section',
 		'settings'		    => 'agama_footer_social',
 		'type'			    => 'checkbox',
 		'default'		    => true,
@@ -2037,108 +2060,27 @@ add_action( 'customize_register', 'agama_customize_register' );
             ]
         ]
 	] );
-	Kirki::add_field( 'agama_options', array(
+	Kirki::add_field( 'agama_options', [
 		'label'			    => __( 'Copyright', 'agama' ),
 		'tooltip'	        => __( 'Add custom copyright text in footer area.', 'agama' ),
-		'section'		    => 'agama_footer_general_section',
+		'section'		    => 'agama_footer_section',
 		'settings'		    => 'agama_footer_copyright',
 		'type'			    => 'code',
-		'choices'		    => array(
+		'choices'		    => [
 			'language'	    => 'html'
-		),
+		],
 		'default'		    => '',
-        'partial_refresh'   => array(
-            'agama_footer_copyright' => array(
+        'partial_refresh'   => [
+            'agama_footer_copyright' => [
                 'selector'        => '#agama-footer div.site-info',
-                'render_callback' => array( 'Agama_Partial_Refresh', 'preview_footer_copyright' )
-            )
-        )
-	) );
-    ##########################################################
-    #   FOOTER STYLING SECTION
-    ##########################################################
-    Kirki::add_section( 'agama_footer_styling_section', array(
-        'title'         => __( 'Styling', 'agama' ),
-        'capability'    => 'edit_theme_options',
-        'panel'         => 'agama_footer_panel'
-    ) );
-    Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Widget Area BG Color', 'agama' ),
-		'tooltip'	    => __( 'Set footer widget area background color.', 'agama' ),
-		'section'		=> 'agama_footer_styling_section',
-		'settings'		=> 'agama_footer_widget_bg_color',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> '.footer-widgets',
-				'property'	=> 'background-color'
-			)
-		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> '.footer-widgets',
-				'function'	=> 'css',
-				'property'	=> 'background-color'
-			)
-		),
-		'default'		=> '#314150'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Footer Area BG Color', 'agama' ),
-		'tooltip'	    => __( 'Set footer area background color.', 'agama' ),
-		'section'		=> 'agama_footer_styling_section',
-		'settings'		=> 'agama_footer_bottom_bg_color',
-		'type'			=> 'color',
-		'output'		=> array(
-			array(
-				'element'	=> 'footer[role="contentinfo"]',
-				'property'	=> 'background-color'
-			)
-		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> 'footer[role="contentinfo"]',
-				'function'	=> 'css',
-				'property'	=> 'background-color'
-			)
-		),
-		'default'		=> '#293744'
-	) );
-    Kirki::add_field( 'agama_options', array(
-        'label'         => esc_html__( 'Copyright Links Color', 'agama' ),
-        'tooltip'       => esc_html__( 'Set custom color for copyright links in footer area.', 'agama' ),
-        'section'       => 'agama_footer_styling_section',
-        'settings'      => 'agama_footer_site_info_links_color',
-        'type'          => 'color',
-        'transport'     => 'auto',
-        'output'        => array(
-            array(
-                'element'   => 'footer .site-info a',
-                'property'  => 'color'
-            )
-        ),
-        'default'       => '#cddeee'
-    ) );
-    Kirki::add_field( 'agama_options', array(
-        'label'         => esc_html__( 'Social Icons Color', 'agama' ),
-        'tooltip'       => esc_html__( 'Set custom color for social icons in footer area.', 'agama' ),
-        'section'       => 'agama_footer_styling_section',
-        'settings'      => 'agama_footer_social_icons_color',
-        'type'          => 'color',
-        'transport'     => 'auto',
-        'output'        => array(
-            array(
-                'element'   => 'footer .social a',
-                'property'  => 'color'
-            )
-        ),
-        'default'       => '#cddeee'
-    ) );
+                'render_callback' => [ 'Agama_Partial_Refresh', 'preview_footer_copyright' ]
+            ]
+        ]
+	] );
 #######################################
 # REMOVE SECTIONS
 #######################################
+    Kirki::remove_section( 'background_image' );
     Kirki::remove_section( 'colors' );
 
 /**
@@ -2153,23 +2095,6 @@ function agama_customize_css() { ?>
     #agama-mobile-nav ul > li.menu-item-has-children > .dropdown-toggle.collapsed {
         color: <?php echo $mobile_nav['color']; ?>;
     }
-	
-	<?php if( get_theme_mod( 'agama_slider_enable', true ) ): ?>
-	/* SLIDER
-	 *********************************************************************************/
-	#agama_slider .slide-content.slide-1 {
-		top: <?php echo esc_attr( get_theme_mod( 'agama_slider_content_top_1', '40' ) ); ?>%;
-	}
-	#agama_slider .slide-content.slide-2 {
-		top: <?php echo esc_attr( get_theme_mod( 'agama_slider_content_top_2', '40' ) ); ?>%;
-	}
-	#agama_slider .slide-content.slide-1 a.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_1', '#ac32e4' ) ); ?> !important;
-	}
-	#agama_slider .slide-content.slide-2 a.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#ac32e4' ) ); ?> !important;
-	}
-	<?php endif; ?>
         
     <?php if( is_page_template( 'templates/template-fluid.php' ) ): ?>
     div#page { padding: 0; }
@@ -2231,7 +2156,7 @@ function agama_customize_css() { ?>
 	}
 	
 	.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	.entry-date .format-box i {
@@ -2264,15 +2189,22 @@ function customize_styles_agama_support( $input ) { ?>
 		a:-webkit-any-link {
 			text-decoration: none;
 		}
+        .accordion-section.control-section h3:before,
         .accordion-section.control-section.control-panel.control-panel-default h3:before,
         .accordion-section.control-section.control-section-kirki-default h3:before {
             font-family: FontAwesome;
         }
-        #accordion-panel-agama_site_identity_panel h3:before {
+        #accordion-section-title_tagline h3:before {
             content: '\f2ba';
         }
         #accordion-panel-agama_general_panel h3:before {
             content: '\f085';
+        }
+        #accordion-panel-agama_typography_panel h3:before {
+            content: '\f031';
+        }
+        #accordion-panel-agama_colors_panel h3:before {
+            content: '\f1fc';
         }
         #accordion-panel-agama_layout_panel h3:before {
             content: '\f0db';
@@ -2307,7 +2239,7 @@ function customize_styles_agama_support( $input ) { ?>
         #accordion-panel-woocommerce h3:before {
             content: '\f291';
         }
-        #accordion-panel-agama_footer_panel h3:before {
+        #accordion-section-agama_footer_section h3:before {
             content: '\f2d1';
         }
         #accordion-panel-nav_menus h3:before {

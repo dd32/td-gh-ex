@@ -29,9 +29,42 @@ class Inline_Style {
      */
     public static function init() {
         $css  = '';
+        $css .= self::body();
         $css .= self::header_image();
+        $css .= self::footer_widgets();
+        $css .= self::footer();
         
         return apply_filters( 'agama/inline_css', $css );
+    }
+    
+    /**
+     * Body
+     *
+     * The Agama theme body background colors.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return mixed
+     */
+    private static function body() {
+        $background = get_theme_mod( 
+            'agama_body_background_colors', 
+            [
+                'left'  => '#e6e6e6',
+                'right' => '#e6e6e6'
+            ]
+        );
+        
+        // Sanitize colors.
+        $background = array_map( 'esc_attr', $background );
+        
+        $css  = 'body {';
+        $css .= 'background: linear-gradient( to right, ';
+        $css .= $background['left'] . ' 0, ';
+        $css .= $background['right'] . ' 100%)';
+        $css .= '}';
+        
+        return ! empty( $css ) ? $css : '';
     }
     
     /**
@@ -63,6 +96,66 @@ class Inline_Style {
                 background-image: url({$header_image});
             }";
         }
+        
+        return ! empty( $css ) ? $css : '';
+    }
+    
+    /**
+     * Footer Widgets
+     *
+     * The Agama theme footer widgets area inline style.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return mixed
+     */
+    private static function footer_widgets() {
+        $background = get_theme_mod( 
+            'agama_footer_widgets_background_colors', 
+            [
+                'left'  => '#314150',
+                'right' => '#314150'
+            ]
+        );
+        
+        // Sanitize colors.
+        $background = array_map( 'esc_attr', $background );
+        
+        $css  = '.footer-widgets {';
+        $css .= 'background: linear-gradient( to right, ';
+        $css .= $background['left'] . ' 0, ';
+        $css .= $background['right'] . ' 100%)';
+        $css .= '}';
+        
+        return ! empty( $css ) ? $css : '';
+    }
+    
+    /**
+     * Footer
+     *
+     * The Agama theme footer inline style.
+     *
+     * @since 1.6.0
+     * @access private
+     * @return mixed
+     */
+    private static function footer() {
+        $background = get_theme_mod( 
+            'agama_footer_background_colors', 
+            [
+                'left'  => '#293744',
+                'right' => '#293744'
+            ]
+        );
+        
+        // Sanitize colors.
+        $background = array_map( 'esc_attr', $background );
+        
+        $css  = '#agama-footer {';
+        $css .= 'background: linear-gradient( to right, ';
+        $css .= $background['left'] . ' 0, ';
+        $css .= $background['right'] . ' 100%)';
+        $css .= '}';
         
         return ! empty( $css ) ? $css : '';
     }

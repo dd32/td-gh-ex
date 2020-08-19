@@ -56,7 +56,9 @@ class Core {
         $this->migrate_options();
 
         add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
+        add_action( 'customize_preview_init', [ $this, 'customizer_live_preview' ] );
         add_action( 'customize_controls_print_scripts', [ $this, 'customize_controls_scripts' ] );
+        add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_enqueue_scripts' ] );
         add_action( 'after_setup_theme', [ $this, 'agama_setup' ] );
         add_action( 'wp_footer', [ $this, 'footer_scripts' ] );
         
@@ -118,10 +120,11 @@ class Core {
         }
 
         /**
-         * Agama Slider Stylesheet
+         * Agama slider script and stylesheet.
          */
-        if( get_theme_mod( 'agama_slider_image_1' ) || get_theme_mod( 'agama_slider_image_2' ) ) {
+        if( ! empty( get_theme_mod( 'agama_slider_slides_repeater', [] ) ) ) {
             wp_enqueue_style( 'agama-slider', AGAMA_CSS . 'camera.min.css', [], Agama()->version() );
+            wp_enqueue_script( 'agama-slider', AGAMA_JS . 'min/camera.min.js', [], Agama()->version(), true );
         }
 
         /**
@@ -159,17 +162,36 @@ class Core {
             'slider_enable'					=> esc_attr( get_theme_mod( 'agama_slider_enable', true ) ),
             'slider_height'					=> esc_attr( get_theme_mod( 'agama_slider_height', '0' ) ),
             'slider_time'					=> esc_attr( get_theme_mod( 'agama_slider_time', '7000' ) ),
-            'slider_particles_circle_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_circle_color', '#ac32e4' ) ),
-            'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#ac32e4' ) ),
+            'slider_particles_colors'       => array_map( 'esc_attr', get_theme_mod( 'agama_slider_particles_colors', [ 'circles' => '#ac32e4', 'lines' => '#ac32e4' ] ) ),
             'header_image_particles'		=> esc_attr( get_theme_mod( 'agama_header_image_particles', true ) ),
-            'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#fff' ) ),
-            'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#ac32e4' ) ),
+            'header_image_particles_colors'	=> array_map( 'esc_attr', get_theme_mod( 'agama_header_image_particles_colors', [ 'lines' => '#ac32e4', 'circles' => '#fff' ] ) ),
             'blog_layout'                   => esc_attr( get_theme_mod( 'agama_blog_style', 'list' ) ),
             'infinite_scroll'               => esc_attr( get_theme_mod( 'agama_blog_infinite_scroll', false ) ),
             'infinite_trigger'              => esc_attr( get_theme_mod( 'agama_blog_infinite_trigger', 'button' ) )
         ];
         wp_localize_script( 'agama-functions', 'agama', $translation_array );
         wp_enqueue_script( 'agama-functions' );
+    }
+    
+    /** 
+     * Customizer Live Preview
+     *
+     * This outputs the javascript needed to automate the live settings preview.
+     * Also keep in mind that this function isn't necessary unless your settings 
+     * are using 'transport'=>'postMessage' instead of the default 'transport' => 'refresh'
+     * 
+     * Used by hook: 'customize_preview_init'
+     *
+     * @since 1.6.0
+     * @return void
+     */
+    function customizer_live_preview() {
+        wp_enqueue_script( 
+            'agama-customize-preview', 
+            AGAMA_JS . 'customize-preview.js', 
+            [ 'jquery', 'customize-preview' ], 
+            Agama()->version() 
+        );
     }
     
     /**
@@ -186,6 +208,23 @@ class Core {
          */
         wp_enqueue_style( 'agama-fontawesome', AGAMA_CSS . 'font-awesome.min.css', [], Agama()->version() );
         
+    }
+    
+     /**
+     * Customize Enqueue Scripts
+     *
+     * Enqueue the customizer control scripts.
+     *
+     * @since 1.6.0
+     */
+    function customize_enqueue_scripts() {
+        wp_enqueue_script( 
+            'custom-customize', 
+            AGAMA_JS . 'customize-controls.js', 
+            [ 'jquery', 'customize-controls' ], 
+            Agama()->version(), 
+            true 
+        );
     }
 
     /**
@@ -345,6 +384,87 @@ class Core {
                     }
                     update_option( '_agama_156_migrated', true );
                 }
+            }
+        }
+        // If current theme version is bigger than "1.5.9" apply next updates.
+        // Migrate various colors fields to the new ones.
+        if ( version_compare( '1.5.9', $version, '<' ) ) {
+            if ( ! get_option( '_agama_159_migrated' ) ) {
+                
+                // Site Title
+                $site_title_color = esc_attr( get_theme_mod( 'agama_header_logo_color', '#bdbdbd' ) );
+                $site_title_hover_color = esc_attr( get_theme_mod( 'agama_header_logo_hover_color', '#333' ) );
+                set_theme_mod( 'agama_site_title_colors', [ 'normal' => $site_title_color, 'hover' => $site_title_hover_color ] );
+                
+                // Body
+                $body_bg_color = esc_attr( get_theme_mod( 'agama_body_background_color', '#e6e6e6' ) );
+                set_theme_mod( 'agama_body_background_colors', [ 'left' => $body_bg_color, 'right' => $body_bg_color ] );
+                
+                // Header Image Particles
+                $header_image_particles_c_color = esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#fff' ) );
+                $header_image_particles_l_color = esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#ac32e4' ) );
+                set_theme_mod( 'agama_header_image_particles_colors', [ 'lines' => $header_image_particles_l_color, 'circles' => $header_image_particles_c_color ] );
+                
+                // Navigation Top Links
+                $nav_top_normal = get_theme_mod( 'agama_navigation_top_font' );
+                if ( ! empty( $nav_top_normal['color'] ) ) {
+                     $nav_top['normal'] = esc_attr( $nav_top_normal['color'] );
+                } else {
+                    $nav_top['normal'] = '#757575';
+                }
+                $nav_top['hover'] = esc_attr( get_theme_mod( 'agama_nav_top_hover_color', '#333333' ) );
+                set_theme_mod( 'agama_navigation_top_links_color', 
+                    [ 
+                        'normal'  => $nav_top['normal'],
+                        'visited' => $nav_top['normal'],
+                        'hover'   => $nav_top['hover'],
+                        'active'  => $nav_top['hover']
+                    ] 
+                );
+                
+                // Navigation Primary Links
+                $nav_primary_normal = get_theme_mod( 'agama_navigation_primary_font' );
+                if ( ! empty( $nav_primary_normal['color'] ) ) {
+                     $nav_primary['normal'] = esc_attr( $nav_primary_normal['color'] );
+                } else {
+                    $nav_primary['normal'] = '#757575';
+                }
+                $nav_primary['hover'] = esc_attr( get_theme_mod( 'agama_nav_primary_hover_color', '#333333' ) );
+                set_theme_mod( 'agama_navigation_primary_links_color', 
+                    [ 
+                        'normal'  => $nav_primary['normal'],
+                        'visited' => $nav_primary['normal'],
+                        'hover'   => $nav_primary['hover'],
+                        'active'  => $nav_primary['hover']
+                    ] 
+                );
+                
+                // Navigation Mobile Links
+                $nav_mobile_normal = get_theme_mod( 'agama_mobile_navigation_font' );
+                if ( ! empty( $nav_mobile_normal['color'] ) ) {
+                     $nav_mobile['normal'] = esc_attr( $nav_mobile_normal['color'] );
+                } else {
+                    $nav_mobile['normal'] = '#757575';
+                }
+                $nav_mobile['hover'] = esc_attr( get_theme_mod( 'agama_nav_mobile_hover_color', '#333333' ) );
+                set_theme_mod( 'agama_navigation_mobile_links_color', 
+                    [ 
+                        'normal'  => $nav_mobile['normal'],
+                        'visited' => $nav_mobile['normal'],
+                        'hover'   => $nav_mobile['hover'],
+                        'active'  => $nav_mobile['hover']
+                    ] 
+                );
+                
+                // Footer Widget Area Background
+                $footer_widget_area_bg = esc_attr( get_theme_mod( 'agama_footer_widget_bg_color', '#314150' ) );
+                set_theme_mod( 'agama_footer_widgets_background_colors', [ 'left' => $footer_widget_area_bg, 'right' => $footer_widget_area_bg ] );
+                
+                // Footer Area Background
+                $footer_area_bg = esc_attr( get_theme_mod( 'agama_footer_bottom_bg_color', '#293744' ) );
+                set_theme_mod( 'agama_footer_background_colors', [ 'left' => $footer_area_bg, 'right' => $footer_area_bg ] );
+                
+                update_option( '_agama_159_migrated', true );
             }
         }
     }

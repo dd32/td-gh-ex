@@ -113,42 +113,6 @@ class Agama_Partial_Refresh {
     }
     
     /**
-     * Slider 1 Title
-     *
-     * @since 1.3.1
-     */
-    function preview_slide_1_title() {
-        return esc_html( get_theme_mod( 'agama_slider_title_1', __( 'Welcome to Agama', 'agama' ) ) );
-    }
-
-    /**
-     * Slider 1 Button
-     *
-     * @since 1.3.1
-     */
-    function preview_slide_1_button() {
-        return esc_html( get_theme_mod( 'agama_slider_button_title_1', __( 'Learn More', 'agama' ) ) );
-    }
-    
-    /**
-     * Slider 2 Title
-     *
-     * @since 1.3.1
-     */
-    function preview_slide_2_title() {
-        return esc_html( get_theme_mod( 'agama_slider_title_2', __( 'Welcome to Agama', 'agama' ) ) );
-    }
-
-    /**
-     * Slider 2 Button
-     *
-     * @since 1.3.1
-     */
-    function preview_slide_2_button() {
-        return esc_html( get_theme_mod( 'agama_slider_button_title_2', __( 'Learn More', 'agama' ) ) );
-    }
-    
-    /**
      * Enable Footer Social Icons
      *
      * @since 1.3.1

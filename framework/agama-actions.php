@@ -66,7 +66,7 @@ if( ! function_exists( 'agama_slider' ) ) :
      * @return mixed
      */
     function agama_slider() {
-        Agama_Slider::init();
+        Agama\Slider::get_instance();
     }
 endif;
 add_action( 'agama/after_header_wrapper', 'agama_slider', 20 );

@@ -1082,7 +1082,7 @@
 		
 		videoPresent = false;
 		var vis = parseFloat($('div.cameraSlide.cameracurrent',target).index());
-
+        
 		if(navSlide>0){ 
 			var slideI = navSlide-1;
 		} else if (vis == amountSlide-1) { 

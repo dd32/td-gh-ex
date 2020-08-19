@@ -2,6 +2,26 @@ Agama WordPress Theme, Copyright 2015 - 2021 theme-vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+
+= 1.6.0 - 19 August 2020 =
+* Added new "Typography" panel in customizer.
+* Added new "Colors" panel in customizer.
+* Fixed front page boxes visibility bug.
+* Fixed header image background overlay color change issue.
+* Fixed footer background color issue.
+* Rewritten slider code completely.
+* Re-arranged typography fields in typography panel.
+* Re-arranged colors fields in colors panel.
+* Updated site title color field type to multi-color.
+* Updated body background color field type to multi-color.
+* Updated the header image particles colors field type to multi-color.
+* Updated footer widgets area background color field type to multi-color.
+* Updated footer background color field type to multi-color.
+* Updated navigation top link color field.
+* Updated navigation primary link color field.
+* Updated navigation mobile link color field.
+* Updated theme translation files.
+
 = 1.5.9 - 17 August 2020 =
 * Fixed bugs related to front page boxes and customizer loading issue.
 
