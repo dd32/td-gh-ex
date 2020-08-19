@@ -1,15 +1,15 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * カスタムメニューボタンの出力テンプレート
- *   $parts_args['label'] : ボタンしたのラベル
- *   $parts_args['hide_pc'] : PCでもボタンを表示するかどうか
+ *   $args['label'] : ボタンしたのラベル
+ *   $args['hide_pc'] : PCでもボタンを表示するかどうか
  */
-$label      = isset( $parts_args['label'] ) ? $parts_args['label'] : '';
-$href       = isset( $parts_args['href'] ) ? $parts_args['href'] : '';
-$icon_class = isset( $parts_args['icon_class'] ) ? $parts_args['icon_class'] : '';
-$is_search  = isset( $parts_args['is_search'] ) ? $parts_args['is_search'] : true;
-$show_pc    = isset( $parts_args['show_pc'] ) ? $parts_args['show_pc'] : false;
-$show_sp    = isset( $parts_args['show_sp'] ) ? $parts_args['show_sp'] : true;
+$label      = isset( $args['label'] ) ? $args['label'] : '';
+$href       = isset( $args['href'] ) ? $args['href'] : '';
+$icon_class = isset( $args['icon_class'] ) ? $args['icon_class'] : '';
+$is_search  = isset( $args['is_search'] ) ? $args['is_search'] : true;
+$show_pc    = isset( $args['show_pc'] ) ? $args['show_pc'] : false;
+$show_sp    = isset( $args['show_sp'] ) ? $args['show_sp'] : true;
 
 // PCでもSPでも表示しない
 if ( ! $show_pc && ! $show_sp) return;
@@ -19,12 +19,12 @@ $diplay_class                    = '';
 if ( ! $show_pc ) $diplay_class .= ' u-hide-pc';
 if ( ! $show_sp ) $diplay_class .= ' u-hide-sp';
 ?>
-<div class="l-header__customBtn<?php if ( $diplay_class ) echo $diplay_class; ?>">
+<div class="l-header__customBtn<?php if ( $diplay_class ) echo esc_attr( $diplay_class ); ?>">
 	<?php if ( $is_search ) : ?>
-		<div class="c-iconBtn" data-onclick="toggleSearch" role="button">
+		<button class="c-iconBtn" data-onclick="toggleSearch" aria-label="<?php esc_attr_e( 'Search button', 'arkhe' ); ?>">
 			<span class="c-iconBtn__icon"><i class="__icon arkhe-icon-search"></i></span>
 			<span class="c-iconBtn__label"><?php echo esc_html( $label ); ?></span>
-		</div>
+		</button>
 	<?php else : ?>
 		<a href="<?php echo esc_url( $href ); ?>" class="c-iconBtn">
 			<span class="c-iconBtn__icon"><i class="<?php echo esc_attr( $icon_class ); ?>"></i></span>

@@ -11,7 +11,7 @@ $logo_pos           = $move_gnav_under ? 'center' : '';
 ?>
 <header id="header" class="l-header" <?php \ARKHE_THEME::header_attr( array( 'logo_pos' => $logo_pos ) ); ?>>
 	<div class="l-header__body l-container">
-<?php \ARKHE_THEME::get_parts( 'header/menu_btn', array( 'show_pc' => $show_drower_pc ) ); ?>
+		<?php \ARKHE_THEME::get_parts( 'header/menu_btn', array( 'show_pc' => $show_drower_pc ) ); ?>
 		<div class="l-header__left u-only-pc"></div>
 		<?php \ARKHE_THEME::get_parts( 'header/logo' ); ?>
 		<!-- <div class="l-header__main"></div> -->
@@ -34,7 +34,9 @@ $logo_pos           = $move_gnav_under ? 'center' : '';
 	</div>
 </header>
 <?php if ( $move_gnav_under ) : ?>
-	<div class="l-headerUnder"  <?php if ( \ARKHE_THEME::get_setting( 'fix_gnav' ) )  echo ' data-fix="true"'; ?>>
-		<?php \ARKHE_THEME::get_parts( 'header/gnav' ); ?>
+	<div class="l-headerUnder" <?php if ( \ARKHE_THEME::get_setting( 'fix_gnav' ) )  echo ' data-fix="1"'; ?>>
+		<div class="l-headerUnder__inner l-container">
+			<?php \ARKHE_THEME::get_parts( 'header/gnav' ); ?>
+		</div>
 	</div>
 <?php endif; ?>

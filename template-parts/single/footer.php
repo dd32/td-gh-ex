@@ -1,12 +1,12 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのフッター部分
- * $parts_args['post_id'] : 投稿IDが渡ってくる
+ * $args['post_id'] : 投稿IDが渡ってくる
  */
 $SETTING = ARKHE_THEME::get_setting();
 
 // 投稿情報
-$the_id    = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
 
 // シェアボタンを表示するかどうか
@@ -26,19 +26,6 @@ $show_related_posts = apply_filters( 'arkhe_show_related_posts', $SETTING['show_
 // if ( $show_share_btn ) :
 // if ( 1 ) :
 // 	ARKHE_THEME::get_parts( 'single/share_btns', array( 'post_id' => $the_id ) );
-// endif;
-
-// FBいいね & Twitterフォロー ボックス
-// $tw_id  = $SETTING['show_tw_follow_btn'] ? $SETTING['tw_follow_id'] : '';
-// $fb_url = $SETTING['show_fb_like_box'] ? $SETTING['fb_like_url'] : '';
-// if ( $tw_id || $fb_url ) :
-// 	ARKHE_THEME::get_parts(
-// 		'single/sns_cta',
-// 		array(
-// 			'tw_id'  => $tw_id,
-// 			'fb_url' => $fb_url,
-// 		)
-// 	);
 // endif;
 
 ?>

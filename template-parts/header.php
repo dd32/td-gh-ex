@@ -3,15 +3,16 @@
  * ヘッダー用テンプレート
  *   ブロックで生成されている場合はそちらを優先する
  */
+$header_id = 0;
 if ( defined( 'ARKHE_TMPID_KEY' ) ) {
 
 	$template_id_data = get_option( ARKHE_TMPID_KEY );
-	if ( $template_id_data ) {
+	if ( isset( $template_id_data['header'] ) ) {
 		$header_id = $template_id_data['header'] ?: 0;
 	}
 }
 
-if ( 0 && apply_filters( 'arkhe_header_id', $header_id ) ) {
+if ( apply_filters( 'arkhe_header_id', $header_id ) ) {
 	// ブロックで構成する場合
 	$header = get_posts(
 		array(
