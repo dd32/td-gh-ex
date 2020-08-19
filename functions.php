@@ -174,7 +174,7 @@ function beshop_scripts() {
 	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'beshop-style', get_stylesheet_uri(), array(), _S_VERSION );
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), '4.5.0', true );
 	wp_enqueue_script( 'beshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'beshop-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), _S_VERSION, true );
 

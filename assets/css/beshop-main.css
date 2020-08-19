@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -20,9 +19,7 @@
 }
 h1.site-title a {
   font-size: 72px;
-  background: -webkit-linear-gradient(#C33764, #1D2671);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#4169e1;
 }
 p.site-description {
     font-size: 18px;
@@ -128,6 +125,8 @@ h2.widget-title {
     margin-bottom: 2rem;
 }
 .bshop-list-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -142,7 +141,8 @@ h2.widget-title {
     width: 100%;
 }
 .beshop-blog-img {
-    flex-basis: 550px;
+    -ms-flex-preferred-size: 550px;
+        flex-basis: 550px;
 }
 
 .beshop-btext,
@@ -158,7 +158,8 @@ h2.widget-title {
 .bshop-blog-list,
 .bshop-single-list,
 .comments-area {
-    box-shadow: 0 0 70px rgba(0,0,0,.11);
+    -webkit-box-shadow: 0 0 70px rgba(0,0,0,.11);
+            box-shadow: 0 0 70px rgba(0,0,0,.11);
     padding: 20px;
     background: #fff;
 }
@@ -170,12 +171,16 @@ h2.widget-title {
 }
 
 .beshop-blog-text {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     position: relative;
     overflow: inherit;
 }
 .no-img .beshop-blog-text {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 .entry-footer, 
 .entry-footer a {
@@ -187,10 +192,15 @@ h2.widget-title {
     padding: 15px 10px;
     text-align: center;
     margin: 35px 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .page .entry-footer {
     display: inline-block;
@@ -198,8 +208,11 @@ h2.widget-title {
     background: inherit;
 }
 form.post-password-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     text-align: center;
 }
 
@@ -224,14 +237,21 @@ form.post-password-form p {
     .beshop-blog-text, 
     .beshop-blog-img {
         width: 100%;
-        flex-basis: inherit;
+        -ms-flex-preferred-size: inherit;
+            flex-basis: inherit;
     }
     .bshop-list-flex {
-        flex-flow: row wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
     }
     .beshop-btext {
         margin-left: 0;
     }
+    .main-navigation ul> li.befocus.menushow> ul.sub-menu,
+    .main-navigation ul> li.befocus.menushow> ul.children{
+        display: none !important;
+    }
 
 }
-

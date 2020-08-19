@@ -4,8 +4,8 @@ Contributors: nalam
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce, blog
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.4.2
-Stable tag: 1.0.0
+Tested up to: 5.5
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -76,7 +76,15 @@ Source:https://pxhere.com/en/photo/856028
 == Changelog ==
 
 
-= 1.0 - May 20 2015 =
+= 1.1 - August 19 2020 =
+* Fixed mobile menu Keyboard navigation 
+* Removed backspace 
+* Removed escaping function from printf function
+* Check Skip link
+* Fixed Comment button focused issue
+* Fixed Header Text Color issue
+* Added tag border
+= 1.0 - July 20 2020 =
 * Initial release
 
 == Credits ==

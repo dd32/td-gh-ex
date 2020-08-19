@@ -18,7 +18,7 @@ if ( is_active_sidebar( 'shop-sidebar' ) ){
 }
 get_header();
 ?>
-	<div class="container mt-5 mb-5 pt-3 pb-3">
+	<div class="container mt-3 mb-5 pt-5 pb-3">
 		<div class="row">
 			<div class="<?php echo esc_attr($beshop_column_set); ?>">
 				<div id="primary" class="content-area">

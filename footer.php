@@ -25,15 +25,12 @@
 	<footer id="colophon" class="site-footer text-center">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beshop' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'beshop' ), 'WordPress' );
-				?>
+				<?php _e( 'Powered by WordPress', 'beshop' ); ?>
 			</a>
-			<span class="sep"> | </span>
+			
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'beshop' ), 'beshop', '<a href="https://profiles.wordpress.org/nalam-1/">Noor Alam</a>' );
+				printf( __( 'Theme: %1$s by %2$s.', 'beshop' ), 'beshop', '<a href="https://profiles.wordpress.org/nalam-1/">Noor Alam</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
