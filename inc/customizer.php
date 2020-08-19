@@ -15,6 +15,28 @@
 
 function articlepress_customize_register( $wp_customize ) {
 
+	
+	//=========================== ArticlePress Settings
+	$wp_customize->add_section( 'articlepress_settings', array(
+		'title'		=> esc_html__( 'ArticlePress Settings', 'articlepress' ),
+		'priority'	=> '30'
+	));
+
+	// Scroll To Top
+	$wp_customize->add_setting( 'articlepress_scrolltotop_button', array(
+		'default'  	=>	1,
+		'transport'	=>	'refresh',
+		'sanitize_callback'  => 'articlepress_scrolltotop_button_sanitize'
+	));
+	$wp_customize->add_control( 'articlepress_scrolltotop_button', array(
+		'section'	=> 	'articlepress_settings',
+		'label'		=>	esc_html__( 'Scroll To Top Enable / Disable', 'articlepress' ),
+		'type'		=>	'checkbox',
+		'description'=> 'If you need to use Scroll to Top Option just check this box or if you don\'t need just uncheck'
+	));
+
+
+
 	//=========================== Footer Social Icon
 	$wp_customize->add_section( 'footer_socail_icon', array(
 		'title'		=> esc_html__( 'Footer Socail Icon', 'articlepress' ),
@@ -107,6 +129,8 @@ function articlepress_customize_register( $wp_customize ) {
 
 
 
+
+
 	// Default
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -162,6 +186,13 @@ if ( ! function_exists( 'footer_socail_icon_show_hide_sanitize' ) ){
 // Blog Read More Button SHow Hide
 if ( ! function_exists( 'blog_post_readmore_button_show_hide_sanitize' ) ){
     function blog_post_readmore_button_show_hide_sanitize( $checked ) {
+        return ( ( isset( $checked ) && true == $checked ) ? true : false );
+    }
+}
+
+// Scroll to to enable disable
+if ( ! function_exists( 'articlepress_scrolltotop_button_sanitize' ) ){
+    function articlepress_scrolltotop_button_sanitize( $checked ) {
         return ( ( isset( $checked ) && true == $checked ) ? true : false );
     }
 }

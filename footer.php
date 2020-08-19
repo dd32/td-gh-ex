@@ -19,7 +19,7 @@
 				<div class="row">
 					<div class="col-md-7">
 						<p class="site-copyright">
-							&copy; <?php esc_html( the_date( 'Y' )); ?> <?php esc_html( bloginfo( 'title' ) ) ;?> <?php esc_html_e('Designed by', 'articlepress') ?> <a href="<?php echo esc_url( 'https://themeasia.net' ); ?>"> <?php esc_html_e( 'ThemeAsia','articlepress' ) ?></a>
+							&copy; <?php esc_html( the_date( 'Y' )); ?> <?php esc_html( bloginfo( 'title' ) ) ;?> <?php esc_html_e('Developed by', 'articlepress') ?> <a href="<?php echo esc_url( 'https://themeasia.net' ); ?>"> <?php esc_html_e( 'ThemeAsia','articlepress' ) ?></a>
 						</p>
 					</div>
 
@@ -51,6 +51,9 @@
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
+
+<span class="scrolltotop"><i class="fas fa-long-arrow-alt-up"></i></span>
 
 <?php wp_footer(); ?>
 
