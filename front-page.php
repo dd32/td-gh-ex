@@ -90,7 +90,7 @@ $args = array(
             	$section1_title = get_theme_mod('section1_title');
 				if(!empty($section1_title)){
 			?>
-            <div class="left-title"><h2><?php echo esc_attr($section1_title); ?></h2></div>
+            <div class="left-title"><h2><?php echo esc_html($section1_title); ?></h2></div>
             <?php 
 				}
 			for($s=1; $s<5; $s++) { 

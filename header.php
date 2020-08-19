@@ -17,6 +17,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php do_action( 'wp_body_open' ); ?>
 <div class="header">
   <div class="container">
     <div class="logo">
@@ -32,7 +33,7 @@
         <?php endif; ?>
         </a>
     </div>
-         <div class="toggle"><a class="toggleMenu" href="#" style="display:none;"><?php esc_attr_e('Menu','bakers-lite'); ?></a></div> 
+         <div class="toggle"><a class="toggleMenu" href="#" style="display:none;"><?php esc_html_e('Menu','bakers-lite'); ?></a></div> 
         <div class="sitenav">
           <?php wp_nav_menu( array('theme_location' => 'primary') ); ?>         
         </div><!-- .sitenav--> 

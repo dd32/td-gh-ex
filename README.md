@@ -1,16 +1,17 @@
 # Bakers Lite
 
-**Contributors:** SKT Themes
-**Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 5.2
-**Version:** 1.2
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+**Contributors:** sonalsinha21
+**Requires at least:** 5.0
+**Requires PHP:**  5.6
+**Tested up to:** 5.5
+**Version:** 1.3
+**License:** GPL-2.0-or-later
+**License URI:** https://www.gnu.org/licenses/license-list.html#GPLv2  
 **Tags:** two-columns,right-sidebar,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments
 
 ## Description
 
-SKT Bakers Lite is a bakery WordPress theme and can be used for cup cake, pastry, muffin, cookies, chocolate, eateries, cafe, coffee and other food related websites. Cakes mean celebration of birthday, wedding, engagement, anniversary, marriage. Coded with page builder plugins and Gutenberg in mind. Coded with WooCommerce compatible so can sell cake directly online. Parcel, food delivery, caterers, fast food, pizza, cuisine, chef, recipe, drinks, wine, restaurant owners can also use this template. SEO optimized and speed optimized. Fast loading, flexible and simple easy to use. You have option to change color scheme of the template.
+SKT Bakers Lite is a bakery WordPress theme and can be used for cup cake, pastry, muffin, cookies, chocolate, eateries, cafe, coffee and other food related websites. Cakes mean celebration of birthday, wedding, engagement, anniversary, marriage. Coded with page builder plugins and Gutenberg in mind. Coded with WooCommerce compatible so can sell cake directly online. Parcel, food delivery, caterers, fast food, pizza, cuisine, chef, recipe, drinks, wine, restaurant owners can also use this template. SEO optimized and speed optimized. Fast loading, flexible and simple easy to use. You have option to change color scheme of the template. It comes with ready to import 63+ Elementor templates as well for additional functionality enhancement.
  
 ## Theme Resources
 
@@ -74,44 +75,28 @@ License URL: http://www.gnu.org/licenses/gpl-2.0.html
 		License : http://www.gnu.org/licenses/gpl-2.0.html
 		Copyright 2016, Justin Tadlock	justintadlock.com
 		
-6 -     Details of images used in Screenshot:
+6 -     image used in Screenshot:
 		
-		Below Slider Section Image Is Pixabay Image:
+ 		https://pxhere.com/fr/photo/862516
 		
-		https://pixabay.com/en/tart-cake-cakes-small-four-bake-66107/
+		Footer Background Image Is Maxpixel Image:
 		
-		Second Section Columns Images are Pixabay Image:
-		
-		https://pixabay.com/en/cupcake-dessert-sprinkles-pastry-2250355/
-		https://pixabay.com/en/muffin-sweet-bake-calories-605937/
-		https://pixabay.com/en/cupcake-dessert-feenkuchen-muffins-2724786/
-		https://pixabay.com/en/cupcake-chocolate-bakery-sweets-510932/
-		
-		Footer Background Image Is Pixabay Image:
-		
-		https://pixabay.com/en/cupcakes-pastry-icing-pretzels-1966567/		
-		
-		Declaring these self designed images under GPL license version 2.0
-		License URL: http://www.gnu.org/licenses/gpl-2.0.html
+		https://www.maxpixel.net/Cinnamon-Pastry-Icing-Pretzels-Food-Cupcakes-1966567		
 		
 		Slider Images : 
 		bakers-lite/images/Slides/slider1.jpg
 		bakers-lite/images/Slides/slider2.jpg
 		bakers-lite/images/Slides/slider3.jpg
         
-        Slider Images Are Pixabay Images:  
+        Slider Images Are Pxhere Images:  
 		
-		https://pixabay.com/en/cake-wares-desserts-pastry-cakes-906267/
-		https://pixabay.com/en/food-cupcake-sweet-colourful-cake-1820689/
-		https://pixabay.com/en/cake-birthday-birthday-cake-pie-791259/
+		https://pxhere.com/fr/photo/862516
+		https://pxhere.com/th/photo/1180381
+		https://pxhere.com/id/photo/1619265
 
-		Copyright 2017, Pixabay
-		https://pixabay.com/ 
-		Pixabay provides images under CC0 license
+		Images used are from pxhere.com and maxpixel.net
+		Both sites provide images under CC0 license
  		CC0 license: https://creativecommons.org/share-your-work/public-domain/cc0
-			
-		Declaring these self designed image under GPL license version 2.0
-		License URL: http://www.gnu.org/licenses/gpl-2.0.html
         
 7 -     bakers-lite/css/animation.css 
 
@@ -121,6 +106,9 @@ License URL: http://www.gnu.org/licenses/gpl-2.0.html
 For any help you can mail us at support[at]sktthemes.com
 
 ## Changelog
+Version 1.3
+i)   Updated theme as per latest theme check and added SKT Templates plugin via TGM
+
 Version 1.2
 i)   Author URI and Theme URI changed.
 ii)  Removed anchor link from footer.
