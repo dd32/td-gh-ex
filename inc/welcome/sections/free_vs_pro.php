@@ -1,19 +1,3 @@
-<div class="three-col">
-	<div class="col">
-		<h4><?php esc_html_e('ONE TIME PAYMENT', 'accesspress-lite');  ?></h4>
-		<p><?php esc_html_e('No renewal needed', 'accesspress-lite');  ?></p>
-	</div>
-
-	<div class="col">
-		<h4><?php esc_html_e('UNLIMITED DOMAIN LICENCE', 'accesspress-lite');  ?></h4>
-		<p><?php esc_html_e('Use in as many website as you need', 'accesspress-lite');  ?></p>
-	</div>
-
-	<div class="col">
-		<h4><?php esc_html_e('FREE UPDATES FOR LIFE TIME', 'accesspress-lite');  ?></h4>
-		<p><?php esc_html_e('Keep upto date', 'accesspress-lite'); ?></p>
-	</div>
-</div>
 <table class="comparison-table">
 	<tr>
 		<th><?php esc_html_e('Features', 'accesspress-lite'); ?></th>

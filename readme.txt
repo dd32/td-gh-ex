@@ -89,6 +89,9 @@ All other images are designed by AccessPress Themes
 
 
 == Changelog ==
+= 2.90 =
+** Fixed escapings
+** Fixing footer links
 
 = 2.88 =
 ** Added dropdown icon for submenus
