@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automobile Car Dealer\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-07-13 12:56+0530\n"
+"PO-Revision-Date: 2020-07-29 17:38+0530\n"
 "Language-Team: buywptemplates <support@buywptemplates.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -467,8 +467,8 @@ msgid "Show / Hide Featured image"
 msgstr "Показать / Скрыть Избранные изображения"
 
 #: inc/customizer.php:707
-msgid "Enable / Disable Tags"
-msgstr "Включить / отключить теги"
+msgid "Show / Hide Tags"
+msgstr "Показать / Скрыть теги"
 
 #: inc/customizer.php:716
 msgid "Single Post Meta Box Seperator"
@@ -502,8 +502,8 @@ msgid "Comment Form Button Text"
 msgstr "Текст кнопки формы комментария"
 
 #: inc/customizer.php:764
-msgid "Enable / Disable Single Post Pagination"
-msgstr "Включить / отключить одиночную пост-пагинацию"
+msgid "Show / Hide Single Post Pagination"
+msgstr "Показать / скрыть пост-пост"
 
 #: inc/customizer.php:770
 msgid "Social Icon Section"
@@ -641,11 +641,11 @@ msgstr "Центр"
 msgid "Slider Content Layout"
 msgstr "Макет содержимого слайдера"
 
-#: inc/customizer.php:1101
+#: inc/customizer.php:1101 inc/customizer.php:1642
 msgid "Left"
 msgstr "Осталось"
 
-#: inc/customizer.php:1102
+#: inc/customizer.php:1102 inc/customizer.php:1633 inc/customizer.php:1641
 msgid "Right"
 msgstr "Правильно"
 
@@ -872,43 +872,59 @@ msgstr "Включить / отключить боковую панель стр
 msgid "Enable / Disable Related product"
 msgstr "Включить / отключить связанный продукт"
 
-#: inc/customizer.php:1593
+#: inc/customizer.php:1592
+msgid "Woocommerce Product Sale Border Radius"
+msgstr "Woocommerce продукт продажи границу радиуса"
+
+#: inc/customizer.php:1607
+msgid "Woocommerce Product Sale Top Bottom Padding"
+msgstr "Woocommerce Product Sale Верхняя нижняя обивка"
+
+#: inc/customizer.php:1622
+msgid "Woocommerce Product Sale Left Right Padding"
+msgstr "Продажа продуктов WooCommerce"
+
+#: inc/customizer.php:1638
+msgid "Woocommerce Product Sale Position"
+msgstr "Позиция Woocommerce по продаже товаров"
+
+#: inc/customizer.php:1652
 msgid "Button Top Bottom Padding (px)"
 msgstr "Кнопка Верхняя нижняя обивка (px)"
 
-#: inc/customizer.php:1608
+#: inc/customizer.php:1667
 msgid "Button Right Left Padding (px)"
 msgstr "Кнопка справа налево (отступ)"
 
-#: inc/customizer.php:1623
+#: inc/customizer.php:1682
 msgid "Button Border Radius (px)"
 msgstr "Радиус границы кнопки (px)"
 
-#: inc/customizer.php:1638
+#: inc/customizer.php:1697
 msgid "Enable / Disable product border"
 msgstr "Включить / отключить границы продукта"
 
-#: inc/customizer.php:1648
+#: inc/customizer.php:1707
 msgid "Product Top Bottom Padding (px)"
 msgstr "Product Top Bottom Padding (px)"
 
-#: inc/customizer.php:1663
+#: inc/customizer.php:1722
 msgid "Product Right Left Padding (px)"
 msgstr "Product Right Left Padding (px)"
 
-#: inc/customizer.php:1678
+#: inc/customizer.php:1737
 msgid "Product Border Radius (px)"
 msgstr "Радиус границы продукта (px)"
 
-#: inc/customizer.php:1693
+#: inc/customizer.php:1752
 msgid "Product Box Shadow (px)"
 msgstr "Продукт Box Shadow (px)"
 
-#: inc/customizer.php:1780
+#: inc/customizer.php:1839
 msgid "Automobile Pro"
 msgstr "Автомобили Про"
 
-#: inc/customizer.php:1781
+#: inc/customizer.php:1840
 msgid "Go Pro"
 msgstr "Go Pro"
 

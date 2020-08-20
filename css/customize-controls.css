@@ -109,3 +109,10 @@ input#_customize-input-automobile_car_dealer_slider_opacity_color {
   padding: 10px;
   font-size: 16px;
 }
+li#customize-control-automobile_car_dealer_woocommerce_product_border_enable, 
+li#customize-control-automobile_car_dealer_woocommerce_button_padding_top, 
+li#customize-control-automobile_car_dealer_woo_product_sale_border_radius {
+  border-top: solid 2px #ddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}

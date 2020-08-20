@@ -165,6 +165,28 @@
 		$automobile_car_dealer_custom_css .='box-shadow: '.esc_html($automobile_car_dealer_woocommerce_product_box_shadow).'px '.esc_html($automobile_car_dealer_woocommerce_product_box_shadow).'px '.esc_html($automobile_car_dealer_woocommerce_product_box_shadow).'px #eee;';
 	$automobile_car_dealer_custom_css .='}';
 
+	$automobile_car_dealer_woo_product_sale_top_bottom_padding = get_theme_mod('automobile_car_dealer_woo_product_sale_top_bottom_padding', 0);
+	$automobile_car_dealer_woo_product_sale_left_right_padding = get_theme_mod('automobile_car_dealer_woo_product_sale_left_right_padding', 0);
+	$automobile_car_dealer_custom_css .='.woocommerce span.onsale{';
+		$automobile_car_dealer_custom_css .='padding-top: '.esc_html($automobile_car_dealer_woo_product_sale_top_bottom_padding).'px; padding-bottom: '.esc_html($automobile_car_dealer_woo_product_sale_top_bottom_padding).'px; padding-left: '.esc_html($automobile_car_dealer_woo_product_sale_left_right_padding).'px; padding-right: '.esc_html($automobile_car_dealer_woo_product_sale_left_right_padding).'px; display:inline-block;';
+	$automobile_car_dealer_custom_css .='}';
+
+	$automobile_car_dealer_woo_product_sale_border_radius = get_theme_mod('automobile_car_dealer_woo_product_sale_border_radius',100);
+	$automobile_car_dealer_custom_css .='.woocommerce span.onsale {';
+		$automobile_car_dealer_custom_css .='border-radius: '.esc_html($automobile_car_dealer_woo_product_sale_border_radius).'%;';
+	$automobile_car_dealer_custom_css .='}';
+
+	$automobile_car_dealer_woo_product_sale_position = get_theme_mod('automobile_car_dealer_woo_product_sale_position', 'Right');
+	if($automobile_car_dealer_woo_product_sale_position == 'Right' ){
+		$automobile_car_dealer_custom_css .='.woocommerce ul.products li.product .onsale{';
+			$automobile_car_dealer_custom_css .=' left:auto; right:0;';
+		$automobile_car_dealer_custom_css .='}';
+	}elseif($automobile_car_dealer_woo_product_sale_position == 'Left' ){
+		$automobile_car_dealer_custom_css .='.woocommerce ul.products li.product .onsale{';
+			$automobile_car_dealer_custom_css .=' left:-6px; right:auto;';
+		$automobile_car_dealer_custom_css .='}';
+	}
+
 	// footer setting
 	$automobile_car_dealer_footer_bg_color = get_theme_mod('automobile_car_dealer_footer_bg_color');
 	$automobile_car_dealer_custom_css .='.footer-wp{';

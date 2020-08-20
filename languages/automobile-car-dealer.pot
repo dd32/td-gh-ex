@@ -954,43 +954,68 @@ msgstr ""
 msgid "Enable / Disable Related product"
 msgstr ""
 
-#: inc/customizer.php:1593
-msgid "Button Top Bottom Padding (px)"
+#: inc/customizer.php:1592
+msgid "Woocommerce Product Sale Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1608
-msgid "Button Right Left Padding (px)"
+#: inc/customizer.php:1607
+msgid "Woocommerce Product Sale Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1623
-msgid "Button Border Radius (px)"
+#: inc/customizer.php:1622
+msgid "Woocommerce Product Sale Left Right Padding"
+msgstr ""
+
+#: inc/customizer.php:1633
+#: inc/customizer.php:1641
+msgid "Right"
 msgstr ""
 
 #: inc/customizer.php:1638
+msgid "Woocommerce Product Sale Position"
+msgstr ""
+
+#: inc/customizer.php:1642
+msgid "Left"
+msgstr ""
+
+#: inc/customizer.php:1652
+msgid "Button Top Bottom Padding (px)"
+msgstr ""
+
+#: inc/customizer.php:1667
+msgid "Button Right Left Padding (px)"
+msgstr ""
+
+#: inc/customizer.php:1682
+msgid "Button Border Radius (px)"
+msgstr ""
+
+#: inc/customizer.php:1697
 msgid "Enable / Disable product border"
 msgstr ""
 
-#: inc/customizer.php:1648
+#: inc/customizer.php:1707
 msgid "Product Top Bottom Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1663
+#: inc/customizer.php:1722
 msgid "Product Right Left Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:1678
+#: inc/customizer.php:1737
 msgid "Product Border Radius (px)"
 msgstr ""
 
-#: inc/customizer.php:1693
+#: inc/customizer.php:1752
 msgid "Product Box Shadow (px)"
 msgstr ""
 
-#: inc/customizer.php:1780
+#: inc/customizer.php:1839
 msgid "Automobile Pro"
 msgstr ""
 
-#: inc/customizer.php:1781
+#: inc/customizer.php:1840
 msgid "Go Pro"
 msgstr ""
 

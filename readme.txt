@@ -159,6 +159,13 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 * added enable / disable single post pagination option.
 * updated mo and po files of different languages.
 
+= 0.5.4 =
+* added woocommerce products sale border radius option.
+* added woocommerce products sale position option.
+* added woocommerce products sale top bottom padding option.
+* added woocommerce products sale left right padding option.
+* Updated mo and po files of different languages.
+
 == Resources ==
 
 Automobile Car Dealer WordPress Theme, Copyright 2017 Buywptemplates
