@@ -9,6 +9,7 @@ function arowana_css() {
 	
 	wp_enqueue_style('arowana-responsive',get_stylesheet_directory_uri().'/css/responsive.css');
 	wp_dequeue_style('startkit-responsive');
+	wp_dequeue_style('startkit-fonts');
 
 }
 add_action( 'wp_enqueue_scripts', 'arowana_css',999);
