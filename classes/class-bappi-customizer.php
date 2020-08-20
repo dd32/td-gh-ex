@@ -81,11 +81,14 @@ class bappi_customize
             )
         );
 
+    
+
         //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
         $wp_customize->get_setting('blogname')->transport = 'postMessage';
         $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
         $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
         $wp_customize->get_setting('background_color')->transport = 'postMessage';
+
     }
 
     /**

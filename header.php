@@ -43,12 +43,18 @@
 			</div>
 			<div class="row">
 				<div class="site-branding">
+				
+
+         
 					<?php if (has_custom_logo()) : ?>
 						<div class="site-logo"><?php the_custom_logo(); ?></div>
 					<?php endif; ?>
 					<div class="header-content">
 						<?php
-						if (is_front_page() && is_home()) :
+						if(!has_custom_logo()):
+							if (display_header_text()==true ):
+if (is_front_page() && is_home()) :
+	
 						?>
 							<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 						<?php
@@ -56,13 +62,16 @@
 						?>
 							<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
 						<?php
+					endif;
+				else:
 						endif;
-						$bappi_description = get_bloginfo('description', 'display');
-						if ($bappi_description || is_customize_preview()) :
-						?>
-							<p class="site-description"><?php echo $bappi_description; /* WPCS: xss ok. */ ?></p>
-						<?php endif; ?>
-
+						endif;
+						 ?>
+	<?php
+            if (display_header_text()==true ) {
+  echo '<div class="site-description">' . get_bloginfo('description') . '</div>';
+}else{}
+          ?>
 
 						<nav id="site-navigation" class="main-navigation">
 							<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">

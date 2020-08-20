@@ -194,3 +194,9 @@ if (defined('JETPACK__VERSION')) {
 
 // Handle Customizer settings.
 require get_template_directory() . '/classes/class-bappi-customizer.php';
+
+
+// function de_register( $wp_customize ) {
+//     $wp_customize->remove_control('display_header_text');
+// }
+// add_action( 'customize_register', 'de_register', 11 );

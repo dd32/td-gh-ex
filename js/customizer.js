@@ -57,11 +57,25 @@
     });
   });
 
+  //Update the site description in real time...
+    wp.customize( 'blogdescription', function( value ) {
+       console.log('site description valu is', value);
+        value.bind( function( newval ) {
+            $( '.site-description' ).html( newval );
+        } );
+    } );
+
+
+
   // Header Text color
 
   wp.customize("header_textcolor", function (value) {
     value.bind(function (newval) {
-      console.log("setting heder text color", newval);
+    if(newval){
+        $('.site-description').removeClass('no-description');
+      }else{
+        $('.site-description').addClass('no-description');
+      }
       $(".site-description").css({
         color: newval,
       });
