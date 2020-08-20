@@ -36,8 +36,8 @@ function bhost_theme_mostrar_guide() {
 	<div class="col-right">			
 			<div style="text-align:center; font-weight:bold;">
 				<hr />
-				<a href="<?php echo BHOST_LIVE_DEMO; ?>" target="_blank"><?php esc_attr_e('Live Demo', 'bhost'); ?></a> | 
-				<a href="<?php echo BHOST_PRO_THEME_URL; ?>"><?php esc_attr_e('Buy Pro Version', 'bhost'); ?></a> 
+				<a href="<?php echo BHOST_LIVE_DEMO; ?>" target="_blank"><?php esc_html_e('Live Demo', 'bhost'); ?></a> | 
+				<a href="<?php echo BHOST_PRO_THEME_URL; ?>"><?php esc_html_e('Buy Pro Version', 'bhost'); ?></a> 
                 <div style="height:5px"></div>
 				<hr />                
                 <a href="<?php echo BHOST_PRO_THEME_URL; ?>" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/sktskill.jpg" alt="" /></a>

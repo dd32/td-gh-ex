@@ -17,6 +17,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <!-- .container is main centered wrapper -->
 
 	<div id="page" class="hfeed site">
