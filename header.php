@@ -19,6 +19,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php do_action( 'wp_body_open' ); ?>
 <?php $hideslide = get_theme_mod('hide_slides', 1); ?>
 <div class="header <?php if (!is_home() && is_front_page() && $hideslide == '' ){ ?>hmheader<?php } ?>">
   <div class="container">

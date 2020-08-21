@@ -2,15 +2,17 @@
 /* Adventure Lite Responsive WordPress Theme */
 /*-----------------------------------------------------------------------------------*/
 
-Theme Name      :   Adventure Lite
-Theme URI       :   https://www.sktthemes.org/shop/free-travel-blog-wordpress-theme
-Version         :   1.9
-Tested up to    :   WP 5.2
-Author          :   SKT Themes
-Author URI      :   https://www.sktthemes.org
+Theme Name      	:   Adventure Lite
+Theme URI       	:   https://www.sktthemes.org/shop/free-travel-blog-wordpress-theme
+Version         	:   2.0
+Requires at least	:   5.0
+Requires PHP:    	:   5.6
+Tested up to    	:   5.5
+Contributors    	:   sonalsinha21
+Author URI      	:   http://www.sktthemes.org/
 
-license         :   GNU General Public License v3.0
-License URI     :   http://www.gnu.org/licenses/gpl.html
+license         	:   GNU General Public License v3.0
+License URI     	:   http://www.gnu.org/licenses/gpl.html
 
 /*-----------------------------------------------------------------------------------*/
 /* About Author - Contact Details */
@@ -93,12 +95,15 @@ Theme is Built using the following resource bundles.
 5 - adventure-lite/customize-pro	
 	Customize Pro code based on Justintadlock’s Customizer-Pro (https://github.com/justintadlock/trt-customizer-pro)		
 		
-6 - Images used from Pixabay.
-	Pixabay provides images under CC0 license					(https://creativecommons.org/about/cc0)
+6 - Images used are from maxpixel.net
+	Site provide images under CC0 license
+ 	CC0 license: https://creativecommons.org/share-your-work/public-domain/cc0
 	
-	https://pixabay.com/en/hiker-backpacker-backpacking-1149877/
-	https://pixabay.com/en/desert-quad-tunisia-adventure-sand-1904100/
-	https://pixabay.com/en/scuba-diver-diver-diving-underwater-569333/
+	Slider Images Are Maxpixel Images:
+	
+	https://www.maxpixel.net/Travelling-Hiker-Backpacking-Backpacker-Walking-1149877
+	https://www.maxpixel.net/Desert-Sand-Tunisia-Quad-Extreme-Adventure-Dune-1904100
+	https://www.maxpixel.net/Diver-Water-Diving-Scuba-Diver-Sea-Underwater-569333
 
 	Slider Images	
 	adventure-lite/images/slides/slider1.jpg

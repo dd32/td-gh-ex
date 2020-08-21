@@ -1,3 +1,6 @@
+Version 2.0
+i)  Updated theme as per latest theme check and added SKT Templates plugin via TGM
+
 Version 1.9
 i)  Author URI and Theme URI changed.
 ii) Removed anchor link from footer.
