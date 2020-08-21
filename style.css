@@ -4,7 +4,7 @@
 	Author: Rough Pixels
 	Author URI: https://www.roughpixels.com
 	Description: Ariele Lite is designed for bloggers who are deeply enthusiastic when writing. Whether it's for the purist blogger or websites that are editorial-based, we put emphasis on your writing. You will be in company with other elite blog sites when you begin to build with Ariele Lite, especially if you take advantage of the Gutenberg block editor! If you absolutely need a theme designed specifically with that in mind, Ariele Lite is the perfect blogging theme for you! Enjoy unlimited colour options, multiple blog layouts, a bonus Recent Posts widget with thubnails, live previews using the built-in theme customizer, and a whole lot more!
-	Version: 1.0.7
+	Version: 1.0.8
 	Requires PHP: 5.6.0
 	Tested up to: 5.4.2
 	Text Domain: ariele-lite
@@ -1098,6 +1098,14 @@ pre code {
     font-size: 1.063rem;
     line-height: 1.6;
     margin: 0;
+}
+
+.search-no-results #primary {
+    padding: 0;
+}
+
+.search-no-results .archive-subtitle p {
+    font-weight: 700;
 }
 
 .search .entry-summary {
@@ -2573,6 +2581,10 @@ object {
 
 /* Search */
 
+.search-results li.post-author-avatar {
+    display: none;
+}
+
 .search-form {
     position: relative;
 }
@@ -2680,7 +2692,7 @@ object {
 }
 
 .search-form input.search-field {
-    padding: 20px 8%;
+    padding: 20px 8% 20px 2%;
     margin: 0 0 0 0;
     height: 60px;
     font-style: normal;
@@ -2707,7 +2719,7 @@ object {
 .search-submit {
     position: absolute;
     height: 46px;
-    width: 80px;
+    width: 100px;
     border: none;
     cursor: pointer;
     margin: 0;

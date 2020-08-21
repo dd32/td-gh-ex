@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ariele\n"
-"POT-Creation-Date: 2020-08-01 14:22-0700\n"
+"POT-Creation-Date: 2020-08-21 12:39-0700\n"
 "PO-Revision-Date: 2019-11-20 22:40-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -107,88 +107,88 @@ msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:233
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:234
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:319
+#: functions.php:316
 msgid "Red"
 msgstr ""
 
-#: functions.php:324
+#: functions.php:321
 msgid "Brown"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:326
 msgid "Taupe"
 msgstr ""
 
-#: functions.php:334
+#: functions.php:331
 msgid "Black"
 msgstr ""
 
-#: functions.php:339
+#: functions.php:336
 msgid "Grey"
 msgstr ""
 
-#: functions.php:344
+#: functions.php:341
 msgid "Beige"
 msgstr ""
 
-#: functions.php:349
+#: functions.php:346
 msgid "White"
 msgstr ""
 
-#: functions.php:358
+#: functions.php:355
 msgctxt "Name of the small font size in Gutenberg"
 msgid "Small"
 msgstr ""
 
-#: functions.php:359
+#: functions.php:356
 msgctxt "Short name of the small font size in the Gutenberg editor."
 msgid "S"
 msgstr ""
 
-#: functions.php:364
+#: functions.php:361
 msgctxt "Name of the regular font size in Gutenberg"
 msgid "Regular"
 msgstr ""
 
-#: functions.php:365
+#: functions.php:362
 msgctxt "Short name of the regular font size in the Gutenberg editor."
 msgid "R"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:367
 msgctxt "Name of the medium font size in Gutenberg"
 msgid "Medium"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:368
 msgctxt "Short name of the medium font size in the Gutenberg editor."
 msgid "M"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:373
 msgctxt "Name of the large font size in Gutenberg"
 msgid "Large"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:374
 msgctxt "Short name of the large font size in the Gutenberg editor."
 msgid "L"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:379
 msgctxt "Name of the larger font size in Gutenberg"
 msgid "Larger"
 msgstr ""
 
-#: functions.php:383
+#: functions.php:380
 msgctxt "Short name of the larger font size in the Gutenberg editor."
 msgid "XL"
 msgstr ""
@@ -1126,10 +1126,21 @@ msgstr ""
 msgid "Display post date?"
 msgstr ""
 
-#. translators: %s: search query.
-#: search.php:22
+#: search.php:27
+msgid "Search Results for:"
+msgstr ""
+
+#: search.php:35
 #, php-format
-msgid "Search Results for: %s"
+msgid "We found %s result for your search."
+msgid_plural "We found %s results for your search."
+msgstr[0] ""
+msgstr[1] ""
+
+#: search.php:43
+msgid ""
+"We could not find any results for your search. You can give it another try "
+"through the search form below using different search terms."
 msgstr ""
 
 #: searchform.php:10
@@ -1197,24 +1208,14 @@ msgstr ""
 msgid "Showing %1$s Result(s)%2$s"
 msgstr ""
 
-#: template-parts/post/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
 #. translators: 1: link to WP admin new post page.
-#: template-parts/post/content-none.php:24
+#: template-parts/post/content-none.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/post/content-none.php:37
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/post/content-none.php:44
+#: template-parts/post/content-none.php:38
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."

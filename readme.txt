@@ -4,7 +4,7 @@ Contributors: roughpixels
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -113,6 +113,12 @@ Removed - for now removed features.
 Fixed - for any bug fixes.
 Security - in case of vulnerabilities.
 
+## [1.0.8] - 2020-08-21
+
+* Fixed - No search results was displaying a blank page
+* Changed - Search results and no results page messages.
+* Changed - Language .pot translation file
+* Removed - Search results page will no longer show author avatar in post meta.
 
 ## [1.0.7] - 2020-08-5
 
