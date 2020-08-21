@@ -54,6 +54,7 @@ jQuery(document).ready(function($) {
     dropdown_toggle.click(function() {
         $(this).toggleClass('active');
        $(this).parent().find('.sub-menu').first().slideToggle();
+       $('#primary-menu > li:last-child button.active').unbind('keydown');
     });
 
     $(document).keyup(function(e) {
@@ -94,11 +95,38 @@ jQuery(document).ready(function($) {
         });
     }
 
-/*--------------------------------------------------------
-                Keyboard Navigation
-----------------------------------------------------------*/
+/*--------------------------------------------------------------
+ Keyboard Navigation
+----------------------------------------------------------------*/
 if( $(window).width() < 1024 ) {
-        $( '#primary-menu > li:last-child' ).bind( 'keydown', function(e) {
+    $('#primary-menu').find("li").last().bind( 'keydown', function(e) {
+        if( e.which === 9 ) {
+            e.preventDefault();
+            $('#masthead').find('.menu-toggle').focus();
+        }
+    });
+
+    $('#primary-menu > li:last-child button:not(.active)').bind( 'keydown', function(e) {
+        if( e.which === 9 ) {
+            e.preventDefault();
+            $('#masthead').find('.menu-toggle').focus();
+        }
+    });
+}
+else {
+    $('#primary-menu').find("li").unbind('keydown');
+}
+
+$(window).resize(function() {
+    if( $(window).width() < 1024 ) {
+        $('#primary-menu').find("li").last().bind( 'keydown', function(e) {
+            if( e.which === 9 ) {
+                e.preventDefault();
+                $('#masthead').find('.menu-toggle').focus();
+            }
+        });
+
+        $('#primary-menu > li:last-child button:not(.active)').bind( 'keydown', function(e) {
             if( e.which === 9 ) {
                 e.preventDefault();
                 $('#masthead').find('.menu-toggle').focus();
@@ -106,21 +134,9 @@ if( $(window).width() < 1024 ) {
         });
     }
     else {
-        $( '#primary-menu > li:last-child' ).unbind('keydown');
+        $('#primary-menu').find("li").unbind('keydown');
     }
-    $(window).resize(function() {
-        if( $(window).width() < 1024 ) {
-            $( '#primary-menu > li:last-child' ).bind( 'keydown', function(e) {
-                if( e.which === 9 ) {
-                    e.preventDefault();
-                    $('#masthead').find('.menu-toggle').focus();
-                }
-            });
-        }
-        else {
-            $( '#primary-menu > li:last-child' ).unbind('keydown');
-        }
-    });
+});
 
 
 
