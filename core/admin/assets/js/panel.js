@@ -12,7 +12,7 @@ jQuery.noConflict()(function($){
    On off
    =============================================== */
 
-	$('.on-off').live("change",function() {
+	$('.on-off').on("change",function() {
 		
 		if ($(this).val() === "on" ) { 
 			$('.hidden-element').css({'display':'none'});
@@ -23,7 +23,7 @@ jQuery.noConflict()(function($){
 	
 	}); 
 
-	$('input[type="checkbox"].on_off').live("change",function() { 
+	$('input[type="checkbox"].on_off').on("change",function() { 
 	
 		if (!this.checked) { 
 			$(this).parent('.iPhoneCheckContainer').parent('.suevafree_inputbox').next('.hidden-element').slideUp("slow");
@@ -37,7 +37,7 @@ jQuery.noConflict()(function($){
    Upload media
    =============================================== */
 
-	$('.suevafree_inputbox input.upload_button').live("click", function(e) {
+	$('.suevafree_inputbox input.upload_button').on("click", function(e) {
 
 		var custom_uploader;
 		var attachmentId = "";
