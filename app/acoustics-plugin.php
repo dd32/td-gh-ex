@@ -10,10 +10,24 @@
 function acoustics_register_required_plugins() {
   $plugins = array(
         array(
-            'name'      => __( 'Everest Forms', 'acoustics' ),
-            'slug'      => 'everest-forms',
+            'name'      => __( 'Contact Form 7', 'acoustics' ),
+            'slug'      => 'contact-form-7',
             'required'  => false,
 			'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+        array(
+            'name'      => __( 'WordPress SEO Plugin – Rank Math', 'acoustics' ),
+            'slug'      => 'seo-by-rank-math',
+            'required'  => false,
+			'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+        array(
+            'name'      => __( 'Site Kit by Google', 'acoustics' ),
+            'slug'      => 'google-site-kit',
+            'required'  => false,
+            'force_activation'   => false,
             'force_deactivation' => false,
         ),
 		array(

@@ -176,7 +176,7 @@ if ( ! function_exists( 'acoustics_woocommerce_wrapper_before' ) ) {
 	 * @return void
 	 */
   function acoustics_woocommerce_wrapper_before() {
-		$layout = get_theme_mod( 'acoustics_archive_layout', 'left-sidebar' );
+		$layout = get_theme_mod( 'acoustics_archive_layout', 'no-sidebar' );
 		$class = 'col-md-12 col-sm-12 col-xs-12';
 		if( is_shop() || is_product_category() ):
 			switch ( $layout ) {
