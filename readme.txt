@@ -2,15 +2,15 @@
 
 Contributors: specia
 Requires at least: 4.4
-Tested up to: 5.3
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.0.2
-Version: 3.0.2
+Stable tag: 3.0.20
+Version: 3.0.20
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
 
-Avira WordPress Theme, Copyright 2019 Specia Theme
+Avira WordPress Theme, Copyright 2020 Specia Theme
 Avira is distributed under the terms of the GNU GPL
 
 ##Description
@@ -26,7 +26,7 @@ Avira is a trending WordPress theme with lots of powerful features, instantly gi
 
 ## Credit & Copyright
 
-Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2018 Specia Theme
+Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2020 Specia Theme
 Avira WordPress Theme is distributed under the terms of the GNU GPL
 
 i) Package Structure
@@ -74,11 +74,66 @@ Source: https://github.com/matthieua/WOW
 Images
 =================================================================================================
 Screenshot Image
-URL: https://pxhere.com/en/photo/1523587
+URL: https://pxhere.com/en/photo/1323639
 Source: https://pxhere.com
 License: CC0 License
 
 ##Changelog
+
+version 3.0.20
+* Tested with WordPress 5.5
+
+version 3.0.19
+* Code Improvement
+
+version 3.0.18
+* Screenshot Updated
+
+version 3.0.17
+* Tested with WordPress 5.4.2
+
+version 3.0.16
+* Fixed Theme Check Plugin Issues
+
+version 3.0.15
+* Removed Customizer Images & Call From Parent Theme
+
+version 3.0.14
+* Tested up to & Requires PHP Fields Added in Style.css
+
+version 3.0.13
+* Tested with WordPress 5.4.1 
+
+version 3.0.12
+* Resolve Prefixing Issue
+
+version 3.0.11
+* Tested with WordPress 5.4 
+
+version 3.0.10
+* Resolve Prefixing Issues
+
+version 3.0.9
+* Footer Style Issue Resolved
+
+version 3.0.8
+* Screenshot Updated
+
+version 3.0.7
+* Screenshot Link Updated
+
+version 3.0.6
+* Copyright Updated
+
+version 3.0.5
+* Tested with WordPress 5.3.2
+
+version 3.0.4
+* Tested with WordPress 5.3.1
+
+version 3.0.3
+* Readme Updated
+
 version 3.0.2
 * Remove Upgrade to Pro Image From Customizer
 
