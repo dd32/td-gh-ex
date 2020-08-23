@@ -35,17 +35,12 @@ get_header(); ?>
 
                         endif; 
                     ?>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                            ) );
-                        ?>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                        <div class="navigation">
+                            <?php advance_blogging_post_navigation();?>
+                            <div class="clearfix"></div>
+                        </div>
+                    <?php }?>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -71,25 +66,20 @@ get_header(); ?>
 
                         endif; 
                     ?>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                            ) );
-                        ?>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                        <div class="navigation">
+                            <?php advance_blogging_post_navigation();?>
+                            <div class="clearfix"></div>
+                        </div>
+                    <?php }?>
                 </div>
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
             </div>
         <?php }else if($advance_blogging_left_right == 'One Column'){ ?> 
             <?php
-                        the_archive_title( '<h1 class="entry-title">', '</h1>' );
-                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
-                    ?>           
+                the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                the_archive_description( '<div class="taxonomy-description">', '</div>' );
+            ?>           
             <?php if ( have_posts() ) :
                 /* Start the Loop */
                   
@@ -105,17 +95,12 @@ get_header(); ?>
 
                 endif; 
             ?>
-            <div class="navigation">
-                <?php
-                    // Previous/next page navigation.
-                    the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                        'next_text'          => __( 'Next page', 'advance-blogging' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                    ) );
-                ?>
-                <div class="clearfix"></div>
-            </div>
+            <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                <div class="navigation">
+                    <?php advance_blogging_post_navigation();?>
+                    <div class="clearfix"></div>
+                </div>
+            <?php }?>
         <?php }else if($advance_blogging_left_right == 'Three Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
@@ -139,17 +124,12 @@ get_header(); ?>
 
                         endif; 
                     ?>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                            ) );
-                        ?>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                        <div class="navigation">
+                            <?php advance_blogging_post_navigation();?>
+                            <div class="clearfix"></div>
+                        </div>
+                    <?php }?>
                 </div>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
             </div>
@@ -176,17 +156,12 @@ get_header(); ?>
 
                         endif; 
                     ?>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                            ) );
-                        ?>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                        <div class="navigation">
+                            <?php advance_blogging_post_navigation();?>
+                            <div class="clearfix"></div>
+                        </div>
+                    <?php }?>
                 </div>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-3' ); ?></div>
@@ -215,17 +190,12 @@ get_header(); ?>
                             endif; 
                         ?>
                     </div>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                            ) );
-                        ?>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                        <div class="navigation">
+                            <?php advance_blogging_post_navigation();?>
+                            <div class="clearfix"></div>
+                        </div>
+                    <?php }?>
                 </div>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
             </div>
@@ -251,17 +221,12 @@ get_header(); ?>
 
                         endif; 
                     ?>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                            ) );
-                        ?>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php if( get_theme_mod( 'advance_blogging_navigation_hide',true) != '') { ?>
+                        <div class="navigation">
+                            <?php advance_blogging_post_navigation();?>
+                            <div class="clearfix"></div>
+                        </div>
+                    <?php }?>
                 </div>
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
             </div>

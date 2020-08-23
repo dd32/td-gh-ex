@@ -157,6 +157,13 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added Show/Hide Search Form option.
 * Updated all .po files.
 
+= 0.8.1 =
+* Added Post Navigation type option.
+* Added Enable / Disable Post Navigation option.
+* Added Topbar top bottom padding option.
+* Added Sticky Header Padding option.
+* Updated all .po files.
+
 == Resources ==
 
 Advance Blogging WordPress Theme, Copyright 2018 ThemesCaliber

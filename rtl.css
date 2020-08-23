@@ -1057,7 +1057,7 @@ a.woocommerce-privacy-policy-link,
   color: #fff;
   border-color: #db0607;
 }
-.col-1, .col-2 {
+.woocommerce .col-1, .woocommerce .col-2 {
   max-width: 100%;
 }
 
@@ -1612,6 +1612,23 @@ span.post-title {
   padding: 10px;
   display: inline-block;
 } 
+
+.blog .navigation .nav-previous a, 
+.blog .navigation .nav-next a,
+.archive .navigation .nav-previous a, 
+.archive .navigation .nav-next a,
+.search .navigation .nav-previous a, 
+.search .navigation .nav-next a{
+  background: #db0607;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 15px;
+}
+.blog .navigation, .search .navigation, .archive .navigation {
+  margin: 10px 0;
+}
+
+
 /**
  * 5.0 - Forms
  */

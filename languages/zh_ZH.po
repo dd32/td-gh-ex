@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-07-18 12:05+0530\n"
+"PO-Revision-Date: 2020-07-29 12:22+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -41,11 +41,11 @@ msgstr "评论标题"
 msgid "Comments are closed."
 msgstr "评论被关闭。"
 
-#: comments.php:63 inc/customizer.php:1102
+#: comments.php:63 inc/customizer.php:1155
 msgid "Leave a Reply"
 msgstr "发表评论"
 
-#: comments.php:64 inc/customizer.php:1112
+#: comments.php:64 inc/customizer.php:1165
 msgid "Post Comment"
 msgstr "发表评论"
 
@@ -143,27 +143,15 @@ msgstr "档案"
 msgid "Meta"
 msgstr "元"
 
-#: archive.php:42 archive.php:78 archive.php:112 archive.php:146
-#: archive.php:183 archive.php:222 archive.php:258 index.php:43 index.php:75
-#: index.php:105 index.php:135 index.php:168 index.php:201 index.php:230
-#: search.php:38 search.php:71 search.php:102 search.php:133 search.php:167
-#: search.php:203 search.php:236
+#: functions.php:487
 msgid "Previous page"
 msgstr "上一页"
 
-#: archive.php:43 archive.php:79 archive.php:113 archive.php:147
-#: archive.php:184 archive.php:223 archive.php:259 index.php:44 index.php:76
-#: index.php:106 index.php:136 index.php:169 index.php:202 index.php:231
-#: search.php:39 search.php:72 search.php:103 search.php:134 search.php:168
-#: search.php:204 search.php:237
+#: functions.php:488
 msgid "Next page"
 msgstr "下一页"
 
-#: archive.php:44 archive.php:80 archive.php:114 archive.php:148
-#: archive.php:185 archive.php:224 archive.php:260 index.php:45 index.php:77
-#: index.php:107 index.php:137 index.php:170 index.php:203 index.php:232
-#: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
-#: search.php:205 search.php:238 template-parts/single-post.php:51
+#: functions.php:489 template-parts/single-post.php:51
 msgid "page"
 msgstr "页"
 
@@ -177,8 +165,8 @@ msgstr "页数："
 msgid "Edit"
 msgstr "编辑"
 
-#: search.php:18 search.php:51 search.php:82 search.php:113 search.php:147
-#: search.php:182 search.php:216
+#: search.php:18 search.php:46 search.php:72 search.php:98 search.php:128
+#: search.php:158 search.php:187
 msgid "Results For: %s"
 msgstr "结果：％s"
 
@@ -453,412 +441,436 @@ msgstr "在此处添加标题内容"
 msgid "Show / Hide Topbar"
 msgstr "显示/隐藏顶部栏"
 
-#: inc/customizer.php:575
+#: inc/customizer.php:574
+msgid "Topbar Top Bottom Padding"
+msgstr "顶部栏顶部底部填充"
+
+#: inc/customizer.php:590
 msgid "Sticky Header"
 msgstr "粘页眉"
 
-#: inc/customizer.php:592
+#: inc/customizer.php:599
+msgid "Sticky Header Padding"
+msgstr "粘页眉填充"
+
+#: inc/customizer.php:622
 msgid "Add Facebook link"
 msgstr "添加Facebook链接"
 
-#: inc/customizer.php:603
+#: inc/customizer.php:633
 msgid "Add Twitter link"
 msgstr "添加Twitter链接"
 
-#: inc/customizer.php:614
+#: inc/customizer.php:644
 msgid "Add Tumblr link"
 msgstr "添加Tumblr链接"
 
-#: inc/customizer.php:625
+#: inc/customizer.php:655
 msgid "Add Pinterest link"
 msgstr "添加Pinterest链接"
 
-#: inc/customizer.php:636
+#: inc/customizer.php:666
 msgid "Add Linkedin link"
 msgstr "添加Linkedin链接"
 
-#: inc/customizer.php:647
+#: inc/customizer.php:677
 msgid "Add Instagram link"
 msgstr "添加Instagram链接"
 
-#: inc/customizer.php:658
+#: inc/customizer.php:688
 msgid "Add Youtube link"
 msgstr "添加Youtube链接"
 
-#: inc/customizer.php:666
+#: inc/customizer.php:696
 msgid "Slider Settings."
 msgstr "滑块设置。"
 
-#: inc/customizer.php:685
+#: inc/customizer.php:715
 msgid "Show / Hide slider"
 msgstr "显示/隐藏滑块"
 
-#: inc/customizer.php:697
+#: inc/customizer.php:725
 msgid "Select Slide Image Page"
 msgstr "选择幻灯片图像页面"
 
-#: inc/customizer.php:710
+#: inc/customizer.php:738
 msgid "Show / Hide slider Title"
 msgstr "显示/隐藏滑块标题"
 
-#: inc/customizer.php:720
+#: inc/customizer.php:748
 msgid "Show / Hide slider Content"
 msgstr "显示/隐藏滑块内容"
 
-#: inc/customizer.php:730
+#: inc/customizer.php:758
 msgid "Slider Excerpt length"
 msgstr "滑块摘录长度"
 
-#: inc/customizer.php:743 inc/customizer.php:752 inc/customizer.php:800
-#: inc/customizer.php:1311 inc/customizer.php:1361 inc/customizer.php:1594
+#: inc/customizer.php:771 inc/customizer.php:780 inc/customizer.php:828
+#: inc/customizer.php:1362 inc/customizer.php:1412 inc/customizer.php:1646
 msgid "Left"
 msgstr "剩下"
 
-#: inc/customizer.php:748
+#: inc/customizer.php:776
 msgid "Slider Content Alignment"
 msgstr "滑块内容对齐"
 
-#: inc/customizer.php:751 inc/customizer.php:1313 inc/customizer.php:1353
-#: inc/customizer.php:1363
+#: inc/customizer.php:779 inc/customizer.php:1364 inc/customizer.php:1404
+#: inc/customizer.php:1414
 msgid "Center"
 msgstr "中央"
 
-#: inc/customizer.php:753 inc/customizer.php:815 inc/customizer.php:1303
-#: inc/customizer.php:1312 inc/customizer.php:1362 inc/customizer.php:1596
+#: inc/customizer.php:781 inc/customizer.php:843 inc/customizer.php:1354
+#: inc/customizer.php:1363 inc/customizer.php:1413 inc/customizer.php:1647
 msgid "Right"
 msgstr "对"
 
-#: inc/customizer.php:761
+#: inc/customizer.php:789
 msgid "Slider Content Spacing"
 msgstr "滑块内容间距"
 
-#: inc/customizer.php:770
+#: inc/customizer.php:798
 msgid "Top"
 msgstr "最佳"
 
-#: inc/customizer.php:785
+#: inc/customizer.php:813
 msgid "Bottom"
 msgstr "底部"
 
-#: inc/customizer.php:830
+#: inc/customizer.php:858
 msgid "Slider Speed"
 msgstr "滑块速度"
 
-#: inc/customizer.php:842
+#: inc/customizer.php:870
 msgid "Category Post"
 msgstr "分类发布"
 
-#: inc/customizer.php:843
+#: inc/customizer.php:871
 msgid "This section will appear below the slider."
 msgstr "此部分将显示在滑块下方。"
 
-#: inc/customizer.php:873 inc/customizer.php:911
+#: inc/customizer.php:901 inc/customizer.php:939
 msgid "Select Category to display Latest Post"
 msgstr "选择类别以显示最新帖子"
 
-#: inc/customizer.php:874
+#: inc/customizer.php:902
 msgid "Category Image Size (300x225 )"
 msgstr "类别图片大小（300x225）"
 
-#: inc/customizer.php:880
+#: inc/customizer.php:908
 msgid "Latest Post"
 msgstr "最新的帖子"
 
-#: inc/customizer.php:881
+#: inc/customizer.php:909
 msgid "This section will appear below the category post."
 msgstr "此部分将显示在类别帖子下方。"
 
-#: inc/customizer.php:917
+#: inc/customizer.php:945
 msgid "Post Settings"
 msgstr "发布设置"
 
-#: inc/customizer.php:927
+#: inc/customizer.php:955
 msgid "Enable / Disable Post Date"
 msgstr "启用/禁用发布日期"
 
-#: inc/customizer.php:937
+#: inc/customizer.php:965
 msgid "Enable / Disable Post Author"
 msgstr "启用/禁用帖子作者"
 
-#: inc/customizer.php:947
+#: inc/customizer.php:975
 msgid "Enable / Disable Post Comments"
 msgstr "启用/禁用帖子评论"
 
-#: inc/customizer.php:952 inc/customizer.php:962
+#: inc/customizer.php:980 inc/customizer.php:989
 msgid "Excerpt Content"
 msgstr "摘录内容"
 
-#: inc/customizer.php:957
+#: inc/customizer.php:985
 msgid "Post Content Type"
 msgstr "帖子内容类型"
 
-#: inc/customizer.php:960
+#: inc/customizer.php:988
 msgid "No Content"
 msgstr "无内容"
 
-#: inc/customizer.php:961
+#: inc/customizer.php:990
 msgid "Full Content"
 msgstr "全部内容"
 
-#: inc/customizer.php:971
+#: inc/customizer.php:999
 msgid "Post Excerpt Length"
 msgstr "摘录后的长度"
 
-#: inc/customizer.php:987
+#: inc/customizer.php:1015
 msgid "Excerpt Suffix"
 msgstr "摘录后缀"
 
-#: inc/customizer.php:998
+#: inc/customizer.php:1026
 msgid "Post Button Text"
 msgstr "发布按钮文字"
 
-#: inc/customizer.php:1009
+#: inc/customizer.php:1037
 msgid "Top Bottom Button Padding"
 msgstr "顶部底部按钮填充"
 
-#: inc/customizer.php:1024
+#: inc/customizer.php:1052
 msgid "Left Right Button Padding"
 msgstr "左右按钮填充"
 
-#: inc/customizer.php:1039 inc/customizer.php:1506
+#: inc/customizer.php:1067 inc/customizer.php:1557
 msgid "Button Border Radius"
 msgstr "按钮边框半径"
 
-#: inc/customizer.php:1051
+#: inc/customizer.php:1183
+msgid "Enable / Disable Post Navigation"
+msgstr "启用/禁用帖子导航"
+
+#: inc/customizer.php:1194
+msgid "Post Navigation Type"
+msgstr "帖子导航类型"
+
+#: inc/customizer.php:1196
+msgid "Number"
+msgstr "数"
+
+#: inc/customizer.php:1197
+msgid "Next/Prev Button"
+msgstr "下一个/上一个按钮"
+
+#: inc/customizer.php:1102
 msgid "Single Post Settings"
 msgstr "单发设置"
 
-#: inc/customizer.php:1061
+#: inc/customizer.php:1112
 msgid "Enable / Disable Feature Image"
 msgstr "启用/禁用功能图片"
 
-#: inc/customizer.php:1071
+#: inc/customizer.php:1122
 msgid "Enable / Disable Tags"
 msgstr "启用/禁用标签"
 
-#: inc/customizer.php:1081
+#: inc/customizer.php:1132
 msgid "Enable / Disable Comment"
 msgstr "启用/禁用评论"
 
-#: inc/customizer.php:1090
+#: inc/customizer.php:1141
 msgid "Comment Textarea Width"
 msgstr "评论textarea宽度"
 
-#: inc/customizer.php:1107
+#: inc/customizer.php:1152
 msgid "Comment form Title"
 msgstr "评论表格标题"
 
-#: inc/customizer.php:1117
+#: inc/customizer.php:1168
 msgid "Comment Button Text"
 msgstr "评论按钮文字"
 
-#: inc/customizer.php:1127
+#: inc/customizer.php:1178
 msgid "Enable / Disable Nav Links"
 msgstr "启用/禁用导航链接"
 
-#: inc/customizer.php:1137
+#: inc/customizer.php:1188
 msgid "Previous Navigation Text"
 msgstr "上一个导航文本"
 
-#: inc/customizer.php:1147
+#: inc/customizer.php:1198
 msgid "Next Navigation Text"
 msgstr "下一个导航文本"
 
-#: inc/customizer.php:1157
+#: inc/customizer.php:1208
 msgid "Enable / Disable Related Posts"
 msgstr "启用/禁用相关帖子"
 
-#: inc/customizer.php:1167
+#: inc/customizer.php:1218
 msgid "Related Posts Title"
 msgstr "相关文章标题"
 
-#: inc/customizer.php:1176
+#: inc/customizer.php:1227
 msgid "Related Posts Count"
 msgstr "相关职位数"
 
-#: inc/customizer.php:1194
+#: inc/customizer.php:1245
 msgid "Related Posts Order By"
 msgstr "相关职位排序"
 
-#: inc/customizer.php:1196
+#: inc/customizer.php:1247
 msgid "Categories"
 msgstr "分类目录"
 
-#: inc/customizer.php:1197
+#: inc/customizer.php:1248
 msgid "Tags"
 msgstr "标签"
 
-#: inc/customizer.php:1202
+#: inc/customizer.php:1253
 msgid "404 & No Result Page Settings"
 msgstr "404＆无结果页面设置"
 
-#: inc/customizer.php:1213
+#: inc/customizer.php:1264
 msgid "404 Page Title"
 msgstr "404页面标题"
 
-#: inc/customizer.php:1223
+#: inc/customizer.php:1274
 msgid "404 Page Text"
 msgstr "404页面文字"
 
-#: inc/customizer.php:1233
+#: inc/customizer.php:1284
 msgid "404 Page Button Text"
 msgstr "404页面按钮文字"
 
-#: inc/customizer.php:1243
+#: inc/customizer.php:1294
 msgid "No Result Page Title"
 msgstr "没有结果页面标题"
 
-#: inc/customizer.php:1253
+#: inc/customizer.php:1304
 msgid "No Result Page Text"
 msgstr "没有结果页文字"
 
-#: inc/customizer.php:1263
+#: inc/customizer.php:1314
 msgid "Show/Hide Search Form"
 msgstr "显示/隐藏搜索表格"
 
-#: inc/customizer.php:1269
+#: inc/customizer.php:1320
 msgid "Footer Section"
 msgstr "页脚部分"
 
-#: inc/customizer.php:1270
+#: inc/customizer.php:1321
 msgid "This section will appear in the footer."
 msgstr "此部分将显示在页脚中。"
 
-#: inc/customizer.php:1288
+#: inc/customizer.php:1339
 msgid "Show/Hide Back to Top Button"
 msgstr "显示/隐藏返回顶部按钮"
 
-#: inc/customizer.php:1297
+#: inc/customizer.php:1348
 msgid "Back to Top Button Text"
 msgstr "返回页首按钮文字"
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1359
 msgid "Back to Top Button Alignment"
 msgstr "返回页首按钮对齐"
 
-#: inc/customizer.php:1322
+#: inc/customizer.php:1373
 msgid "Footer Background Color"
 msgstr "页脚背景颜色"
 
-#: inc/customizer.php:1331
+#: inc/customizer.php:1382
 msgid "Footer Background Image"
 msgstr "页脚背景图片"
 
-#: inc/customizer.php:1341
+#: inc/customizer.php:1392
 msgid "Footer widget layout"
 msgstr "页脚小部件布局"
 
-#: inc/customizer.php:1343
+#: inc/customizer.php:1394
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
 "在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加您的小部件。"
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1396
 msgid "One"
 msgstr "一"
 
-#: inc/customizer.php:1346
+#: inc/customizer.php:1397
 msgid "Two"
 msgstr "二"
 
-#: inc/customizer.php:1347
+#: inc/customizer.php:1398
 msgid "Three"
 msgstr "三"
 
-#: inc/customizer.php:1348
+#: inc/customizer.php:1399
 msgid "Four"
 msgstr "四个"
 
-#: inc/customizer.php:1358
+#: inc/customizer.php:1409
 msgid "Copyright Alignment"
 msgstr "版权对齐"
 
-#: inc/customizer.php:1372
+#: inc/customizer.php:1423
 msgid "Copyright Font Size"
 msgstr "版权字体大小"
 
-#: inc/customizer.php:1382
+#: inc/customizer.php:1433
 msgid "Copyright Top Bottom Padding"
 msgstr "版权顶部底部填充"
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1451
 msgid "Copyright Text"
 msgstr "版权文字"
 
-#: inc/customizer.php:1408
+#: inc/customizer.php:1459
 msgid "Additional WooCommerce Options"
 msgstr "其他WooCommerce选项"
 
-#: inc/customizer.php:1421
+#: inc/customizer.php:1472
 msgid "Product per row"
 msgstr "每行产品"
 
-#: inc/customizer.php:1436
+#: inc/customizer.php:1487
 msgid "Product per page"
 msgstr "每页产品"
 
-#: inc/customizer.php:1447
+#: inc/customizer.php:1498
 msgid "Enable / Disable Shop page sidebar"
 msgstr "启用/禁用商店页面侧边栏"
 
-#: inc/customizer.php:1457
+#: inc/customizer.php:1508
 msgid "Enable / Disable Product page sidebar"
 msgstr "启用/禁用产品页面侧边栏"
 
-#: inc/customizer.php:1467
+#: inc/customizer.php:1518
 msgid "Enable / Disable Related product"
 msgstr "启用/禁用相关产品"
 
-#: inc/customizer.php:1476
+#: inc/customizer.php:1527
 msgid "Button Top Bottom Padding"
 msgstr "按钮顶部底部填充"
 
-#: inc/customizer.php:1491
+#: inc/customizer.php:1542
 msgid "Button Right Left Padding"
 msgstr "按钮右左填充"
 
-#: inc/customizer.php:1522
+#: inc/customizer.php:1573
 msgid "Enable / Disable product border"
 msgstr "启用/禁用产品边框"
 
-#: inc/customizer.php:1531
+#: inc/customizer.php:1582
 msgid "Product Top Bottom Padding"
 msgstr "产品顶部底部填充"
 
-#: inc/customizer.php:1546
+#: inc/customizer.php:1597
 msgid "Product Right Left Padding"
 msgstr "产品右左填充"
 
-#: inc/customizer.php:1561
+#: inc/customizer.php:1612
 msgid "Product Border Radius"
 msgstr "产品边界半径"
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1627
 msgid "Product Box Shadow"
 msgstr "产品包装盒阴影"
 
-#: inc/customizer.php:1592
+#: inc/customizer.php:1643
 msgid "Sale badge Position"
 msgstr "销售徽章位置"
 
-#: inc/customizer.php:1605
+#: inc/customizer.php:1656
 msgid "Sale Top Bottom Padding"
 msgstr "销售顶部底部填充"
 
-#: inc/customizer.php:1620
+#: inc/customizer.php:1671
 msgid "Sale Right Left Padding"
 msgstr "销售右左填充"
 
-#: inc/customizer.php:1635
+#: inc/customizer.php:1686
 msgid "Sale Border Radius"
 msgstr "销售边界半径"
 
-#: inc/customizer.php:1725
+#: inc/customizer.php:1776
 msgid "Advance Blogging"
 msgstr "高级博客"
 
-#: inc/customizer.php:1726
+#: inc/customizer.php:1777
 msgid "Go Pro"
 msgstr "专业版"

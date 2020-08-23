@@ -231,3 +231,15 @@
 			$advance_blogging_custom_css .='display: none;';
 		$advance_blogging_custom_css .='}';
 	}
+
+	// Topbar padding
+	$advance_blogging_topbar_top_bottom = get_theme_mod('advance_blogging_topbar_top_bottom', 10);
+	$advance_blogging_custom_css .='.topbar{';
+		$advance_blogging_custom_css .=' padding-top:'.esc_html($advance_blogging_topbar_top_bottom).'px; padding-bottom:'.esc_html($advance_blogging_topbar_top_bottom).'px;';
+	$advance_blogging_custom_css .='}';
+
+	// Sticky Header padding
+	$advance_blogging_sticky_header_padding = get_theme_mod('advance_blogging_sticky_header_padding');
+	$advance_blogging_custom_css .='.fixed-header{';
+		$advance_blogging_custom_css .=' padding-top:'.esc_html($advance_blogging_sticky_header_padding).'px; padding-bottom:'.esc_html($advance_blogging_sticky_header_padding).'px;';
+	$advance_blogging_custom_css .='}';

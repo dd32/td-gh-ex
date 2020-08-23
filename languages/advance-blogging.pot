@@ -40,12 +40,12 @@ msgid "Comments are closed."
 msgstr ""
 
 #: comments.php:63
-#: inc/customizer.php:1102
+#: inc/customizer.php:1155
 msgid "Leave a Reply"
 msgstr ""
 
 #: comments.php:64
-#: inc/customizer.php:1112
+#: inc/customizer.php:1165
 msgid "Post Comment"
 msgstr ""
 
@@ -148,75 +148,15 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: archive.php:42
-#: archive.php:78
-#: archive.php:112
-#: archive.php:146
-#: archive.php:183
-#: archive.php:222
-#: archive.php:258
-#: index.php:43
-#: index.php:75
-#: index.php:105
-#: index.php:135
-#: index.php:168
-#: index.php:201
-#: index.php:230
-#: search.php:38
-#: search.php:71
-#: search.php:102
-#: search.php:133
-#: search.php:167
-#: search.php:203
-#: search.php:236
+#: functions.php:487
 msgid "Previous page"
 msgstr ""
 
-#: archive.php:43
-#: archive.php:79
-#: archive.php:113
-#: archive.php:147
-#: archive.php:184
-#: archive.php:223
-#: archive.php:259
-#: index.php:44
-#: index.php:76
-#: index.php:106
-#: index.php:136
-#: index.php:169
-#: index.php:202
-#: index.php:231
-#: search.php:39
-#: search.php:72
-#: search.php:103
-#: search.php:134
-#: search.php:168
-#: search.php:204
-#: search.php:237
+#: functions.php:488
 msgid "Next page"
 msgstr ""
 
-#: archive.php:44
-#: archive.php:80
-#: archive.php:114
-#: archive.php:148
-#: archive.php:185
-#: archive.php:224
-#: archive.php:260
-#: index.php:45
-#: index.php:77
-#: index.php:107
-#: index.php:137
-#: index.php:170
-#: index.php:203
-#: index.php:232
-#: search.php:40
-#: search.php:73
-#: search.php:104
-#: search.php:135
-#: search.php:169
-#: search.php:205
-#: search.php:238
+#: functions.php:489
 #: template-parts/single-post.php:51
 msgid "page"
 msgstr ""
@@ -244,12 +184,12 @@ msgid "Edit"
 msgstr ""
 
 #: search.php:18
-#: search.php:51
-#: search.php:82
-#: search.php:113
-#: search.php:147
-#: search.php:182
-#: search.php:216
+#: search.php:46
+#: search.php:72
+#: search.php:98
+#: search.php:128
+#: search.php:158
+#: search.php:187
 msgid "Results For: %s"
 msgstr ""
 
@@ -534,425 +474,449 @@ msgstr ""
 msgid "Show / Hide Topbar"
 msgstr ""
 
-#: inc/customizer.php:575
+#: inc/customizer.php:574
+msgid "Topbar Top Bottom Padding"
+msgstr ""
+
+#: inc/customizer.php:590
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:592
+#: inc/customizer.php:599
+msgid "Sticky Header Padding"
+msgstr ""
+
+#: inc/customizer.php:622
 msgid "Add Facebook link"
 msgstr ""
 
-#: inc/customizer.php:603
+#: inc/customizer.php:633
 msgid "Add Twitter link"
 msgstr ""
 
-#: inc/customizer.php:614
+#: inc/customizer.php:644
 msgid "Add Tumblr link"
 msgstr ""
 
-#: inc/customizer.php:625
+#: inc/customizer.php:655
 msgid "Add Pinterest link"
 msgstr ""
 
-#: inc/customizer.php:636
+#: inc/customizer.php:666
 msgid "Add Linkedin link"
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:677
 msgid "Add Instagram link"
 msgstr ""
 
-#: inc/customizer.php:658
+#: inc/customizer.php:688
 msgid "Add Youtube link"
 msgstr ""
 
-#: inc/customizer.php:666
+#: inc/customizer.php:696
 msgid "Slider Settings."
 msgstr ""
 
-#: inc/customizer.php:685
+#: inc/customizer.php:715
 msgid "Show / Hide slider"
 msgstr ""
 
-#: inc/customizer.php:697
+#: inc/customizer.php:725
 msgid "Select Slide Image Page"
 msgstr ""
 
-#: inc/customizer.php:710
+#: inc/customizer.php:738
 msgid "Show / Hide slider Title"
 msgstr ""
 
-#: inc/customizer.php:720
+#: inc/customizer.php:748
 msgid "Show / Hide slider Content"
 msgstr ""
 
-#: inc/customizer.php:730
+#: inc/customizer.php:758
 msgid "Slider Excerpt length"
 msgstr ""
 
-#: inc/customizer.php:743
-#: inc/customizer.php:752
-#: inc/customizer.php:800
-#: inc/customizer.php:1311
-#: inc/customizer.php:1361
-#: inc/customizer.php:1594
+#: inc/customizer.php:771
+#: inc/customizer.php:780
+#: inc/customizer.php:828
+#: inc/customizer.php:1362
+#: inc/customizer.php:1412
+#: inc/customizer.php:1646
 msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:748
+#: inc/customizer.php:776
 msgid "Slider Content Alignment"
 msgstr ""
 
-#: inc/customizer.php:751
-#: inc/customizer.php:1313
-#: inc/customizer.php:1353
-#: inc/customizer.php:1363
+#: inc/customizer.php:779
+#: inc/customizer.php:1364
+#: inc/customizer.php:1404
+#: inc/customizer.php:1414
 msgid "Center"
 msgstr ""
 
-#: inc/customizer.php:753
-#: inc/customizer.php:815
-#: inc/customizer.php:1303
-#: inc/customizer.php:1312
-#: inc/customizer.php:1362
-#: inc/customizer.php:1596
+#: inc/customizer.php:781
+#: inc/customizer.php:843
+#: inc/customizer.php:1354
+#: inc/customizer.php:1363
+#: inc/customizer.php:1413
+#: inc/customizer.php:1647
 msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:761
+#: inc/customizer.php:789
 msgid "Slider Content Spacing"
 msgstr ""
 
-#: inc/customizer.php:770
+#: inc/customizer.php:798
 msgid "Top"
 msgstr ""
 
-#: inc/customizer.php:785
+#: inc/customizer.php:813
 msgid "Bottom"
 msgstr ""
 
-#: inc/customizer.php:830
+#: inc/customizer.php:858
 msgid "Slider Speed"
 msgstr ""
 
-#: inc/customizer.php:842
+#: inc/customizer.php:870
 msgid "Category Post"
 msgstr ""
 
-#: inc/customizer.php:843
+#: inc/customizer.php:871
 msgid "This section will appear below the slider."
 msgstr ""
 
-#: inc/customizer.php:873
-#: inc/customizer.php:911
+#: inc/customizer.php:901
+#: inc/customizer.php:939
 msgid "Select Category to display Latest Post"
 msgstr ""
 
-#: inc/customizer.php:874
+#: inc/customizer.php:902
 msgid "Category Image Size (300x225 )"
 msgstr ""
 
-#: inc/customizer.php:880
+#: inc/customizer.php:908
 msgid "Latest Post"
 msgstr ""
 
-#: inc/customizer.php:881
+#: inc/customizer.php:909
 msgid "This section will appear below the category post."
 msgstr ""
 
-#: inc/customizer.php:917
+#: inc/customizer.php:945
 msgid "Post Settings"
 msgstr ""
 
-#: inc/customizer.php:927
+#: inc/customizer.php:955
 msgid "Enable / Disable Post Date"
 msgstr ""
 
-#: inc/customizer.php:937
+#: inc/customizer.php:965
 msgid "Enable / Disable Post Author"
 msgstr ""
 
-#: inc/customizer.php:947
+#: inc/customizer.php:975
 msgid "Enable / Disable Post Comments"
 msgstr ""
 
-#: inc/customizer.php:952
-#: inc/customizer.php:962
+#: inc/customizer.php:980
+#: inc/customizer.php:989
 msgid "Excerpt Content"
 msgstr ""
 
-#: inc/customizer.php:957
+#: inc/customizer.php:985
 msgid "Post Content Type"
 msgstr ""
 
-#: inc/customizer.php:960
+#: inc/customizer.php:988
 msgid "No Content"
 msgstr ""
 
-#: inc/customizer.php:961
+#: inc/customizer.php:990
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer.php:971
+#: inc/customizer.php:999
 msgid "Post Excerpt Length"
 msgstr ""
 
-#: inc/customizer.php:987
+#: inc/customizer.php:1015
 msgid "Excerpt Suffix"
 msgstr ""
 
-#: inc/customizer.php:998
+#: inc/customizer.php:1026
 msgid "Post Button Text"
 msgstr ""
 
-#: inc/customizer.php:1009
+#: inc/customizer.php:1037
 msgid "Top Bottom Button Padding"
 msgstr ""
 
-#: inc/customizer.php:1024
+#: inc/customizer.php:1052
 msgid "Left Right Button Padding"
 msgstr ""
 
-#: inc/customizer.php:1039
+#: inc/customizer.php:1067
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1051
-msgid "Single Post Settings"
-msgstr ""
-
-#: inc/customizer.php:1061
-msgid "Enable / Disable Feature Image"
-msgstr ""
-
-#: inc/customizer.php:1071
-msgid "Enable / Disable Tags"
-msgstr ""
-
-#: inc/customizer.php:1081
-msgid "Enable / Disable Comment"
-msgstr ""
-
-#: inc/customizer.php:1090
-msgid "Comment Textarea Width"
-msgstr ""
-
-#: inc/customizer.php:1107
-msgid "Comment form Title"
-msgstr ""
-
-#: inc/customizer.php:1117
-msgid "Comment Button Text"
-msgstr ""
-
-#: inc/customizer.php:1127
-msgid "Enable / Disable Nav Links"
-msgstr ""
-
-#: inc/customizer.php:1137
-msgid "Previous Navigation Text"
-msgstr ""
-
-#: inc/customizer.php:1147
-msgid "Next Navigation Text"
-msgstr ""
-
-#: inc/customizer.php:1157
-msgid "Enable / Disable Related Posts"
-msgstr ""
-
-#: inc/customizer.php:1167
-msgid "Related Posts Title"
-msgstr ""
-
-#: inc/customizer.php:1176
-msgid "Related Posts Count"
+#: inc/customizer.php:1183
+msgid "Enable / Disable Post Navigation"
 msgstr ""
 
 #: inc/customizer.php:1194
-msgid "Related Posts Order By"
+msgid "Post Navigation Type"
 msgstr ""
 
 #: inc/customizer.php:1196
-msgid "Categories"
+msgid "Number"
 msgstr ""
 
 #: inc/customizer.php:1197
+msgid "Next/Prev Button"
+msgstr ""
+
+#: inc/customizer.php:1102
+msgid "Single Post Settings"
+msgstr ""
+
+#: inc/customizer.php:1112
+msgid "Enable / Disable Feature Image"
+msgstr ""
+
+#: inc/customizer.php:1122
+msgid "Enable / Disable Tags"
+msgstr ""
+
+#: inc/customizer.php:1132
+msgid "Enable / Disable Comment"
+msgstr ""
+
+#: inc/customizer.php:1141
+msgid "Comment Textarea Width"
+msgstr ""
+
+#: inc/customizer.php:1152
+msgid "Comment form Title"
+msgstr ""
+
+#: inc/customizer.php:1168
+msgid "Comment Button Text"
+msgstr ""
+
+#: inc/customizer.php:1178
+msgid "Enable / Disable Nav Links"
+msgstr ""
+
+#: inc/customizer.php:1188
+msgid "Previous Navigation Text"
+msgstr ""
+
+#: inc/customizer.php:1198
+msgid "Next Navigation Text"
+msgstr ""
+
+#: inc/customizer.php:1208
+msgid "Enable / Disable Related Posts"
+msgstr ""
+
+#: inc/customizer.php:1218
+msgid "Related Posts Title"
+msgstr ""
+
+#: inc/customizer.php:1227
+msgid "Related Posts Count"
+msgstr ""
+
+#: inc/customizer.php:1245
+msgid "Related Posts Order By"
+msgstr ""
+
+#: inc/customizer.php:1247
+msgid "Categories"
+msgstr ""
+
+#: inc/customizer.php:1248
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer.php:1202
+#: inc/customizer.php:1253
 msgid "404 & No Result Page Settings"
 msgstr ""
 
-#: inc/customizer.php:1213
+#: inc/customizer.php:1264
 msgid "404 Page Title"
 msgstr ""
 
-#: inc/customizer.php:1223
+#: inc/customizer.php:1274
 msgid "404 Page Text"
 msgstr ""
 
-#: inc/customizer.php:1233
+#: inc/customizer.php:1284
 msgid "404 Page Button Text"
 msgstr ""
 
-#: inc/customizer.php:1243
+#: inc/customizer.php:1294
 msgid "No Result Page Title"
 msgstr ""
 
-#: inc/customizer.php:1253
+#: inc/customizer.php:1304
 msgid "No Result Page Text"
 msgstr ""
 
-#: inc/customizer.php:1263
+#: inc/customizer.php:1314
 msgid "Show/Hide Search Form"
 msgstr ""
 
-#: inc/customizer.php:1269
+#: inc/customizer.php:1320
 msgid "Footer Section"
 msgstr ""
 
-#: inc/customizer.php:1270
+#: inc/customizer.php:1321
 msgid "This section will appear in the footer."
 msgstr ""
 
-#: inc/customizer.php:1288
+#: inc/customizer.php:1339
 msgid "Show/Hide Back to Top Button"
 msgstr ""
 
-#: inc/customizer.php:1297
+#: inc/customizer.php:1348
 msgid "Back to Top Button Text"
 msgstr ""
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1359
 msgid "Back to Top Button Alignment"
 msgstr ""
 
-#: inc/customizer.php:1322
+#: inc/customizer.php:1373
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/customizer.php:1331
+#: inc/customizer.php:1382
 msgid "Footer Background Image"
 msgstr ""
 
-#: inc/customizer.php:1341
+#: inc/customizer.php:1392
 msgid "Footer widget layout"
 msgstr ""
 
-#: inc/customizer.php:1343
+#: inc/customizer.php:1394
 msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
 msgstr ""
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1396
 msgid "One"
 msgstr ""
 
-#: inc/customizer.php:1346
+#: inc/customizer.php:1397
 msgid "Two"
 msgstr ""
 
-#: inc/customizer.php:1347
+#: inc/customizer.php:1398
 msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:1348
+#: inc/customizer.php:1399
 msgid "Four"
 msgstr ""
 
-#: inc/customizer.php:1358
+#: inc/customizer.php:1409
 msgid "Copyright Alignment"
 msgstr ""
 
-#: inc/customizer.php:1372
+#: inc/customizer.php:1423
 msgid "Copyright Font Size"
 msgstr ""
 
-#: inc/customizer.php:1382
+#: inc/customizer.php:1433
 msgid "Copyright Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1451
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:1408
+#: inc/customizer.php:1459
 msgid "Additional WooCommerce Options"
 msgstr ""
 
-#: inc/customizer.php:1421
+#: inc/customizer.php:1472
 msgid "Product per row"
 msgstr ""
 
-#: inc/customizer.php:1436
+#: inc/customizer.php:1487
 msgid "Product per page"
 msgstr ""
 
-#: inc/customizer.php:1447
+#: inc/customizer.php:1498
 msgid "Enable / Disable Shop page sidebar"
 msgstr ""
 
-#: inc/customizer.php:1457
+#: inc/customizer.php:1508
 msgid "Enable / Disable Product page sidebar"
 msgstr ""
 
-#: inc/customizer.php:1467
+#: inc/customizer.php:1518
 msgid "Enable / Disable Related product"
 msgstr ""
 
-#: inc/customizer.php:1476
+#: inc/customizer.php:1527
 msgid "Button Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1491
+#: inc/customizer.php:1542
 msgid "Button Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1506
+#: inc/customizer.php:1557
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1522
+#: inc/customizer.php:1573
 msgid "Enable / Disable product border"
 msgstr ""
 
-#: inc/customizer.php:1531
+#: inc/customizer.php:1582
 msgid "Product Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1546
+#: inc/customizer.php:1597
 msgid "Product Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1561
+#: inc/customizer.php:1612
 msgid "Product Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1627
 msgid "Product Box Shadow"
 msgstr ""
 
-#: inc/customizer.php:1592
+#: inc/customizer.php:1643
 msgid "Sale badge Position"
 msgstr ""
 
-#: inc/customizer.php:1605
+#: inc/customizer.php:1656
 msgid "Sale Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1620
+#: inc/customizer.php:1671
 msgid "Sale Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1635
+#: inc/customizer.php:1686
 msgid "Sale Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1725
+#: inc/customizer.php:1776
 msgid "Advance Blogging"
 msgstr ""
 
-#: inc/customizer.php:1726
+#: inc/customizer.php:1777
 msgid "Go Pro"
 msgstr "" 

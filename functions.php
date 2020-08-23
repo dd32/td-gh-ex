@@ -476,6 +476,22 @@ function advance_blogging_sanitize_float( $input ) {
     return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 }
 
+/** Posts navigation. */
+if ( ! function_exists( 'advance_blogging_post_navigation' ) ) {
+	function advance_blogging_post_navigation() {
+		$advance_blogging_pagination_type = get_theme_mod( 'advance_blogging_post_navigation_type', 'numbers' );
+		if ( $advance_blogging_pagination_type == 'numbers' ) {
+			the_posts_pagination();
+		} else {
+			the_posts_navigation( array(
+	            'prev_text'          => __( 'Previous page', 'advance-blogging' ),
+	            'next_text'          => __( 'Next page', 'advance-blogging' ),
+	            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
+	        ) );
+		}
+	}
+}
+
 /* Custom template tags for this theme. */
 require get_template_directory() . '/inc/template-tags.php';
 
