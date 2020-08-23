@@ -21,7 +21,7 @@ get_header();
 							</header><!-- .page-header -->
 
 							<div class="404-image">
-								<img src="<?php esc_attr_e( get_template_directory_uri()."/assets/img/404.jpg" );?>" alt="404 page">
+								<img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/404.jpg" );?>" alt="404 page">
 							</div>							
 						</div>
 						<div class="col-md-4">
