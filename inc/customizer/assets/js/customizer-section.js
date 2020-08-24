@@ -15,7 +15,7 @@
 } )( wp.customize );
 
 
-function arilewpfrontpagesectionsscroll( section_id ){
+function arilewp_frontpage_sections_scroll( section_id ){
     var scroll_section_id = "theme-slider";
 
     var $contents = jQuery('#customize-preview iframe').contents();
@@ -79,5 +79,5 @@ function arilewpfrontpagesectionsscroll( section_id ){
 
  jQuery('body').on('click', '#sub-accordion-panel-arilewp_frontpage_settings .control-subsection .accordion-section-title', function(event) {
         var section_id = jQuery(this).parent('.control-subsection').attr('id');
-        arilewpfrontpagesectionsscroll( section_id );
+        arilewp_frontpage_sections_scroll( section_id );
 });
