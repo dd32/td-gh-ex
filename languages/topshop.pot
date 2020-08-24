@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2020-06-21 12:11+0200\n"
+"POT-Creation-Date: 2020-08-24 12:34+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -344,7 +344,7 @@ msgid ""
 "widths"
 msgstr ""
 
-#: customizer/customizer-options.php:291 functions.php:295
+#: customizer/customizer-options.php:291 functions.php:303
 msgid "WooCommerce"
 msgstr ""
 
@@ -710,157 +710,157 @@ msgstr ""
 msgid "The footer will divide into however many widgets are put here."
 msgstr ""
 
-#: functions.php:290
+#: functions.php:298
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:308
 msgid "WooCustomizer"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:313
 msgid "Contact Form by WPForms"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:318
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:393
 msgid "Thank you for using TopShop!"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:398
 #, php-format
 msgid ""
 "We promise %1$s with TopShop. Read our %2$s or for theme support on using "
 "TopShop - %3$s -- TopShop Pro is %4$s"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:398
 msgid "5 star support"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:398
 msgid "help on getting started"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:398
 msgid "Get In Contact"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:398
 msgid "Currently selling for only $25"
 msgstr ""
 
-#: functions.php:393
+#: functions.php:401
 msgid ""
 "TopShop Premium now includes a FREE shortcode slider... Easily add sliders "
 "to all or any pages you choose."
 msgstr ""
 
-#: functions.php:398
+#: functions.php:406
 msgid "About TopShop:"
 msgstr ""
 
-#: functions.php:400
+#: functions.php:408
 msgid ""
 "TopShop is a widely used and much loved WordPress theme which gives you lots "
 "of different customization settings... so you can easily change the look of "
 "your site any time."
 msgstr ""
 
-#: functions.php:405
+#: functions.php:413
 #, php-format
 msgid ""
 "Read through our %1$s and %2$s and we'll help you build a professional "
 "website easily."
 msgstr ""
 
-#: functions.php:405
+#: functions.php:413
 msgid ""
 "<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
 "target=\"_blank\">Recommended Resources</a>"
 msgstr ""
 
-#: functions.php:405
+#: functions.php:413
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/\" target=\"_blank\">Kaira "
 "Documentation</a>"
 msgstr ""
 
-#: functions.php:409
+#: functions.php:417
 msgid "Read More About TopShop"
 msgstr ""
 
-#: functions.php:413
+#: functions.php:421
 msgid "Using TopShop:"
 msgstr ""
 
-#: functions.php:417
+#: functions.php:425
 #, php-format
 msgid ""
 "See our recommended %1$s and how to get ready before you start building your "
 "website after you've %2$s."
 msgstr ""
 
-#: functions.php:417
+#: functions.php:425
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/our-recommended-wordpress-basic-"
 "setup/\" target=\"_blank\">WordPress basic setup</a>"
 msgstr ""
 
-#: functions.php:417
+#: functions.php:425
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-hosting/\" target=\"_blank\">setup "
 "WordPress Hosting</a>"
 msgstr ""
 
-#: functions.php:421
+#: functions.php:429
 msgid "Recommended Resources"
 msgstr ""
 
-#: functions.php:424
+#: functions.php:432
 msgid ""
 "We've neatly built most of the TopShop settings into the WordPress "
 "Customizer so you can see all your changes happen as you built your site."
 msgstr ""
 
-#: functions.php:427
+#: functions.php:435
 msgid "Start Customizing Your Website"
 msgstr ""
 
-#: functions.php:431
+#: functions.php:439
 msgid "Popular FAQ's:"
 msgstr ""
 
-#: functions.php:433
+#: functions.php:441
 msgid ""
 "See our list of popular help links for building your website and/or any "
 "issues you may have."
 msgstr ""
 
-#: functions.php:437
+#: functions.php:445
 msgid "Setup the TopShop default slider"
 msgstr ""
 
-#: functions.php:440
+#: functions.php:448
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:443
+#: functions.php:451
 msgid "Mobile Menu is not working"
 msgstr ""
 
-#: functions.php:446
+#: functions.php:454
 msgid "What does TopShop Premium offer extra"
 msgstr ""
 
-#: functions.php:450
+#: functions.php:458
 msgid "See More Documentation"
 msgstr ""
 
-#: functions.php:455
+#: functions.php:463
 msgid "Dismiss Notice"
 msgstr ""
 

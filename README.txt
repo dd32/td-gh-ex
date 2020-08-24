@@ -71,6 +71,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.30
+* Styling fixes/tweaks
+* Fix for latest WC & WP updates
+* JS fix for deprecated jQuery migrate script being removed
+* Fix Sticky header to work with Elementor Page Builder
+* Updated the language .pot file
+* PREMIUM: Fix admin body classes for selected Footer layouts
+
 #### 1.3.29
 * Styling fixes/tweaks
 * Search JS fix for WP 5.5

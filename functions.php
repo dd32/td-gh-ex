@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.29' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.30' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -165,9 +165,17 @@ function topshop_theme_scripts() {
 	wp_enqueue_script( 'topshop-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	
 	if ( get_theme_mod( 'topshop-sticky-header' ) ) {
-		wp_enqueue_script( 'topshop-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
-	    wp_enqueue_script( 'topshop-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
-        wp_enqueue_script( 'topshop-waypoints-custom', get_template_directory_uri() . '/js/waypoints-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+        if ( did_action( 'elementor/loaded' ) ) :
+            if ( !wp_script_is( 'elementor-waypoints', 'registered' ) ) :
+                wp_enqueue_script( 'topshop-waypoints', get_template_directory_uri() . '/js/waypoints/jquery.waypoints.min.js', array( 'jquery' ), TOPSHOP_THEME_VERSION, true );
+            endif;
+            wp_enqueue_script( 'topshop-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array( 'jquery', 'elementor-waypoints' ), TOPSHOP_THEME_VERSION, true );
+            wp_enqueue_script( 'topshop-waypoints-custom', get_template_directory_uri() . '/js/waypoints-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+        else :
+            wp_enqueue_script( 'topshop-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+	        wp_enqueue_script( 'topshop-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+            wp_enqueue_script( 'topshop-waypoints-custom', get_template_directory_uri() . '/js/waypoints-custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
+        endif;
 	}
 	
 	wp_enqueue_script( 'topshop-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
