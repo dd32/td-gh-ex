@@ -29,7 +29,7 @@ function agency_starter_get_theme_css( ) {
 
 	$header_bg_color = get_theme_mod('header_bg_color', '#fff');
 	$colors['header_text_color'] = get_theme_mod('header_text_color', '#333333');
-	$colors['header_contact_bg_color'] = get_theme_mod('header_contact_social_bg_color', '#dd3333');
+	$colors['header_contact_bg_color'] = get_theme_mod('header_contact_social_bg_color', '#373636');
 	
 	$hero_border = get_theme_mod('hero_border', 1);
 	

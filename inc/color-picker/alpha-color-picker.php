@@ -19,6 +19,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this Alpha Color Picker. If not, see <http://www.gnu.org/licenses/>.
  */
+if (!class_exists('Agency_Starter_Customize_Alpha_Color_Control')):
+
 class Agency_Starter_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	/**
 	 * Official control name.
@@ -81,3 +83,5 @@ class Agency_Starter_Customize_Alpha_Color_Control extends WP_Customize_Control 
 		<?php
 	}
 }
+
+endif;

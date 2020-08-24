@@ -180,36 +180,6 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	) );
 	
 	
-	// banner image
-	$wp_customize->add_setting( 'banner_image' , 
-		array(
-			'default' 		=> '',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'banner_image' ,
-		array(
-			'label'          => __( 'Banner Image', 'agency-starter' ),
-			'description'	=> __('Upload banner image', 'agency-starter'),
-			'settings'  => 'banner_image',
-			'section'        => 'theme_header',
-		))
-	);
-	
-	$wp_customize->add_setting('banner_link' , array(
-		'default'    => '#',
-		'sanitize_callback' => 'esc_url_raw',
-	));
-	
-
-	$wp_customize->add_control('banner_link' , array(
-		'label' => __('Banner Link', 'agency-starter' ),
-		'section' => 'theme_header',
-		'type'=> 'url',
-	) );
-	
 	//header shortcode
 	$wp_customize->add_setting('header_shortcode' , array(
 		'default'    => '',
@@ -374,7 +344,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		'type' => 'select',
 		'choices' => array(
 			'0' => __('Default', 'agency-starter' ),
-			'1' => __('WooCommerce', 'agency-starter' ),
+			'1' => __('Product Search [Need WooCommerce]', 'agency-starter' ),
 			'2' => __('List', 'agency-starter' ),
 		),
 	) );		
@@ -391,20 +361,27 @@ class Agency_Starter_Button extends WP_Customize_Section {
 			)
 		);
 		
-		// background Alpha Color Picker control
-		$wp_customize->add_control(
-			new Agency_Starter_Customize_Alpha_Color_Control(
-				$wp_customize,
-				'woocommerce_menubar_color',
-				array(
-					'label'         =>  __('Menubar Background (WooCommerce & List Layout)','agency-starter' ),
-					'section'       => 'theme_header',
-					'settings'      => 'woocommerce_menubar_color',
-					'show_opacity'  => true, // Optional.
-					'palette'	=> agency_starter_color_codes(),
-				)
+	
+	// woo menubar bg color
+	$wp_customize->add_setting(
+		'woocommerce_menubar_color',
+		array(
+			'default'           => '#fff',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'refresh',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'woocommerce_menubar_color',
+			array(
+				'label'   => __( 'Menubar Background [Product Search & List Layout]', 'agency-starter' ),
+				'section' => 'theme_header',
 			)
-		);			
+		)
+	);	
 	
 	// woo menubar text color
 	$wp_customize->add_setting(
@@ -421,7 +398,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 			$wp_customize,
 			'woocommerce_menubar_text_color',
 			array(
-				'label'   => __( 'Menu Color (WooCommerce & List Layout) ', 'agency-starter' ),
+				'label'   => __( 'Menu Color [Product Search & List Layout]', 'agency-starter' ),
 				'section' => 'theme_header',
 			)
 		)
@@ -518,7 +495,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'header_contact_social_bg_color',
 		array(
-			'default'           => '#dd3333',
+			'default'           => '#373636',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)

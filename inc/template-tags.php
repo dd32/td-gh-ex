@@ -463,7 +463,7 @@ if ( ! function_exists( 'agency_starter_color_codes' ) ) :
  */
  
 function agency_starter_color_codes(){
-	return array('#000000','#ffffff','#ED0A70','#e7ad24','#FFD700','#81d742','#0053f9','#8224e3');
+	return array('#000000','#ffffff','#ED0A71','#e7ad24','#FFD700','#81d741','#0051f9','#8224e2');
 }
 
 endif;
