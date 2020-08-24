@@ -31,29 +31,22 @@ jQuery(document).ready(function($) {
 			$('.nav-toggle').removeClass('active');
 		}
 	});
+
+
+	// Display dropdown menus on focus.
+	$( '.main-menu a' ).on( 'blur focus', function( e ) {
+		$( this ).parents( 'li' ).toggleClass( 'focus' );
+	} );
 	
 	
 	// Post meta tabs
-    $('.tab-selector a').click(function() {
-    	$('.tab-selector a').removeClass('active');
-		$('.post-meta-tabs .tab').hide(); 
+    $( '.tab-selector a' ).click( function() {
+		$( '.tab-selector a' ).removeClass( 'active' );
+		$( this ).addClass( 'active' );
+    	$( '.post-meta-tabs .tab' ).removeClass( 'active' );
+		$( '.post-meta-tabs ' + $( this ).attr( 'data-target' ) ).addClass( 'active' );
 		return false;
-    });
-    
-    $('.tab-selector .tab-comments-toggle').click(function() {
-    	$(this).addClass('active');
-		$('.post-meta-tabs .tab-comments').show(); 
-    });
-    
-    $('.tab-selector .tab-post-meta-toggle').click(function() {
-    	$(this).addClass('active');
-		$('.post-meta-tabs .tab-post-meta').show(); 
-    });
-    
-    $('.tab-selector .tab-author-meta-toggle').click(function() {
-    	$(this).addClass('active');
-		$('.post-meta-tabs .tab-author-meta').show(); 
-    });
+    } );
     
     
 	// Load Flexslider
