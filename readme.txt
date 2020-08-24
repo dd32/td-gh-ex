@@ -1,16 +1,16 @@
-=== Avikstatic ===
+=== Avik ===
 
 Theme Name: Avik
 Contributors: franchidesign
 Theme URI: http://denisfranchi.com/
 Author: http://denisfranchi.com/
 Author URI: http://denisfranchi.com/
-Version: 1.4.2
-Stable tag: 1.4.2
+Version: 1.4.3
+Stable tag: 1.4.3
 Tested up to: 5.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: avikstatic
+Text Domain: avik
 Tags: responsive-layout,custom-menu, featured-images, fluid-layout, full-width-template, one-column,rtl-language-support,translation-ready,custom-logo, editor-style,two-columns, right-sidebar, theme-options,flexible-header, accessibility-ready, custom-colors, custom-header
 
 == Description ==
@@ -105,14 +105,6 @@ Avik includes support for Infinite Scroll in Jetpack.
  *
  *  Licensed under MIT
  *
- */
-
- ----------------------------------------------------------------------------------------------
-
- /*
- Copyright (C) Federico Zivolo 2017
- Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
-
  */
 
 ----------------------------------------------------------------------------------------------
@@ -248,40 +240,33 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ==  Licensing for Images  ==
 
-All images included in Avik Theme are taken from:
+Default theme image
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/1338927
 
-https://pixabay.com/
+Image for theme screenshot
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/504084
 
-Using Images and Videos
-Images and Videos on Pixabay are released under Creative Commons CC0. To the extent possible under law, uploaders of Pixabay have waived their copyright and related or neighboring rights to these Images and Videos. You are free to adapt and use them for commercial purposes without attributing the original author or source. Although not required, a link back to Pixabay is appreciated.
+Image for page 404
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/1023557
 
-Please be aware:
+Image for services
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/764674
 
-a) Imagery depicting identifiable persons, logos, brands, etc. may be subject to additional copyrights, property rights, privacy rights, trademarks etc. and may require the consent of a third party or the license of these rights - particularly for commercial applications.
+Image for Who We Are
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/971635
 
-b) Images and Videos may not be used in a way that shows identifiable persons in a disgraceful light, or to imply endorsement of products and services by depicted persons, brands, and organisations - unless permission was granted.
+Image for Static and Static_thumbnail
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/504084
 
-CC0 Creative Commons
-Libera per usi commerciali
-Attribuzione non richiesta
-
-Link Images included in Avik
-
-Screenshot: https://pixabay.com/it/new-york-city-skyline-waterfront-962794/
-
-Header Static: https://pixabay.com/it/new-york-city-skyline-waterfront-962794/
-
-Header Static 2: https://pixabay.com/it/esposizione-a-lungo-berlino-wansee-2135019/
-
-Services Page: https://pixabay.com/it/lampadina-idea-lavoratori-autonomi-3104355/
-
-Who We Are Page: https://pixabay.com/it/candela-luce-lume-di-candela-fiamma-2038736/
-
-Page 404: https://pixabay.com/it/educazione-saggezza-3115347/
-
-Default-Avik: https://pixabay.com/it/home-office-workstation-ufficio-336378/
-
-Avik-Pro-Version: https://pixabay.com/it/home-office-workstation-ufficio-336378/
+Image for Static 2 and Static_2_thumbnail
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/it/photo/1033649
 
 ----------------------------------------------------------------------------------------------
 
@@ -340,12 +325,38 @@ V 1.4.1
 # Fixed some bug
 # Fixed bug in responsive
 
+== Changelog ==
+
 V 1.4.2
 
 # Fixed some bug
 # Added control for Section margins
 # Added control for Section title size
 # Improved the Customizer
+
+== Changelog ==
+
+V 1.4.2
+
+# Fixed some bug
+# Wp Body Open Functions added
+# Php version required added 
+# Changed the screenshot and images to make them suitable for the new requirements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

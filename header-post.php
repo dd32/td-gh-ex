@@ -18,6 +18,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'avik' ); ?></a>
 	<!-- Preloader -->
 	<?php if ( false == esc_html( get_theme_mod( 'avik_enable_preloader', false) )) : ?>
@@ -42,7 +43,7 @@
 					<p class="site-description"><?php echo esc_html($avik_description); ?></p>
 				<?php endif; ?>
 			</div>
-			<button class="navbar-toggler navbar-light collapsed" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="<?php esc_html_e('Toggle navigation','avik');?>">
+			<button class="navbar-toggler navbar-light collapsed" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation','avik');?>">
 			<span class="my-1 close denis-x"><?php _e('X','avik')?></span>
 			<span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
 			</button>
