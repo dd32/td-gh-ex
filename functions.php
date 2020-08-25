@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.43' );
+define( 'AVANT_THEME_VERSION' , '1.1.44' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -423,13 +423,11 @@ add_action( 'tgmpa_register', 'avant_register_required_plugins' );
 /**
  * Add classes to the admin body class
  */
-function avant_add_admin_body_class() {
-	$avant_admin_class = '';
-
+function avant_add_admin_body_class( $avant_admin_class ) {
 	if ( get_theme_mod( 'avant-footer-layout' ) ) {
-		$avant_admin_class = sanitize_html_class( get_theme_mod( 'avant-footer-layout' ) );
+		$avant_admin_class .= ' ' . sanitize_html_class( get_theme_mod( 'avant-footer-layout' ) );
 	} else {
-		$avant_admin_class = sanitize_html_class( 'avant-footer-layout-standard' );
+		$avant_admin_class .= ' ' . sanitize_html_class( 'avant-footer-layout-standard' );
 	}
 	return $avant_admin_class;
 }

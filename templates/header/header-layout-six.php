@@ -61,7 +61,11 @@ global $woocommerce; ?>
 					<div id="main-menu" class="main-menu-container">
                         <div class="main-menu-inner">
                             <button class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></button>
-                            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                            <?php wp_nav_menu( array(
+                                'theme_location' => 'primary',
+                                'menu_id' => 'primary-menu',
+                                'container_class'=> 'menu-main-menu-container',
+                            ) ); ?>
                             
                             <?php if ( avant_is_woocommerce_activated() ) : ?>
                                 <?php if ( !get_theme_mod( 'avant-header-remove-cart', customizer_library_get_default( 'avant-header-remove-cart' ) ) ) : ?>
