@@ -2,7 +2,7 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 7.2.14
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -218,6 +218,9 @@ Trying to create an interactive website with the help of a flexible option? If s
   * Added slider height option.
   * Added option to change slider button text.
   * Updated POT file.
+
+= 1.4.1 =
+  * Changed menu focus js.
 
 == Resources ==
 

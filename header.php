@@ -61,7 +61,7 @@
             </div>
             <div class="menubox col-lg-8 col-md-3 col-3">
               <div class="toggle-menu responsive-menu">
-                <button role="tab" class="mobiletoggle" onclick="bb_mobile_application_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-mobile-application'); ?></span></button>
+                <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-mobile-application'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-mobile-application' ); ?>">
@@ -77,7 +77,7 @@
                   <div id="contact-info">
                     <?php get_search_form();?>
                   </div>
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_mobile_application_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-mobile-application'); ?></span></a>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-mobile-application'); ?></span></a>
                 </nav>
               </div>
             </div>        
