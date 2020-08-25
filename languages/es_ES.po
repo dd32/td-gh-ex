@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-08-19 22:22-0400\n"
-"PO-Revision-Date: 2020-08-19 22:22-0400\n"
+"POT-Creation-Date: 2020-08-25 16:45-0400\n"
+"PO-Revision-Date: 2020-08-25 16:45-0400\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -66,7 +66,7 @@ msgstr "Comentarios cerrados."
 #: ../content-gallery.php:24 ../content-gallery.php:41
 #: ../content-gallery.php:42 ../content-image.php:22 ../content-page.php:18
 #: ../content-single.php:18 ../content-video.php:23 ../content.php:31
-#: ../inc/catchkathmandu-functions.php:457
+#: ../inc/catchkathmandu-functions.php:456
 #, php-format
 msgid "Permalink to %s"
 msgstr "Enlace permanente a %s"
@@ -160,11 +160,11 @@ msgstr "Todos los mensajes de vídeo"
 msgid "Featured post"
 msgstr "Articulo destacado"
 
-#: ../functions.php:109 ../inc/catchkathmandu-menus.php:11
+#: ../functions.php:109 ../inc/catchkathmandu-menus.php:15
 msgid "Primary Menu"
 msgstr "Menú Principal"
 
-#: ../functions.php:110 ../inc/catchkathmandu-menus.php:45
+#: ../functions.php:110 ../inc/catchkathmandu-menus.php:59
 msgid "Secondary Menu"
 msgstr "Menu Secundario"
 
@@ -224,163 +224,154 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Ambos comentarios y trackbacks están cerrados."
 
-#: ../inc/catchkathmandu-functions.php:1515
+#: ../inc/catchkathmandu-functions.php:1518
 #: ../inc/panel/customizer/customizer.php:633
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchkathmandu-functions.php:1520
+#: ../inc/catchkathmandu-functions.php:1523
 #: ../inc/panel/customizer/customizer.php:643
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchkathmandu-functions.php:1525
+#: ../inc/catchkathmandu-functions.php:1528
 #: ../inc/panel/customizer/customizer.php:653
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchkathmandu-functions.php:1530
+#: ../inc/catchkathmandu-functions.php:1533
 #: ../inc/panel/customizer/customizer.php:693
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchkathmandu-functions.php:1535
+#: ../inc/catchkathmandu-functions.php:1538
 #: ../inc/panel/customizer/customizer.php:663
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchkathmandu-functions.php:1540
+#: ../inc/catchkathmandu-functions.php:1543
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchkathmandu-functions.php:1545
+#: ../inc/catchkathmandu-functions.php:1548
 #: ../inc/panel/customizer/customizer.php:683
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchkathmandu-functions.php:1550
+#: ../inc/catchkathmandu-functions.php:1553
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catchkathmandu-functions.php:1555
+#: ../inc/catchkathmandu-functions.php:1558
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catchkathmandu-functions.php:1560
+#: ../inc/catchkathmandu-functions.php:1563
 #: ../inc/panel/customizer/customizer.php:723
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchkathmandu-functions.php:1565
+#: ../inc/catchkathmandu-functions.php:1568
 #: ../inc/panel/customizer/customizer.php:733
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchkathmandu-functions.php:1570
+#: ../inc/catchkathmandu-functions.php:1573
 #: ../inc/panel/customizer/customizer.php:743
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchkathmandu-functions.php:1575
+#: ../inc/catchkathmandu-functions.php:1578
 #: ../inc/panel/customizer/customizer.php:753
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchkathmandu-functions.php:1580
+#: ../inc/catchkathmandu-functions.php:1583
 #: ../inc/panel/customizer/customizer.php:763
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchkathmandu-functions.php:1585
+#: ../inc/catchkathmandu-functions.php:1588
 #: ../inc/panel/customizer/customizer.php:773
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchkathmandu-functions.php:1590
+#: ../inc/catchkathmandu-functions.php:1593
 #: ../inc/panel/customizer/customizer.php:783
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchkathmandu-functions.php:1595
+#: ../inc/catchkathmandu-functions.php:1598
 #: ../inc/panel/customizer/customizer.php:793
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catchkathmandu-functions.php:1600
+#: ../inc/catchkathmandu-functions.php:1603
 #: ../inc/panel/customizer/customizer.php:803
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catchkathmandu-functions.php:1605
+#: ../inc/catchkathmandu-functions.php:1608
 #: ../inc/panel/customizer/customizer.php:813
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchkathmandu-functions.php:1610
+#: ../inc/catchkathmandu-functions.php:1613
 #: ../inc/panel/customizer/customizer.php:823
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchkathmandu-functions.php:1615
+#: ../inc/catchkathmandu-functions.php:1618
 #: ../inc/panel/customizer/customizer.php:833
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catchkathmandu-functions.php:1620
+#: ../inc/catchkathmandu-functions.php:1623
 #: ../inc/panel/customizer/customizer.php:843
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catchkathmandu-functions.php:1625
+#: ../inc/catchkathmandu-functions.php:1628
 #: ../inc/panel/customizer/customizer.php:853
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catchkathmandu-functions.php:1630
+#: ../inc/catchkathmandu-functions.php:1633
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catchkathmandu-functions.php:1635
+#: ../inc/catchkathmandu-functions.php:1638
 #: ../inc/panel/customizer/customizer.php:873
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchkathmandu-functions.php:1640
+#: ../inc/catchkathmandu-functions.php:1643
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catchkathmandu-functions.php:1645
+#: ../inc/catchkathmandu-functions.php:1648
 #: ../inc/panel/customizer/customizer.php:893
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchkathmandu-functions.php:1650
+#: ../inc/catchkathmandu-functions.php:1653
 #: ../inc/panel/customizer/customizer.php:903
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchkathmandu-functions.php:1655
+#: ../inc/catchkathmandu-functions.php:1658
 #: ../inc/panel/customizer/customizer.php:913
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchkathmandu-functions.php:1660
+#: ../inc/catchkathmandu-functions.php:1663
 #: ../inc/panel/customizer/customizer.php:923
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchkathmandu-functions.php:1753
+#: ../inc/catchkathmandu-functions.php:1756
 msgid "ID"
 msgstr "ID"
-
-#: ../inc/catchkathmandu-functions.php:1786
-#: ../inc/catchkathmandu-functions.php:1799
-msgid "Menu"
-msgstr "menú"
-
-#: ../inc/catchkathmandu-menus.php:12
-msgid "Skip to content"
-msgstr "Saltar al contenido"
 
 #: ../inc/catchkathmandu-widgets.php:14
 msgid "Main Sidebar"
@@ -1211,6 +1202,12 @@ msgstr "Buscar"
 #: ../sidebar.php:36
 msgid "Archives"
 msgstr "Archivos"
+
+#~ msgid "Menu"
+#~ msgstr "menú"
+
+#~ msgid "Skip to content"
+#~ msgstr "Saltar al contenido"
 
 #~ msgid "Audio"
 #~ msgstr "Audio"

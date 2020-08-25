@@ -4,7 +4,7 @@ Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sideba
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 4.2.1
+Stable tag: 4.2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -74,8 +74,11 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 4.2.2 (Released: August 25, 2020) =
+* Bug Fixed: Responsive mobile menu style
+
 = 4.2.1 (Released: August 25, 2020) =
-* Updated: Menu JS updated as tiny Nav caused issue and is no longer supported
+* Updated: Menu JS updated as tiny Nav caused the issue and is no longer supported
 
 = 4.2 (Released: August 20, 2020) =
 * Fix: WP 5.5 compatbility for jquery

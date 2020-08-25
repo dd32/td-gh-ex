@@ -53,7 +53,7 @@ function catchkathmandu_scripts() {
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
 	if ( empty ( $options['disable_responsive'] ) ) {
-		wp_enqueue_style( 'catchkathmandu-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
+		wp_enqueue_style( 'catchkathmandu-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css', false, $theme->get( 'Version' ) );
 
 		wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu.fitvids.min.js', array( 'jquery' ), $theme->get( 'Version' ), true );
 
