@@ -5,7 +5,7 @@
  Author:       WPoperation
  Author URI:   http://wpoperation.com/
  Template:     arrival
- Version:      1.0.7
+ Version:      1.0.8
  License:      GNU General Public License v3 or later
  License URI:   http://www.gnu.org/licenses/gpl-3.0.html
  Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors
@@ -152,10 +152,13 @@ header
 	background-color: #d8dadc;
 }
 .after-top-header-wrapp .icons-wrapp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
-
 .after-top-header-wrapp .icons-wrapp .fs-icon-header, 
 .after-top-header-wrapp .icons-wrapp .cart-wrapper {
 	padding: 0 16px;
@@ -536,16 +539,19 @@ responsive
 	    font-size: 14px;
 	}
 }
-@media (max-width: 767px){
-	.arrival-store-main .after-top-header-wrapp .container {
-	    flex-wrap: wrap;
-	}
+@media (max-width: 768px){
 
-	.arrival-store-main .after-top-header-wrapp .container .site-branding {
-	    width: 100%;
-	    text-align: center;
-	    margin-bottom: 0px;
-	}
+
+	.after-top-header-wrapp .icons-wrapp {
+        position: fixed;
+        z-index:9;
+        bottom: 0;
+        background: #fff;
+        left: 0;
+        padding: 20px;
+        -webkit-box-shadow: 2px 0px 7px 0px rgba(0,0,0,0.3);
+                box-shadow: 2px 0px 7px 0px rgba(0,0,0,0.3);
+    }
 	.arrival-store-main .top-header-wrapp .container {
 	    display: flex;
 	    flex-wrap: wrap;
@@ -557,8 +563,7 @@ responsive
 	body.arrival-store-main .main-header-wrapp {
 	    display: block;
 	}
-	.arrival-store-main .after-top-header-wrapp .product-search, 
-	.arrival-store-main .after-top-header-wrapp .icons-wrapp,
+	
 	.arrival-custom-element,
 	.main-header-wrapp .container nav#site-navigation {
 	    display: none;
@@ -599,10 +604,7 @@ responsive
 	.main-header-wrapp .browse-category-wrap .browse-category svg{
 		display: none;
 	}
-	.top-right-wrapp ul.arrival-top-navigation,
-	.arrival-store-main .top-header-wrapp .top-left-wrapp .text-wrap {
-	    text-align: center;
-	}
+	
 	/*------------------
 	dashboard
 	----------------*/
@@ -738,4 +740,20 @@ span.wpcf7-not-valid-tip {
 }
 button.toggle.close-wrapp.toggle-wrapp span.text {
     color: #333;
+}
+
+@media only screen and (max-width: 500px){
+    .after-top-header-wrapp .icons-wrapp{
+        padding-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 350px){
+.after-top-header-wrapp .icons-wrapp {
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        left: 0;
+        right: 0;
+}
 }

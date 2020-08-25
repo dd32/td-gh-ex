@@ -340,7 +340,7 @@ function arrival_store_header_cart_disp(){
 if( ! function_exists('arrival_store_header_compare')){
     function arrival_store_header_compare(){
 
-        if(  ! defined( 'YITH_WOOCOMPARE' ) ){
+        if(  ! defined( 'YITH_WOOCOMPARE') || !(class_exists('WooCommerce')) ){
             return;
         }
 

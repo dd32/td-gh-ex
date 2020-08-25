@@ -1,3 +1,7 @@
+=== v1.0.8 ===
+- Fixed responsive issues
+- Added cart icons and search on mobiles & tablets also
+
 === v1.0.7 ===
 - Added option to show or hide top header
 - Added translation options for cart text, compare text & Wishlist text
