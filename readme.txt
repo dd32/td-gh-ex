@@ -4,7 +4,7 @@ Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sideba
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 4.2
+Stable tag: 4.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,6 +73,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 4.2.1 (Released: August 25, 2020) =
+* Updated: Menu JS updated as tiny Nav caused issue and is no longer supported
 
 = 4.2 (Released: August 20, 2020) =
 * Fix: WP 5.5 compatbility for jquery
@@ -372,12 +375,6 @@ Copyright: Catch Themes, catchthemes.com
 * JS Files
     HTML5-Shiv is Licensed under the MIT and GPL licenses
     https://code.google.com/p/html5shiv/
-
-    Menu JS code from TinyNav.js and jQuery Selectbox
-    TinyNav.js is Licensed under the MIT license
-    https://github.com/viljamis/TinyNav.js
-    jQuery Selectbox plugin is Licensed under the MIT and GPL licenses
-    http://www.bulgaria-web-developers.com/projects/javascript/selectbox/
 
     Slider code from jQuery Cycle
     jquery.cycle.all.js is Licensed under the MIT and GPL licenses

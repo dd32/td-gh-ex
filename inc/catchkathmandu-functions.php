@@ -14,6 +14,7 @@
  * Enqueue scripts and styles
  */
 function catchkathmandu_scripts() {
+	$theme = wp_get_theme();
 
 	//Getting Ready to load data from Theme Options Panel
 	global $post, $wp_query;
@@ -48,24 +49,22 @@ function catchkathmandu_scripts() {
 		wp_enqueue_style( 'lightblack', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/lightblack.css', array(), null );
 	}
 
-
-	//Responsive Menu
-	wp_register_script('catchkathmandu-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);
-	wp_register_script('catchkathmandu-allmenu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-allmenu.min.js', array('jquery'), '20140317', true);
-
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
-	if ( empty ($options['disable_responsive'] ) ) {
+	if ( empty ( $options['disable_responsive'] ) ) {
 		wp_enqueue_style( 'catchkathmandu-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
 
-		if ( !empty ($options['enable_menus'] ) ) :
-			wp_enqueue_script( 'catchkathmandu-allmenu' );
-		else :
-			wp_enqueue_script( 'catchkathmandu-menu' );
-		endif;
+		wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu.fitvids.min.js', array( 'jquery' ), $theme->get( 'Version' ), true );
 
-		wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu.fitvids.min.js', array( 'jquery' ), '20140317', true );
+		wp_enqueue_script('catchkathmandu-menu-nav', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-menu.min.js', array( 'jquery' ), $theme->get( 'Version' ), true );
+
+		wp_localize_script( 'catchkathmandu-menu-nav', 'catchKathmanduOptions', array(
+			'screenReaderText' => array(
+				'expand'   => esc_html__( 'expand child menu', 'catch-kathmandu' ),
+				'collapse' => esc_html__( 'collapse child menu', 'catch-kathmandu' ),
+			),
+		) );
 	}
 
 	/**
@@ -85,14 +84,14 @@ function catchkathmandu_scripts() {
 	/**
 	 * Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	 */
-	wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), '20140317', true );
+	wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), $theme->get( 'Version' ), true );
 
 	/**
 	 * Loads up catchkathmandu-slider and jquery-cycle set up as dependent on catchkathmandu-slider
 	 */
 	$enableslider = $options['enable_slider'];
 	if ( ( 'enable-slider-allpage' == $enableslider  ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider  ) ) {
-		wp_enqueue_script( 'catchkathmandu-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20140317', true );
+		wp_enqueue_script( 'catchkathmandu-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-slider.js', array( 'jquery-cycle' ), $theme->get( 'Version' ), true );
 	}
 
 	/**
@@ -614,6 +613,10 @@ function catchkathmandu_body_classes( $classes ) {
 	$layout = catchkathmandu_get_theme_layout();
 
 	$classes[] = $layout;
+
+	if ( $options['disable_responsive'] ) {
+		$classes[] = 'responsive-disabled';
+	}
 
 	return $classes;
 }
@@ -1775,33 +1778,6 @@ function catchkathmandu_posts_id_column_css() {
     </style>';
 }
 add_action( 'admin_head-edit.php', 'catchkathmandu_posts_id_column_css' );
-
-
-if ( ! function_exists( 'catchkathmandu_menu_alter' ) ) :
-/**
-* Add default navigation menu to nav menu
-* Used while viewing on smaller screen
-*/
-function catchkathmandu_menu_alter( $items, $args ) {
-	$items .= '<li class="default-menu"><a href="' . esc_url( home_url( '/' ) ) . '" title="Menu">'.__( 'Menu', 'catch-kathmandu' ).'</a></li>';
-	return $items;
-}
-endif; // catchkathmandu_menu_alter
-add_filter( 'wp_nav_menu_items', 'catchkathmandu_menu_alter', 10, 2 );
-
-
-if ( ! function_exists( 'catchkathmandu_pagemenu_alter' ) ) :
-/**
- * Add default navigation menu to page menu
- * Used while viewing on smaller screen
- */
-function catchkathmandu_pagemenu_alter( $output ) {
-	$output .= '<li class="default-menu"><a href="' . esc_url( home_url( '/' ) ) . '" title="Menu">'.__( 'Menu', 'catch-kathmandu' ).'</a></li>';
-	return $output;
-}
-endif; // catchkathmandu_pagemenu_alter
-add_filter( 'wp_list_pages', 'catchkathmandu_pagemenu_alter' );
-
 
 if ( ! function_exists( 'catchkathmandu_pagemenu_filter' ) ) :
 /**

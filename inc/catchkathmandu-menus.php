@@ -1,62 +1,77 @@
 <?php
 if ( ! function_exists( 'catchkathmandu_primary_menu' ) ) :
-/**
- * Shows the Primary Menu
- *
- * default load in sidebar-header-right.php
- */
-function catchkathmandu_primary_menu() { ?>
-	<div id="header-menu">
-        <nav id="access" class="site-navigation" role="navigation">
-            <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catch-kathmandu' ); ?></h2>
-            <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-kathmandu' ); ?>"><?php _e( 'Skip to content', 'catch-kathmandu' ); ?></a></div>
-            <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    $catchkathamdu_primary_menu_args = array(
-                        'theme_location'    => 'primary',
-                        'container_class' 	=> 'menu-header-container',
-                        'items_wrap'        => '<ul class="menu">%3$s</ul>'
+    /**
+     * Shows the Primary Menu
+     *
+     * default load in sidebar-header-right.php
+     */
+    function catchkathmandu_primary_menu() { ?>
+        <div id="primary-menu-wrapper" class="menu-wrapper">
+            <div class="menu-toggle-wrapper">
+                <button id="menu-toggle" class="menu-toggle" aria-controls="main-menu" aria-expanded="false"><span class="menu-label"><?php esc_html_e( 'Menu', 'catch-kathmandu' ); ?></span></button>
+            </div><!-- .menu-toggle-wrapper -->
+
+            <div class="menu-inside-wrapper">
+                <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'catch-kathmandu' ); ?>">
+                <?php if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu(
+                        array(
+                            'container'      => '',
+                            'theme_location' => 'primary',
+                            'menu_id'        => 'primary-menu',
+                            'menu_class'     => 'menu nav-menu',
+                        )
                     );
-                    wp_nav_menu( $catchkathamdu_primary_menu_args );
+                } else {
+                    wp_page_menu(
+                        array(
+                            'menu_class' => 'primary-menu-container',
+                            'before'     => '<ul id="menu-primary-items" class="menu nav-menu">',
+                            'after'      => '</ul>',
+                        )
+                    );
                 }
-                else {
-                    echo '<div class="menu-header-container">';
-                    wp_page_menu( array( 'menu_class'  => 'menu' ) );
-                    echo '</div>';
-                }
-            ?>
-        </nav><!-- .site-navigation .main-navigation -->
-	</div>
-<?php
-}
+                ?>
+                </nav><!-- .main-navigation -->
+        	</div>
+        </div>
+    <?php
+    }
 endif; // catchkathmandu_primary_menu
 
 
 if ( ! function_exists( 'catchkathmandu_secondary_menu' ) ) :
-/**
- * Shows the Secondary Menu
- *
- * Hooked to catchkathmandu_after_hgroup_wrap
- */
-function catchkathmandu_secondary_menu() {
-	if ( has_nav_menu( 'secondary' ) ) { ?>
-	<div id="secondary-menu">
-        <nav id="access-secondary" class="site-navigation" role="navigation">
-            <h2 class="assistive-text"><?php _e( 'Secondary Menu', 'catch-kathmandu' ); ?></h2>
-            <?php
-				$catchkathamdu_secondary_menu_args = array(
-					'theme_location'    => 'secondary',
-					'container_class' 	=> 'menu-secondary-container',
-					'items_wrap'        => '<ul class="menu">%3$s</ul>'
-				);
-				wp_nav_menu( $catchkathamdu_secondary_menu_args );
+    /**
+     * Shows the Secondary Menu
+     *
+     * Hooked to catchkathmandu_after_hgroup_wrap
+     */
+    function catchkathmandu_secondary_menu() {
+    	if ( has_nav_menu( 'secondary' ) ) {
+            $options  = catchkathmandu_get_options();
             ?>
-        </nav><!-- .site-navigation .main-navigation -->
-	</div>
-	<?php
-	}
-}
-endif; // catchkathmandu_secondary_menu
+            <div id="secondary-menu-wrapper" class="menu-wrapper<?php echo empty ( $options['enable_menus'] ) ? ' disabled-in-mobile' : ''; ?>">
+                <div class="menu-toggle-wrapper">
+                    <button id="secondary-menu-toggle" class="menu-toggle" aria-controls="main-menu" aria-expanded="false"><span class="menu-label"><?php esc_html_e( 'Menu', 'catch-kathmandu' ); ?></span></button>
+                </div><!-- .menu-toggle-wrapper -->
 
-// Load  breadcrumb in catchkathmandu_after_hgroup_wrap hook
+                <div class="menu-inside-wrapper">
+                    <nav id="site-navigation" class="secondary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Secondary Menu', 'catch-kathmandu' ); ?>">
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'container'      => '',
+                                'theme_location' => 'secondary',
+                                'menu_id'        => 'secondary-menu',
+                                'menu_class'     => 'menu nav-menu',
+                            )
+                        );
+                        ?>
+                    </nav><!-- .econdary-navigation -->
+                </div>
+            </div>
+    	<?php
+    	}
+    }
+endif; // catchkathmandu_secondary_menu
 add_action( 'catchkathmandu_after_hgroup_wrap', 'catchkathmandu_secondary_menu', 20 );
