@@ -37,6 +37,17 @@ class Epsilon_Ajax_Controller {
 			);
 		}
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+		    wp_die(
+				json_encode(
+					array(
+						'status' => false,
+						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
+					)
+				)
+			);
+		}
+
 		$args_action = array_map( 'sanitize_text_field', wp_unslash( $_POST['args']['action'] ) );
 
 		if ( count( $args_action ) !== 2 ) {

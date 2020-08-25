@@ -65,9 +65,6 @@ if ( ! function_exists( 'antreas_setup' ) ) {
 			$content_width = 640;
 		}
 
-		//Remove WordPress version number for security purposes
-		remove_action( 'wp_head', 'wp_generator' );
-
 		//Load translation text domain and make translation available
 		$languages_path = get_template_directory() . '/languages';
 		if ( defined( 'ANTREAS_CORE' ) ) {
