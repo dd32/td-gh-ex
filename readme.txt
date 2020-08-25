@@ -3,9 +3,9 @@
 Contributors: themepalace
 Tags: education, translation-ready, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-logo, custom-header, footer-widgets, blog
 Requires at least: 4.5
-Tested up to: 5.3.2
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.4
+Stable tag: 2.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,10 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 2.5 - August 24, 2020
+* Updated minor issues
+* Updated blocks and patterns design
 
 = 2.4 - Apr 29, 2020
 * Updated accessibility css
