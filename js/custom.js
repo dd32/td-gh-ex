@@ -21,27 +21,21 @@
         });
         
 		// Search Show / Hide
-        $(".search-btn").toggle(function(){
+        $(".search-btn").on( 'click', function() {
             $(".search-button").addClass('search-on');
             $(".search-block").show().animate( { left: '+=5' }, 200 );
             $(".search-block .search-field").focus();
-        },function(){
-            $(".search-block").animate( { left: '-=5' }, 200 ).hide();
-            $(".search-button").removeClass('search-on');
         });
 		
     });
-    
-    $(window).resize(function () {
-        
-        
-        
-    }).resize();
-    
-    $(window).load(function() {
-        
-        
-        
+
+    // Hide Search is user clicks anywhere else
+    $(document).mouseup(function (e) {
+        var container = $( '.search-block' );
+        if ( !container.is( e.target ) && container.has( e.target ).length === 0 ) {
+            $(".search-block").animate( { left: '-=5' }, 200 ).hide();
+            $(".search-button").removeClass('search-on');
+        }
     });
     
 } )( jQuery );

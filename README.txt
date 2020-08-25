@@ -1,8 +1,10 @@
 === Electa ===
 Contributors: Kaira
-Donate link: 
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PFZGBM92T8XSE&source=url
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio
 Requires at least: 4.7
+Tested up to: 5.5
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,10 +32,9 @@ FontAwesome - Copyright 2012 Dave Gandy
 License: MIT License
 http://fontawesome.io/license/
 
-* Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
-* Photos in the demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
-Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
-https://unsplash.com/license
+* Photos in the screenshot are from un-splash and licensed Creative Commons 0 (CC0)
+* Photos in the demo site are from un-splash and licensed Creative Commons 0 (CC0)
+Un-splash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
 
 == Installation ==
 
@@ -60,33 +61,41 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.10
+* Styling fixes/tweaks
+* Fix compatibility issues with WC & WP latest updates
+* Removed old deprecated code & scripts
+* Updated the language .pot file
+* PREMIUM: NEW FEATURE: Added a Website Loader & configuration settings
+* PREMIUM: Fixed Full Color settings bug
+
 #### 1.3.09
 * Styling fixes/tweaks
 * Added WooCustomizer as a recommended plugin in TGM
 * Updated the language .pot file
-Premium: Added setting to change Blog List image size proportions
+* PREMIUM: Added setting to change Blog List image size proportions
 
 #### 1.3.08
 * Removed old/deprecated code
 * Neatened up code/comments
 * Updated language .pot file
-Premium: Added setting to change the header to a Top Layout
-Premium: Added setting to adjust Navigation font size
+* PREMIUM: Added setting to change the header to a Top Layout
+* PREMIUM: Added setting to adjust Navigation font size
 
 #### 1.3.07
 * Styling fixes/tweaks
 * Added setting to move Social Icons above Navigation
 * Updated theme tags
 * Updated the language .pot file
-Premium: Added a setting to remove the site navigation
+* PREMIUM: Added a setting to remove the site navigation
 
 #### 1.3.06
 * Styling fixes/tweaks
 * Updated help links for setup
 * Added custom styling for WooCommerce
 * Updated the language .pot file
-Premium: Added extra settings to set WooCommerce pages Full Width
-Premium: Added extra logo padding settings
+* PREMIUM: Added extra settings to set WooCommerce pages Full Width
+* PREMIUM: Added extra logo padding settings
 
 #### 1.3.05
 * Updated/Improved JS for Masonry Grid layout
@@ -94,20 +103,20 @@ Premium: Added extra logo padding settings
 * Added TGM Plugin Activation class
 * Updated/fixed compatibility with new WooCommerce Gallery
 * Updated the language .pot file
-Premium: Added setting to remove Block layout text
-Premium: Added setting to set WooCommerce products shown per page
-Premium: Added setting to set WooCommerce products per row
-Premium: Added setting to remove product borders
+* PREMIUM: Added setting to remove Block layout text
+* PREMIUM: Added setting to set WooCommerce products shown per page
+* PREMIUM: Added setting to set WooCommerce products per row
+* PREMIUM: Added setting to remove product borders
 
 #### 1.3.04
 * Styling fixes/tweaks
 * Added social links - Email, Facebook & Twitter
 * Added help for setting up Home & Blog blocks layout
 * Updated the language .pot file
-Premium: Updated & added over 20 social links
-Premium: Added setting for any social network required
-Premium: Added setting to make blog list, archive and single pages full width
-Premium: Added setting to adjust blocks layout title size
+* PREMIUM: Updated & added over 20 social links
+* PREMIUM: Added setting for any social network required
+* PREMIUM: Added setting to make blog list, archive and single pages full width
+* PREMIUM: Added setting to adjust blocks layout title size
 
 #### 1.3.03
 * Fix navigation custom color hover css
@@ -115,19 +124,19 @@ Premium: Added setting to adjust blocks layout title size
 
 #### 1.3.02
 * Styling fix for mobile
-Premium: Added setting to select dark/light mobile menu colors
-Premium: Added setting to select custom mobile menu colors
+* PREMIUM: Added setting to select dark/light mobile menu colors
+* PREMIUM: Added setting to select custom mobile menu colors
 
 #### 1.3.01
 * Added hooks to the header
 * Changed block titles to always show on mobile
-Premium: Setting to choose custom title font
-Premium: Settings to change site title & description sizes and spacing
+* PREMIUM: Setting to choose custom title font
+* PREMIUM: Settings to change site title & description sizes and spacing
 
 #### 1.3.00
 * Mobile style tweaks
 * Fixed 404 message & nothing found message
-Premium: Fixed sticky header bug
+* PREMIUM: Fixed sticky header bug
 
 #### 1.2.9
 * Fixed search mobile display
@@ -135,18 +144,18 @@ Premium: Fixed sticky header bug
 #### 1.2.8
 * Added missing sanitization
 * Styling fixes
-Premium: Added setting to customize header color styling
-Premium: Added setting to remove Page Titles
-Premium: Added setting to align navigation text - Left, Right or Center aligned
+* PREMIUM: Added setting to customize header color styling
+* PREMIUM: Added setting to remove Page Titles
+* PREMIUM: Added setting to align navigation text - Left, Right or Center aligned
 
 #### 1.2.7
 * Updated theme tags
 * Updated Font Awesome - 4.6.3
 * Removed old update system & link out for premium
 * Updated the language .pot file
-Premium: Added social link for Behance
-Premium: Added social link for Medium
-Premium: Added social link for Vimeo
+* PREMIUM: Added social link for Behance
+* PREMIUM: Added social link for Medium
+* PREMIUM: Added social link for Vimeo
 
 #### 1.2.6
 * Styling fixes for responsive
@@ -154,8 +163,8 @@ Premium: Added social link for Vimeo
 * Added new mobile slide out menu
 * Added new easier upgrade system -('upgrade' folder)-(user doesn't lose old settings)-(has been approved for WordPress.org by reviewers)
 * Updated the language .pot file
-Premium: Added theme styling for WooCommerce
-Premium: Added option to make shop page full width
+* PREMIUM: Added theme styling for WooCommerce
+* PREMIUM: Added option to make shop page full width
 
 #### 1.2.5
 * Add given fix normalize path

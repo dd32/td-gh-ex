@@ -72,7 +72,7 @@ function customizer_library_kaira_options() {
         'id' => 'kra-upsell-header',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change Header to Top Layout<br />- Settings to adjust Site Title font and sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- Remove All Page titles<br />- Enable a sticky header<br />- Align Navigation - Left\Center\Right<br />- Remove Navigation lines', 'electa' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Add a Website Loader to your site<br />- Website loader configuration settings<br /><br />- Change Header to Top Layout<br />- Settings to adjust Site Title font and sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- Remove All Page titles<br />- Enable a sticky header<br />- Align Navigation - Left\Center\Right<br />- Remove Navigation lines', 'electa' )
     );
     
     

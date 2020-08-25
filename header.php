@@ -13,6 +13,7 @@
 </head>
 
 <body <?php body_class(  ); ?>>
+<?php wp_body_open(); ?>
 <div id="page">
 
 <header id="masthead" class="site-header <?php echo ( get_header_image() ) ? '' : sanitize_html_class( 'header-nologo' ); ?>" role="banner">

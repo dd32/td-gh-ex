@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3.09' );
+define( 'KAIRA_THEME_VERSION' , '1.3.10' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -179,7 +179,6 @@ add_action( 'admin_enqueue_scripts', 'kaira_load_admin_script' );
  * Enqueue Electa custom customizer styling.
  */
 function load_kaira_customizer_style() {
-    wp_enqueue_script( 'kaira-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
     wp_enqueue_style( 'electa-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
 }    
 add_action( 'customize_controls_enqueue_scripts', 'load_kaira_customizer_style' );
@@ -224,7 +223,6 @@ function kaira_register_required_plugins() {
             'name'      => __( 'Elementor Page Builder', 'electa' ),
             'slug'      => 'elementor',
             'required'  => false,
-            'external_url' => 'https://kairaweb.com/go/elementor/'
         ),
         array(
             'name'      => __( 'Breadcrumb NavXT', 'electa' ),
