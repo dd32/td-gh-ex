@@ -28,7 +28,7 @@ selectnav('nav', {
 });
 
 jQuery(document).ready(function(a){
-	a("a[href=#scroll-top]").click(function(){
+	a("a[href='#scroll-top']").click(function(){
 	a("html, body").animate({scrollTop:0},"slow");return false}
 	
 	)});

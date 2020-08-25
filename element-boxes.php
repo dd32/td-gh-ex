@@ -4,7 +4,7 @@
 				
 					<div class="box-head">
 								
-	<a href="<?php echo esc_url(themeszen_get_option('discover_boxlink' . $i)); ?>"><img src="<?php if(esc_url(themeszen_get_option('discover_boximage' . $i)) != NULL){ echo esc_url(themeszen_get_option('discover_boximage' . $i));} else echo get_template_directory_uri() . '/images/box' .$i. '.png' ?>" alt="<?php echo esc_html(themeszen_get_option('discover_boxhead' . $i)); ?>" /></a>
+	<a href="<?php echo esc_url(themeszen_get_option('discover_boxlink' . $i)); ?>"><img src="<?php if(esc_url(themeszen_get_option('discover_boximage' . $i)) != NULL){ echo esc_url(themeszen_get_option('discover_boximage' . $i));} else echo esc_url(get_template_directory_uri() . '/images/box' .$i. '.png')?>" alt="<?php echo esc_html(themeszen_get_option('discover_boxhead' . $i)); ?>" /></a>
 
 					
 					</div> <!--box-head close-->

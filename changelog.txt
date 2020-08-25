@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+25-08-2020 - version 1.7.33
+*js/superfish.js file updated...
+
 27-10-2018 - version 1.7.31
 *css/flexslider.css file updated...
 
