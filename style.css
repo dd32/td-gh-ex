@@ -4,7 +4,7 @@ Theme URI: https://univahost.com/blog
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.4.5
+Version: 1.4.6
 Requires at least: 4.7
 Requires PHP: 7.0
 Tested up to: 5.5
@@ -1524,7 +1524,6 @@ h1.single-page-title {
 }
 .single-page-section p {
     margin: auto;
-    font-size: 16px;
     line-height: 1.8;
     font-weight: 400;
     color: #655f5f;
@@ -1559,11 +1558,8 @@ button.form-btn {
     border: none;
     margin-bottom: 60px;
     border-radius: 100px;
-    background-color: #5bd5e8;
+    background-color: var(--primary-color);
     color: #fff;
-}
-button.form-btn:hover {
-    background: var(--primary-color);
 }
 button.btn.btn-blog.form-btn i {
     -webkit-transform: translateY(1px);
@@ -1603,6 +1599,8 @@ section.no-results.not-found .articlepress-search-form {
     border-radius: 50%;
     -webkit-transition: all 1s;
     -o-transition: all 1s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
     z-index: 6;
     -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
@@ -1611,6 +1609,9 @@ section.no-results.not-found .articlepress-search-form {
 }
 .articlepress-search-form:hover {
     cursor: pointer;
+}
+.articlepress-search-form:focus {
+    outline: none;
 }
 .articlepress-search-form::before {
     content: "";
@@ -2041,8 +2042,8 @@ ul.comment-list {
     margin-bottom: 15px;
     width: 60px;
     border-radius: 50px;
-    background-image: -webkit-gradient( linear, left top, left bottom, from(black), to(#FFE));
     background-image: -o-linear-gradient( black, #FFE);
+    background-image: -webkit-gradient( linear, left top, left bottom, from(black), to(#FFE));
     background-image: linear-gradient( black, #FFE);
     -webkit-transform: translate(-80px, 0px);
     -ms-transform: translate(-80px, 0px);
