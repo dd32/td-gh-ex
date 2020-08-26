@@ -244,4 +244,4 @@ function spasalon_banner_customizer( $wp_customize ){
 			) );
 	
 }
-add_action( 'customize_register', 'spasalon_banner_customizer' );?>
+add_action( 'customize_register', 'spasalon_banner_customizer' );

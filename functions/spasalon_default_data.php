@@ -18,8 +18,8 @@ function spasalon_default_data(){
 	'footer_tagline'=>__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Spasalon</a> by Webriti', 'spasalon' ),
 	
 	// home page settings
-	'call_us'=> '201 567 89785',
-	'call_us_text'=>'Call us on',
+	'call_us'=> __( '999 999 9999', 'spasalon' ),
+	'call_us_text'=>__( 'Aenean quis lorem', 'spasalon' ),
 	
 	// slider settings
 	'slider_post' => '',
@@ -91,8 +91,8 @@ function spasalon_default_data(){
 	// home page news settings
 	'enable_news'=>true,
 	'news_layout' => 2,
-	'news_title'=> __('Our Latest News & Events','spasalon'),
-	'news_contents'=> __('The SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','spasalon'),
+	'news_title'=> __('Aliquam et nulla id metus','spasalon'),
+	'news_contents'=> __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','spasalon'),
 	'blog_selected_category_id'=> 1,
 	'posts_per_page' => 2,
 	

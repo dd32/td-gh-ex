@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
 Requires at least: 4.5
-Tested up to: 5.4.2
-Stable tag: 2.1
+Tested up to: 5.5
+Stable tag: 2.1.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,11 +25,13 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Spasalon WordPress Theme, Copyright (C) 2019, Webriti
+Spasalon WordPress Theme, Copyright (C) 2013-2020, Webriti
 Spasalon Pro is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.1.1
+1. Fixed the issues like prefix, escaping and remove closing PHP tags.
 @Version 2.1
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.
@@ -272,7 +274,11 @@ Source: https://www.1001fonts.com/marketing-script-font.html
 == Images ==
 
 Screenshot Image
-URL: https://pxhere.com/en/photo/982394
+URL:
+1. https://pxhere.com/en/photo/982394
+2. https://pxhere.com/en/photo/1060664 
+3. https://pxhere.com/en/photo/982409
+4. https://pxhere.com/en/photo/751344 
 Source: https://pxhere.com
 License: CC0 Public Domain
 

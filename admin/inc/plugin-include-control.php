@@ -74,7 +74,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('spasalon_Plugin_Insta
 		            <span class="description customize-control-description"><?php echo wp_kses_post($this->description ); ?></span>
 		        <?php endif; ?>
 				<?php 
-					$button = $webriti_about_page->get_plugin_buttion($this->slug, $this->name, $this->function);
+					$button = $spasalon_about_page->get_plugin_buttion($this->slug, $this->name, $this->function);
 					echo wp_kses_post($button['button']);
 				?>
 				<div style="clear: both;"></div>

@@ -14,7 +14,7 @@
 <a class="skip-link spasalon-screen-reader" href="#wrapper"><?php esc_html_e('Skip to content', 'spasalon'); ?></a>
 
 <?php 
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
+$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 ?>
 <!-- Navbar -->	
 <nav class="navbar navbar-default">
@@ -33,11 +33,11 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), s
 							    	bloginfo( 'name' );
 							    	echo '</a>';
 						    	endif;
-								$description = get_bloginfo( 'description', 'display' );
+								$spasalon_description = get_bloginfo( 'description', 'display' );
 								if(get_option('blogdescription')!='')
 								{
-									if ( $description || is_customize_preview() ) : ?>
-										<p class="site-description"><?php echo $description; ?></p>
+									if ( $spasalon_description || is_customize_preview() ) : ?>
+										<p class="site-description"><?php echo $spasalon_description; ?></p>
 									<?php endif;
 								}
 							endif;
@@ -51,28 +51,28 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), s
 						    	bloginfo( 'name' );
 						    	echo '</a>';
 					    	endif;
-							$description = get_bloginfo( 'description', 'display' );
+							$spasalon_description = get_bloginfo( 'description', 'display' );
 							if(get_option('blogdescription')!='')
 							{
-								if ( $description || is_customize_preview() ) : ?>
-									<p class="site-description"><?php echo $description; ?></p>
+								if ( $spasalon_description || is_customize_preview() ) : ?>
+									<p class="site-description"><?php echo $spasalon_description; ?></p>
 								<?php endif;
 							}
 						endif;
 					}
-				elseif( $current_options['upload_image']!='' && !(has_custom_logo()) ) {
+				elseif( $spasalon_current_options['upload_image']!='' && !(has_custom_logo()) ) {
 						
-					$current_options['upload_image'] = ( $current_options['upload_image'] != '' ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' );
+					$spasalon_current_options['upload_image'] = ( $spasalon_current_options['upload_image'] != '' ? $spasalon_current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' );
 					
-					$current_options['width'] = ( $current_options['width'] != '' ? $current_options['width'] : 150 );
+					$spasalon_current_options['width'] = ( $spasalon_current_options['width'] != '' ? $spasalon_current_options['width'] : 150 );
 					
-					$current_options['height'] = ( $current_options['height'] != '' ? $current_options['height'] : 35 );
+					$spasalon_current_options['height'] = ( $spasalon_current_options['height'] != '' ? $spasalon_current_options['height'] : 35 );
 						echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
-						echo '<img alt="'.esc_attr(get_bloginfo("name")).'" src="'.esc_url($current_options['upload_image']).'" class="img-responsive" style="width:'.esc_html($current_options['width']).'px; height:'.esc_html($current_options['height']).'px;">';
+						echo '<img alt="'.esc_attr(get_bloginfo("name")).'" src="'.esc_url($spasalon_current_options['upload_image']).'" class="img-responsive" style="width:'.esc_html($spasalon_current_options['width']).'px; height:'.esc_html($spasalon_current_options['height']).'px;">';
 						echo '</a>';
 					}
 					
-				elseif(!(has_custom_logo()) && get_theme_mod('header_text')==false && $current_options['upload_image']=='') {
+				elseif(!(has_custom_logo()) && get_theme_mod('header_text')==false && $spasalon_current_options['upload_image']=='') {
 						
 						echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
 						bloginfo('name');   // if no custom logo than print bloginfo name
@@ -107,4 +107,3 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), s
 <!-- End of Navbar -->
 
 <div class="clearfix"></div>
-<div id="wrapper">

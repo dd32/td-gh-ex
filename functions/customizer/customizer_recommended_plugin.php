@@ -3,7 +3,7 @@
 
 require SPASALON_TEMPLATE_DIR . '/functions/customizer-notify/spasalon-customizer-notify.php';
 
-$config_customizer = array(
+$spasalon_config_customizer = array(
 	'recommended_plugins'       => array(
 		'webriti-companion' => array(
 			'recommended' => true,
@@ -17,4 +17,4 @@ $config_customizer = array(
 	'activate_button_label'     => esc_html__( 'Activate', 'spasalon' ),
 	'deactivate_button_label'   => esc_html__( 'Deactivate', 'spasalon' ),
 );
-Spasalon_Customizer_Notify::init( apply_filters( 'spasalon_customizer_notify_array', $config_customizer ) );?>
+Spasalon_Customizer_Notify::init( apply_filters( 'spasalon_customizer_notify_array', $spasalon_config_customizer ) );

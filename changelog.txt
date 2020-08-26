@@ -1,4 +1,6 @@
 == Changelog ==
+@Version 2.1.1
+1. Fixed the issues like prefix, escaping and remove closing PHP tags.
 @Version 2.1
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.

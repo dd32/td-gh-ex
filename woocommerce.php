@@ -9,7 +9,7 @@ spasalon_page_banner_strip(); // banner strip
 ?>
 <!-- Blog & Sidebar Section -->
 <section id="section">		
-	<div class="container">
+	<div class="container" id="wrapper">
 		<div class="row">
 			
 			<!--Blog Detail-->

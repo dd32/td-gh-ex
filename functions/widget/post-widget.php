@@ -37,7 +37,7 @@ class spasalon_post_widget extends WP_Widget {
 			while ( $loop->have_posts() ) : $loop->the_post();
 			?>
 			<div class="media post">
-				<a href="<?php the_permalink(); ?>" class="post-thumbnail" title="<?php the_title(); ?>">
+				<a href="<?php the_permalink(); ?>" class="post-thumbnail" title="<?php the_title_attribute(); ?>">
 					<?php the_post_thumbnail(); ?>
 				</a>
 				<div class="media-body">

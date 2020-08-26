@@ -5,8 +5,8 @@
  *
  */
 
-$hide_install = get_option('spasalon_hide_customizer_companion_notice', false);
-if (!function_exists('webriti_companion') && !$hide_install) {
+$spasalon_hide_install = get_option('spasalon_hide_customizer_companion_notice', false);
+if (!function_exists('webriti_companion') && !$spasalon_hide_install) {
 	if (class_exists('WP_Customize_Section') && !class_exists('spasalon_Companion_Installer_Section')) {
 		/**
 		 * Recommend the installation of spasalon Companion using a custom section.

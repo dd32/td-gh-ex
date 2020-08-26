@@ -108,7 +108,7 @@ class Spasalon_Customizer_Notify {
 				'ajaxurl'            => admin_url( 'admin-ajax.php' ),
 				'template_directory' => get_template_directory_uri(),
 				'base_path'          => admin_url(),
-				'activating_string'  => __( 'Activating', 'spasalon' ),
+				'activating_string'  => esc_html__( 'Activating', 'spasalon' ),
 			)
 		);
 

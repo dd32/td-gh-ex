@@ -1,5 +1,5 @@
 <?php 
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
+$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 ?>
 <!-- Footer Section -->
 <footer class="footer-sidebar">	
@@ -55,15 +55,15 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), s
 			
 				<div class="col-md-7">
 				
-					<?php if( $current_options['footer_tagline'] ){ ?>
-					<p><?php echo wp_kses_post($current_options['footer_tagline']); ?></p>
+					<?php if( $spasalon_current_options['footer_tagline'] ){ ?>
+					<p><?php echo wp_kses_post($spasalon_current_options['footer_tagline']); ?></p>
 					<?php } ?>
 					
 				</div>
 				
 				<div class="col-md-5">
 				<?php 
-				if($current_options['footer_menu_enabled'] == true ) :?>
+				if($spasalon_current_options['footer_menu_enabled'] == true ) :?>
 					<ul class="footer-links">
 					  	<?php 
 						wp_nav_menu( 
@@ -88,8 +88,8 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), s
 	<!-- Copyrights -->	
 	
 </footer>
-<!-- /End of Footer Section -->
 </div>
+<!-- /End of Footer Section -->
 <!--Scroll To Top--> 
 <a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/End of Scroll To Top--> 	

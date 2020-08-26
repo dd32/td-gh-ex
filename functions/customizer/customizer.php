@@ -19,10 +19,6 @@ function spasalon_sanitize_fn($wp_customize) {
         }
 
     }
-
-  
-    
-
 }
 
 add_action('customize_register', 'spasalon_sanitize_fn');

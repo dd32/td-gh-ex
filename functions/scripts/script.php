@@ -4,7 +4,7 @@ if( !function_exists('spasalon_scripts'))
 {
 	function spasalon_scripts(){
 		
-		$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
+		$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 		
 		// css
 		wp_enqueue_style('style', get_stylesheet_uri() );
@@ -31,10 +31,3 @@ function spasalon_admin_enqueue_scripts(){
 	wp_enqueue_style('spasalon-drag-drop-css', SPASALON_TEMPLATE_DIR_URI . '/css/drag-drop.css');
 }
 add_action( 'admin_enqueue_scripts', 'spasalon_admin_enqueue_scripts' );
-
-
-function spasalon_registers() {
-
-	wp_enqueue_script( 'spasalon-customizer_script', SPASALON_TEMPLATE_DIR_URI . '/js/customizer.js', array("jquery"), '20120206', true  );
-}
-add_action( 'customize_controls_enqueue_scripts', 'spasalon_registers' );?>

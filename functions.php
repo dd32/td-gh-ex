@@ -14,7 +14,6 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 define('SPASALON_TEMPLATE_DIR_URI' , get_template_directory_uri() );
 define('SPASALON_TEMPLATE_DIR' , get_template_directory() );
 define('SPASALON_THEME_FUNCTIONS_PATH' , SPASALON_TEMPLATE_DIR.'/functions');
-define( 'WEBR_FRAMEWORK_DIR', get_template_directory_uri().'/functions' );
 
 // Theme functions file including
 require( SPASALON_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
@@ -89,8 +88,8 @@ function spasalon_setup() {
 	   
 	) );
 	add_editor_style();
-	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Spasalon' == $theme->name )
+	$spasalon_theme = wp_get_theme(); // gets the current theme
+	if ( 'Spasalon' == $spasalon_theme->name )
 	{
 	 	if ( is_admin() ) {
 			require SPASALON_TEMPLATE_DIR . '/admin/admin-init.php';
@@ -103,9 +102,9 @@ add_action( 'after_setup_theme', 'spasalon_setup' );
 
 // Replace logo Anchor class
 add_filter('get_custom_logo', 'spasalon_custom_logo_output', 10);
-function spasalon_custom_logo_output( $html ){	
-	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );	
-	return $html;
+function spasalon_custom_logo_output( $spasalon_html ){	
+	$spasalon_html = str_replace( 'custom-logo-link', 'navbar-brand', $spasalon_html );	
+	return $spasalon_html;
 }
 
 // excerpt length
@@ -116,9 +115,9 @@ add_filter( 'excerpt_length', 'spasalon_excerpt_length', 999 );
 
 
 function spasalon_inline_style() {
-	$custom_css= '';	
-	$current_options = wp_parse_args(  get_option( 'spa_theme_options'));
-	$spasalon_service_content = ! empty($current_options['spasalon_service_content']) ? $current_options['spasalon_service_content'] : json_encode(
+	$spasalon_custom_css= '';	
+	$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options'));
+	$spasalon_service_content = ! empty($spasalon_current_options['spasalon_service_content']) ? $spasalon_current_options['spasalon_service_content'] : json_encode(
 			array(
 				array(
 					'color'      => '#f22853',
@@ -138,21 +137,21 @@ function spasalon_inline_style() {
 	if ( ! empty( $spasalon_service_content ) ) {
 		$spasalon_service_content = json_decode( $spasalon_service_content );
 		
-		foreach ( $spasalon_service_content as $key => $service_item ) {
-			$box_nb = $key + 1;
-			if ( ! empty( $service_item->color ) ) {
+		foreach ( $spasalon_service_content as $spasalon_key => $spasalon_service_item ) {
+			$spasalon_box_nb = $spasalon_key + 1;
+			if ( ! empty( $spasalon_service_item->color ) ) {
 				
-				$color = ! empty( $service_item->color ) ? apply_filters( 'spasalon_translate_single_string', $service_item->color, 'searvice section' ) : '';
+				$spasalon_color = ! empty( $spasalon_service_item->color ) ? apply_filters( 'spasalon_translate_single_string', $spasalon_service_item->color, 'searvice section' ) : '';
 				
-				$custom_css .= '.service-box:nth-child(' . esc_attr( $box_nb ) . ') .service-icon i {
-                            background-color: ' . esc_attr( $color ) . ';
+				$spasalon_custom_css .= '.service-box:nth-child(' . esc_attr( $spasalon_box_nb ) . ') .service-icon i {
+                            background-color: ' . esc_attr( $spasalon_color ) . ';
 				}';
 				
 				
 			}
 		}
 	}
-	wp_add_inline_style( 'style', $custom_css );
+	wp_add_inline_style( 'style', $spasalon_custom_css );
 }
 
 add_action( 'wp_enqueue_scripts', 'spasalon_inline_style' );
@@ -160,20 +159,20 @@ add_action( 'wp_enqueue_scripts', 'spasalon_inline_style' );
 // Replaces the excerpt "more" text by a link
 function spasalon_new_excerpt_more($more) {	
     global $post;	
-	$link = sprintf( '<p><a href="%1$s" class="more-link">%2$s</a></p>',
+	$spasalon_link = sprintf( '<p><a href="%1$s" class="more-link">%2$s</a></p>',
 					esc_url( get_permalink( get_the_ID() ) ),		
 					sprintf( esc_html__( 'Read More' , 'spasalon' ) )
 		
 	);
-	return ' &hellip; ' . $link;	
+	return ' &hellip; ' . $spasalon_link;	
 }
 add_filter('excerpt_more', 'spasalon_new_excerpt_more');
 
 function spasalon_modify_read_more_link() {
 	
 	global $post;	
-	$link = '<a class="more-link" href="'.esc_url(get_permalink()).'">'.esc_html__( 'Read More' , 'spasalon' ).'</a>';	
-    return $link;
+	$spasalon_link = '<a class="more-link" href="'.esc_url(get_permalink()).'">'.esc_html__( 'Read More' , 'spasalon' ).'</a>';	
+    return $spasalon_link;
 }
 add_filter( 'the_content_more_link', 'spasalon_modify_read_more_link' );
 
@@ -187,96 +186,96 @@ add_action( 'after_setup_theme', 'spasalon_content_width', 0 );
 // custom css 
 function spasalon_custom_css_function(){
 	
-	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
+	$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 	echo '<style>';
-	echo $current_options['spa_custom_css'];
+	echo $spasalon_current_options['spa_custom_css'];
 	echo '</style>';
 	echo '<style>';
 	echo '
 	
 		h1, .h1 { 
-			font-family: "'.$current_options['h1_fontfamily'].'"; 
-			font-size: '.$current_options['h1_size'].'px; 
-			line-height: '.($current_options['h1_size'] + 4).'px;
-			font-style: '.$current_options['h1_fontstyle'].';
+			font-family: "'.$spasalon_current_options['h1_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['h1_size'].'px; 
+			line-height: '.($spasalon_current_options['h1_size'] + 4).'px;
+			font-style: '.$spasalon_current_options['h1_fontstyle'].';
 		}
 		
 		h2, .h2 { 
-			font-family: "'.$current_options['h2_fontfamily'].'"; 
-			font-size: '.$current_options['h2_size'].'px; 
-			line-height: '.($current_options['h2_size'] + 5).'px;
-			font-style: '.$current_options['h2_fontstyle'].';
+			font-family: "'.$spasalon_current_options['h2_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['h2_size'].'px; 
+			line-height: '.($spasalon_current_options['h2_size'] + 5).'px;
+			font-style: '.$spasalon_current_options['h2_fontstyle'].';
 		}
 		
 		h3, .h3 { 
-			font-family: "'.$current_options['h3_fontfamily'].'"; 
-			font-size: '.$current_options['h3_size'].'px; 
-			line-height: '.($current_options['h3_size'] + 6).'px;
-			font-style: '.$current_options['h3_fontstyle'].';
+			font-family: "'.$spasalon_current_options['h3_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['h3_size'].'px; 
+			line-height: '.($spasalon_current_options['h3_size'] + 6).'px;
+			font-style: '.$spasalon_current_options['h3_fontstyle'].';
 		}
 		
 		h4, .h4 { 
-			font-family: "'.$current_options['h4_fontfamily'].'"; 
-			font-size: '.$current_options['h4_size'].'px; 
-			line-height: '.($current_options['h4_size'] + 7).'px;
-			font-style: '.$current_options['h4_fontstyle'].';
+			font-family: "'.$spasalon_current_options['h4_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['h4_size'].'px; 
+			line-height: '.($spasalon_current_options['h4_size'] + 7).'px;
+			font-style: '.$spasalon_current_options['h4_fontstyle'].';
 		}
 		
 		h5, .h5 { 
-			font-family: "'.$current_options['h5_fontfamily'].'"; 
-			font-size: '.$current_options['h5_size'].'px; 
-			line-height: '.($current_options['h5_size'] + 6).'px;
-			font-style: '.$current_options['h5_fontstyle'].';
+			font-family: "'.$spasalon_current_options['h5_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['h5_size'].'px; 
+			line-height: '.($spasalon_current_options['h5_size'] + 6).'px;
+			font-style: '.$spasalon_current_options['h5_fontstyle'].';
 		}
 		
 		h6, .h6 { 
-			font-family: "'.$current_options['h6_fontfamily'].'"; 
-			font-size: '.$current_options['h6_size'].'px; 
-			line-height: '.($current_options['h6_size'] + 8).'px;
-			font-style: '.$current_options['h6_fontstyle'].';
+			font-family: "'.$spasalon_current_options['h6_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['h6_size'].'px; 
+			line-height: '.($spasalon_current_options['h6_size'] + 8).'px;
+			font-style: '.$spasalon_current_options['h6_fontstyle'].';
 		}
 		
 		.section-title{ 
-			font-family: "'.$current_options['home_section_title_fontfamily'].'"; 
-			font-size: '.$current_options['home_section_title_fontsize'].'px; 
-			line-height: '.($current_options['home_section_title_fontsize'] + 3).'px;
-			font-style: '.$current_options['home_section_title_fontstyle'].';
+			font-family: "'.$spasalon_current_options['home_section_title_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['home_section_title_fontsize'].'px; 
+			line-height: '.($spasalon_current_options['home_section_title_fontsize'] + 3).'px;
+			font-style: '.$spasalon_current_options['home_section_title_fontstyle'].';
 		}
 		
 		.section-subtitle{ 
-			font-family: "'.$current_options['home_section_desc_fontfamily'].'"; 
-			font-size: '.$current_options['home_section_desc_fontsize'].'px; 
-			line-height: '.($current_options['home_section_desc_fontsize'] + 9).'px;
-			font-style: '.$current_options['home_section_desc_fontstyle'].';
+			font-family: "'.$spasalon_current_options['home_section_desc_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['home_section_desc_fontsize'].'px; 
+			line-height: '.($spasalon_current_options['home_section_desc_fontsize'] + 9).'px;
+			font-style: '.$spasalon_current_options['home_section_desc_fontstyle'].';
 		}
 		
 		.navbar-default .navbar-nav > li > a,
 		.dropdown-menu > li > a	{
-			font-family: "'.$current_options['menu_title_fontfamily'].'"; 
-			font-size: '.$current_options['menu_title_fontsize'].'px; 
-			line-height: '.($current_options['menu_title_fontsize'] + 5).'px;
-			font-style: '.$current_options['menu_title_fontstyle'].';
+			font-family: "'.$spasalon_current_options['menu_title_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['menu_title_fontsize'].'px; 
+			line-height: '.($spasalon_current_options['menu_title_fontsize'] + 5).'px;
+			font-style: '.$spasalon_current_options['menu_title_fontstyle'].';
 		}
 		
 		.entry-header .entry-title{
-			font-family: "'.$current_options['post_title_fontfamily'].'"; 
-			font-size: '.$current_options['post_title_fontsize'].'px; 
-			line-height: '.($current_options['post_title_fontsize'] + 6).'px;
-			font-style: '.$current_options['post_title_fontstyle'].';
+			font-family: "'.$spasalon_current_options['post_title_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['post_title_fontsize'].'px; 
+			line-height: '.($spasalon_current_options['post_title_fontsize'] + 6).'px;
+			font-style: '.$spasalon_current_options['post_title_fontstyle'].';
 		}
 		
 		p, .entry-content, .post .entry-content {
-			font-family: "'.$current_options['postexcerpt_fontfamily'].'"; 
-			font-size: '.$current_options['postexcerpt_title_fontsize'].'px; 
-			line-height: '.($current_options['postexcerpt_title_fontsize'] + 10).'px;
-			font-style: '.$current_options['postexcerpt_fontstyle'].';
+			font-family: "'.$spasalon_current_options['postexcerpt_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['postexcerpt_title_fontsize'].'px; 
+			line-height: '.($spasalon_current_options['postexcerpt_title_fontsize'] + 10).'px;
+			font-style: '.$spasalon_current_options['postexcerpt_fontstyle'].';
 		}
 		
 		.widget .widget-title, .footer-sidebar .widget .widget-title{
-			font-family: "'.$current_options['widget_title_fontfamily'].'"; 
-			font-size: '.$current_options['widget_title_fontsize'].'px; 
-			line-height: '.($current_options['widget_title_fontsize'] + 6).'px;
-			font-style: '.$current_options['widget_title_fontstyle'].';
+			font-family: "'.$spasalon_current_options['widget_title_fontfamily'].'"; 
+			font-size: '.$spasalon_current_options['widget_title_fontsize'].'px; 
+			line-height: '.($spasalon_current_options['widget_title_fontsize'] + 6).'px;
+			font-style: '.$spasalon_current_options['widget_title_fontstyle'].';
 		}
 	';
 	echo '</style>';
@@ -319,7 +318,7 @@ function spasalon_register_required_plugins() {
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
-	$plugins = array(
+	$spasalon_plugins = array(
 	// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
             'name' => 'Contact Form 7',
@@ -342,7 +341,7 @@ function spasalon_register_required_plugins() {
 	 *
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
-	$config = array(
+	$spasalon_config = array(
 		'id'           => 'spasalon',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
@@ -353,18 +352,18 @@ function spasalon_register_required_plugins() {
 		'message'      => '',                      // Message to output right before the plugins table.
 	);
 
-	tgmpa( $plugins, $config );
+	tgmpa( $spasalon_plugins, $spasalon_config );
 }
 
 //Custom CSS compatibility
 $spasalon_options = spasalon_default_data();
 $spasalon_current_options = wp_parse_args(get_option('spa_theme_options', array()), $spasalon_options);
 if ($spasalon_current_options['spa_custom_css'] != '' && $spasalon_current_options['spa_custom_css'] != 'nomorenow') {
-    $css = '';
-    $css .= $spasalon_current_options['spa_custom_css'];
-    $css .= (string) wp_get_custom_css(get_stylesheet());
+    $spasalon_css = '';
+    $spasalon_css .= $spasalon_current_options['spa_custom_css'];
+    $spasalon_css .= (string) wp_get_custom_css(get_stylesheet());
     $spasalon_current_options['spa_custom_css'] = 'nomorenow';
     update_option('spa_theme_options', $spasalon_current_options);
-    wp_update_custom_css_post($css, array());
+    wp_update_custom_css_post($spasalon_css, array());
 }
 ?>

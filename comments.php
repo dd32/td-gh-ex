@@ -6,18 +6,18 @@ if ( post_password_required() ) {
 
 <?php
 if( !function_exists('spasalon_comments') ):
-function spasalon_comments( $comment, $args, $depth ){
+function spasalon_comments( $spasalon_comment, $spasalon_args, $spasalon_depth ){
 	
 	//get theme data
 	global $comment_data;
 	
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','spasalon');
+	$spasalon_leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','spasalon');
 	?>
 	<div id="comment-<?php comment_ID(); ?>" <?php comment_class('media comments'); ?>>
 	
 		<figure class="comment-author">
-			<?php echo get_avatar( $comment , $size = 70 ); ?>
+			<?php echo get_avatar( $spasalon_comment , $spasalon_size = 70 ); ?>
 		</figure>
 		
 		<div class="media-body">
@@ -32,7 +32,7 @@ function spasalon_comments( $comment, $args, $depth ){
 					</a>
 			
 					<div class="reply">
-						<?php comment_reply_link( array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
+						<?php comment_reply_link( array_merge( $spasalon_args, array('reply_text' => $spasalon_leave_reply,'depth' => $spasalon_depth, 'max_depth' => $spasalon_args['max_depth'], 'per_page' => $spasalon_args['per_page']))) ?>
 					</div>
 				</h5>
 				
@@ -54,9 +54,9 @@ endif;
 	
 	<h3 class="comment-title">
 	<?php 
-	$comments_number = get_comments_number();
+	$spasalon_comments_number = get_comments_number();
 	
-	if ( 1 === $comments_number ) {
+	if ( 1 === $spasalon_comments_number ) {
 		printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'spasalon' ), get_the_title() );
 	}
 	else{
@@ -64,11 +64,11 @@ endif;
 				_nx(
 					'%1$s thought on &ldquo;%2$s&rdquo;',
 					'%1$s thoughts on &ldquo;%2$s&rdquo;',
-					$comments_number,
+					$spasalon_comments_number,
 					'comments title',
 					'spasalon'
 				),
-				number_format_i18n( $comments_number ),
+				number_format_i18n( $spasalon_comments_number ),
 				get_the_title()
 			);
 	}

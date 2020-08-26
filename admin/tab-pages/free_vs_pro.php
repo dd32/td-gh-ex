@@ -116,7 +116,7 @@
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-						<li style="font-size:16px; line-height:80px; padding:15px;"><?php esc_html_e('On WordPress.org Support Forum','spasalon'); ?></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url( 'https://wordpress.org/support/theme/spasalon/');?>" target="_blank"><?php esc_html_e('On WordPress.org Support Forum','spasalon'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					
@@ -146,7 +146,7 @@
 						<li><span class="dashicons-before dashicons-yes green"></span></li> 
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
-						<li style="font-size:16px; line-height:80px; padding:15px;"><?php esc_html_e('Premium Support Forum','spasalon'); ?></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url( 'https://webriti.com/support/categories/spasalon');?>" target="_blank"><?php esc_html_e('Premium Support Forum','spasalon'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					

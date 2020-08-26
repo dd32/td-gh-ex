@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2020-07-11 18:26+0530\n"
+"POT-Creation-Date: 2020-08-26 16:42+0530\n"
 "PO-Revision-Date: 2018-08-01 12:55+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -667,7 +667,7 @@ msgid ""
 "It seems we can't find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: content.php:24 functions.php:165 functions.php:175
+#: content.php:24 functions.php:164 functions.php:174
 #: functions/widget/wbr-news-widget.php:97 index-news.php:89
 msgid "Read More"
 msgstr ""
@@ -676,11 +676,11 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:70
 msgid "Footer Menu"
 msgstr ""
 
@@ -1410,22 +1410,22 @@ msgstr ""
 msgid "Call us field text"
 msgstr ""
 
-#: functions/customizer/general-settings.php:79
+#: functions/customizer/general-settings.php:60
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/general-settings.php:91
+#: functions/customizer/general-settings.php:72
 msgid "Hide footer menu"
 msgstr ""
 
-#: functions/customizer/general-settings.php:99
+#: functions/customizer/general-settings.php:80
 #: functions/spasalon_default_data.php:18
 msgid ""
 "<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
 "<a href=\"https://webriti.com\" rel=\"nofollow\">Spasalon</a> by Webriti"
 msgstr ""
 
-#: functions/customizer/general-settings.php:103
+#: functions/customizer/general-settings.php:84
 msgid "Copyright text"
 msgstr ""
 
@@ -1451,20 +1451,29 @@ msgid "Select column layout"
 msgstr ""
 
 #: functions/customizer/home-page.php:74 functions/spasalon_default_data.php:94
-msgid "Our Latest News & Events"
+msgid "Aliquam et nulla id metus"
 msgstr ""
 
-#: functions/customizer/home-page.php:86 functions/spasalon_default_data.php:95
+#: functions/customizer/home-page.php:86
 msgid ""
-"The SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
-"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
-"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
-"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
-"quam eu ante ornare hendrerit."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua."
 msgstr ""
 
 #: functions/menu/default_menu_walker.php:23
 msgid "Home"
+msgstr ""
+
+#: functions/spasalon_default_data.php:21
+msgid "999 999 9999"
+msgstr ""
+
+#: functions/spasalon_default_data.php:22
+msgid "Aenean quis lorem"
+msgstr ""
+
+#: functions/spasalon_default_data.php:95
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 msgstr ""
 
 #: functions/widget/post-widget.php:13
@@ -1487,35 +1496,31 @@ msgstr ""
 msgid "Sidebar widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:21
-msgid "Service content widget area"
-msgstr ""
-
-#: functions/widget/sidebars.php:27 functions/widget/sidebars.php:29
+#: functions/widget/sidebars.php:21 functions/widget/sidebars.php:23
 msgid "Project content widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:37 functions/widget/sidebars.php:39
+#: functions/widget/sidebars.php:31 functions/widget/sidebars.php:33
 msgid "News section widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:47 functions/widget/sidebars.php:49
+#: functions/widget/sidebars.php:41 functions/widget/sidebars.php:43
 msgid "Footer sidebar one"
 msgstr ""
 
-#: functions/widget/sidebars.php:57 functions/widget/sidebars.php:59
+#: functions/widget/sidebars.php:51 functions/widget/sidebars.php:53
 msgid "Footer sidebar two"
 msgstr ""
 
-#: functions/widget/sidebars.php:67 functions/widget/sidebars.php:69
+#: functions/widget/sidebars.php:61 functions/widget/sidebars.php:63
 msgid "Footer sidebar three"
 msgstr ""
 
-#: functions/widget/sidebars.php:77 functions/widget/sidebars.php:79
+#: functions/widget/sidebars.php:71 functions/widget/sidebars.php:73
 msgid "Footer sidebar four"
 msgstr ""
 
-#: functions/widget/sidebars.php:87 functions/widget/sidebars.php:89
+#: functions/widget/sidebars.php:81 functions/widget/sidebars.php:83
 msgid "Woocommerce sidebar widget area"
 msgstr ""
 

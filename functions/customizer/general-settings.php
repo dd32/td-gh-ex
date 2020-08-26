@@ -55,30 +55,11 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'           => 'text'
 			) );
 			
-		/* custom css section */
-		// $wp_customize->add_section( 'custom_css_section' , array(
-		// 	'title'      => esc_html__('Custom CSS', 'spasalon'),
-		// 	'panel'  => 'general_settings'
-		// ) );
-		
-		// 	// banner settings
-		// 	$wp_customize->add_setting( 'spa_theme_options[spa_custom_css]' , array(
-		// 	'default' => '',
-		// 	'sanitize_callback' => 'wp_filter_nohtml_kses',
-		// 	'type'=>'option'
-		// 	) );
-		// 	$wp_customize->add_control('spa_theme_options[spa_custom_css]' , array(
-		// 	'label'          => esc_html__( 'Custom CSS', 'spasalon' ),
-		// 	'section'        => 'custom_css_section',
-		// 	'type'           => 'textarea'
-		// 	) );
-			
-
-		/* footer copyright section */
-		$wp_customize->add_section( 'copyright_section' , array(
+			/* footer copyright section */
+			$wp_customize->add_section( 'copyright_section' , array(
 			'title'      => esc_html__('Footer copyright settings', 'spasalon'),
 			'panel'  => 'general_settings'
-		) );
+			) );
 		
 			// Enable Footer menu settings
 		    $wp_customize->add_setting('spa_theme_options[footer_menu_enabled]', array(
@@ -139,4 +120,4 @@ $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
         },
     ) );	
 }
-add_action( 'customize_register', 'spasalon_register_copyright_partials' );?>
+add_action( 'customize_register', 'spasalon_register_copyright_partials' );

@@ -1,27 +1,27 @@
 <?php
-$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
-$news_layout = 12 / $current_options['news_layout'];
+$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
+$spasalon_news_layout = 12 / $spasalon_current_options['news_layout'];
 
-if( $current_options['enable_news'] == true):
+if( $spasalon_current_options['enable_news'] == true):
 ?>
 <!-- Blog Section -->
 <section id="section" class="home-post">
-	<div class="container">
+	<div class="container" id="wrapper">
 		
 		<!-- Section Title -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-header">
 					
-					<?php if( $current_options['news_title'] != '' ): ?>
+					<?php if( $spasalon_current_options['news_title'] != '' ): ?>
 					<h1 class="section-title">
-						<?php echo esc_html($current_options['news_title']); ?>
+						<?php echo esc_html($spasalon_current_options['news_title']); ?>
 					</h1>
 					<?php endif; ?>
 					
-					<?php if( $current_options['news_contents'] != '' ): ?>
+					<?php if( $spasalon_current_options['news_contents'] != '' ): ?>
 					<p class="section-subtitle">
-						<?php echo esc_html($current_options['news_contents']); ?>
+						<?php echo esc_html($spasalon_current_options['news_contents']); ?>
 					</p>
 					<?php endif; ?>
 					
@@ -46,25 +46,25 @@ if( $current_options['enable_news'] == true):
 				
 				<?php 
 				
-				$i = 1;
+				$spasalon_i = 1;
 				
 				
 				//$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				
-				$args = array(
+				$spasalon_args = array(
 				 'post_type' => 'post',
 				 'ignore_sticky_posts' => 1 ,
 				  'posts_per_page' => 4,
 				  //'paged' => $paged 
 				);
 				
-				$post_type_data = new WP_Query( $args );
+				$spasalon_post_type_data = new WP_Query( $spasalon_args );
 				
-				if( $post_type_data->have_posts() ):
+				if( $spasalon_post_type_data->have_posts() ):
 				
-					while( $post_type_data ->have_posts() ): $post_type_data ->the_post();
+					while( $spasalon_post_type_data ->have_posts() ): $spasalon_post_type_data ->the_post();
 				?>
-				<div class="col-md-<?php echo $news_layout; ?>">
+				<div class="col-md-<?php echo $spasalon_news_layout; ?>">
 					<article class="post">
 					<?php if( has_post_thumbnail() ): ?>
 						<figure class="post-thumbnail">
@@ -93,13 +93,13 @@ if( $current_options['enable_news'] == true):
 				</div>
 				
 				<?php 
-				if($i==$current_options['news_layout'])
+				if($spasalon_i==$spasalon_current_options['news_layout'])
 				{ 
 					echo '<div class="clearfix"></div>';
-					$i=0;
+					$spasalon_i=0;
 				}
 				 
-				$i++;
+				$spasalon_i++;
 				  
 				endwhile;
 

@@ -181,4 +181,4 @@ $wp_customize->add_control( new Spasalon_Feature_document_Customize_Control( $wp
 );
 
 }
-add_action( 'customize_register', 'spasalon_pro_feature_customizer' );?>
+add_action( 'customize_register', 'spasalon_pro_feature_customizer' );
