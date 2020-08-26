@@ -50,6 +50,10 @@ Source:http://www.apache.org/licenses/LICENSE-2.0
 
 == Changelog ==
 
+= 1.0.5 =
+* Released: 2020-08-26
+- Code bug update
+
 = 1.0.4 =
 * Released: 2020-07-28
 
