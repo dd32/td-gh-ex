@@ -77,27 +77,25 @@ jQuery(document).ready(function($){
    });
 
    //mobile menu
-   $('.menu-opener').click(function(){
-    $('body').addClass('menu-open');
-   });
+    $('.menu-opener').click(function(){
+      $('body').addClass('menu-open');
+    });
 
-   $('.mobile-menu').prepend('<div class="btn-menu-close"></div>');
-
-   $('.btn-menu-close').click(function(){
-    $('body').removeClass('menu-open');
-   });
+    $('.btn-menu-close').click(function(){
+     $('body').removeClass('menu-open');
+    });
 
    $('.overlay').click(function(){
     $('body').removeClass('menu-open');
    });
 
-   $('.primary-menu ul .menu-item-has-children').append('<div class="angle-down"></div>');
-   $('.primary-menu ul li .angle-down').click(function(){
-      $(this).prev().slideToggle();
-      $(this).toggleClass('active');
-   });
+   $('<button class="angle-down"></button>').insertAfter($('.mobile-menu ul .menu-item-has-children > a'));
+    $('.mobile-menu ul li .angle-down').click(function() {
+        $(this).next().slideToggle();
+        $(this).toggleClass('active');
+    });
 
-   $('.secondary-menu ul .menu-item-has-children').append('<div class="angle-down"></div>');
+   $('.secondary-menu ul .menu-item-has-children').append('<button class="angle-down"></button>');
    $('.secondary-menu ul li .angle-down').click(function(){
       $(this).prev().slideToggle();
       $(this).toggleClass('active');
@@ -117,3 +115,5 @@ jQuery(document).ready(function($){
    });
 
 });
+
+// Angledown Accessibility

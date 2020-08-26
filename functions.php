@@ -213,6 +213,7 @@ function benevolent_scripts() {
     wp_enqueue_script( 'owlcarousel2-a11ylayer', get_template_directory_uri() . '/js' . $build . '/owlcarousel2-a11ylayer' . $suffix . '.js', array('owl-carousel'), '0.2.1', true );
     wp_enqueue_script( 'waypoint', get_template_directory_uri() . '/js' . $build . '/waypoint' . $suffix . '.js', array('jquery'), '1.6.2', true );
     wp_enqueue_script( 'counterup', get_template_directory_uri() . '/js' . $build . '/jquery.counterup' . $suffix . '.js', array('jquery', 'waypoint'), '1.0', true );
+    wp_enqueue_script( 'benevolent-modal-accessibility', get_template_directory_uri() . '/js' . $build . '/modal-accessibility' . $suffix . '.js', array( 'jquery' ), BENEVOLENT_THEME_VERSION, true );
     wp_register_script( 'benevolent-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), BENEVOLENT_THEME_VERSION, true );
     
 	$benevolent_slider_auto      = get_theme_mod( 'benevolent_slider_auto', '1' );

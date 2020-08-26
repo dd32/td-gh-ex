@@ -59,23 +59,38 @@
                     if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '">' . esc_html( $button_text ) . '</a>';
                 ?>
             </div>
-            <div class="menu-opener">
+            <button class="menu-opener" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".close-main-nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+                        </button>
         </div> <!-- container -->
         <div class="mobile-menu">
-            <nav class="primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-                </nav><!-- #site-navigation -->
-            <?php if( has_nav_menu( 'secondary' ) ) { ?>
-                
-                <nav class="secondary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                    <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
-                </nav><!-- #site-navigation -->
-                <?php } ?>
-                <?php if( get_theme_mod( 'benevolent_ed_social_header' ) ) do_action( 'benevolent_social_links' ); ?>
+            <nav id="mobile-site-navigation" class="primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <div class="primary-menu-list main-menu-modal cover-modal" data-modal-target-string=".main-menu-modal">
+                    <button class="btn-menu-close close-main-nav-toggle" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".main-menu-modal"></button>
+                    <div class="mobile-menu-title" aria-label="<?php esc_attr_e( 'Mobile', 'benevolent' ); ?>">
+                        <?php 
+                        wp_nav_menu( array( 
+                            'theme_location' => 'primary', 
+                            'menu_id'        => 'mobile-primary-menu',
+                            'menu_class'     => 'nav-menu main-menu-modal',
+                        ) );
+                        ?>
+                    </div>
+                    <?php
+                        if( has_nav_menu( 'secondary' ) ) {  
+                            wp_nav_menu( array( 
+                                'theme_location' => 'secondary', 
+                                'container'      => false,
+                                'menu_id'        => 'secondary-menu', 
+                                'fallback_cb'    => false 
+                            ) );  
+                        } ?>
+                        <?php if( get_theme_mod( 'benevolent_ed_social_header' ) ) do_action( 'benevolent_social_links' ); ?>
+                    </div>            
+                </div>
+            </nav><!-- #site-navigation -->
         </div>
     </div> <!-- mobile-header -->
 

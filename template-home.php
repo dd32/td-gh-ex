@@ -11,6 +11,7 @@ get_header();
     <div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<h2><?php the_title(); ?></h2>
 			    <div class="post-thumbnail">
 		        	<?php the_post_thumbnail(); ?>
 		        </div>

@@ -4,9 +4,10 @@ Theme URI: https://rarathemes.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
 Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://rarathemes.com/previews/?theme=benevolent/, documentation at https://docs.rarathemes.com/docs/benevolent/ and get support at https://rarathemes.com/support-forum/. 
-Version: 1.2.5
+Version: 1.2.6
 Requires PHP: 5.6
-Tested up to: 5.4.2
+Tested up to: 5.5
+Requires at least: 4.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -877,15 +878,15 @@ a:active {
 }
 
 .main-navigation ul ul li:hover>ul {
-    display: block;
+    margin-left: 0;
 }
 
 .main-navigation ul ul li:focus-within>ul {
-    display: block;
+    margin-left: 0;
 }
 
 .main-navigation ul ul li.focus>ul {
-    display: block;
+    margin-left: 0;
 }
 
 .main-navigation ul ul:before {
@@ -4129,3 +4130,77 @@ body.menu-open .overlay{
         justify-content: space-between;
     }
 }
+
+/* Custom Css */
+
+
+.mobile-header .menu-opener {
+    padding: 0px;
+    background: none;
+    border: none;
+    outline : none;
+}
+
+.mobile-header .menu-opener:focus {
+    outline : 1px dotted rgba(0, 0, 0, 0.5);
+}
+
+.mobile-header .mobile-menu .btn-menu-close{
+    padding: 0;
+    z-index: 55555;
+    border : 0;
+    box-shadow: none;
+    outline: none;
+ }
+
+.mobile-header .mobile-menu .btn-menu-close:focus {
+    outline: 1px dotted rgba(0, 0, 0, 0.5);
+}
+
+.angle-down:active,
+.angle-down:visited,
+.angle-down:hover {
+    background: transparent;
+    outline: none;
+ }
+
+.mobile-menu .primary-menu ul li .angle-down:focus,
+.mobile-menu .secondary-menu ul li .angle-down:focus {
+    background: none;
+    outline: 1px dotted rgba(0, 0, 0, 0.5);
+    outline-offset: 0px;
+}
+
+.mobile-menu .angle-down,  ul li .angle-down {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+ }
+
+.mobile-menu .primary-menu .primary-menu-list .social-networks {
+    margin: 50px 0 0;
+    padding: 0 30px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+ .mobile-menu .primary-menu .primary-menu-list .social-networks li  {
+    border-top: 0;
+}
+
+.mobile-menu .primary-menu .primary-menu-list  .social-networks li a {
+    display: flex;
+    padding: 0;
+}
+
+
+.mobile-menu .primary-menu .primary-menu-list .social-networks li a:focus {
+    text-decoration: none;
+    color: #fff;
+    background: #45c267;
+    border-color: #45c267;
+}
+
+   

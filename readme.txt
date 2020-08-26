@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.4.2
-Stable tag: 1.2.5
+Tested up to: 5.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
@@ -159,7 +159,7 @@ Other images are self taken or self created and are GPL compatible.
         - Source: https://github.com/imakewebthings/jquery-waypoints
 
 All other resources and theme elements are licensed under the GPLv2 or later
-
+Some codes are taken from Twenty Twenty theme - https://wordpress.org/themes/twentytwenty/
 
 Benevolent WordPress Theme, Copyright Rara Theme 2015, rarathemes.com
 Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
@@ -172,7 +172,10 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
-    
+    1.2.6
+    * Fixed menu accessibility
+    * Added static page title when hompage sections are disabled
+
     1.2.5
     * Fixed calendar widget design issue for WordPress 5.4.2
     * Fixed menu accessibility
