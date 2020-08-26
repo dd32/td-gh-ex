@@ -39,16 +39,16 @@
 <?php else : ?>
 	<article class="comment-form-section">
 	<?php  
-	 $fields=array(
+	 $quality_fields=array(
 		'author' => '<div class="qua_form_group"><label>'.esc_html__("Name",'quality').'<small>*</small></label><input class="qua_con_input_control" name="author" id="author" value="" type="text"/></div>',
 		'email' => '<div class="qua_form_group"><label>'.esc_html__("Email",'quality').'<small>*<small></label><input class="qua_con_input_control" name="email" id="email" value=""   type="email" ></div>',		
 		);
-	function quality_my_fields($fields) { 
-		return $fields;
+	function quality_my_fields($quality_fields) { 
+		return $quality_fields;
 	}
 	add_filter('comment_form_default_fields','quality_my_fields');
-		$defaults = array(
-		'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
+		$quality_defaults = array(
+		'fields'=> apply_filters( 'comment_form_default_fields', $quality_fields ),
 		'comment_field'=> '<div class="qua_form_group"><label>'.esc_html__("Comment",'quality').'</label>
 		<textarea id="comments" rows="5" class="qua_con_textarea_control" name="comment" type="text"></textarea></div>',		
 		'logged_in_as' => '<p class="logged-in-as">' . esc_html__( "Logged in as",'quality' ).' '.'<a href="'. esc_url(admin_url( 'profile.php' )) .'">'.$user_identity.'</a>'. '  <a href="'. esc_url(wp_logout_url( get_permalink() )).'" title= '. esc_attr__("Log out of this account", 'quality').' >'.esc_html__("Logout",'quality').'</a>' . '</p>',
@@ -58,6 +58,6 @@
 		'title_reply'=> '<h2>'.esc_html__('Leave a Reply','quality').'</h2>',
 		'id_form'=> 'action'
 		);
-	comment_form($defaults);?>						
+	comment_form($quality_defaults);?>						
 <?php endif; // If registration required and not logged in ?>
 <?php endif;

@@ -67,7 +67,7 @@ function quality_general_customizer($wp_customize) {
 
     $wp_customize->add_control(new Quality_color_Customize_Control($wp_customize, 'quality_pro_options[style_sheet]',
                     array(
-                'label' => 'Theme Color Schemes',
+                'label' => esc_html__('Theme Color Schemes', 'quality'),
                 'section' => 'theme_color',
                 'type' => 'radio',
                 'choices' => array(

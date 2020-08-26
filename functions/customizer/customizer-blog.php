@@ -56,7 +56,7 @@ function quality_blog_customizer($wp_customize) {
     $wp_customize->add_setting(
             'quality_pro_options[blog_heading]',
             array('capability' => 'edit_theme_options',
-                'default' => esc_html__('Our latest blog posts', 'quality'),
+                'default' => esc_html__('Proin Tincidunt', 'quality'),
                 'type' => 'option',
                 'sanitize_callback' => 'quality_blog_sanitize_text',
     ));
@@ -75,7 +75,7 @@ function quality_blog_customizer($wp_customize) {
     $wp_customize->add_setting(
             'quality_pro_options[home_blog_description]',
             array(
-                'default' => __('News <b>And</b> Updates', 'quality'),
+                'default' => __('Cras <b>Eros</b> Elit', 'quality'),
                 'capability' => 'edit_theme_options',
                 'type' => 'option',
                 'sanitize_callback' => 'quality_blog_sanitize_text',
@@ -86,11 +86,11 @@ function quality_blog_customizer($wp_customize) {
         'section' => 'blog_setting',
         'type' => 'text',));
 
+}
+
     function quality_blog_sanitize_text($input) {
         return wp_kses_post(force_balance_tags($input));
     }
-
-}
 
 add_action('customize_register', 'quality_blog_customizer');
 

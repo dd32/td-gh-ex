@@ -6,7 +6,7 @@
 require get_template_directory() . '/functions/customizer-notify/quality-customizer-notify.php';
 
 
-$config_customizer = array(
+$quality_config_customizer = array(
     'recommended_plugins' => array(
         'webriti-companion' => array(
             'recommended' => true,
@@ -20,4 +20,4 @@ $config_customizer = array(
     'activate_button_label' => esc_html__('Activate', 'quality'),
     'deactivate_button_label' => esc_html__('Deactivate', 'quality'),
 );
-Quality_Customizer_Notify::init(apply_filters('quality_customizer_notify_array', $config_customizer));
+Quality_Customizer_Notify::init(apply_filters('quality_customizer_notify_array', $quality_config_customizer));

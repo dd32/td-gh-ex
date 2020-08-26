@@ -4,10 +4,10 @@ Theme URI: https://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: https://webriti.com/
 Description: Quality is a perfect theme to create a corporate/business website. It boasts 3 beautifully designed page templates, namely Business Page, Full-width, and Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully responsive on all devices, and is translation-ready. To enable the Business template, just create a normal WordPress page and select Business Template as page template. The Business template can be further personalized in the customizer. Each section in the Business Template is designed according to current business requirements, with sections like Banner, Services, Projects etc. You can use this theme for any type of activity. Quality supports famous plugins like Contact Form 7, to create your contact page or any type of forms you might want to add. Work with the most popular page builders as Elementor, Beaver Builder, etc... Quality also gives a clean and appealing look to the WordPress core gallery feature. See Quality's demo at https://demo.webriti.com/?theme=Quality
-Version:  2.6
+Version:  2.6.1
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready, sticky-post, blog, footer-widgets, featured-images, right-sidebar
 Requires at least: 4.5
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GPLv2 or later
@@ -703,23 +703,6 @@ hr.divider { border-top: none; width: 70px; height: 2px; margin: 15px auto 21px;
     text-decoration: none;
 }
 
-
-/*===================================================================================*/
-/* 10.0 FLEXBOX CSS
-/*===================================================================================*/
-
-.v-center {
-    padding: 0px;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
-}
-
-
 /*===================================================================================*/
 /* 11.0 SERVICE SECTION
 /*===================================================================================*/
@@ -813,6 +796,25 @@ hr.divider { border-top: none; width: 70px; height: 2px; margin: 15px auto 21px;
     .funfact .col-md-3:nth-child(4n+1) { clear: none; }
     .funfact .col-sm-6:nth-child(2n+1) { clear:left; }	
 }
+
+
+/*===================================================================================*/
+/* 10.0 FLEXBOX CSS
+/*===================================================================================*/
+
+.v-center {
+    padding: 0px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
+
 
 
 /*===================================================================================*/
@@ -2742,7 +2744,7 @@ ul.product-categories ul { padding-top: 0 !important; padding-bottom: 0 !importa
 .navbar-brand{padding: 0;}
 
 .post.sticky .post-content{
-    background-color: #00a7d130;
+    background-color: #cfeef7;
 }
 
 .navbar-brand{padding: 0;}

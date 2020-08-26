@@ -142,11 +142,11 @@ function quality_setup() {
 
     require_once('theme_setup_data.php');
     // setup admin pannel defual data for index page        
-    $quality_pro_options = quality_theme_data_setup();
+    $quality_options = quality_theme_data_setup();
 
     //About Theme
     $theme = wp_get_theme(); // gets the current theme
-    if ('Quality' == $theme->name || 'Quality blue' == $theme->name || 'Quality green' == $theme->name || 'Quality orange' == $theme->name) {
+    if ('Quality' == $theme->name) {
         if (is_admin()) {
             require get_template_directory() . '/admin/admin-init.php';
         }
@@ -207,19 +207,36 @@ function quality_sanitize_checkbox($checked) {
 
 add_filter('get_custom_logo', 'quality_change_logo_class');
 
-function quality_change_logo_class($html) {
-    $html = str_replace('custom-logo-link', 'navbar-brand', $html);
-    return $html;
+function quality_change_logo_class($quality_html) {
+    $quality_html = str_replace('custom-logo-link', 'navbar-brand', $quality_html);
+    return $quality_html;
 }
 
 //Custom CSS compatibility
-$quality_pro_options = quality_theme_data_setup();
-$current_options = wp_parse_args(get_option('quality_pro_options', array()), $quality_pro_options);
-if ($current_options['webrit_custom_css'] != '' && $current_options['webrit_custom_css'] != 'nomorenow') {
-    $css = '';
-    $css .= $current_options['webrit_custom_css'];
-    $css .= (string) wp_get_custom_css(get_stylesheet());
-    $current_options['webrit_custom_css'] = 'nomorenow';
-    update_option('quality_pro_options', $current_options);
-    wp_update_custom_css_post($css, array());
+$quality_current_options = wp_parse_args(get_option('quality_pro_options', array()), quality_theme_data_setup());
+if ($quality_current_options['webrit_custom_css'] != '' && $quality_current_options['webrit_custom_css'] != 'nomorenow') {
+    $quality_css = '';
+    $quality_css .= $quality_current_options['webrit_custom_css'];
+    $quality_css .= (string) wp_get_custom_css(get_stylesheet());
+    $quality_current_options['webrit_custom_css'] = 'nomorenow';
+    update_option('quality_pro_options', $quality_current_options);
+    wp_update_custom_css_post($quality_css, array());
 }
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function quality_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'quality_skip_link_focus_fix' );

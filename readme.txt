@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready, sticky-post, blog, footer-widgets, featured-images, right-sidebar
 Requires at least: 4.5
-Tested up to: 5.4.2
-Stable tag: 2.6
+Tested up to: 5.5
+Stable tag: 2.6.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,10 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank y
 Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
 == Changelog ==
+
+@Version 2.6.1
+1. Prefix fixed
+2. IE11 issue dropdown menu fix
 
 @Version 2.6
 1. Implement the Accessibility including skip to content and keyboard navigation.

@@ -41,11 +41,6 @@ function quality_copyright_sanitize_text($input) {
     return wp_kses_post(force_balance_tags($input));
 }
 
-function quality_copyright_sanitize_html($input) {
-
-    return force_balance_tags($input);
-}
-
 add_action('customize_register', 'quality_copyright_customizer');
 
 /**

@@ -61,7 +61,7 @@ function quality_slider_customizer($wp_customize) {
     //Slider Title
     $wp_customize->add_setting(
             'quality_pro_options[home_image_title]', array(
-        'default' => esc_html__('Elegant design', 'quality'),
+        'default' => esc_html__('Lorem Ipsum', 'quality'),
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'type' => 'option',
@@ -91,7 +91,7 @@ function quality_slider_customizer($wp_customize) {
     //Slider Banner discription
     $wp_customize->add_setting(
             'quality_pro_options[home_image_description]', array(
-        'default' => esc_html__('Create beautiful websites, 100% responsive and easy to customize.', 'quality'),
+        'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra volutpat vehicula.', 'quality'),
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'type' => 'option',
@@ -107,7 +107,7 @@ function quality_slider_customizer($wp_customize) {
     // Slider banner button text
     $wp_customize->add_setting(
             'quality_pro_options[home_image_button_text]', array(
-        'default' => esc_html__('Get this theme', 'quality'),
+        'default' => esc_html__('Etiam sit amet', 'quality'),
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
         'type' => 'option',

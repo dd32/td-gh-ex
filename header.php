@@ -10,8 +10,7 @@
         <link rel="profile" href="<?php 'http://gmpg.org/xfn/11'; ?>" />
         <!-- Theme Css -->
         <?php
-        $quality_pro_options = quality_theme_data_setup();
-        $current_options = wp_parse_args(get_option('quality_pro_options', array()), $quality_pro_options);
+        $quality_current_options = wp_parse_args(get_option('quality_pro_options', array()), quality_theme_data_setup());
         wp_head();
         ?>
     </head>
@@ -25,7 +24,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                       <?php 
-                if($current_options['text_title'] ==true && get_theme_mod('header_text')==false)
+                if($quality_current_options['text_title'] ==true && get_theme_mod('header_text')==false)
                 { 
                     if((get_option('blogname')!='') || (get_option('blogdescription')!=''))
                     {?>
@@ -38,23 +37,23 @@
                             </a></h2>
                         <?php
                         }
-                        $description = get_bloginfo( 'description', 'display' );
+                        $quality_description = get_bloginfo( 'description', 'display' );
                         if(get_option('blogdescription')!='')
                         {
-                            if ( $description || is_customize_preview() )
+                            if ( $quality_description || is_customize_preview() )
                             {
                                 ?>
-                            <p class="site-description"><?php echo $description; ?></p>
+                            <p class="site-description"><?php echo $quality_description; ?></p>
                             <?php
                             }
                         }
                     ?></div>
                 <?php } 
                 } 
-                elseif($current_options['text_title'] ==false && $current_options['upload_image_logo']!='' && !(has_custom_logo()) )
+                elseif($quality_current_options['text_title'] ==false && $quality_current_options['upload_image_logo']!='' && !(has_custom_logo()) )
                 { ?> 
                     <a class="navbar-brand" href="<?php echo esc_url(home_url( '/' )); ?>">
-                        <img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { echo absint($current_options['height']); }  else { "80"; } ?>px; width:<?php if($current_options['width']!='') { echo absint($current_options['width']); }  else { "200"; } ?>px;" alt="<?php echo esc_attr(get_bloginfo( 'title' )); ?>" />
+                        <img src="<?php echo esc_url($quality_current_options['upload_image_logo']); ?>" style="height:<?php if($quality_current_options['height']!='') { echo absint($quality_current_options['height']); }  else { "80"; } ?>px; width:<?php if($quality_current_options['width']!='') { echo absint($quality_current_options['width']); }  else { "200"; } ?>px;" alt="<?php echo esc_attr(get_bloginfo( 'title' )); ?>" />
                     </a>
                     <?php
                 }   
@@ -64,13 +63,13 @@
                         <?php
                         if ( has_custom_logo() ) 
                         {   
-                            $custom_logo_id = get_theme_mod( 'custom_logo' );
-                            $post_status=get_post_status ( $custom_logo_id );
-                            $my_options = get_option('quality_pro_options');
-                            $my_options['upload_image_logo'] = '';
-                            update_option('quality_pro_options', $my_options);
-                            $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                            echo '<img src="'.esc_url($image[0]).'" alt="'. esc_attr(get_bloginfo( 'title' )).'" />';
+                            $quality_custom_logo_id = get_theme_mod( 'custom_logo' );
+                            $quality_post_status=get_post_status ( $quality_custom_logo_id );
+                            $quality_my_options = get_option('quality_pro_options');
+                            $quality_my_options['upload_image_logo'] = '';
+                            update_option('quality_pro_options', $quality_my_options);
+                            $quality_image = wp_get_attachment_image_src( $quality_custom_logo_id , 'full' );
+                            echo '<img src="'.esc_url($quality_image[0]).'" alt="'. esc_attr(get_bloginfo( 'title' )).'" />';
                         }?>
                     </a>
                 <?php
@@ -86,12 +85,12 @@
                                 
                             <?php
                             }
-                            $description = get_bloginfo( 'description', 'display' );
+                            $quality_description = get_bloginfo( 'description', 'display' );
                             if(get_option('blogdescription')!='')
                             {
-                                if ( $description || is_customize_preview() )
+                                if ( $quality_description || is_customize_preview() )
                                 { ?>
-                                    <p class="site-description"><?php echo $description; ?></p>
+                                    <p class="site-description"><?php echo $quality_description; ?></p>
                                 <?php }
                             }?>
                         </div>

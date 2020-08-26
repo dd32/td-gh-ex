@@ -553,7 +553,7 @@ if (!class_exists('Quality_About_Page')) {
                 'name' => esc_html__('Contact Form 7', 'quality'),
                 'slug' => 'contact-form-7',
                 'function' => 'wpcf7',
-                'desc' => esc_html__('it is recommended that you install the Contact Form 7 plugin to show contact form on pages', 'quality'),
+                'desc' => esc_html__('It is recommended that you install the Contact Form 7 plugin to show contact form on pages', 'quality'),
             );
 
             return $plugins;

@@ -12,13 +12,12 @@
 		</div>
 			<?php } ?>
 <?php
-	$quality_pro_options=quality_theme_data_setup(); 
-	$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
+	$quality_current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), quality_theme_data_setup() ); ?>
 <div class="row">
 		<div class="col-md-12">
 			<div class="site-info">
-				<?php if($current_options['footer_copyright_text']!='') { ?>
-		<?php echo wp_kses_post($current_options['footer_copyright_text']); } ?>
+				<?php if($quality_current_options['footer_copyright_text']!='') { ?>
+		<?php echo wp_kses_post($quality_current_options['footer_copyright_text']); } ?>
 			</div>
 		</div>			
 </div>
@@ -34,7 +33,6 @@
 <!-- Page scroll top -->
 
 <?php 
-do_action ('quality_demo_lite_switcher');
 
  wp_footer(); ?>
 </body>

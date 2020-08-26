@@ -2,7 +2,7 @@
 /**
  * Getting started template
  */
-$customizer_url = admin_url() . 'customize.php' ;
+$quality_customizer_url = admin_url() . 'customize.php' ;
 ?>
 
 <div id="getting_started" class="quality-tab-pane active">

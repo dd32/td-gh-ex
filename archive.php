@@ -31,7 +31,7 @@ quality_breadcrumbs(); ?>
 		</div>
 		<?php get_sidebar(); ?>
 	</div>
-</div>
+<!--</div>-->
 </section>
 <?php 
 get_footer();

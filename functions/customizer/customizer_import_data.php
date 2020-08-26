@@ -50,9 +50,9 @@ class quality_customize_import_dummy_data {
       } */
 }
 
-$import_customizer = array(
+$quality_import_customizer = array(
     'import_data' => array(
         'recommended' => true,
     ),
 );
-quality_customize_import_dummy_data::init(apply_filters('quality_import_customizer', $import_customizer));
+quality_customize_import_dummy_data::init(apply_filters('quality_import_customizer', $quality_import_customizer));
