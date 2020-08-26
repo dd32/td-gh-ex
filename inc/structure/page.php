@@ -1,42 +1,38 @@
 <?php
 
-if ( ! function_exists( 'aemi_page_header' ) )
+if (!function_exists('aemi_page_header'))
 {
 	function aemi_page_header()
 	{
+		if (!is_front_page())
+		{
+			?><header class="post-header<?php echo has_post_thumbnail() ? ' color-scheme-dark' : '' ?>"><?php
 
-		if ( ! is_front_page() ) { ?>
-
-			<div class="post-header"><?php
-
-			aemi_featured_image();
+				aemi_featured_image();
 
 				?><div class="post-info"><?php
+					aemi_info_dates();
 
-					the_title( '<h1 class="post-title" itemprop="name">', '</h1>' );
+					the_title('<h1 class="post-title">', '</h1>');
 
-					aemi_meta_header();
+					aemi_info_author();
+				?></div><?php
 
-				?></div>
-
-			</div><?php
-
+			aemi_meta_header();
+			
+		?></header><?php
 		}
-
 	}
 }
 
-if ( ! function_exists( 'aemi_page_content' ) )
+
+if (!function_exists('aemi_page_content'))
 {
 	function aemi_page_content()
 	{
-		?><div class="post-content" itemprop="mainContentOfPage"><?php
-
+		?><main class="post-content"><?php
 			the_content();
-
 			aemi_page_navigation();
-
-		?></div><?php
-
+		?></main><?php
 	}
 }

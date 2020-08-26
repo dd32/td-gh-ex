@@ -1,43 +1,63 @@
 <?php
 
-if ( ! function_exists( 'aemi_post_header' ) )
+if (!function_exists('aemi_post_header'))
 {
 	function aemi_post_header()
 	{
 
-		?><div class="post-header"><?php
+		$singular = is_singular();
 
+		?><header class="post-header<?php echo has_post_thumbnail() ? ' color-scheme-dark' : '' ?>"><?php
+		
 			aemi_featured_image();
 
-			?><div class="post-info"><?php
+			if ($singular)
+			{
+				?><div class="post-info"><?php
+			}
+			else
+			{
+				?><a class="post-info" href="<?php echo esc_url(get_permalink()) ?>" rel="bookmark"><?php
+			}
 
-				if ( is_single() ) {
+				// Date
+				aemi_info_dates();
 
-					the_title( '<h1 class="post-title" itemprop="name">', '</h1>' );
-
-				} else {
-
-					the_title( sprintf( '<h1 class="post-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
-
+				// Title
+				if ($singular)
+				{
+					the_title('<h1 class="post-title">', '</h1>');
+				}
+				else
+				{
+					the_title('<h2 class="post-title">', '</h2>');
 				}
 
-				aemi_meta_header(); 
+				// Author
+				aemi_info_author();
 
-				?></div>
-		</div><?php
+			if ($singular)
+			{
+				?></div><?php
+			}
+			else
+			{
+				?></a><?php
+			}
+		
+			aemi_meta_header();
+
+		?></header><?php
 	}
 }
 
-if ( ! function_exists( 'aemi_post_content' ) )
+if (!function_exists('aemi_post_content'))
 {
 	function aemi_post_content()
 	{
-		?><div class="post-content" itemprop="articleBody"><?php
-
+		?><main class="post-content"><?php
 			the_content();
-
 			aemi_page_navigation();
-
-		?></div><?php
+		?></main><?php
 	}
 }

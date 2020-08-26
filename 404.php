@@ -1,25 +1,19 @@
-<?php get_header(); ?>
+<?php
 
-<article id="post-lead" class="post not-found">
+get_header();
 
-	<div class="post-header">
+?><article id="entry-head" class="entry post page-404 not-found">
+    <header class="post-header">
+        <div class="post-info">
+            <h1 class="post-title"><?php echo esc_html__('Code 404', 'aemi') ?></h1>
+            <div class="archive-details 404-not-found"><?php
+                esc_html_e('You\'re taking a wrong turn. The page you are looking for is no longer available or never existed. Please try a search instead.', 'aemi');
+            ?></div>
+        </div>
+    </header>
+    <main class="post-content"><?php
+        get_search_form();
+    ?></main>
+</article><?php 
 
-		<h1 class="post-title">
-
-			<?php esc_html_e( _x( 'Error 404', '404 error', 'aemi' ) ); ?>
-
-		</h1>
-
-	</div>
-
-	<div class="post-content">
-
-		<p><?php esc_html_e( _x( 'Nothing found for the requested page. Try a search instead?', 'not found text', 'aemi' ) ) ; ?></p>
-
-		<?php get_search_form(); ?>
-
-	</div>
-
-</article>
-
-<?php get_footer(); ?>
+get_footer();

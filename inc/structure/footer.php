@@ -1,91 +1,83 @@
 <?php
 
 
-if ( ! function_exists( 'aemi_sidebar_widgets' ) )
-{
-	function aemi_sidebar_widgets()
-	{
-		if ( is_active_sidebar( 'sidebar-widget-area' ) )
-		{
-			?><div id="sidebar"><?php
-
-				dynamic_sidebar( 'sidebar-widget-area' );
-
-			?></div><?php
-		}
-	}
-}
-
-
-if ( ! function_exists( 'aemi_footer_widgets' ) )
+if (!function_exists('aemi_footer_widgets'))
 {
 	function aemi_footer_widgets()
 	{
-		if ( is_active_sidebar( 'footer-widget-area' ) )
+		$sidebar_id = 'footer-widget-area';
+
+		$total_widgets = wp_get_sidebars_widgets();
+		
+		if (is_active_sidebar($sidebar_id) && count($total_widgets[$sidebar_id]) > 0)
 		{
-			?><div id="footer-widgets"><?php
 
-				dynamic_sidebar( 'footer-widget-area' );
+			$width = preg_replace( '/_/', '-', get_theme_mod('aemi_widget_footer_width','default_width'));
+			$columns = preg_replace( '/_/', '-', get_theme_mod('aemi_widget_footer_column_layout','two_columns'));
 
-			?></div><?php
+			?><div id="footer-widgets">
+				<div class="widget-area <?php echo esc_attr( "$width $columns" ) ?>"><?php
+					dynamic_sidebar( 'footer-widget-area' );
+				?></div>
+			</div><?php
 		}
 	}
 }
 
 
-if ( ! function_exists( 'aemi_footer_site_description' ) )
+if (!function_exists('aemi_footer_site_description'))
 {
 	function aemi_footer_site_description()
 	{
-		if ( get_bloginfo( 'description' ) )
+		if (get_bloginfo('description'))
 		{
-			?><h5 id="site-description" class="site-description">
-
-				&#x2039; <?php echo esc_html( get_bloginfo( 'description' ) ); ?> &#x203A;
-
-			</h5><?php
+			printf(
+				'<strong id="site-description" class="site-description h3">%s</strong>',
+				esc_html(get_bloginfo('description'))
+			);
 		}
 	}
 }
 
 
-if ( ! function_exists( 'aemi_footer_menu' ) )
+if (!function_exists('aemi_footer_menu'))
 {
 	function aemi_footer_menu()
 	{
-		if ( has_nav_menu( 'footer-menu' ) )
+		if (has_nav_menu('footer-menu'))
 		{
 			?><nav id="footer-menu"><?php
-
-				wp_nav_menu( array(
+				wp_nav_menu([
 					'theme_location' => 'footer-menu',
 					'depth' => '1'
-				) );
-
+				]);
 			?></nav><?php
 		}
 	}
 }
 
 
-if ( ! function_exists( 'aemi_footer_credit' ) )
+if (!function_exists('aemi_footer_credit'))
 {
 	function aemi_footer_credit()
 	{
-		?><div id="copyright"><?php
-
-			echo sprintf( _x( '%1$s %2$s %3$s. All Rights Reserved.', 'copyright', 'aemi' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) );
-
-		?></div><?php
+		?><span id="site-credit"><?php
+			printf(
+				__('%1$s %2$s %3$s. All Rights Reserved.', 'aemi'),
+				'&copy;',
+				date('Y'),
+				esc_html(get_bloginfo('name'))
+			);
+		?></span><?php
 	}
 }
 
 
-if ( ! function_exists( 'aemi_footer_wp_footer' ) )
+if (!function_exists('aemi_footer_wp_footer'))
 {
 	function aemi_footer_wp_footer()
 	{
-		if ( wp_footer() )
+		if (wp_footer())
 		{
 			wp_footer();
 		}
