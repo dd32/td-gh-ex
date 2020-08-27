@@ -108,8 +108,8 @@ $my_theme = wp_get_theme();
 		    color: #fff;
 		    font-size: 14px;
 		    font-weight: 600;
-		    background: #ffc107;
-		    border-color: #ffc107;
+		    background: #0739c5;
+    		border-color: #0739c5;
 		}
 		.hello-elementor-notice-content {
 			padding: 28px;
@@ -149,30 +149,25 @@ $my_theme = wp_get_theme();
 		    font-weight: 600;
 		    color: #ffbc00;
 		}
-		a.astra-pro {
-		    font-weight: 600;
-		    font-size: 18px;
+		a.astral-pro {
+		    margin-left: 18px;
+		    background: #ffc107;
+		    font-size: 16px;
+		    color: #000;
+		    font-weight: 700;
 		}
-		a.rainbow2 {
-    background-color: #ffc247;
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    color: #fff;
-    /* -webkit-background-clip: text; */
-    background-clip: text;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.blinking{
-    animation:blinkingText 1.2s infinite;
-}
-@keyframes blinkingText{
-    0%{     color: transparent;    }
-    49%{    color: transparent; }
-    60%{    color: #ff0000; }
-    99%{    color:#ff0000;  }
-    100%{   color: #ff0000;    }
-}
+		@-webkit-keyframes blinker {
+		  from {opacity: 1.0;}
+		  to {opacity: 0.0;}
+		}
+		.blink {
+		    text-decoration: blink;
+		    -webkit-animation-name: blinker;
+		    -webkit-animation-duration: 0.6s;
+		    -webkit-animation-iteration-count: infinite;
+		    -webkit-animation-timing-function: ease-in-out;
+		    -webkit-animation-direction: alternate;
+		}
 	</style>
 
     <div class="notice updated is-dismissible review-page">
@@ -189,7 +184,7 @@ $my_theme = wp_get_theme();
 				
 				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Welcome Page & See Demo','astral'); ?> </a>
 
-				<!--<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php //echo admin_url('/themes.php?page=astral'); ?>" > <?php //_e('Astral Pro coming soon','astral'); ?> </a>-->
+				<a target="_blank" class="astral-pro reply-btn blink" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e(' Astral Premium - Special Offer','astral'); ?> </a>
 				
 			</div>
 		</div>

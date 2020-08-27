@@ -1,6 +1,6 @@
 <?php if (!function_exists('astral_info_page')) {
 	function astral_info_page() {
-	$page1=add_theme_page(__('Welcome to Astral', 'astral'), __('<span style="color:#ffe100">About Astral</span>', 'astral'), 'edit_theme_options', 'astral', 'astral_display_theme');
+	$page1=add_theme_page(__('Welcome to Astral', 'astral'), __('<span style="color:#ffe100">Welcome Astral</span>', 'astral'), 'edit_theme_options', 'astral', 'astral_display_theme');
 	
 	add_action('admin_print_styles-'.$page1, 'astral_pro_info');
 	}	
@@ -15,11 +15,6 @@ function astral_pro_info(){
 	//JS
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('bootstrap-js',get_template_directory_uri() .'/js/bootstrap.js');
-
-	// Demo Import
-	//wp_enqueue_script( 'plugin-install' );
-	//wp_enqueue_script( 'updates' );
-	//wp_enqueue_script( 'astral-about-page-css', get_template_directory_uri(). '/inc/js/about-astral-page.js' );
 
 } 
 if (!function_exists('astral_display_theme')) {
@@ -37,6 +32,53 @@ if (!function_exists('astral_display_theme')) {
 	            <p class="desc"><?php esc_html_e('Light and Easy to Customize WordPress Theme','astral'); ?></p>
 			</div>
 		</div> 
+
+		<div class="container pl-0 pr-0">
+			<div class="row astral-pro-box">
+				<div class="col-md-4 pr-0">
+					<img class="pro-image" src="<?php echo esc_url(get_template_directory_uri()) .'/images/astral-premium.png' ?>">
+				</div>
+				<div class="col-md-8 pl-0">
+					<div class="feature-box">
+						<div class="row">
+							<div class="col-md-6">
+								<h1 class="offer-title">Special Offer With 28% Off</h1>
+								<ul class="feature-list">
+									<li>Multiple Header Option</li>
+									<li>Better Typography</li>
+									<li>Site Layouts</li>
+									<li>3+ Blog Layouts</li>
+									<li>2 Homepage</li>
+									<li>Sticky Header</li>
+									<li>More Features..........</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<div class="imp-link">
+									<a style="text-decoration: none;" target="_blank" href="http://mywebapp.in/wordpress-premium-theme/">
+										<div class="price-box">
+											<h2 class="offer-title1">
+												Limited Offer
+											</h2>
+											<h3><strike>$25</strike> $18 </h3>
+										</div>
+									</a>
+
+									<ul>
+										<li><a target="_blank" class="detail-link" href="http://mywebapp.in/wordpress-premium-theme/">
+											View Detail
+										</a></li>
+										<li><a target="_blank" class="demo-link" href="http://demo.mywebapp.in/astral-premium/">
+											View Demo
+										</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		
 		<div class="container">
 			<div class="row intro-section">
@@ -110,8 +152,6 @@ if (!function_exists('astral_display_theme')) {
 			</div>
 		</div>
 	</div>
-
-
 <?php
 	}
 }
