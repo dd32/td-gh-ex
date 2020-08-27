@@ -101,7 +101,7 @@
                 <div class="topbar">
                   <div class="<?php if( get_theme_mod( 'advance_coaching_sticky_header', false) != '' || get_theme_mod( 'advance_coaching_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
                     <div class="toggle-menu responsive-menu">
-                      <button role="tab" class="mobiletoggle" onclick="advance_coaching_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
+                      <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
                     </div>
                     <div class="row m-0">
                       <div class="col-lg-11 col-md-11 padding0">
@@ -124,7 +124,7 @@
                                   <?php }?>
                                 </div>
                                 <?php get_search_form();?>
-                                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_coaching_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-coaching'); ?></span></a>
+                                <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-coaching'); ?></span></a>
                               </nav>
                             </div>
                           </div>

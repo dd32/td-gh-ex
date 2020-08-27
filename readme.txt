@@ -2,7 +2,7 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 7.2.14
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -149,6 +149,9 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Added “Call-able” Link.
   * Done Email Address Clickable. 
   * Updated POT files.
+
+= 0.5.3 =
+  * Changed menu focus js.
 
 == Resources ==
 
