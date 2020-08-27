@@ -33,7 +33,7 @@
       <div id="responsive-navbar" class="<?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header', false) != '' || get_theme_mod( 'advance_ecommerce_store_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
           <div class="container">
             <div class="toggle-menu mobile-menu">
-              <button class="mobiletoggle" onclick="advance_ecommerce_store_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
+              <button class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
             </div>
             <div id="res-sidebar" class="nav sidebar">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Responsive Menu', 'advance-ecommerce-store' ); ?>">
@@ -50,7 +50,7 @@
                   <?php get_search_form();?>
                   <?php dynamic_sidebar('social'); ?>
                 </div>
-                <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="advance_ecommerce_store_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
+                <a href="javascript:void(0)" class="closebtn mobile-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
               </nav>
             </div>
           </div>

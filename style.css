@@ -4,9 +4,9 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 7.2.14
-Version: 0.6.4
+Version: 0.6.5
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -76,7 +76,9 @@ a:focus,
 a:hover{
   text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+a:focus, input:focus, textarea:focus, 
+.woocommerce form .form-row input:focus.input-text, 
+.woocommerce form .form-row textarea:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
@@ -503,7 +505,7 @@ span.cart-value {
 }
 /* ---------HEADER--------- */
 .main-navigation .sub-menu > li > a:focus,
-.toggle-menu button:focus{
+.toggle-menu button:focus, #res-sidebar input[type="submit"]:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
 }
@@ -522,7 +524,6 @@ span.cart-value {
 }
 #menu-sidebar {
   text-align: center;
-  display: inline;
 }
 ul.list_nav {
   margin: 0 auto;
@@ -544,9 +545,6 @@ ul.list_nav {
 .primary-navigation li:hover a{
   background-color: #fff;
   color: #cb4f00;
-}
-#woomenu-sidebar{
-  display: inline;
 }
 #woomenu-sidebar .primary-navigation a{
   padding: 10px 25px 10px 10px;
@@ -1842,6 +1840,9 @@ iframe{
   .site-logo{
     padding: 10px 0;
   }
+  span.cart_no{
+    padding: 12px 15px;
+  }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
 
@@ -1873,13 +1874,8 @@ iframe{
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    visibility: hidden;
+    display: none;
     padding-top: 60px;
-    transition: 0.5s;
-  }
-  .sidebar.display{
-    visibility: visible;
-    width: 100%;
     transition: 0.5s;
   }
   .sidebar .closebtn {
@@ -1937,7 +1933,6 @@ iframe{
     padding-bottom: 15px;
   }
   #res-sidebar {
-    display: inline;
     background-image: linear-gradient(-90deg, #000 0%, #cb4f00 120% );
     opacity: 0.95;
   }
