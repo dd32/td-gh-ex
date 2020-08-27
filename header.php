@@ -60,7 +60,7 @@
               <?php endif; ?>
             </div>
             <div class="toggle-menu responsive-menu">
-              <button class="mobiletoggle" role="tab" onclick="advance_it_company_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-it-company'); ?></span></button>
+              <button class="mobiletoggle" role="tab"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-it-company'); ?></span></button>
             </div>
           </div>
           <div class="col-lg-8 col-md-12">
@@ -174,7 +174,7 @@
                         </div>
                         <?php get_search_form();?>
                       </div>
-                      <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_it_company_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-it-company'); ?></span></a>
+                      <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-it-company'); ?></span></a>
                     </nav>
                   </div>
                 </div>
