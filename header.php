@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-        <button role="tab" class="mobiletoggle" onclick="bb_ecommerce_store_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
+        <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
       </div>
       <div class="top-header">
         <div class="container">
@@ -153,7 +153,7 @@
                     </div>
                     <?php get_search_form();?>
                   </div>
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_ecommerce_store_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-ecommerce-store'); ?></span></a>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-ecommerce-store'); ?></span></a>
                 </nav>
               </div>
             </div>

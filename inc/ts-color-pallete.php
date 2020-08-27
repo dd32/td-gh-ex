@@ -200,6 +200,19 @@
 		$bb_ecommerce_store_custom_css .='} }';
 	}
 
+	$bb_ecommerce_store_sticky_header = get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',true);
+    if($bb_ecommerce_store_sticky_header == true){
+    	$bb_ecommerce_store_custom_css .='@media screen and (max-width:575px) {';
+		$bb_ecommerce_store_custom_css .='.fixed-header{';
+			$bb_ecommerce_store_custom_css .='display:block;';
+		$bb_ecommerce_store_custom_css .='} }';
+	}else if($bb_ecommerce_store_sticky_header == false){
+		$bb_ecommerce_store_custom_css .='@media screen and (max-width:575px) {';
+		$bb_ecommerce_store_custom_css .='.fixed-header{';
+			$bb_ecommerce_store_custom_css .='display:none;';
+		$bb_ecommerce_store_custom_css .='} }';
+	}
+
 	/*------------------ Skin Option  -------------------*/
 	$bb_ecommerce_store_theme_lay = get_theme_mod( 'bb_ecommerce_store_background_skin_mode','Transparent Background');
     if($bb_ecommerce_store_theme_lay == 'With Background'){
