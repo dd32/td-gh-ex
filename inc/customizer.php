@@ -921,6 +921,41 @@ function advance_education_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_education_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_education_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_education_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-education' ),
+		'section' => 'advance_education_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_education_slider_image_height',array(
+		'default'=> __('550','advance-education'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-education'),
+		'section'=> 'advance_education_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_education_slider_button',array(
+		'default'=> __('READ MORE','advance-education'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_slider_button',array(
+		'label'	=> __('Slider Button','advance-education'),
+		'section'=> 'advance_education_slider',
+		'type'=> 'text'
+	));
+
 	//Popular Courses 
 	$wp_customize->add_section('advance_education_category',array(
 		'title'	=> __('Popular Courses','advance-education'),

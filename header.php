@@ -42,14 +42,14 @@
               <div class="col-lg-2 col-md-3">
                 <?php if( get_theme_mod('advance_education_phone1') != ''){ ?>
                   <div class="phone">
-                    <i class="fas fa-phone"></i><span><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span>
+                    <a href="tel:<?php echo esc_url( get_theme_mod('advance_education_phone1','' )); ?>"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span></a>
                   </div> 
                 <?php } ?>
               </div>
               <div class="col-lg-3 col-md-3 p-0">
                 <?php if( get_theme_mod('advance_education_mail1') != ''){ ?>
                   <div class="mail">
-                    <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span>
+                    <a href="mailto:<?php echo esc_url( get_theme_mod('advance_education_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span></a>
                   </div>  
                 <?php } ?>
               </div>
@@ -66,7 +66,7 @@
   </header>
   <div class="<?php if( get_theme_mod( 'advance_education_sticky_header', false) != '' || get_theme_mod( 'advance_education_responsive_sticky_header', false) != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <div class="toggle-menu responsive-menu">
-      <button role="tab" class="mobiletoggle" onclick="advance_education_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
+      <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
     </div>
   </div>
 

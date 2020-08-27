@@ -56,12 +56,12 @@
                 <?php } ?>
                 <?php if( get_theme_mod('advance_education_phone1') != ''){ ?>
                   <div class="phone">
-                    <i class="fas fa-phone"></i><span><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span>
+                    <a href="tel:<?php echo esc_url( get_theme_mod('advance_education_phone1','' )); ?>"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span></a>
                   </div> 
                 <?php } ?>
                 <?php if( get_theme_mod('advance_education_mail1') != ''){ ?>
                   <div class="mail">
-                    <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span>
+                    <a href="mailto:<?php echo esc_url( get_theme_mod('advance_education_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span></a>
                   </div>  
                 <?php } ?>
                 <?php get_search_form();?>
@@ -69,7 +69,7 @@
                   <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'MY ACCOUNT','advance-education' );?></span></a>
                 </div>
               </div>
-              <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_education_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-education'); ?></span></a>
+              <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-education'); ?></span></a>
             </nav>
           </div>
         </div>

@@ -5,87 +5,6 @@ jQuery(function($){
     animation:   {opacity:'show',height:'show'},  
     speed:       'fast'                        
   });
-
-});
-
-function advance_education_resmenu_open() {
-    window.advance_education_mobileMenu=true;
-  jQuery(".sidebar").addClass('display');
-}
-function advance_education_resmenu_close() {
-    window.advance_education_mobileMenu=false;
-  jQuery(".sidebar").removeClass('display');
-}
-
-jQuery(document).ready(function () {
-
-  window.advance_education_currentfocus=null;
-  advance_education_checkfocusdElement();
-  var advance_education_body = document.querySelector('body');
-  advance_education_body.addEventListener('keyup', advance_education_check_tab_press);
-  var advance_education_gotoHome = false;
-  var advance_education_gotoClose = false;
-  window.advance_education_mobileMenu=false;
-  function advance_education_checkfocusdElement(){
-    if(window.advance_education_currentfocus=document.activeElement.className){
-      window.advance_education_currentfocus=document.activeElement.className;
-    }
-  }
-  function advance_education_check_tab_press(e) {
-    "use strict";
-    // pick passed event or global event object if passed one is empty
-    e = e || event;
-    var activeElement;
-
-    if(window.innerWidth < 999){
-      if (e.keyCode == 9) {
-        if(window.advance_education_mobileMenu){
-          if (!e.shiftKey) {
-            if(advance_education_gotoHome) {
-              jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).focus();
-            }
-          }
-          if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
-            advance_education_gotoHome = true;
-          } else {
-            advance_education_gotoHome = false;
-          }
-
-        }else{
-
-          if(window.advance_education_currentfocus=="mobiletoggle"){
-            jQuery( "" ).focus();
-          }
-        }
-      }
-    }
-    if (e.shiftKey && e.keyCode == 9) {
-      if(window.innerWidth < 999){
-        if(window.advance_education_currentfocus=="header-search"){
-          jQuery(".mobiletoggle").focus();
-        }else{
-          if(window.advance_education_mobileMenu){
-            if(advance_education_gotoClose){
-              jQuery("a.closebtn.responsive-menu").focus();
-            }
-            if (jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).is(":focus")) {
-              advance_education_gotoClose = true;
-            } else {
-              advance_education_gotoClose = false;
-            }
-        
-          }else{
-
-            if(window.advance_education_mobileMenu){
-            }
-          }
-
-        }
-      }
-    }
-    advance_education_checkfocusdElement();
-  }
-
 });
 
 /**** Hidden search box ***/
@@ -100,9 +19,9 @@ function advance_education_search_close() {
 jQuery(document).ready(function () {
   jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() > 0) {
-      jQuery('#scroll-top').fadeIn();
+        jQuery('#scroll-top').fadeIn();
     } else {
-      jQuery('#scroll-top').fadeOut();
+        jQuery('#scroll-top').fadeOut();
     }
   });
   jQuery(window).on("scroll", function () {
@@ -110,28 +29,22 @@ jQuery(document).ready(function () {
   });
   jQuery('#scroll-top').click(function () {
     jQuery("html, body").animate({
-      scrollTop: 0
+        scrollTop: 0
     }, 600);
     return false;
   });
+
+  advance_education_MobileMenuInit();
 });
 
 (function( $ ) {
 
   $(window).scroll(function(){
     var sticky = $('.sticky-header'),
-    scroll = $(window).scrollTop();
+        scroll = $(window).scrollTop();
 
     if (scroll >= 100) sticky.addClass('fixed-header');
     else sticky.removeClass('fixed-header');
-  });
-
-  $(window).scroll(function(){
-    var sticky = $('.logo-sticky-header'),
-    scroll = $(window).scrollTop();
-
-    if (scroll >= 100) sticky.addClass('fixed-logo');
-    else sticky.removeClass('fixed-logo');
   });
 
 })( jQuery );
@@ -139,8 +52,56 @@ jQuery(document).ready(function () {
 jQuery(function($){
   $(window).load(function() {
     $("#loader-wrapper").delay(1000).fadeOut("slow");
-    $("#loader").delay(1000).fadeOut("slow");
+      $("#loader").delay(1000).fadeOut("slow");
   })
 });
 
+function advance_education_MobileMenuInit() {
 
+  /* First and last elements in the menu */
+  var advance_education_firstTab = jQuery('.main-menu-navigation ul:first li:first a');
+  var advance_education_lastTab  = jQuery('a.closebtn'); /* Cancel button will always be last */
+
+  jQuery(".mobiletoggle").click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    jQuery(".sidebar").show().animate({width: "100%", opacity: 1}, 200);
+    jQuery('body').addClass("noscroll");
+    advance_education_firstTab.focus();
+  });
+
+  jQuery("a.closebtn").click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    jQuery(".sidebar").hide().animate({width: "0%", opacity: 0},200);
+    jQuery('body').removeClass("noscroll");
+    jQuery(".mobiletoggle").focus();
+  });
+
+  /* Redirect last tab to first input */
+  advance_education_lastTab.on('keydown', function (e) {
+    if (jQuery('body').hasClass('noscroll'))
+    if ((e.which === 9 && !e.shiftKey)) {
+      e.preventDefault();
+      advance_education_firstTab.focus();
+    }
+  });
+
+  /* Redirect first shift+tab to last input*/
+  advance_education_firstTab.on('keydown', function (e) {
+    if (jQuery('body').hasClass('noscroll'))
+    if ((e.which === 9 && e.shiftKey)) {
+      e.preventDefault();
+      advance_education_lastTab.focus();
+    }
+  });
+
+  /* Allow escape key to close menu */
+  jQuery('.sidebar').on('keyup', function(e){
+    if (jQuery('body').hasClass('noscroll'))
+    if (e.keyCode === 27 ) {
+      jQuery('body').removeClass('noscroll');
+      advance_education_lastTab.focus();
+    };
+  });
+}

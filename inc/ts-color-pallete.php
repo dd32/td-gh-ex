@@ -367,5 +367,11 @@
 		$advance_education_custom_css .='font-size: '.esc_html($advance_education_scroll_font_size_icon).'px;';
 	$advance_education_custom_css .='}';
 
+	// Slider Height 
+	$advance_education_slider_image_height = get_theme_mod('advance_education_slider_image_height');
+	$advance_education_custom_css .='#slider img{';
+		$advance_education_custom_css .='height: '.esc_html($advance_education_slider_image_height).'px;';
+	$advance_education_custom_css .='}';
+
 
 

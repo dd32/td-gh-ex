@@ -10,7 +10,7 @@ get_header(); ?>
 
   <?php if( get_theme_mod( 'advance_education_slider_hide', false) != '' || get_theme_mod( 'advance_education_responsive_slider', false) != '') { ?>    
     <section id="slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_education_slider_speed_option', 3000)); ?>"> 
         <?php $advance_education_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_education_slider_page' . $count ));
@@ -36,9 +36,11 @@ get_header(); ?>
                 <div class="inner_carousel">
                   <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_education_slider_excerpt_length','20')))); ?></p>
-                  <div class="readbtn">
-                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-education' );?></span></a>
-                  </div>
+                  <?php if( get_theme_mod('advance_education_slider_button','READ MORE') != ''){ ?>
+                    <div class="readbtn">
+                      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_education_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_education_slider_button','READ MORE'));?></span></a>
+                    </div>
+                  <?php } ?>
                 </div>
               </div>
             </div>
