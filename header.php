@@ -100,7 +100,7 @@
             </div>
             <div class="col-lg-8 col-md-8 col-3">
               <div class="toggle-menu mobile-menu">
-                <button class="mobiletoggle" onclick="advance_automobile_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
+                <button class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-automobile' ); ?>">
@@ -138,7 +138,7 @@
                       <?php } ?>
                     </div>
                   </div>
-                  <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="advance_automobile_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-automobile'); ?></span></a>
+                  <a href="javascript:void(0)" class="closebtn mobile-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-automobile'); ?></span></a>
                 </nav>
               </div>
             </div>
