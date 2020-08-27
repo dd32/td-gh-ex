@@ -145,7 +145,7 @@
           <div class="row">
             <div class="col-lg-10 col-md-7 col-4">
               <div class="toggle-menu responsive-menu">
-                <button role="tab" class="mobiletoggle" onclick="advance_pet_care_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-pet-care'); ?></span></button>
+                <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-pet-care'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-pet-care' ); ?>">
@@ -185,7 +185,7 @@
                       <?php } ?>                
                     </div> 
                   </div>
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_pet_care_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-pet-care'); ?></span></a>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-pet-care'); ?></span></a>
                 </nav>
               </div>
             </div>
