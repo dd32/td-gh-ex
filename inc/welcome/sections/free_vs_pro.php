@@ -290,7 +290,7 @@
 			<p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'accesspress-store'); ?></p>
 		</td>
 		<td colspan="2">
-			<a class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/"><?php esc_html_e('AccessPress Store Pro', 'accesspress-store'); ?></a>
+			<a class="buy-pro-btn" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/')?>"><?php esc_html_e('AccessPress Store Pro', 'accesspress-store'); ?></a>
 		</td>
 	</tr>
 	<tr>
@@ -299,7 +299,7 @@
 			<p><?php esc_html_e('Upgrade to pro version of Fashstore for additional features and better supports.', 'accesspress-store'); ?></p>
 		</td>
 		<td colspan="2">
-			<a class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/fashstore-pro/"><?php esc_html_e('Fashstore Pro', 'accesspress-store'); ?></a>
+			<a class="buy-pro-btn" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/fashstore-pro')?>"><?php esc_html_e('Fashstore Pro', 'accesspress-store'); ?></a>
 		</td>
 	</tr>
 </table>

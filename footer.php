@@ -59,27 +59,27 @@
             <?php endif; ?>
 
             <?php if(!empty($payment_partner_2)) : ?>
-                <img id="partner_logo2" class="partner-logos" src="<?php echo  esc_url($payment_partner_2)?>" alt="<?php esc_html_e('Partner Logo 2', 'accesspress-store') ?>" />
+                <img id="partner_logo2" class="partner-logos" src="<?php echo  esc_url($payment_partner_2)?>" alt="<?php esc_attr_e('Partner Logo 2', 'accesspress-store') ?>" />
             <?php endif; ?>
 
             <?php if(!empty($payment_partner_3)) : ?>
-                <img id="partner_logo3" class="partner-logos" src="<?php echo  esc_url($payment_partner_3)?>" alt="<?php esc_html_e('Partner Logo 3', 'accesspress-store') ?>" />
+                <img id="partner_logo3" class="partner-logos" src="<?php echo  esc_url($payment_partner_3)?>" alt="<?php esc_attr_e('Partner Logo 3', 'accesspress-store') ?>" />
             <?php endif; ?>
 
             <?php if(!empty($payment_partner_4)) : ?>
-                <img id="partner_logo4" class="partner-logos" src="<?php echo  esc_url($payment_partner_4)?>" alt="<?php esc_html_e('Partner Logo 4', 'accesspress-store') ?>" />
+                <img id="partner_logo4" class="partner-logos" src="<?php echo  esc_url($payment_partner_4)?>" alt="<?php esc_attr_e('Partner Logo 4', 'accesspress-store') ?>" />
             <?php endif; ?>
 
             <?php if(!empty($ssl_seal)) : ?>
-                <img id="ssl_seal" class="partner-logos" src="<?php echo  esc_url($ssl_seal)?>" alt="<?php esc_html_e('SSL Seal', 'accesspress-store') ?>" />
+                <img id="ssl_seal" class="partner-logos" src="<?php echo  esc_url($ssl_seal)?>" alt="<?php esc_attr_e('SSL Seal', 'accesspress-store') ?>" />
             <?php endif; ?>
 
             <?php if(!empty($other_seal_1)) : ?>
-                <img id="other_seal1" class="partner-logos" src="<?php echo  esc_url($other_seal_1)?>" alt="<?php esc_html_e('Other Seal 1', 'accesspress-store') ?>" />
+                <img id="other_seal1" class="partner-logos" src="<?php echo  esc_url($other_seal_1)?>" alt="<?php esc_attr_e('Other Seal 1', 'accesspress-store') ?>" />
             <?php endif; ?>
 
             <?php if(!empty($other_seal_2)) : ?>
-                <img id="other_seal2" class="partner-logos" src="<?php echo  esc_url($other_seal_2)?>" alt="<?php esc_html_e('Other Seal 2', 'accesspress-store') ?>" />
+                <img id="other_seal2" class="partner-logos" src="<?php echo  esc_url($other_seal_2)?>" alt="<?php esc_attr_e('Other Seal 2', 'accesspress-store') ?>" />
             <?php endif; ?>
 
         </div>
@@ -90,9 +90,9 @@
             if(!empty($copyright)) :
                 echo wp_kses_post($copyright);
             else :
-              printf(wp_kses_post('&copy; %1$s %2$s'), esc_html(get_the_time("Y")), esc_html(get_bloginfo('name')));
+              printf(wp_kses_post('&copy; %1$s %2$s'), esc_html(date("Y")), esc_html(get_bloginfo('name')));
             endif;
-          ?> - <?php printf( wp_kses_post( 'WordPress Theme : %1$s by %2$s', 'accesspress-store' ), 'AccessPress Store', '<a href="'.esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-store/' ).'">AccessPress Themes</a>'  );  ?>
+          ?> - <?php printf( wp_kses_post( 'WordPress Theme : %1$s', 'accesspress-store' ), '<a href="'.esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-store/' ).'" target="_blank">AccessPress Store</a>'  );  ?>
         </div><!-- .site-info -->
     </div>
 </div>

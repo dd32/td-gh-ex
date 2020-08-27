@@ -85,18 +85,14 @@
                 <div class="right-header-main clearfix">
                     <div class="right-header clearfix">
                         <!-- if enabled from customizer -->
-                        <div id="toggle">
+                        <button id="toggle" class="btn-transparent-toggle">
                             <div class="one"></div>
                             <div class="two"></div>
                             <div class="three"></div>
-                        </div>
+                        </button>
                         <div class="clearfix"></div>
                         <div id="menu">
-                            <?php
-                                if (is_page('checkout') && get_theme_mod('hide_navigation_checkout')) {
-                                    
-                                } else {
-                            ?>
+                            
                                 <nav id="site-navigation" class="main-navigation" role="navigation">
                                     <a class="menu-toggle">
                                         <?php esc_html_e('Menu', 'accesspress-store'); ?>
@@ -106,11 +102,10 @@
                                             'theme_location' => 'primary',
                                             'container_class' => 'store-menu',
                                             'menu_class' => 'menu',
-                                            'fallback_cb' => 'accesspress_store_fallback_menu',
                                         ));
                                     ?>
                                 </nav><!-- #site-navigation -->
-                            <?php } ?>
+                            
                         </div> 
                     </div> <!-- right-header -->
                 </div> <!-- right-header-main -->

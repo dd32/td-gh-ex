@@ -8,7 +8,7 @@ function register_product_widget(){
 }
 class accesspress_store_product extends WP_Widget {
     /**
-     * Register Widget with Wordpress
+     * Register Widget with WordPress
      * 
      */
     public function __construct() {
@@ -188,7 +188,7 @@ public function widget($args, $instance){
       <div class="ak-container">
         <?php echo wp_kses_post($before_widget); ?>
         <div class="title-bg">
-         <h2 class="prod-title"><?php echo esc_attr($product_title); ?></h2>
+         <h2 class="prod-title"><?php echo esc_html($product_title); ?></h2>
        </div>
        <ul class="new-prod-slide remove-overload">
         <?php
@@ -230,7 +230,7 @@ public function widget($args, $instance){
         <?php endwhile; 
       }
       ?>
-      <?php wp_reset_query(); ?>
+      <?php wp_reset_postdata(); ?>
     </ul>
     <?php 
     echo wp_kses_post($after_widget);

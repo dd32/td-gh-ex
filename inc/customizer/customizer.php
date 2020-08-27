@@ -30,7 +30,7 @@ function accesspress_store_customize_register( $wp_customize ) {
 	        array(
 	            'title1'    => esc_html__( 'Free Vs Pro', 'accesspress-store' ),
 	            'pro_text1' => esc_html__( 'Compare','accesspress-store' ),
-	            'pro_url1'  => admin_url( 'themes.php?page=accesspressstore-welcome&section=free_vs_pro'),
+	            'pro_url1'  => admin_url( 'themes.php?page=welcome-page#free_vs_pro'),
 	            'priority' => 1,
 	        )
 	    )

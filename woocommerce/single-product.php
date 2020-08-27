@@ -22,10 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header('shop');
 $breadcrumb = intval( get_theme_mod('breadcrumb_options_single','1') );
 $archive_bread = esc_url( get_theme_mod('breadcrumb_single_image') );
+$bread_archive = '';
 if($archive_bread){
     $bread_archive = $archive_bread;
-}else{
-  $bread_archive = esc_url( get_template_directory_uri().'/images/about-us-bg.jpg' );
 }
 if($breadcrumb == '1') :
 ?>

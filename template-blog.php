@@ -20,10 +20,9 @@ if (is_page('cart') || is_page('checkout')) {
 
 $breadcrumb = intval( get_theme_mod('breadcrumb_options_page','1') );
 $archive_bread = esc_url( get_theme_mod('breadcrumb_page_image') );
+$bread_archive = '';
 if($archive_bread){
     $bread_archive = $archive_bread;
-}else{
-  $bread_archive = esc_url( get_template_directory_uri().'/images/about-us-bg.jpg' );
 }
 
 if($breadcrumb == '1') { ?>
@@ -128,7 +127,7 @@ if($breadcrumb == '1') { ?>
                                 </div>
                         </div>
                     </article><!-- #post-## -->
-                <?php  endwhile; endif; wp_reset_query(); ?>
+                <?php  endwhile; endif; wp_reset_postdata(); ?>
             </div><!-- #primary -->
 
             <?php

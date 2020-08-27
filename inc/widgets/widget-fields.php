@@ -204,16 +204,16 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
             ?>
             <div class="sub-option section widget-upload">
             <label for="<?php echo esc_attr($instance->get_field_id($accesspress_store_widgets_name)); ?>"><?php esc_html($accesspress_store_widgets_title); ?></label><br/>
-            <input id="<?php echo esc_attr($id); ?>" class="upload <?php esc_attr($class); ?>" type="text" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_url($value); ?>" placeholder="<?php esc_html__('No file chosen', 'accesspress-store'); ?>" /><br/>
+            <input id="<?php echo esc_attr($id); ?>" class="upload <?php esc_attr($class); ?>" type="text" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_url($value); ?>" placeholder="<?php esc_attr__('No file chosen', 'accesspress-store'); ?>" /><br/>
             <?php
             if (function_exists('wp_enqueue_media')) {
                 if (( $value == '')) {
                     ?>
-                    <input id="upload-<?php echo esc_attr($id); ?>" class="upload-button-wdgt button" type="button" value="<?php echo esc_html__('Upload', 'accesspress-store'); ?>" /><br/>
+                    <input id="upload-<?php echo esc_attr($id); ?>" class="upload-button-wdgt button" type="button" value="<?php echo esc_attr__('Upload', 'accesspress-store'); ?>" /><br/>
                 <?php
                 } else {
                 ?>
-                    <input id="remove-<?php echo esc_attr($id); ?>" class="remove-file button" type="button" value="<?php echo esc_html__('Remove', 'accesspress-store'); ?>" /><br/>
+                    <input id="remove-<?php echo esc_attr($id); ?>" class="remove-file button" type="button" value="<?php echo esc_attr__('Remove', 'accesspress-store'); ?>" /><br/>
                 <?php
                 }
             } else {

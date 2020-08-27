@@ -12,10 +12,9 @@ $archive_page_layout = esc_attr( get_theme_mod('archive_page_layout','right-side
 <?php 
 $breadcrumb = intval ( get_theme_mod('breadcrumb_options_post','1') );
 $archive_bread = esc_url( get_theme_mod('breadcrumb_post_image') );
+$bread_archive = '';
 if($archive_bread){
     $bread_archive = $archive_bread;
-}else{
-  $bread_archive = esc_url( get_template_directory_uri().'/images/about-us-bg.jpg' );
 }
 if($breadcrumb == '1') :
 ?>

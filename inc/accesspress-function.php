@@ -30,7 +30,7 @@ function accesspress_store_widgets_init() {
 		'name'          => esc_html__( 'Shop Sidebar', 'accesspress-store' ),
 		'id'            => 'shop',
 		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'shop' ).'">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
@@ -40,7 +40,7 @@ function accesspress_store_widgets_init() {
 		'name'          => esc_html__( 'Header Call To Box', 'accesspress-store' ),
 		'id'            => 'header-callto-action',
 		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'header-callto' ).'">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
@@ -50,7 +50,7 @@ function accesspress_store_widgets_init() {
 		'name'          => esc_html__( 'AP: Promo Widget 1', 'accesspress-store' ),
 		'id'            => 'promo-widget-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget widget %2$s '.accesspress_count_widgets( 'promo-widget-1' ).'">',
+		'before_widget' => '<aside id="%1$s" class="widget widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -110,7 +110,7 @@ function accesspress_store_widgets_init() {
 		'name'          => esc_html__( 'AP: Promo Widget 3', 'accesspress-store' ),
 		'id'            => 'promo-widget-3',
 		'description'   => 'You can use widget AP: Icon text block which is what it is designed that it will horizontally allign with 3 row',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'promo-widget-3' ).'">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
@@ -198,45 +198,37 @@ function accesspress_store_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'accesspress-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0.0', true );
+	wp_register_script( 'accesspress-store-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0.0', true );
+
+
+	$ticker_title = get_theme_mod('accesspress_ticker_title');
+	if(empty($ticker_title)){
+		$ticker_title = "Latest";
+	}
+
+	$script_vals = array(
+		'ticker_title' 	=> $ticker_title
+
+	);
+	wp_localize_script('accesspress-store-custom-js','accesspress_store_script',$script_vals );
+	wp_enqueue_script('accesspress-store-custom-js');
+
+
 }
 add_action( 'wp_enqueue_scripts', 'accesspress_store_scripts' );
 
 function accesspress_ticker_header_customizer(){
 	//Check if ticker is enabled
 	if(get_theme_mod('accesspress_ticker_checkbox','1') == 1){
-		$ticker_title = get_theme_mod('accesspress_ticker_title');
-		if(empty($ticker_title)){
-			$ticker_title="Latest";
-		}
+		
 		$ticker_text1 = get_theme_mod('accesspress_ticker_text1');
 		$ticker_text2 = get_theme_mod('accesspress_ticker_text2');
 		$ticker_text3 = get_theme_mod('accesspress_ticker_text3');
 		$ticker_text4 = get_theme_mod('accesspress_ticker_text4');
 		$ticker_array = array($ticker_text1, $ticker_text2, $ticker_text3, $ticker_text4);
 		?>
-		<script>
-			jQuery(document).ready(function($){				
-				$('#ticker').ticker({
-		            speed: 0.10,           // The speed of the reveal
-		            ajaxFeed: false,       // Populate jQuery News Ticker via a feed
-		            feedUrl: false,        // The URL of the feed
-		    	    // MUST BE ON THE SAME DOMAIN AS THE TICKER
-		            //feedType: 'xml',       // Currently only XML
-		            htmlFeed: true,        // Populate jQuery News Ticker via HTML
-		            debugMode: true,       // Show some helpful errors in the console or as alerts
-		      	    // SHOULD BE SET TO FALSE FOR PRODUCTION SITES!
-		            controls: true,        // Whether or not to show the jQuery News Ticker controls
-		            titleText: '<?php echo esc_html($ticker_title);?>',   // To remove the title set this to an empty String
-		            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
-		            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
-		            fadeInSpeed: 900,      // Speed of fade in animation
-		            fadeOutSpeed: 300,   
-		            pauseOnItems: 3000,    // The pause on a news item before being replaced  
-		        });
-			});
-		</script>
-		<style type="text/css">#ticker{display:none;}</style>
+		
+		
 		<ul id="ticker">
 			<?php 
 				$i=0;
@@ -334,7 +326,7 @@ function accesspress_slidercb(){
 								<div class="slider-caption">
 									<div class="ak-container">									
 										<div class="caption-content-wrapper">
-											<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
+											<h2 class="caption-title"><?php the_title();?></h2>
 											<div class="caption-content">
 												<?php echo wp_kses_post(accesspress_letter_count(get_the_content(), '165')); ?>
 											</div>
@@ -409,18 +401,6 @@ if ( ! function_exists( 'accesspress_footer_count' ) ) {
 	}
 }
 
-function accesspress_count_widgets( $sidebar_id ) {
-	global $_wp_sidebars_widgets;
-	if ( empty( $_wp_sidebars_widgets ) ) :
-		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
-	endif;		
-	$sidebars_widgets_count = $_wp_sidebars_widgets;		
-	if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
-		$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
-	$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
-	return $widget_classes;
-	endif;
-}
 
 
 function accesspress_header_scripts(){

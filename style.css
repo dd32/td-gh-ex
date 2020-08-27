@@ -4,12 +4,18 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.4.3
+Version: 2.4.4
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
 Tags: e-commerce, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, custom-header, custom-colors, custom-background, threaded-comments, rtl-language-support
+
+
 This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 
 AccessPress Store is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 */
@@ -25,7 +31,6 @@ legend,table,caption,tbody,tfoot,thead,tr,th,td {
     font-style: inherit;
     font-weight: inherit;
     margin: 0;
-    outline: 0;
     padding: 0;
     vertical-align: baseline;
 }
@@ -70,9 +75,6 @@ blockquote:before,blockquote:after,q:before,q:after {
 blockquote,
 q {
     quotes: "" "";
-}
-a:focus {
-    outline: 0;
 }
 a:hover,
 a:active {
@@ -247,7 +249,6 @@ textarea {
     vertical-align: baseline;
     /* Improves appearance and consistency in all browsers */
     
-    outline: 0;
 }
 button,
 input[type="button"],
@@ -325,7 +326,6 @@ textarea {
 a {
     text-decoration: none;
     color: #c97178;
-    outline: 0;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -1007,7 +1007,7 @@ body {
     height: 100%;
 }
 #site-navigation li a {
-    color: #fff;
+    color: #777;
     font-size: 14px;
     text-transform: uppercase;
     -webkit-transition: all ease 0.4s;
@@ -1189,7 +1189,6 @@ HEADER TWO
 .search-box .search-field:focus {
     border: none;
     box-shadow: none;
-    outline: none;
     border-bottom: 1px solid #ffffff;
 }
 .search-box .search-field::-webkit-input-placeholder {
@@ -4441,7 +4440,7 @@ a.quick-wishlist {
     transition: all ease 0.4s;
     margin: 0px;
 }
-#site-navigation .menu>li>a {
+#site-navigation .menu li > a {
     padding: 13px 15px;
     font-size: 14px;
     text-decoration: none;
@@ -5564,7 +5563,6 @@ button.single_add_to_cart_button.button.alt:hover {
 }
 #content .page_header_wrap,
 .woocommerce .entry-header {
-    background: url(images/about-us-bg.jpg) no-repeat center;
     background-size: cover;
     padding: 42px 0px;
     text-align: center;
@@ -5769,7 +5767,6 @@ li.cat-parent {
     background: url("images/range-left.png") no-repeat scroll center center !important;
     border-radius: 0;
     cursor: ew-resize;
-    outline: 0;
     top: -.7em;
     left: -.5em;
 }
@@ -5787,7 +5784,6 @@ li.cat-parent {
     padding: 0px 25px;
     border: 2px solid #e24545;
     -webkit-transition: all 0.3s ease 0s;
-    outline: 0;
 }
 .woocommerce .widget_price_filter .price_slider_amount button:hover {
     opacity: 1;
@@ -6216,7 +6212,6 @@ ul.products.list li.product:last-child {
     background: rgba(245, 245, 245, 0.54);
     width: 75%;
     border: 1px solid rgba(224, 224, 224, 0.41);
-    outline: 0;
     border-bottom: 1px solid rgb(239, 153, 153);
 }
 #respond input {
@@ -7228,4 +7223,19 @@ ul.wp-block-gallery.alignnone {
         margin-left: 0;
         margin-right: 0;
     }
+}
+.btn-transparent-toggle {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+}
+
+#ticker{display:none;}
+
+.main-navigation ul li {
+    display: inline-block;
+}
+.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
+    color: #FFF;
 }

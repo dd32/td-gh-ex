@@ -3,7 +3,7 @@
 	<div class="support-process-wrapper">
 	<h3><i class="dashicons dashicons-sos"></i><?php echo esc_html__('Create Support Tickets', 'accesspress-store'); ?></h3>
 	<p><?php echo esc_html__('If you\'re having any issues with the theme, feel free to create a ticket in our support forum. We reply your ticket very soon!', 'accesspress-store'); ?></p>
-	<a class="button button-primary" href="https://accesspressthemes.com/support/"><?php echo esc_html__('Create Ticket', 'accesspress-store'); ?></a>
+	<a class="button button-primary" href="<?php echo esc_url('https://accesspressthemes.com/support/')?>"><?php echo esc_html__('Create Ticket', 'accesspress-store'); ?></a>
 	</div>
 </div>
 
@@ -14,7 +14,7 @@
 	<p><?php echo esc_html__('Mon - Fri', 'accesspress-store'); ?></p>
 	<p><?php echo esc_html__('10AM - 5PM ', 'accesspress-store'); ?></p>
 	<p><?php echo esc_html__('Kathmandu Time (GMT + 5:45)', 'accesspress-store'); ?></p>
-	<a class="button button-primary" href="https://accesspressthemes.com/"><?php echo esc_html__('Start Online Chat', 'accesspress-store'); ?></a>
+	<a class="button button-primary" href="<?php echo esc_url('https://accesspressthemes.com/')?>"><?php echo esc_html__('Start Online Chat', 'accesspress-store'); ?></a>
 	</div>
 </div>
 

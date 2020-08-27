@@ -27,7 +27,7 @@ function accesspress_ticker_setting($wp_customize){
   ));
 
   $wp_customize->add_setting( 'accesspress_header_layout_type', array(
-      'default'       =>      'headerone',
+      'default'       =>      'headertwo',
       'sanitize_callback' => 'accesspress_store_radio_sanitize_header_layout'
   ));
                           

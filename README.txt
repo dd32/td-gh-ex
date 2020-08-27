@@ -1,7 +1,18 @@
+=== AccessPress Store ===
+
+Contributors: Access Keys
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5
+Stable tag: 2.4.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-AccessPress Store WordPress Theme, Copyright 2015 AccessPress Themes
-AccessPress Store is distributed under the terms of the GNU GPL v3
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+AccessPress Store is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 
 Install Steps:
@@ -41,12 +52,24 @@ Fonts
     http://www.fontsquirrel.com/license/raleway
     
 ---------------------------------------------
-Images
- All the images used are from http://pixabay.com, http://unsplash.com/ or self taken are fully GPL compatible.
+== Screenshots ==
 
+Stocksnap Images
+License: CC0 Universal (CC0)
+Source: https://stocksnap.io/license
+
+
+https://stocksnap.io/photo/elegant-woman-GE7GGDMILW
+https://stocksnap.io/photo/top-purse-XPGUG6AKFB
+https://stocksnap.io/photo/apple-watch-6EMBFCXU0J
+https://stocksnap.io/photo/money-purse-IE0EK3MDHK
 
 
 == Changelog ==
+
+= 2.4.4 =
+** Minor bugs fixed and refinements
+
 = 2.4.3 =
 ** Added Featured Image Show Hide Option for Single Post
 ** Added Post Categories Show Hide Option for Single Post

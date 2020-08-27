@@ -13,40 +13,25 @@
 				),
 				array(
 					'icon' => 'dashicons-admin-home',
-					'text' => __( 'HomePage Settings', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[panel]' => 'apwelcome_homepage_settings_panel' ), admin_url( 'customize.php' ) ),
+					'text' => __( 'Header Layouts', 'accesspress-store' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'accesspress_header_layout' ), admin_url( 'customize.php' ) ),
 				),
 				array(
 					'icon' => 'dashicons-external',
-					'text' => __( 'Section Reorder', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'menu_order_section' ), admin_url( 'customize.php' ) ),
+					'text' => __( 'Slider Settings', 'accesspress-store' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'slider_setting' ), admin_url( 'customize.php' ) ),
 				),
 				array(
 					'icon' => 'dashicons-menu',
-					'text' => __( 'Menu Options', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'menu_settings_section' ), admin_url( 'customize.php' ) ),
+					'text' => __( 'Breadcrumb Settings', 'accesspress-store' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'breadcrumb_setting' ), admin_url( 'customize.php' ) ),
 				),
 				array(
 					'icon' => 'dashicons-update',
-					'text' => __( 'Preloader Options', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'apwelcome_preloader_section' ), admin_url( 'customize.php' ) ),
+					'text' => __( 'WooCommerce Settings', 'accesspress-store' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'woocommerce_setting' ), admin_url( 'customize.php' ) ),
 				),
-				array(
-					'icon' => 'dashicons-admin-appearance',
-					'text' => __( 'Template Color', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[section]' => 'apwelcome_tpl_color_section' ), admin_url( 'customize.php' ) ),
-				),
-				array(
-					'icon' => 'dashicons-align-center',
-					'text' => __( 'Footer Options', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[panel]' => 'apwelcome_footer_settings_panel' ), admin_url( 'customize.php' ) ),
-				),
-
-				array(
-					'icon' => 'dashicons-format-aside',
-					'text' => __( 'Layout Options', 'accesspress-store' ),
-					'link' => add_query_arg( array( 'autofocus[panel]' => 'apwelcome_design_settings_panel' ), admin_url( 'customize.php' ) ),
-				),
+				
 			); 
 			foreach ( $data as $customizer_item ) {
 				 ?>
@@ -59,7 +44,7 @@
 		</div>
 		<div class="step-1-left">
 			<h3><?php echo esc_html__('Step 1 - Checkout starter sites (Demos) ', 'accesspress-store'); ?></h3>
-			<p><?php /* translators: %s : Theme Name */ printf(esc_html__('%1$s now comes with a sites library with 6 starter sites to pick from. You can check theme out and decide which one to start with. However you can decide not to use any one of them and start building your site from scratch.', 'accesspress-store'),$this->theme_name); ?></p>
+			<p><?php /* translators: %s : Theme Name */ printf(esc_html__('%1$s now comes with a sites library with 1 sites to pick from. You can check theme out and decide which one to start with. However you can decide not to use any one of them and start building your site from scratch.', 'accesspress-store'),$this->theme_name); ?></p>
 			<a class="nav-tab demo_import button" href="<?php echo esc_url(admin_url('/themes.php?page=welcome-page#demo_import')); ?>"><?php echo esc_html__('See Demos', 'accesspress-store'); ?></a>
 		</div>
 		

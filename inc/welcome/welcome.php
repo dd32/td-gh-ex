@@ -24,8 +24,6 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 				$this->theme_description = $theme->description;
 
 				/** Plugins **/
-				$this->free_plugins = $plugins['recommended_plugins']['free_plugins'];
-				$this->pro_plugins = $plugins['recommended_plugins']['pro_plugins'];
 				$this->req_plugins = $plugins['required_plugins'];
 				$this->actions_req = $plugins['req_plugins'];
 				$this->companion_plugins = $plugins['companion_plugins'];
@@ -33,8 +31,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 				/** Tabs **/
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'accesspress-store'),
-					'actions_required' => esc_html__('Required Plugins', 'accesspress-store'),
-					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-store'),
+					'actions_required' => esc_html__('Recommended Plugins', 'accesspress-store'),
 					'demo_import' => esc_html__('Import Demo', 'accesspress-store'),
 					'free_vs_pro' => esc_html__('Free Vs Pro', 'accesspress-store'),
 					'changelog' => esc_html__('ChangeLog', 'accesspress-store'),
@@ -100,7 +97,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 			 
              global $pagenow;
 
-            if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+            if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
              add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
              }
 				
@@ -110,7 +107,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 			public function welcome_admin_notice_display() {
 				global $pagenow;
 
-				if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="updated apwelcome-an notice notice-success is-dismissible">
 						<h2><?php printf(esc_html__( 'Welcome!', 'accesspress-store' )) ?></h2>
@@ -124,17 +121,19 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 										<span class="dashicons dashicons-feedback"></span>
 										<?php printf(esc_html__( 'Starter site demos!', 'accesspress-store' )) ?>
 									</h3>
-									<p><?php printf( wp_kses_post( 'You\'ve  got 3 choices of great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-store' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
+									<p><?php printf( wp_kses_post( 'You\'ve  got 1 great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-store' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
 								</div>
 								<div>
 									<div class="button-wrapper">
 										<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'ready to use starter sites.', 'accesspress-store' ); ?></a>
+
+										<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-store' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
 									</div>
 
-									<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-store' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
+									
 
-									<p><?php esc_html_e( 'You can also reach-out to us for any support during the theme setup and use.', 'accesspress-store' ); ?></p>
-									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-store' ); ?></span></a>
+									
+									
 
 								</div>
 							</div>
@@ -145,12 +144,13 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 										<?php printf(esc_html__( 'Documentation', 'accesspress-store' )) ?>
 									</h3>
 									<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'accesspress-store' ), $this->theme_name  ); ?></p>
+									
+									<div class="apwelcome-doc-btn">
 									<a href="<?php echo esc_url($this->strings['doc_link']);?>" class=" button" ><span><?php esc_html_e( 'Full Documentation', 'accesspress-store' ); ?></span></a>
+									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-store' ); ?></span></a>
+									</div>
+								</div>
 
-								</div>
-								<div class="apwelcome-doc-btn">
-									<a href="#" class=" button" ><span><?php esc_html_e( 'Return to your Dashboard', 'accesspress-store' ); ?></span></a>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -180,7 +180,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 							<?php echo $this->strings['theme_short_description']; ?>
 						</div>
 						<div class="badge-wrap">
-							<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
+							<a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com')?>" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
 						</div>
 					</div>
 					<div class="bottom-block-wrap">
@@ -223,7 +223,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 										<div class= "notice-sidebar-item">
 											<h4><?php echo esc_html('Rate us!','accesspress-store') ?></h4>
 											<p><?php /* translators: %s : Theme Name */ printf(esc_html__('Are you enjoying %1$s? We would love to hear your feedback!', 'accesspress-store'),$this->theme_name); ?></p>
-											<a href="https://wordpress.org/support/theme/accesspress-store/reviews/#new-post"><?php echo esc_html('Write a review','accesspress-store') ?></a>
+											<a href="<?php echo esc_url('https://wordpress.org/support/theme/accesspress-store/reviews/#new-post')?>"><?php echo esc_html('Write a review','accesspress-store') ?></a>
 
 										</div>
 									</div>
@@ -314,26 +314,26 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 							$function = $plugin['function'];
 						}
 
-						$status = 'install';
+						$status_arg = 'install';
 
 						$path = WP_PLUGIN_DIR.'/'.esc_attr($folder_name).'/'.esc_attr($file_name);
 						if( file_exists( $path ) ) {
 							if($class){
-								$status = class_exists( $class ) ? 'inactive' : 'active';	
+								$status_arg = class_exists( $class ) ? 'inactive' : 'active';	
 							}elseif($function){
-								$status = function_exists( $function ) ? 'inactive' : 'active';	
+								$status_arg = function_exists( $function ) ? 'inactive' : 'active';	
 							}
 
 						}
-						return $status;
+						return $status_arg;
 					}
 
 					/** Generate Url for the Plugin Button **/
-					public function generate_plugin_url($status, $plugin) {
+					public function generate_plugin_url($status_arg, $plugin) {
 						$folder_name = $plugin['slug'];
 						$file_name = $plugin['filename'];
 
-						switch ( $status ) {
+						switch ( $status_arg ) {
 							case 'install':
 							return wp_nonce_url(
 								add_query_arg(

@@ -35,7 +35,7 @@ jQuery(window).load(function() {
     });
  
     // Sets listeners for checkboxes
-    jQuery('.cstmzr-category-checkbox').live('change', function(){
+    jQuery('.cstmzr-category-checkbox').on('change', function(){
  
         var id = jQuery(this).closest('li').find('.cstmzr-hidden-categories').prop('id');
         var elementID = jQuery(this).prop('id').split('-');

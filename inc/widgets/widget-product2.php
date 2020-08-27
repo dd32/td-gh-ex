@@ -12,7 +12,7 @@ function register_product_widget2(){
 if( !class_exists( 'accesspress_store_product2' ) ) :
 class accesspress_store_product2 extends WP_Widget {
     /**
-     * Register Widget with Wordpress
+     * Register Widget with WordPress
     **/
     public function __construct() {
         parent::__construct(
