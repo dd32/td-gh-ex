@@ -1,4 +1,4 @@
-<header id="mastheads" class="site-header" role="banner">
+<header id="mastheads" class="site-header header-one" role="banner">
     
     <div class="before-top-header">
         <div class="ak-container clearfix">
