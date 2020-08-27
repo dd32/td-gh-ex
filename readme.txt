@@ -4,7 +4,7 @@ Contributors: Access Keys
 Tested up to: 5.5
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 2.89
+Stable tag: 2.91
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, rtl-language-support, blog, education, portfolio
@@ -84,11 +84,27 @@ Wilfred Iven
 License: CC0 Universal
 Source:  https://stocksnap.io/photo/macbook-laptop-HHZ5NPNR1T
 
+Michal Kulesza
+License: CC0 Universal
+https://stocksnap.io/photo/beats-headphones-7B62IKGVF4
+
+Jarosław Ceborski
+License: CC0 Universal
+https://stocksnap.io/photo/white-table-088TTNIX00
+
+Julian O'hayon
+License: CC0 Universal
+https://stocksnap.io/photo/blackandwhite-iphone-3IJLXXN9OY
+
 
 All other images are designed by AccessPress Themes
 
 
 == Changelog ==
+= 2.91 =
+** Fixed url escapings from attr
+** Descreased welcome notice height.
+
 = 2.90 =
 ** Fixed escapings
 ** Fixing footer links

@@ -282,7 +282,7 @@ function accesspresslite_social_cb(){
 	<?php } ?>
 
 	<?php if(!empty($accesspresslite_settings['accesspresslite_skype'])){ ?>
-	<a href="<?php echo "skype:".esc_attr($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
+	<a href="<?php echo esc_html("skype:").esc_attr($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
 	<?php } ?>
 
 	<?php if(!empty($accesspresslite_settings['accesspresslite_tumblr'])){ ?>

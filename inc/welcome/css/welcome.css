@@ -476,12 +476,12 @@ h3.choose-demo-title {
     margin-right: 10px;
 }
 .apwelcome-an.notice.is-dismissible {
-    padding: 20px 15px 5px;
+    padding: 5px 15px 5px;
     margin-bottom: 10px;
 }
 
 .apwelcome-an hr {
-    margin: 20px -23px 0;
+    margin: 0 -15px 0;
     border-top: 1px solid #eae6d8;
     border-bottom: none;
 }
@@ -506,7 +506,14 @@ h3.choose-demo-title {
     margin-bottom: 13px;
 }
 .apwelcome-column {
-    padding: 20px 40px 0 0;
+    padding: 0px 40px 0 0;
+}
+.apwelcome-an.notice p {
+    margin: 0 0 5px 0;
+}
+span.sepr {
+    padding-top: 12px;
+    display: inline-block;
 }
 .apwelcome-an .apwelcome-btn {
     padding: 30px;

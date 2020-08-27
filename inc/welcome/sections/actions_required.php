@@ -42,17 +42,13 @@ if( !empty($this->actions_req) ) { ?>
 			?>
 			<div class="recom-plugin-wrap">
 					<div class="recom-plugin-inner-wrapper">
-						<div class="plugin-img-wrap">
-							<img src="<?php echo esc_url($icon_url); ?>" />
-							
-						</div>
 						<div class="plugin-title-install clearfix">
 							<span class="title" title="<?php echo esc_attr($plugin['name']); ?>">
 								<?php echo esc_html($plugin['name']); ?>
 							</span>
 
 							<span class="plugin-action-btn plugin-btn-wrapper plugin-card-<?php echo esc_attr($plugin['slug']); ?>">
-								<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file="<?php echo esc_attr($plugin['filename']); ?>" data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_attr($link_arg); ?>"><?php echo esc_html($label); ?></a>
+								<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file="<?php echo esc_attr($plugin['filename']); ?>" data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_url($link_arg); ?>"><?php echo esc_html($label); ?></a>
 							</span>
 							<div class="version-author-info free">
 								<span class="version"><?php echo esc_html__('Version ', 'accesspress-lite') . esc_html($plugin['version']); ?></span>
@@ -98,10 +94,6 @@ if( !empty($this->actions_req) ) { ?>
 			?>
 				<div class="recom-plugin-wrap ">
 					<div class="recom-plugin-inner-wrap">
-						<div class="plugin-img-wrap">
-							<img src="<?php echo esc_url($icon_url); ?>" />
-							
-						</div>
 						<div class="plugin-title-install clearfix">
 							<?php if( $info->name ){ ?>
 								<span class="title" title="<?php echo esc_attr($info->name); ?>">

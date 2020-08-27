@@ -97,432 +97,426 @@ if(!class_exists('Accesspress_Lite_Welcome')) :
 			/** Welcome Message Notification on Theme Activation **/
 			public function activation_admin_notice() {
 				global $pagenow;
-				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
-					add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
-				}
-			}
-
-			/** Welcome Message Notification on Theme Activation **/
-			public function welcome_admin_notice_display() {
-				global $pagenow;
-
-			if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
-				?>
-				<div class="updated apwelcome-an notice notice-success is-dismissible">
-					<h2><?php printf(esc_html__( 'Welcome!', 'accesspress-lite' )) ?></h2>
-					<p class="about-desc"><?php /* translators: %s : Theme Name */ printf(esc_html__( 'Thank you for installing %1$s. It is now installed and ready to use. Here are some useful links to get started: ', 'accesspress-lite' ), $this->theme_name);  ?></p>
-					<hr/>
-					<div class="apwelcome-column-wrap">
-
-						<div class="apwelcome-column col-demos">
-							<div>
-								<h3>
-									<span class="dashicons dashicons-feedback"></span>
-									<?php printf(esc_html__( 'Starter site demos!', 'accesspress-lite' )) ?>
-								</h3>
-								<p><?php printf( wp_kses_post( 'You\'ve  got 1  great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-lite' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
-							</div>
-							<div>
-								<div class="button-wrapper">
-									<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'Start with ready to use starter sites', 'accesspress-lite' ); ?></a>
-								</div>
-
-								<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-lite' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
-
-								<p><?php esc_html_e( 'You can also reach-out to us for any support during the theme setup and use.', 'accesspress-lite' ); ?></p>
-								<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-lite' ); ?></span></a>
-
-							</div>
-						</div>
-						<div class="apwelcome-column col-doc">
-							<div>
-								<h3>
-									<span class="dashicons dashicons-category"></span>
-									<?php printf(esc_html__( 'Documentation', 'accesspress-lite' )) ?>
-								</h3>
-								<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'accesspress-lite' ), $this->theme_name  ); ?></p>
-								<a href="<?php echo esc_url($this->strings['doc_link']);?>" class=" button" ><span><?php esc_html_e( 'Full Documentation', 'accesspress-lite' ); ?></span></a>
-
-							</div>
-							<div class="apwelcome-doc-btn">
-								<a href="<?php echo esc_url(admin_url());?>" class=" button" ><span><?php esc_html_e( 'Return to your Dashboard', 'accesspress-lite' ); ?></span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<?php
+			if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
+				add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
 			}
 		}
 
-		/** Register Menu for Welcome Page **/
-		public function welcome_register_menu() {
-			$action_count = $this->get_required_plugin_notification();
-			$title        = $action_count > 0 ? esc_html($this->strings['welcome_menu_text']) . '<span class="badge pending-tasks">' . esc_html( $action_count ) . '</span>' : esc_html($this->strings['welcome_menu_text']);
-			add_theme_page( esc_html($this->strings['welcome_menu_text']), $title , 'edit_theme_options', 'welcome-page', array( $this, 'welcome_screen' ));
-		}
+		/** Welcome Message Notification on Theme Activation **/
+		public function welcome_admin_notice_display() {
+			global $pagenow;
 
-
-		/** Welcome Page **/
-		public function welcome_screen() {
-			$tabs = $this->tab_sections;
-
-			$current_section = isset($_GET['section']) ? wp_unslash($_GET['section']) : 'getting_started';
-			$section_inline_style = '';
+		if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
 			?>
-			<div class="wrap about-wrap access-wrap">
-				<div class="top-block-wrap">
-					<div class="about-text">
-						<h1><?php /* translators: %s : Theme Name and Version*/ printf( 'Welcome to %s - Version %s', $this->theme_name, $this->theme_version ); ?></h1>
-						<?php echo $this->strings['theme_short_description']; ?>
+			<div class="updated apwelcome-an notice notice-success is-dismissible">
+				<h2><?php printf(esc_html__( 'Welcome!', 'accesspress-lite' )) ?></h2>
+				<p class="about-desc"><?php /* translators: %s : Theme Name */ printf(esc_html__( 'Thank you for installing %1$s. It is now installed and ready to use. Here are some useful links to get started: ', 'accesspress-lite' ), $this->theme_name);  ?></p>
+				<hr/>
+				<div class="apwelcome-column-wrap">
+
+					<div class="apwelcome-column col-demos">
+						<div>
+							<h3>
+								<span class="dashicons dashicons-feedback"></span>
+								<?php printf(esc_html__( 'Starter site demos!', 'accesspress-lite' )) ?>
+							</h3>
+							<p><?php printf( wp_kses_post( 'You\'ve  got 1  great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-lite' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
+						</div>
+						<div>
+							<div class="button-wrapper">
+								<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'Start with ready to use starter sites', 'accesspress-lite' ); ?></a>
+								<span class="sepr"><?php esc_html_e('Or','accesspress-lite');?></span>
+								<a class="button button-secondary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page' )) ?>"><?php esc_html_e( 'Start setting up your theme now (without demo)!', 'accesspress-lite' ); ?></a>
+							</div>
+						</div>
 					</div>
-					<div class="badge-wrap">
-						<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
+					<div class="apwelcome-column col-doc">
+						<div>
+							<h3>
+								<span class="dashicons dashicons-category"></span>
+								<?php printf(esc_html__( 'Documentation', 'accesspress-lite' )) ?>
+							</h3>
+							<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'accesspress-lite' ), $this->theme_name  ); ?><?php esc_html_e( 'You can also reach-out to us for any support during the theme setup and use.', 'accesspress-lite' ); ?>
+						</p>
+						<a href="<?php echo esc_url($this->strings['doc_link']);?>" class="button-primary button" ><span><?php esc_html_e( 'Full Documentation', 'accesspress-lite' ); ?></span></a> <a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-lite' ); ?></span></a>
+
 					</div>
 				</div>
-				<div class="bottom-block-wrap">
-					<div class="notice-main-pagewrapper">
-						<div class="nav-tab-wrapper clearfix">
-							<?php foreach($tabs as $id => $label) : ?>
-								<a href="<?php echo esc_url(admin_url('themes.php?page=welcome-page#'.$id)); ?>" class="nav-tab <?php echo esc_attr($id);?> nav-tab-inactive" >
-									<?php echo esc_html( $label ); ?>
-									<?php if($id == 'actions_required') : $not = $this->get_required_plugin_notification(); ?>
-										<?php if($not) : ?>
-											<span class="pending-tasks">
-												<?php echo esc_html($not); ?>
-											</span>
-										<?php endif; ?>
-									<?php endif; ?>
-								</a>
-							<?php endforeach; ?>
-						</div>
-						<div class="notice-content-wrapper">
-							<div class="welcome-section-wrapper-loader import-php">
-								<div class="updating-message"></div>
-							</div>
-							<div class="welcome-section-wrapper is_loading">
-								<?php foreach($tabs as $id => $label) : ?>
-									<div class="welcome-section <?php echo esc_attr($id);?> nav-tab-inactive clearfix">
-										<?php require_once get_template_directory() . '/inc/welcome/sections/'.esc_html($id).'.php'; ?>
-									</div>
-								<?php endforeach; ?>
-								<div class="notice-sidebar is_loading">
-									<div class= "notice-sidebar-item">
-										<h4><?php echo esc_html('Join in our social networks!','accesspress-lite') ?></h4>
-										<p><?php echo esc_html__('Get connected, share your opinions and more via our social community: ', 'accesspress-lite'); ?></p>
+			</div>
+		</div>
+		<?php
+	}
+}
 
-										<p><a href="<?php echo esc_url('https://www.facebook.com/AccessPressThemes')?>"><?php echo esc_html('Join our Facebook Group','accesspress-lite') ?></a><?php echo esc_html__(' -to receive updates, offers and more.', 'accesspress-lite'); ?></p>
+/** Register Menu for Welcome Page **/
+public function welcome_register_menu() {
+	$action_count = $this->get_required_plugin_notification();
+	$title        = $action_count > 0 ? esc_html($this->strings['welcome_menu_text']) . '<span class="badge pending-tasks">' . esc_html( $action_count ) . '</span>' : esc_html($this->strings['welcome_menu_text']);
+	add_theme_page( esc_html($this->strings['welcome_menu_text']), $title , 'edit_theme_options', 'welcome-page', array( $this, 'welcome_screen' ));
+}
 
-										<p><a href="<?php echo esc_url('https://www.youtube.com/channel/UCzD8I1moKISXDjAVr8dIf-w')?>"><?php echo esc_html('Subscribe our YouTube Channel','accesspress-lite') ?></a><?php echo esc_html__(' -for tutorials, videos and more.', 'accesspress-lite'); ?></p>
 
-										<p><a href="<?php echo esc_url('https://twitter.com/apthemes')?>"><?php echo esc_html('Follow us on Twitter','accesspress-lite') ?></a><?php echo esc_html__(' -to stay updated. ', 'accesspress-lite'); ?></p>
-									</div>
-									<div class= "notice-sidebar-item">
-										<h4><?php echo esc_html('Rate us!','accesspress-lite') ?></h4>
-										<p><?php /* translators: %s : Theme Name */ printf(esc_html__('Are you enjoying %1$s? We would love to hear your feedback!', 'accesspress-lite'),$this->theme_name); ?></p>
-										<a href="https://wordpress.org/support/theme/accesspress-lite/reviews/#new-post"><?php echo esc_html('Write a review','accesspress-lite') ?></a>
+/** Welcome Page **/
+public function welcome_screen() {
+	$tabs = $this->tab_sections;
 
-									</div>
-								</div>
-							</div>
-						</div>
-
+	$current_section = isset($_GET['section']) ? wp_unslash($_GET['section']) : 'getting_started';
+	$section_inline_style = '';
+	?>
+	<div class="wrap about-wrap access-wrap">
+		<div class="top-block-wrap">
+			<div class="about-text">
+				<h1><?php /* translators: %s : Theme Name and Version*/ printf( 'Welcome to %s - Version %s', $this->theme_name, $this->theme_version ); ?></h1>
+				<?php echo $this->strings['theme_short_description']; ?>
+			</div>
+			<div class="badge-wrap">
+				<a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com');?>" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
+			</div>
+		</div>
+		<div class="bottom-block-wrap">
+			<div class="notice-main-pagewrapper">
+				<div class="nav-tab-wrapper clearfix">
+					<?php foreach($tabs as $id => $label) : ?>
+						<a href="<?php echo esc_url(admin_url('themes.php?page=welcome-page#'.$id)); ?>" class="nav-tab <?php echo esc_attr($id);?> nav-tab-inactive" >
+							<?php echo esc_html( $label ); ?>
+							<?php if($id == 'actions_required') : $not = $this->get_required_plugin_notification(); ?>
+								<?php if($not) : ?>
+									<span class="pending-tasks">
+										<?php echo esc_html($not); ?>
+									</span>
+								<?php endif; ?>
+							<?php endif; ?>
+						</a>
+					<?php endforeach; ?>
+				</div>
+				<div class="notice-content-wrapper">
+					<div class="welcome-section-wrapper-loader import-php">
+						<div class="updating-message"></div>
 					</div>
-					<?php
+					<div class="welcome-section-wrapper is_loading">
+						<?php foreach($tabs as $id => $label) : ?>
+							<div class="welcome-section <?php echo esc_attr($id);?> nav-tab-inactive clearfix">
+								<?php require_once get_template_directory() . '/inc/welcome/sections/'.esc_html($id).'.php'; ?>
+							</div>
+						<?php endforeach; ?>
+						<div class="notice-sidebar is_loading">
+							<div class= "notice-sidebar-item">
+								<h4><?php echo esc_html('Join in our social networks!','accesspress-lite') ?></h4>
+								<p><?php echo esc_html__('Get connected, share your opinions and more via our social community: ', 'accesspress-lite'); ?></p>
+
+								<p><a href="<?php echo esc_url('https://www.facebook.com/AccessPressThemes')?>"><?php echo esc_html('Join our Facebook Group','accesspress-lite') ?></a><?php echo esc_html__(' -to receive updates, offers and more.', 'accesspress-lite'); ?></p>
+
+								<p><a href="<?php echo esc_url('https://www.youtube.com/channel/UCzD8I1moKISXDjAVr8dIf-w')?>"><?php echo esc_html('Subscribe our YouTube Channel','accesspress-lite') ?></a><?php echo esc_html__(' -for tutorials, videos and more.', 'accesspress-lite'); ?></p>
+
+								<p><a href="<?php echo esc_url('https://twitter.com/apthemes')?>"><?php echo esc_html('Follow us on Twitter','accesspress-lite') ?></a><?php echo esc_html__(' -to stay updated. ', 'accesspress-lite'); ?></p>
+							</div>
+							<div class= "notice-sidebar-item">
+								<h4><?php echo esc_html('Rate us!','accesspress-lite') ?></h4>
+								<p><?php /* translators: %s : Theme Name */ printf(esc_html__('Are you enjoying %1$s? We would love to hear your feedback!', 'accesspress-lite'),$this->theme_name); ?></p>
+								<a href="https://wordpress.org/support/theme/accesspress-lite/reviews/#new-post"><?php echo esc_html('Write a review','accesspress-lite') ?></a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<?php
+		}
+
+		/** Enqueue Necessary Styles and Scripts for the Welcome Page **/
+		public function welcome_styles_and_scripts() {
+
+
+			wp_enqueue_style( $this->theme_slug . '-welcome-screen', get_template_directory_uri() . '/inc/welcome/css/welcome.css' );
+			wp_enqueue_script( $this->theme_slug . '-welcome-screen', get_template_directory_uri() . '/inc/welcome/js/welcome.js', array( 'jquery' ) );
+
+			wp_localize_script( $this->theme_slug . '-welcome-screen', 'SmWelcomeObject', array(
+				'admin_nonce'	=> wp_create_nonce( 'plugin_installer_nonce'),
+				'activate_nonce'	=> wp_create_nonce( 'plugin_activate_nonce'),
+				'deactivate_nonce'	=> wp_create_nonce( 'plugin_deactivate_nonce'),
+				'ajaxurl'		=> esc_url( admin_url( 'admin-ajax.php' ) ),
+				'activate_btn' => $this->strings['activate_btn'],
+				'installed_btn' => $this->strings['installed_btn'],
+				'demo_installing' => $this->strings['demo_installing'],
+				'demo_installed' => $this->strings['demo_installed'],
+				'demo_confirm' => $this->strings['demo_confirm'],
+			) );
+
+
+		}
+
+		/** Plugin API **/
+		public function call_plugin_api( $plugin ) {
+			include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+			$call_api = plugins_api( 'plugin_information', array(
+				'slug'   => $plugin,
+				'fields' => array(
+					'downloaded'        => false,
+					'rating'            => false,
+					'description'       => false,
+					'short_description' => true,
+					'donate_link'       => false,
+					'tags'              => false,
+					'sections'          => true,
+					'homepage'          => true,
+					'added'             => false,
+					'last_updated'      => false,
+					'compatibility'     => false,
+					'tested'            => false,
+					'requires'          => false,
+					'downloadlink'      => false,
+					'icons'             => true
+				)
+			) );
+
+			return $call_api;
+		}
+
+		/** Check For Icon **/
+		public function check_for_icon( $arr ) {
+			if ( ! empty( $arr['svg'] ) ) {
+				$plugin_icon_url = $arr['svg'];
+			} elseif ( ! empty( $arr['2x'] ) ) {
+				$plugin_icon_url = $arr['2x'];
+			} elseif ( ! empty( $arr['1x'] ) ) {
+				$plugin_icon_url = $arr['1x'];
+			} else {
+				$plugin_icon_url = $arr['default'];
+			}
+
+			return $plugin_icon_url;
+		}
+
+		/** Check if Plugin is active or not **/
+		public function get_plugin_active($plugin) {
+			$folder_name = $plugin['slug'];
+			$file_name = $plugin['filename'];
+
+			$class = '';
+			if( isset($plugin['class']) ){
+				$class = $plugin['class'];	
+			}
+
+			$function = '';
+			if( isset($plugin['function']) ){
+				$function = $plugin['function'];
+			}
+
+			$status = 'install';
+
+			$path = WP_PLUGIN_DIR.'/'.esc_attr($folder_name).'/'.esc_attr($file_name);
+			if( file_exists( $path ) ) {
+				if($class){
+					$status = class_exists( $class ) ? 'inactive' : 'active';	
+				}elseif($function){
+					$status = function_exists( $function ) ? 'inactive' : 'active';	
 				}
 
-				/** Enqueue Necessary Styles and Scripts for the Welcome Page **/
-				public function welcome_styles_and_scripts() {
+			}
+			return $status;
+		}
 
+		/** Generate Url for the Plugin Button **/
+		public function generate_plugin_url($status, $plugin) {
+			$folder_name = $plugin['slug'];
+			$file_name = $plugin['filename'];
 
-					wp_enqueue_style( $this->theme_slug . '-welcome-screen', get_template_directory_uri() . '/inc/welcome/css/welcome.css' );
-					wp_enqueue_script( $this->theme_slug . '-welcome-screen', get_template_directory_uri() . '/inc/welcome/js/welcome.js', array( 'jquery' ) );
+			switch ( $status ) {
+				case 'install':
+				return wp_nonce_url(
+					add_query_arg(
+						array(
+							'action' => 'install-plugin',
+							'plugin' => esc_attr($folder_name)
+						),
+						network_admin_url( 'update.php' )
+					),
+					'install-plugin_' . esc_attr($folder_name)
+				);
+				break;
 
-					wp_localize_script( $this->theme_slug . '-welcome-screen', 'SmWelcomeObject', array(
-						'admin_nonce'	=> wp_create_nonce( 'plugin_installer_nonce'),
-						'activate_nonce'	=> wp_create_nonce( 'plugin_activate_nonce'),
-						'deactivate_nonce'	=> wp_create_nonce( 'plugin_deactivate_nonce'),
-						'ajaxurl'		=> esc_url( admin_url( 'admin-ajax.php' ) ),
-						'activate_btn' => $this->strings['activate_btn'],
-						'installed_btn' => $this->strings['installed_btn'],
-						'demo_installing' => $this->strings['demo_installing'],
-						'demo_installed' => $this->strings['demo_installed'],
-						'demo_confirm' => $this->strings['demo_confirm'],
-					) );
+				case 'inactive':
+				return '#';
+				break;
 
+				case 'active':
+				return '#';
+				break;
+			}
+		}
 
-				}
+		/* ========== Plugin Installation Ajax =========== */
+		public function plugin_installer_callback(){
 
-				/** Plugin API **/
-				public function call_plugin_api( $plugin ) {
-					include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+			if ( ! current_user_can('install_plugins') ) {
+				wp_die( esc_html__( 'Sorry, you are not allowed to install plugins on this site.', 'accesspress-lite' ) );
+			}
 
-					$call_api = plugins_api( 'plugin_information', array(
-						'slug'   => $plugin,
-						'fields' => array(
-							'downloaded'        => false,
-							'rating'            => false,
-							'description'       => false,
-							'short_description' => true,
-							'donate_link'       => false,
-							'tags'              => false,
-							'sections'          => true,
-							'homepage'          => true,
-							'added'             => false,
-							'last_updated'      => false,
-							'compatibility'     => false,
-							'tested'            => false,
-							'requires'          => false,
-							'downloadlink'      => false,
-							'icons'             => true
-						)
-					) );
-
-					return $call_api;
-				}
-
-				/** Check For Icon **/
-				public function check_for_icon( $arr ) {
-					if ( ! empty( $arr['svg'] ) ) {
-						$plugin_icon_url = $arr['svg'];
-					} elseif ( ! empty( $arr['2x'] ) ) {
-						$plugin_icon_url = $arr['2x'];
-					} elseif ( ! empty( $arr['1x'] ) ) {
-						$plugin_icon_url = $arr['1x'];
-					} else {
-						$plugin_icon_url = $arr['default'];
-					}
-
-					return $plugin_icon_url;
-				}
-
-				/** Check if Plugin is active or not **/
-				public function get_plugin_active($plugin) {
-					$folder_name = $plugin['slug'];
-					$file_name = $plugin['filename'];
-
-					$class = '';
-					if( isset($plugin['class']) ){
-						$class = $plugin['class'];	
-					}
-
-					$function = '';
-					if( isset($plugin['function']) ){
-						$function = $plugin['function'];
-					}
-
-					$status = 'install';
-
-					$path = WP_PLUGIN_DIR.'/'.esc_attr($folder_name).'/'.esc_attr($file_name);
-					if( file_exists( $path ) ) {
-						if($class){
-							$status = class_exists( $class ) ? 'inactive' : 'active';	
-						}elseif($function){
-							$status = function_exists( $function ) ? 'inactive' : 'active';	
-						}
-
-					}
-					return $status;
-				}
-
-				/** Generate Url for the Plugin Button **/
-				public function generate_plugin_url($status, $plugin) {
-					$folder_name = $plugin['slug'];
-					$file_name = $plugin['filename'];
-
-					switch ( $status ) {
-						case 'install':
-						return wp_nonce_url(
-							add_query_arg(
-								array(
-									'action' => 'install-plugin',
-									'plugin' => esc_attr($folder_name)
-								),
-								network_admin_url( 'update.php' )
-							),
-							'install-plugin_' . esc_attr($folder_name)
-						);
-						break;
-
-						case 'inactive':
-						return '#';
-						break;
-
-						case 'active':
-						return '#';
-						break;
-					}
-				}
-
-				/* ========== Plugin Installation Ajax =========== */
-				public function plugin_installer_callback(){
-
-					if ( ! current_user_can('install_plugins') ) {
-						wp_die( esc_html__( 'Sorry, you are not allowed to install plugins on this site.', 'accesspress-lite' ) );
-					}
-
-					$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
-					$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
-					$plugin_file = isset( $_POST["plugin_file"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin_file"] ) ) : '';
-					$download_link = isset( $_POST["download_link"] ) ? sanitize_text_field( wp_unslash( $_POST["download_link"] ) ) : '';
+			$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+			$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
+			$plugin_file = isset( $_POST["plugin_file"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin_file"] ) ) : '';
+			$download_link = isset( $_POST["download_link"] ) ? sanitize_text_field( wp_unslash( $_POST["download_link"] ) ) : '';
 
 				// Check our nonce, if they don't match then bounce!
-					if (! wp_verify_nonce( $nonce, 'plugin_installer_nonce' )) {
-						wp_die( esc_html__( 'Error - unable to verify nonce, please try again.', 'accesspress-lite') );
-					}
+			if (! wp_verify_nonce( $nonce, 'plugin_installer_nonce' )) {
+				wp_die( esc_html__( 'Error - unable to verify nonce, please try again.', 'accesspress-lite') );
+			}
 
 
          		// Include required libs for installation
-					require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-					require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
-					require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
+			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+			require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
+			require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
 				// Get Plugin Info
-					$api = $this->call_plugin_api($plugin);
+			$api = $this->call_plugin_api($plugin);
 
-					$skin     = new WP_Ajax_Upgrader_Skin();
-					$upgrader = new Plugin_Upgrader( $skin );
-					$upgrader->install($api->download_link);
+			$skin     = new WP_Ajax_Upgrader_Skin();
+			$upgrader = new Plugin_Upgrader( $skin );
+			$upgrader->install($api->download_link);
 
-					$plugin_file = esc_html($plugin).'/'.esc_html($plugin_file);
+			$plugin_file = esc_html($plugin).'/'.esc_html($plugin_file);
 
-					if($api->name) {
-						if($plugin_file) {
-							activate_plugin($plugin_file);
-							echo 'success';
-							die();
-						}
-					}else{
-						$upgrader->install($download_link);
-
-						$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
-
-						if(file_exists($plugin_file)) {
-
-							activate_plugin($plugin_file);
-							echo "success";
-							die();
-						}
-					}
-					echo 'fail';
-
+			if($api->name) {
+				if($plugin_file) {
+					activate_plugin($plugin_file);
+					echo 'success';
 					die();
 				}
+			}else{
+				$upgrader->install($download_link);
 
-				/** Plugin Offline Installation Ajax **/
-				public function plugin_offline_installer_callback() {
-					$plugin = array();
+				$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
 
-					$file_location = $plugin['location'] = isset( $_POST['file_location'] ) ? sanitize_text_field( wp_unslash( $_POST['file_location'] ) ) : '';
-					$file = isset( $_POST['file'] ) ? sanitize_text_field( wp_unslash( $_POST['file'] ) ) : '';
-					$host_type = isset( $_POST['host_type'] ) ? sanitize_text_field( wp_unslash( $_POST['host_type'] ) ) : '';
-					$plugin_class = $plugin['class'] = isset( $_POST['class_name'] ) ? sanitize_text_field( wp_unslash( $_POST['class_name'] ) ) : '';
-					$plugin_slug = $plugin['slug'] = isset( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
-					$plugin_directory = ABSPATH . 'wp-content/plugins/';
+				if(file_exists($plugin_file)) {
 
-					$plugin_file = $plugin_slug . '/' . $file;
+					activate_plugin($plugin_file);
+					echo "success";
+					die();
+				}
+			}
+			echo 'fail';
 
-					if( $host_type == 'remote' ) {
-						$file_location = $this->get_local_dir_path($plugin);
-					}
+			die();
+		}
 
-					$zip = new ZipArchive();
-					if ($zip->open($file_location) === TRUE) {
-						$zip->extractTo($plugin_directory);
-						$zip->close();
+		/** Plugin Offline Installation Ajax **/
+		public function plugin_offline_installer_callback() {
+			$plugin = array();
 
-						activate_plugin($plugin_file);
+			$file_location = $plugin['location'] = isset( $_POST['file_location'] ) ? sanitize_text_field( wp_unslash( $_POST['file_location'] ) ) : '';
+			$file = isset( $_POST['file'] ) ? sanitize_text_field( wp_unslash( $_POST['file'] ) ) : '';
+			$host_type = isset( $_POST['host_type'] ) ? sanitize_text_field( wp_unslash( $_POST['host_type'] ) ) : '';
+			$plugin_class = $plugin['class'] = isset( $_POST['class_name'] ) ? sanitize_text_field( wp_unslash( $_POST['class_name'] ) ) : '';
+			$plugin_slug = $plugin['slug'] = isset( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
+			$plugin_directory = ABSPATH . 'wp-content/plugins/';
 
-						if( $host_type == 'remote' ) {
-							unlink($file_location);
-						}
+			$plugin_file = $plugin_slug . '/' . $file;
 
-						echo 'success';
+			if( $host_type == 'remote' ) {
+				$file_location = $this->get_local_dir_path($plugin);
+			}
 
-						die();
+			$zip = new ZipArchive();
+			if ($zip->open($file_location) === TRUE) {
+				$zip->extractTo($plugin_directory);
+				$zip->close();
+
+				activate_plugin($plugin_file);
+
+				if( $host_type == 'remote' ) {
+					unlink($file_location);
+				}
+
+				echo 'success';
+
+				die();
+			} else {
+				echo 'failed';
+			}
+
+			die();
+		}
+
+		/** Plugin Offline Activation Ajax **/
+		public function plugin_activation_callback() {
+
+			$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
+			$plugin_file = isset( $_POST['plugin_file'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin_file'] ) ) : '';
+			$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
+
+			if(file_exists($plugin_file)) {
+
+				activate_plugin($plugin_file);
+				echo "success";
+
+			} else {
+				echo esc_html__('Plugin Does not Exists' , 'accesspress-lite');
+			}
+
+			die();
+
+		}
+
+		/** Plugin Offline Activation Ajax **/
+		public function plugin_deactivation_callback() {
+
+			$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
+			$plugin_file = isset( $_POST['plugin_file'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin_file'] ) ) : '';
+			$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
+
+			if(file_exists($plugin_file)) {
+
+				deactivate_plugins($plugin_file);
+				echo "success";
+
+			} else {
+				echo esc_html__('Plugin Does not Exists' , 'accesspress-lite');
+			}
+
+			die();
+
+		}
+
+		public function all_required_plugins_installed() {
+
+			$companion_plugins = $this->companion_plugins;
+			$show_success_notice = false;
+
+			foreach($companion_plugins as $plugin) {
+
+				$path = WP_PLUGIN_DIR.'/'.esc_attr($plugin['slug']).'/'.esc_attr($plugin['filename']);
+
+				if(file_exists($path)) {
+					if(class_exists($plugin['class'])) {
+						$show_success_notice = true;
 					} else {
-						echo 'failed';
+						$show_success_notice = false;
+						break;
 					}
-
-					die();
-				}
-
-				/** Plugin Offline Activation Ajax **/
-				public function plugin_activation_callback() {
-
-					$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
-					$plugin_file = isset( $_POST['plugin_file'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin_file'] ) ) : '';
-					$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
-
-					if(file_exists($plugin_file)) {
-
-						activate_plugin($plugin_file);
-						echo "success";
-
-					} else {
-						echo esc_html__('Plugin Does not Exists' , 'accesspress-lite');
-					}
-
-					die();
-
-				}
-
-				/** Plugin Offline Activation Ajax **/
-				public function plugin_deactivation_callback() {
-
-					$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
-					$plugin_file = isset( $_POST['plugin_file'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin_file'] ) ) : '';
-					$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin_file);
-
-					if(file_exists($plugin_file)) {
-
-						deactivate_plugins($plugin_file);
-						echo "success";
-
-					} else {
-						echo esc_html__('Plugin Does not Exists' , 'accesspress-lite');
-					}
-
-					die();
-
-				}
-
-				public function all_required_plugins_installed() {
-
-					$companion_plugins = $this->companion_plugins;
+				} else {
 					$show_success_notice = false;
-
-					foreach($companion_plugins as $plugin) {
-
-						$path = WP_PLUGIN_DIR.'/'.esc_attr($plugin['slug']).'/'.esc_attr($plugin['filename']);
-
-						if(file_exists($path)) {
-							if(class_exists($plugin['class'])) {
-								$show_success_notice = true;
-							} else {
-								$show_success_notice = false;
-								break;
-							}
-						} else {
-							$show_success_notice = false;
-							break;
-						}
-					}
-
-					return $show_success_notice;
+					break;
 				}
+			}
 
-				public function get_local_dir_path($plugin) {
+			return $show_success_notice;
+		}
 
-					$upload_dir = wp_upload_dir();
+		public function get_local_dir_path($plugin) {
 
-					$file_location = $file_location = $upload_dir['path'] . '/' . $plugin['slug'].'.zip';
+			$upload_dir = wp_upload_dir();
 
-					if( file_exists( $file_location ) || class_exists( $plugin['class'] ) ) {
-						return $file_location;
-					}
+			$file_location = $file_location = $upload_dir['path'] . '/' . $plugin['slug'].'.zip';
 
-					$url = wp_nonce_url(admin_url('themes.php?page=' . $this->theme_slug . '-welcome&section=actions_required'),'remote-file-installation');
-					if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
+			if( file_exists( $file_location ) || class_exists( $plugin['class'] ) ) {
+				return $file_location;
+			}
+
+			$url = wp_nonce_url(admin_url('themes.php?page=' . $this->theme_slug . '-welcome&section=actions_required'),'remote-file-installation');
+			if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
 					return; // stop processing here
 				}
 
