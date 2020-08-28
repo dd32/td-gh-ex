@@ -420,13 +420,6 @@ body {
 	display: none !important;
 }
 
-head,
-meta,
-link,
-script {
-    display: none !important;
-}
-
 [disabled],
 [disabled]:hover,
 [disabled]:focus {
@@ -623,13 +616,11 @@ details {
 	border-radius: var(--radius);
 	margin-bottom: 1em;
 	margin-top: 1em;
-	padding: 0 1rem;
+	padding: 0 0.8em;
 }
 
 details:not(:first-child) {
 	margin-top: 2em;
-	padding-left: 1rem;
-	padding-right: 1rem;
 }
 
 details[open] {
@@ -684,7 +675,9 @@ summary::before {
 }
 
 summary + * {
-	margin-top: 0.5rem;
+	border: 0 !important;
+	margin-top: 0.5rem !important;
+	padding: 0.5rem !important;
 }
 
 dfn {

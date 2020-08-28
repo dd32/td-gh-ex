@@ -4,7 +4,7 @@ Theme URI: https://github.com/aemi-dev/aemi/
 Author: Guillaume COQUARD
 Author URI: https://aemi.dev/
 Description: AeMi is designed to be an aesthetic minimalist wordpress theme. It provides a highly legible, clean, clear and really minimalist theme.
-Version: 2.0.11
+Version: 2.0.2
 Tested up to: 5.5
 Requires PHP: 7.2
 License: GPL-3.0
@@ -835,34 +835,30 @@ body:not(.header-hidden) #site-progress-bar {
 }
 
 #site-branding #site-logo {
-	display: grid;
-	align-items: center;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
-	height: 2.5rem;
-	padding: 0;
-	width: 100%;
-}
-#site-branding #site-logo > * {
-	grid-area: 1 / 1;
 	display: block;
-	height: 2rem;
-	position: relative;
-	width: max-content;
+	height: auto;
+	left: 0;
+	max-height: 4.5rem;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	min-width: 2.5rem;
 }
 #site-branding #site-logo a {
 	display: block;
-	height: max-content;
-	width: max-content;
 }
 #site-branding #site-logo img {
 	border-radius: 0;
 	display: block;
-	height: 2rem;
-	max-height: 4rem;
+	left: 50%;
+	max-height: 4.5rem;
 	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	transition: opacity var(--tr-short) var(--tr-func);
-	width: auto;
+	width: 100%;
 }
 
 .color-scheme-dark #site-header:not(.color-scheme-dark) .light-scheme-logo:not(:only-child) img,
@@ -929,9 +925,6 @@ body:not(.color-scheme-dark) #site-header.color-scheme-dark .light-scheme-logo:n
 	padding: 0;
 	position: relative;
 	width: var(--legible-width);
-}
-#main-content:only-child {
-	margin-bottom: calc(var(--legible-margin) / 2);
 }
 #pre-content,
 #post-content {
@@ -1160,11 +1153,6 @@ body:not(.color-scheme-dark) #site-header.color-scheme-dark .light-scheme-logo:n
 	z-index: 1;
 }
 
-.site-loop .post-header ,
-.site-loop .post-header .post-meta {
-    width: auto;
-}
-
 /*
  * Post Attachments
  */
@@ -1173,7 +1161,7 @@ body:not(.color-scheme-dark) #site-header.color-scheme-dark .light-scheme-logo:n
 .site-loop .post-attachment {
 	display: block;
 	height: 100%;
-	max-height: 100%;
+	max-height: 300px;
 	overflow: hidden;
 	width: 100%;
 }
@@ -1296,12 +1284,6 @@ a.post-info:hover {
 	transition: opacity var(--tr-short) var(--tr-func);
 }
 
-.cover .\:hover .post-attachment + a.post-info,
-.cover .post-attachment + a.post-info:hover {
-	opacity: 0;
-	transition: opacity var(--tr-short) var(--tr-func);
-}
-
 .singular .post-info,
 #entry-head .post-info {
 	height: auto;
@@ -1410,15 +1392,8 @@ body:not(.singular) .post-header .post-meta > * {
 	margin-bottom: 1rem;
 }
 
-.\:hover .post-attachment + a.post-info + .post-meta > .meta-excerpt,
-.post-header:hover .post-attachment + a.post-info + .post-meta > .meta-excerpt {
+.post-header:hover .meta-excerpt {
 	opacity: 0.6;
-	transition: opacity var(--tr-short) var(--tr-func);
-}
-
-.cover .\:hover .post-attachment + a.post-info + .post-meta > .meta-excerpt,
-.cover .post-header:hover .post-attachment + a.post-info + .post-meta > .meta-excerpt {
-	opacity: 0;
 	transition: opacity var(--tr-short) var(--tr-func);
 }
 
@@ -1850,10 +1825,10 @@ a#cancel-comment-reply-link:hover {
 	color: var(--text-important);
 }
 
-.comment-form-comment > *:not(script),
-.comment-form-author > *:not(script),
-.comment-form-email > *:not(script),
-.comment-form-url > *:not(script),
+.comment-form-comment > *,
+.comment-form-author > *,
+.comment-form-email > *,
+.comment-form-url > *,
 .form-submit {
 	display: block;
 	width: 100%;
@@ -2765,4 +2740,3 @@ a .nav-previous,
 .lightbox-prev::before {
 	content: '\2190';
 }
-
