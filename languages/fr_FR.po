@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-08-12 12:14-0400\n"
-"PO-Revision-Date: 2020-08-12 12:14-0400\n"
+"POT-Creation-Date: 2020-08-28 00:22-0400\n"
+"PO-Revision-Date: 2020-08-28 00:22-0400\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -162,7 +162,7 @@ msgstr "A propos de %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Voir tous les articles par %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:117 ../inc/catcheverest-functions.php:387
+#: ../functions.php:117 ../inc/catcheverest-functions.php:400
 msgid "Primary Menu"
 msgstr "Menu principal"
 
@@ -222,157 +222,157 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Les commentaires et les rétroliens sont fermés pour l'instant."
 
-#: ../inc/catcheverest-functions.php:144
+#: ../inc/catcheverest-functions.php:153
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: ../inc/catcheverest-functions.php:907
+#: ../inc/catcheverest-functions.php:925
 #: ../inc/panel/customizer/customizer.php:554
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catcheverest-functions.php:912
+#: ../inc/catcheverest-functions.php:930
 #: ../inc/panel/customizer/customizer.php:564
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catcheverest-functions.php:917
+#: ../inc/catcheverest-functions.php:935
 #: ../inc/panel/customizer/customizer.php:574
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catcheverest-functions.php:922
+#: ../inc/catcheverest-functions.php:940
 #: ../inc/panel/customizer/customizer.php:614
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catcheverest-functions.php:927
+#: ../inc/catcheverest-functions.php:945
 #: ../inc/panel/customizer/customizer.php:584
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catcheverest-functions.php:932
+#: ../inc/catcheverest-functions.php:950
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catcheverest-functions.php:937
+#: ../inc/catcheverest-functions.php:955
 #: ../inc/panel/customizer/customizer.php:604
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catcheverest-functions.php:942
+#: ../inc/catcheverest-functions.php:960
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catcheverest-functions.php:947
+#: ../inc/catcheverest-functions.php:965
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catcheverest-functions.php:952
+#: ../inc/catcheverest-functions.php:970
 #: ../inc/panel/customizer/customizer.php:644
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catcheverest-functions.php:957
+#: ../inc/catcheverest-functions.php:975
 #: ../inc/panel/customizer/customizer.php:654
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catcheverest-functions.php:962
+#: ../inc/catcheverest-functions.php:980
 #: ../inc/panel/customizer/customizer.php:664
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catcheverest-functions.php:967
+#: ../inc/catcheverest-functions.php:985
 #: ../inc/panel/customizer/customizer.php:674
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catcheverest-functions.php:972
+#: ../inc/catcheverest-functions.php:990
 #: ../inc/panel/customizer/customizer.php:684
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catcheverest-functions.php:977
+#: ../inc/catcheverest-functions.php:995
 #: ../inc/panel/customizer/customizer.php:694
 #: ../inc/panel/customizer/customizer.php:1345
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catcheverest-functions.php:982
+#: ../inc/catcheverest-functions.php:1000
 #: ../inc/panel/customizer/customizer.php:704
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catcheverest-functions.php:987
+#: ../inc/catcheverest-functions.php:1005
 #: ../inc/panel/customizer/customizer.php:714
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catcheverest-functions.php:992
+#: ../inc/catcheverest-functions.php:1010
 #: ../inc/panel/customizer/customizer.php:724
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catcheverest-functions.php:997
+#: ../inc/catcheverest-functions.php:1015
 #: ../inc/panel/customizer/customizer.php:734
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catcheverest-functions.php:1002
+#: ../inc/catcheverest-functions.php:1020
 #: ../inc/panel/customizer/customizer.php:744
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catcheverest-functions.php:1007
+#: ../inc/catcheverest-functions.php:1025
 #: ../inc/panel/customizer/customizer.php:754
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catcheverest-functions.php:1012
+#: ../inc/catcheverest-functions.php:1030
 #: ../inc/panel/customizer/customizer.php:764
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catcheverest-functions.php:1017
+#: ../inc/catcheverest-functions.php:1035
 #: ../inc/panel/customizer/customizer.php:774
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catcheverest-functions.php:1022
+#: ../inc/catcheverest-functions.php:1040
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catcheverest-functions.php:1027
+#: ../inc/catcheverest-functions.php:1045
 #: ../inc/panel/customizer/customizer.php:794
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catcheverest-functions.php:1032
+#: ../inc/catcheverest-functions.php:1050
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catcheverest-functions.php:1037
+#: ../inc/catcheverest-functions.php:1055
 #: ../inc/panel/customizer/customizer.php:814
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catcheverest-functions.php:1042
+#: ../inc/catcheverest-functions.php:1060
 #: ../inc/panel/customizer/customizer.php:824
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catcheverest-functions.php:1047
+#: ../inc/catcheverest-functions.php:1065
 #: ../inc/panel/customizer/customizer.php:834
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catcheverest-functions.php:1142
+#: ../inc/catcheverest-functions.php:1160
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1178
-#: ../inc/catcheverest-functions.php:1192
+#: ../inc/catcheverest-functions.php:1196
+#: ../inc/catcheverest-functions.php:1210
 msgid "Menu"
 msgstr "Menu"
 

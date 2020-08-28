@@ -12,7 +12,9 @@
 /**
  * Enqueue scripts and styles
  */
-function catcheverest_scripts() { 
+function catcheverest_scripts() {
+	$theme = wp_get_theme();
+
 	//Getting Ready to load data from Theme Options Panel
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
@@ -36,8 +38,15 @@ function catcheverest_scripts() {
 	$disable_responsive = $options['disable_responsive'];
 
 	if ( $disable_responsive == "0" ) {
-		wp_enqueue_style( 'catcheverest-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
-		wp_enqueue_script( 'small-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-menu.min.js', array( 'jquery' ), '20130224', true );
+		wp_enqueue_style( 'catcheverest-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css', false, $theme->get( 'Version' ) );
+		wp_enqueue_script( 'catcheverest-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-menu.min.js', array( 'jquery' ),  wp_get_theme()->get('Version'), true );
+
+		wp_localize_script( 'catcheverest-menu', 'catchEverestOptions', array(
+			'screenReaderText' => array(
+				'expand'   => esc_html__( 'expand child menu', 'catch-everest' ),
+				'collapse' => esc_html__( 'collapse child menu', 'catch-everest' ),
+			),
+		) );
 	}
 
 	wp_enqueue_script( 'catcheverest-navigation', get_template_directory_uri() . '/js/navigation.min.js', array( 'jquery' ), '20150601', true );
@@ -382,26 +391,35 @@ add_action( 'catcheverest_hgroup_wrap', 'catcheverest_header_right', 15 );
  * @uses catcheverest_header action to add it in the header
  */
 function catcheverest_header_menu() { ?>
-	<div id="header-menu">
-        <nav id="access" class="site-navigation" role="navigation">
-            <a class="screen-reader-text"><?php _e( 'Primary Menu', 'catch-everest' ); ?></a>
-            <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    $catcheverest_primary_menu = array(
-                        'theme_location'    => 'primary',
-                        'container_class' 	=> 'menu-header-container',
-                        'items_wrap'        => '<ul class="menu">%3$s</ul>'
-                    );
-                    wp_nav_menu( $catcheverest_primary_menu );
-                }
-                else {
-                    echo '<div class="menu-header-container">';
-                    wp_page_menu( array( 'menu_class'  => 'menu' ) );
-                    echo '</div>';
-                }
+	<div id="primary-menu-wrapper" class="menu-wrapper">
+        <div class="menu-toggle-wrapper">
+            <button id="menu-toggle" class="menu-toggle" aria-controls="main-menu" aria-expanded="false"><span class="menu-label"><?php esc_html_e( 'Menu', 'catch-everest' ); ?></span></button>
+        </div><!-- .menu-toggle-wrapper -->
+
+        <div class="menu-inside-wrapper">
+            <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'catch-everest' ); ?>">
+            <?php if ( has_nav_menu( 'primary' ) ) {
+                wp_nav_menu(
+                    array(
+                        'container'      => '',
+                        'theme_location' => 'primary',
+                        'menu_id'        => 'primary-menu',
+                        'menu_class'     => 'menu nav-menu',
+                    )
+                );
+            } else {
+                wp_page_menu(
+                    array(
+                        'menu_class' => 'primary-menu-container',
+                        'before'     => '<ul id="menu-primary-items" class="menu nav-menu">',
+                        'after'      => '</ul>',
+                    )
+                );
+            }
             ?>
-        </nav><!-- .site-navigation .main-navigation -->
-	</div>
+            </nav><!-- .main-navigation -->
+    	</div>
+    </div>
 <?php
 }
 add_action( 'catcheverest_after_hgroup_wrap', 'catcheverest_header_menu', 10 );
@@ -520,7 +538,7 @@ if ( ! function_exists( 'catcheverest_slider_display' ) ) :
 
 			// This function passes the value of slider effect to js file.
 			if ( function_exists( 'catcheverest_pass_slider_value' ) ) {
-				catcheverest_pass_slider_value(); 
+				catcheverest_pass_slider_value();
 			}
 
 			// Select Slider.
@@ -601,7 +619,7 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
 		$disable_homepage_featured = $options['disable_homepage_featured'];
 		$quantity                  = $options['homepage_featured_qty'];
 		$headline                  = $options['homepage_featured_headline'];
-					
+
 		if ( $disable_homepage_featured == "0" ) {
 
 			$output = '<section id="featured-post" class="layout-three">';
@@ -693,7 +711,7 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
 					'orderby'             => 'post__in',
 				);
 
-				
+
 				// The Query
 				$query = new WP_Query( $args );
 
@@ -711,18 +729,18 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
 									'</a>
 								</figure>';
 							}
-	
+
 							$output .= '
 							<div class="entry-container">';
-							
+
 							$output .= the_title( '<header class="entry-header"><h2 class="entry-title"> <a href="' . esc_url( get_the_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">', '</a></h2></header>', false );
 
 							$excerpt = get_the_excerpt();
-	
+
 							if ( $excerpt !='') {
 								$output .= '<div class="entry-content">' . wp_kses_post( $excerpt ) . '</div>';
 							}
-							
+
 							$output .= '
 							</div><!-- .entry-container -->
 						</article><!-- .hentry -->';
@@ -737,7 +755,7 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
 			}
 
 			$output .= '</section>';
-			
+
 			echo $output;
 		}
 

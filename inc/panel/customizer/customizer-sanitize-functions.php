@@ -93,7 +93,7 @@ function catcheverest_sanitize_post_id( $input ) {
     // Ensure $input is an absolute integer.
 	$post_id = absint( $input );
 	// If $page_id is an ID of a published page, return it; otherwise, return false
-	return ( 'publish' == get_post_status( $post_id ) ? $post_id : false );
+	return ( 'publish' == get_post_status( $post_id ) ? $post_id : '' );
 }
 
 
