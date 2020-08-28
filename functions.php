@@ -138,4 +138,121 @@ if ( !function_exists('saraswati_blog_default_theme_options') ) :
     }
 endif;
 
+/**
+ * Saraswati Blog functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Saraswati_Blog
+ */
 
+if ( ! function_exists( 'saraswati_blog_setup' ) ) :
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
+     */
+    function saraswati_blog_setup() {
+        /*
+         * Make theme available for translation.
+         * Translations can be filed in the /languages/ directory.
+         * If you're building a theme based on Saraswati Blog, use a find and replace
+         * to change 'saraswati-blog' to the name of your theme in all the template files.
+         */
+        load_theme_textdomain( 'saraswati-blog' );
+
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support( 'automatic-feed-links' );
+
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+        add_theme_support( 'title-tag' );
+
+        /*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support( 'post-thumbnails' );
+
+        add_image_size( 'homepage-slider', 1349, 605, true ); //(cropped)
+
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus( array(
+            'menu-1' => esc_html__( 'Primary', 'adorable-blog' ),
+        ) );
+
+        register_nav_menus( array(
+            'top_header' => esc_html__( 'Top Header', 'adorable-blog' ),
+        ) );
+
+        register_nav_menus( array(
+            'social-link' => esc_html__( 'Social Link', 'adorable-blog' ),
+        ) );
+
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support( 'html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ) );
+
+
+
+
+        /*gutrnberg*/
+
+        add_theme_support( 'align-wide' );
+
+        /*
+     * Enable support for Post Formats.
+     *
+     * See: https://codex.wordpress.org/Post_Formats
+     */
+        add_theme_support( 'post-formats', array(
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'status',
+            'audio',
+            'chat',
+        ) );
+
+
+        // Set up the WordPress core custom background feature.
+        add_theme_support( 'custom-background', apply_filters( 'saraswati_blog_custom_background_args', array(
+            'default-color' => '#fff',
+            'default-image' => '',
+        ) ) );
+
+        // Add theme support for selective refresh for widgets.
+        add_theme_support( 'customize-selective-refresh-widgets' );
+
+        /**
+         * Add support for core custom logo.
+         *
+         * @link https://codex.wordpress.org/Theme_Logo
+         */
+        add_theme_support( 'custom-logo', array(
+            'height'      => 250,
+            'width'       => 250,
+            'flex-width'  => true,
+            'flex-height' => true,
+        ) );
+    }
+endif;
+add_action( 'after_setup_theme', 'saraswati_blog_setup' );

@@ -70,7 +70,7 @@ $continue_reading_text   = $saraswati_blog_theme_options['saraswati-blog-continu
 							<p>
 								<?php echo esc_html( wp_trim_words(get_the_content(),$excerpt_length));
 								wp_link_pages( array(
-									'before' => '<div class="page-links">' . esc_html__( 'Pages:','ample-business' ),
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:','adorable-blog' ),
 									'after'  => '</div>',
 								) );
 								?> </p>

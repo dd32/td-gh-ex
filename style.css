@@ -7,7 +7,7 @@ Description:  Adorable Blog is a responsive WordPress theme, its the child theme
 Author:       amplethemes
 Author URL:   https://www.amplethemes.com/
 Template:     saraswati-blog
-Version:      1.0.1
+Version:      1.0.2
 Tested up to:   5.5
 Requires PHP:   5.2.4
 Requires PHP: 5.0
@@ -41,7 +41,7 @@ body {
 }
 
 body {
-    background: #f8f8f8;
+    background: #fff;
     font-family: 'Merriweather', serif;
     font-size: 16px;
     font-weight: 400;
@@ -460,7 +460,7 @@ ul li:focus-within > ul {
     display: none;
 }
 body {
-    background: #f8f8f800;
+
     font-family: 'Merriweather', serif;
     font-size: 16px;
     font-weight: 400;
@@ -562,3 +562,4 @@ body {
 .entry-summary .text-center.more-link-wrap {
     text-align: center;
 }
+
