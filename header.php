@@ -3,7 +3,7 @@
  *
  * Blackoot Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2019 Iceable Media - Mathieu Sarrasin
+ * Copyright 2014-2020 Iceable Themes - https://www.iceablethemes.com
  *
  * Header Template
  *
@@ -24,7 +24,13 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open( );
+} else {
+	do_action( 'wp_body_open' );
+}
+?>
 <div id="main-wrap">
 	<div id="header-wrap">
 		<div id="tophead-wrap">
