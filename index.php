@@ -3,7 +3,7 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2019 Iceable Media - Mathieu Sarrasin
+ * Copyright 2013-2020 Iceable Themes - https://www.iceablethemes.com
  *
  * Main Index
  *
@@ -30,7 +30,7 @@ get_header();
 	/* ARCHIVE CONDITIONAL TITLE */
 	if ( is_archive() ) :
 		?>
-		<h1 class="page-title"><?php echo esc_html( get_the_archive_title() ); ?></h1>
+		<h1 class="page-title"><?php echo wp_kses( get_the_archive_title(), 'post' ); ?></h1>
 		<?php
 	endif;
 
