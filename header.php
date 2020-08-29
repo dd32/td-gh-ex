@@ -3,7 +3,7 @@
  *
  * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2019 Iceable Media - Mathieu Sarrasin
+ * Copyright 2014-2020 Iceable Themes - https://www.iceablethemes.com
  *
  * Header Template
  *
@@ -25,6 +25,11 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php
+		if ( function_exists( 'wp_body_open' ) ) {
+			wp_body_open( );
+		} else {
+			do_action( 'wp_body_open' );
+		}
 
 	/* Wide or boxed layout ? */
 	$boxed = ( 'boxed' === get_theme_mod( 'wortex_layout' ) ) ? true : false;

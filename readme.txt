@@ -2,9 +2,10 @@
 
 **Contributors:** iceable
 **Requires at least:** WordPress 4.7
-**Tested up to:** WordPress 5.1
-**Stable tag:** 1.2.18
-**Version:** 1.2.18
+**Stable tag:** 1.2.19
+**Version:** 1.2.19
+**Tested up to:** 5.5
+**Requires PHP:** 5.6
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, footer-widgets, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
@@ -32,7 +33,7 @@ Wortex Lite is the lite version of Wortex Pro, which comes with many additional 
 ### Translation
 
 Bundled translations (GPL Licensed):
-* French (fr_FR) translation: Copyright 2014-2019, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
+* French (fr_FR) translation: Copyright 2014-2020, Iceable Themes - https://www.iceablethemes.com
 
 Translating this theme into your own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
 
@@ -43,7 +44,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 ## Copyright
 
-Wortex Lite WordPress Theme, Copyright 2014-2019 Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
+Wortex Lite WordPress Theme, Copyright 2014-2020 Iceable Themes - https://www.iceablethemes.com
 Wortex Lite is distributed under the terms of the GNU GPL
 
 Wortex Lite bundles the following third-party resources:
@@ -66,6 +67,13 @@ Source: http://fontawesome.io/
 
 
 ## Changelog
+
+### 1.1.19
+August 29th, 2020
+* Fixed archive title escaping for WordPress 5.5+
+* Added "Tested up to" and "Requires PHP" headers in style.css
+* Added wp_body_open()
+* Updated copyright
 
 ### 1.2.18
 February 28th, 2019

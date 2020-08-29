@@ -3,7 +3,7 @@
  *
  * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2019 Iceable Media - Mathieu Sarrasin
+ * Copyright 2014-2020 Iceable Themes - https://www.iceablethemes.com
  *
  * Main Index
  *
@@ -38,7 +38,7 @@ if ( '' !== $wortex_page_title ) :
 		<div class="container">
 			<h2>
 				<?php
-				echo esc_html( $wortex_page_title );
+				echo wp_kses( $wortex_page_title, 'post' );
 				?>
 			</h2>
 		</div>
