@@ -119,7 +119,7 @@ class social_gump extends WP_Widget {
 			echo '<span><a href="' . $tumblr . '" title="' . __( 'Tumblr', 'gump' ) . '" class="' . __( 'social social-tumblr', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $wordpress )
-			echo '<span><a href="' . $wordpress . '" title="' . __( 'Wordpress', 'gump' ) . '" class="' . __( 'social social-wordpress', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+			echo '<span><a href="' . $wordpress . '" title="' . __( 'WordPress', 'gump' ) . '" class="' . __( 'social social-wordpress', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $soundcloud )
 			echo '<span><a href="' . $soundcloud . '" title="' . __( 'Soundcloud', 'gump' ) . '" class="' . __( 'social social-soundcloud', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
@@ -295,7 +295,7 @@ class social_gump extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'wordpress' ); ?>"><?php _e('Wordpress:','gump'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'wordpress' ); ?>"><?php _e('WordPress:','gump'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'wordpress' ); ?>" name="<?php echo $this->get_field_name( 'wordpress' ); ?>" value="<?php echo $instance['wordpress']; ?>" style="width:100%;" />
 		</p>
 

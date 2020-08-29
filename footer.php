@@ -21,7 +21,7 @@
 
 				<?php if ( get_theme_mod( 'gump_footer' ) ) : ?>
 					
-					<?php echo get_theme_mod( 'gump_footer' ); ?>
+					<?php echo esc_html(get_theme_mod( 'gump_footer' )); ?>
 				
 				<?php else : ?>
 					

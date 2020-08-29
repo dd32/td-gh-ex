@@ -5,6 +5,13 @@ For a detailed theme documentation: https://pankogut.com/wordpress-themes/gump
 
 ===============================
 
+Version 2.0.8
+===============================
+- Deleted affiliate links
+- Deleted custom css
+- Added the custom logo
+- Gutenberg friendly
+
 Version 2.0.4
 ===============================
 - Added WPForms

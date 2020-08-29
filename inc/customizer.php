@@ -183,44 +183,6 @@ function gump_theme_customizer( $wp_customize ) {
 		'section' => 'colors',
 		'settings' => 'gump_widget_title_color',
 	) ) );
-	
-	/*--------------------------------------------------------------
-		Custom CSS
-	--------------------------------------------------------------*/
-	class gump_Customize_Textarea_Control extends WP_Customize_Control {
-	    public $type = 'textarea';
-	 
-	    public function render_content() {
-	        ?>
-	            <label>
-	                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-	                <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-	            </label>
-	        <?php
-	    }
-	}
-
-	$wp_customize->add_section( 'gump_css_section' , array(
-	    'title'       => __( 'Custom CSS (READ INSIDE)', 'gump' ),
-	    'priority'    => 90,
-	    'description' => 'Please, in the next update this will be delete because you can use the default Additional CSS of WordPress. Copy and paste your code in that tab right now.',
-	) );
-
-	$wp_customize->add_setting( 'gump_css', array(
-        'sanitize_callback' => 'gump_sanitize_text',
-    ) );
-	 
-	$wp_customize->add_control(
-	    new gump_Customize_Textarea_Control(
-	        $wp_customize,
-	        'gump_css',
-	        array(
-	            'label' => 'Custom CSS',
-	            'section' => 'gump_css_section',
-	            'settings' => 'gump_css'
-	        )
-	    )
-	);
 
 	/*--------------------------------------------------------------
 		Google Analytics
@@ -260,8 +222,7 @@ add_action('customize_register', 'gump_theme_customizer');
 if ( ! function_exists( 'gump_apply_style' ) ) :
   	
   	function gump_apply_style() {	
-		if ( get_theme_mod('gump_css') || 
-			 get_theme_mod('gump_body_color') || 
+		if ( get_theme_mod('gump_body_color') || 
 			 get_theme_mod('gump_link_color') || 
 			 get_theme_mod('gump_hover_color') || 
 			 get_theme_mod('gump_border_color') || 
@@ -269,25 +230,21 @@ if ( ! function_exists( 'gump_apply_style' ) ) :
 			 get_theme_mod('gump_widget_title_color')	
 		) { 
 		?>
-			<style id="gump-custom-css">
-				<?php if ( get_theme_mod('gump_css') ) : ?>
-					<?php echo get_theme_mod('gump_css');  ?>;
-				<?php endif; ?>
-				
+			<style id="gump-custom-css">				
 				<?php if ( get_theme_mod('gump_body_color') || get_theme_mod('gump_body_font') || get_theme_mod('gump_body_font_size') ) : ?>
 					body,
 					button,
 					input,
 					select,
 					textarea {
-						color: <?php echo get_theme_mod('gump_body_color', '#545454'); ?>;
+						color: <?php echo esc_attr(get_theme_mod('gump_body_color', '#545454')); ?>;
 					}
 				<?php endif; ?>
 
 				<?php if ( get_theme_mod('gump_link_color') ) : ?>
                     .entry-content a,
                     .entry-summary a {
-                        color: <?php echo get_theme_mod('gump_link_color', '#000000'); ?>;
+                        color: <?php echo esc_attr(get_theme_mod('gump_link_color', '#000000')); ?>;
                     }
 				<?php endif; ?>
 			
@@ -298,25 +255,25 @@ if ( ! function_exists( 'gump_apply_style' ) ) :
                     .entry-summary a:hover,
                     .entry-summary a:focus,
                     .entry-summary a:active  {
-                        color: <?php echo get_theme_mod('gump_hover_color', '#cccccc'); ?>;
+                        color: <?php echo esc_attr(get_theme_mod('gump_hover_color', '#cccccc')); ?>;
                     }
 				<?php endif; ?>
 				
 				<?php if ( get_theme_mod('gump_border_color') ) : ?>
 					html {
-						border: 10px solid <?php echo get_theme_mod('gump_border_color', '#f0f4f5'); ?>;
+						border: 10px solid <?php echo esc_attr(get_theme_mod('gump_border_color', '#f0f4f5')); ?>;
 					}
 				<?php endif; ?>
 				
 				<?php if ( get_theme_mod('gump_sidebar_color') ) : ?>
 					.widget-area {
-						background-color: <?php echo get_theme_mod('gump_sidebar_color', '#f0f4f5'); ?>;
+						background-color: <?php echo esc_attr(get_theme_mod('gump_sidebar_color', '#f0f4f5')); ?>;
 					}
 				<?php endif; ?>
 
 				<?php if ( get_theme_mod('gump_widget_title_color') ) : ?>
 					.widget-title {
-						color: <?php echo get_theme_mod('gump_widget_title_color', '#000000'); ?>;
+						color: <?php echo esc_attr(get_theme_mod('gump_widget_title_color', '#000000')); ?>;
 					}
 				<?php endif; ?>
 			</style>
@@ -339,7 +296,7 @@ if ( ! function_exists( 'gump_apply_footer' ) ) :
 
 		<script id="gump-custom-scriptss">
 			<?php if ( get_theme_mod('gump_scripts') ) : ?>
-				<?php echo get_theme_mod('gump_scripts');  ?>;
+				<?php echo esc_html(get_theme_mod('gump_scripts'));  ?>;
 			<?php endif; ?>
 		</script>
 		<?php

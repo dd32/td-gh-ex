@@ -35,6 +35,7 @@ a {
 .feature-section img {
 	display: block;
 	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	width: 500px;
 }
 
 .nav-tab-active:focus {

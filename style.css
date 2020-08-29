@@ -3,8 +3,10 @@ Theme Name: Gump
 Theme URI: http://pankogut.com/wordpress-themes/gump
 Author: PanKogut
 Author URI: http://pankogut.com
-Description: WordPress Theme for Lifestyle, Food and Fashion blogger. It has a responsive design with a lot of options like: custom colors, social icons, google analytics and more. People like Gump for his minimal style and because it's easy to use. The theme is also translation ready and it supports RTL language.
-Version: 2.0.7
+Description: WordPress Theme for Lifestyle, Food and Fashion blogger. It has a responsive design with a lot of options like: custom colors, social icons, google analytics and more. People like Gump for his minimal style and because it's easy to use. The theme is also translation ready, it supports RTL language and the new editor Gutenberg. 
+Version: 2.0.8
+Tested up to: 5.5
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-header, custom-background, custom-colors, custom-menu, editor-style, featured-image-header, full-width-template, footer-widgets, rtl-language-support, post-formats, theme-options, featured-images, translation-ready, blog
@@ -194,7 +196,7 @@ textarea {
 	color: #545454;
     font-family: 'Lato', Georgia, Serif;
     font-weight: 400;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.5;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
@@ -560,6 +562,15 @@ a:active {
 /*--------------------------------------------------------------
 ## Logo and Title
 --------------------------------------------------------------*/
+.site-logo {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.site-logo img {
+	width: 300px;
+}
+
 .site-branding {
 	margin: 3em 0;
 	text-align: center;
@@ -579,10 +590,10 @@ a:active {
 
 .site-description {
 	font-family: serif;
-	font-size: 14px;
-	font-style: italic;
+	font-size: 16px;
+	font-style: normal;
 	font-weight: 300;
-	margin-top: 2em;
+	margin-top: 1em;
 	margin-bottom: 0;
 	padding-top: 8px;
 }

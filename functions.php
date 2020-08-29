@@ -45,16 +45,34 @@ if ( ! function_exists( 'gump_setup' ) ) :
 	) ) );
 
 	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array(
-		'comment-list',
-		'search-form',
-		'comment-form',
-		'gallery',
-		'caption',
-	) );
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 	
 	// Support title tag
 	add_theme_support( 'title-tag' );
+
+	// Add Custom Logo
+	add_theme_support( 'custom-logo' );
+
+	// Gutenberg
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'custom-line-height' );
+	add_theme_support( 'custom-units' );
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // gump_setup
 add_action( 'after_setup_theme', 'gump_setup' );
@@ -270,7 +288,7 @@ function gump_analytics() {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', '<?php echo get_theme_mod( 'pk_start_here_analytics' ); ?>', 'auto');
+  ga('create', '<?php echo esc_attr(get_theme_mod( 'pk_start_here_analytics' )); ?>', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -353,31 +371,3 @@ function gump_comment($comment, $args, $depth) {
         </div><?php 
     endif;
 }
-
-/**
- * Set the WPForms ShareASale ID.
- *
- * @param string $shareasale_id The the default ShareASale ID.
- *
- * @return string $shareasale_id
- */
-function gump_wpforms_shareasale_id( $shareasale_id ) {
-	
-	// If this WordPress installation already has an WPForms ShareASale ID
-	// specified, use that.
-	if ( ! empty( $shareasale_id ) ) {
-		return $shareasale_id;
-	}
-	
-	// Define the ShareASale ID to use.
-	// This should be your ShareASale affiate ID, see https://cl.ly/3H1v093A252f.
-	$shareasale_id = '1845472';
-	
-	// This WordPress installation doesn't have an ShareASale ID specified, so 
-	// set the default ID in the WordPress options and use that.
-	update_option( 'wpforms_shareasale_id', $shareasale_id );
-	
-	// Return the ShareASale ID.
-	return $shareasale_id;
-}
-add_filter( 'wpforms_shareasale_id', 'gump_wpforms_shareasale_id' );

@@ -18,12 +18,15 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="hfeed site">
 
 	<div class="container">
 
 		<header id="masthead" class="site-header" role="banner">
-			
+			<div class="site-logo">
+				<?php the_custom_logo(); ?>
+			</div>
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
