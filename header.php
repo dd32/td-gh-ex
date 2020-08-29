@@ -12,6 +12,8 @@
 <body <?php body_class(); ?>>
 <div class="wrapper clearfix">
 
+	<?php if ( function_exists('wp_body_open') ) { wp_body_open(); } ?>
+
 	<?php do_action( 'basic_before_header' ); ?>
 	<!-- BEGIN header -->
 	<header id="header" class="<?php echo apply_filters( 'basic_header_class', 'clearfix' ); ?>">
@@ -94,7 +96,7 @@
 	<?php do_action( 'basic_after_header' ); ?>
 
 
-	<div id="main" class="maxwidth clearfix">
-
+	<div id="main" class="<?php echo apply_filters( 'basic_main_wrap_class', 'maxwidth clearfix' ); ?>">
+		<?php do_action( 'basic_main_wrap_inner_begin' ); ?>
 		<!-- BEGIN content -->
 	
