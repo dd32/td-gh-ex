@@ -2,9 +2,10 @@
 
 **Contributors:** iceable
 **Requires at least:** WordPress 4.7
-**Tested up to:** WordPress 5.1
-**Stable tag:** 1.2.17
-**Version:** 1.2.17
+**Stable tag:** 1.2.18
+**Version:** 1.2.18
+**Tested up to:** 5.5
+**Requires PHP:** 5.6
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, two-columns, right-sidebar, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
@@ -31,7 +32,7 @@ Silverclean Lite is the lite version of Silverclean Pro, which comes with many a
 ### Translation
 
 Bundled translations (GPL Licensed):
-* French (fr_FR) translation: Copyright 2013-2019, Mathieu Sarrasin - Iceable Media (https://www.iceablethemes.com)
+* French (fr_FR) translation: Copyright 2013-2020, Iceable Themes - https://www.iceablethemes.com
 
 Translating this theme into your own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
 If you don't have a .po file editor yet, you can download Poedit from https://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
@@ -42,7 +43,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 ## Copyright
 
-Silverclean Lite WordPress Theme, Copyright 2013-2019 Mathieu Sarrasin - Iceable Media (https://www.iceablethemes.com)
+Silverclean Lite WordPress Theme, Copyright 2013-2020 Iceable Themes - https://www.iceablethemes.com
 Silverclean Lite is distributed under the terms of the GNU GPL
 
 Silverclean Lite bundles the following third-party resources:
@@ -57,6 +58,12 @@ Source: https://github.com/aFarkas/html5shiv
 
 
 ## Changelog
+
+### 1.2.18
+August 29th, 2020
+* Added "Tested up to" and "Requires PHP" headers in style.css
+* Added wp_body_open()
+* Updated copyright
 
 ### 1.2.17
 February 28th, 2019
