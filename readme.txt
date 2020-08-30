@@ -3,7 +3,7 @@ BirdSITE built for photobloggers and photographers. It has good appearance for p
 
 
 === Tags ===
-two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photography
+two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, block-styles
 
 
 === Features ===
@@ -27,17 +27,13 @@ BirdSITE WordPress theme is licensed under the GPL.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 The exceptions to this license are as follows:
-The headers and icon images are created by theme author and are released under GPL license.
+The sample custom header images are created by Sysbird and are released under GPL license.
 
 
 == Third-party Resources ==
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
-
-Flexible drawer menu using jQuery, iScroll and CSS.
-License: MIT License
-Source:  http://git.blivesta.com/drawer
 
 
 == Author ==
@@ -47,6 +43,10 @@ https://profiles.wordpress.org/sysbird/
 
 
 == Changelog ==
+v1.12
+* Updated for WordPress 5.4.2 and Block Editor.
+* bugfix flexbox.
+
 v1.11
 * fix the WordPress 4.9.
 * support the theme tag rtl-language-support.
