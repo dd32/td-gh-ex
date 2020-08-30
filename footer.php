@@ -25,7 +25,7 @@
 						if($hide_show_copyright == '1') { 
 						 if ( ! empty( $copyright_content ) ){
 					?>
-						<p><?php echo esc_html($copyright_content); ?></p>
+						<p><?php echo wp_kses_post($copyright_content); ?></p>
 					<?php 
 						 }else{
 						?>	 
