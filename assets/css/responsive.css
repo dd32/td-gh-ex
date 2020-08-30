@@ -53,6 +53,7 @@
 	}
 	.footer-sociaal-icon ul {
 		text-align: center;
+		float: none;
 	}
 }
 
