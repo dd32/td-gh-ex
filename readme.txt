@@ -3,6 +3,9 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.6.2 - 31 August 2020 =
+* Fixed minor theme check issue.
+
 = 1.6.1 - 31 August 2020 =
 * Added full support for Elementor locations.
 * Added new menu location - mobile.

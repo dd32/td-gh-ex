@@ -378,7 +378,7 @@ final class Agama_Customizer_Upsell {
 
         wp_enqueue_style( 
             'agama-theme-info-style', 
-            AGAMA_CUSTOMIZER_URI . 'agama-upsell/css/style.css', 
+            AGAMA_CUSTOMIZER_URI . 'agama-upsell/css/upsell.css', 
             [], 
             Agama()->version()
         );

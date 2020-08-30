@@ -70,7 +70,7 @@ if ( ! class_exists( 'Agama_Control_Upsell_Theme_Info' ) ) :
 		 * Enqueue resources for the control
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'themevision-upsell-style', AGAMA_CUSTOMIZER_URI . 'agama-upsell/css/style.css', [], Agama()->version() );
+			wp_enqueue_style( 'themevision-upsell-style', AGAMA_CUSTOMIZER_URI . 'agama-upsell/css/upsell.css', [], Agama()->version() );
 		}
 
 		/**
