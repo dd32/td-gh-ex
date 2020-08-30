@@ -703,22 +703,22 @@ add_action( 'customize_register', 'agama_customize_register' );
         'output'            => [
             [
                 'choice'    => 'normal',
-                'element'   => '#agama-primary-nav a',
+                'element'   => '#agama-primary-nav ul.agama-navigation a',
                 'property'  => 'color'
             ],
             [
                 'choice'    => 'visited',
-                'element'   => '#agama-primary-nav a:visited',
+                'element'   => '#agama-primary-nav ul.agama-navigation a:visited',
                 'property'  => 'color'
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '#agama-primary-nav a:hover',
+                'element'   => '#agama-primary-nav ul.agama-navigation a:hover',
                 'property'  => 'color'
             ],
             [
                 'choice'    => 'active',
-                'element'   => '#agama-primary-nav a:active',
+                'element'   => '#agama-primary-nav ul.agama-navigation a:active',
                 'property'  => 'color'
             ]
         ]
@@ -731,24 +731,6 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'capability'	=> 'edit_theme_options',
         'panel'         => 'agama_colors_panel'
 	] );
-    Kirki::add_field( 'agama_options', [
-        'label'     => esc_attr__( 'Mobile Menu Icon Color', 'agama' ),
-        'tootlip'   => esc_attr__( 'Customize mobile menu icon color.', 'agama' ),
-        'settings'  => 'agama_nav_mobile_menu_icon_color',
-        'section'   => 'agama_colors_navigation_mobile_section',
-        'transport' => 'auto',
-        'type'      => 'color',
-        'output'    => [
-            [
-                'element'  => 'button.mobile-menu-toggle, .mobile-menu-toggle-label',
-                'property' => 'color'
-            ],
-            [
-                'element'  => '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner:before, .mobile-menu-toggle-inner:after',
-                'property' => 'background-color'
-            ]
-        ]
-    ] );
     Kirki::add_field( 'agama_options', [
         'label'             => esc_html__( 'Links Color', 'agama' ),
         'tooltip'           => esc_attr__( 'Customize navigation mobile links color.', 'agama' ),
@@ -788,6 +770,60 @@ add_action( 'customize_register', 'agama_customize_register' );
                 'choice'    => 'active',
                 'element'   => '#agama-mobile-nav a:active',
                 'property'  => 'color'
+            ]
+        ]
+    ] );
+    ######################################################
+    # COLORS NAVBAR BUTTONS SECTION
+    ######################################################
+    Kirki::add_section( 'agama_colors_navbar_buttons_section', [
+		'title'			=> esc_attr__( 'Navbar Buttons', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+        'panel'         => 'agama_colors_panel'
+	] );
+    Kirki::add_Field( 'agama_options', [
+        'label'     => esc_html__( 'Disable navbar buttons box shadow.', 'agama' ),
+        'settings'  => 'agama_navbar_buttons_shadow',
+        'section'   => 'agama_colors_navbar_buttons_section',
+        'type'      => 'checkbox',
+        'transport' => 'postMessage',
+        'default'   => false
+    ] );
+    Kirki::add_field( 'agama_options', [
+        'label'             => esc_html__( 'Navbar Buttons', 'agama' ),
+        'tooltip'           => esc_attr__( 'Customize navbar buttons color.', 'agama' ),
+        'settings'          => 'agama_navbar_buttons_color',
+        'section'           => 'agama_colors_navbar_buttons_section',
+        'type'              => 'multicolor',
+        'transport'         => 'auto',
+        'choices'           => [
+            'normal'        => esc_html__( 'Normal', 'agama' ),
+            'hover'         => esc_html__( 'Hover', 'agama' ),
+        ],
+        'default'           => [
+            'normal'        => '#757575',
+            'hover'         => '#333333',
+        ],
+        'output'            => [
+            [
+                'choice'    => 'normal',
+                'element'   => '#masthead ul.navbar-buttons a, .mobile-menu-toggle .mobile-menu-toggle-label',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '#masthead ul.navbar-buttons a:hover, .mobile-menu-toggle:hover .mobile-menu-toggle-label',
+                'property'  => 'color'
+            ],
+            [
+                'choice'    => 'normal',
+                'element'   => '.mobile-menu-toggle .mobile-menu-toggle-inner, .mobile-menu-toggle .mobile-menu-toggle-inner::before, .mobile-menu-toggle .mobile-menu-toggle-inner::after',
+                'property'  => 'background-color'
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '.mobile-menu-toggle:hover .mobile-menu-toggle-inner, .mobile-menu-toggle:hover .mobile-menu-toggle-inner::before, .mobile-menu-toggle:hover .mobile-menu-toggle-inner::after',
+                'property'  => 'background-color'
             ]
         ]
     ] );
@@ -1027,6 +1063,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'section'	=> 'agama_layout_sidebar_section',
 		'settings'	=> 'agama_sidebar_position',
 		'type'		=> 'select',
+        'transport' => 'postMessage',
 		'choices'	=> [
 			'left'	=> esc_attr__( 'Left', 'agama' ),
 			'right' => esc_attr__( 'Right', 'agama' )
@@ -1325,6 +1362,29 @@ add_action( 'customize_register', 'agama_customize_register' );
             )
         )
 	) );
+    #######################################################
+	# HEADER NAVBAR BUTTONS SECTION
+	#######################################################
+    Kirki::add_section( 'agama_navbar_buttons_section', [
+		'title'			=> esc_html__( 'Navbar Buttons', 'agama' ),
+		'panel'			=> 'agama_header_panel',
+        'capability'    => 'edit_theme_options'
+	] );
+    Kirki::add_field( 'agama_options', [
+        'label'         => esc_html__( 'Navbar Buttons', 'agama' ),
+        'tooltip'       => esc_html__( 'Customize the navbar buttons.', 'agama' ),
+        'settings'      => 'agama_navbar_buttons',
+        'section'       => 'agama_navbar_buttons_section',
+        'type'          => 'sortable',
+        'default'       => [
+            'search', 'cart', 'mobile'  
+        ],
+        'choices'       => [
+            'search'    => esc_html__( 'Search Icon', 'agama' ),
+            'cart'      => esc_html__( 'Cart Icon', 'agama' ),
+            'mobile'    => esc_html__( 'Mobile Icon', 'agama' )
+        ]
+    ] );
 	##########################################
 	# HEADER IMAGE SECTION
 	##########################################

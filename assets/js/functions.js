@@ -9,6 +9,8 @@ var THEMEVISION = THEMEVISION || {};
 		init: function(){
 			
 			THEMEVISION.initialize.responsiveClasses();
+            THEMEVISION.initialize.disableEmptyLink();
+            THEMEVISION.initialize.fsOverlay();
 			THEMEVISION.initialize.slider();
             THEMEVISION.initialize.blogGridIsotope();
             THEMEVISION.initialize.blogInfiniteScroll();
@@ -64,6 +66,43 @@ var THEMEVISION = THEMEVISION || {};
 				}
 			]);
 		},
+        
+        /**
+         * Disabling browser from jumping up top when clicking empty (#) links
+         * @param {string} selector
+        */
+        disableEmptyLink: function (selector) {
+            selector = 'a[href="#"]';
+
+            $(selector).on('click', function(e) {
+                e.preventDefault();
+            });
+        },
+        
+        /**
+         * Full screen overlay
+         * @param {string} openTrigger
+         * @param {string} closeTrigger
+         * @param {string} target
+        */
+        fsOverlay: function (openTrigger, closeTrigger, target) {
+
+            openTrigger = '[data-toggle="fullscreen-overlay"]';
+            closeTrigger = '.fs-overlay-close';
+            target = '.fs-overlay-wrapper';
+
+            $(openTrigger).on('click', function(e) {
+                var $target = $(this).attr('href');
+                $('html,body').addClass('overflow-hidden');
+                $($target).addClass('in-view');
+                e.preventDefault();
+            });
+
+            $(closeTrigger).on('click', function() {
+                $('html,body').removeClass('overflow-hidden');
+                $(target).removeClass('in-view');
+            });
+        },
 		
 		particles: function( $circles_color, $lines_color ) {
 			if( $( '#particles-js' ).hasClass( 'agama-particles' ) ) {

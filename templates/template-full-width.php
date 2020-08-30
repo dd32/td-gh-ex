@@ -2,27 +2,27 @@
 /**
  * Template Name: Template Full Width
  *
- * @package Theme Vision
- * @subpackage Agama
- * @since 1.0.0
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.0.0
  */
 
 get_header(); ?>
 	
-	<div id="primary" class="site-content tv-container tv-p-0">
-		<div id="content" role="main">
+<div id="primary" class="site-content tv-container tv-p-0">
+    <div id="content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				    
-                <?php get_template_part( 'template-parts/content', 'page' ); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-                <?php if( comments_open() ) : ?>
-                    <?php comments_template( '', true ); ?>
-                <?php endif; ?>
+            <?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+            <?php if( comments_open() ) : ?>
+                <?php comments_template( '', true ); ?>
+            <?php endif; ?>
 
-		</div>
-	</div>
+        <?php endwhile; // end of the loop. ?>
+
+    </div><!-- #content -->
+</div><!-- #primary -->
 
 <?php get_footer(); ?>

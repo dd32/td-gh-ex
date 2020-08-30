@@ -2,9 +2,9 @@
 /**
  * The Header template
  *
- * @package Theme Vision
- * @subpackage Agama
- * @since 1.0.0
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.0.0
  */ 
 
 // Do not allow direct access to the file.
@@ -43,15 +43,15 @@ if( ! defined( 'ABSPATH' ) ) {
      *
      * @since 1.4.4
      */
-    do_action( 'agama/before_header_wrapper' ); ?>
-	
-	<header id="masthead" class="site-header <?php Agama::header_class(); ?>" itemscope itemtype="http://schema.org/WPHeader" role="banner">
-		
-		<?php Agama_Helper::get_header(); ?>
-		
-	</header><!-- #masthead -->
+    do_action( 'agama/before_header_wrapper' );
     
-    <?php
+    /**
+     * The Header
+     */
+    if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) {
+        get_template_part( 'template-parts/header' );
+    }
+    
     /**
      * Hook: agama/after_header_wrapper
      *

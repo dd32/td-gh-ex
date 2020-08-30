@@ -11,14 +11,13 @@
  * file is included before the parent theme's file, so the child theme
  * functions would be used.
  *
- *
  * For more information on hooks, actions, and filters,
  * see http://codex.wordpress.org/Plugin_API
  *
- * @package Theme Vision
- * @subpackage Agama
- * @since 1.0.0
- * @since 1.5.0 Updated the code.
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.0.0
+ * @since   1.5.0 Updated the code.
  */
 
 use Agama\Theme;

@@ -68,7 +68,6 @@ if( class_exists( 'Woocommerce' ) ) {
 			// Hook Agama Wrappers
 			add_action('woocommerce_before_main_content', array( $this, 'agama_wrapper_start' ), 10);
 			add_action('woocommerce_after_main_content', array( $this, 'agama_wrapper_end' ), 10);
-			
 		}
 		
 		/**

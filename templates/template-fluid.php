@@ -2,9 +2,9 @@
 /**
  * Template Name: Template Fluid
  *
- * @package Theme Vision
- * @subpackage Agama
- * @since 1.3.8
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.3.8
  */
 
 // No direct access allowed.
@@ -14,20 +14,20 @@ if( ! defined( 'ABSPATH' ) ) {
 
 <?php get_header(); ?>
 
-    <div id="primary" class="site-content tv-container-fluid">
-		<div id="content" role="main">
+<div id="primary" class="site-content tv-container-fluid">
+    <div id="content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				    
-                <?php get_template_part( 'template-parts/content', 'page' ); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-                <?php if( comments_open() ) : ?>
-                    <?php comments_template( '', true ); ?>
-                <?php endif; ?>
-            
-			<?php endwhile; // end of the loop. ?>
+            <?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-		</div>
-	</div>
+            <?php if( comments_open() ) : ?>
+                <?php comments_template( '', true ); ?>
+            <?php endif; ?>
+
+        <?php endwhile; // end of the loop. ?>
+
+    </div><!-- #content -->
+</div><!-- #primary -->
 
 <?php get_footer(); ?>

@@ -4,9 +4,9 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package Theme-Vision
- * @subpackage Agama
- * @since Agama 1.0
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.0.0
  */
 
 // Do not allow direct access to the file.
@@ -37,4 +37,4 @@ $blog_layout = esc_attr( get_theme_mod('agama_blog_layout', 'list') ); ?>
 		break;
 	endswitch; ?>
 	</article>
-</div>
+</div><!-- .article-wrapper -->

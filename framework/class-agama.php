@@ -87,12 +87,21 @@ if( ! class_exists( 'Agama' ) ) {
 		 * @since 1.1.7
 		 */
 		static function bs_class() {
-			if( is_active_sidebar( 'sidebar-1' ) ) {
-				$class = 'tv-col-md-9';
-			} else {
-				$class = 'tv-col-md-12';
-			}
-			return $class;
+            if ( is_active_sidebar( 'sidebar-1' ) ) {
+                
+                $class[] = 'tv-col-md-9';
+                
+                if ( 'right' == agama_sidebar_position() ) {
+                    $class[] = 'tv-order-1';
+                } else if ( 'left' == agama_sidebar_position() ) {
+                    $class[] = 'tv-order-2';
+                }
+                
+            } else {
+                $class[] = 'tv-col-md-12';
+            }
+            
+			return implode( ' ', $class );
 		}
 		
 		/**

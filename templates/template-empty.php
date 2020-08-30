@@ -6,10 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/
  *
- * @author Theme Vision <support@theme-vision.com>
- * @package Theme Vision
- * @subpackage Agama
- * @since 1.4.5
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.4.5
  */
 
 // Do not allow direct access.

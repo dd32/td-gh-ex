@@ -3,6 +3,27 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.6.1 - 31 August 2020 =
+* Added full support for Elementor locations.
+* Added new menu location - mobile.
+* Added new filter hook 'agama_primary_menu_items'.
+* Added navbar (header) buttons (search, cart, mobile) icons.
+* Added new navbar buttons action hook 'agama_before_navbar_buttons'.
+* Added new navbar buttons action hook 'agama_after_navbar_buttons'.
+* Added navbar buttons color option.
+* Added navbar buttons shadow disable option.
+* Moved headers folder from framework to template-parts directory.
+* Fixed author posts link on post loop.
+* Fixed the slider visibility bug.
+* Fixed nice scroll minor bug.
+* Updated theme translation files.
+* Updated nice scroll plugin to latest version.
+* Updated mobile menu icon styling.
+* Removed get_header function from Helper class.
+* Removed the tag.php file from theme directory.
+* Removed get_mobile_menu_toggle_icon() function from helper class.
+* Removed mobile menu icon color option.
+
 = 1.6.0 - 19 August 2020 =
 * Added new "Typography" panel in customizer.
 * Added new "Colors" panel in customizer.

@@ -255,6 +255,7 @@ class Core {
 
         register_nav_menu( 'top', esc_html__( 'Top Menu', 'agama' ) );
         register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'agama' ) );
+        register_nav_menu( 'mobile', esc_html__( 'Mobile Menu', 'agama' ) );
 
         $custom_header_args = [
             'default-image'          => '%2$s/assets/img/header-image.jpg',
@@ -319,11 +320,12 @@ class Core {
      * @since Agama v1.0.3
      */
     function footer_scripts() {
+        get_template_part( 'template-parts/search', 'overlay' );
         if( get_theme_mod( 'agama_nicescroll', false ) ) {
             echo '
             <script>
             jQuery(document).ready(function($) {
-                $("html").niceScroll({
+                $("body").niceScroll({
                     cursorwidth:"10px",
                     cursorborder:"1px solid #333",
                     zindex:"9999"
@@ -467,6 +469,22 @@ class Core {
                 update_option( '_agama_159_migrated', true );
             }
         }
+        
+        // If current theme version is bigger than "1.6.0" apply next updates.
+        // Assing the primary menu location also to new mobile location.
+        if ( version_compare( '1.6.0', $version, '<' ) ) {
+            if ( ! get_option( '_agama_160_migrated' ) ) {
+                
+                $locations = get_theme_mod( 'nav_menu_locations', [] );
+                if ( ! empty( $locations['primary'] ) ) {
+                    $locations['mobile'] = esc_attr( $locations['primary'] );
+                    set_theme_mod( 'nav_menu_locations', $locations );
+                }
+                
+                update_option( '_agama_160_migrated', true );
+            }
+        }
+        
     }
     
 }

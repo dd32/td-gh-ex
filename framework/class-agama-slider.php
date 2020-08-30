@@ -203,7 +203,7 @@ class Slider {
      * @return mixed
      */
     private function render_content() {
-        if ( ! empty( $this->slides ) && $this->visibility ) : ?>
+        if ( ! empty( $this->slides ) && $this->visibility() ) : ?>
             <div id="agama-slider-wrapper">
                 
                 <?php if ( $this->particles ) : ?>

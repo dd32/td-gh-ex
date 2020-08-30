@@ -9,7 +9,6 @@ global $top_nav, $social_icons; ?>
 
 <div class="agama-header-overlay">
 
-    <!-- Top Nav Wrapper -->
     <div class="agama-top-nav-wrapper">
         <div class="tv-container tv-d-flex tv-justify-content-between tv-align-items-center">
 
@@ -28,32 +27,27 @@ global $top_nav, $social_icons; ?>
             <?php endif; ?>
 
         </div>
-    </div><!-- Top Nav Wrapper End -->
+    </div><!-- .agama-top-nav-wrapper -->
 
-    <!-- Logo -->
     <hgroup id="agama-logo" class="tv-d-block">
         <div class="tv-container tv-d-flex tv-justify-content-between tv-align-items-center">
             <div class="tv-d-block">
                 <?php agama_logo(); ?>
             </div>
-            <div class="tv-d-md-block tv-d-lg-none">
-                <?php Agama_Helper::get_mobile_menu_toggle_icon(); ?>
-            </div>
+            <?php get_template_part( 'template-parts/navbar', 'buttons' ); ?>
         </div>
-    </hgroup><!-- Logo End -->
+    </hgroup><!-- #agama-logo -->
 
-    <!-- Primary Nav -->
     <nav id="agama-primary-nav" class="tv-d-none tv-d-lg-block" role="navigation">
         <div class="tv-container">
             <div class="tv-row">
                 <?php echo Agama::menu( 'primary', 'agama-navigation' ); ?>
             </div>
         </div>
-    </nav><!-- Primary Nav End -->
+    </nav><!-- #agama-primary-nav -->
 
-    <!-- Mobile Nav -->
     <nav id="agama-mobile-nav" class="mobile-menu tv-collapse" role="navigation">
         <?php echo Agama::menu( 'primary', 'menu' ); ?>
-    </nav><!-- Mobile Nav End -->
+    </nav><!-- #agama-mobile-nav -->
     
-</div>
+</div><!-- .agama-header-overlay -->

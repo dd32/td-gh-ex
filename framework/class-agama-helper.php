@@ -13,47 +13,6 @@ if( ! defined( 'ABSPATH' ) ) {
 class Agama_Helper {
 	
 	/**
-	 * Render Agama Header
-	 *
-	 * @since 1.2.9
-	 */
-	public static function get_header() {
-        global $top_nav, $social_icons;
-		$header       = esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
-        $top_nav      = esc_attr( get_theme_mod( 'agama_top_navigation', true ) );
-        $social_icons = esc_attr( get_theme_mod( 'agama_top_nav_social', true ) );
-		switch( $header ):
-			case 'transparent':
-				get_template_part( 'framework/headers/header-transparent' );
-			break;
-			case 'sticky':
-				get_template_part( 'framework/headers/header-sticky' );
-			break;
-			case 'default':
-				get_template_part( 'framework/headers/header-default' );
-			break;
-		endswitch;
-	}
-	
-	/**
-	 * Render Mobile Menu Toggle Icon
-	 *
-	 * @since 1.2.9.2
-	 */
-	public static function get_mobile_menu_toggle_icon() {
-		echo '<button class="mobile-menu-toggle toggle--elastic" type="button" aria-label="'. esc_attr__( 'Menu', 'agama' ) .'" aria-controls="navigation" aria-expanded="false">';
-			echo '<span class="mobile-menu-toggle-box">';
-				echo '<span class="mobile-menu-toggle-inner"></span>';
-			echo '</span>';
-			if( get_theme_mod( 'agama_nav_mobile_icon_title', false ) ) {
-				echo '<span class="mobile-menu-toggle-label">';
-					echo esc_html( get_theme_mod( 'agama_nav_mobile_icon_title', false ) );
-				echo '</span>';
-			}
-		echo '</button><!-- .mobile-menu-toggle -->';
-	}
-	
-	/**
 	 * Data Animate
 	 *
 	 * @since 1.2.8

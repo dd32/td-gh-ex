@@ -1,9 +1,81 @@
 <?php
+/**
+ * Actions
+ *
+ * Various theme action hooks.
+ *
+ * @author  Theme Vision <support@theme-vision.com>
+ * @package Agama
+ * @since   1.0.1
+ */
 
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+
+if ( ! function_exists( 'agama_register_elementor_locations' ) ) {
+    /**
+     * Elementor Locations
+     *
+     * Register the Elementor locations.
+     *
+     * @since 1.6.1
+     * @return void
+     */
+    function agama_register_elementor_locations( $elementor_theme_manager ) {
+        
+        $elementor_theme_manager->register_location( 'header' );
+        $elementor_theme_manager->register_location( 'archive' );
+        $elementor_theme_manager->register_location( 'single' );
+        $elementor_theme_manager->register_location( 'main-sidebar' );
+        $elementor_theme_manager->register_location( 'footer' );
+        
+    }
+}
+add_action( 'elementor/theme/register_locations', 'agama_register_elementor_locations' );
+
+if ( ! function_exists( 'agama_navbar_buttons' ) ) {
+    /**
+     * Navbar Buttons
+     *
+     * Display the navbar buttons in primary menu location.
+     *
+     * @param string    $items  The HTML list content for the menu items.
+     * @param stdClass  $args   An object containing wp_nav_menu() arguments.
+     *
+     * @since 1.6.1
+     * @return array
+     */
+    function agama_navbar_buttons( $items, $args ) {
+        if ( 'primary' == $args->theme_location && 'default' !== agama_header_style() ) {
+            
+            if ( has_filter( 'agama_primary_menu_items' ) ) {
+                /**
+                 * Filter: agama_primary_menu_items
+                 *
+                 * @hooked none
+                 *
+                 * @since 1.6.1
+                 */
+                $items .= apply_filters( 'agama_primary_menu_items', false );
+            }
+            
+            $items .= '</ul><!-- .agama-navigation -->'; // End of Primary Menu
+            
+            ob_start();
+            get_template_part( 'template-parts/navbar', 'buttons' );
+            $navbar_buttons = ob_get_contents();
+            ob_end_clean();
+            
+            $items .= $navbar_buttons;
+        }
+        
+        return $items;
+    }
+}
+add_action( 'wp_nav_menu_items', 'agama_navbar_buttons', 10, 2 );
+
 
 /**
  * Header Distance
@@ -247,13 +319,16 @@ add_action( 'agama_social_share', 'agama_social_share' );
 if( ! function_exists( 'agama_render_blog_post_meta' ) ) {
 	function agama_render_blog_post_meta() {
 		if( get_theme_mod( 'agama_blog_post_meta', true ) ) {
+            $author_id = esc_attr( get_the_author_meta( 'ID' ) );
             echo '<p class="single-line-meta">';
                 // Display blog post author.
                 if( get_theme_mod( 'agama_blog_post_author', true ) ) {
                     printf( 
-                        '%s <span class="vcard"><span class="fn">%s</span></span>', 
+                        '%s <a href="%s" title="%s"><span class="vcard"><span class="fn">%s</span></a></span>', 
                         '<i class="fa fa-user"></i>', 
-                        get_the_author_link() 
+                        esc_url( get_author_posts_url( $author_id ) ),
+                        esc_attr( get_the_author_meta( 'display_name', $author_id ) ),
+                        esc_html( ucfirst( get_the_author_meta( 'display_name', $author_id ) ) )
                     );
                 }
 

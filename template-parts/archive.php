@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying Category pages
- *
- * Used to display archive-type pages for posts in a category.
+ * The template for displaying Archive pages
  *
  * @author  Theme Vision <support@theme-vision.com>
  * @package Agama
@@ -15,11 +13,9 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-
+    
 <section id="primary" class="site-content <?php echo esc_attr( Agama::bs_class() ); ?>">
-
-    <div id="content" role="main"<?php Agama_Helper::get_blog_isotope_class(); ?>>
-
+    <div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
     <?php if ( have_posts() ) :
 
         /* Start the Loop */
@@ -39,7 +35,7 @@ get_header(); ?>
 
     endif; ?>
 
-    </div><!-- #content -->
+    </div>
 
     <?php agama_content_nav( 'nav-below' ); ?>
     <?php Agama_Helper::get_infinite_scroll_load_more_btn(); ?>

@@ -100,6 +100,19 @@ if( ! function_exists( 'agama_get_logo' ) ) {
 }
 
 /**
+ * Header Style
+ *
+ * Get current header style.
+ *
+ * @since 1.6.1
+ * @return string
+ */
+function agama_header_style() {
+    $style = get_theme_mod( 'agama_header_style', 'transparent' );
+    return esc_attr( $style );
+}
+
+/**
  * Sidebar Position
  *
  * Return sidebar position setting.

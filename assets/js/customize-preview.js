@@ -32,56 +32,17 @@
         } );
     } );
     
-    // Navigation top colors.
-    wp.customize( 'agama_navigation_top_links_color', function( value ) {
-        value.bind( function( color ) {
-            if ( color.normal ) {
-                $('#agama-top-nav a').css( 'color', color.normal );
-            }
-            if ( color.visited ) {
-                $('#agama-top-nav a:visited').css( 'color', color.visited );
-            }
-            if ( color.hover ) {
-                $('#agama-top-nav a:hover').css( 'color', color.hover );
-            }
-            if ( color.active ) {
-                $('#agama-top-nav a:active').css( 'color', color.active );
-            }
-        } );
-    } );
-    
-    // Navigation primary colors.
-    wp.customize( 'agama_navigation_primary_links_color', function( value ) {
-        value.bind( function( color ) {
-            if ( color.normal ) {
-                $('#agama-primary-nav a').css( 'color', color.normal );
-            }
-            if ( color.visited ) {
-                $('#agama-primary-nav a:visited').css( 'color', color.visited );
-            }
-            if ( color.hover ) {
-                $('#agama-primary-nav a:hover').css( 'color', color.hover );
-            }
-            if ( color.active ) {
-                $('#agama-primary-nav a:active').css( 'color', color.active );
-            }
-        } );
-    } );
-    
-    // Navigation mobile colors.
-    wp.customize( 'agama_navigation_mobile_links_color', function( value ) {
-        value.bind( function( color ) {
-            if ( color.normal ) {
-                $('#agama-mobile-nav a').css( 'color', color.normal );
-            }
-            if ( color.visited ) {
-                $('#agama-mobile-nav a:visited').css( 'color', color.visited );
-            }
-            if ( color.hover ) {
-                $('#agama-mobile-nav a:hover').css( 'color', color.hover );
-            }
-            if ( color.active ) {
-                $('#agama-mobile-nav a:active').css( 'color', color.active );
+    // Navbar Buttons Shadow
+    wp.customize( 'agama_navbar_buttons_shadow', function( value ) {
+        value.bind( function( disabled ) {
+            if ( disabled ) {
+                if ( ! $('#masthead ul.navbar-buttons').hasClass( 'shadow-none' ) ) {
+                    $('#masthead ul.navbar-buttons').addClass( 'shadow-none' );
+                }
+            } else {
+                if ( $('#masthead ul.navbar-buttons').hasClass( 'shadow-none' ) ) {
+                    $('#masthead ul.navbar-buttons').removeClass( 'shadow-none' );
+                }
             }
         } );
     } );
@@ -105,6 +66,27 @@
                 $('#agama-main-wrapper').removeClass( 'tv-container tv-p-0' ).addClass( 'is-full-width' );
             } else if( 'boxed' === to ) {
                 $('#agama-main-wrapper').removeClass( 'is-full-width' ).addClass( 'tv-container tv-p-0' );
+            }
+        } );
+    } );
+    
+    // Sidebar Position
+    wp.customize( 'agama_sidebar_position', function( value ) {
+        value.bind( function( position ) {
+            if ( 'left' == position ) {
+                if ( $('#primary').hasClass( 'tv-order-1' ) ) {
+                    $('#primary').removeClass( 'tv-order-1' ).addClass( 'tv-order-2' );
+                }
+                if ( $('#secondary').hasClass( 'tv-order-2' ) ) {
+                    $('#secondary').removeClass( 'tv-order-2' ).addClass( 'tv-order-1' );
+                }
+            } else if ( 'right' == position ) {
+                if ( $('#primary').hasClass( 'tv-order-2' ) ) {
+                    $('#primary').removeClass( 'tv-order-2' ).addClass( 'tv-order-1' );
+                }
+                if ( $('#secondary').hasClass( 'tv-order-1' ) ) {
+                    $('#secondary').removeClass( 'tv-order-1' ).addClass( 'tv-order-2' );
+                }
             }
         } );
     } );
