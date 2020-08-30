@@ -47,7 +47,13 @@
     }
     .notfound .notfound-404 h1 {
         font-size: 112px;
-    }
+	}
+	p.site-copyright {
+		text-align: center;
+	}
+	.footer-sociaal-icon ul {
+		text-align: center;
+	}
 }
 
 @media ( max-width:402px ){
