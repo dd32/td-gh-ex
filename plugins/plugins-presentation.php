@@ -1425,7 +1425,7 @@ if ( ! function_exists( 'raindrops_css_gutenberg_specificity' ) ) {
 }
 
 function raindrops_gutenberg_front_end_style() {
-	$theme_url	 = get_stylesheet_directory_uri();
+	$theme_url	 = esc_url( get_stylesheet_directory_uri() );
 	$style		 = <<<GUTENBERG
 
 /**
@@ -2947,10 +2947,15 @@ hr.wp-block-separator.is-style-dots:before {
     margin-right:-100%;
     padding-left:100%;
     padding-right:100%;
+	max-width:none;
     background-attachment:fixed;
     display:flex;
     align-items: center;
     justify-content: center;
+}
+
+.enable-align-wide .wp-block-cover.alignfull .wp-block-cover__inner-container{
+	width:100%;	
 }
 
 .enable-align-wide .wp-block-cover.alignfull:not([style]){
@@ -3494,7 +3499,7 @@ figure.alignfull img {
 }
 
 .entry-content .wp-block-column {
-	flex:1
+	flex:1 1 auto;
 }
 .entry-content .wp-block-column{
 	margin-left:.5em;
