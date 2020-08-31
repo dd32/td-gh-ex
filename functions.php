@@ -4,7 +4,7 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.74' );
+define( 'KAIRA_THEME_VERSION' , '1.7.75' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';

@@ -27,11 +27,9 @@
 		$('.footer-widgets .widget:last').addClass('footer-widget-last');
 		
         // Search Show / Hide
-        $(".search-button").toggle(function(){
-            $(".search-block").animate( { bottom: '-=55' }, 150 );
-            $(".search-block .search-field").focus();
-        },function(){
-            $(".search-block").animate( { bottom: '+=55' }, 150 );
+        $(".search-button").on( 'click', function() {
+            $( 'body').toggleClass( 'show-site-search' );
+            $( '.search-block input.search-field' ).focus();
         });
         
         // Scroll To Top Button Functionality
@@ -60,7 +58,7 @@
         
     }).resize();
     
-    $(window).load(function() {
+    $(window).on('load',function () {
         alba_home_slider();
         alba_carousel();
         alba_post_images();
@@ -194,4 +192,12 @@
             next: ".alba-home-slider-next"
         });
     }
+
+    // Hide Search if user clicks outside
+    $( document ).mouseup( function (e) {
+        var container = $( '.search-block' );
+        if ( !container.is( e.target ) && container.has( e.target ).length === 0 ) {
+            $( 'body' ).removeClass( 'show-site-search' );
+        }
+    });
 } )( jQuery );

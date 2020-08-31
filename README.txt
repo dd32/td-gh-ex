@@ -1,9 +1,9 @@
 === Albar ===
 Contributors: Kaira
-Donate link: 
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PFZGBM92T8XSE&source=url
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment
-Tested up to: 3.9
-Stable tag: 3.7
+Tested up to: 5.5
+Stable tag: 1.7.75
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,12 @@ View the settings under Appearance -> ALBAR Settings.
 3. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.7.75
+* Style fixes/tweaks
+* Fixed Site Search with latest WP 5.5 changed
+* Fixed Js bugs with latets WP & WC updates
+* Updated language .pot file
 
 #### 1.7.74
 * Style fixes/tweaks

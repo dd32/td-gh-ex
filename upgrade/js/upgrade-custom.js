@@ -4,19 +4,7 @@
  */
 ( function( $ ) {
     
-    jQuery( document ).ready( function() {
-        
-        
-        
-    });
-    
-    $(window).resize(function () {
-        
-        
-        
-    }).resize();
-    
-    $(window).load(function() {
+    $(window).on('load',function () {
         
         kaira_upgrade_ratings_slider();
         
