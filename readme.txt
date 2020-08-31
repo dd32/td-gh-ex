@@ -4,8 +4,8 @@ Author: ThemeArile
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.3.2
-Version: 2.3.2
+Stable tag: 2.3.3
+Version: 2.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
@@ -45,6 +45,10 @@ License: MIT (http://opensource.org/licenses/MIT)
 * WOW - by Matthieu Aussaguel - mynameismatthieu.com
 License: GNU GPL license v3
 
+* Owl Carousel, (C) 2013 - 2018, David Deutsch
+Source: https://github.com/OwlCarousel2/OwlCarousel2/
+License: [MIT](http://opensource.org/licenses/MIT)
+
 * SmartMenus - Copyright (c) Vasil Dinkov, Vadikom Web Ltd. - http://www.smartmenus.org/
 License: MIT (http://opensource.org/licenses/MIT)
 
@@ -52,6 +56,9 @@ License: MIT (http://opensource.org/licenses/MIT)
 License: CC0 Public Domain
 
 == Changelog ==
+
+= Version 2.3.3
+* Added license information for Owl Carousel.
 
 = Version 2.3.2
 * Added prefix for the section scroll function.
