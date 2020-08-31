@@ -33,7 +33,7 @@ function mantra_frontpage_generator() {
 		<?php
 
 		// First FrontPage Title
-		if(!empty($mantra_fronttext1)) {?><div id="front-text1"> <h2><?php echo esc_attr($mantra_fronttext1) ?> </h2></div><?php }
+		if(!empty($mantra_fronttext1)) {?><div id="front-text1"> <h2><?php echo esc_html($mantra_fronttext1) ?> </h2></div><?php }
 
 		// Slider
 		if ($mantra_slideType=="Slider Shortcode") { ?>
@@ -139,7 +139,7 @@ function mantra_frontpage_generator() {
 		} // built-in slider
 
 		// Second FrontPage title
-		if (!empty($mantra_fronttext2)) {?><div id="front-text2"> <h2><?php echo esc_attr($mantra_fronttext2) ?> </h2></div><?php }
+		if (!empty($mantra_fronttext2)) {?><div id="front-text2"> <h2><?php echo esc_html($mantra_fronttext2) ?> </h2></div><?php }
 
 		// Frontpage columns
 		if ($mantra_nrcolumns) { ?>
@@ -158,7 +158,7 @@ function mantra_frontpage_generator() {
 						<div class="column-text"><?php echo do_shortcode (${'mantra_columntext'.$mantra_cycle} ); ?></div>
 						<?php if($mantra_columnreadmore) {?>
 							<div class="columnmore">
-								<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a>
+								<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>"><?php echo esc_html($mantra_columnreadmore) ?> &raquo;</a>
 							</div>
 						<?php } // if ?>
 						</div>

@@ -13,7 +13,7 @@
 * Used in header.php
 */
 function mantra_header_scripts() {
-	?><!--[if lt IE 9]> 
+	?><!--[if lt IE 9]>
 	<script>
 	document.createElement('header');
 	document.createElement('nav');
@@ -50,19 +50,19 @@ function mantra_title_and_description() {
 		printf( '<img id="bg_image" alt="%1$s" title="" src="%2$s" />', esc_attr( get_bloginfo( 'name', 'display' ) ), $header_image );
 	}
 	?>
-	
+
 	<div id="header-container">
-	
+
 	<?php
 	switch ($mantra_siteheader) {
 
-		case 'Site Title and Description': 
+		case 'Site Title and Description':
 			$heading_tag = ( ( is_home() || is_front_page() ) && !is_page() ) ? 'h1' : 'div'; ?>
 			<div>
 				<<?php echo $heading_tag ?> id="site-title">
-					<span> <a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ) ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name' ) ) ?></a> </span>
+					<span> <a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ) ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ) ?></a> </span>
 				</<?php echo $heading_tag ?>>
-				<div id="site-description" ><?php echo esc_attr( get_bloginfo( 'description' ) ) ?></div>
+				<div id="site-description" ><?php echo esc_html( get_bloginfo( 'description' ) ) ?></div>
 			</div> <?php
 		break;
 
@@ -75,7 +75,7 @@ function mantra_title_and_description() {
 			if (!empty($mantra_logoupload)) { ?>
 			<div>
 				<a id="logo" href="<?php echo esc_url( home_url( '/' ) ) ?>"> <img title="" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ) ?>" src="<?php echo $mantra_logoupload ?>" /> </a>
-			</div> 
+			</div>
 			<?php }
 		break;
 
@@ -126,7 +126,7 @@ function mantra_set_social_icons($location){
 	$cryout_special_keys = array('Mail', 'Skype');
 	global $mantra_options;
 	extract( $mantra_options ); ?>
-	<div class="socials" id="<?php echo $location ?>"> 
+	<div class="socials" id="<?php echo $location ?>">
 	<?php
 	for ($i=1; $i<=9; $i+=2) {
 		$j=$i+1;
@@ -138,7 +138,7 @@ function mantra_set_social_icons($location){
 			endif;	?>
 
 			<a target="_blank" rel="nofollow" href="<?php echo $cryout_current_social; ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>">
-				<img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/resources/images/socials/'.${"mantra_social$i"}.'.png'; ?>" />
+				<img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo esc_url( get_template_directory_uri() ).'/resources/images/socials/'.${"mantra_social$i"}.'.png'; ?>" />
 			</a>
             <?php
 		} // $j
@@ -154,7 +154,7 @@ endif;
  * Mantra back to top button
  * Creates div for js
 */
-function mantra_back_top() { 
+function mantra_back_top() {
 	?>
     <div id="toTop"><i class="crycon-back2top"></i> </div>
 	<?php
@@ -166,9 +166,9 @@ if ($mantra_backtop=="Enable") add_action( 'cryout_body_hook', 'mantra_back_top'
  * Creates breadcrumns with page sublevels and category sublevels.
  */
 function mantra_breadcrumbs() {
-	global $mantra_options; 
+	global $mantra_options;
 	global $post;
-	
+
 	echo '<div class="breadcrumbs">';
 	if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
 		echo '<a href="'.esc_url( home_url() ) .'">' . esc_attr( get_bloginfo('name') ).'</a> &raquo; ';
@@ -183,7 +183,7 @@ function mantra_breadcrumbs() {
 			}
 		}
 
-		if (is_single() && has_category()) { 
+		if (is_single() && has_category()) {
 			$category = get_the_category();
 			echo '<a href="' . get_category_link($category[0]->cat_ID) . '">' . $category[0]->cat_name . '</a> &raquo; ';
 		}
@@ -271,7 +271,7 @@ function mantra_site_info() { ?>
 		'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a target="_blank" href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 		title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
 	</a>
-</div><!-- #site-info --> <?php 
+</div><!-- #site-info --> <?php
 }
 add_action( 'cryout_footer_hook', 'mantra_site_info', 12 );
 
@@ -281,7 +281,7 @@ add_action( 'cryout_footer_hook', 'mantra_site_info', 12 );
  */
 function mantra_copyright() {
 	global $mantra_options; ?>
-	<div id="site-copyright"> 
+	<div id="site-copyright">
 		<?php echo wp_kses_post( do_shortcode( $mantra_options['mantra_copyright'] ) ) ?>
 	</div>
 	<?php
@@ -339,16 +339,6 @@ function mantra_mobile_body_class($classes){
 	return $classes;
 }
 add_filter('body_class', 'mantra_mobile_body_class');
-
-
-// Favicon
-function mantra_fav_icon() {
-	global $mantra_options;
-	echo '<link rel="shortcut icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />';
-	echo '<link rel="apple-touch-icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />';
-}
-
-if ($mantra_options['mantra_favicon']) add_action( 'cryout_header_hook', 'mantra_fav_icon' );
 
 /**
 * WordPress 5.2+ wp_body_open() support

@@ -20,8 +20,8 @@
 	wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-<?php cryout_body_hook(); ?>
+	<?php cryout_body_hook(); ?>
+	<?php /* wp_body_open() call is hooked into cryout_body_hook */ ?>
 
 <div id="wrapper" class="hfeed">
 
@@ -39,7 +39,7 @@
 			</div><!-- #branding -->
 
             <a id="nav-toggle"><span>&nbsp; <?php _e('Menu', 'mantra');?></span></a>
-			<nav id="access" class="jssafe" role="navigation">
+			<nav id="<?php echo apply_filters( 'mantra_mainnav_id', 'access' ) ?>" class="<?php echo apply_filters( 'mantra_mainnav_class', 'jssafe' ) ?>" role="navigation">
 
 				<?php cryout_access_hook();?>
 

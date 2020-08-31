@@ -178,8 +178,8 @@ function cryout_setting_frontslider_fn() {
 	global $mantra_options;
 	
 	echo "<div class='slmini'><b>".__("Slider Dimensions:","mantra")."</b> ";
-	echo "<input id='mantra_fpsliderwidth' name='ma_options[mantra_fpsliderwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderwidth'] )."'  /> px (".__("width","mantra").") <strong>X</strong> ";
-	echo "<input id='mantra_fpsliderheight' name='ma_options[mantra_fpsliderheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderheight'] )."'  />  px (".__("height","mantra").")";
+	echo "<input id='mantra_fpsliderwidth' name='ma_options[mantra_fpsliderwidth]' size='4' type='text' value='".esc_html( $mantra_options['mantra_fpsliderwidth'] )."'  /> px (".__("width","mantra").") <strong>X</strong> ";
+	echo "<input id='mantra_fpsliderheight' name='ma_options[mantra_fpsliderheight]' size='4' type='text' value='".esc_html( $mantra_options['mantra_fpsliderheight'] )."'  />  px (".__("height","mantra").")";
 	echo "<small>".__("The dimensions of your slider. Make sure your images are of the same size.","mantra")."</small></div>";
 
 	echo "<div id='sliderParameters'><div class='slmini'><b>".__("Animation:","mantra")."</b> ";
@@ -195,17 +195,17 @@ function cryout_setting_frontslider_fn() {
 	echo "<small>".__("The transition effect your slider will have.","mantra")."</small></div>";
 
 	echo "<div class='slmini'><b>".__("Border Settings:","mantra")."</b> ";
-	echo __('Width' ,'mantra').": <input id='mantra_fpsliderborderwidth' name='ma_options[mantra_fpsliderborderwidth]' size='2' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderborderwidth'] )."'  /> px / ";
-	echo __('Color','mantra').': <input type="text" id="mantra_fpsliderbordercolor" name="ma_options[mantra_fpsliderbordercolor]"  style="width:100px;" value="'.esc_attr( $mantra_options['mantra_fpsliderbordercolor'] ).'"  />';
+	echo __('Width' ,'mantra').": <input id='mantra_fpsliderborderwidth' name='ma_options[mantra_fpsliderborderwidth]' size='2' type='text' value='".esc_html( $mantra_options['mantra_fpsliderborderwidth'] )."'  /> px / ";
+	echo __('Color','mantra').': <input type="text" id="mantra_fpsliderbordercolor" name="ma_options[mantra_fpsliderbordercolor]"  style="width:100px;" value="'.esc_html( $mantra_options['mantra_fpsliderbordercolor'] ).'"  />';
 	echo '<div id="mantra_fpsliderbordercolor2"></div>';
 	echo "<small>".__("The width and color of the slider's border.","mantra")."</small></div>";
 
 	echo "<div class='slmini'><b>".__("Animation Time:","mantra")."</b> ";
-	echo "<input id='mantra_fpslidertime' name='ma_options[mantra_fpslidertime]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpslidertime'] )."'  /> ".__("milliseconds","mantra");
+	echo "<input id='mantra_fpslidertime' name='ma_options[mantra_fpslidertime]' size='4' type='text' value='".esc_html( $mantra_options['mantra_fpslidertime'] )."'  /> ".__("milliseconds","mantra");
 	echo "<small>".__("The time in which the transition animation will take place.","mantra")."</small></div>";
 
 	echo "<div class='slmini'><b>".__("Pause Time:","mantra")."</b> ";
-	echo "<input id='mantra_fpsliderpause' name='ma_options[mantra_fpsliderpause]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderpause'] )."'  /> ".__("milliseconds","mantra");
+	echo "<input id='mantra_fpsliderpause' name='ma_options[mantra_fpsliderpause]' size='4' type='text' value='".esc_html( $mantra_options['mantra_fpsliderpause'] )."'  /> ".__("milliseconds","mantra");
 	echo "<small>".__("The time in which a slide will be still and visible.","mantra")."</small></div>";
 
 
@@ -285,7 +285,7 @@ function cryout_setting_frontslider2_fn() {
 
 <div id="sliderShortcode" class="slideDivs">
 <span><?php _e('Enter the desired slider plugin shortcode below:','mantra'); ?> </span>
-<input id='mantra_slideShortcode' name='ma_options[mantra_slideShortcode]' size='44' type='text' value='<?php echo esc_attr($mantra_options['mantra_slideShortcode'] ) ?>' />
+<input id='mantra_slideShortcode' name='ma_options[mantra_slideShortcode]' size='44' type='text' value='<?php echo esc_html($mantra_options['mantra_slideShortcode'] ) ?>' />
 </div>
 
 <div id="sliderLatestPosts" class="slideDivs">
@@ -311,13 +311,13 @@ function cryout_setting_frontslider2_fn() {
 
 <div id="sliderSpecificPosts" class="slideDivs">
 <span><?php _e('List the post IDs you want to display (separated by a comma): ','mantra'); ?> </span>
- <input id='mantra_slideSpecific' name='ma_options[mantra_slideSpecific]' size='44' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slideSpecific'] ) ?>'  />
+ <input id='mantra_slideSpecific' name='ma_options[mantra_slideSpecific]' size='44' type='text' value='<?php echo esc_html( $mantra_options['mantra_slideSpecific'] ) ?>'  />
 </div>
 
 <div id="slider-category">
 	<span><?php _e('<br> Choose the cateogry: ','mantra'); ?> </span>
 	<select id="mantra_slideCateg" name='ma_options[mantra_slideCateg]' >
-		<option value=""><?php echo esc_attr(__('Select Category','mantra')); ?></option>
+		<option value=""><?php echo esc_html(__('Select Category','mantra')); ?></option>
 		<?php  echo $mantra_options["mantra_slideCateg"];
 		$categories = get_categories();
 		foreach ($categories as $category) {
@@ -333,7 +333,7 @@ function cryout_setting_frontslider2_fn() {
 </div>
 
 <span id="slider-post-number"><?php _e('Number of posts to show:','mantra'); ?>
-	<input id='mantra_slideNumber' name='ma_options[mantra_slideNumber]' size='3' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slideNumber'] ) ?>'  />
+	<input id='mantra_slideNumber' name='ma_options[mantra_slideNumber]' size='3' type='text' value='<?php echo esc_html( $mantra_options['mantra_slideNumber'] ) ?>'  />
 </span>
 
 
@@ -346,9 +346,9 @@ function cryout_setting_frontslider2_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg1']); ?>" name="ma_options[mantra_sliderimg1]" id="mantra_sliderimg1" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_slidertitle1' name='ma_options[mantra_slidertitle1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle1'] ) ?>'  />
+			<input id='mantra_slidertitle1' name='ma_options[mantra_slidertitle1]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_slidertitle1'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_slidertext1' name='ma_options[mantra_slidertext1]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext1']) ?></textarea>
+			<textarea id='mantra_slidertext1' name='ma_options[mantra_slidertext1]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_slidertext1']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_sliderlink1' name='ma_options[mantra_sliderlink1]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink1'] ) ?>'  />
 		</div>
@@ -361,9 +361,9 @@ function cryout_setting_frontslider2_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg2']); ?>" name="ma_options[mantra_sliderimg2]" id="mantra_sliderimg2" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_slidertitle2' name='ma_options[mantra_slidertitle2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle2'] ) ?>'  />
+			<input id='mantra_slidertitle2' name='ma_options[mantra_slidertitle2]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_slidertitle2'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_slidertext2' name='ma_options[mantra_slidertext2]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext2']) ?></textarea>
+			<textarea id='mantra_slidertext2' name='ma_options[mantra_slidertext2]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_slidertext2']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_sliderlink2' name='ma_options[mantra_sliderlink2]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink2'] ) ?>'  />
 		</div>
@@ -376,9 +376,9 @@ function cryout_setting_frontslider2_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg3']); ?>" name="ma_options[mantra_sliderimg3]" id="mantra_sliderimg3" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_slidertitle3' name='ma_options[mantra_slidertitle3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle3'] ) ?>'  />
+			<input id='mantra_slidertitle3' name='ma_options[mantra_slidertitle3]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_slidertitle3'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_slidertext3' name='ma_options[mantra_slidertext3]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext3']) ?></textarea>
+			<textarea id='mantra_slidertext3' name='ma_options[mantra_slidertext3]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_slidertext3']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_sliderlink3' name='ma_options[mantra_sliderlink3]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink3'] ) ?>'  />
 		</div>
@@ -391,9 +391,9 @@ function cryout_setting_frontslider2_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg4']); ?>" name="ma_options[mantra_sliderimg4]" id="mantra_sliderimg4" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_slidertitle4' name='ma_options[mantra_slidertitle4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle4'] ) ?>'  />
+			<input id='mantra_slidertitle4' name='ma_options[mantra_slidertitle4]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_slidertitle4'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_slidertext4' name='ma_options[mantra_slidertext4]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext4']) ?></textarea>
+			<textarea id='mantra_slidertext4' name='ma_options[mantra_slidertext4]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_slidertext4']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_sliderlink4' name='ma_options[mantra_sliderlink4]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink4'] ) ?>'  />
 		</div>
@@ -406,9 +406,9 @@ function cryout_setting_frontslider2_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg5']); ?>" name="ma_options[mantra_sliderimg5]" id="mantra_sliderimg5" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_slidertitle5' name='ma_options[mantra_slidertitle5]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle5'] ) ?>'  />
+			<input id='mantra_slidertitle5' name='ma_options[mantra_slidertitle5]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_slidertitle5'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_slidertext5' name='ma_options[mantra_slidertext5]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext5']) ?></textarea>
+			<textarea id='mantra_slidertext5' name='ma_options[mantra_slidertext5]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_slidertext5']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_sliderlink5' name='ma_options[mantra_sliderlink5]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink5'] ) ?>'  />
 		</div>
@@ -432,10 +432,10 @@ function cryout_setting_frontcolumns_fn() {
 	echo "</select></div>";
 
 	echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
-	echo "<input id='mantra_colimageheight' name='ma_options[mantra_colimageheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_colimageheight'] )."'  /> px </div>";
+	echo "<input id='mantra_colimageheight' name='ma_options[mantra_colimageheight]' size='4' type='text' value='".esc_html( $mantra_options['mantra_colimageheight'] )."'  /> px </div>";
 	?>
 	<div class='slmini'><b><?php _e("Read more text:","mantra");?></b>
-		<input id='mantra_columnreadmore' name='ma_options[mantra_columnreadmore]' size='30' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnreadmore'] ) ?>'  />
+		<input id='mantra_columnreadmore' name='ma_options[mantra_columnreadmore]' size='30' type='text' value='<?php echo esc_html( $mantra_options['mantra_columnreadmore'] ) ?>'  />
 		<small><?php _e("The linked text that appears at the bottom of all the columns. You can delete all text inside if you don't want it.","mantra") ?></small>
 	</div>
 	<div class="slidebox">
@@ -445,9 +445,9 @@ function cryout_setting_frontcolumns_fn() {
 			<input type="text" value="<?php echo esc_url($mantra_options['mantra_columnimg1']); ?>" name="ma_options[mantra_columnimg1]" id="mantra_columnimg1" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_columntitle1' name='ma_options[mantra_columntitle1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle1'] ) ?>'  />
+			<input id='mantra_columntitle1' name='ma_options[mantra_columntitle1]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_columntitle1'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_columntext1' name='ma_options[mantra_columntext1]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext1']) ?></textarea>
+			<textarea id='mantra_columntext1' name='ma_options[mantra_columntext1]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_columntext1']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_columnlink1' name='ma_options[mantra_columnlink1]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink1'] ) ?>'  />
 		</div>
@@ -460,9 +460,9 @@ function cryout_setting_frontcolumns_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_columnimg2']); ?>" name="ma_options[mantra_columnimg2]" id="mantra_columnimg2" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_columntitle2' name='ma_options[mantra_columntitle2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle2'] ) ?>'  />
+			<input id='mantra_columntitle2' name='ma_options[mantra_columntitle2]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_columntitle2'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_columntext2' name='ma_options[mantra_columntext2]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext2']) ?></textarea>
+			<textarea id='mantra_columntext2' name='ma_options[mantra_columntext2]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_columntext2']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_columnlink2' name='ma_options[mantra_columnlink2]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink2'] ) ?>'  />
 		</div>
@@ -475,9 +475,9 @@ function cryout_setting_frontcolumns_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_columnimg3']); ?>" name="ma_options[mantra_columnimg3]" id="mantra_columnimg3" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_columntitle3' name='ma_options[mantra_columntitle3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle3'] ) ?>'  />
+			<input id='mantra_columntitle3' name='ma_options[mantra_columntitle3]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_columntitle3'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_columntext3' name='ma_options[mantra_columntext3]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext3']) ?></textarea>
+			<textarea id='mantra_columntext3' name='ma_options[mantra_columntext3]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_columntext3']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_columnlink3' name='ma_options[mantra_columnlink3]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink3'] ) ?>'  />
 		</div>
@@ -490,9 +490,9 @@ function cryout_setting_frontcolumns_fn() {
 			<input type="text" value="<?php echo  esc_url($mantra_options['mantra_columnimg4']); ?>" name="ma_options[mantra_columnimg4]" id="mantra_columnimg4" class="slideimages" />
 			<span class="description"><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 			<h5> <?php _e("Title","mantra");?> </h5>
-			<input id='mantra_columntitle4' name='ma_options[mantra_columntitle4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle4'] ) ?>'  />
+			<input id='mantra_columntitle4' name='ma_options[mantra_columntitle4]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_columntitle4'] ) ?>'  />
 			<h5> <?php _e("Text","mantra");?> </h5>
-			<textarea id='mantra_columntext4' name='ma_options[mantra_columntext4]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext4']) ?></textarea>
+			<textarea id='mantra_columntext4' name='ma_options[mantra_columntext4]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_columntext4']) ?></textarea>
 			<h5> <?php _e("Link","mantra");?> </h5>
 			<input id='mantra_columnlink4' name='ma_options[mantra_columnlink4]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink4'] ) ?>'  />
 		</div>
@@ -512,17 +512,17 @@ function cryout_setting_fronttext_fn() {
 				<small><?php _e("More text for your front page. The top title is above the slider, the second title between the slider and the columns and 2 more rows of text under the columns.<br>It's all optional so leave any input field empty if it's not required.","mantra") ?></small>
 			</div>
 			<h5><?php _e("Top Title","mantra") ?></h5><br>
-			<input id='mantra_fronttext1' name='ma_options[mantra_fronttext1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_fronttext1'] ) ?>' />
+			<input id='mantra_fronttext1' name='ma_options[mantra_fronttext1]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_fronttext1'] ) ?>' />
 			<h5><?php _e("Second Title","mantra")?></h5>
-			<input id='mantra_fronttext2' name='ma_options[mantra_fronttext2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_fronttext2'] ) ?>'  />
+			<input id='mantra_fronttext2' name='ma_options[mantra_fronttext2]' size='50' type='text' value='<?php echo esc_html( $mantra_options['mantra_fronttext2'] ) ?>'  />
 			<h5><?php _e("Title color","mantra")?></h5>
-			<input type="text" id="mantra_fronttitlecolor" name="ma_options[mantra_fronttitlecolor]" style="width:100px;display:block;float:none;" value="<?php echo esc_attr( $mantra_options['mantra_fronttitlecolor'] ) ?>" />
+			<input type="text" id="mantra_fronttitlecolor" name="ma_options[mantra_fronttitlecolor]" style="width:100px;display:block;float:none;" value="<?php echo esc_html( $mantra_options['mantra_fronttitlecolor'] ) ?>" />
 			<div id="mantra_fronttitlecolor2"></div>
 
 			<h5><?php _e("Bottom Text 1","mantra")?></h5>
-			<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_fronttext3']) ?> </textarea>
+			<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_fronttext3']) ?> </textarea>
 			<h5><?php _e("Bottom Text 2","mantra")?> </h5>
-			<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_fronttext4']) ?> </textarea>
+			<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' ><?php echo esc_html($mantra_options['mantra_fronttext4']) ?> </textarea>
 		</div>
 	</div>
 			
@@ -570,7 +570,7 @@ function cryout_setting_fronttext_fn() {
 /////////////////////////////
 
 function cryout_setting_hheight_fn() {
-	global $mantra_options; ?> <input id='mantra_hheight' name='ma_options[mantra_hheight]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_hheight'] )) ?>' /> px 
+	global $mantra_options; ?> <input id='mantra_hheight' name='ma_options[mantra_hheight]' size='4' type='text' value='<?php echo esc_html( intval($mantra_options['mantra_hheight'] )) ?>' /> px 
 	<?php 
 	$header_width = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];
 	?>
@@ -636,20 +636,9 @@ function cryout_setting_logoupload_fn() {
 
 function  cryout_setting_headermargin_fn() {
 	global $mantra_options; ?>
-	<input id='mantra_headermargintop' name='ma_options[mantra_headermargintop]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_headermargintop'] )) ?>' /> px <?php echo __("top","mantra") ?> &nbsp; &nbsp;
-	<input id='mantra_headermarginleft' name='ma_options[mantra_headermarginleft]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_headermarginleft'] )) ?>' /> px <?php echo __("left","mantra") ?>
+	<input id='mantra_headermargintop' name='ma_options[mantra_headermargintop]' size='4' type='text' value='<?php echo esc_html( intval($mantra_options['mantra_headermargintop'] )) ?>' /> px <?php echo __("top","mantra") ?> &nbsp; &nbsp;
+	<input id='mantra_headermarginleft' name='ma_options[mantra_headermarginleft]' size='4' type='text' value='<?php echo esc_html( intval($mantra_options['mantra_headermarginleft'] )) ?>' /> px <?php echo __("left","mantra") ?>
 	<div><small> <?php _e("Select the top spacing for the header. Use it to better position your site title and description or custom logo inside the header. ","mantra") ?></small></div>
-	<?php
-}
-
-function cryout_setting_favicon_fn() {
-	global $mantra_options; ?>
-	<div>
-	<img src='<?php echo ($mantra_options['mantra_favicon']!='')? esc_url($mantra_options['mantra_favicon']):get_template_directory_uri().'/admin/images/placeholder.gif'; ?>' class="imagebox" width="64" height="64"/><br>
-	<input type="text" size='60' value="<?php echo  esc_url($mantra_options['mantra_favicon']); ?>" name="ma_options[mantra_favicon]" id="mantra_favicon" class="header_upload_inputs slideimages" />
-	<div><small> <?php _e("Limitations: It has to be an image. It should be max 64x64 pixels in dimensions. Recommended file extensions .ico and .png. <br/><b>Note that some browsers do not display the changed favicon instantly.</b>","mantra") ?></small></div>
-	<span class="description"><br><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a></span>
-	</div>
 	<?php
 }
 
@@ -710,7 +699,7 @@ function cryout_setting_fontfamily_fn() {
 
 	cryout_fontselect_helper( 'mantra_fontfamily' );
 	echo "<div><small>".__("Select the font family you'll use in your blog. All content text will be affected (including menu buttons). ","mantra")."</small></div><br>";
-	echo '<input class="googlefonts" type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefont']).'"  name="ma_options[mantra_googlefont]" id="mantra_googlefont" />';
+	echo '<input class="googlefonts" type="text" size="45" value="'.esc_html($mantra_options['mantra_googlefont']).'"  name="ma_options[mantra_googlefont]" id="mantra_googlefont" />';
 	echo "<div><small>".__("Or insert your Google Font identifier. <br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > Google fonts </a> for some font inspiration.","mantra")."</small></div>";
 }
 
@@ -720,7 +709,7 @@ function  cryout_setting_fonttitle_fn() {
 	cryout_fontselect_helper( 'mantra_fonttitle', true );
 	echo "<div><small>".__("Select the font family you want for your titles. It will affect post titles and page titles. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div><br>";
 
-	echo '<input class="googlefonts" type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefonttitle']).'"  name="ma_options[mantra_googlefonttitle]" id="mantra_googlefonttitle" />';
+	echo '<input class="googlefonts" type="text" size="45" value="'.esc_html($mantra_options['mantra_googlefonttitle']).'"  name="ma_options[mantra_googlefonttitle]" id="mantra_googlefonttitle" />';
 	echo "<div><small>".__("Or insert your Google Font identifier. <br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > Google fonts </a> for some font inspiration.","mantra")."</small></div>";
 }
 
@@ -729,7 +718,7 @@ function  cryout_setting_fontside_fn() {
 
 	cryout_fontselect_helper( 'mantra_fontside', true );
 	echo "<div><small>".__("Select the font family you want your sidebar(s) to have. Text in sidebars will be affected, including any widgets. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div><br>";
-	echo '<input class="googlefonts" type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefontside']).'"  name="ma_options[mantra_googlefontside]" id="mantra_googlefontside" />';
+	echo '<input class="googlefonts" type="text" size="45" value="'.esc_html($mantra_options['mantra_googlefontside']).'"  name="ma_options[mantra_googlefontside]" id="mantra_googlefontside" />';
 	echo "<div><small>".__("Or insert your Google Font identifier. <br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > Google fonts </a> for some font inspiration.","mantra")."</small></div>";
 }
 
@@ -738,7 +727,7 @@ function cryout_setting_fontsubheader_fn() {
 	
 	cryout_fontselect_helper( 'mantra_fontsubheader', true );
 	echo "<div><small>".__("Select the font family you want your headings to have (h1 - h6 tags will be affected). Leave 'Default' and the general font you selected will be used.","mantra")."</small></div><br>";
-	echo '<input class="googlefonts" type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefontsubheader']).'"  name="ma_options[mantra_googlefontsubheader]" id="mantra_googlefontsubheader" />';
+	echo '<input class="googlefonts" type="text" size="45" value="'.esc_html($mantra_options['mantra_googlefontsubheader']).'"  name="ma_options[mantra_googlefontsubheader]" id="mantra_googlefontsubheader" />';
 	echo "<div><small>".__("Or insert your Google Font identifier. <br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > Google fonts </a> for some font inspiration.","mantra")."</small></div>";
 }
 
@@ -877,112 +866,112 @@ function cryout_setting_sitebackground_fn() {
 
 function cryout_setting_backcolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_backcolor" name="ma_options[mantra_backcolor]" value="'.esc_attr( $mantra_options['mantra_backcolor'] ).'"  />';
+	echo '<input type="text" id="mantra_backcolor" name="ma_options[mantra_backcolor]" value="'.esc_html( $mantra_options['mantra_backcolor'] ).'"  />';
     echo '<div id="mantra_backcolor2"></div>';
 	echo "<div><small>".__("Background color (Default value is 444444).","mantra")."</small></div>";
 }
 
 function cryout_setting_headercolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_attr( $mantra_options['mantra_headercolor'] ).'"  />';
+	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_html( $mantra_options['mantra_headercolor'] ).'"  />';
 	echo '<div id="mantra_headercolor2"></div>';
 	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all inside text for no background color.","mantra")."</small></div>";
 }
 
 function cryout_setting_contentbg_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_contentbg" name="ma_options[mantra_contentbg]" value="'.esc_attr( $mantra_options['mantra_contentbg'] ).'"  />';
+	echo '<input type="text" id="mantra_contentbg" name="ma_options[mantra_contentbg]" value="'.esc_html( $mantra_options['mantra_contentbg'] ).'"  />';
 	echo '<div id="mantra_contentbg2"></div>';
 	echo "<div><small>".__("Content background color (Default value is FFFFFF). Works best with really light colors.","mantra")."</small></div>";
 }
 
 function cryout_setting_menubg_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_menubg" name="ma_options[mantra_menubg]" value="'.esc_attr( $mantra_options['mantra_menubg'] ).'"  />';
+	echo '<input type="text" id="mantra_menubg" name="ma_options[mantra_menubg]" value="'.esc_html( $mantra_options['mantra_menubg'] ).'"  />';
 	echo '<div id="mantra_menubg2"></div>';
 	echo "<div><small>".__("Main menu background color (Default value is FAFAFA). Should be the same color as the content bg or something just as light.","mantra")."</small></div>";
 }
 
 function cryout_setting_first_sidebar_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_s1bg" name="ma_options[mantra_s1bg]" value="'.esc_attr( $mantra_options['mantra_s1bg'] ).'"  />';
+	echo '<input type="text" id="mantra_s1bg" name="ma_options[mantra_s1bg]" value="'.esc_html( $mantra_options['mantra_s1bg'] ).'"  />';
 	echo '<div id="mantra_s1bg2"></div>';
 	echo "<div><small>".__("First sidebar background color (Default is no color for a transparent sidebar).","mantra")."</small></div>";
 }
 
 function cryout_setting_second_sidebar_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_s2bg" name="ma_options[mantra_s2bg]" value="'.esc_attr( $mantra_options['mantra_s2bg'] ).'"  />';
+	echo '<input type="text" id="mantra_s2bg" name="ma_options[mantra_s2bg]" value="'.esc_html( $mantra_options['mantra_s2bg'] ).'"  />';
 	echo '<div id="mantra_s2bg2"></div>';
 	echo "<div><small>".__("Second sidebar background color (Default is no color for a transparent sidebar).","mantra")."</small></div>";
 }
 
 function cryout_setting_prefootercolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_prefootercolor" name="ma_options[mantra_prefootercolor]" value="'.esc_attr( $mantra_options['mantra_prefootercolor'] ).'"  />';
+	echo '<input type="text" id="mantra_prefootercolor" name="ma_options[mantra_prefootercolor]" value="'.esc_html( $mantra_options['mantra_prefootercolor'] ).'"  />';
 	echo '<div id="mantra_prefootercolor2"></div>';
 	echo "<div><small>".__("Footer widget-area background color. (Default value is 171717).","mantra")."</small></div>";
 }
 
 function cryout_setting_footercolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_footercolor" name="ma_options[mantra_footercolor]" value="'.esc_attr( $mantra_options['mantra_footercolor'] ).'"  />';
+	echo '<input type="text" id="mantra_footercolor" name="ma_options[mantra_footercolor]" value="'.esc_html( $mantra_options['mantra_footercolor'] ).'"  />';
 	echo '<div id="mantra_footercolor2"></div>';
 	echo "<div><small>".__("Footer background color (Default value is 222222).","mantra")."</small></div>";
 }
 
 function cryout_setting_titlecolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_titlecolor" name="ma_options[mantra_titlecolor]" value="'.esc_attr( $mantra_options['mantra_titlecolor'] ).'"  />';
+	echo '<input type="text" id="mantra_titlecolor" name="ma_options[mantra_titlecolor]" value="'.esc_html( $mantra_options['mantra_titlecolor'] ).'"  />';
 	echo '<div id="mantra_titlecolor2"></div>';
 	echo "<div><small>".__("Your blog's title color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 function cryout_setting_descriptioncolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_descriptioncolor" name="ma_options[mantra_descriptioncolor]" value="'.esc_attr( $mantra_options['mantra_descriptioncolor'] ).'"  />';
+	echo '<input type="text" id="mantra_descriptioncolor" name="ma_options[mantra_descriptioncolor]" value="'.esc_html( $mantra_options['mantra_descriptioncolor'] ).'"  />';
 	echo '<div id="mantra_descriptioncolor2"></div>';
 	echo "<div><small>".__("Your blog's description color(Default value is 222222).","mantra")."</small></div>";
 }
 
 function cryout_setting_contentcolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_contentcolor" name="ma_options[mantra_contentcolor]" value="'.esc_attr( $mantra_options['mantra_contentcolor'] ).'"  />';
+	echo '<input type="text" id="mantra_contentcolor" name="ma_options[mantra_contentcolor]" value="'.esc_html( $mantra_options['mantra_contentcolor'] ).'"  />';
 	echo '<div id="mantra_contentcolor2"></div>';
 	echo "<div><small>".__("Content Text Color (Default value is 333333).","mantra")."</small></div>";
 }
 
 function cryout_setting_linkscolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_linkscolor" name="ma_options[mantra_linkscolor]" value="'.esc_attr( $mantra_options['mantra_linkscolor'] ).'"  />';
+	echo '<input type="text" id="mantra_linkscolor" name="ma_options[mantra_linkscolor]" value="'.esc_html( $mantra_options['mantra_linkscolor'] ).'"  />';
 	echo '<div id="mantra_linkscolor2"></div>';
 	echo "<div><small>".__("Links color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 function cryout_setting_hovercolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_hovercolor" name="ma_options[mantra_hovercolor]" value="'.esc_attr( $mantra_options['mantra_hovercolor'] ).'"  />';
+	echo '<input type="text" id="mantra_hovercolor" name="ma_options[mantra_hovercolor]" value="'.esc_html( $mantra_options['mantra_hovercolor'] ).'"  />';
 	echo '<div id="mantra_hovercolor2"></div>';
 	echo "<div><small>".__("Links color on mouse over (Default value is 333333).","mantra")."</small></div>";
 }
 
 function cryout_setting_headtextcolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_headtextcolor" name="ma_options[mantra_headtextcolor]" value="'.esc_attr( $mantra_options['mantra_headtextcolor'] ).'"  />';
+	echo '<input type="text" id="mantra_headtextcolor" name="ma_options[mantra_headtextcolor]" value="'.esc_html( $mantra_options['mantra_headtextcolor'] ).'"  />';
 	echo '<div id="mantra_headtextcolor2"></div>';
 	echo "<div><small>".__("Post Header Text Color (Default value is 333333).","mantra")."</small></div>";
 }
 
 function cryout_setting_headtexthover_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_headtexthover" name="ma_options[mantra_headtexthover]" value="'.esc_attr( $mantra_options['mantra_headtexthover'] ).'"  />';
+	echo '<input type="text" id="mantra_headtexthover" name="ma_options[mantra_headtexthover]" value="'.esc_html( $mantra_options['mantra_headtexthover'] ).'"  />';
 	echo '<div id="mantra_headtexthover2"></div>';
 	echo "<div><small>".__("Post Header Text Color on Mouse over (Default value is 000000).","mantra")."</small></div>";
 }
 
 function  cryout_setting_sideheadbackcolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_sideheadbackcolor" name="ma_options[mantra_sideheadbackcolor]" value="'.esc_attr( $mantra_options['mantra_sideheadbackcolor'] ).'"  />';
+	echo '<input type="text" id="mantra_sideheadbackcolor" name="ma_options[mantra_sideheadbackcolor]" value="'.esc_html( $mantra_options['mantra_sideheadbackcolor'] ).'"  />';
 	echo '<div id="mantra_sideheadbackcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Background color (Default value is 444444).","mantra")."</small></div>";
 
@@ -990,28 +979,28 @@ function  cryout_setting_sideheadbackcolor_fn() {
 
 function cryout_setting_sideheadtextcolor_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_sideheadtextcolor" name="ma_options[mantra_sideheadtextcolor]" value="'.esc_attr( $mantra_options['mantra_sideheadtextcolor'] ).'"  />';
+	echo '<input type="text" id="mantra_sideheadtextcolor" name="ma_options[mantra_sideheadtextcolor]" value="'.esc_html( $mantra_options['mantra_sideheadtextcolor'] ).'"  />';
 	echo '<div id="mantra_sideheadtextcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Text Color(Default value is 2EA5FD).","mantra")."</small></div>";
 }
 
 function cryout_setting_footerheader_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_footerheader" name="ma_options[mantra_footerheader]" value="'.esc_attr( $mantra_options['mantra_footerheader'] ).'"  />';
+	echo '<input type="text" id="mantra_footerheader" name="ma_options[mantra_footerheader]" value="'.esc_html( $mantra_options['mantra_footerheader'] ).'"  />';
 	echo '<div id="mantra_footerheader2"></div>';
 	echo "<div><small>".__("Footer Widget Text Color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 function cryout_setting_footertext_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_footertext" name="ma_options[mantra_footertext]" value="'.esc_attr( $mantra_options['mantra_footertext'] ).'"  />';
+	echo '<input type="text" id="mantra_footertext" name="ma_options[mantra_footertext]" value="'.esc_html( $mantra_options['mantra_footertext'] ).'"  />';
 	echo '<div id="mantra_footertext2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color (Default value is 666666).","mantra")."</small></div>";
 }
 
 function cryout_setting_footerhover_fn() {
 	global $mantra_options;
-	echo '<input type="text" id="mantra_footerhover" name="ma_options[mantra_footerhover]" value="'.esc_attr( $mantra_options['mantra_footerhover'] ).'"  />';
+	echo '<input type="text" id="mantra_footerhover" name="ma_options[mantra_footerhover]" value="'.esc_html( $mantra_options['mantra_footerhover'] ).'"  />';
 	echo '<div id="mantra_footerhover2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color on Mouse Over (Default value is 888888).","mantra")."</small></div>";
 }
@@ -1429,7 +1418,7 @@ function cryout_setting_excerptarchive_fn() {
 
 function cryout_setting_excerptwords_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_excerptwords' name='ma_options[mantra_excerptwords]' size='6' type='text' value='".esc_attr( $mantra_options['mantra_excerptwords'] )."'  />";
+	echo "<input id='mantra_excerptwords' name='ma_options[mantra_excerptwords]' size='6' type='text' value='".esc_html( $mantra_options['mantra_excerptwords'] )."'  />";
 	echo "<div><small>".__("The number of words an excerpt will have. When that number is reached the post will be interrupted by a <i>Continue reading</i> link that
 							will take the reader to the full post page.","mantra")."</small></div>";
 }
@@ -1450,13 +1439,13 @@ function cryout_setting_magazinelayout_fn() {
 
 function cryout_setting_excerptdots_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_excerptdots' name='ma_options[mantra_excerptdots]' size='40' type='text' value='".esc_attr( $mantra_options['mantra_excerptdots'] )."'  />";
+	echo "<input id='mantra_excerptdots' name='ma_options[mantra_excerptdots]' size='40' type='text' value='".esc_html( $mantra_options['mantra_excerptdots'] )."'  />";
 	echo "<div><small>".__("Replaces the three dots ('[...])' that are appended automatically to excerpts.","mantra")."</small></div>";
 }
 
 function cryout_setting_excerptcont_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_excerptcont' name='ma_options[mantra_excerptcont]' size='40' type='text' value='".esc_attr( $mantra_options['mantra_excerptcont'] )."'  />";
+	echo "<input id='mantra_excerptcont' name='ma_options[mantra_excerptcont]' size='40' type='text' value='".esc_html( $mantra_options['mantra_excerptcont'] )."'  />";
 	echo "<div><small>".__("Edit the 'Continue Reading' link added to your post excerpts.","mantra")."</small></div>";
 }
 
@@ -1530,8 +1519,8 @@ function cryout_setting_falign_fn() {
 
 function cryout_setting_fsize_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_fwidth' name='ma_options[mantra_fwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fwidth'] )."'  />px (width) <b>X</b> ";
-	echo "<input id='mantra_fheight' name='ma_options[mantra_fheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fheight'] )."'  />px (height)";
+	echo "<input id='mantra_fwidth' name='ma_options[mantra_fwidth]' size='4' type='text' value='".esc_html( $mantra_options['mantra_fwidth'] )."'  />px (width) <b>X</b> ";
+	echo "<input id='mantra_fheight' name='ma_options[mantra_fheight]' size='4' type='text' value='".esc_html( $mantra_options['mantra_fheight'] )."'  />px (height)";
 	
 	$checkedClass = ($mantra_options['mantra_fcrop']=='1') ? ' checkedClass' : '';
 	echo " <label id='fcrop' for='mantra_fcrop' class='socialsdisplay $checkedClass'><input  ";

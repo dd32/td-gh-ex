@@ -68,6 +68,7 @@
 	.mantra-hratio-1 #branding, 
 	.mantra-hratio-1 #bg_image { 
 		min-height: inherit !important; 
+		display: block;
 	} 
 
 	#header-container > div {

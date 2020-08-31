@@ -19,15 +19,21 @@ if ( ! function_exists( 'mantra_comment' ) ) :
 function mantra_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
-		case '' :
+		case 'pingback' :
+		case 'trackback':
+	?>
+	<li class="post pingback">
+		<p><?php _e( 'Pingback: ', 'mantra' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'mantra'), ' ' ); ?></p>
+	<?php
+		break;
+		case '':
+		default: 
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 40 );
 		?><?php printf(  '%s <span class="says">'.__('says:', 'mantra' ).'</span>', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-
-
 
 		</div><!-- .comment-author .vcard -->
 
@@ -51,14 +57,7 @@ function mantra_comment( $comment, $args, $depth ) {
 	</div><!-- #comment-##  -->
 
 	<?php
-			break;
-		case 'pingback'  :
-		case 'trackback' :
-	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback: ', 'mantra' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'mantra'), ' ' ); ?></p>
-	<?php
-			break;
+		break;
 	endswitch;
 }
 endif;

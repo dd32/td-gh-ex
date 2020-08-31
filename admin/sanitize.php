@@ -135,7 +135,6 @@ function ma_options_validate($input) {
 		if (!isset($input['mantra_socialsdisplay'.$i])) { $input['mantra_socialsdisplay'.$i] = "0"; }
 	}
 
-	$input['mantra_favicon'] =  esc_url_raw($input['mantra_favicon']);
 	$input['mantra_logoupload'] =  esc_url_raw($input['mantra_logoupload']);
 	$input['mantra_headermargintop'] =  intval(wp_kses_data($input['mantra_headermargintop']));
 	$input['mantra_headermarginleft'] =  intval(wp_kses_data($input['mantra_headermarginleft']));

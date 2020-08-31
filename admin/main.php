@@ -6,9 +6,12 @@ require_once(get_template_directory() . "/includes/custom-styles.php");			// cus
 // Admin side
 if( is_admin() ) {
 	require_once(get_template_directory() . "/admin/settings.php");				// theme settings
-	require_once(get_template_directory() . "/admin/admin-functions.php");		// admin side functions
 	require_once(get_template_directory() . "/admin/sanitize.php");				// settings sanitizers
 }
+
+/**
+ * Import/export functionality is part of the companion Theme Settings plugin 
+ */
 
 // Getting the theme options and making sure defaults are used if no values are set
 function mantra_get_theme_options() {
@@ -48,7 +51,7 @@ function mantra_admin_styles() {
 // Adding the styles for the Mantra admin page used when mantra_add_page_fn() is launched
 function mantra_admin_scripts() {
 	// The farbtastic color selector already included in WP
-	wp_enqueue_script("farbtastic");
+	wp_enqueue_script('farbtastic');
 	wp_enqueue_style( 'farbtastic' );
 
 	//jQuery accordion and slider libraries already included in WP
@@ -58,7 +61,7 @@ function mantra_admin_scripts() {
 
 	// For backwards compatibility where Mantra is installed on older versions of WP where the ui accordion and slider are not included
 	if (!wp_script_is('jquery-ui-accordion',$list='registered')) {
-		wp_register_script('cryout_accordion',get_template_directory_uri() . '/admin/js/accordion-slider.js', array('jquery'), _CRYOUT_THEME_VERSION  );
+		wp_register_script('cryout_accordion', get_template_directory_uri() . '/admin/js/accordion-slider.js', array('jquery'), _CRYOUT_THEME_VERSION  );
 		wp_enqueue_script('cryout_accordion');
 		}
 
@@ -118,7 +121,6 @@ function mantra_init_fn(){
 	add_settings_field('mantra_headermargin', __('Header Spacing','mantra') , 'cryout_setting_headermargin_fn', 'mantra-page', 'header_section');
 	add_settings_field('mantra_menualign', __('Main Menu Alignment','mantra') , 'cryout_setting_menualign_fn', 'mantra-page', 'header_section');
 	add_settings_field('mantra_menurounded', __('Rounded Menu Corners','mantra') , 'cryout_setting_menurounded_fn', 'mantra-page', 'header_section');
-	add_settings_field('mantra_favicon', __('FavIcon Upload','mantra') , 'cryout_setting_favicon_fn', 'mantra-page', 'header_section');
 	
 	/*** text ***/
 	add_settings_field('mantra_fontfamily', __('General Font','mantra') , 'cryout_setting_fontfamily_fn', 'mantra-page', 'text_section');
@@ -218,6 +220,25 @@ function mantra_init_fn(){
 	add_settings_field('mantra_editorstyle', __('Editor Styling','mantra') , 'cryout_setting_editorstyle_fn', 'mantra-page', 'misc_section');
 }
 
+function mantra_theme_settings_placeholder() { 
+	if (function_exists('mantra_theme_settings_restore') ):
+			mantra_theme_settings_restore();
+	else:
+?>
+   <div id="mantra-settings-placeholder">
+		<h3>Where are the theme settings?</h3>
+		<p>Following the <a href="https://make.wordpress.org/themes/2015/04/21/this-weeks-meeting-important-information-regarding-theme-options/" target="_blank">Wordpress Theme Review Guidelines</a>, starting with Mantra v2.5 we had to remove the settings page from the theme and transfer all the settings to the <a href="http://codex.wordpress.org/Appearance_Customize_Screen" target="_blank">Customizer</a> interface.</p>
+		<p>However, we feel that the Customizer interface does not provide the right medium (in space of terms and usability) for our existing theme options. We've created our settings with a certain layout that is not compatible with the Customizer interface.</p>
+		<p>As an alternative solution that allows us to keep updating and improving our theme we have moved the settings functionality to the separate <a href="https://wordpress.org/plugins/cryout-theme-settings/" target="_blank">Cryout Serious Theme Settings</a> plugin. To restore the theme settings page to previous functionality, all you need to do is install this free plugin with a couple of clicks.</p>
+		<h3>How do I restore the settings?</h3>
+		<p><strong>Navigate <a href="themes.php?page=mantra-extra-plugins">to this page</a> to install and activate the Cryout Serious Theme Settings plugin, then return here to find the settings page in all its past glory.</strong></p>
+		<p>The plugin is compatible with all our themes that are affected by this change and only needs to be installed once.</p>
+		<p>If you already have the plugin installed make sure you have it updated to the latest available version.</p>
+   </div>
+<?php
+	endif;
+} // mantra_theme_settings_placeholder()
+
 // Display the admin options page
 function mantra_page_fn() {
 	// Load the import form page if the import button has been pressed
@@ -241,24 +262,21 @@ function mantra_page_fn() {
 
 <div id="lefty"><!-- Left side of page - the options area -->
 	<div>
-<div id="admin_header"><img src="<?php echo get_template_directory_uri() . '/admin/images/mantra-logo.png' ?>" /> </div>
+		<div id="admin_header"><img src="<?php echo esc_url( get_template_directory_uri() ). '/admin/images/mantra-logo.png' ?>" /> </div>
 
-<div id="admin_links">
-	<a target="_blank" href="http://www.cryoutcreations.eu/wordpress-themes/mantra">Mantra Homepage</a>
-	<a target="_blank" href="http://www.cryoutcreations.eu/forum">Support</a>
-	<a target="_blank" href="http://www.cryoutcreations.eu">Cryout Creations</a>
-</div>
-	<div style="clear: both;"></div>
-</div>
+		<div id="admin_links">
+			<a target="_blank" href="http://www.cryoutcreations.eu/wordpress-themes/mantra">Mantra Homepage</a>
+			<a target="_blank" href="http://www.cryoutcreations.eu/forum">Support</a>
+			<a target="_blank" href="http://www.cryoutcreations.eu">Cryout Creations</a>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
 
 <?php if ( isset( $_GET['settings-updated'] ) ) {
     echo "<div class='updated fade' style='clear:left;'><p>";
 	echo _e('Mantra settings updated successfully.','mantra');
 	echo "</p></div>";
 } ?>
-
-<div id="jsAlert" class=""><b>Checking jQuery functionality...</b><br/><em>If this message remains visible after the page has loaded then there is a problem with your WordPress jQuery library. This can have several causes, including incompatible plugins.
-The Settings page cannot function without jQuery.</em></div>
 
 	<div id="main-options">
 		<?php
@@ -287,7 +305,7 @@ The Settings page cannot function without jQuery.</em></div>
 				<input type="hidden" name="item_name" value="Cryout Creations / Mantra Theme donation">
 				<input type="hidden" name="currency_code" value="EUR">
 				<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHosted">
-				<input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<input type="image" src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			</form>
 
@@ -295,69 +313,25 @@ The Settings page cannot function without jQuery.</em></div>
 			<p>Or socially smother, caress and embrace us:</p>
 			<div class="social-buttons">
 				<a href="https://www.facebook.com/cryoutcreations" target="_blank" title="Follow us on Facebook">
-					<img src="<?php echo get_template_directory_uri() . '/admin/images/icon-facebook.png' ?>" alt="Facebook">
+					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/images/icon-facebook.png' ?>" alt="Facebook">
 				</a>
 				<a href="https://twitter.com/cryoutcreations" target="_blank" title="Follow us on Twitter">
-					<img src="<?php echo get_template_directory_uri() . '/admin/images/icon-twitter.png' ?>" alt="Twitter">
+					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/images/icon-twitter.png' ?>" alt="Twitter">
 				</a>
-				<a href="https://plus.google.com/106863427325889416242" target="_blank" title="Follow us on Google+">
-					<img src="<?php echo get_template_directory_uri() . '/admin/images/icon-googleplus.png' ?>" alt="Google+">
+				<a href="https://profiles.wordpress.org/cryout-creations/" target="_blank" title="Check out our WordPress.org creations">
+					<img src="<?php echo esc_url(  get_template_directory_uri() ) . '/admin/images/icon-wporg.png' ?>" alt="WordPress.org">
 				</a>
 			</div>
 		</div><!-- inside -->
 	</div><!-- donate -->
 
-    <div class="postbox export non-essential-option" style="overflow:hidden;">
-        <div class="head-wrap">
-            <div title="Click to toggle" class="handlediv"><br /></div>
-           	<h3 class="hndle"><?php _e( 'Import/Export Settings', 'mantra' ); ?></h3>
-        </div><!-- head-wrap -->
-        <div class="panel-wrap inside">
-				<form action="" method="post">
-                	<?php wp_nonce_field('mantra-export', 'mantra-export'); ?>
-                    <input type="hidden" name="mantra_export" value="true" />
-                    <input type="submit" class="button" value="<?php _e('Export Theme options', 'mantra'); ?>" />
-                </form>
-                <form action="" method="post">
-                    <input type="hidden" name="mantra_import" value="true" />
-                    <input type="submit" class="button" value="<?php _e('Import Theme options', 'mantra'); ?>" />
-                </form>
-		</div><!-- inside -->
-	</div><!-- export -->
-
-
-    <div class="postbox news" >
-            <div>
-        		<h3 class="hndle"><?php _e( 'Mantra Latest News', 'mantra' ); ?></h3>
-            </div>
-            <div class="panel-wrap inside" style="height:200px;overflow:auto;">
-                <?php
-				$mantra_news = fetch_feed( array( 'http://www.cryoutcreations.eu/cat/wordpress-themes/mantra/feed') );
-				$maxitems = 0;
-				if ( ! is_wp_error( $mantra_news ) ) {
-					$maxitems = $mantra_news->get_item_quantity( 10 );
-					$news_items = $mantra_news->get_items( 0, (int)$maxitems );
-				}
-				?>
-                <ul class="news-list">
-                	<?php if ( $maxitems == 0 ) : echo '<li>' . __( 'No news items.', 'mantra' ) . '</li>'; else :
-                	foreach( $news_items as $news_item ) : ?>
-                    	<li>
-                        	<a class="news-header" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'><?php echo esc_html( $news_item->get_title() ); ?></a><br />
-                   <span class="news-item-date"><?php _e('Posted on','mantra');echo $news_item->get_date(' j F Y'); ?></span><br />
-                           <a class="news-read" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'>Read more &raquo;</a>
-                        </li>
-                    <?php endforeach; endif; ?>
-                </ul>
-            </div><!-- inside -->
-    </div><!-- news -->
-
+	<?php do_action('mantra_after_righty'); ?>
 
 </div><!--  righty -->
 </div><!--  wrap -->
 
 <script>
-var mantra_tooltip_icon_url = '<?php echo get_template_directory_uri(); ?>/resources/images/icon-tooltip.png'
+var mantra_tooltip_icon_url = '<?php echo esc_url( get_template_directory_uri() ) ?>/resources/images/icon-tooltip.png'
 </script>
 
 <?php } // mantra_page_fn()

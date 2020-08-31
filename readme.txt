@@ -1,11 +1,11 @@
 =============
 Mantra WordPress Theme
-Copyright 2011-19 Cryout Creations
+Copyright 2011-20 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.2
-Tested up to: 5.2
-Stable tag: 3.2.0
+Tested up to: 5.5
+Stable tag: 3.3.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -94,6 +94,17 @@ Turkish - Emre Dalkili�
 
 
 == Changelog ==
+
+= 3.3.0 =
+* Added 'mantra_mainnav_id' and 'mantra_mainnav_class' filters to ease support for mega menu plugins
+* Added 'wp_body_open' action introduced in WordPress 5.2
+* Added required extra sanitization and 'tested/php' headers
+* Fixed pins selection and some hide meta attribute options not working
+* Fixed main content text color option not applying to presentation page elements
+* Fixed inconsistent header line height when header image aspect ratio is forced on
+* Fixed comments list missing with WordPress 5.5
+* Cleaned up some unused code and moved some settings page code to the companion Serious Settings plugin (in v0.5.11)
+* Removed legacy favicon functionality completely as this is no longer allowed in wp.org repository themes 
 
 = 3.2.0 =
 * Added support for WordPress 5.2 wp_body_open() hook

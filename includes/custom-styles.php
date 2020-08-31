@@ -9,14 +9,14 @@ function mantra_body_classes($classes) {
 
 	// layout classes are for frontend reference only; styling is still below, case dependent
 	switch ($options['mantra_side']):
-		case "1c":   $classes[] = 'mantra-no-sidebar'; break; 
-		case "2cSr": $classes[] = 'mantra-sidebar-right'; break; 
-		case "2cSl": $classes[] = 'mantra-sidebar-left'; break; 
-		case "3cSr": $classes[] = 'mantra-sidebars-right'; break; 
-		case "3cSl": $classes[] = 'mantra-sidebars-left'; break;  
-		case "3cSs": $classes[] = 'mantra-sidebars-sided'; break; 
+		case "1c":   $classes[] = 'mantra-no-sidebar'; break;
+		case "2cSr": $classes[] = 'mantra-sidebar-right'; break;
+		case "2cSl": $classes[] = 'mantra-sidebar-left'; break;
+		case "3cSr": $classes[] = 'mantra-sidebars-right'; break;
+		case "3cSl": $classes[] = 'mantra-sidebars-left'; break;
+		case "3cSs": $classes[] = 'mantra-sidebars-sided'; break;
 	endswitch;
-	
+
 	$magazine_layout = FALSE;
 	if ($options['mantra_magazinelayout'] == "Enable") {
 		if (is_front_page()) {
@@ -33,7 +33,7 @@ function mantra_body_classes($classes) {
 		$classes[] = 'mantra-presentation-page';
 		$classes[] = sprintf( 'mantra-coldisplay-%s', $options['mantra_nrcolumns'] );
 	}
-	
+
 	switch ($options['mantra_menualign']):
 		case "center": 		$classes[] = 'mantra-menu-center'; break;
 		case "right": 		$classes[] = 'mantra-menu-right'; break;
@@ -54,17 +54,17 @@ function mantra_custom_styles() {
     $contentSize = $mantra_sidewidth;
     $sidebarSize = $mantra_sidebar;
 
-	ob_start(); 
-	
+	ob_start();
+
 	/* LAYOUT CSS */
-	
+
 	?>
 	#wrapper { <?php echo (($mantra_mobile == 'Enable') ? 'max-' : '');?>width: <?php echo ($totalwidth); ?>px; }
 	#content { width: 100%; max-width:<?php echo absint( $contentSize ) ?>px; max-width: calc( 100% - <?php echo absint( $sidebarSize ) ?>px ); }
-	<?php 
-	
+	<?php
+
 	// handle layout page template custom sizes
-	
+
 	if (is_page_template("templates/template-onecolumn.php") ) { ?>
 		#content { width: 100%; margin: 0; }
 		<?php }
@@ -102,9 +102,9 @@ function mantra_custom_styles() {
 		// end layout page template custom sizes
 	else {
 		// compute sizes based on the general layout
-		
+
 		if ($mantra_side == "1c" ) { ?>
-			#content { max-width:<?php echo absint($totalwidth) ?>px; margin-top:0; }  
+			#content { max-width:<?php echo absint($totalwidth) ?>px; margin-top:0; }
 			<?php }
 
 		if ($mantra_side == "2cSr" ) { ?>
@@ -183,7 +183,7 @@ function mantra_custom_styles() {
 					elseif ($mantra_caption == "Light Gray") {?> background-color:#EEE;<?php }
 					elseif ($mantra_caption == "Gray") {?> background-color:#CCC;<?php }
 					elseif ($mantra_caption == "Dark Gray") {?> background-color:#444; color:#CCC;<?php }
-					elseif ($mantra_caption == "Black") {?> background-color:#000; color:#CCC;<?php } 
+					elseif ($mantra_caption == "Black") {?> background-color:#000; color:#CCC;<?php }
 					?> }
 	<?php } */
 	if ($mantra_menurounded == "Disable") { ?> #access ul li {border-radius:0;}<?php }
@@ -203,7 +203,7 @@ function mantra_custom_styles() {
 	if ($mantra_headfontsize != "Default") { ?> #content h1.entry-title, #content h2.entry-title { font-size:<?php echo esc_attr( $mantra_headfontsize ); ?>; }<?php }
 	if ($mantra_sidefontsize != "Default") { ?> .widget-area, .widget-area a:link, .widget-area a:visited { font-size:<?php echo esc_attr( $mantra_sidefontsize ); ?>; }<?php }
 	if ($mantra_headerindent == "Enable") { ?> #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin-left:20px;}
-											.sticky hgroup { background: url(<?php echo get_template_directory_uri().'/resources/images/icon-featured.png' ; ?>) no-repeat 12px 10px transparent; padding-left: 15px; } <?php } ?>
+											.sticky hgroup { background: url(<?php echo esc_url(get_template_directory_uri()).'/resources/images/icon-featured.png' ; ?>) no-repeat 12px 10px transparent; padding-left: 15px; } <?php } ?>
 
 	#header-container > div { margin-top:<?php echo absint( $mantra_headermargintop ); ?>px; }
 	#header-container > div { margin-left:<?php echo absint( $mantra_headermarginleft ); ?>px; } <?php
@@ -213,7 +213,7 @@ function mantra_custom_styles() {
 	if ($mantra_footercolor != "171717") { ?> #footer2 { background-color:<?php echo esc_attr( $mantra_footercolor ); ?>; }<?php }
 	if ($mantra_titlecolor != "0D85CC") { ?> #site-title span a { color:<?php echo esc_attr( $mantra_titlecolor ); ?>; }<?php }
 	if ($mantra_descriptioncolor != "0D85CC") { ?> #site-description { color:<?php echo esc_attr( $mantra_descriptioncolor ); ?>; }<?php }
-	if ($mantra_contentcolor != "333333") { ?> #content { color:<?php echo esc_attr( $mantra_contentcolor ); ?>  ;}<?php }
+	if ($mantra_contentcolor != "333333") { ?> #content, .column-text, #front-text3, #front-text4 { color:<?php echo esc_attr( $mantra_contentcolor ); ?>  ;}<?php }
 	if ($mantra_linkscolor != "0D85CC") { ?> .widget-area a:link, .widget-area a:visited, a:link, a:visited ,#searchform #s:hover, #container #s:hover, #access a:hover,
 											 #wp-calendar tbody td a, #site-info a, #site-copyright a, #access li:hover > a,
 											 #access ul ul:hover > a { color:<?php echo esc_attr( $mantra_linkscolor ); ?>; }<?php }
@@ -232,10 +232,10 @@ function mantra_custom_styles() {
 
 	#footer-widget-area .widget-title { color:<?php echo esc_attr( $mantra_footerheader ); ?>; }
 	#footer-widget-area a { color:<?php echo esc_attr( $mantra_footertext ); ?>; }
-	#footer-widget-area a:hover { color:<?php echo esc_attr( $mantra_footerhover ); ?>; } <?php
+	#footer-widget-area a:hover { color:<?php echo esc_attr( $mantra_footerhover ); ?>; }
 
-	#content .wp-caption { background-image:url(<?php echo get_template_directory_uri() . "/resources/images/pins/" . esc_attr($mantra_pin); ?>.png); } <?php
-	if ($mantra_sidebullet != "arrow_white") { ?> .widget-area ul ul li { background-image: url(<?php echo get_template_directory_uri() . "/resources/images/bullets/" . esc_attr($mantra_sidebullet); ?>.png); background-position: left calc(2em / 2 - 4px); } <?php }
+	#content .wp-caption { background-image:url(<?php echo esc_url(get_template_directory_uri()) . "/resources/images/pins/" . esc_attr($mantra_pin); ?>.png); } <?php
+	if ($mantra_sidebullet != "arrow_white") { ?> .widget-area ul ul li { background-image: url(<?php echo esc_url(get_template_directory_uri()) . "/resources/images/bullets/" . esc_attr($mantra_sidebullet); ?>.png); background-position: left calc(2em / 2 - 4px); } <?php }
 
 	if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title, .home .page h2.entry-title { display:none; } <?php }
 	if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none; } <?php }
