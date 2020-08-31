@@ -231,7 +231,7 @@ class Beshop_Walker_Nav_Menu extends Walker {
 		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $link_before . $title . $link_after;
 		$item_output .= '</a>';
-		if(!empty($args->walker->has_children)){
+		if($args->walker->has_children){
 		$item_output .= '<button class="mini-toggle"></button>';
 		}
 		$item_output .= isset($args->after)?$args->after:'';

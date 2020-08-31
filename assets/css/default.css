@@ -9,7 +9,6 @@
 	- Elements
 	- Links
 	- Forms
-	- default
 ## Layouts
 # Components
 	- Header
@@ -387,27 +386,9 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: 'Poppins', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
-}
-body{
-    font-weight: 400;
-    overflow-x: hidden;
-    word-break: break-word;
-    -webkit-text-size-adjust: 100%;
-    -webkit-overflow-scrolling: touch;
-    -webkit-font-smoothing: antialiased;
-}
-
-html {
-    font-family: 'Poppins', sans-serif;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
 }
 
 h1,
@@ -417,24 +398,6 @@ h4,
 h5,
 h6 {
 	clear: both;
-}
-p {
-    font-family: 'Poppins', sans-serif;
-    color: #3f3f3f;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
-    margin: 0 0 15px 0;
-}
-
-h1, h2, h3, h4, h5, h6{
-	font-family: 'Noto Serif', serif;
-    font-weight: 600;
-    margin: 0 0 15px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; 
-	line-height:1.3;
 }
 
 p {
@@ -635,7 +598,6 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
-	min-height: 35px;
 }
 
 input[type="text"]:focus,
@@ -664,18 +626,6 @@ select {
 textarea {
 	width: 100%;
 }
-/* default
---------------------------------------------- */
-.list-hide ul{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.text-white,
-.text-white a,
-.text-white{
-	color: #fff;
-}
 
 /*--------------------------------------------------------------
 # Layouts
@@ -700,17 +650,6 @@ textarea {
     height: auto;
     min-height: 250px
 }
-.site-branding.has-himg.behimg-auto .beshop-header-img,
-.site-branding.has-himg.behimg-auto .beshop-header-img img {
-    min-height: auto;
-}
-@media screen and (max-width: 992px) {
-	.site-branding.has-himg.behimg-amobile .beshop-header-img,
-	.site-branding.has-himg.behimg-amobile .beshop-header-img img {
-	    min-height: auto;
-	}
-
-}
 .site-branding.has-himg.bshop-two-logo .beshop-header-img {
     min-height: 420px;
     max-height: 1000px;
@@ -729,6 +668,7 @@ textarea {
 }
 .has-himg p.site-description {
     display: inline-block;
+    background: rgba(255,255,255,0.5);
     padding: 10px 20px;
     border-radius: 50px;
 }
@@ -915,7 +855,7 @@ button.mini-toggle {
 	    width: 40px;
 	    height: 40px;
 	    top: 7px;
-	    right: 7px;
+	    right: -10px;
 	    border: 1px solid #888;
 	}
 	.main-navigation ul ul button.mini-toggle {
@@ -927,10 +867,10 @@ button.mini-toggle {
 	    width: 95%;
 	    display: inline-block;
 	    min-width: 240px;
-	    max-width: 800px;
+	    max-width: 600px;
 	}
 	.mini-toggle, .main-navigation .menu-item-has-children:before, .page_item_has_children:before {
-	    right: 22px;
+	    right: 7px;
 	}
 	.main-navigation ul ul .mini-toggle,
 	.main-navigation ul ul .menu-item-has-children:before,
@@ -943,7 +883,7 @@ button.mini-toggle {
 	    display: inline-block;
 	}
 	.beshop-main-nav ul li {
-	    border-bottom: 1px solid #ccc;
+	    border-bottom: 1px solid #555;
 	}
 	.main-navigation ul ul ul,
 	.main-navigation ul ul {
@@ -969,10 +909,8 @@ button.mini-toggle {
 	}
 	.main-navigation ul> ul> ul,
 	.main-navigation ul> li.menushow> ul.sub-menu,
-	.main-navigation ul> li.befocus.menushow> ul.sub-menu,
-	.main-navigation ul> li.befocus.menushow> ul.children,
-	.main-navigation ul> li.menuhide.befocus> ul.sub-menu,
-	.main-navigation ul> li.menuhide.befocus> ul.children,
+	.main-navigation ul> li.befocus> ul.sub-menu,
+	.main-navigation ul> li.befocus> ul.children,
 	.main-navigation ul> li.menushow> ul.children {
     	display: block !important;
     	max-height: 10000px;
@@ -1058,13 +996,6 @@ button.mini-toggle {
 	margin: 0 0 1.5em;
 }
 
-/*Contact page style*/
-.wpcf7-form label, 
-.wpcf7-form span, 
-.wpcf7-form label input {
-    width: 100%;
-} 
-
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1073,16 +1004,6 @@ button.mini-toggle {
 
 .bypostauthor {
 	display: block;
-}
-.comment-form .form-submit {
-    float: right;
-}
-.comment-form-cookies-consent {
-    display: flex;
-    align-items: baseline;
-}
-.comment-form-cookies-consent input{
-	margin-right: 5px;
 }
 /*--------------------------------------------------------------
 # Comments
@@ -1200,7 +1121,7 @@ form#commentform input:not([type="checkbox"]) {
     height: 32px;
 }
 .widget img {
-    margin: 0 0 5px 0;
+    margin: 10px 0;
 }
 .tagcloud a {
     border: 1px solid #E0ECDE;
@@ -1288,7 +1209,7 @@ img.custom-logo {
 	margin-bottom: 1.5em;
 	display: -ms-grid;
 	display: grid;
-	grid-gap: 0.5em;
+	grid-gap: 1.5em;
 }
 
 .gallery-item {
@@ -1436,94 +1357,4 @@ img.custom-logo {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
-}
-
-
-
-/*Search style*/
-.popup-box-on {
-    display: block !important;
-}
-.off {
-    display: none;
-}
-
-#bessearch.open {
-    opacity: 1;
-    transform: translate(0px, 0px) scale(1, 1);
-}
-#bessearch {
-    background-color: #fff;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    transition: all 0.5s ease-in-out 0s;
-    width: 100%;
-    z-index: 2000;
-    
-}
-#bessearch .close {
-    color: #be5254;
-    font-size: 40px;
-    opacity: 1;
-    padding: 10px 17px;
-    position: fixed;
-    right: 15px;
-    top: 15px;
-}
-button.close {
-    background: transparent none repeat scroll 0 0;
-    border: 0 none;
-    cursor: pointer;
-}
-.close {
-    float: right;
-    font-weight: bold;
-    line-height: 1;
-    text-shadow: 0 1px 0 #fff;
-}
-
-#bessearch input[type="search"] {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 0 none;
-    color: #333;
-    font-family: "Open Sans",sans-serif;
-    font-size: 50px;
-    font-weight: 300;
-    margin: -51px auto 0;
-    outline: medium none;
-    padding-left: 30px;
-    padding-right: 30px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%;
-    border-bottom: 1px solid #ededed;
-}
-#bessearch .search-submit {
-    left: 50%;
-    margin-top: 60px;
-    padding: 10px 50px;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%);
-    border-radius: 153px;
-    font-size: 29px;
-}
-
-.beshop-cradit{
-	text-align: center;
-	color: rgb(0, 0, 0);
- 	position: absolute;
- 	left: 0px;
-   	right: 0px;
-  	bottom: 10px;
- 	font-size: 12px;
-}
-
-.besearch-icon i,
-.besearch-icon a {
-    font-size: 15px;
-    color: #fff;
 }
