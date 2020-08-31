@@ -164,6 +164,8 @@
 
     wp_enqueue_script( 'baena_main-script', get_template_directory_uri() . '/assets/js/baena_main.js', array( 'jquery' ));
 
+     wp_enqueue_script( 'baena-index-script', get_template_directory_uri() . '/assets/js/index.js', array( 'jquery' ));
+
     wp_enqueue_script( 'baena_jquery.slides.min', get_template_directory_uri() . '/assets/js/baena_jquery.slides.min.js', array( 'jquery' ));
 
   
@@ -216,13 +218,12 @@ add_action( 'init', 'baena_classic_editor_styles' );
 
     register_nav_menus(
 
-      array(
-
-        'menuabove' => __( 'Menu Above', 'baena' ), 
-
-        'sidemenu' => __( 'Menu Socials', 'baena' ),
-
-        'menubottom' => __( 'Menu foot', 'baena' )
+      array(     
+        'primary'  => __( 'Desktop Horizontal Menu', 'baena' ),
+        'expanded' => __( 'Desktop Expanded Menu', 'baena' ),
+        'mobile'   => __( 'Mobile Menu', 'baena' ),
+        'menubottom' => __( 'Menu foot', 'baena' ),
+        'social'   => __( 'Social Menu', 'baena' ),
 
       )
 

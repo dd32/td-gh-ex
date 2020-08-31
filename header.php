@@ -18,51 +18,49 @@
 
 <body <?php body_class(); ?>>
 
-    
+
 
     <?php
 
-        if ( function_exists( 'wp_body_open' ) ) {
+    if ( function_exists( 'wp_body_open' ) ) {
 
-            wp_body_open();
+        wp_body_open();
 
-        }
+    }
 
-        ?>
+    ?>
 
 
 
-        <a class="skip-link" href="#site-content"><?php _e( 'Skip to the content', 'baena' ); ?></a>
+    <a class="skip-link" href="#site-content"><?php _e( 'Skip to the content', 'baena' ); ?></a>
 
 
 
     <header>
 
-            <section class="esection grid">    
+        <section class="esection grid">    
 
-                <div class="father-col clearfix">
+            <div class="father-col clearfix">
 
-                    <div class="col-30">
+                <div class="col-30">
 
-                        <div class="site-branding-text">
+                    <div class="site-branding-text">
 
-                            <?php the_custom_logo(); ?>
+                        <?php the_custom_logo(); ?>
 
-                            <h1 class="site-title"><?php bloginfo('name'); ?></h1>
+                        <h1 class="site-title"><?php bloginfo('name'); ?></h1>
 
-                            <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                        <h2 class="site-description"><?php bloginfo('description'); ?></h2>
 
-                            <!--<?php the_widget( 'WP_Widget_Search' ); /* search WP */ ?>-->
+                        <?php get_search_form(); ?>
 
-                            <?php get_search_form(); ?>
+                    </div>
 
-                        </div>
+                </div><!--col-30-->
 
-                    </div><!--col-30-->
+                <div class="col-70">
 
-                    <div class="col-70">
-
-                        <div class="site-branding-text">
+                    <div class="site-branding-text">
 
                             <?php if ( is_front_page() ) : ?>
 
@@ -76,53 +74,70 @@
 
                             <?php endif; ?>
 
-                        </div><!-- .site-branding-text -->
+                    </div><!-- .site-branding-text -->
 
+                    <div class="header-titles-wrapper">
+                        <button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                            <span class="toggle-inner">
+                                <span class="toggle-text"><?php _e( '&#9776;', 'baena' ); ?></span>
+                            </span>
+                        </button><!-- .nav-toggle -->
+                    </div><!-- .header-titles-wrapper -->
 
+                    <div class="header-navigation-wrapper"> 
+                        <?php
+                        if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+                            ?>     
+                            <nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'baena' ); ?>" role="navigation">
+                                <ul class="primary-menu reset-list-style">   
+                                        <?php
+                                        if ( has_nav_menu( 'primary' ) ) {
 
-                        <nav class="main-menu">
+                                            wp_nav_menu(
+                                                array(
+                                                    'container'  => '',
+                                                    'items_wrap' => '%3$s',
+                                                    'theme_location' => 'primary',
+                                                )
+                                            );
 
-                            <?php wp_nav_menu( array( 'theme_location' => 'menuabove') ); ?>
+                                        } elseif ( ! has_nav_menu( 'expanded' ) ) {
 
-                        </nav><!--.main-menu-->
+                                            wp_list_pages(
+                                                array(
+                                                    'match_menu_classes' => true,
+                                                    'show_sub_menu_icons' => true,
+                                                    'title_li' => false,
+                                                    'walker'   => new baena_Walker_Page(),
+                                                )
+                                            );
 
+                                        }
+                                        ?>
+                                    </ul>
+                            </nav><!-- .primary-menu-wrapper -->
+                                <?php
+                            }
+                            ?>
+                    </div><!-- .header-navigation-wrapper -->            
 
+            </div><!--col-70-->
 
-                        <!--NEW MENU-->
+        </div><!--.father-col clearfix-->
 
-                        <nav class="new-menu">
+    </section>
 
-                             <div id="min">
+</header>
 
-                              <button class="openbtn" onclick="baenaopenNav()">&#9776;</button>
+<?php
 
-                            </div>
+        // Output the menu modal.
 
+get_template_part( 'parts/modal-menu' );
 
+?>
 
-                            <div id="mySidebar" class="sidebar">
+<div class="grid">
 
-                              <a href="javascript:void(0)" class="closebtn" onclick="baenacloseNav()">&times;</a>
-
-                              <?php wp_nav_menu( array( 'theme_location' => 'menuabove') ); ?>
-
-                            </div>
-
-                        </nav>
-
-                        <!--END NEW MENU-->
-
-                    </div><!--col-70-->
-
-                </div><!--.father-col clearfix-->
-
-            </section>
-
-    </header>
-
-    
-
-        <div class="grid">
-
-            <div class="main" id="site-content">
+    <div class="main" id="site-content">
 

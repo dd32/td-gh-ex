@@ -71,32 +71,3 @@ jQuery(function(){
      });
 
 });
-
-
-
-//NEW MENU
-
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-
-function baenaopenNav() {
-
-  document.getElementById("mySidebar").style.width = "50%";
-
-  /*document.getElementById("min").style.marginLeft = "250px";*/
-
-}
-
-
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-
-function baenacloseNav() {
-
-  document.getElementById("mySidebar").style.width = "0";
-
-  document.getElementById("min").style.marginLeft = "0";
-
-}
-
-
-

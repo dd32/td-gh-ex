@@ -6,7 +6,7 @@
 
     Text Domain: baena
 
-    Version: 1.0.5
+    Version: 1.0.6
 
     Description: Baena is a feature-packed WordPress creative theme that gives you full control over the fonts and colors on your site. Built from scratch with the new Block Editor in mind, it makes it easy to create attractive layouts on both posts and pages. This flexibility makes Baena suitable for almost any type of website. The fonts and colors in the theme can be easily modified within the Customizer, allowing you to create a unique look for your website.
 
@@ -245,22 +245,6 @@
 .format-video {}
 
 
-
-#header .main-menu{} // container class
-
-#header .main-menu ul {} // container class first unordered list
-
-#header .main-menu ul ul {} //unordered list within an unordered list
-
-#header .main-menu li {} // each navigation item
-
-#header .main-menu li a {} // each navigation item anchor
-
-#header .main-menu li ul {} // unordered list if there is drop down items
-
-#header .main-menu li li {} // each drop down navigation item
-
-#header .main-menu li li a {} // each drap down navigation item anchor
 
 .current_page_item{} // Class for Current Page
 
@@ -889,183 +873,6 @@ div#copyright {text-align: center;}
 /*End Slides JS*/
 
 
-
-/*Menu Principal---------------------------------*/
-
-.main-menu li, .dropdown-menu li{display: inline-block;}
-
-.main-menu li a, .dropdown-menu li a{display: block; color:black;}
-
-
-
-
-
-.dropdown-menu{display: none;}
-
-.dropdown-menu .menu{
-
-    height: 100%;
-
-    width: auto;
-
-    position: fixed;
-
-    z-index: 999;
-
-    top: 0;
-
-    left: 0;
-
-    background-color: #cddc39;
-
-    overflow-x: hidden;
-
-    transition: 0.5s;
-
-    padding-top: 60px;
-
-
-
-}
-
-.dropdown-menu li{display: inline;}
-
-.dropdown-menu li a {
-
-    display: block;
-
-    padding: 8px 8px 8px 32px;
-
-    text-decoration: none;
-
-    font-size: 25px;
-
-    transition: 0.3s;
-
-}
-
-/*End Menu Principal*/
-
-
-
-/*NEW MENU*/
-
-/* The sidebar menu */
-
-.new-menu .sidebar {
-
-  height: 100%; /* 100% Full-height */
-
-  width: 0; /* 0 width - change this with JavaScript */
-
-  position: fixed; /* Stay in place */
-
-  z-index: 99999; /* Stay on top */
-
-  top: 0;
-
-  left: 0;
-
-  background-color: #cddc39; /* Black*/
-
-  overflow-x: hidden; /* Disable horizontal scroll */
-
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-
-  padding: 60px 0px;
-
-}
-
-
-
-/* The sidebar links */
-
-.new-menu .sidebar a {
-
-  padding: 8px 8px 8px 32px;
-
-  text-decoration: none;
-
-  font-size: 18px;
-
-  color: black;
-
-  display: block;
-
-  transition: 0.3s;
-
-}
-
-
-
-/* When you mouse over the navigation links, change their color */
-
-.new-menu .sidebar a:hover {
-
-  color: #f1f1f1;
-
-}
-
-
-
-/* Position and style the close button (top right corner) */
-
-.new-menu .sidebar .closebtn {
-
-  position: absolute;
-
-  top: 0;
-
-  right: 25px;
-
-  font-size: 36px;
-
-  margin-left: 50px;
-
-}
-
-
-
-/* The button used to open the sidebar */
-
-.new-menu .openbtn {
-
-  font-size: 20px;
-
-  cursor: pointer;
-
-  background-color: #cddc39;
-
-  color: white;
-
-  padding: 10px 15px;
-
-  border: none;
-
-}
-
-
-
-.new-menu .openbtn:hover {
-
-  background-color: white;
-
-  color:#cddc39;
-
-}
-
-
-
-.new-menu{display: none;}
-
-
-
-/*END NEW MENU*/
-
-
-
-
-
 /*Arrow from TOP---------------------------------*/
 
 .goup{
@@ -1138,7 +945,154 @@ button:focus, nav:focus {
 
 }
 
+/* -------------------------------------------------------------------------- */
 
+/*  4.  Site Header
+
+/* -------------------------------------------------------------------------- */
+
+
+/* Primary Menu ---------------------------- */
+
+.primary-menu-wrapper {display: none;}
+
+.primary-menu li {display: inline-block;}
+
+.primary-menu a {display: block;}
+
+
+/* -------------------------------------------------------------------------- */
+
+/*  5. Menu Modal
+
+/* -------------------------------------------------------------------------- */
+button.toggle.nav-toggle.mobile-nav-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #cddc39;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.menu-modal {
+  background: #cddc39;
+  display: none;
+  opacity: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  bottom: 0;
+  left: -99999rem;
+  right: 99999rem;
+  top: 0;
+  transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
+  z-index: 999;
+}
+
+.menu-modal.show-modal {display: flex;}
+
+.menu-modal.active {
+  left: 0;
+  opacity: 1;
+  right: 0;
+  transition: opacity 0.25s ease-out;
+}
+
+button.close-nav-toggle {
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #d1d889;
+  border:none;
+}
+
+/* Main Menu --------------------------------- */
+.modal-menu {
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.modal-menu li {
+  border-color: #dedfdf;
+  border-style: solid;
+  border-width: 0.1rem 0 0 0;
+  line-height: 1;
+  margin: 0;
+}
+
+.modal-menu > li:last-child {border-bottom-width: 0.1rem;}
+
+.modal-menu a {
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.modal-menu a:focus,
+.modal-menu a:hover,
+.modal-menu li.current-menu-item > .ancestor-wrapper > a,
+.modal-menu li.current_page_ancestor > .ancestor-wrapper > a {text-decoration: underline;}
+
+/* Main menu animation ----------------------- */
+.menu-wrapper .menu-item {position: relative;}
+
+.menu-wrapper .active {display: block;}
+
+.menu-wrapper.is-toggling {pointer-events: none;}
+
+.menu-wrapper.is-toggling .menu-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu-wrapper.is-toggling .menu-bottom .social-menu .menu-item {width: auto;}
+
+.menu-wrapper.is-animating .menu-item,
+.menu-wrapper.is-animating .toggling-target {transition-duration: 250ms;}
+
+.menu-wrapper.is-animating .menu-item {transition-property: transform;}
+
+.menu-wrapper.is-toggling .toggling-target {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.menu-wrapper.is-toggling .toggling-target.active {opacity: 0;}
+
+.menu-wrapper.is-animating.is-toggling .toggling-target {
+  display: block;
+  transition-property: opacity;
+  opacity: 0;
+}
+
+.menu-wrapper.is-animating.is-toggling .toggling-target.active {opacity: 1;}
+
+.menu-wrapper.is-toggling .modal-menu > li:last-child li {
+  border-top-color: transparent;
+  border-bottom-width: 0.1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .menu-wrapper.is-animating .menu-item,
+
+  .menu-wrapper.is-animating .toggling-target {
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Expanded Menu ----------------------------- */
+.expanded-menu {display: none;}
+.mobile-menu {display: block;}
 
 /* --------------------------------------------------------------------------------------------- */
 
@@ -1149,18 +1103,20 @@ button:focus, nav:focus {
 .pager{margin-top:20px;}
 
 
-
-
-
 /* --------------------------------------------------------------------------------------------- */
 
 /*  18. Media Queries
 
 /* --------------------------------------------------------------------------------------------- */
 
+@media ( min-width: 768px ) {
+  .primary-menu-wrapper {display: block;}
 
+  .mobile-search-toggle,
+  .mobile-nav-toggle {display: none}
+}
 
-@media screen and (max-width:992px) {
+@media screen and (max-width:768px) {
 
 /* Whidth--------------------------- */
 
@@ -1168,26 +1124,7 @@ button:focus, nav:focus {
 
     .mena-bar{right: 60px;}
 
-}
-
-
-
-@media screen and (max-width:768px) {
-
-/* Width--------------------------- */
-
-.col-33, footer .widget{width: 100%;}
-
-
-
-/* Menu --------------------------- */
-
-    .new-menu{display: block;}
-
-    .main-menu{display: none;}
-
-
-
+    .col-33, footer .widget{width: 100%;}
 
 
 }
