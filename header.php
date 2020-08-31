@@ -65,8 +65,8 @@
 				 * hidden heading: provides navigational structure to site for scanning with screen reader
 				 */
 			?>
-			<nav aria-label='<?php _e( 'Primary Menu ', 'universal' ); ?>'>
-			<button class='menu-toggle' title='<?php _e( 'Toggle Menu', 'universal' ); ?>' aria-controls='menu-primary-id' aria-expanded='false'><span class="maybe-hide"><?php _e( 'Toggle Menu','universal' ); ?></span></button>
+			<nav aria-label='<?php esc_attr_e( 'Primary Menu ', 'universal' ); ?>'>
+			<button class='menu-toggle' title='<?php esc_attr_e( 'Toggle Menu', 'universal' ); ?>' aria-controls='menu-primary-id' aria-expanded='false'><span class="maybe-hide"><?php _e( 'Toggle Menu','universal' ); ?></span></button>
 			<?php wp_nav_menu( array( 'theme_location'=>'primary', 'menu_id'=>'menu-primary-id' ) ); ?>
 			</nav>
 		</div>

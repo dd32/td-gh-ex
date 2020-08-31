@@ -10,14 +10,14 @@
 				$format = 'format';
 			}
 			get_template_part( 'format', $format );
-		?>	
+		?>
 		<div class="comments">
 			<?php 
 				$args = array( 
 							'before'=>'<p class="paginated">',
 							'next_or_number' => 'next',
-							'nextpagelink' => 'Next Page<span class="dashicon nextpage" aria-hidden="true"></span>',
-							'previouspagelink' => '<span class="dashicon prevpage" aria-hidden="true"></span>Previous Page'
+							'nextpagelink' => __( 'Next Page<span class="dashicon nextpage" aria-hidden="true"></span>', 'universal' ),
+							'previouspagelink' => __( '<span class="dashicon prevpage" aria-hidden="true"></span>Previous Page', 'universal' ),
 						);
 				wp_link_pages( $args ); 
 			?>

@@ -13,7 +13,7 @@
 		 */
 		$post_link = ''; 
 		if ( get_the_title() == '' && !is_single() ) {
-			$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled aside</a>', 'universal' ), get_the_permalink() ) );
+			$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled aside</a>', 'universal' ), esc_url( get_the_permalink() ) ) );
 		}
 		if ( get_the_title() != '' ) {
 			if ( is_single() ) { ?>

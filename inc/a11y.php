@@ -34,6 +34,10 @@ function universal_search_error() {
 
 add_filter( 'excerpt_more', 'universal_excerpt_more',100 );
 function universal_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
+
 	global $id;
 	return '&hellip; '.universal_continue_reading( $id );
 }
@@ -48,7 +52,7 @@ function universal_custom_excerpt_more( $output ) {
 }
 
 function universal_continue_reading( $id ) {
-    return '<a class="continue" href="'.get_permalink( $id ).'">'. sprintf( __( 'Finish Reading%s', 'universal' ), "<span> ".get_the_title( $id )."</span>" ) . '</a>';
+	return '<a class="continue" href="'. esc_url( get_permalink( $id ) ).'">'. sprintf( __( 'Finish Reading%s', 'universal' ), "<span> ".get_the_title( $id )."</span>" ) . '</a>';
 }
 
 /*
@@ -80,24 +84,24 @@ function universal_shift_color( $color ) {
 	$color = str_replace('#','',$color);
 	$rgb = ''; // Empty variable
 	$percent = ( universal_inverse_color( $color ) == '#ffffff' ) ? -20 : 20;
-    $per = $percent/100*255; // Creates a percentage to work with. Change the middle figure to control colour temperature
-    if  ($per < 0 ) {
-        // DARKER
-        $per =  abs($per); // Turns Neg Number to Pos Number
-        for ($x=0;$x<3;$x++) {
-            $c = hexdec(substr($color,(2*$x),2)) - $per;
-            $c = ($c < 0) ? 0 : dechex($c);
-            $rgb .= (strlen($c) < 2) ? '0'.$c : $c;
-        }
-    } else {
-        // LIGHTER        
-        for ($x=0;$x<3;$x++) {         
-            $c = hexdec(substr($color,(2*$x),2)) + $per;
-            $c = ($c > 255) ? 'ff' : dechex($c);
-            $rgb .= (strlen($c) < 2) ? '0'.$c : $c;
-        }
-    }
-    return '#'.$rgb; 	
+	$per = $percent/100*255; // Creates a percentage to work with. Change the middle figure to control colour temperature
+	if  ($per < 0 ) {
+		// DARKER
+		$per =  abs($per); // Turns Neg Number to Pos Number
+		for ($x=0;$x<3;$x++) {
+			$c = hexdec(substr($color,(2*$x),2)) - $per;
+			$c = ($c < 0) ? 0 : dechex($c);
+			$rgb .= (strlen($c) < 2) ? '0'.$c : $c;
+		}
+	} else {
+		// LIGHTER
+		for ($x=0;$x<3;$x++) {
+			$c = hexdec(substr($color,(2*$x),2)) + $per;
+			$c = ($c > 255) ? 'ff' : dechex($c);
+			$rgb .= (strlen($c) < 2) ? '0'.$c : $c;
+		}
+	}
+	return '#'.$rgb;
 }
 
 /* 
@@ -176,7 +180,7 @@ function universal_breadcrumbs() {
 	$breadcrumbs[] = $crumb;
 	if ( is_category() || is_single() ) {
 		if ( is_attachment() ) {
-			$breadcrumbs[] = '<span class="breadcrumb parent"><a href="'.get_permalink( $post->post_parent ).'">'.get_the_title( $post->post_parent ).'</a></span>';
+			$breadcrumbs[] = '<span class="breadcrumb parent"><a href="'. esc_url( get_permalink( $post->post_parent ) ) .'">'.get_the_title( $post->post_parent ).'</a></span>';
 		} else {
 			$breadcrumbs[] = '<span class="breadcrumb category">'.get_the_category_list( ', ' ).'</span>'; 
 		}
@@ -188,7 +192,7 @@ function universal_breadcrumbs() {
 			$parents = get_post_ancestors( $post->ID );
 			$title = get_the_title();
 			foreach ( $parents as $ancestor ) {
-				$breadcrumbs[] = '<span class="breadcrumb page-parent"><a href="'.get_permalink( $ancestor ).'">'.get_the_title( $ancestor ).'</a></span>';
+				$breadcrumbs[] = '<span class="breadcrumb page-parent"><a href="'. esc_url( get_permalink( $ancestor ) ) .'">'.get_the_title( $ancestor ).'</a></span>';
 			}
 		}
 		$breadcrumbs[] = "<span class=\"breadcrumb page-current\">".get_the_title()."</span>";

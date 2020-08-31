@@ -16,7 +16,7 @@
 		<?php }
 			$post_link = '';
 			if ( get_the_title() == '' ) {
-				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'universal' ), get_the_permalink() ) );
+				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'universal' ), esc_url( get_the_permalink() ) ) );
 			}
 			if ( is_page() ) { ?>
 

@@ -4,7 +4,7 @@ Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 4.0.5
 Tested up to: 5.5
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.3
 License: GPLv2 or later
 
@@ -38,6 +38,12 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 1.0.3 =
+
+* Improved escaping.
+* Custom background color default matches actual default.
+* Remove title element. 
 
 = 1.0.2 =
 

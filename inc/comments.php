@@ -29,19 +29,19 @@ function universal_ajax_comments( $comment_ID, $comment_status ) {
 				$comment_class      = comment_class( 'universal-ajax-comment', $comment_ID, $comment->comment_post_ID, false );
 				
 				$comment_output     = '
-						<li id="comment-' . $comment->comment_ID . '"' . $comment_class . ' tabindex="-1">
-							<article id="div-comment-' . $comment->comment_ID . '" class="comment-body">
+						<li id="comment-' . esc_attr( $comment->comment_ID ) . '"' . esc_attr( $comment_class ) . ' tabindex="-1">
+							<article id="div-comment-' . esc_attr( $comment->comment_ID ) . '" class="comment-body">
 								<footer class="comment-meta">
 								<div class="comment-author vcard">'.
 									get_avatar( $comment->comment_author_email )
 									.'<b class="fn">' . __( 'You said:', 'universal' ) . '</b> </div>
 
-								<div class="comment-meta commentmetadata"><a href="#comment-'. $comment->comment_ID .'">' . 
-									get_comment_date( 'F j, Y \a\t g:i a', $comment->comment_ID ) .'</a>
+								<div class="comment-meta commentmetadata"><a href="#comment-'. esc_attr( $comment->comment_ID ) .'">' . 
+									get_comment_date( 'F j, Y \a\t g:i a', esc_attr( $comment->comment_ID ) ) .'</a>
 								</div>
 								</footer>
 								
-								<div class="comment-content">' . $comment->comment_content . '</div>
+								<div class="comment-content">' . esc_html( $comment->comment_content ) . '</div>
 							</article>
 						</li>';
 				

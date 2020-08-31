@@ -52,7 +52,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 				'uploads' => true
 			) ) );
 		add_theme_support( 'custom-background', apply_filters( 'universal_custom_background_args', array(
-				'default-color' => 'f5f5f5',
+				'default-color' => '344f92',
 				'default-image' => '',
 			) ) );
 		add_theme_support( 'woocommerce' );
@@ -69,20 +69,11 @@ if ( ! function_exists( 'universal_setup' ) ) {
 	}
 }
 
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-    function universal_render_title() {
-		?>
-		<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
-		<?php
-    }
-    add_action( 'wp_head', 'universal_render_title' );
-}
-
 add_action( 'widgets_init', 'universal_widgets_init' );
 if ( ! function_exists( 'universal_widgets_init' ) ) {
 	function universal_widgets_init() {
 		register_sidebar( array(
-			'name'=>'Post Sidebar',
+			'name' => __( 'Post Sidebar', 'universal' ),
 			'description' => __( 'Widgets in this region will appear on all posts and post archives', 'universal' ),
 			'id' => 'ps1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -92,7 +83,7 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Home Sidebar',
+			'name' => __( 'Home Sidebar', 'universal' ),
 			'description' => __( 'Add up to 5 widgets to show on the bottom of your front page.', 'universal' ),
 			'id' => 'ps2',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -102,7 +93,7 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Page Sidebar',
+			'name' => __( 'Page Sidebar', 'universal' ),
 			'description' => __( 'Widgets in this region will appear on WordPress Pages.', 'universal' ),
 			'id' => 'ps3',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -112,7 +103,7 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Global Sidebar - Top',
+			'name'=> __( 'Global Sidebar - Top', 'universal' ),
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'universal' ),
 			'id' => 'ps4',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -122,7 +113,7 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Global Sidebar - Bottom',
+			'name'=> __( 'Global Sidebar - Bottom', 'universal' ),
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'universal' ),
 			'id' => 'ps5',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -144,16 +135,6 @@ if ( ! function_exists( 'universal_tinymce_init' ) ) {
 		$init['theme_advanced_blockformats'] = 'p,h2,h3,h4,h5,h6';
 
 		return $init;
-	}
-}
-
-add_filter( 'wp_title', 'universal_home_title' );
-if ( ! function_exists( 'universal_home_title' ) ) {
-	function universal_home_title( $title ) {
-		if ( ( is_front_page() || is_home() ) && empty( $title ) ) {
-			return __( 'Home', 'universal' ). ' &raquo; '.get_bloginfo( 'name' );
-		}
-		return $title;
 	}
 }
 
@@ -254,7 +235,7 @@ if ( ! function_exists( 'universal_custom_header_image' ) ) {
 	function universal_custom_header_image( $value ) {
 		if ( get_header_image() ) {
 			// until header image customizer supports alt attributes, leave alt attribute blank.
-			echo "<img class='header-image' src='".get_header_image()."' width='".get_custom_header()->width."' height='".get_custom_header()->height."' alt='' />";
+			echo "<img class='header-image' src='". esc_url( get_header_image() )."' width='". esc_attr( get_custom_header()->width )."' height='". esc_attr( get_custom_header()->height )."' alt='' />";
 		}
 	}
 }
