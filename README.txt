@@ -71,6 +71,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.31
+* Styling fixes/tweaks
+* Updated the language .pot file
+* PREMIUM: CSS fixes for Custom Footer mobile version
+
 #### 1.3.30
 * Styling fixes/tweaks
 * Fix for latest WC & WP updates
