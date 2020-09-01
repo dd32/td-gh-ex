@@ -20,6 +20,13 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.1.2 - 01 September 2020 =
+* Added full support for Elementor locations.
+* Fixed blog layout style bug.
+* Fixed single post display bug.
+* Minor CSS tweaks.
+* Removed enable blog section on home page option.
+
 = 1.1.1 - 17 July 2019 =
 * Updated classes to be compatible with newest Agama Bootstrap 4 framework.
 * Updated style.css with minor change.

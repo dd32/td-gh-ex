@@ -2,11 +2,11 @@
 Theme Name: Agama Blue
 Theme URI: http://www.theme-vision.com/agama-blue/
 Description: Agama Blue is child theme of Agama. Powered by Bootstrap 4 framework. Check demo: http://demo.theme-vision.com/
-Version: 1.1.1
-Author: ThemeVision
-Author URI: http://www.theme-vision.com/
+Version: 1.1.2
+Author: Theme Vision
+Author URI: https://theme-vision.com/
 Template: agama
-Template Version: 1.4.4
+Template Version: 1.6.2
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, accessibility-ready, buddypress, custom-background, custom-header, custom-logo, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, full-width-template, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, holiday
 Text Domain: agama-blue
 License: GNU General Public License v2 or later
@@ -97,8 +97,8 @@ body.home.blog .vision-row {
 /* Blog
  *----------------------------------------------*/
 .section-blog {
-    position: absolute;
     margin: 0;
+    margin-bottom: 50px;
     padding: 60px 0;
     background-color: #F9F9F9;
     overflow: hidden;
@@ -117,142 +117,3 @@ body.home.blog .vision-row {
 .container-blog .more-link {
 	margin-top: 20px;
 }
-#posts { position: relative; }
-.entry {
-	position: relative;
-	margin: 0 0 50px;
-	padding: 0 0 50px;
-	border-bottom: 2px solid #F5F5F5;
-}
-.entry-image { margin-bottom: 30px; }
-.entry-image,
-.entry-image > a,
-.entry-image .slide a,
-.entry-image img {
-	display: block;
-	position: relative;
-	width: 100%;
-	height: auto;
-}
-.entry-image iframe { display: block; }
-.entry-image img { border-radius: 3px; }
-.entry-title h2 {
-	margin: 0;
-	font-size: 24px;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-.entry-title h2 a { color: #333; }
-.entry-title h2 a:hover { color: #1ABC9C; }
-.entry-meta {
-	margin: 10px -10px -15px 0;
-	list-style: none;
-}
-.single-post .entry-meta { margin-bottom: 20px; }
-.entry-meta li {
-	float: left;
-	font-size: 13px;
-	line-height: 14px;
-	margin: 0 10px 15px 0;
-	color: #999;
-	font-family: 'Crete Round', serif;
-	font-style: italic;
-}
-.entry-meta li:before {
-	content: '/';
-	display: inline-block;
-	margin-right: 10px;
-	opacity: 0.5
-}
-.entry-meta li i {
-	position: relative;
-	top: 1px;
-	font-size: 14px;
-	margin-right: 3px;
-}
-.entry-meta li a { color: #999; }
-.entry-meta li:first-child:before { display: none; }
-.entry-meta li ins {
-	font-weight: 600;
-	text-decoration: none;
-}
-.entry-c {
-	position: relative;
-	overflow: hidden;
-}
-#posts .entry-content { margin-top: 30px; }
-.single-post .entry-content .entry-image { max-width: 350px; }
-.entry-content { position: relative; }
-.entry-link {
-	display: block;
-	background-color: #F5F5F5;
-	padding: 30px 0;
-	text-align: center;
-	color: #444;
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 24px;
-	font-weight: 700;
-	border-radius: 3px;
-}
-body:not(.device-touch) .entry-link {
-	-webkit-transition: background-color .3s ease-in-out;
-	-o-transition: background-color .3s ease-in-out;
-	transition: background-color .3s ease-in-out;
-}
-.entry-link:hover {
-	color: #FFF;
-	background-color: #1ABC9C;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-}
-.entry-link span {
-	display: block;
-	margin-top: 5px;
-	font-family: 'Crete Round', serif;
-	font-style: italic;
-	font-weight: normal;
-	text-transform: none;
-	letter-spacing: 0;
-	font-size: 14px;
-	color: #AAA;
-}
-.entry-link:hover span { color: #EEE; }
-.entry blockquote p {
-	font-weight: 400;
-	font-family: 'Crete Round', serif;
-	font-style: italic;
-}
-.container-blog #nav-below {
-    margin: 0;
-}
-#nav-below {
-    margin-top: 30px;
-}
- 
-/* Individual Post
- *----------------------------------------------*/
-.ipost { margin-bottom: 40px; }
-.ipost .entry-image img { 
-	border-radius: 0; 
-	width: 262.5px;
-	height: 197px;
-}
-.ipost .entry-title h3,
-.ipost .entry-title h4 {
-	margin: 0;
-	font-size: 16px;
-	font-weight: 600;
-	height: 30px;
-}
-.ipost .entry-title h4 { font-size: 15px; }
-.ipost .entry-title h3 a,
-.ipost .entry-title h4 a { color: #333; }
-.ipost .entry-meta { margin-right: -10px; }
-.ipost .entry-meta li {
-	font-size: 13px;
-	margin-right: 10px;
-}
-.ipost .entry-content { margin-top: 20px; }
-.ipost .entry-content p { margin-bottom: 0; }

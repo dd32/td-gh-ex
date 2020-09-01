@@ -33,14 +33,6 @@ Kirki::add_section( 'agama_blue_blog_section', array(
     'panel'     => 'agama_blue_theme_options_panel'
 ) );
 Kirki::add_field( 'agama_blue_options', array(
-    'label'     => esc_html__( 'Enable', 'agama-blue' ),
-    'tooltip'   => esc_html__( 'Enable blog section on home page.', 'agama-blue' ),
-    'settings'  => 'agama_blue_blog',
-    'section'   => 'agama_blue_blog_section',
-    'type'      => 'switch',
-    'default'   => true
-) );
-Kirki::add_field( 'agama_blue_options', array(
     'label'     => esc_html__( 'Heading Title', 'agama-blue' ),
     'tooltip'   => esc_html__( 'Set blog section heading title.', 'agama-blue' ),
     'settings'  => 'agama_blue_blog_heading',
