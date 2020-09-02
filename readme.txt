@@ -2,7 +2,7 @@
 Author:HJYL
 * by hjyl.org
 Requires at least: 4.9+
-Tested up to: 5.2.4
+Tested up to: 5.5.1
 
 == ABOUT bb10 ==
 For questions, comments or bug reports, please go to
@@ -41,3 +41,4 @@ bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearanc
 			change default font family,
 			change the post formats css styles,
 			update the comment ajax code and fix some bugs.
+2020.09.02	Fix comment display bug.

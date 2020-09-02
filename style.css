@@ -7,7 +7,10 @@ Description: The theme from blackberry 10. simple and beautiful.based on HTML5 a
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bb10
-Version: 2.3
+Version: 2.4
+Requires at least: 4.9
+Requires PHP: 5.2.4
+Tested up to: 5.5.1
 Tags: two-columns, post-formats, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
 */
 /* =Reset CSS.= */

@@ -10,7 +10,7 @@
 <link rel="prerender" href="<?php echo get_next_posts_page_link(); ?>">
 <?php } ?>
 <!--[if lte IE 9]>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
 <![endif]-->
 <?php wp_head();?>
 </head>
@@ -36,7 +36,7 @@
 	<div id="hjylContent">
 		<div class="hjylPosts">
 			<div class="position">
-				<?php echo hjyl_get_svg( array( 'icon' => 'home' ) ); ?> <a href="<?php echo home_url(); ?>"><?php _e('Home', 'bb10'); ?></a> > 
+				<?php echo hjyl_get_svg( array( 'icon' => 'home' ) ); ?> <a href="<?php echo esc_url(home_url()); ?>"><?php _e('Home', 'bb10'); ?></a> > 
 					<?php if(is_single()) {?>
 						<?php the_category(', '); ?> >
 					<?php } ?>
