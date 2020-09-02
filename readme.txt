@@ -5,8 +5,8 @@ Contributors: franchidesign
 Theme URI: http://denisfranchi.com/
 Author: http://denisfranchi.com/
 Author URI: http://denisfranchi.com/
-Version: 1.4.3
-Stable tag: 1.4.3
+Version: 1.4.4
+Stable tag: 1.4.4
 Tested up to: 5.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -336,12 +336,18 @@ V 1.4.2
 
 == Changelog ==
 
-V 1.4.2
+V 1.4.3
 
 # Fixed some bug
 # Wp Body Open Functions added
 # Php version required added 
 # Changed the screenshot and images to make them suitable for the new requirements
+
+V 1.4.4
+
+# Changed Notice Admin Area respecting the new requirements
+# Changed Theme URI 
+# Changed Link Support
 
 
 

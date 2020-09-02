@@ -848,65 +848,36 @@ function avik_custom_add_google_fonts() {
 /* 20 Notice Upload Themes
 -------------------------------------------------------- */
 
-add_action( 'admin_enqueue_scripts', 'avik_add_script' );
-function avik_add_script() {
-		wp_register_script( 'notice-update',  get_theme_file_uri( '/js/notice-update.js'),'','1.0', false );
-		wp_enqueue_style( 'avik-notice-style', get_theme_file_uri( '/css/notice.css' ), array(), '1.0' );
-		wp_localize_script( 'notice-update', 'notice_params', array(
-			'ajax_url' => get_admin_url() . 'admin-ajax.php', 
-		));
-		
-		wp_enqueue_script(  'notice-update' );
-}
+class avik_screen {
+	public function __construct() {
+	   /* notice  Lines*/
+	   add_action( 'load-themes.php', array( $this, 'avik_activation_admin_notice' ) );
+   }
+   public function avik_activation_admin_notice() {
+	   global $pagenow;
 
+	   if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		   add_action( 'admin_notices', array( $this, 'avik_admin_notice' ), 99 );
+	   }
+   }
 
-if( get_option( 'avik_9_dismiss_notice' ) != true ) {
-
-add_action( 'admin_notices', 'avik_add_dismissible' );
+/* Display an admin notice linking to the welcome screen */
+   public function avik_admin_notice() {
+	   ?>			
+	   <div class="updated notice is-dismissible avik-notice">
+		   <h1><?php
+		   $theme_info = wp_get_theme();
+		   printf( esc_html__('Congratulations, Welcome to %1$s Theme', 'avik'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+		   </h1>
+		   <p><?php echo sprintf( esc_html__("Thank you for choosing Avik theme. To take full advantage of the complete features of the theme, you have to go to our %1\$s welcome page %2\$s.", "avik"), '<a href="' . esc_url( admin_url( 'themes.php?page=avik_page' ) ) . '">', '</a>' ); ?></p>
+		   
+		   <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=avik_page' ) ); ?>" class="button button-blue-secondary button_info" style="text-decoration: none;"><?php echo esc_html__('Get started with Avik','avik'); ?></a></p>
+	   </div>
+	   <?php
+   }
+   
 }
-function avik_add_dismissible() {
-  ?>
-   <div class='notice notice-success avik-9-dismiss-notice avik-class-update is-dismissible'>
-	   <div class="df-logo">
-		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
-	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
-	   <span><?php echo esc_html('Franchi Design','avik')?></span>
-	   </a>
-	   <h2><?php echo esc_html('Welcome to Avik','avik')?></h2>
-	   <p><?php _e('Important links to get you started with Avik','avik')?></p>
-	  </div>
-	  <div class="container">
-		  <div class="row">
-		  <div class="col-md-4">
-		    <h3><?php _e('Get Started','avik')?></h3>
-		    <button class="at-button-dem"><a target="_blank" href="<?php echo esc_url(avik_url_basic_documentation);?>"><?php _e('Learn Basics','avik')?></a></button>
-		  </div>
-		  <div class="col-md-4">
-			<h3><?php _e('Next Steps','avik')?></h3>
-			<ul>
-			  <li><span class="dashicons dashicons-media-document"></span><a target="_blank" href="<?php echo esc_url(avik_url_documentation_theme);?>"><?php _e('Documentation','avik')?></a></li>
-			  <li><span class="dashicons dashicons-layout"></span><a target="_blank" href="<?php echo esc_url(avik_url_demos_theme);?>"><?php _e('Starter Demos','avik')?></a></li>
-			  <li><span class="dashicons dashicons-migrate"></span><a target="_blank" href="<?php echo esc_url(avik_url_promotion);?>"><?php _e('Premium Version','avik')?></a></li>
-			</ul>
-		</div>
-		  <div class="col-md-4">
-		    <h3><?php _e('Further Actions','avik')?></h3>
-			<ul>
-			  <li><span class="dashicons dashicons-businessperson"></span><a target="_blank" href="<?php echo esc_url(avik_url_support_theme);?>"><?php _e('Got theme support question?','avik')?></a></li>
-			  <li><span class="dashicons dashicons-thumbs-up"></span><a target="_blank" href="<?php echo esc_url(avik_review_theme);?>"><?php _e('Leave a review','avik')?></a></li>
-			  <li><span class="dashicons dashicons-admin-appearance"></span><a target="_blank" href="<?php echo esc_url(avik_url_updates_theme);?>"><?php _e('Changelog','avik')?></a></li>
-			</ul>
-		  </div>
-         </div>
-		</div>
-    </div>
-  <?php
-}
-
-add_action( 'wp_ajax_avik_9_dismiss_notice', 'avik_9_dismiss_notice' );
-function avik_9_dismiss_notice() {
-update_option( 'avik_9_dismiss_notice', true );
-}
+$GLOBALS['avik_screen'] = new avik_screen();
 
 /* 21 Url Admin Upload 
 ========================================================================== */
@@ -915,11 +886,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		exit; // Exit if accessed directly.
 }
 define('avik_url_basic_documentation','https://www.denisfranchi.com/community/index.php?threads/quick-customization-guide-avik.32/');// Starte Documentation
-define('avik_url_promotion','https://www.denisfranchi.com/avik-pro-10-0-0/');// Go Pro
-define('avik_url_updates_theme','https://www.denisfranchi.com/updates/');// Update Theme
+define('avik_url_promotion','https://www.denisfranchi.com/blog/portfolio/avik/');// Go Pro
+define('avik_url_updates_theme','https://www.denisfranchi.com/blog/2018/11/28/avik-1-2-7/');// Update Theme
 define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design
 define('avik_url_documentation_theme','https://www.denisfranchi.com/community/index.php?forums/documentation.11/');// Documentation Theme
-define('avik_url_demos_theme','https://www.denisfranchi.com/avik-demos/');// Franchi Design Demo   
+define('avik_url_demos_theme','https://www.denisfranchi.com/blog/portfolio/avik/');// Franchi Design Demo   
 define('avik_url_support_theme','https://www.denisfranchi.com/community/index.php?forums/support.13/');// Support Theme
 define('avik_review_theme','https://wordpress.org/support/theme/avik/reviews/');// Review Theme   
 define('avik_forum_theme','https://www.denisfranchi.com/community/index.php');// Forum Theme  

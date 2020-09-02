@@ -813,3 +813,27 @@ a.av-link-news{
   font-weight: bold
 }
 
+
+.container{
+  width: 100%;
+}
+.row{
+  display: flex;
+}
+
+.col-md-4{
+  width: 33.3%;
+  margin-bottom: 2em;
+}
+
+.col-md-4 a{
+ text-decoration: none;
+}
+
+.col-md-4 a:hover{
+  text-decoration: none;
+}
+
+.col-md-4 span{
+  margin-right: 10px;
+}
