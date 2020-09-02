@@ -79,7 +79,7 @@ echo weaverx_schema( 'post' ); ?>>
 					} elseif ( preg_match( "/src='([^']*)'/", $images[0], $srcs ) ) {
 						$src = $srcs[0];
 					}
-					$the_image = '<img class="gallery-thumb" ' . $src . 'alt="post image" />';
+					$the_image = '<img class="gallery-thumb" ' . $src . ' alt="post image" />';
 					$linked = true;
 					?>
 					<a href="<?php esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>

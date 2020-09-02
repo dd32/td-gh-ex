@@ -217,6 +217,8 @@ if ( ! function_exists( 'weaverx_init_opts' ) ) :
 	function weaverx_init_opts( $who = '' ) {
 		// this sets either the current settings, or the default values.
 
+		remove_action( 'admin_enqueue_scripts', 'weaverxplus_admin_enqueue_scripts' );    // fix for deprecated jQuery.fn.load
+
 		weaverx_clear_opt_cache( 'weaverx_init_opts' );    // start with a clear cache
 
 		$themename = weaverx_getopt( 'themename' ); // load the theme from the db if there ( weaverx_getopt loads the options if there )

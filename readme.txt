@@ -661,3 +661,6 @@ Fix: Page with Posts template failing to show paging links.
 
 = Version 4.3.8 =
 Fix: PwP paging links for Previous/Next
+
+= Version 4.3.9 =
+Fix: Remove Weaver Xtreme Plus use of jQuery.fn.load which has been deprecated

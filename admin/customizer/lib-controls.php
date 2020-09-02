@@ -781,7 +781,7 @@
 			// br ( doesn't need attributes )
 			$allowedtags['br'] = array ();
 
-			return wp_kses( $string, $expandedtags );;
+			return wp_kses( $string, $allowedtags );;
 
 		}
 	endif;
