@@ -1,3 +1,13 @@
+
+jQuery.fn.extend({
+    live: function (event, callback) {
+       if (this.selector) {
+            jQuery(document).on(event, this.selector, callback);
+        }
+        return this;
+    }
+});
+
 jQuery(document).ready(function($) {
 
        function media_upload(button_class) {
