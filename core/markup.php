@@ -1118,7 +1118,7 @@ if ( ! function_exists( 'antreas_comment' ) ) {
 
 		//Normal Comments
 		switch ( $comment->comment_type ) :
-			case '':
+			case 'comment':
 				?>
                 <li <?php comment_class( 'comment' ); ?> id="comment-<?php comment_ID(); ?>">
 

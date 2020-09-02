@@ -1,3 +1,6 @@
+Version 1.0.6
+Fixed comments display on blog posts
+
 Version 1.0.4
 Fixed error in menu edit
 

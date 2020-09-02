@@ -40,6 +40,10 @@ if ( ! class_exists( 'Antreas_Theme' ) ) {
 	require get_template_directory() . '/includes/class-antreas-theme.php';
 }
 
+if ( ! defined( 'SHORTPIXEL_AFFILIATE_CODE' ) ) {
+	define( 'SHORTPIXEL_AFFILIATE_CODE', '3AXNUKA28044' );
+}
+
 if ( ! function_exists( 'wp_body_open' ) ) {
     function wp_body_open() {
         do_action( 'wp_body_open' );
