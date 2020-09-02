@@ -12,7 +12,7 @@
 <?php } ?>
 <?php wp_head();?>
 <!--[if lte IE 9]>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
 <![endif]-->
 </head>
 <body <?php body_class(); ?> id="olo">
@@ -23,7 +23,7 @@
 				<?php the_custom_logo(); ?>
 			<?php else: ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>">
-				<img src="<?php echo get_template_directory_uri();?>/images/logo.gif" alt="<?php bloginfo('name'); ?>" width="100" height="100" />
+				<img src="<?php echo esc_url(get_template_directory_uri());?>/images/logo.gif" alt="<?php bloginfo('name'); ?>" width="100" height="100" />
 			</a>
 			<?php endif; ?>
 		</h1>

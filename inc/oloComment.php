@@ -1,16 +1,13 @@
 <?php
 //comment
-if ( ! function_exists( 'comment' ) ) :
+if ( ! function_exists( 'olo_comment' ) ) :
 function olo_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	global $commentcount;
 	if(!$commentcount) { 
 		$page = ( get_query_var('cpage') ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args );
 		$cpp=get_option('comments_per_page');
 		$commentcount = $cpp * ($page - 1);
 	}
-	switch ( $comment->comment_type ) :
-		case '' :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<span class="floor">
@@ -43,7 +40,7 @@ function olo_comment( $comment, $args, $depth ) {
 
 		</div><!-- #comment-##  -->
 
-<?php break;endswitch;}endif;
+<?php }endif;
 //pingback and trackback
 function hjyl_pings($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;

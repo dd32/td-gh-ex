@@ -2,7 +2,7 @@
 Author:HJYL
 * by hjyl.org
 Requires at least: 5.0+
-Tested up to: 5.2.4
+Tested up to: 5.5.1
 
 == ABOUT olo ==
 For questions, comments or bug reports, please go to
@@ -44,3 +44,4 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 2019.10.21	replace fontawesome with SVG Sprite, and reduce superfluous code,
 			change default font family,
 			update the comment ajax code and fix some bugs.
+2020.09.02	Fix Comment display bug.

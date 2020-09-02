@@ -103,13 +103,13 @@ function olo_wp_list_pages(){
 // Enqueue style-file, if it exists.
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20191021', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20200902', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20191021', false);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20200902', false);
 	};
-	wp_enqueue_style( 'Play', '//fonts.googleapis.com/css?family=Play', array(), '20191021', 'all');
+	wp_enqueue_style( 'Play', '//fonts.googleapis.com/css?family=Play', array(), '20200902', 'all');
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20191021', true);
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20200902', true);
 	if ( is_singular() && comments_open() ) {
 	wp_enqueue_script( 'comment-reply' );
 	wp_enqueue_script( 'ajax-comment', TPLDIR . '/js/comments-ajax.js', array('jquery'), '20191022', true);
@@ -122,13 +122,13 @@ function olo_script() {
 		'txt2' => __('Good Comment','olo'),
 	) );	
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20191021', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20191021', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20200902', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20200902', 'screen');
 	};
 	if(is_404()){
-		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20191021', 'screen');
-		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20191021', 'screen');
-		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20191021', 'screen');
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20200902', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20200902', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20200902', 'screen');
 	}
 }
 
