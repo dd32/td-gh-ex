@@ -692,7 +692,7 @@ add_action( 'admin_enqueue_scripts', 'atomy_load_admin_style' );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-define('atomy_url_go_pro_theme','https://www.denisfranchi.com/atomy/');// Go Pro
+define('atomy_url_go_pro_theme','https://www.denisfranchi.com/blog/portfolio/atomy/');// Go Pro
 define('atomy_url_updates_theme','https://www.denisfranchi.com/blog/2020/03/15/atomy-free/');// Update Theme
 define('atomy_url_documentation_theme','https://www.denisfranchi.com/community/index.php?forums/guides.20/');// Documentation Theme
 define('atomy_url_support_theme','https://www.denisfranchi.com/community/index.php?forums/support.22/');// Support Theme
@@ -701,7 +701,7 @@ define('atomy_url_faq_2_support','https://www.denisfranchi.com/community/index.p
 define('atomy_url_faq_3_support','https://www.denisfranchi.com/community/index.php?threads/atomy-customize.17/');// Faq 3 Support
 define('atomy_url_faq_4_support','https://www.denisfranchi.com/community/index.php?threads/image-size.20/');// Faq 4 Support
 define('atomy_url_copyright_theme','https://www.denisfranchi.com/');// Franchi Design Copyright
-define('atomy_url_demos_theme','https://www.denisfranchi.com/atomy-demos/');// Franchi Design Demo   
+define('atomy_url_demos_theme','https://www.denisfranchi.com/blog/portfolio/atomy/');// Franchi Design Demo   
 define('atomy_url_basic_documentation','https://www.denisfranchi.com/community/index.php?threads/initial-settings-atomy-free.29/');// Basic Documentation    
 define('atomy_review_theme','https://wordpress.org/support/theme/atomy/reviews/');// Review Theme    
 define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design 
@@ -710,64 +710,36 @@ define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design
 /* Notice Admin Area
 -------------------------------------------------------- */
 
-add_action( 'admin_enqueue_scripts', 'atomy_add_script' );
-function atomy_add_script() {
-		wp_register_script( 'notice-update',  get_theme_file_uri( '/atomy-admin/js/notice-update.js'),'','1.0', false );
-		wp_enqueue_style( 'atomy-notice-style', get_theme_file_uri( '/atomy-admin/css/notice.css' ), array(), '1.0' );
-		wp_localize_script( 'notice-update', 'notice_params', array(
-			'ajax_url' => get_admin_url() . 'admin-ajax.php', 
-		));
-		
-		wp_enqueue_script(  'notice-update' );
-}
+class atomy_screen {
+	public function __construct() {
+	   /* notice  Lines*/
+	   add_action( 'load-themes.php', array( $this, 'atomy_activation_admin_notice' ) );
+   }
+   public function atomy_activation_admin_notice() {
+	   global $pagenow;
 
-if( get_option( 'atomy_5_dismiss_notice' ) != true ) {
+	   if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		   add_action( 'admin_notices', array( $this, 'atomy_admin_notice' ), 99 );
+	   }
+   }
 
-add_action( 'admin_notices', 'atomy_add_dismissible' );
+/* Display an admin notice linking to the welcome screen */
+   public function atomy_admin_notice() {
+	   ?>			
+	   <div class="updated notice is-dismissible atomy-notice">
+		   <h1><?php
+		   $theme_info = wp_get_theme();
+		   printf( esc_html__('Congratulations, Welcome to %1$s Theme', 'atomy'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+		   </h1>
+		   <p><?php echo sprintf( esc_html__("Thank you for choosing Atomy theme. To take full advantage of the complete features of the theme, you have to go to our %1\$s welcome page %2\$s.", "atomy"), '<a href="' . esc_url( admin_url( 'themes.php?page=atomy_page' ) ) . '">', '</a>' ); ?></p>
+		   
+		   <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=atomy_page' ) ); ?>" class="button button-blue-secondary button_info" style="text-decoration: none;"><?php echo esc_html__('Get started with Atomy','atomy'); ?></a></p>
+	   </div>
+	   <?php
+   }
+   
 }
-function atomy_add_dismissible() {
-  ?>
-   <div class='notice notice-success atomy-5-dismiss-notice atomy-class-update is-dismissible'>
-	   <div class="df-logo">
-		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
-	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
-	   <span><?php _e('Franchi Design','atomy')?></span>
-	   </a>
-	   <h2><?php _e('Welcome to Atomy!','atomy')?></h2>
-	   <p><?php _e('Important links to get you started with Atomy','atomy')?></p>
-	  </div>
-	  <div class="container">
-		  <div class="row">
-		  <div class="col-md-4">
-		    <h3><?php _e('Get Started','atomy')?></h3>
-		    <button class="at-button-dem"><a target="_blank" href="<?php echo esc_url(atomy_url_basic_documentation);?>"><?php _e('Learn Basics','atomy')?></a></button>
-		  </div>
-		  <div class="col-md-4">
-			<h3><?php _e('Next Steps','atomy')?></h3>
-			<ul>
-			  <li><span class="dashicons dashicons-media-document"></span><a target="_blank" href="<?php echo esc_url(atomy_url_documentation_theme);?>"><?php _e('Documentation','atomy')?></a></li>
-			  <li><span class="dashicons dashicons-layout"></span><a target="_blank" href="<?php echo esc_url(atomy_url_demos_theme);?>"><?php _e('Starter Demos','atomy')?></a></li>
-			  <li><span class="dashicons dashicons-migrate"></span><a target="_blank" href="<?php echo esc_url(atomy_url_go_pro_theme);?>"><?php _e('Premium Version','atomy')?></a></li>
-			</ul>
-		</div>
-		  <div class="col-md-4">
-		    <h3><?php _e('Further Actions','atomy')?></h3>
-			<ul>
-			  <li><span class="dashicons dashicons-businessperson"></span><a target="_blank" href="<?php echo esc_url(atomy_url_support_theme);?>"><?php _e('Got theme support question?','atomy')?></a></li>
-			  <li><span class="dashicons dashicons-thumbs-up"></span><a target="_blank" href="<?php echo esc_url(atomy_review_theme);?>"><?php _e('Leave a review','atomy')?></a></li>
-			  <li><span class="dashicons dashicons-admin-appearance"></span><a target="_blank" href="<?php echo esc_url(atomy_url_updates_theme);?>"><?php _e('Changelog','atomy')?></a></li>
-			</ul>
-		  </div>
-         </div>
-		</div>
-    </div>
-  <?php
-}
-
-add_action( 'wp_ajax_atomy_5_dismiss_notice', 'atomy_5_dismiss_notice' );
-function atomy_5_dismiss_notice() {
-update_option( 'atomy_5_dismiss_notice', true );
-}
+$GLOBALS['atomy_screen'] = new atomy_screen();
 
 /*  Demo Import
 ========================================================================== */
