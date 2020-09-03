@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 20:05+0800\n"
-"PO-Revision-Date: 2020-09-02 20:05+0800\n"
+"POT-Creation-Date: 2020-09-03 21:25+0800\n"
+"PO-Revision-Date: 2020-09-03 21:25+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -134,6 +134,10 @@ msgstr "https://hjyl.org/"
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
+#: ../footer.php:8
+msgid "http://www.miit.gov.cn/"
+msgstr "http://www.miit.gov.cn/"
+
 #: ../functions.php:71
 msgid "Primary Navigation"
 msgstr "主要导航"
@@ -147,68 +151,68 @@ msgstr "手机导航"
 msgid "Untitled #%s"
 msgstr "无题 #%s"
 
-#: ../functions.php:121
+#: ../functions.php:120
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:122
+#: ../functions.php:121
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:138
+#: ../functions.php:137
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:147
+#: ../functions.php:146
 #, php-format
 msgid "%s ago"
 msgstr "%s 前"
 
-#: ../functions.php:152
+#: ../functions.php:151
 msgid "Just Now"
 msgstr "刚刚"
 
-#: ../functions.php:154
+#: ../functions.php:153
 msgid "years ago"
 msgstr "年前"
 
-#: ../functions.php:155
+#: ../functions.php:154
 msgid "month ago"
 msgstr "个月前"
 
-#: ../functions.php:156
+#: ../functions.php:155
 msgid "weeks ago"
 msgstr "周前"
 
-#: ../functions.php:157
+#: ../functions.php:156
 msgid "days ago"
 msgstr "天前"
 
-#: ../functions.php:158
+#: ../functions.php:157
 msgid "hours ago"
 msgstr "小时前"
 
-#: ../functions.php:159
+#: ../functions.php:158
 msgid "minutes ago"
 msgstr "分钟前"
 
-#: ../functions.php:160
+#: ../functions.php:159
 msgid "seconds ago"
 msgstr "秒前"
 
-#: ../functions.php:174 ../header.php:39
+#: ../functions.php:173 ../header.php:39
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:182
+#: ../functions.php:181
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:190
+#: ../functions.php:189
 msgid "404"
 msgstr "404页面"
 
-#: ../functions.php:198
+#: ../functions.php:197
 msgid "Other"
 msgstr "其他页"
 
@@ -231,16 +235,16 @@ msgstr "以下是作者“%s”的文章"
 msgid " - Page %s - "
 msgstr " - 第 %s 页 - "
 
-#: ../inc/bbComment.php:27 ../inc/bbComment.php:91 ../inc/bbComment.php:92
+#: ../inc/bbComment.php:28 ../inc/bbComment.php:92 ../inc/bbComment.php:93
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/bbComment.php:86
+#: ../inc/bbComment.php:87
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../inc/bbComment.php:92
+#: ../inc/bbComment.php:93
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
@@ -439,7 +443,7 @@ msgstr "https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"
 
 #: ../inc/theme_inc.php:152
 msgid "https://hilau.com/wp-content/uploads/2019/10/alipay.jpg"
-msgstr ""
+msgstr "https://hilau.com/wp-content/uploads/2019/10/alipay.jpg"
 
 #: ../inc/theme_inc.php:152
 msgid "Alipay"

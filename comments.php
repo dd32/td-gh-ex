@@ -4,7 +4,7 @@
 <?php if ( have_comments() ) : ?>
 		<h3 id="comments-title"><span><?php echo hjyl_get_svg( array( 'icon' => 'comment' ) ); ?><?php comments_popup_link( __( ' Leave a reply', 'bb10' ), __( ' 1 Comment ', 'bb10' ), __( ' % Comments', 'bb10' ),'comments-views',__( ' Comments Off', 'bb10' ) ); ?></span></h3>
 	<ol class="commentlist" id="comments">
-		<?php wp_list_comments( array( 'callback' => 'hjyl_comment' ) );?>
+		<?php wp_list_comments( array( 'callback' => 'hjyl_comment','type' => 'comment' ) );?>
 			<p id="comments-nav">
 				<?php paginate_comments_links('prev_text='.__('Previous', 'bb10').'&next_text='.__('Next', 'bb10').'');?>
 			</p>

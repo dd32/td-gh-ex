@@ -42,3 +42,4 @@ bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearanc
 			change the post formats css styles,
 			update the comment ajax code and fix some bugs.
 2020.09.02	Fix comment display bug.
+2020.09.03  Fix mobile style and add icp code.

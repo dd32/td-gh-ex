@@ -2,6 +2,7 @@
 //comment
 if ( ! function_exists( 'hjyl_comment' ) ) :
 function hjyl_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
 	global $commentcount;
 	if(!$commentcount) { 
 		$page = ( get_query_var('cpage') ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args );
@@ -43,9 +44,9 @@ function hjyl_comment( $comment, $args, $depth ) {
 <?php }endif;
 //pingback and trackback
 function hjyl_pings($comment, $args, $depth) {
-    $GLOBALS['comment'] = $comment;
     if('pingback' == get_comment_type()) $pingtype = 'Pingback';
     else $pingtype = 'Trackback';
+	$GLOBALS['comment'] = $comment;
 ?>
     <li id="comment-<?php echo $comment->comment_ID ?>">
         [<?php echo $pingtype; ?>] <?php comment_author_link(); ?>
@@ -78,7 +79,7 @@ if(!function_exists('fa_ajax_comment_callback')) :
         }
         $user = wp_get_current_user();
         do_action('set_comment_cookies', $comment, $user);
-        $GLOBALS['comment'] = $comment; //根据你的评论结构自行修改，如使用默认主题则无需修改
+        $GLOBALS['comment'] = $comment; //Modify according to your comment structure. If you use the default topic, you don't need to modify
         ?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<div id="comment-<?php comment_ID(); ?>"  class="comment">
@@ -102,4 +103,3 @@ endif;
 
 add_action('wp_ajax_nopriv_ajax_comment', 'fa_ajax_comment_callback');
 add_action('wp_ajax_ajax_comment', 'fa_ajax_comment_callback');
-?>

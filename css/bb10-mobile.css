@@ -1,12 +1,16 @@
 /*
 Theme Name: bb10 mobile
-Theme URI: http://hjyl.org/wordpress-theme-bb10/
+Theme URI: https://hjyl.org/wordpress-theme-bb10/
 Author: HJYL
-Author URI: http://hjyl.org/
+Author URI: https://hjyl.org/
 Description: The theme from blackberry 10. simple and beautiful.based on HTML5 and CSS3.
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.2
+License: GNU General Public License v3.0
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: bb10
+Version: 2.5
+Requires at least: 4.9
+Requires PHP: 5.2.4
+Tested up to: 5.5.1
 Tags: two-columns, post-formats, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
 */
 @import url("font-awesome.min.css");
@@ -326,6 +330,19 @@ pre{
 	border:none;
 	padding:0 5px 16px;
 	margin:0 0 20px;
+}
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+.hjylPosts footer .icon, .status-date .icon{
+	margin-right:5px;
 }
 #hjyl_header,
 #hjylContainer{
