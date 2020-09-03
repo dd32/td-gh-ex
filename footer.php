@@ -7,24 +7,25 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<?php get_template_part( 'template-parts/footer-widgets' ); ?>
+<?php get_template_part( 'template-parts/footer-widgets' ); ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="container col-2">
-			<div class="copyright">
-				<?php echo wp_kses_post( artblog_get_option( 'copyright_text' ) ); ?>
-			</div><!-- .copyright -->
+<footer id="colophon" class="site-footer">
+    <div class="container col-2">
+        <div class="copyright">
+			<?php echo wp_kses_post( artblog_get_option( 'copyright_text' ) ); ?>
+        </div><!-- .copyright -->
 
-			<div class="site-info">
-					<?php
-					/* translators: %s: Theme author */
-					printf( esc_html__( 'Artblog by %s', 'artblog' ), '<a href="https://ithemer.com/">iThemer</a>' );
-					?>
-			</div><!-- .site-info -->
-		</div><!-- .container -->
-	</footer><!-- #colophon -->
+        <div class="site-info">
+			<?php
+			/* translators: %s: Theme author */
+			$author_uri = wp_get_theme()->get( 'AuthorURI' );
+			printf( esc_html__( 'Artblog by %s', 'artblog' ), '<a href="' . $author_uri . '">iThemer</a>' );
+			?>
+        </div><!-- .site-info -->
+    </div><!-- .container -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
