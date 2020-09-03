@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, three-columns, left-sidebar, right-sidebar,
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.4
+Stable tag: 3.4.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -140,6 +140,9 @@ Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.4.1 (Released: September 03, 2020) =
+* Updated: Screenshot
 
 = 3.4 (Released: August 12, 2020) =
 * Bug Fixed: Keyboard navigation js issue

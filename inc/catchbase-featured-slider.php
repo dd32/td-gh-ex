@@ -188,7 +188,7 @@ function catchbase_page_slider( $options ) {
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
 					$output .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">
-						'. get_the_post_thumbnail( $post->ID, 'catchbase_slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'attached-page-image' ) ).'
+						'. get_the_post_thumbnail( $post->ID, 'catchbase_slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'attached-page-image', 'loading' => false ) ).'
 					</a>';
 				}
 				else {
