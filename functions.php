@@ -226,6 +226,10 @@ add_action( 'comment_form_defaults', 'ct_ignite_remove_comments_notes_after' );
 
 if ( ! function_exists( 'ct_ignite_filter_read_more_link' ) ) {
 	function ct_ignite_filter_read_more_link( $custom = false ) {
+
+		if ( is_feed() ) {
+			return;
+		}
 		global $post;
 		$ismore             = strpos( $post->post_content, '<!--more-->' );
 		$read_more_text     = get_theme_mod( 'ct_ignite_read_more_text' );
@@ -613,7 +617,6 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'foursquare',
 			'github',
 			'goodreads',
-			'google-plus',
 			'google-wallet',
 			'hacker-news',
 			'medium',
@@ -641,6 +644,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'tencent-weibo',
 			'tumblr',
 			'twitch',
+			'untappd',
 			'vimeo',
 			'vine',
 			'vk',
@@ -673,10 +677,6 @@ if ( ! function_exists( 'ct_ignite_add_meta_elements' ) ) {
 	}
 }
 add_action( 'wp_head', 'ct_ignite_add_meta_elements', 1 );
-
-/* Move the WordPress generator to a better priority. */
-remove_action( 'wp_head', 'wp_generator' );
-add_action( 'wp_head', 'wp_generator', 1 );
 
 if ( ! function_exists( 'ct_ignite_get_content_template' ) ) {
 	function ct_ignite_get_content_template() {
@@ -838,3 +838,12 @@ function ct_ignite_output_last_updated_date() {
 			}
 	}
 }
+
+//----------------------------------------------------------------------------------
+// Add support for Elementor headers & footers
+//----------------------------------------------------------------------------------
+function ct_ignite_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_location( 'header' );
+	$elementor_theme_manager->register_location( 'footer' );
+}
+add_action( 'elementor/theme/register_locations', 'ct_ignite_register_elementor_locations' ); 
