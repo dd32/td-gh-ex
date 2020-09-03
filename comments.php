@@ -4,9 +4,9 @@
 <?php if ( have_comments() ) : ?>
 		<h3 id="comments-title"><span><?php comments_popup_link( __( ' Leave a reply', 'olo' ), __( ' 1 Comment ', 'olo' ), __( ' % Comments', 'olo' ),'comments-views',__( ' Comments Off', 'olo' ) ); ?></span></h3>
 	<ol class="commentlist" id="comments">
-		<?php wp_list_comments( array( 'callback' => 'olo_comment' ) );?>
-			<p id="comments-nav">
-				<?php paginate_comments_links('prev_text='.__('Previous', 'olo').'&next_text='.__('Next', 'olo').'');?>
+		<?php wp_list_comments( array( 'callback' => 'olo_comment','type' => 'comment') );?>
+			<p id="comments-nav" class="clear">
+				<?php paginate_comments_links(array('prev_text' => __('Previous', 'olo'), 'next_text' => __('Next', 'olo'))); ?>
 			</p>
 			
 <?php endif; ?>
@@ -66,7 +66,7 @@
     comment_form($comment_form_args);
  ?>
 	</ol>
-<div class="clearfix"></div>
+<div class="clear"></div>
 <?php /*output Trackbacks and Pingbacks*/ $havepings="pings"; foreach($comments as $comment){if(get_comment_type() != 'comment' && $comment->comment_approved != '0'){ $havepings = 1; break; }}if($havepings == 1) : ?>
 <div id="pings">
 	<h3 id="pings-title"><span><a><?php _e('Pingbacks', 'olo'); ?></a></span></h3>

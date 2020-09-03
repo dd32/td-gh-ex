@@ -45,3 +45,4 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 			change default font family,
 			update the comment ajax code and fix some bugs.
 2020.09.02	Fix Comment display bug.
+2020.09.03  Fix mobile style and add icp code.

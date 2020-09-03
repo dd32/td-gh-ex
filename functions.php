@@ -23,7 +23,7 @@ function olo_setup(){
 	
 	//post-thumbnails
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('index', 70, 50);
+	add_image_size('index', 160, 90);
 	
 	//editor style
 	add_editor_style('css/editor.css');
@@ -42,6 +42,9 @@ function olo_setup(){
 	
 	//copyright below single
 	add_filter('the_content', 'olo_copyright');
+	
+	// add @ for comment
+	add_filter( 'comment_text' , 'hjyl_comment_add_at', 20, 2);
 	
 	// Add sidebar
 	add_action( 'widgets_init', 'olo_widgets' );
@@ -103,16 +106,15 @@ function olo_wp_list_pages(){
 // Enqueue style-file, if it exists.
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20200902', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20200903', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20200902', false);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20200903', false);
 	};
-	wp_enqueue_style( 'Play', '//fonts.googleapis.com/css?family=Play', array(), '20200902', 'all');
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20200902', true);
+	wp_enqueue_style( 'Play', '//fonts.googleapis.com/css?family=Play', array(), '20200903', 'all');
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array('jquery'), '20200903', true);
 	if ( is_singular() && comments_open() ) {
 	wp_enqueue_script( 'comment-reply' );
-	wp_enqueue_script( 'ajax-comment', TPLDIR . '/js/comments-ajax.js', array('jquery'), '20191022', true);
+	wp_enqueue_script( 'ajax-comment', TPLDIR . '/js/comments-ajax.js', array('jquery'), '20200903', true);
 	}
 	wp_localize_script( 'ajax-comment', 'ajaxcomment', array(
 		'ajax_url' => admin_url('admin-ajax.php'),
@@ -122,34 +124,14 @@ function olo_script() {
 		'txt2' => __('Good Comment','olo'),
 	) );	
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20200902', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20200902', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20200903', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20200903', 'screen');
 	};
 	if(is_404()){
-		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20200902', 'screen');
-		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20200902', 'screen');
-		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20200902', 'screen');
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20200903', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20200903', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20200903', 'screen');
 	}
-}
-
-//par_pagenavi	
-function olo_pagenavi(){
-	$args = array(
-	'base'         => '%_%',
-	'format'       => '?page=%#%',
-	'total'        => 1,
-	'current'      => 0,
-	'show_all'     => False,
-	'end_size'     => 1,
-	'mid_size'     => 2,
-	'prev_next'    => True,
-	'prev_text'    => __('<< Previous', 'olo'),
-	'next_text'    => __('Next >>', 'olo'),
-	'type'         => 'plain',
-	'add_args'     => False,
-	'add_fragment' => ''
-	);
-	echo paginate_links( $args );
 }
 
 //copyright below single
@@ -159,7 +141,14 @@ function olo_copyright($content) {
 	}
 	return $content;
 }
+// add @ for comment
+function hjyl_comment_add_at( $comment_text, $comment = '') {
+  if( $comment->comment_parent > 0) {
+    $comment_text = '@<a href="#comment-' . $comment->comment_parent . '">'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+  }
 
+  return $comment_text;
+}
 //time formats "xxxx ago"
 function timeago($ptime) {
     $ptime = strtotime($ptime);
@@ -224,4 +213,3 @@ require( get_template_directory() . '/inc/theme_inc.php' );
 require( get_template_directory() . '/inc/oloComment.php' );
 require( get_template_directory() . '/inc/functions-svg.php');
  $olo_theme_options = get_option('olo_theme_options');
-?>

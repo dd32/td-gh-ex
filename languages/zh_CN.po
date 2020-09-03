@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 20:05+0800\n"
-"PO-Revision-Date: 2020-09-02 20:05+0800\n"
+"POT-Creation-Date: 2020-09-03 21:26+0800\n"
+"PO-Revision-Date: 2020-09-03 21:26+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -134,80 +134,76 @@ msgstr "https://hjyl.org/"
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
-#: ../functions.php:77
+#: ../footer.php:6
+msgid "http://www.miit.gov.cn/"
+msgstr "http://www.miit.gov.cn/"
+
+#: ../functions.php:80
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:78
+#: ../functions.php:81
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:90
+#: ../functions.php:93
 #, php-format
 msgid "Untitled #%s"
 msgstr "无题 #%s"
 
-#: ../functions.php:121
+#: ../functions.php:123
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:122
+#: ../functions.php:124
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:146
-msgid "<< Previous"
-msgstr "上一页"
-
-#: ../functions.php:147
-msgid "Next >>"
-msgstr "下一页"
-
-#: ../functions.php:158
+#: ../functions.php:140
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:167
+#: ../functions.php:156
 msgid "Just Now"
 msgstr "刚刚"
 
-#: ../functions.php:169
+#: ../functions.php:158
 msgid "years ago"
 msgstr "年前"
 
-#: ../functions.php:170
+#: ../functions.php:159
 msgid "month ago"
 msgstr "月前"
 
-#: ../functions.php:171
+#: ../functions.php:160
 msgid "weeks ago"
 msgstr "周前"
 
-#: ../functions.php:172
+#: ../functions.php:161
 msgid "days ago"
 msgstr "天前"
 
-#: ../functions.php:173
+#: ../functions.php:162
 msgid "hours ago"
 msgstr "小时前"
 
-#: ../functions.php:174
+#: ../functions.php:163
 msgid "minutes ago"
 msgstr "分钟前"
 
-#: ../functions.php:175
+#: ../functions.php:164
 msgid "seconds ago"
 msgstr "秒前"
 
-#: ../functions.php:189
+#: ../functions.php:178
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:197
+#: ../functions.php:186
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:205
+#: ../functions.php:194
 msgid "Other"
 msgstr "其他页"
 
@@ -261,16 +257,16 @@ msgstr "请定义默认数组的元素."
 msgid "Please define an SVG icon filename."
 msgstr "请定义一个SVG图标的文件名."
 
-#: ../inc/oloComment.php:27 ../inc/oloComment.php:91 ../inc/oloComment.php:92
+#: ../inc/oloComment.php:28 ../inc/oloComment.php:92 ../inc/oloComment.php:93
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/oloComment.php:86
+#: ../inc/oloComment.php:87
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../inc/oloComment.php:92
+#: ../inc/oloComment.php:93
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
@@ -417,6 +413,12 @@ msgstr "上一篇: %title"
 #: ../single.php:14
 msgid "Next: %title"
 msgstr "下一篇: %title"
+
+#~ msgid "<< Previous"
+#~ msgstr "上一页"
+
+#~ msgid "Next >>"
+#~ msgstr "下一页"
 
 #, php-format
 #~ msgid "%s ago"

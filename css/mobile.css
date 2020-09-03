@@ -1,12 +1,17 @@
 ﻿/*
 Theme Name: olo
-Theme URI: http://hjyl.org/wordpress-theme-olo/
+Theme URI: https://hjyl.org/wordpress-theme-olo/
 Author: HJYL
-Author URI: http://hjyl.org/
+Author URI: https://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 4.1
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: olo
+Version: 4.4
+Requires at least: 4.9
+Requires PHP: 5.2.4
+Tested up to: 5.5.1
+Tags: two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post
 */
 @import url("font-awesome.min.css");
 /* =Reset CSS.= */
@@ -359,6 +364,19 @@ pre{
 	z-index: 100000;
 	/* Above WP toolbar. */
 }
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+.hjylPosts footer .icon, .status-date .icon{
+	margin-right:5px;
+}
 /*oloMenu
 ---------------------*/
 #oloMenu{
@@ -446,7 +464,14 @@ pre{
 }
 #oloLogo #olosearch{
 	position:relative;
-	text-align:right;
+	text-align:center;
+	top:-45px;
+	left:20px;
+}
+#oloLogo #olosearch .svg-search svg{
+	background:rgba(255, 255, 255, 1);
+	padding:5px;
+	border-radius:100%;
 }
 #olosearch .fa-search{
 	position:absolute;
@@ -460,14 +485,17 @@ pre{
 	display:none ;
 }
 #olosearch #searchform input{
-	position:absolute;
-	right:30px;
-	top:8px;
-	border:1px solid #EEEEEE;
-	border-radius:8px;
-	padding:5px 10px;
-	background:#EEEEEE;
-	z-index:10;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: auto;
+	border: 1px solid #EEEEEE;
+	border-radius: 8px;
+	padding: 5px 10px;
+	background: #EEEEEE;
+	z-index: 10;
+	width: 200px;
+	height: 20px;
 }
 #searchsubmit{
 	display:none;
@@ -553,7 +581,7 @@ pre{
 	width: 9px;
 }
 .oloEntry:after{
-	left:-17px;
+	left:-11px;
 	top:-35px;
 }
 .oloEntry:hover:after,
@@ -649,18 +677,42 @@ pre{
 .oloEntry,
 .commentlist li.depth-1{
 	float:right;
-	width:60%;
+	width:62%;
 	background:#FFF;
 	border-radius:5px;
 	padding:10px;
 	position:relative;
 	margin:10px 0;
 }
-#olo article header h2,
-#olo article footer,
+@media only screen and (min-width: 768px) {
+	.oloEntry,
+	.commentlist li.depth-1{
+		width:82%;
+	}
+	.oloPosts article header h2, .oloPosts article footer, .oloPosts .nopassword {
+		width: 82%;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.oloEntry,
+	.commentlist li.depth-1{
+		width:86.5%;
+	}
+	.oloPosts article header h2, .oloPosts article footer, .oloPosts .nopassword {
+		width: 86.5%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.oloPosts article header h2,
+	.oloPosts article footer,
+	.oloPosts .nopassword{
+		width:60%;
+	}
+}
+.oloPosts article header h2,
+.oloPosts article footer,
 .oloPosts .nopassword{
 	float:right;
-	width:60%;
 }
 .oloEntry{
 	font-size:14px;
@@ -710,7 +762,7 @@ pre{
 	transform:			rotate(45deg);
 }
 .commentlist > .depth-1 > .comment:before{
-	margin:20px 0 0 -135px;
+	margin:20px 0 0 -131px;
 }
 /*IE9 hack
 :root .commentlist li.depth-1:before{
@@ -825,7 +877,17 @@ ul.children .comment-body{
 }
 #submit {
 	cursor:pointer;
+	display: inline-block;
+	vertical-align: top;
+	height: 48px;
+	line-height: 46px;
+	padding: 0 25px;
 	font-size: 15px;
+	color: #bbb;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+	background-color: #303030;
 	border: 1px solid;
 	border-color: #202020 #1a1a1a #111;
 	border-radius: 25px;
@@ -866,7 +928,7 @@ body > footer p{
 	background:#041724;
 	padding:5px 10px;
 	position:fixed;
-	right:100px;
+	left:85px;
 	bottom:20px;
 	cursor:pointer;
 	border-radius:5px;
