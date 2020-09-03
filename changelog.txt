@@ -1,4 +1,6 @@
 == Changelog ==
+@Version 2.1.2
+1. Removed some unnecessary css.
 @Version 2.1.1
 1. Fixed the issues like prefix, escaping and remove closing PHP tags.
 @Version 2.1

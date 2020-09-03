@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 2.1.1
+Tested up to: 5.5.1
+Stable tag: 2.1.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,8 @@ Spasalon Pro is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.1.2
+1. Removed some unnecessary css.
 @Version 2.1.1
 1. Fixed the issues like prefix, escaping and remove closing PHP tags.
 @Version 2.1
