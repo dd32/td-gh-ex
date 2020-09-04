@@ -167,7 +167,7 @@ function boxy_display_upgrade() {
 								<?php echo sprintf ('<h3>%1$s</h3><p>%2$s</p>',__('New to Creating a Website?','boxy'),__('We will build you a complete website based on the theme you selected. We will populate content, change colors and do any look and feel customisation work you prefer.','boxy') ); ?>
 							</div>
 							<div class="image-wrap">
-								<?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/images/api.png" alt="%1$s" />',__('Image','boxy') ); ?>
+								<?php echo sprintf ( '<img src="'. esc_url( get_template_directory_uri() ).'/images/api.png" alt="%1$s" />',__('Image','boxy') ); ?>
 							</div>
 						</a>
 					</div>
@@ -198,7 +198,7 @@ function boxy_display_upgrade() {
                     </div>  
 
                     <div class="theme_info_right">
-                        <img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="Theme Screenshot" />
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.png" alt="Theme Screenshot" />
                     </div>
                 </div>
             </div>

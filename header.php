@@ -28,6 +28,7 @@ endif;
 </head>
 
 <body <?php body_class(); ?>>
+	 <?php wp_body_open(); ?> 
 
 <div id="page" class="hfeed site <?php echo boxy_site_style_class(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'boxy' ); ?></a>

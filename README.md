@@ -40,6 +40,8 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 16. Other theme options are self explanatory.
 
 == Change Log ==
+== 1.4.1 =
+* Customizer issue fixed.
 
 = 1.4.0 = 
 * WPForms Lite plugin action removed.

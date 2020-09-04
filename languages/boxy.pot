@@ -2,325 +2,2111 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2013-12-19 02:31:31+00:00\n"
+"Project-Id-Version: Boxy\n"
+"POT-Creation-Date: 2018-08-02 10:24+0530\n"
+"PO-Revision-Date: 2018-08-02 10:24+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-#: 404.php:15
-msgid "Oops! That page can&rsquo;t be found."
+#: ../archive.php:24
+msgid "Category"
 msgstr ""
 
-#: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+#: ../archive.php:27
+msgid "Tag"
 msgstr ""
 
-#: 404.php:27
-msgid "Most Used Categories"
+#: ../archive.php:30
+msgid "Author"
 msgstr ""
 
-#. translators: %1$s: smiley
-#: 404.php:44
-msgid "Try looking in the monthly archives. %1$s"
+#: ../archive.php:33
+msgid "Day"
 msgstr ""
 
-#: archive.php:31
-msgid "Author: %s"
+#: ../archive.php:36
+msgid "Month"
 msgstr ""
 
-#: archive.php:39
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:42
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:42
+#: ../archive.php:36
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: archive.php:45
-msgid "Year: %s"
+#: ../archive.php:39
+msgid "Year"
 msgstr ""
 
-#: archive.php:45
+#: ../archive.php:39
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: archive.php:48
+#: ../archive.php:42
 msgid "Asides"
 msgstr ""
 
-#: archive.php:51
+#: ../archive.php:45
 msgid "Galleries"
 msgstr ""
 
-#: archive.php:54
+#: ../archive.php:48
 msgid "Images"
 msgstr ""
 
-#: archive.php:57
+#: ../archive.php:51
 msgid "Videos"
 msgstr ""
 
-#: archive.php:60
+#: ../archive.php:54
 msgid "Quotes"
 msgstr ""
 
-#: archive.php:63
+#: ../archive.php:57
 msgid "Links"
 msgstr ""
 
-#: archive.php:66
+#: ../archive.php:60
 msgid "Statuses"
 msgstr ""
 
-#: archive.php:69
+#: ../archive.php:63
 msgid "Audios"
 msgstr ""
 
-#: archive.php:72
+#: ../archive.php:66
 msgid "Chats"
 msgstr ""
 
-#: archive.php:75 sidebar.php:17
+#: ../archive.php:69 ../footer-widgets.php:36
 msgid "Archives"
 msgstr ""
 
-#: comments.php:30
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+#: ../sidebar-left.php:22
+msgid "Search"
+msgstr ""
 
-#: comments.php:37 comments.php:57
+#: ../front-page.php:59
+#, php-format
+msgid ""
+"<h3>Responsive Layout</h3><p>Featured page description text : use the page "
+"excerpt or set your own custom text. Click  <a href=\"%1$s\"target=\"_blank"
+"\"> Customizer </a> and Goto Home => Sercice Section -1.</p>"
+msgstr ""
+
+#: ../front-page.php:81
+#, php-format
+msgid ""
+"<h3>Retina Ready</h3><p>Featured page description text : use the page "
+"excerpt or set your own custom text. Click  <a href=\"%1$s\"target=\"_blank"
+"\"> Customizer </a> and Goto Home => Sercice Section -2.</p>"
+msgstr ""
+
+#: ../front-page.php:102
+#, php-format
+msgid ""
+"<h3>Awesome Sliders</h3><p>Featured page description text : use the page "
+"excerpt or set your own custom text. Click  <a href=\"%1$s\"target=\"_blank"
+"\"> Customizer </a> and Goto Home => Sercice Section -3.</p>"
+msgstr ""
+
+#: ../blog-category-slider.php:55
+msgid "Slider Setting"
+msgstr ""
+
+#: ../blog-category-slider.php:55
+msgid ""
+"You haven't created any slider yet. Create a post, set your slider image as "
+"Post's featured image ( Recommended image size 1280*450 ). Go to Customizer "
+"and click boxy Options => Blog => Blog Page and select blog Slider Post "
+"Category and No.of Sliders."
+msgstr ""
+
+#: ../blog-category-slider.php:55
+msgid "Customizer"
+msgstr ""
+
+#: ../footer.php:31 ../includes/hooks-filters.php:4
+msgid "Powered by"
+msgstr ""
+
+#: ../footer.php:31
+msgid "WordPress"
+msgstr ""
+
+#: ../footer.php:31
+msgid "| Theme: Boxy by"
+msgstr ""
+
+#: ../footer.php:31 ../includes/hooks-filters.php:4
+msgid "Webulous Themes"
+msgstr ""
+
+#: ../comments.php:37 ../comments.php:57
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:38 comments.php:58
+#: ../comments.php:38 ../comments.php:58
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:39 comments.php:59
+#: ../comments.php:39 ../comments.php:59
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:69
+#: ../comments.php:69
 msgid "Comments are closed."
 msgstr ""
 
-#: content-none.php:13
+#: ../search.php:17
+msgid "Search Results For"
+msgstr ""
+
+#: ../content-none.php:13
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:19
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: ../content-none.php:18
+msgid "Ready to publish your first post?"
 msgstr ""
 
-#: content-none.php:23
+#: ../content-none.php:18
+msgid "Get Started Here"
+msgstr ""
+
+#: ../content-none.php:21
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:28
+#: ../content-none.php:26
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+"It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
 
-#: content-page.php:18 content-single.php:20 content.php:27
-msgid "Pages:"
-msgstr ""
-
-#: content-page.php:23 content-single.php:60 content.php:61
-#: inc/template-tags.php:81 inc/template-tags.php:100
-msgid "Edit"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
-msgid ", "
-msgstr ""
-
-#: content-single.php:37
-msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content-single.php:39
-msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
-
-#: content-single.php:45
-msgid ""
-"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
-msgstr ""
-
-#: content-single.php:47
-msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: content.php:42
-msgid "Posted in %1$s"
-msgstr ""
-
-#: content.php:52
-msgid "Tagged %1$s"
-msgstr ""
-
-#: content.php:58
-msgid "Leave a comment"
-msgstr ""
-
-#: content.php:58
-msgid "1 Comment"
-msgstr ""
-
-#: content.php:58
-msgid "% Comments"
-msgstr ""
-
-#: footer.php:16
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:18
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:45
+#: ../functions.php:43 ../header.php:74 ../header.php:82
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:65
+#: ../functions.php:313
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:31
-msgid "Menu"
+#: ../functions.php:321
+msgid "Sidebar Left"
 msgstr ""
 
-#: header.php:32
-msgid "Skip to content"
+#: ../functions.php:323
+msgid "Left Sidebar"
 msgstr ""
 
-#: inc/extras.php:63
-msgid "Page %s"
+#: ../functions.php:331
+msgid "Header Top Right"
 msgstr ""
 
-#: inc/template-tags.php:23
-msgid "Posts navigation"
+#: ../functions.php:341
+msgid "Footer 1"
 msgstr ""
 
-#: inc/template-tags.php:27
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#: ../functions.php:350
+msgid "Footer 2"
 msgstr ""
 
-#: inc/template-tags.php:31
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#: ../functions.php:359
+msgid "Footer 3"
 msgstr ""
 
-#: inc/template-tags.php:56
-msgid "Post navigation"
+#: ../functions.php:368
+msgid "Footer 4"
 msgstr ""
 
-#: inc/template-tags.php:59
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
+#: ../functions.php:377
+msgid "Footer Nav"
 msgstr ""
 
-#: inc/template-tags.php:60
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+#: ../content-blog.php:49 ../content-page.php:25 ../content-single.php:44
+#: ../content.php:40
+msgid "Pages:"
 msgstr ""
 
-#: inc/template-tags.php:81
-msgid "Pingback:"
+#: ../content-page.php:31 ../includes/template-tags.php:209
+#: ../includes/template-tags.php:254 ../includes/template-tags.php:333
+#: ../includes/template-tags.php:371
+msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:91
-msgid "%s <span class=\"says\">says:</span>"
+#: ../404.php:15
+msgid "Oops! That page can't be found."
 msgstr ""
 
-#: inc/template-tags.php:97
-msgctxt "1: date, 2: time"
-msgid "%1$s at %2$s"
+#: ../404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: inc/template-tags.php:104
-msgid "Your comment is awaiting moderation."
+#: ../single.php:30
+msgid "Share this on ..."
 msgstr ""
 
-#: inc/template-tags.php:145
+#: ../single.php:79
+msgid "About Author:"
+msgstr ""
+
+#: ../category-slider.php:38 ../admin/theme-options.php:127
+#, php-format
 msgid ""
-"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
-"%2$s</span>"
+"<h1>The Most Modern WordPress Theme</h1><h3> Slider Setting </h3><p>You "
+"haven't created any slider yet. Go to Customizer and click Home => "
+"FlexSlider Settings, edit or add  your images and Caption.<p><a href=\"%1$s"
+"\"target=\"_blank\"> Customizer </a></p>"
 msgstr ""
 
-#: search.php:16
-msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:10
+#: ../searchform.php:10
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:11
-msgctxt "placeholder"
-msgid "Search &hellip;"
+#: ../header.php:33
+msgid "Skip to content"
 msgstr ""
 
-#: searchform.php:13
-msgctxt "submit button"
-msgid "Search"
+#: ../admin/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
 msgstr ""
 
-#: sidebar.php:24
+#: ../admin/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:386
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:387
+#: ../admin/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:388
+#: ../admin/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../admin/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../admin/theme-options.php:22
+msgid "Site Identity"
+msgstr ""
+
+#: ../admin/theme-options.php:23
+msgid "Site Header Options"
+msgstr ""
+
+#: ../admin/theme-options.php:29
+msgid "Enable Logo as Title"
+msgstr ""
+
+#: ../admin/theme-options.php:41
+msgid "Show site Tagline"
+msgstr ""
+
+#: ../admin/theme-options.php:54
+msgid "Home"
+msgstr ""
+
+#: ../admin/theme-options.php:55
+msgid "Home Page Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:61 ../admin/theme-options.php:430
+#: ../admin/theme-options.php:904 ../admin/theme-options.php:905
+msgid "General Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:62
+msgid "Home Page options"
+msgstr ""
+
+#: ../admin/theme-options.php:70
+msgid "Enable Home Page Default Content"
+msgstr ""
+
+#: ../admin/theme-options.php:79
+msgid "Enable home page default content ( home page content )"
+msgstr ""
+
+#: ../admin/theme-options.php:83
+msgid "Enable sidebar on the Home page"
+msgstr ""
+
+#: ../admin/theme-options.php:92
+msgid ""
+"Disable by default. If you want to display the sidebars in your frontpage, "
+"turn this Enable."
+msgstr ""
+
+#: ../admin/theme-options.php:99
+msgid "Flex Slider Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:105
+msgid "Enable Slider Post ( Section )"
+msgstr ""
+
+#: ../admin/theme-options.php:113
+msgid "Enable Slider Post in home page"
+msgstr ""
+
+#: ../admin/theme-options.php:117
+msgid "Upload Image - Slider 1"
+msgstr ""
+
+#: ../admin/theme-options.php:124
+msgid "Enter Text (Flexcaption)- Slider 1"
+msgstr ""
+
+#: ../admin/theme-options.php:131
+msgid "Upload Image - Slider 2"
+msgstr ""
+
+#: ../admin/theme-options.php:137
+msgid "Enter Text (Flexcaption)- Slider 2"
+msgstr ""
+
+#: ../admin/theme-options.php:143
+msgid "Upload Image - Slider 3"
+msgstr ""
+
+#: ../admin/theme-options.php:149
+msgid "Enter Text (Flexcaption)- Slider 3"
+msgstr ""
+
+#: ../admin/theme-options.php:155
+msgid "Upload Image - Slider 4"
+msgstr ""
+
+#: ../admin/theme-options.php:161
+msgid "Enter Text (Flexcaption)- Slider 4"
+msgstr ""
+
+#: ../admin/theme-options.php:167
+msgid "Upload Image - Slider 5"
+msgstr ""
+
+#: ../admin/theme-options.php:173
+msgid "Enter Text (Flexcaption)- Slider 5"
+msgstr ""
+
+#: ../admin/theme-options.php:181
+msgid "Service Section-1"
+msgstr ""
+
+#: ../admin/theme-options.php:182 ../admin/theme-options.php:233
+#: ../admin/theme-options.php:272
+msgid "Home Page - Service Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:187
+msgid "Enable Service Section"
+msgstr ""
+
+#: ../admin/theme-options.php:195
+msgid "Enable service section in home page"
+msgstr ""
+
+#: ../admin/theme-options.php:199 ../admin/theme-options.php:238
+#: ../admin/theme-options.php:277
+msgid "Service Icon: Enter Font Awesome Icon name. e.g. fa fa-bullhorn"
+msgstr ""
+
+#: ../admin/theme-options.php:206 ../admin/theme-options.php:245
+#: ../admin/theme-options.php:284
+msgid "Service Title: Enter title of this service"
+msgstr ""
+
+#: ../admin/theme-options.php:213 ../admin/theme-options.php:252
+#: ../admin/theme-options.php:291
+msgid "Service Description"
+msgstr ""
+
+#: ../admin/theme-options.php:216
+#, php-format
+msgid ""
+"<p>Featured page description text : use the page excerpt or set your own "
+"custom text. Click  <a href=\"%1$s\"target=\"_blank\"> Customizer </a> and "
+"Goto Home => Sercice Section -1.</p>"
+msgstr ""
+
+#: ../admin/theme-options.php:220 ../admin/theme-options.php:259
+#: ../admin/theme-options.php:298
+msgid "Service Text: Enter button/Text Name"
+msgstr ""
+
+#: ../admin/theme-options.php:227 ../admin/theme-options.php:266
+#: ../admin/theme-options.php:305
+msgid "Service Link: Enter External Link"
+msgstr ""
+
+#: ../admin/theme-options.php:232
+msgid "Service Section-2"
+msgstr ""
+
+#: ../admin/theme-options.php:255
+#, php-format
+msgid ""
+"<p>Featured page description text : use the page excerpt or set your own "
+"custom text. Click  <a href=\"%1$s\"target=\"_blank\"> Customizer </a> and "
+"Goto Home => Sercice Section -2.</p>"
+msgstr ""
+
+#: ../admin/theme-options.php:271
+msgid "Service Section-3"
+msgstr ""
+
+#: ../admin/theme-options.php:294
+#, php-format
+msgid ""
+"<p>Featured page description text : use the page excerpt or set your own "
+"custom text. Click  <a href=\"%1$s\"target=\"_blank\"> Customizer </a> and "
+"Goto Home => Sercice Section -3.</p>"
+msgstr ""
+
+#: ../admin/theme-options.php:313
+msgid "Latest Blog Section"
+msgstr ""
+
+#: ../admin/theme-options.php:314
+msgid "Home Page - Latest Blog Options"
+msgstr ""
+
+#: ../admin/theme-options.php:320
+msgid "Enable Recent Post Section"
+msgstr ""
+
+#: ../admin/theme-options.php:329
+msgid "Enable recent post section in home page"
+msgstr ""
+
+#: ../admin/theme-options.php:334
+msgid "No. of Recent Posts"
+msgstr ""
+
+#: ../admin/theme-options.php:355
+msgid "Exclude the Posts from Home Page. Post IDs, separated by commas"
+msgstr ""
+
+#: ../admin/theme-options.php:368
+msgid "Client Logo Carousel"
+msgstr ""
+
+#: ../admin/theme-options.php:374
+msgid "Enable Client Carousel Section"
+msgstr ""
+
+#: ../admin/theme-options.php:382
+msgid "Enable client carousel section in home page"
+msgstr ""
+
+#: ../admin/theme-options.php:386
+msgid "Upload Image - Client 1"
+msgstr ""
+
+#: ../admin/theme-options.php:394
+msgid "Upload Image - Client 2"
+msgstr ""
+
+#: ../admin/theme-options.php:400
+msgid "Upload Image - Client 3"
+msgstr ""
+
+#: ../admin/theme-options.php:407
+msgid "Upload Image - Client 4"
+msgstr ""
+
+#: ../admin/theme-options.php:414
+msgid "Upload Image - Client 5"
+msgstr ""
+
+#: ../admin/theme-options.php:421
+msgid "Upload Image - Client 6"
+msgstr ""
+
+#: ../admin/theme-options.php:431
+msgid "general settings"
+msgstr ""
+
+#: ../admin/theme-options.php:437
+msgid "Page Title Bar & Breadcrumb"
+msgstr ""
+
+#: ../admin/theme-options.php:438
+msgid "Page Title bar related options"
+msgstr ""
+
+#: ../admin/theme-options.php:444
+msgid "Page Title Bar"
+msgstr ""
+
+#: ../admin/theme-options.php:449
+msgid "Show Bar and Content"
+msgstr ""
+
+#: ../admin/theme-options.php:450
+msgid "Show Content Only "
+msgstr ""
+
+#: ../admin/theme-options.php:451 ../admin/theme-options.php:463
+msgid "Hide"
+msgstr ""
+
+#: ../admin/theme-options.php:457
+msgid "Page Title Bar Text"
+msgstr ""
+
+#: ../admin/theme-options.php:462
+msgid "Show"
+msgstr ""
+
+#: ../admin/theme-options.php:469
+msgid "Breadcrumb"
+msgstr ""
+
+#: ../admin/theme-options.php:481
+msgid "Breadcrumb Character"
+msgstr ""
+
+#: ../admin/theme-options.php:486
+msgid " >> "
+msgstr ""
+
+#: ../admin/theme-options.php:487
+msgid " / "
+msgstr ""
+
+#: ../admin/theme-options.php:488
+msgid " > "
+msgstr ""
+
+#: ../admin/theme-options.php:504
+msgid "Pagination"
+msgstr ""
+
+#: ../admin/theme-options.php:505
+msgid "Pagination related options"
+msgstr ""
+
+#: ../admin/theme-options.php:510
+msgid "Numeric Pagination"
+msgstr ""
+
+#: ../admin/theme-options.php:523 ../admin/theme-options.php:524
+msgid "Image Crop Mode"
+msgstr ""
+
+#: ../admin/theme-options.php:529
+#, php-format
+msgid ""
+"Install <a href=\"%1$s\">Regenerate Thumbnails</a> Plugin and Once your "
+"select the option Click  <a href=\"%2$s\">Regenerate All Thumbnails</a> in "
+"order to crop the image"
+msgstr ""
+
+#: ../admin/theme-options.php:531
+#, php-format
+msgid ""
+" Once your select the option Click <a href=\"%2$s\">Regenerate All "
+"Thumbnails</a> in order to crop the image "
+msgstr ""
+
+#: ../admin/theme-options.php:536
+msgid "Choose Image Crop Mode"
+msgstr ""
+
+#: ../admin/theme-options.php:549
+msgid "Skin Color"
+msgstr ""
+
+#: ../admin/theme-options.php:550
+msgid "Color Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:555
+msgid "Color Scheme"
+msgstr ""
+
+#: ../admin/theme-options.php:556 ../admin/theme-options.php:563
+msgid "Select your color scheme"
+msgstr ""
+
+#: ../admin/theme-options.php:586
+msgid "Change Color Options"
+msgstr ""
+
+#: ../admin/theme-options.php:587
+msgid ""
+"This will reflect in links, buttons,Navigation and many others. Choose a "
+"color to match your site."
+msgstr ""
+
+#: ../admin/theme-options.php:593
+msgid "Enable Custom Primary color"
+msgstr ""
+
+#: ../admin/theme-options.php:604
+msgid "Primary color"
+msgstr ""
+
+#: ../admin/theme-options.php:709
+msgid "Enable Navigation Bar BG Color"
+msgstr ""
+
+#: ../admin/theme-options.php:720
+msgid "Navigation Bar BG Color"
+msgstr ""
+
+#: ../admin/theme-options.php:743
+msgid "Enable Navigation DropDown BG Color"
+msgstr ""
+
+#: ../admin/theme-options.php:754
+msgid "Navigation DropDown BG Color"
+msgstr ""
+
+#: ../admin/theme-options.php:777
+msgid "Enable Navigation Hover color"
+msgstr ""
+
+#: ../admin/theme-options.php:788
+msgid "Navigation Hover Color"
+msgstr ""
+
+#: ../admin/theme-options.php:814
+msgid "Enable Custom Secondary color"
+msgstr ""
+
+#: ../admin/theme-options.php:825
+msgid "Secondary Color"
+msgstr ""
+
+#: ../admin/theme-options.php:899 ../includes/theme_upgrade.php:12
+msgid "Typography"
+msgstr ""
+
+#: ../admin/theme-options.php:900
+msgid "Typography and Link Color Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:918
+msgid "Body Font"
+msgstr ""
+
+#: ../admin/theme-options.php:919
+msgid "Specify the body font properties"
+msgstr ""
+
+#: ../admin/theme-options.php:925
+msgid "Enable Custom body Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:932
+msgid "Turn on to body typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:938
+msgid "Body Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:966
+msgid "Heading Font"
+msgstr ""
+
+#: ../admin/theme-options.php:967
+msgid "Specify typography of H1, H2, H3, H4, H5, H6"
+msgstr ""
+
+#: ../admin/theme-options.php:973
+msgid "Enable Custom H1 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:980
+msgid "Turn on to H1 typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:992
+msgid "H1 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1020
+msgid "Enable Custom H2 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1027
+msgid "Turn on to H2 typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:1040
+msgid "H2 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1068
+msgid "Enable Custom H3 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1075
+msgid "Turn on to H3 typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:1088
+msgid "H3 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1116
+msgid "Enable Custom H4 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1123
+msgid "Turn on to H4 typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:1137
+msgid "H4 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1165
+msgid "Enable Custom H5 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1172
+msgid "Turn on to H5 typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:1186
+msgid "H5 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1214
+msgid "Enable Custom H6 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1221
+msgid "Turn on to H6 typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:1235
+msgid "H6 Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1263
+msgid "Navigation Font"
+msgstr ""
+
+#: ../admin/theme-options.php:1264
+msgid "Specify Navigation font properties"
+msgstr ""
+
+#: ../admin/theme-options.php:1270
+msgid "Enable Navigation Font Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1277
+msgid ""
+"Turn on to Navigation Font typography and turn off for default typography"
+msgstr ""
+
+#: ../admin/theme-options.php:1284
+msgid "Navigation Font Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1313
+msgid "Header"
+msgstr ""
+
+#: ../admin/theme-options.php:1314
+msgid "Header Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:1318
+msgid "General Header"
+msgstr ""
+
+#: ../admin/theme-options.php:1319
+msgid "Header options"
+msgstr ""
+
+#: ../admin/theme-options.php:1341
+msgid "Enable to Show Search box in Header"
+msgstr ""
+
+#: ../admin/theme-options.php:1396
+msgid "Sticky Menu"
+msgstr ""
+
+#: ../admin/theme-options.php:1397
+msgid "sticky header"
+msgstr ""
+
+#: ../admin/theme-options.php:1402
+msgid "Enable Sticky Header"
+msgstr ""
+
+#: ../admin/theme-options.php:1413
+msgid "Enable Sticky Header Position"
+msgstr ""
+
+#: ../admin/theme-options.php:1431
+msgid "Scroll to Top"
+msgstr ""
+
+#: ../admin/theme-options.php:1432
+msgid "Scroll to Top Button"
+msgstr ""
+
+#: ../admin/theme-options.php:1437
+msgid "Enable Scroll to Top"
+msgstr ""
+
+#: ../admin/theme-options.php:1476
+msgid "Header Background Image & Video"
+msgstr ""
+
+#: ../admin/theme-options.php:1477
+msgid "Custom Header Image & Video options"
+msgstr ""
+
+#: ../admin/theme-options.php:1483
+msgid "Header Background Size"
+msgstr ""
+
+#: ../admin/theme-options.php:1506
+msgid "Header Background Image Size"
+msgstr ""
+
+#: ../admin/theme-options.php:1523
+msgid "Header Background Repeat"
+msgstr ""
+
+#: ../admin/theme-options.php:1550
+msgid "Header Background Position"
+msgstr ""
+
+#: ../admin/theme-options.php:1582
+msgid "Header Background Attachment"
+msgstr ""
+
+#: ../admin/theme-options.php:1607
+msgid "Enable Header( Background ) Overlay"
+msgstr ""
+
+#: ../admin/theme-options.php:1619
+msgid "Header Overlay ( Background )color"
+msgstr ""
+
+#: ../admin/theme-options.php:1658
+msgid "Blog"
+msgstr ""
+
+#: ../admin/theme-options.php:1659 ../admin/theme-options.php:1663
+msgid "Blog Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:1662
+msgid "Blog Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1668
+msgid "Enable to show the slider on blog page"
+msgstr ""
+
+#: ../admin/theme-options.php:1676
+msgid "To show the slider on posts page"
+msgstr ""
+
+#: ../admin/theme-options.php:1680
+msgid "Blog Slider Posts category"
+msgstr ""
+
+#: ../admin/theme-options.php:1691
+msgid ""
+"Create post ( Goto Dashboard => Post => Add New ) and Post Featured Image "
+"( Preferred size is 1200 x 450 pixels ) as taken as slider image and Post "
+"Content as taken as Flexcaption."
+msgstr ""
+
+#: ../admin/theme-options.php:1695
+msgid "No. of Sliders"
+msgstr ""
+
+#: ../admin/theme-options.php:1711
+msgid "Enter number of slides you want to display under your selected Category"
+msgstr ""
+
+#: ../admin/theme-options.php:1715
+msgid "Select Blog Page Layout you prefer"
+msgstr ""
+
+#: ../admin/theme-options.php:1730
+msgid "Enable Featured Image"
+msgstr ""
+
+#: ../admin/theme-options.php:1738
+msgid "Enable Featured Image for blog page"
+msgstr ""
+
+#: ../admin/theme-options.php:1742
+msgid "More Text"
+msgstr ""
+
+#: ../admin/theme-options.php:1745
+msgid "Text to display in case of text too long"
+msgstr ""
+
+#: ../admin/theme-options.php:1746 ../includes/hooks-filters.php:33
+msgid "Read More"
+msgstr ""
+
+#: ../admin/theme-options.php:1750
+msgid "Choose the Featured Image Size for Blog Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1769
+msgid "Set large and medium image size: Goto Dashboard => Settings => Media"
+msgstr ""
+
+#: ../admin/theme-options.php:1773
+msgid "Enable to display top post meta data"
+msgstr ""
+
+#: ../admin/theme-options.php:1781 ../admin/theme-options.php:1816
+msgid ""
+"Enable to Display Top Post Meta Details. This will reflect for blog page, "
+"single blog page, blog full width & blog large templates"
+msgstr ""
+
+#: ../admin/theme-options.php:1785
+msgid "Activate and Arrange the Order of Top Post Meta elements"
+msgstr ""
+
+#: ../admin/theme-options.php:1804 ../admin/theme-options.php:1840
+msgid ""
+"Click above eye icon in order to activate the field, This will reflect for "
+"blog page, single blog page, blog full width & blog large templates"
+msgstr ""
+
+#: ../admin/theme-options.php:1809
+msgid "Enable to display bottom post meta data"
+msgstr ""
+
+#: ../admin/theme-options.php:1821
+msgid "Activate and arrange the Order of Bottom Post Meta elements"
+msgstr ""
+
+#: ../admin/theme-options.php:1847
+msgid "Single Blog Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1848
+msgid "Single Blog Page Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:1853
+msgid "Enable Single Post Featured Image"
+msgstr ""
+
+#: ../admin/theme-options.php:1861
+msgid "Enable Featured Image for Single Post Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1865
+msgid "Choose the featured image display type for Single Post Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1885
+msgid "Enable Author Bio Box below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:1896
+msgid "Show social sharing options box below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:1907
+msgid "Show Related Posts"
+msgstr ""
+
+#: ../admin/theme-options.php:1915
+msgid "Show the Related Post for Single Blog Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1919
+msgid "Related Posts Must Be Shown As:"
+msgstr ""
+
+#: ../admin/theme-options.php:1934
+msgid "Select the Hierarchy"
+msgstr ""
+
+#: ../admin/theme-options.php:1939
+msgid " Show Comments"
+msgstr ""
+
+#: ../admin/theme-options.php:1947
+msgid "Show the Comments for Single Blog Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1954
+msgid "Single Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1955
+msgid "Single Page Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:1959
+msgid "Enable Single Page Featured Image"
+msgstr ""
+
+#: ../admin/theme-options.php:1970
+msgid "Single Page Featured Image Size"
+msgstr ""
+
+#: ../admin/theme-options.php:1990
+msgid "Layout"
+msgstr ""
+
+#: ../admin/theme-options.php:1991
+msgid "Layout Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:1995
+msgid "Site Style"
+msgstr ""
+
+#: ../admin/theme-options.php:2005
+msgid "Select the default site layout. Defaults to \"Wide\"."
+msgstr ""
+
+#: ../admin/theme-options.php:2009
+msgid "Main Layout"
+msgstr ""
+
+#: ../admin/theme-options.php:2012
+msgid "Select main content and sidebar arranboxyent."
+msgstr ""
+
+#: ../admin/theme-options.php:2023
+msgid ""
+"This layout will be reflected in all pages unless unique layout template is "
+"set for specific page"
+msgstr ""
+
+#: ../admin/theme-options.php:2028
+msgid "Body Top Margin"
+msgstr ""
+
+#: ../admin/theme-options.php:2029
+msgid "Select the top margin of body element in pixels"
+msgstr ""
+
+#: ../admin/theme-options.php:2055
+msgid "Body Bottom Margin"
+msgstr ""
+
+#: ../admin/theme-options.php:2056
+msgid "Select the bottom margin of body element in pixels"
+msgstr ""
+
+#: ../admin/theme-options.php:2130 ../admin/theme-options.php:2135
+msgid "Footer"
+msgstr ""
+
+#: ../admin/theme-options.php:2131
+msgid "Footer Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:2136
+msgid "Footer related options"
+msgstr ""
+
+#: ../admin/theme-options.php:2142
+msgid "Footer Widget Area"
+msgstr ""
+
+#: ../admin/theme-options.php:2143
+#, php-format
+msgid ""
+"Select widgets, Goto <a href=\"%1$s\"target=\"_blank\"> Customizer </a> => "
+"Widgets"
+msgstr ""
+
+#: ../admin/theme-options.php:2155
+msgid "Choose No.of widget area you want in footer"
+msgstr ""
+
+#: ../admin/theme-options.php:2169
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: ../admin/theme-options.php:2175
+msgid "Footer Top Margin"
+msgstr ""
+
+#: ../admin/theme-options.php:2176
+msgid "Select the top margin of footer in pixels"
+msgstr ""
+
+#: ../admin/theme-options.php:2198
+msgid "Footer Image"
+msgstr ""
+
+#: ../admin/theme-options.php:2199
+msgid "Custom Footer Image options"
+msgstr ""
+
+#: ../admin/theme-options.php:2205
+msgid "Upload Footer Background Image"
+msgstr ""
+
+#: ../admin/theme-options.php:2218
+msgid "Footer Background Size"
+msgstr ""
+
+#: ../admin/theme-options.php:2241
+msgid "Footer Background Image Size"
+msgstr ""
+
+#: ../admin/theme-options.php:2245
+msgid "Footer Background Repeat"
+msgstr ""
+
+#: ../admin/theme-options.php:2272
+msgid "Footer Background Position"
+msgstr ""
+
+#: ../admin/theme-options.php:2304
+msgid "Footer Background Attachment"
+msgstr ""
+
+#: ../admin/theme-options.php:2329
+msgid "Enable Footer( Background ) Overlay"
+msgstr ""
+
+#: ../admin/theme-options.php:2341
+msgid "Footer Overlay ( Background )color"
+msgstr ""
+
+#: ../admin/theme-options.php:2365
+msgid "Social Networks"
+msgstr ""
+
+#: ../admin/theme-options.php:2366
+msgid "social networks"
+msgstr ""
+
+#: ../admin/theme-options.php:2373
+msgid "Social Sharing Box"
+msgstr ""
+
+#: ../admin/theme-options.php:2374
+msgid "Social Sharing box related options"
+msgstr ""
+
+#: ../admin/theme-options.php:2380
+msgid "Enable facebook sharing option below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:2391
+msgid "Enable twitter sharing option below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:2402
+msgid "Enable linkedin sharing option below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:2413
+msgid "Enable googleplus sharing option below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:2425
+msgid "Enable email sharing option below single post"
+msgstr ""
+
+#: ../admin/theme-options.php:2438
+msgid "Slider Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:2439
+msgid "Flex slider related options"
+msgstr ""
+
+#: ../admin/theme-options.php:2446
+msgid "Flexcaption Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:2447
+msgid "Flexcaption Related Options"
+msgstr ""
+
+#: ../admin/theme-options.php:2452
+msgid "Enable Custom Flexcaption Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:2463
+msgid "Select Flexcaption Background Color"
+msgstr ""
+
+#: ../admin/theme-options.php:2487
+msgid "Select Flexcaption Alignment"
+msgstr ""
+
+#: ../admin/theme-options.php:2514
+msgid "Select Flexcaption Background Horizontal Position"
+msgstr ""
+
+#: ../admin/theme-options.php:2515
+msgid "Select how far from right, Default value Right = 5 ( in % )"
+msgstr ""
+
+#: ../admin/theme-options.php:2541
+msgid "Select Flexcaption Background Vertical Position"
+msgstr ""
+
+#: ../admin/theme-options.php:2542
+msgid "Select how far from top, Default value top = 10 ( in % )"
+msgstr ""
+
+#: ../admin/theme-options.php:2568
+msgid "Select Flexcaption Background Width"
+msgstr ""
+
+#: ../admin/theme-options.php:2572
+msgid "Select Flexcaption Background Width , Default width value 45"
+msgstr ""
+
+#: ../admin/theme-options.php:2595
+msgid "Select Responsive Flexcaption Background Width"
+msgstr ""
+
+#: ../admin/theme-options.php:2599
+msgid ""
+"Select Responsive Flexcaption Background Width, Default width value 100 "
+"( This value will apply for max-width: 768px )"
+msgstr ""
+
+#: ../admin/theme-options.php:2623
+msgid "Select Flexcaption Font Color"
+msgstr ""
+
+#: ../admin/theme-options.php:2647
+msgid "WooCommerce"
+msgstr ""
+
+#: ../admin/theme-options.php:2648
+msgid "Theme options related to woocommerce"
+msgstr ""
+
+#: ../admin/theme-options.php:2655
+msgid "Enable Woocommerce Sidebar"
+msgstr ""
+
+#: ../admin/theme-options.php:2656
+msgid "Enable Sidebar for shop page"
+msgstr ""
+
+#: ../admin/theme-options.php:2671
+msgid "Background Color"
+msgstr ""
+
+#: ../admin/theme-options.php:2672
+msgid "This will affect overall site background color"
+msgstr ""
+
+#: ../admin/theme-options.php:2678
+msgid "General Background Color"
+msgstr ""
+
+#: ../admin/theme-options.php:2694
+msgid "Content Background Color"
+msgstr ""
+
+#: ../admin/theme-options.php:2697
+msgid ""
+"when you are select boxed layout content background color will reflect the "
+"grid area"
+msgstr ""
+
+#: ../admin/theme-options.php:2719
+msgid "General Background Image"
+msgstr ""
+
+#: ../admin/theme-options.php:2736
+msgid "General Background Repeat"
+msgstr ""
+
+#: ../admin/theme-options.php:2764
+msgid "General Background Size"
+msgstr ""
+
+#: ../admin/theme-options.php:2792
+msgid "General Background Attachment"
+msgstr ""
+
+#: ../admin/theme-options.php:2817
+msgid "General Background Position"
+msgstr ""
+
+#: ../admin/theme-options.php:2853
+msgid "Content Background Image"
+msgstr ""
+
+#: ../admin/theme-options.php:2854
+msgid ""
+"when you are select boxed layout content background image will reflect the "
+"grid area"
+msgstr ""
+
+#: ../admin/theme-options.php:2874
+msgid "Content Background Repeat"
+msgstr ""
+
+#: ../admin/theme-options.php:2907
+msgid "Content Background Size"
+msgstr ""
+
+#: ../admin/theme-options.php:2940
+msgid "Content Background Attachment"
+msgstr ""
+
+#: ../admin/theme-options.php:2970
+msgid "Content Background Position"
+msgstr ""
+
+#: ../admin/kirki-helpers/include-kirki.php:41
+#, php-format
+msgid ""
+"The plugin is installed but not activated. Please <a href=\"%s\">activate "
+"it</a>."
+msgstr ""
+
+#: ../admin/kirki/example.php:152
+msgid "Color Control (hex-only)"
+msgstr ""
+
+#: ../admin/kirki/example.php:161
+msgid "Color Control (with alpha channel)"
+msgstr ""
+
+#: ../admin/kirki/example.php:173
+msgid "Color Control - hue only."
+msgstr ""
+
+#: ../admin/kirki/example.php:610
+msgid "This is a sortable control."
+msgstr ""
+
+#: ../includes/theme_upgrade.php:2
+msgid "Page Builder"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:3
+msgid ""
+"Boxy Pro supports Page Builder. All our shortcodes can be used as widgets "
+"too. You can drag and drop our widgets with page builder visual editor."
+msgstr ""
+
+#: ../includes/theme_upgrade.php:4
+msgid "Page Layout"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:5
+msgid ""
+"Boxy Pro offers many different page layouts so you can quickly and easily "
+"create your pages with various layout without any hassle!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:6 ../includes/theme_upgrade.php:305
+msgid "Unlimited Sidebar"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:7
+msgid ""
+"Unlimited sidebars allows you to create multiple sidebars. Check out our "
+"demo site to see how different pages displays different sidebars!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:8
+msgid "Shortcode Builder"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:9
+msgid ""
+"With our shortcode builder and lots of shortcodes, you can easily create "
+"nested shortcodes and build custom pages!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:10
+msgid "Multi Portfolio"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:11
+msgid ""
+"7 portfolio layouts with Isotope filtering, 3 blog layouts and multiple "
+"other alternate layouts for interior pages!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:13
+msgid ""
+"Boxy Pro loves typography, you can choose from over 500+ Google Fonts and "
+"Standard Fonts to customize your site!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:14
+msgid "Awesome Sliders"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:15
+msgid ""
+"Boxy Pro includes two types of slider. You can use both Flex and Elastic "
+"sliders anywhere in your site."
+msgstr ""
+
+#: ../includes/theme_upgrade.php:16
+msgid "Woo Commerce"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:17
+msgid ""
+"Boxy Pro has full design/code integration for WooCommerce, your shop will "
+"look as good as the rest of your site!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:18
+msgid "Custom Widget"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:19
+msgid ""
+"We offer many custom widgets that are stylized and ready for use. Simply "
+"drag &amp; drop into place to activate!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:20
+msgid "Advanced Admin"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:21
+msgid ""
+"Advanced Redux Framework for theme options panel, you can customize any part "
+"of your site quickly and easily!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:22
+msgid "Font Awesome"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:23
+msgid ""
+"Font Awesome icons are fully integrated into the theme. Use them anywhere in "
+"your site in 6 different sizes!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:24
+msgid "Responsive Layout"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:25
+msgid ""
+"Boxy Pro is fully responsive and can adapt to any screen size. Resize your "
+"browser window to view it!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:26
+msgid "Testimonials"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:27
+msgid ""
+"With our testimonial post type, shortcode and widget, Displaying "
+"testimonials is a breeze."
+msgstr ""
+
+#: ../includes/theme_upgrade.php:28
+msgid "Social Media"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:29
+msgid ""
+"Want your users to stay in touch? No problem, boxy Pro has Social Media "
+"icons all throughout the theme!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:30 ../includes/theme_upgrade.php:275
+msgid "Google Map"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:31
+msgid ""
+"Boxy Pro includes Goole Map as shortcode and widget. So, you can use it "
+"anywhere in your site!"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:32
+msgid "View Demo"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:33
+msgid "Upgrade To Pro"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:34
+msgid "Ask a Question"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:35
+msgid "Documentation"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:119
+msgid "Boxy Theme"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:121
+msgid "Upgrade To Boxy Pro"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:150
+msgid ""
+"<div class=\"about-text\">  Boxy is uniquely designed, elegant looking "
+"responsive theme. It uses Skeleton Grid system and SASS to keep CSS DRY. It "
+"is multi purpose theme and suited for all types of sites. It comes with "
+"Jigoshop support. It has advanced theme options panel to customize various "
+"parts of site, footer widget area to accommodate 4 widgets.</div>"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:152 ../includes/theme_upgrade.php:312
+#, php-format
+msgid "Buy %1s Pro - $39"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:167
+msgid "New to Creating a Website?"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:167
+msgid ""
+"We will build you a complete website based on the theme you selected. We "
+"will populate content, change colors and do any look and feel customisation "
+"work you prefer."
+msgstr ""
+
+#: ../includes/theme_upgrade.php:170
+msgid "Image"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:230
+msgid "Flex Slider"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:235
+msgid "Support"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:240
+msgid "Responsive Design"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:245
+msgid "Custom Logo Option"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:250
+msgid "Social Links"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:255
+msgid "Unlimited color option"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:260
+msgid "Elastic Slider"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:265
+msgid "Page Builder Support"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:270
+msgid "Page Templates"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:280
+msgid "Demo Content"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:285
+msgid "Polylang Compatible"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:290
+msgid "Multiple Portfolio Layouts"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:295
+msgid "Multiple Blog Layouts"
+msgstr ""
+
+#: ../includes/theme_upgrade.php:300
+msgid "Page Animation"
+msgstr ""
+
+#: ../includes/custom-header.php:147
+msgid "Play background video"
+msgstr ""
+
+#: ../includes/custom-header.php:148
+msgid "Pause background video"
+msgstr ""
+
+#: ../includes/enqueue.php:69
+msgctxt "Font: on or off"
+msgid "on"
+msgstr ""
+
+#: ../includes/hooks-filters.php:4
+msgid "WordPress."
+msgstr ""
+
+#: ../includes/hooks-filters.php:4
+msgid "Theme: Boxy by"
+msgstr ""
+
+#: ../includes/hooks-filters.php:31
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: ../includes/extras.php:63
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../includes/template-tags.php:158
+msgid "Page"
+msgstr ""
+
+#: ../includes/template-tags.php:188 ../includes/template-tags.php:233
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: ../includes/template-tags.php:194 ../includes/template-tags.php:239
+#: ../includes/template-tags.php:719
+msgid "Leave a comment"
+msgstr ""
+
+#: ../includes/template-tags.php:194 ../includes/template-tags.php:239
+#: ../includes/template-tags.php:719
+msgid "1 Comment"
+msgstr ""
+
+#: ../includes/template-tags.php:194 ../includes/template-tags.php:239
+#: ../includes/template-tags.php:719
+msgid "% Comments"
+msgstr ""
+
+#: ../includes/template-tags.php:198 ../includes/template-tags.php:204
+#: ../includes/template-tags.php:243 ../includes/template-tags.php:249
+#: ../includes/template-tags.php:458 ../includes/template-tags.php:464
+msgid ", "
+msgstr ""
+
+#: ../includes/template-tags.php:200 ../includes/template-tags.php:206
+#: ../includes/template-tags.php:245 ../includes/template-tags.php:251
+#: ../includes/template-tags.php:460 ../includes/template-tags.php:466
+#, php-format
+msgid "%1$s "
+msgstr ""
+
+#: ../includes/template-tags.php:272 ../includes/template-tags.php:302
+msgid "Posts navigation"
+msgstr ""
+
+#: ../includes/template-tags.php:276 ../includes/template-tags.php:306
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../includes/template-tags.php:280 ../includes/template-tags.php:310
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../includes/template-tags.php:333
+msgid "Pingback:"
+msgstr ""
+
+#: ../includes/template-tags.php:343
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: ../includes/template-tags.php:347
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../includes/template-tags.php:368
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "- %1$s at %2$s"
+msgstr ""
+
+#: ../includes/template-tags.php:397
+#, php-format
+msgid ""
+"<span class=\"posted-on\"><i class=\"fa fa-clock-o\"></i> %1$s</span><span "
+"class=\"byline\"> %2$s</span>"
+msgstr ""
+
+#: ../includes/template-tags.php:410
+msgid "<span class=\"edit-link\"><i class=\"fa fa-edit\"></i> Edit</span>"
+msgstr ""
+
+#: ../includes/template-tags.php:413
+#, php-format
+msgid "<span class=\"read-more-link\"><i class=\"fa fa-link\"></i> %1$s</span>"
+msgstr ""
+
+#: ../includes/template-tags.php:416
+msgid "More"
+msgstr ""
+
+#: ../includes/template-tags.php:442
+#, php-format
+msgid "<span class=\"posted-on\"><i class=\"fa fa-clock-o\"></i> %1$s</span>"
+msgstr ""
+
+#: ../includes/template-tags.php:472
+msgid "<i class=\"fa fa-comments\"></i>Leave a comment"
+msgstr ""
+
+#: ../includes/template-tags.php:472
+msgid "<i class=\"fa fa-comments\"></i> 1 Comment"
+msgstr ""
+
+#: ../includes/template-tags.php:472
+msgid "<i class=\"fa fa-comments\"></i> % Comments"
+msgstr ""
+
+#: ../includes/template-tags.php:572
+#, php-format
+msgid ""
+"<p class=\"readmore\"><a href=\"%1$s\" title=\"Read %2$s\">Read more &raquo;"
+"</a></p>"
+msgstr ""
+
+#: ../includes/template-tags.php:617 ../includes/template-tags.php:620
+msgid "No Related Posts Yet!"
+msgstr ""
+
+#: ../includes/template-tags.php:643
+msgid "Post navigation"
+msgstr ""
+
+#: ../includes/template-tags.php:646
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr ""
+
+#: ../includes/template-tags.php:647
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../includes/template-tags.php:692
+msgid "First"
+msgstr ""
+
+#: ../includes/template-tags.php:709
+msgid "Last"
+msgstr ""
+
+#: ../includes/template-tags.php:901
 msgid "Meta"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "_s"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
-msgstr ""
-
-#. Description of the plugin/theme
+#: ../includes/template-tags.php:1051
+#, php-format
 msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
+"Welcome! Thank you for choosing %1$s! To fully take advantage of the best "
+"our theme can offer please make sure you visit our <a href=\"%2$s\">Welcome "
+"page</a>"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Automattic"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+#: ../includes/template-tags.php:1052
+msgid "Get started with Boxy"
 msgstr ""
