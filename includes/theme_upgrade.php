@@ -168,7 +168,7 @@ function greenr_display_upgrade() {
                                 <p>We will build you a complete website based on the theme you selected. We will populate content, change colors and do any look and feel customisation work you prefer.</p>
                             </div>
                             <div class="image-wrap">
-                                <?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/images/api.png" alt="%1$s" />',__('Image','greenr') ); ?>
+                                <?php echo sprintf ( '<img src="'. esc_url( get_template_directory_uri() ) .'/images/api.png" alt="%1$s" />',__('Image','greenr') ); ?>
                             </div>
                         </a>
                     </div>
@@ -199,7 +199,7 @@ function greenr_display_upgrade() {
                     </div>  
 
                     <div class="theme_info_right">
-                        <img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="Theme Screenshot" />
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.png" alt="Theme Screenshot" />
                     </div>
                 </div>
             </div>

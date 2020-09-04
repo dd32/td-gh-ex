@@ -243,6 +243,12 @@ a[href="themes.php?page=greenr_upgrade"] {
       margin-bottom: 15px;
       text-align: left;
       font-size:16px; }
+       #webulous-create-web .image-wrap {
+        position: absolute;
+        right:0;
+        top:0;
+        width: 170px; 
+      }
 #webulous-create-web {
   position:relative;
 }
@@ -274,6 +280,9 @@ a[href="themes.php?page=greenr_upgrade"] {
   }
   #webulous-create-web h3 {
     font-size: 2.2rem;
+  }
+   #webulous-create-web .image-wrap {
+    display: none;
   }
 }
 
