@@ -35,6 +35,23 @@ function articlepress_customize_register( $wp_customize ) {
 		'description'=> 'If you need to use Scroll to Top Option just check this box or if you don\'t need just uncheck'
 	));
 
+	// Scroll To Top Position
+	$wp_customize->add_setting( 'articlepress_scrolltotop_button_position', array(
+		'default'  	=>	1,
+		'transport'	=>	'refresh',
+		'default' => 'pos-right',
+		'sanitize_callback'  => 'articlepress_sanitize_select',
+	));
+	$wp_customize->add_control( 'articlepress_scrolltotop_button_position', array(
+		'section'	=> 	'articlepress_settings',
+		'label'		=>	esc_html__( 'Scroll To Top Button Position', 'articlepress' ),
+		'type'		=>	'select',
+		'choices' => array(
+			'pos-left'  => esc_html__('Left', 'articlepress'),
+			'pos-right' => esc_html__('Right', 'articlepress')
+		),
+	));
+
 
 
 	//=========================== Footer Social Icon
@@ -195,4 +212,18 @@ if ( ! function_exists( 'articlepress_scrolltotop_button_sanitize' ) ){
     function articlepress_scrolltotop_button_sanitize( $checked ) {
         return ( ( isset( $checked ) && true == $checked ) ? true : false );
     }
+}
+
+if ( ! function_exists( 'articlepress_sanitize_select' ) ){
+	function articlepress_sanitize_select( $input, $setting ) {
+
+		// Ensure input is a slug.
+		$input = sanitize_key( $input );
+	  
+		// Get list of choices from the control associated with the setting.
+		$choices = $setting->manager->get_control( $setting->id )->choices;
+	  
+		// If the input is a valid key, return it; otherwise, return the default.
+		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	}
 }

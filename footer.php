@@ -55,7 +55,7 @@
 
 <!-- Scroll To top -->
 <?php if( get_theme_mod('articlepress_scrolltotop_button') ): ?>
-<span class="scrolltotop"><i class="fas fa-long-arrow-alt-up"></i></span>
+<span class="scrolltotop"><i class="fas fa-long-arrow-alt-up <?php echo esc_attr( get_theme_mod('articlepress_scrolltotop_button_position') ); ?>"></i></span>
 <?php endif ?>
 
 <?php wp_footer(); ?>

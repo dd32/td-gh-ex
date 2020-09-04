@@ -40,14 +40,14 @@
 		<!-- Blog Content -->
 		<p class="blog-text">
 			<?php 
-				echo wp_trim_words( get_the_content(), 25, NULL );
+				echo wp_trim_words( get_the_content(), 40, NULL );
 			?>
 		</p>
 		
 
 		<?php if( get_theme_mod( 'blog_post_readmore_button_show_hide' ) == 1 ): ?>
 		<div class="blog-btn">
-			<a href="<?php esc_url( the_permalink() ); ?>" class="btn btn-blog"> <?php esc_html_e( get_theme_mod('blog_post_readmore_text_change'), 'articlepress' ) ?> <i class="fas fa-arrow-right"></i></a>
+			<a href="<?php esc_url( the_permalink() ); ?>" class="btn btn-blog"> <?php echo esc_attr( get_theme_mod('blog_post_readmore_text_change') ); ?> <i class="fas fa-arrow-right"></i></a>
 		</div>
 		<?php endif ?>
 
