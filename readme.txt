@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -76,11 +76,20 @@ Source:https://pxhere.com/en/photo/856028
 == Changelog ==
 
 
+= 1.0.3 - September 4 2020 =
+* Added theme topbar and topbar options 
+* Added customize options for header style settings
+* Added customize options for Main menu
+* Added customize options for Logo size and color
+* Added customize 6 new color options
+* Added customize options for footer top
+* Added customize options for footer
+
 = 1.0.2 - August 31 2020 =
 * Added unique theme prefix in function.php
 * Removed the time function and added current version number 
 
-= 1.0.1 - August 19 2020 =
+= 1.1 - August 19 2020 =
 * Fixed mobile menu Keyboard navigation 
 * Removed backspace 
 * Removed escaping function from printf function

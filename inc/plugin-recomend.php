@@ -60,8 +60,23 @@ function beshop_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Woocommerce',
+			'name'      => esc_html__('Woocommerce','beshop'),
 			'slug'      => 'woocommerce',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Click to top','beshop'),
+			'slug'      => 'click-to-top',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('MG post Display','beshop'),
+			'slug'      => 'magical-posts-display',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('MG Blocks','beshop'),
+			'slug'      => 'magical-blocks',
 			'required'  => false,
 		),
 

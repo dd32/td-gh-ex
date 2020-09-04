@@ -9,6 +9,7 @@
 	- Elements
 	- Links
 	- Forms
+	- default
 ## Layouts
 # Components
 	- Header
@@ -625,6 +626,18 @@ select {
 
 textarea {
 	width: 100%;
+}
+/* default
+--------------------------------------------- */
+.list-hide ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.text-white,
+.text-white a,
+.text-white{
+	color: #fff;
 }
 
 /*--------------------------------------------------------------

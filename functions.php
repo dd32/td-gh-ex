@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.2' );
+	define( 'BESHOP_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -50,6 +50,7 @@ if ( ! function_exists( 'beshop_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
+				'btop-menu' => esc_html__( 'Top Menu', 'beshop' ),
 				'menu-1' => esc_html__( 'Primary', 'beshop' ),
 			)
 		);
@@ -171,7 +172,7 @@ function beshop_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'font-awesome-five-all', get_template_directory_uri().'/assets/css/all.css',array(), '5.14.0' ,'all' );
 	wp_enqueue_style( 'beshop-block-style', get_template_directory_uri() . '/assets/css/block.css', array(), '1.0' );
-	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), BESHOP_VERSION ,'all' );
+	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'beshop-style', get_stylesheet_uri(), array(), BESHOP_VERSION );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), '4.5.0', true );
@@ -198,6 +199,10 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+/**
+ * add inline style
+ */
+require get_template_directory() . '/inc/inline-style.php';
 
 /**
  * Customizer additions.
@@ -205,9 +210,10 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/class-walker-nav-menu.php';
 require get_template_directory() . '/inc/class-beshop-walker-page.php';
 /**
- * nav walker
+ * customizer
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer-helper.php';
 /**
  * Recommend plugin 
  */

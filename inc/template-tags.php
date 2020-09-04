@@ -163,3 +163,31 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+
+
+function beshop_header_logo($padding = ''){
+	$beshop_logo_position = get_theme_mod( 'beshop_logo_position','center');
+?>
+	<div class="headerlogo-text text-<?php echo esc_attr($beshop_logo_position); ?>">
+				<div class="container pb-<?php echo esc_attr($padding); ?> pt-<?php echo esc_attr($padding); ?>">
+					<?php the_custom_logo(); ?>
+				<?php if (display_header_text() == true || is_customize_preview()): ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+					$beshop_description = get_bloginfo( 'description', 'display' );
+					if ( $beshop_description || is_customize_preview() ) :
+						?>
+						<p class="site-description"><?php echo $beshop_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<?php endif; ?>	
+				<?php endif; ?>	
+				</div>
+	</div>
+
+
+<?php	
+
+
+
+}
+	

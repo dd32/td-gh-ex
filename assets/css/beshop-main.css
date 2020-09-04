@@ -12,6 +12,42 @@
 
 /* header style
 --------------------------------------------- */
+/*Header top*/
+.btop-menu {
+    display: flex;
+}
+
+.btop-menu li {
+    padding: 0 10px;
+}
+.beshop-tophead, 
+.beshop-tophead a, 
+.beshop-tophead span, 
+.beshop-tophead input {
+    font-size: 13px;
+}
+.beshop-tophead a:hover{
+    color:#dedede;
+}
+.header-top-search input[type="submit"] {
+    display: none;
+}
+
+.header-top-search input[type="search"] {
+    width: 100%;
+    padding: 3px 7px;
+}
+.header-top-search {
+    width: 200px;
+}
+.header-top-search label {
+    width: 100%;
+    margin: 0;
+}
+.beshop-tophead .row{
+    align-items: baseline;
+}
+/*header middle style*/
 .beshop-header .site-title {
     font-weight: 700;
     text-transform: uppercase;
@@ -21,6 +57,9 @@ h1.site-title a {
   font-size: 72px;
   color:#4169e1;
 }
+h1.site-title a:hover {
+    text-decoration: none;
+}
 p.site-description {
     font-size: 18px;
 }
@@ -29,6 +68,7 @@ p.site-description {
     position: relative;
     display: inline-block;
     padding: 5px 50px;
+    z-index: 1;
 }
 
 p.site-description:before {
@@ -40,6 +80,17 @@ p.site-description:before {
     content: "";
     background: #E0ECDE;
     z-index: -1;
+}
+.menu-logo p.site-description:before {
+    position: inherit;
+}
+.menu-logo img {
+    max-width: 200px;
+    margin-bottom: 0;
+    height: auto;
+}
+.beshop-headerimg-top img {
+    width: 100%;
 }
 /* Widgets - sidebar
 --------------------------------------------- */
@@ -185,7 +236,6 @@ h2.widget-title {
 .entry-footer, 
 .entry-footer a {
     font-size: 12px;
-    background: #E0ECDE;
 }
 .entry-footer {
     background: #E0ECDE;

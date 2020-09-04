@@ -8,9 +8,10 @@
  *
  * @package BeShop
  */
+$beshop_topfooter_show = get_theme_mod( 'beshop_topfooter_show', 1 );
 
 ?>
-<?php if(is_active_sidebar( 'footer-widget' )): ?>
+<?php if( is_active_sidebar( 'footer-widget' ) && $beshop_topfooter_show ): ?>
 	<div class="footer-top mt-5 pb-5 pt-5 bg-dark">
 		<div class="footer-widget">
 			<div class="container">
@@ -24,6 +25,15 @@
 
 	<footer id="colophon" class="site-footer text-center">
 		<div class="site-info">
+			<p class="footer-copyright">&copy;
+				<?php
+					echo date_i18n(
+					/* translators: Copyright date format, see https://www.php.net/date */
+					_x( 'Y', 'copyright date format', 'beshop' )
+					);
+				?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+			</p><!-- .footer-copyright -->
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beshop' ) ); ?>">
 				<?php _e( 'Powered by WordPress', 'beshop' ); ?>
 			</a>
