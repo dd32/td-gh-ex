@@ -172,7 +172,6 @@ function beautify_display_upgrade() {
 
 	   <h2 class="nav-tab-wrapper">
 	        <a href="?page=beautify_upgrade" class="nav-tab<?php echo is_null($tab) ? ' nav-tab-active' : null; ?>"><?php echo $theme_data->Name; ?></a>
-	        <a href="?page=beautify_upgrade&tab=one_click_demo" class="nav-tab<?php echo $tab == 'one_click_demo' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Import Demo Data', 'beautify' );  ?></a>
 	        <a href="?page=beautify_upgrade&tab=pro_features" class="nav-tab<?php echo $tab == 'pro_features' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'PRO Features', 'beautify' );  ?></a>
             <a href="?page=beautify_upgrade&tab=free_vs_pro" class="nav-tab<?php echo $tab == 'free_vs_pro' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Free VS PRO', 'beautify' ); ?></a>
 	        <?php do_action( 'beautify_admin_more_tabs' ); ?>

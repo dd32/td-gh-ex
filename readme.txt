@@ -1,9 +1,10 @@
 === Beautify ===
 Contributors: Webulous
 Tags: custom-menu, featured-images, fixed-layout, responsive-layout, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, blog
-Requires at least: 4.2
-Tested up to: 4.9.8
-Stable tag: 1.0.6
+Requires at least: 5.0
+Requires PHP: 7.0
+Tested up to: 5.5.1
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -46,6 +47,9 @@ Enable/Disable featured images visibility.
 
 == Changelog ==
 
+== 1.0.7 =
+* Style issue fixed.
+
 = 1.0.6 = 
 * WPForms Lite plugin action removed.
 
@@ -68,8 +72,8 @@ Enable/Disable featured images visibility.
 
 == Upgrade Notice ==
 
-= 1.0.6 = 
-* WPForms Lite plugin action removed.
+== 1.0.7 =
+* Style issue fixed.
 
 Beautify WordPress Theme bundles the following third-party resources:
 == Resources ==

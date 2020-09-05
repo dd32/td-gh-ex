@@ -353,7 +353,7 @@ function beautify_remove_wc_breadcrumbs() {
 
 
 /* Demo importer */
-add_filter( 'pt-ocdi/import_files', 'beautify_import_demo_data' );
+//add_filter( 'pt-ocdi/import_files', 'beautify_import_demo_data' );
 if ( ! function_exists( 'beautify_import_demo_data' ) ) {
 	function beautify_import_demo_data() {
 	  return array(
@@ -368,7 +368,7 @@ if ( ! function_exists( 'beautify_import_demo_data' ) ) {
 	}
 }
 
-add_action( 'pt-ocdi/after_import', 'beautify_after_import' );
+//add_action( 'pt-ocdi/after_import', 'beautify_after_import' );
 if ( ! function_exists( 'beautify_after_import' ) ) {
 	function beautify_after_import( $selected_import ) { 
 		$importer_name  = __('Demo Import','beautify');
@@ -418,4 +418,4 @@ function beautify_is_plugin_installed($plugin_title)
 
 /* To Hide Branding message in One Click demo import*/
 
-add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
+//add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
