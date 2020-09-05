@@ -20,6 +20,9 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.1.3 - 05 September 2020 =
+* Fixed the "Latest from Blog" section order.
+
 = 1.1.2 - 01 September 2020 =
 * Added full support for Elementor locations.
 * Fixed blog layout style bug.

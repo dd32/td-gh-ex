@@ -68,6 +68,6 @@ function agama_blue_blog_heading() {
     <?php 
     endif;
 }
-add_action( 'agama/after_header_wrapper', 'agama_blue_blog_heading', 40 );
+add_action( 'agama/before_content', 'agama_blue_blog_heading', 20 );
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
