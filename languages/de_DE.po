@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-08-28 00:22-0400\n"
-"PO-Revision-Date: 2020-08-28 00:22-0400\n"
+"POT-Creation-Date: 2020-09-05 00:25-0400\n"
+"PO-Revision-Date: 2020-09-05 00:25-0400\n"
 "Last-Translator: \n"
 "Language-Team: Stephan Ermann <info@bewegungsfelder.de>\n"
 "Language: de\n"
@@ -296,7 +296,7 @@ msgstr "MySpace"
 
 #: ../inc/catcheverest-functions.php:995
 #: ../inc/panel/customizer/customizer.php:694
-#: ../inc/panel/customizer/customizer.php:1345
+#: ../inc/panel/customizer/customizer.php:1314
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -876,48 +876,32 @@ msgid "Featured Post Slider #%s"
 msgstr "Hervorgehobener Beitrags Slider #%s"
 
 #: ../inc/panel/customizer/customizer.php:1208
-msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view "
-"full effects."
-msgstr ""
-"WARNUNG: Setzt alle Einstellungen auf Werkszustand zurück. Lade die Seite "
-"neu, um die Änderungen zu sehen."
-
-#: ../inc/panel/customizer/customizer.php:1210
-msgid "Reset all settings"
-msgstr "Alle Einstellungen zurücksetzen …"
-
-#: ../inc/panel/customizer/customizer.php:1221
-msgid "Check to reset all settings to default"
-msgstr "Anklicken um alle Einstellungen auf Standart zurückzusetzen"
-
-#: ../inc/panel/customizer/customizer.php:1231
-#: ../inc/panel/customizer/customizer.php:1242
+#: ../inc/panel/customizer/customizer.php:1219
 msgid "Important Links"
 msgstr "wichtige Links"
 
-#: ../inc/panel/customizer/customizer.php:1324
+#: ../inc/panel/customizer/customizer.php:1293
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/customizer/customizer.php:1355
+#: ../inc/panel/customizer/customizer.php:1324
 msgid "Catch Everest Theme by "
 msgstr "Catch Everest Theme by "
 
-#: ../inc/panel/customizer/customizer.php:1364
+#: ../inc/panel/customizer/customizer.php:1333
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/panel/customizer/customizer.php:1375
-#: ../inc/panel/customizer/customizer.php:1378
+#: ../inc/panel/customizer/customizer.php:1344
+#: ../inc/panel/customizer/customizer.php:1347
 msgid "Copyright"
 msgstr "Urheberrecht"
 
-#: ../inc/panel/customizer/customizer.php:1375
+#: ../inc/panel/customizer/customizer.php:1344
 msgid "All Rights Reserved"
 msgstr "Alle Rechte vorbehalten"
 
-#: ../inc/panel/customizer/customizer.php:1378
+#: ../inc/panel/customizer/customizer.php:1347
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved.  "
@@ -1146,6 +1130,19 @@ msgstr "Suche"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Archive"
+
+#~ msgid ""
+#~ "Caution: Reset all settings to default. Refresh the page after save to "
+#~ "view full effects."
+#~ msgstr ""
+#~ "WARNUNG: Setzt alle Einstellungen auf Werkszustand zurück. Lade die Seite "
+#~ "neu, um die Änderungen zu sehen."
+
+#~ msgid "Reset all settings"
+#~ msgstr "Alle Einstellungen zurücksetzen …"
+
+#~ msgid "Check to reset all settings to default"
+#~ msgstr "Anklicken um alle Einstellungen auf Standart zurückzusetzen"
 
 #~ msgid "Audio"
 #~ msgstr "Audio"

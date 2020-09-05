@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-08-28 00:22-0400\n"
-"PO-Revision-Date: 2020-08-28 00:22-0400\n"
+"POT-Creation-Date: 2020-09-05 00:25-0400\n"
+"PO-Revision-Date: 2020-09-05 00:25-0400\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -295,7 +295,7 @@ msgstr "MySpace"
 
 #: ../inc/catcheverest-functions.php:995
 #: ../inc/panel/customizer/customizer.php:694
-#: ../inc/panel/customizer/customizer.php:1345
+#: ../inc/panel/customizer/customizer.php:1314
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -869,48 +869,32 @@ msgid "Featured Post Slider #%s"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:1208
-msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view "
-"full effects."
-msgstr ""
-"Attention&nbsp;: remettre tous les paramètres par défaut. Recharger la page "
-"après l'enregistrement pour en voir les effets."
-
-#: ../inc/panel/customizer/customizer.php:1210
-msgid "Reset all settings"
-msgstr "Réinitialiser tous les paramètres"
-
-#: ../inc/panel/customizer/customizer.php:1221
-msgid "Check to reset all settings to default"
-msgstr "Valider pour remettre toutes les valeurs par défauts des paramètres"
-
-#: ../inc/panel/customizer/customizer.php:1231
-#: ../inc/panel/customizer/customizer.php:1242
+#: ../inc/panel/customizer/customizer.php:1219
 msgid "Important Links"
 msgstr "Liens importants"
 
-#: ../inc/panel/customizer/customizer.php:1324
+#: ../inc/panel/customizer/customizer.php:1293
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/customizer/customizer.php:1355
+#: ../inc/panel/customizer/customizer.php:1324
 msgid "Catch Everest Theme by "
 msgstr "Catch Everest Theme by "
 
-#: ../inc/panel/customizer/customizer.php:1364
+#: ../inc/panel/customizer/customizer.php:1333
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/panel/customizer/customizer.php:1375
-#: ../inc/panel/customizer/customizer.php:1378
+#: ../inc/panel/customizer/customizer.php:1344
+#: ../inc/panel/customizer/customizer.php:1347
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/customizer/customizer.php:1375
+#: ../inc/panel/customizer/customizer.php:1344
 msgid "All Rights Reserved"
 msgstr "Tous droits réservés"
 
-#: ../inc/panel/customizer/customizer.php:1378
+#: ../inc/panel/customizer/customizer.php:1347
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved.  "
@@ -1137,6 +1121,19 @@ msgstr "Recherche"
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Archives"
+
+#~ msgid ""
+#~ "Caution: Reset all settings to default. Refresh the page after save to "
+#~ "view full effects."
+#~ msgstr ""
+#~ "Attention&nbsp;: remettre tous les paramètres par défaut. Recharger la "
+#~ "page après l'enregistrement pour en voir les effets."
+
+#~ msgid "Reset all settings"
+#~ msgstr "Réinitialiser tous les paramètres"
+
+#~ msgid "Check to reset all settings to default"
+#~ msgstr "Valider pour remettre toutes les valeurs par défauts des paramètres"
 
 #~ msgid "Audio"
 #~ msgstr "Audio"

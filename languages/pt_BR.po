@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-08-28 00:23-0400\n"
-"PO-Revision-Date: 2020-08-28 00:23-0400\n"
+"POT-Creation-Date: 2020-09-05 00:25-0400\n"
+"PO-Revision-Date: 2020-09-05 00:25-0400\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -295,7 +295,7 @@ msgstr "MySpace"
 
 #: ../inc/catcheverest-functions.php:995
 #: ../inc/panel/customizer/customizer.php:694
-#: ../inc/panel/customizer/customizer.php:1345
+#: ../inc/panel/customizer/customizer.php:1314
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -880,46 +880,32 @@ msgid "Featured Post Slider #%s"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:1208
-msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view "
-"full effects."
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:1210
-msgid "Reset all settings"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:1221
-msgid "Check to reset all settings to default"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:1231
-#: ../inc/panel/customizer/customizer.php:1242
+#: ../inc/panel/customizer/customizer.php:1219
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1324
+#: ../inc/panel/customizer/customizer.php:1293
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/customizer/customizer.php:1355
+#: ../inc/panel/customizer/customizer.php:1324
 msgid "Catch Everest Theme by "
 msgstr "Tema Catch Everest por: "
 
-#: ../inc/panel/customizer/customizer.php:1364
+#: ../inc/panel/customizer/customizer.php:1333
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/panel/customizer/customizer.php:1375
-#: ../inc/panel/customizer/customizer.php:1378
+#: ../inc/panel/customizer/customizer.php:1344
+#: ../inc/panel/customizer/customizer.php:1347
 msgid "Copyright"
 msgstr "Direitos Autorais "
 
-#: ../inc/panel/customizer/customizer.php:1375
+#: ../inc/panel/customizer/customizer.php:1344
 msgid "All Rights Reserved"
 msgstr "-  Todos os Direitos são Reservados"
 
-#: ../inc/panel/customizer/customizer.php:1378
+#: ../inc/panel/customizer/customizer.php:1347
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved.  "

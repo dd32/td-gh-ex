@@ -1202,29 +1202,6 @@ function catcheverest_customize_register( $wp_customize ) {
 		);
 	}
 
-
-	// Reset
-	$wp_customize->add_section( 'catcheverest_reset_all_settings', array(
-		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catch-everest' ),
-		'priority' 		=> 700,
-		'title'    		=> __( 'Reset all settings', 'catch-everest' ),
-	) );
-
-	$wp_customize->add_setting( 'catcheverest_options[reset_all_settings]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback' => 'catcheverest_sanitize_checkbox',
-		'type'				=> 'option',
-		'transport'			=> 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'catcheverest_options[reset_all_settings]', array(
-		'label'    => __( 'Check to reset all settings to default', 'catch-everest' ),
-		'section'  => 'catcheverest_reset_all_settings',
-		'settings' => 'catcheverest_options[reset_all_settings]',
-		'type'     => 'checkbox'
-	) );
-	// Reset all settings to default end
-
 	//Important Links
 	$wp_customize->add_section( 'important_links', array(
 		'priority' 		=> 999,
@@ -1273,18 +1250,10 @@ add_action( 'customize_save', 'catcheverest_customize_preview' );
  * @since Catch Everest 1.4
  */
 function catcheverest_customize_scripts() {
-	wp_enqueue_script( 'catcheverest_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
-	$catcheverest_data = array(
-		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-everest' ),
-		'reset_options' => array(
-			'catcheverest_options[reset_layout]',
-			'catcheverest_options[reset_all_settings]',
-		)
-	);
+	//Enqueue Customizer CSS
+	wp_enqueue_style( 'catchevolution-custom-controls-css', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'css/customizer.css' );
 
-	// Send reset message as object to custom customizer js
-	wp_localize_script( 'catcheverest_customizer_custom', 'catcheverest_data', $catcheverest_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'catcheverest_customize_scripts' );
 
@@ -1380,26 +1349,6 @@ function catcheverest_assets(){
 	return $catcheverest_content;
 }
 
-/**
- * Adds reset option functionalities
- * @return [type] [description]
- */
-function catcheverest_reset() {
-	global $catcheverest_options_settings;
-	
-	$options = $catcheverest_options_settings;
-
-	if ( isset( $options['reset_all_settings'] ) && '1' === $options['reset_all_settings'] ) {
-
-		delete_option( 'catcheverest_options' );
-
-		remove_theme_mods();
-
-		return;
-	}
-}
-add_action( 'customize_save_after',  'catcheverest_reset' );
-
 
 //Active callbacks for customizer
 require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
@@ -1409,3 +1358,6 @@ require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/cust
 
 // Add Upgrade to Pro Button.
 require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/upgrade-button/class-customize.php';
+
+// Add Reset Button.
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/reset.php';
