@@ -61,7 +61,7 @@
 								<?php } else { ?>
 								<?php if( get_post_meta(get_the_ID(),'icons', true ) ): ?>
 									<div class="service-icon specia-icon-wrap specia-icon-effect-5 specia-icon-effect-5a">
-										<i class="specia-icon fa <?php echo get_post_meta( get_the_ID(),'icons', true); ?>"></i> 
+										<i class="specia-icon fa <?php echo esc_attr(get_post_meta( get_the_ID(),'icons', true)); ?>"></i> 
 									</div>
 							<?php
 								endif;
