@@ -57,19 +57,22 @@
                 <?php }?>
               <?php endif; ?>      
             </div>
-            <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_display_fixed_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-              <button role="tab" onclick="automobile_car_dealer_responsive_menu_open()" class="mobiletoggle"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
-              </button>
-            </div>
+            <?php 
+              if(has_nav_menu('primary')){ ?>
+              <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_display_fixed_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+                <button role="tab" onclick="automobile_car_dealer_responsive_menu_open()" class="mobiletoggle"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
+                </button>
+              </div>
+            <?php }?>
           </div>
           <div class="col-lg-9 col-md-5 padding0">
             <div class="topbar row m-0">
               <div class="col-lg-7 col-md-7">
                 <?php if( get_theme_mod( 'automobile_car_dealer_mail','' ) != '') { ?>
-                  <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span>
+                  <a href="mailto:<?php echo esc_url( get_theme_mod('automobile_car_dealer_mail','') ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?><span class="screen-reader-text"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span></a>
                 <?php }?>
                 <?php if( get_theme_mod( 'automobile_car_dealer_phone','' ) != '') { ?>
-                  <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span>
+                  <a href="tel:<?php echo esc_url( get_theme_mod('automobile_car_dealer_phone','' )); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?><span class="screen-reader-text"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span></a>
                 <?php }?>
               </div>
               <div class="col-lg-4 col-md-4">
@@ -113,20 +116,22 @@
                     </div>
                     <nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'automobile-car-dealer' ); ?>">
                       <?php 
-                        wp_nav_menu( array( 
-                          'theme_location' => 'primary',
-                          'container_class' => 'main-menu-navigation clearfix' ,
-                          'menu_class' => 'clearfix',
-                          'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                          'fallback_cb' => 'wp_page_menu',
-                        ) ); 
+                        if(has_nav_menu('primary')){
+                          wp_nav_menu( array( 
+                            'theme_location' => 'primary',
+                            'container_class' => 'main-menu-navigation clearfix' ,
+                            'menu_class' => 'clearfix',
+                            'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                            'fallback_cb' => 'wp_page_menu',
+                          ) );
+                        } 
                       ?>
                     </nav>
                     <?php if( get_theme_mod( 'automobile_car_dealer_mail','' ) != '') { ?>
-                      <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span>
-                      <?php }?>
-                      <?php if( get_theme_mod( 'automobile_car_dealer_phone','' ) != '') { ?>
-                      <span><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span>
+                      <a class="mail" href="mailto:<?php echo esc_url( get_theme_mod('automobile_car_dealer_mail','') ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span></a>
+                    <?php }?>
+                    <?php if( get_theme_mod( 'automobile_car_dealer_phone','' ) != '') { ?>
+                      <a class="call" href="tel:<?php echo esc_url( get_theme_mod('automobile_car_dealer_phone','' )); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span></a>
                     <?php }?>
                     <div class="socialbox">
                       <?php if( get_theme_mod( 'automobile_car_dealer_cont_facebook') != '') { ?>

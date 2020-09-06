@@ -1103,6 +1103,16 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
         ),
 	) );
 
+	$wp_customize->add_setting('automobile_car_dealer_option_slider_height',array(
+		'default'=> __('550','automobile-car-dealer'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automobile_car_dealer_option_slider_height',array(
+		'label'	=> __('Slider Height','automobile-car-dealer'),
+		'section'=> 'automobile_car_dealer_slidersettings',
+		'type'=> 'text'
+	));
+
 	//Slider excerpt
 	$wp_customize->add_setting( 'automobile_car_dealer_slider_excerpt_number', array(
 		'default'              => 30,

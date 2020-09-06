@@ -183,7 +183,7 @@
 		$automobile_car_dealer_custom_css .='}';
 	}elseif($automobile_car_dealer_woo_product_sale_position == 'Left' ){
 		$automobile_car_dealer_custom_css .='.woocommerce ul.products li.product .onsale{';
-			$automobile_car_dealer_custom_css .=' left:-6px; right:auto;';
+			$automobile_car_dealer_custom_css .=' left:0; right:auto;';
 		$automobile_car_dealer_custom_css .='}';
 	}
 
@@ -367,3 +367,9 @@
 			$automobile_car_dealer_custom_css .='display: none;';
 		$automobile_car_dealer_custom_css .='}';
 	}
+
+	// slider height
+	$automobile_car_dealer_option_slider_height = get_theme_mod('automobile_car_dealer_option_slider_height');
+	$automobile_car_dealer_custom_css .='#slider img{';
+		$automobile_car_dealer_custom_css .='height: '.esc_html($automobile_car_dealer_option_slider_height).'px;';
+	$automobile_car_dealer_custom_css .='}';

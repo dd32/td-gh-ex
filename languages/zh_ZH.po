@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automobile Car Dealer\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-07-29 17:39+0530\n"
+"PO-Revision-Date: 2020-08-20 13:51+0530\n"
 "Language-Team: buywptemplates <support@buywptemplates.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "看来您走错了路"
 msgid "Dont worry it happens to the best of us."
 msgstr "不要担心，这对我们最好的人会发生。"
 
-#: 404.php:15 no-results.php:20 inc/customizer.php:1491
+#: 404.php:15 no-results.php:20 inc/customizer.php:1501
 msgid "Back to Home Page"
 msgstr "返回首页"
 
@@ -162,7 +162,7 @@ msgstr "编辑"
 msgid "Search Results for: %s"
 msgstr "搜索结果：％s"
 
-#: no-results.php:9 inc/customizer.php:1501
+#: no-results.php:9 inc/customizer.php:1511
 msgid "Nothing Found"
 msgstr "没有发现"
 
@@ -170,7 +170,7 @@ msgstr "没有发现"
 msgid "Ready to publish your first post? Get started here."
 msgstr "准备发布您的第一篇文章吗？从这里开始。"
 
-#: no-results.php:14 inc/customizer.php:1512
+#: no-results.php:14 inc/customizer.php:1522
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -636,287 +636,295 @@ msgstr "中央"
 msgid "Slider Content Layout"
 msgstr "滑块内容布局"
 
-#: inc/customizer.php:1101 inc/customizer.php:1642
+#: inc/customizer.php:1101 inc/customizer.php:1652
 msgid "Left"
 msgstr "剩下"
 
-#: inc/customizer.php:1102 inc/customizer.php:1633 inc/customizer.php:1641
+#: inc/customizer.php:1102 inc/customizer.php:1643 inc/customizer.php:1651
 msgid "Right"
 msgstr "对"
 
-#: inc/customizer.php:1115
+#: inc/customizer.php:1107
+msgid "550"
+msgstr "550"
+
+#: inc/customizer.php:1111
+msgid "Slider Height"
+msgstr "滑块高度"
+
+#: inc/customizer.php:1125
 msgid "Slider Content Limit"
 msgstr "滑块内容限制"
 
-#: inc/customizer.php:1132
+#: inc/customizer.php:1142
 msgid "Slider Image Opacity"
 msgstr "滑块图像不透明度"
 
-#: inc/customizer.php:1152
+#: inc/customizer.php:1162
 msgid "Our Project Section"
 msgstr "我们的项目科"
 
-#: inc/customizer.php:1153
+#: inc/customizer.php:1163
 msgid "Add Our Project sections below."
 msgstr "在下面添加我们的项目部分。"
 
-#: inc/customizer.php:1162
+#: inc/customizer.php:1172
 msgid "Title"
 msgstr "标题"
 
-#: inc/customizer.php:1182
+#: inc/customizer.php:1192
 msgid "Select post"
 msgstr "选择帖子"
 
-#: inc/customizer.php:1205
+#: inc/customizer.php:1215
 msgid "Select Category to display Latest Post"
 msgstr "选择类别以显示最新帖子"
 
-#: inc/customizer.php:1218
+#: inc/customizer.php:1228
 msgid "Project Content Limit"
 msgstr "项目内容限制"
 
-#: inc/customizer.php:1238
+#: inc/customizer.php:1248
 msgid "Category Content Limit"
 msgstr "类别内容限制"
 
-#: inc/customizer.php:1251
+#: inc/customizer.php:1261
 msgid "Footer Text"
 msgstr "页脚文字"
 
-#: inc/customizer.php:1260
+#: inc/customizer.php:1270
 msgid "Footer Background Color"
 msgstr "页脚背景颜色"
 
-#: inc/customizer.php:1269
+#: inc/customizer.php:1279
 msgid "Footer Background Image"
 msgstr "页脚背景图片"
 
-#: inc/customizer.php:1279
+#: inc/customizer.php:1289
 msgid "Footer widget area"
 msgstr "页脚小部件区域"
 
-#: inc/customizer.php:1281
+#: inc/customizer.php:1291
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets"
 msgstr "在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加小部件"
 
-#: inc/customizer.php:1283
+#: inc/customizer.php:1293
 msgid "One"
 msgstr "一"
 
-#: inc/customizer.php:1284
+#: inc/customizer.php:1294
 msgid "Two"
 msgstr "二"
 
-#: inc/customizer.php:1285
+#: inc/customizer.php:1295
 msgid "Three"
 msgstr "三"
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1296
 msgid "Four"
 msgstr "四个"
 
-#: inc/customizer.php:1296
+#: inc/customizer.php:1306
 msgid "Enable / Disable Back To Top"
 msgstr "启用/禁用返回页首"
 
-#: inc/customizer.php:1306
+#: inc/customizer.php:1316
 msgid "Back to Top Icon"
 msgstr "返回页首图标"
 
-#: inc/customizer.php:1318
+#: inc/customizer.php:1328
 msgid "Back To Top Icon Font Size"
 msgstr "返回页首图标字体大小"
 
-#: inc/customizer.php:1328 inc/customizer.php:1337
+#: inc/customizer.php:1338 inc/customizer.php:1347
 msgid "Right align"
 msgstr "右对齐"
 
-#: inc/customizer.php:1333
+#: inc/customizer.php:1343
 msgid "Back To Top"
 msgstr "回到顶部"
 
-#: inc/customizer.php:1336
+#: inc/customizer.php:1346
 msgid "Left align"
 msgstr "左对齐"
 
-#: inc/customizer.php:1338
+#: inc/customizer.php:1348
 msgid "Center align"
 msgstr "居中对齐"
 
-#: inc/customizer.php:1348
+#: inc/customizer.php:1358
 msgid "Top Bottom Scroll Padding (px)"
 msgstr "顶部底部滚动填充（px）"
 
-#: inc/customizer.php:1363
+#: inc/customizer.php:1373
 msgid "Left Right Scroll Padding (px)"
 msgstr "左右滚动填充（px）"
 
-#: inc/customizer.php:1378
+#: inc/customizer.php:1388
 msgid "Back to Top Border Radius (px)"
 msgstr "返回页首边框半径（px）"
 
-#: inc/customizer.php:1392
+#: inc/customizer.php:1402
 msgid "Copyright Text"
 msgstr "版权文字"
 
-#: inc/customizer.php:1394
+#: inc/customizer.php:1404
 msgid "Add some text for footer like copyright etc."
 msgstr "为页脚添加一些文本，例如版权等。"
 
-#: inc/customizer.php:1400
+#: inc/customizer.php:1410
 msgid "Responsive Media"
 msgstr "响应媒体"
 
-#: inc/customizer.php:1410
+#: inc/customizer.php:1420
 msgid "Display Slider"
 msgstr "显示滑块"
 
-#: inc/customizer.php:1420
+#: inc/customizer.php:1430
 msgid "Display Slider Button"
 msgstr "显示滑块按钮"
 
-#: inc/customizer.php:1430
+#: inc/customizer.php:1440
 msgid "Display Sidebar"
 msgstr "显示侧边栏"
 
-#: inc/customizer.php:1440
+#: inc/customizer.php:1450
 msgid "Display Scroll To Top"
 msgstr "显示滚动到顶部"
 
-#: inc/customizer.php:1450
+#: inc/customizer.php:1460
 msgid "Display Sticky Header"
 msgstr "显示粘页眉"
 
-#: inc/customizer.php:1460
+#: inc/customizer.php:1470
 msgid "Display Preloader"
 msgstr "显示预加载器"
 
-#: inc/customizer.php:1466
+#: inc/customizer.php:1476
 msgid "404 Page Not Found / No Result"
 msgstr "找不到404页/无结果"
 
-#: inc/customizer.php:1471
+#: inc/customizer.php:1481
 msgid "404 Not Found"
 msgstr "找不到404"
 
-#: inc/customizer.php:1475
+#: inc/customizer.php:1485
 msgid "404 Heading"
 msgstr "404标题"
 
-#: inc/customizer.php:1481
+#: inc/customizer.php:1491
 msgid ""
 "Looks like you have taken a wrong turn. Dont worry it happens to the best of "
 "us."
 msgstr "看来您走错了路。不要担心，这对我们最好的人会发生。"
 
-#: inc/customizer.php:1485
+#: inc/customizer.php:1495
 msgid "404 Content"
 msgstr "404内容"
 
-#: inc/customizer.php:1495
+#: inc/customizer.php:1505
 msgid "404 Button"
 msgstr "404按钮"
 
-#: inc/customizer.php:1505
+#: inc/customizer.php:1515
 msgid "No Search Results Heading"
 msgstr "没有搜索结果标题"
 
-#: inc/customizer.php:1506
+#: inc/customizer.php:1516
 msgid "The search page heading display when no results are found."
 msgstr "未找到结果时显示搜索页面标题。"
 
-#: inc/customizer.php:1516
+#: inc/customizer.php:1526
 msgid "No Search Results Text"
 msgstr "没有搜索结果文字"
 
-#: inc/customizer.php:1517
+#: inc/customizer.php:1527
 msgid "The search page text display when no results are found."
 msgstr "未找到结果时显示搜索页面文本。"
 
-#: inc/customizer.php:1524
+#: inc/customizer.php:1534
 msgid "Woocommerce Settings"
 msgstr "Woocommerce设置"
 
-#: inc/customizer.php:1525
+#: inc/customizer.php:1535
 msgid "The below settings are apply on woocommerce pages."
 msgstr "以下设置适用于woocommerce页面。"
 
-#: inc/customizer.php:1536
+#: inc/customizer.php:1546
 msgid "Product per columns"
 msgstr "每列产品"
 
-#: inc/customizer.php:1552
+#: inc/customizer.php:1562
 msgid "Product per page"
 msgstr "每页产品"
 
-#: inc/customizer.php:1563
+#: inc/customizer.php:1573
 msgid "Enable / Disable shop page sidebar"
 msgstr "启用/禁用商店页面侧边栏"
 
-#: inc/customizer.php:1573
+#: inc/customizer.php:1583
 msgid "Enable / Disable product page sidebar"
 msgstr "启用/禁用产品页面侧边栏"
 
-#: inc/customizer.php:1583
+#: inc/customizer.php:1593
 msgid "Enable / Disable Related product"
 msgstr "启用/禁用相关产品"
 
-#: inc/customizer.php:1592
+#: inc/customizer.php:1602
 msgid "Woocommerce Product Sale Border Radius"
 msgstr "Woocommerce产品销售边界半径"
 
-#: inc/customizer.php:1607
+#: inc/customizer.php:1617
 msgid "Woocommerce Product Sale Top Bottom Padding"
 msgstr "Woocommerce产品销售顶部底部填充"
 
-#: inc/customizer.php:1622
+#: inc/customizer.php:1632
 msgid "Woocommerce Product Sale Left Right Padding"
 msgstr "Woocommerce产品销售左右填充"
 
-#: inc/customizer.php:1638
+#: inc/customizer.php:1648
 msgid "Woocommerce Product Sale Position"
 msgstr "Woocommerce产品销售职位"
 
-#: inc/customizer.php:1652
+#: inc/customizer.php:1662
 msgid "Button Top Bottom Padding (px)"
 msgstr "按钮顶部底部填充（像素）"
 
-#: inc/customizer.php:1667
+#: inc/customizer.php:1677
 msgid "Button Right Left Padding (px)"
 msgstr "按钮右左填充（px）"
 
-#: inc/customizer.php:1682
+#: inc/customizer.php:1692
 msgid "Button Border Radius (px)"
 msgstr "按钮边框半径（像素）"
 
-#: inc/customizer.php:1697
+#: inc/customizer.php:1707
 msgid "Enable / Disable product border"
 msgstr "启用/禁用产品边框"
 
-#: inc/customizer.php:1707
+#: inc/customizer.php:1717
 msgid "Product Top Bottom Padding (px)"
 msgstr "产品顶部底部填充（像素）"
 
-#: inc/customizer.php:1722
+#: inc/customizer.php:1732
 msgid "Product Right Left Padding (px)"
 msgstr "产品右左填充（px）"
 
-#: inc/customizer.php:1737
+#: inc/customizer.php:1747
 msgid "Product Border Radius (px)"
 msgstr "产品边界半径（px）"
 
-#: inc/customizer.php:1752
+#: inc/customizer.php:1762
 msgid "Product Box Shadow (px)"
 msgstr "产品框阴影（px）"
 
-#: inc/customizer.php:1839
+#: inc/customizer.php:1849
 msgid "Automobile Pro"
 msgstr "汽车专业"
 
-#: inc/customizer.php:1840
+#: inc/customizer.php:1850
 msgid "Go Pro"
 msgstr "专业版"
 

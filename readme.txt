@@ -2,7 +2,7 @@
 Contributors: Buywptemplates
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats , translation-ready, rtl-language-support, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -164,6 +164,16 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 * added woocommerce products sale position option.
 * added woocommerce products sale top bottom padding option.
 * added woocommerce products sale left right padding option.
+* Updated mo and po files of different languages.
+
+= 0.5.5 =
+* Added slider height option.
+* Changed responsive menu js.
+* Added clickable email address link. 
+* Added clickable phone no link.
+* Changed license and license url from style.css.
+* Done with translatable and escaped placeholder in icon.changer.php.
+* Added function for primary menu.  
 * Updated mo and po files of different languages.
 
 == Resources ==

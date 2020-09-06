@@ -23,7 +23,7 @@ class Automobile_Car_Dealer_Icon_Changer extends WP_Customize_Control{
 
                 <ul class="icon-list clearfix">
                     <div class="social-icon-search">
-                        <input class="socialInput" type="text" placeholder="Search Icon">
+                        <input class="socialInput" type="text" placeholder="<?php echo esc_attr_x( 'Search Icon', 'placeholder','automobile-car-dealer' ); ?>">
                     </div>
                     <?php
                     $Automobile_Car_Dealer_Icon_Changer_array = Automobile_Car_Dealer_Icon_Changer_array();

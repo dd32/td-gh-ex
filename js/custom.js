@@ -9,84 +9,45 @@ jQuery(function($){
 });
 
 function automobile_car_dealer_responsive_menu_open() {
-	window.automobile_car_dealer_mobileMenu=true;
 	jQuery(".menu-brand").addClass('show');
 }
 function automobile_car_dealer_responsive_menu_close() {
-	window.automobile_car_dealer_mobileMenu=false;
 	jQuery(".menu-brand").removeClass('show');
 }
 
-jQuery(document).ready(function () {
+var automobile_car_dealer_Keyboard_loop = function (elem) {
 
-	window.automobile_car_dealer_currentfocus=null;
-  	automobile_car_dealer_checkfocusdElement();
-	var automobile_car_dealer_body = document.querySelector('body');
-	automobile_car_dealer_body.addEventListener('keyup', automobile_car_dealer_check_tab_press);
-	var automobile_car_dealer_gotoHome = false;
-	var automobile_car_dealer_gotoClose = false;
-	window.automobile_car_dealer_mobileMenu=false;
- 	function automobile_car_dealer_checkfocusdElement(){
-	 	if(window.automobile_car_dealer_currentfocus=document.activeElement.className){
-		 	window.automobile_car_dealer_currentfocus=document.activeElement.className;
-	 	}
- 	}
-	function automobile_car_dealer_check_tab_press(e) {
-		"use strict";
-		// pick passed event or global event object if passed one is empty
-		e = e || event;
-		var activeElement;
+    var automobile_car_dealer_tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
 
-		if(window.innerWidth < 999){
-			if (e.keyCode == 9) {
-				if(window.automobile_car_dealer_mobileMenu){
-					if (!e.shiftKey) {
-						if(automobile_car_dealer_gotoHome) {
-							jQuery( "#navbar-header input.search-field" ).focus();
-						}
-					}
-					if (jQuery("a.closebtn.responsive-menu").is(":focus")) {
-						automobile_car_dealer_gotoHome = true;
-					} else {
-						automobile_car_dealer_gotoHome = false;
-					}
+    var automobile_car_dealer_firstTabbable = automobile_car_dealer_tabbable.first();
+    var automobile_car_dealer_lastTabbable = automobile_car_dealer_tabbable.last();
+    /*set focus on first input*/
+    automobile_car_dealer_firstTabbable.focus();
 
-			}else{
+    /*redirect last tab to first input*/
+    automobile_car_dealer_lastTabbable.on('keydown', function (e) {
+        if ((e.which === 9 && !e.shiftKey)) {
+            e.preventDefault();
+            automobile_car_dealer_firstTabbable.focus();
+        }
+    });
 
-					if(window.automobile_car_dealer_currentfocus=="mobiletoggle"){
-						jQuery( "" ).focus();
-					}
-				}
-			}
-		}
-		if (e.shiftKey && e.keyCode == 9) {
-			if(window.innerWidth < 999){
-				if(window.automobile_car_dealer_currentfocus=="header-search"){
-					jQuery(".mobiletoggle").focus();
-				}else{
-					if(window.automobile_car_dealer_mobileMenu){
-						if(automobile_car_dealer_gotoClose){
-							jQuery("a.closebtn.responsive-menu").focus();
-						}
-						if (jQuery( "#navbar-header input.search-field" ).is(":focus")) {
-							automobile_car_dealer_gotoClose = true;
-						} else {
-							automobile_car_dealer_gotoClose = false;
-					}
-				
-				}else{
+    /*redirect first shift+tab to last input*/
+    automobile_car_dealer_firstTabbable.on('keydown', function (e) {
+        if ((e.which === 9 && e.shiftKey)) {
+            e.preventDefault();
+            automobile_car_dealer_lastTabbable.focus();
+        }
+    });
 
-					if(window.automobile_car_dealer_mobileMenu){
-					}
-				}
-
-				}
-			}
-		}
-	 	automobile_car_dealer_checkfocusdElement();
-	}
-
-});
+    /* allow escape key to close insiders div */
+    elem.on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            elem.hide();
+        }
+        ;
+    });
+};
 
 // scroll
 jQuery(document).ready(function () {
@@ -114,6 +75,10 @@ jQuery(function($){
 		$(".loader").delay(2000).fadeOut("slow");
 	    $(".frame").delay(2000).fadeOut("slow");
 	})
+
+	$('.mobiletoggle').click(function () {
+        automobile_car_dealer_Keyboard_loop($('.menu-brand'));
+    });
 });
 
 (function( $ ) {
