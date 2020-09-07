@@ -125,16 +125,13 @@
                     return name.replace(/\[|\]/g, '').replace( themeOptionsPrefix, '');
               },
               _is_external : function( _href  ) {
-                    if ( 'string' !== typeof(_href) )
-                      return false;
-
-                    var _thisHref = _href.trim(),
+                    var _thisHref = $.trim( _href ),
                         _main_domain = (location.host).split('.').slice(-2).join('.'),
                         _reg = new RegExp( _main_domain );
 
                     if ( _thisHref !== '' && _thisHref != '#' && _isValidURL( _thisHref ) )
-                      return !_reg.test( _thisHref );
-                    return false;
+                      return ! _reg.test( _thisHref );
+                    return;
               },
               _isValidURL : function(_url){
                     var _pattern = /(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;

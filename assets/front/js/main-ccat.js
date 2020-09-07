@@ -587,11 +587,11 @@ var czrapp = czrapp || {};
                     return;
 
                   $_imgs.map( function( _ind, _img ) {
-                    $(_img).on('load', function () {
+                    $(_img).load( function () {
                       $(_img).trigger('simple_load');
                     });//end load
                     if ( $(_img)[0] && $(_img)[0].complete )
-                      $(_img).trigger('load');
+                      $(_img).load();
                   } );//end map
             },//end of fn
 
@@ -602,7 +602,7 @@ var czrapp = czrapp || {};
             isSelectorAllowed : function( $_el, skip_selectors, requested_sel_type ) {
                   var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
                   _selsToSkip   = skip_selectors[requested_sel_type];
-                  if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! _.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
+                  if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! $.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
                     return true;
                   if ( $_el.parents( _selsToSkip.map( function( _sel ){ return 'id' == sel_type ? '#' + _sel : '.' + _sel; } ).join(',') ).length > 0 )
                     return false;
@@ -894,7 +894,7 @@ var czrapp = czrapp || {};
 
                   var _scrollHandle = function() {},//abstract that we can unbind
                       _do = function() {
-                        czrapp.$_window.off( 'scroll', _scrollHandle );
+                        czrapp.$_window.unbind( 'scroll', _scrollHandle );
 
                         if ( 'function' == typeof $.fn.magnificPopup ) {
                                 $lightBoxCandidate.magnificPopup( params );
@@ -1083,7 +1083,7 @@ var czrapp = czrapp || {};
                         });
                   });
                   self._css_loader = '<div class="czr-css-loader czr-mr-loader" style="display:none"><div></div><div></div><div></div></div>';
-                  czrapp.$_window.on('scroll', _.throttle( function() {
+                  czrapp.$_window.scroll( _.throttle( function() {
                         $( self.slidersSelectorMap.galleries ).each( function() {
                               if ( czrapp.base.isInWindow( $(this) ) ){
                                     $(this).trigger( 'czr-is-in-window', { el : $(this) } );
@@ -1097,7 +1097,7 @@ var czrapp = czrapp || {};
 
                   var _scrollHandle = function() {};//abstract that we can unbind
                   var _do = function() {
-                        czrapp.$_window.off( 'scroll', _scrollHandle );
+                        czrapp.$_window.unbind( 'scroll', _scrollHandle );
 
                         if ( 'function' == typeof $.fn.flickity ) {
                               if ( ! $_sliderCandidate.data( 'flickity' ) )
@@ -1599,8 +1599,8 @@ var czrapp = czrapp || {};
                     }
                     self.scrollDirection( to >= from ? 'down' : 'up' );
               });
-              czrapp.$_window.on('resize', _.throttle( function() { self.windowWidth( czrapp.$_window.width() ); }, 10 ) );
-              czrapp.$_window.on('scroll', _.throttle( function() {
+              czrapp.$_window.resize( _.throttle( function() { self.windowWidth( czrapp.$_window.width() ); }, 10 ) );
+              czrapp.$_window.scroll( _.throttle( function() {
                     self.isScrolling( true );
                     self.scrollPosition( czrapp.$_window.scrollTop() );
                     clearTimeout( $.data( this, 'scrollTimer') );
@@ -1675,7 +1675,7 @@ var czrapp = czrapp || {};
                                       if ( $_header_logo[0].complete ) {
                                             $_header_logo.trigger('header-logo-loaded');
                                       } else {
-                                        $_header_logo.on('load', function() {
+                                        $_header_logo.load( function() {
                                               $_header_logo.trigger('header-logo-loaded');
                                         } );
                                       }
@@ -2619,7 +2619,7 @@ var czrapp = czrapp || {};
                   });
             }
 
-            $(_links).on('click', function () {
+            $(_links).click( function () {
                   var anchor_id = $(this).attr("href");
                   if ( ! $(anchor_id).length )
                     return;
@@ -2879,7 +2879,7 @@ var czrapp = czrapp || {};
         self.sideNavEventHandler( evt, 'resize');
       });
 
-      czrapp.$_window.on('scroll', function( evt ) {
+      czrapp.$_window.scroll( function( evt ) {
         self.sideNavEventHandler( evt, 'scroll');
       });
 
@@ -2904,13 +2904,8 @@ var czrapp = czrapp || {};
                             href : czrapp.localized.assetsPath + 'css/jquery.mCustomScrollbar.min.css'
                       }) );
                 }
-
-                var _url = czrapp.localized.assetsPath + 'js/libs/jquery-mCustomScrollbar.min.js?v=' + czrapp.localized.version;
-                if ( czrapp.localized.isDevMode ) {
-                    _url = czrapp.localized.assetsPath + 'js/libs/jquery-mCustomScrollbar.js?v=' + czrapp.localized.version;
-                }
                 $.ajax( {
-                      url : _url,
+                      url : ( czrapp.localized.assetsPath + 'js/libs/jquery-mCustomScrollbar.min.js'),
                       cache : true,// use the browser cached version when availabl
                       dataType: "script"
                 }).done(function() {
@@ -2941,7 +2936,7 @@ var czrapp = czrapp || {};
 
                       case 'sn-open'  :
                           self._end_visibility_toggle();
-                          $( self._toggler_selector, self._sidenav_selector ).trigger( "focus" );
+                          $( self._toggler_selector, self._sidenav_selector ).focus();
                       break;
 
                       case 'sn-close' :
@@ -3433,7 +3428,8 @@ var czrapp = czrapp || {};
               if ('ontouchstart' in document.documentElement && !$(parent).closest(Selector.NAVBAR_NAV).length) {
                 $('body').children().on('mouseover', null, $.noop);
               }
-              $(this).trigger( "focus" );
+
+              this.focus();
               this.setAttribute('aria-expanded', 'true');
 
               $(parent).toggleClass(ClassName.SHOW);
@@ -3584,7 +3580,7 @@ var czrapp = czrapp || {};
                 index = 0;
               }
 
-              items[index].trigger( "focus" );
+              items[index].focus();
         };
 
 
