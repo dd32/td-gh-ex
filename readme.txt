@@ -4,8 +4,8 @@ Contributors: nalam
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce, blog
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.5
-Stable tag: 1.0.3
+Tested up to: 5.5.1
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -75,6 +75,13 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.4 - September 9 2020 =
+* Added 3 different blog layout
+* Added 3 different blog Style
+* Added 3 different page layout 
+* Added 2 container style for blog and page
+* Added custom full width template 
 
 = 1.0.3 - September 4 2020 =
 * Added theme topbar and topbar options 

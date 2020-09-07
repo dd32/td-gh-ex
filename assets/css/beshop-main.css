@@ -164,7 +164,9 @@ h2.widget-title {
 .footer-widget ul li {
     border-bottom: 1px solid #555;
 }
-
+p.footer-copyright {
+    margin-bottom: 5px;
+}
 /*content style*/
 .entry-meta, .entry-meta a {
     font-size: 12px;
@@ -175,7 +177,8 @@ h2.widget-title {
     text-align: center;
     margin-bottom: 2rem;
 }
-.bshop-list-flex {
+.bshop-list-flex,
+.bshop-simple-list{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -196,7 +199,7 @@ h2.widget-title {
         flex-basis: 550px;
 }
 
-.beshop-btext,
+.beshop-btext,.bshop-simple-list.hasimg,
 .widget-area .widget,
 .site-footer,
 .archive-header,
@@ -214,8 +217,18 @@ h2.widget-title {
     padding: 20px;
     background: #fff;
 }
+
 .beshop-btext {
     margin-left: -120px;
+}
+.bshop-simple-list.hasimg .beshop-btext {
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    padding: 0 0 0 15px;
+    background: transparent;
+}
+.bshop-simple-list .beshop-btext {
+    margin-left: 0;
 }
 .no-img .beshop-btext{
     margin-left: 0;
@@ -284,11 +297,18 @@ form.post-password-form p {
 
 
 @media screen and (max-width: 992px) {
+    .bshop-list-flex, 
+    .bshop-simple-list {
+        flex-direction: column;
+    }
     .beshop-blog-text, 
     .beshop-blog-img {
         width: 100%;
         -ms-flex-preferred-size: inherit;
             flex-basis: inherit;
+    }
+    .beshop-blog-img img {
+        margin-bottom: 15px;
     }
     .bshop-list-flex {
         -webkit-box-orient: horizontal;

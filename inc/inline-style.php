@@ -84,7 +84,7 @@ if( $beshop_bodyfont_color ){
     }
 $beshop_contentbg_color = get_theme_mod( 'beshop_contentbg_color' );
 if( $beshop_contentbg_color ){
-      $style .='.beshop-btext, .widget-area .widget, .site-footer, .archive-header, .search-header, .beshop-page, .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation, .site-footer, .bshop-blog-list, .bshop-single-list, .comments-area{background-color:'.$beshop_contentbg_color.';}';
+      $style .='.beshop-btext, .widget-area .widget, .site-footer, .archive-header, .search-header, .beshop-page, .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation, .site-footer, .bshop-blog-list, .bshop-single-list, .comments-area,.bshop-simple-list.hasimg{background-color:'.$beshop_contentbg_color.';}';
     }
 $beshop_basic_color = get_theme_mod( 'beshop_basic_color' );
 if( $beshop_basic_color ){

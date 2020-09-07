@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.3' );
+	define( 'BESHOP_VERSION', '1.0.4' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -172,7 +172,7 @@ function beshop_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'font-awesome-five-all', get_template_directory_uri().'/assets/css/all.css',array(), '5.14.0' ,'all' );
 	wp_enqueue_style( 'beshop-block-style', get_template_directory_uri() . '/assets/css/block.css', array(), '1.0' );
-	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), '4.5.0' ,'all' );
+	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), BESHOP_VERSION ,'all' );
 	wp_enqueue_style( 'beshop-style', get_stylesheet_uri(), array(), BESHOP_VERSION );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), '4.5.0', true );

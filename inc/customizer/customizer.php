@@ -499,6 +499,173 @@ function beshop_customize_register( $wp_customize ) {
             )
         )
     );
+    	// Add beshop blog section
+	$wp_customize->add_section('beshop_blog', array(
+		'title' => __('Beshop Blog', 'beshop'),
+		'capability'     => 'edit_theme_options',
+		'description'     => __('The beshop theme blog options ', 'beshop'),
+     'priority'       => 60,
+
+	));
+	 $wp_customize->add_setting('beshop_blog_container', array(
+        'default'        => 'container',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_blog_container', array(
+        'label'      => __('Container type', 'beshop'),
+        'description'=> __('You can set standard container or full width container. ', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_blog_container',
+        'type'       => 'select',
+        'choices'    => array(
+            'container' => __('Standard Container', 'beshop'),
+            'container-fluid' => __('Full width Container', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_blog_layout', array(
+        'default'        => 'rightside',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_blog_layout', array(
+        'label'      => __('Select Blog Layout', 'beshop'),
+        'description'=> __('Right and Left sidebar only show when sidebar widget is available. ', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_blog_layout',
+        'type'       => 'select',
+        'choices'    => array(
+            'rightside' => __('Right Sidebar', 'beshop'),
+            'leftside' => __('Left Sidebar', 'beshop'),
+            'fullwidth' => __('Full Width', 'beshop'),
+        ),
+    ));
+		
+    $wp_customize->add_setting('beshop_blog_style', array(
+        'default'        => 'style2',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_blog_style', array(
+        'label'      => __('Select Blog Style', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_blog_style',
+        'type'       => 'select',
+        'choices'    => array(
+            'style1' => __('List over Image', 'beshop'),
+            'style2' => __('List Style', 'beshop'),
+            'style3' => __('Classic Style', 'beshop'),
+        ),
+    ));
+   
+    
+    $wp_customize->add_setting( 'beshop_blogdate' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_blogdate', array(
+        'label'      => __('Show Posts Date? ', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_blogdate',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_blogauthor' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_blogauthor', array(
+        'label'      => __('Show Posts Author? ', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_blogauthor',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_postcat' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_postcat', array(
+        'label'      => __('Show Single Posts Categories? ', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_postcat',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_posttag' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_posttag', array(
+        'label'      => __('Show Single Posts tags? ', 'beshop'),
+        'section'    => 'beshop_blog',
+        'settings'   => 'beshop_posttag',
+        'type'       => 'checkbox',
+    ) );
+
+    	// Add beshop page section
+	$wp_customize->add_section('beshop_page', array(
+		'title' => __('Beshop Page', 'beshop'),
+		'capability'     => 'edit_theme_options',
+		'description'     => __('The beshop theme Page options ', 'beshop'),
+     'priority'       => 70,
+
+	));
+	 $wp_customize->add_setting('beshop_page_container', array(
+        'default'        => 'container',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_page_container', array(
+        'label'      => __('Page Container type', 'beshop'),
+        'description'=> __('You can set standard container or full width container for page. ', 'beshop'),
+        'section'    => 'beshop_page',
+        'settings'   => 'beshop_page_container',
+        'type'       => 'select',
+        'choices'    => array(
+            'container' => __('Standard Page Container', 'beshop'),
+            'container-fluid' => __('Full width Page Container', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_page_layout', array(
+        'default'        => 'rightside',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_page_layout', array(
+        'label'      => __('Select Page Layout', 'beshop'),
+        'description'=> __('Right and Left sidebar only show when sidebar widget is available. ', 'beshop'),
+        'section'    => 'beshop_page',
+        'settings'   => 'beshop_page_layout',
+        'type'       => 'select',
+        'choices'    => array(
+            'rightside' => __('Right Sidebar', 'beshop'),
+            'leftside' => __('Left Sidebar', 'beshop'),
+            'fullwidth' => __('Full Width', 'beshop'),
+        ),
+    ));
+
+   
+
 
 /*
 * Footer setting section

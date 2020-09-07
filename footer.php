@@ -40,7 +40,7 @@ $beshop_topfooter_show = get_theme_mod( 'beshop_topfooter_show', 1 );
 			
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( __( 'Theme: %1$s by %2$s.', 'beshop' ), 'beshop', '<a href="https://profiles.wordpress.org/nalam-1/">Noor Alam</a>' );
+				printf( __( 'Theme: %1$s by %2$s.', 'beshop' ), 'beshop', '<a href="https://wpthemespace.com/">wp theme space</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
