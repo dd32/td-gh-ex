@@ -137,9 +137,9 @@
         // SLIDSESHOW
         if (slider.vars.slideshow) {
           if (slider.vars.pauseOnHover) {
-            slider.on('mouseenter', function() {
+            slider.hover(function() {
               if (!slider.manualPlay && !slider.manualPause) { slider.pause(); }
-            }).on('mouseleave', function() {
+            }, function() {
               if (!slider.manualPause && !slider.manualPlay && !slider.stopped) { slider.play(); }
             });
           }
@@ -794,8 +794,8 @@
             }
 
             // Unbind previous transitionEnd events and re-bind new transitionEnd event
-            slider.container.off("webkitTransitionEnd transitionend");
-            slider.container.on("webkitTransitionEnd transitionend", function() {
+            slider.container.unbind("webkitTransitionEnd transitionend");
+            slider.container.bind("webkitTransitionEnd transitionend", function() {
               clearTimeout(slider.ensureAnimationEnd);
               slider.wrapup(dimension);
             });
@@ -1142,9 +1142,9 @@
   };
 
   // Ensure the slider isn't focussed if the window loses focus.
-  $( window ).on('blur', function ( e ) {
+  $( window ).blur( function ( e ) {
     focused = false;
-  }).on('focus', function ( e ) {
+  }).focus( function ( e ) {
     focused = true;
   });
 

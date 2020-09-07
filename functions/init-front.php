@@ -398,14 +398,11 @@ if ( !function_exists( 'hu_render_header_image' ) ) {
     if ( $_header_img_src ) {
       $attr['src'] = $_header_img_src;
     }
-    if ( hu_is_checked( 'header-img-link-home' ) ) {
-        printf('<a href="%1$s" rel="home">%2$s</a>',
-            home_url('/'),
-            get_header_image_tag( $attr )
-        );
-    } else {
-        echo get_header_image_tag( $attr );
-    }
+
+    printf('<a href="%1$s" rel="home">%2$s</a>',
+        home_url('/'),
+        get_header_image_tag( $attr )
+    );
   }
 }
 
@@ -860,17 +857,6 @@ if ( !function_exists( 'hu_body_class' ) ) {
     if ( hu_is_checked( 'defer_font_awesome') ) {
         $classes[] = 'hu-fa-not-loaded';
     }
-    // Oct 2020 : theme version
-    $ver = str_replace('.', '-', HUEMAN_VER );
-    $prefix = (defined('HU_IS_PRO' ) && HU_IS_PRO) ? 'hueman-pro-' : 'hueman-';
-    $theme_class = $prefix . $ver;
-    $classes[] = get_template_directory() === get_stylesheet_directory() ? $theme_class : $theme_class.'-with-child-theme';
-
-    // Nov 2020 : opt-out underline on links
-    if ( !hu_is_checked( 'links_underlined') ) {
-        $classes[] = 'hu-links-not-underlined';
-    }
-
     return $classes;
   }
 }
@@ -1209,7 +1195,6 @@ if ( !function_exists( 'hu_scripts' ) ) {
                 'imgSmartLoadOpts'    => apply_filters( 'hu_img_smart_load_options' , array(
                       'parentSelectors' => array(
                           '.container .content',
-                          '.post-row',//<= needed when header is replaced by Nimble Builder
                           '.container .sidebar',
                           '#footer',
                           '#header-widgets'
@@ -1355,8 +1340,8 @@ if ( !function_exists( 'hu_styles' ) ) {
     if ( !hu_is_checked( 'defer_font_awesome' ) ) {
         wp_enqueue_style(
             'hueman-font-awesome',
-            sprintf('%1$sassets/front/css/%2$s',
-                HU_BASE_URL,
+            sprintf('%1$s/assets/front/css/%2$s',
+                get_template_directory_uri(),
                 hu_is_checked('minified-css') ? 'font-awesome.min.css' : 'dev-font-awesome.css'
             ),
             is_child_theme() ? array( 'theme-stylesheet' ) : array(),
@@ -1369,95 +1354,6 @@ if ( !function_exists( 'hu_styles' ) ) {
   }
 }
 add_action( 'wp_enqueue_scripts', 'hu_styles' );
-
-// October 2020 Better preload implementation
-// see here https://stackoverflow.com/questions/49268352/preload-font-awesome
-// FA fonts can be preloaded. The crossorigin param has to be added
-// => this removes Google Speed tests message "preload key requests"
-// important => the url of the font must be exactly the same as in font awesome stylesheet, including the query param at the end fa-brands-400.woff2?v=5.12.1
-// note that we could preload all other types available ( eot, woff, ttf, svg )
-// but we focus on preloading woff2 which is the type used by most recent browsers
-// see https://css-tricks.com/snippets/css/using-font-face/
-add_action( 'wp_head', 'hu_preload_fa_fonts');
-function hu_preload_fa_fonts() {
-  ?>
-    <link rel="preload" as="font" type="font/woff2" href="<?php echo HU_BASE_URL .'assets/front/webfonts/fa-brands-400.woff2?v=5.12.1'; ?>" crossorigin="anonymous"/>
-    <link rel="preload" as="font" type="font/woff2" href="<?php echo HU_BASE_URL .'assets/front/webfonts/fa-regular-400.woff2?v=5.12.1'; ?>" crossorigin="anonymous"/>
-    <link rel="preload" as="font" type="font/woff2" href="<?php echo HU_BASE_URL .'assets/front/webfonts/fa-solid-900.woff2?v=5.12.1'; ?>" crossorigin="anonymous"/>
-  <?php
-}
-
-// October 2020
-add_action('wp_head', 'hu_maybe_preload_selfhosted_font');
-function hu_maybe_preload_selfhosted_font() {
-  $user_font = hu_get_option( 'font' );
-  $needs_titillium_selfhosted = ( false === $user_font ) || ( 'titillium-web' === $user_font );
-  if ( !$needs_titillium_selfhosted )
-    return;
-  ?>
-<link rel="preload" as="font" type="font/woff" href="<?php echo HU_BASE_URL .'assets/front/fonts/titillium-light-webfont.woff'; ?>" crossorigin="anonymous"/>
-<link rel="preload" as="font" type="font/woff" href="<?php echo HU_BASE_URL .'assets/front/fonts/titillium-lightitalic-webfont.woff'; ?>" crossorigin="anonymous"/>
-<link rel="preload" as="font" type="font/woff" href="<?php echo HU_BASE_URL .'assets/front/fonts/titillium-regular-webfont.woff'; ?>" crossorigin="anonymous"/>
-<link rel="preload" as="font" type="font/woff" href="<?php echo HU_BASE_URL .'assets/front/fonts/titillium-regularitalic-webfont.woff'; ?>" crossorigin="anonymous"/>
-<link rel="preload" as="font" type="font/woff" href="<?php echo HU_BASE_URL .'assets/front/fonts/titillium-semibold-webfont.woff'; ?>" crossorigin="anonymous"/>
-<style type="text/css">
-  /*  base : fonts
-/* ------------------------------------ */
-body { font-family: "Titillium", Arial, sans-serif; }
-@font-face {
-  font-family: 'Titillium';
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-light-webfont.eot"; ?>');
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-light-webfont.svg#titillium-light-webfont"; ?>') format('svg'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-light-webfont.eot?#iefix"; ?>') format('embedded-opentype'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-light-webfont.woff"; ?>') format('woff'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-light-webfont.ttf"; ?>') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Titillium';
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-lightitalic-webfont.eot"; ?>');
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-lightitalic-webfont.svg#titillium-lightitalic-webfont"; ?>') format('svg'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-lightitalic-webfont.eot?#iefix"; ?>') format('embedded-opentype'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-lightitalic-webfont.woff"; ?>') format('woff'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-lightitalic-webfont.ttf"; ?>') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Titillium';
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regular-webfont.eot"; ?>');
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regular-webfont.svg#titillium-regular-webfont"; ?>') format('svg'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regular-webfont.eot?#iefix"; ?>') format('embedded-opentype'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regular-webfont.woff"; ?>') format('woff'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regular-webfont.ttf"; ?>') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Titillium';
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regularitalic-webfont.eot"; ?>');
-  src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regularitalic-webfont.svg#titillium-regular-webfont"; ?>') format('svg'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regularitalic-webfont.eot?#iefix"; ?>') format('embedded-opentype'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regularitalic-webfont.woff"; ?>') format('woff'),
-     url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-regularitalic-webfont.ttf"; ?>') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-    font-family: 'Titillium';
-    src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-semibold-webfont.eot"; ?>');
-    src: url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-semibold-webfont.svg#titillium-semibold-webfont"; ?>') format('svg'),
-         url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-semibold-webfont.eot?#iefix"; ?>') format('embedded-opentype'),
-         url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-semibold-webfont.woff"; ?>') format('woff'),
-         url('<?php echo HU_BASE_URL ."assets/front/fonts/titillium-semibold-webfont.ttf"; ?>') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-</style>
-  <?php
-}
-
 
 
 

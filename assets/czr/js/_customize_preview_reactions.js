@@ -68,8 +68,10 @@
                     }
 
                     fontFamily = false !== fontList.family[font_id] ? fontList.family[font_id] : null;
+                    if ( ! _.isNull( fontFamily ) ) {
+                        $('body').css( 'font-family', fontFamily );
+                    }
                 }
-                $('body').css( 'font-family', !_.isNull( fontFamily ) ? fontFamily : "'Titillium Web', Arial, sans-serif" );
             },
             'body-font-size' : function( to ) {
               to = parseInt( to , 10);

@@ -2,8 +2,8 @@
 Contributors: nikeo, alxmedia, d4z_c0nf
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.6
-Tested up to: 5.6
-Stable tag: 3.6.10
+Tested up to: 5.5
+Stable tag: 3.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,38 +14,6 @@ The Hueman theme loads fast and is 100% mobile-friendly according to Google. One
 
 == Changelog ==
 https://github.com/presscustomizr/hueman/releases
-= 3.6.10 November 30th, 2020 =
-* fixed : [WP5.7][jquery-migrate] fixed wrong usage $.fn.css() method
-
-= 3.6.9 November 19th, 2020 =
-* added : [CSS][links] added a new option to opt-out underline on links. Option located in customizer > web page design > General design options
-
-= 3.6.8 November 17th 2020 =
-* fixed : [TRT requirement][accessibility] Links within content must be underlined. fixes #936
-* improved :  [WP 5.6][jQuery] adapt to WP jQuery updated version. Prepare removal of jQuery Migrate in future WP 5.7
-* fixed : [Nimble Builder compatibility] lazy loading broken for post thumbnails in post lists when using NB header
-
-= 3.6.7 November 3rd 2020 =
-* tested : [WordPress] Hueman v3.6.7 is 100% compatible with WP 5.5.3
-* fixed : [Header banner] Added a new option to disable header image linking to home when no site title/description. fixes #931
-
-= 3.6.6 October 9th, 2020 =
-* improved : [performance] implement preload for Font Awesome icons
-* improved : [performance] preload Titillium self hosted font when used
-* improved : [performance] set Titillium self hosted font as default font
-
-= 3.6.5 October 7th, 2020 =
-* fixed : [CSS][plugin compatibility] Code Syntax Block style broken. fixes #926
-* added : [CSS] add current theme version as CSS class to body tag. fixes #930
-
-= 3.6.4 September 18, 2020 =
-* fixed : [admin] potential security issue
-
-= 3.6.3 September 8, 2020 =
-* fixed : [admin] update notification not dismissed. Introduced in v3.6.2.
-Reported https://wordpress.org/support/topic/bug-update-notification-on-dashboard-not-dismissible/
-* added : [admin] PHP constant HU_SHOW_UPDATE_NOTIFICATION set to true by default. Allowing user to disable update notifications. 
-
 = 3.6.2 September 7, 2020 =
 * improved : Successfully tested with WP 5.5.1. Maintenance release, minor code cleaning. 
 
@@ -76,3 +44,28 @@ Reported https://wordpress.org/support/topic/bug-update-notification-on-dashboar
 * fixed : [admin] removed loading of remote cloudfare CDN js script as per new TRT rules. + removed unused js scripts for #904    
 * improved : [performance] better defer loading of Font Awesome. fixes #905
 * added : [metas][post grids] add an option to display authors in post grids. fixes #897
+
+= 3.5.8 May 16th, 2020 =
+* fixed : [option tree] possible PHP error in admin. fixes #893
+* improved : [TRT] added min PHP version required and WP version tested up to
+* added : [social links] new options to control the visibility of the social links in sidebar and footer. fixes #892
+
+= 3.5.7 May 4th, 2020 =
+* fixed : [javascript] External link icon not displayed on pages. fixes #885
+* fixed : [related posts] image dimensions are not consistent accross column layout. fixes #888
+* improved : increased max size of singular featured images
+
+= 3.5.6 April 27th, 2020 =
+* fixed : [performance][srcset attribute] => limit browsers choice for srcset on high resolution device. fixes #866
+* improved : [post grids] adapt grid max size for srcset according to user options for image and pro grid columns
+
+= 3.5.5 April 19th, 2020 =
+* fixed : [Flexslider][RTL] flexslider broken in RTL mode since updated to flexslider v2.7.2
+
+= 3.5.4 April 18th, 2020 =
+* fixed : [Header][banner image] add options to handle height and width of the image. fixes #877
+* fixed : [header image][sticky header] header height might not be set to the correct value on page load. fixes #883
+* fixed : [Lazy load] images are not lazy loaded when dynamic content is inserted in the DOM ( example with TablePress plugin ). fixes #880
+* fixed : [Nimble Builder compatibility] on home, Nimble Builder sections inserted on hooks __before_featured and __after_featured are not rendered when featured posts are disabled
+* improved : [performance][related posts] adapt image size of related posts depending on the current column layout.
+* improved : [performance][Dynamic Tabs widget] reduce image size of Dynamic Tabs widget
