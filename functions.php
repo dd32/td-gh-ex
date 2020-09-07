@@ -182,9 +182,9 @@ $my_theme = wp_get_theme();
 				_e(' Are you are enjoying Astral? We would love to hear your feedback. Big thanks in advance.','astral'); ?> </p>
 				<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
 				
-				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Welcome Page & See Demo','astral'); ?> </a>
+				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('See Theme Preview','astral'); ?> </a>
 
-				<a target="_blank" class="astral-pro reply-btn blink" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e(' Astral Premium - Special Offer','astral'); ?> </a>
+				<a target="_blank" class="astral-pro reply-btn" style="margin-left: 18px;" href="http://mywebapp.in/wordpress-premium-theme/" > <?php _e(' Astral Premium - Coupon Code OFFER07D','astral'); ?>  </a> <sup> Limited Time Offer </sup>
 				
 			</div>
 		</div>

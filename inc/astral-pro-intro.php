@@ -58,8 +58,9 @@ if (!function_exists('astral_display_theme')) {
 									<a style="text-decoration: none;" target="_blank" href="http://mywebapp.in/wordpress-premium-theme/">
 										<div class="price-box">
 											<h2 class="offer-title1">
-												Limited Offer
+												Limited Offer 
 											</h2>
+											<h3 style="font-size: 20px;">Coupon Code OFFER07D</h3>
 											<h3><strike>$25</strike> $18 </h3>
 										</div>
 									</a>
