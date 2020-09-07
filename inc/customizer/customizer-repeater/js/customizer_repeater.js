@@ -135,7 +135,7 @@ function customizer_repeater_refresh_general_control_values() {
             var link = jQuery(this).find('.customizer-repeater-link-control').val();
             var color = jQuery(this).find('.customizer-repeater-color-control').val();
 			var designation = jQuery(this).find('.customizer-repeater-designation-control').val();
-			var open_new_tab = jQuery(this).find('.customizer-repeater-checkbox').attr("checked") ? 'yes' : 'no';
+			var open_new_tab = jQuery(this).find('.customizer-repeater-checkbox').val();
             var image_url = jQuery(this).find('.custom-media-url').val();
             var choice = jQuery(this).find('.customizer-repeater-image-choice').val();
             var title = jQuery(this).find('.customizer-repeater-title-control').val();
