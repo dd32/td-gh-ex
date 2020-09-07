@@ -2275,7 +2275,7 @@ function bento_customizer_admin_notice() {
 				<?php esc_attr_e( 'Due to a change in WordPress rules, all theme options are now handled by the native Customizer ("Appearance -> Customize" admin section). Please click on the button below to transfer existing Bento theme options to the Customizer', 'bento' ); ?>:
 			</p>
 			<p>
-				<input name="Migrate Bento options" type="submit" class="button-primary" value="<?php esc_html_e( 'Transfer theme options', 'bento' ); ?> &rsaquo;">
+				<input name="Migrate Bento options" type="submit" class="button-primary" value="<?php esc_attr_e( 'Transfer theme options', 'bento' ); ?> &rsaquo;">
 			</p>
 		</div>
 		<div class="notice notice-success is-dismissible hidden notice-migrate-bento-options-success">

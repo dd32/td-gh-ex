@@ -24,6 +24,8 @@
     
     <body <?php body_class(); ?>>
 	
+		<?php wp_body_open(); ?>
+	
 		<?php do_action('bento_body_top'); ?>
          				
 		<div class="site-wrapper clear">

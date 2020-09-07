@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 5.2.3
-Stable tag: 2.4
+Stable tag: 2.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,13 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.5 / 7 September 2020
+Fixed the JS error arising from an unescaped selector expression.
+Added the new wp_body_open() tag into the theme header.
+Added the new required statements into the main stylesheet header.
+Corrected esc_html_e() to esc_attr_e() for HTML attributes.
+Removed css map files from included libraries.
 
 * 2.4 / 30 December 2019
 Removed the height:100% on body and html elements to avoid double scrollbars.

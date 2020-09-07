@@ -308,7 +308,7 @@ $str(window).load(function () {
 	if ( ! $str.isEmptyObject(bento_op_menu) ) {
 		$str('.primary-menu li, .primary-mobile-menu li').removeClass('current-menu-item');		
 	}
-	$str('.primary-menu li a[href*=#]').on( 'click', function(e) {
+	$str('.primary-menu li a[href*="#"]').on( 'click', function(e) {
 		if ( this.pathname === window.location.pathname ) {
 			e.stopPropagation();
 			e.preventDefault();
