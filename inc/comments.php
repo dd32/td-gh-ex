@@ -134,7 +134,7 @@ if ( ! function_exists( 'graphene_get_comment_count' ) ) :
 function graphene_get_comment_count( $type = 'comments', $only_approved_comments = true, $top_level = false ){
 	if ( ! get_the_ID() ) return;
 	if 		( $type == 'comments' ) 	$type_sql = 'comment_type IN ("", "comment")';
-	elseif 	( $type == 'pings' )		$type_sql = 'comment_type != ""';
+	elseif 	( $type == 'pings' )		$type_sql = 'comment_type IN ("trackback", "pingback")';
 	elseif 	( $type == 'review' ) 		$type_sql = 'comment_type = "review"';
 	elseif 	( $type == 'trackbacks' ) 	$type_sql = 'comment_type = "trackback"';
 	elseif 	( $type == 'pingbacks' )	$type_sql = 'comment_type = "pingback"';

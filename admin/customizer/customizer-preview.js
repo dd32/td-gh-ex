@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
 	
 	/* Top Bar */
 	wp.customize('graphene_settings[top_bar_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('#top-bar {background-color:' + to + '}');
+		$('#graphene-preview-css').append('.top-bar {background-color:' + to + '}');
 	});	});
 
 

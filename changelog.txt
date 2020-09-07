@@ -4,6 +4,16 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.8.1 [07-09-2020]
+	* Added: Automatic post content padding when wrapper and content background colours are different
+	* Added: Automatic widget padding when wrapper and widget background colours are the same
+	* Fixed: Custom fields in menu items are duplicated
+	* Fixed: Regular comments are counted as pings
+	* Fixed: Text overflow in homepage panes
+	* Fixed: Duplicate graphene_top_bar action hook
+	* Fixed: Graphene top bar link colour may override third party widgets CSS
+	* Fixed: Compatibility issue with Yoast SEO plugin
+
 Version 2.8 [15-08-2020]
 	* Added: Option to show featured image at the top of posts
 	* Various performance optimisations

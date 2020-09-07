@@ -7,16 +7,16 @@
 	    padding-left: 15px;
 	    padding-right: 15px;
 	}
-	#top-bar {
+	.top-bar {
 		padding: 0;
 	}
 	.top-bar-items .logo {
 		display: none;
 	}
-	#top-bar .social-profiles {
+	.top-bar .social-profiles {
 		margin: 5px 0;
 	}
-	#top-bar .top-search-form {
+	.top-bar .top-search-form {
 		height: 0px;
 		float: none;
 		padding: 0 15px;
@@ -28,17 +28,17 @@
 		overflow: hidden;
 		background: rgba(0,0,0,0.2);
 	}
-	#top-bar .top-search-form.in {
+	.top-bar .top-search-form.in {
 		height: 48px;
 	}
 	.top-search-form .searchform {
 		margin: 7px 0;
 	}
-	#top-bar .text-alignleft,
-	#top-bar .text-alignright {
+	.top-bar .text-alignleft,
+	.top-bar .text-alignright {
 		text-align: center;
 	}
-	#top-bar .text,
+	.top-bar .text,
 	.top-bar-menu {
 		margin: 0.5em 0;
 	}

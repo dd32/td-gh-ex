@@ -76,7 +76,7 @@ function graphene_homepage_panes(){
 		            </h3>
 		            
 		            <?php /* The post excerpt */ ?>
-		            <div class="post-excerpt">
+		            <div class="post-excerpt entry-content">
 		            	<?php 
 							the_excerpt();
 							

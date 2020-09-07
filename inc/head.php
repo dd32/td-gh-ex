@@ -221,7 +221,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 		
 		// Top bar
 		$colours = array(
-			'top_bar_bg'	=> '#top-bar{background-color:%s}',
+			'top_bar_bg'	=> '.top-bar{background-color:%s}',
 		);
 		$style .= graphene_build_style( $colours );
 
@@ -261,7 +261,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 		// Content area
 		$colours = array(
 			'content_wrapper_bg' 	=> '#content, body > .container > .panel-layout, #header {background-color: %s}',
-			'content_bg' 			=> '.post, .singular .post, .singular .posts-list .post, .homepage_pane {background-color: %s;}',
+			'content_bg' 			=> '.post, .singular .post, .singular .posts-list .post, .homepage_pane, .entry-author {background-color: %s;}',
 			'meta_border'			=> '.entry-footer {border-color: %s;}',
 			'content_font_colour' 	=> 'body, blockquote p {color: %s}',
 			'title_font_colour' 	=> '.post-title, .post-title a, .post-title a:hover, .post-title a:visited {color: %s}',
@@ -293,7 +293,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 		
 		// Buttons and Labels
 		$colours = array(
-			'button_bg|button_label'=> '.btn, .btn:focus, .btn:hover, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top, .wp-block-button .wp-block-button__link:not(.has-background) {background: %1$s; color: %2$s}',
+			'button_bg|button_label'=> '.btn, .btn:focus, .btn:hover, .btn a, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top, .wp-block-button .wp-block-button__link:not(.has-background) {background: %1$s; color: %2$s}',
 			'label_bg|label_text'	=> '.label-primary, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover, .list-group-item.parent, .list-group-item.parent:focus, .list-group-item.parent:hover {background: %1$s; border-color: %1$s; color: %2$s}'
 		);
 		$style .= graphene_build_style( $colours );

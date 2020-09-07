@@ -47,8 +47,11 @@ require( GRAPHENE_ROOTDIR . '/inc/compat.php' 			);
 require( GRAPHENE_ROOTDIR . '/inc/functions.php' 		);
 require( GRAPHENE_ROOTDIR . '/inc/setup.php' 			);
 require( GRAPHENE_ROOTDIR . '/inc/ajax-handler.php' 	);
-require( GRAPHENE_ROOTDIR . '/vendors/menu-item-custom-fields/menu-item-custom-fields.php' );
 
+/* Menu Item Custom Fields, for older WordPress versions */
+if ( version_compare( $GLOBALS['wp_version'], 5.4, '<' ) ) {
+	require( GRAPHENE_ROOTDIR . '/vendors/menu-item-custom-fields/menu-item-custom-fields.php' );
+}
 
 /**
  * Graphene Plus

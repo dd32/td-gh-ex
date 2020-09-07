@@ -194,6 +194,16 @@ function graphene_body_class( $classes ){
 	if ( has_nav_menu( 'secondary-menu' ) ) $classes[] = 'have-secondary-menu';
 	if ( is_singular() ) $classes[] = 'singular';
 	if ( $graphene_settings['slider_as_header'] ) $classes[] = 'header-slider';
+
+	/* Different wrapper and content background colours */
+	if ( $graphene_settings['content_wrapper_bg'] != $graphene_settings['content_bg'] ) {
+		$classes[] = 'unequal-content-bgs';
+	}
+
+	/* Same wrapper and widget background colours */
+	if ( $graphene_settings['content_wrapper_bg'] == $graphene_settings['widget_item_bg'] ) {
+		$classes[] = 'equal-widget-bg';
+	}
     
     // Prints the body class
     return $classes;

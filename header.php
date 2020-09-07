@@ -20,7 +20,7 @@
         <div class="<?php echo ( $graphene_settings['container_style'] == 'boxed' ) ? 'container boxed-wrapper' : 'container-fluid'; ?>">
             
             <?php if ( ! $graphene_settings['hide_top_bar'] ) : ?>
-                <div id="top-bar" class="row clearfix <?php if ( $graphene_settings['light_header'] ) echo 'light'; ?>">
+                <div id="top-bar" class="row clearfix top-bar <?php if ( $graphene_settings['light_header'] ) echo 'light'; ?>">
                     <?php graphene_container_wrapper( 'start' ); ?>
 
                         <?php if ( ! dynamic_sidebar( 'top-bar' ) ) : ?>
@@ -50,8 +50,6 @@
                                         <?php do_action( 'graphene_top_search' ); ?>
                                     </div>
                                 <?php endif; ?>
-                                
-                                <?php do_action( 'graphene_top_bar' ); ?>
                             </div>
 
                         <?php endif; ?>

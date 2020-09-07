@@ -43,7 +43,7 @@ global $graphene_settings;
 
 <?php do_action( 'graphene_before_footer' ); ?>
 
-<div id="footer" class="row">
+<div id="footer" class="row <?php if ( ! is_active_sidebar('footer-bar' ) ) echo 'default-footer'; ?>">
     <?php graphene_container_wrapper( 'start' ); ?>
 
         <?php if ( ! dynamic_sidebar( 'footer-bar' ) ) : ?>

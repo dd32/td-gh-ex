@@ -64,7 +64,7 @@ aligncenter {
 }
 
 /* hide the following IDs*/
-#top-bar,
+.top-bar,
 #nav,
 #footer,
 .sidebar,
