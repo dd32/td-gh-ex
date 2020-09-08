@@ -107,7 +107,7 @@ $bevropro_x_menu_effect = get_theme_mod( 'bevropro_x_menu_effect','linkeffect-no
         <div class="sider main bevro-menu-hide <?php echo esc_attr($bevro_mobile_menu_open);?>">
         <div class="sider-inner"><?php if( has_nav_menu('bevro-main-menu' )){ bevro_main_nav_menu();
         }else{
-            wp_nav_menu(array( 
+            wp_page_menu(array( 
             'items_wrap'  => '<ul class="bevro-menu" data-menu-style="'.esc_attr(bevro_header_menu_style()).'">%3$s</ul>',
             'link_before' => '<span>',
             'link_after'  => '</span>'));

@@ -32,14 +32,14 @@ function bevro_product_count_update(){
     <i class="fa fa-shopping-basket"></i>
     <?php } elseif($bevro_woo_cart_disable=='icon+cartcount'){?>
     <i class="fa fa-shopping-basket"></i>
-    <span class="cart-crl"><?php echo esc_attr($woocommerce->cart->cart_contents_count); ?></span>
+    <span class="cart-crl"><?php echo esc_html($woocommerce->cart->cart_contents_count); ?></span>
     <?php } elseif($bevro_woo_cart_disable=='icon+total'){?>
     <i class="fa fa-shopping-basket"></i>
-    <span class="cart-total"><?php echo esc_attr($ordertotal);?></span>  
+    <span class="cart-total"><?php echo esc_html($ordertotal);?></span>  
     <?php } else { ?>
      <i class="fa fa-shopping-basket"></i>
-    <span class="cart-crl"><?php echo esc_attr($woocommerce->cart->cart_contents_count); ?></span>
-    <span class="cart-total"><?php echo esc_attr($ordertotal);?></span>
+    <span class="cart-crl"><?php echo esc_html($woocommerce->cart->cart_contents_count); ?></span>
+    <span class="cart-total"><?php echo esc_html($ordertotal);?></span>
     <?php } ?>
   </a>  
 <?php 
