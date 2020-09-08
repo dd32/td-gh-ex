@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment\n"
-"POT-Creation-Date: 2020-08-08 18:36+0530\n"
+"POT-Creation-Date: 2020-09-08 19:49+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1121,84 +1121,84 @@ msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:11
+#: comments.php:13
 msgid "Reply"
 msgstr ""
 
-#: comments.php:23
+#: comments.php:25
 msgid "Posted on"
 msgstr ""
 
-#: comments.php:25
+#: comments.php:30
 msgid "Edit"
 msgstr ""
 
-#: comments.php:28
+#: comments.php:33
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments.php:39
+#: comments.php:48
 msgid "No Comments so far"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:48
 msgid "1 Comment so far"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:48
 msgid "Comments so far"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:55
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:56
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:57
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:52
+#: comments.php:63
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:56
+#: comments.php:70
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:63
+#: comments.php:77
 msgid "Name"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:78
 msgid "Email"
 msgstr ""
 
-#: comments.php:73
+#: comments.php:89
 msgid "Leave your message"
 msgstr ""
 
-#: comments.php:74
+#: comments.php:90
 msgid "Logged in as"
 msgstr ""
 
-#: comments.php:74
+#: comments.php:90
 msgid "Logout from this Account"
 msgstr ""
 
-#: comments.php:74
+#: comments.php:90
 msgid "Logout"
 msgstr ""
 
-#: comments.php:76
+#: comments.php:92
 msgid "Send Message"
 msgstr ""
 
-#: comments.php:79
+#: comments.php:95
 msgid "Leave a Reply"
 msgstr ""
 
@@ -1486,7 +1486,7 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
-#: functions/template-tag.php:23 index-news.php:53
+#: functions/template-tag.php:23 index-news.php:55
 msgid "By"
 msgstr ""
 
@@ -1538,7 +1538,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:77
+#: header.php:76
 msgid "Toggle navigation"
 msgstr ""
 
@@ -1560,11 +1560,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: single.php:17
+#: single.php:19
 msgid "About the author"
 msgstr ""
 
-#: tag.php:12
+#: tag.php:11
 msgid "Tag Archive"
 msgstr ""
 

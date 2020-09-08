@@ -547,30 +547,30 @@ jQuery( document ).ready(function($) {
 	/**
 	 * Override the stock color.js toString() method to add support for outputting RGBa or Hex.
 	 */
-	Color.prototype.toString = function( flag ) {
+	// Color.prototype.toString = function( flag ) {
 
-		// If our no-alpha flag has been passed in, output RGBa value with 100% opacity.
-		// This is used to set the background color on the opacity slider during color changes.
-		if ( 'no-alpha' == flag ) {
-			return this.toCSS( 'rgba', '1' ).replace( /\s+/g, '' );
-		}
+	// 	// If our no-alpha flag has been passed in, output RGBa value with 100% opacity.
+	// 	// This is used to set the background color on the opacity slider during color changes.
+	// 	if ( 'no-alpha' == flag ) {
+	// 		return this.toCSS( 'rgba', '1' ).replace( /\s+/g, '' );
+	// 	}
 
-		// If we have a proper opacity value, output RGBa.
-		if ( 1 > this._alpha ) {
-			return this.toCSS( 'rgba', this._alpha ).replace( /\s+/g, '' );
-		}
+	// 	// If we have a proper opacity value, output RGBa.
+	// 	if ( 1 > this._alpha ) {
+	// 		return this.toCSS( 'rgba', this._alpha ).replace( /\s+/g, '' );
+	// 	}
 
-		// Proceed with stock color.js hex output.
-		var hex = parseInt( this._color, 10 ).toString( 16 );
-		if ( this.error ) { return ''; }
-		if ( hex.length < 6 ) {
-			for ( var i = 6 - hex.length - 1; i >= 0; i-- ) {
-				hex = '0' + hex;
-			}
-		}
+	// 	// Proceed with stock color.js hex output.
+	// 	var hex = parseInt( this._color, 10 ).toString( 16 );
+	// 	if ( this.error ) { return ''; }
+	// 	if ( hex.length < 6 ) {
+	// 		for ( var i = 6 - hex.length - 1; i >= 0; i-- ) {
+	// 			hex = '0' + hex;
+	// 		}
+	// 	}
 
-		return '#' + hex;
-	};
+	// 	return '#' + hex;
+	// };
 
 	/**
 	 * Given an RGBa, RGB, or hex color value, return the alpha channel value.

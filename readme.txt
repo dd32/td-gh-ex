@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
 Requires at least: 4.5
-Tested up to: 5.4.2
-Stable tag: 2.8.3
+Tested up to: 5.5
+Stable tag: 2.8.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,8 @@ Appointment is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.8.4
+1. Fixed the customizer error of console.
 @Version 2.8.3
 1. Fixed some style-related issues.
 2. Fixed Skip to content link for IE11 browser.
