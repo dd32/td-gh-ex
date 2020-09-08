@@ -1,10 +1,10 @@
-=== Appointment Red ===
+=== Appointment Green ===
 
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, left-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.5
-Tested up to: 5.4.2
-Stable tag: 1.2
+Tested up to: 5.5
+Stable tag: 1.2.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,9 +32,11 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Appointment Green WordPress Theme, Copyright (C) 2015-2020, priyanshumittal
-Appointment Green is distributed under the terms of the GNU GPL
+Appointment WordPress Theme, Copyright (C) 2013-2020, priyanshumittal
+Appointment WordPress Theme is distributed under the terms of the GNU GPL
 
+Appointment Green WordPress Theme is a child theme of Appointment Theme, Copyright (C) 2015-2020, priyanshumittal
+Appointment Green WordPress Theme is distributed under the terms of the GNU GPL
 
 === Support ===
 
@@ -43,6 +45,9 @@ For any ideas, support and feedback you can access the theme forum.
 
 == Changelog ==
 
+= 1.2.1 =
+1. Added the parent theme license in the readme file.
+2. Changed the tested up to in style.css and a readme file.
 = 1.2 =
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Changed the screenshot image.
