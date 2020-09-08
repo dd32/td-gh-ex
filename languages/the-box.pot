@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 13:17+0000\n"
+"POT-Creation-Date: 2020-09-05 22:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,6 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
+#. %s: post title
 #: comments.php:35
 #, php-format
 msgctxt "comments title"
@@ -135,7 +136,7 @@ msgstr ""
 msgid "White"
 msgstr ""
 
-#: functions.php:115 inc/customizer.php:479
+#: functions.php:115 inc/customizer.php:483
 msgid "Accent Color"
 msgstr ""
 
@@ -157,30 +158,30 @@ msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:215
 msgid "Sidebar Primary"
 msgstr ""
 
-#: functions.php:232
+#: functions.php:217
 msgid "Add widgets here to appear in your Sidebar."
 msgstr ""
 
-#: functions.php:239
+#: functions.php:224
 msgid "Footer"
 msgstr ""
 
-#: functions.php:408
+#: functions.php:405
 msgid "Read More"
 msgstr ""
 
-#: functions.php:483
+#: functions.php:480
 #, php-format
 msgid ""
 "<strong>Upgrade to The Box Plus</strong> to get extended functionality and "
 "advanced customization options: %1$s"
 msgstr ""
 
-#: functions.php:488
+#: functions.php:485
 msgid "Close and don't show this message again"
 msgstr ""
 
@@ -231,9 +232,9 @@ msgstr ""
 #, php-format
 msgid ""
 "Published <span class=\"entry-date\"><time class=\"entry-date\" "
-"datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to "
-"full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return "
-"to %7$s\" rel=\"gallery\">%8$s</a>"
+"datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to "
+"%7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
 
 #: image.php:41
@@ -281,11 +282,11 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: header.php:26
+#: header.php:31
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:53
+#: header.php:58
 msgid "open menu"
 msgstr ""
 
@@ -324,14 +325,11 @@ msgstr ""
 
 #: template-parts/content-single.php:40 template-parts/content.php:54
 #: template-parts/content-quote.php:22 template-parts/content-page.php:26
-#: template-parts/content-aside.php:22 inc/customizer.php:141
+#: template-parts/content-aside.php:22 inc/customizer.php:143
 msgid "Page"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
+#. used between list items, there is a space after the comma
 #: template-parts/content-single.php:50 template-parts/content-single.php:62
 #: template-parts/content.php:80 template-parts/content.php:92
 msgid ", "
@@ -362,14 +360,13 @@ msgstr ""
 
 #: template-parts/content-none.php:17
 #, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:21
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
+"can help."
 msgstr ""
 
 #: inc/template-tags.php:31
@@ -399,7 +396,7 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#. translators: 1: date, 2: time
+#. 1: date, 2: time
 #: inc/template-tags.php:79
 #, php-format
 msgid "%1$s at %2$s"
@@ -438,134 +435,151 @@ msgid "The Box Settings"
 msgstr ""
 
 #: inc/customizer.php:129
-msgid "Layout"
+msgid "General"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:130
+msgid "Main Theme Settings."
+msgstr ""
+
+#: inc/customizer.php:136
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:137
+msgid "Settings for Single Post."
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "Settings for Static Page."
+msgstr ""
+
+#: inc/customizer.php:150
 msgid "Social Links"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:152
 msgid "Paste here your Social Links."
 msgstr ""
 
-#: inc/customizer.php:154
+#: inc/customizer.php:157
 msgid "The Box Links"
 msgstr ""
 
-#: inc/customizer.php:169
-msgid "Layout Options"
+#: inc/customizer.php:172
+msgid "Site Layout"
 msgstr ""
 
 #: inc/customizer.php:173
+msgid ""
+"Layout Settings for Blog Homepage, Category, Tag, Search and Archive Pages."
+msgstr ""
+
+#: inc/customizer.php:177
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/customizer.php:174
+#: inc/customizer.php:178
 msgid "Sidebar Left"
 msgstr ""
 
-#: inc/customizer.php:175
+#: inc/customizer.php:179
 msgid "One Column"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:180
 msgid "2 Columns + Sidebar Right"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:190
 msgid "Post length"
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:195
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:192
+#: inc/customizer.php:196
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:208
 msgid "Display Post Thumbnails"
 msgstr ""
 
-#: inc/customizer.php:214 inc/customizer.php:238 inc/customizer.php:262
+#: inc/customizer.php:218 inc/customizer.php:242 inc/customizer.php:266
 msgid "Need more options?"
 msgstr ""
 
-#: inc/customizer.php:227 inc/customizer.php:251
+#: inc/customizer.php:231 inc/customizer.php:255
 msgid "Enable Featured Image"
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:232
 msgid "Display Featured Image on Single Posts."
 msgstr ""
 
-#: inc/customizer.php:252
+#: inc/customizer.php:256
 msgid "Display Featured Image on Pages."
 msgstr ""
 
-#: inc/customizer.php:296
+#: inc/customizer.php:300
 msgid "Show the RSS Feed icon"
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:313
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/customizer.php:322
+#: inc/customizer.php:326
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/customizer.php:335
+#: inc/customizer.php:339
 msgid "Google + Url"
 msgstr ""
 
-#: inc/customizer.php:348
+#: inc/customizer.php:352
 msgid "Linkedin Url"
 msgstr ""
 
-#: inc/customizer.php:361
+#: inc/customizer.php:365
 msgid "Instagram Url"
 msgstr ""
 
-#: inc/customizer.php:374
+#: inc/customizer.php:378
 msgid "Youtube Url"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:391
 msgid "Pinterest Url"
 msgstr ""
 
-#: inc/customizer.php:400
+#: inc/customizer.php:404
 msgid "StumbleUpon Url"
 msgstr ""
 
-#: inc/customizer.php:413
+#: inc/customizer.php:417
 msgid "Flickr Url"
 msgstr ""
 
-#: inc/customizer.php:426
+#: inc/customizer.php:430
 msgid "Tumblr Url"
 msgstr ""
 
-#: inc/customizer.php:439
+#: inc/customizer.php:443
 msgid "Medium Url"
 msgstr ""
 
-#: inc/customizer.php:452
+#: inc/customizer.php:456
 msgid "Github Url"
 msgstr ""
 
-#: inc/customizer.php:465
+#: inc/customizer.php:469
 msgid "Xing Url"
 msgstr ""
 
-#: inc/customizer.php:492
+#: inc/customizer.php:496
 msgid "Footer Background"
 msgstr ""
 

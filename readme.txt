@@ -1,7 +1,9 @@
 === The Box ===
+Contributors: Design Lab Themes
 Tags: blog, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, one-column, post-formats, right-sidebar, sticky-post, theme-options, two-columns, translation-ready
-Requires at least: 4.3
-Tested up to: 5.2.3
+Requires at least: 4.5
+Tested up to: 5.5.1
+Stable tag: 1.4.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +31,15 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 
 
 == Changelog ==
+
+= 1.5.1 =
+* Remove block.css and add CCS code to the main stylesheet
+* Add font-display: fallback to the Google Fonts URL
+* Add font-display: swap to Font Awesome Icons
+* Add better support for editor blocks
+* Add wp_body_open action at the top of the body
+* Add Tested up to and Requires PHP to style.css
+* Update images in the screenshot for GPL compliance
 
 = 1.5.0 =
 * Added front end styles and editor styles for the new block-based editor
@@ -111,25 +122,26 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 
 
 == Resources ==
-* 	The Theme is based on Underscores http://underscores.me/,
-	(C) 2012-2016 Automattic, Inc.,
-	[GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
-*	normalize.css https://github.com/necolas/normalize.css,
-	(C) Copyright Nicolas Gallagher and Jonathan Neal
-	[MIT](http://opensource.org/licenses/MIT)
-	
-*	FontAwesome Icon font License: [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+The Theme is based on Underscores http://underscores.me/,
+(C) 2012-2016 Automattic, Inc.,
+[GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
-*	"Pro" Theme Section for the Customizer
-	Author		Justin Tadlock <justin@justintadlock.com>
-	Copyright	2016 (c) Justin Tadlock
-	Link		https://github.com/justintadlock/trt-customizer-pro
-	License		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+normalize.css https://github.com/necolas/normalize.css,
+(C) Copyright Nicolas Gallagher and Jonathan Neal
+[MIT](http://opensource.org/licenses/MIT)
 
-*	Images in the screenshot
-	(C) Unsplash https://unsplash.com/
-	Creative Commons Zero
-	http://creativecommons.org/publicdomain/zero/1.0/
-	
-*	Dutch translation by Theo Muys
+FontAwesome Icon font
+License: [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
+"Pro" Theme Section for the Customizer
+Author		Justin Tadlock <justin@justintadlock.com>
+Copyright	2016 (c) Justin Tadlock
+Link		https://github.com/justintadlock/trt-customizer-pro
+License		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Images URL in the screenshot:
+https://stocksnap.io/photo/dock-lake-U94B4HVBAO, (C) StockSnapp, CC0
+https://stocksnap.io/photo/snow-cold-O7MMWXKQVG, (C) StockSnapp, CC0
+
+Dutch translation by Theo Muys

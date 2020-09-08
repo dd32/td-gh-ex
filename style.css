@@ -1,13 +1,17 @@
 /*
 Theme Name: The Box
-Theme URI: https://www.designlabthemes.com/the-box-wordpress-theme/
+Text Domain: the-box
+Version: 1.5.1
+Requires at least: 4.5
+Tested up to: 5.5.1
+Requires PHP: 5.2.4
+Description: Clean and Simple WordPress Theme designed for blogs and online publications. With easy to use options The Box lets you focus on your awesome writing.
 Author: Design Lab
 Author URI: https://www.designlabthemes.com/
-Description: Clean and Simple WordPress Theme designed for blogs and online publications. With easy to use options The Box lets you focus on your awesome writing.
-Version: 1.5.0
+Theme URI: https://www.designlabthemes.com/the-box-wordpress-theme/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: the-box
+
 Tags: blog, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, one-column, post-formats, right-sidebar, sticky-post, theme-options, two-columns, translation-ready
 
 */
@@ -16,7 +20,7 @@ Tags: blog, custom-background, custom-colors, custom-header, custom-menu, featur
  * Please don't edit this file.  You can lose all modifications if the theme is updated.
  * Please use Additional CSS via Customizer (since WordPress 4.7) or a child theme. You can overwrite specific style rules in your child theme's 'style.css' file.
  * See here more about Child Themes: https://codex.wordpress.org/Child_Themes
-********************************************************************************************************/ 
+********************************************************************************************************/
 
 /*
 
@@ -31,8 +35,9 @@ Tags: blog, custom-background, custom-colors, custom-header, custom-menu, featur
 09: - Widgets
 10: - Footer
 11: - Comments
-12: - Additional Styles
-13: - Responsive
+12: - Blocks
+13: - Additional Styles
+14: - Responsive
 
 */
 
@@ -40,7 +45,7 @@ Tags: blog, custom-background, custom-colors, custom-header, custom-menu, featur
  * 01: Normalize
  * Styles based on Normalize v7.0.0 @link https://github.com/necolas/normalize.css
  */
- 
+
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -244,7 +249,7 @@ template {
 	display: none;
 }
 
-/* 
+/*
  * 02: Layout
  */
 
@@ -339,7 +344,7 @@ body {
 	}
 }
 
-/* 
+/*
  * 03: Typography
  */
 
@@ -433,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
-/* 
+/*
  * 04: Elements
  */
 
@@ -500,10 +505,10 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    font-style: italic;
-    margin: 20px 0;
-    padding: 0 15px;
-    border-left: 4px solid #ddd;
+	font-style: italic;
+	margin: 20px 0;
+	padding: 0 15px;
+	border-left: 4px solid #ddd;
 }
 
 address {
@@ -531,8 +536,11 @@ abbr, acronym {
 }
 
 mark, ins {
-	background: #fff9c0;
 	text-decoration: none;
+}
+
+mark {
+	background: #fff9c0;
 }
 
 sup,
@@ -631,7 +639,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	
+
 }
 
 input[type="checkbox"],
@@ -801,11 +809,11 @@ h3 a {
 .edit-link a {
 	display: inline-block;
 	padding: 2px 15px;
-	text-decoration: none;	
+	text-decoration: none;
 	font-size: 	0.923em;
 	font-weight: 700;
 	line-height: 1.5;
-	color: #0fa5d9;	
+	color: #0fa5d9;
 	background-color: #fff;
 	border: 1px solid #0fa5d9;
 	-webkit-border-radius: 64px;
@@ -931,10 +939,10 @@ h3 a {
 	speak: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;	
+	-moz-osx-font-smoothing: grayscale;
 	position: absolute;
 	right: 2px;
-	top: 18px;		
+	top: 18px;
 	content: "\69";
 	font-size: 14px;
 	width: 14px;
@@ -1169,7 +1177,7 @@ button.menu-toggle:focus {
 	padding: 0;
 }
 
-.pagination .nav-links { 
+.pagination .nav-links {
 	clear: both;
 	list-style-type: none;
 	margin: 0;
@@ -1177,8 +1185,8 @@ button.menu-toggle:focus {
 }
 
 .pagination .nav-links a,
-.pagination .nav-links span { 
-	display: block; 
+.pagination .nav-links span {
+	display: block;
 	float: left;
 	height: 30px;
 	margin: 0 5px 5px 0;
@@ -1195,7 +1203,7 @@ button.menu-toggle:focus {
 
 .pagination .nav-links .current,
 .pagination .nav-links .current:hover,
-.pagination .nav-links a:hover { 
+.pagination .nav-links a:hover {
 	border-color: transparent;
 	text-decoration: none;
 	color: #fff;
@@ -1225,7 +1233,7 @@ button.menu-toggle:focus {
 	color: #959595;
 	color: rgba(0,0,0,0.5);
     margin: 5px 0 0;
-    font-size: 1rem; 
+    font-size: 1rem;
     font-weight: 400;
 }
 
@@ -1471,7 +1479,7 @@ button.menu-toggle:focus {
 }
 
 .page-header h1 {
-	font-size: 	0.857em; /*12px*/ 
+	font-size: 	0.857em; /*12px*/
 	text-transform: uppercase;
 	margin: 0;
 	padding: 0;
@@ -1537,7 +1545,7 @@ button.menu-toggle:focus {
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
-	border: none;	
+	border: none;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -1737,7 +1745,7 @@ button.menu-toggle:focus {
 	content: "\76";
 }
 
-/* 
+/*
  * 09: Widgets
  */
 
@@ -1886,7 +1894,7 @@ button.menu-toggle:focus {
 
 #tertiary .widget ul {
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 #tertiary .widget li {
@@ -1924,7 +1932,7 @@ button.menu-toggle:focus {
 	background: #252525;
 }
 
-/* 
+/*
  * 10: Footer
  */
 
@@ -1948,7 +1956,7 @@ button.menu-toggle:focus {
 	margin-bottom: 10px;
 }
 
-/* 
+/*
  * 11: Comments
  */
 
@@ -2023,8 +2031,257 @@ button.menu-toggle:focus {
 
 .bypostauthor {}
 
-/* 
- * 12: Page Templates
+
+/*
+ * 12: Blocks
+ */
+
+/* Paragraph */
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+	margin-top: 0.125em;
+}
+
+/* Captions */
+[class^="wp-block-"] figcaption {
+	display: block;
+	margin: 10px 0 0;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.5;
+	color: #959595;
+	box-sizing: border-box;
+}
+
+/* Image */
+.wp-block-image {
+	margin-bottom: 20px;
+}
+
+.wp-block-image img {
+	display: block;
+}
+
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	margin: 0 auto 20px;
+}
+
+.wp-block-image .aligncenter {
+	clear: both;
+	margin: 20px auto;
+}
+
+@media screen and (min-width: 480px) {
+	.wp-block-image .alignleft {
+	margin: 0 20px 5px 0;
+	}
+	.wp-block-image .alignright {
+	margin: 0 0 5px 20px;
+	}
+}
+
+/* Cover Image */
+.wp-block-cover-image,
+.wp-block-cover {
+	margin: 20px auto;
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container > *:last-child,
+.wp-block-cover .wp-block-cover__inner-container > *:last-child {
+	margin-bottom: 0;
+}
+
+/* Gallery */
+.wp-block-gallery {
+	margin-left: 0;
+}
+
+/* Buttons */
+.wp-block-button {
+	margin-bottom: 2em;
+}
+
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button {
+	background: #353535;
+	font-weight: 700;
+	line-height: 20px;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.wp-block-button__link {
+	padding: 10px 24px;
+	font-size: 1em;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out 0s;
+}
+
+.wp-block-button__link:hover {
+	text-decoration: none;
+	opacity: 0.75;
+}
+
+.wp-block-file .wp-block-file__button {
+	padding: 8px 16px;
+	font-size: 14px;
+}
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color) {
+	color: #fff;
+}
+
+.wp-block-button.is-style-outline {
+	color: #353535;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: none;
+	border-color: currentColor;
+	padding: 8px 22px;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: inherit;
+}
+
+/* Separator */
+.wp-block-separator {
+	color: #353535;
+	border: 0;
+}
+
+.wp-block-separator:not(.is-style-wide) {
+	background-color: #353535;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	height: 3px;
+	max-width: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-separator.is-style-dots:before {
+	background-color: transparent;
+	font-size: 2em;
+	letter-spacing: 2em;
+	padding-left: 2em;
+}
+
+/* Quote */
+.wp-block-quote.has-text-align-center {
+	border-left: 0;
+	padding: 0 20px;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	margin: 30px auto;
+}
+
+/* Media & Text */
+.wp-block-media-text {
+	margin-bottom: 20px;
+}
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
+/* Columns */
+.wp-block-columns {
+	margin-bottom: 30px;
+}
+
+/* Audio */
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* Widgets */
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.wp-block-categories {
+	margin-left: 0;
+}
+
+.entry-content .wp-social-link a,
+.entry-content .wp-social-link a:hover,
+.entry-content .wp-social-link a:active,
+.entry-content .wp-social-link a:visited,
+.entry-content .wp-social-link svg {
+	color: currentColor;
+}
+
+/* Colors & Font sizes */
+.entry-content .has-black-color {
+	color: #000;
+}
+
+.entry-content .has-dark-gray-color {
+	color: #252525;
+}
+
+.entry-content .has-medium-gray-color {
+	color: #353535;
+}
+
+.entry-content .has-light-gray-color {
+	color: #959595;
+}
+
+.entry-content .has-white-color {
+	color: #fff;
+}
+
+.entry-content .has-black-background-color {
+	background-color: #000;
+}
+
+.entry-content .has-dark-gray-background-color {
+	background-color: #252525;
+}
+
+.entry-content .has-medium-gray-background-color {
+	background-color: #353535;
+}
+
+.entry-content .has-light-gray-background-color {
+	background-color: #959595;
+}
+
+.entry-content .has-white-background-color {
+	background-color: #fff;
+}
+
+.entry-content .has-small-font-size {
+	font-size: 14px;
+}
+
+.entry-content .has-regular-font-size {
+	font-size: 16px;
+}
+
+.entry-content .has-large-font-size {
+	font-size: 24px;
+	line-height: 1.4;
+}
+
+.entry-content .has-larger-font-size {
+	font-size: 32px;
+	line-height: 1.4;
+}
+
+
+/*
+ * 13: Additional Styles
  */
 
 /* No Sidebar Template */
@@ -2127,7 +2384,7 @@ button.menu-toggle:focus {
 }
 
 /*
- * 13: Responsive
+ * 14: Responsive
  */
 
 @media screen and (min-width: 480px) {
@@ -2235,10 +2492,10 @@ button.menu-toggle:focus {
 	}
 	/* Layout Options */
 	.sidebar-content .content-area {
-	float: right;	
+	float: right;
 	}
 	.sidebar-content .widget-area {
-	float: left;	
+	float: left;
 	}
 	.one-column .post-thumbnail .size-medium {
 	max-width: 300px;

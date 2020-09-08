@@ -13,19 +13,19 @@ if ( ! function_exists( 'thebox_setup' ) ) :
  *
  */
 function thebox_setup() {
-	
+
 	// Make theme available for translation. Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'the-box', get_template_directory() . '/languages' );	
-	
+	load_theme_textdomain( 'the-box', get_template_directory() . '/languages' );
+
 	// Set the default content width.
 	$GLOBALS['content_width'] = 600;
-	
+
 	// Supporting title tag via add_theme_support (since WordPress 4.1)
 	add_theme_support( 'title-tag' );
-   
+
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
-	
+
 	// Enable support for Post Thumbnail
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 940, 9999 ); //600 pixels wide (and unlimited height)
@@ -35,13 +35,13 @@ function thebox_setup() {
 		'primary' => __( 'Primary Menu', 'the-box' ),
 		'secondary' => __( 'Footer Menu', 'the-box' )
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-	
+
 	// Enable support for Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
@@ -50,13 +50,13 @@ function thebox_setup() {
 		'default-color' => 'f0f3f5',
 		'default-image' => '',
 	) ) );
-	
+
 	// This theme styles the visual editor to resemble the theme style,
 	add_editor_style( array( 'inc/css/editor-style.css', thebox_fonts_url() ) );
-	
+
 	// Load regular editor styles into the new block-based editor.
 	add_theme_support( 'editor-styles' );
-	
+
 	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes', array(
@@ -82,7 +82,7 @@ function thebox_setup() {
 			),
 		)
 	);
-	
+
 	// Add support for custom color scheme.
 	add_theme_support(
 		'editor-color-palette', array(
@@ -117,7 +117,7 @@ function thebox_setup() {
 			'color' => esc_attr( get_option( 'color_primary', '#0fa5d9' ) ),
 		),
 	) );
-	
+
 }
 endif;
 add_action( 'after_setup_theme', 'thebox_setup' );
@@ -161,7 +161,8 @@ function thebox_fonts_url() {
 		$fonts_url = add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),
 			'subset' => urlencode( $subsets ),
-		), '//fonts.googleapis.com/css' );
+			'display' => 'fallback',
+		), 'https://fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -174,51 +175,35 @@ endif;
  *
  */
 function thebox_scripts() {
-	
+
 	// Add Google Fonts.
 	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
-	
+
 	// Add Icons Font, used in the main stylesheet.
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.min.css', array(), '1.7' );
-		
+
 	// Theme stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.5.0' );
-	
-	// Blocks stylesheet.
-	wp_enqueue_style( 'thebox-blocks-style', get_template_directory_uri() . '/inc/css/blocks.css', array( 'thebox-style' ), '20190904' );
-	
+	$theme_version = wp_get_theme()->get( 'Version' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), $theme_version );
+
 	// Main js.
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
-	
+
 	// Comment reply script.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
+
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/js/html5.min.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-	
+
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
-	
+
 }
 add_action( 'wp_enqueue_scripts', 'thebox_scripts' );
-
-
-/**
- * Enqueue styles for the block-based editor.
- */
-function thebox_block_editor_styles() {
-	// Add Block styles.
-	wp_enqueue_style( 'thebox-block-editor-style', get_theme_file_uri( '/inc/css/editor-blocks.css' ) );
-	// Add custom styles.
-	wp_add_inline_style( 'thebox-block-editor-style', thebox_custom_style() );
-	// Add Google fonts.
-	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
-}
-add_action( 'enqueue_block_editor_assets', 'thebox_block_editor_styles' );
 
 
 /**
@@ -233,7 +218,7 @@ function thebox_widgets_init() {
 		'before_widget' => '<div class="widget-wrapper"><div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title"><span>',
-		'after_title' => '</span></h3>',	
+		'after_title' => '</span></h3>',
 	) );
 	register_sidebar( array(
 		'name' => __( 'Footer', 'the-box' ),
@@ -248,8 +233,17 @@ add_action( 'widgets_init', 'thebox_widgets_init' );
 
 
 /**
+ * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
+
+/**
  * Implement the Custom Header feature
- *
  */
 require( get_template_directory() . '/inc/custom-header.php' );
 
@@ -258,12 +252,7 @@ require( get_template_directory() . '/inc/custom-header.php' );
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-
-/**
- * Custom styles handled by the Theme customizer.
- */
-require get_template_directory() . '/inc/custom-styles.php';
+require get_template_directory() . '/inc/customizer-css.php';
 
 
 /**
@@ -273,9 +262,17 @@ require get_template_directory() . '/inc/template-tags.php';
 
 
 /**
- *  Load Jetpack compatibility file.
+ * Add theme support for Infinite Scroll.
+ * See: https://jetpack.com/support/infinite-scroll/
  */
-require get_template_directory() . '/inc/jetpack.php';
+
+function thebox_infinite_scroll_setup() {
+	add_theme_support( 'infinite-scroll', array(
+		'container' => 'content',
+		'footer'    => 'page',
+	) );
+}
+add_action( 'after_setup_theme', 'thebox_infinite_scroll_setup' );
 
 
 /*
@@ -283,7 +280,7 @@ require get_template_directory() . '/inc/jetpack.php';
  *
  */
 function thebox_social_links() {
-	
+
 	// Backward compatibility for Theme versions older than 4.1.3
 	if ( get_option( 'thebox_theme_options' ) ) { // Retro compatibility for versions older than 4.1.3
 		$options = get_option( 'thebox_theme_options', '' ); // Old Theme Options Page Values
@@ -299,9 +296,9 @@ function thebox_social_links() {
 		$tumblr_url = get_option('tumblr_url', $options['tumblrurl'] );
 		$medium_url = get_option('medium_url', $options['mediumurl'] );
 		$github_url = get_option('github_url', $options['githuburl'] );
-		
+
 	} else {
-		
+
 		$facebook_url = get_option('facebook_url', '');
 		$twitter_url = get_option('twitter_url', '');
 		$googleplus_url = get_option('googleplus_url', '');
@@ -315,15 +312,15 @@ function thebox_social_links() {
 		$medium_url = get_option('medium_url', '');
 		$github_url = get_option('github_url', '');
 	}
-	
+
 		$xing_url = get_option('xing_url', '');
-	
+
 	echo '<ul class="social-links">'; ?>
-		
+
 	<?php if ( $facebook_url != '' ) : ?>
 		<li><a href="<?php echo $facebook_url; ?>" class="facebook" title="facebook" target="_blank"><span class="icon-facebook"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $twitter_url != '' ) : ?>
 		<li><a href="<?php echo $twitter_url; ?>" class="twitter" title="twitter" target="_blank"><span class="icon-twitter"></span></a></li>
 	<?php endif; ?>
@@ -331,51 +328,51 @@ function thebox_social_links() {
 	<?php if ( $googleplus_url != '' ) : ?>
 		<li><a href="<?php echo $googleplus_url; ?>" class="googleplus" title="google plus" target="_blank"><span class="icon-googleplus"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $linkedin_url != '' ) : ?>
 		<li><a href="<?php echo $linkedin_url; ?>" class="linkedin" title="instagram" target="_blank"><span class="icon-linkedin"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $instagram_url != '' ) : ?>
 		<li><a href="<?php echo $instagram_url; ?>" class="instagram" title="instagram" target="_blank"><span class="icon-instagram"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $youtube_url != '' ) : ?>
 		<li><a href="<?php echo $youtube_url; ?>" class="youtube" title="youtube" target="_blank"><span class="icon-youtube"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $pinterest_url != '' ) : ?>
 		<li><a href="<?php echo $pinterest_url; ?>" class="pinterest" title="pinterest" target="_blank"><span class="icon-pinterest"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $stumbleupon_url != '' ) : ?>
 		<li><a href="<?php echo $stumbleupon_url; ?>" class="stumbleupon" title="stumble upon" target="_blank"><span class="icon-stumbleupon"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $flickr_url != '' ) : ?>
 		<li><a href="<?php echo $flickr_url; ?>" class="flickr" title="flickr" target="_blank"><span class="icon-flickr"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $tumblr_url != '' ) : ?>
 		<li><a href="<?php echo $tumblr_url; ?>" class="tumblr" title="tumblr" target="_blank"><span class="icon-tumblr"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $medium_url != '' ) : ?>
 		<li><a href="<?php echo $medium_url; ?>" class="medium" title="medium" target="_blank"><span class="icon-medium"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $github_url != '' ) : ?>
 		<li><a href="<?php echo $github_url; ?>" class="github" title="github" target="_blank"><span class="icon-github"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php if ( $xing_url != '' ) : ?>
 		<li><a href="<?php echo $xing_url; ?>" class="xing" title="xing" target="_blank"><span class="icon-xing"></span></a></li>
 	<?php endif; ?>
-		
+
 	<?php if ( get_option( 'thebox_show_rss', 1 ) ) : ?>
 		<li><a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss" title="rss" target="_blank"><span class="icon-rss"></span></a></li>
 	<?php endif; ?>
-	
+
 	<?php echo '</ul>';
 }
 
@@ -386,12 +383,12 @@ function thebox_social_links() {
  */
 function thebox_custom_excerpt_length( $length ) {
 	if ( get_option( 'thebox_sidebar_settings' ) == 'grid2-sidebar' ) {
-    return 18;
-    } elseif ( get_option( 'thebox_sidebar_settings' ) == 'one-column') {
-	return 50;
+		return 18;
+	} elseif ( get_option( 'thebox_sidebar_settings' ) == 'one-column') {
+		return 50;
 	} else {
-	return 40;
-    }
+		return 40;
+	}
 }
 add_filter( 'excerpt_length', 'thebox_custom_excerpt_length', 999 );
 
@@ -403,10 +400,10 @@ add_filter( 'excerpt_length', 'thebox_custom_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function thebox_excerpt_more( $more ) {
-    return sprintf( ' ... <a class="more-link" href="%1$s">%2$s &raquo;</a>',
-        get_permalink( get_the_ID() ),
-        __( 'Read More', 'the-box' )
-    );
+	return sprintf( ' ... <a class="more-link" href="%1$s">%2$s &raquo;</a>',
+		get_permalink( get_the_ID() ),
+		__( 'Read More', 'the-box' )
+	);
 }
 add_filter( 'excerpt_more', 'thebox_excerpt_more' );
 
@@ -423,7 +420,7 @@ if ( !function_exists('thebox_grid') ) {
 		} else {
 			echo 'col-12';
 		}
-	} 
+	}
 }
 
 
@@ -431,26 +428,26 @@ if ( !function_exists('thebox_grid') ) {
  * Prints Credits in the Footer
  *
  */
-function thebox_credits() {	
+function thebox_credits() {
 	$website_credits = '';
 	$website_author = get_bloginfo('name');
 	$website_date =  date ('Y');
-	$website_credits = '&copy; ' . $website_date . ' ' . $website_author;	
+	$website_credits = '&copy; ' . $website_date . ' ' . $website_author;
 	echo esc_html( $website_credits );
 }
 
 
-/** 
+/**
  * Add specific CSS class by filter
  */
 function thebox_custom_classes( $classes ) {
 	$classes[] = get_option('thebox_sidebar_settings', 'content-sidebar');
-	
+
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-	
+
 	// return the $classes array
 	return $classes;
 }
@@ -468,63 +465,61 @@ require_once( trailingslashit( get_template_directory() ) . '/inc/customize-pro/
  * The Box Plus Notice
  *
  */
- if( is_admin() ) {
+if( is_admin() ) {
 
- 	if( !get_option('thebox_basic_notice') ) {
+	if( ! get_option( 'thebox_basic_notice' ) ) {
 
-    add_action('admin_notices', 'thebox_basic_notice');
-    add_action('wp_ajax_thebox_hide_notice', 'thebox_hide_notice');
+		add_action('admin_notices', 'thebox_basic_notice');
+		add_action('wp_ajax_thebox_hide_notice', 'thebox_hide_notice');
 
-    function thebox_basic_notice(){
-       ?>
-      <div class="basic-notice updated is-dismissible" style="position: relative;padding-right: 40px;">
-        <p>
-          <?php
-            printf(__('<strong>Upgrade to The Box Plus</strong> to get extended functionality and advanced customization options: %1$s', 'the-box'),
-            sprintf('<a class="button button-primary" style="text-decoration:none" href="https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=notice_button&utm_medium=wordpress_dashboard&utm_campaign=the_box_upsell" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
-            );
-          ?>
-        </p>
-         <a class="notice-dismiss" style="text-decoration:none;cursor:pointer;" title="<?php _e('Close and don\'t show this message again', 'the-box'); ?>">
-	         <span class="screen-reader-text">Dismiss this notice.</span>
-         </a>         
-      </div>
+		function thebox_basic_notice() {
+		?>
+			<div class="basic-notice updated is-dismissible" style="position: relative;padding-right: 40px;">
+				<p>
+				<?php
+					printf(__('<strong>Upgrade to The Box Plus</strong> to get extended functionality and advanced customization options: %1$s', 'the-box'),
+					sprintf('<a class="button button-primary" style="text-decoration:none" href="https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=notice_button&utm_medium=wordpress_dashboard&utm_campaign=the_box_upsell" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
+					);
+				?>
+				</p>
+				<a class="notice-dismiss" style="text-decoration:none;cursor:pointer;" title="<?php _e('Close and don\'t show this message again', 'the-box'); ?>">
+					<span class="screen-reader-text">Dismiss this notice.</span>
+				</a>
+			</div>
 
-      <script type="text/javascript">
-       jQuery(document).ready(function($){
-         $('#wpbody').delegate('.basic-notice a.notice-dismiss', 'click', function(){
-           $.ajax({
-             url: ajaxurl,
-             type: 'GET',
-             context: this,
-             data: ({
-               action: 'thebox_hide_notice',
-               _ajax_nonce: '<?php echo wp_create_nonce('thebox_hide_notice'); ?>'
-             }),
-             success: function(data){
-               $(this).parents('.basic-notice').remove();
-             }
-           });
-         });
-       });
+		<script type="text/javascript">
+			jQuery(document).ready(function($){
+				$('#wpbody').delegate('.basic-notice a.notice-dismiss', 'click', function(){
+					$.ajax({
+						url: ajaxurl,
+						type: 'GET',
+						context: this,
+						data: ({
+							action: 'thebox_hide_notice',
+							_ajax_nonce: '<?php echo wp_create_nonce('thebox_hide_notice'); ?>'
+						}),
+						success: function(data){
+							$(this).parents('.basic-notice').remove();
+						}
+					});
+				});
+			});
+		</script>
+		<?php
+		}
 
-      </script>
-      <?php
-    }
+		function thebox_hide_notice() {
+			check_ajax_referer('thebox_hide_notice');
+			update_option('thebox_basic_notice', true);
+			die();
+		}
 
-    function thebox_hide_notice() {
-      check_ajax_referer('thebox_hide_notice');
-      update_option('thebox_basic_notice', true);
-      die();
-    }
+	}
+	// removes the notice status from the db
+	add_action('switch_theme', 'thebox_remove_notice_record');
 
-  }
-
-  // removes the notice status from the db
-  add_action('switch_theme', 'thebox_remove_notice_record');
-
-  function thebox_remove_notice_record(){
-    delete_option('thebox_basic_notice');
-  }
+	function thebox_remove_notice_record() {
+		delete_option( 'thebox_basic_notice' );
+	}
 
 }
