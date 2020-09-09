@@ -49,6 +49,10 @@ Source:http://www.apache.org/licenses/LICENSE-2.0
 
 
 == Changelog ==
+= 1.0.7 =
+* Released: 2020-09-09
+- Update line of code header.php and modal-menu.php
+
 = 1.0.6 =
 * Released: 2020-08-31
 - Keyboard navigation and mobile menu implementation

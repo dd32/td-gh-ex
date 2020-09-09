@@ -108,7 +108,6 @@
                                                     'match_menu_classes' => true,
                                                     'show_sub_menu_icons' => true,
                                                     'title_li' => false,
-                                                    'walker'   => new baena_Walker_Page(),
                                                 )
                                             );
 
