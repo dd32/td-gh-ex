@@ -1,9 +1,9 @@
 === Theme: Agency Zita ===
 Contributors: WpZita
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors 
-Requires at least: 4.0
-Tested up to: 5.2.3
-Stable tag: 1.2.2
+Requires at least: 4.5
+Tested up to: 5.5.1
+Stable tag: 1.2.3
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -35,18 +35,29 @@ FontAwesome icons https://github.com/FortAwesome/Font-Awesome/blob/master/LICENS
 
 == Changelog ==
 
-== 1.0.0  =
-* Initial release
-Once again, thank you so much for trying the Agency Zita WordPress Theme. As we said at the beginning, we will be glad to help you. If you have any questions related to this theme then do let us know & we will try our best to assist. If you have any general questions related to the themes on WpZita, we would recommend you to visit the our Support Forum https://wpzita.com/support/ and ask your queries there.
+== 1.2.3  =
+* Issue Fixed.
 
-== 1.1.0  =
-* keyboard navigation & skip to content added.
-
-== 1.2.0  =
-* Screenshot icons changed.
+== 1.2.2  =
+* Latest WordPress compatibility checked
 
 == 1.2.1  =
 * Style and screenshot improved.
 
-== 1.2.2  =
-* Latest WordPress compatibility checked
+== 1.2.0  =
+* Screenshot icons changed.
+
+== 1.1.0  =
+* keyboard navigation & skip to content added.
+
+== 1.0.0  =
+* Initial release
+Once again, thank you so much for trying the Agency Zita WordPress Theme. As we said at the beginning, we will be glad to help you. If you have any questions related to this theme then do let us know & we will try our best to assist. If you have any general questions related to the themes on WpZita, we would recommend you to visit the our Support Forum https://wpzita.com/support/ and ask your queries there.
+
+
+
+
+
+
+
+
