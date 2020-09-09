@@ -34,7 +34,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Rambo_Plugin_Install_
         public function enqueue() {
             wp_enqueue_script('plugin-install');
             wp_enqueue_script('updates');
-            wp_enqueue_script('rambo-companion-install', RAMBO_ADMIN_URI . '/assets/js/plugin-install.js', array('jquery'));
+            wp_enqueue_script('rambo-companion-install', get_template_directory_uri() . '/assets/js/plugin-install.js', array('jquery'));
             wp_localize_script('rambo-companion-install', 'rambo_companion_install',
                     array(
                         'installing' => esc_html__('Installing', 'rambo'),

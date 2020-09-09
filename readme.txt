@@ -2,8 +2,8 @@
 
 Contributors: priyanshumittal
 Requires at least: 4.5
-Tested up to: 5.4.2
-Stable tag: 2.0.1
+Tested up to: 5.5
+Stable tag: 2.0.2
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -38,6 +38,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.2
+1. Fixed the customizer error of console.
 
 @version 2.0.1
 1. Changed the content of the screenshot.

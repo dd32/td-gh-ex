@@ -1,5 +1,8 @@
 == Changelog ==
 
+@version 2.0.2
+1. Fixed the customizer error of console.
+
 @version 2.0.1
 1. Changed the content of the screenshot.
 
