@@ -363,3 +363,12 @@
 	$advance_pet_care_custom_css .='#slider img{';
 		$advance_pet_care_custom_css .='height: '.esc_html($advance_pet_care_slider_image_height).'px;';
 	$advance_pet_care_custom_css .='}';
+
+	// Display Blog Post 
+	$advance_pet_care_display_blog_page_post = get_theme_mod( 'advance_pet_care_display_blog_page_post','Without Box');
+    if($advance_pet_care_display_blog_page_post == 'In Box'){
+		$advance_pet_care_custom_css .='.page-box{';
+			$advance_pet_care_custom_css .='border:1px solid #c5c5c5; margin:25px 0;';
+		$advance_pet_care_custom_css .='}';
+	}
+
