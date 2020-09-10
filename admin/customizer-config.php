@@ -10,7 +10,7 @@ $attire_config = array(
 );
 
 $attire_panels = array(
-    'attire_theme_options' => array(
+    'attire_general_settings' => array(
         'title' => __('General Settings', 'attire'),
         'description' => '',
         'priority' => 1,
@@ -96,25 +96,25 @@ $attire_sections = array(
     'attire_logo_options' => array(
         'title' => __('Logo', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_footer_widget_number' => array(
         'title' => __('Footer Widgets', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_header_general_settings' => array(
         'title' => __('Site Header', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_back_to_top' => array(
         'title' => __('Back To Top', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_layout_options' => array(
@@ -125,19 +125,19 @@ $attire_sections = array(
     'attire_social' => array(
         'title' => __('Social Networks', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_contact' => array(
         'title' => __('Contact Info', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_copyright' => array(
         'title' => __('Copyright Info', 'attire'),
         'description' => '',
-        'panel' => 'attire_theme_options',
+        'panel' => 'attire_general_settings',
         'priority' => 120,
     ),
     'attire_front_page_layout' => array(
@@ -342,23 +342,23 @@ $attire_options = array(
         )
     ),
     'site_logo_mobile_menu' => array(
-	    'label' => __('Mobile Menu Logo', 'attire'),
-	    'transport' => 'postMessage',
-	    'type' => 'image',
-	    'section' => 'attire_logo_options',
-	    'default' => '',
+        'label' => __('Mobile Menu Logo', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'image',
+        'section' => 'attire_logo_options',
+        'default' => '',
     ),
     'site_logo_mobile_menu_height' => array(
-	    'label' => __('Mobile Menu Logo Height', 'attire'),
-	    'transport' => 'postMessage',
-	    'type' => 'range',
-	    'section' => 'attire_logo_options',
-	    'default' => 60,
-	    'input_attrs' => array(
-		    'min' => 10,
-		    'max' => 200,
-		    'step' => 1,
-	    )
+        'label' => __('Mobile Menu Logo Height', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'range',
+        'section' => 'attire_logo_options',
+        'default' => 60,
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 200,
+            'step' => 1,
+        )
     ),
     'main_layout_type' => array(
         'label' => __('Site Layout', 'attire'),
@@ -963,7 +963,6 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_generic_fonts',
-        'default' => 'Montserrat',
         'description' => esc_html__('Font family for H1...H6 html tags', 'attire')
     ),
     'heading_font_weight' => array(
@@ -978,11 +977,25 @@ $attire_options = array(
             'step' => 100,
         )
     ),
-    'heading_font_size' => array(
+//    'heading_font_size' => array(
+//        'label' => __('H1 Font Size', 'attire'),
+//        'description' => '',
+//        'transport' => 'postMessage',
+//        'type' => 'range',
+//        'section' => 'attire_generic_fonts',
+//        'default' => '25',
+//        'input_attrs' => array(
+//            'min' => 10,
+//            'max' => 72,
+//            'step' => 1,
+//        )
+//    ),
+    'heading_font_size_desktop' => array(
         'label' => __('H1 Font Size', 'attire'),
         'description' => '',
         'transport' => 'postMessage',
-        'type' => 'range',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h1_font_size',
         'section' => 'attire_generic_fonts',
         'default' => '25',
         'input_attrs' => array(
@@ -991,11 +1004,40 @@ $attire_options = array(
             'step' => 1,
         )
     ),
-    'heading2_font_size' => array(
+    'heading_font_size_tablet' => array(
+        'label' => __('H1 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h1_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '25',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading_font_size_mobile' => array(
+        'label' => __('H1 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h1_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '25',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading2_font_size_desktop' => array(
         'label' => __('H2 Font Size', 'attire'),
         'description' => '',
         'transport' => 'postMessage',
-        'type' => 'range',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h2_font_size',
         'section' => 'attire_generic_fonts',
         'default' => '21',
         'input_attrs' => array(
@@ -1004,11 +1046,40 @@ $attire_options = array(
             'step' => 1,
         )
     ),
-    'heading3_font_size' => array(
+    'heading2_font_size_tablet' => array(
+        'label' => __('H2 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h2_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '21',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading2_font_size_mobile' => array(
+        'label' => __('H2 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h2_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '21',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading3_font_size_desktop' => array(
         'label' => __('H3 Font Size', 'attire'),
         'description' => '',
         'transport' => 'postMessage',
-        'type' => 'range',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h3_font_size',
         'section' => 'attire_generic_fonts',
         'default' => '17',
         'input_attrs' => array(
@@ -1017,11 +1088,68 @@ $attire_options = array(
             'step' => 1,
         )
     ),
-    'heading4_font_size' => array(
+    'heading3_font_size_tablet' => array(
+        'label' => __('H3 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h3_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '17',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading3_font_size_mobile' => array(
+        'label' => __('H3 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h3_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '17',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading4_font_size_desktop' => array(
         'label' => __('H4 Font Size', 'attire'),
         'description' => '',
         'transport' => 'postMessage',
-        'type' => 'range',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h4_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '14',
+        'input_attrs' => array(
+            'min' => 20,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading4_font_size_tablet' => array(
+        'label' => __('H4 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h4_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '14',
+        'input_attrs' => array(
+            'min' => 20,
+            'max' => 72,
+            'step' => 1,
+        )
+    ),
+    'heading4_font_size_mobile' => array(
+        'label' => __('H4 Font Size', 'attire'),
+        'description' => '',
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'h4_font_size',
         'section' => 'attire_generic_fonts',
         'default' => '14',
         'input_attrs' => array(
@@ -1042,13 +1170,39 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_generic_fonts',
-        'default' => 'Montserrat',
     ),
 
-    'body_font_size' => array(
+    'body_font_size_desktop' => array(
         'label' => __('Font Size', 'attire'),
         'transport' => 'postMessage',
-        'type' => 'range',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'body_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '14',
+        'input_attrs' => array(
+            'min' => 9,
+            'max' => 35,
+            'step' => 1,
+        )
+    ),
+    'body_font_size_tablet' => array(
+        'label' => __('Font Size', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'body_font_size',
+        'section' => 'attire_generic_fonts',
+        'default' => '14',
+        'input_attrs' => array(
+            'min' => 9,
+            'max' => 35,
+            'step' => 1,
+        )
+    ),
+    'body_font_size_mobile' => array(
+        'label' => __('Font Size', 'attire'),
+        'transport' => 'postMessage',
+        'type' => 'attire_responsive_input',
+        'control_id' => 'body_font_size',
         'section' => 'attire_generic_fonts',
         'default' => '14',
         'input_attrs' => array(
@@ -1079,7 +1233,6 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_generic_fonts',
-        'default' => 'Sen',
         'description' => esc_html__('Font family buttons', 'attire')
     ),
     'button_font_weight' => array(
@@ -1099,7 +1252,6 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_widget_fonts',
-        'default' => 'Montserrat',
     ),
     'widget_title_font_size' => array(
         'label' => __('Widget Title Font Size', 'attire'),
@@ -1131,7 +1283,6 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_widget_fonts',
-        'default' => 'Montserrat',
     ),
     'widget_content_font_size' => array(
         'label' => __('Widget Content Font Size', 'attire'),
@@ -1162,7 +1313,6 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_menu_fonts',
-        'default' => 'Montserrat',
     ),
     'menu_top_font_size' => array(
         'label' => __('Menu Top Font Size', 'attire'),
@@ -1195,7 +1345,6 @@ $attire_options = array(
         'transport' => 'postMessage',
         'type' => 'typography',
         'section' => 'attire_menu_fonts',
-        'default' => 'Montserrat',
     ),
     'menu_dropdown_font_size' => array(
         'label' => __('Menu Dropdown Font Size', 'attire'),
