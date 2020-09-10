@@ -375,4 +375,11 @@
 		$bb_mobile_application_custom_css .='height: '.esc_html($bb_mobile_application_slider_image_height).'px;';
 	$bb_mobile_application_custom_css .='}';
 
+	// Display Blog Post 
+	$bb_mobile_application_display_blog_page_post = get_theme_mod( 'bb_mobile_application_display_blog_page_post','In Box');
+    if($bb_mobile_application_display_blog_page_post == 'Without Box'){
+		$bb_mobile_application_custom_css .='.new-text, .our-services .page-box{';
+			$bb_mobile_application_custom_css .='border:none; margin:25px 0;box-shadow:none;';
+		$bb_mobile_application_custom_css .='}';
+	}
 

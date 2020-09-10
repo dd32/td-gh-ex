@@ -1202,6 +1202,20 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'settings'    => 'bb_mobile_application_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('bb_mobile_application_display_blog_page_post',array(
+        'default' => __('In Box','bb-mobile-application'),
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_mobile_application_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','bb-mobile-application'),
+        'section' => 'bb_mobile_application_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','bb-mobile-application'),
+            'Without Box' => __('Without Box','bb-mobile-application'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('bb_mobile_application_noresult_found',array(
 		'title'	=> __('No Result Found','bb-mobile-application'),
