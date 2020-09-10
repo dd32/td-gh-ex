@@ -1279,6 +1279,20 @@ function advance_coaching_customize_register($wp_customize) {
 		'type'=> 'text'
 	));
 
+	$wp_customize->add_setting('advance_coaching_display_blog_page_post',array(
+        'default' => __('Without Box','advance-coaching'),
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-coaching'),
+        'section' => 'advance_coaching_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-coaching'),
+            'Without Box' => __('Without Box','advance-coaching'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('advance_coaching_noresult_found',array(
 		'title'	=> __('No Result Found','advance-coaching'),

@@ -4,9 +4,9 @@ Theme URI: https://www.themeshopy.com/themes/free-coaching-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, personal trainer, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.5.3
+Version: 0.5.4
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-coaching
@@ -2027,6 +2027,9 @@ iframe {
     clear: both;
     margin: 10px;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (max-width:720px) {	
   .page-template-custom-front-page .contact-content{
@@ -2174,6 +2177,9 @@ iframe {
     left: 40%;
     right: 50%;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
   #slider .carousel-control-next {
@@ -2262,9 +2268,13 @@ iframe {
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    display: none;
     padding-top: 60px;
     transition: 0.5s;
+    visibility: hidden;
+  }
+  body.noscroll .sidebar{ 
+    width: 100%; 
+    visibility: visible;
   }
   .sidebar .closebtn {
     position: absolute;
