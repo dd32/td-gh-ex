@@ -50,7 +50,7 @@ jQuery(document).ready(function($){
    
    $('.number').counterUp({
         delay: 10,
-        time: 1000
+        time: 5000
     });
 
    //Responsive navigation
