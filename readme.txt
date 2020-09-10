@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.5
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 Requires PHP: 5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,12 @@ Avventura Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
 
+= 1.3.1 =
+Release date - September, 10 - 2020
+
+* Fixed - Video embedding issue
+* Updated - WooCommerce templates
+
 = 1.3.0 =
 Release date - August, 13 - 2020
 
@@ -29,7 +35,7 @@ Release date - August, 13 - 2020
 = 1.2.9 =
 Release date - July, 16 - 2020
 
-* Fixed - Overlapping footer 
+* Fixed - Overlapping footer
 
 = 1.2.8 =
 Release date - July, 15 - 2020
@@ -215,7 +221,7 @@ Google Web Fonts (Cinzel Decorative, Merriweather, Playfair Display) By Google -
 Bootstrap By Twitter, Inc - http://getbootstrap.com
 * bootstrap.css v3.3.7 - Licensed under MIT license ( Applies to bootstrap.css file in /avventura-lite/assets/css/ )
 
-prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
 * prettyPhoto.css v3.1.6 - Licensed under GPLv2 or Creative Commons 2.5 license ( Applies to prettyPhoto.css file in /avventura-lite/assets/css/ )
 
 Slick Slider By Ken Wheeler - https://github.com/kenwheeler/slick/
@@ -223,6 +229,9 @@ Slick Slider By Ken Wheeler - https://github.com/kenwheeler/slick/
 
 jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
 * jquery.easing.js v1.3 - Licensed under BSD License ( Applies to jquery.easing.js file in /avventura-lite/assets/js/ )
+
+FitVids By Chris Coyier and Dave Rupert -  http://daverupert.com
+* jquery.fitvids v1.1 - Licensed under WTFPL license ( Applies to jquery.fitvids.js file in /avventura-lite/assets/js/ )
 
 jQuery Nicescroll By InuYaksa - https://nicescroll.areaaperta.com/
 * jquery.nicescroll.js v3.7.6 - Licensed under MIT license ( Applies to jquery.nicescroll.js file in /avventura-lite/assets/js/ )
