@@ -558,13 +558,11 @@ if ( isset( $_GET['hide_admin_notice'] ) ) {
 	}
 }
 
-delete_option('header_layout');
-
 if(!function_exists('agency_starter_help_notice')):
 
 function agency_starter_help_notice() {
     $class = 'notice notice-info is-dismissible';
-    $message = __( 'Great customizations, See Appearance - Customise - Theme options. ', 'agency-starter' );
+    $message = __( 'Great customizations, See Appearance -> Customise -> Theme options. ', 'agency-starter' );
  	$dismiss = __( 'Hide the Notice', 'agency-starter');
 	$tutorial = __( 'Tutorials', 'agency-starter');
 	$pro_notice =  __( 'Jump start with Free Demos & Learn More', 'agency-starter');

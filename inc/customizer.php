@@ -159,8 +159,21 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		);
 	}
 	
+	//label
+	$wp_customize->add_setting('header_image_label' , array(
+		'default'    => __("If you add background image, change header text color from Theme Options > Header section.","agency-starter"),
+		'sanitize_callback' => 'sanitize_text_field',
+	));
 	
-
+	$wp_customize->add_control( new Agency_Lite_Label( 
+	$wp_customize, 
+	'header_image_label', 
+		array(
+			'section' => 'header_image',
+			'settings' => 'header_image_label',
+			'priority' => 8,
+		) 
+	));
 	
 	/***************** 
 	 * Theme options *
@@ -495,7 +508,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'header_contact_social_bg_color',
 		array(
-			'default'           => '#373636',
+			'default'           => '#0c73ce',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -514,35 +527,53 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	
 	
 	// 5 Typography
+	
+	$font_choices = array(
+			'Source Sans Pro' => 'Source Sans Pro',
+			'Google Sans' => 'Google Sans',
+			'Open Sans' => 'Open Sans',
+			'Oswald' => 'Oswald',
+			'Montserrat' => 'Montserrat',
+			'Raleway' => 'Raleway',
+			'Droid Sans' => 'Droid Sans',
+			'Lora' => 'Lora',
+			'Oxygen' => 'Oxygen',
+			'PT Sans' => 'PT Sans',
+			'Arimo' => 'Arimo',
+			'Roboto' => 'Roboto',
+			'Open Sans' => 'Open Sans Condensed',
+		);
 
 	$wp_customize->add_section( 'typography_section' , array(
 		'title'      => __('Typography', 'agency-starter' ),			 
-		'description'=> __('Change default fonts. Enter any Google Font name.', 'agency-starter' ),
+		'description'=> __('Change default fonts. Unlimited google fonts, go premium version.', 'agency-starter' ),
 		'panel' => 'theme_options',
 	));
 
 
 	$wp_customize->add_setting( 'heading_font' , array(
 		'default'    => 'Google Sans',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'agency_starter_sanitize_select',
 	));
 
 	$wp_customize->add_control('heading_font' , array(
-		'label' => __('Heading Font Family', 'agency-starter' ),
+		'label' => __('H1, H2, H3 ... H6 Fonts', 'agency-starter' ),
 		'section' => 'typography_section',
-		'type' => 'text',
+		'type' => 'select',
+		'choices' => $font_choices,
 	) );
 	
 	
 	$wp_customize->add_setting( 'body_font' , array(
 		'default'    => 'Lora',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'agency_starter_sanitize_select',
 	));
 
 	$wp_customize->add_control('body_font' , array(
-		'label' => __('Body Font Family', 'agency-starter' ),
+		'label' => __('Content Font', 'agency-starter' ),
 		'section' => 'typography_section',
-		'type' => 'text',
+		'type' => 'select',
+		'choices' => $font_choices,
 	));	
 	
 	//'choices' => agency_starter_font_family(),
@@ -814,3 +845,21 @@ function agency_starter_rgba_sanitization_callback( $value ) {
 function agency_starter_sanitize_phone_number( $phone ) {
 	return preg_replace( '/[^\d+]/', '', $phone );
 }
+
+
+/* Label custom control */
+if( class_exists( 'WP_Customize_Control' ) ):
+class Agency_Lite_Label extends WP_Customize_Control {
+  /**
+  * Render the control's content.
+  */
+  public function render_content() {
+  ?>
+	<div class="container"><div class="placeholder"></div></div>
+	<label><span class="customize-control-title" style="border: 1px solid #119926;padding: 5px;"><strong><?php echo esc_html( $this->value() ); ?></strong></span></label>
+  <?php
+  }
+}
+endif;
+
+
