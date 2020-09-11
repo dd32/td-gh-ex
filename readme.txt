@@ -2,8 +2,9 @@
 Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, post-formats, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +69,10 @@ Installation
 = 0.2.1 =
     . Added proper sanitization function.
     . Added focus on mobile menu.
+
+= 0.2.2 =
+    . Resolved theme errors.
+
 
 == Resources ==
 
