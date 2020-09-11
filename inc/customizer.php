@@ -620,9 +620,9 @@ final class Adventure_Travelling_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'adventure-travelling-customize-controls', trailingslashit( get_template_directory_uri() ) . '/assets/js/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'adventure-travelling-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . '/assets/js/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'adventure-travelling-customize-controls', trailingslashit( get_template_directory_uri() ) . '/assets/css/customize-controls.css' );
+		wp_enqueue_style( 'adventure-travelling-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . '/assets/css/customize-controls.css' );
 	}
 }
 

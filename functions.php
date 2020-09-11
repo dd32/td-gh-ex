@@ -166,8 +166,8 @@ function adventure_travelling_scripts() {
 
 	wp_enqueue_script( 'jquery-superfish', get_theme_file_uri( '/assets/js/jquery.superfish.js' ), array( 'jquery' ), '2.1.2', true );
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array( 'jquery' ), true );
-	wp_enqueue_script( 'adventure-travelling-custom-scripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), true);
-	wp_enqueue_script( 'adventure-travelling-focus-nav', get_template_directory_uri() . '/assets/js/focus-nav.js', array('jquery'), true);
+	wp_enqueue_script( 'adventure-travelling-custom-scripts', esc_url( get_template_directory_uri() ). '/assets/js/custom.js', array('jquery'), true);
+	wp_enqueue_script( 'adventure-travelling-focus-nav', esc_url( get_template_directory_uri() ) . '/assets/js/focus-nav.js', array('jquery'), true);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
