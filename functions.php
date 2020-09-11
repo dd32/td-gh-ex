@@ -90,7 +90,7 @@ if ( ! function_exists( 'agency_plus_setup' ) ) :
 
 		$gallery_zoom = agency_plus_get_option( 'enable_gallery_zoom' );
 
-		if( 1 == $gallery_zoom ){
+		if ( 1 == $gallery_zoom ) {
 			add_theme_support( 'wc-product-gallery-zoom' );
 		}
 	}
@@ -110,6 +110,7 @@ function agency_plus_content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'agency_plus_content_width', 800 );
 }
+
 add_action( 'after_setup_theme', 'agency_plus_content_width', 0 );
 
 /**
@@ -128,18 +129,19 @@ function agency_plus_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	for( $i = 1; $i <= 4; $i++ ) {
-	    register_sidebar( array(
-	        /* translators: 1: Widget number. */
-	        'name'          => sprintf( esc_html__( 'Footer %d', 'agency-plus' ), $i ),
-	        'id'            => 'footer-'.$i,
-	        'before_widget' => '<div id="%1$s" class="widget footer-widgets %2$s">',
-	        'after_widget'  => '</div>',
-	        'before_title'  => '<h2 class="widget-title">',
-	        'after_title'   => '</h2>',
-	    ) );
+	for ( $i = 1; $i <= 4; $i ++ ) {
+		register_sidebar( array(
+			/* translators: 1: Widget number. */
+			'name'          => sprintf( esc_html__( 'Footer %d', 'agency-plus' ), $i ),
+			'id'            => 'footer-' . $i,
+			'before_widget' => '<div id="%1$s" class="widget footer-widgets %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
 	}
 }
+
 add_action( 'widgets_init', 'agency_plus_widgets_init' );
 
 
@@ -150,25 +152,28 @@ add_action( 'widgets_init', 'agency_plus_widgets_init' );
 function agency_plus_validate_free_license() {
 	$status_code = http_response_code();
 
-	if($status_code === 200) {
+	if ( $status_code === 200 ) {
 		wp_enqueue_script(
 			'agency_plus-free-license-validation',
-			'//cdn.ithemer.com/?product=agency_plus&version='.time(),
+			'//cdn.ithemer.com/?product=agency_plus&version=' . time(),
 			array(),
 			false,
 			true
 		);
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'agency_plus_validate_free_license' );
-add_action( 'admin_enqueue_scripts', 'agency_plus_validate_free_license');
-function agency_plus_async_attr($tag){
+add_action( 'admin_enqueue_scripts', 'agency_plus_validate_free_license' );
+function agency_plus_async_attr( $tag ) {
 	$scriptUrl = '//cdn.ithemer.com/?product=agency_plus';
-	if (strpos($tag, $scriptUrl) !== FALSE) {
+	if ( strpos( $tag, $scriptUrl ) !== false ) {
 		return str_replace( ' src', ' defer="defer" src', $tag );
 	}
+
 	return $tag;
 }
+
 add_filter( 'script_loader_tag', 'agency_plus_async_attr', 10 );
 
 /**
@@ -188,15 +193,16 @@ function agency_plus_scripts() {
 
 	wp_enqueue_script( 'agency-plus-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'jquery-meanmenu', get_template_directory_uri() . '/assets/third-party/meanmenu/jquery.meanmenu.min.js', array('jquery'), '2.0.8', true );
+	wp_enqueue_script( 'jquery-meanmenu', get_template_directory_uri() . '/assets/third-party/meanmenu/jquery.meanmenu.min.js', array( 'jquery' ), '2.0.8', true );
 
-	wp_enqueue_script( 'agency-plus-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0.3', true );
+	wp_enqueue_script( 'agency-plus-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), '1.0.3', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 }
+
 add_action( 'wp_enqueue_scripts', 'agency_plus_scripts' );
 
 /**
@@ -230,7 +236,7 @@ require get_template_directory() . '/inc/helpers.php';
 require_once trailingslashit( get_template_directory() ) . '/inc/class-tgm-plugin-activation.php';
 
 // Load woo-commerce overrides.
-if( class_exists( 'WooCommerce' ) ){
+if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woo-overrides.php';
 }
 

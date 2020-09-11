@@ -148,7 +148,7 @@ if ( ! function_exists( 'agency_plus_hook_read_more_filters' ) ) :
 	 * @since 1.0.0
 	 */
 	function agency_plus_hook_read_more_filters() {
-		
+
 		add_filter( 'excerpt_length', 'agency_plus_implement_excerpt_length', 999 );
 		add_filter( 'the_content_more_link', 'agency_plus_content_more_link', 10, 2 );
 		add_filter( 'excerpt_more', 'agency_plus_implement_read_more' );
@@ -170,9 +170,9 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 // Function to include recommended plugins
 //=============================================================
 function agency_plus_register_required_plugins() {
-	
+
 	$plugins = array(
-				
+
 		array(
 			'name'      => esc_html__( 'Elementor Page Builder', 'agency-plus' ),
 			'slug'      => 'elementor',
@@ -185,11 +185,11 @@ function agency_plus_register_required_plugins() {
 			'required'  => false,
 		),
 
-		array(
+		/*array(
 			'name'      => esc_html__( 'Instagram Feed For Elementor', 'agency-plus' ),
 			'slug'      => 'ifeed-for-elementor',
 			'required'  => false,
-		),
+		),*/
 
 	);
 

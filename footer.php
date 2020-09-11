@@ -10,86 +10,86 @@
  */
 
 ?>
+<?php
+if ( ! is_page_template( 'elementor_header_footer' ) && ! is_page_template( 'templates/skeleton.php' ) ) { ?>
+    </div><!-- .inner-wrapper -->
+    </div><!-- .container -->
 	<?php
-	if( !is_page_template('elementor_header_footer') && !is_page_template('templates/skeleton.php') ){ ?>
-	    </div><!-- .inner-wrapper -->
-	    </div><!-- .container -->
-	    <?php 
-	} ?>
-	</div><!-- #content -->
+} ?>
+</div><!-- #content -->
 
-	<?php
-	if ( is_active_sidebar( 'footer-1' ) ||
-		 is_active_sidebar( 'footer-2' ) ||
-		 is_active_sidebar( 'footer-3' ) ||
-		 is_active_sidebar( 'footer-4' ) ) :
+<?php
+if ( is_active_sidebar( 'footer-1' ) ||
+     is_active_sidebar( 'footer-2' ) ||
+     is_active_sidebar( 'footer-3' ) ||
+     is_active_sidebar( 'footer-4' ) ) :
 	?>
-	<div id="footer-widget-area">
-		<div class="container">
-			<div class="inner-wrapper">
+    <div id="footer-widget-area">
+        <div class="container">
+            <div class="inner-wrapper">
 				<?php
-				for ( $i = 1; $i <= 4 ; $i++ ) {
+				for ( $i = 1; $i <= 4; $i ++ ) {
 					if ( is_active_sidebar( 'footer-' . $i ) ) {
 						?>
-						<aside class="footer-column footer-column-4">
+                        <aside class="footer-column footer-column-4">
 							<?php dynamic_sidebar( 'footer-' . $i ); ?>
-						</aside>
+                        </aside>
 						<?php
 					}
 				}
 				?>
-			</div>
-		</div><!-- .container -->
-	</div><!-- #footer-widget-area -->
+            </div>
+        </div><!-- .container -->
+    </div><!-- #footer-widget-area -->
 
-	<?php endif; ?>
+<?php endif; ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="container">
-			<div class="inner-wrapper">
+<footer id="colophon" class="site-footer">
+    <div class="container">
+        <div class="inner-wrapper">
 
-				<?php
+			<?php
 
-				$copyright_text = agency_plus_get_option( 'copyright_text' );
+			$copyright_text = agency_plus_get_option( 'copyright_text' );
 
-				if ( ! empty( $copyright_text ) ) : ?>
+			if ( ! empty( $copyright_text ) ) : ?>
 
-					<div class="site-info">
-
-						<?php
-
-						$copyright = agency_plus_apply_theme_shortcode( wp_kses_post( $copyright_text ) );
-
-						echo do_shortcode( $copyright );
-
-						?>
-						<span>Proudly powered by <a href="https://wordpress.org/">WordPress</a> | Theme: Agency Plus by <a href="https://ithemer.com/">iThemer</a>.</span>
-
-					</div><!-- .copyright -->
+                <div class="site-info">
 
 					<?php
 
-				endif; 
+					$copyright = agency_plus_apply_theme_shortcode( wp_kses_post( $copyright_text ) );
 
-				$enable_social_icons = agency_plus_get_option( 'enable_social_icons' );
+					echo do_shortcode( $copyright );
 
-				if( ( 1 == $enable_social_icons ) && has_nav_menu( 'social' ) ){ ?>
+					?>
+                    <span>Proudly powered by <a href="https://wordpress.org/">WordPress</a> | Theme: Agency Plus by <a href="https://ithemer.com/">iThemer</a>.</span>
 
-					<div class="footer-social-links">
-					    <div class="menu-social-menu-container">
-					        <?php
-					        wp_nav_menu( array(
-					            'theme_location' => 'social',
-					            'link_before'    => '<span class="screen-reader-text">',
-					            'link_after'     => '</span>',
-					        ) ); ?>
-					    </div>                              
-					</div>
-					<?php 
-				} ?>
-			</div><!-- .inner-wrapper -->
-		</div><!-- .container -->
-	</footer><!-- #colophon -->
+                </div><!-- .copyright -->
+
+			<?php
+
+			endif;
+
+			$enable_social_icons = agency_plus_get_option( 'enable_social_icons' );
+
+			if ( ( 1 == $enable_social_icons ) && has_nav_menu( 'social' ) ) { ?>
+
+                <div class="footer-social-links">
+                    <div class="menu-social-menu-container">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'social',
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span>',
+						) ); ?>
+                    </div>
+                </div>
+				<?php
+			} ?>
+        </div><!-- .inner-wrapper -->
+    </div><!-- .container -->
+</footer><!-- #colophon -->
 
 </div><!-- #page -->
 

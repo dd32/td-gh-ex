@@ -1,10 +1,10 @@
 === Agency Plus ===
 
 Contributors: ithemer
-Requires at least: 5.2
-Requires PHP: 5.6.20
-Tested up to: 5.4
-Stable tag: 1.0.4
+Requires at least: 5.4.2
+Requires PHP: 7.2
+Tested up to: 5.5.1
+Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,11 @@ Agency Plus includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.5 - September 10 2020 =
+* Extend compatibility to Wordpress 5.5.1
+* Added 'output escaping' functions
+* Refactoring of CSS and PHP code
+
 = 1.0.4 - June 5 2020 =
 * Footer changes
 * Blog mobile width
@@ -56,7 +61,7 @@ Agency Plus includes support for Infinite Scroll in Jetpack.
 == Credits ==
 
 - Underscores
-Source: Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. 
+Source: Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 License: [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 - Normalize
@@ -67,8 +72,8 @@ License: [MIT](http://opensource.org/licenses/MIT)
 Source: https://fonts.google.com/
 License: SIL Open Font License, 1.1 - scripts.sil.org/OFL
 
-- Font Awesome: 
-Source: http://fontawesome.io/, (C) Dave Gandy 
+- Font Awesome:
+Source: http://fontawesome.io/, (C) Dave Gandy
 License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
 
 - Meanmenu
