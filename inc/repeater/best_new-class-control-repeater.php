@@ -403,7 +403,7 @@ if( ! class_exists( 'Best_News_Control_Repeater' ) ) {
             </figure>
             
             <div class="actions">
-                <button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( 'Remove', 'best-news' ); ?></button>
+                <button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_html_e( 'Remove', 'best-news' ); ?></button>
                 <button type="button" class="button upload-button" data-label=" <?php esc_attr_e( 'Add Image', 'best-news' ); ?>" data-alt-label="<?php esc_attr_e( 'Change Image', 'best-news' ); ?>" >
                     <# if ( field.default ) { #>
                     <?php esc_attr_e( 'Change Image', 'best-news' ); ?>
@@ -468,7 +468,7 @@ if( ! class_exists( 'Best_News_Control_Repeater' ) ) {
             
         </div>
         <# }); #>
-        <button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'best-news' ); ?></button>
+        <button type="button" class="button-link repeater-row-remove"><?php esc_html_e( 'Remove', 'best-news' ); ?></button>
     </div>
 </li>
 </script>

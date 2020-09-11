@@ -1,4 +1,7 @@
-<?php get_template_part( 'sections/section','news-slider' ); ?>
+<?php 
+if (get_theme_mod("best_news_slider_enable_single_post",'1') == 1) {
+get_template_part( 'sections/section','news-slider' ); 
+}?>
 
 <section class="news-single section news-style1 category off-white">
 	<div class="container">

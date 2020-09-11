@@ -36,7 +36,7 @@ if ( ! function_exists( 'best_news_posted_by' ) ) :
 	function best_news_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'best-news' ),
+			esc_html_x( 'By %s', 'post author', 'best-news' ),
 			'<span class="author vcard"><a class="url fn n pr-1" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 

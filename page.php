@@ -15,6 +15,8 @@
 get_header();
 if( is_home() || ( is_front_page())):
 get_template_part( 'sections/section','news-slider' ); 
+elseif (get_theme_mod("best_news_slider_enable_single_post",'1') == 1) :
+	get_template_part( 'sections/section','news-slider' ); 
 endif ; ?>
 
 <section class="news-single section">

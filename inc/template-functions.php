@@ -49,7 +49,7 @@ if( ! function_exists('best_news_top_header_contact_info_items')):
 		$contact_items = get_theme_mod( 'top_header_contact_info_items', $defaults );
 		if( $contact_items  ){ 
 			foreach( $contact_items as $contact ){ ?>
-				<li><i class="<?php echo esc_attr($contact['icon']);?>"></i><?php echo esc_attr($contact['title']);?></li>
+				<li><i class="<?php echo esc_attr($contact['icon']);?>"></i><?php echo esc_html($contact['title']);?></li>
 				<?php
 			}
 		}
@@ -68,7 +68,7 @@ if( ! function_exists('best_news_footer_contact_info_items')):
 		$contact_items = get_theme_mod( 'footer_contact_info_items', $defaults );
 		if( $contact_items  ){ 
 			foreach( $contact_items as $contact ){ ?>
-				<div class="single-contact"><i class="<?php echo esc_attr($contact['icon']);?>"></i><?php echo esc_attr($contact['title']);?></div>
+				<div class="single-contact"><i class="<?php echo esc_attr($contact['icon']);?>"></i><?php echo esc_html($contact['title']);?></div>
 				<?php
 			}
 		}

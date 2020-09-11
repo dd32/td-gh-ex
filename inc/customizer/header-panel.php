@@ -464,7 +464,39 @@ function best_news_header_settings_register( $wp_customize ) {
         'best_news_slider_enable',
         array(
           'section'     => 'best_news_slider_section',
-          'label'       => __( 'Enable/Disable Main news slider Section', 'best-news' ),
+          'label'       => __( 'Enable/Disable Main news slider section in all website', 'best-news' ),
+          'type'        => 'checkbox'
+        )       
+      );
+      $wp_customize->add_setting(
+        'best_news_slider_enable_single_post',
+        array(
+          'default'           => 1,
+          'sanitize_callback' => 'best_news_sanitize_checkbox',
+        )
+      );
+
+      $wp_customize->add_control(
+        'best_news_slider_enable_single_post',
+        array(
+          'section'     => 'best_news_slider_section',
+          'label'       => __( 'Enable/Disable Main news slider section in single post/page', 'best-news' ),
+          'type'        => 'checkbox'
+        )       
+      );
+      $wp_customize->add_setting(
+        'best_news_slider_enable_blog_post',
+        array(
+          'default'           => 1,
+          'sanitize_callback' => 'best_news_sanitize_checkbox',
+        )
+      );
+
+      $wp_customize->add_control(
+        'best_news_slider_enable_blog_post',
+        array(
+          'section'     => 'best_news_slider_section',
+          'label'       => __( 'Enable/Disable Main news slider section in blog / search / archive post', 'best-news' ),
           'type'        => 'checkbox'
         )       
       );
