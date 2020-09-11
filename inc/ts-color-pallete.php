@@ -320,5 +320,25 @@
 		$bb_ecommerce_store_custom_css .='height: '.esc_html($bb_ecommerce_store_slider_image_height).'px;';
 	$bb_ecommerce_store_custom_css .='}';
 
+	// primary menu 
+	if((has_nav_menu('primary')) != true){
+		$bb_ecommerce_store_custom_css .='.cathead{';
+			$bb_ecommerce_store_custom_css .='top:0;';
+		$bb_ecommerce_store_custom_css .='} ';
+	}
+
+	// Display Blog Post 
+	$bb_ecommerce_store_display_blog_page_post = get_theme_mod( 'bb_ecommerce_store_display_blog_page_post','In Box');
+	if($bb_ecommerce_store_display_blog_page_post == 'In Box'){
+		$bb_ecommerce_store_custom_css .='article.tag-sticky-2, .inner-service{';
+			$bb_ecommerce_store_custom_css .='background: #f6f6f6;';
+		$bb_ecommerce_store_custom_css .='}';
+	}else if($bb_ecommerce_store_display_blog_page_post == 'Without Box'){
+		$bb_ecommerce_store_custom_css .='.inner-service{';
+			$bb_ecommerce_store_custom_css .='border:none; margin:25px 0; ';
+		$bb_ecommerce_store_custom_css .='}';
+	}
+
+
 
 

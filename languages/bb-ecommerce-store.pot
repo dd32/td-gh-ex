@@ -880,124 +880,137 @@ msgstr ""
 msgid 'Add Meta Separator. e.g.: "|", "/", etc.'
 msgstr ""
 
-#: inc/customizer.php:1272
+#: inc/customizer.php:1271
+#: inc/customizer.php:1279
+msgid 'In Box'
+msgstr ""
+
+#: inc/customizer.php:1276
+msgid 'Display Blog Page Post :'
+msgstr ""
+
+#: inc/customizer.php:1280
+msgid 'Without Box'
+msgstr ""
+
+#: inc/customizer.php:1286
 msgid "No Result Found"
 msgstr ""
 
-#: inc/customizer.php:1277
+#: inc/customizer.php:1291
 msgid "Nothing Found"
 msgstr ""
 
-#: inc/customizer.php:1281
+#: inc/customizer.php:1295
 msgid "No Result Found Title"
 msgstr ""
 
-#: inc/customizer.php:1287
+#: inc/customizer.php:1301
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1305
 msgid "No Result Found Content"
 msgstr ""
 
-#: inc/customizer.php:1302
+#: inc/customizer.php:1316
 msgid "No Result search"
 msgstr ""
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1322
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:1319
+#: inc/customizer.php:1333
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:1321
+#: inc/customizer.php:1335
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:1323
+#: inc/customizer.php:1337
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:1324
+#: inc/customizer.php:1338
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:1325
+#: inc/customizer.php:1339
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:1326
+#: inc/customizer.php:1340
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:1335
+#: inc/customizer.php:1349
 msgid 'Footer Widget Background Color'
 msgstr ""
 
-#: inc/customizer.php:1344
+#: inc/customizer.php:1358
 msgid 'Footer Widget Background Image'
 msgstr ""
 
-#: inc/customizer.php:1353
+#: inc/customizer.php:1367
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:1359
-#: inc/customizer.php:1369
+#: inc/customizer.php:1373
+#: inc/customizer.php:1383
 msgid 'center'
 msgstr ""
 
-#: inc/customizer.php:1364
+#: inc/customizer.php:1378
 msgid 'Copyright Text Alignment '
 msgstr ""
 
-#: inc/customizer.php:1367
+#: inc/customizer.php:1381
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1368
+#: inc/customizer.php:1382
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:1378
+#: inc/customizer.php:1392
 msgid 'Copyright Font Size'
 msgstr ""
 
-#: inc/customizer.php:1393
+#: inc/customizer.php:1407
 msgid 'Copyright Padding'
 msgstr ""
 
-#: inc/customizer.php:1409
+#: inc/customizer.php:1423
 msgid 'Show / Hide Scroll Top Button'
 msgstr ""
 
-#: inc/customizer.php:1414
-#: inc/customizer.php:1423
+#: inc/customizer.php:1428
+#: inc/customizer.php:1437
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:1419
+#: inc/customizer.php:1433
 msgid 'Scroll Back to Top Position'
 msgstr ""
 
-#: inc/customizer.php:1422
+#: inc/customizer.php:1436
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:1424
+#: inc/customizer.php:1438
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:1433
+#: inc/customizer.php:1477
 msgid 'Scroll Icon Font Size'
 msgstr ""
 
-#: inc/customizer.php:1524
+#: inc/customizer.php:1538
 msgid 'BB Ecommerce Pro'
 msgstr ""
 
-#: inc/customizer.php:1525
+#: inc/customizer.php:1539
 msgid 'Go Pro'
 msgstr ""

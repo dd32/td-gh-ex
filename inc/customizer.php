@@ -1267,6 +1267,20 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'settings'    => 'bb_ecommerce_store_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('bb_ecommerce_store_display_blog_page_post',array(
+        'default' => __('In Box','bb-ecommerce-store'),
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','bb-ecommerce-store'),
+            'Without Box' => __('Without Box','bb-ecommerce-store'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('bb_ecommerce_store_noresult_found',array(
 		'title'	=> __('No Result Found','bb-ecommerce-store'),

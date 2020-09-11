@@ -103,9 +103,12 @@
           </div>
         </div>
       </div>
-      <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-        <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
-      </div>
+      <?php 
+        if(has_nav_menu('primary')){ ?>
+        <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+          <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
+        </div>
+      <?php }?>
       <div class="top-header">
         <div class="container">
           <div class="row">
@@ -114,14 +117,16 @@
             <div class=" col-lg-9 col-md-9">
               <div id="menu-sidebar" class="nav sidebar <?php if( get_theme_mod( 'bb_ecommerce_store_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-ecommerce-store' ); ?>">
-                  <?php 
-                    wp_nav_menu( array( 
-                      'theme_location' => 'primary',
-                      'container_class' => 'main-menu-navigation clearfix' ,
-                      'menu_class' => 'clearfix',
-                      'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                      'fallback_cb' => 'wp_page_menu',
-                    ) ); 
+                  <?php
+                    if(has_nav_menu('primary')){ 
+                      wp_nav_menu( array( 
+                        'theme_location' => 'primary',
+                        'container_class' => 'main-menu-navigation clearfix' ,
+                        'menu_class' => 'clearfix',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                        'fallback_cb' => 'wp_page_menu',
+                      ) );
+                    } 
                   ?>
                   <div id="contact-info">
                     <div class="top-contact">
