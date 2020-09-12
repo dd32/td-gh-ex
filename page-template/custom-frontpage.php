@@ -12,86 +12,84 @@ get_header(); ?>
 
 <main id="main" role="main">
 	<section id="slider">
-		<div class="container-fluid">
-			<div class="row m-0">
-				<div class="col-lg-8 col-md-8 p-0">
-					<?php if( get_theme_mod('advance_blogging_slider_arrows') != ''){?>
-						<div class="slider">
-						  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod( 'advance_blogging_slider_speed',3000)) ?>"> 
-							    <?php $advance_blogging_slider_pages = array();
-							      for ( $count = 1; $count <= 4; $count++ ) {
-							        $mod = intval( get_theme_mod( 'advance_blogging_slider_page' . $count ));
-							        if ( 'page-none-selected' != $mod ) {
-							          $advance_blogging_slider_pages[] = $mod;
-							        }
-							      }
-							      if( !empty($advance_blogging_slider_pages) ) :
-							        $args = array(
-							          'post_type' => 'page',
-							          'post__in' => $advance_blogging_slider_pages,
-							          'orderby' => 'post__in'
-							        );
-							        $query = new WP_Query( $args );
-							        if ( $query->have_posts() ) :
-							          $i = 1;
-							    ?>
-							    <div class="carousel-inner" role="listbox">
-							      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-							        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-							            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
-		          				        <div class="carousel-caption">
-								            <div class="inner_carousel">
-								            	<?php if( get_theme_mod('advance_blogging_slider_title',true) != ''){ ?>
-								            		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
-								            	<?php }?>
-								                <?php if( get_theme_mod('advance_blogging_slider_content',true) != ''){ ?>
-								                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,esc_attr(get_theme_mod('advance_blogging_slider_excerpt','35')) ) ); ?></p>
-								                <?php }?>
-								            </div>
-								        </div>
+		<div class="row m-0">
+			<div class="col-lg-8 col-md-8 p-0">
+				<?php if( get_theme_mod('advance_blogging_slider_arrows') != ''){?>
+					<div class="slider">
+					  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod( 'advance_blogging_slider_speed',3000)) ?>"> 
+						    <?php $advance_blogging_slider_pages = array();
+						      for ( $count = 1; $count <= 4; $count++ ) {
+						        $mod = intval( get_theme_mod( 'advance_blogging_slider_page' . $count ));
+						        if ( 'page-none-selected' != $mod ) {
+						          $advance_blogging_slider_pages[] = $mod;
+						        }
+						      }
+						      if( !empty($advance_blogging_slider_pages) ) :
+						        $args = array(
+						          'post_type' => 'page',
+						          'post__in' => $advance_blogging_slider_pages,
+						          'orderby' => 'post__in'
+						        );
+						        $query = new WP_Query( $args );
+						        if ( $query->have_posts() ) :
+						          $i = 1;
+						    ?>
+						    <div class="carousel-inner" role="listbox">
+						      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+						        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
+						            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
+	          				        <div class="carousel-caption">
+							            <div class="inner_carousel">
+							            	<?php if( get_theme_mod('advance_blogging_slider_title',true) != ''){ ?>
+							            		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
+							            	<?php }?>
+							                <?php if( get_theme_mod('advance_blogging_slider_content',true) != ''){ ?>
+							                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,esc_attr(get_theme_mod('advance_blogging_slider_excerpt','35')) ) ); ?></p>
+							                <?php }?>
+							            </div>
 							        </div>
-							      <?php $i++; endwhile; 
-							      wp_reset_postdata();?>
-							    </div>
-							    <?php else : ?>
-							        <div class="no-postfound"></div>
-							    <?php endif;
-							    endif;?>
-							    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-		      						<span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span><span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-blogging' );?></span>
-								</a>
-								<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-		      						<span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span><span class="screen-reader-text"><?php esc_html_e( 'Next','advance-blogging' );?></span>
-		   						</a>
-						  	</div>  	
-						</div>	
-					<?php }?>	
-				</div>
-				<div class="col-lg-4 col-md-4 p-0">
-					<?php if( get_theme_mod('advance_blogging_blogcategory_setting') != ''){?>
-						<div class="cat-post">
-							<?php 
-							$advance_blogging_catData = get_theme_mod('advance_blogging_blogcategory_setting');
-				            if($advance_blogging_catData){              
-				                $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_blogging_catData ,'advance-blogging')));?>
-				              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-				              	<div class="abt-img-box">   
-			                      	<?php the_post_thumbnail(); ?>
-			                      	<div class="cat-box">
-			                      		<div class="cat-border">
-				                       		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
-				                      		<p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,18 ) ); ?></p>
-				                      	</div>
-			                      	</div>
-			                    </div>
-				              <?php endwhile;
-				              wp_reset_postdata();
-				            } ?>
-			        	</div>
-			        <?php }?>
-				</div>
-				<div class="clearfix"></div>
+						        </div>
+						      <?php $i++; endwhile; 
+						      wp_reset_postdata();?>
+						    </div>
+						    <?php else : ?>
+						        <div class="no-postfound"></div>
+						    <?php endif;
+						    endif;?>
+						    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+	      						<span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span><span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-blogging' );?></span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+	      						<span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span><span class="screen-reader-text"><?php esc_html_e( 'Next','advance-blogging' );?></span>
+	   						</a>
+					  	</div>  	
+					</div>	
+				<?php }?>	
 			</div>
+			<div class="col-lg-4 col-md-4 p-0">
+				<?php if( get_theme_mod('advance_blogging_blogcategory_setting') != ''){?>
+					<div class="cat-post">
+						<?php 
+						$advance_blogging_catData = get_theme_mod('advance_blogging_blogcategory_setting');
+			            if($advance_blogging_catData){              
+			                $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_blogging_catData ,'advance-blogging')));?>
+			              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+			              	<div class="abt-img-box">   
+		                      	<?php the_post_thumbnail(); ?>
+		                      	<div class="cat-box">
+		                      		<div class="cat-border">
+			                       		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+			                      		<p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,18 ) ); ?></p>
+			                      	</div>
+		                      	</div>
+		                    </div>
+			              <?php endwhile;
+			              wp_reset_postdata();
+			            } ?>
+		        	</div>
+		        <?php }?>
+			</div>
+			<div class="clearfix"></div>
 		</div>
 	</section>
 

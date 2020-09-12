@@ -8,11 +8,9 @@ jQuery(function($){
 });
 
 function advance_blogging_menu_open() {
-	window.advance_blogging_respMenu=true;
 	jQuery(".side-menu").addClass('open');
 }
 function advance_blogging_menu_close() {
-	window.advance_blogging_respMenu=false;
 	jQuery(".side-menu").removeClass('open');
 }
 
@@ -49,58 +47,33 @@ function advance_blogging_menu_close() {
 
 })( jQuery );
 
-jQuery(window).load(function() {
-	window.advance_blogging_currentfocus=null;
-	advance_blogging_checkfocusdElement();
-	var advance_blogging_body = document.querySelector('body');
-	advance_blogging_body.addEventListener('keyup', advance_blogging_check_tab_press);
-	var advance_blogging_gotoHome = false;
-	var advance_blogging_gotoClose = false;
-	window.advance_blogging_respMenu=false;
-	function advance_blogging_checkfocusdElement(){
-	    if(window.advance_blogging_currentfocus=document.activeElement.className){
-	        window.advance_blogging_currentfocus=document.activeElement.className;
-	    }
-	}
-	function advance_blogging_check_tab_press(e) {
-	    "use strict";
-	    e = e || event;
-	    var activeElement;
+( function( window, document ) {
+	function advance_blogging_keepFocusInMenu() {
+		document.addEventListener( 'keydown', function( e ) {
+			const advance_blogging_nav = document.querySelector( '.side-menu' );
 
-	    if(window.innerWidth < 999){
-		    if (e.keyCode == 9) {
-		        if(window.advance_blogging_respMenu){
-				    if (!e.shiftKey) {
-				        if(advance_blogging_gotoHome) {
-				            jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).focus();
-				        }
-				    }
-				    if (jQuery("a.closebtn").is(":focus")) {
-				        advance_blogging_gotoHome = true;
-				    } else {
-				        advance_blogging_gotoHome = false;
-				    }
-		    	}
-		    }
-	    }
-	    if (e.shiftKey && e.keyCode == 9) {
-		    if(window.innerWidth < 999){
-			    if(window.advance_blogging_currentfocus=="header-search"){
-			        jQuery("button.mobiletoggle").focus();
-			    }else{
-				    if(window.advance_blogging_respMenu){
-				        if(advance_blogging_gotoClose){
-				        	jQuery("a.closebtn").focus();
-				        }
-				        if(jQuery( ".main-menu-navigation ul:first li:first a:first-child" ).is(":focus")) {
-				            advance_blogging_gotoClose = true;
-				        } else {
-				            advance_blogging_gotoClose = false;
-				        }
-				    }
-			    }
-		    }
-	    }
-	    advance_blogging_checkfocusdElement();
+			if ( ! advance_blogging_nav || ! advance_blogging_nav.classList.contains( 'open' ) ) {
+				return;
+			}
+
+			const elements = [...advance_blogging_nav.querySelectorAll( 'input, a, button' )],
+				advance_blogging_lastEl = elements[ elements.length - 1 ],
+				advance_blogging_firstEl = elements[0],
+				advance_blogging_activeEl = document.activeElement,
+				tabKey = e.keyCode === 9,
+				shiftKey = e.shiftKey;
+
+			if ( ! shiftKey && tabKey && advance_blogging_lastEl === advance_blogging_activeEl ) {
+				e.preventDefault();
+				advance_blogging_firstEl.focus();
+			}
+
+			if ( shiftKey && tabKey && advance_blogging_firstEl === advance_blogging_activeEl ) {
+				e.preventDefault();
+				advance_blogging_lastEl.focus();
+			}
+		} );
 	}
-});
+
+	advance_blogging_keepFocusInMenu();
+} )( window, document );

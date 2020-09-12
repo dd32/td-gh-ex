@@ -2,10 +2,10 @@
 Contributors: ThemesCaliber
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout,custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, front-page-post-form, translation-ready, rtl-language-support, blog, e-commerce, news
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
 
 Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible.
 
@@ -163,6 +163,12 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added Topbar top bottom padding option.
 * Added Sticky Header Padding option.
 * Updated all .po files.
+
+= 0.8.2 =
+* Changed menu focus code.
+* Changed License & License URI in style.css
+* Added has_nav_menu() condition in header.php.
+* Changed header images dimensions.
 
 == Resources ==
 

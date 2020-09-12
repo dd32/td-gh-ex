@@ -14,8 +14,8 @@ function advance_blogging_custom_header_setup() {
 
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1280,
+		'height'                 => 150,
 		'wp-head-callback'       => 'advance_blogging_header_style',
 	) ) );
 }
@@ -41,6 +41,7 @@ function advance_blogging_header_style() {
 		#header{
 			background: url(<?php echo esc_url(get_header_image()); ?>) no-repeat;
 			background-position: center top;
+			background-size: 100% 100%;
 		}
 	<?php endif; ?>	
 	</style>
