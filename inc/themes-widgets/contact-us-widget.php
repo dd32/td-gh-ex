@@ -95,8 +95,8 @@ class Automotive_Centre_Contact_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();	
 		$instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
-		$instance['phone'] = (!empty($new_instance['phone']) ) ? strip_tags($new_instance['phone']) : '';
-		$instance['email'] = (!empty($new_instance['email']) ) ? strip_tags($new_instance['email']) : '';
+		$instance['phone'] = (!empty($new_instance['phone']) ) ? automotive_centre_sanitize_phone_number($new_instance['phone']) : '';
+		$instance['email'] = (!empty($new_instance['email']) ) ? sanitize_email($new_instance['email']) : '';
 		$instance['address'] = (!empty($new_instance['address']) ) ? strip_tags($new_instance['address']) : '';
 		$instance['timing'] = (!empty($new_instance['timing']) ) ? strip_tags($new_instance['timing']) : '';
 		$instance['longitude'] = (!empty($new_instance['longitude']) ) ? strip_tags($new_instance['longitude']) : '';

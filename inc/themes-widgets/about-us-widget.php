@@ -92,12 +92,12 @@ class Automotive_Centre_About_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();	
 		$instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
-		$instance['author'] = ( ! empty( $new_instance['author'] ) ) ? $new_instance['author'] : '';
-		$instance['designation'] = ( ! empty( $new_instance['designation'] ) ) ? $new_instance['designation'] : '';
+		$instance['author'] = ( ! empty( $new_instance['author'] ) ) ? strip_tags($new_instance['author']) : '';
+		$instance['designation'] = ( ! empty( $new_instance['designation'] ) ) ? strip_tags($new_instance['designation']) : '';
 		$instance['description'] = (!empty($new_instance['description']) ) ? strip_tags($new_instance['description']) : '';
         $instance['read_more_text'] = (!empty($new_instance['read_more_text']) ) ? strip_tags($new_instance['read_more_text']) : '';
-        $instance['read_more_url'] = (!empty($new_instance['read_more_url']) ) ? strip_tags($new_instance['read_more_url']) : '';
-        $instance['upload_image'] = ( ! empty( $new_instance['upload_image'] ) ) ? $new_instance['upload_image'] : '';
+        $instance['read_more_url'] = (!empty($new_instance['read_more_url']) ) ? esc_url_raw($new_instance['read_more_url']) : '';
+        $instance['upload_image'] = ( ! empty( $new_instance['upload_image'] ) ) ? strip_tags($new_instance['upload_image']) : '';
 
 		return $instance;
 	}

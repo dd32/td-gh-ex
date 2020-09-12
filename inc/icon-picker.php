@@ -16,7 +16,7 @@ class Automotive_Centre_Fontawesome_Icon_Chooser extends WP_Customize_Control{
                 </span>
                 <?php } ?>
                 <div class="social-icon-search">
-                    <input class="socialInput" type="text" placeholder="Icon">
+                    <input class="socialInput" type="text" placeholder="<?php echo esc_attr_x( 'Icon', 'placeholder', 'automotive-centre' ); ?>">
                 </div>
                 <div class="selected-icon">
                     <i class="fa <?php echo esc_attr($this->value()); ?>"></i>

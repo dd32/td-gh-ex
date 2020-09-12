@@ -797,6 +797,49 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'type'=> 'number'
 	));
 
+	// Single Posts Settings
+	$wp_customize->add_section( 'automotive_centre_single_blog_settings', array(
+		'title' => __( 'Single Post Settings', 'automotive-centre' ),
+		'panel' => 'blog_post_parent_panel',
+	));
+
+	$wp_customize->add_setting( 'automotive_centre_single_blog_post_navigation_show_hide',array(
+		'default' => 1,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automotive_centre_switch_sanitization'
+	));
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_single_blog_post_navigation_show_hide', array(
+		'label' => esc_html__( 'Post Navigation','automotive-centre' ),
+		'section' => 'automotive_centre_single_blog_settings'
+    )));
+
+	//navigation text
+	$wp_customize->add_setting('automotive_centre_single_blog_prev_navigation_text',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automotive_centre_single_blog_prev_navigation_text',array(
+		'label'	=> __('Post Navigation Text','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( 'PREVIOUS', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_single_blog_settings',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('automotive_centre_single_blog_next_navigation_text',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automotive_centre_single_blog_next_navigation_text',array(
+		'label'	=> __('Post Navigation Text','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( 'NEXT', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_single_blog_settings',
+		'type'=> 'text'
+	));
+
     //404 Page Setting
 	$wp_customize->add_section('automotive_centre_404_page',array(
 		'title'	=> __('404 Page Settings','automotive-centre'),
@@ -1257,6 +1300,69 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'section'=> 'automotive_centre_woocommerce_section',
 		'type'=> 'select',
 	));
+
+	//Products padding
+	$wp_customize->add_setting('automotive_centre_products_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automotive_centre_products_padding_top_bottom',array(
+		'label'	=> __('Products Padding Top Bottom','automotive-centre'),
+		'description'	=> __('Enter a value in pixels. Example:20px','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( '10px', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_woocommerce_section',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('automotive_centre_products_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automotive_centre_products_padding_left_right',array(
+		'label'	=> __('Products Padding Left Right','automotive-centre'),
+		'description'	=> __('Enter a value in pixels. Example:20px','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( '10px', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_woocommerce_section',
+		'type'=> 'text'
+	));
+
+	//Products box shadow
+	$wp_customize->add_setting( 'automotive_centre_products_box_shadow', array(
+		'default'              => '',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'automotive_centre_sanitize_number_range'
+	) );
+	$wp_customize->add_control( 'automotive_centre_products_box_shadow', array(
+		'label'       => esc_html__( 'Products Box Shadow','automotive-centre' ),
+		'section'     => 'automotive_centre_woocommerce_section',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 1,
+			'max'              => 50,
+		),
+	) );
+
+	//Products border radius
+    $wp_customize->add_setting( 'automotive_centre_products_border_radius', array(
+		'default'              => '',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'automotive_centre_sanitize_number_range'
+	) );
+	$wp_customize->add_control( 'automotive_centre_products_border_radius', array(
+		'label'       => esc_html__( 'Products Border Radius','automotive-centre' ),
+		'section'     => 'automotive_centre_woocommerce_section',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 1,
+			'max'              => 50,
+		),
+	) );
 
     // Has to be at the top
 	$wp_customize->register_panel_type( 'Automotive_Centre_WP_Customize_Panel' );

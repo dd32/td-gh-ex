@@ -269,6 +269,15 @@
 		$automotive_centre_custom_css .='}';
 	}
 
+	/*------------- Single Blog Page------------------*/
+
+	$automotive_centre_single_blog_post_navigation_show_hide = get_theme_mod('automotive_centre_single_blog_post_navigation_show_hide',true);
+	if($automotive_centre_single_blog_post_navigation_show_hide != true){
+		$automotive_centre_custom_css .='.post-navigation{';
+			$automotive_centre_custom_css .='display: none;';
+		$automotive_centre_custom_css .='}';
+	}
+
 	/*-------------- Copyright Alignment ----------------*/
 
 	$automotive_centre_copyright_alingment = get_theme_mod('automotive_centre_copyright_alingment');
@@ -360,3 +369,32 @@
 		$automotive_centre_custom_css .='}';
 	}
 
+	/*----------------Woocommerce Products Settings ------------------*/
+
+	$automotive_centre_products_padding_top_bottom = get_theme_mod('automotive_centre_products_padding_top_bottom');
+	if($automotive_centre_products_padding_top_bottom != false){
+		$automotive_centre_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+			$automotive_centre_custom_css .='padding-top: '.esc_html($automotive_centre_products_padding_top_bottom).'!important; padding-bottom: '.esc_html($automotive_centre_products_padding_top_bottom).'!important;';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_products_padding_left_right = get_theme_mod('automotive_centre_products_padding_left_right');
+	if($automotive_centre_products_padding_left_right != false){
+		$automotive_centre_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+			$automotive_centre_custom_css .='padding-left: '.esc_html($automotive_centre_products_padding_left_right).'!important; padding-right: '.esc_html($automotive_centre_products_padding_left_right).'!important;';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_products_box_shadow = get_theme_mod('automotive_centre_products_box_shadow');
+	if($automotive_centre_products_box_shadow != false){
+		$automotive_centre_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+				$automotive_centre_custom_css .='box-shadow: '.esc_html($automotive_centre_products_box_shadow).'px '.esc_html($automotive_centre_products_box_shadow).'px '.esc_html($automotive_centre_products_box_shadow).'px #ddd;';
+		$automotive_centre_custom_css .='}';
+	}
+
+	$automotive_centre_products_border_radius = get_theme_mod('automotive_centre_products_border_radius');
+	if($automotive_centre_products_border_radius != false){
+		$automotive_centre_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
+			$automotive_centre_custom_css .='border-radius: '.esc_html($automotive_centre_products_border_radius).'px;';
+		$automotive_centre_custom_css .='}';
+	}

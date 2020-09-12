@@ -54,10 +54,10 @@
             } elseif ( is_singular( 'post' ) ) {
                 // Previous/next post navigation.
                 the_post_navigation( array(
-                    'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'automotive-centre' ) . '</span> ' .
+                    'next_text' => '<span class="meta-nav" aria-hidden="true">' .esc_html(get_theme_mod('automotive_centre_single_blog_next_navigation_text','NEXT')) . '</span> ' .
                         '<span class="screen-reader-text">' . __( 'Next post:', 'automotive-centre' ) . '</span> ' .
                         '<span class="post-title">%title</span>',
-                    'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'automotive-centre' ) . '</span> ' .
+                    'prev_text' => '<span class="meta-nav" aria-hidden="true">' .esc_html(get_theme_mod('automotive_centre_single_blog_prev_navigation_text','PREVIOUS')) . '</span> ' .
                         '<span class="screen-reader-text">' . __( 'Previous post:', 'automotive-centre' ) . '</span> ' .
                         '<span class="post-title">%title</span>',
                 ) );

@@ -940,6 +940,18 @@ msgstr ""
 msgid 'Add Related Post Count'
 msgstr ""
 
+#: inc/customizer.php:675
+msgid 'Single Post Settings'
+msgstr ""
+
+#: inc/customizer.php:675
+msgid 'Post Navigation'
+msgstr ""
+
+#: inc/customizer.php:675
+msgid 'Post Navigation Text'
+msgstr ""
+
 #: inc/customizer.php:742
 msgid '404 Page Settings'
 msgstr ""
@@ -1062,6 +1074,22 @@ msgstr ""
 
 #: inc/customizer.php:1185
 msgid "Display on shop page"
+msgstr ""
+
+#: inc/customizer.php:1188
+msgid "Products Padding Top Bottom"
+msgstr ""
+
+#: inc/customizer.php:1192
+msgid "Products Padding Left Right"
+msgstr ""
+
+#: inc/customizer.php:1196
+msgid "Products Box Shadow"
+msgstr ""
+
+#: inc/customizer.php:1199
+msgid "Products Border Radius"
 msgstr ""
 
 #: inc/customizer.php:593
