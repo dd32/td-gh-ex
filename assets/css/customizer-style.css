@@ -14,7 +14,9 @@
 	color: #eee;
 	text-shadow: none;
 }
-
+button.button.wp-color-result {
+    background: lightcyan;
+}
 .wp-full-overlay-sidebar {
 	-webkit-tap-highlight-color: #0073aa;
 }

@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.4' );
+	define( 'BESHOP_VERSION', '1.0.5' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -231,6 +231,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/beshop-woocommerce.php';
+	require get_template_directory() . '/inc/woo-items/beshop-woocommerce.php';
 
 }

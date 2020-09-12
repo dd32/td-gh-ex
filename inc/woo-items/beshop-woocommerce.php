@@ -5,6 +5,9 @@
 *
 *
 */
+require get_template_directory() . '/inc/woo-items/customizer-woo.php';
+require get_template_directory() . '/inc/woo-items/woo-inline-style.php';
+
 
 if ( ! function_exists( 'beshop_woocommerce_setup' ) ) {
 function beshop_woocommerce_setup() {
@@ -18,7 +21,7 @@ add_action( 'after_setup_theme', 'beshop_woocommerce_setup' );
 
 if ( ! function_exists( 'beshop_woocommerce_scripts' ) ) {
 function beshop_woocommerce_scripts() {
-	wp_enqueue_style( 'beshop-woocommerce-style', get_template_directory_uri() . '/assets/css/beshop-woocommerce.css' );
+	wp_enqueue_style( 'beshop-woocommerce-style', get_template_directory_uri() . '/assets/css/beshop-woocommerce.css', array(), BESHOP_VERSION, 'all' );
 
 }
 add_action( 'wp_enqueue_scripts', 'beshop_woocommerce_scripts' );
@@ -154,9 +157,43 @@ add_filter( 'body_class', 'beshop_body_wooclasses' );
 add_filter('loop_shop_columns', 'beshop_loop_columns', 999);
 if (!function_exists('beshop_loop_columns')) {
 	function beshop_loop_columns() {
-		if(is_active_sidebar( 'shop-sidebar' )){
-			return 3; // 3 products per row
-		}
-		return 4; // 4 products per row
+$beshop_shop_column = get_theme_mod( 'beshop_shop_column', '4');
+
+		return $beshop_shop_column; // 4 products per row
 	}
 }
+
+//add new div for product
+
+function beshop_before_shop_loop_div(){
+$beshop_shop_style = get_theme_mod( 'beshop_shop_style', '1' );
+
+	echo '<div class="beshop-poroduct style'.esc_attr($beshop_shop_style).'">';
+}
+add_action( 'woocommerce_before_shop_loop_item','beshop_before_shop_loop_div', 5 );
+
+function beshop_after_shop_loop_div(){
+	echo '</div">';
+}
+add_action( 'woocommerce_after_shop_loop_item','beshop_after_shop_loop_div', 15 );
+// End div for product
+
+function beshop_woobody_classes( $classes ) {
+	// Adds a class of hfeed to non-singular pages.
+	if ( is_shop() ) {
+		$classes[] = 'be-shop';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'beshop_woobody_classes' );
+
+function beshop_woocommerce_page_title( $page_title ) {
+$beshop_shop_title = get_theme_mod('beshop_shop_title',esc_html__('Shop','beshop'));
+  if( is_shop()) {
+    return $beshop_shop_title;
+  }else{
+    return $page_title;
+  }
+}
+add_filter( 'woocommerce_page_title', 'beshop_woocommerce_page_title');
