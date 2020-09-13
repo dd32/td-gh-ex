@@ -49,7 +49,7 @@
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <div class="site-info">
                         <span>&copy; <?php echo esc_html__('Copyright', 'aspro'); ?>
-                            <?php echo date_i18n( __( 'Y' , 'aspro' )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php echo esc_html(get_bloginfo('name', 'display')); ?></a>.
+                            <?php echo date_i18n(  'Y'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php echo esc_html(get_bloginfo('name', 'display')); ?></a>.
                             <?php echo esc_html__(' All rights reserved. ', 'aspro'); ?>
                         </span>
                         <span>

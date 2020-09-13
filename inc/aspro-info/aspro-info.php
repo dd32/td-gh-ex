@@ -8,7 +8,7 @@
 add_action('admin_menu', 'aspro_info');
 function aspro_info() {
 
-    if ( !current_user_can('install_plugins') ) {
+    if ( !current_user_can('edit_theme_options') ) {
         return;
     }
     add_theme_page(

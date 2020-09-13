@@ -29,7 +29,7 @@ endif;
                             'post_status' => 'publish',
                             'post_type' =>  'post',
                             'paged' => (get_query_var('page')) ? absint(get_query_var('page')) : 1,
-                            'posts_per_page' => 12,
+                            'posts_per_page' => get_option('posts_per_page'),
                         ));
 
                         if (have_posts()) :

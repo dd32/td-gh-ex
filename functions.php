@@ -191,7 +191,7 @@ function aspro_scripts()
 
     wp_enqueue_script('aos', get_template_directory_uri() . '/assets/js/aos.js', [], '', true);
 
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', [], '', true);
+    wp_enqueue_script('micromodal', get_template_directory_uri() . '/assets/js/micromodal.js', [], '', true);
 
     wp_enqueue_script('aspro-navigation', get_template_directory_uri() . '/js/navigation.js', [], '20151215', true);
 
@@ -276,25 +276,3 @@ add_action( 'tgmpa_register', 'aspro_register_recommended_plugins' );
 if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
-
-if(!function_exists('aspro_pro_custom_query_vars')) :
-
-    /**
-     * Update Query
-     *
-     * @param $query
-     * @return mixed
-     */
-    function aspro_custom_query_vars( $query )
-    {
-        if(! is_admin() && is_home() && is_front_page() && $query->is_main_query()) {
-            $aspro_pro_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $query->set( 'posts_per_page', 12 );
-            $query->set( 'paged', $aspro_pro_paged );
-        }
-
-        return $query;
-    }
-    add_action( 'pre_get_posts', 'aspro_custom_query_vars' );
-
-endif;

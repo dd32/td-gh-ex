@@ -4,7 +4,7 @@ Theme URI: https://99colorthemes.com/themes/aspro
 Author: 99colorthemes
 Author URI: https://99colorthemes.com
 Description: Aspro is a clean, minimal and beautifully layout design WordPress theme. It is a modern blog focused on high speed and nice effects, the theme fits perfectly any kind of blog like personal, travel, photography, food or biography blogs. It is SEO friendly with featured image supports and custom colors. Theme customizer can be used to change color, upload logo and other theme settings. Also it looks great on mobile devices due to responsive and mobile-friendly design.
-Version:  1.0.0
+Version:  1.0.1
 Requires at least: 4.5
 Tested up to:  5.4.2
 Requires PHP: 5.6
@@ -606,120 +606,160 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## Menus
+# Primary Menu
 --------------------------------------------------------------*/
-.main-navigation {
-    clear: both;
-    display: block;
-    float: left;
-    width: 100%;
-}
-
 .main-navigation ul {
-    display: block;
-    list-style: none;
+    display: flex;
+    font-weight: 400;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     margin: 0;
-    padding-left: 0;
+    padding: 0;
+    list-style: none;
 }
 
+.main-navigation ul li {
+    position: relative;
+}
+
+.main-navigation ul > li {
+    padding: 1rem 1.4rem;
+}
+
+.main-navigation ul a {
+    display: block;
+    font-size: 1.06rem;
+    line-height: 1.5;
+    text-decoration: none;
+    word-break: normal;
+    word-wrap: normal;
+}
+
+/* SUB MENU */
 .main-navigation ul ul {
-    box-shadow: 0 0 24px 3px #ececec;
-    float: left;
-    position: absolute;
-    top: 5rem;
-    left: -60px;
-    z-index: 100;
-    background-color: #fff;
-    transition: all 400ms ease-in-out;
+    background: #fff;
+    border-radius: 0.4rem;
+    color: #333;
+    padding: 0;
     opacity: 0;
-    visibility: hidden;
+    position: absolute;
+    right: 9999rem;
+    box-shadow: 0 0 24px 3px #ececec;
+    top: calc(100% + 2rem);
+    transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
+    transform: translateY(1rem);
+    width: 16rem;
+    z-index: 1;
+    list-style: none;
 }
 
-.main-navigation ul ul ul {
-    left: 253px;
-    top: 3.4rem;
+.main-navigation ul li.menu-item-has-children:hover > ul,
+.main-navigation ul li.menu-item-has-children:focus > ul,
+.main-navigation ul li.menu-item-has-children.focus > ul {
+    right: 0;
+    opacity: 1;
+    transform: translateY(-1rem);
+    transition: opacity 0.15s linear, transform 0.15s linear;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-    left: 253px;
-    top: -1px;
+.main-navigation ul ul::before,
+.main-navigation ul ul::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+}
+
+.main-navigation ul ul::before {
+    height: 2rem;
+    left: 0;
+    right: 0;
+}
+
+.main-navigation ul ul::after {
+    border: 0.8rem solid transparent;
+    border-bottom-color: #fff;
+    right: 1.8rem;
 }
 
 .main-navigation ul ul a {
-    width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-    left: -60px;
-    top: 3.4rem;
-    transition: all 400ms ease-in-out;
-    opacity: 1;
-    visibility: visible;
-}
-
-.main-navigation li {
-    float: left;
-    position: relative;
-    padding: 1rem 1.6rem;
-}
-
-.main-navigation a {
+    background: transparent;
+    border: none;
+    color: inherit;
     display: block;
-    text-decoration: none;
-    color: #111;
-    font-size: 1.06rem;
-    text-transform: uppercase;
-    transition: color 200ms ease 0s;
+    transition: background-color 0.15s linear;
+    width: 100%;
 }
 
-.main-navigation a:hover,
-.main-navigation a:focus {
-    transition: color 200ms ease 0s;
-    color: #6C6463;
+/* DEEP DOWN */
+
+.main-navigation ul ul li {
+    width: 100%;
 }
 
-@media only screen and (max-width: 991px) {
+.main-navigation ul ul ul {
+    top: 1rem;
+}
 
-    .main-navigation {
-        float: none;
-        width: auto;
+.main-navigation ul ul li.menu-item-has-children:hover > ul,
+.main-navigation ul ul li.menu-item-has-children:focus > ul,
+.main-navigation ul ul li.menu-item-has-children.focus > ul {
+    right: calc(100% + 1.4rem);
+}
+
+.main-navigation ul ul ul::before {
+    bottom: 0;
+    height: auto;
+    left: auto;
+    right: -2rem;
+    top: 0;
+    width: 2rem;
+}
+
+.main-navigation ul ul ul::after {
+    border-bottom-color: transparent;
+
+    /*rtl:ignore*/
+    border-left-color: #fff;
+    bottom: auto;
+    right: -1.3rem;
+    top: 1rem;
+}
+
+.rtl .main-navigation ul ul ul::after {
+    transform: rotate(180deg);
+}
+
+/*
+ * Enable nav submenu expansion with tapping on arrows on large-viewport
+ * touch interfaces (e.g. tablets or laptops with touch screens).
+ * These rules are supported by all browsers (>IE11) and when JS is disabled.
+ */
+@media (any-pointer: coarse) {
+
+    .main-navigation ul > li.menu-item-has-children > a {
+        padding-right: 0;
+        margin-right: 2rem;
     }
 
-    .main-navigation ul.menu {
-        display: flex;
-        flex-direction: column;
+    .main-navigation ul ul li.menu-item-has-children > a {
+        margin-right: 4.5rem;
+        padding-right: 0;
+        width: unset;
     }
 
-    .main-navigation.is-active {
-        left: 0;
-    }
+}
 
-    .main-navigation ul ul {
-        opacity: 1;
-        visibility: visible;
-        background-color: #fff;
-        top: 3rem;
-        position: initial;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 400ms ease-in-out;
-    }
+/* Repeat previous rules for IE11 (when JS enabled for polyfill). */
+body.touch-enabled .main-navigation ul > li.menu-item-has-children > a {
+    padding-right: 0;
+    margin-right: 2rem;
+}
 
-    .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
-        top: 3rem;
-        max-height: 100rem;
-        transition: max-height 400ms ease-in-out;
-    }
-
-    .main-navigation ul ul ul {
-        left: 0;
-        top: 3rem;
-    }
+body.touch-enabled .main-navigation ul ul li.menu-item-has-children > a {
+    margin-right: 4.5rem;
+    padding-right: 0;
+    width: unset;
 }
 
 .site-main .comment-navigation, .site-main

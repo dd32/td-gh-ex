@@ -69,7 +69,7 @@ if ( function_exists( 'wp_body_open' ) ) {
                         <div class="d-flex align-items-center justify-content-end">
 
                             <div id="main-nav" class="at-nav d-none d-lg-block">
-                                <nav id="site-navigation" class="main-navigation">
+                                <nav id="site-navigation" class="main-navigation w-100">
                                     <?php
                                         wp_nav_menu([
                                             'theme_location' => 'menu-1',

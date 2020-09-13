@@ -4,7 +4,7 @@ Tags: blog, one-column, flexible-header, custom-colors, custom-menu, custom-back
 Requires at least: 4.5
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag:  1.0.0
+Stable tag:  1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -27,16 +27,14 @@ Aspro is modern style free responsive WordPress blog theme. Aspro can be used fo
    Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 == JS ==
-1. Bootstrap (https://getbootstrap.com/)
-   Copyright 2011-2018 The Bootstrap Authors
-   Copyright 2011-2018 Twitter, Inc.
-   Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-2. Swiper (https://swiperjs.com/)
+1. Swiper (https://swiperjs.com/)
    Licensed under MIT
    2020 © Swiper by Vladimir Kharlampidi
-3. AOS (https://michalsnik.github.io/aos/)
+2. AOS (https://michalsnik.github.io/aos/)
    Licensed under MIT (https://github.com/michalsnik/aos/blob/next/LICENSE)
    Copyright 2015 AOS by Michał Sajnóg
+3. Micromodal (https://github.com/ghosh/Micromodal)
+   Licensed under MIT
 
 == Google Fonts ==
 1. Roboto (https://fonts.google.com/specimen/Roboto)
@@ -61,11 +59,21 @@ Aspro is modern style free responsive WordPress blog theme. Aspro can be used fo
     (License: CC0 - https://stocksnap.io/license)
 6. https://stocksnap.io/photo/black-nail-NUG1YRRSJI - By Ylanite Koppens
     (License: CC0 - https://stocksnap.io/license)
+7. https://stocksnap.io/photo/notepad-pink-LDJTUVBFVK - By Jess Watters
+    (License: CC0 - https://stocksnap.io/license)
+8. https://stocksnap.io/photo/hand-bed-69SWWS3FSR - By Elizabeth Lies
+    (License: CC0 - https://stocksnap.io/license)
+9. https://stocksnap.io/photo/iphone-ipad-URHMKVIMEC - By Chimene Gaspar
+    (License: CC0 - https://stocksnap.io/license)
 
 == Plugins ==
 1. TGM-Plugin-Activation: - https://github.com/TGMPA/TGM-Plugin-Activation
    Licensed under the GNU General Public License v2.0
 
 == CHANGE LOG ==
+= Version 1.0.1 =
+* Bug fixes
+* Fixed keyboard navigation.
+
 = Version 1.0.0 =
 * All brand new.
