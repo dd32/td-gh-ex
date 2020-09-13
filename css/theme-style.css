@@ -1936,7 +1936,8 @@ input.cart-plus-minus-box {
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 10px;  
+  word-break: break-all;
 }
 
 .breadcrumb-content li,

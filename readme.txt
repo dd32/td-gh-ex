@@ -2,8 +2,8 @@
 
 Contributors: hasthemes, htplugins, devitemsllc
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.4.2-trunk
-Version: 3.2.1
+Tested up to: WordPress 5.5.1-trunk
+Version: 3.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Elementor, WooCommerce, WooLentor, retail, shop, shopping, fashion, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options
@@ -91,7 +91,12 @@ License: Creative Commons Zero (CC0) license
 
 == Changelog ==
 
-= 3.1.4 =
+= 3.2.2 =
+* Released: September 13, 2020
+* Compatibility with woocommmerce latest version
+* Bug Fixing
+
+= 3.1.5 =
 * Released: May 13, 2020
 * Product Attribute Error Solved.
 * Shop Page loop wrapper add.

@@ -11,16 +11,11 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
- * @package WooCommerce/Templates
- * @version 3.8.0
+ * @package WooCommerce\Templates
+ * @version 4.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-wc_print_notices();
+defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
@@ -77,7 +72,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 							// Backorder notification.
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', '99fy' ) . '</p>';
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', '99fy' ) . '</p>', $product_id ) );
 							}
 							?></td>
 

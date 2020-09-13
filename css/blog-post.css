@@ -562,6 +562,7 @@ kbd {
 }
 .blog-info a {
     color: #444;
+    word-break: break-all;
 }
 
 .post-password-form input[type="submit"] {

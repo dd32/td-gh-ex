@@ -4,10 +4,10 @@ Theme URI: https://99fy.hasthemes.com/landing/
 Author: HasThemes
 Author URI: https://hasthemes.com/
 Description: 99fy is a Free WooCommerce WordPress Theme, it is a responsive and fast loading theme. 99 Home pages are included in this theme. 99fy using Elementor Page Builder to create pages easily, and supports popular WooCommerce Addon - WooLentor. WooLentor helps to create custom templates for shop and product pages. All of the popular niches for WooCommerce Stores are included in this theme. Niches are Animals & Pets, Books & Library, Cosmetics, Cars & Motors, Electronics, Fashion, Furniture, Fruits, Food, Flower, Handmade, Health & beauty, Minimal Stores, Jewelry, Kitchen, Kids Store, Matcha Store, Perfume, Maternity, Plant & Nursery, Sports, Shapewear, Tools & Equipment, Watch, etc.. More niches are added regularly. Check the demos at https://99fy.hasthemes.com/landing/
-Version: 3.2.1
+Version: 3.2.2
 Requires at least: WordPress 4.7
 Requires PHP: 5.2.4
-Tested up to: WordPress 5.4.2
+Tested up to: WordPress 5.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, footer-widgets, blog, custom-menu, post-formats, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options, e-commerce, holiday 
@@ -276,3 +276,25 @@ header.page-header .page-title {
 #ht-quick-viewmodal .htcloseqv{
     border: 0;
 }
+.select2-container--default .select2-selection--single {
+    border-radius: 0;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container .select2-selection--single {
+    height: 40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 38px;
+}
+input#wp-comment-cookies-consent,
+.leave-comment-form form input[type="checkbox"] {
+    width: inherit;
+    height: auto;
+}
+.wp-block-button.is-style-outline {
+    margin: 20px 0;
+}
+.wp-block-group__inner-container {
+    padding: 20px;
+}
+/*--end--*/

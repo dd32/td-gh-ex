@@ -336,6 +336,7 @@
                         $('#nnfyquick-viewmodal').removeClass('loading');
                         $('.nnfymodal-dialog').css("background-color","#ffffff");
                         $('.nnfymodal-body').html(response);
+                        $( '.variations_form' ).wc_variation_form();
                         nnfy_tabs( $(".product-details-small"), '.nnfy-tab-pane' );
         	 		}
 
