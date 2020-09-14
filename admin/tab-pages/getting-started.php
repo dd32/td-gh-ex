@@ -33,7 +33,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="content-tab-pane-half content-tab-pane-first-half">
-				<img class="img-responsive" src="<?php echo esc_url( CONTENT_ST_TEMPLATE_DIR_URI ) . '/admin/img/content.png'; ?>" alt="<?php esc_html_e( 'Content theme', 'content' ); ?>" />
+				<img class="img-responsive" src="<?php echo esc_url( CONTENT_ST_TEMPLATE_DIR_URI ) . '/admin/img/content.png'; ?>" alt="<?php esc_attr_e( 'Content theme', 'content' ); ?>" />
 				</div>
 			</div>	
 		</div>
