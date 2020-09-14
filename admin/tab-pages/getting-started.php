@@ -34,7 +34,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
-				<img src="<?php echo esc_url(RC_TEMPLATE_DIR_URI . '/admin/img/rockers.png'); ?>" alt="<?php esc_html_e( 'Rockers theme', 'rockers' ); ?>" />
+				<img src="<?php echo esc_url(RC_TEMPLATE_DIR_URI . '/admin/img/rockers.png'); ?>" alt="<?php esc_attr_e( 'Rockers theme', 'rockers' ); ?>" />
 				</div>
 			</div>	
 		</div>

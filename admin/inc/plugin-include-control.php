@@ -34,7 +34,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Rockers_Plugin_Instal
 		public  function enqueue() {
 			wp_enqueue_script('plugin-install');
 			wp_enqueue_script('updates');
-			wp_enqueue_script('rockers-companion-install', ROCKERS_ADMIN_URI . '/assets/js/plugin-install.js', array('jquery'));
+			wp_enqueue_script('rockers-companion-install', RC_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
 			wp_localize_script('rockers-companion-install', 'rockers_companion_install',
 				array(
 					'installing' => esc_html__('Installing', 'rockers'),

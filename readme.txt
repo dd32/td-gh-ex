@@ -2,8 +2,8 @@
 
 Contributors: spicethemes
 Requires at least: 4.5
-Tested up to: 5.4.1
-Stable tag: 3.0.1
+Tested up to: 5.5
+Stable tag: 3.0.2
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -24,7 +24,16 @@ Rockers is a responsive, multi-purpose WordPress theme. It's flexible and perfec
 
 Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
+== License ==
+
+Rockers WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018, SpiceThemes
+Rockers WordPress Theme is distributed under the terms of the GNU GPL
+
 == Changelog ==
+
+= 3.0.2 ==
+1. Fixed the customizer console issue.
+2. Changed the screenshot image.
 
 = 3.0.1 ==
 1. Added "Requires at least", "Tested up to", "Requires PHP fields" in the style.css.
