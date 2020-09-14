@@ -174,6 +174,8 @@ function arilewp_getting_started_page() { ?>
 					<li class="customize-options"><i class="dashicons dashicons-list-view"></i><?php esc_html_e( 'Advanced Blog Layouts', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-format-video"></i><?php esc_html_e( 'Video Tutorial', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-businesswoman"></i><?php esc_html_e( 'Priority Support', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-database-import"></i><?php esc_html_e( '1 Click Demo Import', 'arilewp' ); ?></li>
+					
 					
 				</div>
 			</div>
