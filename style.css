@@ -3,7 +3,7 @@ Author: wpbusinessthemes
 Theme Name: Agency Starter
 Theme URI: https://wpfreetheme.space/product/agency-starter-theme/
 Author URI: https://wpfreetheme.space/
-Version: 1.0.7
+Version: 1.0.8
 Requires PHP: 5.6
 Tested up to: 5.4.2
 Description: Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpfreetheme.space/product/agency-starter-theme/
@@ -4501,6 +4501,10 @@ p > video {
  
 .contact-ribbon { 
 	clear:both;	
+}
+
+.site-header .contact-ribbon {
+    min-height: 34px;
 }
 
 .contact-info-container {

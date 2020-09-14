@@ -682,7 +682,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	
 	// footer copyright text
 	$wp_customize->add_setting( 'footer_text' , array(
-		'default'    => __("Copyright Text", 'agency-starter'),
+		'default'    => __("A theme by Theme Space", 'agency-starter'),
 		'sanitize_callback' => 'sanitize_textarea_field',
 	));	
 	

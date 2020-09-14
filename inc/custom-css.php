@@ -489,6 +489,13 @@ function agency_starter_get_theme_css( ) {
 			color: ".$colors['header_text_color'].";
 		}
 		
+		.main-navigation .primary-menu > li > a:hover,
+		.main-navigation .primary-menu > li > a:focus,
+		#woocommerce-layout-menu .main-navigation .primary-menu > li > a:hover,
+		#woocommerce-layout-menu .main-navigation .primary-menu > li > a:focus {
+			color: ".$colors['primary_color'].";
+		}
+		
 		.main-navigation li {
 			border-top: 1px solid ".$colors['header_text_color'].";
 		}
@@ -522,8 +529,8 @@ function agency_starter_get_theme_css( ) {
 			color: ".$woocommerce_menubar_text.";	
 		}		
 	
-		#woocommerce-layout-menu .main-navigation li:hover > a:hover,
-		#woocommerce-layout-menu .main-navigation li:hover > a:focus {
+		#woocommerce-layout-menu .main-navigation li:hover > a,
+		#woocommerce-layout-menu .main-navigation li:focus > a {
 			color: #fff; 
 			background-color: ".$colors['primary_color'].";
 		

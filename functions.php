@@ -519,6 +519,12 @@ function agency_starter_activate_recommended_plugins() {
 			'required'  => false,
 		),
 		
+		array(
+			'name'      => 'WooCommerce',
+			'slug'      => 'woocommerce',
+			'required'  => false,
+		),		
+		
 	);
 
 	$config = array();
