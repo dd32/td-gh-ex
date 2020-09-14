@@ -59,8 +59,8 @@ if (!function_exists('adventure_blog_excerpt_length') && !is_admin()):
 
     }
 
-endif;
 add_filter('excerpt_length', 'adventure_blog_excerpt_length', 999);
+endif;
 
 if (!function_exists('adventure_blog_excerpt_more') && !is_admin()):
 

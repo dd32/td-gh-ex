@@ -5,9 +5,9 @@ Contributors: unitedtheme
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.5
-Stable tag: 1.0.4
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 1.0.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 A starter theme called Adventure Blog.
@@ -57,6 +57,9 @@ Image Used from pexels.com and is released under CC0 Creative Commons, https://w
 
 
 == Changelog ==
+
+= 1.0.5 - Sep 14 2020 =
+* updated fixing pot file and adding tested tag
 
 = 1.0.4 - Mar 18 2020 =
 * updated fixing keyboard navigation for pop up search
