@@ -5,6 +5,21 @@
  * @package BeShop
  */
 
+if ( ! function_exists( 'beshop_sanitize_image' ) ) :
+function beshop_sanitize_image( $input ){
+    /* default output */
+    $output = '';
+    /* check file type */
+    $filetype = wp_check_filetype( $input );
+    $mime_type = $filetype['type'];
+    /* only mime type "image" allowed */
+    if ( strpos( $mime_type, 'image' ) !== false ){
+        $output = $input;
+    }
+    return $output;
+}
+endif;
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -21,10 +36,303 @@ function beshopwoo_customize_register( $wp_customize ) {
         }
 
     $wp_customize->add_section(
+            'beshop_general',
+            array(
+                'title'    => __( 'BeShop General Settings', 'beshop' ),
+                'priority' => 5,
+                'panel'    => 'woocommerce',
+            )
+    );
+    $wp_customize->add_setting('beshop_basket_visibility', array(
+        'default'        => 'all',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshopwoo_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_basket_visibility', array(
+        'label'      => __('Shoping Basket Visibility', 'beshop'),
+        'section'    => 'beshop_general',
+        'settings'   => 'beshop_basket_visibility',
+        'type'       => 'select',
+        'choices'    => array(
+            'shop' => __('Show Only Shop Page', 'beshop'),
+            'all' => __('Show All Page', 'beshop'),
+            'hide' => __('Hide Shoping Basket', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_basket_position', array(
+        'default'        => 'right',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshopwoo_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_basket_position', array(
+        'label'      => __('Shoping Basket Position', 'beshop'),
+        'section'    => 'beshop_general',
+        'settings'   => 'beshop_basket_position',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Left Side', 'beshop'),
+            'right' => __('Right Side', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_breadcrump_show', array(
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'default'       =>  1,
+        'sanitize_callback' => 'absint',
+         'transport' => 'refresh',
+
+    ));
+    $wp_customize->add_control('beshop_breadcrump_show', array(
+        'label'      => __('Display Shop Breadcrumb', 'beshop'),
+        'description'     => __('You can show or hide shop breadcrumb.', 'beshop'),
+        'section'    => 'beshop_general',
+        'settings'   => 'beshop_breadcrump_show',
+        'type'       => 'checkbox',
+    ));
+    $wp_customize->add_setting('beshop_breadcrump_position', array(
+        'default'        => 'left',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshopwoo_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_breadcrump_position', array(
+        'label'      => __('Products Breadcrumb Position', 'beshop'),
+        'section'    => 'beshop_general',
+        'settings'   => 'beshop_breadcrump_position',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Left', 'beshop'),
+            'center' => __('Center', 'beshop'),
+            'right' => __('Right', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_breadcrump_color', array(
+        'default' => '#222',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_breadcrump_color', array(
+                'label' => __('Breadcrump Text Color','beshop'),
+                'section' => 'beshop_general'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_breadcrump_bgcolor', array(
+        'default' => '#ededed',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_breadcrump_bgcolor', array(
+                'label' => __('Breadcrump Background Color','beshop'),
+                'section' => 'beshop_general'
+            )
+        )
+    );
+
+
+    $wp_customize->add_setting('beshop_products_pagination', array(
+        'default'        => 'center',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshopwoo_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_products_pagination', array(
+        'label'      => __('Products Pagination Position', 'beshop'),
+        'section'    => 'beshop_general',
+        'settings'   => 'beshop_products_pagination',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Left', 'beshop'),
+            'center' => __('Center', 'beshop'),
+            'right' => __('Right', 'beshop'),
+        ),
+    ));
+        $wp_customize->add_setting('beshop_pagitext_color', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_pagitext_color', array(
+                'label' => __('Pagination Text Color','beshop'),
+                'section' => 'beshop_general'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_pagibg_color', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_pagibg_color', array(
+                'label' => __('Pagination Background Color','beshop'),
+                'section' => 'beshop_general'
+            )
+        )
+    );
+    $wp_customize->add_section(
+            'beshop_shop_banner',
+            array(
+                'title'    => __( 'Shop Page Banner', 'beshop' ),
+                'priority' => 6,
+                'panel'    => 'woocommerce',
+            )
+    );
+    $wp_customize->add_setting('beshop_shopbanner_show', array(
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'default'       => '',
+        'sanitize_callback' => 'absint',
+         'transport' => 'refresh',
+
+    ));
+    $wp_customize->add_control('beshop_shopbanner_show', array(
+        'label'      => __('Display Shop Page banner', 'beshop'),
+        'description'     => __('You can show or hide shop page banner.', 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_shopbanner_show',
+        'type'       => 'checkbox',
+        'priority'       => 5,
+    ));
+         // Side menu profile image
+    $wp_customize->add_setting('beshop_shopb_img', array(
+        'default'        => '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => beshop_sanitize_image( 'beshop_shopb_img' ),
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'beshop_shopb_img', array(
+        'label' => __( 'Upload Shop Image', 'beshop' ),
+        'description' => __( 'You can upload shop image by this option', 'beshop' ),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_shopb_img',
+        'mime_type' => 'image',
+
+    ) ) );
+    
+     $wp_customize->add_setting('beshop_banner_subtext', array(
+        'default' =>  '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_banner_subtext', array(
+        'label'      => __('Shop Banner Subtitle', 'beshop'),
+        'description'     => __('Enter your home image title here. The title only show in home page', 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_banner_subtext',
+        'type'       => 'text',
+
+    ));
+
+     $wp_customize->add_setting('beshop_banner_title', array(
+        'default' =>  '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_banner_title', array(
+        'label'      => __('Shop Banner Title', 'beshop'),
+        'description'     => __('Enter your shop banner title. Leave empty if don\'t show the title.' , 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_banner_title',
+        'type'       => 'text',
+    ));
+     $wp_customize->add_setting('beshop_banner_desc', array(
+        'default' =>  '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_banner_desc', array(
+        'label'      => __('Shop Banner Description', 'beshop'),
+        'description'     => __('Enter your shop banner description. Leave empty if don\'t show the title.', 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_banner_desc',
+        'type'       => 'textarea',
+    ));
+    $wp_customize->add_setting('beshop_text_position', array(
+        'default'        => 'left',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshopwoo_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_text_position', array(
+        'label'      => __('Text Position', 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_text_position',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Left', 'beshop'),
+            'center' => __('Center', 'beshop'),
+            'right' => __('Right', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_bannertext_color', array(
+        'default' => '#fff',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_bannertext_color', array(
+                'label' => __('Shop Title Color','beshop'),
+                'section' => 'beshop_shop_banner'
+            )
+        )
+    );
+    $wp_customize->add_setting( 'beshop_banner_overlay' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_banner_overlay', array(
+        'label'      => __('Show banner overlay? ', 'beshop'),
+        'description'=> __('You can show or hide banner overlay.', 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_banner_overlay',
+        'type'       => 'checkbox',
+        
+    ) );
+    
+    //End shop page banner
+
+    $wp_customize->add_section(
             'beshop_shop',
             array(
                 'title'    => __( 'BeShop Settings', 'beshop' ),
-                'priority' => 5,
+                'priority' => 6,
                 'panel'    => 'woocommerce',
             )
     );
@@ -112,6 +420,70 @@ function beshopwoo_customize_register( $wp_customize ) {
         new WP_Customize_Color_Control(
             $wp_customize, 'beshop_titlecolor', array(
                 'label' => __('Shop Title Color','beshop'),
+                'section' => 'beshop_shop'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_ftwidget_position', array(
+        'default'        => 'center',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshopwoo_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_ftwidget_position', array(
+        'label'      => __('Shop Page Top Widget Position', 'beshop'),
+        'description'      => __('Set filter widget from widget section for fiilter shop page products. You can set posotion filiter items by this opiton.', 'beshop'),
+        'section'    => 'beshop_shop',
+        'settings'   => 'beshop_ftwidget_position',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Left', 'beshop'),
+            'center' => __('Center', 'beshop'),
+            'right' => __('Right', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_ftwidget_color', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_ftwidget_color', array(
+                'label' => __('Shop Top Widget Text Color','beshop'),
+                'section' => 'beshop_shop'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_ftwidget_hvcolor', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_ftwidget_hvcolor', array(
+                'label' => __('Shop Top Widget Text Hover Color','beshop'),
+                'section' => 'beshop_shop'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_ftwidget_bgcolor', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_ftwidget_bgcolor', array(
+                'label' => __('Shop Top Widget Background Color','beshop'),
                 'section' => 'beshop_shop'
             )
         )
@@ -204,6 +576,21 @@ function beshopwoo_customize_register( $wp_customize ) {
         new WP_Customize_Color_Control(
             $wp_customize, 'beshop_ptitle_color', array(
                 'label' => __('Products Title Color','beshop'),
+                'section' => 'beshop_shop'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_prating_color', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_prating_color', array(
+                'label' => __('Products Rating Color','beshop'),
                 'section' => 'beshop_shop'
             )
         )

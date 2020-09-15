@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -75,6 +75,14 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.6 - September 15 2020 =
+* Added extra banner for shop page with image and text.
+* Added editable opitons for shop title
+* Added Woocommerce Breadcrumb with editable options
+* Added shop page top widget for filter widget with options
+* Added more options for products edit.
+* Added color for products title, pirce and button
 
 = 1.0.5 - September 12 2020 =
 * Added 3 different Shop layout

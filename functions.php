@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.5' );
+	define( 'BESHOP_VERSION', '1.0.6' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -71,6 +71,7 @@ if ( ! function_exists( 'beshop_setup' ) ) :
 				'script',
 			)
 		);
+
 
 		// Add support for Block Styles.
 		  add_theme_support( 'wp-block-styles' );

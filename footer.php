@@ -9,6 +9,7 @@
  * @package BeShop
  */
 $beshop_topfooter_show = get_theme_mod( 'beshop_topfooter_show', 1 );
+$beshop_basket_visibility = get_theme_mod( 'beshop_basket_visibility', 'all' );
 
 ?>
 <?php if( is_active_sidebar( 'footer-widget' ) && $beshop_topfooter_show ): ?>
@@ -47,7 +48,9 @@ $beshop_topfooter_show = get_theme_mod( 'beshop_topfooter_show', 1 );
 </div><!-- #page -->
 <?php
 	if ( function_exists( 'beshop_woocommerce_header_cart' ) ) {
+		if( ($beshop_basket_visibility == 'all') || ($beshop_basket_visibility == 'shop' && is_shop()) ){
 		beshop_woocommerce_header_cart();
+		}
 	}
 ?>
 <?php wp_footer(); ?>

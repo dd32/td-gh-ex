@@ -11,6 +11,14 @@
  *
  * @package beshop
  */
+$beshop_breadcrump_show = get_theme_mod( 'beshop_breadcrump_show', 1 );
+$beshop_breadcrump_position = get_theme_mod( 'beshop_breadcrump_position', 'left' );
+$beshop_shopbanner_show = get_theme_mod( 'beshop_shopbanner_show');
+$beshop_banner_subtext = get_theme_mod( 'beshop_banner_subtext' );
+$beshop_banner_title = get_theme_mod( 'beshop_banner_title' );
+$beshop_banner_desc = get_theme_mod( 'beshop_banner_desc' );
+$beshop_text_position = get_theme_mod( 'beshop_text_position','left' );
+$beshop_banner_overlay = get_theme_mod( 'beshop_banner_overlay' );
 $beshop_shop_container = get_theme_mod( 'beshop_shop_container', 'container' );
 $beshop_shop_layout = get_theme_mod( 'beshop_shop_layout', 'rightside' );
 $beshop_shop_style = get_theme_mod( 'beshop_shop_style', '1' );
@@ -20,7 +28,29 @@ if ( is_active_sidebar( 'shop-sidebar') && $beshop_shop_layout != 'fullwidth' ){
 	$beshop_column_set = 'col-lg-12';
 }
 get_header();
+
 ?>
+<?php if($beshop_shopbanner_show): ?>
+		<div class="beshop-banner bg-overlay">
+			<div class="container">
+				<div class="bbanner-text text-<?php echo esc_attr($beshop_text_position); ?>">
+			        <h4><?php echo esc_html($beshop_banner_subtext); ?></h4>
+					<h1><?php echo esc_html($beshop_banner_title); ?></h1>
+			        <?php echo apply_filters( 'the_content', $beshop_banner_desc ); ?>
+				</div>
+			</div>
+		<?php if($beshop_banner_overlay): ?>
+			<div class="overlay-banner"></div>
+		<?php endif; ?>
+		</div>
+<?php endif; ?>
+<?php if($beshop_breadcrump_show): ?>
+<div class="beshop-wbreadcrump text-<?php echo esc_attr($beshop_breadcrump_position); ?>">
+	<div class="<?php echo esc_attr($beshop_shop_container); ?>">
+		<?php woocommerce_breadcrumb(); ?>
+	</div>
+</div>
+<?php endif; ?>
 	<div class="<?php echo esc_attr($beshop_shop_container); ?> mt-3 mb-5 pt-5 pb-3">
 		<div class="row">
 			<?php if ( is_active_sidebar( 'shop-sidebar' ) && $beshop_shop_layout == 'leftside' ): ?>

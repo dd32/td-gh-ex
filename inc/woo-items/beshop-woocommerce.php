@@ -80,6 +80,7 @@ if ( ! function_exists( 'beshop_woocommerce_header_cart' ) ) {
 	 * @return void
 	 */
 	function beshop_woocommerce_header_cart() {
+		$beshop_basket_position = get_theme_mod('beshop_basket_position','right');
 		if ( is_cart() ) {
 			$class = 'current-menu-item xcart-page';
 		} else {
@@ -87,7 +88,7 @@ if ( ! function_exists( 'beshop_woocommerce_header_cart' ) ) {
 		}
 
 		?>
-		<div class="beshoping-cart <?php esc_attr($class); ?>">
+		<div class="beshoping-cart bbasket-<?php echo esc_attr($beshop_basket_position); ?> <?php esc_attr($class); ?>">
 		<?php beshop_woocommerce_cart_link(); ?>
 		<!-- Modal -->
 		<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="becartTitle" aria-hidden="true">
@@ -129,6 +130,15 @@ function beshop_woowidgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Shop Page Top Widget.', 'beshop' ),
+		'id'            => 'top-filter',
+		'description'   => esc_html__( 'Shop Page products fileter top widget.', 'beshop' ),
+		'before_widget' => '<div id="%1$s" class="beshop-top-filter %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="top-widget-title d-none">',
+		'after_title'   => '</h3>',
 	) );
 	
 }
@@ -197,3 +207,19 @@ $beshop_shop_title = get_theme_mod('beshop_shop_title',esc_html__('Shop','beshop
   }
 }
 add_filter( 'woocommerce_page_title', 'beshop_woocommerce_page_title');
+
+
+// add filter widget in shop page top 
+
+function beshop_woocommerce_before_shop_loop(){
+	if(is_active_sidebar( 'top-filter' )){
+$beshop_ftwidget_position = get_theme_mod('beshop_ftwidget_position','center');
+	?>
+	<div class="beshop-products-filter bestopwid-<?php echo esc_attr($beshop_ftwidget_position); ?>">
+		<?php dynamic_sidebar('top-filter'); ?>
+	</div>
+
+<?php
+	}
+}
+add_action( 'woocommerce_before_shop_loop', 'beshop_woocommerce_before_shop_loop', 15 );
