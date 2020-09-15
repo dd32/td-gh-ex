@@ -335,3 +335,22 @@
 	$bb_wedding_bliss_custom_css .='#scroll-top .fas{';
 		$bb_wedding_bliss_custom_css .='font-size: '.esc_html($bb_wedding_bliss_scroll_font_size_icon).'px;';
 	$bb_wedding_bliss_custom_css .='}';
+
+	// Slider Height 
+	$bb_wedding_bliss_slider_image_height = get_theme_mod('bb_wedding_bliss_slider_image_height');
+	$bb_wedding_bliss_custom_css .='#slider img{';
+		$bb_wedding_bliss_custom_css .='height: '.esc_html($bb_wedding_bliss_slider_image_height).'px;';
+	$bb_wedding_bliss_custom_css .='}';
+
+	// Display Blog Post 
+	$bb_wedding_bliss_display_blog_page_post = get_theme_mod( 'bb_wedding_bliss_display_blog_page_post','In Box');
+    if($bb_wedding_bliss_display_blog_page_post == 'Without Box'){
+		$bb_wedding_bliss_custom_css .='.our-services .page-box{';
+			$bb_wedding_bliss_custom_css .='background:none;';
+		$bb_wedding_bliss_custom_css .='}';
+	}else if($bb_wedding_bliss_display_blog_page_post == 'In Box'){
+		$bb_wedding_bliss_custom_css .='.our-services .page-box{';
+			$bb_wedding_bliss_custom_css .='background:#f5f5f5;';
+		$bb_wedding_bliss_custom_css .='}';
+	}
+

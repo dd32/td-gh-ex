@@ -4,11 +4,11 @@ Theme URI:  https://www.themeshopy.com/themes/bb-free-wedding-bliss-wordpress-th
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 1.3.6
-License: GNU General Public License
-License URI: license.txt
+Version: 1.3.7
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: bb-wedding-bliss
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, buddypress, full-width-template, theme-options, threaded-comments, blog, portfolio, e-commerce
 
@@ -579,7 +579,6 @@ p.site-description {
 }
 #menu-sidebar {
   text-align: center;
-  display: inline;
 }
 ul.list_nav {
   margin: 0 auto;
@@ -1878,6 +1877,9 @@ iframe{
 	#slider .inner_carousel h1 a{
 		font-size: 25px;
 	}
+	#slider img{
+		height: auto !important;
+	}
 }
 
 @media screen and (min-width: 720px) and (max-width: 768px){
@@ -1908,6 +1910,9 @@ iframe{
 		float: left;
 		clear: both;
 		margin: 10px;
+	}
+	#slider img{
+		height: auto !important;
 	}
 }
 @media screen and (min-width: 991px) and (max-width: 1024px){
@@ -1949,10 +1954,9 @@ iframe{
     padding-top: 60px;
     transition: 0.5s;
   }
-  .sidebar.display{
+  body.noscroll .sidebar{ 
+    width: 100%; 
     visibility: visible;
-    width: 100%;
-    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;
@@ -2015,7 +2019,6 @@ iframe{
     padding-bottom: 15px;
   }
   #menu-sidebar {
-    display: inline;
     background-image: linear-gradient(-90deg, #151c27 0%, #b79338 120% );
     opacity: 0.95;
   }

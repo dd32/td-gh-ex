@@ -939,6 +939,31 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	),
 	));
 
+	$wp_customize->add_setting( 'bb_wedding_bliss_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'bb_wedding_bliss_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'bb_wedding_bliss_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','bb-wedding-bliss' ),
+		'section' => 'bb_wedding_bliss_slidersettings',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_slider_image_height',array(
+		'default'=> __('550','bb-wedding-bliss'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_slider_image_height',array(
+		'label'	=> __('Slider Image Height','bb-wedding-bliss'),
+		'section'=> 'bb_wedding_bliss_slidersettings',
+		'type'=> 'text'
+	));
+
 	//Love Story
 	$wp_customize->add_section('bb_wedding_bliss_lovestory',array(
 		'title'	=> __('Love Story Section','bb-wedding-bliss'),
@@ -1225,6 +1250,20 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'section'     => 'bb_wedding_bliss_blog_post',
 		'type'        => 'text',
 		'settings'    => 'bb_wedding_bliss_metabox_separator_blog_post',
+	) );
+
+	$wp_customize->add_setting('bb_wedding_bliss_display_blog_page_post',array(
+        'default' => __('In Box','bb-wedding-bliss'),
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','bb-wedding-bliss'),
+            'Without Box' => __('Without Box','bb-wedding-bliss'),
+        ),
 	) );
 
 	//no Result Found

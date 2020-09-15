@@ -9,7 +9,7 @@ get_header(); ?>
 
   <?php if( get_theme_mod('bb_wedding_bliss_slider_arrows', false) != '' || get_theme_mod( 'bb_wedding_bliss_responsive_slider', false) != ''){ ?>
     <section id="slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('bb_wedding_bliss_slider_speed_option', 3000)); ?>"> 
         <?php $bb_wedding_bliss_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'bb_wedding_bliss_slidersettings_page' . $count ));
