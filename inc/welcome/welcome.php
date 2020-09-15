@@ -33,8 +33,7 @@ if(!class_exists('Agency_Lite_Welcome')) :
 				/** Tabs **/
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'agency-lite'),
-					'actions_required' => esc_html__('Required Plugins', 'agency-lite'),
-					'recommended_plugins' => esc_html__('Recommended Plugins', 'agency-lite'),
+					'actions_required' => esc_html__('Recommended Plugins', 'agency-lite'),
 					'demo_import' => esc_html__('Import Demo', 'agency-lite'),
 					'free_vs_pro' => esc_html__('Free Vs Pro', 'agency-lite'),
 					'changelog' => esc_html__('ChangeLog', 'agency-lite'),
@@ -100,7 +99,7 @@ if(!class_exists('Agency_Lite_Welcome')) :
 			 
              global $pagenow;
 
-            if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+            if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
              add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
              }
 				
@@ -110,7 +109,7 @@ if(!class_exists('Agency_Lite_Welcome')) :
 			public function welcome_admin_notice_display() {
 				global $pagenow;
 
-				if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="updated apwelcome-an notice notice-success is-dismissible">
 						<h2><?php printf(esc_html__( 'Welcome!', 'agency-lite' )) ?></h2>
@@ -129,13 +128,10 @@ if(!class_exists('Agency_Lite_Welcome')) :
 								<div>
 									<div class="button-wrapper">
 										<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'ready to use starter sites.', 'agency-lite' ); ?></a>
+										<?php printf( wp_kses_post( '<a class="options-page-btn button-secondary" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'agency-lite' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
 									</div>
 
-									<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'agency-lite' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
-
-									<p><?php esc_html_e( 'You can also reach-out to us for any support during the theme setup and use.', 'agency-lite' ); ?></p>
-									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'agency-lite' ); ?></span></a>
-
+									
 								</div>
 							</div>
 							<div class="apwelcome-column col-doc">
@@ -146,11 +142,10 @@ if(!class_exists('Agency_Lite_Welcome')) :
 									</h3>
 									<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'agency-lite' ), $this->theme_name  ); ?></p>
 									<a href="<?php echo esc_url($this->strings['doc_link']);?>" class=" button" ><span><?php esc_html_e( 'Full Documentation', 'agency-lite' ); ?></span></a>
+									 <a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'agency-lite' ); ?></span></a>
 
 								</div>
-								<div class="apwelcome-doc-btn">
-									<a href="#" class=" button" ><span><?php esc_html_e( 'Return to your Dashboard', 'agency-lite' ); ?></span></a>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -177,7 +172,7 @@ if(!class_exists('Agency_Lite_Welcome')) :
 					<div class="top-block-wrap">
 						<div class="about-text">
 							<h1><?php /* translators: %s : Theme Name and Version*/ printf( 'Welcome to %s - Version %s', $this->theme_name, $this->theme_version ); ?></h1>
-							<?php echo $this->strings['theme_short_description']; ?>
+							<?php echo esc_html($this->strings['theme_short_description']); ?>
 						</div>
 						<div class="badge-wrap">
 							<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>

@@ -4,7 +4,10 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/agency-lite/
 Author: AccessPressThemes
 Author URI: http://accesspressthemes.com/
 Description: Agency Lite is a multipurpose WordPress theme perfect for any agency, blog, portfolio, business and corporate website. This theme comes up with the most modern and clean design, while being equipped with the latest technology. The highly configurable homepage of this theme has numerous well coded sections - Slider, About, FAQ, Feature, Service, Team, Counter, Blog and Logo Section. And the best part is that all these sections can be enabled or disabled by you as per your will. You can even translate this site in any language you prefer, create an ecommerce site with the theme and view each change that you have been making live - in real time. Check demo here https://demo.accesspressthemes.com/agency-lite
-Version: 1.1.3
+Version: 1.1.4
+Tested up to: 5.5.1
+Requires PHP: 5.6
+Requires at least: 4.7
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: agency-lite
@@ -256,12 +259,7 @@ ul {
 	list-style: none;
 }
 
-input,
-button,
-select,
-textarea:focus {
-	outline: none;
-}
+
 
 .form-control::-moz-placeholder {
 	font-size: 13px;
@@ -558,10 +556,6 @@ a:active {
 	color: #c28f15;
 }
 
-a:focus {
-	outline: 0;
-}
-
 a:hover,
 a:active {
 	outline: 0;
@@ -639,6 +633,7 @@ a:active {
 	display: block;
 }
 
+
 @media screen and (min-width:768px) {
 	.menu-toggle {
 		display: none;
@@ -647,6 +642,7 @@ a:active {
 		display: block;
 	}
 }
+
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -2514,7 +2510,6 @@ article a.read-more:hover {
     font-size: 13px;
     font-weight: 400;
     border: 2px solid #cba14c;
-    outline: 0;
     font-weight: 500;
     border-radius: 0;
     -webkit-transition: all 0.3s ease;
@@ -3411,4 +3406,21 @@ ul.wp-block-gallery.alignnone{
         width: auto;
         max-width: 1000%;
     }
+}
+
+@media only screen and (max-width: 768px){
+	.main-navigation ul {
+		display: none;
+	}
+	.agency-lite-archive-wrapper.right-sidebar-enabled{
+		display: block;
+	}
+	.sidebar-right{
+		width: 100%;
+    	float: none;
+	}
+}
+
+button.menu-toggle:focus {
+    outline: 2px solid #333;
 }

@@ -60,7 +60,7 @@ add_action('agency_lite_footer_nav_menu','agency_lite_footer_nav_menu');
 if( ! function_exists('agency_lite_footer_social_icons')){
 
   function agency_lite_footer_social_icons(){
-        $agency_lite_footer_icon_enable = esc_attr( get_theme_mod('agency_lite_footer_icon_enable','on') );
+        $agency_lite_footer_icon_enable = esc_attr( get_theme_mod('agency_lite_footer_icon_enable','off') );
         if( $agency_lite_footer_icon_enable == 'on' ){
         	?>
         	<div class = "agency-lite-social-icons">
@@ -82,16 +82,24 @@ function agency_lite_footer_copyright_fn()
 			<div class = "agency-lite-footer-copyright">
 				<?php
 				  if( !empty($agency_lite_footer_copyright)){
-	                        echo wp_kses_post($agency_lite_footer_copyright) . " | "; 
-		            } ?>
-		            WordPress Theme : <a href="https://accesspressthemes.com/wordpress-themes/agency-lite" target="_blank">Agency Lite</a> 
+	                        echo wp_kses_post($agency_lite_footer_copyright); 
+		            }else{
+                        printf(wp_kses_post('&copy; %1$s %2$s'), esc_html(date("Y")), esc_html(get_bloginfo('name')));
+		            	} ?>
+		             <?php esc_html_e(' | WordPress Theme :','agency-lite');?>
+                        <?php 
+                        $theme = wp_get_theme();
+
+                         ?>
+                        <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/agency-lite'); ?>"><?php echo esc_html($theme->Name); ?></a>
 			</div>
 
-			<div class = "agency-lite-footer-image-control"> 
 			<?php if($agency_lite_footer_image_control){ ?>
-				<img src="<?php echo esc_url($agency_lite_footer_image_control); ?>" />
+				<div class = "agency-lite-footer-image-control"> 
+					<img src="<?php echo esc_url($agency_lite_footer_image_control); ?>" />
+				</div>
 			<?php } ?>
-			</div>
+
 		</div>
 	</div>
 	<?php 

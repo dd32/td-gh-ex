@@ -97,17 +97,17 @@ function agency_lite_contact_details(){
                   <span class="contact_email">
                      <i class="fa fa-headphones" aria-hidden="true"></i>
                     <a href="mailto:<?php echo esc_attr($gmap_support_email); ?>">
-                   <?php esc_html_e('Support:','agency-lite'); ?><?php echo esc_attr($gmap_support_email); ?>
+                   <?php esc_html_e('Support:','agency-lite'); ?><?php echo esc_html($gmap_support_email); ?>
                     </a>
                   </span>
                   <span class="contact_web">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     <a href="<?php echo esc_attr($gmap_contact_email); ?>" target="_blank">
-                    <?php esc_html_e('Email:','agency-lite'); ?><?php echo esc_attr($gmap_contact_email); ?>
+                    <?php esc_html_e('Email:','agency-lite'); ?><?php echo esc_html($gmap_contact_email); ?>
                     </a>  
                   </span>
                   <span class="contact_address">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i><?php esc_html_e('Location:','agency-lite'); ?><?php echo esc_attr($gmap_location); ?>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i><?php esc_html_e('Location:','agency-lite'); ?><?php echo esc_html($gmap_location); ?>
                   </span>
                 </div>
           <?php } ?>

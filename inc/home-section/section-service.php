@@ -41,7 +41,7 @@ function agency_lite_services_pages(){
                                                 <a class="agency-lite-feature-title" href="<?php the_permalink(); ?>">
                                                     <h2><?php the_title(); ?></h2>
                                                 </a>
-                                                <p><?php echo esc_attr(wp_trim_words( get_the_content(), 15, '...' )); ?></p>
+                                                <p><?php echo esc_html(wp_trim_words( get_the_content(), 15, '...' )); ?></p>
                                                 <div class = "serv-btn">
                                                     <a href="<?php the_permalink(); ?>">Read More</a>
                                                 </div>

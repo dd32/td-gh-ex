@@ -187,7 +187,7 @@ class agency_lite_Select_Mul_Cat_Control extends WP_Customize_Control {
 				<?php foreach($cats as $id => $label) : ?>
 					<div class="chk-group <?php if($count++%2 == 0){echo "right";}else{echo "left";} ?>">
 						<input id="ex-cat-<?php echo absint($id); ?>" type="checkbox" value="<?php echo absint($id); ?>" <?php if(in_array($id,$cat_arr)){ echo "checked"; }; ?> />
-						<label for="ex-cat-<?php echo absint($id); ?>"><?php echo esc_attr($label); ?></label>
+						<label for="ex-cat-<?php echo absint($id); ?>"><?php echo esc_html($label); ?></label>
 					</div>
 				<?php endforeach; ?>
 			</div>
@@ -680,7 +680,7 @@ $wp_customize->add_section( 'agency_lite_footer_page_section',array(
 
 $wp_customize->add_setting( 'agency_lite_footer_icon_enable',array(
 	'sanitize_callback' => 'agency_lite_sanitize_textarea',
-	'default'           => 'on'
+	'default'           => 'off'
 ));
 
 $wp_customize->add_control( new agency_lite_Switch_Control( $wp_customize,'agency_lite_footer_icon_enable',array(

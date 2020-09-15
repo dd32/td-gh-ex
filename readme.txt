@@ -1,15 +1,23 @@
 === Agency Lite ===
 
-Contributors: Access Keys
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, custom-header, footer-widget, blog, portfolio
-Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 1.1.3
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5.1
+Stable tag: 1.1.4
+Contributors: Access Keys
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
 
 === Description === 
-Agency Lite is a multipurpose WordPress theme perfect for any agency, blog, portfolio, business and corporate website. This theme comes up with the most modern and clean design, while being equipped with the latest technology. The highly configurable homepage of this theme has numerous well coded sections - Slider, About, FAQ, Feature, Service, Team, Counter, Blog and Logo Section. And the best part is that all these sections can be enabled or disabled by you as per your will. You can even translate this site in any language you prefer, create an ecommerce site with the theme and view each change that you have been making live - in real time. Check demo here https://demo.accesspressthemes.com/agency-lite
+Agency Lite is a multipurpose WordPress theme perfect for any agency, blog, portfolio, business and corporate website. This theme comes up with the most modern and clean design, while being equipped with the latest technology. The highly configurable homepage of this theme has numerous well coded sections - Slider, About, FAQ, Feature, Service, Team, Counter, Blog and Logo Section. And the best part is that all these sections can be enabled or disabled by you as per your will. You can even translate this site in any language you prefer, create an ecommerce site with the theme and view each change that you have been making live - in real time. 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Agency-lite is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 
 == Installation ==
@@ -17,6 +25,7 @@ Agency Lite is a multipurpose WordPress theme perfect for any agency, blog, port
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
 
 == Frequently Asked Questions ==
 
@@ -33,9 +42,24 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 * Font Awesome https://fontawesome.com/, By @davegandy, (Font: SIL OFL 1.1, CSS: MIT License) http://fontawesome.io/license 
 * Google Font - Hind, https://fonts.google.com/specimen/Hind, [Open Font License] http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
 * Google Font -Playfair Display, https://fonts.google.com/specimen/Playfair+Display, [Open Font License] http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
-* Screenshot banner Image, https://pixabay.com/en/wood-wooden-desktop-table-desk-3271749/, © 2018 Pixabay, [Creative Commons CC0]https://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+Images Used In Screenshot  =====
+
+Pxhere Images
+License: Creative Commons Zero (CC0) license.
+Source: https://pxhere.com/en/license
+
+https://pxhere.com/en/photo/1434347
+
+https://pxhere.com/en/photo/1433625
 
 == Changelog ==
+
+= 1.1.4 - Jul 27 2020 =
+** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.
+** Refined Welcome Page
+** Changed Screenshot
+** Refined Sidebar CSS
 
 = 1.1.3 - Mar 24 2020 =
 ** Added Featured Image Show Hide Option for Single Post

@@ -1,6 +1,5 @@
 <?php 
 /**
-*
 *Template Name:Home Page
 **/
 get_header();
@@ -15,4 +14,4 @@ do_action('agency_lite_counter_page');
 do_action('agency_lite_blog_page');
 do_action('agency_lite_logo_page');
 
-get_footer(); ?>
+get_footer(); 

@@ -182,7 +182,7 @@ function agency_lite_widgets_show_widget_field($instance = '', $widget_field = '
                 $image_array = wp_get_attachment_image_src($attachment_id, 'medium');
                 $image = preg_match('/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value);
                 if ($image) {
-                    $output .= '<img src="' . $image_array[0] . '" alt="" />' . $remove;
+                    $output .= '<img src="' . $image_array[0] . '" alt="<?php the_title_attribute() ?>" />' . $remove;
                 } else {
                     $parts = explode("/", $value);
                     for ($i = 0; $i < sizeof($parts); ++$i) {
