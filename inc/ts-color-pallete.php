@@ -361,6 +361,21 @@
 		$advance_portfolio_custom_css .='}';
 	}
 
+	// Slider Height 
+	$advance_portfolio_banner_image_height = get_theme_mod('advance_portfolio_banner_image_height');
+	$advance_portfolio_custom_css .='#banner img{';
+		$advance_portfolio_custom_css .='height: '.esc_html($advance_portfolio_banner_image_height).'px;';
+	$advance_portfolio_custom_css .='}';
+
+	// Display Blog Post 
+	$advance_portfolio_display_blog_page_post = get_theme_mod( 'advance_portfolio_display_blog_page_post','In Box');
+    if($advance_portfolio_display_blog_page_post == 'Without Box'){
+		$advance_portfolio_custom_css .='.page-box{';
+			$advance_portfolio_custom_css .='border:none; margin:25px 10px;';
+		$advance_portfolio_custom_css .='}';
+	}
+
+
 
 
 		

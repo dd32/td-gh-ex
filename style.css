@@ -4,9 +4,9 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.4.5
+Version: 0.4.6
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-portfolio
@@ -482,9 +482,6 @@ iframe{
 /* --------- MENUS CSS --------- */
 #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn{
   display: none;
-}
-#menu-sidebar {
-  display: inline;
 }
 ul.list_nav {
   margin: 0 auto;
@@ -1569,6 +1566,9 @@ h1.page-title {
   #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
     width:40px;
   }
+  #banner img{
+    height: auto !important;
+  }
 }
 @media screen and (max-width:720px) {	
 	.contentbox{
@@ -1618,6 +1618,9 @@ h1.page-title {
     text-align: center !important;
     left: 0 !important;
     right:0 !important;
+  }
+  #banner img{
+    height: auto !important;
   }
 }
 @media screen and (min-width:720px){
@@ -1714,10 +1717,9 @@ h1.page-title {
     padding-top: 60px;
     transition: 0.5s;
   }
-  .sidebar.display{
+  body.noscroll .sidebar{ 
+    width: 100%; 
     visibility: visible;
-    width: 100%;
-    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;
@@ -1783,7 +1785,6 @@ h1.page-title {
     padding-bottom: 15px;
   }
   #menu-sidebar {
-    display: inline;
     background-image: linear-gradient(-90deg, #ffdd65 0%, #f54ea2 120% );
     opacity: 0.95;
   }

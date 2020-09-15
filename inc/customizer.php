@@ -943,6 +943,16 @@ function advance_portfolio_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting('advance_portfolio_banner_image_height',array(
+		'default'=> __('550','advance-portfolio'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_portfolio_banner_image_height',array(
+		'label'	=> __('Banner Image Height','advance-portfolio'),
+		'section'=> 'advance_portfolio_banner',
+		'type'=> 'text'
+	));
+
 	//AWESOME PORTFOLIO
 	$wp_customize->add_section('advance_portfolio_page_awesome', array(
 		'title'       => __('Awesome Portfolio', 'advance-portfolio'),
@@ -1226,6 +1236,20 @@ function advance_portfolio_customize_register($wp_customize) {
 		'section'=> 'advance_portfolio_blog_post',
 		'type'=> 'text'
 	));
+
+	$wp_customize->add_setting('advance_portfolio_display_blog_page_post',array(
+        'default' => __('In Box','advance-portfolio'),
+        'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_portfolio_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-portfolio'),
+        'section' => 'advance_portfolio_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-portfolio'),
+            'Without Box' => __('Without Box','advance-portfolio'),
+        ),
+	) );
 
 	//no Result Found
 	$wp_customize->add_section('advance_portfolio_noresult_found',array(
