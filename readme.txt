@@ -2,10 +2,10 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, mentors, online library, educational websites and everything related to education, learning and teaching.
 
@@ -120,14 +120,14 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 
 = 0.4.8 =
 * Resolved menu focus error.
-* Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Added Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.4.9 =
 * Resolved errors.
 * Added no search found settings.
 * Added copyright padding.
 * Added show and hide single post image.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.5 =
 * Added the license of font awesome in readme.txt.
@@ -149,7 +149,15 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 * Added “Call-able” Link.
 * Done Email Address Clickable. 
 * Changed menu focus js.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
+
+= 0.5.3 =
+* Updated license and license url in readme.txt and style.css.
+* Added condition for navigation menu.  
+* Resolved focus error from responsive media.
+* Added slider height css error from responsive media.
+* Added display blog page post options.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 == Resources ==
 

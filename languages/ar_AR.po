@@ -7,14 +7,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-08-08 12:38+0530\n"
+"PO-Revision-Date: 2020-09-03 15:08+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: ar\n"
@@ -145,7 +145,7 @@ msgstr "حسابي"
 msgid "Open Menu"
 msgstr "افتح القائمة"
 
-#: no-results.php:11 inc/customizer.php:1221
+#: no-results.php:11 inc/customizer.php:1235
 msgid "Nothing Found"
 msgstr "لم يتم العثور على شيء"
 
@@ -546,8 +546,8 @@ msgstr "حدد صفحة صورة الشريحة"
 msgid "Size of image should be 1600 x 633"
 msgstr "يجب أن يكون حجم الصورة 1600 × 633"
 
-#: inc/customizer.php:869 inc/customizer.php:878 inc/customizer.php:1311
-#: inc/customizer.php:1366
+#: inc/customizer.php:869 inc/customizer.php:878 inc/customizer.php:1325
+#: inc/customizer.php:1380
 msgid "Left"
 msgstr "اليسار"
 
@@ -555,12 +555,12 @@ msgstr "اليسار"
 msgid "Slider Content Alignment"
 msgstr "محاذاة محتوى شريط التمرير"
 
-#: inc/customizer.php:877 inc/customizer.php:1368
+#: inc/customizer.php:877 inc/customizer.php:1382
 msgid "Center"
 msgstr "مركز"
 
-#: inc/customizer.php:879 inc/customizer.php:1312 inc/customizer.php:1358
-#: inc/customizer.php:1367
+#: inc/customizer.php:879 inc/customizer.php:1326 inc/customizer.php:1372
+#: inc/customizer.php:1382
 msgid "Right"
 msgstr "حق"
 
@@ -708,15 +708,27 @@ msgstr "فاصل مربع التعريف"
 msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
 msgstr "إضافة فاصل التعريف. على سبيل المثال: \"|\" ، \"/\" ، إلخ."
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1215 inc/customizer.php:1224
+msgid "Without Box"
+msgstr "بدون صندوق"
+
+#: inc/customizer.php:1220
+msgid "Display Blog Page Post :"
+msgstr "عرض مشاركة صفحة المدونة:"
+
+#: inc/customizer.php:1223
+msgid "In Box"
+msgstr "صندوق الوارد"
+
+#: inc/customizer.php:1230
 msgid "No Result Found"
 msgstr "لم يتم العثور على نتائج"
 
-#: inc/customizer.php:1225
+#: inc/customizer.php:1239
 msgid "No Result Found Title"
 msgstr "لم يتم العثور على عنوان نتيجة"
 
-#: inc/customizer.php:1231
+#: inc/customizer.php:1245
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -724,23 +736,23 @@ msgstr ""
 "آسف ، ولكن لا شيء يطابق مصطلحات البحث. أرجو المحاولة مرة أخرى بإستخدام كلمات "
 "أخرى."
 
-#: inc/customizer.php:1235
+#: inc/customizer.php:1249
 msgid "No Result Found Content"
 msgstr "لم يتم العثور على نتيجة للمحتوى"
 
-#: inc/customizer.php:1246
+#: inc/customizer.php:1260
 msgid "No Result search"
 msgstr "لا نتائج بحث"
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1266
 msgid "Footer Text"
 msgstr "نص التذييل"
 
-#: inc/customizer.php:1263
+#: inc/customizer.php:1277
 msgid "Footer widget area"
 msgstr "منطقة القطعة تذييل"
 
-#: inc/customizer.php:1265
+#: inc/customizer.php:1279
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -748,66 +760,66 @@ msgstr ""
 "حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى Appearance> "
 "Widgets وأضف Widgets."
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1281
 msgid "One"
 msgstr "واحد"
 
-#: inc/customizer.php:1268
+#: inc/customizer.php:1282
 msgid "Two"
 msgstr "اثنان"
 
-#: inc/customizer.php:1269
+#: inc/customizer.php:1283
 msgid "Three"
 msgstr "ثلاثة"
 
-#: inc/customizer.php:1270
+#: inc/customizer.php:1284
 msgid "Four"
 msgstr "أربعة"
 
-#: inc/customizer.php:1279
+#: inc/customizer.php:1293
 msgid "Footer Widget Background Color"
 msgstr "لون خلفية تذييل القطعة"
 
-#: inc/customizer.php:1288
+#: inc/customizer.php:1302
 msgid "Footer Widget Background Image"
 msgstr "صورة خلفية القطعة تذييل"
 
-#: inc/customizer.php:1297
+#: inc/customizer.php:1311
 msgid "Copyright Text"
 msgstr "نص حقوق النشر"
 
-#: inc/customizer.php:1303 inc/customizer.php:1313
+#: inc/customizer.php:1317 inc/customizer.php:1327
 msgid "center"
 msgstr "مركز"
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1322
 msgid "Copyright Text Alignment"
 msgstr "محاذاة نص حقوق النشر"
 
-#: inc/customizer.php:1322
+#: inc/customizer.php:1336
 msgid "Copyright Font Size"
 msgstr "حجم خط حقوق التأليف والنشر"
 
-#: inc/customizer.php:1337
+#: inc/customizer.php:1351
 msgid "Copyright Padding"
 msgstr "حشو حقوق التأليف والنشر"
 
-#: inc/customizer.php:1353
-msgid "Show / Hide Scroll To Top"
-msgstr "إظهار / إخفاء التمرير إلى الأعلى"
+#: inc/customizer.php:1367
+msgid "Show / Hide Scroll Scroll Top Button"
+msgstr "إظهار / إخفاء التمرير التمرير العلوي الزر"
 
-#: inc/customizer.php:1363
+#: inc/customizer.php:1377
 msgid "Scroll Back to Top Position"
 msgstr "قم بالتمرير إلى أعلى الموضع"
 
-#: inc/customizer.php:1377
+#: inc/customizer.php:1391
 msgid "Scroll Icon Font Size"
 msgstr "حجم الخط رمز التمرير"
 
-#: inc/customizer.php:1467
+#: inc/customizer.php:1481
 msgid "Education Pro Theme"
 msgstr "موضوع التعليم برو"
 
-#: inc/customizer.php:1468
+#: inc/customizer.php:1482
 msgid "Go Pro"
 msgstr "جو برو"

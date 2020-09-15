@@ -65,9 +65,12 @@
     <?php } ?>
   </header>
   <div class="<?php if( get_theme_mod( 'advance_education_sticky_header', false) != '' || get_theme_mod( 'advance_education_responsive_sticky_header', false) != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-    <div class="toggle-menu responsive-menu">
-      <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
-    </div>
+    <?php 
+    if(has_nav_menu('primary')){ ?>
+      <div class="toggle-menu responsive-menu">
+        <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
+      </div>
+    <?php }?>
   </div>
 
   <?php get_template_part( 'template-parts/header/header-navigation' ); ?>

@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-08-08 12:39+0530\n"
+"PO-Revision-Date: 2020-09-03 15:08+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -148,7 +148,7 @@ msgstr "MEIN KONTO"
 msgid "Open Menu"
 msgstr "Menü öffnen"
 
-#: no-results.php:11 inc/customizer.php:1221
+#: no-results.php:11 inc/customizer.php:1235
 msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
@@ -549,8 +549,8 @@ msgstr "Wählen Sie Folienbildseite"
 msgid "Size of image should be 1600 x 633"
 msgstr "Die Bildgröße sollte 1600 x 633 betragen"
 
-#: inc/customizer.php:869 inc/customizer.php:878 inc/customizer.php:1311
-#: inc/customizer.php:1366
+#: inc/customizer.php:869 inc/customizer.php:878 inc/customizer.php:1325
+#: inc/customizer.php:1380
 msgid "Left"
 msgstr "Links"
 
@@ -558,12 +558,12 @@ msgstr "Links"
 msgid "Slider Content Alignment"
 msgstr "Ausrichtung des Schiebereglerinhalts"
 
-#: inc/customizer.php:877 inc/customizer.php:1368
+#: inc/customizer.php:877 inc/customizer.php:1382
 msgid "Center"
 msgstr "Center"
 
-#: inc/customizer.php:879 inc/customizer.php:1312 inc/customizer.php:1358
-#: inc/customizer.php:1367
+#: inc/customizer.php:879 inc/customizer.php:1326 inc/customizer.php:1372
+#: inc/customizer.php:1382
 msgid "Right"
 msgstr "Richtig"
 
@@ -711,15 +711,27 @@ msgstr "Meta Box Separator"
 msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
 msgstr "Meta Separator hinzufügen. z. B.: \"|\", \"/\" usw."
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1215 inc/customizer.php:1224
+msgid "Without Box"
+msgstr "Ohne Box"
+
+#: inc/customizer.php:1220
+msgid "Display Blog Page Post :"
+msgstr "Blog-Seitenbeitrag anzeigen:"
+
+#: inc/customizer.php:1223
+msgid "In Box"
+msgstr "In Box"
+
+#: inc/customizer.php:1230
 msgid "No Result Found"
 msgstr "Keine Einträge gefunden"
 
-#: inc/customizer.php:1225
+#: inc/customizer.php:1239
 msgid "No Result Found Title"
 msgstr "Kein Ergebnis Titel gefunden"
 
-#: inc/customizer.php:1231
+#: inc/customizer.php:1245
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -727,23 +739,23 @@ msgstr ""
 "Entschuldigung, aber nichts stimmte mit Ihren Suchbegriffen überein. Bitte "
 "versuchen Sie es erneut mit verschiedenen Schlüsselwörtern."
 
-#: inc/customizer.php:1235
+#: inc/customizer.php:1249
 msgid "No Result Found Content"
 msgstr "Kein Ergebnis Inhalt gefunden"
 
-#: inc/customizer.php:1246
+#: inc/customizer.php:1260
 msgid "No Result search"
 msgstr "Keine Ergebnissuche"
 
-#: inc/customizer.php:1252
+#: inc/customizer.php:1266
 msgid "Footer Text"
 msgstr "Fusszeile"
 
-#: inc/customizer.php:1263
+#: inc/customizer.php:1277
 msgid "Footer widget area"
 msgstr "Fußzeilen-Widget-Bereich"
 
-#: inc/customizer.php:1265
+#: inc/customizer.php:1279
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -751,66 +763,66 @@ msgstr ""
 "Wählen Sie die Anzahl der gewünschten Widget-Bereiche in der Fußzeile aus. "
 "Gehen Sie danach zu Darstellung> Widgets und fügen Sie Ihre Widgets hinzu."
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1281
 msgid "One"
 msgstr "Eins"
 
-#: inc/customizer.php:1268
+#: inc/customizer.php:1282
 msgid "Two"
 msgstr "Zwei"
 
-#: inc/customizer.php:1269
+#: inc/customizer.php:1283
 msgid "Three"
 msgstr "Drei"
 
-#: inc/customizer.php:1270
+#: inc/customizer.php:1284
 msgid "Four"
 msgstr "Vier"
 
-#: inc/customizer.php:1279
+#: inc/customizer.php:1293
 msgid "Footer Widget Background Color"
 msgstr "Hintergrundfarbe des Fußzeilen-Widgets"
 
-#: inc/customizer.php:1288
+#: inc/customizer.php:1302
 msgid "Footer Widget Background Image"
 msgstr "Fußzeile Widget Hintergrundbild"
 
-#: inc/customizer.php:1297
+#: inc/customizer.php:1311
 msgid "Copyright Text"
 msgstr "Copyright-Text"
 
-#: inc/customizer.php:1303 inc/customizer.php:1313
+#: inc/customizer.php:1317 inc/customizer.php:1327
 msgid "center"
 msgstr "Center"
 
-#: inc/customizer.php:1308
+#: inc/customizer.php:1322
 msgid "Copyright Text Alignment"
 msgstr "Copyright Text Alignment"
 
-#: inc/customizer.php:1322
+#: inc/customizer.php:1336
 msgid "Copyright Font Size"
 msgstr "Copyright Schriftgröße"
 
-#: inc/customizer.php:1337
+#: inc/customizer.php:1351
 msgid "Copyright Padding"
 msgstr "Copyright-Auffüllung"
 
-#: inc/customizer.php:1353
-msgid "Show / Hide Scroll To Top"
-msgstr "Bildlauf nach oben anzeigen / ausblenden"
+#: inc/customizer.php:1367
+msgid "Show / Hide Scroll Scroll Top Button"
+msgstr "Bildlauf anzeigen / ausblenden Bildlaufschaltfläche oben"
 
-#: inc/customizer.php:1363
+#: inc/customizer.php:1377
 msgid "Scroll Back to Top Position"
 msgstr "Scrollen Sie zurück zur obersten Position"
 
-#: inc/customizer.php:1377
+#: inc/customizer.php:1391
 msgid "Scroll Icon Font Size"
 msgstr "Bildlaufsymbol Schriftgröße"
 
-#: inc/customizer.php:1467
+#: inc/customizer.php:1481
 msgid "Education Pro Theme"
 msgstr "Education Pro-Thema"
 
-#: inc/customizer.php:1468
+#: inc/customizer.php:1482
 msgid "Go Pro"
 msgstr "Gehen Sie Pro"

@@ -373,5 +373,10 @@
 		$advance_education_custom_css .='height: '.esc_html($advance_education_slider_image_height).'px;';
 	$advance_education_custom_css .='}';
 
-
-
+	// Display Blog Post 
+	$advance_education_display_blog_page_post = get_theme_mod( 'advance_education_display_blog_page_post','In Box');
+    if($advance_education_display_blog_page_post == 'Without Box'){
+		$advance_education_custom_css .='.page-box{';
+			$advance_education_custom_css .='background-color: transparent;';
+		$advance_education_custom_css .='}';
+	}
