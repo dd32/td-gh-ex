@@ -2,10 +2,10 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses.
 
@@ -124,7 +124,7 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Added no search found settings.
 * Added copyright padding.
 * Added show and hide single post image.
-* Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Added Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.4.9 =
 * Added the license of font awesome in readme.txt.
@@ -137,7 +137,7 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Added separator option for metabox in blog post.
 * Changed all number type style in customizer.
 * Resolved login page error.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.5.1 =
 * Added slider speed option.
@@ -145,10 +145,18 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Added option to change slider button text.
 * Added “Call-able” Link.
 * Done Email Address Clickable. 
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.5.2 =
 * Changed menu focus js.
+
+= 0.5.3 =
+* Updated license and license url in readme.txt and style.css.
+* Added condition for navigation menu.  
+* Resolved focus error from responsive media.
+* Added slider height css error from responsive media.
+* Added display blog page post options.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 == Resources ==
 

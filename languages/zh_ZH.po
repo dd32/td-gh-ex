@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-08-10 11:44+0530\n"
+"PO-Revision-Date: 2020-09-03 13:51+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: zh\n"
@@ -172,7 +172,7 @@ msgstr "搜索"
 msgid "serach-outer"
 msgstr "搜索投票者"
 
-#: no-results.php:11 inc/customizer.php:1341
+#: no-results.php:11 inc/customizer.php:1355
 msgid "Nothing Found"
 msgstr "没有发现"
 
@@ -618,8 +618,8 @@ msgstr "选择幻灯片图像页面"
 msgid "Size of image should be 1500 x 600"
 msgstr "图片大小应为1500 x 600"
 
-#: inc/customizer.php:972 inc/customizer.php:982 inc/customizer.php:1431
-#: inc/customizer.php:1486
+#: inc/customizer.php:972 inc/customizer.php:982 inc/customizer.php:1445
+#: inc/customizer.php:1500
 msgid "Left"
 msgstr "剩下"
 
@@ -627,12 +627,12 @@ msgstr "剩下"
 msgid "Slider Content Alignment"
 msgstr "滑块内容对齐"
 
-#: inc/customizer.php:980 inc/customizer.php:1488
+#: inc/customizer.php:980 inc/customizer.php:1502
 msgid "Center"
 msgstr "中央"
 
-#: inc/customizer.php:982 inc/customizer.php:1432 inc/customizer.php:1478
-#: inc/customizer.php:1487
+#: inc/customizer.php:982 inc/customizer.php:1446 inc/customizer.php:1492
+#: inc/customizer.php:1501
 msgid "Right"
 msgstr "对"
 
@@ -780,103 +780,115 @@ msgstr "元框分隔符"
 msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
 msgstr "添加元分隔符。例如：“ |”，“ /”等。"
 
-#: inc/customizer.php:1336
+#: inc/customizer.php:1335 inc/customizer.php:1343
+msgid "In Box"
+msgstr "盒装"
+
+#: inc/customizer.php:1340
+msgid "Display Blog Page Post :"
+msgstr "显示博客页面帖子："
+
+#: inc/customizer.php:1344
+msgid "Without Box"
+msgstr "不带盒子"
+
+#: inc/customizer.php:1350
 msgid "No Result Found"
 msgstr "找不到结果"
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1359
 msgid "No Result Found Title"
 msgstr "找不到结果标题"
 
-#: inc/customizer.php:1351
+#: inc/customizer.php:1365
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr "抱歉，没有符合您的搜索条件。请使用其他不同的关键字再试一次。"
 
-#: inc/customizer.php:1355
+#: inc/customizer.php:1369
 msgid "No Result Found Content"
 msgstr "找不到结果内容"
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1380
 msgid "No Result search"
 msgstr "没有结果搜索"
 
-#: inc/customizer.php:1372
+#: inc/customizer.php:1386
 msgid "Footer Text"
 msgstr "页脚文字"
 
-#: inc/customizer.php:1383
+#: inc/customizer.php:1397
 msgid "Footer widget area"
 msgstr "页脚小部件区域"
 
-#: inc/customizer.php:1385
+#: inc/customizer.php:1399
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
 "在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加您的小部件。"
 
-#: inc/customizer.php:1387
+#: inc/customizer.php:1401
 msgid "One"
 msgstr "一"
 
-#: inc/customizer.php:1388
+#: inc/customizer.php:1402
 msgid "Two"
 msgstr "二"
 
-#: inc/customizer.php:1389
+#: inc/customizer.php:1403
 msgid "Three"
 msgstr "三"
 
-#: inc/customizer.php:1390
+#: inc/customizer.php:1404
 msgid "Four"
 msgstr "四个"
 
-#: inc/customizer.php:1399
+#: inc/customizer.php:1413
 msgid "Footer Widget Background Color"
 msgstr "页脚小部件背景颜色"
 
-#: inc/customizer.php:1408
+#: inc/customizer.php:1422
 msgid "Footer Widget Background Image"
 msgstr "页脚小部件背景图片"
 
-#: inc/customizer.php:1417
+#: inc/customizer.php:1431
 msgid "Copyright Text"
 msgstr "版权文字"
 
-#: inc/customizer.php:1424 inc/customizer.php:1433
+#: inc/customizer.php:1437 inc/customizer.php:1447
 msgid "center"
 msgstr "中央"
 
-#: inc/customizer.php:1428
+#: inc/customizer.php:1442
 msgid "Copyright Text Alignment"
 msgstr "版权文字对齐"
 
-#: inc/customizer.php:1428
+#: inc/customizer.php:1456
 msgid "Copyright Font Size"
 msgstr "版权字体大小"
 
-#: inc/customizer.php:1457
+#: inc/customizer.php:1471
 msgid "Copyright Padding"
 msgstr "版权填充"
 
-#: inc/customizer.php:1473
+#: inc/customizer.php:1487
 msgid "Show / Hide Scroll Top Button"
 msgstr "显示/隐藏滚动顶部按钮"
 
-#: inc/customizer.php:1483
+#: inc/customizer.php:1497
 msgid "Scroll Back to Top Position"
 msgstr "滚动回到顶部位置"
 
-#: inc/customizer.php:1497
+#: inc/customizer.php:1511
 msgid "Scroll Icon Font Size"
 msgstr "滚动图标字体大小"
 
-#: inc/customizer.php:1587
+#: inc/customizer.php:1601
 msgid "IT Company Pro"
 msgstr "IT公司专业版"
 
-#: inc/customizer.php:1588
+#: inc/customizer.php:1602
 msgid "Go Pro"
 msgstr "专业版"

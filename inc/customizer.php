@@ -1331,6 +1331,20 @@ function advance_it_company_customize_register($wp_customize) {
 		'settings'    => 'advance_it_company_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('advance_it_company_display_blog_page_post',array(
+        'default' => __('In Box','advance-it-company'),
+        'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_it_company_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-it-company'),
+        'section' => 'advance_it_company_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-it-company'),
+            'Without Box' => __('Without Box','advance-it-company'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('advance_it_company_noresult_found',array(
 		'title'	=> __('No Result Found','advance-it-company'),

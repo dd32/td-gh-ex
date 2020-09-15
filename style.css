@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-it-company-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. Demo: https://www.themeshopy.com/advance-it-company-pro/
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.5.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 0.5.3
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-it-company
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
@@ -504,6 +504,9 @@ i.fab.fa-linkedin-in {
 /* --------- MENUS CSS --------- */
 #menu-sidebar {
   text-align: center;
+}
+.resp-menu{
+  display: none;
 }
 ul.list_nav {
   text-align: center;
@@ -1874,6 +1877,9 @@ iframe {
   .woocommerce-cart table.cart td.actions .coupon .input-text{
     font-size: 15px;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (max-width:720px) {	
 	#header,
@@ -1944,8 +1950,11 @@ iframe {
     left: 0 !important;
     right:0 !important;
   }
-  .search-box i, #menu-sidebar .talk-btn,.top-header, #slider .inner_carousel h1{
+  .search-box, #menu-sidebar .talk-btn,.top-header, #slider .inner_carousel h1{
     display: none;
+  }
+  #slider img{
+    height: auto !important;
   }
 }
 @media screen and (min-width:720px){
@@ -2003,6 +2012,9 @@ iframe {
   .serach_inner input.search-submit {
     padding: 8px 77px !important;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
   #header{
@@ -2059,9 +2071,16 @@ iframe {
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    display: none;
     padding-top: 60px;
     transition: 0.5s;
+    visibility: hidden;
+  }
+  .sidebar.resp-menu{
+    display: block;
+  }
+  body.noscroll .sidebar.resp-menu{ 
+    width: 100%; 
+    visibility: visible;
   }
   .sidebar .closebtn {
     position: absolute;

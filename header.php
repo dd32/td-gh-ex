@@ -59,9 +59,48 @@
                 <?php }?>
               <?php endif; ?>
             </div>
-            <div class="toggle-menu responsive-menu">
-              <button class="mobiletoggle" role="tab"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-it-company'); ?></span></button>
-            </div>
+            <?php 
+              if(has_nav_menu('primary')){ ?>
+              <div class="toggle-menu responsive-menu">
+                <button class="mobiletoggle" role="tab"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-it-company'); ?></span></button>
+              </div>
+              <div id="menu-sidebar" class="nav sidebar resp-menu">
+                <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-it-company' ); ?>">
+                  <?php 
+                    if(has_nav_menu('primary')){ 
+                      wp_nav_menu( array( 
+                        'theme_location' => 'primary',
+                        'container_class' => 'main-menu-navigation clearfix' ,
+                        'menu_class' => 'clearfix',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                        'fallback_cb' => 'wp_page_menu',
+                      ) );
+                    } 
+                  ?>
+                  <div id="contact-info">
+                    <div class="social-icons">
+                      <?php if( get_theme_mod( 'advance_it_company_facebook_url') != '') { ?>
+                        <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-it-company' );?></span></a>
+                      <?php } ?>
+                      <?php if( get_theme_mod( 'advance_it_company_twitter_url') != '') { ?>
+                        <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-it-company' );?></span></a>
+                      <?php } ?>
+                      <?php if( get_theme_mod( 'advance_it_company_linkedin_url') != '') { ?>
+                        <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-it-company' );?></span></a>
+                      <?php } ?>
+                      <?php if( get_theme_mod( 'advance_it_company_instagram_url') != '') { ?>
+                        <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_instagram_url','' ) ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-it-company' );?></span><i class="fab fa-instagram"></i></a>
+                      <?php } ?>
+                      <?php if( get_theme_mod( 'advance_it_company_youtube_url') != '') { ?>
+                        <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-it-company' );?></span></a>
+                      <?php } ?>
+                    </div>
+                    <?php get_search_form();?>
+                  </div>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-it-company'); ?></span></a>
+                </nav>
+              </div>
+            <?php }?>
           </div>
           <div class="col-lg-8 col-md-12">
             <?php if( get_theme_mod('advance_it_company_display_topbar') != ''){ ?>
@@ -146,35 +185,16 @@
                   <div id="menu-sidebar" class="nav sidebar">
                     <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-it-company' ); ?>">
                       <?php 
-                        wp_nav_menu( array( 
-                          'theme_location' => 'primary',
-                          'container_class' => 'main-menu-navigation clearfix' ,
-                          'menu_class' => 'clearfix',
-                          'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                          'fallback_cb' => 'wp_page_menu',
-                        ) ); 
+                        if(has_nav_menu('primary')){ 
+                          wp_nav_menu( array( 
+                            'theme_location' => 'primary',
+                            'container_class' => 'main-menu-navigation clearfix' ,
+                            'menu_class' => 'clearfix',
+                            'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                            'fallback_cb' => 'wp_page_menu',
+                          ) );
+                        } 
                       ?>
-                      <div id="contact-info">
-                        <div class="social-icons">
-                          <?php if( get_theme_mod( 'advance_it_company_facebook_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-it-company' );?></span></a>
-                          <?php } ?>
-                          <?php if( get_theme_mod( 'advance_it_company_twitter_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-it-company' );?></span></a>
-                          <?php } ?>
-                          <?php if( get_theme_mod( 'advance_it_company_linkedin_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-it-company' );?></span></a>
-                          <?php } ?>
-                          <?php if( get_theme_mod( 'advance_it_company_instagram_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_instagram_url','' ) ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-it-company' );?></span><i class="fab fa-instagram"></i></a>
-                          <?php } ?>
-                          <?php if( get_theme_mod( 'advance_it_company_youtube_url') != '') { ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-it-company' );?></span></a>
-                          <?php } ?>
-                        </div>
-                        <?php get_search_form();?>
-                      </div>
-                      <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-it-company'); ?></span></a>
                     </nav>
                   </div>
                 </div>

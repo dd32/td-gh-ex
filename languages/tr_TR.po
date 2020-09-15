@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-08-10 11:43+0530\n"
+"PO-Revision-Date: 2020-09-03 13:50+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: tr\n"
@@ -175,7 +175,7 @@ msgstr "Arama"
 msgid "serach-outer"
 msgstr "arama-seçmen"
 
-#: no-results.php:11 inc/customizer.php:1341
+#: no-results.php:11 inc/customizer.php:1355
 msgid "Nothing Found"
 msgstr "Hiçbirşey Bulunamadı"
 
@@ -623,8 +623,8 @@ msgstr "Slayt Görüntüsü Sayfasını Seçin"
 msgid "Size of image should be 1500 x 600"
 msgstr "Görüntünün boyutu 1500 x 600 olmalıdır"
 
-#: inc/customizer.php:972 inc/customizer.php:982 inc/customizer.php:1431
-#: inc/customizer.php:1486
+#: inc/customizer.php:972 inc/customizer.php:982 inc/customizer.php:1445
+#: inc/customizer.php:1500
 msgid "Left"
 msgstr "Ayrıldı"
 
@@ -632,12 +632,12 @@ msgstr "Ayrıldı"
 msgid "Slider Content Alignment"
 msgstr "Kaydırıcı İçeriği Hizalaması"
 
-#: inc/customizer.php:980 inc/customizer.php:1488
+#: inc/customizer.php:980 inc/customizer.php:1502
 msgid "Center"
 msgstr "merkez"
 
-#: inc/customizer.php:982 inc/customizer.php:1432 inc/customizer.php:1478
-#: inc/customizer.php:1487
+#: inc/customizer.php:982 inc/customizer.php:1446 inc/customizer.php:1492
+#: inc/customizer.php:1501
 msgid "Right"
 msgstr "Sağ"
 
@@ -785,15 +785,27 @@ msgstr "Meta Kutu Ayırıcı"
 msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
 msgstr "Meta Ayırıcı ekleyin. ör .: \"|\", \"/\" vb."
 
-#: inc/customizer.php:1336
+#: inc/customizer.php:1335 inc/customizer.php:1343
+msgid "In Box"
+msgstr "Gelen kutusu"
+
+#: inc/customizer.php:1340
+msgid "Display Blog Page Post :"
+msgstr "Blog Sayfası Gönderisini Görüntüle:"
+
+#: inc/customizer.php:1344
+msgid "Without Box"
+msgstr "Kutu olmadan"
+
+#: inc/customizer.php:1350
 msgid "No Result Found"
 msgstr "Sonuç bulunamadı"
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1359
 msgid "No Result Found Title"
 msgstr "Sonuç Bulunamadı Başlık"
 
-#: inc/customizer.php:1351
+#: inc/customizer.php:1365
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -801,23 +813,23 @@ msgstr ""
 "Maalesef arama terimlerinizle hiçbir şey eşleşmedi. Lütfen farklı anahtar "
 "kelimelerle tekrar deneyin."
 
-#: inc/customizer.php:1355
+#: inc/customizer.php:1369
 msgid "No Result Found Content"
 msgstr "Sonuç Bulunamadı İçeriği"
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1380
 msgid "No Result search"
 msgstr "Sonuç araması yok"
 
-#: inc/customizer.php:1372
+#: inc/customizer.php:1386
 msgid "Footer Text"
 msgstr "Altbilgi metni"
 
-#: inc/customizer.php:1383
+#: inc/customizer.php:1397
 msgid "Footer widget area"
 msgstr "Altbilgi widget alanı"
 
-#: inc/customizer.php:1385
+#: inc/customizer.php:1399
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -825,66 +837,66 @@ msgstr ""
 "Altbilgide istediğiniz widget alanı sayısını seçin. Bundan sonra Görünüm> "
 "Widget'lar'a gidin ve widget'larınızı ekleyin."
 
-#: inc/customizer.php:1387
+#: inc/customizer.php:1401
 msgid "One"
 msgstr "Bir"
 
-#: inc/customizer.php:1388
+#: inc/customizer.php:1402
 msgid "Two"
 msgstr "İki"
 
-#: inc/customizer.php:1389
+#: inc/customizer.php:1403
 msgid "Three"
 msgstr "Üç"
 
-#: inc/customizer.php:1390
+#: inc/customizer.php:1404
 msgid "Four"
 msgstr "dört"
 
-#: inc/customizer.php:1399
+#: inc/customizer.php:1413
 msgid "Footer Widget Background Color"
 msgstr "Altbilgi Widget'ı Arka Plan Rengi"
 
-#: inc/customizer.php:1408
+#: inc/customizer.php:1422
 msgid "Footer Widget Background Image"
 msgstr "Altbilgi Widget'ı Arka Plan Görüntüsü"
 
-#: inc/customizer.php:1417
+#: inc/customizer.php:1431
 msgid "Copyright Text"
 msgstr "Telif Hakkı Metni"
 
-#: inc/customizer.php:1424 inc/customizer.php:1433
+#: inc/customizer.php:1437 inc/customizer.php:1447
 msgid "center"
 msgstr "merkez"
 
-#: inc/customizer.php:1428
+#: inc/customizer.php:1442
 msgid "Copyright Text Alignment"
 msgstr "Telif Hakkı Metni Hizalaması"
 
-#: inc/customizer.php:1428
+#: inc/customizer.php:1456
 msgid "Copyright Font Size"
 msgstr "Telif Hakkı Yazı Tipi Boyutu"
 
-#: inc/customizer.php:1457
+#: inc/customizer.php:1471
 msgid "Copyright Padding"
 msgstr "Telif Hakkı Dolgusu"
 
-#: inc/customizer.php:1473
+#: inc/customizer.php:1487
 msgid "Show / Hide Scroll Top Button"
 msgstr "Kaydırma Üst Düğmesini Göster / Gizle"
 
-#: inc/customizer.php:1483
+#: inc/customizer.php:1497
 msgid "Scroll Back to Top Position"
 msgstr "Üst Pozisyona Geri Dön"
 
-#: inc/customizer.php:1497
+#: inc/customizer.php:1511
 msgid "Scroll Icon Font Size"
 msgstr "Kaydırma Simgesi Yazı Tipi Boyutu"
 
-#: inc/customizer.php:1587
+#: inc/customizer.php:1601
 msgid "IT Company Pro"
 msgstr "BT Şirketi Pro"
 
-#: inc/customizer.php:1588
+#: inc/customizer.php:1602
 msgid "Go Pro"
 msgstr "Profesyonel Olun"

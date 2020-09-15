@@ -344,6 +344,14 @@
 		$advance_it_company_custom_css .='height: '.esc_html($advance_it_company_slider_image_height).'px;';
 	$advance_it_company_custom_css .='}';
 
+	// Display Blog Post 
+	$advance_it_company_display_blog_page_post = get_theme_mod( 'advance_it_company_display_blog_page_post','In Box');
+    if($advance_it_company_display_blog_page_post == 'Without Box'){
+		$advance_it_company_custom_css .='.page-box{';
+			$advance_it_company_custom_css .='border:none; margin:25px 0; box-shadow: none;';
+		$advance_it_company_custom_css .='}';
+	}
+
 
 
 
