@@ -372,3 +372,11 @@
 	$advance_automobile_custom_css .='#slider img{';
 		$advance_automobile_custom_css .='height: '.esc_html($advance_automobile_slider_image_height).'px;';
 	$advance_automobile_custom_css .='}';
+
+	// Display Blog Post 
+	$advance_automobile_display_blog_page_post = get_theme_mod( 'advance_automobile_display_blog_page_post','In Box');
+    if($advance_automobile_display_blog_page_post == 'Without Box'){
+		$advance_automobile_custom_css .='.page-box{';
+			$advance_automobile_custom_css .='border:none; margin:25px 0;';
+		$advance_automobile_custom_css .='}';
+	}

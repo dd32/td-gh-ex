@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.5.3
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 0.5.4
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-automobile
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
@@ -1927,6 +1927,9 @@ iframe , .entry-audio audio{
   #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
     width: 40px;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (max-width:720px) { 
   #header,
@@ -2036,6 +2039,9 @@ iframe , .entry-audio audio{
     text-align: center;
     margin-bottom: 10px;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (min-width: 426px) and (max-width: 767px){
   #slider .carousel-caption{
@@ -2125,9 +2131,13 @@ iframe , .entry-audio audio{
     right: 0;
     background-color: #252525;
     overflow-x: hidden;
-    display: none;
     padding-top: 60px;
     transition: 0.5s;
+    visibility: hidden;
+  }
+  body.noscroll .sidebar{ 
+    width: 100%; 
+    visibility: visible;
   }
   .sidebar .closebtn {
     position: absolute;

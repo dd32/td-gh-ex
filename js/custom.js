@@ -82,7 +82,6 @@ function advance_automobile_MobileMenuInit() {
   jQuery(".mobiletoggle").click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    jQuery(".sidebar").show().animate({width: "100%", opacity: 1}, 200);
     jQuery('body').addClass("noscroll");
     advance_automobile_firstTab.focus();
   });
@@ -90,7 +89,6 @@ function advance_automobile_MobileMenuInit() {
   jQuery("a.closebtn").click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    jQuery(".sidebar").hide().animate({width: "0%", opacity: 0},200);
     jQuery('body').removeClass("noscroll");
     jQuery(".mobiletoggle").focus();
   });

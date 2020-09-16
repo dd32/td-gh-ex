@@ -2,10 +2,10 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5
-Requires PHP: 7.2.14
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 5.5.1
+Requires PHP: 7.2.14 
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses.
 
@@ -130,7 +130,7 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added no search found settings.
 * Added copyright padding.
 * Added show and hide single post image.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.5 =
 * Added the license of font awesome in readme.txt.
@@ -143,7 +143,7 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added separator option for metabox in blog post.
 * Changed all number type style in customizer.
 * Resolved login page error.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.5.2 =
 * Added slider speed option.
@@ -151,10 +151,18 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added option to change slider button text.
 * Added “Call-able” Link.
 * Done Email Address Clickable. 
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.5.3 =
 * Changed menu focus js.
+
+= 0.5.4 =
+* Updated license and license url in readme.txt and style.css.
+* Added condition for navigation menu.  
+* Resolved focus error from responsive media.
+* Resolved slider height css error from responsive media.
+* Added display blog page post options.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files. 
 
 == Resources ==
 

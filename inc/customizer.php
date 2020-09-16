@@ -1337,6 +1337,20 @@ function advance_automobile_customize_register($wp_customize) {
 		'settings'    => 'advance_automobile_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('advance_automobile_display_blog_page_post',array(
+        'default' => __('In Box','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-automobile'),
+        'section' => 'advance_automobile_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-automobile'),
+            'Without Box' => __('Without Box','advance-automobile'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('advance_automobile_noresult_found',array(
 		'title'	=> __('No Result Found','advance-automobile'),
