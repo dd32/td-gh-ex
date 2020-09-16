@@ -361,6 +361,14 @@
 		$advance_ecommerce_store_custom_css .='height: '.esc_html($advance_ecommerce_store_slider_image_height).'px;';
 	$advance_ecommerce_store_custom_css .='}';
 
+	// Display Blog Post 
+	$advance_ecommerce_store_display_blog_page_post = get_theme_mod( 'advance_ecommerce_store_display_blog_page_post','In Box');
+    if($advance_ecommerce_store_display_blog_page_post == 'Without Box'){
+		$advance_ecommerce_store_custom_css .='.page-box{';
+			$advance_ecommerce_store_custom_css .='border:none; margin:25px 0;';
+		$advance_ecommerce_store_custom_css .='}';
+	}
+
 
 
 

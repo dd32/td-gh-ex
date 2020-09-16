@@ -4,9 +4,9 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.6.5
+Version: 0.6.6
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -532,7 +532,6 @@ ul.list_nav {
 }
 .primary-navigation ul{
   list-style: none;
-  margin: 5px 0 0;
   padding-left: 0;  
   text-align: left;
   border: 1px solid #cb4f00;
@@ -575,8 +574,8 @@ ul.list_nav {
   border-top: 6px solid #cb4f00;
 }
 .primary-navigation ul ul ul{
-  left: 100%;
-  top: 20px;
+  left: 200px;
+  top: 10px;
 }
 .primary-navigation ul ul a{
   color: #cb4f00;
@@ -1737,6 +1736,9 @@ iframe{
   .woocommerce .product-title{
     font-size: 15px;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (max-width:720px) { 
   .contentbox{
@@ -1798,6 +1800,9 @@ iframe{
     left: 0 !important;
     right:0 !important;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (min-width:720px){
   #footer input[type="submit"]{
@@ -1841,7 +1846,7 @@ iframe{
     padding: 10px 0;
   }
   span.cart_no{
-    padding: 12px 15px;
+    padding: 12px 14px;
   }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/

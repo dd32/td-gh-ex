@@ -1177,6 +1177,20 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'settings'    => 'advance_ecommerce_store_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('advance_ecommerce_store_display_blog_page_post',array(
+        'default' => __('In Box','advance-ecommerce-store'),
+        'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_ecommerce_store_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-ecommerce-store'),
+        'section' => 'advance_ecommerce_store_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-ecommerce-store'),
+            'Without Box' => __('Without Box','advance-ecommerce-store'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('advance_ecommerce_store_noresult_found',array(
 		'title'	=> __('No Result Found','advance-ecommerce-store'),

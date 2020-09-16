@@ -2,7 +2,7 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -136,7 +136,7 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Added no search found settings.
 * Added copyright padding.
 * Added show and hide single post image.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.6.2 =
 * Added the license of font awesome in readme.txt.
@@ -149,16 +149,24 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Added separator option for metabox in blog post.
 * Changed all number type style in customizer.
 * Resolved login page error.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.6.4 =
 * Added slider speed option.
 * Added slider height option.
 * Added option to change slider button text.
-* Updated Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 = 0.6.5 =
 * Changed menu focus js.
+
+= 0.6.6 =
+* Updated license and license url in readme.txt and style.css.
+* Added condition for navigation menu.  
+* Resolved focus error from responsive media.
+* Added slider height css error from responsive media.
+* Added display blog page post options.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files. 
 
 == Resources ==
 
