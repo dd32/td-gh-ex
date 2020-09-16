@@ -2,11 +2,11 @@
 Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 Requires PHP: 5.3
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 5.5
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Anna Lite is an elegant WordPress theme, perfect to share your stories, sell your products and manage your fashion or food blog.
 
@@ -22,6 +22,12 @@ Anna Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Anna Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.4 =
+Release date - September, 16 - 2020
+
+* Tested with WordPress 5.5
+* Updated - WooCommerce templates
 
 = 1.2.3 =
 Release date - July, 21 - 2020
