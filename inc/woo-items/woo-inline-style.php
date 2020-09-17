@@ -93,6 +93,43 @@ if($beshop_pagitext_color || $beshop_pagibg_color){
     $style .='.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current{color:'.$beshop_pagibg_color.' !important;background:'.$beshop_pagitext_color.' !important}';
     $style .='.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{background:'.$beshop_pagibg_color.' !important;color:'.$beshop_pagitext_color.' !important}';
 }
+/*Single page style*/
+$beshop_sptitle_color = get_theme_mod( 'beshop_sptitle_color');
+if($beshop_sptitle_color){
+    $style .='.single-product .product_title{color:'.$beshop_sptitle_color.' !important}';
+}
+$beshop_ptitle_fsize = get_theme_mod( 'beshop_ptitle_fsize');
+if($beshop_ptitle_fsize){
+    $style .='.single-product .product_title{font-size:'.$beshop_ptitle_fsize.'px !important}';
+}
+$beshop_srating_show = get_theme_mod( 'beshop_srating_show','1');
+if(empty($beshop_srating_show)){
+    $style .='.single-product .woocommerce-product-rating{display:none}';
+}
+$beshop_sdesc_show = get_theme_mod( 'beshop_sdesc_show','1');
+if(empty($beshop_sdesc_show)){
+    $style .='.single-product .woocommerce-product-details__short-description{display:none}';
+}
+$beshop_sku_show = get_theme_mod( 'beshop_sku_show','1');
+if(empty($beshop_sku_show)){
+    $style .='.single-product .sku_wrapper{display:none}';
+}
+$beshop_spcat_show = get_theme_mod( 'beshop_spcat_show','1');
+if(empty($beshop_spcat_show)){
+    $style .='.single-product .posted_in{display:none}';
+}
+$beshop_sptag_show = get_theme_mod( 'beshop_sptag_show','1');
+if(empty($beshop_sptag_show)){
+    $style .='.single-product .tagged_as{display:none}';
+}
+$beshop_sptab_show = get_theme_mod( 'beshop_sptab_show','1');
+if(empty($beshop_sptab_show)){
+    $style .='.single-product .woocommerce-tabs{display:none}';
+}
+$beshop_sprelated_show = get_theme_mod( 'beshop_sprelated_show','1');
+if(empty($beshop_sprelated_show)){
+    $style .='.single-product .related.products{display:none}';
+}
 
 
 

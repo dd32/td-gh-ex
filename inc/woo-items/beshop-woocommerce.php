@@ -22,6 +22,9 @@ add_action( 'after_setup_theme', 'beshop_woocommerce_setup' );
 if ( ! function_exists( 'beshop_woocommerce_scripts' ) ) {
 function beshop_woocommerce_scripts() {
 	wp_enqueue_style( 'beshop-woocommerce-style', get_template_directory_uri() . '/assets/css/beshop-woocommerce.css', array(), BESHOP_VERSION, 'all' );
+	wp_enqueue_script( 'beshop-number', get_template_directory_uri() . '/assets/js/number.js', array('jquery'), BESHOP_VERSION, false );
+
+	
 
 }
 add_action( 'wp_enqueue_scripts', 'beshop_woocommerce_scripts' );
@@ -223,3 +226,48 @@ $beshop_ftwidget_position = get_theme_mod('beshop_ftwidget_position','center');
 	}
 }
 add_action( 'woocommerce_before_shop_loop', 'beshop_woocommerce_before_shop_loop', 15 );
+
+
+
+/*Checkout page edit*/
+
+/**
+ Remove all possible fields
+ **/
+function beshop__remove_checkout_fields( $fields ) {
+
+	$beshop_checkout_lastname = get_theme_mod( 'beshop_checkout_lastname', 1 );
+	$beshop_checkout_email = get_theme_mod( 'beshop_checkout_email', 'required' );
+	$beshop_checkout_postcode = get_theme_mod( 'beshop_checkout_postcode', '1' );
+
+	if(empty( $beshop_checkout_lastname )){
+	unset( $fields['billing']['billing_last_name'] );
+	$fields['billing']['billing_first_name']['label'] = esc_html__('Name','beshop');
+
+	}
+
+	
+	if($beshop_checkout_email == 'hide'){
+		unset( $fields['billing']['billing_email'] );
+	}
+	if(empty( $beshop_checkout_postcode )){
+		unset( $fields['billing']['billing_postcode'] );
+	}
+
+
+    return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'beshop__remove_checkout_fields' );
+
+function beshop__required_checkout_fields( $fields ) {
+	$beshop_checkout_email = get_theme_mod( 'beshop_checkout_email', 'required' );
+
+if($beshop_checkout_email == 'optional'){
+		$fields['billing_email']['required'] = false;
+	}
+
+
+
+return $fields;
+}
+add_filter( 'woocommerce_billing_fields', 'beshop__required_checkout_fields');

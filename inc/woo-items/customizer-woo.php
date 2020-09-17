@@ -670,7 +670,187 @@ function beshopwoo_customize_register( $wp_customize ) {
             )
         )
     );
+    /*Single product page options*/
+    $wp_customize->add_section(
+            'beshop_single_product',
+            array(
+                'title'    => __( 'Single Product Settings', 'beshop' ),
+                'priority' => 10,
+                'panel'    => 'woocommerce',
+            )
+    );
+    $wp_customize->add_setting('beshop_ptitle_fsize', array(
+        'default'        => '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_ptitle_fsize', array(
+        'label'      => __('Font Size', 'beshop'),
+        'description'     => __('Set single product title font size.', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_ptitle_fsize',
+        'type'       => 'number',
 
+    ));
+    $wp_customize->add_setting('beshop_sptitle_color', array(
+        'default' => '',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_sptitle_color', array(
+                'label' => __('Title Color','beshop'),
+                'section' => 'beshop_single_product'
+            )
+        )
+    );
+    $wp_customize->add_setting( 'beshop_srating_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_srating_show', array(
+        'label'      => __('Show Rating ', 'beshop'),
+        'description'=> __('You can show or hide single product rating. Rating only show when rating available.', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_srating_show',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_sdesc_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_sdesc_show', array(
+        'label'      => __('Show Short description ', 'beshop'),
+        'description'=> __('You can show or hide single product short description.', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_sdesc_show',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_sku_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_sku_show', array(
+        'label'      => __('Show SKU', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_sku_show',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_spcat_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_spcat_show', array(
+        'label'      => __('Show Categories ', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_spcat_show',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_sptag_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_sptag_show', array(
+        'label'      => __('Show Tags', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_sptag_show',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_sptab_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_sptab_show', array(
+        'label'      => __('Show Tab', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_sptab_show',
+        'type'       => 'checkbox',
+    ) );
+    $wp_customize->add_setting( 'beshop_sprelated_show' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_sprelated_show', array(
+        'label'      => __('Show Related Products', 'beshop'),
+        'section'    => 'beshop_single_product',
+        'settings'   => 'beshop_sprelated_show',
+        'type'       => 'checkbox',
+    ) );
+    /*Woocommerce checkout options*/
+    $wp_customize->add_setting( 'beshop_checkout_lastname' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_checkout_lastname', array(
+        'label'      => __('Show Last Nama Field', 'beshop'),
+        'section'    => 'woocommerce_checkout',
+        'settings'   => 'beshop_checkout_lastname',
+        'type'       => 'checkbox',
+        'priority' => 5,
+    ) );
+    $wp_customize->add_setting('beshop_checkout_email', array(
+        'default'        => 'required',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_checkout_email', array(
+        'label'      => __('Email field', 'beshop'),
+        'section'    => 'woocommerce_checkout',
+        'settings'   => 'beshop_checkout_email',
+        'type'       => 'select',
+        'choices'    => array(
+            'required' => __('Required', 'beshop'),
+            'optional' => __('Optional', 'beshop'),
+            'hide' => __('Hidden', 'beshop'),
+        ),
+        'priority'       => 7,
+    ));
+    $wp_customize->add_setting( 'beshop_checkout_postcode' , array(
+    'capability'     => 'edit_theme_options',
+    'type'           => 'theme_mod',
+    'default'       =>  '1',
+    'sanitize_callback' => 'absint',
+    'transport'     => 'refresh',
+    ) );
+    $wp_customize->add_control( 'beshop_checkout_postcode', array(
+        'label'      => __('Show Postcode / ZIP', 'beshop'),
+        'section'    => 'woocommerce_checkout',
+        'settings'   => 'beshop_checkout_postcode',
+        'type'       => 'checkbox',
+        'priority' => 7,
+    ) );
+    
        
 
 

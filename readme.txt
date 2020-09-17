@@ -10,7 +10,7 @@ License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
 == Description ==
-BeShop is an awesome WordPress Shop and Blog Theme.It provides a very unique look with extra post layout. Beshop is a super fast WordPress theme. Best Suitable for creating any type of website such a blog, shop, store, car workshop, life coach,  barbershop, furniture shop, yoga, resume, charity, digital marketing, agency, etc. BeShop works with any of your favorite page builders like Elementor, Visual Composer, SiteOrigin, Divi, Brizy etc. 
+BeShop is an awesome WordPress Shop and Blog Theme.It provides a very unique look with extra post layout. Beshop is a super fast WordPress theme. Best Suitable for creating any type of website such a blog, shop, store, car workshop, life coach,  barbershop, furniture shop, yoga, resume, charity, digital marketing, agency, etc. BeShop works with any of your favorite page builders like Elementor, Visual Composer, SiteOrigin, Divi, Brizy etc. BeShop WordPress has unlimited options and colors for customize your site or store. Try the beShop theme Now. 
 
 == Installation ==
 
@@ -75,6 +75,13 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.7 - September 17 2020 =
+* Added extra layout for single product layout
+* Added extra style for woocommerce number field
+* Added many options for single products page
+* Fixed Cart and checkout page sidebar issue
+* Added new more options for checkout page.
 
 = 1.0.6 - September 15 2020 =
 * Added extra banner for shop page with image and text.

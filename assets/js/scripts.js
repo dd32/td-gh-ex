@@ -3,6 +3,9 @@
 	$('.mini-toggle').on('click', function(){
 	   $(this).parent().toggleClass('menushow');
 	});
+	$('input.qty').each(function () {
+	  $(this).number();
+	});
 
 	$.fn.beShopAccessibleDropDown = function () {
 		 var el = $(this);

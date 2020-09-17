@@ -599,6 +599,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
+	min-height: 35px;
 }
 
 input[type="text"]:focus,
@@ -1017,6 +1018,9 @@ button.mini-toggle {
 
 .bypostauthor {
 	display: block;
+}
+.comment-form .form-submit {
+    float: right;
 }
 /*--------------------------------------------------------------
 # Comments

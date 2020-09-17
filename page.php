@@ -22,6 +22,10 @@ if ( is_active_sidebar( 'sidebar-1' ) && $beshop_page_layout != 'fullwidth' ) {
 get_header();
 
 ?>
+
+<?php if(is_cart() || is_checkout()): ?>
+	<?php get_template_part( 'template-parts/content', 'woo' ); ?>
+<?php else: ?>
 <div class="<?php echo esc_attr($beshop_page_container); ?> mt-3 mb-5 pt-5 pb-3">
 	<div class="row">
 		<?php if ( is_active_sidebar( 'sidebar-1' ) && $beshop_page_layout == 'leftside' ): ?>
@@ -55,6 +59,6 @@ get_header();
 	<?php endif; ?>
 	</div> <!-- end row -->
 </div> <!-- end container -->
-
+<?php endif; ?>
 <?php
 get_footer();
