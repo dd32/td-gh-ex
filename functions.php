@@ -139,7 +139,7 @@ function suits_scripts_styles() {
 	wp_enqueue_style( 'suits-fonts', suits_fonts_url(), array(), null );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'suits-style', get_stylesheet_uri(), array(), '2017-09-25' );
+	wp_enqueue_style( 'suits-style', get_stylesheet_uri(), array(), '2020-09-16' );
 }
 add_action( 'wp_enqueue_scripts', 'suits_scripts_styles' );
 

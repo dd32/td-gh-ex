@@ -73,3 +73,8 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 #### 1.5.1
 
 - added margin to comment form checkbox
+
+#### 1.5.2
+
+- style changes for checkbox, radio, and select elements
+- added wp_body_open action
