@@ -37,7 +37,7 @@
 					'settings'    => 'responsive',
 					'label'       => esc_html__( 'Enable Responsive', 'accesspress-root' ),
 					'section'     => 'accesspress_root_design',
-					'default'     => '1',
+					'default'     => true,
 					'priority'    => 10,
 					'choices'     => 
 					array(
@@ -298,6 +298,23 @@
 	            	'sanitize_callback'	=> 'accesspress_root_sanitize_category_lists',
 					)
 				);
+	Kirki::add_section( 'accesspress_root_footer_settings', array(
+		    'title'          => esc_html__( 'Footer Options', 'accesspress-root' ),
+		    'description'    => esc_html__( 'Setup Footer Settings.', 'accesspress-root' ),
+		    'priority'       => 90,
+		) );
+
+		Kirki::add_field( 'accesspress_root_config', 
+			array(
+				'type'        => 'text',
+				'settings'    => 'accesspress_root_footer_cp_options',
+				'label'       => esc_html__( 'Footer Copyright', 'accesspress-root' ),
+				'section'     => 'accesspress_root_footer_settings',
+				'priority'    => 10,
+            	'sanitize_callback'	=> 'sanitize_text_field',
+				)
+			);
+
 	Kirki::add_panel( 'accesspress_root_homepage', array(
 	    'priority'    => 50,
 	    'title'          => esc_html__( 'Setup Homepage', 'accesspress-root' ),

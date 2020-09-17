@@ -1,16 +1,21 @@
 === AccessPress Root ===
 
-Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 2.0
+Contributors: Access Keys
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.4.2
+Stable tag: 2.02
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, custom-header, translation-ready
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Contributors: access-keys
+
 
 == Description ==
 Description: AccessPress Root is a simple, clean, beautifully designed responsive WordPress business theme with drag and drop homepage sections. Its minimal but mostly used features will help you setup your website easily and quickly. Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Root is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins. Great customer support via online chat, email, support forum. Official support forum: https://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-root/
 
+
+This theme, like WordPress, is licensed under the GPL.
+AccessPress Root is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 AccessPress Root WordPress Theme, Copyright 2014 AccessPress Themes
 AccessPress Root is distributed under the terms of the GNU GPL v3
@@ -79,35 +84,26 @@ Fonts
     Apache License, version 2.0
 
 -------------------------------------------
-ScreenShot Images
 
-    Slider Image
-    http://www.pexels.com/photo/2738/
-    http://www.pexels.com/photo/593/
+== Screenshots Images ==
 
-    Service Image
-    http://www.pexels.com/photo/1171/
-    http://www.pexels.com/photo/3080/
-    http://www.pexels.com/photo/2693/
-    http://www.pexels.com/photo/915/
+Stocksnap Images
+License: CC0 Universal (CC0)
+Source: https://stocksnap.io/license
 
-    Project Image
-    http://www.pexels.com/photo/2059/
-    http://www.pexels.com/photo/3521/
 
-    Latest Post Image
-    http://www.pexels.com/photo/374/
-    http://www.pexels.com/photo/3424/
+https://stocksnap.io/photo/sunset-trees-9AFWKPNUMQ
+  
 
-    What we do Image
-    http://www.pexels.com/photo/154/
-
-Pattern Images
-    All pattern used are self created and are licensed under GNU GPL v3
 
 
 ---------------------------------------------
 == Changelog ==
+= 2.3 =
+** Added Copyright Messeage Option
+** Fixed Minor CSS & JS
+** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.
+
 = 2.02 =
 ** Added Feature Image Show Hide Options for Single Post
 ** Added MetaData Show Hide Options for Single Post

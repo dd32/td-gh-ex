@@ -207,8 +207,8 @@ function accesspress_root_scripts() {
     wp_enqueue_style('accesspress-root-woocommerce-style',get_template_directory_uri().'/woocommerce/woocommerce-style.css');
     wp_enqueue_style('accesspress-root-style', get_stylesheet_uri() );
     wp_enqueue_style('ap-root-keyboard', get_template_directory_uri() . '/css/keyboard.css');
-
-    if(of_get_option('responsive') == '1') :
+    
+    if( of_get_option('responsive', true ) == true ) :
 		wp_enqueue_style( 'accesspress-root-responsive', get_template_directory_uri() . '/css/responsive.css' );
 	endif;
 
@@ -216,7 +216,28 @@ function accesspress_root_scripts() {
 	wp_enqueue_script( 'actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
 	wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '1.2.0', true );
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '1.2.0', false );
-    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
+    wp_register_script( 'accesspress-root-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
+
+    $accesspress_show_pager = (of_get_option('show_pager') ) ? "true" : "false";
+	$accesspress_show_controls = (of_get_option('show_controls') ) ? "true" : "false";
+	$accesspress_auto_transition = (of_get_option('auto_transition') ) ? "true" : "false";
+	$accesspress_slider_transition = (!of_get_option('slider_transition')) ? "fade" : of_get_option('slider_transition');
+	$accesspress_slider_speed = (!of_get_option('slider_speed')) ? "5000" : of_get_option('slider_speed');
+	$accesspress_slider_pause = (!of_get_option('slider_pause')) ? "5000" : of_get_option('slider_pause');
+
+    $script_vals = array(
+		'pager' 		=> $accesspress_show_pager,
+		'controls' 		=> $accesspress_show_controls,
+		'mode' 			=> $accesspress_slider_transition,
+		'auto' 			=> $accesspress_auto_transition,
+		'pause' 		=> $accesspress_slider_pause,
+		'speed' 		=> $accesspress_slider_speed
+
+	);
+	wp_localize_script('accesspress-root-custom-js','accesspress_root_script',$script_vals );
+	wp_enqueue_script('accesspress-root-custom-js');
+
+
     wp_enqueue_script( 'off-canvas-menu', get_template_directory_uri() . '/js/off-canvas-menu.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

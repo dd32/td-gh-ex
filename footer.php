@@ -53,7 +53,15 @@
 
 		<div id="bottom-footer" class="clearfix">
 			<div class="ak-container">
-				<div class="copyright"><?php esc_html_e('WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-root'); ?>">AccessPress Root</a>  by AccessPress Themes </div>
+				<div class="copyright">
+				<?php
+				$footer_cp = of_get_option('accesspress_root_footer_cp_options');
+				if($footer_cp){
+					echo  esc_html($footer_cp);
+				}else{
+                    printf(wp_kses_post('&copy; %1$s %2$s'), esc_html(date("Y")), esc_html(get_bloginfo('name')));
+				}
+				 esc_html_e(' | WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-root'); ?>">AccessPress Root</a> </div>
 				<ul class="social-icon">
 					<?php do_action('accesspress_social'); ?>
 				</ul>

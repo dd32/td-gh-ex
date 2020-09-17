@@ -24,8 +24,6 @@ if(!class_exists('Accesspress_Root_Welcome')) :
 				$this->theme_description = $theme->description;
 
 				/** Plugins **/
-				$this->free_plugins = $plugins['recommended_plugins']['free_plugins'];
-				$this->pro_plugins = $plugins['recommended_plugins']['pro_plugins'];
 				$this->req_plugins = $plugins['required_plugins'];
 				$this->actions_req = $plugins['req_plugins'];
 				$this->companion_plugins = $plugins['companion_plugins'];
@@ -33,8 +31,7 @@ if(!class_exists('Accesspress_Root_Welcome')) :
 				/** Tabs **/
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'accesspress-root'),
-					'actions_required' => esc_html__('Required Plugins', 'accesspress-root'),
-					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-root'),
+					'actions_required' => esc_html__('Recommended Plugins', 'accesspress-root'),
 					'demo_import' => esc_html__('Import Demo', 'accesspress-root'),
 					'free_vs_pro' => esc_html__('Free Vs Pro', 'accesspress-root'),
 					'changelog' => esc_html__('ChangeLog', 'accesspress-root'),
@@ -100,7 +97,7 @@ if(!class_exists('Accesspress_Root_Welcome')) :
 			 
              global $pagenow;
 
-            if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+            if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
              add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
              }
 				
@@ -110,7 +107,7 @@ if(!class_exists('Accesspress_Root_Welcome')) :
 			public function welcome_admin_notice_display() {
 				global $pagenow;
 
-				if( is_admin() && ('themes.php' == $pagenow) /*&& (isset($_GET['activated']))*/ ) {
+				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="updated apwelcome-an notice notice-success is-dismissible">
 						<h2><?php printf(esc_html__( 'Welcome!', 'accesspress-root' )) ?></h2>
@@ -124,17 +121,13 @@ if(!class_exists('Accesspress_Root_Welcome')) :
 										<span class="dashicons dashicons-feedback"></span>
 										<?php printf(esc_html__( 'Starter site demos!', 'accesspress-root' )) ?>
 									</h3>
-									<p><?php printf( wp_kses_post( 'You\'ve  got 3 choices of great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-root' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
+									<p><?php printf( wp_kses_post( 'You\'ve  got 1 choices of great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-root' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
 								</div>
 								<div>
 									<div class="button-wrapper">
 										<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'ready to use starter sites.', 'accesspress-root' ); ?></a>
+										<?php printf( wp_kses_post( '<a class="options-page-btn button-secondary" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-root' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
 									</div>
-
-									<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-root' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
-
-									<p><?php esc_html_e( 'You can also reach-out to us for any support during the theme setup and use.', 'accesspress-root' ); ?></p>
-									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-root' ); ?></span></a>
 
 								</div>
 							</div>
@@ -146,10 +139,8 @@ if(!class_exists('Accesspress_Root_Welcome')) :
 									</h3>
 									<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'accesspress-root' ), $this->theme_name  ); ?></p>
 									<a href="<?php echo esc_url($this->strings['doc_link']);?>" class=" button" ><span><?php esc_html_e( 'Full Documentation', 'accesspress-root' ); ?></span></a>
+									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-root' ); ?></span></a>
 
-								</div>
-								<div class="apwelcome-doc-btn">
-									<a href="#" class=" button" ><span><?php esc_html_e( 'Return to your Dashboard', 'accesspress-root' ); ?></span></a>
 								</div>
 							</div>
 						</div>

@@ -57,7 +57,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 					<a href="javascript:void(0)"><i class="fa fa-search"></i></a>
 
 					<div class="search-box">
-						<div class="close"> &times; </div>
+						<button class="btn-transparent-toggle close"> &times; </button>
 						<?php get_search_form(); ?>
 					</div>
 				</div> <!--  search-icon-->

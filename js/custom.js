@@ -56,4 +56,16 @@ jQuery(function($){
         $('.search-box').removeClass('active');
     });
 
+
+$('#main-slider .bx-slider').bxSlider({
+    adaptiveHeight: true,
+    pager: accesspress_root_script.pager,
+    controls: accesspress_root_script.controls,
+    mode: accesspress_root_script.mode,
+    auto : accesspress_root_script.auto,
+    pause: accesspress_root_script.pause,
+    speed: accesspress_root_script.speed,
+    touchEnabled: false
+});
+
 });

@@ -17,7 +17,6 @@
   height: 2.25em;
   padding: 0;
   border: 0;
-  outline: none;
   overflow: hidden;
   white-space: nowrap;
   text-indent: 100%;
@@ -36,7 +35,6 @@
   height: 2.25em;
   padding: 0;
   border: 0;
-  outline: none;
   background: #333333 url("../img/nav-icon.svg") left center no-repeat;
   background-size: 1.875em 1.5em;
   overflow: hidden;
@@ -111,7 +109,6 @@
   font-size: 0.875em;
   line-height: 1.28571em;
   font-weight: bold;
-  outline: none;
 }
 #nav li a:focus, #nav li a:hover {
   color: #fff;
