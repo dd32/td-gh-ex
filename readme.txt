@@ -2,11 +2,10 @@
 Contributors: LogicalThemes
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
 Requires at least: 5.0
-Tested up to: 5.4
-Stable tag: 0.2.7
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Academic Education theme is suitable for college, School, university, LMS, Training Center, Academy, Primary School, High School and Kindergarten and various educational websites. and hey you can even put it use for tuition classes, coaching classes, personal, blogging and any small business, we are not leaving anything behind. A highly flexible, versatile yet multipurpose theme that can be used to build business and corporate websites.
 
@@ -65,6 +64,20 @@ Academic Education theme is suitable for college, School, university, LMS, Train
   * Resolved some theme errors.
   * Updated POT file.
 
+= 0.2.8 =
+  * Done heading as per accessability.
+  * Worked on keyboard navigation.
+  * Changed woocommerce css.
+  * Resolved responsive focus errors.
+  * Done with prefixing in custom.js.
+  * Removed stable tag from readme.txt.
+  * Changed font awesome license.
+  * Added sanitize callback function for email, phone no and checkbox.
+  * Added clickable call and email.
+  * Updated license.
+  * Added condition for primary menu.
+  * Resolved login form error.
+
 == Resources ==
 
 Academic Education WordPress Theme, Copyright 2017 LogicalThemes
@@ -83,7 +96,7 @@ Theme is Built using the following resource bundles.
   - Dave Gandy
   - Copyright July 12, 2018, Dave Gandy 
   - https://github.com/FortAwesome/Font-Awesome.git
-  - License: Font Awesome Free 5.0.6
+  - License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
   - http://fontawesome.com/license
 
   Superfish 

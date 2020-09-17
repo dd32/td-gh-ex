@@ -89,6 +89,19 @@ function academic_education_sanitize_choices( $input, $setting ) {
     }
 }
 
+function academic_education_sanitize_phone_number( $phone ) {
+	return preg_replace( '/[^\d+]/', '', $phone );
+}
+
+function academic_education_sanitize_email( $email, $setting ) {
+	$email = sanitize_email( $email );
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+function academic_education_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
 /* Excerpt Limit Begin */
 function academic_education_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));
@@ -341,7 +354,8 @@ function academic_education_scripts() {
 	    $academic_education_course_paragraph_font_family = get_theme_mod('academic_education_course_paragraph_font_family', '');
 	    $academic_education_course_paragraph_font_size = get_theme_mod('academic_education_course_paragraph_font_size', '');
 
-	    $custom_css ='
+
+	    $academic_education_custom_css ='
 			#slider .inner_carousel h2{
 			    color:'.esc_html($academic_education_slider_heading_color).'!important;
 			    font-family: '.esc_html($academic_education_slider_heading_font_family).'!important;
@@ -393,7 +407,15 @@ function academic_education_scripts() {
 			}
 			';
 
-	wp_add_inline_style( 'academic-education-basic-style',$custom_css );
+		// primary menu 
+		if((has_nav_menu('primary')) != true){
+			$academic_education_custom_css .='@media screen and (max-width:1000px) {';
+			$academic_education_custom_css .='.header{';
+				$academic_education_custom_css .='display:none;';
+			$academic_education_custom_css .='} }';
+		}
+
+	wp_add_inline_style( 'academic-education-basic-style',$academic_education_custom_css );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'academic-education-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery') );

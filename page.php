@@ -12,10 +12,10 @@ get_header(); ?>
     <div class="container">
         <div class="wrapper">
             <?php while ( have_posts() ) : the_post(); ?>
-                <?php the_post_thumbnail(); ?>
-                <h1><?php esc_html(the_title()); ?></h1>
-                <div class="entry-content"><?php the_content();?></div>
-                <?php
+            <?php the_post_thumbnail(); ?>
+            <h1><?php the_title(); ?></h1>
+            <div class="entry-content"><?php the_content();?></div>
+            <?php
                 wp_link_pages( array(
                     'before' => '<div class="page-links">' . __( 'Pages:', 'academic-education' ),
                     'after'  => '</div>',
