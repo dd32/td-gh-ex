@@ -1,14 +1,15 @@
 <?php
 /**
- * The header for our theme
+ * Template for header
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * <head> section and everything up until <div id="content">
  *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-02-21 13:30:49
+ * @Author: Roni Laukkarinen
+ * @Date: 2020-05-11 13:17:32
+ * @Last Modified by: Roni Laukkarinen
+ * @Last Modified time: 2020-05-11 13:17:32
+ *
  * @package air-light
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 namespace Air_Light;
@@ -16,6 +17,7 @@ namespace Air_Light;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,13 +30,21 @@ namespace Air_Light;
   <?php wp_body_open(); ?>
   <div id="page" class="site">
 
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
+  <?php
+    // Reminder for translated accessible labels
+    if ( function_exists( 'pll_the_languages' ) ) {
+      $screenreadertext_skip = ask__( 'Accessibility: Skip to content' );
+    } else {
+      $screenreadertext_skip = 'Skip to content';
+    }
+  ?>
+
+    <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( $screenreadertext_skip ); ?></a>
 
     <div class="nav-container">
-      <header class="site-header" role="banner">
+      <header class="site-header">
 
         <?php get_template_part( 'template-parts/header/branding' ); ?>
-
         <?php get_template_part( 'template-parts/header/navigation' ); ?>
 
       </header>

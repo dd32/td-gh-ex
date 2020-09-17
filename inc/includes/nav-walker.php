@@ -31,7 +31,23 @@ class Nav_Walker extends \Walker_Nav_Menu {
     $icon = ob_get_clean();
 
     $output .= '<button class="dropdown-toggle" aria-expanded="false">';
-    $output .= '<span class="screen-reader-text">' . esc_html__( 'Open child menu', 'air-light' ) . '</span>';
+
+    // Reminder for translated accessible labels
+    if ( function_exists( 'pll_the_languages' ) ) {
+      if ( 'fi' === pll_current_language() ) {
+        $screenreadertext = ask__( 'Saavutettavuus: Avaa alavalikko' );
+      } else {
+        $screenreadertext = ask__( 'Accessibility: Open child menu' );
+      }
+    } else {
+      if ( 'fi' === get_bloginfo( 'language' ) ) {
+        $screenreadertext = esc_html__( 'Avaa alavalikko', 'air-light' );
+      } else {
+        $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
+      }
+    }
+
+    $output .= '<span class="screen-reader-text">' . $screenreadertext . '</span>';
     $output .= $icon . '</button>';
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }

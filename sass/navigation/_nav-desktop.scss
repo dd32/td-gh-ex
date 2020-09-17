@@ -5,9 +5,11 @@
 // devices only.
 // -----------------------------------------------------------
 $absolute-navigation: true;
-$nav-desktop-background-color: $color-blue-dark;
-$hover-intent: .3s;
-
+$nav-desktop-background-color: $color-default-background;
+$nav-link-padding-y: .6rem;
+$nav-link-padding-x: 2rem;
+$nav-link-padding-y-dropdown: .4rem;
+$nav-link-padding-x-dropdown: 1.5rem;
 $nav-links: (
   'color': $color-white,
   'hover-color': $color-white,
@@ -15,45 +17,42 @@ $nav-links: (
   'font-size': 1.6rem
 );
 $nav-dropdown-links: (
-  'color': $color-blue,
-  'hover-color': $color-cyan,
+  'color': $color-links,
+  'hover-color': $color-hover,
   'font-weight': 400,
   'font-size': 1.4rem
 );
-
 $dropdown: (
+  'background': $color-white,
   'gap': 1rem,
-  'width': 19rem
+  'width': 22rem,
+  'border-radius': 4px
 );
-
 $dropdown-toggle: (
   'background': transparent,
-  'border': none,
-  'border-radius': 50%,
-  'color': $color-cyan-bright,
-  'size': 3rem,
+  'border': none, 'border-radius': 50%,
+  'color': $color-white,
+  'size': auto,
   'arrow-size': 1rem
 );
-
 $dropdown-toggle-hover: (
   'background': $color-white,
   'border': 1px solid $color-white,
-  'color': $color-blue,
+  'color': $color-links,
 );
-
 $submenu-dropdown-toggle: (
   'background': transparent,
   'border': none,
   'border-radius': 0,
-  'color': $color-blue,
-  'size': 3rem,
+  'color': $color-links,
+  'height': auto,
+  'width': 3rem,
   'arrow-size': 1rem
 );
-
 $submenu-dropdown-toggle-hover: (
   'background': $color-white,
   'border': none,
-  'color': $color-blue,
+  'color': $color-links,
 );
 
 @if $absolute-navigation == true {
@@ -62,118 +61,85 @@ $submenu-dropdown-toggle-hover: (
     position: absolute;
     width: 100%;
 
-    // Main level links
-    .nav-primary > ul > li > a,
-    .nav-primary > ul > li > button {
-      color: #fff;
-      position: relative;
-    }
+    @media only screen and (min-width: $responsivenav) {
+      // Main level links
+      .nav-primary > ul > li > a,
+      .nav-primary > ul > li > button {
+        color: $color-white;
+        position: relative;
+      }
 
-    .nav-primary > ul > li > a:hover {
-      color: #fff;
+      .nav-primary > ul > li > a:hover {
+        color: $color-white;
+      }
     }
   }
 }
 
-// Set true/false in _nav-core.sccss
-@if $enable-animations == true {
-  @media only screen and (min-width: $responsivenav) {
-    .sub-menu {
-      width: map-get($dropdown, 'width');
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      transform: translateY(-2em);
-      z-index: -1;
-      transition: all .3s ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
+@media only screen and (min-width: $responsivenav) {
+  .menu-item-has-children::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    border-width: 0 5px 5px;
+    left: 50%;
+    bottom: -10px;
+    transform: scale(0);
+    margin-left: -20px;
+    transform-origin: center bottom;
+    transition: none;
+  }
 
-      @if $hover-intent == 0 {
-        transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
-      }
-    }
+  .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
+    transform: scale(1);
+    transition: all .25s cubic-bezier(.19, 1, .22, 1);
+  }
 
-    .nav-primary ul .sub-menu.toggled-on {
-      visibility: visible;
-      opacity: 1;
-      z-index: 1;
-      transform: translateY(0%);
-      transition-delay: 0s, 0s, .3s;
-    }
+  .sub-menu {
+    background: map-get($dropdown, 'background');
+    width: map-get($dropdown, 'width');
+    left: 0;
+    z-index: -1;
+    border-top-left-radius: map-get($dropdown, 'border-radius');
+    border-top-right-radius: map-get($dropdown, 'border-radius');
+    border-bottom-left-radius: map-get($dropdown, 'border-radius');
+    border-bottom-right-radius: map-get($dropdown, 'border-radius');
+    border-left: 1px solid rgba(0, 0, 0, .05);
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
+    transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
 
-    [data-whatinput="keyboard"] .sub-menu {
-      transition: none;
-      transform: none;
-    }
+    // Hide by default
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -9999px;
 
-    [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children,
-    [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children {
-      &:focus > .sub-menu,
-      &:hover > .sub-menu {
-        visibility: visible;
-        opacity: 1;
-        z-index: 1;
-        transform: translateY(0%);
-        transition-delay: 0s, 0s, .3s;
-      }
-    }
-
-    // Disable animations and improve styles on IE10 + IE11
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .nav-primary .menu-items .sub-menu {
-        width: map-get($dropdown, 'width');
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(1.5rem);
-        z-index: -1;
-        transition: none;
-        list-style-type: none;
-        list-style: none;
-
-        .menu-item {
-          padding-top: 0;
-          margin-top: 0;
-          list-style-type: none;
-          list-style: none;
-        }
-
-        .sub-menu.has-sub-menu {
-          transform: translateY(0);
-          padding-top: .5rem;
-        }
-      }
-
-      .nav-primary ul .menu-item-has-children {
-        &:focus > .sub-menu,
-        &:hover > .sub-menu {
-          visibility: visible;
-          opacity: 1;
-          z-index: 1;
-          transform: translateY(0%);
-          transition-delay: 0s, 0s, .3s;
-        }
-      }
+    a {
+      line-height: 1.5;
     }
   }
-} // @if $enable-animations == true
+
+  .nav-primary ul .sub-menu.toggled-on,
+  .menu-item-has-children:focus > .sub-menu,
+  .menu-item-has-children:hover > .sub-menu,
+  .menu-item-has-children.hover-intent > .sub-menu {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+  }
+}
 
 @media only screen and (min-width: $responsivenav) {
   .nav-container {
     background: $nav-desktop-background-color;
-  }
-  // Use display block based hovers if no animations enabled
-  @if $enable-animations == false {
-    // Enable hovers
-    .nav-primary ul li:hover > ul {
-      display: block;
-    }
-
-    // Support for non-js users
-    .no-js .nav-primary ul li:hover > ul,
-    .no-js .nav-primary ul li:focus > ul {
-      display: block;
-    }
   }
 
   @media only screen and (max-width: $responsivenav) {
@@ -197,11 +163,8 @@ $submenu-dropdown-toggle-hover: (
 
   // Start navigation
   .nav-primary {
-    // Set based on logo height, for example air logo is about 62px
-    // menu links height are 12px, so paddings are (60/2)-12:
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
-    float: right;
+    padding-top: 0;
+    padding-bottom: 0;
 
     .menu-items {
       margin: 0;
@@ -218,10 +181,10 @@ $submenu-dropdown-toggle-hover: (
       margin: 0;
 
       // Main level
-      a {
+      > a {
+        padding: $nav-link-padding-y $nav-link-padding-x;
         color: map-get($nav-links, 'color');
         font-size: map-get($nav-links, 'font-size');
-        padding: 0 2rem;
         font-weight: map-get($nav-links, 'font-weight');
         display: inline-flex;
         align-items: center;
@@ -242,12 +205,9 @@ $submenu-dropdown-toggle-hover: (
       }
 
       // Dropdowns
-      ul {
-        position: absolute;
-        top: 100%;
-        right: 0;
+      .sub-menu {
         width: map-get($dropdown, 'width');
-        background: #fff;
+        left: 5%;
         margin-left: 0;
         padding-bottom: .5rem;
         padding-top: .5rem;
@@ -271,7 +231,8 @@ $submenu-dropdown-toggle-hover: (
           padding: 0;
         }
 
-        ul {
+        // All dropdowns in level 2 and after
+        .sub-menu {
           top: 0;
           left: 100%;
           margin-left: 0;
@@ -279,11 +240,12 @@ $submenu-dropdown-toggle-hover: (
         }
 
         a {
-          padding: .8rem 1.5rem;
+          padding: $nav-link-padding-y-dropdown $nav-link-padding-x-dropdown;
           font-size: map-get($nav-dropdown-links, 'font-size');
           font-weight: map-get($nav-dropdown-links, 'font-weight');
           color: map-get($nav-dropdown-links, 'color');
-          display: block;
+          display: flex;
+          align-items: center;
         }
 
         a:hover,
@@ -305,16 +267,10 @@ $submenu-dropdown-toggle-hover: (
         border: map-get($submenu-dropdown-toggle, 'border');
         border-radius: map-get($submenu-dropdown-toggle, 'border-radius');
         color: map-get($submenu-dropdown-toggle, 'color');
-        height: map-get($submenu-dropdown-toggle, 'size');
-        width: map-get($submenu-dropdown-toggle, 'size');
+        height: map-get($submenu-dropdown-toggle, 'height');
+        width: map-get($submenu-dropdown-toggle, 'width');
         flex-shrink: 0;
-
-        &:hover,
-        &:active {
-          background-color: map-get($submenu-dropdown-toggle, 'background');
-          border: map-get($submenu-dropdown-toggle, 'border');
-          color: map-get($submenu-dropdown-toggle, 'color');
-        }
+        align-self: center;
 
         svg {
           transform: rotate(-90deg) rotateX(0deg);
@@ -332,25 +288,18 @@ $submenu-dropdown-toggle-hover: (
         background-color: map-get($dropdown-toggle, 'background');
         border: map-get($dropdown-toggle, 'border');
         border-radius: map-get($dropdown-toggle, 'border-radius');
-        color: map-get($dropdown-toggle, 'color');
-        height: map-get($dropdown-toggle, 'size');
-        width: map-get($dropdown-toggle, 'size');
+        color: map-get($submenu-dropdown-toggle, 'color');
+        height: map-get($submenu-dropdown-toggle, 'height');
+        width: map-get($submenu-dropdown-toggle, 'width');
         padding: 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
 
         svg {
-          transition: transform .3s ease-in;
+          transition: transform $transition-duration ease-in;
           width: map-get($dropdown-toggle, 'arrow-size');
           height: map-get($dropdown-toggle, 'arrow-size');
-        }
-
-        &:hover,
-        &:active {
-          background-color: map-get($dropdown-toggle-hover, 'background');
-          border: map-get($dropdown-toggle-hover, 'border');
-          color: map-get($dropdown-toggle-hover, 'color');
         }
 
         &.toggled-on svg {
@@ -373,12 +322,12 @@ $submenu-dropdown-toggle-hover: (
       }
     }
 
-    // Prevent nav from flickering
     .menu-item.menu-item-has-children {
       margin-right: .8rem;
       position: relative;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       // Add a pseudo element to fill the gap
       // between menu item and sub menu to help hovering
@@ -396,6 +345,7 @@ $submenu-dropdown-toggle-hover: (
         padding-right: 1.5rem;
       }
     } // .menu-item.menu-item-has-children
+
     .sub-menu .menu-item-has-children {
       // Don't use gap filler in sub menu items
       &:after {

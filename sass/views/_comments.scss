@@ -11,19 +11,51 @@
   overflow: visible;
 }
 
+article .content .comments-link,
+.comments-link {
+  font-size: $font-size-tiny;
+  text-align: right;
+  display: block;
+
+  a {
+    color: $color-comments-link;
+    box-shadow: none;
+  }
+
+  svg {
+    fill: $color-comments-link;
+    position: relative;
+    top: 1px;
+    margin-right: 2px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-black;
+
+    a,
+    a:link,
+    a:visited,
+    svg {
+      color: $color-black;
+      fill: $color-black;
+    }
+  }
+}
+
 .comment-list {
   padding: 0;
   margin: 0;
   list-style: none;
 
   li {
-    @extend %small;
+    font-size: $font-size-tiny;
     padding: 0;
     margin-top: 0;
     margin-bottom: 70px;
 
     p {
-      @extend %small;
+      font-size: $font-size-tiny;
       color: $color-darkgrey;
     }
 
@@ -34,18 +66,18 @@
 
     .comment-author {
       @extend %h4;
-      color: $color-body;
+      color: $color-paragraphs;
       margin-top: 0;
       margin-bottom: 10px;
       padding: 0;
 
       a {
-        color: $color-body;
+        color: $color-paragraphs;
       }
     }
 
     .comment-time {
-      @extend %small;
+      font-size: $font-size-tiny;
       padding: 0;
       margin: 0;
 
@@ -64,5 +96,86 @@
         opacity: 1;
       }
     }
+  }
+}
+
+// Comment form grid
+.comment-form {
+  @media (min-width: $container-mobile) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+
+    /* autoprefixer: off */
+    justify-content: center;
+
+    // Make these full width
+    .comment-notes,
+    .comment-form-comment,
+    .form-submit {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.comment-respond {
+  margin-bottom: 0;
+  overflow: visible;
+
+  .comment-form-author {
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-email {
+    margin-right: 0;
+    clear: right;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-url {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .form-submit {
+    display: block;
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .comment-form-comment {
+    margin-bottom: 20px;
+  }
+
+  input {
+    @media (max-width: $container-mobile) {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    width: 100%;
   }
 }

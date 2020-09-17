@@ -1,0 +1,27 @@
+// Base colors
+$color-white: #fff;
+$color-black: #222;
+$color-shadows: #b8bbb3;
+$color-darkgrey: #4f5964;
+$color-lightgrey: #f5f5f5;
+$color-forms-border: #d9d9d9;
+$color-code-background: #2b303c;
+
+// Brand colors
+$color-main: #3962c9;
+$color-bright: #81a9ff;
+$color-ice: #eaf1f8;
+$color-dark: darken($color-main, 40%);
+$color-midnight: #03061b;
+
+// Text and background colors
+$color-links: $color-main;
+$color-hover: $color-dark;
+$color-paragraphs: $color-darkgrey;
+$color-headings: $color-main;
+$color-blog-tags: #061629;
+$color-comments-link: #555;
+$color-success: #30dd44;
+$color-warning: #ed7e29;
+$color-error: #dd3030;
+$color-default-background: $color-dark;

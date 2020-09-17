@@ -9,7 +9,7 @@ body {
       color: $color-fog;
       font-family: $font-headings;
       text-transform: uppercase;
-      font-size: 16px;
+      font-size: $font-size-small;
     }
 
     // Buttons
@@ -31,16 +31,16 @@ body {
 
     // Product archive listing
     ul.products .button {
-      @extend %small;
+      font-size: $font-size-tiny;
     }
-
 
     // Default columns fix for air
-    ul.products li {
-      @media (min-width: $container-ipad) {
-        @include column(1/4, $cycle: 4);
-      }
-    }
+    // TODO: Replace with CSS grid
+    // ul.products li {
+    //   @media (min-width: $container-ipad) {
+    //     @include column(1/4, $cycle: 4);
+    //   }
+    // }
 
     // Star rating fix for air
     ul.products .star-rating {
@@ -82,7 +82,7 @@ body {
       .price span {
         @extend .betweenh2andh3;
         font-family: $font-headings;
-        color: $color-body;
+        color: $color-paragraphs;
         font-weight: 900;
       }
 

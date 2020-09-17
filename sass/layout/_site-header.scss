@@ -10,11 +10,16 @@
   z-index: 15;
   padding-bottom: 2rem;
   padding-top: 2rem;
-  padding-left: $container-default-pad-x;
-  padding-right: $container-default-pad-x;
-  max-width: $container-desktop;
+  padding-left: $padding-container-x-medium;
+  padding-right: $padding-container-x-medium;
+  max-width: $grid-base-size;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: $responsivenav) {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
 
   // Easier flex way to align logo and navigation
   display: flex;
@@ -27,6 +32,9 @@
   font-weight: 700;
 
   a {
-    color: $color-cyan-bright;
+    color: $color-links;
+    overflow: visible;
+    display: flex;
+    align-items: center;
   }
 }

@@ -6,12 +6,6 @@
 // based responsive mixin can be found in _helpers.scss
 // -----------------------------------------------------------
 
-// Set up self-hosted fonts here
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-regular', 400);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700', 700);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
-
 // Set root size for rems
 :root {
   font-size: 62.5%;
@@ -19,10 +13,10 @@
 
 // Start typography settings
 body {
-  font-size: 1.7rem;
-  font-family: $font-base;
-  color: $color-body;
-  font-weight: $body-weight;
+  font-size: $font-size-medium;
+  font-family: $font-paragraphs;
+  color: $color-paragraphs;
+  font-weight: $font-weight-paragraphs;
 
   // Font smoothing options
   text-size-adjust: none;
@@ -42,36 +36,23 @@ a {
 }
 
 // Special link styles for example in blog posts, use with @extend
-%link {
-  color: #111;
+%textlink {
+  position: relative;
+  overflow: visible;
+  font-weight: 700;
+  z-index: 1;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
-  box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 rgba(#111, .6);
-  transition: all .55s;
-  background-image: linear-gradient(to top, #111, #111);
-  background-size: 100% 0;
-  background-position: left bottom;
-  background-repeat: no-repeat;
+  transition: all .18s ease-in-out;
+  display: inline-flex;
+  color: $color-paragraphs;
+  border-bottom: 1px solid $color-links;
+  box-shadow: inset 0 -.1rem 0 $color-links;
 
-  &:hover {
-    color: #fff;
-    text-shadow: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    box-shadow: none;
-    background-size: 100% 2.8rem;
-    margin-left: -5px;
-    margin-right: -5px;
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -100px 0 $color-links;
+    color: $color-white;
   }
-}
-
-// Preset for small fonts
-%small {
-  @include responsive-font(14px, 17px);
-}
-
-%extrasmall {
-  @include responsive-font(12px, 14px);
 }
 
 // Defaults
@@ -94,9 +75,9 @@ td,
 table,
 tr,
 %default {
-  @include responsive-font($font-min-size, $font-max-size);
+  @include responsive-font($font-size-min, $font-size-max);
   letter-spacing: -.003em;
-  line-height: $line-height;
+  line-height: $line-height-paragraphs;
 }
 
 p {
@@ -121,100 +102,53 @@ h5,
 h6 {
   color: $color-headings;
   font-family: $font-headings;
-  font-weight: $headings-weight;
+  font-weight: $font-weight-headings;
+  margin-top: 2.7rem;
+  margin-bottom: 2.7rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $line-height-headings;
 }
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
-$heading_typescale: medium;
-
-// Defaults are null
-$h1_min: null;
-$h1_max: null;
-$h2_min: null;
-$h2_max: null;
-$h3_min: null;
-$h3_max: null;
-$h4_min: null;
-$h4_max: null;
-$h5_min: null;
-$h5_max: null;
-$h6_min: null;
-$h6_max: null;
-
-@if $heading_typescale == 'large' {
-  $h1_min: 32px;
-  $h1_max: 67px;
-  $h2_min: 24px;
-  $h2_max: 51px;
-  $h3_min: 21px;
-  $h3_max: 38px;
-  $h4_min: 18px;
-  $h4_max: 28px;
-  $h5_min: 14px;
-  $h5_max: 28px;
-  $h6_min: 14px;
-  $h6_max: 21px;
-}
-
-@if $heading_typescale == 'medium' {
-  $h1_min: 32px;
-  $h1_max: 51px;
-  $h2_min: 24px;
-  $h2_max: 38px;
-  $h3_min: 21px;
-  $h3_max: 28px;
-  $h4_min: 18px;
-  $h4_max: 21px;
-  $h5_min: 14px;
-  $h5_max: 17px;
-  $h6_min: 14px;
-  $h6_max: 12px;
-}
-
-@if $heading_typescale == 'small' {
-  $h1_min: 38px;
-  $h1_max: 28px;
-  $h2_min: 21px;
-  $h2_max: 28px;
-  $h3_min: 20px;
-  $h3_max: 21px;
-  $h4_min: 16px;
-  $h4_max: 18px;
-  $h5_min: 16px;
-  $h5_max: 18px;
-  $h6_min: 14px;
-  $h6_max: 16px;
-}
-
 h1,
 %h1 {
-  @include responsive-font($h1_min, $h1_max);
+  @include responsive-font($font-size-min-h1, $font-size-max-h1);
 }
 
 h2,
 %h2 {
-  @include responsive-font($h2_min, $h2_max);
+  @include responsive-font($font-size-min-h2, $font-size-max-h2);
 }
 
 h3,
 %h3 {
-  @include responsive-font($h3_min, $h3_max);
+  @include responsive-font($font-size-min-h3, $font-size-max-h3);
 }
 
 h4,
 %h4 {
-  @include responsive-font($h4_min, $h4_max);
+  @include responsive-font($font-size-min-h4, $font-size-max-h4);
 }
 
 h5,
 %h5 {
-  @include responsive-font($h5_min, $h5_max);
+  @include responsive-font($font-size-min-h5, $font-size-max-h5);
 }
 
 h6,
 %h6 {
-  @include responsive-font($h6_min, $h6_max);
+  @include responsive-font($font-size-min-h6, $font-size-max-h6);
 }
 
 // Lists
@@ -264,17 +198,13 @@ figure {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-
-  > img {
-    width: 100%;
-  }
 }
 
 // Figcaption.
 figcaption {
   margin-top: 0;
   font-style: normal;
-  font-weight: $body-weight;
+  font-weight: $font-weight-paragraphs;
 }
 
 // Quotes.
