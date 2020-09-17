@@ -1,4 +1,8 @@
 == Changelog ==
+@Version 2.8.5.1
+1. String Update.
+@Version 2.8.5
+1. Add Seo Optimized Images plugin as recommend.
 @Version 2.8.4
 1. Fixed the customizer error of console.
 @Version 2.8.3

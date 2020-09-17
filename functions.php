@@ -55,13 +55,20 @@ function appointment_register_required_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
+            'name' => 'Webriti Companion',
+            'slug' => 'webriti-companion',
+            'required' => false,
+        ),
+
+        array(
             'name' => 'Contact Form 7',
             'slug' => 'contact-form-7',
             'required' => false,
         ),
-        array(
-            'name' => 'Webriti Companion',
-            'slug' => 'webriti-companion',
+        
+         array(
+            'name' => 'Seo Optimized Images',
+            'slug' => 'seo-optimized-images',
             'required' => false,
         ),
     );
