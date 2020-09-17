@@ -388,7 +388,7 @@
 .head-contact-social {
 	display: none;
 }}
-@media only screen and (min-width: 200px) and (max-width: 768px) {
+@media only screen and (min-width: 200px) and (max-width: 480px) {
 /*Header Top Area----------------*/	
 .slide-text-bg3 {
     padding: 0;
@@ -651,7 +651,7 @@
 .blog-post-title-wrapper > tr { border: 1px solid #ccc; }
 
 .blog-post-title-wrapper > td {
-/* Behave like a “row” */
+/* Behave like a ï¿½rowï¿½ */
 	border: none;
 	border-bottom: 1px solid #eee;
 	position: relative;

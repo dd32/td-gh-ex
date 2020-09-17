@@ -17,7 +17,6 @@ jQuery(document).ready(function() {
             if (width > 1100) {
                 jQuery('.navbar-nav > li.dropdown').hover(function() {
                     var MenuLeftOffset  = jQuery(this).offset().left;
-                    console.log(MenuLeftOffset);
                     var Menu1LevelWidth = jQuery('.dropdown-menu', jQuery(this)).width();
                     if (width - MenuLeftOffset < Menu1LevelWidth * 2) {
                         jQuery(this).children('.dropdown-menu').addClass('leftauto');
@@ -85,16 +84,19 @@ jQuery(document).ready(function() {
        /* ---------------------------------------------- /*
          * Navbar focus dropdown on desktop
          /* ---------------------------------------------- */
-     
-       const topLevelLinks = document.querySelectorAll('.nav li.dropdown a');
-            topLevelLinks.forEach(link => {
-              link.addEventListener('focus', function(e) {
+
+       const topLevelLinks = Array.prototype.slice.call(document.querySelectorAll(".nav li.dropdown a"), 0);
+            topLevelLinks.forEach(function(link){
+             return link.addEventListener('focus', function(e) {
                 this.parentElement.classList.add('open')
                 e.preventDefault();
 
-                e.target.parentElement.querySelectorAll( ".open" ).forEach( e =>
-                    e.classList.remove( "open" ) );
-              })             
+                var div_list = e.target.parentElement.querySelectorAll( ".open" );
+                var div_array = Array.prototype.slice.call(div_list);
+                  div_array.forEach(function(e){
+                   return e.classList.remove( "open" )
+                });
+              })            
 
             })
 
@@ -106,12 +108,13 @@ jQuery(document).ready(function() {
 
             jQuery('a,input').bind('focus', function() {
              if(!jQuery(this).closest(".menu-item").length ) {
-                topLevelLinks.forEach(link => {
-                link.parentElement.classList.remove('open')
+                topLevelLinks.forEach(function(link){
+                return link.parentElement.classList.remove('open')
             })
-            }
-        })
-     });       
+
+     }
+     })  
+   })
 /* ---------------------------------------------- /*
          * Scroll top
 /* ---------------------------------------------- */

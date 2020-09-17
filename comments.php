@@ -41,16 +41,16 @@
 ?>
 <div class="comment-form-section">
 	<?php  
-	 $fields=array(
+	 $wallstreet_fields=array(
 		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.esc_attr__('Name','wallstreet').'" /></div>',
 		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value="" type="email" placeholder="'.esc_attr__('Email','wallstreet').'" /></div>',
 		);
-		function wallstreet_fields($fields) { 
-			return $fields;
+		function wallstreet_fields($wallstreet_fields) { 
+			return $wallstreet_fields;
 		}
 		add_filter('comment_form_default_fields','wallstreet_fields');
-			$defaults = array(
-			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
+			$wallstreet_defaults = array(
+			'fields'=> apply_filters( 'comment_form_default_fields', $wallstreet_fields ),
 			'comment_field'=> '<div class="blog-form-group-textarea" >
 			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.esc_attr__('Leave your message','wallstreet').'"></textarea></div>',		
 			'logged_in_as' => '<p class="logged-in-as">' . esc_html__("Logged in as",'wallstreet' ).'<a href="'.  esc_url(admin_url( 'profile.php' )).'"> '.$user_identity.'</a>'. '<a href="'. esc_url(wp_logout_url( get_permalink() )).'" title="'.esc_attr__('Log out from this Account','wallstreet').'"> '.esc_html__("Logout",'wallstreet').'</a>' . '</p>',
@@ -61,7 +61,7 @@
 			'title_reply'=> '<div class="comment-title"><h3><i class="fa fa-comment-o"></i>'.esc_html__('Leave your message','wallstreet').'</h3></div>',
 			'id_form'=> 'commentform'
 			);
-		comment_form($defaults);
+		comment_form($wallstreet_defaults);
 	?>
 </div>	
-<?php } } ?>		
+<?php } }

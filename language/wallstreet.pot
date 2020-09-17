@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2020-06-18 14:04+0530\n"
+"POT-Creation-Date: 2020-09-07 11:31+0530\n"
 "PO-Revision-Date: 2018-09-26 17:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -571,14 +571,14 @@ msgstr ""
 msgid "Blog Archive"
 msgstr ""
 
-#: archive.php:62 author.php:46 category.php:48 functions.php:126
-#: index-blog.php:46 index.php:61 search.php:50 tag.php:47
+#: archive.php:62 author.php:46 category.php:48 functions.php:130
+#: index-blog.php:49 index.php:61 search.php:53 tag.php:56
 msgid "Read More"
 msgstr ""
 
-#: archive.php:63 author.php:47 category.php:49 functions.php:63
-#: functions/breadcrumbs/breadcrumbs.php:98 index.php:62 single.php:31
-#: tag.php:48
+#: archive.php:63 author.php:47 category.php:49 functions.php:65
+#: functions/breadcrumbs/breadcrumbs.php:98 index.php:62 single.php:37
+#: tag.php:57
 msgid "Page"
 msgstr ""
 
@@ -1075,35 +1075,35 @@ msgstr ""
 msgid "Send Message"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:87
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:134 functions.php:136
+#: functions.php:140 functions.php:142
 msgid "Sidebar widget area"
 msgstr ""
 
-#: functions.php:144 functions.php:146
+#: functions.php:150 functions.php:152
 msgid "Footer widget area"
 msgstr ""
 
-#: functions.php:154 functions.php:156
+#: functions.php:160 functions.php:162
 msgid "WooCommerce sidebar widget area"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:202
 msgid "Reply"
 msgstr ""
 
-#: functions.php:201
+#: functions.php:208
 msgid "Posted on &nbsp;"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:211
 msgid "Edit"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:216
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -1138,7 +1138,7 @@ msgstr ""
 
 #: functions/customizer/customizer-blog.php:38
 #: wallstreet_theme_setup_data.php:67
-msgid "Our latest blog post"
+msgid "Curabitur lacinia"
 msgstr ""
 
 #: functions/customizer/customizer-blog.php:47
@@ -1147,7 +1147,7 @@ msgstr ""
 
 #: functions/customizer/customizer-blog.php:57
 #: wallstreet_theme_setup_data.php:68
-msgid "We work with new customers and grow their business."
+msgid "Curabitur quis nibh vulputate nisi tincidunt eleifend."
 msgstr ""
 
 #: functions/customizer/customizer-blog.php:66
@@ -1168,19 +1168,6 @@ msgstr ""
 
 #: functions/customizer/customizer-copyright.php:24
 msgid "Copyright text"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:8
-msgid "Header settings"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:23
-msgid "Display Site Title and Tagline"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:32
-#: functions/customizer/customizer-home.php:45
-msgid "Custom CSS"
 msgstr ""
 
 #: functions/customizer/customizer-pro-feature.php:13
@@ -1397,27 +1384,27 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
-#: header.php:16
+#: header.php:15
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:88
+#: header.php:87
 msgid "Toggle navigation"
 msgstr ""
 
-#: index-blog.php:41
+#: index-blog.php:44
 msgid "No comments"
 msgstr ""
 
-#: index-blog.php:41
+#: index-blog.php:44
 msgid "1 comment"
 msgstr ""
 
-#: index-blog.php:41
+#: index-blog.php:44
 msgid "% Comments"
 msgstr ""
 
-#: index-blog.php:53
+#: index-blog.php:61
 msgid "No Posts to show."
 msgstr ""
 
@@ -1426,19 +1413,19 @@ msgstr ""
 msgid "Search results for: %s"
 msgstr ""
 
-#: search.php:65
+#: search.php:70
 msgid "Next"
 msgstr ""
 
-#: search.php:66
+#: search.php:71
 msgid "Previous"
 msgstr ""
 
-#: search.php:70
+#: search.php:75
 msgid "Nothing Found"
 msgstr ""
 
-#: search.php:72
+#: search.php:77
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with "
 "some different keywords."
@@ -1464,7 +1451,7 @@ msgid "on"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:16
-msgid "Clean & fresh theme"
+msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:17
@@ -1473,12 +1460,13 @@ msgstr ""
 
 #: wallstreet_theme_setup_data.php:18
 msgid ""
-"State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 "
-"transition effects. Works perfectly on any modern mobile device."
+"Maecenas a blandit justo. Curabitur dignissim quam quis malesuada "
+"ultrices. Vestibulum nisi augue, ultricies id congue vel."
 msgstr ""
 
-#: wallstreet_theme_setup_data.php:26
-msgid "Product Design"
+#: wallstreet_theme_setup_data.php:26 wallstreet_theme_setup_data.php:30
+#: wallstreet_theme_setup_data.php:34
+msgid "Habitasse platea"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:27 wallstreet_theme_setup_data.php:31
@@ -1489,48 +1477,40 @@ msgid ""
 "porta nisl."
 msgstr ""
 
-#: wallstreet_theme_setup_data.php:30
-msgid "WordPress themes"
-msgstr ""
-
-#: wallstreet_theme_setup_data.php:34
-msgid "Responsive designs"
-msgstr ""
-
 #: wallstreet_theme_setup_data.php:40 wallstreet_theme_setup_data.php:44
 #: wallstreet_theme_setup_data.php:48 wallstreet_theme_setup_data.php:52
-msgid "WallStreet style"
+msgid "Aenean eu risus"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:41 wallstreet_theme_setup_data.php:45
 #: wallstreet_theme_setup_data.php:49 wallstreet_theme_setup_data.php:53
 msgid ""
-"A wonderful serenity has taken possession of my entire soul, like these "
-"sweet mornings."
+"Integer pellentesque dolor molestie, pellentesque nibh quis, vulputate "
+"lorem."
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:61
-msgid "1-800-123-789"
+msgid "9-999-999-999"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:62
-msgid "info@webriti.com"
+msgid "abc@example.com.com"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:63
-msgid "Our services"
+msgid "Lorem Ipsum"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:64
-msgid "We offer great services to our clients."
+msgid "Orci varius natoque penatibus et magnis."
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:65
-msgid "Featured portfolio project"
+msgid "Sed mollis neque"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:66
-msgid "Our most popular work"
+msgid "Nunc congue nulla sed"
 msgstr ""
 
 #. Theme Name of the plugin/theme

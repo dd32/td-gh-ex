@@ -330,26 +330,27 @@
 
 /* Free vs Pro */
 /*===================================================================================*/
-/*	PRICING TABLES TWO
+/*  PRICING TABLES TWO
 /*===================================================================================*/
-.pricing1 { margin-top: 30px;  }
+.pricing1 { margin-top: 40px;  }
 .pricing h1, .pricing h2, .pricing h3, .pricing h4, .pricing h5, .pricing h6, 
 .pricing1 h1, .pricing1 h2, .pricing1 h3, .pricing1 h4, .pricing1 h5, .pricing1 h6 { font-family: 'Signika', sans-serif; }
 .pricing1 .plan {
-	font-family: sans-serif;
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
-	overflow: hidden;
-	/* letter-spacing: 0.5px; */
-	border-left: 1px solid #dddddd;
-	border-top: 1px solid #dddddd;
-	border-bottom: 1px solid #dddddd;
+    font-family: sans-serif;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    overflow: hidden;
+    /* letter-spacing: 0.5px; */
+    border-left: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
 }
 .pricing1 .border-right { border-right: 1px solid #dddddd; }
 .pricing1 .col-md-4:last-child .plan { border-right: 1px solid #dddddd; }
 .pricing1 .plan .feature li:last-child { border-bottom: 0 none; } 
 .pricing1 .plan header { background: #fff; text-align: center; }
-.pricing1 .plan h2 { background: #f8f8f8; font-size: 24px; line-height: 30px; font-weight: 400; color: #333; padding: 10px 20px 15px; border-bottom: 1px solid #dddddd; margin: 0; }
+.pricing1 .plan h2 { background: #f8f8f8; font-size: 24px; line-height: 30px; font-weight: 400; color: #333; padding: 15px 20px 15px; border-bottom: 1px solid #dddddd; margin: 0 !important; }
 .pricing1 .plan h2 small { display: block; color: #808080; font-size: 14px; padding-top: 7px; }
 .pricing1 .plan .btn { margin-bottom: 0; font-size: 16px; }
 .pricing1 .plan .btn i { margin-right: 7px; }
@@ -360,30 +361,27 @@
     padding: 0;
     margin: 0;
 }
-.pricing1 .plan .feature li { padding: 12px 20px; color: #333; font-size: 18px; border-bottom: 1px solid #dddddd;
+.pricing1 .plan .feature li { padding: 30px 20px; color: #333; font-size: 18px; border-bottom: 1px solid #dddddd;     height: 128px;
     margin-bottom: 0; }
-.pricing1 .plan .feature li{
-    height: 202px;
-}
 .pricing1.col-3 .plan header { padding: 40px; }
 .pricing1.col-3 .plan .feature { padding: 20px 30px; }
 .pricing1 .plan .price1 {
     padding: 14px 10px 13px;
     text-align: center;
-	border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
     font-family: 'Signika', sans-serif;
     font-weight: 400;
     font-size: 50px;
     line-height: 56px;
     color: #2f4052;
     display: block;
-	letter-spacing: 0;
+    letter-spacing: 0;
 }
 .pricing1 .plan .price1 span { display: inline-block; margin-left: -12px; }
 .pricing1 .plan .price1 span sup { position: relative; top: -0.6em; display: inline-block; padding: 0; font-size: 24px; }
 .pricing1 .plan .duration { text-align: center; color: #636e79; display: block; font-size: 16px; line-height: 25px; margin-bottom: 5px; }
 .pricing1 .col-md-3  { padding: 0; }
-.pricing1 .offer-content { border-left: 1px solid #dddddd; border-top: 0 none; border-bottom: 1px solid #dddddd; border-right: 1px solid #dddddd; }
+/*.pricing1 .offer-content { border-left: 1px solid #dddddd; border-top: 0 none; border-bottom: 1px solid #dddddd; border-right: 1px solid #dddddd; }*/
 .pricing1 .most-popular {
     display: block;
     float: left;
@@ -398,7 +396,7 @@
     font-size: 15px;
     border: 1px solid #dddddd;
     border-bottom: none;
-	position: absolute;
+    position: absolute;
     top: 0px;
     left: 0;
     right: 0;
@@ -422,7 +420,7 @@
 
 .pricing1 .plan .feature li p
 {
-	font-size:12px; font-weight:normal;
+    font-size:12px; font-weight:normal;
 }
 
 }
@@ -464,94 +462,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-a.info-block{text-decoration:none;color:#333;  padding: 0px;padding-top: 6px;width: 38%;}
-.useful_box { margin-left: 12%;}
+a.info-block{text-decoration:none;color:#333;}
 a.info-block:hover, a.info-block:active, a.info-block:focus{color:#333;}
-.recommended_box {
-    border: 1px solid #e5e5e5;
-    padding: 20px;
-    margin: 30px;
-    width: 45%;
-}
-#changelog pre {
-    font-size: 16px;
-    overflow-y: scroll;
-    height: 720px;
-}
-#changelog .about-wrap {
-    max-width: 100%;
-}
-.wallstreet-tab-support {
-    margin-top: 12px;
-    padding: 24px 24px;
-}
-.wallstreet-tab-support p {
-   font-size: 17px;
-}
-.wallstreet-tab-pane-half h3 {
-    font-weight: 600;
-    padding-top: 20px;
-}
-.wallstreet-tab-center h3 {
-    font-weight: 600;
-}
-.plan h2 {
-    margin-top: 0px !important;
-}
-.panel-close {
-    padding-bottom: 1px;
-}
-#getting_started.wallstreet-tab-pane {
-    padding-bottom: 10px;
-}
-#support.panel-close {
-    min-height: 0px !important;
-}
-.info-text {
-    margin: 10px 10px;
-}
-@media only screen and (max-width: 768px) {
-    .recommended_box {
-        border: 1px solid #e5e5e5;
-        padding: 20px;
-        margin: 13px;
-        width: 45%;
-    }   
-}
-@media only screen and (max-width: 767px) {
-    .recommended_box {
-        padding: 20px;
-        margin: 0px;
-        width: 100%;    
-    }
-    .wallstreet-nav-tabs > li > a {
-        margin: 2px 0 2px 0;
-    }
-    .wallstreet-nav-tabs li{
-        display: grid;
-        width: 100%;
-    }
-    .useful_box {
-        margin-left: unset;
-    }
-    a.info-block {
-        width: 100%;
-    }
-}
-@media only screen and (min-width: 768px) and (max-width: 1100px) {
-     .recommended_box {
-        margin: 16px;  
-        width: 45%;  
-    }
-}
-@media only screen and (min-width: 1100px) {
-    #wpbody-content {
-        width: 100%;
-    } 
-}
-@media only screen and (min-width: 1100px) {
-    .recommended_box {
-        margin: 16px;
-        width: 45%;
-    }
-}
+.wp-person a:focus .gravatar, a:focus, a:focus .media-icon img{ box-shadow:none !important; }
+
+/*css 4 oct 18*/
+.m-top-40 { margin-top: 40px; }
+.m-top-40 p {font-size: 15px; }
+.theme-info-wrap h3 { margin: 1.25em 0 .6em; }
+.theme-info-wrap h3 > i { line-height: 1.2; margin-right: 15px }
+
+.about-wrap{ margin: 25px 25px 0 20px; max-width: 100%;}

@@ -35,7 +35,7 @@ function wallstreet_blog_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[home_blog_heading]',
 		array('capability'  => 'edit_theme_options',
-		'default' => esc_html__('Our latest blog post','wallstreet'), 
+		'default' => esc_html__('Curabitur lacinia','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -54,7 +54,7 @@ function wallstreet_blog_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[home_blog_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => esc_html__('We work with new customers and grow their business.','wallstreet'), 
+		'default' => esc_html__('Curabitur quis nibh vulputate nisi tincidunt eleifend.','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -69,4 +69,4 @@ function wallstreet_blog_customizer( $wp_customize ) {
 	);
 
 }
-add_action( 'customize_register', 'wallstreet_blog_customizer' );?>
+add_action( 'customize_register', 'wallstreet_blog_customizer' );

@@ -35,4 +35,4 @@
 	</div>
 </div>
 <!-- 404 Error Section -->
-<?php get_footer(); ?>
+<?php get_footer();

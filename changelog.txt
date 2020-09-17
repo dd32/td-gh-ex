@@ -1,5 +1,7 @@
 == Changelog ==
-
+@Version 1.9.2
+1. Fixed theme prefix issue and removed custom CSS.
+2. Fixed Responsive banner and style issue related IE11.
 @Version 1.9.1
 1. Changed the content of the screenshot.
 @Version 1.9

@@ -14,9 +14,9 @@ get_header(); ?>
 		<?php the_post(); ?>
 			<div class="blog-detail-section">
 				<?php if(has_post_thumbnail()){ ?>
-				<?php $defalt_arg =array('class' => "img-responsive"); ?>
+				<?php $wallstreet_defalt_arg =array('class' => "img-responsive"); ?>
 				<div class="blog-post-img">
-					<?php the_post_thumbnail('', $defalt_arg); ?>
+					<?php the_post_thumbnail('', $wallstreet_defalt_arg); ?>
 				</div>
 				<?php } ?>
 				<div class="clear"></div>
@@ -31,4 +31,4 @@ get_header(); ?>
 		<!--/Blog Area-->
 </div>
 </div>
-<?php get_footer(); ?>	
+<?php get_footer();

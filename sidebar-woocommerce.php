@@ -12,4 +12,4 @@
 	</div>
 </div>
 <!--/End of Sidebar-->
-<?php endif; ?>
+<?php endif;

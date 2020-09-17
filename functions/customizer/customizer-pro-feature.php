@@ -169,4 +169,3 @@ $wp_customize->add_control( new Wallstreet_Feature_document_Customize_Control( $
 
 }
 add_action( 'customize_register', 'wallstreet_pro_feature_customizer' );
-?>

@@ -20,7 +20,7 @@
 	margin-right: 50px;
 }
 @media (min-width: 1200px) {
-.navbar li.dropdown-submenu .caret { float: right;border: unset;} 
+.navbar li.dropdown-submenu .caret { float: right;border: none;} 
 .navbar-nav li.dropdown-submenu .caret:after{ content: "\f0da"; font-family: "FontAwesome";font-size: 10px;}
 }
 .navbar-inverse .navbar-brand {

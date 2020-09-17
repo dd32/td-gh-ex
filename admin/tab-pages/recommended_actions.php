@@ -1,20 +1,20 @@
 <?php  
-	$actions = $this->recommended_actions;
-	$actions_todo = get_option( 'recommended_actions', false );
+	$wallstreet_actions = $this->recommended_actions;
+	$wallstreet_actions_todo = get_option( 'recommended_actions', false );
 ?>
 <div id="recommended_actions" class="wallstreet-tab-pane panel-close">
 	<div class="action-list">
-		<?php if($actions): foreach ($actions as $key => $actionValue): ?>
-		<div class="action" id="<?php echo esc_attr($actionValue['id']); ?>">
+		<?php if($wallstreet_actions): foreach ($wallstreet_actions as $key => $wallstreet_actionValue): ?>
+		<div class="action" id="<?php echo esc_attr($wallstreet_actionValue['id']); ?>">
 			<div class="recommended_box col-md-6 col-sm-6 col-xs-12">
-				<img width="772" height="180" src="<?php echo esc_url(WALLSTREET_TEMPLATE_DIR_URI.'/images/'.str_replace(' ', '-', strtolower($actionValue['title'])).'.png');?>">
+				<img width="772" height="180" src="<?php echo esc_url(WALLSTREET_TEMPLATE_DIR_URI.'/images/'.str_replace(' ', '-', strtolower($wallstreet_actionValue['title'])).'.png');?>">
 				<div class="action-inner">
-					<h3 class="action-title"><?php echo esc_html($actionValue['title']); ?></h3>
-					<div class="action-desc"><?php echo esc_html($actionValue['desc']); ?></div>
-					<?php echo wp_kses_post($actionValue['link']); ?>
+					<h3 class="action-title"><?php echo esc_html($wallstreet_actionValue['title']); ?></h3>
+					<div class="action-desc"><?php echo esc_html($wallstreet_actionValue['desc']); ?></div>
+					<?php echo wp_kses_post($wallstreet_actionValue['link']); ?>
 					<div class="action-watch">
-						<?php if(!$actionValue['is_done']): ?>
-							<?php if(!isset($actions_todo[$actionValue['id']]) || !$actions_todo[$actionValue['id']]): ?>
+						<?php if(!$wallstreet_actionValue['is_done']): ?>
+							<?php if(!isset($wallstreet_actions_todo[$wallstreet_actionValue['id']]) || !$wallstreet_actions_todo[$wallstreet_actionValue['id']]): ?>
 								<span class="dashicons dashicons-visibility"></span>
 							<?php else: ?>
 								<span class="dashicons dashicons-hidden"></span>

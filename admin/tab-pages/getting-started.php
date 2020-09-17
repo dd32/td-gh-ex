@@ -2,7 +2,7 @@
 /**
  * Getting started template
  */
-$customizer_url = admin_url() . 'customize.php' ;
+$wallstreet_customizer_url = admin_url() . 'customize.php' ;
 ?>
 
 <div id="getting_started" class="wallstreet-tab-pane active">

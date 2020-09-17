@@ -6,7 +6,7 @@
 
 <div id="support" class="wallstreet-tab-pane panel-close">
 <div class="container-fluid">
-	<div class="row">
+<div class="row">
 	<div class="col-md-4">
 	<div class="wallstreet-tab-support">
 		<h3><i class="dashicons dashicons-sos"></i> <?php esc_html_e( 'Contact Support','wallstreet' ); ?></h3>

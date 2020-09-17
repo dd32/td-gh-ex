@@ -13,9 +13,9 @@ function wallstreet_theme_data_setup()
 			
 			//Featured Image Setting
 			'home_banner_enabled'=>__('on','wallstreet'),
-			'slider_title_one' => __('Clean & fresh theme','wallstreet'),
+			'slider_title_one' => __('Lorem ipsum dolor sit amet','wallstreet'),
 			'slider_title_two' => __('Welcome to WallStreet','wallstreet'),
-			'slider_description' => __('State-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 transition effects. Works perfectly on any modern mobile device.','wallstreet'),
+			'slider_description' => __('Maecenas a blandit justo. Curabitur dignissim quam quis malesuada ultrices. Vestibulum nisi augue, ultricies id congue vel.','wallstreet'),
 			'slider_image' => 'slider',
 			
 			// service
@@ -23,34 +23,34 @@ function wallstreet_theme_data_setup()
 			'service_section_animation_enabled' => true,
 			
 			'service_image_one' => 'service1', 
-			'service_title_one'=> __('Product Design','wallstreet'),
+			'service_title_one'=> __('Habitasse platea','wallstreet'),
 			'service_description_one' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			'service_image_two' => 'service2', 
-			'service_title_two'=> __('WordPress themes','wallstreet'),
+			'service_title_two'=> __('Habitasse platea','wallstreet'),
 			'service_description_two' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			'service_image_three' => 'service3', 
-			'service_title_three'=> __('Responsive designs','wallstreet'),
+			'service_title_three'=> __('Habitasse platea','wallstreet'),
 			'service_description_three' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			//portfolio
 			'portfolio_section_enabled' => true,
 			
-			'portfolio_title_one' => __('WallStreet style','wallstreet'),
-			'portfolio_description_one' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
+			'portfolio_title_one' => __('Aenean eu risus','wallstreet'),
+			'portfolio_description_one' => __('Integer pellentesque dolor molestie, pellentesque nibh quis, vulputate lorem.','wallstreet'),
 			'portfolio_image_one' => 'portfolio1',
 			
-			'portfolio_title_two' => __('WallStreet style','wallstreet'),
-			'portfolio_description_two' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
+			'portfolio_title_two' => __('Aenean eu risus','wallstreet'),
+			'portfolio_description_two' => __('Integer pellentesque dolor molestie, pellentesque nibh quis, vulputate lorem.','wallstreet'),
 			'portfolio_image_two' => 'portfolio2',
 			
-			'portfolio_title_three' => __('WallStreet style','wallstreet'),
-			'portfolio_description_three' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
+			'portfolio_title_three' => __('Aenean eu risus','wallstreet'),
+			'portfolio_description_three' => __('Integer pellentesque dolor molestie, pellentesque nibh quis, vulputate lorem.','wallstreet'),
 			'portfolio_image_three' => 'portfolio3',
 			
-			'portfolio_title_four' => __('WallStreet style','wallstreet'),
-			'portfolio_description_four' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
+			'portfolio_title_four' => __('Aenean eu risus','wallstreet'),
+			'portfolio_description_four' => __('Integer pellentesque dolor molestie, pellentesque nibh quis, vulputate lorem.','wallstreet'),
 			'portfolio_image_four' => 'portfolio4',
 			
 			//Home blog
@@ -58,14 +58,14 @@ function wallstreet_theme_data_setup()
 			
 			// Head Titles
 			'contact_header_settings' => true,
-			'contact_phone_number' => __('1-800-123-789','wallstreet'),
-			'contact_email' => __('info@webriti.com','wallstreet'),
-			'service_title' => __('Our services','wallstreet'),
-			'service_description' => __('We offer great services to our clients.','wallstreet'),
-			'portfolio_title' => __('Featured portfolio project','wallstreet'),
-			'portfolio_description' => __('Our most popular work','wallstreet'),
-			'home_blog_heading'=> __('Our latest blog post','wallstreet'),
-			'home_blog_description' => __('We work with new customers and grow their business.','wallstreet'),
+			'contact_phone_number' => __('9-999-999-999','wallstreet'),
+			'contact_email' => __('abc@example.com.com','wallstreet'),
+			'service_title' => __('Lorem Ipsum','wallstreet'),
+			'service_description' => __('Orci varius natoque penatibus et magnis.','wallstreet'),
+			'portfolio_title' => __('Sed mollis neque','wallstreet'),
+			'portfolio_description' => __('Nunc congue nulla sed','wallstreet'),
+			'home_blog_heading'=> __('Curabitur lacinia','wallstreet'),
+			'home_blog_description' => __('Curabitur quis nibh vulputate nisi tincidunt eleifend.','wallstreet'),
 			
 			/** Social media links **/
 			'header_social_media_enabled'=>__('on','wallstreet'),			

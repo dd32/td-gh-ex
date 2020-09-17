@@ -7,8 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<?php $wallstreet_pro_options=wallstreet_theme_data_setup();
-	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); ?>
+	<?php $wallstreet_current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), wallstreet_theme_data_setup() ); ?>
 	<?php wp_head(); ?>	
 </head>
 <body <?php body_class(); ?>>
@@ -23,17 +22,17 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 		<!-- logo -->
-		<?php 	if($current_options['text_title'] ==true){
+		<?php 	if($wallstreet_current_options['text_title'] ==true){
 			set_theme_mod('header_text','true');
-			$text_title_options=get_option('wallstreet_pro_options');
-	        $text_title_options['text_title'] = false;
-	        update_option('wallstreet_pro_options', $text_title_options);
+			$wallstreet_text_title_options=get_option('wallstreet_pro_options');
+	        $wallstreet_text_title_options['text_title'] = false;
+	        update_option('wallstreet_pro_options', $wallstreet_text_title_options);
 		}
 
-				if($current_options['text_title'] ==false && $current_options['upload_image_logo']!='' && !(has_custom_logo()) )
+                        if($wallstreet_current_options['text_title'] ==false && $wallstreet_current_options['upload_image_logo']!='' && !(has_custom_logo()) )
 		        { ?> 
 	            	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-	                	<img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { echo esc_html($current_options['height']); }  else { "80"; } ?>px; width:<?php if($current_options['width']!='') { echo esc_html($current_options['width']); }  else { "200"; } ?>px;" alt="<?php echo esc_html( get_bloginfo( 'title' ) ); ?>" />
+	                	<img src="<?php echo esc_url($wallstreet_current_options['upload_image_logo']); ?>" style="height:<?php if($wallstreet_current_options['height']!='') { echo esc_attr($wallstreet_current_options['height']); }  else { "80"; } ?>px; width:<?php if($wallstreet_current_options['width']!='') { echo esc_attr($wallstreet_current_options['width']); }  else { "200"; } ?>px;" alt="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>" />
 	                </a>
 		            <?php
 	            }   
@@ -43,18 +42,18 @@
 						<?php
 			            if ( has_custom_logo() ) 
 			            {	
-			            	$custom_logo_id = get_theme_mod( 'custom_logo' );
-							$post_status=get_post_status ( $custom_logo_id );
-	    					$logo_options = get_option('wallstreet_pro_options');
-					        $logo_options['upload_image_logo'] = '';
-					        update_option('wallstreet_pro_options', $logo_options);
-							$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-							echo '<img src="'.esc_url($image[0]).'" alt="'.esc_html(get_bloginfo( 'title' )).'" />';
+			            	$wallstreet_custom_logo_id = get_theme_mod( 'custom_logo' );
+							$wallstreet_post_status=get_post_status ( $wallstreet_custom_logo_id );
+	    					$wallstreet_logo_options = get_option('wallstreet_pro_options');
+					        $wallstreet_logo_options['upload_image_logo'] = '';
+					        update_option('wallstreet_pro_options', $wallstreet_logo_options);
+							$wallstreet_image = wp_get_attachment_image_src( $wallstreet_custom_logo_id , 'full' );
+							echo '<img src="'.esc_url($wallstreet_image[0]).'" alt="'.esc_attr(get_bloginfo( 'title' )).'" />';
 						}?>
 					</a>
 				<?php
 		        }
-				if($current_options['text_title'] ==true || get_theme_mod('header_text')==true)
+				if($wallstreet_current_options['text_title'] ==true || get_theme_mod('header_text')==true)
 				{ 
 					if((get_option('blogname')!='') || (get_option('blogdescription')!=''))
             		{
@@ -64,13 +63,13 @@
                                 <h2 style="margin: 0px;"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><div class="wallstreet_title_head"><?php bloginfo( 'name' ); ?></div>
 	                			</a></h2>
 	                			<?php
-		                		$description = get_bloginfo( 'description', 'display' );
+		                		$wallstreet_description = get_bloginfo( 'description', 'display' );
 				            	if(get_option('blogdescription')!='')
 				            	{
-				            		if ( $description || is_customize_preview() )
+				            		if ( $wallstreet_description || is_customize_preview() )
 					                { ?>
 
-				                	<p class="site-description"><?php echo $description; ?></p>
+				                	<p class="site-description"><?php echo $wallstreet_description; ?></p>
 				                	<?php
 				                	}
 				                }?>

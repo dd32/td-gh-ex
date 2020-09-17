@@ -89,11 +89,11 @@
 				<div class="plan text-center">
 					
 					<header>
-						<h2><?php echo esc_html__('wallstreet Lite','wallstreet'); ?></h2>
+						<h2><?php echo esc_html__('Free','wallstreet'); ?></h2>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Top Header, Banner, Services [3 Services], Latest News","wallstreet"); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Top Header, Banner, Services [3 Services], Portfolio, Latest News","wallstreet"); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('Homepage Template and Full-Width Page Template','wallstreet'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -117,7 +117,7 @@
 				<div class="plan text-center border-right">
 					
 					<header>
-						<h2><?php echo esc_html_e('wallstreet Pro','wallstreet'); ?></h2>
+						<h2><?php echo esc_html_e('Pro','wallstreet'); ?></h2>
 					</header>
 					
 					<ul class="feature">

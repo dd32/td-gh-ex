@@ -5,8 +5,8 @@
  *
  */
 
-$hide_install = get_option('wallstreet_hide_customizer_companion_notice', false);
-if (!function_exists('webriti_companion') && !$hide_install) {
+$wallstreet_hide_install = get_option('wallstreet_hide_customizer_companion_notice', false);
+if (!function_exists('webriti_companion') && !$wallstreet_hide_install) {
 	if (class_exists('WP_Customize_Section') && !class_exists('wallstreet_Companion_Installer_Section')) {
 		/**
 		 * Recommend the installation of wallstreet Companion using a custom section.
@@ -36,7 +36,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 			public static function enqueue() {
 				wp_enqueue_script('plugin-install');
 				wp_enqueue_script('updates');
-				wp_enqueue_script('wallstreet-companion-install', WALLSTREET_TEMPLATE_DIR . '/admin/assets/js/plugin-install.js', array('jquery'));
+				wp_enqueue_script('wallstreet-companion-install', WALLSTREET_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
 				wp_localize_script('wallstreet-companion-install', 'wallstreet_companion_install',
 					array(
 						'installing' => esc_html__('Installing', 'wallstreet'),
