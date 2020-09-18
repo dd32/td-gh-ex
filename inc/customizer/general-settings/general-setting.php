@@ -7,7 +7,7 @@ function accesspress_ticker_setting($wp_customize){
   ));
 
   $wp_customize->add_setting( 'accesspress_widget_layout_type', array(
-      'default'       =>      'title_style_one',
+      'default'       =>      'title_style_two',
       'sanitize_callback' => 'accesspress_store_radio_sanitize_widget_layout'
   ));
                           

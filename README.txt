@@ -67,6 +67,9 @@ https://stocksnap.io/photo/money-purse-IE0EK3MDHK
 
 == Changelog ==
 
+= 2.4.6 =
+** Minor bugs fixed
+
 = 2.4.5 =
 ** Fixed minor CSS bugs
 
