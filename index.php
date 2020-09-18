@@ -1,70 +1,47 @@
 <?php
-global $options;
-foreach ($options as $value) {
-if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package avril
+ */
+
+get_header(); 
 ?>
-<?php get_header(); ?>
-			<div id="outer-column-container">
-				<div id="inner-column-container">
-					<div id="source-order-container">
-						<div id="middle-column">
-							<div class="inside">
-	<?php if (have_posts()) : ?>
-		<?php while (have_posts()) : the_post(); ?>
-
-			<?php if (is_last_post()) {?>
-				<div class="post-last" id="post-<?php the_ID(); ?>">
-			<?php } else { ?>
-				<div class="post" id="post-<?php the_ID(); ?>">
-			<?php } ?>
-
-				<h2>
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__ ('Permanent Link to %s', 'atahualpa'), get_the_title())?>"><?php the_title(); ?></a><a href="http://www.openbase.ru"><img src="<?php bloginfo('template_directory'); ?>/images/blank.gif" alt="openbase"></a>
-				</h2>
-				<div style="clear: left;"></div>
-				<div class="entry">
-					<?php if ($ata_excerpts_home == "Full Posts") { 
-					the_content(__('More &raquo;', 'atahualpa')); } else {
-					the_excerpt(); } ?>
-				<p class="postmetadata">
-					<?php the_time('F jS, Y') ?> <?php if ( function_exists('the_tags') && get_the_tags()) {the_tags('| Tags: ', ', ', ' ');} ?>| Category: <?php the_category(', ') ?> <span class="remove-for-print"><?php if(function_exists('wp_print')) { echo " | "; print_link(); } ?> <?php if(function_exists('wp_email')) { echo " | "; email_link(); } ?><?php edit_post_link('Edit', ' | ', ''); ?> | <?php comments_popup_link('Leave a comment', 'Comments (1)', 'Comments (%)'); ?></span>
-				</p>		
-				</div>
+ <section id="post-section" class="post-section av-py-default blog-page">
+	<div class="av-container">
+		<div class="av-columns-area wow fadeInUp">
+				<div id="av-primary-content" class="<?php esc_attr(avril_post_layout()); ?>  wow fadeInUp">
+				<?php 
+					$avril_paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+					$args = array( 'post_type' => 'post','paged'=>$avril_paged );	
+				?>
+				<?php if( have_posts() ): ?>
+					<?php while( have_posts() ) : the_post(); 
+							get_template_part('template-parts/content/content','page'); 
+					endwhile; ?>			
+			
+					<!-- Pagination -->
+						<?php								
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+						'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+						) ); ?>
+				<!-- Pagination -->	
+				
+				<?php else: ?>
+					<?php get_template_part('template-parts/content/content','none'); ?>
+				<?php endif; ?>
 			</div>
-		<?php endwhile; ?>
-
-	<?php if(function_exists('wp_pagenavi')) { ?>
-		<div class="wp-pagenavi-navigation">
-			<?php wp_pagenavi(); ?> 
+			<?php get_sidebar();  ?>
 		</div>
-	<?php } else { ?>
-		<div class="navigation">
-			<div class="older"><?php next_posts_link(__('&laquo; Older Entries', 'atahualpa')); ?></div>
-			<div class="newer"><?php previous_posts_link(__('Newer Entries &raquo;', 'atahualpa')); ?></div>
-			<div style="clear:both"></div>
-		</div>
-	<?php } ?>
-	
-	<?php else : ?>
-		<h2 class="center"><?php _e('Not Found', 'atahualpa'); ?></h2>
-		<p class="center"><?php _e('Sorry, but you are looking for something that is not here.', 'atahualpa'); ?></p>
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
-	<?php endif; ?>
-							</div>
-						</div>
-						<div id="left-column">
-							<div class="inside">
-<?php get_sidebar(); ?><a href="http://www.openbase.ru"><img src="<?php bloginfo('template_directory'); ?>/images/blank.gif" alt="openbase"></a>
-							</div>
-						</div>
-						<div class="clear-columns"><!-- do not delete --></div>
-					</div>
-					<div id="right-column">
-						<div class="inside">
-<?php include ('sidebar2.php'); ?>
-						</div>
-					</div>
-					<div class="clear-columns"><!-- do not delete --></div>
-				</div>
-			</div>
+	</div>
+</section>
 <?php get_footer(); ?>

@@ -1,83 +1,84 @@
-<?php // Do not delete these lines
-	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-	if (!empty($post->post_password)) { // if there's a password
-		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-			?>
-			<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+<?php
+/**
+ * The template for displaying comments.
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Avril
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+?>
+<div class="xl-column-12">	
+	<div id="comments" class="comments-area">
+				<?php
+				// You can start editing here -- including this comment!
+				if ( have_comments() ) : ?>
+				<div class="single-comments-title">
+					<h2>
+						<?php
+							printf( // WPCS: XSS OK.
+								esc_html('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'avril'),
+								number_format_i18n( get_comments_number() ),
+								'<span>' . esc_html(get_the_title()) . '</span>'
+							);
+						?>
+					</h2>
+				</div>
+
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'avril' ); ?></h2>
+				<div class="nav-links">
+
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'avril' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'avril' ) ); ?></div>
+
+				</div><!-- .nav-links -->
+			</nav><!-- #comment-nav-above -->
+			<?php endif; // Check for comment navigation. ?>
+
+			<ol class="comment-list">
+				<?php
+					wp_list_comments( array(
+						'style'      => 'ol',
+						'short_ping' => true,
+					) );
+				?>
+			</ol><!-- .comment-list -->
+
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+				<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+					<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'avril' ); ?></h2>
+					<div class="nav-links">
+						<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'avril' ) ); ?></div>
+						<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'avril' ) ); ?></div>
+					</div><!-- .nav-links -->
+				</nav><!-- #comment-nav-below -->
 			<?php
-			return;
-		}
-	}
-	/* This variable is for alternating comment background */
-	$oddcomment = 'class="alt" ';
-?>
-<!-- You can start editing here. -->
-<?php if ($comments) : ?>
-	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
-	<ol class="commentlist">
-	<?php $comment_number = 1; foreach ($comments as $comment) : ?>
-<!--		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>"> -->
-		<li <?php if ( $comment->comment_author_email == get_the_author_email() ) echo 'class="authorcomment" '; else echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-<?php // Gravatar support
-if (function_exists('get_avatar')) {
-      echo get_avatar($comment -> comment_author_email, $size='55');
-   } else {
-if(!empty($comment -> comment_author_email)) {
-$md5 = md5($comment -> comment_author_email);
-$default = urlencode(get_bloginfo('template_directory') . '/images/no-gravatar2.gif');
-echo "<img class=\"avatar\" src='http://www.gravatar.com/avatar.php?gravatar_id=$md5&size=55&default=$default' alt='Gravatar' />";
-}
-}
-?>
-<div style="float: right; font-size: 30px; line-height: 30px; font-family: georgia, serif; font-weight: bold; color: #ddd; margin: -10px 0 0 0; position: relative; height: 1%"><?php echo $comment_number; ?></div>
-			<!--<cite>--><?php comment_author_link() ?><!--</cite>-->:
-			<?php if ($comment->comment_approved == '0') : ?>
-			<em>Your comment is awaiting moderation.</em>
-			<?php endif; ?>
-			<br />
-			<small class="commentmetadata"><!--<a href="#comment-<?php comment_ID() ?>" title="">--><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
-			<?php comment_text() ?>
-		</li>
-	<?php
-		/* Changes every other comment to a different class */
-		$oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : '';
-	?>
-	<?php $comment_number ++; endforeach; /* end for each comment */ ?>
-	</ol>
- <?php else : // this is displayed if there are no comments so far ?>
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
-	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are closed.</p>
-	<?php endif; ?>
-<?php endif; ?>
-<?php if ('open' == $post->comment_status) : ?>
-<h3 id="respond">Leave a Reply</h3>
-<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
-<?php else : ?>
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-<?php if ( $user_ID ) : ?>
-<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></p>
-<?php else : ?>
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
-<?php endif; ?>
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
-<p><textarea name="comment" id="comment" class="comment-textarea" rows="10" cols="20" tabindex="4"></textarea></p>
-<?php if (function_exists('show_subscription_checkbox')) { ?>
-<?php show_subscription_checkbox(); ?>
-<?php } ?>
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-</p>
-<?php do_action('comment_form', $post->ID); ?>
-</form>
-<?php endif; // If registration required and not logged in ?>
-<?php endif; // if you delete this the sky will fall on your head ?>
+			endif; // Check for comment navigation.
+
+		endif; // Check for have_comments().
+
+
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'avril' ); ?></p>
+		<?php
+		endif;
+
+		comment_form();
+		?>
+	</div>
+</div>	
