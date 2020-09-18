@@ -1259,6 +1259,20 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'settings'    => 'advance_fitness_gym_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('advance_fitness_gym_display_blog_page_post',array(
+        'default' => __('Without Box','advance-fitness-gym'),
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-fitness-gym'),
+        'section' => 'advance_fitness_gym_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-fitness-gym'),
+            'Without Box' => __('Without Box','advance-fitness-gym'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('advance_fitness_gym_noresult_found',array(
 		'title'	=> __('No Result Found','advance-fitness-gym'),

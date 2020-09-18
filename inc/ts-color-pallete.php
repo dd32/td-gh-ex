@@ -329,6 +329,14 @@
 		$advance_fitness_gym_custom_css .='height: '.esc_html($advance_fitness_gym_slider_image_height).'px;';
 	$advance_fitness_gym_custom_css .='}';
 
+	// Display Blog Post 
+	$advance_fitness_gym_display_blog_page_post = get_theme_mod( 'advance_fitness_gym_display_blog_page_post','Without Box');
+    if($advance_fitness_gym_display_blog_page_post == 'In Box'){
+		$advance_fitness_gym_custom_css .='.page-box{';
+			$advance_fitness_gym_custom_css .='border: solid 1px #000; margin: 20px 0;';
+		$advance_fitness_gym_custom_css .='}';
+	}
+
 
 
 

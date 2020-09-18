@@ -96,19 +96,24 @@
             </div>
             <div class="col-lg-9 col-md-3 col-3 ">
               <div class="main-menu">
-                <div class="toggle-menu responsive-menu">
-                  <button role="tab" class="mobiletoggle" onclick="advance_fitness_gym_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-fitness-gym'); ?></span></button>
-                </div>
+                <?php 
+                  if(has_nav_menu('primary')){ ?>
+                  <div class="toggle-menu responsive-menu">
+                    <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-fitness-gym'); ?></span></button>
+                  </div>
+                <?php }?>
                 <div id="menu-sidebar" class="nav sidebar">
                   <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-fitness-gym' ); ?>">
                     <?php 
+                      if(has_nav_menu('primary')){
                       wp_nav_menu( array( 
                         'theme_location' => 'primary',
                         'container_class' => 'main-menu-navigation clearfix' ,
                         'menu_class' => 'clearfix',
-                        'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                        'fallback_cb' => 'wp_page_menu',
-                      ) ); 
+                          'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                          'fallback_cb' => 'wp_page_menu',
+                        ) );
+                      } 
                     ?>
                     <div id="contact-info">
                       <div class="contact">
@@ -137,7 +142,7 @@
                         <?php } ?>
                       </div>
                     </div>
-                    <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_fitness_gym_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-fitness-gym'); ?></span></a>
+                    <a href="javascript:void(0)" class="closebtn responsive-menu"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-fitness-gym'); ?></span></a>
                   </nav>
                 </div>
               </div>

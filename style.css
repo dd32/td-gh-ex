@@ -4,9 +4,9 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-fitness-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPress theme for gyms, fitness clubs, yoga classes, weight loss centres, personal trainers, aerobics classes, healthcare centres, spa, workout studios, zumba classes, physiotherapists, health consultants and all the fitness freaks who are on a mission to make people healthy and fit. This multipurpose theme has an inviting design to make people turn their heads towards your website at least once. The Bootstrap framework gives a strong base with responsive layout yielding a beautiful look on different sizes of mobiles, tablets and desktops. Facility for customization is provided right at your fingertips, through theme customizer, without requiring any coding knowledge. Advance Fitness Gym loads on all browsers and can be translated into numerous local and international languages. It is optimized for search engines and integrated with social media icons. It offers interactive features and animated transitions to make the site stand apart among others. With multiple layouts for header, footer and sidebars, you can style your website to suit your brand. It comes with thorough documentation that will let you make the most of your website irrespective of your skills. Demo: https://themeshopy.com/advance-fitness-gym-pro/
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.5.2
+Version: 0.5.3
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-fitness-gym
@@ -500,7 +500,6 @@ border-bottom: 1px solid #fff;
 }
 #menu-sidebar {
   text-align: left;
-  display: inline;
 }
 ul.list_nav {
   margin: 0 auto;
@@ -1677,6 +1676,9 @@ iframe{
   #slider .carousel-caption{
     top:34%;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (max-width:720px) {	
 	.contentbox{
@@ -1766,6 +1768,9 @@ iframe{
     left: 20% !important;
     right:20% !important;
   }
+  #slider img{
+    height: auto !important;
+  }
 }
 @media screen and (min-width:720px){
 	#footer input[type="submit"]{
@@ -1842,10 +1847,9 @@ iframe{
     padding-top: 60px;
     transition: 0.5s;
   }
-  .sidebar.display{
+  body.noscroll .sidebar{ 
+    width: 100%; 
     visibility: visible;
-    width: 100%;
-    transition: 0.5s;
   }
   .sidebar .closebtn {
     position: absolute;
@@ -1900,7 +1904,6 @@ iframe{
   }
   #menu-sidebar {
     text-align: center;
-    display: inline;
     background-image: linear-gradient(-90deg, #000 0%, #fe5e24 120% );
     opacity: 0.95;
   }
@@ -1933,6 +1936,7 @@ iframe{
   #menu-sidebar .primary-navigation a{
     font-size: 15px;
     font-weight: 600;
+    color: #fff;
   }
   #menu-sidebar .search-box i{
     color: #fff;
@@ -1973,7 +1977,6 @@ iframe{
   }
   #menu-sidebar #contact-info .mail, #menu-sidebar #contact-info .contact{
     color: #fff;
-    padding-bottom:15px;
     font-weight: 500;
     text-transform: lowercase;
   }
