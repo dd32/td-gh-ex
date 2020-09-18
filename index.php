@@ -50,15 +50,7 @@
  
 get_header(); ?>
 <?php if ( have_posts() ) : ?>
-	<header class="page-header">
-		<div class="ap-container">
-            <?php 
-                $blog_page_id = get_option('page_for_posts'); 
-                $blog_page = get_page($blog_page_id);
-            ?>
-            <h1 class="page-title"><?php echo esc_html($blog_page->post_title); ?></h1>
-        </div>
-	</header><!-- .page-header -->
+	
 <?php endif; ?>
 	<main id="main" class="site-main <?php echo esc_attr($content_class).' '.esc_attr($blog_display_class); ?>" role="main">
         <div class="ap-container">

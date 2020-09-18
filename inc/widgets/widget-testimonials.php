@@ -89,8 +89,8 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
                                 <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-testimonial-thumbnail.png'); ?>" />
                             <?php endif; ?>
                         </div>
-                        <span class="client-name"><?php echo esc_attr($client_name); ?></span>
-                        <span class="client-designation"><?php echo esc_attr($client_designation); ?></span>                            
+                        <span class="client-name"><?php echo esc_html($client_name); ?></span>
+                        <span class="client-designation"><?php echo esc_html($client_designation); ?></span>                            
                     </figure>
                     <div class="testimonial">
                         <?php echo esc_textarea($client_testimonial); ?>

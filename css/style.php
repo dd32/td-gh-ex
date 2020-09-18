@@ -10,7 +10,7 @@
             /*echo "<pre>";
             print_r($apbasic_settings);
             echo "</pre>";*/
-            $background_image = isset($apbasic_settings['background_image'])? $apbasic_settings['background_image'] : '';
+            $background_image = isset($apbasic_settings['background_image'])? $apbasic_settings['background_image'] : 'pattern0';
 	        $bg_img = get_template_directory_uri().'/inc/admin-panel/images/'.$background_image.'.png';
 
 	        if( $background_image == 'pattern0' ) {

@@ -93,7 +93,7 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
                     
                     <?php if(!empty($icon_title)) : ?>
                     <a href="<?php echo esc_url($icon_readmore_link); ?>">
-                    <h5 class="icon-block-title"><?php echo esc_attr($icon_title); ?></h5>
+                    <h5 class="icon-block-title"><?php echo esc_html($icon_title); ?></h5>
                     </a>
                     <?php endif; ?>
                     
@@ -103,7 +103,7 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
                     </div>
                     <?php endif; ?>
                     <?php if(!empty($icon_readmore_link) && !empty($icon_readmore_text)) : ?>
-                        <a class="icon_readmore-button readmore-button" href="<?php echo esc_url($icon_readmore_link); ?>" target="_blank"><?php echo esc_attr($icon_readmore_text); ?></a>
+                        <a class="icon_readmore-button readmore-button" href="<?php echo esc_url($icon_readmore_link); ?>" target="_blank"><?php echo esc_html($icon_readmore_text); ?></a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

@@ -25,8 +25,8 @@
 
 	<footer class="entry-footer">
         <span class="entry-footer-wrapper">
-            <span class="author user-wrapper"><i class="fa fa-user"></i><a href="<?php ?>"><?php echo esc_html(get_the_author_meta('display_name')); ?></a></span>
-            <span class="posted-date user-wrapper"><i class="fa fa-calendar"></i><a href="<?php ?>"><?php echo the_time('F y, j'); ?></a></span>
+            <span class="author user-wrapper"><i class="fa fa-user"></i><?php echo esc_html(get_the_author_meta('display_name')); ?></span>
+            <span class="posted-date user-wrapper"><i class="fa fa-calendar"></i><?php  the_time('F y, j'); ?></span>
             <?php if(has_category()) : ?>
                 <span class="category user-wrapper"><i class="fa fa-folder"></i><?php the_category(', '); ?></span>
             <?php endif; ?>

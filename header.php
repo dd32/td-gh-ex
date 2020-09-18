@@ -91,7 +91,7 @@
                             <div class="call-us"><?php dynamic_sidebar('apbasic_header_text'); ?></div>
                         <?php else : ?>
                             <?php if(!empty($header_text)) : ?>
-                                <div class="call-us"><?php echo esc_attr($header_text); ?></div>
+                                <div class="call-us"><?php echo esc_html($header_text); ?></div>
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php  
@@ -110,7 +110,7 @@
             
             <div class="menu-wrapper clearfix"> 
                 <div class="ap-container">
-                    <a class="menu-trigger"><span></span><span></span><span></span></a>   
+                    <button class="btn-transparent-toggle menu-trigger"><span></span><span></span><span></span></button>   
             		<nav id="site-navigation" class="main-navigation" role="navigation">
             			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'accesspress-basic' ); ?></button>
             			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
@@ -122,12 +122,12 @@
                         <i class="fa fa-search"></i>
                         <div class="ak-search">
                             <div class="close">&times;</div>
-                                 <form action="<?php echo esc_url(site_url()); ?>" class="search-form" method="get" role="search">
+                                 <form action="<?php echo esc_url(home_url()); ?>" class="search-form" method="get" role="search">
                                     <label>
                                         <span class="screen-reader-text"><?php esc_html_e('Search for:', 'accesspress-basic'); ?></span>
-                                        <input type="search" title="Search for:" name="s" value="" placeholder="<?php esc_html_e('Search content...', 'accesspress-basic'); ?>" class="search-field">
+                                        <input type="search" title="Search for:" name="s" value="" placeholder="<?php esc_attr_e('Search content...', 'accesspress-basic'); ?>" class="search-field">
                                     </label>
-                                    <input type="submit" value="<?php esc_html_e('Search', 'accesspress-basic'); ?>" class="search-submit">
+                                    <input type="submit" value="<?php esc_attr_e('Search', 'accesspress-basic'); ?>" class="search-submit">
                                  </form>
                          <div class="overlay-search"> </div> 
                         </div>

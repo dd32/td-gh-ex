@@ -102,7 +102,6 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
             echo wp_kses_post($before_widget);
             
             $args = array(
-                'posts_per_page' => -1,
                 'post_type' => 'page',
                 'post__in' => $feature_post,
                 'orderby' => 'post__in'
@@ -134,7 +133,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                             </figcaption>
                         </figure>
                         <a href="<?php the_permalink(); ?>">
-                            <h2><?php echo get_the_title(); ?></h2>
+                            <h2><?php the_title(); ?></h2>
                         </a>
                         <?php if($feature_text_length){ ?>
                         <div class="feature-post-excerpt">

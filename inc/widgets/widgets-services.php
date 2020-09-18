@@ -77,7 +77,6 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
             echo wp_kses_post($before_widget);
             
             $args = array(
-                'posts_per_page' => -1,
                 'post_type' => array('page'),
                 'post__in' => $service_posts,
                 'orderby' => 'post__in'
@@ -108,7 +107,7 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                         </figure>
                         <a href="<?php the_permalink(); ?>">
                         <h5 class="services-post-title">
-                            <?php echo get_the_title(); ?>
+                            <?php the_title(); ?>
                         </h5>
                         </a>
                         <div class="services-post-excerpt">

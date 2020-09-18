@@ -55,7 +55,7 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		case 'textarea' : ?>
 			<p>
 				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label>
-				<textarea class="widefat" rows="6" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>"><?php echo esc_attr($athm_field_value); ?></textarea>
+				<textarea class="widefat" rows="6" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>"><?php echo esc_html($athm_field_value); ?></textarea>
 			</p>
 			<?php
 			break;
@@ -187,11 +187,11 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
             ?>
             <div class="sub-option widget-upload">
             <label for="<?php echo esc_attr($instance->get_field_id($apbasic_widgets_name)); ?>"><?php esc_html($apbasic_widgets_title); ?></label><br/>
-            <input id="<?php echo esc_attr($id); ?>" class="upload <?php echo esc_attr($class); ?>" type="text" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_url($value); ?>" placeholder="<?php esc_html_e('No file chosen', 'accesspress-basic'); ?>" />
+            <input id="<?php echo esc_attr($id); ?>" class="upload <?php echo esc_attr($class); ?>" type="text" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_url($value); ?>" placeholder="<?php esc_attr_e('No file chosen', 'accesspress-basic'); ?>" />
             <?php
             if (function_exists('wp_enqueue_media')) {
         	?>
-                <input id="upload-<?php echo esc_attr($id); ?>" class="upload-button button" type="button" value="<?php esc_html_e('Upload', 'accesspress-basic'); ?>" />
+                <input id="upload-<?php echo esc_attr($id); ?>" class="upload-button button" type="button" value="<?php esc_attr_e('Upload', 'accesspress-basic'); ?>" />
             <?php
             } else {
         	?>

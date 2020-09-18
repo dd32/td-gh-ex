@@ -59,7 +59,7 @@
 		</div>
 		<div class="step-1-left">
 			<h3><?php echo esc_html__('Step 1 - Checkout starter sites (Demos) ', 'accesspress-basic'); ?></h3>
-			<p><?php /* translators: %s : Theme Name */ printf(esc_html__('%1$s now comes with a sites library with 6 starter sites to pick from. You can check theme out and decide which one to start with. However you can decide not to use any one of them and start building your site from scratch.', 'accesspress-basic'),$this->theme_name); ?></p>
+			<p><?php /* translators: %s : Theme Name */ printf(esc_html__('%1$s now comes with a sites library with 1 starter sites to pick from. You can check theme out and decide which one to start with. However you can decide not to use any one of them and start building your site from scratch.', 'accesspress-basic'),$this->theme_name); ?></p>
 			<a class="nav-tab demo_import button" href="<?php echo esc_url(admin_url('/themes.php?page=welcome-page#demo_import')); ?>"><?php echo esc_html__('See Demos', 'accesspress-basic'); ?></a>
 		</div>
 		

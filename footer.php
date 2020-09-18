@@ -46,17 +46,16 @@
 		<div class="site-info">
             <div class="ap-container clearfix">
                 <div class="copyright-info">
-                    <?php esc_html_e('Copyright','accesspress-basic'); ?> &copy; <?php the_date( 'Y' ); ?>
                         <?php 
                         if(!empty($apbasic_settings['footer_text'])){
                             echo esc_attr($apbasic_settings['footer_text']);                              
                         }else{
-                            echo bloginfo('name');
+                            printf(wp_kses_post('&copy; %1$s %2$s'), esc_html(date("Y")), esc_html(get_bloginfo('name')));
                         }
                         ?>
                     <span class="sep"> | </span>
-                        <?php esc_html_e( 'Theme: ', 'accesspress-basic' ); ?><a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-basic/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
-                        <?php esc_html_e( ' by AccessPress Themes', 'accesspress-basic' ); ?>
+                        <?php esc_html_e( 'WordPress Theme: ', 'accesspress-basic' ); ?><a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-basic/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
+                        
                 </div>
                 <?php if(is_active_sidebar('apbasic_footer_social_links')) : ?>
                 <div class="footer-socials">

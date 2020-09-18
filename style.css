@@ -4,7 +4,10 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-basic/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Description: AccessPress Basic is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Basic is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: https://accesspressthemes.com/accesspress-basic/
-Version: 3.1.9
+Version: 3.2.0
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.4.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-basic
@@ -85,7 +88,6 @@ td {
     font-style: inherit;
     font-weight: inherit;
     margin: 0;
-    outline: 0;
     padding: 0;
     vertical-align: baseline;
 }
@@ -163,10 +165,6 @@ q:after {
 blockquote,
 q {
     quotes: "" "";
-}
-
-a:focus {
-    outline: 0;
 }
 
 a:hover,
@@ -2966,3 +2964,8 @@ ul.wp-block-gallery.alignnone {
     }
 }
 
+.site-branding h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}

@@ -1,7 +1,20 @@
+=== AccessPress Basic ===
+
+Contributors: Access Keys
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.4.2
+Stable tag: 3.1.9
+Tags: left-sidebar, right-sidebar, custom-background, featured-images, full-width-template, rtl-language-support, theme-options, threaded-comments, translation-ready, e-commerce, news, blog
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-AccessPress Basic WordPress Theme, Copyright 2014 AccessPress Themes
-AccessPress Basic is distributed under the terms of the GNU GPL v3
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Accesspress Basic is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
 
 
 Install Steps:
@@ -34,25 +47,32 @@ Fonts
     https://www.google.com/fonts/specimen/Lato
 
 -------------------------------------------
-Images
-    http://pixabay.com/en/entrepreneur-start-start-up-career-696976/
-    http://pixabay.com/en/macbook-laptop-ipad-apple-computer-624707/
-    http://pixabay.com/en/office-flowers-apple-computer-605503/
-    http://pixabay.com/en/apple-pie-woman-holding-pie-fall-635241/
-    http://pixabay.com/en/woman-portrait-face-model-canon-659354/
-    http://pixabay.com/en/startup-business-businessman-594126/
-    http://pixabay.com/en/seo-search-engines-optimization-592747/
-    http://pixabay.com/en/border-collie-running-dog-playful-672633/
-    http://pixabay.com/en/church-tree-sky-landscape-692722/
-    http://pixabay.com/en/diary-calendar-filler-leave-time-684750/
-    http://pixabay.com/en/peach-fruit-nature-615125/
-    http://pixabay.com/en/border-collie-hybrid-playing-dogs-672770/
-    http://pixabay.com/en/children-win-success-video-game-593313/
-    http://pixabay.com/en/sunset-silhouette-landscape-plant-546370/
+== Screenshots ==
+
+Stocksnap Images
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://creativecommons.org/publicdomain/zero/1.0/
+
+
+
+    https://pxhere.com/en/photo/1430875
+
+    https://pxhere.com/en/photo/1456591
+    https://pxhere.com/en/photo/1456587
+    https://pxhere.com/en/photo/1456581
+
+
+All other icons & images are created by AccessPress Themes & licensed under CC0 Universal
+
    
 ---------------------------------------------
 
 == Changelog ==
+
+= 3.2.0 =
+** Minor bugs fixed and improvements
+
+
 = 3.1.9 =
 ** Added MetaData Show Hide Option for Single Post
 ** Added Post Categories Show Hide Option for Single Post

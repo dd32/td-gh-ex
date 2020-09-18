@@ -60,8 +60,7 @@ endif;
     function accesspress_basic_slidercb(){
         global $apbasic_options;
         $old_setting = get_option('apbasic_options', $apbasic_options);
-        // echo 'aa';
-        // var_dump($old_setting);
+       
         $apbasic_settings = wp_parse_args($old_setting, $apbasic_options);
 
         $mode = $apbasic_settings['slider_mode'];
@@ -80,20 +79,10 @@ endif;
                 );
             endif;
         endfor;
-        // echo '<pre>';
-        // print_r($slides);
-        // echo '</pre>';
+       
 
         ?>
-            <script type="text/javascript">
-                jQuery(document).ready(function ($){
-                    $("#apbasic-slider").bxSlider({
-                        pager: true,
-                        auto: true,
-                        mode: '<?php echo esc_attr($mode); ?>'
-                    });
-                });
-            </script>
+            
             <?php if(!empty($slides)) : ?>
                 <div id="apbasic-slider" class="<?php echo esc_attr($slider_type); ?>">
                     <?php $slide_id = 1; ?>

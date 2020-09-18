@@ -55,7 +55,8 @@ $('.menu-trigger').click(function(){
 
 });
 
-$('.main-navigation-responsive .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+//$('.main-navigation-responsive .menu-item-has-children').append('<button class="btn-transparent-toggle sub-toggle"> <i class="fa fa-angle-right"></i> </button>');
+$('<button class="btn-transparent-toggle sub-toggle"> <i class="fa fa-angle-right"></i> </button>').insertBefore('.main-navigation-responsive .menu-item-has-children ul');
 
 $('.main-navigation-responsive .sub-toggle').click(function() {
     $(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('slow');
@@ -70,5 +71,10 @@ $( window ).resize(function() {
 });
 
 
+$("#apbasic-slider").bxSlider({
+    pager: true,
+    auto: true,
+    mode: accesspress_basic_script.mode
+});
 
 });

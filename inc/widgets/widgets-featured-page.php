@@ -83,7 +83,7 @@ class Accesspress_Basic_Featured_Page_Widget extends WP_Widget {
                 <?php while($feat_page_query->have_posts()) : $feat_page_query->the_post(); ?> 
                 <div class="feat-page-wrap">
                     <?php if(!empty($feat_page_title)) : ?>
-                        <h2 class="feat-page-title"><?php echo esc_attr($feat_page_title); ?></h2>
+                        <h2 class="feat-page-title"><?php echo esc_html($feat_page_title); ?></h2>
                     <?php else : ?>
                         <h2 class="feat-page-title"><?php the_title(); ?></h2>
                     <?php endif; ?>
@@ -91,7 +91,7 @@ class Accesspress_Basic_Featured_Page_Widget extends WP_Widget {
                         <?php the_content(); ?>
                     </div>
                     <?php if(!empty($feat_readmore_text) && !(empty($feat_readmore_link))) : ?>
-                        <a class="button feat-page_readmore_btn" href="<?php echo esc_url($feat_readmore_link); ?>"><?php echo esc_attr($feat_readmore_text); ?></a>
+                        <a class="button feat-page_readmore_btn" href="<?php echo esc_url($feat_readmore_link); ?>"><?php echo esc_html($feat_readmore_text); ?></a>
                     <?php endif; ?>
                 </div>
                 <?php endwhile; ?>
