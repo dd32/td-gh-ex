@@ -384,16 +384,6 @@ if ( !function_exists( 'azuma_header_cart_update' ) ) {
 add_filter( 'woocommerce_add_to_cart_fragments', 'azuma_header_cart_update' );
 
 
-if ( !function_exists( 'azuma_yith_wishlist_icon' ) ) {
-	function azuma_yith_wishlist_icon() {
-		if ( class_exists( 'YITH_WCWL' ) ) {
-			echo do_shortcode( '[yith_wcwl_add_to_wishlist label="" product_added_text="" already_in_wishslist_text="" browse_wishlist_text=""]' );
-		}
-	}
-}
-add_action( 'woocommerce_after_shop_loop_item', 'azuma_yith_wishlist_icon', 9 );
-
-
 /**
  * Powered by WordPress
  */
@@ -1188,3 +1178,15 @@ if ( !function_exists( 'azuma_edd_settings_section' ) ) {
 	}
 }
 add_filter( 'edd_settings_sections', 'azuma_edd_settings_section' );
+
+
+/**
+ * Exclude images with 'no-lazy-load' CSS class from Jetpack lazy load
+ */
+if(!function_exists( 'azuma_exclude_class_from_lazy_load' )){
+	function azuma_exclude_class_from_lazy_load( $classes ) {
+		$classes[] = 'no-lazy-load';
+		return $classes;
+	}
+}
+add_filter( 'jetpack_lazy_images_blacklisted_classes', 'azuma_exclude_class_from_lazy_load', 999, 1 );
