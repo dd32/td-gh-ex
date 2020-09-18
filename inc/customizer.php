@@ -1004,6 +1004,41 @@ function advance_startup_customize_register($wp_customize) {
 	),
 	));
 
+	$wp_customize->add_setting( 'advance_startup_slider_speed_option',array(
+		'default' => 3000,
+		'sanitize_callback'    => 'advance_startup_sanitize_number_range',
+	));
+	$wp_customize->add_control( 'advance_startup_slider_speed_option',array(
+		'label' => esc_html__( 'Slider Speed Option','advance-startup' ),
+		'section' => 'advance_startup_slider',
+		'type'        => 'range',
+		'input_attrs' => array(
+			'min' => 1000,
+			'max' => 5000,
+			'step' => 500,
+		),
+	));
+
+	$wp_customize->add_setting('advance_startup_slider_image_height',array(
+		'default'=> __('550','advance-startup'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_startup_slider_image_height',array(
+		'label'	=> __('Slider Image Height','advance-startup'),
+		'section'=> 'advance_startup_slider',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_startup_slider_button',array(
+		'default'=> __('READ MORE','advance-startup'),
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_startup_slider_button',array(
+		'label'	=> __('Slider Button','advance-startup'),
+		'section'=> 'advance_startup_slider',
+		'type'=> 'text'
+	));
+
 	//We Provide
 	$wp_customize->add_section('advance_startup_category',array(
 		'title'	=> __('What We Provide Section','advance-startup'),
@@ -1257,6 +1292,20 @@ function advance_startup_customize_register($wp_customize) {
 		'section'     => 'advance_startup_blog_post',
 		'type'        => 'text',
 		'settings'    => 'advance_startup_metabox_separator_blog_post',
+	) );
+
+	$wp_customize->add_setting('advance_startup_display_blog_page_post',array(
+        'default' => __('Without Box','advance-startup'),
+        'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_startup_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-startup'),
+        'section' => 'advance_startup_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-startup'),
+            'Without Box' => __('Without Box','advance-startup'),
+        ),
 	) );
 
 	//no Result Found

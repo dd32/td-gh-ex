@@ -388,3 +388,27 @@
 		$advance_startup_custom_css .='font-size: '.esc_html($advance_startup_scroll_font_size_icon).'px;';
 	$advance_startup_custom_css .='}';
 
+	// Slider Height 
+	$advance_startup_slider_image_height = get_theme_mod('advance_startup_slider_image_height');
+	$advance_startup_custom_css .='#slider img{';
+		$advance_startup_custom_css .='height: '.esc_html($advance_startup_slider_image_height).'px;';
+	$advance_startup_custom_css .='}';
+
+	// primary menu 
+	if((has_nav_menu('primary')) != true){
+		$advance_startup_custom_css .='@media screen and (max-width:1000px) {';
+		$advance_startup_custom_css .='.main-menu{';
+			$advance_startup_custom_css .='display:none;';
+		$advance_startup_custom_css .='} }';
+	}
+
+	// Display Blog Post 
+	$advance_startup_display_blog_page_post = get_theme_mod( 'advance_startup_display_blog_page_post','Without Box');
+    if($advance_startup_display_blog_page_post == 'In Box'){
+		$advance_startup_custom_css .='.page-box{';
+			$advance_startup_custom_css .='border:solid 1px #262626; margin:20px 0;';
+		$advance_startup_custom_css .='}';
+	}
+
+
+

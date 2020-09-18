@@ -37,14 +37,14 @@
             <div class="col-lg-2 col-md-6 p-0 ">
               <div class="phone">
                 <?php if( get_theme_mod('advance_startup_phone1') != ''){ ?>
-                  <i class="fas fa-phone"></i><span><?php echo esc_html( get_theme_mod('advance_startup_phone1','' )); ?></span>
+                  <a href="tel:<?php echo esc_url( get_theme_mod('advance_startup_phone1','' )); ?>"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_startup_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_startup_phone1','' )); ?></span></a>
                 <?php } ?>
               </div> 
             </div>
             <div class="col-lg-3 col-md-6">
               <div class="mail">
                 <?php if( get_theme_mod('advance_startup_mail1') != ''){ ?>
-                  <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_startup_mail1','')); ?></span>
+                  <a href="mailto:<?php echo esc_url( get_theme_mod('advance_startup_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_startup_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_startup_mail1','')); ?></span></a>
                 <?php } ?>
               </div>  
             </div>

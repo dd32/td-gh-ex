@@ -15,7 +15,8 @@ input#_customize-input-logo_size,
 input#_customize-input-advance_startup_excerpt_number,
 input#_customize-input-advance_startup_wooproducts_border_radius,
 input#_customize-input-advance_startup_wooproducts_box_shadow,
-input#_customize-input-advance_startup_product_button_border_radius{
+input#_customize-input-advance_startup_product_button_border_radius, 
+input#_customize-input-advance_startup_slider_speed_option{
     width: 100%;
 }
 li#customize-control-logo_size {
