@@ -1231,6 +1231,20 @@ function advance_business_customize_register($wp_customize) {
 		'settings'    => 'advance_business_metabox_separator_blog_post',
 	) );
 
+	$wp_customize->add_setting('advance_business_display_blog_page_post',array(
+        'default' => __('Without Box','advance-business'),
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_display_blog_page_post',array(
+        'type' => 'radio',
+        'label' => __('Display Blog Page Post :','advance-business'),
+        'section' => 'advance_business_blog_post',
+        'choices' => array(
+            'In Box' => __('In Box','advance-business'),
+            'Without Box' => __('Without Box','advance-business'),
+        ),
+	) );
+
 	//no Result Found
 	$wp_customize->add_section('advance_business_noresult_found',array(
 		'title'	=> __('No Result Found','advance-business'),

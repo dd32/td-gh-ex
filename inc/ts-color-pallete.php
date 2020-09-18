@@ -348,5 +348,13 @@
 		$advance_business_custom_css .='height: '.esc_html($advance_business_slider_image_height).'px;';
 	$advance_business_custom_css .='}';
 
+	// Display Blog Post 
+	$advance_business_display_blog_page_post = get_theme_mod( 'advance_business_display_blog_page_post','Without Box');
+    if($advance_business_display_blog_page_post == 'In Box'){
+		$advance_business_custom_css .='.page-box{';
+			$advance_business_custom_css .='border: solid 1px #000; margin:20px 0;';
+		$advance_business_custom_css .='}';
+	}
+
 
 
