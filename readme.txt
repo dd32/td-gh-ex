@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.5.1
 Requires PHP: 5.6
-Stable tag: 2.0.32
-Version: 2.0.32
+Stable tag: 2.0.33
+Version: 2.0.33
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
@@ -117,6 +117,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 == Changelog ==
 
+@version 2.0.33
+* Readme Updated
+
 @version 2.0.32
 * Tested With WordPress 5.5.1
 
@@ -216,91 +219,3 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 @version 2.0
 * Code Improvement
-
-@version 1.9
-* Remove Unnecessary Style
-
-@version 1.8
-* Copyright Updated
-
-@version 1.7
-* Remove Unnecessary Style
-
-@version 1.6
-* Remove Unnecessary Style
-
-@version 1.5
-* Tested With WordPress 5.3.2
-
-@version 1.4
-* Remove Unnecessary Style
-
-@version 1.3
-* Code Improvement
-
-@version 1.2
-* Screenshot Updated
-
-@version 1.0.20
-* Tested With WordPress 5.3.1
-* Style Improvement
-
-@version 1.0.19
-* Add Upsale Button
-
-@version 1.0.18
-* Site Title Styled
-
-@version 1.0.17
-* Screenshot Changed
-
-@version 1.0.16
-* Screenshot Changed
-
-@version 1.0.15
-* Style Improvement
-
-@version 1.0.14
-* Subject Tags Updated
-
-@version 1.0.13
-* Resolve Escaping Issue
-
-@version 1.0.12
-* Theme Description Changed
-
-@version 1.0.11
-* Theme Description Changed
-
-@version 1.0.10
-* Remove Unnecessary Style
-
-@version 1.0.9
-* Tested With WordPress 5.3
-
-@version 1.0.8
-* Screenshot Updated
-
-@version 1.0.7
-* Screenshot Updated
-
-@version 1.0.6
-* Remove Unnecessary Style
-
-@version 1.0.5
-* Remove Unnecessary Style
-
-@version 1.0.4
-* Style Improvement
-
-@version 1.0.3
-* Theme URI Added
-
-@version 1.0.2
-* Theme Review Issues Resolved
-
-@version 1.0.1
-* Theme Review Issues Resolved
-
-@version 1.0
-* Initial release
