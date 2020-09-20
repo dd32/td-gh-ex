@@ -72,7 +72,7 @@ function ashe_about_page_output() {
 				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'ashe' ); ?>
+						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recommended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'ashe' ); ?>
 					</p>
 
 					<?php if ( is_plugin_active( 'ashe-extra/ashe-extra.php' ) ) : ?>
@@ -371,7 +371,7 @@ function ashe_about_page_output() {
 					<p>
 						<?php esc_html_e( 'The best way to customize Ashe Theme code.', 'ashe' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-childtheme/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'ashe' ); ?></a>
 					</p>
 				</div>
 
