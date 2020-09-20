@@ -77,7 +77,7 @@ function bard_about_page_output() {
 				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Demo Content', 'bard' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'bard' ); ?>
+						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recommended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'bard' ); ?>
 					</p>
 
 					<?php if ( is_plugin_active( 'bard-extra/bard-extra.php' ) ) : ?>
@@ -371,7 +371,7 @@ function bard_about_page_output() {
 					<p>
 						<?php esc_html_e( 'The best way to customize Bard Theme code.', 'bard' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'bard' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-childtheme/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'bard' ); ?></a>
 					</p>
 				</div>
 
