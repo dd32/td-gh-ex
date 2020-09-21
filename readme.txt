@@ -2,8 +2,8 @@
 Contributors: crestaproject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.5
-Tested up to: 5.4
-Stable tag: 1.2.8
+Tested up to: 5.5
+Stable tag: 1.2.9
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,10 @@ License: Pxhere.com CC0 license https://creativecommons.org/publicdomain/zero/1.
 Image Source: https://pxhere.com/en/photo/1565417
 
 == Changelog ==
+
+= Version 1.2.9 =
+* Fixed a visual bug with anchors in the menu
+* Updated FontAwesome to 5.14.0 version
 
 = Version 1.2.8 =
 * Improved logo on scroll

@@ -142,13 +142,15 @@
 					$('html, body').animate({
 					  scrollTop: target.offset().top - 60
 					}, 1000);
-					if ($('body').hasClass('mobile_menu_pushmenu')) {
-						$('.attesa-main-menu-container, .opacityMenu').removeClass('menuOpen');
-					} else if ($('body').hasClass('mobile_menu_dropdown')) {
-						$('.attesa-main-menu-container').hide('fast');
-					} else {
-						$('.attesa-main-menu-full-screen, body').removeClass('yesOpenPopupMenu');
-						$('html').removeClass('overflowpopup');
+					if (mobileDetect) {
+						if ($('body').hasClass('mobile_menu_pushmenu')) {
+							$('.attesa-main-menu-container, .opacityMenu').removeClass('menuOpen');
+						} else if ($('body').hasClass('mobile_menu_dropdown')) {
+							$('.attesa-main-menu-container').hide('fast');
+						} else {
+							$('.attesa-main-menu-full-screen, body').removeClass('yesOpenPopupMenu');
+							$('html').removeClass('overflowpopup');
+						}
 					}
 					return false;
 				  }
