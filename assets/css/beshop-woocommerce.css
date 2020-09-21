@@ -234,7 +234,7 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
     min-height: 50px;
 }
 .bbasket-right .beshoping-bag {
-    right: 50px;
+    right: 90px;
 }
 .bbasket-left .beshoping-bag {
     left: 50px;
@@ -335,12 +335,21 @@ a.added_to_cart.wc-forward {
     margin-top: 0;
     padding: 15px;
 }
+.single-product .product {
+    display: inline-block;
+}
+.single-product .shop-sidebar {
+    margin-top: 0;
+}
 .woocommerce-product-gallery .flex-viewport {
     cursor: move;
 }
 .product_meta {
     display: flex;
     flex-direction: column;
+    font-size: 13px;
+}
+.be-boost-share span {
     font-size: 13px;
 }
 .theme-beshop.woocommerce div.product div.summary {
@@ -621,7 +630,7 @@ button.button,
     .beshoping-bag {
         position: fixed;
         left: 2px;
-        right: inherit;
+        right: inherit !important;
         bottom: 10px;
         padding: 10px;
         min-width: 30px;

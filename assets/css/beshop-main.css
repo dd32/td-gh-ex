@@ -294,7 +294,10 @@ form.post-password-form p {
 .site-main .post-navigation {
     background: #E0ECDE;
 }
-
+.theme-beshop a#clickTop {
+    bottom: 85px;
+    right: 10px;
+}
 
 @media screen and (max-width: 992px) {
     .bshop-list-flex, 
@@ -319,9 +322,34 @@ form.post-password-form p {
     .beshop-btext {
         margin-left: 0;
     }
-    .main-navigation ul> li.befocus.menushow> ul.sub-menu,
-    .main-navigation ul> li.befocus.menushow> ul.children{
-        display: none !important;
+
+    ul#btop-menu {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    .beshop-tophead {
+        text-align: center;
+    }
+    .header-top-search {
+        width: 200px;
+        margin: auto;
+    }
+    .beshop-tophead .col-md-auto {
+        margin: 0 0 6px 0;
+    }
+    
+
+
+}
+
+@media only screen and (max-width: 767px) {
+    .headerlogo-text .container.pb-5.pt-5 {
+        padding: 5px 0 !important;
+    }
+    .theme-beshop a#clickTop {
+        bottom: 20px;
+        right: 10px;
     }
 
 }

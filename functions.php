@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.7' );
+	define( 'BESHOP_VERSION', '1.0.8' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :

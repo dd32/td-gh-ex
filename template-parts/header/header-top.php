@@ -17,12 +17,12 @@ $beshop_topbar_search = get_theme_mod( 'beshop_topbar_search',1 );
 	<div class="container">
 		<div class="row">
 		<?php if($beshop_topbar_mtext): ?>
-			<div class="col-lg-auto">
+			<div class="col-md-auto">
 				<span class="bhtop-text pt-2"><?php echo esc_html($beshop_topbar_mtext); ?></span>
 			</div>
 		<?php endif; ?>
 		<?php if($beshop_topbar_menushow && has_nav_menu( 'btop-menu' )): ?>
-			<div class="col-lg-auto ml-auto">
+			<div class="col-md-auto ml-auto">
 				<div class="top-menu list-hide text-white">
 					<?php 
 						wp_nav_menu(
@@ -38,7 +38,7 @@ $beshop_topbar_search = get_theme_mod( 'beshop_topbar_search',1 );
 			</div>
 			<?php endif; ?>
 		<?php if($beshop_topbar_search): ?>
-			<div class="col-lg-auto <?php if(empty($beshop_topbar_menushow) || !has_nav_menu( 'btop-menu' )): ?>ml-auto<?php endif; ?>">
+			<div class="col-md-auto ml-md-auto <?php if(empty($beshop_topbar_menushow) || !has_nav_menu( 'btop-menu' )): ?>ml-auto<?php endif; ?>">
 				<div class="header-top-search">
 					<?php get_search_form(); ?>
 				</div>

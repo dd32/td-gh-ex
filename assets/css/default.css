@@ -664,6 +664,17 @@ textarea {
     height: auto;
     min-height: 250px
 }
+.site-branding.has-himg.behimg-auto .beshop-header-img,
+.site-branding.has-himg.behimg-auto .beshop-header-img img {
+    min-height: auto;
+}
+@media screen and (max-width: 992px) {
+	.site-branding.has-himg.behimg-amobile .beshop-header-img,
+	.site-branding.has-himg.behimg-amobile .beshop-header-img img {
+	    min-height: auto;
+	}
+
+}
 .site-branding.has-himg.bshop-two-logo .beshop-header-img {
     min-height: 420px;
     max-height: 1000px;
@@ -923,8 +934,10 @@ button.mini-toggle {
 	}
 	.main-navigation ul> ul> ul,
 	.main-navigation ul> li.menushow> ul.sub-menu,
-	.main-navigation ul> li.befocus> ul.sub-menu,
-	.main-navigation ul> li.befocus> ul.children,
+	.main-navigation ul> li.befocus.menushow> ul.sub-menu,
+	.main-navigation ul> li.befocus.menushow> ul.children,
+	.main-navigation ul> li.menuhide.befocus> ul.sub-menu,
+	.main-navigation ul> li.menuhide.befocus> ul.children,
 	.main-navigation ul> li.menushow> ul.children {
     	display: block !important;
     	max-height: 10000px;

@@ -6,7 +6,7 @@
  */
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * Add postMessage support for site title and description for the Theme Customizer. 
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -137,6 +137,30 @@ function beshop_customize_register( $wp_customize ) {
 			)
 		)
 	); // topbar section end
+    /*header image height*/
+
+            /*
+      * Logo position 
+       */
+    $wp_customize->add_setting('beshop_himg_height', array(
+        'default'        => 'fixed',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+      //  'priority'       => 20,
+    ));
+    $wp_customize->add_control('beshop_himg_height', array(
+        'label'      => __('Header image height', 'beshop'),
+        'section'    => 'header_image',
+        'settings'   => 'beshop_himg_height',
+        'type'       => 'select',
+        'choices'    => array(
+            'fixed' => __('Fixed Height', 'beshop'),
+            'auto' => __('Auto Height', 'beshop'),
+            'amobile' => __('Auto height only small devices', 'beshop'),
+        ),
+    ));
 
     //logo width
 	$wp_customize->add_setting('beshop_logo_width', array(

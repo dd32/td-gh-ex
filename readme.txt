@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5.1
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -75,6 +75,12 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.8 - September 21 2020 =
+* Fixed Shoping Bag Posoition
+* Added options for header image height
+* Added responsive code for header top aria
+* Added more css code for menu responsive
 
 = 1.0.7 - September 17 2020 =
 * Added extra layout for single product layout
