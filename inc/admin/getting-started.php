@@ -209,8 +209,8 @@ class arilewp_screen {
 		?>			
 		<div class="updated notice is-dismissible arilewp-notice">
 			<h1><?php
-			$theme_info = wp_get_theme();
-			printf( esc_html__('Congratulations, Welcome to %1$s Theme', 'arilewp'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+			$arilewp_theme_info = wp_get_theme();
+			printf( esc_html__('Congratulations, Welcome to %1$s Theme', 'arilewp'), esc_html( $arilewp_theme_info->Name ), esc_html( $arilewp_theme_info->Version ) ); ?>
 			</h1>
 			<p><?php echo sprintf( esc_html__("Thank you for choosing ArileWP theme. To take full advantage of the complete features of the theme, you have to go to our %1\$s welcome page %2\$s.", "arilewp"), '<a href="' . esc_url( admin_url( 'themes.php?page=arilewp-getting-started' ) ) . '">', '</a>' ); ?></p>
 			
