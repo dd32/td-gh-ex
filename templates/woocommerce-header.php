@@ -17,10 +17,10 @@
             <?php
 				endif;
 	
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) :
+				$agency_starter_description = get_bloginfo( 'description', 'display' );
+				if ( $agency_starter_description || is_customize_preview() ) :
 					?>
-            <p class="site-description"><?php echo esc_html($description); ?></p>
+            <p class="site-description"><?php echo esc_html($agency_starter_description); ?></p>
             <?php endif; ?>
           </div>
         </div>
@@ -50,13 +50,13 @@
 									'title_li'     => '',
 									'hide_empty'   => 1,
 								);
-								$categories = get_categories( $args);
-								foreach ( $categories as $category ) {
-									$option = '<option value="' . esc_attr( $category->category_nicename ) . '">';
-									$option .= esc_html( $category->cat_name );
-									$option .= ' (' . absint( $category->category_count ) . ')';
-									$option .= '</option>';
-									echo ($option); 
+								$agency_starter_categories = get_categories( $args);
+								foreach ( $agency_starter_categories as $agency_starter_category ) {
+									$agency_starter_option = '<option value="' . esc_attr( $agency_starter_category->category_nicename ) . '">';
+									$agency_starter_option .= esc_html( $agency_starter_category->cat_name );
+									$agency_starter_option .= ' (' . absint( $agency_starter_category->category_count ) . ')';
+									$agency_starter_option .= '</option>';
+									echo ($agency_starter_option); 
 								}
 								?>
               </select>

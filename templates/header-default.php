@@ -8,10 +8,10 @@
 			<?php
 		endif;
 
-		$description = get_bloginfo( 'description', 'display' );
-		if ( $description || is_customize_preview() ) :
+		$agency_starter_description = get_bloginfo( 'description', 'display' );
+		if ( $agency_starter_description || is_customize_preview() ) :
 			?>
-			<p class="site-description"><?php echo esc_html($description); ?></p>
+			<p class="site-description"><?php echo esc_html($agency_starter_description); ?></p>
 		<?php endif; ?>
 		</div>
 	</div><!-- .site-branding -->

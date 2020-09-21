@@ -165,7 +165,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 	
-	$wp_customize->add_control( new Agency_Lite_Label( 
+	$wp_customize->add_control( new Agency_Starter_Label( 
 	$wp_customize, 
 	'header_image_label', 
 		array(
@@ -222,7 +222,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	
 	//0
 	$wp_customize->add_setting('hero_border' , array(
-		'default'    => 1,
+		'default'    => 0,
 		'sanitize_callback' => 'absint',
 	));
 	
@@ -594,7 +594,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	));
 
 	$wp_customize->add_control('box_layout_mode' , array(
-		'label' => __('Set Box Layout mode','agency-starter' ),
+		'label' => __('Enable | Disable Site Box Layout','agency-starter' ),
 		'section' => 'layout_section',
 		'type'=> 'checkbox',
 	));
@@ -849,7 +849,7 @@ function agency_starter_sanitize_phone_number( $phone ) {
 
 /* Label custom control */
 if( class_exists( 'WP_Customize_Control' ) ):
-class Agency_Lite_Label extends WP_Customize_Control {
+class Agency_Starter_Label extends WP_Customize_Control {
   /**
   * Render the control's content.
   */

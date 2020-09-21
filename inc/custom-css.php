@@ -31,7 +31,7 @@ function agency_starter_get_theme_css( ) {
 	$colors['header_text_color'] = get_theme_mod('header_text_color', '#333333');
 	$colors['header_contact_bg_color'] = get_theme_mod('header_contact_social_bg_color', '#0c73ce');
 	
-	$hero_border = get_theme_mod('hero_border', 1);
+	$hero_border = get_theme_mod('hero_border', 0);
 	
 	$footer_bg_color = get_theme_mod('footer_bg_color', '#fff');
 	
