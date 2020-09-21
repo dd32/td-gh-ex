@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php do_action( 'aagaz_startup_page_header' ); ?>
 	<main id="main" role="main">	
-		<div class="container">
+		<div class="container pages-te">
 			<?php
 				while ( have_posts() ) : the_post();?>
 		            <?php the_post_thumbnail(); ?>

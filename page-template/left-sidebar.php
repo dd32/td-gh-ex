@@ -13,7 +13,7 @@ get_header(); ?>
             <div id="sidebox" class="col-lg-4 col-md-4">
                 <?php dynamic_sidebar('sidebox-2'); ?>
             </div>
-    		<div class="col-lg-8 col-md-8" id="main-content">
+    		<div class="background-img-skin col-lg-8 col-md-8" id="main-content">
     			<?php while ( have_posts() ) : the_post(); ?>	
                     <h1><?php the_title(); ?></h1>
                     <?php the_post_thumbnail(); ?>

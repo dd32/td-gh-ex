@@ -2,10 +2,10 @@
 Contributors: ThemesEye
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, IT companies, web development agencies, digital marketing agencies, business startups, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas.
 
@@ -141,6 +141,16 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Added background option for footer widget.
   * Added image option for footer widget.
   * Done with clickable Phone no and email id.
+  * Updated arabic, spanish, german, chinese and french languages POT file.
+
+= 0.5.2 =
+  * Added navigation menu font size option.
+  * Added navigation menu text transform option.
+  * Added navigation menu font weight option.
+  * Added site title font size. 
+  * Changed license version.
+  * Resolved responsive slider css errors.
+  * Added background skin options.
   * Updated arabic, spanish, german, chinese and french languages POT file.
 
 == Resources ==

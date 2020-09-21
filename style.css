@@ -4,11 +4,11 @@ Theme URI: https://www.themeseye.com/wordpress/free-startup-wordpress-theme/
 Author: ThemesEye
 Author URI: https://www.themeseye.com/
 Description: Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, IT companies, web development agencies, digital marketing agencies, business startups, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen and can translate into Arabic, Chinese, French, German and Spanish languages. The theme offers multiple options in most of the elements be it header and footer layout, menu style, blog formats or gallery layout. Demo: https://themeseye.com/demo/aagaz-startup-pro/
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.5.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 0.5.2
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aagaz-startup
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 */
@@ -1281,6 +1281,15 @@ button.woocommerce-button.button.woocommerce-form-login__submit{
 .woocommerce form.woocommerce-product-search button{
 	width: 100%;
 }
+form.woocommerce-product-search label{
+	width: auto;
+}
+.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme{
+	display: block;
+}
+.woocommerce .col-1, .woocommerce .col-2 {
+	max-width: 100%;
+}
 .site-footer ul.product_list_widget li,
 .site-footer .widget_rating_filter ul li,
 #sidebox ul.product_list_widget li{
@@ -1965,7 +1974,9 @@ body:not(.aagaz-startup-front-page) .entry-header {
 	color: #666;
 	font-size: 13px;
 }
-.text a, .comment-body p a, .woocommerce-product-details__short-description p a, .woocommerce-tabs.wc-tabs-wrapper p a{
+.text a, .comment-body p a, 
+.woocommerce-product-details__short-description p a, 
+.woocommerce-tabs.wc-tabs-wrapper p a{
 	text-decoration: underline; 
 }
 
@@ -2898,6 +2909,12 @@ p > object:only-child {
 	.search-body{
 		margin: 20px 0;
 	}
+	.main-header .row{
+		margin: 0;
+	}
+	#slider img{
+		height: auto !important;
+	}
 }
 @media screen and (min-width: 20em) {
 	.site-header .site-title {
@@ -3144,7 +3161,6 @@ p > object:only-child {
 	}
 	.main-navigation a {
 		padding: 15px;
-	    text-transform: capitalize;
 	    color: #323c47;
 	    font-weight: 600;
 	    font-size: 14px;
@@ -3609,6 +3625,7 @@ p > object:only-child {
 	}
 	.main-navigation a{
 		padding: 10px 15px;
+		text-transform: uppercase;
 	}
 	#slider .inner_carousel p{
 		font-size: 12px;
@@ -3652,6 +3669,9 @@ p > object:only-child {
 		right: 0;
 		top: 33%;
 	}
+	#slider img{
+		height: auto !important;
+	}
 }
 @media screen and (min-width: 320px) and (max-width: 767px){
 	.site-info{
@@ -3677,5 +3697,8 @@ p > object:only-child {
 	}
 	.readbutton a{
 		font-size: 12px;
+	}
+	#slider img{
+		height: auto !important;
 	}
 }

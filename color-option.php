@@ -434,4 +434,44 @@
 		$aagaz_startup_custom_css .='}';
 	}
 
+	/*------------- Navigation Menu Font Size ------------------*/
+	$aagaz_startup_navigation_menu_font_size = get_theme_mod('aagaz_startup_navigation_menu_font_size');{
+		$aagaz_startup_custom_css .='.main-navigation a, .navigation-top a{';
+			$aagaz_startup_custom_css .='font-size: '.esc_html($aagaz_startup_navigation_menu_font_size).'px;';
+		$aagaz_startup_custom_css .='}';
+	}
+
+	$aagaz_startup_theme_lay = get_theme_mod( 'aagaz_startup_menu_text_tranform','Default');
+	if($aagaz_startup_theme_lay == 'Uppercase'){
+		$aagaz_startup_custom_css .='.main-navigation a, .navigation-top a,.main-navigation ul ul a{';
+			$aagaz_startup_custom_css .='text-transform:Uppercase;';
+		$aagaz_startup_custom_css .='}';
+	}
+
+	$aagaz_startup_theme_lay = get_theme_mod( 'aagaz_startup_menu_font_weight','Default');
+	if($aagaz_startup_theme_lay == 'Normal'){
+		$aagaz_startup_custom_css .='.main-navigation a, .navigation-top a{';
+			$aagaz_startup_custom_css .='font-weight: normal;';
+		$aagaz_startup_custom_css .='}';
+	}
+
+	// site title font size option
+	$aagaz_startup_site_title_font_size = get_theme_mod('aagaz_startup_site_title_font_size', 24);{
+	$aagaz_startup_custom_css .='.logo h1, .site-title a{';
+	$aagaz_startup_custom_css .='font-size: '.esc_html($aagaz_startup_site_title_font_size).'px;';
+		$aagaz_startup_custom_css .='}';
+	}
+
+	/*------------------ Background Skin Option  -------------------*/
+	$aagaz_startup_theme_lay = get_theme_mod( 'aagaz_startup_background_image_type','Transparent');
+    if($aagaz_startup_theme_lay == 'Background'){
+		$aagaz_startup_custom_css .='.blogger, #sidebox .widget, #about, .related-posts .page-box, .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .background-img-skin, .pages-te, .woocommerce .woocommerce-ordering{';
+			$aagaz_startup_custom_css .='background-color: #fff;';
+		$aagaz_startup_custom_css .='}';
+	}else if($aagaz_startup_theme_lay == 'Transparent'){
+		$aagaz_startup_custom_css .='{';
+			$aagaz_startup_custom_css .='background-color: transparent;';
+		$aagaz_startup_custom_css .='}';
+	}
+
 

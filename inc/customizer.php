@@ -428,6 +428,21 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'type'	=> 'text'
 	));
 
+	// background skin mode
+	$wp_customize->add_setting('aagaz_startup_background_image_type',array(
+        'default' => __('Transparent','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('aagaz_startup_background_image_type',array(
+        'type' => 'radio',
+        'label' => __('Background Skin Mode','aagaz-startup'),
+        'section' => 'background_image',
+        'choices' => array(
+            'Transparent' => __('Transparent','aagaz-startup'),
+            'Background' => __('Background','aagaz-startup'),
+        ),
+	) );
+
 	// Add the Theme Color Option section.
 	$wp_customize->add_section( 'aagaz_startup_theme_color_option', array( 
 		'panel' => 'aagaz_startup_panel_id', 
@@ -861,6 +876,56 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'setting'	=> 'aagaz_startup_youtube_url',
 		'type'	=> 'url'
 	));
+
+	// navigation menu 
+	$wp_customize->add_section( 'aagaz_startup_navigation_menu' , array(
+    	'title'      => __( 'Navigation Menus Settings', 'aagaz-startup' ),
+		'priority'   => null,
+		'panel' => 'aagaz_startup_panel_id'
+	) );
+
+	$wp_customize->add_setting('aagaz_startup_navigation_menu_font_size',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'aagaz_startup_sanitize_float',
+	));
+	$wp_customize->add_control('aagaz_startup_navigation_menu_font_size',array(
+		'label'	=> __('Navigation Menus Font Size ','aagaz-startup'),
+		'section'=> 'aagaz_startup_navigation_menu',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('aagaz_startup_menu_text_tranform',array(
+        'default' => __('Default','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+    ));
+    $wp_customize->add_control('aagaz_startup_menu_text_tranform',array(
+        'type' => 'radio',
+        'label' => __('Navigation Menus Text Transform','aagaz-startup'),
+        'section' => 'aagaz_startup_navigation_menu',
+        'choices' => array(
+            'Default' => __('Default','aagaz-startup'),
+            'Uppercase' => __('Uppercase','aagaz-startup'),
+        ),
+	) );
+
+	$wp_customize->add_setting('aagaz_startup_menu_font_weight',array(
+        'default' => __('Default','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+    ));
+    $wp_customize->add_control('aagaz_startup_menu_font_weight',array(
+        'type' => 'radio',
+        'label' => __('Navigation Menus Font Weight','aagaz-startup'),
+        'section' => 'aagaz_startup_navigation_menu',
+        'choices' => array(
+            'Default' => __('Default','aagaz-startup'),
+            'Normal' => __('Normal','aagaz-startup'),
+        ),
+	) );
 
 	//home page slider
 	$wp_customize->add_section( 'aagaz_startup_slider' , array(

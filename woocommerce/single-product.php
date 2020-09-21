@@ -25,7 +25,7 @@ get_header( 'shop' ); ?>
 <div class="container">
 	<main id="main" role="main">
 		<div class="row">
-			<div class="col-lg-8 col-md-8">
+			<div class="col-lg-8 col-md-8 background-img-skin">
 				<?php
 					/**
 					 * woocommerce_before_main_content hook.

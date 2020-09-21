@@ -10,7 +10,7 @@ get_header(); ?>
 <div class="container">
     <main id="main" role="main" class="wrapper">
         <div class="row">
-    		<div class="col-lg-8 col-md-8" id="main-content">
+    		<div class="background-img-skin col-lg-8 col-md-8" id="main-content">
     			<?php while ( have_posts() ) : the_post(); ?>	
                     <h1><?php the_title(); ?></h1>
                     <?php the_post_thumbnail(); ?>

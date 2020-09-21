@@ -42,6 +42,22 @@ function aagaz_startup_logo_customize_register( $wp_customize ) {
        'section' => 'title_tagline'
     ));
 
+    $wp_customize->add_setting('aagaz_startup_site_title_font_size',array(
+		'default'	=> 24,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_site_title_font_size',array(
+		'label'	=> __('Logo Site Title Font Size','aagaz-startup'),
+		'section'	=> 'title_tagline',
+		'setting'	=> 'aagaz_startup_site_title_font_size',
+		'type'	=> 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	));
+
     $wp_customize->add_setting('aagaz_startup_show_tagline',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
