@@ -13,7 +13,7 @@
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="featured-img-box">
 			<a href="<?php the_permalink() ?>" class="featured-thumbnail" rel="bookmark">
-				<?php esc_html(the_post_thumbnail('medium_large')); ?> 
+				<?php the_post_thumbnail('medium_large'); ?> 
 			</a>
 			<?php else : ?>
 				<div class="no-featured-img-box">
@@ -36,7 +36,7 @@
 											<?php if ( get_theme_mod( 'toggle_about_the_author' ) == 'hideauthor' ) : ?>
 												<?php else : ?>
 												<span class="about-the-author-byline">
-													<?php echo esc_html_e('by', 'affiliates-bloglet');  ?> <?php echo get_the_author(); ?>
+													<?php esc_html_e('by', 'affiliates-bloglet');  ?> <?php esc_html_e (get_the_author()); ?>
 												</span> 
 											<?php endif; ?>
 										</div>
@@ -63,6 +63,6 @@
 
 			</div>
 		<a href="<?php the_permalink() ?>" class="read-more-btn">
-				<?php echo esc_html_e('Read More', 'affiliates-bloglet');  ?> <span> &rarr;</span>
+				<?php esc_html_e('Read More', 'affiliates-bloglet');  ?> <span> &rarr;</span>
 			</a>
 		</article><!-- #post-<?php the_ID(); ?> -->

@@ -74,7 +74,7 @@ function affiliates_bloglet_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'toggle_about_the_author', array(
 		'title'      => __('Toggle About The Author','affiliates-bloglet'),
-		'description'      => __('Show or hide "Written by Author" on blog feed and posts.'),
+		'description'      => __('Show or hide "Written by Author" on blog feed and posts.', 'affiliates-bloglet'),
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 	) );
