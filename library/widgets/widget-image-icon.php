@@ -7,7 +7,8 @@
 class Bavotasan_Custom_Text_Widget extends WP_Widget {
 	function __construct() {
 		$widget_ops = array( 'classname' => 'bavotasan_custom_text_widget', 'description' => __( 'Custom Text Widget with Icon', 'arcade-basic' ) );
-		parent::__construct( 'bavotasan_custom_text_widget', '(' . BAVOTASAN_THEME_NAME . ') ' . __( 'Icon & Text', 'arcade-basic' ), $widget_ops );
+		$control_ops = array('width' => 400, 'height' => 350);
+		parent::__construct( 'bavotasan_custom_text_widget', '(' . BAVOTASAN_THEME_NAME . ') ' . __( 'Icon & Text', 'arcade-basic' ), $widget_ops, $control_ops );
 
 		add_action( 'sidebar_admin_setup', array( $this, 'admin_setup' ) );
 	}
@@ -16,7 +17,7 @@ class Bavotasan_Custom_Text_Widget extends WP_Widget {
 		wp_enqueue_script( 'bavotasan_image_widget', BAVOTASAN_THEME_URL . '/library/js/admin/image-widget.js', array( 'jquery' ), '', true );
 
 		wp_enqueue_style( 'bavotasan_image_widget_css', BAVOTASAN_THEME_URL . '/library/css/admin/image-widget.css' );
-		wp_enqueue_style( 'font-awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.7.0', 'all' );
+		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.3.0', 'all' );
 	}
 
 	function widget( $args, $instance ) {
@@ -117,7 +118,6 @@ class Bavotasan_Custom_Text_Widget extends WP_Widget {
 		?>
 		</select></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text:', 'arcade-basic' ); ?></label>
 		<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea( $text ); ?></textarea>
 
 		<p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked( isset( $filter ) ? $filter : 0 ); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( 'Automatically add paragraphs', 'arcade-basic' ); ?></label></p>

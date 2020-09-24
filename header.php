@@ -14,6 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!--[if IE]><script src="<?php echo BAVOTASAN_THEME_URL; ?>/library/js/html5.js"></script><![endif]-->
 	<?php wp_head(); ?>
 </head>
 <?php
@@ -21,7 +22,7 @@ $bavotasan_theme_options = bavotasan_theme_options();
 $space_class = '';
 ?>
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>
 	<div id="page">
 
 		<header id="header">
@@ -67,9 +68,8 @@ $space_class = '';
 						 * You can overwrite the defeault 'See More' text by defining the 'BAVOTASAN_SEE_MORE'
 						 * constant in your child theme's function.php file.
 						 */
-						if ( ! defined( 'BAVOTASAN_SEE_MORE' ) ) {
+						if ( ! defined( 'BAVOTASAN_SEE_MORE' ) )
 							define( 'BAVOTASAN_SEE_MORE', __( 'See More', 'arcade-basic' ) );
-						}
 						?>
     					<a href="#" id="more-site" class="btn btn-default btn-lg"><?php echo BAVOTASAN_SEE_MORE; ?></a>
     				</div>

@@ -1,7 +1,7 @@
 = Arcade Basic =
 
 * Created by Themes by bavotasan.com - http://themes.bavotasan.com/
-* Built by c.bavota http://bavotasan.com/
+* Built by bandicootmarketing http://bavotasan.com/
 
 == ABOUT ARCADE BASIC ==
 
@@ -29,77 +29,39 @@ The free version of Arcade does not include the following features:
 * Social menu
 * Shortcodes
 
-== COPYRIGHT ==
+== LICENSES ==
 
-Arcade Basic WordPress Theme, Copyright 2016 Bavotasan Web Development Inc.
-Arcade Basic is distributed under the terms of the GNU GPL
+Bootstrap - http://getbootstrap.com/
+License: [[http://www.apache.org/licenses/LICENSE-2.0|Apache License v2.0]]
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+SASS - http://sass-lang.com/
+License: [[http://opensource.org/licenses/MIT|MIT]]
+Copyright: Hampton Catlin, Nathan Weizenbaum
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+fillsize.js - http://github.com/rstacruz/jquery-stuff/tree/master/fillsize
+License: [[http://opensource.org/licenses/MIT|MIT]]
+Copyright: Rico Sta. Cruz
 
-Arcade Basic Theme bundles the following third-party resources:
+Arctext - https://github.com/codrops/Arctext
+License: [[http://opensource.org/licenses/MIT|MIT]]
+Copyright: Pedro Botelho / Codrops
 
-Bootstrap - Copyright Twitter, Inc.
-License: MIT license
-Source: http://getbootstrap.com/
+html5shiv - http://code.google.com/p/html5shiv/
+License: [[http://opensource.org/licenses/MIT|MIT]]
 
-fillsize.js - Copyright Rico Sta. Cruz
-License: MIT license
-Source: http://github.com/rstacruz/jquery-stuff/tree/master/fillsize
+Font Awesome - http://fortawesome.github.io/Font-Awesome/
+License: [[http://opensource.org/licenses/MIT|MIT]]
+Copyright: Dave Gandy, https://twitter.com/davegandy
 
-Arctext - Copyright Pedro Botelho / Codrops
-License: MIT license
-Source: https://github.com/codrops/Arctext
+Google Fonts - http://www.google.com/fonts/
+License: [[http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL|SIL Open Font License]]
 
-Font Awesome, Copyright Dave Gandy
-License: MIT license
-Source: http://fortawesome.github.io/Font-Awesome/
-
-Google Fonts - Copyright Daniel Johnson, Steve Matteson
-License: Open Font License
-Source: https://fonts.google.com/specimen/Megrim
-Source: https://fonts.google.com/specimen/Raleway
-Source: https://fonts.google.com/specimen/Open+Sans
-
-Stock Images - Copyright Unsplash
-License: CC0
-Source: https://unsplash.com/search/tricycle?photo=GG0jOrmwqtw
 
 == CHANGELOG ==
 
-10/10/2017 v1.1.1
-* Fixed Icon & Text widget
-* Cleaned up CSS
-
-03/09/2017 v1.1.0
-* Fixed mixed placeholders
-* Fixed upgrade button
-* Fixed customize section error
-* Updated Font Awesome 4.7.0
-* Updated language files
-
-10/12/2016 v1.0.10
-* Fix for no arc in site name
-
-10/05/2016 v1.0.9
-* Updated Font Awesome
-* Updated Bootstrap
-* Updated upgrade button to use API
-* Updated licenses
-* Updated screenshot
-* Updated CSS
-* Updated language files
-* Fixed prefixes for stylesheets and scripts
-* Moved template parts into new folder
-* Removed HTML5 Shiv
-* Removed searchform.php
+09/24/2020 v1.1.2
+* Fix for WP 5.5 comments issue
+* Fix for WP 5.5 comments issue styling
 
 06/06/2016 v1.0.8
 * Fix for dropdown menu issue

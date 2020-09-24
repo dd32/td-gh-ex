@@ -5,11 +5,10 @@ Author: bandicootmarketing
 Author URI: http://bavotasan.com/
 Description: Create a truly unique design with Arcade, a lightweight and fully responsive HTML5 theme. Use the theme customizer to add your own header image, page layout, site width and more. Distinguish each post with one of the eight supported post formats, such as: Video, Image, Aside, Status, Audio, Quote, Link and Gallery. Install JetPack to display each of your galleries through a tiled view and jQuery carousel. Compatible with bbPress, BuddyPress, WPML & Woocommerce. Uses Google Fonts for improved typeface readability and works perfectly in desktop browsers, tablets and handheld devices.
 Version: 1.1.2
-Tested Up To: 5.1
-Requires PHP: 5.2.4
 Text Domain: arcade
 Domain Path: /library/languages/
 Tags: one-column, two-columns, left-sidebar, right-sidebar, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -3168,11 +3167,10 @@ tbody.collapse.in {
   list-style: none;
 }
 
-.navbar-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: flex-end;
+.nav:before,
+.nav:after {
+  content: " ";
+  display: table;
 }
 
 .nav:after {
@@ -3182,8 +3180,6 @@ tbody.collapse.in {
 .nav > li {
   position: relative;
   display: block;
-  width: auto;
-    margin: auto;
 }
 
 .nav > li > a {
@@ -6507,16 +6503,13 @@ pre {
   }
   
   .no-fittext #site-title a {
-    font-size: 60px !important;  }
+    font-size: 60px !important;
+  }
   
   #more-site {
     display: none !important;
   }
   
-  .navbar-nav {
-    display: unset;
-  }
-
   .navbar-fixed-top {
     top: 0 !important;
     position: absolute;
@@ -8015,18 +8008,3 @@ td.visible-sm {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }  
 }
-
-
-/* =21-sep-20 New CSS udpate from here
--------------------------------------------------------------- */
-.commentlist .comment .comment-author, .commentlist .comment .comment-meta, .commentlist .comment .comment-text {
-     padding-left: 0px;}
-.commentlist .comment .avatar {float: left;margin-right: 10px;}
-.comment-content{padding-left:0px;}
-.reply {margin-top: 8px;text-align:right;}
-
-@media (max-width:767px) {
-  .comment-form input {width: 100%;}
-  .comment-form-cookies-consent{display:flex;}
-  .comment-form-cookies-consent input{display: inline-block;width:auto;margin-right:5px;}
-} 

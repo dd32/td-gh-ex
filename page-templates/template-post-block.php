@@ -42,7 +42,7 @@ if ( ! is_front_page() )
 						if ( 1 == $bavotasan_post_block_query->current_post )
 							echo '<div class="col-md-6">';
 
-						get_template_part( 'template-parts/content' );
+						get_template_part( 'content' );
 
 						if ( 1 > $bavotasan_post_block_query->current_post )
 							echo '</div>';

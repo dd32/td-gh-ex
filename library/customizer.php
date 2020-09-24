@@ -33,6 +33,19 @@ function bavotasan_theme_options() {
 }
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
+	class Bavotasan_Textarea_Control extends WP_Customize_Control {
+	    public $type = 'textarea';
+
+	    public function render_content() {
+	        ?>
+	        <label>
+	        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+	        <textarea rows="5" class="custom-textarea" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+	        </label>
+	        <?php
+	    }
+	}
+
     class Bavotasan_Text_Description_Control extends WP_Customize_Control {
         public $description;
 
@@ -86,31 +99,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	}
 }
 
-if ( class_exists( 'WP_Customize_Section' ) ) {
-	class Bavotasan_Customize_Section_Pro extends WP_Customize_Section {
-		public $type = 'premium-upgrade';
-		public $pro_url = '';
-
-		public function json() {
-			$json = parent::json();
-			$json['pro_url']  = esc_url( $this->pro_url );
-			return $json;
-		}
-
-		protected function render_template() { ?>
-
-			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand premium-upgrade">
-
-				<h3 class="accordion-section-title">
-					<a href="{{ data.pro_url }}" target="_blank">{{ data.title }}
-
-					<span class="dashicons dashicons-arrow-right-alt"></span></a>
-				</h3>
-			</li>
-		<?php }
-	}
-}
-
 class Bavotasan_Customizer {
 	public function __construct() {
 		add_action( 'customize_register', array( $this, 'customize_register' ) );
@@ -121,7 +109,7 @@ class Bavotasan_Customizer {
 	public function customize_controls_print_styles() {
 		wp_enqueue_script( 'bavotasan_image_widget', BAVOTASAN_THEME_URL . '/library/js/admin/image-widget.js', array( 'jquery' ), '', true );
 		wp_enqueue_style( 'bavotasan_image_widget_css', BAVOTASAN_THEME_URL . '/library/css/admin/image-widget.css' );
-		wp_enqueue_style( 'font-awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.7.0', 'all' );
+		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.3.0', 'all' );
 	}
 
 	/**
@@ -310,15 +298,6 @@ class Bavotasan_Customizer {
 			'type' => 'checkbox',
 			'priority' => 40,
 		) );
-
-		$wp_customize->register_section_type( 'Bavotasan_Customize_Section_Pro' );
-		$wp_customize->add_section(
-			new Bavotasan_Customize_Section_Pro ( $wp_customize, 'premium_upgrade', array(
-				'title'    => esc_html__( 'Upgrade to Arcade', 'arcade-basic' ),
-				'pro_url'  => 'https://themes.bavotasan.com/themes/arcade-wordpress-theme/',
-				'priority' => 999,
-			) )
-		);
 	}
 
 	/**
@@ -334,7 +313,10 @@ class Bavotasan_Customizer {
     }
 
 	public function customize_controls_enqueue_scripts() {
-		wp_enqueue_script( 'bavotasan-customizer', BAVOTASAN_THEME_URL . '/library/js/admin/upgrade.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'bavotasan-customizer', BAVOTASAN_THEME_URL . '/library/js/admin/customizer.js', array( 'jquery' ), '', true );
+        wp_localize_script( 'bavotasan-customizer', 'Bavotasan_Customizer', array(
+            'upgradeAd' => __( 'Upgrade to premium version', 'arcade-basic' ),
+        ));
 
 		wp_enqueue_style( 'bavotasan-customizer-styles', BAVOTASAN_THEME_URL . '/library/css/admin/customizer.css' );
 	}

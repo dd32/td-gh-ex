@@ -1,6 +1,6 @@
 <?php
 class Bavotasan_Preview_Pro {
-	private $theme_url = 'https://themes.bavotasan.com/themes/arcade-wordpress-theme/';
+	private $theme_url = 'http://themes.bavotasan.com/themes/arcade/';
 	private $theme_name = 'Arcade';
 
 	public function __construct() {
@@ -15,7 +15,7 @@ class Bavotasan_Preview_Pro {
 	 * @since 1.0.0
 	 */
 	public function admin_menu() {
-		add_theme_page( sprintf( __( 'Welcome to %1$s %2$s', 'arcade-basic' ), BAVOTASAN_THEME_NAME, BAVOTASAN_THEME_VERSION ), __( 'Upgrade to Premium', 'arcade-basic' ), 'edit_theme_options', 'bavotasan_preview_pro', array( $this, 'bavotasan_preview_pro' ) );
+		add_theme_page( sprintf( __( 'Welcome to %s %s', 'arcade-basic' ), BAVOTASAN_THEME_NAME, BAVOTASAN_THEME_VERSION ), __( 'Upgrade to Premium', 'arcade-basic' ), 'edit_theme_options', 'bavotasan_preview_pro', array( $this, 'bavotasan_preview_pro' ) );
 
 		// Remove upgrade page from Appearance menu
 		remove_submenu_page( 'themes.php', 'bavotasan_preview_pro' );
@@ -26,10 +26,6 @@ class Bavotasan_Preview_Pro {
 		<style>
 		.featured-image {
 			margin: 20px auto !important;
-		}
-
-		.featured-image img {
-			width: 100%;
 		}
 
 		.about-wrap .headline-feature h2 {
@@ -78,7 +74,7 @@ class Bavotasan_Preview_Pro {
 		</style>
 
 		<div class="wrap about-wrap" id="custom-background">
-			<h1><?php printf( __( 'Welcome to %1$s %2$s', 'arcade-basic' ), BAVOTASAN_THEME_NAME, BAVOTASAN_THEME_VERSION ); ?></h1>
+			<h1><?php printf( __( 'Welcome to %s %s', 'arcade-basic' ), BAVOTASAN_THEME_NAME, BAVOTASAN_THEME_VERSION ); ?></h1>
 
 			<div class="about-text">
 				<?php printf( __( 'Take your site to the next level with the full version of %s. Check out some of the advanced features that&rsquo;ll give you more control over your site&rsquo;s layout and design.', 'arcade-basic' ), '<em>' . $this->theme_name . '</em>' ); ?>
@@ -91,17 +87,6 @@ class Bavotasan_Preview_Pro {
 				<a href="<?php echo admin_url( 'themes.php?page=bavotasan_documentation' ); ?>" class="nav-tab"><?php _e( 'Documentation', 'arcade-basic' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=bavotasan_preview_pro' ); ?>" class="nav-tab nav-tab-active"><?php _e( 'Upgrade', 'arcade-basic' ); ?></a>
 			</h2>
-
-			<div class="changelog headline-feature dfw">
-				<h2><?php _e( '<strong style="color: #ff0000;">NEW</strong> - Header Video', 'arcade-basic' ); ?></h2>
-
-				<div class="featured-image dfw-container">
-					<img alt="" src="<?php echo BAVOTASAN_THEME_URL; ?>/library/images/video-header.jpg" />
-				</div>
-				<p><?php _e( 'Having is full size header image is great, but why not step it up a notch with a video instead?', 'arcade-basic' );?>
-				<p><?php _e( 'Easily go to the Customizer and select a YouTube video or upload your own.', 'arcade-basic' ); ?></p>
-			</div>
-			<hr />
 
 			<div class="changelog headline-feature dfw">
 				<h2><?php _e( 'Grid Page Template', 'arcade-basic' ); ?></h2>
@@ -160,23 +145,23 @@ class Bavotasan_Preview_Pro {
 
 			<div class="changelog feature-list">
 				<h2><?php _e( 'Even More Theme Options', 'arcade-basic' ); ?></h2>
-				<div class="under-the-hood two-col">
-					<div class="col">
+				<div class="feature-section col two-col">
+					<div>
 						<h4><?php _e( 'Full Width Posts/Pages', 'arcade-basic' ); ?></h4>
 						<p><?php _e( 'Each page/post has an option to remove both sidebars so you can use the full width of your site to display whatever you want.', 'arcade-basic' ); ?></p>
 					</div>
-					<div class="col">
+					<div class="last-feature">
 						<h4><?php _e( 'Multiple Sidebar Layouts', 'arcade-basic' ); ?></h4>
 						<p><?php _e( 'Sometimes one sidebar just isn&rsquo;t enough, so add a second one and place it where you want.', 'arcade-basic' ); ?></p>
 					</div>
 				</div>
 
-				<div class="under-the-hood two-col">
-					<div class="col">
+				<div class="feature-section col two-col">
+					<div>
 						<h4><?php _e( 'Bootstrap Shortcodes', 'arcade-basic' ); ?></h4>
 						<p><?php printf( __( 'Shortcodes are awesome and easy to use. That&rsquo;s why %s comes with a bunch, like a slideshow carousel, alert boxes and more.', 'arcade-basic' ), '<em>' . $this->theme_name . '</em>' ); ?></p>
 					</div>
-					<div class="col">
+					<div class="last-feature">
 						<h4><?php _e( 'Import/Export Tool', 'arcade-basic' ); ?></h4>
 						<p><?php _e( 'Once you&rsquo;ve set up your site exactly how you want, you can easily export the Theme Options and Custom CSS for safe keeping.', 'arcade-basic' ); ?></p>
 					</div>

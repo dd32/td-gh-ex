@@ -64,10 +64,10 @@ if ( 'page' == get_option('show_on_front') ) {
                 <?php
 				if ( have_posts() ) {
 					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/content', get_post_format() );
+						get_template_part( 'content', get_post_format() );
 					endwhile;
 
-					the_posts_navigation();
+					bavotasan_pagination();
 				} else {
 					if ( current_user_can( 'edit_posts' ) ) {
 						// Show a different message to a logged-in user who can add posts.
@@ -81,7 +81,7 @@ if ( 'page' == get_option('show_on_front') ) {
 						</article>
 						<?php
 					} else {
-						get_template_part( 'template-parts/content', 'none' );
+						get_template_part( 'content', 'none' );
 					} // end current_user_can() check
 				}
 				?>

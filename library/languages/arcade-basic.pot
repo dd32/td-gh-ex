@@ -3,15 +3,15 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Arcade Basic\n"
-"POT-Creation-Date: 2017-03-09 10:33-0500\n"
-"PO-Revision-Date: 2017-03-09 10:33-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"POT-Creation-Date: 2016-03-14 11:06-0400\n"
+"PO-Revision-Date: 2016-03-14 11:06-0400\n"
+"Last-Translator: c.bavota <cbavota@gmail.com>\n"
+"Language-Team: c.bavota <cbavota@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
-"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ../..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -51,14 +51,87 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
+#: content-aside.php:9
+msgid "<i class=\"fa fa-asterisk\"></i> Aside"
+msgstr ""
+
+#: content-aside.php:12 content-audio.php:12 content-gallery.php:12
+#: content-image.php:16 content-link.php:12 content-quote.php:12
+#: content-status.php:18 content-video.php:12 content.php:20 page.php:33
+msgid "Read more"
+msgstr ""
+
+#: content-footer.php:11 image.php:51
+msgid "Pages:"
+msgstr ""
+
+#: content-footer.php:12 functions.php:301 functions.php:324 image.php:52
+msgid "(edit)"
+msgstr ""
+
+#: content-footer.php:13
+msgid "Tags:"
+msgstr ""
+
+#: content-header.php:24
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: content-header.php:25
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: content-header.php:31
+msgid "on"
+msgstr ""
+
+#: content-header.php:39
+msgid "in"
+msgstr ""
+
+#: content-header.php:49
+msgid "0 Comments"
+msgstr ""
+
+#: content-header.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: content-header.php:49
+msgid "% Comments"
+msgstr ""
+
+#: content-link.php:9
+msgid "<i class=\"fa fa-link\"></i> Link"
+msgstr ""
+
+#: content-none.php:9
+msgid "Nothing found"
+msgstr ""
+
+#: content-none.php:12
+msgid "No results were found. Please try again."
+msgstr ""
+
+#: content-status.php:9
+msgid "<i class=\"fa fa-plus-square\"></i> Status"
+msgstr ""
+
+#: content-status.php:15
+#, php-format
+msgid "Posted on %1$s at %2$s"
+msgstr ""
+
 #: footer.php:17
 #, php-format
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgid "Copyright &copy; %s %s. All Rights Reserved."
 msgstr ""
 
 #: footer.php:18
 #, php-format
-msgid "The %1$s Theme by %2$s."
+msgid "The %s Theme by %s."
 msgstr ""
 
 #: front-page.php:76
@@ -78,72 +151,75 @@ msgstr ""
 msgid "Default Header 1"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:206
 msgid "First Sidebar"
 msgstr ""
 
-#: functions.php:209
+#: functions.php:208
 msgid ""
 "This is the first sidebar. It won't appear on the home page unless you set a "
 "static front page."
 msgstr ""
 
-#: functions.php:217 library/about.php:150
+#: functions.php:216 library/about.php:150
 msgid "Jumbo Headline"
 msgstr ""
 
-#: functions.php:219
+#: functions.php:218
 msgid ""
 "Area on the home page below the large header image. Designed specifically "
 "for one text widget. "
 msgstr ""
 
-#: functions.php:227 library/about.php:161
+#: functions.php:226 library/about.php:161
 msgid "Home Page Top Area"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:228
 msgid ""
 "Area on the home page above the main content. Designed specifically for four "
 "Icon & Text widgets. Add at least one widget to make it appear."
 msgstr ""
 
-#: functions.php:272
+#: functions.php:253
+msgid "Posts navigation"
+msgstr ""
+
+#: functions.php:255
+msgid "&larr; Older posts"
+msgstr ""
+
+#: functions.php:259
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: functions.php:300
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:273 functions.php:296 image.php:52
-#: template-parts/content-footer.php:12
-msgid "(edit)"
-msgstr ""
-
-#: functions.php:277
+#: functions.php:305
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:296
+#: functions.php:324
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:339
+#: functions.php:367
 msgid "Read more &rarr;"
 msgstr ""
 
-#: header.php:29
+#: header.php:30
 msgid "Main menu"
 msgstr ""
 
-#: header.php:30
+#: header.php:31
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:71
+#: header.php:72
 msgid "See More"
-msgstr ""
-
-#: image.php:51 template-parts/content-footer.php:11
-msgid "Pages:"
 msgstr ""
 
 #: image.php:58 single.php:17
@@ -161,8 +237,8 @@ msgstr ""
 #: library/about.php:26
 #, php-format
 msgid ""
-"Thanks for choosing %1$s! You can learn how to use the available theme "
-"options on the %2$sabout page%3$s."
+"Thanks for choosing %s! You can learn how to use the available theme options "
+"on the %sabout page%s."
 msgstr ""
 
 #: library/about.php:28
@@ -170,9 +246,9 @@ msgstr ""
 msgid "Learn more about %s"
 msgstr ""
 
-#: library/about.php:41 library/preview-pro.php:18 library/preview-pro.php:81
+#: library/about.php:41 library/preview-pro.php:18 library/preview-pro.php:77
 #, php-format
-msgid "Welcome to %1$s %2$s"
+msgid "Welcome to %s %s"
 msgstr ""
 
 #: library/about.php:41
@@ -187,11 +263,11 @@ msgid ""
 "how to use the available theme options."
 msgstr ""
 
-#: library/about.php:111 library/preview-pro.php:91
+#: library/about.php:111 library/preview-pro.php:87
 msgid "Documentation"
 msgstr ""
 
-#: library/about.php:112 library/preview-pro.php:92
+#: library/about.php:112 library/preview-pro.php:88
 msgid "Upgrade"
 msgstr ""
 
@@ -202,9 +278,8 @@ msgstr ""
 #: library/about.php:122
 #, php-format
 msgid ""
-"All theme options for <em>%1$s</em> are controlled under %2$sAppearance "
-"&rarr; Customize%3$s. From there, you can modify layout, custom menus, and "
-"more."
+"All theme options for <em>%s</em> are controlled under %sAppearance &rarr; "
+"Customize%s. From there, you can modify layout, custom menus, and more."
 msgstr ""
 
 #: library/about.php:124
@@ -231,7 +306,7 @@ msgid ""
 "your main content will also resize your sidebar."
 msgstr ""
 
-#: library/about.php:131 library/customizer.php:243
+#: library/about.php:131 library/customizer.php:231
 msgid "Sidebar Layout"
 msgstr ""
 
@@ -253,9 +328,9 @@ msgstr ""
 #: library/about.php:142
 #, php-format
 msgid ""
-"To add a navigation menu to the header, go to %1$sAppearance &rarr; Menus"
-"%2$s. By default, a list of categories will appear in this location if no "
-"custom menu is set."
+"To add a navigation menu to the header, go to %sAppearance &rarr; Menus%s. "
+"By default, a list of categories will appear in this location if no custom "
+"menu is set."
 msgstr ""
 
 #: library/about.php:144
@@ -268,17 +343,17 @@ msgstr ""
 #, php-format
 msgid ""
 "The Jumbo Headline is a widgetized area on the home page designed for a Text "
-"widget. Go to %1$sAppearance &rarr; Widgets%2$s to add the widget and "
-"customize the text."
+"widget. Go to %sAppearance &rarr; Widgets%s to add the widget and customize "
+"the text."
 msgstr ""
 
 #: library/about.php:167
 #, php-format
 msgid ""
 "The section where the four widgets appear on the homepage will only display "
-"once a widget is added to the Homepage Top Area in %1$sAppearance &rarr; "
-"Widgets%2$s. The demo uses the custom Icon & Text widget that comes with <em>"
-"%3$s</em> to display an icon accompanied by text. You can even have the icon "
+"once a widget is added to the Homepage Top Area in %sAppearance &rarr; "
+"Widgets%s. The demo uses the custom Icon & Text widget that comes with <em>"
+"%s</em> to display an icon accompanied by text. You can even have the icon "
 "and text link to a page or a post, by adding a URL in the field provided."
 msgstr ""
 
@@ -325,9 +400,9 @@ msgstr ""
 #: library/about.php:204
 #, php-format
 msgid ""
-"%1$sJetpack&rsquo;s Infinite Scroll%2$s allows your visitors to view all "
-"your posts without having to click through to the next page. As they scroll, "
-"new posts will be added. To activate go to %3$sJetpack &rarr; Settings%4$s. "
+"%sJetpack&rsquo;s Infinite Scroll%s allows your visitors to view all your "
+"posts without having to click through to the next page. As they scroll, new "
+"posts will be added. To activate go to %sJetpack &rarr; Settings%s. "
 msgstr ""
 
 #: library/about.php:206
@@ -335,10 +410,10 @@ msgid "Tiled Galleries"
 msgstr ""
 
 #: library/about.php:208
+#, php-format
 msgid ""
-"%1$sJetpack&rsquo;s Tiled Galleries%2%s will display your images in a "
-"beautiful mosaic layout. Go to %3$sJetpack &rarr; Settings%4$s to turn it "
-"on. "
+"%sJetpack&rsquo;s Tiled Galleries%s will display your images in a beautiful "
+"mosaic layout. Go to %sJetpack &rarr; Settings%s to turn it on. "
 msgstr ""
 
 #: library/about.php:210
@@ -348,9 +423,9 @@ msgstr ""
 #: library/about.php:212
 #, php-format
 msgid ""
-"With %1$sJetpack&rsquo;s Carousel%2$s, clicking on one of your gallery "
-"images will open up a featured lightbox slideshow. Turn it on by going to "
-"%3$sJetpack &rarr; Settings%4$s. "
+"With %sJetpack&rsquo;s Carousel%s, clicking on one of your gallery images "
+"will open up a featured lightbox slideshow. Turn it on by going to %sJetpack "
+"&rarr; Settings%s. "
 msgstr ""
 
 #: library/about.php:217
@@ -382,8 +457,8 @@ msgstr ""
 #: library/about.php:232
 #, php-format
 msgid ""
-"For more information, check out the %1$sDocumentation &amp; FAQs%2$s section "
-"on my site."
+"For more information, check out the %sDocumentation &amp; FAQs%s section on "
+"my site."
 msgstr ""
 
 #: library/custom-metaboxes.php:42
@@ -400,125 +475,125 @@ msgid ""
 "the featured image."
 msgstr ""
 
-#: library/customizer.php:57 library/widgets/widget-image-icon.php:94
+#: library/customizer.php:70 library/widgets/widget-image-icon.php:94
 msgid "View Icons"
 msgstr ""
 
-#: library/customizer.php:57 library/widgets/widget-image-icon.php:94
+#: library/customizer.php:70 library/widgets/widget-image-icon.php:94
 msgid "Remove Icon"
 msgstr ""
 
-#: library/customizer.php:84
+#: library/customizer.php:97
 msgid "The sidebar will not appear on the Post Block page template."
 msgstr ""
 
-#: library/customizer.php:145
+#: library/customizer.php:133
 msgid "Arc Radius"
 msgstr ""
 
-#: library/customizer.php:156
+#: library/customizer.php:144
 msgid "Arc Radius (Inner Pages)"
 msgstr ""
 
-#: library/customizer.php:158
+#: library/customizer.php:146
 msgid ""
 "The space and rotation for each letter will be calculated using the arc "
 "radius and the width of the site title. Leave blank for no arc."
 msgstr ""
 
-#: library/customizer.php:168
+#: library/customizer.php:156
 msgid "Use Fittext for long site title"
 msgstr ""
 
-#: library/customizer.php:180
+#: library/customizer.php:168
 msgid "Header Icon"
 msgstr ""
 
-#: library/customizer.php:187
+#: library/customizer.php:175
 msgid "Layout"
 msgstr ""
 
-#: library/customizer.php:197
+#: library/customizer.php:185
 msgid "Site Width"
 msgstr ""
 
-#: library/customizer.php:202
+#: library/customizer.php:190
 msgid "1200px"
 msgstr ""
 
-#: library/customizer.php:203
+#: library/customizer.php:191
 msgid "992px"
 msgstr ""
 
-#: library/customizer.php:225
+#: library/customizer.php:213
 msgid "Main Content Width"
 msgstr ""
 
-#: library/customizer.php:238
+#: library/customizer.php:226
 msgid "Left"
 msgstr ""
 
-#: library/customizer.php:239
+#: library/customizer.php:227
 msgid "Right"
 msgstr ""
 
-#: library/customizer.php:251 library/widgets/widget-image-icon.php:108
+#: library/customizer.php:239 library/widgets/widget-image-icon.php:108
 msgid "Default"
 msgstr ""
 
-#: library/customizer.php:252 library/widgets/widget-image-icon.php:109
+#: library/customizer.php:240 library/widgets/widget-image-icon.php:109
 msgid "Light Blue"
 msgstr ""
 
-#: library/customizer.php:253 library/widgets/widget-image-icon.php:110
+#: library/customizer.php:241 library/widgets/widget-image-icon.php:110
 msgid "Blue"
 msgstr ""
 
-#: library/customizer.php:254 library/widgets/widget-image-icon.php:111
+#: library/customizer.php:242 library/widgets/widget-image-icon.php:111
 msgid "Red"
 msgstr ""
 
-#: library/customizer.php:255 library/widgets/widget-image-icon.php:112
+#: library/customizer.php:243 library/widgets/widget-image-icon.php:112
 msgid "Yellow"
 msgstr ""
 
-#: library/customizer.php:256 library/widgets/widget-image-icon.php:113
+#: library/customizer.php:244 library/widgets/widget-image-icon.php:113
 msgid "Green"
 msgstr ""
 
-#: library/customizer.php:261
+#: library/customizer.php:249
 msgid "Posts"
 msgstr ""
 
-#: library/customizer.php:263
+#: library/customizer.php:251
 msgid "These options do not affect the Post Block page template."
 msgstr ""
 
-#: library/customizer.php:272
+#: library/customizer.php:260
 msgid "Display Author"
 msgstr ""
 
-#: library/customizer.php:284
+#: library/customizer.php:272
 msgid "Display Date"
 msgstr ""
 
-#: library/customizer.php:296
+#: library/customizer.php:284
 msgid "Display Categories"
 msgstr ""
 
-#: library/customizer.php:308
+#: library/customizer.php:296
 msgid "Display Comment Count"
 msgstr ""
 
-#: library/customizer.php:317
-msgid "Upgrade to Arcade"
+#: library/customizer.php:318
+msgid "Upgrade to premium version"
 msgstr ""
 
 #: library/preview-pro.php:18
 msgid "Upgrade to Premium"
 msgstr ""
 
-#: library/preview-pro.php:84
+#: library/preview-pro.php:80
 #, php-format
 msgid ""
 "Take your site to the next level with the full version of %s. Check out some "
@@ -526,41 +601,41 @@ msgid ""
 "site&rsquo;s layout and design."
 msgstr ""
 
-#: library/preview-pro.php:96
+#: library/preview-pro.php:92
 msgid "Grid Page Template"
 msgstr ""
 
-#: library/preview-pro.php:101
+#: library/preview-pro.php:97
 msgid ""
 "Why display your posts in a single column when you can take advantage of the "
 "included grid page template?"
 msgstr ""
 
-#: library/preview-pro.php:102
+#: library/preview-pro.php:98
 msgid "Each post will appear as part of the three columns grid."
 msgstr ""
 
-#: library/preview-pro.php:107
+#: library/preview-pro.php:103
 msgid "Social Menu"
 msgstr ""
 
-#: library/preview-pro.php:112
+#: library/preview-pro.php:108
 msgid ""
 "Establish your online presence by letting your visitors join your social "
 "network. Help them stay up to date on everything you&rsquo;re doing"
 msgstr ""
 
-#: library/preview-pro.php:113
+#: library/preview-pro.php:109
 msgid ""
 "Easily add a social menu by creating links to the most popular social media "
 "websites."
 msgstr ""
 
-#: library/preview-pro.php:118
+#: library/preview-pro.php:114
 msgid "Advanced Color Picker"
 msgstr ""
 
-#: library/preview-pro.php:123
+#: library/preview-pro.php:119
 #, php-format
 msgid ""
 "Sometimes the default colors just aren&rsquo;t working for you. In %s you "
@@ -568,90 +643,90 @@ msgid ""
 "want."
 msgstr ""
 
-#: library/preview-pro.php:124
+#: library/preview-pro.php:120
 msgid ""
 "Easily select one of the eight preset colors or dive even deeper into your "
 "customization by using a more specific hex code."
 msgstr ""
 
-#: library/preview-pro.php:129
+#: library/preview-pro.php:125
 msgid "Google Fonts"
 msgstr ""
 
-#: library/preview-pro.php:134
+#: library/preview-pro.php:130
 msgid ""
 "Web-safe fonts are a thing of the past, so why not try to spice things up a "
 "bit?"
 msgstr ""
 
-#: library/preview-pro.php:135
+#: library/preview-pro.php:131
 msgid ""
 "Choose from some of Google Fonts&rsquo; most popular fonts to improve your "
 "site&rsquo;s typeface readability and make things look even more amazing."
 msgstr ""
 
-#: library/preview-pro.php:140
+#: library/preview-pro.php:136
 msgid "Extended Widgetized Footer"
 msgstr ""
 
-#: library/preview-pro.php:145
+#: library/preview-pro.php:141
 msgid ""
 "If you need to include more widgets on your site, take advantage of the "
 "Extended Footer."
 msgstr ""
 
-#: library/preview-pro.php:146
+#: library/preview-pro.php:142
 msgid ""
 "Use the Theme Options customizer to set the number of columns you want to "
 "appear. You can also customize your site&rsquo;s copyright notice."
 msgstr ""
 
-#: library/preview-pro.php:151
+#: library/preview-pro.php:147
 msgid "Even More Theme Options"
 msgstr ""
 
-#: library/preview-pro.php:154
+#: library/preview-pro.php:150
 msgid "Full Width Posts/Pages"
 msgstr ""
 
-#: library/preview-pro.php:155
+#: library/preview-pro.php:151
 msgid ""
 "Each page/post has an option to remove both sidebars so you can use the full "
 "width of your site to display whatever you want."
 msgstr ""
 
-#: library/preview-pro.php:158
+#: library/preview-pro.php:154
 msgid "Multiple Sidebar Layouts"
 msgstr ""
 
-#: library/preview-pro.php:159
+#: library/preview-pro.php:155
 msgid ""
 "Sometimes one sidebar just isn&rsquo;t enough, so add a second one and place "
 "it where you want."
 msgstr ""
 
-#: library/preview-pro.php:165
+#: library/preview-pro.php:161
 msgid "Bootstrap Shortcodes"
 msgstr ""
 
-#: library/preview-pro.php:166
+#: library/preview-pro.php:162
 #, php-format
 msgid ""
 "Shortcodes are awesome and easy to use. That&rsquo;s why %s comes with a "
 "bunch, like a slideshow carousel, alert boxes and more."
 msgstr ""
 
-#: library/preview-pro.php:169
+#: library/preview-pro.php:165
 msgid "Import/Export Tool"
 msgstr ""
 
-#: library/preview-pro.php:170
+#: library/preview-pro.php:166
 msgid ""
 "Once you&rsquo;ve set up your site exactly how you want, you can easily "
 "export the Theme Options and Custom CSS for safe keeping."
 msgstr ""
 
-#: library/preview-pro.php:176
+#: library/preview-pro.php:172
 #, php-format
 msgid "Buy %s Now &rarr;"
 msgstr ""
@@ -688,16 +763,18 @@ msgstr ""
 msgid "Automatically add paragraphs"
 msgstr ""
 
-#: page.php:33 template-parts/content-aside.php:12
-#: template-parts/content-audio.php:12 template-parts/content-gallery.php:12
-#: template-parts/content-image.php:16 template-parts/content-link.php:12
-#: template-parts/content-quote.php:12 template-parts/content-status.php:18
-#: template-parts/content-video.php:12 template-parts/content.php:20
-msgid "Read more"
-msgstr ""
-
 #: search.php:19
 msgid " search results for"
+msgstr ""
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
 msgstr ""
 
 #: sidebar.php:13
@@ -708,7 +785,7 @@ msgstr ""
 #, php-format
 msgid ""
 "This is just a default widget. It'll disappear as soon as you add your own "
-"widgets on the %1$sWidgets admin page%2$s."
+"widgets on the %sWidgets admin page%s."
 msgstr ""
 
 #: sidebar.php:16
@@ -737,65 +814,6 @@ msgstr ""
 
 #: single.php:19
 msgid "%title &rarr;"
-msgstr ""
-
-#: template-parts/content-aside.php:9
-msgid "<i class=\"fa fa-asterisk\"></i> Aside"
-msgstr ""
-
-#: template-parts/content-footer.php:13
-msgid "Tags:"
-msgstr ""
-
-#: template-parts/content-header.php:24
-#, php-format
-msgid "by %s"
-msgstr ""
-
-#: template-parts/content-header.php:25
-#, php-format
-msgid "Posts by %s"
-msgstr ""
-
-#: template-parts/content-header.php:31
-msgid "on"
-msgstr ""
-
-#: template-parts/content-header.php:39
-msgid "in"
-msgstr ""
-
-#: template-parts/content-header.php:49
-msgid "0 Comments"
-msgstr ""
-
-#: template-parts/content-header.php:49
-msgid "1 Comment"
-msgstr ""
-
-#: template-parts/content-header.php:49
-msgid "% Comments"
-msgstr ""
-
-#: template-parts/content-link.php:9
-msgid "<i class=\"fa fa-link\"></i> Link"
-msgstr ""
-
-#: template-parts/content-none.php:9
-msgid "Nothing found"
-msgstr ""
-
-#: template-parts/content-none.php:12
-msgid "No results were found. Please try again."
-msgstr ""
-
-#: template-parts/content-status.php:9
-msgid "<i class=\"fa fa-plus-square\"></i> Status"
-msgstr ""
-
-#: template-parts/content-status.php:15
-#, php-format
-msgid "Posted on %1$s at %2$s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
