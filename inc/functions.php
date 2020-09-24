@@ -556,12 +556,6 @@ function spacious_custom_css() {
 		<?php
 	}
 
-	$spacious_custom_css = spacious_options( 'spacious_custom_css' );
-	if ( $spacious_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
-		?>
-		<style type="text/css"><?php echo $spacious_custom_css; ?></style>
-		<?php
-	}
 }
 
 add_action( 'wp_head', 'spacious_custom_css', 100 );
@@ -861,36 +855,6 @@ if ( ! function_exists( 'spacious_the_custom_logo' ) ) {
 		}
 	}
 }
-
-/**
- * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
- */
-function spacious_custom_css_migrate() {
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = spacious_options( 'spacious_custom_css' );
-		if ( $custom_css ) {
-			// assigning theme name
-			$themename = get_option( 'stylesheet' );
-			$themename = preg_replace( "/\W/", "_", strtolower( $themename ) );
-
-			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return   = wp_update_custom_css_post( $core_css . $custom_css );
-
-			if ( ! is_wp_error( $return ) ) {
-				$theme_options = get_option( $themename );
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				if ( isset( $theme_options['spacious_custom_css'] ) ) {
-					unset( $theme_options['spacious_custom_css'] );
-				}
-
-				// Finally, update spacious theme options.
-				update_option( $themename, $theme_options );
-			}
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'spacious_custom_css_migrate' );
 
 /**
  * Transfer header designs options to header display type.
