@@ -170,7 +170,7 @@ function benzer_home_feature_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'features_title', array(
 		'selector'            => '.features-version-one .section-heading',
 		'settings'            => 'features_title',
-		'render_callback'  => 'benzer_home_features_title_render_callback',
+		'render_callback'  => 'benzer_features_title_render_callback',
 	
 	) );
 	
@@ -178,7 +178,7 @@ function benzer_home_feature_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'features_description', array(
 		'selector'            => '.features-version-one .section-description',
 		'settings'            => 'features_description',
-		'render_callback'  => 'benzer_home_features_description_render_callback',
+		'render_callback'  => 'benzer_features_description_render_callback',
 	
 	) );
 	}
@@ -186,11 +186,10 @@ function benzer_home_feature_section_partials( $wp_customize ){
 add_action( 'customize_register', 'benzer_home_feature_section_partials' );
 
 // features_title
-function benzer_home_features_title_render_callback() {
+function benzer_features_title_render_callback() {
 	return get_theme_mod( 'features_title' );
 }
 // features_description
-function benzer_home_features_description_render_callback() {
+function benzer_features_description_render_callback() {
 	return get_theme_mod( 'features_description' );
 }
-?>
