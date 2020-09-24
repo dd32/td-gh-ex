@@ -25,10 +25,13 @@ function arkhe_hook__wp_enqueue_scripts() {
 	// インライン出力するCSS
 	wp_add_inline_style( 'arkhe_main_style', Style::output( 'front' ) );
 
+	// ヘッダーオーバーレイ時
+	if ( \ARKHE_THEME::is_header_overlay() ) {
+		wp_enqueue_style( 'arkhe_overlay_header', ARKHE_TMP_DIR_URI . '/dist/css/module/-overlay-header.css', array(), ARKHE_VERSION );
+	}
+
 	// JS
-	wp_enqueue_script( 'arkhe_lazysizes', ARKHE_TMP_DIR_URI . '/assets/js/lazysizes.min.js', array(), ARKHE_VERSION, true );
-	wp_enqueue_script( 'arkhe_ls_aspectratio', ARKHE_TMP_DIR_URI . '/assets/js/ls.aspectratio.min.js', array(), ARKHE_VERSION, true );
-	wp_enqueue_script( 'arkhe_ls_unveilhooks', ARKHE_TMP_DIR_URI . '/assets/js/ls.unveilhooks.min.js', array(), ARKHE_VERSION, true );
+	wp_enqueue_script( 'arkhe_lazysizes', ARKHE_TMP_DIR_URI . '/dist/js/plugin/lazysizes.js', array(), ARKHE_VERSION, true );
 	wp_enqueue_script( 'arkhe_main_script', ARKHE_TMP_DIR_URI . '/dist/js/main.js', array(), ARKHE_VERSION, true );
 
 	// フロント側に渡すグローバル変数

@@ -1,8 +1,30 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
+
 	$SETTING = ARKHE_THEME::get_setting();
+
+	// ウィジェットの使用状況
+	$is_active_footer1 = is_active_sidebar( 'footer-1' );
+	$is_active_footer2 = is_active_sidebar( 'footer-2' );
 ?>
 <footer id="footer" class="l-footer">
 	<div class="l-footer__inner">
+		<?php if ( $is_active_footer1 || $is_active_footer2 ) : ?>
+			<div class="l-footer__widgets">
+				<div class="l-container">
+					<?php if ( $is_active_footer1 ) : ?>
+						<div class="w-footer -widget1">
+							<?php dynamic_sidebar( 'footer-1' ); ?>
+						</div>
+					<?php endif; ?>
+					<?php if ( $is_active_footer2 ) : ?>
+						<div class="w-footer -widget2">
+							<?php dynamic_sidebar( 'footer-2' ); ?>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<div class="l-footer__foot">
 			<div class="l-container">
 				<?php
