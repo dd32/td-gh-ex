@@ -135,6 +135,18 @@
                 $( '#sub-accordion-section-avant-panel-colors-section-nav #customize-control-avant-nav-drop-opacity' ).hide();
             }
         }
+
+        avant_search_check();
+        $( '#customize-control-avant-header-search input[type=checkbox]' ).on( 'change', function() {
+            avant_search_check();
+        });
+        function avant_search_check() {
+            if ( $( '#customize-control-avant-header-search input[type=checkbox]' ).is( ':checked' ) ) {
+                $( '#sub-accordion-section-avant-site-layout-section-header #customize-control-avant-searchbar-txt' ).hide();
+            } else {
+                $( '#sub-accordion-section-avant-site-layout-section-header #customize-control-avant-searchbar-txt' ).show();
+            }
+        }
         
         // Show / Hide Slider Settings
         var avant_the_slider_select_value = $( '#customize-control-avant-slider-type select' ).val();

@@ -307,6 +307,13 @@ function customizer_library_avant_options() {
             'default' => 'fa-shopping-cart'
         );
     endif;
+    $options['avant-searchbar-txt'] = array(
+        'id' => 'avant-searchbar-txt',
+        'label'   => __( 'Search Placeholder Text', 'avant' ),
+        'section' => $section,
+        'type'    => 'text',
+        'default' => __( 'Search & hit enter...', 'avant' )
+    );
     $options['avant-noteon-header'] = array(
         'id' => 'avant-noteon-header',
         'section' => $section,

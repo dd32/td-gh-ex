@@ -66,6 +66,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.45
+* Style tweaks/fixes
+* Added new header setting to edit the Search bbar placeholder text
+* Added new dismissable dashboard notice
+* Updated the language .pot file
+
 #### 1.1.44
 * Style tweaks/fixes
 * Fixed compatibility updates for WC & WP latests updates

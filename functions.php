@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.44' );
+define( 'AVANT_THEME_VERSION' , '1.1.45' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -648,3 +648,39 @@ function avant_add_license_notice_ignore() {
     }
 }
 add_action( 'admin_init', 'avant_add_license_notice_ignore' );
+
+/**
+ * Dismissable Admin notice with Avant setup/general help
+ */
+function avant_add_sale_notice() {
+	global $pagenow;
+	global $current_user;
+	$avant_user_id = $current_user->ID;
+
+	if ( !get_user_meta( $avant_user_id, 'avant_sale_notice_ignore' ) ) : ?>
+		<div class="notice avant-admin-notice notice-info">
+			<h3 style="margin-top: 0;">
+				<?php esc_html_e( 'Avant Pro on special !', 'avant' ); ?>
+			</h3>
+			<p>
+                <?php
+                /* translators: 1: 'Avant Pro for only $20'. */
+                printf( esc_html__( 'Get %1$s... Use the limited coupon code "SEPT2020SALE" now.', 'avant' ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/avant/#purchase-premium' ) . '" target="_blank">' . __( 'Avant Pro for only $20', 'avant' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) ); ?>
+			</p>
+			<a href="?avant_add_sale_notice_ignore=" class="avant-notice-close"><?php esc_html_e( 'Dismiss Notice', 'avant' ); ?></a>
+		</div><?php
+	endif;
+}
+add_action( 'admin_notices', 'avant_add_sale_notice' );
+/**
+ * Admin notice save dismiss to wp transient
+ */
+function avant_add_sale_notice_ignore() {
+    global $current_user;
+	$avant_user_id = $current_user->ID;
+
+    if ( isset( $_GET['avant_add_sale_notice_ignore'] ) ) {
+		update_user_meta( $avant_user_id, 'avant_sale_notice_ignore', true );
+    }
+}
+add_action( 'admin_init', 'avant_add_sale_notice_ignore' );
