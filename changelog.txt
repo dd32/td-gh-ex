@@ -1,3 +1,6 @@
+Version 1.0.7
+Fix security issues regarding nonce verification
+
 Version 1.0.6
 Fixed comments display on blog posts
 
