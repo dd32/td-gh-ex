@@ -157,12 +157,6 @@ class Epsilon_Welcome_Screen {
 				'welcome_screen_ajax_callback',
 			)
 		);
-		add_action(
-			'wp_ajax_nopriv_welcome_screen_ajax_callback', array(
-				$this,
-				'welcome_screen_ajax_callback',
-			)
-		);
 
 		if ( $this->edd ) {
 			/**
@@ -187,9 +181,21 @@ class Epsilon_Welcome_Screen {
 	 * AJAX Handler
 	 */
 	public function welcome_screen_ajax_callback() {
-		if ( isset( $_POST['args'], $_POST['args']['nonce'] ) && ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
+
+		if ( !isset( $_POST['args'], $_POST['args']['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
 			wp_die(
 				wp_json_encode(
+					array(
+						'status' => false,
+						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
+					)
+				)
+			);
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+		    wp_die(
+				json_encode(
 					array(
 						'status' => false,
 						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
@@ -211,6 +217,17 @@ class Epsilon_Welcome_Screen {
 			);
 		}
 
+		if ( ! in_array( $args_action[0], array( 'CPO_Companion_Import_Data', 'Epsilon_Welcome_Screen' ) ) ) {
+			wp_die(
+				wp_json_encode(
+					array(
+						'status' => false,
+						'error'  => esc_html__( 'Class not allowed', 'epsilon-framework' ),
+					)
+				)
+			);
+		}
+
 		if ( ! class_exists( $args_action[0] ) ) {
 			wp_die(
 				wp_json_encode(
@@ -225,10 +242,6 @@ class Epsilon_Welcome_Screen {
 		$class  = $args_action[0];
 		$method = $args_action[1];
 		$args   = array();
-
-		// if ( is_array( $_POST['args']['args'] ) ) {
-		// 	$args = Epsilon_Sanitizers::array_map_recursive( 'sanitize_text_field', wp_unslash( $_POST['args']['args'] ) );
-		// }
 
 		$args = $_POST['args']['args'];
 
