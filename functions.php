@@ -198,23 +198,9 @@ function akhada_fitness_gym_scripts() {
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'akhada-fitness-gym-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-
-	$akhada_fitness_gym_l10n=array();
-	
-	if ( has_nav_menu( 'top' ) ) {
-		wp_enqueue_script( 'akhada-fitness-gym-navigation-jquery', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '1.0', true );
-		$akhada_fitness_gym_l10n['expand']         = __( 'Expand child menu', 'akhada-fitness-gym' );
-		$akhada_fitness_gym_l10n['collapse']       = __( 'Collapse child menu', 'akhada-fitness-gym' );
-		
-	}
-
 	wp_enqueue_script( 'akhada-fitness-gym-navigation-jquery', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '2.1.2', true );
-	wp_enqueue_script( 'akhada-fitness-gym-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array(), '1.0', true );
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
-
-	wp_localize_script( 'akhada-fitness-gym-skip-link-focus-fix', 'akhada_fitness_gymScreenReaderText', $akhada_fitness_gym_l10n );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

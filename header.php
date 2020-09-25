@@ -58,7 +58,7 @@
 					</div>
 					<div class="col-lg-6 col-md-4 col-3 head-menu">
 						<div class="toggle-menu responsive-menu">
-				            <button onclick="akhada_fitness_gym_open()" role="tab"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','akhada-fitness-gym'); ?></span></button>
+				            <button onclick="akhada_fitness_gym_open()" role="tab" class="mobile-menu"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','akhada-fitness-gym'); ?></span></button>
 				        </div>
 						<div id="sidelong-menu" class="nav sidenav">
 			                <nav id="primary-site-navigation" class="nav-menu" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'akhada-fitness-gym' ); ?>">

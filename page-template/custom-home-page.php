@@ -24,10 +24,10 @@ get_header(); ?>
       	while ( $query->have_posts() ) : $query->the_post(); ?> 
           <?php the_post_thumbnail(); ?>
           <div class="banner-content">
-            <h1><?php esc_html(the_title()); ?></h1>
+            <h1><?php the_title(); ?></h1>
           	<p><?php $excerpt = get_the_excerpt(); echo esc_html( akhada_fitness_gym_string_limit_words( $excerpt, 15)); ?></p>
           	<div class="more-btn">
-            	<a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('Read More','akhada-fitness-gym'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e('Read More','akhada-fitness-gym'); ?></span></a>
+            	<a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','akhada-fitness-gym'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e('Read More','akhada-fitness-gym'); ?></span></a>
           	</div> 
         	</div>                  
      	  <?php endwhile; ?>
@@ -56,9 +56,9 @@ get_header(); ?>
 							<?php the_post_thumbnail(); ?>
 						</div>
     				<div class="service-content">
-            	<h3><?php esc_html(the_title()); ?></h3>
+            	<h3><?php the_title(); ?></h3>
               <p><?php $excerpt = get_the_excerpt(); echo esc_html( akhada_fitness_gym_string_limit_words( $excerpt,12 ) ); ?></p>
-              <a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('Read More','akhada-fitness-gym'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e('Read More','akhada-fitness-gym'); ?></span></a>
+              <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','akhada-fitness-gym'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e('Read More','akhada-fitness-gym'); ?></span></a>
             </div>
 			    </div>    	
     		<?php endwhile; 
