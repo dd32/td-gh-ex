@@ -26,6 +26,59 @@ function aspro_customize_register($wp_customize)
             'render_callback' => 'aspro_customize_partial_blogdescription',
         ]);
     }
+
+    $wp_customize->add_section('aspro_social_links_section', [
+        'priority' => 5,
+        'title'       => esc_html__('Social Links', 'aspro'),
+        'description' => esc_html__( 'Enter your social media links. If this field is left blank then social media icons will not display.', 'aspro' )
+    ]);
+
+    $wp_customize->add_setting('aspro_facebook_link', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    ]);
+    $wp_customize->add_control('aspro_facebook_link', [
+        'settings' => 'aspro_facebook_link',
+        'section' => 'aspro_social_links_section',
+        'type' => 'url',
+        'label' => esc_html__('Facebook', 'aspro'),
+    ]);
+
+    $wp_customize->add_setting('aspro_twitter_link', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    ]);
+    $wp_customize->add_control('aspro_twitter_link', [
+        'settings' => 'aspro_twitter_link',
+        'section' => 'aspro_social_links_section',
+        'type' => 'url',
+        'label' => esc_html__('Twitter', 'aspro'),
+    ]);
+
+    $wp_customize->add_setting('aspro_instagram_link', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    ]);
+    $wp_customize->add_control('aspro_instagram_link', [
+        'settings' => 'aspro_instagram_link',
+        'section' => 'aspro_social_links_section',
+        'type' => 'url',
+        'label' => esc_html__('Instagram', 'aspro'),
+    ]);
+
+    $wp_customize->add_setting('aspro_youtube_link', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    ]);
+    $wp_customize->add_control('aspro_youtube_link', [
+        'settings' => 'aspro_youtube_link',
+        'section' => 'aspro_social_links_section',
+        'type' => 'url',
+        'label' => esc_html__('Youtube', 'aspro'),
+    ]);
+
+
+
 }
 add_action('customize_register', 'aspro_customize_register');
 

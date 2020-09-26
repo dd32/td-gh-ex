@@ -24,6 +24,79 @@
                                 ?>
                             </nav><!-- #site-navigation -->
                         </div>
+
+
+                        <?php
+                        $aspro_facebook_link = get_theme_mod('aspro_facebook_link');
+                        $aspro_instagram_link = get_theme_mod('aspro_instagram_link');
+                        $aspro_twitter_link = get_theme_mod('aspro_twitter_link');
+                        $aspro_youtube_link = get_theme_mod('aspro_youtube_link');
+
+                        if($aspro_facebook_link || $aspro_instagram_link ||
+                            $aspro_twitter_link || $aspro_youtube_link ) :
+                            ?>
+                            <div class="nnc-topbar__social d-flex justify-content-end">
+                                <ul class="list-inline m-0">
+                                    <?php if($aspro_facebook_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_facebook_link); ?>"
+                                               target="_blank"
+                                               title="facebook"><i class="fab fa-facebook"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($aspro_instagram_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_instagram_link); ?>" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($aspro_twitter_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_twitter_link); ?>" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($aspro_youtube_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_youtube_link); ?>" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+
+
+                            <div class="nnc-topbar__social-in-menu-modal">
+                                <ul class="list-inline m-0">
+                                    <?php if($aspro_facebook_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_facebook_link); ?>"
+                                               target="_blank"
+                                               title="facebook"><i class="fab fa-facebook"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($aspro_instagram_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_instagram_link); ?>" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($aspro_twitter_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_twitter_link); ?>" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($aspro_youtube_link): ?>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo esc_url($aspro_youtube_link); ?>" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+
+                        <?php endif; ?>
+
+
+
+
+
+
                     </div>
                 </div>
             </main>

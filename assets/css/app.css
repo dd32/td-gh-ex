@@ -437,6 +437,9 @@ input.wpcf7-submit:hover {
 .main-navigation li.current-menu-item a {
   border-bottom: 3px solid #6C6463; }
 
+.main-navigation ul li.menu-item-has-children:hover > ul, .main-navigation ul li.menu-item-has-children:focus > ul, .main-navigation ul li.menu-item-has-children.focus > ul {
+  z-index: 999;
+}
 /*--------------------------------------------------------------
   # Widgets
   --------------------------------------------------------------*/
@@ -1172,4 +1175,48 @@ p {
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
+}
+
+.nnc-topbar__social {
+  margin-left: 1.1rem;
+  transform: translateY(2px);
+}
+
+.nnc-topbar__social ul li {
+  margin-right: 14px !important;
+}
+
+.nnc-topbar__social ul li i {
+  font-size: 20px;
+}
+
+.btn--icon i {
+  color: #333;
+  font-size: 26px;
+}
+
+.nnc-topbar__social-in-menu-modal {
+    padding-right: 36px;
+    display: none;
+}
+
+.nnc-topbar__social-in-menu-modal ul li i {
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  header .nnc-topbar__social {
+    display: none !important;
+  }
+  .at-search--form input[type="search"] {
+    font-size: 1.2rem;
+  }
+  .at-banner__title {
+    font-size: 1.6rem;
+    line-height: 1.1;
+  }
+  .nnc-topbar__social-in-menu-modal {
+    display: block;
+  }
+
 }

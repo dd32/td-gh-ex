@@ -4,7 +4,7 @@ Tags: blog, one-column, flexible-header, custom-colors, custom-menu, custom-back
 Requires at least: 4.5
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag:  1.0.1
+Stable tag:  1.0.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -71,6 +71,10 @@ Aspro is modern style free responsive WordPress blog theme. Aspro can be used fo
    Licensed under the GNU General Public License v2.0
 
 == CHANGE LOG ==
+= Version 1.0.2 =
+* Added Social Links to Header
+* Bug Fixes
+
 = Version 1.0.1 =
 * Bug fixes
 * Fixed keyboard navigation.
