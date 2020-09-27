@@ -277,6 +277,64 @@ function beshopwoo_customize_register( $wp_customize ) {
         'settings'   => 'beshop_banner_desc',
         'type'       => 'textarea',
     ));
+     $wp_customize->add_setting('beshop_banner_btn', array(
+        'default' =>  esc_html__('Shop Now','beshop'),
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_banner_btn', array(
+        'label'      => __('Shop Banner Button text', 'beshop'),
+        'description'     => __('Enter your shop banner button text.', 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_banner_btn',
+        'type'       => 'text',
+    ));
+     $wp_customize->add_setting('beshop_banner_url', array(
+        'default' =>  '#',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_url',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_banner_url', array(
+        'label'      => __('Shop Banner Button url', 'beshop'),
+        'description'     => __('Enter your shop banner button url. Leave empty if you don\'t want to use the button.' , 'beshop'),
+        'section'    => 'beshop_shop_banner',
+        'settings'   => 'beshop_banner_url',
+        'type'       => 'url',
+    ));
+    $wp_customize->add_setting('beshop_bannerbtn_color', array(
+        'default' => '#fff',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_bannerbtn_color', array(
+                'label' => __('Button Color','beshop'),
+                'section' => 'beshop_shop_banner'
+            )
+        )
+    );
+    $wp_customize->add_setting('beshop_bannerbtn_bgcolor', array(
+        'default' => '#77A464',
+        'type' =>'theme_mod',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+    // Add color control 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'beshop_bannerbtn_bgcolor', array(
+                'label' => __('Button Background Color','beshop'),
+                'section' => 'beshop_shop_banner'
+            )
+        )
+    );
     $wp_customize->add_setting('beshop_text_position', array(
         'default'        => 'left',
         'capability'     => 'edit_theme_options',
@@ -305,7 +363,7 @@ function beshopwoo_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize, 'beshop_bannertext_color', array(
-                'label' => __('Shop Title Color','beshop'),
+                'label' => __('Banner Text Color','beshop'),
                 'section' => 'beshop_shop_banner'
             )
         )

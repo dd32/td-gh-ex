@@ -61,7 +61,15 @@ if($beshop_shopb_img){
 }
 $beshop_bannertext_color = get_theme_mod( 'beshop_bannertext_color','#fff' );
 if($beshop_bannertext_color != '#fff'){
-    $style .='.beshop-banner .bbanner-text {color:'.$beshop_bannertext_color.'}';
+    $style .='.beshop-banner .bbanner-text h1,.beshop-banner .bbanner-text h4,.beshop-banner .bbanner-text p{color:'.$beshop_bannertext_color.' !important}';
+}
+$beshop_bannerbtn_color = get_theme_mod( 'beshop_bannerbtn_color','#fff' );
+if($beshop_bannerbtn_color != '#fff'){
+    $style .='a.btn.bshop-btn{color:'.$beshop_bannerbtn_color.' !important}';
+}
+$beshop_bannerbtn_bgcolor = get_theme_mod( 'beshop_bannerbtn_bgcolor','#77A464' );
+if($beshop_bannerbtn_bgcolor != '#77A464'){
+    $style .='a.btn.bshop-btn{background:'.$beshop_bannerbtn_bgcolor.' !important}';
 }
 $beshop_products_pagination = get_theme_mod( 'beshop_products_pagination','center' );
 if($beshop_products_pagination != 'center'){

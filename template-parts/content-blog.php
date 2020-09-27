@@ -4,7 +4,7 @@
 * The file for display blog content for beshop theme
 *
 */
-$beshop_blog_style = get_theme_mod( 'beshop_blog_style', 'style1');
+$beshop_blog_style = get_theme_mod( 'beshop_blog_style', 'style2');
 $beshop_blogdate = get_theme_mod( 'beshop_blogdate', 1);
 $beshop_blogauthor = get_theme_mod( 'beshop_blogauthor', 1);
 $beshop_postcat = get_theme_mod( 'beshop_postcat', 1);

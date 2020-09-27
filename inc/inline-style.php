@@ -10,6 +10,31 @@ function beshop_inline_css() {
   $style = '';
 
 // font settings
+ $beshop_theme_fonts = get_theme_mod('beshop_theme_fonts','Poppins');
+ $beshop_font_size = get_theme_mod('beshop_font_size','14');
+ $beshop_font_line_height = get_theme_mod('beshop_font_line_height','24');
+ $beshop_theme_font_head = get_theme_mod('beshop_theme_font_head','Noto Serif');
+ $beshop_font_weight_head = get_theme_mod('beshop_font_weight_head','700');
+
+      if( $beshop_theme_fonts != 'Poppins'){
+         $style .= 'body, p{font-family:\''.esc_attr($beshop_theme_fonts).'\', sans-serif;}';
+       }
+        if( $beshop_font_size != '14'){
+         $style .= 'body, p{font-size:'.esc_attr($beshop_font_size).'px;}';
+        }
+        if( $beshop_font_line_height != '24'){
+         $style .= 'body, p{line-height:'.esc_attr($beshop_font_line_height).'px;}';
+        }
+
+        if( $beshop_theme_font_head != 'Noto Serif'){
+         $style .= 'h1,h1 a, h2,h2 a, h3,h3 a, h4,h4 a, h5, h6{font-family:\''.esc_attr($beshop_theme_font_head).'\', sans-serif;}';
+       }
+        if( $beshop_font_weight_head != '700'){
+         $style .= 'h1, h2, h3, h4, h5, h6{font-weight:'.esc_attr($beshop_font_weight_head).';}';
+       }
+
+
+  //top bar settings
   $beshop_topbar_bg = get_theme_mod( 'beshop_topbar_bg', '#343a40' );
   $beshop_topbar_color = get_theme_mod( 'beshop_topbar_color', '#fff' );
   $beshop_topbar_hcolor = get_theme_mod( 'beshop_topbar_hcolor', '#dedede' );
@@ -47,7 +72,7 @@ $beshop_desc_fontsize = get_theme_mod( 'beshop_desc_fontsize' );
   if( $beshop_desc_fontsize ){
       $style .='p.site-description{font-size:'.$beshop_desc_fontsize.'px;}';
     }
-$beshop_menu_position = get_theme_mod( 'beshop_menu_position' );
+$beshop_menu_position = get_theme_mod( 'beshop_menu_position','center' );
 if( $beshop_menu_position ){
       $style .='.main-navigation ul{justify-content:'.$beshop_menu_position.';}';
     }

@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.8' );
+	define( 'BESHOP_VERSION', '1.0.9' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -165,10 +165,41 @@ function beshop_gb_block_style() {
 }
 add_action( 'enqueue_block_assets', 'beshop_gb_block_style' );
 
+
+
+/**
+ * Beshop Google fonts fuction
+ */
+if ( ! function_exists( 'beshop_fonts_url' ) ) :
+function beshop_fonts_url() {
+ $beshop_theme_fonts = get_theme_mod('beshop_theme_fonts','Montserrat');
+ $beshop_theme_font_head = get_theme_mod('beshop_theme_font_head','Noto Serif');
+
+	$fonts_url = '';
+
+		$font_families = array();
+	if( $beshop_theme_fonts == $beshop_theme_font_head ){
+		$font_families[] = $beshop_theme_fonts.':300,400,500,600,700,800';
+	}else{
+		$font_families[] = $beshop_theme_fonts.':300,400,500,600,700,800';
+		$font_families[] = $beshop_theme_font_head.':300,400,500,600,700,800';
+	}
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+	return esc_url_raw( $fonts_url );
+}
+endif;
+
 /**
  * Enqueue scripts and styles.
  */
 function beshop_scripts() {
+	wp_enqueue_style( 'beshop-google-font', beshop_fonts_url(), array(), null );
 	wp_enqueue_style( 'beshop-default', get_template_directory_uri().'/assets/css/default.css',array(), BESHOP_VERSION ,'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'font-awesome-five-all', get_template_directory_uri().'/assets/css/all.css',array(), '5.14.0' ,'all' );

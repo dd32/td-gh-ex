@@ -172,7 +172,7 @@ function beshop_header_logo($padding = ''){
 	<div class="headerlogo-text text-<?php echo esc_attr($beshop_logo_position); ?>">
 				<div class="container pb-<?php echo esc_attr($padding); ?> pt-<?php echo esc_attr($padding); ?>">
 					<?php the_custom_logo(); ?>
-				<?php if (display_header_text() == true || is_customize_preview()): ?>
+				<?php if (display_header_text() == true || (display_header_text() == true && is_customize_preview()) ): ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php
 					$beshop_description = get_bloginfo( 'description', 'display' );

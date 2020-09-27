@@ -23,14 +23,117 @@ function beshop_customize_register( $wp_customize ) {
               
         }
 
-	// Add beshop top header section
-	$wp_customize->add_section('beshop_topbar', array(
-		'title' => __('Beshop Top bar', 'beshop'),
+    // Typography section
+	$wp_customize->add_section('beshop_typography', array(
+		'title' => __('Beshop Theme typography', 'beshop'),
 		'capability'     => 'edit_theme_options',
-		'description'     => __('The beshop topbar options ', 'beshop'),
-		'priority'       => 5,
+		'description'     => __('You can setup BeShop theme typography by these options.', 'beshop'),
+		'priority'       => 4,
 
 	));
+        $wp_customize->add_setting('beshop_theme_fonts', array(
+        'default'       => 'Poppins',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_theme_font',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_theme_fonts_control', array(
+        'label'      => __('Select theme body Font', 'beshop'),
+        'section'    => 'beshop_typography',
+        'settings'   => 'beshop_theme_fonts',
+        'type'       => 'select',
+        'choices'    => array(
+            'Poppins' => __('Poppins', 'beshop'),
+            'Noto Serif' => __('Noto Serif', 'beshop'),
+            'Roboto' => __('Roboto', 'beshop'),
+            'Open Sans' => __('Open Sans', 'beshop'),
+            'Lato' => __('Lato', 'beshop'),
+            'Montserrat' => __('Montserrat', 'beshop'),
+            'Crimson Text' => __('Crimson Text', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_font_size', array(
+        'default' =>  '14',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_font_size_control', array(
+        'label'      => __('Body font size', 'beshop'),
+        'description'     => __('Default body font size is 14px', 'beshop'),
+        'section'    => 'beshop_typography',
+        'settings'   => 'beshop_font_size',
+        'type'       => 'text',
+
+    ));
+    $wp_customize->add_setting('beshop_font_line_height', array(
+        'default' =>  '24',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_font_line_height_control', array(
+        'label'      => __('Body font line height', 'beshop'),
+        'description'     => __('Default body line height is 24px', 'beshop'),
+        'section'    => 'beshop_typography',
+        'settings'   => 'beshop_font_line_height',
+        'type'       => 'text',
+
+    ));
+    $wp_customize->add_setting('beshop_theme_font_head', array(
+        'default'       => 'Noto Serif',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_theme_head_font',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_theme_font_head_control', array(
+        'label'      => __('Select theme header Font', 'beshop'),
+        'section'    => 'beshop_typography',
+        'settings'   => 'beshop_theme_font_head',
+        'type'       => 'select',
+        'choices'    => array(
+            'Poppins' => __('Poppins', 'beshop'),
+            'Noto Serif' => __('Noto Serif', 'beshop'),
+            'Roboto' => __('Roboto', 'beshop'),
+            'Open Sans' => __('Open Sans', 'beshop'),
+            'Lato' => __('Lato', 'beshop'),
+            'Montserrat' => __('Montserrat', 'beshop'),
+            'Crimson Text' => __('Crimson Text', 'beshop'),
+        ),
+    ));
+    $wp_customize->add_setting('beshop_font_weight_head', array(
+        'default'       => '700',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_font_weight_head_control', array(
+        'label'      => __('Site header font weight', 'beshop'),
+        'section'    => 'beshop_typography',
+        'settings'   => 'beshop_font_weight_head',
+        'type'       => 'select',
+        'choices'    => array(
+            '400' => __('Normal', 'beshop'),
+            '500' => __('Semi Bold', 'beshop'),
+            '700' => __('Bold', 'beshop'),
+            '900' => __('Extra Bold', 'beshop'),
+        ),
+    ));
+    /*End typography section*/
+
+    // Add beshop top header section
+    $wp_customize->add_section('beshop_topbar', array(
+        'title' => __('Beshop Top bar', 'beshop'),
+        'capability'     => 'edit_theme_options',
+        'description'     => __('The beshop topbar options ', 'beshop'),
+        'priority'       => 5,
+
+    ));
 	$wp_customize->add_setting( 'beshop_topbar_show' , array(
     'capability'     => 'edit_theme_options',
     'type'           => 'theme_mod',

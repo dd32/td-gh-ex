@@ -5,12 +5,12 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5.1
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
 == Description ==
-BeShop is an awesome WordPress Shop and Blog Theme.It provides a very unique look with extra post layout. Beshop is a super fast WordPress theme. Best Suitable for creating any type of website such a blog, shop, store, car workshop, life coach,  barbershop, furniture shop, yoga, resume, charity, digital marketing, agency, etc. BeShop works with any of your favorite page builders like Elementor, Visual Composer, SiteOrigin, Divi, Brizy etc. BeShop WordPress has unlimited options and colors for customize your site or store. Try the beShop theme Now. 
+BeShop is an awesome WordPress Shop and Blog Theme.It provides a very unique look with extra post layout. Beshop is a super fast WordPress theme. Best Suitable for creating any type of website such a blog, shop, store, car workshop, life coach,  barbershop, furniture shop, yoga, resume, charity, digital marketing, agency, etc. BeShop works with any of your favorite page builders like Elementor, Visual Composer, SiteOrigin, Divi, Brizy etc. BeShop WordPress has unlimited options and colors for customize your site or store. Now Beshop support one click demo import. Try the beShop theme Now. 
 
 == Installation ==
 
@@ -75,6 +75,13 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.9 - September 27 2020 =
+* Added theme Typography
+* Fixed more responsive code
+* Added one click demo import feture
+* Added more options for shop and blog
+* Added new style css code for theme 
 
 = 1.0.8 - September 21 2020 =
 * Fixed Shoping Bag Posoition

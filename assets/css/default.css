@@ -387,9 +387,27 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
+}
+body{
+    font-weight: 400;
+    overflow-x: hidden;
+    word-break: break-word;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
 
 h1,
@@ -399,6 +417,24 @@ h4,
 h5,
 h6 {
 	clear: both;
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    color: #3f3f3f;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    margin: 0 0 15px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+	line-height:1.3;
 }
 
 p {
@@ -1023,6 +1059,13 @@ button.mini-toggle {
 	margin: 0 0 1.5em;
 }
 
+/*Contact page style*/
+.wpcf7-form label, 
+.wpcf7-form span, 
+.wpcf7-form label input {
+    width: 100%;
+} 
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1151,7 +1194,7 @@ form#commentform input:not([type="checkbox"]) {
     height: 32px;
 }
 .widget img {
-    margin: 10px 0;
+    margin: 0 0 5px 0;
 }
 .tagcloud a {
     border: 1px solid #E0ECDE;
@@ -1239,7 +1282,7 @@ img.custom-logo {
 	margin-bottom: 1.5em;
 	display: -ms-grid;
 	display: grid;
-	grid-gap: 1.5em;
+	grid-gap: 0.5em;
 }
 
 .gallery-item {

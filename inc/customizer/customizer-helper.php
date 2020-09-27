@@ -74,13 +74,21 @@ function beshop_img_logo_on(){
 }
 endif;
 
-
-//Sanitize footer text
-if ( ! function_exists( 'beshop_sanitize_footer_text' ) ) :
-function beshop_sanitize_footer_text($value){ 
-	if(empty($value)){
-		$value = __('All Right Reserved @wp theme space 2019','beshop');
-	}
-	return $value;
+//Sanitize sidebar options
+if ( ! function_exists( 'beshop_sanitize_theme_font' ) ) :
+function beshop_sanitize_theme_font($value){ 
+    if(!in_array($value, array('Poppins','Noto Serif','Roboto','Open Sans','Lato','Montserrat','Crimson Text'))){
+        $value = 'Poppins';
+    }
+    return $value;
+}
+endif;
+//Sanitize sidebar options
+if ( ! function_exists( 'beshop_sanitize_theme_head_font' ) ) :
+function beshop_sanitize_theme_head_font($value){ 
+    if(!in_array($value, array('Poppins','Noto Serif','Roboto','Open Sans','Lato','Montserrat','Crimson Text'))){
+        $value = 'Noto Serif';
+    }
+    return $value;
 }
 endif;

@@ -23,27 +23,27 @@ $beshop_topbar_search = get_theme_mod( 'beshop_topbar_search',1 );
 		<?php endif; ?>
 		<?php if($beshop_topbar_menushow && has_nav_menu( 'btop-menu' )): ?>
 			<div class="col-md-auto ml-auto">
-				<div class="top-menu list-hide text-white">
-					<?php 
-						wp_nav_menu(
-							array(
-								'theme_location' => 'btop-menu',
-								'menu_id'        => 'btop-menu',
-								'menu_class'     => 'btop-menu',
-								'depth'          => 1,							
-							)
-						);
-					 ?>
+				<div class="topmenu-serch">
+					<div class="top-menu list-hide text-white">
+						<?php 
+							wp_nav_menu(
+								array(
+									'theme_location' => 'btop-menu',
+									'menu_id'        => 'btop-menu',
+									'menu_class'     => 'btop-menu',
+									'depth'          => 1,
+									'fallback_cb'    => false,							
+								)
+							);
+						 ?>
+					</div>
+					<div class="header-top-search">
+						<?php get_search_form(); ?>
+					</div>	
 				</div>
 			</div>
 			<?php endif; ?>
-		<?php if($beshop_topbar_search): ?>
-			<div class="col-md-auto ml-md-auto <?php if(empty($beshop_topbar_menushow) || !has_nav_menu( 'btop-menu' )): ?>ml-auto<?php endif; ?>">
-				<div class="header-top-search">
-					<?php get_search_form(); ?>
-				</div>
-			</div>
-		<?php endif; ?>
+		
 		</div>
 	</div>
 </div>
