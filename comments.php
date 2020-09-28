@@ -40,5 +40,10 @@ if ( have_comments() ) : ?>
 endif;
 
 // Form
-comment_form();
+comment_form([
+	'title_reply' => esc_html__( 'Leave a Reply', 'bard' ),
+	'comment_field' => '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Comment', 'bard' ) . '</label><textarea name="comment" id="comment" cols="45" rows="8"  maxlength="65525" required="required" spellcheck="false"></textarea></p>',
+	'label_submit' => esc_html__( 'Post Comment', 'bard' )
+]);
+
 ?>
