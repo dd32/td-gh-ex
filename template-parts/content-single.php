@@ -32,7 +32,7 @@
 							<?php if ( get_theme_mod( 'toggle_about_the_author' ) == 'hideauthor' ) : ?>
 								<?php else : ?>
 									<span class="about-the-author-byline">
-										<?php echo esc_html_e('by', 'affiliates-bloglet');  ?> <?php esc_html_e (get_the_author()); ?>
+										<?php esc_html_e('by', 'affiliates-bloglet');  ?> <?php esc_html (get_the_author()); ?>
 									</span> 
 								<?php endif; ?>
 							</div>
