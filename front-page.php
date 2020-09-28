@@ -11,7 +11,16 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	if ( $astral_frontpage_show ) {
 		get_template_part( 'content', 'frontpage' );
 	} else {
-		get_template_part( 'index' );
+		if(is_page_template( 'fullwidth.php' )) {
+			get_template_part( 'fullwidth' );
+		} else {
+			if(is_page_template( 'leftsidebar.php' )) {
+				get_template_part( 'leftsidebar' );
+			}
+			else {
+				get_template_part( 'index' );
+			}
+		}
 	}
 } else {
 	get_template_part( 'index' );
