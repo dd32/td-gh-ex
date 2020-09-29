@@ -7,7 +7,7 @@
     jQuery( document ).ready( function() {
         
         // Add button to sub-menu item to show nested pages / Only used on mobile
-        $( '.main-navigation li.page_item_has_children > a, .main-navigation li.menu-item-has-children > a' ).after( '<button class="menu-dropdown-btn"><i class="fa fa-angle-down"></i></button>' );
+        $( '.main-navigation li.page_item_has_children > a, .main-navigation li.menu-item-has-children > a' ).after( '<button class="menu-dropdown-btn"><i class="fas fa-angle-down"></i></button>' );
         // Mobile nav button functionality
         $( '.menu-dropdown-btn' ).bind( 'click', function() {
             $(this).parent().toggleClass( 'open-page-item' );

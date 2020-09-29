@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2020-08-24 12:34+0200\n"
+"POT-Creation-Date: 2020-09-29 13:13+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -143,7 +143,7 @@ msgstr ""
 msgid "TopShop Theme Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:67 customizer/customizer-options.php:507
+#: customizer/customizer-options.php:67 customizer/customizer-options.php:514
 msgid "Header"
 msgstr ""
 
@@ -172,18 +172,26 @@ msgid "Show Search"
 msgstr ""
 
 #: customizer/customizer-options.php:101
+msgid "Search Placeholder Text"
+msgstr ""
+
+#: customizer/customizer-options.php:104
+msgid "Search..."
+msgstr ""
+
+#: customizer/customizer-options.php:108
 msgid "Sticky Header"
 msgstr ""
 
-#: customizer/customizer-options.php:109
+#: customizer/customizer-options.php:116
 msgid "Remove \"Sign In/Account\" link"
 msgstr ""
 
-#: customizer/customizer-options.php:116
+#: customizer/customizer-options.php:123
 msgid "Remove WooCommerce Cart"
 msgstr ""
 
-#: customizer/customizer-options.php:126
+#: customizer/customizer-options.php:133
 msgid ""
 "<b>TopShop Premium includes:</b><br />- Display WEBSITE LOADER while site "
 "loads<br />- Select custom font for Main Navigation<br />- Edit the Main "
@@ -194,31 +202,31 @@ msgid ""
 "for better Product search (an added plugin)"
 msgstr ""
 
-#: customizer/customizer-options.php:135
+#: customizer/customizer-options.php:142
 msgid "Home Page Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:141
+#: customizer/customizer-options.php:148
 msgid "Default Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:142
+#: customizer/customizer-options.php:149
 msgid "Meta Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:143
+#: customizer/customizer-options.php:150
 msgid "None"
 msgstr ""
 
-#: customizer/customizer-options.php:147
+#: customizer/customizer-options.php:154
 msgid "Choose a Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:155
+#: customizer/customizer-options.php:162
 msgid "Slider Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:158
+#: customizer/customizer-options.php:165
 msgid ""
 "Enter the ID's of the post categories you want to display in the slider. Eg: "
 "\"13,17,19\" (no spaces and only comma's)<br /><br />Get the ID at <b>Posts -"
@@ -227,57 +235,57 @@ msgid ""
 "here</b></a>"
 msgstr ""
 
-#: customizer/customizer-options.php:162
+#: customizer/customizer-options.php:169
 msgid "Slider Shortcode"
 msgstr ""
 
-#: customizer/customizer-options.php:165
+#: customizer/customizer-options.php:172
 msgid ""
 "For a more advanced slider we recommend <a href=\"https://getdpd.com/cart/"
 "hoplink/15318?referrer=9jtzbgs34v8k4c0gs\" target=\"_blank\">Meta Slider</"
 "a><br /><br />Enter the slider shortcode here"
 msgstr ""
 
-#: customizer/customizer-options.php:172
+#: customizer/customizer-options.php:179
 msgid ""
 "<b>TopShop Premium includes:</b><br />- Change Slider scroll effect<br />- "
 "Link slide to single post<br />- Remove slider text<br />- Stop slider auto "
 "scroll"
 msgstr ""
 
-#: customizer/customizer-options.php:180
+#: customizer/customizer-options.php:187
 msgid "Blog"
 msgstr ""
 
-#: customizer/customizer-options.php:186
+#: customizer/customizer-options.php:193
 msgid "Left Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:187
+#: customizer/customizer-options.php:194
 msgid "Right Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:188
+#: customizer/customizer-options.php:195
 msgid "Alternate Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:189
+#: customizer/customizer-options.php:196
 msgid "Top Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:193
+#: customizer/customizer-options.php:200
 msgid "Blog Post Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:201
+#: customizer/customizer-options.php:208
 msgid "Remove links to Next & Previous posts on Blog single pages"
 msgstr ""
 
-#: customizer/customizer-options.php:208
+#: customizer/customizer-options.php:215
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:211
+#: customizer/customizer-options.php:218
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -286,39 +294,39 @@ msgid ""
 "at <b>Posts -> Categories</b>."
 msgstr ""
 
-#: customizer/customizer-options.php:214
+#: customizer/customizer-options.php:221
 msgid "Post Images Carousel"
 msgstr ""
 
-#: customizer/customizer-options.php:215
+#: customizer/customizer-options.php:222
 msgid "Use only the featured image"
 msgstr ""
 
-#: customizer/customizer-options.php:219
+#: customizer/customizer-options.php:226
 msgid "Blog List Image"
 msgstr ""
 
-#: customizer/customizer-options.php:226
+#: customizer/customizer-options.php:233
 msgid "Full Text"
 msgstr ""
 
-#: customizer/customizer-options.php:227
+#: customizer/customizer-options.php:234
 msgid "Summary"
 msgstr ""
 
-#: customizer/customizer-options.php:231
+#: customizer/customizer-options.php:238
 msgid "For each article display:"
 msgstr ""
 
-#: customizer/customizer-options.php:239
+#: customizer/customizer-options.php:246
 msgid "Amount of words displayed"
 msgstr ""
 
-#: customizer/customizer-options.php:246
+#: customizer/customizer-options.php:253
 msgid "Read More Text"
 msgstr ""
 
-#: customizer/customizer-options.php:256
+#: customizer/customizer-options.php:263
 msgid ""
 "<b>TopShop Premium includes:</b><br />- AJAX Load More Posts button<br />- "
 "AJAX Load More Posts as user scrolls | Infinite Scroll<br />- Neat Numeric "
@@ -329,344 +337,344 @@ msgid ""
 "Width"
 msgstr ""
 
-#: customizer/customizer-options.php:264 customizer/customizer-options.php:576
+#: customizer/customizer-options.php:271 customizer/customizer-options.php:583
 msgid "Footer"
 msgstr ""
 
-#: customizer/customizer-options.php:271
+#: customizer/customizer-options.php:278
 msgid "Enable a Back To Top button"
 msgstr ""
 
-#: customizer/customizer-options.php:281
+#: customizer/customizer-options.php:288
 msgid ""
 "<b>TopShop Premium includes:</b><br />- Premium offers 3 different footer "
 "layouts<br />- Advanced Custom Footer layout to specify columns and column "
 "widths"
 msgstr ""
 
-#: customizer/customizer-options.php:291 functions.php:303
+#: customizer/customizer-options.php:298 functions.php:303
 msgid "WooCommerce"
 msgstr ""
 
-#: customizer/customizer-options.php:298
+#: customizer/customizer-options.php:305
 msgid "Remove Product Hover Border"
 msgstr ""
 
-#: customizer/customizer-options.php:305
+#: customizer/customizer-options.php:312
 msgid "Remove Categories Count"
 msgstr ""
 
-#: customizer/customizer-options.php:311
+#: customizer/customizer-options.php:318
 msgid "Shopping Cart"
 msgstr ""
 
-#: customizer/customizer-options.php:312
+#: customizer/customizer-options.php:319
 msgid "Shopping Basket"
 msgstr ""
 
-#: customizer/customizer-options.php:313
+#: customizer/customizer-options.php:320
 msgid "Shopping Bag"
 msgstr ""
 
-#: customizer/customizer-options.php:317
+#: customizer/customizer-options.php:324
 msgid "Cart Icon"
 msgstr ""
 
-#: customizer/customizer-options.php:320
+#: customizer/customizer-options.php:327
 msgid ""
 "Due to the AJAX, This will only change when you open the site again in a new "
 "tab"
 msgstr ""
 
-#: customizer/customizer-options.php:332
+#: customizer/customizer-options.php:339
 msgid "SEO (Search Engine Optimization)"
 msgstr ""
 
-#: customizer/customizer-options.php:338 customizer/customizer-options.php:355
-#: customizer/customizer-options.php:372 customizer/customizer-options.php:388
-#: customizer/customizer-options.php:404
+#: customizer/customizer-options.php:345 customizer/customizer-options.php:362
+#: customizer/customizer-options.php:379 customizer/customizer-options.php:395
+#: customizer/customizer-options.php:411
 msgid "H1"
 msgstr ""
 
-#: customizer/customizer-options.php:339 customizer/customizer-options.php:356
-#: customizer/customizer-options.php:373 customizer/customizer-options.php:389
-#: customizer/customizer-options.php:405
+#: customizer/customizer-options.php:346 customizer/customizer-options.php:363
+#: customizer/customizer-options.php:380 customizer/customizer-options.php:396
+#: customizer/customizer-options.php:412
 msgid "H2"
 msgstr ""
 
-#: customizer/customizer-options.php:340 customizer/customizer-options.php:357
-#: customizer/customizer-options.php:374 customizer/customizer-options.php:390
-#: customizer/customizer-options.php:406
+#: customizer/customizer-options.php:347 customizer/customizer-options.php:364
+#: customizer/customizer-options.php:381 customizer/customizer-options.php:397
+#: customizer/customizer-options.php:413
 msgid "H3"
 msgstr ""
 
-#: customizer/customizer-options.php:341 customizer/customizer-options.php:358
-#: customizer/customizer-options.php:375 customizer/customizer-options.php:391
-#: customizer/customizer-options.php:407
+#: customizer/customizer-options.php:348 customizer/customizer-options.php:365
+#: customizer/customizer-options.php:382 customizer/customizer-options.php:398
+#: customizer/customizer-options.php:414
 msgid "H4"
 msgstr ""
 
-#: customizer/customizer-options.php:342 customizer/customizer-options.php:359
-#: customizer/customizer-options.php:376 customizer/customizer-options.php:392
-#: customizer/customizer-options.php:408
+#: customizer/customizer-options.php:349 customizer/customizer-options.php:366
+#: customizer/customizer-options.php:383 customizer/customizer-options.php:399
+#: customizer/customizer-options.php:415
 msgid "H5"
 msgstr ""
 
-#: customizer/customizer-options.php:343 customizer/customizer-options.php:360
-#: customizer/customizer-options.php:377 customizer/customizer-options.php:393
-#: customizer/customizer-options.php:409
+#: customizer/customizer-options.php:350 customizer/customizer-options.php:367
+#: customizer/customizer-options.php:384 customizer/customizer-options.php:400
+#: customizer/customizer-options.php:416
 msgid "H6"
 msgstr ""
 
-#: customizer/customizer-options.php:347
+#: customizer/customizer-options.php:354
 msgid "Site Title Element"
 msgstr ""
 
-#: customizer/customizer-options.php:364
+#: customizer/customizer-options.php:371
 msgid "Site Description Element"
 msgstr ""
 
-#: customizer/customizer-options.php:381
+#: customizer/customizer-options.php:388
 msgid "Page Titles Element"
 msgstr ""
 
-#: customizer/customizer-options.php:397
+#: customizer/customizer-options.php:404
 msgid "Blog List Titles Element"
 msgstr ""
 
-#: customizer/customizer-options.php:413
+#: customizer/customizer-options.php:420
 msgid "Widget Titles Element"
 msgstr ""
 
-#: customizer/customizer-options.php:428
+#: customizer/customizer-options.php:435
 msgid "TopShop Font Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:434
+#: customizer/customizer-options.php:441
 msgid "Disable Google Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:437
+#: customizer/customizer-options.php:444
 msgid "This will let you only select from web-safe fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:442 customizer/customizer-options.php:450
+#: customizer/customizer-options.php:449 customizer/customizer-options.php:457
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:458
+#: customizer/customizer-options.php:465
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:465 customizer/customizer-options.php:473
+#: customizer/customizer-options.php:472 customizer/customizer-options.php:480
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:481 customizer/customizer-options.php:590
+#: customizer/customizer-options.php:488 customizer/customizer-options.php:597
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:489
+#: customizer/customizer-options.php:496
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:492
+#: customizer/customizer-options.php:499
 msgid "Add custom CSS to your theme"
 msgstr ""
 
-#: customizer/customizer-options.php:499
+#: customizer/customizer-options.php:506
 msgid "TopShop Layout Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:514 customizer/customizer-options.php:583
+#: customizer/customizer-options.php:521 customizer/customizer-options.php:590
 msgid "Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:521
+#: customizer/customizer-options.php:528
 msgid "Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:528 customizer/customizer-options.php:535
+#: customizer/customizer-options.php:535 customizer/customizer-options.php:542
 msgid "Top Bar Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:542
+#: customizer/customizer-options.php:549
 msgid "Navigation Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:549
+#: customizer/customizer-options.php:556
 msgid "Navigation Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:559
+#: customizer/customizer-options.php:566
 msgid "Page"
 msgstr ""
 
-#: customizer/customizer-options.php:566
+#: customizer/customizer-options.php:573
 msgid "Sidebar Headings Color"
 msgstr ""
 
-#: customizer/customizer-options.php:597
+#: customizer/customizer-options.php:604
 msgid "Footer Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:605
+#: customizer/customizer-options.php:612
 msgid "Bottom Bar Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:612
+#: customizer/customizer-options.php:619
 msgid "Bottom Bar Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:624
+#: customizer/customizer-options.php:631
 msgid "TopShop Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:630
+#: customizer/customizer-options.php:637
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:636
+#: customizer/customizer-options.php:643
 msgid "Skype Name"
 msgstr ""
 
-#: customizer/customizer-options.php:642
+#: customizer/customizer-options.php:649
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:648
+#: customizer/customizer-options.php:655
 msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:654
+#: customizer/customizer-options.php:661
 msgid "Google Plus"
 msgstr ""
 
-#: customizer/customizer-options.php:660
+#: customizer/customizer-options.php:667
 msgid "LinkedIn"
 msgstr ""
 
-#: customizer/customizer-options.php:666
+#: customizer/customizer-options.php:673
 msgid "Behance"
 msgstr ""
 
-#: customizer/customizer-options.php:672
+#: customizer/customizer-options.php:679
 msgid "Houzz"
 msgstr ""
 
-#: customizer/customizer-options.php:678
+#: customizer/customizer-options.php:685
 msgid "Vkontakte"
 msgstr ""
 
-#: customizer/customizer-options.php:684
+#: customizer/customizer-options.php:691
 msgid "Tumblr"
 msgstr ""
 
-#: customizer/customizer-options.php:690
+#: customizer/customizer-options.php:697
 msgid "Flickr"
 msgstr ""
 
-#: customizer/customizer-options.php:696
+#: customizer/customizer-options.php:703
 msgid "TripAdvisor"
 msgstr ""
 
-#: customizer/customizer-options.php:704
+#: customizer/customizer-options.php:711
 msgid ""
 "<b>TopShop Premium includes:</b><br />Premium offers over 20 different "
 "social icons to add to your site, as well as the setting to add any custom "
 "icon you may need."
 msgstr ""
 
-#: customizer/customizer-options.php:713
+#: customizer/customizer-options.php:720
 msgid "TopShop Theme Text"
 msgstr ""
 
-#: customizer/customizer-options.php:719
+#: customizer/customizer-options.php:726
 msgid "Header Info Text"
 msgstr ""
 
-#: customizer/customizer-options.php:722
+#: customizer/customizer-options.php:729
 msgid "Call Us: 082 444 BOOM"
 msgstr ""
 
-#: customizer/customizer-options.php:723
+#: customizer/customizer-options.php:730
 msgid "This is the text in the header"
 msgstr ""
 
-#: customizer/customizer-options.php:727
+#: customizer/customizer-options.php:734
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:730
+#: customizer/customizer-options.php:737
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: customizer/customizer-options.php:731
+#: customizer/customizer-options.php:738
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:735
+#: customizer/customizer-options.php:742
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:738
+#: customizer/customizer-options.php:745
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
 
-#: customizer/customizer-options.php:739
+#: customizer/customizer-options.php:746
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:743
+#: customizer/customizer-options.php:750
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:746
+#: customizer/customizer-options.php:753
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:747
+#: customizer/customizer-options.php:754
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
-#: customizer/customizer-options.php:754
+#: customizer/customizer-options.php:761
 msgid ""
 "<b>TopShop Premium includes:</b><br />- Change the site attribution text to "
 "your own"
 msgstr ""
 
-#: customizer/customizer-options.php:762
+#: customizer/customizer-options.php:769
 msgid "Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:768
+#: customizer/customizer-options.php:775
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:775
+#: customizer/customizer-options.php:782
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:785
+#: customizer/customizer-options.php:792
 msgid ""
 "<b>TopShop Premium includes:</b><br />Premium offers a bunch of custom color "
 "settings to change colors for the Header, Top Bar, Navigation & Footer"
 msgstr ""
 
-#: customizer/customizer-options.php:793
+#: customizer/customizer-options.php:800
 msgid "Plugin Support"
 msgstr ""
 
-#: customizer/customizer-options.php:795
+#: customizer/customizer-options.php:802
 msgid ""
 "TopShop offers support for certain plugin by integrating extra functionality "
 "or styling for these plugins"
 msgstr ""
 
-#: customizer/customizer-options.php:800
+#: customizer/customizer-options.php:807
 msgid "Mega Menu"
 msgstr ""
 
@@ -860,8 +868,21 @@ msgstr ""
 msgid "See More Documentation"
 msgstr ""
 
-#: functions.php:463
+#: functions.php:463 functions.php:499
 msgid "Dismiss Notice"
+msgstr ""
+
+#: functions.php:492
+msgid "TopShop Premium on special!"
+msgstr ""
+
+#: functions.php:497
+#, php-format
+msgid "Get %1$s... Use the limited coupon code \"AUG2020SALE\" now."
+msgstr ""
+
+#: functions.php:497
+msgid "TopShop Pro for only $20"
 msgstr ""
 
 #: header.php:23
@@ -1422,11 +1443,6 @@ msgstr ""
 #: search.php:22 templates/titlebar.php:18
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:9
-msgctxt "placeholder"
-msgid "Search&hellip;"
 msgstr ""
 
 #: searchform.php:11

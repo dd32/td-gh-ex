@@ -53,6 +53,6 @@ endif;
 
 if( get_theme_mod( 'topshop-header-search' ) ) :
     if ( get_theme_mod( 'topshop-show-header-top-bar', customizer_library_get_default( 'topshop-show-header-top-bar' ) ) ) :
-        echo '<i class="fa fa-search search-btn"></i>';
+        echo '<i class="fas fa-search search-btn"></i>';
     endif;
 endif; ?>

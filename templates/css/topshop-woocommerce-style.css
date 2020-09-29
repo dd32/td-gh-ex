@@ -887,6 +887,17 @@ display: inline-block;font-size: 13px;}
         float: none;
         width: auto;
     }
+    .woocommerce-tabs ul.tabs,
+​    .woocommerce div.product .woocommerce-tabs ul.tabs,
+​    .woocommerce-page #content div.product .woocommerce-tabs ul.tabs,
+​    .woocommerce-page div.product .woocommerce-tabs ul.tabs,
+​    .woocommerce #content div.product .woocommerce-tabs .panel,
+​    .woocommerce div.product .woocommerce-tabs .panel,
+​    .woocommerce-page #content div.product .woocommerce-tabs .panel,
+​    .woocommerce-page div.product .woocommerce-tabs .panel {
+        width: 100% !important;
+        margin: 0 0 20px !important;
+    }
     
     /* -- My Account -- */
     .woocommerce-account .woocommerce-MyAccount-navigation,

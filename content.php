@@ -12,8 +12,8 @@ $images = get_posts( array("numberposts"=>-1,"post_type"=>"attachment","post_mim
             <div class="post-loop-images">
                 
                 <div class="post-loop-images-carousel-wrapper post-loop-images-carousel-wrapper-remove">
-                    <div class="post-loop-images-prev"><i class="fa fa-angle-left"></i></div>
-                    <div class="post-loop-images-next"><i class="fa fa-angle-right"></i></div>
+                    <div class="post-loop-images-prev"><i class="fas fa-angle-left"></i></div>
+                    <div class="post-loop-images-next"><i class="fas fa-angle-right"></i></div>
                     
                     <div class="post-loop-images-carousel post-loop-images-carousel-remove">
                         

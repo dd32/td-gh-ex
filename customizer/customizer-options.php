@@ -96,6 +96,13 @@ function customizer_library_topshop_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
+    $options['topshop-search-pholder'] = array(
+        'id' => 'topshop-search-pholder',
+        'label'   => __( 'Search Placeholder Text', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+        'default' => __( 'Search...', 'topshop' ),
+    );
     $options['topshop-sticky-header'] = array(
         'id' => 'topshop-sticky-header',
         'label'   => __( 'Sticky Header', 'topshop' ),

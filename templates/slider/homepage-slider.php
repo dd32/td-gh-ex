@@ -29,8 +29,8 @@ elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' 
         <?php if ( $slider_query->have_posts() ) : ?>
 
             <div class="home-slider-wrap home-slider-remove">
-                <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
-                <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
+                <div class="home-slider-prev"><i class="fas fa-angle-left"></i></div>
+                <div class="home-slider-next"><i class="fas fa-angle-right"></i></div>
                 
                 <div class="home-slider">
                     
@@ -70,8 +70,8 @@ elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' 
     <?php else : ?>
         
         <div class="home-slider-wrap home-slider-remove">
-            <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
-            <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
+            <div class="home-slider-prev"><i class="fas fa-angle-left"></i></div>
+            <div class="home-slider-next"><i class="fas fa-angle-right"></i></div>
                 
             <div class="home-slider">
                 

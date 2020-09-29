@@ -6,6 +6,19 @@
     
     $( window ).load( function() {
 
+        // Show / Hide Search Settings
+        topshop_search_check();
+        $( '#customize-control-topshop-header-search input[type=checkbox]' ).on( 'change', function() {
+            topshop_search_check();
+        });
+        function topshop_search_check() {
+            if ( $( '#customize-control-topshop-header-search input[type=checkbox]' ).is( ':checked' ) ) {
+                $( '#sub-accordion-section-topshop-panel-layout-section-header #customize-control-topshop-search-pholder' ).show();
+            } else {
+                $( '#sub-accordion-section-topshop-panel-layout-section-header #customize-control-topshop-search-pholder' ).hide();
+            }
+        }
+
         // Show / Hide Fonts Google/Websafe settings
         topshop_websafe_check();
         $( '#customize-control-topshop-disable-google-fonts input[type=checkbox]' ).on( 'change', function() {
