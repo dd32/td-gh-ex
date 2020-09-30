@@ -4,6 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
+Stable Tag: 0.6.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -166,6 +167,12 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Resolved focus error from responsive media.
 * Added slider height css error from responsive media.
 * Added display blog page post options.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files. 
+
+= 0.6.7 =
+* Added display home page slider overlay option.
+* Added home page slider overlay color option.
+* Added display Pagination in Blog Page option.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files. 
 
 == Resources ==

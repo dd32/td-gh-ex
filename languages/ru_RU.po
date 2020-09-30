@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-09-03 18:27+0530\n"
+"PO-Revision-Date: 2020-09-18 14:40+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -20,11 +20,11 @@ msgstr ""
 "Language: ru\n"
 "X-Poedit-SearchPath-0: ../../advance-ecommerce-store\n"
 
-#: 404.php:13 inc/customizer.php:973
+#: 404.php:13 inc/customizer.php:995
 msgid "404 Not Found"
 msgstr "404 Не Найдено"
 
-#: 404.php:14 inc/customizer.php:983
+#: 404.php:14 inc/customizer.php:1005
 msgid ""
 "Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens "
 "to the best of us."
@@ -32,7 +32,7 @@ msgstr ""
 "Похоже, вы приняли неправильный поворот и ад. Не волнуйся, и это случится с "
 "лучшими из нас."
 
-#: 404.php:17 inc/customizer.php:993
+#: 404.php:17 inc/customizer.php:1015
 msgid "Back to Home Page"
 msgstr "Вернуться на главную страницу"
 
@@ -190,7 +190,7 @@ msgstr "КОРЗИНА"
 msgid "Top Menu"
 msgstr "Главное меню"
 
-#: no-results.php:11 inc/customizer.php:1201
+#: no-results.php:11 inc/customizer.php:1233
 msgid "Nothing Found"
 msgstr "Ничего не найдено"
 
@@ -281,7 +281,7 @@ msgstr "КАТЕГОРИИ"
 #: page-template/custom-front-page.php:82 template-parts/content.php:43
 #: template-parts/grid-layout.php:37 template-parts/content-audio.php:65
 #: template-parts/content-gallery.php:54 template-parts/content-image.php:43
-#: template-parts/content-video.php:64 inc/customizer.php:900
+#: template-parts/content-video.php:64 inc/customizer.php:922
 msgid "READ MORE"
 msgstr "ПОДРОБНЕЕ"
 
@@ -477,7 +477,7 @@ msgstr "Настройки макета"
 msgid "Show / Hide Preloader"
 msgstr "Показать / Скрыть Preloader"
 
-#: inc/customizer.php:647 inc/customizer.php:1014
+#: inc/customizer.php:647 inc/customizer.php:1036
 msgid "Sticky Header"
 msgstr "Липкий Заголовок"
 
@@ -566,129 +566,149 @@ msgstr "Показать / Скрыть слайдер"
 msgid "Select Slide Image Page"
 msgstr "Выберите страницу слайд-изображения"
 
-#: inc/customizer.php:819 inc/customizer.php:828 inc/customizer.php:1291
-#: inc/customizer.php:1346
+#: inc/customizer.php:823
+msgid "Home Page Slider Overlay"
+msgstr "Наложение слайдера домашней страницы"
+
+#: inc/customizer.php:824
+msgid "This option will add colors over the slider."
+msgstr "Эта опция добавит цвета к ползунку."
+
+#: inc/customizer.php:833
+msgid "Home Page Slider Overlay Color"
+msgstr "Цвет наложения слайдера домашней страницы"
+
+#: inc/customizer.php:835
+msgid ""
+"It will add the color overlay of the slider. To make it transparent, use the "
+"below option."
+msgstr ""
+"Это добавит наложение цвета ползунка. Чтобы сделать его прозрачным, "
+"воспользуйтесь опцией ниже."
+
+#: inc/customizer.php:841 inc/customizer.php:850 inc/customizer.php:1323
+#: inc/customizer.php:1378
 msgid "Left"
 msgstr "Осталось"
 
-#: inc/customizer.php:824
+#: inc/customizer.php:846
 msgid "Slider Content Alignment"
 msgstr "Выравнивание содержимого слайдера"
 
-#: inc/customizer.php:827 inc/customizer.php:1348
+#: inc/customizer.php:849 inc/customizer.php:1380
 msgid "Center"
 msgstr "Центр"
 
-#: inc/customizer.php:829 inc/customizer.php:1292 inc/customizer.php:1338
-#: inc/customizer.php:1347
+#: inc/customizer.php:851 inc/customizer.php:1324 inc/customizer.php:1370
+#: inc/customizer.php:1379
 msgid "Right"
 msgstr "Правильно"
 
-#: inc/customizer.php:839
+#: inc/customizer.php:861
 msgid "Slider Excerpt length"
 msgstr "Длина выдержки слайдера"
 
-#: inc/customizer.php:856
+#: inc/customizer.php:878
 msgid "Slider Image Opacity"
 msgstr "Непрозрачность слайдера"
 
-#: inc/customizer.php:879
+#: inc/customizer.php:901
 msgid "Slider Speed Option"
 msgstr "Опция скорости слайдера"
 
-#: inc/customizer.php:890
+#: inc/customizer.php:912
 msgid "550"
 msgstr "пятьсот пятьдесят"
 
-#: inc/customizer.php:894
+#: inc/customizer.php:916
 msgid "Slider Image Height"
 msgstr "Высота изображения слайдера"
 
-#: inc/customizer.php:904
+#: inc/customizer.php:926
 msgid "Slider Button"
 msgstr "Ползунок"
 
-#: inc/customizer.php:911
+#: inc/customizer.php:933
 msgid "Product Services"
 msgstr "Сервис продуктов"
 
-#: inc/customizer.php:935
+#: inc/customizer.php:957
 msgid "Select Category to display Services"
 msgstr "Выберите категорию для отображения услуг"
 
-#: inc/customizer.php:941
+#: inc/customizer.php:963
 msgid "New Arrivals"
 msgstr "Новые поступления"
 
-#: inc/customizer.php:951
+#: inc/customizer.php:973
 msgid "Section Title"
 msgstr "Название раздела"
 
-#: inc/customizer.php:961
+#: inc/customizer.php:983
 msgid "Select Page"
 msgstr "Выберите страницу"
 
-#: inc/customizer.php:968
+#: inc/customizer.php:990
 msgid "404 Page"
 msgstr "404 Page"
 
-#: inc/customizer.php:977
+#: inc/customizer.php:999
 msgid "404 Page Title"
 msgstr "404 Заголовок страницы"
 
-#: inc/customizer.php:987
+#: inc/customizer.php:1009
 msgid "404 Page Content"
 msgstr "Содержание страницы 404"
 
-#: inc/customizer.php:997
+#: inc/customizer.php:1019
 msgid "404 Page Button"
 msgstr "Кнопка 404 страницы"
 
-#: inc/customizer.php:1004
+#: inc/customizer.php:1026
 msgid "Responsive Setting"
 msgstr "Отзывчивая настройка"
 
-#: inc/customizer.php:1024
+#: inc/customizer.php:1046
 msgid "Slider"
 msgstr "ползунок"
 
-#: inc/customizer.php:1034
+#: inc/customizer.php:1056
 msgid "Scroll To Top"
 msgstr "Пролистать наверх"
 
-#: inc/customizer.php:1044
+#: inc/customizer.php:1066
 msgid "Sidebar"
 msgstr "Боковая панель"
 
-#: inc/customizer.php:1054
+#: inc/customizer.php:1076
 msgid "Preloader"
 msgstr "Preloader"
 
-#: inc/customizer.php:1060
+#: inc/customizer.php:1082
 msgid "Blog Page Settings"
 msgstr "Настройки страницы блога"
 
-#: inc/customizer.php:1070
+#: inc/customizer.php:1092
 msgid "Post Date"
 msgstr "Дата публикации"
 
-#: inc/customizer.php:1080
+#: inc/customizer.php:1102
 msgid "Comments"
 msgstr "Комментарии"
 
-#: inc/customizer.php:1090
+#: inc/customizer.php:1112
 msgid "Author"
 msgstr "автор"
 
-#: inc/customizer.php:1100
+#: inc/customizer.php:1122
 msgid "Single Post Tags"
 msgstr "Метки одного сообщения"
 
-#: inc/customizer.php:1110
+#: inc/customizer.php:1132
 msgid "Single Post Image"
 msgstr "Single Post Image"
 
-#: inc/customizer.php:1120
+#: inc/customizer.php:1142
 msgid "Post Description Length"
 msgstr "Длина сообщения"
 
@@ -696,63 +716,67 @@ msgstr "Длина сообщения"
 msgid "No Content"
 msgstr "Без содержания"
 
-#: inc/customizer.php:1115 inc/customizer.php:1124
+#: inc/customizer.php:1137 inc/customizer.php:1146
 msgid "Excerpt Content"
 msgstr "Содержание выдержки"
 
-#: inc/customizer.php:1125
+#: inc/customizer.php:1147
 msgid "Full Content"
 msgstr "Полный контент"
 
-#: inc/customizer.php:1134
+#: inc/customizer.php:1156
 msgid "Excerpt length"
 msgstr "Фиксированная длина"
 
-#: inc/customizer.php:1146
+#: inc/customizer.php:1168
 msgid "..."
 msgstr "..."
 
-#: inc/customizer.php:1150
+#: inc/customizer.php:1172
 msgid "Post Excerpt Indicator Option"
 msgstr "Опция индикатора после выдержки"
 
-#: inc/customizer.php:1157
+#: inc/customizer.php:1179
 msgid "Read More"
 msgstr "Подробнее"
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1183
 msgid "Add Button Text"
 msgstr "Добавить текст кнопки"
 
-#: inc/customizer.php:1171
+#: inc/customizer.php:1193
 msgid "Meta Box Separator"
 msgstr "Meta Box Separator"
 
-#: inc/customizer.php:1173
+#: inc/customizer.php:1195
 msgid "Add Meta Separator. e.g.: \"|\", \"/\", etc."
 msgstr "Добавить мета-разделитель. например: \"|\", \"/\" и т. д."
 
-#: inc/customizer.php:1181 inc/customizer.php:1189
+#: inc/customizer.php:1203 inc/customizer.php:1211
 msgid "In Box"
 msgstr "В коробке"
 
-#: inc/customizer.php:1186
+#: inc/customizer.php:1208
 msgid "Display Blog Page Post :"
 msgstr "Показать сообщение на странице блога:"
 
-#: inc/customizer.php:1190
+#: inc/customizer.php:1212
 msgid "Without Box"
 msgstr "Без коробки"
 
-#: inc/customizer.php:1196
+#: inc/customizer.php:1222
+msgid "Pagination in Blog Page"
+msgstr "Пагинация на странице блога"
+
+#: inc/customizer.php:1228
 msgid "No Result Found"
 msgstr "Результатов не найдено"
 
-#: inc/customizer.php:1205
+#: inc/customizer.php:1237
 msgid "No Result Found Title"
 msgstr "Результат не найден Заголовок"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1243
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -760,23 +784,23 @@ msgstr ""
 "Извините, но ничего не соответствует вашим условиям поиска. Пожалуйста, "
 "попытайтесь снова с другими ключевыми словами."
 
-#: inc/customizer.php:1215
+#: inc/customizer.php:1247
 msgid "No Result Found Content"
 msgstr "Результат не найден"
 
-#: inc/customizer.php:1226
+#: inc/customizer.php:1258
 msgid "No Result search"
 msgstr "Нет результатов поиска"
 
-#: inc/customizer.php:1232
+#: inc/customizer.php:1264
 msgid "Footer Text"
 msgstr "Текст нижнего колонтитула"
 
-#: inc/customizer.php:1243
+#: inc/customizer.php:1275
 msgid "Footer widget area"
 msgstr "Área de widget de pie de página"
 
-#: inc/customizer.php:1245
+#: inc/customizer.php:1277
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -784,66 +808,66 @@ msgstr ""
 "Seleccione el número de áreas de widgets que desea en el pie de página. "
 "Después de eso, ve a Apariencia> Widgets y agrega tus widgets."
 
-#: inc/customizer.php:1247
+#: inc/customizer.php:1279
 msgid "One"
 msgstr "Один"
 
-#: inc/customizer.php:1248
+#: inc/customizer.php:1280
 msgid "Two"
 msgstr "Два"
 
-#: inc/customizer.php:1249
+#: inc/customizer.php:1281
 msgid "Three"
 msgstr "Три"
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1282
 msgid "Four"
 msgstr "четыре"
 
-#: inc/customizer.php:1259
+#: inc/customizer.php:1291
 msgid "Footer Widget Background Color"
 msgstr "Цвет фона нижнего колонтитула"
 
-#: inc/customizer.php:1268
+#: inc/customizer.php:1300
 msgid "Footer Widget Background Image"
 msgstr "Фоновое изображение виджета нижнего колонтитула"
 
-#: inc/customizer.php:1277
+#: inc/customizer.php:1309
 msgid "Copyright Text"
 msgstr "Авторский текст"
 
-#: inc/customizer.php:1283 inc/customizer.php:1293
+#: inc/customizer.php:1315 inc/customizer.php:1325
 msgid "center"
 msgstr "центр"
 
-#: inc/customizer.php:1288
+#: inc/customizer.php:1320
 msgid "Copyright Text Alignment"
 msgstr "Выравнивание текста авторского права"
 
-#: inc/customizer.php:1302
+#: inc/customizer.php:1334
 msgid "Copyright Font Size"
 msgstr "Размер шрифта авторского права"
 
-#: inc/customizer.php:1317
+#: inc/customizer.php:1349
 msgid "Copyright Padding"
 msgstr "Авторское право"
 
-#: inc/customizer.php:1333
+#: inc/customizer.php:1365
 msgid "Show / Hide Scroll To Top"
 msgstr "Показать / Скрыть Прокрутить наверх"
 
-#: inc/customizer.php:1343
+#: inc/customizer.php:1375
 msgid "Scroll Back to Top Position"
 msgstr "Прокрутите назад к верхней позиции"
 
-#: inc/customizer.php:1357
+#: inc/customizer.php:1389
 msgid "Scroll Icon Font Size"
 msgstr "Размер шрифта для значка прокрутки"
 
-#: inc/customizer.php:1448
+#: inc/customizer.php:1480
 msgid "Ecommerce Pro"
 msgstr "Ecommerce Pro"
 
-#: inc/customizer.php:1449
+#: inc/customizer.php:1481
 msgid "Go Pro"
 msgstr "Go Pro"
