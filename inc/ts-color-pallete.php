@@ -380,3 +380,17 @@
 			$advance_education_custom_css .='background-color: transparent;';
 		$advance_education_custom_css .='}';
 	}
+
+	// slider overlay
+	$advance_education_slider_overlay = get_theme_mod('advance_education_slider_overlay', true);
+	if($advance_education_slider_overlay == false){
+		$advance_education_custom_css .='#slider img{';
+			$advance_education_custom_css .='opacity:1;';
+		$advance_education_custom_css .='}';
+	} 
+	$advance_education_slider_image_overlay_color = get_theme_mod('advance_education_slider_image_overlay_color', true);
+	if($advance_education_slider_overlay != false){
+		$advance_education_custom_css .='#slider{';
+			$advance_education_custom_css .='background-color: '.esc_html($advance_education_slider_image_overlay_color).';';
+		$advance_education_custom_css .='}';
+	}

@@ -864,6 +864,28 @@ function advance_education_customize_register($wp_customize) {
 		) );
 	}
 
+	$wp_customize->add_setting('advance_education_slider_overlay',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_education_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_education_slider_overlay',array(
+       'type' => 'checkbox',
+       'label' => __('Home Page Slider Overlay','advance-education'),
+		'description'    => __('This option will add colors over the slider.','advance-education'),
+       'section' => 'advance_education_slider'
+    ));
+
+    $wp_customize->add_setting('advance_education_slider_image_overlay_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_education_slider_image_overlay_color', array(
+		'label'    => __('Home Page Slider Overlay Color', 'advance-education'),
+		'section'  => 'advance_education_slider',
+		'description'    => __('It will add the color overlay of the slider. To make it transparent, use the below option.','advance-education'),
+		'settings' => 'advance_education_slider_image_overlay_color',
+	)));
+
 	//content layout
     $wp_customize->add_setting('advance_education_slider_content_alignment',array(
     'default' => __('Left','advance-education'),
@@ -1224,6 +1246,16 @@ function advance_education_customize_register($wp_customize) {
             'Without Box' => __('Without Box','advance-education'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_education_blog_post_pagination',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_education_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_education_blog_post_pagination',array(
+       'type' => 'checkbox',
+       'label' => __('Pagination in Blog Page','advance-education'),
+       'section' => 'advance_education_blog_post'
+    ));
 
 	//no Result Found
 	$wp_customize->add_section('advance_education_noresult_found',array(

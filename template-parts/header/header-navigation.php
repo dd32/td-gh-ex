@@ -58,12 +58,12 @@
                 <?php } ?>
                 <?php if( get_theme_mod('advance_education_phone1') != ''){ ?>
                   <div class="phone">
-                    <a href="tel:<?php echo esc_url( get_theme_mod('advance_education_phone1','' )); ?>"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span></a>
+                    <a href="tel:<?php echo esc_attr( get_theme_mod('advance_education_phone1','' )); ?>"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span></a>
                   </div> 
                 <?php } ?>
                 <?php if( get_theme_mod('advance_education_mail1') != ''){ ?>
                   <div class="mail">
-                    <a href="mailto:<?php echo esc_url( get_theme_mod('advance_education_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span></a>
+                    <a href="mailto:<?php echo esc_attr( get_theme_mod('advance_education_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span></a>
                   </div>  
                 <?php } ?>
                 <?php get_search_form();?>
