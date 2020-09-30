@@ -383,3 +383,18 @@
 		$bb_mobile_application_custom_css .='}';
 	}
 
+	// slider overlay
+	$bb_mobile_application_slider_overlay = get_theme_mod('bb_mobile_application_slider_overlay', true);
+	if($bb_mobile_application_slider_overlay == false){
+		$bb_mobile_application_custom_css .='#slider img{';
+			$bb_mobile_application_custom_css .='opacity:1;';
+		$bb_mobile_application_custom_css .='}';
+	} 
+	$bb_mobile_application_slider_image_overlay_color = get_theme_mod('bb_mobile_application_slider_image_overlay_color', true);
+	if($bb_mobile_application_slider_overlay != false){
+		$bb_mobile_application_custom_css .='#slider{';
+			$bb_mobile_application_custom_css .='background-color: '.esc_html($bb_mobile_application_slider_image_overlay_color).';';
+		$bb_mobile_application_custom_css .='}';
+	}
+
+

@@ -36,11 +36,13 @@ get_header(); ?>
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                         ?>
-                                    </div>    
-                                    <nav role="navigation" id="image-navigation" class="image-navigation">
-                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                    </nav>
+                                    </div>
+                                    <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                        <nav role="navigation" id="image-navigation" class="image-navigation">
+                                            <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                            <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                        </nav>
+                                    <?php } ?>
                                 </header>    
                                 <div class="entry-content">
                                     <div class="entry-attachment">
@@ -96,10 +98,12 @@ get_header(); ?>
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                         ?>
                                     </div>    
-                                    <nav role="navigation" id="image-navigation" class="image-navigation">
-                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                    </nav>
+                                    <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                        <nav role="navigation" id="image-navigation" class="image-navigation">
+                                            <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                            <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                        </nav>
+                                    <?php } ?>
                                 </header>    
                                 <div class="entry-content">
                                     <div class="entry-attachment">
@@ -155,10 +159,12 @@ get_header(); ?>
                                         edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                     ?>
                                 </div>    
-                                <nav role="navigation" id="image-navigation" class="image-navigation">
-                                    <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                    <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                </nav>
+                                <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                    <nav role="navigation" id="image-navigation" class="image-navigation">
+                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                    </nav>
+                                <?php } ?>
                             </header>    
                             <div class="entry-content">
                                 <div class="entry-attachment">
@@ -214,10 +220,12 @@ get_header(); ?>
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                         ?>
                                     </div>    
-                                    <nav role="navigation" id="image-navigation" class="image-navigation">
-                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                    </nav>
+                                    <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                        <nav role="navigation" id="image-navigation" class="image-navigation">
+                                            <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                            <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                        </nav>
+                                    <?php } ?>
                                 </header>    
                                 <div class="entry-content">
                                     <div class="entry-attachment">
@@ -275,10 +283,12 @@ get_header(); ?>
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                         ?>
                                     </div>    
-                                    <nav role="navigation" id="image-navigation" class="image-navigation">
-                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                    </nav>
+                                    <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                        <nav role="navigation" id="image-navigation" class="image-navigation">
+                                            <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                            <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                        </nav>
+                                    <?php } ?>
                                 </header>    
                                 <div class="entry-content">
                                     <div class="entry-attachment">
@@ -336,10 +346,12 @@ get_header(); ?>
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                         ?>
                                     </div>    
-                                    <nav role="navigation" id="image-navigation" class="image-navigation">
-                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                    </nav>
+                                    <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                        <nav role="navigation" id="image-navigation" class="image-navigation">
+                                            <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                            <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                        </nav>
+                                    <?php } ?>
                                 </header>    
                                 <div class="entry-content">
                                     <div class="entry-attachment">
@@ -396,10 +408,12 @@ get_header(); ?>
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
                                         ?>
                                     </div>    
-                                    <nav role="navigation" id="image-navigation" class="image-navigation">
-                                        <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
-                                        <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
-                                    </nav>
+                                    <?php if( get_theme_mod( 'bb_mobile_application_blog_post_pagination',true) != '') { ?>    
+                                        <nav role="navigation" id="image-navigation" class="image-navigation">
+                                            <div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'bb-mobile-application' ) ); ?></div>
+                                            <div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'bb-mobile-application' ) ); ?></div>
+                                        </nav>
+                                    <?php } ?>
                                 </header>    
                                 <div class="entry-content">
                                     <div class="entry-attachment">
