@@ -339,6 +339,20 @@
 		$bb_ecommerce_store_custom_css .='}';
 	}
 
+	// slider overlay
+	$bb_ecommerce_store_slider_overlay = get_theme_mod('bb_ecommerce_store_slider_overlay', true);
+	if($bb_ecommerce_store_slider_overlay == false){
+		$bb_ecommerce_store_custom_css .='#slider img{';
+			$bb_ecommerce_store_custom_css .='opacity:1;';
+		$bb_ecommerce_store_custom_css .='}';
+	} 
+	$bb_ecommerce_store_slider_image_overlay_color = get_theme_mod('bb_ecommerce_store_slider_image_overlay_color', true);
+	if($bb_ecommerce_store_slider_overlay != false){
+		$bb_ecommerce_store_custom_css .='#slider{';
+			$bb_ecommerce_store_custom_css .='background-color: '.esc_html($bb_ecommerce_store_slider_image_overlay_color).';';
+		$bb_ecommerce_store_custom_css .='}';
+	}
+
 
 
 

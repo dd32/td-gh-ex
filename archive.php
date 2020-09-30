@@ -35,17 +35,19 @@ get_header(); ?>
 
               endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-              ) );
-            ?>
-            <div class="clearfix"></div>
-          </div>
+          <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                    'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+                ) );
+              ?>
+              <div class="clearfix"></div>
+            </div>
+          <?php } ?>
         </div>
       </div>
     <?php }else if($bb_ecommerce_store_left_right == 'Right Sidebar'){ ?>
@@ -70,17 +72,19 @@ get_header(); ?>
 
               endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-              ) );
-            ?>
-            <div class="clearfix"></div>
-          </div>
+          <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                    'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+                ) );
+              ?>
+              <div class="clearfix"></div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
       </div>
@@ -107,17 +111,19 @@ get_header(); ?>
               endif; 
           ?>
         </div>
-        <div class="navigation">
-          <?php
-            // Previous/next page navigation.
-            the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-            ) );
-          ?>
-          <div class="clearfix"></div>
-        </div>
+        <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+          <div class="navigation">
+            <?php
+              // Previous/next page navigation.
+              the_posts_pagination( array(
+                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+              ) );
+            ?>
+            <div class="clearfix"></div>
+          </div>
+        <?php } ?>
       </div>
     <?php }else if($bb_ecommerce_store_left_right == 'Three Columns'){ ?>
       <div class="row">
@@ -142,17 +148,19 @@ get_header(); ?>
 
               endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-              ) );
-            ?>
-            <div class="clearfix"></div>
-          </div>
+          <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                    'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+                ) );
+              ?>
+              <div class="clearfix"></div>
+            </div>
+          <?php } ?>
         </div>
         <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
       </div>
@@ -179,17 +187,19 @@ get_header(); ?>
 
               endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-              ) );
-            ?>
-            <div class="clearfix"></div>
-          </div>
+          <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                    'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+                ) );
+              ?>
+              <div class="clearfix"></div>
+            </div>
+          <?php } ?>
         </div>
         <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
         <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
@@ -217,17 +227,19 @@ get_header(); ?>
               endif; 
           ?>
         </div>
-        <div class="navigation">
-          <?php
-            // Previous/next page navigation.
-            the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-            ) );
-          ?>
-          <div class="clearfix"></div>
-        </div>
+        <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+          <div class="navigation">
+            <?php
+              // Previous/next page navigation.
+              the_posts_pagination( array(
+                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+              ) );
+            ?>
+            <div class="clearfix"></div>
+          </div>
+        <?php } ?>
       </div>    
     <?php }else {?>
       <div class="row">
@@ -251,17 +263,19 @@ get_header(); ?>
 
               endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
-                  'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
-              ) );
-            ?>
-            <div class="clearfix"></div>
-          </div>
+          <?php if( get_theme_mod( 'bb_ecommerce_store_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'bb-ecommerce-store' ),
+                    'next_text'          => __( 'Next page', 'bb-ecommerce-store' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>',
+                ) );
+              ?>
+              <div class="clearfix"></div>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
       </div>

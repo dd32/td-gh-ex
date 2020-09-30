@@ -4,6 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
+Stable Tag: 1.6
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -220,6 +221,12 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
   * Resolved focus error from responsive media.
   * Resolved slider height css error from responsive media.
   * Added display blog page post options.
+  * Updated POT file.
+
+= 1.6 =
+  * Added display home page slider overlay option.
+  * Added home page slider overlay color option.
+  * Added display Pagination in Blog Page option.
   * Updated POT file.
 
 == Resources ==

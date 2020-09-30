@@ -35,12 +35,12 @@
           <div class="row">
             <div class="top-contact col-lg-3 col-md-3">
               <?php if( get_theme_mod( 'bb_ecommerce_store_contact','' ) != '') { ?>
-                <a class="call" href="tel:<?php echo esc_url( get_theme_mod('bb_ecommerce_store_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span></a>
+                <a class="call" href="tel:<?php echo esc_attr( get_theme_mod('bb_ecommerce_store_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span></a>
               <?php } ?>
             </div>
             <div class="top-contact col-lg-3 col-md-4">
               <?php if( get_theme_mod( 'bb_ecommerce_store_email','' ) != '') { ?>
-                <a class="email" href="mailto:<?php echo esc_url( get_theme_mod('bb_ecommerce_store_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span></a>
+                <a class="email" href="mailto:<?php echo esc_attr( get_theme_mod('bb_ecommerce_store_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span></a>
               <?php } ?>
             </div>
             <div class="social-media col-lg-6 col-md-5">
@@ -131,12 +131,12 @@
                   <div id="contact-info">
                     <div class="top-contact">
                       <?php if( get_theme_mod( 'bb_ecommerce_store_contact','' ) != '') { ?>
-                        <a class="call" href="tel:<?php echo esc_url( get_theme_mod('bb_ecommerce_store_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span></a>
+                        <a class="call" href="tel:<?php echo esc_attr( get_theme_mod('bb_ecommerce_store_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span></a>
                       <?php } ?>
                     </div>
                     <div class="top-contact">
                       <?php if( get_theme_mod( 'bb_ecommerce_store_email','' ) != '') { ?>
-                        <a class="email" href="mailto:<?php echo esc_url( get_theme_mod('bb_ecommerce_store_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span></a>
+                        <a class="email" href="mailto:<?php echo esc_attr( get_theme_mod('bb_ecommerce_store_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span></a>
                       <?php } ?>
                     </div>
                     <div class="social-media">

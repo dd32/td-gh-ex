@@ -920,6 +920,28 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		) );
 	}
 
+	$wp_customize->add_setting('bb_ecommerce_store_slider_overlay',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_ecommerce_store_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_slider_overlay',array(
+       'type' => 'checkbox',
+       'label' => __('Home Page Slider Overlay','bb-ecommerce-store'),
+		'description'    => __('This option will add colors over the slider.','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_slidersettings'
+    ));
+
+    $wp_customize->add_setting('bb_ecommerce_store_slider_image_overlay_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'bb_ecommerce_store_slider_image_overlay_color', array(
+		'label'    => __('Home Page Slider Overlay Color', 'bb-ecommerce-store'),
+		'section'  => 'bb_ecommerce_store_slidersettings',
+		'description'    => __('It will add the color overlay of the slider. To make it transparent, use the below option.','bb-ecommerce-store'),
+		'settings' => 'bb_ecommerce_store_slider_image_overlay_color',
+	)));
+
 	//content layout
     $wp_customize->add_setting('bb_ecommerce_store_slider_content_alignment',array(
     'default' => __('Right','bb-ecommerce-store'),
@@ -1280,6 +1302,16 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
             'Without Box' => __('Without Box','bb-ecommerce-store'),
         ),
 	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_blog_post_pagination',array(
+       'default' => true,
+       'sanitize_callback'	=> 'bb_ecommerce_store_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_blog_post_pagination',array(
+       'type' => 'checkbox',
+       'label' => __('Pagination in Blog Page','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_blog_post'
+    ));
 
 	//no Result Found
 	$wp_customize->add_section('bb_ecommerce_store_noresult_found',array(
