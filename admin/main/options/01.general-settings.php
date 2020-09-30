@@ -21,7 +21,7 @@ function alante_thinkup_custom_logo() {
 			$output = get_custom_logo();
 		}
 	} else {
-		$output .= '<a rel="home" href="' . esc_url( home_url( '/' ) ) . '">';
+		$output .= '<a rel="home" href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link">';
 		$output .= '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 		$output .= '<h2 class="site-description" title="' . esc_attr( get_bloginfo( 'description', 'display' ) ) . '">' . esc_html( get_bloginfo( 'description' ) ) . '</h2>';
 		$output .= '</a>';

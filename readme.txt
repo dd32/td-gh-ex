@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
-Version: 1.1.12
+Version: 1.1.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -104,10 +104,16 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 == Changelog ==
 
+= 1.1.13
+- Fixed:   Logo changes now reflected in customizer preview.
+- Fixed:   Accessibility links in header now appear correctly. Issue where header cut of link is now fixed.
+- Updated: Improved accessibility styling of buttons when focused.
+- Removed: Custom hook thinkup_hook_bodyhtml() removed given inclusion of wp_body_open().
+
 = 1.1.12
-- New:     wp_body_open() add after body tag in header.php.
 - New:     "Tested up to" header field added to style.css.
 - New:     "Requires PHP" header field added to style.css. 
+- New:     wp_body_open() add after body tag in header.php.
 - Fixed:   Screenshot image license updated.
 - Fixed:   wp_nav_menu in 01.general-settings.php passes array directly instead of $args variable.
 

@@ -1,7 +1,7 @@
 /*
 Theme Name: Alante
 Text Domain: alante
-Version: 1.1.12
+Version: 1.1.13
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
@@ -761,6 +761,8 @@ li.pag-next {
 #site-header {
 	line-height: 1.5;
 	border-bottom: 1px solid #DDD;
+	position: relative;
+	z-index: 9999;
 }
 .home #site-header {
 	border-bottom: none;
@@ -770,6 +772,10 @@ li.pag-next {
 #pre-header {
 	background: #F5F5F5;
 	border-bottom: 1px solid #DDD;
+}
+#pre-header:hover,
+#pre-header:focus-within {
+	z-index: 99991;
 }
 #pre-header li {
 	float: left;
@@ -967,7 +973,7 @@ li.pag-next {
 /* Header */
 #header {
 	width: 100%;
-	z-index: 999999;
+	z-index: 9999;
 	background: white;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -1137,7 +1143,9 @@ body.custom-background .is-sticky #header {
 .main-navigation ul ul :hover > a {
 }
 #pre-header .main-navigation ul li:hover > ul,
-#header .main-navigation ul li:hover > ul {
+#pre-header .main-navigation ul li:focus-within > ul,
+#header .main-navigation ul li:hover > ul,
+#header .main-navigation ul li:focus-within > ul {
 	display: block;
 }
 
@@ -1732,7 +1740,7 @@ input[type="submit"]:hover {
 /* =Breadcrumbs
 ----------------------------------------------------------------------------- */
 #breadcrumbs {
-	font-size: 10px;
+	font-size: 12px;
 	padding-bottom: 20px;
 }
 #breadcrumbs .delimiter {
