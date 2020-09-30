@@ -372,3 +372,17 @@
 		$advance_pet_care_custom_css .='}';
 	}
 
+	// slider overlay
+	$advance_pet_care_slider_overlay = get_theme_mod('advance_pet_care_slider_overlay', true);
+	if($advance_pet_care_slider_overlay == false){
+		$advance_pet_care_custom_css .='#slider img{';
+			$advance_pet_care_custom_css .='opacity:1;';
+		$advance_pet_care_custom_css .='}';
+	} 
+	$advance_pet_care_slider_image_overlay_color = get_theme_mod('advance_pet_care_slider_image_overlay_color', true);
+	if($advance_pet_care_slider_overlay != false){
+		$advance_pet_care_custom_css .='#slider{';
+			$advance_pet_care_custom_css .='background-color: '.esc_html($advance_pet_care_slider_image_overlay_color).';';
+		$advance_pet_care_custom_css .='}';
+	}
+

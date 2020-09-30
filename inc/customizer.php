@@ -955,8 +955,29 @@ function advance_pet_care_customize_register($wp_customize) {
 			'section'  => 'advance_pet_care_slider',
 			'type'     => 'dropdown-pages'
 		) );
-
 	}
+
+	$wp_customize->add_setting('advance_pet_care_slider_overlay',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_pet_care_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_pet_care_slider_overlay',array(
+       'type' => 'checkbox',
+       'label' => __('Home Page Slider Overlay','advance-pet-care'),
+		'description'    => __('This option will add colors over the slider.','advance-pet-care'),
+       'section' => 'advance_pet_care_slider'
+    ));
+
+    $wp_customize->add_setting('advance_pet_care_slider_image_overlay_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_pet_care_slider_image_overlay_color', array(
+		'label'    => __('Home Page Slider Overlay Color', 'advance-pet-care'),
+		'section'  => 'advance_pet_care_slider',
+		'description'    => __('It will add the color overlay of the slider. To make it transparent, use the below option.','advance-pet-care'),
+		'settings' => 'advance_pet_care_slider_image_overlay_color',
+	)));
 
 	//content layout
     $wp_customize->add_setting('advance_pet_care_slider_content_alignment',array(
@@ -1302,6 +1323,16 @@ function advance_pet_care_customize_register($wp_customize) {
             'Without Box' => __('Without Box','advance-pet-care'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_pet_care_blog_post_pagination',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_pet_care_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_pet_care_blog_post_pagination',array(
+       'type' => 'checkbox',
+       'label' => __('Pagination in Blog Page','advance-pet-care'),
+       'section' => 'advance_pet_care_blog_post'
+    ));
 
 	//no Result Found
 	$wp_customize->add_section('advance_pet_care_noresult_found',array(
