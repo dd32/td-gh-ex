@@ -31,4 +31,3 @@ function busiprof_enqueue_scripts(){
 	wp_enqueue_style('busiprof_customizer-css', get_template_directory_uri() . '/css/drag-drop.css');
 }
 add_action( 'admin_enqueue_scripts', 'busiprof_enqueue_scripts' );
-?>

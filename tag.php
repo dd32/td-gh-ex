@@ -3,7 +3,7 @@
  * The Tag template file
  */
 get_header();
-$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() ); 
+$busiprof_current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() ); 
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -12,7 +12,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 			<div class="col-md-6">
 				<div class="page-title">
 					<h2><?php 
-					printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['tag_prefix'], single_tag_title( '', false ) ); ?></h2>
+					printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['tag_prefix'], single_tag_title( '', false ) ); ?></h2>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -32,7 +32,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 	<div class="container">
 		<div class="row">
 			<!--Blog Posts-->
-			<div class="col-md-8 col-xs-12">
+			<div class="<?php echo (is_active_sidebar('sidebar-primary')) ? "col-md-8 col-xs-12" : "col-md-12 col-xs-12" ?>">
 				<div class="site-content">
 					<?php 
 					if ( have_posts() ) :
@@ -69,4 +69,4 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
  
 <div class="clearfix"></div>
 
-<?php get_footer(); ?>
+<?php get_footer();

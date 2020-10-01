@@ -43,7 +43,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		
 		
 		// blog section title
-		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_title]', array( 'default' => esc_html__('Recent Blog', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
+		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_title]', array( 'default' => esc_html__('Lorem Ipsum', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'wp_kses_post'  ) );
 		$wp_customize->add_control(	'busiprof_theme_options[recent_blog_title]', 
 			array(
 				'label'    => esc_html__( 'Title', 'busiprof' ),
@@ -52,7 +52,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		
 		// blog section desc
-		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_description]', array( 'default' => esc_html__('We are a group of passionate designers & developers', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
+		$wp_customize->add_setting( 'busiprof_theme_options[recent_blog_description]', array( 'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'busiprof' ) , 'type'=>'option', 'sanitize_callback' => 'busiprof_input_field_sanitize_text'  ) );
 		$wp_customize->add_control(	'busiprof_theme_options[recent_blog_description]', 
 			array(
 				'label'    => esc_html__( 'Description', 'busiprof' ),

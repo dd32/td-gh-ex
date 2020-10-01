@@ -4,4 +4,4 @@
   <?php dynamic_sidebar('sidebar-primary' );  ?>
 	</div>
 </div>	
-<?php endif;?>
+<?php endif;

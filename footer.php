@@ -1,4 +1,4 @@
-<?php $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() ); ?>
+<?php $busiprof_current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() ); ?>
 <!-- Footer Section -->
 <footer class="footer-sidebar">	
 	<!-- Footer Widgets -->	
@@ -19,8 +19,8 @@
 			<div class="row">
 				<div class="col-md-7">
 				<?php 
-				if( $current_options['footer_copyright_text'] != '' ) { ?>
-				<?php echo wp_kses_post($current_options['footer_copyright_text']); ?>
+				if( $busiprof_current_options['footer_copyright_text'] != '' ) { ?>
+				<?php echo wp_kses_post($busiprof_current_options['footer_copyright_text']); ?>
 				<?php } ?>
 				</div>
 			</div>

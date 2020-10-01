@@ -52,4 +52,3 @@ function busiprof_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-circle", $class);
     return $class;
 }
-?>

@@ -5,7 +5,7 @@
  
 get_header(); 
 
-$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() );
+$busiprof_current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), busiprof_theme_setup_data() );
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -15,15 +15,15 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 				<div class="page-title">
 					<h2><?php if ( is_day() ) :
 			
-							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], esc_html(get_the_date()) );
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['archive_prefix'], esc_html(get_the_date()) );
 						  
 						 elseif ( is_month() ) : 
 						 
-							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], esc_html(get_the_date()) );
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['archive_prefix'], esc_html(get_the_date()) );
 							 
 						 elseif ( is_year() ) :
 						 
-							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $current_options['archive_prefix'], esc_html(get_the_date()) );						 
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['archive_prefix'], esc_html(get_the_date()) );						 
 						 
 						else : 
 							esc_html_e( "Blog Archive", 'busiprof' );
@@ -49,7 +49,7 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
 	<div class="container">
 		<div class="row">
 			<!--Blog Posts-->
-			<div class="col-md-8 col-xs-12">
+			<div class="<?php echo (is_active_sidebar('sidebar-primary')) ? "col-md-8 col-xs-12" : "col-md-12 col-xs-12" ?>">
 				<div class="site-content">
 					<?php 
 					if ( have_posts() ) :
@@ -86,4 +86,4 @@ $current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array()
  
 <div class="clearfix"></div>
 
-<?php get_footer(); ?>
+<?php get_footer();

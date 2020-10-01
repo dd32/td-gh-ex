@@ -30,4 +30,4 @@ get_template_part('index', 'bannerstrip');
 </div>
 <!-- End of 404 Error Section -->
 
-<?php get_footer(); ?>
+<?php get_footer();

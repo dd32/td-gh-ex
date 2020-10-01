@@ -107,8 +107,8 @@ class Busiprof_Customizer_Notify {
 			'busiprof-customizer-notify-js', 'busiprofCustomizercompanionObject', array(
 				'ajaxurl'            => admin_url( 'admin-ajax.php' ),
 				'template_directory' => get_template_directory_uri(),
-				'base_path'          => admin_url(),
-				'activating_string'  => __( 'Activating', 'busiprof' ),
+				'base_path'          => esc_url(admin_url()),
+				'activating_string'  => esc_html__( 'Activating', 'busiprof' ),
 			)
 		);
 

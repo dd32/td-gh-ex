@@ -58,12 +58,12 @@ msgid "Next"
 msgstr ""
 
 #: child_theme_compatible.php:29 theme_setup_data.php:37
-msgid "Busiprof: the perfect WordPress theme for an app and web developer"
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula"
 msgstr ""
 
 #: child_theme_compatible.php:31 child_theme_compatible.php:36
 #: theme_setup_data.php:39 theme_setup_data.php:44
-msgid "Responsive WP theme"
+msgid "Sollicitudin commodo"
 msgstr ""
 
 #: child_theme_compatible.php:32 child_theme_compatible.php:37
@@ -95,7 +95,7 @@ msgid ""
 msgstr ""
 
 #: child_theme_compatible.php:68 theme_setup_data.php:77
-msgid "Recent Projects"
+msgid "Fusce quis urna"
 msgstr ""
 
 #: child_theme_compatible.php:76 child_theme_compatible.php:105
@@ -104,32 +104,32 @@ msgid "More Services"
 msgstr ""
 
 #: child_theme_compatible.php:81 theme_setup_data.php:90
-msgid "Awesome Services"
+msgid "Ligula Fringilla"
 msgstr ""
 
 #: child_theme_compatible.php:108 child_theme_compatible.php:113
 #: child_theme_compatible.php:118 child_theme_compatible.php:123
 #: theme_setup_data.php:117 theme_setup_data.php:122 theme_setup_data.php:127
 #: theme_setup_data.php:132
-msgid "Business cards"
+msgid "Fusce quis urna"
 msgstr ""
 
 #: child_theme_compatible.php:110 child_theme_compatible.php:115
 #: child_theme_compatible.php:120 child_theme_compatible.php:125
 #: theme_setup_data.php:119 theme_setup_data.php:124 theme_setup_data.php:129
 #: theme_setup_data.php:134
-msgid "Graphic design & web design"
+msgid "Fusce & quis urna Fusce"
 msgstr ""
 
 #: child_theme_compatible.php:131 theme_setup_data.php:140
-msgid "Our Testimonials"
+msgid "Fusce quis urna"
 msgstr ""
 
 #: child_theme_compatible.php:132 child_theme_compatible.php:143
 #: child_theme_compatible.php:146
 #: functions/customizer/custo_sections_settings.php:55 theme_setup_data.php:141
 #: theme_setup_data.php:152 theme_setup_data.php:155
-msgid "We are a group of passionate designers & developers"
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 msgstr ""
 
 #: child_theme_compatible.php:136 child_theme_compatible.php:141
@@ -139,7 +139,7 @@ msgstr ""
 
 #: child_theme_compatible.php:137 child_theme_compatible.php:142
 #: theme_setup_data.php:146 theme_setup_data.php:151
-msgid "(Sales & Marketing)"
+msgid "(Fusce & quis urna)"
 msgstr ""
 
 #: child_theme_compatible.php:145

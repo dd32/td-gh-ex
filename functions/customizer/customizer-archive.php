@@ -127,4 +127,3 @@ add_action( 'customize_register', 'busiprof_archive_page_customizer' );
 			return wp_kses_post( force_balance_tags( $input ) );
 
 	}
-?>

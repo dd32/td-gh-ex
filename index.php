@@ -8,7 +8,7 @@ get_template_part('index', 'bannerstrip');
 	<div class="container">
 		<div class="row">
 			<!--Blog Posts-->
-			<div class="col-md-8 col-xs-12">
+			<div class="<?php echo (is_active_sidebar('sidebar-primary')) ? "col-md-8 col-xs-12" : "col-md-12 col-xs-12" ?>">
 				<div class="site-content">
 					<?php 
 					if ( have_posts() ) :
@@ -44,4 +44,4 @@ get_template_part('index', 'bannerstrip');
 <!-- End of Blog & Sidebar Section -->
 
 <div class="clearfix"></div>
-<?php get_footer(); ?>
+<?php get_footer();

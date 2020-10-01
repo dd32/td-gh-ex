@@ -18,4 +18,5 @@ function busiprof_wrapper_start() {?>
 <?php } 
 function busiprof_wrapper_end() {
 if ( is_active_sidebar( 'woocommerce-1' )  ){ echo "</div></div>"; get_sidebar('woocommerce'); echo "</div></div></section>"; }
-else { echo "</div></div></div></section>"; } }?>
+else { echo "</div></div></div></section>"; }
+}

@@ -93,4 +93,3 @@ function busiprof_nav_menu_css_class( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'busiprof_nav_menu_css_class' );
-?>

@@ -24,4 +24,3 @@ function busiprof_scripts_styles() {
     wp_enqueue_style( 'busiprof-fonts', busiprof_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'busiprof_scripts_styles' );
-?>

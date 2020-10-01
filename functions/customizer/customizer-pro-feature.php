@@ -134,4 +134,3 @@ $wp_customize->add_control( new Busiprof_WP_Feature_document_Customize_Control( 
 
 }
 add_action( 'customize_register', 'busiprof_pro_feature_customizer' );
-?>

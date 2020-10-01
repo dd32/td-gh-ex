@@ -44,7 +44,7 @@ function busiprof_custom_breadcrumbs() {
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
         echo '<a href="' . esc_url($homeLink) . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . '&nbsp &#47; &nbsp' . $before . get_the_title() . $after;
+        if ($showCurrent == 1) echo ' ' . $delimiter . '&nbsp &#47; &nbsp' . $before . esc_html(get_the_title()) . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . '&nbsp &#47; &nbsp');
@@ -81,7 +81,7 @@ function busiprof_custom_breadcrumbs() {
       $breadcrumbs = array();
       while ($parent_id) {
         $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a>' . '&nbsp &#47; &nbsp';
+        $breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . esc_html(get_the_title($page->ID)) . '</a>' . '&nbsp &#47; &nbsp';
         $parent_id  = $page->post_parent;
       }
       $breadcrumbs = array_reverse($breadcrumbs);
@@ -113,4 +113,3 @@ function busiprof_custom_breadcrumbs() {
  
   }
 } // end busiprof_custom_breadcrumbs()
-?>

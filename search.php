@@ -53,4 +53,4 @@ get_template_part('index', 'bannerstrip'); // banner strip
  
 <div class="clearfix"></div>
 
-<?php get_footer(); ?>
+<?php get_footer();

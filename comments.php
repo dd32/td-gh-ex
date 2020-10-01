@@ -31,16 +31,16 @@
 <div class="comment-form">
 	<div class="row">
 	<?php 
- $fields=array(
+ $busiprof_fields=array(
     'author' => '<div class="form-group col-xs-6"><input name="author" id="author" value="" type="text"  placeholder="'. esc_attr__( "Name",'busiprof' ).'"  /></div>',
     'email'  => '<div class="form-group col-xs-6"><input name="email" id="email" value=""   type="text" placeholder="'. esc_attr__( "Email",'busiprof' ).'"></div>',    
 ); 
- function busiprof_comment_fields($fields) { 
-return $fields;
+ function busiprof_comment_fields($busiprof_fields) { 
+return $busiprof_fields;
 }
 add_filter('comment_form_default_fields','busiprof_comment_fields'); 
-	$defaults = array(
-     'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+	$busiprof_defaults = array(
+     'fields'               => apply_filters( 'comment_form_default_fields', $busiprof_fields ),
 	'comment_field'        => '<div class="form-group col-xs-12"><textarea rows="5" id="comment" name="comment" type="text" placeholder="'. esc_attr__( "Message",'busiprof' ).'" rows="3"></textarea></div>',		
 	 'logged_in_as' => '<div class="col-xs-12"><p class="logged-in-as">' . esc_html__("Logged in as",'busiprof' ).'<a href="'. esc_url(admin_url( 'profile.php' )).'">'.$user_identity.'</a>'. '<a href="'. esc_url(wp_logout_url( get_permalink() )).'" title="'. esc_attr__( "Logout of this account",'busiprof' ).'">'.esc_html__("Logout",'busiprof').'</a>' . '</p></div>',
 	 'id_submit'            => 'submit_btn',
@@ -49,8 +49,8 @@ add_filter('comment_form_default_fields','busiprof_comment_fields');
 	 'title_reply'       => '<div class="col-xs-12"><h3 class="comment-title">' . esc_html__('Leave a Reply','busiprof') .'</h3></div>',
 	 'id_form'      => 'action'	
 	);
-comment_form($defaults);
+comment_form($busiprof_defaults);
 ?></div>				
 </div><!-- leave_comment_mn -->
 <?php endif; // If registration required and not logged in ?>
-<?php endif;  ?>
+<?php endif;

@@ -680,3 +680,34 @@ ins span {
 a.added_to_cart{color:#5ca2df;}
 
 .woocommerce .order_details li { font-size: 11px;}
+
+@media only screen and (max-width: 480px) and (min-width: 200px){
+.slide-caption h2 {
+    font-size: 13px;
+    line-height: 25px;
+}
+.slide-caption p {
+      font-size: 12px;
+    line-height: 13px;
+    margin: 0 0 6px;
+	}
+	.flex-btn {
+    font-size: 8.5px;
+	}}
+
+@media only screen and (max-width: 1100px) and (min-width: 200px){
+.slider .item{
+height: 35vh !important;
+}
+}
+
+@media only screen and (max-width: 480px) and (min-width: 200px){
+    .main-portfolio-section{
+            text-align: center;
+}
+
+.main-portfolio-section .post-thumbnail img {
+    margin: 0 auto;
+}
+
+}

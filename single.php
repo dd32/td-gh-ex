@@ -13,7 +13,7 @@ get_template_part('index', 'bannerstrip');
 		<div class="row">
 			
 			<!--Blog Detail-->
-			<div class="col-md-8 col-xs-12">
+			<div class="<?php echo (is_active_sidebar('sidebar-primary')) ? "col-md-8 col-xs-12" : "col-md-12 col-xs-12" ?>">
 				<div class="site-content">
 					<?php 
 					if ( have_posts() ) :
@@ -33,8 +33,8 @@ get_template_part('index', 'bannerstrip');
 					
 					<?php if(wp_link_pages(array('echo'=>0))):?>
 					<div class="pagination_blog"><ul><?php 
-						$args=array('before' => '<li>', ' after' => '</li>');
-						wp_link_pages($args); ?></ul>
+						$busiprof_args=array('before' => '<li>', ' after' => '</li>');
+						wp_link_pages($busiprof_args); ?></ul>
 					</div>
 				<?php endif;?>
 					
@@ -53,4 +53,5 @@ get_template_part('index', 'bannerstrip');
 </section>
 </div>
 <!-- End of Blog & Sidebar Section -->
-<?php get_footer(); ?>
+<?php
+get_footer();

@@ -27,4 +27,4 @@ get_template_part('index', 'bannerstrip');
 <!-- End of Blog & Sidebar Section -->
  
 <div class="clearfix"></div>
-<?php get_footer(); ?>
+<?php get_footer();
