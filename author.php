@@ -14,8 +14,9 @@
  */
 
 get_header();
+$page_header = absint(get_theme_mod( 'page_header', 1 ));
 $class = '';
-if ( get_theme_mod( 'breadcrumb', 1 ) == 1 ) {  
+if ( $page_header == 1 ) {  
 ?>
 <div class="enigma_header_breadcrum_title">	
 	<div class="container">
@@ -23,27 +24,27 @@ if ( get_theme_mod( 'breadcrumb', 1 ) == 1 ) {
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
 			<?php /* translators: %s: author name. */ ?>
-			<h1><?php printf( esc_html__( 'Author Archives: %s', 'enigma' ), '<span class="vcard">'. get_the_author() .'</span>' ) ; ?>
+			<h1><?php printf( esc_html__( 'Author Archives: %s', 'enigma' ), '<span class="vcard">'. esc_html(get_the_author()) .'</span>' ) ; ?>
 			</h1>
 			</div>
 		<?php endif; ?>
-		<?php rewind_posts(); ?>
+	
 		</div>
 	</div>	
 </div>
 <?php } else {
-	$class = 'no-breadcrumb';
+	$class = 'no-page-header';
 } ?>
 <div class="container">	
-	<div class="row enigma_blog_wrapper <?php echo esc_attr( $class ); ?>">
+	<div class="row enigma_blog_wrapper <?php  echo esc_attr( $class ); ?>">
 		<div class="col-md-8">
 			<?php if ( have_posts()): while ( have_posts() ): the_post();
-				get_template_part('post','content'); ?>
-			<?php endwhile; 
+				get_template_part('template-parts/post','content'); 
+			endwhile; 
 			endif; 
 			?>
 			<div class="text-center wl-theme-pagination">
-		        <?php echo esc_html( the_posts_pagination( array( 'mid_size' => 2 ) ) ); ?>
+		        <?php the_posts_pagination() ; ?>
 		        <div class="clearfix"></div>
 		    </div>
 		</div>		

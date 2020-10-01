@@ -1,10 +1,10 @@
 === Enigma ===
 Contributors: weblizar
-Tags: left-sidebar, two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,  custom-logo , news 
-Requires at least: 4.0
-Tested up to: 5.3.2
-Stable tag: 6.0.5
-License: GPLv2 or later
+Tags: two-columns,  four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, flexible-header, translation-ready  , e-commerce , education , entertainment
+Requires at least: 5.4
+Tested up to: 5.5
+Stable tag: 7.0 
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Free WordPress theme can be used for different kinds of websites and multipurpose uses.
@@ -20,6 +20,13 @@ Enigma is an outstanding superfine creation from weblizar, Enigma has become one
 Please drop your issues here <a href="https://wordpress.org/support/theme/enigma"> we'll try to triage issues reported on the theme forum, you'll get a faster response.
 
 == Changelog ==
+
+
+= 7.0 =
+** Add Accessebility
+** Screenshot update
+** Update according to new guidline
+
 = 6.0.5 =
 **Bug Fix ( Unwanted files removed & fix Escaping functions ).
 
@@ -413,20 +420,57 @@ minor fixes.
 
 == Resources ==
 
+	-Font Icons
+		License: - Font: SIL OFL 1.1, CSS: MIT License, Code: MIT License (https://fontawesome.com/license/free)
+		Source : https://fontawesome.com
+
+	-CSS File
+
+		Animate - v3.4.0 (http://daneden.me/animate)
+		Copyright (c) 2015 Daniel Eden
+		License: under the MIT license - http://opensource.org/licenses/MIT
+
+		bootstrap.css - http://getbootstrap.com
+		Version 	  - Bootstrap v4.3.1
+		Copyright 2011-2019 Twitter, Inc.
+		License: under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+		Animations CSS @ 2014 weblizar, GPL
+		
+		Enigma Theme CSS @ 2014 weblizar, GPL
+		
+		Photo Box CSS @ 2014 weblizar, GPL
+
 = BUNDELED JS = 
+	
+	Bootstrap v4.3.1 (https://getbootstrap.com/)
+	Copyright 2011-2019 Twitter, Inc.
+	License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-* Bootstrap jQuery library @ 2013  Twitter, Inc.
-* JQuery carouFredSel @ 2013 Ivan Fred Heusschen, MIT
-* Photobox jQuery @ 2013 Yair Even, MIT
-* jQuery Waypoints @ 2011-2013 Caleb Troughton, MIT & GPL
-* Scroll JS @ 2014 weblizar, MIT & GPL
-* Enigma_Theme_Script @ 2014 weblizar, MIT & GPL
-* Theme-Footer-Script @ 2014 weblizar, MIT & GPL
+	jQuery carouFredSel 6.2.1
+	Copyright (c) 2013 Fred Heusschen
+	License:	Dual licensed under the MIT and GPL licenses.
+	(http://en.wikipedia.org/wiki/MIT_License)
+	(http://en.wikipedia.org/wiki/GNU_General_Public_License)
 
-= BUNDELED CSS =
+	photobox v1.9 (https://github.com/yairEO/photobox)
+	(c) 2013 Yair Even
+	License: MIT and GNU AGPLv3.(https://github.com/yairEO/photobox/blob/master/LICENSE)
 
-* Font Awesome @ 2015  Dave Gandy, MIT
-* Bootstrap @ 2011-2014 Twitter, MIT
-* Animations CSS @ 2014 weblizar, GPL
-* Enigma Theme CSS @ 2014 weblizar, GPL
-* Photo Box CSS @ 2014 weblizar, GPL
+	jQuery Waypoints - v2.0.3
+	Copyright (c) 2011-2013 Caleb Troughton
+	License: Dual licensed under the MIT license and GPL license.
+
+	Scroll JS @ 2014 weblizar, MIT & GPL
+	
+	Enigma_Theme_Script @ 2014 weblizar, MIT & GPL
+	
+	Theme-Footer-Script @ 2014 weblizar, MIT & GPL
+
+== Image Resources ==
+= Screenshot =
+* https://pxhere.com/en/photo/1426193 | CC0 Public Domain
+All images are licensed under [CC0] (https://creativecommons.org/publicdomain/zero/1.0/)
+
+== TGMPA ==
+	Source : https://github.com/TGMPA/tgm-example-plugin/blob/master/LICENSE

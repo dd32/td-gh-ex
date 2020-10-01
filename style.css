@@ -4,12 +4,41 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design. This theme can be used for different kinds of websites including business, blogging, portfolio, agency, landing page etc. Enigma has Filkr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more. Demo -> http://demo.weblizar.com/enigma-free-theme/
-Version: 6.0.5
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl.html
-Tags: two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,rtl-language-support , E-Commerce , Education , Entertainment 
+Version: 7.0
+Tested up to: 5.5
+Requires PHP: 5.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns,  four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, flexible-header, translation-ready , e-commerce , education , entertainment 
 Text Domain: enigma
 */
+/**
+*
+* TABLE OF CONTENT
+# Basic Style
+# Header Section css
+# Flex Slider css
+# Service Section
+# Project Or Works
+# Isotope Animating
+# project detail page css
+# Accessibility
+# gallery css
+# BLog Section
+# Blog Full width css
+# Blog page with sidebar
+# blog pagination
+# Blog detail page
+# Testimonial Section
+# Client Section
+# Call Out Section
+# Footer widget Area
+# Scroll To Top
+# Scrollimations
+
+*
+*/
+
 /* Main css with editable-------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------
@@ -363,9 +392,8 @@ line-height: 26px;
 	font-size: 50px;
 	position: relative;
 	display: inline-block;
-	font-family: FontAwesome;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 900;
 	line-height: 90px;
 	-webkit-transition: all .25s linear;
     -moz-transition: all .25s linear;
@@ -374,7 +402,6 @@ line-height: 26px;
 }
 .enigma_service_detail h3{
 	font-size: 24px;
-	
 	letter-spacing: normal;
 	line-height: 32px;
 	word-wrap:break-word;
@@ -392,7 +419,7 @@ line-height: 26px;
 }
 .enigma_service_area_2{
 	text-align:center;
-		border-radius: 0px;
+	border-radius: 0px;
 	margin-bottom: 65px;
 	transition: all 0.4s ease 0s;
 }
@@ -473,7 +500,6 @@ line-height: 26px;
 	vertical-align: middle;
 	transition: all 0.3s ease 0s;
 }
-
 
 .enigma_project_section_col {
 	border-radius: 0px;
@@ -1182,8 +1208,8 @@ margin-bottom:20px;
 
 .enigma_post_date {
 	padding-top: 10px;
-	padding-left:10px;
-	padding-right:10px;
+	padding-left:7px;
+	padding-right:7px;
 	padding-bottom: 10px;
 	transition: all 0.4s ease 0s;
 }
@@ -1752,7 +1778,7 @@ margin-bottom: 20px;
 	vertical-align: middle;
 	cursor: pointer;
 	background-image: none;
-	border: 2px solid transparent;
+	border: 2px solid #31A3DD;
 	transition: all 0.4s ease;
 	
 }
@@ -2135,7 +2161,7 @@ margin-bottom: 20px;
 }
 .enigma_footer_area p a:hover,
 .enigma_footer_area p a:focus {
-    color: #ffffff;
+    color: #cccccc;
 }
 .enigma_footer_copyright_info{
 	float:left;
@@ -2378,7 +2404,7 @@ background-color: transparent;
   margin: 0;
   color: #4b4b4b;
 }
-.screen-reader-text{display : none;}
+
 .enigma_blog_post_content img {max-width:100%;}
 /*Calander Widget CSS*/
 #wp-calendar tbody tr td {
@@ -2481,11 +2507,16 @@ padding-top: 20px;
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+	border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
@@ -2493,6 +2524,7 @@ padding-top: 20px;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
+	clip-path: none;
 	color: #21759b;
 	display: block;
 	font-size: 14px;
@@ -2728,11 +2760,11 @@ width:100%;
     color: #31a3dd;
 }
 
-.row.enigma_blog_wrapper.no-breadcrumb {
+.row.enigma_blog_wrapper.no-page-header {
     margin-top: 70px;
 }
 
-.enigma_header_breadcrum_title.no-breadcrumb {
+.enigma_header_breadcrum_title.no-page-header {
 	padding-top: 28px;
 }
 .gallery {margin-bottom: 10px; padding: 5px 0;}
@@ -2748,3 +2780,215 @@ width:100%;
 .gallery-columns-8 .gallery-item {max-width: 12.5%; }
 .gallery-columns-9 .gallery-item {max-width: 11.11%; }
 .gallery-caption {display: block; }
+
+.enigma_author_detail_wrapper .social{
+	margin-top:10px;
+	padding-left:0px;
+	text-align:left
+}
+.post-date{
+	display: block;
+}
+.enigma_footer_widget_area{
+	color: #f2f2f2;
+}
+/* Accessibility */
+/* Text meant only for screen readers. */
+.skip-link.screen-reader-text {
+  display: block;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.skip-link.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: max-content;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+.pull-left {
+    float: left;
+}
+.tag-sticky-2,.sticky { 
+background-color:#ededed;
+border:1 px solid #f5f5f5;
+color:#272727;
+padding:5px;
+}
+ 
+/*.tag-sticky-2:before,.sticky:before {
+  content: "Featured";
+  color: #FFF;
+  background: #f20000;
+  padding: 10px;
+  display: inline-block;
+  text-align: right;
+  float: right;
+  font-weight: bold;
+  text-transform: uppercase;
+}*/
+
+.main-navigation {
+    clear: both;
+   
+    float: left;
+    width: 100%;
+}
+
+.main-navigation ul {
+    
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute !important;
+    background-color: rgba(49,162,221,.9);
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+    left: -999em;
+    top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+    left: 100%;
+}
+
+.main-navigation ul ul a {
+    width: 251px;
+}
+
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+    left: auto;
+}
+
+.main-navigation li {
+    float: left;
+    position: relative;
+}
+
+
+.main-navigation a{
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 400;
+    font-family: Arimo, Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+}
+
+/* Small menu. */
+
+
+@media screen and (min-width: 993px) {
+    
+
+    header .main-menu {
+    display: block;
+    width: 100%;
+    line-height: 70px;
+    height: 70px;
+    background: #fbfafa;
+}
+    .main-navigation ul {
+        display: block;
+    }
+
+    .sub-menu>li:last-child, .sub-dropdown>li:last-child{
+		margin-bottom: 0 !important;
+    }
+
+    .main-navigation a:hover{
+
+      color: #0085ba;
+    }
+}
+
+
+.main-navigation a:hover{
+
+      background-color: #30a2dc;
+      color: #fff;
+}
+
+@media screen and (max-width: 767px){
+	.toggled.main-navigation ul ul a {
+    width: auto;
+}
+	.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
+.toggled.main-navigation {
+    float: inherit;
+}
+.toggled .dropdown-menu>.active>a{
+	background: transparent;
+	color: #fff;
+}
+.toggled .dropdown-menu>li>a:hover {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+}
+.toggled.main-navigation li {
+    float: none;
+    position: relative;
+}
+.toggled .nav-menu{
+	display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.toggled .navbar-collapse {
+	display: block;
+}
+.main-navigation ul li.menu-item-has-children:hover > .dropdown-menu, .main-navigation ul li.focus > .dropdown-menu {
+    position: relative !important;
+    left: 0;
+    display: inline-grid;
+}}

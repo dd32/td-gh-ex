@@ -1,6 +1,7 @@
 <?php
-if (get_theme_mod('breadcrumb_title', 1) == 1) {
-    $class = 'no-breadcrumb';
+$page_header = absint(get_theme_mod( 'page_header', 1 ));
+if ( $page_header == 1) {
+    $class = 'no-page-header';
 } else {
     $class = '';
 }
@@ -9,17 +10,18 @@ if (get_theme_mod('breadcrumb_title', 1) == 1) {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <?php
-                if (get_theme_mod('breadcrumb_title', 1) == 1) {
-                    ?>
-                    <h1><?php if (is_home()) {
-                            echo "";
-                        } else {
-                            the_title();
-                        } ?></h1>
-                <?php } ?>
+                
+                <h1><?php if (is_home()) {
+                        echo "";
+                    } else {
+                        the_title();
+                    } ?>
+                </h1>
+                
                 <!-- BreadCrumb -->
-                <?php if (function_exists('weblizar_breadcrumbs')) weblizar_breadcrumbs(); ?>
+                <?php if (function_exists('enigma_breadcrumbs')){ 
+                    enigma_breadcrumbs(); 
+                } ?>
                 <!-- BreadCrumb -->
             </div>
         </div>

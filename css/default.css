@@ -32,14 +32,17 @@ table th{
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover{
-    background-color:#31A3DD
+    background-color:#30a2dc;
 }
 .collapse ul.nav li.current-menu-item .dropdown-toggle,
 .collapse ul.nav li.current-menu-parent .dropdown-toggle,
 .collapse ul.nav li.current_page_ancestor .dropdown-toggle,
 .navbar-default .navbar-collapse ul.nav li.current-menu-item .dropdown-toggle .collapse ul.nav li.current_page_ancestor .dropdown-toggle,
 .navbar-default .navbar-collapse ul.nav li.current-menu-parent .dropdown-toggle,.navbar-default .navbar-collapse ul.nav li.current_page_ancestor .dropdown-toggle{
-    background-color:#31A3DD;box-shadow:3px 3px 0 rgba(201,201,201,1);color:#fff!important;border-radius:0
+    background-color:#31A3DD;
+    box-shadow:3px 3px 0 rgba(201,201,201,1);
+    color:#fff!important;
+    border-radius:0
 }
 .dropdown-menu{
     background-color:rgba(49,162,221,.9)
@@ -113,14 +116,17 @@ table th{
     border-bottom:4px solid #31A3DD;
     border-right:1px solid #31A3DD
 }
-.enigma-project-detail-sidebar .launch-enigma-project a,.enigma_portfolio_detail_pagi li a
+.enigma-project-detail-sidebar .launch-enigma-project a,
+.enigma_portfolio_detail_pagi li a
 {background-size:100% 200%;background-image:linear-gradient(to bottom,#31A3DD 50%,#fff 50%)
 }
 .enigma_proejct_button a{
     background-color:#f8504b;color:#FFF;border:2px solid #31A3DD;transition:all .4s ease 0s
 }
-.enigma_carousel-next,.enigma_carousel-prev,.enigma_proejct_button a:hover,
-.enigma_carousel-next,.enigma_carousel-prev,.enigma_proejct_button a:focus{
+.enigma_carousel-next,.enigma_carousel-prev,
+.enigma_proejct_button a:hover,
+.enigma_carousel-next,.enigma_carousel-prev,
+.enigma_proejct_button a:focus{
     background-color:#fff;border:2px solid #31A3DD
 }
 .enigma_proejct_button a:hover,
@@ -128,12 +134,16 @@ table th{
 {
     color:#31A3DD;text-decoration:none
 }
-.enigma_carousel-next:hover,.enigma_carousel-prev:hover,
-.enigma_carousel-next:focus,.enigma_carousel-prev:focus{
+.enigma_carousel-next:hover,
+.enigma_carousel-prev:hover,
+.enigma_carousel-next:focus,
+.enigma_carousel-prev:focus{
     background-color:#31A3DD;color:#fff
 }
-.enigma_carousel-next:hover i,.enigma_carousel-prev:hover i,
-.enigma_carousel-next:focus i,.enigma_carousel-prev:focus i{
+.enigma_carousel-next:hover i,
+.enigma_carousel-prev:hover i,
+.enigma_carousel-next:focus i,
+.enigma_carousel-prev:focus i{
     color:#fff
 }
 .enigma_portfolio_detail_pagi li a{
@@ -183,16 +193,20 @@ table th{
     background-color:#edf0f2;
     background-image:linear-gradient(to bottom,#edf0f2 50%,#31A3DD 50%)
 }
-.enigma_cats a:hover,.enigma_tags a:hover,
-.enigma_cats a:focus,.enigma_tags a:focus{
+.enigma_cats a:hover,
+.enigma_tags a:hover,
+.enigma_cats a:focus,
+.enigma_tags a:focus{
     color:#fff;background-position:0 -100%;
     background-color:#31A3DD
 }
 .enigma_cats a i,.enigma_tags a i{
     color:#31A3DD
 }
-.enigma_cats a:hover i,.enigma_tags a:hover i,
-.enigma_cats a:focus i,.enigma_tags a:focus i{
+.enigma_cats a:hover i,
+.enigma_tags a:hover i,
+.enigma_cats a:focus i,
+.enigma_tags a:focus i{
     color:#fff
 }
 .enigma_blog_thumb_wrapper span a i{
@@ -216,7 +230,8 @@ table th{
 .enigma_blog_read_btn:hover,
 .enigma_blog_read_btn:focus{
     background-position:0 -100%;
-    background-color:#fff;color:#31A3DD
+    background-color:#fff;
+    color:#31A3DD !important;
 }
 .enigma_blog_read_btn a{
     color:#fff
@@ -269,13 +284,12 @@ table th{
     ul .social li .youtube a:hover,ul .social li .youtube a:focus{background-color:#34495e}
     .enigma_blog_pagi a.active,.enigma_blog_pagi a:hover,.enigma_blog_pagi a:focus{background-color:#31A3DD;color:#fff}
 
-
-
 .navbar{
     padding: 0;
 }
 .navigation_menu {
     padding: 20px 0;
+    padding-bottom: 60px;
 }
 
 
@@ -297,12 +311,16 @@ table th{
     display: block !important;
 }
 @media (min-width: 768px){
-    .dropdown-submenu:hover>.dropdown-menu,
-    .dropdown:hover>.dropdown-menu,
-    .dropdown-submenu a:focus + .dropdown-menu, 
-    .dropdown a:focus + .dropdown-menu{
+    .dropdown-submenu:hover > .dropdown-menu,
+    .dropdown:hover > .dropdown-menu,
+   
+    .dropdown-submenu:focus-within > .dropdown-menu, 
+    .dropdown.focus > .dropdown-menu
+    .dropdown:focus-within > .dropdown-menu{
         display: block!important;
         position: absolute;
+        visibility: visible;
+        opacity: 1;
     } 
 .navbar-default .navbar-nav>li:focus i,
 .navbar-default .navbar-nav>li>a:focus i,

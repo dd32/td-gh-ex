@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
     'use strict';
 
-    //console.log(ajax_admin.ajax_data);
+    console.log(ajax_admin.ajax_data);
 
     if ( ajax_admin.ajax_data.autoplay == '1' ) {
         var autoplay = true;

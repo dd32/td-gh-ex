@@ -6,10 +6,10 @@
         <div class="enigma_comment_title">
             <h3>
                 <i class="fa fa-comments"></i>
-                <?php echo comments_number(__('No Comments', 'enigma'), __('1 Comment', 'enigma'), '% Comments'); ?>
+                <?php echo esc_html( comments_number(__('No Comments', 'enigma'), __('1 Comment', 'enigma'), '% Comments')); ?>
             </h3>
         </div>
-        <?php wp_list_comments(array('callback' => 'weblizar_comment')); ?>
+        <?php wp_list_comments(array('callback' => 'enigma_comment')); ?>
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
             <nav id="comment-nav-below">
                 <h1 class="assistive-text"><?php esc_html_e('Comment navigation', 'enigma'); ?></h1>
@@ -33,9 +33,9 @@
         add_filter('wl_comment_form_default_fields', 'my_fields');
         $defaults = array(
             'fields' => apply_filters('wl_comment_form_default_fields', $fields),
-            'comment_field' => '<div class="enigma_form_group"><label for="message"> Message *</label>
-		<textarea id="comment" name="comment" class="enigma_con_textarea_control" rows="5"></textarea></div>',
-            'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as ", 'enigma') . '<a href="' . admin_url('profile.php') . '">' . $user_identity . '</a>' . '<a href="' . wp_logout_url(get_permalink()) . '" title="Log out of this account">' . __(" Log out?", 'enigma') . '</a>' . '</p>',
+            'comment_field' => '<div class="enigma_form_group"><label for="message">'.__('Message','enigma') .'<small>*</small></label>
+        <textarea id="comment" name="comment" class="enigma_con_textarea_control" rows="5"></textarea></div>',
+            'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as ", 'enigma') . '<a href="' . esc_url(admin_url('profile.php')) . '">' . $user_identity . '</a>' . '<a href="' . esc_url(wp_logout_url(get_permalink())) . '" title="'.esc_attr_e("Log out of this account",'enigma').'">' . __(" Log out?", 'enigma') . '</a>' . '</p>',
             /* translators: %s: reply to name */
             'title_reply_to' => __('Leave a Reply to %s', 'enigma'),
             'id_submit' => 'enigma_send_button',

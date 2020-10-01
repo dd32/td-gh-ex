@@ -1,13 +1,13 @@
 <?php 
-function weblizar_page_menu_args( $args ) {
+function enigma_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'weblizar_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'enigma_page_menu_args' );
 
  
-function weblizar_fallback_page_menu( $args = array() ) {
+function enigma_fallback_page_menu( $args = array() ) {
 
 	$defaults  = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
 	$args      = wp_parse_args( $args, $defaults );
@@ -38,7 +38,7 @@ function weblizar_fallback_page_menu( $args = array() ) {
 
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
-	$list_args['walker'] = new weblizar_walker_page_menu;
+	$list_args['walker'] = new enigma_walker_page_menu;
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages($list_args) );
 
 	if ( $menu )
@@ -51,7 +51,7 @@ function weblizar_fallback_page_menu( $args = array() ) {
 	else
 		return wp_kses_post( $menu );
 }
-class weblizar_walker_page_menu extends Walker_Page{
+class enigma_walker_page_menu extends Walker_Page{
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class='dropdown-menu'>\n";
@@ -78,7 +78,7 @@ class weblizar_walker_page_menu extends Walker_Page{
 
 		$css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
 
-		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+		$output .= $indent . '<li class="' . $css_class . '"><a href="' . esc_url(get_permalink($page->ID)) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
 
 		if ( !empty($show_date) ) {
 			if ( 'modified' == $show_date )

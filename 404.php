@@ -7,10 +7,9 @@
  * @package enigma
  */
 get_header();
-
+$page_header = absint(get_theme_mod( 'page_header', 1 ));
 $class = '';
-if (get_theme_mod('breadcrumb', 1) == 1) {
-    ?>
+if ( $page_header == 1) { ?>
     <div class="enigma_header_breadcrum_title">
         <div class="container">
             <div class="row">
@@ -27,7 +26,7 @@ if (get_theme_mod('breadcrumb', 1) == 1) {
         </div>
     </div>
 <?php } else {
-    $class = 'no-breadcrumb';
+    $class = 'no-page-header';
 } ?>
     <div class="container">
         <div class="row enigma_blog_wrapper <?php echo esc_attr($class); ?>">
@@ -37,8 +36,7 @@ if (get_theme_mod('breadcrumb', 1) == 1) {
                     <h4><?php esc_html_e('Whoops... Page Not Found !!!', 'enigma'); ?></h4>
                     <p><?php esc_html_e('We are sorry, but the page you are looking for does not exist.', 'enigma'); ?></p>
                     <p><a href="<?php echo esc_url(home_url('/')); ?>">
-                            <button class="enigma_send_button"
-                                    type="submit"><?php esc_html_e('Go To Homepage', 'enigma'); ?></button>
+                            <button class="enigma_send_button" type="submit"><?php esc_html_e('Go To Homepage', 'enigma'); ?></button>
                         </a></p>
                 </div>
             </div>

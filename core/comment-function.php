@@ -1,13 +1,12 @@
 <?php 
 // code for comment
-if ( ! function_exists( 'weblizar_comment' ) ) :
-function weblizar_comment( $comment, $args, $depth ) 
+if ( ! function_exists( 'enigma_comment' ) ) :
+function enigma_comment( $comment, $args, $depth ) 
 {
 	//get theme data
 	global $comment_data;
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
-	__('Reply','enigma'); ?>
+	 ?>
     <div class="media enigma_comment_box">
 		<a class="pull_left_comment">
         <?php echo wp_kses_post( get_avatar( $comment,$size = '60' ) ); ?>
@@ -27,7 +26,7 @@ function weblizar_comment( $comment, $args, $depth )
 				</span>
 				<?php esc_html( comment_text() ); ?>				
 				<div class="reply">
-				<a href=""><i class="fa fa-mail-reply"></i><?php esc_url( comment_reply_link( array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ); ?>
+				<a href=""><i class="fa fa-mail-reply"></i><?php esc_url( comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ); ?>
 				</a>
 				</div>
 				

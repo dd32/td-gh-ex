@@ -7,10 +7,12 @@
 
 get_header();
 $class = '';
-if (get_theme_mod('breadcrumb', 1) == 1) {
+$page_header = absint(get_theme_mod( 'page_header', 1 ));
+
+if ($page_header == 1) {
     get_template_part('breadcrums');
 } else {
-    $class = 'no-breadcrumb';
+    $class = 'no-page-header';
 }
 ?>
     <div class="container">
@@ -19,12 +21,12 @@ if (get_theme_mod('breadcrumb', 1) == 1) {
                 <?php
                 if (have_posts()):
                     while (have_posts()): the_post();
-                        get_template_part('post', 'content'); ?>
+                        get_template_part('template-parts/post', 'content'); ?>
                     <?php endwhile;
                 endif;
                 ?>
                 <div class="text-center wl-theme-pagination">
-                    <?php echo esc_html(the_posts_pagination(array('mid_size' => 2))); ?>
+                    <?php the_posts_pagination() ); ?>
                     <div class="clearfix"></div>
                 </div>
             </div>

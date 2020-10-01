@@ -1,5 +1,6 @@
 //enigma  social tooltip js
  jQuery(function(){
+ 	"use strict";
 	jQuery('li').tooltip();
 	jQuery("[data-toggle='tooltip']").tooltip();
 	jQuery("[data-toggle='popover']").popover();

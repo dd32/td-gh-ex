@@ -123,7 +123,7 @@ a:hover {
 
 .dropdown-menu>li>a {
     display: block;
-    padding: 7px 32px 7px 10px;
+    padding: 7px 32px 12px 10px;
     clear: both;
     line-height: 1.42857143;
     white-space: nowrap;
@@ -137,7 +137,7 @@ a:hover {
     color: #000;
     text-decoration: none;
     background-color: #fff;
-    padding: 7px 20px 7px 22px;
+    padding: 7px 20px 12px 22px;
     font-family: Arimo, Arial, Helvetica, sans-serif
 }
 .dropdown-menu>li>a{
@@ -280,15 +280,16 @@ a:hover {
 .fa-angle-down {
     font-size: 18px!important;
     float: right;
+    padding-left: 5px;
     margin-right: -13px
 }
 
-.dropdown-submenu>.dropdown-menu {
+/*.dropdown-submenu>.dropdown-menu {
     top: 6px;
     left: 100%;
     margin-top: -6px;
     margin-left: -1px
-}
+}*/
 
 .dropdown-submenu .pull-left {
     float: none

@@ -1,27 +1,18 @@
-<?php get_header(); ?>
-    <div class="enigma_header_breadcrum_title">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>
-                        <?php 
-                            global $wp;
-                            $current_url = ( add_query_arg( array(), esc_html( $wp->request ) ) ); echo esc_html( $current_url ); 
-                        ?>
-                    </h1>
-                    <!-- BreadCrumb -->
-                    <?php if ( function_exists( 'weblizar_breadcrumbs' ) ) weblizar_breadcrumbs(); ?>
-                    <!-- BreadCrumb -->
-                </div>
-            </div>
+<?php get_header(); 
+
+$page_header = absint(get_theme_mod( 'page_header', 1 ));
+if ( $page_header == 1 ) {
+    get_template_part('breadcrums'); 
+} else {
+    $class = 'no-page-header';
+} ?>
+
+<div class="container">
+    <div class="row enigma_blog_wrapper <?php echo esc_attr( $class ); ?>">
+        <div class="col-md-8">
+            <?php woocommerce_content(); ?>
         </div>
+        <?php get_sidebar(); ?>
     </div>
-    <div class="container">
-        <div class="row enigma_blog_wrapper">
-            <div class="col-md-8">
-                <?php woocommerce_content(); ?>
-            </div>
-            <?php get_sidebar(); ?>
-        </div>
-    </div>
+</div>
 <?php get_footer(); ?>
