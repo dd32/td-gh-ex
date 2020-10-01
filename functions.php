@@ -22,6 +22,7 @@ require(get_template_directory() . '/core/scripts/css_js.php'); //Enquiring Reso
 require(get_template_directory() . '/core/comment-function.php');
 require(get_template_directory() . '/core/custom-header.php');
 require(get_template_directory() . '/class-tgm-plugin-activation.php');
+require get_template_directory() . '/upgrade-to-pro/class-customize.php';
 
 /*After Theme Setup*/
 add_action('after_setup_theme', 'enigma_head_setup');
@@ -168,7 +169,7 @@ function enigma_breadcrumbs()
         $thisCat = get_category($thisCat);
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
-            echo esc_html(get_category_parents($parentCat, TRUE, ' ' . esc_html($delimiter) . ' '));
+            echo get_category_parents($parentCat, TRUE, ' ' . esc_html($delimiter) . ' ');
         echo '<li>' .  esc_html__("Archive by category","enigma")  . single_cat_title('', false) . '"' . '</li>';
     } elseif (is_day()) {
         echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a></li> ' . esc_html($delimiter) . ' ';
@@ -243,8 +244,8 @@ function enigma_plugin_recommend()
 {
     $plugins = array(
         array(
-            'name' => esc_html__('Weblizar Companion','enigma'),
-            'slug' => 'weblizar-companion',
+            'name'     => esc_html__('Weblizar Companion','enigma'),
+            'slug'     => 'weblizar-companion',
             'required' => false,
         ),
     );

@@ -1,6 +1,5 @@
 <!-- Footer Widget Secton -->
-<?php 
- if (is_active_sidebar('footer-widget-area')) { ?>
+<?php  if (is_active_sidebar('footer-widget-area')) { ?>
     <div class="enigma_footer_widget_area">
         <div class="container">
             <div class="row">

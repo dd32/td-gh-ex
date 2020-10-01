@@ -313,7 +313,6 @@ table th{
 @media (min-width: 768px){
     .dropdown-submenu:hover > .dropdown-menu,
     .dropdown:hover > .dropdown-menu,
-   
     .dropdown-submenu:focus-within > .dropdown-menu, 
     .dropdown.focus > .dropdown-menu
     .dropdown:focus-within > .dropdown-menu{
@@ -322,11 +321,11 @@ table th{
         visibility: visible;
         opacity: 1;
     } 
-.navbar-default .navbar-nav>li:focus i,
-.navbar-default .navbar-nav>li>a:focus i,
-.navbar-default .navbar-nav>li>a:hover i{
-    color: #fff;
-}  
+    .navbar-default .navbar-nav>li:focus i,
+    .navbar-default .navbar-nav>li>a:focus i,
+    .navbar-default .navbar-nav>li>a:hover i{
+        color: #fff;
+    }  
 }
 @media (max-width:768px){
     /* .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
@@ -360,7 +359,6 @@ table th{
     .navbar-header {
         margin-left: auto;
     }
- 
 }
 
 .enigma_extra h1 , .enigma_extra h2 , .enigma_extra h3 , 

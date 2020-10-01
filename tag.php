@@ -26,7 +26,7 @@ if ($page_header == 1) {
                 endif;
                 ?>
                 <div class="text-center wl-theme-pagination">
-                    <?php the_posts_pagination() ); ?>
+                    <?php the_posts_pagination(); ?>
                     <div class="clearfix"></div>
                 </div>
             </div>

@@ -32,16 +32,17 @@
                 if ( $title_position == 1 ) { ?>
                     <div class="col-md-6 col-sm-12 wl_rtl">
                         <div claSS="logo logocenter">
-                           
-                                <?php
-                                if (has_custom_logo()) { 
-                                    the_custom_logo(); 
-                                } 
-                                if (display_header_text() == true) {
-                                    ?> <a href="<?php echo esc_url( home_url('/') ); ?>"
-                               title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>" rel="home">
-                                    <h1><?php echo esc_html(get_bloginfo('name')); ?></h1></a>
-                                <?php } ?>
+                            
+                            <?php
+                            if (has_custom_logo()) { 
+                                the_custom_logo(); 
+                            } 
+                            if (display_header_text() == true) {
+                                ?>
+                                <a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>" rel="home">
+                                <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
+                                </a>
+                            <?php } ?>
                             
                             <?php if (display_header_text() == true) { ?>
                                 <p><?php bloginfo('description'); ?></p>
@@ -51,16 +52,17 @@
                 <?php } else { ?>
                     <div class="col-md-6 col-sm-12 wl_rtl">
                         <div claSS="logo">
-                           
-                                <?php
-                                if (has_custom_logo()) { 
-                                    the_custom_logo(); 
-                                } 
-                                if (display_header_text() == true) { ?>
-                                 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo('name', 'display')); ?>" rel="home">
-                                    <h1><?php echo esc_html(get_bloginfo('name')); ?></h1> </a>
-                                <?php } ?>
-                           
+                            
+                            <?php
+                            if (has_custom_logo()) { 
+                                the_custom_logo(); 
+                            } 
+                            if (display_header_text() == true) {
+                                ?>
+                                <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo('name', 'display')); ?>" rel="home">
+                                <h1><?php echo esc_html(get_bloginfo('name')); ?></h1></a>
+                            <?php } ?>
+                            
                             <?php if (display_header_text() == true) { ?>
                                 <p><?php bloginfo('description'); ?></p>
                             <?php } ?>

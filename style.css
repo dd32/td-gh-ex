@@ -4,9 +4,9 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design. This theme can be used for different kinds of websites including business, blogging, portfolio, agency, landing page etc. Enigma has Filkr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more. Demo -> http://demo.weblizar.com/enigma-free-theme/
-Version: 7.0
+Version: 7.1
 Tested up to: 5.5
-Requires PHP: 5.4
+Requires PHP: 7.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns,  four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, flexible-header, translation-ready , e-commerce , education , entertainment 
@@ -78,6 +78,10 @@ max-width: 1230px;
 a:hover, a:focus{
 	text-decoration: none ;
 }
+a{
+	color: #31a3dd;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	color: #666;
@@ -1312,7 +1316,7 @@ margin-bottom:20px;
 	margin-top:0px;
 }
 .enigma_fuul_blog_detail_padding h2 a{
-
+	    color: #31a3dd;
 	font-size: 28px;
 	margin-bottom: 8px;
 	padding-right: 0px;
@@ -2839,7 +2843,7 @@ width:100%;
 }
 .tag-sticky-2,.sticky { 
 background-color:#ededed;
-border:1 px solid #f5f5f5;
+border:1px solid #f5f5f5;
 color:#272727;
 padding:5px;
 }
@@ -2862,7 +2866,18 @@ padding:5px;
     float: left;
     width: 100%;
 }
-
+.toggled.main-navigation {
+    float: inherit;
+}
+.toggled .dropdown-menu>.active>a{
+	background: transparent;
+	color: #fff;
+}
+.toggled .dropdown-menu>li>a:hover {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+}
 .main-navigation ul {
     
     list-style: none;
@@ -2893,7 +2908,9 @@ padding:5px;
 .main-navigation ul ul a {
     width: 251px;
 }
-
+.toggled.main-navigation ul ul a {
+    width: auto;
+}
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -2904,7 +2921,10 @@ padding:5px;
     float: left;
     position: relative;
 }
-
+.toggled.main-navigation li {
+    float: none;
+    position: relative;
+}
 
 .main-navigation a{
     display: block;
@@ -2920,7 +2940,10 @@ padding:5px;
 
 /* Small menu. */
 
-
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
 @media screen and (min-width: 993px) {
     
 
@@ -2951,31 +2974,6 @@ padding:5px;
       background-color: #30a2dc;
       color: #fff;
 }
-
-@media screen and (max-width: 767px){
-	.toggled.main-navigation ul ul a {
-    width: auto;
-}
-	.menu-toggle,
-.main-navigation.toggled ul {
-    display: block;
-}
-.toggled.main-navigation {
-    float: inherit;
-}
-.toggled .dropdown-menu>.active>a{
-	background: transparent;
-	color: #fff;
-}
-.toggled .dropdown-menu>li>a:hover {
-    color: #000;
-    text-decoration: none;
-    background-color: #fff;
-}
-.toggled.main-navigation li {
-    float: none;
-    position: relative;
-}
 .toggled .nav-menu{
 	display: flex;
     -ms-flex-direction: column;
@@ -2987,6 +2985,7 @@ padding:5px;
 .toggled .navbar-collapse {
 	display: block;
 }
+@media screen and (max-width: 992px){
 .main-navigation ul li.menu-item-has-children:hover > .dropdown-menu, .main-navigation ul li.focus > .dropdown-menu {
     position: relative !important;
     left: 0;
