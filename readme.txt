@@ -3,8 +3,8 @@
 Contributors: Access Keys
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.4.2
-Stable tag: 2.02
+Tested up to: 5.5.1
+Stable tag: 2.4
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, custom-header, translation-ready
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -87,18 +87,19 @@ Fonts
 
 == Screenshots Images ==
 
-Stocksnap Images
-License: CC0 Universal (CC0)
-Source: https://stocksnap.io/license
+PxHere Images
+License: Creative Commons Zero (CC0) license
+Source: https://pxhere.com/en/license
 
-
-https://stocksnap.io/photo/sunset-trees-9AFWKPNUMQ
-  
+https://pxhere.com/en/photo/1451181  
 
 
 
 ---------------------------------------------
 == Changelog ==
+= 2.4 =
+** Fixed compatiblity issue with WordPress 5.5
+
 = 2.3 =
 ** Added Copyright Messeage Option
 ** Fixed Minor CSS & JS

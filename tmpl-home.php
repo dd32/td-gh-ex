@@ -43,9 +43,9 @@ get_header(); ?>
 							$query->the_post();
 						?>
 						<div class="slides">
-							<h1 class="message-title">
+							<h3 class="message-title">
 								<?php the_title(); ?>
-							</h1>
+							</h3>
 							<div class="message-content">
 								<?php the_content(); ?>
 							</div>
@@ -66,7 +66,7 @@ get_header(); ?>
                 <?php if(of_get_option('service_title') || of_get_option('service_desc') ): ?>
 					<div class="section-title-wrap">
 						<?php if(of_get_option('service_title')): ?>
-							<h1 class="main-title"><?php echo esc_html(of_get_option('service_title')); ?></h1>
+							<h3 class="main-title"><?php echo esc_html(of_get_option('service_title')); ?></h3>
 						<?php endif; ?>
 
 						<?php if(of_get_option('service_desc')): ?>
@@ -108,7 +108,7 @@ get_header(); ?>
 									endif; ?>
 								</div>
 								<div class="service-content">
-									<h1 class="service-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+									<h5 class="service-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 									<div class="service-desc"><?php echo esc_html(accesspress_letter_count(get_the_content(),'120')); ?></div>
 								</div>
 							</div>
@@ -134,7 +134,7 @@ get_header(); ?>
 			<section id="cta-banner" class="clearfix">
 				<div class="ak-container">
 					<div class="cta-banner-text <?php echo esc_attr($class); ?>">
-						<h1 class="cta-banner-title color-bold"><?php echo esc_html($call_to_action_title); ?></h1>
+						<h3 class="cta-banner-title color-bold"><?php echo esc_html($call_to_action_title); ?></h3>
 						<div class="cta-banner-desc"><?php echo wp_kses_post($call_to_action_desc); ?></div>
 					</div>
 
@@ -155,7 +155,7 @@ get_header(); ?>
                 <?php if(of_get_option('feature_title') || of_get_option('feature_desc')): ?>
 					<div class="section-title-wrap">
 						<?php if(of_get_option('feature_title')): ?>
-							<h1 class="main-title"><?php echo esc_html(of_get_option('feature_title')); ?></h1>
+							<h3 class="main-title"><?php echo esc_html(of_get_option('feature_title')); ?></h3>
 						<?php endif; ?>
 						<?php if(of_get_option('feature_desc')): ?>
 						<div class="sub-desc">
@@ -189,7 +189,7 @@ get_header(); ?>
 									</a>
 									<?php endif; ?>
 									<div class="feature-content">
-										<h1 class="feature-title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h1>
+										<h5 class="feature-title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h5>
 										<div class="feature-desc"><?php echo esc_html(accesspress_letter_count(get_the_content(),'90')); ?></div>
 										<a class="feature-read-more" href="<?php the_permalink(); ?>"><?php echo esc_html(of_get_option('feature_readmore')); ?></a>
 									</div>
@@ -212,7 +212,7 @@ get_header(); ?>
 				<?php if(of_get_option('latest_post_title') || of_get_option('latest_post_desc')): ?>
 					<div class="section-title-wrap">
 						<?php if(of_get_option('latest_post_title')): ?>
-							<h1 class="main-title"><?php echo esc_html(of_get_option('latest_post_title'));?></h1>
+							<h3 class="main-title"><?php echo esc_html(of_get_option('latest_post_title'));?></h3>
 						<?php endif; ?>
 						
 						<?php if(of_get_option('latest_post_desc')): ?>
@@ -269,7 +269,7 @@ get_header(); ?>
 										</div>
 									</div>
 									<div class="blog-content">
-										<h1 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h1>
+										<h5 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h5>
 										<div class="blog-desc"><?php echo esc_html(accesspress_letter_count(get_the_content(),'200')); ?></div>
 									</div>
 									<div class="clearfix"> </div>
@@ -399,7 +399,7 @@ get_header(); ?>
 				<div class="ak-container">
 					<div class="section-title-wrap">
 						<?php if(of_get_option('testimonial_title')): ?>
-						<h1 class="main-title"><?php echo esc_html(of_get_option('testimonial_title'));?></h1>
+						<h3 class="main-title"><?php echo esc_html(of_get_option('testimonial_title'));?></h3>
 						<?php endif; ?>
 
 						<?php if(of_get_option('testimonial_desc')): ?>

@@ -60,7 +60,7 @@ function accesspress_bxslidercb(){
                         <?php if($slider_title || $slider_desc): ?>
                             <div class="caption-content-wrapper">
 							<?php if($slider_title): ?>
-								<h1 class="caption-title"><?php echo esc_html($slider_title);?></h1>
+								<h3 class="caption-title"><?php echo esc_html($slider_title);?></h3>
 							<?php endif; ?>
 
 							<?php if($slider_desc): ?>
