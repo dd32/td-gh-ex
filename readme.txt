@@ -2,7 +2,7 @@
 Contributors: themeeverest  
 Requires at least: 4.9.6
 Tested up to: 5.1
-Stable tag: 1.0
+Stable tag: 1.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html 
 Tags: two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, entertainment, news
