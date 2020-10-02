@@ -8,7 +8,7 @@
 
 /**
  * Enqueue scripts and styles.
- */
+*/
 function articlepress_scripts(){
 
 	// Font
