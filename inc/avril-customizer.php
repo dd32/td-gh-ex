@@ -82,7 +82,6 @@
 			require AVRIL_PARENT_INC_DIR . '/customize/avril-general.php';
 			require AVRIL_PARENT_INC_DIR . '/customize/customizer_recommended_plugin.php';
 			require AVRIL_PARENT_INC_DIR . '/customize/customizer_import_data.php';
-			require AVRIL_PARENT_INC_DIR . '/customize/avril-premium.php';
 		}
 
 	}

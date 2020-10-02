@@ -104,9 +104,6 @@ button, input, optgroup, select, textarea {
 
 button, input {
     overflow: visible;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 img {
