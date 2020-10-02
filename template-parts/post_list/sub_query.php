@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 投稿一覧リストの出力テンプレート（サブループ用）
  *   $args['query_args'] : WP_Queryに渡す引数
@@ -28,7 +28,7 @@ if ( $the_query->have_posts() ) : ?>
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
 			$list_args['count'] = $loop_count++;
-			ARKHE_THEME::get_parts( 'post_list/style/' . $file_name, $list_args );
+			Arkhe::get_parts( 'post_list/style/' . $file_name, $list_args );
 		endwhile;
 	?>
 	</ul>

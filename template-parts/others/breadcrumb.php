@@ -1,17 +1,17 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * パンくずリスト
  */
 if ( is_front_page() ) return false;
 
-$SETTING = ARKHE_THEME::get_setting();
+$setting = Arkhe::get_setting();
 
 $wp_obj    = get_queried_object();  // そのページのWPオブジェクトを取得
 $list_data = array();
 
 // 「投稿ページ」をリストに入れる場合
 $home_data = null;
-if ( $SETTING['breadcrumbs_set_home_page'] ) {
+if ( $setting['breadcrumbs_set_home_page'] ) {
 	$home_page_id = (int) get_option( 'page_for_posts' );
 	if ( $home_page_id ) {
 		$home_data = array(
@@ -341,7 +341,7 @@ echo '<div id="breadcrumb" class="p-breadcrumb">' .
 	'<ol class="p-breadcrumb__list l-container">' .
 		'<li class="p-breadcrumb__item">' .
 			'<a href="' . esc_url( home_url( '/' ) ) . '" class="p-breadcrumb__text">' .
-				'<span class="arkhe-icon-home"> ' . esc_html( $SETTING['breadcrumbs_home_text'] ) . '</span>' .
+				'<span class="arkhe-icon-home"> ' . esc_html( $setting['breadcrumbs_home_text'] ) . '</span>' .
 			'</a>' .
 		'</li>' .
 		wp_kses_post( $list_html ) .
@@ -349,4 +349,4 @@ echo '<div id="breadcrumb" class="p-breadcrumb">' .
 '</div>';
 
 // JSON-LDデータの受け渡し
-\ARKHE_THEME\Javascript::$bread_json_data = $json_array;
+\Arkhe::$bread_json_data = $json_array;

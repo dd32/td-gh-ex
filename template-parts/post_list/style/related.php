@@ -1,9 +1,9 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 関連記事リストの出力テンプレート（サブループ内）
  *   $args['count'] : 現在のループカウント数 (フック用に用意)
  */
+
 $post_data = get_post();
 $the_id    = $post_data->ID;
 $date      = new DateTime( $post_data->post_date );
@@ -15,7 +15,7 @@ $date      = new DateTime( $post_data->post_date );
 			<figure class="c-postThumb__figure">
 				<?php
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo ARKHE_THEME::get_thumbnail(
+					echo Arkhe::get_thumbnail(
 						$the_id,
 						array(
 							'size'        => 'medium',
@@ -30,7 +30,7 @@ $date      = new DateTime( $post_data->post_date );
 			<div class="p-postList__title"><?php the_title(); ?></div>
 			<div class="p-postList__meta">
 				<div class="p-postList__times c-postTimes u-color-thin">
-					<?php ARKHE_THEME::the_date_time( $date, 'posted', false ); ?>
+					<?php Arkhe::the_date_time( $date, 'posted', false ); ?>
 				</div>
 			</div>
 		</div>

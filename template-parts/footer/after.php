@@ -1,9 +1,9 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * フッターの後にあるコンテンツ
  */
 
-ARKHE_THEME::get_parts( 'footer/fix_btns' );
+Arkhe::get_parts( 'footer/fix_btns' );
 ?>
 <?php // 検索モーダル ?>
 <div id="search_modal" class="c-modal p-searchModal">

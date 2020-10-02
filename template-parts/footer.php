@@ -1,11 +1,10 @@
 <?php
-	if ( ! defined( 'ABSPATH' ) ) exit;
+$setting = Arkhe::get_setting();
 
-	$SETTING = ARKHE_THEME::get_setting();
+// ウィジェットの使用状況
+$is_active_footer1 = is_active_sidebar( 'footer-1' );
+$is_active_footer2 = is_active_sidebar( 'footer-2' );
 
-	// ウィジェットの使用状況
-	$is_active_footer1 = is_active_sidebar( 'footer-1' );
-	$is_active_footer2 = is_active_sidebar( 'footer-2' );
 ?>
 <footer id="footer" class="l-footer">
 	<div class="l-footer__inner">
@@ -39,7 +38,7 @@
 						)
 					);
 				?>
-				<p class="copyright"><?php echo esc_html( $SETTING['copyright'] ); ?></p>
+				<p class="copyright"><?php echo esc_html( $setting['copyright'] ); ?></p>
 				<?php do_action( 'arkhe_after_copyright' ); ?>
 			</div>
 		</div>

@@ -1,18 +1,46 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace Arkhe_Theme;
 
 /**
  * カスタマイザーの設定
  */
-add_action( 'customize_controls_init', 'arkhe_hook__customize_controls_init' );
-add_action( 'customize_controls_enqueue_scripts', 'arkhe_hook__customize_controls_enqueue_scripts' );
-add_action( 'customize_register', 'arkhe_hook__customize_register', 99 );
+add_action( 'customize_register', '\Arkhe_Theme\customizer_setup', 20 );
+add_action( 'customize_controls_init', '\Arkhe_Theme\customizer_init' );
+
+
+/**
+ * カスタマイザーの設定項目を登録
+ */
+function customizer_setup( $wp_customize ) {
+
+	// 全体設定
+	include_once ARKHE_THEME_PATH . '/inc/customizer/common.php';
+
+	// ヘッダー設定
+	include_once ARKHE_THEME_PATH . '/inc/customizer/header.php';
+
+	// フッター設定
+	include_once ARKHE_THEME_PATH . '/inc/customizer/footer.php';
+
+	// サイドバー
+	include_once ARKHE_THEME_PATH . '/inc/customizer/sidebar.php';
+
+	// 固定ページ設定
+	include_once ARKHE_THEME_PATH . '/inc/customizer/page.php';
+
+	// 投稿ページ設定
+	include_once ARKHE_THEME_PATH . '/inc/customizer/single.php';
+
+	// 記事一覧リスト
+	include_once ARKHE_THEME_PATH . '/inc/customizer/post_list.php';
+
+}
 
 
 /**
  * プレビュー画面でTab / Mobileのデバイス情報を取得できるようにする
  */
-function arkhe_hook__customize_controls_init() {
+function customizer_init() {
 	global $wp_customize;
 	$previewed_device_name = null;
 
@@ -29,59 +57,4 @@ function arkhe_hook__customize_controls_init() {
 			add_query_arg( 'customize_previewed_device', $previewed_device_name, $wp_customize->get_preview_url() )
 		);
 	}
-}
-
-
-/**
- * カスタマイザー画面で読み込むファイル
- */
-function arkhe_hook__customize_controls_enqueue_scripts() {
-	// プレビュー画面の更新 & デバイス情報の受け渡し
-	$prev_handle = 'customizer-responsive-device-preview';
-	wp_enqueue_script(
-		'arkhe_customizer_preview',
-		ARKHE_TMP_DIR_URI . '/dist/js/admin/responsive-device-preview.js',
-		array( 'customize-controls' ),
-		ARKHE_VERSION,
-		false
-	);
-	wp_add_inline_script( 'arkhe_customizer_preview', 'CustomizerResponsiveDevicePreview.init( wp.customize );', 'after' );
-
-	// 設定項目の表示・非表示を切り替える処理
-	wp_enqueue_script(
-		'arkhe_customizer_controls',
-		ARKHE_TMP_DIR_URI . '/dist/js/admin/customizer-controls.js',
-		array(),
-		ARKHE_VERSION,
-		false
-	);
-}
-
-
-/**
- * カスタマイザー 登録
- */
-function arkhe_hook__customize_register( $wp_customize ) {
-
-	// 全体設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/common.php';
-
-	// ヘッダー設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/header.php';
-
-	// フッター設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/footer.php';
-
-	// サイドバー
-	include_once ARKHE_TMP_DIR . '/inc/customizer/sidebar.php';
-
-	// 固定ページ設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/page.php';
-
-	// 投稿ページ設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/single.php';
-
-	// 記事一覧リスト
-	include_once ARKHE_TMP_DIR . '/inc/customizer/post_list.php';
-
 }

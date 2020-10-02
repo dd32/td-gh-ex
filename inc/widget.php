@@ -1,16 +1,16 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace Arkhe_Theme;
 
 /**
  * ウィジェット登録
  */
-add_action( 'widgets_init', 'arkhe_hook__widgets_init' );
+add_action( 'widgets_init', '\Arkhe_Theme\setup_widgets' );
 
-function arkhe_hook__widgets_init() {
+function setup_widgets() {
 
 	// 標準の「最新の投稿」ウィジェットを削除して上書き
 	unregister_widget( 'wp_widget_recent_posts' );
-	register_widget( '\ARKHE_THEME\Widget\Recent_Posts' );
+	register_widget( '\Arkhe_Theme\Widget\Recent_Posts' );
 
 	// ウィジェットエリアを登録
 	register_sidebar(

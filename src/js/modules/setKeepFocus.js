@@ -1,6 +1,8 @@
 import DOM from './data/domData';
 import setState, { isModalOpen } from '@js/modules/data/stateData';
 
+/* eslint no-lonely-if: 0 */
+
 // モーダル内のフォーカス可能要素を取得
 function getFocusableElements(modal) {
 	if (!modal) return [];
@@ -26,7 +28,7 @@ function setModalKeydownEvent(modal, focusableElements, modalType) {
 	// firstTabStop.focus();
 
 	// Add keydown event
-	modal.addEventListener('keydown', function(e) {
+	modal.addEventListener('keydown', function (e) {
 		if (!isModalOpen) return;
 
 		// 現在アクティブなトグルボタンを取得
@@ -49,7 +51,7 @@ function setModalKeydownEvent(modal, focusableElements, modalType) {
 					}
 				}
 			} else {
-				// if Tab
+				// if Tab key
 				if (document.activeElement === lastTabStop) {
 					// 最後の要素から進もうとする時 -> closeBtn or 最初の要素にフォーカス
 					e.preventDefault();
@@ -75,8 +77,8 @@ function setBtnKeydownEvent(toggleBtns, focusableElements) {
 	// The last focusable element within the modal window
 	const lastTabStop = focusableElements[focusableElements.length - 1];
 
-	toggleBtns.forEach(function(btn) {
-		btn.addEventListener('keydown', function(e) {
+	toggleBtns.forEach(function (btn) {
+		btn.addEventListener('keydown', function (e) {
 			if (!isModalOpen) return;
 
 			if (9 === e.keyCode) {
@@ -96,12 +98,12 @@ function setBtnKeydownEvent(toggleBtns, focusableElements) {
 }
 
 // モーダル内でフォーカスをキープする
-export default function(modal, closeBtn) {
+export default function (modal, closeBtn) {
 	// ドロワーモーダルのフォーカス可能要素を取得
-	const drawerFocusableElements = getFocusableElements(DOM.spMenu);
+	const drawerFocusableElements = getFocusableElements(DOM.drawerMenu);
 
 	// ドロワーモーダルのフォーカスイベント
-	setModalKeydownEvent(DOM.spMenu, drawerFocusableElements, 'drawer');
+	setModalKeydownEvent(DOM.drawerMenu, drawerFocusableElements, 'drawer');
 
 	// ドロワートグルボタンのフォーカスイベント
 	const drawerToggleBtns = document.querySelectorAll('[data-onclick="toggleMenu"]');

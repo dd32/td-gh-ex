@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * ヘッダーロゴの出力テンプレート
  *   $args['label'] : ボタンしたのラベル
@@ -13,17 +13,17 @@ $logo_size_sp   = isset( $args['logo_size_sp'] ) ? $args['logo_size_sp'] : '';
 $style = '';
 
 // ロゴサイズ
-if ( $logo_size_pc ) $style .= '--logo_size_pc:' . $logo_size_pc . 'px;';
-if ( $logo_size_sp ) $style .= '--logo_size_sp:' . $logo_size_sp . 'px;';
+if ( $logo_size_pc ) $style .= '--ark-logo_size_pc:' . $logo_size_pc . 'px;';
+if ( $logo_size_sp ) $style .= '--ark-logo_size_sp:' . $logo_size_sp . 'px;';
 ?>
 <div class="l-header__center"<?php if ( $style ) echo ' style="' . esc_attr( $style ) . '"'; ?>>
 	<?php if ( is_front_page() ) : ?>
 			<h1 class="l-header__logo">
-				<?php ARKHE_THEME::get_parts( 'header/logo_img' ); ?>
+				<?php Arkhe::get_parts( 'header/logo_img' ); ?>
 			</h1>
 		<?php else : ?>
 			<div class="l-header__logo">
-				<?php ARKHE_THEME::get_parts( 'header/logo_img' ); ?>
+				<?php Arkhe::get_parts( 'header/logo_img' ); ?>
 			</div>
 		<?php endif; ?>
 	<?php if ( $show_phrase ) : ?>

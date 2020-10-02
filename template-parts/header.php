@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * ヘッダー用テンプレート
  *   ブロックで生成されている場合はそちらを優先する
@@ -30,5 +30,5 @@ if ( apply_filters( 'arkhe_header_id', $header_id ) ) {
 	}
 } else {
 	// 通常時
-	ARKHE_THEME::get_parts( 'header/default' );
+	Arkhe::get_parts( 'header/default' );
 }

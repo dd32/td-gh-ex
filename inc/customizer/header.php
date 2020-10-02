@@ -1,6 +1,5 @@
 <?php
-use \ARKHE_THEME\Customizer;
-if ( ! defined( 'ABSPATH' ) ) exit;
+use \Arkhe_Theme\Customizer;
 
 $arkhe_section = 'arkhe_section_header';
 
@@ -22,94 +21,102 @@ Customizer::big_title(
 	'header_logo',
 	array(
 		'label'       => __( 'Header logo settings', 'arkhe' ),
-		'description' => __( 'You can set the image to use from the "Site Identity" menu.', 'arkhe' ),
+		'description' => __( 'The logo image can be set from the "Site Identity" menu.', 'arkhe' ),
 	)
 );
 
 
-// 画像サイズ（PC）
-Customizer::add(
-	$arkhe_section,
-	'logo_size_pc',
-	array(
-		'label'       => __( 'Image size', 'arkhe' ) . ' (PC)',
-		'description' => '32~120px',
-		'type'        => 'number',
-		'input_attrs' => array(
-			'step'    => '1',
-			'min'     => '32',
-			'max'     => '120',
-		),
-		'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),
-	)
-);
+// ヘッダーがブロックで管理されているかどうか
+if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
 
-// 画像サイズ（SP）
-Customizer::add(
-	$arkhe_section,
-	'logo_size_sp',
-	array(
-		'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
-		'description' => '32~80px',
-		'type'        => 'number',
-		'input_attrs' => array(
-			'step'    => '1',
-			'min'     => '32',
-			'max'     => '80',
-		),
-		'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),
-	)
-);
+	// 画像サイズ（PC）
+	Customizer::add(
+		$arkhe_section,
+		'logo_size_pc',
+		array(
+			'label'       => __( 'Image size', 'arkhe' ) . ' (PC)',
+			'description' => '32~120px',
+			'type'        => 'number',
+			'input_attrs' => array(
+				'step'    => '1',
+				'min'     => '32',
+				'max'     => '120',
+			),
+			'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
+		)
+	);
 
-// レイアウト設定
-Customizer::big_title(
-	$arkhe_section,
-	'header_layout',
-	array(
-		'label' => __( 'Layout setting', 'arkhe' ),
-	)
-);
+	// 画像サイズ（SP）
+	Customizer::add(
+		$arkhe_section,
+		'logo_size_sp',
+		array(
+			'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
+			'description' => '32~80px',
+			'type'        => 'number',
+			'input_attrs' => array(
+				'step'    => '1',
+				'min'     => '32',
+				'max'     => '80',
+			),
+			'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
+		)
+	);
 
-// 検索ボタンをSPで表示する
-Customizer::add(
-	$arkhe_section,
-	'show_search_btn_sp',
-	array(
-		'label'       => __( 'Show search btn on SP', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);
+	// レイアウト設定
+	Customizer::big_title(
+		$arkhe_section,
+		'header_layout',
+		array(
+			'label' => __( 'Layout setting', 'arkhe' ),
+		)
+	);
 
-// 検索ボタンをPCで表示する
-Customizer::add(
-	$arkhe_section,
-	'show_search_btn_pc',
-	array(
-		'label'       => __( 'Show search btn on PC', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);
+	// 検索ボタンをSPで表示する
+	Customizer::add(
+		$arkhe_section,
+		'show_search_btn_sp',
+		array(
+			'label'       => __( 'Show search btn on SP', 'arkhe' ),
+			'type'        => 'checkbox',
+		)
+	);
 
-// ドロワーメニューをPCでも表示する
-Customizer::add(
-	$arkhe_section,
-	'show_drower_pc',
-	array(
-		'label'       => __( 'Show drawer menu on PC', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);
+	// 検索ボタンをPCで表示する
+	Customizer::add(
+		$arkhe_section,
+		'show_search_btn_pc',
+		array(
+			'label'       => __( 'Show search btn on PC', 'arkhe' ),
+			'type'        => 'checkbox',
+		)
+	);
 
-// グローバルナビを下側に移動する
-Customizer::add(
-	$arkhe_section,
-	'move_gnav_under',
-	array(
-		'label'       => __( 'Move global navigation down', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);
+	// ドロワーメニューをPCでも表示する
+	Customizer::add(
+		$arkhe_section,
+		'show_drower_pc',
+		array(
+			'label'       => __( 'Show drawer menu on PC', 'arkhe' ),
+			'type'        => 'checkbox',
+		)
+	);
 
+	// グローバルナビを下側に移動する
+	Customizer::add(
+		$arkhe_section,
+		'move_gnav_under',
+		array(
+			'label'       => __( 'Move global navigation down', 'arkhe' ),
+			'type'        => 'checkbox',
+		)
+	);
+
+} else {
+
+	do_action( 'arkhe_customizer_header_blocked_message' );
+
+}
 
 
 // ヘッダーの固定設定
@@ -159,7 +166,6 @@ Customizer::big_title(
 	'top_header',
 	array(
 		'label' => __( 'Overlay settings', 'arkhe' ),
-	// 'description' => '※ フロントページのヘッダーに反映されます。',
 	)
 );
 Customizer::add(

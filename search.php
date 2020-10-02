@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 検索結果画面
  */
@@ -7,8 +7,8 @@ get_header();
 // リストタイプ
 $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 ?>
-<main id="main_content" class="<?php ARKHE_THEME::main_class(); ?>">
-	<div class="<?php ARKHE_THEME::main_body_class(); ?>">
+<main id="main_content" class="<?php Arkhe::main_class(); ?>">
+	<div class="<?php Arkhe::main_body_class(); ?>">
 		<h1 class="p-archive__title c-pageTitle">
 			<?php
 				// translators: %s is the value of get_search_query().
@@ -17,7 +17,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 		</h1>
 		<?php
 			// 投稿一覧
-			ARKHE_THEME::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+			Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 			// ページャー
 			the_posts_pagination(

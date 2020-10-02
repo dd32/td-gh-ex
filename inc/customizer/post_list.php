@@ -1,6 +1,5 @@
 <?php
-use \ARKHE_THEME\Customizer;
-if ( ! defined( 'ABSPATH' ) ) exit;
+use \Arkhe_Theme\Customizer;
 
 $arkhe_section = 'arkhe_section_post_list';
 
@@ -112,7 +111,7 @@ Customizer::add(
 			'min'     => '0',
 			'max'     => '320',
 		),
-		'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),
+		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
 );
 
@@ -129,7 +128,7 @@ Customizer::big_title(
 // カード型リストでの比率
 Customizer::add(
 	$arkhe_section,
-	'card_posts_thumb_ratio',
+	'--ark-card_thumb_ratio',
 	array(
 		'label'       => __( 'Ratio in "card type"', 'arkhe' ),
 		'type'        => 'select',

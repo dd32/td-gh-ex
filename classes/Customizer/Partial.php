@@ -1,7 +1,5 @@
 <?php
-namespace ARKHE_THEME\Customizer;
-
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace Arkhe_Theme\Customizer;
 
 /**
  * $wp_customize->selective_refresh->add_partialのコールバックを集めたクラス
@@ -15,7 +13,7 @@ class Partial {
 	 */
 	public static function breadcrumb() {
 		ob_start();
-		\ARKHE_THEME::get_parts( 'others/breadcrumb' );
+		\Arkhe::get_parts( 'others/breadcrumb' );
 		return ob_get_clean();
 	}
 

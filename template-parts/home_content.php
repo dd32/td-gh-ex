@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 「最新の投稿」 or 「投稿一覧」 のページ用
  */
@@ -10,7 +10,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_home', ARKHE_LIST_TYPE );
 do_action( 'arkhe_before_home_content' );
 
 // 投稿一覧
-ARKHE_THEME::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 // ページャー
 the_posts_pagination(

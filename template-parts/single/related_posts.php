@@ -1,13 +1,13 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 関連記事
  */
 $the_post_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
-$SETTING = ARKHE_THEME::get_setting();
+$setting = Arkhe::get_setting();
 
 // レイアウト
-$list_type      = $SETTING['related_posts_layout'];
+$list_type      = $setting['related_posts_layout'];
 $posts_per_page = 'card' === $list_type ? 6 : 4;
 
 $related_args = array(
@@ -20,7 +20,7 @@ $related_args = array(
 	'orderby'             => 'rand',
 );
 
-if ( 'category' === $SETTING['post_relation_type'] ) {
+if ( 'category' === $setting['post_relation_type'] ) {
 	// カテゴリ情報から関連記事を呼び出す
 
 	$categories = get_the_category( $the_post_id );
@@ -60,7 +60,7 @@ $loop_count = 0;
 			<?php
 				while ( $related_query->have_posts() ) :
 					$related_query->the_post();
-					ARKHE_THEME::get_parts( 'post_list/style/related', array( 'count' => $loop_count++ ) );
+					Arkhe::get_parts( 'post_list/style/related', array( 'count' => $loop_count++ ) );
 				endwhile;
 			?>
 		</ul>

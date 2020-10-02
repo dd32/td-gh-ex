@@ -1,9 +1,9 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 投稿ページのタイトル部分
  * $args['post_id'] : 投稿IDが渡ってくる
  */
-$SETTING = ARKHE_THEME::get_setting();
+$setting = Arkhe::get_setting();
 
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
@@ -18,26 +18,26 @@ $is_modified = ( $date < $modified );
 	<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
 	<div class="p-entry__head__meta">
 		<div class="c-postTimes">
-			<?php ARKHE_THEME::the_date_time( $date, 'posted' ); ?>
+			<?php Arkhe::the_date_time( $date, 'posted' ); ?>
 			<?php
 				if ( $is_modified ) :
-					ARKHE_THEME::the_date_time( $modified, 'modified', false );
+					Arkhe::the_date_time( $modified, 'modified', false );
 				endif;
 			?>
 		</div>
 		<?php
 			// カテゴリー・タグ
-			ARKHE_THEME::get_parts(
+			Arkhe::get_parts(
 				'single/term_list',
 				array(
 					'post_id'  => $the_id,
-					'show_cat' => $SETTING['show_entry_cat'],
-					'show_tag' => $SETTING['show_entry_tag'],
+					'show_cat' => $setting['show_entry_cat'],
+					'show_tag' => $setting['show_entry_tag'],
 				)
 			);
 
 			// 著者アイコン
-			if ( $SETTING['show_entry_author'] ) :
+			if ( $setting['show_entry_author'] ) :
 				$author_id   = $post_data->post_author;
 				$author_data = get_userdata( $author_id );
 				$author_url  = get_author_posts_url( $author_id );
@@ -52,8 +52,8 @@ $is_modified = ( $date < $modified );
 	</div>
 	<?php
 		// アイキャッチ画像
-		if ( ARKHE_THEME::get_setting( 'show_entry_thumb' ) ) :
-			ARKHE_THEME::get_parts(
+		if ( Arkhe::get_setting( 'show_entry_thumb' ) ) :
+			Arkhe::get_parts(
 				'singular/thumbnail',
 				array(
 					'post_id'    => $the_id,

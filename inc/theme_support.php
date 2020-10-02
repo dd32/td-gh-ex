@@ -1,15 +1,15 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace Arkhe_Theme;
 
 /**
  * add_theme_supports
  */
-add_action( 'after_setup_theme', 'arkhe_hook__setup_theme' );
+add_action( 'after_setup_theme', '\Arkhe_Theme\setup_theme' );
 
-function arkhe_hook__setup_theme() {
+function setup_theme() {
 
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \ARKHE_THEME::get_setting( 'container_size' ) );
+	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \Arkhe::get_setting( 'container_width' ) );
 
 	// 固定ページでも抜粋文を使用可能にする
 	add_post_type_support( 'page', 'excerpt' );
@@ -80,5 +80,4 @@ function arkhe_hook__setup_theme() {
 			),
 		)
 	);
-
 }

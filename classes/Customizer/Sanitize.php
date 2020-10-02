@@ -1,7 +1,5 @@
 <?php
-namespace ARKHE_THEME\Customizer;
-
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace Arkhe_Theme\Customizer;
 
 /**
  * カスタマイザーで使用するサニタイズ関数たち
@@ -17,14 +15,14 @@ class Sanitize {
 
 		switch ( $type ) {
 			case 'checkbox':
-				return array( '\ARKHE_THEME\Customizer\Sanitize', 'checkbox' );
+				return array( '\Arkhe_Theme\Customizer\Sanitize', 'checkbox' );
 			case 'radio':
 			case 'select':
-				return array( '\ARKHE_THEME\Customizer\Sanitize', 'select' );
+				return array( '\Arkhe_Theme\Customizer\Sanitize', 'select' );
 			case 'number':
-				return array( '\ARKHE_THEME\Customizer\Sanitize', 'float' );
+				return array( '\Arkhe_Theme\Customizer\Sanitize', 'float' );
 			case 'image':
-				return array( '\ARKHE_THEME\Customizer\Sanitize', 'image' );
+				return array( '\Arkhe_Theme\Customizer\Sanitize', 'image' );
 			case 'color':
 				return 'sanitize_hex_color';
 			default: // text | textarea

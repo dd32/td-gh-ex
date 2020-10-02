@@ -1,27 +1,9 @@
 <?php
-namespace ARKHE_THEME\Data;
+namespace Arkhe_Theme\Data;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+trait Default_Data {
 
-class Default_Data {
-
-	private function __construct() {}
-
-	public static function options() {
-		return array(
-			// Remove
-			'remove_wpver'       => '1',
-			'remove_srcset'      => '1',
-			'remove_rel_link'    => '1',
-			'remove_wlwmanifest' => '1',
-			'remove_rsd_link'    => '1',
-			'remove_emoji'       => '1',
-			'remove_wptexturize' => '',
-			'remove_feed_link'   => '',
-		);
-	}
-
-	public static function settings() {
+	public static function get_default_settings() {
 		return array(
 			// Colors
 			'color_main'                => '#111',
@@ -30,8 +12,8 @@ class Default_Data {
 			'color_bg'                  => '#fff',
 
 			// Content width
-			'container_size'            => 1200,
-			'article_size'              => 960,
+			'container_width'           => 1200,
+			'slim_width'                => 960,
 
 			// NO IMAGE
 			'no_image'                  => '',
@@ -74,7 +56,7 @@ class Default_Data {
 			'show_list_date'            => true,
 			'show_list_mod'             => false,
 			'show_list_author'          => false,
-			'card_posts_thumb_ratio'    => 'wide',
+			'--ark-card_thumb_ratio'    => 'wide',
 			'list_posts_thumb_ratio'    => 'golden',
 
 			// 固定ページ設定

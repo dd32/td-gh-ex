@@ -1,6 +1,5 @@
 <?php
-use \ARKHE_THEME\Customizer;
-if ( ! defined( 'ABSPATH' ) ) exit;
+use \Arkhe_Theme\Customizer;
 
 $arkhe_section = 'arkhe_section_sidebar';
 

@@ -1,19 +1,17 @@
 <?php
-namespace ARKHE_THEME\Customizer\Control;
-
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace Arkhe_Theme\Customizer\Control;
 
 /**
  * 大タイトル出力用
  */
-class Big_Title extends \WP_Customize_Control {
+class Sub_Title extends \WP_Customize_Control {
 
 	public $classname = ''; // 追加したメンバ変数
 
 	// 出力するコンテンツ
 	public function render_content() {
 		if ( isset( $this->label ) ) {
-			echo '<div class="customize-control-title -big">' . esc_html( $this->label ) . '</div>';
+			echo '<span class="customize-control-title -sub">' . esc_html( $this->label ) . '</span>';
 		}
 		if ( isset( $this->description ) ) {
 			echo '<span class="description customize-control-description">' . wp_kses_post( $this->description ) . '</span>';
