@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	$('ul.sf-menu').superfish({
-		delay: 200,
+		delay: 400,
 		animation: {opacity:'show', height:'show'},
 		speed: 'fast',
 		speedOut: 'normal', 
@@ -22,13 +22,12 @@ jQuery(document).ready(function($){
 		animation: "slide",
 	});
   
-	$('.top-icon .fa-search').click(function() {		
+	$('.top-icon .fa-search').click(function() {
 		$("header .search-box-wrapper").slideToggle('slow', function(){
-            $('.top-icon .fa-search').toggleClass('active');
-        });
-        return false;
-
-	});		
+			$('.top-icon .fa-search').toggleClass('active');
+		});
+		return false;
+	});
 	
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 200) {
@@ -41,5 +40,4 @@ jQuery(document).ready(function($){
 	$('.mw-go-top').click(function() {
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 	});
-
 });

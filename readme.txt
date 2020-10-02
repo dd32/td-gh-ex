@@ -1,13 +1,17 @@
 Copyright
 ---------------
 
-MW Small WordPress Theme, Copyright 2014-2018 MW Themes
+MW Small WordPress Theme, Copyright 2014-2020 MW Themes
 
 Author: MWThemes
 Author URI: http://mwthemes.net
 
 Theme Name: MW Small
 Theme URI: http://mwthemes.net/portfolio/mw-small-blog-responsive-theme/
+
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Tested up to: 5.5.1
 
 MW Small is a minimalistic responsive and customizable free blogging WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. You can upload your own Logo, set left sidebar or right, add your Social Links, custom color schemes, FontAwesome icons, 2 header layouts, 2 featured slider layouts, translation ready and many other. Has 3 Footer Widget Areas and Footer Widget Instagram. MW small is a perfect WordPress theme for personal, fashion, travel, business minimal blog or lifestyle blog.
 
@@ -25,16 +29,33 @@ The Font Awesome font is licensed under the SIL Open Font License - http://forta
 
 Font Awesome CSS, LESS, and SASS files are licensed under the MIT License - http://fortawesome.github.io/Font-Awesome/#license
 
-Images:
 Screenshot image licensed : Public Domain => CCO 
-https://pixabay.com/en/mountain-view-panorama-person-984277/
-https://pixabay.com/en/recreation-adventure-outdoors-one-1209450/
-http://pixabay.com/en/life-guard-lifeguard-beach-tower-351484/
 https://www.pexels.com/photo/woman-in-white-tank-top-745766/
+
+Image for theme screenshot, Capucine Moda
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/people-girl-41OTX8QXSK
+
+Image for theme screenshot, Kaci Baum
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/beautiful-bohemian-9AZW8YSXHA
 
 /*-----------------------------
 		Changelog 
 -----------------------------*/
+
+### 1.3.1 * 28-09-2020
+* Add function wp_body_open()
+* Fix: Escaping Issues
+* Updated screenshot
+
+### 1.3.0 * 28-09-2020
+* Test WordPress 5.5.1
+* Updated superfish.js menu issue fixed - v1.7.9	
+* Edit theme info page
+* Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css
+* Changed footer author text
+* Update translation
 
 ### 1.2.0 * 21-05-2018
 * Add Big Slider Post

@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mwsmall1.1.0\n"
-"POT-Creation-Date: 2018-05-21 13:28+0200\n"
+"Project-Id-Version: mw small\n"
+"POT-Creation-Date: 2020-09-28 14:59+0200\n"
 "PO-Revision-Date: 2016-07-07 16:02+0100\n"
 "Last-Translator: MW Themes <info@mwthemes.net>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
@@ -171,55 +171,55 @@ msgid "http://wordpress.org/"
 msgstr ""
 
 #: ../footer.php:47
-msgid "Theme by"
+msgid "MW Small Theme by"
 msgstr ""
 
 #: ../footer.php:47
 msgid "http://www.mwthemes.net"
 msgstr ""
 
-#: ../functions.php:44
+#: ../functions.php:43
 msgid "Main Navigation"
 msgstr ""
 
-#: ../functions.php:112
+#: ../functions.php:111
 msgid "Blog Widget"
 msgstr ""
 
-#: ../functions.php:120
+#: ../functions.php:119
 msgid "Footer Widget 1"
 msgstr ""
 
-#: ../functions.php:128
+#: ../functions.php:127
 msgid "Footer Widget 2"
 msgstr ""
 
-#: ../functions.php:136
+#: ../functions.php:135
 msgid "Footer Widget 3"
 msgstr ""
 
-#: ../functions.php:144
+#: ../functions.php:143
 msgid "Footer Instagram"
 msgstr ""
 
-#: ../functions.php:160
+#: ../functions.php:159
 msgid "Older posts"
 msgstr ""
 
-#: ../functions.php:164
+#: ../functions.php:163
 msgid "Newer posts"
 msgstr ""
 
-#: ../functions.php:190
+#: ../functions.php:186
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-#: ../functions.php:196
+#: ../functions.php:191
 msgid "Your comment is awaiting approval"
 msgstr ""
 
-#: ../functions.php:245
+#: ../functions.php:239
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -482,11 +482,11 @@ msgstr ""
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: ../inc/theme-info.php:188
+#: ../inc/theme-info.php:186
 msgid "http://mwthemes.net/"
 msgstr ""
 
-#: ../inc/theme-info.php:189
+#: ../inc/theme-info.php:187
 msgid "https://wordpress.org/support/theme/mw-small/reviews/?filter=5"
 msgstr ""
 

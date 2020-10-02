@@ -13,25 +13,24 @@
  */
  
  get_header(); ?>
-<?php 
-	$hide_slider_big = get_theme_mod( 'hide_slider_big_post' );
-	if ( $hide_slider_big == '' && is_front_page() ) {
-		get_template_part( 'inc/slider-post-big' );
-	}
+<?php
+
+	do_action( 'mw_small_before_front_page_section' );
 	
 	$htitle = get_theme_mod( 'mwsmall_home_title' );
 	$home_text = get_theme_mod( 'mwsmall_home_text' );
 	if ( !empty( $htitle ) || !empty( $home_text ) ) {
-?>
-<section class="home_text text-center col-lg-12 col-md-12 col-sm-12">
-	<?php if ( !empty( $htitle ) ) { ?>
-	<h2><?php echo $htitle; ?></h2>
-	<?php } ?>
-	<?php if ( !empty( $home_text ) ) { ?>
-	<p><?php echo $home_text; ?></p>
-	<?php } ?>
-</section>
-<?php } ?>
+	?>
+		<section class="home_text text-center col-lg-12 col-md-12 col-sm-12">
+			<?php if ( !empty( $htitle ) ) { ?>
+			<h2><?php echo $htitle; ?></h2>
+			<?php } ?>
+			<?php if ( !empty( $home_text ) ) { ?>
+			<p><?php echo $home_text; ?></p>
+			<?php } ?>
+		</section>
+		<?php 
+	} ?>
 <section id="primary" class="container content-area col-lg-9 col-md-9 col-sm-8">
 	<div id="content" class="site-content" role="main">
 		<?php 
@@ -56,9 +55,7 @@
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-
 	</div><!-- #content -->
-
 </section><!-- #primary -->
 
 <?php get_sidebar(); ?>

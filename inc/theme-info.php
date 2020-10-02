@@ -9,13 +9,12 @@ function mwsmall_theme_info_menu() {
 	$theme = wp_get_theme();
 
 	add_theme_page(
-			sprintf( esc_html__( 'Welcome to %1$s %2$s', 'mw-small' ), $theme->display( 'Name' ), $theme->display( 'Version' ) ),
-			esc_html__( 'Theme Info', 'mw-small' ),
-			'edit_theme_options',
-			'mwsmall',
-			'mwsmall_theme_info'
+		sprintf( esc_html__( 'Welcome to %1$s %2$s', 'mw-small' ), $theme->display( 'Name' ), $theme->display( 'Version' ) ),
+		esc_html__( 'Theme Info', 'mw-small' ),
+		'edit_theme_options',
+		'mwsmall',
+		'mwsmall_theme_info'
 	);
-
 }
 add_action( 'admin_menu', 'mwsmall_theme_info_menu' );
 
@@ -23,7 +22,6 @@ function mwsmall_theme_info() {
 	
 	// Get theme details.
 	$theme = wp_get_theme();
-	//fp($theme);
 	?>
 	<div class="wrap mw-themes-info">
 		<h2><?php printf( esc_html__( 'Welcome to %1$s %2$s', 'mw-small' ), $theme->display( 'Name' ), $theme->display( 'Version' ) ); ?></h2>
@@ -52,18 +50,18 @@ function mwsmall_theme_info() {
 					<?php esc_html_e( 'Please check our theme documentation for detailed information on how to setup and use theme.', 'mw-small' ); ?>
 				</p>
 				<p>
-					<a href="<?php echo esc_url( 'http://mwthemes.net/documents-mw-small/?utm_source=theme-info&utm_medium=textlink&utm_campaign=mwsmall&utm_content=morethemes' ); ?>" class="button"><?php esc_html_e('Theme Documentation', 'mw-small'); ?></a>
+					<a href="<?php echo esc_url( 'http://mwthemes.net/documents-mw-small/?utm_source=theme-info&utm_medium=button&utm_campaign=mwsmall&utm_content=document' ); ?>" class="button"><?php esc_html_e('Theme Documentation', 'mw-small'); ?></a>
 				</p>
 			</div>
 			<div class="box-50">
-				<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-theme-wordpress-blog.jpg" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-theme-wordpress-blog.jpg" />
 			</div>
 		</div>
 
 		<div class="theme-more-img theme-browser clearfix">
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-1.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-1.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img1' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -76,7 +74,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-2.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-2.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img2' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -89,7 +87,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-3.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-3.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img3' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -102,7 +100,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-4.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-4.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img4' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -115,7 +113,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-5.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-5.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img5' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -128,7 +126,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-6.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-6.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img6' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -141,7 +139,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-7.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-7.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img7' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -154,7 +152,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-8.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-8.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img8' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>
@@ -167,7 +165,7 @@ function mwsmall_theme_info() {
 			</div>
 			<div class="theme">
 				<div class="theme-screenshot">
-					<img src="<?php echo get_template_directory_uri(); ?>/inc/images/mwsmall-style-9.jpg" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/images/mwsmall-style-9.jpg" alt="">
 				</div>
 				<span class="more-details">
 					<a href="<?php echo esc_url( 'http://mwthemes.net/portfolio/mw-small-pro/?utm_source=theme-info&utm_medium=link&utm_campaign=mwsmall&utm_content=img9' ); ?>" target="_blank"><?php esc_html_e( 'Theme Details', 'mw-small' ); ?></a></span>

@@ -44,7 +44,7 @@
 					</div>
 					<div class="f_right col-lg-6 col-md-6 col-sm-6">
 						<?php _e( 'Proudly powered by', 'mw-small' ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'mw-small' ) ); ?>" rel="generator" target="_blank">WordPress</a> 
-						<?php _e( 'Theme by', 'mw-small' ); ?> <a target="_blank" href="<?php echo esc_url( __( 'http://www.mwthemes.net', 'mw-small' ) ); ?>">MW Themes</a>
+						<?php _e( 'MW Small Theme by', 'mw-small' ); ?> <a target="_blank" href="<?php echo esc_url( __( 'http://www.mwthemes.net', 'mw-small' ) ); ?>" rel="designer">MW Themes</a>
 					</div>
 				</div>
 			</div>

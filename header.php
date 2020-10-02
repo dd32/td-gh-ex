@@ -17,6 +17,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	} else {
+		do_action( 'wp_body_open' );
+	}
+?>
 <div class="mw-go-top"><i class="fa fa-angle-up fa-2x"></i></div>
 <?php
 	$hp = get_theme_mod( 'mwsmall_header_position' );

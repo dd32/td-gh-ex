@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'mwsmall_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -66,7 +65,7 @@ function mwsmall_scripts() {
 
 	wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '201408', true  );
 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ) );
-	wp_enqueue_script( 'mwsmall-js', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '201408', true  );
+	//wp_enqueue_script( 'mwsmall-js', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '201408', true  );
 	wp_enqueue_script( 'mwsmall-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '201408', true  );
 	wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '201408', true  );
 
@@ -164,9 +163,7 @@ function mwsmall_pagination_nav(){
 		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mw-small' ) ); ?></div>
 		<?php endif; ?>
 	<?php endif; ?>
-
 	</nav>
-
 	<?php
 }
 
@@ -174,49 +171,46 @@ function mwsmall_pagination_nav(){
 ----------------------------------- */
 function mwsmall_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
-	
-?>
-<li id="li-comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
-	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-		<div class="comment-author">
-			<?php echo get_avatar($comment, $args['avatar_size']); ?>
-			<cite class="fn"><?php echo get_comment_author_link(); ?></cite>
-		</div>
+	?>
+	<li id="li-comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
+		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+			<div class="comment-author">
+				<?php echo get_avatar($comment, $args['avatar_size']); ?>
+				<cite class="fn"><?php echo get_comment_author_link(); ?></cite>
+			</div>
 
-		<div class="comment-meta">
+			<div class="comment-meta">
+				
+				<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+					<time datetime="<?php comment_time( 'c' ); ?>">
+						<?php printf( _x( '%1$s', '1: date', 'mw-small' ), get_comment_date() ); ?>
+					</time>
+				</a>
+				
+				<?php if($comment->comment_approved == '0') : ?>
+					<div class="comment-awaiting-moderation"><?php _e('Your comment is awaiting approval', 'mw-small'); ?></div>
+				<?php endif; ?>
+			</div>
 			
-			<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-				<time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s', '1: date', 'mw-small' ), get_comment_date() ); ?>
-				</time>
-			</a>
-
+			<div class="comment-content">
+				<?php comment_text(); ?>			
+			</div>
 			
-			<?php if($comment->comment_approved == '0') : ?>
-				<div class="comment-awaiting-moderation"><?php _e('Your comment is awaiting approval', 'mw-small'); ?></div>
-			<?php endif; ?>
-		</div>
-		
-		<div class="comment-content">
-			<?php comment_text(); ?>			
-		</div>
-		
-		<div class="reply">
-		<?php 
-			comment_reply_link(array_merge($args, array(
-				'add_below' => 'div-comment',
-				'depth' => $depth,
-				'max_depth' => $args['max_depth']
-			)));
-		?>
-		</div>		
-	</article><!-- .comment-body -->
-<?php
+			<div class="reply">
+			<?php 
+				comment_reply_link(array_merge($args, array(
+					'add_below' => 'div-comment',
+					'depth' => $depth,
+					'max_depth' => $args['max_depth']
+				)));
+			?>
+			</div>		
+		</article><!-- .comment-body -->
+	<?php
 }
 
 /*	Customize font-size of tag cloud widget
 ----------------------------------- */
- 
 function set_number_tags($args) {
 	$args['smallest'] = 12;
 	$args['largest'] = 12;
@@ -247,6 +241,14 @@ function mwsmall_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'mwsmall_wp_title', 10, 2 );
+
+function mwsmall_slider_post_grid_post() {
+	$hide_slider_big = get_theme_mod( 'hide_slider_big_post' );
+	if ( $hide_slider_big == '' && is_front_page() ) {
+		get_template_part( 'inc/slider-post-big' );
+	}
+}
+add_action( 'mw_small_before_front_page_section', 'mwsmall_slider_post_grid_post', 10 );
 
 /**
  * Customizer additions.

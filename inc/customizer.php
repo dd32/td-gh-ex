@@ -750,7 +750,7 @@ function mwsmall_css() {
 		<style type="text/css">
 			#masthead,
 			header .search-box-wrapper { 
-				background-color: <?php echo get_theme_mod('header_bg_color'); ?>; 
+				background-color: <?php echo esc_attr( get_theme_mod('header_bg_color') ); ?>; 
 			}
 			.mw_header_image h2 {
 				color: #<?php echo $header_text_color; ?>;
