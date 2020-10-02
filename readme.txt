@@ -29,6 +29,9 @@ Bexley includes support for most features in [Jetpack](https://wordpress.org/plu
 
 == Changelog ==
 
+= 2.4.1 - 9th July 2020 =
+* Remove use of deprecated Jetpack function `is_ipad`.
+
 = 2.4 - 5th October 2019 =
 * Tidy css
 * Fix search form styles

@@ -16,8 +16,8 @@ function bexley_infinite_scroll_init() {
 		'infinite-scroll',
 		array(
 			'container' => 'main-content',
-			'footer_widgets' => ( ( ( class_exists( 'Jetpack_User_Agent_Info' ) && method_exists( 'Jetpack_User_Agent_Info', 'is_ipad' ) && Jetpack_User_Agent_Info::is_ipad() ) || ( function_exists( 'jetpack_is_mobile' ) && jetpack_is_mobile() ) ) || is_active_sidebar( 'sidebar-2' ) ),
-			'footer'    => 'footer-widgets',
+			'footer_widgets' => 'sidebar-2',
+			'footer' => 'footer-widgets',
 		)
 	);
 

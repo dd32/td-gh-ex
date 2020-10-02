@@ -19,6 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 
 	<div class="masthead-wrapper">
 		<header class="masthead" role="banner">

@@ -66,7 +66,7 @@ function bexley_fonts() {
 
     /* translators: If there are characters in your language that are not supported by Roboto Slab, translate this to 'off'. Do not translate into your own language. */
     if ( 'off' !== esc_html_x( 'on', 'Google font: on or off', 'bexley' ) ) {
-        $fonts['roboto-slab'] = 'Roboto+Slab:700,300';
+        $fonts['roboto-slab'] = 'Roboto Slab:700,300';
     }
 
     // Filter fonts. Allows them to be disabled/ added to.

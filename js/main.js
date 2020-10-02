@@ -4,8 +4,8 @@
  * Available under GPL2 license
  */
 
-;(function($) {
-	$.fn.responsiveNavigation = function(options) {
+; ( function( $ ) {
+	$.fn.responsiveNavigation = function( options ) {
 
 		var defaults, display, resized;
 
@@ -16,24 +16,24 @@
 			breakpoint: 449
 		};
 
-		options = $.extend(defaults, options);
+		options = $.extend( defaults, options );
 
 		display = function() {
-			var window_width = $(window).width();
-			if (window_width < options.breakpoint) {
-				$('.rn_nav').hide();
-				$('.rn_select').show();
+			var window_width = $( window ).width();
+			if ( window_width < options.breakpoint ) {
+				$( '.rn_nav' ).hide();
+				$( '.rn_select' ).show();
 			}
 
-			if (window_width > options.breakpoint) {
-				$('.rn_nav').show();
-				$('.rn_select').hide();
+			if ( window_width > options.breakpoint ) {
+				$( '.rn_nav' ).show();
+				$( '.rn_select' ).hide();
 			}
 		};
 
-		$ (window).resize(function() {
+		$( window ).resize( function() {
 			resized = true;
-		});
+		} );
 
 		// super simple debounce
 		// fires once every half second to do the work if needed
@@ -44,76 +44,76 @@
 			resized = false;
 		}, 500 );
 
-		return this.each(function() {
+		return this.each( function() {
 			var $this, select, navDepth;
 
-			$this = $(this);
+			$this = $( this );
 
-			if ($this.find('a').length > options.min_menu_size) {
-				$this.addClass('rn_nav');
+			if ( $this.find( 'a' ).length > options.min_menu_size ) {
+				$this.addClass( 'rn_nav' );
 
-				select = $('<select class="rn_select"></select>');
+				select = $( '<select class="rn_select"></select>' );
 				navDepth = $this.parents().length;
 
 				// add default text
-				var navOptions = $('<option></option>');
-				navOptions.text(js_i18n.menu);
-				navOptions.attr('value', '');
+				var navOptions = $( '<option></option>' );
+				navOptions.text( js_i18n.menu );
+				navOptions.attr( 'value', '' );
 
-				select.append(navOptions);
+				select.append( navOptions );
 
-				$this.find('a').each(function() {
+				$this.find( 'a' ).each( function() {
 					var depth, i, optionText, navOptions;
 
-					depth = (($(this).parents().length - navDepth) / 2) - 1;
+					depth = ( ( $( this ).parents().length - navDepth ) / 2 ) - 1;
 
-					if (depth === 0 || (depth > 0 && options.ignore_children === false)) {
+					if ( depth === 0 || ( depth > 0 && options.ignore_children === false ) ) {
 
-						optionText = $(this).text();
-						if (depth > 0) {
+						optionText = $( this ).text();
+						if ( depth > 0 ) {
 							optionText = ' ' + optionText;
 						}
-						for (i = 0; i < depth; i ++) {
+						for ( i = 0; i < depth; i++ ) {
 							optionText = options.prefix + optionText;
 						}
-						navOptions = $('<option></option>');
-						navOptions.attr('value', $(this).attr('href'));
-						if (document.location === $(this).attr('href')) {
-							navOptions.attr('selected', 'selected');
+						navOptions = $( '<option></option>' );
+						navOptions.attr( 'value', $( this ).attr( 'href' ) );
+						if ( document.location === $( this ).attr( 'href' ) ) {
+							navOptions.attr( 'selected', 'selected' );
 						}
-						navOptions.text(optionText);
-						select.append(navOptions);
+						navOptions.text( optionText );
+						select.append( navOptions );
 
 					}
 
-				});
+				} );
 
-				select.change(function() {
+				select.change( function() {
 					if ( this.value !== '' ) {
 						document.location = this.value;
 					}
-				});
+				} );
 			}
 
-			$this.after(select);
+			$this.after( select );
 			display();
-		});
+		} );
 
 	};
 
-})(jQuery);
+} )( jQuery );
 
 
-(function($){
+( function( $ ) {
 
 	var masonry_footer_properties = {};
 
-	$(document).ready(function(){
+	$( document ).ready( function() {
 
 		// Set default heights for social media widgets
 
 		// Twitter
-		$( 'a.twitter-timeline' ).each( function() {
+		$( 'a.twitter-timeline, iframe.twitter-timeline' ).each( function() {
 
 			var thisHeight = $( this ).attr( 'height' );
 			$( this ).parent().css( 'min-height', thisHeight + 'px' );
@@ -158,10 +158,10 @@
 
 
 		// Dropdown menus.
-		$( 'ul#nav' ).superfish({
-			animation: { opacity:'show',height:'show' },
+		$( 'ul#nav' ).superfish( {
+			animation: { opacity: 'show', height: 'show' },
 			speed: 250
-		});
+		} );
 
 		// Responsve nav.
 		$( 'ul#nav' ).responsiveNavigation();
@@ -175,35 +175,35 @@
 					itemSelector: '.widget',
 					gutter: 0,
 					isResizable: true,
-					isOriginLeft: ! $( 'body' ).is( '.rtl' )
+					isOriginLeft: !$( 'body' ).is( '.rtl' )
 				};
 
 				$( '#footer-widgets' ).masonry( masonry_footer_properties );
 
 			}
 
-		});
+		} );
 
 		// Add links to post content.
 		add_showcase_links();
 
-		$( 'body' ).on( 'post-load', function(){
+		$( 'body' ).on( 'post-load', function() {
 			add_showcase_links();
-		});
+		} );
 
-	});
+	} );
 
 	function add_showcase_links() {
 
-		$( 'article .showcase' ).click(function() {
-			if ( ! $(this).hasClass( 'can_click' ) ) {
-				var url = $(this).find( 'h2.posttitle a' ).attr( 'href' );
+		$( 'article .showcase' ).click( function() {
+			if ( !$( this ).hasClass( 'can_click' ) ) {
+				var url = $( this ).find( 'h2.posttitle a' ).attr( 'href' );
 				document.location.href = url;
 
-				$(this).addClass( 'can_click' );
+				$( this ).addClass( 'can_click' );
 			}
-		});
+		} );
 
 	}
 
-})(jQuery);
+} )( jQuery );
