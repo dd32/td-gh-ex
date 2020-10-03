@@ -3,9 +3,11 @@ Theme Name: Undedicated
 Theme URI: http://reduxthemes.com/themes/undedicated/
 Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
-Description: A clean and simple theme with focus on typography & content, and incorporates responsive design and menu. The theme sshows the excerpt is defined, else full content till the more tag shown on blog index page. Remove widgets from the sidebar to turn the blog into single-column design.
-Version: 2.0.8
-Requires at least: WordPress 4.7
+Description: A clean and simple theme with focus on typography & content, along with responsive design and menu. The theme shows the excerpt if defined, else full content till the more tag shown on blog index page. Remove widgets from the sidebar to turn the blog into single-column design. With ample of white, this theme provides the perfect setting for your words to stand out and leave a lasting impression.
+Version: 2.1.0
+Requires at least: 5.2
+Tested up to: 5.5.1
+Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: undedicated
@@ -526,7 +528,8 @@ a:active {
 }
 
 .site-branding {
-	margin: 1em 0;
+	margin: 10px 0;
+	width: 100%;
 }
 
 .site-title {
@@ -851,8 +854,9 @@ nav.pagination {
 .entry-meta {
 	color: #666;
 	font-size: 0.75em;
-	padding-top: 3px;
-	border-top: 1px solid;
+	padding: 3px 0;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
 	text-transform: uppercase;
 }
 
@@ -1151,7 +1155,8 @@ blockquote {
 	padding:    0.5rem 1.5rem 1.5rem;
 	font-size:  1em; /* relative to parent */
 	font-style: normal;
-	border:     5px solid rgba(0,0,0,0.5);
+	border:     1px solid #666;
+	background-color: rgba(0,0,0,0.025);
 }
 
 blockquote p:first-child {
@@ -1574,11 +1579,26 @@ nav {
 
 @media only screen and (max-width: 800px) {
 
-	.menu-toggle {
-		width: 100% !important;
+	.site-branding {
+		width: 75%  !important;
+		float: left;
+		vertical-align: middle;
 	}
 
-	.menu-toggle,
+	.menu-toggle {
+		width: 20% !important;
+		float: right;
+		margin-top: 10px;
+		border-radius: 0;
+		display: block;
+		font-size: 20px;
+		font-size: 2.0rem;
+		font-weight: 500;
+		overflow: hidden;
+		text-align: center;
+		visibility: visible;
+	}
+
 	.sub-menu-toggle {
 		border-radius: 0;
 		display: block;

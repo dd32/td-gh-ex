@@ -21,28 +21,31 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'undedicated' ); ?></a>
 
 	<header id="masthead" class="site-header wrap" role="banner">
 
-	<?php if ( get_header_image() ) : ?>
-		<?php undedicated_admin_header_image(); ?>
-	<?php else: ?>
-
 		<div class="site-branding">
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
-			<?php endif;
+		<!-- Your site title as branding in the menu -->
+		<?php if ( ! has_custom_logo() ) { ?>
 
-			$undedicated_description = get_bloginfo( 'description', 'display' );
-			if ( $undedicated_description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo esc_attr($undedicated_description); /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+				<?php if ( is_front_page() && is_home() ) : ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+				<?php endif;
+	
+				$undedicated_description = get_bloginfo( 'description', 'display' );
+				if ( $undedicated_description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo esc_html($undedicated_description); /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
+		
+		<?php } else {
+			the_custom_logo();
+		} ?><!-- end custom logo -->
 		</div><!-- .site-branding -->
-	<?php endif; // Get Header Image ?>
 
 		<nav id="site-navigation" class="main-navigation menu-primary" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

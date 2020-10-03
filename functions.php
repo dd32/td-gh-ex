@@ -77,6 +77,16 @@ function undedicated_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Set up the WordPress Theme logo feature.
+	$defaults = array(
+		'width'       => 200,
+		'height'      => 50,
+		'flex-height' => true,
+		'flex-width'  => true,
+	);
+	add_theme_support( 'custom-logo', $defaults );		
+    
+
 
 }
 endif; // undedicated_setup
@@ -155,11 +165,6 @@ add_image_size( 'feature-narrow', 800, 400, TRUE );
 
 //* Add support for custom background
 add_theme_support( 'custom-background' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

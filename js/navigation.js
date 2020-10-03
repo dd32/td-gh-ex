@@ -1,7 +1,7 @@
 ( function( window, $, undefined ) {
 	'use strict';
 
-	$( '.menu-primary' ).before( '<button class="menu-toggle primary-toggle" role="button" aria-pressed="false"></button>' ); // Add toggle to primary menu
+	$( '.site-branding' ).after( '<a class="menu-toggle primary-toggle" role="button" aria-pressed="false"></a>' ); // Add toggle to primary menu
 	$( 'nav .sub-menu' ).before( '<span class="sub-menu-toggle" role="button" aria-pressed="false"></span>' ); // Add toggles to all sub menus
 
 	// Show/hide the navigation

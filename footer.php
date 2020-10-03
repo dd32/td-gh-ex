@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info wrap">
-			<?php esc_attr_e( 'Powered by ', 'undedicated' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'undedicated' ) ); ?>"><?php esc_attr_e( 'WordPress', 'undedicated' ); ?></a>
+			<?php esc_html_e( 'Powered by ', 'undedicated' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'undedicated' ) ); ?>"><?php esc_html_e( 'WordPress', 'undedicated' ); ?></a>
 			<span class="sep"> & </span>
 			<?php
 				if ( is_front_page() ) {

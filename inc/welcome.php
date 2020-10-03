@@ -27,8 +27,8 @@ function undedicated_theme_page() {
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
 		<div class="about-text">
-			<p  class="about-description"><?php echo esc_attr($undedicated_theme_info->get('Name')); ?> <a href="<?php echo esc_url($undedicated_theme_info->get('ThemeURI')); ?>">(Version <?php echo esc_attr($undedicated_theme_info->get('Version')); ?>)</a>  by <a href="<?php echo esc_url($undedicated_theme_info->get('AuthorURI')); ?>" target="_blank"><?php echo esc_attr( $undedicated_theme_info->get('Author')); ?></a></p>
-			<p class="about-description"><?php echo esc_attr($undedicated_theme_info->get('Description')); ?></p>
+			<p  class="about-description"><?php echo esc_html($undedicated_theme_info->get('Name')); ?> <a href="<?php echo esc_url($undedicated_theme_info->get('ThemeURI')); ?>">(Version <?php echo esc_attr($undedicated_theme_info->get('Version')); ?>)</a>  by <a href="<?php echo esc_url($undedicated_theme_info->get('AuthorURI')); ?>" target="_blank"><?php echo esc_html( $undedicated_theme_info->get('Author')); ?></a></p>
+			<p class="about-description"><?php echo esc_html($undedicated_theme_info->get('Description')); ?></p>
 		</div>
 		
 		<div class="panel">
@@ -50,7 +50,7 @@ function undedicated_theme_page() {
 					<div class="plugin-card">
 						<div class="plugin-card-top">
 							<h3>Contribute & Help</h3>
-								<p><span class="dashicons dashicons-heart" style="color: #f21a1a;"></span>  Found the theme useful? Consider supporting us to create free themes with some coffee. Send some love via donations & contributions. <span class="dashicons dashicons-editor-help"></span> For support, drop an email to <code>contact@reduxthemes.com</code></p>
+								<p><span class="dashicons dashicons-heart" style="color: #f21a1a;"></span>  Found the theme useful? Consider helping us create free themes & plugins. Send your love via contributions. <span class="dashicons dashicons-editor-help"></span> For support, drop an email to <code>contact@reduxthemes.com</code></p>
 						</div>
 
 						<div class="plugin-card-bottom">

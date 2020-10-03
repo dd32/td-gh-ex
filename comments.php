@@ -32,13 +32,13 @@ if ( post_password_required() ) {
 
 				<?php echo get_avatar( $comment ); ?>
 				<strong class="comment-author"><?php comment_author_link(); ?></strong><br />
-				<time><a class="comment-permalink" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo esc_attr(get_comment_date()); ?></a></time>
+				<time><a class="comment-permalink" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo esc_html(get_comment_date()); ?></a></time>
 				<?php edit_comment_link(); ?>
 			</header><!-- .comment-meta -->
 
             <?php if ($comment->comment_approved == '0') : ?>
                 <em>
-                <php _e('Your comment is awaiting moderation.', 'undedicated') ?>
+                <?php _e('Your comment is awaiting moderation.', 'undedicated') ?>
                 </em><br />
             <?php endif; ?>
             

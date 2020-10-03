@@ -2,18 +2,17 @@
 Contributors: reduxthemes
 Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
-Requires at least: WordPress 4.7
-Tested up to: WordPress 5.1.1
-Requires PHP: 5.6
-Stable tag: 2.0.8
+Requires at least: WordPress 5.2
+Tested up to: WordPress 5.5.1
+Requires PHP: 7.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Support Email: contact@reduxthemes.com
 
 == Description ==
 
-Ultra-minimal design and typography based WordPress theme with support for single-column and two-column displays with sidebar. 
-It comes with HTML5 & responsive CSS design to fit all devices.
+Ultra-minimal design and typography based WordPress theme with support for single-column and two-column displays with sidebar. It comes with HTML5 & responsive CSS design to fit all devices. With ample of white, this theme provides the perfect setting for your words to stand out and leave a lasting impression. Use this clutter-free WordPress theme for blogging about things that matter to you and the world. 
 
 * Well-commented, modern, HTML5 templates
 * Supports custom header & header text on/off
@@ -36,6 +35,11 @@ It comes with HTML5 & responsive CSS design to fit all devices.
 Undedicated includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 2.1.0 - October 4, 2020 =
+* Added support for custom logo
+* Changed the toggle menu to match modern aesthetics. 
+* Removed custom header (replaced by custom logo)
 
 = 1.0 - November 20, 2015 =
 * Initial release
