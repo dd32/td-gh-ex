@@ -4,8 +4,8 @@ Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
 Requires at least: WordPress 5.2
 Tested up to: WordPress 5.5.1
-Requires PHP: 7.0
-Stable tag: 2.1.0
+Requires PHP: 5.6
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Support Email: contact@reduxthemes.com
