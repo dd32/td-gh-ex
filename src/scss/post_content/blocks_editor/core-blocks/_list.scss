@@ -10,7 +10,7 @@
     }
 
     [data-type="core/list"] {
-        padding-left: 1.5em;
+        padding-left: 1.5em !important; //全幅グループブロック内で 0 にされるのを防ぐ
         white-space: normal;
 
         li {
@@ -19,13 +19,14 @@
 
         ol {
             margin-left: 0;
+            padding-left: 1.5em;
         }
 
         ul {
             margin-left: 0;
+            padding-left: 1.5em;
             list-style: circle;
         }
-
     }
 }
 
@@ -56,9 +57,5 @@
                 list-style: circle;
             }
         }
-
-
-
     }
-
 }

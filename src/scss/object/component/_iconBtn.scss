@@ -1,4 +1,4 @@
-// ヘッダー内で使われるメニューボタンやサーチアイコン
+// ヘッダー内で使われるハンバーガーメニューボタンやサーチアイコン
 .c-iconBtn {
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +10,7 @@
     text-decoration: none;
     background: none;
     border: none;
-    cursor: inherit;
+    cursor: pointer;
 
     .-menuBtn {
         z-index: 1;

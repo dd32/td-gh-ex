@@ -2,14 +2,34 @@
 .wp-block {
     // max-width: 900px;
     max-width: var(--ark-block_width, 900px);
+
+    &[data-align="wide"] {
+        max-width: calc(var(--ark-block_width, 900px) + 160px);
+    }
 }
+
+[data-align="wide"] {
+
+    & > .wp-block-cover > .wp-block-cover__inner-container,
+    & > .wp-block-group > .wp-block-group__inner-container {
+
+        & > .wp-block {
+            max-width: 100%;
+        }
+    }
+}
+
 
 // フォント
 .block-editor .editor-styles-wrapper {
     color: var(--ark-color_text);
-    font-size: 16px;
+    font-size: var(--ark-font_size, 16px);
     font-family: var(--ark-font_family);
     background-color: var(--ark-color_bg);
+}
+
+.editor-post-title .editor-post-title__input {
+    font-size: 2rem;
 }
 
 // 本文エリア
@@ -20,10 +40,9 @@
 
         & > .wp-block-cover,
         & > .wp-block-group {
-            padding: 4em;
+            padding: 4em 48px;
         }
     }
-
 }
 
 //aligncenterにclearが付くようになったので、それに合わせる

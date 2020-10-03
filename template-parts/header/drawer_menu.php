@@ -6,6 +6,7 @@
 <div id="drawer_menu" class="p-drawer">
 	<div class="p-drawer__inner">
 		<div class="p-drawer__body">
+			<?php do_action( 'arkhe_before_drawer_nav' ); ?>
 			<div class="p-drawer__nav">
 			<?php
 				if ( has_nav_menu( 'drawer_menu' ) ) :
@@ -30,9 +31,9 @@
 			?>
 			</div>
 			<?php
-			if ( is_active_sidebar( 'drawer_bottom' ) ) :
+			if ( is_active_sidebar( 'drawer-bottom' ) ) :
 				echo '<div id="drawer_bottom" class="w-drawerBottom">';
-					dynamic_sidebar( 'drawer_bottom' );
+					dynamic_sidebar( 'drawer-bottom' );
 				echo '</div>';
 			endif;
 			?>

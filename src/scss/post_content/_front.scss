@@ -4,10 +4,10 @@
 .c-postContent {
 
     & > * {
-        margin-top: var(--ark-mt, 2em);
+        margin-top: var(--ark-mt, 2rem);
         margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
     }
-    margin: 4em 0 0;
+    margin: 4rem 0 0;
     padding: 0;
     line-height: 1.8;
 
@@ -19,42 +19,32 @@
         margin-top: 0;
     }
 
-    th,
-    td {
-
-        &:not([data-align]) {
-            text-align: left;
-        }
+    th:not([data-align]),
+    td:not([data-align]) {
+        text-align: left;
     }
 }
 
-// インナーコンテンツの余白
-.wp-block-column,  // カラム
-.wp-block-cover__inner-container, // カバーブロック
-.wp-block-media-text__content, // メディアと文章ブロック
-.wp-block-group__inner-container { // グループ
+
+.wp-block-column,
+.wp-block-media-text__content,
+.wp-block-cover__inner-container,
+.wp-block-group__inner-container {
 
     & > * {
-        margin-top: var(--ark-mt_s, 1em);
-        margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
+        margin-top: var(--ark-mt, 2rem);
+        margin-bottom: 0;
     }
 }
 
-// 全幅の中は、2emのまま。
-.alignfull {
+// マージン小さくする
+// 全幅じゃないカラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
+:not(.alignfull) > .wp-block-column,
+:not(.alignfull) > .wp-block-media-text__content,
+:not(.alignfull):not(.alignwide) > .wp-block-cover__inner-container,
+:not(.alignfull):not(.alignwide) > .wp-block-group__inner-container {
 
     & > * {
-        margin-top: var(--ark-mt, 2em);
-    }
-
-    & > .wp-block-column,  // カラム
-    & > .wp-block-cover__inner-container, // カバーブロック
-    & > .wp-block-media-text__content, // メディアと文章ブロック
-    & > .wp-block-group__inner-container { // グループ
-
-        & > * {
-            margin-top: 2em;
-            margin-top: var(--ark-mt, 2em);
-        }
+        margin-top: var(--ark-mt_s, 1rem);
     }
 }
