@@ -4,7 +4,7 @@ Theme URI: https://univahost.com/blog
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.4.12
+Version: 1.4.14
 Requires at least: 4.7
 Requires PHP: 7.0
 Tested up to: 5.5
@@ -2139,4 +2139,14 @@ ul.comment-list {
 
 .tagcloud a:hover {
     border: 1px solid var(--primary-color);
+}
+/* 
+    Feed
+*/
+.widget-title a.rsswidget {
+    color: #fff;
+    text-decoration: none;
+}
+.widget-title a.rsswidget img {
+    margin-right: 10px;
 }
