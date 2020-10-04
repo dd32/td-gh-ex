@@ -28,16 +28,17 @@ get_header();
 							</div>
 							<div class="single-page">
 								<h4 class="blog-info blog-info-single-page">
-									<i class="fas fa-user"></i> <?php articlepress_posted_by(); ?>  <i class="far fa-calendar-alt"></i> 
-									<?php esc_html_e( 'Updated', 'articlepress' ); ?> : <?php the_time( 'M d, Y' ); ?> <?php esc_html_e( 'in', 'articlepress' ) ?>  <i class="far fa-list-alt"></i>
-									<?php 
+								<span class="post-user"><i class="fas fa-user"></i> <?php articlepress_posted_by(); ?></span>  <span class="time-date"><i class="far fa-calendar-alt"></i> <?php esc_html_e( 'Updated', 'articlepress' ); ?> : <?php the_time( 'M d, Y' ); ?></span>
+									<span class="caretory">
+									<i class="far fa-list-alt"></i><?php 
 										// Show the First Category Name Only
 										$categories = get_the_category();
-							 
+							
 										if ( ! empty( $categories ) ) {
-										    echo esc_html( $categories[0]->name );   
+											echo esc_html( $categories[0]->name );   
 										}
 									?>
+								</span>
 								</h4>
 								<h1 class="single-page-title">
 									<?php the_title(); ?>

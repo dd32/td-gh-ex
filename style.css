@@ -4,13 +4,14 @@ Theme URI: https://univahost.com/blog
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.4.9
+Version: 1.5.0
 Requires at least: 4.7
 Requires PHP: 7.0
 Tested up to: 5.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
+Contributors: ThemeAsia, shiponkarmakar, univahost
 Tags: Blog, custom-background, custom-logo, custom-menu, featured-images, News, threaded-comments, translation-ready, editor-style, flexible-header, Sticky-Post 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -78,6 +79,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  */
 :root {
     --primary-color: #7660ff;
+    --secondary-color: #ff4f5a;
     --primary-dark: #3b566e;
 }
 body {
@@ -1338,10 +1340,17 @@ footer.comment-meta img {
 h4.blog-info {
     font-size: 15px;
     color: #9c8d8d;
+    display: block;
 }
 h4.blog-info .fa-user {
     color: #3ba5ec;
     margin-right: 5px;
+}
+h4.blog-info > span {border-right: 1px solid #beccd8;padding-right: 13px;display:inline-block}
+
+h4.blog-info > span:last-child {
+    border: none;
+    margin: 0;
 }
 .blog-info .fa-calendar-alt {
     color: #f05944;
@@ -1386,10 +1395,10 @@ a.btn {
     margin-top: 30px;
 }
 a.btn.btn-blog:hover {
-    background: var( --primary-color );
+    background: var(--secondary-color);
 }
 .btn-blog {
-    background-color: #5bd5e8;
+    background-color: var(--primary-color);
     color: #fff;
     border: 1px solid transparent;
 }
@@ -1492,14 +1501,14 @@ section#search-2 {margin-bottom: 70px;}
 
 
 .widget ul li a:hover {
-    color: #5bd5e8;
+    color: var(--primary-color);
 }
 .widget ul li:before {
     content: '\203A';
     position: absolute;
     font-size: 23px;
     line-height: 21px;
-    color: #5bd5e8;
+    color: var(--primary-color);
 }
 .widget ul li a, .widget ul li span {
     margin-left: 15px;
@@ -1677,6 +1686,7 @@ section.no-results.not-found .articlepress-search-form {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
+    background: var(--secondary-color);
 }
 .search-input::-webkit-input-placeholder {
     color: white;
@@ -2116,4 +2126,34 @@ ul.comment-list {
 }
 .scrolltotop i.pos-left {
     left: 14px;
+}
+.tagcloud a {
+    font-size: 12px !important;
+    color: var(--primary-dark);
+    box-shadow: 0 5px 10px -2px #ddd;
+    padding: 10px 13px;
+    display: inline-block;
+    margin: 4px;
+    float: left;
+    transition: .3s;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+.tagcloud {
+    margin: 10px;
+    display: inline-block;
+}
+
+.tagcloud a:hover {
+    border: 1px solid var(--primary-color);
+}
+/* 
+    Feed
+*/
+.widget-title a.rsswidget {
+    color: #fff;
+    text-decoration: none;
+}
+.widget-title a.rsswidget img {
+    margin-right: 10px;
 }

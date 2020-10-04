@@ -57,6 +57,13 @@
 	}
 }
 
+@media ( max-width:478px ){
+	h4.blog-info > span.caretory i {
+		margin-left: 0;
+		margin-top: 11px;
+	}
+}
+
 @media ( max-width:402px ){
 	.comment-body .comment-metadata a time {
 		margin-left: 0;
