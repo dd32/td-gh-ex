@@ -4,7 +4,7 @@ Theme URI: http://reduxthemes.com/themes/undedicated/
 Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
 Description: A clean and simple theme with focus on typography & content, along with responsive design and menu. The theme shows the excerpt if defined, else full content till the more tag shown on blog index page. Remove widgets from the sidebar to turn the blog into single-column design. With ample of white, this theme provides the perfect setting for your words to stand out and leave a lasting impression.
-Version: 2.1.1
+Version: 2.1.2
 Requires at least: 5.2
 Tested up to: 5.5.1
 Requires PHP: 5.6
@@ -470,7 +470,7 @@ a:active {
 --------------------------------------------------------------*/
 .wrap {
 	max-width:1024px;
-	padding: 0 40px;
+	padding: 0 15px;
 	margin: 0 auto;
 }
 
@@ -528,7 +528,7 @@ a:active {
 }
 
 .site-branding {
-	margin: 10px 0;
+	margin: 15px 0;
 	width: 100%;
 }
 
@@ -1580,23 +1580,24 @@ nav {
 @media only screen and (max-width: 800px) {
 
 	.site-branding {
-		width: 75%  !important;
+		width: 80%  !important;
 		float: left;
 		vertical-align: middle;
 	}
 
 	.menu-toggle {
-		width: 20% !important;
+		width: 15% !important;
 		float: right;
-		margin-top: 10px;
+		margin-top: 15px;
 		border-radius: 0;
 		display: block;
-		font-size: 20px;
-		font-size: 2.0rem;
+		font-size: 30px;
+		font-size: 2.4rem;
 		font-weight: 500;
 		overflow: hidden;
-		text-align: center;
+		text-align: right;
 		visibility: visible;
+		line-height: 1;
 	}
 
 	.sub-menu-toggle {
