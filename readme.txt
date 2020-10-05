@@ -39,9 +39,9 @@ normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 License: MIT
 Source: https://necolas.github.io/normalize.css/
 
-* Bootstrap, Copyright 2011-2018 Twitter
+* Bootstrap, Copyright 2011–2020 the Bootstrap Authors and Twitter, Inc.
 License: MIT
-Source: https://getbootstrap.com/
+Source: https://github.com/twbs/bootstrap
 
 * Font Awesome icons, Copyright Dave Gandy
 Icons License: CC BY 4.0 
@@ -71,13 +71,19 @@ Source:https://pxhere.com/en/photo/683887
 
 == Changelog ==
 
+= 1.0.1 - October 5 2020 =
+* Removed 2nd argument from load_theme_textdomain function
+* Added license information class-aak-walker-page.php, class-walker-nav-menu.php, Bootstrap
 = 1.0 - September 10 2020 =
 * Initial release
+
 
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * TGM-Plugin-Activation 2.6.1 https://github.com/TGMPA/TGM-Plugin-Activation, Copyright (c) 2011, Thomas Griffin., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* class-walker-nav-menu.php modified from WordPress core by me and the code distributed under the terms of the GNU GPL
+* class-aak-walker-page.php modified from twentytwenty WordPress Theme, Twenty Twenty WordPress Theme, Copyright 2019-2020 WordPress.org is distributed under the terms of the GNU GPL
 * Aak WordPress Theme incorporates code from twentytwenty WordPress Theme, Twenty Twenty WordPress Theme, Copyright 2019-2020 WordPress.org is distributed under the terms of the GNU GPL
 

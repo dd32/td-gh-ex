@@ -9,7 +9,7 @@
 
 if ( ! defined( 'AAK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'AAK_VERSION', '1.0.2' );
+	define( 'AAK_VERSION', '1.0.1' );
 }
 
 if ( ! function_exists( 'aak_setup' ) ) :
@@ -27,7 +27,7 @@ if ( ! function_exists( 'aak_setup' ) ) :
 		 * If you're building a theme based on Aak, use a find and replace
 		 * to change 'aak' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'aak', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'aak' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
