@@ -11,19 +11,28 @@
  *
  * @package BeShop
  */
+$beshop_page_container = get_theme_mod( 'beshop_page_container', 'container');
+$beshop_page_layout = get_theme_mod( 'beshop_page_layout', 'rightside');
 
-get_header();
-
-if ( is_active_sidebar( 'sidebar-1' ) ) {
+if ( is_active_sidebar( 'sidebar-1' ) && $beshop_page_layout != 'fullwidth' ) {
 	$beshop_column_set = '9';
 }else{
 	$beshop_column_set = '12';
 }
-
+get_header();
 
 ?>
-<div class="container mt-3 mb-5 pt-5 pb-3">
+
+<?php if(is_cart() || is_checkout()): ?>
+	<?php get_template_part( 'template-parts/content', 'woo' ); ?>
+<?php else: ?>
+<div class="<?php echo esc_attr($beshop_page_container); ?> mt-3 mb-5 pt-5 pb-3">
 	<div class="row">
+		<?php if ( is_active_sidebar( 'sidebar-1' ) && $beshop_page_layout == 'leftside' ): ?>
+			<div class="col-lg-3">
+				<?php get_sidebar(); ?>
+			</div>
+		<?php endif; ?>
 		<div class="col-lg-<?php echo esc_attr($beshop_column_set); ?>">
 			<main id="primary" class="site-main">
 
@@ -43,13 +52,13 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 
 			</main><!-- #main -->
 		</div>
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+	<?php if ( is_active_sidebar( 'sidebar-1' ) && $beshop_page_layout == 'rightside' ): ?>
 		<div class="col-lg-3">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endif; ?>
 	</div> <!-- end row -->
 </div> <!-- end container -->
-
+<?php endif; ?>
 <?php
 get_footer();

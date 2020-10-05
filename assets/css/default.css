@@ -9,6 +9,7 @@
 	- Elements
 	- Links
 	- Forms
+	- default
 ## Layouts
 # Components
 	- Header
@@ -386,9 +387,27 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
+}
+body{
+    font-weight: 400;
+    overflow-x: hidden;
+    word-break: break-word;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
 
 h1,
@@ -398,6 +417,24 @@ h4,
 h5,
 h6 {
 	clear: both;
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    color: #3f3f3f;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    margin: 0 0 15px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+	line-height:1.3;
 }
 
 p {
@@ -598,6 +635,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
+	min-height: 35px;
 }
 
 input[type="text"]:focus,
@@ -626,6 +664,18 @@ select {
 textarea {
 	width: 100%;
 }
+/* default
+--------------------------------------------- */
+.list-hide ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.text-white,
+.text-white a,
+.text-white{
+	color: #fff;
+}
 
 /*--------------------------------------------------------------
 # Layouts
@@ -650,6 +700,17 @@ textarea {
     height: auto;
     min-height: 250px
 }
+.site-branding.has-himg.behimg-auto .beshop-header-img,
+.site-branding.has-himg.behimg-auto .beshop-header-img img {
+    min-height: auto;
+}
+@media screen and (max-width: 992px) {
+	.site-branding.has-himg.behimg-amobile .beshop-header-img,
+	.site-branding.has-himg.behimg-amobile .beshop-header-img img {
+	    min-height: auto;
+	}
+
+}
 .site-branding.has-himg.bshop-two-logo .beshop-header-img {
     min-height: 420px;
     max-height: 1000px;
@@ -668,7 +729,6 @@ textarea {
 }
 .has-himg p.site-description {
     display: inline-block;
-    background: rgba(255,255,255,0.5);
     padding: 10px 20px;
     border-radius: 50px;
 }
@@ -909,8 +969,10 @@ button.mini-toggle {
 	}
 	.main-navigation ul> ul> ul,
 	.main-navigation ul> li.menushow> ul.sub-menu,
-	.main-navigation ul> li.befocus> ul.sub-menu,
-	.main-navigation ul> li.befocus> ul.children,
+	.main-navigation ul> li.befocus.menushow> ul.sub-menu,
+	.main-navigation ul> li.befocus.menushow> ul.children,
+	.main-navigation ul> li.menuhide.befocus> ul.sub-menu,
+	.main-navigation ul> li.menuhide.befocus> ul.children,
 	.main-navigation ul> li.menushow> ul.children {
     	display: block !important;
     	max-height: 10000px;
@@ -996,6 +1058,13 @@ button.mini-toggle {
 	margin: 0 0 1.5em;
 }
 
+/*Contact page style*/
+.wpcf7-form label, 
+.wpcf7-form span, 
+.wpcf7-form label input {
+    width: 100%;
+} 
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1004,6 +1073,9 @@ button.mini-toggle {
 
 .bypostauthor {
 	display: block;
+}
+.comment-form .form-submit {
+    float: right;
 }
 /*--------------------------------------------------------------
 # Comments
@@ -1121,7 +1193,7 @@ form#commentform input:not([type="checkbox"]) {
     height: 32px;
 }
 .widget img {
-    margin: 10px 0;
+    margin: 0 0 5px 0;
 }
 .tagcloud a {
     border: 1px solid #E0ECDE;
@@ -1209,7 +1281,7 @@ img.custom-logo {
 	margin-bottom: 1.5em;
 	display: -ms-grid;
 	display: grid;
-	grid-gap: 1.5em;
+	grid-gap: 0.5em;
 }
 
 .gallery-item {

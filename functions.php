@@ -7,9 +7,9 @@
  * @package BeShop
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', the_time() );
+	define( 'BESHOP_VERSION', '1.0.10' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -50,6 +50,7 @@ if ( ! function_exists( 'beshop_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
+				'btop-menu' => esc_html__( 'Top Menu', 'beshop' ),
 				'menu-1' => esc_html__( 'Primary', 'beshop' ),
 			)
 		);
@@ -70,6 +71,7 @@ if ( ! function_exists( 'beshop_setup' ) ) :
 				'script',
 			)
 		);
+
 
 		// Add support for Block Styles.
 		  add_theme_support( 'wp-block-styles' );
@@ -163,20 +165,51 @@ function beshop_gb_block_style() {
 }
 add_action( 'enqueue_block_assets', 'beshop_gb_block_style' );
 
+
+
+/**
+ * Beshop Google fonts fuction
+ */
+if ( ! function_exists( 'beshop_fonts_url' ) ) :
+function beshop_fonts_url() {
+ $beshop_theme_fonts = get_theme_mod('beshop_theme_fonts','Montserrat');
+ $beshop_theme_font_head = get_theme_mod('beshop_theme_font_head','Noto Serif');
+
+	$fonts_url = '';
+
+		$font_families = array();
+	if( $beshop_theme_fonts == $beshop_theme_font_head ){
+		$font_families[] = $beshop_theme_fonts.':300,400,500,600,700,800';
+	}else{
+		$font_families[] = $beshop_theme_fonts.':300,400,500,600,700,800';
+		$font_families[] = $beshop_theme_font_head.':300,400,500,600,700,800';
+	}
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+	return esc_url_raw( $fonts_url );
+}
+endif;
+
 /**
  * Enqueue scripts and styles.
  */
 function beshop_scripts() {
-	wp_enqueue_style( 'beshop-default', get_template_directory_uri().'/assets/css/default.css',array(), _S_VERSION ,'all' );
+	wp_enqueue_style( 'beshop-google-font', beshop_fonts_url(), array(), null );
+	wp_enqueue_style( 'beshop-default', get_template_directory_uri().'/assets/css/default.css',array(), BESHOP_VERSION ,'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'font-awesome-five-all', get_template_directory_uri().'/assets/css/all.css',array(), '5.14.0' ,'all' );
 	wp_enqueue_style( 'beshop-block-style', get_template_directory_uri() . '/assets/css/block.css', array(), '1.0' );
-	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), '4.5.0' ,'all' );
-	wp_enqueue_style( 'beshop-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'beshop-main', get_template_directory_uri().'/assets/css/beshop-main.css',array(), BESHOP_VERSION ,'all' );
+	wp_enqueue_style( 'beshop-style', get_stylesheet_uri(), array(), BESHOP_VERSION );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), '4.5.0', true );
-	wp_enqueue_script( 'beshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'beshop-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'beshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), BESHOP_VERSION, true );
+	wp_enqueue_script( 'beshop-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), BESHOP_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -198,6 +231,10 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+/**
+ * add inline style
+ */
+require get_template_directory() . '/inc/inline-style.php';
 
 /**
  * Customizer additions.
@@ -205,9 +242,10 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/class-walker-nav-menu.php';
 require get_template_directory() . '/inc/class-beshop-walker-page.php';
 /**
- * nav walker
+ * customizer
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer-helper.php';
 /**
  * Recommend plugin 
  */
@@ -225,6 +263,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/beshop-woocommerce.php';
+	require get_template_directory() . '/inc/woo-items/beshop-woocommerce.php';
+
+}
+
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/about/class.about.php';
+	require get_template_directory() . '/inc/about/about.php';
 
 }

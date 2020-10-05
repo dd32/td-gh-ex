@@ -60,8 +60,38 @@ function beshop_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Woocommerce',
+			'name'      => esc_html__('BeBoost','beshop'),
+			'slug'      => 'be-boost',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Woocommerce','beshop'),
 			'slug'      => 'woocommerce',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Click top','beshop'),
+			'slug'      => 'click-to-top',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('One Click Demo Import','beshop'),
+			'slug'      => 'one-click-demo-import',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('MG post Display','beshop'),
+			'slug'      => 'magical-posts-display',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('MG Blocks','beshop'),
+			'slug'      => 'magical-blocks',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Contact Form 7','beshop'),
+			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
 
@@ -79,7 +109,7 @@ function beshop_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'beshop',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'beshop1',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.
