@@ -22,7 +22,7 @@ require(get_template_directory() . '/core/scripts/css_js.php'); //Enquiring Reso
 require(get_template_directory() . '/core/comment-function.php');
 require(get_template_directory() . '/core/custom-header.php');
 require(get_template_directory() . '/class-tgm-plugin-activation.php');
-require get_template_directory() . '/customizer-pro/class-customize.php';
+require get_template_directory() . '/upgrade-to-pro/class-customize.php';
 
 /*After Theme Setup*/
 add_action('after_setup_theme', 'enigma_head_setup');
