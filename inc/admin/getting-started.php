@@ -110,7 +110,7 @@ function arilewp_getting_started_page() { ?>
 					<a id="plugins" href="#">
 						<?php esc_html_e( 'Recommended Actions', 'arilewp' ); 
 						if ( !is_plugin_active( 'arile-extra/arile-extra.php' ) ):  ?>
-							<span class="plugin-not-active">1</span>
+							<span class="plugin-not-active"><?php echo 1; ?></span>
 						<?php endif; ?>
 					</a>
 				</li>
