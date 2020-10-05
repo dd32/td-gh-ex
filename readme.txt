@@ -4,6 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
+Stable tag: 0.4.7
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -135,6 +136,10 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 * Added show/hide single blog page navigation option in customizer.
 * Added navigation text option for single blog page in customizer.
 * Resolved navigation menu and widget error.
+* Updated language folder.
+
+= 0.4.7 =
+* Done some changes and css customization in get started.
 * Updated language folder.
 
 == Resources ==

@@ -115,6 +115,15 @@ function automotive_centre_mostrar_guide() {
 								<span class="dashicons dashicons-screenoptions"></span><a href="<?php echo esc_url( admin_url('customize.php?autofocus[panel]=widgets') ); ?>" target="_blank"><?php esc_html_e('Footer Widget','automotive-centre'); ?></a>
 							</div>
 						</div>
+
+						<div class="row-box">
+							<div class="row-box1">
+								<span class="dashicons dashicons-images-alt"></span><a href="<?php echo esc_url( admin_url('customize.php?autofocus[section]=automotive_centre_post_settings') ); ?>" target="_blank"><?php esc_html_e('Post settings','automotive-centre'); ?></a>
+							</div>
+							 <div class="row-box2">
+								<span class="dashicons dashicons-align-center"></span><a href="<?php echo esc_url( admin_url('customize.php?autofocus[section]=automotive_centre_woocommerce_section') ); ?>" target="_blank"><?php esc_html_e('WooCommerce Layout','automotive-centre'); ?></a>
+							</div> 
+						</div>
 						
 						<div class="row-box">
 							<div class="row-box1">
@@ -132,14 +141,16 @@ function automotive_centre_mostrar_guide() {
 			  	<hr class="h3hr">
 				<p><?php esc_html_e('Follow these instructions to setup Home page.','automotive-centre'); ?></p>
                 <ul>
-                	<li><?php esc_html_e('1. Create a Page to set template:  Go to ','automotive-centre'); ?>
-                  	<b><?php esc_html_e('Dashboard &gt;&gt; Pages &gt;&gt; Add New Page','automotive-centre'); ?></b>.
-                  	<p><?php esc_html_e('Label it "home" or anything as you wish. Then select template "home-page" from template dropdown.','automotive-centre'); ?></p></li>
+                  	<p><span class="strong"><?php esc_html_e('1. Create a new page :','automotive-centre'); ?></span><?php esc_html_e(' Go to ','automotive-centre'); ?>
+				  	<b><?php esc_html_e(' Dashboard >> Pages >> Add New Page','automotive-centre'); ?></b></p>
+
+                  	<p><?php esc_html_e('Name it as "Home" then select the template "Custom Home Page".','automotive-centre'); ?></p>
                   	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/home-page-template.png" alt="" />
-                  	<p></p><span class="strong"><?php esc_html_e('2. Set the front page:','automotive-centre'); ?></span><?php esc_html_e(' Go to ','automotive-centre'); ?>
-				  	<b><?php esc_html_e(' Settings -&gt; Reading --&gt; Set the front page display static page to home page ','automotive-centre'); ?></b></p>
+                  	<p><span class="strong"><?php esc_html_e('2. Set the front page:','automotive-centre'); ?></span><?php esc_html_e(' Go to ','automotive-centre'); ?>
+				  	<b><?php esc_html_e(' Settings >> Reading ','automotive-centre'); ?></b></p>
+				  	<p><?php esc_html_e('Select the option of Static Page, now select the page you created to be the homepage, while another page to be your default page.','automotive-centre'); ?></p>
                   	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/set-front-page.png" alt="" />
-                  	<p><?php esc_html_e(' Once you are done with this, you can see all the demo content on front page. ','automotive-centre'); ?></p>
+                  	<p><?php esc_html_e(' Once you are done with this, then follow the','automotive-centre'); ?> <a class="doc-links" href="https://www.vwthemesdemo.com/docs/free-automotive/" target="_blank"><?php esc_html_e('Documentation','automotive-centre'); ?></a></p>
                 </ul>
 		  	</div>
 		</div>	
@@ -212,111 +223,146 @@ function automotive_centre_mostrar_guide() {
 								<td class="table-img"><?php esc_html_e('1', 'automotive-centre'); ?></td>
 							</tr>
 							<tr>
+								<td><?php esc_html_e('Theme sections', 'automotive-centre'); ?></td>
+								<td class="table-img"><?php esc_html_e('2', 'automotive-centre'); ?></td>
+								<td class="table-img"><?php esc_html_e('14', 'automotive-centre'); ?></td>
+							</tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Contact us Page Template', 'automotive-centre'); ?></td>
 								<td class="table-img">0</td>
 								<td class="table-img"><?php esc_html_e('1', 'automotive-centre'); ?></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Blog Templates & Layout', 'automotive-centre'); ?></td>
 								<td class="table-img">0</td>
 								<td class="table-img"><?php esc_html_e('3(Full width/Left/Right Sidebar)', 'automotive-centre'); ?></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Page Templates & Layout', 'automotive-centre'); ?></td>
 								<td class="table-img">0</td>
 								<td class="table-img"><?php esc_html_e('2(Left/Right Sidebar)', 'automotive-centre'); ?></td>
 							</tr>
+							<tr>
+								<td><?php esc_html_e('Color Pallete For Particular Sections', 'automotive-centre'); ?></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+							</tr>
 							<tr class="odd">
+								<td><?php esc_html_e('Global Color Option', 'automotive-centre'); ?></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+							</tr>
+							<tr>
+								<td><?php esc_html_e('Section Reordering', 'automotive-centre'); ?></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+							</tr>
+							<tr class="odd">
+								<td><?php esc_html_e('Demo Importer', 'automotive-centre'); ?></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+							</tr>
+							<tr>
+								<td><?php esc_html_e('Allow To Set Site Title, Tagline, Logo', 'automotive-centre'); ?></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+							</tr>
+							<tr class="odd">
+								<td><?php esc_html_e('Enable Disable Options On All Sections, Logo', 'automotive-centre'); ?></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
+								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
+							</tr>
+							<tr>
 								<td><?php esc_html_e('Full Documentation', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Latest WordPress Compatibility', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Woo-Commerce Compatibility', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Support 3rd Party Plugins', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Secure and Optimized Code', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Exclusive Functionalities', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Section Enable / Disable', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Section Google Font Choices', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Gallery', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Simple & Mega Menu Option', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Support to add custom CSS / JS ', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Shortcodes', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Custom Background, Colors, Header, Logo & Menu', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Premium Membership', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Budget Friendly Value', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('Priority Error Fixing', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Custom Feature Addition', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr>
+							<tr class="odd">
 								<td><?php esc_html_e('All Access Theme Pass', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>
 							</tr>
-							<tr class="odd">
+							<tr>
 								<td><?php esc_html_e('Seamless Customer Support', 'automotive-centre'); ?></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/w-arrow.png" alt="" /></td>
 								<td class="table-img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/getstart/images/right-arrow.png" alt="" /></td>

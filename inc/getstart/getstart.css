@@ -236,6 +236,12 @@ td.update-link a {
 .row-box a {
     text-decoration: none;
 }
+a.doc-links {
+    color: #004c75;
+}
+a.doc-links:hover {
+    color: #00a0d2;
+}
 /*welcome */
 .welcome-notice h3 {
 	margin: 0;
