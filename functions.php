@@ -22,7 +22,7 @@ require(get_template_directory() . '/core/scripts/css_js.php'); //Enquiring Reso
 require(get_template_directory() . '/core/comment-function.php');
 require(get_template_directory() . '/core/custom-header.php');
 require(get_template_directory() . '/class-tgm-plugin-activation.php');
-require get_template_directory() . '/upgrade-to-pro/class-customize.php';
+require get_template_directory() . '/customizer-pro/class-customize.php';
 
 /*After Theme Setup*/
 add_action('after_setup_theme', 'enigma_head_setup');
@@ -187,7 +187,7 @@ function enigma_breadcrumbs()
             echo '<li><a href="' . esc_url($homeLink) . '/' . esc_url($slug['slug']) . '/">' . esc_html($post_type->labels->singular_name) . '</a></li> ' . esc_html($delimiter) . ' ';
             echo '<li>' . esc_html(get_the_title()) . '</li>';
         } else {
-            echo '<li>' . esc_html(get_the_title()) . '</li>';
+            echo '<li>' . wp_kses_post(get_the_title()) . '</li>';
         }
 
     } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
@@ -209,7 +209,7 @@ function enigma_breadcrumbs()
         }
         $breadcrumbs = array_reverse($breadcrumbs);
         foreach ($breadcrumbs as $crumb)
-            echo esc_html($crumb) . ' ' . esc_html($delimiter) . ' ';
+            echo wp_kses_post($crumb) . ' ' . esc_html($delimiter) . ' ';
         echo '<li>' . esc_html(get_the_title()) . '</li>';
     } elseif (is_search()) {
         echo '<li>' . esc_html__("Search results for", "enigma") . get_search_query() . '"' . '</li>';
@@ -219,7 +219,7 @@ function enigma_breadcrumbs()
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo '<li>' . esc_html__("Articles posted by", "enigma") . esc_html($userdata->display_name) . '</li>';
+        echo '<li>' . esc_html__("Articles posted by", "enigma") . esc_html($userdata)->display_name . '</li>';
     } elseif (is_404()) {
         echo '<li>' . esc_html__("Error 404", "enigma") . '</li>';
     }

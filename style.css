@@ -4,7 +4,7 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design. This theme can be used for different kinds of websites including business, blogging, portfolio, agency, landing page etc. Enigma has Filkr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more. Demo -> http://demo.weblizar.com/enigma-free-theme/
-Version: 7.1
+Version: 7.1.1
 Tested up to: 5.5
 Requires PHP: 7.2
 License: GNU General Public License v2 or later
@@ -2847,18 +2847,6 @@ border:1px solid #f5f5f5;
 color:#272727;
 padding:5px;
 }
- 
-/*.tag-sticky-2:before,.sticky:before {
-  content: "Featured";
-  color: #FFF;
-  background: #f20000;
-  padding: 10px;
-  display: inline-block;
-  text-align: right;
-  float: right;
-  font-weight: bold;
-  text-transform: uppercase;
-}*/
 
 .main-navigation {
     clear: both;
@@ -2866,18 +2854,7 @@ padding:5px;
     float: left;
     width: 100%;
 }
-.toggled.main-navigation {
-    float: inherit;
-}
-.toggled .dropdown-menu>.active>a{
-	background: transparent;
-	color: #fff;
-}
-.toggled .dropdown-menu>li>a:hover {
-    color: #000;
-    text-decoration: none;
-    background-color: #fff;
-}
+
 .main-navigation ul {
     
     list-style: none;
@@ -2908,9 +2885,7 @@ padding:5px;
 .main-navigation ul ul a {
     width: 251px;
 }
-.toggled.main-navigation ul ul a {
-    width: auto;
-}
+
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -2921,10 +2896,7 @@ padding:5px;
     float: left;
     position: relative;
 }
-.toggled.main-navigation li {
-    float: none;
-    position: relative;
-}
+
 
 .main-navigation a{
     display: block;
@@ -2940,10 +2912,7 @@ padding:5px;
 
 /* Small menu. */
 
-.menu-toggle,
-.main-navigation.toggled ul {
-    display: block;
-}
+
 @media screen and (min-width: 993px) {
     
 
@@ -2974,6 +2943,31 @@ padding:5px;
       background-color: #30a2dc;
       color: #fff;
 }
+
+@media screen and (max-width: 992px){
+.toggled.main-navigation {
+    float: inherit;
+}
+.toggled .dropdown-menu>.active>a{
+	background: transparent;
+	color: #fff;
+}
+.toggled .dropdown-menu>li>a:hover {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+}
+.toggled.main-navigation ul ul a {
+    width: auto;
+}
+.toggled.main-navigation li {
+    float: none;
+    position: relative;
+}
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
 .toggled .nav-menu{
 	display: flex;
     -ms-flex-direction: column;
@@ -2985,7 +2979,6 @@ padding:5px;
 .toggled .navbar-collapse {
 	display: block;
 }
-@media screen and (max-width: 992px){
 .main-navigation ul li.menu-item-has-children:hover > .dropdown-menu, .main-navigation ul li.focus > .dropdown-menu {
     position: relative !important;
     left: 0;
