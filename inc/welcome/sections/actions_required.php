@@ -15,44 +15,41 @@ if( !empty($this->actions_req) ) { ?>
 			<?php 
 
 		foreach($this->actions_req['pro_plug'] as $plugin) {
-			$status = $this->get_plugin_active($plugin);
-			$icon_url = $plugin['screenshot'];
+			$th_status = $this->get_plugin_active($plugin);
+			
 
 
-			switch($status) {
+			switch($th_status) {
 				case 'install' :
 					$btn_class = 'install button';
 					$label = $this->strings['install_n_activate'];
-					$link = $plugin['location'];
+					$th_link = $plugin['location'];
 					break;
 
 				case 'inactive' :
 					$btn_class = 'deactivate button';
 					$label = $this->strings['deactivate'];
-					$link = admin_url('plugins.php');
+					$th_link = admin_url('plugins.php');
 					break;
 
 				case 'active' :
 					$btn_class = 'activate button button-primary';
 					$label = $this->strings['activate'];
-					$link = $plugin['location'];
+					$th_link = $plugin['location'];
 					break;
 			}
 
 			?>
 			<div class="recom-plugin-wrap">
 					<div class="recom-plugin-inner-wrapper">
-						<div class="plugin-img-wrap">
-							<img src="<?php echo esc_url($icon_url); ?>" />
-							
-						</div>
+						
 						<div class="plugin-title-install clearfix">
 							<span class="title" title="<?php echo esc_attr($plugin['name']); ?>">
 								<?php echo esc_html($plugin['name']); ?>
 							</span>
 
 							<span class="plugin-action-btn plugin-btn-wrapper plugin-card-<?php echo esc_attr($plugin['slug']); ?>">
-								<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file="<?php echo esc_attr($plugin['filename']); ?>" data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_attr($link); ?>"><?php echo esc_html($label); ?></a>
+								<a class="<?php echo esc_attr($btn_class); ?>" data-host-type="<?php echo esc_attr($plugin['host_type']); ?>" data-file="<?php echo esc_attr($plugin['filename']); ?>" data-class="<?php echo esc_attr($plugin['class']); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_url($th_link); ?>"><?php echo esc_html($label); ?></a>
 							</span>
 							<div class="version-author-info free">
 								<span class="version"><?php echo esc_html__('Version ', 'accesspress-mag') . esc_html($plugin['version']); ?></span>
@@ -74,11 +71,11 @@ if( !empty($this->actions_req) ) { ?>
 		foreach($this->actions_req['free_plug'] as $plugin) {
 			$info = $this->call_plugin_api($plugin['slug']);
 
-			$icon_url = $this->check_for_icon($info->icons);
-			$status = $this->get_plugin_active($plugin);
-			$btn_url = $this->generate_plugin_url($status, $plugin);
+			
+			$th_status = $this->get_plugin_active($plugin);
+			$btn_url = $this->generate_plugin_url($th_status, $plugin);
 
-			switch($status) {
+			switch($th_status) {
 				case 'install' :
 					$btn_class = 'install button';
 					$label = $this->strings['install_n_activate'];
@@ -98,10 +95,7 @@ if( !empty($this->actions_req) ) { ?>
 			?>
 				<div class="recom-plugin-wrap ">
 					<div class="recom-plugin-inner-wrap">
-						<div class="plugin-img-wrap">
-							<img src="<?php echo esc_url($icon_url); ?>" />
-							
-						</div>
+						
 						<div class="plugin-title-install clearfix">
 							<?php if( $info->name ){ ?>
 								<span class="title" title="<?php echo esc_attr($info->name); ?>">

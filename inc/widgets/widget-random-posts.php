@@ -82,7 +82,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
                                 <?php if( has_post_thumbnail() ) { ?>
                                 <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
                                 <?php } else { ?>
-                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php esc_html_e( 'No image', 'accesspress-mag' );?>" />                            
+                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php esc_attr_e( 'No image', 'accesspress-mag' );?>" />                            
                                 <?php } ?>
                             </a>
                         </div><!-- .post-img -->

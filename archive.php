@@ -41,7 +41,7 @@ $sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
                     get_template_part( 'content', 'archive' );
 				?>
 
-			<?php endwhile; wp_reset_query(); ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 
 			<?php accesspress_mag_posts_navigation(); ?>
 

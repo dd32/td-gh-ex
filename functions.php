@@ -160,7 +160,32 @@ function accesspress_mag_scripts() {
     
 	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.1');
     
-	wp_enqueue_script( 'accesspress-mag-custom-scripts', get_template_directory_uri() . '/js/custom-scripts.js', array('jquery'), '1.0.1' );
+	wp_register_script( 'accesspress-mag-custom-scripts', get_template_directory_uri() . '/js/custom-scripts.js', array('jquery'), '1.0.1' );
+
+	$direction = 'ltr';
+	if( is_rtl() ){
+		$direction = 'rtl';
+	}
+
+	$slider_controls 			= ( of_get_option( 'slider_controls' ) == "1" ) ? "true" : "false";
+    $slider_auto_transaction 	= ( of_get_option( 'slider_auto_transition' ) == "1" ) ? "true" : "false";
+    $slider_pager 				= ( of_get_option( 'slider_pager' ) == "1" ) ? "true" : "false";
+    $slider_pause 				= of_get_option( 'slider_pause', '6000' );
+    $ticker_caption 			= esc_html( of_get_option( 'ticker_caption', __( 'Latest', 'accesspress-mag' ) ) );
+
+
+	$script_vals = array(
+		'direction' 	=> $direction,
+		'controls' 		=> $slider_controls,
+		'pager' 		=> $slider_pager,
+		'pause' 		=> $slider_pause,
+		'auto' 			=> $slider_auto_transaction,
+		'caption' 		=> $ticker_caption
+
+	);
+	wp_localize_script('accesspress-mag-custom-scripts','apmag_loc_script',$script_vals );
+	wp_enqueue_script('accesspress-mag-custom-scripts');
+
     
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

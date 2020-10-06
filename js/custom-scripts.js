@@ -22,10 +22,14 @@ $('.nav-toggle').click(function() {
     $(this).parent('.nav-wrapper').toggleClass('active');
 });
 
-$('.nav-wrapper .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+jQuery('#site-navigation .nav-wrapper .menu-item-has-children > a').wrap('<div class="sub-wrap"></div>');
+
+
+$('.nav-wrapper .menu-item-has-children .sub-wrap').append('<button type="button" class="sub-toggle"> <i class="fa fa-angle-right"></i> </button>');
+
 
 $('.nav-wrapper .sub-toggle').click(function() {
-    $(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('1000');
+    $(this).parents('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('1000');
     $(this).children('.fa-angle-right').first().toggleClass('fa-angle-down');
 });
 
@@ -52,5 +56,41 @@ $(function() {
         return false;
     });
 });
+
+
+
+$("#homeslider").bxSlider({
+    mode: 'horizontal',
+    controls: apmag_loc_script.controls,
+    pager: apmag_loc_script.pager,
+    pause: apmag_loc_script.pause,
+    speed: 1500,
+    auto: apmag_loc_script.auto
+                          
+});
+
+$("#homeslider-mobile").bxSlider({
+    mode: 'horizontal',
+    controls: apmag_loc_script.controls,
+    pager: apmag_loc_script.pager,
+    pause: apmag_loc_script.pause,
+    speed: 1000,
+    auto: apmag_loc_script.auto
+                            
+});
+
+
+ $('#apmag-news').ticker({
+    speed: 0.10,
+    feedType: 'xml',
+    displayType: 'reveal',
+    htmlFeed: true,
+    debugMode: true,
+    fadeInSpeed: 600,
+    pauseOnItems: 4000,
+    direction: apmag_loc_script.direction,
+    titleText: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+apmag_loc_script.caption+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+});
+
  
 });

@@ -46,12 +46,12 @@ get_header();
 
                     if( !empty( $block1_cat ) ) {
 
-                        $posts_for_block1 = of_get_option( 'posts_for_block1' );    ;
+                        $posts_for_block1 = of_get_option( 'posts_for_block1' );
                         $category_info = get_category_by_slug( $block1_cat ); 
                 ?>
                 <div class="first-block-wrapper">
                     <h3 class="block-cat-name"> 
-                        <span><?php echo esc_attr( $category_info->name ) ; ?></span>
+                        <span><?php echo esc_html( $category_info->name ) ; ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php                                
@@ -98,8 +98,8 @@ get_header();
                     </div><!-- .block-post-wrapper -->
                 </div><!-- .first-block-wrapper -->
                 <?php
-                    }//endif $block1_cat
-                    wp_reset_query();
+                    }
+                    wp_reset_postdata();
                 ?>
             </section><!-- .first-block -->
                     
@@ -113,7 +113,7 @@ get_header();
                 ?>
                 <div class="second-block-wrapper">
                     <h3 class="block-cat-name"> 
-                        <span><?php echo esc_attr( $category_info_2->name ); ?></span>
+                        <span><?php echo esc_html( $category_info_2->name ); ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php                          
@@ -156,8 +156,8 @@ get_header();
                     </div><!-- .block-post-wrapper -->
                 </div><!-- .second-block-wrapper -->
                 <?php 
-                    }//endif $block2_cat 
-                    wp_reset_query();
+                    }
+                    wp_reset_postdata();
                 ?>
             </section><!-- .second-block -->
 
@@ -177,7 +177,7 @@ get_header();
                 ?>
                 <div class="first-block-wrapper">
                     <h3 class="block-cat-name">
-                        <span><?php echo esc_attr( $category_info_3->name ); ?></span>
+                        <span><?php echo esc_html( $category_info_3->name ); ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php
@@ -224,8 +224,8 @@ get_header();
                     </div><!-- .block-post-wrapper -->
                 </div><!-- .first-block-wrapper -->
                 <?php
-                    }//endif block_cat
-                    wp_reset_query();
+                    }
+                    wp_reset_postdata();
                 ?>
             </section><!-- .third-block -->
               
@@ -238,7 +238,7 @@ get_header();
                 ?>
                 <div class="second-block-wrapper">
                     <h3 class="block-cat-name">
-                        <span><?php echo esc_attr( $category_info_4->name ); ?></span>
+                        <span><?php echo esc_html( $category_info_4->name ); ?></span>
                         
                     </h3>
                     <div class="block-post-wrapper clearfix">
@@ -279,13 +279,13 @@ get_header();
                 </div><!-- .forth-block-wrapper -->
                 <?php 
                     }//endif block_cat 
-                    wp_reset_query();
+                    wp_reset_postdata();
                 ?>
               </section><!-- .forth-block -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php 
-wp_reset_query();
+wp_reset_postdata();
 $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
     if( $page_sidebar != 'no-sidebar' ){
         get_sidebar( 'home' );

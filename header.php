@@ -18,6 +18,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+}?>
 <?php do_action( 'accesspress_mag_before' ); ?>
 <div id="page" class="hfeed site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-mag' ); ?></a>
@@ -96,12 +100,13 @@
     	
         <nav id="site-navigation" class="main-navigation">
 			<div class="apmag-container">
+            
                 <div class="nav-wrapper">
-                    <div class="nav-toggle hide">
+                    <button class="nav-toggle hide btn-transparent-toggle">
                         <span> </span>
                         <span> </span>
                         <span> </span>
-                    </div>
+                    </button>
         			<?php 
                         if( has_nav_menu( 'primary' ) ){
                             wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu' ) );    

@@ -27,7 +27,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor's Pick", "accesspress-
 
         <?php if ( is_active_sidebar( 'accesspress-mag-homepage-sidebar-top-ad' ) ) { ?>
             <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-                <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
+                <h1 class="sidebar-title"><span><?php echo esc_html( $trans_ads ) ;?></span></h1>
                 <div class="ad_content">
                     <?php dynamic_sidebar( 'accesspress-mag-homepage-sidebar-top-ad' ); ?> 
                 </div>
@@ -48,7 +48,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor's Pick", "accesspress-
                 $editor_posts_per_page = of_get_option( 'posts_for_editor_pick' );
                 if( !empty( $editor_cat ) ) {
             ?>
-                <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_editor ) ;?></span></h1>
+                <h1 class="sidebar-title"><span><?php echo esc_html( $trans_editor ) ;?></span></h1>
             <?php
                 echo '<div class="sidebar-posts-wrapper">';
                 $editor_args = array(
@@ -96,7 +96,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor's Pick", "accesspress-
         
         <?php if ( is_active_sidebar( 'accesspress-mag-homepage-sidebar-middle-ad' ) ) { ?>
             <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-                <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
+                <h1 class="sidebar-title"><span><?php echo esc_html( $trans_ads ) ;?></span></h1>
                 <div class="ad_content"><?php dynamic_sidebar( 'accesspress-mag-homepage-sidebar-middle-ad' ); ?></div>
             </div><!--header ad-->
         <?php } ?>

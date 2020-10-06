@@ -79,7 +79,7 @@
                 <div class="ak-info">
                     <?php esc_html_e( 'Powered by ', 'accesspress-mag' );  ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-mag' ) ); ?>"><?php esc_html_e( 'WordPress', 'accesspress-mag' ); ?> </a>
                     <?php esc_html_e( '| Theme: ', 'accesspress-mag' );?>
-                    <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>"><?php esc_html_e( 'AccessPress Mag', 'accesspress-mag' ); ?></a>
+                    <a href="<?php echo esc_url( 'https://accesspressthemes.com/wordpress-themes/accesspress-mag', 'accesspress-mag' ); ?>"><?php esc_html_e( 'AccessPress Mag', 'accesspress-mag' ); ?></a>
                 </div><!-- .ak-info -->
              <?php if ( ( has_nav_menu( 'footer_menu' ) ) && ( $accesspress_mag_sub_footer_switch == 1 ) ) { ?>      
                 <div class="subfooter-menu">
@@ -93,7 +93,7 @@
         </div><!-- .bottom-footer -->
 	</footer><!-- #colophon -->
     <div id="back-top">
-        <a href="#top"><i class="fa fa-arrow-up"></i> <span> <?php echo esc_attr( $trans_top ) ;?> </span></a>
+        <a href="#top"><i class="fa fa-arrow-up"></i> <span> <?php echo esc_html( $trans_top ) ;?> </span></a>
     </div>   
 </div><!-- #page -->
 <?php wp_footer(); ?>

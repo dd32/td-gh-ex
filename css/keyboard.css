@@ -1,7 +1,3 @@
-a:focus{
-    outline: 1px dotted;
-}
-
 .navigation .nav-links a:focus, 
 .bttn:focus, 
 button, 
@@ -76,7 +72,7 @@ input[type="submit"]:focus {
     color: #dc3522;
 }
 
-#site-navigation li:focus > ul.sub-menu {
+#site-navigation li:focus-within > ul.sub-menu {
     opacity: 1;
     visibility: visible;
     top: 49px;

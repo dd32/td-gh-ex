@@ -1,11 +1,21 @@
 === AccessPress Mag ===
 
-Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 2.5.7
+Contributors: Access Keys
+Tested up to: 5.5.1
+Requires PHP: 5.6
+Requires at least: 4.7
+Stable tag: 2.6.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Contributors: access-keys
+Tags:  custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, rtl-language-support, full-width-template, theme-options, threaded-comments, featured-images, grid-layout 
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+AccessPress Mag is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+
 
 == Description ==
 
@@ -67,21 +77,45 @@ Fonts
 
 ----------------------------------------------------
 
-ScreenShot Images under CC0 Public Domain
-    https://pixabay.com/en/kayak-ocean-rafting-canoe-boat-282329/
-    https://pixabay.com/en/leave-room-interior-design-luxurious-825316/
-    https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
-    https://pixabay.com/en/kayak-ocean-rafting-canoe-boat-282329/
-    https://unsplash.com/photos/CPWhnIkL4Lk
-    https://pixabay.com/en/girl-woman-sunglasses-fashion-691105/
-    https://pixabay.com/en/ship-illuminated-night-ship-484696/
+== ScreenShot Images ==
 
-GPL compatible for own images
-    accesspress-mag/images/demo-images/728-90.png
-    accesspress-mag/images/demo-images/300-250.png
+Stocksnap Images
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/license
+
+Brodie Vissers
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/people-girls-Y2AHVPYB51
+
+Burst
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/hipster-coffee-WB9WHQU68Q
+
+Arnaud Mesureur
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/sea-ocean-7ED9C3XTY8
+
+Kristin Hardwick
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/woman-working-UXMLQGWQB8
+
+Dahl House Design
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/home-interior-TDNJ1H4VYN
+
+Design by Matt
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/home-office-QUU0AQABSN
+
+
 
 ----------------------------------------------------
 == Changelog ==
+= 2.6.2 =
+ ** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.
+ ** Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
+ ** Refined Welcome Page
+
 = 2.6.1 =
  ** Fixed Minor Issues
  ** Added Post Category Show Hide Option 
@@ -374,8 +408,8 @@ GPL compatible for own images
 
 = 1.1.6 =
  ** Added demo content for advertisement area in header.php , sidebar-home.php and home-page.php
- ** Changed status of “force-activation” in accesspress-function.php	
- ** Fixed id of “header ad widget” in function.php
+ ** Changed status of "force-activation" in accesspress-function.php	
+ ** Fixed id of "header ad widget" in function.php
 
 = 1.1.5 =
  ** Added demo and support url

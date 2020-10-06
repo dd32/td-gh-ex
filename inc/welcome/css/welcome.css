@@ -335,8 +335,9 @@ a.deactivate.button:hover{
     display: inline-block;
     font-size: 12px;
     height: 100%;
-    position: relative;
+    position: absolute;
     top: 75%;
+    left: 15%;
 }
 
 
@@ -505,7 +506,7 @@ h3.choose-demo-title {
     margin-bottom: 13px;
 }
 .apwelcome-column {
-    padding: 20px 40px 0 0;
+    padding: 0 40px 0 0;
 }
 .apwelcome-an .apwelcome-btn {
     padding: 30px;
@@ -834,4 +835,8 @@ a.buy-pro-btn:hover{
 
 .free_vs_pro .three-col .col:hover{
    background: #EEE;
+}
+
+.apwelcome-column-wrap .button-wrapper a {
+    display: inline-block;
 }
