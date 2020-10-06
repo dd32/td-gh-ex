@@ -1841,7 +1841,7 @@ span.breadcrumb {
 .single article .posted-on,
 .single article .byline,
 .single article .cat-links a:hover,
-.single article .tag-linksa a:hover{
+.single article .tags-links a:hover{
 	opacity: 0.7;
 }
 
@@ -1850,7 +1850,7 @@ span.breadcrumb {
 .single article .posted-on:hover,
 .single article .byline:hover,
 .single article .cat-links a:hover,
-.single article .tag-linksa a:hover{
+.single article .tags-links a:hover{
 	opacity: 1;
 }
 .masonry-start .posted-on a,
@@ -1858,7 +1858,7 @@ span.breadcrumb {
 .single article .posted-on a,
 .single article .byline a,
 .single article .cat-links a:hover,
-.single article .tag-linksa a:hover{
+.single article .tags-links a:hover{
     color: #fff;
 }
 

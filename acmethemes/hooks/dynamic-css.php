@@ -23,6 +23,7 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             #calendar_wrap #wp-calendar #today,
             #calendar_wrap #wp-calendar #today a,
             .wpcf7-form input.wpcf7-submit:hover,
+            .wpcf7-form input.wpcf7-submit:focus,
             .breadcrumb,
             .masonry-start .read-more .read-more-btn,
             .show-more,
@@ -34,13 +35,10 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             }";
         /*color*/
         $custom_css .= "
-            .slider-section .cat-links a,
             a:hover,
             .header-wrapper .menu li a:hover,
-            .screen-reader-text:focus,
             .socials a:hover,
             .site-title a:hover,
-            .widget_search input#s,
             .slider-feature-wrap a:hover,
             .featured-desc .above-entry-meta span:hover,
             .posted-on a:hover,
@@ -51,8 +49,26 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             .byline a:hover,
             .nav-links a:hover,
             #acmephoto-breadcrumbs a:hover,
-            .wpcf7-form input.wpcf7-submit,
             .widget li a:hover,
+             a:focus,
+            .header-wrapper .menu li a:focus,
+            .socials a:focus,
+            .site-title a:focus,
+            .slider-feature-wrap a:focus,
+            .featured-desc .above-entry-meta span:focus,
+            .posted-on a:focus,
+            .cat-links a:focus,
+            .comments-link a:focus,
+            .edit-link a:focus,
+            .tags-links a:focus,
+            .byline a:focus,
+            .nav-links a:focus,
+            #acmephoto-breadcrumbs a:focus,
+            .widget li a:focus,
+            .slider-section .cat-links a,
+            .widget_search input#s,
+            .wpcf7-form input.wpcf7-submit,
+            .screen-reader-text:focus,
             .main-navigation ul > li.current-menu-item > a,
             .main-navigation ul > li.current-menu-parent > a,
             .main-navigation ul > li.current_page_parent > a,
@@ -90,6 +106,7 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
                 border-bottom: 7px solid {$acmephoto_primary_color};
             }
             .wpcf7-form input.wpcf7-submit:hover,
+            .wpcf7-form input.wpcf7-submit:focus,
             .banner-search .search-block{
                 border: 2px solid {$acmephoto_primary_color};
             }
@@ -113,6 +130,10 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
                 .slicknav_nav li.current_page_item a,
                 .slicknav_nav li.current_page_item .slicknav_item span,
                 .slicknav_nav li .slicknav_item:hover a{
+                    color: {$acmephoto_primary_color};
+                }
+                .slicknav_nav li:focus-within > a,
+                .slicknav_nav li .slicknav_item:focus-within a{
                     color: {$acmephoto_primary_color};
                 }
             }";

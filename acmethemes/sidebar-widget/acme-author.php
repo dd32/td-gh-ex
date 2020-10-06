@@ -65,15 +65,15 @@ if ( ! class_exists( 'Acmephoto_author_widget' ) ) :
                 }
                 ?>
                 <span class="img-preview-wrap" <?php echo esc_attr( $acmephoto_display_none ); ?>>
-                    <img class="widefat" src="<?php echo esc_url( $acmephoto_author_image ); ?>" alt="<?php _e( 'Image preview', 'acmephoto' ); ?>"  />
+                    <img class="widefat" src="<?php echo esc_url( $acmephoto_author_image ); ?>" alt="<?php esc_attr_e( 'Image preview', 'acmephoto' ); ?>"  />
                 </span><!-- .ad-preview-wrap -->
                 <input type="text" class="widefat" name="<?php echo $this->get_field_name('acmephoto_author_image'); ?>" id="<?php echo $this->get_field_id('acmephoto_author_image'); ?>" value="<?php echo esc_url( $acmephoto_author_image ); ?>" />
-                <input type="button" value="<?php _e( 'Upload Image', 'acmephoto' ); ?>" class="button media-image-upload" data-title="<?php _e( 'Select Author Image','acmephoto'); ?>" data-button="<?php _e( 'Select Author Image','acmephoto'); ?>"/>
-                <input type="button" value="<?php _e( 'Remove Image', 'acmephoto' ); ?>" class="button media-image-remove" />
+                <input type="button" value="<?php esc_attr_e( 'Upload Image', 'acmephoto' ); ?>" class="button media-image-upload" data-title="<?php esc_attr_e( 'Select Author Image','acmephoto'); ?>" data-button="<?php esc_attr_e( 'Select Author Image','acmephoto'); ?>"/>
+                <input type="button" value="<?php esc_attr_e( 'Remove Image', 'acmephoto' ); ?>" class="button media-image-remove" />
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id( 'acmephoto_author_short_disc' ); ?>"><?php _e( 'Author Short Disc:', 'acmephoto' ); ?></label>
-                <textarea class="widefat" id="<?php echo $this->get_field_id( 'acmephoto_author_short_disc' ); ?>" name="<?php echo $this->get_field_name( 'acmephoto_author_short_disc' ); ?>"><?php echo esc_attr( $acmephoto_author_short_disc ); ?></textarea>
+                <textarea class="widefat" id="<?php echo $this->get_field_id( 'acmephoto_author_short_disc' ); ?>" name="<?php echo $this->get_field_name( 'acmephoto_author_short_disc' ); ?>"><?php echo esc_html( $acmephoto_author_short_disc ); ?></textarea>
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id( 'acmephoto_author_link' ); ?>"><?php _e( 'Link URL:', 'acmephoto' ); ?></label>

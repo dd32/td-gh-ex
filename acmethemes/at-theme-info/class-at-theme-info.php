@@ -30,9 +30,7 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
 
             /* ajax callback for dismissable required actions */
             add_action( 'wp_ajax_at_theme_info_update_recommended_action', array( $this, 'update_recommended_action_callback' ) );
-
         }
-
 
         /**
          * Prepare and setup class properties.
@@ -50,7 +48,6 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
             $this->menu_title    = isset( $this->config['menu_title'] ) ? $this->config['menu_title'] : esc_html__('Info','acmephoto') . $this->theme_name;
             $this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( __('Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our %2$swelcome page%3$s.','acmephoto'), $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-info' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-info' ) ) . '" class="button" style="text-decoration: none;">' . sprintf( __('Get started with %s','acmephoto'), $this->theme_name ) . '</a></p>' );
             $this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
-
         }
 
         /**
@@ -223,6 +220,7 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                     </div>';
                 }
                 echo '<a href="https://www.acmethemes.com/" target="_blank" class="wp-badge epsilon-info-logo"></a>';
+                
                 /*quick links*/
                 if( !empty( $quick_links ) && is_array( $quick_links ) ){
                     echo '<p class="quick-links">';
@@ -448,9 +446,6 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                             $saved_recommended_actions[ $id ] == false ) {
                             $hidden = true;
                         }
-                        if ( $hidden ) {
-                            //continue;
-                        }
                         $done = '';
                         if ( $check ) {
                            $done = 'done';
@@ -488,25 +483,20 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                                 case 'activate':
                                     $class = 'activate-now button button-primary';
                                     $label = esc_html__( 'Activate', 'acmephoto' );
-
                                     break;
 
                                 case 'deactivate':
                                     $class = 'deactivate-now button';
                                     $label = esc_html__( 'Deactivate', 'acmephoto' );
-
                                     break;
                             }
-
                             ?>
                             <p class="plugin-card-<?php echo esc_attr( $action_value['plugin_slug'] ) ?> action_button <?php echo ( $active['needs'] !== 'install' && $active['status'] ) ? 'active' : '' ?>">
                                 <a data-slug="<?php echo esc_attr( $action_value['plugin_slug'] ) ?>"
                                    class="<?php echo esc_attr( $class ); ?>"
                                    href="<?php echo esc_url( $url ) ?>"> <?php echo esc_html( $label ) ?> </a>
                             </p>
-
                             <?php
-
                         }
                         echo '</div>';
                         $hooray = false;
@@ -552,7 +542,6 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                 ) );
                 set_transient( 'at_theme_info_plugin_information_transient_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
             }
-
             return $call_api;
         }
         public function get_plugin_icon( $arr ) {
@@ -566,9 +555,9 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
             } else {
                 $plugin_icon_url = get_template_directory_uri() . '/acmethemes/at-theme-info/images/placeholder_plugin.png';
             }
-
             return $plugin_icon_url;
         }
+
         public function recommended_plugins() {
             $recommended_plugins = $this->config['recommended_plugins'];
 
@@ -696,7 +685,6 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                             echo "</div><div class='at-about-row'>";/*.at-about-row end-start*/
                         }
                     }
-
                     echo '</div>';/*.at-about-row end*/
                 }// End if().
             }// End if().
@@ -884,7 +872,6 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                     echo '</table>';
                     echo '</div>';
                     echo '</div>';
-
                 }
             }
         }
@@ -970,8 +957,8 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
          */
         public function style_and_scripts( $hook_suffix ) {
 
-            // this is needed on all admin pages, not just the about page, for the badge action count in the wordpress main sidebar
-            wp_enqueue_style( 'at-theme-info-css', get_template_directory_uri() . '/acmethemes/at-theme-info/css/at-theme-info.css' );
+            // this is needed on all admin pages, not just the about page, for the badge action count in the WordPress main sidebar
+            wp_enqueue_style( 'acmephoto-theme-info-css', get_template_directory_uri() . '/acmethemes/at-theme-info/css/at-theme-info.css' );
 
             if ( 'appearance_page_' . $this->theme_slug . '-info' == $hook_suffix ) {
 
@@ -987,9 +974,7 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
                     'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
                     'template_directory'       => get_template_directory_uri()
                 ) );
-
             }
-
         }
     }
 }

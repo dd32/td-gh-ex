@@ -3,7 +3,7 @@
  * AcmePhoto Pro Notice Handler
  *
  * @author  AcmeThemes
- * @package acmephoto
+ * @package AcmePhoto
  * @since   3.0.0
  */
 
@@ -60,36 +60,8 @@ class AcmePhoto_Notice_Handler {
 	 * return array
 	 */
 	public function advanced_demo_import(){
-		add_action( 'advanced_import_demo_lists', array( $this, 'demo_lists' ), 20 );
 		add_action( 'advanced_import_replace_post_ids', array( $this, 'replace_post_ids' ), 20 );
 		add_action( 'advanced_import_replace_term_ids', array( $this, 'replace_term_ids' ), 20 );
-	}
-
-	/**
-	 * Advance Demo import process
-     * Active callback of advanced_import_demo_lists
-	 * return array
-	 */
-	public function demo_lists( $demo_lists ) {
-        $url = 'https://demo.acmethemes.com/wp-json/acmethemes-demo-api/v1/fetch_templates/?theme-slug=acmephoto';
-        $body_args = [
-            /*API version*/
-            'api_version' => wp_get_theme()['Version'],
-            /*lang*/
-            'site_lang' => get_bloginfo( 'language' ),
-        ];
-        $raw_json = wp_safe_remote_get( $url, [
-            'timeout' => 100,
-            'body' => $body_args,
-        ] );
-
-        if ( ! is_wp_error( $raw_json ) ) {
-            $demo_server = json_decode( wp_remote_retrieve_body( $raw_json ), true );
-            if( is_array( $demo_server )){
-                return array_merge( $demo_lists, $demo_server );
-            }
-        }
-        return array_merge( $demo_lists);
 	}
 
 	/**
@@ -152,7 +124,8 @@ class AcmePhoto_Notice_Handler {
 
 			$translation = array(
 			        'btn_text' => esc_html__( 'Processing...', 'acmephoto' ),
-                    'nonce'    => wp_create_nonce( 'acmephoto-demo-import-nonce' )
+                    'nonce'    => wp_create_nonce( 'acmephoto-demo-import-nonce' ),
+                    'adminurl'    => admin_url()
             );
 			wp_localize_script( 'acmephoto-adi-install', 'acmephoto_adi_install', $translation );
 			
@@ -202,7 +175,7 @@ class AcmePhoto_Notice_Handler {
 				<?php esc_html_e( 'Dismiss', 'acmephoto' ); ?>
             </a>
             <div class="at-gsm-container">
-                <img class="at-gsm-screenshot" src="<?php echo esc_url(get_template_directory_uri().'/screenshot.jpg' )?>" alt="<?php esc_html_e( 'AcmePhoto', 'acmephoto' ); ?>" />
+                <img class="at-gsm-screenshot" src="<?php echo esc_url(get_template_directory_uri().'/screenshot.jpg' )?>" alt="<?php esc_attr_e( 'AcmePhoto', 'acmephoto' ); ?>" />
                 <div class="at-gsm-notice">
                     <h2>
 						<?php
@@ -214,7 +187,7 @@ class AcmePhoto_Notice_Handler {
 
                     <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Advanced Import plugin.', 'acmephoto' ); ?></p>
 
-                    <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with AcmePhoto', 'acmephoto' ); ?>">
+                    <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_attr_e( 'Get started with AcmePhoto', 'acmephoto' ); ?>">
 		                <?php esc_html_e( 'Get started with AcmePhoto', 'acmephoto' );?>
                     </a>
                 </div>
@@ -232,113 +205,118 @@ class AcmePhoto_Notice_Handler {
 
 		check_ajax_referer( 'acmephoto-demo-import-nonce', 'security' );
 
-		$slug   = 'advanced-import';
-		$plugin = 'advanced-import/advanced-import.php';
+        $slug   = $_POST['slug'];
+        $plugin = $slug.'/'.$slug.'.php';
+        $request = $_POST['request'];
 
-		$status = array(
-			'install' => 'plugin',
-			'slug'    => sanitize_key( wp_unslash( $slug ) ),
-		);
-		$status['redirect'] = admin_url( '/themes.php?page=advanced-import&browse=all&at-gsm-hide-notice=welcome' );
+        $status = array(
+            'install' => 'plugin',
+            'slug'    => sanitize_key( wp_unslash( $slug ) ),
+        );
+        $status['redirect'] = admin_url( '/themes.php?page=advanced-import&browse=all&at-gsm-hide-notice=welcome' );
 
-		if ( is_plugin_active_for_network( $plugin ) || is_plugin_active( $plugin ) ) {
-			// Plugin is activated
-			wp_send_json_success($status);
-		}
+        if ( is_plugin_active_for_network( $plugin ) || is_plugin_active( $plugin ) ) {
+            // Plugin is activated
+            wp_send_json_success($status);
+        }
 
 
-		if ( ! current_user_can( 'install_plugins' ) ) {
-			$status['errorMessage'] = __( 'Sorry, you are not allowed to install plugins on this site.', 'acmephoto' );
-			wp_send_json_error( $status );
-		}
+        if ( ! current_user_can( 'install_plugins' ) ) {
+            $status['errorMessage'] = __( 'Sorry, you are not allowed to install plugins on this site.', 'acmephoto' );
+            wp_send_json_error( $status );
+        }
 
-		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+        if( $request > 2){
+            wp_send_json_error( );
+        }
 
-		// Looks like a plugin is installed, but not active.
-		if ( file_exists( WP_PLUGIN_DIR . '/' . $slug ) ) {
-			$plugin_data          = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
-			$status['plugin']     = $plugin;
-			$status['pluginName'] = $plugin_data['Name'];
+        include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+        include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
-			if ( current_user_can( 'activate_plugin', $plugin ) && is_plugin_inactive( $plugin ) ) {
-				$result = activate_plugin( $plugin );
+        // Looks like a plugin is installed, but not active.
+        if ( file_exists( WP_PLUGIN_DIR . '/' . $slug ) ) {
+            $plugin_data          = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
+            $status['plugin']     = $plugin;
+            $status['pluginName'] = $plugin_data['Name'];
 
-				if ( is_wp_error( $result ) ) {
-					$status['errorCode']    = $result->get_error_code();
-					$status['errorMessage'] = $result->get_error_message();
-					wp_send_json_error( $status );
-				}
+            if ( current_user_can( 'activate_plugin', $plugin ) && is_plugin_inactive( $plugin ) ) {
+                $result = activate_plugin( $plugin );
 
-				wp_send_json_success( $status );
-			}
-		}
+                if ( is_wp_error( $result ) ) {
+                    $status['errorCode']    = $result->get_error_code();
+                    $status['errorMessage'] = $result->get_error_message();
+                    wp_send_json_error( $status );
+                }
 
-		$api = plugins_api(
-			'plugin_information',
-			array(
-				'slug'   => sanitize_key( wp_unslash( $slug ) ),
-				'fields' => array(
-					'sections' => false,
-				),
-			)
-		);
+                wp_send_json_success( $status );
+            }
+        }
 
-		if ( is_wp_error( $api ) ) {
-			$status['errorMessage'] = $api->get_error_message();
-			wp_send_json_error( $status );
-		}
+        $api = plugins_api(
+            'plugin_information',
+            array(
+                'slug'   => sanitize_key( wp_unslash( $slug ) ),
+                'fields' => array(
+                    'sections' => false,
+                ),
+            )
+        );
 
-		$status['pluginName'] = $api->name;
+        if ( is_wp_error( $api ) ) {
+            $status['errorMessage'] = $api->get_error_message();
+            wp_send_json_error( $status );
+        }
 
-		$skin     = new WP_Ajax_Upgrader_Skin();
-		$upgrader = new Plugin_Upgrader( $skin );
-		$result   = $upgrader->install( $api->download_link );
+        $status['pluginName'] = $api->name;
 
-		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-			$status['debug'] = $skin->get_upgrade_messages();
-		}
+        $skin     = new WP_Ajax_Upgrader_Skin();
+        $upgrader = new Plugin_Upgrader( $skin );
+        $result   = $upgrader->install( $api->download_link );
 
-		if ( is_wp_error( $result ) ) {
-			$status['errorCode']    = $result->get_error_code();
-			$status['errorMessage'] = $result->get_error_message();
-			wp_send_json_error( $status );
-		} elseif ( is_wp_error( $skin->result ) ) {
-			$status['errorCode']    = $skin->result->get_error_code();
-			$status['errorMessage'] = $skin->result->get_error_message();
-			wp_send_json_error( $status );
-		} elseif ( $skin->get_errors()->get_error_code() ) {
-			$status['errorMessage'] = $skin->get_error_messages();
-			wp_send_json_error( $status );
-		} elseif ( is_null( $result ) ) {
-			require_once( ABSPATH . 'wp-admin/includes/file.php' );
-			WP_Filesystem();
-			global $wp_filesystem;
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            $status['debug'] = $skin->get_upgrade_messages();
+        }
 
-			$status['errorCode']    = 'unable_to_connect_to_filesystem';
-			$status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.', 'acmephoto' );
+        if ( is_wp_error( $result ) ) {
+            $status['errorCode']    = $result->get_error_code();
+            $status['errorMessage'] = $result->get_error_message();
+            wp_send_json_error( $status );
+        } elseif ( is_wp_error( $skin->result ) ) {
+            $status['errorCode']    = $skin->result->get_error_code();
+            $status['errorMessage'] = $skin->result->get_error_message();
+            wp_send_json_error( $status );
+        } elseif ( $skin->get_errors()->get_error_code() ) {
+            $status['errorMessage'] = $skin->get_error_messages();
+            wp_send_json_error( $status );
+        } elseif ( is_null( $result ) ) {
+            require_once( ABSPATH . 'wp-admin/includes/file.php' );
+            WP_Filesystem();
+            global $wp_filesystem;
 
-			// Pass through the error from WP_Filesystem if one was raised.
-			if ( $wp_filesystem instanceof WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
-				$status['errorMessage'] = esc_html( $wp_filesystem->errors->get_error_message() );
-			}
+            $status['errorCode']    = 'unable_to_connect_to_filesystem';
+            $status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.', 'acmephoto' );
 
-			wp_send_json_error( $status );
-		}
+            // Pass through the error from WP_Filesystem if one was raised.
+            if ( $wp_filesystem instanceof WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
+                $status['errorMessage'] = esc_html( $wp_filesystem->errors->get_error_message() );
+            }
 
-		$install_status = install_plugin_install_status( $api );
+            wp_send_json_error( $status );
+        }
 
-		if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
-			$result = activate_plugin( $install_status['file'] );
+        $install_status = install_plugin_install_status( $api );
 
-			if ( is_wp_error( $result ) ) {
-				$status['errorCode']    = $result->get_error_code();
-				$status['errorMessage'] = $result->get_error_message();
-				wp_send_json_error( $status );
-			}
-		}
+        if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
+            $result = activate_plugin( $install_status['file'] );
 
-		wp_send_json_success( $status );
+            if ( is_wp_error( $result ) ) {
+                $status['errorCode']    = $result->get_error_code();
+                $status['errorMessage'] = $result->get_error_message();
+                wp_send_json_error( $status );
+            }
+        }
+
+        wp_send_json_success( $status );
 
 	}
 

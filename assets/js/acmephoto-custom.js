@@ -135,8 +135,7 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-
-    //Sickey Sidebar
+    //Sticky Sidebar
     if($('body').hasClass('at-sticky-sidebar')){
         if($('body').hasClass('both-sidebar')){
             $('#primary-wrap, #secondary-right, #secondary-left').theiaStickySidebar();

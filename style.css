@@ -4,7 +4,9 @@ Theme URI: https://www.acmethemes.com/themes/acmephoto/
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: AcmePhoto is one of the best WordPress photography theme based on the masonry layout. Carefully Crafted theme with Creativity for photography, art portfolio, freelancer and other creative photography centric websites. A very flexible theme with dozens of premium features including multiple menu positions, control the height of slider/featured section, advanced pagination options and many more. An elegant theme with quality code and based on customizer. A translation ready theme with major browser compatibility. AcmePhoto comes with lots of features including logo options, site layout options, header options, footer options, sidebar options as well as colour options too. Related posts, breadcrumb, search options, social icons, custom widgets are also the added features on this theme. This theme packs a lot of premium features which helps you to make your site awesome and well organized. Try yourself today and check it out. Demo-1: http://demo.acmethemes.com/acmephoto, Demo-2: http://www.demo.acmethemes.com/acmephoto/home-1/, Supports: https://www.acmethemes.com/supports/
-Version: 3.0.0
+Version: 3.0.1
+Tested up to: 5.5.1
+Requires PHP: 5.6.20
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmephoto
@@ -81,8 +83,13 @@ audio:not([controls]){
 a{
 	background : transparent
 }
-a:active,a:hover{
+a:active,
+a:hover,
+a:focus{
 	outline : 0
+}
+a:focus{
+	text-decoration : underline;
 }
 abbr[title]{
 	border-bottom : 1px dotted
@@ -494,16 +501,27 @@ i.fa{
 	background: rgba(0,0,0,0);
 }
 
-.main-navigation ul ul a:hover {
-	background: rgba(0, 0, 0, 0.2);
-}
-
 .main-navigation ul li:hover > ul {
 	left: auto;
 }
 .main-navigation ul ul li:hover > ul {
 	left: 100%;
 }
+.main-navigation ul li:focus-within > ul {
+	left: auto;
+}
+.main-navigation ul ul li:focus-within > ul {
+	left: 100%;
+}
+.main-navigation li:focus-within > a {
+	background: rgba(0,0,0,0);
+}
+
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a:focus{
+	background: rgba(0, 0, 0, 0.2);
+}
+
 /*** SUB-MENU ***/
 .main-navigation ul ul.sub-menu li{
 	float: none;
@@ -634,7 +652,8 @@ i.fa{
 		display: block;
 		width: auto;
 	}
-	.main-navigation ul ul a:hover {
+	.main-navigation ul ul a:hover,
+	.main-navigation ul ul a:focus{
 		background: rgba(0, 0, 0, 0);
 	}
 }
@@ -955,7 +974,8 @@ i.fa{
 	-moz-transition:all 0.3s ease-in-out 0s;
 	border:0;
 }
-.comment-form .form-submit input:hover{
+.comment-form .form-submit input:hover,
+.comment-form .form-submit input:focus{
 	background: #E07728;
 }
 .comment-list{
@@ -1110,7 +1130,8 @@ object {
 	opacity: 0.7;
 
 }
-.site-footer .socials > a:hover {
+.site-footer .socials > a:hover,
+.site-footer .socials > a:focus{
 	opacity: 1;
 }
 .site-footer .socials span{
@@ -1242,7 +1263,8 @@ footer .font-icon-social-twitter{
 footer .font-icon-social-instagram{
 	background: #e1306c;
 }
-footer .social a:hover{
+footer .social a:hover,
+footer .social a:focus{
 	opacity: 0.7;
 }
 /***************************************/
@@ -1344,7 +1366,8 @@ footer .social a:hover{
 	font-size: 18px;
 	padding: 20px 30px;
 }
-.slider-section .read-more:hover{
+.slider-section .read-more:hover,
+.slider-section .read-more:focus{
 	color: #fff;
 	background: rgba(255, 255, 255, 0.3);
 }
@@ -1828,7 +1851,8 @@ span.breadcrumb {
 #acmephoto-breadcrumbs .breadcrumb-trail li a{
 	display: inline-block;
 }
-#acmephoto-breadcrumbs a:hover{
+#acmephoto-breadcrumbs a:hover,
+#acmephoto-breadcrumbs a:focus{
 	text-decoration: underline;
 }
 #acmephoto-breadcrumbs .breadcrumb-trail li.trail-item.trail-end::after {
@@ -1874,7 +1898,9 @@ span.breadcrumb {
 .single article .posted-on,
 .single article .byline,
 .single article .cat-links a:hover,
-.single article .tag-linksa a:hover{
+.single article .tags-links a:hover,
+.single article .cat-links a:focus,
+.single article .tags-links a:focus{
 	opacity: 0.7;
 }
 
@@ -1883,7 +1909,13 @@ span.breadcrumb {
 .single article .posted-on:hover,
 .single article .byline:hover,
 .single article .cat-links a:hover,
-.single article .tag-linksa a:hover{
+.single article .tags-links a:hover,
+.masonry-start .posted-on:focus,
+.masonry-start .byline:focus,
+.single article .posted-on:focus,
+.single article .byline:focus,
+.single article .cat-links a:focus,
+.single article .tags-links a:focus{
 	opacity: 1;
 }
 .masonry-start .posted-on a,
@@ -1891,14 +1923,30 @@ span.breadcrumb {
 .single article .posted-on a,
 .single article .byline a,
 .single article .cat-links a:hover,
-.single article .tag-linksa a:hover{
+.single article .tags-links a:hover,
+.single article .cat-links a:focus,
+.single article .tags-links a:focus{
     color: #fff;
+}
+
+.single article .no-thumbnail .cat-links a:hover,
+.single article .no-thumbnail .tags-links a:hover,
+.single article .no-thumbnail .comments-link a:hover,
+.single article .no-thumbnail .cat-links a:focus,
+.single article .no-thumbnail .tags-links a:focus ,
+.single article .no-thumbnail .comments-link a:focus{
+	color: #564747;
+	opacity: 0.7;
 }
 
 .masonry-start .posted-on a:hover,
 .masonry-start .byline a:hover,
 .single article .posted-on a:hover,
-.single article .byline a:hover {
+.single article .byline a:hover,
+.masonry-start .posted-on a:focus,
+.masonry-start .byline a:focus,
+.single article .posted-on a:focus,
+.single article .byline a:focus{
     color: #fff;
 }
 .single article .no-thumbnail .posted-on a ,
@@ -1932,7 +1980,8 @@ span.breadcrumb {
     text-transform: uppercase;
     transition: all 0.2s ease 0s;
 }
- .masonry-start .read-more .read-more-btn:hover{
+ .masonry-start .read-more .read-more-btn:hover,
+ .masonry-start .read-more .read-more-btn:focus{
  	color: #fff;
 	 opacity: 0.7;
  }
@@ -1950,7 +1999,8 @@ span.breadcrumb {
 	 -moz-box-shadow: 0 3px 0 #d0d0d0;
     transition: box-shadow 0.4s ease 0s, margin 0.4s ease 0s;
  }
- .show-more:hover{
+ .show-more:hover,
+ .show-more:focus{
 	 opacity: 0.9;
 }
 /* Portrait tablet to landscape and desktop */
@@ -2001,6 +2051,13 @@ article.article-ap:hover .at-overlay{
 	opacity: 1;
 }
 .single article:hover .singe-content-wrapper .at-overlay{
+	opacity: 1;
+}
+article.article-ap:focus-within .at-overlay{
+	bottom: 0;
+	opacity: 1;
+}
+.single article:focus-within .singe-content-wrapper .at-overlay{
 	opacity: 1;
 }
 article.article-ap .at-overlay h2,
@@ -2056,6 +2113,7 @@ article.article-ap .nav-links a {
 	text-transform: uppercase;
 	transition:0.5s ease-in-out;
 }
-.wpcf7-form input.wpcf7-submit:hover{
+.wpcf7-form input.wpcf7-submit:hover,
+.wpcf7-form input.wpcf7-submit:focus{
 	color: #ffffff;
 }
