@@ -69,10 +69,10 @@
             <div class="topbar row m-0">
               <div class="col-lg-7 col-md-7">
                 <?php if( get_theme_mod( 'automobile_car_dealer_mail','' ) != '') { ?>
-                  <a href="mailto:<?php echo esc_url( get_theme_mod('automobile_car_dealer_mail','') ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?><span class="screen-reader-text"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span></a>
+                  <a href="mailto:<?php echo esc_attr( get_theme_mod('automobile_car_dealer_mail','') ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?><span class="screen-reader-text"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_email_icon','fas fa-envelope')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_mail','' )); ?></span></a>
                 <?php }?>
                 <?php if( get_theme_mod( 'automobile_car_dealer_phone','' ) != '') { ?>
-                  <a href="tel:<?php echo esc_url( get_theme_mod('automobile_car_dealer_phone','' )); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?><span class="screen-reader-text"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span></a>
+                  <a href="tel:<?php echo esc_attr( get_theme_mod('automobile_car_dealer_phone','' )); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?><span class="screen-reader-text"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_phone_icon','fa fa-phone')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_phone','') ); ?></span></a>
                 <?php }?>
               </div>
               <div class="col-lg-4 col-md-4">

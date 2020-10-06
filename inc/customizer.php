@@ -40,6 +40,21 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
        'section' => 'title_tagline'
     ));
 
+    $wp_customize->add_setting('automobile_car_dealer_site_title_font_size',array(
+		'default'=> 30,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control(new automobile_car_dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_site_title_font_size',array(
+		'label' => esc_html__( 'Site Title Font Size (px)','automobile-car-dealer' ),
+		'section'=> 'title_tagline',
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+	)));
+
     $wp_customize->add_setting('automobile_car_dealer_site_tagline_enable',array(
        'default' => true,
        'sanitize_callback'	=> 'automobile_car_dealer_sanitize_checkbox'
@@ -564,6 +579,21 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'panel'    => 'automobile_car_dealer_panel_id',
 	));
 
+	$wp_customize->add_setting('automobile_car_dealer_post_layouts',array(
+        'default' => __('Layout 1','automobile-car-dealer'),
+        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'
+	));
+	$wp_customize->add_control(new Automobile_Car_Dealer_Image_Radio_Control($wp_customize, 'automobile_car_dealer_post_layouts', array(
+        'type' => 'select',
+        'label' => __('Post Layouts','automobile-car-dealer'),
+        'description' => __('Here you can change the 3 different layouts of post.','automobile-car-dealer'),
+        'section' => 'automobile_car_dealer_post_settings',
+        'choices' => array(
+            'Layout 1' => get_template_directory_uri().'/images/layout1.png',
+            'Layout 2' => get_template_directory_uri().'/images/layout2.png',
+            'Layout 3' => get_template_directory_uri().'/images/layout3.png',
+    ))));
+
 	$wp_customize->add_setting( 'automobile_car_dealer_post_excerpt_number', array(
 		'default'              => 30,
 		'type'                 => 'theme_mod',
@@ -595,7 +625,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('automobile_car_dealer_button_text',array(
-		'default'=> __('VIEW MORE','automobile-car-dealer'),
+		'default'=> __('View More','automobile-car-dealer'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('automobile_car_dealer_button_text',array(

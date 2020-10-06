@@ -1,12 +1,12 @@
 <?php
 /**
- * The template part for displaying image post
+ * The template part for displaying content
  * @package Automobile Car Dealer
  * @subpackage automobile_car_dealer
  * @since 1.0
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>    
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>  
   <h2 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>  
   <div class="box-image">
     <?php 

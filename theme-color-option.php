@@ -373,3 +373,9 @@
 	$automobile_car_dealer_custom_css .='#slider img{';
 		$automobile_car_dealer_custom_css .='height: '.esc_html($automobile_car_dealer_option_slider_height).'px;';
 	$automobile_car_dealer_custom_css .='}';
+
+	// site title font size
+	$automobile_car_dealer_site_title_font_size = get_theme_mod('automobile_car_dealer_site_title_font_size', 30);
+	$automobile_car_dealer_custom_css .='#header .logo a{';
+	$automobile_car_dealer_custom_css .='font-size: '.esc_html($automobile_car_dealer_site_title_font_size).'px;';
+	$automobile_car_dealer_custom_css .='}';
