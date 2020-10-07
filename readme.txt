@@ -1,25 +1,19 @@
 === AccessPress Mag ===
-
-Contributors: Access Keys
-Tested up to: 5.5.1
+Tags:         custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, rtl-language-support, full-width-template, theme-options, threaded-comments, featured-images, grid-layout 
+Requires at least: 4.0
 Requires PHP: 5.6
-Requires at least: 4.7
-Stable tag: 2.6.2
+Stable tag: 2.6.3
+Tested up to: 5.5.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags:  custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, rtl-language-support, full-width-template, theme-options, threaded-comments, featured-images, grid-layout 
-
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-AccessPress Mag is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-
+Contributors: Access Keys
 
 == Description ==
 
 AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 
 AccessPress Mag WordPress Theme, Copyright 2015 AccessPress Themes
 AccessPress Mag is distributed under the terms of the GNU GPL v3
@@ -83,34 +77,34 @@ Stocksnap Images
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/license
 
-Brodie Vissers
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/people-girls-Y2AHVPYB51
+Pxhere Images
+License: Creative Commons Zero (CC0) license.
+Source: https://pxhere.com/en/license
+
+https://pxhere.com/en/photo/1161323
+https://pxhere.com/en/photo/1443455
+https://pxhere.com/en/photo/712314
 
 Burst
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/hipster-coffee-WB9WHQU68Q
+Source: https://stocksnap.io/photo/photographer-camera-L0D9N4OE1F
 
-Arnaud Mesureur
+Burst
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/sea-ocean-7ED9C3XTY8
+Source: https://stocksnap.io/photo/luxury-car-KADJ2NKMYQ
 
-Kristin Hardwick
+Nordwood Themes
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/woman-working-UXMLQGWQB8
-
-Dahl House Design
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/home-interior-TDNJ1H4VYN
-
-Design by Matt
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/home-office-QUU0AQABSN
+Source: https://stocksnap.io/photo/fashion-man-Y6SDOYW0KA
 
 
 
 ----------------------------------------------------
 == Changelog ==
+= 2.6.3 =
+ ** Fixed compatiblity issue with WordPress 5.5
+ ** Fixed Minor CSS
+
 = 2.6.2 =
  ** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.
  ** Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
@@ -408,8 +402,8 @@ Source: https://stocksnap.io/photo/home-office-QUU0AQABSN
 
 = 1.1.6 =
  ** Added demo content for advertisement area in header.php , sidebar-home.php and home-page.php
- ** Changed status of "force-activation" in accesspress-function.php	
- ** Fixed id of "header ad widget" in function.php
+ ** Changed status of “force-activation” in accesspress-function.php	
+ ** Fixed id of “header ad widget” in function.php
 
 = 1.1.5 =
  ** Added demo and support url

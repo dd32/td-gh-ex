@@ -64,7 +64,7 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
         echo wp_kses_post($before_widget); 
     ?>
         <div class="latest-posts clearfix">
-           <h1 class="widget-title"><span><?php if( !empty( $latest_posts_title ) ){ echo esc_html( $latest_posts_title ); } ?></span></h1>     
+           <h1 class="widget-title"><span><?php if( !empty( $latest_posts_title ) ){ echo esc_attr( $latest_posts_title ); } ?></span></h1>     
            <div class="latest-posts-wrapper">
                 <?php
                     $latest_posts_args = array( 'post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>$latest_posts_count, 'order'=>'DESC' );

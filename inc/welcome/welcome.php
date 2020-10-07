@@ -123,19 +123,17 @@ if(!class_exists('Accesspress_Mag_Welcome')) :
 										<span class="dashicons dashicons-feedback"></span>
 										<?php printf(esc_html__( 'Starter site demos!', 'accesspress-mag' )) ?>
 									</h3>
-									<p><?php printf( wp_kses_post( 'You\'ve  got 1 starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-mag' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
+									<p><?php printf( wp_kses_post( 'You\'ve  got 3 choices of great starter sites (Demos) to start with. By using one of these starter sites you\'ll get a great guidance on how to use the theme to its fullest and also save time to make your website. ', 'accesspress-mag' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' ) ) ); ?></p>
 								</div>
 								<div>
 									<div class="button-wrapper">
 										<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'ready to use starter sites.', 'accesspress-mag' ); ?></a>
-
-										<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-mag' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
+										<?php printf( wp_kses_post( '<a class="options-page-btn button-secondary" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-mag' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
 									</div>
 
 									
 
 								
-									
 
 								</div>
 							</div>
@@ -146,14 +144,11 @@ if(!class_exists('Accesspress_Mag_Welcome')) :
 										<?php printf(esc_html__( 'Documentation', 'accesspress-mag' )) ?>
 									</h3>
 									<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'accesspress-mag' ), $this->theme_name  ); ?></p>
-									<div class="apwelcome-doc-btn">
+
 									<a href="<?php echo esc_url($this->strings['doc_link']);?>" class=" button" ><span><?php esc_html_e( 'Full Documentation', 'accesspress-mag' ); ?></span></a>
-										<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-mag' ); ?></span></a>
+									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-mag' ); ?></span></a>
+
 								</div>
-								</div>
-								
-								
-								
 							</div>
 						</div>
 					</div>
@@ -183,7 +178,7 @@ if(!class_exists('Accesspress_Mag_Welcome')) :
 							<?php echo $this->strings['theme_short_description']; ?>
 						</div>
 						<div class="badge-wrap">
-							<a target="_blank" href="https://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
+							<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
 						</div>
 					</div>
 					<div class="bottom-block-wrap">

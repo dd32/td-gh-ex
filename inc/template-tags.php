@@ -61,7 +61,7 @@ function accesspress_mag_posts_navigation() {
 
 			<?php 
                 if ( get_previous_posts_link() ) :
-                $newer_text = $older_text = of_get_option( 'trans_newer_posts', 'Newer posts' );
+                $newer_text = $older_text = of_get_option( 'trans_newer_posts', 'Newer posts' );; 
             ?>
 			<div class="nav-next"><?php previous_posts_link( $newer_text ); ?></div>
 			<?php endif; ?>
@@ -94,8 +94,8 @@ function accesspress_mag_post_navigation() {
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'accesspress-mag' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>'.esc_html( $trans_prev ).'</div>%link</div>', '%title' );
-				next_post_link( '<div class="nav-next"><div class="link-caption">'.esc_html( $trans_next ).'<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
+				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>'.esc_attr( $trans_prev ).'</div>%link</div>', '%title' );
+				next_post_link( '<div class="nav-next"><div class="link-caption">'.esc_attr( $trans_next ).'<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -167,7 +167,7 @@ function accesspress_mag_entry_footer() {
     		      printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'accesspress-mag' ) . '</span>', wp_kses($tags_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) )) );
     		  } else {
     		  	/* translators: %s : tag list */
-    		      printf( '<span class="tags-links">' .esc_html( $trans_tagged ).' %1$s </span>', wp_kses($tags_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) )) );
+    		      printf( '<span class="tags-links">' .esc_attr( $trans_tagged ).' %1$s </span>', wp_kses($tags_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) )) );
     		  }
     		}
         }

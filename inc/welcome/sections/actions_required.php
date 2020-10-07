@@ -16,8 +16,6 @@ if( !empty($this->actions_req) ) { ?>
 
 		foreach($this->actions_req['pro_plug'] as $plugin) {
 			$th_status = $this->get_plugin_active($plugin);
-			
-
 
 			switch($th_status) {
 				case 'install' :
@@ -42,7 +40,6 @@ if( !empty($this->actions_req) ) { ?>
 			?>
 			<div class="recom-plugin-wrap">
 					<div class="recom-plugin-inner-wrapper">
-						
 						<div class="plugin-title-install clearfix">
 							<span class="title" title="<?php echo esc_attr($plugin['name']); ?>">
 								<?php echo esc_html($plugin['name']); ?>
@@ -71,7 +68,6 @@ if( !empty($this->actions_req) ) { ?>
 		foreach($this->actions_req['free_plug'] as $plugin) {
 			$info = $this->call_plugin_api($plugin['slug']);
 
-			
 			$th_status = $this->get_plugin_active($plugin);
 			$btn_url = $this->generate_plugin_url($th_status, $plugin);
 
@@ -95,7 +91,6 @@ if( !empty($this->actions_req) ) { ?>
 			?>
 				<div class="recom-plugin-wrap ">
 					<div class="recom-plugin-inner-wrap">
-						
 						<div class="plugin-title-install clearfix">
 							<?php if( $info->name ){ ?>
 								<span class="title" title="<?php echo esc_attr($info->name); ?>">

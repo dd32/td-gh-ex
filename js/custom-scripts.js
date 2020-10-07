@@ -56,41 +56,5 @@ $(function() {
         return false;
     });
 });
-
-
-
-$("#homeslider").bxSlider({
-    mode: 'horizontal',
-    controls: apmag_loc_script.controls,
-    pager: apmag_loc_script.pager,
-    pause: apmag_loc_script.pause,
-    speed: 1500,
-    auto: apmag_loc_script.auto
-                          
-});
-
-$("#homeslider-mobile").bxSlider({
-    mode: 'horizontal',
-    controls: apmag_loc_script.controls,
-    pager: apmag_loc_script.pager,
-    pause: apmag_loc_script.pause,
-    speed: 1000,
-    auto: apmag_loc_script.auto
-                            
-});
-
-
- $('#apmag-news').ticker({
-    speed: 0.10,
-    feedType: 'xml',
-    displayType: 'reveal',
-    htmlFeed: true,
-    debugMode: true,
-    fadeInSpeed: 600,
-    pauseOnItems: 4000,
-    direction: apmag_loc_script.direction,
-    titleText: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+apmag_loc_script.caption+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-});
-
  
 });

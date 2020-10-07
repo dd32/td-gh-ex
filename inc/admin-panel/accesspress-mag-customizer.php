@@ -27,7 +27,7 @@ Kirki::add_field( 'accesspress_mag_config',
 		'label'       => esc_html__( 'Template Color', 'accesspress-mag' ),
 		'description' => esc_html__( 'Choose template color of the theme.', 'accesspress-mag' ),
 		'section'     => 'accesspress_mag_basic',
-		'default'     => '#dc3522',
+		'default'     => '#1eb0bc',
 		'priority'    => 30,
 		'sanitize_callback'	=> 'sanitize_hex_color',
 	)

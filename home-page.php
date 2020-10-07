@@ -46,7 +46,7 @@ get_header();
 
                     if( !empty( $block1_cat ) ) {
 
-                        $posts_for_block1 = of_get_option( 'posts_for_block1' );
+                        $posts_for_block1 = of_get_option( 'posts_for_block1' );    ;
                         $category_info = get_category_by_slug( $block1_cat ); 
                 ?>
                 <div class="first-block-wrapper">
@@ -98,8 +98,8 @@ get_header();
                     </div><!-- .block-post-wrapper -->
                 </div><!-- .first-block-wrapper -->
                 <?php
-                    }
-                    wp_reset_postdata();
+                    }//endif $block1_cat
+                    wp_reset_query();
                 ?>
             </section><!-- .first-block -->
                     
@@ -156,8 +156,8 @@ get_header();
                     </div><!-- .block-post-wrapper -->
                 </div><!-- .second-block-wrapper -->
                 <?php 
-                    }
-                    wp_reset_postdata();
+                    }//endif $block2_cat 
+                    wp_reset_query();
                 ?>
             </section><!-- .second-block -->
 
@@ -224,8 +224,8 @@ get_header();
                     </div><!-- .block-post-wrapper -->
                 </div><!-- .first-block-wrapper -->
                 <?php
-                    }
-                    wp_reset_postdata();
+                    }//endif block_cat
+                    wp_reset_query();
                 ?>
             </section><!-- .third-block -->
               
@@ -279,13 +279,13 @@ get_header();
                 </div><!-- .forth-block-wrapper -->
                 <?php 
                     }//endif block_cat 
-                    wp_reset_postdata();
+                    wp_reset_query();
                 ?>
               </section><!-- .forth-block -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php 
-wp_reset_postdata();
+wp_reset_query();
 $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
     if( $page_sidebar != 'no-sidebar' ){
         get_sidebar( 'home' );

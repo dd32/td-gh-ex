@@ -30,14 +30,14 @@ if ( post_password_required() ) {
 					printf(
 						/* translators: 1: title. */
 						esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'accesspress-mag' ),
-						'<span>' . wp_kses_post(get_the_title()) . '</span>'
+						'<span>' . get_the_title() . '</span>'
 					);
 				} else {
 					printf( // WPCS: XSS OK.
 						/* translators: 1: comment count number, 2: title. */
 						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $accesspress_mag_comment_count, 'comments title', 'accesspress-mag' ) ),
 						number_format_i18n( $accesspress_mag_comment_count ),
-						'<span>' . wp_kses_post(get_the_title()) . '</span>'
+						'<span>' . get_the_title() . '</span>'
 					);
 				}
 			?>

@@ -48,7 +48,11 @@
 					'filename' => 'wp-contact-form-7.php',
 					'class' => 'WPCF7'
 				),
-			
+				'scroll-triggered-boxes' => array(
+					'slug' => 'scroll-triggered-boxes',
+					'filename' => 'index.php',
+					'class' => 'ScrollTriggeredBoxes\\Plugin'
+				),
 			),
 			'pro_plug' => array(
 

@@ -57,7 +57,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
         echo wp_kses_post($before_widget); 
     ?>
         <div class="contributors-wrapper clearfix">
-           <h1 class="widget-title"><span><?php if( !empty( $contributors_title )  ){ echo esc_html($contributors_title); } ?></span></h1>     
+           <h1 class="widget-title"><span><?php if( !empty( $contributors_title )  ){ echo esc_attr($contributors_title); } ?></span></h1>     
            <div class="single-user-wrapper">
                  <?php
                     $roles = array( 'Administrator', 'Author', 'Editor' );
