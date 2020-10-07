@@ -28,7 +28,7 @@ function advance_blogging_setup() {
 	) );
 	add_image_size('advance-blogging-homepage-thumb',240,145,true);
 	
-       register_nav_menus( array(
+   	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'advance-blogging' ),
 	) );
 

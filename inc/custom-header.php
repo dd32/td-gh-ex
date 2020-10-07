@@ -11,12 +11,13 @@
 function advance_blogging_custom_header_setup() {
 
 	add_theme_support( 'custom-header', apply_filters( 'advance_blogging_custom_header_args', array(
-
-		'default-text-color'     => 'fff',
-		'header-text' 			 =>	false,
-		'width'                  => 1280,
-		'height'                 => 150,
-		'wp-head-callback'       => 'advance_blogging_header_style',
+		'default-text-color' => 'fff',
+		'header-text' 	     =>	false,
+		'width'              => 1280,
+		'height'             => 150,
+		'flex-height'        => true,
+	    'flex-width'         => true,
+		'wp-head-callback'   => 'advance_blogging_header_style',
 	) ) );
 }
 

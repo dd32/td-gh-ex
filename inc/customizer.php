@@ -12,6 +12,8 @@
  */
 function advance_blogging_customize_register( $wp_customize ) {
 
+	load_template( trailingslashit( get_template_directory() ) . '/inc/icon-changer.php' );
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
@@ -581,6 +583,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'=> 'number',
 	));
 
+	$wp_customize->add_setting('advance_blogging_search_icon',array(
+		'default'	=> 'fas fa-search',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_search_icon',array(
+		'label'	=> __('Search Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
+
 	//Sticky Header
 	$wp_customize->add_setting( 'advance_blogging_sticky_header',array(
       	'sanitize_callback'	=> 'advance_blogging_sanitize_checkbox'
@@ -614,6 +627,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting('advance_blogging_facebook_icon',array(
+		'default'	=> 'fab fa-facebook-f',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_facebook_icon',array(
+		'label'	=> __('Facebook Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
+
 	$wp_customize->add_setting('advance_blogging_facebook_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
@@ -624,6 +648,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'setting'	=> 'advance_blogging_facebook_url',
 		'type'	=> 'url'
 	));
+
+	$wp_customize->add_setting('advance_blogging_twitter_icon',array(
+		'default'	=> 'fab fa-twitter',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_twitter_icon',array(
+		'label'	=> __('Twitter Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
 
 	$wp_customize->add_setting('advance_blogging_twitter_url',array(
 		'default'	=> '',
@@ -636,6 +671,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'	=> 'url'
 	));
 
+	$wp_customize->add_setting('advance_blogging_tumblr_icon',array(
+		'default'	=> 'fab fa-tumblr',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_tumblr_icon',array(
+		'label'	=> __('Tumblr Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
+
 	$wp_customize->add_setting('advance_blogging_tumblr_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
@@ -646,6 +692,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'setting'	=> 'advance_blogging_tumblr_url',
 		'type'	=> 'url'
 	));
+
+	$wp_customize->add_setting('advance_blogging_pinterest_icon',array(
+		'default'	=> 'fab fa-pinterest-p',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_pinterest_icon',array(
+		'label'	=> __('Pinterest Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
 
 	$wp_customize->add_setting('advance_blogging_pinterest_url',array(
 		'default'	=> '',
@@ -658,6 +715,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'	=> 'url'
 	));
 
+	$wp_customize->add_setting('advance_blogging_linkedin_icon',array(
+		'default'	=> 'fab fa-linkedin-in',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_linkedin_icon',array(
+		'label'	=> __('Linkedin Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
+
 	$wp_customize->add_setting('advance_blogging_linkedin_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
@@ -669,6 +737,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'	=> 'url'
 	));
 
+	$wp_customize->add_setting('advance_blogging_instagram_icon',array(
+		'default'	=> 'fab fa-instagram',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_instagram_icon',array(
+		'label'	=> __('Instagram Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
+
 	$wp_customize->add_setting('advance_blogging_insta_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
@@ -679,6 +758,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'setting'	=> 'advance_blogging_insta_url',
 		'type'	=> 'url'
 	));
+
+	$wp_customize->add_setting('advance_blogging_youtube_icon',array(
+		'default'	=> 'fab fa-youtube',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_youtube_icon',array(
+		'label'	=> __('Youtube Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_topbar_header',
+		'type'		=> 'icon'
+	)));
 
 	$wp_customize->add_setting('advance_blogging_youtube_url',array(
 		'default'	=> '',
@@ -1339,6 +1429,17 @@ function advance_blogging_customize_register( $wp_customize ) {
       	'label' => __('Show/Hide Back to Top Button','advance-blogging'),
       	'section' => 'advance_blogging_footer',
 	));
+
+	$wp_customize->add_setting('advance_blogging_back_to_top_icon',array(
+		'default'	=> 'fas fa-arrow-up',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control(new Advance_Blogging_Icon_Changer(
+        $wp_customize, 'advance_blogging_back_to_top_icon',array(
+		'label'	=> __('Back to Top Icon','advance-blogging'),
+		'section'	=> 'advance_blogging_footer',
+		'type'		=> 'icon'
+	)));
 
 	$wp_customize->add_setting('advance_blogging_back_to_top_text',array(
 		'default'	=> '',

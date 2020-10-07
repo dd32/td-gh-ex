@@ -49,30 +49,32 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-11 col-md-10 col-8 social-icons ">
-              <?php if( get_theme_mod( 'advance_blogging_facebook_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_facebook_url' ) != '' && get_theme_mod('advance_blogging_facebook_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_facebook_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_facebook_icon','fab fa-facebook-f')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_twitter_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_twitter_url' ) != '' && get_theme_mod('advance_blogging_twitter_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_twitter_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_twitter_icon','fab fa-twitter')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_tumblr_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_tumblr_url','' ) ); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_tumblr_url' ) != '' && get_theme_mod('advance_blogging_tumblr_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_tumblr_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_tumblr_icon','fab fa-tumblr')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_pinterest_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_pinterest_url' ) != '' && get_theme_mod('advance_blogging_pinterest_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_pinterest_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_pinterest_icon','fab fa-pinterest-p')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_linkedin_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_linkedin_url' ) != '' && get_theme_mod('advance_blogging_linkedin_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_linkedin_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_linkedin_icon','fab fa-linkedin-in')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_insta_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_insta_url' ) != '' && get_theme_mod('advance_blogging_instagram_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_insta_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_instagram_icon','fab fa-instagram')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_youtube_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_youtube_url' ) != '' && get_theme_mod('advance_blogging_youtube_icon') != 'None') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_youtube_url','' ) ); ?>"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_youtube_icon','fab fa-youtube')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-blogging' );?></span></a>
               <?php } ?>
             </div>
             <div class="search-box col-lg-1 col-md-2 col-4">
-              <span class="search-icon"><button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button></span>
+              <?php if(get_theme_mod('advance_blogging_search_icon') != 'None') {?>
+                <span class="search-icon"><button type="button" data-toggle="modal" data-target="#myModal"><i class="<?php echo esc_html(get_theme_mod('advance_blogging_search_icon','fas fa-search')); ?>"></i></button></span>
+              <?php }?>
             </div>
             <div class="modal fade-in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
