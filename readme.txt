@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
-Version: 1.0.0
+Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -47,6 +47,9 @@ Alante Minimal is a child theme or Alante and as such uses the same opensource p
 
 
 == Changelog ==
+
+= 1.0.1
+- Fixed:   Improved focus styling on buttons for accessible users.
 
 = 1.0.0
 - New:     Initial release.

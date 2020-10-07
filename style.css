@@ -2,7 +2,7 @@
 Theme Name: Alante Minimal
 Template: alante
 Text Domain: alante-minimal
-Version: 1.0.0
+Version: 1.0.1
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
@@ -293,7 +293,6 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .widget_search .search {
 	box-shadow: none;
 	height: 40px;
-	outline: none;
 }
 #sidebar .widget {
 	padding: 90px 0px 20px 0px;
@@ -424,7 +423,6 @@ input[type="reset"],
 input[type="submit"] {
 	text-transform: uppercase;
 	font-weight: 700;
-	outline: none;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	-ms-border-radius: 20px;
