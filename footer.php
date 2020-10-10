@@ -8,9 +8,9 @@
  *
  * @package Aak
  */
-
+$aak_topfooter_show = get_theme_mod( 'aak_topfooter_show', '1' );
 ?>
-<?php if(is_active_sidebar( 'footer-widget' )): ?>
+<?php if(is_active_sidebar( 'footer-widget' )  && $aak_topfooter_show ): ?>
 	<div class="footer-top mt-5 pb-5 pt-5 bg-dark">
 		<div class="footer-widget">
 			<div class="container">

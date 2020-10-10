@@ -1,9 +1,20 @@
+
 ( function( $ ) {
-	
+	"use strict";
+
+	jQuery(document).ready(function($){
+
+	$('#primary-menu li.menu-item').addClass('menuhide');
+	$('#primary-menu li.menu-item').on('click', function(){
+	$(this).removeClass('menuhide');
+	});
+
 	$('.mini-toggle').on('click', function(){
 	   $(this).parent().toggleClass('menushow');
 	});
-	//$('#primary-menu li').addClass('befocus menushow');
+	
+
+	}); // document ready
 
 	$.fn.aakAccessibleDropDown = function () {
 		 var el = $(this);

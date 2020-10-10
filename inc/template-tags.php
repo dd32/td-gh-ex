@@ -12,6 +12,11 @@ if ( ! function_exists( 'aak_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function aak_posted_on() {
+		$aak_blogdate_show = get_theme_mod( 'aak_blogdate_show','1' );
+		if(empty($aak_blogdate_show)){
+			return;
+		}
+
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -41,6 +46,10 @@ if ( ! function_exists( 'aak_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function aak_posted_by() {
+		$aak_blogauthor_show = get_theme_mod( 'aak_blogauthor_show','1' );
+		if(empty($aak_blogauthor_show)){
+			return;
+		}
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( '- %s', 'post author', 'aak' ),
@@ -61,14 +70,16 @@ if ( ! function_exists( 'aak_entry_footer' ) ) :
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'aak' ) );
-			if ( $categories_list ) {
+			$aak_postcat_show = get_theme_mod( 'aak_postcat_show', 1 );
+			if ( $categories_list && $aak_postcat_show ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'aak' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'aak' ) );
-			if ( $tags_list ) {
+			$aak_posttags_show = get_theme_mod( 'aak_posttags_show', 1 );
+			if ( $tags_list && $aak_posttags_show ) {
 				/* translators: 1: list of tags. */
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'aak' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}

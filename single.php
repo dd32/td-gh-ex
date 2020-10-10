@@ -9,18 +9,26 @@
 
 get_header();
 
-if ( is_active_sidebar( 'sidebar-1' ) ) {
+$aak_blog_container = get_theme_mod( 'aak_blog_container', 'container');
+$aak_blog_layout = get_theme_mod( 'aak_blog_layout', 'rightside');
+
+if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout != 'fullwidth' ) {
 	$aak_column_set = '9';
 }else{
 	$aak_column_set = '12';
 }
 
-
 ?>
-<div class="container mt-3 mb-5 pt-5 pb-3">
+<div class="<?php echo esc_attr($aak_blog_container); ?> mt-3 mb-5 pt-5 pb-3">
 	<div class="row">
+		<?php if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout == 'leftside' ): ?>
+			<div class="col-lg-3">
+				<?php get_sidebar(); ?>
+			</div>
+		<?php endif; ?>
 		<div class="col-lg-<?php echo esc_attr($aak_column_set); ?>">
 			<main id="primary" class="site-main">
+
 
 				<?php
 				while ( have_posts() ) :
@@ -45,7 +53,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 
 			</main><!-- #main -->
 		</div>
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+	<?php if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout == 'rightside' ): ?>
 		<div class="col-lg-3">
 			<?php get_sidebar(); ?>
 		</div>

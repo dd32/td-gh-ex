@@ -4,7 +4,10 @@
 * The file for display blog content for aak theme
 *
 */
-
+$aak_blogdate = get_theme_mod( 'aak_blogdate', 1 );
+$aak_blogauthor = get_theme_mod( 'aak_blogauthor', 1 );
+$aak_postcat_show = get_theme_mod( 'aak_postcat_show', 1 );
+$aak_posttags_show = get_theme_mod( 'aak_posttags_show', 1 );
 ?>
 <div class="aak-single-list">
 	<header class="entry-header text-center mb-5">
@@ -19,8 +22,12 @@
 				?>
 				<div class="entry-meta">
 					<?php
-					aak_posted_on();
-					aak_posted_by();
+					if($aak_blogdate){
+						aak_posted_on();
+					}
+					if($aak_blogauthor){
+						aak_posted_by();
+					}
 					?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
@@ -59,10 +66,10 @@
 
 			?>
 		</div><!-- .entry-content -->
-
+	<?php if($aak_postcat_show || $aak_posttags_show): ?>
 		<footer class="entry-footer">
 			<?php aak_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
-
+	<?php endif; ?>
 		
 	</div>

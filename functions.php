@@ -9,7 +9,7 @@
 
 if ( ! defined( 'AAK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'AAK_VERSION', '1.0.1' );
+	define( 'AAK_VERSION', '1.0.2' );
 }
 
 if ( ! function_exists( 'aak_setup' ) ) :
@@ -50,7 +50,8 @@ if ( ! function_exists( 'aak_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'aak' ),
+				'menu-top' => esc_html__( 'Top Menu', 'aak' ),
+				'menu-1' => esc_html__( 'Main Menu', 'aak' ),
 			)
 		);
 
@@ -147,7 +148,7 @@ function aak_widgets_init() {
 			'name'          => esc_html__( 'Footer Widget', 'aak' ),
 			'id'            => 'footer-widget',
 			'description'   => esc_html__( 'Add Footer widgets here.', 'aak' ),
-			'before_widget' => '<div class="col-lg-3"><div id="%1$s" class="widget %2$s">',
+			'before_widget' => '<div class="col-lg-3"><div id="%1$s" class="widget footer-widget-item %2$s">',
 			'after_widget'  => '</div></div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
@@ -162,6 +163,38 @@ function aak_gb_block_style() {
 
 }
 add_action( 'enqueue_block_assets', 'aak_gb_block_style' );
+
+
+
+/**
+ * Beshop Google fonts fuction
+ */
+if ( ! function_exists( 'aak_body_fonts' ) ) :
+function aak_body_fonts() {
+ $aak_body_fonts = get_theme_mod('aak_body_fonts','Poppins');
+ $aak_head_fonts = get_theme_mod('aak_head_fonts','Lato');
+
+	$fonts_url = '';
+
+		$font_families = array();
+	if( $aak_body_fonts == $aak_head_fonts ){
+		$font_families[] = $aak_body_fonts.':300,400,500,600,700,800';
+	}else{
+		$font_families[] = $aak_body_fonts.':300,400,500,600,700,800';
+		$font_families[] = $aak_head_fonts.':300,400,500,600,700,800';
+	}
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+	return esc_url_raw( $fonts_url );
+}
+endif;
+
+
 
 /**
  * Enqueue scripts and styles.
@@ -198,16 +231,31 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+/**
+ * plugin recomended
+ */
+require get_template_directory() . '/inc/plugin-recomended.php';
 
 /**
- * Customizer additions.
+ * nav walker
  */
 require get_template_directory() . '/inc/class-walker-nav-menu.php';
 require get_template_directory() . '/inc/class-aak-walker-page.php';
 /**
- * nav walker
+ * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer-helper.php';
+/**
+ * header action
+ */
+require get_template_directory() . '/inc/header-action/header-top.php';
+require get_template_directory() . '/inc/header-action/header-style.php';
+
+/**
+ * inline style
+ */
+require get_template_directory() . '/inc/inline-style.php';
 
 
 /**

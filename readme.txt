@@ -5,12 +5,12 @@ Tags: blog, news, education, custom-logo, one-column, two-columns, grid-layout, 
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5.1
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
 == Description ==
-AAK is a highly customizable and lightweight multi-purpose WordPress theme that makes it easy for you to create your awesome website. You can use the theme for any type of website from blogs, magazine, news, businesses, online shops, creatives, hotels, restaurants, startups and more. With AAK you get the perfect blend of performance, modern design and powerful, yet simple to use options. Works perfectly with the new block editor (Gutenberg) and your favorite plugins such as: WooCommerce, JetPack,Elementor page builders, SEO plugins and others. The theme has lots of header and footer <opitons class=""></opitons> 
+AAK is a highly customizable and lightweight multi-purpose WordPress theme that makes it easy for you to create your awesome website. You can use the theme for any type of website from blogs, magazine, news, businesses, online shops, creatives, hotels, restaurants, startups and more. With AAK you get the perfect blend of performance, modern design and powerful, yet simple to use options. Works perfectly with the new block editor (Gutenberg) and your favorite plugins such as: WooCommerce, JetPack,Elementor page builders, SEO plugins and others. The theme has lots of header and footer options.
 
 == Installation ==
 
@@ -70,6 +70,16 @@ Source:https://pxhere.com/en/photo/683887
 
 
 == Changelog ==
+
+= 1.0.2 - October 9 2020 =
+* Added top menu and top menu opitons
+* Added two diffrent menu style
+* Added diffrent menu logo position
+* Added theme typography
+* Added posts sidebar and container
+* Added page sidebar and container
+* Added  opitons and color for footer top
+* Added opitons and color for footer bottom
 
 = 1.0.1 - October 5 2020 =
 * Removed 2nd argument from load_theme_textdomain function

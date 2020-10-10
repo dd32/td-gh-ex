@@ -12,12 +12,59 @@ a:hover,
 a:visited{
     color:#ec2b8c;
 }
-
+a.post-thumbnail {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+}
 /* header style
 --------------------------------------------- */
+/*Header top*/
+.aaktop-menu,
+.aaktop-menu ul {
+    display: flex;
+}
+
+.aaktop-menu li {
+    padding: 0 10px;
+}
+.aaktop-tophead, 
+.aaktop-tophead a, 
+.aaktop-tophead span, 
+.aaktop-tophead input {
+    font-size: 13px;
+}
+.aaktop-tophead a:hover{
+    color:#dedede;
+}
+.topmenu-serch {
+    display: flex;
+    align-items: baseline;
+    flex-flow: row wrap;
+}
+.header-top-search input[type="submit"] {
+    display: none;
+}
+
+.header-top-search input[type="search"] {
+    width: 100%;
+    padding: 3px 7px;
+}
+.header-top-search {
+    width: 200px;
+    margin-left: 10px;
+}
+.header-top-search label {
+    width: 100%;
+    margin: 0;
+}
+.aaktop-tophead .row{
+    align-items: baseline;
+}
 .brand-menubar{
     -webkit-box-shadow: 0 0 70px rgba(0,0,0,.11);
     box-shadow: 0 0 70px rgba(0,0,0,.11);
+    position: relative;
 }
 .aak-header .site-title {
     font-weight: 500;
@@ -39,6 +86,29 @@ p.site-description {
 
 p.site-description {
     display: inline-block;
+}
+
+.aak-main-menu.menu-right ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.aak-main-menu.menu-center ul{
+    display: flex;
+    justify-content: center;
+}
+.d-flex.aak-logo-left {
+    align-items: center;
+}
+.d-flex.aak-logo-right {
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.d-flex.aak-logo-center {
+    flex-flow: column wrap;
+    align-items: center;
+}
+.aak-logo-center .headerlogo-text {
+    padding: 10px 0 0;
 }
 
 /* Widgets - sidebar
@@ -76,13 +146,13 @@ h3.widget-title {
     border: 2px solid #000;
     background: transparent;
     text-transform: uppercase;
-    height: 33px;
+    min-height: 33px;
     color:#000;
 }
 
 .widget .search-form input {
     padding: 5px 9px;
-    height: 35px;
+    min-height: 35px;
 }
 
 .widget .search-form input.search-submit:hover {
@@ -98,6 +168,7 @@ h2.widget-title {
     padding: 10px 5px;
     margin-bottom: 20px;
 }
+
 .footer-widget, 
 .footer-widget p, 
 .footer-widget a, 
@@ -107,9 +178,11 @@ h2.widget-title {
 }
 
 .footer-widget .widget-title {
-    color: #000;
+    background: inherit;
+    color: #fff;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
 }
-
 .footer-widget ul li {
     border-bottom: 1px solid #555;
 }
@@ -129,7 +202,23 @@ h2.widget-title {
     display: -ms-flexbox;
     display: flex;
 }
+.card.aak-list-blog {
+    box-shadow: 0 0 70px rgba(0,0,0,.11);
+}
+.card-text.col-lg-8.col-md-6.col-sm-12 {
+    padding-left: 0;
+}
 
+.card-body-text h5 {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+.card-body-text {
+    padding: 5px 15px 5px 5px;
+}
+.aakno-img .card-body-text {
+    padding: 15px;
+}
 .aak-blog-text,
 .aak-blog-img {
     width: 50%;
@@ -255,7 +344,16 @@ form.post-password-form p {
         text-align: right;
         width: 180px;
     }
-
+    /*.aadhs-two .aak-main-nav {
+        float: right;
+    }*/
+    .aak-main-nav {
+        text-align: center;
+    }
+    .aakmstyle1 .aak-main-menu {
+        width: 100%;
+        position: relative;
+    }
     .site-navigation {
         position: relative;
     }
@@ -263,12 +361,14 @@ form.post-password-form p {
     .menu-testing-menu-container {
         position: absolute;
         right: 0;
-        top: 126px;
+        top: 60px;
         max-width: 450px;
         text-align: left;
         background: #fff;
         z-index: 9999;
         box-shadow: 0 0 70px rgba(0,0,0,.11);
+        left: 0;
+        margin: auto;
     }
     .aak-blog-text, 
     .aak-blog-img {
@@ -287,13 +387,36 @@ form.post-password-form p {
     }
     .main-navigation ul> li.befocus.menushow> ul.sub-menu,
     .main-navigation ul> li.befocus.menushow> ul.children{
+        display: block !important;
+    }
+    .main-navigation ul> li.befocus> ul.sub-menu,
+    .main-navigation ul> li.befocus> ul.children{
         display: none !important;
     }
 
 }
+@media screen and (max-width: 767px) {
+    span.bhtop-text.pt-2 {
+        display: block;
+        text-align: center;
+    }
+    .d-flex.aak-menu-wrap {
+        flex-flow: column wrap;
+    }
+    .card-text.col-lg-8.col-md-6.col-sm-12 {
+        padding-left: 15px;
+    }
+    .card-body-text {
+        padding: 15px;
+    }
+
+ }
 @media screen and (max-width: 480px) {
     .aakmenu-display.d-flex {
         flex-direction: column;
+    }
+    .topmenu-serch {
+        justify-content: center;
     }
     .aak-main-nav {
         text-align: center;

@@ -5,6 +5,13 @@
 *
 */
 $aak_categories_list = get_the_category_list( esc_html__( ', ', 'aak' ) );
+$aak_blog_style = get_theme_mod( 'aak_blog_style', 'grid');
+$aak_postcat_show = get_theme_mod( 'aak_postcat_show', 1 );
+
+
+if(!is_single() && $aak_blog_style == 'list'):
+	get_template_part( 'template-parts/list', 'blog' );
+else:
 
 ?>
 
@@ -28,7 +35,7 @@ $aak_categories_list = get_the_category_list( esc_html__( ', ', 'aak' ) );
       <footer class="blockquote-footer">
         <small class="text-muted">
         <?php
-         if ( $aak_categories_list ) {
+         if ( $aak_categories_list && $aak_postcat_show ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( '- %1$s', 'aak' ) . '</span>', $aak_categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			} ?>
@@ -37,3 +44,4 @@ $aak_categories_list = get_the_category_list( esc_html__( ', ', 'aak' ) );
       </footer>
     </div>
   </div>
+<?php endif; ?>

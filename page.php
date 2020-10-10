@@ -12,18 +12,24 @@
  * @package Aak
  */
 
-get_header();
+$aak_page_container = get_theme_mod( 'aak_page_container', 'container');
+$aak_page_layout = get_theme_mod( 'aak_page_layout', 'rightside');
 
-if ( is_active_sidebar( 'sidebar-1' ) ) {
+if ( is_active_sidebar( 'sidebar-1' ) && $aak_page_layout != 'fullwidth' ) {
 	$aak_column_set = '9';
 }else{
 	$aak_column_set = '12';
 }
-
+get_header();
 
 ?>
-<div class="container mt-3 mb-5 pt-5 pb-3">
+<div class="<?php echo esc_attr($aak_page_container); ?> mt-3 mb-5 pt-5 pb-3">
 	<div class="row">
+		<?php if ( is_active_sidebar( 'sidebar-1' ) && $aak_page_layout == 'leftside' ): ?>
+			<div class="col-lg-3">
+				<?php get_sidebar(); ?>
+			</div>
+		<?php endif; ?>
 		<div class="col-lg-<?php echo esc_attr($aak_column_set); ?>">
 			<main id="primary" class="site-main">
 
@@ -43,13 +49,12 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 
 			</main><!-- #main -->
 		</div>
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+	<?php if ( is_active_sidebar( 'sidebar-1' ) && $aak_page_layout == 'rightside' ): ?>
 		<div class="col-lg-3">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endif; ?>
 	</div> <!-- end row -->
 </div> <!-- end container -->
-
 <?php
 get_footer();
