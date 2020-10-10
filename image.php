@@ -43,8 +43,8 @@ get_header(); ?>
 									esc_html( get_the_modified_date() )
 								);
 
-								$image = wp_get_attachment_image_src( $post->ID, 'full' );
-								echo '<p><a class="button post-image" href="' . $image[0] . '">' . __( 'View Full-size Image', 'arbutus' ) . '</a>';
+								$url = esc_url( wp_get_original_image_url( $post->ID ) );
+								echo '<p><a class="button post-image" href="' . $url . '">' . __( 'View Full-size Image', 'arbutus' ) . '</a>';
 								edit_post_link( __( 'Edit', 'arbutus' ), '<span class="edit-link">', '</span>' );
 							?>
 						</footer><!-- .entry-footer -->
@@ -60,6 +60,9 @@ get_header(); ?>
 									'before' => '<div class="page-links">' . __( 'Pages:', 'arbutus' ),
 									'after'  => '</div>',
 								) );
+
+								// Display the image at large size with link to full
+								echo '<a href="' . $url . '">' . wp_get_attachment_image( $post->ID, 'large' ) . '</a>';
 							?>
 							
 						</div>

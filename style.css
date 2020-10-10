@@ -4,14 +4,14 @@ Theme URI: http://themes.halsey.co/arbutus/
 Author: Nick Halsey
 Author URI: https://celloexpressions.com/
 Description: Arbutus is a minimalist photography theme that transforms your site into a visually stimulating canvas of cleanly layered images and content. Meticulously designed with simplicity in mind, Arbutus displays your content with no distractions. Arbutus features opinionated post format designs so that all types of content can be displayed in a way that captures the attention of your viewers. The home page includes an optional header image or video, which is displayed in a large featured section with your site logo, title, and tagline. Arbutus is a theme that emphasizes images and content through a simple modern design, providing a site experience that your users are sure to enjoy.
-Version: 1.1.5
+Version: 1.2
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arbutus
-Tags: one-column, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, translation-ready, photography, accessibility-ready
+Tags: one-column, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, translation-ready, photography, accessibility-ready, wide-blocks
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -320,6 +320,7 @@ table {
 
 th {
 	font-weight: bold;
+	background: hsl(220, 10%, 88%);
 }
 
 /*--------------------------------------------------------------
@@ -349,7 +350,7 @@ input[type="submit"] {
 	background: hsl(220, 80%, 35%);
 	color: hsl(220, 0%, 100%);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	display: block;
+	display: inline-block;
 	font-size: 14px;
 	line-height: 1;
 	padding: 13px 18px;
@@ -562,7 +563,7 @@ a[aria-current] {
 }
 
 .wp-caption.alignleft,
-.wp-block-iimage .alignleft {
+.wp-block-image .alignleft {
 	margin-right: 1.5em;
 }
 
@@ -570,6 +571,41 @@ a[aria-current] {
 .wp-block-image .alignright {
 	margin-left: 1.5em;
 }
+
+
+/**
+ * Full & wide block alignments
+ */
+
+@media screen and (min-width: 601px) {
+	.alignfull,
+	.alignwide {
+		margin-left: calc(-100vw / 2 + 960px / 2 - 304px + 8px); /* 1/2 content width - viewport width - post meta float */
+		margin-right: calc(-100vw / 2 + 960px / 2 + 9px);
+		text-align: center;
+		width: auto;
+		max-width: 100vw;
+	}
+}
+
+@media screen and (min-width:1280px) {
+	.alignwide {
+		width: 1280px;
+		margin-left: calc(-304px - 160px); /* 304px left float for post meta + (1280-960)/2 */
+		margin-right: -160px;
+	}
+}
+
+.alignwide figcaption,
+.alignfull figcaption,
+.wp-block-image.alignwide figcaption,
+.wp-block-image.alignfull figcaption {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 16px 0;
+	text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -684,7 +720,7 @@ object {
 .blocks-gallery-caption,
 .wp-block-embed figcaption {
 	text-align: center;
-	margin: 16px 0;
+	margin: 0 auto;
 	color: inherit;
 	line-height: inherit;
 	font-size: 16px;
@@ -803,9 +839,7 @@ a:active,
 	opacity: 0.8;
 }
 
-.custom-logo-link:focus img,
-.custom-logo-link:active img,
-.custom-logo-link:hover img {
+.custom-logo-link:focus img {
 	box-shadow: 0 0 0 3px inset;
 }
 
@@ -1873,6 +1907,13 @@ input.search-field {
 
 .has-accent-dark-background-color {
 	background-color: hsl(220, 80%, 35%);
+}
+
+.wp-block-image .aligncenter>figcaption,
+.wp-block-image .alignleft>figcaption,
+.wp-block-image .alignright>figcaption,
+.wp-block-image.is-resized>figcaption {
+	display: block;
 }
 
 /* Media Queries */

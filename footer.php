@@ -20,9 +20,9 @@
 
 	<?php endif; ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<div class="inner">
-			<div class="site-info">
+			<div class="site-info" role="contentinfo">
 				<?php arbutus_footer_credits(); ?>
 			</div><!-- .site-info -->
 		</div><!-- .inner -->

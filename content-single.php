@@ -54,7 +54,7 @@
 					edit_post_link( __( 'Edit', 'arbutus' ), '<span class="edit-link">', '</span>' );
 				?>
 			</footer><!-- .entry-footer -->
-			<div class="single-content <?php if ( arbutus_content_in_columns() ) { echo 'columns'; } ?>">
+			<div class="single-content">
 				<?php /* translators: %s is the post title */
 				the_content( sprintf( __( 'Continue reading %s', 'arbutus' ),
 					'<span class="screen-reader-text">' . get_the_title() .

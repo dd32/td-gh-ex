@@ -53,7 +53,7 @@ button,
 input,
 select,
 textarea {
-	color: #222;
+	color: hsl(220, 10%, 13%);
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
@@ -122,7 +122,7 @@ address {
 }
 
 pre {
-	background: #eee;
+	background: hsl(220, 10%, 88%);
 	font-family: monospace;
 	font-size: 16px;
 	line-height: 1.2;
@@ -139,12 +139,12 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted hsl(220, 10%, 35%);
 	cursor: help;
 }
 
 mark, ins {
-	background: #fff9c0;
+	background: hsl(220, 10%, 88%);
 	text-decoration: none;
 }
 
@@ -177,7 +177,7 @@ big {
 3.0 Elements
 --------------------------------------------------------------*/
 hr {
-	background-color: #ccc;
+	background-color: hsl(220, 10%, 88%);
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -225,6 +225,7 @@ table {
 
 th {
 	font-weight: bold;
+	background: hsl(220, 10%, 88%);
 }
 
 /*--------------------------------------------------------------
@@ -236,10 +237,10 @@ th {
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	background: #2c12ed;
-	color: #fff;
+	background: hsl(220, 80%, 35%);
+	color: hsl(220, 10%, 100%);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	display: block;
+	display: inline-block;
 	font-size: 14px;
 	line-height: 1;
 	padding: 13px 18px;
@@ -250,8 +251,8 @@ th {
 .wp-block-button__link:focus,
 .button:hover,
 .wp-block-button__link:hover {
-	background: #222;
-	color: #fff;
+	background: hsl(220, 10%, 13%);
+	color: hsl(220, 10%, 100%);
 }
 
 .button:active,
@@ -373,22 +374,21 @@ object {
 
 /* Arbutus Styles */
 ::selection {
-	background: #2c12ed;
-	color: #fff;
+	background: hsl(220, 80%, 35%);
+	color: hsl(220, 0%, 100%);
 }
 
 .block-editor-block-list__layout .block-editor-block-list__block ::selection {
-	background: #2c12ed;
-	color: #fff;
+	background: hsl(220, 80%, 35%);
+	color: hsl(220, 0%, 100%);
 }
 
 html .mceContentBody { /* classic editor only */
 	margin: 0;
 	padding: 0;
 	font: normal 16px/24px 'Open Sans', sans-serif;
-	background: #fff;
-	color: #222;
-
+	background: hsl(220, 0%, 100%);
+	color: hsl(220, 10%, 13%);
 	width: 100%;
 	max-width: 660px;
 	margin: 0 auto;
@@ -397,8 +397,8 @@ html .mceContentBody { /* classic editor only */
 /* Override block editor default styling */
 .mce-content-body {
 	font: normal 16px/24px 'Open Sans', sans-serif;
-	background: #fff;
-	color: #222;
+	background: hsl(220, 0%, 100%);
+	color: hsl(220, 10%, 13%);
 }
 
 /* Main column width */
@@ -409,6 +409,11 @@ html .mceContentBody { /* classic editor only */
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
 	max-width: 1280px;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+    max-width: none;
 }
 
 .editor-post-title__block .editor-post-title__input { /* Post title in block editor */
@@ -433,32 +438,32 @@ a.button {
 a:hover,
 a:focus,
 a:active {
-	color: #2c12ed;
+	color: hsl(220, 80%, 35%);
 	text-decoration: none;
 }
 
 .post-format-aside {
-	background: #ccc;
+	background: hsl(220, 10%, 88%);
 	font-size: 20px;
 	line-height: 32px;
 }
 
 .post-format-aside .inner p:first-child:first-letter {
-	background: #222;
-	color: #fff;
+	background: hsl(220, 10%, 13%);
+	color: hsl(220, 0%, 100%);
 	padding: 4px 8px;
 	font-weight: bold;
 }
 
 .post-format-quote {
-	background: #222;
-	color: #fff;
+	background: hsl(220, 10%, 13%);
+	color: hsl(220, 0%, 100%);
 	font-size: 20px;
 	line-height: 32px;
 }
 
 .post-format-quote a {
-	color: #ccc;
+	color: hsl(220, 10%, 88%);
 }
 
 .post-format-quote blockquote {
@@ -476,17 +481,17 @@ a:active {
 }
 
 .post-format-gallery {
-	background: #222;
-	color: #fff;
+	background: hsl(220, 10%, 13%);
+	color: hsl(220, 0%, 100%);
 }
 
 .wp-block[data-type="core/gallery"] { /* Block editor doesn't provide the editor class format. We can only quess that a gallery block might be in a gallery-format post, and style at lest the gallery with the correct color. */
-	background: #222;
-	color: #fff;
+	background: hsl(220, 10%, 13%);
+	color: hsl(220, 0%, 100%);
 }
 
 .post-format-gallery a {
-	color: #ccc;
+	color: hsl(220, 10%, 88%);
 }
 
 /* Galleries - classic editor only */
@@ -584,8 +589,8 @@ a:active {
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
 	box-sizing: border-box;
-	color: #fff;
-	background: #222;
+	color: hsl(220, 0%, 100%);
+	background: hsl(220, 10%, 13%);
 	font-size: 14px;
 	line-height: 1.2;
 	margin: 0;
@@ -618,7 +623,7 @@ a:active {
 /* Audio/video formats */
 .post-format-audio,
 .post-format-video {
-	background: #ccc;
+	background: hsl(220, 10%, 88%);
 }
 
 
@@ -632,7 +637,7 @@ a:active {
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-	background: #2c12ed;
+	background: hsl(220, 80%, 35%);
 }
 
 .mejs-container {

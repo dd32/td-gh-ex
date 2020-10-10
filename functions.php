@@ -58,7 +58,7 @@ function arbutus_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style'
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style', 'navigation-widgets'
 	) );
 
 	/*
@@ -116,6 +116,7 @@ function arbutus_setup() {
 		'width' => 230,
 		'flex-width' => true,
 		'header-text' => array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo' => true,
 	) );
 
 	/**
@@ -128,6 +129,13 @@ function arbutus_setup() {
 
 	// Disable color pickers in the editor in favor of theme colors.
 	add_theme_support( 'disable-custom-colors' );
+
+	// Disable gradients.
+	add_theme_support( 'disable-custom-gradients' );
+	add_theme_support( 'editor-gradient-presets', array() );
+
+	// Add support for wide alignments in the block editor;
+	add_theme_support( 'align-wide' );
 
 	// Load classic editor styles into the block editor.
 	add_theme_support( 'editor-styles' );

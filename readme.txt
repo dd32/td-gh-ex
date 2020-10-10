@@ -1,11 +1,11 @@
 === Arbutus ===
 Contributors: celloexpressions
-Tags: one-column, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, translation-ready, photography, accessibility-ready
+Tags: one-column, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, translation-ready, photography, accessibility-ready, wide-blocks
 Requires at least: 5.4
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
 License: GPLv2 or later
-Stable tag: 1.1.5
+Stable tag: 1.2
 Description: Arbutus is a minimalist photography theme that transforms your site into a visually stimulating canvas of cleanly layered images and content.
 
 == Description ==
@@ -70,9 +70,16 @@ You should have received a copy of the GNU General Public License
 along with WordPress. If not, see <http://www.gnu.org/licenses/ >.
 
 == Changelog ==
+= 1.2 =
+* Add support for wide block alignments
+* Improve single-image page display
+* Sync editor styles
+* Add full and wide block alignment support
+* Updates for WordPress 5.5
+
 = 1.1 =
 * Updates for WordPress 4.3 - 5.4.
-* Hue slide color scheme strategy.
+* Hue slider color scheme strategy.
 * Coordinated updates with sister theme Visualize.
 
 = 1.0 =

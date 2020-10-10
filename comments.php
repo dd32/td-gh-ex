@@ -48,7 +48,7 @@ if ( post_password_required() ) {
 
 
 	<?php if ( have_comments() ) : ?>
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation" aria-label="<?php esc_attr( _x( 'Comment', 'comment navigation', 'arbutus' ) ); ?>">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'arbutus' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '<span aria-hidden="true">&larr;</span> Older Comments', 'arbutus' ) ); ?></div>
