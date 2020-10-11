@@ -4,7 +4,7 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
 Requires at least: 5.2
 Requires PHP: 5.6
 Tested up to: 5.5
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 Description: Figure/Ground is a bold blogging theme featuring a dynamic background and extensive customization options. 
 License: GPLv2
 

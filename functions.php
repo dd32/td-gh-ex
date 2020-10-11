@@ -310,7 +310,7 @@ function figureground_excerpt_more( $more ) {
 
 	global $post;
 	
-	$title = sprintf ( __( 'Read more %s', 'arbutus' ),
+	$title = sprintf ( __( 'Read more %s', 'figureground' ),
 		'<span class="screen-reader-text">' . esc_html( get_the_title() ) .
 		' </span><span class="meta-nav" aria-hidden="true"> &rarr;</span>' );
 
