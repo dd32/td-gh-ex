@@ -28,17 +28,19 @@ get_header(); ?>
                             else :
                             get_template_part( 'no-results', 'archive' ); 
                             endif; 
-                        ?>                
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                                    'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        ?>
+                        <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                        'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div>
+                        <?php } ?> 
                     </div>
                 </div>
             <?php }else if($bb_wedding_bliss_left_right == 'Right Sidebar'){ ?>
@@ -57,16 +59,18 @@ get_header(); ?>
                                 get_template_part( 'no-results', 'archive' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                                    'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                        'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div>
+                        <?php } ?> 
                     </div>
                     <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
                 </div>
@@ -84,16 +88,18 @@ get_header(); ?>
                         get_template_part( 'no-results', 'archive' ); 
                     endif; 
                 ?>
-                <div class="navigation">
-                    <?php
-                        // Previous/next page navigation.
-                        the_posts_pagination( array(
-                            'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                            'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                        ) );
-                    ?>
-                </div> 
+                <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                    <div class="navigation">
+                        <?php
+                            // Previous/next page navigation.
+                            the_posts_pagination( array(
+                                'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                            ) );
+                        ?>
+                    </div>
+                <?php } ?>  
             <?php }else if($bb_wedding_bliss_left_right == 'Three Columns'){ ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
@@ -111,16 +117,18 @@ get_header(); ?>
                             get_template_part( 'no-results', 'archive' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                                    'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                        'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div>
+                        <?php } ?> 
                     </div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
                 </div>
@@ -141,16 +149,18 @@ get_header(); ?>
                                 get_template_part( 'no-results', 'archive' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                                    'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                        'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div>
+                        <?php } ?> 
                     </div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
@@ -171,16 +181,18 @@ get_header(); ?>
                                 get_template_part( 'no-results', 'archive' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                                    'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                        'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div>
+                        <?php } ?>  
                     </div>
                     <div class="col-lg-3 col-md-3"><?php get_sidebar();?></div>
                 </div>
@@ -200,16 +212,18 @@ get_header(); ?>
                                 get_template_part( 'no-results', 'archive' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
-                                    'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'bb_wedding_bliss_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'bb-wedding-bliss' ),
+                                        'next_text'          => __( 'Next page', 'bb-wedding-bliss' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div>
+                        <?php } ?>  
                     </div>
                     <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
                 </div>

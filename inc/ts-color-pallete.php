@@ -354,3 +354,17 @@
 		$bb_wedding_bliss_custom_css .='}';
 	}
 
+	// slider overlay
+	$bb_wedding_bliss_slider_overlay = get_theme_mod('bb_wedding_bliss_slider_overlay', true);
+	if($bb_wedding_bliss_slider_overlay == false){
+		$bb_wedding_bliss_custom_css .='#slider img{';
+			$bb_wedding_bliss_custom_css .='opacity:1;';
+		$bb_wedding_bliss_custom_css .='}';
+	} 
+	$bb_wedding_bliss_slider_image_overlay_color = get_theme_mod('bb_wedding_bliss_slider_image_overlay_color', true);
+	if($bb_wedding_bliss_slider_overlay != false){
+		$bb_wedding_bliss_custom_css .='#slider{';
+			$bb_wedding_bliss_custom_css .='background-color: '.esc_html($bb_wedding_bliss_slider_image_overlay_color).';';
+		$bb_wedding_bliss_custom_css .='}';
+	}
+

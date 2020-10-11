@@ -55,3 +55,7 @@ input#_customize-input-bb_wedding_bliss_slider_excerpt_length{
 ul#sub-accordion-section-bb_wedding_bliss_product_button_section{
   border: none !important;
 }
+.customize-control-checkbox label {
+  font-weight: 600;
+  font-size: 14px;
+}
