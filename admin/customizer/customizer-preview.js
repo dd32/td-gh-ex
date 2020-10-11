@@ -135,7 +135,13 @@ jQuery(document).ready(function($) {
 	
 	/* Top Bar */
 	wp.customize('graphene_settings[top_bar_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.top-bar {background-color:' + to + '}');
+		$('#graphene-preview-css').append('.top-bar{background-color:' + to + '} .top-bar .searchform .btn-default, #top_search .searchform .btn-default{color:' + to + '}');
+	});	});
+	wp.customize('graphene_settings[top_bar_fg]', function(value){ value.bind(function(to){
+		$('#graphene-preview-css').append('.top-bar, .top-bar input{color:' + to + '} .top-bar .searchform .btn-default, #top_search .searchform .btn-default{background:' + to + '}');
+	});	});
+	wp.customize('graphene_settings[top_bar_link]', function(value){ value.bind(function(to){
+		$('#graphene-preview-css').append('.top-bar a, .top-bar a:hover {color:' + to + '}');
 	});	});
 
 

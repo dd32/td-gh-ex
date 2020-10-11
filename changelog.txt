@@ -4,6 +4,16 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.8.2 [11-10-2020]
+	* Added: Top bar foreground and links colour options
+	* Added: Move back-to-top button if there is a Recaptcha badge on page
+	* Fixed: Styling conflict with Memphis Documents Library plugin
+	* Fixed: Restored header HTML structure when using default top bar arrangement
+	* Fixed: Missing comments gravatar and reply link
+	* Fixed: Bootstrap conflict with other plugins in WP Admin
+	* Fixed: 404 error when attempting to load Bootstrap source map in browser's developer console
+	* Updated: Replaced use of "Wanna" with the more formal "Would you like to"
+
 Version 2.8.1 [07-09-2020]
 	* Added: Automatic post content padding when wrapper and content background colours are different
 	* Added: Automatic widget padding when wrapper and widget background colours are the same

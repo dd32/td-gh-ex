@@ -174,6 +174,9 @@ function graphene_get_customizer_transport_settings(){
 		'column_width',
 		
 		'top_bar_bg',
+		'top_bar_fg',
+		'top_bar_link',
+
 		'menu_primary_bg',
 		'menu_primary_item',
 		'menu_primary_active_bg',

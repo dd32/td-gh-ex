@@ -50,11 +50,11 @@
                                         <?php do_action( 'graphene_top_search' ); ?>
                                     </div>
                                 <?php endif; ?>
+
+                                <?php do_action( 'graphene_top_bar' ); ?>
                             </div>
 
-                        <?php endif; ?>
-
-                        <?php do_action( 'graphene_top_bar' ); ?>
+                        <?php else : do_action( 'graphene_top_bar' ); endif; ?>
 
                     <?php graphene_container_wrapper( 'end' ); ?>
                 </div>

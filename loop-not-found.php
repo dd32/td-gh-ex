@@ -5,9 +5,9 @@
             <p>
             <?php 
                 if ( ! is_search() )
-                    _e( "Sorry, but you are looking for something that isn't here. Wanna try a search?", "graphene" ); 
+                    _e( "Sorry, but you are looking for something that isn't here. Would you like to try a search?", "graphene" ); 
                 else
-                    _e( "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?", "graphene" ); 
+                    _e( "Sorry, but no results were found for that keyword. Would you like to try an alternative keyword search?", "graphene" ); 
             ?>
                 
             </p>

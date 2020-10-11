@@ -4,6 +4,8 @@
  */ 
 function graphene_compat_scripts(){
 
+    if ( is_admin() ) return;
+
 	/* Dequeue Bootstrap from other plugins */
 	global $wp_scripts;
 	$bootstrap_handles = array( 'bootstrap' );

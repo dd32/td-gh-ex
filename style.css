@@ -2,9 +2,9 @@
 Theme Name: 	Graphene
 Theme URI: 		https://www.graphene-theme.com/graphene-theme/
 Description: 	We believe that every theme should facilitate creative writing, not hinder it. We also believe that each site should have the opportunity to be unique. Since the beginning, we have listened to countless suggestions and requests for features that really matter. Here's a theme that's user-friendly, feature-packed, and endlessly customisable, for both beginners and advanced creators. Feel at home with more than 40 languages and backed with active community support, where questions, ideas and suggestions are always welcomed. Now Gutenberg compatible.
-Version: 		2.8.1
+Version: 		2.8.2
 Requires at least: 4.7
-Tested up to:   5.5.1
+Tested up to:   5.5
 Requires PHP:   5.6.0
 Author: 		Graphene Themes Solutions
 Author URI: 	https://www.graphene-theme.com/
@@ -198,7 +198,6 @@ object {
 .social-profile a,
 .social-profile a:hover {
     font-size: 24px;
-    color: #fff;
 }
 .light .social-profile a,
 .light .social-profile a:hover {
@@ -228,14 +227,10 @@ object {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    color: #846f8e;
     background: #4c315a;
 	background: rgba(255,255,255,0.1);
     padding: 8px 10px;
-}
-.top-bar .searchform input:focus,
-#top_search .searchform input:focus {
-    color: #ffffff;
+    height: 34px;
 }
 .top-bar.light .searchform input {
     background: #fff;
@@ -244,10 +239,14 @@ object {
 }
 .top-bar .searchform .btn-default,
 #top_search .searchform .btn-default {
-    background: rgba(255,255,255,0.6);
+    background: #ccc;
+    color: #4c315a;
     border: none;
     line-height: 34px;
     padding: 0 15px;
+}
+#top_search .searchform .btn-default .fa {
+    margin: 0;
 }
 .top-bar.light .searchform .btn-default {
     background: #ddd;

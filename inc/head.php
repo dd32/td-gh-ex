@@ -16,7 +16,7 @@ function graphene_build_style( $styles, $extra_args = array() ){
 	foreach ( $styles as $opts => $style ) {
 		if ( stripos( $opts, '|' ) !== false ) $opts = explode( '|', $opts );
 		else $opts = (array) $opts;
-		
+
 		if ( graphene_is_settings_custom( $opts ) ) {
 			foreach ( $opts as $key => $opt ) {
 
@@ -218,10 +218,12 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 	$style = '';
     
 	if ( ! is_admin() || ( $graphene_settings['hook_suffix'] == $hook_suffix && $tab == 'colours' ) || $force_all ) {
-		
+
 		// Top bar
 		$colours = array(
-			'top_bar_bg'	=> '.top-bar{background-color:%s}',
+			'top_bar_bg'	=> '.top-bar{background-color:%1$s} .top-bar .searchform .btn-default, #top_search .searchform .btn-default{color:%1$s}',
+			'top_bar_fg'	=> '.top-bar, .top-bar input{color:%1$s} .top-bar .searchform .btn-default, #top_search .searchform .btn-default{background:%1$s}',
+			'top_bar_link'	=> '.top-bar a, .top-bar a:hover {color:%s}',
 		);
 		$style .= graphene_build_style( $colours );
 

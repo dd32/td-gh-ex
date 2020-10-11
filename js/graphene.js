@@ -266,6 +266,18 @@ jQuery(document).ready(function($) {
                 var scrollTop = $(window).scrollTop();
                 var pageHeight = $(document).height() - $(window).height();
 
+                if ( $('.grecaptcha-badge').length > 0 ) {
+					if ( ! $('#back-to-top').hasClass('position-adjusted') ) {
+						recaptchaBadgePos = $('.grecaptcha-badge').position();
+						if ( ( $(window).height() - recaptchaBadgePos.top ) < 75 ) {
+							if ( ( $(window).width() - recaptchaBadgePos.left ) < 75 ) {
+								$('#back-to-top').css('bottom', ( $(window).height() - recaptchaBadgePos.top + 20 ) + 'px' );
+								$('#back-to-top').addClass('position-adjusted');
+							}
+						}
+					}
+				}
+
                	if ( scrollTop == pageHeight ) {
                		$(backtotop).removeClass('show');
                	} else if (scrollTop > scrollTrigger) {
@@ -315,6 +327,7 @@ jQuery(document).ready(function($) {
 		data = { action: 'graphene-hide-auto-column-switch-alert' };
 		$.post(grapheneJS.ajaxurl, data);
 	});
+
 });
 
 

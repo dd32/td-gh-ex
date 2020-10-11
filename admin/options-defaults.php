@@ -203,6 +203,8 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 							),
 	
 	'top_bar_bg' 				=> '#4c315a',
+	'top_bar_fg' 				=> '#aaaaaa',
+	'top_bar_link' 				=> '#cccccc',
 	
 	'menu_primary_bg' 				=> '#2F2733',
 	'menu_primary_item' 			=> '#ffffff',

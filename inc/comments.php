@@ -247,7 +247,7 @@ function graphene_comment_meta( $comment, $args = array(), $depth = 1 ){
     $meta = array();
 
     /* Avatar */
-    if ( ! $comment->comment_type ) {
+    if ( ! $comment->comment_type || $comment->comment_type == 'comment' ) {
 
 		$author_email = $comment->comment_author_email;
 		$avatar = get_avatar( $author_email, 50 );
@@ -275,7 +275,7 @@ function graphene_comment_meta( $comment, $args = array(), $depth = 1 ){
         $meta['attr']['meta'] .= '<br /><span class="label label-primary author-cred">' . __( 'Author', 'graphene' ) . '</span>';
     }
 
-	if ( ! $comment->comment_type ) {
+	if ( ! $comment->comment_type || $comment->comment_type == 'comment' ) {
 	    /* Reply link */
 	    $args = array(
 			'depth' 		=> $depth, 

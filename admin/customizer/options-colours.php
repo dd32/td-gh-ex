@@ -19,6 +19,16 @@ function graphene_customizer_colour_options( $wp_customize ){
 		'label' 	=> __( 'Background', 'graphene' ),
 	) ) );
 
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'graphene_settings[top_bar_fg]', array(
+		'section' 	=> 'graphene-colours-top-bar',
+		'label' 	=> __( 'Foreground', 'graphene' ),
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'graphene_settings[top_bar_link]', array(
+		'section' 	=> 'graphene-colours-top-bar',
+		'label' 	=> __( 'Links', 'graphene' ),
+	) ) );
+
 
 	/* =Primary Menu
 	--------------------------------------------------------------------------------------*/
