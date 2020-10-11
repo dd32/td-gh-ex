@@ -24,7 +24,7 @@ function articlepress_scripts(){
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.all.min.css' );
 
 	// Main StyleSheet
-	wp_enqueue_style( 'articlepress-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'articlepress-style', get_stylesheet_uri(), array(), _S_VERSION );
 
 	// Responsive Css
 	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css' );
@@ -45,7 +45,7 @@ function articlepress_scripts(){
 	}
 
 	// Main Script
-	wp_enqueue_script( 'articlepress-main', get_template_directory_uri() . '/assets/js/main.js', 'articlepress-bootstrap', '', true );
+	wp_enqueue_script( 'articlepress-main', get_template_directory_uri() . '/assets/js/main.js', 'articlepress-bootstrap', _S_VERSION, true );
 
 
 }

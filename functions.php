@@ -7,6 +7,11 @@
  * @package ArticlePress
  */
 
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
+}
+
 if ( ! function_exists( 'articlepress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
