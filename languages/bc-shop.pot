@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: BC Shop\n"
-"POT-Creation-Date: 2018-05-23 14:00+0600\n"
-"PO-Revision-Date: 2018-05-23 13:59+0600\n"
+"POT-Creation-Date: 2020-10-11 20:56+0600\n"
+"PO-Revision-Date: 2020-10-11 20:56+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -43,75 +43,75 @@ msgstr ""
 msgid "aThemeArt"
 msgstr ""
 
-#: inc/helper.php:156
+#: inc/helper.php:150
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/helper.php:160
+#: inc/helper.php:154
 msgid "404 Error"
 msgstr ""
 
-#: inc/helper.php:179
+#: inc/helper.php:173
 msgid "Add a review"
 msgstr ""
 
-#: inc/helper.php:179
+#: inc/helper.php:173
 #, php-format
 msgid "Be the first to review &ldquo;%s&rdquo;"
 msgstr ""
 
-#: inc/helper.php:180
+#: inc/helper.php:174
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: inc/helper.php:186
+#: inc/helper.php:180
 msgid "Your Name"
 msgstr ""
 
-#: inc/helper.php:189
+#: inc/helper.php:183
 msgid "Your Email"
 msgstr ""
 
-#: inc/helper.php:194
+#: inc/helper.php:188
 msgid "Submit Review "
 msgstr ""
 
-#: inc/helper.php:204
+#: inc/helper.php:198
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
 msgstr ""
 
-#: inc/helper.php:208
+#: inc/helper.php:202
 msgid "Your rating"
 msgstr ""
 
-#: inc/helper.php:209
+#: inc/helper.php:203
 msgid "Rate&hellip;"
 msgstr ""
 
-#: inc/helper.php:210
+#: inc/helper.php:204
 msgid "Perfect"
 msgstr ""
 
-#: inc/helper.php:211
+#: inc/helper.php:205
 msgid "Good"
 msgstr ""
 
-#: inc/helper.php:212
+#: inc/helper.php:206
 msgid "Average"
 msgstr ""
 
-#: inc/helper.php:213
+#: inc/helper.php:207
 msgid "Not that bad"
 msgstr ""
 
-#: inc/helper.php:214
+#: inc/helper.php:208
 msgid "Very poor"
 msgstr ""
 
-#: inc/helper.php:219
+#: inc/helper.php:213
 msgid "Your review"
 msgstr ""
 
