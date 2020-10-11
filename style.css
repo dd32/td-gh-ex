@@ -4,7 +4,7 @@ Theme URI: http://themes.halsey.co/figureground
 Author: Nick Halsey
 Author URI: https://celloexpressions.com/
 Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a responsive 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and alternate "Circular" and "Orthogonal" modes. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site logo, a search bar, and a togglable menu. Wide and full-width images break across the canvas with support for the block editor (Gutenberg). From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
-Version: 2.3.1
+Version: 2.3.2
 Requires PHP: 5.6
 Requires at least: 5.2
 Tested up to: 5.5
@@ -1141,6 +1141,7 @@ h2.site-description {
 	margin: 0;
 	text-align: center;
 	width: 69px;
+	border-top: 5px solid #87f;
 	border-bottom: 5px solid #87f;
 	border-right: 5px solid #87f;
 }
@@ -2793,10 +2794,8 @@ aside.widget a:focus {
  */
 
 @media screen and (min-width: 640px) {
-	.wp-block-cover.alignfull,
-	.wp-block-image.alignfull,
-	.wp-block-cover.alignwide,
-	.wp-block-image.alignwide {
+	.alignfull,
+	.alignwide {
 		margin-left: calc(-100vw / 2 + 594px / 2); /* 640px article width - 64px content padding */
 		margin-right: calc(-100vw / 2 + 594px / 2);
 		text-align: center;
@@ -2806,8 +2805,7 @@ aside.widget a:focus {
 }
 
 @media screen and (min-width:1280px) {
-	.wp-block-cover.alignwide,
-	.wp-block-image.alignwide {
+	.alignwide {
 		width: 1280px;
 		margin-left: -352px; /* 640px / 2 article width + 32px half content padding */
 		margin-right: -352px;

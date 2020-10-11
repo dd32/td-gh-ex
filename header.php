@@ -46,7 +46,7 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main navigation', 'figureground' ); ?>">
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'figureground' ); ?>">
 				<button type="button" class="menu-toggle"><span class="screen-reader-text"><?php _e( 'Menu', 'figureground' ); ?></span></button>
 
 				<?php wp_nav_menu( array(

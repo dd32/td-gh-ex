@@ -45,9 +45,6 @@ get_header();
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
-				<div class="attachment">
-					<?php figureground_the_attached_image(); ?>
-				</div><!-- .attachment -->
 				<div class="entry-content">
 					<div class="entry-attachment">
 						<?php if ( has_excerpt() ) : ?>
@@ -63,10 +60,14 @@ get_header();
 							'before' => '<div class="page-links">' . __( 'Pages:', 'figureground' ),
 							'after'  => '</div>',
 						) );
+
+						// Display the image at large size with link to full
+						$url = esc_url( wp_get_original_image_url( $post->ID ) );
+						echo '<a href="' . $url . '">' . wp_get_attachment_image( $post->ID, 'large' ) . '</a>';
 					?>
-					<nav role="navigation" id="image-navigation" class="image-navigation" aria-label="<?php esc_attr_e( 'Image navigation', 'figureground' ); ?>">
-						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'figureground' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'figureground' ) ); ?></div>
+					<nav role="navigation" id="image-navigation" class="image-navigation" aria-label="<?php esc_attr_e( 'Image', 'figureground' ); ?>">
+						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav" aria-hidden="true">&larr;</span> Previous', 'figureground' ) ); ?></div>
+						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav" aria-hidden="true">&rarr;</span>', 'figureground' ) ); ?></div>
 					</nav><!-- #image-navigation -->
 				</div><!-- .entry-content -->
 			</article><!-- #post-## -->

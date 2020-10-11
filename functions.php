@@ -76,6 +76,7 @@ function figureground_setup() {
 		'flex-height'            => false,
 		'flex-width'             => true,
 		'header-text'            => false,
+		'unlink-homepage-logo' 	 => true,
 	);
 	add_theme_support( 'custom-logo', $defaults );
 

@@ -117,13 +117,14 @@ function figureground_content_nav( $nav_id ) {
 	}
 
 	// Don't print empty markup in archives if there's only one page.
-	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
+	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) ) {
 		return;
+	}
 
 	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 
 	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>" role="navigation">
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>" aria-label="<?php _e( 'Post', 'figureground' ); ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'figureground' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
