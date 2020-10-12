@@ -1,5 +1,45 @@
 (function(jQuery) {
 'use strict';
+
+//Trap focus inside mobile menu modal
+		//Based on https://codepen.io/eskjondal/pen/zKZyyg	
+		var trapFocusInsiders = function(elem) {
+			
+				
+			var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
+			
+			var firstTabbable = tabbable.first();
+			var lastTabbable = tabbable.last();
+			/*set focus on first input*/
+			firstTabbable.focus();
+			
+			/*redirect last tab to first input*/
+			lastTabbable.on('keydown', function (e) {
+			   if ((e.which === 9 && !e.shiftKey)) {
+				   e.preventDefault();
+				   
+				   firstTabbable.focus();
+				  
+			   }
+			});
+			
+			/*redirect first shift+tab to last input*/
+			firstTabbable.on('keydown', function (e) {
+				if ((e.which === 9 && e.shiftKey)) {
+					e.preventDefault();
+					lastTabbable.focus();
+				}
+			});
+			
+			/* allow escape key to close insiders div */
+			elem.on('keyup', function(e){
+			  if (e.keyCode === 27 ) {
+				elem.hide();
+			  };
+			});
+			
+		};
+		
 jQuery(document).ready(function($) {
 	
 	/* ## Document Scroll - Window Scroll */
@@ -82,9 +122,48 @@ jQuery(document).ready(function($) {
 			$('.popup-search').hide();
 		});
 	}
+	
+	/*=============================================
+	=            Main Menu         =
+	=============================================*/
+	
+	$('.ow-navigation .nav.navbar-nav > li > a').keyup(function (e) {
+		if ( matchMedia( 'only screen and (min-width: 992px)' ).matches ) {
+			$(".ow-navigation .nav.navbar-nav > li").removeClass('focus');
+			$(this).parents('li.menu-item-has-children').addClass('focus');
+		}
+	});	
+	
+	$('#popup-search').keyup(function (e) {
+		e.preventDefault();
+		$(".ow-navigation .nav.navbar-nav > li").removeClass('focus');
+		var code = e.keyCode || e.which;
+		if(code == 13) {
+			
+			$('.popup-search .search-field').focus();
+		}
+	});	
+	trapFocusInsiders( $('#popup-search-wrap') );
+	
+	if( $(".ddl-switch").length ){
+		$('.ddl-switch').keyup(function (e) {
+		var code = e.keyCode || e.which;
+		if(code == 13) {
+			var li = $(this).parent();
+			if ( li.hasClass("ddl-active") || li.find(".ddl-active").length !== 0 || li.find(".dropdown-menu").is(":visible") ) {
+				li.removeClass("ddl-active");
+				li.children().find(".ddl-active").removeClass("ddl-active");
+				li.children(".dropdown-menu").slideUp();
+			}
+			else {
+				li.addClass("ddl-active");
+				li.children(".dropdown-menu").slideDown();
+			}
+		}
+		});
+	}
 
-
-AOS.init();
+	AOS.init();
 
 });
 })(jQuery);

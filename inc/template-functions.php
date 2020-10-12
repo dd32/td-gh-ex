@@ -272,7 +272,7 @@ if( ! function_exists( 'bc_business_consulting_nav_action' ) ) :
                     
                         
                         <div class="navbar-header">
-                            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button" tabindex="0" autofocus="true">
                                 <span class="sr-only"><?php echo esc_html__( 'Toggle navigation', 'bc-business-consulting' );?></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -419,12 +419,13 @@ if( !function_exists('bc_business_consulting_popup_search') ){
 	function bc_business_consulting_popup_search(){
 	?>
   	<div class="popup-search">
-      
+      	<div id="popup-search-wrap">
         <div class="v-align-middle">
             <?php get_search_form(); ?>
         </div>
         
-        <div class="close-popup"><i class="fa fa-times"></i></div>
+        <div class="close-popup"><i class="fa fa-times"  tabindex="0" autofocus="true"></i></div>
+        </div>
 	</div>
     <?php
 	}

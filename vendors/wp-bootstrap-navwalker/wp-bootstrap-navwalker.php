@@ -134,7 +134,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$item_output .= '<a' . $attributes . '>';
 				
 				$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-				$item_output .= ( $args->has_children  ) ? ' </a><i class="ddl-switch fa fa-angle-down"></i>' : '</a>';
+				$item_output .= ( $args->has_children  ) ? ' </a><i class="ddl-switch fa fa-angle-down" tabindex="0" autofocus="true"></i>' : '</a>';
 				$item_output .= $args->after;
 				$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 			} // End if().
