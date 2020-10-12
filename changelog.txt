@@ -1,0 +1,14 @@
+== Changelog ==
+
+@Version 0.4
+1. Fixed menu and style issues.
+
+@Version 0.3
+1. Changed theme URI in style.css.
+
+@Version 0.2
+1. Update Free vs pro table in option page.
+2. Fixed escaping and style issues.
+
+@Version 0.1 
+Released.
