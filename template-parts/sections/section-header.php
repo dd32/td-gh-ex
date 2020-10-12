@@ -123,6 +123,17 @@
 											<?php if($avril_hide_show_search == '1') { ?>
 											<li class="search-button">
 												<button id="view-search-btn" class="header-search-toggle"><i class="fa fa-search"></i></button>
+												<!-- Quik search -->
+												<div class="view-search-btn header-search-popup">
+													<div class="search-overlay-layer"></div>
+													<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Site Search', 'avril' ); ?>">
+														<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'avril' ); ?></span>
+														<input type="search" class="search-field header-search-field" placeholder="<?php esc_attr_e( 'Type To Search', 'avril' ); ?>" name="s" id="popfocus" value="" autofocus>
+														<button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+													</form>
+													<button type="button" class="close-style header-search-close"></button>
+												</div>
+												<!-- / -->
 											</li>  
 											<?php } ?>
 											<?php 
@@ -148,19 +159,6 @@
 			<!--===// End:  Navigation
 			=================================-->
 		</div>
-		<?php if($avril_hide_show_search == '1') { ?>
-		<!-- Quik search -->
-		<div class="view-search-btn header-search-popup">
-			<div class="search-overlay-layer"></div>
-			<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Site Search', 'avril' ); ?>">
-				<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'avril' ); ?></span>
-				<input type="search" class="search-field header-search-field" placeholder="<?php esc_attr_e( 'Type To Search', 'avril' ); ?>" name="s" id="popfocus" value="" autofocus>
-				<button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
-			</form>
-			<button type="button" class="close-style header-search-close"></button>
-		</div>
-		<!-- / -->
-		<?php } ?>
 </header>
 <!-- End: Header
     =================================-->

@@ -8,7 +8,7 @@
 * Author Name: NayraThemes
 * Author URI: http://nayrathemes.com/
 * Description: Business, Finance HTML Template
-* Developer: MuAasifShah;
+* Developer: MdAasifShah;
 *
 *
 * -------------------------------------------------------------------
@@ -320,16 +320,15 @@
     height: 100%;
 }
 
-.main-slider .owl-item .item {
-    position: relative;
-    background-color: var(--sp-secondary);
-    background-repeat: no-repeat;
-    background-position: center center;
+.theme-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
+    height: 100%;
     z-index: 0;
-    padding: 90px 0;
-    background-size: cover;
-    min-height: 660px;
 }
 
 .theme-slider:after {
@@ -356,10 +355,10 @@
 }
 
 .theme-slider div.theme-content {
+    overflow: hidden;
     position: relative;
     max-width: 635px;
     width: 100%;
-    margin-top: 46px;
     margin-bottom: 150px;
 }
 
@@ -563,6 +562,10 @@
 /*===== // =====*/
 
 /*===== 08. Heading Default =====*/
+
+.about-panel {
+    padding: 35px 0;
+}
 
 .heading-title {
     margin-bottom: 2rem;
@@ -1148,27 +1151,11 @@
 /*===== 17. CTA Section =====*/
 
 .cta-section {
-    position: relative;
-    z-index: 0;
-}
-
-.cta-section:not(.cta-3) {
     background-color: var(--sp-white);
     background-blend-mode: multiply;
     background-size: cover;
-}
-
-.cta-3 .cta-content {
-    display: flex;
-    align-items: flex-start;
-}
-
-.cta-3 .cta-content .cta-img {
-    max-width: 82px;
-    margin-right: 1.5rem;
-    font-size: 4.25rem;
-    display: flex;
-    align-items: flex-start;
+    position: relative;
+    z-index: 0;
 }
 
 /* .cta-bg-image { */
@@ -1179,7 +1166,6 @@
     color: var(--sp-white);
     border: none;
     box-shadow: none;
-    padding: 56px 15px;
 }
 
 .cta-wrapper {
@@ -1204,12 +1190,11 @@
     margin-right: 25px;
 }
 
-.cta-section:not(.cta-bg-image):not(.cta-3) .cta-wrapper {
+.cta-section:not(.cta-bg-image) .cta-wrapper {
     background-color: var(--sp-white);
 }
 
-.cta-section.cta-3:after,
-.cta-section:not(.cta-3) .cta-wrapper:after {
+.cta-section .cta-wrapper:after {
     content: '';
     position: absolute;
     right: 0;
@@ -1219,13 +1204,6 @@
     opacity: 0.3;
     background-position: center bottom;
     z-index: -1;
-}
-
-.cta-section.cta-3:after {
-    top: 0;
-    height: 100%;
-    background-color: var(--sp-primary);
-    opacity: 0.95;
 }
 
 .cta-shadow-one .cta-wrapper:after {
@@ -1272,62 +1250,31 @@
     color: var(--sp-white);
 }
 
-.cta-btn-wrap {
-    display: flex;
-    align-items: center;
-}
-
 .cta-more {
     display: inline-flex;
-    align-items: center;
+    margin-left: 10px;
     position: relative;
 }
 
-.cta-section:not(.cta-3) .cta-more {
-    margin-left: 12px;
-}
-
-.cta-section.cta-3 .cta-more {
-    margin-right: 1.25rem;
-}
-
-.cta-section.cta-3 .cta-more .cta-icon {
-    margin-right: 6px;
-}
-
-.cta-section.cta-3 .cta-more span {
-    display: block;
-    text-align: left;
-    color: var(--sp-white);
-}
-
-.cta-section.cta-3 .cta-label-dis {
-    font-size: 1.125rem;
-    font-weight: 600;
-}
-
-.cta-section:not(.cta-3) .cta-more span {
+.cta-more span {
     display: inline-flex;
     align-items: center;
     color: var(--sp-white);
-    background: none;
-    border: 1px solid var(--sp-white);
-    line-height: 36px;
-    padding: 0 6px;
     opacity: 0;
-    transition: all .3s ease-out 0ms;
+    transform: translateX(calc(-100% + 30px));
+    transition: all .55s ease-out 0ms;
 }
 
 .cta-more i {
-    height: 41px;
-    width: 41px;
-    line-height: 42px;
-    border-radius: 0;
+    margin-right: 7px;
+    height: 35px;
+    width: 35px;
+    line-height: 34px;
+    border-radius: 100px;
     background-color: var(--sp-primary);
     color: var(--sp-white);
     border: 1px solid transparent;
-    border-right: 0;
-    font-size: 26px;
+    font-size: 17px;
     position: relative;
     z-index: 1;
     text-align: center;
@@ -1337,7 +1284,7 @@
     transition: all .3s linear 0ms;
 }
 
-.cta-section:not(.cta-3) .cta-more i:after {
+.cta-more i:after {
     content: "";
     position: absolute;
     top: 0;
@@ -1346,7 +1293,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 0;
+    border-radius: 50%;
     padding: 0;
     z-index: -1;
     box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
@@ -1356,24 +1303,16 @@
     animation: ripperOnCircle 1.3s ease-out 75ms infinite;
 }
 
-.cta-3 .cta-more i {
-    font-size: 2.25rem;
-    background: none;
-    color: var(--sp-white);
-    vertical-align: top;
-    line-height: normal;
-}
-
 @-webkit-keyframes ripperOnCircle {
     0% {
         opacity: 0.3;
     }
     40% {
         opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.075), 0 0 8px 8px rgb(226 223 223 / 0.5), 0 0 0 8px rgba(255,255,255,0.2);
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 8px 8px #b59797, 0 0 0 8px rgba(255,255,255,0.5);
     }
     100% {
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.075), 0 0 8px 8px rgb(226 223 223 / 0.5), 0 0 0 8px rgba(255,255,255,0.2);
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 8px 8px #b59797, 0 0 0 8px rgba(255,255,255,0.5);
         -webkit-transform: scale(1.35);
         opacity: 0;
     }
@@ -1385,36 +1324,30 @@
     }
     40% {
         opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.075), 0 0 8px 8px rgb(226 223 223 / 0.5), 0 0 0 8px rgba(255,255,255,0.2);
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 8px 8px #b59797, 0 0 0 8px rgba(255,255,255,0.5);
     }
     100% {
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.075), 0 0 8px 8px rgb(226 223 223 / 0.5), 0 0 0 8px rgba(255,255,255,0.2);
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 8px 8px #b59797, 0 0 0 8px rgba(255,255,255,0.5);
         transform: scale(1.35);
         opacity: 0;
     }
 }
 
-.cta-more i:before {
-    display: inline-flex;
-    -webkit-transition: all .3s linear 0ms;
-    transition: all .3s linear 0ms;
-}
-
-.cta-more:hover i:before,
-.cta-more:focus i:before {
+.cta-more:hover i,
+.cta-more:focus i {
     transform: rotate(70deg);
 }
 
-.cta-section:not(.cta-3) .cta-more:hover i,
-.cta-section:not(.cta-3) .cta-more:focus i,
+.cta-more:hover i,
+.cta-more:focus i,
 .cta-wrapper .av-btn-primary:hover,
 .cta-wrapper .av-btn-primary:focus {
-    border-color: var(--sp-white);
+    border-color: rgb(255 255 255 / 0.95);
 }
 
-.cta-section:not(.cta-3) .cta-more:hover span,
-.cta-section:not(.cta-3) .cta-more:focus span {
-    transform: translateX(-2px);
+.cta-more:hover span,
+.cta-more:focus span {
+    transform: translateX(0);
     opacity: 1;
 }
 
@@ -1783,14 +1716,6 @@
 
 .post-items .post-meta ul li a:nth-child(n+5) {
     margin-top: 10px;
-}
-
-.post-items ul:not(.post-categories) li a,
-.post-items ol:not(.post-categories) li a,
-.post-items table a, strong a, blockquote a, code a, p a,
-span:not(.author-name):not(.comments-link):not(.posted-on):not(.post-list) a {
-    color: var(--sp-primary);
-    text-decoration: underline;
 }
 
 /*===== // =====*/

@@ -14,7 +14,6 @@ class AVRIL_Repeater extends WP_Customize_Control {
 	private $customizer_repeater_slide_align = false;
 	private $customizer_repeater_video_url_control = false;
 	private $customizer_repeater_image_control = false;
-	private $customizer_repeater_image2_control = false;
 	private $customizer_repeater_icon_control = false;
 	private $customizer_repeater_color_control = false;
 	private $customizer_repeater_text_control = false;
@@ -47,10 +46,6 @@ class AVRIL_Repeater extends WP_Customize_Control {
 
 		if ( ! empty( $args['customizer_repeater_image_control'] ) ) {
 			$this->customizer_repeater_image_control = $args['customizer_repeater_image_control'];
-		}
-		
-		if ( ! empty( $args['customizer_repeater_image2_control'] ) ) {
-			$this->customizer_repeater_image2_control = $args['customizer_repeater_image2_control'];
 		}
 	
 
@@ -225,7 +220,7 @@ class AVRIL_Repeater extends WP_Customize_Control {
 					</div>
 					<div class="customizer-repeater-box-content-hidden">
 						<?php
-						$choice = $image_url = $image_url2 = $icon_value = $title = $subtitle = $text = $text2 = $link2 = $link = $designation = $slide_align = $button = $open_new_tab = $shortcode = $repeater = $color = $video_url = '';
+						$choice = $image_url = $icon_value = $title = $subtitle = $text = $text2 = $link2 = $link = $designation = $slide_align = $button = $open_new_tab = $shortcode = $repeater = $color = $video_url = '';
 						if(!empty($icon->id)){
 							$id = $icon->id;
 						}
@@ -234,9 +229,6 @@ class AVRIL_Repeater extends WP_Customize_Control {
 						}
 						if(!empty($icon->image_url)){
 							$image_url = $icon->image_url;
-						}
-						if(!empty($icon->image_url2)){
-							$image_url2 = $icon->image_url2;
 						}
 						if(!empty($icon->icon_value)){
 							$icon_value = $icon->icon_value;
@@ -373,9 +365,6 @@ class AVRIL_Repeater extends WP_Customize_Control {
 						if($this->customizer_repeater_image_control == true){
 							$this->image_control($image_url, $choice, $avril_limit, $it+1, $avril_del_btn_id);
 						}
-						if($this->customizer_repeater_image2_control == true){
-							$this->image_control2($image_url2, $choice, $avril_limit, $it+1, $avril_del_btn_id);
-						}
 						if($this->customizer_repeater_icon_control == true){
 							$this->icon_picker_control($icon_value, $choice);
 						}
@@ -440,9 +429,6 @@ class AVRIL_Repeater extends WP_Customize_Control {
 					}
 					if ( $this->customizer_repeater_image_control == true ) {
 						$this->image_control();
-					}
-					if ( $this->customizer_repeater_image2_control == true ) {
-						$this->image_control2();
 					}
 					if ( $this->customizer_repeater_icon_control == true ) {
 						$this->icon_picker_control();
@@ -650,36 +636,6 @@ class AVRIL_Repeater extends WP_Customize_Control {
 		</div>
 		<?php
 	}
-	
-	private function image_control2($value = '', $show = '', $class='', $auto='', $sections=''){ 
-		if($auto==1)
-		{
-			$auto="one";
-		}
-
-		if($auto==2)
-		{
-			$auto="two";
-		}
-		if($auto==3)
-		{
-			$auto="three";
-		}
-		if($auto==4)
-		{
-			$auto="four";
-		}
-		?>
-		<div class="customizer-repeater-image2-control">
-            <span class="customize-control-title">
-                <?php esc_html_e('Slider Image','avril')?>
-            </span>
-			<input type="text" class="widefat custom-media-url2 <?php if($class="avril_overlimit") { echo esc_attr('avril-uploading-img');}?> <?php echo esc_attr($auto);?>" value="<?php echo esc_attr( $value ); ?>">
-			<input type="button" class="button button-secondary customizer-repeater-custom-media-button <?php if($class="avril_overlimit") { echo esc_attr('avril-uploading-img-btn');}?> <?php echo esc_attr($auto);?>" value="<?php esc_attr_e( 'Upload Image','avril' ); ?>" />
-		</div>
-		<?php
-	}
-	
 
 	private function slide_align($value='left'){?>
 	
