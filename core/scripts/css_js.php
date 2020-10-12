@@ -17,8 +17,6 @@ function enigma_scripts() {
 
         /* Web Fonts */		
         wp_enqueue_style('enigma-google-fonts',esc_url(enigma_fonts_url()));
-
-
                 
         // Js
         wp_enqueue_script('popper', get_template_directory_uri() .'/js/popper.js', array('jquery'), true, true );
@@ -26,7 +24,7 @@ function enigma_scripts() {
        
         
         /*Carofredsul Slides*/
-        wp_enqueue_script('jquery.carouFredSel', get_template_directory_uri() .'/js/caroufredsel-6.2.1/jquery.caroufredsel-6.2.1.js', array('jquery'), true, true );
+        wp_enqueue_script('jquery.caroufredsel', get_template_directory_uri() .'/js/caroufredsel-6.2.1/jquery.caroufredsel-6.2.1.js', array('jquery'), true, true );
         if ( is_front_page() ) {
                 
             /*PhotoBox JS*/
@@ -46,25 +44,25 @@ function enigma_scripts() {
 
         $image_speed = get_theme_mod('slider_image_speed' );
         if ( ! empty ( $image_speed ) ) {
-                $image_speed = absint(get_theme_mod( 'slider_image_speed', '2000' ));
-                $speed       = true;
+            $image_speed = absint(get_theme_mod( 'slider_image_speed', '2000' ));
+            $speed       = true;
         } else {
-                $image_speed = '';
-                $speed       = false;
+            $image_speed = '';
+            $speed       = false;
         }
 
         $ajax_data = array(
-                'blog_speed'  => absint(get_theme_mod( 'blog_speed', '2000' )),
-                'autoplay'    => absint(get_theme_mod( 'autoplay', 1 )),
-                'image_speed' => absint(get_theme_mod( 'slider_image_speed', '2000' )),
-                'speed'       => $speed,
+            'blog_speed'  => absint(get_theme_mod( 'blog_speed', '2000' )),
+            'autoplay'    => absint(get_theme_mod( 'autoplay', 1 )),
+            'image_speed' => absint(get_theme_mod( 'slider_image_speed', '2000' )),
+            'speed'       => $speed,
         );
 
         wp_enqueue_script( 'enigma-ajax-front', get_template_directory_uri() . '/js/enigma-ajax-front.js', array( 'jquery' ), true, true );
         wp_localize_script( 'enigma-ajax-front', 'ajax_admin', array(
-                'ajax_url'      => admin_url( 'admin-ajax.php' ),
-                'admin_nonce'   => wp_create_nonce( 'admin_ajax_nonce' ),
-                'ajax_data'     => $ajax_data,
+            'ajax_url'      => admin_url( 'admin-ajax.php' ),
+            'admin_nonce'   => wp_create_nonce( 'admin_ajax_nonce' ),
+            'ajax_data'     => $ajax_data,
         ) );
 }
 add_action('wp_enqueue_scripts', 'enigma_scripts');
@@ -103,7 +101,6 @@ if ( ! function_exists( 'enigma_fonts_url' ) ) :
                 'family' => urlencode( implode( '|', $fonts ) ),
             ), 'https://fonts.googleapis.com/css' );
         }
-
         return esc_url_raw( $fonts_url );
     }
 endif;

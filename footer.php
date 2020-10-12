@@ -14,11 +14,12 @@
             <?php if ( enigma_theme_is_companion_active() ) { ?>
                 <p class="enigma_footer_copyright_info wl_rtl">
                     <?php 
-                    $enigma_footer_customization = get_theme_mod( 'enigma_footer_customization', __('&copy; Copyright 2020. All Rights Reserved','enigma') );
-                    echo esc_html( $enigma_footer_customization ); ?>
-                    <a target="_blank" rel="nofollow" href="<?php echo esc_url( get_theme_mod( 'enigma_deve_link' ) ); ?>">
+                    $enigma_footer_customization = get_theme_mod( 'footer_customizations', __('&copy; Copyright 2020. All Rights Reserved','enigma') );
+                    $developed_by_text = get_theme_mod('developed_by_text', __('Powered By','enigma'));
+                    echo esc_html( $enigma_footer_customization );?> <?php  echo esc_html($developed_by_text);?>
+                    <a target="_blank" rel="nofollow" href="<?php echo esc_url( get_theme_mod( 'developed_by_link' ) ); ?>">
                        <?php 
-                       $enigma_develop_by = get_theme_mod( 'enigma_develop_by' );
+                       $enigma_develop_by = get_theme_mod( 'developed_by_weblizar_text' );
                        echo esc_html( $enigma_develop_by ); ?>
                     </a>
                 </p>    

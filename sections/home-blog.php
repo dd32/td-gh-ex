@@ -1,6 +1,6 @@
 <div class="enigma_blog_area ">
     <?php 
-    $blog_title1 = get_theme_mod('blog_title', __('Home Blog Title','enigma'));
+    $blog_title1 = get_theme_mod('blog_title', __('Latest News','enigma'));
     if ( ! empty ( $blog_title1 ) ) { ?>
         <div class="container">
             <div class="row">
@@ -17,7 +17,13 @@
             <?php 
             $posts_count = wp_count_posts()->publish;
            
-            $args = array('post_type' => 'post', 'posts_per_page' => $posts_count, 'ignore_sticky_posts' => 1);
+           $blog_category = get_theme_mod('blog_category', '1');
+            if ($blog_category) {
+                $category = get_theme_mod('blog_category', '1');
+                $args = array('post_type' => 'post', 'posts_per_page' => $posts_count, 'ignore_sticky_posts' => 1, 'cat' => $category);
+            } else {
+                $args = array('post_type' => 'post', 'posts_per_page' => $posts_count, 'ignore_sticky_posts' => 1);
+            }
             
             $post_type_data = new WP_Query($args);
             if($post_type_data->have_posts()){

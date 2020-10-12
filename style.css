@@ -4,7 +4,7 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design. This theme can be used for different kinds of websites including business, blogging, portfolio, agency, landing page etc. Enigma has Filkr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more. Demo -> http://demo.weblizar.com/enigma-free-theme/
-Version: 7.1.2
+Version: 7.1.3
 Tested up to: 5.5
 Requires PHP: 7.2
 License: GNU General Public License v2 or later
@@ -1489,24 +1489,7 @@ color: #6a6a6a;
 .enigma_sidebar_widget ul li a , .enigma_footer_widget_column ul li a {
     position:relative;
 }    
-.enigma_sidebar_widget ul li a:before , .enigma_footer_widget_column ul li a:before {
-	position: absolute;
-    content: "\f105";
-    content: '';
-    left: -24px;
-    margin-left: 5px;
-    display: block;
-    position: absolute;
-    border-top: solid 2px #ffffff;
-    border-right: solid 2px #ffffff;
-    transform: rotate(50deg);
-    height: 6px;
-    background: #fff0;
-    width: 6px;
-    transform: rotate;
-    align-items: center;
-    display: flex;
-    }
+
 .enigma_footer_widget_column ul li ,.enigma_footer_widget_column ul#recentcomments li a{
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
 	font-family: "Open Sans",sans-serif;
@@ -2944,8 +2927,8 @@ padding:5px;
       color: #fff;
 }
 
-@media screen and (max-width: 992px){
-.toggled.main-navigation {
+@media screen and (max-width: 767px){
+.main-navigation {
     float: inherit;
 }
 .toggled .dropdown-menu>.active>a{
@@ -2960,7 +2943,7 @@ padding:5px;
 .toggled.main-navigation ul ul a {
     width: auto;
 }
-.toggled.main-navigation li {
+.toggled.main-navigation li,.collapse.show li {
     float: none;
     position: relative;
 }
