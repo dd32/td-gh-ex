@@ -22,7 +22,6 @@ var AvrilThemeJs;
       // Document ready event check
       this.$document.on( 'ready', this.documentReadyRender.bind( this ) );
       this.$document.on( 'ready', this.processAutoheight.bind( this ) );
-      this.$document.on( 'ready', this.mobileMenuClone.bind( this ) );
       this.$window.on( 'ready', this.documentReadyRender.bind( this ) );
     },
 
@@ -45,6 +44,8 @@ var AvrilThemeJs;
         .on( 'click.' + this.eventID, '.header-search-toggle', this.searchToggleHandler.bind( this ) )
         .on( 'click.' + this.eventID, '.header-search-close',  this.searchToggleHandler.bind( this ) )
 
+        .on( 'click.' + this.eventID, this.hideSearchHeader.bind( this ) )
+
         .on( 'click.' + this.eventID, '.scrollup', this.scrollUpClick.bind( this ) );
 
       // Window Events
@@ -54,6 +55,8 @@ var AvrilThemeJs;
         .on('scroll.' + this.eventID, this.scrollUp.bind( this ) )
 
         .on('load.' + this.eventID, this.mobileMenuRight.bind( this ) )
+        
+        .on('load.' + this.eventID, this.mobileMenuClone.bind( this ) )
 
         .on( 'load.' + this.eventID, this.menuFocusAccessibility.bind( this ) )
 
@@ -381,53 +384,47 @@ var AvrilThemeJs;
       self.searchPopupAccessibility();
     },
 
+    // Search Box Hide
+    hideSearchHeader: function( event ) {
+      var self    = this,
+        $toggle   = $( '.header-search-toggle' ),
+        $popup    = $( '.header-search-popup' );
+
+      if ( $( event.target ).closest( $toggle ).length || $( event.target ).closest( $popup ).length ) {
+        return;
+      }
+
+      if (  ! self.$body.hasClass( self.classes.headerSearchActive ) ) {
+        return;
+      }
+
+      self.$body.removeClass( self.classes.headerSearchActive );
+      self.$body.removeClass( self.classes.isOverlay );
+      $toggle.focus();
+
+      event.stopPropagation();
+    },
+
     // Active focus on search popup
     searchPopupAccessibility: function() {
-      var links, i, len,
-        searchItem = document.querySelector( '.header-search-popup' ),
-        fieldToggle = document.querySelector( '.header-search-field' );      
-      let focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-      let firstFocusableElement = fieldToggle;
-      let focusableContent = searchItem.querySelectorAll(focusableElements);
-      let lastFocusableElement = focusableContent[focusableContent.length - 1];
-      if ( ! searchItem ) {
-        return false;
-      }
-      links = searchItem.getElementsByTagName( 'button' );
-      for ( i = 0, len = links.length; i < len; i++ ) {
-        links[i].addEventListener( 'focus', toggleFocus, true );
-        links[i].addEventListener( 'blur', toggleFocus, true );
-      }
-      function toggleFocus() {
-        var self = this;
-        while (-1 === self.className.indexOf( 'header-search-popup' ) ) {
-          if ( 'input' === self.tagName.toLowerCase() ) {
-            if ( -1 !== self.className.indexOf( 'focus' ) ) {
-              self.className = self.className.replace( 'focus', '' );
-            } else {
-              self.className += ' focus';
-            }
+      $( document ).on( 'keydown', function( e ) {
+        if ( $( 'body' ).hasClass( 'header-search-active' ) ) {
+          var activeElement = document.activeElement;
+          var searchItems   = $( '.header-search-popup button, .header-search-popup input' );
+          var firstEl       = $( '.header-search-close' );
+          var lastEl        = searchItems[ searchItems.length - 1 ];
+          var tabKey        = event.keyCode === 9;
+          var shiftKey      = event.shiftKey;
+          if ( ! shiftKey && tabKey && lastEl === activeElement ) {
+            event.preventDefault();
+            firstEl.focus();
           }
-          self = self.parentElement;
-        }
-      }
-      document.addEventListener('keydown', function (e) {
-        let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-        if ( ! isTabPressed ) {
-          return;
-        }
-        if ( e.shiftKey ) {
-          if (document.activeElement === firstFocusableElement) {
-            lastFocusableElement.focus();
-            e.preventDefault();
-          }
-        } else {
-          if (document.activeElement === lastFocusableElement) {
-            firstFocusableElement.focus();
-            e.preventDefault();
+          if ( shiftKey && tabKey && firstEl === activeElement ) {
+            event.preventDefault();
+            lastEl.focus();
           }
         }
-      });
+      } );
     },
 
     // Custom Carousel
@@ -537,8 +534,6 @@ var AvrilThemeJs;
           $oldWord.removeClass('is-show').addClass('is-hide');
           $newWord.removeClass('is-hide').addClass('is-show');
         }
-        // Button Effect
-        document.querySelectorAll('.av-btn:not(.av-search-submit)').forEach(button => button.innerHTML = '<div><span>' + button.textContent.trim().split('').join('</span><span>') + '</span></div>');
     }
   };
 

@@ -136,7 +136,6 @@ function avril_customizer_repeater_refresh_general_control_values() {
             var color = jQuery(this).find('input.customizer-repeater-color-control').val();
             var color2 = jQuery(this).find('input.customizer-repeater-color2-control').val();
             var image_url = jQuery(this).find('.custom-media-url').val();
-			var image_url2 = jQuery(this).find('.custom-media-url2').val();
             var choice = jQuery(this).find('.customizer-repeater-image-choice').val();
             var title = jQuery(this).find('.customizer-repeater-title-control').val();
             var subtitle = jQuery(this).find('.customizer-repeater-subtitle-control').val();
@@ -149,7 +148,7 @@ function avril_customizer_repeater_refresh_general_control_values() {
             var social_repeater = jQuery(this).find('.social-repeater-socials-repeater-colector').val();
             var shortcode = jQuery(this).find('.customizer-repeater-shortcode-control').val();
 
-            if (text !== '' || image_url !== ''  || image_url2 !== '' || title !== '' || subtitle !== '' || icon_value !== '' || link !== '' || choice !== '' || social_repeater !== '' || shortcode !== '' || slide_align !== '' || color !== '') {
+            if (text !== '' || image_url !== '' || title !== '' || subtitle !== '' || icon_value !== '' || link !== '' || choice !== '' || social_repeater !== '' || shortcode !== '' || slide_align !== '' || color !== '') {
                 values.push({
                     'icon_value': (choice === 'customizer_repeater_none' ? '' : icon_value),
                     'color': color,
@@ -160,7 +159,6 @@ function avril_customizer_repeater_refresh_general_control_values() {
                     'link2': link2,
                     'image_url': (choice === 'customizer_repeater_none' ? '' : image_url),
                     'choice': choice,
-					'image_url2': image_url2,
                     'title': avrilescapeHtml(title),
                     'subtitle': avrilescapeHtml(subtitle),
 					'slide_align': avrilescapeHtml(slide_align),
@@ -201,13 +199,6 @@ jQuery(document).ready(function () {
         return false;
 		
 	});
-	
-	avril_theme_controls.on('change','.customizer-repeater-image2-control', function(){
-		avril_customizer_repeater_refresh_general_control_values();
-        return false;
-		
-	});
-	
 	
     avril_theme_controls.on('change', '.customizer-repeater-image-choice', function () {
         if (jQuery(this).val() === 'customizer_repeater_image') {

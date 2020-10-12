@@ -96,6 +96,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 			'label'	      => esc_html__( 'Hide / Show Section', 'avril' ),
 			'section'     => 'breadcrumb_setting',
+			'settings'    => 'hs_breadcrumb',
 			'type'        => 'checkbox'
 		) 
 	);

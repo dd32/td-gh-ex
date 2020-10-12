@@ -816,8 +816,8 @@ form input[type="email"]:focus + .av-search-submit {
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
     content: " ";
-    width: inherit;
-    height: inherit;
+    width: 27px;
+    height: 27px;
     border-radius: 100%;
     display: block;
     z-index: -1;
