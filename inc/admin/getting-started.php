@@ -12,12 +12,12 @@ require get_template_directory() . '/inc/admin/class-getting-start-plugin-helper
 
 if( ! function_exists( 'arilewp_getting_started_menu' ) ) :
 function arilewp_getting_started_menu() {	
-		$plugin_count = null;
+		$arilewp_plugin_count = null;
 		if ( !is_plugin_active( 'arile-extra/arile-extra.php' ) ):	
-			$plugin_count =	'<span class="awaiting-mod action-count">1</span>';
+			$arilewp_plugin_count =	'<span class="awaiting-mod action-count">1</span>';
 		endif;
 	    /* translators: %1$s %2$s: about */		
-		$title = sprintf(esc_html__('About %1$s %2$s', 'arilewp'), esc_html( ARILEWP_THEME_NAME ), $plugin_count);
+		$title = sprintf(esc_html__('About %1$s %2$s', 'arilewp'), esc_html( ARILEWP_THEME_NAME ), $arilewp_plugin_count);
 		/* translators: %1$s: welcome page */	
 		add_theme_page(sprintf(esc_html__('Welcome to %1$s', 'arilewp'), esc_html( ARILEWP_THEME_NAME ), esc_html(ARILEWP_THEME_VERSION)), $title, 'edit_theme_options', 'arilewp-getting-started', 'arilewp_getting_started_page');
 }
