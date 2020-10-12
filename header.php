@@ -30,7 +30,7 @@ if(get_theme_mod("box_layout_mode", false))	echo '<div class="box-layout-style">
 			<?php 
 			get_template_part( 'templates/contact', 'section' );
 			
-			$business_starter_header = get_theme_mod('header_layout', 1);
+			$business_starter_header = get_theme_mod('header_layout', agency_starter_default_settings('header_layout'));
 			
 			if ($business_starter_header == 0) {
 			    echo '<div id="site-header-main" class="site-header-main">';

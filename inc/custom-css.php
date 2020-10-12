@@ -8,40 +8,49 @@ function agency_starter_get_theme_css( ) {
 
 	/* fonts */
 	
-	$header_font = get_theme_mod('heading_font', 'Roboto');
-	$body_font = get_theme_mod('body_font', 'Google Sans');
+	$header_font = get_theme_mod('heading_font', agency_starter_default_settings('heading_font'));
+	$body_font = get_theme_mod('body_font', agency_starter_default_settings('body_font'));
 	
 	/* colors */
 	
-	$colors['background_color'] = get_theme_mod('background_color', '#ffffff');
-	$colors['page_background_color'] = get_theme_mod('page_background_color', '#ffffff');
-	$colors['link_color'] = get_theme_mod('link_color', '#8e4403');
-	$colors['main_text_color'] = get_theme_mod('main_text_color', '#1a1a1a');
+	$colors['background_color'] = get_theme_mod('background_color', agency_starter_default_settings('background_color'));
+	$colors['page_background_color'] = get_theme_mod('page_background_color', agency_starter_default_settings('page_background_color'));
+	$colors['link_color'] = get_theme_mod('link_color', agency_starter_default_settings('link_color'));
+	$colors['main_text_color'] = get_theme_mod('main_text_color', agency_starter_default_settings('main_text_color'));
 
-	$colors['primary_color'] = get_theme_mod('primary_color', '#ffb404');
+	$colors['primary_color'] = get_theme_mod('primary_color', agency_starter_default_settings('primary_color'));
 	
-	$colors['footer_text_color'] = get_theme_mod('footer_text_color', '#54595f');
+	$colors['footer_text_color'] = get_theme_mod('footer_text_color', agency_starter_default_settings('footer_text_color'));
 	
 	/* Convert main text hex color to rgba */
-	$main_text_color_rgb = agency_starter_hex2rgb( $colors['main_text_color'] );
-	$border_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $main_text_color_rgb );	
+	$border_color =  $colors['main_text_color'];
 	$colors['border_color'] = $border_color;
 
-	$header_bg_color = get_theme_mod('header_bg_color', '#fff');
-	$colors['header_text_color'] = get_theme_mod('header_text_color', '#333333');
-	$colors['header_contact_bg_color'] = get_theme_mod('header_contact_social_bg_color', '#0c73ce');
+	$header_bg_color = get_theme_mod('header_bg_color', agency_starter_default_settings('header_bg_color'));
+	$colors['header_text_color'] = get_theme_mod('header_text_color', agency_starter_default_settings('header_text_color'));
+	$colors['header_contact_bg_color'] = get_theme_mod('header_contact_social_bg_color', agency_starter_default_settings('header_contact_social_bg_color'));
 	
-	$hero_border = get_theme_mod('hero_border', 0);
+	$hero_border = get_theme_mod('hero_border', agency_starter_default_settings('hero_border'));
 	
-	$footer_bg_color = get_theme_mod('footer_bg_color', '#fff');
+	$footer_bg_color = get_theme_mod('footer_bg_color', agency_starter_default_settings('footer_bg_color'));
 	
-	$footer_border = get_theme_mod('footer_border', 1);
+	$footer_border = get_theme_mod('footer_border', agency_starter_default_settings('footer_border'));
 	
-	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', '#fff');
+	$woocommerce_menubar = get_theme_mod('woocommerce_menubar_color', agency_starter_default_settings('woocommerce_menubar_color'));
 	
-	$woocommerce_menubar_text = get_theme_mod('woocommerce_menubar_text_color', '#333333');
+	$woocommerce_menubar_text = get_theme_mod('woocommerce_menubar_text_color', agency_starter_default_settings('woocommerce_menubar_text_color'));
+	
 	
 	return "
+	
+	#featured_slider .carousel-navigation a:focus,
+	#featured_slider .carousel-navigation a:hover {
+		background-color:".$colors['primary_color'].";	
+	}
+	#featured_slider .carousel-indicators li:focus,
+	#featured_slider .carousel-indicators li:hover{
+		background-color: ".$colors['primary_color'].";	
+	}	
 	
 	.category-navigation > ul > li > a::before {
 		color:".$colors['primary_color'].";	

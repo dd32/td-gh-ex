@@ -3,7 +3,33 @@
  * Agency Starter functions
  * Since Version 1.0
  */
+if ( ! function_exists( 'agency_starter_default_settings' ) ) :
 
+function agency_starter_default_settings($param){
+	$values = array (
+					 'background_color'=> '#fff', 
+					 'page_background_color'=> '#fff', 
+					 'woocommerce_menubar_color'=> '#fff', 
+					 'woocommerce_menubar_text_color'=> '#333333', 
+					 'link_color'=>  '#8e4403',
+					 'main_text_color' => '#1a1a1a', 
+					 'primary_color'=> '#ffb404',
+					 'header_bg_color'=> '#fff',
+					 'header_text_color'=> '#333333',
+					 'footer_bg_color'=> '#130701',
+					 'footer_text_color'=> '#fff',
+					 'header_contact_social_bg_color'=> '#ffb404',
+					 'footer_border' =>'1',
+					 'hero_border' =>'1',
+					 'header_layout' =>'1',
+					 'heading_font' => 'Roboto', 
+					 'body_font' => 'Google Sans'					 
+					 );
+					 
+	return $values[$param];
+}
+
+endif;
 
 if ( ! function_exists( 'agency_starter_setup' ) ) :
 
@@ -484,7 +510,7 @@ function agency_starter_woocommerce_support() {
  */
 function agency_starter_nav_wrap() {
   $wrap  = '<ul id="%1$s" class="%2$s">';
-  $wrap .= '<li class="hidden-xs"><a href="/"><i class="fa fa-home"></i></a></li>';
+  $wrap .= '<li class="hidden-xs"><a href="'.esc_url(home_url()).'"><i class="fa fa-home"></i></a></li>';
   $wrap .= '%3$s';
   $wrap .= '</ul>';
   return $wrap;
@@ -556,9 +582,9 @@ define ('agency_starter_tutorial', 'https://wpfreetheme.space/wordpress/');
  * Displays theme info / quick help 
  */
 if ( isset( $_GET['hide_admin_notice'] ) ) {
-		update_option('hide_admin_notice', 'true');
+		update_option('agency_starter_hide_admin_notice', 'true');
 } else {
-	$agency_starter_info = get_option('hide_admin_notice', 'false');
+	$agency_starter_info = get_option('agency_starter_hide_admin_notice', 'false');
 	if ($agency_starter_info != 'true'){ 
 		add_action( 'admin_notices', 'agency_starter_help_notice' );
 	}

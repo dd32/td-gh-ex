@@ -76,7 +76,20 @@
 		'section' => 'slider_section',
 		'type'=>'text',
 		) );
-					
+		
+		//slider button link
+		$wp_customize->add_setting( 'slider_button_link' , array(
+		'default'    => "",
+		'sanitize_callback' => 'esc_url_raw',
+		));
+
+		$wp_customize->add_control('slider_button_link' , array(
+		'label' => __('Slider Button Link', 'agency-starter' ),
+		'section' => 'slider_section',
+		'priority' => 10,
+		'type'=>'text',
+		) );
+				
 				
 		// height
 		$wp_customize->add_setting( 'slider_image_height' , array(

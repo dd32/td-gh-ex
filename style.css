@@ -3,7 +3,7 @@ Author: wpbusinessthemes
 Theme Name: Agency Starter
 Theme URI: https://wpfreetheme.space/product/agency-starter-theme/
 Author URI: https://wpfreetheme.space/
-Version: 1.0.9
+Version: 1.1.0
 Requires PHP: 5.6
 Tested up to: 5.5.1
 Description: Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpfreetheme.space/product/agency-starter-theme/
@@ -4226,7 +4226,7 @@ p > video {
 
 .call-to-action:hover,
 .call-to-action:focus {    
-	background-color:transparent;
+	background-color: #ffffffdb;
 	transition: background-color 0.5s ease;
 	-webkit-transition: background-color 0.5s ease;
 	text-shadow:none;		
@@ -4314,14 +4314,7 @@ p > video {
 	transition: all .3s ease;
 	
 }
-#featured_slider .carousel-navigation a:focus,
-#featured_slider .carousel-navigation a:hover {
-	background-color: #ffb404;
-}
-#featured_slider .carousel-indicators li:focus,
-#featured_slider .carousel-indicators li:hover{
-	background-color: #ffb404;
-}
+
 #featured_slider .carousel-navigation .carousel-prev {
 	left: 1px;
 	opacity: 1; 
@@ -4812,7 +4805,7 @@ a.category-menu::before {
 
 input[type="search"].search-field {
 	border-radius: 2px 0 0 2px;
-	border-left: 1px solid rgba( 26, 26, 26, 0.2);
+	border: 1px solid rgba( 26, 26, 26, 0.2);
 }
 
 
@@ -5452,4 +5445,8 @@ button.header-search-button {
 .menu-search-popup:hover .spicewpsearchform,
 .menu-search-popup:focus-within .spicewpsearchform  {
 	display:block;
+}
+
+.products .button.yith-wcqv-button {
+	margin-left:2px;
 }

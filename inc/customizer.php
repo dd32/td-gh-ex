@@ -284,7 +284,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'page_background_color',
 		array(
-			'default'           => '#ffffff',
+			'default'           => agency_starter_default_settings('page_background_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -306,7 +306,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'link_color',
 		array(
-			'default'           => '#8e4403',
+			'default'           => agency_starter_default_settings('link_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -327,7 +327,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'main_text_color',
 		array(
-			'default'           => '#1a1a1a',
+			'default'           => agency_starter_default_settings('main_text_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -347,7 +347,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	// header layout
 	
 	$wp_customize->add_setting( 'header_layout' , array(
-		'default'    => '1',
+		'default'    => agency_starter_default_settings('header_layout'),
 		'sanitize_callback' => 'agency_starter_sanitize_select',
 	));
 
@@ -379,7 +379,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'woocommerce_menubar_color',
 		array(
-			'default'           => '#fff',
+			'default'           => agency_starter_default_settings('woocommerce_menubar_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -400,7 +400,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'woocommerce_menubar_text_color',
 		array(
-			'default'           => '#333333',
+			'default'           => agency_starter_default_settings('woocommerce_menubar_text_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -422,7 +422,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'header_text_color',
 		array(
-			'default'           => '#333333',
+			'default'           => agency_starter_default_settings('header_text_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -443,7 +443,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'header_bg_color',
 		array(
-			'default'           => '#fff',
+			'default'           => agency_starter_default_settings('header_bg_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -508,7 +508,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'header_contact_social_bg_color',
 		array(
-			'default'           => '#0c73ce',
+			'default'           => agency_starter_default_settings('header_contact_social_bg_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
@@ -552,7 +552,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 
 
 	$wp_customize->add_setting( 'heading_font' , array(
-		'default'    => 'Google Sans',
+		'default'    => agency_starter_default_settings('heading_font'),
 		'sanitize_callback' => 'agency_starter_sanitize_select',
 	));
 
@@ -565,7 +565,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	
 	
 	$wp_customize->add_setting( 'body_font' , array(
-		'default'    => 'Lora',
+		'default'    => agency_starter_default_settings('body_font'),
 		'sanitize_callback' => 'agency_starter_sanitize_select',
 	));
 
@@ -576,8 +576,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		'choices' => $font_choices,
 	));	
 	
-	//'choices' => agency_starter_font_family(),
-	
+
 	
 	// 5 layout section 
 
@@ -617,23 +616,24 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	) );
 	
 	
-		
-	// Add footer color setting and control.
-	$wp_customize->add_setting(
-		'footer_text_color',
-		array(
-			'default'           => '#54595f',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'         => 'refresh',
-		)
-	);
+
 	
 	// 7 footer section
 	$wp_customize->add_section( 'theme_footer' , array(
 		'title'      => __( 'Theme Footer', 'agency-starter' ),
 		'panel' => 'theme_options',
 	) );	
-
+		
+	// Add footer color setting and control.
+	$wp_customize->add_setting(
+		'footer_text_color',
+		array(
+			'default'           => agency_starter_default_settings('footer_text_color'),
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'refresh',
+		)
+	);
+	
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
@@ -647,7 +647,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	
 
 	$wp_customize->add_setting('footer_border' , array(
-		'default'    => 1,
+		'default'    => agency_starter_default_settings('footer_border'),
 		'sanitize_callback' => 'absint',
 	));
 
@@ -662,7 +662,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	$wp_customize->add_setting(
 		'footer_bg_color',
 		array(
-			'default'           => '#fff',
+			'default'           => agency_starter_default_settings('footer_bg_color'),
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 		)
