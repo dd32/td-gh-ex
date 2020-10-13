@@ -75,5 +75,4 @@ trait Utility {
 
 		return $data;
 	}
-
 }

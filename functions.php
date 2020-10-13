@@ -10,8 +10,12 @@ define( 'ARKHE_THEME_PATH', get_template_directory() );
 define( 'ARKHE_THEME_URI', get_template_directory_uri() );
 
 // 子テーマのパス, URI
-define( 'ARKHE_CHILD_PATH', get_stylesheet_directory() );
-define( 'ARKHE_CHILD_URI', get_stylesheet_directory_uri() );
+if ( ! defined( 'ARKHE_CHILD_PATH' ) ) {
+	define( 'ARKHE_CHILD_PATH', get_stylesheet_directory() );
+}
+if ( ! defined( 'ARKHE_CHILD_URI' ) ) {
+	define( 'ARKHE_CHILD_URI', get_stylesheet_directory_uri() );
+}
 
 
 /**
@@ -39,18 +43,6 @@ spl_autoload_register(
 
 
 /**
- * ベータ版アラート （1.0 で消す）
- */
-function arkhe_theme_beta_message() {
-	echo '<div class="notice notice-info"><p>' .
-		esc_html__( '"Arkhe" is currently in beta.', 'arkhe' ) . '<br>' .
-		esc_html__( 'The theme structure is subject to change significantly until the version exceeds "1.0".', 'arkhe' ) .
-	'</p></div>';
-}
-add_action( 'admin_notices', 'arkhe_theme_beta_message' );
-
-
-/**
  * Arkhe_Theme
  */
 class Arkhe extends \Arkhe_Theme\Data {
@@ -59,6 +51,7 @@ class Arkhe extends \Arkhe_Theme\Data {
 		\Arkhe_Theme\Utility\Parts,
 		\Arkhe_Theme\Utility\Output,
 		\Arkhe_Theme\Utility\Utility,
+		\Arkhe_Theme\Utility\Licence,
 		\Arkhe_Theme\Utility\Condition,
 		\Arkhe_Theme\Utility\Template_Parts;
 
@@ -88,10 +81,16 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// クラシックエディター
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';
 
+		// テーマページ
+		require_once ARKHE_THEME_PATH . '/inc/theme_menu.php';
+
+		// Notice
+		require_once ARKHE_THEME_PATH . '/inc/notice.php';
+
 		// その他、フック処理
 		require_once ARKHE_THEME_PATH . '/inc/hooks.php';
 
-		// アップデートチェック
+		// アップデート時の処理
 		if ( is_admin() || is_user_logged_in() ) {
 			require_once ARKHE_THEME_PATH . '/inc/update.php';
 		}

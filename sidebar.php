@@ -1,7 +1,7 @@
 <aside id="sidebar" class="l-content__sidebar">
 	<?php
-		if ( is_active_sidebar( 'sidebar-1' ) ) :
-			dynamic_sidebar( 'sidebar-1' );
-		endif;
+		do_action( 'arkhe_before_sidebar_content' );
+		Arkhe::get_parts( 'sidebar_content' );
+		do_action( 'arkhe_after_sidebar_content' );
 	?>
 </aside>

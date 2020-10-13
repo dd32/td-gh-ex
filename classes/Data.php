@@ -12,6 +12,7 @@ class Data {
 	 */
 	const DB_NAMES = array(
 		'customizer'  => 'arkhe_settings',
+		'licence_key' => 'arkhe_licence_key',
 	);
 
 
@@ -26,6 +27,32 @@ class Data {
 	 */
 	protected static $settings         = '';
 	protected static $default_settings = '';
+
+
+	/**
+	 * プラグインのデータ
+	 */
+	protected static $plugin_data = array();
+
+
+	/**
+	 * ライセンスキー
+	 */
+	public static $licence_key       = '';
+	public static $licence_data      = array();
+	public static $has_pro_licence   = false;
+	public static $licence_check_url = 'https://looscdn.com/cdn/arkhe/licence/check';
+
+	/**
+	 * プラグイン更新用パス
+	 */
+	public static $ex_update_path = false;
+
+
+	/**
+	 * 日本語かどうか
+	 */
+	public static $is_ja = false;
 
 
 	/**
@@ -47,6 +74,12 @@ class Data {
 			define( 'ARKHE_VER', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? date_i18n( 'mdGis' ) : self::$arkhe_version );
 		}
 
+		// 日本語かどうか
+		self::$is_ja = 'ja' === get_locale();
+
+		// ライセンス情報をセット
+		self::set_licence_data();
+
 		// 設定データのデフォルト値をセット
 		self::set_default_data();
 
@@ -55,8 +88,9 @@ class Data {
 
 		// カスタマイザーでは、データが即時反映されるタイミング（ wp_loaded ）で再セット
 		if ( is_customize_preview() ) {
-			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ), 10 );
+			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ) );
 		}
+
 	}
 
 
@@ -66,6 +100,31 @@ class Data {
 	private static function set_theme_version() {
 		$theme_data          = wp_get_theme( 'arkhe' );
 		self::$arkhe_version = $theme_data->get( 'Version' );
+	}
+
+
+	/**
+	 * ライセンス情報をセット
+	 */
+	private static function set_licence_data() {
+
+		// ライセンスキー
+		self::$licence_key = get_option( self::DB_NAMES['licence_key'] ) ?: '';
+
+		// ライセンスキーの指定があれば、ステータスチェック
+		if ( self::$licence_key ) {
+
+			$licence_data       = \Arkhe::get_licence_data( self::$licence_key );
+			self::$licence_data = $licence_data;
+
+			$status = (int) $licence_data['status'];
+
+			// 有効なライセンスキーだった場合
+			if ( 1 === $status || 2 === $status ) {
+				self::$has_pro_licence = true;
+				self::$ex_update_path  = isset( $licence_data['path'] ) ? $licence_data['path'] : '';
+			}
+}
 	}
 
 
@@ -90,8 +149,8 @@ class Data {
 	/**
 	 * カスタマイザーのデータを取得
 	 */
-	public static function get_setting( $key = null ) {
-		if ( null !== $key ) {
+	public static function get_setting( $key = '' ) {
+		if ( $key ) {
 			if ( ! isset( self::$settings[ $key ] ) ) return '';
 			return self::$settings[ $key ] ?: '';
 		}
@@ -102,8 +161,8 @@ class Data {
 	/**
 	 * カスタマイザーのデフォルト値を取得
 	 */
-	public static function get_default_setting( $key = null ) {
-		if ( null !== $key ) {
+	public static function get_default_setting( $key = '' ) {
+		if ( $key ) {
 			if ( ! isset( self::$default_settings[ $key ] ) ) return '';
 			return self::$default_settings[ $key ] ?: '';
 		}
@@ -114,9 +173,30 @@ class Data {
 	/**
 	 * カスタマイザーのデータを上書きするメソッド
 	 */
-	public static function overwrite_setting( $key = null, $val = '' ) {
-		if (  null === $key ) return;
+	public static function overwrite_setting( $key = '', $val = '' ) {
+		if ( ! $key ) return;
 		self::$settings[ $key ] = $val;
+	}
+
+
+	/**
+	 * プラグインのデータを取得
+	 */
+	public static function get_plugin_data( $key = '' ) {
+		if ( $key ) {
+			if ( ! isset( self::$plugin_data[ $key ] ) ) return '';
+			return self::$plugin_data[ $key ] ?: '';
+		}
+		return self::$plugin_data;
+	}
+
+
+	/**
+	 * プラグインのデータをセット
+	 */
+	public static function set_plugin_data( $key = '', $val = '' ) {
+		if ( ! $key ) return;
+		self::$plugin_data[ $key ] = $val;
 	}
 
 }
