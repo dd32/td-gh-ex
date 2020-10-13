@@ -947,6 +947,39 @@ function advance_startup_customize_register($wp_customize) {
 		) );
 	}
 
+	$wp_customize->add_setting('advance_startup_slider_overlay',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_startup_slider_overlay',array(
+       'type' => 'checkbox',
+       'label' => __('Home Page Slider Overlay','advance-startup'),
+		'description'    => __('This option will add colors over the slider.','advance-startup'),
+       'section' => 'advance_startup_slider'
+    ));
+
+    $wp_customize->add_setting('advance_startup_slider_image_overlay_color_first', array(
+		'default'           => '#906b00',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_startup_slider_image_overlay_color_first', array(
+		'label'    => __('Home Page Slider Overlay Color First', 'advance-startup'),
+		'section'  => 'advance_startup_slider',
+		'description'    => __('It will add the color overlay of the slider. To make it transparent, use the below option.','advance-startup'),
+		'settings' => 'advance_startup_slider_image_overlay_color_first',
+	)));
+
+	$wp_customize->add_setting('advance_startup_slider_image_overlay_color_second', array(
+		'default'           => '#df2b23',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_startup_slider_image_overlay_color_second', array(
+		'label'    => __('Home Page Slider Overlay Color Second', 'advance-startup'),
+		'section'  => 'advance_startup_slider',
+		'description'    => __('It will add the color overlay of the slider. To make it transparent, use the below option.','advance-startup'),
+		'settings' => 'advance_startup_slider_image_overlay_color_second',
+	)));
+
 	//content layout
     $wp_customize->add_setting('advance_startup_slider_content_alignment',array(
     	'default' => __('Center','advance-startup'),
@@ -1307,6 +1340,16 @@ function advance_startup_customize_register($wp_customize) {
             'Without Box' => __('Without Box','advance-startup'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_startup_blog_post_pagination',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_startup_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_startup_blog_post_pagination',array(
+       'type' => 'checkbox',
+       'label' => __('Pagination in Blog Page','advance-startup'),
+       'section' => 'advance_startup_blog_post'
+    ));
 
 	//no Result Found
 	$wp_customize->add_section('advance_startup_noresult_found',array(
