@@ -375,10 +375,16 @@
 		$advance_portfolio_custom_css .='}';
 	}
 
-
-
-
-		
-
-
-	
+	// slider overlay
+	$advance_portfolio_banner_overlay = get_theme_mod('advance_portfolio_banner_overlay', true);
+	if($advance_portfolio_banner_overlay == false){
+		$advance_portfolio_custom_css .='#banner img{';
+			$advance_portfolio_custom_css .='opacity:1;';
+		$advance_portfolio_custom_css .='}';
+	} 
+	$advance_portfolio_banner_image_overlay_color = get_theme_mod('advance_portfolio_banner_image_overlay_color', true);
+	if($advance_portfolio_banner_overlay != false){
+		$advance_portfolio_custom_css .='#banner{';
+			$advance_portfolio_custom_css .='background-color: '.esc_html($advance_portfolio_banner_image_overlay_color).';';
+		$advance_portfolio_custom_css .='}';
+	}
