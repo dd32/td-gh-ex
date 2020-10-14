@@ -9,7 +9,7 @@
 
 if ( ! defined( 'AAK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'AAK_VERSION', '1.0.2' );
+	define( 'AAK_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'aak_setup' ) ) :
@@ -264,3 +264,16 @@ require get_template_directory() . '/inc/inline-style.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Load theme about section.
+ */
+if ( is_admin() ) {
+    require_once trailingslashit( get_template_directory() ) . 'inc/about/class.about.php';
+    require_once trailingslashit( get_template_directory() ) . 'inc/about/about.php';
+}
+
+/**
+ * Customizer  info .
+ */
+require get_template_directory() . '/inc/info/class-customize.php';

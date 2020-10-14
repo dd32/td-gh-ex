@@ -71,6 +71,11 @@ Source:https://pxhere.com/en/photo/683887
 
 == Changelog ==
 
+= 1.0.3 - October 14 2020 =
+* Added style for grid blog layout
+* Added theme information
+* Added theme doc
+
 = 1.0.2 - October 9 2020 =
 * Added top menu and top menu opitons
 * Added two diffrent menu style

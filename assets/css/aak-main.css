@@ -309,6 +309,9 @@ nav.navigation.pagination .nav-links span {
     width: auto;
     background: inherit;
 }
+.card-columns .post {
+    margin-bottom: 10px;
+}
 form.post-password-form {
     display: -webkit-box;
     display: -ms-flexbox;
