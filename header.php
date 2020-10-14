@@ -165,7 +165,7 @@
                               <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_mail','' )); ?></p>
                             <?php } ?>
                             <?php if( get_theme_mod('advance_coaching_mail1') != ''){ ?>
-                              <a href="mailto:<?php echo esc_url( get_theme_mod('advance_coaching_mail1','') ); ?>"><?php echo esc_html( get_theme_mod('advance_coaching_mail1','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_coaching_mail1','' )); ?></span></a>
+                              <a href="mailto:<?php echo esc_attr( get_theme_mod('advance_coaching_mail1','') ); ?>"><?php echo esc_html( get_theme_mod('advance_coaching_mail1','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_coaching_mail1','' )); ?></span></a>
                             <?php } ?>
                           </div>
                         </div>  
@@ -184,7 +184,7 @@
                                 <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_phone','' )); ?></p>
                               <?php } ?>
                               <?php if( get_theme_mod('advance_coaching_phone1') != ''){ ?>
-                                <a href="tel:<?php echo esc_url( get_theme_mod('advance_coaching_phone1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_coaching_phone1','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_coaching_phone1','' )); ?></span></a>
+                                <a href="tel:<?php echo esc_attr( get_theme_mod('advance_coaching_phone1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_coaching_phone1','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_coaching_phone1','' )); ?></span></a>
                               <?php } ?>
                             </div>
                           </div> 

@@ -29,17 +29,19 @@ get_header(); ?>
                           else :
                             get_template_part( 'no-results' ); 
                           endif; 
-                        ?>                
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        ?>
+                        <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                        'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div> 
+                        <?php } ?>
                     </div>
                 </div>
             <?php }else if($advance_coaching_left_right == 'Right Sidebar'){ ?>
@@ -58,16 +60,18 @@ get_header(); ?>
                                 get_template_part( 'no-results' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                        'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div> 
+                        <?php } ?>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
@@ -88,16 +92,18 @@ get_header(); ?>
                             get_template_part( 'no-results' ); 
                         endif; 
                     ?>
-                    <div class="navigation">
-                        <?php
-                            // Previous/next page navigation.
-                            the_posts_pagination( array(
-                                'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                            ) );
-                        ?>
-                    </div> 
+                    <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                        <div class="navigation">
+                            <?php
+                                // Previous/next page navigation.
+                                the_posts_pagination( array(
+                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                ) );
+                            ?>
+                        </div> 
+                    <?php } ?> 
                 </div>
             <?php }else if($advance_coaching_left_right == 'Three Columns'){ ?>
                 <div class="row">
@@ -116,16 +122,18 @@ get_header(); ?>
                             get_template_part( 'no-results' ); 
                           endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                        'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div> 
+                        <?php } ?>
                     </div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
                 </div>
@@ -146,16 +154,18 @@ get_header(); ?>
                                 get_template_part( 'no-results' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                        'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div> 
+                        <?php } ?> 
                     </div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
@@ -176,16 +186,18 @@ get_header(); ?>
                                 get_template_part( 'no-results' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                        'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div> 
+                        <?php } ?>
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <?php get_sidebar();?>
@@ -207,16 +219,18 @@ get_header(); ?>
                                 get_template_part( 'no-results' ); 
                             endif; 
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-coaching' ),
-                                    'next_text'          => __( 'Next page', 'advance-coaching' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
-                                ) );
-                            ?>
-                        </div> 
+                        <?php if( get_theme_mod( 'advance_coaching_blog_post_pagination',true) != '') { ?>                
+                            <div class="navigation">
+                                <?php
+                                    // Previous/next page navigation.
+                                    the_posts_pagination( array(
+                                        'prev_text'          => __( 'Previous page', 'advance-coaching' ),
+                                        'next_text'          => __( 'Next page', 'advance-coaching' ),
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                                    ) );
+                                ?>
+                            </div> 
+                        <?php } ?> 
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>

@@ -3,14 +3,14 @@ Theme Name: Advance Coaching
 Theme URI: https://www.themeshopy.com/themes/free-coaching-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, personal trainer, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
+Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, personal trainer, tuition center, online classes, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video, four column layout etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.5.4
+Version: 0.5.5
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-coaching
-Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
+Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 
 Advance Coaching WordPress Theme has been created by Themeshopy, 2018.
 Advance Coaching WordPress Theme is released under the terms of GNU GPL
@@ -136,6 +136,21 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
+
+/*wide block*/
+.entry-content .alignwide {
+  margin-left  : -80px;
+  margin-right : -80px;
+}
+.entry-content .alignfull {
+  margin-left  : calc( -100vw / 2 + 100% / 2 );
+  margin-right : calc( -100vw / 2 + 100% / 2 );
+  max-width    : 100vw;
+}
+.alignfull img {
+  width: 100vw;
+} 
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 border: 0;

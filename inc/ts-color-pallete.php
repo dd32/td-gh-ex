@@ -366,3 +366,17 @@
 			$advance_coaching_custom_css .='border:solid 1px #051f31;margin:20px 0;padding:15px;';
 		$advance_coaching_custom_css .='}';
 	}
+
+	// slider overlay
+	$advance_coaching_slider_overlay = get_theme_mod('advance_coaching_slider_overlay', true);
+	if($advance_coaching_slider_overlay == false){
+		$advance_coaching_custom_css .='#slider img{';
+			$advance_coaching_custom_css .='opacity:1;';
+		$advance_coaching_custom_css .='}';
+	} 
+	$advance_coaching_slider_image_overlay_color = get_theme_mod('advance_coaching_slider_image_overlay_color', true);
+	if($advance_coaching_slider_overlay != false){
+		$advance_coaching_custom_css .='#slider{';
+			$advance_coaching_custom_css .='background-color: '.esc_html($advance_coaching_slider_image_overlay_color).';';
+		$advance_coaching_custom_css .='}';
+	}
