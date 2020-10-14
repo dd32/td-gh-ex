@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.0.4
-Version: 1.0.4
+Stable tag: 1.0.5
+Version: 1.0.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
@@ -77,7 +77,7 @@ Source: https://github.com/cristian-ungureanu/customizer-repeater
 8) Screenshot Images
 =================================================================================================
 Screenshot Images
-URL: https://pxhere.com/en/photo/893400
+URL: https://pxhere.com/en/photo/1573331
 Source: https://pxhere.com
 License: Creative Commons Zero(https://pxhere.com/en/license)
 
@@ -94,6 +94,11 @@ Info Hover, Smile, Shadow & All other Images have been used in images folder, Cr
 
 
 == Changelog ==
+
+@version 1.0.5
+* Screenshot Updated
+* Upsale Button Added
+* Theme & Author URI Added
 
 @version 1.0.4
 * Getting Start Notice Added
