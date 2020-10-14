@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.4.3 | 13th October 2020 =
+* Fix: WC notice.
+* Update: Post date format for schema.
+
 = Version 3.4.2 | 14th August 2020 =
 * Update: 5.5 support.
 
