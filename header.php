@@ -38,12 +38,12 @@
               <div class="top-contact col-lg-6 col-md-8 p-0">
                 <span class="contact">
                   <?php if( get_theme_mod( 'advance_fitness_gym_contact','' ) != '') { ?>
-                    <a href="tel:<?php echo esc_url( get_theme_mod('advance_fitness_gym_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?><span class="screen-reader-text"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?></span></a>
+                    <a href="tel:<?php echo esc_attr( get_theme_mod('advance_fitness_gym_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?><span class="screen-reader-text"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?></span></a>
                  <?php } ?>
                 </span>
                 <span class="mail">
                   <?php if( get_theme_mod( 'advance_fitness_gym_email','' ) != '') { ?>
-                    <a href="mailto:<?php echo esc_url( get_theme_mod('advance_fitness_gym_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?><span class="screen-reader-text"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?></span></a>
+                    <a href="mailto:<?php echo esc_attr( get_theme_mod('advance_fitness_gym_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?><span class="screen-reader-text"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?></span></a>
                   <?php } ?>
                 </span>
               </div>
@@ -118,12 +118,12 @@
                     <div id="contact-info">
                       <div class="contact">
                         <?php if( get_theme_mod( 'advance_fitness_gym_contact','' ) != '') { ?>
-                          <a href="tel:<?php echo esc_url( get_theme_mod('advance_fitness_gym_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?><span class="screen-reader-text"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?></span></a>
+                          <a href="tel:<?php echo esc_attr( get_theme_mod('advance_fitness_gym_contact','' )); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?><span class="screen-reader-text"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?></span></a>
                         <?php } ?>
                       </div>
                       <div class="mail">
                         <?php if( get_theme_mod( 'advance_fitness_gym_email','' ) != '') { ?>
-                          <a href="mailto:<?php echo esc_url( get_theme_mod('advance_fitness_gym_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?><span class="screen-reader-text"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?></span></a>
+                          <a href="mailto:<?php echo esc_attr( get_theme_mod('advance_fitness_gym_email','') ); ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?><span class="screen-reader-text"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?></span></a>
                         <?php } ?>
                       </div>
                       <?php get_search_form(); ?>

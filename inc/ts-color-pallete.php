@@ -337,6 +337,21 @@
 		$advance_fitness_gym_custom_css .='}';
 	}
 
+	// slider overlay
+	$advance_fitness_gym_slider_overlay = get_theme_mod('advance_fitness_gym_slider_overlay', true);
+	if($advance_fitness_gym_slider_overlay == false){
+		$advance_fitness_gym_custom_css .='#slider img{';
+			$advance_fitness_gym_custom_css .='opacity:1;';
+		$advance_fitness_gym_custom_css .='}';
+	} 
+	$advance_fitness_gym_slider_image_overlay_color = get_theme_mod('advance_fitness_gym_slider_image_overlay_color', true);
+	if($advance_fitness_gym_slider_overlay != false){
+		$advance_fitness_gym_custom_css .='#slider{';
+			$advance_fitness_gym_custom_css .='background-color: '.esc_html($advance_fitness_gym_slider_image_overlay_color).';';
+		$advance_fitness_gym_custom_css .='}';
+	}
+
+
 
 
 
