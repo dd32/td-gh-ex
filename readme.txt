@@ -1,9 +1,10 @@
 === Advance IT Company WordPress Theme ===
 Contributors: Themeshopy
-Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
+Stable tag: 0.5.4
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +12,7 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 
 == Description ==
 
-Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. CTA [call to action button] is one important advantage and with this, you visitors have the subscription option. Based on the Bootstrap technology, it comes with the stunning animations and possesses a secure and clean code. All these features are responsible for its credibility with the international clients. Above all, you are flabbergasted with its eye catching design and it is also accompanied with a WordPress customizer. It is active, possesses optimised codes and provides faster page load time. 
+Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. 
 
 == Changelog ==
 
@@ -156,6 +157,13 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Resolved focus error from responsive media.
 * Added slider height css error from responsive media.
 * Added display blog page post options.
+* Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
+
+= 0.5.4 =
+* Added display home page slider overlay option.
+* Added home page slider overlay color option.
+* Added display Pagination in Blog Page option.
+* Added wide-blocks css.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files.
 
 == Resources ==

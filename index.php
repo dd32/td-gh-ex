@@ -32,16 +32,18 @@ get_header(); ?>
                 get_template_part( 'no-results' );
               endif; 
             ?>
-        	  <div class="navigation">
-              <?php
-                // Previous/next page navigation.
-                the_posts_pagination( array(
-                    'prev_text'          => __( 'Previous page', 'advance-it-company' ),
-                    'next_text'          => __( 'Next page', 'advance-it-company' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
-                ) );
-              ?>
-            </div> 
+            <?php if( get_theme_mod( 'advance_it_company_blog_post_pagination',true) != '') { ?>
+          	  <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-it-company' ),
+                      'next_text'          => __( 'Next page', 'advance-it-company' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
+                  ) );
+                ?>
+              </div>
+            <?php } ?> 
     	    </div>
         </div>
       <?php }else if($advance_it_company_left_right == 'Right Sidebar'){ ?>
@@ -56,16 +58,18 @@ get_header(); ?>
                 get_template_part( 'no-results' );
               endif; 
             ?>
-            <div class="navigation">
-              <?php
-                // Previous/next page navigation.
-                the_posts_pagination( array(
-                    'prev_text'          => __( 'Previous page', 'advance-it-company' ),
-                    'next_text'          => __( 'Next page', 'advance-it-company' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
-                ) );
-              ?>
-            </div> 
+            <?php if( get_theme_mod( 'advance_it_company_blog_post_pagination',true) != '') { ?>
+              <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-it-company' ),
+                      'next_text'          => __( 'Next page', 'advance-it-company' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
+                  ) );
+                ?>
+              </div>
+            <?php } ?>  
           </div>
       	  <div class="col-lg-4 col-md-4">
       			<?php get_sidebar();?>
@@ -82,16 +86,18 @@ get_header(); ?>
               get_template_part( 'no-results' );
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'advance-it-company' ),
-                  'next_text'          => __( 'Next page', 'advance-it-company' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
-              ) );
-            ?>
-          </div> 
+          <?php if( get_theme_mod( 'advance_it_company_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'advance-it-company' ),
+                    'next_text'          => __( 'Next page', 'advance-it-company' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
+                ) );
+              ?>
+            </div>
+          <?php } ?>  
         </div>
       <?php }else if($advance_it_company_left_right == 'Grid Layout'){ ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class('row m-0'); ?>>
@@ -104,16 +110,18 @@ get_header(); ?>
               get_template_part( 'no-results' );
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'advance-it-company' ),
-                  'next_text'          => __( 'Next page', 'advance-it-company' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
-              ) );
-            ?>
-          </div> 
+          <?php if( get_theme_mod( 'advance_it_company_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'advance-it-company' ),
+                    'next_text'          => __( 'Next page', 'advance-it-company' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
+                ) );
+              ?>
+            </div>
+          <?php } ?>  
         </div>
       <?php } else { ?>
         <div class="row m-0">
@@ -127,16 +135,18 @@ get_header(); ?>
                 get_template_part( 'no-results' );
               endif; 
             ?>
-            <div class="navigation">
-              <?php
-                // Previous/next page navigation.
-                the_posts_pagination( array(
-                    'prev_text'          => __( 'Previous page', 'advance-it-company' ),
-                    'next_text'          => __( 'Next page', 'advance-it-company' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
-                ) );
-              ?>
-            </div> 
+            <?php if( get_theme_mod( 'advance_it_company_blog_post_pagination',true) != '') { ?>
+              <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-it-company' ),
+                      'next_text'          => __( 'Next page', 'advance-it-company' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-it-company' ) . ' </span>',
+                  ) );
+                ?>
+              </div>
+            <?php } ?>  
           </div>
           <div class="col-lg-4 col-md-4">
             <?php get_sidebar();?>

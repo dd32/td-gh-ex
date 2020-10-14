@@ -967,6 +967,28 @@ function advance_it_company_customize_register($wp_customize) {
 		) );
 	}
 
+	$wp_customize->add_setting('advance_it_company_slider_overlay',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_it_company_slider_overlay',array(
+       'type' => 'checkbox',
+       'label' => __('Home Page Slider Overlay','advance-it-company'),
+		'description'    => __('This option will add colors over the slider.','advance-it-company'),
+       'section' => 'advance_it_company_slider'
+    ));
+
+    $wp_customize->add_setting('advance_it_company_slider_image_overlay_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'advance_it_company_slider_image_overlay_color', array(
+		'label'    => __('Home Page Slider Overlay Color', 'advance-it-company'),
+		'section'  => 'advance_it_company_slider',
+		'description'    => __('It will add the color overlay of the slider. To make it transparent, use the below option.','advance-it-company'),
+		'settings' => 'advance_it_company_slider_image_overlay_color',
+	)));
+
 	//content layout
     $wp_customize->add_setting('advance_it_company_slider_content_alignment',array(
     'default' => __('Left','advance-it-company'),
@@ -1344,6 +1366,16 @@ function advance_it_company_customize_register($wp_customize) {
             'Without Box' => __('Without Box','advance-it-company'),
         ),
 	) );
+
+	$wp_customize->add_setting('advance_it_company_blog_post_pagination',array(
+       'default' => true,
+       'sanitize_callback'	=> 'advance_it_company_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('advance_it_company_blog_post_pagination',array(
+       'type' => 'checkbox',
+       'label' => __('Pagination in Blog Page','advance-it-company'),
+       'section' => 'advance_it_company_blog_post'
+    ));
 
 	//no Result Found
 	$wp_customize->add_section('advance_it_company_noresult_found',array(

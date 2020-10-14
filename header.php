@@ -116,7 +116,7 @@
                         <p><?php echo esc_html( get_theme_mod('advance_it_company_phone','' )); ?></p>
                       <?php } ?>
                       <?php if( get_theme_mod('advance_it_company_phone1') != ''){ ?>
-                        <a class="p_color" href="tel:<?php echo esc_url( get_theme_mod('advance_it_company_phone1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_it_company_phone1','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_it_company_phone1','' )); ?></span></a>
+                        <a class="p_color" href="tel:<?php echo esc_attr( get_theme_mod('advance_it_company_phone1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_it_company_phone1','' )); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_it_company_phone1','' )); ?></span></a>
                       <?php } ?>
                     </div>
                   </div>
@@ -134,7 +134,7 @@
                            <p><?php echo esc_html( get_theme_mod('advance_it_company_mail','')); ?></p>
                           <?php } ?>
                           <?php if( get_theme_mod('advance_it_company_mail1') != ''){ ?>
-                           <a class="p_color" href="mailto:<?php echo esc_url( get_theme_mod('advance_it_company_mail1','') ); ?>"><?php echo esc_html( get_theme_mod('advance_it_company_mail1','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_it_company_mail1','')); ?></span></a>
+                           <a class="p_color" href="mailto:<?php echo esc_attr( get_theme_mod('advance_it_company_mail1','') ); ?>"><?php echo esc_html( get_theme_mod('advance_it_company_mail1','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_it_company_mail1','')); ?></span></a>
                           <?php } ?>
                         </div>  
                       </div>
