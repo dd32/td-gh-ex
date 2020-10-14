@@ -4,7 +4,7 @@
 
 	$aagaz_startup_custom_css = '';
 
-	$aagaz_startup_custom_css .='.topbar, span.carousel-control-prev-icon i:hover,span.carousel-control-next-icon i:hover, .readbutton a, .aboutbtn a, .woocommerce span.onsale, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, nav.woocommerce-MyAccount-navigation ul li, .post-link a, .post-info, #sidebox h2, button.search-submit:hover, .search-form button.search-submit, .copyright, .widget .tagcloud a:hover,.widget .tagcloud a:focus,.widget.widget_tag_cloud a:hover,.widget.widget_tag_cloud a:focus,.wp_widget_tag_cloud a:hover,.wp_widget_tag_cloud a:focus, button,input[type="button"],input[type="submit"], .prev.page-numbers:focus,.next.page-numbers:focus,.tags p a,.comment-reply-link,.post-navigation .nav-next a, .post-navigation .nav-previous a,.scrollup i,.page-numbers, #sidebox h3, #sidebox .widget_price_filter .ui-slider-horizontal .ui-slider-range, #sidebox .widget_price_filter .ui-slider .ui-slider-handle, .site-footer .widget_price_filter .ui-slider-horizontal .ui-slider-range, .site-footer .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover{';
+	$aagaz_startup_custom_css .='.topbar, span.carousel-control-prev-icon i:hover,span.carousel-control-next-icon i:hover, .readbutton a, .aboutbtn a, .woocommerce span.onsale, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, nav.woocommerce-MyAccount-navigation ul li, .post-link a, .post-info, #sidebox h2, button.search-submit:hover, .search-form button.search-submit, .copyright, .widget .tagcloud a:hover,.widget .tagcloud a:focus,.widget.widget_tag_cloud a:hover,.widget.widget_tag_cloud a:focus,.wp_widget_tag_cloud a:hover,.wp_widget_tag_cloud a:focus, button,input[type="button"],input[type="submit"], .prev.page-numbers:focus,.next.page-numbers:focus,.tags p a,.comment-reply-link,.post-navigation .nav-next a, .post-navigation .nav-previous a,.scrollup i,.page-numbers, #sidebox h3, #sidebox .widget_price_filter .ui-slider-horizontal .ui-slider-range, #sidebox .widget_price_filter .ui-slider .ui-slider-handle, .site-footer .widget_price_filter .ui-slider-horizontal .ui-slider-range, .site-footer .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, .wp-block-button a{';
 		$aagaz_startup_custom_css .='background-color: '.esc_html($aagaz_startup_theme_color).';';
 	$aagaz_startup_custom_css .='}';
 
@@ -25,7 +25,7 @@
 		$aagaz_startup_custom_css .='color: '.esc_html($aagaz_startup_theme_color).'!important;';
 	$aagaz_startup_custom_css .='}';
 
-	$aagaz_startup_custom_css .='.post-link a{';
+	$aagaz_startup_custom_css .='.post-link a, .wp-block-button a{';
 		$aagaz_startup_custom_css .='border-color: '.esc_html($aagaz_startup_theme_color).'!important;';
 	$aagaz_startup_custom_css .='}';
 
@@ -465,8 +465,11 @@
 	/*------------------ Background Skin Option  -------------------*/
 	$aagaz_startup_theme_lay = get_theme_mod( 'aagaz_startup_background_image_type','Transparent');
     if($aagaz_startup_theme_lay == 'Background'){
-		$aagaz_startup_custom_css .='.blogger, #sidebox .widget, #about, .related-posts .page-box, .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .background-img-skin, .pages-te, .woocommerce .woocommerce-ordering{';
+		$aagaz_startup_custom_css .='.blogger, #sidebox .widget, .about-text, .related-posts .page-box, .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .background-img-skin, .pages-te, .woocommerce .woocommerce-ordering{';
 			$aagaz_startup_custom_css .='background-color: #fff;';
+		$aagaz_startup_custom_css .='}';
+		$aagaz_startup_custom_css .='.pages-te{';
+			$aagaz_startup_custom_css .='padding:10px;';
 		$aagaz_startup_custom_css .='}';
 	}else if($aagaz_startup_theme_lay == 'Transparent'){
 		$aagaz_startup_custom_css .='{';

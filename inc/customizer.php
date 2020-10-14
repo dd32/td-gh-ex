@@ -757,20 +757,35 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('aagaz_startup_layout_settings',array(
         'default' => __('Right Sidebar','aagaz-startup'),
-        'sanitize_callback' => 'aagaz_startup_sanitize_choices'	        
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_layout_settings',array(
         'type' => 'radio',
-        'label'     => __('Theme Sidebar Layouts', 'aagaz-startup'),
-        'description'   => __('This option work for blog page, blog single page, archive page and search page.', 'aagaz-startup'),
+        'label' => __('Post Sidebar Layout','aagaz-startup'),
+        'section' => 'aagaz_startup_general_option',
+        'description' => __('This option work for blog page, blog single page, archive page and search page.','aagaz-startup'),
+        'choices' => array(
+            'Left Sidebar' => __('Left Sidebar','aagaz-startup'),
+            'Right Sidebar' => __('Right Sidebar','aagaz-startup'),
+            'One Column' => __('Full Column','aagaz-startup'),
+            'Grid Layout' => __('Grid Layout','aagaz-startup')
+        ),
+	) );
+
+	$wp_customize->add_setting('aagaz_startup_page_sidebar_option',array(
+        'default' => __('One Column','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('aagaz_startup_page_sidebar_option',array(
+        'type' => 'radio',
+        'label' => __('Page Sidebar Layout','aagaz-startup'),
         'section' => 'aagaz_startup_general_option',
         'choices' => array(
             'Left Sidebar' => __('Left Sidebar','aagaz-startup'),
             'Right Sidebar' => __('Right Sidebar','aagaz-startup'),
-            'One Column' => __('Full Width','aagaz-startup'),
-            'Grid Layout' => __('Grid Layout','aagaz-startup')
+            'One Column' => __('Full Column','aagaz-startup')
         ),
-	));
+	) );
 
 	//Topbar section
 	$wp_customize->add_section('aagaz_startup_contact_details',array(

@@ -8,6 +8,7 @@ function aagaz_startup_setup() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'aagaz-startup-featured-image', 2000, 1200, true );
 	add_image_size( 'aagaz-startup-thumbnail-avatar', 100, 100, true );
@@ -207,6 +208,9 @@ add_action( 'widgets_init', 'aagaz_startup_widgets_init' );
 function aagaz_startup_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'aagaz-startup-fonts', aagaz_startup_fonts_url(), array(), null );
+
+	// blocks-css
+	wp_enqueue_style( 'block-style', get_theme_file_uri('/assets/css/blocks.css') );
 
 	//bootstrap
 	wp_enqueue_style( 'bootstrap', get_theme_file_uri( '/assets/css/bootstrap.css' ));
