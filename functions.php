@@ -103,17 +103,14 @@ $my_theme = wp_get_theme();
 		a.reply-btn {
 			text-decoration: none;
 		    display: inline-block;
-		    margin-left: 10px;
 		    padding: 12px;
 		    color: #fff;
 		    font-size: 14px;
 		    font-weight: 600;
-		    background: #0739c5;
-    		border-color: #0739c5;
+		    background: #b22222;
 		}
 		.hello-elementor-notice-content {
 			padding: 28px;
-			text-align: center;
 		}
 		.notice h3 {
 			margin: 0 0 5px;
@@ -133,7 +130,7 @@ $my_theme = wp_get_theme();
 			text-decoration: none;
 		}
 		.review-page {
-			background: rgba(221, 240, 249, 0.8) !important;
+			background: #ffc107 !important;
 			padding: 15px;
 			border-left-color: #e0f0f7 !important;
 		}
@@ -150,11 +147,13 @@ $my_theme = wp_get_theme();
 		    color: #ffbc00;
 		}
 		a.astral-pro {
-		    margin-left: 18px;
+			text-align: center;
+		    line-height: 36px;
+		    font-size: 19px;
 		    background: #ffc107;
-		    font-size: 16px;
 		    color: #000;
 		    font-weight: 700;
+		    border: 2px dashed #000;
 		}
 		@-webkit-keyframes blinker {
 		  from {opacity: 1.0;}
@@ -173,18 +172,25 @@ $my_theme = wp_get_theme();
     <div class="notice updated is-dismissible review-page">
 		<div class="hello-elementor-notice-inner">
 			<div class="hello-elementor-notice-content">
-				<h3> <?php _e('Thank you for installing', 'astral'); ?> <?php echo $my_theme->get( 'Name' ); ?>
-				<?php echo esc_html_e('Version - ','astral'); ?>
-				 <?php echo esc_html( $my_theme->get('Version') ); ?>
-				</h3>
-				
-				<p style="margin-bottom: 18px;font-size: 14px;"><?php 
-				_e(' Are you are enjoying Astral? We would love to hear your feedback. Big thanks in advance.','astral'); ?> </p>
-				<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
-				
-				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('See Theme Preview','astral'); ?> </a>
+				<div class="row">
+					<div class="col-md-8" style="width: 56%;display: inline-block;">
+						<h3> <?php _e('Thank you for installing', 'astral'); ?> <?php echo $my_theme->get( 'Name' ); ?>
+						<?php echo esc_html_e('Version - ','astral'); ?>
+						 <?php echo esc_html( $my_theme->get('Version') ); ?>
+						</h3>
+						
+						<p style="margin-bottom: 18px;font-size: 14px;"><?php 
+						_e(' Are you are enjoying Astral? We would love to hear your feedback. Big thanks in advance.','astral'); ?> </p>
+						<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
+						
+						<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('See Theme Preview','astral'); ?> </a>
+					</div>
 
-				<a target="_blank" class="astral-pro reply-btn" style="margin-left: 18px;" href="http://mywebapp.in/wordpress-premium-theme/" > <?php _e(' Astral Premium - Coupon Code OFFER07D','astral'); ?>  </a> <sup> Limited Time Offer </sup>
+					<div class="col-md-4" style="width: 40%;display: inline-block;">
+						<a target="_blank" class="astral-pro reply-btn" style="margin-left: 18px;" href="http://mywebapp.in/wordpress-premium-theme/" >  <?php _e(' Astral Premium','astral'); ?> <br><strike> $25 </strike> &nbsp $18 <br> <?php  _e('Coupon Code ','astral'); ?> <span style="background: firebrick;color: #fff; padding: 4px;"> OFFER07D </span> </a> <sup> Limited Period Offer</sup>
+					</div>
+
+				</div>
 				
 			</div>
 		</div>
