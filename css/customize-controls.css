@@ -55,3 +55,7 @@ input#_customize-input-advance_business_slider_excerpt_length{
 ul#sub-accordion-section-advance_business_product_button_section{
   border: none !important;
 }
+.customize-control-checkbox label {
+  font-weight: 600;
+  font-size: 14px;
+}

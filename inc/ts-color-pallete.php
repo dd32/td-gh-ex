@@ -356,5 +356,19 @@
 		$advance_business_custom_css .='}';
 	}
 
+	// slider overlay
+	$advance_business_slider_overlay = get_theme_mod('advance_business_slider_overlay', true);
+	if($advance_business_slider_overlay == false){
+		$advance_business_custom_css .='#slider img{';
+			$advance_business_custom_css .='opacity:1;';
+		$advance_business_custom_css .='}';
+	} 
+	$advance_business_slider_image_overlay_color = get_theme_mod('advance_business_slider_image_overlay_color', true);
+	if($advance_business_slider_overlay != false){
+		$advance_business_custom_css .='#slider{';
+			$advance_business_custom_css .='background-color: '.esc_html($advance_business_slider_image_overlay_color).';';
+		$advance_business_custom_css .='}';
+	}
+
 
 
