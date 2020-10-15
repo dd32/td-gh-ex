@@ -3,8 +3,8 @@
 Contributors: Thememattic
 
 Requires at least: 4.0
-Tested up to: 5.4.2
-Stable tag: 1.1.0
+Tested up to: 5.5.1
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -81,6 +81,9 @@ Best Education is distributed under the terms of the GNU GPL
 = 1.1.0 - June 24 2020 =
 = Added Requires PHP & Tested up to in Style.css
 = Updated tested up to 5.4.2 and updated WP compatibility
+
+= 1.1.1 - June 24 2020 =
+= WP compatibility 5.5.1
 
 == Credits ==
 

@@ -94,7 +94,7 @@
                             <?php } ?>
                             <?php $best_education_top_header_email = esc_html(best_education_get_option('top_header_email'));
                             if (!empty($best_education_top_header_email)) { ?>
-                            <li><a href="mailto:<?php echo esc_attr( best_education_get_option('top_header_email') ); ?>"><?php echo esc_attr( antispambot(best_education_get_option('top_header_email'))); ?></a>
+                            <li><a href="mailto:<?php echo esc_attr( best_education_get_option('top_header_email') ); ?>"><?php echo esc_html( antispambot(best_education_get_option('top_header_email'))); ?></a>
                             </li>
                             <?php } ?>
                             <?php $best_education_top_header_telephone = esc_html(best_education_get_option('top_header_telephone'));

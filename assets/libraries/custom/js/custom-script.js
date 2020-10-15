@@ -24,6 +24,15 @@
                 }
                 e('.ham').toggleClass('exit');
             });
+            e('#masthead').on('keypress',function(event) {
+                var ethis = e('.main-navigation .menu .menu-mobile');
+                if (ethis.css('display') == 'block') {
+                    ethis.slideUp('300');
+                } else {
+                    ethis.slideDown('300');
+                }
+                e('.ham').toggleClass('exit');
+            });
             e('#masthead .main-navigation ').on('click', '.menu-mobile a i', function (event) {
                 event.preventDefault();
                 var ethis = e(this),

@@ -103,7 +103,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
         if (best_education_get_option('enable_header_logo_center') == 1) {
             $best_education_logo_center = 'logo-center';
         } ?>
-        <div class="header-middle <?php echo esc_attr($best_education_contact_dissable); ?><?php echo esc_attr($best_education_logo_center); ?>">
+        <div class="header-middle <?php echo esc_attr($best_education_contact_dissable); ?><?php echo esc_html($best_education_logo_center); ?>">
             <div class="container">
                 <div class="row equal-row">
                     <div class="col-md-4 col-sm-12 col-xs-12 col-xs-12">
@@ -184,7 +184,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                                         </span>
                                                 <span class="link-detail">
                                             <strong><?php esc_html_e( 'Email us', 'best-education' ); ?></strong>
-                                            <a href="mailto:<?php echo esc_attr( best_education_get_option('top_header_email') ); ?>"><?php echo esc_attr( antispambot(best_education_get_option('top_header_email'))); ?></a>
+                                            <a href="mailto:<?php echo esc_attr( best_education_get_option('top_header_email') ); ?>"><?php echo esc_html( antispambot(best_education_get_option('top_header_email'))); ?></a>
                                         </span>
                                             </div>
                                         </li>
@@ -232,7 +232,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
         <div class="top-header <?php echo esc_attr($enable_nav_overlay); ?>">
             <div class="container">
                 <nav class="main-navigation" role="navigation">
-                    <span class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="toggle-menu" aria-controls="primary-menu" aria-expanded="false" tabindex="0">
                          <span class="screen-reader-text">
                             <?php esc_html_e('Primary Menu', 'best-education'); ?>
                         </span>
