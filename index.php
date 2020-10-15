@@ -32,16 +32,18 @@ get_header(); ?>
                 get_template_part( 'no-results' );
               endif; 
             ?>
-        	  <div class="navigation">
-              <?php
-                // Previous/next page navigation.
-                the_posts_pagination( array(
-                    'prev_text'          => __( 'Previous page', 'advance-automobile' ),
-                    'next_text'          => __( 'Next page', 'advance-automobile' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
-                ) );
-              ?>
-            </div> 
+            <?php if( get_theme_mod( 'advance_automobile_blog_post_pagination',true) != '') { ?>
+          	  <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-automobile' ),
+                      'next_text'          => __( 'Next page', 'advance-automobile' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                  ) );
+                ?>
+              </div> 
+            <?php } ?> 
     	    </div>
         </div>
       <?php }else if($advance_automobile_left_right == 'Right Sidebar'){ ?>
@@ -56,16 +58,18 @@ get_header(); ?>
                 get_template_part( 'no-results' );
               endif; 
             ?>
-            <div class="navigation">
-              <?php
-                // Previous/next page navigation.
-                the_posts_pagination( array(
-                    'prev_text'          => __( 'Previous page', 'advance-automobile' ),
-                    'next_text'          => __( 'Next page', 'advance-automobile' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
-                ) );
-              ?>
-            </div> 
+            <?php if( get_theme_mod( 'advance_automobile_blog_post_pagination',true) != '') { ?>
+              <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-automobile' ),
+                      'next_text'          => __( 'Next page', 'advance-automobile' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                  ) );
+                ?>
+              </div> 
+            <?php } ?>  
           </div>
       	  <div class="col-lg-4 col-md-4">
       			<?php get_sidebar();?>
@@ -82,16 +86,18 @@ get_header(); ?>
               get_template_part( 'no-results' );
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'advance-automobile' ),
-                  'next_text'          => __( 'Next page', 'advance-automobile' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
-              ) );
-            ?>
-          </div> 
+          <?php if( get_theme_mod( 'advance_automobile_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'advance-automobile' ),
+                    'next_text'          => __( 'Next page', 'advance-automobile' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                ) );
+              ?>
+            </div> 
+          <?php } ?>  
         </div>
       <?php }else if($advance_automobile_left_right == 'Grid Layout'){ ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
@@ -104,16 +110,18 @@ get_header(); ?>
               get_template_part( 'no-results' );
             endif; 
           ?>
-          <div class="navigation">
-            <?php
-              // Previous/next page navigation.
-              the_posts_pagination( array(
-                  'prev_text'          => __( 'Previous page', 'advance-automobile' ),
-                  'next_text'          => __( 'Next page', 'advance-automobile' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
-              ) );
-            ?>
-          </div> 
+          <?php if( get_theme_mod( 'advance_automobile_blog_post_pagination',true) != '') { ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'advance-automobile' ),
+                    'next_text'          => __( 'Next page', 'advance-automobile' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                ) );
+              ?>
+            </div> 
+          <?php } ?> 
         </div>
       <?php } else { ?>
         <div class="row">
@@ -127,16 +135,18 @@ get_header(); ?>
                 get_template_part( 'no-results' );
               endif; 
             ?>
-            <div class="navigation">
-              <?php
-                // Previous/next page navigation.
-                the_posts_pagination( array(
-                    'prev_text'          => __( 'Previous page', 'advance-automobile' ),
-                    'next_text'          => __( 'Next page', 'advance-automobile' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
-                ) );
-              ?>
-            </div> 
+            <?php if( get_theme_mod( 'advance_automobile_blog_post_pagination',true) != '') { ?>
+              <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-automobile' ),
+                      'next_text'          => __( 'Next page', 'advance-automobile' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                  ) );
+                ?>
+              </div> 
+            <?php } ?>  
           </div>
           <div class="col-lg-4 col-md-4">
             <?php get_sidebar();?>

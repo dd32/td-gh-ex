@@ -380,3 +380,17 @@
 			$advance_automobile_custom_css .='border:none; margin:25px 0;';
 		$advance_automobile_custom_css .='}';
 	}
+
+	// slider overlay
+	$advance_automobile_slider_overlay = get_theme_mod('advance_automobile_slider_overlay', true);
+	if($advance_automobile_slider_overlay == false){
+		$advance_automobile_custom_css .='#slider img{';
+			$advance_automobile_custom_css .='opacity:1;';
+		$advance_automobile_custom_css .='}';
+	} 
+	$advance_automobile_slider_image_overlay_color = get_theme_mod('advance_automobile_slider_image_overlay_color', true);
+	if($advance_automobile_slider_overlay != false){
+		$advance_automobile_custom_css .='#slider{';
+			$advance_automobile_custom_css .='background-color: '.esc_html($advance_automobile_slider_image_overlay_color).';';
+		$advance_automobile_custom_css .='}';
+	}

@@ -41,5 +41,9 @@ input#_customize-input-advance_automobile_topbar_padding{
 ul#sub-accordion-section-advance_automobile_product_button_section{
   border: none !important;
 }
+.customize-control-checkbox label {
+  font-weight: 600;
+  font-size: 14px;
+}
 
 

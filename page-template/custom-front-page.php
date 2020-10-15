@@ -120,7 +120,7 @@ get_header(); ?>
                     <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_call','')); ?></p>
                   <?php } ?>
                   <?php if( get_theme_mod('advance_automobile_call1') != ''){ ?>
-                    <a href="tel:<?php echo esc_url( get_theme_mod('advance_automobile_call1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></span></a>
+                    <a href="tel:<?php echo esc_attr( get_theme_mod('advance_automobile_call1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></span></a>
                   <?php } ?>
                 </div>
               </div>
