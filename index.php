@@ -7,7 +7,10 @@
 			<div class="col-md-12 col-sm-12">
 				 <h1>
                             <?php
-                            if(is_singular()){
+                            if(is_home() && ! is_front_page()){
+                                echo esc_html(get_the_title(get_option('page_for_posts')));
+                            }
+                            elseif(is_singular()){
                                 the_title();
                             }
                             elseif (get_option('show_on_front') == 'posts') {

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2020-09-07 11:31+0530\n"
+"POT-Creation-Date: 2020-10-15 12:50+0530\n"
 "PO-Revision-Date: 2018-09-26 17:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:8 404.php:29 functions/breadcrumbs/breadcrumbs.php:93
+#: 404.php:8 404.php:29 functions/breadcrumbs/breadcrumbs.php:98
 msgid "Error 404"
 msgstr ""
 
@@ -293,11 +293,11 @@ msgid "Get instant 24/7 support on our Support Forum."
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:92
-msgid "wallstreet Lite"
+msgid "Free"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:96
-msgid "Top Header, Banner, Services [3 Services], Latest News"
+msgid "Top Header, Banner, Services [3 Services], Portfolio, Latest News"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:97
@@ -309,7 +309,7 @@ msgid "WordPress Support Forum"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:120
-msgid "wallstreet Pro"
+msgid "Pro"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:124
@@ -572,12 +572,12 @@ msgid "Blog Archive"
 msgstr ""
 
 #: archive.php:62 author.php:46 category.php:48 functions.php:130
-#: index-blog.php:49 index.php:61 search.php:53 tag.php:56
+#: index-blog.php:49 index.php:64 search.php:50 tag.php:56
 msgid "Read More"
 msgstr ""
 
 #: archive.php:63 author.php:47 category.php:49 functions.php:65
-#: functions/breadcrumbs/breadcrumbs.php:98 index.php:62 single.php:37
+#: functions/breadcrumbs/breadcrumbs.php:103 index.php:65 single.php:37
 #: tag.php:57
 msgid "Page"
 msgstr ""
@@ -694,11 +694,9 @@ msgstr ""
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:388 class-tgm-plugin-activation.php:2952
+#: class-tgm-plugin-activation.php:388
 msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
 
 #. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:390
@@ -946,6 +944,12 @@ msgstr ""
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
+#: class-tgm-plugin-activation.php:2952
+msgid "The following plugin is activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
 #: class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
 msgstr ""
@@ -1108,23 +1112,23 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:5
-#: functions/menu/default_menu_walker.php:17 index.php:14
+#: functions/menu/default_menu_walker.php:17 index.php:17
 msgid "Home"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:24
+#: functions/breadcrumbs/breadcrumbs.php:29
 msgid "Archive by category"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:27
+#: functions/breadcrumbs/breadcrumbs.php:32
 msgid "Search results for "
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:85
+#: functions/breadcrumbs/breadcrumbs.php:90
 msgid "Posts tagged"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:90
+#: functions/breadcrumbs/breadcrumbs.php:95
 msgid "Articles posted by"
 msgstr ""
 
@@ -1413,19 +1417,19 @@ msgstr ""
 msgid "Search results for: %s"
 msgstr ""
 
-#: search.php:70
+#: search.php:67
 msgid "Next"
 msgstr ""
 
-#: search.php:71
+#: search.php:68
 msgid "Previous"
 msgstr ""
 
-#: search.php:75
+#: search.php:72
 msgid "Nothing Found"
 msgstr ""
 
-#: search.php:77
+#: search.php:74
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with "
 "some different keywords."

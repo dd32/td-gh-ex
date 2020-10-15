@@ -16,9 +16,14 @@
     font-size: 40px;
     height: auto;
     line-height: 40px;
-	padding: 20.5px 15px 20.5px 0px;
+	padding: 25px 15px 25px 0px;
 	margin-right: 50px;
 }
+
+     .logo-link-url .navbar-brand {
+          padding:8px 15px 6px 0px;
+          
+      }
 @media (min-width: 1200px) {
 .navbar li.dropdown-submenu .caret { float: right;border: none;} 
 .navbar-nav li.dropdown-submenu .caret:after{ content: "\f0da"; font-family: "FontAwesome";font-size: 10px;}
@@ -154,17 +159,12 @@
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;}
-/* .dropdown-submenu i {
-	font-size: 14px;
-line-height: 1;
-width: 10px;
-height: 10px;
-} */
+
 @media (min-width: 768px){
 .navbar-nav.navbar-right:last-child {
     margin-right: 15px;
 }}
-}
+
 @media (max-width: 1100px){
  .nav li.dropdown a{ position: relative;
     display: block;
@@ -205,7 +205,7 @@ height: 10px;
 .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     background-color: #00c2a9; 
 }}
-.logo-link-url { display: inline-block;}
+.logo-link-url { display: inline-block;padding:15px 15px 12px 0px;}
 .logo-link-url h2{display: inline-block;}
 @media (max-width: 768px){
 .navbar-header {

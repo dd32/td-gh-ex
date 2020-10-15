@@ -10,7 +10,11 @@ function wallstreet_custom_breadcrumbs() {
   global $post;
   $homeLink = home_url('/');
  
-  if (is_home() || is_front_page()) {
+  if(is_home() && ! is_front_page()){
+       $posts_page=esc_html(get_the_title(get_option('page_for_posts')));
+       echo '<li><a href="' . esc_url ( $homeLink  ) . '">' . $home . '</a> ' . '&nbsp &#47; &nbsp'."$posts_page".'</li>';
+  }
+  elseif (is_home() || is_front_page()) {
  
     if ($showOnHome == 1) echo '<li><a href="' .  esc_url ( $homeLink  ) . '">' . $home . '</a></li>';
  

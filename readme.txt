@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,9 @@ Wallstreet WordPress Theme, Copyright (C) 2019, Webriti
 Wallstreet Pro is distributed under the terms of the GNU GPL
 	
 == Changelog ==
+@Version 1.9.3
+1. Fixed static posts page breadcrumb name.
+2. Fixed logo & site title position.
 @Version 1.9.2
 1. Fixed theme prefix issue and removed custom CSS.
 2. Fixed Responsive banner and style issue related IE11.

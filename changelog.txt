@@ -1,4 +1,7 @@
 == Changelog ==
+@Version 1.9.3
+1. Fixed static posts page breadcrumb name.
+2. Fixed logo & site title position.
 @Version 1.9.2
 1. Fixed theme prefix issue and removed custom CSS.
 2. Fixed Responsive banner and style issue related IE11.
