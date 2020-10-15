@@ -6,11 +6,11 @@ Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Version: 0.6.7
+Version: 0.6.8
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance Ecommerce Store WordPress Theme has been created by Themeshopy, 2018.
 Advance Ecommerce Store WordPress Theme is released under the terms of GNU GPL
@@ -138,6 +138,21 @@ input[type='submit']:hover{
   top:-9999em;
   left:-9999em;
 }
+
+/*wide block*/
+.entry-content .alignwide {
+  margin-left  : -80px;
+  margin-right : -80px;
+}
+.entry-content .alignfull {
+  margin-left  : calc( -100vw / 2 + 100% / 2 );
+  margin-right : calc( -100vw / 2 + 100% / 2 );
+  max-width    : 100vw;
+}
+.alignfull img {
+  width: 100vw;
+} 
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 border: 0;

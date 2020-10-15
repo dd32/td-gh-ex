@@ -1,10 +1,10 @@
 === Advance Ecommerce Store ===
 Contributors: Themeshopy
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.2.14
-Stable Tag: 0.6.7
+Stable tag: 0.6.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -174,6 +174,9 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Added home page slider overlay color option.
 * Added display Pagination in Blog Page option.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files. 
+
+= 0.6.8 =
+* Added wide-blocks css.
 
 == Resources ==
 
