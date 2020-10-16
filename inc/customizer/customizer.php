@@ -178,6 +178,7 @@ function beshop_customize_register( $wp_customize ) {
         'type'       => 'checkbox',
         
     ) );
+/*
     $wp_customize->add_setting( 'beshop_topbar_search' , array(
     'capability'     => 'edit_theme_options',
     'type'           => 'theme_mod',
@@ -191,7 +192,27 @@ function beshop_customize_register( $wp_customize ) {
         'section'    => 'beshop_topbar',
         'settings'   => 'beshop_topbar_search',
         'type'       => 'checkbox',
-    ) );
+    ) );*/
+
+    $wp_customize->add_setting('beshop_topbar_search_item', array(
+        'default'        => 'popup',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'beshop_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('beshop_topbar_search_item', array(
+        'label'      => __('Select header topbar search type', 'beshop'),
+        'description'=> __('You can show two different way or hide topbar search. ', 'beshop'),
+        'section'    => 'beshop_topbar',
+        'settings'   => 'beshop_topbar_search_item',
+        'type'       => 'select',
+        'choices'    => array(
+            'simple' => __('Simple Search', 'beshop'),
+            'popup' => __('Popup Search', 'beshop'),
+            'hide' => __('Hide Search', 'beshop'),
+        ),
+    ));
 	// Add setting
 	$wp_customize->add_setting('beshop_topbar_bg', array(
 		'default' => '#343a40',

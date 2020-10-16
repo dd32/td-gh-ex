@@ -15,7 +15,14 @@
 	  $(this).number();
 	});
 
-	
+	$("#besearch").on('click', function(e){
+			e.preventDefault();
+          $('#bspopup').addClass('popup-box-on');
+            });
+          
+            $("#removeClass").click(function () {
+          $('#bspopup').removeClass('popup-box-on');
+            });
 
 	}); // document ready
 

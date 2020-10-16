@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5.1
-Stable tag: 1.0.9
+Stable tag: 1.0.11
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -75,6 +75,11 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.11 - October 16 2020 =
+* Header topbar Search popup added
+* Added new options for topbar search
+* Fixed header topbar error issue
 
 = 1.0.10 - October 04 2020 =
 * Header text color issue fixed

@@ -1430,3 +1430,93 @@ img.custom-logo {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+
+
+/*Search style*/
+.popup-box-on {
+    display: block !important;
+}
+.off {
+    display: none;
+}
+
+#bessearch.open {
+    opacity: 1;
+    transform: translate(0px, 0px) scale(1, 1);
+}
+#bessearch {
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s ease-in-out 0s;
+    width: 100%;
+    z-index: 2000;
+    
+}
+#bessearch .close {
+    color: #be5254;
+    font-size: 40px;
+    opacity: 1;
+    padding: 10px 17px;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+}
+button.close {
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    cursor: pointer;
+}
+.close {
+    float: right;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 1px 0 #fff;
+}
+
+#bessearch input[type="search"] {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #333;
+    font-family: "Open Sans",sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    margin: -51px auto 0;
+    outline: medium none;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    border-bottom: 1px solid #ededed;
+}
+#bessearch .search-submit {
+    left: 50%;
+    margin-top: 60px;
+    padding: 10px 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    border-radius: 153px;
+    font-size: 29px;
+}
+
+.beshop-cradit{
+	text-align: center;
+	color: rgb(0, 0, 0);
+ 	position: absolute;
+ 	left: 0px;
+   	right: 0px;
+  	bottom: 10px;
+ 	font-size: 12px;
+}
+
+.besearch-icon i,
+.besearch-icon a {
+    font-size: 15px;
+    color: #fff;
+}

@@ -54,13 +54,13 @@ function beshop_inline_css() {
   $beshop_topbar_hcolor = get_theme_mod( 'beshop_topbar_hcolor', '#dedede' );
  
   if( $beshop_topbar_bg != '#343a40' ){
-    $style .='.beshop-tophead.bg-dark{background-color:'.$beshop_topbar_bg.'!important;}';
+    $style .='.beshop-tophead.bg-dark,#bessearch .search-submit{background-color:'.$beshop_topbar_bg.'!important;}';
   }
   if( $beshop_topbar_color != '#fff' ){
-    $style .='.beshop-tophead, .beshop-tophead a, .beshop-tophead span, .beshop-tophead input{color:'.$beshop_topbar_color.';}';
+    $style .='.beshop-tophead, .beshop-tophead a, .beshop-tophead span, .beshop-tophead input,.besearch-icon i, .besearch-icon a,#bessearch .search-submit{color:'.$beshop_topbar_color.';}';
   }
   if( $beshop_topbar_hcolor != '#dedede' ){
-    $style .='.beshop-tophead a:hover{color:'.$beshop_topbar_hcolor.';}';
+    $style .='.beshop-tophead a:hover,.besearch-icon a:hover i{color:'.$beshop_topbar_hcolor.';}';
   }
 
 // image logo width height
