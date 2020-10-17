@@ -34,16 +34,16 @@ function busiprof_theme_setup_data()
 			
 			'home_banner_strip_enabled' => 'on',
 			'home_page_slider_enabled' => 'on',
-			'slider_head_title' =>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula','busiprof'),//Slide Heading
+			'slider_head_title' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula',//Slide Heading
 			'slider_image'=>  $template_uri .'home_slide.jpg',//Slide Image
-			'caption_head' =>__('Sollicitudin commodo','busiprof'),//Image Caption Heading
-			'caption_text' =>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.','busiprof'),//Caption detail
-			'readmore_text' => __('Sit Amet','busiprof'),
+			'caption_head' =>'Sollicitudin commodo',//Image Caption Heading
+			'caption_text' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.',//Caption detail
+			'readmore_text' => 'Sit Amet',
 			'readmore_text_link' => "#",
 			'image_url'=>  $template_uri .'home_slide.jpg',//Slide Image
-			'title' =>__('Sollicitudin commodo','busiprof'),//Image Caption Heading
-			'text' =>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.','busiprof'),//Caption detail
-			'button_text' => __('Sit Amet','busiprof'),
+			'title' =>'Sollicitudin commodo',//Image Caption Heading
+			'text' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.',//Caption detail
+			'button_text' => 'Sit Amet',
 			'link' => "#",
 			'readmore_target'=> false,
 			
@@ -58,7 +58,7 @@ function busiprof_theme_setup_data()
 			'client_strip_slide_speed'=>'2000',
 			'client_strip_total' =>4,
 			'client_title' => __('Meet our clients','busiprof'),
-			'client_desc' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.','busiprof'),
+			'client_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.',
 			
 			'busiprof_custom_css' =>"",
 
@@ -74,8 +74,8 @@ function busiprof_theme_setup_data()
 			
 			'enable_projects' => 'on',
 			'portfolio_section_enabled' => 'on',
-			'protfolio_tag_line'=> __('Fusce quis urna','busiprof'),
-			'protfolio_description_tag' => __("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.",'busiprof'),
+			'protfolio_tag_line'=>'Fusce quis urna',
+			'protfolio_description_tag' =>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.",
 								
 			'slider_readmore'=>'#',
 			
@@ -87,8 +87,8 @@ function busiprof_theme_setup_data()
 			
 			
 			
-			'service_heading_one' =>__('Ligula Fringilla','busiprof'),//Service Heading One
-			'service_tagline'  => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.','busiprof'),//Service Tagline
+			'service_heading_one' =>'Ligula Fringilla',//Service Heading One
+			'service_tagline'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.',//Service Tagline
 			
 			'service_image_one' => '',//Service Icon First
 			'service_image_two' => '',//Service Icon Second	
@@ -111,48 +111,48 @@ function busiprof_theme_setup_data()
 			'service_text_four' => '',
 			
 			'service_link_btn' => '#',//More Button Link
-			'service_button_value' => __('Sed non massa','busiprof'),
+			'service_button_value' =>'Sed non massa',
 			
 			
-			'project_title_one' => __('Fusce quis urna','busiprof'), //project title one
+			'project_title_one' => 'Fusce quis urna', //project title one
 			'project_thumb_one' =>$template_uri .'rec_project.jpg', //project thumbnail one
-			'project_text_one'  => __('Fusce & quis urna Fusce','busiprof'), //project text-description one
+			'project_text_one'  => 'Fusce & quis urna Fusce', //project text-description one
 			'project_one_url' => '#',
 			
-			'project_title_two' => __('Fusce quis urna','busiprof'), //project title two
+			'project_title_two' => 'Fusce quis urna', //project title two
 			'project_thumb_two' =>$template_uri .'rec_project2.jpg', //project thumbnail two
-			'project_text_two'  => __('Fusce & quis urna Fusce','busiprof'), //project text-description two
+			'project_text_two'  => 'Fusce & quis urna Fusce', //project text-description two
 			'project_two_url' => '#',
 			
-			'project_title_three' => __('Fusce quis urna','busiprof'), //project title three
+			'project_title_three' =>'Fusce quis urna', //project title three
 			'project_thumb_three' =>$template_uri .'rec_project3.jpg', //project thumbnail three
-			'project_text_three'  => __('Fusce & quis urna Fusce','busiprof'), //project text-description three
+			'project_text_three'  =>'Fusce & quis urna Fusce', //project text-description three
 			'project_three_url' => '#',
 			
-			'project_title_four' => __('Fusce quis urna','busiprof'), //project title three
+			'project_title_four' =>'Fusce quis urna', //project title three
 			'project_thumb_four' =>$template_uri .'rec_project4.jpg', //project thumbnail three
-			'project_text_four'  => __('Fusce & quis urna Fusce','busiprof'), //project text-description three
+			'project_text_four'  => 'Fusce & quis urna Fusce', //project text-description three
 			'project_four_url' => '#',
 			
 			
 			
 			//Testimonials
-			'testimonials_title' =>__('Fusce quis urna','busiprof'), // Testimonials title 
-			'testimonials_text' =>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit','busiprof'), // Testimonials text  
+			'testimonials_title' =>'Fusce quis urna', // Testimonials title 
+			'testimonials_text' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit', // Testimonials text  
   				
 			'testimonials_image_one' => $template_uri.'/testimonial.jpg', // Testimonials image 
-			'testimonials_text_one' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.','busiprof'), // Testimonials description
-			'testimonials_name_one' =>  __('Natalie Portman','busiprof'), // Testimonials name
-			'testimonials_designation_one' => __('(Fusce & quis urna)','busiprof'), // testmonials designation
+			'testimonials_text_one' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.', // Testimonials description
+			'testimonials_name_one' =>  'Natalie Portman', // Testimonials name
+			'testimonials_designation_one' => '(Fusce & quis urna)', // testmonials designation
 			
 			'testimonials_image_two' => $template_uri.'/testimonial2.jpg',  // Testimonials image 
-			'testimonials_text_two' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.','busiprof'), // Testimonials description
-			'testimonials_name_two' => __('Natalie Portman','busiprof'), // Testimonials name
-			'testimonials_designation_two' => __('(Fusce & quis urna)','busiprof'), // testmonials designation
-			'testimonial_tagline' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit','busiprof'),
+			'testimonials_text_two' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ligula vel velit tempus, sit amet aliquet ligula fringilla.', // Testimonials description
+			'testimonials_name_two' => 'Natalie Portman', // Testimonials name
+			'testimonials_designation_two' => '(Fusce & quis urna)', // testmonials designation
+			'testimonial_tagline' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
 			
-			'recent_blog_title' =>__('Lorem Ipsum','busiprof'),
-			'recent_blog_description' =>__('Lorem ipsum dolor sit amet, consectetur adipiscing elit','busiprof'),
+			'recent_blog_title' =>'Lorem Ipsum',
+			'recent_blog_description' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
 			'home_recentblog_meta_enable' => 'on',
 			
 			//contact page settings
