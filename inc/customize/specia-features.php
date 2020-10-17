@@ -38,7 +38,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 			'label'          => __( 'Hide / Show Section', 'benzer' ),
 			'section'        => 'features_setting',
-			'settings'   	 => 'hide_show_features',
 			'type'           => 'radio',
 			'choices'        => 
 			array(
@@ -73,7 +72,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 		    'label'   => __('Section Title','benzer'),
 		    'section' => 'features_header',
-			'settings'   	 => 'features_title',
 			'type'           => 'text',
 		)  
 	);
@@ -93,7 +91,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 		    'label'   => __('Section Description','benzer'),
 		    'section' => 'features_header',
-			'settings'   	 => 'features_description',
 			'type'           => 'textarea',
 		)  
 	);
@@ -121,7 +118,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 			'label'          => __( 'Background Image', 'benzer' ),
 			'section'        => 'features_background',
-			'settings'   	 => 'features_background_setting',
 		) 
 	));
 	
@@ -139,7 +135,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			array(
 				'label'          => __( 'Image Position', 'benzer' ),
 				'section'        => 'features_background',
-				'settings'       => 'features_background_position',
 				'type'           => 'radio',
 				'choices'        => 
 				array(
