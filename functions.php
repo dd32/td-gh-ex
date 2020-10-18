@@ -167,5 +167,3 @@ add_action( 'admin_init', 'articlepress_add_editor_styles' );
 include( get_template_directory() . '/inc/theme-enqueue.php' );
 // Theme Function
 include( get_template_directory() . '/inc/articlepress-function.php' );
-
-
