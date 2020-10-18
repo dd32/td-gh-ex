@@ -39,7 +39,7 @@
 														<?php best_news_posted_on();?>
 													</span>
 												</div>
-												<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+												<h2 class="zoomIn"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 												<?php the_excerpt();?>
 											</div>
 										</div>	

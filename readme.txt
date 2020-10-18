@@ -4,7 +4,7 @@ Contributors: postmagthemes
 Tags: blog, news, entertainment, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, theme-options, threaded-comments
 Requires at least: 4.5
 Tested up to: 5.5.1
-Stable tag: 1.1.1
+Stable tag: 1.1.3
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,6 +34,9 @@ Description: Best News WordPress theme is complete magazine and newspaper theme 
 Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.1.3 - Oct 18 2020 =
+* animanted add in main slider. list style none in footer and main slider.
 
 = 1.1.2 - Sept 11 2020 =
 * option to show news slider in single page, blog post added

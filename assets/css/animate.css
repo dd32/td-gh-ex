@@ -2718,9 +2718,8 @@
     }
 }
 
-.zoomIn {
-    -webkit-animation-name: zoomIn;
-    animation-name: zoomIn
+.owl-item.active .zoomIn {
+    animation: zoomIn 1s both 0.3s;
 }
 
 @-webkit-keyframes zoomInDown {
@@ -3093,3 +3092,4 @@
     -webkit-animation-name: zoomOutUp;
     animation-name: zoomOutUp
 }
+
