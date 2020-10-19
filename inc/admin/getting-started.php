@@ -91,7 +91,7 @@ function arilewp_getting_started_page() { ?>
 				<p><?php esc_html_e( 'ArileWP is a creative and professional multipurpose WordPress theme that is suited for business, consultant, finance, digital agency, industries, online shop and many other various site types.', 'arilewp' ); ?></p>
 			</div>
 			<div class="intro right">
-				<a target="_blank" href="https://themearile.com/">
+				<a target="_blank" href="<?php echo 'https://themearile.com/'; ?>">
 				
 				<img src="<?php echo esc_url ( ARILEWP_PARENT_INC_URI.'/admin/images/logo.png' ); ?>">
 				
