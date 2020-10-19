@@ -1,0 +1,318 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# widget
+    - sidebar
+    - Box sizing
+
+
+--------------------------------------------------------------*/
+.container-fluid {
+    max-width: 1450px;
+}
+
+
+/* header style
+--------------------------------------------- */
+.asthir-header .site-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+h1.site-title a {
+  font-size: 72px;
+  color:#4169e1;
+}
+h1.site-title a:hover {
+  text-decoration: none;
+}
+.has-himg .site-title a {
+    background: rgba(255,255,255,0.5);
+    padding: 2px 40px 10px;
+    border-radius: 50px;
+    display: inline-block;
+}
+p.site-description {
+    font-size: 18px;
+}
+
+p.site-description {
+    position: relative;
+    display: inline-block;
+    padding: 5px 50px;
+}
+
+p.site-description:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #fff;
+    z-index: -1;
+    opacity: 0.3
+}
+/* Widgets - sidebar
+--------------------------------------------- */
+h3.widget-title {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: #E0ECDE;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+}
+
+.widget ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+.widget ul li {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ededed;
+}
+
+.widget ul li:last-child {
+    border: none;
+}
+.widget .search-form label,.widget .search-form label input {
+    width: 100%;
+}
+
+.widget .search-form input.search-submit {
+    width: 100%;
+    border: 2px solid #000;
+    background: transparent;
+    text-transform: uppercase;
+    height: 33px;
+    color:#000;
+}
+
+.widget .search-form input {
+    padding: 5px 9px;
+    height: 35px;
+}
+
+.widget .search-form input.search-submit:hover {
+    background: #000;
+    color: #fff;
+}
+section.widget {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+}
+.asthir-sticky,
+.asthir-scat,
+h3.widget-title, 
+h2.widget-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #343a40;
+    padding: 5px 5px;
+    color: #fff;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    position: absolute;
+    min-width: 50px;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 25px;
+    margin: 99px 0 0 -103px;
+}
+.footer-widget, 
+.footer-widget p, 
+.footer-widget a, 
+.footer-widget #wp-calendar caption,
+.footer-widget .search-form input.search-submit{
+    color: #fff;
+}
+
+.footer-widget .widget-title {
+    color: #000;
+}
+
+.footer-widget ul li {
+    border-bottom: 1px solid #555;
+}
+
+/*content style*/
+.entry-meta, .entry-meta a {
+    font-size: 12px;
+    color: #0d996f;
+}
+.sticky .entry-header, 
+.tag-sticky-2 .entry-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.asthir-list-flex,
+article.sticky {
+    position: relative;
+}
+.asthir-list-flex {
+    display: flex;
+}
+.asthir-blog-img {
+    width: 35%;
+}
+.asthir-blog-text {
+    width: 65%;
+}
+.asthir-blog-img img {
+    padding-right: 15px;
+    height: 100%;
+    width: 100%;
+}
+
+.asthir-blog-list {
+    position: relative;
+}
+
+.asthir-scat a {
+    color: #fff;
+}
+
+.asthir-scat,
+.asthir-sticky {
+    width: 140px;
+    text-align: center;
+    line-height: 13px;
+    font-weight: 700;
+    font-size: 13px;
+    margin: 70px 0 0 -75px;
+}
+.asthir-sticky {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    height: 26px;
+    display: none;
+}
+article.post.sticky .asthir-sticky {
+    display: block;
+}
+
+.widget-area .widget,
+.site-footer,
+.archive-header,
+.search-header,
+.asthir-page,
+.site-main .comment-navigation, 
+.site-main .posts-navigation, 
+.site-main .post-navigation,
+.site-footer,
+.asthir-blog-list,
+.asthir-single-list,
+.comments-area {
+    -webkit-box-shadow: 0 0 70px rgba(0,0,0,.11);
+            box-shadow: 0 0 70px rgba(0,0,0,.11);
+    padding: 20px;
+    background: #fff;
+}
+
+.no-img .asthir-btext{
+    margin-left: 0;
+}
+
+.asthir-blog-text {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    position: relative;
+    overflow: inherit;
+}
+.no-img .asthir-blog-text {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+.entry-footer, 
+.entry-footer a {
+    font-size: 12px;
+    background: #E0ECDE;
+}
+.entry-footer {
+    background: #E0ECDE;
+    padding: 15px 10px;
+    text-align: center;
+    margin: 35px 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.page .entry-footer {
+    display: inline-block;
+    width: auto;
+    background: inherit;
+}
+form.post-password-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+}
+
+form.post-password-form p {
+    width: 100%;
+}
+.entry-footer, .entry-footer a {
+    font-size: 12px;
+}
+.entry-footer span {
+    margin-right: 15px;
+}
+
+.site-main .comment-navigation, 
+.site-main .posts-navigation, 
+.site-main .post-navigation {
+    background: #fff;
+}
+.site-footer,
+.site-footer a{
+    color: #fff
+}
+
+
+@media screen and (max-width: 992px) {
+    .asthir-blog-text, 
+    .asthir-blog-img {
+        width: 100%;
+        -ms-flex-preferred-size: inherit;
+            flex-basis: inherit;
+    }
+    .asthir-list-flex {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+    }
+    .asthir-btext {
+        margin-left: 0;
+    }
+    .main-navigation ul> li.befocus.menushow> ul.sub-menu,
+    .main-navigation ul> li.befocus.menushow> ul.children{
+        display: none !important;
+    }
+    aside#left-widget {
+        display: none;
+    }
+
+}
