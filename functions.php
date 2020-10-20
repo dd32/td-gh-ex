@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.6.0' );
 }
 
 if ( ! function_exists( 'articlepress_setup' ) ) :
@@ -165,5 +165,9 @@ add_action( 'admin_init', 'articlepress_add_editor_styles' );
 ==================================================*/
 // Enqueue Scripts
 include( get_template_directory() . '/inc/theme-enqueue.php' );
+
 // Theme Function
 include( get_template_directory() . '/inc/articlepress-function.php' );
+
+// Plugin Activation
+include( get_template_directory() . '/inc/activation/activation.php' );
