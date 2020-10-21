@@ -1,5 +1,11 @@
 == Changelog ==
 
+@Version 0.6
+1. Updated description in style.css and readme file.
+
+@Version 0.5
+1. Removed translation function from lorum ipsum dummy content.
+
 @Version 0.4
 1. Fixed menu and style issues.
 

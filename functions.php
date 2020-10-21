@@ -66,17 +66,17 @@ function appointment_dark_default_data() {
         
         //Home contact callout setting
         'front_callout_enable'=> false,
-        'front_contact_title' => esc_html__('Sed ut perspiciatis unde','appointment-dark'),
-        'front_contact1_title'=> esc_html__('Non proident, sunt in culpa ','appointment-dark'),
+        'front_contact_title' => 'Sed ut perspiciatis unde',
+        'front_contact1_title'=> 'Non proident, sunt in culpa ',
         'front_contact1_val'=> esc_html__('+99 999 99 999','appointment-dark'),
         'contact_one_icon' => esc_html__('fa fa-phone','appointment-dark'),
         
-        'front_contact2_title'=> esc_html__(' Neque porro quisquam','appointment-dark'),
-        'front_contact2_val'=> esc_html__('Ullamco laboris nisi','appointment-dark'),
+        'front_contact2_title'=> ' Neque porro quisquam',
+        'front_contact2_val'=> 'Ullamco laboris nisi',
         'contact_two_icon' => esc_html__('fa fa-clock-o','appointment-dark'),
         
         
-        'front_contact3_title'=> esc_html__('Ipsum quia dolor sit amet','appointment-dark'),
+        'front_contact3_title'=> 'Ipsum quia dolor sit amet',
         'front_contact3_val'=>esc_html__('abc@example.com','appointment-dark'),
         'contact_three_icon' =>esc_html__('fa fa-envelope','appointment-dark'),
     
