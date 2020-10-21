@@ -898,7 +898,6 @@ button.mini-toggle {
 	    display: inline-block;
 	    margin: 5px 0;
 	}
-
 	.main-navigation ul {
 	    display: block;
 	    height: auto;
@@ -909,7 +908,16 @@ button.mini-toggle {
 	    -o-transition: 0.5s;
 	    transition: 0.5s;
 	    max-height: 0;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    background: #fff;
+	    z-index: 9999;
+	    -webkit-box-shadow: 0 0 70px rgba(0,0,0,.11);
+    	box-shadow: 0 0 70px rgba(0,0,0,.11);
 	}
+
+
 	.menu-toggle {
 		display: block;
 	}
@@ -918,7 +926,7 @@ button.mini-toggle {
 	    width: 40px;
 	    height: 40px;
 	    top: 7px;
-	    right: 2px;
+	    right: 7px;
 	    border: 1px solid #888;
 	}
 	.main-navigation ul ul button.mini-toggle {
@@ -933,7 +941,7 @@ button.mini-toggle {
 	    max-width: 600px;
 	}
 	.mini-toggle, .main-navigation .menu-item-has-children:before, .page_item_has_children:before {
-	    right: 16px;
+	    right: 22px;
 	}
 	.main-navigation ul ul .mini-toggle,
 	.main-navigation ul ul .menu-item-has-children:before,
@@ -946,7 +954,7 @@ button.mini-toggle {
 	    display: inline-block;
 	}
 	.aak-main-nav ul li {
-	    border-bottom: 1px solid #555;
+	    border-bottom: 1px solid #ccc;
 	}
 	.main-navigation ul ul ul,
 	.main-navigation ul ul {

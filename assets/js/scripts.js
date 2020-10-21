@@ -4,14 +4,19 @@
 
 	jQuery(document).ready(function($){
 
-	$('#primary-menu li.menu-item').addClass('menuhide');
-	$('#primary-menu li.menu-item').on('click', function(){
-	$(this).removeClass('menuhide');
-	});
+		$('#primary-menu li.menu-item').addClass('menuhide');
+		$('#primary-menu li.menu-item').on('click', function(){
+		$(this).removeClass('menuhide');
+		});
 
-	$('.mini-toggle').on('click', function(){
-	   $(this).parent().toggleClass('menushow');
-	});
+		$('.mini-toggle').on('click', function(){
+		   $(this).parent().toggleClass('menushow');
+		});
+		$('.grid').masonry({
+		  itemSelector: '.grid-item',
+		  columnWidth: '.grid-item',
+		  percentPosition: true
+		})
 	
 
 	}); // document ready

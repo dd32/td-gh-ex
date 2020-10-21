@@ -37,7 +37,7 @@ if ( ! function_exists( 'aak_about_setup' ) ) :
 			'quick_links' => array(
                 'theme_url' => array(
                     'text' => esc_html__( 'UPGRADE TO PRO', 'aak' ),
-                    'url'  => 'https://wpthemespace.com/product/aak/',
+                    'url'  => 'https://wpthemespace.com/product/aak/?add-to-cart=2950',
                     'button' => 'danger',
 
                 ),

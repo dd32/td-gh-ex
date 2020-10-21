@@ -5,7 +5,7 @@ Tags: blog, news, education, custom-logo, one-column, two-columns, grid-layout, 
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.5.1
-Stable tag: 1.0.2
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -70,6 +70,11 @@ Source:https://pxhere.com/en/photo/683887
 
 
 == Changelog ==
+
+= 1.0.4 - October 21 2020 =
+* Menu responsive issue fixed
+* Added masnory grid for grid blog
+* Added shadow in the grid blog
 
 = 1.0.3 - October 14 2020 =
 * Added style for grid blog layout

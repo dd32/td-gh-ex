@@ -81,7 +81,7 @@ h1.site-title a {
   margin-bottom: 0;
 }
 p.site-description {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 p.site-description {
@@ -91,6 +91,8 @@ p.site-description {
 .aak-main-menu.menu-right ul{
     display: flex;
     justify-content: flex-end;
+    text-align: left;
+    margin-bottom: 10px
 }
 .aak-main-menu.menu-center ul{
     display: flex;
@@ -192,6 +194,12 @@ h2.widget-title {
     font-size: 12px;
     color: #ec2b8c;
 }
+.card.aakcard {
+    -webkit-box-shadow: 0 0 70px rgba(0,0,0,.11);
+    box-shadow: 0 0 70px rgba(0,0,0,.11);
+    border: none;
+    background: #fff;
+}
 .sticky .entry-header, 
 .tag-sticky-2 .entry-header {
     text-align: center;
@@ -246,7 +254,8 @@ h2.widget-title {
 .site-footer,
 .aak-blog-list,
 .aak-single-list,
-.comments-area {
+.comments-area,nav.navigation.pagination .nav-links a,
+nav.navigation.pagination .nav-links span {
     -webkit-box-shadow: 0 0 70px rgba(0,0,0,.11);
             box-shadow: 0 0 70px rgba(0,0,0,.11);
     padding: 20px;
@@ -345,16 +354,12 @@ form.post-password-form p {
         justify-content: flex-end;
         margin: auto;
         text-align: right;
-        width: 180px;
     }
     /*.aadhs-two .aak-main-nav {
         float: right;
     }*/
-    .aak-main-nav {
-        text-align: center;
-    }
+    
     .aakmstyle1 .aak-main-menu {
-        width: 100%;
         position: relative;
     }
     .site-navigation {
@@ -401,6 +406,9 @@ form.post-password-form p {
 @media screen and (max-width: 767px) {
     span.bhtop-text.pt-2 {
         display: block;
+        text-align: center;
+    }
+    .aak-main-nav {
         text-align: center;
     }
     .d-flex.aak-menu-wrap {
