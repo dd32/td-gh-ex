@@ -16,16 +16,7 @@
 }
 
 @media (min-width: 992px) and (max-width: 1198px) {
-	.team-footer .widget {
-	    margin-top: 10px;
-	}
-	.team-footer .widget_social_widget li:not(:last-child),
-	.team-footer .widget_social_widget li:not(:last-child) a {
-	    margin-right: 0px;
-	}
-	.team-member:hover .team-footer {
-    	padding: 36px 6px 32px;
-    }
+	
     .main-slider .owl-nav {
     	bottom: 9.2em;
     }
@@ -166,9 +157,6 @@
 	}
 	.av-text-404 h2 {
 	    margin: 35px 0 22px;
-	}
-	.team-member:hover .team-footer {
-		justify-content: center;
 	}
 }
 
@@ -357,9 +345,6 @@
 	}
 	.av-text-404 h2 {
 	    margin: 18px 0 22px;
-	}
-	.team-member:hover .team-footer {
-	    justify-content: center;
 	}
 }
 
