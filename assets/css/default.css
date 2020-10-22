@@ -915,7 +915,7 @@ button.mini-toggle {
 	    width: 40px;
 	    height: 40px;
 	    top: 7px;
-	    right: -10px;
+	    right: 7px;
 	    border: 1px solid #888;
 	}
 	.main-navigation ul ul button.mini-toggle {
@@ -927,10 +927,10 @@ button.mini-toggle {
 	    width: 95%;
 	    display: inline-block;
 	    min-width: 240px;
-	    max-width: 600px;
+	    max-width: 800px;
 	}
 	.mini-toggle, .main-navigation .menu-item-has-children:before, .page_item_has_children:before {
-	    right: 7px;
+	    right: 22px;
 	}
 	.main-navigation ul ul .mini-toggle,
 	.main-navigation ul ul .menu-item-has-children:before,
@@ -943,7 +943,7 @@ button.mini-toggle {
 	    display: inline-block;
 	}
 	.beshop-main-nav ul li {
-	    border-bottom: 1px solid #555;
+	    border-bottom: 1px solid #ccc;
 	}
 	.main-navigation ul ul ul,
 	.main-navigation ul ul {
@@ -1076,6 +1076,13 @@ button.mini-toggle {
 }
 .comment-form .form-submit {
     float: right;
+}
+.comment-form-cookies-consent {
+    display: flex;
+    align-items: baseline;
+}
+.comment-form-cookies-consent input{
+	margin-right: 5px;
 }
 /*--------------------------------------------------------------
 # Comments

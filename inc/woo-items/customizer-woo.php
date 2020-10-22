@@ -450,7 +450,7 @@ function beshopwoo_customize_register( $wp_customize ) {
         'type'       => 'text',
     ));
     $wp_customize->add_setting('beshop_title_position', array(
-        'default'        => 'left',
+        'default'        => 'center',
         'capability'     => 'edit_theme_options',
         'type'           => 'theme_mod',
         'sanitize_callback' => 'beshopwoo_sanitize_select',

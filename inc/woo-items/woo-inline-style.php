@@ -21,7 +21,7 @@ if(empty($beshop_porder)){
 
 $beshop_title_position = get_theme_mod('beshop_title_position','center');
 if($beshop_title_position != 'left'){
-    $style .='.woocommerce .page-title{text-align:'.$beshop_title_position.' !important;}';
+    $style .='.woocommerce .page-title,.woocommerce .term-description{text-align:'.$beshop_title_position.' !important;}';
 }
 $beshop_titlecolor = get_theme_mod('beshop_titlecolor');
 if($beshop_titlecolor){

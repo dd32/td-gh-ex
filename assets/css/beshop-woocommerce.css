@@ -393,6 +393,9 @@ a.added_to_cart.wc-forward {
     display: block;
     margin: 0 auto 5px;
 }
+.woocommerce .star-rating span::before {
+    text-align: left;
+}
 .woocommerce-checkout.woocommerce-page .content-area,
 .woocommerce-cart.woocommerce-page .content-area,
 .no-shop-widget .content-area {
@@ -663,3 +666,5 @@ a.btn.bshop-btn:hover {
 }
 
 }
+
+

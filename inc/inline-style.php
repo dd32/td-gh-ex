@@ -100,7 +100,7 @@ if( $beshop_menu_fontsize ){
     }
 $beshop_menubg_color = get_theme_mod( 'beshop_menubg_color' );
 if( $beshop_menubg_color ){
-      $style .='.beshop-main-nav.bg-dark{background:'.$beshop_menubg_color.'  !important;}';
+      $style .='.beshop-main-nav.bg-dark,.menu-main-menu-container{background:'.$beshop_menubg_color.'  !important;}';
       $style .='.beshop-main-nav ul li a{border-color:'.$beshop_menubg_color.'  !important;}';
     }
 $beshop_menudropbg_color = get_theme_mod( 'beshop_menudropbg_color' );

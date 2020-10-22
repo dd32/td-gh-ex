@@ -315,6 +315,33 @@ form.post-password-form p {
 }
 
 @media screen and (max-width: 992px) {
+    .beshop-main-menu nav {
+        position: relative;
+    }
+
+    .menu-main-menu-container {
+        position: absolute;
+        left: 0;
+        background: #343a40;
+        z-index: 99999;
+        top: 45px;
+        box-shadow: 0px 3px 40px rgba(0,0,0,0.20);
+        --webkit--box-shadow: 0px 3px 40px rgba(0,0,0,0.20);
+    }
+    .d-flex.has-logo-menu {
+        flex-flow: row wrap;
+    }
+
+    .has-logo-menu .beshop-main-menu {
+        text-align: right;
+    }
+    .menulogo-right .has-logo-menu .beshop-main-menu {
+        text-align: left;
+    }
+
+    .has-logo-menu .beshop-main-menu ul {
+        text-align: left;
+    }
     .bshop-list-flex, 
     .bshop-simple-list {
         flex-direction: column;
@@ -365,6 +392,9 @@ form.post-password-form p {
         flex-flow: column wrap;
         align-items: center;
     }
+    .topmenu-serch.bsearch-popup {
+        flex-flow: row wrap;
+    }
     
 
 
@@ -388,6 +418,17 @@ form.post-password-form p {
     }
     .header-top-search {
         margin: 10px auto 2px auto;
+    }
+    .topmenu-serch.bsearch-popup {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .d-flex.has-logo-menu {
+        flex-flow: column wrap;
     }
 
 }

@@ -12,9 +12,9 @@ $beshop_logo_position = get_theme_mod( 'beshop_logo_position','center');
 
 ?>
 
-		<div class="beshop-main-nav bg-dark text-white">
+		<div class="beshop-main-nav bg-dark text-white menulogo-<?php echo esc_attr($beshop_logo_position); ?>">
 			<div class="container">
-				<div class="<?php if($beshop_menu_logo): ?>d-flex<?php else: ?>logo-hide<?php endif; ?>">
+				<div class="<?php if($beshop_menu_logo): ?>d-flex has-logo-menu<?php else: ?>logo-hide<?php endif; ?>">
 				<?php if($beshop_logo_position == 'left' && $beshop_menu_logo ): ?>
 					<div class="menu-logo">
 						<?php beshop_header_logo(1); ?>

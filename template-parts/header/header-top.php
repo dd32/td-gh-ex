@@ -25,7 +25,7 @@ $beshop_topbar_search_item = get_theme_mod( 'beshop_topbar_search_item','popup' 
 		<?php endif; ?>
 		<?php if( $beshop_topbar_search_item != 'hide' || ($beshop_topbar_menushow && has_nav_menu( 'btop-menu' )) ): ?>
 			<div class="col-md-auto ml-auto">
-				<div class="topmenu-serch">
+				<div class="topmenu-serch bsearch-<?php echo esc_attr($beshop_topbar_search_item); ?>">
 		<?php if( $beshop_topbar_menushow && has_nav_menu( 'btop-menu' ) ): ?>
 					<div class="top-menu list-hide text-white">
 						<?php 

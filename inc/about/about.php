@@ -160,8 +160,8 @@ if ( ! function_exists( 'beshop_about_setup' ) ) :
 					// Required actions array.
 					'recommended_actions'        => array(
 						'install_label' => esc_html__( 'Install and Activate', 'beshop' ),
-						'activate_label' => esc_html__( 'Activate', 'beshop' ),
-						'deactivate_label' => esc_html__( 'Deactivate', 'beshop' ),
+						'activate_label' => esc_html__( 'Active Now', 'beshop' ),
+						'deactivate_label' => esc_html__( 'Good Job Plugin Actiated', 'beshop' ),
 						'content'            => array(
 							'be-boost' => array(
 								'title'       => __('Be Boost', 'beshop' ),
