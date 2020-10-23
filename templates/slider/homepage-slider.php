@@ -139,54 +139,58 @@
         <?php endif; wp_reset_postdata(); ?>
         
     <?php else : ?>
+
+        <?php if ( current_user_can('edit_theme_options') ) : ?>
         
-        <div class="home-slider-wrap home-slider-remove <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? sanitize_html_class( 'home-slider-header-six' ) : ''; ?>" data-auto="<?php echo ( get_theme_mod( 'avant-slider-auto-scroll' ) ) ? esc_attr( 'false' ) : esc_attr( '6500' ); ?>" data-scroll="<?php echo ( get_theme_mod( 'avant-slider-scroll-effect' ) ) ? esc_attr( get_theme_mod( 'avant-slider-scroll-effect' ) ) : esc_attr( 'crossfade' ); ?>" data-poh="<?php echo ( get_theme_mod( 'avant-slider-pause-oh' ) ) ? esc_attr( 'true' ) : esc_attr( 'false' ); ?>">
-            <div class="home-slider-wrap-hint">
-                <?php _e( 'See how to', 'avant' ); ?> <a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php _e( 'Add your own slides here', 'avant' ); ?></a>
-            </div>
-            
-            <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '<div class="site-container">' : ''; ?>
-                <div class="home-slider-prev"><i class="fas fa-angle-left"></i></div>
-                <div class="home-slider-next"><i class="fas fa-angle-right"></i></div>
+            <div class="home-slider-wrap home-slider-remove <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? sanitize_html_class( 'home-slider-header-six' ) : ''; ?>" data-auto="<?php echo ( get_theme_mod( 'avant-slider-auto-scroll' ) ) ? esc_attr( 'false' ) : esc_attr( '6500' ); ?>" data-scroll="<?php echo ( get_theme_mod( 'avant-slider-scroll-effect' ) ) ? esc_attr( get_theme_mod( 'avant-slider-scroll-effect' ) ) : esc_attr( 'crossfade' ); ?>" data-poh="<?php echo ( get_theme_mod( 'avant-slider-pause-oh' ) ) ? esc_attr( 'true' ) : esc_attr( 'false' ); ?>">
+                <div class="home-slider-wrap-hint">
+                    <?php _e( 'See how to', 'avant' ); ?> <a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php _e( 'Add your own slides here', 'avant' ); ?></a>
+                </div>
                 
-                <div class="home-slider">
+                <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '<div class="site-container">' : ''; ?>
+                    <div class="home-slider-prev"><i class="fas fa-angle-left"></i></div>
+                    <div class="home-slider-next"><i class="fas fa-angle-right"></i></div>
                     
-                    <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slider_default_01.jpg);">
+                    <div class="home-slider">
                         
-                        <?php if ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-small' ) : ?>
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_small.gif" />
-                        <?php elseif ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-large' ) : ?>
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_large.gif" />
-                        <?php else : ?>
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_medium.gif" />
-                        <?php endif; ?>
-                        
-                        <?php if ( !get_theme_mod( 'avant-slider-remove-title', customizer_library_get_default( 'avant-slider-remove-title' ) ) ) : ?>
+                        <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slider_default_01.jpg);">
                             
-                            <div class="home-slider-block-inner">
-                                <div class="home-slider-block-bg">
-                                    <h3>
-                                        <?php _e( 'Paint A Picture', 'avant' ); ?>
-                                    </h3>
-                                    <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title', customizer_library_get_default( 'avant-slider-remove-sub-title' ) ) ) : ?>
-                                        <p><?php _e( 'Are you shopping anywhere, changed the color of your hair, are you busy?', 'avant' ); ?></p>
-                                    <?php endif; ?>
+                            <?php if ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-small' ) : ?>
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_small.gif" />
+                            <?php elseif ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-large' ) : ?>
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_large.gif" />
+                            <?php else : ?>
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/slider_blank_img_medium.gif" />
+                            <?php endif; ?>
+                            
+                            <?php if ( !get_theme_mod( 'avant-slider-remove-title', customizer_library_get_default( 'avant-slider-remove-title' ) ) ) : ?>
+                                
+                                <div class="home-slider-block-inner">
+                                    <div class="home-slider-block-bg">
+                                        <h3>
+                                            <?php _e( 'Paint A Picture', 'avant' ); ?>
+                                        </h3>
+                                        <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title', customizer_library_get_default( 'avant-slider-remove-sub-title' ) ) ) : ?>
+                                            <p><?php _e( 'Are you shopping anywhere, changed the color of your hair, are you busy?', 'avant' ); ?></p>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
+                                
+                            <?php endif; ?>
                             
-                        <?php endif; ?>
+                        </div>
                         
                     </div>
                     
-                </div>
+                <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '</div>' : ''; ?>
                 
-            <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '</div>' : ''; ?>
-            
-            <?php if ( !get_theme_mod( 'avant-slider-remove-pagination', customizer_library_get_default( 'avant-slider-remove-pagination' ) ) ) : ?>
-                <div class="home-slider-pager"></div>
-            <?php endif; ?>
-            
-        </div>
+                <?php if ( !get_theme_mod( 'avant-slider-remove-pagination', customizer_library_get_default( 'avant-slider-remove-pagination' ) ) ) : ?>
+                    <div class="home-slider-pager"></div>
+                <?php endif; ?>
+                
+            </div>
+
+        <?php endif; ?>
             
     <?php endif; ?>
     

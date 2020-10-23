@@ -12,7 +12,7 @@
 	        	<div class="site-footer-no-widgets">
                     <?php
                     if ( is_user_logged_in() ) :
-                        if ( current_user_can( 'administrator' ) ) :
+                        if ( current_user_can( 'edit_theme_options' ) ) :
                             printf( __( 'Add your own <a href="%s">widgets here</a>', 'avant' ) , admin_url( 'widgets.php' ) );
                         endif;
                     endif; ?>

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2020-09-24 12:57+0200\n"
+"POT-Creation-Date: 2020-10-23 13:27+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1297,7 +1297,7 @@ msgid "Contact Form by WPForms"
 msgstr ""
 
 #: functions.php:380
-msgid "WooCustomizer"
+msgid "StoreCustomizer"
 msgstr ""
 
 #: functions.php:385
@@ -1305,32 +1305,28 @@ msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: functions.php:390
-msgid "Linkt"
+msgid "Google Analytics for WordPress by MonsterInsights"
 msgstr ""
 
-#: functions.php:395
-msgid "HubSpot"
-msgstr ""
-
-#: functions.php:503
+#: functions.php:498
 msgid "Post navigation"
 msgstr ""
 
-#: functions.php:514
+#: functions.php:509
 msgctxt "Previous post link"
 msgid "%title"
 msgstr ""
 
-#: functions.php:515
+#: functions.php:510
 msgctxt "Next post link"
 msgid "%title"
 msgstr ""
 
-#: functions.php:586
+#: functions.php:581
 msgid "Thank you for using Avant!"
 msgstr ""
 
-#: functions.php:588
+#: functions.php:583
 #, php-format
 msgid ""
 "We pride ourselves on <a href=\"%1$s\" target=\"_blank\">good products and 5 "
@@ -1340,100 +1336,100 @@ msgid ""
 "topbtn\">Get In Contact</a>"
 msgstr ""
 
-#: functions.php:592
+#: functions.php:587
 #, php-format
 msgid "%1$s on the Shortcode slider included FREE with Avant Premium!"
 msgstr ""
 
-#: functions.php:592
+#: functions.php:587
 msgid "Read More here"
 msgstr ""
 
-#: functions.php:597
+#: functions.php:592
 msgid "Popular links to get you started"
 msgstr ""
 
-#: functions.php:599
+#: functions.php:594
 msgid "See what the Avant Premium theme offers"
 msgstr ""
 
-#: functions.php:600
+#: functions.php:595
 msgid "Setting up the Avant default slider"
 msgstr ""
 
-#: functions.php:601
+#: functions.php:596
 msgid "How to install Avant Premium"
 msgstr ""
 
-#: functions.php:602
+#: functions.php:597
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:605
+#: functions.php:600
 msgid "Go To Documentation"
 msgstr ""
 
-#: functions.php:609
+#: functions.php:604
 msgid "Start customizing your site:"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:606
 msgid ""
 "All Avant Settings are built into the WordPress Customizer for easy, visual "
 "site editing."
 msgstr ""
 
-#: functions.php:614
+#: functions.php:609
 msgid "Start Customizing Avant"
 msgstr ""
 
-#: functions.php:618
+#: functions.php:613
 msgid "Need Help with Avant?"
 msgstr ""
 
-#: functions.php:620
+#: functions.php:615
 msgid ""
 "Need help upgrading? Have a question about using the Avant theme? We're here "
 "to help... Contact us."
 msgstr ""
 
-#: functions.php:623
+#: functions.php:618
 msgid "Get in contact"
 msgstr ""
 
-#: functions.php:630
+#: functions.php:625
 #, php-format
 msgid ""
-"Avant Premium is %1$s for all the extra %2$s and a FREE shortcode slider "
-"plugin"
+"Avant Premium is %1$s for all the extra %2$s plus FREE shortcode slider "
+"plugin included"
 msgstr ""
 
-#: functions.php:630
+#: functions.php:625
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
 "target=\"_blank\">currently selling for only $25</a>"
 msgstr ""
 
-#: functions.php:630
+#: functions.php:625
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#premium-features\" "
 "target=\"_blank\">Avant Premium features</a>"
 msgstr ""
 
-#: functions.php:634 functions.php:670
+#: functions.php:629 functions.php:665
 msgid "Dismiss Notice"
 msgstr ""
 
-#: functions.php:663
+#: functions.php:658
 msgid "Avant Pro on special !"
 msgstr ""
 
-#: functions.php:668
+#: functions.php:663
 #, php-format
-msgid "Get %1$s... Use the limited coupon code \"SEPT2020SALE\" now."
+msgid "Get %1$s... Use the limited coupon code \"ONSALE\" now."
 msgstr ""
 
-#: functions.php:668
+#: functions.php:663
 msgid "Avant Pro for only $20"
 msgstr ""
 
@@ -1963,19 +1959,19 @@ msgstr ""
 msgid "menu"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:145
+#: templates/slider/homepage-slider.php:147
 msgid "See how to"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:145
+#: templates/slider/homepage-slider.php:147
 msgid "Add your own slides here"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:169
+#: templates/slider/homepage-slider.php:171
 msgid "Paint A Picture"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:172
+#: templates/slider/homepage-slider.php:174
 msgid ""
 "Are you shopping anywhere, changed the color of your hair, are you busy?"
 msgstr ""

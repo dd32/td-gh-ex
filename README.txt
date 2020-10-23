@@ -66,9 +66,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.46
+* Style tweaks/fixes
+* Only display demo slider IF user can edit_theme_options
+* Only display footer widgets hint IF user can edit_theme_options 
+* Added Monster Insights as a recommended plugin in TGM
+* Updated the language .pot file
+
 #### 1.1.45
 * Style tweaks/fixes
-* Added new header setting to edit the Search bbar placeholder text
+* Added new header setting to edit the Search bar placeholder text
 * Added new dismissable dashboard notice
 * Updated the language .pot file
 

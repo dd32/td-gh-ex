@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.45' );
+define( 'AVANT_THEME_VERSION' , '1.1.46' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -377,7 +377,7 @@ function avant_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'WooCustomizer', 'avant' ),
+			'name'      => __( 'StoreCustomizer', 'avant' ),
 			'slug'      => 'woocustomizer',
 			'required'  => false,
 		),
@@ -387,15 +387,10 @@ function avant_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'Linkt', 'avant' ),
-			'slug'      => 'linkt',
+			'name'      => __( 'Google Analytics for WordPress by MonsterInsights', 'avant' ),
+			'slug'      => 'google-analytics-for-wordpress',
 			'required'  => false,
-		),
-		array(
-			'name'      => __( 'HubSpot', 'avant' ),
-			'slug'      => 'leadin',
-			'required'  => false,
-		)
+        )
 	);
 	$config = array(
 		'id'           => 'avant',
@@ -627,7 +622,7 @@ function avant_add_license_notice() {
 				<h5>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Avant Premium is %1$s for all the extra %2$s and a FREE shortcode slider plugin', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">currently selling for only $25</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank">Avant Premium features</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Avant Premium is %1$s for all the extra %2$s plus FREE shortcode slider plugin included', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">currently selling for only $25</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank">Avant Premium features</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</h5>
 			<?php endif; ?>
@@ -665,7 +660,7 @@ function avant_add_sale_notice() {
 			<p>
                 <?php
                 /* translators: 1: 'Avant Pro for only $20'. */
-                printf( esc_html__( 'Get %1$s... Use the limited coupon code "SEPT2020SALE" now.', 'avant' ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/avant/#purchase-premium' ) . '" target="_blank">' . __( 'Avant Pro for only $20', 'avant' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) ); ?>
+                printf( esc_html__( 'Get %1$s... Use the limited coupon code "ONSALE" now.', 'avant' ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/avant/#purchase-premium' ) . '" target="_blank">' . __( 'Avant Pro for only $20', 'avant' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) ); ?>
 			</p>
 			<a href="?avant_add_sale_notice_ignore=" class="avant-notice-close"><?php esc_html_e( 'Dismiss Notice', 'avant' ); ?></a>
 		</div><?php
