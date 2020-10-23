@@ -36,9 +36,9 @@ function artpop_custom_css() {
 	// Site Logo Size
 	if ( ! empty( $site_logo_size ) ) {
 		$theme_css .= "
-		@media screen and (min-width: 1024px) {
-		.site-logo {max-width: {$site_logo_size}px;}
-		}";
+		@media screen and (min-width: 720px) { .mobile-header .site-logo {max-width: {$site_logo_size}px;} }
+		@media screen and (min-width: 1024px) { .site-logo {max-width: {$site_logo_size}px;} }
+		";
 	}
 	// Colors
 	if ( ! empty( $site_title_color ) ) {
@@ -88,7 +88,7 @@ function artpop_editor_css() {
 	$accent_color = esc_attr( get_theme_mod( 'accent_color' ) );
 
 	$editor_css = "";
-	
+
 	// Accent Color
 	if ( ! empty( $accent_color ) ) {
 		$editor_css .= "

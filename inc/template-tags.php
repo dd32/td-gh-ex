@@ -67,7 +67,7 @@ if ( ! function_exists( 'artpop_category_link' ) ) :
 function artpop_category_link() {
 	if ( 'post' === get_post_type() ) {
 		// Get Categories for posts.
-		$categories_list = get_the_category_list( ', ', esc_html__( ' ', 'artpop' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'artpop' ) );
 		echo '<span class="cat-links">';
 		echo '<em class="sep">' . __( 'in', 'artpop' ) . '</em>';
 		echo $categories_list;
@@ -101,7 +101,7 @@ function artpop_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		// Get Tags for posts.
-		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'artpop' ) );
+		$tags_list = get_the_tag_list( '', ( ' ' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">%1$s</span>',
 			$tags_list

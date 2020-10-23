@@ -50,6 +50,6 @@ function artpop_wrapper_end() {
 function artpop_woocommerce_cart_link() {
 	if( get_theme_mod( 'header_show_woo_cart', artpop_defaults( 'header_show_woo_cart' ) ) ) {
 		$cart_url = wc_get_cart_url();
-		echo '<div class="woo-cart-link"><a href="' . esc_url( $cart_url ) . '" title="' . __( 'Checkout', 'artpop' ) . '">' . '<span class="woo-cart-icon">' . artpop_get_svg( array( 'icon' => 'shopping-cart' ) ) . '</span></a></div>';
+		echo '<div class="woo-cart-link"><a href="' . esc_url( $cart_url ) . '" title="' . esc_attr__( 'Checkout', 'artpop' ) . '">' . '<span class="woo-cart-icon">' . artpop_get_svg( array( 'icon' => 'shopping-cart' ) ) . '</span></a></div>';
 	}
 }

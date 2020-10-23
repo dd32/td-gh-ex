@@ -59,6 +59,6 @@
 <?php
 // Author bio
 if ( get_theme_mod( 'post_show_author_bio', artpop_defaults( 'post_show_author_bio' ) ) && is_single() && get_the_author_meta( 'description' ) ) {
-	get_template_part( 'template-parts/post/author-bio' );
+	get_template_part( 'template-parts/post/entry-author-bio' );
 }
 ?>

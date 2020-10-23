@@ -19,16 +19,16 @@ get_header(); ?>
 	<main id="main" class="site-main">
 
 		<?php
-		$blog_title             = get_theme_mod( 'home_blog_title', artpop_defaults( 'home_blog_title' ) );
-		$blog_title_description = get_theme_mod( 'home_blog_title_description', artpop_defaults( 'home_blog_title_description' ) );
+		$custom_blog_title       = get_theme_mod( 'home_custom_blog_title', artpop_defaults( 'home_custom_blog_title' ) );
+		$custom_blog_description = get_theme_mod( 'home_custom_blog_description', artpop_defaults( 'home_custom_blog_description' ) );
 
 		if ( ! empty( $blog_title ) ) :
 		?>
 			<div class="section-header">
 				<div class="section-title">
-					<span><?php echo esc_html( $blog_title ); ?></span>
+					<span><?php echo esc_html( $custom_blog_title ); ?></span>
 				</div>
-				<?php if ( ! empty( $blog_title_description ) ) echo '<p>' . wp_kses_post( $blog_title_description ) . '</p>'; ?>
+				<?php if ( ! empty( $custom_blog_description ) ) echo '<p>' . wp_kses_post( $custom_blog_description ) . '</p>'; ?>
 			</div>
 		<?php
 		endif;

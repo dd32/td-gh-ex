@@ -10,16 +10,17 @@
 
 <span id="side-panel-overlay" class="side-panel-overlay"></span>
 <aside id="side-panel" class="side-panel">
-	<span id="side-panel-close" class="side-panel-close"><i></i></span>
 	<div class="side-panel-inner">
 		<nav id="mobile-navigation" class="mobile-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Mobile Navigation', 'artpop' ); ?>">
+			<button id="side-panel-close" class="side-panel-close"><i></i></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'main_menu',
-				'menu_id'        => 'main-menu',
-				'menu_class'     => 'main-menu mobile-menu',
-				'container'      => false,
-				'fallback_cb'    => 'artpop_fallback_menu'
+				'theme_location'        => 'main_menu',
+				'menu_id'               => 'main-menu',
+				'menu_class'            => 'main-menu mobile-menu',
+				'show_sub_menu_toggles' => true,
+				'container'             => false,
+				'fallback_cb'           => 'artpop_fallback_menu'
 			) );
 			?>
 			<?php

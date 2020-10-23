@@ -289,7 +289,7 @@ function artpop_theme_customizer( $wp_customize ) {
 		'sanitize_callback' => 'absint',
 	) );
 	$wp_customize->add_control( 'site_logo_size', array(
-		'label'       => __( 'Logo width', 'artpop' ),
+		'label'       => __( 'Logo Max Width (Desktop and Tablet)', 'artpop' ),
 		'description' => __( 'Enter a value in pixel. The Logo image will fit all the available space, depends on the Site Header Layout.', 'artpop' ),
 		'section'     => 'site_logo',
 		'type'        => 'numeric',
@@ -305,23 +305,31 @@ function artpop_theme_customizer( $wp_customize ) {
 		'type'     => 'checkbox',
 		'priority' => 3,
 	) );
-
-	// Homepage Options
-	$wp_customize->add_setting( 'home_blog_title', array(
-		'default'           => artpop_defaults( 'home_blog_title' ),
+	$wp_customize->add_setting( 'site_logo_upsell_link', array(
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
-	$wp_customize->add_control( 'home_blog_title', array(
+	$wp_customize->add_control( new Artpop_Customize_Upsell( $wp_customize, 'site_logo_upsell_link', array(
+		'label'   => __( 'Need more options?', 'artpop' ),
+		'section' => 'site_logo',
+		'priority' => 4,
+	) ) );
+
+	// Homepage Options
+	$wp_customize->add_setting( 'home_custom_blog_title', array(
+		'default'           => artpop_defaults( 'home_custom_blog_title' ),
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'home_custom_blog_title', array(
 		'label'       => __( 'Blog Title', 'artpop' ),
 		'description' => __( 'Add a custom Blog Title to your Homepage.', 'artpop' ),
 		'section'     => 'home_options',
 		'type'        => 'text',
 	) );
-	$wp_customize->add_setting( 'home_blog_title_description', array(
-		'default'           => artpop_defaults( 'home_blog_title_description' ),
+	$wp_customize->add_setting( 'home_custom_blog_description', array(
+		'default'           => artpop_defaults( 'home_custom_blog_description' ),
 		'sanitize_callback' => 'artpop_sanitize_html',
 	) );
-	$wp_customize->add_control( 'home_blog_title_description', array(
+	$wp_customize->add_control( 'home_custom_blog_description', array(
 		'label'       => __( 'Blog Title Description', 'artpop' ),
 		'description' => __( 'Add a custom text below Blog Title. HTML tags are allowed: strong, em, b, i, br.', 'artpop' ),
 		'section'     => 'home_options',
@@ -366,7 +374,7 @@ function artpop_theme_customizer( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'home_featured_posts_layout', array(
 		'default'           => artpop_defaults( 'home_featured_posts_layout' ),
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'artpop_sanitize_choices',
 	) );
 	$wp_customize->add_control( 'home_featured_posts_layout', array(
 		'label'    => __( 'Layout', 'artpop' ),

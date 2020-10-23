@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Artpop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 08:51+0000\n"
+"POT-Creation-Date: 2020-10-23 00:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -173,24 +173,24 @@ msgstr ""
 msgid "Skip to the content"
 msgstr ""
 
-#: functions.php:435
+#: functions.php:319
+msgid "Show sub menu"
+msgstr ""
+
+#: functions.php:466
 msgid "Home"
 msgstr ""
 
-#: functions.php:449
+#: functions.php:480
 msgid "Fallback image"
 msgstr ""
 
-#: functions.php:616
+#: functions.php:648
 msgid "All categories"
 msgstr ""
 
-#: functions.php:625
+#: functions.php:657
 msgid "Y"
-msgstr ""
-
-#: header.php:40
-msgid "Menu"
 msgstr ""
 
 #: single.php:25
@@ -249,8 +249,8 @@ msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: inc/template-tags.php:70 inc/template-tags.php:104
-msgid " "
+#: inc/template-tags.php:70
+msgid ", "
 msgstr ""
 
 #: inc/template-tags.php:72
@@ -296,8 +296,13 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: template-parts/navigation/navigation-mobile.php:15
+#: template-parts/navigation/navigation-mobile.php:14
 msgid "Mobile Navigation"
+msgstr ""
+
+#: template-parts/post/entry-author-bio.php:17
+#, php-format
+msgid "View all posts by %s"
 msgstr ""
 
 #: template-parts/post/content-none.php:23
@@ -309,11 +314,6 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
 "can help."
-msgstr ""
-
-#: template-parts/post/author-bio.php:17
-#, php-format
-msgid "View all posts by %s"
 msgstr ""
 
 #: inc/customizer/controls.php:29
@@ -451,8 +451,9 @@ msgid ""
 msgstr ""
 
 #: inc/customizer/customizer.php:208 inc/customizer/customizer.php:282
-#: inc/customizer/customizer.php:352 inc/customizer/customizer.php:418
-#: inc/customizer/customizer.php:446 inc/customizer/customizer.php:465
+#: inc/customizer/customizer.php:312 inc/customizer/customizer.php:360
+#: inc/customizer/customizer.php:426 inc/customizer/customizer.php:454
+#: inc/customizer/customizer.php:473 inc/customizer/customizer.php:516
 msgid "Need more options?"
 msgstr ""
 
@@ -468,11 +469,11 @@ msgstr ""
 msgid "Sticky header on scroll"
 msgstr ""
 
-#: inc/customizer/customizer.php:254 inc/customizer/customizer.php:456
+#: inc/customizer/customizer.php:254 inc/customizer/customizer.php:464
 msgid "Display Social Icons"
 msgstr ""
 
-#: inc/customizer/customizer.php:255 inc/customizer/customizer.php:457
+#: inc/customizer/customizer.php:255 inc/customizer/customizer.php:465
 msgid ""
 "To add Social Icons create a new menu, add custom links to your Social Media "
 "and assign the menu to Social Menu location."
@@ -487,7 +488,7 @@ msgid "Display WooCommerce Cart Link"
 msgstr ""
 
 #: inc/customizer/customizer.php:292
-msgid "Logo width"
+msgid "Logo Max Width (Desktop and Tablet)"
 msgstr ""
 
 #: inc/customizer/customizer.php:293
@@ -500,99 +501,99 @@ msgstr ""
 msgid "Display Tagline below Site Title/Logo"
 msgstr ""
 
-#: inc/customizer/customizer.php:315
+#: inc/customizer/customizer.php:323
 msgid "Blog Title"
 msgstr ""
 
-#: inc/customizer/customizer.php:316
+#: inc/customizer/customizer.php:324
 msgid "Add a custom Blog Title to your Homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:325
+#: inc/customizer/customizer.php:333
 msgid "Blog Title Description"
 msgstr ""
 
-#: inc/customizer/customizer.php:326
+#: inc/customizer/customizer.php:334
 msgid ""
 "Add a custom text below Blog Title. HTML tags are allowed: strong, em, b, i, "
 "br."
 msgstr ""
 
-#: inc/customizer/customizer.php:341
+#: inc/customizer/customizer.php:349
 msgid "Homepage Layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:345 inc/customizer/customizer.php:411
+#: inc/customizer/customizer.php:353 inc/customizer/customizer.php:419
 msgid "Grid 2 Columns"
 msgstr ""
 
-#: inc/customizer/customizer.php:346 inc/customizer/customizer.php:412
+#: inc/customizer/customizer.php:354 inc/customizer/customizer.php:420
 msgid "Grid 3 Columns"
 msgstr ""
 
-#: inc/customizer/customizer.php:362
+#: inc/customizer/customizer.php:370
 msgid "Display Featured Posts"
 msgstr ""
 
-#: inc/customizer/customizer.php:363
+#: inc/customizer/customizer.php:371
 msgid "Check this option to display Featured Posts at the top of the Homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:372
+#: inc/customizer/customizer.php:380
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:376
+#: inc/customizer/customizer.php:384
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/customizer.php:377
+#: inc/customizer/customizer.php:385
 msgid "Carousel"
 msgstr ""
 
-#: inc/customizer/customizer.php:384
+#: inc/customizer/customizer.php:392
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/customizer.php:385
+#: inc/customizer/customizer.php:393
 msgid "Select a category."
 msgstr ""
 
-#: inc/customizer/customizer.php:395
+#: inc/customizer/customizer.php:403
 msgid "Avoid duplicate posts"
 msgstr ""
 
-#: inc/customizer/customizer.php:396
+#: inc/customizer/customizer.php:404
 msgid "Enable this option to remove Featured Posts from the Homepage."
 msgstr ""
 
-#: inc/customizer/customizer.php:407
+#: inc/customizer/customizer.php:415
 msgid "Archive Layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:428
+#: inc/customizer/customizer.php:436
 msgid "Display Breadcrumbs Navigation"
 msgstr ""
 
-#: inc/customizer/customizer.php:429
+#: inc/customizer/customizer.php:437
 msgid ""
 "Display Yoast SEO breadcrumbs at the top of the Post. (Yoast SEO 2.3 or "
 "higher is required)"
 msgstr ""
 
-#: inc/customizer/customizer.php:438
+#: inc/customizer/customizer.php:446
 msgid "Display Author Bio"
 msgstr ""
 
-#: inc/customizer/customizer.php:475
+#: inc/customizer/customizer.php:483
 msgid "Site Title color"
 msgstr ""
 
-#: inc/customizer/customizer.php:484
+#: inc/customizer/customizer.php:492
 msgid "Site Tagline color"
 msgstr ""
 
-#: inc/customizer/customizer.php:500
+#: inc/customizer/customizer.php:508
 msgid "Accent color"
 msgstr ""
 

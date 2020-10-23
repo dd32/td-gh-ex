@@ -16,9 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php endif; ?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -31,13 +28,13 @@ wp_body_open();
 
 	<header id="masthead" class="site-header">
 		<div class="<?php artpop_header_class(); ?>">
-			<div class="main-header">
+			<div class="main-header" id="main-header">
 				<?php get_template_part( 'template-parts/header/' . artpop_header_template() ); ?>
 			</div>
-			<div class="mobile-header">
+			<div class="mobile-header" id="mobile-header">
 				<div class="container">
 					<div class="mobile-header-wrapper">
-						<span class="menu-toggle" title="<?php esc_attr_e( 'Menu', 'artpop' ); ?>"><i></i></span>
+						<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false"><i></i></button>
 						<div class="site-branding">
 							<?php artpop_custom_logo(); ?>
 						</div>

@@ -222,13 +222,13 @@ function artpop_scripts() {
 	wp_enqueue_style( 'artpop-style', get_stylesheet_uri(), array(), $theme_version );
 
 	// Main js.
-	wp_enqueue_script( 'artpop-script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '20200622', true );
+	wp_enqueue_script( 'artpop-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20201022', true );
 
 	// Add Swiper.
-	if ( is_home() && get_theme_mod( 'home_show_featured_posts', artpop_defaults( 'home_show_featured_posts' ) ) ) {
-		wp_enqueue_style( 'artpop-swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), '6.1.2' );
-		wp_enqueue_script( 'artpop-swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array( 'jquery' ), '6.1.2', true );
-		wp_add_inline_script( 'artpop-swiper-js', artpop_initialize_swiper() );
+	if ( is_home() && get_theme_mod( 'home_show_featured_posts', artpop_defaults( 'home_show_featured_posts' ) ) && 'featured-carousel' == get_theme_mod( 'home_featured_posts_layout', artpop_defaults( 'home_featured_posts_layout' ) ) ) {
+		wp_enqueue_style( 'artpop-swiper-style', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), '6.1.2' );
+		wp_enqueue_script( 'artpop-swiper-script', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '6.1.2', true );
+		wp_add_inline_script( 'artpop-swiper-script', artpop_initialize_swiper() );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -312,6 +312,42 @@ function artpop_skip_link() {
 add_action( 'wp_body_open', 'artpop_skip_link', 5 );
 
 /**
+ * Adds a Sub Nav Toggle to the Mobile Menu.
+ */
+function artpop_add_sub_menu_toggles( $output, $item, $depth, $args ) {
+	if ( isset( $args->show_sub_menu_toggles ) && $args->show_sub_menu_toggles && in_array( 'menu-item-has-children', $item->classes, true ) ) {
+		$output = '<div class="menu-item-wrapper">' . $output . '<button class="sub-menu-toggle" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'artpop' ) . '</span>' . artpop_get_svg( array( 'icon' => 'chevron-down' )  ) . '</button></div>';
+	}
+	return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'artpop_add_sub_menu_toggles', 10, 4 );
+
+/**
+ * Adds a Sub Nav Icons to the Main Menu.
+ */
+function artpop_add_sub_menu_icons( $output, $item, $depth, $args ) {
+	if( isset( $args->show_sub_menu_icons ) && $args->show_sub_menu_icons && in_array( 'menu-item-has-children', $item->classes, true ) ) {
+		$output = $output . '<span class="sub-menu-icon"></span>';
+	}
+	return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'artpop_add_sub_menu_icons', 10, 4 );
+
+/**
+ * Adjustments to menu attributes to support WCAG 2.0 recommendations for flyout and dropdown menus.
+ * @link https://www.w3.org/WAI/tutorials/menus/flyout/
+ */
+function artpop_add_menu_link_attributes( $atts, $item, $args, $depth ) {
+	$item_has_children = in_array( 'menu-item-has-children', $item->classes );
+	if ( $item_has_children ) {
+		$atts['aria-haspopup'] = 'true';
+		$atts['aria-expanded'] = 'false';
+	}
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'artpop_add_menu_link_attributes', 10, 4 );
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer/defaults.php';
@@ -389,11 +425,6 @@ function artpop_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Adds a class for Featured Posts.
-	if ( is_home() && get_theme_mod( 'home_show_featured_posts', artpop_defaults( 'home_show_featured_posts' ) ) ) {
-		$classes[] = 'has-featured-posts';
-	}
-
 	// Adds a class for the Sidebar.
 	$site_home_sidebar    = get_theme_mod( 'site_home_sidebar', artpop_defaults( 'site_home_sidebar' ) );
 	$site_archive_sidebar = get_theme_mod( 'site_archive_sidebar', artpop_defaults( 'site_archive_sidebar' ) );
@@ -446,7 +477,7 @@ function artpop_fallback_image() {
 	$fallback_image_url = get_template_directory_uri() . '/assets/images/fallback-image.png';
 	echo '<figure class="entry-thumbnail">';
 	echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
-	echo '<img class="fallback-image" src="' . $fallback_image_url . '" alt="' . __( 'Fallback image', 'artpop' ) . '" />';
+	echo '<img class="fallback-image" src="' . esc_url( $fallback_image_url ) . '" alt="' . __( 'Fallback image', 'artpop' ) . '" />';
 	echo '</a>';
 	echo '</figure>';
 }
@@ -527,7 +558,8 @@ function artpop_custom_logo() {
 function artpop_search_popup() {
 	if ( get_theme_mod( 'header_show_search_icon', 1 ) ) :
 		echo '<div class="search-popup">';
-		echo '<span id="search-popup-button" class="search-popup-button">' . artpop_get_svg( array( 'icon' => 'search' ) ) . artpop_get_svg( array( 'icon' => 'x' ) ) . '</span>';
+		echo '<button class="search-popup-button search-open">' . artpop_get_svg( array( 'icon' => 'search' ) ) . '</button>';
+		echo '<button class="search-popup-button search-close">' . artpop_get_svg( array( 'icon' => 'x' ) ) . '</button>';
 		get_search_form();
 		echo '</div>';
 	endif;

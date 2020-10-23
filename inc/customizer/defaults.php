@@ -36,14 +36,14 @@ function artpop_defaults( $name ) {
 				'header_show_woo_cart'         => true,
 
 				// Homepage options
-				'home_blog_title'              => '',
-				'home_blog_title_description'  => '',
+				'home_custom_blog_title'       => '',
+				'home_custom_blog_description' => '',
 				'home_layout'                  => 'grid-third',
 
 				// Featured Posts
 				'home_show_featured_posts'     => true,
 				'home_featured_posts_layout'   => 'featured-grid',
-				'home_featured_posts_cat'      => get_option( 'default_category' ),
+				'home_featured_posts_cat'      => 'all',
 				'home_exclude_featured_posts'  => true,
 
 				// Archive options
