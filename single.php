@@ -28,8 +28,8 @@ get_header(); ?>
             <div class="floatleft"><?php previous_post_link('&laquo; %link'); ?></div>
 			<div class="floatright"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
             <?php if ( is_attachment() ): ?>
-            <div class="floatleft"><?php previous_image_link( false, '&laquo; Previous Image' ); ?></div>
-			<div class="floatright"><?php next_image_link( false, 'Next Image &raquo;' ); ?></div> 
+            	<div class="floatleft"><?php previous_image_link( false, '&laquo; '.__('Previous Image','spark') ); ?></div>
+				<div class="floatright"><?php next_image_link( false, ''.__('Next Image','spark').' &raquo;' ); ?></div> 
             <?php endif; ?>
           	</div>
 			</div>

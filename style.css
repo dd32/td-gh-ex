@@ -7,17 +7,21 @@ Author URI: https://d5creation.com
 
 Description: SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages. You can Visit the SPARK Demo Here: http://demo.d5creation.com/themes/?theme=SPARK  and Theme Page Here: https://d5creation.com/theme/spark 
 
-Version: 2.3
+Version: 2.5
 
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SPARK WordPress Theme, Copyright 2014-2015: D5 Creation (www.d5creation.com)
+SPARK WordPress Theme, Copyright 2014-2020: D5 Creation (www.d5creation.com)
 SPARK is distributed under the terms of the GNU GPL
 
 Text Domain: spark
+
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5.1
 
 */
 
@@ -96,10 +100,10 @@ img.site-logo, .site-title { max-height:90%; margin: 0; height: auto; width: aut
 /* ================ Main Menu Elements ============== */
 #mmainmenu { max-width:74%; display: flex; align-items: center; flex-wrap: wrap; flex-direction: column; z-index: 999; }
 #main-menu-con { color:#eeeeee; float:right; line-height:1;  align-self: flex-end; top: auto; margin-bottom: 1px; }
-#main-menu-con ul{ list-style:none outside none; margin: 0; padding: 0; }
-#main-menu-con li{float:left;position:relative;margin:0 5px;}
+#main-menu-con ul{ list-style:none outside none; margin: 0; padding: 0; transition: none !important; }
+#main-menu-con li{float:left;position:relative;margin:0 5px; transition: none !important;}
 #main-menu-con a { color: #2cb8f3; display: block; font-size: 15px; min-width: 40px; padding: 23px 10px; position: relative; text-align: center; border-bottom: 5px solid transparent; font-family: "Advent Pro",cursive,sans-serif; letter-spacing: 1px; }
-#main-menu-con a:hover,
+#main-menu-con a:hover, #main-menu-con a:focus,
 #main-menu-con .current-menu-item > a,
 #main-menu-con .current-menu-ancestor > a,
 #main-menu-con .current_page_item > a,
@@ -112,12 +116,12 @@ img.site-logo, .site-title { max-height:90%; margin: 0; height: auto; width: aut
 #main-menu-con ul ul a { border-bottom:1px solid #bfbfbf; border-top:1px solid #ffffff; color:#242424; padding:11px 15px !important; width:230px; text-align:left; text-transform:none; }
 #main-menu-con ul ul  li:first-child > a { border-top: none; } 
 #main-menu-con ul ul  li:last-child > a { border-bottom: none; } 
-#main-menu-con ul ul a:hover,
+#main-menu-con ul ul a:hover, #main-menu-con ul ul a:focus,
 #main-menu-con ul ul .current-menu-item > a,
 #main-menu-con ul ul .current-menu-ancestor > a,
 #main-menu-con ul ul .current_page_item > a,
 #main-menu-con ul ul .current_page_ancestor > a{ background:#087aaa;color:#ffffff; border-bottom:1px solid #bfbfbf; }
-#main-menu-con ul li:hover > ul{display:block;}
+#main-menu-con ul li:hover > ul{ }
 
 #main-menu-con .menu-item-has-children a, #main-menu-con .page_item_has_children a { padding-right: 15px;  }
 #main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after { content: '\f0d7'; right:0; position: absolute; top: 50%; transform: translateY(-50%);}
@@ -137,6 +141,7 @@ img.site-logo, .site-title { max-height:90%; margin: 0; height: auto; width: aut
 /* ================ Box Sizes ============== */
 .box100 { display: block; position: relative; width: 100%; margin: 0 auto; }
 .box90 { display: block; position: relative; width: 1050px; margin: 0 auto; }
+#container.box90, #d5woocontainer.box90{ max-width: 100%; }
 
 /* ================ Search Box ============== */
 #searchform, .woocommerce-product-search { height: 39px; overflow: hidden; width: 100%; max-width: 550px; display: inline-flex;}
@@ -219,6 +224,7 @@ h5{font-size:15px;}
 h6{font-size:13px;}
 p{margin-bottom:15px;}
 a{color:#2cb8f3;text-decoration:none;}
+a:focus{ outline: 1px dotted;}
 b, strong{font-weight:bold;}
 displaynone{display:none;}
 .clear{clear:both;}

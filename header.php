@@ -19,7 +19,8 @@
 </head>
 
 <body <?php body_class(); ?> >
-  
+  	<?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to Content', 'spark' ); ?></a>
       <div id ="header">
       <div id ="header-content" class="box90">
 		<!-- Site Titele and Description Goes Here -->
@@ -29,7 +30,7 @@
         <div id="mmainmenu">
         <!-- Site Main Menu Goes Here -->
         <div id="mobile-menu" class="mmenucon"><?php echo __('Main Menu', 'spark'); ?></div>
-        <nav id="main-menu-con" class="mmenucon">
+        <nav id="main-menu-con" class="mmenucon mainmenuconx">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'main-menu-items' )); else: wp_page_menu(); endif; ?>
         </nav>
         

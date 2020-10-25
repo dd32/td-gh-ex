@@ -1,60 +1,76 @@
-----------------------------------
-SPARK
-----------------------------------
-Version: 	2.3
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== SPARK ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: d5creation
+Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
+Requires at least: 4.7
+Tested up to: 5.5.1
+Requires PHP: 5.6
+Stable tag: 2.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+SPARK Responsive Corporate and Business Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License of the Theme.
+== Description ==
 
-slide-image1.jpg		 : 	https://pxhere.com/en/photo/732077
-featured-image1.jpg	 : 	https://pxhere.com/en/photo/723046
-featured-image2.jpg 	: 	https://pxhere.com/en/photo/1432423
-featured-image3.jpg	: 	https://pxhere.com/en/photo/1451427
-stf.jpg 			:	https://pxhere.com/en/photo/1446749
+SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages. You can Visit the SPARK Demo Here: http://demo.d5creation.com/themes/?theme=SPARK  and Theme Page Here: https://d5creation.com/theme/spark
 
-FontAwesome		:	GPL Friendly Licenses, Source -  http://fortawesome.github.io/Font-Awesome
+== Frequently Asked Questions ==
 
-All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Slide, Featured Images and Other Contents there. 
 
-Limitations: Main Menu width is fixed. So you should keep less menu items so that they can fit within the container
+= Why is SPARK ? =
+SPARK Theme is for Personal, Corporate, Business, Blog, Company, Community, Forum and Multipurpose Websites
 
-Instructions:
-- You can set the Banner Image, Heading, Subheading, Featured Images, Staff Title, Staff Description and Staff Items from Appearance > SPARK Options
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites and Even for Smart Blogs
 
-
-===============
-Changelog
-===============
-Version 2.3
-=============================
-- Style Improvement
-
-Version 2.1
-=============================
-- Style Improvement
-- Image Change
-
-Version 1.7
-=============================
-- Code Cleanup
-- Relative Tags Added
-
-Version 1.5
-=============================
-The 1.5 Version is a Major Version
-- Added Customize for Theme Options
-- Removed Options Framework
-- Code Cleanup
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
-Changelog 1.3
-=============================
-- Made Translation Ready
+== Changelog ==
 
+= 2.5 =
+* Code Cleanup
+* Security Enhancement
+* Style Improvement
+
+= 2.3 =
+* Style Improvement
+
+= 2.1 =
+* Style Improvement
+* Image Change
+
+= 1.7 =
+* Code Cleanup
+* Relative Tags Added
+
+= 1.5 =
+* Added Customize for Theme Options
+* Removed Options Framework
+* Code Cleanup
+
+= 1.3 =
+* Translation Ready
+
+= 1.0 =
+* Initial Release
+
+== Resources ==
+
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
+
+* screenshot.png:
+Source: https://pxhere.com/en/photo/732077, https://pxhere.com/en/photo/723046
+License: CC0, Copyright (c) Not Mentioned
+License Url : https://pxhere.com/en/license
+
+Source: https://pxhere.com/en/photo/1432423, https://pxhere.com/en/photo/1451427
+License: CC0, Copyright (c) rawpixel.com
+License Url : https://pxhere.com/en/license

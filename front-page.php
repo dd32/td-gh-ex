@@ -8,46 +8,61 @@
 */
 get_header(); ?>
 <div class="clear"></div>
-<div id="heading-con" class="box100">
-<h1 id="heading" class="box90"><?php echo esc_textarea(spark_get_option('heading_text', 'Welcome to the Premium WordPress Theme!')); ?></h1>
-<p class="heading-desc box90"><?php echo esc_textarea(spark_get_option('heading_des', 'You can use Premium Extend Theme for more options, more functions and more visual elements. Extend Version has come with simple color customization option.')); ?></p>
-</div>
-<div id="slide-con" class="box100">
-<div class="noslide box90"><img src="<?php echo esc_url(spark_get_option('slide-image1', get_template_directory_uri() . '/images/slide-image/slide-image1.jpg')); ?>" alt="Premium WordPress Theme by D5 Creation" /></div>
-</div>
+
+<?php
+$headd = '';
+$heading = esc_textarea(spark_get_option('heading_text', ''));
+if($heading) $headd .= '<h1 id="heading" class="box90">'.$heading.'</h1>';
+$headingdes = esc_textarea(spark_get_option('heading_des', ''));
+if($headingdes) $headd .= '<p class="heading-desc box90">'.$headingdes.'</p>';
+if($headd) echo '<div id="heading-con" class="box100">'.$headd.'</div>';
+
+$sldimg = esc_url(spark_get_option('slide-image1', ''));
+if($sldimg) echo '<div id="slide-con" class="box100"><div class="noslide box90"><img src="'.$sldimg.'" alt="'.$heading.'" /></div></div>';
+?>
 
 <div id="container">
-<?php get_template_part( 'featured-box' ); ?>
+	<?php 
+	get_template_part( 'featured-box' ); 
 
-
-<!--- ============  STAFFS  =========== ------------>
-<div class="clear"></div>
-<div id="staff-box-item">
-	<h2 class="boxtoptitle" ><?php echo esc_textarea(spark_get_option('staffboxes-heading', 'WE ARE INSIDE')); ?></h2>
-	<h4 class="boxtopdes" ><?php echo esc_textarea(spark_get_option('staffboxes-heading-des', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua')); ?></h4>
+	$stfbox = '';
+	$stfhead = esc_textarea(spark_get_option('staffboxes-heading', ''));
+	if($stfhead) $stfbox .= '<h2 class="boxtoptitle">'.$stfhead.'</h2>';
+	$stfdes = esc_textarea(spark_get_option('staffboxes-heading-des', ''));
+	if($stfdes) $stfbox .= '<h4 class="boxtopdes">'.$stfdes.'</h4>';
 	
-			<div id="grid-staff" class="main">
-				<?php foreach (range(1, 6 ) as $staffboxsnumber ) { ?>
-				<div class="view-staff" >
-                	<div class="view-staff-name">
-                    <h3><?php echo esc_textarea(spark_get_option('staffboxes-title' . $staffboxsnumber, 'OUR PROUD STAFF '. $staffboxsnumber )); ?></h3>
-                    <p><?php echo esc_textarea(spark_get_option('staffboxes-description' . $staffboxsnumber, 'Service Executive' )); ?></p>
-                    </div>
-                    
-					<div class="view-staff-back social-link">
-						<a href="<?php echo esc_url(spark_get_option('staffboxes-linka' .$staffboxsnumber, 'http://wordpress.org' )); ?>"></a>
-						<a href="<?php echo esc_url(spark_get_option('staffboxes-linkb' .$staffboxsnumber, 'http://wordpress.org' )); ?>"></a>
-                        <a href="<?php echo esc_textarea(spark_get_option('staffboxes-linkc' .$staffboxsnumber, 'http://wordpress.org' )); ?>"></a>
-						<a class="profile-link" href="<?php echo esc_url(spark_get_option('staffboxes-link' . $staffboxsnumber, '#' )); ?>">&rarr;</a>
-					</div>
-					<img src="<?php echo esc_url(spark_get_option('staffboxes-image' . $staffboxsnumber, get_template_directory_uri() . '/images/stf.jpg')); ?>" />
-                </div>
-       			<?php } ?>
-			</div>
- 
-</div>
+	$stfitems = '';
+	foreach (range(1, 6 ) as $staffboxsnumber ) {
+		$stfitemsin = '';
+		$itemttl = ''; $itemdes = ''; $itemimg = '';
+		$itemslink = '';
+		$itemslink1 = ''; $itemslink2 = ''; $itemslink3 = ''; $itemslink4 = '';
+		
+		$itemttl = esc_textarea(spark_get_option('staffboxes-title' . $staffboxsnumber, '' ));
+		if($itemttl) $itemttl = '<h3>'.$itemttl.'</h3>';
+		$itemdes = esc_textarea(spark_get_option('staffboxes-description' . $staffboxsnumber, '' ));
+		if($itemdes) $itemdes = '<p>'.$itemdes.'</p>';
+		if($itemttl || $itemdes) $stfitemsin .= '<div class="view-staff-name">'.$itemttl.$itemdes.'</div>';
+		
+		$itemslink1 = esc_url(spark_get_option('staffboxes-linka' .$staffboxsnumber, '' ));
+		if($itemslink1) $itemslink .= '<a href="'.$itemslink1.'"></a>';
+		$itemslink2 = esc_url(spark_get_option('staffboxes-linkb' .$staffboxsnumber, '' ));
+		if($itemslink2) $itemslink .= '<a href="'.$itemslink2.'"></a>';
+		$itemslink3 = esc_url(spark_get_option('staffboxes-linkc' .$staffboxsnumber, '' ));
+		if($itemslink3) $itemslink .= '<a href="'.$itemslink3.'"></a>';
+		$itemslink4 = esc_url(spark_get_option('staffboxes-link' .$staffboxsnumber, '' ));
+		if($itemslink4) $itemslink .= '<a class="profile-link" href="'.$itemslink4.'">&rarr;</a>';
+		
+		if($itemslink) $stfitemsin .= '<div class="view-staff-back social-link">'.$itemslink.'</div>';
+		
+		$itemimg = esc_url(spark_get_option('staffboxes-image' . $staffboxsnumber, ''));
+		if($itemimg) $stfitemsin .= '<img src="'.$itemimg.'" />';
+		
+		if($stfitemsin) $stfitems .= '<div class="view-staff">'.$stfitemsin.'</div>';		
+	}
+	if($stfitems) $stfbox .= '<div id="grid-staff" class="main">'.$stfitems.'</div>';
+	
+	if($stfbox) echo '<div class="clear"></div><div id="staff-box-item">'.$stfbox.'</div>';
 
-<!--- ============  END OF STAFFS  =========== ------------>
-
-<?php get_template_part( 'fcontent' ); get_footer(); ?>
-
+	
+	get_template_part( 'fcontent' ); get_footer();
