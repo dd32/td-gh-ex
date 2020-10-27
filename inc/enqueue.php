@@ -43,5 +43,9 @@ add_action( 'wp_enqueue_scripts', 'avril_scripts' );
 //Admin Enqueue for Admin
 function avril_admin_enqueue_scripts(){
 	wp_enqueue_style('avril-admin-style', get_template_directory_uri() . '/assets/css/admin.css');
+	wp_enqueue_script( 'avril-admin-script', get_template_directory_uri() . '/assets/js/avril-admin-script.js', array( 'jquery' ), '', true );
+    wp_localize_script( 'avril-admin-script', 'avril_ajax_object',
+        array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+    );
 }
 add_action( 'admin_enqueue_scripts', 'avril_admin_enqueue_scripts' );

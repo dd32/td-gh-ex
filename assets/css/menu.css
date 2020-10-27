@@ -456,12 +456,14 @@ ul.menu-wrap .btn-home > a.nav-link > span {
 .footer .menu-wrap .dropdown-menu li .dropdown-menu {
     margin-bottom: 20px;
 }
+
 .header .widget_nav_menu .sub-menu li .sub-menu,
 .navbar-area .menubar .dropdown-menu li .dropdown-menu {
-    left: 100%;
+    right: 100%;
     margin-top: 0;
-    margin-left: 10px;
+    margin-right: 10px;
 }
+
 .footer .menu-wrap > .menu-item:last-child > .dropdown-menu li .dropdown-menu,
 .footer-copyright .widget_nav_menu .menu > .menu-item:last-child > .sub-menu li .sub-menu {
     bottom: 100%;
