@@ -1,11 +1,11 @@
 /*---------------------------------------------------------------------------------
- * Weaver Xtreme Theme - Version 4.1.1
+ * Weaver Xtreme Theme - Version 4.4
  * First created April 2018
  * License: GNU General Public License v3 or later
  * License URI: //www.gnu.org/licenses/gpl-3.0.html
  * Copyright 2018-2019, Bruce E. Wampler
  *
- * gutenberg-base-editor-style.css - Version 3.9.3
+ * blocks-editor-base-style.css - Version 4.4
  *
  * Provides base styling for Block Editor
  * Enqueue this style sheet in theme's enqueue_block_editor_assets action.
@@ -104,6 +104,12 @@ a.wp-block-button__link {	/* default needs to be white */
 	color:		#fff;
 }
 
+/* =================== Block Button ================= */
+.wp-block-cover,
+.wp-block-cover-image {		//* fixes issue with WP 5.5 */
+	padding: 0;
+}
+
 /* =================== Pullquotes =================== */
 
 .wp-block-pullquote {
@@ -117,6 +123,7 @@ a.wp-block-button__link {	/* default needs to be white */
 	font-family: inherit;
 	font-style:  normal;
 }
+
 
 /* =================== Preformatted =================== */
 

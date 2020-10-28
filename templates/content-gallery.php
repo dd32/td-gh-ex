@@ -41,23 +41,45 @@ echo weaverx_schema( 'post' ); ?>>
 		if ( post_password_required() ) {
 			weaverx_the_post_full();
 		} else {
-			// Let's look for some images from the gallery.
-			$images = get_children( array(
-				'post_parent'    => $post->ID,
-				'post_type'      => 'attachment',
-				'post_mime_type' => 'image',
-				'orderby'        => 'menu_order',
-				'order'          => 'ASC',
-				'numberposts'    => 999,
-			) );
+			// Let's look for some images from the gallery. (Updated 4.4 to TwentyEleven method.)
+			$images = array();
+
+			$galleries = get_post_galleries( get_the_ID(), false );
+			if ( isset( $galleries[0]['ids'] ) ) {
+				$images = explode( ',', $galleries[0]['ids'] );
+			}
+
+			if ( ! $images ) {
+				$images = get_children( array(
+					'post_parent'    => get_the_ID(),
+					'post_type'      => 'attachment',
+					'post_mime_type' => 'image',
+					'orderby'        => 'menu_order',
+					'order'          => 'ASC',
+					'numberposts'    => 999,
+				) );
+			}
+
+			if (! $images ) {
+				$images = get_posts(
+					array(
+						'fields'         => 'ids',
+						'numberposts'    => 999,
+						'order'          => 'ASC',
+						'orderby'        => 'menu_order',
+						'post_mime_type' => 'image',
+						'post_parent'    => get_the_ID(),
+						'post_type'      => 'attachment',
+					)
+				);
+			}
 
 			if ( $images ) {    // found some images
 				$total_images = count( $images );
-				$image = array_shift( $images );
-				$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+				$image = reset( $images );
 				?>
 				<figure class="gallery-thumb">
-					<a href="<?php esc_url( get_permalink() ); ?>"><?php echo $image_img_tag; ?></a>
+					<a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_get_attachment_image( $image, 'thumbnail' ); ?></a>
 				</figure><!-- .gallery-thumb -->
 				<?php $linked = true;
 				if ( weaverx_compact_post() ) {
@@ -82,7 +104,7 @@ echo weaverx_schema( 'post' ); ?>>
 					$the_image = '<img class="gallery-thumb" ' . $src . ' alt="post image" />';
 					$linked = true;
 					?>
-					<a href="<?php esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
+					<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
 					<p><em><?php echo esc_html__( 'Gallery', 'weaver-xtreme' ); ?></em></p>
 					<?php
 				}

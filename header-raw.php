@@ -39,13 +39,8 @@ do_action( 'weaverx_alt_theme', 'raw' );
 	?>
 
 	<link rel="profile" href="//gmpg.org/xfn/11"/>
-	<link rel="pingback" href="<?php esc_url( bloginfo( 'pingback_url' ) ); ?>"/>
-	<?php
-	echo '<!--[if lt IE 9]>
-<script src="' . esc_url( get_template_directory_uri() ) . '/assets/js/html5.js" type="text/javascript"></script>
-<script src="' . esc_url( get_template_directory_uri() ) . '/assets/js/respond.min.js" type="text/javascript"></script>
-<![endif]-->';
-	?>
+	<link rel="pingback" href="<?php esc_url( get_bloginfo( 'pingback_url' ) ); ?>"/>
+
 	<!-- Weaver Xtreme Standard Google Fonts -->
 	<?php
 	$gf = WEAVERX_GOOGLE_FONTS;
@@ -75,7 +70,7 @@ do_action( 'weaverx_alt_theme', 'raw' );
 	}
 	?>
 	<style type="text/css">
-		html, body, div, span, iframe, wrap {
+		html, body, div, span, iframe {
 			background:     transparent;
 			border:         0;
 			margin:         0;

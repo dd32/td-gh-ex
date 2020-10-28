@@ -55,7 +55,6 @@
 	height: 24px;
 	text-align: center;
 	margin: 0 auto;
-	width: 88%;
 	width: calc( 100% - 28px);
 }
 

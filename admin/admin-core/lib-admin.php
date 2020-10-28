@@ -59,14 +59,14 @@ function weaverx_validate_cb( $in ) {
 function weaverx_submitted( $submit_name ) {
 	// do a nonce check for each form submit button
 	// pairs 1:1 with weaverx_nonce_field
-	$nonce_act  = $submit_name . '_act';
+	$nonce_act = $submit_name . '_act';
 	$nonce_name = $submit_name . '_nonce';
 
 	if ( isset( $_POST[ $submit_name ] ) ) {
 		if ( isset( $_POST[ $nonce_name ] ) && wp_verify_nonce( $_POST[ $nonce_name ], $nonce_act ) ) {
 			return true;
 		} else {
-			die( esc_html__( 'WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.', 'weaver-xtreme') . '(' . $submit_name . ')' );
+			die( esc_html__( 'WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.', 'weaver-xtreme' ) . '(' . $submit_name . ')' );
 		}
 	} else {
 		return false;
@@ -97,25 +97,52 @@ function weaverx_sapi_form_top( $group, $form_name = '' ) {
 
 function weaverx_sapi_form_bottom( $form_name = 'end of form' ) {
 	// customizer only, keep values, preserve values, save values, not legacy ( search terms for these kinds of settings )
-	$non_sapi = apply_filters( 'weaverx_non_sapi_options', array(        // non-sapi elements in the db
-	                                                                     'weaverx_version_id',
-	                                                                     'style_version',
-	                                                                     'theme_filename',
-	                                                                     'addon_name',
-	                                                                     '_hide_theme_thumbs',
-	                                                                     'm_primary_hamburger',
-	                                                                     'm_secondary_hamburger',
-	                                                                     'font_set_vietnamese',
-	                                                                     'font_set_cryllic',
-	                                                                     'font_set_greek',
-	                                                                     'font_set_hebrew',
-	                                                                     'font_word_spacing_global_dec',
-	                                                                     'font_letter_spacing_global_dec',
-	                                                                     '_options_level',
-	                                                                     '_PHP_warning_displayed',
-	                                                                     'last_option',
-	                                                                     'settings_version',
-	) );
+	$non_sapi = apply_filters( 'weaverx_non_sapi_options',
+		array(
+			// non-sapi elements in the db
+			'weaverx_version_id',
+			'style_version',
+			'theme_filename',
+			'addon_name',
+			'_hide_theme_thumbs',
+			'm_primary_hamburger',
+			'm_secondary_hamburger',
+			'font_set_vietnamese',
+			'font_set_cryllic',
+			'font_set_greek',
+			'font_set_hebrew',
+			'font_word_spacing_global_dec',
+			'font_letter_spacing_global_dec',
+			'_options_level',
+			'_PHP_warning_displayed',
+			'last_option',
+			'settings_version',
+			/* settings using cz_fonts */
+    'wrapper_transform', 'container_transform',
+	'site_title_transform', 'tagline_transform', 'header_sb_transform', 'header_html_transform',
+	'm_primary_transform', 'm_secondary_transform', 'm_header_mini_transform', 'm_extra_transform', 'info_bar_transform',
+	'content_transform', 'page_title_transform', 'archive_title_transform', 'content_h_transform',
+	'post_transform', 'post_title_transform', 'post_info_top_transform', 'post_info_bottom_transform',
+	'primary_transform', 'secondary_transform', 'top_transform', 'bottom_transform', 'widget_transform', 'widget_title_transform',
+	'footer_transform', 'footer_sb_transform', 'footer_html_transform',
+
+	'wrapper_letter_spacing', 'container_letter_spacing',
+	'site_title_letter_spacing', 'tagline_letter_spacing', 'header_sb_letter_spacing', 'header_html_letter_spacing',
+	'm_primary_letter_spacing', 'm_secondary_letter_spacing', 'm_header_mini_letter_spacing', 'm_extra_letter_spacing', 'info_bar_letter_spacing',
+	'content_letter_spacing', 'page_title_letter_spacing', 'archive_title_letter_spacing', 'content_h_letter_spacing',
+	'post_letter_spacing', 'post_title_letter_spacing', 'post_info_top_letter_spacing', 'post_info_bottom_letter_spacing',
+	'primary_letter_spacing', 'secondary_letter_spacing', 'top_letter_spacing', 'bottom_letter_spacing', 'widget_letter_spacing', 'widget_title_letter_spacing',
+	'footer_letter_spacing', 'footer_sb_letter_spacing', 'footer_html_letter_spacing',
+
+	'wrapper_word_spacing', 'container_word_spacing',
+	'site_title_word_spacing', 'tagline_word_spacing', 'header_sb_word_spacing', 'header_html_word_spacing',
+	'm_primary_word_spacing', 'm_secondary_word_spacing', 'm_header_mini_word_spacing', 'm_extra_word_spacing', 'info_bar_word_spacing',
+	'content_word_spacing', 'page_title_word_spacing', 'archive_title_word_spacing', 'content_h_word_spacing',
+	'post_word_spacing', 'post_title_word_spacing', 'post_info_top_word_spacing', 'post_info_bottom_word_spacing',
+	'primary_word_spacing', 'secondary_word_spacing', 'top_word_spacing', 'bottom_word_spacing', 'widget_word_spacing', 'widget_title_word_spacing',
+	'footer_word_spacing', 'footer_sb_word_spacing', 'footer_html_word_spacing'
+
+		) );
 
 	/*	The following code allows the SAPI to save the non-sapi values. If you don't do this here,
 		then the values will be set to false, and be lost! SAPI is not tolerant of submitting a form
@@ -132,12 +159,9 @@ function weaverx_sapi_form_bottom( $form_name = 'end of form' ) {
 
 function weaverx_sapi_submit( $before = '', $after = '', $show_more_opts = false ) {
 // generate a submit button for the form
-$submit_label = esc_html__( 'Save Settings', 'weaver-xtreme');
-echo $before;
-?>
-<span style="display:inline;"><input name="save_options" type="submit" style="margin-top:10px;" class="button-primary" value="<?php echo( $submit_label ); ?>"/>
-<?php
-echo "</span>\n" . $after;
+	$submit_label = esc_html__( 'Save Settings', 'weaver-xtreme' );
+
+	echo $before . sprintf( "<span style='display:inline;'><input name='save_options' type='submit' style='margin-top:10px;' class='button-primary' value='{$submit_label}' />" . "</span>\n") . $after;
 
 }
 
@@ -182,10 +206,10 @@ function weaverx_validate_all_options( $in ) {
 			case 'excerpt_length':
 
 				if ( ! empty( $value ) && ( ! is_numeric( $value ) || ! is_int( ( int ) $value ) ) ) {
-					$opt_id     = str_replace( '', '', $key );
-					$opt_id     = str_replace( '_', ' ', $opt_id );
-					$err_msg    .= esc_html__( 'Option must be an integer value: ', 'weaver-xtreme') . '"' . $opt_id . '" = "' . $value . '".'
-					               . esc_html__( ' Value has been cleared to blank value', 'weaver-xtreme') . '<br />';
+					$opt_id = str_replace( '', '', $key );
+					$opt_id = str_replace( '_', ' ', $opt_id );
+					$err_msg .= esc_html__( 'Option must be an integer value: ', 'weaver-xtreme' ) . '"' . $opt_id . '" = "' . $value . '".'
+					            . esc_html__( ' Value has been cleared to blank value', 'weaver-xtreme' ) . '<br />';
 					$in[ $key ] = '';
 				}
 				break;
@@ -195,7 +219,7 @@ function weaverx_validate_all_options( $in ) {
 			case 'header_maxwidth':
 
 				if ( ! empty( $value ) ) {
-					$in[ $key ] = weaverx_filter_textarea( $value );
+					$in[ $key ] = wp_kses_post( $value );
 				}
 				break;
 
@@ -203,7 +227,7 @@ function weaverx_validate_all_options( $in ) {
 				if ( empty( $value ) ) {
 					$in[ $key ] = 'please-give-this-a-name';
 				} else {
-					$in[ $key ] = weaverx_filter_textarea( $value );
+					$in[ $key ] = wp_kses_post( $value );
 				}
 				break;
 
@@ -242,12 +266,12 @@ function weaverx_validate_all_options( $in ) {
 			case 'add_css':                // Add CSS Rules to Weaver Xtreme's style rules
 
 				if ( ! empty( $value ) ) {
-					$val        = weaverx_filter_code( $value );
+					$val = weaverx_filter_code( $value );
 					$in[ $key ] = $val;
 					if ( stripos( $val, '<style' ) !== false || stripos( $val, '</style' ) !== false ||
 					     stripos( $val, '<script' ) !== false || stripos( $val, '</script' ) !== false ) {
-						$err_msg    .= esc_html__( '&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your "Add CSS Rules"!', 'weaver-xtreme')
-						               . ' ' . esc_html__( 'Please correct your entry.', 'weaver-xtreme') . '<br />';
+						$err_msg .= esc_html__( '&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your "Add CSS Rules"!', 'weaver-xtreme' )
+						            . ' ' . esc_html__( 'Please correct your entry.', 'weaver-xtreme' ) . '<br />';
 						$in[ $key ] = wp_filter_post_kses( trim( stripslashes( $val ) ) );
 					}
 				}
@@ -271,19 +295,19 @@ function weaverx_validate_all_options( $in ) {
 						$val = weaverx_filter_code( $value );
 						if ( stripos( $val, '<style' ) !== false || stripos( $val, '</style' ) !== false ||
 						     stripos( $val, '<script' ) !== false || stripos( $val, '</script' ) !== false ) {
-							$err_msg .= esc_html__( '&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your CSS+ rules,', 'weaver-xtreme')
-							            . ' ' . esc_html__( 'Please correct your entry.', 'weaver-xtreme') . '<br />';
-							$val     = wp_filter_post_kses( trim( $val ) );
+							$err_msg .= esc_html__( '&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your CSS+ rules,', 'weaver-xtreme' )
+							            . ' ' . esc_html__( 'Please correct your entry.', 'weaver-xtreme' ) . '<br />';
+							$val = wp_filter_post_kses( trim( $val ) );
 						}
 
 						$in[ $key ] = $val;
 
 						if ( strpos( $val, '{' ) === false || strpos( $val, '}' ) === false ) {
-							$opt_id  = str_replace( '_css', '', $key );    // kill _css
-							$opt_id  = str_replace( '', '', $opt_id );
-							$opt_id  = str_replace( '_', ' ', $opt_id );
-							$err_msg .= esc_html__( 'CSS options must be enclosed in {}\'s: ', 'weaver-xtreme') . '"' . $opt_id . '" = "' . $value . '". '
-							            . esc_html__( 'Please correct your entry.', 'weaver-xtreme') . '<br />';
+							$opt_id = str_replace( '_css', '', $key );    // kill _css
+							$opt_id = str_replace( '', '', $opt_id );
+							$opt_id = str_replace( '_', ' ', $opt_id );
+							$err_msg .= esc_html__( 'CSS options must be enclosed in {}\'s: ', 'weaver-xtreme' ) . '"' . $opt_id . '" = "' . $value . '". '
+							            . esc_html__( 'Please correct your entry.', 'weaver-xtreme' ) . '<br />';
 						}
 					}
 					break;
@@ -291,7 +315,7 @@ function weaverx_validate_all_options( $in ) {
 
 				if ( strrpos( $key, '_insert' ) == $keylen - 7 ) {    // all _insert settings
 					if ( ! empty( $value ) ) {
-						$val        = weaverx_filter_code( $value );
+						$val = weaverx_filter_code( $value );
 						$in[ $key ] = $val;
 					}
 					break;
@@ -299,7 +323,7 @@ function weaverx_validate_all_options( $in ) {
 
 				if ( strrpos( $key, '_url' ) == $keylen - 4 ) {    // all _url settings
 					if ( ! empty( $value ) ) {
-						$val        = weaverx_filter_code( $value );    // can't use esc_url because that forces a leading html{background-image: url( %template_directory%assets/images/addon_themes.png );}
+						$val = weaverx_filter_code( $value );    // can't use esc_url because that forces a leading html{background-image: url( %template_directory%assets/images/addon_themes.png );}
 						$in[ $key ] = $val;
 					}
 					break;
@@ -307,11 +331,11 @@ function weaverx_validate_all_options( $in ) {
 
 				if ( strrpos( $key, '_dec' ) == $keylen - 4 ) {
 					if ( ! empty( $value ) && ! is_numeric( $value ) ) {
-						$opt_id     = str_replace( '', '', $key );
-						$opt_id     = str_replace( '_dec', '', $opt_id );
-						$opt_id     = str_replace( '_', ' ', $opt_id );
-						$err_msg    .= esc_html__( 'Option must be a numeric value: ', 'weaver-xtreme') . '"' . $opt_id . '" = "' . $value . '". '
-						               . esc_html__( 'Value has been cleared to blank value.', 'weaver-xtreme') . '<br />';
+						$opt_id = str_replace( '', '', $key );
+						$opt_id = str_replace( '_dec', '', $opt_id );
+						$opt_id = str_replace( '_', ' ', $opt_id );
+						$err_msg .= esc_html__( 'Option must be a numeric value: ', 'weaver-xtreme' ) . '"' . $opt_id . '" = "' . $value . '". '
+						            . esc_html__( 'Value has been cleared to blank value.', 'weaver-xtreme' ) . '<br />';
 						$in[ $key ] = '';
 					}
 					break;
@@ -325,11 +349,11 @@ function weaverx_validate_all_options( $in ) {
 				     strrpos( $key, '_T' ) == $keylen - 2 ||
 				     strrpos( $key, '_B' ) == $keylen - 2 ) {
 					if ( ! empty( $value ) && ( ! is_numeric( $value ) || ! is_int( ( int ) $value ) ) ) {
-						$opt_id     = str_replace( '', '', $key );
-						$opt_id     = str_replace( '_int', '', $opt_id );
-						$opt_id     = str_replace( '_', ' ', $opt_id );
-						$err_msg    .= esc_html__( 'Option must be a numeric value: ', 'weaver-xtreme') . '"' . $opt_id . '" = "' . $value . '". '
-						               . esc_html__( 'Value has been cleared to blank value.', 'weaver-xtreme') . '<br />';
+						$opt_id = str_replace( '', '', $key );
+						$opt_id = str_replace( '_int', '', $opt_id );
+						$opt_id = str_replace( '_', ' ', $opt_id );
+						$err_msg .= esc_html__( 'Option must be a numeric value: ', 'weaver-xtreme' ) . '"' . $opt_id . '" = "' . $value . '". '
+						            . esc_html__( 'Value has been cleared to blank value.', 'weaver-xtreme' ) . '<br />';
 						$in[ $key ] = '';
 					}
 					break;
@@ -354,9 +378,9 @@ function weaverx_validate_all_options( $in ) {
 								if ( $value == ' ' ) {
 									$in[ $key ] = '';
 								} else {
-									$err_msg .= esc_html__( 'Color must be a valid # hex value, rgb value, or color name ( a-z ): ', 'weaver-xtreme') .
+									$err_msg .= esc_html__( 'Color must be a valid # hex value, rgb value, or color name ( a-z ): ', 'weaver-xtreme' ) .
 									            '"' . $key . '" = "' . bin2hex( $value ) . '". (' . $val . ')' .
-									            esc_html__( 'Value has been cleared to blank value.', 'weaver-xtreme') . '<br />';
+									            esc_html__( 'Value has been cleared to blank value.', 'weaver-xtreme' ) . '<br />';
 								}
 								$in[ $key ] = '';
 							} else {
@@ -375,14 +399,14 @@ function weaverx_validate_all_options( $in ) {
 		}
 	}
 
-	if ( $wvr_last != 'Weaver Xtreme' && $wvr_last != WEAVERX_VERSION && $wvr_last != '4.2' ) {
-		$vars    = ini_get( 'max_input_vars' );
+	if ( $wvr_last != 'Weaver Xtreme' && $wvr_last != WEAVERX_VERSION && $wvr_last != '4.2' && $wvr_last != WEAVERX_THEMENAME ) {
+		$vars = ini_get( 'max_input_vars' );
 		$newvars = $vars + 1000;
-		$posts   = isset( $GLOBALS['WVRX_POSTS'] ) ? $GLOBALS['WVRX_POSTS'] : '?';
-		$gets    = isset( $GLOBALS['WVRX_GETS'] ) ? $GLOBALS['WVRX_GETS'] : '?';
+		$posts = isset( $GLOBALS['WVRX_POSTS'] ) ? $GLOBALS['WVRX_POSTS'] : '?';
+		$gets = isset( $GLOBALS['WVRX_GETS'] ) ? $GLOBALS['WVRX_GETS'] : '?';
 		$cookies = isset( $GLOBALS['WVRX_COOKIES'] ) ? $GLOBALS['WVRX_COOKIES'] : '?';
 
-		$msg     = sprintf(
+		$msg = sprintf(
 			weaverx_filter_text(
 				__( "<h3 style='color:red;text-align:center;'>WARNING - Your current settings have NOT been saved!<br /> Your previous settings are unchanged.</strong>
 </h3><p>Your host seems to be configured to limit how many input form options you are allowed to use with PHP. This is usually controlled by the PHP <em>max_input_vars</em> configuration setting. The current value of <em> %1\$s </em> is too small for your current <em>WordPress</em> and <em>Weaver Xtreme</em> installation. It should be increased to <em> %2\$s </em>. <strong>Until you increase the value, you cannot save your Weaver Xtreme settings using the Legacy Interface.</strong> The <em>Customizer</em> will still work, as will the options on the <em>Save/Restore</em> tab. Your site is still functional.
@@ -390,16 +414,16 @@ function weaverx_validate_all_options( $in ) {
 For help on how to increase the <em>max_input_vars</em> PHP setting, please click to see the
 <a href='//guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host&nbsp;Configuration:&nbsp;PHP&nbsp; max_input_vars</a> article on the Weaver Xtreme guide site.</p>
 <p style='color:blue;font-weight:bold;text-align:center;'>
-PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%3\$s/P-%4\$s/G-%5\$s/C-%6\$s/K-%7\$s/L-%8\$s </small</p>", 'weaver-xtreme' )
-			),	$vars, $newvars, $vars, $posts, $gets, $cookies, $key, $wvr_last );
+PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%3\$s/P-%4\$s/G-%5\$s/C-%6\$s/K-%7\$s/L-%8\$s </small></p>", 'weaver-xtreme' )
+			), $vars, $newvars, $vars, $posts, $gets, $cookies, $key, $wvr_last );
 		wp_die( $msg );
 	}
 
 
 	if ( ! empty( $err_msg ) ) {
-		add_settings_error( WEAVER_SETTINGS_NAME, 'settings_error', $err_msg, 'error' );
+		add_settings_error( WEAVER_SETTINGS_NAME, 'settings_error', 'ERROR: ' . $err_msg, 'error' );
 	} else {
-		add_settings_error( WEAVER_SETTINGS_NAME, 'settings_updated', esc_html__( 'Weaver Xtreme Settings Saved.', 'weaver-xtreme'), 'updated' );
+		add_settings_error( WEAVER_SETTINGS_NAME, 'settings_updated', esc_html__( 'Weaver Xtreme Settings Saved.', 'weaver-xtreme' ), 'updated' );
 	}
 
 	return $in;
@@ -411,19 +435,19 @@ function weaverx_end_of_section( $who = '' ) {
 	echo '<hr />';
 	$name = weaverx_getopt( 'themename' );
 	if ( ! $name ) {
-		$name = esc_html__( 'Please set theme name on the Advanced Options &rarr; Admin Options tab.', 'weaver-xtreme');
+		$name = esc_html__( 'Please set theme name on the Advanced Options &rarr; Admin Options tab.', 'weaver-xtreme' );
 	}
-	$local_mem_lim  = ini_get( 'memory_limit' );
+	$local_mem_lim = ini_get( 'memory_limit' );
 	$server_mem_lim = get_cfg_var( 'memory_limit' );
 
-	printf( esc_html__( '%1$s %2$s | Options Version: %3$s | Subtheme: %4$s | PHP Memory Limit: Local - %5$s / Server - %6$s', 'weaver-xtreme'), WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt( 'style_version' ), $name, $local_mem_lim, $server_mem_lim );
+	printf( esc_html__( '%1$s %2$s | Options Version: %3$s | Subtheme: %4$s | PHP Memory Limit: Local - %5$s / Server - %6$s', 'weaver-xtreme' ), WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt( 'style_version' ), $name, $local_mem_lim, $server_mem_lim );
 	echo "\n";
 
 	$last = weaverx_getopt( 'last_option' );
-	if ( $last != WEAVERX_THEMENAME || $last != 'Weaver Xtreme' ) // check for case of limited PHP $_POST values
+	if ( $last != WEAVERX_THEMENAME && $last != 'Weaver Xtreme' ) // check for case of limited PHP $_POST values
 	{
 		?>
-		<?php e_( "<p>Please open the Weaver Xtreme admin page again to synchronize theme settings. If you continue to see this message, please contact us on the support forum at https://forum.weavertheme.com for help.</p>", 'weaver-xtreme');
+		<?php _e( "<p>Please open the Weaver Xtreme admin page again to synchronize theme settings. If you continue to see this message, please contact us on the support forum at https://forum.weavertheme.com for help.</p>", 'weaver-xtreme' );
 	}
 
 }
@@ -433,8 +457,9 @@ function weaverx_donate_button() {
 	if ( ! weaverx_getopt_checked( '_hide_donate' ) && ! function_exists( 'weaverxplus_plugin_installed' ) ) {
 		$img = WP_CONTENT_URL . '/themes/weaver-xtreme/assets/images/donate-button.png';
 		?>
-		<div style="float:right;padding-right:30px;display:inline-block;"><div style="font-size:14px;font-weight:bold;display:inline-block;vertical-align: top;"><?php echo weaverx_filter_text( __( 'Like <em>Weaver Xtreme</em>? Please', 'weaver-xtreme') ); ?></div>&nbsp;&nbsp;<a href='//weavertheme.com/donate' target='_blank' alt='Please Donate'><img src="<?php echo $img; ?>" alt="donate" style="max-height:28px;"/></a>
-</div>
+		<div style="float:right;padding-right:30px;display:inline-block;">
+			<div style="font-size:14px;font-weight:bold;display:inline-block;vertical-align: top;"><?php echo weaverx_filter_text( __( 'Like <em>Weaver Xtreme</em>? Please', 'weaver-xtreme' ) ); ?></div>&nbsp;&nbsp;<a href='//weavertheme.com/donate' target='_blank' alt='Please Donate'><img src="<?php echo $img; ?>" alt="donate" style="max-height:28px;"/></a>
+		</div>
 
 	<?php }
 }
@@ -443,18 +468,18 @@ function weaverx_donate_button() {
 function weaverx_clear_messages() {
 	?>
 	<form style="float:right;margin-right:15px;" name="clearweaverx_form" method="post">
-<?php
-if ( ! function_exists( 'weaverxplus_plugin_installed' ) ) {
-	echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
-	weaverx_site( '', '//plus.weavertheme.com/', esc_html__( 'Weaver Xtreme Plus', 'weaver-xtreme') );
-	echo esc_html__( 'Get Weaver Xtreme Plus!', 'weaver-xtreme') . '</a> </strong>';
-}
-do_action( 'weaverx_check_licenses' );
+		<?php
+		if ( ! function_exists( 'weaverxplus_plugin_installed' ) ) {
+			echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
+			weaverx_site( '', '//plus.weavertheme.com/', esc_html__( 'Weaver Xtreme Plus', 'weaver-xtreme' ) );
+			echo esc_html__( 'Get Weaver Xtreme Plus!', 'weaver-xtreme' ) . '</a> </strong>';
+		}
+		do_action( 'weaverx_check_licenses' );
 
-?>
-	<span class="submit"><input class="button-primary" type="submit" name="weaverx_clear_messages" value="<?php echo esc_attr__( 'Clear Messages', 'weaver-xtreme'); ?>"/></span>
-	<?php weaverx_nonce_field( 'weaverx_clear_messages' ); ?>
-</form> <!-- resetweaverx_form -->
+		?>
+		<span class="submit"><input class="button-primary" type="submit" name="weaverx_clear_messages" value="<?php echo esc_attr__( 'Clear Messages', 'weaver-xtreme' ); ?>"/></span>
+		<?php weaverx_nonce_field( 'weaverx_clear_messages' ); ?>
+	</form> <!-- resetweaverx_form -->
 	<?php
 }
 
@@ -472,8 +497,8 @@ function weaverx_get_save_settings( $is_theme ) {
 	weaverx_update_options( 'write_backup' );
 
 	if ( $is_theme ) {
-		$header                     = 'WXT-V01.00';            /* Save theme settings: 10 byte header */
-		$theme_opts                 = array();
+		$header = 'WXT-V01.00';            /* Save theme settings: 10 byte header */
+		$theme_opts = array();
 		$theme_opts['weaverx_base'] = $weaverx_opts_cache;
 		foreach ( $weaverx_opts_cache as $opt => $val ) {
 			if ( $opt[0] == '_' ) {
@@ -483,8 +508,8 @@ function weaverx_get_save_settings( $is_theme ) {
 
 		return $header . serialize( $theme_opts );    /* serialize full set of options right now */
 	} else {
-		$header                     = 'WXB-V01.00';            /* Save all settings: 10 byte header */
-		$theme_opts                 = array();
+		$header = 'WXB-V01.00';            /* Save all settings: 10 byte header */
+		$theme_opts = array();
 		$theme_opts['weaverx_base'] = $weaverx_opts_cache;
 
 		return $header . serialize( $theme_opts );    /* serialize full set of options right now */

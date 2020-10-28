@@ -307,7 +307,7 @@ if ( ! function_exists( 'weaverx_post_title' ) ) {
 		echo( $before );
 		$title = the_title( '', '', false );
 		?>
-		<a href="<?php esc_url( the_permalink() ); ?>" title="<?php printf( esc_attr( esc_html__( 'Permalink to %s', 'weaver-xtreme' ) ),
+		<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php printf( esc_html__( 'Permalink to %s', 'weaver-xtreme' ),
 			the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a>
 		<?php
 		echo( $after . "\n" );
@@ -642,7 +642,7 @@ function weaverx_per_post_style() {
 
 
 if ( ! function_exists( 'weaverx_archive_title' ) ) {
-	function weaverx_archive_title( $title = '', $type, $extra = '' ) {
+	function weaverx_archive_title( $title, $type, $extra = '' ) {
 		// The page title for archive-like pages
 		// $type is for type of the archive - could be used to show icon
 
@@ -755,7 +755,7 @@ if ( ! function_exists( 'weaverx_fi' ) ) {
 			$hdr_width = $image[1];
 
 			// wp customizer preview hack for WP 4.4 beta, might go away for 4.4 release
-			$url = get_template_directory_uri();
+			$url = get_theme_file_uri();
 			$url = str_replace( array( 'http://', 'https://' ), '', $url );
 			$hdr = str_replace( '%s', $url, $hdr );        // 4.4 preview breaks this
 			$hdr = str_replace( array( 'http://', 'https://' ), '//', $hdr );

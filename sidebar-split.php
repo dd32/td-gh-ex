@@ -5,16 +5,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The Right Split Sidebar.
  *
- * @package WordPress
- * @subpackage Weaver X
- * @since Weaver Xtreme 1.0
  */
 
-$l_area_left  = 'l-sb-left-split';
+$l_area_left = 'l-sb-left-split';
 $l_area_right = 'l-sb-right-split';
 
 if ( weaverx_getopt( 'primary_smartmargin' ) || weaverx_getopt( 'secondary_smartmargin' ) ) {
-	$l_area_left  .= '-rm';
+	$l_area_left .= '-rm';
 	$l_area_right .= '-lm';
 }
 

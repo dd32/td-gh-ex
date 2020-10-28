@@ -33,6 +33,7 @@ if ( weaverx_getopt( 'infobar_hide' ) != 'hide' && !weaverx_is_checked_page_opt(
 ?>
 	<span class='infobar_right'>
 <?php
+	$pwp = false;
 	if ( isset( $GLOBALS['weaverx_page_who'] ) )
 		$pwp = $GLOBALS['weaverx_page_who'] == 'pwp';
 

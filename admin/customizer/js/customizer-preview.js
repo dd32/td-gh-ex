@@ -3,7 +3,7 @@
  */
 var wvrxCustFontMsg = 0;
 
-(function($) {
+(function ($) {
 	var api = wp.customize;
 
 	function weaverx_refresh_js() {
@@ -18,8 +18,8 @@ var wvrxCustFontMsg = 0;
 	}
 
 	// Site Title
-	api('blogname', function(value) {
-		value.bind(function(to) {
+	api('blogname', function (value) {
+		value.bind(function (to) {
 			var content = $('#site-title a');
 			if (!content.length) {
 				$('#site-title').prepend('<a>' + to + '</a>');
@@ -32,8 +32,8 @@ var wvrxCustFontMsg = 0;
 	});
 
 	// Tagline
-	api('blogdescription', function(value) {
-		value.bind(function(to) {
+	api('blogdescription', function (value) {
+		value.bind(function (to) {
 			var content = $('#site-tagline span');
 			if (!content.length) {
 				$('#site-tagline').append('<span>' + to + '</span>');
@@ -57,460 +57,503 @@ var wvrxCustFontMsg = 0;
 		return to;
 	}
 
-	// link colors must be refresh because of the order required in the DOM
-	//api('weaverx_settings[link_color]', function( value ) {
-	//	value.bind( function( to ) { $('a, .wrapper a').css( 'color', weaverxFixTo( to) ); } );} );
-	//api('weaverx_settings[link_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('a:hover, .wrapper a:hover').css( 'color', weaverxFixTo( to) ); } );} );
-
-	//api('weaverx_settings[ibarlink_color]', function( value ) {
-	//	value.bind( function( to ) { $('#infobar a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[ibarlink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('#infobar a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	//api('weaverx_settings[ilink_color]', function( value ) {
-	//	value.bind( function( to ) { $('.wrapper .entry-meta a, .wrapper .entry-utility a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[ilink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.wrapper .entry-meta a:hover,.wrapper .entry-utility a:hover',
-	//	'post_icons_color=.entry-meta-gicons .entry-date:before,.entry-meta-gicons .by-author:before,.entry-meta-gicons .cat-links:before,.entry-meta-gicons .tag-links:before,.entry-meta-gicons .comments-link:before,.entry-meta-gicons .permalink-icon:before').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	//api('weaverx_settings[wlink_color]', function( value ) {
-	//	value.bind( function( to ) { $('.wrapper .widget a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[wlink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.wrapper .widget a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	//api('weaverx_settings[footerlink_color]', function( value ) {
-	//	value.bind( function( to ) { $('.colophon a').css( 'color', weaverxFixTo( to ) ); } );} );
-	//api('weaverx_settings[footerlink_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.colophon a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	api('weaverx_settings[body_bgcolor]', function(value) {
-		value.bind(function(to) { $('body').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[wrapper_color]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[wrapper_bgcolor]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[container_color]', function(value) {
-		value.bind(function(to) { $('#container').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[container_bgcolor]', function(value) {
-		value.bind(function(to) { $('#container').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[footer_color]', function(value) {
-		value.bind(function(to) { $('#header').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[header_bgcolor]', function(value) {
-		value.bind(function(to) { $('#header').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[site_title_color]', function(value) {
-		value.bind(function(to) { $('.wrapper #site-title a,.site-title a').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[site_title_bgcolor]', function(value) {
-		value.bind(function(to) { $('.wrapper #site-title a,.wrapper .site-title a').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[tagline_color]', function(value) {
-		value.bind(function(to) { $('#site-tagline > span,.site-tagline > span').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[tagline_bgcolor]', function(value) {
-		value.bind(function(to) { $('#site-tagline > span,.site-tagline > span').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[header_sb_color]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('.widget-area-header .search-form .search-submit').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[header_sb_bgcolor]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[title_tagline_bgcolor]', function(value) {
-		value.bind(function(to) { $('#title-tagline').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[header_html_color]', function(value) {
-		value.bind(function(to) { $('#header-html').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[header_html_bgcolor]', function(value) {
-		value.bind(function(to) { $('#header-html').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[hr_color]', function(value) {
-		value.bind(function(to) { $('hr').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[content_h_color]', function(value) {
-		value.bind(function(to) { $('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[content_h_bgcolor]', function(value) {
-		value.bind(function(to) { $('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[inject_prewrapper_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_prewrapper').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_postfooter_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_postfooter').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_preheader_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_preheader').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_header_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_header').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_postheader_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_postheader').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_container_top_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_container_top').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_postinfobar_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_postinfobar').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_precontent_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_precontent').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_pagecontentbottom_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_pagecontentbottom').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_postpostcontent_bgcolor]', function(value) {
-		value.bind(function(to) { $('.inject_postpostcontent').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_precomments_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_precomments').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_postcomments_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_postcomments').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_prefooter_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_prefooter').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_presidebar_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_presidebar').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_fixedtop_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_fixedtop').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[inject_fixedbottom_bgcolor]', function(value) {
-		value.bind(function(to) { $('#inject_fixedbottom').css('background-color', weaverxFixTo(to)); });
-	});
-
-	// --------------- menus primary
-
-	/* m_primary_bgcolor : Menu Bar BG
-	 * m_primary_color : Menu Bar Text Color
-	 * m_primary_link_bgcolor : Item BG
-	 * m_primary_dividers_color : Dividers between menu items (refresh)
-	 * m_primary_hover_bgcolor : Hover BG
-	 * m_primary_hover_color : Hover Text Color
-	 * m_primary_clickable_bgcolor :  Open Submenu Arrow BG (refresh)
-	 * m_primary_sub_bgcolor : Submenu BG
-	 * m_primary_sub_color : Submenu Text Color
-	 * m_primary_sub_hover_bgcolor : Submenu Hover BG
-	 * m_primary_sub_hover_color : Submenu Hover Text Color
-	 * m_primary_extend_bgcolor : Full-width BG
-	 */
-
-	/* api('weaverx_settings[m_primary_bgcolor]', function(value) { // menu bar bg color
-		value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[m_primary_color]', function(value) { // menu bar text color
-		value.bind(function(to) {
-			$('.menu-primary .wvrx-menu-container,.menu-primary .wvrx-menu > li > a,.menu-primary .menu-toggle-button,').css('color', weaverxFixTo(to));
-			value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[body_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('body').css('background-color', weaverxFixTo(to));
 		});
 	});
-	// also needs: .menu-primary .menu-arrows .toggle-submenu:after,
-	//		.menu-primary .menu-arrows ul .toggle-submenu:after,
-	//		.menu-primary .menu-arrows.is-mobile-menu.menu-arrows ul a .toggle-submenu:after
 
-	api('weaverx_settings[m_primary_link_bgcolor]', function(value) { // item BG color
-		value.bind(function(to) { $('.menu-primary .wvrx-menu > li > a').css('background-color', weaverxFixTo(to)); });
-	});
-
-	//api('weaverx_settings[m_primary_hover_color]', function( value ) { // menu bar hover text color
-	//	value.bind( function( to ) { $('.menu-primary .wvrx-menu > li > a:hover').each(function(){this.style.setProperty('color', weaverxFixTo( to),'important')}); } );} );
-	//api('weaverx_settings[m_primary_hover_bgcolor]', function( value ) { // menu bar hover bg color
-	//	value.bind( function( to ) { $('.menu-primary .wvrx-menu > li > a:hover').each(function(){this.style.setProperty('background-color', weaverxFixTo( to),'important')}); } );} );
-
-	api('weaverx_settings[m_primary_sub_color]', function(value) {
-		value.bind(function(to) { $('.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li').css('color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[m_primary_sub_bgcolor]', function(value) {
-		value.bind(function(to) { $('.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li').css('background-color', weaverxFixTo(to)); });
-	});
-
-	//api('weaverx_settings[m_primary_sub_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.menu-primary .wvrx-menu > li > a:hover').each(function(){this.style.setProperty('color', weaverxFixTo( to),'important')}); } );} );
-
-	//api('weaverx_settings[m_primary_sub_hover_bgcolor]', function( value ) {
-	//	value.bind( function( to ) { $('.menu-primary .wvrx-menu ul li a:hover').each(function(){this.style.setProperty('background-color', weaverxFixTo( to),'important')}); } );} );
-
-	api('weaverx_settings[m_primary_html_color]', function(value) {
-		value.bind(function(to) { $('.menu-primary .wvrx-menu-html').css('color', weaverxFixTo(to)); });
-	}); */
-
-	api('weaverx_settings[m_primary_top_margin_dec]', function(value) {
-		value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('margin-top', to + 'px'); });
-	});
-	api('weaverx_settings[m_primary_bottom_margin_dec]', function(value) {
-		value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('margin-bottom', to + 'px'); });
-	});
-
-	api('weaverx_settings[m_secondary_top_margin_dec]', function(value) {
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu-container').css('margin-top', to + 'px'); });
-	});
-	api('weaverx_settings[m_secondary_bottom_margin_dec]', function(value) {
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu-container').css('margin-bottom', to + 'px'); });
-	});
-
-	api('weaverx_settings[m_extra_top_margin_dec]', function(value) {
-		value.bind(function(to) { $('.menu-extra .wvrx-menu-container').css('margin-top', to + 'px'); });
-	});
-	api('weaverx_settings[m_extra_bottom_margin_dec]', function(value) {
-		value.bind(function(to) { $('.menu-extra .wvrx-menu-container').css('margin-bottom', to + 'px'); });
-	});
-
-	// menu secondary
-
-	/* api('weaverx_settings[m_secondary_bgcolor]', function(value) { // menu bar bg color
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu-container').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[m_secondary_color]', function(value) { // menu bar text color
-		value.bind(function(to) {
-			$('.menu-secondary .wvrx-menu-container,.menu-secondary .wvrx-menu > li > a,.menu-secondary .menu-toggle-button,').css('color', weaverxFixTo(to));
+	api('weaverx_settings[wrapper_color]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('color', weaverxFixTo(to));
 		});
 	});
-	// also needs: .menu-secondary .menu-arrows .toggle-submenu:after,
-	//		.menu-secondary .menu-arrows ul .toggle-submenu:after,
-	//		.menu-secondary .menu-arrows.is-mobile-menu.menu-arrows ul a .toggle-submenu:after
-
-	api('weaverx_settings[m_secondary_link_bgcolor]', function(value) { // item BG color
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu > li > a').css('background-color', weaverxFixTo(to)); });
-	});
-
-	//api('weaverx_settings[m_secondary_hover_color]', function( value ) { // menu bar hover text color
-	//	value.bind( function( to ) { $('.menu-secondary .wvrx-menu > li > a:hover').each(function(){this.style.setProperty('color', weaverxFixTo( to),'important')}); } );} );
-	//api('weaverx_settings[m_secondary_hover_bgcolor]', function( value ) { // menu bar hover bg color
-	//	value.bind( function( to ) { $('.menu-secondary .wvrx-menu > li > a:hover').each(function(){this.style.setProperty('background-color', weaverxFixTo( to),'important')}); } );} );
-
-	api('weaverx_settings[m_secondary_sub_color]', function(value) {
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li').css('color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[m_secondary_sub_bgcolor]', function(value) {
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li').css('background-color', weaverxFixTo(to)); });
-	});
-
-	//api('weaverx_settings[m_secondary_sub_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('.menu-secondary .wvrx-menu > li > a:hover').each(function(){this.style.setProperty('color', weaverxFixTo( to),'important')}); } );} );
-
-	//api('weaverx_settings[m_secondary_sub_hover_bgcolor]', function( value ) {
-	//	value.bind( function( to ) { $('.menu-secondary .wvrx-menu ul li a:hover').each(function(){this.style.setProperty('background-color', weaverxFixTo( to),'important')}); } );} );
-
-	api('weaverx_settings[m_secondary_html_color]', function(value) {
-		value.bind(function(to) { $('.menu-secondary .wvrx-menu-html').css('color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[m_header_mini_color]', function(value) {
-		value.bind(function(to) { $('#nav-header-mini a').css('color', weaverxFixTo(to)); });
-	});
-	//	value.bind( function( to ) { $('#nav-header-mini a,#nav-header-mini a:visited').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	api('weaverx_settings[m_header_mini_bgcolor]', function(value) {
-		value.bind(function(to) { $('#nav-header-mini').css('background-color', weaverxFixTo(to)); });
-	});
-
-	//api('weaverx_settings[m_header_mini_hover_color]', function( value ) {
-	//	value.bind( function( to ) { $('#nav-header-mini a:hover').css( 'color', weaverxFixTo( to ) ); } );} );
-
-	api('weaverx_settings[menubar_curpage_color]', function(value) {
-		value.bind(function(to) { $('.weaverx-theme-menu .current_page_item > a,.weaverx-theme-menu .current-menu-item > a,.weaverx-theme-menu .current-cat > a,.weaverx-theme-menu .current_page_ancestor > a,.weaverx-theme-menu .current-category-ancestor > a,.weaverx-theme-menu .current-menu-ancestor > a,.weaverx-theme-menu .current-menu-parent > a,.weaverx-theme-menu .current-category-parent > a').each(function() { this.style.setProperty('color', weaverxFixTo(to), 'important'); }); });
-	});
-	api('weaverx_settings[menubar_curpage_bgcolor]', function(value) {
-		value.bind(function(to) {
-			$('.weaverx-theme-menu .current_page_item > a,.weaverx-theme-menu .current-menu-item > a,.weaverx-theme-menu .current-cat > a,.weaverx-theme-menu .current_page_ancestor > a,.weaverx-theme-menu .current-category-ancestor > a,.weaverx-theme-menu .current-menu-ancestor > a,.weaverx-theme-menu .current-menu-parent > a,.weaverx-theme-menu .current-category-parent > a').
-			each(function() { this.style.setProperty('background-color', weaverxFixTo(to), 'important'); });
+	api('weaverx_settings[wrapper_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('background-color', weaverxFixTo(to));
 		});
 	});
-	*/
 
-	api('weaverx_settings[infobar_color]', function(value) {
-		value.bind(function(to) { $('#infobar').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('#infobar .search-form .search-submit').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[container_color]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[infobar_bgcolor]', function(value) {
-		value.bind(function(to) { $('#infobar').css('background-color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[content_color]', function(value) {
-		value.bind(function(to) { $('#content').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[content_bgcolor]', function(value) {
-		value.bind(function(to) { $('#content').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[container_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[page_title_color]', function(value) {
-		value.bind(function(to) { $('.page-title').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[footer_color]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[page_title_bgcolor]', function(value) {
-		value.bind(function(to) { $('.page-title').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[archive_title_color]', function(value) {
-		value.bind(function(to) { $('.archive-title').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[archive_title_bgcolor]', function(value) {
-		value.bind(function(to) { $('.archive-title').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[header_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[content_h_color]', function(value) {
-		value.bind(function(to) { $('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[site_title_color]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper #site-title a,.site-title a').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[content_h_bgcolor]', function(value) {
-		value.bind(function(to) { $('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[input_color]', function(value) {
-		value.bind(function(to) { $('input,textarea').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[input_bgcolor]', function(value) {
-		value.bind(function(to) { $('input,textarea').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[site_title_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper #site-title a,.wrapper .site-title a').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[search_color]', function(value) {
-		value.bind(function(to) { $('.search-field,#header-search .search-field:focus').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[tagline_color]', function (value) {
+		value.bind(function (to) {
+			$('#site-tagline > span,.site-tagline > span').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[tagline_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#site-tagline > span,.site-tagline > span').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[search_bgcolor]', function(value) {
-		value.bind(function(to) { $('.search-field,#header-search .search-field:focus').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[header_sb_color]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('.widget-area-header .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[header_sb_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[comment_headings_color]', function(value) {
-		value.bind(function(to) { $('#comments-title h3, #comments-title h4, #respond h3').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[title_tagline_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#title-tagline').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[comment_content_bgcolor]', function(value) {
-		value.bind(function(to) { $('.commentlist li.comment, #respond').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[header_html_color]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[comment_submit_bgcolor]', function(value) {
-		value.bind(function(to) { $('#respond input#submit').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[post_color]', function(value) {
-		value.bind(function(to) { $('.post-area').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[post_bgcolor]', function(value) {
-		value.bind(function(to) { $('.post-area').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[header_html_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[stickypost_bgcolor]', function(value) {
-		value.bind(function(to) { $('.blog .sticky').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[hr_color]', function (value) {
+		value.bind(function (to) {
+			$('hr').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[post_title_color]', function(value) {
-		value.bind(function(to) { $('.wrapper .post-title a').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[content_h_color]', function (value) {
+		value.bind(function (to) {
+			$('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[content_h_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[inject_prewrapper_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_prewrapper').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_postfooter_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_postfooter').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_preheader_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_preheader').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_header_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_header').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_postheader_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_postheader').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_container_top_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_container_top').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_postinfobar_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_postinfobar').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_precontent_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_precontent').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_pagecontentbottom_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_pagecontentbottom').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_postpostcontent_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.inject_postpostcontent').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_precomments_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_precomments').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_postcomments_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_postcomments').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_prefooter_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_prefooter').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_presidebar_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_presidebar').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_fixedtop_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_fixedtop').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[inject_fixedbottom_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#inject_fixedbottom').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+
+	api('weaverx_settings[m_primary_top_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.menu-primary .wvrx-menu-container').css('margin-top', to + 'px');
+		});
+	});
+	api('weaverx_settings[m_primary_bottom_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.menu-primary .wvrx-menu-container').css('margin-bottom', to + 'px');
+		});
+	});
+
+	api('weaverx_settings[m_secondary_top_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.menu-secondary .wvrx-menu-container').css('margin-top', to + 'px');
+		});
+	});
+	api('weaverx_settings[m_secondary_bottom_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.menu-secondary .wvrx-menu-container').css('margin-bottom', to + 'px');
+		});
+	});
+
+	api('weaverx_settings[m_extra_top_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.menu-extra .wvrx-menu-container').css('margin-top', to + 'px');
+		});
+	});
+	api('weaverx_settings[m_extra_bottom_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.menu-extra .wvrx-menu-container').css('margin-bottom', to + 'px');
+		});
+	});
+
+
+	api('weaverx_settings[infobar_color]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('#infobar .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[infobar_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[content_color]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[content_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[page_title_color]', function (value) {
+		value.bind(function (to) {
+			$('.page-title').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[page_title_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.page-title').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[archive_title_color]', function (value) {
+		value.bind(function (to) {
+			$('.archive-title').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[archive_title_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.archive-title').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[content_h_color]', function (value) {
+		value.bind(function (to) {
+			$('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[content_h_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[input_color]', function (value) {
+		value.bind(function (to) {
+			$('input,textarea').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[input_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('input,textarea').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[search_color]', function (value) {
+		value.bind(function (to) {
+			$('.search-field,#header-search .search-field:focus').css('color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[search_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.search-field,#header-search .search-field:focus').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[comment_headings_color]', function (value) {
+		value.bind(function (to) {
+			$('#comments-title h3, #comments-title h4, #respond h3').css('color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[comment_content_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.commentlist li.comment, #respond').css('background-color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[comment_submit_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#respond input#submit').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[post_color]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[post_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[stickypost_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.blog .sticky').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[post_title_color]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .post-title a').css('color', weaverxFixTo(to));
+		});
 	});
 	//	value.bind( function( to ) { $('.wrapper .post-title a,.wrapper .post-title a:visited').css( 'color', weaverxFixTo( to ) ); } );} );
-	api('weaverx_settings[post_title_bgcolor]', function(value) {
-		value.bind(function(to) { $('.wrapper .post-title').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[post_title_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .post-title').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[post_info_top_color]', function(value) {
-		value.bind(function(to) { $('.entry-meta').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[post_info_top_color]', function (value) {
+		value.bind(function (to) {
+			$('.entry-meta').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[post_info_top_bgcolor]', function(value) {
-		value.bind(function(to) { $('.entry-meta').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[post_info_bottom_color]', function(value) {
-		value.bind(function(to) { $('.entry-utility').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[post_info_bottom_bgcolor]', function(value) {
-		value.bind(function(to) { $('.entry-utility').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[post_info_top_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.entry-meta').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[post_author_bgcolor]', function(value) {
-		value.bind(function(to) { $('#author-info').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[post_info_bottom_color]', function (value) {
+		value.bind(function (to) {
+			$('.entry-utility').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[post_info_bottom_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.entry-utility').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[primary_color]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('color', weaverxFixTo(to)); })
-		value.bind(function(to) { $('#primary-widget-area .search-form .search-submit').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[primary_bgcolor]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[post_author_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#author-info').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[secondary_color]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('#secondary-widget-area .search-form .search-submit').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[primary_color]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('color', weaverxFixTo(to));
+		})
+		value.bind(function (to) {
+			$('#primary-widget-area .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[secondary_bgcolor]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[top_color]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('.widget-area-top .search-form .search-submit').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[top_bgcolor]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[primary_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[bottom_color]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('.widget-area-bottom .search-form .search-submit').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[secondary_color]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('#secondary-widget-area .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[bottom_bgcolor]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[widget_color]', function(value) {
-		value.bind(function(to) { $('.widget').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('.widget .search-form .search-submit').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[widget_bgcolor]', function(value) {
-		value.bind(function(to) { $('.widget').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[secondary_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[widget_title_color]', function(value) {
-		value.bind(function(to) { $('.widget-title').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[top_color]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('.widget-area-top .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[widget_title_bgcolor]', function(value) {
-		value.bind(function(to) { $('.widget-title').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[footer_color]', function(value) {
-		value.bind(function(to) { $('#colophon').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('#colophon .search-form .search-submit').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[footer_bgcolor]', function(value) {
-		value.bind(function(to) { $('#colophon').css('background-color', weaverxFixTo(to)); });
-	});
-
-	api('weaverx_settings[footer_sb_color]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('color', weaverxFixTo(to)); });
-		value.bind(function(to) { $('.widget-area-footer .search-form .search-submit').css('color', weaverxFixTo(to)); });
-	});
-	api('weaverx_settings[footer_sb_bgcolor]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[top_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('background-color', weaverxFixTo(to));
+		});
 	});
 
-	api('weaverx_settings[footer_html_color]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('color', weaverxFixTo(to)); });
+	api('weaverx_settings[bottom_color]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('.widget-area-bottom .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[footer_html_bgcolor]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[bottom_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[widget_color]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('.widget .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[widget_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[widget_title_color]', function (value) {
+		value.bind(function (to) {
+			$('.widget-title').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[widget_title_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('.widget-title').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[footer_color]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('#colophon .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[footer_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[footer_sb_color]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('color', weaverxFixTo(to));
+		});
+		value.bind(function (to) {
+			$('.widget-area-footer .search-form .search-submit').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[footer_sb_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('background-color', weaverxFixTo(to));
+		});
+	});
+
+	api('weaverx_settings[footer_html_color]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('color', weaverxFixTo(to));
+		});
+	});
+	api('weaverx_settings[footer_html_bgcolor]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('background-color', weaverxFixTo(to));
+		});
 	});
 
 	// --------------------------------- Typography ---------------------------------
@@ -693,7 +736,7 @@ var wvrxCustFontMsg = 0;
 				cssVal = '"Comic Sans MS", cursive,serif';
 				break;
 
-				// Integrated Google Fonts
+			// Integrated Google Fonts
 			case 'alegreya-sans':
 				cssVal = "'Alegreya Sans', sans-serif";
 				break;
@@ -824,443 +867,503 @@ var wvrxCustFontMsg = 0;
 	}
 
 	// ------ Wrapper
-	api('weaverx_settings[wrapper_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_font_size]', function (value) {
+		value.bind(function (to) {
 			var wrapper = $('#wrapper');
 			wrapper.css('font-size', weaverxFontSize(to));
 			wrapper.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[wrapper_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#wrapper').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[wrapper_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_bold]', function (value) {
+		value.bind(function (to) {
 			$('#wrapper').css('font-weight', weaverxFontWeight(to));
-			$('#wrapper a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#wrapper a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[wrapper_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_italic]', function (value) {
+		value.bind(function (to) {
 			$('#wrapper').css('font-style', weaverxFontStyle(to));
-			$('#wrapper a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#wrapper a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Container
-	api('weaverx_settings[container_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_font_size]', function (value) {
+		value.bind(function (to) {
 			var container = $('#container');
 			container.css('font-size', weaverxFontSize(to));
 			container.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[container_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#container').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[container_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_bold]', function (value) {
+		value.bind(function (to) {
 			$('#container').css('font-weight', weaverxFontWeight(to));
-			$('#container a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#container a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[container_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_italic]', function (value) {
+		value.bind(function (to) {
 			$('#container').css('font-style', weaverxFontStyle(to));
-			$('#container a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#container a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Header
-	api('weaverx_settings[header_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#header');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[header_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#header').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[header_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_bold]', function (value) {
+		value.bind(function (to) {
 			$('#header').css('font-weight', weaverxFontWeight(to));
-			$('#header a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#header a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[header_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_italic]', function (value) {
+		value.bind(function (to) {
 			$('#header').css('font-style', weaverxFontStyle(to));
-			$('#header a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#header a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Site Title (title)
-	api('weaverx_settings[site_title_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_title_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#site-title,.site-title');
 			header.css('font-size', weaverxFontSizeTitle(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[site_title_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_title_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#site-title,.site-title').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[site_title_normal]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_title_normal]', function (value) {
+		value.bind(function (to) {
 			$('#site-title,.site-title').css('font-weight', weaverxFontWeightNormal(to));
-			$('#site-title a,.site-title a').each(function() { this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important'); });
+			$('#site-title a,.site-title a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[site_title_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_title_italic]', function (value) {
+		value.bind(function (to) {
 			$('#site-title,.site-title').css('font-style', weaverxFontStyle(to));
-			$('#site-title a,.site-title a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#site-title a,.site-title a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Site Tagline (title)
-	api('weaverx_settings[tagline_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[tagline_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#site-tagline,.site-tagline');
 			header.css('font-size', weaverxFontSizeTitle(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[tagline_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[tagline_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#site-tagline,.site-tagline').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[tagline_normal]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[tagline_normal]', function (value) {
+		value.bind(function (to) {
 			$('#site-tagline,.site-tagline').css('font-weight', weaverxFontWeightNormal(to));
-			$('#site-tagline a,.site-tagline a').each(function() { this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important'); });
+			//$('#site-tagline a,.site-tagline a').each(function () {
+			//	this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important');
+			//});
 		});
 	});
 
-	api('weaverx_settings[tagline_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[tagline_italic]', function (value) {
+		value.bind(function (to) {
 			$('#site-tagline,.site-tagline').css('font-style', weaverxFontStyle(to));
-			$('#site-tagline a,.site-tagline a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			//$('#site-tagline a,.site-tagline a').each(function () {
+			//	this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			//});
 		});
 	});
 
 	// ------ Header Widget Area
-	api('weaverx_settings[header_sb_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#header-widget-area,.widget-area-header');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[header_sb_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#header-widget-area,.widget-area-header').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[header_sb_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_bold]', function (value) {
+		value.bind(function (to) {
 			$('#header-widget-area,.widget-area-header').css('font-weight', weaverxFontWeight(to));
-			$('#header-widget-area a,.widget-area-header a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#header-widget-area a,.widget-area-header a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[header_sb_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_italic]', function (value) {
+		value.bind(function (to) {
 			$('#header-widget-area,.widget-area-header').css('font-style', weaverxFontStyle(to));
-			$('#header-widget-area a,.widget-area-header a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#header-widget-area a,.widget-area-header a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Header HTML Area
-	api('weaverx_settings[header_html_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#header-html');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[header_html_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#header-html').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[header_html_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_bold]', function (value) {
+		value.bind(function (to) {
 			$('#header-html').css('font-weight', weaverxFontWeight(to));
-			$('#header-html a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#header-html a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[header_html_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_italic]', function (value) {
+		value.bind(function (to) {
 			$('#header-html').css('font-style', weaverxFontStyle(to));
-			$('#header-html a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#header-html a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Primary Menu
-	api('weaverx_settings[m_primary_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.menu-primary .wvrx-menu-container');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[m_primary_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.menu-primary .wvrx-menu-container').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[m_primary_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_bold]', function (value) {
+		value.bind(function (to) {
 			$('.menu-primary .wvrx-menu-container').css('font-weight', weaverxFontWeight(to));
-			$('.menu-primary .wvrx-menu-container a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.menu-primary .wvrx-menu-container a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[m_primary_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_italic]', function (value) {
+		value.bind(function (to) {
 			$('.menu-primary .wvrx-menu-container').css('font-style', weaverxFontStyle(to));
-			$('.menu-primary .wvrx-menu-container a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.menu-primary .wvrx-menu-container a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Secondary Menu
-	api('weaverx_settings[m_secondary_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.menu-secondary .wvrx-menu-container');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[m_secondary_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.menu-secondary .wvrx-menu-container').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[m_secondary_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_bold]', function (value) {
+		value.bind(function (to) {
 			$('.menu-secondary .wvrx-menu-container').css('font-weight', weaverxFontWeight(to));
-			$('.menu-secondary .wvrx-menu-container a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.menu-secondary .wvrx-menu-container a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[m_secondary_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_italic]', function (value) {
+		value.bind(function (to) {
 			$('.menu-secondary .wvrx-menu-container').css('font-style', weaverxFontStyle(to));
-			$('.menu-secondary .wvrx-menu-container a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.menu-secondary .wvrx-menu-container a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Header Mini Menu
-	api('weaverx_settings[m_header_mini_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_header_mini_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#nav-header-mini');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[m_header_mini_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_header_mini_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#nav-header-mini').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[m_header_mini_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_header_mini_bold]', function (value) {
+		value.bind(function (to) {
 			$('#nav-header-mini').css('font-weight', weaverxFontWeight(to));
-			$('#nav-header-mini a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#nav-header-mini a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[m_header_mini_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_header_mini_italic]', function (value) {
+		value.bind(function (to) {
 			$('#nav-header-mini').css('font-style', weaverxFontStyle(to));
-			$('#nav-header-mini a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#nav-header-mini a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Info Bar
-	api('weaverx_settings[info_bar_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[info_bar_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#infobar');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[info_bar_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[info_bar_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#infobar').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[info_bar_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[info_bar_bold]', function (value) {
+		value.bind(function (to) {
 			$('#infobar').css('font-weight', weaverxFontWeight(to));
-			$('#infobar a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#infobar a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[info_bar_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[info_bar_italic]', function (value) {
+		value.bind(function (to) {
 			$('#infobar').css('font-style', weaverxFontStyle(to));
-			$('#infobar a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#infobar a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Content
-	api('weaverx_settings[content_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#content');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[content_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#content').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[content_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_bold]', function (value) {
+		value.bind(function (to) {
 			$('#content').css('font-weight', weaverxFontWeight(to));
-			$('#content a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#content a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[content_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_italic]', function (value) {
+		value.bind(function (to) {
 			$('#content').css('font-style', weaverxFontStyle(to));
-			$('#content a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#content a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Page Title (title)
-	api('weaverx_settings[page_title_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[page_title_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.page-title');
 			header.css('font-size', weaverxFontSizeTitle(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[page_title_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[page_title_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.page-title').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[page_title_normal]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[page_title_normal]', function (value) {
+		value.bind(function (to) {
 			$('.page-title').css('font-weight', weaverxFontWeightNormal(to));
-			$('.page-title a').each(function() { this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important'); });
+			$('.page-title a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[page_title_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[page_title_italic]', function (value) {
+		value.bind(function (to) {
 			$('.page-title').css('font-style', weaverxFontStyle(to));
-			$('.page-title a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.page-title a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Archive Title (title)
-	api('weaverx_settings[archive_title_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[archive_title_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.archive-title');
 			header.css('font-size', weaverxFontSizeTitle(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[archive_title_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[archive_title_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.archive-title').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[archive_title_normal]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[archive_title_normal]', function (value) {
+		value.bind(function (to) {
 			$('.archive-title').css('font-weight', weaverxFontWeightNormal(to));
-			$('.archive-title a').each(function() { this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important'); });
+			$('.archive-title a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[archive_title_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[archive_title_italic]', function (value) {
+		value.bind(function (to) {
 			$('.archive-title').css('font-style', weaverxFontStyle(to));
-			$('.archive-title a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.archive-title a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Post Specific
-	api('weaverx_settings[post_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.post-area');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[post_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.post-area').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[post_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_bold]', function (value) {
+		value.bind(function (to) {
 			$('.post-area').css('font-weight', weaverxFontWeight(to));
-			$('.post-area a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.post-area a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[post_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_italic]', function (value) {
+		value.bind(function (to) {
 			$('.post-area').css('font-style', weaverxFontStyle(to));
-			$('.post-area a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.post-area a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Post Title (title)
-	api('weaverx_settings[post_title_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_title_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.wrapper .post-title a');
 			// var header = $('.wrapper .post-title a,.wrapper .post-title a:visited');
 			header.css('font-size', weaverxFontSizeTitle(to));
@@ -1268,421 +1371,489 @@ var wvrxCustFontMsg = 0;
 		});
 	});
 
-	api('weaverx_settings[post_title_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_title_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.wrapper .post-title a').css('font-family', weaverxFontFamily(to));
 			// $('.wrapper .post-title a,.wrapper .post-title a:visited').css( 'font-family', weaverxFontFamily(to) );
 		});
 	});
 
-	api('weaverx_settings[post_title_normal]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_title_normal]', function (value) {
+		value.bind(function (to) {
 			$('.wrapper .post-title a').css('font-weight', weaverxFontWeightNormal(to));
 			$('.wrapper .post-title a,.wrapper .post-title a:visited').css('font-weight', weaverxFontWeightNormal(to));
 		});
 	});
 
-	api('weaverx_settings[post_title_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_title_italic]', function (value) {
+		value.bind(function (to) {
 			$('.wrapper .post-title a').css('font-style', weaverxFontStyle(to));
 			// $('.wrapper .post-title a,.wrapper .post-title a:visited').css( 'font-style', weaverxFontStyle(to) );
 		});
 	});
 
 	// ------ Post Info Top
-	api('weaverx_settings[post_info_top_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_top_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.entry-meta');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[post_info_top_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_top_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.entry-meta').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[post_info_top_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_top_bold]', function (value) {
+		value.bind(function (to) {
 			$('.entry-meta').css('font-weight', weaverxFontWeight(to));
-			$('.entry-meta a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.entry-meta a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[post_info_top_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_top_italic]', function (value) {
+		value.bind(function (to) {
 			$('.entry-meta').css('font-style', weaverxFontStyle(to));
-			$('.entry-meta a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.entry-meta a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Post Info Bottom
-	api('weaverx_settings[post_info_bottom_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_bottom_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.entry-utility');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[post_info_bottom_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_bottom_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.entry-utility').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[post_info_bottom_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_bottom_bold]', function (value) {
+		value.bind(function (to) {
 			$('.entry-utility').css('font-weight', weaverxFontWeight(to));
-			$('.entry-utility a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.entry-utility a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[post_info_bottom_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_info_bottom_italic]', function (value) {
+		value.bind(function (to) {
 			$('.entry-utility').css('font-style', weaverxFontStyle(to));
-			$('.entry-utility a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.entry-utility a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Primary Widget area
-	api('weaverx_settings[primary_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[primary_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#primary-widget-area,.widget-area-primary');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[primary_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[primary_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#primary-widget-area,.widget-area-primary').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[primary_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[primary_bold]', function (value) {
+		value.bind(function (to) {
 			$('#primary-widget-area,.widget-area-primary').css('font-weight', weaverxFontWeight(to));
-			$('#primary-widget-area a,.widget-area-primary a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#primary-widget-area a,.widget-area-primary a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[primary_italic]', function(value) {
-		value.bind(function(to) {
-			$('.#primary-widget-area,.widget-area-primary').css('font-style', weaverxFontStyle(to));
-			$('#primary-widget-area a,.widget-area-primary a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+	api('weaverx_settings[primary_italic]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('font-style', weaverxFontStyle(to));
+			$('#primary-widget-area a,.widget-area-primary a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Secondary Widget area
-	api('weaverx_settings[secondary_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[secondary_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#secondary-widget-area,.widget-area-secondary');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[secondary_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[secondary_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#secondary-widget-area,.widget-area-secondary').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[secondary_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[secondary_bold]', function (value) {
+		value.bind(function (to) {
 			$('#secondary-widget-area,.widget-area-secondary').css('font-weight', weaverxFontWeight(to));
-			$('#secondary-widget-area a,.widget-area-secondary a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#secondary-widget-area a,.widget-area-secondary a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[secondary_italic]', function(value) {
-		value.bind(function(to) {
-			$('.#secondary-widget-area,.widget-area-secondary').css('font-style', weaverxFontStyle(to));
-			$('#secondary-widget-area a,.widget-area-secondary a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+	api('weaverx_settings[secondary_italic]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('font-style', weaverxFontStyle(to));
+			$('#secondary-widget-area a,.widget-area-secondary a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Top Widget areas
-	api('weaverx_settings[top_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.widget-area-top');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[top_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.widget-area-top').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[top_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_bold]', function (value) {
+		value.bind(function (to) {
 			$('.widget-area-top').css('font-weight', weaverxFontWeight(to));
-			$('.widget-area-top a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.widget-area-top a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[top_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_italic]', function (value) {
+		value.bind(function (to) {
 			$('.widget-area-top').css('font-style', weaverxFontStyle(to));
-			$('.widget-area-top a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.widget-area-top a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Bottom Widget areas
-	api('weaverx_settings[bottom_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.widget-area-bottom');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[bottom_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.widget-area-bottom').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[bottom_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_bold]', function (value) {
+		value.bind(function (to) {
 			$('.widget-area-bottom').css('font-weight', weaverxFontWeight(to));
-			$('.widget-area-bottom a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.widget-area-bottom a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[bottom_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_italic]', function (value) {
+		value.bind(function (to) {
 			$('.widget-area-bottom').css('font-style', weaverxFontStyle(to));
-			$('.widget-area-bottom a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.widget-area-bottom a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Widgets
-	api('weaverx_settings[widget_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.widget');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[widget_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.widget').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[widget_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_bold]', function (value) {
+		value.bind(function (to) {
 			$('.widget').css('font-weight', weaverxFontWeight(to));
-			$('.widget a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('.widget a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[widget_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_italic]', function (value) {
+		value.bind(function (to) {
 			$('.widget').css('font-style', weaverxFontStyle(to));
-			$('.widget a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.widget a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Widget Title (title)
-	api('weaverx_settings[widget_title_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_title_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('.widget-title');
 			header.css('font-size', weaverxFontSizeTitle(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[widget_title_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_title_font_family]', function (value) {
+		value.bind(function (to) {
 			$('.widget-title').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[widget_title_normal]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_title_normal]', function (value) {
+		value.bind(function (to) {
 			$('.widget-title').css('font-weight', weaverxFontWeightNormal(to));
-			$('.widget-title a').each(function() { this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important'); });
+			$('.widget-title a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeightNormal(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[widget_title_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_title_italic]', function (value) {
+		value.bind(function (to) {
 			$('.widget-title').css('font-style', weaverxFontStyle(to));
-			$('.widget-title a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('.widget-title a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Footer
-	api('weaverx_settings[footer_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#colophon');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[footer_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#colophon').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[footer_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_bold]', function (value) {
+		value.bind(function (to) {
 			$('#colophon').css('font-weight', weaverxFontWeight(to));
-			$('#colophon a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#colophon a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[footer_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_italic]', function (value) {
+		value.bind(function (to) {
 			$('#colophon').css('font-style', weaverxFontStyle(to));
-			$('#colophon a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#colophon a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Footer Widget Area
-	api('weaverx_settings[footer_sb_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#footer-widget-area,.widget-area-footer');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[footer_sb_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#footer-widget-area,.widget-area-footer').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[footer_sb_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_bold]', function (value) {
+		value.bind(function (to) {
 			$('#footer-widget-area,.widget-area-footer').css('font-weight', weaverxFontWeight(to));
-			$('#footer-widget-area a,.widget-area-footer a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#footer-widget-area a,.widget-area-footer a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[footer_sb_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_italic]', function (value) {
+		value.bind(function (to) {
 			$('#footer-widget-area,.widget-area-footer').css('font-style', weaverxFontStyle(to));
-			$('#footer-widget-area a,.widget-area-footer a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#footer-widget-area a,.widget-area-footer a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// ------ Footer HTML Area
-	api('weaverx_settings[footer_html_font_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_font_size]', function (value) {
+		value.bind(function (to) {
 			var header = $('#footer-html');
 			header.css('font-size', weaverxFontSize(to));
 			header.css('line-height', weaverxFontSizeHeight(to));
 		});
 	});
 
-	api('weaverx_settings[footer_html_font_family]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_font_family]', function (value) {
+		value.bind(function (to) {
 			$('#footer-html').css('font-family', weaverxFontFamily(to));
 		});
 	});
 
-	api('weaverx_settings[footer_html_bold]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_bold]', function (value) {
+		value.bind(function (to) {
 			$('#footer-html').css('font-weight', weaverxFontWeight(to));
-			$('#footer-html a').each(function() { this.style.setProperty('font-weight', weaverxFontWeight(to), 'important'); });
+			$('#footer-html a').each(function () {
+				this.style.setProperty('font-weight', weaverxFontWeight(to), 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[footer_html_italic]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_italic]', function (value) {
+		value.bind(function (to) {
 			$('#footer-html').css('font-style', weaverxFontStyle(to));
-			$('#footer-html a').each(function() { this.style.setProperty('font-style', weaverxFontStyle(to), 'important'); });
+			$('#footer-html a').each(function () {
+				this.style.setProperty('font-style', weaverxFontStyle(to), 'important');
+			});
 		});
 	});
 
 	// Link Typography: link, ibarlink, contentlink, ilink, wlink, footerlink
 
-	api('weaverx_settings[link_strong]', function(value) {
-		value.bind(function(to) { $('a, .wrapper a').css('font-weight', weaverxFontWeight(to)); });
+	api('weaverx_settings[link_strong]', function (value) {
+		value.bind(function (to) {
+			$('a, .wrapper a').css('font-weight', weaverxFontWeight(to));
+		});
 	});
-	api('weaverx_settings[link_em]', function(value) {
-		value.bind(function(to) { $('a, .wrapper a').css('font-style', weaverxFontStyle(to)); });
+	api('weaverx_settings[link_em]', function (value) {
+		value.bind(function (to) {
+			$('a, .wrapper a').css('font-style', weaverxFontStyle(to));
+		});
 	});
-	api('weaverx_settings[link_u]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[link_u]', function (value) {
+		value.bind(function (to) {
 			if (to) $('a, .wrapper a').css('text-decoration', 'underline');
 			else $('a, .wrapper a').css('text-decoration', 'none');
 		});
 	});
 
-	api('weaverx_settings[contentlink_strong]', function(value) {
-		value.bind(function(to) { $('.content a').css('font-weight', weaverxFontWeight(to)); });
+	api('weaverx_settings[contentlink_strong]', function (value) {
+		value.bind(function (to) {
+			$('.content a').css('font-weight', weaverxFontWeight(to));
+		});
 	});
-	api('weaverx_settings[contentlink_em]', function(value) {
-		value.bind(function(to) { $('.content a').css('font-style', weaverxFontStyle(to)); });
+	api('weaverx_settings[contentlink_em]', function (value) {
+		value.bind(function (to) {
+			$('.content a').css('font-style', weaverxFontStyle(to));
+		});
 	});
-	api('weaverx_settings[contentlink_u]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[contentlink_u]', function (value) {
+		value.bind(function (to) {
 			if (to) $('.content a').css('text-decoration', 'underline');
 			else $('.content a').css('text-decoration', 'none');
 		});
 	});
 
-	api('weaverx_settings[ilink_strong]', function(value) {
-		value.bind(function(to) { $('.wrapper .entry-meta a, .wrapper .entry-utility a').css('font-weight', weaverxFontWeight(to)); });
+	api('weaverx_settings[ilink_strong]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .entry-meta a, .wrapper .entry-utility a').css('font-weight', weaverxFontWeight(to));
+		});
 	});
-	api('weaverx_settings[ilink_em]', function(value) {
-		value.bind(function(to) { $('.wrapper .entry-meta a, .wrapper .entry-utility a').css('font-style', weaverxFontStyle(to)); });
+	api('weaverx_settings[ilink_em]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .entry-meta a, .wrapper .entry-utility a').css('font-style', weaverxFontStyle(to));
+		});
 	});
-	api('weaverx_settings[ilink_u]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[ilink_u]', function (value) {
+		value.bind(function (to) {
 			if (to) $('.wrapper .entry-meta a, .wrapper .entry-utility a').css('text-decoration', 'underline');
 			else $('a, .wrapper a.wrapper .entry-meta a, .wrapper .entry-utility a').css('text-decoration', 'none');
 		});
 	});
 
-	api('weaverx_settings[wlink_strong]', function(value) {
-		value.bind(function(to) { $('.wrapper .widget a').css('font-weight', weaverxFontWeight(to)); });
+	api('weaverx_settings[wlink_strong]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .widget a').css('font-weight', weaverxFontWeight(to));
+		});
 	});
-	api('weaverx_settings[wlink_em]', function(value) {
-		value.bind(function(to) { $('.wrapper .widget a').css('font-style', weaverxFontStyle(to)); });
+	api('weaverx_settings[wlink_em]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .widget a').css('font-style', weaverxFontStyle(to));
+		});
 	});
-	api('weaverx_settings[wlink_u]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wlink_u]', function (value) {
+		value.bind(function (to) {
 			if (to) $('.wrapper .widget a').css('text-decoration', 'underline');
 			else $('.wrapper .widget a').css('text-decoration', 'none');
 		});
 	});
 
-	api('weaverx_settings[ibarlink_strong]', function(value) {
-		value.bind(function(to) { $('#infobar a').css('font-weight', weaverxFontWeight(to)); });
+	api('weaverx_settings[ibarlink_strong]', function (value) {
+		value.bind(function (to) {
+			$('#infobar a').css('font-weight', weaverxFontWeight(to));
+		});
 	});
-	api('weaverx_settings[ibarlink_em]', function(value) {
-		value.bind(function(to) { $('#infobar a').css('font-style', weaverxFontStyle(to)); });
+	api('weaverx_settings[ibarlink_em]', function (value) {
+		value.bind(function (to) {
+			$('#infobar a').css('font-style', weaverxFontStyle(to));
+		});
 	});
-	api('weaverx_settings[ibarlink_u]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[ibarlink_u]', function (value) {
+		value.bind(function (to) {
 			if (to) $('#infobar a').css('text-decoration', 'underline');
 			else $('#infobar a').css('text-decoration', 'none');
 		});
 	});
 
-	api('weaverx_settings[footerlink_strong]', function(value) {
-		value.bind(function(to) { $('.colophon a').css('font-weight', weaverxFontWeight(to)); });
+	api('weaverx_settings[footerlink_strong]', function (value) {
+		value.bind(function (to) {
+			$('.colophon a').css('font-weight', weaverxFontWeight(to));
+		});
 	});
-	api('weaverx_settings[footerlink_em]', function(value) {
-		value.bind(function(to) { $('.colophon a').css('font-style', weaverxFontStyle(to)); });
+	api('weaverx_settings[footerlink_em]', function (value) {
+		value.bind(function (to) {
+			$('.colophon a').css('font-style', weaverxFontStyle(to));
+		});
 	});
-	api('weaverx_settings[footerlink_u]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footerlink_u]', function (value) {
+		value.bind(function (to) {
 			if (to) $('.colophon a').css('text-decoration', 'underline');
 			else $('.colophon a').css('text-decoration', 'none');
 		});
@@ -1692,14 +1863,14 @@ var wvrxCustFontMsg = 0;
 
 	// general settings
 
-	api('weaverx_settings[border_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[border_width_int]', function (value) {
+		value.bind(function (to) {
 			$('.border,.border-bottom').css('border-width', to + 'px');
 		});
 	});
 
-	api('weaverx_settings[border_color]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[border_color]', function (value) {
+		value.bind(function (to) {
 			$('.border,.border-bottom').css('border-color', weaverxFixTo(to));
 		});
 	});
@@ -1711,132 +1882,132 @@ var wvrxCustFontMsg = 0;
 			$(tag).removeClass('border');
 	}
 
-	api('weaverx_settings[wrapper_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#wrapper');
 		});
 	});
 
-	api('weaverx_settings[container_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#container');
 		});
 	});
 
-	api('weaverx_settings[widget_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.widget');
 		});
 	});
 
-	api('weaverx_settings[primary_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[primary_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#primary-widget-area,.widget-area-primary');
 		});
 	});
 
-	api('weaverx_settings[secondary_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[secondary_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#secondary-widget-area,.widget-area-secondary');
 		});
 	});
 
-	api('weaverx_settings[top_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.widget-area-top');
 		});
 	});
 
-	api('weaverx_settings[bottom_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.widget-area-bottom');
 		});
 	});
 
-	api('weaverx_settings[header_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#header');
 		});
 	});
 
-	api('weaverx_settings[header_sb_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#header-widget-area,.widget-area-header');
 		});
 	});
 
-	api('weaverx_settings[header_html_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#header-html');
 		});
 	});
 
 	// menus
 
-	api('weaverx_settings[m_primary_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.menu-primary .wvrx-menu-container');
 		});
 	});
 
-	api('weaverx_settings[m_primary_sub_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_sub_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li');
 		});
 	});
 
-	api('weaverx_settings[m_secondary_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.menu-secondary .wvrx-menu-container');
 		});
 	});
 
-	api('weaverx_settings[m_secondary_sub_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_sub_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li');
 		});
 	});
 
 	// InfoBar
 
-	api('weaverx_settings[infobar_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[infobar_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#infobar');
 		});
 	});
 
 	// Content Area
 
-	api('weaverx_settings[content_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#content');
 		});
 	});
 
 	// Post Specific
 
-	api('weaverx_settings[post_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '.post-area');
 		});
 	});
 
 	// Footer
 
-	api('weaverx_settings[footer_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#colophon');
 		});
 	});
 
-	api('weaverx_settings[footer_sb_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#footer-widget-area,.widget-area-footer');
 		});
 	});
 
-	api('weaverx_settings[footer_html_border]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_border]', function (value) {
+		value.bind(function (to) {
 			weaverxSetBorder(to, '#footer-html');
 		});
 	});
@@ -1858,120 +2029,120 @@ var wvrxCustFontMsg = 0;
 		item.addClass('shadow' + to); // add the new one
 	}
 
-	api('weaverx_settings[wrapper_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#wrapper');
 		});
 	});
 
-	api('weaverx_settings[container_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#container');
 		});
 	});
 
-	api('weaverx_settings[widget_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '.widget');
 		});
 	});
 
-	api('weaverx_settings[primary_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[primary_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#primary-widget-area,.widget-area-primary');
 		});
 	});
 
-	api('weaverx_settings[secondary_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[secondary_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#secondary-widget-area,.widget-area-secondary');
 		});
 	});
 
-	api('weaverx_settings[top_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '.widget-area-top');
 		});
 	});
 
-	api('weaverx_settings[bottom_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '.widget-area-bottom');
 		});
 	});
 
-	api('weaverx_settings[header_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#header');
 		});
 	});
 
-	api('weaverx_settings[header_sb_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#header-widget-area,.widget-area-header');
 		});
 	});
 
-	api('weaverx_settings[header_html_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#header-html');
 		});
 	});
 
 	// menus
 
-	api('weaverx_settings[m_primary_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '.menu-primary .wvrx-menu-container');
 		});
 	});
 
-	api('weaverx_settings[m_secondary_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '.menu-secondary .wvrx-menu-container');
 		});
 	});
 
 	// InfoBar
 
-	api('weaverx_settings[infobar_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[infobar_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#infobar');
 		});
 	});
 
 	// Content Area
 
-	api('weaverx_settings[content_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#content');
 		});
 	});
 
 	// Post Specific
 
-	api('weaverx_settings[post_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '.post-area');
 		});
 	});
 
 	// Footer
 
-	api('weaverx_settings[footer_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#colophon');
 		});
 	});
 
-	api('weaverx_settings[footer_sb_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#footer-widget-area,.widget-area-footer');
 		});
 	});
 
-	api('weaverx_settings[footer_html_shadow]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_shadow]', function (value) {
+		value.bind(function (to) {
 			weaverxSetShadow(to, '#footer-html');
 		});
 	});
@@ -1990,120 +2161,120 @@ var wvrxCustFontMsg = 0;
 		}
 	}
 
-	api('weaverx_settings[wrapper_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[wrapper_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#wrapper');
 		});
 	});
 
-	api('weaverx_settings[container_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#container');
 		});
 	});
 
-	api('weaverx_settings[widget_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widget_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '.widget');
 		});
 	});
 
-	api('weaverx_settings[primary_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[primary_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#primary-widget-area,.widget-area-primary');
 		});
 	});
 
-	api('weaverx_settings[secondary_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[secondary_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#secondary-widget-area,.widget-area-secondary');
 		});
 	});
 
-	api('weaverx_settings[top_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '.widget-area-top');
 		});
 	});
 
-	api('weaverx_settings[bottom_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '.widget-area-bottom');
 		});
 	});
 
-	api('weaverx_settings[header_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#header');
 		});
 	});
 
-	api('weaverx_settings[header_sb_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#header-widget-area,.widget-area-header');
 		});
 	});
 
-	api('weaverx_settings[header_html_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#header-html');
 		});
 	});
 
 	// menus
 
-	api('weaverx_settings[m_primary_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_primary_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '.menu-primary .wvrx-menu-container');
 		});
 	});
 
-	api('weaverx_settings[m_secondary_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '.menu-secondary .wvrx-menu-container');
 		});
 	});
 
 	// InfoBar
 
-	api('weaverx_settings[infobar_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[infobar_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#infobar');
 		});
 	});
 
 	// Content Area
 
-	api('weaverx_settings[content_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[content_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#content');
 		});
 	});
 
 	// Post Specific
 
-	api('weaverx_settings[post_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[post_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '.post-area');
 		});
 	});
 
 	// Footer
 
-	api('weaverx_settings[footer_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#colophon');
 		});
 	});
 
-	api('weaverx_settings[footer_sb_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#footer-widget-area,.widget-area-footer');
 		});
 	});
 
-	api('weaverx_settings[footer_html_rounded]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_rounded]', function (value) {
+		value.bind(function (to) {
 			weaverxSetRounded(to, '#footer-html');
 		});
 	});
@@ -2112,58 +2283,82 @@ var wvrxCustFontMsg = 0;
 
 	// wrapper
 
-	api('weaverx_settings[theme_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[theme_width_int]', function (value) {
+		value.bind(function (to) {
 			$('#wrapper').css('max-width', to + 'px');
 			weaverx_refresh_js();
 		});
 	});
 
-	api('weaverx_settings[wrapper_padding_T]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[wrapper_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[wrapper_padding_B]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[wrapper_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[wrapper_padding_L]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[wrapper_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[wrapper_padding_R]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[wrapper_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[wrapper_margin_T]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[wrapper_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[wrapper_margin_B]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[wrapper_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
 
 	// container
 
-	api('weaverx_settings[container_padding_T]', function(value) {
-		value.bind(function(to) { $('#container').css('padding-top', to + 'px'); });
+	api('weaverx_settings[container_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('padding-top', to + 'px');
+		});
 	});
-	api('weaverx_settings[container_padding_B]', function(value) {
-		value.bind(function(to) { $('#container').css('padding-bottom', to + 'px'); });
+	api('weaverx_settings[container_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('padding-bottom', to + 'px');
+		});
 	});
-	api('weaverx_settings[container_padding_L]', function(value) {
-		value.bind(function(to) { $('#container').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[container_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[container_padding_R]', function(value) {
-		value.bind(function(to) { $('#container').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[container_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[container_margin_T]', function(value) {
-		value.bind(function(to) { $('#container').css('margin-top', to + 'px'); });
+	api('weaverx_settings[container_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('margin-top', to + 'px');
+		});
 	});
-	api('weaverx_settings[container_margin_B]', function(value) {
-		value.bind(function(to) { $('#container').css('margin-bottom', to + 'px'); });
+	api('weaverx_settings[container_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('margin-bottom', to + 'px');
+		});
 	});
-	api('weaverx_settings[container_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_width_int]', function (value) {
+		value.bind(function (to) {
 			//$('#container').each(function(){this.style.setProperty('width', to +'%','important');});
 			if (to === 0)
 				$('#container').css('width', 'auto');
@@ -2175,97 +2370,145 @@ var wvrxCustFontMsg = 0;
 
 	// widgets
 
-	api('weaverx_settings[widget_padding_T]', function(value) {
-		value.bind(function(to) { $('.widget').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[widget_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[widget_padding_B]', function(value) {
-		value.bind(function(to) { $('.widget').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[widget_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[widget_padding_L]', function(value) {
-		value.bind(function(to) { $('.widget').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[widget_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[widget_padding_R]', function(value) {
-		value.bind(function(to) { $('.widget').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[widget_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[widget_margin_T]', function(value) {
-		value.bind(function(to) { $('.widget').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[widget_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[widget_margin_B]', function(value) {
-		value.bind(function(to) { $('.widget').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[widget_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('.widget').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
 
 	// primary widget area
 
-	api('weaverx_settings[primary_padding_T]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[primary_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[primary_padding_B]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[primary_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[primary_padding_L]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[primary_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[primary_padding_R]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[primary_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[primary_margin_T]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[primary_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[primary_margin_B]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[primary_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area,.widget-area-primary').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
 
 	// secondary widget area
 
-	api('weaverx_settings[secondary_padding_T]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[secondary_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[secondary_padding_B]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[secondary_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[secondary_padding_L]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[secondary_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[secondary_padding_R]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[secondary_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[secondary_margin_T]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[secondary_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[secondary_margin_B]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[secondary_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area,.widget-area-secondary').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
 
 	// top widget area
 
-	api('weaverx_settings[top_padding_T]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[top_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[top_padding_B]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[top_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[top_padding_L]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[top_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[top_padding_R]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[top_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[top_margin_T]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[top_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[top_margin_B]', function(value) {
-		value.bind(function(to) { $('.widget-area-top').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[top_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-top').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[top_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('.widget-area-top').css('width', 'auto');
 			else
@@ -2276,28 +2519,40 @@ var wvrxCustFontMsg = 0;
 
 	// bottom widget area
 
-	api('weaverx_settings[bottom_padding_T]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[bottom_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[bottom_padding_B]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[bottom_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[bottom_padding_L]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[bottom_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[bottom_padding_R]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[bottom_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[bottom_margin_T]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[bottom_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[bottom_margin_B]', function(value) {
-		value.bind(function(to) { $('.widget-area-bottom').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[bottom_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('.widget-area-bottom').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[bottom_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('.widget-area-bottom').css('width', 'auto');
 			else
@@ -2308,28 +2563,40 @@ var wvrxCustFontMsg = 0;
 
 	// Header
 
-	api('weaverx_settings[header_padding_T]', function(value) {
-		value.bind(function(to) { $('#header').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[header_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[header_padding_B]', function(value) {
-		value.bind(function(to) { $('#header').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[header_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[header_padding_L]', function(value) {
-		value.bind(function(to) { $('#header').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[header_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[header_padding_R]', function(value) {
-		value.bind(function(to) { $('#header').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[header_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[header_margin_T]', function(value) {
-		value.bind(function(to) { $('#header').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[header_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[header_margin_B]', function(value) {
-		value.bind(function(to) { $('#header').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[header_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[header_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('#header').css('width', 'auto');
 			else
@@ -2340,26 +2607,38 @@ var wvrxCustFontMsg = 0;
 
 	// Header Widget Area
 
-	api('weaverx_settings[header_sb_padding_T]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[header_sb_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[header_sb_padding_B]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[header_sb_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[header_sb_padding_L]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('padding-left', to + 'px'); });
+	api('weaverx_settings[header_sb_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('padding-left', to + 'px');
+		});
 	});
-	api('weaverx_settings[header_sb_padding_R]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('padding-right', to + 'px'); });
+	api('weaverx_settings[header_sb_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('padding-right', to + 'px');
+		});
 	});
-	api('weaverx_settings[header_sb_margin_T]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[header_sb_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[header_sb_margin_B]', function(value) {
-		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[header_sb_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#header-widget-area,.widget-area-header').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[header_sb_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_sb_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('#header-widget-area,.widget-area-header').css('width', 'auto');
 			else
@@ -2370,28 +2649,40 @@ var wvrxCustFontMsg = 0;
 
 	// Header HTML Area
 
-	api('weaverx_settings[header_html_padding_T]', function(value) {
-		value.bind(function(to) { $('#header-html').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[header_html_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[header_html_padding_B]', function(value) {
-		value.bind(function(to) { $('#header-html').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[header_html_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[header_html_padding_L]', function(value) {
-		value.bind(function(to) { $('#header-html').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[header_html_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[header_html_padding_R]', function(value) {
-		value.bind(function(to) { $('#header-html').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[header_html_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[header_html_margin_T]', function(value) {
-		value.bind(function(to) { $('#header-html').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[header_html_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[header_html_margin_B]', function(value) {
-		value.bind(function(to) { $('#header-html').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[header_html_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#header-html').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[header_html_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('#header-html').css('width', 'auto');
 			else
@@ -2403,28 +2694,40 @@ var wvrxCustFontMsg = 0;
 
 	// Footer
 
-	api('weaverx_settings[footer_padding_T]', function(value) {
-		value.bind(function(to) { $('#colophon').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[footer_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[footer_padding_B]', function(value) {
-		value.bind(function(to) { $('#colophon').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[footer_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[footer_padding_L]', function(value) {
-		value.bind(function(to) { $('#colophon').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[footer_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[footer_padding_R]', function(value) {
-		value.bind(function(to) { $('#colophon').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[footer_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[footer_margin_T]', function(value) {
-		value.bind(function(to) { $('#colophon').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[footer_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[footer_margin_B]', function(value) {
-		value.bind(function(to) { $('#colophon').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[footer_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[footer_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('#colophon').css('width', 'auto');
 			else
@@ -2435,28 +2738,40 @@ var wvrxCustFontMsg = 0;
 
 	// Footer Widget Area
 
-	api('weaverx_settings[footer_sb_padding_T]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[footer_sb_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[footer_sb_padding_B]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[footer_sb_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[footer_sb_padding_L]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[footer_sb_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[footer_sb_padding_R]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[footer_sb_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[footer_sb_margin_T]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[footer_sb_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[footer_sb_margin_B]', function(value) {
-		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[footer_sb_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#footer-widget-area,.widget-area-footer').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[footer_sb_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('#footer-widget-area,.widget-area-footer').css('width', 'auto');
 			else
@@ -2467,28 +2782,40 @@ var wvrxCustFontMsg = 0;
 
 	// Footer HTML Area
 
-	api('weaverx_settings[footer_html_padding_T]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[footer_html_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[footer_html_padding_B]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[footer_html_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[footer_html_padding_L]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[footer_html_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[footer_html_padding_R]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[footer_html_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[footer_html_margin_T]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[footer_html_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[footer_html_margin_B]', function(value) {
-		value.bind(function(to) { $('#footer-html').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[footer_html_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#footer-html').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[footer_html_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_width_int]', function (value) {
+		value.bind(function (to) {
 			//$('#footer-html').css( 'max-width', to + '%' );
 			if (to === 0)
 				$('#footer-html').css('width', 'auto');
@@ -2501,28 +2828,40 @@ var wvrxCustFontMsg = 0;
 
 	// Info Bar
 
-	api('weaverx_settings[infobar_padding_T]', function(value) {
-		value.bind(function(to) { $('#infobar').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[infobar_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[infobar_padding_B]', function(value) {
-		value.bind(function(to) { $('#infobar').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[infobar_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[infobar_padding_L]', function(value) {
-		value.bind(function(to) { $('#infobar').css('padding-left', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[infobar_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('padding-left', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[infobar_padding_R]', function(value) {
-		value.bind(function(to) { $('#infobar').css('padding-right', to + 'px');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[infobar_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('padding-right', to + 'px');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[infobar_margin_T]', function(value) {
-		value.bind(function(to) { $('#infobar').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[infobar_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[infobar_margin_B]', function(value) {
-		value.bind(function(to) { $('#infobar').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[infobar_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#infobar').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[infobar_width_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[infobar_width_int]', function (value) {
+		value.bind(function (to) {
 			if (to === 0)
 				$('#infobar').css('width', 'auto');
 			else
@@ -2533,68 +2872,100 @@ var wvrxCustFontMsg = 0;
 
 	// content
 
-	api('weaverx_settings[content_padding_T]', function(value) {
-		value.bind(function(to) { $('#content').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[content_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[content_padding_B]', function(value) {
-		value.bind(function(to) { $('#content').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[content_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[content_padding_L]', function(value) {
-		value.bind(function(to) { $('#content').css('padding-left', to + '%');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[content_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('padding-left', to + '%');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[content_padding_R]', function(value) {
-		value.bind(function(to) { $('#content').css('padding-right', to + '%');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[content_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('padding-right', to + '%');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[content_margin_T]', function(value) {
-		value.bind(function(to) { $('#content').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[content_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[content_margin_B]', function(value) {
-		value.bind(function(to) { $('#content').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[content_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[space_after_title_dec]', function(value) {
-		value.bind(function(to) { $('.entry-summary,.entry-content').css('padding-top', to + 'em');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[space_after_title_dec]', function (value) {
+		value.bind(function (to) {
+			$('.entry-summary,.entry-content').css('padding-top', to + 'em');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[content_p_list_dec]', function(value) {
-		value.bind(function(to) { $('#content ul,#content ol').css('margin-bottom', to + 'em');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[content_p_list_dec]', function (value) {
+		value.bind(function (to) {
+			$('#content ul,#content ol').css('margin-bottom', to + 'em');
+			weaverx_refresh_js();
+		});
 	});
 
 	// mini menu
 
-	api('weaverx_settings[m_header_mini_top_margin_dec]', function(value) {
-		value.bind(function(to) { $('#nav-header-mini').css('margin-top', to + 'em');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[m_header_mini_top_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('#nav-header-mini').css('margin-top', to + 'em');
+			weaverx_refresh_js();
+		});
 	});
 
 	// posts
 
-	api('weaverx_settings[post_padding_T]', function(value) {
-		value.bind(function(to) { $('.post-area').css('padding-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[post_padding_T]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('padding-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[post_padding_B]', function(value) {
-		value.bind(function(to) { $('.post-area').css('padding-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[post_padding_B]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('padding-bottom', to + 'px'); /* -bottom */
+		});
 	});
-	api('weaverx_settings[post_padding_L]', function(value) {
-		value.bind(function(to) { $('.post-area').css('padding-left', to + '%');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[post_padding_L]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('padding-left', to + '%');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[post_padding_R]', function(value) {
-		value.bind(function(to) { $('.post-area').css('padding-right', to + '%');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[post_padding_R]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('padding-right', to + '%');
+			weaverx_refresh_js();
+		});
 	});
-	api('weaverx_settings[post_margin_T]', function(value) {
-		value.bind(function(to) { $('.post-area').css('margin-top', to + 'px'); /* -top */ });
+	api('weaverx_settings[post_margin_T]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('margin-top', to + 'px'); /* -top */
+		});
 	});
-	api('weaverx_settings[post_margin_B]', function(value) {
-		value.bind(function(to) { $('.post-area').css('margin-bottom', to + 'px'); /* -bottom */ });
+	api('weaverx_settings[post_margin_B]', function (value) {
+		value.bind(function (to) {
+			$('.post-area').css('margin-bottom', to + 'px'); /* -bottom */
+		});
 	});
 
-	api('weaverx_settings[post_title_bottom_margin_dec]', function(value) {
-		value.bind(function(to) { $('.post-title').css('margin-bottom', to + 'em');
-			weaverx_refresh_js(); });
+	api('weaverx_settings[post_title_bottom_margin_dec]', function (value) {
+		value.bind(function (to) {
+			$('.post-title').css('margin-bottom', to + 'em');
+			weaverx_refresh_js();
+		});
 	});
 
 	// ------------------- Align ----------------------------
@@ -2608,18 +2979,18 @@ var wvrxCustFontMsg = 0;
 		weaverx_refresh_js();
 	}
 
-	api('weaverx_settings[container_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[container_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '#container');
 		});
 	});
-	api('weaverx_settings[header_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '#header');
 		});
 	});
-	api('weaverx_settings[footer_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '#colophon');
 		});
 	});
@@ -2628,20 +2999,20 @@ var wvrxCustFontMsg = 0;
 			weaverxSetAlign(to, '#header-widget-area,.widget-area-header');
 			$('#header-widget-area,.widget-area-header').css('z-index',10);
 	} );} ); */
-	api('weaverx_settings[footer_sb_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_sb_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '#footer-widget-area,.widget-area-footer');
 		});
 	});
 
-	api('weaverx_settings[infobar_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[infobar_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '#infobar');
 		});
 	});
 
-	api('weaverx_settings[header_html_center_content]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_html_center_content]', function (value) {
+		value.bind(function (to) {
 			if (to)
 				$('#header-html').css('text-align', 'center');
 			else
@@ -2649,8 +3020,8 @@ var wvrxCustFontMsg = 0;
 		});
 	});
 
-	api('weaverx_settings[footer_html_center_content]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[footer_html_center_content]', function (value) {
+		value.bind(function (to) {
 			if (to)
 				$('#footer-html').css('text-align', 'center');
 			else
@@ -2658,25 +3029,25 @@ var wvrxCustFontMsg = 0;
 		});
 	});
 
-	api('weaverx_settings[top_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[top_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '.widget-area-top');
 		});
 	});
-	api('weaverx_settings[bottom_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[bottom_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '.widget-area-bottom');
 		});
 	});
 
-	api('weaverx_settings[header_image_align]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_image_align]', function (value) {
+		value.bind(function (to) {
 			weaverxSetAlign(to, '#branding #header-image img');
 		});
 	});
 
-	api('weaverx_settings[header_actual_size]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_actual_size]', function (value) {
+		value.bind(function (to) {
 			//#branding #header-image img,html.ie8 #branding #header-image img {width:auto;}
 			if (to)
 				$('#branding #header-image img').css('width', 'auto');
@@ -2688,44 +3059,54 @@ var wvrxCustFontMsg = 0;
 	// -------------------- Title / Tagline -----------------
 	//weaverx_f_write($sout, sprintf("#site-title{margin-right:%.5f%% !important;margin-top:%.5f%% !important;}\n",$tx,$ty))
 
-	api('weaverx_settings[site_title_position_xy_X]', function(value) {
-		value.bind(function(to) {
-			$('#site-title').each(function() { this.style.setProperty('margin-left', to + '%', 'important'); });
+	api('weaverx_settings[site_title_position_xy_X]', function (value) {
+		value.bind(function (to) {
+			$('#site-title').each(function () {
+				this.style.setProperty('margin-left', to + '%', 'important');
+			});
 		});
 	});
-	api('weaverx_settings[site_title_position_xy_Y]', function(value) {
-		value.bind(function(to) {
-			$('#site-title').each(function() { this.style.setProperty('margin-top', to + '%', 'important'); });
+	api('weaverx_settings[site_title_position_xy_Y]', function (value) {
+		value.bind(function (to) {
+			$('#site-title').each(function () {
+				this.style.setProperty('margin-top', to + '%', 'important');
+			});
 		});
 	});
-	api('weaverx_settings[site_title_max_w]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_title_max_w]', function (value) {
+		value.bind(function (to) {
 			$('#site-title').css('max-width', to + '%');
 		});
 	});
-	api('weaverx_settings[tagline_xy_X]', function(value) {
-		value.bind(function(to) {
-			$('#site-tagline').each(function() { this.style.setProperty('margin-left', to + '%', 'important'); });
+	api('weaverx_settings[tagline_xy_X]', function (value) {
+		value.bind(function (to) {
+			$('#site-tagline').each(function () {
+				this.style.setProperty('margin-left', to + '%', 'important');
+			});
 		});
 	});
-	api('weaverx_settings[tagline_xy_Y]', function(value) {
-		value.bind(function(to) {
-			$('#site-tagline').each(function() { this.style.setProperty('margin-top', to + '%', 'important'); });
+	api('weaverx_settings[tagline_xy_Y]', function (value) {
+		value.bind(function (to) {
+			$('#site-tagline').each(function () {
+				this.style.setProperty('margin-top', to + '%', 'important');
+			});
 		});
 	});
-	api('weaverx_settings[tagline_xy_X]', function(value) {
-		value.bind(function(to) {
-			$('#site-tagline').each(function() { this.style.setProperty('margin-left', to + '%', 'important'); });
+	api('weaverx_settings[tagline_xy_X]', function (value) {
+		value.bind(function (to) {
+			$('#site-tagline').each(function () {
+				this.style.setProperty('margin-left', to + '%', 'important');
+			});
 		});
 	});
-	api('weaverx_settings[title_tagline_xy_T]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[title_tagline_xy_T]', function (value) {
+		value.bind(function (to) {
 			$('#title-tagline').css('padding-top', to + 'px');
 		});
 	});
 
-	api('weaverx_settings[title_tagline_xy_B]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[title_tagline_xy_B]', function (value) {
+		value.bind(function (to) {
 			$('#title-tagline').css('padding-bottom', to + 'px');
 		});
 	});
@@ -2740,106 +3121,160 @@ var wvrxCustFontMsg = 0;
 			content.css('display', 'inline');
 		} else {
 			content.html(to);
-			content.each(function() { this.style.setProperty('display', 'inline-block', 'important'); });
+			content.each(function () {
+				this.style.setProperty('display', 'inline-block', 'important');
+			});
 		}
 	}
 
-	api('weaverx_settings[header_html_text]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#header-html", to); });
+	api('weaverx_settings[header_html_text]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#header-html", to);
+		});
 	});
-	api('weaverx_settings[footer_html_text]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#footer-html", to); });
-	});
-
-	api('weaverx_settings[container_top_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_container_top", to); });
-	});
-	api('weaverx_settings[prewrapper_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_prewrapper", to); });
-	});
-	api('weaverx_settings[postfooter_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_postfooter", to); });
-	});
-	api('weaverx_settings[preheader_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_preheader", to); });
-	});
-	api('weaverx_settings[header_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_header", to); });
-	});
-	api('weaverx_settings[postheader_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_postheader", to); });
-	});
-	api('weaverx_settings[postinfobar_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_postinfobar", to); });
-	});
-	api('weaverx_settings[precontent_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_precontent", to); });
-	});
-	api('weaverx_settings[pagecontentbottom_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_pagecontentbottom", to); });
-	});
-	api('weaverx_settings[postpostcontent_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".inject_postpostcontent", to); });
-	});
-	api('weaverx_settings[precomments_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_precomments", to); });
-	});
-	api('weaverx_settings[postcomments_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_postcomments", to); });
-	});
-	api('weaverx_settings[prefooter_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_prefooter", to); });
-	});
-	api('weaverx_settings[presidebar_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_presidebar", to); });
-	});
-	api('weaverx_settings[fixedtop_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_fixedtop", to); });
-	});
-	api('weaverx_settings[fixedbottom_insert]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent("#inject_fixedbottom", to); });
+	api('weaverx_settings[footer_html_text]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#footer-html", to);
+		});
 	});
 
-	api('weaverx_settings[m_primary_html_left]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".menu-primary .wvrx-menu-left", to); });
+	api('weaverx_settings[container_top_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_container_top", to);
+		});
 	});
-	api('weaverx_settings[m_primary_html_right]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".menu-primary .wvrx-menu-right", to); });
+	api('weaverx_settings[prewrapper_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_prewrapper", to);
+		});
+	});
+	api('weaverx_settings[postfooter_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_postfooter", to);
+		});
+	});
+	api('weaverx_settings[preheader_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_preheader", to);
+		});
+	});
+	api('weaverx_settings[header_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_header", to);
+		});
+	});
+	api('weaverx_settings[postheader_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_postheader", to);
+		});
+	});
+	api('weaverx_settings[postinfobar_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_postinfobar", to);
+		});
+	});
+	api('weaverx_settings[precontent_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_precontent", to);
+		});
+	});
+	api('weaverx_settings[pagecontentbottom_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_pagecontentbottom", to);
+		});
+	});
+	api('weaverx_settings[postpostcontent_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".inject_postpostcontent", to);
+		});
+	});
+	api('weaverx_settings[precomments_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_precomments", to);
+		});
+	});
+	api('weaverx_settings[postcomments_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_postcomments", to);
+		});
+	});
+	api('weaverx_settings[prefooter_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_prefooter", to);
+		});
+	});
+	api('weaverx_settings[presidebar_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_presidebar", to);
+		});
+	});
+	api('weaverx_settings[fixedtop_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_fixedtop", to);
+		});
+	});
+	api('weaverx_settings[fixedbottom_insert]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent("#inject_fixedbottom", to);
+		});
 	});
 
-	api('weaverx_settings[m_secondary_html_left]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".menu-secondary .wvrx-menu-left", to); });
+	api('weaverx_settings[m_primary_html_left]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".menu-primary .wvrx-menu-left", to);
+		});
 	});
-	api('weaverx_settings[m_secondary_html_right]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".menu-secondary .wvrx-menu-right", to); });
-	});
-
-	api('weaverx_settings[m_extra_html_left]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".menu-extra .wvrx-menu-left", to); });
-	});
-	api('weaverx_settings[m_extra_html_right]', function(value) {
-		value.bind(function(to) { weaverxSetHTMLContent(".menu-extra .wvrx-menu-right", to); });
+	api('weaverx_settings[m_primary_html_right]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".menu-primary .wvrx-menu-right", to);
+		});
 	});
 
-	api('weaverx_settings[excerpt_more_msg]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[m_secondary_html_left]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".menu-secondary .wvrx-menu-left", to);
+		});
+	});
+	api('weaverx_settings[m_secondary_html_right]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".menu-secondary .wvrx-menu-right", to);
+		});
+	});
+
+	api('weaverx_settings[m_extra_html_left]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".menu-extra .wvrx-menu-left", to);
+		});
+	});
+	api('weaverx_settings[m_extra_html_right]', function (value) {
+		value.bind(function (to) {
+			weaverxSetHTMLContent(".menu-extra .wvrx-menu-right", to);
+		});
+	});
+
+	api('weaverx_settings[excerpt_more_msg]', function (value) {
+		value.bind(function (to) {
 			var content = $(".more-msg");
 			if (!to) {
 				to = wvrxPRE.more_msg;
 			}
 			content.html(to);
-			content.each(function() { this.style.setProperty('display', 'inline-block', 'important'); });
+			content.each(function () {
+				this.style.setProperty('display', 'inline-block', 'important');
+			});
 		});
 	});
 
-	api('weaverx_settings[copyright]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[copyright]', function (value) {
+		value.bind(function (to) {
 			var content = $("#site-info");
 			if (!to) {
 				to = wvrxPRE.copyright;
 			}
 			content.html(to);
-			content.each(function() { this.style.setProperty('display', 'inline-block', 'important'); });
+			content.each(function () {
+				this.style.setProperty('display', 'inline-block', 'important');
+			});
 		});
 	});
 
@@ -2882,334 +3317,475 @@ var wvrxCustFontMsg = 0;
 	// There can't be multiple calls for the same option because of the pattern match!
 	// Note: any rule requiring multiple selectors (with a ,) will force a refresh IF the user's rule has %selector%
 
-	api('weaverx_settings[body_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('body', to, "body_bgcolor_css"); });
+	api('weaverx_settings[body_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('body', to, "body_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[wrapper_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#wrapper', to, "wrapper_bgcolor_css"); });
+	api('weaverx_settings[wrapper_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#wrapper', to, "wrapper_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[container_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#container', to, "container_bgcolor_css"); });
+	api('weaverx_settings[container_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#container', to, "container_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[link_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('a,.wrapper a', to, "link_color_css"); });
+	api('weaverx_settings[link_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('a,.wrapper a', to, "link_color_css");
+		});
 	});
-	api('weaverx_settings[link_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('a:hover,.wrapper a:hover', to, "link_hover_color_css"); });
+	api('weaverx_settings[link_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('a:hover,.wrapper a:hover', to, "link_hover_color_css");
+		});
 	});
-	api('weaverx_settings[m_header_mini_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#nav-header-mini ', to, "m_header_mini_bgcolor_css"); });
+	api('weaverx_settings[m_header_mini_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#nav-header-mini ', to, "m_header_mini_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[m_header_mini_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#nav-header-mini a:hover', to, "m_header_mini_hover_color_css"); });
+	api('weaverx_settings[m_header_mini_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#nav-header-mini a:hover', to, "m_header_mini_hover_color_css");
+		});
 	});
-	api('weaverx_settings[infobar_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#infobar', to, "infobar_bgcolor_css"); });
+	api('weaverx_settings[infobar_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#infobar', to, "infobar_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[ibarlink_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#infobar a', to, "ibarlink_color_css"); });
+	api('weaverx_settings[ibarlink_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#infobar a', to, "ibarlink_color_css");
+		});
 	});
-	api('weaverx_settings[ibarlink_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#infobar a:hover', to, "ibarlink_hover_color_css"); });
+	api('weaverx_settings[ibarlink_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#infobar a:hover', to, "ibarlink_hover_color_css");
+		});
 	});
-	api('weaverx_settings[contentlink_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.content a', to, "contentlink_color_css"); });
+	api('weaverx_settings[contentlink_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.content a', to, "contentlink_color_css");
+		});
 	});
-	api('weaverx_settings[contentlink_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.content a:hover', to, "contentlink_hover_color_css"); });
+	api('weaverx_settings[contentlink_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.content a:hover', to, "contentlink_hover_color_css");
+		});
 	});
-	api('weaverx_settings[post_title_hover_color]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .post-title a:hover', to, "post_title_hover_color"); });
+	api('weaverx_settings[post_title_hover_color]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .post-title a:hover', to, "post_title_hover_color");
+		});
 	});
-	api('weaverx_settings[ilink_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .entry-meta a,.wrapper .entry-utility a', to, "ilink_color_css"); });
+	api('weaverx_settings[ilink_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .entry-meta a,.wrapper .entry-utility a', to, "ilink_color_css");
+		});
 	});
-	api('weaverx_settings[ilink_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .entry-meta a:hover,.wrapper .entry-utility a:hover', to, "ilink_hover_color_css"); });
+	api('weaverx_settings[ilink_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .entry-meta a:hover,.wrapper .entry-utility a:hover', to, "ilink_hover_color_css");
+		});
 	});
-	api('weaverx_settings[wlink_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .widget a', to, "wlink_color_css"); });
+	api('weaverx_settings[wlink_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .widget a', to, "wlink_color_css");
+		});
 	});
-	api('weaverx_settings[wlink_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .widget a:hover', to, "wlink_hover_color_css"); });
+	api('weaverx_settings[wlink_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .widget a:hover', to, "wlink_hover_color_css");
+		});
 	});
-	api('weaverx_settings[footerlink_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.colophon a', to, "footerlink_color_css"); });
+	api('weaverx_settings[footerlink_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.colophon a', to, "footerlink_color_css");
+		});
 	});
-	api('weaverx_settings[footerlink_hover_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.colophon a:hover', to, "footerlink_hover_color_css"); });
+	api('weaverx_settings[footerlink_hover_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.colophon a:hover', to, "footerlink_hover_color_css");
+		});
 	});
-	api('weaverx_settings[header_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#header', to, "header_bgcolor_css"); });
+	api('weaverx_settings[header_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#header', to, "header_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[site_title_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper #site-title a,.site-title a', to, "site_title_bgcolor_css"); });
+	api('weaverx_settings[site_title_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper #site-title a,.site-title a', to, "site_title_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[tagline_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#site-tagline,.site-tagline', to, "tagline_bgcolor_css"); });
+	api('weaverx_settings[tagline_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#site-tagline,.site-tagline', to, "tagline_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[title_tagline_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#title-tagline', to, "title_tagline_bgcolor_css"); });
+	api('weaverx_settings[title_tagline_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#title-tagline', to, "title_tagline_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[header_sb_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#header-widget-area', to, "header_sb_bgcolor_css"); });
+	api('weaverx_settings[header_sb_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#header-widget-area', to, "header_sb_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[header_html_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#header-html', to, "header_html_bgcolor_css"); });
-	});
-
-	api('weaverx_settings[m_primary_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-primary .wvrx-menu-container', to, "m_primary_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_primary_link_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-primary .wvrx-menu > li > a', to, "m_primary_link_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_primary_hover_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-primary .wvrx-menu > li > a:hover', to, "m_primary_hover_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_primary_sub_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li', to, "m_primary_sub_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_primary_sub_hover_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-primary .wvrx-menu ul li a:hover', to, "m_primary_sub_hover_bgcolor_css"); });
-	});
-
-	api('weaverx_settings[m_secondary_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-secondary .wvrx-menu-container', to, "m_secondary_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_secondary_link_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-secondary .wvrx-menu > li > a', to, "m_secondary_link_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_secondary_hover_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-secondary .wvrx-menu > li > a:hover', to, "m_secondary_hover_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_secondary_sub_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li', to, "m_secondary_sub_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_secondary_sub_hover_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-secondary .wvrx-menu ul li a:hover', to, "m_secondary_sub_hover_bgcolor_css"); });
-	});
-
-	api('weaverx_settings[m_extra_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-extra .wvrx-menu-container', to, "m_extra_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_extra_link_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-extra .wvrx-menu > li > a', to, "m_extra_link_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_extra_hover_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-extra .wvrx-menu > li > a:hover', to, "m_extra_hover_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_extra_sub_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-extra .wvrx-menu ul li a,.menu-extra .wvrx-menu ul.mega-menu li', to, "m_extra_sub_bgcolor_css"); });
-	});
-	api('weaverx_settings[m_extra_sub_hover_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.menu-extra .wvrx-menu ul li a:hover', to, "m_extra_sub_hover_bgcolor_css"); });
-	});
-
-	api('weaverx_settings[menubar_curpage_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.weaverx-theme-menu .current_page_item > a,.weaverx-theme-menu .current-menu-item > a,.weaverx-theme-menu .current-cat > a', to, "menubar_curpage_bgcolor_css"); });
+	api('weaverx_settings[header_html_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#header-html', to, "header_html_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[content_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#content', to, "content_bgcolor_css"); });
+	api('weaverx_settings[m_primary_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-primary .wvrx-menu-container', to, "m_primary_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[page_title_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.page-title', to, "page_title_bgcolor_css"); });
+	api('weaverx_settings[m_primary_link_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-primary .wvrx-menu > li > a', to, "m_primary_link_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[archive_title_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.archive-title', to, "archive_title_bgcolor_css"); });
+	api('weaverx_settings[m_primary_hover_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-primary .wvrx-menu > li > a:hover', to, "m_primary_hover_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[content_h_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6', to, "content_h_bgcolor_css"); });
+	api('weaverx_settings[m_primary_sub_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li', to, "m_primary_sub_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[search_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.search-field,#header-search .search-field:focus', to, "search_bgcolor_css"); });
-	});
-
-	api('weaverx_settings[hr_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('hr', to, "hr_color_css"); });
-	});
-
-	api('weaverx_settings[comment_headings_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#comments-title h3,#comments-title h4,#respond h3', to, "comment_headings_color_css"); });
-	});
-	api('weaverx_settings[comment_content_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.commentlist li.comment,#respond', to, "comment_content_bgcolor_css"); });
-	});
-	api('weaverx_settings[comment_submit_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#respond input#submit', to, "comment_submit_bgcolor_css"); });
+	api('weaverx_settings[m_primary_sub_hover_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-primary .wvrx-menu ul li a:hover', to, "m_primary_sub_hover_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[post_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.post-area', to, "post_bgcolor_css"); });
+	api('weaverx_settings[m_secondary_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-secondary .wvrx-menu-container', to, "m_secondary_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[stickypost_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.blog .sticky', to, "stickypost_bgcolor_css"); });
+	api('weaverx_settings[m_secondary_link_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-secondary .wvrx-menu > li > a', to, "m_secondary_link_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[post_title_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .post-title', to, "post_title_bgcolor_css"); });
+	api('weaverx_settings[m_secondary_hover_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-secondary .wvrx-menu > li > a:hover', to, "m_secondary_hover_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[post_title_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wrapper .post-title a,.wrapper .post-title a:visited', to, "post_title_color_css"); });
+	api('weaverx_settings[m_secondary_sub_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li', to, "m_secondary_sub_bgcolor_css");
+		});
 	});
-	api('weaverx_settings[post_info_top_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.entry-meta', to, "post_info_top_bgcolor_css"); });
-	});
-	api('weaverx_settings[post_info_bottom_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.entry-utility', to, "post_info_bottom_bgcolor_css"); });
-	});
-	api('weaverx_settings[post_author_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#author-info', to, "post_author_bgcolor_css"); });
-	});
-
-	api('weaverx_settings[widget_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.widget', to, "widget_bgcolor_css"); });
-	});
-	api('weaverx_settings[widget_title_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.widget-title', to, "widget_title_bgcolor_css"); });
-	});
-	api('weaverx_settings[primary_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#primary-widget-area,.widget-area-primary', to, "primary_bgcolor_css"); });
-	});
-	api('weaverx_settings[secondary_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#secondary-widget-area,.widget-area-secondary', to, "secondary_bgcolor_css"); });
-	});
-	api('weaverx_settings[top_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.widget-area-top', to, "top_bgcolor_css"); });
-	});
-	api('weaverx_settings[bottom_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.widget-area-bottom', to, "bottom_bgcolor_css"); });
+	api('weaverx_settings[m_secondary_sub_hover_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-secondary .wvrx-menu ul li a:hover', to, "m_secondary_sub_hover_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[footer_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#colophon', to, "footer_bgcolor_css"); });
+	api('weaverx_settings[m_extra_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-extra .wvrx-menu-container', to, "m_extra_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[m_extra_link_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-extra .wvrx-menu > li > a', to, "m_extra_link_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[m_extra_hover_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-extra .wvrx-menu > li > a:hover', to, "m_extra_hover_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[m_extra_sub_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-extra .wvrx-menu ul li a,.menu-extra .wvrx-menu ul.mega-menu li', to, "m_extra_sub_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[m_extra_sub_hover_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.menu-extra .wvrx-menu ul li a:hover', to, "m_extra_sub_hover_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[footer_sb_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#footer-widget-area,.widget-area-footer', to, "footer_sb_bgcolor_css"); });
+	api('weaverx_settings[menubar_curpage_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.weaverx-theme-menu .current_page_item > a,.weaverx-theme-menu .current-menu-item > a,.weaverx-theme-menu .current-cat > a', to, "menubar_curpage_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[footer_html_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#footer-html', to, "footer_html_bgcolor_css"); });
+	api('weaverx_settings[content_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#content', to, "content_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[page_title_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.page-title', to, "page_title_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[archive_title_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.archive-title', to, "archive_title_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[content_h_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6', to, "content_h_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[search_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.search-field,#header-search .search-field:focus', to, "search_bgcolor_css");
+		});
+	});
+
+	api('weaverx_settings[hr_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('hr', to, "hr_color_css");
+		});
+	});
+
+	api('weaverx_settings[comment_headings_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#comments-title h3,#comments-title h4,#respond h3', to, "comment_headings_color_css");
+		});
+	});
+	api('weaverx_settings[comment_content_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.commentlist li.comment,#respond', to, "comment_content_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[comment_submit_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#respond input#submit', to, "comment_submit_bgcolor_css");
+		});
+	});
+
+	api('weaverx_settings[post_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.post-area', to, "post_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[stickypost_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.blog .sticky', to, "stickypost_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[post_title_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .post-title', to, "post_title_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[post_title_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wrapper .post-title a,.wrapper .post-title a:visited', to, "post_title_color_css");
+		});
+	});
+	api('weaverx_settings[post_info_top_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.entry-meta', to, "post_info_top_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[post_info_bottom_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.entry-utility', to, "post_info_bottom_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[post_author_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#author-info', to, "post_author_bgcolor_css");
+		});
+	});
+
+	api('weaverx_settings[widget_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.widget', to, "widget_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[widget_title_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.widget-title', to, "widget_title_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[primary_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#primary-widget-area,.widget-area-primary', to, "primary_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[secondary_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#secondary-widget-area,.widget-area-secondary', to, "secondary_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[top_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.widget-area-top', to, "top_bgcolor_css");
+		});
+	});
+	api('weaverx_settings[bottom_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.widget-area-bottom', to, "bottom_bgcolor_css");
+		});
+	});
+
+	api('weaverx_settings[footer_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#colophon', to, "footer_bgcolor_css");
+		});
+	});
+
+	api('weaverx_settings[footer_sb_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#footer-widget-area,.widget-area-footer', to, "footer_sb_bgcolor_css");
+		});
+	});
+
+	api('weaverx_settings[footer_html_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#footer-html', to, "footer_html_bgcolor_css");
+		});
 	});
 
 	// Injection areas
 
-	api('weaverx_settings[inject_prewrapper_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_prewrapper', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_prewrapper_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_prewrapper', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_postfooter_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_postfooter', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_postfooter_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_postfooter', to, "content_bgcolor_css");
+		});
 	});
 
 	// Imgage injection
 
-	api('weaverx_settings[caption_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.wp-caption p.wp-caption-text,#content .gallery .gallery-caption,.entry-attachment .entry-caption', to, "caption_color_css"); });
+	api('weaverx_settings[caption_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.wp-caption p.wp-caption-text,#content .gallery .gallery-caption,.entry-attachment .entry-caption', to, "caption_color_css");
+		});
 	});
 
-	api('weaverx_settings[media_lib_border_color_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.container img, .colophon img', to, "media_lib_border_color_css"); });
+	api('weaverx_settings[media_lib_border_color_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.container img, .colophon img', to, "media_lib_border_color_css");
+		});
 	});
 	// X Plus Injection
 
-	api('weaverx_settings[inject_preheader_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_preheader', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_preheader_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_preheader', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_header_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_header', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_header_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_header', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_postheader_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_postheader', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_postheader_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_postheader', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_container_top_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_container_top', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_container_top_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_container_top', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_postinfobar_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_postinfobar', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_postinfobar_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_postinfobar', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_precontent_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_precontent', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_precontent_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_precontent', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_pagecontentbottom_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_pagecontentbottom', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_pagecontentbottom_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_pagecontentbottom', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_postpostcontent_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('.inject_postpostcontent', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_postpostcontent_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('.inject_postpostcontent', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_precomments_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_precomments', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_precomments_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_precomments', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_postcomments_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_postcomments', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_postcomments_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_postcomments', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_prefooter_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_prefooter', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_prefooter_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_prefooter', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_presidebar_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_presidebar', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_presidebar_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_presidebar', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_fixedtop_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_fixedtop', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_fixedtop_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_fixedtop', to, "content_bgcolor_css");
+		});
 	});
 
-	api('weaverx_settings[inject_fixedbottom_bgcolor_css]', function(value) {
-		value.bind(function(to) { weaverxStyle('#inject_fixedbottom', to, "content_bgcolor_css"); });
+	api('weaverx_settings[inject_fixedbottom_bgcolor_css]', function (value) {
+		value.bind(function (to) {
+			weaverxStyle('#inject_fixedbottom', to, "content_bgcolor_css");
+		});
 	});
 
 	// The main Custom CSS
 
-	api('weaverx_settings[add_css]', function(value) { // main custom CSS box
-		value.bind(function(to) {
+	api('weaverx_settings[add_css]', function (value) { // main custom CSS box
+		value.bind(function (to) {
 			$('#wvrx-global-css').html(to); // replace entire content with new to
 		});
 	});
 
-	// extend BG color (Plus)
-
-	/*
-	 *	can't do this....
-	 *	function weaverxSetExtendBG( tag, to ) {
-			var area = $(tag);
-			var bf = $(tag + ':before');	// oops - this is not valid jQuery....
-
-			area.css('position','relative');
-			area.css('overflow','visible');
-
-			bf.css('content','');
-			bf.css('position','absolute');
-			bf.css('top','0');
-			bf.css('bottom','0');
-			bf.css('left','-9998px');
-			bf.css('right','0');
-			bf.css('border-left','9999px solid ' + to );
-			bf.css('box-shadow','9999px 0 0 ' + to );
-			bf.css('z-index','-1');
-
-
-		};
-
-		api('weaverx_settings[container_extend_bgcolor]', function( value ) {
-			value.bind( function( to ) {  weaverxSetExtendBG("#container", to);	} );} );
-			*/
 
 	// BG IMAGES
 
-	api('weaverx_settings[_bg_fullsite_url]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[_bg_fullsite_url]', function (value) {
+		value.bind(function (to) {
 			var site = $('html');
 			site.css('background', 'url(' + to + ') no-repeat center center fixed');
 			site.css('-webkit-background-size', 'cover');
@@ -3220,78 +3796,122 @@ var wvrxCustFontMsg = 0;
 		});
 	});
 
-	api('weaverx_settings[_bg_body_url]', function(value) {
-		value.bind(function(to) { $('body').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_body_url]', function (value) {
+		value.bind(function (to) {
+			$('body').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_wrapper_url]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_wrapper_url]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_header_url]', function(value) {
-		value.bind(function(to) { $('#header').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_header_url]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_container_url]', function(value) {
-		value.bind(function(to) { $('#container').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_container_url]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_content_url]', function(value) {
-		value.bind(function(to) { $('#content').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_content_url]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_page_url]', function(value) {
-		value.bind(function(to) { $('#content .page').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_page_url]', function (value) {
+		value.bind(function (to) {
+			$('#content .page').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_post_url]', function(value) {
-		value.bind(function(to) { $('#content .type-post').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_post_url]', function (value) {
+		value.bind(function (to) {
+			$('#content .type-post').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_widgets_primary_url]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_widgets_primary_url]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_widgets_secondary_url]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_widgets_secondary_url]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area').css('background-image', 'url(' + to + ')');
+		});
 	});
-	api('weaverx_settings[_bg_footer_url]', function(value) {
-		value.bind(function(to) { $('#colophon').css('background-image', 'url(' + to + ')'); });
+	api('weaverx_settings[_bg_footer_url]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('background-image', 'url(' + to + ')');
+		});
 	});
 
-	api('weaverx_settings[_bg_body_rpt]', function(value) {
-		value.bind(function(to) { $('body').css('background-repeat', to); });
+	api('weaverx_settings[_bg_body_rpt]', function (value) {
+		value.bind(function (to) {
+			$('body').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_wrapper_rpt]', function(value) {
-		value.bind(function(to) { $('#wrapper').css('background-repeat', to); });
+	api('weaverx_settings[_bg_wrapper_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#wrapper').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_header_rpt]', function(value) {
-		value.bind(function(to) { $('#header').css('background-repeat', to); });
+	api('weaverx_settings[_bg_header_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#header').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_container_rpt]', function(value) {
-		value.bind(function(to) { $('#container').css('background-repeat', to); });
+	api('weaverx_settings[_bg_container_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#container').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_content_rpt]', function(value) {
-		value.bind(function(to) { $('#content').css('background-repeat', to); });
+	api('weaverx_settings[_bg_content_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#content').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_page_rpt]', function(value) {
-		value.bind(function(to) { $('#content .page').css('background-repeat', to); });
+	api('weaverx_settings[_bg_page_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#content .page').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_post_rpt]', function(value) {
-		value.bind(function(to) { $('#content .type-post').css('background-repeat', to); });
+	api('weaverx_settings[_bg_post_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#content .type-post').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_widgets_primary_rpt]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area').css('background-repeat', to); });
+	api('weaverx_settings[_bg_widgets_primary_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#primary-widget-area').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_widgets_secondary_rpt]', function(value) {
-		value.bind(function(to) { $('#secondary-widget-area').css('background-repeat', to); });
+	api('weaverx_settings[_bg_widgets_secondary_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#secondary-widget-area').css('background-repeat', to);
+		});
 	});
-	api('weaverx_settings[_bg_footer_rpt]', function(value) {
-		value.bind(function(to) { $('#colophon').css('background-repeat', to); });
+	api('weaverx_settings[_bg_footer_rpt]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css('background-repeat', to);
+		});
 	});
 
 	// Images
 
-	api('weaverx_settings[media_lib_border_color]', function(value) {
-		value.bind(function(to) { $('.container img,.colophon img').css('background-color', weaverxFixTo(to)); });
+	api('weaverx_settings[media_lib_border_color]', function (value) {
+		value.bind(function (to) {
+			$('.container img,.colophon img').css('background-color', weaverxFixTo(to));
+		});
 	});
-	api('weaverx_settings[media_lib_border_int]', function(value) { // and border width
-		value.bind(function(to) { $('.container img,.colophon img').css('padding', to + 'px'); });
+	api('weaverx_settings[media_lib_border_int]', function (value) { // and border width
+		value.bind(function (to) {
+			$('.container img,.colophon img').css('padding', to + 'px');
+		});
 	});
-	api('weaverx_settings[show_img_shadows]', function(value) { // and border width
-		value.bind(function(to) {
+	api('weaverx_settings[show_img_shadows]', function (value) { // and border width
+		value.bind(function (to) {
 			var image = $('.container img,.colophon img');
 			if (to) {
 				image.css('-webkit-box-shadow', '0 0 4px 2px rgba(0,0,0,0.25)');
@@ -3304,58 +3924,74 @@ var wvrxCustFontMsg = 0;
 			}
 		});
 	});
-	api('weaverx_settings[caption_color]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[caption_color]', function (value) {
+		value.bind(function (to) {
 			$('.wp-caption p.wp-caption-text,#content .gallery .gallery-caption,.entry-attachment .entry-caption').css('color', weaverxFixTo(to));
 		});
 	});
 
-	api('weaverx_settings[post_avatar_int]', function(value) { // and border width
-		value.bind(function(to) {
-			$('.post-avatar img').each(function() { this.style.setProperty('max-width', to + 'px', 'important'); });
-			$('.post-avatar img').each(function() { this.style.setProperty('width', to + 'px', 'important'); });
+	api('weaverx_settings[post_avatar_int]', function (value) { // and border width
+		value.bind(function (to) {
+			$('.post-avatar img').each(function () {
+				this.style.setProperty('max-width', to + 'px', 'important');
+			});
+			$('.post-avatar img').each(function () {
+				this.style.setProperty('width', to + 'px', 'important');
+			});
 		});
 	});
 
 	// underline titles
-	api('weaverx_settings[widget_title_underline_int]', function(value) {
-		value.bind(function(to) { $('.widget-title').css("border-bottom", to + 'px solid'); });
+	api('weaverx_settings[widget_title_underline_int]', function (value) {
+		value.bind(function (to) {
+			$('.widget-title').css("border-bottom", to + 'px solid');
+		});
 	});
-	api('weaverx_settings[page_title_underline_int]', function(value) {
-		value.bind(function(to) { $('.page-title').css("border-bottom", to + 'px solid'); });
+	api('weaverx_settings[page_title_underline_int]', function (value) {
+		value.bind(function (to) {
+			$('.page-title').css("border-bottom", to + 'px solid');
+		});
 	});
-	api('weaverx_settings[post_title_underline_int]', function(value) {
-		value.bind(function(to) { $('.wrapper .post-title').css("border-bottom", to + 'px solid'); });
+	api('weaverx_settings[post_title_underline_int]', function (value) {
+		value.bind(function (to) {
+			$('.wrapper .post-title').css("border-bottom", to + 'px solid');
+		});
 	});
 
 	// area max widths
-	api('weaverx_settings[header_max_width_int]', function(value) {
-		value.bind(function(to) { $('#header').css("max-width", to + 'px'); });
+	api('weaverx_settings[header_max_width_int]', function (value) {
+		value.bind(function (to) {
+			$('#header').css("max-width", to + 'px');
+		});
 	});
-	api('weaverx_settings[container_max_width_int]', function(value) {
-		value.bind(function(to) { $('#container').css("max-width", to + 'px'); });
+	api('weaverx_settings[container_max_width_int]', function (value) {
+		value.bind(function (to) {
+			$('#container').css("max-width", to + 'px');
+		});
 	});
-	api('weaverx_settings[footer_max_width_int]', function(value) {
-		value.bind(function(to) { $('#colophon').css("max-width", to + 'px'); });
+	api('weaverx_settings[footer_max_width_int]', function (value) {
+		value.bind(function (to) {
+			$('#colophon').css("max-width", to + 'px');
+		});
 	});
 
-	api('weaverx_settings[header_image_max_width_dec]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[header_image_max_width_dec]', function (value) {
+		value.bind(function (to) {
 			$('#branding #header-image img').css('max-width', to + '%');
 		});
 	});
 
 	// base font settings
-	api('weaverx_settings[site_fontsize_int]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_fontsize_int]', function (value) {
+		value.bind(function (to) {
 			var sizeEm = to * 0.0625; // convert px to em
 			var sizeStr = sizeEm.toFixed(5);
 			$('body').css('font-size', sizeStr + 'em');
 		});
 	});
 
-	api('weaverx_settings[site_line_height_dec]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[site_line_height_dec]', function (value) {
+		value.bind(function (to) {
 			var sizeWidget = to * 0.85; // convert px to em
 			//var sizeWStr = sizeWidget.toFixed(5);
 			//var sizeBody = to.toFixed(5);
@@ -3364,27 +4000,27 @@ var wvrxCustFontMsg = 0;
 		});
 	});
 
-	api('weaverx_settings[font_letter_spacing_global_dec]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[font_letter_spacing_global_dec]', function (value) {
+		value.bind(function (to) {
 			$('body').css('letter-spacing', to + 'em');
 		});
 	});
-	api('weaverx_settings[font_word_spacing_global_dec]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[font_word_spacing_global_dec]', function (value) {
+		value.bind(function (to) {
 			$('body').css('word-spacing', to + 'em');
 		});
 	});
 
 	// list bullets
-	api('weaverx_settings[widgetlist_bullet]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[widgetlist_bullet]', function (value) {
+		value.bind(function (to) {
 			var bullet = to;
 			if (to === '') bullet = 'disc';
 			$('.widget ul').css('list-style-type', bullet);
 		});
 	});
-	api('weaverx_settings[contentlist_bullet]', function(value) {
-		value.bind(function(to) {
+	api('weaverx_settings[contentlist_bullet]', function (value) {
+		value.bind(function (to) {
 			var bullet = to;
 			if (to === '') bullet = 'disc';
 			$('#content ul').css('list-style-type', bullet);

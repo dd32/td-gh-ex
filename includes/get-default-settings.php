@@ -13,7 +13,7 @@ if ( ! function_exists( 'weaverx_get_default_settings' ) ) {
 		global $weaverx_opts_cache;
 		$weaverx_opts_cache = array();
 
-		$filename = apply_filters( 'weaverx_default_subtheme', get_template_directory() . WEAVERX_DEFAULT_THEME_FILE );
+		$filename = apply_filters( 'weaverx_default_subtheme', get_theme_file_path(WEAVERX_DEFAULT_THEME_FILE ) );
 
 		if ( ! weaverx_f_exists( $filename ) ) {
 			return false;

@@ -26,7 +26,7 @@ if ( ! function_exists( 'weaverx_customizer_define_starting_sections' ) ) :
 					'control' => array(
 						'control_type' => 'WeaverX_Misc_Control',
 						'label'        => esc_html__( 'Introduction', 'weaver-xtreme' ),
-						'description'  => weaverx_filter_text(
+						'description'  => weaverx_filter_text( __(
 							'<p><em>Weaver Xtreme</em> allows you to customize virtually every aspect of your site.
 The Customizer Options are organized as top level panels based on WHAT you want to customize, and a second level of sections
 based on WHERE you want to make the customizations. Remember: <strong style="color:red;">WHAT</strong> and <strong style="color:red;">WHERE</strong>.</p>
@@ -68,7 +68,7 @@ based on WHERE you want to make the customizations. Remember: <strong style="col
   <li><strong>&#9656; Global Options</strong> - some of the Option Categories can include other sections that can apply to global settings. Typography, for example, allows you to specify various global options such as base font size.</li>
 </ul>',
 
-							'weaver-xtreme' ),
+							'weaver-xtreme' ) ),
 						'type'         => 'html',
 					),
 				),
@@ -111,13 +111,13 @@ Once you\'ve picked a subtheme, you can tweak it to look just like you want.', '
 					'control' => array(
 						'control_type' => 'WeaverX_Misc_Control',
 						'label'        => esc_html__( 'Get Help', 'weaver-xtreme' ),
-						'description'  => sprintf( weaverx_filter_text(
+						'description'  => sprintf( weaverx_filter_text( __(
 							'<h3>Support Forum</h3><p>Please see our active <strong>%1$s</strong> for online help.</p>
 <h3>Theme Documentation and Guide</h3><p>See the <strong>%2$s</strong> for using the Weaver Xtreme Theme.</p>
 <h3>Theme Demo</h3><p><strong>%3$s</strong><br />Live demo of Weaver Xtreme and Weaver Xtreme Plus features.</p>
 <h3>CSS Tutorial</h3><p>Click for a short <strong>%4$s</strong>.</p>
 <h3>Supported Fonts</h3><p>Click for <strong>%5$s</strong>.</p>
-', 'weaver-xtreme' ),
+', 'weaver-xtreme' )),
 							weaverx_site( '', '//forum.weavertheme.com/', esc_html__( 'Weaver Xtreme Support Forum', 'weaver-xtreme' ), false ),
 							weaverx_site( '', '//guide.weavertheme.com/', esc_html__( 'Weaver Xtreme Guide', 'weaver-xtreme' ), false ),
 							weaverx_site( '', '//demo.weavertheme.com/', esc_html__( 'Weaver Xtreme Demo Site', 'weaver-xtreme' ), false ),

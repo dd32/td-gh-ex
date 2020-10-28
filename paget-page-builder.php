@@ -15,11 +15,6 @@ $sb_layout = weaverx_page_lead( 'page-builder' );
 
 weaverx_sb_precontent( 'page-builder' );
 
-// generate page content - Elementor version added V 3.2
-// function weaverx_is_built_with_elementor( $post_id ) {
-//	return ! ! get_post_meta( $post_id, '_elementor_edit_mode', true );
-// }
-
 // Page Builders detection
 // $is_elementor = ! ! get_post_meta( $post_id, '_elementor_edit_mode', true );
 // $is_siteorigin = ! ! get_post_meta( $post_id, 'panels_data', true );

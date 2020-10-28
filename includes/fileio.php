@@ -23,7 +23,6 @@ function weaverx_f_file_access_fail( $who = '' ) {
 			<?php echo '<p>' . esc_html__( 'Diagnostics:', 'weaver-xtreme') . "{$who}</p>\n"; ?>
 	</div>
 	<?php
-	return;
 }
 
 function weaverx_f_file_access_available() {
@@ -181,7 +180,6 @@ function weaverx_f_uploads_base_url() {
 }
 
 function weaverx_f_wp_filesystem_error() {
-	return;
 }
 
 function weaverx_f_fail( $msg ) {

@@ -91,7 +91,7 @@
 }
 .ui-resizable-handle {
 	position: absolute;
-	font-size: 0.1px;
+	font-size: 1px;
 	display: block;
 }
 .ui-resizable-disabled .ui-resizable-handle,

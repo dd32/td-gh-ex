@@ -18,7 +18,7 @@ $s_class = 'l-full m-half-lm ' . weaverx_area_class( 'secondary', 'pad', '', 'ma
 
 if ( weaverx_has_widgetarea( 'primary-widget-area' ) ) {
 
-	echo $wrap;       // keep the two areas vertical no matter what the content height
+	weaverx_echo_sanitized_html( $wrap );       // keep the two areas vertical no matter what the content height
 
 	if ( weaverx_has_widgetarea( 'secondary-widget-area' ) ) {  // both top and bottom
 		weaverx_put_widgetarea( 'primary-widget-area', $p_class );
@@ -33,10 +33,10 @@ if ( weaverx_has_widgetarea( 'primary-widget-area' ) ) {
 
 	if ( weaverx_has_widgetarea( 'secondary-widget-area' ) ) {  // bottom only
 		$s_class = str_replace( 'm-half-lm', 'm-full', $s_class );
-		echo $wrap;
+		weaverx_echo_sanitized_html( $wrap );
 		weaverx_put_widgetarea( 'secondary-widget-area', $s_class );
 	} else {
-		echo $wrap;
+		weaverx_echo_sanitized_html( $wrap );
 		weaverx_no_sidebars( $p_class );
 	}
 	echo '</div>';

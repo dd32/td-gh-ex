@@ -33,7 +33,7 @@ if ( ! function_exists( 'weaverx_generate_wphead' ) ) {    /* Allow child to ove
 			}
 
 			if ( $css == '' || $css[0] != '/' ) {               // there isn't an entry in the DB, so do it on the fly
-				require_once( get_template_directory() . '/includes/generatecss.php' );    // include only now at runtime.
+				require_once( get_theme_file_path( '/includes/generatecss.php' ) );    // include only now at runtime.
 				$output = weaverx_f_open( 'echo', 'w+' );
 				weaverx_output_style( $output );
 			} else {
@@ -61,7 +61,7 @@ if ( ! function_exists( 'weaverx_generate_wphead' ) ) {    /* Allow child to ove
 		}
 
 		if ( $ppsb = weaverx_get_per_page_value( '_pp_sidebar_width' ) > 0 ) {
-			require_once( get_template_directory() . '/includes/generatecss.php' );    // include only now at runtime.
+			require_once( get_theme_file_path( '/includes/generatecss.php' ) );    // include only now at runtime.
 			$ppsb = weaverx_get_per_page_value( '_pp_sidebar_width' );
 			echo "<style type=\"text/css\"> /* Per Page Sidebar Width */\n";
 			weaverx_sidebar_style( 'echo', $ppsb );

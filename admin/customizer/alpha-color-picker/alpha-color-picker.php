@@ -48,7 +48,7 @@ class Customize_Alpha_Color_Control extends WP_Customize_Control {
 
 
 	public function enqueue() {
-		$path = trailingslashit( get_template_directory_uri() ) . 'admin/customizer/';	// @@@@ Weaver Xtreme Fix 3.1.1
+		$path = get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/' );
 		wp_enqueue_script(
 			'alpha-color-picker',
 			$path . 'alpha-color-picker/alpha-color-picker.min.js',

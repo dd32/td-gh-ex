@@ -1,8 +1,8 @@
 <?php
 /* This loads the Admin stuff. It is invoked from functions.php.
  *
- * This ultimately will be used to load different admin interfaces -
- * like the a default Customizer version for WP.org, or the traditional Theme Options version ( which it does now )
+ * This is used to load different admin interfaces -
+ * like the a default Customizer version for WP.org, or the traditional Theme Options version
  */
 
 if ( current_user_can( 'edit_posts' ) ) {
@@ -35,7 +35,7 @@ if ( current_user_can( 'edit_posts' ) ) {
 			return;
 		}
 
-		require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/admin-top.php' ); // NOW - load the admin stuff
+		require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/admin-core/admin-top.php' ) ); // NOW - load the admin stuff
 		do_action( 'weaverxplus_add_admin' );
 		weaverx_do_admin();
 	}
@@ -55,9 +55,9 @@ if ( current_user_can( 'edit_posts' ) ) {
 	function weaverx_admin_scripts( ) {
 
 		/* called only on the admin page, enqueue our special style sheet here ( for tabbed pages ) */
-		wp_enqueue_style( 'wvrxaStylesheet', get_template_directory_uri() . WEAVERX_ADMIN_DIR . '/assets/css/admin-style.css' );
+		wp_enqueue_style( 'wvrxaStylesheet', get_theme_file_uri( WEAVERX_ADMIN_DIR . '/admin-core/assets/css/admin-style.css' ) );
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'wvrxartlStylesheet', get_template_directory_uri() . WEAVERX_ADMIN_DIR . '/assets/css/admin-style-rtl.css' );
+			wp_enqueue_style( 'wvrxartlStylesheet', get_theme_file_uri( WEAVERX_ADMIN_DIR . '/admin-core/assets/css/admin-style-rtl.css') );
 		}
 
 		wp_enqueue_style( "thickbox" );
@@ -68,10 +68,10 @@ if ( current_user_can( 'edit_posts' ) ) {
 
 		// jsColor only needed from theme support plugin - Version 4.2
 
-		wp_enqueue_script( 'wvrxJscolor', get_template_directory_uri() . '/assets/js/jscolor/jscolor.js', WEAVERX_VERSION ); // .min fails
+		wp_enqueue_script( 'wvrxJscolor', get_theme_file_uri( '/assets/js/jscolor/jscolor.js' ), WEAVERX_VERSION ); // .min fails
 
 		// wvrxCombined includes yetii, hide-css, and media-lib - changed for V 4.2
-		wp_enqueue_script( 'wvrxCombined', get_template_directory_uri() . WEAVERX_ADMIN_DIR . '/assets/js/theme/weaver-combined' . WEAVERX_MINIFY . '.js', WEAVERX_VERSION );
+		wp_enqueue_script( 'wvrxCombined', get_theme_file_uri(WEAVERX_ADMIN_DIR . '/admin-core/assets/js/theme/weaver-combined' . WEAVERX_MINIFY . '.js' ), WEAVERX_VERSION );
 	}
 
 //--
@@ -79,11 +79,10 @@ if ( current_user_can( 'edit_posts' ) ) {
 	add_action( 'admin_init', 'weaverx_admin_init_cb' );
 
 	function weaverx_admin_init_cb() {    // action definition
-		require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/lib-admin.php' );
+		require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/admin-core/lib-admin.php' ) );
 
 		weaverx_sapi_options_init(); // This must come first as it hooks update_option used elsewhere
 
-		return;
 	} //ttt
 //--
 
@@ -98,7 +97,7 @@ if ( current_user_can( 'edit_posts' ) ) {
 function weaverx_load_admin_aux() {
 
 	if ( current_user_can( 'edit_posts' ) ) { // allows only admin to see, also avoids loading at runtime
-		require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/admin-page-posts.php' );    // per page-posts admin
+		require_once( get_theme_file_path(WEAVERX_ADMIN_DIR . '/admin-core/admin-page-posts.php' ) );    // per page-posts admin
 	}
 
 }
@@ -109,9 +108,8 @@ if ( current_user_can( 'edit_posts' ) && ! has_action( 'weaver_xtreme_load_custo
 
 	function weaver_xtreme_load_customizer_action() {
 
-		require_once( get_template_directory() . '/admin/customizer/load-customizer.php' ); // start by loading customizer features
+		require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/customizer/load-customizer.php' ) ); // start by loading customizer features
 	}
 
 }
 
-?>

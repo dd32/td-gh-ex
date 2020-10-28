@@ -34,7 +34,7 @@ function weaverx_pp_add_page_fields() {
 		$i ++;
 	}
 
-	require_once( dirname( __FILE__ ) . '/admin-page-posts-meta-boxes.php' );    // per page-posts admin - needs to be here
+	require_once( get_theme_file_path( '/admin/admin-core/admin-page-posts-meta-boxes.php' ) );    // per page-posts admin - needs to be here
 }
 
 function weaverx_pp_page_extras_load() {
@@ -66,7 +66,7 @@ function weaverx_pp_enqueue_admin_scripts( $hook ) {
 		return;
 	}
 
-	wp_enqueue_script( 'weaverxYetii', get_template_directory_uri() . '/admin/admin-core/assets/js/yetii/yetii.js', false, WEAVERX_VERSION );
-	wp_enqueue_style( 'weaverxYetiiCSS', get_template_directory_uri() . '/admin/admin-core/assets/js/yetii/yetii-weaver' . WEAVERX_MINIFY . '.css', false, WEAVERX_VERSION );
+	wp_enqueue_script( 'weaverxYetii', get_theme_file_uri( WEAVERX_ADMIN_DIR . '/admin-core/assets/js/yetii/yetii.js' ), false, WEAVERX_VERSION );
+	wp_enqueue_style( 'weaverxYetiiCSS', get_theme_file_uri(WEAVERX_ADMIN_DIR . '/admin-core/assets/js/yetii/yetii-weaver' . WEAVERX_MINIFY . '.css' ), false, WEAVERX_VERSION );
 }
 

@@ -25,8 +25,6 @@ function weaverx_save_editor_css( $usename, $editor ) {
 	weaverx_write_to_upload( 'editor-early-style-wvrx.css', weaverx_output_early_style() );
 
 	weaverx_write_to_upload( $usename, weaverx_output_edit_style( $editor ) );        // this is where the real work happens
-
-	return;
 }
 
 //--
@@ -61,7 +59,7 @@ add_action( 'weaverx_save_gutenberg_css', 'weaverx_save_gutenberg_css' );       
  *
  * @param string #editor The name of the editor to generate CSS for
  *
- * @returns string The generated CSS
+ * @return string The generated CSS
  *
  *
  */
@@ -237,7 +235,7 @@ function weaverx_output_edit_style( $editor = 'mce' ) {
 
 	$fontmult = weaverx_fontsize_mult( $font_size, 'standard' );
 
-	$em_font_size = ( $base_font_px / $base_font_px ) * $fontmult;
+	$em_font_size = ( $base_font_px / 16.0 ) * $fontmult;
 	$put          .= "{$selector_font}{font-size:" . $em_font_size . "em;}\n";
 
 
@@ -350,7 +348,7 @@ function weaverx_output_edit_style( $editor = 'mce' ) {
 		$title_color = weaverx_getopt_default( 'page_title_color', 'inherit' );
 		if ( $title_color == 'inherit' ) {
 			$title_color = weaverx_get_cascade_opt( '_color', 'inherit' );
-		};
+		}
 		$font_style .= "color:{$title_color} !important;";
 		//$put .= ".edit-post-layout .editor-post-title textarea{color:{$title_color} !important;}\n";
 
@@ -519,7 +517,7 @@ tr th, thead th {color: inherit;background:none;font-weight:normal;line-height:n
 		$link_strong = weaverx_getopt_default( 'link_strong', 'inherit' );
 	}
 
-	$link_em = weaverx_getopt( 'contentlink_em', 'inherit' );
+	$link_em = weaverx_getopt_default( 'contentlink_em', 'inherit' );
 	if ( $link_em == 'inherit' ) {
 		$link_em = weaverx_getopt_default( 'link_em', 'inherit' );
 	}
@@ -687,9 +685,9 @@ function weaverx_mce_css_add_style( $default_style ) {
 
 	$updir = wp_upload_dir();
 
-	$dir = trailingslashit( $updir['basedir'] ) . 'weaverx-subthemes/editor-style-wvrx.css';
+	$dir = trailingslashit( $updir['basedir'] ) . WEAVERX_SUBTHEMES_DIR. '/editor-style-wvrx.css';
 
-	$path = trailingslashit( $updir['baseurl'] ) . 'weaverx-subthemes/editor-style-wvrx.css';
+	$path = trailingslashit( $updir['baseurl'] ) . WEAVERX_SUBTHEMES_DIR . '/editor-style-wvrx.css';
 
 	if ( ! @file_exists( $dir ) ) {
 		return $default_style;
@@ -785,5 +783,3 @@ function weaverx_fontsize_mult( $font_size, $type = 'standard' ) {
 	return $title_fontmult;
 }
 
-
-?>

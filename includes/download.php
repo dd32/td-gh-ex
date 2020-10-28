@@ -21,23 +21,23 @@ $weaverx_is_theme = false;
 if ( isset( $_GET['_wpnonce'] ) ) {
 	$nonce = $_GET['_wpnonce'];
 } elseif ( isset( $_GET['_wpnoncet'] ) ) {
-	$nonce            = $_GET['_wpnoncet'];
+	$nonce = $_GET['_wpnoncet'];
 	$weaverx_is_theme = true;
 } else {
 	$nonce = '';
 }
 if ( ! wp_verify_nonce( $nonce, 'weaverx_download' ) ) {
 	@header( 'Content-Type: ' . get_option( 'html_type' ) . '; charset=' . get_option( 'blog_charset' ) );
-	wp_die( esc_html__( 'Sorry - download must be initiated from admin panel.', 'weaver-xtreme') );
+	wp_die( esc_html__( 'Sorry - download must be initiated from admin panel.', 'weaver-xtreme' ) );
 }
 
 if ( headers_sent() ) {
 	@header( 'Content-Type: ' . get_option( 'html_type' ) . '; charset=' . get_option( 'blog_charset' ) );
-	wp_die( esc_html__( 'Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.', 'weaver-xtreme') );
+	wp_die( esc_html__( 'Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.', 'weaver-xtreme' ) );
 }
 
-$opt_func       = WEAVER_GET_OPTION;
-$weaverx_opts   = $opt_func( apply_filters( 'weaverx_options', WEAVER_SETTINGS_NAME ), array() );
+$opt_func = WEAVER_GET_OPTION;
+$weaverx_opts = $opt_func( apply_filters( 'weaverx_options', WEAVER_SETTINGS_NAME ), array() );
 $weaverx_header = '';
 
 $weaverx_save = array();
@@ -54,7 +54,7 @@ $a_pro = ( function_exists( 'weaverxplus_plugin_installed' ) ) ? '-plus' : '';
 
 if ( $weaverx_is_theme ) {
 	$weaverx_header .= 'WXT-V01.00';
-	$weaverx_fn     = 'weaverx-theme-settings' . $a_pro . '.wxt';
+	$weaverx_fn = 'weaverx-theme-settings' . $a_pro . '.wxt';
 	foreach ( $weaverx_opts as $opt => $val ) {
 		if ( $opt[0] == '_' ) {
 			$weaverx_save['weaverx_base'][ $opt ] = false;
@@ -62,7 +62,7 @@ if ( $weaverx_is_theme ) {
 	}
 } else {
 	$weaverx_header .= 'WXB-V01.00';            /* Save all settings: 10 byte header */
-	$weaverx_fn     = 'weaverx-backup-settings' . $a_pro . '.wxb';
+	$weaverx_fn = 'weaverx-backup-settings' . $a_pro . '.wxb';
 }
 
 $weaverx_settings = $weaverx_header . serialize( $weaverx_save );    /* serialize full set of options right now */

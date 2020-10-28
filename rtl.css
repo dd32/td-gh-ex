@@ -248,7 +248,6 @@ textarea {
 	font-size:90%;
 	margin:1.5em;
 	padding:0 .5em 1em 0;
-	bordexr:1px solid green;
 }
 
 #author-avatar {
@@ -263,10 +262,6 @@ textarea {
 	padding: 0;
 }
 
-.ie8 img.avatar {
-	width:auto;	/* fix for max-width bug in IE8 */
-}
-
 #author-description {
 	margin-right:1em;
 }
@@ -277,10 +272,6 @@ textarea {
 	background-size:    28px 28px;
 	right: auto;
 	left: 0;
-}
-
-.ie8 .comments-bubble a {
-	background-image: url( assets/css/icons/comment-bubble-rtl-ie8.png );
 }
 
 /*
@@ -370,8 +361,7 @@ textarea {
 
 .widget-smart-rm aside,
 .m-widget-smart-rm aside,
-.is-mobile .m-widget-smart-rm aside,
-.ie8 .smart-rm {                    /* modern browsers use nth-of-type rules below */
+.is-mobile .m-widget-smart-rm aside {                    /* modern browsers use nth-of-type rules below */
 	margin-left:    1%;
 	margin-right:   0;
 }
@@ -444,10 +434,3 @@ textarea {
 	}
 }
 
-/* =IE7
------------------------------------------------ */
-
-.ie8 section.recent-posts {
-	margin-right: 0;
-	margin-left: 7.6%;
-}

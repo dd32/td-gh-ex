@@ -252,17 +252,20 @@ function weaverx_page_menu( $args = array() ) {
 	$left  = weaverx_getopt( 'm_primary_html_left' );
 	$right = weaverx_getopt( 'm_primary_html_right' );
 
+	$logo = '';
+
 	if ( weaverx_getopt( 'm_primary_logo_left' ) ) {
 		$custom_logo_url = weaverx_get_wp_custom_logo_url();
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
-				$left = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__('Site Home', 'weaver-xtreme') . '"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__('Site Home', 'weaver-xtreme') . '"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );
 			} else {
-				$left = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="' . esc_attr__('logo', 'weaver-xtreme') . '"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="' . esc_attr__('logo', 'weaver-xtreme') . '"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
 			}
 		}
 	}
+
 
 	if ( $left ) {
 		$hide = ' ' . weaverx_getopt( 'm_primary_hide_left' );
@@ -279,6 +282,7 @@ function weaverx_page_menu( $args = array() ) {
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 			}
 		}
+
 		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";       // +since: 3.1.10: remove empty href=""
 	}
 
@@ -299,6 +303,8 @@ function weaverx_page_menu( $args = array() ) {
 	if ( weaverx_getopt( 'm_primary_search' ) ) {
 		$right = '<span class="menu-search">&nbsp;' . get_search_form( false ) . '&nbsp;</span>' . $right;
 	}
+
+	$left = $logo . $left;
 
 	if ( $menu ) {
 		$menu = $left . $site_title . $right . '<div class="wvrx-menu-clear"></div><ul class="' . esc_attr( $args['menu_class'] ) . '">'
@@ -624,7 +630,7 @@ function weaverx_enqueue_gutenberg_block_editor_assets() {
 
 	weaverx_check_editor_style();      // see if we need an update...
 
-	$editor_file = get_template_directory_uri() . '/assets/css/blocks-editor-base-style' . WEAVERX_MINIFY . '.css';
+	$editor_file = get_theme_file_uri( '/assets/css/blocks-editor-base-style' . WEAVERX_MINIFY . '.css' );
 
 	// enqueue style file
 	wp_enqueue_style( 'weaverx_gutenberg_fonts', WEAVERX_GOOGLE_FONTS_URL );    // load the Google Fonts the theme uses so they are avilable to the editor
@@ -632,9 +638,9 @@ function weaverx_enqueue_gutenberg_block_editor_assets() {
 
 	$updir = wp_upload_dir();
 
-	$css_file = trailingslashit( $updir['basedir'] ) . 'weaverx-subthemes/block-editor-style-wvrx.css'; // generated CSS files won't be minified
+	$css_file = trailingslashit( $updir['basedir'] ) . WEAVERX_SUBTHEMES_DIR . '/block-editor-style-wvrx.css'; // generated CSS files won't be minified
 
-	$css_path = trailingslashit( $updir['baseurl'] ) . 'weaverx-subthemes/block-editor-style-wvrx.css';
+	$css_path = trailingslashit( $updir['baseurl'] ) . WEAVERX_SUBTHEMES_DIR . '/block-editor-style-wvrx.css';
 
 	if (  weaverx_f_exists( $css_file ) ) {  // add dynamically generated editor CSS if the file exists
 		$css_path = str_replace( array( 'http:', 'https:' ), '', $css_path );       // strip the http: if there, just use the //
@@ -652,7 +658,7 @@ add_action( 'enqueue_block_editor_assets', 'weaverx_enqueue_gutenberg_block_edit
  */
 function weaverx_enqueue_gutenberg_block_assets() {
 	// enqueue for BOTH editor and front-end
-	$style_file = get_template_directory_uri() . '/assets/css/blocks-theme-blocks' . WEAVERX_MINIFY . '.css';
+	$style_file = get_theme_file_uri( '/assets/css/blocks-theme-blocks' . WEAVERX_MINIFY . '.css' );
 	wp_enqueue_style( 'weaverx_blocks_block', $style_file, array(), WEAVERX_VERSION );
 }
 

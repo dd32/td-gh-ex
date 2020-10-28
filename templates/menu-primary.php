@@ -11,20 +11,6 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 
 	$class = weaverx_menu_class( 'm_primary' );
 
-	$logo = '';
-
-	if ( weaverx_getopt( 'm_primary_logo_left' ) ) {
-		$custom_logo_url = weaverx_get_wp_custom_logo_url();
-		// We have a logo. Logo is go.
-		if ( $custom_logo_url ) {
-			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
-				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
-			} else {
-				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
-			}
-		}
-	}
-
 	$site_title = '';
 
 	if ( weaverx_getopt( 'm_primary_site_title_left' ) ) {
@@ -45,6 +31,22 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 
 	$left = weaverx_getopt( 'm_primary_html_left' );
 	$right = weaverx_getopt( 'm_primary_html_right' );
+
+
+	$logo = '';
+
+	if ( weaverx_getopt( 'm_primary_logo_left' ) ) {
+		$custom_logo_url = weaverx_get_wp_custom_logo_url();
+		// We have a logo. Logo is go.
+		if ( $custom_logo_url ) {
+			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
+			} else {
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
+			}
+		}
+	}
+
 
 	if ( $left ) {
 		$hide = ' ' . weaverx_getopt( 'm_primary_hide_left' );

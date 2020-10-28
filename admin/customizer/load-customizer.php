@@ -23,7 +23,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 
 	function weaverx_customizer_loaded_action() {
-		return;
+		// not used now
 	}
 
 
@@ -36,12 +36,13 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 		weaverx_cz_cache_opts();        // we want to get the existing options before filtered.
 
-		$path = trailingslashit( get_template_directory() ) . 'admin/customizer/';
+		$path = get_theme_file_path( WEAVERX_ADMIN_DIR . '/customizer/' ) ;
 
 		// Include the Alpha Color Picker control file.
 		require_once( $path . 'alpha-color-picker/alpha-color-picker.php' );
 		require_once( $path . 'save-restore/customizer-save-restore.php' );
 		require_once( $path . 'lib-controls.php' );
+		require_once( $path . 'lib-choices-definitions.php');
 
 
 		weaverx_customizer_add_panels( $wp_customize );
@@ -112,13 +113,13 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 		// Styles
 		wp_enqueue_style(
 			'weaverx-customizer-jquery-ui',
-			get_template_directory_uri() . '/admin/customizer/css/jquery-ui/jquery-ui-1.10.4.custom.css',
+			get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/css/jquery-ui/jquery-ui-1.10.4.custom.css' ),
 			array(),
 			'1.10.4'
 		);
 		wp_enqueue_style(
 			'weaverx-customizer-chosen',
-			get_template_directory_uri() . '/admin/customizer/css/chosen/chosen.css',
+			get_theme_file_uri(WEAVERX_ADMIN_DIR . '/customizer/css/chosen/chosen.css' ),
 			array(),
 			'1.3.0'
 		);
@@ -128,7 +129,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 		wp_enqueue_style(
 			'weaverx-customizer-menu',
-			get_template_directory_uri() . "/admin/customizer/css/" . CUSTOMIZER_MENU . WEAVERX_MINIFY . ".css",
+			get_theme_file_uri( '/admin/customizer/css/' . CUSTOMIZER_MENU . WEAVERX_MINIFY . '.css' ),
 			array(),
 			WEAVERX_VERSION
 		);
@@ -136,7 +137,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 		wp_enqueue_style(
 			'weaverx-customizer-sections',
-			get_template_directory_uri() . "/admin/customizer/css/customizer-sections" . WEAVERX_MINIFY . ".css",
+			get_theme_file_uri('/admin/customizer/css/customizer-sections' . WEAVERX_MINIFY . '.css' ),
 			array( 'weaverx-customizer-jquery-ui', 'weaverx-customizer-chosen' ),
 			WEAVERX_VERSION
 		);
@@ -150,7 +151,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 		wp_enqueue_script(
 			'weaverx-customizer-chosen',
-			get_template_directory_uri() . '/admin/customizer/js/chosen.jquery.js',
+			get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/js/chosen.jquery.js' ),
 			array( 'jquery', 'customize-controls' ),
 			'1.3.0',
 			true
@@ -158,20 +159,13 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 		wp_enqueue_script(
 			'weaverx-customizer-menu',
-			get_template_directory_uri() . '/admin/customizer/js/' . CUSTOMIZER_MENU . WEAVERX_MINIFY . '.js',
+			get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/js/' . CUSTOMIZER_MENU . WEAVERX_MINIFY . '.js' ),
 			array(),
 			WEAVERX_VERSION,
 			true
 		);
 
 		$cur_vers = weaverx_wp_version();
-
-		if ( version_compare( $cur_vers, '4.4', '<' ) ) {
-			$wp_vers = '4.3';
-		} else {
-			$wp_vers = '4.4';
-		}
-
 
 		$local = array(
 			'wp_vers'  => $cur_vers,
@@ -242,7 +236,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 			'html_inject'     => esc_html__( 'HTML Injection Areas', 'weaver-xtreme' ),
 
 			'loadingMsg' => esc_html__( 'Please wait. Customizer Loading...', 'weaver-xtreme' ),
-			'helpURL'    => get_template_directory_uri() . '/help/help.html#get-started',
+			'helpURL'    => get_theme_file_uri( '/help/help.html#get-started' ),
 			'cust_help'  => esc_html__( 'Weaver Xtreme Customizer Help', 'weaver-xtreme' ),
 		);
 
@@ -251,7 +245,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 		wp_enqueue_script(
 			'weaverx-customizer-sections',
-			get_template_directory_uri() . '/admin/customizer/js/customizer-sections' . WEAVERX_MINIFY . '.js',
+			get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/js/customizer-sections' . WEAVERX_MINIFY . '.js' ),
 			array( 'jquery', 'customize-controls', 'weaverx-customizer-chosen' ),
 			WEAVERX_VERSION,
 			true
@@ -361,13 +355,6 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 					'description' => esc_html__( 'Options for integration with Page Builders.', 'weaver-xtreme' ),
 				),
 
-				// ultimate want to add per page/post options here, but can't do it because can't get current page or post ID to make controls selectively
-				// display, or in fact access the custom options on a per page/post basis.
-
-				//'per_page' => apply_filters( 'weaverx_add_per_page_customizer',array() ),
-
-				//'per_post' => apply_filters( 'weaverx_add_per_post_customizer',array() ),
-
 			);
 
 			/**
@@ -446,7 +433,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 		 */
 		function weaverx_customizer_add_sections( $wp_customize ) {
 			$theme_prefix = 'weaverx_';
-			$default_path = get_template_directory() . '/admin/customizer/sections';
+			$default_path = get_theme_file_path( WEAVERX_ADMIN_DIR . '/customizer/sections' );
 			$panels       = weaverx_customizer_get_panels();
 
 
@@ -607,7 +594,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 			wp_enqueue_script(
 				'weaverx_cz-customizer-preview',
-				get_template_directory_uri() . '/admin/customizer/js/customizer-preview' . WEAVERX_MINIFY . '.js',
+				get_theme_file_uri() . WEAVERX_ADMIN_DIR . '/customizer/js/customizer-preview' . WEAVERX_MINIFY . '.js',
 				array( ),
 				WEAVERX_VERSION,
 				true
@@ -640,8 +627,17 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 	}
 
-	function weaverx_cz_is_plus() {
-		return function_exists( 'weaverxplus_plugin_installed' );
+	function weaverx_cz_is_plus( $version = true ) {
+		if ( ! function_exists( 'weaverxplus_plugin_installed' ) ) {
+			return false;
+		}
+
+		$vers = weaverxplus_plugin_installed();
+
+		if ( $version === $vers )   // legacy test for just true value
+			return true;
+		else
+			return version_compare( WEAVER_XPLUS_VERSION, $version, '>=');
 	}
 
 
@@ -662,7 +658,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 	function weaverx_cz_getdefaults() {
 
-		$filename = apply_filters( 'weaverx_default_subtheme', get_template_directory() . WEAVERX_DEFAULT_THEME_FILE );
+		$filename = apply_filters( 'weaverx_default_subtheme', get_theme_file_path() . WEAVERX_DEFAULT_THEME_FILE );
 
 		if ( ! weaverx_f_exists( $filename ) ) {
 			return array();

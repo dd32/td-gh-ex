@@ -31,7 +31,7 @@ if ( weaverx_is_checked_page_opt( '_pp_pwp_compact_posts' )
 	<?php weaverx_entry_header( '' ); // compact header ?>
 </header><!-- .entry-header -->
 	<div class="entry-compact"> <!-- Compact Post -->
-	<a href="<?php esc_url( get_permalink() ); ?>" title="<?php printf( esc_attr( 'Permalink to %s','weaver-xtreme' ),
+	<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php printf( esc_attr( 'Permalink to %s','weaver-xtreme' ),
 	  the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 		<?php echo $the_image; ?>
 		</a>

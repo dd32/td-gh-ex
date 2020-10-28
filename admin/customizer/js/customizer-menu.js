@@ -11,7 +11,7 @@ function wvrxSelectOptions(optionPanel) {
 
     jQuery('#wx-jumpmenu').css('display', 'none'); //Close the Menu
     jQuery('.accordion-section').css('width', ''); // clean the hack for Customizer's bad width calculation
-};
+}
 
 //Below the onlclick open function for Panels, uncollapses if collapsed, switches to customize if in preview mode on small screens
 function wvrxSelectPanel(tabPanel) {
@@ -19,7 +19,7 @@ function wvrxSelectPanel(tabPanel) {
     wp.customize.panel(tabPanel).focus(); //Open the clicked panel
 
     jQuery('#wx-jumpmenu').css('display', 'none'); //Close the Menu
-};
+}
 
 //Below the function to open jumpmenu on hover with a delay
 function wvrxjumpmenuOpen() {
@@ -30,7 +30,7 @@ function wvrxjumpmenuOpen() {
         }
     }
     setTimeout(wvrxOpen, 500);
-};
+}
 
 function wvrxjumpmenuClose() {
     //For some weird reason, if we dont delay the close, the menu closes when we move from the button to the actual menu Probably a discontinuity issue in the hover

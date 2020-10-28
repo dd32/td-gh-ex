@@ -19,4 +19,3 @@ if ( weaverx_has_widgetarea( 'primary-widget-area' ) ) {
 } elseif ( ! weaverx_has_widgetarea( 'secondary-widget-area' ) ) {
 	weaverx_no_sidebars( $class );
 }
-

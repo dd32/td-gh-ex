@@ -5,8 +5,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The Left Split Sidebar if on top
  *
- * @package WordPress
- * @subpackage Weaver X
  * @since Weaver Xtreme 1.0
  */
 

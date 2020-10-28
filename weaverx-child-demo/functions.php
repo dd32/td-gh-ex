@@ -16,4 +16,3 @@ function weaverx_continue_reading_link() {
 	return ' <a class="more-link" href="' . esc_url( get_permalink() ) . '">' . $msg . '</a>';
 }
 
-?>

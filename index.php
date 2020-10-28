@@ -10,11 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $sb_layout = weaverx_page_lead( 'blog', true );    // blog is archive for layout purposes
 
-// and next the content area.
-
 weaverx_set_cur_page_id( 0 );    // no page for this type
 
-weaverx_sb_precontent( 'blog', true );
+weaverx_sb_precontent( 'blog' );  // and next the content area.
 
 if ( have_posts() ) {
 
@@ -27,10 +25,10 @@ if ( have_posts() ) {
 		$num_cols = 1;
 	}
 
-	$sticky_one   = weaverx_getopt_checked( 'blog_sticky_one' ) && $pagedw <= 1;
-	$first_one    = weaverx_getopt_checked( 'blog_first_one' ) && $pagedw <= 1;
+	$sticky_one = weaverx_getopt_checked( 'blog_sticky_one' ) && $pagedw <= 1;
+	$first_one = weaverx_getopt_checked( 'blog_first_one' ) && $pagedw <= 1;
 	$masonry_wrap = false;    // need this for one-column posts
-	$col          = 0;
+	$col = 0;
 
 	/* Start the Loop */
 

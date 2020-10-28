@@ -18,14 +18,15 @@ if ( have_posts() ) { ?>
 
 	<header class="page-header">
 		<?php
-		$tt     = apply_filters( 'weaverx_tag_archives', esc_html__( 'Tag Archives: %s', 'weaver-xtreme' ) );
+		// translators: %s is tag archive title
+		$tt = apply_filters( 'weaverx_tag_archives', esc_html__( 'Tag Archives: %s', 'weaver-xtreme' ) );
 		$titlew = '<span class="title-tag-label">' . sprintf( $tt, '</span><span class="archive-info">'
 		                                                           . single_tag_title( '', false ) . '</span>' );
 		weaverx_archive_title( $titlew, 'tag' );
 
 		$tag_description = tag_description();
 		if ( ! empty( $tag_description ) ) {
-			echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
+			echo wp_kses_post( apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' ) );
 		}
 		?>
 	</header>
@@ -44,4 +45,4 @@ if ( have_posts() ) { ?>
 weaverx_sb_postcontent( 'tag' );
 
 weaverx_page_tail( 'tag', $sb_layout );    // end of page wrap
-?>
+

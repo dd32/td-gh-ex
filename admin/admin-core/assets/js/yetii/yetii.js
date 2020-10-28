@@ -25,7 +25,7 @@ function Yetii() {
 
 	this.activebackup = null;
 
-	for (var n in arguments[0]) { this.defaults[n]=arguments[0][n]; };
+	for (var n in arguments[0]) { this.defaults[n]=arguments[0][n]; }
 
 	this.getTabs = function() {
 
@@ -204,4 +204,4 @@ function Yetii() {
 
 	if (this.defaults.interval) this.rotate(this.defaults.interval);
 
-};
+}

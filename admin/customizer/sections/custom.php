@@ -27,7 +27,7 @@ if ( ! function_exists( 'weaverx_customizer_define_custom_sections' ) ) :
 			$section->description = __( 'This is the standard WordPress Additional CSS option. We recommend the Weaver Xtreme Global Custom CSS or per area CSS.', 'weaver-xtreme' ) . '<br />' . $cur_des;
 		}
 
-		if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {        // show if advanced
+		if ( weaverx_options_level() >= WEAVERX_LEVEL_ADVANCED ) {        // show if advanced
 
 			$custom_sections['custom-help'] = array(
 				'panel' => $panel,
@@ -76,7 +76,7 @@ if ( ! function_exists( 'weaverx_customizer_define_custom_sections' ) ) :
 		/**
 		 * Wrapping
 		 */
-		if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {        // show if advanced if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
+		if ( weaverx_options_level() >= WEAVERX_LEVEL_ADVANCED ) {        // show if advanced if ( weaverx_options_level() >= WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 			$custom_sections['custom-wrapping'] = array(
 				'panel'       => $panel,
 				'title'       => esc_html__( 'Wrapping Areas', 'weaver-xtreme' ),
@@ -250,8 +250,8 @@ if ( ! function_exists( 'weaverx_customizer_define_custom_sections' ) ) :
 				);
 
 			} else {
-				$new_opts = weaverx_cz_add_plus_message( 'spacing_menus', esc_html__( 'Extra Menu', 'weaver-xtreme' ),
-					weaverx_filter_text( __( 'Add extra menus with <strong>Weaver Xtreme Plus</strong>.', 'weaver-xtreme' ) ) );
+				$new_opts = weaverx_cz_add_plus_message( 'spacing_menus', __( 'Extra Menu', 'weaver-xtreme' ),
+					__( 'Add extra menus with <strong>Weaver Xtreme Plus</strong>.', 'weaver-xtreme' ) );
 			}
 			// add stub or extra menu options
 			$custom_sections['custom-menus']['options'] = array_merge( $custom_sections['custom-menus']['options'], $new_opts );

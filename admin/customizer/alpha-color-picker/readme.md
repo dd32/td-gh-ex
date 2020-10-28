@@ -13,8 +13,8 @@ A jQuery plugin version of this alpha color picker that can be used in the admin
 The control includes a CSS file and a JS file that have urls defined in a `wp_enqueue_scripts` call in `alpha-color-picker.php` that you'll probably want to update based on where you put the alpha-color-picker folder. The default urls are:
 
 ```php
-get_stylesheet_directory_uri() . '/admin/customizer/alpha-color-picker/alpha-color-picker.js'
-get_stylesheet_directory_uri() . '/admin/customizer/alpha-color-picker/alpha-color-picker.css'
+get_stylesheet_directory_uri() . '/admin/customizer/alpha-color-picker/alpha-color-picker.js';
+get_stylesheet_directory_uri() . '/admin/customizer/alpha-color-picker/alpha-color-picker.css';
 ```
 
 If you use this in a plugin, you'd use something like `plugin_dir_url()`, and update the path to the files.

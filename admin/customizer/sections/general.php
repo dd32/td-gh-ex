@@ -5,7 +5,7 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 	 * Define the sections and settings for the General panel
 	 */
 	function weaverx_customizer_define_general_sections() {
-		$panel            = 'weaverx_general';
+		$panel = 'weaverx_general';
 		$general_sections = array();
 		global $wp_customize;
 
@@ -17,7 +17,7 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 		 */
 
 		$section_id = 'title_tagline';
-		$section    = $wp_customize->get_section( $section_id );
+		$section = $wp_customize->get_section( $section_id );
 
 		// Move Site Title & Tagline section to General panel
 		$section->panel = $panel;
@@ -37,7 +37,7 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 		 */
 
 		$section_id = 'static_front_page';
-		$section    = $wp_customize->get_section( $section_id );
+		$section = $wp_customize->get_section( $section_id );
 
 		// Bail if the section isn't registered
 		if ( is_object( $section ) && 'WP_Customize_Section' === get_class( $section ) ) {
@@ -52,7 +52,7 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 
 		$general_sections['general_options_level'] = array(
 			'panel'   => $panel,
-			'title'   => esc_html__( 'Set Options Interface Level', 'weaver-xtreme' ),
+			'title'   => esc_html__( 'Set Options Level', 'weaver-xtreme' ),
 			'options' => array(
 
 				'set_option_level' => array(
@@ -61,7 +61,7 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Set_Customizer_Level',
-						'label'        => esc_html__( 'Set Customizer Options Interface Level', 'weaver-xtreme' ),
+						'label'        => esc_html__( 'Set Customizer Options Level', 'weaver-xtreme' ),
 						'description'  => esc_html__( 'You can change the expertise level of the Customizer Interface. This can simplify and speed up the interface depending on your level of experience with Weaver Xtreme.', 'weaver-xtreme' ),
 					),
 				),
@@ -69,7 +69,22 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 
 		);
 
-		if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {        // show if advanced
+		if ( weaverx_cz_is_plus('3.1') ) {
+			$general_sections['general_options_xplus'] = array(
+				'panel'   => $panel,
+				'title'   => esc_html__( 'Weaver Xtreme Plus', 'weaver-xtreme' ),
+				'options' => array(
+
+					'oxp-hdr1' => weaverx_cz_group_title( __( 'Weaver Xtreme Plus Status Information' , 'weaver-xtreme') ),
+
+					'oxp-vers' => weaverx_cz_heading( __( 'Weaver Xtreme Version Installed', 'weaver-xtreme' ),
+						__('Version:', 'weaver-xtreme') . ' ' . WEAVER_XPLUS_VERSION),
+				),
+
+			);
+		}
+
+		if ( weaverx_options_level() >= WEAVERX_LEVEL_ADVANCED ) {        // show if advanced
 
 
 			$general_sections['general_admin'] = array(
@@ -164,20 +179,20 @@ If you have a theme using transparent backgrounds, this option will likely impro
 						esc_html__( 'Control when Per Page and Per Post options are displayed. Single site Administrator and Multi-Site Super Administrator will always have the Per Page and Per Post options panel displayed.
 You may selectively disable these options for other User Roles using the check boxes below.', 'weaver-xtreme' ) ),
 
-					'_hide_mu_admin_per' => weaverx_cz_checkbox(
+					'_hide_mu_admin_per' => weaverx_cz_checkbox_post(
 						esc_html__( 'Hide Per Page/Post Options for MultiSite Admins &diams;', 'weaver-xtreme' )
 					),
 
 
-					'_hide_editor_per' => weaverx_cz_checkbox(
+					'_hide_editor_per' => weaverx_cz_checkbox_post(
 						esc_html__( 'Hide Per Page/Post Options for Editors &diams;', 'weaver-xtreme' )
 					),
 
-					'_hide_author_per' => weaverx_cz_checkbox(
+					'_hide_author_per' => weaverx_cz_checkbox_post(
 						esc_html__( 'Hide Per Page/Post Options for Authors and Contributors &diams;', 'weaver-xtreme' )
 					),
 
-					'_show_per_post_all' => weaverx_cz_checkbox(
+					'_show_per_post_all' => weaverx_cz_checkbox_post(
 						esc_html__( 'Show Per Post Options for Custom Post Types &diams', 'weaver-xtreme' )
 					),
 

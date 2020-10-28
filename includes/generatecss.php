@@ -89,7 +89,6 @@ function weaverx_output_style( $sout ) {
 	global $wvrx_css_plus;
 	$wvrx_css_plus = '';
 
-
 	weaverx_f_write( $sout, sprintf( "/* Weaver Xtreme styles - Version %s */\n", weaverx_getopt( 'style_version' ) ) );    // opening line
 
 
@@ -181,13 +180,6 @@ function weaverx_output_style( $sout ) {
 				weaverx_setopt( 'm_secondary_align', 'center' );            // center the menus
 				break;
 
-			case 'boxed':
-				break;
-				//$themew_box = weaverx_getopt_default( 'theme_width_int', WEAVERX_THEME_WIDTH );
-				//weaverx_f_write( $sout,sprintf( "#wrapper{max-width:%dpx;}\n",$themew_box ) );
-				//weaverx_f_write( $sout,"#wrapper,#header,#container,#content,#colophon {max-width:100% !important;}\n" );
-				break;
-
 			default:
 				break;
 		}
@@ -195,29 +187,7 @@ function weaverx_output_style( $sout ) {
 	}
 
 
-// =========================== FIXUPs: FIXEDTOP with FULL ALIGNMENTS ===============================
-// alignwide + fix to top are incompatible for header_sb_align, header_html_align, m_primary_align, and m_secondary_align
-// change them to full.
 
-
-	if ( weaverx_getopt( 'header_sb_fixedtop' ) ) {
-		$align = weaverx_getopt( 'header_sb_align' );
-		if ( strpos( 'alignwide', $align ) !== false )                        // switch alignwide to alignfull
-		{
-			weaverx_setopt( 'header_sb_fixedtop', str_replace( 'alignwide', 'alignfull', $align ) );
-		}
-	}
-
-	foreach ( array( 'm_primary', 'm_secondary' ) as $area ) {
-		$fixed = weaverx_getopt( $area . '_fixedtop' );
-		if ( strpos( $fixed, 'fix' ) != false ) {
-			$align = weaverx_getopt( $area . '_align' );
-			if ( strpos( 'alignwide', $align ) !== false )                        // switch alignwide to alignfull
-			{
-				weaverx_setopt( $area . '_align', str_replace( 'alignwide', 'alignfull', $align ) );
-			}
-		}
-	}
 
 	// Create alignwide min-width @media
 
@@ -230,7 +200,7 @@ function weaverx_output_style( $sout ) {
 
 		weaverx_f_write( $sout, "@media (min-width: 1188px) {
 .weaverx-sb-one-column .alignwide,#header .alignwide,#header.alignwide,#colophon.alignwide,#colophon .alignwide,
-#container .alignwide,#container.alignwide,#infobar .alignwide,.alignwide {
+#container .alignwide,#container.alignwide,#wrapper .alignwide,#wrapper.alignwide,#infobar .alignwide,.alignwide {
 margin-left: inherit;margin-right: inherit;max-width:reset;width:100%;} }\n" );
 
 		weaverx_f_write( $sout, "@media (max-width: 1187px) {
@@ -238,7 +208,7 @@ margin-left: inherit;margin-right: inherit;max-width:reset;width:100%;} }\n" );
 
 		weaverx_f_write( $sout, "@media (min-width: {$minw}px) {
 .weaverx-sb-one-column .alignwide,#header .alignwide,#header.alignwide,#colophon.alignwide,#colophon .alignwide,
-#container .alignwide,#container.alignwide,#infobar .alignwide,.alignwide {
+#container .alignwide,#container.alignwide,#wrapper .alignwide,#wrapper.alignwide,#infobar .alignwide,.alignwide {
 margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;width: 92vw;} }\n" );
 
 		weaverx_f_write( $sout, "@media (max-width: {$maxw}px) {
@@ -418,12 +388,11 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 
 	if ( weaverx_getopt( 'header_actual_size' ) ) {
 		weaverx_f_write( $sout,
-			'#branding #header-image img,html.ie8 #branding #header-image img {width:auto;}' );
+			'#branding #header-image img{width:auto;}' );
 	}
 
 	if ( ( $val = weaverx_getopt( 'header_image_max_width_dec' ) ) ) {
 		weaverx_f_write( $sout, sprintf( "#branding #header-image img{max-width:%.5f%%;}\n", $val ) );
-		weaverx_f_write( $sout, sprintf( "html.ie8 #branding #header-image img{width:%.5f%%;}\n", $val ) );
 	}
 
 	if ( ( $align = weaverx_getopt_default( 'header_html_align', 'float-left' ) ) == 'center' ) {
@@ -649,7 +618,7 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 
 	$font_size = weaverx_getopt( 'site_fontsize_tablet_int' );  // tablet
 	if ( $font_size ) {
-		weaverx_f_write( $sout, sprintf( 'f ( min-width: 581px) and ( max-width: 767px) {body{font-size:%.5fem;}}', $font_size * 0.0625 ) );
+		weaverx_f_write( $sout, sprintf( '@media ( min-width: 581px) and ( max-width: 767px) {body{font-size:%.5fem;}}', $font_size * 0.0625 ) );
 	}
 
 	$font_size = weaverx_getopt( 'site_fontsize_phone_int' );   // .is-phone
@@ -667,9 +636,57 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 		weaverx_f_write( $sout, sprintf( "body{letter-spacing:%.5fem;}\n", $space ) );
 	}
 
-	$space = weaverx_getopt( 'font_letter_spacing_global_dec' );
+	$space = weaverx_getopt( 'font_word_spacing_global_dec' );
 	if ( $space && $space != 0 ) {
 		weaverx_f_write( $sout, sprintf( "body{word-spacing:%.5fem;}\n", $space ) );
+	}
+
+
+	$font_opts = array(
+		'wrapper' => '#wrapper',
+		'container' => '#container',
+		'header'    => '#header',
+		'site_title' => '#site-title',
+		'tagline' => '#site-tagline',
+		'header_sb' => '#header-widget-area',
+		'header_html' => '#header-html',
+		'm_primary' => '#nav-primary',
+		'm_secondary' => '#nav-secondary',
+		'm_header_mini' => '#nav-header-mini',
+		'm_extra' => '.extra-men-xplus',
+		'info_bar' => '#infobar',
+		'content' => '#content',
+		'page_title' => '.page-title',
+		'archive_title' => '.archive-title',
+		'post' => '.post-area',
+		'post_title' => '.post-title',
+		'primary' => '#primary-widget-area',
+		'secondary' => '#secondary-widget-area',
+		'top' => '.widget-area-top',
+		'bottom' => '.widget-area-bottom',
+		'widget' => '.widget',
+		'widget_title' => '.widget_title',
+		'footer' => '#colophon',
+		'footer_sb' => '#footer-widget-area',
+		'footer_html' => '#footer_html',
+	);
+
+	foreach ( $font_opts as $fopt => $selector) {
+		$space = weaverx_getopt( $fopt . '_word_spacing' );
+		if ( $space && $space != 0 ) {
+			weaverx_f_write( $sout, sprintf( $selector . "{word-spacing:%.5fem;}\n", $space ) );
+		}
+
+		$space = weaverx_getopt( $fopt . '_letter_spacing' );
+		if ( $space && $space != 0 ) {
+			weaverx_f_write( $sout, sprintf( $selector . "{letter-spacing:%.5fem;}\n", $space ) );
+		}
+
+		$trans = weaverx_getopt( $fopt . '_transform' );
+		if ( $trans && $trans != '' ) {
+			weaverx_f_write( $sout, sprintf( $selector . "{text-transform:%s;}\n", $trans ) );
+		}
+
 	}
 
 
@@ -947,7 +964,7 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 		weaverx_f_write( $sout, "}\n@media ( min-width:581px) and ( max-width:767px) { " );    // small tablets
 		weaverx_f_write( $sout, sprintf( ".per-row-2-m.per-row-3-m.per-row-4-m,.per-row-5-m.per-row-6-m,.per-row-7-m,.per-row-8-m{width:%.5f%%;}", 49.999 - ( $smart / 2.0 ) ) );
 		weaverx_f_write( $sout, "\n.m-widget-smart-rm aside{margin-right:{$smart}%;} }
-.widget-smart-rm aside,.ie8 .smart-rm{margin-right:{$smart}%;}\n" );    // global
+.widget-smart-rm aside{margin-right:{$smart}%;}\n" );    // global
 	}
 
 	weaverx_sidebar_style( $sout );      // generate sidebar style
@@ -984,12 +1001,21 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 		weaverx_put_bgcolor( $sout, $id . '_bgcolor', $tag );
 		weaverx_put_color( $sout, $id . '_color', $tag );
 
+
 		if ( $area == 'content' || $area == 'post' ) {     // #content is % instead of px
 			weaverx_css_style_val( $sout, $tag, '{padding-left:%.5f%%;}', $id . '_padding_L' );
 			weaverx_css_style_val( $sout, $tag, '{padding-right:%.5f%%;}', $id . '_padding_R' );
-		} else {
+		} elseif ( ! weaverx_align_wf( $area ) ) {
 			weaverx_css_style_val( $sout, $tag, '{padding-left:%dpx;}', $id . '_padding_L' );
 			weaverx_css_style_val( $sout, $tag, '{padding-right:%dpx;}', $id . '_padding_R' );
+		} else {
+			$padLR = weaverx_getopt( $id . '_padding_LRp' );
+			if ( $padLR != 0 ) {
+				weaverx_f_write( $sout, '@media( min-width: 768px) {' .
+				                        $tag . '{padding-left:' . $padLR . '%;padding-right:' . $padLR . '%;}' );
+				weaverx_f_write( $sout, '} @media( max-width: 767px) {' .
+				                        "{$tag}{padding-left:.5%;padding-right:.5%}}\n" );
+			}
 		}
 
 		weaverx_css_style_val( $sout, $tag, '{padding-top:%dpx;}', $id . '_padding_T' );
@@ -1000,7 +1026,7 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 	}
 
 	$max_w_areas = array(
-		// special areas with px max-width andF extend bg color
+		// special areas with px max-width and extend bg color
 		'header'      => '#header',
 		'footer'      => '#colophon',
 		'container'   => '#container',
@@ -1010,18 +1036,23 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 	);
 
 	foreach ( $max_w_areas as $id => $tag ) {
-		$w = weaverx_getopt( $id . '_max_width_int' );
-		if ( $w ) {
-			weaverx_f_write( $sout, "{$tag}" . "{max-width:{$w}px;}\n" );
-		}
+		$wide = weaverx_getopt( $id . '_align' );
+		if ( ! weaverx_align_wf( $id ) ) {
 
-		if ( ( $xbg = weaverx_getopt( $id . '_extend_bgcolor' ) ) ) {
-			$cname = "{$tag}";
-			weaverx_f_write( $sout,
-				"{$cname}{position:relative;overflow:visible;}
+			$w = weaverx_getopt( $id . '_max_width_int' );
+			if ( $w ) {
+				weaverx_f_write( $sout, "{$tag}" . "{max-width:{$w}px;}\n" );
+			}
+
+			$xbg = weaverx_getopt( $id . '_extend_bgcolor' );
+			if ( $xbg && $xbg != 'inherit' ) {
+				$cname = "{$tag}";
+				weaverx_f_write( $sout,
+					"{$cname}{position:relative;overflow:visible;}
 {$cname}:before{content:'';position:absolute;top:0;bottom:0;left:-9998px;right:0;
 border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
-			);
+				);
+			}
 		}
 	}
 
@@ -1104,32 +1135,34 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 //--------------------- EXPAND & EXTEND BG Attributes CSS Rules Generation -------------------
 //V2.1 post rules have the no sidebar slector, so Post page with Sidebar get done with script
 //V2 Fixes missing padding rule; fixes wrong limited width formula; add mwarpper margin support is wrapper is set to border:box
-	// padding: _padding_L, _padding_R (px)
-	// width: _width_int (%) - 'width' => true means have _width_int + _max_width_int + _align
-	// max width in px: _max_width_int (px)
-	// align: _align
+// padding: _padding_L, _padding_R (px)
+// width: _width_int (%) - 'width' => true means have _width_int + _max_width_int + _align
+// max width in px: _max_width_int (px)
+// align: _align
 
-	//----------------EXPAND Only rules -----------------------
+//----------------EXPAND Only rules -----------------------
 
 	if ( weaverx_getopt( 'wrapper_fullwidth' ) ) {
 		weaverx_f_write( $sout, '#wrapper{max-width:10000px;}' );
 	}
 
-	//Expand fixedtop if header is expanded
+//Expand fixedtop if header is expanded
 	if ( weaverx_getopt_expand( 'expand_header' ) ) {
 		weaverx_f_write( $sout, "#inject_fixedtop {left:0;max-width:none !important;width:calc( 100vw - 16px) !important;}
 		.no-vert-scrollbar #inject_fixedtop {left:0;width:calc( 100vw ) !important;}\n" );
 	}
-	//Expand fixedbottom if footer is expanded
+//Expand fixedbottom if footer is expanded
 	if ( weaverx_getopt_expand( 'expand_footer' ) ) {
 		weaverx_f_write( $sout, "#inject_fixedbottom {left:0;max-width:none !important;width:calc( 100vw - 16px) !important;}
 		.no-vert-scrollbar #inject_fixedbottom {left:0;width:calc( 100vw ) !important;}\n" );
 	}
 
-	//------End of Expand only
+//------End of Expand only
 
 
-	// ARRAY DEFINITION: Includes Both Expand and Extend elements *** Only 5 sub areas with width% for Extend need to be marked width => true
+// ARRAY DEFINITION: Includes Both Expand and Extend elements *** Only 5 sub areas with width% for Extend need to be marked width => true
+// ************************************************** START OF EXPAND/EXTEND Rules ************************************
+
 
 	$extend = array(
 		// Areas with _extend_width and expand with option with only true on supporting sub areas for Extend
@@ -1172,16 +1205,16 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	$nest_footer = ( weaverx_getopt_default( 'footer_width_int', 100 ) != 100 ||
 	                 ( ( $tmp = weaverx_getopt( 'footer_max_width_int' ) ) && $tmp < $themew ) );
 
-	// VARIABLES
+// VARIABLES
 
-	$pre_css = '';        // Global css no @media
-	$xcss = '';        // Over sitewidth css
+	$pre_css = '';          // Global css no @media
+	$xcss = '';             // Over sitewidth css
 	$media_css = '';        // between 580 and sitewidth css
 
 	$vis_container = '';
 	$vis_content = '';
 
-	// Changed: 3.1.11 - changed scroll bar width to 8px instead of 16. Firefox seems to have changed its width, and 8 works across most browsers
+// Changed: 3.1.11 - changed scroll bar width to 8px instead of 16. Firefox seems to have changed its width, and 8 works across most browsers
 
 	$w_view_scb = '( 100vw - 8px) '; // Viewport width scrollbar
 	$w_view_noscb = '100vw '; // Viewport width No scrollbar
@@ -1409,12 +1442,14 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	} // end of foreach
 
+// ************************************************** END OF EXPAND/EXTEND Rules ************************************
 
-	//--- WRAP and WRITE CSS ---
+//--- WRAP and WRITE CSS ---
 	if ( $xcss ) { // put generated content inside @media ( themewidth )
 		$xcss = "{$vis_container}{$vis_content}\n@media ( min-width:{$themew}px) {\n{$xcss} }\n";
 	}
 	if ( $media_css ) { // put generated content inside @media ( 580px-themewidth )
+		$themew_less_one = $themew - 1;
 		$media_css = "{$vis_container}{$vis_content}\n@media ( min-width:580px) and ( max-width:{$themew_less_one}px) {\n{$media_css} }\n";
 	}
 
@@ -1422,7 +1457,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	weaverx_f_write( $sout, $xcss );
 	weaverx_f_write( $sout, $media_css . " /* /EE */\n" );
 
-	//----------------------End of EXPAND & EXTEND BG Attributes--------------------
+//----------------------End of EXPAND & EXTEND BG Attributes--------------------
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ END OF EXPAND & EXTEND BG TO FULL WIDTH ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1502,7 +1537,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	weaverx_put_bgcolor( $sout, 'input_bgcolor', 'input,textarea' );
 	weaverx_put_color( $sout, 'input_color', 'input,textarea' );
 
-	// ==================== SEARCH =====================
+// ==================== SEARCH =====================
 
 	weaverx_put_bgcolor( $sout, 'search_bgcolor', '.search-field,#header-search .search-field:focus,.menu-search .search-field:focus' );
 	weaverx_put_color( $sout, 'search_color', '.search-field, #header-search .search-field:focus' );
@@ -1533,9 +1568,9 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	weaverx_put_elementor_colors( $sout );
 
 
-	// =============================== TITLES ==================================
+// =============================== TITLES ==================================
 
-	// injection area bg colors
+// injection area bg colors
 
 	$htmls = array(
 		'preheader',
@@ -1566,9 +1601,8 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 
 	weaverx_f_write( $sout, "#inject_fixedtop,#inject_fixedbottom,.wvrx-fixedtop,.wvrx-fixonscroll{max-width:{$themew}px;}\n" );
-	weaverx_f_write( $sout, ".ie8 #inject_fixedtop,.ie8 #inject_fixedbottom,.ie8 .wvrx-fixedtop,.ie8 .wvrx-fixonscroll{max-width:{$themew}px;}\n" );
 
-	// Set position when browser below site-width
+// Set position when browser below site-width
 
 	weaverx_f_write( $sout, "@media ( max-width:{$themew}px) {.wvrx-fixedtop,.wvrx-fixonscroll,#inject_fixedtop,#inject_fixedbottom {left:0px;margin-left:0 !important;margin-right:0 !important;}}\n" );
 
@@ -1585,19 +1619,19 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	$allpadl = $hdpadl + $wrpadl;
 	$allpadr = $hdpadr + $wrpadr;
-	//Adding the unit and sign in a different variable as limited width calculations need the one without sign and unit
+//Adding the unit and sign in a different variable as limited width calculations need the one without sign and unit
 	$allpadl_x = - $allpadl . 'px';    //Default values if no header width reduction
 	$allpadr_x = - $allpadr . 'px';    //Default values if no header width reduction
 
-	//limited header calculations
-	//These are only for when browser is wider than sitewidth. Below that, they are left:0 positionned with existing rules
+//limited header calculations
+//These are only for when browser is wider than sitewidth. Below that, they are left:0 positionned with existing rules
 	$align = weaverx_getopt_default( 'header_align', 'left' );
 	$width = weaverx_getopt_default( 'header_width_int', 100 );
 	$max_width = weaverx_getopt_default( 'header_max_width_int', 0 );
 	$reduct = ( $themew - ( $width / 100 ) * ( $themew - $wrpadl - $wrpadr ) ) . 'px';  // This is the width reduction when browser is larger than sitewidth
 
-	//!! We cant support both a width% and max-width at the same time, it would be way too complicated.
-	// Depending which one of if( $width ) or if( $max_width ) is last below, it will be the winning one ( revert order between if( $width ) and if( $max_width ) )
+//!! We cant support both a width% and max-width at the same time, it would be way too complicated.
+// Depending which one of if( $width ) or if( $max_width ) is last below, it will be the winning one ( revert order between if( $width ) and if( $max_width ) )
 	switch ( $align ) {
 		case 'center':                // Centered case
 			if ( $width ) {
@@ -1626,14 +1660,14 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			break;
 	}
 
-	// Rules for TOP Fixed Areas
+// Rules for TOP Fixed Areas
 	if ( ! weaverx_getopt_expand( 'expand_header' ) ) {
 		weaverx_f_write( $sout, "@media ( min-width:{$themew}px) {
 			#inject_fixedtop {margin-left:-{$wrpadl}px;margin-right:-{$wrpadr}px}
 			.wvrx-fixedtop,.wvrx-fixonscroll{margin-left:{$allpadl_x};margin-right:{$allpadr_x}}
 			}\n" );
 	}
-	// Rules for BOTTOM Fixed areas
+// Rules for BOTTOM Fixed areas
 	if ( ! weaverx_getopt_expand( 'expand_footer' ) ) {
 		weaverx_f_write( $sout, "@media ( min-width:{$themew}px) {
 			#inject_fixedbottom {margin-left:-{$wrpadl}px;margin-right:-{$wrpadr}px}
@@ -1662,9 +1696,9 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	do_action( 'weaverxplus_css', $sout );
 
-	// need to handle inline code generation a bit differently for the customizer. In normal mode, we put all the generated
-	// CSS in one <style> block. For the customizer, we put the plus and global css in separate named ( id ) style blocks
-	// so the customizer javascript can directly manipulate those in the DOM.
+// need to handle inline code generation a bit differently for the customizer. In normal mode, we put all the generated
+// CSS in one <style> block. For the customizer, we put the plus and global css in separate named ( id ) style blocks
+// so the customizer javascript can directly manipulate those in the DOM.
 
 	if ( is_customize_preview() && $sout == 'echo' ) {    // wrap these guys in ids so can more easily manipulate the DOM
 		// always generate the <style> block so will be there to manipulate
@@ -1704,7 +1738,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 // ************************************ SUPPORT FUNCTIONS **************************
 
 
-function weaverx_css_style( $sout, $name, $style ) {
+function weaverx_css_style( $sout, $name, $style ) {            // notused ?
 	/* output a css rule style ( include {}'s in style ) */
 	if ( $style == '' || ! $name ) {
 		return;
@@ -1823,15 +1857,17 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 
 		foreach ( $sb_horizontal_areas as $id => $tag ) {     // horizontal area widths
 			$id = str_replace( 'alt:', '', $id );
-			$w = weaverx_getopt( $id . '_width_int' );
-			$ltag = str_replace( '.', '.l-', $tag );
-			if ( $w === 0 || $w === '0' )    // detects 0 rather than false
-			{
-				weaverx_f_write( $sout, "{$ltag}{width:auto;}\n" );
-			} // changed to 100%: version 2.0.10
-			elseif ( $w > 0 ) {
-				weaverx_f_write( $sout, "{$ltag}{width:{$w}%;}@media (max-width: 580px) {{$ltag}{width:100%}}\n" ); // .is-phone
-			} // changed to 100%: version 2.0.10
+			if ( ! weaverx_align_wf( $id ) ) {
+				$w = weaverx_getopt( $id . '_width_int' );
+				$ltag = str_replace( '.', '.l-', $tag );
+				if ( $w === 0 || $w === '0' )    // detects 0 rather than false
+				{
+					weaverx_f_write( $sout, "{$ltag}{width:auto;}\n" );
+				} // changed to 100%: version 2.0.10
+				elseif ( $w > 0 ) {
+					weaverx_f_write( $sout, "{$ltag}{width:{$w}%;}@media (max-width: 580px) {{$ltag}{width:100%}}\n" ); // .is-phone
+				} // changed to 100%: version 2.0.10
+			}
 
 		}
 	}
@@ -1885,13 +1921,6 @@ function weaverx_put_bgcolor( $sout, $opt, $tag, $important = false ) {
 
 			$argb = weaverx_rgba2argb( $color );
 			$split = explode( ',', $tag );
-			$ie8 = '';
-			foreach ( $split as $id ) {
-				if ( $ie8 != '' ) {
-					$ie8 .= ',';
-				}
-				$ie8 .= '.ie8 ' . $id;
-			}
 
 			if ( strpos( $opt, 'menubar' ) !== false || ( $opt[0] == 'm' && $opt[1] == '_' ) ) {  // menus don't work with transparent bg in IE 7/8
 				$bgcss = 'background-color:#' . substr( $argb, 3 ) . ';';    // use the non-transparent color provided
@@ -1904,7 +1933,6 @@ function weaverx_put_bgcolor( $sout, $opt, $tag, $important = false ) {
 				$bgcss .= 'filter:progid:DXImageTransform.Microsoft.gradient( startColorstr=' . $argb . ',endColorstr=' . $argb . ' );' . "\n";
 				$bgcss .= 'zoom:1 !important;';
 			}
-			weaverx_f_write( $sout, sprintf( "$ie8 { $bgcss }\n" ) );
 			weaverx_f_write( $sout, sprintf( "$tag {background-color:$color{$imp};}\n" ) );    // the standard value
 		}
 	}
@@ -1913,6 +1941,13 @@ function weaverx_put_bgcolor( $sout, $opt, $tag, $important = false ) {
 }
 
 //--
+
+function weaverx_align_wf( $id ) {
+	// true if area align is full or wide
+	$align = weaverx_getopt( $id . '_align' );
+
+	return $align == 'alignfull' || $align == 'alignwide';
+}
 
 
 function weaverx_rgba2argb( $rgba_in ) {
@@ -1994,7 +2029,7 @@ function weaverx_put_rule_if_checked( $sout, $id, $rule ) {
 }
 
 
-function weaverx_put_rule_if_not_checked( $sout, $id, $rule ) {
+function weaverx_put_rule_if_not_checked( $sout, $id, $rule ) {     // notused ?
 	// put just a rule if not checked
 
 	if ( ! weaverx_getopt_checked( $id ) ) {

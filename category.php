@@ -15,7 +15,8 @@ $sb_layout = weaverx_page_lead( 'category', true );
 weaverx_sb_precontent( 'category' );
 
 if ( have_posts() ) {
-	$msg    = apply_filters( 'weaverx_category_archives', esc_html__( 'Category Archives: %s', 'weaver-xtreme' ) );
+	// translators: %s category title
+	$msg = apply_filters( 'weaverx_category_archives', __( 'Category Archives: %s', 'weaver-xtreme' ) );
 	$titlew = '<span class="category-title-label">' .
 	          sprintf( $msg, '</span><span class="archive-info">' . single_cat_title( '', false ) . '</span>' );
 	?>
@@ -24,8 +25,9 @@ if ( have_posts() ) {
 		<?php
 		weaverx_archive_title( $titlew, 'category' );
 		$category_description = category_description();
+		$cat_d = apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
 		if ( ! empty( $category_description ) ) {
-			echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+			weaverx_echo_sanitized_html( $cat_d );
 		}
 		?>
 	</header>
@@ -45,4 +47,4 @@ if ( have_posts() ) {
 weaverx_sb_postcontent( 'category' );
 
 weaverx_page_tail( 'category', $sb_layout );    // end of page wrap
-?>
+

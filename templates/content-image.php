@@ -30,7 +30,7 @@ if ( weaverx_compact_post() ) {
 		<?php
 		if ( $use_link ) {
 			?>
-			<a href="<?php esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
 			<?php
 		} else {
 			echo $the_image;

@@ -89,7 +89,7 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 			$l_smart = '';
 			$m_smart = '';
 		}
-		$l_class = 'widget-cols-' . $cols;;
+		$l_class = 'widget-cols-' . $cols;
 		$m_class = ' m-widget-cols-2';
 
 		if ( weaverx_getopt( '_' . $area . '_lw_cols_list' ) != '' ) {
@@ -145,9 +145,13 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 		$class .= ' ' . $val;
 	}
 
-	// align
-	$align = weaverx_getopt_default( $area . '_align', 'float-left' );
-	if ( $align != 'float-left' ) {
+	// align - changed for v 4.4 due to new #wrapper alignment option
+	$align = weaverx_getopt_default( $area . '_align' );
+	if ( $area == 'wrapper' ) {
+		if ( ! $align )
+			$align = 'align-center';
+		$class .= ' ' . $align;         // must add align-left...
+	} elseif ( $align && $align != 'float-left' ) {
 		if ( $align == 'center' ) {
 			$align = 'align-center';
 		}
@@ -565,7 +569,7 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 	// weaverx_debug_comment( "weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}" );
 
 	if ( $layout == 'default' ) {
-		$layout = weaverx_getopt( 'layout_default', 'right' );
+		$layout = weaverx_getopt_default( 'layout_default', 'right' );
 	}
 
 	return apply_filters( 'weaverx_sb_layout', $layout, $who );
@@ -689,6 +693,7 @@ if ( ! function_exists( 'weaverx_sb_precontent' ) ) {
 				case '404':
 				case 'attachment':
 				case 'image':
+				case 'iframe':
 				default:
 					break;
 			}
@@ -723,11 +728,11 @@ function weaverx_sb_postcontent( $who, $hide_sitewide = false ) {
 			case 'category':
 			case 'tag':
 			case 'search':
-				break;
 
+			case '404':
 			case 'attachment':
 			case 'image':
-			case '404':
+			case 'iframe':
 			default:
 				break;
 		}

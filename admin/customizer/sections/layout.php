@@ -5,425 +5,39 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 	 * Define the sections and settings for the Layout panel
 	 */
 	function weaverx_customizer_define_layout_sections() {
-		$panel           = 'weaverx_layout';
+		$panel = 'weaverx_layout';
 		$layout_sections = array();
-		$thumbs          = weaverx_relative_url( '/admin/customizer/sections/images/' );
+		$thumbs = weaverx_relative_url( '/admin-core/customizer/sections/images/' );
+
+
+		/* ==================================== Core Site Layout and Styling (obsolete) ============================== */
 
 		$layout_sections['layout-core'] = array(
 			'panel' => $panel,
 			'title' => esc_html__( 'Core Site Layout and Styling', 'weaver-xtreme' ),
 
-			'description' => weaverx_filter_text( __( 'This section allows you setup the core layout and styling of your site. You can set the main site width, set the global text and background colors, and pick the default typography.</p> Content is responsively displayed.', 'weaver-xtreme' ) ),
+			'description' => weaverx_filter_text( WEAVERX_OBSOLETE . __( '<p><strong>Due to user feedback, this section has been revised.</strong></p><p>You can now set the main site width, the global text and background colors, and pick the site typography using the logical width, color, and typography menu items. This section will be removed in future versions of Weaver Xtreme.</p> ', 'weaver-xtreme' ) ),
 
 
 			'options' => array(
-				'fullwidth-expand-swide' => weaverx_cz_group_title( esc_html__( 'Site Width', 'weaver-xtreme' ),
-					esc_html__( 'Maximum width of your site on a desktop browser. For boxed and full width layout, this is the width of all content. For stretched layout, this is the width of the container area.', 'weaver-xtreme' ) ),
+				'layout-core-colors' => weaverx_cz_group_title( esc_html__( 'Overall Site Layout Colors', 'weaver-xtreme' ), esc_html__( 'Colors now found in the Colors menu.', 'weaver-xtreme' ) ),
 
-				'theme_width_int' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-						'default'           => WEAVERX_THEME_WIDTH,
-					),
-
-					'control' => array(
-						'control_type' => 'WeaverX_Range_Control',
-						'label'        => __( 'Theme Width (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description'  => __( "Note: Mobile devices adjust width responsively.", 'weaver-xtreme' ),
-						'type'         => 'range',
-						'input_attrs'  => array(
-							'min'  => 770,
-							'max'  => 3200,
-							'step' => 10,
-						),
-					),
-				),
-
-
-				'layout-core-colors' => weaverx_cz_group_title( esc_html__( 'Overall Site Layout Colors', 'weaver-xtreme' ) ),
-
-				'body_bgcolor' => weaverx_cz_coloropt( 'body_bgcolor',
-					esc_html__( 'Site Background Color', 'weaver-xtreme' ),
-					esc_html__( 'Background color that wraps entire page.', 'weaver-xtreme' ) ),
-
-				'header_bgcolor' => weaverx_cz_coloropt( 'header_bgcolor',
-					esc_html__( 'Header Area BG Color', 'weaver-xtreme' ),
-					esc_html__( 'The Header BG Color is used for full width BG color on header.', 'weaver-xtreme' ) ),
-
-				'footer_bgcolor' => weaverx_cz_coloropt( 'header_bgcolor',
-					esc_html__( 'Footer Area BG Color', 'weaver-xtreme' ),
-					esc_html__( 'The Footer Area BG Color is used for full width BG color on header.', 'weaver-xtreme' ) ),
-
-				'wrapper_color' => weaverx_cz_coloropt( 'wrapper_color',
-					esc_html__( 'Wrapper Text Color', 'weaver-xtreme' ),
-					weaverx_filter_text( __( '<strong>Global Text Color</strong> - You can override colors for individual areas and items on the Colors menu.', 'weaver-xtreme' ) ) ),
-
-
-				'layout-core-typography' => weaverx_cz_group_title( esc_html__( 'Overall Site Layout Typography', 'weaver-xtreme' ) ),
+				'layout-core-typography' => weaverx_cz_group_title( esc_html__( 'Overall Site Layout Typography', 'weaver-xtreme' ), esc_html__( 'Global Typography now found in the Typography menu.', 'weaver-xtreme' ) ),
 			),
 		); // end 'layout-core'
 
-		$new_opts                                  = weaverx_cz_add_fonts( 'wrapper', esc_html__( 'Site Wrapper', 'weaver-xtreme' ),
-			weaverx_filter_text( __( '<span style="font-size:150%;font-weight:bold;color:red;">Default typography for site.</span> Set font attributes for the Wrapper that will apply to the entire site. To override other areas, set typography for individual areas and items on other Typography menu panels. (The inherited default Font Family is Open Sans.)', 'weaver-xtreme' ) ), 'postMessage' );
-		$layout_sections['layout-core']['options'] = array_merge( $layout_sections['layout-core']['options'], $new_opts );
 
-		$new_opts                                  = array(
-
-			'layout-core-style' => weaverx_cz_group_title( esc_html__( 'Other Overall Site Layout Styling', 'weaver-xtreme' ) ),
-
-			'container_border' => array(
-				'setting' => array(
-					'sanitize_callback' => 'weaverx_cz_sanitize_int',
-					'transport'         => 'postMessage',
-				),
-				'control' => array(
-					'label' => __( 'Add border around Container', 'weaver-xtreme' ),
-					'type'  => 'checkbox',
-				),
-			),
-
-
-		); // end new 'options'
-		$layout_sections['layout-core']['options'] = array_merge( $layout_sections['layout-core']['options'], $new_opts );
-
+		/* =========================================== Layout: Full Width Options ======================================== */
 
 		$layout_sections['layout-fullwidth'] = array(
 			'panel'       => $panel,
 			'title'       => esc_html__( 'Full Width Options', 'weaver-xtreme' ),
-			'description' => sprintf( weaverx_filter_text( __( '<p>The <em>One-Step Site Layout</em> option allows you easily select full width sites. You can also try adjusting the width of the Header, Container, Content, and Footer areas on the <em>Spacing, Width, Alignment</em> menu, combined with <em>Extend BG Attributes</em>, to create interesting full width sites. <p> <span style="color:red;">NOTE: Stretch, Extend BG, and Full-width BG Color options <em>DO NOT MIX</em> for various areas.</span></p>', 'weaver-xtreme' ) ),
-				'<img src="' . esc_url( $thumbs . 'Standard-Width-thumb.jpg' ) . '" alt="standard width" />'
-			),
-
-			'options' => array(
-				'layout-core-width' => weaverx_cz_group_title( esc_html__( 'Overall Site Width Layout', 'weaver-xtreme' ) ),
-
-				'site_layout' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
-					esc_html__( 'One-Step Site Layout', 'weaver-xtreme' ),
-					weaverx_filter_text( __( 'Easiest way to set overall site width layout. Settings other than Traditional or blank <strong>automatically</strong> set and clear other Extend BG and Stretch Width Options. Use Custom to enable manual Custom Full Width Options. You can also use <em>Full</em> and <em>Wide Align</em> options for individual areas to enhance these one-step settings.', 'weaver-xtreme' ) ),
-					'weaverx_cz_choices_site_layout', 'none', 'refresh'
-				),
-
-				'layout-core-trad=width' => weaverx_cz_group_title( esc_html__( 'Other Site Width Layouts', 'weaver-xtreme' ) ),
-
-				'wrapper_fullwidth' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => __( 'Stretch Entire Site Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Display site stretched to full width. This option is similar to the Stretched One-Step Site Layout option but makes content as well as the footer and header stretched. This option overrides the <em>Site Width</em> option.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				/* ------------------------ FULL WIDTH HEADER ----------------------- */
-
-				'fullwidth-expand-header' => weaverx_cz_group_title( esc_html__( 'Full Width Site Header Area', 'weaver-xtreme' ),
-					esc_html__( 'The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.', 'weaver-xtreme' ),
-					esc_html__( 'Extend BG options extend just the BG color to full width. You need a contrasting BG color to see this effect work!', 'weaver-xtreme' ) ),
-
-
-				'header_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Header Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-				'expand_header' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => __( 'Header Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Checking this option will automatically include the other Header Area Expand options as well.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-			)                // end layout-fullwidth ['options']
-		);                    // end ['layout-fullwidth']
-
-
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
-			$level                                          = array(
-
-				'header_extend_bgcolor' => array(
-					'setting' => array(
-						'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-						'default'           => weaverx_cz_getopt( 'header_extend_bgcolor' ),
-						'transport'         => 'refresh' // can't do the #container:before required
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-						'label'        => esc_html__( 'Header Full-width BG Color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Extend this BG color to full theme width. You can use only one of the "Attributes" vs. "Color" option.', 'weaver-xtreme' ),
-					),
-				),
-
-
-				'header_sb_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Header Widget Area Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-				'header_html_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Header HTML Area Expand BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-
-			);
-			$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $level );
-
-		}    // int+
-
-
-		/* ------------------------ FULL WIDTH MENUS ----------------------- */
-		$levelall                                       = array(
-
-			'expand_header-image' => array(
-				'setting' => array(),
-				'control' => array(
-					'label'       => __( 'Header Image Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __( 'Also consider using the <em>Spacing, Widths, Alignment -> Header Area -> Move Title/Tagline over Image</em> option to create an attractive header.', 'weaver-xtreme' ),
-					'type'        => 'checkbox',
-				),
-			),
-
-			'fullwidth-expand-menusm' => weaverx_cz_group_title( esc_html__( 'Full Width Menus', 'weaver-xtreme' ),
-				esc_html__( 'Expand the primary and secondary menus to full width.', 'weaver-xtreme' ) ),
-
-
-			'm_primary_extend_width' => array(
-				'setting' => array(),
-				'control' => array(
-					'label' => __( 'Primary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
-			'expand_m_primary'       => array(
-				'setting' => array(),
-				'control' => array(
-					'label' => __( 'Primary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
-
-
+			'description' => __( 'In previous versions of Weaver Xtreme, this menu supported several options to create full width sites. These options are now mostly obsolete, but will be retained for legacy sites.' , 'weaver-xtreme'	),
+			'options' => weaverx_layout_fullwidth_opts(),
 		);
-		$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $levelall );
-
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
-			$level                                          = array(
-				'm_primary_extend_bgcolor' => array(
-					'setting' => array(
-						'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-						'default'           => weaverx_cz_getopt( 'm_primary_extend_bgcolor' ),
-						'transport'         => 'refresh' // can't do the #container:before required
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-						'label'        => esc_html__( 'Primary Menu Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					),
-				),
 
 
-				'm_secondary_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Secondary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-				'expand_m_secondary'       => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Secondary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-				'm_secondary_extend_bgcolor' => array(
-					'setting' => array(
-						'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-						'default'           => weaverx_cz_getopt( 'm_secondary_extend_bgcolor' ),
-						'transport'         => 'refresh' // can't do the #container:before required
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-						'label'        => esc_html__( 'Secondary Menu Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					),
-				),
-			);
-			$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $level );
-		}
-
-
-		/* ------------------------ FULL WIDTH CONTENT ----------------------- */
-		$levelall                                       = array(
-			'fullwidth-expand-content' => weaverx_cz_group_title( esc_html__( 'Full Width Content Area', 'weaver-xtreme' ),
-				esc_html__( 'The Content Area contains page content, as well as posts.', 'weaver-xtreme' ) ),
-
-
-			'container_extend_width' => array(
-				'setting' => array(),
-				'control' => array(
-					'label' => __( 'Container Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
-			'expand_container'       => array(
-				'setting' => array(),
-				'control' => array(
-					'label'       => __( 'Container Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __( 'The container wraps the Info Bar, the content, and widget areas.', 'weaver-xtreme' ),
-					'type'        => 'checkbox',
-				),
-			),
-		);
-		$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $levelall );
-
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
-			$level                                          = array(
-				'container_extend_bgcolor' => array(
-					'setting' => array(
-						'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-						'default'           => weaverx_cz_getopt( 'container_extend_bgcolor' ),
-						'transport'         => 'refresh' // can't do the #container:before required
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-						'label'        => esc_html__( 'Container Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					),
-				),
-
-
-				'infobar_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => __( 'Info Bar Extend BG', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'The Info Bar contains the breadcrumbs and page links.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'expand_infobar' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Info Bar Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-
-				'post_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => __( 'Posts Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'This option most useful with FI as BG images', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-				'post_expand'       => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Posts Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $level );
-		}
-
-
-		/* ------------------------ FULL WIDTH FOOTER ----------------------- */
-//$more1 =[
-		$levelall                                       = array(
-			'fullwidth-expand-footer' => weaverx_cz_group_title( esc_html__( 'Full Width Footer Area', 'weaver-xtreme' ),
-				esc_html__( 'The Footer Area contains the Footer Widget Area, the Footer HTML Area, the copyright line.', 'weaver-xtreme' ) ),
-
-			'footer_extend_width' => array(
-				'setting' => array(),
-				'control' => array(
-					'label' => __( 'Extend Footer BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
-			'expand_footer'       => array(
-				'setting' => array(),
-				'control' => array(
-					'label'       => __( 'Footer Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __( 'Checking this option will automatically include the other Footer Area Stretch options as well.', 'weaver-xtreme' ),
-					'type'        => 'checkbox',
-				),
-			),
-		);
-		$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $levelall );
-
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
-			$level                                          = array(
-				'footer_extend_bgcolor' => array(
-					'setting' => array(
-						'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-						'default'           => weaverx_cz_getopt( 'footer_extend_bgcolor' ),
-						'transport'         => 'refresh' // can't do the #container:before required
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-						'label'        => esc_html__( 'Footer Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Extend this BG color to full theme width on Desktop View.', 'weaver-xtreme' ),
-					),
-				),
-
-
-				'footer_sb_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Extend Footer Widget Area BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-				'expand_footer_sb'       => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Footer Widget Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-
-						'type' => 'checkbox',
-					),
-				),
-
-
-				'footer_html_extend_width' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Extend Footer HTML Area BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-				'expand_footer_html'       => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Footer HTML Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-				'expand_site-ig-wrap' => array(
-					'setting' => array(),
-					'control' => array(
-						'label' => __( 'Footer Copyright Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-fullwidth']['options'] = array_merge( $layout_sections['layout-fullwidth']['options'], $level );
-		}
-
+		/* =========================================== Layout: Header Area ======================================== */
 
 		/**
 		 * Site Header
@@ -431,234 +45,22 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 		$layout_sections['layout-header'] = array(
 			'panel'   => $panel,
 			'title'   => esc_html__( 'Header Area', 'weaver-xtreme' ),
-			'options' => array(
-
-				'layout-heading-wheader' => weaverx_cz_group_title( esc_html__( 'Header Widget Area', 'weaver-xtreme' ) ),
-
-				'header_sb_cols_int' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-						'default'           => 1,
-					),
-					'control' => array(
-						'control_type' => 'WeaverX_Range_Control',
-						'label'        => __( 'Header Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'         => 'range',
-						'input_attrs'  => array(
-							'min'  => 1,
-							'max'  => 8,
-							'step' => 1,
-						),
-					),
-				),
-			),
+			'options' => weaverx_layout_headerarea_opts(),
 		);
 
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
-			$level                                       = array(
-				'header_sb_fixedtop' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => __( 'Fixed-Top Header Widget Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Fix Header Widget are to top of page. If primary/secondary menus also fixed-top, header widget area will always be after secondary and before primary.',
-							'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-header']['options'] = array_merge( $layout_sections['layout-header']['options'], $level );
-		}
 
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                       = array(
-				'header_sb_position' => array(
-					'setting' => array(
-						'transport' => 'refresh',
-						'default'   => 'top',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_SELECT_CONTROL,
-						'label'        => esc_html__( 'Header Widget Area Position', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Change where Header Widget Area is displayed within the Header Area. You can move it to one of seven positions in the Header.', 'weaver-xtreme' ),
-						'type'         => 'select',
-						'choices'      => array(
-							'top'           => esc_html__( 'Top of Header', 'weaver-xtreme'),
-							'before_header' => esc_html__( 'Before Header Image', 'weaver-xtreme'),
-							'after_header'  => esc_html__( 'After Header Image', 'weaver-xtreme'),
-							'after_html'    => esc_html__( 'After HTML Block', 'weaver-xtreme'),
-							'after_menu'    => esc_html__( 'After Lower Menu', 'weaver-xtreme'),
-							'pre_header'    => esc_html__( 'Pre-#header &lt;div&gt;', 'weaver-xtreme'),
-							'post_header'   => esc_html__( 'Post-#header &lt;div&gt;', 'weaver-xtreme'),
-
-						),
-					),
-				),
-
-				'layout-header-custom-widths' => weaverx_cz_heading( esc_html__( 'Header Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					esc_html__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) ),
-
-				'_header_sb_lw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Header Desktop Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-						'input_attrs'  => array(
-							'placeholder' => esc_html__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
-						),
-					),
-				),
-				'_header_sb_mw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Header Small Tablet Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-					),
-				),
-				'_header_sb_sw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Header Phone Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-					),
-				),
+		/* =========================================== Layout: Menus ======================================== */
 
 
-				'header_sb_no_widget_margins' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => __( 'Header No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Do not use "smart margins" between  multi-column widgets on rows.',
-							'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'header_sb_eq_widgets' => array(
-					'setting' => array(),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Header Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Make widgets equal height rows if &gt; 1 column.',
-							'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-header']['options'] = array_merge( $layout_sections['layout-header']['options'], $level );
-
-		}
-
-		/**
-		 * Main Menu
-		 */
 		$layout_sections['layout-menus'] = array(
 			'panel'       => $panel,
 			'title'       => esc_html__( 'Menus', 'weaver-xtreme' ),
 			'description' => esc_html__( 'Set layout for Menus. Standard and Full Interface Levels have options for the Secondary Menu.', 'weaver-xtreme' ),
-			'options'     => array(
-				'layout-primary-heading' => weaverx_cz_group_title( esc_html__( 'Layout For Primary Menu', 'weaver-xtreme' ) ),
-
-
-				'm_primary_fixedtop' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
-					esc_html__( 'Fixed-Top Primary Menu', 'weaver-xtreme' ),
-					esc_html__( 'Fix the Primary Menu to top of page.  Use the Expand/Extend BG Attributes or Align to make a full width menu.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_fixed_menu', 'none', 'refresh'
-				),
-
-				'm_primary_move' => array(
-					'setting' => array(
-						'transport' => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Move Primary Menu to Top', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Move Primary Menu at Top of Header Area. This is not the same as a Fixed-Top Menu (Default: Bottom)', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'm_primary_site_title_left' => array(
-					'setting' => array(
-						'transport' => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Add Site Title to Left of Primary Menu', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Adds the Site Title to the left end of the primary memu in larger font size.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-			),
+			'options'     => weaverx_layout_menus_opts(),
 		);
 
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
 
-			$level                                      = array(
-				'layout-secondary-heading' => weaverx_cz_group_title( esc_html__( 'Layout For Secondary', 'weaver-xtreme' ) ),
-
-				'm_secondary_fixedtop' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
-					esc_html__( 'Fixed-Top Secondary Menu', 'weaver-xtreme' ),
-					esc_html__( 'Fix the Secondary Menu to top of page.  Use the Expand/Extend BG Attributes or Align to make a full width menu.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_fixed_menu', 'none', 'refresh'
-				),
-
-				'm_secondary_move' => array(
-					'setting' => array(
-						'transport' => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Move Secondary Menu to Bottom', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Move Secondary Menu at Bottom of Header Area (Default: Top)', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-
-				'layout-allmenus-heading' => weaverx_cz_group_title( esc_html__( 'Layout For All Menus', 'weaver-xtreme' ),
-					esc_html__( 'These options that apply to all menus.', 'weaver-xtreme' ) ),
-
-				'use_smartmenus' => array(
-					'setting' => array(
-						'transport' => 'refresh',
-					),
-					'control' => array(
-						// 'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,		// changed to free version in 4.0
-						'label'       => __( 'Use SmartMenus', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,    // . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, and transition effects. This option is recommended. There are additional <em>Smart Menu</em> options available on the <em>Appearance &rarr; +Xtreme Plus</em> menu.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-menus']['options'] = array_merge( $layout_sections['layout-menus']['options'], $level );
-		}
-
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-
-			$level                                      = array(
-
-				'mobile_alt_switch' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 767 ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
-						'label'        => esc_html__( 'Menu Mobile/Desktop Switch Point (px)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => weaverx_filter_text( __( '<em>SmartMenus Only:</em> Set when menu bars switch from desktop to mobile. (Default: 767px. Hint: use 768 to force mobile menu on iPad portrait.)', 'weaver-xtreme' ) ),
-						'type'         => 'range',
-						'input_attrs'  => array(
-							'min'  => 300,
-							'max'  => 1200,
-							'step' => 1,
-						),
-					),
-				),
-			);
-			$layout_sections['layout-menus']['options'] = array_merge( $layout_sections['layout-menus']['options'], $level );
-		}
-
+		/* ================================== Layout: Content ============================ */
 
 		/**
 		 * Content
@@ -667,32 +69,11 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'panel'       => $panel,
 			'title'       => esc_html__( 'Content', 'weaver-xtreme' ),
 			'description' => esc_html__( 'Layout for general page and post content.', 'weaver-xtreme' ),
-			'options'     => array(
-				'page_cols' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
-					esc_html__( 'Content Columns', 'weaver-xtreme' ),
-					esc_html__( 'Automatically split all page content into columns. You can also use the Per Page option. This option does not apply to posts.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_columns', '1', 'refresh'
-				),
-			),
+			'options'     => weaverx_layout_content_opts(),
 		);
 
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                        = array(
-				'hyphenate' => array(
-					'setting' => array(
-						'transport' => 'refresh',
-					),
-					'control' => array(
 
-						'label'       => __( 'Auto Hyphenate Content', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Allow browsers to automatically hyphenate text for appearance.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-			);
-			$layout_sections['layout-content']['options'] = array_merge( $layout_sections['layout-content']['options'], $level );
-		}
+		/* ================================== Layout: Post Specific ============================ */
 
 		/**
 		 * Post Specific
@@ -701,256 +82,10 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'panel'       => $panel,
 			'title'       => esc_html__( 'Post Specific', 'weaver-xtreme' ),
 			'description' => esc_html__( 'Post Specific layout - override Content layout.', 'weaver-xtreme' ),
-			'options'     => array(
-
-				'layout-post-excerpt' => weaverx_cz_group_title( esc_html__( 'Excerpts / Full Posts', 'weaver-xtreme' ),
-					esc_html__( 'How to display posts in Blog and Archive views.', 'weaver-xtreme' ) ),
-
-				'excerpt_length' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-						'default'           => 40,
-					),
-					'control' => array(
-						'control_type' => 'WeaverX_Range_Control',
-						'label'        => __( 'Excerpt length', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Change post excerpt length.', 'weaver-xtreme' ),
-						'type'         => 'range',
-						'input_attrs'  => array(
-							'min'  => 2,
-							'max'  => 100,
-							'step' => 1,
-						),
-					),
-				),
-
-				'fullpost_blog' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Show Full Blog Posts', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Will display full blog post instead of excerpts on <em>blog pages</em>. Does not override manually added &lt;--more--> breaks.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'fullpost_archive' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label' => __( 'Full Post for Archives', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-				'fullpost_search'  => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label' => __( 'Full Post for Searches', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'  => 'checkbox',
-					),
-				),
-
-				'layout-post-cols' => weaverx_cz_group_title( esc_html__( 'Columns', 'weaver-xtreme' ),
-					esc_html__( 'Posts in columns.', 'weaver-xtreme' ) ),
-
-				'post_cols' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
-					esc_html__( 'Post Content Columns', 'weaver-xtreme' ),
-					weaverx_filter_text( __( 'Split all post content into columns for both blog and single page views. <em>This applies to individual post content only.</em> Uses CSS for this layout. This is not the same as "Columns of Posts".', 'weaver-xtreme' ) ),
-					'weaverx_cz_choices_columns', '1', 'refresh'
-				),
-
-				'blog_cols' => weaverx_cz_select(
-					esc_html__( 'Columns of Posts', 'weaver-xtreme' ),
-					weaverx_filter_text( __( 'Display posts on blog page with this many columns. <em>Hint:</em> Adjust "Blog pages show at most n posts" on Settings:Reading to be a multiple of columns.', 'weaver-xtreme' ) ),
-					'weaverx_cz_choices_post_columns', '1', 'refresh'
-				),
-			),
+			'options'     => weaverx_layout_postspecific_opts(),
 		);
 
-		if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
-			$level                                              = array(
-
-				'masonry_cols' => weaverx_cz_select(
-					esc_html__( 'Use Masonry for Posts', 'weaver-xtreme' ),
-					weaverx_filter_text( __( 'Use the <em>Masonry</em> blog layout option to show dynamically packed posts on blog and archive-like pages. Overrides "Columns of Posts" setting. <em>Not compatible with full width FI BG images.</em>', 'weaver-xtreme' ) ),
-					'weaverx_cz_choices_masonry_columns', '0', 'refresh'
-				),
-
-
-				'archive_cols' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Use Columns on Archive Pages', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Display posts on archive-like pages using columns. (Archive, Author, Category, Tag)', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'blog_first_one' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'First Post One Column', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Display the first post in one column.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'blog_sticky_one' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Sticky Posts One Column', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Display opening Sticky Posts in one column. If First Post One Column also checked, then first non-sticky post will also be one column.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-post-specific']['options'] = array_merge( $layout_sections['layout-post-specific']['options'], $level );
-		}
-
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                              = array(
-
-				'compact_post_formats' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Compact "Post Format" Posts', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( 'Use compact layout for <em>Post Format</em> posts ( Image, Gallery, Video, etc. ). Useful for photo blogs and multi-column layouts. Looks great with <em>Masonry</em>.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'layout-post-nav' => weaverx_cz_group_title( esc_html__( 'Post Navigation', 'weaver-xtreme' ),
-					esc_html__( 'Navigation for moving between Posts.', 'weaver-xtreme' ) ),
-
-				'nav_style' => weaverx_cz_select(
-					esc_html__( 'Blog Navigation Style', 'weaver-xtreme' ),
-					esc_html__( 'Style of navigation links on blog pages: "Older/Newer posts", "Previous/Next Post", or by page numbers.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_nav_style', 'old_new', 'refresh'
-				),
-
-
-				'nav_hide_above' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Hide Top Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Hide the blog navigation links at the top.', 'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-				'nav_hide_below' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Hide Bottom Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Hide the blog navigation links at the bottom.', 'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-				'nav_show_first' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Show Top Nav on First Page', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Show navigation at top even on the first page.', 'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-
-				'single_nav_style' => weaverx_cz_select(
-					esc_html__( 'Single Page Navigation Style', 'weaver-xtreme' ),
-					esc_html__( 'Style of navigation links on post Single pages: Previous/Next, by title, or none.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_single_nav_style', 'title', 'refresh'
-				),
-
-				'single_nav_link_cats'  => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Nav Links to Same Categories', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Single Page navigation links point to posts with same categories.', 'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-				'single_nav_hide_above' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Hide Top Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Hide the single page navigation links at the top.', 'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-				'single_nav_hide_below' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => __( 'Hide Bottom Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => __( 'Hide the single page navigation links at the bottom.', 'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-
-				'layout-post-line3' => array(
-					'control' => array(
-						'control_type' => 'WeaverX_Misc_Control',
-						'type'         => 'line',
-					),
-				),
-
-				'reset_content_opts' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-					),
-					'control' => array(
-						'label'       => __( 'Clear Major Content Options', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => __( '<em>ADVANCED OPTION!</em> Clear wrapping Content Area bg, borders, padding, and top/bottom margins for views with posts. Allows more flexible post styling. Most people will not need this.', 'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-post-specific']['options'] = array_merge( $layout_sections['layout-post-specific']['options'], $level );
-		}
-
+		/* ================================== Layout: Sidebars ============================ */
 
 		/**
 		 * Sidebars
@@ -959,448 +94,10 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'panel'       => $panel,
 			'title'       => esc_html__( 'Sidebars & Widget Areas', 'weaver-xtreme' ),
 			'description' => esc_html__( 'Main Sidebars and Widget areas. Header and Footer areas options under Header and Footer panels. Note: General Sidebar Layout for different page types is shown first. Layout options for specific Widget Areas ( Primary, Secondary, Top, Bottom ) are shown after that, so scroll down!', 'weaver-xtreme' ),
-			'options'     => array(
-				'layout-primary-all-heading' => weaverx_cz_group_title( esc_html__( 'Sidebar Layout for Page Types', 'weaver-xtreme' ),
-					esc_html__( 'Sidebar Layout for each type of page ( "stack top" used for mobile view ).', 'weaver-xtreme' ) ),
-
-				'layout_default' => weaverx_cz_select(
-					esc_html__( 'Blog, Post, Page Default', 'weaver-xtreme' ),
-					esc_html__( 'Select the default theme layout for blog, single post, attachments, and pages.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout', 'right', 'refresh'
-				),
-
-
-				'layout_default_archive' => weaverx_cz_select(
-					esc_html__( 'Archive-like Default', 'weaver-xtreme' ),
-					esc_html__( 'Select the default theme layout for all other pages - archives, search, etc.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout', 'right', 'refresh'
-				),
-
-				'layout_page' => weaverx_cz_select(
-					esc_html__( 'Page', 'weaver-xtreme' ),
-					esc_html__( 'Layout for normal Pages on your site.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_blog' => weaverx_cz_select(
-					esc_html__( 'Blog', 'weaver-xtreme' ),
-					esc_html__( 'Layout for main blog page. Includes "Page with Posts" Page templates.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_single' => weaverx_cz_select(
-					esc_html__( 'Post Single Page', 'weaver-xtreme' ),
-					esc_html__( 'Layout for Posts displayed as a single page.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_full_note1' => weaverx_cz_html( '',
-					'<small>' . weaverx_filter_text( __( 'The <em>Full</em> level includes options for other archive-like pages. (needs Xtreme Plus)', 'weaver-xtreme' ) ) . '</small' ),
-			),
-
+			'options'     => weaverx_layout_sidebars_opts(),
 		);
 
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-
-			$level                                         = array(
-
-				'layout_attachments' => weaverx_cz_select_plus(
-					esc_html__( 'Attachments', 'weaver-xtreme' ),
-					esc_html__( 'Layout for attachment pages such as images.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_archive' => weaverx_cz_select_plus(
-					esc_html__( 'Date Archive', 'weaver-xtreme' ),
-					esc_html__( 'Layout for archive by date pages.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_category' => weaverx_cz_select_plus(
-					esc_html__( 'Category Archive', 'weaver-xtreme' ),
-					esc_html__( 'Layout for category archive pages.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_tag' => weaverx_cz_select_plus(
-					esc_html__( 'Tags Archive', 'weaver-xtreme' ),
-					esc_html__( 'Layout for tag archive pages.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_author' => weaverx_cz_select_plus(
-					esc_html__( 'Author Archive', 'weaver-xtreme' ),
-					esc_html__( 'Layout for author archive pages.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-
-				'layout_search' => weaverx_cz_select_plus(
-					esc_html__( 'Search Results, 404', 'weaver-xtreme' ),
-					esc_html__( 'Layout for search results and 404 pages.', 'weaver-xtreme' ),
-					'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
-				),
-			);
-			$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-		}
-
-		$level                                         = array(
-
-
-			'layout-primary-widget-heading' => weaverx_cz_group_title( esc_html__( 'Primary Widget Area', 'weaver-xtreme' ) ),
-
-			'primary_cols_int' => array(
-				'setting' => array(
-					'sanitize_callback' => 'weaverx_cz_sanitize_int',
-					'transport'         => 'refresh',
-					'default'           => 1,
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'         => 'range',
-					'input_attrs'  => array(
-						'min'  => 1,
-						'max'  => 8,
-						'step' => 1,
-					),
-				),
-			),
-		);
-		$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                         = array(
-
-				'layout-primary-custom-widths' => weaverx_cz_heading( esc_html__( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					esc_html__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) ),
-
-				'_primary_lw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Desktop Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-						'input_attrs'  => array(
-							'placeholder' => esc_html__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
-						),
-					),
-				),
-				'_primary_mw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Small Tablet Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-					),
-				),
-				'_primary_sw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Phone Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-					),
-				),
-
-
-				'primary_no_widget_margins' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => esc_html__( 'No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Do not use "smart margins" between  multi-column widgets on rows.',
-							'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-
-				'primary_eq_widgets' => array(
-					'setting' => array(),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Make widgets equal height rows if &gt; 1 column.',
-							'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-		}
-
-
-		$level                                         = array(                // ALL levels
-
-		                                                                       'layout-secondary-widget-heading' => weaverx_cz_group_title( esc_html__( 'Secondary Widget Area', 'weaver-xtreme' ) ),
-
-		                                                                       'secondary_cols_int' => array(
-			                                                                       'setting' => array(
-				                                                                       'sanitize_callback' => 'weaverx_cz_sanitize_int',
-				                                                                       'transport'         => 'refresh',
-				                                                                       'default'           => 1,
-			                                                                       ),
-			                                                                       'control' => array(
-				                                                                       'control_type' => 'WeaverX_Range_Control',
-				                                                                       'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-				                                                                       'type'         => 'range',
-				                                                                       'input_attrs'  => array(
-					                                                                       'min'  => 1,
-					                                                                       'max'  => 8,
-					                                                                       'step' => 1,
-				                                                                       ),
-			                                                                       ),
-		                                                                       ),
-		);
-		$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-
-
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                         = array(        // full level
-			                                                               'layout-secondary-custom-widths' => weaverx_cz_heading( esc_html__( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-				                                                               esc_html__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) ),
-
-			                                                               '_secondary_lw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Desktop Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-					                                                               'input_attrs'  => array(
-						                                                               'placeholder' => esc_html__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
-					                                                               ),
-				                                                               ),
-			                                                               ),
-			                                                               '_secondary_mw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Small Tablet Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-				                                                               ),
-			                                                               ),
-			                                                               '_secondary_sw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Phone Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-				                                                               ),
-			                                                               ),
-
-
-			                                                               'secondary_no_widget_margins' => array(
-				                                                               'setting' => array(),
-				                                                               'control' => array(
-					                                                               'label'       => esc_html__( 'No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					                                                               'description' => esc_html__( 'Do not use "smart margins" between multi-column widgets on rows.',
-						                                                               'weaver-xtreme' ),
-					                                                               'type'        => 'checkbox',
-				                                                               ),
-			                                                               ),
-
-			                                                               'secondary_eq_widgets' => array(
-				                                                               'setting' => array(),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-					                                                               'label'        => esc_html__( 'Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'Make widgets equal height rows if &gt; 1 column.',
-						                                                               'weaver-xtreme' ),
-					                                                               'type'         => 'checkbox',
-				                                                               ),
-			                                                               ),
-			);
-			$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-		}
-
-
-		$level                                         = array(                // ALL levels
-		                                                                       'layout-top-widget-heading' => weaverx_cz_group_title( esc_html__( 'Top Widget Areas', 'weaver-xtreme' ),
-			                                                                       esc_html__( 'Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) ),
-
-		                                                                       'top_cols_int' => array(
-			                                                                       'setting' => array(
-				                                                                       'sanitize_callback' => 'weaverx_cz_sanitize_int',
-				                                                                       'transport'         => 'refresh',
-				                                                                       'default'           => 1,
-			                                                                       ),
-			                                                                       'control' => array(
-				                                                                       'control_type' => 'WeaverX_Range_Control',
-				                                                                       'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-				                                                                       'type'         => 'range',
-				                                                                       'input_attrs'  => array(
-					                                                                       'min'  => 1,
-					                                                                       'max'  => 8,
-					                                                                       'step' => 1,
-				                                                                       ),
-			                                                                       ),
-		                                                                       ),
-		);
-		$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-
-
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                         = array(        // full level
-
-			                                                               'layout-top-custom-widths' => weaverx_cz_heading( esc_html__( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-				                                                               esc_html__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) ),
-
-			                                                               '_top_lw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Desktop Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-					                                                               'input_attrs'  => array(
-						                                                               'placeholder' => esc_html__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
-					                                                               ),
-				                                                               ),
-			                                                               ),
-			                                                               '_top_mw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Small Tablet Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-				                                                               ),
-			                                                               ),
-			                                                               '_top_sw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Phone Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-				                                                               ),
-			                                                               ),
-
-			                                                               'top_no_widget_margins' => array(
-				                                                               'setting' => array(),
-				                                                               'control' => array(
-					                                                               'label'       => esc_html__( 'No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					                                                               'description' => esc_html__( 'Do not use "smart margins" between multi-column widgets on rows.',
-						                                                               'weaver-xtreme' ),
-					                                                               'type'        => 'checkbox',
-				                                                               ),
-			                                                               ),
-			                                                               'top_eq_widgets'        => array(
-				                                                               'setting' => array(),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-					                                                               'label'        => esc_html__( 'Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'Make widgets equal height rows if &gt; 1 column.',
-						                                                               'weaver-xtreme' ),
-					                                                               'type'         => 'checkbox',
-				                                                               ),
-			                                                               ),
-			);
-			$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-		}
-
-
-		$level                                         = array(            // ALL levels
-
-		                                                                   'layout-bottom-widget-heading' => weaverx_cz_group_title( esc_html__( 'Bottom Widget Areas', 'weaver-xtreme' ),
-			                                                                   esc_html__( 'Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) ),
-
-		                                                                   'bottom_cols_int' => array(
-			                                                                   'setting' => array(
-				                                                                   'sanitize_callback' => 'weaverx_cz_sanitize_int',
-				                                                                   'transport'         => 'refresh',
-				                                                                   'default'           => 1,
-			                                                                   ),
-			                                                                   'control' => array(
-				                                                                   'control_type' => 'WeaverX_Range_Control',
-				                                                                   'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-				                                                                   'type'         => 'range',
-				                                                                   'input_attrs'  => array(
-					                                                                   'min'  => 1,
-					                                                                   'max'  => 8,
-					                                                                   'step' => 1,
-				                                                                   ),
-			                                                                   ),
-		                                                                   ),
-		);
-		$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                         = array(        // FULL
-
-			                                                               'layout-bottom-custom-widths' => weaverx_cz_heading( esc_html__( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-				                                                               esc_html__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) ),
-
-			                                                               '_bottom_lw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Desktop Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-					                                                               'input_attrs'  => array(
-						                                                               'placeholder' => esc_html__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
-					                                                               ),
-				                                                               ),
-			                                                               ),
-			                                                               '_bottom_mw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Small Tablet Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-				                                                               ),
-			                                                               ),
-			                                                               '_bottom_sw_cols_list' => array(
-				                                                               'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-					                                                               'label'        => esc_html__( 'Phone Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-					                                                               'type'         => 'text',
-				                                                               ),
-			                                                               ),
-
-
-			                                                               'bottom_no_widget_margins' => array(
-				                                                               'setting' => array(),
-				                                                               'control' => array(
-					                                                               'label'       => esc_html__( 'No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					                                                               'description' => esc_html__( 'Do not use "smart margins" between multi-column widgets on rows.',
-						                                                               'weaver-xtreme' ),
-					                                                               'type'        => 'checkbox',
-				                                                               ),
-			                                                               ),
-
-			                                                               'bottom_sb_eq_widgets' => array(
-				                                                               'setting' => array(),
-				                                                               'control' => array(
-					                                                               'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-					                                                               'label'        => esc_html__( 'Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					                                                               'description'  => esc_html__( 'Make widgets equal height rows if &gt; 1 column.',
-						                                                               'weaver-xtreme' ),
-					                                                               'type'         => 'checkbox',
-				                                                               ),
-			                                                               ),
-			);
-			$layout_sections['layout-sidebars']['options'] = array_merge( $layout_sections['layout-sidebars']['options'], $level );
-		}
-
-
-		/**
-		 * Widgets
-		 */
-		$layout_sections['layout-widgets'] = array(
-			'panel'   => $panel,
-			'title'   => esc_html__( 'Individual Widgets', 'weaver-xtreme' ),
-			'options' => array(),
-		);
-
+		/* ================================== Layout: Footer ============================ */
 
 		/**
 		 * Footer
@@ -1408,94 +105,989 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 		$layout_sections['layout-footer'] = array(
 			'panel'   => $panel,
 			'title'   => esc_html__( 'Footer Area', 'weaver-xtreme' ),
-			'options' => array(
-
-				'footer_sb_cols_int' => array(
-					'setting' => array(
-						'sanitize_callback' => 'weaverx_cz_sanitize_int',
-						'transport'         => 'refresh',
-						'default'           => 1,
-					),
-					'control' => array(
-						'control_type' => 'WeaverX_Range_Control',
-						'label'        => __( 'Footer Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'type'         => 'range',
-						'input_attrs'  => array(
-							'min'  => 1,
-							'max'  => 8,
-							'step' => 1,
-						),
-					),
-				),
-
-				'layout_full_note3' => weaverx_cz_html( '',
-					'<small>' . weaverx_filter_text( __( 'The <em>Full</em> level includes options for custom column widths (needs Xtreme Plus), and smart margins.', 'weaver-xtreme' ) . '</small' ) ),
-
-			),
+			'options' => weaverx_layout_footer_opts(),
 		);
 
-		if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
-			$level                                       = array(
-				'layout-footer-custom-widths' => weaverx_cz_heading( esc_html__( 'Footer Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-					esc_html__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) ),
-
-				'_footer_sb_lw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Footer Desktop Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-						'input_attrs'  => array(
-							'placeholder' => esc_html__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
-						),
-					),
-				),
-				'_footer_sb_mw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Footer Small Tablet Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-					),
-				),
-				'_footer_sb_sw_cols_list' => array(
-					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_text', 'transport' => 'refresh', 'default' => '' ),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-						'label'        => esc_html__( 'Footer Phone Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
-						'type'         => 'text',
-					),
-				),
-
-				'footer_sb_no_widget_margins' => array(
-					'setting' => array(),
-					'control' => array(
-						'label'       => esc_html__( 'Footer No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Do not use "smart margins" between  multi-column widgets on rows.',
-							'weaver-xtreme' ),
-						'type'        => 'checkbox',
-					),
-				),
-				'footer_sb_eq_widgets'        => array(
-					'setting' => array(),
-					'control' => array(
-						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Footer Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Make widgets equal height rows if &gt; 1 column.',
-							'weaver-xtreme' ),
-						'type'         => 'checkbox',
-					),
-				),
-			);
-			$layout_sections['layout-footer']['options'] = array_merge( $layout_sections['layout-footer']['options'], $level );
-		}
 
 		return $layout_sections;
 
 	}
 endif;
 
+/* ########################################### Options Implementation ####################################### */
 
+/* =========================================== Layout: Full Width Options =================================== */
+
+function weaverx_layout_fullwidth_opts() {
+
+	$opts = array();
+
+	$opts['layout-core-width'] = weaverx_cz_group_title( esc_html__( 'Overall Site Width Layout', 'weaver-xtreme' ) );
+
+	$opts['layout-core-nowobs-opts'] = weaverx_cz_group_title(
+		__( 'Full Width Options Now Obsolete', 'weaver-xtreme' ),
+		__( '<strong style="color:#ff0000; font-size:large">NOTE!</strong> Due to the addition of Full and Wide alignment to WordPress and Weaver Xtreme, the following One Step, Extend, Stretch, and BG Color fill options should be considered obsolete. We do not recommend using these options, but they have been retained for backward compatibility.', 'weaver-xtreme' )
+	);
+
+	$opts['layout-core-nowobs-opts'] = weaverx_cz_group_title(
+		__( 'A Better Way to Create Full and Wide Sites', 'weaver-xtreme' ),
+		__( '<p>The easiest way to create Full or Wide Width sites is to use Align Full or Align Wide on the four major areas: Wrapper, Header, Container, and the Footer. When you select Align Full or Wide on any of these areas, a new Left/Right Padding in percent is available. Adding padding allows you to have well behaved responsive padding on full sized browsers. In addition, there are several Align Wide and Align Full options for the menu bars that look good with the Header.</p><p>The Alignment options are found on the <em>Spacing, Widths, Alignment</em> menu. It is also advisable to set a the <em>Site Background Color</em> on the <em>Colors</em> menu, usually to a shade of white.</p><p>You can see the legacy Full Width options by setting the Weaver Interface Level to <em>Standard</em> or above.</p>', 'weaver-xtreme' )
+	);
+
+	$opts['site_layout'] = weaverx_cz_select(    // must be refresh because column class applied to specific page id
+		__( 'One-Step Site Layout', 'weaver-xtreme' ),
+		__( '<p>Formerly, the easiest way to set overall site width layout was to use this option. The preferred way to create full and wide width sites is by using <em>Full</em> and <em>Wide Align</em> options for individual areas.</p><p>One-Step settings other than Traditional or blank <strong>automatically</strong> set and clear other Extend BG and Stretch Width Options. Use Custom to enable manual Custom Full Width Options. </p><p><strong style="color:red;">Important note!</strong> Because this option sets or clears other options, limitations in the Customizer prevent these background changes from displaying. You will need to manually "Publish" this setting, then refresh the customizer to see the full settings.</p>', 'weaver-xtreme' ),
+		'weaverx_cz_choices_site_layout', 'none', 'refresh'
+	);
+
+
+
+	$opts['layout-line-1'] = weaverx_cz_line();
+
+	if ( weaverx_options_level() >= WEAVERX_LEVEL_STANDARD ) {
+
+		$opts['layout-core-trad-width'] = weaverx_cz_group_title( __( 'Other Site Width Layouts', 'weaver-xtreme' ) );
+
+		$opts['wrapper_fullwidth'] = weaverx_cz_checkbox(
+			__( 'Stretch Entire Site Full Width', 'weaver-xtreme' ),
+			__( 'Display site stretched to full width. This option is similar to the Stretched One-Step Site Layout option but makes content as well as the footer and header stretched. This option overrides the <em>Site Width</em> option.', 'weaver-xtreme' )
+		);
+
+		/* ------------------------ FULL WIDTH HEADER ----------------------- */
+
+		$opts['fullwidth-expand-header'] = weaverx_cz_group_title(
+			__( 'Full Width Site Header Area', 'weaver-xtreme' ),
+			__( 'The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.', 'weaver-xtreme' )
+			);
+
+
+		$opts['header_extend_width'] = weaverx_cz_checkbox(
+			__( 'Header Extend BG Attributes', 'weaver-xtreme' ),
+			__( 'Extend BG options extend the area BG color to full width. The content area will be constrained to the Site Width value, while the Header Area BG color will be extended to the full width.', 'weaver-xtreme' )
+		);
+
+		$opts['expand_header'] = weaverx_cz_checkbox(
+			__( 'Header Stretch Area', 'weaver-xtreme' ),
+			__( 'Checking this option will automatically include the other Header Area Expand options as well.', 'weaver-xtreme' ) );
+
+		$opts['header_extend_bgcolor'] = weaverx_cz_color_plus( 'header_extend_bgcolor',
+			__( 'Header Full-width BG Color', 'weaver-xtreme' ),
+			__( 'Extend this BG color to full theme width. You can use only one of the "Attributes" vs. "Color" option.', 'weaver-xtreme' ), 'refresh' );
+
+		$opts['header_sb_extend_width'] = weaverx_cz_checkbox( __( 'Header Widget Area Extend BG Attributes', 'weaver-xtreme' ) );
+
+		$opts['header_html_extend_width'] = weaverx_cz_checkbox( __( 'Header HTML Area Expand BG Attributes', 'weaver-xtreme' ) );
+
+		$opts['expand_header-image'] = weaverx_cz_checkbox( __( 'Header Image Stretch Area', 'weaver-xtreme' ),
+			__( 'Also consider using the <em>Spacing, Widths, Alignment -> Header Area -> Move Title/Tagline over Image</em> option to create an attractive header.', 'weaver-xtreme' ) );
+
+
+		/* ------------------------ FULL WIDTH MENUS ----------------------- */
+
+		$opts['fullwidth-expand-menusm'] = weaverx_cz_group_title( __( 'Full Width Menus', 'weaver-xtreme' ),
+			__( 'Expand the primary and secondary menus to full width.', 'weaver-xtreme' ) );
+
+		$opts['m_primary_extend_width'] = weaverx_cz_checkbox( __( 'Primary Menu Extend BG Attributes', 'weaver-xtreme' ) );
+
+		$opts['expand_m_primary'] = weaverx_cz_checkbox( __( 'Primary Menu Stretch', 'weaver-xtreme' ) );
+
+		$opts['m_primary_extend_bgcolor'] = weaverx_cz_color_plus( 'm_primary_extend_bgcolor',
+			__( 'Primary Menu Full-width BG color', 'weaver-xtreme' ), '', 'refresh' );
+
+
+		$opts['m_secondary_extend_width'] = weaverx_cz_checkbox(
+			__( 'Secondary Menu Extend BG Attributes', 'weaver-xtreme' )
+		);
+		$opts['expand_m_secondary'] = weaverx_cz_checkbox(
+			__( 'Secondary Menu Stretch', 'weaver-xtreme' )
+		);
+
+		$opts['m_secondary_extend_bgcolor'] = weaverx_cz_color_plus( 'm_secondary_extend_bgcolor',
+			__( 'Secondary Menu Full-width BG color', 'weaver-xtreme' ), '', 'refresh' );
+
+		/* ------------------------ FULL WIDTH CONTENT ----------------------- */
+
+		$opts['fullwidth-expand-content'] = weaverx_cz_group_title( __( 'Full Width Content Area', 'weaver-xtreme' ),
+			esc_html__( 'The Content Area contains page content, as well as posts.', 'weaver-xtreme' )
+		);
+
+
+		$opts['container_extend_width'] = weaverx_cz_checkbox(
+			__( 'Container Extend BG Attributes', 'weaver-xtreme' )
+		);
+
+		$opts['expand_container'] = weaverx_cz_checkbox(
+			__( 'Container Stretch Area', 'weaver-xtreme' ),
+			__( 'The container wraps the Info Bar, the content, and widget areas.', 'weaver-xtreme' )
+		);
+
+
+		$opts['container_extend_bgcolor'] = weaverx_cz_color_plus( 'container_extend_bgcolor',
+			__( 'Container Full-width BG color', 'weaver-xtreme' ), '', 'refresh'
+		);
+
+
+		$opts['infobar_extend_width'] = weaverx_cz_checkbox(
+			__( 'Info Bar Extend BG', 'weaver-xtreme' ),
+			__( 'The Info Bar contains the breadcrumbs and page links.', 'weaver-xtreme' )
+		);
+
+		$opts['expand_infobar'] = weaverx_cz_checkbox(
+			__( 'Info Bar Stretch to Full Width', 'weaver-xtreme' )
+		);
+
+
+		$opts['post_extend_width'] = weaverx_cz_checkbox(
+			__( 'Posts Extend BG Attributes', 'weaver-xtreme' ),
+			__( 'This option most useful with FI as BG images', 'weaver-xtreme' )
+		);
+
+		$opts['expand_post'] = weaverx_cz_checkbox(
+			__( 'Posts Stretch to Full Width', 'weaver-xtreme' )
+		);
+
+		/* ------------------------ FULL WIDTH FOOTER ----------------------- */
+
+		$opts['fullwidth-expand-footer'] = weaverx_cz_group_title( __( 'Full Width Footer Area', 'weaver-xtreme' ),
+			__( 'The Footer Area contains the Footer Widget Area, the Footer HTML Area, the copyright line.', 'weaver-xtreme' )
+		);
+
+		$opts['footer_extend_width'] = weaverx_cz_checkbox(
+			__( 'Extend Footer BG Attributes', 'weaver-xtreme' )
+		);
+
+		$opts['expand_footer'] = weaverx_cz_checkbox(
+			__( 'Footer Stretch Area', 'weaver-xtreme' ),
+			__( 'Checking this option will automatically include the other Footer Area Stretch options as well.', 'weaver-xtreme' )
+		);
+
+		$opts['weaverx_cz_color_plus'] = weaverx_cz_color_plus( 'weaverx_cz_color_plus',
+			__( 'Footer Full-width BG color', 'weaver-xtreme' ),
+			__( 'Extend this BG color to full theme width on Desktop View.', 'weaver-xtreme' ),
+			'refresh'
+		);
+
+
+		$opts['footer_sb_extend_width'] = weaverx_cz_checkbox(
+			__( 'Extend Footer Widget Area BG Attributes', 'weaver-xtreme' )
+		);
+
+		$opts['expand_footer_sb'] = weaverx_cz_checkbox(
+			__( 'Footer Widget Area Stretch', 'weaver-xtreme' )
+		);
+
+
+		$opts['footer_html_extend_width'] = weaverx_cz_checkbox(
+			__( 'Extend Footer HTML Area BG Attributes', 'weaver-xtreme' )
+		);
+
+		$opts['expand_footer_html'] = weaverx_cz_checkbox(
+			__( 'Footer HTML Area Stretch', 'weaver-xtreme' )
+		);
+
+		$opts['expand_site-ig-wrap'] = weaverx_cz_checkbox(
+			__( 'Footer Copyright Area Stretch', 'weaver-xtreme' )
+		);
+
+	} else {
+		$opts['layout-core-legacy-width'] = weaverx_cz_group_title(
+			__( 'Other Site Width Layouts', 'weaver-xtreme' ),
+			__( 'You can see legacy stretch, expand, and extend BG color options with the Full options level.', 'weaver-xtreme')
+		);
+	}
+
+
+	return $opts;
+}
+
+/* =========================================== Layout: Header Area ========================================== */
+
+function weaverx_layout_headerarea_opts() {
+	$opts = array();
+
+	$opts['layout-heading-wheader'] = weaverx_cz_group_title( esc_html__( 'Header Widget Area', 'weaver-xtreme' )
+	);
+
+	// weaverx_cz_range( $label, $description, $default, $range, $transport = 'refresh', $plus = '' )
+
+	$opts['header_sb_cols_int'] = weaverx_cz_range(
+		__( 'Header Columns of Widgets', 'weaver-xtreme' ),
+		'',
+		1,
+		array( 'min' => 1, 'max' => 8, 'step' => 1 ),
+		'refresh'
+	);
+
+	if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
+
+		$opts['header_sb_fixedtop'] = weaverx_cz_checkbox(
+			__( 'Fixed-Top Header Widget Area', 'weaver-xtreme' ),
+			__( 'Fix Header Widget are to top of page. If primary/secondary menus also fixed-top, header widget area will always be after secondary and before primary. If you have set the Header to Align Full or Wide, you may want to change the alignment for this item as well.', 'weaver-xtreme' )
+		);
+
+	}
+
+	$opts['header_sb_position'] = weaverx_cz_select_plus(
+		__( 'Header Widget Area Position', 'weaver-xtreme' ),
+		__( 'Change where Header Widget Area is displayed within the Header Area. You can move it to one of seven positions in the Header.', 'weaver-xtreme' ),
+		array(
+			'top'           => __( 'Top of Header', 'weaver-xtreme' ),
+			'before_header' => __( 'Before Header Image', 'weaver-xtreme' ),
+			'after_header'  => __( 'After Header Image', 'weaver-xtreme' ),
+			'after_html'    => __( 'After HTML Block', 'weaver-xtreme' ),
+			'after_menu'    => __( 'After Lower Menu', 'weaver-xtreme' ),
+			'pre_header'    => __( 'Pre-#header &lt;div&gt;', 'weaver-xtreme' ),
+			'post_header'   => __( 'Post-#header &lt;div&gt;', 'weaver-xtreme' ),
+		),
+		'top',
+		'refresh'
+	);
+
+	$opts['layout-header-custom-widths'] = weaverx_cz_heading( __( 'Header Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+		__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) );
+
+	$opts['_header_sb_lw_cols_list'] = weaverx_cz_textarea(
+		__( 'Header Desktop Widget Widths', 'weaver-xtreme' ),
+		__( 'List of widget widths separated by comma. Use semi-colon (;) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
+		'1',
+		__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
+		'refresh',
+		'plus' );
+
+	$opts['_header_sb_mw_cols_list'] = weaverx_cz_textarea(
+		__( 'Header Small Tablet Widget Widths', 'weaver-xtreme' ),
+		__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+		'1',
+		'',
+		'refresh',
+		'plus'
+	);
+
+	$opts['_header_sb_sw_cols_list'] = weaverx_cz_textarea(
+		__( 'Header Phone Widget Widths', 'weaver-xtreme' ),
+		__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+		'1',
+		'',
+		'refresh',
+		'plus'
+	);
+
+	$opts['header_sb_no_widget_margins'] = weaverx_cz_checkbox(
+		__( 'Header No Smart Widget Margins', 'weaver-xtreme' ),
+		__( 'Do not use "smart margins" between  multi-column widgets on rows.',
+			'weaver-xtreme' ) );
+
+	$opts['header_sb_eq_widgets'] = weaverx_cz_checkbox(
+		__( 'Header Equal Height Widget Rows', 'weaver-xtreme' ),
+		__( 'Make widgets equal height rows if &gt; 1 column.',
+			'weaver-xtreme' ),
+		'plus'
+	);
+
+	return $opts;
+}
+
+/* =========================================== Layout: Menus ================================================ */
+
+function weaverx_layout_menus_opts() {
+	$opts = array();
+
+	$opts = array();
+
+	$opts['layout-primary-heading'] = weaverx_cz_group_title( __( 'Layout For Primary Menu', 'weaver-xtreme' ) );
+
+
+	$opts['m_primary_fixedtop'] = weaverx_cz_select(    // must be refresh because column class applied to specific page id
+		__( 'Fixed-Top Primary Menu', 'weaver-xtreme' ),
+		__( 'Fix the Primary Menu to top of page. Use the Menu Align setting to make a full width menu. If you have set the Header to Align Full or Wide, you may want to change the alignment for this item as well.', 'weaver-xtreme' ),
+		array(
+			'none'       => esc_html__( 'Standard Position : Not Fixed', 'weaver-xtreme' ),
+			'fixed-top'  => esc_html__( 'Fixed to Top', 'weaver-xtreme' ),
+			'scroll-fix' => esc_html__( 'Fix to Top on Scroll', 'weaver-xtreme' ),
+		),
+		'none', 'refresh'
+	);
+
+	$opts['m_primary_move'] = weaverx_cz_checkbox(
+		__( 'Move Primary Menu to Top', 'weaver-xtreme' ),
+		__( 'Move Primary Menu at Top of Header Area. This is not the same as a Fixed-Top Menu (Default: Bottom)', 'weaver-xtreme' )
+	);
+
+
+	$opts['m_primary_site_title_left'] = weaverx_cz_checkbox(
+		__( 'Add Site Title to Left of Primary Menu', 'weaver-xtreme' ),
+		__( 'Adds the Site Title to the left end of the primary menu in larger font size.', 'weaver-xtreme' )
+	);
+
+
+	$opts['m_primary_logo_left'] = weaverx_cz_checkbox(
+		__( 'Add Site Logo to Left', 'weaver-xtreme' ),
+		__( 'Add the Site Logo to the primary menu. Add custom CSS for <em>.custom-logo-on-menu</em> to style. (Use Customize : Site Identity to set Site Logo.)', 'weaver-xtreme' ) . weaverx_get_logo_html()
+	);
+
+	$opts['m_primary_logo_height_dec'] = weaverx_cz_range_float(
+		__( 'Logo on Menu Bar Height (em)', 'weaver-xtreme' ),
+		__( 'Set height of Logo on Menu. Will interact with padding. Default 0 uses current line height.', 'weaver-xtreme' ),
+		0,
+		array(
+			'min'  => 0,
+			'max'  => 10,
+			'step' => .1,
+		)
+	);
+
+	$opts['m_primary_logo_home_link'] = weaverx_cz_checkbox(
+		__( 'Logo Links to Home', 'weaver-xtreme' ),
+		__( 'Add a link to home page to logo on menu bar ( must use with defined custom menu ).', 'weaver-xtreme' )
+	);
+
+	$opts['m_primary_search'] = weaverx_cz_checkbox(
+		__( 'Add Search to Right', 'weaver-xtreme' ),
+		__( 'Add slide open search icon to right end of primary menu.', 'weaver-xtreme' )
+	);
+
+	/* add this someday - needs CSS help...
+	$opts['mobile_to_right'] = weaverx_cz_checkbox(
+		__('Move mobile "Hamburger" icon to right side of menu.', 'weaver-xtreme')
+	);
+	*/
+
+
+	// -------- secondary menu ------------
+
+	if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
+
+		$opts['layout-secondary-heading'] = weaverx_cz_group_title( esc_html__( 'Layout For Secondary', 'weaver-xtreme' ) );
+
+		$opts['m_secondary_fixedtop'] = weaverx_cz_select(    // must be refresh because column class applied to specific page id
+			__( 'Fixed-Top Secondary Menu', 'weaver-xtreme' ),
+			__( 'Fix the Secondary Menu to top of page. Use the Menu Align setting to make a full width menu. If you have set the Header to Align Full or Wide, you may want to change the alignment for this item as well.', 'weaver-xtreme' ),
+			array(
+				'none'       => esc_html__( 'Standard Position : Not Fixed', 'weaver-xtreme' ),
+				'fixed-top'  => esc_html__( 'Fixed to Top', 'weaver-xtreme' ),
+				'scroll-fix' => esc_html__( 'Fix to Top on Scroll', 'weaver-xtreme' ),
+			),
+			'none', 'refresh'
+		);
+
+		$opts['m_secondary_move'] = weaverx_cz_checkbox(
+			__( 'Move Secondary Menu to Bottom', 'weaver-xtreme' ),
+			__( 'Move Secondary Menu to Bottom of Header Area (Default: Top)', 'weaver-xtreme' )
+		);
+
+	}
+
+	$opts['layout-switch-heading'] = weaverx_cz_group_title( esc_html__( 'Layout For All Menus', 'weaver-xtreme' ) );
+
+	$opts['mobile_alt_label'] = weaverx_cz_htmlarea( __( 'Mobile Menu "Hamburger" Label', 'weaver-xtreme' ),
+		__( 'Alternative label for the default mobile "Hamburger" icon. HTML allowed, e.g. <code>&lt;span class="genericon genericon-menu">&lt;/span> Menu</code>', 'weaver-xtreme' ),
+		'1',
+		'Any HTML',
+		'refresh' );
+
+	if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
+
+		$opts['mobile_alt_switch'] = weaverx_cz_range(
+			__( 'Menu Mobile/Desktop Switch Point (px)', 'weaver-xtreme' ),
+			weaverx_markdown( __( 'Set width for menu bars to switch from desktop to mobile. (Default: 767px. Hint: use 768 to force mobile menu on iPad portrait.)', 'weaver-xtreme' ) ),
+			767,
+			array(
+				'min'  => 300,
+				'max'  => 1200,
+				'step' => 1,
+			),
+			'refresh',
+			'plus'
+		);
+
+		$opts['use_smartmenus'] = weaverx_cz_checkbox(
+			__( 'Use SmartMenus', 'weaver-xtreme' ),
+			__( 'Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, and transition effects. This option is recommended. There are additional <em>Smart Menu</em> options available on the <em>Appearance &rarr; +Xtreme Plus</em> menu.', 'weaver-xtreme' )
+		);
+	}
+
+	return $opts;
+}
+
+/* ========================================== Layout: Content ============================================== */
+
+function weaverx_layout_content_opts() {
+	$opts = array();
+
+	$opts['page_cols'] = weaverx_cz_select(    // must be refresh because column class applied to specific page id
+		__( 'Content Columns', 'weaver-xtreme' ),
+		__( 'Automatically split all page content into columns. You can also use the Per Page option. This option does not apply to posts.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_columns', '1', 'refresh'
+	);
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+		$opts['hyphenate'] = weaverx_cz_checkbox(
+			__( 'Auto Hyphenate Content', 'weaver-xtreme' ),
+			__( 'Allow browsers to automatically hyphenate text for appearance.', 'weaver-xtreme' )
+		);
+	}
+
+	return $opts;
+}
+
+/* ========================================== Layout: Post Specific ======================================== */
+
+function weaverx_layout_postspecific_opts() {
+	$opts = array();
+
+	$opts['layout-post-excerpt'] = weaverx_cz_group_title( __( 'Excerpts / Full Posts', 'weaver-xtreme' ),
+		__( 'How to display posts in Blog and Archive views.', 'weaver-xtreme' ) );
+
+	$opts['excerpt_length'] = weaverx_cz_range(
+		__( 'Excerpt length', 'weaver-xtreme' ),
+		__( 'Change post excerpt length.', 'weaver-xtreme' ),
+		40,
+		array( 'min' => 2, 'max' => 100, 'step' => 1 )
+	);
+
+	$opts['fullpost_blog'] = weaverx_cz_checkbox(
+		__( 'Show Full Blog Posts', 'weaver-xtreme' ),
+		weaverx_markdown( __( 'Will display full blog post instead of excerpts on *blog pages*. Does not override manually added &lt;--more--> breaks.', 'weaver-xtreme' ) )
+	);
+
+
+	$opts['fullpost_archive'] = weaverx_cz_checkbox(
+		__( 'Full Post for Archives', 'weaver-xtreme' )
+	);
+
+	$opts['fullpost_search'] = weaverx_cz_checkbox(
+		__( 'Full Post for Searches', 'weaver-xtreme' )
+	);
+
+	$opts['fullpost_first'] = weaverx_cz_range(
+		__( 'Full text for first "n" Posts', 'weaver-xtreme' ),
+		__( 'Display the full post for the first "n" posts on Blog pages. Does not override manually added &lt;--more--> breaks.', 'weaver-xtreme' ),
+		0,
+		array( 'min' => 0, 'max' => 20, 'step' => 1 )
+	);
+
+	$opts['layout-post-cols'] = weaverx_cz_group_title( __( 'Columns', 'weaver-xtreme' ),
+		__( 'Posts in columns.', 'weaver-xtreme' ) );
+
+	$opts['post_cols'] = weaverx_cz_select(    // must be refresh because column class applied to specific page id
+		__( 'Post Content Columns', 'weaver-xtreme' ),
+		__( 'Split all post content into columns for both blog and single page views. This applies to individual post content only. Uses CSS for this layout. This is not the same as Columns of Posts.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_columns', '1', 'refresh'
+	);
+
+	$opts['blog_cols'] = weaverx_cz_select(
+		__( 'Columns of Posts', 'weaver-xtreme' ),
+		__( 'Display posts on blog page with this many columns. HINT: Adjust "Blog pages show at most n posts" on Settings:Reading to be a multiple of columns.', 'weaver-xtreme' ),
+		array(
+			'1' => esc_html__( '1 Column', 'weaver-xtreme' ),
+			'2' => esc_html__( '2 Columns', 'weaver-xtreme' ),
+			'3' => esc_html__( '3 Columns', 'weaver-xtreme' ),
+		),
+		'1', 'refresh'
+	);
+
+	if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
+
+		$opts['masonry_cols'] = weaverx_cz_select(
+			esc_html__( 'Use Masonry for Posts', 'weaver-xtreme' ),
+			weaverx_filter_text( __( 'Use the <em>Masonry</em> blog layout option to show dynamically packed posts on blog and archive-like pages. Overrides "Columns of Posts" setting. <em>Not compatible with full width FI BG images.</em>', 'weaver-xtreme' ) ),
+			'weaverx_cz_choices_masonry_columns', '0', 'refresh'
+		);
+
+		$opts['archive_cols'] = weaverx_cz_checkbox(
+			__( 'Use Columns on Archive Pages', 'weaver-xtreme' ),
+			__( 'Display posts on archive-like pages using columns. (Archive, Author, Category, Tag)', 'weaver-xtreme' )
+		);
+
+		$opts['blog_first_one'] = weaverx_cz_checkbox(
+			__( 'First Post One Column', 'weaver-xtreme' ),
+			__( 'Display the first post in one column.', 'weaver-xtreme' )
+		);
+
+		$opts['blog_sticky_one'] = weaverx_cz_checkbox(
+			__( 'Sticky Posts One Column', 'weaver-xtreme' ),
+			__( 'Display opening Sticky Posts in one column. If First Post One Column also checked, then first non-sticky post will also be one column.', 'weaver-xtreme' )
+		);
+	}
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full, standard
+		$opts['compact_post_formats'] = weaverx_cz_checkbox(
+			__( 'Compact "Post Format" Posts', 'weaver-xtreme' ),
+			__( 'Use compact layout for <em>Post Format</em> posts ( Image, Gallery, Video, etc. ). Useful for photo blogs and multi-column layouts. Looks great with <em>Masonry</em>.', 'weaver-xtreme' )
+		);
+
+
+		$opts['layout-post-nav'] = weaverx_cz_group_title( __( 'Post Navigation', 'weaver-xtreme' ),
+			__( 'Navigation for moving between Posts.', 'weaver-xtreme' ) );
+
+		$opts['nav_style'] = weaverx_cz_select(
+			__( 'Blog Navigation Style', 'weaver-xtreme' ),
+			__( 'Style of navigation links on blog pages: "Older/Newer posts", "Previous/Next Post", or by page numbers.', 'weaver-xtreme' ),
+			array(
+				'old_new'     => esc_html__( 'Older/Newer', 'weaver-xtreme' ),
+				'prev_next'   => esc_html__( 'Previous/Next', 'weaver-xtreme' ),
+				'paged_left'  => esc_html__( 'Paged - Left', 'weaver-xtreme' ),
+				'paged_right' => esc_html__( 'Paged - Right', 'weaver-xtreme' ),
+			),
+			'old_new', 'refresh'
+		);
+
+		$opts['nav_hide_above'] = weaverx_cz_checkbox(
+			__( 'Hide Top Nav Links', 'weaver-xtreme' ),
+			__( 'Hide the blog navigation links at the top.', 'weaver-xtreme' ),
+			'plus'
+		);
+
+		$opts['nav_hide_below'] = weaverx_cz_checkbox(
+			__( 'Hide Bottom Nav Links', 'weaver-xtreme' ),
+			__( 'Hide the blog navigation links at the bottom.', 'weaver-xtreme' ),
+			'plus'
+		);
+
+		$opts['Show Top Nav on First Page'] = weaverx_cz_checkbox(
+			__( 'Show Top Nav on First Page', 'weaver-xtreme' ),
+			__( 'Show navigation at top even on the first page.', 'weaver-xtreme' ),
+			'plus'
+		);
+
+
+		$opts['single_nav_style'] = weaverx_cz_select(
+			__( 'Single Page Navigation Style', 'weaver-xtreme' ),
+			__( 'Style of navigation links on post Single pages: Previous/Next, by title, or none.', 'weaver-xtreme' ),
+			array(
+				'title'     => esc_html__( 'Post Titles', 'weaver-xtreme' ),
+				'prev_next' => esc_html__( 'Previous/Next', 'weaver-xtreme' ),
+				'hide'      => esc_html__( 'None - no display', 'weaver-xtreme' ),
+			),
+			'title', 'refresh'
+		);
+
+		$opts['single_nav_link_cats'] = weaverx_cz_checkbox(
+			__( 'Nav Links to Same Categories', 'weaver-xtreme' ),
+			__( 'Single Page navigation links point to posts with same categories', 'weaver-xtreme' )
+		);
+
+
+		$opts['single_nav_hide_above'] = weaverx_cz_checkbox(
+			__( 'Hide Top Nav Links', 'weaver-xtreme' ),
+			__( 'Hide the single page navigation links at the top.', 'weaver-xtreme' ),
+			'plus'
+		);
+
+		$opts['single_nav_hide_below'] = weaverx_cz_checkbox(
+			__( 'Hide Bottom Nav Links', 'weaver-xtreme' ),
+			__( 'Hide the single page navigation links at the bottom.', 'weaver-xtreme' ),
+			'plus'
+		);
+
+		$opts['reset_content_opts'] = weaverx_cz_checkbox(
+			__( 'Clear Major Content Options', 'weaver-xtreme' ) . WEAVERX_OBSOLETE,
+			__( '<em>ADVANCED OPTION!</em> Clear wrapping Content Area bg, borders, padding, and top/bottom margins for views with posts. Allows more flexible post styling. Most people will not need this.', 'weaver-xtreme' )
+		);
+
+	}
+
+
+	return $opts;
+}
+
+/* ========================================== Layout: Sidebars ============================================= */
+
+function weaverx_layout_sidebars_opts() {
+	$opts = array();
+	$opts['layout-primary-all-heading'] = weaverx_cz_group_title( __( 'Sidebar Layout for Page Types', 'weaver-xtreme' ),
+		__( 'Sidebar Layout for each type of page ( "stack top" used for mobile view ).', 'weaver-xtreme' )
+	);
+
+	$opts['layout_default'] = weaverx_cz_select(
+		__( 'Blog, Post, Page Default', 'weaver-xtreme' ),
+		__( 'Select the default theme layout for blog, single post, attachments, and pages.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_sb_layout', 'right', 'refresh'
+	);
+
+
+	$opts['layout_default_archive'] = weaverx_cz_select(
+		__( 'Archive-like Default', 'weaver-xtreme' ),
+		__( 'Select the default theme layout for all other pages - archives, search, etc.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_sb_layout', 'right', 'refresh'
+	);
+
+	$opts['layout_page'] = weaverx_cz_select(
+		__( 'Page', 'weaver-xtreme' ),
+		__( 'Layout for normal Pages on your site.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+	);
+
+	$opts['layout_blog'] = weaverx_cz_select(
+		__( 'Blog', 'weaver-xtreme' ),
+		__( 'Layout for main blog page. Includes "Page with Posts" Page templates.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+	);
+
+	$opts['layout_single'] = weaverx_cz_select(
+		__( 'Post Single Page', 'weaver-xtreme' ),
+		__( 'Layout for Posts displayed as a single page.', 'weaver-xtreme' ),
+		'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+	);
+
+	$opts['layout_full_note1'] = weaverx_cz_html_description(
+		__( 'Weaver Xtreme Plus includes options for other archive-like pages.', 'weaver-xtreme' ), 'plus' );
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+
+		$opts['layout_attachments'] = weaverx_cz_select_plus(
+			__( 'Attachments', 'weaver-xtreme' ),
+			__( 'Layout for attachment pages such as images.', 'weaver-xtreme' ),
+			'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+		);
+
+		$opts['layout_archive'] = weaverx_cz_select_plus(
+			__( 'Date Archive', 'weaver-xtreme' ),
+			__( 'Layout for archive by date pages.', 'weaver-xtreme' ),
+			'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+		);
+
+		$opts['layout_category'] = weaverx_cz_select_plus(
+			__( 'Category Archive', 'weaver-xtreme' ),
+			__( 'Layout for category archive pages.', 'weaver-xtreme' ),
+			'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+		);
+
+		$opts['layout_tag'] = weaverx_cz_select_plus(
+			__( 'Tags Archive', 'weaver-xtreme' ),
+			__( 'Layout for tag archive pages.', 'weaver-xtreme' ),
+			'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+		);
+
+		$opts['layout_author'] = weaverx_cz_select_plus(
+			__( 'Author Archive', 'weaver-xtreme' ),
+			__( 'Layout for author archive pages.', 'weaver-xtreme' ),
+			'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+		);
+
+		$opts['layout_search'] = weaverx_cz_select_plus(
+			__( 'Search Results, 404', 'weaver-xtreme' ),
+			__( 'Layout for search results and 404 pages.', 'weaver-xtreme' ),
+			'weaverx_cz_choices_sb_layout_default', 'default', 'refresh'
+		);
+	}
+
+	$opts['layout-primary-widget-heading'] = weaverx_cz_group_title( __( 'Primary Sidebar', 'weaver-xtreme' )
+	);
+
+	$opts['primary_cols_int'] = weaverx_cz_range(
+		__( 'Columns of Widgets', 'weaver-xtreme' ),
+		'',
+		1,
+		array(
+			'min'  => 1,
+			'max'  => 8,
+			'step' => 1,
+		)
+	);
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+
+		$opts['layout-primary-custom-widths'] = weaverx_cz_heading( __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+			__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )
+		);
+
+		$opts['_primary_lw_cols_list'] = weaverx_cz_textarea(
+			__( 'Desktop Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
+			'refresh',
+			'plus'
+		);
+
+		$opts['_primary_mw_cols_list'] = weaverx_cz_textarea(
+			__( 'Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['_primary_sw_cols_list'] = weaverx_cz_textarea(
+			__( 'Phone Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+
+		$opts['primary_no_widget_margins'] = weaverx_cz_checkbox(
+			__( 'No Smart Widget Margins', 'weaver-xtreme' ),
+			__( 'Do not use "smart margins" between  multi-column widgets on rows.', 'weaver-xtreme' )
+		);
+
+
+		$opts['primary_eq_widgets'] = weaverx_cz_checkbox(
+			__( 'Equal Height Widget Rows', 'weaver-xtreme' ),
+			__( 'Make widgets equal height rows if &gt; 1 column.', 'weaver-xtreme' ),
+			'plus'
+		);
+	}
+
+	$opts['layout-secondary-widget-heading'] = weaverx_cz_group_title( __( 'Secondary Sidebar', 'weaver-xtreme' ) );
+
+	$opts['secondary_cols_int'] = weaverx_cz_range(
+		__( 'Columns of Widgets', 'weaver-xtreme' ),
+		'',
+		1,
+		array(
+			'min'  => 1,
+			'max'  => 8,
+			'step' => 1,
+		)
+	);
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+
+		$opts['layout-secondary-custom-widths'] = weaverx_cz_heading( __( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+			__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) );
+
+		$opts['_secondary_lw_cols_list'] = weaverx_cz_textarea(
+			__( 'Desktop Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
+			'refresh',
+			'plus'
+		);
+
+		$opts['_secondary_mw_cols_list'] = weaverx_cz_textarea(
+			__( 'Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['_secondary_sw_cols_list'] = weaverx_cz_textarea(
+			__( 'Phone Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+
+		$opts['secondary_no_widget_margins'] = weaverx_cz_checkbox(
+			__( 'No Smart Widget Margins', 'weaver-xtreme' ),
+			__( 'Do not use "smart margins" between multi-column widgets on rows.', 'weaver-xtreme' )
+		);
+
+
+		$opts['secondary_eq_widgets'] = weaverx_cz_checkbox(
+			__( 'Equal Height Widget Rows', 'weaver-xtreme' ),
+			__( 'Make widgets equal height rows if &gt; 1 column.', 'weaver-xtreme' ),
+			'plus'
+		);
+	}
+
+	// Top Widget areas
+
+
+	$opts['layout-top-widget-heading'] = weaverx_cz_group_title( esc_html__( 'Top Widget Areas', 'weaver-xtreme' ),
+		esc_html__( 'Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) );
+
+	$opts['top_cols_int'] = weaverx_cz_range(
+		__( 'Columns of Widgets', 'weaver-xtreme' ),
+		'',
+		1,
+		array(
+			'min'  => 1,
+			'max'  => 8,
+			'step' => 1,
+		)
+	);
+
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+
+		$opts['layout-top-custom-widths'] = weaverx_cz_heading( esc_html__( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+			__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) );
+
+		$opts['_top_lw_cols_list'] = weaverx_cz_textarea(
+			__( 'Desktop Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
+			'refresh',
+			'plus'
+		);
+
+		$opts['_top_mw_cols_list'] = weaverx_cz_textarea(
+			__( 'Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['_top_sw_cols_list'] = weaverx_cz_textarea(
+			__( 'Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['top_no_widget_margins'] = weaverx_cz_checkbox(
+			__( 'No Smart Widget Margins', 'weaver-xtreme' ),
+			__( 'Do not use "smart margins" between multi-column widgets on rows.',
+				'weaver-xtreme' )
+		);
+
+		$opts['top_eq_widgets'] = weaverx_cz_checkbox(
+			__( 'Equal Height Widget Rows', 'weaver-xtreme' ),
+			__( 'Make widgets equal height rows if &gt; 1 column.',
+				'weaver-xtreme' ),
+			'plus'
+		);
+	}
+
+	// Bottom Widget areas
+
+	$opts['layout-bottom-widget-heading'] = weaverx_cz_group_title( esc_html__( 'Bottom Widget Areas', 'weaver-xtreme' ),
+		esc_html__( 'Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) );
+
+	$opts['bottom_cols_int'] = weaverx_cz_range(
+		__( 'Columns of Widgets', 'weaver-xtreme' ),
+		'',
+		1,
+		array(
+			'min'  => 1,
+			'max'  => 8,
+			'step' => 1,
+		)
+	);
+
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+
+		$opts['layout-bottom-custom-widths'] = weaverx_cz_heading( esc_html__( 'Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+			__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' ) );
+
+		$opts['_bottom_lw_cols_list'] = weaverx_cz_textarea(
+			__( 'Desktop Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
+			'refresh',
+			'plus'
+		);
+
+		$opts['_bottom_mw_cols_list'] = weaverx_cz_textarea(
+			__( 'Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['_bottom_sw_cols_list'] = weaverx_cz_textarea(
+			__( 'Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['bottom_no_widget_margins'] = weaverx_cz_checkbox(
+			__( 'No Smart Widget Margins', 'weaver-xtreme' ),
+			__( 'Do not use "smart margins" between multi-column widgets on rows.',
+				'weaver-xtreme' )
+		);
+
+		$opts['bottom_eq_widgets'] = weaverx_cz_checkbox(
+			__( 'Equal Height Widget Rows', 'weaver-xtreme' ),
+			__( 'Make widgets equal height rows if &gt; 1 column.',
+				'weaver-xtreme' ),
+			'plus'
+		);
+	}
+
+	return $opts;
+}
+
+/* ================================== Layout: Footer ============================ */
+
+function weaverx_layout_footer_opts() {
+	$opts = array();
+
+	$opts['footer_sb_cols_int'] = weaverx_cz_range(
+		__( 'Footer Columns of Widgets', 'weaver-xtreme' ),
+		'',
+		1,
+		array(
+			'min'  => 1,
+			'max'  => 8,
+			'step' => 1,
+		)
+	);
+
+	$opts['layout_full_note3'] = weaverx_cz_html_description(
+		'<small>' . __( '<em>Weaver Xtreme Plus</em> includes options for custom column widths, and smart margins.', 'weaver-xtreme' ) . '</small>', 'plus' );
+
+
+	if ( weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {        // show if full
+		$opts['layout-footer-custom-widths'] = weaverx_cz_heading( __( 'Footer Custom Widget Widths', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+			__( 'You can optionally specify widget widths, including for specific devices. Overrides the Columns of Widgets setting. Please read the help entry!', 'weaver-xtreme' )
+		);
+
+		$opts['_footer_sb_lw_cols_list'] = weaverx_cz_textarea(
+			__( 'Footer Desktop Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths separated by comma. Use semi-colon ( ; ) for end of each row. Widths are % of each row. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			__( '25,25,50; 60,40; - for example', 'weaver-xtreme' ),
+			'refresh',
+			'plus'
+		);
+
+
+		$opts['_footer_sb_mw_cols_list'] = weaverx_cz_textarea(
+			__( 'Footer Small Tablet Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['_footer_sb_sw_cols_list'] = weaverx_cz_textarea(
+			__( 'Footer Phone Widget Widths', 'weaver-xtreme' ),
+			__( 'List of widget widths. (&diams;)', 'weaver-xtreme' ),
+			'1',
+			'',
+			'refresh',
+			'plus'
+		);
+
+		$opts['footer_sb_no_widget_margins'] = weaverx_cz_checkbox(
+			__( 'Footer No Smart Widget Margins', 'weaver-xtreme' ),
+			__( 'Do not use "smart margins" between  multi-column widgets on rows.', 'weaver-xtreme' )
+		);
+
+
+		$opts['footer_sb_eq_widgets'] = weaverx_cz_checkbox(
+			__( 'Footer Equal Height Widget Rows', 'weaver-xtreme' ),
+			__( 'Make widgets equal height rows if &gt; 1 column.', 'weaver-xtreme' ),
+			'plus'
+		);
+	}
+
+
+	return $opts;
+}

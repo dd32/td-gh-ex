@@ -64,7 +64,7 @@ final class WeaverX_Customize_Plus {
 	public function sections( $manager ) {
 
 		// Load custom sections.
-		//require_once( trailingslashit( get_template_directory() ) . 'trt-customize-pro/weaver-x-plus/section-pro.php' );
+		//require_once(  get_theme_file_path( 'trt-customize-pro/weaver-x-plus/section-pro.php' ) );
 
 		// Register custom section types.
 		$manager->register_section_type( 'WeaverX_Customize_Plus_Section' );
@@ -147,9 +147,9 @@ final class WeaverX_Customize_Plus {
 	*/
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'weaver-x-plus-customize-controls', trailingslashit( get_template_directory_uri() ) . 'admin/customizer/trt-customize-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'weaver-x-plus-customize-controls',  get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/trt-customize-pro/customize-controls.js' ), array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'weaver-x-plus-customize-controls', trailingslashit( get_template_directory_uri() ) . 'admin/customizer/trt-customize-pro/customize-controls.css' );
+		wp_enqueue_style( 'weaver-x-plus-customize-controls',  get_theme_file_uri( WEAVERX_ADMIN_DIR . '/customizer/trt-customize-pro/customize-controls.css' ) );
 	}
 }
 

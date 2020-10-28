@@ -473,7 +473,7 @@ var jscolor = {
 			if( s !== null ) { s = Math.max( 0.0, this.minS, Math.min( 1.0, this.maxS, s ) ); }
 			if( v !== null ) { v = Math.max( 0.0, this.minV, Math.min( 1.0, this.maxV, v ) ); }
 
-			this.rgb = HSV_RGB( 
+			this.rgb = HSV_RGB(
 				h===null ? this.hsv[0] : ( this.hsv[0]=h ),
 				s===null ? this.hsv[1] : ( this.hsv[1]=s ),
 				v===null ? this.hsv[2] : ( this.hsv[2]=v )
@@ -488,7 +488,7 @@ var jscolor = {
 			if( g !== null ) { g = Math.max( 0.0, Math.min( 1.0, g ) ); }
 			if( b !== null ) { b = Math.max( 0.0, Math.min( 1.0, b ) ); }
 
-			var hsv = RGB_HSV( 
+			var hsv = RGB_HSV(
 				r===null ? this.rgb[0] : r,
 				g===null ? this.rgb[1] : g,
 				b===null ? this.rgb[2] : b
@@ -517,14 +517,14 @@ var jscolor = {
 				return false;
 			} else {
 				if( m[1].length === 6 ) { // 6-char notation
-					this.fromRGB( 
+					this.fromRGB(
 						parseInt( m[1].substr( 0,2 ),16 ) / 255,
 						parseInt( m[1].substr( 2,2 ),16 ) / 255,
 						parseInt( m[1].substr( 4,2 ),16 ) / 255,
 						flags
 					);
 				} else { // 3-char notation
-					this.fromRGB( 
+					this.fromRGB(
 						parseInt( m[1].charAt( 0 )+m[1].charAt( 0 ),16 ) / 255,
 						parseInt( m[1].charAt( 1 )+m[1].charAt( 1 ),16 ) / 255,
 						parseInt( m[1].charAt( 2 )+m[1].charAt( 2 ),16 ) / 255,
@@ -537,7 +537,7 @@ var jscolor = {
 
 
 		this.toString = function( ) {
-			return ( 
+			return (
 				( 0x100 | Math.round( 255*this.rgb[0] ) ).toString( 16 ).substr( 1 ) +
 				( 0x100 | Math.round( 255*this.rgb[1] ) ).toString( 16 ).substr( 1 ) +
 				( 0x100 | Math.round( 255*this.rgb[2] ) ).toString( 16 ).substr( 1 )
@@ -653,8 +653,8 @@ var jscolor = {
 			p.padM.onmousedown = function( e ) {
 				// if the slider is at the bottom, move it up
 				switch( modeID ) {
-					case 0: if ( THIS.hsv[2] === 0 ) { THIS.fromHSV( null, null, 1.0 ); }; break;
-					case 1: if ( THIS.hsv[1] === 0 ) { THIS.fromHSV( null, 1.0, null ); }; break;
+					case 0: if ( THIS.hsv[2] === 0 ) { THIS.fromHSV( null, null, 1.0 ); } break;
+					case 1: if ( THIS.hsv[1] === 0 ) { THIS.fromHSV( null, 1.0, null ); } break;
 				}
 				holdSld=false;
 				holdPad=true;

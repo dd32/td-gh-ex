@@ -5,9 +5,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The Right Split Sidebar.
  *
- * @package WordPress
- * @subpackage Weaver X
- * @since Weaver Xtreme 1.0
  */
 // Bottom Widget Area
 

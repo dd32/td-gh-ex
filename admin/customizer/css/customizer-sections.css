@@ -21,11 +21,34 @@ span.description {
 }
 
 /* Misc control styles */
-.weaverx-control-group-title {
+xxx.weaverx-control-group-title {
 	color:       blue;
 	font-size:   16px;
 	font-weight: bold;
 	margin:      8px 0 4px;
+}
+
+#customize-control-header_video .customize-control-title,		/* video */
+#customize-control-header_image .customize-control-title,		/* image */
+#customize-control-custom_logo .customize-control-title,		/* site logo */
+#customize-control-blogname .customize-control-title,
+#customize-control-blogdescription .customize-control-title,
+#customize-control-site_icon .customize-control-title,
+#customize-control-show_on_front .customize-control-title,
+#customize-control-background_image .customize-control-title,
+.weaverx-interface-level,
+.weaverx-control-group-title {
+	color:       white;
+	font-size:   14px;
+	font-weight: bold;
+	background-color: #555;
+	margin:      10px -8px 9px -8px;
+	padding:	 3px 8px 4px 8px;
+	border:      4px ridge #888;
+}
+
+.weaverx-interface-level {
+	display:block;
 }
 
 .customize-control.customize-control-heading {
@@ -401,8 +424,8 @@ li.customize-control.customize-control-range .ui-slider-handle:hover {
 #customize-control-weaverx_ilink_color_bgcolor .customize-control-title:before,
 #customize-control-weaverx_post_author_bgcolor .customize-control-title:before,
 #customize-control-weaverx_primary_bgcolor .customize-control-title:before,
-#customize-control-weaverx_m_secondary_bgcolor .customize-control-title:before,
-#customize-control-weaverx_m_extra_bgcolor .customize-control-title:before,
+#customize-control-weaverx_secondary_bgcolor .customize-control-title:before,
+#customize-control-weaverx_extra_bgcolor .customize-control-title:before,
 #customize-control-weaverx_top_bgcolor .customize-control-title:before,
 #customize-control-weaverx_bottom_bgcolor .customize-control-title:before,
 #customize-control-weaverx_widget_bgcolor .customize-control-title:before,
@@ -410,7 +433,7 @@ li.customize-control.customize-control-range .ui-slider-handle:hover {
 #customize-control-weaverx_footer_sb_bgcolor .customize-control-title:before,
 #customize-control-weaverx_footer_html_bgcolor .customize-control-title:before,
 #customize-control-weaverx_editor_bgcolor .customize-control-title:before,
-#customize-control-weaverx_post_bgcolor .customize-control-title:before {content: '\2592 ';font-size: 65%;color: green;margin-right: .5em; }
+#customize-control-weaverx_post_bgcolor .customize-control-title:before {content: '\2592 ';font-size: 65%;color: #008800;margin-right: .5em; }
 
 
 #customize-control-weaverx_widget_title_color .customize-control-title:before,

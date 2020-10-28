@@ -83,8 +83,8 @@ body.rtl #wx-jump {
 }
 
 #wx-jump .wx-tabs:hover {
-	padding-top:    13.5px;
-	padding-bottom: 13.5px;
+	padding-top:    13px;
+	padding-bottom: 13px;
 	height:         54px; /* test*/
 }
 
@@ -94,7 +94,6 @@ body.rtl #wx-jump {
 	text-align:       center !important;
 	font-weight:      bold;
 	color:            white !important;
-	font-weight:      bold;
 	line-height:      25px;
 	border-bottom:    2px solid grey;
 	box-sizing:       border-box;

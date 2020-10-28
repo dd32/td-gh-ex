@@ -42,7 +42,7 @@ $do_excerpt = weaverx_use_excerpt();
 ?>
 		</div><!-- .entry-content -->
 <?php
-	};
+	}
 ?>
 	<div class="wvrx-aside-margin"></div>
 <?php

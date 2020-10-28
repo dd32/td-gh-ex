@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * inject-infobar won't work right on the page-navi until we restart the loop, so...
  *
  * We create the breadcrumbs part for the page.
- * We buffer the output from the inject-prmain up to the end of the page content
+ * We buffer the output from the inject-premain up to the end of the page content
  * We create the page-navi part of the infobar after we restart the loop
  * Then output the infobar with the page breadcrumbs and the posts page-navi and the page buffer
  * Finally, start the new loop.
@@ -41,7 +41,8 @@ echo '<div id="content" role="main" ' . weaverx_content_class( $sb_layout, 'pwp'
 weaverx_inject_area( 'precontent' );
 
 weaverx_sb_precontent( 'blog' );
-$hide_bottom_sb = weaverx_is_checked_page_opt( '_pp_sitewide-bottom-widget-area', true );    // gotta use the PwP page ID, not the last post's ID
+
+$hide_bottom_sb = weaverx_is_checked_page_opt( '_pp_sitewide-bottom-widget-area' );    // gotta use the PwP page ID, not the last post's ID
 
 weaverx_post_count_clear();
 the_post();
@@ -53,7 +54,7 @@ if ( ! is_front_page() ) {
 if ( $paged == 1 ) {    // only show on the first page
 	// If we have content for this page, let's display it.
 	if ( get_the_content() != '' ||
-	     ( get_the_title() != '' && ! weaverx_is_checked_page_opt( '_pp_hide_page_title', true ) ) ) {
+	     ( get_the_title() != '' && ! weaverx_is_checked_page_opt( '_pp_hide_page_title' ) ) ) {
 		get_template_part( 'templates/content', 'page' );
 	} else {
 		weaverx_edit_link();
@@ -261,5 +262,4 @@ if ( post_password_required() ) {
 	<?php
 	weaverx_get_footer( 'blog' );
 } // end of show posts section
-
 

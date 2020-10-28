@@ -268,5 +268,5 @@ function do_weaverx_admin_advancedopts() {
 
 // ===================================== include other stuff ==========================
 
-require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/admin-plus.php' );
-require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/admin-help.php' );
+require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/admin-core/admin-plus.php' ) );
+require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/admin-core/admin-help.php' ) );

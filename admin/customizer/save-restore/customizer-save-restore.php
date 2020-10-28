@@ -167,8 +167,8 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 
 		static public function enqueue_scripts() {
 			// Register
-			wp_register_style( 'wvrx-sr-css', get_template_directory_uri() . '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.css', array(), WEAVERX_VERSION );
-			wp_register_script( 'wvrx-sr-js', get_template_directory_uri() . '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.js', array( 'jquery' ), WEAVERX_VERSION, true );
+			wp_register_style( 'wvrx-sr-css', get_theme_file_uri( '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.css' ), array(), WEAVERX_VERSION );
+			wp_register_script( 'wvrx-sr-js', get_theme_file_uri( '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.js' ), array( 'jquery' ), WEAVERX_VERSION, true );
 
 			// Localize
 			wp_localize_script( 'wvrx-sr-js', 'WVRXl10n', array(
@@ -340,6 +340,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 			} else if ( $ext == 'json' ) {         // restore new json format
 
+				$version = weaverx_getopt( 'weaverx_version_id' );    // get something to force load of existing settings
 				$opts = json_decode($contents, true );
 
 				if ( empty( $opts ) ) {
@@ -365,7 +366,6 @@ You may need to check your folder permissions or other server settings.', 'weave
 					$new_cache = $opts;
 				} else {
 
-					$version = weaverx_getopt( 'weaverx_version_id' );    // get something to force load of existing settings
 					$new_cache = array();
 
 
@@ -422,7 +422,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 				$weaverx_opts_cache = $new_cache;
 
 				if ( weaverx_f_file_access_available() ) {    // and now is the time to update the style file
-					require_once( get_template_directory() . '/includes/generatecss.php' );
+					require_once( get_theme_file_path('/includes/generatecss.php' ) );
 					weaverx_fwrite_current_css();
 				}
 				do_action( 'weaverx_save_mcecss' );        // theme support plugin saved editor css in file
@@ -501,7 +501,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 				$weaverx_opts_cache = $new_cache;
 
 				if ( weaverx_f_file_access_available() ) {    // and now is the time to update the style file
-					require_once( get_template_directory() . '/includes/generatecss.php' );
+					require_once( get_theme_file_path( '/includes/generatecss.php' ) );
 					weaverx_fwrite_current_css();
 				}
 				do_action( 'weaverx_save_mcecss' );        // theme support plugin saved editor css in file
@@ -564,6 +564,7 @@ if ( '' !== $this->description ) {
 }
 $theme_dir  = trailingslashit( WP_CONTENT_DIR ) . 'themes/' . get_template() . '/subthemes/';
 $theme_list = array(
+	'absolutely',
 	'ajax',
 	'arctic-white',
 	'black-and-white',
@@ -610,6 +611,7 @@ $theme_list = array(
 		wp_nonce_field( 'wvrx_select_subtheme', 'wvrx-upload-subtheme' ); ?>
 	</div>
 	<div class="wvrx-uploading"><?php echo esc_html__( 'Uploading...', 'weaver-xtreme' ); ?></div>
+</div>
 	<div style="clear:both;"></div>
 	<input type="button" class="button-primary" name="wvrx_select_subtheme" value="<?php echo esc_attr__( 'Set to Selected Subtheme', 'weaver-xtreme' ); ?>"/>
 
@@ -650,7 +652,7 @@ $theme_list = array(
 		}
 		$theme = weaverx_filter_textarea( $_POST['subtheme_picked'] );
 
-		$filename = get_template_directory() . '/subthemes/' . $theme . '.wxt';
+		$filename = get_theme_file_path( '/subthemes/' . $theme . '.wxt' );
 
 		if ( ! weaverx_f_exists( $filename ) ) {
 			weaverx_alert( esc_html__( 'Sorry, unable to upload the subtheme.', 'weaver-xtreme' ) );
@@ -752,7 +754,7 @@ $theme_list = array(
 		$weaverx_opts_cache = $new_cache;
 
 		if ( weaverx_f_file_access_available() ) {    // and now is the time to update the style file
-			require_once( get_template_directory() . '/includes/generatecss.php' );
+			require_once( get_theme_file_path( '/includes/generatecss.php'  ));
 			weaverx_fwrite_current_css();
 		}
 		do_action( 'weaverx_save_mcecss' );        // theme support plugin saved editor css in file
@@ -893,8 +895,8 @@ $theme_list = array(
 
 			static public function enqueue_scripts() {
 				// Register
-				wp_register_style( 'wvrx-sr-css', get_template_directory_uri() . '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.css', array(), WEAVERX_VERSION );
-				wp_register_script( 'wvrx-sr-js', get_template_directory_uri() . '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.js', array( 'jquery' ), WEAVERX_VERSION, true );
+				wp_register_style( 'wvrx-sr-css', get_theme_file_uri( '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.css' ), array(), WEAVERX_VERSION );
+				wp_register_script( 'wvrx-sr-js', get_theme_file_uri( '/admin/customizer/save-restore/save-restore' . WEAVERX_MINIFY . '.js' ), array( 'jquery' ), WEAVERX_VERSION, true );
 
 				// Localize
 				wp_localize_script( 'wvrx-sr-js', 'WVRXl10n', array(

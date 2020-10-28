@@ -4,12 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 /**
  * The Right Split Sidebar.
- *
- * @package WordPress
- * @subpackage Weaver X
- * @since Weaver Xtreme 1.0
  */
-
 
 $l_area = 'l-sb-right';
 if ( weaverx_getopt( 'primary_smartmargin' ) || weaverx_getopt( 'secondary_smartmargin' ) ) {

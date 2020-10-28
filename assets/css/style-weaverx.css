@@ -4,7 +4,7 @@
 
 This style sheet provides the basic settings ( colors, margins, fonts, etc. ) used by the Weaver Xtreme Theme.
 
-Weaver Xtreme Version 4.0
+Weaver Xtreme Version 4.4
 
 Table of Contents
 -----------------
@@ -288,7 +288,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-style:    normal;
 }
 
-
+.weaverx-sb-one-column #wrapper,
 .weaverx-sb-one-column #container,
 .weaverx-sb-one-column #content,
 .weaverx-sb-one-column .content-page,
@@ -304,13 +304,15 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	overflow: hidden;
 }
 
-
 .weaverx-sb-one-column .alignfull, /* most elements only on one column pages */
-#header .alignfull, /* but some are okay on pages with sidebars */
-#header.alignfull,
-#container.alignfull,
+	/* but some are okay on pages with sidebars */
+
 #colophon .alignfull,
 #colophon.alignfull,
+#container.alignfull,
+#container .alignfull,
+#header .alignfull,
+#header.alignfull,
 #infobar .alignfull,
 #nav-primary .alignfull,
 #nav-secondary .alignfull {
@@ -321,20 +323,37 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	width:        100vw;
 }
 
+
+/* if #wrapper is not full, then need the vw rules for other align fulls,
+   otherwise they can use the wide 12000px method for fullwodtj
+ */
+#wrapper.alignfull #colophon .alignfull,
+#wrapper.alignfull #colophon.alignfull,
+#wrapper.alignfull #container.alignfull,
+#wrapper.alignfull #container .alignfull,
+#wrapper.alignfull #header .alignfull,
+#wrapper.alignfull #header.alignfull,
+#wrapper.alignfull #infobar .alignfull,
+#wrapper.alignfull #nav-primary .alignfull,
+#wrapper.alignfull #nav-secondary .alignfull,
+#wrapper.alignfull #header .alignfull,
+#wrapper.alignfull {
+	left:         0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	max-width:	100% !important;
+	width: 	12000px !important;
+}
+
+
 #container .wp-block-embed.alignfull {
 	left:         0;
 	margin-left:  calc(50% - 49vw);
 	margin-right: calc(50% - 49vw);
-	max-width:    1100px;
-	width:        98vw
+	max-width:    12000px;
+	width:        98vw;
 }
 
-.weaverx-has-sb #container .alignfull {
-	margin-left:  0 !important;
-	margin-right: 0 !important;
-	max-width:    100% !important;
-	width:        100% !important;
-}
 
 .weaverx-has-sb #container .alignfull {
 	margin-left:  0 !important;
@@ -344,10 +363,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 .weaverx-has-sb #container .alignwide {
-	margin-left:  1% !important;
-	margin-right: 1% !important;
+	margin-left:  1.5% !important;
+	margin-right: 1.5% !important;
 	max-width:    100% !important;
-	width:        98% !important;
+	width:        97% !important;
 }
 
 @media (min-width: 1188px) {
@@ -358,6 +377,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	#colophon.alignwide,
 	#container .alignwide,
 	#container.alignwide,
+	#wrapper .alignwide,
+	#wrapper.alignwide,
 	#infobar .alignwide,
 	.alignwide {
 		left:         0;
@@ -419,6 +440,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	column-count:         4;
 	column-gap:           1.0em;
 }
+
 
 @media ( min-width: 581px) and ( max-width: 767px) {
 	/* tablets */
@@ -570,7 +592,6 @@ body { /* body has global settings for others to inherit */
 	font-size:               1.0em; /* this leads to 16px default font size */
 	-webkit-font-smoothing:  antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-smoothing:          antialiased; /* matters on Macs */
 	line-height:             1.5;
 	margin:                  0;
 	overflow-x:              hidden; /* overflow not inherited down but needed here for fullwidth rules */
@@ -1880,6 +1901,10 @@ ul.wvrx-menu {
 	font-size:  133%;
 	margin-top: 0.3em;
 }
+.menu-primary .site-title-on-menu,
+.menu-primary .site-title-on-menu a {
+	color:	inherit;
+}
 
 
 @media screen and ( min-width: 768px) {
@@ -2720,10 +2745,6 @@ li.mega-normal ul.mega-menu li a:hover {
 	font-size: 160%;
 }
 
-.ie8 .parallax-content {
-	color: #f0f0f0;
-}
-
 
 /* =Header ======================================================================================= */
 
@@ -2802,7 +2823,6 @@ li.mega-normal ul.mega-menu li a:hover {
 
 .has-header-video-cover .header-image {
 	display: table;
-	height:  300px;
 	height:  75vh;
 	width:   100%;
 }
@@ -2814,7 +2834,6 @@ li.mega-normal ul.mega-menu li a:hover {
 	left:              50%;
 	max-width:         100%;
 	min-height:        100%;
-	min-width:         100%;
 	min-width:         100vw; /* vw prevents 1px gap on left that 100% has */
 	width:             auto;
 	top:               50%;
@@ -2942,10 +2961,6 @@ li.mega-normal ul.mega-menu li a:hover {
 	padding-left:    42px;
 }
 
-.ie8 #comments-title h3 { /* wii_comment_headings_color */
-	background: transparent url(icons/comment-bubble-ie8.png) no-repeat !important;
-}
-
 #comments-title h4 {
 	font-size: 0.80em;
 	padding:   0 0 1.5em 42px;
@@ -3024,11 +3039,6 @@ ol.trackbacklist {
 	width:           28px;
 	float:           right;
 }
-
-.ie8 .comments-bubble a {
-	background: transparent url(icons/comment-bubble-ie8.png) no-repeat;
-}
-
 
 /* Comments and Comment Form
   -------------------------------------------- */
@@ -3296,10 +3306,6 @@ ol.trackbacklist {
 	box-shadow: none;
 }
 
-.ie8 img.avatar {
-	width: auto; /* fix for max-width bug in IE8 */
-}
-
 #author-description {
 	margin-left: 1em;
 }
@@ -3312,7 +3318,6 @@ ol.trackbacklist {
 
 .post-avatar img {
 	border:        none;
-	padding:       0;
 	box-shadow:    none;
 	height:        auto;
 	margin-bottom: -8px;
@@ -3956,37 +3961,12 @@ ins {
 	margin-left:     1.0em;
 }
 
-.ie8 .entry-meta-icons .entry-date, .ie8 .entry-date-icon {
-	background: url(icons/date-ie8.png) center left no-repeat !important;
-}
-
-.ie8 .entry-meta-icons .by-author, .ie8 .by-author-icon {
-	background: url(icons/author-ie8.png) center left no-repeat !important;
-}
-
-.ie8 .entry-meta-icons .cat-links, .ie8 .cat-links-icon {
-	background: url(icons/category-ie8.png) center left no-repeat !important;
-}
-
-.ie8 .entry-meta-icons .tag-links, .ie8 .tag-links-icon {
-	background: url(icons/tag-ie8.png) center left no-repeat !important;
-}
-
-.ie8 .entry-meta-icons .comments-link, .ie8 .comments-link-icon {
-	background: url(icons/comment-ie8.png) center left no-repeat !important;
-}
-
-.ie8 .entry-meta-icons .permalink-icon, .ie8 .permalink-icon {
-	background: url(icons/permalink-ie8.png) center left no-repeat !important;
-}
-
-
-/* provide alternative icon set - gerericons ----------------------------------- */
+/* provide alternative icon set - genericons ----------------------------------- */
 .entry-meta-gicons {
 	display: inline-block;
 }
 
-/* provide alternative icon set - gerericons ----------------------------------- */
+/* provide alternative icon set - genericons ----------------------------------- */
 .entry-meta-gicons {
 	transition:      color .1s ease-in 0;
 	font-family:     inherit;
@@ -4382,26 +4362,10 @@ a.more-link {
 
 .widget-smart-rm aside,
 .m-widget-smart-rm aside,
-.is-mobile .m-widget-smart-rm aside,
-.ie8 .smart-rm { /* modern browsers use nth-of-type rules below */
+.is-mobile .m-widget-smart-rm aside { /* modern browsers use nth-of-type rules below */
 	margin-left:  0;
 	margin-right: 1%;
 }
-
-.ie8 .is-desktop .begin-of-row, /* make the multi-column widgets start new rows correctly on desktop */
-.ie8 .is-smalltablet .widget-odd { /* and on small tablets  for IE8 - modern browsers use nth-of-type rules below */
-	clear: both;
-}
-
-.ie8 .is-desktop .begin-of-row,
-.ie8 .is-smalltablet .widget-odd { /* for widget areas */
-	clear: none;
-}
-
-.ie8 .end-of-row {
-	margin: 0;
-}
-
 .widget-area.align-center,
 #infobar.align-center,
 .align-center {
@@ -4502,25 +4466,11 @@ a.more-link {
 		margin-right: 0;
 	}
 
-	.per-row-5-m /* if 5 or more per row look okay on desktop, then assume they will look okay on a phone, too */
+	.per-row-5-m, /* if 5 or more per row look okay on desktop, then assume they will look okay on a phone, too */
 	.per-row-6-m,
 	.per-row-7-m,
 	.per-row-8-m {
 		width: 49.5%;
-	}
-
-	.ie8 .per-row-5-m.widget-even,
-	.ie8 .per-row-6-m.widget-even,
-	.ie8 .per-row-7-m.widget-even,
-	.ie8 .per-row-8-m.widget-even {
-		margin-right: 0;
-	}
-
-	.ie8 .per-row-5-m.widget-odd,
-	.ie8 .per-row-6-m.widget-odd,
-	.ie8 .per-row-7-m.widget-odd,
-	.ie8 .per-row-8-m.widget-odd {
-		margin-right: 1%;
 	}
 
 	#wrapper {
@@ -4630,27 +4580,6 @@ a.more-link {
 
 	.widget-area.m-widget-cols-2 aside:nth-of-type( 2n+1 ) {
 		clear: both;
-	}
-
-	/* these are for modern browsers - IE8 has its own rules above */
-	.ie8 .per-row-2-m.widget-even,
-	.ie8 .per-row-3-m.widget-even,
-	.ie8 .per-row-4-m.widget-even,
-	.ie8 .per-row-5-m.widget-even,
-	.ie8 .per-row-6-m.widget-even,
-	.ie8 .per-row-7-m.widget-even,
-	.ie8 .per-row-8-m.widget-even {
-		margin-right: 0;
-	}
-
-	.ie8 .per-row-2-m.widget-odd,
-	.ie8 .per-row-3-m.widget-odd,
-	.ie8 .per-row-4-m.widget-odd,
-	.ie8 .per-row-5-m.widget-odd,
-	.ie8 .per-row-6-m.widget-odd,
-	.ie8 .per-row-7-m.widget-odd,
-	.ie8 .per-row-8-m.widget-odd {
-		margin-right: 1%;
 	}
 
 	#wrapper {
@@ -5866,68 +5795,6 @@ span.wvr-tabs-current {
 	position: relative;
 	z-index:  3;
 }
-
-
-/* =IE8/* =========================== */
-.ie-show {
-	display: none;
-}
-
-.ie8 .ie-show {
-	display: block;
-}
-
-/* for showing only on IE7/8 */
-
-html.ie8 #infobar_paginate .page-numbers,
-html.ie8 #nav-above .page-numbers,
-html.ie8 #nav-below .page-numbers {
-	border: 1px solid #888888;
-}
-
-html.ie8 #content img.featured-image,
-html.ie8 #content img,
-html.ie8 #branding img,
-html.ie8 .image-attachment img {
-	width: auto;
-}
-
-
-html.ie8 .widget img {
-	width: auto;
-}
-
-html.ie8 .shadow-1,
-html.ie8 .shadow-2,
-html.ie8 .shadow-3,
-html.ie8 .shadow-4,
-html.ie8 .shadow-custom {
-	border: 3px solid #eeeeee;
-}
-
-html.ie8 .shadow-rb {
-	border:              3px solid transparent;
-	border-right-color:  #eeeeee;
-	border-bottom-color: #eeeeee;
-}
-
-html.ie8 .shadow-lb,
-html.ie8 .shadow-tr,
-html.ie8 .shadow-tl {
-	border: 3px solid #eeeeee;
-}
-
-html.ie8 .is-desktop article[class*="post-"]:before, /* help IE8 degrade better for full-width BG color */
-html.ie8 .is-desktop #header:before,
-html.ie8 .is-desktop #colophon:before,
-html.ie8 .is-desktop #container:before,
-html.ie8 .is-desktop .menu-extra:before,
-html.ie8 .is-desktop .menu-secondary:before,
-html.ie8 .is-desktop .menu-primary:before {
-	display: none;
-}
-
-/* -- /IE8 */
 
 /* =Compatibility  - compatibility with other plugins */
 

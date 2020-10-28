@@ -32,7 +32,7 @@ function Yetii() {
 
 	this.activebackup = null;
 
-	for (var n in arguments[0]) { this.defaults[n]=arguments[0][n]; };
+	for (var n in arguments[0]) { this.defaults[n]=arguments[0][n]; }
 
 	this.getTabs = function() {
 
@@ -211,7 +211,7 @@ function Yetii() {
 
 	if (this.defaults.interval) this.rotate(this.defaults.interval);
 
-};
+}
 
 /**
  * weaverx_hide_css, JavaScript specialized hide table row
@@ -241,7 +241,7 @@ var weaverx_fillin;
 function weaverx_media_lib(fillarea) {
     weaverx_fillin = fillarea;
     tb_show('', 'media-upload.php?post_id=0&amp;type=image&amp;TB_iframe=true&amp;width=800&amp;height=600');
-    return;
+
 }
 
 jQuery(document).ready(function() {

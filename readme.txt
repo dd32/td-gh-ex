@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
-Tested up to: 5.4
-Stable tag: 4.3.8
+Tested up to: 5.5
+Stable tag: 4.4
 
 == Description ==
 
@@ -662,5 +662,21 @@ Fix: Page with Posts template failing to show paging links.
 = Version 4.3.8 =
 Fix: PwP paging links for Previous/Next
 
-= Version 4.3.9 =
-Fix: Remove Weaver Xtreme Plus use of jQuery.fn.load which has been deprecated
+= Version 4.4 =
+* Updated: Major refactoring of Customizer Interface Code
+* Tweak: Improved menu locations of some Customizer Options
+* Added: Some transition features for version 5.0
+* Added: alignment option to #wrapper
+* Added: L/R % Padding to Wrapper, Container, Header, Footer
+* Updated: Gallery Post Format code updated
+* Added: New Text Transform and character spacing options to Customizer Font options (Xtreme Plus. Will not be added to Legacy)
+* Added: New "Absolutely" subtheme - uses Align Wide + L/R % padding to get full width layout
+* Updated: Gallery Post Format code
+* Tweak: Fixed issues with Site Title on Primary Menu: color wasn't inherit by default, double instance on default menu
+* Tweak: Added new help info for Fixed top menus, html, and widget area.
+* Tweak: Changed styling of Customizer Option groups for better readability
+* Fix: Added missing 'Full text for 1st "n"</em> Posts' option to Customizer. Was in Legacy before.
+* Fix: Custom A and Custom B font sizes fixed in Customizer
+* Fix: Global Word Spacing
+* Fix: Version number for generated CSS file (Weaver Xtreme Plus)
+* Fix: block embed alignwide CSS

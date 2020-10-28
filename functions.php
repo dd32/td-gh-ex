@@ -50,16 +50,15 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 	 */
 	function weaverx_setup() {
 
-		if ( ! isset( $content_width ) ) {
-			$content_width = ( int ) ( WEAVERX_THEME_WIDTH * .75 );
-		}   // 1100 * .75 - default for content with a sidebar
-
+		if ( ! isset( $GLOBALS['content_width'] ) ) {
+			$GLOBALS['content_width'] = ( int ) ( WEAVERX_THEME_WIDTH * .75 );
+		}
 
 		/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		*/
-		load_theme_textdomain( 'weaver-xtreme', get_template_directory() . '/languages' );        // now theme's translations as fallback
+		load_theme_textdomain( 'weaver-xtreme', get_theme_file_path( '/languages' ) );        // now theme's translations as fallback
 
 		// ******** add theme support possibilities ********
 
@@ -105,7 +104,7 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 
 		// Weaver Xtreme provides its own block styles, so we don't want to include
 		//    add_theme_support( 'wp-block-styles' );
-		// because it pulls in  wp-incudes/css/dist/block-library/theme.min.css
+		// because it pulls in  wp-includes/css/dist/block-library/theme.min.css
 
 		// Add support for default block styles.
 		add_theme_support( 'wp-block-styles' );
@@ -120,8 +119,8 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 			// Enqueue editor styles - without theme editor styles
 			add_editor_style( array(
 				'editor-style.css',        // classic editor
-				'assets/css/blocks-editor-base-style' . WEAVERX_MINIFY . '.css',    // gutenberg
-			WEAVERX_GOOGLE_FONTS_URL,
+				'assets/css/blocks-editor-base-style' . WEAVERX_MINIFY . '.css',   // gutenberg
+				WEAVERX_GOOGLE_FONTS_URL,
 			) );    // from settings.php - in %7C format
 		} else {
 			weaverx_check_editor_style();        // see if we need an update...
@@ -132,8 +131,9 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 				$vers = sprintf( "%d", $vers );
 			}        // need version for cloudflare or other caching services
 
-			$updir    = wp_upload_dir();
-			$css_path = trailingslashit( $updir['baseurl'] ) . 'weaverx-subthemes/editor-early-style-wvrx.css?vers=' . $vers;
+			$updir = wp_upload_dir( null, true, true );    // force cache update to avoid bug after moving hosts
+
+			$css_path = trailingslashit( $updir['baseurl'] ) . WEAVERX_SUBTHEMES_DIR . '/editor-early-style-wvrx.css?vers=' . $vers;
 
 			// Enqueue editor styles - without theme editor styles
 			add_editor_style( array(
@@ -141,11 +141,8 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 				'assets/css/blocks-editor-base-style' . WEAVERX_MINIFY . '.css',    // gutenberg
 				$css_path,
 				WEAVERX_GOOGLE_FONTS_URL,
-			) );    // from settings.php - in %7C format
+			) );
 		}
-
-
-		//add_theme_support( 'responsive-embeds' );
 
 		weaverx_dark_theme_check();        // add Block Editor dark theme support if theme settings have dark bg
 
@@ -163,7 +160,7 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 			)
 		);
 
-		$weaverx_header = array(
+		$weaverx_header_args = array(
 			'default-image'          => '%s/assets/images/headers/winter-fog.jpg',
 			'random-default'         => true,
 			'width'                  => $width,
@@ -180,34 +177,26 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 		);
 
 
-		global $content_width;
-		$content_width = $width;    // let the WP $content_width be the same as theme width, and let our responsive CSS make it work.
+		$GLOBALS['content_width'] = $width;    // let the WP $content_width be the same as theme width, and let our responsive CSS make it work.
+
+		add_theme_support( 'custom-header', $weaverx_header_args );
+		add_theme_support( 'custom-background' );
 
 
-		if ( function_exists( 'get_custom_header' ) ) {
-			add_theme_support( 'custom-header', $weaverx_header );
-			add_theme_support( 'custom-background' );
-		}
+		// Report all errors except E_NOTICE
+		error_reporting( E_ALL & ~E_WARNING );
 
 		// We'll be using post thumbnails for custom header images on posts and pages.
 		// We want them to be the size of the header image that we just defined
 		// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-		// CHANGE NOTE: This call was removed from Weaver Xtreme 1.1. The semantics of WP have changed
-		// since this was first added and was causing the unnecessary auto-generation of a pretty large
-		// file for each and every image added to the media library.
 
-		// set_post_thumbnail_size( $weaverx_header['width'], $weaverx_header['height'], true );
-
-
-		// ... and thus ends the changeable header business.
 		weaverx_register_header_images();
 
 		// Weaver Xtreme supports two main nav menus
 		register_nav_menus( array(
-			'header-mini' => esc_html__( 'Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme'),
+			'primary'     => esc_html__( 'Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' ),
 			'secondary'   => esc_html__( 'Secondary Navigation: if specified, adds 2nd menu bar', 'weaver-xtreme'),
-			'primary'     => esc_html__( 'Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme'),
-
+			'header-mini' => esc_html__( 'Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme'),
 		) );
 	}
 endif; // weaverx_setup
@@ -224,7 +213,7 @@ if ( ! function_exists( 'weaverx_init_opts' ) ) :
 		$themename = weaverx_getopt( 'themename' ); // load the theme from the db if there ( weaverx_getopt loads the options if there )
 
 		if ( $themename === false ) {
-			require_once( 'includes/get-default-settings.php' );  // load a set of defaults
+			require_once( get_theme_file_path( '/includes/get-default-settings.php' ) );  // load a set of defaults
 			weaverx_get_default_settings();
 		}
 
@@ -326,7 +315,7 @@ if ( ! function_exists( 'weaverx_admin_header_style' ) ) {
 			#headimg img {
 				width:  <?php echo weaverx_getopt_default( 'theme_width_int',WEAVERX_THEME_WIDTH );?>px;
 				height: auto;
-				width:  100%;
+				max-width:  100%;
 			}
 		</style>
 		<?php
@@ -335,23 +324,24 @@ if ( ! function_exists( 'weaverx_admin_header_style' ) ) {
 //--
 
 
-add_action( 'widgets_init', 'weaverx_widgets_init' );
+add_action( 'widgets_init', 'weaverx_widgets_init_action' );
 
 /**
  * Register our sidebars and widgetized areas.
  *
  * @since Weaver Xtreme 1.0
  */
-function weaverx_widgets_init() {
+function weaverx_widgets_init_action() {
+
 
 	// Top located at the top of the sidebar.
-	weaverx_register_sidebar( esc_html__( 'Primary Sidebar', 'weaver-xtreme'),
+	weaverx_register_sidebar( esc_html__( 'Primary Sidebar', 'weaver-xtreme' ),
 		'primary-widget-area',
-		esc_html__( 'Primary sidebar widget area, displays on top, or left side for split sidebars', 'weaver-xtreme') );
+		esc_html__( 'Primary sidebar widget area, displays on top, or left side for split sidebars', 'weaver-xtreme' ) );
 
-	weaverx_register_sidebar( esc_html__( 'Secondary Sidebar', 'weaver-xtreme'),
+	weaverx_register_sidebar( esc_html__( 'Secondary Sidebar', 'weaver-xtreme' ),
 		'secondary-widget-area',
-		esc_html__( 'Secondary sidebar widget area, displays on bottom, or right side for split sidebars', 'weaver-xtreme') );
+		esc_html__( 'Secondary sidebar widget area, displays on bottom, or right side for split sidebars', 'weaver-xtreme' ) );
 
 
 	## Site-wide top area
@@ -390,14 +380,14 @@ function weaverx_widgets_init() {
 
 
 	// located in the header. Empty by default.
-	weaverx_register_sidebar( esc_html__( 'Header Widget Area', 'weaver-xtreme'),
+	weaverx_register_sidebar( esc_html__( 'Header Widget Area', 'weaver-xtreme' ),
 		'header-widget-area',
-		esc_html__( 'The header widget area. Widgets in this area can be displayed horizontally.', 'weaver-xtreme') );
+		esc_html__( 'The header widget area. Widgets in this area can be displayed horizontally.', 'weaver-xtreme' ) );
 
 	// located in the footer. Empty by default.
-	weaverx_register_sidebar( esc_html__( 'Footer Widget Area', 'weaver-xtreme'),
+	weaverx_register_sidebar( esc_html__( 'Footer Widget Area', 'weaver-xtreme' ),
 		'footer-widget-area',
-		esc_html__( 'The footer widget area. Widgets in this area can be displayed horizontally.', 'weaver-xtreme') );
+		esc_html__( 'The footer widget area. Widgets in this area can be displayed horizontally.', 'weaver-xtreme' ) );
 
 	$extra_areas = weaverx_getopt( '_perpagewidgets' );    // create extra areas?
 	if ( strlen( $extra_areas ) > 0 ) {
@@ -419,10 +409,15 @@ if ( ! function_exists( 'weaverx_register_sidebar' ) ) {
 	/**
 	 * Register widgetized areas
 	 *
+	 * @param        $name
+	 * @param        $id
+	 * @param        $desc
+	 * @param string $altclass
+	 *
 	 * @since Weaver Xtreme 1.0
 	 */
 	function weaverx_register_sidebar( $name, $id, $desc, $altclass = '' ) {
-		if ( $altclass != '' ) {
+		if ( '' != $altclass ) {
 			$altclass .= ' ';
 		}
 		register_sidebar( array(
@@ -441,36 +436,36 @@ if ( ! function_exists( 'weaverx_register_sidebar' ) ) {
 
 // ================================ Weaver Xtreme admin ================================
 
-add_action( 'wp_head', 'weaverx_wp_head' );
+add_action( 'wp_head', 'weaverx_wp_head_action' );
 /**
  * Theme wphead generation
  *
  * @since Weaver Xtreme 1.0
  *
  */
-function weaverx_wp_head() {    // action definition
-	require_once( 'includes/wphead.php' );
+function weaverx_wp_head_action() {    // action definition
+	require_once( get_theme_file_path('/includes/wphead.php' ) );        // ( Not a template file )
 	weaverx_generate_wphead();
 }
 
 //--
 
 
-if ( ! function_exists( 'weaverx_enqueue_styles' ) ) {
+if ( ! function_exists( 'weaverx_enqueue_styles_action' ) ) {
 	/**
 	 * Enqueue theme stylesheets
 	 *
 	 * @since Weaver Xtreme 1.0
 	 *
 	 */
-	function weaverx_enqueue_styles() {
+	function weaverx_enqueue_styles_action() {
 		// Add stylesheets
-		$sheet = get_template_directory_uri() . '/assets/css/fonts' . WEAVERX_MINIFY . '.css';
+		$sheet = get_theme_file_uri( '/assets/css/fonts' . WEAVERX_MINIFY . '.css' );
 		wp_enqueue_style( 'weaverx-font-sheet', $sheet, array(), WEAVERX_VERSION, 'all' );
 
 		// Start with the "real" stylesheet ( so child theme style.css can override )
 
-		$sheet = get_template_directory_uri() . '/assets/css/style-weaverx' . WEAVERX_MINIFY . '.css';
+		$sheet = get_theme_file_uri( '/assets/css/style-weaverx' . WEAVERX_MINIFY . '.css' );
 
 		wp_enqueue_style( 'weaverx-style-sheet', $sheet, array( 'weaverx-font-sheet' ), WEAVERX_VERSION, 'all' );
 
@@ -490,15 +485,15 @@ if ( ! function_exists( 'weaverx_enqueue_styles' ) ) {
 }
 
 //--
-add_action( 'wp_enqueue_scripts', 'weaverx_enqueue_styles', 11 );        // styles in normal order
-add_action( 'wp_enqueue_scripts', 'weaverx_enqueue_scripts', 8 );    // early priority so load before most other scripts ( added: 3.1.7 )
+add_action( 'wp_enqueue_scripts', 'weaverx_enqueue_styles_action', 11 );    // styles in normal order
+add_action( 'wp_enqueue_scripts', 'weaverx_enqueue_scripts_action', 8 );    // early priority so load before most other scripts ( added: 3.1.7 )
 /**
  * Enqueue theme scripts
  *
  * @since Weaver Xtreme 1.0
  *
  */
-function weaverx_enqueue_scripts() {    // action definition
+function weaverx_enqueue_scripts_action() {    // action definition
 
 	//weaverx_enqueue_styles();	// add the styles
 
@@ -511,19 +506,18 @@ function weaverx_enqueue_scripts() {    // action definition
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-
 	//-- Weaver Xtreme js lib - requires jQuery...
 
 	// put this one in <head> to enhance performance slightly for menu fix-up
 
-	wp_enqueue_script( 'weaverxJSLib', get_template_directory_uri() . '/assets/js/weaverxjslib' . WEAVERX_MINIFY . '.js', array( 'jquery' ), WEAVERX_VERSION );
+	wp_enqueue_script( 'weaver-xtreme-JSLib', get_theme_file_uri( '/assets/js/weaverxjslib' . WEAVERX_MINIFY . '.js' ), array( 'jquery' ), WEAVERX_VERSION );
 
 	$useSM = weaverx_getopt( 'use_smartmenus' ) ? '1' : '0';
 
 	if ( $useSM ) {
-		wp_enqueue_script( 'weaverxSMLib', get_template_directory_uri() . '/assets/js/smartmenus/jquery.smartmenus' . WEAVERX_MINIFY . '.js', array( 'jquery' ), WEAVERX_VERSION );
+		// must be weaverxSMLib handle so Weaver Xtreme Plus won't also load its version.
+		wp_enqueue_script( 'weaverxSMLib', get_theme_file_uri( '/assets/js/smartmenus/jquery.smartmenus' . WEAVERX_MINIFY . '.js' ), array( 'jquery' ), WEAVERX_VERSION );
 	}
-
 
 	$altsw = weaverx_getopt( 'mobile_alt_switch' );
 	if ( $useSM == '0' || $altsw < 10 ) {
@@ -551,9 +545,9 @@ function weaverx_enqueue_scripts() {    // action definition
 		'headerVideoClass' => weaverx_get_video_render(),
 	);
 
-	wp_localize_script( 'weaverxJSLib', 'wvrxOpts', $local );
+	wp_localize_script( 'weaver-xtreme-JSLib', 'wvrxOpts', $local );
 
-	wp_enqueue_script( 'weaverxJSLibEnd', get_template_directory_uri() . '/assets/js/weaverxjslib-end' . WEAVERX_MINIFY . '.js', array( 'jquery' ), WEAVERX_VERSION, true );
+	wp_enqueue_script( 'weaver-xtreme-JSLibEnd', get_theme_file_uri( '/assets/js/weaverxjslib-end' . WEAVERX_MINIFY . '.js' ), array( 'jquery' ), WEAVERX_VERSION, true );
 
 	weaverx_masonry( 'enqueue-script' );
 }
@@ -562,36 +556,33 @@ function weaverx_enqueue_scripts() {    // action definition
 
 // Load files required to make the theme work!
 
-require_once( get_template_directory() . '/settings.php' );                   // settings stay in theme root directory
-require_once( get_template_directory() . '/includes/lib-content.php' );       // page/post display support
-require_once( get_template_directory() . '/includes/lib-runtime.php' );       // standard runtime library
-require_once( get_template_directory() . '/includes/lib-layout.php' );       // content layout support
+require_once( get_theme_file_path('/settings.php' )  );                   // settings stay in theme root directory ( Not a template file )
+require_once( get_theme_file_path( '/includes/lib-content.php' ) );       // page/post display support ( Not a template file )
+require_once( get_theme_file_path( '/includes/lib-runtime.php' ) );       // standard runtime library ( Not a template file )
+require_once( get_theme_file_path( '/includes/lib-layout.php' ) );       // content layout support ( Not a template file )
 
-require_once( get_template_directory() . '/includes/filters.php' );           // other filter and action definitions
+require_once( get_theme_file_path( '/includes/filters.php' ) );           // other filter and action definitions ( Not a template file )
 
-if ( is_user_logged_in() ) {
-	require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/load-admin-core.php' );    // load admin files
-	require_once( get_template_directory() . WEAVERX_ADMIN_DIR . '/wvrx-editor-style.php' );    // the editor file generator
-	require_once( trailingslashit( get_template_directory() ) . 'admin/customizer/trt-customize-pro/trt-customize-pro-top.php' );
+if ( is_user_logged_in() && (current_user_can( 'edit_themes' ) || current_user_can( 'manage_options' ) ) ) {
+	require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/admin-core/load-admin-core.php' ) );    // load admin files
+	require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/admin-core/wvrx-editor-style.php' ) );    // the editor file generator
+	require_once( get_theme_file_path( WEAVERX_ADMIN_DIR . '/customizer/trt-customize-pro/trt-customize-pro-top.php' ) );
 
 }
 
-do_action( 'weaver_xtreme_load_admin' );        // now load the tradtional admin from plugin if loaded, otherwise basic info
-do_action( 'weaver_xtreme_load_customizer' );    // load the customizer based option inteface.
+do_action( 'weaver_xtreme_load_admin' );        // now load the traditional admin from plugin if loaded, otherwise basic info
+
+do_action( 'weaver_xtreme_load_customizer' );    // load the customizer based option interface.
 
 
 // ============================== MORE WEAVER THEME ACTIONS ===================
 
-
 remove_filter( 'nav_menu_description', 'strip_tags' );
-add_filter( 'wp_setup_nav_menu_item', 'weaverx_wp_setup_nav_menu_item' );
+add_filter( 'wp_setup_nav_menu_item', 'weaverx_wp_setup_nav_menu_item_filter' );
 /**
  * Filter: Allow HTML descriptions in WordPress Menu
- *
- * @since Weaver Xtreme pre-3.0
- *
  */
-function weaverx_wp_setup_nav_menu_item( $menu_item ) {
+function weaverx_wp_setup_nav_menu_item_filter( $menu_item ) {
 	$menu_item->description = apply_filters( 'nav_menu_description', $menu_item->post_content );
 
 	return $menu_item;
@@ -604,20 +595,20 @@ function weaverx_wp_setup_nav_menu_item( $menu_item ) {
  * @uses add_theme_support
  * @action after_setup_theme
  */
-function weaverx_infinite_scroll_init() {
+function weaverx_infinite_scroll_init_action() {
 
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'content',
 		'type'      => 'click',
-		'render'    => 'weaverx_render_infinite_scroll',
+		'render'    => 'weaverx_render_infinite_scroll_cb',
 
 	) );
 }
 
-add_action( 'after_setup_theme', 'weaverx_infinite_scroll_init' );
+add_action( 'after_setup_theme', 'weaverx_infinite_scroll_init_action' );
 
 
-function weaverx_render_infinite_scroll() {
+function weaverx_render_infinite_scroll_cb() {
 	$GLOBALS['weaverx_page_who'] = 'blog';
 	$num_cols                    = weaverx_getopt( 'blog_cols' );
 	if ( ! $num_cols || $num_cols > 3 ) {
@@ -702,8 +693,7 @@ if ( ! function_exists( 'weaverx_increase_max_srcset_image_width' ) ) {
 
 // Checking if WooCommerce is active, load support if it is
 if ( class_exists( 'WooCommerce' ) ) {
-	require_once( 'woocommerce_support.php' );
+	require_once( get_theme_file_path( '/woocommerce-support.php' ) );    //  ( Not a template file )
 }
 
 // THE END OF functions.php
-?>

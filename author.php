@@ -25,10 +25,12 @@ if ( have_posts() ) {
 	* properly with a call to rewind_posts().
 	*/
 	the_post();
-	$msg    = apply_filters( 'weaverx_author_archives', weaverx_filter_text( __( 'Author Archives: %s', 'weaver-xtreme' ) ) );
+	// translators: %s author's URL
+	$msg = apply_filters( 'weaverx_author_archives', esc_html__( 'Author Archives: %s', 'weaver-xtreme' ) );
+
 	$titlew = '<span class="author-title-label">' . sprintf( $msg,
 			'</span><span class="vcard archive-info"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) .
-			'" title="' . esc_attr( get_the_author() ) . '" rel="me">' . weaverx_get_the_author() . '</a></span>' ); ?>
+			'" title="' . esc_attr( get_the_author() ) . '" rel="me">' . esc_html( get_the_author() ) . '</a></span>' ); ?>
 
 
 	<header class="page-header archive-title">
@@ -58,4 +60,3 @@ if ( have_posts() ) {
 weaverx_sb_postcontent( 'author' );
 
 weaverx_page_tail( 'author', $sb_layout );    // end of page wrap
-?>

@@ -22,7 +22,7 @@ if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {	// run document ready j
 	jQuery(document).ready(weaverxOnResize);
 }
 
-//jQuery(document).ready(weaverxOnResize);	// don't really nned this for non-safari - it results in a double call on initial load
+//jQuery(document).ready(weaverxOnResize);	// don't really need this for non-safari - it results in a double call on initial load
 // *********************************** >>>  JavaScript Functions <<< *******************************************
 // *********************************** >>>  weaverxBrowserWidth <<< *******************************************
 function weaverxBrowserWidth() {
