@@ -21,7 +21,7 @@
 			<!-- Nav -->
 			<div class="col-lg-6 d-none d-lg-block my-auto">
 				<nav class="text-right main-menu">
-					<?php startkit_navigation(); ?>
+					<?php if ( function_exists( 'startkit_navigation' ) ) :	startkit_navigation(); endif; ?>
 				</nav>
 			</div>
 			<!-- Nav End -->
