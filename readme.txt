@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
 Tested up to: 5.5
-Stable tag: 4.4
+Stable tag: 4.4.0.1
 
 == Description ==
 
@@ -680,3 +680,7 @@ Fix: PwP paging links for Previous/Next
 * Fix: Global Word Spacing
 * Fix: Version number for generated CSS file (Weaver Xtreme Plus)
 * Fix: block embed alignwide CSS
+* Fix: Italic/Bold now works for Site Tagline
+
+= Version 4.4.0.1 =
+* Fix: woocommerce-support.php had incorrect filename.
