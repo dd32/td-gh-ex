@@ -19,7 +19,7 @@
 				<div class="row">
 					<div class="col-md-7">
 						<p class="site-copyright">
-							&copy; <?php esc_html( the_date( 'Y' )); ?> <?php esc_html( bloginfo( 'title' ) ) ;?> <?php esc_html_e('Developed by', 'articlepress') ?> <a href="<?php echo esc_url( 'https://themeasia.net' ); ?>"> <?php esc_html_e( 'ThemeAsia','articlepress' ) ?></a>
+							&copy; <?php esc_html( the_date( 'Y' )); ?> <?php esc_html( bloginfo( 'title' ) ) ;?>  <?php esc_html_e('All Rights Reserved, Developed by', 'articlepress') ?> <a href="<?php echo esc_url( 'https://themeasia.net' ); ?>"> <?php esc_html_e( 'ThemeAsia','articlepress' ) ?></a>
 						</p>
 					</div>
 
