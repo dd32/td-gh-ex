@@ -4,8 +4,8 @@
 if ( ! function_exists( 'elitepress_post_meta_content' ) ) :
 
 function elitepress_post_meta_content()
-{ $elitepress_lite_options=elitepress_theme_data_setup();
-					$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
+{ 
+					$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() ); ?>
 					
 						<div class="entry-meta">
 							<span class="author">
@@ -71,5 +71,3 @@ $defalt_arg =array('class' => "img-responsive");
 				<div class="entry-date"><span><?php echo esc_html(get_the_date()); ?></span></div>
 	</figure>
 <?php } } endif;
-			
-			?>

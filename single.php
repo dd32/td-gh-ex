@@ -43,5 +43,5 @@ get_template_part('banner','header');
 	</div>
 </div>
 <!-- Footer Section -->
-<?php get_footer(); ?>
-<!-- /Close of wrapper -->
+<?php get_footer(); 
+//Close of wrapper

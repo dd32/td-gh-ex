@@ -23,7 +23,7 @@ function elitepress_header_widget_customizer( $wp_customize ){
 		
 	//Header widget
 	class elitepress_WP_header_widget_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
+        public $type = 'new_menu';
     /**
     * Render the control's content.
     */

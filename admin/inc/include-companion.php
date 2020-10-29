@@ -5,8 +5,8 @@
  *
  */
 
-$hide_install = get_option('elitepress_hide_customizer_companion_notice', false);
-if (!function_exists('webriti_companion') && !$hide_install) {
+$elitepress_hide_install = get_option('elitepress_hide_customizer_companion_notice', false);
+if (!function_exists('webriti_companion') && !$elitepress_hide_install) {
 	if (class_exists('WP_Customize_Section') && !class_exists('elitepress_Companion_Installer_Section')) {
 		/**
 		 * Recommend the installation of elitepress Companion using a custom section.

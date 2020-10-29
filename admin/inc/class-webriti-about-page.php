@@ -139,7 +139,7 @@ if (!class_exists('elitepress_About_Page')) {
 			?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__("ElitePress theme is installed. To take full advantage of the features this theme has to offer visit our %1\$s welcome page %2\$s", "elitepress"), '<a href="' . esc_url( admin_url( 'themes.php?page=elitepress-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=elitepress-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with ElitePress Lite', 'elitepress' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=elitepress-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with ElitePress Theme', 'elitepress' ); ?></a></p>
 			</div>
 		<?php
 		}

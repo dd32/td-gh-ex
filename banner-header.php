@@ -1,39 +1,38 @@
 <?php
 get_header();
-$elitepress_lite_options=elitepress_theme_data_setup(); 
-$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
+$elitepress_current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() );
 
 
  if(is_category()){
-  $h1=$current_options['banner_title_category'];
-  $bd=$current_options['banner_description_category'];
+  $elitepress_h1=$elitepress_current_options['banner_title_category'];
+  $elitepress_bd=$elitepress_current_options['banner_description_category'];
   }else if(is_author())
   {
-  $h1=$current_options['banner_title_author'];
-  $bd=$current_options['banner_description_author'];
+  $elitepress_h1=$elitepress_current_options['banner_title_author'];
+  $elitepress_bd=$elitepress_current_options['banner_description_author'];
   }else if(is_404())
   {
-  $h1=$current_options['banner_title_404'];
-  $bd=$current_options['banner_description_404'];
+  $elitepress_h1=$elitepress_current_options['banner_title_404'];
+  $elitepress_bd=$elitepress_current_options['banner_description_404'];
   }
   else if(is_tag())
   {
-  $h1=$current_options['banner_title_tag'];
-  $bd=$current_options['banner_description_tag'];
+  $elitepress_h1=$elitepress_current_options['banner_title_tag'];
+  $elitepress_bd=$elitepress_current_options['banner_description_tag'];
   }else if(is_archive() )
   {
-  $h1=$current_options['banner_title_archive'];
-  $bd=$current_options['banner_description_archive'];
+  $elitepress_h1=$elitepress_current_options['banner_title_archive'];
+  $elitepress_bd=$elitepress_current_options['banner_description_archive'];
   }
   else if(is_search())
   {
-  $h1=$current_options['banner_title_search'];
-  $bd=$current_options['banner_description_search'];
+  $elitepress_h1=$elitepress_current_options['banner_title_search'];
+  $elitepress_bd=$elitepress_current_options['banner_description_search'];
   }
   else
   {
-  $h1=get_post_meta( $post->ID, 'banner_title', true );
-  $bd=get_post_meta( $post->ID, 'banner_description', true );
+  $elitepress_h1=get_post_meta( $post->ID, 'banner_title', true );
+  $elitepress_bd=get_post_meta( $post->ID, 'banner_description', true );
   }
 
 if (get_post_meta( get_the_ID(), 'banner_chkbx', true )) { ?>
@@ -43,10 +42,10 @@ if (get_post_meta( get_the_ID(), 'banner_chkbx', true )) { ?>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="page-title">
-					<h1><?php if($h1!=''){ echo esc_html($h1); } else{ 
+					<h1><?php if($elitepress_h1!=''){ echo esc_html($elitepress_h1); } else{ 
 					esc_html_e("Title",'elitepress');} ?></h1>
 					<div class="page-title-seprator"></div>
-					 <p><?php if($bd!=''){ echo esc_html($bd);}  
+					 <p><?php if($elitepress_bd!=''){ echo esc_html($elitepress_bd);}  
 					 else { 
 					 echo esc_html__('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait','elitepress'); }?></p>
 					</div>

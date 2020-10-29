@@ -1,8 +1,7 @@
 <?php add_action( 'widgets_init', 'elitepress_widgets_init');
 function elitepress_widgets_init() {
-$elitepress_lite_options=elitepress_theme_data_setup(); 
-$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
-$header_column_layout = 12 / $current_options['header_column_layout'];
+$elitepress_current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() );
+$elitepress_header_column_layout = 12 / $elitepress_current_options['header_column_layout'];
 	/*sidebar*/
 	register_sidebar( array(
 			'name' => esc_html__( 'Sidebar widget area', 'elitepress' ),
@@ -41,7 +40,7 @@ $header_column_layout = 12 / $current_options['header_column_layout'];
 				'name' => esc_html__( 'Top header widget area', 'elitepress' ),
 				'id' => 'header_widget_area',
 				'description' => esc_html__( 'Top header widget area', 'elitepress' ),
-				'before_widget' => '<div id="%1$s" class="col-md-'.esc_html($header_column_layout).' col-sm-6 col-xs-6 widget %2$s">',
+				'before_widget' => '<div id="%1$s" class="col-md-'.esc_html($elitepress_header_column_layout).' col-sm-6 col-xs-6 widget %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<h3 class="widget-title">',
 				'after_title' => '</h3>',
@@ -56,5 +55,4 @@ $header_column_layout = 12 / $current_options['header_column_layout'];
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 ) );
-}                     
-?>
+}

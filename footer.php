@@ -1,5 +1,5 @@
-<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
-$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); 
+<?php
+$elitepress_current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() ); 
 if ( is_active_sidebar( 'footer_widget_area' ) ) { ?>
 <!-- Footer Section -->
 <footer class="site-footer">
@@ -19,11 +19,11 @@ if ( is_active_sidebar( 'footer_widget_area' ) ) { ?>
 		<div class="row">
 			<div class="col-md-7">
 				<div class="footer-copyright">
-					<?php echo wp_kses_post($current_options['footer_copyright_text']);?>
+					<?php echo wp_kses_post($elitepress_current_options['footer_copyright_text']);?>
 				</div>
 			</div>
 			<div class="col-md-5">
-			<?php if($current_options['footer_menu_bar_enabled'] == true ) { ?>	
+			<?php if($elitepress_current_options['footer_menu_bar_enabled'] == true ) { ?>	
 			<?php
 			wp_nav_menu( array(  
 					'theme_location' => 'footer_menu',
@@ -41,13 +41,9 @@ if ( is_active_sidebar( 'footer_widget_area' ) ) { ?>
 </footer>
 <!-- /Footer Copyright Section -->
 </div><!-- /Close of wrapper -->  
-
 <!--Scroll To Top--> 
 <a href="#" class="hc_scrollup"><i class="fa fa-chevron-up"></i></a>
 <!--/Scroll To Top-->
-<script>
-jQuery(document).ready(function(){jQuery(window).scroll(function(){if(jQuery(this).scrollTop()>100){jQuery('.hc_scrollup').fadeIn();}else{jQuery('.hc_scrollup').fadeOut();}});jQuery('.hc_scrollup').click(function(){jQuery("html, body").animate({scrollTop:0},600);return false;});});
-</script>
 <?php wp_footer(); ?>
 	</body>
 </html>

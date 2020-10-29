@@ -1,9 +1,3 @@
-<?php
-/**
- * Support
- */
-?>
-
 <div id="support" class="elitepress-tab-pane panel-close">
 <div class="container-fluid">
 	<div class="row">

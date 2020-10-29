@@ -69,16 +69,16 @@
 	?>
 <div class="comment-form-section">
 	<?php  
-	 $fields=array(
-		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.esc_attr_e('Name','elitepress').'" /></div>',
-		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value=""   type="email" placeholder="'.esc_attr_e('Email','elitepress').'" /></div>',
+	 $elitepress_fields=array(
+		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.esc_attr('Name','elitepress').'" /></div>',
+		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value=""   type="email" placeholder="'.esc_attr('Email','elitepress').'" /></div>',
 		);
-		function elitepress_fields($fields) { 
-			return $fields;
+		function elitepress_fields($elitepress_fields) { 
+			return $elitepress_fields;
 		}
 		add_filter('comment_form_default_fields','elitepress_fields');
-			$defaults = array(
-			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
+			$elitepress_defaults = array(
+			'fields'=> apply_filters( 'comment_form_default_fields', $elitepress_fields ),
 			'comment_field'=> '<div class="blog-form-group-textarea" >
 			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.esc_attr__('Message','elitepress').'"></textarea></div>',		
 			'logged_in_as' => '<p class="blog-post-info-detail">' . esc_html__("Logged in as",'elitepress' ). ' ' .'<a href="'. esc_url(admin_url( 'profile.php' )).'">'.$user_identity.'</a>'.' 
@@ -89,7 +89,7 @@
 			'comment_notes_before' => '',
 			'title_reply'=> '<div class="comment-title"><h3>'.esc_html__('Leave a Reply', 'elitepress').'</h3></div>',
 			'id_form'=> 'commentform' );
-		comment_form($defaults);
+		comment_form($elitepress_defaults);
 	?>
 </div>
-<?php } } ?>
+<?php } }

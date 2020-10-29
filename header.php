@@ -6,14 +6,14 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php wp_head(); ?>
 </head>
-	<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
-	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
-	if($current_options['layout_selector'] == "boxed")
-	{ $class="boxed"; }
+	<?php
+	$elitepress_current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() );
+	if($elitepress_current_options['layout_selector'] == "boxed")
+	{ $elitepress_class="boxed"; }
 	else
-	{ $class="wide"; }
+	{ $elitepress_class="wide"; }
 	?>
-<body <?php body_class($class); ?> >
+<body <?php body_class($elitepress_class); ?> >
 <?php wp_body_open(); ?>
 <a class="skip-link elitepress-screen-reader" href="#wrapper"><?php esc_html_e('Skip to content', 'elitepress'); ?></a>
 

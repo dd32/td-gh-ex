@@ -9,5 +9,3 @@
 		get_template_part('index', 'blog');
 				
 		get_footer();
-	
-?>

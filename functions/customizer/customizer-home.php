@@ -161,26 +161,7 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 		'priority'       => 200,
 		'capability'     => 'edit_theme_options',
 		'title'      => esc_html__('Header settings', 'elitepress'),
-	) );
-	
-	// Header logo text checkbox
-    $wp_customize->add_setting(
-            'header_text',
-            array(
-                'theme_supports'    => array( 'custom-logo', 'header-text' ),
-                'default'           => false,
-                'sanitize_callback' => 'absint',
-            )
-        );
-    $wp_customize->add_control(
-        'header_text',
-        array(
-            'label'    => esc_html__( 'Display Site Title and Tagline', 'elitepress'),
-            'section'  => 'title_tagline',
-            'settings' => 'header_text',
-            'type'     => 'checkbox',
-        )
-    ); 
+	) ); 
 	
     $wp_customize->add_setting(
 	'elitepress_lite_options[google_analytics]', array(
@@ -196,32 +177,13 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 		'input_attrs' => array('disabled' => 'disabled'),));
 	
 	
-	//Custom css
-	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => esc_html__('Custom CSS', 'elitepress'),
-		'panel'  => 'header_options',
-		'priority'   => 100,
-   	) );
-	$wp_customize->add_setting(
-	'elitepress_lite_options[webrit_custom_css]'
-		, array(
-        'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'wp_filter_nohtml_kses',
-		'type'=> 'option',
-    ));
-    $wp_customize->add_control( 'elitepress_lite_options[webrit_custom_css]', array(
-        'label'   => esc_html__('Custom CSS', 'elitepress'),
-        'section' => 'custom_css',
-        'type' => 'textarea',
-		'priority'   => 100,
-    )); 	
-	
+
 	//Header Search bar
 
 	$wp_customize->add_section(
         'header_search_bar',
         array(
-            'title' => 'Search Bar ',
+            'title' => esc_html__('Search Bar','elitepress'),
            'priority'    => 400,
 			'panel' => 'header_options',
         )
@@ -248,4 +210,4 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
 	);
 	
 }
-add_action( 'customize_register', 'elitepress_header_customizer' );	?>
+add_action( 'customize_register', 'elitepress_header_customizer' );

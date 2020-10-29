@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Elitepress\n"
-"POT-Creation-Date: 2020-06-24 20:38+0530\n"
+"POT-Creation-Date: 2020-10-22 13:09+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -74,7 +74,7 @@ msgid ""
 msgstr ""
 
 #: admin/inc/class-webriti-about-page.php:142
-msgid "Get started with ElitePress Lite"
+msgid "Get started with ElitePress Theme"
 msgstr ""
 
 #: admin/inc/class-webriti-about-page.php:263
@@ -102,8 +102,8 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:347 admin/tab-pages/support.php:28
-#: admin/tab-pages/support.php:30
+#: admin/inc/class-webriti-about-page.php:347 admin/tab-pages/support.php:22
+#: admin/tab-pages/support.php:24
 msgid "Changelog"
 msgstr ""
 
@@ -290,7 +290,7 @@ msgid "Get instant 24/7 support on our Support Forum."
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:91
-msgid "ElitePress Lite"
+msgid "Free"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:95
@@ -308,7 +308,7 @@ msgid "WordPress Support Forum"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:119
-msgid "ElitePress PRO"
+msgid "Pro"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:123
@@ -329,7 +329,7 @@ msgid "Webriti Support Forum"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:147
-msgid "Get ElitePress PRO Now!"
+msgid "Get PRO Version Now!"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:15
@@ -359,7 +359,7 @@ msgid "Go to Customizer"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:37
-#: admin/tab-pages/getting-started.php:43 admin/tab-pages/support.php:20
+#: admin/tab-pages/getting-started.php:43 admin/tab-pages/support.php:14
 msgid "Documentation"
 msgstr ""
 
@@ -392,11 +392,11 @@ msgstr ""
 msgid "Premium Theme Details"
 msgstr ""
 
-#: admin/tab-pages/support.php:12 admin/tab-pages/support.php:14
+#: admin/tab-pages/support.php:6 admin/tab-pages/support.php:8
 msgid "Contact Support"
 msgstr ""
 
-#: admin/tab-pages/support.php:13
+#: admin/tab-pages/support.php:7
 msgid ""
 "We want to make sure you have the best experience using elitepress theme, "
 "and that is why we have gathered all the necessary information here for you. "
@@ -404,17 +404,17 @@ msgid ""
 "great products."
 msgstr ""
 
-#: admin/tab-pages/support.php:21
+#: admin/tab-pages/support.php:15
 msgid ""
 "Need more details? Please check our full documentation for detailed "
 "information on how to use elitepress."
 msgstr ""
 
-#: admin/tab-pages/support.php:22
+#: admin/tab-pages/support.php:16
 msgid "Read full documentation"
 msgstr ""
 
-#: admin/tab-pages/support.php:29
+#: admin/tab-pages/support.php:23
 msgid ""
 "Want to get the gist on the latest theme changes? Just consult our changelog "
 "below to get a taste of the recent fixes and features implemented."
@@ -556,16 +556,17 @@ msgstr ""
 msgid "Monthly Archive"
 msgstr ""
 
-#: archive.php:21 archive.php:25
+#. translators: 1: Archive name, 2: date
+#: archive.php:22 archive.php:27
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: archive.php:24
+#: archive.php:25
 msgid "Yearly Archive"
 msgstr ""
 
-#: archive.php:28
+#: archive.php:30
 msgid "Blog Archive"
 msgstr ""
 
@@ -573,7 +574,7 @@ msgstr ""
 msgid "Author Archive by"
 msgstr ""
 
-#: banner-header.php:47 functions/customizer/customizer-blog.php:49
+#: banner-header.php:46 functions/customizer/customizer-blog.php:49
 #: functions/customizer/customizer_banner.php:33
 #: functions/customizer/customizer_banner.php:79
 #: functions/customizer/customizer_banner.php:125
@@ -584,7 +585,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: banner-header.php:51
+#: banner-header.php:50
 msgid ""
 "Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie "
 "consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et "
@@ -650,14 +651,6 @@ msgstr ""
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:73
-msgid "Name"
-msgstr ""
-
-#: comments.php:74
-msgid "Email"
-msgstr ""
-
 #: comments.php:83
 msgid "Message"
 msgstr ""
@@ -682,9 +675,8 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content-single.php:20 content.php:20 elitepress_theme_setup_data.php:74
-#: fullwidth.php:13 functions.php:126 functions.php:149 functions.php:233
-#: page.php:13
+#: content-single.php:20 content.php:20 fullwidth.php:13 functions.php:129
+#: functions.php:136 functions.php:220 page.php:13
 msgid "Read More"
 msgstr ""
 
@@ -692,14 +684,26 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
+#: elitepress_theme_setup_data.php:55
+msgid "+48-0987-654-321"
+msgstr ""
+
+#: elitepress_theme_setup_data.php:56
+msgid "info@elitepresstheme.com"
+msgstr ""
+
 #: elitepress_theme_setup_data.php:72
-msgid "Want to say hey or find out more?"
+msgid "Integer condimentum fermentum?"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:73
 msgid ""
 "Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  "
 "sint occaecat proidentse."
+msgstr ""
+
+#: elitepress_theme_setup_data.php:74
+msgid "Sed gravida"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:80
@@ -710,20 +714,18 @@ msgid ""
 msgstr ""
 
 #: elitepress_theme_setup_data.php:88
-msgid "Latest projects"
+msgid "Donec aliquam"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:89 elitepress_theme_setup_data.php:96
-#: elitepress_theme_setup_data.php:100 elitepress_theme_setup_data.php:111
-#: elitepress_theme_setup_data.php:115 elitepress_theme_setup_data.php:119
-#: elitepress_theme_setup_data.php:123
+#: elitepress_theme_setup_data.php:100
 msgid ""
 "Morbi leo risus, porta ac consectetur vestibulum eros cras mattis "
 "consectetur purus sit..."
 msgstr ""
 
 #: elitepress_theme_setup_data.php:91
-msgid "Growing your business"
+msgid "Pellentesque habitant morbi"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:92
@@ -733,15 +735,15 @@ msgid ""
 msgstr ""
 
 #: elitepress_theme_setup_data.php:95
-msgid "Functional elegance"
+msgid "Fusce justo sapien"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:99
-msgid "Planning your next move"
+msgid "Aliquam auctor metus"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:106
-msgid "Our services"
+msgid "Aenean euismod"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:107
@@ -752,24 +754,31 @@ msgid ""
 msgstr ""
 
 #: elitepress_theme_setup_data.php:110
-msgid "Responsive design"
+msgid "Ipsum pulvinar"
+msgstr ""
+
+#: elitepress_theme_setup_data.php:111 elitepress_theme_setup_data.php:115
+#: elitepress_theme_setup_data.php:119 elitepress_theme_setup_data.php:123
+msgid ""
+"Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis "
+"consectetur purus sit amet ferment etiam porta sem malesuada magna mollis."
 msgstr ""
 
 #: elitepress_theme_setup_data.php:114
-msgid "Twitter Bootstrap 3.2.0"
+msgid "Lorem ipsum"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:118
-msgid "Exclusive support"
+msgid "Integer ultricies"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:122
-msgid "Incredibly flexible"
+msgid "Integer condimentum"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:126
 #: functions/customizer/customizer-blog.php:43
-msgid "Latest news"
+msgid "Vivamus nec"
 msgstr ""
 
 #: elitepress_theme_setup_data.php:127
@@ -826,16 +835,17 @@ msgstr ""
 msgid "Search title"
 msgstr ""
 
-#: functions.php:68
+#. translators: %s: plugin name.
+#: functions.php:70
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:83
+#: functions.php:86
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:87
 msgid "Footer Menu"
 msgstr ""
 
@@ -950,11 +960,8 @@ msgid "Plugin activated successfully."
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:388
-#: functions/class-tgm-plugin-activation.php:2952
 msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
 
 #. translators: 1: plugin name.
 #: functions/class-tgm-plugin-activation.php:390
@@ -1204,6 +1211,12 @@ msgstr ""
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
+#: functions/class-tgm-plugin-activation.php:2952
+msgid "The following one plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
 #: functions/class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
 msgstr ""
@@ -1324,20 +1337,15 @@ msgstr ""
 msgid "Header settings"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:178
-msgid "Display Site Title and Tagline"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:192
+#: functions/customizer/customizer-home.php:173
 msgid "Google tracking code"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:201
-#: functions/customizer/customizer-home.php:213
-msgid "Custom CSS"
+#: functions/customizer/customizer-home.php:186
+msgid "Search Bar"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:244
+#: functions/customizer/customizer-home.php:206
 msgid "Enable search bar on header"
 msgstr ""
 
@@ -1541,6 +1549,10 @@ msgstr ""
 msgid "Enter the banner's heading title"
 msgstr ""
 
+#: functions/meta-box/post-meta.php:23
+msgid "Enter Banner Title"
+msgstr ""
+
 #: functions/meta-box/post-meta.php:25
 msgid "Enter banner description"
 msgstr ""
@@ -1553,27 +1565,27 @@ msgstr ""
 msgid "In"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:8 functions/widget/custom-sidebar.php:10
+#: functions/widget/custom-sidebar.php:7 functions/widget/custom-sidebar.php:9
 msgid "Sidebar widget area"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:19
-#: functions/widget/custom-sidebar.php:21
+#: functions/widget/custom-sidebar.php:18
+#: functions/widget/custom-sidebar.php:20
 msgid "Top header left area"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:30
-#: functions/widget/custom-sidebar.php:32
+#: functions/widget/custom-sidebar.php:29
+#: functions/widget/custom-sidebar.php:31
 msgid "Top header right area"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:41
-#: functions/widget/custom-sidebar.php:43
+#: functions/widget/custom-sidebar.php:40
+#: functions/widget/custom-sidebar.php:42
 msgid "Top header widget area"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:51
-#: functions/widget/custom-sidebar.php:53
+#: functions/widget/custom-sidebar.php:50
+#: functions/widget/custom-sidebar.php:52
 msgid "Footer widget area"
 msgstr ""
 
@@ -1587,13 +1599,13 @@ msgstr ""
 
 #: functions/widget/elitepress_header_widget.php:42
 #: functions/widget/elitepress_header_widget.php:69
-#: functions/widget/elitepress_header_widget.php:87
-msgid "15AH, San Francisco"
+#: functions/widget/elitepress_header_widget.php:87 header-logo-section.php:53
+msgid "Maecenas sollicitudin"
 msgstr ""
 
 #: functions/widget/elitepress_header_widget.php:47
 #: functions/widget/elitepress_header_widget.php:75
-#: functions/widget/elitepress_header_widget.php:92 header-logo-section.php:97
+#: functions/widget/elitepress_header_widget.php:92 header-logo-section.php:54
 msgid "California, United States."
 msgstr ""
 
@@ -1665,12 +1677,32 @@ msgstr ""
 msgid "Dribble URL"
 msgstr ""
 
-#: header-logo-section.php:97
-msgid "info@elitesupport.com"
+#: header-logo-section.php:52
+msgid "fa fa fa-home"
 msgstr ""
 
-#: header-logo-section.php:97
-msgid "Mon-Sat: 9.30am To 7.00pm"
+#: header-logo-section.php:52
+msgid "fa fa-envelope"
+msgstr ""
+
+#: header-logo-section.php:52
+msgid "fa fa-clock-o"
+msgstr ""
+
+#: header-logo-section.php:53
+msgid "Fusce et diam ornare:"
+msgstr ""
+
+#: header-logo-section.php:53
+msgid "Sed ut sem"
+msgstr ""
+
+#: header-logo-section.php:54
+msgid "abc@example.com"
+msgstr ""
+
+#: header-logo-section.php:54
+msgid "Nec-Vel: 9.30am To 7.00pm"
 msgstr ""
 
 #: header-menu-section.php:10
@@ -1685,16 +1717,17 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: search.php:12
+#. translators: %s: keyword
+#: search.php:14
 #, php-format
 msgid "Search results for %s"
 msgstr ""
 
-#: search.php:32
+#: search.php:34
 msgid "Nothing Found"
 msgstr ""
 
-#: search.php:34
+#: search.php:36
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."

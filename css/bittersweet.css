@@ -30,7 +30,7 @@
 }
 
 /* Font Color */
-a, .site-logo h1, .site-logo h1 > a, .service-btn a:hover, .service-area h4 > a:hover, .features-area:hover h4 > a, .entry-header .entry-title > a:hover, .entry-meta a, .entry-meta a:hover, .entry-meta a:focus, .team-area h5, .port-more-link:hover, .static-client-area h3 > span, .post-content li > i, .post-content li:hover a, .contact-detail address > span > a:hover, .error_404 h4, .page-title a, .portfolio-tabs li.active > a, .portfolio-tabs li > a:hover, 
+a, .widget ul > li > a:hover, .site-logo h1, .site-logo h1 > a, .service-btn a:hover, .service-area h4 > a:hover, .features-area:hover h4 > a, .entry-header .entry-title > a:hover, .entry-meta a, .entry-meta a:hover, .entry-meta a:focus, .team-area h5, .port-more-link:hover, .static-client-area h3 > span, .post-content li > i, .post-content li:hover a, .contact-detail address > span > a:hover, .error_404 h4, .page-title a, .portfolio-tabs li.active > a, .portfolio-tabs li > a:hover, 
 .widget table #next a:hover, .widget table #prev a:hover, .widget table tbody a:hover, .widget table tbody a:focus,
 .site-logo h1, .site-logo h1 > a, .site-footer .widget ul > li > a:hover, .footer-menu-links li > a:hover, .archive-title, tbody a, p a, dl dd a, .contact-icon i, .author-name .designation, .site-footer .widget-title:after, .static-client-area  .designation:before, .portfolio-detail-info p small, .portfolio-detail-info p small a, .blog-tags a, .blog-blockquote blockquote > small, p.wp-caption-text a, .comment-date, .comment-date a, .blog-description p a { 
 	color: #f36557; 

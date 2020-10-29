@@ -34,7 +34,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('elitepress_Plugin_Ins
 		public  function enqueue() {
 			wp_enqueue_script('plugin-install');
 			wp_enqueue_script('updates');
-			wp_enqueue_script('elitepress-companion-install', ELITEPRESS_ADMIN_URI . '/assets/js/plugin-install.js', array('jquery'));
+			wp_enqueue_script('elitepress-companion-install', ELITEPRESS_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
 			wp_localize_script('elitepress-companion-install', 'elitepress_companion_install',
 				array(
 					'installing' => esc_html__('Installing', 'elitepress'),
@@ -56,8 +56,8 @@ if (class_exists('WP_Customize_Control') && !class_exists('elitepress_Plugin_Ins
 				return;
 			}
 			
-			$hide_install = get_option('elitepress_hide_customizer_notice_'.$this->slug,  false);
-			if($hide_install){
+			$elitepress_hide_install = get_option('elitepress_hide_customizer_notice_'.$this->slug,  false);
+			if($elitepress_hide_install){
 				return;
 			}
 

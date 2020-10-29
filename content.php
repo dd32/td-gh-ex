@@ -1,5 +1,5 @@
-<?php $elitepress_lite_options=elitepress_theme_data_setup(); 
-$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options ); ?>
+<?php 
+$elitepress_current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() ); ?>
 <?php if(is_page_template('blog-left-sidebar.php')) {?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-right'); ?>>
 <?php } elseif(is_page_template('blog-full-width.php')) { ?>

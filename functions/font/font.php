@@ -26,6 +26,3 @@ function elitepress_scripts_styles() {
     wp_enqueue_style( 'elitepress-fonts', elitepress_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'elitepress_scripts_styles' );
-
-
-?>

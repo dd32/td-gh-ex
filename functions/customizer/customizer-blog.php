@@ -40,7 +40,7 @@ function elitepress_blog_customizer( $wp_customize ){
 $wp_customize->add_setting(
     'elitepress_lite_options[blog_title]',
     array(
-        'default' => esc_html__('Latest news','elitepress'),
+        'default' => esc_html__('Vivamus nec','elitepress'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -65,4 +65,3 @@ $wp_customize->add_setting(
 	 
 }
 add_action( 'customize_register', 'elitepress_blog_customizer' );
-?>

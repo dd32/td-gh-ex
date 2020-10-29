@@ -1,4 +1,8 @@
 == Changelog ==
+
+@version 1.9.2
+1. Fixed issue like prefix, escaping, IE11 and other.
+2. Removed custom CSS box.
 @version 1.9.1
 1. Changed the content of the screenshot.
 @version 1.9

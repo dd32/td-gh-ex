@@ -4,11 +4,11 @@ Theme URI: https://webriti.com/elitepress-wordpress-theme-lite/
 Author: Webriti
 Author URI: https://webriti.com/
 Description: ElitePress is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In ElitePress Lite, you can easily set Social Icons in the header, Contact Information, Services, Portfolio, and a 3-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get a boxed layout, 7 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of ElitePress theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/elitepress
-Version:  1.9.1
-Requires at least: 4.5
-Tested up to: 5.4.2
-Requires PHP: 5.4
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready , custom-background, sticky-post, right-sidebar, featured-images, blog, footer-widgets
+Version:  1.9.2
+Requires at least: 4.5
+Tested up to: 5.5
+Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: elitepress
@@ -63,7 +63,16 @@ h4, .h4 { font-size: 18px; line-height: 25px; }
 h5, .h5 { font-size: 14px; line-height: 20px; }
 h6, .h6 { font-size: 12px; line-height: 20px; }
 h1, h2, h3, h4, h5, h6 { font-family: "Lato", sans-serif; color: #2a2e34; margin: 0 0 20px; }
-p, .entry-content { font-family: 'Lato', Sans-serif; font-weight: 400; font-size: 16px; line-height: 27px; color: #707981; letter-spacing: 0.5px; margin: 0 0 20px; }
+p, .entry-content {
+font-family: 'Lato', Sans-serif;
+font-weight: 400;
+font-size: 16px; 
+line-height: 27px;
+color: #707981; 
+letter-spacing: 0.5px;
+margin: 0 0 20px;
+overflow: hidden;
+}
 img { display: block; max-width: 100%; height: auto; }
 .bg-white { background-color: #fff !important; border: 0 none !important; }
 
@@ -143,7 +152,7 @@ img { display: block; max-width: 100%; height: auto; }
 	#top-header-sidebar-right .contact-area .contact-icon { float: none; }
 	#top-header-sidebar-right .contact-area, .contact-area .contact-icon { float: none; text-align: center; }
 } 
-
+.site-logo a,.blocks-gallery-item a{display: block;}
 
 /*--------------------------------------------------------------
 3.0 Header top Widget Styles
@@ -583,7 +592,7 @@ img { display: block; max-width: 100%; height: auto; }
 .site-content .post { background-color: #ffffff; border-bottom: 1px dashed #c5d1dc; margin-bottom: 60px; padding: 0; }
 .blog-left { margin-right: 10px; }
 .post-thumbnail { margin: 0 0 21px; margin-top: 0px; width: 100%; overflow: hidden; position: relative; }
-.entry-date { left: 0px; bottom: 0; position: absolute; text-align: center; padding: 7px 5px 5px;width: 125px;height: 40px;}
+.entry-date { left: 0px; bottom: 0; position: absolute; text-align: center; padding: 0px;width: 125px;height: auto;}
 .entry-date h2 { color: #ffffff; font-family: 'Lato'; font-weight: 600; text-align: center; margin: 0; }
 .entry-date span { color: #ffffff; font-family: 'Lato'; font-weight: 700; font-size: 14px; line-height: 25px; text-align: center; letter-spacing: 1px; margin: 0px; }
 .site-content .post .entry-header { display: block; margin: 0 0 6px; padding: 0; }
@@ -1346,7 +1355,42 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     z-index: 100000;
     /* Above WP toolbar. */
 }
-.navbar-toggle:focus,.open > a:focus,textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
-	outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;}
+.navbar-toggle:focus,.open > a:focus,
+textarea:focus, input[type="text"]:focus,
+input[type="password"]:focus,input[type="name"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus,
+input[type="date"]:focus, 
+input[type="month"]:focus,
+input[type="time"]:focus, 
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus, 
+input[type="tel"]:focus, 
+input[type="color"]:focus,
+.uneditable-input:focus {
+outline: thin dotted;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;}
+@media only screen and (max-width: 991px) {
+	.contact-icon,#top-header-sidebar-right .contact-area {float: none;}
+	#top-header-sidebar-right, #top-header-sidebar-left{text-align: center;}
+}
+.wp-block-cover.alignleft {
+    margin-right: 20px !important;
+}
+.site-content .blog-left.post.format-standard .entry-content{    
+  padding: 0 0 2.000rem;
+    display: block;
+    overflow: hidden;
+    margin: 0px;
+}
+.wp-block-image figure a{
+	display: block;
+}
+@media only screen and (min-width: 200px) and (max-width: 1100px) {
+.slides li{
+height: 30vh!important;
+}

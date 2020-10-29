@@ -1,8 +1,7 @@
 <?php
 function elitepress_scripts()
 {	
-	$elitepress_lite_options=elitepress_theme_data_setup();
-	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
+	$current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), elitepress_theme_data_setup() );
 	wp_enqueue_style('elitepress-bootstrap', ELITEPRESS_TEMPLATE_DIR_URI . '/css/bootstrap.css');
 	wp_enqueue_style('elitepress-style', get_stylesheet_uri() );
 	wp_enqueue_style('font-awesome-min', ELITEPRESS_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');
@@ -10,7 +9,7 @@ function elitepress_scripts()
 	if(get_option('elitepress_lite_options')!='')
 	{
 	$class=$current_options['webriti_stylesheet'];
-	wp_enqueue_style('default', ELITEPRESS_TEMPLATE_DIR_URI . '/css/'.$class.'.css');
+	wp_enqueue_style('elitepress-default', ELITEPRESS_TEMPLATE_DIR_URI . '/css/'.$class.'.css');
 	
 	}
 	else
@@ -23,9 +22,6 @@ function elitepress_scripts()
 	wp_enqueue_script('elitepress-menu', ELITEPRESS_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
 	wp_enqueue_script('elitepress-custom', ELITEPRESS_TEMPLATE_DIR_URI .'/js/front-page/custom.js');
 	wp_enqueue_script('bootstrap', ELITEPRESS_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
-	wp_enqueue_style('elitepress-flexslider', ELITEPRESS_TEMPLATE_DIR_URI . '/css/flexslider/flexslider.css');
-	wp_enqueue_script('elitepress-jquery-flexslider', ELITEPRESS_TEMPLATE_DIR_URI .'/js/flexslider/jquery.flexslider.js');	
-	wp_enqueue_script('jquery-flex-element', ELITEPRESS_TEMPLATE_DIR_URI .'/js/flexslider/flexslider-element.js');	
 	
 }
 add_action('wp_enqueue_scripts', 'elitepress_scripts');
@@ -38,7 +34,7 @@ function elitepress_custom_scripts(){
 	$current_options = wp_parse_args( get_option('elitepress_lite_options',array()),elitepress_theme_data_setup());
   ?>
 	<style>
-	<?php echo $current_options['webrit_custom_css']; ?>
+	<?php echo esc_html($current_options['webrit_custom_css']); ?>
 	</style>
 	<?php
  }
@@ -49,5 +45,3 @@ function elitepress_custmizer_style()
 		wp_enqueue_style('elitepress-customizer-css',ELITEPRESS_TEMPLATE_DIR_URI.'/css/cust-style.css');
 }
 add_action('customize_controls_print_styles','elitepress_custmizer_style');
-
-?>

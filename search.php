@@ -9,7 +9,9 @@ get_template_part('banner','header'); ?>
 				<div class="site-content">
 				<?php if ( have_posts() ) { ?>
 				<h1 class="archive-title">
-				<?php printf( esc_html__("Search results for %s",'elitepress'), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php
+                                /* translators: %s: keyword */
+                                printf( esc_html__("Search results for %s",'elitepress'), '<span>' . get_search_query() . '</span>' ); ?>
 				</h1>
 				<?php 
 				if ( have_posts() ) :

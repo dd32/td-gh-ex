@@ -13,7 +13,7 @@
 			<div class="<?php elitepress_post_layout_class(); ?>" >
 				<div class="site-content">
 					<h1 class="archive-title">
-					<?php  esc_html_e("Author Archive by", 'elitepress' );echo ' '; echo get_the_author(); ?>
+					<?php  esc_html_e("Author Archive by", 'elitepress' );echo ' '; echo esc_html(get_the_author()); ?>
 					</h1>
 					<?php 
 					if ( have_posts() ) :

@@ -88,7 +88,7 @@
 				<div class="plan text-center">
 					
 					<header>
-						<h2><?php echo esc_html__('ElitePress Lite','elitepress'); ?></h2>
+						<h2><?php echo esc_html__('Free','elitepress'); ?></h2>
 					</header>
 					
 					<ul class="feature">
@@ -116,7 +116,7 @@
 				<div class="plan text-center border-right">
 					
 					<header>
-						<h2><?php esc_html_e('ElitePress PRO','elitepress'); ?></h2>
+						<h2><?php esc_html_e('Pro','elitepress'); ?></h2>
 					</header>
 					
 					<ul class="feature">
@@ -144,7 +144,7 @@
 		<div class="offer-content clearfix">
 			<div class="media pricing-content text-center padding10">
 				<div class="media-body">
-					<a href="<?php echo esc_url( 'http://webriti.com/elitepress' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get ElitePress PRO Now!','elitepress' ); ?></a>
+					<a href="<?php echo esc_url( 'http://webriti.com/elitepress' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get PRO Version Now!','elitepress' ); ?></a>
 				</div>
 			</div>
 		</div>

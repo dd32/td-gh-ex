@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1 for child theme wallstreet for publication on WordPress.org
+ * @version   2.6.1
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -2949,7 +2949,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'elitepress' ) ),
+						esc_html( _n( 'The following one plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'elitepress' ) ),
 						$imploded
 					);
 

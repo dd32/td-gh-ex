@@ -39,7 +39,7 @@
 						<?php if(!empty($instance['title'])) { ?>
 						<h4><?php echo esc_html($instance['title']); ?></h4>
 						<?php } else { ?> 
-						<h4><?php echo esc_html__('15AH, San Francisco','elitepress'); ?></h4>
+						<h4><?php echo esc_html__('Maecenas sollicitudin','elitepress'); ?></h4>
 						<?php } ?>
 						<?php if(!empty($instance['description'])) { ?>
 						<h5><?php echo esc_html($instance['description']); ?></h5>
@@ -66,7 +66,7 @@
 	$title = $instance[ 'title' ];
 	}
 	else {
-	$title = esc_html__('15AH, San Francisco','elitepress');
+	$title = esc_html__('Maecenas sollicitudin','elitepress');
 	}
 	if ( isset( $instance[ 'description' ])){
 	$description = $instance[ 'description' ];
@@ -84,7 +84,7 @@
 	
 	<h4 for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php esc_html_e( 'Title','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php if($title) echo esc_attr( $title ); 
-	else esc_attr_e('15AH, San Francisco','elitepress');?>" />
+	else esc_attr_e('Maecenas sollicitudin','elitepress');?>" />
 	
 	
 	

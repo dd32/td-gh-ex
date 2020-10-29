@@ -14,14 +14,16 @@
 					<?php if ( have_posts() ) : ?>
 					<h1 class="archive-title">
 					<?php if ( is_day() ) : ?>
-					<?php  esc_html_e( "Daily Archive", 'elitepress' ); echo ' '; echo (get_the_date()); ?>
+					<?php  esc_html_e( "Daily Archive", 'elitepress' ); echo ' '; echo esc_html(get_the_date()); ?>
 					<?php elseif ( is_month() ) : ?>
 					<?php 
 				        $elitepress_monthly_text = __('Monthly Archive','elitepress');
+                                        /* translators: 1: Archive name, 2: date */
 				        printf( esc_html__( '%1$s %2$s', 'elitepress' ), esc_html($elitepress_monthly_text), esc_html(get_the_date()) ); ?>
 				        <?php elseif ( is_year() ) : ?>
 				        <?php 
 				        $elitepress_yearly_text = __('Yearly Archive','elitepress');
+                                        /* translators: 1: Archive name, 2: date */
 				        printf( esc_html__( '%1$s %2$s', 'elitepress' ), esc_html($elitepress_yearly_text), esc_html(get_the_date()) ); ?>
         
 						<?php else : ?>

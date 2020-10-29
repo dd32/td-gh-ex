@@ -58,4 +58,4 @@
 	}
 
 }
-add_action( 'customize_register', 'elitepress_copyright_customizer' );?>
+add_action( 'customize_register', 'elitepress_copyright_customizer' );

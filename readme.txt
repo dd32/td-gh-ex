@@ -1,10 +1,9 @@
 === ElitePress ===
 
 Contributors: priyanshumittal
-Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
-Tested up to: 5.4.2
-Stable tag: 1.9.1
+Tested up to: 5.5
+Stable tag: 1.9.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,11 +24,14 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-ElitePress WordPress Theme, Copyright (C) 2019, Webriti
+ElitePress WordPress Theme, Copyright (C) 2015, priyanshumittal
 ElitePress Pro is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@version 1.9.2
+1. Fixed issue like prefix, escaping, IE11 and other.
+2. Removed custom CSS box.
 @version 1.9.1
 1. Changed the content of the screenshot.
 @version 1.9
@@ -114,7 +116,6 @@ ElitePress Pro is distributed under the terms of the GNU GPL
 @Version 1.2.1
 1. Add Theme URI.
 2. Remove Font awesome CDN.
-
 @Version 1.2
 1. Change option panel stylling.
 2. Remove unused space
@@ -122,7 +123,6 @@ ElitePress Pro is distributed under the terms of the GNU GPL
 4. Enqueue Jquery
 5. Remove font awesome icons folder.
 6. Add Home.php
-
 @version 1.1
 1. Add Post slider.
 2. Update pot file.
@@ -139,7 +139,6 @@ ElitePress Pro is distributed under the terms of the GNU GPL
 1. Add some escape tags, missing banner_header.php , footer.php , home_page_header_setting.php
 2. Add  sanitizing for custom css box.
 3. Solve front page Reading Issue 
-
 @Version 0.2.2
 1. Add bootstrap.js for unless provide origianl profile.
 2. use sens default.
@@ -147,17 +146,14 @@ ElitePress Pro is distributed under the terms of the GNU GPL
 4. Add Attribution for fontawesome.
 5. Add interlization missing.
 6. Update Pot file.
-
 @Version 0.2.1
 1. Change screenshot image
 2. Change Responsive and color image for webriti Theme
 3. Add footer copywriting setting
-
 @Version 0.2
 1. Change all function prefix and text domain to elitepress.
 @Version 0.1 released
 
-Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
 
 ElitePress supports Custom Menu, Widgets and 
 the following extra features:
@@ -189,10 +185,10 @@ Copyright: (c) Mikesetzer
 License: Under GNU General Public License
 Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
 
-FlexSlider
-Copyright 2012 WooThemes
-License: Under the GPLv2 license
-Source: http://www.woothemes.com/flexslider/
+Custom control - Image Radio Button Custom Control:
+Copyright: Anthony Hortin
+License: GNU General Public License v2 or later
+Source: https://github.com/maddisondesigns/customizer-custom-controls
 
 == Images ==
 
@@ -200,5 +196,8 @@ Screenshot Image
 URL: https://pxhere.com/en/photo/1175886
 Source: https://pxhere.com
 License: CC0 Public Domain
+
+* Images on /images folder
+Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
 
 # --- EOF --- #

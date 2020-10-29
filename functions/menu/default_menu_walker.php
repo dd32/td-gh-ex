@@ -95,4 +95,3 @@ class elitepress_walker_page_menu extends Walker_Page{
 		}
 	}
 }
-?>

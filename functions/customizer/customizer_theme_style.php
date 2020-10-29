@@ -77,5 +77,4 @@ $wp_customize->add_section( 'header_image' , array(
 
 	
 }
-	add_action( 'customize_register', 'elitepress_theme_style_customizer' );
-?>
+add_action( 'customize_register', 'elitepress_theme_style_customizer' );

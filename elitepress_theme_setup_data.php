@@ -1,7 +1,7 @@
 <?php
 function elitepress_theme_data_setup()
 {	
-	return $theme_options=array(
+	return $elitepress_theme_options=array(
 			//Logo and Fevicon header
 			'custom_background_enabled'=>'off',
 			'upload_image_favicon'=>'',
@@ -52,8 +52,8 @@ function elitepress_theme_data_setup()
 			
 			//Contact Address Settings
 			'contact_address_settings' => true,
-			'contact_phone_number' => '+48-0987-654-321',
-			'contact_email' => 'info@elitepresstheme.com',
+			'contact_phone_number' => __('+48-0987-654-321','elitepress'),
+			'contact_email' => __('info@elitepresstheme.com','elitepress'),
 			
 			
 			
@@ -69,9 +69,9 @@ function elitepress_theme_data_setup()
 			
 			//Home Top Call Out Area
 			'topcalout_section_enabled' => true,
-			'header_call_out_title'=> __('Want to say hey or find out more?','elitepress'),
+			'header_call_out_title'=> __('Integer condimentum fermentum?','elitepress'),
 			'header_call_out_description'=> __('Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.','elitepress'),
-			'header_call_out_btn_text'=> __('Read More','elitepress'),
+			'header_call_out_btn_text'=> __('Sed gravida','elitepress'),
 			'header_call_out_btn_link'=>'',
 			'header_call_out_btn_link_target'=>true,
 			
@@ -85,45 +85,45 @@ function elitepress_theme_data_setup()
 			//portfolio
 			'portfolio_section_enabled' => 'on',
 			
-			'front_portfolio_title' => __('Latest projects','elitepress'),
+			'front_portfolio_title' => __('Donec aliquam','elitepress'),
 			'front_portfolio_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
 			
-			'portfolio_one_title' => __('Growing your business','elitepress'),
+			'portfolio_one_title' => __('Pellentesque habitant morbi','elitepress'),
 			'portfolio_one_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...','elitepress'),
 			'portfolio_one_image' => 'portfolio1',
 
-			'portfolio_two_title' => __('Functional elegance','elitepress'),
+			'portfolio_two_title' => __('Fusce justo sapien','elitepress'),
 			'portfolio_two_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
 			'portfolio_two_image' => 'portfolio2',
 			
-			'portfolio_three_title' => __('Planning your next move','elitepress'),
+			'portfolio_three_title' => __('Aliquam auctor metus','elitepress'),
 			'portfolio_three_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
 			'portfolio_three_image' => 'portfolio3',
 			
 			
 			// service
 			'service_section_enabled' => true,
-			'service_title' => __('Our services','elitepress'),
+			'service_title' => __('Aenean euismod','elitepress'),
 			'service_description' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','elitepress'),
 			/** Service One Setting **/
 			'service_one_icon' => 'fa fa-shield',
-			'service_one_title' => __('Responsive design','elitepress'),
-			'service_one_description' =>  __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+			'service_one_title' => __('Ipsum pulvinar','elitepress'),
+			'service_one_description' =>  __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			/** Service Two Setting **/
 			'service_two_icon' => 'fa fa-tablet',
-			'service_two_title' => __('Twitter Bootstrap 3.2.0','elitepress'),
-			'service_two_description' =>  __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+			'service_two_title' => __('Lorem ipsum','elitepress'),
+			'service_two_description' =>  __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			/** Service Three Setting **/
 			'service_three_icon' => 'fa fa-edit',
-			'service_three_title' => __('Exclusive support','elitepress'),
-			'service_three_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+			'service_three_title' => __('Integer ultricies','elitepress'),
+			'service_three_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			/** Service Four Setting **/
 			'service_four_icon' => 'fa fa-star-half-o',
-			'service_four_title' => __('Incredibly flexible','elitepress'),
-			'service_four_description' =>  __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+			'service_four_title' => __('Integer condimentum','elitepress'),
+			'service_four_description' =>  __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			
 			//Latest news
-			'blog_title' => __('Latest news','elitepress'),
+			'blog_title' => __('Vivamus nec','elitepress'),
 			'blog_description' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.','elitepress'),
 			
 			//Banner Heading
@@ -148,4 +148,3 @@ function elitepress_theme_data_setup()
 			
 			);
 }
-?>

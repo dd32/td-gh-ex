@@ -20,4 +20,4 @@ get_template_part('index', 'banner');
 	</div>
 </section>
 <!-- /Blog Full Width Section -->
-<?php get_footer(); ?>
+<?php get_footer();

@@ -25,7 +25,7 @@ require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/menu/elitepress_nav_walker.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/widget/elitepress_header_widget.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/widget/elitepress_social_icon.php');
-require_once( ELITEPRESS_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');
+require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/meta-box/post-meta.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/template-tag.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/font/font.php');
@@ -41,6 +41,7 @@ require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.p
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
+require('elitepress_theme_setup_data.php');
 
 // Elitepress Info Page
 //require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/elitepress-info/welcome-screen.php');
@@ -64,8 +65,10 @@ function elitepress_head( $title, $sep ) {
         if ( $site_description && ( is_home() || is_front_page() ) )
             $title = "$title $sep $site_description";
  // Add a page number if necessary.
-    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-                $title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'elitepress' ), max( $paged, $page ) );	
+    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ){
+                /* translators: %s: plugin name. */
+                $title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'elitepress' ), max( $paged, $page ) );
+    }
     return $title;
 }	
 add_filter( 'wp_title', 'elitepress_head', 10, 2);
@@ -97,7 +100,7 @@ function elitepress_setup(){
 		
 	) );
 	add_editor_style();
-	require_once('elitepress_theme_setup_data.php');
+	
 	$theme = wp_get_theme(); // gets the current theme
 	if ( 'ElitePress' == $theme->name )
 	{
@@ -126,22 +129,6 @@ function elitepress_post_slider_excerpt($output){
       			'<div class="flex-btn-div"><a href="' . esc_url(get_permalink()) . '" class="btn1 flex-btn">'. esc_html__('Read More','elitepress') .'</a></div>';
 	}
 		
-
-function elitepress_get_custom_link($url,$target,$title){
-	if($title){
-		if(($url!='') && $url!='#'){?>
-
-			<a href="<?php echo esc_url($url); ?>" <?php if($target=='on' || $target==true){ echo 'target="_blank"'; } ?> >
-			<?php echo esc_html($title); ?>
-			</a>
-
-		<?php
-		}
-		else {
-		echo '<p>'.esc_html($title).'</p>';
-		}
-	}
-}
 
 // Read more tag to formatting in blog page 	
 function elitepress_content_more($more){
@@ -235,4 +222,53 @@ function elitepress_get_home_blog_excerpt()
 		else
 		{ return $excerpt; }
 	}
-?>
+        
+
+//Set for old user
+if (!get_option('ElitePress_user', false)) {
+    //detect old user and set value
+    $ElitePress_user = get_option('elitepress_lite_options', array());
+    if ((isset($ElitePress_user['blog_title']) || isset($ElitePress_user['blog_description']) || isset($ElitePress_user['service_title']) || isset($ElitePress_user['service_description']))) {
+        add_option('ElitePress_user', 'old');
+    } else {
+        add_option('ElitePress_user', 'new');
+    }
+}
+
+//Custom CSS compatibility
+$elitepress_theme_options = elitepress_theme_data_setup();
+$elitepress_current_options = wp_parse_args(get_option('elitepress_lite_options', array()), $elitepress_theme_options);
+if ($elitepress_current_options['webrit_custom_css'] != '' && $elitepress_current_options['webrit_custom_css'] != 'nomorenow') {
+    $elitepress_css = '';
+    $elitepress_css .= $elitepress_current_options['webrit_custom_css'];
+    $elitepress_css .= (string) wp_get_custom_css(get_stylesheet());
+    $elitepress_current_options['webrit_custom_css'] = 'nomorenow';
+    update_option('elitepress_lite_options', $elitepress_current_options);
+    wp_update_custom_css_post($elitepress_css, array());
+}
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function elitepress_skip_link_focus_fix() {
+    // The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+    ?>
+    <script>
+    /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+    </script>
+    <?php
+}
+add_action( 'wp_print_footer_scripts', 'elitepress_skip_link_focus_fix' );
+
+function elitepress_custom_script(){?>
+	<script>
+	jQuery(document).ready(function(){jQuery(window).scroll(function(){if(jQuery(this).scrollTop()>100){jQuery('.hc_scrollup').fadeIn();}else{jQuery('.hc_scrollup').fadeOut();}});jQuery('.hc_scrollup').click(function(){jQuery("html, body").animate({scrollTop:0},600);return false;});});
+	</script>
+<?php
+}
+add_action('wp_head','elitepress_custom_script');

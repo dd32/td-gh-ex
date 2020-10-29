@@ -5,7 +5,7 @@
 require get_template_directory() . '/functions/customizer-notify/elitepress-customizer-notify.php';
 
 
-$config_customizer = array(
+$elitepress_config_customizer = array(
 	'recommended_plugins'       => array(
 		'webriti-companion' => array(
 			'recommended' => true,
@@ -19,4 +19,4 @@ $config_customizer = array(
 	'activate_button_label'     => esc_html__( 'Activate', 'elitepress' ),
 	'deactivate_button_label'   => esc_html__( 'Deactivate', 'elitepress' ),
 );
-elitepress_Customizer_Notify::init( apply_filters( 'elitepress_customizer_notify_array', $config_customizer ) );
+elitepress_Customizer_Notify::init( apply_filters( 'elitepress_customizer_notify_array', $elitepress_config_customizer ) );

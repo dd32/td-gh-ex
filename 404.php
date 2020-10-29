@@ -18,5 +18,5 @@
 	</div>
 </div>
 </div>
-<?php get_footer(); ?>
-<!-- /404 Error Section -->
+<?php get_footer();
+//<!-- /404 Error Section -->
