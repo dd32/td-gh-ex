@@ -112,6 +112,19 @@ function articlepress_customize_register( $wp_customize ) {
 	));
 
 
+	// Feed Show Hide
+	$wp_customize->add_setting( 'footer_socail_icon_feed_show_hide', array(
+		'default'  	=>	0,
+		'transport'	=>	'refresh',
+		'sanitize_callback'  => 'footer_socail_icon_show_hide_sanitize'
+	));
+	$wp_customize->add_control( 'footer_socail_icon_feed_show_hide', array(
+		'section'	=> 	'footer_socail_icon',
+		'label'		=>	esc_html__( 'Feed Show / Hide', 'articlepress' ),
+		'type'		=>	'checkbox'
+	));
+
+
 
 	//=========================== Blog Settings
 	$wp_customize->add_section( 'blog_settings', array(

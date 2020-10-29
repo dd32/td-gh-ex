@@ -42,6 +42,11 @@
 								<?php if ( get_theme_mod('footer_socail_icon_pinterest') ): ?>
 									<li><a href="<?php echo esc_url( get_theme_mod('footer_socail_icon_pinterest') ); ?>" rel="nofollow"><i class="fab fa-pinterest-p"></i></a></li>
 								<?php endif ?>
+								
+								<!-- Feed -->
+								<?php if( get_theme_mod( 'footer_socail_icon_feed_show_hide' ) == 1 ): ?>
+								<li><a href="<?php esc_url( bloginfo('rss2_url') ); ?>" target="_blank"><i class="fas fa-rss"></i></a></li>
+								<?php endif; ?>
 							</ul>
 						</div>
 					</div>

@@ -4,7 +4,7 @@ Theme URI: https://univahost.com/blog
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.6.0
+Version: 1.7.0
 Requires at least: 4.7
 Requires PHP: 7.0
 Tested up to: 5.5
@@ -12,7 +12,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
 Contributors: ThemeAsia, shiponkarmakar, univahost
-Tags: Blog, custom-background, custom-logo, custom-menu, featured-images, News, threaded-comments, translation-ready, editor-style, flexible-header, Sticky-Post 
+Tags: Blog, custom-background, custom-logo, custom-menu, featured-images, News, threaded-comments, translation-ready, editor-style, flexible-header, Sticky-Post
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1942,32 +1942,32 @@ p.single-page-text ul {
 */
 nav.navigation.pagination a, nav.navigation.pagination span {
     display: inline-block;
-    background: #5bd5e8;
+    background: var(--primary-color);
     color: #fff;
     margin: 0;
     padding: 7px 17px;
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
-    border: 1px solid #5bd5e8;
+    border: 1px solid var(--primary-color);
     text-decoration: none;
 }
-
 nav.navigation.pagination a:hover, nav.navigation.pagination span:hover {
-    background: var( --primary-color );
+    background: transparent;
     border-color: var( --primary-color );
+    color: var(--primary-color);
 }
-
 nav.navigation.pagination span {
     cursor: no-drop;
 }
 nav.navigation.pagination span.current {
     background: transparent;
-    border-color: #5bd5e8;
-    color: #5bd5e8;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
-
-
+nav.navigation.pagination {
+    margin-top: 55px;
+}
 /*
 	Footer Css
 */
