@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.32' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.33' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -313,6 +313,11 @@ function topshop_register_required_plugins() {
 			'name'      => __( 'Contact Form by WPForms', 'topshop' ),
 			'slug'      => 'wpforms-lite',
 			'required'  => false,
+        ),
+        array(
+			'name'      => __( 'Google Analytics for WordPress by MonsterInsights', 'topshop' ),
+			'slug'      => 'google-analytics-for-wordpress',
+			'required'  => false,
 		),
 		array(
 			'name'      => __( 'Breadcrumb NavXT', 'topshop' ),
@@ -389,17 +394,20 @@ function topshop_add_license_notice() {
 
 	if ( !get_user_meta( $topshop_user_id, 'topshop_admin_notice_ignore' ) ) : ?>
 		<div class="notice notice-info topshop-admin-notice topshop-notice-add <?php echo $topshoppage != 'themes.php?page=theme_info' ? sanitize_html_class( 'topshop-attract-notice' ) : ''; ?>">
-			<h4>
+			<h2>
 				<?php esc_html_e( 'Thank you for using TopShop!', 'topshop' ); ?>
-			</h4>
+			</h2>
 			<p class="topshop-admin-notice-top">
 				<?php
 				/* translators: 1: '5 star support', 2: 'help on getting started', 3: 'Get In Contact', 4:'Currently selling for only $25'. */
 				printf( esc_html__( 'We promise %1$s with TopShop. Read our %2$s or for theme support on using TopShop - %3$s -- TopShop Pro is %4$s', 'topshop' ), wp_kses( '<a href="' . esc_url( 'https://wordpress.org/support/theme/topshop/reviews/?filter=5' ) . '" class="topshop-attract" target="_blank">' . __( '5 star support', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ), wp_kses( '<a href="' . admin_url( 'themes.php?page=theme_info' ) . '" class="topshop-admin-notice-btn">' . __( 'help on getting started', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'class' => array() ) ) ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/contact/' ) . '" target="_blank" class="topshop-admin-notice-btn">' . __( 'Get In Contact', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/topshop/#purchase-premium' ) . '" class="topshop-attract" target="_blank">' . __( 'Currently selling for only $25', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ) ); ?>
-            </p><br />
+            </p>
             <p>
 				<?php esc_html_e( 'TopShop Premium now includes a FREE shortcode slider... Easily add sliders to all or any pages you choose.', 'topshop' ); ?>
-			</p>
+            </p>
+            <p>
+                <b><?php esc_html_e( 'Use the coupon "SALE2020" to get $5 off TopShop Pro now!', 'topshop' ); ?></b>
+            </p>
 			<?php if ( $topshoppage == 'themes.php?page=theme_info' ) : ?>
 				<div class="topshop-admin-notice-blocks">
 					<div class="topshop-admin-notice-block">

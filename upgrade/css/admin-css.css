@@ -21,9 +21,6 @@
 .tgm-custom-button a.tgm-custom-button:hover {
     background-color: #0952A9;
 }
-span.premium-link {
-	color: #00b9eb;
-}
 
 /* ---- Category ID Column ---- */
 .cat_id_note {
@@ -36,14 +33,6 @@ span.premium-link {
 }
 
 /* ---- Dashboard Notice ---- */
-.topshop-admin-notice {
-    position: relative;
-    padding: 20px 15px 25px;
-    border-left-color: #006CC9;
-}
-.topshop-notice-renew {
-    background-position: right 55px;
-}
 .topshop-notice-close {
     position: absolute;
     top: 10px;
@@ -69,27 +58,7 @@ span.premium-link {
 .topshop-notice-close:hover::after {
     color: #c00;
 }
-.topshop-admin-notice h4 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #212121;
-}
-.topshop-admin-notice h4 span {
-    margin: 0 0 0 10px;
-    color: #00b83f;
-    font-size: 18px;
-}
-.topshop-admin-notice h4 b {
-    font-weight: normal;
-    color: #006CC9;
-}
-.topshop-admin-notice p {
-    font-size: 15px;
-    margin: -10px 0 0;
-    color: #72777c;
-}
+
 .topshop-admin-notice-blocks::after {
     display: block;
     content: '';
@@ -148,7 +117,6 @@ span.premium-link {
     color: #FFF !important;
     font-size: 13px;
     font-weight: 400;
-    margin: 20px 0 0;
     padding: 12px 20px 13px;
     text-decoration: none;
 }
