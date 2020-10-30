@@ -178,12 +178,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-	.skills-wrapper {
-	    padding: 7px 0;
-	}
-	.skills-panel:not(:last-child) {
-	    margin-bottom: 30px;
-	}
 	.headtop-mobi {
     	right: 17px;
     }
@@ -423,19 +417,6 @@
 	}
 	.breadcrumb-widget .widget {
 		max-width: 100%;
-	}
-	.skills-panel {
-	    flex-wrap: wrap;
-	}
-	.skills-growth {
-		margin-bottom: 10px;
-	    margin-right: 0;
-	    flex: 100%;
-	    text-align: center;
-	}
-	.skills-content {
-	    flex: 100%;
-	    text-align: center;
 	}
 	.av-text-404 h1 {
 	    font-size: 150px;
