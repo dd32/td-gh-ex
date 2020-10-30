@@ -146,4 +146,3 @@ $wp_customize->add_control( new Rambo_Feature_document_Customize_Control( $wp_cu
 
 }
 add_action( 'customize_register', 'rambo_pro_feature_customizer' );
-?>

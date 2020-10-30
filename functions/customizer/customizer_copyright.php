@@ -30,7 +30,7 @@ function rambo_copyright_customizer( $wp_customize ) {
     ));
 	
 	function rambo_copyright_sanitize_html( $input ) {
-   		 return force_balance_tags( $input );
+   		 return wp_kses_post(force_balance_tags( $input ));
 		}
 	
 }

@@ -10,7 +10,7 @@
  *-----------------------------------------------------------------------------------*/ 
 function rambo_theme_data_setup()
 {
-	return $rambo_pro_theme_options  = array(		
+	return $rambo_theme_options  = array(		
 			'webrit_custom_css'=>'',
 			'rambo_custom_css'=>'',
 			
@@ -29,10 +29,10 @@ function rambo_theme_data_setup()
 			
 			//Slide
 			'home_slider_enabled'=>true,
-			'slider_post' => WEBRITI_TEMPLATE_DIR_URI .'/images/slider.png',
-			'slider_title' => __('Responsive WP theme','rambo'),
-			'slider_text' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','rambo'),
-			'slider_readmore_text' => __('Read More','rambo'),
+			'slider_post' => RAMBO_TEMPLATE_DIR_URI .'/images/slider.png',
+			'slider_title' => __('Sit Voluptatem Accusantium','rambo'),
+			'slider_text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','rambo'),
+			'slider_readmore_text' => __('Sed ut','rambo'),
 			'readmore_text_link' => '#',
 			'readmore_target' => false,
 			
@@ -40,13 +40,13 @@ function rambo_theme_data_setup()
 			// service
 			'home_service_enabled'=>false,
 			'service_list' => 4,
-			'service_title' => __('Our Services','rambo'),
-			'service_description' => __('Check out our Main Services which we offer to every client','rambo'),
+			'service_title' => __('Voluptate Velit','rambo'),
+			'service_description' => __('Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','rambo'),
 			
 			// project 
 			'home_projects_enabled' => false,
 			'project_protfolio_enabled'=>false,
-			'project_heading_one'=> __('Featured Portfolio Projects','rambo'),
+			'project_heading_one'=> __('Perspiciatis Unde','rambo'),
 			'project_tagline'=>__('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
 			// home project 
 			'project_list'=>4,
@@ -68,14 +68,14 @@ function rambo_theme_data_setup()
 			
 			
 			// site intro info 			
-			'site_intro_descritpion' => __('Rambo is a clean and fully responsive Template.','rambo'),
-			'site_intro_button_text'=> __('Purchase Now','rambo'),
+			'site_intro_descritpion' => __('Quis nostrum exercitationem ullam corporis suscipit.','rambo'),
+			'site_intro_button_text'=> __('Sequi Nesciunt','rambo'),
 			'site_intro_button_link'=>'#',
 			'intro_button_target'=>true,
 			
 			// Service section
 			'service_section_title'=>'',
-			'service_section_descritpion'=> __('Check out our Main Services which we offer to every client','rambo'),
+			'service_section_descritpion'=> __('Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','rambo'),
 			
 			/** footer customization **/
 			'footer_copyright' => sprintf(__('<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Rambo</a> by Webriti', 'rambo')),
@@ -98,8 +98,8 @@ function rambo_theme_data_setup()
 			'social_media_google_plus' =>"#",
 			
 			//Service Layout
-			'service_section_title'=> __('Our Services','rambo'),
-			'service_section_description' => __('Check out our Main Services which we offer to every client','rambo'),
+			'service_section_title'=> __('Voluptate Velit','rambo'),
+			'service_section_description' => __('Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit','rambo'),
 			'service_column_layout'=> 4,
 			
 			//Project Layout
@@ -107,27 +107,26 @@ function rambo_theme_data_setup()
 
 			//News Column Layout
 			'news_column_layout' => 3,
-			'latest_news_title' => __('Latest News','rambo'),
+			'latest_news_title' => __('Adminim Veniam','rambo'),
 			
 			
 			//Projects Section Settings
 			'home_projects_enabled' => true,
-			'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png',
-			'project_one_title' => __('Mobile Apps','rambo'),
-			'project_one_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work"','rambo'),
+			'project_one_thumb' => RAMBO_TEMPLATE_DIR_URI .'/images/project_thumb.png',
+			'project_one_title' => __('Aliquip Ex','rambo'),
+			'project_one_text' => __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."','rambo'),
 		
-		    'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb1.png',
-			'project_two_title' => __('Super Baby','rambo'), 
-			'project_two_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
+		    'project_one_thumb' => RAMBO_TEMPLATE_DIR_URI .'/images/project_thumb1.png',
+			'project_two_title' => __('Sint Occaecat','rambo'), 
+			'project_two_text' => __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";','rambo'),
 			
-			'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb2.png',
-			'project_three_title' => __('Coffee Break','rambo'),
-			'project_three_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
+			'project_one_thumb' => RAMBO_TEMPLATE_DIR_URI .'/images/project_thumb2.png',
+			'project_three_title' => __('Ut Enim','rambo'),
+			'project_three_text' => __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";','rambo'),
 			
-			'project_one_thumb' => WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb3.png',
-			'project_four_title' => __('Beautiful Birds','rambo'),
-			'project_four_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
+			'project_one_thumb' => RAMBO_TEMPLATE_DIR_URI .'/images/project_thumb3.png',
+			'project_four_title' => __('Culpa Qui','rambo'),
+			'project_four_text' => __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";','rambo'),
 
 		);
 }
-?>

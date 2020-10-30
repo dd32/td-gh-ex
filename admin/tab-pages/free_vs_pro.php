@@ -43,7 +43,7 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Contact Form Support','rambo' ); ?></span>
-							<p><?php esc_html_e( 'Default WordPress Contact Form and Contact Form 7 support. Add the forms using predefined Contact Page Templates','rambo' ); ?></p>
+							<p><?php esc_html_e( 'Default WordPress Contact Form and Contact Form 7 support.','rambo' ); ?></p>
 						</li>
 						
 						<li>
@@ -81,13 +81,13 @@
 				<div class="plan text-center">
 					
 					<header>
-						<p class="theme-head-fonts"><?php esc_html_e('Rambo Lite','rambo'); ?></p>
+						<p class="theme-head-fonts"><?php esc_html_e('Free','rambo'); ?></p>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('Banner Image, Services [Unlimited Services], No of 4 Projects, Latest News, 3 Column Footer Widgetizeds area','rambo'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('Banner Image, Services [Unlimited Services], No of 4 Projects, Latest News, 3 Column Footer widgetize area','rambo'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('Blog Left Sidebar, Full Width Template','rambo'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('4','rambo'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('5','rambo'); ?> </li>
 						
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('Simple Thumbnail Gallery','rambo'); ?> </li>
 						
@@ -98,7 +98,7 @@
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-						<li style="font-size:16px; line-height:80px; padding:15px;"><?php esc_html_e('On WordPress.org Support Forum','rambo'); ?></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url('https://wordpress.org/support/theme/rambo')?>" target="_blank" > <?php esc_html_e('WordPress Support Forum','rambo'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					
@@ -110,7 +110,7 @@
 				<div class="plan text-center border-right">
 					
 					<header>
-						<p class="theme-head-fonts"><?php esc_html_e('Rambo Pro','rambo'); ?></p>
+						<p class="theme-head-fonts"><?php esc_html_e('Pro','rambo'); ?></p>
 					</header>
 					
 					<ul class="feature">
@@ -127,7 +127,7 @@
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li> 
-						<li style="font-size:16px; line-height:80px; padding:15px;"><?php esc_html_e('Premium Support Forum','rambo'); ?></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url('http://webriti.com/support/categories/rambo')?>" target="_blank"><?php esc_html_e('Webriti Support Forum','rambo'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					
@@ -138,7 +138,7 @@
 		<div class="offer-content clearfix">
 			<div class="media pricing-content text-center padding10">
 				<div class="media-body">
-					<a href="<?php echo esc_url( 'http://webriti.com/rambo/' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get rambo PRO Now!','rambo' ); ?></a>
+					<a href="<?php echo esc_url( 'http://webriti.com/rambo/' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get PRO Version Now!','rambo' ); ?></a>
 				</div>
 			</div>
 		</div>

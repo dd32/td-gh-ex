@@ -11,7 +11,7 @@
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
 		
 			<nav id="comment-nav-above">
-				<h1 class="assistive-text"><?php esc_html__( 'Comment navigation', 'rambo' ); ?></h1>
+				<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'rambo' ); ?></h1>
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'rambo' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'rambo' ) ); ?></div>
 			</nav>
@@ -32,13 +32,13 @@
 	<?php endif; ?>
 	<?php if ('open' == $post->comment_status) : ?>
 	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','rambo' ), esc_url(site_url( 'wp-login.php' )) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
+<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','rambo' ), esc_url(site_url( 'wp-login.php' )) . '?redirect_to=' .  urlencode(esc_url(get_permalink())) ); ?></p>
 <?php else : ?>
 
 <div class="comment_section">
 
 <?php  
- $fields=array(
+ $rambo_fields=array(
     'author' => '<label>Name<span>*</span></label>
 				<input class="span9 leave_comment_field" name="author" id="author" type="text"/><br/><br/>',
     'email'  => '<label>Email<span>*</span></label>
@@ -47,14 +47,14 @@
 	<input class="span9 leave_comment_field" name="website" id="website" type="text" ><br/><br/>',
 	);
  
-function rambo_comment_fields($fields) {
+function rambo_comment_fields($rambo_fields) {
  
-	return $fields;
+	return $rambo_fields;
 }
 add_filter('comment_form_default_fields','rambo_comment_fields');
  
-	$defaults = array(
-     'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+	$rambo_defaults = array(
+     'fields'               => apply_filters( 'comment_form_default_fields', $rambo_fields ),
 	'comment_field'        => '<label>Comment<span>*</span></label>
 	<textarea id="comments" rows="7" class="span12 leave_comment_field" name="comment" type="text"></textarea>',		
 	 'logged_in_as' => '<p class="logged-in-as">' . esc_html__("Logged in as",'rambo').' '.'<a href="'. esc_url(admin_url( 'profile.php' )).'">'.$user_identity.'</a>'. '<a href="'. esc_url(wp_logout_url( get_permalink() )).'" title="Logout of this account">'.' '.esc_html__("Logout",'rambo').'</a>' . '</p>',
@@ -64,7 +64,7 @@ add_filter('comment_form_default_fields','rambo_comment_fields');
 	 'title_reply'       => '<div class="blog_single_post_head_title"><h3>'.esc_html__('Leave a Reply','rambo').'</h3></div>',
 	 'id_form'      => 'action'
 	);
-comment_form($defaults);?>
+comment_form($rambo_defaults);?>
 					
 </div><!-- leave_comment_mn -->
 

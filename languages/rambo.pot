@@ -5,7 +5,7 @@ msgstr ""
 "Blank WordPress Pot "
 "v1.0.0\n"
 "POT-Creation-Date: "
-"2020-06-25 13:13+0530\n"
+"2020-10-29 13:39+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -43,12 +43,13 @@ msgstr ""
 "_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "Language: en_US\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit "
+"2.4.1\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
 
 #: 404.php:8
-#: banner-strip.php:18
+#: banner-strip.php:28
 msgid ""
 "Oops! Page not found"
 msgstr ""
@@ -60,36 +61,36 @@ msgid ""
 "does not exist."
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:71
+#: admin/inc/class-rambo-about-page.php:71
 #: admin/inc/include-companion.php:42
 #: admin/inc/plugin-include-control.php:40
 msgid "Installing"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:72
+#: admin/inc/class-rambo-about-page.php:72
 #: admin/inc/include-companion.php:43
 #: admin/inc/plugin-include-control.php:41
 #: functions/customizer-notify/rambo-customizer-notify.php:111
 msgid "Activating"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:73
+#: admin/inc/class-rambo-about-page.php:73
 #: admin/inc/include-companion.php:44
 #: admin/inc/plugin-include-control.php:42
 msgid "Error"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:84
-msgid "About rambo Theme"
+#: admin/inc/class-rambo-about-page.php:84
+msgid "About Rambo Theme"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:85
+#: admin/inc/class-rambo-about-page.php:85
 #, php-format
 msgid ""
 "Welcome to %1$s %2$s"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:99
+#: admin/inc/class-rambo-about-page.php:99
 #, php-format
 msgid ""
 "Rambo theme is "
@@ -100,72 +101,72 @@ msgid ""
 "welcome page %2$s"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:100
+#: admin/inc/class-rambo-about-page.php:100
 msgid ""
 "Get started with Rambo "
 "Lite"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:213
+#: admin/inc/class-rambo-about-page.php:213
 msgid ""
 "See changelog below:"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:265
-#: admin/tab-pages/getting-started.php:13
+#: admin/inc/class-rambo-about-page.php:265
+#: admin/tab-pages/getting-started.php:18
 msgid "Getting Started"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:270
+#: admin/inc/class-rambo-about-page.php:270
 #: functions/customizer/customizer_recommended_plugin.php:16
 msgid "Recommended Actions"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:278
+#: admin/inc/class-rambo-about-page.php:278
 msgid "Why Upgrade to PRO?"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:285
+#: admin/inc/class-rambo-about-page.php:285
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:291
+#: admin/inc/class-rambo-about-page.php:291
 msgid "Changelog"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:369
+#: admin/inc/class-rambo-about-page.php:369
 #, php-format
 msgid "Install %s Now"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:371
+#: admin/inc/class-rambo-about-page.php:371
 #: admin/inc/include-companion.php:82
 msgid "Install & Activate"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:388
+#: admin/inc/class-rambo-about-page.php:388
 #, php-format
 msgid "Activate %s Now"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:390
+#: admin/inc/class-rambo-about-page.php:390
 #: functions/class-tgm-plugin-activation.php:2726
 #: functions/customizer/customizer_recommended_plugin.php:19
 msgid "Activate"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:393
+#: admin/inc/class-rambo-about-page.php:393
 #: functions/class-tgm-plugin-activation.php:2321
 msgid "Active"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:502
+#: admin/inc/class-rambo-about-page.php:502
 #: admin/inc/include-companion.php:81
 #: admin/inc/include-companion.php:98
 msgid "Webriti Companion"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:505
+#: admin/inc/class-rambo-about-page.php:505
 msgid ""
 "It is highly recommended "
 "that you install the "
@@ -176,11 +177,11 @@ msgid ""
 "features"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:509
+#: admin/inc/class-rambo-about-page.php:509
 msgid "Contact Form 7"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:512
+#: admin/inc/class-rambo-about-page.php:512
 msgid ""
 "it is recommended that "
 "you install the Contact "
@@ -306,9 +307,7 @@ msgstr ""
 msgid ""
 "Default WordPress "
 "Contact Form and Contact "
-"Form 7 support. Add the "
-"forms using predefined "
-"Contact Page Templates"
+"Form 7 support."
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:50
@@ -375,7 +374,7 @@ msgid ""
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:84
-msgid "Rambo Lite"
+msgid "Free"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:88
@@ -384,7 +383,7 @@ msgid ""
 "[Unlimited Services], No "
 "of 4 Projects, Latest "
 "News, 3 Column Footer "
-"Widgetizeds area"
+"widgetize area"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:89
@@ -394,7 +393,7 @@ msgid ""
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:90
-msgid "4"
+msgid "5"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:92
@@ -404,12 +403,11 @@ msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:101
 msgid ""
-"On WordPress.org Support "
-"Forum"
+"WordPress Support Forum"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:113
-msgid "Rambo Pro"
+msgid "Pro"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:117
@@ -448,14 +446,20 @@ msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:130
 msgid ""
-"Premium Support Forum"
+"Webriti Support Forum"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:141
-msgid "Get rambo PRO Now!"
+msgid ""
+"Get PRO Version Now!"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:6
+#: admin/tab-pages/getting-started.php:5
+msgid ""
+"About the Rambo theme"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:11
 msgid ""
 "Rambo is an ideal "
 "WordPress theme for "
@@ -488,7 +492,7 @@ msgid ""
 "laptops etc."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:7
+#: admin/tab-pages/getting-started.php:12
 msgid ""
 "In Rambo Lite, you can "
 "easily set Featured "
@@ -501,7 +505,7 @@ msgid ""
 "will be there."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:8
+#: admin/tab-pages/getting-started.php:13
 msgid ""
 "In the premium version, "
 "you will get caption "
@@ -532,7 +536,7 @@ msgid ""
 "Spanish Language."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:16
+#: admin/tab-pages/getting-started.php:21
 msgid ""
 "Need to take full "
 "advantage of all the "
@@ -542,36 +546,36 @@ msgid ""
 "theme settings."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:19
+#: admin/tab-pages/getting-started.php:24
 msgid "Go to Customizer"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:25
+#: admin/tab-pages/getting-started.php:30
 msgid "Rambo Theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:31
+#: admin/tab-pages/getting-started.php:36
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:36
+#: admin/tab-pages/getting-started.php:41
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:38
-msgid "View Pro"
+#: admin/tab-pages/getting-started.php:43
+msgid "Pro Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:41
+#: admin/tab-pages/getting-started.php:46
 msgid ""
 "Premium Theme Support"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:45
+#: admin/tab-pages/getting-started.php:50
 msgid "Rate This Theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:48
+#: admin/tab-pages/getting-started.php:53
 msgid "Support"
 msgstr ""
 
@@ -824,7 +828,7 @@ msgstr ""
 
 #: archive.php:24
 #: author.php:14
-#: banner-strip.php:29
+#: banner-strip.php:39
 #: category.php:13
 #: searchform.php:2
 #: searchform.php:3
@@ -835,7 +839,7 @@ msgstr ""
 
 #: archive.php:25
 #: author.php:15
-#: banner-strip.php:30
+#: banner-strip.php:40
 #: category.php:14
 #: tag.php:15
 #: woocommerce.php:16
@@ -871,7 +875,6 @@ msgstr ""
 #: fullwidth.php:18
 #: index.php:30 page.php:37
 #: single.php:23 tag.php:58
-#: theme_setup_data.php:35
 msgid "Read More"
 msgstr ""
 
@@ -886,10 +889,15 @@ msgid ""
 "Search results for %s"
 msgstr ""
 
-#: banner-strip.php:14
+#: banner-strip.php:15
+#: banner-strip.php:20
 #: child_theme_compatible.php:138
 #: functions/menu/default_menu_walker.php:23
 msgid "Home"
+msgstr ""
+
+#: banner-strip.php:23
+msgid "Blog"
 msgstr ""
 
 #: category.php:8
@@ -897,19 +905,37 @@ msgid "Category Archive"
 msgstr ""
 
 #: child_theme_compatible.php:33
-#: theme_setup_data.php:33
 msgid "Responsive WP theme"
 msgstr ""
 
+#: child_theme_compatible.php:34
+msgid ""
+"We are a group of "
+"passionate designers and "
+"developers who really "
+"love creating awesome "
+"WordPress themes & "
+"giving support."
+msgstr ""
+
 #: child_theme_compatible.php:47
-#: theme_setup_data.php:49
 msgid ""
 "Featured Portfolio "
 "Projects"
 msgstr ""
 
+#: child_theme_compatible.php:48
+#: theme_setup_data.php:50
+msgid ""
+"Maecenas sit amet "
+"tincidunt elit. "
+"Pellentesque habitant "
+"morbi tristique senectus "
+"et netus et Nulla "
+"facilisi."
+msgstr ""
+
 #: child_theme_compatible.php:69
-#: theme_setup_data.php:71
 msgid ""
 "Rambo is a clean and "
 "fully responsive "
@@ -917,15 +943,11 @@ msgid ""
 msgstr ""
 
 #: child_theme_compatible.php:70
-#: theme_setup_data.php:72
 msgid "Purchase Now"
 msgstr ""
 
 #: child_theme_compatible.php:76
 #: child_theme_compatible.php:100
-#: theme_setup_data.php:44
-#: theme_setup_data.php:78
-#: theme_setup_data.php:102
 msgid ""
 "Check out our Main "
 "Services which we offer "
@@ -943,16 +965,12 @@ msgid ""
 msgstr ""
 
 #: child_theme_compatible.php:99
-#: theme_setup_data.php:43
-#: theme_setup_data.php:101
 msgid "Our Services"
 msgstr ""
 
 #: child_theme_compatible.php:108
-#: functions/customizer/customizer_recent_news.php:41
 #: functions/widget/rambo-sidebar-latest-news.php:32
 #: functions/widget/rambo-sidebar-latest-news.php:77
-#: theme_setup_data.php:110
 msgid "Latest News"
 msgstr ""
 
@@ -1174,16 +1192,10 @@ msgid ""
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:388
-#: functions/class-tgm-plugin-activation.php:2952
 msgid ""
 "The following plugin was "
 "activated successfully:"
-msgid_plural ""
-"The following plugins "
-"were activated "
-"successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:390
 #, php-format
@@ -1495,6 +1507,17 @@ msgid ""
 "time."
 msgstr ""
 
+#: functions/class-tgm-plugin-activation.php:2952
+msgid ""
+"The following plugin is "
+"activated successfully:"
+msgid_plural ""
+"The following plugins "
+"were activated "
+"successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
 #: functions/class-tgm-plugin-activation.php:3158
 msgid ""
 "Plugin activation failed."
@@ -1595,6 +1618,10 @@ msgstr ""
 
 #: functions/commentbox/comment-function.php:13
 msgid "Reply"
+msgstr ""
+
+#: functions/commentbox/comment-function.php:15
+msgid "pending-comment"
 msgstr ""
 
 #: functions/commentbox/comment-function.php:29
@@ -1812,9 +1839,26 @@ msgstr ""
 msgid "Hide news section"
 msgstr ""
 
+#: functions/customizer/customizer_recent_news.php:41
+#: theme_setup_data.php:110
+msgid "Adminim Veniam"
+msgstr ""
+
 #: functions/customizer/customizer_recent_news.php:49
 #: functions/widget/rambo-sidebar-latest-news.php:82
 msgid "Title"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:12
+#, php-format
+msgid ""
+"Install and activate "
+"<strong>Webriti "
+"Companion</strong> "
+"plugin for taking full "
+"advantage of all the "
+"features this theme has "
+"to offer %s."
 msgstr ""
 
 #: functions/customizer/customizer_recommended_plugin.php:17
@@ -1967,64 +2011,90 @@ msgstr ""
 msgid "Tag Archive %s"
 msgstr ""
 
-#: theme_setup_data.php:34
+#: theme_setup_data.php:33
 msgid ""
-"We are a group of "
-"passionate designers and "
-"developers who really "
-"love creating awesome "
-"WordPress themes & "
-"giving support."
+"Sit Voluptatem "
+"Accusantium"
 msgstr ""
 
-#: theme_setup_data.php:50
+#: theme_setup_data.php:34
 msgid ""
-"Maecenas sit amet "
-"tincidunt elit. "
-"Pellentesque habitant "
-"morbi tristique senectus "
-"et netus et Nulla "
-"facilisi."
+"Lorem ipsum dolor sit "
+"amet, consectetur "
+"adipiscing elit, sed do "
+"eiusmod tempor "
+"incididunt ut labore et "
+"dolore magna aliqua."
+msgstr ""
+
+#: theme_setup_data.php:35
+msgid "Sed ut"
+msgstr ""
+
+#: theme_setup_data.php:43
+#: theme_setup_data.php:101
+msgid "Voluptate Velit"
+msgstr ""
+
+#: theme_setup_data.php:44
+#: theme_setup_data.php:78
+#: theme_setup_data.php:102
+msgid ""
+"Nemo enim ipsam "
+"voluptatem quia voluptas "
+"sit aspernatur aut odit "
+"aut fugit"
+msgstr ""
+
+#: theme_setup_data.php:49
+msgid "Perspiciatis Unde"
+msgstr ""
+
+#: theme_setup_data.php:71
+msgid ""
+"Quis nostrum "
+"exercitationem ullam "
+"corporis suscipit."
+msgstr ""
+
+#: theme_setup_data.php:72
+msgid "Sequi Nesciunt"
 msgstr ""
 
 #: theme_setup_data.php:116
-msgid "Mobile Apps"
+msgid "Aliquip Ex"
 msgstr ""
 
 #: theme_setup_data.php:117
 msgid ""
-"A set of pieces of "
-"creative work collected "
-"to be shown to potential "
-"customers or employers; "
-"\"the artist had put "
-"together a portfolio of "
-"his work\""
+"Duis aute irure dolor in "
+"reprehenderit in "
+"voluptate velit esse "
+"cillum dolore eu fugiat "
+"nulla pariatur.\""
 msgstr ""
 
 #: theme_setup_data.php:120
-msgid "Super Baby"
+msgid "Sint Occaecat"
 msgstr ""
 
 #: theme_setup_data.php:121
 #: theme_setup_data.php:125
 #: theme_setup_data.php:129
 msgid ""
-"A set of pieces of "
-"creative work collected "
-"to be shown to potential "
-"customers or employers; "
-"\"the artist had put "
-"together a portfolio of "
-"his work\";"
+"Duis aute irure dolor in "
+"reprehenderit in "
+"voluptate velit esse "
+"cillum dolore eu fugiat "
+"nulla pariatur.\";"
 msgstr ""
 
 #: theme_setup_data.php:124
-msgid "Coffee Break"
+msgid "Ut Enim"
 msgstr ""
 
 #: theme_setup_data.php:128
-msgid "Beautiful Birds"
+msgid "Culpa Qui"
 msgstr ""
 
 #: woocommerce.php:9

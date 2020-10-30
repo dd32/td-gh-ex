@@ -39,7 +39,7 @@ a.blog_section2_readmore, .more-link, .comment_btn, #comment_btn, .button_red, .
 
 /*Text Colors*/
 a, .logo-title, .home_service_btn:hover, .purchase_now_content .purchase_now_btn:hover, .team_section h4 a, .reply a, .leave_comment_section label span, .latest_news_comment a:hover, .sidebar_widget .usefull_link a:hover, .para_tooltip a, .para_tooltip a:hover, p.text_error, .shortcode_coloumn label span, a.continue_readmore, .testimonial_author span, .pagination ul > li > a, .pagination ul > li > span, .pager li > a, .pager li > span, .widget_archive ul li a i, .widget_categories ul li a i, .sidebar_widget ul li a i, .sidebar_link a:hover, .sidebar_link a.active, .top-header-widget li > a:hover, .top-header-widget li > a:focus { 
-	color: #db2723; 
+	color: #db2723;
 }
 .blog_section2_comment a:hover, .sidebar_widget ul li a:hover { color: #db2723 !important; }
 
@@ -101,3 +101,26 @@ a, .logo-title, .home_service_btn:hover, .purchase_now_content .purchase_now_btn
  .woocommerce a.button.alt, .owl-item .item .cart .add_to_cart_button:hover {
     background: #db2723 !important;
 }
+.blog_single_post  .woocommerce-error,.blog_single_post  .woocommerce-info,.blog_single_post  .woocommerce-message
+{ padding: 1em 2em 1em 3.5em;
+        margin: 0 0 2em;
+        position: relative;
+        background-color: #F7F6F7;
+        color: #515151;
+        border-top: 3px solid #DB2723;
+        list-style: none outside;
+        width: auto;
+}
+.navbar-toggle:focus,.dropdown-menu > .active > a:focus,.open a:focus,a:focus,textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: -webkit-focus-ring-color auto 1px !important;
+    outline-color: -webkit-focus-ring-color !important;
+    outline-style: auto;
+    outline-width: 1px;
+    outline: thin dotted;
+}
+
+
+.blocks-gallery-item a,.home_service a{
+    display: block;
+}
+

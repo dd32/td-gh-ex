@@ -68,7 +68,7 @@ form#searchform { margin: 0; }
 .wpcf7-form { width: 95%; }
 .blog_section2, .comment_section, .portfolio_tabs_section, .porfolio_detail_title, .comment_mn { margin-left: 15px; margin-right: 15px; }
 .blog_section { margin: 0 15px 50px; }
-.blog_single_post { margin-left: 15px; margin-right: 15px; float: none; width: auto; }
+.blog_single_post { width: 100%; }
 .woocommerce-product-search input[type="search"] { width: 80%; }
 .navbar .brand {text-align: center;float: unset;}
 .navbar h1,.navbar .site-description{text-align: center;}

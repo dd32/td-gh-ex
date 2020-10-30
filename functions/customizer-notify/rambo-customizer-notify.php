@@ -105,10 +105,10 @@ class Rambo_Customizer_Notify {
 		wp_enqueue_script( 'rambo-customizer-notify-js', get_template_directory_uri() . '/functions/customizer-notify/js/rambo-customizer-notify.js', array( 'customize-controls' ));
 		wp_localize_script(
 			'rambo-customizer-notify-js', 'ramboCustomizercompanionObject', array(
-				'ajaxurl'            => admin_url( 'admin-ajax.php' ),
+				'ajaxurl'            => esc_url(admin_url( 'admin-ajax.php' )),
 				'template_directory' => get_template_directory_uri(),
-				'base_path'          => admin_url(),
-				'activating_string'  => __( 'Activating', 'rambo' ),
+				'base_path'          => esc_url(admin_url()),
+				'activating_string'  => esc_html__( 'Activating', 'rambo' ),
 			)
 		);
 

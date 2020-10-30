@@ -12,7 +12,7 @@ function rambo_comment( $comment, $args, $depth )
 	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
 	esc_html__('Reply','rambo');?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-		<div id="comment-<?php comment_ID(); ?>" class="comment-body <?php if ($comment->comment_approved == '0') echo 'pending-comment'; ?> clearfix">
+		<div id="comment-<?php comment_ID(); ?>" class="comment-body <?php if ($comment->comment_approved == '0') echo esc_attr__('pending-comment','rambo'); ?> clearfix">
           <div class="media comment_box">
 			<a class="pull-left">
             <?php echo get_avatar($comment,$size = '65'); ?>
@@ -43,4 +43,3 @@ function rambo_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-circle", $class);
     return $class;
 }
-?>

@@ -104,13 +104,13 @@ if (!function_exists('webriti_companion') && !$rambo_install) {
 			}
 		}
 	}
-	if (!function_exists('companion_installer_register')) {
+	if (!function_exists('rambo_companion_installer_register')) {
 		/**
 		 * Registers the section, setting & control for the Webriti Companion installer.
 		 *
 		 * @param object $wp_customize The main customizer object.
 		 */
-		function companion_installer_register($wp_customize) {
+		function rambo_companion_installer_register($wp_customize) {
 			$wp_customize->add_section(new Rambo_Companion_Installer_Section($wp_customize, 'rambo_companion_installer', array(
 				'title'      => '',
 				'capability' => 'install_plugins',
@@ -118,7 +118,7 @@ if (!function_exists('webriti_companion') && !$rambo_install) {
 			)));
 
 		}
-		add_action('customize_register', 'companion_installer_register');
+		add_action('customize_register', 'rambo_companion_installer_register');
 	}
 }
 

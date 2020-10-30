@@ -11,16 +11,16 @@ get_template_part('banner','strip');
 		<!-- Blog Main -->
 		<div class="span8 Blog_main">
 			<?php 
-				$page_left_side = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $args = array( 'post_type' => 'post','paged'=>$page_left_side);        
-                $post_type_data = new WP_Query( $args );
-                while($post_type_data->have_posts()){
-                $post_type_data->the_post();?>
+				$rambo_page_left_side = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $rambo_args = array( 'post_type' => 'post','paged'=>$rambo_page_left_side);        
+                $rambo_post_type_data = new WP_Query( $rambo_args );
+                while($rambo_post_type_data->have_posts()){
+                $rambo_post_type_data->the_post();?>
 			<div class="blog_section2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
+					<?php $rambo_defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
 					<?php if(has_post_thumbnail()):?>
 					<a  href="<?php the_permalink(); ?>" class="pull-left blog_pull_img2 img-responsive">
-					<?php the_post_thumbnail('', $defalt_arg); ?>
+					<?php the_post_thumbnail('', $rambo_defalt_arg); ?>
 					</a>
 					<?php endif;?>
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
@@ -36,13 +36,13 @@ get_template_part('banner','strip');
 					<span class="blog_tags"><i class="fa fa-tags"></i><?php the_tags('',', ');?></span>
 					</p>
 					<?php }  ?>
-			</div><?php wp_link_pages( $args ); ?>
+			</div><?php wp_link_pages( $rambo_args ); ?>
 				<?php } wp_reset_postdata(); ?>
 			
 		    <div class="pagination_section">	
 		        <div class="pagination text-center">
 				<ul>
-				  <?php $GLOBALS['wp_query']->max_num_pages = $post_type_data->max_num_pages;
+				  <?php $GLOBALS['wp_query']->max_num_pages = $rambo_post_type_data->max_num_pages;
                the_posts_pagination( array(
                 'prev_text' => '<i class="fa fa-angle-double-left"></i>',
                 'next_text' => '<i class="fa fa-angle-double-right"></i>',

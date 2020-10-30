@@ -1,5 +1,8 @@
 == Changelog ==
 
+@version 2.0.3
+1. Fixed issue like prefix, escaping, IE11 and other.
+
 @version 2.0.2
 1. Fixed the customizer error of console.
 

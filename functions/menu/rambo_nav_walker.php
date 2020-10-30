@@ -90,4 +90,3 @@ function rambo_nav_menu_css_class( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'rambo_nav_menu_css_class' );
-?>

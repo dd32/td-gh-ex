@@ -1,5 +1,10 @@
 <div id="getting_started" class="rambo-tab-pane active">
 	<div class="container-fluid">
+		<div class="row">
+		    <div class="col-md-12">
+				<h1 class="rambo-info-title text-center"><?php echo esc_html__('About the Rambo theme','rambo'); ?></h1>
+		    </div>
+		</div>
 		<div class="row-fluid">
 			<div class="span6">
 				<div class="rambo-tab-pane-half rambo-tab-pane-first-half">
@@ -35,7 +40,7 @@
                     <a href="<?php echo esc_url('http://webriti.com/demo/wp/lite/rambo/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
 					<p class="info-text"><?php echo esc_html__('Lite Demo','rambo'); ?></p></a>
 					<a href="<?php echo esc_url('http://webriti.com/demo/wp/preview/?prev=rambo/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
-					<p class="info-text"><?php echo esc_html__('View Pro','rambo'); ?></p></a>
+					<p class="info-text"><?php echo esc_html__('Pro Demo','rambo'); ?></p></a>
 					
 					<a href="<?php echo esc_url('http://webriti.com/support/categories/rambo'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo esc_html__('Premium Theme Support','rambo'); ?></p></a>       

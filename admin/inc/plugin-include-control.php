@@ -76,7 +76,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Rambo_Plugin_Install_
                     <span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
                 <?php endif; ?>
                 <?php
-                $button = $webriti_about_page->get_plugin_buttion($this->slug, $this->name, $this->function);
+                $button = $Rambo_About_Page->get_plugin_buttion($this->slug, $this->name, $this->function);
                 echo wp_kses_post($button['button']);
                 ?>
                 <div style="clear: both;"></div>

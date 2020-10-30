@@ -7,17 +7,17 @@
 		<!-- Blog Main -->
 		<div class="<?php if( is_active_sidebar('sidebar-1')) echo "span8"; else echo "span12";?> Blog_main">
 			<?php 
-				$blog_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$args = array( 'post_type' => 'post','paged'=>$blog_page);		
-				$post_type_data = new WP_Query( $args );
-					while($post_type_data->have_posts()):
-					$post_type_data->the_post();?>
+				$rambo_blog_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$rambo_args = array( 'post_type' => 'post','paged'=>$rambo_blog_page);		
+				$rambo_post_type_data = new WP_Query( $rambo_args );
+					while($rambo_post_type_data->have_posts()):
+					$rambo_post_type_data->the_post();?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					
-					<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
+					<?php $rambo_defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
 					<?php if(has_post_thumbnail()): ?>
-					<a class="pull-left blog_pull_img2" href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail('', $defalt_arg); ?>
+					<a class="blog_pull_img2" href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail('', $rambo_defalt_arg); ?>
 					</a>
 					<?php endif; ?>
 					
@@ -33,7 +33,7 @@
 					<p class="tags_alignment">
 					<span class="blog_tags"><i class="fa fa-tags"></i><?php the_tags('',', ');?></span>
 					</p>
-					<?php }  wp_link_pages( $args ); ?>
+					<?php }  wp_link_pages( $rambo_args ); ?>
 			</div>
 			<?php endwhile; wp_reset_postdata(); ?>
 			<?php rambo_post_pagination(); // call post pagination ?>

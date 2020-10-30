@@ -1,11 +1,11 @@
 <?php	
 add_action( 'widgets_init', 'rambo_widgets_init');
 function rambo_widgets_init() {
-$rambo_pro_theme_options = rambo_theme_data_setup();
-$current_options = wp_parse_args(  get_option( 'rambo_pro_theme_options', array() ), $rambo_pro_theme_options );
-$site_intro_column_layout = 12 / $current_options['site_intro_column_layout'];	
-$service_column_layout = 12 / $current_options['service_column_layout'];
-$project_column_layout = 12 / $current_options['project_column_layout'];
+$rambo_theme_options = rambo_theme_data_setup();
+$rambo_current_options = wp_parse_args(  get_option( 'rambo_pro_theme_options', array() ), $rambo_theme_options );
+$site_intro_column_layout = 12 / $rambo_current_options['site_intro_column_layout'];	
+$service_column_layout = 12 / $rambo_current_options['service_column_layout'];
+$project_column_layout = 12 / $rambo_current_options['project_column_layout'];
 
 /*sidebar*/
 register_sidebar( array(
@@ -63,5 +63,4 @@ register_sidebar( array(
 		'after_title' => '</h2></div>',
 	) );
 	
-}	                     
-?>
+}

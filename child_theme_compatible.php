@@ -29,9 +29,9 @@ function theme_data_setup()
 			
 			//Slide
 			'home_slider_enabled'=>true,
-			'slider_post' => WEBRITI_TEMPLATE_DIR_URI .'/images/slider.png',
+			'slider_post' => RAMBO_TEMPLATE_DIR_URI .'/images/slider.png',
 			'slider_title' => __('Responsive WP theme','rambo'),
-			'slider_text' => 'We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.',
+			'slider_text' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','rambo'),
 			'slider_readmore_text' => __('Read More','rambo'),
 			'readmore_text_link' => '#',
 			'readmore_target' => false,
@@ -45,7 +45,7 @@ function theme_data_setup()
 			'home_projects_enabled' => false,
 			'project_protfolio_enabled'=>false,
 			'project_heading_one'=> __('Featured Portfolio Projects','rambo'),
-			'project_tagline'=>'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
+			'project_tagline'=>__('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
 			// home project 
 			'project_list'=>4,
 			
@@ -141,7 +141,7 @@ function webriti_fallback_page_menu( $args = array() ) {
 		$class = '';
 		if ( is_front_page() && !is_paged() )
 			$class = 'class="current_page_item"';
-		$menu .= '<li ' . $class . '><a  href="' . home_url( '/' ) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+		$menu .= '<li ' . $class . '><a  href="' . esc_url(home_url( '/' )) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 		// If the front page is a page, add it to the exclude list
 		if (get_option('show_on_front') == 'page') {
 			if ( !empty( $list_args['exclude'] ) ) {
@@ -195,7 +195,7 @@ class webriti_walker_page_menu extends Walker_Page{
 
 		$css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
 
-		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+		$output .= $indent . '<li class="' . $css_class . '"><a href="' . esc_url(get_permalink($page->ID)) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
 
 		if ( !empty($show_date) ) {
 			if ( 'modified' == $show_date )
@@ -300,4 +300,3 @@ function webriti_nav_menu_css_class( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'webriti_nav_menu_css_class' );
-?>

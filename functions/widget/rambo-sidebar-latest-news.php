@@ -41,7 +41,7 @@ class rambo_sidbar_latest_news_widget extends WP_Widget {
 		
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
-		echo $args['before_title'] . $title . $args['after_title']; ?>		
+		echo $args['before_title'] . esc_html($title) . $args['after_title']; ?>		
 		<?php $loop = new WP_Query(array( 'post_type' => 'post','ignore_sticky_posts' => 1, 'showposts' => $number_of_posts ));
 			if( $loop->have_posts() ) : 
 			while ( $loop->have_posts() ) : $loop->the_post();?>				

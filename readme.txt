@@ -3,10 +3,10 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 5.4
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
@@ -24,7 +24,7 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Rambo WordPress Theme, Copyright 2014 Priyanshu Mittal
+Rambo WordPress Theme, Copyright 2014-2020 priyanshumittal
 Rambo is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -38,6 +38,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.3
+1. Fixed issue like prefix, escaping, IE11 and other.
+2. Custom css box removed.
 
 @version 2.0.2
 1. Fixed the customizer error of console.

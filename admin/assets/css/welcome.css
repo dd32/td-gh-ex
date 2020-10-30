@@ -557,3 +557,15 @@ a.info-block:hover, a.info-block:active, a.info-block:focus{color:#333;}
         width: 45%;
     }
 }
+.btn-lg, .btn-group-lg > .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.rambo-info-title {
+    font-size: 32px !important;
+    border-bottom: 1px solid #eaeaea;
+    line-height:50px !important;
+}

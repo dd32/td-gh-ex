@@ -38,7 +38,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_setting(
 	'rambo_pro_theme_options[latest_news_title]',
 	array(
-		'default' => esc_html__('Latest News','rambo'),
+		'default' => esc_html__('Adminim Veniam','rambo'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

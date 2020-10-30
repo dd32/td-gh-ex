@@ -88,7 +88,7 @@ class rambo_feature_page_widget extends WP_Widget{
 				    
 
 				
-				    if($page->post_content) {echo '<p>'.$page->post_content. '</p>';}
+				    if($page->post_content) {echo '<p>'.esc_html($page->post_content). '</p>';}
 					
 					
 	endif;			       			

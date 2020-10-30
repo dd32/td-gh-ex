@@ -81,7 +81,7 @@ if (!class_exists('Rambo_About_Page')) {
 			$theme = $this->theme;
 			$count = $this->action_count;
 			$count = ($count > 0) ? '<span class="awaiting-mod action-count"><span>' . $count . '</span></span>' : '';
-			$title = sprintf(esc_html__('About rambo Theme', 'rambo'), esc_html($theme->get('Name')), $count);
+			$title = sprintf(esc_html__('About Rambo Theme', 'rambo'), esc_html($theme->get('Name')), $count);
 			add_theme_page(sprintf(esc_html__('Welcome to %1$s %2$s', 'rambo'), esc_html($theme->get('Name')), esc_html($theme->get('Version'))), $title, 'edit_theme_options', 'rambo-welcome', array($this, 'print_welcome_page'));
 		}
 
@@ -213,7 +213,7 @@ if (!class_exists('Rambo_About_Page')) {
 				<p class="about-description"><?php esc_html_e( 'See changelog below:', 'rambo' ); ?></p>
 
 				<?php
-				$changelog_file = apply_filters( 'changelog_themes', WEBRITI_TEMPLATE_DIR. '/changelog.txt' );
+				$changelog_file = apply_filters( 'changelog_themes', RAMBO_TEMPLATE_DIR. '/changelog.txt' );
 
 				// Check if the changelog file exists and is readable.
 				if ( $changelog_file && is_readable( $changelog_file ) ) {

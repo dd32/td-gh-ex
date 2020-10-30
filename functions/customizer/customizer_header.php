@@ -43,4 +43,3 @@ function rambo_header_customizer( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'rambo_header_customizer' );
-?>

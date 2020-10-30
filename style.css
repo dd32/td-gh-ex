@@ -3,14 +3,14 @@ Theme Name: Rambo
 Theme URI:  https://webriti.com/rambo-lite-version-details-page/
 Author: Webriti
 Author URI: https://webriti.com/
-Tags: full-width-template, threaded-comments, right-sidebar, left-sidebar, one-column, custom-menu, sticky-post, translation-ready, featured-images, blog, photography, footer-widgets
 Description: Rambo is an ideal WordPress theme for those who wish to create an impressive web presence. Rambo is easy to use, provides everything you need to create great looking website. It is professional, smooth and sleek, with a clean modern layout, for almost any business types: agency, freelance, blog, startup, portfolio, corporate, firms, law firms, digital media agency , architecture firms, real estate firms, food , fashion etc etc. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the modern devices like mobiles, tablets, laptops etc. In Rambo Lite, you can easily set Featured Banner, Services, Portfolio and 4 column widgetized footer. Page templates like Homepage, Full Width Page and Blog left sidebar template will be there. In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language. Check premium version theme demo at http://webriti.com/demo/wp/rambo
-Version: 2.0.2
+Tags: full-width-template, threaded-comments, right-sidebar, left-sidebar, one-column, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
+Version: 2.0.3
 Requires at least: 4.5
 Tested up to: 5.5
 Requires PHP: 5.4
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rambo
 */
 
@@ -318,7 +318,7 @@ div.boxed {
 6.0 Menu
 --------------------------------------------------------------*/
 
-.navbar { margin: 14px 0 14px !important; }
+.navbar { margin: 14px 0 14px; }
 .navbar .nav { top: 0px; padding: 0; }
 .navbar-inner { background-color: #ffffff; min-height: 40px; padding-right: 0px; padding-left: 0px; background-repeat: repeat-x; }
 .navbar .nav > li { padding: 0; }
@@ -571,8 +571,8 @@ a.featured_port_projects_btn:hover { padding: 3px 18px; color: #ffffff; backgrou
 	display: inline-block;
 	vertical-align: middle;
 	margin: 5px 0px;
-	padding: 17px 55px;
-	text-align: right;
+	padding: 17px 40px;
+	text-align: left;
 	transition: all 0.4s ease 0s;
 	letter-spacing:1px;
 }
@@ -616,6 +616,8 @@ a.featured_port_projects_btn:hover { padding: 3px 18px; color: #ffffff; backgrou
 	line-height: 40px;
 	margin: 7px 0;
 	font-size: 30px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 .about_space { margin-top: 0; padding: 0px; }
 .about_section p { font-size: 16px; line-height: 27px; }
@@ -954,7 +956,7 @@ a.blog_section_readmore:hover{ background: #3e3f41; color: #ffffff; padding: 3px
 
 
 .blog_section2, .post.format-standard{ background-color: #ffffff; border-bottom: 1px solid #EBEAEA; padding: 0 0 15px; margin-bottom: 50px; overflow: hidden; }
-.post.format-standard.sticky { background-color: #efefef;}
+.post.format-standard.sticky { background-color: #efefef;padding: 10px;}
 .post.format-standard.sticky h2, .post.format-standard.sticky .blog_section2_comment, .post.format-standard.sticky p { padding-left: 7px; padding-right: 5px; padding-top: 10px}
 .blog_pull_img2 { margin-right: 0px !important; }
 .blog_section2_img{
@@ -1016,7 +1018,7 @@ dd {margin-left: 10px;font-size: 17.5px;}
 -------------------------------------------------------------- */
 
 .blog_single_post{ background-color: #ffffff; border: 0px; padding: 0 0 0px; margin-bottom: 50px; float: left; width:100%; }
-.blog_single_post  blockquote,.span6  blockquote{ margin: 15px 0px 15px 0px; padding: 15px 20px 15px 20px; float: left; }
+.span6  blockquote{ margin: 15px 0px 15px 0px; padding: 15px 20px 15px 20px; float: left; }
 .blog_single_post  blockquote,.blog_section2 blockquote,.span6 blockquote{ background-color: #f9f9f9; }
 .blog_single_post blockquote span,.blog_section2 blockquote span{ color: #767676; }
 .blog_single_post blockquote small ,.blog_section2 blockquote small{ color: #979696; }
@@ -2348,7 +2350,7 @@ li.cat-item { padding: 5px 0; }
 .wpcf7-form input[type="email"],
 .wpcf7-form input[type="range"],
 .wpcf7-form input[type="date"],
-.wpcf7-form input[type="text"] { width: 74%; margin: 0; height: 27px; }
+.wpcf7-form input[type="text"] { width: 100%; margin: 0; height: 27px; }
 .wpcf7-form textarea { width: 100%; margin: 0; }
 .wpcf7-form-control-wrap { display: block; margin: 6px 0 20px; }
 
@@ -2703,3 +2705,43 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .post h2{margin-top: 2px;margin-left: 3px; }
 .blog-sidebar{  margin: 0;
     padding: 50px 0 20px;}
+    /*media all*/
+.blocks-gallery-grid.is-cropped .blocks-gallery-image a, .blocks-gallery-grid.is-cropped .blocks-gallery-image img, .blocks-gallery-grid.is-cropped .blocks-gallery-item a, .blocks-gallery-grid.is-cropped .blocks-gallery-item img, .wp-block-gallery.is-cropped .blocks-gallery-image a, .wp-block-gallery.is-cropped .blocks-gallery-image img, .wp-block-gallery.is-cropped .blocks-gallery-item a, .wp-block-gallery.is-cropped .blocks-gallery-item img {
+    width: 100%;
+    display: block;
+}
+.home_service span a{padding: 46px 0px;
+    display: block;}
+
+.home_service .fa-stack{line-height: 0em !important;}
+.latest_news_section .blog-news img{float:none;}
+.latest_news_section .blog-news{float:left;display: block;}
+iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+
+@media (max-width: 767px) {
+	.blog-sidebar {
+	    margin: 0 15px;
+	}
+}
+
+.fb_iframe_widget_fluid span {
+    width: 100% !important;
+}
+code{white-space: normal!important;}
+.fb_iframe_widget span{display: block;}
+
+@media (max-width: 768px){
+    .main_slider .container {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 979px) and (min-width: 768px){
+.footer_widget.span4{
+    width: auto !important;
+}}

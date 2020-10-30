@@ -3,32 +3,32 @@ function rambo_scripts()
 {	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 	/*Template Color Scheme CSs*/
 	wp_enqueue_style('rambo-style', get_stylesheet_uri() );
-	wp_enqueue_style ('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');
-	wp_enqueue_style('rambo-default', WEBRITI_TEMPLATE_DIR_URI . '/css/default.css');
-	wp_enqueue_style ('font-awesome',WEBRITI_TEMPLATE_DIR_URI .'/css/font-awesome/css/font-awesome.css');
-	wp_enqueue_style ('rambo-element',WEBRITI_TEMPLATE_DIR_URI.'/css/element.css');
-	wp_enqueue_style ('bootstrap-responsive',WEBRITI_TEMPLATE_DIR_URI .'/css/bootstrap-responsive.css');
-	wp_enqueue_style ('rambo-docs',WEBRITI_TEMPLATE_DIR_URI .'/css/docs.css');
+	wp_enqueue_style ('bootstrap',RAMBO_TEMPLATE_DIR_URI.'/css/bootstrap.css');
+	wp_enqueue_style('rambo-default', RAMBO_TEMPLATE_DIR_URI . '/css/default.css');
+	wp_enqueue_style ('font-awesome',RAMBO_TEMPLATE_DIR_URI .'/css/font-awesome/css/font-awesome.css');
+	wp_enqueue_style ('rambo-element',RAMBO_TEMPLATE_DIR_URI.'/css/element.css');
+	wp_enqueue_style ('bootstrap-responsive',RAMBO_TEMPLATE_DIR_URI .'/css/bootstrap-responsive.css');
+	wp_enqueue_style ('rambo-docs',RAMBO_TEMPLATE_DIR_URI .'/css/docs.css');
 	
 	/*Style Media Css*/
-	wp_enqueue_style ('rambo-style-media',WEBRITI_TEMPLATE_DIR_URI .'/css/style-media.css'); //Style-Media
+	wp_enqueue_style ('rambo-style-media',RAMBO_TEMPLATE_DIR_URI .'/css/style-media.css'); //Style-Media
 			
 	//Template Color Scheme Js	
-	wp_enqueue_script('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap.min.js',array('jquery'));
-	wp_enqueue_script('rambo-menu',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/menu.js');
+	wp_enqueue_script('bootstrap',RAMBO_TEMPLATE_DIR_URI.'/js/bootstrap.min.js',array('jquery'));
+	wp_enqueue_script('rambo-menu',RAMBO_TEMPLATE_DIR_URI.'/js/menu/menu.js');
 	
-	wp_enqueue_script('bootstrap-transtiton',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap-transition.js');
+	wp_enqueue_script('bootstrap-transtiton',RAMBO_TEMPLATE_DIR_URI.'/js/bootstrap-transition.js');
 	/*Color Schemes*/
 	
 	
-	/******* webriti tab js*********/
+	/******* rambo theme tab js*********/
 	}
 	add_action( 'wp_enqueue_scripts', 'rambo_scripts' );
 	
 add_action( 'admin_enqueue_scripts', 'rambo_enqueue_script_function' );
 	function rambo_enqueue_script_function()
 	{
-	wp_enqueue_style('rambo-drag-drop',WEBRITI_TEMPLATE_DIR_URI.'/css/drag-drop.css');
+	wp_enqueue_style('rambo-drag-drop',RAMBO_TEMPLATE_DIR_URI.'/css/drag-drop.css');
 	}
 	
 	add_action('wp_head','rambo_enqueue_custom_css');
@@ -40,4 +40,4 @@ add_action( 'admin_enqueue_scripts', 'rambo_enqueue_script_function' );
 	<style type="text/css">
 	<?php echo htmlspecialchars_decode($rambo_current_options['rambo_custom_css']); ?>
 	</style>
-	<?php } }?>
+	<?php } }

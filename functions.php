@@ -4,40 +4,40 @@
 	*Theme Core Functions and Codes
 */	
 	/**Includes reqired resources here**/
-	define('WEBRITI_TEMPLATE_DIR_URI',get_template_directory_uri());	
+	define('RAMBO_TEMPLATE_DIR_URI',get_template_directory_uri());	
 	
-	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
-	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
+	define('RAMBO_TEMPLATE_DIR',get_template_directory());
+	define('RAMBO_THEME_FUNCTIONS_PATH',RAMBO_TEMPLATE_DIR.'/functions');
 
 	require_once('theme_setup_data.php');
 	require_once('child_theme_compatible.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus	
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus	
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); 
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); 
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php'); //for font library
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/font/font.php'); //for font library
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/rambo-site-intro-widget.php' ); //for Site Intro widgets
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-site-intro-widget.php' ); //for Site Intro widgets
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/rambo-register-page-widget.php' ); //for Page / Service widgets
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-register-page-widget.php' ); //for Page / Service widgets
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tags.php' ); //for post meta content
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/template-tags.php' ); //for post meta content
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/rambo-sidebar-latest-news.php' ); //for sidebar Latest News custom widgets	
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-sidebar-latest-news.php' ); //for sidebar Latest News custom widgets	
 	
 	
 	//Customizer
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro_feature.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recent_news.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_copyright.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
-	require_once (WEBRITI_THEME_FUNCTIONS_PATH . '/class-tgm-plugin-activation.php');
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro_feature.php');
+	//require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_recent_news.php');
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_copyright.php');
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
+	require_once (RAMBO_THEME_FUNCTIONS_PATH . '/class-tgm-plugin-activation.php');
 
 	add_action( 'tgmpa_register', 'rambo_register_required_plugins' );
 
@@ -118,20 +118,20 @@
 			$title = "$title $sep $site_description";
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( _e('Page','rambo'), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( esc_html_e('Page','rambo'), max( $paged, $page ) );
 		return $title;
 	}	
 	add_filter( 'wp_title', 'rambo_head', 10,2 );
 
 	function rambo_customizer_css() {
-		wp_enqueue_style( 'rambo-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+		wp_enqueue_style( 'rambo-customizer-info', RAMBO_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
 	}
 	add_action( 'admin_init', 'rambo_customizer_css' );
 	
 		add_action( 'after_setup_theme', 'rambo_setup' ); 	
 		function rambo_setup()
 		{	// Load text domain for translation-ready
-			load_theme_textdomain( 'rambo', WEBRITI_TEMPLATE_DIR . '/languages' );	
+			load_theme_textdomain( 'rambo', RAMBO_TEMPLATE_DIR . '/languages' );	
 			
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		add_theme_support( 'woocommerce' );//woocommerce
@@ -161,7 +161,7 @@
 		register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'rambo' ) );
 		
 		// setup admin pannel defual data for index page
-		$rambo_pro_theme=rambo_theme_data_setup();
+		$rambo_theme=rambo_theme_data_setup();
 
 		 //About Theme
    		 $theme = wp_get_theme(); // gets the current theme
@@ -204,4 +204,33 @@ function rambo_hide_page_title()
         return true;
 }
 add_filter( 'woocommerce_show_page_title', 'rambo_hide_page_title' );
-?>
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function rambo_skip_link_focus_fix() {
+    // The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+    ?>
+    <script>
+    /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+    </script>
+    <?php
+}
+add_action( 'wp_print_footer_scripts', 'rambo_skip_link_focus_fix' );
+
+//Custom CSS compatibility
+$rambo_options = rambo_theme_data_setup();
+$rambo_current_options = wp_parse_args(get_option('rambo_pro_theme_options', array()), $rambo_options);
+if ($rambo_current_options['webrit_custom_css'] != '' && $rambo_current_options['webrit_custom_css'] != 'nomorenow') {
+    $rambo_old_custom_css = '';
+    $rambo_old_custom_css .= $rambo_current_options['webrit_custom_css'];
+    $rambo_old_custom_css .= (string) wp_get_custom_css(get_stylesheet());
+    $rambo_current_options['webrit_custom_css'] = 'nomorenow';
+    update_option('rambo_pro_theme_options', $rambo_current_options);
+    wp_update_custom_css_post($rambo_old_custom_css, array());
+}

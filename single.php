@@ -9,9 +9,9 @@
 		<div class="<?php if( is_active_sidebar('sidebar-1')) echo "span8"; else echo "span12";?> Blog_main">
 			<div class="blog_single_post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php  the_post(); ?>
-			<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
+			<?php $rambo_defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
 			<?php if(has_post_thumbnail()):?>
-				<?php the_post_thumbnail('', $defalt_arg); ?>
+				<?php the_post_thumbnail('', $rambo_defalt_arg); ?>
 			
 			<?php endif;?>
 			<h2><?php the_title(); ?></h2>

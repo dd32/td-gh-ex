@@ -24,4 +24,3 @@ function rambo_scripts_styles() {
     wp_enqueue_style( 'rambo-fonts', rambo_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'rambo_scripts_styles' );
-?>
