@@ -72,6 +72,18 @@ function articlepress_customize_register( $wp_customize ) {
 		'type'		=>	'checkbox'
 	));
 
+	// Feed Show Hide
+	$wp_customize->add_setting( 'footer_socail_icon_feed_show_hide', array(
+		'default'  	=>	0,
+		'transport'	=>	'refresh',
+		'sanitize_callback'  => 'footer_socail_icon_show_hide_sanitize'
+	));
+	$wp_customize->add_control( 'footer_socail_icon_feed_show_hide', array(
+		'section'	=> 	'footer_socail_icon',
+		'label'		=>	esc_html__( 'Feed Icon Show / Hide', 'articlepress' ),
+		'type'		=>	'checkbox'
+	));
+
 
 	// Facebook
 	$wp_customize->add_setting( 'footer_socail_icon_facebook', array(
@@ -112,17 +124,31 @@ function articlepress_customize_register( $wp_customize ) {
 	));
 
 
-	// Feed Show Hide
-	$wp_customize->add_setting( 'footer_socail_icon_feed_show_hide', array(
-		'default'  	=>	0,
+	// Linkedin
+	$wp_customize->add_setting( 'footer_socail_icon_linkedin', array(
+		'default'  	=>	'http://',
 		'transport'	=>	'refresh',
-		'sanitize_callback'  => 'footer_socail_icon_show_hide_sanitize'
+		'sanitize_callback'  => 'esc_url_raw'
 	));
-	$wp_customize->add_control( 'footer_socail_icon_feed_show_hide', array(
+	$wp_customize->add_control( 'footer_socail_icon_linkedin', array(
 		'section'	=> 	'footer_socail_icon',
-		'label'		=>	esc_html__( 'Feed Show / Hide', 'articlepress' ),
-		'type'		=>	'checkbox'
+		'label'		=>	esc_html__( 'Linkedin', 'articlepress' ),
+		'type'		=>	'url'
 	));
+
+
+	// Youtube
+	$wp_customize->add_setting( 'footer_socail_icon_youtube', array(
+		'default'  	=>	'http://',
+		'transport'	=>	'refresh',
+		'sanitize_callback'  => 'esc_url_raw'
+	));
+	$wp_customize->add_control( 'footer_socail_icon_youtube', array(
+		'section'	=> 	'footer_socail_icon',
+		'label'		=>	esc_html__( 'Youtube', 'articlepress' ),
+		'type'		=>	'url'
+	));
+
 
 
 
