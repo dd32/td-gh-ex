@@ -1,10 +1,10 @@
 /*
 Theme Name: LeftSide
 Theme URI: https://www.guido.site/themes
-Version: 6.1
+Version: 6.2
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5
 Author: Guido
 Author URI: https://www.guido.site
 Description: LeftSide is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard. It also contains multiple widget areas. Enjoy!
@@ -122,8 +122,8 @@ dd {margin:0 0 0 20px;}
 
 
 /* INPUTS */
-input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ccc; padding:2px 5px; background:none; color:#333; font-size:inherit; font-family:inherit; border-radius:5px;}
-input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; padding:2px 5px; background:#e77776; color:#fff; border-radius:5px;}
+input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ccc; border-radius:5px; padding:2px 5px; background:none; color:#333; font-size:inherit; font-family:inherit;}
+input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; border-radius:5px; padding:2px 5px; background:#e77776; color:#fff;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#666; color:#ddd;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
@@ -140,6 +140,11 @@ button {font-size:inherit; font-family:inherit;}
 
 /* CONTAINER */
 #container {max-width:1200px; clear:both; margin:20px auto; background:#fff;}
+
+
+/* SKIP TO CONTENT LINK */
+.skip-link {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px; opacity:0;}
+.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; background:#f8f8f8; opacity:1; z-index:100000;}
 
 
 /* MAIN CONTENT AREA */
@@ -161,19 +166,20 @@ button {font-size:inherit; font-family:inherit;}
 /* SIDEBAR MENU */
 .nav-primary {clear:both; margin:0 0 20px;}
 .nav-primary ul {margin:0; padding:0; z-index:999; list-style:none;}
-.nav-primary ul li {position:relative; padding:0; margin:0;}
-.nav-primary ul li a {display:block; width:92%; padding:5px 4%; text-decoration:none;}
+.nav-primary ul li {position:relative; margin:0; padding:0;}
+.nav-primary ul li a {display:block; padding:5px 15px; background:none; color:#e77776; text-decoration:none;}
 .nav-primary ul li:hover > a {background:#e77776; color:#fff; text-decoration:none;}
 .nav-primary .current-menu-item > a, .nav-primary .current-menu-parent > a {text-decoration:underline;}
 
 
 /* SIDEBAR SUBMENU */
-.nav-primary ul ul {display:none; position:absolute; top:0; left:100%;}
-.nav-primary ul ul ul {display:block; position:relative; left:0;}
-.nav-primary ul ul a {width:14em; padding:5px 1em; background:#666; color:#ddd;}
-.nav-primary ul ul ul a {width:13em; padding:5px 1em 5px 2em;}
-.nav-primary ul ul ul ul a {width:12em; padding:5px 1em 5px 3em;}
-.nav-primary ul li:hover > ul {display:block;}
+.nav-primary ul ul {height:0; width:16em; position:absolute; top:0; left:100%; padding:0; background:#666; overflow:hidden; opacity:0;}
+.nav-primary ul ul ul {height:auto; position:relative; top:auto; left:0; overflow:visible; opacity:1;}
+.nav-primary ul ul li {display:block; margin:0;}
+.nav-primary ul ul a {padding:5px 15px; color:#ddd;}
+.nav-primary ul ul ul a {padding:5px 15px 5px 25px;}
+.nav-primary ul ul ul ul a {padding:5px 15px 5px 35px;}
+.nav-primary ul li:hover > ul, .nav-primary ul li:focus-within > ul {height:auto; overflow:visible; opacity:1;}
 
 
 /* SIDEBAR MOBILE MENU */
@@ -218,7 +224,7 @@ button {font-size:inherit; font-family:inherit;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {margin:0 0 20px;}
 .entry-content {clear:both; padding:0 0 20px;}
-.sticky-title {margin:0 0 20px; padding:2px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc; text-align:center;}
+.sticky-title {margin:0 0 10px; font-weight:bold; font-style:italic;}
 .postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px;}
 .more {clear:both; padding:0 0 20px;}
 a.readmore {float:right; padding:2px 5px; background:#e77776; color:#fff; text-decoration:none; border-radius:5px;}
@@ -238,7 +244,7 @@ a.readmore:hover {background:#666; color:#ddd; text-decoration:none;}
 
 
 /* EDIT LINK */
-.edit-link {clear:both; margin:10px 0; padding:5px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc; text-align:center;}
+.edit-link {clear:both; padding:10px 0; font-weight:bold; font-style:italic;}
 
 
 /* IMAGE AND VIDEO */
@@ -261,7 +267,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {margin:0 5px 0 0;}
-.search-form .screen-reader-text {display:none;}
+.search-form .screen-reader-text {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px;}
 
 
 /* COMMENTS */
@@ -271,9 +277,8 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-list .children > li {margin:0 0 0 10px;}
 .comment-body {background:#f8f8f8; border:1px solid #ccc; border-radius:5px; margin:0 0 20px; padding:10px;}
 .comment-content {padding:10px 0;}
-.comment-metadata .edit-link {display:block;}
-.comment-notes, .form-allowed-tags {padding:5px 0; font-size:0.8em;}
-.comments-title, .comment-reply-title, .no-comments {margin:0 0 10px; font-size:1.45em;}
+.comment-metadata .edit-link {clear:none; padding:0 0 0 10px; display:inline-block;}
+.comments-title, .no-comments {margin:0 0 10px; font-size:1.45em;}
 .comment-author .avatar {margin:0 10px 0 0; border-radius:5px;}
 .comment-metadata {padding:5px 0 0;}
 .bypostauthor .comment-content {font-style:italic;}
@@ -282,8 +287,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 /* COMMENTS RESPOND */
 #respond {clear:both; padding:0 0 10px;}
-.comment-form label {padding:0 0 5px; display:block;}
+.comment-reply-title {margin:0 0 10px; font-size:1.45em;}
+#cancel-comment-reply-link {padding:0 0 0 10px;}
+.comment-notes {padding:5px 0; font-size:0.8em;}
+.comment-form label {display:block;}
 .comment-form textarea {width:90%;}
+.comment-form-cookies-consent label {display:inline-block;}
 
 
 /* COMMENTS NAV */
@@ -337,13 +346,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 	/* SIDEBAR MOBILE MENU */
 	.mobile-nav-container {display:block; clear:both; padding:0 0 20px;}
-	.mobile-nav-toggle {display:block; clear:both; padding:10px 20px; background:#e77776; color:#fff; cursor:pointer;}
-	.mobile-nav-toggle:hover {color:#ccc;}
+	.mobile-nav-toggle {display:block; clear:both; margin:0 auto; padding:10px 15px;}
 	.mobile-nav {clear:both; padding:10px 20px; background:#f8f8f8; border-bottom:1px solid #ccc;}
-	.mobile-nav .subnav-toggle {float:right; display:block; margin:-45px 0 0; padding:2px 15px;}
-	.mobile-nav ul {list-style:none;}
-	.mobile-nav ul li {margin:0;}
-	.mobile-nav ul li a {display:block; margin:0 0 10px 0; padding:0 0 12px; border-bottom:2px dotted #ccc; text-decoration:none;}
+	.mobile-nav .subnav-toggle {position:absolute; float:right; display:block; top:0; right:0; padding:5px 10px;}
+	.mobile-nav ul {list-style:none; margin:0; padding:0;}
+	.mobile-nav ul li {position:relative; margin:0; padding:0;}
+	.mobile-nav ul li a {display:block; margin:0 0 10px; padding:0 0 10px; border-bottom:2px dotted #ccc; line-height:2; text-decoration:none;}
 	.mobile-nav .sub-menu li {margin:0 0 0 20px;}
 
 	/* SIDEBAR MENU TITLE */

@@ -5,7 +5,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'primary' ) ) {?>
-	<div id="sidebar-widgets">
+	<div id="sidebar-widgets" role="complementary">
 		<?php dynamic_sidebar( 'primary' ); ?>
 	</div>
 <?php } ?>
