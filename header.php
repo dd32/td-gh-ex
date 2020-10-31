@@ -19,6 +19,7 @@
 <?php wp_body_open(); ?>
 
 <div id="container">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'onecolumn' ); ?></a>
 	<div id="header-container">
 		<div id="header">
 			<div class="logo">
@@ -31,17 +32,15 @@
 					<?php endif; ?>
 				<?php endif; ?>
 			</div>
-
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 				<div class="mobile-nav-container">
-					<div class="mobile-nav-toggle"><?php _e( 'Menu', 'onecolumn' ); ?><?php _e( ' +', 'onecolumn' ); ?></div>
+					<button class="mobile-nav-toggle"><?php _e( 'Menu', 'onecolumn' ); ?><?php _e( ' +', 'onecolumn' ); ?></button>
 					<div class="mobile-nav">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</div>
 				</div>
 			<?php endif; ?>
-
 			<?php if ( is_front_page() ) {?>
 				<?php if ( get_header_image() ) {?>
 					<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
@@ -49,18 +48,16 @@
 			<?php } ?>
 		</div>
 	</div>
-
 	<div id="main-content">
 		<?php if ( is_front_page() ) {?>
 		<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
-		<div id="homepage-widgets">
-			<div class="home-right">
-				<?php dynamic_sidebar( 'homepage-right' ); ?>
+			<div id="homepage-widgets" role="complementary">
+				<div class="home-right">
+					<?php dynamic_sidebar( 'homepage-right' ); ?>
+				</div>
+				<div class="home-left">
+					<?php dynamic_sidebar( 'homepage-left' ); ?>
+				</div>
 			</div>
-
-			<div class="home-left">
-				<?php dynamic_sidebar( 'homepage-left' ); ?>
-			</div>
-		</div>
 		<?php } ?>
 		<?php } ?>
