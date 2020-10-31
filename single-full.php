@@ -7,7 +7,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content-full">
+<div id="content-full" role="main">
 	<?php while (have_posts()) : the_post(); ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>>

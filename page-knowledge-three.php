@@ -7,7 +7,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content">
+<div id="content" role="main">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php if ( get_theme_mod( 'myknowledgebase_page_title' ) == "yes" ) { ?>
 			<h1 class="page-title"><?php the_title(); ?></h1>

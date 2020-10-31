@@ -7,7 +7,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content-full">
+<div id="content-full" role="main">
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<h1 class="page-title"><?php the_title(); ?></h1>

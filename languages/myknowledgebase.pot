@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2020-05-23 20:59+0200\n"
+"POT-Creation-Date: 2020-10-25 18:46+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -244,19 +244,23 @@ msgstr ""
 msgid "This will override the default title."
 msgstr ""
 
-#: header.php:38
+#: header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:43
 msgid "Menu"
 msgstr ""
 
-#: header.php:38
+#: header.php:43
 msgid " +"
 msgstr ""
 
-#: header.php:67
+#: header.php:69
 msgid "Search Posts"
 msgstr ""
 
-#: header.php:73
+#: header.php:74
 msgid "Search"
 msgstr ""
 
@@ -289,9 +293,9 @@ msgstr ""
 msgid ""
 "MyKnowledgeBase is a lightweight and mobile-friendly WordPress theme. "
 "Personalize your website via the Customizer in your dashboard and by using a "
-"custom post or page template. It also contains multiple widget areas. With 2 "
-"of the custom page templates you can transform your categories and posts "
-"into a Knowledge Base, FAQ, Wiki or Link Portal. Enjoy!"
+"custom post or page template. With 2 of the custom page templates you can "
+"transform your categories and posts into a knowledge base, FAQ, wiki or link "
+"portal. It also contains multiple widget areas. Enjoy!"
 msgstr ""
 
 #. Author of the plugin/theme

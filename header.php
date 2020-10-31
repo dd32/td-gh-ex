@@ -19,6 +19,12 @@
 <?php wp_body_open(); ?>
 
 <div id="container">
+	<?php if ( is_page_template( 'page-full.php' ) || is_page_template( 'page-knowledge-four.php' ) || is_page_template( 'single-full.php' ) ) {
+		$main_content = '#content-full';
+	} else {
+		$main_content = '#content';
+	} ?>
+	<a class="skip-link screen-reader-text" href="<?php echo $main_content; ?>"><?php _e( 'Skip to content', 'myknowledgebase' ); ?></a>
 	<div id="header-first">
 		<div class="logo">
 			<?php if ( get_theme_mod( 'myknowledgebase_logo' ) ) : ?>
@@ -31,34 +37,30 @@
 				<?php endif; ?>
 			<?php endif; ?>
 		</div>
-
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 			<div class="mobile-nav-container">
-				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'myknowledgebase' ); ?><?php _e( ' +', 'myknowledgebase' ); ?></div>
+				<button class="mobile-nav-toggle"><?php _e( 'Menu', 'myknowledgebase' ); ?><?php _e( ' +', 'myknowledgebase' ); ?></button>
 				<div class="mobile-nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
 	</div>
-
 	<?php if ( is_front_page() ) {?>
 	<?php if ( get_header_image() ) {?>
-	<div id="header-second">
-		<div class="image-homepage">
-			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+		<div id="header-second">
+			<div class="image-homepage">
+				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			</div>
+			<?php if ( is_active_sidebar( 'homepage' ) ) {?>
+				<div class="sidebar-homepage" role="complementary">
+					<?php dynamic_sidebar( 'homepage' ); ?>
+				</div>
+			<?php } ?>
 		</div>
-
-		<?php if ( is_active_sidebar( 'homepage' ) ) {?>
-		<div class="sidebar-homepage">
-			<?php dynamic_sidebar( 'homepage' ); ?>
-		</div>
-		<?php } ?>
-	</div>
 	<?php } ?>
 	<?php } ?>
-
 	<?php if ( get_theme_mod( 'myknowledgebase_show_search' ) != "no" ) : ?>
 		<div id="header-third">
 			<?php if ( get_theme_mod( 'myknowledgebase_search' ) ) {
@@ -66,12 +68,14 @@
 			} else {
 				$search_title = esc_attr__( 'Search Posts', 'myknowledgebase' );
 			} ?>
-
-			<h3 class="searchbar-title"><?php echo $search_title; ?></h3>
+			<div class="searchbar-title"><?php echo $search_title; ?></div>
 			<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo $search_title; ?>" />
-				<input type="submit" class="search-submit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
-				<input type="hidden" name="post_type" value="post" />
+				<label>
+					<span class="screen-reader-text"><?php _e( 'Search for:', 'myknowledgebase' ); ?></span>
+					<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query(); ?>" name="s" />
+					<input type="hidden" name="post_type" value="post" />
+				</label>
+				<input type="submit" class="search-submit" value="<?php _e( 'Search', 'myknowledgebase' ); ?>" />
 			</form>
 		</div>
 	<?php endif; ?>

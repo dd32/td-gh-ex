@@ -1,16 +1,16 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
-Version: 6.5
+Version: 6.6
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 
 
 == Description ==
-MyKnowledgeBase is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard and by using a custom post or page template. With 2 of the custom page templates you can transform your categories and posts into a Knowledge Base, FAQ, Wiki or Link Portal. It also contains multiple widget areas. Enjoy!
+MyKnowledgeBase is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard and by using a custom post or page template. With 2 of the custom page templates you can transform your categories and posts into a knowledge base, FAQ, wiki or link portal. It also contains multiple widget areas. Enjoy!
 
 
 == Installation ==
@@ -40,7 +40,7 @@ Besides the native settings for Site Identity and Menu you can also:
 * Change the search bar title
 
 = Create a knowledge base =
-The knowledge base uses the native WordPress categories and posts.
+The knowledge base uses the native categories and posts.
 
 Create a new page and select the knowledge base page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
@@ -84,8 +84,8 @@ This theme is translation-ready and supports language packs from wordpress.org
 = Credits =
 Without the WordPress codex and help from the WordPress community I was not able to develop my theme, so: thank you!
 
-= Support = 
-If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in Support Forum.
+= Support =
+If you have a question or problem using this WordPress theme, please visit the relevant theme page at WordPress.org and open a ticket in support forum.
 
 
 == Changelog ==

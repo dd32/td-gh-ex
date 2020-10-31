@@ -5,7 +5,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content">
+<div id="content" role="main">
 	<?php if ( is_home() ) { ?>
 		<?php if ( get_theme_mod( 'myknowledgebase_blog_title' ) ) : ?>
 			<h1 class="page-title">
