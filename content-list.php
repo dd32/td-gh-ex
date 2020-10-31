@@ -30,7 +30,7 @@
 	<?php endif; ?>
 <?php } ?>
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-		<h4 class="sticky-title"><?php _e( 'Featured post', 'gridbulletin' ); ?></h4>
+		<p class="sticky-title"><?php _e( 'Featured post', 'gridbulletin' ); ?></p>
 	<?php endif; ?>
 
 	<h2 class="post-title entry-title">

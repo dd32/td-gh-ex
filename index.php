@@ -5,10 +5,10 @@
 ?>
 
 <?php get_header(); ?>
-<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?>
-	<div id="content">
+<?php if (get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?>
+	<div id="content" role="main">
 <?php } else { ?>
-	<div id="content-full">
+	<div id="content-full" role="main">
 <?php } ?>
 	<?php if ( is_home() ) { ?>
 		<?php if ( get_theme_mod( 'gridbulletin_blog_title' ) ) : ?>
@@ -38,7 +38,7 @@
 
 	<?php endif; ?>
 </div>
-<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?>
+<?php if (get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?>
 	<?php get_sidebar(); ?>
 <?php } ?>
 <?php get_footer(); ?>

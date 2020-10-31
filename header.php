@@ -19,6 +19,24 @@
 <?php wp_body_open(); ?>
 
 <div id="container">
+	<?php if ( is_page_template( 'page-full.php' ) || is_page_template( 'single-full.php' ) ) {
+		$main_content = '#content-full';
+	} else if ( is_home() ) {
+		if (get_theme_mod('gridbulletin_blog_sidebar') == 'yes') {
+			$main_content = '#content';
+		} else {
+			$main_content = '#content-full';
+		}
+	} else if ( is_archive() ) {
+		if (get_theme_mod('gridbulletin_archive_sidebar') != 'no') {
+			$main_content = '#content';
+		} else {
+			$main_content = '#content-full';
+		}
+	} else {
+		$main_content = '#content';
+	} ?>
+	<a class="skip-link screen-reader-text" href="<?php echo $main_content; ?>"><?php _e( 'Skip to content', 'gridbulletin' ); ?></a>
 	<div id="header-first">
 		<div class="logo">
 			<?php if ( get_theme_mod( 'gridbulletin_logo' ) ) : ?>
@@ -32,18 +50,16 @@
 			<?php endif; ?>
 		</div>
 	</div>
-
 	<div id="header-second">
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 			<div class="mobile-nav-container">
-				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'gridbulletin' ); ?><?php _e( ' +', 'gridbulletin' ); ?></div>
+				<button class="mobile-nav-toggle"><?php _e( 'Menu', 'gridbulletin' ); ?><?php _e( ' +', 'gridbulletin' ); ?></button>
 				<div class="mobile-nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
-
 		<?php if ( is_front_page() ) {?>
 		<?php if ( get_header_image() ) {?>
 			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />

@@ -177,7 +177,7 @@ function gridbulletin_theme_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'gridbulletin_blog_section' , array(
 		'title' => __( 'Blog Page', 'gridbulletin' ),
 		'priority' => 31,
-		'description' => __( 'Show or hide sidebar. And set page title and content above your posts.', 'gridbulletin' ),
+		'description' => __( 'Show or hide sidebar. And set a page title and content above your posts.', 'gridbulletin' ),
 	) );
 	$wp_customize->add_setting( 'gridbulletin_blog_sidebar', array(
 		'capability' => 'edit_theme_options',
