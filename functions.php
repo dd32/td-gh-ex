@@ -73,8 +73,7 @@ add_action( 'after_setup_theme', 'privatebusiness_setup' );
 // Enqueues scripts and styles for front-end
 function privatebusiness_scripts() {
 	wp_enqueue_style( 'privatebusiness-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'privatebusiness-nav-primary', get_template_directory_uri() . '/js/nav-primary.js', array( 'jquery' ) );
-	wp_enqueue_script( 'privatebusiness-nav-secondary', get_template_directory_uri() . '/js/nav-secondary.js', array( 'jquery' ) );
+	wp_enqueue_script( 'privatebusiness-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 	wp_enqueue_style( 'privatebusiness-googlefonts', privatebusiness_font_url() );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
