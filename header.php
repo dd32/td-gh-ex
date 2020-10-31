@@ -19,6 +19,12 @@
 <?php wp_body_open(); ?>
 
 <div id="container">
+	<?php if ( is_page_template( 'page-full.php' ) || is_page_template( 'single-full.php' ) ) {
+		$main_content = '#content-full';
+	} else {
+		$main_content = '#content';
+	} ?>
+	<a class="skip-link screen-reader-text" href="<?php echo $main_content; ?>"><?php _e( 'Skip to content', 'medical' ); ?></a>
 	<div id="header-first">
 		<div class="logo">
 			<?php if ( get_theme_mod( 'medical_logo' ) ) : ?>
@@ -31,32 +37,28 @@
 				<?php endif; ?>
 			<?php endif; ?>
 		</div>
-
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 			<div class="mobile-nav-container">
-				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'medical' ); ?><?php _e( ' +', 'medical' ); ?></div>
+				<button class="mobile-nav-toggle"><?php _e( 'Menu', 'medical' ); ?><?php _e( ' +', 'medical' ); ?></button>
 				<div class="mobile-nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
 	</div>
-
 	<div id="main-content">
-
 		<?php if ( is_front_page() ) {?>
 		<?php if ( get_header_image() ) {?>
-		<div id="header-second">
-			<div class="image-homepage">
-				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			<div id="header-second">
+				<div class="image-homepage">
+					<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				</div>
+				<?php if ( is_active_sidebar( 'homepage' ) ) {?>
+					<div class="sidebar-homepage" role="complementary">
+						<?php dynamic_sidebar( 'homepage' ); ?>
+					</div>
+				<?php } ?>
 			</div>
-
-			<?php if ( is_active_sidebar( 'homepage' ) ) {?>
-			<div class="sidebar-homepage">
- 				<?php dynamic_sidebar( 'homepage' ); ?>
-			</div>
-			<?php } ?>
-		</div>
 		<?php } ?>
 		<?php } ?>
