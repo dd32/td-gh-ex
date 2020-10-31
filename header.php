@@ -19,6 +19,12 @@
 <?php wp_body_open(); ?>
 
 <div id="container">
+	<?php if ( is_page_template( 'page-full.php' ) || is_page_template( 'single-full.php' ) ) {
+		$main_content = '#content-full';
+	} else {
+		$main_content = '#content';
+	} ?>
+	<a class="skip-link screen-reader-text" href="<?php echo $main_content; ?>"><?php _e( 'Skip to content', 'bluegray' ); ?></a>
 	<div id="header-first">
 		<div class="logo">
 			<?php if ( get_theme_mod( 'bluegray_logo' ) ) : ?>
@@ -32,37 +38,34 @@
 			<?php endif; ?>
 		</div>
 	</div>
-
 	<div id="header-second">
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
+			<div class="nav-head-container">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
+			</div>
 			<div class="mobile-nav-container">
-				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'bluegray' ); ?><?php _e( ' +', 'bluegray' ); ?></div>
+				<button class="mobile-nav-toggle"><?php _e( 'Menu', 'bluegray' ); ?><?php _e( ' +', 'bluegray' ); ?></button>
 				<div class="mobile-nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
-
 		<?php if ( is_front_page() ) {?>
 			<?php if ( get_header_image() ) {?>
 				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			<?php } ?>
 		<?php } ?>
 	</div>
-
 	<div id="main-content">
 		<?php if( is_front_page() ) {?>
 		<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?>
-			<div id="homepage-widgets">
+			<div id="homepage-widgets" role="complementary">
 				<div class="home-left">
 					<?php dynamic_sidebar( 'homepage-left' ); ?>
 				</div>
-	
 				<div class="home-middle">
 					<?php dynamic_sidebar( 'homepage-middle' ); ?>
 				</div>
-
 				<div class="home-right">
 					<?php dynamic_sidebar( 'homepage-right' ); ?>
 				</div>
