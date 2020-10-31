@@ -5,7 +5,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content-full">
+<div id="content-full" role="main">
 	<?php if ( is_home() ) { ?>
 		<?php if ( get_theme_mod( 'multicolors_blog_title' ) ) : ?>
 			<h1 class="page-title">

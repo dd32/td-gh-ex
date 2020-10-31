@@ -1,9 +1,9 @@
 === MultiColors ===
 Contributors: Guido07111975
-Version: 6.4
+Version: 6.5
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
@@ -37,7 +37,7 @@ Besides the native settings for Site Identity and Menu you can also:
 * Set page title and content above your posts
 * Change the way how posts are being displayed
 
-Note: because theme is full width, setting for background-color or background-image has no visible effect. But it might after your modifications, so that's why it's still included.
+Note: the settings for background-color and background-image don't have a visible effect, because theme has a full width layout. But in case of a customized theme you might need both settings, so that's why they're included.
 
 
 == Copyright ==
@@ -70,8 +70,8 @@ This theme is translation-ready and supports language packs from wordpress.org
 = Credits =
 Without the WordPress codex and help from the WordPress community I was not able to develop my theme, so: thank you!
 
-= Support = 
-If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in Support Forum.
+= Support =
+If you have a question or problem using this WordPress theme, please visit the relevant theme page at WordPress.org and open a ticket in support forum.
 
 
 == Changelog ==
