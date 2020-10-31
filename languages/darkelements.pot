@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2020-05-23 20:46+0200\n"
+"POT-Creation-Date: 2020-10-25 18:45+0100\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -187,6 +187,10 @@ msgstr ""
 
 #: functions.php:254
 msgid "Show Read More button"
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
 msgstr ""
 
 #: header.php:40 header.php:46

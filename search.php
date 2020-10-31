@@ -5,7 +5,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content">
+<div id="content" role="main">
 	<?php if ( have_posts() ) : ?>
 
 		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'darkelements' ), get_search_query() ); ?></h1>

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+DarkElements version 6.6 - october 2020
+- Improved accessibility
+- Better support for screen readers
+- Because of this the CSS of main navigation is updated
+- File header: added skip to content link
+- Added ARIA Landmarks in several files
+- Several minor adjustments
+
 DarkElements version 6.5 - may 2020
 - Added extra class to bottom postmeta of single event page
 - Added setting to show or hide menu title
@@ -34,11 +42,11 @@ DarkElements version 6.1 - june 2018
 - Updated theme author info
 
 DarkElements version 6.0 - february 2018
-- Several small adjustments
+- Several minor adjustments
 - Updated files style and custom-editor-style
 
 DarkElements version 5.9 - february 2018
-- Several small adjustments
+- Several minor adjustments
 - Updated file style and functions
 
 DarkElements version 5.8 - february 2018
@@ -48,7 +56,7 @@ DarkElements version 5.8 - february 2018
 - Now other font-sizes will scale better
 - Updated h1-h6 headings
 - Updated files style and custom-editor-style
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 5.7 - november 2017
 - Last update: this theme will be removed from repository
@@ -90,7 +98,7 @@ DarkElements version 5.0 - march 2017
 - File style: styling of select tag (cross-browser compatibility)
 - File style: added width and float to several elements (for better alignment)
 - file functions and single: removed post format (status)
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 4.9 - january 2017
 - Some logical changes in class elements
@@ -100,14 +108,14 @@ DarkElements version 4.9 - january 2017
 - Updated files content-postmeta, content-list and single
 - File style: improved comments display
 - File custom-editor-style: removed theme colors (because theme can be customized)
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 4.8 - october 2016
 - Some logical changes in div and class elements
 - Files style and header: changed #header into #sidebar
 - Files style and sidebar: changed #sidebar into #sidebar-widgets
 - Files style and header: changed .nav-widgettitle into .nav-head-title
-- Several small adjustments
+- Several minor adjustments
 - New screenshot
 
 DarkElements version 4.7 - august 2016
@@ -116,13 +124,13 @@ DarkElements version 4.7 - august 2016
 DarkElements version 4.6 - august 2016
 - File content-postmeta-single: display post format too
 - Updated text strings
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 4.5 - august 2016
 - Removed unnecessary whitespaces from several files
 - File style: removed unnecessary id tags from several strings
 - File style: updated mobile stylesheet
-- File style and custom-editor-style: several small adjustments
+- File style and custom-editor-style: several minor adjustments
 - File functions: updated feature for HTML5 support in ie 8 and older
 - New screenshot
 
@@ -135,7 +143,7 @@ DarkElements version 4.3 - may 2016
 - Files 404, archive, index and search: relocated nothing found to separate file
 - Updated file index
 - Renamed both postmetadata files
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 4.2 - may 2016
 - Theme now supports post formats
@@ -145,12 +153,12 @@ DarkElements version 4.2 - may 2016
 - File index and style: changed featured post notice
 - File single: changed .page-title-post into .post-title-single
 - Changed .sticky into .sticky-title
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 4.0 - april 2016
 - Resized all headings (thanks Tom)
 - Changed address tag display
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 3.9 - march 2016
 - Localized mobile menu
@@ -172,17 +180,17 @@ DarkElements version 3.7 - march 2016
 - Files archive, index, search and single: relocated postmetadata to separate file
 - File style and custom-editor-style: updated HTML tags (thanks Tom)
 - Updated text strings (thanks Tom)
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 3.6 - february 2016
 - Theme customizer: change menu title
 - File search: post nav inside the loop
 - File style: fixed alignment of next and prev post link
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 3.4 - january 2016
 - File header: removed is_home so homepage content is not displayed when using a static blog page
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 3.3 - january 2016
 - Updated file style
@@ -196,14 +204,14 @@ DarkElements version 3.1 - december 2015
 - File functions: removed register_default_headers (default header already included in after_setup_theme)
 - Several files: updated postmetadata
 - File style: several modifications
-- Several small adjustments
+- Several minor adjustments
 - Updated pot file
 
 DarkElements version 3.0 - november 2015
 - Updated archive.php (added the_archive_title and the_archive_description)
 - Updated pot file
 - Removed translations (to support language packs from wordpress.org)
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 2.7 - september 2015
 - Updated file comments
@@ -215,7 +223,7 @@ DarkElements version 2.7 - september 2015
 - Reordered mobile stylesheet
 - Added Swedish translation (thanks Stefan)
 - Updated language files
-- Several small adjustments
+- Several minor adjustments
 
 DarkElements version 2.5 - june 2015
 - File page and single: fixed closing div
@@ -225,7 +233,7 @@ DarkElements version 2.5 - june 2015
 - Updated file readme
 
 DarkElements version 2.4 - april 2015
-- Several small adjustment in stylesheet
+- Several minor adjustments in stylesheet
 - Removed support for document title in older WP versions 
 - Files index and archive: pagination inside loop
 

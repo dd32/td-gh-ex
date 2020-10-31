@@ -6,7 +6,7 @@
 
 <div id="footer">
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?>
-	<div id="footer-widgets">
+	<div id="footer-widgets" role="complementary">
 		<div class="footer-left">
 			<?php dynamic_sidebar( 'footer-left' ); ?>
 		</div>

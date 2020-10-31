@@ -31,7 +31,7 @@ if ( post_password_required() )
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-			<h4 class="no-comments"><?php _e( 'Comments are closed.', 'darkelements' ); ?></h4>
+			<p class="no-comments"><?php _e( 'Comments are closed.', 'darkelements' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 

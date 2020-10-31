@@ -1,10 +1,10 @@
 /*
 Theme Name: DarkElements
 Theme URI: https://www.guido.site/themes
-Version: 6.5
+Version: 6.6
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5
 Author: Guido
 Author URI: https://www.guido.site
 Description: DarkElements is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard. It also contains multiple widget areas. Enjoy!
@@ -122,8 +122,8 @@ dd {margin:0 0 0 20px;}
 
 
 /* INPUTS */
-input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ddd; padding:2px 5px; background:none; color:#ddd; font-size:inherit; font-family:inherit; border-radius:5px;}
-input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; padding:2px 5px; background:#ddd; color:#333;}
+input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ddd; border-radius:5px; padding:2px 5px; background:none; color:#ddd; font-size:inherit; font-family:inherit;}
+input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; border-radius:5px; padding:2px 5px; background:#ddd; color:#333;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#e77776; color:#ddd;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
@@ -133,6 +133,11 @@ button {font-size:inherit; font-family:inherit;}
 
 /* CONTAINER */
 #container {clear:both; max-width:1000px; margin:20px 0 20px 20px;}
+
+
+/* SKIP TO CONTENT LINK */
+.skip-link {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px; opacity:0;}
+.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; background:#f8f8f8; color:#333; opacity:1; z-index:100000;}
 
 
 /* MAIN CONTENT AREA */
@@ -154,14 +159,15 @@ button {font-size:inherit; font-family:inherit;}
 .nav-primary {clear:both; margin:0 0 20px;}
 .nav-primary ul {margin:0; padding:0; z-index:999; list-style:none;}
 .nav-primary ul li {position:relative; padding:0; margin:0;}
-.nav-primary ul li a {display:block; padding:5px 0; border-bottom:1px solid #444; text-decoration:none;}
+.nav-primary ul li a {display:block; padding:5px 0; background:none; color:#aaa; border-bottom:1px solid #444; text-decoration:none;}
+.nav-primary ul li a:hover {color:#e77776; text-decoration:none;}
 .nav-primary .current-menu-item > a, .nav-primary .current-menu-parent > a {color:#e77776;}
 
 
 /* SIDEBAR SUBMENU */
-.nav-primary ul ul a {width:95%; margin:0 0 0 5%;}
-.nav-primary ul ul ul a {width:90%; margin:0 0 0 10%;}
-.nav-primary ul ul ul ul a {width:85%; margin:0 0 0 15%;}
+.nav-primary ul ul a {margin:0 0 0 15px;}
+.nav-primary ul ul ul a {margin:0 0 0 25px;}
+.nav-primary ul ul ul ul a {margin:0 0 0 35px;}
 
 
 /* SIDEBAR MOBILE MENU */
@@ -217,7 +223,7 @@ button {font-size:inherit; font-family:inherit;}
 .post-title {margin:0 0 20px;}
 .post-title-single {margin:0 0 20px;}
 .entry-content {clear:both; padding:0 0 20px;}
-.sticky-title {margin:0 0 20px; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444; text-align:center;}
+.sticky-title {margin:0 0 10px; font-weight:bold; font-style:italic;}
 .postmetadata {clear:both; margin:0 0 20px; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
 .more {clear:both; padding:0 0 20px;}
 a.readmore {float:right; text-decoration:none; padding:2px 5px; background:#ddd; color:#333; border-radius:5px;}
@@ -237,9 +243,7 @@ a.readmore:hover {background:#e77776; color:#ddd; text-decoration:none;}
 
 
 /* EDIT LINK */
-.edit-link {clear:both; margin:10px 0; padding:5px 0; border-top:1px solid #444; border-bottom:1px solid #444; text-align:center;}
-.edit-link a {color:#e77776;}
-.edit-link a:hover {color:#ddd;}
+.edit-link {clear:both; padding:10px 0; font-weight:bold; font-style:italic;}
 
 
 /* IMAGE AND VIDEO */
@@ -262,7 +266,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {margin:0 5px 0 0;}
-.search-form .screen-reader-text {display:none;}
+.search-form .screen-reader-text {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px;}
 
 
 /* COMMENTS */
@@ -272,9 +276,8 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-list .children > li {margin:0 0 0 10px;}
 .comment-body {background:none; border:1px solid #444; margin:0 0 20px; padding:10px;}
 .comment-content {padding:10px 0;}
-.comment-metadata .edit-link {display:block;}
-.comment-notes, .form-allowed-tags {padding:5px 0; font-size:0.8em;}
-.comments-title, .comment-reply-title, .no-comments {margin:0 0 10px; font-size:1.45em;}
+.comment-metadata .edit-link {clear:none; padding:0 0 0 10px; display:inline-block;}
+.comments-title, .no-comments {margin:0 0 10px; font-size:1.45em;}
 .comment-author .avatar {margin:0 10px 0 0; border-radius:5px;}
 .comment-metadata {padding:5px 0 0;}
 .bypostauthor .comment-content {font-style:italic;}
@@ -283,8 +286,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 /* COMMENTS RESPOND */
 #respond {clear:both; padding:0 0 10px;}
-.comment-form label {padding:0 0 5px; display:block;}
+.comment-reply-title {margin:0 0 10px; font-size:1.45em;}
+#cancel-comment-reply-link {padding:0 0 0 10px;}
+.comment-notes {padding:5px 0; font-size:0.8em;}
+.comment-form label {display:block;}
 .comment-form textarea {width:90%;}
+.comment-form-cookies-consent label {display:inline-block;}
 
 
 /* COMMENTS NAV */
@@ -336,13 +343,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 	/* SIDEBAR MOBILE MENU */
 	.mobile-nav-container {display:block; clear:both; padding:0 0 20px;}
-	.mobile-nav-toggle {display:block; clear:both; padding:10px 20px; background:#444; color:#ddd; cursor:pointer;}
-	.mobile-nav-toggle:hover {color:#fff;}
+	.mobile-nav-toggle {display:block; clear:both; margin:0 auto; padding:10px 15px;}
 	.mobile-nav {clear:both; padding:10px 20px; background:#333; border-bottom:1px solid #444;}
-	.mobile-nav .subnav-toggle {float:right; display:block; margin:-45px 0 0; padding:2px 15px;}
-	.mobile-nav ul {list-style:none;}
-	.mobile-nav ul li {margin:0;}
-	.mobile-nav ul li a {display:block; margin:0 0 10px 0; padding:0 0 12px; border-bottom:2px dotted #ddd; text-decoration:none;}
+	.mobile-nav .subnav-toggle {position:absolute; float:right; display:block; top:0; right:0; padding:5px 10px;}
+	.mobile-nav ul {list-style:none; margin:0; padding:0;}
+	.mobile-nav ul li {position:relative; margin:0; padding:0;}
+	.mobile-nav ul li a {display:block; margin:0 0 10px; padding:0 0 10px; border-bottom:2px dotted #ddd; line-height:2; text-decoration:none;}
 	.mobile-nav .sub-menu li {margin:0 0 0 20px;}
 
 	/* SIDEBAR MENU TITLE */

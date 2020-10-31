@@ -1,9 +1,9 @@
 === DarkElements ===
 Contributors: Guido07111975
-Version: 6.5
+Version: 6.6
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.4
+Tested up to: 5.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, left-sidebar, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
@@ -69,8 +69,8 @@ DarkElements is inspired by a theme called Wallbase (released under the GNU Gene
 
 Without the WordPress codex and help from the WordPress community I was not able to develop my theme, so: thank you!
 
-= Support = 
-If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in Support Forum.
+= Support =
+If you have a question or problem using this WordPress theme, please visit the relevant theme page at WordPress.org and open a ticket in support forum.
 
 
 == Changelog ==

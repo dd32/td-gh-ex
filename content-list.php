@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-list'); ?>>
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-		<h4 class="sticky-title"><?php _e( 'Featured post', 'darkelements' ); ?></h4>
+		<p class="sticky-title"><?php _e( 'Featured post', 'darkelements' ); ?></p>
 	<?php endif; ?>
 
 	<h2 class="post-title entry-title">

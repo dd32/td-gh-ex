@@ -5,7 +5,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="content">
+<div id="content" role="main">
 	<?php get_template_part( 'content-none' ); ?>
 </div>
 <?php get_footer(); ?>

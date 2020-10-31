@@ -19,6 +19,7 @@
 <?php wp_body_open(); ?>
 
 <div id="container">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'darkelements' ); ?></a>
 	<div id="sidebar">
 		<div class="logo">
 			<?php if ( get_theme_mod( 'darkelements_logo' ) ) : ?> 
@@ -31,7 +32,6 @@
 				<?php endif; ?>
 			<?php endif; ?>
 		</div>
-
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<?php if ( get_theme_mod( 'darkelements_show_menu_title' ) != "no" ) : ?>
 				<?php if ( get_theme_mod( 'darkelements_menu_title' ) ) {
@@ -43,13 +43,12 @@
 			<?php endif; ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-primary' ) ); ?>
 			<div class="mobile-nav-container">
-				<div class="mobile-nav-toggle"><?php _e( 'Menu', 'darkelements' ); ?><?php _e( ' +', 'darkelements' ); ?></div>
+				<button class="mobile-nav-toggle"><?php _e( 'Menu', 'darkelements' ); ?><?php _e( ' +', 'darkelements' ); ?></button>
 				<div class="mobile-nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
-
 		<?php if ( is_front_page() ) {?>
 		<?php if ( get_header_image() ) {?>
 			<div id="header-image-mobile">
@@ -57,10 +56,8 @@
 			</div>
 		<?php } ?>
 		<?php } ?>
-
 		<?php get_sidebar(); ?>
 	</div>
-
 	<?php if ( is_front_page() ) {?>
 	<?php if ( get_header_image() ) {?>
 		<div id="header-image">
