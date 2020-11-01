@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2020-10-25 18:46+0100\n"
+"POT-Creation-Date: 2020-11-01 23:15+0100\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -130,117 +130,123 @@ msgstr ""
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:170 functions.php:179
-msgid "Logo"
-msgstr ""
-
-#: functions.php:172
-msgid "Set a logo to replace site title and tagline."
-msgstr ""
-
-#: functions.php:184
-msgid "Blog Page"
-msgstr ""
-
-#: functions.php:186
-msgid "Set a page title and content above your posts."
-msgstr ""
-
-#: functions.php:193 functions.php:353
-msgid "Title"
-msgstr ""
-
-#: functions.php:202
-msgid "Content"
-msgstr ""
-
-#: functions.php:208
-msgid "Posts"
-msgstr ""
-
-#: functions.php:210
-msgid "Customize the way how posts are displayed."
-msgstr ""
-
-#: functions.php:218
-msgid "Show a summary"
-msgstr ""
-
-#: functions.php:223 functions.php:238 functions.php:258 functions.php:273
-#: functions.php:288 functions.php:344
-msgid "Yes"
-msgstr ""
-
-#: functions.php:224 functions.php:239 functions.php:259 functions.php:274
-#: functions.php:289 functions.php:345
-msgid "No"
-msgstr ""
-
-#: functions.php:233
-msgid "Show Read More button"
-msgstr ""
-
-#: functions.php:243
-msgid "Knowledge Base"
-msgstr ""
-
-#: functions.php:245
-msgid "Settings for the Knowledge Base page template."
-msgstr ""
-
-#: functions.php:253
-msgid "Show page title"
-msgstr ""
-
-#: functions.php:268
-msgid "Show View All link"
-msgstr ""
-
-#: functions.php:283
-msgid "Show category description"
-msgstr ""
-
-#: functions.php:297
+#: functions.php:171 functions.php:339
 msgid "Exclude category by ID"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:185 functions.php:340
 msgid "Use a comma to separate multiple categories."
 msgstr ""
 
-#: functions.php:307
-msgid "Posts per category"
+#: functions.php:186
+msgid ""
+"Setting for the Knowledge Base page template. This field will override the "
+"one in Customizer."
 msgstr ""
 
-#: functions.php:308
-msgid "Only numeric characters allowed."
+#: functions.php:212 functions.php:221
+msgid "Logo"
 msgstr ""
 
-#: functions.php:319
-msgid "Order posts"
+#: functions.php:214
+msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:324
-msgid "By date"
+#: functions.php:226
+msgid "Blog Page"
+msgstr ""
+
+#: functions.php:228
+msgid "Set a page title and content above your posts."
+msgstr ""
+
+#: functions.php:235 functions.php:395
+msgid "Title"
+msgstr ""
+
+#: functions.php:244
+msgid "Content"
+msgstr ""
+
+#: functions.php:250
+msgid "Posts"
+msgstr ""
+
+#: functions.php:252
+msgid "Customize the way how posts are displayed."
+msgstr ""
+
+#: functions.php:260
+msgid "Show a summary"
+msgstr ""
+
+#: functions.php:265 functions.php:280 functions.php:300 functions.php:315
+#: functions.php:330 functions.php:386
+msgid "Yes"
+msgstr ""
+
+#: functions.php:266 functions.php:281 functions.php:301 functions.php:316
+#: functions.php:331 functions.php:387
+msgid "No"
+msgstr ""
+
+#: functions.php:275
+msgid "Show Read More button"
+msgstr ""
+
+#: functions.php:285
+msgid "Knowledge Base"
+msgstr ""
+
+#: functions.php:287
+msgid "Settings for the Knowledge Base page template."
+msgstr ""
+
+#: functions.php:295
+msgid "Show page title"
+msgstr ""
+
+#: functions.php:310
+msgid "Show View All link"
 msgstr ""
 
 #: functions.php:325
+msgid "Show category description"
+msgstr ""
+
+#: functions.php:349
+msgid "Posts per category"
+msgstr ""
+
+#: functions.php:350
+msgid "Only numeric characters allowed."
+msgstr ""
+
+#: functions.php:361
+msgid "Order posts"
+msgstr ""
+
+#: functions.php:366
+msgid "By date"
+msgstr ""
+
+#: functions.php:367
 msgid "By name"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:371
 msgid "Search Bar"
 msgstr ""
 
-#: functions.php:331
+#: functions.php:373
 msgid "Settings for the Knowledge Base search bar."
 msgstr ""
 
-#: functions.php:339
+#: functions.php:381
 msgid "Show Search Bar"
 msgstr ""
 
-#: functions.php:354
+#: functions.php:396
 msgid "This will override the default title."
 msgstr ""
 
@@ -261,6 +267,10 @@ msgid "Search Posts"
 msgstr ""
 
 #: header.php:74
+msgid "Search for:"
+msgstr ""
+
+#: header.php:78
 msgid "Search"
 msgstr ""
 

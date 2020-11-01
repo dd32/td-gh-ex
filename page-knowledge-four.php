@@ -18,23 +18,23 @@
 		} ?>
 
 		<?php the_content(); ?>
-
 	<?php endwhile; ?>
 
 	<div id="categories-four">
-		<?php if ( get_theme_mod( 'myknowledgebase_exclude' ) ) :
+		<?php $exclude_cats = get_post_meta( get_the_ID(), 'myknowledgebase-exclude-cats', true );
+		if ( !empty( $exclude_cats ) ) {
+			$exclude = esc_attr( $exclude_cats );
+		} else if ( get_theme_mod( 'myknowledgebase_exclude' ) ) :
 			$exclude = esc_attr( get_theme_mod( 'myknowledgebase_exclude' ) );
 		else :
 			$exclude = '';
 		endif;
-
 		$myknowledgebase_cat_args = array(
 			'hide_empty' => 0,
 			'exclude' => $exclude,
 			'orderby' => 'name',
 			'order' => 'asc'
 		);
-
 		$myknowledgebase_cats = get_categories( $myknowledgebase_cat_args );
 
 		foreach ( $myknowledgebase_cats as $category ) :

@@ -1,6 +1,6 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
-Version: 6.6
+Version: 6.7
 Requires PHP: 5.6
 Requires at least: 5.2
 Tested up to: 5.5
@@ -43,6 +43,8 @@ Besides the native settings for Site Identity and Menu you can also:
 The knowledge base uses the native categories and posts.
 
 Create a new page and select the knowledge base page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
+
+There's also a field to exclude categories.
 
 Parent and subcategories are listed separately.
 

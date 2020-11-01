@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 6.7 - november 2020
+- Knowledge base page template: added field to exclude categories
+- This field will override the one in Customizer
+- You can now exclude categories per page
+- File style: minor fix
+
 MyKnowledgeBase version 6.6 - october 2020
 - Improved accessibility
 - Better support for screen readers

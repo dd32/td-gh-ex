@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: https://www.guido.site/themes
-Version: 6.6
+Version: 6.7
 Requires PHP: 5.6
 Requires at least: 5.2
 Tested up to: 5.5
@@ -407,6 +407,10 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 	/* HEADER THIRD */
 	#header-third {margin:0 0 20px;}
+
+	/* HEADER THIRD SEARCH BAR */
+	#header-third .searchbar-title {clear:both; float:none; text-align:center;}
+	#header-third .search-form {clear:both; float:none; text-align:center;}
 
 	/* KNOWLEDGE BASE TEMPLATE */
 	#categories-three .cat-list {width:47%; margin:0 2% 20px 0; padding:10px 1%;}

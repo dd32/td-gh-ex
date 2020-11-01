@@ -164,6 +164,48 @@ function myknowledgebase_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 );
 
+// Meta box for knowledge base page template
+function myknowledgebase_theme_metabox() {
+	add_meta_box(
+		'knowledgebase-metabox',
+		__( 'Exclude category by ID', 'myknowledgebase' ),
+		'myknowledgebase_metabox_callback',
+		'page',
+		'side',
+		'default'
+	);
+}
+add_action( 'add_meta_boxes', 'myknowledgebase_theme_metabox' );
+
+function myknowledgebase_metabox_callback( $post ) {
+	wp_nonce_field( 'myknowledgebase_meta_box', 'myknowledgebase_nonce' );
+	$cats_value = get_post_meta( $post->ID, 'myknowledgebase-exclude-cats', true );
+	?>
+	<p><input class="widefat" id="myknowledgebase-cats" type="text" name="myknowledgebase-cats" value="<?php echo esc_attr( $cats_value ); ?>" />
+	<label for="myknowledgebase-cats"><?php _e( 'Use a comma to separate multiple categories.', 'myknowledgebase' ); ?></label></p>
+	<p><?php _e( 'Setting for the Knowledge Base page template. This field will override the one in Customizer.', 'myknowledgebase' ); ?></p>
+	<?php
+}
+
+function myknowledgebase_save_meta( $post_id ) {
+	if ( ! isset( $_POST['myknowledgebase_nonce'] ) ) {
+		return;
+	}
+	if ( ! wp_verify_nonce( $_POST['myknowledgebase_nonce'], 'myknowledgebase_meta_box' ) ) {
+		return;
+	}
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	if ( ( get_post_type() != 'page' ) || ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	if ( isset( $_POST['myknowledgebase-cats'] ) ) {
+		update_post_meta( $post_id, 'myknowledgebase-exclude-cats', sanitize_text_field( $_POST['myknowledgebase-cats'] ) );
+	}
+}
+add_action( 'save_post', 'myknowledgebase_save_meta' );
+
 // Theme Customizer
 function myknowledgebase_theme_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'myknowledgebase_logo_section' , array(
