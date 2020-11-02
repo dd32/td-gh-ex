@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 6.8 - november 2020
+- Have updated the metabox that was added in previous version
+
 MyKnowledgeBase version 6.7 - november 2020
 - Knowledge base page template: added field to exclude categories
 - This field will override the one in Customizer

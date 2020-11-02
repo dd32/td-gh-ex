@@ -168,7 +168,7 @@ add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 );
 function myknowledgebase_theme_metabox() {
 	add_meta_box(
 		'knowledgebase-metabox',
-		__( 'Exclude category by ID', 'myknowledgebase' ),
+		__( 'Knowledge Base', 'myknowledgebase' ),
 		'myknowledgebase_metabox_callback',
 		'page',
 		'side',
@@ -181,9 +181,10 @@ function myknowledgebase_metabox_callback( $post ) {
 	wp_nonce_field( 'myknowledgebase_meta_box', 'myknowledgebase_nonce' );
 	$cats_value = get_post_meta( $post->ID, 'myknowledgebase-exclude-cats', true );
 	?>
-	<p><input class="widefat" id="myknowledgebase-cats" type="text" name="myknowledgebase-cats" value="<?php echo esc_attr( $cats_value ); ?>" />
-	<label for="myknowledgebase-cats"><?php _e( 'Use a comma to separate multiple categories.', 'myknowledgebase' ); ?></label></p>
 	<p><?php _e( 'Setting for the Knowledge Base page template. This field will override the one in Customizer.', 'myknowledgebase' ); ?></p>
+	<p><strong><label for="myknowledgebase-cats"><?php _e( 'Exclude category by ID', 'myknowledgebase' ); ?></label></strong></p>
+	<input class="widefat" id="myknowledgebase-cats" type="text" name="myknowledgebase-cats" value="<?php echo esc_attr( $cats_value ); ?>" />
+	<p><?php _e( 'Use a comma to separate multiple categories.', 'myknowledgebase' ); ?></p>
 	<?php
 }
 
