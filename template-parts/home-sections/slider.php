@@ -63,7 +63,7 @@
                         </div>
                       <?php endif; ?>
                     <?php if( in_array( 'readmore', $post_details ) ) : ?>
-                      <a href="<?php echo esc_url( get_the_permalink( $post->ID ) ); ?>" class="readmore"><?php esc_attr_e( 'Read More', 'avid-magazine' ); ?></a>
+                      <a href="<?php echo esc_url( get_the_permalink( $post->ID ) ); ?>" class="readmore"><?php esc_html_e( 'Read More', 'avid-magazine' ); ?></a>
                     <?php endif; ?>
                   </div> 
               </div>

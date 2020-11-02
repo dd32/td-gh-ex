@@ -391,22 +391,22 @@ if( ! class_exists( 'Avid_Magazine_Control_Repeater' ) ) {
     									<# } #>
     								</label>
     
-    								<figure class="avid-magazine-image-attachment" data-placeholder="<?php echo esc_attr( 'No Image Selected', 'theme-slug' ); ?>" >
+    								<figure class="avid-magazine-image-attachment" data-placeholder="<?php echo esc_attr( 'No Image Selected', 'avid-magazine' ); ?>" >
     									<# if ( field.default ) { #>
     										<# var defaultImageURL = ( field.default.url ) ? field.default.url : field.default; #>
     										<img src="{{{ defaultImageURL }}}">
     									<# } else { #>
-    										<?php echo esc_attr( 'No Image Selected', 'theme-slug' ); ?>
+    										<?php echo esc_attr( 'No Image Selected', 'avid-magazine' ); ?>
     									<# } #>
     								</figure>
     
     								<div class="actions">
-    									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php echo esc_attr( 'Remove', 'theme-slug' ); ?></button>
-    									<button type="button" class="button upload-button" data-label=" <?php echo esc_attr( 'Add Image', 'theme-slug' ); ?>" data-alt-label="<?php echo esc_attr( 'Change Image', 'theme-slug' ); ?>" >
+    									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_html_e( 'Remove', 'avid-magazine' ); ?></button>
+    									<button type="button" class="button upload-button" data-label=" <?php echo esc_attr( 'Add Image', 'avid-magazine' ); ?>" data-alt-label="<?php echo esc_attr( 'Change Image', 'avid-magazine' ); ?>" >
     										<# if ( field.default ) { #>
-    											<?php echo esc_attr( 'Change Image', 'theme-slug' ); ?>
+    											<?php echo esc_attr( 'Change Image', 'avid-magazine' ); ?>
     										<# } else { #>
-    											<?php echo esc_attr( 'Add Image', 'theme-slug' ); ?>
+    											<?php echo esc_attr( 'Add Image', 'avid-magazine' ); ?>
     										<# } #>
     									</button>
     									<# if ( field.default.id ) { #>
@@ -427,22 +427,22 @@ if( ! class_exists( 'Avid_Magazine_Control_Repeater' ) ) {
     									<# } #>
     								</label>
     
-    								<figure class="avid-magazine-file-attachment" data-placeholder="<?php echo esc_attr( 'No File Selected', 'theme-slug' ); ?>" >
+    								<figure class="avid-magazine-file-attachment" data-placeholder="<?php echo esc_attr( 'No File Selected', 'avid-magazine' ); ?>" >
     									<# if ( field.default ) { #>
     										<# var defaultFilename = ( field.default.filename ) ? field.default.filename : field.default; #>
     										<span class="file"><span class="dashicons dashicons-media-default"></span> {{ defaultFilename }}</span>
     									<# } else { #>
-    										<?php echo esc_attr( 'No File Selected', 'theme-slug' ); ?>
+    										<?php echo esc_attr( 'No File Selected', 'avid-magazine' ); ?>
     									<# } #>
     								</figure>
     
     								<div class="actions">
     									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"></button>
-    									<button type="button" class="button upload-button" data-label="<?php echo esc_attr( 'Add File', 'theme-slug' ); ?>" data-alt-label="<?php echo esc_attr( 'Change File', 'theme-slug' ); ?>" >
+    									<button type="button" class="button upload-button" data-label="<?php echo esc_attr( 'Add File', 'avid-magazine' ); ?>" data-alt-label="<?php echo esc_attr( 'Change File', 'avid-magazine' ); ?>" >
     										<# if ( field.default ) { #>
-    											<?php echo esc_attr( 'Change File', 'theme-slug' ); ?>
+    											<?php echo esc_attr( 'Change File', 'avid-magazine' ); ?>
     										<# } else { #>
-    											<?php echo esc_attr( 'Add File', 'theme-slug' ); ?>
+    											<?php echo esc_attr( 'Add File', 'avid-magazine' ); ?>
     										<# } #>
     									</button>
     									<# if ( field.default.id ) { #>
@@ -466,7 +466,7 @@ if( ! class_exists( 'Avid_Magazine_Control_Repeater' ) ) {
     
     						</div>
     					<# }); #>
-    					<button type="button" class="button-link repeater-row-remove"><?php echo esc_attr( 'Remove', 'theme-slug' ); ?></button>
+    					<button type="button" class="button-link repeater-row-remove"><?php echo esc_attr( 'Remove', 'avid-magazine' ); ?></button>
     				</div>
     			</li>
     		</script>

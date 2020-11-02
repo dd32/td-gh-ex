@@ -172,6 +172,11 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/breadcrumbs.php';
 
 
+if ( ! class_exists( 'Avid_Magazine_Customize' ) ) {
+	require get_template_directory() . '/trt-customize-pro/class-customize.php';
+}
+
+
 /**
  * Recommended Plugins
  */

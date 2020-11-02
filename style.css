@@ -4,7 +4,9 @@ Theme URI: https://wpmagplus.com/avid-magazine/
 Author: avidthemes
 Author URI: https://avidthemes.com
 Description: Avid Magazine WordPress Theme is very lightweight, easy to use, SEO friendly and customizable magazine theme. The theme is build in Bootstrap Framework. This is one of the best WordPress theme designed for lifestyle,  bloggers & blogging, reporters, magazine, newspaper, news portal and many more.
-Version: 1.0.5
+Version: 1.0.6
+Tested up to: 5.5.3
+Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avid-magazine
@@ -1415,6 +1417,71 @@ footer.main .widget,footer.main .about-wrapper{margin-bottom: 0;float: left;widt
 
 
 
+.breadcrumbs .trail-browse,
+.breadcrumbs .trail-items,
+.breadcrumbs .trail-items li {
+    display:     inline-block;
+    margin:      0;
+    padding:     0;
+    border:      none;
+    background:  transparent;
+    text-indent: 0;
+}
+
+.breadcrumbs .trail-browse {
+    font-size:   inherit;
+    font-style:  inherit;
+    font-weight: inherit;
+    color:       inherit;
+}
+
+.breadcrumbs .trail-items {
+    list-style: none;
+}
+
+.trail-items li::after {
+    content: "\002F";
+    padding: 0 0.5em;
+}
+
+.trail-items li:last-of-type::after {
+    display: none;
+}
+
+
+
+/* Pagination CSS */
+.navigation{text-align: center;margin-top: 30px;}
+.navigation ul{margin: 0;padding: 0;display: inline-block;}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+ 
+.navigation li {
+    display: inline-block;
+}
+ 
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #eee; color: #333;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+    float: left;
+}
+ 
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #6823ea;
+}
+/* Pagination CSS */
 
 
     @media (max-width: 991px) {
@@ -1509,8 +1576,11 @@ footer.main .widget,footer.main .about-wrapper{margin-bottom: 0;float: left;widt
         .slider-banner-1 .banner-news-caption,.slider-banner-2 .banner-news-caption,.slider-banner-3 .banner-news-caption,.slider-banner-4 .banner-news-caption{position: relative;left: 0; right: 0; top: 0;transform: translateY(0);width: 100%;padding: 15px;}
         .slider-banner-3 .banner-news-caption{background: #000;}
 
-        .featured-blog-view-1,.featured-blog-view-2,.featured-blog-view-3,.featured-blog-view-4{display: block;}
-        .featured-blog-view-4 .featured-blog-items:first-child .summary-excerpt, .featured-blog-view-3 .featured-blog-items:first-child .summary-excerpt,.featured-blog-view-2 .featured-blog-items:nth-child(2) .summary-excerpt{display: block;}
+       /* .featured-blog-view-1,.featured-blog-view-2,.featured-blog-view-3,.featured-blog-view-4{display: block;}
+        .featured-blog-view-4 .featured-blog-items:first-child .summary-excerpt, .featured-blog-view-3 .featured-blog-items:first-child .summary-excerpt,.featured-blog-view-2 .featured-blog-items:nth-child(2) .summary-excerpt{display: block;}*/
+
+       
+
 
         #primary .page .entry-content .popup-gallery.photos-2 li, #primary .page .entry-content .popup-gallery.photos-4 li, #primary .page .entry-content .popup-gallery.photos-5 li, #primary .post .entry-content .popup-gallery.photos-2 li, #primary .post .entry-content .popup-gallery.photos-4 li, #primary .post .entry-content .popup-gallery.photos-5 li, .widget_btif_instagram_widget ul.photos-2 li, .widget_btif_instagram_widget ul.photos-4 li, .widget_btif_instagram_widget ul.photos-5 li {width: 25%;}
         .list-view .news-snippet .featured-image,.list-view .news-snippet .summary{width: 100%;}
@@ -1518,69 +1588,5 @@ footer.main .widget,footer.main .about-wrapper{margin-bottom: 0;float: left;widt
     }
 
 
-.breadcrumbs .trail-browse,
-.breadcrumbs .trail-items,
-.breadcrumbs .trail-items li {
-    display:     inline-block;
-    margin:      0;
-    padding:     0;
-    border:      none;
-    background:  transparent;
-    text-indent: 0;
-}
 
-.breadcrumbs .trail-browse {
-    font-size:   inherit;
-    font-style:  inherit;
-    font-weight: inherit;
-    color:       inherit;
-}
-
-.breadcrumbs .trail-items {
-    list-style: none;
-}
-
-.trail-items li::after {
-    content: "\002F";
-    padding: 0 0.5em;
-}
-
-.trail-items li:last-of-type::after {
-    display: none;
-}
-
-
-
-/* Pagination CSS */
-.navigation{text-align: center;margin-top: 30px;}
-.navigation ul{margin: 0;padding: 0;display: inline-block;}
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-    color: #fff;
-    text-decoration:none;
-}
- 
-.navigation li {
-    display: inline-block;
-}
- 
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-    background-color: #eee; color: #333;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 12px;
-    padding: 0.75rem;
-    float: left;
-}
- 
-.navigation li a:hover,
-.navigation li.active a {
-    background-color: #6823ea;
-}
-/* Pagination CSS */
 

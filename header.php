@@ -18,6 +18,8 @@
 </head>
 <body <?php body_class(); ?>>
 
+	<?php wp_body_open(); ?>
+
 <?php $menu_sticky = get_theme_mod( 'avid_magazine_header_sticky_menu_option', false ); ?>
 
 <?php
