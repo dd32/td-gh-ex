@@ -10,7 +10,7 @@ License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
 == Description ==
-Asthir is a new WordPress Shop and Blog Theme. Asthir is flexible, easily customizable, super fast, lightweight and a modern WordPress theme. It provides a very unique look with extra post layout. Asthir is a super fast WordPress theme. Best Suitable for creating any type of website such a blog, shop, store, car workshop, life coach,  barbershop, furniture shop, yoga, resume, charity, digital marketing, agency, etc. Asthir works with any of your favorite page builders like Elementor, Visual Composer, SiteOrigin, Divi, Brizy etc.
+Asthir is a new WordPress Shop and Blog Theme. Asthir is flexible, easily customizable, super-fast, lightweight and a modern WordPress theme. It provides a very unique look with an extra post layout. Asthir is a super-fast WordPress theme. Best Suitable for creating any type of website such a blog, shop, store, car workshop, life coach, barbershop, furniture shop, yoga, resume, charity, digital marketing, agency, etc. Asthir works with any of your favorite page builders like Elementor, Visual Composer, SiteOrigin, Divi, Brizy etc.
 
 == Installation ==
 
@@ -78,6 +78,9 @@ Source: https://pxhere.com/en/photo/635899
 
 
 == Changelog ==
+
+= 1.0.1 - November 2 2020 =
+* Added theme uri
 
 = 1.0 - October 19 2020 =
 * Initial release
