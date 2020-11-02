@@ -40,18 +40,18 @@ function automotive_centre_customize_register( $wp_customize ) {
 	$AutomotiveCentreParentPanel = new Automotive_Centre_WP_Customize_Panel( $wp_customize, 'automotive_centre_panel_id', array(
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
-		'title' => 'VW Settings',
+		'title'      => esc_html__( 'VW Settings', 'automotive-centre' ),
 		'priority' => 10,
 	));
 
 	// Layout
 	$wp_customize->add_section( 'automotive_centre_left_right', array(
-    	'title'      => __( 'General Settings', 'automotive-centre' ),
+    	'title'      => esc_html__( 'General Settings', 'automotive-centre' ),
 		'panel' => 'automotive_centre_panel_id'
 	) );
 
 	$wp_customize->add_setting('automotive_centre_width_option',array(
-        'default' => __('Full Width','automotive-centre'),
+        'default' => 'Full Width',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
 	$wp_customize->add_control(new Automotive_Centre_Image_Radio_Control($wp_customize, 'automotive_centre_width_option', array(
@@ -67,7 +67,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('automotive_centre_theme_options',array(
-        'default' => __('Right Sidebar','automotive-centre'),
+        'default' => 'Right Sidebar',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'	        
 	) );
 	$wp_customize->add_control('automotive_centre_theme_options', array(
@@ -86,7 +86,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('automotive_centre_page_layout',array(
-        'default' => __('One Column','automotive-centre'),
+        'default' => 'One Column',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
 	$wp_customize->add_control('automotive_centre_page_layout',array(
@@ -113,7 +113,7 @@ function automotive_centre_customize_register( $wp_customize ) {
     )));
 
 	$wp_customize->add_setting('automotive_centre_loader_icon',array(
-        'default' => __('Two Way','automotive-centre'),
+        'default' => 'Two Way',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
 	$wp_customize->add_control('automotive_centre_loader_icon',array(
@@ -386,7 +386,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 
 	//content layout
 	$wp_customize->add_setting('automotive_centre_slider_content_option',array(
-        'default' => __('Left','automotive-centre'),
+        'default' => 'Left',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
 	$wp_customize->add_control(new Automotive_Centre_Image_Radio_Control($wp_customize, 'automotive_centre_slider_content_option', array(
@@ -615,7 +615,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 
 	//Blog layout
     $wp_customize->add_setting('automotive_centre_blog_layout_option',array(
-        'default' => __('Default','automotive-centre'),
+        'default' => 'Default',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
     ));
     $wp_customize->add_control(new Automotive_Centre_Image_Radio_Control($wp_customize, 'automotive_centre_blog_layout_option', array(
@@ -629,7 +629,7 @@ function automotive_centre_customize_register( $wp_customize ) {
     ))));
 
     $wp_customize->add_setting('automotive_centre_excerpt_settings',array(
-        'default' => __('Excerpt','automotive-centre'),
+        'default' => 'Excerpt',
         'transport' => 'refresh',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
@@ -737,7 +737,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 	));
 
     $wp_customize->add_setting('automotive_centre_button_text',array(
-		'default'=> 'READ MORE',
+		'default'=> esc_html__( 'READ MORE', 'automotive-centre' ),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('automotive_centre_button_text',array(
@@ -1095,7 +1095,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('automotive_centre_copyright_alingment',array(
-        'default' => __('center','automotive-centre'),
+        'default' => 'center',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
 	$wp_customize->add_control(new Automotive_Centre_Image_Radio_Control($wp_customize, 'automotive_centre_copyright_alingment', array(
@@ -1224,7 +1224,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('automotive_centre_scroll_top_alignment',array(
-        'default' => __('Right','automotive-centre'),
+        'default' => 'Right',
         'sanitize_callback' => 'automotive_centre_sanitize_choices'
 	));
 	$wp_customize->add_control(new Automotive_Centre_Image_Radio_Control($wp_customize, 'automotive_centre_scroll_top_alignment', array(

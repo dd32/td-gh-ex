@@ -19,7 +19,6 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 			$facebook = isset( $instance['facebook'] ) ? $instance['facebook'] : '';
 			$instagram = isset( $instance['instagram'] ) ? $instance['instagram'] : '';
 			$twitter = isset( $instance['twitter'] ) ? $instance['twitter'] : '';
-			$google = isset( $instance['google'] ) ? $instance['google'] : '';
 			$linkedin = isset( $instance['linkedin'] ) ? $instance['linkedin'] : '';
 			$pinterest = isset( $instance['pinterest'] ) ? $instance['pinterest'] : '';
 			$tumblr = isset( $instance['tumblr'] ) ? $instance['tumblr'] : '';
@@ -29,7 +28,6 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 	        if(!empty($title) ){ ?><h3 class="custom_title"><?php echo esc_html($title); ?></h3><?php } ?>
 	        <?php if(!empty($facebook) ){ ?><a class="custom_facebook fff" href="<?php echo esc_url($facebook); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','automotive-centre' );?></span></a><?php } ?>
 	        <?php if(!empty($twitter) ){ ?><a class="custom_twitter" href="<?php echo esc_url($twitter); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','automotive-centre' );?></span></a><?php } ?>
-	        <?php if(!empty($google) ){ ?><a class="custom_google" href="<?php echo esc_url($google); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_html_e( 'Google','automotive-centre' );?></span></a><?php } ?>
 	        <?php if(!empty($linkedin) ){ ?><a class="custom_linkedin" href="<?php echo esc_url($linkedin); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','automotive-centre' );?></span></a><?php } ?>
 	        <?php if(!empty($pinterest) ){ ?><a class="custom_pinterest" href="<?php echo esc_url($pinterest); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','automotive-centre' );?></span></a><?php } ?>
 	        <?php if(!empty($tumblr) ){ ?><a class="custom_tumblr" href="<?php echo esc_url($tumblr); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','automotive-centre' );?></span></a><?php } ?>
@@ -44,13 +42,12 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 	// Widget Backend 
 	public function form( $instance ) {
 
-		$title= ''; $facebook = ''; $twitter = '';$google = ''; $linkedin = '';  $pinterest = '';$tumblr = ''; $instagram = ''; $youtube = ''; 
+		$title= ''; $facebook = ''; $twitter = ''; $linkedin = '';  $pinterest = '';$tumblr = ''; $instagram = ''; $youtube = ''; 
 
 		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		$facebook = isset( $instance['facebook'] ) ? $instance['facebook'] : '';
 		$instagram = isset( $instance['instagram'] ) ? $instance['instagram'] : '';
 		$twitter = isset( $instance['twitter'] ) ? $instance['twitter'] : '';
-		$google = isset( $instance['google'] ) ? $instance['google'] : '';
 		$linkedin = isset( $instance['linkedin'] ) ? $instance['linkedin'] : '';
 		$pinterest = isset( $instance['pinterest'] ) ? $instance['pinterest'] : '';
 		$tumblr = isset( $instance['tumblr'] ) ? $instance['tumblr'] : '';
@@ -67,10 +64,6 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 		<p>
 		<label for="<?php echo esc_attr($this->get_field_id('twitter')); ?>"><?php esc_html_e('Twitter:','automotive-centre'); ?></label>
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id('twitter')); ?>" name="<?php echo esc_attr($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_attr($twitter); ?>">
-		</p>
-		<p>
-		<label for="<?php echo esc_attr($this->get_field_id('google')); ?>"><?php esc_html_e('Google+:','automotive-centre'); ?></label>
-		<input class="widefat" id="<?php echo esc_attr($this->get_field_id('google')); ?>" name="<?php echo esc_attr($this->get_field_name('google')); ?>" type="text" value="<?php echo esc_attr($google); ?>">
 		</p>
 		<p>
 		<label for="<?php echo esc_attr($this->get_field_id('linkedin')); ?>"><?php esc_html_e('Linkedin:','automotive-centre'); ?></label>
@@ -100,7 +93,6 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 		$instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';	
         $instance['facebook'] = (!empty($new_instance['facebook']) ) ? esc_url_raw($new_instance['facebook']) : '';
         $instance['twitter'] = (!empty($new_instance['twitter']) ) ? esc_url_raw($new_instance['twitter']) : '';
-        $instance['google'] = (!empty($new_instance['google']) ) ? esc_url_raw($new_instance['google']) : '';
         $instance['instagram'] = (!empty($new_instance['instagram']) ) ? esc_url_raw($new_instance['instagram']) : '';
         $instance['linkedin'] = (!empty($new_instance['linkedin']) ) ? esc_url_raw($new_instance['linkedin']) : '';
         $instance['pinterest'] = (!empty($new_instance['pinterest']) ) ? esc_url_raw($new_instance['pinterest']) : '';

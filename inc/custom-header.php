@@ -11,6 +11,8 @@ function automotive_centre_custom_header_setup() {
 		'header-text' 			 =>	false,
 		'width'                  => 1600,
 		'height'                 => 183,
+		'flex-width'             => true,
+		'flex-height'            => true,
 		'wp-head-callback'       => 'automotive_centre_header_style',
 	) ) );
 }

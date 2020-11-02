@@ -21,6 +21,8 @@ function automotive_centre_setup() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
 		'width'       => 240,
@@ -272,6 +274,7 @@ function automotive_centre_font_url() {
 /* Theme enqueue scripts */
 function automotive_centre_scripts() {
 	wp_enqueue_style( 'automotive-centre-font', automotive_centre_font_url(), array() );
+	wp_enqueue_style( 'automotive-centre-block-style', get_theme_file_uri('/assets/css/blocks.css') );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css' );
 	wp_enqueue_style( 'automotive-centre-basic-style', get_stylesheet_uri() );
 	/* Inline style sheet */

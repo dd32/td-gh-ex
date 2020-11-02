@@ -17,7 +17,7 @@ if ( ! class_exists( 'Automotive_Centre_Content_Creation' ) ) :
 		 *
 		 * @var string control type
 		 */
-		public $type = 'content-creation';
+		public $type = 'automotive-centre-content-creation';
 
 		/**
 		 * Button text
