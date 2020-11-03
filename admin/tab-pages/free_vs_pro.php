@@ -40,7 +40,7 @@
 						</li>
 
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Callout Section Portfolio Section','appointment-dark' ); ?></span>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Callout Section','appointment-dark' ); ?></span>
 						</li>
 
 						<li>
@@ -73,7 +73,7 @@
 
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Page Templates Support','appointment-dark' ); ?></span>
-							<p><?php esc_html_e( 'Various Page Templates included in the Appointment Dark Premium Theme','appointment-dark' ); ?></p>
+							<p><?php esc_html_e( 'Various Page Templates included in the Premium Theme','appointment-dark' ); ?></p>
 						</li>
 						
 						<li>

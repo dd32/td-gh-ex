@@ -10,7 +10,7 @@ $appointment_dark_customizer_url = admin_url() . 'customize.php' ;
 	<div class="container-fluid">
 		<div class="row">
 		    <div class="col-md-12">
-				<h1 class="appointment-dark-info-title text-center"><?php echo esc_html__('About the appointment-dark theme','appointment-dark'); ?></h1>
+				<h1 class="appointment-dark-info-title text-center"><?php echo esc_html__('About the Appointment Dark theme','appointment-dark'); ?></h1>
 		    </div>
 		</div>
 		<div class="row">
@@ -61,7 +61,7 @@ $appointment_dark_customizer_url = admin_url() . 'customize.php' ;
                     	<div class="dashicons dashicons-desktop info-icon"></div>
                     	<p class="info-text"><?php echo esc_html__('Lite Demo','appointment-dark'); ?></p>
                 	</a>
-                    <a href="<?php echo esc_url('https://demo.webriti.com/?theme=Appointment%20Pro'); ?>" target="_blank"  class="info-block">
+                    <a href="<?php echo esc_url('https://appointment-dark-pro.webriti.com/'); ?>" target="_blank"  class="info-block">
                     	<div class="dashicons dashicons-book-alt info-icon"></div>
                     	<p class="info-text"><?php echo esc_html__('PRO Demo','appointment-dark'); ?></p>
                     </a>        

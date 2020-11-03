@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 0.7
+1. Updated the options page.
+
 @Version 0.6
 1. Updated description in style.css and readme file.
 

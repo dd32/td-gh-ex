@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment Dark\n"
-"POT-Creation-Date: 2020-10-16 11:27+0530\n"
+"POT-Creation-Date: 2020-11-03 13:43+0530\n"
 "PO-Revision-Date: 2020-10-03 11:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -182,7 +182,7 @@ msgid "Service Section"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:43
-msgid "Callout Section Portfolio Section"
+msgid "Callout Section"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:47
@@ -218,7 +218,7 @@ msgid "Page Templates Support"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:76
-msgid "Various Page Templates included in the Appointment Dark Premium Theme"
+msgid "Various Page Templates included in the Premium Theme"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:80
@@ -420,7 +420,7 @@ msgid "Get PRO Version Now!"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:13
-msgid "About the appointment-dark theme"
+msgid "About the Appointment Dark theme"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:22
@@ -489,10 +489,9 @@ msgstr ""
 
 #: admin/tab-pages/support.php:13
 msgid ""
-"We want to make sure you have the best experience using appointment-dark "
-"theme, and that is why we have gathered all the necessary information here "
-"for you. We hope you will enjoy using appointment-dark theme as much as we "
-"enjoy creating great products."
+"We want to make sure you have the best experience using this theme, and that "
+"is why we have gathered all the necessary information here for you. We hope "
+"you will enjoy using this theme as much as we enjoy creating great products."
 msgstr ""
 
 #: admin/tab-pages/support.php:22
@@ -515,9 +514,9 @@ msgstr ""
 msgid ""
 "In the premium version you will get a top header sidebar area where you can "
 "use any widget - all the widgets are styled. We have created a number of "
-"widgets in the theme which you can use here. Specifically, use the "
-"appointment-dark Info Widget for showing your email ID, contact number or "
-"any other info of your choice."
+"widgets in the theme which you can use here. Specifically, use the theme's "
+"Info Widget for showing your email ID, contact number or any other info of "
+"your choice."
 msgstr ""
 
 #: admin/tab-pages/useful_plugins.php:33
@@ -526,8 +525,8 @@ msgstr ""
 
 #: admin/tab-pages/useful_plugins.php:34
 msgid ""
-"There are beautifully styled navigation/menus in the appointment-dark theme. "
-"You can make multi level menus, which means you can create sub menus."
+"There are beautifully styled navigation/menus in this theme. You can make "
+"multi level menus, which means you can create sub menus."
 msgstr ""
 
 #: admin/tab-pages/useful_plugins.php:42
@@ -537,8 +536,8 @@ msgstr ""
 #: admin/tab-pages/useful_plugins.php:43
 msgid ""
 "You can create unlimited slides which you can control via the settings in "
-"Appearance >> Customize. The slider supports various post formats like "
-"Standard, Aside, Quote, Chat and Video."
+"Appearance >> Customize >> Slider settings. The slider supports various post "
+"formats like Standard, Aside, Quote, Chat and Video."
 msgstr ""
 
 #: admin/tab-pages/useful_plugins.php:51
@@ -548,7 +547,7 @@ msgstr ""
 #: admin/tab-pages/useful_plugins.php:53
 msgid ""
 "You can display any number of Services on the Homepage, with thousands of "
-"FontAwesome icons available. You can also display a set of services on a "
+"Font - Awesome icons available. You can also display a set of services on a "
 "separate page by using the service-related page templates."
 msgstr ""
 
@@ -728,14 +727,6 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://webriti.com/appointment-dark-details-page/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"A Business theme which is ideal for creating a corporate / business website. "
-"Appointment Dark theme is a child theme of Appointment theme and is the Dark "
-"color variation. The theme has several extra templates that make it even "
-"more powerful and it supports various locales."
 msgstr ""
 
 #. Author of the plugin/theme
