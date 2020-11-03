@@ -4,7 +4,7 @@ Theme URI: https://unitedtheme.com/themes/adventure-blog/
 Author: UnitedTheme
 Author URI: http://unitedtheme.com/
 Description: A clean beautiful and minimal blog theme designed specifically for bloggers to make blogs for photography, food, fashion, lifestyle, magazines, travel, sports, technology, as well as modern newspaper websites. photography WordPress theme that comes with high-quality features and minimal design. Adventure Blog is adventure, clean, elegant and straightforward. It is ideal for creating photography websites for photographers, graphic designers, freelancers, artists, or bloggers. It comes with customizer API based features that are extremely lite and easy to handle,as it just has all to take your photoblogs to the next level.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adventure-blog
@@ -13,7 +13,7 @@ Tested up to: 5.5.1
 Requires PHP: 5.5
 
 Adventure Blog WordPress Theme, Copyright 2018 UnitedTheme
-Adventure Blog is distributed under the terms of the GNU GPL v3 or later.
+Adventure Blog is distributed under the terms of the GNU GPL v2 or later.
 
 */
 /*--------------------------------------------------------------
@@ -1367,6 +1367,10 @@ a:active {
     top: 5px;
     width: auto;
     z-index: 100000;
+}
+
+.skip-link {
+    font-size: 16px !important;
 }
 
 #content[tabindex="-1"]:focus {

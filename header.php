@@ -96,12 +96,13 @@
     </div>
 
     <div class="model-search">
+        <a href="javascript:void(0)" class="searchbar-skip-link"></a>
+        <a href="javascript:void(0)" class="cross-exit"></a>
         <div class="model-search-wrapper">
             <div class="popup-form">
                 <?php get_search_form(); ?>
             </div>
         </div>
-        <button type="button" class="cross-exit"></button>
     </div>
 
 

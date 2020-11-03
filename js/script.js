@@ -55,18 +55,15 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        $( 'input, a, button' ).on( 'focus', function() {   
+        $('.searchbar-skip-link').focus(function(){
+            $('.model-search .search-submit').focus();
+        });
+
+        $( 'input, a, button' ).on( 'focus', function() {
             if ( $( 'body' ).hasClass( 'united-model' ) ) {
+
                 if ( ! $( this ).parents( '.model-search' ).length ) {
                     $('.cross-exit').focus();
-                }
-            }
-        } );
-
-        $('button, input, a' ).on('focus', function() {
-            if ( $( 'body' ).hasClass( 'united-model' ) ) {
-                if ( ! $( this ).parents( '.model-search' ).length ) {
-                   $('.model-search-wrapper .search-field').focus();
                 }
             }
         } );
