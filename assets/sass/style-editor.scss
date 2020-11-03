@@ -8,27 +8,36 @@
 @import "1-base/mixins";
 
 /* Structure */
+.wp-block {
+	max-width: $default-content-width;
+}
 
 .editor-styles-wrapper {
 	text-rendering: optimizeLegibility;
 	-moz-font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
+	padding: 0 !important;
+
+	.wp-block[data-align="wide"] .wp-block[data-align="wide"],
+	.wp-block[data-align="full"] .wp-block[data-align="wide"] {
+		max-width: $wide-content-width;
+
+		@include breakpoint(xl) {
+			width: $wide-content-width !important;
+		}
+	}
 }
 
-.wp-block {
-	max-width: 672px;
+.wp-block[data-align="full"] {
+	margin-left: -10px;
+	margin-right: -10px;
 }
 
-.wp-block[data-align="wide"] .wp-block[data-align="wide"],
 .wp-block[data-align="full"] .wp-block[data-align="wide"] {
-	max-width: 1392px;
-}
+	padding-left: $s-6;
+	padding-right: $s-6;
 
-.wp-block[data-align="full"] .wp-block[data-align="wide"] {
-	padding-left: $grid-margins-s;
-	padding-right: $grid-margins-s;
-
-	@include breakpoint(xxl) {
+	@include breakpoint(xl) {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -38,7 +47,12 @@
 .wp-block .wp-block[data-type="core/cover"]:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]) {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 672px;
+}
+
+// Inner blocks of wide and full aligned blocks
+.wp-block[data-align="full"] .wp-block[data-type="core/group"]:not([data-align="full"]):not([data-align="wide"]),
+.wp-block[data-align="wide"] .wp-block[data-type="core/group"]:not([data-align="full"]):not([data-align="wide"]) {
+	max-width: 100%;
 }
 
 *[data-align="right"] .wp-block-edit,
@@ -48,21 +62,29 @@
 
 .wp-block[data-align="wide"],
 .wp-block.alignwide {
-	max-width: 1392px;
+	max-width: $wide-content-width;
+
+	.wp-block {
+		max-width: $wide-content-width;
+	}
 }
 
 .wp-block[data-align="full"],
 .wp-block.alignfull {
 	max-width: none;
+
+	.wp-block {
+		max-width: 100%;
+	}
 }
 
 .tpl-fullwidth .wp-block {
-	max-width: 1392px;
+	max-width: $wide-content-width;
 }
 
 .wp-block {
 	.tpl-fullwidth & {
-		max-width: 1392px;
+		max-width: $wide-content-width;
 	}
 }
 
@@ -77,20 +99,26 @@
 .editor-styles-wrapper .wp-block[data-align="left"],
 .editor-styles-wrapper .wp-block[data-align="right"] {
 	margin: 0 auto;
-	max-width: 1392px;
+	max-width: $wide-content-width !important;
 }
 
+.edit-post-visual-editor__post-title-wrapper .editor-post-title {
+	max-width: $wide-content-width;
+	@include outer-margins;
+}
 
 /* Typography */
-
 body {
 	@include font-body;
 	color: $color__text_two;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Headings */
 .editor-post-title .editor-post-title__input {
 	@include font-body;
+	line-height: 1.1;
 }
 
 .editor-post-title__input,
@@ -101,116 +129,142 @@ h4,
 h5,
 h6 {
 	color: $color__text_one;
-	font-weight: bold;
+	font-weight: normal;
+	line-height: 1.1;
+	margin-top: 0;
+	margin-bottom: 0;
 
 	& a {
 		color: $color__text_one;
+		text-decoration: none;
 	}
 }
 
-.h-regular .editor-post-title__input,
-.h-regular h1,
-.h-regular h2,
-.h-regular h3,
-.h-regular h4,
-.h-regular h5,
-.h-regular h6 {
-	font-weight: normal;
+.h-bold .editor-post-title__input,
+.h-bold h1,
+.h-bold h2,
+.h-bold h3,
+.h-bold h4,
+.h-bold h5,
+.h-bold h6 {
+	font-weight: bold;
 }
 
-h1.has-xxl-font-size {
-	@include font-h-l;
+
+h1.has-xxxxl-font-size {
+	@include font-h-12;
+}
+
+h1.has-xxxl-font-size,
+h2.has-xxxxl-font-size {
+	@include font-h-11;
+}
+
+h1.has-xxl-font-size,
+h2.has-xxxl-font-size,
+h3.has-xxxxl-font-size {
+	@include font-h-10;
 }
 
 h1.has-xl-font-size,
-h2.has-xxl-font-size {
-	@include font-h-k;
+h2.has-xxl-font-size,
+h3.has-xxxl-font-size,
+h4.has-xxxxl-font-size {
+	@include font-h-9;
 }
 
+.editor-post-title__input,
 h1.has-l-font-size,
 h2.has-xl-font-size,
-h3.has-xxl-font-size {
-	@include font-h-j;
+h3.has-xxl-font-size,
+h4.has-xxxl-font-size,
+h5.has-xxxxl-font-size {
+	@include font-h-8;
 }
 
 h1.has-m-font-size,
 h2.has-l-font-size,
 h3.has-xl-font-size,
-h4.has-xxl-font-size {
-	@include font-h-i;
+h4.has-xxl-font-size,
+h5.has-xxxl-font-size,
+h6.has-xxxxl-font-size {
+	@include font-h-7;
 }
 
+h1,
 h1.has-s-font-size,
 h2.has-m-font-size,
 h3.has-l-font-size,
 h4.has-xl-font-size,
-h5.has-xxl-font-size {
-	@include font-h-h;
+h5.has-xxl-font-size,
+h6.has-xxxl-font-size {
+	@include font-h-6;
 }
 
+h2,
 h1.has-xs-font-size,
 h2.has-s-font-size,
 h3.has-m-font-size,
 h4.has-l-font-size,
 h5.has-xl-font-size,
 h6.has-xxl-font-size {
-	@include font-h-g;
+	@include font-h-5;
 }
 
-.editor-post-title__input,
-h1,
+h3,
 h1.has-xxs-font-size,
 h2.has-xs-font-size,
 h3.has-s-font-size,
 h4.has-m-font-size,
 h5.has-l-font-size,
-h6.has-xl-font-size {
-	@include font-h-f;
+h6.has-xl-font-size,
+.related-wrap .section-title,
+.comments-area .comments-title {
+	@include font-h-4;
 }
 
-h2,
 h2.has-xxs-font-size,
 h3.has-xs-font-size,
+h4,
 h4.has-s-font-size,
 h5.has-m-font-size,
-h6.has-l-font-size {
-	@include font-h-e;
-}
-
-h3,
-h3.has-xxs-font-size,
-h4.has-xs-font-size,
-h5.has-s-font-size,
-h6.has-m-font-size,
-.related .section-title,
-.comments-area .comments-title {
-	@include font-h-d;
-}
-
-h4,
-h4.has-xxs-font-size,
-h5.has-xs-font-size,
-h6.has-s-font-size,
+h6.has-l-font-size,
 h1.site-title,
 .site-title {
-	@include font-h-c;
+	@include font-h-3;
+}
+
+h3.has-xxs-font-size,
+h4.has-xs-font-size,
+h5,
+h5.has-s-font-size,
+h6.has-m-font-size {
+	@include font-h-2;
+}
+
+h4.has-xxs-font-size,
+h5.has-xs-font-size,
+h5.has-xxs-font-size,
+h6,
+h6.has-s-font-size,
+h6.has-xs-font-size,
+h6.has-xxs-font-size,
+h6.has-xxs-font-size {
+	@include font-h-1;
 }
 
 /* Paragraphs */
-
-p {
-	@include font-body-m;
+p,
+ol,
+ul {
+	@include font-body-l;
 
 	&.has-background {
-		padding: $spacing-mobile-4;
-
-		@include breakpoint(m) {
-			padding: $spacing-desktop-4;
-		}
+		@include s-r-7(padding);
 	}
 
 	&.has-xxs-font-size {
-		@include font-body-xxs;
+		@include font-body-2xs;
 	}
 
 	&.has-xs-font-size {
@@ -234,7 +288,7 @@ p {
 	}
 
 	&.has-xxl-font-size {
-		@include font-body-xxl;
+		@include font-body-2xl;
 	}
 
 	&.has-drop-cap:not(:focus):first-letter {
@@ -246,7 +300,7 @@ p {
 		font-weight: normal;
 		font-size: 100px;
 
-		@include breakpoint(m) {
+		@include breakpoint(sm) {
 			font-size: 120px;
 			line-height: 0.77;
 			margin: 6px 12px 0 -8px;
@@ -254,7 +308,7 @@ p {
 	}
 
 	&.intro.has-drop-cap:not(:focus):first-letter {
-		@include breakpoint(m) {
+		@include breakpoint(sm) {
 			font-size: 142px;
 		}
 	}
@@ -347,9 +401,6 @@ blockquote:not(.has-text-color) .wp-block-pullquote__citation a:hover {
 /* Elements */
 
 @media screen and (min-width: 50em) {
-	.editor-post-title {
-		padding-right: 2em;
-	}
 
 	.editor-post-title:after,
 	.editor-post-title:before {
@@ -398,10 +449,15 @@ ol {
 	list-style: decimal;
 }
 
+ul li,
+ol li {
+	padding-bottom: $s-4;
+}
+
 li>ol,
 li>ul {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: $s-6;
 }
 
 dt {
@@ -542,7 +598,7 @@ textarea {
 	.wp-block-pullquote__citation {
 		display: block;
 		margin: 0;
-		padding: $spacing-2 0 0;
+		padding: $s-4 0 0;
 		font-weight: bold;
 		font-style: normal;
 		text-transform: none;
@@ -570,7 +626,7 @@ textarea {
 
 		blockquote {
 			max-width: 100%;
-			padding: $spacing-3;
+			padding: $s-6;
 			@include border-radius-m;
 
 			p {
@@ -608,7 +664,7 @@ textarea {
 	.wp-block[data-type="core/pullquote"][data-align="left"],
 	.wp-block[data-type="core/pullquote"][data-align="right"] {
 		margin: 0 auto;
-		max-width: $col12-no-margin;
+		max-width: $wide-content-width;
 	}
 }
 
@@ -618,12 +674,16 @@ textarea {
 
 	.wp-block-group {
 
-		&.has-background {
-			padding-left: 0;
-			padding-right: 0;
+		.wp-block-group__inner-container {
+
+			.wp-block-image {
+				max-width: $default-content-width;
+			}
 		}
+
 	}
 }
+
 
 /* Table */
 
@@ -676,19 +736,14 @@ textarea {
 .wp-block-cover-image {
 	height: 75vh;
 	min-height: 400px;
-	margin-top: $spacing-mobile-5;
-	margin-bottom: $spacing-mobile-8;
-
-	@include breakpoint(m) {
-		margin-top: $spacing-desktop-5;
-		margin-bottom: $spacing-desktop-8;
-	}
+	@include s-r-8(margin-top);
+	@include s-r-8(margin-bottom);
 }
 
 .wp-block-cover-image-text,
 .wp-block-cover-image h2 {
-	max-width: $col6-no-margin;
-	@include font-h-c;
+	max-width: $default-content-width;
+	@include font-h-3;
 }
 
 .wp-block-cover-image,
@@ -707,12 +762,11 @@ textarea {
 	color: $color__code_two;
 	@include font-code;
 	@include font-body-xs;
-	padding: $spacing-mobile-4;
 	@include border-radius-m;
+	@include s-r-7(padding);
 
-	@include breakpoint(m) {
-		padding: $spacing-desktop-4;
-		margin-bottom: $spacing-desktop-4;
+	@include breakpoint(sm) {
+		margin-bottom: $s-7;
 	}
 
 	.block-editor-plain-text {
@@ -725,15 +779,10 @@ textarea {
 	color: $color__code_one;
 	max-width: 100%;
 	overflow: auto;
-	padding: $spacing-mobile-4;
-	margin-bottom: $spacing-mobile-4;
+	@include s-r-7(padding);
+	@include s-r-7(margin-bottom);
 	@include border-radius-m;
 	@include font-code;
-
-	@include breakpoint(m) {
-		padding: $spacing-desktop-4;
-		margin-bottom: $spacing-desktop-4;
-	}
 
 	& pre {
 		margin: 0;
@@ -749,11 +798,7 @@ textarea {
 	@include font-code;
 	@include font-body-xs;
 	@include font-regular;
-	padding: $spacing-mobile-4;
-
-	@include breakpoint(m) {
-		padding: $spacing-desktop-4;
-	}
+	@include s-r-7(padding);
 
 	pre {
 		background: transparent;
@@ -772,13 +817,20 @@ pre.wp-block-verse {
 }
 
 /* Separator */
+.block-editor-block-list__block[data-type="core/separator"] {
+	max-width: $wide-content-width;
+}
 
 .wp-block-separator {
-	margin-bottom: $spacing-desktop-5;
 	border-left: 0;
 	border-right: 0;
 	border-bottom: 0;
-	border-top: 1px solid $color__border;
+	border-top: 1px solid;
+	opacity: 1;
+
+	&.is-style-wide {
+		border: none;
+	}
 
 	&.is-style-dots {
 		border: none;
@@ -805,7 +857,7 @@ pre.wp-block-verse {
 	}
 
 	&:not(.is-style-squared) .wp-block-button__link {
-		border-radius: $border-radius-s;
+		border-radius: 8px;
 	}
 
 	&.is-style-outline {
@@ -828,11 +880,10 @@ pre.wp-block-verse {
 
 .wp-block-categories,
 .wp-block-latest-posts__post-date {
-	margin: 0 0 $spacing-mobile-6;
-
-	@include breakpoint(m) {
-		margin: 0 0 $spacing-desktop-6;
-	}
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+	@include s-r-9 (margin-bottom);
 }
 
 .wp-block-categories ul,
@@ -875,14 +926,14 @@ pre.wp-block-verse {
 
 	caption {
 		color: $color__text_one;
-		margin-bottom: $spacing-2;
+		margin-bottom: $s-4;
 		text-align: center;
 		@include font-bold;
 	}
 
 	table {
 
-		margin-bottom: $spacing-2;
+		margin-bottom: $s-4;
 		background: $color__white;
 
 		th {
@@ -907,4 +958,152 @@ pre.wp-block-verse {
 			text-align: center;
 		}
 	}
+}
+
+/* Custom Color Palette */
+.has-primary-one-color {
+	color: $color__primary;
+	fill: $color__primary;
+}
+
+p.has-primary-one-color a {
+	text-decoration: underline;
+}
+
+.has-primary-one-background-color {
+	background: $color__primary;
+	border-color: $color__primary;
+}
+
+.has-text-one-color {
+	color: $color__text_one;
+	fill: $color__text_one;
+}
+
+.has-text-one-background-color {
+	background: $color__text_one;
+	border-color: $color__text_one;
+}
+
+.has-text-two-color {
+	color: $color__text_two;
+	fill: $color__text_two;
+}
+
+.has-text-two-background-color {
+	background: $color__text_two;
+	border-color: $color__text_two;
+}
+
+.has-border-color {
+	color: $color__border;
+	fill: $color__border;
+}
+
+.has-border-background-color {
+	background: $color__border;
+	border-color: $color__border;
+}
+
+.has-background-color {
+	color: $color__background;
+	fill: $color__background;
+}
+
+.has-background-background-color {
+	background: $color__background;
+	border-color: $color__background;
+}
+
+.has-white-color {
+	color: $color__white;
+	fill: $color__white;
+}
+
+.has-white-background-color {
+	background: $color__white;
+	border-color: $color__white;
+}
+
+.has-black-color {
+	color: $color__black;
+	fill: $color__black;
+}
+
+.has-black-background-color {
+	background: $color__black;
+	border-color: $color__black;
+}
+
+/* Custom Gradients Palette */
+.has-grayish-blue-to-dark-grayish-blue-gradient-background {
+	background: linear-gradient(0deg, rgb(91, 108, 114) 0%, rgb(60, 68, 72) 100%);
+}
+
+.has-soft-orange-to-desaturated-dark-cyan-gradient-background {
+	background: linear-gradient(270deg, rgb(67, 92, 103) 0%, rgb(114, 164, 163) 46%, rgb(251, 162, 137) 74%, rgb(252, 202, 164) 100%);
+}
+
+.has-light-grayish-magenta-to-very-dark-grayish-pink-gradient-background {
+	background: linear-gradient(0deg, rgb(237, 221, 237) 0%, rgb(230, 196, 223) 21%, rgb(196, 165, 191) 50%, rgb(112, 93, 99) 100%);
+}
+
+.has-light-grayish-red-to-dark-red-gradient-background {
+	background: linear-gradient(0deg, rgb(143, 34, 40) 0%, rgb(250, 110, 115) 50%, rgb(219, 191, 193) 100%);
+}
+
+.has-slightly-desaturated-cyan-to-very-soft-red-gradient-background {
+	background: linear-gradient(0deg, rgb(129, 195, 198) 0%, rgb(251, 198, 167) 48%, rgb(250, 168, 182) 100%);
+}
+
+.has-very-soft-orange-to-very-soft-pink-gradient-background {
+	background: radial-gradient(circle at bottom, rgb(251, 219, 190) 0%, rgb(252, 170, 161) 26%, rgb(250, 152, 162) 54%, rgb(246, 182, 211) 75%, rgb(250, 232, 243) 100%);
+}
+
+.has-grayish-violet-to-soft-orange-gradient-background {
+	background: linear-gradient(180deg, rgb(173, 160, 191) 0%, rgb(225, 205, 236) 29%, rgb(243, 206, 225) 51%, rgb(241, 196, 141) 72%, rgb(240, 193, 97) 100%);
+}
+
+.has-light-grayish-red-to-dark-grayish-blue-gradient-background {
+	background: linear-gradient(180deg, rgb(252, 202, 210) 0%, rgb(222, 158, 167) 46%, rgb(118, 119, 135) 100%);
+}
+
+.has-light-grayish-red-to-very-soft-blue-gradient-background {
+	background: linear-gradient(135deg, rgb(237, 204, 211) 0%, rgb(177, 181, 225) 100%);
+}
+
+.has-soft-blue-to-lime-green-gradient-background {
+	background: linear-gradient(0deg, rgb(104, 134, 254) 0%, rgb(255, 255, 255) 49%, rgb(255, 255, 255) 61%, rgb(213, 233, 207) 75%, rgb(8, 179, 82) 100%);
+}
+
+.has-soft-blue-to-dark-moderate-violet-gradient-background {
+	background: linear-gradient(135deg, rgb(103, 125, 239) 0%, rgb(117, 72, 166) 100%);
+}
+
+.has-soft-red-to-very-soft-blue-gradient-background {
+	background: linear-gradient(0deg, rgb(250, 110, 90) 0%, rgb(255, 202, 192) 24%, rgb(255, 255, 255) 48%, rgb(255, 255, 255) 62%, rgb(223, 227, 255) 77%, rgb(157, 144, 250) 100%);
+}
+
+.has-dark-blue-to-mostly-black-blue-gradient-background {
+	background: radial-gradient(circle at bottom, rgb(19, 20, 143) 0%, rgb(13, 11, 24) 100%);
+}
+
+.has-very-soft-blue-to-dark-grayish-blue-gradient-background {
+	background: radial-gradient(circle at bottom, rgb(153, 203, 233) 0%, rgb(121, 132, 157) 100%);
+}
+
+.has-soft-pink-to-mostly-pure-orange-gradient-background {
+	background: radial-gradient(circle at bottom, rgb(253, 79, 156) 0%, rgb(254, 132, 0) 100%);
+}
+
+.has-bright-cyan-to-soft-magenta-gradient-background {
+	background: linear-gradient(0deg, rgb(48, 203, 247) 0%, rgb(254, 128, 254) 100%);
+}
+
+.has-light-red-to-very-light-pink-gradient-background {
+	background: linear-gradient(90deg, rgb(255, 131, 92) 0%, rgb(255, 148, 193) 100%);
+}
+
+.has-very-soft-violet-to-very-soft-pink-gradient-background {
+	background: linear-gradient(90deg, rgb(198, 163, 245) 0%, rgb(248, 162, 199) 100%);
 }

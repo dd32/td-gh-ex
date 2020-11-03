@@ -8,28 +8,17 @@
 		display: block;
 		text-align: center;
 		padding-top: 0;
-		padding-bottom: $spacing-mobile-8;
-
-		@include breakpoint(m) {
-			padding-bottom: $spacing-desktop-8;
-		}
 	}
 }
 
-.entry-header {
+.page {
 
-	.entry-title {
-		margin: 0;
-	}
+	.entry-header {
 
-	.archive .type-page &,
-	.search-results .type-page & {
-		padding-top: $spacing-mobile-4;
-		padding-bottom: 0;
+		@include s-r-9 (padding-bottom);
 
-		@include breakpoint(m) {
-			padding-top: $spacing-desktop-4;
-			padding-bottom: 0;
+		.entry-title {
+			margin: 0;
 		}
 	}
 }

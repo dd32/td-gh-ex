@@ -17,18 +17,33 @@ input[type="color"] {
 	box-sizing: border-box;
 	background-color: transparent;
 	border: 1px solid $color__border;
-	height: $spacing-desktop-7;
-	padding: 0 $spacing-3;
 	outline: none;
+	line-height: 1;
+	max-height: 72px;
+	@include s-r-6 (padding);
 
 	@include input-placeholder {
 		color: #8e8e8e;
 	}
 
-	&:focus,
-	&:active {
-		outline: 0;
-		border: 1px solid #707070;
+	&:active,
+	&:focus {
+		background: $color__background;
+	}
+
+	.light-form & {
+		border: 1px solid $color__white;
+		color: $color__white;
+
+		@include input-placeholder {
+			color: $color__white_hover;
+		}
+
+		&:active,
+		&:focus {
+			background: $color__white;
+			color: $color__text_one;
+		}
 	}
 }
 
@@ -36,18 +51,35 @@ textarea {
 	width: 100%;
 	background-color: transparent;
 	border: 1px solid $color__border;
-	padding: $spacing-2 $spacing-3;
+	padding: $s-4 $s-6;
 	outline: none;
 
 	@include input-placeholder {
 		color: #8e8e8e;
 	}
 
-	&:focus,
-	&:active {
-		outline: 0;
-		border: 1px solid #707070;
+	.light-form & {
+		border: 1px solid $color__white;
+		color: $color__white;
+
+		@include input-placeholder {
+			color: $color__white_hover;
+		}
+
+		&:active,
+		&:focus {
+			background: $color__white;
+			color: $color__text_one;
+		}
 	}
+}
+
+input[type="checkbox"] {
+	width: $s-6;
+	height: $s-6;
+	position: absolute;
+	top: $s-1;
+	left: 0;
 }
 
 .color-notice,
@@ -59,38 +91,31 @@ label.color-notice span {
 		height: 150px;
 }
 
-form p {
-	margin: 0 0 $spacing-3;
-
-	@include breakpoint(m) {
-		margin: 0 0 $spacing-3;
-	}
+.single form p,
+.page form p {
+	@include s-r-6 (padding-top);
+	padding-bottom: 0;
 }
 
 form .comment-form-cookies-consent {
-	margin: 0;
-	padding: $spacing-3 0 0 0;
 	clear: both;
-}
+	display: flex;
+	align-items: center;
 
-form .comment-form-cookies-consent label {
-	display: inline;
-	padding-left: 12px;
+	label {
+		@include s-r-4 (padding-left);
+		margin-bottom: 0;
+	}
 }
 
 form p.comment-form-comment {
 	margin: 0;
-	line-height: 0;
 }
 
 form label {
+	position: relative;
 	display: block;
-	padding: 0 0 $spacing-xxs;
-	@include font-label;
-}
-
-label .required {
-	@include font-label;
+	@include s-r-2 (margin-bottom);
 }
 
 select {
@@ -110,9 +135,10 @@ input[type="submit"],
 button[type="submit"] {
 	display: block;
 	clear: both;
-	margin-top: $spacing-3;
-	@include breakpoint(m) {
-		margin-top: $spacing-3 0 0;
+
+	.light-btn & {
+		background: $color__white;
+		color: $color__text_one;
 	}
 }
 
@@ -137,7 +163,7 @@ button[type="submit"] {
 .entry-content .search-submit span.search-icon,
 .widget_search .search-submit span.search-icon {
 	width: 120px;
-	height: $spacing-desktop-7;
+	height: $s-10;
 	padding: 16px 0 0;
 }
 
@@ -145,20 +171,59 @@ button[type="submit"] {
 .form-curved {
 	input,
 	textarea,
-	select,
-	.comment-content-wrap {
+	select {
 		@include border-radius-s;
 	}
 }
 
 .form-round {
+
 	input,
 	select {
 		border-radius: 6.25em;
 	}
 
-	textarea,
-	.comment-content-wrap {
-		@include border-radius-m;
+	textarea {
+		@include border-radius-l;
+	}
+
+	label {
+		padding-left: 1.875rem;
+
+		@include breakpoint(md) {
+			padding-left: 2.063rem;
+		}
+
+		@include breakpoint(lg) {
+			padding-left: 2.25rem;
+		}
+	}
+}
+
+/* Mailchimp Form */
+
+.mc4wp-form-fields {
+	@include s-r-6 (padding-top);
+}
+
+.mc4wp-success p {
+	color: $color__success;
+}
+
+/* Light Form Color */
+.entry-content {
+
+	.light-form {
+		p {
+			color: $color__white;
+	
+			a:hover {
+				color: $color__white_hover;
+			}
+		}
+
+		input:not([type="submit"]) {
+			color: $color__white;
+		}
 	}
 }

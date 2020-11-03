@@ -2,13 +2,13 @@
 Contributors: elmastudio, manuelesposito, marc_j, kau-boy
 Tags: blog, grid-layout, one-column, two-columns, three-columns, featured-images, full-width-template, theme-options, custom-colors, custom-menu, editor-style, sticky-post, translation-ready, threaded-comments, footer-widgets, block-styles, wide-blocks
 Requires at least: 5.0
-Tested up to: WordPress 5.4.1
-Requires PHP: 7.3
-Stable tag: 1.1.5
+Tested up to: WordPress 5.5.3
+Requires PHP: 7.4
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-Aino is a Gutenberg-first WordPress theme for everyone who wants to have a beautiful website with creative, individual page layouts.
+Aino is a blocks-first WordPress theme for everyone who wants to build websites with creative, individual page layouts.
 
 == Description ==
 
@@ -40,8 +40,53 @@ Aino WordPress Theme bundles the following third-party resources:
 * Material Design Icons, © Google, Inc., Apache License 2.0, https://material.io/resources/icons/
 * Simple Icons, Started by Dan Leech, CC0 1.0 Universal, https://simpleicons.org/
 * Screenshot image #1, © Elmastudio Ltd., CC0 1.0 Universal (CC0 1.0) license
+* TGM-Plugin-Activation, Copyright 2011, Thomas Griffin, License: GPLv2 or later, http://tgmpluginactivation.com
 
 == Changelog ==
+
+= 1.2.2 =
+* New: MC4WP: Mailchimp for WordPress plugin support.
+* Enhance: Screenshot image.
+* Enhance: Mobile menu.
+* Enhance: Footer site info.
+* Enhance: Grid styles.
+* Enhance: Footer widgets.
+* Enhance: Search result pages.
+* Enhance: Editor font styles.
+* Bugfix: Cover block responsiveness.
+* Bugfix: Responsive spacing.
+* Bugfix: Multiple alignfull blocks scrollbar issue. Fixes #131
+
+= 1.2.1 =
+* New: Aino Blocks plugin recommendation notice.
+
+= 1.2.0 =
+* Enhance: Single post, blog and archive page styles.
+* Enhance: Translations.
+* Update: Default font from Roboto to IBM Plex Sans.
+* Update: Font sizes.
+* Update: Remove border colour in Editor colour palette.
+* New: Footer borders.
+* New: Display or hide Footer borders.
+* New: Footer borders colour.
+* New: 'Back to top' button.
+* New: Blog 'Load More' button replacing standard pagination.
+* New: Sticky badge design and Customizer option (see Theme/Blog).
+* New: No spacing option for Blog Cards (see Theme/Blog Cards).
+* New: Sticky post badge design and light colour option.
+
+= 1.1.7 =
+* New: Support for custom line-height and custom units in blocks.
+* New: Add support for experimental link color in Paragraph, Heading, Group, Columns, and Media & Text blocks.
+* Enhance: Custom font size palette.
+* Enhance: Bold heading styles.
+* Enhance: CSS for grid and media query breakpoints.
+* Enhance: Footer widgets.
+* Enhance: Translations.
+* Bugfix: Add custom color and gradient palette to editor styles.
+
+= 1.1.6 =
+* Bugfix: CSS styling for Aino blocks.
 
 = 1.1.5 =
 * Bugfix: Douple text domain issue in searchform.php

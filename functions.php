@@ -38,8 +38,6 @@ if ( ! function_exists( 'aino_setup' ) ) :
 		 * Adds custom image sizes.
 		 */
 		add_image_size( 'aino-l', 1200, 800, true ); // Image Ratio 3:2.
-		add_image_size( 'aino-m', 681, 454, true ); // Image Ratio 3:2.
-		add_image_size( 'aino-s-squared', 96, 96, true );
 
 		// Custom logo.
 		$logo_width  = 170;
@@ -121,7 +119,7 @@ if ( ! function_exists( 'aino_setup' ) ) :
 				array(
 					'name'      => __( 'S', 'aino' ),
 					'shortName' => __( 'S', 'aino' ),
-					'size'      => 17,
+					'size'      => 16,
 					'slug'      => 's',
 				),
 				array(
@@ -139,14 +137,26 @@ if ( ! function_exists( 'aino_setup' ) ) :
 				array(
 					'name'      => __( 'XL', 'aino' ),
 					'shortName' => __( 'XL', 'aino' ),
-					'size'      => 29,
+					'size'      => 28,
 					'slug'      => 'xl',
 				),
 				array(
 					'name'      => __( 'XXL', 'aino' ),
 					'shortName' => __( 'XXL', 'aino' ),
-					'size'      => 35,
+					'size'      => 34,
 					'slug'      => 'xxl',
+				),
+				array(
+					'name'      => __( '3XL', 'aino' ),
+					'shortName' => __( '3XL', 'aino' ),
+					'size'      => 40,
+					'slug'      => 'xxxl',
+				),
+				array(
+					'name'      => __( '4XL', 'aino' ),
+					'shortName' => __( '4XL', 'aino' ),
+					'size'      => 48,
+					'slug'      => 'xxxxl',
 				),
 			)
 		);
@@ -180,11 +190,6 @@ if ( ! function_exists( 'aino_setup' ) ) :
 					'name'  => __( 'Background', 'aino' ),
 					'slug'  => 'background',
 					'color' => $main_bg_color,
-				),
-				array(
-					'name'  => __( 'Border', 'aino' ),
-					'slug'  => 'border',
-					'color' => '#dde2e5',
 				),
 				array(
 					'name'  => __( 'Black', 'aino' ),
@@ -297,6 +302,19 @@ if ( ! function_exists( 'aino_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+
+		// Add support for experimental link colour in blocks.
+		add_theme_support('experimental-link-color');
+
+		// Remove core block patterns, since Aino ships its own patterns via the Aino blocks plugin.
+		remove_theme_support( 'core-block-patterns' );
+
+		// Add support for custom custom line-heights in blocks.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for custom units in blocks.
+		add_theme_support( 'custom-units' );
+
 	}
 	endif;
 	add_action( 'after_setup_theme', 'aino_setup' );
@@ -317,7 +335,7 @@ function aino_content_width() {
 	if ( is_page_template( 'page-templates/tpl-fullscreen.php' ) || is_page_template( 'page-templates/tpl-hero.php' ) ) {
 		$GLOBALS['content_width'] = apply_filters( 'aino_content_width', 2010 );
 	} else {
-		$GLOBALS['content_width'] = apply_filters( 'aino_content_width', 680 );
+		$GLOBALS['content_width'] = apply_filters( 'aino_content_width', 696 );
 	}
 	// phpcs:enable
 }
@@ -387,16 +405,16 @@ function aino_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by Roboto, translate this to 'off'. Do not translate
+	 * supported by IBM Plex Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$roboto = esc_html_x( 'on', 'Roboto font: on or off', 'aino' );
+	$ibm_plex_sans = esc_html_x( 'on', 'IBM Plex Sans font: on or off', 'aino' );
 
-	if ( 'off' !== $roboto ) {
+	if ( 'off' !== $ibm_plex_sans ) {
 		$font_families = array();
 
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:400,400i,700,700i&display=optional';
+		if ( 'off' !== $ibm_plex_sans ) {
+			$font_families[] = 'IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap';
 		}
 
 		$query_args = array(
@@ -547,6 +565,64 @@ function aino_skip_link_focus_fix() {
 add_action( 'wp_print_footer_scripts', 'aino_skip_link_focus_fix' );
 
 /**
+ * Load more button.
+ */
+function aino_load_more_scripts() {
+ 
+	global $wp_query;
+ 
+	// register our main script but do not enqueue it yet
+	wp_register_script( 'aino_loadmore', get_theme_file_uri( '/assets/js/loadmore.js' ), array(), wp_get_theme()->get( 'Version' ), true );
+ 
+	// now the most interesting part
+	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+	wp_localize_script( 'aino_loadmore', 'aino_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+
+	wp_enqueue_script( 'aino_loadmore' );
+}
+
+add_action( 'wp_enqueue_scripts', 'aino_load_more_scripts' );
+
+/**
+ * Load more ajax handler.
+ */
+function aino_loadmore_ajax_handler(){
+
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
+
+	if( have_posts() ) :
+
+		// run the loop
+		while( have_posts() ): the_post();
+
+			// look into your theme code how the posts are inserted, but you can use your own HTML of course
+			// do you remember? - my example is adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/post/content', get_post_format() );
+			// for the test purposes comment the line above and uncomment the below one
+			// the_title();
+
+		endwhile;
+
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+
+add_action('wp_ajax_loadmore', 'aino_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'aino_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+/**
  * Add a custom max excerpt length.
  *
  * @param string $limit Maximum number of words in excerpt text.
@@ -630,11 +706,52 @@ require get_template_directory() . '/inc/customizer/customizer-editor.php';
 require get_template_directory() . '/inc/customizer/sanitization-callbacks.php';
 
 /**
-* Load Jetpack compatibility file.
+ * SVG icons functions and filters.
+ */
+require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+/**
+  * Load Jetpack compatibility file.
 */
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
-* SVG icons functions and filters.
-*/
-require get_parent_theme_file_path( '/inc/icon-functions.php' );
+ * TGMPA plugin activation.
+ */
+require_once get_template_directory() . '/inc/classes/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'aino_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ */
+function aino_register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 */
+	$plugins = array(
+
+		array(
+			'name'      => 'Aino Blocks - Creative Gutenberg Blocks',
+			'slug'      => 'aino-blocks',
+			'required'  => false,
+		),
+	);
+
+	/*
+	 * Array of configuration settings. Amend each line as needed.
+	 */
+	$config = array(
+		'id'           => 'aino',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+
+	);
+
+	tgmpa( $plugins, $config );
+}

@@ -1,13 +1,9 @@
 .site-header {
-
-	padding: $spacing-3 0;
-
-	@include breakpoint(m) {
-		padding: $spacing-3 0;
-	}
+	@include s-r-7(padding-top);
 
 	.admin-bar & {
 		top: 32px;
+
 		@media screen and (max-width: 782px) {
 			top: 46px;
 		}
@@ -16,12 +12,19 @@
 
 /* Site Title, Logo and Tagline */
 .site-branding {
-
 	@include flexbox;
 	align-items: center;
 	margin: 0 auto 0 0;
-	padding-right: $spacing-desktop-4;
-	min-height: $spacing-mobile-5;
+	padding-right: $s-7;
+	height: 2.25rem;
+
+	@include breakpoint(sm) {
+		height: 2.375rem;
+	}
+
+	@include breakpoint(md) {
+		height: auto;
+	}
 
 	h1.site-title,
 	.site-title,
@@ -30,15 +33,18 @@
 		margin: 0;
 	}
 
+	.site-logo {
+		line-height: 0;
+	}
+
 	.site-description {
 		display: none;
-		height: $spacing-desktop-4;
+		height: $s-7;
 		margin: 0;
-		padding: 0 0 0 $spacing-2;
-		@include font-body-xxs;
+		padding: 0 0 0 $s-2;
 		color: $color__text_two;
 
-		@include breakpoint(m) {
+		@include breakpoint(sm) {
 			@include flexbox;
 			@include flex-center;
 		}
@@ -46,10 +52,10 @@
 		&:before {
 			content: "";
 			display: block;
-			width: 1px;
+			width: $s-9;
 			background-color: $color__border;
-			height: $spacing-3;
-			margin-right: $spacing-2;
+			height: 1px;
+			margin-right: $s-2;
 		}
 
 		.tagline-hide & {
@@ -59,19 +65,35 @@
 
 	.custom-logo-link {
 		display: block;
-		padding: 0 $spacing-xs 0 0;
-		max-height: $spacing-mobile-5;
+		padding: 0 $s-2 0 0;
 
-		img {
+		img,
+		.custom-logo {
 			width: auto !important;
-			height: $spacing-mobile-5;
+			height: 2.25rem;
+			object-fit: fill;
+
+			@include breakpoint(header) {
+				height: auto;
+			}
+
+			@include breakpoint(sm) {
+				height: 2.375rem;
+			}
+
+			@include breakpoint(md) {
+				height: 2.5rem;
+			}
+
+			@include breakpoint(lg) {
+				height: auto;
+			}
 		}
 
 		@include breakpoint(header) {
 			max-height: 100%;
 
 			img {
-				width: auto !important;
 				height: auto;
 			}
 		}
@@ -81,11 +103,11 @@
 /* Header Search Form */
 .search-header {
 	position: relative;
-	margin: $spacing-2 0 0 0;
+	margin: $s-4 0;
 	padding: 0;
 
 	@include breakpoint(header) {
-		margin: 0 0 0 $spacing-desktop-4;
+		margin: 0 0 0 $s-6;
 		padding: 0;
 	}
 
@@ -95,8 +117,17 @@
 
 	label {
 		cursor: pointer;
+		margin: 0;
 		padding: 0;
 		color: $color__text_two;
+
+		@include breakpoint(md) {
+			padding: 0;
+		}
+
+		@include breakpoint(lg) {
+			padding: 0;
+		}
 	}
 
 	.search-form {
@@ -108,12 +139,9 @@
 		@include flexbox;
 		align-items: center;
 		max-width: 100%;
-		height: $spacing-desktop-5;
-		padding: 0 0 0 46px;
+		height: $s-9;
 		vertical-align: middle;
 		border: 1px solid $color__border;
-		font-size: 14px;
-		line-height: 20px;
 	}
 }
 
@@ -121,7 +149,7 @@
 .social-header-nav {
 	display: none;
 	margin: 0;
-	padding: $spacing-mobile-5 0;
+	padding: $s-7 0;
 
 	@include breakpoint(header) {
 		display: block;
@@ -129,15 +157,15 @@
 	}
 
 	ul li a {
-		padding: 0 $spacing-3 0 0;
+		padding: 0 $s-6 0 0;
 	}
 
 	.has-nav-main & {
-		margin-top: $spacing-mobile-5;
+		margin-top: $s-7;
 
 		@include breakpoint(header) {
 			margin-top: 0;
-			padding-left: $spacing-desktop-4;
+			padding-left: $s-6;
 		}
 	}
 }
@@ -156,7 +184,7 @@
 }
 
 .social-links-menu li {
-	padding-right: 12px;
+	padding-right: $s-6;
 
 	&:last-child {
 		padding-right: 0;
@@ -165,8 +193,8 @@
 
 .menu-social-container ul li a {
 	display: block;
-	width: $spacing-desktop-5;
-	height: $spacing-desktop-5;
+	width: $s-6;
+	height: $s-6;
 	line-height: 1;
 	margin: 0;
 	overflow: hidden;
@@ -190,6 +218,7 @@
 		-webkit-box-align: center;
 		align-items: center;
 		flex-direction: column;
+
 		@include breakpoint(header) {
 			flex-direction: row;
 		}
@@ -205,23 +234,25 @@
 			padding: 0;
 		}
 
-		@include breakpoint(s) {
+		@include breakpoint(sm) {
 			width: auto;
 		}
+
 		@include breakpoint(header) {
-			padding: 0 $spacing-2 0 0;
+			padding: 0 $s-4 0 0;
 		}
 	}
 
 	.has-nav-main &,
 	.has-nav-social & {
+
 		@include breakpoint(header) {
-			padding: 0 0 0 $spacing-desktop-4;
+			padding: 0 0 0 $s-6;
 		}
 	}
 
 	.has-nav-social & {
-		padding-top: $spacing-mobile-5;
+		padding-top: $s-7;
 
 		@include breakpoint(header) {
 			padding-top: 0;
@@ -288,38 +319,88 @@
 .toggle:hover {
 	background-color: transparent;
 	@include shadow-none;
+	transform: none;
 }
 
 /* Navigation Toggle ------------------------- */
 .toggle {
 	background: transparent;
 }
+
 .nav-toggle {
 	position: absolute;
 	bottom: 0;
-	top: $spacing-3;
-	right: $spacing-3;
-	padding: $spacing-xxs;
+	top: $s-4;
+	right: $s-4;
+	padding: 0 17px;
 	border-radius: 0;
 	color: $color__text_one;
-	width: $spacing-mobile-5;
-	height: $spacing-mobile-5;
+	background: transparent;
+	border: 1px solid $color__text_one;
 
-	@include breakpoint(s) {
-		right: $spacing-mobile-9;
+	@include breakpoint(sm) {
+		right: $s-7;
+		top: $s-5;
+	}
+
+	@include breakpoint(md) {
+		top: $s-6;
+	}
+
+	.icon-toggle-open {
+		width: 28px;
+		height: 8px;
 	}
 }
 
 button.close-nav-toggle {
-	padding: $spacing-3;
+	margin-top: $s-4;
+	margin-left: $s-4;
+	padding: 0;
 	border-radius: 0;
 	color: $color__text_one;
 	align-items: center;
 	display: flex;
-	justify-content: flex-start;
-	width: 100%;
-	height: 80px;
+	justify-content: center;
+	width: 64px;
 	border-radius: 0;
+	background: transparent;
+	border: 1px solid $color__text_one;
+	border-radius: 18px;
+
+	@include breakpoint(sm) {
+		margin-left: $s-7;
+		margin-top: $s-5;
+	}
+
+	@include breakpoint(md) {
+		margin-top: $s-6;
+	}
+
+	.icon-toggle-close {
+		width: 28px;
+		height: 10px;
+	}
+}
+
+.nav-toggle,
+button.close-nav-toggle {
+	height: 2.25rem;
+	border-radius: 18px;
+
+	@include breakpoint(sm) {
+		height: 2.375rem;
+		border-radius: 19px;
+	}
+
+	@include breakpoint(md) {
+		height: 2.5rem;
+		border-radius: 20px;
+	}
+}
+
+.mobile-menu {
+padding-top: $s-7;
 }
 
 /* Primary Menu ---------------------------- */
@@ -333,32 +414,20 @@ ul.primary-menu {
 	justify-content: flex-end;
 	margin: 0;
 
-	.icon {
+	.dropdown {
 		display: block;
-		height: 12px;
 		position: absolute;
-		pointer-events: none;
-		width: 12px;
-		transform: rotate(-45deg);
+		top: 0;
+		right: 0;
+		width: 10px;
+		padding: 0;
+		margin: 0;
 
-		&::before,
-		&::after {
-			content: "";
-			display: block;
-			background-color: $color__text_one;
+		.icon {
 			position: absolute;
-			bottom: calc(50% - 2px);
-			left: 0;
-		}
-
-		&::before {
-			height: 2px;
-			width: 8px;
-		}
-
-		&::after {
-			height: 8px;
-			width: 2px;
+			top: 0;
+			width: 100%;
+			fill: $color__text_one;
 		}
 	}
 
@@ -366,9 +435,9 @@ ul.primary-menu {
 		font-size: inherit;
 		position: relative;
 
-		&.menu-item-has-children:hover > ul,
-		&.menu-item-has-children:focus > ul,
-		&.menu-item-has-children.focus > ul {
+		&.menu-item-has-children:hover>ul,
+		&.menu-item-has-children:focus>ul,
+		&.menu-item-has-children.focus>ul {
 			right: 0;
 			opacity: 1;
 			transform: translateY(0);
@@ -376,20 +445,20 @@ ul.primary-menu {
 		}
 	}
 
-	> li {
-		margin: 0 $spacing-desktop-4 0 0;
+	>li {
+		margin: 0 $s-6 0 0;
 
 		&:last-child {
 			margin-right: 0;
 		}
 
-		&.menu-item-has-children > a {
-			padding-right: $spacing-3;
+		&.menu-item-has-children>a {
+			padding-right: 18px; // 10px for the icon and 8px padding
 		}
 
-		> .icon {
-			right: $spacing-xxs;
-			top: 0.375rem; // 6px
+		>.icon {
+			right: 0;
+			top: 0;
 		}
 	}
 
@@ -397,37 +466,33 @@ ul.primary-menu {
 		color: $color__text_one;
 		display: block;
 		text-decoration: none;
-		padding-top: $spacing-xxs;
-		padding-bottom: $spacing-xxs;
+		line-height: 1;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	ul {
-		@include shadow-5;
 		@include font-body-xs;
 		background: $color__white;
 		color: $color__text_one;
-		padding: $spacing-3;
+		padding: $s-6;
+		border: 1px solid $color__border;
 		position: absolute;
 		opacity: 0;
 		right: 9999rem;
-		top: calc(100% + 10px);
+		top: calc(100% + 4px);
 		transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
 		transform: translateY(0.6rem);
-		width: 264px;
+		width: 271px;
 		z-index: 10;
 		margin: 0;
-
-		.btn-curved & {
-			border-radius: $border-radius-s;
-		}
-
-		.btn-round & {
-			border-radius: $border-radius-m;
-		}
 
 		ul {
 			opacity: 0;
 			top: -1rem;
+			right: 5rem;
 
 			&::before {
 				bottom: 0;
@@ -448,7 +513,6 @@ ul.primary-menu {
 		}
 
 		&::before {
-			height: 10px;
 			left: 0;
 			right: 0;
 		}
@@ -463,26 +527,25 @@ ul.primary-menu {
 		}
 
 		li {
-			margin-bottom: $spacing-xs;
+			margin-bottom: $s-6;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
 
-			&.menu-item-has-children > a {
+			&.menu-item-has-children>a {
 				padding-right: 0;
 			}
 
 			&.menu-item-has-children .icon {
 				position: absolute;
 				right: 0;
-				top: 0.313rem; // 5px
 			}
 
-			&.menu-item-has-children:hover > ul,
-			&.menu-item-has-children:focus > ul,
-			&.menu-item-has-children.focus > ul {
-				right: calc(100% + 1.5rem);
+			&.menu-item-has-children:hover>ul,
+			&.menu-item-has-children:focus>ul,
+			&.menu-item-has-children.focus>ul {
+				right: calc(100% + 1rem);
 			}
 		}
 	}
@@ -495,18 +558,17 @@ ul.primary-menu {
 
 	.menu-uppercase & {
 
-		> li > .icon {
+		>li>.icon {
 			top: 0.375rem; // 6px
 		}
 
 		a {
 			text-transform: uppercase;
 			@include font-body-xs;
-			letter-spacing: 2px;
 		}
 
 		ul a {
-			@include font-body-xxs;
+			@include font-body-2xs;
 		}
 	}
 }
@@ -584,6 +646,7 @@ ul.primary-menu {
 	ul {
 		display: none;
 		margin: 0;
+		padding: 0;
 		width: 100%;
 	}
 
@@ -592,13 +655,6 @@ ul.primary-menu {
 		flex-wrap: wrap;
 		line-height: 1;
 		justify-content: flex-start;
-		border-left-width: 48px;
-		border-right-width: 24px;
-		border-color: transparent;
-	}
-
-	> li:last-child {
-		border-bottom-width: 0.1rem;
 	}
 
 	.ancestor-wrapper {
@@ -609,14 +665,23 @@ ul.primary-menu {
 
 	a {
 		display: block;
-		padding: 20px 0;
+		padding: $s-4 0;
+		margin: 0 $s-4;
 		text-decoration: none;
 		width: 100%;
+		border-top: 1px solid $color__border;
+
+		@include breakpoint(sm) {
+			margin: 0 $s-7;
+		}
+	}
+
+	li:first-child a {
+		border-top: none;
 	}
 
 	ul li {
-		border-left-width: 24px;
-		border-color: transparent;
+		margin: 0;
 	}
 
 	ul li a {
@@ -624,31 +689,77 @@ ul.primary-menu {
 	}
 }
 
-.modal-menu a:focus,
-.modal-menu a:hover,
-.modal-menu li.current-menu-item > .ancestor-wrapper > a,
-.modal-menu li.current_page_ancestor > .ancestor-wrapper > a,
-button.sub-menu-toggle:hover,
-button.sub-menu-toggle:focus {
-	color: $color__primary;
+.sub-menu {
+
+	li a {
+		padding-left: 32px;
+
+		@include breakpoint(lg) {
+			padding-left: 0;
+		}
+	}
+
+	li:first-child a {
+		border-top: none;
+	}
+
+	li:last-child a {
+		border-bottom: none;
+	}
+
+	.sub-menu {
+
+		li a {
+			padding-left: 64px;
+
+			@include breakpoint(lg) {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.menu-item-has-children {
+
+	a {
+		border-top: 1px solid $color__border;
+		width: calc(100% - 32px);
+		margin: 0 0 0 $s-4;
+
+		@include breakpoint(md) {
+			border-top: none;
+		}
+	}
+
+	@include breakpoint(md) {
+		padding-left: 0;
+	}
+}
+
+.sub-menu {
+	a {
+		border-top: none;
+	}
 }
 
 button.sub-menu-toggle {
-	flex-shrink: 0;
-	margin: 0;
-	padding: 0;
-	width: $spacing-desktop-7;
-	height: $spacing-desktop-7;
+	margin: 0 $s-4 0 0;
+	padding: 0 0 0 $s-4;
 	color: $color__text_one;
 	border-radius: 0;
-}
+	position: absolute;
+	right: 0;
 
-button.sub-menu-toggle svg {
-	transform: rotate(90deg);
-}
+	@include breakpoint(sm) {
+		margin: 0 $s-7 0 0;
+	}
 
-button.sub-menu-toggle.active svg {
-	transform: rotate(270deg);
+	.icon {
+		width: 10px;
+		height: 12px;
+		text-align: right;
+		height: 53px;
+	}
 }
 
 .menu-wrapper {
@@ -686,11 +797,6 @@ button.sub-menu-toggle.active svg {
 			&.active {
 				opacity: 0;
 			}
-		}
-
-		.modal-menu > li:last-child li {
-			border-top-color: transparent;
-			border-bottom-width: 0.1rem;
 		}
 	}
 
@@ -740,7 +846,7 @@ button.sub-menu-toggle.active svg {
 		display: none !important;
 	}
 
-	.primary-menu-wrapper + .header-toggles {
+	.primary-menu-wrapper+.header-toggles {
 		margin-left: 3rem;
 	}
 
@@ -838,13 +944,24 @@ button.sub-menu-toggle.active svg {
 /* Light Header Style ---------------------------- */
 .header-light {
 
-	.custom-logo path,
-	.nav-toggle .icon-more_horiz-24px {
+	.site-branding .site-title a,
+	.site-branding .site-description,
+	&.page-template-tpl-hero-light .site-title a,
+	.custom-logo-link .custom-logo path,
+	.nav-toggle,
+	.nav-toggle .icon-toggle-open,
+	ul.primary-menu .dropdown .icon,
+	.header-cta-wrap a {
 		color: $color__white;
 		fill: $color__white;
 	}
 
-	.search-header .search-field {
+	.nav-toggle {
+		border: 1px solid $color__white;
+	}
+
+	.search-header .search-field,
+	.site-branding .site-description:before {
 		border-color: transparent;
 		background-color: $color__white;
 
@@ -852,6 +969,10 @@ button.sub-menu-toggle.active svg {
 		&:active {
 			background-color: rgba(255, 255, 255, 0.9);
 		}
+	}
+
+	.primary-menu .sub-menu .dropdown .icon {
+		fill: $color__text_one;
 	}
 
 	.btn-outline a {
@@ -872,14 +993,14 @@ button.sub-menu-toggle.active svg {
 		}
 	}
 
-	@include breakpoint(m) {
+	@include breakpoint(sm) {
 
 		.site-title a,
-		.site-branding .site-description,
 		.primary-menu a,
 		.btn-outline a,
 		.btn-naked a,
-		.site-header .menu-social-container .icon {
+		.site-header .menu-social-container .icon,
+		.header-cta-wrap a {
 			color: $color__white;
 			fill: $color__white;
 
@@ -899,8 +1020,8 @@ button.sub-menu-toggle.active svg {
 			background-color: $color__white;
 		}
 
-		.primary-menu a:hover + .icon::before,
-		.primary-menu a:hover + .icon::after {
+		.primary-menu a:hover+.icon::before,
+		.primary-menu a:hover+.icon::after {
 			background-color: $color__white_hover;
 		}
 
@@ -911,11 +1032,6 @@ button.sub-menu-toggle.active svg {
 
 		.primary-menu .sub-menu a {
 			color: $color__text_one;
-		}
-
-		.primary-menu .sub-menu a:hover + .icon::before,
-		.primary-menu .sub-menu a:hover + .icon::after {
-			background-color: $color__primary;
 		}
 	}
 }

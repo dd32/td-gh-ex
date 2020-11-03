@@ -1,199 +1,145 @@
-/* 12 Grid */
 .col,
 .column {
 	box-sizing: border-box;
 }
 
+.no-gutter {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.desktop__overlap-top {
+
+	@include breakpoint(sm) {
+		margin-top: -12rem;
+	}
+}
+
+// 12 grid columns
 .col1 {
 	max-width: $col1;
+
+	&.no-margins {
+		max-width: calc(#{$col1} - #{$s-9});
+	}
 }
 
 .col2 {
 	max-width: $col2;
+
+	&.no-margins {
+		max-width: calc(#{$col2} - #{$s-9});
+	}
 }
 
 .col3 {
 	max-width: $col3;
+
+	&.no-margins {
+		max-width: calc(#{$col3} - #{$s-9});
+	}
 }
 
 .col4 {
 	max-width: $col4;
+
+	&.no-margins {
+		max-width: calc(#{$col4} - #{$s-9});
+	}
 }
 
 .col5 {
 	max-width: $col5;
+
+	&.no-margins {
+		max-width: calc(#{$col5} - #{$s-9});
+	}
 }
 
 .col6 {
 	max-width: $col6;
+
+	&.no-margins {
+		max-width: calc(#{$col6} - #{$s-9});
+	}
 }
 
 .col7 {
 	max-width: $col7;
+
+	&.no-margins {
+		max-width: calc(#{$col7} - #{$s-9});
+	}
 }
 
 .col8 {
 	max-width: $col8;
+
+	&.no-margins {
+		max-width: calc(#{$col8} - #{$s-9});
+	}
 }
 
 .col9 {
 	max-width: $col9;
+
+	&.no-margins {
+		max-width: calc(#{$col9} - #{$s-9});
+	}
 }
 
 .col10 {
 	max-width: $col10;
+
+	&.no-margins {
+		max-width: calc(#{$col10} - #{$s-9});
+	}
 }
 
 .col11 {
 	max-width: $col11;
+
+	&.no-margins {
+		max-width: calc(#{$col11} - #{$s-9});
+	}
 }
 
 .col12 {
 	max-width: $col12;
-}
 
-// Push padding left or right (Desktop only)
-@include breakpoint(l) {
-	.push-left-col1 {
-		padding-left: $col1;
-	}
-
-	.push-left-col2 {
-		padding-left: $col2;
-	}
-
-	.push-left-col3 {
-		padding-left: $col3;
-	}
-
-	.push-left-col4 {
-		padding-left: $col4;
-	}
-
-	.push-left-col5 {
-		padding-left: $col5;
-	}
-
-	.push-left-col6 {
-		padding-left: $col6;
-	}
-
-	.push-left-col7 {
-		padding-left: $col7;
-	}
-
-	.push-left-col8 {
-		padding-left: $col8;
-	}
-
-	.push-left-col9 {
-		padding-left: $col9;
-	}
-
-	.push-left-col10 {
-		padding-left: $col10;
-	}
-
-	.push-left-col11 {
-		padding-left: $col11;
-	}
-
-	.push-right-col1 {
-		padding-right: $col1;
-	}
-
-	.push-right-col2 {
-		padding-right: $col2;
-	}
-
-	.push-right-col3 {
-		padding-right: $col3;
-	}
-
-	.push-right-col4 {
-		padding-right: $col4;
-	}
-
-	.push-right-col5 {
-		padding-right: $col5;
-	}
-
-	.push-right-col6 {
-		padding-right: $col6;
-	}
-
-	.push-right-col7 {
-		padding-right: $col7;
-	}
-
-	.push-right-col8 {
-		padding-right: $col8;
-	}
-
-	.push-right-col9 {
-		padding-right: $col9;
-	}
-
-	.push-right-col10 {
-		padding-right: $col10;
-	}
-
-	.push-right-col11 {
-		padding-right: $col11;
+	&.no-margins {
+		max-width: calc(#{$col12} - #{$s-9});
 	}
 }
 
-.grid-margins {
-	padding-left: $grid-margins-s;
-	padding-right: $grid-margins-s;
-
-	@include breakpoint(s) {
-		padding-left: $grid-margins-l;
-		padding-right: $grid-margins-l;
-	}
-
-	@include breakpoint(xxl) {
-		padding-left: $grid-margins-s;
-		padding-right: $grid-margins-s;
-	}
+.outer-margins {
+	@include outer-margins;
 }
 
-// Grid margins for elements which only require them on mobile.
+// Outer margins for elements which only require them on mobile.
 .mobile-margins {
-	padding-left: $grid-margins-s;
-	padding-right: $grid-margins-s;
+	padding-left: $s-4;
+	padding-right: $s-4;
 
-	@include breakpoint(s) {
-		padding-left: $grid-margins-l;
-		padding-right: $grid-margins-l;
+	@include breakpoint(lg) {
+		padding-left: $s-6;
+		padding-right: $s-6;
 	}
 
-	@include breakpoint(m) {
-		padding-left: $grid-margins-s;
-		padding-right: $grid-margins-s;
-	}
-
-	@include breakpoint(xxl) {
+	@include breakpoint(xl) {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
-// Mobile Grid margins for elements with 680px default width.
-.small-margins,
+// Outer Grid margins for elements with default content width.
+.default-margins,
 .search-no-results .entry-content {
-	padding-left: $grid-margins-s;
-	padding-right: $grid-margins-s;
+	@include default-margins;
+}
 
-	@include breakpoint(s) {
-		padding-left: $grid-margins-l;
-		padding-right: $grid-margins-l;
-	}
-
-	@include breakpoint(m) {
-		padding-left: 0;
-		padding-right: 0;
-	}
+.col-margins {
+	@include col-margins;
 }
 
 /* Centered elements */
@@ -204,19 +150,11 @@
 
 /* Padding top and padding bottom for blocks */
 .has-padding-top {
-	padding-top: $spacing-mobile-10;
-
-	@include breakpoint(m) {
-		padding-top: $spacing-desktop-10;
-	}
+	@include s-r-14 (padding-top);
 }
 
 .has-padding-bottom {
-	padding-bottom: $spacing-mobile-10;
-
-	@include breakpoint(m) {
-		padding-bottom: $spacing-desktop-10;
-	}
+	@include s-r-14 (padding-bottom);
 }
 
 /* Pages with 12 column max-width */
@@ -228,28 +166,28 @@
 .single-post .site-content {
 	@include push--auto;
 
-	@include breakpoint(xxl) {
+	@include breakpoint(xl) {
 		max-width: $col12;
 	}
 }
 
-/* Default Content width (680px on desktop screens) */
+/* Default content width */
 .entry-content>*,
-.single .entry-header>*,
-.page-template-default .entry-header,
-.error404 .entry-header,
-.single .entry-footer,
-.single .comments-area,
-.single-page .comments-area {
+.single .entry-tags,
+.comment-list,
+.comment-respond,
+.authorbox__details,
+.author-pic-link,
+.default-content-width {
 	@include push--auto;
-	max-width: $col6-no-margin;
+	max-width: $default-content-width;
 }
 
-/* Full width page template (1200px on desktop screens) */
+/* Full width page template */
 .tpl-fullwidth .entry-content>*,
 .tpl-fullwidth .entry-header {
 	@include push--auto;
-	max-width: $col12-no-margin;
+	max-width: $wide-content-width;
 }
 
 /* Fullscreen and hero page template */
@@ -263,41 +201,40 @@
 
 /* Alignwide and fullwidth Content widths */
 .entry-content>*.alignwide {
-	max-width: $col12-no-margin;
+	max-width: $wide-content-width;
 }
 
 // All containers with 1200px default width.
 .tpl-fullwidth .entry-header,
 .tpl-fullwidth .hentry .entry-content {
-	padding-left: $grid-margins-s;
-	padding-right: $grid-margins-s;
+	padding-left: $s-6;
+	padding-right: $s-6;
 
-	@include breakpoint(s) {
-		padding-left: $grid-margins-l;
-		padding-right: $grid-margins-l;
+	@include breakpoint(sm) {
+		padding-left: $s-9;
+		padding-right: $s-9;
 	}
 
-	@include breakpoint(l) {
-		padding-left: $grid-margins-s;
-		padding-right: $grid-margins-s;
+	@include breakpoint(md) {
+		padding-left: $s-6;
+		padding-right: $s-6;
 	}
 
 	.alignwide {
-		@include breakpoint(m) {
+		@include breakpoint(sm) {
 			padding-left: 0;
 			padding-right: 0;
 		}
 
-		@include breakpoint(l) {
-			padding-left: $grid-margins-s;
-			padding-right: $grid-margins-s;
+		@include breakpoint(md) {
+			padding-left: $s-6;
+			padding-right: $s-6;
 		}
 	}
 }
 
 /* Grid Columns */
-.posts-container,
-.single-post .nav-links {
+.posts-container {
 	@include flexbox;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -311,7 +248,6 @@
 }
 
 /* Blog Post Columns */
-
 /* 1-Column */
 .blog-1-column .posts-container .type-page,
 .blog-1-column .posts-container .type-post,
@@ -333,45 +269,35 @@
 .posts-container .hentry,
 .s6,
 .single-post .related-post,
+.single-post .related-post,
 .single-post .navigation .next,
 .single-post .navigation .prev {
 	width: 100%; // 1-column on mobile
 	flex-grow: 0;
+	@include col-margins;
 
-	@include breakpoint(m) {
-		flex-basis: calc(50% - 3rem);
-		margin-left: $grid-margins-s;
-		margin-right: $grid-margins-s;
+	@include breakpoint(sm) {
+		flex-basis: calc(50% - 2rem);
 	}
-}
 
-.post-navigation .nav-next,
-.post-navigation .nav-previous {
-	width: 100%; // 1-column on mobile
-	flex-grow: 0;
-
-	@include breakpoint(m) {
-		flex-basis: calc(50%);
-		padding-left: $grid-margins-s;
-		padding-right: $grid-margins-s;
+	@include breakpoint(lg) {
+		flex-basis: calc(50% - 3rem);
 	}
 }
 
 /* 3-Columns */
 .blog-3-column .posts-container .hentry,
 .header-infobar .col,
-.s4,
-.single-post .related-post {
+.s4 {
 	width: 100%;
 	flex-grow: 0;
+	@include col-margins;
 
-	@include breakpoint(m) {
-		flex-basis: calc(50% - 3rem);
-		margin-left: $grid-margins-s;
-		margin-right: $grid-margins-s;
+	@include breakpoint(sm) {
+		flex-basis: calc(50% - 2rem);
 	}
 
-	@include breakpoint(l) {
+	@include breakpoint(lg) {
 		flex-basis: calc(33.333% - 3rem);
 	}
 }

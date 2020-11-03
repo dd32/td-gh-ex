@@ -25,14 +25,13 @@ function aino_defaults( $name ) {
 				'text_one_color'           => '#111111',
 				'text_two_color'           => '#222222',
 				'btn_text_color'           => '#ffffff',
-				'footer_bg_color'          => '#f7f7ff',
-				'highlight_color'          => '#1cceb2',
-				'comments_bg_color'        => '#f7f7ff',
+				'footer_bg_color'          => '#ffffff',
+				'footer_border_color'      => '#111111',
 				'blogcards_bg_color'       => '#ffffff',
 				'blogcards_bg_hover_color' => '#ffffff',
 
 				// Styling.
-				'heading_fontweight'       => 'bold',
+				'heading_fontweight'       => 'regular',
 				'button_style'             => 'squared',
 				'form_style'               => 'squared',
 				'featuredimg_style'        => 'radius-none',
@@ -45,11 +44,14 @@ function aino_defaults( $name ) {
 				'footer_light'             => false,
 				'footerwidget_alignment'   => true,
 				'footerinfo_alignment'     => true,
-				'comments_border'          => false,
+				'footer_bordertop'         => true,
+				'footer_borderbottom'      => true,
 				'header_menu_bold'         => false,
 				'header_menu_uppercase'    => false,
 				'buttons_bold'             => false,
 				'buttons_uppercase'        => false,
+				'sticky_light'             => false,
+				'blogcards_padding'        => true,
 
 				// Custom Content.
 				'blog_title'               => '',
@@ -64,7 +66,7 @@ function aino_defaults( $name ) {
 				'aino_displaydate'         => true,
 				'display_comments'         => false,
 				'aino_displayauthor'       => true,
-				'blogcards_authororcats'   => false,
+				'blogcards_author'           => false,
 			)
 		);
 	}

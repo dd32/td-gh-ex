@@ -15,42 +15,18 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area col push-center small-margins">
+<div id="comments" class="comments-area outer-margins">
 
 	<?php
 	if ( have_comments() ) :
 		?>
 
-		<h2 class="comments-title">
-		<?php
-		$aino_comments_number = get_comments_number();
-		if ( '1' === $aino_comments_number ) {
-			/* translators: %s: post title */
-			printf( esc_html_x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'aino' ), esc_html( get_the_title() ) );
-		} else {
-			printf(
-				esc_html(
-					/* translators: 1: number of comments, 2: post title */
-					_nx(
-						'%1$s reply on &ldquo;%2$s&rdquo;',
-						'%1$s replies on &ldquo;%2$s&rdquo;',
-						$aino_comments_number,
-						'comments title',
-						'aino'
-					)
-				),
-				esc_html( number_format_i18n( $aino_comments_number ) ),
-				esc_html( get_the_title() )
-			);
-		}
-		?>
-		</h2><!-- .comments-title -->
-
+		<h2 class="comments-title"><span><?php esc_html_e( 'Join the conversation', 'aino' ); ?></span></h2><!-- .comments-title -->
 		<ol class="comment-list">
 		<?php
 		wp_list_comments(
 			array(
-				'avatar_size' => 56,
+				'avatar_size' => 48,
 				'style'       => 'ol',
 				'short_ping'  => true,
 				'callback'    => 'aino_comment',
