@@ -34,13 +34,14 @@
 </nav>
 
 <div id="popup-search" class="popup-search">
+    <a href="javascript:void(0)" class="searchbar-skip-link"></a>
+    <a href="javascript:void(0)" class="esc-search">
+        <span></span>
+        <span></span>
+    </a>
     <div class="popup-search-wrapper">
         <div class="popup-search-align">
             <?php get_search_form(); ?>
         </div>
     </div>
-    <button type="button" class="esc-search">
-        <span></span>
-        <span></span>
-    </button>
 </div>
