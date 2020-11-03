@@ -16,8 +16,8 @@ add_filter( 'excerpt_mblength', '\Arkhe_Theme\hook_excerpt_length' );
 function hook_excerpt_length( $length ) {
 	if ( is_admin() ) return $length;
 
-	if ( defined( 'ARKHE_EXCERPT_LENGTH' ) ) {
-		return ARKHE_EXCERPT_LENGTH;
+	if ( null !== \Arkhe::$excerpt_length ) {
+		return \Arkhe::$excerpt_length;
 	}
 	return $length;
 }
@@ -69,7 +69,7 @@ function hook_wp_list_categories( $output ) {
 	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
 	$output = preg_replace(
 		'/<\/a>([^<]*)<ul/',
-		'<button class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></button></a><ul',
+		'<button class="c-submenuToggleBtn u-flex--c" data-onclick="toggleSubmenu"></button></a><ul',
 		$output
 	);
 	return $output;
@@ -83,7 +83,7 @@ add_action( 'wp_list_pages', '\Arkhe_Theme\hook_wp_list_pages' );
 function hook_wp_list_pages( $output ) {
 	$output = preg_replace(
 		'/<\/a>([^<]*)<ul/',
-		'<button class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></button></a><ul',
+		'<button class="c-submenuToggleBtn u-flex--c" data-onclick="toggleSubmenu"></button></a><ul',
 		$output
 	);
 	return $output;

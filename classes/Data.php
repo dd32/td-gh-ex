@@ -56,9 +56,21 @@ class Data {
 
 
 	/**
+	 * テンプレートパーツまでのパス（子テーマ > this > 親テーマ）
+	 */
+	public static $ex_parts_path = '';
+
+
+	/**
 	 * パンくずリストのデータを保持する変数
 	 */
 	public static $bread_json_data = array();
+
+
+	/**
+	 * 一時的に抜粋分を変更するために変数化
+	 */
+	public static $excerpt_length = null;
 
 
 	/**
