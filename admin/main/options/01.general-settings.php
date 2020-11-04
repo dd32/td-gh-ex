@@ -299,7 +299,7 @@ $thinkup_general_fixedlayoutswitch = thinkup_var ( 'thinkup_general_fixedlayouts
 	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 
 		echo '<div id="header-nav">',
-		     '<a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">',
+		     '<a class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse" tabindex="0">',
 		     '<span class="icon-bar"></span>',
 		     '<span class="icon-bar"></span>',
 		     '<span class="icon-bar"></span>',
@@ -357,7 +357,7 @@ add_action( 'body_class', 'thinkup_input_responsiveclass');
 
 
 /* ----------------------------------------------------------------------------------
-	BACK UP OPTIONS TO PAGE "THINKUP CREATED CONTENT BACKUP"
+	BACK UP OPTIONS TO PAGE "RENDEN CREATED CONTENT BACKUP"
 ---------------------------------------------------------------------------------- */
 
 function thinkup_backup_options() {
@@ -401,22 +401,22 @@ global $wp_customize;
 		// Create content for start of backup page
 		$output_header   = '';
 		$output_header  .= '<-----------------------------------------------------------' . "\n";
-		$output_header  .= esc_html__( 'ThinkUp Created Content Backup', 'renden' ) . "\n";
-		$output_header  .= esc_html__( 'This page contains a backup of content created by the ThinkUp WordPress Theme. ', 'renden' );
+		$output_header  .= esc_html__( 'Renden Created Content Backup', 'renden' ) . "\n";
+		$output_header  .= esc_html__( 'This page contains a backup of content created by the Renden WordPress Theme. ', 'renden' );
 		$output_header  .= esc_html__( 'The purpose for the backup is to prevent content loss on theme switch.', 'renden' );
 		$output_header  .= esc_html__( 'When a user switches themes this content will still be available to the user when setting up their site on the new theme.', 'renden' ) . "\n";
 		$output_header  .= esc_html__( 'Please note the following : ', 'renden' ) . "\n";
 		$output_header  .= ' * ' . esc_html__( 'Leave this page as private, available only to users with admin privledges.', 'renden' ) . "\n";
-		$output_header  .= ' * ' . esc_html__( 'You can delete this page any time and regenerate it from within the ThinkUp options menu, General section.', 'renden' ) . "\n";
+		$output_header  .= ' * ' . esc_html__( 'You can delete this page any time and regenerate it from within the Renden options menu, General section.', 'renden' ) . "\n";
 		$output_header  .= '----------------------------------------------------------->' . "\n";
 		$output_header  .= "\n" . "\n";
 
 		// Backup page setup.
-		$postarray['post_title']     = 'ThinkUp Created Content Backup'; // translate ok.
+		$postarray['post_title']     = 'Renden Created Content Backup'; // translate ok.
 		$postarray['post_type']      = 'page';
 		$postarray['post_status']    = 'private';
 		$postarray['comment_status'] = 'closed';
-		$page                        = get_page_by_title( 'ThinkUp Created Content Backup' );
+		$page                        = get_page_by_title( 'Renden Created Content Backup' );
 		if ( isset( $page ) && '' !== $page->ID ) {
 			$postarray['ID']           = $page->ID;
 			$postarray['post_content'] = $output_header . $output_content;

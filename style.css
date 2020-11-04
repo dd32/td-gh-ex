@@ -1,7 +1,7 @@
 /*
 Theme Name: Renden
 Text Domain: renden
-Version: 1.5.6
+Version: 1.5.7
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
@@ -158,6 +158,7 @@ a img {
 	clear: both;
 	display: block;
 }
+
 /* Accessibility - Text meant only for screen readers. */
 .screen-reader-text {
 	position: absolute !important;
@@ -201,6 +202,7 @@ a img {
 	clip: auto !important;
 	clip-path: none;
 }
+
 
 /* ---------------------------------------------------------------------------------------
 	02. GLOBAL
@@ -801,9 +803,8 @@ li.pag-next {
 
 /* Site-header */
 #site-header {
-	line-header: 1.5;
 	position: relative;
-	z-index: 99999;
+	z-index: 9999;
 }
 
 /* Pre-header */
@@ -815,6 +816,10 @@ li.pag-next {
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
+}
+#pre-header:hover,
+#pre-header:focus-within {
+	z-index: 99991;
 }
 #pre-header li {
 	float: left;
@@ -989,12 +994,17 @@ li.pag-next {
 	background: #FFF;
 	border-bottom: 1px solid #E3E3E3;
 	padding: 0;
-	z-index: 99999;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
+}
+#header {
+	z-index: 9999;
+}
+#header-sticky {
+	z-index: 99999;
 }
 #header-core,
 #header-sticky-core {
@@ -1126,8 +1136,11 @@ li.pag-next {
 .main-navigation ul ul :hover > a {
 }
 #pre-header .main-navigation ul li:hover > ul,
+#pre-header .main-navigation ul li:focus-within > ul,
 #header .main-navigation ul li:hover > ul,
-#header-sticky .main-navigation ul li:hover > ul {
+#header .main-navigation ul li:focus-within > ul,
+#header-sticky .main-navigation ul li:hover > ul,
+#header-sticky .main-navigation ul li:focus-within > ul {
 	display: block;
 }
 

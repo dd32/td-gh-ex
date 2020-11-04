@@ -303,7 +303,7 @@ function thinkup_toolbox_setup() {
 			'first' => array (
 				'title'        => esc_html__( 'Free Support', 'renden' ),
 				'icon'         => 'dashicons dashicons-sos',
-				'text'         => esc_html__( 'Get free support from the amazing volunteers over at the wordpress forums. This support is provided by volunteers not Think Up Themes staff.', 'renden' ),
+				'text'         => esc_html__( 'Get free support from the amazing volunteers over at the WordPress forums. This support is provided by volunteers not Think Up Themes staff.', 'renden' ),
 				'button_label' => esc_html__( 'Contact Free Support', 'renden' ),
 				'button_link'  => esc_url( 'https://wordpress.org/support/theme/' . $theme_slug . '/' ),
 				'is_button'    => false,
