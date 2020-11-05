@@ -3,14 +3,14 @@ Theme Name: Advance IT Company
 Theme URI: https://www.themeshopy.com/themes/free-it-company-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. Demo: https://www.themeshopy.com/advance-it-company-pro/
-Tested up to: 5.5.1
+Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. Demo: https://www.themeshopy.com/advance-it-company-pro/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.5.4
+Version: 0.5.5
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-it-company
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance IT Company WordPress Theme has been created by Themeshopy, 2019.
 Advance IT Company WordPress Theme is released under the terms of GNU GPL
@@ -32,6 +32,7 @@ body{
 	background-color:#fff;
 	color: #666;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 img{
 	margin:0;
@@ -74,13 +75,13 @@ a:focus,
 a:hover{
 	text-decoration:none !important;
 }
-input:focus, a:focus, button:focus, textarea:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
+input:focus, a:focus, button:focus, .toggle-menu.responsive-menu a:focus, textarea:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
 }
-.primary-navigation ul ul a:focus,
+#footer a:focus, .main-navigation .sub-menu > li > a:focus, .logo a:focus, .primary-navigation ul ul a:focus,
 #footer input[type="search"]:focus{
-  outline: 1px dotted #fff;
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #fff;
 }
 ul{
@@ -143,7 +144,6 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -157,35 +157,40 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
 	margin:0;
@@ -269,7 +274,6 @@ input[type="submit"] {
 	font-weight:bold;
 	color:#000;
 }
-
 /* ---------Buttons--------- */
 .read-moresec a {
   border: 2px solid ;
@@ -342,7 +346,6 @@ input[type="submit"] {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -426,16 +429,11 @@ input[type="submit"] {
   box-shadow: 2px 2px 10px 0px #2d2d2d;
   z-index: 999999;
 }
-
 /* ---------Logo Middle Header--------- */
 .logo {
   bottom: 0px; 
   padding: 20px 0px;
   background: #272b46;
-}
-.logo a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
 }
 .logo h1{
   text-transform: uppercase;
@@ -511,12 +509,7 @@ i.fab.fa-linkedin-in {
   font-size: 12px;
   font-weight: 600;
 }
-/* --------- Main Menu--------- */
-.main-navigation .sub-menu > li > a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
-/* --------- MENUS CSS --------- */
+/* --------- Main Menu css--------- */
 #menu-sidebar {
   text-align: center;
 }
@@ -1120,10 +1113,6 @@ table#wp-calendar #next a{
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-div#footer a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-} 
 #sidebar td,
 #sidebar td#prev a,
 #sidebar th {
@@ -1727,7 +1716,6 @@ a.shipping-calculator-button, nav.woocommerce-MyAccount-navigation ul li a,tr.wo
 img.rss-widget-icon {
   width: auto !important;
 }
-
 /* Page */
 .entry-title,
 h1.page-title {
@@ -1844,7 +1832,6 @@ h1.page-title {
 iframe {
   width: 100%;
 }
-
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
   #sidebar th,
@@ -1897,8 +1884,7 @@ iframe {
   }
 }
 @media screen and (max-width:720px) {	
-	#header,
-  #slider .inner_carousel,.social-icons,.search-box{
+	#header, #slider .inner_carousel,.social-icons,.search-box{
 		text-align: center;
 	}
   .main-menu{
@@ -1983,6 +1969,10 @@ iframe {
 	}
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
+  .entry-content .alignwide {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
@@ -2030,6 +2020,10 @@ iframe {
   #slider img{
     height: auto !important;
   }
+  .entry-content .alignwide {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
   #header{
@@ -2053,13 +2047,17 @@ iframe {
     text-align: center;
     padding-right: 15px;
   }
+  .entry-content .alignwide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
   .menubar .primary-navigation ul li a:focus,
   a.closebtn.responsive-menu:focus, .primary-navigation a:focus, .toggle-menu button:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
+    outline: 2px solid #FF4500 !important;
+    border-bottom: 1px solid #fff !important;
   }
   .toggle-menu {
     display: block;
@@ -2154,10 +2152,6 @@ iframe {
   .primary-navigation .current-menu-item > a,
   .primary-navigation .current_page_ancestor > a{
     background:unset;
-  }
-  .toggle-menu.responsive-menu a:focus{
-    outline: 1px dotted #000 !important;
-    border-bottom: 1px solid #000 !important;
   }
   .page-template-custom-front-page #header, .page-template-custom-front-page .logo, .page-template-custom-front-page .search-box{
     display: block;
