@@ -13,8 +13,10 @@ function advance_ecommerce_store_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'advance_ecommerce_store_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1300,
+		'height'                 => 95,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'advance_ecommerce_store_header_style',
 	) ) );
 }
@@ -32,7 +34,7 @@ function advance_ecommerce_store_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
 	$advance_ecommerce_store_custom_css = "
-        #header{
+        .middle-header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center;
 		}";

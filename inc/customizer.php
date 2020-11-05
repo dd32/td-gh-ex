@@ -432,7 +432,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-ecommerce-store'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_background_skin_mode',array(
@@ -669,7 +669,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
 	$wp_customize->add_setting('advance_ecommerce_store_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-ecommerce-store'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_ecommerce_store_layout_options',array(
@@ -687,7 +687,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-ecommerce-store'),
+		'default'           => 'One Column', 
 		'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_ecommerce_store_single_page_sidebar_layout',array(
@@ -702,7 +702,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-ecommerce-store'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_ecommerce_store_single_post_sidebar_layout',array(
@@ -717,7 +717,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_theme_options',array(
-        'default' => __('Default','advance-ecommerce-store'),
+        'default' => 'Default',
 	    'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_theme_options',array(
@@ -838,7 +838,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_ecommerce_store_slider_content_alignment',array(
-    'default' => __('Left','advance-ecommerce-store'),
+    'default' => 'Left',
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_slider_content_alignment',array(
@@ -1134,7 +1134,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-ecommerce-store'),
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_blog_post_description_option',array(
@@ -1200,7 +1200,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_ecommerce_store_display_blog_page_post',array(
-        'default' => __('In Box','advance-ecommerce-store'),
+        'default' => 'In Box',
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_display_blog_page_post',array(
@@ -1312,7 +1312,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_copyright_content_align',array(
-        'default' => __('center','advance-ecommerce-store'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_copyright_content_align',array(
@@ -1367,7 +1367,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_scroll_setting',array(
-        'default' => __('Right','advance-ecommerce-store'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_scroll_setting',array(
@@ -1474,7 +1474,7 @@ final class Advance_Ecommerce_Store_Customize {
 		$manager->add_section(
 			new Advance_Ecommerce_Store_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_ecommerce_store_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Ecommerce Pro', 'advance-ecommerce-store'),
