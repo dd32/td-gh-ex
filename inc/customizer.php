@@ -431,7 +431,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 
   	$wp_customize->add_setting('advance_startup_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-startup'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_background_skin_mode',array(
@@ -671,7 +671,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_startup_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-startup'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_startup_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_startup_layout_options',array(
@@ -687,7 +687,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_startup_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-startup'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'advance_startup_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_startup_single_page_sidebar_layout',array(
@@ -702,7 +702,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_startup_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-startup'),
+		'default'           => 'Right Sidebar',
 		'sanitize_callback' => 'advance_startup_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_startup_single_post_sidebar_layout',array(
@@ -717,7 +717,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 	
 	$wp_customize->add_setting('advance_startup_theme_options',array(
-        'default' => __('Default','advance-startup'),
+        'default' => 'Default',
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_theme_options',array(
@@ -982,7 +982,7 @@ function advance_startup_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_startup_slider_content_alignment',array(
-    	'default' => __('Center','advance-startup'),
+    	'default' => 'Center',
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_slider_content_alignment',array(
@@ -1262,7 +1262,7 @@ function advance_startup_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_startup_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-startup'), 
+    	'default'   => 'Excerpt Content', 
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_blog_post_description_option',array(
@@ -1328,7 +1328,7 @@ function advance_startup_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_startup_display_blog_page_post',array(
-        'default' => __('Without Box','advance-startup'),
+        'default' => 'Without Box',
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_display_blog_page_post',array(
@@ -1440,7 +1440,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_startup_copyright_content_align',array(
-        'default' => __('center','advance-startup'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_copyright_content_align',array(
@@ -1495,7 +1495,7 @@ function advance_startup_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_startup_scroll_setting',array(
-        'default' => __('Right','advance-startup'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_startup_scroll_setting',array(
@@ -1602,7 +1602,7 @@ final class Advance_Startup_Customize {
 		$manager->add_section(
 			new Advance_Startup_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_startup_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Startup Pro Theme', 'advance-startup'),

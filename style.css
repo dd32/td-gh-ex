@@ -3,14 +3,14 @@ Theme Name: Advance Startup
 Theme URI: https://www.themeshopy.com/themes/free-startup-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization,  online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options and Full width template all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. Demo: https://www.themeshopy.com/advance-startup-pro/
-Tested up to: 5.5.1
+Description: Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, company's business blog ,online agencies and firms, portfolios, ecommerce (WooCommerce), IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization,  online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options and Full width template all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. Demo: https://www.themeshopy.com/advance-startup-pro/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.4.6
+Version: 0.4.7
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-startup
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance Startup WordPress Theme has been created by Themeshopy, 2019.
 Advance Startup WordPress Theme is released under the terms of GNU GPL
@@ -32,6 +32,7 @@ body{
   background-color:#fff;
   color: #666;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 img{
   margin:0;
@@ -71,12 +72,12 @@ a:focus,
 a:hover{
   text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus, button:focus,.woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
+a:focus, input:focus, textarea:focus, .toggle-menu.responsive-menu a:focus, button:focus,.woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+  outline: 2px solid #df2b23;
   border-bottom: 1px solid #000;
 }
-.top-header a:focus, .logo a:focus, .talk-btn a:focus, .primary-navigation ul ul a:focus{
-  outline: 1px dotted #fff;
+.top-header a:focus, .logo a:focus, .main-navigation .sub-menu > li > a:focus, #footer a:focus, .talk-btn a:focus, .primary-navigation ul ul a:focus{
+  outline: 2px solid #df2b23;
   border-bottom: 1px solid #fff;
 }
 ul{
@@ -135,7 +136,6 @@ input[type='submit']:hover{
   top:-9999em;
   left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -149,35 +149,40 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
   margin:0;
@@ -268,7 +273,7 @@ input[type="submit"] {
   color:#fff;
 }
 .innerlightbox {
-    padding: 2% 0 0;
+  padding: 2% 0 0;
 }
 /* ---------Buttons--------- */
 .read-moresec a {
@@ -328,7 +333,6 @@ input[type="submit"] {
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -370,7 +374,6 @@ input[type="submit"] {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -445,7 +448,6 @@ input[type="submit"] {
   -webkit-transition: all 0.3s 1s ease-out;
   transition: all 0.3s 1s ease-out;
 }
-
 /*----------Sticky Header------*/
 .fixed-header {
   position: fixed;
@@ -455,7 +457,6 @@ input[type="submit"] {
   box-shadow: 2px 2px 10px 0px #2d2d2d;
   z-index: 999999;
 }
-
 .page-template-custom-front-page .fixed-header .main-menu {
   position: fixed;
   margin: 0;
@@ -464,7 +465,6 @@ input[type="submit"] {
   background: #fff;
   box-shadow: 2px 2px 10px 0px #2d2d2d;
 }
-
 /* ---------HEADER--------- */
 .page-template-custom-front-page #header-top{
   position: absolute;
@@ -556,10 +556,6 @@ input[type="submit"] {
 .page-template-custom-front-page .header-nav #header .search-box i{
   color: #000;
 }
-.main-navigation .sub-menu > li > a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 /* --------- MENUS CSS --------- */
 #menu-sidebar {
   text-align: center;
@@ -643,7 +639,6 @@ ul.list_nav {
   border-top: 6px solid #df2b23 ;
 }
 /*--------------- SUPERFISH MENU ---------------------------*/
-
 .sf-arrows .sf-with-ul:after{
   content: '\f067';
   position: absolute;
@@ -1232,10 +1227,6 @@ table#wp-calendar {
   color: #fff;
   margin-top: -38px;
 }
-#footer a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 .copyright p {
   font-size: 15px;
   color: #fff;
@@ -1677,7 +1668,6 @@ form.woocommerce-form.woocommerce-form-login.login{
 }
 #sidebar ul li a{
   border-radius: 2px;
-  /*display: inline-block;*/
   padding: 5px 0;
   color: #262626;
 }
@@ -1954,6 +1944,10 @@ iframe, .entry-audio audio{
   } 
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
+  .entry-content .alignwide {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
   #footer input[type="submit"]{
     margin-top: 5px;
   }
@@ -1993,6 +1987,10 @@ iframe, .entry-audio audio{
   }
 }
 @media screen and (max-width: 425px){
+  .entry-content .alignwide {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
   #footer input[type="search"]{
     width: 100%;
   }
@@ -2012,6 +2010,10 @@ iframe, .entry-audio audio{
   }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
+  .entry-content .alignwide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
   .page-template-custom-front-page .main-menu{
     position: static;
     margin: 0;
@@ -2040,15 +2042,14 @@ iframe, .entry-audio audio{
   }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
-
 @media screen and (max-width: 1000px){
   .primary-navigation ul ul a:hover{
     color: #df2b23 !important;
   }
   .menubar .primary-navigation ul li a:focus,
-  a.closebtn.responsive-menu:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
+  a.closebtn.responsive-menu:focus, #menu-sidebar a:focus, #menu-sidebar input[type="submit"]:focus{
+    outline: 2px solid #fff !important;
+    border-bottom: 1px solid #fff !important;
   }
   .toggle-menu {
     display: block;
@@ -2129,10 +2130,6 @@ iframe, .entry-audio audio{
   .main-header-box{
     padding-bottom: 15px;
   }
-  #menu-sidebar a:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
-  }
   .primary-navigation ul{
     display: grid;
   }
@@ -2146,10 +2143,6 @@ iframe, .entry-audio audio{
   .primary-navigation .current_page_ancestor > a,
   .primary-navigation ul ul{
     background:unset;
-  }
-  .toggle-menu.responsive-menu a:focus{
-    outline: 1px dotted #000 !important;
-    border-bottom: 1px solid #000 !important;
   }
   .page-template-custom-front-page #header , .primary-navigation ul ul li{
     display: block;

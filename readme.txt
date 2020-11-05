@@ -1,18 +1,18 @@
 === Advance Startup WordPress Theme ===
 Contributors: Themeshopy
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 0.4.6
+Stable tag: 0.4.7
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization,  online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope.
+Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, company's business blog ,online agencies and firms, portfolios, ecommerce (WooCommerce), IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization,  online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope.
 
 == Description ==
 
-Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization,  online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options and Full width template all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. 
+Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, company's business blog ,online agencies and firms, portfolios, ecommerce (WooCommerce), IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization,  online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options and Full width template all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. 
 
 == Changelog ==
 
@@ -142,6 +142,12 @@ Advance Startup is a resourceful, feature-rich, stylish and versatile startup Wo
 * Added display Pagination in Blog Page option.
 * Added wide-blocks css.
 * Updated POT file.
+
+= 0.4.7 =
+* Added flexible-header tag.
+* Changed escaped in ts-color-pallete.php.
+* Done with prefix if required.
+* Resolved translatable errors from customizer.php.
 
 == Resources ==
 
