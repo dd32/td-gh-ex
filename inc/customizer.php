@@ -432,7 +432,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_background_skin_mode',array(
-        'default' => __('Transpert Background','advance-education'),
+        'default' => 'Transpert Background',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_background_skin_mode',array(
@@ -661,7 +661,7 @@ function advance_education_customize_register($wp_customize) {
 	
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_education_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-education'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_education_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_education_layout_options',array(
@@ -677,7 +677,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-education'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'advance_education_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_education_single_page_sidebar_layout',array(
@@ -692,7 +692,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-education'),
+		'default'           => 'Right Sidebar',
 		'sanitize_callback' => 'advance_education_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_education_single_post_sidebar_layout',array(
@@ -707,7 +707,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_theme_options',array(
-        'default' => __('Default','advance-education'),
+        'default' => 'Default',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_theme_options',array(
@@ -888,7 +888,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_education_slider_content_alignment',array(
-    'default' => __('Left','advance-education'),
+    'default' => 'Left',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_slider_content_alignment',array(
@@ -1168,7 +1168,7 @@ function advance_education_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_education_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-education'),
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_blog_post_description_option',array(
@@ -1234,7 +1234,7 @@ function advance_education_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_education_display_blog_page_post',array(
-        'default' => __('In Box','advance-education'),
+        'default' => 'In Box',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_display_blog_page_post',array(
@@ -1346,7 +1346,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_copyright_content_align',array(
-        'default' => __('center','advance-education'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_copyright_content_align',array(
@@ -1401,7 +1401,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_scroll_setting',array(
-        'default' => __('Right','advance-education'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_education_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_education_scroll_setting',array(
@@ -1507,7 +1507,7 @@ final class Advance_Education_Customize {
 		$manager->add_section(
 			new Advance_Education_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_education_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Education Pro Theme', 'advance-education'),

@@ -13,8 +13,10 @@ function advance_education_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'advance_education_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1300,
+		'height'                 => 220,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'advance_education_header_style',
 	) ) );
 }
