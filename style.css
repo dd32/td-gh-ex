@@ -4,7 +4,7 @@ Theme URI: https://themonic.com/iconic-one/
 Author: Themonic
 Author URI: https://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 2.1.7
+Version: 2.1.8
 Requires at least: 4.7
 Requires PHP: 5.2.4
 Tested up to: 5.4.2
@@ -240,10 +240,9 @@ textarea {
 	overflow: auto;
 	vertical-align: top;
 }
-
 #searchsubmit {
     background: #00A1E0;
-    border: 0;
+    border: 1px solid #00A1E0;
     color: #FFFFFF;
     min-width: 24%;
 }
@@ -622,8 +621,8 @@ section[role="banner"] {
 	color: #4F5254;
 }
 .widget-area #s {
-	margin-right: -4px;
-	width: 67.9999%; /* define a width to avoid dropping a wider submit button */
+	margin-right: -5px;
+	width: 69%; /* define a width to avoid dropping a wider submit button */
 }
 
 /* Footer box-shadow: 4px 1px 10px 1px #F1F1F1;*/
@@ -1450,6 +1449,9 @@ span.wp-calendar-nav-prev {
 }
 #wp-calendar thead {
     background: #f7f7f7;
+}
+select#cat {
+    max-width: 100%;
 }
 /* new responsive selectnav.js css */
 	.selectnav { display: none; }

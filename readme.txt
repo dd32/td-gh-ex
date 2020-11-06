@@ -23,6 +23,12 @@ Live demo: https://demo.themonic.com/io/
 
 == Changelog ==
 
+
+= 2.1.8=
+* Released: November 6, 2020
+* Updated screenshot
+* Search button height fix
+
 = 2.1.7=
 * Released: June 29, 2020
 * Backward compatibility for wp_body_open function
