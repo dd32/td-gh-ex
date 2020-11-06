@@ -4,7 +4,7 @@ Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.3.2
+Stable tag: 3.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,10 @@ You can check our Theme Demo at https://catchthemes.com/demo/adventurous/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.3.3 (Released: November 06, 2020) =
+* Bug Fixed: Footer Content issue
+* Bug Fixed: JS depreciated issue on slider custom script
 
 = 3.3.2 (Released: August 07, 2020) =
 * Updated: All images
