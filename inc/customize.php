@@ -6,13 +6,13 @@ function writingboard_customize_register($wp_customize){
     $wp_customize->add_section('writingboard_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('Writing Board OPTIONS', 'writing-board'),
+		'title'    		=> esc_html__('Writing Board OPTIONS', 'writing-board'),
         'description'   => '<div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/writing-board" target="_blank"><strong>Review Here</strong></a></span><br /><br /><span class="donation"> Need More Features and Options including Unlimited Slides and 100+ Advanced Features and Controls? Try <a href="https://d5creation.com/theme/writing-board/" target="_blank"><strong>Writing Board Extend</strong></a></span><br /> <br /><span class="donation"> You can Visit the Writing Board Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Writing%20Board" target="_blank"><strong>Here</strong></a></span></div>'
     ));
 	
 // Portfolio Heading
     $wp_customize->add_setting('writingboard[heading_text]', array(
-        'default'        	=> __('WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time','writing-board'),
+        'default'        	=> esc_html__('WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time','writing-board'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -20,7 +20,7 @@ function writingboard_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('writingboard_heading_text' , array(
-        'label'      => __('Front Page Heading', 'writing-board'),
+        'label'      => esc_html__('Front Page Heading', 'writing-board'),
         'section'    => 'writingboard_options',
         'settings'   => 'writingboard[heading_text]'
     ));
@@ -37,10 +37,10 @@ function writingboard_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('writingboard_sl' . $numslinksn, array(
-        'label'      => __('Social Link - ',  'writing-board'). $numslinksn,
+        'label'      => esc_html__('Social Link - ',  'writing-board'). $numslinksn,
         'section'    => 'writingboard_options',
         'settings'   => 'writingboard[sl' . $numslinksn .']',
-		'description' => __('Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/d5creation</b>', 'writing-board'),
+		'description' => wp_kses_post(__('Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/d5creation</b>', 'writing-board')),
     ));	
 	}
 

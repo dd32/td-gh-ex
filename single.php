@@ -1,7 +1,7 @@
 <?php
 
 /* 	Writing Board's Single Page to display Single Page or Post
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
@@ -19,15 +19,15 @@ get_header(); ?><div id="container">
             
             <div class="clear"> </div>
             <div class="up-bottom-border">
-            <p class="postmetadata"><?php _e('Posted in', 'writing-board'); ?> <?php the_category(', ') ?> | <?php edit_post_link(__('Edit', 'writing-board'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'writing-board'), __('1 Comment &#187;', 'writing-board'), __('% Comments &#187;'.'writing-board')); ?> <?php the_tags(__('<br />Tags: ','writing-board'), ', ', '<br />'); ?></p>
+            <p class="postmetadata"><?php esc_html_e('Posted in', 'writing-board'); ?> <?php the_category(', ') ?> | <?php edit_post_link(esc_html__('Edit', 'writing-board'), '', ' | '); ?>  <?php comments_popup_link(wp_kses_post(__('No Comments &#187;', 'writing-board')), wp_kses_post(__('1 Comment &#187;', 'writing-board')), wp_kses_post(__('% Comments &#187;'.'writing-board'))); ?> <?php the_tags(wp_kses_post(__('<br />Tags: ','writing-board')), ', ', '<br />'); ?></p>
             <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . 'Pages:' . '</span>', 'after' => '</div>' ) ); ?>
             <div class="content-ver-sep"> </div>
             <div id="page-nav">
             <div class="floatleft"><?php previous_post_link('&laquo; %link'); ?></div>
 			<div class="floatright"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
             <?php if ( is_attachment() ): ?>
-            <div class="floatleft"><?php previous_image_link( false, __('&laquo; Previous Image','writing-board') ); ?></div>
-			<div class="floatright"><?php next_image_link( false, __('Next Image &raquo;','writing-board') ); ?></div> 
+            <div class="floatleft"><?php previous_image_link( false, wp_kses_post(__('&laquo; Previous Image','writing-board')) ); ?></div>
+			<div class="floatright"><?php next_image_link( false, wp_kses_post(__('Next Image &raquo;','writing-board') )); ?></div> 
             <?php endif; ?>
           	</div>
             </div></div>

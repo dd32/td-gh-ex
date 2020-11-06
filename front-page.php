@@ -1,7 +1,7 @@
 <?php
 /*
 	Writing Board's Front Page to Display the Home Page if Selected
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
@@ -69,8 +69,8 @@ get_header(); ?>
  
  	<?php endwhile; ?>
         <div id="page-nav">
-			<div class="alignleft"><?php previous_posts_link('<span class="fa-arrow-left"></span> '.__('NEWER ENTRIES', 'writing-board') ) ?></div>
-			<div class="alignright"><?php next_posts_link(__('OLDER ENTRIES', 'writing-board').' <span class="fa-arrow-right"></span>') ?></div>
+			<div class="alignleft"><?php previous_posts_link('<span class="fa-arrow-left"></span> '.esc_html__('NEWER ENTRIES', 'writing-board') ) ?></div>
+			<div class="alignright"><?php next_posts_link(esc_html__('OLDER ENTRIES', 'writing-board').' <span class="fa-arrow-right"></span>') ?></div>
 		</div>
 <?php endif; ?>
 

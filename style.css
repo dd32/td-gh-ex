@@ -9,7 +9,7 @@ Description: Writing Board is perfect for Personal or Corporate Blogs, Tutorial 
 
 You can also find the Theme Live at http://demo.d5creation.com/themes/?theme=Writing Board
 
-Version: 1.9.1
+Version: 2.1
 
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
 
@@ -21,6 +21,10 @@ Writing Board is distributed under the terms of the GNU GPL
 
 
 Text Domain: writing-board
+
+Requires at least: 4.7
+Requires PHP: 5.6
+Tested up to: 5.5.3
 
 */
 
@@ -496,6 +500,7 @@ caption {
 }
 
 .m-menu li:hover > a,
+.m-menu li:focus > a,
 .m-menu .current-menu-item  > a,
 .m-menu .current-menu-parent > a,
 .m-menu .current-menu-ancestor ul > a,
@@ -536,6 +541,7 @@ caption {
 }
 
 .m-menu ul li:hover > a,
+.m-menu ul li:focus > a,
 .m-menu ul .current-menu-item  > a,
 .m-menu ul .current-menu-parent > a,
 .m-menu ul .current-menu-ancestor ul > a,
@@ -549,11 +555,11 @@ caption {
 	border-bottom: 1px solid #25b3fd;
 }
 
-*html .m-menu li a:hover /* IE6 */ {
+html .m-menu li a:hover, html .m-menu li a:focus /* IE6 */ {
 	color: #fafafa;
 }
 
-.m-menu li:hover > ul {
+.m-menu li:hover > ul, .m-menu li:focus > ul {
 	display: block;
 	visibility:visible;
 	opacity: 1;
@@ -561,7 +567,7 @@ caption {
 
 }
 
-.m-menu ul li:hover > ul {
+.m-menu ul li:hover > ul, .m-menu ul li:focus > ul {
 	display: block;
 	visibility:visible;
 	opacity: 1;
@@ -602,7 +608,6 @@ caption {
     padding: 10px;
 	margin: 0;
 	border: none;
-	height: 10px;
 	width: 200px;
 	height: auto;
     line-height: 1.2;
@@ -618,7 +623,7 @@ caption {
 	border-bottom: 1px solid #25b3fd; 
 }
 
-*html .m-menu ul a /* IE6 */ {    
+html .m-menu ul a /* IE6 */ {    
 	height: 10px;
 }
 
@@ -659,11 +664,11 @@ caption {
     border-right: 8px solid #0398e5;
 }
 
-.m-menu ul li:first-child a:hover:after {
+.m-menu ul li:first-child a:hover:after, .m-menu ul li:first-child a:focus:after {
     border-bottom-color: #045a86; 
 }
 
-.m-menu ul ul li:first-child a:hover:after {
+.m-menu ul ul li:first-child a:hover:after, .m-menu ul ul li:first-child a:focus:after {
     border-right-color: #045a86; 
     border-bottom-color: transparent; 	
 }
@@ -846,6 +851,7 @@ a {
 a:hover {
 	text-decoration:underline;
 }
+a:focus{ outline: 1px dotted; text-decoration:underline;}
 
 b, strong {
 	font-weight: bold;

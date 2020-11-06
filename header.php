@@ -1,7 +1,7 @@
 <?php
 
 /* 	Writing Board's Header
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
@@ -11,9 +11,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -22,7 +19,9 @@
 </head>
 
 <body <?php body_class(); ?> >
-  	  <div id="top-menu-container" class="hfback" >
+ 	 <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to Content', 'writing-board' ); ?></a>
+  	<div id="top-menu-container" class="hfback" >
       <!-- Site Titele and Description Goes Here -->
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
@@ -31,11 +30,3 @@
 	<div id="main-menu">
 	<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'm-menu', 'fallback_cb' => 'writingboard_page_menu'  )); ?>  
     </div></div><div class="clear"></div>
- 	
-    
-      
-          
-      
-	  
-	 
-	  

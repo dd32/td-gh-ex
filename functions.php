@@ -1,6 +1,6 @@
 <?php
 /* 	Writing Board's Functions
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
@@ -22,7 +22,7 @@
 	if ( ! isset( $content_width ) ) $content_width = 584;
 	
 	add_theme_support( 'automatic-feed-links' );
-  	register_nav_menus( array( 'main-menu' => __( 'Main Menu', 'writing-board' ), 'footer-menu' => __( 'Footer Menu', 'writing-board' ) ) );
+  	register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'writing-board' ), 'footer-menu' => esc_html__( 'Footer Menu', 'writing-board' ) ) );
 	
 	add_editor_style('editor-style.css');
 	add_theme_support( "title-tag" );
@@ -73,6 +73,8 @@
 	wp_register_style('writingboard-gfonts', '//fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic', false );
 	wp_enqueue_style('writingboard-gfonts');
 	wp_enqueue_style('writingboard-font-css', get_template_directory_uri(). '/css/font-awesome.css' );
+	wp_enqueue_script( 'writingboard-html5', get_template_directory_uri().'/js/html5.js'); 
+    wp_script_add_data( 'writingboard-html5', 'conditional', 'lt IE 9' );
 	
     if (is_front_page()):
 	wp_enqueue_script( 'writingboard-flex-js', get_template_directory_uri(). '/js/jquery.flexslider-min.js', array( 'jquery' ) );
@@ -93,7 +95,7 @@ function writingboard_page_menu() {
 	echo '<ul class="m-menu">'; wp_list_pages(array('sort_column'  => 'menu_order, post_title', 'title_li'  => '' )); echo '</ul>';
 }
 function writingboard_creditline() {
-echo writingboard_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' )) .' <span class="credit">| Writing Board Theme by: <a href="'. esc_url('https://d5creation.com') .'" target="_blank"><img  src="' .  get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
+echo writingboard_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' )) .' <span class="credit">| Writing Board Theme by: <a href="'. esc_url('https://d5creation.com') .'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => 2 ); }
 
 // 	Functions for adding some custom code within the head tag of site
@@ -150,7 +152,7 @@ function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky
 	function writingboard_widgets_init() {
 	
 	register_sidebar( array(
-		'name' => __('Front Page Sidebar','writing-board'),
+		'name' => esc_html__('Front Page Sidebar','writing-board'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -160,7 +162,7 @@ function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky
 	
 	
 	register_sidebar( array(
-		'name' => __('Main Sidebar','writing-board'),
+		'name' => esc_html__('Main Sidebar','writing-board'),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -170,7 +172,7 @@ function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky
 
 	
 	register_sidebar( array(
-		'name' => __('Footer Area One','writing-board'),
+		'name' => esc_html__('Footer Area One','writing-board'),
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -179,7 +181,7 @@ function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Two','writing-board'),
+		'name' => esc_html__('Footer Area Two','writing-board'),
 		'id' => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -188,7 +190,7 @@ function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Three','writing-board'),
+		'name' => esc_html__('Footer Area Three','writing-board'),
 		'id' => 'sidebar-5',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -197,7 +199,7 @@ function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky
 	) );
 	
 	register_sidebar( array(
-		'name' => __('Footer Area Four','writing-board'),
+		'name' => esc_html__('Footer Area Four','writing-board'),
 		'id' => 'sidebar-6',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -236,4 +238,3 @@ function writingboard_add_menu_parent_class( $writingboarditems ) {
 	
 	return $writingboarditems;    
 }
-
