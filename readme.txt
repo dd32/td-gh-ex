@@ -3,8 +3,8 @@
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, custom-header, footer-widget, blog, portfolio
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.5.1
-Stable tag: 1.1.4
+Tested up to: 5.5.3
+Stable tag: 1.1.5
 Contributors: Access Keys
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -50,10 +50,12 @@ License: Creative Commons Zero (CC0) license.
 Source: https://pxhere.com/en/license
 
 https://pxhere.com/en/photo/1434347
-
 https://pxhere.com/en/photo/1433625
 
 == Changelog ==
+
+= 1.1.5 - Nov 06 2020 =
+** Fixed compatiblity issue with WordPress 5.5
 
 = 1.1.4 - Jul 27 2020 =
 ** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.
