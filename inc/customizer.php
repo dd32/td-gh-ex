@@ -431,7 +431,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_pet_care_background_skin_mode',array(
-        'default' => __('Transpert Background','advance-pet-care'),
+        'default' => 'Transpert Background',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_background_skin_mode',array(
@@ -671,7 +671,7 @@ function advance_pet_care_customize_register($wp_customize) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_pet_care_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-pet-care'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_pet_care_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_pet_care_layout_options',array(
@@ -687,7 +687,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_pet_care_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-pet-care'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'advance_pet_care_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_pet_care_single_page_sidebar_layout',array(
@@ -702,7 +702,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_pet_care_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-pet-care'),
+		'default'           => 'Right Sidebar',
 		'sanitize_callback' => 'advance_pet_care_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_pet_care_single_post_sidebar_layout',array(
@@ -717,7 +717,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_pet_care_theme_options',array(
-        'default' => __('Default','advance-pet-care'),
+        'default' => 'Default',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_theme_options',array(
@@ -981,7 +981,7 @@ function advance_pet_care_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_pet_care_slider_content_alignment',array(
-    'default' => __('Left','advance-pet-care'),
+    'default' => 'Left',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_slider_content_alignment',array(
@@ -1245,7 +1245,7 @@ function advance_pet_care_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_pet_care_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-pet-care'),
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_blog_post_description_option',array(
@@ -1311,7 +1311,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_pet_care_display_blog_page_post',array(
-        'default' => __('Without Box','advance-pet-care'),
+        'default' => 'Without Box',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_display_blog_page_post',array(
@@ -1423,7 +1423,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_pet_care_copyright_content_align',array(
-        'default' => __('center','advance-pet-care'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_copyright_content_align',array(
@@ -1478,7 +1478,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_pet_care_scroll_setting',array(
-        'default' => __('Right','advance-pet-care'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_pet_care_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_pet_care_scroll_setting',array(
@@ -1584,7 +1584,7 @@ final class Advance_Pet_Care_Customize {
 		$manager->add_section(
 			new Advance_Pet_Care_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_pet_care_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Pet Care Pro', 'advance-pet-care'),

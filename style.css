@@ -3,14 +3,14 @@ Theme Name: Advance Pet Care
 Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, deeply customizable and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
-Tested up to: 5.5.1
+Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, dog care, aquarium shops, cat food shops, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, deeply customizable and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.6.4
+Version: 0.6.5
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-pet-care
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Advance Pet Care WordPress Theme has been created by Themeshopy, 2018.
 Advance Pet Care WordPress Theme is released under the terms of GNU GPL
 
@@ -76,8 +76,16 @@ a:hover{
 }
 a:focus, input:focus, textarea:focus, button:focus, 
 .woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
+}
+#footer a:focus, .main-navigation .sub-menu > li > a:focus{
+  outline: 2px solid #FF4500;
+  border-bottom: 1px solid #fff;
+}
+.top-header a:focus, #footer input[type="submit"]:focus, #footer form.woocommerce-product-search button:focus, .copyright a:focus{
+  outline: 2px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 ul{
 	margin:0 0 0 15px;
@@ -153,7 +161,12 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 /* Text meant only for screen readers. */
 .screen-reader-text {
 border: 0;
@@ -521,10 +534,6 @@ input[type="submit"] {
   background: #b65741;
   border-left: 2px solid;
   border-right: 2px solid;
-}
-.main-navigation .sub-menu > li > a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
 }
 /* --------- MENUS CSS --------- */
 #menu-sidebar {
@@ -1136,10 +1145,6 @@ table#wp-calendar td a {
 #sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
-}
-#footer a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
 }
 #footer table#wp-calendar td a{
   color: #fff;
@@ -1864,6 +1869,10 @@ iframe {
   }
 }
 @media screen and (max-width:720px) {	
+  .entry-content .alignwide {
+    margin-left  : -10px;
+    margin-right : -10px;
+  }
   #footer input[type="search"]{
     width: 100%;
   }
@@ -1962,6 +1971,10 @@ iframe {
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
+  .entry-content .alignwide {
+    margin-left  : -30px;
+    margin-right : -30px;
+  }
 	#footer th,
 	#footer td{
 		padding: 4px;
@@ -2026,6 +2039,10 @@ iframe {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
+  .entry-content .alignwide {
+    margin-left  : -20px;
+    margin-right : -20px;
+  }
   #slider .carousel-caption {
     top: 50%;
   }
@@ -2039,7 +2056,7 @@ iframe {
     top:0px;
   }
 }
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1024px){
   #slider .carousel-caption{
     left:10%;
   }
@@ -2054,7 +2071,7 @@ iframe {
   }
   .menubar .nav ul li a:focus,
   a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .toggle-menu button:focus{
-    outline: 1px dotted #fff;
+    outline: 2px solid #fff !important;
     border-bottom: 1px solid #fff;
   }
   .toggle-menu i {
