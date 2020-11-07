@@ -66,6 +66,9 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 4.1.1 (Released: November 06, 2020) =
+* Bug Fixed: JS depreciated issue on slider custom script
+
 = 4.1 (Released: August 17, 2020) =
 * Bug Fixed: JS reference error
 * Updated: Screenshot
