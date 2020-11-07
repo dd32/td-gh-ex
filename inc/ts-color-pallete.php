@@ -5,46 +5,46 @@
 	$bb_mobile_application_custom_css = '';
 
 	$bb_mobile_application_custom_css .='#header, .search-form input.search-submit, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, #slider .know-btn a,.read-more-box, .inner, #footer input[type="submit"], #footer .tagcloud a:hover, #sidebar input[type="submit"], #sidebar h3,.pagination span, .pagination .current, .pagination a:hover,#comments input[type="submit"].submit,.meta-nav:hover,.tags p a:hover,#sidebar .tagcloud a:hover,#comments a.comment-reply-link, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, .page-template-custom-front-page #header, #menu-sidebar input[type="submit"], .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, #footer .woocommerce a.button:hover, .woocommerce .widget_price_filter .price_slider_amount .button:hover, a.button{';
-		$bb_mobile_application_custom_css .='background-color: '.esc_html($bb_mobile_application_theme_color).';';
+		$bb_mobile_application_custom_css .='background-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='.woocommerce-message::before, #footer h3, td#prev a, .copyright-wrapper li a:hover, .nav-previous a, .tags i,.metabox a:hover, .woocommerce a.woocommerce-review-link{';
-		$bb_mobile_application_custom_css .='color: '.esc_html($bb_mobile_application_theme_color).';';
+		$bb_mobile_application_custom_css .='color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='.primary-navigation ul ul a{';
-		$bb_mobile_application_custom_css .='color: '.esc_html($bb_mobile_application_theme_color).'!important;';
+		$bb_mobile_application_custom_css .='color: '.esc_attr($bb_mobile_application_theme_color).'!important;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='.new-text{';
-		$bb_mobile_application_custom_css .='border-left-color: '.esc_html($bb_mobile_application_theme_color).';';
+		$bb_mobile_application_custom_css .='border-left-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='#footer .tagcloud a,.primary-navigation ul ul,.tags p a:hover, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{';
-		$bb_mobile_application_custom_css .='border-color: '.esc_html($bb_mobile_application_theme_color).';';
+		$bb_mobile_application_custom_css .='border-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='#footer h3{';
-		$bb_mobile_application_custom_css .='border-bottom-color: '.esc_html($bb_mobile_application_theme_color).';';
+		$bb_mobile_application_custom_css .='border-bottom-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='.woocommerce-message{';
-		$bb_mobile_application_custom_css .='border-top-color: '.esc_html($bb_mobile_application_theme_color).';';
+		$bb_mobile_application_custom_css .='border-top-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='.page-template-custom-front-page .primary-navigation ul ul{';
-		$bb_mobile_application_custom_css .='border-top-color: '.esc_html($bb_mobile_application_theme_color).'!important;';
+		$bb_mobile_application_custom_css .='border-top-color: '.esc_attr($bb_mobile_application_theme_color).'!important;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_custom_css .='.page-template-custom-front-page .fixed-header #header{';
-		$bb_mobile_application_custom_css .='background-color: '.esc_html($bb_mobile_application_theme_color).'!important;';
+		$bb_mobile_application_custom_css .='background-color: '.esc_attr($bb_mobile_application_theme_color).'!important;';
 	$bb_mobile_application_custom_css .='}';
 	
 	// media
 	$bb_mobile_application_custom_css .='@media screen and (max-width:1000px) {';
 	if($bb_mobile_application_theme_color){
 	$bb_mobile_application_custom_css .='#menu-sidebar, .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul ul ul, #contact-info{
-	background-image: linear-gradient(-90deg, #000 0%, '.esc_html($bb_mobile_application_theme_color).' 120%);
+	background-image: linear-gradient(-90deg, #000 0%, '.esc_attr($bb_mobile_application_theme_color).' 120%);
 		}';
 	}
 	$bb_mobile_application_custom_css .='}';
@@ -177,12 +177,12 @@
 	$bb_mobile_application_button_padding_top_bottom = get_theme_mod('bb_mobile_application_button_padding_top_bottom');
 	$bb_mobile_application_button_padding_left_right = get_theme_mod('bb_mobile_application_button_padding_left_right');
 	$bb_mobile_application_custom_css .='.read-more-box,#slider .know-btn a, #comments .form-submit input[type="submit"]{';
-		$bb_mobile_application_custom_css .='padding-top: '.esc_html($bb_mobile_application_button_padding_top_bottom).'px; padding-bottom: '.esc_html($bb_mobile_application_button_padding_top_bottom).'px; padding-left: '.esc_html($bb_mobile_application_button_padding_left_right).'px; padding-right: '.esc_html($bb_mobile_application_button_padding_left_right).'px; display:inline-block;';
+		$bb_mobile_application_custom_css .='padding-top: '.esc_attr($bb_mobile_application_button_padding_top_bottom).'px; padding-bottom: '.esc_attr($bb_mobile_application_button_padding_top_bottom).'px; padding-left: '.esc_attr($bb_mobile_application_button_padding_left_right).'px; padding-right: '.esc_attr($bb_mobile_application_button_padding_left_right).'px; display:inline-block;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_button_border_radius = get_theme_mod('bb_mobile_application_button_border_radius');
 	$bb_mobile_application_custom_css .='.read-more-box, #slider .know-btn a, #comments .form-submit input[type="submit"]{';
-		$bb_mobile_application_custom_css .='border-radius: '.esc_html($bb_mobile_application_button_border_radius).'px;';
+		$bb_mobile_application_custom_css .='border-radius: '.esc_attr($bb_mobile_application_button_border_radius).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	/*-----------------------------Responsive Setting --------------------*/
@@ -286,17 +286,17 @@
 	/*------------ Woocommerce Settings  --------------*/
 	$bb_mobile_application_top_bottom_product_button_padding = get_theme_mod('bb_mobile_application_top_bottom_product_button_padding', 12);
 	$bb_mobile_application_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-		$bb_mobile_application_custom_css .='padding-top: '.esc_html($bb_mobile_application_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($bb_mobile_application_top_bottom_product_button_padding).'px;';
+		$bb_mobile_application_custom_css .='padding-top: '.esc_attr($bb_mobile_application_top_bottom_product_button_padding).'px; padding-bottom: '.esc_attr($bb_mobile_application_top_bottom_product_button_padding).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_left_right_product_button_padding = get_theme_mod('bb_mobile_application_left_right_product_button_padding', 12);
 	$bb_mobile_application_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-		$bb_mobile_application_custom_css .='padding-left: '.esc_html($bb_mobile_application_left_right_product_button_padding).'px; padding-right: '.esc_html($bb_mobile_application_left_right_product_button_padding).'px;';
+		$bb_mobile_application_custom_css .='padding-left: '.esc_attr($bb_mobile_application_left_right_product_button_padding).'px; padding-right: '.esc_attr($bb_mobile_application_left_right_product_button_padding).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_product_button_border_radius = get_theme_mod('bb_mobile_application_product_button_border_radius', 0);
 	$bb_mobile_application_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{';
-		$bb_mobile_application_custom_css .='border-radius: '.esc_html($bb_mobile_application_product_button_border_radius).'px;';
+		$bb_mobile_application_custom_css .='border-radius: '.esc_attr($bb_mobile_application_product_button_border_radius).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_show_related_products = get_theme_mod('bb_mobile_application_show_related_products',true);
@@ -315,64 +315,64 @@
 
 	$bb_mobile_application_top_bottom_wooproducts_padding = get_theme_mod('bb_mobile_application_top_bottom_wooproducts_padding',10);
 	$bb_mobile_application_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-		$bb_mobile_application_custom_css .='padding-top: '.esc_html($bb_mobile_application_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($bb_mobile_application_top_bottom_wooproducts_padding).'px !important;';
+		$bb_mobile_application_custom_css .='padding-top: '.esc_attr($bb_mobile_application_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_attr($bb_mobile_application_top_bottom_wooproducts_padding).'px !important;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_left_right_wooproducts_padding = get_theme_mod('bb_mobile_application_left_right_wooproducts_padding',10);
 	$bb_mobile_application_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-		$bb_mobile_application_custom_css .='padding-left: '.esc_html($bb_mobile_application_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($bb_mobile_application_left_right_wooproducts_padding).'px !important;';
+		$bb_mobile_application_custom_css .='padding-left: '.esc_attr($bb_mobile_application_left_right_wooproducts_padding).'px !important; padding-right: '.esc_attr($bb_mobile_application_left_right_wooproducts_padding).'px !important;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_wooproducts_border_radius = get_theme_mod('bb_mobile_application_wooproducts_border_radius',0);
 	$bb_mobile_application_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-		$bb_mobile_application_custom_css .='border-radius: '.esc_html($bb_mobile_application_wooproducts_border_radius).'px;';
+		$bb_mobile_application_custom_css .='border-radius: '.esc_attr($bb_mobile_application_wooproducts_border_radius).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_wooproducts_box_shadow = get_theme_mod('bb_mobile_application_wooproducts_box_shadow',0);
 	$bb_mobile_application_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-		$bb_mobile_application_custom_css .='box-shadow: '.esc_html($bb_mobile_application_wooproducts_box_shadow).'px '.esc_html($bb_mobile_application_wooproducts_box_shadow).'px '.esc_html($bb_mobile_application_wooproducts_box_shadow).'px #eee;';
+		$bb_mobile_application_custom_css .='box-shadow: '.esc_attr($bb_mobile_application_wooproducts_box_shadow).'px '.esc_attr($bb_mobile_application_wooproducts_box_shadow).'px '.esc_attr($bb_mobile_application_wooproducts_box_shadow).'px #eee;';
 	$bb_mobile_application_custom_css .='}';
 
 	/*-------------- Footer Text -------------------*/
 	$bb_mobile_application_copyright_content_align = get_theme_mod('bb_mobile_application_copyright_content_align');
 	if($bb_mobile_application_copyright_content_align != false){
 		$bb_mobile_application_custom_css .='#footer .copyright p{';
-			$bb_mobile_application_custom_css .='text-align: '.esc_html($bb_mobile_application_copyright_content_align).';';
+			$bb_mobile_application_custom_css .='text-align: '.esc_attr($bb_mobile_application_copyright_content_align).';';
 		$bb_mobile_application_custom_css .='}';
 	}
 
 	$bb_mobile_application_footer_content_font_size = get_theme_mod('bb_mobile_application_footer_content_font_size', 16);
 	$bb_mobile_application_custom_css .='#footer .copyright p{';
-		$bb_mobile_application_custom_css .='font-size: '.esc_html($bb_mobile_application_footer_content_font_size).'px;';
+		$bb_mobile_application_custom_css .='font-size: '.esc_attr($bb_mobile_application_footer_content_font_size).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_copyright_padding = get_theme_mod('bb_mobile_application_copyright_padding', 15);
 	$bb_mobile_application_custom_css .='#footer .copyright{';
-		$bb_mobile_application_custom_css .='padding-top: '.esc_html($bb_mobile_application_copyright_padding).'px; padding-bottom: '.esc_html($bb_mobile_application_copyright_padding).'px;';
+		$bb_mobile_application_custom_css .='padding-top: '.esc_attr($bb_mobile_application_copyright_padding).'px; padding-bottom: '.esc_attr($bb_mobile_application_copyright_padding).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_footer_widget_bg_color = get_theme_mod('bb_mobile_application_footer_widget_bg_color');
 	$bb_mobile_application_custom_css .='#footer{';
-		$bb_mobile_application_custom_css .='background-color: '.esc_html($bb_mobile_application_footer_widget_bg_color).';';
+		$bb_mobile_application_custom_css .='background-color: '.esc_attr($bb_mobile_application_footer_widget_bg_color).';';
 	$bb_mobile_application_custom_css .='}';
 
 	$bb_mobile_application_footer_widget_bg_image = get_theme_mod('bb_mobile_application_footer_widget_bg_image');
 	if($bb_mobile_application_footer_widget_bg_image != false){
 		$bb_mobile_application_custom_css .='#footer{';
-			$bb_mobile_application_custom_css .='background: url('.esc_html($bb_mobile_application_footer_widget_bg_image).');';
+			$bb_mobile_application_custom_css .='background: url('.esc_attr($bb_mobile_application_footer_widget_bg_image).');';
 		$bb_mobile_application_custom_css .='}';
 	}
 
 	// scroll to top
 	$bb_mobile_application_scroll_font_size_icon = get_theme_mod('bb_mobile_application_scroll_font_size_icon', 22);
 	$bb_mobile_application_custom_css .='#scroll-top .fas{';
-		$bb_mobile_application_custom_css .='font-size: '.esc_html($bb_mobile_application_scroll_font_size_icon).'px;';
+		$bb_mobile_application_custom_css .='font-size: '.esc_attr($bb_mobile_application_scroll_font_size_icon).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	// Slider Height 
 	$bb_mobile_application_slider_image_height = get_theme_mod('bb_mobile_application_slider_image_height');
 	$bb_mobile_application_custom_css .='#slider img{';
-		$bb_mobile_application_custom_css .='height: '.esc_html($bb_mobile_application_slider_image_height).'px;';
+		$bb_mobile_application_custom_css .='height: '.esc_attr($bb_mobile_application_slider_image_height).'px;';
 	$bb_mobile_application_custom_css .='}';
 
 	// Display Blog Post 
@@ -393,7 +393,7 @@
 	$bb_mobile_application_slider_image_overlay_color = get_theme_mod('bb_mobile_application_slider_image_overlay_color', true);
 	if($bb_mobile_application_slider_overlay != false){
 		$bb_mobile_application_custom_css .='#slider{';
-			$bb_mobile_application_custom_css .='background-color: '.esc_html($bb_mobile_application_slider_image_overlay_color).';';
+			$bb_mobile_application_custom_css .='background-color: '.esc_attr($bb_mobile_application_slider_image_overlay_color).';';
 		$bb_mobile_application_custom_css .='}';
 	}
 

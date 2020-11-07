@@ -13,8 +13,10 @@ function bb_mobile_application_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'bb_mobile_application_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1355,
+		'height'                 => 110,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'bb_mobile_application_header_style',
 	) ) );
 }
@@ -33,7 +35,7 @@ function bb_mobile_application_header_style() {
 	if ( get_header_image() ) :
 	$bb_mobile_application_custom_css = "
         .page-template-custom-front-page #header, #header {
-			background-image:url('".esc_url(get_header_image())."');
+			background-image:url('".esc_url(get_header_image())."') !important;
 			background-position: center top;
 		}";
 	   	wp_add_inline_style( 'bb-mobile-application-basic-style', $bb_mobile_application_custom_css );

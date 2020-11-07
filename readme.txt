@@ -1,18 +1,18 @@
 === BB Mobile Application ===
 Contributors: Themeshopy
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
 Requires at least: 5.0
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy.
+Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites.
 
 == Description ==
 
-Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, Hosting Provider, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes.
+Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, headphones, earphones, screenguards, back covers, Hosting Provider, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, theme options, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes.
 
 == Changelog ==
 
@@ -239,6 +239,12 @@ Trying to create an interactive website with the help of a flexible option? If s
 
 = 1.4.4 =
   * Added wide-blocks css.
+
+= 1.4.5 =
+  * Added flexible-header tag.
+  * Changed escaped in ts-color-pallete.php.
+  * Done with prefix if required.
+  * Resolved translatable errors from customizer.php.
 
 == Resources ==
 

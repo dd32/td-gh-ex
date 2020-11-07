@@ -3,14 +3,14 @@ Theme Name: BB Mobile Application
 Theme URI: https://www.themeshopy.com/themes/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
-Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, Hosting Provider, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
-Tested up to: 5.5.1
+Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, headphones, earphones, screenguards, back covers, Hosting Provider, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, theme options, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 1.4.4
+Version: 1.4.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: bb-mobile-application
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
 
 BB Mobile Application WordPress Theme has been created by ThemeShopy, 2017.
 BB Mobile Application WordPress Theme is released under the terms of GNU GPL
@@ -77,8 +77,15 @@ a:focus, input:focus, textarea:focus,
 .primary-navigation ul ul a:focus , 
 .woocommerce form .form-row input:focus.input-text, 
 .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
+}
+.page-template-custom-front-page #header .logo a:focus, 
+.page-template-custom-front-page #header .logo p:focus, #footer a:focus,
+.page-template-custom-front-page .primary-navigation a:focus,
+.toggle-menu button:focus{
+  outline: 2px solid #FF4500;
+  border-bottom: 1px solid #fff;
 }
 ul{
 	margin:0 0 0 15px;
@@ -150,7 +157,12 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 /*elementor*/
 .elementor-html #loader, .elementor-html #loader-wrapper{ 
   display: none; 
@@ -472,13 +484,6 @@ a.button{
 	color: #000;
   margin: 0;
 }
-.page-template-custom-front-page #header .logo a:focus, 
-.page-template-custom-front-page #header .logo p:focus,
-.page-template-custom-front-page .primary-navigation a:focus,
-.toggle-menu button:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 #contact-info{
   display: none;
 }
@@ -767,10 +772,6 @@ a.r_button {
 	color:#fff;
 	text-align:left;
   clear:both;
-}
-#footer a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px dotted #fff;
 }
 #footer .tagcloud a {
   font-size: 17px !important;
@@ -1653,12 +1654,20 @@ iframe{
 }
 /*************** Responsive Media **************/
 @media screen and (min-width:991px) and (max-width: 1024px;){
+  .entry-content .alignwide {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 	#slider .carousel-caption {
     position: absolute;
     top: 53% !important;
 	}
 }
 @media screen and (max-width:720px) {
+  .entry-content .alignwide {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 	.page-template-custom-front-page #header{
 		position: static;
 		background: #3ae0bf;
@@ -1717,6 +1726,10 @@ iframe{
   }
 }
 @media screen and (min-width:720px) and (max-width: 768px){
+  .entry-content .alignwide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 	.copyright-wrapper th{
 		padding: 0px;
 	}
@@ -1746,11 +1759,11 @@ iframe{
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
   a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .primary-navigation ul ul a:focus{
-    outline: 1px dotted #fff;
+    outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff;
   }
-  button:focus{
-    outline: 1px dotted #000;
+  button:focus, #footer form.woocommerce-product-search button:focus{
+    outline: 2px solid #FF4500;
     border-bottom: 1px solid #000;
   }
   .toggle-menu i {

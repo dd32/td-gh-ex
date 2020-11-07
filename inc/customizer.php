@@ -432,7 +432,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_mobile_application_background_skin_mode',array(
-        'default' => __('Transparent Background','bb-mobile-application'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_background_skin_mode',array(
@@ -669,7 +669,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_mobile_application_theme_options',array(
-        'default'           => __('Right Sidebar', 'bb-mobile-application'),
+        'default'           => 'Right Sidebar', 
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_theme_options',array(
@@ -687,7 +687,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 
     $wp_customize->add_setting('bb_mobile_application_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'bb-mobile-application'),
+		'default'           => 'One Column', 
 		'sanitize_callback' => 'bb_mobile_application_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_mobile_application_single_page_sidebar_layout',array(
@@ -702,7 +702,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_mobile_application_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'bb-mobile-application'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'bb_mobile_application_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_mobile_application_single_post_sidebar_layout',array(
@@ -717,7 +717,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_mobile_application_width_theme_options',array(
-        'default' => __('Default','bb-mobile-application'),
+        'default' => 'Default',
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_width_theme_options',array(
@@ -837,7 +837,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	//content layout
     $wp_customize->add_setting('bb_mobile_application_slider_content_alignment',array(
-    'default' => __('Center','bb-mobile-application'),
+    'default' => 'Center',
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_slider_content_alignment',array(
@@ -1159,7 +1159,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_mobile_application_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','bb-mobile-application'), 
+    	'default'   => 'Excerpt Content', 
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_blog_post_description_option',array(
@@ -1225,7 +1225,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('bb_mobile_application_display_blog_page_post',array(
-        'default' => __('In Box','bb-mobile-application'),
+        'default' => 'In Box',
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_display_blog_page_post',array(
@@ -1336,7 +1336,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_mobile_application_copyright_content_align',array(
-        'default' => __('center','bb-mobile-application'),
+        'default' => 'center',
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_copyright_content_align',array(
@@ -1391,7 +1391,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_mobile_application_scroll_setting',array(
-        'default' => __('Right','bb-mobile-application'),
+        'default' => 'Right',
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_mobile_application_scroll_setting',array(
@@ -1498,7 +1498,7 @@ final class BB_Mobile_Application_Customize {
 		$manager->add_section(
 			new BB_Mobile_Application_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'bb_mobile_application_example_1',
 				array(
 					'priority'	=> 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-mobile-application' ),
