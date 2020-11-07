@@ -3,14 +3,14 @@ Theme Name: BB Wedding Bliss
 Theme URI:  https://www.themeshopy.com/themes/bb-free-wedding-bliss-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Tested up to: 5.5.1
+Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, event planner website, business confrence, birthday parties food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website.  Demo: http://themeshopy.com/bb-wedding-bliss-theme/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: bb-wedding-bliss
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, buddypress, full-width-template, theme-options, threaded-comments, blog, portfolio, e-commerce
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, buddypress, full-width-template, theme-options, threaded-comments, blog, portfolio, e-commerce
 
 BB wedding Bliss WordPress Theme has been created by Themeshopy, 2017.
 BB wedding Bliss WordPress Theme is released under the terms of GNU GPL
@@ -82,10 +82,15 @@ a:focus, textarea:focus, input:focus,
 .woocommerce form .form-row input:focus.input-text, 
 .woocommerce form .form-row textarea:focus,
 #header .primary-navigation ul ul a:focus, button:focus{
-  outline: 1px dotted #000;
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
 }
-
+#header a:focus, .search-box button:focus,
+#footer a:focus, .abovecopyright a:focus, #footer input:focus, 
+#footer textarea:focus{
+  outline: 2px solid #FF4500;
+  border-bottom: 1px dotted #fff;
+}
 ul{
 	margin:0 0 0 15px;
 	padding:0;
@@ -163,7 +168,12 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 /*elementor*/
 .elementor-html #loader, .elementor-html #loader-wrapper{ 
   display: none; 
@@ -564,13 +574,6 @@ p.site-description {
 #header .header-top a{
 	color:#aaaaaa
 }
-#header a:focus, .search-box button:focus,
-#footer a:focus, .abovecopyright a:focus, #footer input:focus, 
-#footer textarea:focus{
-	outline:1px dotted #fff;
-	border-bottom: 1px dotted #fff;
-}
-
 .social-media {
     text-align: right;
 }
@@ -1853,6 +1856,10 @@ iframe{
     width: 100%;
 }
 @media screen and (max-width:720px) {
+  .entry-content .alignwide {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 	.page-template-custom-front-page #header {
 	    position: static;
 	    opacity: 1;
@@ -1898,6 +1905,10 @@ iframe{
 }
 
 @media screen and (min-width: 720px) and (max-width: 768px){
+  .entry-content .alignwide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 	#footer td{
 		padding: 3px;
 	}
@@ -1931,9 +1942,13 @@ iframe{
 	}
 }
 @media screen and (min-width: 991px) and (max-width: 1024px){
+  .entry-content .alignwide {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
 	.logo a {
-	    color: #fff;
-	    font-size: 30px !important;
+    color: #fff;
+    font-size: 30px !important;
 	}
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
@@ -1941,7 +1956,7 @@ iframe{
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
   a.closebtn.mobile-menu:focus, .toggle-menu button:focus, .primary-navigation a:focus, #header .primary-navigation ul ul a:focus{
-    outline: 1px dotted #fff;
+    outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff;
   }
   .toggle-menu i {

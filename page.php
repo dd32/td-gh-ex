@@ -23,7 +23,7 @@ get_header(); ?>
                 <div id="sidebar" class="col-lg-4 col-md-4">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
-                <div class="col-lg-8 col-md-8 background-img-skin">
+                <div class="col-lg-8 col-md-8 left-sidebar-page background-img-skin">
                     <?php while ( have_posts() ) : the_post(); ?>
                         <?php the_post_thumbnail(); ?>
                         <h1><?php the_title(); ?></h1>
@@ -40,7 +40,7 @@ get_header(); ?>
             </div>
         <?php }else if($bb_wedding_bliss_left_right == 'Right Sidebar'){ ?>
             <div class="row">
-                <div class="col-lg-8 col-md-8 background-img-skin">
+                <div class="col-lg-8 col-md-8 right-sidebar-page background-img-skin">
                     <?php while ( have_posts() ) : the_post(); ?>
                         <?php the_post_thumbnail(); ?>
                         <h1><?php the_title(); ?></h1>

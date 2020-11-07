@@ -431,7 +431,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_background_skin_mode',array(
-        'default' => __('Transparent Background','bb-wedding-bliss'),
+        'default' => 'Transparent Background',
   		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_wedding_bliss_background_skin_mode',array(
@@ -679,8 +679,8 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
 	$wp_customize->add_setting('bb_wedding_bliss_layout_options',array(
-	        'default' => __('Right Sidebar','bb-wedding-bliss'),
-	        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+        'default' => 'Right Sidebar',
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	    )
     );
 	$wp_customize->add_control('bb_wedding_bliss_layout_options',
@@ -700,7 +700,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_setting('bb_wedding_bliss_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'bb-wedding-bliss'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_wedding_bliss_single_page_sidebar_layout',array(
@@ -715,7 +715,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'bb-wedding-bliss'),
+		'default'           => 'Right Sidebar',
 		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_wedding_bliss_single_post_sidebar_layout',array(
@@ -730,7 +730,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_theme_options',array(
-        'default' => __('Default','bb-wedding-bliss'),
+        'default' => 'Default',
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_theme_options',array(
@@ -923,7 +923,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//content layout
     $wp_customize->add_setting('bb_wedding_bliss_slider_content_alignment',array(
-    'default' => __('Center','bb-wedding-bliss'),
+    'default' => 'Center',
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_slider_content_alignment',array(
@@ -1209,7 +1209,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_wedding_bliss_blog_post_description_option',array(
-    	'default'   =>  __('Excerpt Content','bb-wedding-bliss'),
+    	'default'   =>  'Excerpt Content',
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_blog_post_description_option',array(
@@ -1275,7 +1275,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('bb_wedding_bliss_display_blog_page_post',array(
-        'default' => __('In Box','bb-wedding-bliss'),
+        'default' => 'In Box',
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_display_blog_page_post',array(
@@ -1426,7 +1426,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_scroll_setting',array(
-        'default' => __('Right','bb-wedding-bliss'),
+        'default' => 'Right',
 	  'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_wedding_bliss_scroll_setting',array(
@@ -1533,7 +1533,7 @@ final class BB_Wedding_Bliss_Customize {
 		$manager->add_section(
 			new BB_Wedding_Bliss_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'bb_wedding_bliss_example_1',
 				array(
 					'priority'  => 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-wedding-bliss' ),
