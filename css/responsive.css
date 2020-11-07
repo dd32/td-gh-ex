@@ -598,6 +598,7 @@
 	}
 
 	.widget-area .widget .main-navigation .menu-item-has-children li a:before,
+	.widget-area .widget .main-navigation .page_item_has_children li a:before,
 	.secondary-navigation .menu-item-has-children li a:before,
 	#footer-menu .menu-item-has-children li a:before {
 		content: "-";
@@ -608,6 +609,7 @@
 	}
 
 	.widget-area .widget .main-navigation .menu-item-has-children li li a:before,
+	.widget-area .widget .main-navigation .page_item_has_children li li a:before,
 	.secondary-navigation .menu-item-has-children li li a:before,
 	#footer-menu .menu-item-has-children li li a:before {
 		content: "--";
@@ -615,6 +617,7 @@
 	}
 
 	.widget-area .widget .main-navigation .menu-item-has-children li li li a:before,
+	.widget-area .widget .main-navigation .page_item_has_children li li li a:before,
 	.secondary-navigation .menu-item-has-children li li li a:before,
 	#footer-menu .menu-item-has-children li li li a:before {
 		content: "---";
@@ -622,6 +625,7 @@
 	}
 
 	.widget-area .widget .main-navigation .menu-item-has-children li li li li a:before,
+	.widget-area .widget .main-navigation .page_item_has_children li li li li a:before,
 	.secondary-navigation .menu-item-has-children li li li li a:before,
 	#footer-menu .menu-item-has-children li li li li a:before {
 		content: "----";
