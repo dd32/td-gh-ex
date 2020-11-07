@@ -1,18 +1,18 @@
 === Advance Portfolio ===
 Contributors: Themeshopy
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, post-formats, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, post-formats, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 0.4.7
+Stable tag: 0.4.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts.
+Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, resume, proffesional CV, webdevelopers, app builders, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. 
 
 == Description ==
 
-Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards.
+Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, resume, proffesional CV, webdevelopers, app builders, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards.
 
 == Changelog ==
 
@@ -143,6 +143,12 @@ Advance Portfolio is a clean, sleek and creative WordPress theme for building a 
   * Added display Pagination in Blog Page option.
   * Added wide-blocks css.
   * Updated POT file.
+
+= 0.4.8 =
+  * Added flexible-header tag.
+  * Changed escaped in ts-color-pallete.php.
+  * Done with prefix if required.
+  * Resolved translatable errors from customizer.php.
 
 == Resources ==
 

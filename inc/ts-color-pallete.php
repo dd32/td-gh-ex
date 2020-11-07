@@ -6,29 +6,29 @@
 
 	if($advance_portfolio_theme_color_first != false){
 		$advance_portfolio_custom_css .='.read-moresec a.button, .second-border a:hover, #footer input[type="submit"], .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current, .woocommerce span.onsale,  #comments input[type="submit"].submit, #footer .tagcloud a:hover,.meta-nav:hover,#comments a.comment-reply-link,.tags p a:hover,#menu-sidebar input[type="submit"], #footer .woocommerce a.button:hover, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{';
-			$advance_portfolio_custom_css .='background-color: '.esc_html($advance_portfolio_theme_color_first).';';
+			$advance_portfolio_custom_css .='background-color: '.esc_attr($advance_portfolio_theme_color_first).';';
 		$advance_portfolio_custom_css .='}';
 	}
 	if($advance_portfolio_theme_color_first != false){
 		$advance_portfolio_custom_css .=' nav.woocommerce-MyAccount-navigation ul li, #banner .social-media i:hover{';
-			$advance_portfolio_custom_css .='background-color: '.esc_html($advance_portfolio_theme_color_first).'!important;';
+			$advance_portfolio_custom_css .='background-color: '.esc_attr($advance_portfolio_theme_color_first).'!important;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	if($advance_portfolio_theme_color_first != false){
 		$advance_portfolio_custom_css .='.social-media i:hover,#footer h3,.woocommerce-message::before, h1.entry-title,#footer h3.widget-title a, #footer li a:hover, .primary-navigation li a:hover,.metabox a:hover,#sidebar ul li a:hover,.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after,.sf-arrows ul .sf-with-ul:after,.tags i,.primary-navigation ul ul, .primary-navigation li a:hover, .primary-navigation li:hover a{';
-			$advance_portfolio_custom_css .='color: '.esc_html($advance_portfolio_theme_color_first).';';
+			$advance_portfolio_custom_css .='color: '.esc_attr($advance_portfolio_theme_color_first).';';
 		$advance_portfolio_custom_css .='}';
 	}
 	
 	if($advance_portfolio_theme_color_first != false){
 		$advance_portfolio_custom_css .='#footer input[type="search"], #footer input[type="submit"], #footer .tagcloud a:hover,.second-border a:hover,.primary-navigation ul ul, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{';
-			$advance_portfolio_custom_css .='border-color: '.esc_html($advance_portfolio_theme_color_first).';';
+			$advance_portfolio_custom_css .='border-color: '.esc_attr($advance_portfolio_theme_color_first).';';
 		$advance_portfolio_custom_css .='}';
 	}
 	if($advance_portfolio_theme_color_first != false){
 		$advance_portfolio_custom_css .='.primary-navigation ul ul{';
-			$advance_portfolio_custom_css .='border-top-color: '.esc_html($advance_portfolio_theme_color_first).' !important;';
+			$advance_portfolio_custom_css .='border-top-color: '.esc_attr($advance_portfolio_theme_color_first).' !important;';
 		$advance_portfolio_custom_css .='}';
 	}
 
@@ -37,17 +37,17 @@
 
 	if($advance_portfolio_theme_color_second != false){
 		$advance_portfolio_custom_css .='#header .horizontal, #header, #header .horizontal, #header, #banner .social-media i:hover, #header .horizontal, #header, .page-template-custom-front-page .fixed-header #header{';
-			$advance_portfolio_custom_css .='background-color: '.esc_html($advance_portfolio_theme_color_second).';';
+			$advance_portfolio_custom_css .='background-color: '.esc_attr($advance_portfolio_theme_color_second).';';
 		$advance_portfolio_custom_css .='}';
 	}
 	if($advance_portfolio_theme_color_second != false){
 		$advance_portfolio_custom_css .='#banner .social-media i:hover, #banner .social-media i:hover{';
-			$advance_portfolio_custom_css .='color: '.esc_html($advance_portfolio_theme_color_second).';';
+			$advance_portfolio_custom_css .='color: '.esc_attr($advance_portfolio_theme_color_second).';';
 		$advance_portfolio_custom_css .='}';
 	}
 	if($advance_portfolio_theme_color_second != false){
 		$advance_portfolio_custom_css .='.page-box, .page-box, .page-box{';
-			$advance_portfolio_custom_css .='border-color: '.esc_html($advance_portfolio_theme_color_second).';';
+			$advance_portfolio_custom_css .='border-color: '.esc_attr($advance_portfolio_theme_color_second).';';
 		$advance_portfolio_custom_css .='}';
 	}
 
@@ -55,7 +55,7 @@
 	$advance_portfolio_custom_css .='@media screen and (max-width:1000px) {';
 	if($advance_portfolio_theme_color_second != false || $advance_portfolio_theme_color_first != false){
 	$advance_portfolio_custom_css .='#menu-sidebar, .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a, #contact-info{
-	background-image: linear-gradient(-90deg, '.esc_html($advance_portfolio_theme_color_second).' 0%, '.esc_html($advance_portfolio_theme_color_first).' 120%);
+	background-image: linear-gradient(-90deg, '.esc_attr($advance_portfolio_theme_color_second).' 0%, '.esc_attr($advance_portfolio_theme_color_first).' 120%);
 		} ';
 	}
 	$advance_portfolio_custom_css .='}';
@@ -164,14 +164,14 @@
 	$advance_portfolio_button_padding_left_right = get_theme_mod('advance_portfolio_button_padding_left_right');
 	if($advance_portfolio_button_padding_top_bottom != false || $advance_portfolio_button_padding_left_right != false){
 		$advance_portfolio_custom_css .=' #comments .form-submit input[type="submit"],.second-border a{';
-			$advance_portfolio_custom_css .='padding-top: '.esc_html($advance_portfolio_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_portfolio_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_portfolio_button_padding_left_right).'px; padding-right: '.esc_html($advance_portfolio_button_padding_left_right).'px; display:inline-block;';
+			$advance_portfolio_custom_css .='padding-top: '.esc_attr($advance_portfolio_button_padding_top_bottom).'px; padding-bottom: '.esc_attr($advance_portfolio_button_padding_top_bottom).'px; padding-left: '.esc_attr($advance_portfolio_button_padding_left_right).'px; padding-right: '.esc_attr($advance_portfolio_button_padding_left_right).'px; display:inline-block;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_button_border_radius = get_theme_mod('advance_portfolio_button_border_radius');
 	if($advance_portfolio_button_border_radius != false){
 		$advance_portfolio_custom_css .='#comments .form-submit input[type="submit"], .second-border a{';
-			$advance_portfolio_custom_css .='border-radius: '.esc_html($advance_portfolio_button_border_radius).'px;';
+			$advance_portfolio_custom_css .='border-radius: '.esc_attr($advance_portfolio_button_border_radius).'px;';
 		$advance_portfolio_custom_css .='}';
 	}
 
@@ -259,21 +259,21 @@
 	$advance_portfolio_top_bottom_product_button_padding = get_theme_mod('advance_portfolio_top_bottom_product_button_padding', 10);
 	if($advance_portfolio_top_bottom_product_button_padding != false){
 		$advance_portfolio_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce .cart .button, .woocommerce .cart input.button{';
-			$advance_portfolio_custom_css .='padding-top: '.esc_html($advance_portfolio_top_bottom_product_button_padding).'px; padding-bottom: '.esc_html($advance_portfolio_top_bottom_product_button_padding).'px;';
+			$advance_portfolio_custom_css .='padding-top: '.esc_attr($advance_portfolio_top_bottom_product_button_padding).'px; padding-bottom: '.esc_attr($advance_portfolio_top_bottom_product_button_padding).'px;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_left_right_product_button_padding = get_theme_mod('advance_portfolio_left_right_product_button_padding', 16);
 	if($advance_portfolio_left_right_product_button_padding != false){
 		$advance_portfolio_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce .cart .button, .woocommerce .cart input.button{';
-			$advance_portfolio_custom_css .='padding-left: '.esc_html($advance_portfolio_left_right_product_button_padding).'px; padding-right: '.esc_html($advance_portfolio_left_right_product_button_padding).'px;';
+			$advance_portfolio_custom_css .='padding-left: '.esc_attr($advance_portfolio_left_right_product_button_padding).'px; padding-right: '.esc_attr($advance_portfolio_left_right_product_button_padding).'px;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_product_button_border_radius = get_theme_mod('advance_portfolio_product_button_border_radius', 0);
 	if($advance_portfolio_product_button_border_radius != false){
 		$advance_portfolio_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce input.button.alt, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce .cart .button, .woocommerce .cart input.button{';
-			$advance_portfolio_custom_css .='border-radius: '.esc_html($advance_portfolio_product_button_border_radius).'px;';
+			$advance_portfolio_custom_css .='border-radius: '.esc_attr($advance_portfolio_product_button_border_radius).'px;';
 		$advance_portfolio_custom_css .='}';
 	}
 
@@ -294,28 +294,28 @@
 	$advance_portfolio_top_bottom_wooproducts_padding = get_theme_mod('advance_portfolio_top_bottom_wooproducts_padding',10);
 	if($advance_portfolio_top_bottom_wooproducts_padding != false){
 		$advance_portfolio_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_portfolio_custom_css .='padding-top: '.esc_html($advance_portfolio_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_html($advance_portfolio_top_bottom_wooproducts_padding).'px !important;';
+			$advance_portfolio_custom_css .='padding-top: '.esc_attr($advance_portfolio_top_bottom_wooproducts_padding).'px !important; padding-bottom: '.esc_attr($advance_portfolio_top_bottom_wooproducts_padding).'px !important;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_left_right_wooproducts_padding = get_theme_mod('advance_portfolio_left_right_wooproducts_padding',10);
 	if($advance_portfolio_left_right_wooproducts_padding != false){
 		$advance_portfolio_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_portfolio_custom_css .='padding-left: '.esc_html($advance_portfolio_left_right_wooproducts_padding).'px !important; padding-right: '.esc_html($advance_portfolio_left_right_wooproducts_padding).'px !important;';
+			$advance_portfolio_custom_css .='padding-left: '.esc_attr($advance_portfolio_left_right_wooproducts_padding).'px !important; padding-right: '.esc_attr($advance_portfolio_left_right_wooproducts_padding).'px !important;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_wooproducts_border_radius = get_theme_mod('advance_portfolio_wooproducts_border_radius',0);
 	if($advance_portfolio_wooproducts_border_radius != false){
 		$advance_portfolio_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_portfolio_custom_css .='border-radius: '.esc_html($advance_portfolio_wooproducts_border_radius).'px;';
+			$advance_portfolio_custom_css .='border-radius: '.esc_attr($advance_portfolio_wooproducts_border_radius).'px;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_wooproducts_box_shadow = get_theme_mod('advance_portfolio_wooproducts_box_shadow',0);
 	if($advance_portfolio_wooproducts_box_shadow != false){
 		$advance_portfolio_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_portfolio_custom_css .='box-shadow: '.esc_html($advance_portfolio_wooproducts_box_shadow).'px '.esc_html($advance_portfolio_wooproducts_box_shadow).'px '.esc_html($advance_portfolio_wooproducts_box_shadow).'px #eee;';
+			$advance_portfolio_custom_css .='box-shadow: '.esc_attr($advance_portfolio_wooproducts_box_shadow).'px '.esc_attr($advance_portfolio_wooproducts_box_shadow).'px '.esc_attr($advance_portfolio_wooproducts_box_shadow).'px #eee;';
 		$advance_portfolio_custom_css .='}';
 	}
 
@@ -323,33 +323,33 @@
 	$advance_portfolio_copyright_content_align = get_theme_mod('advance_portfolio_copyright_content_align');
 	if($advance_portfolio_copyright_content_align != false){
 		$advance_portfolio_custom_css .='.copyright{';
-			$advance_portfolio_custom_css .='text-align: '.esc_html($advance_portfolio_copyright_content_align).';';
+			$advance_portfolio_custom_css .='text-align: '.esc_attr($advance_portfolio_copyright_content_align).';';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_footer_content_font_size = get_theme_mod('advance_portfolio_footer_content_font_size', 16);
 	if($advance_portfolio_footer_content_font_size != false){
 		$advance_portfolio_custom_css .='.copyright p{';
-			$advance_portfolio_custom_css .='font-size: '.esc_html($advance_portfolio_footer_content_font_size).'px !important;';
+			$advance_portfolio_custom_css .='font-size: '.esc_attr($advance_portfolio_footer_content_font_size).'px !important;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_copyright_padding = get_theme_mod('advance_portfolio_copyright_padding', 15);
 	$advance_portfolio_custom_css .='.copyright{';
-		$advance_portfolio_custom_css .='padding-top: '.esc_html($advance_portfolio_copyright_padding).'px; padding-bottom: '.esc_html($advance_portfolio_copyright_padding).'px;';
+		$advance_portfolio_custom_css .='padding-top: '.esc_attr($advance_portfolio_copyright_padding).'px; padding-bottom: '.esc_attr($advance_portfolio_copyright_padding).'px;';
 	$advance_portfolio_custom_css .='}';
 
 	$advance_portfolio_footer_widget_bg_color = get_theme_mod('advance_portfolio_footer_widget_bg_color');
 	if($advance_portfolio_footer_widget_bg_color != false){
 		$advance_portfolio_custom_css .='#footer{';
-			$advance_portfolio_custom_css .='background-color: '.esc_html($advance_portfolio_footer_widget_bg_color).';';
+			$advance_portfolio_custom_css .='background-color: '.esc_attr($advance_portfolio_footer_widget_bg_color).';';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	$advance_portfolio_footer_widget_bg_image = get_theme_mod('advance_portfolio_footer_widget_bg_image');
 	if($advance_portfolio_footer_widget_bg_image != false){
 		$advance_portfolio_custom_css .='#footer{';
-			$advance_portfolio_custom_css .='background: url('.esc_html($advance_portfolio_footer_widget_bg_image).');';
+			$advance_portfolio_custom_css .='background: url('.esc_attr($advance_portfolio_footer_widget_bg_image).');';
 		$advance_portfolio_custom_css .='}';
 	}
 
@@ -357,14 +357,14 @@
 	$advance_portfolio_scroll_font_size_icon = get_theme_mod('advance_portfolio_scroll_font_size_icon', 22);
 	if($advance_portfolio_scroll_font_size_icon != false){
 		$advance_portfolio_custom_css .='#scroll-top .fas{';
-			$advance_portfolio_custom_css .='font-size: '.esc_html($advance_portfolio_scroll_font_size_icon).'px;';
+			$advance_portfolio_custom_css .='font-size: '.esc_attr($advance_portfolio_scroll_font_size_icon).'px;';
 		$advance_portfolio_custom_css .='}';
 	}
 
 	// Slider Height 
 	$advance_portfolio_banner_image_height = get_theme_mod('advance_portfolio_banner_image_height');
 	$advance_portfolio_custom_css .='#banner img{';
-		$advance_portfolio_custom_css .='height: '.esc_html($advance_portfolio_banner_image_height).'px;';
+		$advance_portfolio_custom_css .='height: '.esc_attr($advance_portfolio_banner_image_height).'px;';
 	$advance_portfolio_custom_css .='}';
 
 	// Display Blog Post 
@@ -385,6 +385,6 @@
 	$advance_portfolio_banner_image_overlay_color = get_theme_mod('advance_portfolio_banner_image_overlay_color', true);
 	if($advance_portfolio_banner_overlay != false){
 		$advance_portfolio_custom_css .='#banner{';
-			$advance_portfolio_custom_css .='background-color: '.esc_html($advance_portfolio_banner_image_overlay_color).';';
+			$advance_portfolio_custom_css .='background-color: '.esc_attr($advance_portfolio_banner_image_overlay_color).';';
 		$advance_portfolio_custom_css .='}';
 	}

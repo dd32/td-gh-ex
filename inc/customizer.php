@@ -431,7 +431,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
   	$wp_customize->add_setting('advance_portfolio_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-portfolio'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_background_skin_mode',array(
@@ -680,7 +680,7 @@ function advance_portfolio_customize_register($wp_customize) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_portfolio_layout_options', array(
-			'default'           => __('Right Sidebar', 'advance-portfolio'),
+			'default'           => 'Right Sidebar',
 			'sanitize_callback' => 'advance_portfolio_sanitize_choices',
 	)	);
 	$wp_customize->add_control('advance_portfolio_layout_options', array(
@@ -698,7 +698,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_portfolio_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-portfolio'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'advance_portfolio_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_portfolio_single_page_sidebar_layout',array(
@@ -713,7 +713,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_portfolio_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-portfolio'),
+		'default'           => 'Right Sidebar',
 		'sanitize_callback' => 'advance_portfolio_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_portfolio_single_post_sidebar_layout',array(
@@ -728,7 +728,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_portfolio_theme_options',array(
-        'default' => __('Default','advance-portfolio'),
+        'default' => 'Default',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_theme_options',array(
@@ -910,7 +910,7 @@ function advance_portfolio_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_portfolio_banner_content_alignment',array(
-    'default' => __('Left','advance-portfolio'),
+    'default' => 'Left',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_banner_content_alignment',array(
@@ -1208,7 +1208,7 @@ function advance_portfolio_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_portfolio_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-portfolio'), 
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_blog_post_description_option',array(
@@ -1260,7 +1260,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_portfolio_display_blog_page_post',array(
-        'default' => __('In Box','advance-portfolio'),
+        'default' => 'In Box',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_display_blog_page_post',array(
@@ -1372,7 +1372,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_portfolio_copyright_content_align',array(
-        'default' => __('center','advance-portfolio'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_copyright_content_align',array(
@@ -1427,7 +1427,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_portfolio_scroll_setting',array(
-        'default' => __('Right','advance-portfolio'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_portfolio_scroll_setting',array(
@@ -1533,7 +1533,7 @@ final class Advance_Portfolio_Customize {
 		$manager->add_section(
 			new Advance_Portfolio_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_portfolio_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Portfolio Pro', 'advance-portfolio'),

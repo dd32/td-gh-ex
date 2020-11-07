@@ -3,14 +3,14 @@ Theme Name: Advance Portfolio
 Theme URI: https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
-Tested up to: 5.5.1
+Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, resume, proffesional CV, webdevelopers, app builders, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.4.7
+Version: 0.4.8
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-portfolio
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, post-formats, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, post-formats, threaded-comments, blog, e-commerce, portfolio
 
 Advance Portfolio WordPress Theme has been created by Themeshopy, 2018.
 Advance Portfolio WordPress Theme is released under the terms of GNU GPL
@@ -32,6 +32,7 @@ body{
 	background-color:#fff;
 	color:#5b5b5b;
 	font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 img{
 	margin:0;
@@ -77,8 +78,16 @@ a:hover{
 a:focus, input:focus, textarea:focus, .toggle-menu button:focus,
 .woocommerce form .form-row input.input-text:focus, 
 .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
+}
+.main-navigation .sub-menu > li > a:focus,#footer a:focus,.copyright p a:focus{
+  outline: 2px solid #FF4500;
+  border-bottom: 1px solid #fff;
+}
+#footer form.woocommerce-product-search button:focus, #footer input[type="submit"]:focus{
+  outline: 2px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 ul{
 	margin:0 0 0 15px;
@@ -150,6 +159,12 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -280,7 +295,6 @@ iframe{
 .elementor-html #loader-wrapper{ 
   display: none; 
 }
-
 /* ---------Buttons--------- */
 .read-moresec a.button{
 	background:#f54ea2;
@@ -293,7 +307,6 @@ iframe{
 .read-moresec{
   padding: 20px 0;
 }
-
 /*----------Sticky Header------*/
 .fixed-header {
   position: fixed;
@@ -307,7 +320,6 @@ iframe{
   background: #ffdd65;
   box-shadow: 2px 2px 10px 0px #2d2d2d;
 }
-
 /*preloader*/
 #loader-wrapper {
   position: fixed;
@@ -322,7 +334,6 @@ iframe{
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -486,10 +497,6 @@ iframe{
 }
 .social-media i:hover{
 	color: #f54ea2;
-}
-.main-navigation .sub-menu > li > a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
 }
 #contact-info form.search-form{
   display: none;
@@ -772,7 +779,6 @@ section .innerlightbox{
   padding-top: 20px;
 }
 /* Footer Section */
-
 #footer label{
   width: 100%;
 }
@@ -931,11 +937,6 @@ table#wp-calendar {
   background: #f54ea2;
   color: #000;
 }
-#footer a:focus,
-.copyright p a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 /*scroll to top*/
 #scroll-top{
   background:#252525;
@@ -964,7 +965,6 @@ table#wp-calendar {
   right: 50%;
 }
 /* --------- POST --------- */
-
 .bradcrumbs{
 	padding:30px 0;
 }
@@ -982,7 +982,6 @@ table#wp-calendar {
 	color:#000;
 	padding:5px 15px;
 }
-
 /* Comments BOX */
 #comments {
   display: block;
@@ -1439,7 +1438,6 @@ img.rss-widget-icon {
   width: auto !important;
 }
 /* Page */
-
 h2.entry-title,
 h1.page-title {
   text-align: left;
@@ -1551,8 +1549,11 @@ h1.page-title {
 	font-weight:bold;
 }
 /* Media */
-
 @media screen and (max-width: 768px) and (min-width: 720px){	
+  .entry-content .alignwide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 	.menubox {
   	float: right;
  	}
@@ -1653,6 +1654,10 @@ h1.page-title {
 	}
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
+  .entry-content .alignwide {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 	#footer input[type="submit"]{
 		width: 100%;
 		float: none;
@@ -1676,6 +1681,10 @@ h1.page-title {
   }
 }
 @media screen and (max-width: 425px){
+  .entry-content .alignwide {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 	#footer input[type="submit"]{
 	width: 100%;
 	float: none;
@@ -1701,12 +1710,11 @@ h1.page-title {
 	} 
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
-
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
+  a.closebtn.mobile-menu:focus, #menu-sidebar .primary-navigation a:focus{
+    outline: 2px solid #000 !important;
+    border-bottom: 1px solid #000;
   }
   .toggle-menu i {
     font-size: 18px;
