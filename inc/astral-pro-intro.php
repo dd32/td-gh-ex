@@ -91,7 +91,10 @@ if (!function_exists('astral_display_theme')) {
 						<a class="nav-item nav-link active" id="nav-plugin-tab" data-toggle="tab" href="#nav-plugin" role="tab" aria-controls="nav-plugin" aria-selected="true"><?php esc_html_e('General Setting','astral'); ?></a>
 
 						<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?php esc_html_e('Documentation','astral'); ?></a>
-						<a class="nav-item nav-link" id="nav-support-tab" data-toggle="tab" href="#nav-support" role="tab" aria-controls="nav-support" aria-selected="true"><?php esc_html_e('Support Forum','astral'); ?></a>	
+
+						<a class="nav-item nav-link" id="nav-support-tab" data-toggle="tab" href="#nav-support" role="tab" aria-controls="nav-support" aria-selected="true"><?php esc_html_e('Support Forum','astral'); ?></a>
+
+						<a style="background: #ffc107;color: #000;font-weight: 700;" class="nav-item nav-link" id="nav-pro" data-toggle="tab" href="#nav-pro-free" role="tab" aria-controls="nav-support" aria-selected="true"><?php esc_html_e('Free Vs Pro','astral'); ?></a>	
 						
 					</div>
 				</nav>
@@ -130,6 +133,71 @@ if (!function_exists('astral_display_theme')) {
 						 	<?php esc_html_e('You are absolutely free to contact us and Astral team will be happy to help you.','astral'); ?> </p>
 							<p class="support-text1"> <?php esc_html_e('We resolve your issues ASAP.','astral'); ?></p>
 							<p style="display: block;padding-top: 10px;"> <a class="support-btn" target="_blank" href="<?php echo esc_url('https://wordpress.org/support/theme/astral/'); ?>"><?php esc_html_e('Free Support','astral'); ?></a></p>
+						</div>
+					</div>
+
+					<!-- free vs pro -->
+					<div class="tab-pane fade show" id="nav-pro-free" role="tabpanel" aria-labelledby="nav-support-tab">
+						<div class="info-box1">
+							<div class="container">
+					            <div class="row justify-content-center">
+					                <table class="pro-feature" border="1">
+					                    <tr><th>FEATURES</th><th>Astral Free</th><th>Astral Premium</th></tr>
+					                    <tr>
+					                        <td>Multiple Header</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Color Options</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Typography</td>
+					                        <td class="ans"><i class="fas fa-times"></i> <span>Limited Features</span></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>About Us Template</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Service Template</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Portfolio Template</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Theme Options</td>
+					                        <td class="ans"><i class="fas fa-times"></i> <span>Limited Features</span></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Gallery Template</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Contact Us Template</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                    <tr>
+					                        <td>Team Sharing</td>
+					                        <td class="ans"><i class="fas fa-times"></i></td>
+					                        <td class="ans"><i class="fas fa-check"></i></td>
+					                    </tr>
+					                </table>
+					            </div>
+
+							</div>
+							
 						</div>
 					</div>
 

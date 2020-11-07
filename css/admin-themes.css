@@ -242,3 +242,21 @@ h2.offer-title1 {
     padding: 20px 0 36px 0;
     width: 90%;
 }
+
+table.pro-feature {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+table.pro-feature th {
+    font-size: 16px;
+    background: #ffc107;
+    padding: 10px;
+    color: #23282d;
+    text-align: center;
+}
+table.pro-feature tr td {
+    padding: 17px;
+}
+td.ans {
+    text-align: center;
+}

@@ -184,6 +184,8 @@ $my_theme = wp_get_theme();
 						<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
 						
 						<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('See Theme Preview','astral'); ?> </a>
+
+						<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Free Vs Pro','astral'); ?> </a>
 					</div>
 
 					<div class="col-md-4" style="width: 40%;display: inline-block;">

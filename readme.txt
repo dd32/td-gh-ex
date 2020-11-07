@@ -27,6 +27,10 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 2.9 =
+* Minor Changes in Rate us banner
+* Minor Changes in about astral page
+
 = 2.8 =
 * Minor Changes in Rate us banner
 
