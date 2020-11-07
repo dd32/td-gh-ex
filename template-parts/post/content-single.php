@@ -30,7 +30,7 @@
 		<?php
 		if ( has_post_thumbnail() ) :
 		?>
-			<figure class="entry-thumbnail aspect-ratio-3x2">
+			<figure class="entry-thumbnail aspect-ratio-16x10">
 				<?php the_post_thumbnail( 'artpop-fullwidth' ); ?>
 			</figure>
 		<?php

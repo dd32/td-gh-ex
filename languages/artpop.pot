@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Artpop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-23 00:54+0000\n"
+"POT-Creation-Date: 2020-11-02 10:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -544,11 +544,11 @@ msgid "Layout"
 msgstr ""
 
 #: inc/customizer/customizer.php:384
-msgid "Grid"
+msgid "Grid (5 Posts)"
 msgstr ""
 
 #: inc/customizer/customizer.php:385
-msgid "Carousel"
+msgid "Carousel (6 Posts)"
 msgstr ""
 
 #: inc/customizer/customizer.php:392

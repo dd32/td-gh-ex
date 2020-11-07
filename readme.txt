@@ -2,8 +2,8 @@
 Contributors: Design Lab Themes
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, grid-layout, sticky-post, theme-options, translation-ready, block-styles, wide-blocks
 Requires at least: 4.7
-Tested up to: 5.5.1
-Stable tag: 1.0.1
+Tested up to: 5.5.3
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,6 +28,10 @@ https://www.designlabthemes.com/artpop-documentation/
 Please visit https://wordpress.org/support/theme/artpop/ if you have any questions about the theme.
 
 == Changelog ==
+
+= 1.0.2 =
+* Fix Custom Blog Title on index.php
+* Various CSS Fix
 
 = 1.0.1 =
 * Fix missing output escaping

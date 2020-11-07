@@ -381,8 +381,8 @@ function artpop_theme_customizer( $wp_customize ) {
 		'section'  => 'home_featured_posts',
 		'type'     => 'radio',
 		'choices'  => array(
-			'featured-grid'      => __( 'Grid', 'artpop' ),
-			'featured-carousel'  => __( 'Carousel', 'artpop' ),
+			'featured-grid'     => __( 'Grid (5 Posts)', 'artpop' ),
+			'featured-carousel' => __( 'Carousel (6 Posts)', 'artpop' ),
 	) ) );
 	$wp_customize->add_setting('home_featured_posts_cat', array(
 		'default'           => artpop_defaults( 'home_featured_posts_cat' ),

@@ -22,7 +22,7 @@ get_header(); ?>
 		$custom_blog_title       = get_theme_mod( 'home_custom_blog_title', artpop_defaults( 'home_custom_blog_title' ) );
 		$custom_blog_description = get_theme_mod( 'home_custom_blog_description', artpop_defaults( 'home_custom_blog_description' ) );
 
-		if ( ! empty( $blog_title ) ) :
+		if ( ! empty( $custom_blog_title  ) ) :
 		?>
 			<div class="section-header">
 				<div class="section-title">

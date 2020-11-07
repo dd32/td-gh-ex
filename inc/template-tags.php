@@ -71,7 +71,7 @@ function artpop_category_link() {
 		echo '<span class="cat-links">';
 		echo '<em class="sep">' . __( 'in', 'artpop' ) . '</em>';
 		echo $categories_list;
-		echo '</span>';;
+		echo '</span>';
 	}
 }
 endif;
