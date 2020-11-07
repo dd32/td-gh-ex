@@ -13,8 +13,10 @@ function advance_coaching_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'advance_coaching_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 855,
+		'height'                 => 200,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'advance_coaching_header_style',
 	) ) );
 }

@@ -431,7 +431,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-coaching'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_background_skin_mode',array(
@@ -660,7 +660,7 @@ function advance_coaching_customize_register($wp_customize) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_coaching_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-coaching'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_coaching_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_coaching_layout_options',array(
@@ -678,7 +678,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-coaching'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'advance_coaching_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_coaching_single_page_sidebar_layout',array(
@@ -693,7 +693,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-coaching'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_coaching_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_coaching_single_post_sidebar_layout',array(
@@ -708,7 +708,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_theme_options',array(
-        'default' => __('Default','advance-coaching'),
+        'default' => 'Default',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_theme_options',array(
@@ -970,7 +970,7 @@ function advance_coaching_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_coaching_slider_content_alignment',array(
-    'default' => __('Left','advance-coaching'),
+    'default' => 'Left',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_slider_content_alignment',array(
@@ -1250,7 +1250,7 @@ function advance_coaching_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_coaching_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-coaching'),
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_blog_post_description_option',array(
@@ -1302,7 +1302,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_display_blog_page_post',array(
-        'default' => __('Without Box','advance-coaching'),
+        'default' => 'Without Box',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_display_blog_page_post',array(
@@ -1414,7 +1414,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_copyright_content_align',array(
-        'default' => __('center','advance-coaching'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_copyright_content_align',array(
@@ -1469,7 +1469,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_scroll_setting',array(
-        'default' => __('Right','advance-coaching'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_coaching_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_coaching_scroll_setting',array(
@@ -1576,7 +1576,7 @@ final class Advance_Coaching_Customize {
 		$manager->add_section(
 			new Advance_Coaching_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_coaching_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Coaching Pro Theme', 'advance-coaching'),
