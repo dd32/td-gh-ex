@@ -4,7 +4,7 @@ Tags: dark, light, blue, white, black, gray, one-column, two-columns, left-sideb
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 4.8.7
+Stable tag: 4.8.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -85,7 +85,10 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
 
-= 4.8.7 = 3.4 (Released: August 12, 2020) =
+= 4.8.8 (Released: November 06, 2020) =
+* Bug Fixed: JS depreciated issue on slider custom script
+
+= 4.8.7 (Released: August 12, 2020) =
 * Updated: Readme
 
 = 4.8.6 (Released: May 28, 2020) =

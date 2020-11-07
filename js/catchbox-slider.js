@@ -4,7 +4,7 @@
  * Description: Featured slider to display in header.php
  */
 
-jQuery(window).load(function() {
+jQuery(window).on('load',function () {
 	if (typeof js_value !== "undefined") {
 		var transition_effect = js_value.transition_effect;
 		var transition_delay = js_value.transition_delay;
