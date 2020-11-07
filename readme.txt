@@ -1,18 +1,18 @@
 === Advance Business ===
 Contributors: Themeshopy
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 0.5.3
+Stable tag: 0.5.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, travel agency, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business.
+Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, travel agency, digital agencies and other business websites.
 
 == Description ==
 
-Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, travel agency, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. It has Theme Options to provide you with better customization options For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. 
+Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, travel agency, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. It has Theme Options to provide you with better customization options For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme.
 
 == Changelog ==
 
@@ -164,6 +164,12 @@ Advance Business is a powerful, bold, flexible, dynamic and neatly-structured bu
   * Added display Pagination in Blog Page option.
   * Added wide-blocks css.
   * Updated POT file.
+
+= 0.5.4 =
+  * Added flexible-header tag.
+  * Changed escaped in ts-color-pallete.php.
+  * Done with prefix if required.
+  * Resolved translatable errors from customizer.php.
 
 == Resources ==
 

@@ -432,7 +432,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
   	$wp_customize->add_setting('advance_business_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-business'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_background_skin_mode',array(
@@ -670,7 +670,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
 	$wp_customize->add_setting('advance_business_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-business'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_business_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_business_layout_options',array(
@@ -688,7 +688,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'advance-business'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'advance_business_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_business_single_page_sidebar_layout',array(
@@ -703,7 +703,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'advance-business'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'advance_business_sanitize_choices',
 	));
 	$wp_customize->add_control('advance_business_single_post_sidebar_layout',array(
@@ -718,7 +718,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_theme_options',array(
-        'default' => __('Default','advance-business'),
+        'default' => 'Default',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_theme_options',array(
@@ -838,7 +838,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//content layout
     $wp_customize->add_setting('advance_business_slider_content_alignment',array(
-    'default' => __('Left','advance-business'),
+    'default' => 'Left',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_slider_content_alignment',array(
@@ -1188,7 +1188,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','advance-business'), 
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_blog_post_description_option',array(
@@ -1254,7 +1254,7 @@ function advance_business_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_business_display_blog_page_post',array(
-        'default' => __('Without Box','advance-business'),
+        'default' => 'Without Box',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_display_blog_page_post',array(
@@ -1366,7 +1366,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_copyright_content_align',array(
-        'default' => __('center','advance-business'),
+        'default' => 'center',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_copyright_content_align',array(
@@ -1421,7 +1421,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_scroll_setting',array(
-        'default' => __('Right','advance-business'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_business_scroll_setting',array(
@@ -1528,7 +1528,7 @@ final class Advance_Business_Customize {
 		$manager->add_section(
 			new Advance_Business_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_business_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__('Business Pro Theme', 'advance-business'),

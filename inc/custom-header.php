@@ -13,8 +13,10 @@ function advance_business_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'advance_business_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1355,
+		'height'                 => 170,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'advance_business_header_style',
 	) ) );
 }
@@ -35,7 +37,9 @@ function advance_business_header_style() {
         #header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
-		}";
+		}
+		.main-header{
+			background:none;";
 	   	wp_add_inline_style( 'advance-business-basic-style', $advance_business_custom_css );
 	endif;
 }
