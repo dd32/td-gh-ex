@@ -432,7 +432,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_ecommerce_store_background_skin_mode',array(
-        'default' => __('Transparent Background','bb-ecommerce-store'),
+        'default' => 'Transparent Background',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_background_skin_mode',array(
@@ -660,7 +660,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_ecommerce_store_theme_options',array(
-        'default' =>  __('Right Sidebar', 'bb-ecommerce-store'),
+        'default' =>  'Right Sidebar', 
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'	        
 	) );
 	$wp_customize->add_control('bb_ecommerce_store_theme_options',
@@ -679,7 +679,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('bb_ecommerce_store_single_page_sidebar_layout', array(
-		'default'           => __('One Column', 'bb-ecommerce-store'),
+		'default'           => 'One Column',
 		'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_ecommerce_store_single_page_sidebar_layout',array(
@@ -694,7 +694,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_single_post_sidebar_layout', array(
-		'default'           => __('Right Sidebar', 'bb-ecommerce-store'),
+		'default'           => 'Right Sidebar', 
 		'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices',
 	));
 	$wp_customize->add_control('bb_ecommerce_store_single_post_sidebar_layout',array(
@@ -709,7 +709,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_width_theme_options',array(
-        'default' => __('Default','bb-ecommerce-store'),
+        'default' => 'Default',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_width_theme_options',array(
@@ -944,7 +944,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 
 	//content layout
     $wp_customize->add_setting('bb_ecommerce_store_slider_content_alignment',array(
-    'default' => __('Right','bb-ecommerce-store'),
+    'default' => 'Right',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_slider_content_alignment',array(
@@ -1224,7 +1224,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_ecommerce_store_blog_post_description_option',array(
-    	'default'   => __('Excerpt Content','bb-ecommerce-store'),
+    	'default'   => 'Excerpt Content',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_blog_post_description_option',array(
@@ -1290,7 +1290,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('bb_ecommerce_store_display_blog_page_post',array(
-        'default' => __('In Box','bb-ecommerce-store'),
+        'default' => 'In Box',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_display_blog_page_post',array(
@@ -1402,7 +1402,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_copyright_content_align',array(
-        'default' => __('center','bb-ecommerce-store'),
+        'default' => 'center',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_copyright_content_align',array(
@@ -1457,7 +1457,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_ecommerce_store_scroll_setting',array(
-        'default' => __('Right','bb-ecommerce-store'),
+        'default' => 'Right',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('bb_ecommerce_store_scroll_setting',array(
@@ -1564,7 +1564,7 @@ final class BB_Ecommerce_Store_Customize {
 		$manager->add_section(
 			new BB_Ecommerce_Store_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'bb_ecommerce_store_example_1',
 				array(
 					'priority'   => 9,
 					'title'    => esc_html__( 'BB Ecommerce Pro', 'bb-ecommerce-store' ),

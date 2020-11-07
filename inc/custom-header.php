@@ -9,8 +9,10 @@ function bb_ecommerce_store_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'bb_ecommerce_store_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1355,
+		'height'                 => 120,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'bb_ecommerce_store_header_style',
 	) ) );
 }
