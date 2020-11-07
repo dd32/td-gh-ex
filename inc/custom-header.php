@@ -13,8 +13,10 @@ function advance_automobile_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'advance_automobile_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1360,
+		'height'                 => 110,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'advance_automobile_header_style',
 	) ) );
 }

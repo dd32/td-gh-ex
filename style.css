@@ -3,14 +3,14 @@ Theme Name: Advance Automobile
 Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu optionsn also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
-Tested up to: 5.5.1
+Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, automotive, cardealer, mechanic, car repairing centre, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu optionsn also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.5.5
+Version: 0.5.6
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-automobile
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance Automobile WordPress Theme has been created by Themeshopy, 2018.
 Advance Automobile WordPress Theme is released under the terms of GNU GPL
@@ -73,9 +73,13 @@ a:focus,
 a:hover{
   text-decoration:none !important;
 }
-a:focus, textarea:focus, .closepop:focus, input:focus, button:focus{
-  outline: 1px dotted #000;
+a:focus, .toggle-menu button:focus, textarea:focus, .closepop:focus, input:focus, button:focus, input:focus{
+  outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
+}
+#footer a:focus, .primary-navigation .sub-menu > li > a:focus, .book-btn a:focus, .top-header a:focus{
+  outline: 2px solid #FF4500;
+  border-bottom: 1px solid #fff;
 }
 ul{
   margin:0 0 0 15px;
@@ -106,10 +110,6 @@ summary{
 }
 .clear{
   clear:both;
-}
-input:focus{
-  outline: 1px dotted #000 !important;
-  border-bottom: 1px solid #000;
 }
 input[type='submit']:hover{
   cursor: pointer;
@@ -151,7 +151,12 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-
+.left-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.right-sidebar-page .entry-content .alignfull{
+  margin-left  : 0;
+  margin-right : 0;
+}
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
@@ -281,8 +286,8 @@ input[type="submit"] {
 .single-product .background-img-skin {
   margin: 36px 0;
 }
-/* ---------Buttons--------- */
 
+/* ---------Buttons--------- */
 .read-moresec a {
   border: 1px solid #1a8129;
   color: #1a8129;
@@ -314,7 +319,6 @@ input[type="submit"] {
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -356,7 +360,6 @@ input[type="submit"] {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -464,11 +467,6 @@ input[type="submit"] {
   margin-bottom: 0px;
 }
 /* ---------HEADER--------- */
-
-.book-btn a:focus, .top-header a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 .top-header{
   color: #000;
   padding:7px;
@@ -621,11 +619,6 @@ ul.list_nav {
 .page-template-custom-front-page #header .main-menu{
   border: none;
 }
-.primary-navigation .sub-menu > li > a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
-
 /*-----------------Search pop up----------------*/
 .serach_inner label {
   width: 95%;
@@ -1162,6 +1155,9 @@ table#wp-calendar {
 table#wp-calendar td a {
   color: #fff;
 }
+#footer #calendar_wrap a, #footer #calendar_wrap a:hover{
+  color: #fff;
+}
 #footer caption,
 #sideabr caption {
   font-weight: bold;
@@ -1241,10 +1237,6 @@ table#wp-calendar td a {
   border-radius: 0px;
   color: #fff;
   margin-top: -38px;
-}
-#footer a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
 }
 .copyright p {
   font-size: 15px;
@@ -1907,6 +1899,7 @@ h1.page-title {
 iframe , .entry-audio audio{
   width: 100%;
 }
+
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){  
   #sidebar th,
@@ -2004,6 +1997,16 @@ iframe , .entry-audio audio{
   } 
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
+  .entry-content .alignwide {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  #slider .carousel-control-prev {
+    left: 73%;
+  }
+  #slider .carousel-caption {
+    top: 45%;
+  }
   #footer input[type="submit"]{
     margin-top: 5px;
   }
@@ -2024,6 +2027,10 @@ iframe , .entry-audio audio{
   }
 }
 @media screen and (max-width: 425px){
+  .entry-content .alignwide {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
   #footer input[type="search"]{
     width: 100%;
   }
@@ -2083,6 +2090,10 @@ iframe , .entry-audio audio{
   }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
+  .entry-content .alignwide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
   #slider .carousel-caption {
     top: 50%;
   }
@@ -2100,31 +2111,12 @@ iframe , .entry-audio audio{
     right: 50%;
   }
 }
-@media screen and (min-width: 1000px) and (max-width: 1024px){
-  #slider .carousel-control-prev {
-    left: 73%;
-  }
-  #slider .carousel-caption {
-    top: 45%;
-  }
-}
-@media screen and (min-width: 1025px){
-  #slider .carousel-caption{
-    left:10%;
-  }
-}
-
-/*------------------RESPONSIVE MEIDA-------------------*/
-
+/*------------------RESPONSIVE MEIDA menu css-------------------*/
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
   a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .toggle-menu button:focus{
-    outline: 1px dotted #fff;
+    outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff;
-  }
-  .toggle-menu button:focus{
-    outline: 1px dotted #000;
-    border-bottom: 1px solid #000;
   }
   .toggle-menu i {
     font-size: 18px;

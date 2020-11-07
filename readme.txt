@@ -1,18 +1,18 @@
 === Advance Automobile WordPress Theme ===
 Contributors: Themeshopy
-Tags: wide-blocks, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 0.5.5
+Stable tag: 0.5.6
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses.
+Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, automotive, cardealer, mechanic, car repairing centre, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses.
 
 == Description ==
 
-Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu optionsn also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
+Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, automotive, cardealer, mechanic, car repairing centre, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu optionsn also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
 
 == Changelog ==
 
@@ -171,6 +171,12 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added display Pagination in Blog Page option.
 * Added wide-blocks css.
 * Updated Arabic, Chinese, French, German, Spanish, Italian, Russian, and Turkish languages files. 
+
+= 0.5.6 =
+* Added flexible-header tag.
+* Changed escaped in ts-color-pallete.php.
+* Done with prefix if required.
+* Resolved translatable errors from customizer.php.
 
 == Resources ==
 
