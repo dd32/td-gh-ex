@@ -4,6 +4,11 @@
 	   $(this).parent().toggleClass('menushow');
 	});
 
+	$('.mmenu-hide').on('click', function(){
+	   $('#site-navigation').removeClass('toggled');
+	  // $(this).hide();
+	});
+
 	$.fn.asthirAccessibleDropDown = function () {
 		 var el = $(this);
 

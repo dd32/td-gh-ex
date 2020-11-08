@@ -69,7 +69,6 @@
 						array(
 							'theme_location' => 'menu-1',
 							'menu_id'        => 'primary-menu',
-							//'fallback_cb'     => 'wp_page_menu',
 							'walker'        => new Asthir_Walker_Nav_Menu(),
 						)
 						);
@@ -92,6 +91,7 @@
 					}
 					
 					?>
+					<button class="screen-reader-text mmenu-hide"><?php esc_html_e( 'Close Menu', 'asthir' ); ?></button>
 				</nav><!-- #site-navigation -->
 			</div>
 		</div>

@@ -825,6 +825,9 @@ button.mini-toggle {
 	.toggled button.menu-toggle span.mhide {
 	    display: block;
 	}
+	button.screen-reader-text.mmenu-hide{
+		display: none;
+	}
 
 @media (max-width: 991px){
 	.main-navigation.toggled ul {

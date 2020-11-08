@@ -298,6 +298,22 @@ form.post-password-form p {
         -ms-flex-preferred-size: inherit;
             flex-basis: inherit;
     }
+    .main-navigation {
+        position: relative;
+    }
+
+    button.screen-reader-text.mmenu-hide {
+        display: block;
+        position: absolute;
+        bottom: 0 !important;
+        left: auto;
+        right: 0;
+        margin-left: auto;
+        top: auto !important;
+        padding: 0px 20px !important;
+        line-height: 28px;
+        margin-bottom: 8px;
+    }
     .asthir-list-flex {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
