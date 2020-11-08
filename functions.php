@@ -9,7 +9,7 @@
 
 if ( ! defined( 'BESHOP_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BESHOP_VERSION', '1.0.12' );
+	define( 'BESHOP_VERSION', '1.0.13' );
 }
 
 if ( ! function_exists( 'beshop_setup' ) ) :
@@ -270,5 +270,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/about/class.about.php';
 	require get_template_directory() . '/inc/about/about.php';
+
+}
+
+if( ! function_exists('is_not_woocommerce_activated')){
+	function is_not_woocommerce_activated(){
+		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) return;
+	}
 
 }
