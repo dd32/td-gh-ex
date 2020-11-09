@@ -1,7 +1,6 @@
 <?php
 /**
- * The header for our theme
- *
+ * The header for our theme 
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -24,14 +23,17 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'asthir' ); ?></a>
-	<?php
-	if ( function_exists( 'asthir_woocommerce_header_cart' ) ) {
-		asthir_woocommerce_header_cart();
-		}
-	?>
+	
 	<?php 
 		$asthir_dheader_text = get_theme_mod( 'display_header_text', 1 );
 		if($asthir_dheader_text):
+	?>
+	<?php 
+	$asthir_topbar_show = get_theme_mod( 'asthir_topbar_show', 1 );
+	if($asthir_topbar_show){
+		do_action( 'asthir_header_top_display' );
+	} 
+
 	?>
 	<header id="masthead" class="asthir-header site-header">
 		<?php if(has_header_image()): ?>

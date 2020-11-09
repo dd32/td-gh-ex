@@ -79,6 +79,12 @@ Source: https://pxhere.com/en/photo/635899
 
 == Changelog ==
 
+= 1.0.3 - November 9 2020 =
+* Added theme topbar and topbar options
+* Added options for body and header font.
+* Added options footer style.
+* Removed commented code.
+
 = 1.0.2 - November 8 2020 =
 * remove commented codes
 * Fixed Tested version issue

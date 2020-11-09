@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ASTHIR_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ASTHIR_VERSION', '1.0.2' );
+	define( 'ASTHIR_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'asthir_setup' ) ) :
@@ -50,6 +50,7 @@ if ( ! function_exists( 'asthir_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
+				'top-menu' => esc_html__( 'Top Menu', 'asthir' ),
 				'menu-1' => esc_html__( 'Primary', 'asthir' ),
 			)
 		);
@@ -175,9 +176,38 @@ function asthir_gb_block_style() {
 add_action( 'enqueue_block_assets', 'asthir_gb_block_style' );
 
 /**
+ * Beshop Google fonts fuction
+ */
+if ( ! function_exists( 'asthir_body_fonts' ) ) :
+function asthir_body_fonts() {
+ $asthir_body_fonts = get_theme_mod('asthir_body_fonts','Poppins');
+ $asthir_head_fonts = get_theme_mod('asthir_head_fonts','Lato');
+
+	$fonts_url = '';
+
+		$font_families = array();
+	if( $asthir_body_fonts == $asthir_head_fonts ){
+		$font_families[] = $asthir_body_fonts.':300,400,500,600,700,800';
+	}else{
+		$font_families[] = $asthir_body_fonts.':300,400,500,600,700,800';
+		$font_families[] = $asthir_head_fonts.':300,400,500,600,700,800';
+	}
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+	return esc_url_raw( $fonts_url );
+}
+endif;
+
+/**
  * Enqueue scripts and styles.
  */
 function asthir_scripts() {
+	wp_enqueue_style( 'asthir-google-font', asthir_body_fonts(), array(), null );
 	wp_enqueue_style( 'asthir-default', get_template_directory_uri().'/assets/css/default.css',array(), ASTHIR_VERSION ,'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'font-awesome-five-all', get_template_directory_uri().'/assets/css/all.css',array(), '5.14.0' ,'all' );
@@ -216,14 +246,25 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/class-walker-nav-menu.php';
 require get_template_directory() . '/inc/class-asthir-walker-page.php';
 /**
- * nav walker
+ * customizer
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer-helper.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
 /**
  * Recommend plugin 
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/plugin-recomend.php';
+
+/**
+ * add inline style
+ */
+require get_template_directory() . '/inc/inline-style.php';
+/**
+ * header action
+ */
+require get_template_directory() . '/inc/header-action/header-style.php';
+require get_template_directory() . '/inc/header-action/header-top.php';
 
 /**
  * Load Jetpack compatibility file.

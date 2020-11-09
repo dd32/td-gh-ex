@@ -60,10 +60,30 @@ function asthir_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Woocommerce',
+			'name'      => esc_html__('Woocommerce','asthir'),
 			'slug'      => 'woocommerce',
 			'required'  => false,
 		),
+		array(
+			'name'      => esc_html__('Elementor','asthir'),
+			'slug'      => 'elementor',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Magical Addons','asthir'),
+			'slug'      => 'magical-addons-for-elementor',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Click to top','asthir'),
+			'slug'      => 'click-to-top',
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('Gallery Box','asthir'),
+			'slug'      => 'gallery-box',
+			'required'  => false,
+		)
 
 		
 

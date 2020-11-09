@@ -14,6 +14,53 @@
 
 /* header style
 --------------------------------------------- */
+/*Top bar style*/
+.asthirtop-tophead .row {
+    align-items: center;
+}
+.asthirtop-tophead {
+    position: relative;
+}
+.topmenu-serch {
+    display: flex;
+    flex-flow: row wrap;
+}
+.modal-content {
+    color: #000;
+}
+.asthirtop-menu,
+.asthirtop-menu ul {
+    display: flex;
+}
+ul.asthirtop-menu {
+    margin: 0 10px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.asthirtop-menu li {
+    padding: 0 10px;
+}
+.asthirtop-menu li a{
+    color: #fff;
+}
+.header-top-search .search-form {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 100px;
+    min-width: 300px;
+    z-index: 9999999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s
+}
+
+.header-top-search .search-form.sbar-show {
+    top: 26px;
+    opacity: 1;
+    visibility: visible;
+}
 .asthir-header .site-title {
     font-weight: 700;
     text-transform: uppercase;
@@ -106,7 +153,6 @@ h3.widget-title {
 }
 section.widget {
     position: relative;
-    min-height: 220px;
     display: flex;
     align-items: center;
 }

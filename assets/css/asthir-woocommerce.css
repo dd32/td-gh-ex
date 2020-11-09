@@ -111,14 +111,11 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
     border-left: 4px solid green;
 }
 .asthiring-cart {
-    z-index: 999;
-    position: relative;
+    margin-left: 10px;
 }
 
-.asthir-shopcart {
-    position: fixed;
-    right: 20px;
-    top: 18px;
+.asthiring-cart {
+    position: relative;
 }
 .asthir-shopcart i{
     -webkit-box-shadow: 0px 3px 40px rgba(0,0,0,0.20);
@@ -130,7 +127,7 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
     text-align: center;
 }
 .admin-bar .asthir-shopcart {
-    top: 50px;
+    /* top: 50px; */
 }
 
 .asthir-shopcart i {
@@ -146,14 +143,14 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 }
 span.count.cart-contents {
     position: absolute;
-    top: -24px;
+    top: -6px;
     padding: 10px;
     line-height: 11px;
     color: #000;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
     width: auto;
-    right: -16px;
+    right: -10px;
     min-width: 40px;
 }
 li.woocommerce-mini-cart-item.mini_cart_item {
@@ -282,11 +279,7 @@ button.button,
 
 @media only screen and (max-width: 767px) {
 
-    .asthir-shopcart {
-        position: fixed;
-        right: 2px;
-        top: 25px;
-    }
+    
     .admin-bar .asthir-shopcart {
         top: 58px;
     }
