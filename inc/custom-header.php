@@ -13,7 +13,9 @@ function automobile_car_dealer_custom_header_setup() {
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
 		'width'                  => 1600,
-		'height'                 => 400,
+		'height'                 => 120,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'automobile_car_dealer_header_style',
 	) ) );
 }
@@ -34,6 +36,7 @@ function automobile_car_dealer_header_style() {
         #header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
+		    background-size: 100% 100%;
 		}";
 	   	wp_add_inline_style( 'automobile-car-dealer-basic-style', $automobile_car_dealer_custom_css );
 	endif;

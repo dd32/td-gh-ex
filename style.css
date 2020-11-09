@@ -3,14 +3,14 @@ Theme Name: Automobile Car Dealer
 Theme URI: https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme/
 Author: Buywptemplates
 Author URI: https://www.buywptemplates.com
-Description: Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly, robust WordPress theme by Buywptemplates is perfect for dealers of new or used cars, motorbikes, and motorcycles. Its Mega Menu and Custom logo allows showcasing the portfolio of products in best possible ways. Simple and adaptable car Dealer WordPress Theme is clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. This theme is perfect for car dealers, wheel shop owners, Motorcycle shops, Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business  process right from browsing till purchase. It supports different languages such as ARABIC, GERMAN, SPANISH, FRENCH, ITALIAN, RUSSIAN, CHINESE, and TURKISH. Demo: https://www.buywptemplates.com/automobile-car-dealer-pro
-Tested up to: 5.5.1
+Description: Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly, footer-widgets, robust WordPress theme by Buywptemplates is perfect for dealers of new or used cars, Tractor, Forklift & Lift Truck, Snowmobile, MotoSnow, Snow , Motorbike Motor Full, Agriculture Equipment and even Aircrafts, motorbikes and motorcycles. Its Custom Menu and Custom logo allows showcasing the portfolio of products in best possible ways. Simple and adaptable car Dealer WordPress Theme is clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. This theme is perfect for car dealers, wheel shop owners, Motorcycle shops, Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business process right from browsing till purchase. It supports different languages such as ARABIC, GERMAN, SPANISH, FRENCH, ITALIAN, RUSSIAN, CHINESE, and TURKISH. Demo: https://www.buywptemplates.com/automobile-car-dealer-pro
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.5.6
+Version: 0.5.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automobile-car-dealer
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats, translation-ready, rtl-language-support, blog, portfolio, e-commerce
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, flexible-header, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats, translation-ready, rtl-language-support, blog, portfolio, e-commerce
 
 Automobile Car Dealer WordPress Theme incorporates code from VW Restaurant Lite WordPress Theme, Copyright 2016 VW Themes
 Automobile Car Dealer WordPress Theme is distributed under the terms of the GNU GPL
@@ -65,14 +65,29 @@ a:hover{
   text-decoration:none;
   color:#666;
 }
-a:focus,.woocommerce form .form-row input:focus.input-text, 
-.woocommerce form .form-row textarea:focus, button:focus{
-  outline: 1px dotted #000 !important;
+
+/*focus css*/
+a:focus, input:focus, .woocommerce form .form-row input:focus.input-text, .main-navigation .sub-menu > li > a:focus,.search-box i:focus, .select2-container--default .select2-selection--single:focus,
+.woocommerce form .form-row textarea:focus, button:focus, textarea#comment:focus, #sidebar .textwidget a:focus{
+  outline: 1px solid #000 !important;
   border-bottom: 1px solid #000;
 }
-#search .close:focus, .footer-wp a:focus, .footer-wp button:focus,
-.copyright-wrapper a:focus { 
-  outline: 1px dotted #fff !important;
+.toggle-menu.responsive-menu a:focus, .primary-navigation a:focus{
+  outline: 1px solid #000 !important;
+  border-bottom: 1px solid #000 !important;
+}
+#search .close:focus, .footer-wp button:focus, button.close:focus,.footer-wp a:focus,.copyright-wrapper a:focus, .primary-navigation a:focus, #navbar-header a:focus{ 
+  outline: 1px solid #fff !important;
+}
+.menubar .primary-navigation ul li a:focus, a.closebtn.responsive-menu:focus, #sidebar-footer input:focus, .textwidget a:focus,#sidebar-footer a:focus, .slide-button a:focus, .close:focus{
+  outline: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.primary-navigation a:focus, button.close:focus{
+  border-bottom: 1px solid #fff !important;
+}
+.footer-wp .tagcloud a:focus, .footer-wp button:focus, .footer-wp input.search-submit:focus{
+  outline: 2px solid #FFFF00 !important;
 }
 ul,
 ol{ 
@@ -109,10 +124,6 @@ textarea{
 }
 textarea{
   height:111px;
-}
-textarea#comment:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
 }
 select{
   width:100%;
@@ -278,10 +289,6 @@ h2 .section-title {
   border: none;
   opacity: 1;
 }
-.close:focus{
-  outline: 1px dotted #fff;
-  border: 1px solid #fff;
-}
 .serach_inner{
   position: absolute;
   width: 100%;
@@ -337,10 +344,6 @@ input.search-field {
 .modal-backdrop{
   position: relative;
   opacity: 0;
-}
-input:focus{
-  outline: 1px dotted #000;
-  border: 1px solid #000;
 }
 .modal-body.open {
   -webkit-transform: translate(0px, 0px) scale(1, 1);
@@ -421,10 +424,6 @@ input:focus{
   font-size: 15px;
   font-weight: bold;
 }
-.slide-button a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 .slide-button {
   margin: 20px 0;
   text-align: center;
@@ -462,6 +461,9 @@ input:focus{
   border:none;
   background: transparent;
 }
+.page-template-custom-home-page .inner-box{
+  background: #fff;
+}
 .appointbtn i{
   font-size: 16px;
   color: #fff;
@@ -472,7 +474,6 @@ input:focus{
   border-bottom: 2px solid #111111;
 }
 .inner-box {
-  background: #fff;
   padding: 0 !important;
 }
 .padding0{
@@ -498,8 +499,7 @@ input:focus{
   float: left;
 }
 .topbar i {
-  margin-right: 15px;/*
-  color: #fff;*/
+  margin-right: 15px;
 }
 #header .socialbox i {
   margin: 0 7px;
@@ -544,15 +544,6 @@ input:focus{
 /* --------- MENUS CSS --------- */
 #navbar-header form.search-form{
   display: none;
-}
-.primary-navigation a:focus{
-  outline: 1px dotted #fff !important;
-  border-bottom: 1px solid #fff !important;
-}
-.main-navigation .sub-menu > li > a:focus,
-.search-box i:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
 }
 #navbar-header a.mail, #navbar-header a.call,
 #navbar-header .socialbox{
@@ -639,7 +630,6 @@ ul.list_nav {
 }
 
 /*--------------- SUPERFISH MENU ---------------------------*/
-
 .sf-arrows .sf-with-ul:after{
   content: '';
   position: absolute;
@@ -842,7 +832,6 @@ iframe{
 .entry-audio audio {
   width: 100%;
 }
-
 /* Breadcrumb */
 .bradcrumbs{
   padding:30px 0;
@@ -862,7 +851,6 @@ iframe{
   color:#000;
   padding:5px 15px;
 }
-
 /* --------- Blog Page ------- */
 .box{
   color:#000;
@@ -1001,21 +989,21 @@ iframe{
   padding: 10px 0;
 }
 #comments ol {
-    list-style: none;
-    margin: 10px 0px;
+  list-style: none;
+  margin: 10px 0px;
 }
 #comments ol li {
-    width: 100%;
-    list-style: none;
-    margin: 0 0 20px !important;
-    padding: 20px !important;
-    background: #fff;
-    display: inline-block;
-    border: solid 1px #f0f0f0;
+  width: 100%;
+  list-style: none;
+  margin: 0 0 20px !important;
+  padding: 20px !important;
+  background: #fff;
+  display: inline-block;
+  border: solid 1px #f0f0f0;
 }
 #comments .comment-author {
-    width: 50%;
-    float: left;
+  width: 50%;
+  float: left;
 }
 .comment-meta.commentmetadata {
   float: right;
@@ -1082,10 +1070,6 @@ form#commentform label{
   border: 1px solid #aaa;
   border-radius: 0px !important;
 }
-.select2-container--default .select2-selection--single:focus{
-  outline: 1px dotted #000;
-  border: 1px solid #000;
-} 
 #sidebar input[type="search"] {
   background:transparent;
   padding:10px 10px; 
@@ -1168,19 +1152,11 @@ table {
 #tab-description p a{
   text-decoration: underline;
 }
-.textwidget a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 .textwidget a:hover{
   color: #fff;
 }
 #sidebar .textwidget a:hover{
   color: #000;
-}
-#sidebar .textwidget a:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
 }
 .widget.widget_calendar table {
   margin: 0;
@@ -1440,14 +1416,6 @@ a.button {
   background: #dd3333;
   color: #fff;
 }
-#sidebar-footer a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
-#sidebar-footer input:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-}
 /* Pagination */
 .pagination {
   clear:both;
@@ -1544,7 +1512,6 @@ input.search-submit,
   padding:10px 20px;
   cursor:pointer;
 }
-
 /*preloader*/
 .frame {
   position: fixed;
@@ -1557,7 +1524,6 @@ input.search-submit,
   top: 0;
   left: 0;
 }
-
 .loader {
   position: absolute;
   width: 220px;
@@ -1566,7 +1532,6 @@ input.search-submit,
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .dot-1 {
   position: absolute;
   z-index: 3;
@@ -1596,7 +1561,6 @@ input.search-submit,
   -webkit-animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
   animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
-
 .dot-3 {
   position: absolute;
   z-index: 1;
@@ -2118,11 +2082,6 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
     background: transparent;
     border:none;
   }
-  .menubar .primary-navigation ul li a:focus,
-  a.closebtn.responsive-menu:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
-  }
   .primary-navigation ul li a:focus{
     background: none !important;
     color: #000 !important;
@@ -2237,10 +2196,6 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
    #navbar-header i.fas.fa-times {
     color: #000;
   }
-  #navbar-header a:focus{
-    outline: 1px dotted #000;
-    border-bottom: 1px solid #000;
-  }
   .primary-navigation ul{
     display: grid;
   }
@@ -2251,10 +2206,6 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
   }
   .main-menu-navigation{
     background: #fff;
-  }
-  .toggle-menu.responsive-menu a:focus{
-    outline: 1px dotted #000 !important;
-    border-bottom: 1px solid #000 !important;
   }
   .page-template-custom-front-page #header {
     display: block;
@@ -2274,10 +2225,6 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
   .main-menu .menu-color{
     background: #fff !important;
     text-align: center;
-  }
-  .primary-navigation a:focus{
-    outline: 1px dotted #000 !important;
-    border-bottom: 1px solid #000 !important;
   }
   .scrollbutton.center i{
     left: 44%;
@@ -2300,5 +2247,9 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
   }
   .primary-navigation a{
     color: #000 !important;
+  }
+  .primary-navigation a:focus, #navbar-header a:focus{ 
+    outline: 1px solid #000 !important;
+    border-bottom: 1px solid #000 !important;
   }
 }
