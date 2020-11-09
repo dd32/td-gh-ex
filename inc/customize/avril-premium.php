@@ -10,7 +10,6 @@ function avril_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Pro','avril'),
-			//'priority'      => 1,
 		)
     );
 	
