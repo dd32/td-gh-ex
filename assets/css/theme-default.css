@@ -191,11 +191,6 @@ td a {
 .theme-project .theme-project-content:hover .content-area:before {
     border-color: transparent transparent #007bff transparent;
 }
-.theme-project .theme-project-content .click-view a:hover, 
-.theme-project .theme-project-content .click-view a:hover {
-	background-color: #007bff;
-}
-
 
 /*--------------------------------------------------
 =>> Theme Testimonial Area
