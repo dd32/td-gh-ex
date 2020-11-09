@@ -52,3 +52,8 @@ function azwa_remove_parent_setting( $wp_customize ) {
 add_action( 'customize_register', 'azwa_remove_parent_setting',99 );
 
 require( get_stylesheet_directory() . '/template-parts/sections/section-blog.php');
+
+/**
+ * Called all the Customize file.
+ */
+require( get_stylesheet_directory() . '/inc/customize/azwa-premium.php');
