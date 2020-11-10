@@ -553,7 +553,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 
 	$wp_customize->add_setting( 'heading_font' , array(
 		'default'    => agency_starter_default_settings('heading_font'),
-		'sanitize_callback' => 'agency_starter_sanitize_select',
+		'sanitize_callback' => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control('heading_font' , array(
@@ -566,7 +566,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 	
 	$wp_customize->add_setting( 'body_font' , array(
 		'default'    => agency_starter_default_settings('body_font'),
-		'sanitize_callback' => 'agency_starter_sanitize_select',
+		'sanitize_callback' => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control('body_font' , array(
