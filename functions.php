@@ -57,18 +57,3 @@ require( get_stylesheet_directory() . '/template-parts/sections/section-blog.php
  * Called all the Customize file.
  */
 require( get_stylesheet_directory() . '/inc/customize/azwa-premium.php');
-
-
-/**
- * Import Options From Parent Theme
- *
- */
-function azwa_parent_theme_options() {
-	$conceptly_mods = get_option( 'theme_mods_conceptly' );
-	if ( ! empty( $conceptly_mods ) ) {
-		foreach ( $conceptly_mods as $conceptly_mod_k => $conceptly_mod_v ) {
-			set_theme_mod( $conceptly_mod_k, $conceptly_mod_v );
-		}
-	}
-}
-add_action( 'after_switch_theme', 'azwa_parent_theme_options' );

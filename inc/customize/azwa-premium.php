@@ -10,7 +10,6 @@ function azwa_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Pro','azwa'),
-			'priority'      => 1,
 		)
     );
 	
@@ -50,6 +49,7 @@ function azwa_premium_setting( $wp_customize ) {
 	
 	$wp_customize->add_control( new Azwa_WP_Button_Customize_Control( $wp_customize, 'premium_info_buttons', array(
 		'section' => 'upgrade_premium',
+		'setting' => 'premium_info_buttons',
     ))
 );
 }
