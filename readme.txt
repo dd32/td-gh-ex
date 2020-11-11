@@ -7,7 +7,7 @@ Stable tag: 1.0.0
 Requires PHP: 5.6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
+Donate link: https://sslpay.univahost.com/
 A starter theme called ArticlePress.
 ArticlePress WordPress Theme, Copyright 2019 ThemeAsia
 ArticlePress is distributed under the terms of the GNU GPL

@@ -28,7 +28,7 @@ get_header();
 							</div>
 							<div class="single-page">
 								<h4 class="blog-info blog-info-single-page">
-								<span class="post-user"><i class="fas fa-user"></i> <?php articlepress_posted_by(); ?></span>  <span class="time-date"><i class="far fa-calendar-alt"></i> <?php esc_html_e( 'Updated', 'articlepress' ); ?> : <?php the_time( 'M d, Y' ); ?></span>
+								<span class="post-user"><i class="fas fa-user"></i> <?php articlepress_posted_by(); ?></span>  <span class="time-date"><i class="far fa-calendar-alt"></i> <?php the_time( 'M d, Y' ); ?></span>
 									<span class="caretory">
 									<i class="far fa-list-alt"></i><?php 
 										// Show the First Category Name Only
