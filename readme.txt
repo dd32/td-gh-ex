@@ -2,11 +2,11 @@
 Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, photography
 Requires at least: 4.0
-Stable tag: 3.9.0.4
+Stable tag: 3.9.0.5
 Tested up to: 5.5
 Requires PHP: 5.3
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 SuevaFree is a clean and minimal WordPress theme, optimized to work with WooCommerce.
 
@@ -15,10 +15,16 @@ SuevaFree is a clean and minimal WordPress theme, optimized to work with WooComm
 SuevaFree is a free clean and minimal WordPress blog theme, with an optional minimal layout and one page section, perfect to manage your personal, lifestyle, travel, food, recipes or fashion blog. You are able to customize and manage a lot of sections of SuevaFree from the WordPress Theme Customizer, like 5 different header layouts, two different layouts for the side sidebar, the post details, the footer section and much more. SuevaFree is also ecommerce ready and optimized to work with WooCommerce and Contact Form 7 plugins. The blog section has a beautiful masonry grid layout and you are able to create a pinterest style gallery, adding the image post formats.  The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3. SuevaFree Essential Kit plugin is required to manage the one-page section.
 
 Created by ThemeinProgress, http://www.themeinprogress.com
+
 SuevaFree WordPress Theme, Copyright 2020 ThemeinProgress.
 SuevaFree is distributed under the terms of the GPLv3 or later
 
 == Changelog ==
+
+= 3.9.0.5 =
+Release date - November, 12 - 2020
+
+* Edit - Code optimized
 
 = 3.9.0.4 =
 Release date - August, 21 - 2020
