@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.5.1
 Requires PHP: 5.6
-Stable tag: 1.0.2
-Version: 1.0.2
+Stable tag: 1.0.3
+Version: 1.0.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
@@ -13,7 +13,7 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background
 == Copyright ==
 
 Azwa WordPress Theme, Copyright 2020 Nayra Themes
-Azwa is distributed under the terms of the GPLv2 or later
+Azwa is distributed under the terms of the GNU GPL
 
 Conceptly WordPress Theme, Copyright 2020 Nayra Themes. Conceptly WordPress Theme is distributed under the terms of the GPLv2 or later
 
@@ -105,6 +105,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 1.0.3
+* Readme Updated
 
 @version 1.0.2
 * Screenshot Updated
