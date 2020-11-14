@@ -46,7 +46,7 @@
 	$advance_blogging_right_spacing = get_theme_mod('advance_blogging_slider_right_spacing');
 	if($advance_blogging_top_spacing != false || $advance_blogging_bottom_spacing != false || $advance_blogging_left_spacing != false || $advance_blogging_right_spacing != false){
 		$advance_blogging_custom_css .='#slider .inner_carousel{';
-			$advance_blogging_custom_css .='margin-top: '.esc_html($advance_blogging_top_spacing).'px; margin-bottom: '.esc_html($advance_blogging_bottom_spacing).'px; margin-left: '.esc_html($advance_blogging_left_spacing).'px; margin-right: '.esc_html($advance_blogging_right_spacing).'px;';
+			$advance_blogging_custom_css .='margin-top: '.esc_attr($advance_blogging_top_spacing).'px; margin-bottom: '.esc_attr($advance_blogging_bottom_spacing).'px; margin-left: '.esc_attr($advance_blogging_left_spacing).'px; margin-right: '.esc_attr($advance_blogging_right_spacing).'px;';
 		$advance_blogging_custom_css .='}';
 	}
 
@@ -55,13 +55,13 @@
 	$advance_blogging_left_right_padding = get_theme_mod('advance_blogging_left_button_padding');
 	if($advance_blogging_top_buttom_padding != false || $advance_blogging_left_right_padding != false ){
 		$advance_blogging_custom_css .='.blogbutton-mdall, .button-post a, #comments input[type="submit"].submit{';
-			$advance_blogging_custom_css .='padding-top: '.esc_html($advance_blogging_top_buttom_padding).'px; padding-bottom: '.esc_html($advance_blogging_top_buttom_padding).'px; padding-left: '.esc_html($advance_blogging_left_right_padding).'px; padding-right: '.esc_html($advance_blogging_left_right_padding).'px;';
+			$advance_blogging_custom_css .='padding-top: '.esc_attr($advance_blogging_top_buttom_padding).'px; padding-bottom: '.esc_attr($advance_blogging_top_buttom_padding).'px; padding-left: '.esc_attr($advance_blogging_left_right_padding).'px; padding-right: '.esc_attr($advance_blogging_left_right_padding).'px;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_button_border_radius = get_theme_mod('advance_blogging_button_border_radius');
 	$advance_blogging_custom_css .='.blogbutton-mdall, .button-post a, #comments input[type="submit"].submit{';
-		$advance_blogging_custom_css .='border-radius: '.esc_html($advance_blogging_button_border_radius).'px;';
+		$advance_blogging_custom_css .='border-radius: '.esc_attr($advance_blogging_button_border_radius).'px;';
 	$advance_blogging_custom_css .='}';
 
 	/*-------------- Woocommerce Button  -------------------*/
@@ -69,21 +69,21 @@
 	$advance_blogging_woocommerce_button_padding_top = get_theme_mod('advance_blogging_woocommerce_button_padding_top');
 	if($advance_blogging_woocommerce_button_padding_top != false){
 		$advance_blogging_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt, a.button.wc-forward, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button:disabled[disabled]{';
-			$advance_blogging_custom_css .='padding-top: '.esc_html($advance_blogging_woocommerce_button_padding_top).'px; padding-bottom: '.esc_html($advance_blogging_woocommerce_button_padding_top).'px;';
+			$advance_blogging_custom_css .='padding-top: '.esc_attr($advance_blogging_woocommerce_button_padding_top).'px; padding-bottom: '.esc_attr($advance_blogging_woocommerce_button_padding_top).'px;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_woocommerce_button_padding_right = get_theme_mod('advance_blogging_woocommerce_button_padding_right');
 	if($advance_blogging_woocommerce_button_padding_right != false){
 		$advance_blogging_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt, a.button.wc-forward, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button:disabled[disabled]{';
-			$advance_blogging_custom_css .='padding-left: '.esc_html($advance_blogging_woocommerce_button_padding_right).'px; padding-right: '.esc_html($advance_blogging_woocommerce_button_padding_right).'px;';
+			$advance_blogging_custom_css .='padding-left: '.esc_attr($advance_blogging_woocommerce_button_padding_right).'px; padding-right: '.esc_attr($advance_blogging_woocommerce_button_padding_right).'px;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_woocommerce_button_border_radius = get_theme_mod('advance_blogging_woocommerce_button_border_radius');
 	if($advance_blogging_woocommerce_button_border_radius != false){
 		$advance_blogging_custom_css .='.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt, a.button.wc-forward, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button:disabled[disabled]{';
-			$advance_blogging_custom_css .='border-radius: '.esc_html($advance_blogging_woocommerce_button_border_radius).'px;';
+			$advance_blogging_custom_css .='border-radius: '.esc_attr($advance_blogging_woocommerce_button_border_radius).'px;';
 		$advance_blogging_custom_css .='}';
 	}
 
@@ -106,28 +106,28 @@
 	$advance_blogging_woocommerce_product_padding_top = get_theme_mod('advance_blogging_woocommerce_product_padding_top',10);
 	if($advance_blogging_woocommerce_product_padding_top != false){
 		$advance_blogging_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_blogging_custom_css .='padding-top: '.esc_html($advance_blogging_woocommerce_product_padding_top).'px !important; padding-bottom: '.esc_html($advance_blogging_woocommerce_product_padding_top).'px !important;';
+			$advance_blogging_custom_css .='padding-top: '.esc_attr($advance_blogging_woocommerce_product_padding_top).'px !important; padding-bottom: '.esc_attr($advance_blogging_woocommerce_product_padding_top).'px !important;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_woocommerce_product_padding_right = get_theme_mod('advance_blogging_woocommerce_product_padding_right',10);
 	if($advance_blogging_woocommerce_product_padding_right != false){
 		$advance_blogging_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_blogging_custom_css .='padding-left: '.esc_html($advance_blogging_woocommerce_product_padding_right).'px !important; padding-right: '.esc_html($advance_blogging_woocommerce_product_padding_right).'px !important;';
+			$advance_blogging_custom_css .='padding-left: '.esc_attr($advance_blogging_woocommerce_product_padding_right).'px !important; padding-right: '.esc_attr($advance_blogging_woocommerce_product_padding_right).'px !important;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_woocommerce_product_border_radius = get_theme_mod('advance_blogging_woocommerce_product_border_radius');
 	if($advance_blogging_woocommerce_product_border_radius != false){
 		$advance_blogging_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_blogging_custom_css .='border-radius: '.esc_html($advance_blogging_woocommerce_product_border_radius).'px;';
+			$advance_blogging_custom_css .='border-radius: '.esc_attr($advance_blogging_woocommerce_product_border_radius).'px;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_woocommerce_product_box_shadow = get_theme_mod('advance_blogging_woocommerce_product_box_shadow');
 	if($advance_blogging_woocommerce_product_box_shadow != false){
 		$advance_blogging_custom_css .='.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-			$advance_blogging_custom_css .='box-shadow: '.esc_html($advance_blogging_woocommerce_product_box_shadow).'px '.esc_html($advance_blogging_woocommerce_product_box_shadow).'px '.esc_html($advance_blogging_woocommerce_product_box_shadow).'px #aaa;';
+			$advance_blogging_custom_css .='box-shadow: '.esc_attr($advance_blogging_woocommerce_product_box_shadow).'px '.esc_attr($advance_blogging_woocommerce_product_box_shadow).'px '.esc_attr($advance_blogging_woocommerce_product_box_shadow).'px #aaa;';
 		$advance_blogging_custom_css .='}';
 	}
 
@@ -137,12 +137,12 @@
 
 	if($advance_blogging_preloader_color != false){
 		$advance_blogging_custom_css .='.preloader-squares .square, .preloader-chasing-squares .square{';
-			$advance_blogging_custom_css .='background-color: '.esc_html($advance_blogging_preloader_color).';';
+			$advance_blogging_custom_css .='background-color: '.esc_attr($advance_blogging_preloader_color).';';
 		$advance_blogging_custom_css .='}';
 	}
 	if($advance_blogging_preloader_bg_color != false){
 		$advance_blogging_custom_css .='.preloader{';
-			$advance_blogging_custom_css .='background-color: '.esc_html($advance_blogging_preloader_bg_color).';';
+			$advance_blogging_custom_css .='background-color: '.esc_attr($advance_blogging_preloader_bg_color).';';
 		$advance_blogging_custom_css .='}';
 	}
 
@@ -150,14 +150,14 @@
 	$advance_blogging_copyright_fontsize = get_theme_mod('advance_blogging_copyright_fontsize',16);
 	if($advance_blogging_copyright_fontsize != false){
 		$advance_blogging_custom_css .='#footer p{';
-			$advance_blogging_custom_css .='font-size: '.esc_html($advance_blogging_copyright_fontsize).'px; ';
+			$advance_blogging_custom_css .='font-size: '.esc_attr($advance_blogging_copyright_fontsize).'px; ';
 		$advance_blogging_custom_css .='}';
 	}
 
 	$advance_blogging_copyright_top_bottom_padding = get_theme_mod('advance_blogging_copyright_top_bottom_padding',15);
 	if($advance_blogging_copyright_top_bottom_padding != false){
 		$advance_blogging_custom_css .='#footer {';
-			$advance_blogging_custom_css .='padding-top:'.esc_html($advance_blogging_copyright_top_bottom_padding).'px; padding-bottom: '.esc_html($advance_blogging_copyright_top_bottom_padding).'px; ';
+			$advance_blogging_custom_css .='padding-top:'.esc_attr($advance_blogging_copyright_top_bottom_padding).'px; padding-bottom: '.esc_attr($advance_blogging_copyright_top_bottom_padding).'px; ';
 		$advance_blogging_custom_css .='}';
 	}
 
@@ -180,12 +180,12 @@
 	$advance_blogging_woocommerce_sale_top_padding = get_theme_mod('advance_blogging_woocommerce_sale_top_padding');
 	$advance_blogging_woocommerce_sale_left_padding = get_theme_mod('advance_blogging_woocommerce_sale_left_padding');
 	$advance_blogging_custom_css .=' .woocommerce span.onsale{';
-		$advance_blogging_custom_css .='padding-top: '.esc_html($advance_blogging_woocommerce_sale_top_padding).'px; padding-bottom: '.esc_html($advance_blogging_woocommerce_sale_top_padding).'px; padding-left: '.esc_html($advance_blogging_woocommerce_sale_left_padding).'px; padding-right: '.esc_html($advance_blogging_woocommerce_sale_left_padding).'px;';
+		$advance_blogging_custom_css .='padding-top: '.esc_attr($advance_blogging_woocommerce_sale_top_padding).'px; padding-bottom: '.esc_attr($advance_blogging_woocommerce_sale_top_padding).'px; padding-left: '.esc_attr($advance_blogging_woocommerce_sale_left_padding).'px; padding-right: '.esc_attr($advance_blogging_woocommerce_sale_left_padding).'px;';
 	$advance_blogging_custom_css .='}';
 
 	$advance_blogging_woocommerce_sale_border_radius = get_theme_mod('advance_blogging_woocommerce_sale_border_radius', 50);
 	$advance_blogging_custom_css .='.woocommerce span.onsale{';
-		$advance_blogging_custom_css .='border-radius: '.esc_html($advance_blogging_woocommerce_sale_border_radius).'px;';
+		$advance_blogging_custom_css .='border-radius: '.esc_attr($advance_blogging_woocommerce_sale_border_radius).'px;';
 	$advance_blogging_custom_css .='}';
 
 	$advance_blogging_sale_position = get_theme_mod( 'advance_blogging_sale_position','right');
@@ -202,20 +202,20 @@
 	// footer background css
 	$advance_blogging_footer_background_color = get_theme_mod('advance_blogging_footer_background_color');
 	$advance_blogging_custom_css .='.footertown{';
-		$advance_blogging_custom_css .='background-color: '.esc_html($advance_blogging_footer_background_color).';';
+		$advance_blogging_custom_css .='background-color: '.esc_attr($advance_blogging_footer_background_color).';';
 	$advance_blogging_custom_css .='}';
 
 	$advance_blogging_footer_background_img = get_theme_mod('advance_blogging_footer_background_img');
 	if($advance_blogging_footer_background_img != false){
 		$advance_blogging_custom_css .='.footertown{';
-			$advance_blogging_custom_css .='background: url('.esc_html($advance_blogging_footer_background_img).') no-repeat; background-size: cover; background-attachment: fixed;';
+			$advance_blogging_custom_css .='background: url('.esc_attr($advance_blogging_footer_background_img).') no-repeat; background-size: cover; background-attachment: fixed;';
 		$advance_blogging_custom_css .='}';
 	}
 
 	/*---- Comment form ----*/
 	$advance_blogging_comment_width = get_theme_mod('advance_blogging_comment_width', '100');
 	$advance_blogging_custom_css .='#comments textarea{';
-		$advance_blogging_custom_css .=' width:'.esc_html($advance_blogging_comment_width).'%;';
+		$advance_blogging_custom_css .=' width:'.esc_attr($advance_blogging_comment_width).'%;';
 	$advance_blogging_custom_css .='}';
 
 	$advance_blogging_comment_submit_text = get_theme_mod('advance_blogging_comment_submit_text', 'Post Comment');
@@ -235,11 +235,11 @@
 	// Topbar padding
 	$advance_blogging_topbar_top_bottom = get_theme_mod('advance_blogging_topbar_top_bottom', 10);
 	$advance_blogging_custom_css .='.topbar{';
-		$advance_blogging_custom_css .=' padding-top:'.esc_html($advance_blogging_topbar_top_bottom).'px; padding-bottom:'.esc_html($advance_blogging_topbar_top_bottom).'px;';
+		$advance_blogging_custom_css .=' padding-top:'.esc_attr($advance_blogging_topbar_top_bottom).'px; padding-bottom:'.esc_attr($advance_blogging_topbar_top_bottom).'px;';
 	$advance_blogging_custom_css .='}';
 
 	// Sticky Header padding
 	$advance_blogging_sticky_header_padding = get_theme_mod('advance_blogging_sticky_header_padding');
 	$advance_blogging_custom_css .='.fixed-header{';
-		$advance_blogging_custom_css .=' padding-top:'.esc_html($advance_blogging_sticky_header_padding).'px; padding-bottom:'.esc_html($advance_blogging_sticky_header_padding).'px;';
+		$advance_blogging_custom_css .=' padding-top:'.esc_attr($advance_blogging_sticky_header_padding).'px; padding-bottom:'.esc_attr($advance_blogging_sticky_header_padding).'px;';
 	$advance_blogging_custom_css .='}';

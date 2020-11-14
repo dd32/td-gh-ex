@@ -95,7 +95,7 @@ function advance_blogging_customize_register( $wp_customize ) {
   	)));
 
 	$wp_customize->add_setting('advance_blogging_width_options',array(
-        'default' => __('Full Layout','advance-blogging'),
+        'default' => 'Full Layout',
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_blogging_width_options',array(
@@ -1067,7 +1067,7 @@ function advance_blogging_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('advance_blogging_post_content',array(
-    	'default' => __('Excerpt Content','advance-blogging'),
+    	'default' => 'Excerpt Content',
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_blogging_post_content',array(
@@ -1240,7 +1240,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	) );
 
     $wp_customize->add_setting('advance_blogging_comment_title',array(
-       'default' => __('Leave a Reply','advance-blogging'),
+       'default' => 'Leave a Reply',
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_blogging_comment_title',array(
@@ -1250,7 +1250,7 @@ function advance_blogging_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('advance_blogging_comment_submit_text',array(
-       'default' => __('Post Comment','advance-blogging'),
+       'default' => 'Post Comment',
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_blogging_comment_submit_text',array(
@@ -1452,7 +1452,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('advance_blogging_back_to_top_alignment',array(
-        'default' => __('Right','advance-blogging'),
+        'default' => 'Right',
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_blogging_back_to_top_alignment',array(
@@ -1502,7 +1502,7 @@ function advance_blogging_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('advance_blogging_copyright_alignment',array(
-        'default' => __('Center','advance-blogging'),
+        'default' => 'Center',
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_blogging_copyright_alignment',array(
@@ -1871,7 +1871,7 @@ final class Advance_Blogging_Customize {
 		$manager->add_section(
 			new Advance_Blogging_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'advance_blogging_example_1',
 				array(
 					'priority'   => 9,
 					'title'    => esc_html__( 'Advance Blogging', 'advance-blogging' ),
