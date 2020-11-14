@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.3.6 =
+* Make Links within content underlined
+
 = 1.3.5 =
 * updates for WordPress ver. 5.5
 

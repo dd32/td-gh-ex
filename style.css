@@ -4,7 +4,7 @@ Description: AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice f
 Theme URI: https://ayatemplates.com/product/ayaspirit
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.3.5
+Version: 1.3.6
 Text Domain: ayaspirit
 Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background, custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
 License: GNU General Public License v2.0
@@ -43,6 +43,10 @@ body:before {
 	content: none !important;
 }
 
+article a {
+	text-decoration: underline;
+}
+
 .icon:before {
     font-size: 14px;
     margin-right: 5px;
@@ -53,6 +57,10 @@ a,
 	text-decoration:none;
 	outline:none;
 	color:#4d3221;
+}
+
+.skills li .progress {
+	background-color:#4d3221;
 }
 
 a:hover {
