@@ -5,7 +5,7 @@ Theme URI: https://ayatemplates.com/product/ayagreen
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayawild
-Version: 1.1.7
+Version: 1.1.8
 Text Domain: ayagreen
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -44,6 +44,10 @@ body:before {
 	content: none !important;
 }
 
+article a {
+	text-decoration: underline;
+}
+
 .icon:before {
     font-size: 14px;
     margin-right: 5px;
@@ -54,6 +58,10 @@ a,
 	text-decoration:none;
 	outline:none;
 	color:#649300;
+}
+
+.skills li .progress {
+	background-color:#649300;
 }
 
 a:hover {
@@ -3398,77 +3406,6 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 
 /* Large Resolution */
 @media screen and (min-width: 800px) {
-
-	#navmain ul.mega-menu-sub-menu div {
-		padding:0;
-	}
-
-	#navmain ul.mega-menu-sub-menu {
-		width: 100%;
-		position: fixed;
-		margin: 0 auto;
-		z-index: 5001;
-		left: 0;
-		right:-99999px;
-		padding-top:20px;
-		padding-bottom:30px;
-		border-top:1px solid #CCC;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper {
-		padding:10px 2% 0 2%;	
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper ul,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper li,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper a {
-	    display: block;
-    	position: relative;
-    	clear: both;
-    	left: 0;
-    	opacity:1;
-    	padding:0;
-    	margin:0;
-    	box-shadow:none;
-    	border-radius:0;
-    	border:none;
-    	background:none;
-    	background-color:none;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper li.product {
-		display:inline-block;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper div,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper ul {
-		white-space:normal;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper img,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper iframe {
-		max-width:100%;
-		height:auto;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper ul:hover,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper li:hover,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper li:hover > a,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper a:hover {
-		background-color:none;
-		background:none;
-		color:inherit;
-		border:none;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper a:hover {
-		text-decoration:underline;
-	}
-
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper,
-	#navmain ul.mega-menu-sub-menu div.meganav-content-wrapper h2 {
-		color:#FFFFFF;
-	}
 	
 	#main-content,
 	#main {
@@ -3614,6 +3551,16 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
     #navmain ul li.menu-item-focused > ul {
        right:auto;
        opacity:1;    
+    }
+
+    #navmain ul li:hover > ul.mega-menu-sub-menu,
+	#navmain ul li:focus-within > ul.mega-menu-sub-menu {
+       left:50%; 
+    }
+
+    /* add support of browsers which don't support focus-within */
+    #navmain ul li.menu-item-focused > ul.mega-menu-sub-menu {
+       left:50%;    
     }
 
     @keyframes opacity {
