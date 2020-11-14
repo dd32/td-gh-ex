@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*------------------------------------------------------------------
+[Editor Styles]
+
+/*------------------------------------------------------------------
+
+/*--------------------------------------------------------------
+# Gutenberg
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,300');
+
+.wp-block{
+    max-width: 800px;
+}
+.wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
+    max-width: 100%;
+}
+
+.wp-block .wp-block-image{
+	/* some CSS rules here */
+}
+
+.editor-post-title__block .editor-post-title__input{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4{
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}

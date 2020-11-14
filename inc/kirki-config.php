@@ -3,7 +3,7 @@
 // config: tbm_aquarella_kc
 //main config
 
-$theme_url = 'http://themebear.co/portfolio/aquarella-blog-wordpress-theme/';
+$theme_url = 'https://themebear.co/portfolio/aquarella-blog-wordpress-theme/';
 
 Tbm_Aquarella_Kirki::add_config( 'tbm_aquarella_kc', array(
 	'capability'    => 'edit_theme_options',

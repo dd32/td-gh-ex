@@ -2722,3 +2722,17 @@ ol.comment-list ol.children > li > ol.children li {
   margin-bottom: 20px;
   max-width: 100%;
 }
+/* ==========================================================
+! 15. Gutenberg
+========================================================== */
+@media (min-width: 768px) {
+  .col-sm-8 .entry-content .wp-block-image.alignfull {
+    width: 750px;
+    position: relative;
+    left: -90px;
+  }
+  .col-sm-8 .entry-content .wp-block-image.alignfull figcaption {
+    padding: 20px;
+  }
+}
+

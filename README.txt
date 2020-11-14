@@ -30,6 +30,11 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 = 1.0.3.3 - 03 03 2017 =
 * Initial release
 
+= 1.1 - 14 11 2020 =
+* Tested with WordPress 5.4
+* Added Gutenberg Support
+* Added a new page template (Page Builder Canvas)
+
 == Credits ==
 
 - Underscores - http://underscores.me/
@@ -63,9 +68,9 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 
 Screenshot images: 
-all under CC0 licence https://pixabay.com/en/service/terms/#usage
+all under CC0 licence https://unsplash.com/license
 
-https://pixabay.com/pt/loira-menina-luz-de-fundo-feliz-677779/
+https://unsplash.com/photos/kbfmi4j-YDw
 
 
 * Aquarella Lite WordPress Theme, Copyright (C) 2017, ThemeBear
