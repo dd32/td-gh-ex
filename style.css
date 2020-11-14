@@ -5,7 +5,7 @@ Theme URI: https://ayatemplates.com/product/ayabiostorelite
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayaclub
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: ayabiostorelite
 Tags: e-commerce, news, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -26,6 +26,14 @@ body {
 	width:100%;
 }
 
+body:before {
+	content: none !important;
+}
+
+article a {
+	text-decoration: underline;
+}
+
 .icon:before {
     font-size: 14px;
     margin-right: 5px;
@@ -36,6 +44,10 @@ a,
 	text-decoration:none;
 	outline:none;
 	color:#08322f;
+}
+
+.skills li .progress {
+	background-color:#08322f;
 }
 
 a:hover {
@@ -3865,6 +3877,16 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
     #navmain ul li.menu-item-focused > ul {
        right:auto;
        opacity:1;    
+    }
+
+    #navmain ul li:hover > ul.mega-menu-sub-menu,
+	#navmain ul li:focus-within > ul.mega-menu-sub-menu {
+       left:50%; 
+    }
+
+    /* add support of browsers which don't support focus-within */
+    #navmain ul li.menu-item-focused > ul.mega-menu-sub-menu {
+       left:50%;    
     }
 
     @keyframes opacity {
