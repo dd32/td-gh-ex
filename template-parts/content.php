@@ -28,7 +28,7 @@
 		?>
 		</span>
 		</h4>
-
+		
 		<!-- Blog Title -->
 		<?php 
 			if ( is_singular() ) :

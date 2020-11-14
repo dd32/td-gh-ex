@@ -40,6 +40,7 @@ get_header();
 									?>
 								</span>
 								</h4>
+								
 								<h1 class="single-page-title">
 									<?php the_title(); ?>
 								</h1>

@@ -69,4 +69,16 @@
 		margin-left: 0;
 		margin-top: 40px;
 	}
+	h1.single-page-title {
+		font-size: 28px;
+	}
+}
+
+@media ( max-width:330px ){
+	.blog-info .fa-calendar-alt {
+		margin-left: 6px;
+	}
+	h4.blog-info>span {
+		padding-right: 6px;
+	}
 }
