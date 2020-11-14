@@ -3,6 +3,9 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.6.4 - 14 November 2020 =
+* Updated the theme screenshot.
+
 = 1.6.3 - 13 November 2020 =
 * Minor changes.
 
