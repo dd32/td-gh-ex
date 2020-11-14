@@ -43,6 +43,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.5 =
+* Make Links within content underlined
+
 = 1.2.4 =
 * updates for WordPress ver. 5.5
 
