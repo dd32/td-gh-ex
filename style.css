@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.9.4
+Version: 1.9.5
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,10 @@ body:before {
 	content: none !important;
 }
 
+article a {
+	text-decoration: underline;
+}
+
 .icon:before {
     font-size: 14px;
     margin-right: 5px;
@@ -48,6 +52,10 @@ a,
 	text-decoration:none;
 	outline:none;
 	color:#08ab0f;
+}
+
+.skills li .progress {
+	background-color:#08ab0f;
 }
 
 a:hover {
@@ -3515,6 +3523,16 @@ mark {
     #navmain ul li.menu-item-focused > ul {
        right:auto;
        opacity:1;    
+    }
+
+    #navmain ul li:hover > ul.mega-menu-sub-menu,
+	#navmain ul li:focus-within > ul.mega-menu-sub-menu {
+       left:50%; 
+    }
+
+    /* add support of browsers which don't support focus-within */
+    #navmain ul li.menu-item-focused > ul.mega-menu-sub-menu {
+       left:50%;    
     }
 
     @keyframes opacity {
