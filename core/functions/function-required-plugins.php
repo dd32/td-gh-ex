@@ -38,6 +38,12 @@ if (!function_exists('avventura_lite_required_plugins')) {
 				'slug'      => 'wa-chatbox-manager',
 				'required'  => false,
 			),
+			
+			array(
+				'name'      => 'Custom Thank You Page',
+				'slug'      => 'custom-thank-you-page',
+				'required'  => false,
+			),
 
 			array(
 				'name'      => 'Widget Importer & Exporter',
