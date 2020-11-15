@@ -4,8 +4,8 @@ Contributors: specia
 Requires at least: 4.4
 Tested up to: 5.5.3
 Requires PHP: 5.6
-Stable tag: 3.0.24
-Version: 3.0.24
+Stable tag: 3.0.25
+Version: 3.0.25
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
@@ -79,6 +79,9 @@ Source: https://pxhere.com
 License: CC0 License
 
 ##Changelog
+
+version 3.0.25
+* Readme Updated
 
 version 3.0.24
 * Tested With WordPress 5.5.3
@@ -323,91 +326,3 @@ version 1.0.32
 
 version 1.0.31
 * Updated License Information
-
-version 1.0.30
-* WordPress 4.9.6 Compatibility Tested.
-
-version 1.0.29
-* Changed Screenshot and Copyright
-
-version 1.0.28
-* Added [wp_reset_postdata();] for templates.
-
-version 1.0.27
-* Output escaping issue resolved.
-
-version 1.0.25
-* Resolved color issue in editor-style.css
-
-version 1.0.24
-* WordPress 4.9.5 Compatibility Tested.
-
-version 1.0.23
-* Resolved Slider Bug
-
-version 1.0.22
-* Resolved Slider Bug
-
-version 1.0.21
-* Screenshot Changed
-
-version 1.0.20
-* Screenshot Changed
-
-version 1.0.19
-* WordPress 4.9.4 Compatibility Tested.
-
-version 1.0.18
-* Code Improvement.
-
-version 1.0.17
-* WordPress 4.9.2 Compatibility Tested.
-
-version 1.0.16
-* Image URL changed.
-
-version 1.0.15
-* Screenshot Changed.
-
-version 1.0.14
-* WordPress 4.9.1 compatibility tested.
-* Customizer Improvment(Allow Addition True).
-
-version 1.0.13
-* WordPress 4.9 compatibility tested.
-
-version 1.0.12
-* Tested Latest WordPress version compatibility
-
-version 1.0.11
-* Responsive Bug Resolved
-
-version 1.0.10
-* Screenshot Changed
-
-version 1.0.8
-* Enhance Theme Detail
-
-version 1.0.7
-* Description Improvement
-
-version 1.0.6
-* Sanitization Issue Fixed
-
-version 1.0.5
-* Replace Screenshot Image
-
-version 1.0.4
-* Version Error Fixed
-
-version 1.0.3
-* Social Media Features Added
-
-version 1.0.2
-* Theme Review Issues Fixed
-
-version 1.0.1
-* Initial release
-
-version 1.0
-* Initial release
