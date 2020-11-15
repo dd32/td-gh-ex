@@ -24,6 +24,7 @@ of this theme. This also displays the navigation menu as well or any extra featu
         <?php wp_head(); ?>
     </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
     <div id="social-search" class="social-search">
     <nav class="align-center">
         <div class="social-navigation cf">
