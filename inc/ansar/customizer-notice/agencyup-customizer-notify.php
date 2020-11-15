@@ -26,12 +26,12 @@ class Agencyup_Customizer_Notify {
 	private $activate_button_label;
 
 	
-	private $deactivate_button_label;
+	private $agencyup_deactivate_button_label;
 
 	
 	public static function init( $config ) {
-		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof agencyup_Customizer_Notify ) ) {
-			self::$instance = new agencyup_Customizer_Notify;
+		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Agencyup_Customizer_Notify ) ) {
+			self::$instance = new Agencyup_Customizer_Notify;
 			if ( ! empty( $config ) && is_array( $config ) ) {
 				self::$instance->config = $config;
 				self::$instance->setup_config();
@@ -49,7 +49,7 @@ class Agencyup_Customizer_Notify {
 
 		global $install_button_label;
 		global $activate_button_label;
-		global $deactivate_button_label;
+		global $agencyup_deactivate_button_label;
 
 		$this->recommended_actions = isset( $this->config['recommended_actions'] ) ? $this->config['recommended_actions'] : array();
 		$this->recommended_plugins = isset( $this->config['recommended_plugins'] ) ? $this->config['recommended_plugins'] : array();
@@ -71,7 +71,7 @@ class Agencyup_Customizer_Notify {
 
 		$install_button_label    = isset( $this->config['install_button_label'] ) ? $this->config['install_button_label'] : '';
 		$activate_button_label   = isset( $this->config['activate_button_label'] ) ? $this->config['activate_button_label'] : '';
-		$deactivate_button_label = isset( $this->config['deactivate_button_label'] ) ? $this->config['deactivate_button_label'] : '';
+		$agencyup_deactivate_button_label = isset( $this->config['agencyup_deactivate_button_label'] ) ? $this->config['agencyup_deactivate_button_label'] : '';
 
 	}
 
@@ -94,18 +94,18 @@ class Agencyup_Customizer_Notify {
 	
 	public function agencyup_customizer_notify_scripts_for_customizer() {
 
-		wp_enqueue_style( 'agencyup-customizer-notify-css', get_template_directory_uri() . '/inc/ansar/customizer-notify/css/agencyup-customizer-notify.css', array());
+		wp_enqueue_style( 'agencyup-customizer-notify-css', get_template_directory_uri() . '/inc/ansar/customizer-notice/css/agencyup-customizer-notify.css', array());
 		wp_style_add_data( 'agencyup-customizer-notify-css', 'rtl', 'replace' );
 
-		wp_enqueue_style( 'plugin-install' );
-		wp_enqueue_script( 'plugin-install' );
+		wp_enqueue_style( 'agencyup-plugin-install' );
+		wp_enqueue_script( 'agencyup-plugin-install' );
 		wp_add_inline_script( 'plugin-install', 'var pagenow = "customizer";' );
 
-		wp_enqueue_script( 'updates' );
+		wp_enqueue_script( 'agencyup-updates' );
 
-		wp_enqueue_script( 'agencyup-customizer-notify-js', get_template_directory_uri() . '/inc/ansar/customizer-notify/js/agencyup-customizer-notify.js', array( 'customize-controls' ));
+		wp_enqueue_script( 'agencyup-customizer-notify-js', get_template_directory_uri() . '/inc/ansar/customizer-notice/js/agencyup-customizer-notify.js', array( 'customize-controls' ));
 		wp_localize_script(
-			'agencyup-customizer-notify-js', 'agencyupCustomizercompanionObject', array(
+			'agencyup-customizer-notify-js', 'AgencyupCustomizercompanionObject', array(
 				'template_directory' => get_template_directory_uri(),
 				'base_path'          => admin_url(),
 				'activating_string'  => __( 'Activating', 'agencyup' ),
@@ -118,7 +118,7 @@ class Agencyup_Customizer_Notify {
 	public function agencyup_plugin_notification_customize_register( $wp_customize ) {
 
 		
-		require_once get_template_directory() . '/inc/ansar/customizer-notify/agencyup-customizer-notify-section.php';
+		require_once get_template_directory() . '/inc/ansar/customizer-notice/agencyup-customizer-notify-section.php';
 
 		$wp_customize->register_section_type( 'Agencyup_Customizer_Notify_Section' );
 
@@ -135,6 +135,72 @@ class Agencyup_Customizer_Notify {
 			)
 		);
 
+	}
+
+
+		public function agencyup_customizer_notify_dismiss_recommended_action_callback() {
+
+		global $agencyup_customizer_notify_recommended_actions;
+
+		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
+
+		echo esc_html($action_id); 
+
+		if ( ! empty( $action_id ) ) {
+
+			
+			if ( get_theme_mod( 'agencyup_customizer_notify_show' ) ) {
+
+				$agencyup_customizer_notify_show_recommended_actions = get_theme_mod( 'agencyup_customizer_notify_show' );
+				switch ( $_GET['todo'] ) {
+					case 'add':
+						$agencyup_customizer_notify_show_recommended_actions[ $action_id ] = true;
+						break;
+					case 'dismiss':
+						$agencyup_customizer_notify_show_recommended_actions[ $action_id ] = false;
+						break;
+				}
+				echo esc_html($agencyup_customizer_notify_show_recommended_actions);
+				
+			} else {
+				$agencyup_customizer_notify_show_recommended_actions = array();
+				if ( ! empty( $agencyup_customizer_notify_recommended_actions ) ) {
+					foreach ( $agencyup_customizer_notify_recommended_actions as $agencyup_lite_customizer_notify_recommended_action ) {
+						if ( $agencyup_lite_customizer_notify_recommended_action['id'] == $action_id ) {
+							$agencyup_customizer_notify_show_recommended_actions[ $agencyup_lite_customizer_notify_recommended_action['id'] ] = false;
+						} else {
+							$agencyup_customizer_notify_show_recommended_actions[ $agencyup_lite_customizer_notify_recommended_action['id'] ] = true;
+						}
+					}
+					echo esc_html($agencyup_customizer_notify_show_recommended_actions);
+				}
+			}
+		}
+		die(); 
+	}
+
+	
+	public function agencyup_customizer_notify_dismiss_recommended_plugins_callback() {
+
+		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
+
+		echo esc_html($action_id); 
+
+		if ( ! empty( $action_id ) ) {
+
+			$agencyup_lite_customizer_notify_show_recommended_plugins = get_theme_mod( 'agencyup_customizer_notify_show_recommended_plugins' );
+
+			switch ( $_GET['todo'] ) {
+				case 'add':
+					$agencyup_lite_customizer_notify_show_recommended_plugins[ $action_id ] = false;
+					break;
+				case 'dismiss':
+					$agencyup_lite_customizer_notify_show_recommended_plugins[ $action_id ] = true;
+					break;
+			}
+			echo esc_html($agencyup_customizer_notify_show_recommended_actions);
+		}
+		die(); 
 	}
 
 }

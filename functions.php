@@ -8,7 +8,7 @@
 	require( $agencyup_theme_path . '/agencyup-custom-navwalker.php' );
 	require( $agencyup_theme_path . '/default_menu_walker.php' );
 	require( $agencyup_theme_path . '/font/font.php');
-	
+	require( $agencyup_theme_path . '/customize/agencyup_plugin_recommend.php');
 	/*-----------------------------------------------------------------------------------*/
 	/*	Enqueue scripts and styles.
 	/*-----------------------------------------------------------------------------------*/
@@ -22,6 +22,7 @@
 	require( $agencyup_theme_path  . '/customize/agencyup_customize_header.php');
 	require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
 	require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize/agencyup_customize_partials.php' );
+	require_once get_template_directory() . '/inc/ansar/agencyup-admin-plugin-install.php';
 	
 if ( ! function_exists( 'agencyup_setup' ) ) :
 /**
@@ -61,7 +62,6 @@ function agencyup_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary menu', 'agencyup' ),
-        'social' => __( 'Social Links Menu', 'agencyup' ),
 	) );
 
 	/*
@@ -117,7 +117,8 @@ function agencyup_setup() {
 			'flex-height'		=> false,
 			'flex-width'		=> false,
 			'header-text'		=> true,
-			'default-text-color'	=> '#143745'
+			'default-text-color'	=> '#143745',
+			 'wp-head-callback' => 'agencyup_header_color',
 		);
 		add_theme_support( 'custom-header', $args );
 	

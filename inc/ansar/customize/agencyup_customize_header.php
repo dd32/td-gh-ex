@@ -23,6 +23,24 @@ function agencyup_header_setting( $wp_customize ) {
 		'priority' => 10,
    	) );
 
+    //Enable and disable header contact info
+    $wp_customize->add_setting(
+    'header_contact_info_enable',
+    array(
+        'capability'     => 'edit_theme_options',
+        'default' => '1',
+        'sanitize_callback' => 'agencyup_header_sanitize_checkbox',
+    )   
+    );
+    $wp_customize->add_control(
+    'header_contact_info_enable',
+    array(
+        'label' => __('Hide / Show','agencyup'),
+        'section' => 'header_contact',
+        'type' => 'checkbox',
+    )
+    );
+
     $wp_customize->add_setting(
         'agencyup_head_info_icon_one', array(
         'capability' => 'edit_theme_options',
@@ -81,6 +99,7 @@ function agencyup_header_setting( $wp_customize ) {
     ,
     array(
 		'capability'     => 'edit_theme_options',
+        'default' => '1',
 		'sanitize_callback' => 'agencyup_header_sanitize_checkbox',
     )	
 	);
@@ -222,6 +241,87 @@ function agencyup_header_setting( $wp_customize ) {
         'section' => 'header_social_icon',
     )
 	);
+
+    $wp_customize->add_section(
+        'nav_btn_section',
+        array(
+            'priority'      => 30,
+            'title'         => __('Menu Button','agencyup'),
+            'panel'         => 'header_options',
+        )
+    );
+
+
+    $wp_customize->add_setting( 
+        'hide_show_nav_menu_btn' , 
+            array(
+            'default' => '1',
+            'capability'     => 'edit_theme_options',
+            'sanitize_callback' => 'agencyup_header_sanitize_checkbox',
+        ) 
+    );
+    
+    $wp_customize->add_control(
+    'hide_show_nav_menu_btn', 
+        array(
+            'label'       => esc_html__( 'Hide/Show', 'agencyup' ),
+            'section'     => 'nav_btn_section',
+            'type'        => 'checkbox'
+        ) 
+    ); 
+     
+    $wp_customize->add_setting(
+        'menu_btn_label',
+        array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'capability' => 'edit_theme_options',
+        )
+    );  
+
+    $wp_customize->add_control( 
+        'menu_btn_label',
+        array(
+            'label'         => __('Button Text','agencyup'),
+            'section'       => 'nav_btn_section',
+            'type'       => 'text'
+        )  
+    );
+    
+    $wp_customize->add_setting(
+        'menu_btn_link',
+        array(
+            'sanitize_callback' => 'esc_url_raw',
+            'capability' => 'edit_theme_options',
+        )
+    );  
+
+    $wp_customize->add_control( 
+        'menu_btn_link',
+        array(
+            'label'         => __('Button Link','agencyup'),
+            'section'       => 'nav_btn_section',
+            'type'       => 'text',
+        )  
+    );
+    
+
+    $wp_customize->add_setting( 
+        'menu_btn_target' , 
+            array(
+            'default' => '1',
+            'capability'     => 'edit_theme_options',
+            'sanitize_callback' => 'agencyup_header_sanitize_checkbox',
+        ) 
+    );
+    
+    $wp_customize->add_control(
+    'menu_btn_target', 
+        array(
+            'label'       => esc_html__( 'Open link in new tab', 'agencyup' ),
+            'section'     => 'nav_btn_section',
+            'type'        => 'checkbox'
+        ) 
+    ); 
 	
 	
 
@@ -258,18 +358,7 @@ function agencyup_header_setting( $wp_customize ) {
     }
 
 
-    if (isset($wp_customize->selective_refresh)) {
-    $wp_customize->selective_refresh->add_partial('agencyup_header_widget_one_icon', array(
-                'selector'        => '.header-widget',
-                'render_callback' => 'agencyup_customize_partial_widget_one_icon',
-        ));
-
-    $wp_customize->selective_refresh->add_partial('agencyup_header_widget_four_label', array(
-                'selector'        => '.ti-header-read-btn',
-                'render_callback' => 'agencyup_customize_partial_widget_four_label',
-        ));
-
-    }
+   
 	
 	if ( ! function_exists( 'agencyup_sanitize_text_content' ) ) :
 
@@ -296,12 +385,3 @@ endif;
 	}
 	}
 	add_action( 'customize_register', 'agencyup_header_setting' );
-
-    function agencyup_customize_partial_widget_one_icon() {
-    return get_theme_mod( 'agencyup_header_widget_one_icon' );
-}
-
-function agencyup_customize_partial_widget_four_label() {
-    return get_theme_mod( 'agencyup_header_widget_four_label' );
-}
-

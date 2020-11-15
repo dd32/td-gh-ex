@@ -8,7 +8,7 @@ function agencyup_fonts_url() {
 		
     $font_families = array();
  
-	$font_families = array('Rubik:400,500','Fira+Sans:400,500,600,700,800');
+	$font_families = array('Rubik:400,500','Fira Sans:400,500,600,700,800');
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),

@@ -62,3 +62,32 @@ function agencyup_admin_scripts() {
 }
 endif;
 add_action( 'admin_enqueue_scripts', 'agencyup_admin_scripts' );
+
+
+if ( ! function_exists( 'agencyup_header_color' ) ) :
+
+function agencyup_header_color() {
+    $agencyup_logo_text_color = get_header_textcolor();
+
+    ?>
+    <style type="text/css">
+    <?php
+        if ( ! display_header_text() ) :
+    ?>
+        .site-title,
+        .site-description {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    <?php
+        else :
+    ?>
+        body .site-title a,
+        body .site-description {
+            color: #<?php echo esc_attr( $agencyup_logo_text_color ); ?>;
+        }
+    <?php endif; ?>
+    </style>
+    <?php
+}
+endif;

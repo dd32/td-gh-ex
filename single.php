@@ -67,7 +67,7 @@ if ( has_header_image() ) {
           <div class="col-md-12">
             <div class="media bs-info-author-block shd p-4 mb-5"> <a class="bs-author-pic mr-3" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 160 ); ?></a>
 			<div class="media-body">
-                <h4 class="media-heading"><?php esc_html_e('By','agencyup'); ?> <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php the_author(); ?></a></h4>
+                <h4 class="media-heading"><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php the_author(); ?></a></h4>
                 <p><?php the_author_meta( 'description' ); ?></p>
               </div>
             </div>

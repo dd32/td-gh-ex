@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Agencyup\n"
-"POT-Creation-Date: 2020-11-10 18:37+0530\n"
-"PO-Revision-Date: 2020-11-10 18:36+0530\n"
+"POT-Creation-Date: 2020-11-15 22:05+0530\n"
+"PO-Revision-Date: 2020-11-15 22:04+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -104,28 +104,35 @@ msgstr ""
 msgid "https://themeansar.com/"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:64
 msgid "Primary menu"
 msgstr ""
 
-#: functions.php:64
-msgid "Social Links Menu"
-msgstr ""
-
-#: functions.php:171
+#: functions.php:172
 msgid "Sidebar Widget Area"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:182
 msgid "Footer Widget Area"
 msgstr ""
 
-#: header.php:26
+#: header.php:25
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:110 header.php:164
-msgid "Search"
+#: inc/ansar/agencyup-admin-plugin-install.php:26
+#, php-format
+msgid "Welcome! Thanks for installing %1$s!"
+msgstr ""
+
+#: inc/ansar/agencyup-admin-plugin-install.php:30
+msgid ""
+"Clicking on get started will install & activate <strong>ICYCLUB</strong> "
+"plugin, for install fullfill section and features."
+msgstr ""
+
+#: inc/ansar/agencyup-admin-plugin-install.php:32
+msgid "Get started with Agencyup"
 msgstr ""
 
 #: inc/ansar/agencyup-custom-navwalker.php:207
@@ -149,12 +156,13 @@ msgid "Social Icons"
 msgstr ""
 
 #: inc/ansar/customize/agencyup_customize_copyright.php:28
-#: inc/ansar/customize/agencyup_customize_header.php:90
+#: inc/ansar/customize/agencyup_customize_header.php:38
+#: inc/ansar/customize/agencyup_customize_header.php:109
 msgid "Hide / Show"
 msgstr ""
 
 #: inc/ansar/customize/agencyup_customize_copyright.php:45
-#: inc/ansar/customize/agencyup_customize_header.php:107
+#: inc/ansar/customize/agencyup_customize_header.php:126
 msgid "Facebook URL"
 msgstr ""
 
@@ -162,25 +170,25 @@ msgstr ""
 #: inc/ansar/customize/agencyup_customize_copyright.php:94
 #: inc/ansar/customize/agencyup_customize_copyright.php:126
 #: inc/ansar/customize/agencyup_customize_copyright.php:159
-#: inc/ansar/customize/agencyup_customize_header.php:123
-#: inc/ansar/customize/agencyup_customize_header.php:156
-#: inc/ansar/customize/agencyup_customize_header.php:188
-#: inc/ansar/customize/agencyup_customize_header.php:221
+#: inc/ansar/customize/agencyup_customize_header.php:142
+#: inc/ansar/customize/agencyup_customize_header.php:175
+#: inc/ansar/customize/agencyup_customize_header.php:207
+#: inc/ansar/customize/agencyup_customize_header.php:240
 msgid "Open link in a new tab"
 msgstr ""
 
 #: inc/ansar/customize/agencyup_customize_copyright.php:78
-#: inc/ansar/customize/agencyup_customize_header.php:140
+#: inc/ansar/customize/agencyup_customize_header.php:159
 msgid "Twitter URL"
 msgstr ""
 
 #: inc/ansar/customize/agencyup_customize_copyright.php:110
-#: inc/ansar/customize/agencyup_customize_header.php:172
+#: inc/ansar/customize/agencyup_customize_header.php:191
 msgid "Linkedin URL"
 msgstr ""
 
 #: inc/ansar/customize/agencyup_customize_copyright.php:143
-#: inc/ansar/customize/agencyup_customize_header.php:205
+#: inc/ansar/customize/agencyup_customize_header.php:224
 msgid "Instagram URL"
 msgstr ""
 
@@ -224,21 +232,61 @@ msgstr ""
 msgid "Contact Setting"
 msgstr ""
 
-#: inc/ansar/customize/agencyup_customize_header.php:32
-#: inc/ansar/customize/agencyup_customize_header.php:55
+#: inc/ansar/customize/agencyup_customize_header.php:50
+#: inc/ansar/customize/agencyup_customize_header.php:73
 msgid "Icon"
 msgstr ""
 
-#: inc/ansar/customize/agencyup_customize_header.php:43
-#: inc/ansar/customize/agencyup_customize_header.php:66
+#: inc/ansar/customize/agencyup_customize_header.php:61
+#: inc/ansar/customize/agencyup_customize_header.php:84
 msgid "Text"
 msgstr ""
 
-#: inc/ansar/customize/agencyup_customize_header.php:72
+#: inc/ansar/customize/agencyup_customize_header.php:90
 msgid "Social Icon"
 msgstr ""
 
-#: inc/ansar/customizer-notify/agencyup-customizer-notify.php:111
+#: inc/ansar/customize/agencyup_customize_header.php:249
+msgid "Menu Button"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_customize_header.php:267
+msgid "Hide/Show"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_customize_header.php:284
+msgid "Button Text"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_customize_header.php:301
+msgid "Button Link"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_customize_header.php:320
+msgid "Open link in new tab"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:13
+msgid "Recommended Actions"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:14
+msgid "Recommended Plugin"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:15
+msgid "Install and Activate"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:16
+msgid "Activate"
+msgstr ""
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:17
+msgid "Deactivate"
+msgstr ""
+
+#: inc/ansar/customizer-notice/agencyup-customizer-notify.php:111
 msgid "Activating"
 msgstr ""
 
@@ -255,10 +303,6 @@ msgstr ""
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
-msgstr ""
-
-#: single.php:70
-msgid "By"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -280,4 +324,8 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://themeansar.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Homepage"
 msgstr ""

@@ -4,8 +4,8 @@ Theme URI:
 Author: themeansar
 Author URI: https://themeansar.com
 Description: Agencyup WordPress theme ideal for a business or perfect solutions for corporate, consulting, wedding planners, agency, law firms, finance, law travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, E-commerce.  The theme is responsive, WPML, Retina ready, SEO friendly(Live preview : https://demo.themeansar.com/agencyup/)
-Version: 0.1
-Tested up to: 5.5.3
+Version: 0.2
+Tested up to: 5.5
 Requires PHP: 5.6
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce
 License: GNU General Public License v3 or later
@@ -27,7 +27,19 @@ Text Domain: agencyup
 -----------------------------------------*/
 .bs-head-detail {
 	padding: 5px 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	position: relative;
+	z-index: 1;
+}
+.bs-head-detail::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 54%;
+    height: 100%;
+    z-index: -1;
+    transform: skew(25deg);
+    padding-left: 20px;
 }
 .bs-head-detail ul {
 	display: flex;
@@ -98,6 +110,11 @@ Text Domain: agencyup
 .desk-header {
     display: flex;
 }
+.desk-header .btn-theme {
+    padding: 6px 22px;
+    line-height: 20px;
+    margin-left: 10px;
+}
 .bs-cart {
 	position: relative;
 }
@@ -120,6 +137,7 @@ Text Domain: agencyup
 .navbar-wp {
 	margin: 0;
 	padding: 0;
+	height: 85px;
 	border: none;
 	border-radius: 0;
 	z-index: 1000;
@@ -128,13 +146,20 @@ Text Domain: agencyup
 	font-size: 26px;
 	height: auto;
 	line-height: 25px;
-	margin-right: 50px;
 	padding: 15px 0;
 	text-shadow: 2px 2px 1px rgba(150, 150, 183, 0.18);
 }
-.navbar-brand span.site-description {
+.navbar-brand .site-title {
+	font-size: 26px;
+	line-height: 1.2;
+}
+.navbar-brand .site-description {
 	font-size: 13px;
 	line-height: 0;
+}
+.navbar-wp .navbar-nav .nav-link {
+	padding-left: 12px;
+	padding-right: 12px;
 }
 .navbar-wp .navbar-nav > li> a {
 	padding: 0 12px;
@@ -146,7 +171,6 @@ Text Domain: agencyup
 	transition: all .25s ease-out;
 	margin-bottom: 0px;
 	font-weight: 600;
-	text-transform: capitalize;
 	display: block;
 }
 .navbar-wp .navbar-nav > li> a .dropdown-arrow{
@@ -191,13 +215,10 @@ Text Domain: agencyup
 	border: 0
 }
 .navbar-wp .dropdown-menu > li > a {
-	padding: 12px 15px;
-	font-size: 12px;
-	font-family: 'Poppins', sans-serif;
+	padding: 8px 15px;
 	display: block;
 	transition: .3s;
 	font-weight: normal;
-	text-transform: uppercase;
 }
 .navbar-wp .dropdown-menu > .dropdown-menu {
 	right: 0;
@@ -261,6 +282,16 @@ Text Domain: agencyup
 }
 .container.mobi-menu {
     display: none;
+}
+.bs-default .navbar-toggler {
+	margin-left: 5px;
+}
+.bs-default .navbar-toggler .close {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    margin: auto;
 }
 /*---------------------------------------
 	2.1.Body & Global    
@@ -364,7 +395,7 @@ input[type="button"],
 input[type="submit"], input[type="reset"] {
 	padding: 5px 35px;
 	line-height: 30px;
-	border-radius: 4px;
+	border-radius: 0;
 	font-weight: bold;
 	font-size: 14px;
 	border-width: 1px;
@@ -717,7 +748,7 @@ embed, iframe, object {
     line-height: 30px;
     overflow: hidden;
     position: relative;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: bold;
     display: inline-block;
     transition: all 0.2s ease 0s;
@@ -779,6 +810,539 @@ button.mfp-close:hover, button.mfp-close:focus {
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
     transition: all 0.3s ease 0s;
     padding: 8px 15px;
+}
+
+/*---------------------------------------
+	3.1.bs-slider-warraper          
+-----------------------------------------*/
+.bs-slider-warraper #bs-slider {
+	margin: 0;
+	position: relative;
+	z-index: 1;
+	float: left;
+	width: 100%;
+}
+#bs-slider .owl-pagination {
+    bottom: 30px;
+}
+
+.bs-slider-warraper #bs-slider .item img {
+	width: 100%;
+	min-height: 400px;
+}
+.bs-slider-warraper #bs-slider .item iframe {
+	border: 6px solid #fff;
+}
+#bs-slider .bs-slide {
+	height: 600px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+}
+#bs-slider .bs-slide:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+#bs-slider .bs-slide.tr-height {
+	height: 750px;
+	padding-top: 10%;
+}
+/*--------------- ti slider inner ---------------*/
+#bs-slider .bs-slider-inner {
+	
+}
+#bs-slider .slide-caption {
+	
+}
+#bs-slider .slide-caption.slide-left {
+	
+	text-align: left;
+}
+#bs-slider .slide-caption.slide-right {
+	
+	text-align: right;
+}
+.slide-caption.one {
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+#bs-slider .slide-caption .slide-inner-box .description p {
+    letter-spacing: inherit;
+}
+.slide-caption.two {
+	padding: 10px 30px;
+	outline-offset: 5px;
+	outline-width: 4px;
+	outline-style: solid;
+}
+#bs-slider .slide-caption h2 {
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 800;
+	margin-bottom: 30px;
+	text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+#bs-slider .slide-caption .description {
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 26px;
+	padding: 0;
+	width: 100%;
+}
+#bs-slider .slide-caption .description p {
+	margin: 0;
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 26px;
+}
+/*--------------- bs-slider-Control ---------------*/
+.owl-controls .owl-buttons div {
+	width: 40px;
+	height: 40px;
+	display: block;
+	font-size: 16px;
+	line-height: 40px;
+	opacity: 0;
+	border-radius: 0;
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.owl-carousel:hover .owl-controls .owl-buttons div {
+    opacity: 1;
+}
+.owl-controls .owl-buttons {
+	opacity: 1;
+	transition: all 0.3s ease 0s;
+}
+.owl-carousel:hover .owl-controls .owl-buttons {
+	opacity: 1;
+}
+.owl-carousel:hover .owl-controls .owl-buttons .owl-prev {
+	left: 35px;
+}
+.owl-carousel:hover .owl-controls .owl-buttons .owl-next {
+	right: 35px;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-prev, .owl-carousel .owl-controls .owl-buttons .owl-next {
+	position: absolute;
+	top: 55%;
+	z-index: 5;
+	margin: -30px 0 0;
+	transition: all 0.3s ease 0s;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-prev {
+	left: 8px;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-prev i {
+    
+    transition: all 0.3s ease 0s;
+}
+
+.owl-carousel .owl-controls .owl-buttons .owl-next {
+	right: 8px;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-next i {
+   
+    transition: all 0.3s ease 0s;
+}
+.owl-carousel .owl-controls .owl-page {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 5px;
+}
+.owl-carousel .owl-controls .owl-page span {
+	display: block;
+	width: 15px;
+	height: 5px;
+	border-radius: 0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.owl-carousel .owl-controls .owl-page span.owl-numbers {
+	height: auto;
+	width: auto;
+	color: #fff;
+	padding: 2px 10px;
+	font-size: 12px;
+	border-radius: 4px;
+}
+.owl-carousel .owl-pagination {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+}
+/*--------------- ti slider Custom Buttons---------------*/
+.btn.btn-tislider, .btn.btn-tislider:hover, .btn.btn-tislider:focus {
+	outline: none;
+	margin: 20px auto;
+	letter-spacing: 1px;
+}
+.btn.btn-tislider-two {
+	outline: none;
+	letter-spacing: 1px;
+}
+#bs-slider .btn:first-child {
+	margin-right: 15px;
+}
+/*---------------------------------------
+	3.2.bs-section      
+-----------------------------------------*/
+.top-ct-section {
+}
+.top-ct-section .overlay{
+    position: relative;
+    background: #fff;
+    padding-bottom: 50px;
+}
+.top-ct-section .container {
+    position: absolute;
+    margin-top: -60px;
+    z-index: 1;
+    right: 0;
+    left: 0;
+}
+.bs-section {
+	padding: 0;
+	margin: 0;
+}
+.bs-section .overlay {
+	padding: 50px 0;
+	margin: 0;
+}
+.bs-section h1 {
+	font-weight: bold;
+}
+#content {
+	padding: 60px 0;
+}
+.bs-widget.widget_text h2 {
+	font-size: 22px;
+margin-bottom: 15px;
+position: relative;
+padding-bottom: 15px;
+font-weight: 600;
+}
+.img-shadow {
+    box-shadow: -30px 30px 1px 0 var(--pri-color);
+}
+
+/*---------------------------------------
+	3.3.bs-heading        
+-----------------------------------------*/
+.bs-heading {
+	margin-bottom: 40px;
+	text-align: center;
+	position: relative;
+}
+.bs-heading h2 {
+	font-size: 35px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+.bs-heading h3 {
+	margin-bottom: 0px;
+    margin-top: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.bs-heading .bs-heading-inner {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 0;
+	line-height: 40px;
+	width: auto;
+	letter-spacing: 1px;
+}
+.bs-heading .bs-heading-inner i {
+	display: block;
+	font-size: 20px;
+	height: 35px;
+	line-height: 35px;
+	position: absolute;
+	text-align: center;
+	bottom: -20px;
+	width: 30px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.shd{
+	box-shadow: 0 0 3px rgba(0,0,0,.1);
+}
+.shd:hover{
+	box-shadow: 5px 5px 24px 0px rgba(2, 45, 98, 0.1);
+}
+.bs-slider-warraper #bs-slider {
+	margin: 0;
+	position: relative;
+	z-index: 1;
+	float: left;
+	width: 100%;
+}
+#bs-slider .owl-pagination {
+    bottom: 30px;
+}
+
+.bs-slider-warraper #bs-slider .item img {
+	width: 100%;
+	min-height: 400px;
+}
+.bs-slider-warraper #bs-slider .item iframe {
+	border: 6px solid #fff;
+}
+#bs-slider .bs-slide {
+	height: 600px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+}
+#bs-slider .bs-slide:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+#bs-slider .bs-slide.tr-height {
+	height: 750px;
+	padding-top: 10%;
+}
+.slide-caption.one {
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+#bs-slider .slide-caption .slide-inner-box .description p {
+    letter-spacing: inherit;
+}
+.slide-caption.two {
+	padding: 10px 30px;
+	outline-offset: 5px;
+	outline-width: 4px;
+	outline-style: solid;
+}
+#bs-slider .slide-caption h2 {
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 800;
+	margin-bottom: 30px;
+	text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+#bs-slider .slide-caption .description {
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 26px;
+	padding: 0;
+	width: 100%;
+}
+#bs-slider .slide-caption .description p {
+	margin: 0;
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 26px;
+}
+/*---------------------------------------
+	feature       
+-----------------------------------------*/
+.feature_widget {
+	margin: 0px;
+    padding: 25px;
+    color: #fff;
+}
+.feature_widget i {
+    text-align: center;
+    margin: 0px 20px 0px 0px;
+    padding: 0;
+    border-radius: 0;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    font-size: 26px;
+}
+/*---------------------------------------
+	sevice       
+-----------------------------------------*/
+.bs-sevice {
+	margin-bottom: 30px;
+	position: relative;
+}
+.bs-sevice .bs-sevice-inner {
+	padding: 20px;
+}
+.bs-sevice h4, .bs-sevice h4 a{
+	font-weight: 700;
+}
+.bs-sevice i{
+	font-size: 50px;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+.bs-sevice.two {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.bs-sevice.two .bs-sevice-inner{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    opacity: 1;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.bs-sevice.two.text-left .bs-sevice-inner{ 
+	align-items: flex-start;
+}
+.bs-sevice.two.text-right .bs-sevice-inner{ 
+	align-items: flex-end;
+}
+/*---------------------------------------
+	features  
+-----------------------------------------*/
+.bs-section.features .overlay {
+	padding: 50px 0 20px 0;
+}
+.bs-section.features .feature_widget {
+	padding: 15px;
+	margin-bottom: 30px;
+	border-width: 1px;
+	border-style: solid;
+}
+/*---------------------------------------
+	portfolio       
+-----------------------------------------*/
+.bs-portfolio-block {
+	height: 300px;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	transition: all 0.4s ease 0s;
+	text-align: center;
+	margin-bottom: 30px;
+	background-color: #eee;
+}
+.bs-portfolio-block .inner-content {
+	transition: all 0.4s ease 0s;
+	opacity: 0;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	padding: 30px;
+}
+.bs-portfolio-block:hover .inner-content {
+	opacity: 1;
+}
+.bs-portfolio-block .icon {
+    margin-bottom: 10px;
+}
+.bs-portfolio-block .icon a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    padding: 7px 10px;
+    margin-left: 53px;
+    margin-right: 53px;
+    transition: all 0.6s ease;
+}
+.bs-portfolio-block:hover  .icon a {
+    margin-left: 3px;
+    margin-right: 3px;
+    transition: all 0.6s ease;
+}
+.bs-portfolio-block h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.bs-portfolio-block .text{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 3px solid;
+	transition: all 0.6s ease;
+}
+/*---------------------------------------
+	Testimonials       
+-----------------------------------------*/
+.testimonials.one {
+    background: url(images/back.jpg) no-repeat fixed 0 0 /cover;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+}
+.testimonials.one .overlay{
+    height: 100%;
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+}
+.testimonials.one .testi {
+	margin: 0 auto;
+	width: 50%;
+	text-align: center;
+}
+.testimonials.one .testi img.clg {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
+.testimonials.one  .testi h6 {
+	    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.testimonials.one  .testi .details {
+    margin-bottom: 20px;
+}
+/*---------------------------------------
+	calltoaction       
+-----------------------------------------*/
+.calltoaction {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+}
+.calltoaction .overlay {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+}
+.calltoaction .bs-heading h2, .calltoaction .bs-heading {
+	margin: 0;
+	font-size: 26px;
+    line-height: 37px;
+}
+.calltoaction .bs-heading h3 {
+    opacity: 1; 
+}
+.calltoaction .btn{
+	float: right;
 }
 
 /*--------------- agencyup-slider-Control ---------------*/
@@ -887,32 +1451,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 #agencyup-slider .btn:last-child {
 	margin-left: 15px;
 }
-/*---------------------------------------
-	3.2.agencyup-section      
------------------------------------------*/
-.bs-section {
-	padding: 80px 0;
-	margin: 0;
-}
-.bs-section h1 {
-	font-weight: bold;
-}
-#content {
-	padding: 60px 0;
-}
-.bs-widget.widget_text h2 {
-	font-size: 22px;
-margin-bottom: 15px;
-position: relative;
-padding-bottom: 15px;
-font-weight: 600;
-}
-.shd{
-	box-shadow: 0 0 3px rgba(0,0,0,.1);
-}
-.shd:hover{
-	box-shadow: 5px 5px 24px 0px rgba(2, 45, 98, 0.1);
-}
+
 
 /*---------------------------------------
 	3.11.agencyup-blog   
@@ -926,7 +1465,6 @@ font-weight: 600;
 }
 .bs-blog-thumb {
 	position: relative;
-    min-height: 30px;
     overflow: hidden;
     max-width: 100%;
 }
@@ -1013,7 +1551,6 @@ font-weight: 600;
 }
 .comment-reply-title {
 	font-size: 16px;
-	text-transform: uppercase;
 }
 .comment-form label {
 	width: 100%;
@@ -1076,7 +1613,7 @@ font-weight: 600;
 	box-shadow: 0 0 5px 0 #aaaaaa;
 }
 .bs-breadcrumb-section .overlay {
-	background: linear-gradient(to bottom, #051b44 0%, rgba(5, 27, 68, 0.5) 50%, rgba(5, 27, 68, 0.8) 100%);
+	background: linear-gradient(to bottom, #080808 0%, rgba(223, 10, 10, 0.5) 50%, rgba(223, 10, 10, 0.8) 100%);
 	height: 100%;
 	padding: 100px 0;
 	position: relative;
@@ -1230,7 +1767,7 @@ color: #fff;
     margin: 0 5px 9px 0;
     padding: 6px 12px;
     transition: all 0.4s ease-in-out 0s;
-    border-radius: 3px;
+    border-radius: 0;
     text-transform: capitalize;
 }
 .bs-widget-tags a:hover, .bs-widget .tagcloud a:hover {
@@ -1339,15 +1876,14 @@ footer .bs-widget {
 	margin-bottom: 50px;
 }
 footer .bs-widget h6 {
-	font-size: 18px;
-    font-weight: 600;
+	font-size: 20px;
+    font-weight: 700;
     border-width: 0;
     border-style: solid;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding: 12px 0 0 0;
     position: relative;
     letter-spacing: 1px;
-    text-transform: capitalize;
 }
 footer .bs-footer-copyright {
 	padding: 25px 0 5px;
@@ -1402,7 +1938,7 @@ footer .bs-social {
 	text-align: center;
 	width: 40px;
 	z-index: 9999;
-	border-radius: 50px;
+	border-radius: 0;
 	border-width: 2px;
 	border-style: solid;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -1471,6 +2007,7 @@ span.wpcf7-list-item
 	border-width: 1px;
 	border-style: solid;
 	border-color: #eaeaea;
+	background: white;
 }
 .woocommerce ul.products li.product:hover {
 	
@@ -1598,6 +2135,9 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
 	line-height: 40px;
 }
 /*woocommerce-form*/
+.woocommerce form .form-row label {
+    width: 100%;
+}
 .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
 	height: 40px;
 	margin-bottom: 20px;
@@ -1707,6 +2247,11 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
 	background: #1a2128;
 }
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1, .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
 /* --------------------------------------
 =========================================
 	9.agencyup-Responsive part
@@ -1724,6 +2269,9 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
   }
 }
 @media (max-width: 767.98px) {
+	.navbar-brand img{
+		max-width: 100%;
+	}
 	.container.mobi-menu {
 		display: block;
 	}
@@ -1732,6 +2280,12 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+	}
+	.mobi-menu .desk-header .btn-theme{
+		display: none;
+	}
+	.navbar-wp {
+		height: auto;
 	}
 	.desk-menu .navbar-header, .desk-menu .desk-header, .desk-menu .top-cart  {
 		display: none !important;

@@ -6,7 +6,6 @@
  *
  * @package Agencyup
  */
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -23,30 +22,41 @@
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 <a class="skip-link screen-reader-text" href="#content">
-<?php _e( 'Skip to content', 'agencyup' ); ?></a>
+<?php esc_html_e( 'Skip to content', 'agencyup' ); ?></a>
 <div class="wrapper">
  <header class="bs-default">  
     <!--top-bar-->
+    <?php $header_contact_info_enable = get_theme_mod('header_contact_info_enable','1');
+        $header_social_icon_enable = get_theme_mod('header_social_icon_enable','1'); ?>
     <div class="bs-head-detail hidden-xs hidden-sm">
       <div class="container">
+        
         <div class="row align-items-center">
           <div class="col-md-6 col-xs-12">
-            <?php $agencyup_head_info_one = get_theme_mod('agencyup_head_info_one');
-                $agencyup_head_info_two = get_theme_mod('agencyup_head_info_two');
-                if(($agencyup_head_info_one || $agencyup_head_info_two)) { ?>
-                <ul class="info-left">
-                <?php echo esc_html($agencyup_head_info_one);
-                      echo esc_html($agencyup_head_info_two);
-                ?> 
-                </ul>
-              <?php } ?>
+          <?php 
+      		if($header_contact_info_enable == '1')
+      		{ ?>
+            <ul class="info-left">
+                	<?php $agencyup_head_info_icon_one = get_theme_mod('agencyup_head_info_icon_one');
+                	$agencyup_head_info_icon_one_text = get_theme_mod('agencyup_head_info_icon_one_text');
+                	?>
+              		<li><a><i class="fas <?php echo esc_attr($agencyup_head_info_icon_one); ?>"></i> 
+              			<?php echo esc_html($agencyup_head_info_icon_one_text);?></a>
+              		</li>
+              		<?php $agencyup_head_info_icon_two = get_theme_mod('agencyup_head_info_icon_two');
+              			$agencyup_head_info_icon_two_text = get_theme_mod('agencyup_head_info_icon_two_text');
+              		?>
+              		<li><a><i class="fas <?php echo esc_attr($agencyup_head_info_icon_two); ?>"></i>
+              			<?php echo esc_html($agencyup_head_info_icon_two_text); ?></a>
+              		</li>
+            	</ul>
+      <?php } ?>
+
           </div>
           <!--/col-md-6-->
           <div class="col-md-6 col-xs-12">
       <ul class="bs-social info-right">
-      <?php 
-      $header_social_icon_enable = get_theme_mod('header_social_icon_enable','on');
-      if($header_social_icon_enable !='off')
+      <?php if($header_social_icon_enable == 1)
       {
       $agencyup_header_fb_link = get_theme_mod('agencyup_header_fb_link');
       $agencyup_header_fb_target = get_theme_mod('agencyup_header_fb_target',1);
@@ -86,59 +96,50 @@
       <nav class="navbar navbar-expand-md navbar-wp">
           <div class="container mobi-menu"> 
            <!-- Logo image --> 
-           <div class="navbar-header col"> 
-        <?php if(has_custom_logo()) {
-        // Display the Custom Logo
-        the_custom_logo();
-        } else { ?>
-        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
-        <span> <?php bloginfo('name'); ?> </span> <br>
-        <?php $description = get_bloginfo( 'description', 'display' );
-        if ( $description || is_customize_preview() ) : ?>
-          <span class="site-description"><?php echo $description; ?></span> 
-        <?php endif;?></a><?php }?>
+           <div class="navbar-header col-12"> 
+          <?php the_custom_logo(); 
+                     if (display_header_text()) : ?>
+                        <div class="site-branding-text navbar-brand">
+                          <h1 class="site-title"> 
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <?php 
+                            echo esc_html(get_bloginfo('name'));
+                            ?>
+                            </a>
+                          </h1>
+                              <p class="site-description"><?php bloginfo('description'); ?></p>
+                          </div>
+                      <?php endif; ?>
             <!-- navbar-toggle --> 
             <!-- /Logo --> 
-            <div class="desk-header ml-auto position-relative align-items-center">
-                        <div class="dropdown show mg-search-box">
-                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               <i class="fa fa-search"></i>
-                            </a>
-                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
-                                <form method="get" id="searchform" action="#" class="navbar-form mg-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?phph echo esc_attr_e('Search','agencyup'); ?>">
-                                        <span class="input-group-btn">
-                                            <button class="btn" type="submit"> 
-                                            <span class="fa fa-search"></span>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+          <div class="desk-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                <?php $hide_show_nav_menu_btn = get_theme_mod('hide_show_nav_menu_btn','1'); 
+                $menu_btn_label = get_theme_mod('menu_btn_label');
+                $menu_btn_link = get_theme_mod('menu_btn_link');
+                $menu_btn_target = get_theme_mod('menu_btn_target','1');
+                if($hide_show_nav_menu_btn == '1') { if($menu_btn_label) { ?>
+                <a <?php if($menu_btn_target == '1') { ?> target ="_blank" <?php } ?> href="<?php echo esc_url($menu_btn_link); ?>" class="btn btn-theme"><?php echo esc_html($menu_btn_label); ?></a>
+              <?php } } ?>
             <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="close fa fa-times"></span>
-              <span class="navbar-toggler-icon"><i class="fas fa-bars" s></i></span>
+              <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
+            </div>
           </div>
         </div>
         <div class="container desk-menu">  
           <!-- Logo image -->  
            <div class="navbar-header"> 
-        <?php if(has_custom_logo()) {
-        // Display the Custom Logo
-        the_custom_logo();
-        } else { ?>
-        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
-        <span> <?php bloginfo('name'); ?> </span> <br>
-        <?php $description = get_bloginfo( 'description', 'display' );
-        if ( $description || is_customize_preview() ) : ?>
-          <span class="site-description"><?php echo $description; ?></span> 
-        <?php endif;?></a><?php }?>
-            <!-- navbar-toggle -->
-            
+            <?php the_custom_logo(); 
+                  if (display_header_text()) : ?>
+                    <div class="site-branding-text navbar-brand">
+                      <h1 class="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        <?php 
+                            echo esc_html(get_bloginfo('name'));
+                          ?></a></h1>
+                      <p class="site-description"><?php bloginfo('description'); ?></p>
+                    </div>
+            <?php endif; ?>
           </div>
           <!-- /Logo -->
           <!-- /navbar-toggle --> 
@@ -154,24 +155,13 @@
       ?>
           </div>
           <div class="desk-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
-                <div class="dropdown show mg-search-box">
-                    <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <i class="fa fa-search"></i>
-                    </a>
-                    <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
-                        <form method="get" id="searchform" action="#" class="navbar-form mg-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e('Search','agencyup'); ?>">
-                                <span class="input-group-btn">
-                                    <button class="btn" type="submit"> 
-                                    <span class="fa fa-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-theme ml-1">Get Quote</a>
+                <?php $hide_show_nav_menu_btn = get_theme_mod('hide_show_nav_menu_btn','1'); 
+                $menu_btn_label = get_theme_mod('menu_btn_label');
+                $menu_btn_link = get_theme_mod('menu_btn_link');
+                $menu_btn_target = get_theme_mod('menu_btn_target','1');
+				if($hide_show_nav_menu_btn == '1') { if($menu_btn_label) { ?>
+                <a <?php if($menu_btn_target == '1') { ?> target ="_blank" <?php } ?> href="<?php echo esc_url($menu_btn_link); ?>" class="btn btn-theme"><?php echo esc_html($menu_btn_label); ?></a>
+            	<?php } } ?>
           </div>
         </div>
       </nav>

@@ -60,21 +60,19 @@
 		  $agencyup_footer_insta_link = get_theme_mod('agencyup_footer_insta_link');
 		  $agencyup_footer_insta_target = get_theme_mod('agencyup_footer_insta_target',1);
 		  ?>
-		  <ul class="ti-social">
+		  <ul class="bs-social">
 			<?php if($agencyup_footer_fb_link !=''){?>
-			<li><span class="icon-soci"><a <?php if($agencyup_footer_fb_target) { ?> target="_blank" <?php } ?>href="<?php echo esc_url($agencyup_footer_fb_link); ?>"><i class="fa fa-facebook"></i></a></span> </li>
+			<li><span class="icon-soci"><a <?php if($agencyup_footer_fb_target) { ?> target="_blank" <?php } ?>href="<?php echo esc_url($agencyup_footer_fb_link); ?>"><i class="fab fa-facebook-f"></i></a></span> </li>
 			<?php } if($agencyup_footer_twt_link !=''){ ?>
-			<li><span class="icon-soci"><a <?php if($agencyup_footer_twt_target) { ?>target="_blank" <?php } ?>href="<?php echo esc_url($agencyup_footer_twt_link);?>"><i class="fa fa-twitter"></i></a></span></li>
+			<li><span class="icon-soci"><a <?php if($agencyup_footer_twt_target) { ?>target="_blank" <?php } ?>href="<?php echo esc_url($agencyup_footer_twt_link);?>"><i class="fab fa-twitter"></i></a></span></li>
 			<?php } if($agencyup_footer_lnkd_link !=''){ ?>
-			<li><span class="icon-soci"><a <?php if($agencyup_footer_lnkd_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($agencyup_footer_lnkd_link); ?>"><i class="fa fa-linkedin"></i></a></span></li>
+			<li><span class="icon-soci"><a <?php if($agencyup_footer_lnkd_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($agencyup_footer_lnkd_link); ?>"><i class="fab fa-linkedin"></i></a></span></li>
 			<?php } 
 			if($agencyup_footer_insta_link !=''){ ?>
-			<li><span class="icon-soci"><a <?php if($agencyup_footer_insta_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($agencyup_footer_insta_link); ?>"><i class="fa fa-instagram"></i></a></span></li>
+			<li><span class="icon-soci"><a <?php if($agencyup_footer_insta_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($agencyup_footer_insta_link); ?>"><i class="fab fa-instagram"></i></a></span></li>
 			<?php } ?>
 		  </ul>
 		  <?php } ?>
-		
-		
       </div>
       </div>
     </div>

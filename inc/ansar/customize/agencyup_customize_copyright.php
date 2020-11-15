@@ -220,7 +220,7 @@ function agencyup_footer_copyright( $wp_customize ) {
 
 	if (isset($wp_customize->selective_refresh)) {
     $wp_customize->selective_refresh->add_partial('agencyup_footer_fb_link', array(
-                'selector'        => '.ti-social',
+                'selector'        => '.bs-social',
                 'render_callback' => 'agencyup_customize_partial_agencyup_footer_fb_link',
         ));
     }
