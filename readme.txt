@@ -2,8 +2,8 @@
 Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, news
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 2.4.6
+Tested up to: 5.5
+Stable tag: 2.4.7
 Requires PHP: 5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -19,6 +19,12 @@ Alhena Lite WordPress Theme, Copyright 2020 ThemeinProgress.
 Alhena Lite is distributed under the terms of the GPLv3 or later
 
 == Changelog ==
+
+= 2.4.7 =
+Release date - November, 15 - 2020
+
+* Tested with WordPress 5.5
+* Edit - Code optimized
 
 = 2.4.6 =
 Release date - August, 10 - 2020

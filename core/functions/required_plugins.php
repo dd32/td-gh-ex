@@ -39,6 +39,12 @@ if (!function_exists('alhena_lite_required_plugins')) {
 				'slug'      => 'wa-chatbox-manager',
 				'required'  => false,
 			),
+			
+			array(
+				'name'      => 'Custom Thank You Page',
+				'slug'      => 'custom-thank-you-page',
+				'required'  => false,
+			),
 
 			array(
 				'name'      => 'Regenerate Thumbnails',
