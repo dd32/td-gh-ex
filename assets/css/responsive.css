@@ -58,10 +58,6 @@
         margin-bottom: 14px;
     }
 
-    .cart-icon h6 {
-        font-size: 12px;
-    }
-
     .main-menu li {
         margin-left: 10px;
     }
@@ -490,10 +486,6 @@
 
     .header-info li:after {
         display: none !important;
-    }
-
-    .cart-icon h6 {
-        font-size: 12px;
     }
     
     .header-cart-box-wrapper {
