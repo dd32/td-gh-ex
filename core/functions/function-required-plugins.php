@@ -14,9 +14,9 @@
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
- 
+
 if (!function_exists('anna_lite_required_plugins')) {
-	
+
 	function anna_lite_required_plugins() {
 
 		$plugins = array(
@@ -36,6 +36,11 @@ if (!function_exists('anna_lite_required_plugins')) {
 				'slug'      => 'wa-chatbox-manager',
 				'required'  => false,
 			),
+      array(
+				'name'      => 'Custom Thank You Page',
+				'slug'      => 'custom-thank-you-page',
+				'required'  => false,
+			),
 			array(
 				'name'      => 'Widget Importer & Exporter',
 				'slug'      => 'widget-importer-exporter',
@@ -48,10 +53,10 @@ if (!function_exists('anna_lite_required_plugins')) {
 			),
 
 		);
-	
+
 		tgmpa($plugins);
 	}
-	
+
 	add_action( 'tgmpa_register', 'anna_lite_required_plugins' );
 
 }
