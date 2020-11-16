@@ -4,8 +4,8 @@ Contributors: specia
 Requires at least: 4.4
 Tested up to: 5.5.3
 Requires PHP: 5.6
-Stable tag: 3.0.26
-Version: 3.0.26
+Stable tag: 3.0.27
+Version: 3.0.27
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
@@ -81,6 +81,9 @@ License: CC0 Public Domain
 
 
 ##Changelog
+
+version 3.0.27
+* Readme Updated
 
 version 3.0.26
 * Tested with WordPress 5.5.3 
@@ -260,93 +263,3 @@ version 1.0.32
 version 1.0.31
 * Resolve Escaping Issue
 * Feature Image Change
-
-version 1.0.30
-* Tested With WordPress 5.0.3
-
-version 1.0.29
-* Copyright Changed
-
-version 1.0.28
-* Tested With WordPress 5.0.2
-
-version 1.0.27
-* Tested With WordPress 5.0.1
-
-version 1.0.26
-* Tested With WP5
-
-version 1.0.25
-* License Info Changed.
-
-version 1.0.24
-* Tags & Description Changed in Readme File.
-
-version 1.0.23
-* Feature image added
-
-version 1.0.22
-* Added Theme Tag (grid-layout)
-
-version 1.0.21
-* Changed Screenshot
-
-version 1.0.20
-* Updated Premium Themes Link
-
-version 1.0.19
-* Added Documentation, Support & Review Buttons
-
-version 1.0.18
-* Added Parent Theme License
-
-version 1.0.17
-* Theme Description Updated
-
-version 1.0.16
-* Theme Description Updated
-
-version 1.0.15
-* Added Premium Themes Link
-
-version 1.0.14
-* Theme URI Updated
-
-version 1.0.13
-* Theme Description Updated
-
-version 1.0.12
-* Added features section
-
-version 1.0.11
-* Slider Animation Changed
-
-version 1.0.10
-* WordPress 4.9.8 Compatibility Tested.
-
-version 1.0.9
-* Social Media Improvement Test against Parent theme
-
-version 1.0.8
-* WordPress 4.9.7 Compatibility Tested.
-
-version 1.0.7
-* Updated Readme
-
-version 1.0.6
-* Screenshot & Description Update
-
-version 1.0.5
-* Color changed in Editor Style CSS
-
-version 1.0.4
-* Screenshot Update
-
-version 1.0.3
-* Resolved all theme review issues.
-
-version 1.0.2
-* Resolved all theme review issues.
-
-version 1.0.1
-* Submit to WP.org
