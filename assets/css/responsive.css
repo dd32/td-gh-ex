@@ -489,10 +489,6 @@
         font-size: 23px;
         align-items: center;
     }
-    .cart-count {
-        top: -12px;
-        right: -12px;
-    }
     .mobile-menu-right .header-search-toggle,
     .mobile-menu-right .cart-icon-wrap #cart {
         font-size: 14px;
