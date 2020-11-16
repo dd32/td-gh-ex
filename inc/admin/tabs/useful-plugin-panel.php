@@ -7,7 +7,7 @@
 ?>
 <div id="useful-plugin-panel" class="panel-left">
 	<?php 
-	$free_plugins = array(
+	$arilewp_free_plugins = array(
 		'contact-form-7' => array(
 		    'name'      => 'Contact form 7',
 			'slug'     	=> 'contact-form-7',
@@ -24,10 +24,10 @@
 			'filename' 	=> 'elementor.php',
 		),
 	);
-	if( !empty( $free_plugins ) ) { ?>
+	if( !empty( $arilewp_free_plugins ) ) { ?>
 		<div class="recomended-plugin-wrap">
 		<?php
-		foreach( $free_plugins as $plugin ) {
+		foreach( $arilewp_free_plugins as $plugin ) {
 			$info 		= arilewp_call_plugin_api( $plugin['slug'] ); ?>
 			<div class="recom-plugin-wrap w-3-col">
 				<div class="plugin-title-install clearfix">
