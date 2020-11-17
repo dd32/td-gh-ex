@@ -90,7 +90,7 @@
           _selsToSkip   = this.options.skipSelectors[requested_sel_type];
 
       //check if option is well formed
-      if ( 'object' != typeof(this.options.skipSelectors) || ! this.options.skipSelectors[requested_sel_type] || ! $.isArray( this.options.skipSelectors[requested_sel_type] ) || 0 === this.options.skipSelectors[requested_sel_type].length )
+      if ( 'object' != typeof(this.options.skipSelectors) || ! this.options.skipSelectors[requested_sel_type] || ! Array.isArray( this.options.skipSelectors[requested_sel_type] ) || 0 === this.options.skipSelectors[requested_sel_type].length )
         return true;
 
       //has a forbidden parent?
@@ -124,7 +124,7 @@
           _tagToSkip  = this.options.skipChildTags;
 
       //check if tag to skip option is an array
-      if ( ! $.isArray( _tagToSkip ) )
+      if ( ! Array.isArray( _tagToSkip ) )
         return true;
 
       //make sure tags in option are all in uppercase
