@@ -43,6 +43,18 @@ function agency_starter_get_theme_css( ) {
 	
 	return "
 	
+
+	.theme-page-header-area .page-header-title,
+	.theme-page-header-area .page-breadcrumb {
+		color: ".$colors['header_text_color'].";
+	}	
+		
+	.widget_product_search button[type='submit']:hover,
+	.widget_product_search button[type='submit']:focus {
+		color: #fff;
+		background-color: ".$colors['primary_color'].";	
+	}
+	
 	#featured_slider .carousel-navigation a:focus,
 	#featured_slider .carousel-navigation a:hover {
 		background-color:".$colors['primary_color'].";	
@@ -141,6 +153,10 @@ function agency_starter_get_theme_css( ) {
 	.site-info a,
 	.site-info {
 		color: ".$colors['footer_text_color'].";
+	}
+	
+	.footer-text .social-navigation a {
+		background-color: ".$colors['primary_color'].";
 	}
 	
 	

@@ -77,6 +77,11 @@ Image used in screenshot & default header :
 * Source: https://pxhere.com/en/photo/559565
 
 == Changelog ==
+
+= 1.1.1 =
+* Fixed css, Layout issues
+
+
 = 1.1.1 =
 * Fixed css issues, typograpgy issues
 

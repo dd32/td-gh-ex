@@ -220,6 +220,23 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		'panel' => 'theme_options',
 	) );
 	
+	
+	//labe2
+	$wp_customize->add_setting('header_image_label2' , array(
+		'default'    => __("You can change header text color from Theme Options > Header section.","agency-starter"),
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+	
+	$wp_customize->add_control( new Agency_Starter_Label( 
+	$wp_customize, 
+	'header_image_label2', 
+		array(
+			'section' => 'hero_section',
+			'settings' => 'header_image_label2',
+			'priority' => 8,
+		) 
+	));
+	
 	//0
 	$wp_customize->add_setting('hero_border' , array(
 		'default'    => 0,

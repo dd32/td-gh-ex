@@ -45,17 +45,16 @@
 		
 		</div>
 		
-		<div class="row footer-info">
+		<div class="row footer-info vertical-center">
 
-			<div class="col-md-6 col-sm-6">
+			<div class="<?php if ( has_nav_menu( 'social' ) ) { echo 'col-md-6 col-sm-6';} else {echo 'col-md-12 col-sm-12';} ?>">
 				<div class="site-info">
 						<div><a href="http://wpfreetheme.space"><?php echo esc_html(get_theme_mod('footer_text', esc_html__('Theme: By Theme Space','agency-starter')) ); ?></a></div>
 				</div><!-- .site-info -->
 			</div>
 					
-		
-			<div class="col-md-6 col-sm-6">		
-				<?php if ( has_nav_menu( 'social' ) ) : ?>
+			<?php if ( has_nav_menu( 'social' ) ) : ?>
+			<div class="col-md-6 col-sm-6 footer-social-menu">		
 					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'agency-starter' ); ?>">
 						<?php
 							wp_nav_menu(
@@ -69,8 +68,9 @@
 							);
 						?>
 					</nav><!-- .social-navigation -->
-					<?php endif; ?>			
+							
 			</div>
+			<?php endif; ?>
 			
 			</div>
 		</div>	

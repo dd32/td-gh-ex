@@ -7,14 +7,15 @@ get_header(); ?>
 
 <div id="content" class="site-content">
 
+	<header class="page-header">
+		<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'agency-starter' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+	</header><!-- .page-header -->
+			
 	<section id="primary" class="content-area col-xs-12 col-sm-8 col-md-9 col-lg-9">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'agency-starter' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php
 			// Start the loop.

@@ -20,7 +20,7 @@ function agency_starter_default_settings($param){
 					 'footer_text_color'=> '#fff',
 					 'header_contact_social_bg_color'=> '#ffb404',
 					 'footer_border' =>'1',
-					 'hero_border' =>'1',
+					 'hero_border' => 0 ,
 					 'header_layout' =>'1',
 					 'heading_font' => 'Roboto', 
 					 'body_font' => 'Google Sans'					 
@@ -56,6 +56,7 @@ if ( ! function_exists( 'agency_starter_setup' ) ) :
 		$header_args = array(
 			'width'           => 1600,
 			'flex-width'    => true,
+			'flex-height'    => true,
 			'uploads'         => true,
 			'random-default'  => true,	
 			'header-text'     => false,
@@ -582,13 +583,14 @@ define ('agency_starter_tutorial', 'https://wpfreetheme.space/wordpress/');
  * Displays theme info / quick help 
  */
 if ( isset( $_GET['hide_admin_notice'] ) ) {
-		update_option('agency_starter_hide_admin_notice', 'true');
+		update_option('agency_starter_hide_admin_notice', 'dispose');
 } else {
-	$agency_starter_info = get_option('agency_starter_hide_admin_notice', 'false');
-	if ($agency_starter_info != 'true'){ 
+	$agency_starter_info = get_option('agency_starter_hide_admin_notice', 'show');
+	if ($agency_starter_info != 'dispose' || $agency_starter_info ==""){ 
 		add_action( 'admin_notices', 'agency_starter_help_notice' );
 	}
 }
+
 
 if(!function_exists('agency_starter_help_notice')):
 
@@ -608,7 +610,7 @@ function agency_starter_help_notice() {
 	esc_html( $pro_notice ), 
 	esc_url( agency_starter_tutorial ), 
 	esc_html( $tutorial ),
-	esc_html( $dismiss ) ); 
+	esc_html( $dismiss ) );
 }
 
 endif;
