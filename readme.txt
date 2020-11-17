@@ -4,8 +4,8 @@ Contributors: nalam
 Tags: blog, news, education, custom-logo, one-column, two-columns, grid-layout, right-sidebar, custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, block-styles
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.5.1
-Stable tag: 1.0.4
+Tested up to: 5.5.3
+Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -70,6 +70,10 @@ Source:https://pxhere.com/en/photo/683887
 
 
 == Changelog ==
+
+= 1.0.5 - October 21 2020 =
+* Widget style issue fixed
+* Footer item added
 
 = 1.0.4 - October 21 2020 =
 * Menu responsive issue fixed

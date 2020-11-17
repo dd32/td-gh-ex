@@ -24,13 +24,22 @@ $aak_topfooter_show = get_theme_mod( 'aak_topfooter_show', '1' );
 
 	<footer id="colophon" class="site-footer text-center">
 		<div class="site-info">
+			<p class="footer-copyright m-0">&copy;
+				<?php
+					echo date_i18n(
+					/* translators: Copyright date format, see https://www.php.net/date */
+					_x( 'Y', 'copyright date format', 'aak' )
+					);
+				?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+			</p><!-- .footer-copyright -->
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aak' ) ); ?>">
 				<?php _e( 'Powered by WordPress', 'aak' ); ?>
 			</a>
 			
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( __( 'Theme: %1$s by %2$s.', 'aak' ), 'aak', '<a href="https://profiles.wordpress.org/nalam-1/">Noor Alam</a>' );
+				printf( __( 'Theme: %1$s by %2$s.', 'aak' ), 'aak', '<a href="https://wpthemespace.com/">wp theme space</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

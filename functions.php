@@ -169,8 +169,8 @@ add_action( 'enqueue_block_assets', 'aak_gb_block_style' );
 /**
  * Beshop Google fonts fuction
  */
-if ( ! function_exists( 'aak_body_fonts' ) ) :
-function aak_body_fonts() {
+if ( ! function_exists( 'aak_google_fonts' ) ) :
+function aak_google_fonts() {
  $aak_body_fonts = get_theme_mod('aak_body_fonts','Poppins');
  $aak_head_fonts = get_theme_mod('aak_head_fonts','Lato');
 
@@ -200,6 +200,7 @@ endif;
  * Enqueue scripts and styles.
  */
 function aak_scripts() {
+	wp_enqueue_style( 'aak-google-font', aak_google_fonts(), array(), null );
 	wp_enqueue_style( 'aak-default', get_template_directory_uri().'/assets/css/default.css',array(), AAK_VERSION ,'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css',array(), '4.5.0' ,'all' );
 	wp_enqueue_style( 'font-awesome-five-all', get_template_directory_uri().'/assets/css/all.css',array(), '5.14.0' ,'all' );
