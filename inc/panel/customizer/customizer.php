@@ -246,9 +246,10 @@ function catcheverest_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Disable Responsive Design', 'catch-everest' ),
 			'description'	=> '',
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catcheverest_sanitize_select',
+			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
+			'panel' 		=> 'theme_options',
 			'section' 		=> 'responsive_design',
-			'default' 		=> $defaults['disable_responsive'],
+			'default' 		=> $defaults['disable_responsive']
 		),
 
 		'disable_header_right_sidebar' => array(
@@ -912,7 +913,7 @@ function catcheverest_customize_register( $wp_customize ) {
 					'sanitize_callback'	=> $option['sanitize'],
 					'default'			=> $option['default'],
 					'transport'			=> $transport,
-									)
+				)
 			);
 
 			$params = array(
@@ -1250,6 +1251,7 @@ add_action( 'customize_save', 'catcheverest_customize_preview' );
  * @since Catch Everest 1.4
  */
 function catcheverest_customize_scripts() {
+	wp_enqueue_script( 'catcheverest_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/customizer-custom-scripts.js', array( 'jquery' ), '20201117', true );
 
 	//Enqueue Customizer CSS
 	wp_enqueue_style( 'catchevolution-custom-controls-css', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'css/customizer.css' );
