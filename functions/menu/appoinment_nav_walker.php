@@ -85,7 +85,7 @@ class appointment_nav_walker extends Walker_Nav_Menu {
 }
 function appointment_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
-		$classes[]	=	'active';
+		$classes[]	=	'';
 
 	return $classes;
 }

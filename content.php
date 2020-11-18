@@ -11,11 +11,13 @@
                     <?php }else{ ?>
                     <h3><?php the_title(); ?></h3> 
                     <?php } ?>
+                    <div class="blog-content">
 				<?php		
 				// call editor content of post/page	
 				the_content( __('Read More', 'appointment' ) );
 				wp_link_pages( );
 			   ?>
+			</div>
 		</div>
 	 </div>
 </div>

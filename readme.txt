@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 2.8.5.1
+Stable tag: 2.8.5.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,9 @@ Appointment is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.8.5.2
+1. Removed default value from social links.
+2. Added contact form 7 image license.
 @Version 2.8.5.1
 1. String Update.
 @Version 2.8.5
@@ -345,6 +348,10 @@ Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-noti
 * Image used in the screenshot
 License CC0 Public Domain
 https://pxhere.com/en/photo/912411
+
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
 Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

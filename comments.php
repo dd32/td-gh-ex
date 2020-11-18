@@ -10,7 +10,7 @@ if (!function_exists('appointment_comment')) {
         //get theme data
         global $comment_data;
         //translations
-        $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply', 'appointment');
+$leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply', 'appointment');
         ?>	
 
         <div <?php comment_class('media comment-box'); ?> id="comment-<?php comment_ID(); ?>">

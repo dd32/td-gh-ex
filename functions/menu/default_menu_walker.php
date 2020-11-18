@@ -22,9 +22,9 @@ function appointment_fallback_page_menu($args = array()) {
             $text = $args['show_home'];
         $class = '';
         if (is_front_page() && !is_paged()) {
-            $class = 'class="nav-item active"';
+            $class = 'class="nav-item menu-item active"';
         } else {
-            $class = 'class="nav-item"';
+            $class = 'class="nav-item menu-item"';
         }
         $menu .= '<li ' . $class . '><a class="nav-link 1" href="' . esc_url(home_url('/')) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
         // If the front page is a page, add it to the exclude list
@@ -72,7 +72,7 @@ class appointment_walker_page_menu extends Walker_Page {
             if (in_array($page->ID, $_current_page->ancestors))
                 $css_class[] = 'current_page_ancestor';
             if ($page->ID == $current_page)
-                $css_class[] = 'nav-item active';
+                $css_class[] = 'nav-item menu-item active';
             elseif ($_current_page && $page->ID == $_current_page->post_parent)
                 $css_class[] = 'current_page_parent';
         } elseif ($page->ID == get_option('page_for_posts')) {

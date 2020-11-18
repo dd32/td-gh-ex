@@ -84,35 +84,37 @@
                 $appointment_header_facebook = $appointment_header_setting['social_media_facebook_link'];
                 $appointment_header_twitter = $appointment_header_setting['social_media_twitter_link'];
                 $appointment_header_linkdin = $appointment_header_setting['social_media_linkedin_link'];
-
                 $appointment_header_social = '<ul id="%1$s" class="%2$s">%3$s';
-                if ($appointment_header_setting['header_social_media_enabled'] == 0) {
-                    $appointment_header_social .= '<ul class="head-contact-social">';
+                    if ($appointment_header_setting['header_social_media_enabled'] == 0) {
+                        if($appointment_header_facebook !='' || $appointment_header_twitter!='' || $appointment_header_linkdin!=''){
 
-                    if ($appointment_header_setting['social_media_facebook_link'] != '') {
-                        $appointment_header_social .= '<li class="facebook"><a href="' . esc_url($appointment_header_facebook) . '"';
-                        if ($appointment_header_setting['facebook_media_enabled'] == 1) {
-                            $appointment_header_social .= 'target="_blank"';
+                            $appointment_header_social .= '<ul class="head-contact-social">';
+
+                            if ($appointment_header_setting['social_media_facebook_link'] != '') {
+                                $appointment_header_social .= '<li class="facebook"><a href="' . esc_url($appointment_header_facebook) . '"';
+                                if ($appointment_header_setting['facebook_media_enabled'] == 1) {
+                                    $appointment_header_social .= 'target="_blank"';
+                                }
+                                $appointment_header_social .= '><i class="fa fa-facebook"></i></a></li>';
+                            }
+                            if ($appointment_header_setting['social_media_twitter_link'] != '') {
+                                $appointment_header_social .= '<li class="twitter"><a href="' . esc_url($appointment_header_twitter) . '"';
+                                if ($appointment_header_setting['twitter_media_enabled'] == 1) {
+                                    $appointment_header_social .= 'target="_blank"';
+                                }
+                                $appointment_header_social .= '><i class="fa fa-twitter"></i></a></li>';
+                            }
+                            if ($appointment_header_setting['social_media_linkedin_link'] != '') {
+                                $appointment_header_social .= '<li class="linkedin"><a href="' . esc_url($appointment_header_linkdin) . '"';
+                                if ($appointment_header_setting['linkedin_media_enabled'] == 1) {
+                                    $appointment_header_social .= 'target="_blank"';
+                                }
+                                $appointment_header_social .= '><i class="fa fa-linkedin"></i></a></li>';
+                            }
+                            $appointment_header_social .= '</ul>';
                         }
-                        $appointment_header_social .= '><i class="fa fa-facebook"></i></a></li>';
                     }
-                    if ($appointment_header_setting['social_media_twitter_link'] != '') {
-                        $appointment_header_social .= '<li class="twitter"><a href="' . esc_url($appointment_header_twitter) . '"';
-                        if ($appointment_header_setting['twitter_media_enabled'] == 1) {
-                            $appointment_header_social .= 'target="_blank"';
-                        }
-                        $appointment_header_social .= '><i class="fa fa-twitter"></i></a></li>';
-                    }
-                    if ($appointment_header_setting['social_media_linkedin_link'] != '') {
-                        $appointment_header_social .= '<li class="linkedin"><a href="' . esc_url($appointment_header_linkdin) . '"';
-                        if ($appointment_header_setting['linkedin_media_enabled'] == 1) {
-                            $appointment_header_social .= 'target="_blank"';
-                        }
-                        $appointment_header_social .= '><i class="fa fa-linkedin"></i></a></li>';
-                    }
-                    $appointment_header_social .= '</ul>';
-                }
-                $appointment_header_social .= '</ul>';
+                    $appointment_header_social .= '</ul>';             
                 ?>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

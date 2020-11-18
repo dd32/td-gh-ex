@@ -47,7 +47,7 @@ function appointment_header_customizer($wp_customize) {
     $wp_customize->add_setting(
             'appointment_options[social_media_facebook_link]',
             array(
-                'default' => '#',
+                'default' => '',
                 'sanitize_callback' => 'esc_url_raw',
                 'type' => 'option',
             )
@@ -83,7 +83,7 @@ function appointment_header_customizer($wp_customize) {
     $wp_customize->add_setting(
             'appointment_options[social_media_twitter_link]',
             array(
-                'default' => '#',
+                'default' => '',
                 'type' => 'theme_mod',
                 'sanitize_callback' => 'esc_url_raw',
                 'type' => 'option',
@@ -119,7 +119,7 @@ function appointment_header_customizer($wp_customize) {
     $wp_customize->add_setting(
             'appointment_options[social_media_linkedin_link]',
             array(
-                'default' => '#',
+                'default' => '',
                 'sanitize_callback' => 'esc_url_raw',
                 'type' => 'option',
             )
