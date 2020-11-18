@@ -17,8 +17,8 @@ if (!function_exists('wp_body_open')) {
 add_action('wp_enqueue_scripts', 'appointment_dark_theme_css', 999);
 
 function appointment_dark_theme_css() {
-    wp_enqueue_style('appointment-dark-parent-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/style.css');
     wp_enqueue_style('bootstrap-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/bootstrap.css');
+    wp_enqueue_style('appointment-dark-parent-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/style.css');    
     wp_enqueue_style('appointment-dark-theme-menu', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/theme-menu.css');
     wp_enqueue_style('appointment-dark-default-css', APPOINTMENT_DARK_TEMPLATE_DIR_URI . "/css/default.css");
     wp_enqueue_style('appointment-dark-element-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/element.css');
@@ -53,15 +53,15 @@ function appointment_dark_default_data() {
         // general settings
         'footer_menu_bar_enabled' => '',
         'footer_social_media_enabled' => '',
-        'footer_social_media_facebook_link' => '#',
+        'footer_social_media_facebook_link' => '',
         'footer_facebook_media_enabled' => 1,
-        'footer_social_media_twitter_link' => '#',
+        'footer_social_media_twitter_link' => '',
         'footer_twitter_media_enabled' => 1,
-        'footer_social_media_linkedin_link' => '#',
+        'footer_social_media_linkedin_link' => '',
         'footer_linkedin_media_enabled' => 1,
-        'footer_social_media_googleplus_link' => '#',
+        'footer_social_media_googleplus_link' => '',
         'footer_googleplus_media_enabled' => 1,
-        'footer_social_media_skype_link' => '#',
+        'footer_social_media_skype_link' => '',
         'footer_skype_media_enabled' => 1,
         
         //Home contact callout setting

@@ -189,17 +189,17 @@
 						<li style="font-size:16px;"><?php esc_html_e("Left + Right sidebar areas","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><?php esc_html_e("Menus +6 social icons + search icon + cart icon","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><?php esc_html_e("5 header variations","appointment-dark"); ?></li>
-						<li style="font-size:16px;"><?php esc_html_e("Unlimited slides with 5 slide variations [ standard,aside, quote, status and video]","appointment-dark"); ?></li>
+						<li style="font-size:16px;"><?php esc_html_e("Unlimited slides with 5 slide variations [ standard, aside, quote, status and video]","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><?php esc_html_e("Left, center and right sidebars","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><?php esc_html_e("9 services + 5 variations","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><span class="dashicons-before dashicons-yes green" style="padding-right: 25px;line-height: 1.6;"></span>
 							<?php esc_html_e(' + background setting','appointment-dark'); ?></li>
-						<li style="font-size:16px;"><?php esc_html_e("Unlimited projects + 4  variations","appointment-dark"); ?></li>
+						<li style="font-size:16px;"><?php esc_html_e("Unlimited projects + 4 variations","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><?php esc_html_e("Unlimited testimonials + 4 variations","appointment-dark"); ?></li>
-						<li style="font-size:16px;"><?php esc_html_e("Unlimited team + 4 variations","appointment-dark"); ?></li>
+						<li style="font-size:16px;"><?php esc_html_e("Unlimited teams + 4 variations","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><?php esc_html_e("8 clients","appointment-dark"); ?></li>
 						<li style="font-size:16px;"><span class="dashicons-before dashicons-yes green" style="padding-right: 25px;line-height: 1.6;"></span>
-							<?php esc_html_e(' + 5 variation','appointment-dark'); ?></li>
+							<?php esc_html_e(' + 5 variations','appointment-dark'); ?></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li style="font-size:16px;"><?php esc_html_e("Editable","appointment-dark"); ?></li>
 						<li style="font-size:16px;">

@@ -50,7 +50,7 @@
 	<div class="appointment-dark-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Service Features','appointment-dark' ); ?></strong></p>
 
-		<p><?php esc_html_e( 'You can display any number of Services on the Homepage, with thousands of Font - Awesome icons available. You can also display a set of services on a separate page by using the service-related page templates.','appointment-dark' ); ?></p>
+		<p><?php esc_html_e( 'You can display any number of Services on the Homepage, with thousands of FontAwesome icons available. You can also display a set of services on a separate page by using the service-related page templates.','appointment-dark' ); ?></p>
 		<hr>
 	</div>
 	</div>

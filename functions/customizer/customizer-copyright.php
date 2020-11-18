@@ -42,7 +42,7 @@
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_facebook_link]',
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -78,7 +78,7 @@
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_twitter_link]',
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option'
     )
@@ -114,7 +114,7 @@
     'appointment_options[footer_social_media_linkedin_link]',
     array(
 		'type' => 'option',
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
     )
 	
@@ -149,7 +149,7 @@
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_googleplus_link]',
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -185,7 +185,7 @@
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_skype_link]',
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type'=>'option',
     )

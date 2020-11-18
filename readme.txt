@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 0.7
+Stable tag: 0.8
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,11 @@ Appointment Dark WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 0.8
+1. Fixed Keyboard navigation and style issue.
+2. Removed Unnecessary code.
+3. Fixed "links within content must be underlined" issue.
+
 @Version 0.7
 1. Updated the options page.
 
@@ -63,6 +68,10 @@ Released.
 * Image used in the screenshot
 License CC0 Public Domain
 https://pxhere.com/en/photo/1411386
+
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
 Copyright (C) 2020, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

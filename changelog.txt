@@ -1,5 +1,10 @@
 == Changelog ==
 
+@Version 0.8
+1. Fixed Keyboard navigation and style issue.
+2. Removed Unnecessary code.
+3. Fixed "links within content must be underlined" issue.
+
 @Version 0.7
 1. Updated the options page.
 

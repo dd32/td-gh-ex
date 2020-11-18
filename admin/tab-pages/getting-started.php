@@ -2,9 +2,7 @@
 /**
  * Getting started template
  */
-$appointment_dark_customizer_url = admin_url() . 'customize.php' ;
 ?>
-
 <div id="getting_started" class="appointment-dark-tab-pane active">
 
 	<div class="container-fluid">
@@ -28,7 +26,7 @@ $appointment_dark_customizer_url = admin_url() . 'customize.php' ;
 					<h3><?php esc_html_e( "Recommended Plugins", 'appointment-dark' ); ?></h3>
 					<div style="border-top: 1px solid #eaeaea;">
 						<p style="margin-top: 16px;">
-							<?php esc_html_e( 'To take full advanctage of the theme features you need to install recommended plugins.', 'appointment-dark' ); ?>
+							<?php esc_html_e( "To take full advantage of the theme's features you need to install recommended plugins.", 'appointment-dark' ); ?>
 						</p>
 						<p><a target="_self" href="#recommended_actions" class="appointment-dark-custom-class"><?php esc_html_e( 'Click here','appointment-dark');?></a></p>
 					</div>

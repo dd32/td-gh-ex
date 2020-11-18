@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment Dark\n"
-"POT-Creation-Date: 2020-11-03 13:43+0530\n"
+"POT-Creation-Date: 2020-11-17 19:58+0530\n"
 "PO-Revision-Date: 2020-10-03 11:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -371,8 +371,8 @@ msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:192
 msgid ""
-"Unlimited slides with 5 slide variations [ standard,aside, quote, status and "
-"video]"
+"Unlimited slides with 5 slide variations [ standard, aside, quote, status "
+"and video]"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:194
@@ -384,7 +384,7 @@ msgid " + background setting"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:197
-msgid "Unlimited projects + 4  variations"
+msgid "Unlimited projects + 4 variations"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:198
@@ -392,7 +392,7 @@ msgid "Unlimited testimonials + 4 variations"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:199
-msgid "Unlimited team + 4 variations"
+msgid "Unlimited teams + 4 variations"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:200
@@ -400,7 +400,7 @@ msgid "8 clients"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:202
-msgid " + 5 variation"
+msgid " + 5 variations"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:204
@@ -419,11 +419,11 @@ msgstr ""
 msgid "Get PRO Version Now!"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:13
+#: admin/tab-pages/getting-started.php:11
 msgid "About the Appointment Dark theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:22
+#: admin/tab-pages/getting-started.php:20
 msgid ""
 "This theme is ideal for creating corporate and business websites. There is "
 "no separate premium version of it, as Appointment Dark is a child theme of "
@@ -433,53 +433,53 @@ msgid ""
 "widgets and much more."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:28
+#: admin/tab-pages/getting-started.php:26
 msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:31
+#: admin/tab-pages/getting-started.php:29
 msgid ""
-"To take full advanctage of the theme features you need to install "
+"To take full advantage of the theme's features you need to install "
 "recommended plugins."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:33
+#: admin/tab-pages/getting-started.php:31
 msgid "Click here"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:38
+#: admin/tab-pages/getting-started.php:36
 msgid "Start Customizing"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:41
+#: admin/tab-pages/getting-started.php:39
 msgid "After activating recommended plugins , now you can start customization."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:44
+#: admin/tab-pages/getting-started.php:42
 msgid "Go to Customizer"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:50
+#: admin/tab-pages/getting-started.php:48
 msgid "appointment-dark Theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:56
+#: admin/tab-pages/getting-started.php:54
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:62
+#: admin/tab-pages/getting-started.php:60
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:66
+#: admin/tab-pages/getting-started.php:64
 msgid "PRO Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:72
+#: admin/tab-pages/getting-started.php:70
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:76
+#: admin/tab-pages/getting-started.php:74
 msgid "Premium Theme Details"
 msgstr ""
 
@@ -547,7 +547,7 @@ msgstr ""
 #: admin/tab-pages/useful_plugins.php:53
 msgid ""
 "You can display any number of Services on the Homepage, with thousands of "
-"Font - Awesome icons available. You can also display a set of services on a "
+"FontAwesome icons available. You can also display a set of services on a "
 "separate page by using the service-related page templates."
 msgstr ""
 
@@ -705,11 +705,11 @@ msgstr ""
 msgid "Skype URL"
 msgstr ""
 
-#: header.php:16
+#: header.php:14
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:34
+#: header.php:32
 msgid "Toggle navigation"
 msgstr ""
 

@@ -4,11 +4,9 @@
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?php
-        $appointment_dark_header_settings = wp_parse_args(get_option('appointment_options', array()), appointment_theme_setup_data());
-        ?>
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
+        <?php if ( is_singular() && pings_open( get_queried_object() ) ) : 
+           echo '<link rel="pingback" href=" '.esc_url(get_bloginfo( 'pingback_url' )).' ">';
+        endif; ?>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?> >
@@ -38,38 +36,43 @@
                     </button>
                 </div>
                 <?php
+                $appointment_dark_header_settings = wp_parse_args(get_option('appointment_options', array()), appointment_theme_setup_data()); 
                 $appointment_dark_facebook = $appointment_dark_header_settings['social_media_facebook_link'];
                 $appointment_dark_twitter = $appointment_dark_header_settings['social_media_twitter_link'];
                 $appointment_dark_linkdin = $appointment_dark_header_settings['social_media_linkedin_link'];
+                
+                    $appointment_dark_social = '<ul id="%1$s" class="%2$s">%3$s';
+                    if ($appointment_dark_header_settings['header_social_media_enabled'] == 0) {
 
-                $appointment_dark_social = '<ul id="%1$s" class="%2$s">%3$s';
-                if ($appointment_dark_header_settings['header_social_media_enabled'] == 0) {
-                    $appointment_dark_social .= '<ul class="head-contact-social">';
+                        if($appointment_dark_facebook =='' || $appointment_dark_twitter =='' || $appointment_dark_linkdin ==''){
+                        $appointment_dark_social .= '<ul class="head-contact-social">';
 
-                    if ($appointment_dark_header_settings['social_media_facebook_link'] != '') {
-                        $appointment_dark_social .= '<li class="facebook"><a href="' . esc_url($appointment_dark_facebook) . '"';
-                        if ($appointment_dark_header_settings['facebook_media_enabled'] == 1) {
-                            $appointment_dark_social .= 'target="_blank"';
+                        if ($appointment_dark_header_settings['social_media_facebook_link'] != '') {
+                            $appointment_dark_social .= '<li class="facebook"><a href="' . esc_url($appointment_dark_facebook) . '"';
+                            if ($appointment_dark_header_settings['facebook_media_enabled'] == 1) {
+                                $appointment_dark_social .= 'target="_blank"';
+                            }
+                            $appointment_dark_social .= '><i class="fa fa-facebook"></i></a></li>';
                         }
-                        $appointment_dark_social .= '><i class="fa fa-facebook"></i></a></li>';
-                    }
-                    if ($appointment_dark_header_settings['social_media_twitter_link'] != '') {
-                        $appointment_dark_social .= '<li class="twitter"><a href="' . esc_url($appointment_dark_twitter) . '"';
-                        if ($appointment_dark_header_settings['twitter_media_enabled'] == 1) {
-                            $appointment_dark_social .= 'target="_blank"';
+                        if ($appointment_dark_header_settings['social_media_twitter_link'] != '') {
+                            $appointment_dark_social .= '<li class="twitter"><a href="' . esc_url($appointment_dark_twitter) . '"';
+                            if ($appointment_dark_header_settings['twitter_media_enabled'] == 1) {
+                                $appointment_dark_social .= 'target="_blank"';
+                            }
+                            $appointment_dark_social .= '><i class="fa fa-twitter"></i></a></li>';
                         }
-                        $appointment_dark_social .= '><i class="fa fa-twitter"></i></a></li>';
-                    }
-                    if ($appointment_dark_header_settings['social_media_linkedin_link'] != '') {
-                        $appointment_dark_social .= '<li class="linkedin"><a href="' . esc_url($appointment_dark_linkdin) . '"';
-                        if ($appointment_dark_header_settings['linkedin_media_enabled'] == 1) {
-                            $appointment_dark_social .= 'target="_blank"';
+                        if ($appointment_dark_header_settings['social_media_linkedin_link'] != '') {
+                            $appointment_dark_social .= '<li class="linkedin"><a href="' . esc_url($appointment_dark_linkdin) . '"';
+                            if ($appointment_dark_header_settings['linkedin_media_enabled'] == 1) {
+                                $appointment_dark_social .= 'target="_blank"';
+                            }
+                            $appointment_dark_social .= '><i class="fa fa-linkedin"></i></a></li>';
                         }
-                        $appointment_dark_social .= '><i class="fa fa-linkedin"></i></a></li>';
+                        $appointment_dark_social .= '</ul>';
                     }
-                    $appointment_dark_social .= '</ul>';
                 }
-                $appointment_dark_social .= '</ul>';
+                    $appointment_dark_social .= '</ul>';
+                
                 ?>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
