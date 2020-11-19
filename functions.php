@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ASTHIR_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ASTHIR_VERSION', '1.0.3' );
+	define( 'ASTHIR_VERSION', '1.0.4' );
 }
 
 if ( ! function_exists( 'asthir_setup' ) ) :

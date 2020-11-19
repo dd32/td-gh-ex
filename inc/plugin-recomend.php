@@ -75,6 +75,11 @@ function asthir_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => esc_html__('Magical Posts Display','asthir'),
+			'slug'      => 'magical-posts-display',
+			'required'  => false,
+		),
+		array(
 			'name'      => esc_html__('Click to top','asthir'),
 			'slug'      => 'click-to-top',
 			'required'  => false,
@@ -99,7 +104,7 @@ function asthir_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'asthir',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'asthir1',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.

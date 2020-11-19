@@ -278,6 +278,71 @@ function asthir_customize_register( $wp_customize ) {
 		)
 	); 
 
+	/* Asthir theme header settings */
+	$wp_customize->add_section('asthir_main_header', array(
+        'title' => __('Asthir Header', 'asthir'),
+        'capability'     => 'edit_theme_options',
+        'description'     => __('The Asthir theme main header settings options ', 'asthir'),
+        'priority'       => 20,
+
+
+    ));
+	$wp_customize->add_setting('asthir_header_style', array(
+        'default'       => 'style1',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'asthir_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('asthir_header_style', array(
+        'label'      => __('Site Header Style', 'asthir'),
+        'section'    => 'asthir_main_header',
+        'settings'   => 'asthir_header_style',
+        'type'       => 'select',
+        'choices'    => array(
+            'style1' => __('Style One', 'asthir'),
+            'style2' => __('Style Two', 'asthir'),
+        ),
+    ));
+    $wp_customize->add_setting('asthir_logo_position', array(
+        'default'        => 'left',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'asthir_sanitize_select',
+        'transport' => 'refresh',
+      //  'priority'       => 20,
+    ));
+    $wp_customize->add_control('asthir_logo_position', array(
+        'label'      => __('Logo Position', 'asthir'),
+        'section'    => 'asthir_main_header',
+        'settings'   => 'asthir_logo_position',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Logo left', 'asthir'),
+            'center' => __('Logo center', 'asthir'),
+            'right' => __('Logo right', 'asthir'),
+        ),
+    ));
+    $wp_customize->add_setting('asthir_menu_position', array(
+        'default'        => 'left',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+        'sanitize_callback' => 'asthir_sanitize_select',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('asthir_menu_position', array(
+        'label'      => __('Main menu Position', 'asthir'),
+        'section'    => 'asthir_main_header',
+        'settings'   => 'asthir_menu_position',
+        'type'       => 'select',
+        'choices'    => array(
+            'left' => __('Menu left', 'asthir'),
+            'center' => __('Menu center', 'asthir'),
+            'right' => __('Menu right', 'asthir'),
+        ),
+    ));
+
+
 
 /*
 * Footer setting section

@@ -79,6 +79,10 @@ Source: https://pxhere.com/en/photo/635899
 
 == Changelog ==
 
+= 1.0.3 - November 19 2020 =
+* Added three diffrent options for header style
+* Added new style for widget.
+
 = 1.0.3 - November 9 2020 =
 * Added theme topbar and topbar options
 * Added options for body and header font.

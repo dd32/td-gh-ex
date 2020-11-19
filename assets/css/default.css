@@ -813,6 +813,14 @@ button.mini-toggle {
 	        -ms-flex-flow: row wrap;
 	            flex-flow: row wrap;
 	}
+
+	.main-navigation.text-left ul {
+		justify-content: flex-start;
+	}
+	.main-navigation.text-right ul {
+		justify-content: flex-end;
+	}
+
 	button.menu-toggle span.mshow {
 	    display: block;
 	}
