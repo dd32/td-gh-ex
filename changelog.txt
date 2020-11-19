@@ -1,3 +1,6 @@
+=== v1.0.9 ===
+- Fixed responsive issues
+
 === v1.0.8 ===
 - Fixed responsive issues
 - Added cart icons and search on mobiles & tablets also

@@ -5,14 +5,14 @@
  Author:       WPoperation
  Author URI:   http://wpoperation.com/
  Template:     arrival
- Version:      1.0.8
+ Version:      1.0.9
  License:      GNU General Public License v3 or later
  License URI:   http://www.gnu.org/licenses/gpl-3.0.html
  Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors
  Text Domain:  arrival-store 
  Requires at least: 4.7
  Requires PHP: 5.6
- Tested up to: 5.5
+ Tested up to: 5.5.3
 
 Arrival Store is a WordPress Theme, 
 Copyright (C) 2020, WPoperation
@@ -541,6 +541,17 @@ responsive
 }
 @media (max-width: 768px){
 
+    .woocommerce .quantity a.plus,
+    .woocommerce .quantity a.minus{
+        margin-left: 0;
+    }
+    .woocommerce .quantity{
+            width: auto;
+            margin-right: 15px;
+    }
+    .woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
+            float: right;
+    }
 
 	.after-top-header-wrapp .icons-wrapp {
         position: fixed;
@@ -755,5 +766,11 @@ button.toggle.close-wrapp.toggle-wrapp span.text {
         background: #fff;
         left: 0;
         right: 0;
+}
+.after-top-header-wrapp .product-search form#searchform .op_search_form button#searchsubmit{
+        padding: 0;
+}
+.after-top-header-wrapp .product-search form#searchform{
+        width: 312px;
 }
 }
