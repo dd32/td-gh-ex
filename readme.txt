@@ -3,7 +3,7 @@
 Contributors: Precise Themes
 Tags: two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.8
-Tested up to: 5.5
+Tested up to: 5.5.3
 Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Atento is a minimalist WordPress blog theme beautifully crafted to help you create a stunning blog, suitable for any kind of blog fashion, travel, music, car, real state, beauty, design, food, wedding, movie, photography, technology, personal blog sites. It is designed with a focus on minimal & clean design, unique styling, elegant typography selection to highlight and emphasis your blog content to your readers.
 
 == Frequently Asked Questions ==
-= Ho to setup homepage as in demo? =
+= How to setup homepage as in demo? =
     a. You need to create a page with suitable name("Home" may be good one) and select Page Temple "Front Page" and save it. can create page for hero image slider, rooms, services, holiday package and select respective page templated.
     b. Go to Setting -> Reading -> and setup "Front page displays" with active radio option of "A static page (select below)" and choose recently created page("Home") and save changes.
     c. Time to setup widgets for Home page. Go to Appearance -> Widgets. Now you can see widget locations for recently created page ("Home").
@@ -75,6 +75,10 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
    Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 == Changelog ==
+
+Version 1.0.8
+* Fixed bug on layout change in theme customizer
+* Checked with WordPress 5.5.3
 
 Version 1.0.7 
 * Kirki framework update
