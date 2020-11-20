@@ -12,6 +12,7 @@ function automobile_hub_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'align-wide' );
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'automobile-hub-featured-image', 2000, 1200, true );
 	add_image_size( 'automobile-hub-thumbnail-avatar', 100, 100, true );
@@ -231,9 +232,38 @@ function automobile_hub_sanitize_email( $email, $setting ) {
 	return ( ! is_null( $email ) ? $email : $setting->default );
 }
 
+function automobile_hub_sanitize_number_range( $number, $setting ) {
+	
+	// Ensure input is an absolute integer.
+	$number = absint( $number );
+	
+	// Get the input attributes associated with the setting.
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	
+	// Get minimum number in the range.
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	
+	// Get maximum number in the range.
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	
+	// Get step.
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	
+	// If the number is within the valid range, return it; otherwise, return the default
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+}
+
 function automobile_hub_sanitize_checkbox( $input ) {
 	// Boolean check 
 	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
+function automobile_hub_sanitize_number_absint( $number, $setting ) {
+	// Ensure $number is an absolute integer (whole number, zero or greater).
+	$number = absint( $number );
+	
+	// If the input is an absolute integer, return it; otherwise, return the default
+	return ( $number ? $number : $setting->default );
 }
 
 /**
