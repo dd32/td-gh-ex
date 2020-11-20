@@ -30,8 +30,8 @@
           <?php if( get_theme_mod( 'adventure_travelling_twitter_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'adventure_travelling_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'adventure_travelling_google_url' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'adventure_travelling_google_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i></a>
+          <?php if( get_theme_mod( 'adventure_travelling_instagram_url' ) != '') { ?>
+            <a href="<?php echo esc_url( get_theme_mod( 'adventure_travelling_instagram_url','' ) ); ?>"><i class="fab fa-instagram"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'adventure_travelling_youtube_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'adventure_travelling_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i></a>

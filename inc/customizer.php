@@ -24,7 +24,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	//TP Color Option
 	$wp_customize->add_section('adventure_travelling_color_option',array(
-        'title'         => __('TP Color Option', 'adventure-travelling'),
+        'title' => __('TP Color Option', 'adventure-travelling'),
         'panel' => 'adventure_travelling_panel_id'
     ) );
 
@@ -49,12 +49,12 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	//TP General Option
 	$wp_customize->add_section('adventure_travelling_tp_general_settings',array(
-        'title'         => __('TP General Option', 'adventure-travelling'),
+        'title' => __('TP General Option', 'adventure-travelling'),
         'panel' => 'adventure_travelling_panel_id'
     ) );
 
     $wp_customize->add_setting('adventure_travelling_tp_body_layout_settings',array(
-        'default' => __('Full','adventure-travelling'),
+        'default' => 'Full',
         'sanitize_callback' => 'adventure_travelling_sanitize_choices'
 	));
     $wp_customize->add_control('adventure_travelling_tp_body_layout_settings',array(
@@ -71,8 +71,8 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
     // Add Settings and Controls for Post Layout
 	$wp_customize->add_setting('adventure_travelling_sidebar_post_layout',array(
-        'default' => __('right','adventure-travelling'),        
-        'sanitize_callback' => 'adventure_travelling_sanitize_choices'	        
+        'default' => 'right',
+        'sanitize_callback' => 'adventure_travelling_sanitize_choices'
 	));
 	$wp_customize->add_control('adventure_travelling_sidebar_post_layout',array(
         'type' => 'radio',
@@ -91,7 +91,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Page Layout
 	$wp_customize->add_setting('adventure_travelling_sidebar_page_layout',array(
-        'default' => __('right','adventure-travelling'),        
+        'default' => 'right',        
         'sanitize_callback' => 'adventure_travelling_sanitize_choices'	        
 	));
 	$wp_customize->add_control('adventure_travelling_sidebar_page_layout',array(
@@ -113,7 +113,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting('adventure_travelling_remove_date',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_date',array(
@@ -123,7 +123,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adventure_travelling_remove_author',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_author',array(
@@ -133,7 +133,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adventure_travelling_remove_comments',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_comments',array(
@@ -143,7 +143,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adventure_travelling_remove_tags',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_tags',array(
@@ -153,7 +153,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adventure_travelling_remove_read_button',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_remove_read_button',array(
@@ -163,7 +163,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adventure_travelling_read_more_text',array(
-		'default'=> 'Read More',
+		'default'=> __('Read More','adventure-travelling'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));	
 	$wp_customize->add_control('adventure_travelling_read_more_text',array(
@@ -176,7 +176,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 		'default'              => 35,
 		'type'                 => 'theme_mod',
 		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
+		'sanitize_callback'    => 'adventure_travelling_sanitize_number_range',
 		'sanitize_js_callback' => 'absint',
 	) );
 	$wp_customize->add_control( 'adventure_travelling_excerpt_count', array(
@@ -283,12 +283,12 @@ function adventure_travelling_customize_register( $wp_customize ) {
 		'type'=> 'url'
 	));
 
-	$wp_customize->add_setting('adventure_travelling_google_url',array(
+	$wp_customize->add_setting('adventure_travelling_instagram_url',array(
 		'default'=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));	
-	$wp_customize->add_control('adventure_travelling_google_url',array(
-		'label'	=> __('Google Link','adventure-travelling'),
+	$wp_customize->add_control('adventure_travelling_instagram_url',array(
+		'label'	=> __('Instagram Link','adventure-travelling'),
 		'section'=> 'adventure_travelling_social_media',
 		'type'=> 'url'
 	));
@@ -320,7 +320,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('adventure_travelling_slider_arrows',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_slider_arrows',array(
@@ -428,7 +428,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('adventure_travelling_site_title',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_site_title',array(
@@ -438,7 +438,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adventure_travelling_site_tagline',array(
-       'default' => 'true',
+       'default' => true,
        'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
     ));
     $wp_customize->add_control('adventure_travelling_site_tagline',array(
@@ -448,7 +448,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
     ));
 
 	$wp_customize->add_setting('adventure_travelling_logo_settings',array(
-        'default' => __('Different Line','adventure-travelling'),
+        'default' => 'Different Line',
         'sanitize_callback' => 'adventure_travelling_sanitize_choices'
 	));
     $wp_customize->add_control('adventure_travelling_logo_settings',array(
@@ -464,7 +464,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('adventure_travelling_per_columns',array(
 		'default'=> 3,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'adventure_travelling_sanitize_number_absint'
 	));	
 	$wp_customize->add_control('adventure_travelling_per_columns',array(
 		'label'	=> __('Product Per Row','adventure-travelling'),
@@ -474,7 +474,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('adventure_travelling_product_per_page',array(
 		'default'=> 9,
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'adventure_travelling_sanitize_number_absint'
 	));	
 	$wp_customize->add_control('adventure_travelling_product_per_page',array(
 		'label'	=> __('Product Per Page','adventure-travelling'),
@@ -600,7 +600,7 @@ final class Adventure_Travelling_Customize {
 		$manager->add_section(
 			new Adventure_Travelling_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'adventure_travelling_section_pro',
 				array(
 					'priority'   => 9,
 					'title'    => esc_html__( 'Travelling Pro Theme', 'adventure-travelling' ),
