@@ -1,9 +1,9 @@
-=== Sutra 2.1.3 ===
+=== Sutra 2.1.4 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
-Tags: two-columns, light, featured-images, fixed-width, custom-menu
+Tags: two-columns, minimal
 Requires: 3.0
-Tested up to: 3.5.1
+Tested up to: 5.5.1
 
 Minimal theme focussed on simplicity, putting your writing front and center. 
 
@@ -62,6 +62,12 @@ Internet Explorer 8,9,10
 
 
 === Release Notes ===
+
+Version 2.2
+- removed depracted functions
+- updated link styles
+- resized main content areas
+
 
 Version 2.1.3
 - fixed table styles, were collapsing.

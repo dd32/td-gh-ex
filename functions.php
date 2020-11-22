@@ -9,6 +9,14 @@ function sutra_setup() {
 	
 	if ( ! isset( $content_width ) ) $content_width = 1100;
 
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
 
@@ -182,11 +190,20 @@ function add_child_theme_scripts(){
 add_action('init', 'add_child_theme_scripts');
 
 // enqueue google fonts
+
+/*
 add_action('wp_head', 'sutra_my_google_webfont', 5); // hook my_google_webfont() into wp_head()
 function sutra_my_google_webfont(){
 	wp_register_style('OFL+Sorts+Mill+Goudy+TT', 'http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT', array(), false, 'screen'); // register the stylesheet
 	wp_enqueue_style('OFL+Sorts+Mill+Goudy+TT'); // print the stylesheet into page
 }
+*/
+
+function google_fonts() {
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Spectral:ital@1&display=swap', false );
+}
+add_action( 'wp_enqueue_scripts', 'google_fonts' );
+
 
 // Jetpack Plugin infinite scroll support
 add_theme_support( 'infinite-scroll', array(

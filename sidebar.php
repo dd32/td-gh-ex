@@ -2,6 +2,10 @@
 		<div id="sidebar" class="widget-area" role="complementary">
 			<ul class="xoxo">
 
+				
+
+			<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
+
 				<li id="sidebar-menu" class="widget-container">
 					<h3 class="widget-title">Menu</h3>
 					<?php wp_nav_menu( array( 
@@ -10,8 +14,6 @@
 						) ); 
 					?>
 				</li>
-
-			<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
 	
 				<li id="categories" class="widget-container">
 					<h3 class="widget-title">Categories</h3>
