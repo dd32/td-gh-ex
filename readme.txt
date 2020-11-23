@@ -2,8 +2,8 @@
 Contributors: nikeo, d4z_c0nf
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, buddypress, custom-menu, custom-colors, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post, post-formats, rtl-language-support, editor-style
 Requires at least: 4.6
-Tested up to: 5.5
-Stable tag: 4.3.1
+Tested up to: 5.6
+Stable tag: 4.3.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,36 @@ Customizr is a simple and fast WordPress theme designed to help you attract and 
 
 == Changelog ==
 https://github.com/presscustomizr/customizr/releases
+= 4.3.10 November 23rd, 2020 =
+* fixed : [Links] => when underline is disabled, hovering/activating a link should display the underline. fixes #1870
+
+= 4.3.9 November 19th, 2020 =
+* added : [CSS][links] added a new option to opt-out underline on links. Option located in customizer > Global Settings > Formatting
+
+= 4.3.8 November 17th, 2020 =
+* fixed : [javascript] console warning when resizing in console due to an error in flickity slider script
+
+= 4.3.7 November 17th, 2020 =
+* fixed : [TRT requirement][accessibility] Links within content must be underlined. fixes #1869
+* fixed : [WP 5.6][jQuery] adapt to WP jQuery updated version. Prepare removal of jQuery Migrate in future WP 5.7 ( https://make.wordpress.org/core/2020/06/29/updating-jquery-version-shipped-with-wordpress/ )
+
+= 4.3.6 November 4th, 2020 =
+* fixed : [PHP] possible warning => "Deprecated: Invalid characters passed for attempted conversion" when converting hex colors. fixes #1866
+
+= 4.3.5 November 2nd, 2020 =
+* tested : [WordPress] Customizr v4.3.5 is 100% compatible with WP 5.5.3
+* fixed : [Menu] right clicking a parent menu item breaks sub-menu items auto-collapse. fixes #1852
+* fixed : [CSS] add back the "home" CSS class to body tag when user picked option "Don't show any posts or page". fixes #1861
+
+= 4.3.4 October 7th, 2020 =
+* added : [CSS] add current theme version as CSS class to body tag
+
+= 4.3.3 September 18, 2020 =
+* fixed : [admin] security issue. fixes #1857
+
+= 4.3.2 September 7, 2020 =
+* improved : Successfully tested with WP 5.5.1. Maintenance release, minor code cleaning. 
+
 = 4.3.1 August 28 2020 =
 * fixed : [search icon] when displayed on the left in the main header, search field is partially hidden when revealed. fixes #1854
 
