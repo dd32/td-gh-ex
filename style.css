@@ -3,14 +3,14 @@ Theme Name: Aagaz Startup
 Theme URI: https://www.themeseye.com/wordpress/free-startup-wordpress-theme/
 Author: ThemesEye
 Author URI: https://www.themeseye.com/
-Description: Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, small industries, portfolio, IT companies, web development agencies, digital marketing agencies, business startups,  corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible, It has Custom header options and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen and can translate into Arabic, Chinese, French, German and Spanish languages. The theme offers multiple options in most of the elements be it header and footer layout, menu style, blog formats or gallery layout. Demo: https://themeseye.com/demo/aagaz-startup-pro/
-Tested up to: 5.5.1
+Description: Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, portfolio IT companies, web development agencies, digital marketing agencies, business startups, agency, organization, charity NGO, bloggers and consulting law firms,  corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible, It has Custom header options and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen and can translate into Arabic, Chinese, French, German and Spanish languages. The theme offers multiple options in most of the elements be it header and footer layout, menu style, blog formats or gallery layout. Demo: https://themeseye.com/demo/aagaz-startup-pro/
+Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Version: 0.5.3
+Version: 0.5.4
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aagaz-startup
-Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, block-styles, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
+Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, block-styles, wide-blocks, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 */
 
 html {
@@ -20,6 +20,7 @@ html {
 }
 body {
 	margin: 0;
+	overflow-x: hidden;
 	font-family: 'Poppins', sans-serif;
 }
 p{
@@ -228,6 +229,19 @@ template {
 	display: none;
 }
 
+/*wide block*/
+.entry-content .alignwide {
+  margin-left  : -80px;
+  margin-right : -80px;
+}
+.entry-content .alignfull {
+  margin-left  : calc( -100vw / 2 + 100% / 2 );
+  margin-right : calc( -100vw / 2 + 100% / 2 );
+  max-width    : 100vw;
+}
+.alignfull img {
+  width: 100vw;
+} 
 /*----------- Alignments ------------*/
 .alignleft {
 	display: inline;
@@ -446,20 +460,15 @@ td:last-child {
 }
 
 /*--------------------- Links ----------------------*/
-
 a {
 	color: #323c47;
 	text-decoration: none;
 }
-a:focus {
-	outline: thin dotted;
-}
-a:focus, input:focus, textarea:focus, button:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
+a:focus, input:focus, textarea:focus, .search-body a:focus, .menu-scroll-down:focus, .menu-toggle:focus, .dropdown-toggle:focus, .close:focus, button:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+  outline: 2px solid #007cba;
   border-bottom: 1px solid #000;
 }
 .search-body a:focus{
-	outline: 1px dotted #fff;
   	border-bottom: 1px solid #fff;
 }
 a:hover,
@@ -482,9 +491,7 @@ a:active {
   color: #000;
   text-decoration: underline;
 }
-
 /*-------------------- Featured Image Hover ------------------------*/
-
 .post-thumbnail {
 	margin-bottom: 1em;
 }
@@ -497,7 +504,6 @@ a:active {
 .post-thumbnail a:focus img {
 	opacity: 0.7;
 }
-
 /*--------------- Navigation -----------------------*/
 .navigation-top a {
 	font-weight: 600;
@@ -581,9 +587,6 @@ a:active {
 	box-shadow: none;
 	color: #323c47;
 }
-.menu-toggle:focus {
-	outline: thin solid;
-}
 .menu-toggle .icon {
 	margin-right: 0.5em;
 	top: -2px;
@@ -599,7 +602,6 @@ a:active {
 	margin: 3.5% 0 0;
 }
 /* Dropdown Toggle */
-
 .dropdown-toggle {
 	background-color: transparent;
 	border: 0;
@@ -620,9 +622,6 @@ a:active {
 .dropdown-toggle:focus {
 	background: transparent;
 }
-.dropdown-toggle:focus {
-	outline: thin dotted;
-}
 .dropdown-toggle.toggled-on .icon {
 	-ms-transform: rotate(-180deg); /* IE 9 */
 	-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
@@ -633,7 +632,6 @@ a:active {
 .site-header .menu-scroll-down {
 	display: none;
 }
-
 /*----------Sticky Header------*/
 .fixed-header {
   position: fixed;
@@ -689,7 +687,6 @@ a:active {
   background-clip: padding;
   box-shadow: inset 0px 0px 10px rgba(236, 249, 245, 0.15);
 }
-
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -700,7 +697,6 @@ a:active {
             transform: rotate(360deg);
   }
 }
-
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -737,7 +733,6 @@ a:active {
   -webkit-animation: spin 2s infinite linear;
           animation: spin 2s infinite linear;
 }
-
 .demo {
   -webkit-animation: spin 5s infinite linear;
           animation: spin 5s infinite linear;
@@ -846,10 +841,6 @@ a:active {
   text-decoration: none;
   border: none;
   opacity: 1;
-}
-.close:focus{
-  outline: 1px dotted #000;
-  border: 1px solid #000;
 }
 .serach_outer{
 	margin: 10px;
@@ -1114,6 +1105,9 @@ span.carousel-control-next-icon i  {
 .woocommerce a.remove{
 	color: #df0000 !important;
 }
+form.woocommerce-product-search label{
+	position: static !important;
+}
 .woocommerce-product-gallery__image {
     padding: 5px;
 }
@@ -1152,7 +1146,6 @@ h2.woocommerce-loop-product__title,
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
 	margin-bottom: 5px;
 }
-
 .woocommerce #respond input#submit, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
 	color: #262525;
     border: 2px solid;
@@ -1468,7 +1461,6 @@ button.woocommerce-button.button.woocommerce-form-login__submit{
     margin-bottom: 15px;
 }
 .site-footer a:focus, .site-footer input:focus, .site-footer button:focus{
-	outline-color: #fff;
 	border-color: #fff;
 }
 #sidebox ul li{
@@ -1536,9 +1528,10 @@ button.woocommerce-button.button.woocommerce-form-login__submit{
 .site-footer  input[type="search"]::placeholder{
 	color: #fff;
 }
-
+div#calendar_wrap a {
+    color: #fff;
+}
 /*----------- Layout ----------------*/
-
 html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1563,9 +1556,7 @@ body {
 	content: "";
 	display: block;
 }
-
 /* Site branding */
-
 .site-branding {
 	padding: 0px;
 	-webkit-transition: margin-bottom 0.2s;
@@ -1590,7 +1581,6 @@ body {
 	font-size: 13px;
 	margin: 5px 0;
 }
-
 body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
 body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	max-height: 200px;
@@ -1702,11 +1692,9 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 /* Hides div in Customizer preview when header images or videos change. */
-
 body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	display: none;
 }
-
 .has-header-image.aagaz-startup-front-page .site-branding,
 .has-header-video.aagaz-startup-front-page .site-branding,
 .has-header-image.home.blog .site-branding,
@@ -1715,9 +1703,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	height: 100%;
 	vertical-align: bottom;
 }
-
 /*----------------- Front Page ----------------------------*/
-
 .aagaz-startup-front-page .site-content {
 	padding: 0;
 }
@@ -1756,9 +1742,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	padding-bottom: 0.5em;
 	padding-top: 1.75em;
 }
-
 /* Panel edit link */
-
 .aagaz-startup-panel .edit-link {
 	display: block;
 	margin: 0.3em 0 0;
@@ -1766,9 +1750,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .aagaz-startup-panel .entry-header .edit-link {
 	font-size: 14px;
 }
-
 /* Front Page - Recent Posts */
-
 .aagaz-startup-front-page .panel-content .recent-posts article {
 	border: 0;
 	color: #333;
@@ -1790,9 +1772,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	margin-left: 1em;
 }
 /*------------ Posts -------------------*/
-
 /* Post Landing Page */
-
 .post:not(.sticky) .icon-thumb-tack {
 	display: none;
 }
@@ -1832,7 +1812,6 @@ body.page:not(.aagaz-startup-front-page) .entry-title {
 .entry-meta a {
 	color: #767676;
 }
-
 /*post pagination*/
 .nav-links .nav-previous a {
     font-size: 14px;
@@ -1977,7 +1956,6 @@ body:not(.aagaz-startup-front-page) .entry-header {
 }
 
 /* Single Post */
-
 .single-post:not(.has-sidebar) #primary,
 .page.page-one-column:not(.aagaz-startup-front-page) #primary,
 .archive.page-one-column:not(.has-sidebar) .page-header,
@@ -2088,7 +2066,6 @@ body:not(.aagaz-startup-front-page) .entry-header {
 }
 
 /* Post Formats */
-
 .blog .format-status .entry-title,
 .archive .format-status .entry-title,
 .blog .format-aside .entry-title,
@@ -2149,7 +2126,6 @@ body:not(.aagaz-startup-front-page) .entry-header {
 }
 
 /* 404 page */
-
 .error404 .page-content .search-form,
 .search .page-content .search-form {
 	margin-bottom: 3em;
@@ -2180,7 +2156,6 @@ button.search-submit:hover {
 }
     
 /* Footer widgets */
-
 .site-footer .widget-area {
 	padding-bottom: 2em;
 	padding-top: 2em;
@@ -2225,7 +2200,6 @@ button.search-submit {
 }
 
 /*------------- Comments ----------------*/
-
 .comments-title {
 	font-size: 25px;
 }
@@ -2316,7 +2290,6 @@ button.search-submit {
 }
 
 /*---------------- Widgets ---------------*/
-
 #secondary {
 	padding: 1em 0 2em;
 }
@@ -2335,7 +2308,6 @@ button.search-submit {
 }
 
 /* widget forms */
-
 .widget select {
 	width: 100%;
 }
@@ -2364,7 +2336,6 @@ button.search-submit {
 }
 
 /* Widget lists of links */
-
 .widget_top-posts ul li ul,
 .widget_rss_links ul li ul,
 .widget-grofile ul.grofile-links li ul,
@@ -2427,7 +2398,6 @@ button.search-submit {
 }
 
 /* RSS Widget */
-
 .widget_rss .widget-title .rsswidget:first-child {
 	float: right;
 	margin-right: 12px !important;
@@ -2539,7 +2509,6 @@ button.search-submit {
 }
 
 /* Calendar widget */
-
 .widget_calendar th,
 .widget_calendar td {
 	text-align: center;
@@ -2687,7 +2656,6 @@ p > object:only-child {
 }
 
 /* Playlist Style Overrides */
-
 .site-content .wp-playlist {
 	padding: 0.625em 0.625em 0.3125em;
 }
@@ -2829,6 +2797,10 @@ p > object:only-child {
 	    position: static;
 	    text-align: center;
 	    border-radius: 0;
+	}
+	.entry-content .alignwide {
+	    margin-left: -15px;
+	    margin-right: -15px;
 	}
 	.main-navigation.toggled-on > div > ul{
 		background-color: #fff;
@@ -3011,6 +2983,10 @@ p > object:only-child {
 	}
 	.readbutton{
 		margin-top: 15px;
+	}
+	.entry-content .alignwide {
+	    margin-left: -45px;
+	    margin-right: -45px;
 	}
 	#slider .carousel-control-next{
 		left: 17%;
@@ -3309,9 +3285,6 @@ p > object:only-child {
 		color: #767676;
 		top: 0.7em;
 	}
-	.menu-scroll-down:focus {
-		outline: thin dotted;
-	}
 	.menu-scroll-down .icon {
 		height: 18px;
 		width: 18px;
@@ -3601,6 +3574,10 @@ p > object:only-child {
 	}
 	#about .abt-image{
 		margin: 30px 0;
+	}
+	.entry-content .alignwide {
+	    margin-left: -35px;
+	    margin-right: -35px;
 	}
 	.logo {
 	    position: static;

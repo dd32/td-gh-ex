@@ -8,6 +8,7 @@ function aagaz_startup_setup() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'align-wide' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'aagaz-startup-featured-image', 2000, 1200, true );

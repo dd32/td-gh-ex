@@ -430,7 +430,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	// background skin mode
 	$wp_customize->add_setting('aagaz_startup_background_image_type',array(
-        'default' => __('Transparent','aagaz-startup'),
+        'default' => 'Transparent',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_background_image_type',array(
@@ -647,7 +647,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('aagaz_startup_preloader_types',array(
-        'default' => __('Default','aagaz-startup'),
+        'default' => 'Default',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_preloader_types',array(
@@ -682,7 +682,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
   	)));
 
 	$wp_customize->add_setting('aagaz_startup_theme_options',array(
-    'default' => __('Default','aagaz-startup'),
+    'default' => 'Default',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_theme_options',array(
@@ -756,7 +756,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('aagaz_startup_layout_settings',array(
-        'default' => __('Right Sidebar','aagaz-startup'),
+        'default' => 'Right Sidebar',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_layout_settings',array(
@@ -773,7 +773,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_page_sidebar_option',array(
-        'default' => __('One Column','aagaz-startup'),
+        'default' => 'One Column',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_page_sidebar_option',array(
@@ -915,7 +915,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('aagaz_startup_menu_text_tranform',array(
-        'default' => __('Default','aagaz-startup'),
+        'default' => 'Default',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control('aagaz_startup_menu_text_tranform',array(
@@ -929,7 +929,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_menu_font_weight',array(
-        'default' => __('Default','aagaz-startup'),
+        'default' => 'Default',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control('aagaz_startup_menu_font_weight',array(
@@ -1018,17 +1018,17 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('aagaz_startup_slider_height_option',array(
-		'default'=> __('600','aagaz-startup'),
+		'default'=> 600,
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_slider_height_option',array(
 		'label'	=> __('Slider Height Option','aagaz-startup'),
 		'section'=> 'aagaz_startup_slider',
-		'type'=> 'text'
+		'type'=> 'number'
 	));
 
     $wp_customize->add_setting('aagaz_startup_slider_content_option',array(
-    'default' => __('Left','aagaz-startup'),
+    'default' => 'Left',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_slider_content_option',array(
@@ -1069,7 +1069,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_slider_opacity_color',array(
-      'default'              => __('0.6','aagaz-startup'),
+      'default'              => 0.6,
       'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control( 'aagaz_startup_slider_opacity_color', array(
@@ -1286,7 +1286,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
     $wp_customize->add_setting('aagaz_startup_blog_post_layout',array(
-        'default' => __('Default','aagaz-startup'),
+        'default' => 'Default',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control('aagaz_startup_blog_post_layout',array(
@@ -1301,7 +1301,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_blog_description',array(
-    	'default'   => __('Post Excerpt','aagaz-startup'),
+    	'default'   => 'Post Excerpt',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_blog_description',array(
@@ -1363,7 +1363,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
 	$wp_customize->add_setting( 'aagaz_startup_pagination_option', array(
-        'default'			=> __('Default','aagaz-startup'),
+        'default'			=> 'Default',
         'sanitize_callback'	=> 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control( 'aagaz_startup_pagination_option', array(
@@ -1465,7 +1465,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
 	$wp_customize->add_setting( 'aagaz_startup_show_related_post', array(
-        'default' => __(' By Categories', 'aagaz-startup'),
+        'default' => 'By Categories',
         'sanitize_callback'	=> 'aagaz_startup_sanitize_choices'
     ));
     $wp_customize->add_control( 'aagaz_startup_show_related_post', array(
@@ -1555,7 +1555,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('aagaz_startup_footer_options',array(
-        'default' => __('Right align','aagaz-startup'),
+        'default' => 'Right align',
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
 	));
 	$wp_customize->add_control('aagaz_startup_footer_options',array(
@@ -1794,7 +1794,7 @@ final class Aagaz_Startup_Customize {
 		$manager->add_section(
 			new Aagaz_Startup_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'aagaz_startup_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__( 'Aagaz Startup Pro', 'aagaz-startup' ),
