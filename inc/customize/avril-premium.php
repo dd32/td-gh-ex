@@ -49,7 +49,6 @@ function avril_premium_setting( $wp_customize ) {
 	
 	$wp_customize->add_control( new Avril_WP_Button_Customize_Control( $wp_customize, 'premium_info_buttons', array(
 		'section' => 'upgrade_premium',
-		'setting' => 'premium_info_buttons',
     ))
 );
 }
