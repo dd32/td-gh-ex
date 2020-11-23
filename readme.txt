@@ -4,8 +4,8 @@ Author: ThemeArile
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.4.4
-Version: 2.4.4
+Stable tag: 2.4.5
+Version: 2.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
@@ -56,6 +56,9 @@ License: MIT (http://opensource.org/licenses/MIT)
 License: CC0 Public Domain
 
 == Changelog ==
+
+= Version 2.4.5
+* Remove list style from wp-block-archives, wp-block-categories, wp-block-latest-posts, wp-block-latest-comments in the blog post.
 
 = Version 2.4.4
 * Fixed prefix issue.
