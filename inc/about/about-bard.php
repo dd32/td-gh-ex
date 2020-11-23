@@ -359,36 +359,6 @@ function bard_about_page_output() {
 
 			</div>
 
-			<div class="three-columns-wrap">
-
-				<br>
-
-				<div class="column-width-3">
-					<h3>
-						<span class="dashicons dashicons-admin-appearance"></span>
-						<?php esc_html_e( 'Child Theme', 'bard' ); ?>
-					</h3>
-					<p>
-						<?php esc_html_e( 'The best way to customize Bard Theme code.', 'bard' ); ?>
-						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-childtheme/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'bard' ); ?></a>
-					</p>
-				</div>
-
-				<div class="column-width-3">
-					<h3>
-						<span class="dashicons dashicons-groups"></span>
-						<?php esc_html_e( 'Facebook Group', 'bard' ); ?>
-					</h3>
-					<p>
-						<?php esc_html_e( 'Join our community on Facebook to stay up to date.', 'bard' ); ?>
-						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://www.facebook.com/groups/408037686363411'); ?>"><?php esc_html_e( 'Join Now', 'bard' ); ?></a>
-					</p>
-				</div>
-
-			</div>
-
 		<?php elseif ( $active_tab == 'bard_tab_5' ) : ?>
 
 			<br><br>
