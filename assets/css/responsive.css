@@ -96,7 +96,8 @@
 	    bottom: 2em;
 	}
 	.theme-slider div.theme-content {
-		margin-bottom: 15px;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
     .theme-content h1 {
 	    font-size: 28px;
@@ -324,6 +325,10 @@
     }
     .theme-mobile-menu .header-wrap-right .av-button-area {
 	    display: none;
+	}
+	.main-slider .owl-item .item {
+	    padding: 14px 0;
+	    min-height: 182px;
 	}
 }
 
