@@ -75,7 +75,7 @@ final class Artpop_Pro_Customize {
 				array(
 					'title'    => esc_html__( 'Try the Pro version', 'artpop' ),
 					'pro_text' => esc_html__( 'Artpop Pro', 'artpop' ),
-					'pro_url'  => esc_url_raw('https://www.designlabthemes.com/artpop-pro-wordpress-theme/?utm_source=customizer_button&utm_medium=wordpress_dashboard&utm_campaign=artpop_upsell'),
+					'pro_url'  => esc_url( 'https://www.designlabthemes.com/artpop-pro-wordpress-theme/?utm_source=customizer_button&utm_medium=wordpress_dashboard&utm_campaign=artpop_upsell' ),
 					'priority' => 0
 				)
 			)

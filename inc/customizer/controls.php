@@ -69,7 +69,7 @@ class Artpop_Customize_Radio_Image extends WP_Customize_Control {
 		<?php endif;
 
 		if ( ! empty( $this->description ) ) : ?>
-			<span class="description customize-control-description"><?php echo $this->description ; ?></span>
+			<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 		<?php endif; ?>
 
 		<div class="radio-choices">
@@ -78,8 +78,8 @@ class Artpop_Customize_Radio_Image extends WP_Customize_Control {
 			?>
 				<div class="radio-item">
 					<label title="<?php echo esc_attr( $label ); ?>" class="choice-item">
-						<input type="radio" value="<?php echo esc_attr($value); ?>" name="<?php echo esc_attr($name); ?>" <?php $this->link(); checked($this->value(), $value); ?> />
-						<div class="radio-img"><img src="<?php echo esc_url_raw($item['img']); ?>" alt=""></div>
+						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), esc_attr( $value ) ); ?> />
+						<div class="radio-img"><img src="<?php echo esc_url( $item['img'] ); ?>" alt=""></div>
 						<span class="radio-label"><?php echo esc_html( $label ); ?></span>
 					</label>
 				</div>
@@ -157,7 +157,7 @@ class Artpop_Customize_Upsell extends WP_Customize_Control {
 	public $type = 'artpop-upsell-link';
 
 	function render_content() {
-	$pro_version_text = esc_html( 'Try Artpop Pro', 'artpop' );
+	$pro_version_text = esc_html_e( 'Try Artpop Pro', 'artpop' );
 	$pro_version_link = esc_url( 'https://www.designlabthemes.com/artpop-pro-wordpress-theme/?utm_source=customizer_link&utm_medium=wordpress_dashboard&utm_campaign=artpop_upsell' );
 
 	if ( ! empty( $this->label ) ) {

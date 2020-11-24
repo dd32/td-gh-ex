@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Artpop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 10:09+0000\n"
+"POT-Creation-Date: 2020-11-23 12:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,35 +15,28 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.3; wp-5.5.1"
 
-#. %s: post title
-#: comments.php:34
+#. 1: comment count number.
+#: comments.php:33
 #, php-format
 msgctxt "comments title"
-msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr ""
-
-#. 1: number of comments, 2: post title
-#: comments.php:38
-#, php-format
-msgctxt "comments title"
-msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:64
+#: comments.php:51
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:66
+#: comments.php:53
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:67
+#: comments.php:54
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:64
 msgid "Comments are closed."
 msgstr ""
 
@@ -62,14 +55,19 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#. Author URI of the theme
-#: footer.php:47
-msgid "https://www.designlabthemes.com/"
+#: footer.php:34
+msgid "Footer Navigation"
 msgstr ""
 
-#: footer.php:48
+#: footer.php:52
 #, php-format
-msgid "Artpop Theme by %s"
+msgctxt "Translators: $s = name of the theme developer"
+msgid "Theme by %s"
+msgstr ""
+
+#. Author of the theme
+#: footer.php:52
+msgid "Design Lab"
 msgstr ""
 
 #: functions.php:40
@@ -316,7 +314,7 @@ msgid ""
 "can help."
 msgstr ""
 
-#: inc/customizer/controls.php:29
+#: inc/customizer/controls.php:29 inc/customizer/controls.php:160
 msgid "Try Artpop Pro"
 msgstr ""
 
@@ -623,6 +621,6 @@ msgstr ""
 msgid "https://www.designlabthemes.com/artpop-wordpress-theme/"
 msgstr ""
 
-#. Author of the theme
-msgid "Design Lab"
+#. Author URI of the theme
+msgid "https://www.designlabthemes.com/"
 msgstr ""

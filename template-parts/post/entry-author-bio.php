@@ -11,10 +11,10 @@
 <div class="author-info">
 	<div class="author-avatar clear">
 		<?php echo get_avatar( get_the_author_meta( 'user_email' ), 60 ); ?>
-		<h3 class="author-title"><?php echo get_the_author(); ?></h3>
+		<h3 class="author-title"><?php echo esc_html( get_the_author() ); ?></h3>
 		<p class="author-link">
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-				<?php printf( __( 'View all posts by %s', 'artpop' ), get_the_author() ); ?>
+				<?php printf( __( 'View all posts by %s', 'artpop' ), esc_html( get_the_author() ) ); ?>
 			</a>
 		</p>
 	</div>

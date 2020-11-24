@@ -28,7 +28,7 @@ function artpop_author() {
 	$author_id = get_the_author_meta( 'ID' );
 	$author_avatar = get_avatar( $author_id, 40 );
 	$byline = sprintf(
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . $author_avatar . get_the_author() . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . $author_avatar . esc_html( get_the_author() ) . '</a></span>'
 	);
 	echo '<span class="byline">' . $byline . '</span>';
 }

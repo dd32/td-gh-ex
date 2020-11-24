@@ -16,7 +16,7 @@
 			<?php
 			wp_nav_menu( array(
 				'theme_location'        => 'main_menu',
-				'menu_id'               => 'main-menu',
+				'menu_id'               => 'mobile-menu',
 				'menu_class'            => 'main-menu mobile-menu',
 				'show_sub_menu_toggles' => true,
 				'container'             => false,

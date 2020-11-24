@@ -222,7 +222,7 @@ function artpop_scripts() {
 	wp_enqueue_style( 'artpop-style', get_stylesheet_uri(), array(), $theme_version );
 
 	// Main js.
-	wp_enqueue_script( 'artpop-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20201022', true );
+	wp_enqueue_script( 'artpop-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20201123', true );
 
 	// Add Swiper.
 	if ( is_home() && get_theme_mod( 'home_show_featured_posts', artpop_defaults( 'home_show_featured_posts' ) ) && 'featured-carousel' == get_theme_mod( 'home_featured_posts_layout', artpop_defaults( 'home_featured_posts_layout' ) ) ) {
@@ -307,7 +307,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
  * Include a skip to content link at the top of the page so that users can bypass the menu.
  */
 function artpop_skip_link() {
-	echo '<a class="skip-link screen-reader-text" href="#main">' . __( 'Skip to the content', 'artpop' ) . '</a>';
+	echo '<a class="skip-link screen-reader-text" href="#content">' . __( 'Skip to the content', 'artpop' ) . '</a>';
 }
 add_action( 'wp_body_open', 'artpop_skip_link', 5 );
 
@@ -537,12 +537,12 @@ function artpop_custom_logo() {
 		$t = 'h1';
 	}
 	$class = 'site-title';
-	$title = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
+	$title = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		$class = 'site-logo';
 		$title = get_custom_logo();
 	}
-	echo '<' . $t . ' class="' . $class . '">' . $title . '</' . $t . '>';
+	echo wp_kses_post( '<' . $t . ' class="' . $class . '">' . $title . '</' . $t . '>' );
 
 	$description = get_bloginfo( 'description', 'display' );
 	if ( get_theme_mod( 'site_logo_show_tagline', artpop_defaults( 'site_logo_show_tagline' ) ) && ( $description || is_customize_preview() ) ) :

@@ -15,7 +15,7 @@
 		</div><!-- .container -->
 	</div><!-- .site-content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 		<div class="footer-content">
 			<div class="container">
@@ -30,23 +30,27 @@
 					?>
 					<?php
 					if ( $footer_menu ) :
-
-						wp_nav_menu( array(
-							'theme_location' => 'footer-menu',
-							'container'      => false,
-							'depth'          => 1,
-							'menu_class'     => 'footer-menu',
-							'fallback_cb'    => false,
-						) );
-
+					?>
+						<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Navigation', 'artpop' ); ?>">
+							<?php
+								wp_nav_menu( array(
+									'theme_location' => 'footer-menu',
+									'container'      => false,
+									'depth'          => 1,
+									'menu_class'     => 'footer-menu',
+									'fallback_cb'    => false,
+								) );
+							?>
+						</nav>
+					<?php
 					endif;
 					?>
 					<div class="footer-credits">
 						<?php artpop_credits(); ?>
 						<span>
-							<a href="<?php echo esc_url( __( 'https://www.designlabthemes.com/', 'artpop' ) ); ?>" rel="nofollow">
-								<?php printf( __( 'Artpop Theme by %s', 'artpop' ), 'Design Lab' ); ?>
-							</a>
+							<?php
+							printf( esc_html_x( 'Theme by %s', 'Translators: $s = name of the theme developer', 'artpop' ), '<a href="https://www.designlabthemes.com">' . esc_html__( 'Design Lab', 'artpop' ) . '</a>' );
+							?>
 						</span>
 						<?php
 						if ( function_exists( 'the_privacy_policy_link' ) ) {

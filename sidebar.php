@@ -21,7 +21,7 @@ if ( artpop_is_woocommerce_active() ) {
 }
 ?>
 
-<aside id="secondary" class="sidebar widget-area">
+<aside id="secondary" class="sidebar widget-area" role="complementary">
 
 	<div class="sidebar-inner">
 		<?php

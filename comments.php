@@ -24,31 +24,18 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php
-	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
 				$comments_number = get_comments_number();
-				if ( '1' === $comments_number ) {
-					/* translators: %s: post title */
-					printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'artpop' ), get_the_title() );
-				} else {
-					printf(
-						/* translators: 1: number of comments, 2: post title */
-						_nx(
-							'%1$s Reply to &ldquo;%2$s&rdquo;',
-							'%1$s Replies to &ldquo;%2$s&rdquo;',
-							$comments_number,
-							'comments title',
-							'artpop'
-						),
-						number_format_i18n( $comments_number ),
-						'<span>' . get_the_title() . '</span>'
-					);
-				}
+				echo esc_html( sprintf(
+					// Translators: 1: comment count number.
+					_nx( '%1$s Comment', '%1$s Comments', $comments_number, 'comments title', 'artpop' ),
+					number_format_i18n( $comments_number )
+				) );
 			?>
 		</h2>
-		
+
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
@@ -66,7 +53,7 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'artpop' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'artpop' ) ); ?></div>
 			</div>
-		</nav><!-- #comment-nav-below -->
+		</nav>
 		<?php
 		endif; // Check for comment navigation.
 

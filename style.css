@@ -1,9 +1,9 @@
 /*
 Theme Name: Artpop
 Text Domain: artpop
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 4.7
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 5.6
 Description: Artpop is a beautiful Gutenberg-first WordPress theme, carefully designed to help you build your online brand. Unleash your creativity, Artpop takes care of the rest! Well documented and easy to use even for WordPress beginners, Artpop is perfect for a blog, personal portfolio, small business website, and WooCommerce storefront. Easily set your logo, change colors, and create awesome layouts to give your website a truly unique look.
 Author: Design Lab
@@ -12,7 +12,7 @@ Theme URI: https://www.designlabthemes.com/artpop-wordpress-theme/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, grid-layout, sticky-post, theme-options, translation-ready, block-styles, wide-blocks
+Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, grid-layout, theme-options, translation-ready, block-styles, wide-blocks
 
 */
 
@@ -40,7 +40,6 @@ Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, 
 11. WooCommerce
 12. Responsive
 */
-
 
 /*
  * 01. Normalize
@@ -332,10 +331,6 @@ big {
 	line-height: 1.25;
 	letter-spacing: -.5px;
 }
-.site-title a:focus,
-.site-title a:active {
-	outline: 0;
-}
 .site-description {
 	font-size: 0.875rem;
 	color: #9D9E9E;
@@ -386,6 +381,10 @@ a {
 }
 a:hover {
 	text-decoration: underline;
+}
+a:hover,
+a:active {
+	outline: 0;
 }
 .site-title a {
 	color: #F02E90;
@@ -804,7 +803,6 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: #000;
-	outline: none;
 }
 input[type="text"],
 input[type="email"],
@@ -1260,6 +1258,7 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 	overflow: hidden;
 }
 .side-panel-open .side-panel {
+	visibility: visible;
 	pointer-events: auto;
 	-webkit-transform: translateX(0%);
 	-ms-transform: translateX(0%);
@@ -1289,10 +1288,10 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 	z-index: 9997;
 }
 .side-panel-open .side-panel-overlay {
+	visibility: visible;
 	opacity: 1;
 	-webkit-transition: opacity 400ms cubic-bezier(0.75, 0, 0.25, 1) 2ms, visibility 1ms linear;
 	transition: opacity 400ms cubic-bezier(0.75, 0, 0.25, 1) 2ms, visibility 1ms linear;
-	visibility: visible;
 }
 @media only screen and (min-width: 600px) {
 	.side-panel {
@@ -1833,8 +1832,11 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 .footer-credits span:first-child {
 	padding-left: 0;
 }
-.footer-menu {
+.footer-navigation {
 	margin: 1rem 0;
+}
+.footer-menu {
+	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	font-size: 0.875rem;
@@ -1927,6 +1929,11 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 	display: block;
 	padding-top: 62.5%;
 	width: 100%;
+}
+.entry-thumbnail a:focus img,
+.artpop-thumbnail a:focus img {
+	opacity: .8;
+	outline: inherit;
 }
 
 /* Aspect Ratio */
@@ -3792,9 +3799,8 @@ pre.wp-block-verse {
 		width: 200px;
 		position: absolute;
 		top: 24px;
-		left: 0;
+		left: -999em;
 		padding: 4px 0;
-		visibility: hidden;
 		opacity: 0;
 		border-top: 3px solid #0BAAB0;
 		background-color: #fff;
@@ -3808,12 +3814,13 @@ pre.wp-block-verse {
 		content: none;
 	}
 	.main-navigation ul li:hover > ul,
-	.main-navigation ul li:focus > ul  {
+	.main-navigation ul li:focus > ul,
+	.main-navigation ul li.focus > ul {
 		opacity: 1;
-		visibility: visible;
+		left: 0;
 	}
 	.main-navigation > ul > li:hover > ul,
-	.main-navigation > ul > li:focus > ul {
+	.main-navigation > ul > li.focus > ul {
 		top: 32px;
 	}
 	.main-navigation ul ul a {
@@ -3833,10 +3840,14 @@ pre.wp-block-verse {
 	.main-navigation ul ul ul {
 		opacity: 0;
 		top: -7px;
-		left: 100%;
-		visibility: hidden;
+		left: -999em;
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out 0s;
+	}
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li:focus > ul,
+	.main-navigation ul ul li.focus > ul {
+		left: 100%;
 	}
 	/* General */
 	.container {
@@ -4039,12 +4050,14 @@ pre.wp-block-verse {
 	.footer-credits span {
 		padding-left: 1rem;
 	}
-	.footer-menu {
+	.footer-navigation {
+		flex: 1 1 0;
 		order: 2;
+		margin-left: 1rem;
+	}
+	.footer-menu {
 		justify-content: flex-end;
 		text-align: left;
-		flex: 1 1 0;
-		margin-left: 1rem;
 	}
 	.footer-menu > li:not(:last-child) {
 		margin-right: 1rem;
