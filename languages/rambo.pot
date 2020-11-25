@@ -5,7 +5,7 @@ msgstr ""
 "Blank WordPress Pot "
 "v1.0.0\n"
 "POT-Creation-Date: "
-"2020-10-29 13:39+0530\n"
+"2020-11-24 19:02+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -49,7 +49,6 @@ msgstr ""
 "SearchPath-0: .\n"
 
 #: 404.php:8
-#: banner-strip.php:28
 msgid ""
 "Oops! Page not found"
 msgstr ""
@@ -828,7 +827,7 @@ msgstr ""
 
 #: archive.php:24
 #: author.php:14
-#: banner-strip.php:39
+#: banner-strip.php:49
 #: category.php:13
 #: searchform.php:2
 #: searchform.php:3
@@ -839,7 +838,7 @@ msgstr ""
 
 #: archive.php:25
 #: author.php:15
-#: banner-strip.php:40
+#: banner-strip.php:50
 #: category.php:14
 #: tag.php:15
 #: woocommerce.php:16
@@ -884,20 +883,21 @@ msgid "Author Archive %s"
 msgstr ""
 
 #: banner-strip.php:11
-#, php-format
-msgid ""
-"Search results for %s"
-msgstr ""
-
-#: banner-strip.php:15
-#: banner-strip.php:20
 #: child_theme_compatible.php:138
 #: functions/menu/default_menu_walker.php:23
 msgid "Home"
 msgstr ""
 
-#: banner-strip.php:23
-msgid "Blog"
+#: banner-strip.php:24
+msgid "Error 404"
+msgstr ""
+
+#: banner-strip.php:26
+msgid "Category: "
+msgstr ""
+
+#: banner-strip.php:34
+msgid "Tag : "
 msgstr ""
 
 #: category.php:8

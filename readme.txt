@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.4
+1. Implemented "Links within content must be underlined" guideline.
+2. Fixed keyboard navigation issue for mobile menu.
 
 @version 2.0.3
 1. Fixed issue like prefix, escaping, IE11 and other.
@@ -312,3 +316,7 @@ Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-noti
 
 * Image used in screenshot, License CC0 Public Domain
 https://pxhere.com/en/photo/1559439
+
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/

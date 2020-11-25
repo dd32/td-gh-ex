@@ -9,7 +9,7 @@ function rambo_comment( $comment, $args, $depth )
 	global $comment_data;
 
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
+	$leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : 
 	esc_html__('Reply','rambo');?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 		<div id="comment-<?php comment_ID(); ?>" class="comment-body <?php if ($comment->comment_approved == '0') echo esc_attr__('pending-comment','rambo'); ?> clearfix">

@@ -1,5 +1,9 @@
 == Changelog ==
 
+@version 2.0.4
+1. Implemented "Links within content must be underlined" guideline.
+2. Fixed keyboard navigation issue for mobile menu.
+
 @version 2.0.3
 1. Fixed issue like prefix, escaping, IE11 and other.
 

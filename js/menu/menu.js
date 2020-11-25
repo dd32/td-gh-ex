@@ -148,6 +148,11 @@ jQuery(document).ready(function() {
              return false;
             });
         });
+        jQuery('a,input').bind('focus', function() {
+             if(!jQuery(this).closest(".menu-item").length  && ( jQuery(window).width() <= 1100) ) {
+                jQuery('.nav-collapse').removeClass('in');
+                jQuery('.nav-collapse').css({'height': '0px'});
+             }})
 });
 	
 	  
