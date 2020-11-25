@@ -635,9 +635,7 @@ if ( ! class_exists( 'aak_About' ) ) {
 							if ( ! empty( $info->version ) ) {
 								echo '<span class="version">'. ( ! empty( $this->config['useful_plugins']['version_label'] ) ? esc_html( $this->config['useful_plugins']['version_label'] ) : '' ) . esc_html( $info->version ).'</span>';
 							}
-							if ( ! empty( $info->author ) ) {
-								//echo '<span class="separator"> | </span>' . wp_kses_post( $info->author );
-							}
+							
 
 							if ( ! empty( $info->name ) && ! empty( $active ) ) {
 								echo '<div class="action_bar ' . ( ( $active['needs'] !== 'install' && $active['status'] ) ? 'active' : '' ) . '">';

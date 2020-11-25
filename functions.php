@@ -9,7 +9,7 @@
 
 if ( ! defined( 'AAK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'AAK_VERSION', '1.0.4' );
+	define( 'AAK_VERSION', '1.0.6' );
 }
 
 if ( ! function_exists( 'aak_setup' ) ) :

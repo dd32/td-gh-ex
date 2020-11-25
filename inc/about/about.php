@@ -130,6 +130,14 @@ if ( ! function_exists( 'aak_about_setup' ) ) :
 								'icon' => 'svg',
 							),
 							array(
+								'slug' => 'magical-posts-display',
+								'icon' => 'svg',
+							),
+							array(
+								'slug' => 'magical-blocks',
+								'icon' => 'svg',
+							),
+							array(
 								'slug' => 'click-to-top',
 								'icon' => 'svg',
 							)
@@ -265,7 +273,7 @@ add_action( 'after_setup_theme', 'aak_about_setup' );
 //Admin notice 
 
 function aak_admin_notice__error() {
-    if(get_option('aak_notice1')){
+    if(get_option('aak_notice2')){
         return;
     }
 	$class = 'bb-notice notice notice-warning is-dismissible';
@@ -280,8 +288,8 @@ add_action( 'admin_notices', 'aak_admin_notice__error' );
 
 function aak_admin_notice_option(){
     if(isset($_GET['hnotice']) && $_GET['hnotice'] == 1 ){
-        delete_option( 'aak_notice');
-        update_option( 'aak_notice1', 1);
+        delete_option( 'aak_notice1');
+        update_option( 'aak_notice2', 1);
     }
 }
 add_action('init','aak_admin_notice_option');

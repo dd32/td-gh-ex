@@ -76,6 +76,11 @@ function aak_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => esc_html__('Magical Posts Display','aak'),
+			'slug'      => 'magical-posts-display',
+			'required'  => false,
+		),
+		array(
 			'name'      => esc_html__('Gallery Box','aak'),
 			'slug'      => 'gallery-box',
 			'required'  => false,
@@ -95,7 +100,7 @@ function aak_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'aak',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'aak1',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.

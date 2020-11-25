@@ -5,18 +5,10 @@
 *
 */
 $aak_categories_list = get_the_category_list( esc_html__( ', ', 'aak' ) );
-$aak_blog_style = get_theme_mod( 'aak_blog_style', 'grid');
 $aak_postcat_show = get_theme_mod( 'aak_postcat_show', 1 );
 
-
-if(!is_single() && $aak_blog_style == 'list'):
-	get_template_part( 'template-parts/list', 'blog' );
-elseif($aak_blog_style == 'classic'):
-	get_template_part( 'template-parts/classic', 'blog' );
-else:
-
 ?>
-<div class="col-md-4 grid-item mb-4">
+<div class="col-md-12 grid-item mb-4">
 	<div class="card aakcard">
 		<?php if(has_post_thumbnail()): ?>
 			<?php aak_post_thumbnail(); ?>
@@ -47,4 +39,3 @@ else:
 	    </div>
 	  </div>
   </div>
-<?php endif; ?>

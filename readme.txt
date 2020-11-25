@@ -71,6 +71,11 @@ Source:https://pxhere.com/en/photo/683887
 
 == Changelog ==
 
+= 1.0.6 - November 25 2020 =
+* Fixed classic blog style
+* Fixed category page style issue
+* Fixed search page style issue
+
 = 1.0.5 - October 21 2020 =
 * Widget style issue fixed
 * Footer item added

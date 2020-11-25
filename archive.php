@@ -41,7 +41,8 @@ if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout != 'fullwidth' ) {
 
 					<?php
 					if(!is_single() && $aak_blog_style == 'grid'){
-						echo '<div class="card-columns">';
+					//	echo '<div class="card-columns">';
+						echo '<div class="row grid">';
 					}
 					/* Start the Loop */
 					while ( have_posts() ) :

@@ -12,6 +12,7 @@ get_header();
 
 $aak_blog_container = get_theme_mod( 'aak_blog_container', 'container');
 $aak_blog_layout = get_theme_mod( 'aak_blog_layout', 'rightside');
+$aak_blog_style = get_theme_mod( 'aak_blog_style', 'grid');
 
 if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout != 'fullwidth' ) {
 	$aak_column_set = '9';
@@ -42,7 +43,10 @@ if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout != 'fullwidth' ) {
 					</header><!-- .page-header -->
 
 					<?php
-					echo '<div class="card-columns">';
+					if(!is_single() && $aak_blog_style == 'grid'){
+					//	echo '<div class="card-columns">';
+						echo '<div class="row grid">';
+					}
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
@@ -55,7 +59,9 @@ if ( is_active_sidebar( 'sidebar-1' ) && $aak_blog_layout != 'fullwidth' ) {
 						get_template_part( 'template-parts/content', 'search' );
 
 					endwhile;
+					if(!is_single() && $aak_blog_style == 'grid'){
 					echo '</div>';
+					}
 					the_posts_pagination();
 
 				else :
