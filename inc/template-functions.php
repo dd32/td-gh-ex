@@ -389,7 +389,7 @@ if( ! function_exists( 'bc_business_consulting_footer_layout' ) ) :
                    <div class="col-md-5 col-sm-5"> 
 					<?php
                     wp_nav_menu( array(
-                        'theme_location'    => 'top_menu',
+                        'theme_location'    => 'footer',
                         'depth'             => 1,
 						'fallback_cb'    => 'bc_business_consulting_default_menu',
 						'container' 	 => '',
