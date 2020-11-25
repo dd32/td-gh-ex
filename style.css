@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/adonis
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Adonis - A free Personal WordPress theme for professionals is simple, clean and user-friendly that will always put everything you have to offer in the forefront. Adonis theme has been specially crafted for the professionals to let the world know about them at large. It mainly focuses on creating an elegant personal website for the professionals in only a matter of times. Adonis is a minimalist yet powerful WordPress theme for professionals. It is based on responsive design, allowing your website to look beautiful on any device, regardless of the screen size. Adonis comes with a plethora of awesome features - such as, site identity, header media, header image, background image, custom menu, breadcrumb, excerpt, featured content, featured slider, logo slider, hero content, layout options, pagination options, portfolio, testimonials, services, testimonials, stats, and many more—that are extremely crucial for any professional to showcase their work. This theme is translation ready. For more details, check out Theme Instructions at https://catchthemes.com/theme-instructions/adonis/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/adonis/
-Version: 1.4
+Version: 1.4.1
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
@@ -2323,6 +2323,26 @@ textarea {
 
 .full-width-layout .woocommerce-posts-wrapper {
 	max-width: 100%;
+}
+
+.entry-content a:not(.more-link):not(.button):not(.wp-block-button__link),
+.entry-summary a:not(.more-link):not(.button):not(.wp-block-button__link),
+.entry-content a:not(.more-link):not(.button),
+.entry-summary a:not(.more-link):not(.button),
+.ew-about a:not(.more-link):not(.button),
+.widget_text a:not(.more-link):not(.button) {
+    text-decoration: underline;
+}
+
+.entry-content a:not(.more-link):not(.button):hover,
+.entry-content a:not(.more-link):not(.button):focus,
+.entry-summary a:not(.more-link):not(.button):hover,
+.entry-summary a:not(.more-link):not(.button):focus,
+.ew-about a:not(.more-link):not(.button):hover,
+.ew-about a:not(.more-link):not(.button):focus,
+.widget_text a:not(.more-link):not(.button):hover,
+.widget_text a:not(.more-link):not(.button):focus {
+	text-decoration: none;
 }
 
 /**

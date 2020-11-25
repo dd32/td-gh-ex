@@ -4,7 +4,7 @@ Tags: two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, cu
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.4
+Stable tag: 1.4.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,9 @@ You can check our Theme Demo at https://catchthemes.com/demo/adonis/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.4.1 (Released: November 25, 2020) =
+* Bug Fixed: Add underline on the anchor tag
 
 = 1.4 (Released: August 07, 2020) =
 * Updated: All images

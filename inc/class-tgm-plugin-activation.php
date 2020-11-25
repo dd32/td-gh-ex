@@ -385,7 +385,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'return'                          => __( 'Return to Required Plugins Installer', 'adonis' ),
 				'dashboard'                       => __( 'Return to the Dashboard', 'adonis' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'adonis' ),
-				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'adonis' ),
+				'activated_successfully'          => __( 'This plugin was activated successfully:', 'adonis' ),
 				/* translators: 1: plugin name. */
 				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'adonis' ),
 				/* translators: 1: plugin name. */
