@@ -11,7 +11,7 @@ function maxflat_function(){
     <h2>MaxFlat Premium</h2>
     <h3>Need extensive documentation and theme support? Learn more about MaxFlat Premium!</h3>
     <p><a href="https://creativemarket.com/netbiel/220298-MaxFlat-Fully-Responsive-Theme?u=netbiel">MaxFlat Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
-    <div style="float: left; width: 50%"><p><img src="<?php echo get_template_directory_uri();?>/smart-lib/img/theme-customizer-resize.jpg" alt=""></p></div>
+    <div style="float: left; width: 50%"><p><img src="<?php echo esc_url( get_template_directory_uri() );?>/smart-lib/img/theme-customizer-resize.jpg" alt=""></p></div>
     <div style="float: left; width: 40%; margin-left: 5%; ">
         <div id="submitdiv" class="postbox " style="margin-top: 40px;height: 355px;">
             <h3 class="hndle" style="padding: 9px 10px;"><span><strong>MaxFlat Pro version</strong></span></h3>

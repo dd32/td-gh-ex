@@ -145,32 +145,7 @@ function maxflat_get_featured_image($size){
     return __MAXFLAT::layout()->get_featured_image($size);
 }
 
-/**
- * add IE 7 & IE 8 CSS3 Box-sizing support
- *
- * @since MaxFlat 1.0
- *
- */
 
-function maxflat_ie_support()
-{
-
-    ?><!--[if IE 7]>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/font/css/font-awesome-ie7.min.css">
-<![endif]-->
-<!--[if IE 7]>
-<style>
-    * {
-    * behavior : url (<?php echo get_template_directory_uri(); ?>/js/boxsize-fix.htc );
-    }
-</style>
-<![endif]-->
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<?php
-
-}
 
 /*
  * Return excerpt with limit
@@ -257,13 +232,13 @@ function maxflat_searchmenu() {
 
 function maxflat_searchform() {
 	?>
-<form action="<?php echo home_url( '/' ); ?>" method="get" role="search" id="smartlib-top-search-container">
+<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="search" id="smartlib-top-search-container">
 	<div class="row">
 		<div class="columns sixteen mobile-four">
 			<input id="search-input" type="text" name="s"
-						 placeholder="<?php _e( 'Search for ...',  'maxflat-core' ); ?>" value="">
+						 placeholder="<?php esc_attr_e( 'Search for ...',  'maxflat-core' ) ; ?>" value="">
 			<input class="button" id="top-searchsubmit" type="submit"
-						 value="<?php _e( 'Search', 'maxflat-core' ); ?>">
+						 value="<?php esc_attr_e( 'Search', 'maxflat-core' ); ?>">
 		</div>
 	</div>
 

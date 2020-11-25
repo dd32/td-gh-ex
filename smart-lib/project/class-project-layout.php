@@ -262,7 +262,7 @@ class Smart_Project_Layout
 
         if (!is_front_page()) {
             echo '<a href="';
-            echo home_url();
+            echo esc_url( home_url() );
             echo '">';
             bloginfo('name');
             echo '</a>' . $sep;

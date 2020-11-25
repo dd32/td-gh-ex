@@ -14,8 +14,7 @@ class Smart_Base_Utils{
 		//add custom code - footer
 		add_action('wp_footer', array($this, 'custom_code_footer'));
 
-		//add favicon
-		add_action ( 'wp_head', array($this,'display_favicon') );
+
 
 
 
@@ -87,18 +86,7 @@ class Smart_Base_Utils{
 		return $text;
 	}
 
-	/**
-	 * Display favicon
-	 */
-	public function display_favicon() {
-		$favico = $this->obj_project->get_project_option( 'project_favicon' );
-		if ( ! empty( $favico ) ) {
-			$extension = substr( $favico, strrpos( $favico, '.' )+1, 3 );
-			?>
-		<link rel="icon" type="image/<?php echo $extension ?>" href="<?php echo $favico ?>" />
-		<?php
-		}
-	}
+
 
 	/**
 	 * Change category length

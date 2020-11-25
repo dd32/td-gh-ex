@@ -19,7 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php maxflat_lt_ie7_info(); //display info if IE lower than 7  ?>
+<?php wp_body_open(); ?>
 <div class="top-bar-outer">
 	<?php
 	//fixed top bar option
