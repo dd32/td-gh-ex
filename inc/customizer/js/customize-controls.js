@@ -103,7 +103,7 @@
 
 		// Main Navigation
 		ashe_customizer_checkbox_label( 'main_nav_label', '' );
-		ashe_customizer_label( 'main_nav_mini_logo', 'Mini Logo', '' );
+		ashe_customizer_label( 'main_nav_mini_logo', 'Logo', '' );
 
 		// Featured Slider
 		ashe_customizer_checkbox_label( 'featured_slider_label', 'https://www.youtube.com/watch?v=H9i-cKOey98' );
@@ -242,6 +242,54 @@
 			darkModeControls.hide();
 		} else {
 			darkModeControls.show();
+		}
+
+
+	/*
+	** Simple Header
+	*/
+		var simpleHeader = $('#customize-control-ashe_options-main_nav_simple_header');
+
+		// on change
+		simpleHeader.find('input[type="checkbox"]').change(function() {
+			if ( $(this).is(':checked') ) {
+				disableHeaderOptions( true );
+			} else {
+				disableHeaderOptions( false );
+			}
+		});
+
+		// on load
+		if ( simpleHeader.find('input[type="checkbox"]').is(':checked') ) {
+			$(window).on('load', function() {
+				disableHeaderOptions( true );
+			});
+		}
+
+		function disableHeaderOptions( disable ) {
+			if ( true === disable ) {
+				$('#customize-control-ashe_options-main_nav_align').find('select').val('right').trigger('change');
+				$('#customize-control-ashe_options-main_nav_show_sidebar').find('input').prop('checked', false).trigger('change');
+				$('#customize-control-ashe_options-header_image_label').find('input').prop('checked', false).trigger('change');
+				$('#customize-control-ashe_options-top_bar_label').find('input').prop('checked', false).trigger('change');
+				$('#customize-control-ashe_options-skins_dark_mode').find('input').prop('checked', false).trigger('change');
+				$('#accordion-section-ashe_social_media').css({
+					'height' : '0',
+					'visibility' : 'hidden',
+					'overflow' : 'hidden',
+				});
+			} else {
+				$('#customize-control-ashe_options-main_nav_align').find('select').val('center').trigger('change');
+				$('#customize-control-ashe_options-main_nav_show_sidebar').find('input').prop('checked', true).trigger('change');
+				$('#customize-control-ashe_options-header_image_label').find('input').prop('checked', true).trigger('change');
+				$('#customize-control-ashe_options-top_bar_label').find('input').prop('checked', true).trigger('change');
+				$('#customize-control-ashe_options-skins_dark_mode').find('input').prop('checked', true).trigger('change');
+				$('#accordion-section-ashe_social_media').css({
+					'height' : 'auto',
+					'visibility' : 'visible',
+					'overflow' : 'hidden',
+				});
+			}
 		}
 
 

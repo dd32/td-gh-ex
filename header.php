@@ -38,4 +38,26 @@
 		<!-- Page Content -->
 		<div class="page-content">
 
+			<?php // Featured Slider and Links
+
+			if ( is_front_page() && 'elementor_header_footer' === get_post_meta(get_the_ID())['_wp_page_template'][0] ) {
+
+				// Featured Slider, Carousel
+				if ( ashe_options( 'featured_slider_label' ) === true && ashe_options( 'featured_slider_location' ) !== 'blog' ) {
+					if ( ashe_options( 'featured_slider_source' ) === 'posts' ) {
+						get_template_part( 'templates/header/featured', 'slider' );
+					} else {
+						get_template_part( 'templates/header/featured', 'slider-custom' );
+					}
+				}
+
+				// Featured Links, Banners
+				if ( ashe_options( 'featured_links_label' ) === true && ashe_options( 'featured_links_location' ) !== 'blog' ) {
+					get_template_part( 'templates/header/featured', 'links' ); 
+				}
+
+			}
+
+			?>
+
 			<?php get_template_part( 'templates/sidebars/sidebar', 'alt' ); // Sidebar Alt ?>

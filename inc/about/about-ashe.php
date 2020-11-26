@@ -365,6 +365,18 @@ function ashe_about_page_output() {
 
 				<div class="column-width-3">
 					<h3>
+						<span class="dashicons dashicons-email"></span>
+						<?php esc_html_e( 'Email Support', 'ashe' ); ?>
+					</h3>
+					<p>
+						<?php esc_html_e( 'If you have any kind of theme related questions, feel free to ask.', 'ashe' ); ?>
+						<hr>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/contact/?ref=ashe-free-backend-about-contact/#!/cform'); ?>"><?php esc_html_e( 'Contact Us', 'ashe' ); ?></a>
+					</p>
+				</div>
+
+				<div class="column-width-3">
+					<h3>
 						<span class="dashicons dashicons-admin-appearance"></span>
 						<?php esc_html_e( 'Child Theme', 'ashe' ); ?>
 					</h3>
@@ -372,18 +384,6 @@ function ashe_about_page_output() {
 						<?php esc_html_e( 'The best way to customize Ashe Theme code.', 'ashe' ); ?>
 						<hr>
 						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-childtheme/#childthemes'); ?>"><?php esc_html_e( 'Download Now', 'ashe' ); ?></a>
-					</p>
-				</div>
-
-				<div class="column-width-3">
-					<h3>
-						<span class="dashicons dashicons-groups"></span>
-						<?php esc_html_e( 'Facebook Group', 'ashe' ); ?>
-					</h3>
-					<p>
-						<?php esc_html_e( 'Join our community on Facebook to stay up to date.', 'ashe' ); ?>
-						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://www.facebook.com/groups/408037686363411'); ?>"><?php esc_html_e( 'Join Now', 'ashe' ); ?></a>
 					</p>
 				</div>
 

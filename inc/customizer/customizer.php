@@ -313,6 +313,11 @@ function ashe_customize_register( $wp_customize ) {
 					<a href="<?php echo esc_url('https://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
+					<h3><?php esc_html_e( 'Support', 'ashe' ); ?></h3>
+					<p><?php esc_html_e( 'If you have any kind of theme related questions, feel free to ask.', 'ashe' ); ?></p>
+					<a href="<?php echo esc_url(admin_url('themes.php?page=about-ashe&tab=ashe_tab_4')); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Contact Us', 'ashe' ); ?></a>
+				</li>
+				<li class="customize-control">
 					<h3><?php esc_html_e( 'Demo Import / Getting Started', 'ashe' ); ?></h3>
 					<p><?php esc_html_e( 'All you need for startup: Demo Import, Video Tutorials and more. To see what Ashe theme can offer, please visit a ', 'ashe' ); ?><a href="<?php echo esc_url('https://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-customizer-about-section-get-started-btn/'); ?>" target="_blank"><?php esc_html_e( 'Demo Preview Page.', 'ashe' ); ?></a></p>
 					<a href="<?php echo esc_url(admin_url('themes.php?page=about-ashe')); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Started', 'ashe' ); ?></a>
@@ -700,6 +705,9 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Show Sidebar Icon
 	ashe_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'ashe' ), 'refresh', 15 );
+
+	// Simple Header
+	ashe_checkbox_control( 'main_nav', 'simple_header', esc_html__( 'Show Simple Header', 'ashe' ), 'refresh', 16 );
 
 	// Mini Logo
 	ashe_image_control( 'main_nav', 'mini_logo', esc_html__( 'Logo Upload', 'ashe' ), 'refresh', 17 );

@@ -64,6 +64,10 @@
     top: 0;
   }
 
+  .mini-logo a {
+    max-width: 80px !important;
+  }
+
   .main-nav-sidebar ~ .mini-logo {
     margin-left: 20px;
   }

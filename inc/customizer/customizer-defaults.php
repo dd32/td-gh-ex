@@ -26,6 +26,7 @@ function ashe_options( $control ) {
 		'main_nav_show_search' => true,
 		'main_nav_show_sidebar' => true,
 		'main_nav_merge_menu' => false,
+		'main_nav_simple_header' => false,
 		'main_nav_mini_logo' => '',
 		'main_nav_mini_logo_width' => '70',
 		'featured_slider_label' => false,
