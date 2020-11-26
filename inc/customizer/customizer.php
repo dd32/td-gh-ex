@@ -335,6 +335,11 @@ function bard_customize_register( $wp_customize ) {
 					<a href="<?php echo esc_url('https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Bard Pro', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
+					<h3><?php esc_html_e( 'Support', 'bard' ); ?></h3>
+					<p><?php esc_html_e( 'If you have any kind of theme related questions, feel free to ask.', 'bard' ); ?></p>
+					<a href="<?php echo esc_url(admin_url('themes.php?page=about-bard&tab=bard_tab_4')); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Contact Us', 'bard' ); ?></a>
+				</li>
+				<li class="customize-control">
 					<h3><?php esc_html_e( 'Demo Import / Getting Started', 'bard' ); ?></h3>
 					<p><?php esc_html_e( 'All you need for startup: Demo Import, Video Tutorials and more. To see what Bard theme can offer, please visit a ', 'bard' ); ?><a href="<?php echo esc_url('https://wp-royal.com/themes/bard-free/demo/?ref=bard-free-customizer-about-section-get-started-btn/'); ?>" target="_blank"><?php esc_html_e( 'Demo Preview Page.', 'bard' ); ?></a></p>
 					<a href="<?php echo esc_url(admin_url('themes.php?page=about-bard')); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Started', 'bard' ); ?></a>

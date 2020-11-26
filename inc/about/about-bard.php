@@ -359,6 +359,24 @@ function bard_about_page_output() {
 
 			</div>
 
+			<div class="three-columns-wrap">
+
+				<br>
+
+				<div class="column-width-3">
+					<h3>
+						<span class="dashicons dashicons-email"></span>
+						<?php esc_html_e( 'Email Support', 'bard' ); ?>
+					</h3>
+					<p>
+						<?php esc_html_e( 'If you have any kind of theme related questions, feel free to ask.', 'bard' ); ?>
+						<hr>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/contact/?ref=bard-free-backend-about-contact/#!/cform'); ?>"><?php esc_html_e( 'Contact Us', 'bard' ); ?></a>
+					</p>
+				</div>
+
+			</div>
+
 		<?php elseif ( $active_tab == 'bard_tab_5' ) : ?>
 
 			<br><br>
