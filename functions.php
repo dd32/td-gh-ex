@@ -50,3 +50,19 @@ add_action( 'wp_enqueue_scripts', 'arowana_scripts_styles' );
  * Called all the Customize file.
  */
 require( get_stylesheet_directory() . '/inc/customize/arowana-premium.php');
+
+
+
+/**
+ * Import Options From Parent Theme
+ *
+ */
+function arowana_parent_theme_options() {
+	$startkit_mods = get_option( 'theme_mods_startkit' );
+	if ( ! empty( $startkit_mods ) ) {
+		foreach ( $startkit_mods as $startkit_mod_k => $startkit_mod_v ) {
+			set_theme_mod( $startkit_mod_k, $startkit_mod_v );
+		}
+	}
+}
+add_action( 'after_switch_theme', 'arowana_parent_theme_options' );
