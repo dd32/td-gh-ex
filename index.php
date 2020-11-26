@@ -55,6 +55,8 @@
 		<div class="pagenumber">  
 		<?php wp_link_pages(); ?> 
 		</div>
+			
+			<hr />
 
         </div>
 <?php endwhile; ?>

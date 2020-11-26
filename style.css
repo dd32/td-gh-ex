@@ -3,7 +3,7 @@ Theme Name: Redesign
 
 Theme URI: https://toth-illustration.com/redesign-wordpress-theme/
 
-Description: Redesign is a transparent theme suitable for creative use of background images. Clean design with beautiful sans-serif fonts and a custom logo. Responsive, liquid layout makes it easy to read in handheld units. Classic blog, no featured images. For multipurpose use, including a blank page template, suitable for landing pages, to be designed with Gutenberg blocks.
+Description: Redesign is a transparent theme suitable for creative use of background images. Clean design with beautiful sans-serif fonts and a custom logo. Responsive, liquid layout makes it easy to read in handheld units. Classic blog, no featured images. For multipurpose use, including a blank page template, suitable for landing pages with block design.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -20,7 +20,7 @@ Resource Fonts: Raleway, by The League of Movable Type, under SIL Open Font Lice
 
 Author: Robert Toth
 Author URI: https://toth-illustration.com
-Version: 1.4.2
+Version: 1.4.3
 Requires at least: 4.5
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -292,6 +292,23 @@ img.alignright {
 	position:relative;
 	padding:0.5em 0;
 	margin:0;
+}
+
+/* BLOCK GALLERY */
+
+.wp-block-gallery{
+	display:block;
+	width:100%;
+}
+
+.blocks-gallery-item{
+	display: inline-block;
+	float:left;
+}
+
+.blocks-gallery-image figcaption{
+	height: auto;
+	align-items: stretch;
 }
 
 /*GALLERY*/
@@ -581,7 +598,6 @@ h6{
 .blog .post,
 .archive .post,
 .search .post{
-	border-bottom:1px solid #DDD;
 }
 
 /*ENTRY*/
@@ -888,9 +904,6 @@ input[type="submit"] {
 	color:#FFF !important;
 }
 
-input[type="reset"]{
-	display:inline;
-}
 
 input[type="file"]{
 	display:block;
