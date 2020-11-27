@@ -346,6 +346,17 @@
 		}
 	);
 	
+	//blog_subtitle
+	wp.customize(
+		'blog_subtitle', function( value ) {
+			value.bind(
+				function( newval ) {
+					$( '.home-blog .heading-default h3' ).text( newval );
+				}
+			);
+		}
+	);
+	
 	//blog_description
 	wp.customize(
 		'blog_description', function( value ) {
