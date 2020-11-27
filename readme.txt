@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 0.1
+Stable tag: 0.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,10 @@ Appointment Booking is a sophisticated WordPress theme with a clean and elegantl
 
 = 0.1 =
 * Initial version released.
+
+= 0.2 =
+* Added the underline within the content link.
+* Fixed escaping issue.
 
 == Resources ==
 
