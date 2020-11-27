@@ -52,6 +52,12 @@ if (!function_exists('suevafree_required_plugins')) {
 			),
 			
 			array(
+				'name'      => 'Content Snippet Manager',
+				'slug'      => 'content-snippet-manager',
+				'required'  => false,
+			),
+			
+			array(
 				'name'      => 'Widget Importer & Exporter',
 				'slug'      => 'widget-importer-exporter',
 				'required'  => false,
