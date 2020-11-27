@@ -7,7 +7,7 @@ Description: Minimal magazine format, but everything you need to create a world 
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 7.0
-Version: 3.0
+Version: 3.1
 License: GPU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: enrichmg
@@ -70,6 +70,8 @@ Version 2.4 new features
 Version 3.0 new features and updates
 			added to wp_body_open() to body tag
 			added php required and minimum and tested to WP version tags
+version 3.1 bug fix
+			set z-index on masthead higher than Guttenberg block images
 
 */
 
@@ -545,6 +547,7 @@ aside .menu a {
     position:fixed;
     top: 0;
     width:100%;
+	z-index:9999;
 }
 
 .hideit img {
