@@ -7,7 +7,7 @@ Description: Minimal magazine format, but everything you need to create a world 
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 7.0
-Version: 3.2
+Version: 3.3
 License: GPU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: enrichmg
@@ -75,6 +75,8 @@ version 3.1 bug fix
 
 version 3.2 removed excess template files
             consolidated get-content template files in template-parts directorry
+
+version 3.3 bug fix Guttenberg block padding issues
 
 */
 
@@ -980,4 +982,13 @@ dd.gallery-caption, table {
     background-color: #000000;
     text-align:center; 
     color:#ffffff;
-}                
+}    
+
+.blocks-gallery-grid .blocks-gallery-image figcaption, .blocks-gallery-grid .blocks-gallery-item figcaption, .wp-block-gallery .blocks-gallery-image figcaption, .wp-block-gallery .blocks-gallery-item figcaption 
+{ padding:0;}
+.wp-block-cover, .wp-block-cover-image {padding:0;}
+.wp-block-image figcaption {
+	margin-top: .5em ;
+    margin-bottom: 1em; 
+	font-size:14px !important; 
+	text-align:center !important;}
