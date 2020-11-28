@@ -51,7 +51,6 @@ final class MAKE_Setup_Head extends MAKE_Util_Modules implements MAKE_Setup_Head
 		add_action( 'wp_head', array( $this, 'js_detection' ), 1 );
 		add_action( 'wp_head', array( $this, 'meta_viewport' ) );
 		add_action( 'wp_head', array( $this, 'pingback' ) );
-		add_action( 'wp_head', array( $this, 'backcompat_icons' ) );
 
 		// Backcompat with old head actions
 		add_action( 'make_deprecated_function_run', array( $this, 'backcompat_head_actions' ) );
@@ -153,56 +152,6 @@ final class MAKE_Setup_Head extends MAKE_Util_Modules implements MAKE_Setup_Head
 	}
 
 	/**
-	 * Backcompat for Make's old Favicon and Apple Touch Icon settings.
-	 *
-	 * WordPress introduced its own Site Icon setting in version 4.3. This only checks the old theme icon
-	 * settings if no value is set for the Core icon option.
-	 *
-	 * @since 1.6.2.
-	 *
-	 * @hooked action wp_head
-	 *
-	 * @return void
-	 */
-	public function backcompat_icons() {
-		// Core Site Icon option overrides Make's deprecated Favicon and Apple Touch Icon settings
-		if ( ! get_option( 'site_icon' ) ) :
-			// Favicon
-			$logo_favicon = make_get_thememod_value( 'logo-favicon' );
-			if ( ! empty( $logo_favicon ) ) :
-				if ( is_int( $logo_favicon ) ) :
-					$logo_favicon_src = wp_get_attachment_image_src( $logo_favicon, 'full' );
-					$logo_favicon = isset( $logo_favicon_src[0] ) ? $logo_favicon_src[0] : '';
-				endif;
-				?>
-				<link rel="icon" href="<?php echo esc_url( $logo_favicon ); ?>" />
-			<?php endif;
-
-			// Apple Touch icon
-			$logo_apple_touch = make_get_thememod_value( 'logo-apple-touch' );
-			if ( ! empty( $logo_apple_touch ) ) :
-				if ( is_int( $logo_apple_touch ) ) :
-					$logo_apple_touch_src = wp_get_attachment_image_src( $logo_apple_touch, 'full' );
-					$logo_apple_touch = isset( $logo_apple_touch_src[0] ) ? $logo_apple_touch_src[0] : '';
-				endif;
-				?>
-				<link rel="apple-touch-icon" href="<?php echo esc_url( $logo_apple_touch ); ?>" />
-			<?php endif;
-
-			// Add a Make Notice if old settings are still in use
-			if ( ! empty( $logo_favicon ) || ! empty( $logo_apple_touch ) ) :
-				$this->error()->add_error(
-					'make_deprecated_site_icon',
-					wp_kses(
-						__( 'This site is using the old Favicon and Apple Touch Icon settings, which were deprecated in version 1.6.2. Go to <em>General &rarr; Site Identity</em> in the Customizer to switch to the new, improved Site Icon setting.', 'make' ),
-						array( 'em' => true )
-					)
-				);
-			endif;
-		endif;
-	}
-
-	/**
 	 * Backcompat for deprecated pluggable functions hooked to wp_head.
 	 *
 	 * This will fire if the Compatibility module's deprecated_function method is run, which will happen
@@ -232,7 +181,6 @@ final class MAKE_Setup_Head extends MAKE_Util_Modules implements MAKE_Setup_Head
 		// Late
 		else if ( 'ttfmake_head_late' === $function && false === has_action( 'wp_head', 'ttfmake_head_late' ) ) {
 			remove_action( 'wp_head', array( $this, 'pingback' ) );
-			remove_action( 'wp_head', array( $this, 'backcompat_icons' ) );
 			add_action( 'wp_head', 'ttfmake_head_late', 99 );
 		}
 	}

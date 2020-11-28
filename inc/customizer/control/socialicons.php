@@ -132,10 +132,10 @@ class MAKE_Customizer_Control_SocialIcons extends WP_Customize_Control {
 			</div>
 			<# if ('email' === type) { #>
 				<label class="screen-reader-text"><?php esc_html_e( 'Email address', 'make' ); ?></label>
-				<input class="make-socialicons-item-content" type="email" placeholder="<?php esc_html_e( 'Email address', 'make' ) ?>" value="{{ data.content }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+				<input class="make-socialicons-item-content" type="email" placeholder="<?php esc_attr_e( 'Email address', 'make' ) ?>" value="{{ data.content }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 			<# } else if ('rss' === type) { #>
 				<label class="screen-reader-text"><?php esc_html_e( 'Custom RSS feed URL', 'make' ); ?></label>
-				<input class="make-socialicons-item-content" type="url" placeholder="<?php esc_html_e( 'Custom RSS feed URL', 'make' ) ?>" value="{{ data.content }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+				<input class="make-socialicons-item-content" type="url" placeholder="<?php esc_attr_e( 'Custom RSS feed URL', 'make' ) ?>" value="{{ data.content }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 			<# } else { #>
 				<label class="screen-reader-text"><?php esc_html_e( 'Social profile URL', 'make' ); ?></label>
 				<input class="make-socialicons-item-content" type="url" placeholder="http://" value="{{ data.content }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />

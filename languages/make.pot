@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Make 1.9.28\n"
+"Project-Id-Version: Make 1.9.29\n"
 "Report-Msgid-Bugs-To: https://thethemefoundry.com/support/\n"
-"POT-Creation-Date: 2020-05-23 13:19:27+00:00\n"
+"POT-Creation-Date: 2020-11-28 09:06:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "The style rule does not have the required properties."
 msgstr ""
 
-#: header.php:14
+#: header.php:19
 msgid "Skip to content"
 msgstr ""
 
@@ -2279,14 +2279,6 @@ msgstr ""
 msgid ""
 "To add or modify theme settings, use the %1$s function instead. See the <a "
 "href=\"%2$s\" target=\"_blank\">Theme Settings API documentation</a>."
-msgstr ""
-
-#: inc/setup/head.php:197
-msgid ""
-"This site is using the old Favicon and Apple Touch Icon settings, which "
-"were deprecated in version 1.6.2. Go to <em>General &rarr; Site "
-"Identity</em> in the Customizer to switch to the new, improved Site Icon "
-"setting."
 msgstr ""
 
 #: inc/setup/misc.php:152

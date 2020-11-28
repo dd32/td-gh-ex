@@ -26,6 +26,9 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 
 == Changelog ==
 
+= 1.9.29 - November 28 2020 =
+* Improvement: Compatibility updates.
+
 = 1.9.28 - May 23 2020 =
 * Improvement: Added "Tested up to" and "Requires PHP" tags to style.css.
 
@@ -653,6 +656,9 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.9.29 =
+* Compatibility updates.
 
 = 1.9.28 =
 * Added "Tested up to" and "Requires PHP" to style header.
