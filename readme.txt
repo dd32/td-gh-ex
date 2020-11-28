@@ -2,7 +2,7 @@
 
 An awesome magazine theme for your WordPress site. Responsive layout, post thumbnail support, featured posts and more.
 
-enrichmg has been created Terry East. You can Follow me at https://terryeast.com.
+enrichmg has been created Terry East. You can Follow me at https://enricchi.studio.
 
 enrichmg is free software licensed under the GNU General Public License version 3. enrichmg is based on the _s (Underscores) starter theme by Automattic Inc., (C) 2012-2013, which is also licensed under GPLv2. For more information about licensing, please refer to License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -42,4 +42,4 @@ A: The header image is intended to be the organization's logo -- site branding
 
 = Translations =
 
-Please use the enrichmg.po file located in the language directory to generate your translations files.
+Please use the enrichmg.pot file located in the language directory to generate your translations files.
