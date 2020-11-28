@@ -1,0 +1,18 @@
+/*
+Theme Name: Aribiz
+Theme URI: http://arinio.com/aribiz-free-responsive-multipurpose-wordpress-theme/
+Author: Arinio Themes
+Author URI: http://arinio.com
+Description:  Aribiz is a flexible Multipurpose, Responsive and Beautiful Theme with Easy and Powerfull Customization Options. Aribiz Theme is Single Click Install feature, Just press activate button and your website will get ready. Aribiz theme is designed with great attention to details, flexibility and performance thus looks stunning on all types of screens. Aribiz is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blog, fitness, GYM, Magazine, News, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you can change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, right-sidebar, custom-background, custom-menu,custom-header,custom-logo, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, flexible-header, full-width-template
+Text Domain: aribiz
+Requires PHP:  5.2
+Tested up to: 7.2.3
+License information can be found in the readme.txt file.
+*/
+
+
+@import url(styles/styles.css);
