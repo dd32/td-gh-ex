@@ -329,6 +329,7 @@
 	.main-slider .owl-item .item {
 	    padding: 14px 0;
 	    min-height: 182px;
+	    background-size: cover;
 	}
 }
 
