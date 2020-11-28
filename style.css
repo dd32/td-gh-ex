@@ -5,7 +5,7 @@ Author: Nayra Themes
 Author URI: https://www.nayrathemes.com/
 Description: Azwa is a fast and lightweight, multi-purpose WordPress theme. Enjoy Ken Burns effect, background elements, & smooth animations. Build amazing website with Azwa. Checkout the demo of Azwa Pro https://www.nayrathemes.com/demo/pro/?theme=azwa
 Template: conceptly
-Version: 1.0.7
+Version: 1.0.8
 Tested up to: 5.5.1
 Requires PHP: 5.6
 License: GPLv3 or later
@@ -24,7 +24,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
  */
 
 
-@keyframes animation-pulse-grow{to{transform:scale(1.1)}}
+@keyframes animation-pulse-grow{to{transform:scale(1.05)}}
+
+.header-info li[class*='tlh-'] a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header-info .tlh-content {
+    line-height: 1.5;
+    text-align: left;
+}
+
+.header-info .tlh-icon {
+    margin-right: 5px;
+    position: relative;
+}
 
 .azwa-template .header .header-above .header-info a {
     letter-spacing: 0.2px;
@@ -45,11 +61,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .azwa-template .header .header-above .header-info i {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 25px;
-    margin-right: 8px;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 28px;
+    margin-right: 0;
     vertical-align: middle;
 }
 
@@ -218,9 +234,54 @@ Use it to make something cool, have fun, and share what you've learned with othe
     height: 100%;
 }
 
+.header-single-slider {
+    position: relative;
+    background-color: #111111;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    z-index: 0;
+    background-size: 100% 100%;
+    padding: 90px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 720px;
+}
+
+.header-single-slider:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.azwa-template .theme-slider div.theme-content {
+    margin-bottom: 0;
+}
+
+.azwa-template .theme-slider.slider-mobi-image .container {
+    padding: 0;
+}
+
+.azwa-template .theme-slider.slider-mobi-image div.theme-content {
+    max-width: 100%;
+    margin: 0;
+}
+
+.azwa-template .slider-mobi-image div.text-center [class*='col-']:nth-child(2) {
+    margin-top: 15px !important;
+}
+
 .azwa-template .header-slider h1 {
     font-size: 18px;
     font-weight: 700;
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -234,6 +295,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .azwa-template .header-slider p {
     margin-top: 7px;
+    color: #ffffff;
 }
 
 .azwa-template .header-slider .owl-nav:not(.disabled) {
@@ -503,48 +565,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
     z-index: 0;
 }
 
-.azwa-header-slider .theme-slider .azwa-content div.mb-0 {
-    margin-bottom: 0 !important;
-}
-
-.azwa-header-slider .theme-slider .azwa-content .col-8 {
-    padding: 205px 0 150px;
-}
-
-.azwa-header-slider:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #ff5d00;
-    opacity: 0.15;
-    z-index: -1;
-}
-
-.azwa-header-slider .theme-slider .text-center [class*="col-"]:first-child {
+.slider-mobi-image .text-center [class*="col-"]:first-child {
     flex-basis: 100%;
     max-width: 100%;
 }
 
-.azwa-header-slider .header-slider .theme-slider .text-center [class*="col-"]:nth-child(2) img {
+.slider-mobi-image .text-center [class*="col-"]:nth-child(2) img {
     margin: auto;
 }
 
-.azwa-header-slider .header-slider .theme-slider .text-left [class*="col-"]:nth-child(2) img {
+.slider-mobi-image .text-left [class*="col-"]:nth-child(2) img {
     margin-left: auto;
 }
 
-.azwa-header-slider .theme-slider .text-right [class*="col-"]:first-child {
+.slider-mobi-image .text-right [class*="col-"]:first-child {
     order: 1;
 }
 
-.azwa-header-slider .header-slider .item img {
-    height: auto;
-}
-
-.azwa-header-slider .owl-item img {
+.owl-item .slider-mobi-image img {
     width: auto;
     height: auto;
 }
@@ -852,6 +890,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .azwa-template .single-contact:not(:first-child) {
         margin-left: 0;
     }
+    .header-single-slider {
+        min-height: 245px;
+        padding: 15px 0;
+    }
+    .slider-mobi-image {
+        padding: 15px;
+        background-size: cover;
+    }
 }
 
 /* Azwa Responsive Start */
@@ -859,9 +905,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .azwa-template .header-slider h1 span {
         font-size: 32px;
         line-height: 40px;
-    }
-    .azwa-header-slider .theme-slider .azwa-content .col-8 {
-        padding: 100px 0 95px;
     }
 }
 
@@ -884,7 +927,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         padding: 8px 12px;
         background-color: #ff5d00;
         position: absolute;
-        bottom: 1px;
+        bottom: 3px;
         z-index: 0;
     }
     .azwa-template .trh-social:before {
@@ -971,10 +1014,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .azwa-template .header .menu-right > ul {
         min-height: 102px;
     }
-    .azwa-template .header-slider p {
+    .slider-mobi-image p {
         margin-bottom: 40px;
     }
-    .azwa-template .header-slider .boxed-btn {
+    .slider-mobi-image .boxed-btn {
         line-height: 39px;
         font-size: 16px;
         font-weight: 600;
@@ -989,29 +1032,28 @@ Use it to make something cool, have fun, and share what you've learned with othe
     }
 }
 
-@media screen and (max-width: 575px) {
-    .azwa-slider {
-        padding: 0 15px;
-    }
-}
+@media screen and (max-width: 575px) {  }
 
 @media screen and (max-width: 420px) {
-    .azwa-header-slider .theme-slider [class*="col-"] {
+    .slider-mobi-image [class*="col-"] {
         flex-basis: 100%;
         max-width: 100%;
     }
-    .azwa-header-slider .theme-slider .text-right [class*="col-"]:first-child {
+    .slider-mobi-image [class*="col-"]:nth-child(2) {
+        margin-top: 2rem !important;
+    }
+    .slider-mobi-image .text-right [class*="col-"]:first-child {
         order: 0;
     }
-    .azwa-header-slider .theme-slider .azwa-content .col-8 {
-        padding: 50px 0 30px;
+    .slider-mobi-image .col-8 {
         text-align: center;
     }
-    .header-slider .theme-slider .azwa-content .col-8 p,
-    .azwa-header-slider .theme-slider .azwa-content .col-4 img {
+    .slider-mobi-image .col-8 p,
+    .slider-mobi-image .col-4 img {
         margin: auto;
+        max-height: 160px;
     }
-    .header-slider .theme-slider .azwa-content .col-8 p {
+    .slider-mobi-image .col-8 p {
         margin-bottom: 20px;
     }
 }
