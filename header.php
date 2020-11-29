@@ -44,7 +44,7 @@
                     $appointment_dark_social = '<ul id="%1$s" class="%2$s">%3$s';
                     if ($appointment_dark_header_settings['header_social_media_enabled'] == 0) {
 
-                        if($appointment_dark_facebook =='' || $appointment_dark_twitter =='' || $appointment_dark_linkdin ==''){
+                        if($appointment_dark_facebook !='' || $appointment_dark_twitter !='' || $appointment_dark_linkdin !=''){
                         $appointment_dark_social .= '<ul class="head-contact-social">';
 
                         if ($appointment_dark_header_settings['social_media_facebook_link'] != '') {

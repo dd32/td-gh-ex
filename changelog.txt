@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 1.0
+1. Fixed header social icon issue.
+
 @Version 0.8
 1. Fixed Keyboard navigation and style issue.
 2. Removed Unnecessary code.
