@@ -16,6 +16,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <?php Benlumia007\Backdrop\Menu\display( 'primary' ); ?>
 <header id="header" class="site-header header-image">
 	<div class="site-branding">
