@@ -88,6 +88,8 @@
 
                 $appointment_red_social = '<ul id="%1$s" class="%2$s">%3$s';
                 if ($appointment_red_header_settings['header_social_media_enabled'] == 0) {
+
+                    if($appointment_red_facebook !='' || $appointment_red_twitter !='' || $appointment_red_linkdin !=''){
                     $appointment_red_social .= '<ul class="head-contact-social">';
 
                     if ($appointment_red_header_settings['social_media_facebook_link'] != '') {
@@ -113,6 +115,7 @@
                     }
                     $appointment_red_social .= '</ul>';
                 }
+            }
                 $appointment_red_social .= '</ul>';
                 ?>
 

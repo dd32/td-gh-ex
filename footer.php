@@ -35,7 +35,7 @@ if (is_active_sidebar('footer-widget-area')) {
                 $appointment_red_footer_linkdin = $appointment_red_footer_setting['footer_social_media_linkedin_link'];
                 $appointment_red_footer_googleplus = $appointment_red_footer_setting['footer_social_media_googleplus_link'];
                 $appointment_red_footer_skype = $appointment_red_footer_setting['footer_social_media_skype_link'];
-                ?>
+                if($appointment_red_footer_facebook !='' || $appointment_red_footer_twitter!='' || $appointment_red_footer_linkdin!='' ||  $appointment_red_footer_googleplus !='' || $appointment_red_footer_skype !=''){ ?>
                 <div class="col-md-4">
                     <ul class="footer-contact-social">
                         <?php if ($appointment_red_footer_setting['footer_social_media_facebook_link'] != '') { ?>
@@ -71,7 +71,8 @@ if (is_active_sidebar('footer-widget-area')) {
                                              <?php } ?>
                     </ul>
                 </div>
-            <?php } ?>
+            <?php } 
+        } ?>
         </div>
     </div>
 </div>
