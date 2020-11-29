@@ -15,6 +15,7 @@
 <head>
 <?php wp_head(); ?>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <section id="container" class="site-container">
     <header id="header" class="site-header">
         <div class="site-branding">
