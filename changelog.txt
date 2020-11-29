@@ -1,5 +1,7 @@
 == Changelog ==
 
+@Version 2.8.6
+1. Implemented "Links within content must be underlined" guideline.
 @Version 2.8.5.2
 1. Removed default value from social links.
 2. Added contact form 7 image license.

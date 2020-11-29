@@ -5,7 +5,7 @@ Author: Webriti
 Author URI: https://www.webriti.com
 Description: Appointment WordPress Theme is a fully responsive and translation-ready theme that allows you to create stunning blogs and websites. The theme is well suited for companies, law firms, travel, photography, recipes, design, art, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablet friendly. It has various options in the WordPress Customizer to change the look of the theme. The theme customizer can be used to add your own custom header, favicon, logo, slides, services, callout and much more. In the premium version you can add different type of slides like video, aside, quote, status and standard, all of which have a different HTML look. There are a number of in-built widgets; sidebars with support for WPML, the Polylang translation WordPress plugin and Contact Form 7; a portfolio template, contact us, portfolio column layouts and many sections for business using the Homepage template. Appointment theme comes with various locales. Just navigate to Appearance / Customize to start customizing.
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images, news
-Version: 2.8.5.2
+Version: 2.8.6
 Requires at least: 4.5
 Tested up to: 5.5
 Requires PHP: 5.4
@@ -2030,3 +2030,5 @@ a:focus{
 .wpcf7-form label{
     width: 100%;
 }
+.blog-lg-area-left .blog-content a, .comment-section .media-body a,.textwidget a, .blog-lg-area-left p a, .blog-lg-area-left table a, .blog-lg-area-left dl a, .blog-lg-area-left h1 a,.blog-lg-area-left h2 a, .blog-lg-area-left h3 a, .blog-lg-area-left h4 a, .blog-lg-area-left h5 a, .blog-lg-area-left h6 a, .blog-lg-area-left ul a, .blog-lg-area-left ol a,.blog-lg-area-left address a{text-decoration:underline;} 
+.comment-section .comment-date a, .blog-lg-area-left .media-body h3 a{text-decoration:none;}

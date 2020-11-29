@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 2.8.5.2
+Stable tag: 2.8.6
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,8 @@ Appointment is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.8.6
+1. Implemented "Links within content must be underlined" guideline.
 @Version 2.8.5.2
 1. Removed default value from social links.
 2. Added contact form 7 image license.
