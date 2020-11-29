@@ -1,7 +1,7 @@
 /*
 Theme Name: Renden
 Text Domain: renden
-Version: 1.5.7
+Version: 1.5.8
 Requires at least: 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6.0
@@ -144,7 +144,12 @@ dt {
 	font-weight: bold;
 }
 a:focus {
-	outline: thin dotted;
+	outline: 1px dotted #e0484c;
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	transition: all 0s ease;
 }
 a:hover,
 a:active {
@@ -723,12 +728,18 @@ li.pag-next {
 #logo,
 #logo-sticky {
 	float: left;
+	display: table;
 	margin-top: 20px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+}
+#logo a,
+#logo-sticky a {
+	display: table-cell;
+	vertical-align: middle
 }
 #logo img,
 #logo-sticky img {
@@ -2239,6 +2250,7 @@ input[type="submit"] {
 	text-align: center;
 	background: #e0484c;
 	border: none;
+	text-decoration: none !important;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
@@ -2250,8 +2262,10 @@ input[type="submit"] {
 	-o-border-radius: 2px;
 	border-radius: 2px;
 }
+a.more-link,
 a.themebutton {
 	color: #FFF;
+	text-decoration: none !important;
 }
 .themebutton:hover,
 button:hover,
@@ -2265,13 +2279,13 @@ button:focus,
 html input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
-	outline: none
 }
 
 /* Theme button - Style 1 */
 .themebutton2  {
 	color: #232323;
 	text-align: center;
+	text-decoration: none !important;
 	border: 1px solid #232323;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -2281,13 +2295,13 @@ input[type="submit"]:focus {
 }
 a.themebutton2 {
 	color: #232323;
+	text-decoration: none !important;
 }
 .themebutton2:hover {
 	color: #fff;
 	background: #232323;
 }
 .themebutton2:focus {
-	outline: none
 }
 
 /* Theme button - Style 3 */
@@ -2296,6 +2310,7 @@ a.themebutton2 {
 	text-align: center;
 	background: #2d2d2d;
 	border: none;
+	text-decoration: none !important;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
@@ -2309,6 +2324,7 @@ a.themebutton2 {
 }
 a.themebutton3 {
 	color: #FFF;
+	text-decoration: none !important;
 }
 .themebutton3:hover {
 	background: #e0484c;
@@ -2318,6 +2334,7 @@ a.themebutton3 {
 .themebutton4 {
 	color: #e0484c;
 	text-align: center;
+	text-decoration: none !important;
 	background: #fff;
 	background: rgba(255, 255, 255, 0.2);
 	border: 2px solid #e0484c;
@@ -2334,10 +2351,23 @@ a.themebutton3 {
 }
 a.themebutton4 {
 	color: #FFF;
+	text-decoration: none !important;
 }
 .themebutton4:hover {
 	color: #e0484c;
 	background: #fff;
+}
+
+/* =Accessibility - Underline links within content areas
+----------------------------------------------------------------------------- */
+#section-home a,
+#content a,
+#footer a,
+#sub-footer a {
+	text-decoration: underline;
+}
+.widget_tag_cloud a {
+	text-decoration: none !important;
 }
 
 /* =Pre-Designed Homepage (code also in style-responsive.css)
@@ -3815,6 +3845,9 @@ ul.pricing-table:after,
 .blog-article .entry-meta {
 	margin-bottom: 10px;
 }
+.blog-article .entry-meta a {
+	text-decoration: none !important;
+}
 .blog-article.sticky .entry-content {
 	padding: 15px 15px 0;
 	background: #F8F8F8;
@@ -3851,6 +3884,7 @@ ul.pricing-table:after,
 }
 .blog-article .blog-title a {
 	color: inherit; 
+	text-decoration: none !important;
 }
 .blog-article .blog-title a:hover {
 	color: #e0484c; 
