@@ -34,9 +34,9 @@
 											type: 'GET',
 											data: {action: 'agencyup_customizer_notify_dismiss_action', id: id, todo: action},
 											dataType: 'html',
-											url: agencyupCustomizercompanionObject.ajaxurl,
+											url: AgencyupCustomizercompanionObject.agencyup_ajaxurl,
 											beforeSend: function () {
-												jQuery( '#' + id ).parent().append( '<div id="temp_load" style="text-align:center"><img src="' + agencyupCustomizercompanionObject.base_path + '/images/spinner-2x.gif" /></div>' );
+												jQuery( '#' + id ).parent().append( '<div id="temp_load" style="text-align:center"><img src="' + AgencyupCustomizercompanionObject.agencyup_base_path + '/images/spinner-2x.gif" /></div>' );
 											},
 											success: function (data) {
 												var container          = jQuery( '#' + data ).parent().parent();
@@ -75,9 +75,9 @@
 														type: 'GET',
 														data: {action: 'ti_customizer_notify_dismiss_recommended_plugins', id: id, todo: action},
 														dataType: 'html',
-														url: agencyupCustomizercompanionObject.ajaxurl,
+														url: AgencyupCustomizercompanionObject.agencyup_ajaxurl,
 														beforeSend: function () {
-															jQuery( '#' + id ).parent().append( '<div id="temp_load" style="text-align:center"><img src="' + agencyupCustomizercompanionObject.base_path + '/images/spinner-2x.gif" /></div>' );
+															jQuery( '#' + id ).parent().append( '<div id="temp_load" style="text-align:center"><img src="' + AgencyupCustomizercompanionObject.agencyup_base_path + '/images/spinner-2x.gif" /></div>' );
 														},
 														success: function (data) {
 															var container = jQuery( '#' + data ).parent().parent();
@@ -108,7 +108,7 @@
 														jQuery.ajax(
 															{
 																beforeSend: function () {
-																	jQuery( activateButton ).replaceWith( '<a class="button updating-message">' + agencyupCustomizercompanionObject.activating_string + '...</a>' );
+																	jQuery( activateButton ).replaceWith( '<a class="button updating-message">' + AgencuupCustomizercompanionObject.agencyup_activating_string + '...</a>' );
 																},
 																async: true,
 																type: 'GET',

@@ -106,8 +106,9 @@ class Agencyup_Customizer_Notify {
 		wp_enqueue_script( 'agencyup-customizer-notify-js', get_template_directory_uri() . '/inc/ansar/customizer-notice/js/agencyup-customizer-notify.js', array( 'customize-controls' ));
 		wp_localize_script(
 			'agencyup-customizer-notify-js', 'AgencyupCustomizercompanionObject', array(
-				'template_directory' => get_template_directory_uri(),
-				'base_path'          => admin_url(),
+				'agencyup_ajaxurl'   => esc_url(admin_url( 'admin-ajax.php' )),
+				'template_directory' => esc_url(get_template_directory_uri()),
+				'base_path'          => esc_url(admin_url()),
 				'activating_string'  => __( 'Activating', 'agencyup' ),
 			)
 		);
