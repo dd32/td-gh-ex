@@ -504,10 +504,7 @@ function agency_starter_get_theme_css( ) {
 		border-color: ".$colors['border_color'].";
 	}
 
-	hr, code {
-		background-color: ".$colors['main_text_color']."; /* Fallback for IE7 and IE8 */
-		background-color: ".$colors['border_color'].";
-	}
+
 	
 	@media screen and (max-width: 56.875em) {
 		.main-navigation ul ul a {

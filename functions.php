@@ -592,6 +592,7 @@ if ( isset( $_GET['hide_admin_notice'] ) ) {
 }
 
 
+
 if(!function_exists('agency_starter_help_notice')):
 
 function agency_starter_help_notice() {
@@ -601,7 +602,7 @@ function agency_starter_help_notice() {
 	$tutorial = __( 'Tutorials', 'agency-starter');
 	$pro_notice =  __( 'Jump start with Free Demos & Learn More', 'agency-starter');
     printf( '<div class="%1$s"> <p><strong><span>%2$s</span></strong> &nbsp;&nbsp; 
-	<strong><a href="%3$s" target="_blank"  class="dismiss-notice" style="color:#1b864a;text-transform: uppercase;">%4$s</a></strong> &nbsp;&nbsp;
+	<strong><a href="%3$s" target="_blank"  class="dismiss-notice">%4$s</a></strong> &nbsp;&nbsp;
 	<strong><a href="%5$s" target="_blank"  class="dismiss-notice">%6$s</a></strong> &nbsp;&nbsp;
 	<em><a href="?hide_admin_notice" target="_self"  class="dismiss-notice">%7$s</a></em> </p></div>', 
 	esc_attr( $class ), 
