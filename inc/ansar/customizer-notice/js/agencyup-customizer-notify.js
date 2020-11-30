@@ -77,7 +77,7 @@
 														dataType: 'html',
 														url: AgencyupCustomizercompanionObject.agencyup_ajaxurl,
 														beforeSend: function () {
-															jQuery( '#' + id ).parent().append( '<div id="temp_load" style="text-align:center"><img src="' + AgencyupCustomizercompanionObject.agencyup_base_path + '/images/spinner-2x.gif" /></div>' );
+															 jQuery( '#' + id ).parent().append( '<div id="temp_load" style="text-align:center"><img src="' + AgencyupCustomizercompanionObject.base_path + '/images/spinner-2x.gif" /></div>' );
 														},
 														success: function (data) {
 															var container = jQuery( '#' + data ).parent().parent();

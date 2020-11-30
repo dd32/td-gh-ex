@@ -114,7 +114,7 @@ class Agencyup_Customizer_Notify_Section extends WP_Customize_Section {
 
 		global $install_button_label;
 		global $activate_button_label;
-		global $deactivate_button_label;
+		global $agencyup_deactivate_button_label;
 
 		$formatted_array                               = array();
 		$agencyup_customizer_notify_show_recommended_actions = get_option( 'agencyup_customizer_notify_show' );
@@ -148,7 +148,7 @@ class Agencyup_Customizer_Notify_Section extends WP_Customize_Section {
 						break;
 					case 'deactivate':
 						$agencyup_lite_customizer_notify_recommended_action['button_class'] = 'deactivate-now button';
-						$agencyup_lite_customizer_notify_recommended_action['button_label'] = $deactivate_button_label;
+						$agencyup_lite_customizer_notify_recommended_action['button_label'] = $agencyup_deactivate_button_label;
 						break;
 				}
 			}

@@ -150,9 +150,9 @@ class Agencyup_Customizer_Notify {
 		if ( ! empty( $action_id ) ) {
 
 			
-			if ( get_theme_mod( 'agencyup_customizer_notify_show' ) ) {
+			if ( get_option( 'agencyup_customizer_notify_show' ) ) {
 
-				$agencyup_customizer_notify_show_recommended_actions = get_theme_mod( 'agencyup_customizer_notify_show' );
+				$agencyup_customizer_notify_show_recommended_actions = get_option( 'agencyup_customizer_notify_show' );
 				switch ( $_GET['todo'] ) {
 					case 'add':
 						$agencyup_customizer_notify_show_recommended_actions[ $action_id ] = true;
@@ -161,7 +161,7 @@ class Agencyup_Customizer_Notify {
 						$agencyup_customizer_notify_show_recommended_actions[ $action_id ] = false;
 						break;
 				}
-				echo esc_html($agencyup_customizer_notify_show_recommended_actions);
+				update_option( 'agencyup_customizer_notify_show', $agencyup_customizer_notify_show_recommended_actions );
 				
 			} else {
 				$agencyup_customizer_notify_show_recommended_actions = array();
@@ -189,7 +189,7 @@ class Agencyup_Customizer_Notify {
 
 		if ( ! empty( $action_id ) ) {
 
-			$agencyup_lite_customizer_notify_show_recommended_plugins = get_theme_mod( 'agencyup_customizer_notify_show_recommended_plugins' );
+			$agencyup_lite_customizer_notify_show_recommended_plugins = get_option( 'agencyup_customizer_notify_show_recommended_plugins' );
 
 			switch ( $_GET['todo'] ) {
 				case 'add':
@@ -199,7 +199,7 @@ class Agencyup_Customizer_Notify {
 					$agencyup_lite_customizer_notify_show_recommended_plugins[ $action_id ] = true;
 					break;
 			}
-			echo esc_html($agencyup_customizer_notify_show_recommended_actions);
+			update_option( 'agencyup_customizer_notify_show_recommended_plugins', $agencyup_lite_customizer_notify_show_recommended_plugins );
 		}
 		die(); 
 	}
