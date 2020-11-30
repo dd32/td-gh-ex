@@ -432,6 +432,21 @@ class astral_Customizer extends astral_Abstract_Main {
 			'priority'   => 35,
 		) );
 
+		$wp_customize->add_setting( 'astral_blog_show', array(
+			'type'              => 'theme_mod',
+			'default'           => '1',
+			'sanitize_callback' => 'astral_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		) );
+
+		$wp_customize->add_control( 'astral_blog_show', array(
+			'label'    => __( 'Blog Section On/Off', 'astral' ),
+			'description' => __( 'Click above checkbox to show blog section on front page', 'astral' ),
+			'type'     => 'checkbox',
+			'section'  => 'astral_blog',
+			'settings' => 'astral_blog_show',
+		) );
+
 		$wp_customize->add_setting( 'astral_blog_title', array(
 			'type'              => 'theme_mod',
 			'default'           => '',

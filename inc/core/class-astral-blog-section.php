@@ -28,6 +28,7 @@ class astral_Blog_Section extends astral_Abstract_Main {
 	function astral_blog() {
 	$astral_blog_title = get_theme_mod( 'astral_blog_title' );
 	$astral_blog_desc  = get_theme_mod( 'astral_blog_desc' );
+	if ( get_theme_mod( 'astral_blog_show', '1' ) ) :
 	?>
     <section class="align-blog front-blog" id="blog">
         <div class="container">
@@ -67,7 +68,7 @@ class astral_Blog_Section extends astral_Abstract_Main {
             </div>
         </div>
     </section>
-<?php
+<?php endif;
 	}
 }
 $astral_Blog_Section = new astral_Blog_Section();
