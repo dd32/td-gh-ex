@@ -44,7 +44,10 @@ License: GPLv3
 https://pxhere.com/en/photo/1588791
 License:  CC0 Public Domain
 
-== Changelog =
+== Changelog ==
+
+= 1.0.4
+ * Fixed woocommerce checkout page checkbox
 
 = 1.0.1
 - Screenshot update
