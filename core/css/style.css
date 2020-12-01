@@ -1066,6 +1066,7 @@ table {
 
 table td,
 table th {
+  border: 1px solid #eaeaea;
   padding: 7px;
 }
 
@@ -1889,12 +1890,12 @@ body.mega-menu-header-menu button.menu-toggle {
   display: none;
 }
 
-.site-header.sticky-header .custom-logo-link.sticky-custom-logo {
-  display: inline-block;
+.site-header.sticky-header.sticky-logo .custom-logo-link {
+  display: none;
 }
 
-.site-header.sticky-header .custom-logo-link {
-  display: none;
+.site-header.sticky-header .custom-logo-link.sticky-custom-logo {
+  display: inline-block;
 }
 
 .res-search-wrapper {
@@ -1908,25 +1909,6 @@ body.mega-menu-header-menu button.menu-toggle {
 
 .search-form input {
   outline: none;
-}
-
-#secondary .res-search-icon.icon-search {
-  position: absolute;
-  right: 0;
-  top: 10px;
-}
-
-#secondary .res-search-wrapper {
-  display: block;
-  position: relative;
-}
-
-#secondary .res-search-wrapper input[type=search] {
-  width: 100%;
-}
-
-#secondary .res-search-wrapper input[type=search]:focus + .res-search-icon.icon-search, #secondary .res-search-wrapper input[type=search]:hover + .res-search-icon.icon-search {
-  display: none;
 }
 
 /**
@@ -5866,6 +5848,23 @@ embed, iframe, object {
 .site-header-full-width-main-navigation:not(.responsive-site-full-width) .archive:not(.woocommerce).sidebar-position-no .blog.front-page aside.home-widgets .site-content > .main-navigation-wrapper > .home-widget-wrapper main.content-area,
 .blog.front-page aside.home-widgets .site-header-full-width-main-navigation:not(.responsive-site-full-width) .archive:not(.woocommerce).sidebar-position-no .site-content > .main-navigation-wrapper > .home-widget-wrapper main.content-area {
   margin: 0 auto;
+}
+
+#secondary .res-search-icon.icon-search {
+  display: none;
+}
+
+#secondary .res-search-wrapper {
+  display: block;
+  position: relative;
+}
+
+#secondary .res-search-wrapper input[type=search] {
+  width: 100%;
+}
+
+#secondary .res-search-wrapper input[type=search]:focus + .res-search-icon.icon-search, #secondary .res-search-wrapper input[type=search]:hover + .res-search-icon.icon-search {
+  display: none;
 }
 
 /**
