@@ -78,6 +78,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_transparent_header_enable']         = false;
     $defaults[$prefix.'_social_icons_new_tab']              = false;
     $defaults[$prefix.'_breadcrumb_enable']                 = 'yes';
+    $defaults[$prefix.'_main_nav_menu_color_transparent']  = '#333';
 
     $defaults[$prefix.'_main_logo_width']                   = 100;
     $defaults[$prefix.'_single_page_sidebars']              = 'no_sidebar';

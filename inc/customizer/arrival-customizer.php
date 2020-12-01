@@ -976,7 +976,7 @@ $wp_customize->add_control( $prefix.'_transparent_header_enable',array(
 
 //transparent header menu color
 $wp_customize->add_setting($prefix.'_main_nav_menu_color_transparent', array(
-        'default'           => $default[$prefix.'_main_nav_menu_color'],
+        'default'           => $default[$prefix.'_main_nav_menu_color_transparent'],
         'sanitize_callback' => 'arrival_sanitize_color',
     )
 );
