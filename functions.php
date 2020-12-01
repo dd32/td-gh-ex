@@ -348,6 +348,14 @@ function aribiz_paginate($pages = '', $range = 1)
 }
 
 
+//Custom Excerpt length.
+function aribiz_excerpt_length( $length ) {
+    if ( is_admin() ) return $length;
+    return 20;
+}
+add_filter( 'excerpt_length', 'aribiz_excerpt_length', 999 );
+
+
 
 require get_template_directory() . '/inc/customizer.php';
 

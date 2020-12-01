@@ -36,7 +36,7 @@
                 </ul>
         <div class="blog-border"></div>
                                     
-                          <div class="blog-content">   <?php the_excerpt(); ?>  </div>
+                          <div class="blog-content">   <?php the_excerpt(); ?> <a class="blogreadbtn" href="<?php the_permalink(); ?>"><?php esc_html_e('Read more &rarr;','aribiz'); ?></a>  </div>
                  
             </div> </div>
         </div>

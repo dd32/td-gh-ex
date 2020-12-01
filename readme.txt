@@ -2,7 +2,7 @@
 
 == Theme: Aribiz==
 
-Aribiz is a flexible Multipurpose, Responsive and Beautiful Theme with Easy and Powerfull Customization Options. Aribiz Theme is Single Click Install feature, Just press activate button and your website will get ready. Aribiz theme is designed with great attention to details, flexibility and performance thus looks stunning on all types of screens. Aribiz is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blog, fitness, GYM, Magazine, News, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you can change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
+Aribiz is a flexible Multipurpose, Responsive and Beautiful Theme with Easy and Power full Customization Options. Aribiz theme is designed with great attention to details, flexibility and performance thus looks stunning on all types of screens. Aribiz is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blog, school, fitness, GYM, Magazine, News, Travels Agencies or any type of site. Its comes with amazing slider. It has a very easy admin option panel where you can change anything easily. You can also easily upload logo , fevicon etc. This theme made by arinio.com.
 
 * By ArinioThemes, http://arinio.com/
 

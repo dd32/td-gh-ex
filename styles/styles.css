@@ -4,14 +4,14 @@ body {
     height: 100%;
 	font-family:  'Open Sans', sans-serif;
 	 
-	font-size: 15px;
+	font-size: 16px;
 	
 }
 
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
 
 .carousel {
-    height: 75%;
+    height: 85%;
 	
 }
 #myCarousel {
@@ -86,7 +86,7 @@ float: left;
 margin: 0px;
 padding: 0px;
 text-transform: capitalize;
-color: #1EB48A;
+color: #b41e41;
 }
 
 .alsd h2 {
@@ -330,7 +330,7 @@ padding-bottom: 5px;
 }
 
 .headline h2:after {
-    background: url(../img/bg_off.png) repeat;
+     
     content: "";
     height: 5px;
     margin-left: 10px;
@@ -360,7 +360,7 @@ color: #555;
 .blogdetails {
 padding: 20px;
 border: 1px solid #f3f3f3;
-    background-color: #fafafa;
+     
  
 clear: both;
 }
@@ -397,10 +397,7 @@ color:#000000;
 .page-intro {
 
     padding: 10px 0;
-    -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.06) inset;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.06) inset;
-    background-color: #fafafa;
-    border-bottom: 1px solid #dadada;
+   
 }
 
 .mainblogwrapper {
@@ -581,8 +578,7 @@ text-decoration: none;
 /* Changing the color on hover */
 .nav>li>a:hover, .nav>li:hover>a {
 color: #000;
-background-color: #fafafa;
-border: 1px solid #f1f1f1;
+ 
 
 }
 /* The links which contain dropdowns menu are wider, because they have a little arrow */
@@ -777,8 +773,8 @@ border-bottom-style: none;
 
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-color: #fff;
-background-color: #191818 ;
+color: #b41e41;
+background-color: #fff ;
 }
 
 
@@ -855,12 +851,12 @@ background-color: #191818 ;
 }
 
 .subscribe-btn {
-    background: #1EB48A;
+    background: #777;
     cursor: pointer;
 }
 .subscribe-btn {
     height: 44px;
-    padding: 6px 16px;
+    padding: 6px 40px;
     background-image: none;
     color: #fff !important;
     text-shadow: none;
@@ -870,7 +866,7 @@ background-color: #191818 ;
 }
 
 .subscribe-btn:hover {
-    background: #4C8575;
+    background: #0e0e0e;
 }
 
 .input-group .form-control:first-child {
@@ -1068,7 +1064,7 @@ opacity: 0.85;
   color: #000;
 }
 .recent-posts-container h3 a:hover {
-color: #1EB48A;
+color: #b41e41;
 }
 p.moree {
 margin-top:22px;
@@ -1411,11 +1407,11 @@ box-shadow: none;
 }
 
 .form-submit input[type='submit']{
-  border-color: #1EB48A;
+  border-color: #777;
   color: #ffffff;
-  background-color: #1EB48A;
-  border: 2px solid #1EB48A;
-padding: 10px 20px;
+  background-color: #777;
+  border: 2px solid #777;
+padding: 5px 10px;
 box-shadow: none;
  
  
@@ -1477,7 +1473,7 @@ border-radius: 5px;
   text-shadow: rgba(0,0,0,0.05) 0 1px 0px;
 }
 #calendar_wrap #wp-calendar #today, #calendar_wrap #wp-calendar #today {
-  background: #1EB48A;
+  background: #b41e41;
 }
 #calendar_wrap #wp-calendar #today, #calendar_wrap #wp-calendar #today a {
   color: #FFF;
@@ -1517,7 +1513,7 @@ margin-top: 0px;
 }
  
 .article-page a:hover{
-	color: #1EB48A;
+	color: #b41e41;
 }
 .article-page p {
 	padding-bottom: 9px;
@@ -1549,7 +1545,7 @@ margin-top: 0px;
 }
 .meta li {
   display: inline-block;
-  color: #1EB48A;
+  color: #62736e;
   margin-right: 15px;
 }
 .meta li.comments {
@@ -1601,7 +1597,7 @@ box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.3);
 #nav-single a {
 	color: #fff;
 	padding: 8px;
-	    background: #1EB48A;
+	    background: #b41e41;
     border: 1px solid #ddd;
 }
 #nav-single a:hover {
@@ -1640,9 +1636,9 @@ border-radius: 1px;
 
 }
 .sidebar .tagcloud a:hover {
-  background: #1EB48A;
+  background: #b41e41;
   color: #fff;
-  border: 1px solid #1EB48A;
+  border: 1px solid #b41e41;
 }
 .sidebar .menu ul li a, .footer .menu ul li a {
   padding-top: 0;
@@ -1671,7 +1667,7 @@ color: #fff;
  }
  
  .sidebar ul li a:hover, .sidebar a.rsswidget:hover {
-  color: #1EB48A;
+  color: #b41e41;
 }
  .sidebar ul li a, .sidebar a.rsswidget {
   color: #222;
@@ -1686,7 +1682,7 @@ color: #fff;
 }
 /* -- sidebar search widget --*/
 .sidebar #search, .sidebar #s {
-  border: 1px solid #1EB48A;
+  border: 1px solid #b41e41;
   border-radius: 4px;
   padding: 7px 10px 7px 32px;
   width: 100%;
@@ -1698,13 +1694,13 @@ color: #fff;
 position: absolute;
 top: 1px;
 right: 1px;
-background: #1EB48A url(../images/pattern-submit.png);
+background: #b41e41 url(../images/pattern-submit.png);
 border-top-right-radius: 4px;
 padding: 6px 13px 7px 13px;
 border-bottom-right-radius: 4px;
 border: 0px;
-border-top: 1px solid #1EB48A;
-border-left: 1px solid #1EB48A;
+border-top: 1px solid #b41e41;
+border-left: 1px solid #b41e41;
 color: #fff;
 width: auto;
 height: inherit;
@@ -1718,22 +1714,13 @@ line-height: 20px;
 	
 }
 
-.sidebar h3:before {
-
-  
-    position: absolute;
-    content: "";
-    height: 4px;
-    background: #1EB48A;
-    width: 90px;
-    bottom: -4px;
-    left: 0px;
  
-}
 
 .sidebar h3 {
-    border-bottom: 4px solid #E5E5E5;
-position: relative;
+    border: 20px solid #E5E5E5;
+    position: relative;
+    text-align: center;
+    padding: 5px;
 }
 
 /* --- Sidebar Ends --- */
@@ -1986,7 +1973,7 @@ font-size: 24px;
 }
 
 
-#calendar_wrap a{color:#1EB48A;}
+#calendar_wrap a{color:#b41e41;}
 
 
 
@@ -2028,8 +2015,7 @@ font-weight: 600;
 
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
 color: #434955;
-background-color: #fafafa;
-    border: 1px solid #f1f1f1;
+ 
 }
 
  
@@ -2071,7 +2057,7 @@ content: '\f053';
 }
 
 .breadcrumb a {
-color: #1EB48A;
+color: #777;
 }
 
 .navbar-inverse .navbar-brand {
@@ -2144,7 +2130,7 @@ padding: 0px 10px;
 }
 
 a.alumntn:hover {
-color:#1EB48A;
+color:#b41e41;
 
 }
 
@@ -2152,12 +2138,12 @@ small.almsmall {
   color: #000;
 }
  .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #1EB48A;
+  background-color: #b41e41;
 }
 
 
 .list-unstyled li i {
-color: #1EB48A;
+color: #b41e41;
  
 } 
 
@@ -2202,7 +2188,7 @@ color: #1EB48A;
     line-height: 25px;
     text-align: center;
     cursor: pointer;
-    background-color: #1EB48A;
+    background-color: #b41e41;
     color: #ffffff;
     opacity: 0.50;
     filter: alpha(opacity=50);
@@ -2235,7 +2221,9 @@ color: #1EB48A;
     right: 50%;
 }
  
-
+.navbar-inverse .navbar-nav>li>a {
+    color: #777;
+}
 
 
 

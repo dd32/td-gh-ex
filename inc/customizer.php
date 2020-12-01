@@ -97,7 +97,7 @@ function aribiz_theme_customizer( $wp_customize ) {
    
    $wp_customize->add_section( 'aribiz_logo_section' , array(
     'title'       => __( 'Basic Setting', 'aribiz' ),
-    'description' => __( 'This Is a Basic Setting Section For Frontpage', 'aribiz' ),
+    'description' => __( 'This Is a Basic Setting Section For Front page', 'aribiz' ),
 ) );
    $wp_customize->add_setting( 'aribiz_logo', array(
         'sanitize_callback' => 'aribiz_sanitize_upload',
@@ -199,9 +199,9 @@ function aribiz_slider_text_boxes_options( $wp_customize ){
 		'two'		=> __( 'Slider 2', 'aribiz' ),
 		 
 	);
-	$wp_customize->add_section( 'aribiz_customizer_slider_text_boxes', array(
-		'title'    => __( 'Slider Setting', 'aribiz' ),
-		'description'    => __( 'You can upload here images for slider', 'aribiz' ),
+	$wp_customize->add_section( 'aribiz_customizer_slider_section_boxes', array(
+		'title'    => __( 'Slider Settings', 'aribiz' ),
+		'description'    => __( 'Upload here images for slider', 'aribiz' ),
 		
 	));
 	$i_priority = 1;
@@ -215,7 +215,7 @@ function aribiz_slider_text_boxes_options( $wp_customize ){
 		$wp_customize->add_control( 
 			new aribiz_sub_title( $wp_customize, 'aribiz_slider_' . $key . '_sub_title', array(
 					'label'		=> $value,
-					'section'   => 'aribiz_customizer_slider_text_boxes',
+					'section'   => 'aribiz_customizer_slider_section_boxes',
 					'settings'  => 'aribiz_slider_' . $key . '_sub_title',
 					'priority' 	=> $i_priority++ 
 				) 
@@ -228,7 +228,7 @@ function aribiz_slider_text_boxes_options( $wp_customize ){
 		$wp_customize->add_control(
 		    new WP_Customize_Upload_Control($wp_customize, 'aribiz_header_slider-'.$key.'-file-upload', array(
 		            'label' => __( 'File Upload', 'aribiz' ),
-		            'section' => 'aribiz_customizer_slider_text_boxes',
+		            'section' => 'aribiz_customizer_slider_section_boxes',
 		            'settings' => 'aribiz_header_slider-'.$key.'-file-upload',
 		            'priority' => $i_priority++
 		        )
@@ -243,7 +243,7 @@ function aribiz_slider_text_boxes_options( $wp_customize ){
 		);
 		$wp_customize->add_control('aribiz_header_slider_'.$key.'_url', array(
 				'label'    => __( 'Slider Title', 'aribiz' ),
-				'section' => 'aribiz_customizer_slider_text_boxes',
+				'section' => 'aribiz_customizer_slider_section_boxes',
 				'settings' => 'aribiz_header_slider_'.$key.'_url',
 				'type' => 'text',
 				'priority' => $i_priority++
@@ -259,7 +259,7 @@ function aribiz_slider_text_boxes_options( $wp_customize ){
 		);
 		$wp_customize->add_control('aribiz_featured_textbox_header_slider_'.$key, array(
 				'label' => __( 'Slider Description', 'aribiz' ),
-				'section' => 'aribiz_customizer_slider_text_boxes',
+				'section' => 'aribiz_customizer_slider_section_boxes',
 				'settings' => 'aribiz_featured_textbox_header_slider_'.$key,
 				'type' => 'textarea',
 				'priority' => $i_priority++
@@ -274,7 +274,7 @@ function aribiz_slider_text_boxes_options( $wp_customize ){
 		$wp_customize->add_control( 
 			new aribiz_footer( $wp_customize, 'aribiz_slider_' . $key . '_footer', array(
 			'label'		=> $value,
-			'section'   => 'aribiz_customizer_slider_text_boxes',
+			'section'   => 'aribiz_customizer_slider_section_boxes',
 			'settings'  => 'aribiz_slider_' . $key . '_footer',
 			'priority' 	=> $i_priority++
 		) ) );
@@ -297,9 +297,9 @@ function servicesText_customizer( $wp_customize ) {
 	);
 	
 	
-    $wp_customize->add_section( 'aribiz_servicesText_section_contact', array(
-	     'title'       => __( 'Services Setting', 'aribiz' ),
-	     'description' => __( 'This is a Services settings section to change the servise section Details.', 'aribiz' ),
+    $wp_customize->add_section( 'aribiz_services_section_con', array(
+	     'title'       => __( 'Services Section Setting', 'aribiz' ),
+	     'description' => __( 'This is a Services settings section to change the service section Details.', 'aribiz' ),
         )
     );
 	
@@ -322,7 +322,7 @@ function servicesText_customizer( $wp_customize ) {
 		$wp_customize->add_control( 
 			new aribiz_sub_title( $wp_customize, 'aribiz_services_' . $key . '_sub_title', array(
 					'label'		=> $value,
-					'section'   => 'aribiz_servicesText_section_contact',
+					'section'   => 'aribiz_services_section_con',
 					'settings'  => 'aribiz_services_' . $key . '_sub_title',
 					'priority' 	=> $i_priority++ 
 				) 
@@ -338,7 +338,7 @@ function servicesText_customizer( $wp_customize ) {
 		);
 		$wp_customize->add_control('aribiz_header_servicesicon_'.$key.'_url', array(
 				'label'    => __( 'Class Name', 'aribiz' ),
-				'section' => 'aribiz_servicesText_section_contact',
+				'section' => 'aribiz_services_section_con',
 				'settings' => 'aribiz_header_servicesicon_'.$key.'_url',
 				'type' => 'text',
 				'priority' => $i_priority++
@@ -353,7 +353,7 @@ function servicesText_customizer( $wp_customize ) {
 		);
 		$wp_customize->add_control('aribiz_header_services_'.$key.'_url', array(
 				'label'    => __( 'Title', 'aribiz' ),
-				'section' => 'aribiz_servicesText_section_contact',
+				'section' => 'aribiz_services_section_con',
 				'settings' => 'aribiz_header_services_'.$key.'_url',
 				'type' => 'text',
 				'priority' => $i_priority++
@@ -371,7 +371,7 @@ function servicesText_customizer( $wp_customize ) {
 		);
 		$wp_customize->add_control('aribiz_featured_textbox_header_services_'.$key, array(
 				'label' => __( 'Services Description', 'aribiz' ),
-				'section' => 'aribiz_servicesText_section_contact',
+				'section' => 'aribiz_services_section_con',
 				'settings' => 'aribiz_featured_textbox_header_services_'.$key,
 				'type' => 'textarea',
 				'priority' => $i_priority++
@@ -386,7 +386,7 @@ function servicesText_customizer( $wp_customize ) {
 		$wp_customize->add_control( 
 			new aribiz_footer( $wp_customize, 'aribiz_services_' . $key . '_footer', array(
 			'label'		=> $value,
-			'section'   => 'aribiz_servicesText_section_contact',
+			'section'   => 'aribiz_services_section_con',
 			'settings'  => 'aribiz_services_' . $key . '_footer',
 			'priority' 	=> $i_priority++
 		) ) );
@@ -414,7 +414,7 @@ function servicesText_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'aribiz_maiN_heading', array(
 			'label'    => __( 'Main Heading', 'aribiz' ),
-			'section' => 'aribiz_servicesText_section_contact',
+			'section' => 'aribiz_services_section_con',
 			'type' => 'text',
 			'priority' => '20',
 		)
@@ -550,9 +550,9 @@ function aribiz_reorder_sections_theme_customizer($wp_customize){
 	 
 	
 	$wp_customize->get_section('static_front_page')->priority = 11;
-	$wp_customize->get_section('aribiz_customizer_slider_text_boxes')->priority = 14;
+	$wp_customize->get_section('aribiz_customizer_slider_section_boxes')->priority = 14;
 	$wp_customize->get_section('aribiz_logo_section')->priority = 15;
-$wp_customize->get_section('aribiz_servicesText_section_contact')->priority = 16;
+$wp_customize->get_section('aribiz_services_section_con')->priority = 16;
  
 }
 add_action('customize_register', 'aribiz_reorder_sections_theme_customizer');
