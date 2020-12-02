@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, grid-layout, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.7
-Tested up to: 5.4.2
-Stable tag: 1.8
+Tested up to: 5.5
+Stable tag: 1.8.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 
 == Changelog ==
+
+= 1.8.1
+* Fixed Home template issue.
 
 = 1.8
 * Implement the Accessibility including skip to content and keyboard navigation.

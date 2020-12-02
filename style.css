@@ -5,10 +5,10 @@ Author: webriti
 Author URI: https://www.webriti.com
 Theme URI: https://webriti.com/arzine-wordpress-page/
 Template: busiprof
-Version: 1.8
+Version: 1.8.1
 Tags: full-width-template, grid-layout, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.7
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -124,4 +124,7 @@ article.sticky{
 
 .post .post-thumbnail a {
     display: inline-block;
+}
+.masonry-content .author a {
+	text-decoration: none;
 }
