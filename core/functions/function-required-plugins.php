@@ -36,9 +36,14 @@ if (!function_exists('anna_lite_required_plugins')) {
 				'slug'      => 'wa-chatbox-manager',
 				'required'  => false,
 			),
-      array(
+			array(
 				'name'      => 'Custom Thank You Page',
 				'slug'      => 'custom-thank-you-page',
+				'required'  => false,
+			),
+			array(
+				'name'      => 'Content Snippet Manager',
+				'slug'      => 'content-snippet-manager',
 				'required'  => false,
 			),
 			array(

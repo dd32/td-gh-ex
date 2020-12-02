@@ -2,7 +2,7 @@
 Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 Requires PHP: 5.3
 Tested up to: 5.5
 License: GPLv3 or later
@@ -22,6 +22,11 @@ Anna Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Anna Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.6 =
+Release date - December, 02 - 2020
+
+* Updated - WooCommerce templates
 
 = 1.2.5 =
 Release date - November, 16 - 2020
