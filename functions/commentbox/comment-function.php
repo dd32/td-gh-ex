@@ -13,7 +13,7 @@ function busiprof_comment( $comment, $args, $depth ) {
 global $comment_data;
 
 //translations
-$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','busiprof');
+$leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','busiprof');
 ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 				

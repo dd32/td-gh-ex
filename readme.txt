@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -52,6 +52,10 @@ Busiprof is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+@version 2.2.5
+1. Implemented "Links within content must be underlined" guideline. 
+2. Resolved comment section error.
 
 @version 2.2.4
 1. Removed translation function from lorum ipsum dummy content.
