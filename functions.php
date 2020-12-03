@@ -1,7 +1,7 @@
 <?php
 /** Theme Name    : Enigma
  * Theme Core Functions and Codes
- */
+*/
 
 /* Get the plugin */
 if ( ! function_exists( 'enigma_theme_is_companion_active' ) ) {

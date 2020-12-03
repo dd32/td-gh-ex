@@ -141,7 +141,6 @@ a:hover {
     font-family: Arimo, Arial, Helvetica, sans-serif
 }
 .dropdown-menu>li>a{
-    display: flex;
     align-items: center;
 }
 .dropdown-menu>li>a:before {

@@ -8,10 +8,17 @@ if ( $page_header == 1 ) {
 } ?>
 <div class="container">
 	<div class="row enigma_blog_wrapper  <?php echo esc_attr($class); ?>">
-		<div class="col-md-8">
+		<?php if (!is_page_template('fullwidth.php')) { ?>
+			<div class="col-md-8">
+		<?php }else{ ?>
+			<div class="col-md-12">
+		<?php } ?>
 			<?php get_template_part('template-parts/post','page'); ?>	
+		
 		</div>
-		<?php get_sidebar(); ?>	
+		<?php if (!is_page_template('fullwidth.php')) { ?>
+			<?php get_sidebar(); ?>	
+		<?php } ?>
 	</div>
 </div>	
 <?php get_footer(); ?>

@@ -37,8 +37,8 @@ function enigma_scripts() {
         wp_enqueue_script('waypoints', get_template_directory_uri() .'/js/waypoints.js', array('jquery'), true, true );
         wp_enqueue_script('enigma-scroll', get_template_directory_uri() .'/js/scroll.js', array('jquery'), true, true );
         wp_enqueue_script( 'enigma-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), true, true );
-         wp_enqueue_script('enigma-theme-script', get_template_directory_uri() .'/js/enigma_theme_script.js', array('jquery'), true, true );
-         wp_enqueue_script('enigma-menu', get_template_directory_uri() .'/js/menu.js', array('jquery'), true, true );
+        wp_enqueue_script('enigma-theme-script', get_template_directory_uri() .'/js/enigma_theme_script.js', array('jquery'), true, true );
+        wp_enqueue_script('enigma-menu', get_template_directory_uri() .'/js/menu.js', array('jquery'), true, true );
        
         if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 

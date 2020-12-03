@@ -38,31 +38,31 @@
                             <?php
                             $fb_link = get_theme_mod('fb_link');
                             if (!empty ($fb_link)) { ?>
-                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Facebook",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('fb_link')); ?>"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Facebook",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('fb_link')); ?>"><i class="fab fa-facebook-f"></i></a></li>
                             <?php }
                             $twitter_link = get_theme_mod('twitter_link');
                             if (!empty ($twitter_link)) { ?>
-                                <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Twitter",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('twitter_link')); ?>"><i class="fab fa-twitter"></i></a></li>
+                                <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Twitter",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('twitter_link')); ?>"><i class="fab fa-twitter"></i></a></li>
                             <?php }
                             $linkedin_link = get_theme_mod('linkedin_link');
                             if (!empty ($linkedin_link)) { ?>
-                                <li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Linkedin",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('linkedin_link')); ?>"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Linkedin",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('linkedin_link')); ?>"><i class="fab fa-linkedin-in"></i></a></li>
                             <?php }
                             $youtube_link = get_theme_mod('youtube_link');
                             if (!empty ($youtube_link)) { ?>
-                                <li class="youtube" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Youtube",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('youtube_link')); ?>"><i class="fab fa-youtube"></i></a></li>
+                                <li class="youtube" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("Youtube",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('youtube_link')); ?>"><i class="fab fa-youtube"></i></a></li>
                             <?php }
                             $instagram = get_theme_mod('instagram');
                             if (!empty ($instagram)) { ?>
-                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("instagram",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('instagram')); ?>"><i class="fab fa-instagram"></i></a></li>
+                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("instagram",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('instagram')); ?>"><i class="fab fa-instagram"></i></a></li>
                             <?php }
                             $vk_link = get_theme_mod('vk_link');
                             if (!empty ($vk_link)) { ?>
-                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("vk",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('vk_link')); ?>"><i class="fab fa-vk"></i></a></li>
+                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("vk",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('vk_link')); ?>"><i class="fab fa-vk"></i></a></li>
                             <?php }
                             $qq_link = get_theme_mod('qq_link');
                             if (!empty ($qq_link)) { ?>
-                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("qq",'enigma') ?>"><a href="<?php echo esc_url(get_theme_mod('qq_link')); ?>"><i class="fab fa-qq"></i></a></li>
+                                <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php esc_attr_e("qq",'enigma') ?>"><a target="_blank" href="<?php echo esc_url(get_theme_mod('qq_link')); ?>"><i class="fab fa-qq"></i></a></li>
                             <?php } ?>
                         </ul>
                     </div>

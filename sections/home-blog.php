@@ -49,7 +49,7 @@
                             <?php if (get_the_tag_list() != '') { ?>
                                 <p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
                             <?php } ?>
-                             <p><?php the_excerpt(); ?></p>
+                            <?php the_excerpt(); ?>
                             <a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i>
                                 <?php 
                                 $read_more = get_theme_mod('read_more', __('Read More','enigma'));
