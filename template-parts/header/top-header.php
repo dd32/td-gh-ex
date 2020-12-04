@@ -2,7 +2,7 @@
 /**
  * The template part for top header
  *
- * @package Appointment Booking 
+ * @package Appointment Booking
  * @subpackage appointment-booking
  * @since appointment-booking 1.0
  */
@@ -12,12 +12,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-4">
-        <?php if( get_theme_mod('appointment_booking_email_address_text') != '' || get_theme_mod('appointment_booking_email_address') != '' ){ ?>
+        <?php if( get_theme_mod('appointment_booking_email_address') != ''){ ?>
           <p class="py-2 py-lg-3 py-md-3 mb-0"><i class="fas fa-envelope-open mr-2"></i><?php echo esc_html(get_theme_mod('appointment_booking_email_address',''));?></p>
         <?php } ?>
       </div>
       <div class="col-lg-3 col-md-3">
-        <?php if( get_theme_mod('appointment_booking_phone_number_text') != '' || get_theme_mod('appointment_booking_phone_number') != '' ){ ?>
+        <?php if( get_theme_mod('appointment_booking_phone_number') != ''){ ?>
           <p class="py-2 py-lg-3 py-md-3 mb-0"><i class="fas fa-phone mr-2"></i><?php echo esc_html(get_theme_mod('appointment_booking_phone_number',''));?></p>
         <?php } ?>
       </div>
