@@ -585,6 +585,18 @@ ul.wc-block-grid__products {
   padding: 0;
 }
 
+.woocommerce-cart table.shop_table thead th {
+  border-bottom: 0;
+}
+
+.woocommerce-cart table.shop_table {
+  border: 1px solid #ebebeb;
+}
+
+.woocommerce-cart table.shop_table td {
+  border-top: 1px solid #ebebeb;
+}
+
 .woocommerce .widget_shopping_cart .cart_list li, .woocommerce.widget_shopping_cart .cart_list li {
   padding-top: 7px;
 }
