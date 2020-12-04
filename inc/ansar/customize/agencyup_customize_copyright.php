@@ -1,7 +1,7 @@
 <?php // Footer copyright section 
 function agencyup_footer_copyright( $wp_customize ) {
 	$wp_customize->add_panel('agencyup_copyright', array(
-		'priority' => 4,
+		'priority' => 5,
 		'capability' => 'edit_theme_options',
 		'title' => __('Footer Settings', 'agencyup'),
 	) );
@@ -218,12 +218,7 @@ function agencyup_footer_copyright( $wp_customize ) {
 
 
 
-	if (isset($wp_customize->selective_refresh)) {
-    $wp_customize->selective_refresh->add_partial('agencyup_footer_fb_link', array(
-                'selector'        => '.bs-social',
-                'render_callback' => 'agencyup_customize_partial_agencyup_footer_fb_link',
-        ));
-    }
+	
 	
 			
 	if ( ! function_exists( 'agencyup_sanitize_select' ) ) :
