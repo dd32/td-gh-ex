@@ -23,11 +23,11 @@ $config = array(
 		),
 		'demo_url' => array(
 			'text' => esc_html__( 'View Demo','best-charity' ),
-			'url'  => 'https://786themes.com/demo/bestcharity/',
+			'url'  => 'https://themefie.com/wp/bestcharitypro/',
 		),
 		'documentation_url' => array(
 			'text'   => esc_html__( 'Documentation','best-charity' ),
-			'url'    => 'http://786themes.com/doc/best-charity.pdf',
+			'url'    => 'https://www.themefie.com/docs/best-charity.pdf',
 		),
 		'upgrade_url' => array(
 			'text'   => esc_html__( 'Upgrade to Pro','best-charity' ),
@@ -49,7 +49,7 @@ $config = array(
 			'title'               => esc_html__( 'Theme Documentation', 'best-charity' ),
 			'text'                => esc_html__( 'Find step by step instructions to setup theme easily.', 'best-charity' ),
 			'button_label'        => esc_html__( 'View documentation', 'best-charity' ),
-			'button_link'         => 'http://786themes.com/doc/best-charity.pdf',
+			'button_link'         => 'https://www.themefie.com/docs/best-charity.pdf',
 			'is_button'           => true,
 			'recommended_actions' => false,
 			'is_new_tab'          => true,
@@ -115,7 +115,7 @@ $config = array(
 			'icon'         => 'dashicons dashicons-book-alt',
 			'text'         => esc_html__( 'Kindly check our theme documentation for detailed information and video instructions.', 'best-charity' ),
 			'button_label' => esc_html__( 'View Documentation', 'best-charity' ),
-			'button_link'  => 'http://786themes.com/doc/best-charity.pdf',
+			'button_link'  => 'https://www.themefie.com/docs/best-charity.pdf',
 			'is_button'    => true,
 			'is_new_tab'   => true,
 		),
