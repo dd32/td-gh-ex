@@ -88,7 +88,9 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 							$compressed = array_filter( $opts, 'weaverx_optlen' ); // filter out all null options ( strlen == 0 )
 							update_option( 'weaverx_settings_backup', $compressed );
 						}
+						wp_redirect( home_url( '/wp-admin/customize.php?return=%2Fwp-admin%2F' ) );
 					}
+
 				}
 			}
 		}
@@ -205,6 +207,7 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 endif;
 
 
+
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'WeaverX_Restore_WX_Settings' ) ) :
 
 	class WeaverX_Restore_WX_Settings extends WP_Customize_Control {
@@ -235,25 +238,20 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'WeaverX_Restore_
 					<li>&bull; A <em>.json</em> backup file will restore theme settings from an <em>Absolute Weaver</em> file.</li></ul>', 'weaver-xtreme' ) );
 			?>
 			<hr/>
-			<form>
-				<div class="wvrx-settings-restore-controls">
+			<div class="wvrx-settings-restore-controls">
 
 				<input type="file" name="wvrx-settings-restore-file" class="wvrx-settings-restore-file"/>
 
-					<?php wp_nonce_field( 'wvrx_restore', 'wvrx-settings-restore-nonce' ); ?>
-				</div>
-				<div class="wvrx-uploading"><?php echo esc_html__( 'Uploading...', 'weaver-xtreme' ); ?></div>
-				<input type="button" class="button-primary" name="wvrx_restore" value="<?php echo esc_attr__( 'Upload theme/backup/wxall settings', 'weaver-xtreme' ); ?>"/>
-			</form>
+				<?php wp_nonce_field( 'wvrx_restore', 'wvrx-settings-restore' ); ?>
+			</div>
+			<div class="wvrx-uploading"><?php echo esc_html__( 'Uploading...', 'weaver-xtreme' ); ?></div>
+			<input type="button" class="button-primary" name="wvrx_restore" value="<?php echo esc_attr__( 'Upload theme/backup/wxall settings', 'weaver-xtreme' ); ?>"/>
 
 			<br/>
 			<hr/><h3>
 				<strong><?php _e( 'Restore theme from settings saved in the WordPress database.', 'weaver-xtreme' ); ?></strong>
 			</h3>
-			<form>
-				<input class="button-primary" type="submit" name="wvrx_restore_fromdb" value="<?php _e( 'Restore Settings from WP Database', 'weaver-xtreme' /*adm*/ ); ?>"/>
-				<?php wp_nonce_field( 'wvrx_restore_fromdb', 'wvrx_restore_fromdb_nonce' ); ?>
-			</form>
+			<input class="button-primary" type="submit" name="wvrx_restore_fromdb" value="<?php _e( 'Restore Settings from WP Database', 'weaver-xtreme' /*adm*/ ); ?>"/>
 
 			<br/>
 			<?php
@@ -267,50 +265,46 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'WeaverX_Restore_
 		}
 
 		static public function process_restore( $wp_customize ) {
-
 			if ( current_user_can( 'edit_theme_options' ) ) {
-				if ( isset( $_REQUEST['wvrx-settings-restore-nonce'] ) ) {
+				if ( isset( $_REQUEST['wvrx-settings-restore'] ) ) {
 					self::_restore( $wp_customize );
 				}
-				if ( isset( $_REQUEST['wvrx_restore_fromdb_nonce'] ) ) {
-					self::_restore_fromdb( $wp_customize );
-				}
 			}
-		}
-
-		static private function _restore_fromdb( $wp_customize ) {
-
-			if ( ! wp_verify_nonce( $_REQUEST['wvrx_restore_fromdb_nonce'], 'wvrx_restore_fromdb' ) ) {
-				unset( $_POST['wvrx_restore_fromdb'] );
-				unset( $_REQUEST['wvrx_restore_fromdb'] );
-
-				return;
-			}
-			// User wants to restore settings from the database
-
-			$opts = get_option( WEAVER_SETTINGS_NAME . '_backup', false );
-			if ( ! $opts ) {
-				weaverx_alert( esc_html__( 'No options have been saved in the WP database.', 'weaver-xtreme' ) );
-			} else {
-				update_option( WEAVER_SETTINGS_NAME, $opts );
-				weaverx_clear_opt_cache();
-				weaverx_alert( esc_html__( 'Restoring settings from WP database.', 'weaver-xtreme' ) );
-			}
-			wp_redirect( home_url( '/wp-admin/customize.php?return=%2Fwp-admin%2F' ) );
-
-			return;
 		}
 
 		static private function _restore( $wp_customize ) {
-			// Make sure we have a valid nonce.
-			if ( ! wp_verify_nonce( $_REQUEST['wvrx-settings-restore-nonce'], 'wvrx_restore' ) ) {
-				unset( $_POST['wvrx-settings-restore-nonce'] );
-				unset( $_REQUEST['wvrx-settings-restore-nonce'] );
+			// Make sure we have a valid none
+
+			if ( ! wp_verify_nonce( $_REQUEST['wvrx-settings-restore'], 'wvrx_restore' ) ) {
+				unset( $_POST['wvrx-settings-restore'] );
+				unset( $_REQUEST['wvrx-settings-restore'] );
 				return;
 			}
-			unset( $_POST['wvrx-settings-restore-nonce'] );
-			unset( $_REQUEST['wvrx-settings-restore-nonce'] );
+			unset( $_POST['wvrx-settings-restore'] );
+			unset( $_REQUEST['wvrx-settings-restore'] );
 
+			if ( false && isset( $_REQUEST['wvrx_restore_fromdb'] ) ) {
+				// User wants to restore settings from the database
+
+				unset( $_REQUEST['wvrx-upload-subtheme'] );  // unset upload - issue with sharing nonce
+				unset( $_POST['wvrx-upload-subtheme'] );
+
+				unset( $_POST['wvrx_restore_fromdb'] );
+				unset( $_REQUEST['wvrx_restore_fromdb'] );
+
+
+				$opts = get_option( 'weaverx_settings_backup', false );
+				if ( ! $opts ) {
+					weaverx_alert( esc_html__( 'No options have been saved in the WP database.', 'weaver-xtreme' ) );
+				} else {
+
+					update_option( 'weaverx_settings', $opts );
+					weaverx_clear_opt_cache();
+					weaverx_alert( esc_html__( 'Restoring settings from WP database.', 'weaver-xtreme' ) );
+				}
+
+				return;
+			}
 
 			// OTHERWISE User is uploading a settings file.
 
@@ -468,6 +462,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 				} else {
 					$new_cache['add_css'] = '';  // wipe previous settings
 				}
+
 
 				$new_cache['style_date'] = date( 'Y-m-d-H:i:s' );
 
@@ -699,6 +694,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'WeaverX_Load_WX_
 		static public function process_load_theme( $wp_customize ) {
 			if ( current_user_can( 'edit_theme_options' ) ) {
 				if ( isset( $_REQUEST['wvrx-upload-subtheme'] ) ) {
+					upload_subthemex();
 					self::_load_theme( $wp_customize );
 				}
 

@@ -7,8 +7,6 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 	function weaverx_customizer_define_layout_sections() {
 		$panel = 'weaverx_layout';
 		$layout_sections = array();
-		$thumbs = weaverx_relative_url( '/admin-core/customizer/sections/images/' );
-
 
 		/* ==================================== Core Site Layout and Styling (obsolete) ============================== */
 
@@ -144,7 +142,7 @@ function weaverx_layout_fullwidth_opts() {
 
 	$opts['layout-line-1'] = weaverx_cz_line();
 
-	if ( weaverx_options_level() >= WEAVERX_LEVEL_STANDARD ) {
+	if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {
 
 		$opts['layout-core-trad-width'] = weaverx_cz_group_title( __( 'Other Site Width Layouts', 'weaver-xtreme' ) );
 
@@ -207,8 +205,8 @@ function weaverx_layout_fullwidth_opts() {
 
 		/* ------------------------ FULL WIDTH CONTENT ----------------------- */
 
-		$opts['fullwidth-expand-content'] = weaverx_cz_group_title( __( 'Full Width Content Area', 'weaver-xtreme' ),
-			esc_html__( 'The Content Area contains page content, as well as posts.', 'weaver-xtreme' )
+		$opts['fullwidth-expand-content'] = weaverx_cz_group_title( __( 'Full Width Container Area', 'weaver-xtreme' ),
+			esc_html__( 'The Container Area contains the Info Bar, page content, posts, and sidebars.', 'weaver-xtreme' )
 		);
 
 
@@ -261,7 +259,7 @@ function weaverx_layout_fullwidth_opts() {
 			__( 'Checking this option will automatically include the other Footer Area Stretch options as well.', 'weaver-xtreme' )
 		);
 
-		$opts['weaverx_cz_color_plus'] = weaverx_cz_color_plus( 'weaverx_cz_color_plus',
+		$opts['footer_extend_bgcolor'] = weaverx_cz_color_plus( 'footer_extend_bgcolor',
 			__( 'Footer Full-width BG color', 'weaver-xtreme' ),
 			__( 'Extend this BG color to full theme width on Desktop View.', 'weaver-xtreme' ),
 			'refresh'

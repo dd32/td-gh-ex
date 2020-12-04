@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
-Tested up to: 5.5
-Stable tag: 4.4.0.1
+Tested up to: 5.6
+Stable tag: 4.4.1
 
 == Description ==
 
@@ -684,3 +684,13 @@ Fix: PwP paging links for Previous/Next
 
 = Version 4.4.0.1 =
 * Fix: woocommerce-support.php had incorrect filename.
+
+= Version 4.4.1 =
+* Update: WP 5.6 compatibility
+* Fix: link to readme.txt file
+* Fix: "Search for:" translation string
+* Fix: PHP compatibility issues (including page2col template)
+* Fix: Change back to default error message display
+* Fix: Handle if a menu set to 'fix to top on scroll' when no menu is defined
+* New: Save/Restore to WP Database added to Customizer Admin -> Save/Restore menus (same as Theme Support functionality)
+* New: Some new compatibility features for upcoming Weaver Xtreme V5.

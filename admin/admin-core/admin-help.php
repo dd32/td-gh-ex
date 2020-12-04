@@ -80,7 +80,7 @@ function weaverx_admin_help() {
 				<em>Please scroll to the end of the release notes to view latest changes.</em>
 			</p>
 			<?php
-			$notes = weaverx_relative_url( '' ) . 'readme.txt';
+			$notes = get_theme_file_uri( '/readme.txt' )
 			?>
 			<p>
 			<h3><a href="<?php echo $notes; ?>" target="_blank">Click here to view most recent release notes.</a></h3>

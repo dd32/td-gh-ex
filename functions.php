@@ -184,7 +184,8 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 
 
 		// Report all errors except E_NOTICE
-		error_reporting( E_ALL & ~E_WARNING );
+		if ( WEAVERX_DEV_MODE )
+			error_reporting( E_ALL & ~E_WARNING );
 
 		// We'll be using post thumbnails for custom header images on posts and pages.
 		// We want them to be the size of the header image that we just defined

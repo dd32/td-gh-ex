@@ -312,14 +312,8 @@ asking if you want to leave this page or stay. If you leave, you will not save t
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Restore_WX_Settings',
-							'label'        => esc_html__( 'Restore settings from file on your computer', 'weaver-xtreme' ),
-							'description'  => weaverx_filter_text( __( 'You can restore the saved theme settings from a file on your computer.
-Select a theme <em>.wxt</em>, backup <em>.wxb</em>, or full settings <em>.wxall</em> file to upload, then click the Upload.
-<ul>
-<li>&bull; A <em>.wxt</em> theme file will restore only theme settings, leaving &diams; settings intact.</li>
-<li>&bull; A <em>.wxb</em> backup file will reset all settings.</li>
-<li>&bull; A <em>.wxall</em> file will reset all settings, including <em>Weaver Xtreme Plus</em> shortcode and other settings.</li>
-<li>&bull; A <em>.json</em> backup file will restore theme settings from an <em>Absolute Weaver</em> file.</li></ul>', 'weaver-xtreme' ) ),
+							'label'        => esc_html__( 'Restore Settings', 'weaver-xtreme' ),
+							'description'  => esc_html__( 'Restore settings you have saved to a file or the WordPress Database.', 'weaver-xtreme'),
 						),
 					),
 

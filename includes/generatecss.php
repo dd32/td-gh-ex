@@ -302,9 +302,8 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 
 	if ( weaverx_getopt( 'fadebody_bg' ) ) {
 		weaverx_f_write( $sout, sprintf( "body {background-image: url( %s ); background-attachment: scroll; background-repeat: repeat-x;}\n",
-			weaverx_relative_url( 'assets/images/gr.png' ) ) );
+			get_theme_file_uri( '/assets/images/gr.png' ) ) );
 	}
-
 
 // =========================== HEADER OPTIONS ===============================
 

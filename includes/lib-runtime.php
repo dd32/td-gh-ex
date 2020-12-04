@@ -942,7 +942,7 @@ function weaverx_allow_multisite() {
 function weaverx_help_link( $link, $info, $alt_label = '', $echo = true ) {
 	/*. '<img class="entry-cat-img" src="' . esc_url( $t_dir . 'assets/images/help-1.png' ) . '" style="position:relative; top:4px; padding-left:4px;" title="Click for help" alt="Click for help" /> */
 
-	$t_dir = weaverx_relative_url( '' ) . 'help/' . $link;
+	$t_dir = get_theme_file_uri( 'help/' . $link );
 
 	$alt_trans = $link;
 
@@ -1016,7 +1016,7 @@ function weaverx_compact_link( $check = '' ) {
 		return;
 	}
 
-	$link_img = weaverx_relative_url( '' ) . 'assets/images/expand.png';
+	$link_img = get_theme_file_uri( '/assets/images/expand.png' );
 	?>
 	<div><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark">
 			<img src="<?php echo esc_url( $link_img ); ?>"/></a></div>

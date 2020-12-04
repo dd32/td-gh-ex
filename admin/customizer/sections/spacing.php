@@ -1672,7 +1672,7 @@ function weaverx_controls_spacing_sidebars() {
 	$opts['top_width_int'] = weaverx_cz_range_float(
 		__( 'Top Widget Areas Width (%)', 'weaver-xtreme' ),
 		__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme' ),
-		25.,
+		0,
 		array(
 			'min'  => 0,
 			'max'  => 100,
@@ -1766,13 +1766,13 @@ function weaverx_controls_spacing_sidebars() {
 
 	// Bottom Widget Areas
 
-	$opts['spacing-bot-widget-heading'] = weaverx_cz_group_title( __( 'Top Widget Areas', 'weaver-xtreme' ),
-		esc_html__( 'Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) );
+	$opts['spacing-bot-widget-heading'] = weaverx_cz_group_title( __( 'Bottom Widget Areas', 'weaver-xtreme' ),
+		esc_html__( 'Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) );
 
 	$opts['bottom_width_int'] = weaverx_cz_range_float(
 		__( 'Bottom Widget Areas Width (%)', 'weaver-xtreme' ),
 		__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme' ),
-		25.,
+		0,
 		array(
 			'min'  => 0,
 			'max'  => 100,

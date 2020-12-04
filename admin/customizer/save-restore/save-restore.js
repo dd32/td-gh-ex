@@ -6,7 +6,9 @@
 		{
 			$( 'input[name=wvrx_save]' ).on( 'click', WVRXsr._export );
 			$( 'input[name=wvrx_save_all]' ).on( 'click', WVRXsr._exportall );
+			$( 'input[name=wvrx_save_todb]' ).on( 'click', WVRXsr._exporttodb );
 			$( 'input[name=wvrx_restore]' ).on( 'click', WVRXsr._import );
+			$( 'input[name=wvrx_restore_fromdb]' ).on( 'click', WVRXsr._restorefromdb );
 			$( 'input[name=wvrx_save_xplus]' ).on( 'click', WVRXsr._exportxplus );
 			$( 'input[name=wvrx_select_subtheme]' ).on( 'click', WVRXsr._loadtheme );
 			$( 'input[name=wvrx_cust_level_beginner]' ).on( 'click', WVRXsr._levelbeg );
@@ -22,6 +24,16 @@
 		_exportall: function()
 		{
 			window.location.href = WVRXConfig.customizerURL + '?wvrx_save_all=' + WVRXConfig.exportNonce;
+		},
+
+		_exporttodb: function()
+		{
+			window.location.href = WVRXConfig.customizerURL + '?wvrx_save_todb=' + WVRXConfig.exportNonce;
+		},
+
+		_restorefromdb: function()
+		{
+			window.location.href = WVRXConfig.customizerURL + '?wvrx_restore_fromdb=' + WVRXConfig.exportNonce;
 		},
 
 		_exportxplus: function()

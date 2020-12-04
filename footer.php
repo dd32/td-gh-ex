@@ -86,7 +86,7 @@ echo weaverx_schema( 'footer' ); ?>>
 			$copy = '&copy;' . $yearw . ' - <a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .
 			        '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
 		}
-		// $copy has already been escaped. It might contain user defined HTML tags, and does not need more sanitizing here.
+
 		echo wp_kses_post( apply_filters( 'weaverx_copyright', $copy ) );
 		?>
 		</span> <!-- #site-info -->

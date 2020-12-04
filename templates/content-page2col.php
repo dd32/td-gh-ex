@@ -52,13 +52,14 @@ weaverx_fi( 'page', 'post-pre' );
 				}
 				$columns[ $i ] = '<div class="cf content-2-col-' . $coldiv . '">' . $columns[ $i ] . '</div>' . $break_cols;
 			}
-			$content = join( $columns, "\n" );
+			$content = implode( "\n", $columns );
 		} else {
 			// this page does not have dynamic columns
 			$content = wpautop( $content );
 		}
 		// remove any left over empty <p> tags
 		$content = str_replace( '<p></p>', '', $content );
+		$content = str_replace( '-right"><br />', '-right"><p>', $content );
 		echo $content;
 
 		weaverx_fi( 'page', 'content-bottom' );

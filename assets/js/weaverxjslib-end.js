@@ -635,7 +635,19 @@ jQuery(function ($) {		// wrapper for jQuery utils
 	.wvrx-menu-container.wvrx-fixonscroll {background-color:rgba(100,200,200,.8);padding-top:10px;padding-bottom:10px;}
 	*/
 
+// If scroll-fix checked for both menus, but menus don't exist for one or the other
+
+	if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll == 'scroll-fix') ) {
+		if (! $('#nav-primary').length ) {
+			wvrxOpts.primaryScroll = 'none';
+		}
+		if (! $('#nav-secondary').length ) {
+			wvrxOpts.secondaryScroll = 'none';
+		}
+	}   // fix if a menu is not actually defined
+
 //Primary Only
+
 	if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'scroll-fix') && ($('#nav-primary').length)) {
 		$(window).scroll(function () {
 			var wvrxAdminOffset = 0; //initialize offset for admin bar

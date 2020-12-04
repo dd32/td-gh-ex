@@ -215,7 +215,7 @@ function do_weaverx_admin_saverestore() {
 		echo weaverx_filter_text( __( 'The <em>Weaver Xtreme Theme Support Plugin</em> provides the full set of theme Save/Restore options.
 Please open the <em>Appearance &rarr; Recommended Plugins</em> menu or go to WordPress.com to install this plugin.', 'weaver-xtreme' ) );
 		echo '</p>';
-		//$t_dir = weaverx_relative_url( '' ) . 'assets/images/core-subthemes.jpg';
+		//$t_dir = get_theme_file_uri( '/assets/images/core-subthemes.jpg');
 		//echo '<img style="margin-left:5%;" src="' . $t_dir . '" />';
 	} else {
 		do_action( 'weaverx_admin_saverestore' );
@@ -232,7 +232,7 @@ function do_weaverx_admin_subthemes() {
 options interface which gives you even more ways to customize your site design.
 Please open the <em>Appearance &rarr; Recommended Plugins</em> menu or go to WordPress.com to install this plugin.', 'weaver-xtreme' ) );
 		echo '</p>';
-		$t_dir = weaverx_relative_url( '' ) . 'assets/images/core-subthemes.jpg';
+		$t_dir = get_theme_file_uri( 'assets/images/core-subthemes.jpg' );
 		echo '<img style="margin-left:5%;" src="' . $t_dir . '" />';
 	} else {
 		do_action( 'weaverx_admin_subthemes' );
@@ -249,7 +249,7 @@ function do_weaverx_admin_mainopts() {
 options interface which gives you even more ways to customize your site design.
 Please open the <em>Appearance &rarr; Recommended Plugins</em> menu or go to WordPress.com to install this plugin.', 'weaver-xtreme' ) );
 		echo '</p>';
-		$t_dir = weaverx_relative_url( '' ) . 'assets/images/legacy-options.jpg';
+		$t_dir = get_theme_file_uri( '/assets/images/legacy-options.jpg' );
 		echo '<img style="margin-left:5%;" src="' . $t_dir . '" />';
 	} else {
 		do_action( 'weaverx_admin_mainopts' );

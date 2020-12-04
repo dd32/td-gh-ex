@@ -24,7 +24,7 @@ if ( ! function_exists( 'weaverx_customizer_define_custom_sections' ) ) :
 			$section->title       = __( 'Additional CSS - WP Setting', 'weaver-xtreme' );
 			$section->priority    = 12000;    // Set Static Front Page section priority
 			$cur_des              = $section->description;
-			$section->description = __( 'This is the standard WordPress Additional CSS option. We recommend the Weaver Xtreme Global Custom CSS or per area CSS.', 'weaver-xtreme' ) . '<br />' . $cur_des;
+			$section->description = __( 'NOT RECOMMENDED! The standard WordPress "Additional CSS" rules defined here will NOT be saved with your Weaver Xtreme settings. If needed for some specialized circumstances, the "Additional CSS" rules are preserved across all Weaver Xtreme subthemes and settings versions on an individual site, but we suggest always using the "Global Custom CSS" option above.', 'weaver-xtreme' ) . '<br />' . $cur_des;
 		}
 
 		if ( weaverx_options_level() >= WEAVERX_LEVEL_ADVANCED ) {        // show if advanced
