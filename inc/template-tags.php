@@ -15,7 +15,7 @@ function advance_blogging_the_attached_image() {
 	$post                = get_post();
 	$attachment_size     = apply_filters( 'advance_blogging_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url = wp_get_attachment_url();
-	$attachment_ids = get_posts( array(
+	$attachment_ids 	 = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
 		'numberposts'    =>  1,
@@ -48,6 +48,8 @@ function advance_blogging_the_attached_image() {
 		esc_url( $next_attachment_url ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
+
+	wp_reset_postdata();
 }
 endif;
 

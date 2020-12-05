@@ -21,6 +21,7 @@ function advance_blogging_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
@@ -297,6 +298,7 @@ function advance_blogging_scripts() {
 	wp_enqueue_style( 'advance-blogging-basic-style', get_stylesheet_uri() );
 	wp_style_add_data( 'advance-blogging-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome-all.css' );
+	wp_enqueue_style( 'block-style', get_template_directory_uri().'/css/block-style.css' );	
 
 	// Paragraph
 	    $advance_blogging_paragraph_color = get_theme_mod('advance_blogging_paragraph_color', '');

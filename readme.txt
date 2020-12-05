@@ -1,10 +1,10 @@
 === Advance Blogging WordPress Theme ===
 Contributors: ThemesCaliber
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, wide-blocks, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, flexible-header, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, news
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, block-styles, wide-blocks, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, flexible-header, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, news
 Requires at least: 5.0
 Tested up to: 5.5.3
 Requires PHP: 7.2.14
-Stable tag: 0.8.4
+Stable tag: 0.8.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,7 +12,7 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 
 == Description ==
 
-Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, portfolios, craft blog, travel journals, personal blogs, and writers are just few of them. You can use this theme for building magazine website, news website landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, left sidebar, background etc.You can also set featured images to enhance your article. You can translate this theme into different languages such as Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese.
+Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology, author, editor,  blog, fashion blog, travel journals, health blog, travel blog, photography blog, portfolios, craft blog are just few of them. You can use this theme for building magazine website, news website landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc.You can also set featured images to enhance your article. You can translate this theme into different languages such as Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese.
 
 == Changelog ==
 
@@ -180,6 +180,11 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 = 0.8.4 =
 * Added Wide Block tag in theme.
 * Resolved some errors.
+
+= 0.8.5 =
+* Added block style css in theme.
+* Added esc_attr in get_search_query().
+* Added wp_reset_postdata() in template-tags.php.
 
 == Resources ==
 
