@@ -6,7 +6,7 @@
 /**
  * The current version of the theme.
  */
-define( 'TTFMAKE_VERSION', '1.9.3' );
+define( 'TTFMAKE_VERSION', '1.9.30' );
 
 /**
  * The minimum version of WordPress required for Make.
@@ -42,6 +42,7 @@ do_action( 'make_api_loaded', $Make );
 // Template tags
 require_once get_template_directory() . '/inc/template-tags.php';
 
+if ( ! function_exists( 'Make' ) ) :
 /**
  * Get the global Make API object.
  *
@@ -63,6 +64,7 @@ function Make() {
 
 	return $Make;
 }
+endif;
 
 /**
  * Add or update a choice set.
@@ -391,4 +393,131 @@ function make_add_style_rule( $args ) {
 	}
 
 	Make()->style()->css()->add( $args );
+}
+
+/**
+ *
+ * Suggest HappyForms
+ *
+ */
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'make_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function make_register_required_plugins() {
+	$plugins = array(
+		array(
+			'name' => 'HappyForms',
+			'slug' => 'happyforms',
+			'required' => false,
+			'is_callable' => 'HappyForms',
+		),
+	);
+
+	$config = array(
+		'id'           => 'make',                  // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+
+		/*
+		'strings'      => array(
+			'page_title'                      => __( 'Install Required Plugins', 'make' ),
+			'menu_title'                      => __( 'Install Plugins', 'make' ),
+			/* translators: %s: plugin name. * /
+			'installing'                      => __( 'Installing Plugin: %s', 'make' ),
+			/* translators: %s: plugin name. * /
+			'updating'                        => __( 'Updating Plugin: %s', 'make' ),
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'make' ),
+			'notice_can_install_required'     => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'This theme requires the following plugin: %1$s.',
+				'This theme requires the following plugins: %1$s.',
+				'make'
+			),
+			'notice_can_install_recommended'  => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'This theme recommends the following plugin: %1$s.',
+				'This theme recommends the following plugins: %1$s.',
+				'make'
+			),
+			'notice_ask_to_update'            => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
+				'make'
+			),
+			'notice_ask_to_update_maybe'      => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'There is an update available for: %1$s.',
+				'There are updates available for the following plugins: %1$s.',
+				'make'
+			),
+			'notice_can_activate_required'    => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'The following required plugin is currently inactive: %1$s.',
+				'The following required plugins are currently inactive: %1$s.',
+				'make'
+			),
+			'notice_can_activate_recommended' => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'The following recommended plugin is currently inactive: %1$s.',
+				'The following recommended plugins are currently inactive: %1$s.',
+				'make'
+			),
+			'install_link'                    => _n_noop(
+				'Begin installing plugin',
+				'Begin installing plugins',
+				'make'
+			),
+			'update_link' 					  => _n_noop(
+				'Begin updating plugin',
+				'Begin updating plugins',
+				'make'
+			),
+			'activate_link'                   => _n_noop(
+				'Begin activating plugin',
+				'Begin activating plugins',
+				'make'
+			),
+			'return'                          => __( 'Return to Required Plugins Installer', 'make' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'make' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'make' ),
+			/* translators: 1: plugin name. * /
+			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'make' ),
+			/* translators: 1: plugin name. * /
+			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'make' ),
+			/* translators: 1: dashboard link. * /
+			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'make' ),
+			'dismiss'                         => __( 'Dismiss this notice', 'make' ),
+			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'make' ),
+			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'make' ),
+
+			'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
+		),
+		*/
+	);
+
+	tgmpa( $plugins, $config );
 }

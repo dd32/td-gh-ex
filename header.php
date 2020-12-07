@@ -10,6 +10,11 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+		<?php if ( function_exists( 'wp_body_open' ) ) {
+			wp_body_open();
+		} else {
+			do_action( 'wp_body_open' );
+		} ?>
 		<div id="site-wrapper" class="site-wrapper">
 			<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'make' ); ?></a>
 

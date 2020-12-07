@@ -46,7 +46,7 @@
 			this.listenTo( this.itemViews, 'remove', this.onItemViewRemoved );
 			this.listenTo( this.itemViews, 'reset', this.onItemViewsSorted );
 
-			var items = this.model.items || _.times( 3, _.constant( sectionData.defaults['text-item'] ) );
+			var items = this.model.items || _.times( sectionData.defaults.text['columns-number'], _.constant( sectionData.defaults['text-item'] ) );
 			var itemCollection = this.model.get( 'columns' );
 
 			_.each( items, function( itemAttrs ) {
@@ -54,6 +54,8 @@
 				itemModel.parentModel = this.model;
 				itemCollection.add( itemModel );
 			}, this );
+
+			this.model.trigger('change:columns-number');
 
 			this.initSortables();
 			this.on( 'sort-start', this.onItemSortStart, this );
@@ -139,10 +141,13 @@
 		onItemViewsSorted: function( itemViewCollection ) {
 			var $stage = $( '.ttfmake-text-columns-stage', this.$el );
 
-			itemViewCollection.forEach( function( itemViewModel ) {
+			itemViewCollection
+				.toArray()
+				.reverse()
+				.forEach( function( itemViewModel ) {
 				var $itemViewEl = itemViewModel.get( 'view' ).$el;
 				$itemViewEl.detach();
-				$stage.append( $itemViewEl );
+				$stage.prepend( $itemViewEl );
 			}, this );
 		},
 
@@ -236,13 +241,15 @@
 			window.make.overlay = new window.make.overlays.content( {
 				model: this.model,
 				field: 'content',
-				buttonLabel: 'Update content'
+				buttonLabel: 'Update column'
 			} );
 			window.make.overlay.open();
 
 			var backgroundColor = this.model.parentModel.get( 'background-color' );
-			backgroundColor = '' !== backgroundColor ? backgroundColor : 'transparent';
-			window.make.overlay.setStyle( { backgroundColor: backgroundColor } );
+
+			if (backgroundColor) {
+				window.make.overlay.setStyle( { backgroundColor: backgroundColor } );
+			}
 		},
 
 		onRemoveItemClick: function( e ) {
