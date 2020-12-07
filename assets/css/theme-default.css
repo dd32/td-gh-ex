@@ -306,6 +306,9 @@ td a {
 address i { 
 	color: #007bff;
 }
+.textwidget a {
+    color: #007bff;
+}
 
 /*--------------------------------------------------------------
 ## Captions
