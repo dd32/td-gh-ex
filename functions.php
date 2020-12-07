@@ -45,3 +45,9 @@ function aera_scripts_styles() {
     wp_enqueue_style( 'aera-fonts', aera_google_font(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'aera_scripts_styles' );
+
+
+/**
+ * Called all the Customize file.
+ */
+require( get_stylesheet_directory() . '/inc/customize/aera-premium.php');
