@@ -156,6 +156,16 @@
 	.av-text-404 h2 {
 	    margin: 35px 0 22px;
 	}
+	.main-slider .owl-item .av-column-5 .aera-img {
+	    width: auto;
+	    max-height: 190px;
+	}
+	.main-slider .theme-slider .text-right .av-column-5 .aera-img {
+	    margin-left: auto;
+	}
+	.main-slider .theme-slider .text-center .av-column-5 .aera-img {
+	    margin: auto;
+	}
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
