@@ -8,6 +8,11 @@
 .bs-head-detail .info-left li a , .bs-head-detail li a i, .bs-head-detail .info-right li a {
 	color: #fff;
 }
+
+.bs-head-detail .info-left li a:hover
+{
+	color: #fff;
+}
 .bs-default .navbar-wp .navbar-nav > li > a:hover, 
 .bs-default .navbar-wp .navbar-nav > li > a:focus, 
 .bs-default .navbar-wp .navbar-nav > .active > a, 
