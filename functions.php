@@ -51,19 +51,3 @@ add_action( 'wp_enqueue_scripts', 'aera_scripts_styles' );
  * Called all the Customize file.
  */
 require( get_stylesheet_directory() . '/inc/customize/aera-premium.php');
-
-
-
-/**
- * Import Options From Parent Theme
- *
- */
-function aera_parent_theme_options() {
-	$avril_mods = get_option( 'theme_mods_avril' );
-	if ( ! empty( $avril_mods ) ) {
-		foreach ( $avril_mods as $avril_mod_k => $avril_mod_v ) {
-			set_theme_mod( $avril_mod_k, $avril_mod_v );
-		}
-	}
-}
-add_action( 'after_switch_theme', 'aera_parent_theme_options' );

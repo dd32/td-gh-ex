@@ -104,6 +104,9 @@
 	.menu-right > ul {
     	padding-left: 12px;
     }
+    li.cart-wrapper {
+	    margin-right: 5px;
+	}
 	li.search-button {
 	    padding-left: 5px;
 	}
@@ -165,7 +168,22 @@
 	.info-wrapper li:not(:last-child) {
 	    margin-right: 0;
 	}
-	
+	.fact-soon .fun-box {
+        flex: 1 1 40%;
+        margin-right: 18px;
+	    padding-right: 18px;
+	    margin-bottom: 18px;
+    }
+    .fact-soon .fun-box:nth-child(2n+2) {
+	    margin-right: 0;
+	    padding-right: 0;
+	}
+	.fact-soon .fun-box:nth-child(2n+2):after {
+		border-right-width: 0px;
+	}
+	.fact-soon .fun-box:last-child {
+		margin-bottom: 0;
+	}
 	.widget-left .widget:nth-child(2n+3),
 	.widget-left .widget:first-child,
 	.widget-right .widget:nth-child(n+2),
@@ -283,6 +301,9 @@
 	.footer-copyright .widget-right {
 	    justify-content: center;
 	}
+	.about-panel {
+	    padding: 0;
+	}
 	.cta-wrapper {
 	    -ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
@@ -309,6 +330,26 @@
 	    left: -32px;
 	    width: 40px;
 	}
+	.fact-soon .fun-box {
+        flex: 1 1 100%;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .fact-soon .fun-box:not(:last-child):after {
+	    border-right-width: 0px;
+	    border-bottom-width: 1px;
+	    margin: 0 auto;
+	    top: auto;
+	    bottom: 0;
+	    left: 0;
+	    width: 300px;
+	}
+    .fact-soon .fun-box:last-child {
+    	margin-bottom: 0px;
+    	padding-bottom: 0px;
+    }
     .footer-main .widget {
 	    margin-bottom: 1.2rem;
 	}
@@ -492,14 +533,17 @@
         font-size: 23px;
         align-items: center;
     }
-    .mobile-menu-right .header-search-toggle {
+    .mobile-menu-right .header-search-toggle,
+    .mobile-menu-right .cart-icon-wrap #cart {
         font-size: 14px;
     }
     .hamburger-menu .menu-toggle {
         padding: 4px 5px 4px;
     }
     .cart-wrap, .hamburger-menu,
-    .mobile-menu-right .header-search-toggle {
+    .mobile-menu-right .header-search-toggle,
+    .mobile-menu-right .cart-icon-wrap #cart,
+    .cart-icon .cart-icon-wrapper i {
         width: 32px;
         height: 32px;
         line-height: 1.65;
