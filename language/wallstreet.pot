@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2020-10-15 12:50+0530\n"
+"POT-Creation-Date: 2020-12-03 13:31+0530\n"
 "PO-Revision-Date: 2018-09-26 17:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:8 404.php:29 functions/breadcrumbs/breadcrumbs.php:98
+#: 404.php:8 404.php:29 functions/breadcrumbs/breadcrumbs.php:97
 msgid "Error 404"
 msgstr ""
 
@@ -577,7 +577,7 @@ msgid "Read More"
 msgstr ""
 
 #: archive.php:63 author.php:47 category.php:49 functions.php:65
-#: functions/breadcrumbs/breadcrumbs.php:103 index.php:65 single.php:37
+#: functions/breadcrumbs/breadcrumbs.php:102 index.php:65 single.php:37
 #: tag.php:57
 msgid "Page"
 msgstr ""
@@ -1116,19 +1116,19 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:29
+#: functions/breadcrumbs/breadcrumbs.php:28
 msgid "Archive by category"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:32
+#: functions/breadcrumbs/breadcrumbs.php:31
 msgid "Search results for "
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:90
+#: functions/breadcrumbs/breadcrumbs.php:89
 msgid "Posts tagged"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:95
+#: functions/breadcrumbs/breadcrumbs.php:94
 msgid "Articles posted by"
 msgstr ""
 

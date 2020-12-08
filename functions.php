@@ -199,7 +199,7 @@ if (!function_exists('wallstreet_comment')) {
     function wallstreet_comment($comment, $args, $depth) {
         global $comment_data;
 //translations
-        $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply', 'wallstreet');
+        $leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply', 'wallstreet');
         ?>
         <div <?php comment_class('media comment_box'); ?> id="comment-<?php comment_ID(); ?>">
             <a class="pull-left-comment" href="<?php the_author_meta('user_url'); ?>"><?php echo get_avatar($comment, 70); ?></a>
