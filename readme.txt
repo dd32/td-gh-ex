@@ -1,11 +1,11 @@
 === Agency Starter ===
 Contributors: wpbusinessthemes
-Donate link: https://wpfreetheme.space
+Donate link: https://wpbusinessthemes.com
 Tags: one-column,two-columns,left-sidebar,right-sidebar,custom-background,custom-colors,custom-header,custom-menu,featured-images,flexible-header,microformats,post-formats,rtl-language-support,sticky-post,threaded-comments,translation-ready,blog,e-commerce,theme-options,full-width-template
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpfreetheme.space/product/agency-starter-theme/
+Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpbusinessthemes.com/product/agency-starter-theme/
 
 == Installation ==
 
@@ -20,7 +20,7 @@ Agency Starter is a fully customizable theme, which You can use to develop any b
 
 == Copyright ==
 
-Agency Starter WordPress Theme, Copyright 2019 www.wpfreetheme.space
+Agency Starter WordPress Theme, Copyright 2019 www.wpbusinessthemes.com
 Agency Starter is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -77,6 +77,9 @@ Image used in screenshot & default header :
 * Source: https://pxhere.com/en/photo/559565
 
 == Changelog ==
+
+= 1.1.5 =
+* Update to our new author and theme URI
 
 = 1.1.1 =
 * Fixed css, Layout issues

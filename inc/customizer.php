@@ -374,7 +374,7 @@ class Agency_Starter_Button extends WP_Customize_Section {
 		'type' => 'select',
 		'choices' => array(
 			'0' => __('Default', 'agency-starter' ),
-			'1' => __('Product Search [Need WooCommerce]', 'agency-starter' ),
+			'1' => __('Header Search [Require WooCommerce]', 'agency-starter' ),
 			'2' => __('List', 'agency-starter' ),
 		),
 	) );		

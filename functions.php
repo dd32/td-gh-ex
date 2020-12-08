@@ -175,7 +175,7 @@ add_action( 'after_setup_theme', 'agency_starter_setup' );
  */
 if (!function_exists('agency_starter_theme_uri')) {
 	function agency_starter_theme_uri(){
-		return 'https://wpfreetheme.space/product/agency-starter-theme/';
+		return 'https://wpbusinessthemes.com/product/agency-starter-theme/';
 	}
 }
 
@@ -576,8 +576,8 @@ function agency_starter_customizer_styles() { ?>
 add_action( 'customize_controls_print_styles', 'agency_starter_customizer_styles', 999 );
 
 
-define ('agency_starter_theme_url', 'https://wpfreetheme.space/product/agency-starter-theme/');
-define ('agency_starter_tutorial', 'https://wpfreetheme.space/wordpress/');
+define ('agency_starter_theme_url', 'https://wpbusinessthemes.com/product/agency-starter-theme/');
+define ('agency_starter_tutorial', 'https://wpbusinessthemes.com/wordpress/');
 /*
  * https://developer.wordpress.org/reference/hooks/admin_notices/
  * Displays theme info / quick help 
