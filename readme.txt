@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
 Tested up to: 5.6
-Stable tag: 4.4.1
+Stable tag: 4.4.2
 
 == Description ==
 
@@ -694,3 +694,6 @@ Fix: PwP paging links for Previous/Next
 * Fix: Handle if a menu set to 'fix to top on scroll' when no menu is defined
 * New: Save/Restore to WP Database added to Customizer Admin -> Save/Restore menus (same as Theme Support functionality)
 * New: Some new compatibility features for upcoming Weaver Xtreme V5.
+
+= Version 4.4.2 =
+* fix: Fixed-to-top areas had extra space in WP 5.6
