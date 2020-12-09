@@ -192,7 +192,7 @@
 					}
 					var $filter = $('header.site-header'),
 						$topHeight = $('.nav-top').outerHeight();
-					if ($filter.size()) {
+					if ($filter.length) {
 						$(window).scroll(function () {
 							if (!$filter.hasClass('menuMinor') && $(window).scrollTop() > 0 ) {
 								$filter.addClass('menuMinor');
@@ -286,7 +286,7 @@
 				}
 			});
 	});
-	$(window).load(function() {
+	$(window).on('load', function() {
 		/*-----------------------------------------------------------------------------------*/
 		/*  Sticky woocommerce bar
 		/*-----------------------------------------------------------------------------------*/ 
