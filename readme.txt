@@ -51,7 +51,7 @@ We would love to hear your ideas.
 You can use email us at support@aeonwp.com
 
 == Changelog ==
-= 1.1.3 - May 03 2020 =
+= 1.1.4 - May 03 2020 =
 Added Upgrade notice 
 Tested with latest WP version
 

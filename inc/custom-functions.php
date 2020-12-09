@@ -16,7 +16,7 @@ if ( ! function_exists( 'aeonblog_about_user' ) ) {
 	function aeonblog_about_user() {
 		$enable_about = absint( get_theme_mod( 'aeonblog-enable-about', 0 ) );
 
-		if ( 1 === $enable_about ) {
+		if ( 1 == $enable_about ) {
 
 			$about_users = absint( get_theme_mod( 'aeonblog_about_user' ) );
 
@@ -51,7 +51,7 @@ if ( ! function_exists( 'aeonblog_breadcrumb' ) ) {
 	 * @since AeonBlog 1.0.0
 	 */
 	function aeonblog_breadcrumb() {
-		if ( ! is_front_page() && get_theme_mod( 'aeonblog-breadcrumb-option', 1 ) === 1 ) {
+		if ( ! is_front_page() && get_theme_mod( 'aeonblog-breadcrumb-option', 1 ) == 1 ) {
 			echo '<div class="breadcrumb">';
 			aeonblog_breadcrumb_trail();
 			echo '</div>';
@@ -105,7 +105,7 @@ if ( ! function_exists( 'aeonblog_go_to_top' ) ) {
 	 * @since AeonBlog 1.0.0
 	 */
 	function aeonblog_go_to_top() {
-		if ( get_theme_mod( 'aeonblog-go-to-top', 1 ) === 1 ) {
+		if ( get_theme_mod( 'aeonblog-go-to-top', 1 ) == 1 ) {
 			?>
 			<a id="toTop" class="go-to-top" href="#">
 				<?php echo aeonblog_get_svg( array( 'icon' => 'angle-double-up' ) ); ?>
