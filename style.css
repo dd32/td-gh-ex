@@ -5,8 +5,8 @@ Author: Nayra Themes
 Author URI: https://www.nayrathemes.com/
 Description: Aera is flexible, super fast, easily customizable, lightweight, modern multipurpose theme. Aera comes with everything you could ever need to build an amazing website, and It's perfect for any type of business. View the demo of Aera Pro https://www.nayrathemes.com/demo/pro/?theme=aera
 Template: avril
-Version: 1.0.2
-Tested up to: 5.5.1
+Version: 1.0.3
+Tested up to: 5.6
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI:  https://www.gnu.org/licenses/gpl-3.0.html
@@ -57,8 +57,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .aera-theme.header-search-active .header-search-popup {
-	z-index: 999;
-	visibility: visible;
+    z-index: 999;
+    visibility: visible;
 }
 
 .aera-theme .search-overlay-layer {
@@ -113,7 +113,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .aera-theme .header-search-popup form {
-	width: 0;
+    width: 0;
     max-width: 680px;
     -webkit-transition: opacity .5s 0s,width .8s .8s cubic-bezier(.225,.01,.475,1.01),transform .2s 0s;
     -khtml-transition: opacity .5s 0s,width .8s .8s cubic-bezier(.225,.01,.475,1.01),transform .2s 0s;
@@ -127,29 +127,29 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .aera-theme.header-search-active .header-search-popup form {
-	width: 100%;
+    width: 100%;
     transition-delay: .7s;
     -webkit-transition-delay: .7s;
 }
     
 .aera-theme .header-search-popup .header-search-close {
-	width: 55px;
+    width: 55px;
     height: 55px;
-	-webkit-transition: all .8s cubic-bezier(.4,0,0,1);
-	-khtml-transition: all .8s cubic-bezier(.4,0,0,1);
-	-moz-transition: all .8s cubic-bezier(.4,0,0,1);
-	-ms-transition: all .8s cubic-bezier(.4,0,0,1);
-	-o-transition: all .8s cubic-bezier(.4,0,0,1);
-	transition: all .8s cubic-bezier(.4,0,0,1);
-	transition-delay: 0s;
-	transition-delay: 0s;
-	-webkit-transition-delay: 0s;
-	-webkit-transform: scale(0);
-	-khtml-transform: scale(0);
-	-moz-transform: scale(0);
-	-ms-transform: scale(0);
-	-o-transform: scale(0);
-	transform: scale(0);
+    -webkit-transition: all .8s cubic-bezier(.4,0,0,1);
+    -khtml-transition: all .8s cubic-bezier(.4,0,0,1);
+    -moz-transition: all .8s cubic-bezier(.4,0,0,1);
+    -ms-transition: all .8s cubic-bezier(.4,0,0,1);
+    -o-transition: all .8s cubic-bezier(.4,0,0,1);
+    transition: all .8s cubic-bezier(.4,0,0,1);
+    transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -webkit-transform: scale(0);
+    -khtml-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
 }
 
 .aera-theme .close-style:before,
@@ -164,7 +164,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .aera-theme.header-search-active .header-search-popup .header-search-close {
-	-webkit-transform: scale(1);
+    -webkit-transform: scale(1);
     -khtml-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -178,7 +178,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .aera-theme.header-search-active .header-search-close:hover:after,
 .aera-theme.header-search-active .header-search-close:focus:before,
 .aera-theme.header-search-active .header-search-close:focus:after {
-	-webkit-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
     -khtml-transform: scale(1.25);
     -moz-transform: scale(1.25);
     -ms-transform: scale(1.25);
