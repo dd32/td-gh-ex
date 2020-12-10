@@ -26,20 +26,23 @@ of this theme. This also displays the navigation menu as well or any extra featu
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
     <section id="site-container" class="site-container">
+        <a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'barista' ) ?></a>
         <header id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">
             <div id="site-branding" class="site-branding">
                 <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
                 <h4 class="site-description"><?php bloginfo('description'); ?></h4>
             </div>
         </header>
+        <div class="main-container">
         <nav id="site-navigation" class="primary-navigation">
             <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'barista'); ?></button>
             <?php
                 wp_nav_menu(array(
                     'theme_location'    => 'primary-navigation',
                     'menu_id'           => 'primary-menu',
-                    'menu_class'        => 'nav-menu'   
+                    'menu_class'        => 'primary-menu menu'   
                 )); 
             ?>
         </nav>
-        <section id="site-conent" class="site-content cf">
+        </div>
+        <section id="site-content" class="site-content cf">

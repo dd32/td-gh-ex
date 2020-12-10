@@ -6,7 +6,7 @@ License: Barista is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tested up to: 5.0
 Requires PHP: 5.6
-Version: 2.7
+Version: 2.8
 Tags: custom-background, custom-header, one-column, right-sidebar, threaded-comments, translation-ready, two-columns
 Text Domain: barista
 
@@ -797,7 +797,7 @@ textarea {
 */
 a {
     color: #1d1d1d;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:hover {
@@ -809,180 +809,169 @@ a:hover {
  9.0 - Navigation (Primary Navigation)
 ================================================================================================
 */
+
 .primary-navigation {
-	clear: both;
 	display: block;
+    margin: 0;
+}
+
+/* Styling the links */
+.primary-navigation a {
+	display: block;
+	font-size: 1.125rem;
+	padding: 1.25em 0.75em;
+	color: #fff;
+	background-color: #000000;
+	text-decoration: none;
+	box-sizing: border-box;
 	width: 100%;
 }
 
-.primary-navigation ul {
+/* Background color change on Hover */
+.primary-navigation .menu a:hover,
+.primary-navigation .menu a:focus { 
+	background-color: #606060;
+}
+
+/* Set menu item's width to 100% */
+.primary-navigation .menu li {
 	display: block;
-	list-style: none;
-	margin: 0 0 0 0;
+	width: 100%;
+	border-top: 1px solid #bbb;
 }
 
-.primary-navigation li {
-	position: relative;
+/* Esto capaz que no hace falta */
+.primary-navigation .menu li ul li:hover,
+.primary-navigation .menu li ul li:focus {
+	background-color: #606060;
 }
 
-.primary-navigation ul ul {
-	display: none;
-	margin-left: 0.4em;
-}
-
-.primary-navigation a {
-	position: relative;
-	display: block;
+/* Styling the toggle buttons */
+.menu-toggle {
+	background-color: #000000;
 	padding: 0.5em 1em;
-    font-weight: 0.875em;
-	font-weight: 400;
+	color: #fff;
 	text-decoration: none;
-	line-height: 1.6em;
-	color: white;
+    border: 1px solid #cc0058;
+	border-radius: 4px;
+    display: block;
+    margin: 0 auto 1.125em auto;
 }
 
-.primary-navigation a:hover,
-.primary-navigation a:focus {
-	background: #fff;
-	color: #000;
+.menu-toggle .dashicons {
+	vertical-align: text-bottom;
 }
 
-.primary-navigation a,
-.primary-navigation ul ul li:lastchild a {
-	border-bottom: 1px solid white;
+.menu-toggle .dashicons:before {
+	content: '\f228';
 }
 
-.primary-navigation ul li:last-child a {
-	border-bottom: none;
+.toggled .menu-toggle {
+	background-color: #606060;
 }
 
-.primary-navigation ul .toggled-on {
-	display: block;
-}
-
-.primary-navigation li {
-	border-top: 1px solid #eaeaea;
-	border-top: 1px solid rgba(51, 51, 51, 0.1);
-	position: relative;
-}
-
-.primary-navigation .current-menu-item > a,
-.primary-navigation .current-menu-ancestor > a,
-.primary-navigation .current_page_item > a,
-.primary-navigation .current_page_ancestor > a {
-	font-weight: 700;
-}
-
-.primary-navigation .nav-menu > ul > li:first-child,
-.primary-navigation .nav-menu > li:first-child {
-	border-top: 0;
-}
-
-.primary-navigation .menu-item-has-children > a,
-.primary-navigation .page_item_has_children > a{
-	padding-right: 48px;
-}
-
-.no-js .primary-navigation ul ul {
-	display: block;
+.toggled .menu-toggle .dashicons:before {
+	content: '\f158';
 }
 
 .dropdown-toggle {
+	background-color: transparent;
+	padding: 1.1em;
 	position: absolute;
-	height: 27px;
-	width: 27px;
-	top: 7px;
-	right: 6px;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	padding: 0;
-	font-family: 'FontAwesome';
-	background-color: #000;
-	border: 1px solid #fff;
-	content: "";
+	top: 1em;
+	right: 0.5em;
+	border: 1px solid transparent;
+	border-left: 1px solid #bbb;
+	border-radius: 0;
 	color: #fff;
-	text-transform: lowercase; /* Stop screen readers from reading the text as capital letters */
-}
-
-.dropdown-toggle:after {
-	content: "\f078";
-	font-size: 14px;
-	line-height: 27px;
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 27px;
+	text-align: center;
 }
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-	background-color: #fff;
-	color: #000;
+	border: 1px dashed;
 }
 
-.dropdown-toggle.toggle-on:after {
-	content: "\f077";
+.dropdown-toggle .dashicons {
+	font-size: 1.25rem;
 }
 
-.menu-toggle {
-	position: fixed;
-	z-index: 100;
-	bottom: 1em;
-	left: 1em;
-    display: none;
-	font-size: 1em;
-	font-family: 'Ubuntu', sans-serif;
-	background-color: #000;
-	color: #fff;
-	border: solid 2px #fff;
-	transition: all ease-out 400ms;
+.dropdown-toggle .dashicons:before {
+	content: '\f347';
 }
 
-.menu-toggle.hide {
-	bottom: -2.5em;
+.toggled-on > .dropdown-toggle .dashicons:before {
+	content: '\f343';
 }
 
-.toggled .menu-toggle.hide {
-	bottom: 1em;
+/* Hide Submenus by default using absolute positioning instead of display:none;. */
+.primary-navigation .menu,
+.primary-navigation .menu li,
+.primary-navigation .menu ul,
+.primary-navigation .menu li:hover > ul,
+.primary-navigation .menu li:focus > ul {
+	position: absolute;
+	top: 100%;
+	left: -9999em;
+	color: #ff00ff;
+	padding: 0;
+	margin: 0;
 }
 
-
-.menu-toggle:hover,
-.menu-toggle:focus {
-	text-decoration: underline;
+/* Display the menu when clicked on Menu Toggle */
+.toggled .menu {
+	display: block;
+    position: relative;
+    margin: 1.125em;
+	top: 0;
+	left: 0;
 }
 
-.primary-navigation.toggled {
-	position: fixed;
-	bottom: 0;
-	padding: 1em;
-	z-index: 1;
+.toggled .menu li {
+	position: relative;
+	left: unset;
 }
 
-.nav-menu {
-	padding: 1em;
-	margin-bottom: 3em;
-	background-color: #000;
-}
-
-.primary-navigation.toggled ul {
-	max-height: calc(100vh - 8em);
-	overflow-y: auto;
-}
-
-.primary-navigation.toggled ul ul {
+.toggled .menu li > .sub-menu {
 	display: none;
 }
 
-.primary-navigation.toggled ul ul.toggled-on,
-.primary-navigation.toggled ul ul.toggled-on > ul {
+.toggled .menu .toggled-on > .sub-menu {
 	display: block;
+	position: relative;
+	left: 0;
+	top: 100%;
 }
 
-.height {
-    height: 6em;
+.primary-navigation .menu ul a,
+.primary-navigation .menu ul ul a {
+	padding: 1.25em 0.75em;
 }
+
+.primary-navigation .menu ul a {
+	padding: 1.25em 1.25em;
+}
+
+.primary-navigation .menu ul ul a {
+	padding: 1.25em 1.75em;
+}
+
+.primary-navigation .menu ul a,
+.primary-navigation .menu ul ul a {
+	background-color: #444; 
+}
+	
+/* Second and following tiers submenus */
+.primary-navigation .menu ul li {
+}
+
+.menu .current_page_item > a,
+.menu .current_page_ancestor > a,
+.menu .current-menu-item > a,
+.menu .current-menu-ancestor > a { 
+	font-weight: 900;
+}
+
 
 /*
 ================================================================================================
@@ -1618,32 +1607,6 @@ input[type = "search"] {
     .site-breanding {
         padding: 3em;
     }
-    
-    .menu-toggle,
-    .primary-navigation.toggled ul {
-        display: block;
-    }
-    
-	.primary-navigation ul {
-		display: none;
-	}
-    
-    .primary-navigation.toggled {
-        padding: 0.1em;
-    }
-    
-    .nav-menu {
-        margin-bottom: 3.6em;
-    }
-    
-    .primary-navigation .nav-menu {
-        display: none;
-    }
-    
-    .primary-navigation.toggled .nav-menu {
-        display: block;
-        margin: 1em 1em 3.6em 1em;
-    }
 
     .content-area {
         margin: 0;
@@ -1676,33 +1639,7 @@ input[type = "search"] {
     
     .site-breanding {
         padding: 3em;
-    }
-    
-    .menu-toggle,
-    .primary-navigation.toggled ul {
-        display: block;
-    }
-    
-	.primary-navigation ul {
-		display: none;
-	}
-    
-    .primary-navigation.toggled {
-        padding: 0.1em;
-    }
-    
-    .nav-menu {
-        margin-bottom: 3.6em;
-    }
-    
-    .primary-navigation .nav-menu {
-        display: none;
-    }
-    
-    .primary-navigation.toggled .nav-menu {
-        display: block;
-        margin: 1em 1em 3.6em 1em;
-    }
+    }           
     
     .content-area {
         float: none;
@@ -1715,129 +1652,121 @@ input[type = "search"] {
 30.0 - Media Queries (Tablet Large 1024px)
 ================================================================================================
 */
-@media screen and (min-width: 769px) {
-    
-    .primary-navigation {
-        clear: none;
+
+@media screen and (min-width: 1024px) {
+   .menu-toggle,
+    .dropdown-toggle {
+        display: none;
     }
-	
-	/* Position the menu in the header */
-	.primary-navigation,
-	.primary-navigation.toggled {
-        background: #D5973C;
-        border-bottom: 4px solid #916A31;
-		position: relative;
-		min-height: 3.5em;
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 0;
-	}
-    
-	.nav-menu {
-		padding: .4em;
-		background-color: transparent;
-        margin: 0;
+
+    .primary-navigation .primary-menu {
+        display: flex;
+        position: static;
+        width: 100%;
     }
-    
-    .nav-menu a {
-        color: #000000;
+
+    /* Background color change on Hover */
+    .primary-navigation .menu a:hover,
+    .primary-navigation .menu a:focus { 
+        color: #ffffff;
     }
-    
-    .nav-menu a:hover {
-        color: #000000;
+
+    .main-container {
+        background-color: #D5973C;
+        border-bottom: 0.063em solid #000000;
     }
-	
-	.primary-navigation ul,
-	.primary-navigation.toggled ul {
-		max-height: none;
-		padding-left: 0;
-		text-align: center;
-        
-	}
-	
-	.primary-navigation.toggled ul {
-		overflow-y: visible;
-	}
-	
-	/* Display the menu items in a horizontal order */
-	.primary-navigation li {
-		display: inline-block;
-		border: none;
-	}
-	
-	/* Add an outline to the drop-down menus */
-	.primary-navigation ul ul {
-		outline: 1px solid #333;
-	}
-	
-	/* Left-align drop-down menu items */
-	.primary-navigation li li {
-		display: block;
-		text-align: left;
-	}
-    
+ 
+        /* Styling the links */
     .primary-navigation a {
         color: #ffffff;
-        padding: 0.5em 1em;
-    }
-	
-	.primary-navigation a,
-	.primary-navigation ul ul li:last-child a {
-		border-bottom: none;
-	}
-    
-    .primary-navigation ul ul li a {
-        color: #ffffff;
-    }
-	
-	/* Add an outline on hovered and focused menu items */
-	.primary-navigation a:hover,
-	.primary-navigation a:focus {
-		background: transparent;
-		color: #ffffff;
-		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
-	}
-	
-	/* Create hover and focus contrast on drop-down items */
-	.primary-navigation li li a:hover,
-	.primary-navigation li li a:focus {
-		background: #eee;
-		color: #000;
-		text-decoration: none;
-	}
-	
-	/* Position drop-down menus absolutely */
-	.primary-navigation ul ul.toggled-on {
-		position: absolute;
-		width: 17em;
-		display: block;
-		z-index: 10;
-        right: 0.6em;
-		margin-left: 0;
-		background: #000;
-	}
-	
-	.primary-navigation ul ul ul.toggled-on {
-		right: 0;
-        padding-left: 1em;
-        position: relative;
-	}
-	
-	/* Indent 3rd level drop-down menus */
-	.primary-navigation ul ul ul a {
-		padding-left: 2em;
-	}
-	
-	/* Simplify the drop-down toggle */
-	.dropdown-toggle {
-		top: 7px;
-		right: 8px;
+        background: #D5973C;
+        width: 100%;
 
-	}
-	
-	.dropdown-toggle::after {
-		line-height: 27px;
-		width: 27px;
-	}
+    }
+    
+    .primary-navigation .menu {
+        justify-content: center;
+    }
+    
+    .primary-navigation .menu li {
+        border-top: 0;
+        position: relative;
+        width: auto;
+        left: unset;
+    }
+    
+    .primary-navigation .menu ul li:first-child {
+        border-top: 0;
+    }
+    
+    .primary-navigation .menu a,
+    .primary-navigation .menu ul a,
+    .primary-navigation .menu ul ul a {
+        padding: 0.75em 0.75em;
+    }
+    
+    /* Hide Dropdowns by Default
+     * and giving it a position of absolute */
+    .primary-navigation .menu ul {
+        position: absolute; 
+        /* has to be the same number as the "line-height" of "nav a" */
+        top: 100%;
+        left: -9999em;
+        /*! border: 1px solid #606060; */
+    }
+        
+    /* Display Dropdowns on hover and focus */
+    .primary-navigation .menu li:hover > ul,
+    .primary-navigation .menu li:focus > ul,
+    .primary-navigation .menu li.focus > ul {
+        left: 0;
+    }
+        
+    /* First Tier Dropdown */
+    .primary-navigation .menu ul li {
+        position: relative;
+        width: 20em;
+    }
+    
+    /* Second, Third and more Tiers	
+     * We move the 2nd and 3rd etc tier dropdowns to the left
+     * by the amount of the width of the first tier.
+    */
+    .primary-navigation .menu li li:hover > ul,
+    .primary-navigation .menu li li:focus > ul,
+    .primary-navigation .menu li li.focus > ul {
+        top: 0;
+        left: 100%; 
+    }
+    
+    .primary-navigation .menu ul a:hover,
+    .primary-navigation .menu ul a:focus { 
+        background-color: #ddd;
+        color: #222;
+    }
+
+    .primary-navigation .menu ul a,
+    .primary-navigation .menu ul ul a {
+        color: #fff; 
+    }
+    
+    .menu-item-has-children > a:after,
+    .page_item_has_children > a:after {
+        font-family: dashicons;
+        content: '\f347';
+        vertical-align: bottom;
+        margin-left: 0.25em;
+    }
+    
+    .menu-item-has-children .menu-item-has-children > a:after,
+    .menu-item-has-children .page_item_has_children > a:after,
+    .page_item_has_children .menu-item-has-children > a:after,
+    .page_item_has_children .page_item_has_children > a:after {
+        content: '\f345';
+        font-family: dashicons;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
 }

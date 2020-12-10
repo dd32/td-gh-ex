@@ -59,9 +59,9 @@ function barista_enqueue_scripts_setup() {
     
     // Enable and Activate Navigation JavaScript for Barista.
     wp_enqueue_script('barista-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20160601', true);
-	wp_localize_script('barista-navigation', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'barista') . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'barista') . '</span>',
+	wp_localize_script('barista-navigation', 'baristaScreenReaderText', array(
+		'expand'   => '<span class="screen-reader-text">' . esc_html__('expand child menu', 'barista') . '</span>',
+		'collapse' => '<span class="screen-reader-text">' . esc_html__('collapse child menu', 'barista') . '</span>',
 	));
     
     if (is_singular() && comments_open() && get_option('thread_comments')) {

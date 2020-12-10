@@ -7,15 +7,15 @@ and show the primary navigation for the Primary Navigation in different resoluti
 features.
 
 @package        Barista WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2017. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://luminathemes.com/)
+@author         Benjamin Lu (https://www.benjlu.com/)
 ================================================================================================
 */
-( function( $ ) {
-	var container, button, menu, links, subMenus;
+( function() {
+	var container, button, dropdown, icon, screenreadertext, parentLink, menu, submenu, links, i, len;
 
-	container = document.getElementById( 'site-navigation' );
+	container = document.getElementById( 'site-container' );
 	if ( ! container ) {
 		return;
 	}
@@ -25,7 +25,51 @@ features.
 		return;
 	}
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+	menu = container.getElementsByTagName( 'nav' )[0];
+
+	screenreadertext = document.createElement( 'span' );
+	screenreadertext.classList.add( 'screen-reader-text' );
+	screenreadertext.textContent = baristaScreenReaderText.expandMain;
+	button.appendChild( screenreadertext );
+
+	parentLink = container.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+
+	for ( i = 0, len = parentLink.length; i < len; i++ ) {
+		var dropdown = document.createElement( 'button' ),
+			submenu = parentLink[i].querySelector( '.sub-menu' ),
+			icon = document.createElement( 'span' ),
+			screenreadertext = document.createElement( 'span' );
+
+		icon.classList.add( 'dashicons' );
+		icon.setAttribute( 'aria-hidden', 'true' );
+
+		screenreadertext.classList.add( 'screen-reader-text' );
+		screenreadertext.textContent = baristaScreenReaderText.expandChild;
+
+		parentLink[i].insertBefore( dropdown, submenu );
+		dropdown.classList.add( 'dropdown-toggle' );
+		dropdown.setAttribute( 'aria-expanded', 'false' );
+		dropdown.appendChild( icon );
+		dropdown.appendChild( screenreadertext );
+
+		dropdown.onclick = function() {
+			var parentLink = this.parentElement,
+				submenu = parentLink.querySelector( '.sub-menu' ),
+				screenreadertext = this.querySelector( '.screen-reader-text' );
+
+			if ( -1 !== parentLink.className.indexOf( 'toggled-on' ) ) {
+				parentLink.className = parentLink.className.replace( ' toggled-on', '' );
+				this.setAttribute( 'aria-expanded', 'false' );
+				submenu.setAttribute ( 'aria-expanded', 'false');
+				screenreadertext.textContent = baristaScreenReaderText.expandChild;
+			} else {
+				parentLink.className += ' toggled-on';
+				this.setAttribute( 'aria-expanded', 'true' );
+				submenu.setAttribute ( 'aria-expanded', 'true');
+				screenreadertext.textContent = baristaScreenReaderText.collapseChild;
+			}
+		};
+	}
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -34,30 +78,28 @@ features.
 	}
 
 	menu.setAttribute( 'aria-expanded', 'false' );
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
-	}
+		if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+			menu.className += ' nav-menu';
+		}
 
 	button.onclick = function() {
+		screenreadertext = this.querySelector( '.screen-reader-text' );
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
+			screenreadertext.textContent = baristaScreenReaderText.expandMain;
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
+			screenreadertext.textContent = baristaScreenReaderText.collapseMain;
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
 	};
 
-	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
-	subMenus = menu.getElementsByTagName( 'ul' );
+	// Get all the link elements within the primary menu.
 
-	// Set menu items with submenus to aria-haspopup="true".
-	for ( var i = 0, len = subMenus.length; i < len; i++ ) {
-		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
-	}
+	links = menu.getElementsByTagName( 'a' );
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
@@ -76,86 +118,45 @@ features.
 
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
+				
 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
 					self.className = self.className.replace( ' focus', '' );
 				} else {
 					self.className += ' focus';
 				}
 			}
-
 			self = self.parentElement;
 		}
 	}
 
-	function initMainNavigation( container ) {
-		// Add dropdown toggle that display child menu items.
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+	/**
+	 * Toggles `focus` class to allow submenu access on tablets.
+	 */
+	( function( container ) {
+		var touchStartFn, i,
+			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-		// Toggle buttons and submenu items with active children menu items.
-		container.find( '.current-menu-ancestor > button' ).addClass( 'toggle-on' );
-		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+		if ( 'ontouchstart' in window ) {
+			touchStartFn = function( e ) {
+				var menuItem = this.parentNode, i;
 
-		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this = $( this );
-			e.preventDefault();
-			_this.toggleClass( 'toggle-on' );
-			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
-			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
-		} );
-	}
-	initMainNavigation( $( '.primary-navigation' ) );
+				if ( ! menuItem.classList.contains( 'focus' ) ) {
+					e.preventDefault();
+					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
+						if ( menuItem === menuItem.parentNode.children[i] ) {
+							continue;
+						}
+						menuItem.parentNode.children[i].classList.remove( 'focus' );
+					}
+					menuItem.classList.add( 'focus' );
+				} else {
+					menuItem.classList.remove( 'focus' );
+				}
+			};
 
-	// Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
-	$( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
-		if ( 'primary' === params.wpNavMenuArgs.theme_location ) {
-			initMainNavigation( params.newContainer );
-
-			// Re-sync expanded states from oldContainer.
-			params.oldContainer.find( '.dropdown-toggle.toggle-on' ).each(function() {
-				var containerId = $( this ).parent().prop( 'id' );
-				$( params.newContainer ).find( '#' + containerId + ' > .dropdown-toggle' ).triggerHandler( 'click' );
-			});
-		}
-	});
-
-	// Hide/show toggle button on scroll
-
-	var position, direction, previous;
-
-	$(window).scroll(function(){
-		if( $(this).scrollTop() >= position ){
-			direction = 'down';
-			if(direction !== previous){
-				$('.menu-toggle').addClass('hide');
-
-				previous = direction;
-			}
-		} else {
-			direction = 'up';
-			if(direction !== previous){
-				$('.menu-toggle').removeClass('hide');
-
-				previous = direction;
+			for ( i = 0; i < parentLink.length; ++i ) {
+				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
 			}
 		}
-		position = $(this).scrollTop();
-	});
-
-	// Wrap centered images in a new figure element
-	$( 'img.aligncenter' ).wrap( '<figure class="centered-image"></figure>');
-
-
-    $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html, body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-            return false;
-        }
-    }
-  });
-} )( jQuery );
+	}( container ) );
+} )();
