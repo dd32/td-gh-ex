@@ -19,6 +19,7 @@ function advance_coaching_setup() {
 	add_theme_support('post-thumbnails');
 	add_theme_support('woocommerce');
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support('title-tag');
 	add_theme_support('custom-logo', array(
 		'height'      => 250,
@@ -246,6 +247,8 @@ function advance_coaching_font_url(){
 
 function advance_coaching_scripts() {
 	wp_enqueue_style('advance-coaching-font', advance_coaching_font_url(), array());
+	// blocks-css
+	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
 	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
 	wp_enqueue_style('advance-coaching-basic-style', get_stylesheet_uri());
 	wp_enqueue_style('advance-coaching-customcss', get_template_directory_uri().'/css/custom.css');
