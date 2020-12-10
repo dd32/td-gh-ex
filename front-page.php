@@ -6,7 +6,12 @@ $busiprof_theme_options=busiprof_theme_setup_data();
   $busiprof_is_front_page = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), $busiprof_theme_options );
   
   if (  $busiprof_is_front_page['front_page'] != 'yes' ) {
-  get_template_part('index');
+  	if(is_page()){
+		get_template_part('page');
+  	}
+  	else{
+ 		get_template_part('index');
+ 	}
   }
   else {	
   		get_header();

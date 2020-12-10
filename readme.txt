@@ -2,8 +2,8 @@
 
 Contributors: priyanshumittal
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 2.2.5
+Tested up to: 5.6
+Stable tag: 2.2.6
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -52,6 +52,11 @@ Busiprof is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+@version 2.2.6
+1. Added contact form 7 image license. 
+2. Fixed home template issue.
+3. Updated the bootstrap version to fix the menu issue in WP 5.6.
 
 @version 2.2.5
 1. Implemented "Links within content must be underlined" guideline. 
@@ -370,3 +375,10 @@ Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-noti
 Image used in the Screenshot
 License - CC0 Public domain
 Source - https://pxhere.com/en/photo/1223786
+
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/
+
+* Images on /images folder
+Copyright (C) 2020, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
