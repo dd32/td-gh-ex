@@ -126,7 +126,7 @@ function simplecatch_scripts_method() {
 		//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 		wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
-		wp_enqueue_script( 'simplecatch-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'simplecatch-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/slider.js', array( 'jquery-cycle' ), '1.0.1', true );
 
 		$transition_effect   = $options['transition_effect'];
 		$transition_delay    = $options['transition_delay'] * 1000;

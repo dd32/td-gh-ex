@@ -2,9 +2,9 @@
 Contributors: catchthemes
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 5.1
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 3.6.6
+Stable tag: 3.6.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -64,6 +64,9 @@ Added Translation for Brazilian Portuguese by Giovanna Chinellato (Email: giovan
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 3.6.7 (Released: December 10, 2020) =
+* Bug Fixed: Clear slider background color
 
 = 3.6.6 (Released: November 06, 2020) =
 * Bug Fixed: JS depreciated issue on slider custom script
