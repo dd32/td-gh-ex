@@ -2,10 +2,10 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.5.1
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.1
-Version: 1.0.1
+Stable tag: 1.0.10
+Version: 1.0.10
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
@@ -13,7 +13,7 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background
 == Copyright ==
 
 Azwa WordPress Theme, Copyright 2020 Nayra Themes
-Azwa is distributed under the terms of the GPLv2 or later
+Azwa is distributed under the terms of the GNU GPL
 
 Conceptly WordPress Theme, Copyright 2020 Nayra Themes. Conceptly WordPress Theme is distributed under the terms of the GPLv2 or later
 
@@ -88,7 +88,8 @@ Source: https://github.com/cristian-ungureanu/customizer-repeater
 10) Screenshot Images
 =================================================================================================
 Screenshot Images
-URL: https://stocksnap.io/photo/confident-business-TMACJ6VLZH
+URL: https://stocksnap.io/photo/woman-smartphone-MLEPUKHYUU
+https://stocksnap.io/photo/widescreen-dramatic-RPYXEFBOBR
 Source: https://stocksnap.io
 License: CC0 Public Domain
 
@@ -105,6 +106,36 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 1.0.10
+* Tested With WordPress 5.6
+
+@version 1.0.9
+* Added Functionality for Import Data of Parent Theme
+
+@version 1.0.8
+* Slider Style Changed
+* Top Header Info Style Changed
+* Screenshot Updated
+
+@version 1.0.7
+* Removed Unused Style
+
+@version 1.0.6
+* Removed Unused Styles
+
+@version 1.0.5
+* Code Improvement in azwa-premium.php
+
+@version 1.0.4
+* Removed Unused Styles
+
+@version 1.0.3
+* Readme Updated
+
+@version 1.0.2
+* Screenshot Updated
+* Style Improvements
 
 @version 1.0.1
 * Theme & Author URI Added

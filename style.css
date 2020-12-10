@@ -5,8 +5,8 @@ Author: Nayra Themes
 Author URI: https://www.nayrathemes.com/
 Description: Azwa is a fast and lightweight, multi-purpose WordPress theme. Enjoy Ken Burns effect, background elements, & smooth animations. Build amazing website with Azwa. Checkout the demo of Azwa Pro https://www.nayrathemes.com/demo/pro/?theme=azwa
 Template: conceptly
-Version: 1.0.1
-Tested up to: 5.5.1
+Version: 1.0.10
+Tested up to: 5.6
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI:  https://www.gnu.org/licenses/gpl-3.0.html
@@ -23,112 +23,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
     Azwa Start
  */
 
-@media only screen and (min-width:992px) {
-    .azwa-template .header-above-desk .container > .row {
-        margin: 0 -30px;
-    }
-    .azwa-template .header .header-above {
-        background-color: #ffffff;
-        padding: 2em 0;
-    }
-    .azwa-template .header .header-above a {
-        color: #111111;
-    }
-    .azwa-template .header-above li:after {
-        background: rgb(255 255 255 / 0.25);
-    }
-    .azwa-template .trh-social {
-        width: 100%;
-        padding: 8px 12px;
-        background-color: #ff5d00;
-        position: absolute;
-        bottom: 100%;
-        z-index: 0;
-    }
-    .azwa-template .trh-social:before {
-        content: '';
-        height: 100%;
-        width: 100px;
-        position: absolute;
-        top: 0;
-        right: -10px;
-        -webkit-transform: skew(-23deg);
-        -khtml-transform: skew(-23deg);
-        -moz-transform: skew(-23deg);
-        -ms-transform: skew(-23deg);
-        -o-transform: skew(-23deg);
-        transform: skew(-23deg);
-        z-index: -1;
-        background-color: inherit;
-    }
-    .azwa-template .header .navigator-wrapper {
-        margin-bottom: -4%;
-    }
-    .azwa-template .header .navbar-area {
-        padding: 0;
-        max-width: 1140px;
-        margin: 0 auto;
-        background-color: #f6f6f6;
-    }
-    .azwa-template .header .navbar-area > .container {
-        position: relative;
-        padding-top: 7px;
-        padding-left: 27px;
-        padding-right: 27px;
-    }
-    .azwa-template .header .navbar-area > .container:before {
-        content: '';
-        height: 7px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-bottom: 1px dashed #ababab;
-    }
-    .azwa-template .header .navbar-area > .container::after {
-        content: "";
-        position: absolute;
-        bottom: -14px;
-        height: 14px;
-        background-color: #e6d7ce;
-        right: 14px;
-        left: 14px;
-    }
-    .azwa-template .header .navbar-area > .container > .row:before,
-    .azwa-template .header .navbar-area > .container > .row:after {
-        content: '';
-        border-width: 7px;
-        border-style: solid;
-        border-color: #ff5d00;
-        width: 0;
-        height: 0;
-        top: 100%;
-        position: absolute;
-    }
-    .azwa-template .header .navbar-area > .container > .row {
-        position: relative;
-    }
-    .azwa-template .header .navbar-area > .container > div.row:before {
-        left: -12px;
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-    }
-    .azwa-template .header .navbar-area > .container > div.row:after {
-        right: -12px;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-    }
-    .azwa-template .header .navbar-area .menubar .menu-wrap > li > a {
-        line-height: 102px;
-    }
-    .azwa-template .header .menu-right li.search-button {
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
-    }
-    .azwa-template .header .menu-right > ul {
-        min-height: 102px;
-    }
+
+@keyframes animation-pulse-grow{to{transform:scale(1.05)}}
+
+.header-info li[class*='tlh-'] a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header-info .tlh-content {
+    line-height: 1.5;
+    text-align: left;
+}
+
+.header-info .tlh-icon {
+    margin-right: 5px;
+    position: relative;
 }
 
 .azwa-template .header .header-above .header-info a {
@@ -140,17 +51,41 @@ Use it to make something cool, have fun, and share what you've learned with othe
     background: none;
 }
 
-.azwa-template .header .header-above .pull-down-toggle i {
+.azwa-template .header .pull-down-toggle i {
     background-color: #ffffff;
 }
 
+.azwa-template .header .header-above .mobi-above .header-info i,
 .azwa-template .header .header-above .trh-social i {
     color: #ffffff;
 }
 
 .azwa-template .header .header-above .header-info i {
-    font-size: 25px;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 28px;
+    margin-right: 0;
     vertical-align: middle;
+}
+
+.azwa-template .header .header-above .header-info a:hover i,
+.azwa-template .header .header-above .header-info a:focus i {
+    animation-name: animation-pulse-grow;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-transform: none;
+    transform: none;
+    color: #ffffff;
+    background: #ff5d00;
+}
+
+.azwa-template .header .mobi-above .header-info a:hover i,
+.azwa-template .header .mobi-above .header-info a:focus i {
+    color: #ff5d00;
+    background: #ffffff;
 }
 
 .menubar .menu-wrap > li > a {
@@ -180,6 +115,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .azwa-template .blog-post .more-link,
 .azwa-template .boxed-btn {
     border-radius: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .azwa-template .wp-block-search__button:after,
@@ -298,6 +234,70 @@ Use it to make something cool, have fun, and share what you've learned with othe
     height: 100%;
 }
 
+.header-single-slider {
+    position: relative;
+    background-color: #111111;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    z-index: 0;
+    background-size: 100% 100%;
+    padding: 90px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 720px;
+}
+
+.header-single-slider:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.azwa-template .theme-slider div.theme-content {
+    margin-bottom: 0;
+}
+
+.azwa-template .theme-slider.slider-mobi-image .container {
+    padding: 0;
+}
+
+.azwa-template .theme-slider.slider-mobi-image div.theme-content {
+    max-width: 100%;
+    margin: 0;
+}
+
+.azwa-template .slider-mobi-image div.text-center [class*='col-']:nth-child(2) {
+    margin-top: 15px !important;
+}
+
+.azwa-template .header-slider h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.azwa-template .header-slider h1 span {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 68px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.azwa-template .header-slider p {
+    margin-top: 7px;
+    color: #ffffff;
+}
+
 .azwa-template .header-slider .owl-nav:not(.disabled) {
     display: inline-block;
     position: absolute;
@@ -353,6 +353,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
     left: 0;
     width: 100%;
     background-color: inherit;
+}
+
+.service-azwa-over .item-featured {
+    min-height: 512px;
 }
 
 .service-azwa-over .item-featured,
@@ -561,45 +565,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
     z-index: 0;
 }
 
-.azwa-header-slider .azwa-slider {
-    padding: 8rem 0 7rem;
-}
-
-.azwa-header-slider:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #ff5d00;
-    opacity: 0.15;
-    z-index: -1;
-}
-
-.azwa-header-slider .theme-slider .text-center [class*="col-"]:first-child {
+.slider-mobi-image .text-center [class*="col-"]:first-child {
     flex-basis: 100%;
     max-width: 100%;
 }
 
-.azwa-header-slider .header-slider .theme-slider .text-center [class*="col-"]:nth-child(2) img {
+.slider-mobi-image .text-center [class*="col-"]:nth-child(2) img {
     margin: auto;
-    margin-top: 3rem;
 }
 
-.azwa-header-slider .header-slider .theme-slider .text-left [class*="col-"]:nth-child(2) img {
+.slider-mobi-image .text-left [class*="col-"]:nth-child(2) img {
     margin-left: auto;
 }
 
-.azwa-header-slider .theme-slider .text-right [class*="col-"]:first-child {
+.slider-mobi-image .text-right [class*="col-"]:first-child {
     order: 1;
 }
 
-.azwa-header-slider .header-slider .item img {
-    height: auto;
-}
-
-.azwa-header-slider .owl-item img {
+.owl-item .slider-mobi-image img {
     width: auto;
     height: auto;
 }
@@ -883,7 +866,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* // */
 
 .azwa-template #breadcrumb-area {
-    padding-top: 205px;
+    padding-top: 165px;
 }
 
 .azwa-template #breadcrumb-area:after {
@@ -907,4 +890,171 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .azwa-template .single-contact:not(:first-child) {
         margin-left: 0;
     }
+    .header-single-slider {
+        min-height: 245px;
+        padding: 15px 0;
+    }
+    .slider-mobi-image {
+        padding: 15px;
+        background-size: cover;
+    }
 }
+
+/* Azwa Responsive Start */
+@media only screen and (max-width:991px) {
+    .azwa-template .header-slider h1 span {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .azwa-template .header-above-desk .container > .row {
+        margin: 0 -30px;
+    }
+    .azwa-template .header .header-above {
+        background-color: #ffffff;
+        padding: 2em 0;
+    }
+    .azwa-template .header .header-above a {
+        color: #111111;
+    }
+    .azwa-template .header-above li:after {
+        background: rgb(255 255 255 / 0.25);
+    }
+    .azwa-template .trh-social {
+        width: 100%;
+        padding: 8px 12px;
+        background-color: #ff5d00;
+        position: absolute;
+        bottom: 3px;
+        z-index: 0;
+    }
+    .azwa-template .trh-social:before {
+        content: '';
+        height: 100%;
+        width: 100px;
+        position: absolute;
+        top: 0;
+        right: -10px;
+        -webkit-transform: skew(-23deg);
+        -khtml-transform: skew(-23deg);
+        -moz-transform: skew(-23deg);
+        -ms-transform: skew(-23deg);
+        -o-transform: skew(-23deg);
+        transform: skew(-23deg);
+        z-index: -1;
+        background-color: inherit;
+    }
+    .azwa-template .header .navigator-wrapper {
+        margin-bottom: -4%;
+    }
+    .azwa-template .header .navbar-area {
+        padding: 0;
+        max-width: 960px;
+        margin: 0 auto;
+        background-color: #f6f6f6;
+    }
+    .azwa-template .header .navbar-area > .container {
+        position: relative;
+        padding-top: 7px;
+        padding-left: 27px;
+        padding-right: 27px;
+    }
+    .azwa-template .header .navbar-area > .container:before {
+        content: '';
+        height: 7px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1px dashed #ababab;
+    }
+    .azwa-template .header .navbar-area > .container::after {
+        content: "";
+        position: absolute;
+        bottom: -14px;
+        height: 14px;
+        background-color: #e6d7ce;
+        right: 14px;
+        left: 14px;
+    }
+    .azwa-template .header .navbar-area > .container > .row:before,
+    .azwa-template .header .navbar-area > .container > .row:after {
+        content: '';
+        border-width: 7px;
+        border-style: solid;
+        border-color: #ff5d00;
+        width: 0;
+        height: 0;
+        top: 100%;
+        position: absolute;
+    }
+    .azwa-template .header .navbar-area > .container > .row {
+        position: relative;
+    }
+    .azwa-template .header .navbar-area > .container > div.row:before {
+        left: -12px;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    .azwa-template .header .navbar-area > .container > div.row:after {
+        right: -12px;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+    .azwa-template .header .navbar-area .menubar .menu-wrap > li > a {
+        line-height: 102px;
+    }
+    .azwa-template .header .menu-right li.search-button {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+    }
+    .azwa-template .header .menu-right > ul {
+        min-height: 102px;
+    }
+    .slider-mobi-image p {
+        margin-bottom: 40px;
+    }
+    .slider-mobi-image .boxed-btn {
+        line-height: 39px;
+        font-size: 16px;
+        font-weight: 600;
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .azwa-template .header .navbar-area {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (max-width: 575px) {  }
+
+@media screen and (max-width: 420px) {
+    .slider-mobi-image [class*="col-"] {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .slider-mobi-image [class*="col-"]:nth-child(2) {
+        margin-top: 2rem !important;
+    }
+    .slider-mobi-image .text-right [class*="col-"]:first-child {
+        order: 0;
+    }
+    .slider-mobi-image .col-8 {
+        text-align: center;
+    }
+    .slider-mobi-image .col-8 p,
+    .slider-mobi-image .col-4 img {
+        margin: auto;
+        max-height: 160px;
+    }
+    .slider-mobi-image .col-8 p {
+        margin-bottom: 20px;
+    }
+}
+/* Azwa Responsive End */
