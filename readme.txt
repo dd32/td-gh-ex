@@ -2,10 +2,10 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 2.0.36
-Version: 2.0.36
+Stable tag: 2.0.37
+Version: 2.0.37
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
@@ -116,6 +116,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 2.0.37
+* Tested With WordPress 5.6
 
 @version 2.0.36
 * Added Functionality for Import Data of Parent Theme
