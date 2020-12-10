@@ -723,7 +723,7 @@ function catchbox_scripts_method() {
 
 	//Enqueue Slider Script only in Front Page
 	if ( is_front_page() || is_home() ) {
-		wp_enqueue_script( 'catchbox-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchbox-slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'catchbox-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchbox-slider.js', array( 'jquery-cycle' ), '1.0.1', true );
 	}
 
 	wp_enqueue_script( 'catchbox-skip-link-focus-fix', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/skip-link-focus-fix.js', array(), '20151112', true );

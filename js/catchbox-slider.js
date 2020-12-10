@@ -1,6 +1,6 @@
 /*!
  * jQuery Cycle set up
- * Version: 1.0
+ * Version: 1.0.1
  * Description: Featured slider to display in header.php
  */
 
@@ -21,6 +21,7 @@ jQuery(window).on('load',function () {
 			width: 				'100%',
 			containerResize: 	0,   // resize container to fit largest slide
 			fit:           		1,
+			cleartypeNoBg: 		true,
 			after: function (){
 		        jQuery(this).parent().css("height", jQuery(this).height());
 		     }
