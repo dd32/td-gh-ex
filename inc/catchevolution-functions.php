@@ -34,7 +34,7 @@ function catchevolution_scripts_method() {
 
 	// Slider JS load loop
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && 'enable-slider-homepage' == $enableslider ) ) {
-		wp_enqueue_script( 'catchevolution-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'catchevolution-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0.1', true );
 	}
 
 	//Responsive
