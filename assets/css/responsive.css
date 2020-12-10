@@ -23,6 +23,10 @@
 }
 
 @media (min-width: 992px) and (max-width: 1124px) {
+	.features-section.bg-primary .features-icon {
+	    max-width: 45px;
+	    height: 45px;
+	}
 	.widget_social_widget li:not(:last-child) a {
 	    margin-right: 3px;
 	}
@@ -189,6 +193,9 @@
 	.headtop-mobi {
     	right: 17px;
     }
+    .main-slider .owl-item .item {
+	    min-height: 347px;
+	}
 }
 
 @media (max-width: 768px) {
@@ -336,7 +343,6 @@
 	.main-slider .owl-item .item {
 	    padding: 14px 0;
 	    min-height: 182px;
-	    background-size: cover;
 	}
 }
 
