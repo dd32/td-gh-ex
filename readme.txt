@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
 Tested up to: 5.6
-Stable tag: 4.4.2
+Stable tag: 4.4.2.1
 
 == Description ==
 
@@ -697,3 +697,6 @@ Fix: PwP paging links for Previous/Next
 
 = Version 4.4.2 =
 * fix: Fixed-to-top areas had extra space in WP 5.6
+
+= Version 4.4.2.1 =
+* fix: JavaScript code issue

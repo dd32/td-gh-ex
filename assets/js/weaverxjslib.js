@@ -13,7 +13,7 @@
  *
  ************************************************************************************* */
 //Initial load of page
-let agent = navigator.userAgent;
+var agent = navigator.userAgent;
 
 // Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
 // we can force the JS to fix it. For whatever reason, the Safari agent string included both Chrome and Safari. Bizarre!
@@ -22,13 +22,13 @@ if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {	// run document ready j
 	jQuery(document).ready(weaverxOnResize);
 }
 
-//jQuery(document).ready(weaverxOnResize);	// don't really nned this for non-safari - it results in a double call on initial load
+//jQuery(document).ready(weaverxOnResize);	// don't really need this for non-safari - it results in a double call on initial load
 // *********************************** >>>  JavaScript Functions <<< *******************************************
 // *********************************** >>>  weaverxBrowserWidth <<< *******************************************
 function weaverxBrowserWidth() {
 	// This is a cross-browser way to get the window width. We will use it in all script
 	// that need the width to endure consistent treatment of the width.
-	let width = 768;
+	var width = 768;
 	if (typeof (window.innerWidth) == 'number') {
 		width = window.innerWidth; //Non-IE
 	} else if (document.documentElement &&
@@ -79,7 +79,7 @@ function weaverxBrowserWidth() {
 	}
 
 	function scrollListener(e) {
-		let element = this;
+		var element = this;
 		resetTriggers(this);
 		if (this.__resizeRAF__) cancelFrame(this.__resizeRAF__);
 		this.__resizeRAF__ = requestFrame(function () {
@@ -93,10 +93,10 @@ function weaverxBrowserWidth() {
 		});
 	}
 
-	let attachEvent = document.attachEvent,
+	var attachEvent = document.attachEvent,
 		stylesCreated = false;
 
-	let jQuery_resizeX = $.fn.resizeX;
+	var jQuery_resizeX = $.fn.resizeX;
 
 	$.fn.resizeX = function (callback) {
 		return this.each(function () {
@@ -114,8 +114,8 @@ function weaverxBrowserWidth() {
 	};
 
 	if (!attachEvent) {
-		let requestFrame = (function () {
-			let raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+		var requestFrame = (function () {
+			var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
 				function (fn) {
 					return window.setTimeout(fn, 20);
 				};
@@ -124,8 +124,8 @@ function weaverxBrowserWidth() {
 			};
 		})();
 
-		let cancelFrame = (function () {
-			let cancel = window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame ||
+		var cancelFrame = (function () {
+			var cancel = window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame ||
 				window.clearTimeout;
 			return function (id) {
 				return cancel(id);
@@ -142,13 +142,13 @@ function weaverxBrowserWidth() {
 			startEvents = 'webkitAnimationStart animationstart oAnimationStart MSAnimationStart'.split(' '),
 			pfx = '';
 		{
-			let elm = document.createElement('fakeelement');
+			var elm = document.createElement('fakeelement');
 			if (elm.style.animationName !== undefined) {
 				animation = true;
 			}
 
 			if (animation === false) {
-				for (let i = 0; i < domPrefixes.length; i++) {
+				for (var i = 0; i < domPrefixes.length; i++) {
 					if (elm.style[domPrefixes[i] + 'AnimationName'] !== undefined) {
 						pfx = domPrefixes[i];
 						animationstring = pfx + 'Animation';
@@ -161,15 +161,15 @@ function weaverxBrowserWidth() {
 			}
 		}
 
-		let animationName = 'resizeanim';
-		let animationKeyframes = '@' + keyframeprefix + 'keyframes ' + animationName + ' { from { opacity: 0; } to { opacity: 0; } } ';
-		let animationStyle = keyframeprefix + 'animation: 1ms ' + animationName + '; ';
+		var animationName = 'resizeanim';
+		var animationKeyframes = '@' + keyframeprefix + 'keyframes ' + animationName + ' { from { opacity: 0; } to { opacity: 0; } } ';
+		var animationStyle = keyframeprefix + 'animation: 1ms ' + animationName + '; ';
 	}
 
 	function createStyles() {
 		if (!stylesCreated) {
 			//opacity:0 works around a chrome bug https://code.google.com/p/chromium/issues/detail?id=286360
-			let css = (animationKeyframes ? animationKeyframes : '') +
+			var css = (animationKeyframes ? animationKeyframes : '') +
 				'.resize-triggers { ' + (animationStyle ? animationStyle : '') + 'visibility: hidden; opacity: 0; } ' +
 				'.resize-triggers, .resize-triggers > div, .contract-trigger:before { content: \" \"; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }',
 				head = document.head || document.getElementsByTagName('head')[0],
@@ -252,10 +252,10 @@ if (!Object.create) { // IE8 shim for Object.create
 (function ($, window, undefined) {
 	'use strict';
 
-	let Menu = {
+	var Menu = {
 		options: {
 			mobileBreakpoint: 768, // don't change this - corresponds to small-tablet/desktop split
-			hideToggle: false, // set to true if want a tablet sized vertical accordion menu
+			hideToggle: false, // set to true if want a tabvar sized vertical accordion menu
 			toggleButtonID: 'menu-toggle-button',
 			hoverClass: 'menu-hover',
 			arrowClass: 'menu-arrows',
@@ -267,7 +267,7 @@ if (!Object.create) { // IE8 shim for Object.create
 		},
 
 		init: function (el, options) {
-			let menu = this,
+			var menu = this,
 				doCallback = true, // Window resize throttle flag.
 				mo;
 
@@ -330,7 +330,7 @@ if (!Object.create) { // IE8 shim for Object.create
 		 * mobile state.
 		 */
 		initToggleButton: function () {
-			let menu = this,
+			var menu = this,
 				mo = menu.options;
 
 			// Select the toggle button.
@@ -368,7 +368,7 @@ if (!Object.create) { // IE8 shim for Object.create
 		 *
 		 */
 		toggleMobile: function () {
-			let mo = this.options,
+			var mo = this.options,
 				width = 0;
 			width = weaverxBrowserWidth();
 
@@ -404,7 +404,7 @@ if (!Object.create) { // IE8 shim for Object.create
 		 * @param {object} menuItem Submenu HTML element.
 		 */
 		toggleSubmenu: function (menuItem) {
-			let mo = this.options,
+			var mo = this.options,
 				submenu = $(menuItem).closest('.' + mo.hasSubmenuClass);
 
 			// Toggle the submenu open class and remove from any other submenus at the same level.
@@ -419,7 +419,7 @@ if (!Object.create) { // IE8 shim for Object.create
 	 */
 	$.fn.thmfdnMenu = function (settings) {
 		return this.each(function () {
-			let menu = Object.create(Menu);
+			var menu = Object.create(Menu);
 			menu.init(this, settings);
 		});
 	};
@@ -440,19 +440,19 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 	if (typeof wvrxOpts !== 'undefined' && wvrxOpts.useSmartMenus != '0')
 		return;
 
-	let weaverx_isTouch = ("ontouchstart" in window) ||
+	var weaverx_isTouch = ("ontouchstart" in window) ||
 		(navigator.MaxTouchPoints > 0) ||
 		(navigator.msMaxTouchPoints > 0);
-	let weaverx_isIOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
-	let weaverx_touch_dropdown_menu_apply = weaverx_isTouch || weaverx_isIOS5; //&& ! weaverx_isIOS5;
-	let selector = 'li:has(ul) > a'; // set these to work with weaver x
-	let selector_leaf = 'li li li:not(:has(ul)) > a';
+	var weaverx_isIOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
+	var weaverx_touch_dropdown_menu_apply = weaverx_isTouch || weaverx_isIOS5; //&& ! weaverx_isIOS5;
+	var selector = 'li:has(ul) > a'; // set these to work with weaver x
+	var selector_leaf = 'li li li:not(:has(ul)) > a';
 
 	/* Apply dropdown effect on first click */
 	if (weaverx_touch_dropdown_menu_apply && weaverxBrowserWidth() > 767) { // don't need if mobile menu
 		$(document).ready(function () {
 			$(selector).each(function () {
-				let $this = $(this);
+				var $this = $(this);
 
 				// Fix for IE
 				//$this.attr( 'aria-haspopup', true );
@@ -463,7 +463,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 				// Touch Handler
 				$this.bind('touchstart', function () {
 
-					let noclick = !($this.data('dataNoclick'));
+					var noclick = !($this.data('dataNoclick'));
 					$(selector).each(function () {
 						$(this).data('dataNoclick', false);
 					});
@@ -501,13 +501,13 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 	$.fn.wvrx_fixWvrxFixedTop = function () {
 
-		let adminBarHeight = 0;
+		var adminBarHeight = 0;
 
-		let origAdminBHeight = 0;
+		var origAdminBHeight = 0;
 
-		let adjust = 1;
-		let topMenu = '#nav-secondary .wvrx-fixedtop';
-		let botMenu = '#nav-primary .wvrx-fixedtop';
+		var adjust = 1;
+		var topMenu = '#nav-secondary .wvrx-fixedtop';
+		var botMenu = '#nav-primary .wvrx-fixedtop';
 
 		if (typeof wvrxOpts !== 'undefined' && (wvrxOpts.primaryMove == '1' || wvrxOpts.secondaryMove == '1')) {
 			botMenu = '#nav-secondary .wvrx-fixedtop';
@@ -518,13 +518,13 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 		if ($('body').hasClass('admin-bar')) { // fix on wide screens only, will be overlap on mobile
 			adminBarHeight = $('#wpadminbar').outerHeight();
 		}
-	    origAdminBHeight = adminBarHeight;
+		origAdminBHeight = adminBarHeight;
 
 		// built-in fixed-top items, by priority: #inject_fixedtop, #nav-secondary, #nav-primary, #header-widget-area
 		// adjusted for primaryMove
-		let cumulativeHeight = 0;
-		let curHeight = $('#inject_fixedtop.wvrx-fixedtop').outerHeight() - 1; // put #inject_fixedtop first
-		if ( curHeight > 0 ) {
+		var cumulativeHeight = 0;
+		var curHeight = $('#inject_fixedtop.wvrx-fixedtop').outerHeight() - 1; // put #inject_fixedtop first
+		if (curHeight > 0) {
 			$('#inject_fixedtop.wvrx-fixedtop').css('top', adminBarHeight);
 			cumulativeHeight = cumulativeHeight + curHeight + adminBarHeight;
 			adminBarHeight = 0;      // admin bar added in
@@ -534,7 +534,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 		curHeight = $(topMenu).outerHeight() - adjust;
 		if (curHeight > 0) {
-			$(topMenu).css('top', cumulativeHeight + adminBarHeight );
+			$(topMenu).css('top', cumulativeHeight + adminBarHeight);
 			cumulativeHeight = cumulativeHeight + curHeight + adminBarHeight;
 			adminBarHeight = 0;      // admin bar added in
 		}
@@ -544,23 +544,32 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 		curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight() - adjust;
 		if (curHeight > 0) {
-			$('#header-widget-area.wvrx-fixedtop').css('top', cumulativeHeight + adminBarHeight );
+			$('#header-widget-area.wvrx-fixedtop').css('top', cumulativeHeight + adminBarHeight);
 			cumulativeHeight = cumulativeHeight + curHeight + adminBarHeight;
 			adminBarHeight = 0;
 		}
 
 		curHeight = $(botMenu).outerHeight() - adjust;
 		if (curHeight > 0) {
-			$(botMenu).css('top', cumulativeHeight + adminBarHeight );
+			$(botMenu).css('top', cumulativeHeight + adminBarHeight);
 			cumulativeHeight = cumulativeHeight + curHeight + adminBarHeight;
 			adminBarHeight = 0;      // admin bar added in
 		}
 
-		if ( cumulativeHeight > 0 ) {
+		if (cumulativeHeight > 0) {
 			$('body').css('margin-top', cumulativeHeight - adjust - origAdminBHeight); // now make room for the top fixed areas
+		} else { // none of the built-in fixed top items used, so see if user added own wvrx-fixed top class to anyting
+
+			var fixedHeight = $('.wvrx-fixedtop').outerHeight();
+			if (fixedHeight > 0) { // a fixed top area is diplayed
+				// There is a height on a fixed-top area, so adjust the body margin-top
+				$('body').css('margin-top', fixedHeight + adminBarHeight);
+				if (adminBarHeight > 0)
+					$('.wvrx-fixedtop').css('top', adminBarHeight);
+			}
 		}
 
-		let botFixed = $('#inject_fixedbottom').outerHeight();
+		var botFixed = $('#inject_fixedbottom').outerHeight();
 		if (botFixed !== 0) {
 			$('body').css('margin-bottom', botFixed);
 		}
@@ -586,12 +595,12 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 function weaverxOnResize() {
 	// this function is called on initial window load, and again on resizes
-	let width;
+	var width;
 	if (typeof wvrxOpts.menuAltswitch == 'undefined' || wvrxOpts.menuAltswitch === null)
 		wvrxOpts.menuAltswitch = 767;
 	width = weaverxBrowserWidth();
 
-	let theBody = jQuery('body');
+	var theBody = jQuery('body');
 
 	if (width <= wvrxOpts.menuAltswitch) { // check for switch point for changing mobile menu
 		theBody.addClass("is-menu-mobile");
@@ -606,21 +615,21 @@ function weaverxOnResize() {
 	if (width > 767)
 		theBody.addClass('is-menu-default');
 
-	let device = 'is-weaver is-desktop';
+	var device = 'is-weaver is-desktop';
 
 	// do things when we resize
 	if (width >= 768) { // on the desktop
-		theBody.removeClass("is-weaver is-phone is-smalltablet is-mobile");
+		theBody.removeClass("is-weaver is-phone is-smalltabvar is-mobile");
 		device = 'is-weaver is-desktop';
 	} else if (width > 580) { // small tablet
 		theBody.removeClass("is-weaver is-phone is-desktop");
-		device = 'is-weaver is-smalltablet is-mobile';
+		device = 'is-weaver is-smalltabvar is-mobile';
 	} else { // phone
 		theBody.removeClass("is-weaver is-desktop is-smalltablet");
 		device = 'is-weaver is-phone is-mobile';
 	}
 
-	let agent = navigator.userAgent;
+	var agent = navigator.userAgent;
 
 	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
 	// we can force the JS to fix it. For whatever reason, the Safari agent string included both Chrome and Safari. Bizarre!
@@ -667,7 +676,7 @@ function weaverxOnResize() {
 }
 
 jQuery(window).scroll(function () {
-	let scrolledY = jQuery(window).scrollTop();
+	var scrolledY = jQuery(window).scrollTop();
 	jQuery('#header.header-as-bg-parallax').css('background-position-y', ((scrolledY)) + 'px');
 
 });
@@ -686,8 +695,6 @@ jQuery(function ($) {
 			toggleButtonID: 'secondary-toggle-button'
 		});
 	}
-
-
 });
 
 // Add header video class after the video is loaded.

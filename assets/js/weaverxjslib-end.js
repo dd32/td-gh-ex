@@ -17,16 +17,16 @@
 	'use strict';
 
 	$.fn.fitVids = function (options) {
-		let settings = {
+		var settings = {
 			customSelector: null,
 			ignore: '.wp-block-embed'
 		};
 
 		if (!document.getElementById('fit-vids-style')) {
 			// appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js
-			let head = document.head || document.getElementsByTagName('head')[0];
-			let css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
-			let div = document.createElement("div");
+			var head = document.head || document.getElementsByTagName('head')[0];
+			var css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
+			var div = document.createElement("div");
 			div.innerHTML = '<p>x</p><style id="fit-vids-style">' + css + '</style>';
 			head.appendChild(div.childNodes[1]);
 		}
@@ -36,7 +36,7 @@
 		}
 
 		return this.each(function () {
-			let selectors = [
+			var selectors = [
 				'iframe[src*="player.vimeo.com"]',
 				'iframe[src*="youtube.com"]',
 				'iframe[src*="youtu.be"]',
@@ -50,18 +50,18 @@
 				selectors.push(settings.customSelector);
 			}
 
-			let ignoreList = '.fitvidsignore';
+			var ignoreList = '.fitvidsignore';
 
 			if (settings.ignore) {
 				ignoreList = ignoreList + ', ' + settings.ignore;
 			}
 
-			let $allVideos = $(this).find(selectors.join(','));
+			var $allVideos = $(this).find(selectors.join(','));
 			$allVideos = $allVideos.not('object object'); // SwfObj conflict patch
 			$allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
 
 			$allVideos.each(function () {
-				let $this = $(this);
+				var $this = $(this);
 				if ($this.parents(ignoreList).length > 0) {
 					return; // Disable FitVids on this video.
 				}
@@ -72,11 +72,11 @@
 					$this.attr('height', 9);
 					$this.attr('width', 16);
 				}
-				let height = (this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10)))) ? parseInt($this.attr('height'), 10) : $this.height(),
+				var height = (this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10)))) ? parseInt($this.attr('height'), 10) : $this.height(),
 					width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
 					aspectRatio = height / width;
 				if (!$this.attr('id')) {
-					let videoID = 'fitvid' + Math.floor(Math.random() * 999999);
+					var videoID = 'fitvid' + Math.floor(Math.random() * 999999);
 					$this.attr('id', videoID);
 				}
 				$this.wrap('<div class="fluid-width-video-wrapper"></div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100) + '%');
@@ -130,11 +130,11 @@ function wvrxFlowColor() {
 	if (typeof wvrxEndOpts === 'undefined' || wvrxEndOpts.flowColor == '0')
 		return;
 
-	let SdbConf = wvrxEndOpts.sbLayout; //get the sidebar layout
+	var SdbConf = wvrxEndOpts.sbLayout; //get the sidebar layout
 
-	let MyContent = document.getElementById('content');
-	let MyPSdb = document.getElementById('primary-widget-area');
-	let MySSdb = document.getElementById('secondary-widget-area');
+	var MyContent = document.getElementById('content');
+	var MyPSdb = document.getElementById('primary-widget-area');
+	var MySSdb = document.getElementById('secondary-widget-area');
 
 	//reset min height, must be outside the sidebar test
 	if (MyPSdb) {
@@ -148,14 +148,14 @@ function wvrxFlowColor() {
 	}
 
 	function weaverxMarginTop(select) {
-		let val = jQuery(select).css('margin-top');
+		var val = jQuery(select).css('margin-top');
 		if (val == 'auto') // Fix for jQuery returning auto on IE7 and IE8 when no margin is set
 			val = '0px';
 		return parseInt(val);
 	}
 
 	function weaverxMarginBottom(select) {
-		let val = jQuery(select).css('margin-bottom');
+		var val = jQuery(select).css('margin-bottom');
 		if (val == 'auto') // Fix for jQuery returning auto on IE7 and IE8 when no margin is set
 			val = '0px';
 		return parseInt(val);
@@ -201,11 +201,11 @@ function wvrxFlowColor() {
 				ContTopM = weaverxMarginTop('#content');
 				SSdbTopM = weaverxMarginTop('#secondary-widget-area');
 				PSdbTopM = weaverxMarginTop('#primary-widget-area');
-				let PSdbBotM = weaverxMarginBottom('#primary-widget-area');
+				var PSdbBotM = weaverxMarginBottom('#primary-widget-area');
 				PSdbHeight = MyPSdb.offsetHeight + PSdbTopM + PSdbBotM;
 				SSdbHeight = MySSdb.offsetHeight + SSdbTopM;
 				ContHeight = MyContent.offsetHeight + ContTopM;
-				let TotSdbHeight = PSdbHeight + SSdbHeight;
+				var TotSdbHeight = PSdbHeight + SSdbHeight;
 
 				//Take the highest content height
 				MaxHeight = Math.max(TotSdbHeight, ContHeight);
@@ -258,11 +258,11 @@ function weaverxScrollbarClass() {
 
 	//detect vertical Scrollbar and add a class to the body tag
 
-	let BrowserWidth = jQuery('#wvrx-page-width').width(); //width of browser
+	var BrowserWidth = jQuery('#wvrx-page-width').width(); //width of browser
 
 	jQuery('#wvrx-page-width').css('width', '100vw'); //change width to 100vw to measure viewport
 
-	let expandWidth = jQuery('#wvrx-page-width').width(); //Width of the Expanded container (viewport)
+	var expandWidth = jQuery('#wvrx-page-width').width(); //Width of the Expanded container (viewport)
 
 	if (expandWidth > BrowserWidth) { //If viewport is larger there is a scrollbar
 		jQuery('body').addClass('vert-scrollbar');
@@ -303,8 +303,8 @@ function weaverxFullWidth() {
 	//Only limitation: Width, left / right padding & border should not be set with inline style, but with a separate custom CSS rule.
 	//This is because the script will write its own computed width and padding as inline style, so anything already there would be lost and lead to wrong calculation.
 
-	let BrowserWidth = jQuery('#wvrx-page-width').width(); //Gather Internal(content) width of browser
-	let overFlowVisible = false;
+	var BrowserWidth = jQuery('#wvrx-page-width').width(); //Gather Internal(content) width of browser
+	var overFlowVisible = false;
 
 //***SCAN BOTH CLASSES for Extend and Expand
 	jQuery(".wvrx-fullwidth, .wvrx-expand-full").each(function () {
@@ -316,26 +316,26 @@ function weaverxFullWidth() {
 			'padding-left': '',
 			'padding-right': ''
 		});
-		let ElemWidth = jQuery(this).width(); //width of content
-		let ElemOuterWidth = jQuery(this).outerWidth(); //width of content
-		let OrigLeftPad = parseFloat(jQuery(this).css("padding-left"));
-		let OrigRightPad = parseFloat(jQuery(this).css("padding-right"));
-		let OrigLeftBor = parseFloat(jQuery(this).css("border-left-width")) || 0; //or zero is for IE8 that returns NaN if not set
-		let OrigRightBor = parseFloat(jQuery(this).css("border-right-width")) || 0;
-		let LeftPadding, RightPadding;
+		var ElemWidth = jQuery(this).width(); //width of content
+		var ElemOuterWidth = jQuery(this).outerWidth(); //width of content
+		var OrigLeftPad = parseFloat(jQuery(this).css("padding-left"));
+		var OrigRightPad = parseFloat(jQuery(this).css("padding-right"));
+		var OrigLeftBor = parseFloat(jQuery(this).css("border-left-width")) || 0; //or zero is for IE8 that returns NaN if not set
+		var OrigRightBor = parseFloat(jQuery(this).css("border-right-width")) || 0;
+		var LeftPadding, RightPadding;
 
-		let Extension = BrowserWidth - ElemOuterWidth; //Difference between browser and content
-		let LeftMargin, LeftMarginMinus, RightMargin, RightMarginMinus;
+		var Extension = BrowserWidth - ElemOuterWidth; //Difference between browser and content
+		var LeftMargin, LeftMarginMinus, RightMargin, RightMarginMinus;
 
 
 		if (Extension > 4) { //If positive we must compute extensions
-			let ParentWidth = jQuery(this).parent().width(); //width of parents content
-			let ElemBoxSizing = jQuery(this).css("box-sizing"); //Box sizing
-			let OrigLeftMarg = parseFloat(jQuery(this).css("margin-left")) || 0; //Left margin
+			var ParentWidth = jQuery(this).parent().width(); //width of parents content
+			var ElemBoxSizing = jQuery(this).css("box-sizing"); //Box sizing
+			var OrigLeftMarg = parseFloat(jQuery(this).css("margin-left")) || 0; //Left margin
 
-			let LeftPosition = Math.ceil(jQuery(this).offset().left); //ceil is to avoid a 1px scrollbar in s0me configuration
-			// let LeftPosition = jQuery(this).offset().left; // don't need ceil on some browsers
-			let RightPosition = BrowserWidth - (LeftPosition + ElemOuterWidth); //Distance between right side of content and right side of browser
+			var LeftPosition = Math.ceil(jQuery(this).offset().left); //ceil is to avoid a 1px scrollbar in s0me configuration
+			// var LeftPosition = jQuery(this).offset().left; // don't need ceil on some browsers
+			var RightPosition = BrowserWidth - (LeftPosition + ElemOuterWidth); //Distance between right side of content and right side of browser
 
 			if (!overFlowVisible) { // auto fix these whenver fullwidth used
 				overFlowVisible = true;
@@ -349,7 +349,7 @@ function weaverxFullWidth() {
 				OrigLeftMarg = Math.max(0, ((ParentWidth - ElemOuterWidth) / 2)); //to workaround FF  bug with jquery auto margins
 			}
 			//COmputing any error from jQuery so we can add it to the final padding
-			let WidthError = BrowserWidth - (LeftPosition + RightPosition + OrigLeftPad + OrigRightPad + OrigLeftBor + OrigRightBor + ElemWidth);
+			var WidthError = BrowserWidth - (LeftPosition + RightPosition + OrigLeftPad + OrigRightPad + OrigLeftBor + OrigRightBor + ElemWidth);
 
 			if (jQuery("body.rtl").length) {
 				//RTL loop
@@ -406,15 +406,15 @@ function weaverxWidgetEq(WdgtClass, AreaId) {
 	//--Simplified with jQuery and added test for nobm class to decide on margin removal
 
 	//Equalizing widgets in any widget area
-	let WdgtArea = document.getElementById(AreaId);
+	var WdgtArea = document.getElementById(AreaId);
 	if (WdgtArea !== null) {
-		let noBotMargin = jQuery('#' + AreaId).hasClass('nobm'); //checks if the nobm class is present
-		let widget = jQuery("#" + AreaId + ' .' + WdgtClass);
+		var noBotMargin = jQuery('#' + AreaId).hasClass('nobm'); //checks if the nobm class is present
+		var widget = jQuery("#" + AreaId + ' .' + WdgtClass);
 		//Enter monitoring of widget area
-		let WgtPos = -10000;
-		let Rows = 0; //initialise row number
-		let WdgtInRow = [];
-		for (let i = 1; i <= 20; ++i) {
+		var WgtPos = -10000;
+		var Rows = 0; //initialise row number
+		var WdgtInRow = [];
+		for (var i = 1; i <= 20; ++i) {
 			WdgtInRow[i] = 0;
 		}
 
@@ -434,10 +434,10 @@ function weaverxWidgetEq(WdgtClass, AreaId) {
 			widget[i].style.minHeight = "0px";
 		}
 		//Running equalization row by row
-		let EqWdgt = 0; //initialize how manu widgets have been done
+		var EqWdgt = 0; //initialize how manu widgets have been done
 		var start, end;
 		for (i = 1; i < (Rows + 1); i++) {
-			let maxHeight = 0;
+			var maxHeight = 0;
 			// Calculate the max-height
 			start = (0 + EqWdgt);
 			end = (WdgtInRow[i] + EqWdgt);
@@ -473,20 +473,20 @@ function weaverxBottomFooter() {
 
 	jQuery('#container').css('min-height', ""); //resetting min-height
 
-	let ContHeight = jQuery('#container').height(); //needs to exclude padding as min-height will too
+	var ContHeight = jQuery('#container').height(); //needs to exclude padding as min-height will too
 
-	let PFHeight = 0; //set default postfooter height at zero
+	var PFHeight = 0; //set default postfooter height at zero
 
 	if (jQuery('#inject_postfooter')) { //If there is a postfooter area get its height
 		PFHeight = jQuery('#inject_postfooter').outerHeight(true);
 
 	}
 
-	let BrowserHeight = jQuery(window).height(); //get browser's height
+	var BrowserHeight = jQuery(window).height(); //get browser's height
 
-	let WrapperBottom = jQuery('#wrapper').position().top + jQuery('#wrapper').outerHeight(true); //get bottom position of the wrapper
+	var WrapperBottom = jQuery('#wrapper').position().top + jQuery('#wrapper').outerHeight(true); //get bottom position of the wrapper
 
-	let EmptySpace = BrowserHeight - WrapperBottom - PFHeight; //calculate empty space
+	var EmptySpace = BrowserHeight - WrapperBottom - PFHeight; //calculate empty space
 
 	if (EmptySpace > 0) { //if empty space is positive, push the footer
 
@@ -502,10 +502,10 @@ function weaverxBottomFooter() {
 function weaverxResizeEnd() {
 	jQuery(".fixedtop").wvrx_fixWvrxFixedTop(); // fix up the fixedtop areas
 
-	let Wa2Eq = jQuery(".widget-eq"); // getting all the containers with the widget-eq class
+	var Wa2Eq = jQuery(".widget-eq"); // getting all the containers with the widget-eq class
 
 	jQuery(function ($) {
-		for (let i = 0; i < Wa2Eq.length; i++) {
+		for (var i = 0; i < Wa2Eq.length; i++) {
 			weaverxWidgetEq('widget', Wa2Eq[i].id); // Execute weaverxWidgetEq on all widget areas with the widget-eq class
 		}
 	});
@@ -542,7 +542,7 @@ function weaverx_js_update() {
 
 		if (wvrxEndOpts.hideTip == '1') {
 			jQuery('a[title]').mouseover(function (e) {
-				let tip = jQuery(this).attr('title');
+				var tip = jQuery(this).attr('title');
 				jQuery(this).attr('title', '');
 			}).mouseout(function () {
 				jQuery(this).attr('title', jQuery('.tipBody').html());
@@ -550,7 +550,7 @@ function weaverx_js_update() {
 		}
 
 		if (wvrxEndOpts.hFontFamily != '0') {
-			let ffamily = 'font-' + wvrxEndOpts.hFontFamily;
+			var ffamily = 'font-' + wvrxEndOpts.hFontFamily;
 			//alert('ffamily:' + ffamily);
 			jQuery('.entry-content h1').addClass(ffamily);
 			jQuery('.entry-content h2').addClass(ffamily);
@@ -561,7 +561,7 @@ function weaverx_js_update() {
 		}
 
 		if (wvrxEndOpts.hFontMult != 1) {
-			let mult = wvrxEndOpts.hFontMult;
+			var mult = wvrxEndOpts.hFontMult;
 			// these values computed base on original h sizes times multipler determined in footer.php
 			jQuery('.entry-content h1').css('font-size', (2.25 * mult) + 'em');
 			jQuery('.entry-content h2').css('font-size', (1.875 * mult) + 'em');
@@ -587,9 +587,9 @@ function weaverx_js_update() {
 function weaverxMonitorContent(class2Mon) {
 	// This function gather the ID of all containers with the given class and executes weaverResizeEnd
 	// (flow color and widgetEq) when they change size
-	let XtraMenuAc = jQuery(class2Mon); // getting all the containers with the given class
+	var XtraMenuAc = jQuery(class2Mon); // getting all the containers with the given class
 	jQuery(function ($) {
-		for (let i = 0; i < XtraMenuAc.length; i++) {
+		for (var i = 0; i < XtraMenuAc.length; i++) {
 			$('#' + XtraMenuAc[i].id).resizeX(weaverxResizeEnd); //launching monitoring using the ID of the container
 		}
 	});
@@ -650,10 +650,10 @@ jQuery(function ($) {		// wrapper for jQuery utils
 
 	if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'scroll-fix') && ($('#nav-primary').length)) {
 		$(window).scroll(function () {
-			let wvrxAdminOffset = 0; //initialize offset for admin bar
-			let wvrxFixedOffset = 0;
-			let primarySelector = "#nav-primary .wvrx-menu-container"; //Defines the primary selector
-			let primaryHeight = $(primarySelector).outerHeight(); //Gathers the primary height
+			var wvrxAdminOffset = 0; //initialize offset for admin bar
+			var wvrxFixedOffset = 0;
+			var primarySelector = "#nav-primary .wvrx-menu-container"; //Defines the primary selector
+			var primaryHeight = $(primarySelector).outerHeight(); //Gathers the primary height
 			// Get the height of the WP Admin bar if present.
 			if ($('.admin-bar').length) {
 				wvrxAdminOffset = $('#wpadminbar').outerHeight();
@@ -663,8 +663,8 @@ jQuery(function ($) {		// wrapper for jQuery utils
 				wvrxFixedOffset = wvrxFixedOffset + $(this).outerHeight() - 1;
 			});
 			wvrxAdminOffset = wvrxAdminOffset + wvrxFixedOffset;
-			let windowScroll = $(window).scrollTop(); //Collects the amount of scroll
-			let primaryPos = $('#nav-primary').offset().top - parseFloat($('body').css('marginTop')) + wvrxFixedOffset;
+			var windowScroll = $(window).scrollTop(); //Collects the amount of scroll
+			var primaryPos = $('#nav-primary').offset().top - parseFloat($('body').css('marginTop')) + wvrxFixedOffset;
 
 			if (primaryPos < (windowScroll + wvrxAdminOffset)) {
 				$(primarySelector).addClass('wvrx-fixonscroll'); //Fix primary
@@ -682,10 +682,10 @@ jQuery(function ($) {		// wrapper for jQuery utils
 //Secondary only
 	if ((wvrxOpts.secondaryScroll == 'scroll-fix') && (wvrxOpts.primaryScroll != 'scroll-fix') && ($('#nav-secondary').length)) {
 		$(window).scroll(function () {
-			let wvrxAdminOffset = 0; //initialize offset for admin bar
-			let wvrxFixedOffset = 0;
-			let secondarySelector = "#nav-secondary .wvrx-menu-container"; //Defines the secondary selector
-			let secondaryHeight = $(secondarySelector).outerHeight(); //Gathers the secondary height
+			var wvrxAdminOffset = 0; //initialize offset for admin bar
+			var wvrxFixedOffset = 0;
+			var secondarySelector = "#nav-secondary .wvrx-menu-container"; //Defines the secondary selector
+			var secondaryHeight = $(secondarySelector).outerHeight(); //Gathers the secondary height
 			// Get the height of the WP Admin bar if present.
 			if ($('.admin-bar').length) {
 				wvrxAdminOffset = $('#wpadminbar').outerHeight();
@@ -695,8 +695,8 @@ jQuery(function ($) {		// wrapper for jQuery utils
 				wvrxFixedOffset = wvrxFixedOffset + $(this).outerHeight();
 			});
 			wvrxAdminOffset = wvrxAdminOffset + wvrxFixedOffset;
-			let windowScroll = $(window).scrollTop(); //Collects the amount of scroll
-			let secondaryPos = $('#nav-secondary').offset().top - parseFloat($('body').css('marginTop')) + wvrxFixedOffset;
+			var windowScroll = $(window).scrollTop(); //Collects the amount of scroll
+			var secondaryPos = $('#nav-secondary').offset().top - parseFloat($('body').css('marginTop')) + wvrxFixedOffset;
 
 			if (secondaryPos < (windowScroll + wvrxAdminOffset)) {
 				$(secondarySelector).addClass('wvrx-fixonscroll'); //Fix secondary
@@ -715,12 +715,12 @@ jQuery(function ($) {		// wrapper for jQuery utils
 		&& ($('#nav-primary').length) && ($('#nav-secondary').length)) {
 		//Scrool loop
 		$(window).scroll(function () {
-			let wvrxAdminOffset = 0; //initialize offset for admin bar
-			let wvrxFixedOffset = 0;  //iniialize offset for fixed elemenst
-			let secondarySelector = "#nav-secondary .wvrx-menu-container"; //Defines the secondary selector
-			let secondaryHeight = $(secondarySelector).outerHeight(); //Gathers the secondary height
-			let primarySelector = "#nav-primary .wvrx-menu-container"; //Defines the primary selector
-			let primaryHeight = $(primarySelector).outerHeight(); //Gathers the primary height
+			var wvrxAdminOffset = 0; //initialize offset for admin bar
+			var wvrxFixedOffset = 0;  //iniialize offset for fixed elemenst
+			var secondarySelector = "#nav-secondary .wvrx-menu-container"; //Defines the secondary selector
+			var secondaryHeight = $(secondarySelector).outerHeight(); //Gathers the secondary height
+			var primarySelector = "#nav-primary .wvrx-menu-container"; //Defines the primary selector
+			var primaryHeight = $(primarySelector).outerHeight(); //Gathers the primary height
 			// Set adjustement for the admin bar. May be able to move out of the scroll loop when inded the weaverjs
 			if ($('.admin-bar').length) {
 				wvrxAdminOffset = $('#wpadminbar').outerHeight();
@@ -731,10 +731,10 @@ jQuery(function ($) {		// wrapper for jQuery utils
 			});
 			wvrxAdminOffset = wvrxAdminOffset + wvrxFixedOffset;
 
-			let windowScroll = $(window).scrollTop(); //Collects the amount of scroll
+			var windowScroll = $(window).scrollTop(); //Collects the amount of scroll
 			//use parent container for position as when menu gets fixed its position changes
-			let secondaryPos = $('#nav-secondary').offset().top - parseFloat($('body').css('marginTop')) + wvrxFixedOffset;
-			let primaryPos = $('#nav-primary').offset().top - (parseFloat($('body').css('marginTop')) - secondaryHeight) + wvrxFixedOffset;
+			var secondaryPos = $('#nav-secondary').offset().top - parseFloat($('body').css('marginTop')) + wvrxFixedOffset;
+			var primaryPos = $('#nav-primary').offset().top - (parseFloat($('body').css('marginTop')) - secondaryHeight) + wvrxFixedOffset;
 
 			//need 3 stages before second is fixed - before first fixed too - after that
 			//Before secondary is fixed

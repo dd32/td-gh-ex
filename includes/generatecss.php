@@ -617,7 +617,7 @@ margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;w
 
 	$font_size = weaverx_getopt( 'site_fontsize_tablet_int' );  // tablet
 	if ( $font_size ) {
-		weaverx_f_write( $sout, sprintf( '@media ( min-width: 581px) and ( max-width: 767px) {body{font-size:%.5fem;}}', $font_size * 0.0625 ) );
+		weaverx_f_write( $sout, sprintf( '@media (min-width: 581px) and (max-width: 767px) {body{font-size:%.5fem;}}', $font_size * 0.0625 ) );
 	}
 
 	$font_size = weaverx_getopt( 'site_fontsize_phone_int' );   // .is-phone
