@@ -37,14 +37,7 @@ add_filter('get_custom_logo','arilewp_header_logo_class');
 
 if ( ! function_exists( 'arilewp_comment' ) ) :
 function arilewp_comment( $comment, $args, $depth ) 
-{
-	//get theme data
-	global $comment_data;
-
-	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
-	__('Reply','arilewp');?>
-	
+{  ?>
         <div <?php comment_class('media comment-box'); ?> id="comment-<?php comment_ID(); ?>">
 			<a class="pull-left-comment">
             <?php echo get_avatar($comment); ?>
@@ -59,7 +52,7 @@ function arilewp_comment( $comment, $args, $depth )
 				</time></h5>
 				<?php comment_text() ;?>
 				<div class="reply">
-				<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 				</div>
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 				<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'arilewp' ); ?></em>
