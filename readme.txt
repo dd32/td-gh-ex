@@ -1,10 +1,10 @@
 ===  BB Ecommerce Store ===
 Contributors: Themeshopy
-Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, post-formats, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, post-formats, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
 
 == Description ==
 
-E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, digital market, eMarket, store website, business site, portfolio, storefront, fashion store, sport & athletic goods store, handbags, automobile accessories store, dropshipping store & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, grid layout, background image, and color, SEO optimized, fully responsive, fast loading. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look. It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.
+E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, digital market, eMarket, products online, electronic, home appliances site, grocery, store website, business site, portfolio, storefront, fashion store, sport & athletic goods store, handbags, automobile accessories store, dropshipping store & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, grid layout, background image, and color, SEO optimized, fully responsive, fast loading. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look. It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.
 
 == Changelog ==
 
@@ -237,6 +237,9 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
   * Changed escaped in ts-color-pallete.php.
   * Done with prefix if required.
   * Resolved translatable errors from customizer.php.
+
+= 1.6.3 =
+  * Added block-styles tag.
 
 == Resources ==
 

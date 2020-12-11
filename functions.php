@@ -21,6 +21,7 @@ function bb_ecommerce_store_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
@@ -254,6 +255,8 @@ function bb_ecommerce_store_font_url(){
 /* Theme enqueue scripts */
 function bb_ecommerce_store_scripts() {
 	wp_enqueue_style( 'bb-ecommerce-store-font', bb_ecommerce_store_font_url(), array() );
+	// blocks-css
+	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style( 'bb-ecommerce-store-basic-style', get_stylesheet_uri() );
 	wp_style_add_data( 'bb-ecommerce-store-style', 'rtl', 'replace' );
