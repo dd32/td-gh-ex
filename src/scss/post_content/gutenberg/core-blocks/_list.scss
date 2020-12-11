@@ -13,6 +13,10 @@
         padding-left: 1.5em !important; //全幅グループブロック内で 0 にされるのを防ぐ
         white-space: normal;
 
+        &.has-background {
+            padding: 1.5em 1.5em 1.5em 3em !important;
+        }
+
         li {
             // li {
             margin: .1em 0;
@@ -21,12 +25,12 @@
         }
 
         ol {
-            margin-left: 0;
+            // margin-left: 0;
             padding-left: 1.5em;
         }
 
         ul {
-            margin-left: 0;
+            // margin-left: 0;
             padding-left: 1.5em;
             list-style: circle;
         }
