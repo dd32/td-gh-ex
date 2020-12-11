@@ -39,8 +39,9 @@
 		<div class="page-content">
 
 			<?php // Featured Slider and Links
+			$post_meta = get_post_meta(get_the_ID());
 
-			if ( is_front_page() && 'elementor_header_footer' === get_post_meta(get_the_ID())['_wp_page_template'][0] ) {
+			if ( is_front_page() && (isset($post_meta['_wp_page_template']) && 'elementor_header_footer' === $post_meta['_wp_page_template'][0]) ) {
 
 				// Featured Slider, Carousel
 				if ( ashe_options( 'featured_slider_label' ) === true && ashe_options( 'featured_slider_location' ) !== 'blog' ) {
