@@ -3,14 +3,14 @@ Theme Name: BB Mobile Application
 Theme URI: https://www.themeshopy.com/themes/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
-Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, headphones, earphones, screenguards, back covers, Hosting Provider, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, theme options, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
-Tested up to: 5.5.3
+Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, headphones, earphones, screenguards, back covers, Hosting Provider, game launch, music launch, single product launch, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, theme options, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
+Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 1.4.5
+Version: 1.4.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: bb-mobile-application
-Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
+Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, post-formats, sticky-post, buddypress, front-page-post-form, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, e-commerce
 
 BB Mobile Application WordPress Theme has been created by ThemeShopy, 2017.
 BB Mobile Application WordPress Theme is released under the terms of GNU GPL
@@ -44,12 +44,7 @@ img{
 section img{
 	max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
 	margin:0;
 	padding:10px 0;
   font-weight: bold;
@@ -72,16 +67,13 @@ a:focus,
 a:hover{
 	text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus, 
-.page-template-custom-front-page .primary-navigation ul ul a:focus, 
-.primary-navigation ul ul a:focus , 
-.woocommerce form .form-row input:focus.input-text, 
+a:focus, input:focus, textarea:focus, .page-template-custom-front-page .primary-navigation ul ul a:focus, 
+.primary-navigation ul ul a:focus , .woocommerce form .form-row input:focus.input-text, 
 .woocommerce form .form-row textarea:focus{
   outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
 }
-.page-template-custom-front-page #header .logo a:focus, 
-.page-template-custom-front-page #header .logo p:focus, #footer a:focus,
+.page-template-custom-front-page #header .logo a:focus, .page-template-custom-front-page #header .logo p:focus, #footer a:focus,
 .page-template-custom-front-page .primary-navigation a:focus,
 .toggle-menu button:focus{
   outline: 2px solid #FF4500;
