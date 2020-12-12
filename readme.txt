@@ -1,6 +1,6 @@
 === Arkhe ===
 Contributors: looswebstudio
-Stable tag: 0.9.0
+Stable tag: 0.9.1
 Tested up to: 5.6
 Requires at least: 5.5
 Requires PHP: 7.0
@@ -31,7 +31,6 @@ Image used in Screenshot
     Source: https://pxhere.com/en/photo/155920
     License: Creative Commons Zero (CC0) license.
     License Url : https://pxhere.com/en/license
-
 
 
 == Author ==
