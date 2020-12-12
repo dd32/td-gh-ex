@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
 Tested up to: 5.6
-Stable tag: 4.4.2.1
+Stable tag: 4.4.3
 
 == Description ==
 
@@ -700,3 +700,8 @@ Fix: PwP paging links for Previous/Next
 
 = Version 4.4.2.1 =
 * fix: JavaScript code issue
+
+= Version 4.4.3 =
+* fix: another JavaScript WP 5.6 Version fix for full size page option
+* fix: fixed display of WP Admin Bar with fixed top menus on phones
+* fix: replace site title with site logo

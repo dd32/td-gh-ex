@@ -427,7 +427,7 @@ function weaverx_logo_and_title() {
 
 	$title_text = $title;
 
-	if ( strlen( $the_logo ) > 0 ) {                               // there is a logo - what to do...
+	if ( $the_logo ) {                               // there is a logo - what to do...
 		if ( weaverx_getopt( 'wplogo_for_title' ) ) {
 			$title_text = '<img class="site-title-logo" src="' . weaverx_get_wp_custom_logo_url() . '" alt="' . $title . '" />';
 			// note: $title_text gets escaped/filtered when it is actually echoed a few lines down from here...
@@ -435,10 +435,10 @@ function weaverx_logo_and_title() {
 			echo "\n" . wp_kses_post( $the_logo ) . "\n";
 		}
 	}
-
 	?>
+
 	<h1 id="site-title" class="<?php echo esc_attr( weaverx_title_class( 'site_title', true, $h_class ) ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $title ); ?>" rel="home">
-			<?php echo wp_kses_data( $title_text ); ?></a></h1>
+			<?php echo wp_kses_post( $title_text ); ?></a></h1>
 
 	<?php
 	/* ======== SEARCH BOX ======== */

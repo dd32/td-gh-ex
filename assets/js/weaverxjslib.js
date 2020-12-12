@@ -515,8 +515,11 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 		}
 
 
-		if ($('body').hasClass('admin-bar')) { // fix on wide screens only, will be overlap on mobile
+		if ($('body').hasClass('admin-bar')) {
 			adminBarHeight = $('#wpadminbar').outerHeight();
+			if ($(window).width() < 600) {
+				$('#wpadminbar').css('position', 'fixed');  // make fixed top stuff work.
+			}
 		}
 		origAdminBHeight = adminBarHeight;
 
@@ -619,11 +622,11 @@ function weaverxOnResize() {
 
 	// do things when we resize
 	if (width >= 768) { // on the desktop
-		theBody.removeClass("is-weaver is-phone is-smalltabvar is-mobile");
+		theBody.removeClass("is-weaver is-phone is-smalltablet is-mobile");
 		device = 'is-weaver is-desktop';
 	} else if (width > 580) { // small tablet
 		theBody.removeClass("is-weaver is-phone is-desktop");
-		device = 'is-weaver is-smalltabvar is-mobile';
+		device = 'is-weaver is-smalltablet is-mobile';
 	} else { // phone
 		theBody.removeClass("is-weaver is-desktop is-smalltablet");
 		device = 'is-weaver is-phone is-mobile';

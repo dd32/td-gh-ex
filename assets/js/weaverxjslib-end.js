@@ -468,7 +468,6 @@ function weaverxWidgetEq(WdgtClass, AreaId) {
 // full_browser_height
 
 function weaverxBottomFooter() {
-
 	//This function will push the footer to the bottom of the browser by adjusting the container height
 
 	jQuery('#container').css('min-height', ""); //resetting min-height
@@ -477,9 +476,8 @@ function weaverxBottomFooter() {
 
 	var PFHeight = 0; //set default postfooter height at zero
 
-	if (jQuery('#inject_postfooter')) { //If there is a postfooter area get its height
+	if (jQuery('#inject_postfooter').length) { //If there is a postfooter area get its height
 		PFHeight = jQuery('#inject_postfooter').outerHeight(true);
-
 	}
 
 	var BrowserHeight = jQuery(window).height(); //get browser's height
@@ -657,6 +655,9 @@ jQuery(function ($) {		// wrapper for jQuery utils
 			// Get the height of the WP Admin bar if present.
 			if ($('.admin-bar').length) {
 				wvrxAdminOffset = $('#wpadminbar').outerHeight();
+				if ( $(window).width() < 600 ) {
+					wvrxAdminOffset = 0;
+				}
 			}
 			// Check if there are other fixed areas, if so add offset
 			$('.wvrx-fixedtop').each(function () {
