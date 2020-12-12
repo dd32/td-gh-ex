@@ -18,15 +18,6 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-    <?php 
-      if( false === get_option( 'site_icon', false ) )  {
-        $ascent_old_fav_icon = ascent_get_options( 'favicon' ); 
-        if( $ascent_old_fav_icon ) {
-          echo '<link rel="icon" href="'.$ascent_old_fav_icon.'" sizes="16x16" />';
-        }
-      }
-    ?>
-
     <?php
     $home_slider_pagination = ascent_get_options( 'asc_enable_home_slider_pagination' );
     $home_slider_navigation = ascent_get_options( 'asc_enable_home_slider_navigation' );
@@ -67,7 +58,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  
+
   <?php ascent_body_top(); ?>
 
   <?php wp_body_open(); ?>
@@ -111,7 +102,7 @@
                             <div class="site-navigation pull-right">
 
                                 <?php get_template_part( 'template-parts/header/header', 'menu' ); ?>
-                                
+
                             </div><!-- .site-navigation -->
                         </div><!--.col-md-9-->
                     </div><!--.row-->

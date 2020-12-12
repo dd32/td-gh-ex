@@ -28,7 +28,7 @@ if ( ! function_exists( 'ascent_details_setup' ) ) :
                 'getting-started' => esc_html__( 'Getting Started', 'ascent' ),
                 'support'         => esc_html__( 'Support', 'ascent' ),
                 // 'demo-content'    => esc_html__( 'Demo Content', 'ascent' ),
-                'upgrade-to-pro'  => esc_html__( 'Upgrade to Pro', 'ascent' ),
+                // 'upgrade-to-pro'  => esc_html__( 'Upgrade to Pro', 'ascent' ),
             ),
 
             // Quick links.
@@ -41,20 +41,20 @@ if ( ! function_exists( 'ascent_details_setup' ) ) :
                     'text' => esc_html__( 'View Demo', 'ascent' ),
                     'url'  => 'https://ascenttheme.com/',
                 ),
-                
+
                 'rating_url' => array(
                     'text' => esc_html__( 'Rate This Theme','ascent' ),
                     'url'  => 'https://wordpress.org/support/theme/ascent/reviews/#new-post',
                 ),
-                'pro_url' => array(
-                    'text' => esc_html__( 'Ascent Pro','ascent' ),
-                    'url'  => ASCENT_PRO_URL,
-                ),
+                // 'pro_url' => array(
+                //     'text' => esc_html__( 'Ascent Pro','ascent' ),
+                //     'url'  => ASCENT_PRO_URL,
+                // ),
             ),
 
             // Getting started.
             'getting_started' => array(
-                
+
                 'two' => array(
                     'title'       => esc_html__( 'Static Front Page', 'ascent' ),
                     'icon'        => 'dashicons dashicons-admin-generic',
@@ -109,7 +109,7 @@ if ( ! function_exists( 'ascent_details_setup' ) ) :
                     'button_type' => 'link',
                     'is_new_tab'  => true,
                 ),
-                
+
                 'three' => array(
                     'title'       => esc_html__( 'Child Theme', 'ascent' ),
                     'icon'        => 'dashicons dashicons-admin-tools',
@@ -128,13 +128,13 @@ if ( ! function_exists( 'ascent_details_setup' ) ) :
             ),
 
             // Upgrade content.
-            'upgrade_to_pro' => array(
-                'description' => esc_html__( 'If you want more advanced features then you can upgrade to the premium version of the theme.', 'ascent' ),
-                'button_text' => esc_html__( 'Upgrade Now', 'ascent' ),
-                'button_url'  => 'https://zetamatic.com/downloads/ascent-pro',
-                'button_type' => 'primary',
-                'is_new_tab'  => true,
-            ),
+            // 'upgrade_to_pro' => array(
+            //     'description' => esc_html__( 'If you want more advanced features then you can upgrade to the premium version of the theme.', 'ascent' ),
+            //     'button_text' => esc_html__( 'Upgrade Now', 'ascent' ),
+            //     'button_url'  => 'https://zetamatic.com/downloads/ascent-pro',
+            //     'button_type' => 'primary',
+            //     'is_new_tab'  => true,
+            // ),
         );
 
         Ascent_Info::init( $config );

@@ -32,7 +32,7 @@ if ( ! class_exists( 'Ascent_Enqueue_Scripts' ) ) {
 		 */
 		private static $instance;
 
-		
+
 		/**
 		 * Class Initiation
 		 */
@@ -133,7 +133,7 @@ if ( ! class_exists( 'Ascent_Enqueue_Scripts' ) ) {
 		    if( $enable_sticky_header ) {
 		    	wp_enqueue_script( 'ascent-enable-sticky-header', $js_uri . 'enable-sticky-header'. $file_prefix .'.js', array( 'jquery' ) );
 		    }
-		
+
 		}
 
 

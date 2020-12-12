@@ -29,7 +29,7 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 		 */
 		private static $instance;
 
-		
+
 		/**
 		 * Class Initiation
 		 */
@@ -62,12 +62,12 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 
 
 
-		
+
 		/**
 		 * Enque style and js.
 		 *
 		 * @since 3.4.0
-		 * 
+		 *
 		 */
 		function enqueue() {
 		    wp_enqueue_script( 'ascent-customize-controls', ASCENT_THEME_URI . 'includes/customizer/assets/js/customizer-pro.js', array( 'customize-controls' ) );
@@ -85,7 +85,7 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 		function customize_register_panel( $wp_customize ) {
 			require ASCENT_THEME_DIR . 'includes/customizer/customizer-controls.php';
 		}
-		
+
 		/**
 		 * Ascent custom sanitization.
 		 *
@@ -132,7 +132,7 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 			$wp_customize->get_section( 'title_tagline' )->title = __( 'Header Settings', 'ascent' );
 			$wp_customize->get_section( 'colors' )->priority = 4;
 			$wp_customize->get_section( 'colors' )->title = __( 'Styling', 'ascent' );
-			
+
 		}
 
 
@@ -145,24 +145,22 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 		 */
 		public function register_customizer_settings( $wp_customize ) {
 
-			
 			$imagepath =  ASCENT_THEME_URI . 'includes/customizer/assets/images/';
 
-
-		    $wp_customize->register_section_type( 'Ascent_Pro_Customizer' );
-
-		    // Register sections for Ascent pro.
-		    $wp_customize->add_section(
-		        new Ascent_Pro_Customizer(
-		            $wp_customize,
-		            'ascent_pro',
-		            array(
-		                'pro_text'    => esc_html__( 'More Options Available in Pro!', 'ascent' ),
-		                'pro_url'          => htmlspecialchars_decode( ascent_get_pro_url( ASCENT_PRO_URL, 'customizer', 'upgrade-link', 'upgrade-to-pro' ) ),
-		                'priority'  => 1,
-		            )
-		        )
-		    );
+		    // $wp_customize->register_section_type( 'Ascent_Pro_Customizer' );
+			//
+		    // // Register sections for Ascent pro.
+		    // $wp_customize->add_section(
+		    //     new Ascent_Pro_Customizer(
+		    //         $wp_customize,
+		    //         'ascent_pro',
+		    //         array(
+		    //             'pro_text'    => esc_html__( 'More Options Available in Pro!', 'ascent' ),
+		    //             'pro_url'          => htmlspecialchars_decode( ascent_get_pro_url( ASCENT_PRO_URL, 'customizer', 'upgrade-link', 'upgrade-to-pro' ) ),
+		    //             'priority'  => 1,
+		    //         )
+		    //     )
+		    // );
 
 			/*  Header Settings
 			============================================================================================*/
@@ -192,7 +190,7 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 				'description' => __( 'Provide the email address.', 'ascent' ),
 			) );
 
-			
+
 			/*  Other Settings
 			============================================================================================*/
 			$wp_customize->add_section( 'ascent_other_settings', array(

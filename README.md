@@ -1,8 +1,8 @@
 == Ascent ==
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
-Tested up to: 5.2.4
-Stable tag: 3.8.6
+Tested up to: 5.6
+Stable tag: 3.8.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,9 +20,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Ascent is a fully responsive theme which perfectly adjusts as per your device’s screen and resolution. A multipurpose, beautiful and clean theme perfect for businesses, portfolios, and blogs. Easily customize the theme as per your liking. Also, supports WooCommerce integration for eCommerce businesses.
 
-It is compatible with all the major page builders like Elementor, SiteOrigin etc. 
+It is compatible with all the major page builders like Elementor, SiteOrigin etc.
 
-Ascent is SEO friendly & Schema.org code integrated to help your website rank organically for specific keywords and phrases in the SERP(Search engine results page). 
+Ascent is SEO friendly & Schema.org code integrated to help your website rank organically for specific keywords and phrases in the SERP(Search engine results page).
 
 The theme is light-weight to help your website load quickly, so the users don’t have to wait too long. Other features: RTL, Translation Ready, Regularly updated.
 
@@ -94,6 +94,8 @@ Yes! You can choose your color scheme under Customizer -> Styling section
 
 = Changelog =
 
+### Version 3.8.7
+- Fixed swipebox issue on jQuery 3+
 
 ### Version 3.8.6
 - Added: Header phone number tel: link

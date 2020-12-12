@@ -127,7 +127,8 @@ if ( ! class_exists( 'Ascent_Info' ) ) {
             $this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
             $this->page_slug     = $this->theme_slug . '-details';
             $this->page_url     = admin_url( 'themes.php?page=' . $this->page_slug );
-            $this->notice        = '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s. To fully take advantage of the best our theme can offer please make sure you visit theme details page.', 'ascent' ), esc_html( $this->theme_name ) ) . '</p><p><a href="' . esc_url( $this->page_url ) . '" class="button button-primary">' . sprintf( esc_html__( 'Get started with %1$s', 'ascent' ), $this->theme_name ) . '</a><a href="#" class="btn-dismiss button-secondary" data-userid="' . esc_attr( get_current_user_id() ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'ascent_dismiss_nonce' ) ) . '">' . esc_html__( 'Dismiss Notice', 'ascent' ) . '</a><a href="' . ASCENT_PRO_URL . '" class="button-ascent-pro button button-primary">' . esc_html__( 'Upgrade to Pro', 'ascent' ) . '</a></p>';
+            $this->notice        = '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s. To fully take advantage of the best our theme can offer please make sure you visit theme details page.', 'ascent' ), esc_html( $this->theme_name ) ) . '</p><p><a href="' . esc_url( $this->page_url ) . '" class="button button-primary">' . sprintf( esc_html__( 'Get started with %1$s', 'ascent' ), $this->theme_name ) . '</a>
+            <a href="#" class="btn-dismiss button-secondary" data-userid="' . esc_attr( get_current_user_id() ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'ascent_dismiss_nonce' ) ) . '">' . esc_html__( 'Dismiss Notice', 'ascent' ) . '</a></p>';
         }
 
         /**
