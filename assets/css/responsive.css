@@ -272,9 +272,6 @@
 	.footer-copyright .widget-right {
 	    justify-content: center;
 	}
-	.about-panel {
-	    padding: 0;
-	}
 	.cta-wrapper {
 	    -ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
