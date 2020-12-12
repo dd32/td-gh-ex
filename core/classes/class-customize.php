@@ -20,22 +20,22 @@ class alhena_lite_customize {
 	public function __construct( $fields = array() ) {
 
 		$this->theme_fields = $fields;
-		
+
 		add_action ('admin_init' , array( &$this, 'admin_scripts' ) );
 		add_action ('customize_register' , array( &$this, 'customize_panel' ) );
 		add_action ('customize_controls_enqueue_scripts' , array( &$this, 'customize_scripts' ) );
 
 	}
-	
+
 	public function admin_scripts() {
-	
+
 		global $wp_version, $pagenow;
-	
+
 		$file_dir = get_template_directory_uri()."/core/admin/assets/";
-			
+
 		if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'edit.php' ) {
-			wp_enqueue_style('alhena-lite-style', $file_dir.'css/theme.css' ); 
-			wp_enqueue_script('alhena-lite-script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 
+			wp_enqueue_style('alhena-lite-style', $file_dir.'css/theme.css' );
+			wp_enqueue_script('alhena-lite-script', $file_dir.'js/theme.js',array('jquery'),'',TRUE );
 			wp_enqueue_script( "jquery-ui-core", array('jquery'));
 			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		}
@@ -44,93 +44,93 @@ class alhena_lite_customize {
 
 	public function customize_scripts() {
 
-		wp_enqueue_style ( 
-			'alhena-lite_panel', 
-			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
-			array(), 
+		wp_enqueue_style (
+			'alhena-lite_panel',
+			get_template_directory_uri() . '/core/admin/assets/css/customize.css',
+			array(),
 			''
 		);
 
 	}
-	
+
 	public function customize_panel ( $wp_customize ) {
 
 		$theme_panel = $this->theme_fields ;
 
 		foreach ( $theme_panel as $element ) {
-			
+
 			switch ( $element['type'] ) {
-					
+
 				case 'panel' :
-				
+
 					$wp_customize->add_panel( $element['id'], array(
-					
+
 						'title' => $element['title'],
 						'priority' => $element['priority'],
 						'description' => $element['description'],
 						'capability' => 'edit_theme_options',
 
 					) );
-			 
+
 				break;
-				
+
 				case 'section' :
-						
+
 					$wp_customize->add_section( $element['id'], array(
-					
+
 						'title' => $element['title'],
 						'panel' => $element['panel'],
 						'priority' => $element['priority'],
 						'capability' => 'edit_theme_options',
 
 					) );
-					
+
 				break;
 
 				case 'text' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
-					
+
 						'sanitize_callback' => 'sanitize_text_field',
 						'default' => $element['std'],
 						'capability' => 'edit_theme_options',
 
 					) );
-											 
+
 					$wp_customize->add_control( $element['id'] , array(
-					
+
 						'type' => $element['type'],
 						'section' => $element['section'],
 						'label' => $element['label'],
 						'description' => $element['description'],
-									
+
 					) );
-							
+
 				break;
 
 				case 'url' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
-					
+
 						'sanitize_callback' => 'esc_url_raw',
 						'default' => $element['std'],
 						'capability' => 'edit_theme_options',
 
 					) );
-											 
+
 					$wp_customize->add_control( $element['id'] , array(
-					
+
 						'type' => $element['type'],
 						'section' => $element['section'],
 						'label' => $element['label'],
 						'description' => $element['description'],
-									
+
 					) );
-							
+
 				break;
 
 				case 'upload' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
 
 						'default' => $element['std'],
@@ -141,7 +141,7 @@ class alhena_lite_customize {
 					) );
 
 					$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, $element['id'], array(
-					
+
 						'label' => $element['label'],
 						'description' => $element['description'],
 						'section' => $element['section'],
@@ -152,70 +152,70 @@ class alhena_lite_customize {
 				break;
 
 				case 'color' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
-					
+
 						'sanitize_callback' => 'sanitize_hex_color',
 						'default' => $element['std'],
 						'capability' => 'edit_theme_options',
 
 					) );
-											 
+
 					$wp_customize->add_control( $element['id'] , array(
-					
+
 						'type' => $element['type'],
 						'section' => $element['section'],
 						'label' => $element['label'],
 						'description' => $element['description'],
-									
+
 					) );
-							
+
 				break;
 
 				case 'button' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
-					
+
 						'sanitize_callback' => array( &$this, 'customize_button_sanize' ),
 						'default' => $element['std'],
 						'capability' => 'edit_theme_options',
 
 					) );
-											 
+
 					$wp_customize->add_control( $element['id'] , array(
-					
+
 						'type' => 'url',
 						'section' => $element['section'],
 						'label' => $element['label'],
 						'description' => $element['description'],
-									
+
 					) );
-							
+
 				break;
 
 				case 'textarea' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
-					
+
 						'sanitize_callback' => 'esc_textarea',
 						'default' => $element['std'],
 						'capability' => 'edit_theme_options',
 
 					) );
-											 
+
 					$wp_customize->add_control( $element['id'] , array(
-					
+
 						'type' => $element['type'],
 						'section' => $element['section'],
 						'label' => $element['label'],
 						'description' => $element['description'],
-									
+
 					) );
-							
+
 				break;
 
 				case 'select' :
-							
+
 					$wp_customize->add_setting( $element['id'], array(
 
 						'sanitize_callback' => array( &$this, 'customize_select_sanize' ),
@@ -225,21 +225,21 @@ class alhena_lite_customize {
 					) );
 
 					$wp_customize->add_control( $element['id'] , array(
-						
+
 						'type' => $element['type'],
 						'section' => $element['section'],
 						'label' => $element['label'],
 						'description' => $element['description'],
 						'choices'  => $element['options'],
-									
+
 					) );
-							
+
 				break;
 
 				case 'alhena-lite-customize-info' :
 
 					$wp_customize->add_section( $element['id'], array(
-					
+
 						'title' => $element['title'],
 						'priority' => $element['priority'],
 						'capability' => 'edit_theme_options',
@@ -249,51 +249,51 @@ class alhena_lite_customize {
 					$wp_customize->add_setting(  $element['id'], array(
 						'sanitize_callback' => 'esc_url_raw'
 					) );
-					 
+
 					$wp_customize->add_control( new Alhenalite_Customize_Info_Control( $wp_customize,  $element['id'] , array(
 						'section' => $element['section'],
-					) ) );		
-										
+					) ) );
+
 				break;
 
 			}
-			
+
 		}
 
 		if ( alhena_lite_is_woocommerce_active() ) :
-			
+
 			$wp_customize->remove_control( 'woocommerce_catalog_rows');
 			$wp_customize->remove_control( 'woocommerce_catalog_columns');
-				
+
 		endif;
    }
 
 	public function customize_select_sanize ($value, $setting) {
 
 		global $wp_customize;
-			
+
 		$control = $wp_customize->get_control( $setting->id );
-		 
+
 		if ( array_key_exists( $value, $control->choices ) ) {
-			
+
 			return $value;
-			
+
 		} else {
-			
+
 			return $setting->default;
-			
+
 		}
 
 	}
 
 	public function customize_button_sanize ( $value, $setting ) {
-		
+
 		$sanize = array (
-		
+
 			'wip_footer_email_button' => 'mailto:',
 			'wip_footer_skype_button' => 'skype:',
 			'wip_footer_whatsapp_button' => 'tel:',
-		
+
 		);
 
 		if (!isset($value) || $value == '' || $value == $sanize[$setting->id]) {
@@ -301,13 +301,13 @@ class alhena_lite_customize {
 			return '';
 
 		} elseif (!strstr($value, $sanize[$setting->id])) {
-	
+
 			return $sanize[$setting->id] . $value;
-	
+
 		} else {
-	
+
 			return esc_url_raw($value, array('mailto', 'skype', 'tel'));
-	
+
 		}
 
 	}
@@ -321,40 +321,40 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public $type = "alhenalite-customize-info";
 
 		public function render_content() { ?>
-        
+
+      <div class="inside">
+
+        <h2><?php esc_html_e('WordPress Bundle.','alhena-lite');?></h2>
+
+          <p><?php esc_html_e("The premium version of Alhena with other 17 premium WordPress themes and 5 premium WordPress plugins, starting at only €1.","alhena-lite");?></p>
+
+          <ul>
+
+              <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-deal-bundle/?ref=2&campaign=alhena-panel' ); ?>" title="<?php esc_attr_e('Get the bundle','alhena-lite');?>" target="_blank"><?php esc_html_e('Get the bundle','alhena-lite');?></a></li>
+
+          </ul>
+
+      </div>
+
             <div class="inside">
 
-				<h2><?php esc_html_e('Alhena premium version','alhena-lite');?></h2> 
-
-                <p><?php esc_html_e("Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more.","alhena-lite");?></p>
-
-                <ul>
-                
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-lite-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Alhena premium','alhena-lite');?>" target="_blank"><?php esc_html_e('Upgrade to Alhena premium','alhena-lite');?></a></li>
-                
-                </ul>
-
-            </div>
-            
-            <div class="inside">
-
-                <h2><?php esc_html_e('Become a supporter','alhena-lite');?></h2> 
+                <h2><?php esc_html_e('Become a supporter','alhena-lite');?></h2>
 
                 <p><?php esc_html_e("If you like this theme and support, I'd appreciate any of the following:","alhena-lite");?></p>
 
                 <ul>
-                
+
                     <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','alhena-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','alhena-lite');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','alhena-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','alhena-lite');?></a></li>
-                
+
                 </ul>
-    
+
             </div>
-    
+
 		<?php
 
 		}
-	
+
 	}
 
 }
