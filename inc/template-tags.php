@@ -48,6 +48,7 @@ function advance_fitness_gym_the_attached_image() {
 		esc_url( $next_attachment_url ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
+	wp_reset_postdata();
 }
 endif;
 
