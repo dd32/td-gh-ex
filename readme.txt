@@ -2,8 +2,8 @@
 Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, blog,  news, photography
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 1.2.4
+Tested up to: 5.6
+Stable tag: 1.2.5
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,12 @@ Looki Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Looki Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.5 =
+Release date - December, 13 - 2020
+
+* Tested with WordPress 5.6
+* Edit - Code optimized
 
 = 1.2.4 =
 Release date - November, 26 - 2019
@@ -79,7 +85,7 @@ Google Web Fonts (Fjalla One, Roboto Slab) By Google - http://google.com
 Bootstrap By Twitter, Inc - http://getbootstrap.com
 * bootstrap.css v3.3.7 - Licensed under MIT license ( Applies to bootstrap.css file in /looki-lite/assets/css/ )
 
-prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
 * prettyPhoto.css v3.1.6 - Licensed under GPLv2 or Creative Commons 2.5 license ( Applies to prettyPhoto.css file in /looki-lite/assets/css/ )
 
 jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
