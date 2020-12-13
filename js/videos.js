@@ -26,6 +26,9 @@ var selectors = [
 'iframe[src*="player.twitch.tv"]',
 'iframe[src*="liveleak.com"]',
 'iframe[src*="kickstarter.com"][src*="video.html"]',
+'iframe[src*="blip.tv"]',
+'iframe[src*="spotify.com"]',
+'iframe[src*="soundcloud.com"]',
 'object',
 'embed'
 ];

@@ -22,6 +22,18 @@ function bands_woocommerce_support() {
 add_theme_support( 'woocommerce' );
 }
 require_once ( get_template_directory() . '/about.php' );
+add_action( 'admin_notices', 'bands_admin_notice' );
+function bands_admin_notice() {
+$user_id = get_current_user_id();
+if ( !get_user_meta( $user_id, 'bands_notice_dismissed_1' ) && current_user_can( 'manage_options' ) )
+echo '<div class="notice notice-info"><p>' . __( '<big><strong>Thank you</strong> for using Bands. Need more features?</big> Page Builder + Speed Optimization <a href="https://bandswp.com/" class="button-primary" target="_blank">Upgrade to Pro</a> <em>(limited offer: use code <strong>HALFOFF</strong> for 50% off)</em>', 'bands' ) . '<a href="?notice-dismiss" class="alignright">Dismiss</a></p></div>';
+}
+add_action( 'admin_init', 'bands_notice_dismissed' );
+function bands_notice_dismissed() {
+$user_id = get_current_user_id();
+if ( isset( $_GET['notice-dismiss'] ) )
+add_user_meta( $user_id, 'bands_notice_dismissed_1', 'true', true );
+}
 add_action( 'wp_enqueue_scripts', 'bands_load_scripts' );
 function bands_load_scripts() {
 wp_enqueue_style( 'bands-style', get_stylesheet_uri() );

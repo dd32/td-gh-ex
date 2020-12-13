@@ -5,15 +5,15 @@ Author: BandsWP
 Author URI: https://bandswp.com/
 Description: Dedicated theme for bands, musicians, or audio artists of any kind. FREE FEATURES: Responsive, SEO-friendly, Translation-ready, Custom Logo, Custom Header Image, Custom Background Image, Custom Colors, Custom Google Font, Custom Menus (2), Custom Widget Areas (3), Custom Page Templates (2), Featured Images, WooCommerce Integration, and bbPress Integration. PRO FEATURES: Custom Hero, Custom Slider, Custom Twitter Feed, Custom Social Icons (including: Facebook, Twitter, Instagram, Pinterest, YouTube, Twitch, Apple, Google Play, Google Podcasts, Spotify, SoundCloud, Bandcamp, and Stitcher), Custom Page Header Images, Social Sharing Links, Breadcrumbs, Shortcodes, Contact Form, Layered Content Sections, Custom Copyright, Custom Header Scripts, Custom Body Scripts, Custom Footer Scripts, Settings Import/Export, Drag & Drop Page Builder, Speed Optimization, Unlimited Use, Updates for Life, and Support for Life. "Play from your ****ing heart!" — Bill Hicks
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Version: 1.0
+Version: 1.0.1
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.6
 Requires PHP: 7.0
 License: GNU General Public License v3 or Later
 License URI: https://www.gnu.org/licenses/gpl.html
 Text Domain: bands
 
-Bands WordPress Theme © 2019-2020 BandsWP
+Bands WordPress Theme © 2019-2021 BandsWP
 Bands is distributed under the terms of the GNU GPL
 */
 
@@ -43,11 +43,11 @@ pre, code{font-family:'courier new',courier,serif;color:#00b4ff}
 hr{height:1px;border:0;margin:30px 0;background:#00b4ff}
 blockquote{padding:15px;border-left:4px solid #00b4ff;margin:30px 0}
 blockquote p:first-of-type{margin-top:0}
-.entry-content ul, .widget-container ul, .comment-body ul, .entry-content ol, .widget-container ol, .comment-body ol{text-indent:-20px;margin:30px 0 30px 40px}
-.entry-content ol, .widget-container ol, .comment-body ol{list-style:decimal inside;text-indent:-18px}
+.entry-content ul, .widget-container ul, .comment-body ul, .entry-content ol, .widget-container ol, .comment-body ol{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;margin:30px 0 30px 60px}
 .entry-content ul ul, .widget-container ul ul, .comment-body ul ul, .entry-content ol ol, .widget-container ol ol, .comment-body ol ol{margin-top:0;margin-bottom:0}
-.entry-content ul li:before, .widget-container ul li:before, .comment-body ul li:before{content:"— "}
-.entry-content li, .widget-container li, .comment-body li{line-height:125%;margin:10px 0}
+.entry-content ol, .widget-container ol, .comment-body ol{list-style:decimal outside;list-style-type:decimal-leading-zero;margin-left:70px}
+.entry-content ul li:before, .widget-container ul li:before, .comment-body ul li:before{position:absolute;margin-left:-20px;content:'— '}
+.entry-content li, .widget-container li, .comment-body li{line-height:125%;margin:20px 0}
 input, textarea{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:16px;color:#fff;padding:15px;border:0;border-bottom:1px solid transparent;outline:0;margin-top:10px;background:#111}
 input:focus, textarea:focus{border-bottom:1px solid #007acc}
 input[type="submit"], button, .button{display:inline-block;font-family:georgia,serif;font-size:18px;color:#fff;text-align:center;text-decoration:none;padding:15px 25px;border:0;background:#007acc;cursor:pointer}

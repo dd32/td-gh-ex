@@ -20,7 +20,7 @@ $config = array(
 'menu'         => 'install-plugins',
 'has_notices'  => true,
 'dismissable'  => true,
-'dismiss_msg'  => '<span style="font-weight:normal">Thank you for using Bands! If you\'re looking for more features and support, you can always seamlessly <a href="https://bandswp.com/" target="_blank" class="button-primary">Upgrade to Pro</a> at any time.</span>',
+'dismiss_msg'  => '',
 'is_automatic' => true,
 'message'      => '',
 );
