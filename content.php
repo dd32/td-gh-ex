@@ -7,12 +7,18 @@ $post_footer = accesspress_parallax_of_get_option( 'post_footer' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-wrap' ); ?>>
-    <?php if ( has_post_thumbnail() ) : ?>
-        <div class="entry-thumb">
-            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'blog-header' ); ?>
-            <a href="<?php echo esc_url( get_permalink() ); ?>"><img src="<?php echo esc_url( $image[ 0 ] ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>"></a> 
-        </div>
-    <?php endif; ?>
+    <?php 
+    $feat_img = accesspress_parallax_of_get_option( 'bl_featured_image', '1' ); 
+    if( $feat_img ){
+       
+        if ( has_post_thumbnail() ) : ?>
+            <div class="entry-thumb">
+                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'blog-header' ); ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>"><img src="<?php echo esc_url( $image[ 0 ] ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>"></a> 
+            </div>
+        <?php endif; 
+
+    }?>
 
     <header class="entry-header">
         <?php

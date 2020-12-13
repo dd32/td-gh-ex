@@ -50,3 +50,19 @@ $wp_customize->add_control(
     'type' => 'checkbox',
     'section' => 'accesspress_parallax_post_settings',
 ) );
+
+
+/** Blog Settings * */
+$wp_customize->add_section( 'accesspress_parallax_blog_settings', array(
+    'title' => __( 'Blog Settings', 'accesspress-parallax' ),
+    'priority' => 30
+) );
+
+// Show Featured Image
+$wp_customize->add_setting( 'accesspress_parallax[bl_featured_image]', array( 'default' => 1, 'type' => 'option', 'sanitize_callback' => 'accesspress_parallax_sanitize_checkbox' ) );
+$wp_customize->add_control(
+        'accesspress_parallax[bl_featured_image]', array(
+    'label' => __( 'Show Featured Image', 'accesspress-parallax' ),
+    'type' => 'checkbox',
+    'section' => 'accesspress_parallax_blog_settings',
+) );

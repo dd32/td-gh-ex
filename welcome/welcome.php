@@ -126,12 +126,8 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 								<div>
 									<div class="button-wrapper">
 										<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'ready to use starter sites.', 'accesspress-parallax' ); ?></a>
+										<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn button-secondary" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-parallax' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
 									</div>
-
-									<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-parallax' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
-
-									<p><?php esc_html_e( 'You can also reach-out to us for any support during the theme setup and use.', 'accesspress-parallax' ); ?></p>
-									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-parallax' ); ?></span></a>
 
 								</div>
 							</div>
@@ -143,10 +139,8 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 									</h3>
 									<p><?php printf( wp_kses_post( 'How to use %1$s! Here we\'ve a full and detailed documentation that explains how to use %1$s in its best. ', 'accesspress-parallax' ), $this->theme_name  ); ?></p>
 									<a href="<?php echo esc_url($this->strings['doc_link']);?>" class=" button" ><span><?php esc_html_e( 'Full Documentation', 'accesspress-parallax' ); ?></span></a>
+									<a href="<?php echo esc_url('https://accesspressthemes.com/support/')?>" class=" ti-return-dashboard  button button-secondary  install-now" ><span><?php esc_html_e( 'Contact Support', 'accesspress-parallax' ); ?></span></a>
 
-								</div>
-								<div class="apwelcome-doc-btn">
-									<a href="#" class=" button" ><span><?php esc_html_e( 'Return to your Dashboard', 'accesspress-parallax' ); ?></span></a>
 								</div>
 							</div>
 						</div>

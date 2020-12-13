@@ -93,10 +93,12 @@ Source: https://stocksnap.io/photo/office-work-N0ZRKV9CI6
 
 ---------------------------------------------
 == Changelog ==
+= 4.2 =
+** Fixed Minor CSS & JS issues
+** Added Feature Image Enable Disable Option for Blog Page
 
 = 4.1 =
 ** Minor bugs fixed
-
 
 = 4.0 =
 ** Removed all elementor elements to a separate plugin

@@ -13,3 +13,4 @@ $wp_customize->add_control(
     'type' => 'dropdown-pages',
     'section' => 'accesspress_parallax_custom_footer',
 ) );
+
