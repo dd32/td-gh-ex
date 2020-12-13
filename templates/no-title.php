@@ -1,18 +1,13 @@
 <?php
 
-/* Template Name: No title */
-
 /**
- * The template for displaying all pages without titles
+ * Template Name: No title
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for displaying all pages without titles
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 get_header();

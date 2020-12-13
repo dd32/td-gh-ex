@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 ?>
@@ -38,10 +38,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$ada_description = get_bloginfo( 'description', 'display' );
-			if ( $ada_description || is_customize_preview() ) :
+			$ada_pearl_description = get_bloginfo( 'description', 'display' );
+			if ( $ada_pearl_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $ada_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $ada_pearl_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

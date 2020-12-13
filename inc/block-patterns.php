@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 /**
  * Create custom block patterns to complement the theme.
  */
-function ada_register_block_patterns() {
+function ada_pearl_register_block_patterns() {
 
 	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
 
@@ -179,4 +179,4 @@ function ada_register_block_patterns() {
 	}
 
 }
-add_action( 'init', 'ada_register_block_patterns' );
+add_action( 'init', 'ada_pearl_register_block_patterns' );

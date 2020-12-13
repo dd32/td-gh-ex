@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 get_header();

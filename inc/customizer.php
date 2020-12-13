@@ -1,8 +1,8 @@
 <?php
 /**
- * Ada Theme Customizer
+ * Ada_Pearl Theme Customizer
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function ada_customize_register( $wp_customize ) {
+function ada_pearl_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,26 +20,26 @@ function ada_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'ada_customize_partial_blogname',
+				'render_callback' => 'ada_pearl_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'ada_customize_partial_blogdescription',
+				'render_callback' => 'ada_pearl_customize_partial_blogdescription',
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'ada_customize_register' );
+add_action( 'customize_register', 'ada_pearl_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function ada_customize_partial_blogname() {
+function ada_pearl_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -48,14 +48,14 @@ function ada_customize_partial_blogname() {
  *
  * @return void
  */
-function ada_customize_partial_blogdescription() {
+function ada_pearl_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function ada_customize_preview_js() {
-	wp_enqueue_script( 'ada-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), ADA_VERSION, true );
+function ada_pearl_customize_preview_js() {
+	wp_enqueue_script( 'ada-pearl-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), ADA_PEARL_VERSION, true );
 }
-add_action( 'customize_preview_init', 'ada_customize_preview_js' );
+add_action( 'customize_preview_init', 'ada_pearl_customize_preview_js' );

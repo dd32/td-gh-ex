@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 ?>
@@ -13,7 +13,7 @@
 
 	<?php
 		if ( !is_singular() ) {
-			ada_post_thumbnail();
+			ada_pearl_post_thumbnail();
 		}
 	?>
 
@@ -29,8 +29,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				ada_posted_on();
-				ada_posted_by();
+				ada_pearl_posted_on();
+				ada_pearl_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -39,7 +39,7 @@
 	<div class="entry-content">
 		<?php
 		if ( is_single() ) {
-			ada_post_thumbnail();
+			ada_pearl_post_thumbnail();
 
 			the_content(
 				sprintf(
@@ -77,6 +77,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php ada_entry_footer(); ?>
+		<?php ada_pearl_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

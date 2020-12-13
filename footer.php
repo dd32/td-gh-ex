@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 ?>

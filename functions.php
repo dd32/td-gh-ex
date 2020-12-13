@@ -1,18 +1,18 @@
 <?php
 /**
- * Ada functions and definitions
+ * Ada_Pearl functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
-if ( ! defined( 'ADA_VERSION' ) ) {
+if ( ! defined( 'ADA_PEARL_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ADA_VERSION', '1.0.0' );
+	define( 'ADA_PEARL_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'ada_setup' ) ) :
+if ( ! function_exists( 'ada_pearl_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,11 +20,11 @@ if ( ! function_exists( 'ada_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function ada_setup() {
+	function ada_pearl_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Ada, use a find and replace
+		 * If you're building a theme based on Ada_Pearl, use a find and replace
 		 * to change 'ada-pearl' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'ada-pearl', get_template_directory() . '/languages' );
@@ -75,7 +75,7 @@ if ( ! function_exists( 'ada_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'ada_custom_background_args',
+				'ada_pearl_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -111,7 +111,7 @@ if ( ! function_exists( 'ada_setup' ) ) :
 		remove_theme_support( 'core-block-patterns' );
 	}
 endif;
-add_action( 'after_setup_theme', 'ada_setup' );
+add_action( 'after_setup_theme', 'ada_pearl_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -120,17 +120,17 @@ add_action( 'after_setup_theme', 'ada_setup' );
  *
  * @global int $content_width
  */
-function ada_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ada_content_width', 640 );
+function ada_pearl_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'ada_pearl_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'ada_content_width', 0 );
+add_action( 'after_setup_theme', 'ada_pearl_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function ada_widgets_init() {
+function ada_pearl_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'ada-pearl' ),
@@ -155,40 +155,40 @@ function ada_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'ada_widgets_init' );
+add_action( 'widgets_init', 'ada_pearl_widgets_init' );
 
-function ada_admin_scripts() {
+function ada_pearl_admin_scripts() {
 	add_editor_style( 'style-editor.css' );
 }
-add_action( 'admin_init', 'ada_admin_scripts' );
+add_action( 'admin_init', 'ada_pearl_admin_scripts' );
 
 
 /**
  * Enqueue scripts and styles.
  */
-function ada_scripts() {
-	wp_enqueue_style( 'ada-style', get_stylesheet_uri(), array(), ADA_VERSION );
-	wp_style_add_data( 'ada-style', 'rtl', 'replace' );
+function ada_pearl_scripts() {
+	wp_enqueue_style( 'ada-pearl-style', get_stylesheet_uri(), array(), ADA_PEARL_VERSION );
+	wp_style_add_data( 'ada-pearl-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'ada-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ADA_VERSION, true );
+	wp_enqueue_script( 'ada-pearl-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ADA_PEARL_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'ada_scripts' );
+add_action( 'wp_enqueue_scripts', 'ada_pearl_scripts' );
 
 /**
  * Modify search to only include posts
  */
-function ada_modify_search($query) {
+function ada_pearl_modify_search($query) {
 	if ($query->is_search) {
 		$query->set('post_type', 'post');
 	}
 
 	return $query;
 }
-add_filter( 'pre_get_posts', 'ada_modify_search' );
+add_filter( 'pre_get_posts', 'ada_pearl_modify_search' );
 
 
 /**

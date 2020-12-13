@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Ada
+ * @package Ada_Pearl
  */
 
 get_header();
@@ -21,9 +21,7 @@ get_header();
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'ada-pearl' ); ?></p>
 				<h2>Search</h2>
 
-					<?php
-					get_search_form();
-					?>
+				<?php get_search_form(); ?>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
