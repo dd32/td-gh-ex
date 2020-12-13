@@ -1,10 +1,10 @@
 === Advance IT Company WordPress Theme ===
 Contributors: Themeshopy
-Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.5.5
+Stable tag: 0.5.6
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 
 == Description ==
 
-Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. 
+Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses like startups, ebook sellers, software, startup, startup business, startup theme, mobile app companies, seo agencies  and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally.
 
 == Changelog ==
 
@@ -171,6 +171,9 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Changed escaped in ts-color-pallete.php.
 * Done with prefix if required.
 * Resolved translatable errors from customizer.php.
+
+= 0.5.6 =
+* Added block-styles tag.
 
 == Resources ==
 
