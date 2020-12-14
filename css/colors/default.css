@@ -572,9 +572,6 @@ footer .bs-widget .bs-widget-tags a:hover, footer .bs-widget .tagcloud a:hover, 
     color: #fff;
 }
 
-
-
-
 blockquote {
     border-left: 5px solid #df0a0a;
 }
@@ -584,4 +581,10 @@ blockquote {
 		background: #080808;
     	color: white;
 	}
+}
+
+div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form button[type=submit]:focus, div.wpforms-container-full .wpforms-form button[type=submit]:hover
+{
+    background-color: #df0a0a;
+    color: #fff;
 }

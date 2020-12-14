@@ -13,7 +13,6 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'9' ); ?> col-sm-8">
-        <div class="row">
           <?php 
 		global $i;
 		if ( have_posts() ) : ?>
@@ -29,7 +28,6 @@ get_header(); ?>
 		<?php get_search_form(); ?>
 		</div><!-- .blog_con_mn -->
 		<?php endif; ?>
-         </div>
       </div>
 	  <aside class="col-md-3">
         <?php get_sidebar(); ?>
