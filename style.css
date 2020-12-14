@@ -3,10 +3,10 @@ Theme Name: Automotive Centre
 Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
-Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Auto wash, Automobiles, Buses, Car Service, car dealers, Motorbike Motor Full, bodyshop business, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), custom colors, beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Tested up to: 5.5.3
+Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Auto wash, Automobiles, Buses, Car Service, car dealers, Motorbike Motor Full, bodyshop business,  car dealer, inventory management, search, vehicle, vehicle listing, vehicle search Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), custom colors, beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, Post Formats, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
+Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.4.8
+Version: 0.4.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 Text Domain: automotive-centre
@@ -72,37 +72,10 @@ a:focus,
 a:hover{
   text-decoration:none !important;
 }
-a:focus,
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-input[type="phno"]:focus, 
-input[type="password"]:focus, 
-input[type="search"]:focus,
-input[type="tel"]:focus, 
-textarea:focus,
-input[type="submit"]:focus,
-#comments:focus,
-select:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
-  text-decoration:none !important;
-} 
-.logo h1 a:focus, .logo p.site-title a:focus, 
-.serach_inner input.search-field:focus, 
-.serach_inner input.search-submit:focus, 
-button.close:focus,.toggle-nav button:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
-  text-decoration:none !important;
-} 
-.close:focus, .close:hover {
-  color: #fff;
-}
 ul{ 
   margin:0 0 0 15px; 
   padding:0;
 }
-
 :hover{-webkit-transition-duration: 1s;
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
@@ -140,6 +113,36 @@ input[type='submit']:hover{
 .wp-caption-text{ 
   margin:0; 
   padding:0; 
+}
+a:focus,
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="phno"]:focus, 
+input[type="password"]:focus, 
+input[type="search"]:focus,
+input[type="tel"]:focus, 
+textarea:focus,
+input[type="submit"]:focus,
+#comments:focus,
+select:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+  text-decoration:none !important;
+} 
+.top-btn a:focus, #slider .inner_carousel h1 a:focus, #slider .slider-btn a:focus, .logo h1 a:focus, .logo p.site-title a:focus, 
+.serach_inner input.search-field:focus, 
+.serach_inner input.search-submit:focus, 
+button.close:focus,.toggle-nav button:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+  text-decoration:none !important;
+} 
+.close:focus, .close:hover {
+  color: #fff;
+}
+.entry-content a, .sidebar .textwidget p a, .textwidget p a, #comments p a,.slider .inner_carousel p a,.entry-summary a{
+  color: #88d055;
+  text-decoration: underline;
 }
 /*---------- WIDE BLOCKS ------------*/
 
@@ -971,10 +974,6 @@ h1.page-title {
 .post-main-box:hover h2{
   color: #88d055;
 }
-.entry-content a, .sidebar .textwidget p a, .textwidget p a, #comments p a, .slider .inner_carousel p a{
-  color: #88d055;
-  text-decoration: underline;
-}
 .tags {
   padding-top: 10px;
 }
@@ -1098,16 +1097,10 @@ h2#reply-title {
 #comments{  
   margin-top:30px;
 }  
-#comments h2.comments-title{
+#comments h2.comments-title,#comments h3.comment-reply-title{
   font-size:20px;
   font-weight:bold;
-  border-top:2px dotted #7e7e7e;
 }
-#comments h3.comment-reply-title{
-  font-size:20px;
-  font-weight:bold;
-  clear:both;
-}  
 #comments input[type="text"],
 #comments input[type="email"],
 #comments textarea{

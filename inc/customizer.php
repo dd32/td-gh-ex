@@ -18,8 +18,6 @@ add_action( 'customize_register', 'automotive_centre_custom_controls' );
 
 function automotive_centre_customize_register( $wp_customize ) {
 
-	load_template( trailingslashit( get_template_directory() ) . 'inc/customize-homepage/class-customize-homepage.php' );
-
 	load_template( trailingslashit( get_template_directory() ) . '/inc/icon-picker.php' );
 
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage'; 
@@ -1047,28 +1045,6 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'type'		=> 'icon'
 	)));
 
-	//Content Creation
-	$wp_customize->add_section( 'automotive_centre_content_section' , array(
-    	'title' => __( 'Customize Home Page Settings', 'automotive-centre' ),
-		'priority' => null,
-		'panel' => 'automotive_centre_panel_id'
-	) );
-
-	$wp_customize->add_setting('automotive_centre_content_creation_main_control', array(
-		'sanitize_callback' => 'esc_html',
-	) );
-
-	$homepage= get_option( 'page_on_front' );
-
-	$wp_customize->add_control(	new Automotive_Centre_Content_Creation( $wp_customize, 'automotive_centre_content_creation_main_control', array(
-		'options' => array(
-			esc_html__( 'First select static page in homepage setting for front page.Below given edit button is to customize Home Page. Just click on the edit option, add whatever elements you want to include in the homepage, save the changes and you are good to go.','automotive-centre' ),
-		),
-		'section' => 'automotive_centre_content_section',
-		'button_url'  => admin_url( 'post.php?post='.$homepage.'&action=edit'),
-		'button_text' => esc_html__( 'Edit', 'automotive-centre' ),
-	) ) );
-
 	//Footer Text
 	$wp_customize->add_section('automotive_centre_footer',array(
 		'title'	=> __('Footer Settings','automotive-centre'),
@@ -1486,14 +1462,14 @@ final class Automotive_Centre_Customize {
 		$manager->register_section_type( 'Automotive_Centre_Customize_Section_Pro' );
 
 		// Register sections.
-		$manager->add_section(new Automotive_Centre_Customize_Section_Pro($manager,'example_1',array(
+		$manager->add_section(new Automotive_Centre_Customize_Section_Pro($manager,'automotive_centre_upgrade_pro_link',array(
 			'priority'   => 1,
 			'title'    => esc_html__( 'AUTOMOTIVE PRO', 'automotive-centre' ),
 			'pro_text' => esc_html__( 'UPGRADE PRO', 'automotive-centre' ),
 			'pro_url'  => esc_url('https://www.vwthemes.com/themes/automotive-wordpress-theme/'),
 		)));
 
-		$manager->add_section(new Automotive_Centre_Customize_Section_Pro($manager,'example_2',array(
+		$manager->add_section(new Automotive_Centre_Customize_Section_Pro($manager,'automotive_centre_get_started_link',array(
 				'priority'   => 1,
 				'title'    => esc_html__( 'DOCUMENATATION', 'automotive-centre' ),
 				'pro_text' => esc_html__( 'DOCS', 'automotive-centre' ),
