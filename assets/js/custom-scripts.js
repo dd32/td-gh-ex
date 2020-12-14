@@ -16,11 +16,11 @@ jQuery(document).ready(function( $ ) {
 /*
 ** Main Navigation =====
 */
-	// Navigation Hover 
-	$('#top-menu, #main-menu').find('li').hover(function () {
-	    $(this).children('.sub-menu').stop().fadeToggle( 200 );
-	}, function() {
-		$(this).children('.sub-menu').stop().fadeToggle( 200 );
+	// Navigation Hover
+	$('#top-menu, #main-menu').find('li').on('mouseenter', function() {
+		$(this).children('.sub-menu').stop().fadeIn( 200 );
+	}).on('mouseleave', function() {
+		$(this).children('.sub-menu').stop().fadeOut( 200 );
 	});
 
 	// Mobile Menu
