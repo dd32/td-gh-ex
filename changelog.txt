@@ -8,6 +8,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(12/14/2020) = Fix - Version 4.5.0
+[*] = Feature = Restructured Customizer to improve usage
+[*] = Fixed = PHP warning while adding or updating a post
+[*] = Fixed = Removed h3 class from site title
+
 (12/04/2020) = Fix - Version 4.4.6
 [*] = Fixed = Search icon added for the search widget in the sidebar.
 [*] = Fixed = Table cells border for Cart page
