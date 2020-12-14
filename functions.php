@@ -101,19 +101,21 @@ $my_theme = wp_get_theme();
 ?>
     <style>
 		a.reply-btn {
-			text-decoration: none;
+		    text-decoration: none;
 		    display: inline-block;
 		    padding: 12px;
-		    color: #fff;
-		    font-size: 14px;
+		    color: #000;
+		    font-size: 16px;
 		    font-weight: 600;
-		    background: #b22222;
+		    background: #ffc107;
 		}
 		.hello-elementor-notice-content {
 			padding: 28px;
 		}
 		.notice h3 {
-			margin: 0 0 5px;
+		    font-size: 24px;
+		    margin: 0 0 5px;
+		    color: #fff;
 		}
 		.notice.updated.is-dismissible {
 			padding: 15px;
@@ -130,7 +132,7 @@ $my_theme = wp_get_theme();
 			text-decoration: none;
 		}
 		.review-page {
-			background: #ffc107 !important;
+			background: #1497ffdb !important;
 			padding: 15px;
 			border-left-color: #e0f0f7 !important;
 		}
@@ -153,7 +155,7 @@ $my_theme = wp_get_theme();
 		    background: #ffc107;
 		    color: #000;
 		    font-weight: 700;
-		    border: 2px dashed #000;
+		    border: 2px dashed #33a3fd;
 		}
 		@-webkit-keyframes blinker {
 		  from {opacity: 1.0;}
@@ -179,7 +181,7 @@ $my_theme = wp_get_theme();
 						 <?php echo esc_html( $my_theme->get('Version') ); ?>
 						</h3>
 						
-						<p style="margin-bottom: 18px;font-size: 14px;"><?php 
+						<p style="margin-bottom: 18px;font-size: 15px;color:#fff;"><?php 
 						_e(' Are you are enjoying Astral? We would love to hear your feedback. Big thanks in advance.','astral'); ?> </p>
 						<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
 						
@@ -189,7 +191,7 @@ $my_theme = wp_get_theme();
 					</div>
 
 					<div class="col-md-4" style="width: 40%;display: inline-block;">
-						<a target="_blank" class="astral-pro reply-btn" style="margin-left: 18px;" href="http://mywebapp.in/wordpress-premium-theme/" >  <?php _e(' Astral Premium','astral'); ?> <br><strike> $25 </strike> &nbsp $18 <br> <?php  _e('Coupon Code ','astral'); ?> <span style="background: firebrick;color: #fff; padding: 4px;"> OFFER07D </span> </a> <sup> Limited Period Offer</sup>
+						<a target="_blank" class="astral-pro reply-btn" style="margin-left: 18px;" href="http://mywebapp.in/wordpress-premium-theme/" >  <?php _e(' Astral Premium','astral'); ?> <br><strike> $25 </strike> &nbsp $18 <br> <?php  _e('Coupon Code ','astral'); ?> <span style="background: #33a3fd;color: #fff; padding: 4px;"> OFFER07D </span> </a> <sup style="color: #fff;"> Limited Period Offer</sup>
 					</div>
 
 				</div>

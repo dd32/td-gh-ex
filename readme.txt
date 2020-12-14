@@ -27,6 +27,11 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 3.1 =
+* Button color option added
+* Minor Changes in Rate us banner
+* Minor Changes in CSS
+
 = 3.0 =
 * Blog section on/off option added
 

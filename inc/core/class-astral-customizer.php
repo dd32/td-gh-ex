@@ -169,6 +169,21 @@ class astral_Customizer extends astral_Abstract_Main {
     	) ) 
 		);
 
+		$wp_customize->add_setting( 'button_color_setting', array(
+            'type'              => 'theme_mod',
+            'default' => '#ffeb3b',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'capability'        => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'button_color_setting', array(
+        'label'      => __( 'Button Background Color', 'astral' ),
+        'section'    => 'astral_color',
+        'settings'   => 'button_color_setting',
+    	) ) 
+		);
+
 		/* footer section */
 		$wp_customize->add_section( 'astral_footer', array(
 			'title'      => __( 'Footer Options', 'astral' ),
