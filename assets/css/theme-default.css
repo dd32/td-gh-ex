@@ -266,8 +266,7 @@ td a {
 	background-color: #007bff; 
 	border: 1px solid #007bff; 
 }
-.comment-date a:hover,
-.comment-date a:focus { color: #007bff; }
+.comment-date a { color: #007bff; }
 .pull-left-comment img { 
 	border: 3px solid #007bff; 
 }
