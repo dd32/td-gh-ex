@@ -240,7 +240,7 @@
 							$('.attesaFeatBox, body.attesa-full-width #content.site-content').css('margin-top', '-' + $allTopDiv + 'px');
 						}
 					}
-					if ($filterMenu.size()) {
+					if ($filterMenu.length) {
 						$(window).scroll(function () {
 							if ($filter.hasClass('topbarscrollshow') && $(window).scrollTop() > $filterTop.offset().top ) {
 								$filterTop.addClass('fixed');

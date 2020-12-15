@@ -41,7 +41,7 @@
 		$attesa_scrolltotopIcon = attesa_options('_scrolltotop_icon', 'fa fa-angle-up');
 		$attesa_scrolltotopMobile = attesa_options('_show_scrolltotop_mobile', '');
 		?>
-		<a href="#top" id="toTop" aria-hidden="true" class="<?php echo $attesa_scrolltotopMobile ? 'scrolltop_on' : 'scrolltop_off' ?>"><i class="<?php echo esc_attr($attesa_scrolltotopIcon); ?>" aria-hidden="true"></i></a>
+		<a href="#top" id="toTop" tabindex="-1" title="<?php esc_attr_e('Back to top','attesa'); ?>" class="<?php echo $attesa_scrolltotopMobile ? 'scrolltop_on' : 'scrolltop_off' ?>"><i class="<?php echo esc_attr($attesa_scrolltotopIcon); ?>" aria-hidden="true"></i></a>
 	<?php endif; ?>
 <?php wp_footer(); ?>
 
