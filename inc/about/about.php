@@ -37,22 +37,22 @@ if ( ! function_exists( 'beshop_about_setup' ) ) :
 				'getting_started' => esc_html__( 'Getting Started', 'beshop' ),
 				'recommended_actions' => esc_html__( 'Recommended Actions', 'beshop' ),
 				'useful_plugins'  => esc_html__( 'Useful Plugins', 'beshop' ),
-			//	'free_pro'  => esc_html__( 'Free Vs Pro', 'beshop' ),
+				'free_pro'  => esc_html__( 'Free Vs Pro', 'beshop' ),
 				),
 
 			// Quick links.
 			'quick_links' => array(
+				'upgrade' => array(
+                    'text'   => esc_html__( 'Upgrade Beshop Pro', 'beshop' ),
+                    'url'    => esc_url( 'https://wpthemespace.com/product/beshop/?add-to-cart=2897' ),
+                    'button' => 'danger',
+                ),
                 'install_plugin' => array(
                     'text'   => esc_html__( 'Beshop Video Tutorial', 'beshop' ),
                     'url'    => esc_url( 'https://wpthemespace.com/beshop-theme-video/' ),
                     'button' => 'danger',
                 ),
-                'demo_url' => array(
-                    'text'   => esc_html__( 'INSTALL FREE DEMO', 'beshop' ),
-                    'url'    => esc_url( admin_url( 'themes.php?page=pt-one-click-demo-import' ) ),
-                    'button' => 'danger',
-                ),
-                
+                                
                 'demo_live_url' => array(
                     'text'   => esc_html__( 'View Details & Demo', 'beshop' ),
                     'url'    => 'https://wpthemespace.com/product/beshop/',
@@ -163,51 +163,115 @@ if ( ! function_exists( 'beshop_about_setup' ) ) :
 						'activate_label' => esc_html__( 'Active Now', 'beshop' ),
 						'deactivate_label' => esc_html__( 'Good Job Plugin Actiated', 'beshop' ),
 						'content'            => array(
-							'be-boost' => array(
-								'title'       => __('Be Boost', 'beshop' ),
-								'description' => __( 'Be Boost is helper plugin for BeShop theme. After active the plugin you will get more features with One click demo import. You also need to install and active One click demo import plugin for free demo import.', 'beshop' ),
-								'plugin_slug' => 'magical-blocks',
-								'id' => 'magical-blocks'
-							),
 							'one-click' => array(
 								'title'       => __('One Click Demo Improt', 'beshop' ),
 								'description' => __( 'Need to active the plugin with BeBoost plugin for demo import.','beshop'),
 								'plugin_slug' => 'one-click-demo-import',
 								'id' => 'magical-blocks'
 							),
-							'magical-posts' => array(
-								'title'       => __('Magical Post Display', 'beshop' ),
-								'description' => __( 'Magical Posts Display is an awesome WordPress plugin for display posts in your website by Gutenburg editor','beshop'),
-								'plugin_slug' => 'magical-posts-display',
-								'id' => 'magical-blocks'
-							),
-
-							/*
 							'go-pro' => array(
-								'title'       => '<a target="_blank" class="activate-now button button-danger" href="https://wpthemespace.com/product/'.$theme_slug.'">'.__('UPGRADE beshop PRO','beshop').'</a>',
+								'title'       => '<a target="_blank" class="activate-now button button-danger" href="https://wpthemespace.com/product/beshop/?add-to-cart=2897">'.__('UPGRADE beshop PRO','beshop').'</a>',
 								'description' => __( 'You will get more frequent updates and quicker support with the Pro version.', 'beshop' ),
 								//'plugin_slug' => 'x-instafeed',
 								'id' => 'go-pro'
-							),*/
+							),
 							
 						),
 					),
 			// Free vs pro array.
-			/*'free_pro'                => array(
+			'free_pro'                => array(
 				'free_theme_name'     => $theme_name,
 				'pro_theme_name'      => $theme_name.__(' Pro','beshop'),
 				'pro_theme_link'      => 'https://wpthemespace.com/product/'.$theme_slug,
 				'get_pro_theme_label' => sprintf( __( 'Get %s', 'beshop' ), 'BeShop Pro' ),
 				'features'            => array(
 					array(
-						'title'       => esc_html__( 'Daring Design for Devoted Readers', 'beshop' ),
-						'description' => esc_html__( 'BeShop\'s design helps you stand out from the crowd and create an experience that your readers will love and talk about. With a flexible home page you have the chance to easily showcase appealing content with ease.', 'beshop' ),
+						'title'       => esc_html__( 'Fully Responsive Layout', 'beshop' ),
+						/*'description' => esc_html__( 'BeShop\'s design helps you stand out from the crowd and create an experience that your readers will love and talk about. With a flexible home page you have the chance to easily showcase appealing content with ease.', 'beshop' ),*/
 						'is_in_lite'  => 'true',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Google Font Support', 'beshop' ),
+						
+						'is_in_lite'  => 'true',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'SEO & SMM Friendly', 'beshop' ),
+						
+						'is_in_lite'  => 'true',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Fully WooCommerce Ready', 'beshop' ),
+						
+						'is_in_lite'  => 'true',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Gutenberg Support', 'beshop' ),
+						
+						'is_in_lite'  => 'true',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'One Click Demo Installation', 'beshop' ),
+						
+						'is_in_lite'  => 'true',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Advance Shop options', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'One Click Checkout', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Youtube Video Support for products', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'QR Code Feature Support', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Custom Elementor Products Addons', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Custom Elementor Blog Addons', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Advanced Widgets', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
+						'is_in_pro'   => 'true',
+					),
+					array(
+						'title'       => esc_html__( 'Remove or edit Footer Cradit link', 'beshop' ),
+						
+						'is_in_lite'  => 'false',
 						'is_in_pro'   => 'true',
 					),
 
 				),
-			),*/// free pro tab
+			),// free pro tab
 
 			);
 
@@ -217,3 +281,27 @@ if ( ! function_exists( 'beshop_about_setup' ) ) :
 endif;
 
 add_action( 'after_setup_theme', 'beshop_about_setup' );
+
+
+
+//Admin notice 
+function beshop_new_optins_texts() {
+
+    if(get_option('beshopn1')){
+        return;
+    }
+	$class = 'eye-notice notice notice-warning is-dismissible';
+	$message = __( '<strong>Good News!! Beshop Pro version now available. If you want a beautiful, orderly, SEO friendly, more secure and unlimited options website then need to upgrade pro. Upgrade for lifetime with nominal price.<br>Also, the Pro version has One-click checkout, Products Quick view, Wishlist, unique custom homepage<br> and many more advanced options waiting for you!! So upgrade today !!!</strong>', 'beshop' );
+    $url1 = esc_url('https://wpthemespace.com/product/beshop/');
+    $url3 =esc_url('https://wpthemespace.com/product/beshop/?add-to-cart=2897');
+
+	printf( '<div class="%1$s" style="padding:10px 15px 20px;"><p>%2$s</p><a target="_blank" class="button button-primary" href="%3$s" style="margin-right:10px">'.__('Beshop Pro Details','beshop').'</a><a target="_blank" class="button button-primary" href="%4$s" style="margin-right:10px">'.__('Upgrade Pro','beshop').'</a><button class="button button-info btnend" style="margin-left:10px">'.__('Dismiss the notice','beshop').'</button></div>', esc_attr( $class ), wp_kses_post( $message ),$url1,$url3 ); 
+}
+add_action( 'admin_notices', 'beshop_new_optins_texts' );
+
+function beshop_new_optins_texts_init(){
+    if(isset($_GET['besnotice']) && $_GET['besnotice'] == 1 ){
+        update_option( 'beshopn1', 1);
+    }
+}
+add_action('init','beshop_new_optins_texts_init');

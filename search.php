@@ -53,8 +53,9 @@ if ( is_active_sidebar( 'sidebar-1' ) && $beshop_blog_layout != 'fullwidth' ) {
 						get_template_part( 'template-parts/content', 'search' );
 
 					endwhile;
-
-					the_posts_navigation();
+					
+						the_posts_navigation();
+					
 
 				else :
 

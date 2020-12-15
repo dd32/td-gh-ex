@@ -23,9 +23,9 @@ a.button.button-danger:hover {
     border-color: green;
     color: #fff;
 }
-.eye-notice.notice.notice-warning.is-dismissible {
+/*.eye-notice.notice.notice-warning.is-dismissible {
     background: lemonchiffon;
-}
+}*/
 .cupon-code{
     text-transform: lowercase;
 }

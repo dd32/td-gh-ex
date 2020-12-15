@@ -780,7 +780,7 @@ if ( ! class_exists( 'beshop_About' ) ) {
 
 					}
 					echo '<tr><td style="border-top:0;"></td><td style="border-top:0;"></td><td style="border-top:0;" class="only-pro"><a href="'.esc_url('https://wpthemespace.com/product/beshop/').'" target="_blank" >';
-					echo esc_html ('X Blog Pro Live Preview', 'beshop');
+					echo esc_html ('Beshop Pro Live Preview', 'beshop');
 					echo '</a></td></tr>';
 					if ( ! empty( $free_pro['pro_theme_link'] ) && ! empty( $free_pro['get_pro_theme_label'] ) ) {
 						echo '<tr class="about-page-text-center">';

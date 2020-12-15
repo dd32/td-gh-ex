@@ -4,8 +4,8 @@ Contributors: nalam
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce, blog
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.5.1
-Stable tag: 1.0.13
+Tested up to: 5.6
+Stable tag: 1.0.14
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -75,6 +75,9 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.14 - November 8 2020 =
+* Checked with WordPress 5.6
 
 = 1.0.13 - November 8 2020 =
 * PHP error fixed in the page.php

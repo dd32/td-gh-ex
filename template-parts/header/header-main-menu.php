@@ -30,7 +30,7 @@ $beshop_logo_position = get_theme_mod( 'beshop_logo_position','center');
 								array(
 									'theme_location' => 'menu-1',
 									'menu_id'        => 'primary-menu',
-									//'fallback_cb'     => 'wp_page_menu',
+									'menu_class'     => 'beshop-main-menu-container',
 									'walker'        => new Beshop_Walker_Nav_Menu(),
 								)
 								);
