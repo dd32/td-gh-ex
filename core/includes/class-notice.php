@@ -22,7 +22,7 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
 		public function __construct( $fields = array() ) {
 
 			if (
-				!get_option( 'lookiLite-dismissed-notice') &&
+				!get_option( 'looki-lite-dismissed-notice') &&
 				version_compare( PHP_VERSION, LOOKI_LITE_MIN_PHP_VERSION, '>=' )
 			) {
 
@@ -39,9 +39,9 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
 
 		public function dismiss() {
 
-			if ( isset( $_GET['lookiLite-dismiss'] ) && check_admin_referer( 'lookiLite-dismiss-action' ) ) {
+			if ( isset( $_GET['looki-lite-dismiss'] ) && check_admin_referer( 'looki-lite-dismiss-action' ) ) {
 
-				update_option( 'lookiLite-dismissed-notice', intval($_GET['lookiLite-dismiss']) );
+				update_option( 'looki-lite-dismissed-notice', intval($_GET['looki-lite-dismiss']) );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 
 			}
@@ -61,14 +61,14 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
             	<p>
 
             		<strong>
-                  <h2><?php esc_html_e('WordPress Bundle.','looki-lite');?></h2>
 
 						<?php
 
-							esc_html_e("The premium version of Looki with other 17 premium WordPress themes and 5 premium WordPress plugins, starting at only €1. ","looki-lite");
+                            esc_html_e( 'Download for free the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more. ', 'looki-lite' );
+
 							printf(
 								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'looki-lite' ) . '</a>',
-								esc_url( wp_nonce_url( add_query_arg( 'lookiLite-dismiss', '1' ), 'lookiLite-dismiss-action'))
+								esc_url( wp_nonce_url( add_query_arg( 'looki-lite-dismiss', '1' ), 'looki-lite-dismiss-action'))
 							);
 
                         ?>
@@ -78,7 +78,9 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
             	</p>
 
             	<p>
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-deal-bundle/?ref=2&campaign=looki-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Get the bundle', 'looki-lite' ); ?></a>
+
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button-primary"><?php _e( 'Download for free Looki Premium', 'looki-lite' ); ?></a>
+
             	</p>
 
             </div>

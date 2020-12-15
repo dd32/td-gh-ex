@@ -303,19 +303,19 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 		public function render_content() { ?>
 
-			<div class="inside">
+            <div class="inside">
 
-        <h2><?php esc_html_e('WordPress Bundle.','looki-lite');?></h2>
+				<h2><?php esc_html_e('Looki Premium','looki-lite');?></h2>
 
-          <p><?php esc_html_e("The premium version of Looki with other 17 premium WordPress themes and 5 premium WordPress plugins, starting at only €1.","looki-lite");?></p>
+                <p><?php esc_html_e("Download for free the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.","looki-lite");?></p>
 
-          <ul>
+                <ul>
 
-              <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-deal-bundle/?ref=2&campaign=looki-panel' ); ?>" title="<?php esc_attr_e('Get the bundle','looki-lite');?>" target="_blank"><?php esc_html_e('Get the bundle','looki-lite');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-lite-panel' ); ?>" title="<?php esc_attr_e('Download for free','looki-lite');?>" target="_blank"><?php esc_html_e('Download for free','looki-lite');?></a></li>
 
-          </ul>
+                </ul>
 
-      </div>
+            </div>
 
             <div class="inside">
 
