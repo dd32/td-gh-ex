@@ -61,11 +61,10 @@ if( !class_exists( 'alhena_lite_admin_notice' ) ) {
             	<p>
 
             		<strong>
-                  <h2><?php esc_html_e('WordPress Bundle.','alhena-lite');?></h2>
 
 						<?php
 
-							esc_html_e( 'The premium version of Alhena with other 17 premium WordPress themes and 5 premium WordPress plugins, starting at only €1. ', 'alhena-lite' );
+                            esc_html_e( 'Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, Unlimited sidebars, Portfolio section and much more. ', 'alhena-lite' );
 
 							printf(
 								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'alhena-lite' ) . '</a>',
@@ -79,8 +78,9 @@ if( !class_exists( 'alhena_lite_admin_notice' ) ) {
             	</p>
 
             	<p>
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-deal-bundle/?ref=2&campaign=alhena-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Get the bundle', 'alhena-lite' ); ?></a>
-                
+
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Upgrade to Alhena Premium', 'alhena-lite' ); ?></a>
+
             	</p>
 
             </div>
