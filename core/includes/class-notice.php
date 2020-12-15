@@ -61,10 +61,10 @@ if( !class_exists( 'nova_lite_admin_notice' ) ) {
             	<p>
 
             		<strong>
-                  <h2><?php esc_html_e('WordPress Bundle.','nova-lite');?></h2>
 
 						<?php
-            esc_html_e( 'The premium version of Nova with other 17 premium WordPress themes and 5 premium WordPress plugins, starting at only €1. ', 'nova-lite' );
+
+                            esc_html_e( 'Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more. ', 'nova-lite' );
 
 							printf(
 								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'nova-lite' ) . '</a>',
@@ -78,8 +78,9 @@ if( !class_exists( 'nova_lite_admin_notice' ) ) {
             	</p>
 
             	<p>
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-deal-bundle/?ref=2&campaign=nova-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Get the bundle', 'nova-lite' ); ?></a>
-                
+
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=2&campaign=nova-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Upgrade to Nova Premium', 'nova-lite' ); ?></a>
+
             	</p>
 
             </div>

@@ -333,19 +333,19 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 		public function render_content() { ?>
 
-      <div class="inside">
+            <div class="inside">
 
-        <h2><?php esc_html_e('WordPress Bundle.','nova-lite');?></h2>
+				<h2><?php esc_html_e('Nova premium version','nova-lite');?></h2>
 
-          <p><?php esc_html_e("The premium version of Nova with other 17 premium WordPress themes and 5 premium WordPress plugins, starting at only €1.","nova-lite");?></p>
+                <p><?php esc_html_e("Upgrade to the premium version of Nova, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more.","nova-lite");?></p>
 
-          <ul>
+                <ul>
 
-              <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-deal-bundle/?ref=2&campaign=nova-panel' ); ?>" title="<?php esc_attr_e('Get the bundle','nova-lite');?>" target="_blank"><?php esc_html_e('Get the bundle','nova-lite');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=2&campaign=nova-lite-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Nova premium','nova-lite');?>" target="_blank"><?php esc_html_e('Upgrade to Nova premium','nova-lite');?></a></li>
 
-          </ul>
+                </ul>
 
-      </div>
+            </div>
 
             <div class="inside">
 
