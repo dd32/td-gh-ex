@@ -11,7 +11,7 @@
 	$('.mini-toggle').on('click', function(){
 	   $(this).parent().toggleClass('menushow');
 	});
-	$('input.qty').each(function () {
+	$('.single-product input.qty').each(function () {
 	  $(this).number();
 	});
 

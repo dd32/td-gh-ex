@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.6
-Stable tag: 1.0.14
+Stable tag: 1.0.15
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -75,6 +75,11 @@ Source:https://pxhere.com/en/photo/856028
 
 == Changelog ==
 
+
+= 1.0.15 - November 8 2020 =
+* Cart page update issue fixed
+* Cart page, checkout page and single product page width issue fixed.
+* My account page style issue fixed.
 
 = 1.0.14 - November 8 2020 =
 * Checked with WordPress 5.6

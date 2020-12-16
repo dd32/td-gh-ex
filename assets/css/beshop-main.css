@@ -30,6 +30,9 @@
 .beshop-tophead a:hover{
     color:#dedede;
 }
+.woocommerce fieldset {
+    padding: 5px 0;
+}
 .topmenu-serch {
     display: flex;
     align-items: baseline;

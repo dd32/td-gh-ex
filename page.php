@@ -23,7 +23,7 @@ get_header();
 
 ?>
 
-<?php if(is_not_woocommerce_activated() && is_cart() || is_not_woocommerce_activated() && is_checkout()): ?>
+<?php if(class_exists( 'WooCommerce' ) && is_cart() || class_exists( 'WooCommerce' ) && is_checkout() || class_exists( 'WooCommerce' ) && is_account_page()): ?>
 	<?php get_template_part( 'template-parts/content', 'woo' ); ?>
 <?php else: ?>
 <div class="<?php echo esc_attr($beshop_page_container); ?> mt-3 mb-5 pt-5 pb-3">
