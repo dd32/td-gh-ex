@@ -62,6 +62,69 @@ li[class|="customize-control-arilewp-"] .wp-picker-container span.color-alpha {
 	color: rgba(255, 255, 255, 0.8);
 }
 
+/* Control: slider. */
+
+.customize-control-arilewp-slider .customize-control-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.customize-control-arilewp-slider .ui-slider {
+	background-color: rgba(0, 0, 0, 0.1);
+	width: 63%;
+	height: 6px;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	border-radius: 3px;
+}
+
+.customize-control-arilewp-slider .ui-slider .ui-slider-handle {
+	height: 15px;
+	width: 15px;
+	background-color: #fff;
+	position: absolute;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+}
+
+.customize-control-arilewp-slider .ui-slider .ui-slider-range {
+	background-color: #13a1dc;
+	height: 100%;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.customize-control-arilewp-slider .arilewp-slider-input {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.customize-control-arilewp-slider .arilewp-slider-input .slider-reset {
+	padding-left: 5px;
+	cursor: pointer;
+}
+
 /* Control: Radio image. */
 .customize-control-arilewp-radio-image > .image {
 	display: -webkit-box;

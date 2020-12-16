@@ -45,6 +45,7 @@ if ( ! class_exists( 'ArileWP_Customizer' ) ) :
 			require_once $control_dir . '/code/arilewp-customize-heading-control.php';
 			require_once $control_dir . '/code/arilewp-customize-radio-image-control.php';
 			require_once $control_dir . '/code/arilewp-customize-radio-buttonset-control.php';
+			require_once $control_dir . '/code/arilewp-customize-slider-control.php';
 			require_once $control_dir . '/code/arilewp-customize-sortable-control.php';
 			require_once $control_dir . '/code/arilewp-customize-toggle-control.php';
             require_once $control_dir . '/code/arilewp-customize-upgrade-control.php';
@@ -54,6 +55,7 @@ if ( ! class_exists( 'ArileWP_Customizer' ) ) :
 			$wp_customize->register_control_type( 'ArileWP_Customize_Heading_Control' );
 			$wp_customize->register_control_type( 'ArileWP_Customize_Radio_Image_Control' );
 			$wp_customize->register_control_type( 'ArileWP_Customize_Radio_Buttonset_Control' );
+			$wp_customize->register_control_type( 'ArileWP_Customize_Slider_Control' );
 			$wp_customize->register_control_type( 'ArileWP_Customize_Sortable_Control' );
 			$wp_customize->register_control_type( 'ArileWP_Customize_Toggle_Control' );
             $wp_customize->register_control_type( 'ArileWP_Customize_Upgrade_Control' );

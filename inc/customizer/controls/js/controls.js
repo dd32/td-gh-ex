@@ -567,6 +567,136 @@ _.each( arilewp.control, function ( obj, type ) {
 } );
 
 /**
+ * Control: Slider.
+ */
+wp.customize.controlConstructor['arilewp-slider'] = wp.customize.Control.extend( {
+
+	// When we're finished loading continue processing
+	ready: function () {
+		'use strict';
+
+		var control      = this,
+		    changeAction = (
+			    'postMessage' === control.setting.transport
+		    ) ? 'mousemove change' : 'change',
+		    slider       = control.container.find( '.arilewp-slider' ),
+		    input        = control.container.find( 'input.slider-input' ),
+		    min          = Number( input.attr( 'min' ) ),
+		    max          = Number( input.attr( 'max' ) ),
+		    step         = Number( input.attr( 'step' ) ),
+		    $this,
+		    val;
+
+		slider.slider( {
+			range: 'min',
+			min: min,
+			max: max,
+			value: input.val(),
+			step: step,
+			slide: function ( event, ui ) {
+				// Trigger keyup in input.
+				input.val( ui.value ).keyup();
+			},
+			change: function ( event, ui ) {
+
+				// Save the values.
+				control.initArileWPControl();
+			}
+		} );
+
+		input.on( 'change keyup paste', function () {
+			$this = jQuery( this );
+			val   = $this.val();
+
+			slider.slider( 'value', val );
+		} );
+
+		// Change on input.
+		control.container.on(
+			'change keyup paste',
+			'.customize-control-content input.slider-input',
+			function () {
+				control.setting.set( jQuery( this ).val() );
+			}
+		);
+
+		// Reset.
+		control.container.find( '.slider-reset' ).on( 'click', function () {
+			input.attr( 'value', control.params.default.slider );
+			slider.slider( 'value', control.params.default.slider );
+			control.setting.set( input.val() );
+		} );
+
+		// Init the control.
+		if ( !_.isUndefined( window.arilewpControlLoader ) && _.isFunction( arilewpControlLoader ) ) {
+			arilewpControlLoader( control );
+		} else {
+			control.initArileWPControl();
+		}
+	},
+
+	initArileWPControl: function () {
+
+		var control     = this,
+		    subControls = control.params.choices.controls,
+		    value       = {},
+		    subsArray   = [],
+		    i;
+
+		_.each( subControls, function ( v, i ) {
+			if ( true === v ) {
+				subsArray.push( i );
+			}
+		} );
+
+		for ( i = 0; i < subsArray.length; i++ ) {
+			value[subsArray[i]] = control.setting._value[subsArray[i]];
+			control.updateSliderValue( subsArray[i], value );
+		}
+
+	},
+
+	/**
+	 * Updates the value.
+	 */
+	updateSliderValue: function ( context, value ) {
+
+		var control = this;
+
+		control.container.on( 'change keyup paste', 'input.slider-input', function () {
+			value['slider'] = jQuery( this ).val();
+			value['suffix'] = jQuery( this ).next().val();
+
+			// Save the value
+			control.saveValue( value );
+		} );
+
+		// TODO: find a way to merge event.
+		control.container.on( 'click', '.slider-reset', function () {
+			value['slider'] = jQuery( this ).siblings('.slider-input').val();
+			value['suffix'] = jQuery( this ).prev().val();
+
+			// Save the value
+			control.saveValue( value );
+		} );
+	},
+
+	/**
+	 * Saves the value.
+	 */
+	saveValue: function ( value ) {
+		var control  = this,
+		    newValue = {};
+		_.each( value, function ( newSubValue, i ) {
+			newValue[i] = newSubValue;
+		} );
+
+		control.setting.set( newValue );
+	}
+} );
+
+
+/**
  * Control: Sortable.
  */
 /* global arilewpControlLoader */

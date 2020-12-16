@@ -238,6 +238,7 @@ if( ! function_exists( 'arilewp_custom_customizer_options' ) ):
         $arilewp_testomonial_background_image = get_theme_mod('arilewp_testomonial_background_image');
 		$arilewp_page_header_background_image = get_theme_mod('arilewp_page_header_background_image');
 		$arilewp_sticky_bar_logo = get_theme_mod('arilewp_sticky_bar_logo');
+		$arilewp_custom_logo_size = get_theme_mod('arilewp_custom_logo_size', array('slider' => 210,'suffix' => 'px',));
         
         $output_css = '';
 		if($arilewp_testomonial_background_image != null){ 
@@ -247,6 +248,13 @@ if( ! function_exists( 'arilewp_custom_customizer_options' ) ):
 				background-position: center center;
 			}\n";
         }
+
+		if($arilewp_custom_logo_size['slider'] != null) :
+            $output_css .=".navbar img.custom-logo, .theme-header-logo-center img.custom-logo {
+			max-width: ".$arilewp_custom_logo_size['slider']."px;
+			height: auto;
+			}\n";
+        endif;
 
 		if ( has_header_image() ) :
 			$output_css .=".theme-page-header-area {

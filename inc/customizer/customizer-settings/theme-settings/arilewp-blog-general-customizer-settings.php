@@ -106,6 +106,28 @@ if ( ! class_exists( 'ArileWP_Customize_Blog_General_Option' ) ) :
 							),
 						),
 					),
+					
+					
+				'arilewp_custom_logo_size' => array(
+					'setting' => array(
+						'default'           => array(
+							'slider' => 210,
+							'suffix' => 'px',
+						),
+						'sanitize_callback' => array( 'ArileWP_Customizer_Sanitize', 'sanitize_slider' ),
+					),
+					'control' => array(
+						'type'        => 'slider',
+						'priority'    => 55,
+						'label'       => esc_html__( 'Logo Width', 'arilewp' ),
+						'section'     => 'title_tagline',
+						'input_attrs' => array(
+							'min'  => 0,
+							'max'  => 600,
+							'step' => 3,
+						),
+					),
+				),
 				
 
 			);

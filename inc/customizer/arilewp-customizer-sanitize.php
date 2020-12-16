@@ -71,22 +71,50 @@ class ArileWP_Customizer_Sanitize {
 		$choices = $setting->manager->get_control( $setting->id )->choices;
 		return array_key_exists( $val, $choices ) ? $val : $setting->default;
 	}
+	
+	public static function sanitize_sortable( $input, $setting ) {
 
+		// Get list of choices from the control
+		// associated with the setting.
+		$choices    = $setting->manager->get_control( $setting->id )->choices;
+		$input_keys = $input;
 
-	// Sanitize Sortable control.
-	public static function sanitize_sortable( $val = array(), $setting ) {
-		if ( is_string( $val ) || is_numeric( $val ) ) {
-			return array(
-				esc_attr( $val ),
-			);
-		}
-		$sanitized_value = array();
-		foreach ( $val as $item ) {
-			if ( isset( $setting->manager->get_control( $setting->id )->choices[ $item ] ) ) {
-				$sanitized_value[] = esc_attr( $item );
+		foreach ( $input_keys as $key => $value ) {
+			if ( ! array_key_exists( $value, $choices ) ) {
+					unset( $input[ $key ] );
 			}
 		}
-		return $sanitized_value;
+
+		// If the input is a valid key, return it;
+		// otherwise, return the default.
+		return ( is_array( $input ) ? $input : $setting->default );
+	}
+	
+	/**
+	 * Sanitize Slider control.
+	 *
+	 * @param array  $val     The value to be sanitized.
+	 * @param object $setting Control setting.
+	 *
+	 * @return array
+	 */
+	public static function sanitize_slider( $val, $setting ) {
+
+		$input_attrs = array();
+
+		if ( isset( $setting->manager->get_control( $setting->id )->input_attrs ) ) {
+			$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+		}
+
+		$val['slider'] = is_numeric( $val['slider'] ) ? $val['slider'] : '';
+
+		$val['slider'] = isset( $input_attrs['min'] ) && ( ! empty( $val ) ) && ( $input_attrs['min'] > $val['slider'] ) ? $input_attrs['min'] : $val['slider'];
+		$val['slider'] = isset( $input_attrs['max'] ) && ( ! empty( $val ) ) && ( $input_attrs['max'] < $val['slider'] ) ? $input_attrs['max'] : $val['slider'];
+
+		$val['suffix'] = esc_attr( $val['suffix'] );
+
+		return $val;
+
 	}
 
 	// Sanitize checkbox.
