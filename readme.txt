@@ -2,17 +2,17 @@
 
 Contributors: spicethemes
 Requires at least: 4.7
-Tested up to: 5.5
-Stable tag: 1.8.2
+Tested up to: 5.6
+Stable tag: 1.8.3
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
 
-Multi-purpose WordPress theme
+Content is the child version of the SpicePress theme
 
 == Description ==
 
-Content is a responsive, multi-purpose WordPress theme. It’s flexible and suitable for agencies, blogs, business, corporate or portfolios. Customization is easy and straight-forward, with options provided that allow you to setup your site to perfectly fit your desired online presence. Content offers a beautifully designed masonry blog layout. For more details, visit this link https://wordpress.org/themes/spicepress/. We hope you will find the Content theme useful.
+Content is a responsive, multi-purpose WordPress theme. It’s flexible and suitable for agencies, blogs, business, corporate or portfolios. Customization is easy and straight-forward, with options provided that allow you to setup your site to perfectly fit your desired online presence. Content offers a beautifully designed masonry blog layout. For more details, visit this link https://spicethemes.com/content-wordpress-theme/. We hope you will find the Content theme useful.
 
 == Installation ==
 
@@ -26,10 +26,17 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
+SpicePress WordPress Theme, Copyright (C) 2018, SpiceThemes
+SpicePress is distributed under the terms of the GNU GPL
+
 Content WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018, SpiceThemes
 Content WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 1.8.3 ==
+1. Added the masonry js license and parent theme license.
+2. Removed unnecessary code.
 
 = 1.8.2 ==
 1. Fixed the customizer console issue.
@@ -75,9 +82,17 @@ Copyright: (c) Twitter
 License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source: http://getbootstrap.com
 
+Masonry JS:
+Copyright: (C) 2007 Free Software Foundation
+License: Under the GNU General Public License v3.0 
+Source: https://github.com/jmlp-131092/mp-mansory.js
+
 == Images ==
 
 * Image used in screenshot, License CC0 Public Domain
 https://pxhere.com/en/photo/1563083
 https://pxhere.com/en/photo/1456587
 https://pxhere.com/en/photo/1522087
+
+* Images on admin/img folder
+Copyright (C) 2018, SpcieThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
