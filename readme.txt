@@ -2,13 +2,13 @@
 
 Contributors: spicethemes
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 3.0.2
+Tested up to: 5.6
+Stable tag: 3.0.3
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
 
-Multi-purpose WordPress theme
+Rockers is the child version of the SpicePress theme
 
 == Description ==
 
@@ -26,10 +26,17 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
+SpicePress WordPress Theme, Copyright (C) 2018, SpiceThemes
+SpicePress is distributed under the terms of the GNU GPL
+
 Rockers WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018, SpiceThemes
 Rockers WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 3.0.3 ==
+1. Added the license of parent theme in readme. 
+2. Escaped the pingback_url() and removed unnecessary code.
 
 = 3.0.2 ==
 1. Fixed the customizer console issue.
@@ -100,3 +107,6 @@ Source: http://getbootstrap.com
 Image used in the Screenshot
 License - CC0 Public domain
 Source - https://pxhere.com/en/photo/879286
+
+* Images on admin/img folder
+Copyright (C) 2018, SpcieThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

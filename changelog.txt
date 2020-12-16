@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 3.0.3 ==
+1. Added the license of parent theme in readme. 
+2. Escaped the pingback_url() and removed unnecessary code.
+
 = 3.0.2 ==
 1. Fixed the customizer console issue.
 2. Changed the screenshot image.
