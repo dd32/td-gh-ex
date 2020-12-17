@@ -11,6 +11,7 @@ External resources linked to the theme.
   Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
 Resources packed within the theme.
+* Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
@@ -44,6 +45,11 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.8 - 2020-12-17 =
+* Fix   - jQuery deprecated message in some of the theme custom JS files.
+* Tweak - Remove deprecate Custom CSS customize option provided via theme.
+* Tweak - Update footer credit link with `rel="nofollow"` attributes.
+
 = Version 1.4.7 - 2020-08-13 =
 * Enhancement - Update http protocol to https to prevent not secure issue.
 * Tweak   - Add and improve theme-related notices.

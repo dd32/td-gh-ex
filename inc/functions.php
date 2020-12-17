@@ -414,12 +414,6 @@ function accelerate_custom_css() {
 		<?php
 	}
 
-	$accelerate_custom_css = accelerate_options( 'accelerate_custom_css' );
-	if ( $accelerate_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
-		?>
-		<style type="text/css"><?php echo $accelerate_custom_css; ?></style>
-		<?php
-	}
 }
 
 /**************************************************************************************/
@@ -562,18 +556,23 @@ add_action( 'accelerate_footer_copyright', 'accelerate_footer_copyright', 10 );
  * function to show the footer info, copyright information
  */
 if ( ! function_exists( 'accelerate_footer_copyright' ) ) :
+
 	function accelerate_footer_copyright() {
+
 		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 
-		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'accelerate' ) . '"><span>' . __( 'WordPress', 'accelerate' ) . '</span></a>';
+		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'accelerate' ) . '" rel="nofollow"><span>' . esc_html__( 'WordPress', 'accelerate' ) . '</span></a>';
 
-		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/accelerate' ) . '" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'accelerate' ) . '" rel="author"><span>' . __( 'ThemeGrill', 'accelerate' ) . '</span></a>';
+		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/accelerate' ) . '" target="_blank" title="' . esc_attr__( 'Accelerate', 'accelerate' ) . '" rel="nofollow"><span>' . esc_html__( 'Accelerate', 'accelerate' ) . '</span></a>';
 
-		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'accelerate' ), date( 'Y' ), $site_link ) . ' ' . sprintf( __( 'Powered by %s.', 'accelerate' ), $wp_link ) . ' ' . sprintf( __( 'Theme: %1$s by %2$s.', 'accelerate' ), 'Accelerate', $tg_link );
+		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'accelerate' ), date( 'Y' ), $site_link ) . '<br>' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'accelerate' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( esc_html__( 'Powered by %s.', 'accelerate' ), $wp_link );
 
 		$accelerate_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
+
 		echo $accelerate_footer_copyright;
+
 	}
+
 endif;
 
 /**************************************************************************************/
@@ -618,38 +617,6 @@ function accelerate_wrapper_start() {
 function accelerate_wrapper_end() {
 	echo '</div>';
 }
-
-/**
- * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
- */
-function accelerate_custom_css_migrate() {
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = accelerate_options( 'accelerate_custom_css' );
-		if ( $custom_css ) {
-			// assigning theme name
-			$themename = get_option( 'stylesheet' );
-			$themename = preg_replace( "/\W/", "_", strtolower( $themename ) );
-			$core_css  = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return    = wp_update_custom_css_post( $core_css . $custom_css );
-
-			if ( ! is_wp_error( $return ) ) {
-
-				$theme_options = get_option( $themename );
-
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				foreach ( $theme_options as $option_key => $option_value ) {
-					if ( in_array( $option_key, array( 'accelerate_custom_css' ) ) ) {
-						unset( $theme_options[ $option_key ] );
-					}
-				}
-				// Finally, update accelerate theme options.
-				update_option( $themename, $theme_options );
-			}
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'accelerate_custom_css_migrate' );
 
 if ( ! function_exists( 'accelerate_pingback_header' ) ) :
 
