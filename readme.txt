@@ -13,6 +13,7 @@ External resources linked to the theme.
   SIL Open Font License (OFL) scripts.sil.org/OFL
 
 Resources packed within the theme.
+* Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
@@ -47,6 +48,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.2.1 2020-12-17 =
+* Tweak - Remove deprecate Custom CSS customize option provided via theme.
+* Tweak - Update footer credit link with `rel="nofollow"` attributes.
+
 = Version 1.2.0 2020-08-14 =
 * Tweak - Add and improve theme-related notices.
 * Remove - TGMPA library to recommend plugins

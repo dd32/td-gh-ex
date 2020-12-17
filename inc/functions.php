@@ -373,12 +373,6 @@ function freedom_custom_css() {
 		<?php
 	}
 
-	$freedom_custom_css = get_theme_mod( 'freedom_custom_css' );
-	if ( $freedom_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
-		echo '<!-- ' . get_bloginfo( 'name' ) . ' Custom Styles -->';
-		?>
-		<style type="text/css"><?php echo $freedom_custom_css; ?></style><?php
-	}
 }
 
 /**************************************************************************************/
@@ -519,12 +513,16 @@ add_action( 'freedom_footer_copyright', 'freedom_footer_copyright', 10 );
 /**
  * function to show the footer info, copyright information
  */
-function freedom_footer_copyright() {
-	$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-	$wp_link   = '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'freedom' ) . '"><span>' . __( 'WordPress', 'freedom' ) . '</span></a>';
-	$tg_link   = '<a href="' . esc_url( 'https://themegrill.com/themes/freedom' ) . '" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'freedom' ) . '" ><span>' . __( 'ThemeGrill', 'freedom' ) . '</span></a>';
+function freedom_footer_copyright()
+{
+	$site_link = '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name', 'display')) . '" ><span>' . get_bloginfo('name', 'display') . '</span></a>';
 
-	$default_footer_value     = __( 'Copyright &copy; ', 'freedom' ) . date( 'Y' ) . '&nbsp' . $site_link . __( '.&nbsp;Powered by&nbsp;', 'freedom' ) . $wp_link . '&nbsp;and&nbsp;' . $tg_link . __( '.', 'freedom' );
+	$wp_link = '<a href="' . esc_url('http://wordpress.org') . '" target="_blank" title="' . esc_attr__('WordPress', 'freedom') . '"rel="nofollow"><span>' . esc_html__('WordPress', 'freedom') . '</span></a>';
+
+	$tg_link = '<a href="' . esc_url('https://themegrill.com/themes/freedom') . '" target="_blank" title="' . esc_attr__('Freedom', 'freedom') . '" rel="nofollow" ><span>' . esc_html__('Freedom', 'freedom') . '</span></a>';
+
+	$default_footer_value = sprintf(esc_html__('Copyright &copy; %1$s %2$s. All rights reserved.', 'freedom'), date('Y'), $site_link) . ' ' . sprintf(esc_html__('Theme: %1$s by %2$s.', 'freedom'), $tg_link, 'ThemeGrill') . ' ' . sprintf(esc_html__('Powered by %s.', 'freedom'), $wp_link);
+
 	$freedom_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
 
 	echo $freedom_footer_copyright;
@@ -553,28 +551,6 @@ function freedom_sanitize_textarea_custom( $input, $option ) {
 
 	return $output;
 }
-
-/**************************************************************************************/
-
-/**
- * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
- */
-function freedom_custom_css_migrate() {
-
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = get_theme_mod( 'freedom_custom_css' );
-		if ( $custom_css ) {
-			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return   = wp_update_custom_css_post( $core_css . $custom_css );
-			if ( ! is_wp_error( $return ) ) {
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				remove_theme_mod( 'freedom_custom_css' );
-			}
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'freedom_custom_css_migrate' );
 
 /**
  * Making the theme Woocommrece compatible
