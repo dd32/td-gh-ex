@@ -314,13 +314,6 @@ function esteem_custom_css() {
 		<?php
 	}
 
-	$esteem_custom_css = get_theme_mod( 'esteem_custom_css' );
-
-	if ( $esteem_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
-		?>
-		<style type="text/css"><?php echo $esteem_custom_css; ?></style>
-		<?php
-	}
 }
 
 /**************************************************************************************/
@@ -333,13 +326,14 @@ if ( ! function_exists( 'esteem_footer_copyright' ) ) :
 	function esteem_footer_copyright() {
 		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 
-		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'esteem' ) . '"><span>' . __( 'WordPress', 'esteem' ) . '</span></a>';
+		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'esteem' ) . '"rel="nofollow"><span>' . esc_html__( 'WordPress', 'esteem' ) . '</span></a>';
 
-		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/esteem' ) . '" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'esteem' ) . '" rel="author"><span>' . __( 'ThemeGrill', 'esteem' ) . '</span></a>';
+		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/esteem' ) . '" target="_blank" title="' . esc_attr__( 'Esteem', 'esteem' ) . '" rel="nofollow"><span>' . esc_html__( 'Esteem', 'esteem' ) . '</span></a>';
 
-		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'esteem' ), date( 'Y' ), $site_link ) . ' ' . sprintf( __( 'Powered by %s.', 'esteem' ), $wp_link ) . ' ' . sprintf( __( 'Theme: %1$s by %2$s.', 'esteem' ), 'Esteem', $tg_link );
+		$default_footer_value = sprintf( esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'esteem' ), date( 'Y' ), $site_link ) . ' ' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'esteem' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( esc_html__( 'Powered by %s.', 'esteem' ), $wp_link );
 
 		$esteem_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
+
 		echo $esteem_footer_copyright;
 	}
 endif;
@@ -469,26 +463,6 @@ function esteem_wrapper_start() {
 function esteem_wrapper_end() {
 	echo '</div>';
 }
-
-/**
- * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
- */
-function esteem_custom_css_migrate() {
-
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = get_theme_mod( 'esteem_custom_css' );
-		if ( $custom_css ) {
-			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return   = wp_update_custom_css_post( $core_css . $custom_css );
-			if ( ! is_wp_error( $return ) ) {
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				remove_theme_mod( 'esteem_custom_css' );
-			}
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'esteem_custom_css_migrate' );
 
 if ( ! function_exists( 'esteem_pingback_header' ) ) :
 
