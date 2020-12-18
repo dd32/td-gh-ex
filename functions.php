@@ -52,7 +52,23 @@ function appointment_booking_setup() {
 }
 endif;
 
+// Theme Activation Notice
+global $pagenow;
+
+if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+add_action( 'admin_notices', 'appointment_booking_activation_notice' );
+}
+
 add_action( 'after_setup_theme', 'appointment_booking_setup' );
+
+// Notice after Theme Activation
+function appointment_booking_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible welcome-notice">';
+	echo '<h3>'. esc_html__( 'Warm Greetings to you!!', 'appointment-booking' ) .'</h3>';
+	echo '<p>'. esc_html__( 'Thank you for choosing Appointment Booking Theme. Would like to have you on our Welcome page so that you can reap all the benefits of our Appointment Booking Theme.', 'appointment-booking' ) .'</p>';
+	echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=appointment_booking_guide' ) ) .'" class="button button-primary">'. esc_html__( 'GET STARTED', 'appointment-booking' ) .'</a></p>';
+	echo '</div>';
+}
 
 /* Theme Widgets Setup */
 function appointment_booking_widgets_init() {
@@ -298,6 +314,25 @@ function appointment_booking_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'appointment_booking_scripts' );
 
+//define
+define('APPOINTMENT_BOOKING_FREE_THEME_DOC',__('https://vwthemesdemo.com/docs/free-appointment-booking/','appointment-booking'));
+define('APPOINTMENT_BOOKING_SUPPORT',__('https://wordpress.org/support/theme/appointment-booking/','appointment-booking'));
+define('APPOINTMENT_BOOKING_REVIEW',__('https://wordpress.org/support/theme/appointment-booking/reviews','appointment-booking'));
+define('APPOINTMENT_BOOKING_BUY_NOW',__('https://www.vwthemes.com/themes/appointment-wordpress-theme/','appointment-booking'));
+define('APPOINTMENT_BOOKING_LIVE_DEMO',__('https://www.vwthemes.net/vw-appointment-pro/','appointment-booking'));
+define('APPOINTMENT_BOOKING_PRO_DOC',__('https://vwthemesdemo.com/docs/vw-appointment-pro/','appointment-booking'));
+define('APPOINTMENT_BOOKING_FAQ',__('https://www.vwthemes.com/faqs/','appointment-booking'));
+define('APPOINTMENT_BOOKING_CONTACT',__('https://www.vwthemes.com/contact/','appointment-booking'));
+define('APPOINTMENT_BOOKING_CHILD_THEME',__('https://developer.wordpress.org/themes/advanced-topics/child-themes/','appointment-booking'));
+
+define('APPOINTMENT_BOOKING_CREDIT',__('https://www.vwthemes.com/themes/free-appointment-wordpress-theme/','appointment-booking'));
+
+if ( ! function_exists( 'appointment_booking_credit' ) ) {
+	function appointment_booking_credit(){
+		echo "<a href=".esc_url(APPOINTMENT_BOOKING_CREDIT).">". esc_html__('Appointment Booking WordPress Theme ','appointment-booking')."</a>";
+	}
+}
+
 function appointment_booking_sanitize_dropdown_pages( $page_id, $setting ) {
   	// Ensure $input is an absolute integer.
   	$page_id = absint( $page_id );
@@ -372,6 +407,9 @@ require get_template_directory() . '/inc/customizer.php';
 
 /* Typography */
 require get_template_directory() . '/inc/typography/ctypo.php';
+
+/* get started */
+require get_template_directory() . '/inc/getstart/getstart.php';
 
 /* Social Icons */
 require get_template_directory() . '/inc/themes-widgets/social-icon.php';

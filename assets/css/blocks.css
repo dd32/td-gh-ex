@@ -223,20 +223,30 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button__link {
-  padding: 16px 40px;
-  font-weight: bold;
-  background: #ff5e6b;
   color: #fff !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  background: #ff5e6b;
+  padding: 1rem;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  border: solid 2px !important;
 }
 
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-  background-color: #333333;
-  color: #fff;
+  background: #fff;
+  color: #ff5e6b !important;
+  border: solid 2px !important;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
+.wp-block-buttons .wp-block-button {
+    display: inline-block;
+    margin:0 0 15px;
+}
 /* Separator */
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {

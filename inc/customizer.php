@@ -788,12 +788,20 @@ final class Appointment_Booking_Customize {
 		$manager->register_section_type( 'Appointment_Booking_Customize_Section_Pro' );
 
 		// Register sections.
-		$manager->add_section( new Appointment_Booking_Customize_Section_Pro( $manager,'appointment_booking_go_pro', array(
+		$manager->add_section( new Appointment_Booking_Customize_Section_Pro( $manager,'appointment_booking_upgrade_pro_link', array(
 			'priority'   => 1,
 			'title'    => esc_html__( 'Appointment Booking', 'appointment-booking' ),
 			'pro_text' => esc_html__( 'UPGRADE PRO', 'appointment-booking' ),
 			'pro_url'  => esc_url('https://www.vwthemes.com/themes/appointment-wordpress-theme/'),
 		) )	);
+
+		// Register sections.
+		$manager->add_section(new Appointment_Booking_Customize_Section_Pro($manager,'appointment_booking_get_started_link',array(
+			'priority'   => 1,
+			'title'    => esc_html__( 'DOCUMENTATION', 'appointment-booking' ),
+			'pro_text' => esc_html__( 'DOCS', 'appointment-booking' ),
+			'pro_url'  => admin_url('themes.php?page=appointment_booking_guide'),
+		)));
 	}
 
 	/**

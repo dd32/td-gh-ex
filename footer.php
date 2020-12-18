@@ -56,7 +56,7 @@
         </aside>
         <div id="footer-2" class="pt-3 pb-3">
           	<div class="copyright container">
-                <p class="mb-0"><?php echo esc_html(get_theme_mod('appointment_booking_footer_text',__('Appointment Booking WordPress Theme By VWThemes','appointment-booking'))); ?>
+                <p class="mb-0"><?php appointment_booking_credit(); ?> <?php echo esc_html(get_theme_mod('appointment_booking_footer_text',__('By VWThemes','appointment-booking'))); ?>
                 </p>
                 <?php if( get_theme_mod( 'appointment_booking_footer_scroll') != '') { ?>
                     <?php $appointment_booking_theme_lay = get_theme_mod( 'appointment_booking_scroll_top_alignment','Right');
