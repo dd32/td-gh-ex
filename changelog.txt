@@ -1,5 +1,13 @@
 == Changelog ==
 
+@Version 2.6.2
+1. Implemented "Links within content must be underlined" guideline.
+2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view. 
+
+@Version 2.6.1
+1. Prefix fixed.
+2. IE11 issue dropdown menu fix.
+
 @Version 2.6
 1. Implement the Accessibility including skip to content and keyboard navigation.
 2. Declared all the licenses.

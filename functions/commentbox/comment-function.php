@@ -7,7 +7,7 @@ function quality_comment( $comment, $args, $depth )
 	global $comment_data;
 
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
+	$leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : 
 	esc_html__('Reply','quality');?>
 	
           <div class="media comment-box">

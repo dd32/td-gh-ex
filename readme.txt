@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready, sticky-post, blog, footer-widgets, featured-images, right-sidebar
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 2.6.1
+Tested up to: 5.6
+Stable tag: 2.6.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,9 +44,13 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == Changelog ==
 
+@Version 2.6.2
+1. Implemented "Links within content must be underlined" guideline.
+2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view. 
+
 @Version 2.6.1
-1. Prefix fixed
-2. IE11 issue dropdown menu fix
+1. Prefix fixed.
+2. IE11 issue dropdown menu fix.
 
 @Version 2.6
 1. Implement the Accessibility including skip to content and keyboard navigation.
@@ -297,8 +301,8 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank y
 License
 -------
 
-Quality WordPress Theme, Copyright 2014 Priyanshu Mittal
-Quality is distributed under the terms of the GNU GPL
+Quality WordPress Theme, Copyright 2014-2020 priyanshumittal
+Quality WordPress Theme is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -346,10 +350,16 @@ License CC0 Public Domain
 https://pxhere.com/en/photo/1451901
 
 == Images ==
+
 * Images used in Slider
 License CC0 Public Domain
 https://pxhere.com/en/photo/1451901
 
-----------------------------------------------------------------------	
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/
+
+* Images on /images folder
+Copyright (C) 2014, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
 
 # --- EOF --- #
