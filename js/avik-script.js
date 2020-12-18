@@ -19,7 +19,6 @@
 9 - Preloader
 10 - Carousel featured image
 11 - Portfolio
-12 - Popup image
 
 */
 
@@ -465,23 +464,6 @@ function avikRemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-/* ------------------------------------------------------------------------- *
-##  12  Popup image */
-/* ------------------------------------------------------------------------- */
 
-
-jQuery(document).ready(function($) {
-
-    jQuery('.popup').live('click', function(){
-
-    newwindow=window.open($(this).attr('href'),'','height=450,width=700');
-
-    if (window.focus) {newwindow.focus()}
-
-    return false;
-
-});
-
-});
 
 

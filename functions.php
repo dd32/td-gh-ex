@@ -19,7 +19,6 @@
  9 - Add Custom Styles Editor
 10 - Carousel featured image
 11 - Avik Support Page
-12 - Lightbox popup image
 13 - Include javascript files
 14 - Include css files
 15 - Include script and styles for class add Panel
@@ -520,29 +519,6 @@ function avik_load_admin_style($hook) {
 }
 add_action( 'admin_enqueue_scripts', 'avik_load_admin_style' );
 
-
-/* 12 Lightbox popup image
--------------------------------------------------------- */
-
-function avik_register_lightbox() {
-	if (!is_admin()) {
-	wp_register_style('lightbox-css', get_template_directory_uri() . '/css/lightbox.min.css');
-	wp_enqueue_style('lightbox-css');
-	wp_register_script('lightbox-script-min', get_template_directory_uri() . '/js/lightbox-plus-jquery.min.js', '', '', false);
-	wp_enqueue_script('lightbox-script');
-}
-}
-add_action( 'init', 'avik_register_lightbox' );
-
-add_filter('the_content', 'avik_addtaglightbox', 12);
-
-function avik_addtaglightbox ($content){
-    global $post;
-    $pattern = "/<a(.*?)href=('|\")([^>]*).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>(.*?)<\/a>/i";
-    $replacement = '<a$1href=$2$3.$4$5 data-lightbox="img['.$post->ID.']"$6>$7</a>';
-    $content = preg_replace($pattern, $replacement, $content);
-    return $content;
-}
 
 /* 13 Include javascript files
 ------------------------------------------------------------*/

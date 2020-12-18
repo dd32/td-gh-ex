@@ -3415,7 +3415,7 @@ array(
 // Hight Image Contact
 $wp_customize->add_setting( 'avik_height_img_contact',
 array(
-	'default' => 500,
+	'default' => 600,
 	'transport' => 'postMessage',
 	'sanitize_callback' => 'avik_sanitize_integer'
 ));

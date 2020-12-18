@@ -5,8 +5,8 @@ Contributors: franchidesign
 Theme URI: http://denisfranchi.com/
 Author: http://denisfranchi.com/
 Author URI: http://denisfranchi.com/
-Version: 1.4.4
-Stable tag: 1.4.4
+Version: 1.4.5
+Stable tag: 1.4.5
 Tested up to: 5.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -348,6 +348,12 @@ V 1.4.4
 # Changed Notice Admin Area respecting the new requirements
 # Changed Theme URI 
 # Changed Link Support
+
+V 1.4.5
+
+# Changed default image height Contact Section
+# Speed up the theme by reducing the loading of Javascript files
+# Fixed some bug
 
 
 

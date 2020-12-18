@@ -743,7 +743,7 @@ img.img-who-we-are{
 }
 
 .contact img{
-  max-height: <?php echo esc_attr( get_theme_mod('avik_height_img_contact', 500)); ?>px;
+  max-height: <?php echo esc_attr( get_theme_mod('avik_height_img_contact', 600)); ?>px;
 }
 
 </style>
