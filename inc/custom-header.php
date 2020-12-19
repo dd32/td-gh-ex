@@ -9,8 +9,10 @@ function aagaz_startup_custom_header_setup() {
 
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1355,
+		'height'                 => 100,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'aagaz_startup_header_style',
 	) ) );
 }
