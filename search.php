@@ -41,13 +41,13 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div class="<?php Arkhe::main_body_class(); ?>">
-		<?php do_action( 'arkhe_start_search_main_content' ); ?>
+		<?php do_action( 'arkhe_start_search_main' ); ?>
 		<div class="p-archive__title c-pageTitle">
 			<h1 class="c-pageTitle__main">
 				<?php
 					echo wp_kses(
 						apply_filters( 'arkhe_search_title', $searched_text, $search_query, $cat_name, $tag_name ),
-						\Arkhe::$allowed_text_html
+						Arkhe::$allowed_text_html
 					);
 				?>
 			</h1>
@@ -67,7 +67,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 				)
 			);
 		?>
-		<?php do_action( 'arkhe_end_search_main_content' ); ?>
+		<?php do_action( 'arkhe_end_search_main' ); ?>
 	</div>
 </main>
 <?php get_footer(); ?>
