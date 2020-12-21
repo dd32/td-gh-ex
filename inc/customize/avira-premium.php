@@ -5,6 +5,7 @@ function avira_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Premium','avira'),
+			'priority'      => 1,
 		)
     );
 	
@@ -51,4 +52,3 @@ function avira_premium_setting( $wp_customize ) {
 		);
 }
 add_action( 'customize_register', 'avira_premium_setting',999 );
-?>
