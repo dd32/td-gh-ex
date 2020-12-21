@@ -38,7 +38,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 			'label'          => __( 'Hide / Show Section', 'benzer' ),
 			'section'        => 'features_setting',
-			'settings'   	 => 'hide_show_features',
 			'type'           => 'radio',
 			'choices'        => 
 			array(
@@ -73,7 +72,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 		    'label'   => __('Section Title','benzer'),
 		    'section' => 'features_header',
-			'settings'   	 => 'features_title',
 			'type'           => 'text',
 		)  
 	);
@@ -93,7 +91,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 		    'label'   => __('Section Description','benzer'),
 		    'section' => 'features_header',
-			'settings'   	 => 'features_description',
 			'type'           => 'textarea',
 		)  
 	);
@@ -112,7 +109,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
     $wp_customize->add_setting( 
     	'features_background_setting' , 
     	array(
-			'default' 			=> '',
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_url',	
 		) 
@@ -122,7 +118,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 			'label'          => __( 'Background Image', 'benzer' ),
 			'section'        => 'features_background',
-			'settings'   	 => 'features_background_setting',
 		) 
 	));
 	
@@ -140,7 +135,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			array(
 				'label'          => __( 'Image Position', 'benzer' ),
 				'section'        => 'features_background',
-				'settings'       => 'features_background_position',
 				'type'           => 'radio',
 				'choices'        => 
 				array(
@@ -171,7 +165,7 @@ function benzer_home_feature_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'features_title', array(
 		'selector'            => '.features-version-one .section-heading',
 		'settings'            => 'features_title',
-		'render_callback'  => 'benzer_home_features_title_render_callback',
+		'render_callback'  => 'benzer_features_title_render_callback',
 	
 	) );
 	
@@ -179,7 +173,7 @@ function benzer_home_feature_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'features_description', array(
 		'selector'            => '.features-version-one .section-description',
 		'settings'            => 'features_description',
-		'render_callback'  => 'benzer_home_features_description_render_callback',
+		'render_callback'  => 'benzer_features_description_render_callback',
 	
 	) );
 	}
@@ -187,11 +181,10 @@ function benzer_home_feature_section_partials( $wp_customize ){
 add_action( 'customize_register', 'benzer_home_feature_section_partials' );
 
 // features_title
-function benzer_home_features_title_render_callback() {
+function benzer_features_title_render_callback() {
 	return get_theme_mod( 'features_title' );
 }
 // features_description
-function benzer_home_features_description_render_callback() {
+function benzer_features_description_render_callback() {
 	return get_theme_mod( 'features_description' );
 }
-?>
