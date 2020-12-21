@@ -48,12 +48,12 @@ a:hover {
     border: 0
 }
 
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:focus,
-.navbar-default .navbar-nav>.open>a:hover {
+.navbar .nav-menu>.active>a,
+.navbar .nav-menu>.active>a:focus,
+.navbar .nav-menu>.active>a:hover,
+.navbar .nav-menu>.open>a,
+.navbar .nav-menu>.open>a:focus,
+.navbar .nav-menu>.open>a:hover {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;

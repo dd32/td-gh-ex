@@ -3,7 +3,7 @@ Contributors: weblizar
 Tags: two-columns,  four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, flexible-header, translation-ready  , e-commerce , education , entertainment
 Requires at least: 7.2
 Tested up to: 5.5
-Stable tag: 7.1.4
+Stable tag: 7.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,10 @@ Enigma is an outstanding superfine creation from weblizar, Enigma has become one
 Please drop your issues here <a href="https://wordpress.org/support/theme/enigma"> we'll try to triage issues reported on the theme forum, you'll get a faster response.
 
 == Changelog ==
+
+= 7.1.4 =
+** Active Class on selected Menu
+
 
 = 7.1.4 =
 * Add setting in customizer

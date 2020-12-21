@@ -24,14 +24,14 @@ table th{
     border-top:2px solid #31A3DD
 }
 .dropdown-menu .active a,
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:focus,
-.navbar-default .navbar-nav>.open>a:hover,
-.navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover{
+.navbar .nav-menu>.active>a,
+.navbar .nav-menu>.active>a:focus,
+.navbar .nav-menu>.active>a:hover,
+.navbar .nav-menu>.open>a,
+.navbar .nav-menu>.open>a:focus,
+.navbar .nav-menu>.open>a:hover,
+.navbar .nav-menu>li>a:focus,
+.navbar .nav-menu>li>a:hover{
     background-color:#30a2dc;
 }
 .collapse ul.nav li.current-menu-item .dropdown-toggle,
