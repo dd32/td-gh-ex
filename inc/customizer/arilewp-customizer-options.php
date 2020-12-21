@@ -182,9 +182,11 @@ function arilewp_recommended_plugin_section( $manager ) {
 /*
  *  Customizer Notifications
  */ 
- 
-require get_template_directory() . '/inc/customizer/customizer-notice/arilewp-customizer-notify.php';
 
+$activate_theme_data = wp_get_theme(); // getting current theme data
+$activate_theme = $activate_theme_data->name; 
+if( 'Architect Design' != $activate_theme ){ 
+require get_template_directory() . '/inc/customizer/customizer-notice/arilewp-customizer-notify.php';
 $arilewp_config_customizer = array(
     'recommended_plugins' => array( 
         'arile-extra' => array(
@@ -203,3 +205,4 @@ $arilewp_config_customizer = array(
 	'arilewp_deactivate_button_label'   => esc_html__( 'Deactivate', 'arilewp' ),
 );
 ArileWP_Customizer_Notify::init( apply_filters( 'arilewp_customizer_notify_array', $arilewp_config_customizer ) );
+}
