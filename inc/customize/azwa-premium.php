@@ -10,6 +10,7 @@ function azwa_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Pro','azwa'),
+			'priority'      => 1,
 		)
     );
 	
