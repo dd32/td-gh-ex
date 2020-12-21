@@ -3,7 +3,7 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package     Anarcho Notepad
- * @since       2.38
+ * @since       2.47
  * @author      Space X-Chimp
  * @copyright   Copyright (c) 2013-2020, Space X-Chimp
  * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
@@ -16,8 +16,8 @@
     <!--FOLLOW-->
     <?php if ( get_theme_mod('disable_rss_icon') !== '1' ) { ?>
     <div class="follow">
-        <a href="http://click-to-follow.me" target="_blank" rel="nofollow">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/follow.png" alt="RSS" />
+        <a href="https://www.follow.it/now" target="_blank" rel="nofollow">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/follow.png" alt="RSS" />
         </a>
     </div>
     <?php } ?>
@@ -38,7 +38,7 @@
         <p>
             <?php
                 $about_text = __( 'Paste here small text about you and/or about your site.', 'anarcho-notepad' );
-                echo sanitize_text_field( get_theme_mod( 'about_box', $about_text ) );
+                echo wp_kses_post( get_theme_mod( 'about_box', $about_text ) );
             ?>
         </p>
     </div>

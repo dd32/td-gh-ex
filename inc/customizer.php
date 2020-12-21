@@ -3,7 +3,7 @@
  * Theme Customizer support
  *
  * @package     Anarcho Notepad
- * @since       2.38
+ * @since       2.47
  * @author      Space X-Chimp
  * @copyright   Copyright (c) 2013-2020, Space X-Chimp
  * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
@@ -39,7 +39,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Text for the About widget
         $wp_customize->add_setting( 'about_box', array(
                 'default'           => __( 'Paste here small text about you and/or about your site.', 'anarcho-notepad' ),
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'wp_kses_post',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'about_box', array(
                 'priority'          => 1,
@@ -51,7 +51,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Copyright after post
         $wp_customize->add_setting( 'copyright_post', array(
                 'default'           => __( 'Copyright 2020. All rights reserved.', 'anarcho-notepad' ),
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'wp_kses_post',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'copyright_post', array(
                 'priority'          => 2,
@@ -63,7 +63,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Copyright in footer
         $wp_customize->add_setting( 'site-info', array(
                 'default'           => __( 'Copyright 2020. All rights reserved.', 'anarcho-notepad' ),
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'wp_kses_post',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'site-info', array(
                 'priority'          => 3,
@@ -261,7 +261,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Scripts before posts
         $wp_customize->add_setting( 'scripts_before_posts', array(
                 'default'           => '',
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'spacexchimp_theme_sanitize_scripts',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_before_posts', array(
                 'priority'          => 2,
@@ -273,7 +273,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Scripts at the beginning of the posts
         $wp_customize->add_setting( 'scripts_beginning_posts', array(
                 'default'           => '',
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'spacexchimp_theme_sanitize_scripts',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_beginning_posts', array(
                 'priority'          => 3,
@@ -285,7 +285,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Scripts at the end of the posts
         $wp_customize->add_setting( 'scripts_end_posts', array(
                 'default'           => '',
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'spacexchimp_theme_sanitize_scripts',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_end_posts', array(
                 'priority'          => 4,
@@ -297,7 +297,7 @@ function spacexchimp_theme_customize_register( $wp_customize ) {
         // Scripts after posts
         $wp_customize->add_setting( 'scripts_after_posts', array(
                 'default'           => '',
-                'sanitize_callback' => 'esc_attr',
+                'sanitize_callback' => 'spacexchimp_theme_sanitize_scripts',
         ));
         $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_after_posts', array(
                 'priority'          => 5,

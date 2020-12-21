@@ -3,7 +3,7 @@
  * Upgrade notice
  *
  * @package     Anarcho Notepad
- * @since       2.33
+ * @since       2.47
  * @author      Space X-Chimp
  * @copyright   Copyright (c) 2013-2020, Space X-Chimp
  * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
@@ -19,7 +19,7 @@ function spacexchimp_theme_upgrade_notice() {
         <div class="notice anarcho-notice">
             <div class="anarcho-notice-item anarcho-notice">
 
-                <img src="<?php echo get_template_directory_uri() . '/images/theme_info/spacexchimp-logo.png'; ?>" alt="Anarcho Notepad" class="anarcho-notice-icon">
+                <img src="<?php echo esc_url( get_template_directory_uri() ) . '/images/theme_info/spacexchimp-logo.png'; ?>" alt="Anarcho Notepad" class="anarcho-notice-icon" width="145" height="145">
 
                 <div class="anarcho-notice-message-container">
                     <h3 class="anarcho-notice-title">

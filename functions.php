@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  *
  * @package     Anarcho Notepad
- * @since       2.44
+ * @since       2.47
  * @author      Space X-Chimp
  * @copyright   Copyright (c) 2013-2020, Space X-Chimp
  * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
@@ -136,16 +136,14 @@ function spacexchimp_theme_upgrade_settings() {
 }
 spacexchimp_theme_upgrade_settings();
 
-//Adding backwards compatibility for title-tag less than WordPress version 4.1
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-    function spacexchimp_theme_render_title() {
-        ?>
-        <title>
-            <?php wp_title( '|', true, 'right' ); ?>
-        </title>
-        <?php
+/**
+ * Fire the wp_body_open action (triggered after the opening <body> tag).
+ * Added for backwards compatibility to support WordPress versions prior to 5.2.0.
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
     }
-    add_action( 'wp_head', 'spacexchimp_theme_render_title' );
 }
 
 /* Add Theme Information Page */
@@ -171,9 +169,7 @@ add_action ( 'wp_before_admin_bar_render', 'spacexchimp_theme_add_help_button' )
 /* Add the Upgrade notice */
 require get_template_directory() . '/inc/upgrade_notice.php';
 
-/**
- * Enqueue scripts and styles on the admin pages.
- */
+/* Enqueue scripts and styles on the admin pages */
 function spacexchimp_theme_scripts_admin() {
 
     // Load additional stylesheet for admin screens
@@ -182,9 +178,7 @@ function spacexchimp_theme_scripts_admin() {
 }
 add_action( 'admin_enqueue_scripts', 'spacexchimp_theme_scripts_admin' );
 
-/**
- * Enqueue scripts and styles on the front end.
- */
+/* Enqueue scripts and styles on the front end */
 function spacexchimp_theme_scripts_frontend() {
 
     // Load JQuery library
@@ -201,6 +195,71 @@ function spacexchimp_theme_scripts_frontend() {
 
 }
 add_action( 'wp_enqueue_scripts', 'spacexchimp_theme_scripts_frontend' );
+
+/* Custom sanitizer function for the Scripts options */
+function spacexchimp_theme_sanitize_scripts( $input ){
+    global $allowedposttags;
+    $tags = $allowedposttags;
+    $atts_default = array(
+        'accesskey'       => true,
+        'autocapitalize'  => true,
+        'class'           => true,
+        'contenteditable' => true,
+        'contextmenu'     => true,
+        'dir'             => true,
+        'draggable'       => true,
+        'dropzone'        => true,
+        'exportparts'     => true,
+        'hidden'          => true,
+        'id'              => true,
+        'inputmode'       => true,
+        'is'              => true,
+        'itemid'          => true,
+        'itemprop'        => true,
+        'itemref'         => true,
+        'itemscope'       => true,
+        'itemtype'        => true,
+        'lang'            => true,
+        'part'            => true,
+        'slot'            => true,
+        'spellcheck'      => true,
+        'style'           => true,
+        'tabindex'        => true,
+        'title'           => true,
+        'translate'       => true,
+    );
+	$tags['style']    = array_merge(
+        array(
+            'media'          => true,
+    		'type'           => true,
+        ),
+        $atts_default
+    );
+    $tags['script']   = array_merge(
+        array(
+    		'async'          => true,
+    		'crossorigin'    => true,
+    		'defer'          => true,
+    		'integrity'      => true,
+            'nomodule'       => true,
+            'nonce'          => true,
+            'referrerpolicy' => true,
+            'src'            => true,
+            'type'           => true,
+        ),
+        $atts_default
+    );
+    $tags['noscript'] = array_merge(
+        array(
+            'class'          => true,
+    		'href'           => true,
+    		'rel'            => true,
+    		'title'          => true,
+        ),
+        $atts_default
+    );
+    return wp_kses( $input, $tags );
+}
 
 /* Add Theme Customizer functionality */
 require get_template_directory() . '/inc/customizer-arrays.php';
@@ -564,7 +623,7 @@ function spacexchimp_theme_comment( $comment, $args, $depth ) {
 function spacexchimp_theme_copyright() {
 
     $spacexchimp_theme_copy_website = __( 'Copyright 2020. All rights reserved.', 'anarcho-notepad' );
-    echo get_theme_mod( 'site-info', $spacexchimp_theme_copy_website ) . "<br>";
+    echo wp_kses_post( get_theme_mod( 'site-info', $spacexchimp_theme_copy_website ) ) . "<br>";
 
     $spacexchimp_theme_copy_theme_uri = "https://www.spacexchimp.com/themes/anarcho-notepad.html";
     $spacexchimp_theme_copy_theme_name = "Anarcho Notepad";
