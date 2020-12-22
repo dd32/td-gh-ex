@@ -332,7 +332,7 @@ if (!Array.from) {
     function Plugin( element, options ) {
         this.$_el     = $(element);
         this.options  = $.extend( {}, defaults, options) ;
-        this._href    = $.trim( this.$_el.attr( 'href' ) );
+        this._href    = ( 'string' == typeof( this.$_el.attr( 'href' ) ) ) ? this.$_el.attr( 'href' ).trim() : '';
         this.init();
     }
 
@@ -402,7 +402,10 @@ if (!Array.from) {
       var _main_domain = (location.host).split('.').slice(-2).join('.'),
           _reg = new RegExp( _main_domain );
 
-      _href = $.trim( _href );
+      if ( 'string' != typeof( _href ) )
+        return;
+
+      _href = _href.trim();
 
       if ( _href !== '' && _href != '#' && this._isValidURL( _href ) )
         return ! _reg.test( _href );
@@ -463,7 +466,7 @@ if (!Array.from) {
                     self._maybe_apply_golden_r();
                     var $_imgs = $( self.options.imgSel , self.container );
                     if ( self.options.enableGoldenRatio ) {
-                          $(window).bind(
+                          $(window).on(
                                 'resize',
                                 {},
                                 _.debounce( function( evt ) { self._maybe_apply_golden_r( evt ); }, 200 )
@@ -479,7 +482,7 @@ if (!Array.from) {
             if ( _.isArray( self._customEvt ) ) {
                   self._customEvt.map( function( evt ) {
                         var $_containerToListen = ( self.options.$containerToListen instanceof $ && 1 < self.options.$containerToListen.length ) ? self.options.$containerToListen : $( self.container );
-                        $_containerToListen.bind( evt, {} , function() {
+                        $_containerToListen.on( evt, {} , function() {
                               _do( evt );
                         });
                   } );
@@ -1414,7 +1417,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
     return this.each(function(){
       var $this = $(this);
       var resizer = function () {
-        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize))  + 'px');
       };
       resizer();
       $(window).on('resize.fittext orientationchange.fittext', resizer);

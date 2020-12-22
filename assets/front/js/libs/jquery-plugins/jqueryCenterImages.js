@@ -62,7 +62,7 @@
                     //GOLDEN RATIO (before image centering)
                     //creates a golden ratio fn on resize
                     if ( self.options.enableGoldenRatio ) {
-                          $(window).bind(
+                          $(window).on(
                                 'resize',
                                 {},
                                 _.debounce( function( evt ) { self._maybe_apply_golden_r( evt ); }, 200 )
@@ -88,7 +88,7 @@
                   self._customEvt.map( function( evt ) {
                         var $_containerToListen = ( self.options.$containerToListen instanceof $ && 1 < self.options.$containerToListen.length ) ? self.options.$containerToListen : $( self.container );
                         //console.log('container to listen',$_containerToListen, evt  );
-                        $_containerToListen.bind( evt, {} , function() {
+                        $_containerToListen.on( evt, {} , function() {
                               _do( evt );
                         });
                   } );
