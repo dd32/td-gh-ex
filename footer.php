@@ -216,7 +216,7 @@ if ( ! empty( $active_plugins ) && in_array( 'polylang/polylang.php', $active_pl
                        echo wp_kses_post($copyright);
                     ?>
                   </div>
-                  <div class="powered_by">
+                  <div class="powered_by site-copyright">
                       <span><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'better-health' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'better-health' ), 'WordPress' ); ?></a>
                       </span>
                       <span class="sep"> | </span>

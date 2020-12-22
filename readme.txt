@@ -1,10 +1,9 @@
-
 === Better Health ===
 
-Requires at least: 4.8
-Requires PHP: 5.6
-Tested up to: 5.5
-Stable tag: 1.1.0
+Requires at least: 5.0
+Requires PHP: 7.0
+Tested up to: 5.6
+Stable tag: 1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Contributors: canyonthemes
@@ -25,6 +24,9 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.1 - December 15 2020 =
+* Extend compatibility to WordPress 5.6
 
 = 1.1.0 - September 2 2020 =
 * Mobile menu fixed
