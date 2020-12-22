@@ -1,62 +1,25 @@
-jQuery(document).ready(function () {
-  window.adventure_travelling_currentfocus=null;
-    adventure_travelling_checkfocusdElement();
-  var adventure_travelling_body = document.querySelector('body');
-  adventure_travelling_body.addEventListener('keyup', adventure_travelling_check_tab_press);
-  var adventure_travelling_gotoHome = false;
-  var adventure_travelling_gotoClose = false;
-  window.adventure_travelling_responsiveMenu=false;
-  function adventure_travelling_checkfocusdElement(){
-    if(window.adventure_travelling_currentfocus=document.activeElement.className){
-      window.adventure_travelling_currentfocus=document.activeElement.className;
-    }
-  }
-  function adventure_travelling_check_tab_press(e) {
-    "use strict";
-    // pick passed event or global event object if passed one is empty
-    e = e || event;
-    var activeElement;
-
-    if(window.innerWidth < 999){
-    if (e.keyCode == 9) {
-      if(window.adventure_travelling_responsiveMenu){
-      if (!e.shiftKey) {
-        if(adventure_travelling_gotoHome) {
-          jQuery( ".main-menu ul:first li:first a:first-child" ).focus();
-        }
+( function( window, document ) {
+  function adventure_travelling_keepFocusInMenu() {
+    document.addEventListener( 'keydown', function( e ) {
+      const adventure_travelling_nav = document.querySelector( '.sidenav' );
+      if ( ! adventure_travelling_nav || ! adventure_travelling_nav.classList.contains( 'open' ) ) {
+        return;
       }
-      if (jQuery("a.closebtn.mobile-menu").is(":focus")) {
-        adventure_travelling_gotoHome = true;
-      } else {
-        adventure_travelling_gotoHome = false;
+      const elements = [...adventure_travelling_nav.querySelectorAll( 'input, a, button' )],
+        adventure_travelling_lastEl = elements[ elements.length - 1 ],
+        adventure_travelling_firstEl = elements[0],
+        adventure_travelling_activeEl = document.activeElement,
+        tabKey = e.keyCode === 9,
+        shiftKey = e.shiftKey;
+      if ( ! shiftKey && tabKey && adventure_travelling_lastEl === adventure_travelling_activeEl ) {
+        e.preventDefault();
+        adventure_travelling_firstEl.focus();
       }
-
-    }else{
-
-      if(window.adventure_travelling_currentfocus=="responsivetoggle"){
-        jQuery( "" ).focus();
-      }}}
-    }
-    if (e.shiftKey && e.keyCode == 9) {
-    if(window.innerWidth < 999){
-      if(window.adventure_travelling_currentfocus=="header-search"){
-        jQuery(".responsivetoggle").focus();
-      }else{
-        if(window.adventure_travelling_responsiveMenu){
-        if(adventure_travelling_gotoClose){
-          jQuery("a.closebtn.mobile-menu").focus();
-        }
-        if (jQuery( ".main-menu ul:first li:first a:first-child" ).is(":focus")) {
-          adventure_travelling_gotoClose = true;
-        } else {
-          adventure_travelling_gotoClose = false;
-        }
-      
-      }else{
-
-      if(window.adventure_travelling_responsiveMenu){
-      }}}}
-    }
-    adventure_travelling_checkfocusdElement();
+      if ( shiftKey && tabKey && adventure_travelling_firstEl === adventure_travelling_activeEl ) {
+        e.preventDefault();
+        adventure_travelling_lastEl.focus();
+      }
+    } );
   }
-});
+  adventure_travelling_keepFocusInMenu();
+} )( window, document );

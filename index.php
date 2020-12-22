@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php
 	        $adventure_travelling_sidebar_layout = get_theme_mod( 'adventure_travelling_sidebar_post_layout','right');
 	        if($adventure_travelling_sidebar_layout == 'left'){ ?>
-		        <div class="row">
+		        <div class="row m-0">
 		          	<div class="col-lg-4 col-md-4" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 		          	<div class="col-lg-8 col-md-8">
 		           
@@ -53,7 +53,7 @@ get_header(); ?>
 		        </div>
 		        <div class="clearfix"></div>
 		    <?php }else if($adventure_travelling_sidebar_layout == 'right'){ ?>
-		        <div class="row">
+		        <div class="row m-0">
 		          	<div class="col-lg-8 col-md-8">
 		           
 			            <?php if ( have_posts() ) : ?>
@@ -126,7 +126,7 @@ get_header(); ?>
 			            </div>
 	          	</div>
 		    <?php }else if($adventure_travelling_sidebar_layout == 'three-column'){ ?>
-		        <div class="row">
+		        <div class="row m-0">
 		          	<div class="col-lg-3 col-md-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 		          	<div class="col-lg-6 col-md-6">
 		           
@@ -165,7 +165,7 @@ get_header(); ?>
 		          	<div class="col-lg-3 col-md-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-2');?></div>
 		        </div>
 		    <?php }else if($adventure_travelling_sidebar_layout == 'four-column'){ ?>
-		        <div class="row">
+		        <div class="row m-0">
 		          	<div class="col-lg-3 col-md-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 		          	<div class="col-lg-3 col-md-3">
 		           
@@ -205,7 +205,7 @@ get_header(); ?>
 		          	<div class="col-lg-3 col-md-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-3');?></div>
 		        </div>
 		    <?php }else if($adventure_travelling_sidebar_layout == 'grid'){ ?>
-		        <div class="row">
+		        <div class="row m-0">
 		          	<div class="col-lg-9 col-md-9">
 		           		<div class="row">
 				            <?php if ( have_posts() ) : ?>
@@ -243,7 +243,7 @@ get_header(); ?>
 		        	<div class="col-lg-3 col-md-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 		        </div>
 		    <?php }else {?>
-		    	<div class="row">
+		    	<div class="row m-0">
 		          	<div class="col-lg-8 col-md-8">
 		           
 			            <?php if ( have_posts() ) : ?>

@@ -1,10 +1,8 @@
-function adventure_travelling_open_nav() {
-  window.adventure_travelling_responsiveMenu=true;
-  jQuery(".sidenav").addClass('show');
+function adventure_travelling_menu_open() {
+  jQuery(".sidenav").addClass('open');
 }
-function adventure_travelling_close_nav() {
-  window.adventure_travelling_responsiveMenu=false;
-  jQuery(".sidenav").removeClass('show');
+function adventure_travelling_menu_close() {
+  jQuery(".sidenav").removeClass('open');
 }
 
 jQuery(function($){
@@ -31,7 +29,6 @@ jQuery(function($){
   });
 });
 
-// ===== Scroll to Top ==== 
 jQuery(function($){
   $(window).scroll(function() {
     if ($(this).scrollTop() >= 50) {

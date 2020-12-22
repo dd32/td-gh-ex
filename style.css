@@ -3,9 +3,9 @@ Theme Name: Adventure Travelling
 Theme URI: https://www.themespride.com/themes/free-travel-agency-wordpress-theme/
 Author: ThemesPride
 Author URI: https://www.themespride.com/
-Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, exotic holiday vacation planning, tour operators, Scuba Diving School, adventure agency, providing diving, snorkeling, surfing or hiking activities. tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. Live Preview: https://themespride.com/tp-adventure-traveling-pro/
-Version: 0.7.7
-Tested up to: 5.5.3
+Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, sports, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing, exotic holiday vacation planning, tour operators, Scuba Diving School, adventure agency, providing diving, snorkeling, surfing or hiking activities. tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. Live Preview: https://themespride.com/tp-adventure-traveling-pro/
+Version: 0.7.8
+Tested up to: 5.6
 Requires PHP: 7.2.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -79,6 +79,15 @@ img {
 }
 textarea{
   width: 100%;
+}
+.box-content a,
+#theme-sidebar .textwidget a,
+#footer .textwidget a,
+.comment-body a,
+.entry-content a,
+.entry-summary a{
+  text-decoration: underline;
+  color: #ffcc05;
 }
 
 /*--------------------------------------------------------------
@@ -1223,21 +1232,6 @@ Media Queries
   .main-navigation ul ul li, .menubar.scrolled .main-navigation ul ul li{
     border-bottom: none;
   }
-  .toggle-nav {
-    display: none;
-    position: relative;
-    float: left;
-    right: 15px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    margin: 0 auto;
-    z-index: 999999;
-    right: 0;
-    text-align: right;
-    right: 0;
-    margin-right: 0;
-  }
   .toggle-nav i {
     font-size: 30px;
     color: #fff;
@@ -1255,25 +1249,23 @@ Media Queries
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 999999;
-    left: 0;
-    top: -110%;
-    overflow-x: hidden; 
-    overflow-y: scroll;
-    background: #151515;
+    z-index: 9999999;
+    top: 0;
+    right: 0;
     visibility: hidden;
-    transition: all 0.5s ease-in-out;
-    cursor: zoom-in;
+    background-color: #151515;
+    transition: 0.5s width ease-in-out;
+    padding-top: 60px;
+    box-shadow: 2px 2px 10px 0px #2d2d2d;
+    overflow-y: scroll;
   }
-  .sidenav.show {
+  .sidenav.open{
     visibility: visible;
-    top:0%;
   }
   .sidenav a {
     text-decoration: none;
     color: #818181;
     display: block;
-    transition: 0.3s;
   }
   .sidenav a:hover {
     color: #f1f1f1;
@@ -1335,7 +1327,7 @@ Media Queries
     width: 100%;
   }  
   .nav ul li a{
-    padding:5px 10px; 
+    padding: 10px; 
     display:block; 
     color:#ffffff;
   }
