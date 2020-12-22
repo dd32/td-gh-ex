@@ -7,9 +7,11 @@
         <?php
         $appointment_options = appointment_theme_setup_data();
         $appointment_header_setting = wp_parse_args(get_option('appointment_options', array()), $appointment_options);
+        
+        if ( is_singular() && pings_open( get_queried_object() ) ) : 
+           echo '<link rel="pingback" href=" '.esc_url(get_bloginfo( 'pingback_url' )).' ">';
+        endif; 
         ?>
-
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <?php wp_head(); ?>
 
     </head>

@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 2.8.7
+1. Added condition for pingback_url.
+2. Fixed escaping issues.
 @Version 2.8.6
 1. Implemented "Links within content must be underlined" guideline.
 @Version 2.8.5.2
