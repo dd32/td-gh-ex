@@ -1,62 +1,25 @@
-jQuery(document).ready(function () {
-  window.automobile_hub_currentfocus=null;
-    automobile_hub_checkfocusdElement();
-  var automobile_hub_body = document.querySelector('body');
-  automobile_hub_body.addEventListener('keyup', automobile_hub_check_tab_press);
-  var automobile_hub_gotoHome = false;
-  var automobile_hub_gotoClose = false;
-  window.automobile_hub_responsiveMenu=false;
-  function automobile_hub_checkfocusdElement(){
-    if(window.automobile_hub_currentfocus=document.activeElement.className){
-      window.automobile_hub_currentfocus=document.activeElement.className;
-    }
-  }
-  function automobile_hub_check_tab_press(e) {
-    "use strict";
-    // pick passed event or global event object if passed one is empty
-    e = e || event;
-    var activeElement;
-
-    if(window.innerWidth < 999){
-    if (e.keyCode == 9) {
-      if(window.automobile_hub_responsiveMenu){
-      if (!e.shiftKey) {
-        if(automobile_hub_gotoHome) {
-          jQuery( ".main-menu ul:first li:first a:first-child" ).focus();
-        }
+( function( window, document ) {
+  function automobile_hub_keepFocusInMenu() {
+    document.addEventListener( 'keydown', function( e ) {
+      const automobile_hub_nav = document.querySelector( '.sidenav' );
+      if ( ! automobile_hub_nav || ! automobile_hub_nav.classList.contains( 'open' ) ) {
+        return;
       }
-      if (jQuery("a.closebtn.mobile-menu").is(":focus")) {
-        automobile_hub_gotoHome = true;
-      } else {
-        automobile_hub_gotoHome = false;
+      const elements = [...automobile_hub_nav.querySelectorAll( 'input, a, button' )],
+        automobile_hub_lastEl = elements[ elements.length - 1 ],
+        automobile_hub_firstEl = elements[0],
+        automobile_hub_activeEl = document.activeElement,
+        tabKey = e.keyCode === 9,
+        shiftKey = e.shiftKey;
+      if ( ! shiftKey && tabKey && automobile_hub_lastEl === automobile_hub_activeEl ) {
+        e.preventDefault();
+        automobile_hub_firstEl.focus();
       }
-
-    }else{
-
-      if(window.automobile_hub_currentfocus=="responsivetoggle"){
-        jQuery( "" ).focus();
-      }}}
-    }
-    if (e.shiftKey && e.keyCode == 9) {
-    if(window.innerWidth < 999){
-      if(window.automobile_hub_currentfocus=="header-search"){
-        jQuery(".responsivetoggle").focus();
-      }else{
-        if(window.automobile_hub_responsiveMenu){
-        if(automobile_hub_gotoClose){
-          jQuery("a.closebtn.mobile-menu").focus();
-        }
-        if (jQuery( ".main-menu ul:first li:first a:first-child" ).is(":focus")) {
-          automobile_hub_gotoClose = true;
-        } else {
-          automobile_hub_gotoClose = false;
-        }
-      
-      }else{
-
-      if(window.automobile_hub_responsiveMenu){
-      }}}}
-    }
-    automobile_hub_checkfocusdElement();
+      if ( shiftKey && tabKey && automobile_hub_firstEl === automobile_hub_activeEl ) {
+        e.preventDefault();
+        automobile_hub_lastEl.focus();
+      }
+    } );
   }
-});
+  automobile_hub_keepFocusInMenu();
+} )( window, document );

@@ -3,9 +3,9 @@ Theme Name: Automobile Hub
 Theme URI: https://www.themespride.com/themes/free-automobile-wordpress-theme/
 Author: ThemesPride
 Author URI: https://www.themespride.com/
-Description: Automobile Hub is a stylish, modern, dynamic, resourceful and feature-rich automobile WordPress theme for car and bike showrooms, automobile garage, car dealership, cab services, car rentals, ATV bikes, RV bikes and cycles, car wash, auto parts dealer, tyre repair services, Wheel allignment services, car booking, Heavy Vehicle rental, aircrafts manufacturing company, helicopter services, car lifters, cargo hubs, car washing centres and all the websites dealing in automobile industry. It is a responsive theme with 100% fluid layout and cross-browser compatible to load seamlessly on all browsers. It is multilingual to give services in all international languages and retina ready to show sharp and crisp images of automobiles to make the website look beautiful. This automobile WordPress theme is optimized for search engines and all its pages load with super-fast speed. It is compatible with the latest WordPress version and many customization options are provided which eliminates the need for any professional coder. There are so many social media icons embedded that your website and its content are sure to reach target audience easily. The interface of this automobile theme is extremely easy to use; sliders are provided for smooth navigation. It has a gallery where you can post gorgeous pictures of cars, bikes and other vehicles to allure visitors and testimonial section is to get customers’ feedback to improve services. Live Preview: https://www.themespride.com/automobile-hub-pro/
-Version: 0.2.3
-Tested up to: 5.5.3
+Description: Automobile Hub is a stylish, modern, dynamic, resourceful and feature-rich automobile WordPress theme for car and bike showrooms, automobile garage, car dealership, cab services, car rentals, ATV bikes, RV bikes and cycles, car wash, auto parts dealer, tyre repair services, Wheel allignment services, car booking, Heavy Vehicle rental, aircrafts manufacturing company, helicopter services, car lifters, cargo hubs, auto, automobile, booking, business, car, carrental rent, rental, rentals, service, travel, vacation, van, vehicle car washing centres and all the websites dealing in automobile industry. It is a responsive theme with 100% fluid layout and cross-browser compatible to load seamlessly on all browsers. It is multilingual to give services in all international languages and retina ready to show sharp and crisp images of automobiles to make the website look beautiful. This automobile WordPress theme is optimized for search engines and all its pages load with super-fast speed. It is compatible with the latest WordPress version and many customization options are provided which eliminates the need for any professional coder. There are so many social media icons embedded that your website and its content are sure to reach target audience easily. The interface of this automobile theme is extremely easy to use; sliders are provided for smooth navigation. It has a gallery where you can post gorgeous pictures of cars, bikes and other vehicles to allure visitors and testimonial section is to get customers’ feedback to improve services. Live Preview: https://www.themespride.com/automobile-hub-pro/
+Version: 0.2.4
+Tested up to: 5.6
 Requires PHP: 7.2.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,15 @@ img {
 }
 textarea{
   width: 100%;
+}
+.box-content a,
+#theme-sidebar .textwidget a,
+#footer .textwidget a,
+.comment-body a,
+.entry-content a,
+.entry-summary a{
+  text-decoration: underline;
+  color: #e43315;
 }
 
 /*--------------------------------------------------------------
@@ -1233,25 +1242,23 @@ Media Queries
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 999999;
-    left: 0;
-    top: -110%;
-    overflow-x: hidden; 
-    overflow-y: scroll;
-    background: #151515;
+    z-index: 9999999;
+    top: 0;
+    right: 0;
     visibility: hidden;
-    transition: all 0.5s ease-in-out;
-    cursor: zoom-in;
+    background-color: #151515;
+    transition: 0.5s width ease-in-out;
+    padding-top: 60px;
+    box-shadow: 2px 2px 10px 0px #2d2d2d;
+    overflow-y: scroll;
   }
-  .sidenav.show {
+  .sidenav.open{
     visibility: visible;
-    top:0%;
   }
   .sidenav a {
     text-decoration: none;
     color: #818181;
     display: block;
-    transition: 0.3s;
   }
   .sidenav a:hover {
     color: #f1f1f1;

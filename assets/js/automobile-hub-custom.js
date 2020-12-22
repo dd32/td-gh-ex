@@ -20,12 +20,10 @@ jQuery(function($){
 
 // ===== Mobile responsive Menu ==== 
 function automobile_hub_menu_open_nav() {
-  window.automobile_hub_responsiveMenu=true;
-  jQuery(".sidenav").addClass('show');
+  jQuery(".sidenav").addClass('open');
 }
 function automobile_hub_menu_close_nav() {
-  window.automobile_hub_responsiveMenu=false;
-  jQuery(".sidenav").removeClass('show');
+  jQuery(".sidenav").removeClass('open');
 }
 
 // ===== Menu Scroll ==== 
