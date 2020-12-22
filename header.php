@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">    
 </head>
 <body <?php body_class(); ?> >
+<?php wp_body_open(); ?>
 <div class="page-wrapper page-wrapper page-wrapper">
     <header id="main-header" class="l-header  l-header--concierge" role="banner" aria-hidden="false">
         <?php if ( has_header_image() ) { ?>
