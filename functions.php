@@ -16,9 +16,9 @@ if (!function_exists('wp_body_open')) {
 }
 add_action('wp_enqueue_scripts', 'appointment_dark_theme_css', 999);
 
-function appointment_dark_theme_css() {
-    wp_enqueue_style('bootstrap-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/bootstrap.css');
-    wp_enqueue_style('appointment-dark-parent-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/style.css');    
+function appointment_dark_theme_css() {    
+    wp_enqueue_style('appointment-dark-parent-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/style.css');  
+    wp_enqueue_style('bootstrap-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/bootstrap.css');  
     wp_enqueue_style('appointment-dark-theme-menu', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/theme-menu.css');
     wp_enqueue_style('appointment-dark-default-css', APPOINTMENT_DARK_TEMPLATE_DIR_URI . "/css/default.css");
     wp_enqueue_style('appointment-dark-element-style', APPOINTMENT_DARK_PARENT_TEMPLATE_DIR_URI . '/css/element.css');

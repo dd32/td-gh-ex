@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 1.1
+1. Fixed empty markup issue of the latest news section title & description.
+
 @Version 1.0
 1. Fixed header social icon issue.
 

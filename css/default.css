@@ -2,6 +2,16 @@ body { background: #ffffff; color: #8f969c; }
 #wrapper { background-color: #ffffff; }
 h1, .h1, h2, .h2, h3, .h3,
 h4, .h4, h5, .h5, h6, .h6 { color: #727272; }
+legend {
+  color: #FFFFFF;
+}
+pre {
+  background-color: #333;
+  color: #fff;
+}
+input {
+  color: #333;
+}
 
 /*Header Social Icons---------------------------------------------------------------------------------------------------*/
 .head-contact-social li { background-color: #d0d0d0; }

@@ -9,8 +9,13 @@ if ($appointment_dark_news_setting['home_blog_enabled'] == 0) {  ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading-title">
-                        <h1><?php echo esc_html($appointment_dark_news_setting['blog_heading']); ?></h1>
-                        <p><?php echo esc_html($appointment_dark_news_setting['blog_description']); ?></p>
+                        <?php if ($appointment_dark_news_setting['blog_heading'] != '') { ?>
+                            <h1><?php echo esc_html($appointment_dark_news_setting['blog_heading']); ?></h1>
+                        <?php } 
+                        if ($appointment_dark_news_setting['blog_description'] != '') { 
+                        ?>
+                            <p><?php echo esc_html($appointment_dark_news_setting['blog_description']); ?></p>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

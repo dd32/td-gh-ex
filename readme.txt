@@ -3,14 +3,14 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 1.0
+Stable tag: 1.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 === Description ===
 
-Appointment Dark WordPress Theme is a fully responsive and translation-ready theme that allows you to create stunning blogs and websites. The theme is well suited for companies, law firms, travel, photography, recipes, design, art, personal, and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablet friendly. It has various options in the WordPress Customizer to change the look of the theme. The theme customizer can be used to add your own custom header, favicon, logo, slides, services, callout, and much more. In the premium version, you can add different types of slides like video, aside, quote, status, and standard, all of which have a different HTML look. There are a number of in-built widgets; sidebars with support for WPML, the Polylang translation WordPress plugin and Contact Form 7; a portfolio template, contact us, portfolio column layouts, and many sections for business using the Homepage template.  Just navigate to Appearance / Customize to start customizing.
+Appointment Dark WordPress Theme is a fully responsive and translation-ready theme. It allows you to create stunning blogs and websites. The theme is well suited for companies, law firms, travel, photography, recipes, design, art, personal, and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablet friendly. It has various options in the WordPress Customizer to change the look of the theme. The theme customizer can be used to add your own custom header, favicon, logo, slides, services, callout, and much more. In the premium version, you can add different types of slides like video, aside, quote, status, and standard, all of which have a different HTML look. There are a number of in-built widgets; sidebars with support for WPML, the Polylang translation WordPress plugin and Contact Form 7; a portfolio template, contact us, portfolio column layouts, and many sections for business using the Homepage template.  Just navigate to Appearance / Customize to start customizing.
 
 
 == Installation ==
@@ -35,6 +35,9 @@ Appointment Dark WordPress Theme is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+@Version 1.1
+1. Fixed empty markup issue of the latest news section title & description.
 
 @Version 1.0
 1. Fixed header social icon issue.
