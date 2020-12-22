@@ -892,6 +892,7 @@ function bard_customize_register( $wp_customize ) {
 		'pinterest' 			=> 'Pinterest 1',
 		'pinterest-p' 			=> 'Pinterest 2',
 		'pinterest-square'		=> 'Pinterest 3',
+		'tiktok'				=> 'Tiktok',
 		'behance' 				=> 'Behance 1',
 		'behance-square'		=> 'Behance 2',
 		'tumblr' 				=> 'Tumblr 1',

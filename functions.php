@@ -529,6 +529,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			'pinterest',
 			'pinterest-p',
 			'pinterest-square',
+			'tiktok',
 			'behance',
 			'behance-square',
 			'tumblr',
