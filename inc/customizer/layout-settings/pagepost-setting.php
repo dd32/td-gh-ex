@@ -140,5 +140,22 @@ function accesspress_pagepost_setting($wp_customize){
           'type'=>'checkbox'
       )
   );
+
+  $wp_customize->add_setting(
+      'ap_store_post_date',
+      array(
+          'default' => 1,
+          'sanitize_callback' => 'accesspress_store_checkbox_sanitize'
+      )
+  );
+
+  $wp_customize->add_control(
+      'ap_store_post_date',
+      array(
+          'label' => __('Enable/Disable (Post Date & Comments)','accesspress-store'),
+          'section'=>'pagepost_setting',
+          'type'=>'checkbox'
+      )
+  );
 }
 add_action('customize_register', 'accesspress_pagepost_setting');

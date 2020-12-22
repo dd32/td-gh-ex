@@ -97,7 +97,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 			 
              global $pagenow;
 
-            if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
+            if( is_admin() && ('themes.php' == $pagenow)  && (isset($_GET['activated']))  ) {
              add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
              }
 				
@@ -107,7 +107,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 			public function welcome_admin_notice_display() {
 				global $pagenow;
 
-				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
+				if( is_admin()  ('themes.php' == $pagenow)  && (isset($_GET['activated']))  ) {
 					?>
 					<div class="updated apwelcome-an notice notice-success is-dismissible">
 						<h2><?php printf(esc_html__( 'Welcome!', 'accesspress-store' )) ?></h2>
@@ -127,7 +127,7 @@ if(!class_exists('Accesspress_Store_Welcome')) :
 									<div class="button-wrapper">
 										<a class="button button-primary button-hero install-now" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page#demo_import' )) ?>"><?php esc_html_e( 'ready to use starter sites.', 'accesspress-store' ); ?></a>
 
-										<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-store' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
+										<?php printf( wp_kses_post( '<a class="options-page-btn notice-info-btn button-secondary" href="%2$s">Or start setting up your theme now (without demo)!</a>', 'accesspress-store' ), $this->theme_name, esc_url(admin_url( 'themes.php?page=welcome-page' ))  ); ?>
 									</div>
 
 									
