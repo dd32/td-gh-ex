@@ -5,8 +5,8 @@ Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features if Twenty Thirteen plus several additional features like easy to use admin theme admin options, featured post section, 5 color schemes, etc.
 Requires at least: 4.0
 Requires PHP: 5.2.4
-Tested up to: 5.5
-Version: 3.0.7
+Tested up to: 5.6
+Version: 3.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready

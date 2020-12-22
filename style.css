@@ -6,8 +6,8 @@ Author URI: http://templatesnext.org/
 Description: A Responsive, flexible and powerful theme that comes with plugin "TemplatesNext Toolkit" giving you features like portfolios, testimonials, services, columns, custom blog pages, unlimited sliders, etc. The i-transform theme for WordPress is developed using a popular theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc. Whether you are a first time user looking for a clean, simple and easy to use theme for blogging or looking for a powerful theme to build business sites; i-transform is the perfect theme for you.
 Requires at least: 4.0
 Requires PHP: 5.2.4
-Tested up to: 5.5
-Version: 3.0.7
+Tested up to: 5.6
+Version: 3.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -134,7 +134,6 @@ a:visited {
 }
 
 a:focus {
-	outline: 0;
 }
 
 a:active,
@@ -613,7 +612,6 @@ textarea {
 input:focus,
 textarea:focus {
 	border: 1px solid #3787be;
-	outline: 0;
 }
 
 /* Buttons */
@@ -639,7 +637,6 @@ input[type="submit"]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus {
 	background: #333333; /* Old browsers */
-	outline: none;
 }
 
 button:active,
@@ -1183,7 +1180,6 @@ ul.nav-container ul a:hover,
 	background-color: #fff;
 	border: 1px solid #e7e7e7;
 	cursor: text;
-	outline: 0;
 	width: 200px;
 	border-radius: 4px;
 	background: transparent;	
@@ -1233,7 +1229,6 @@ ul.nav-container ul a:hover,
 	background-color: #fff;
 	border: 1px solid #e7e7e7;
 	cursor: text;
-	outline: 0;
 	width: 200px;
 	border-radius: 4px;
 	background: transparent;	
@@ -4613,4 +4608,9 @@ div.ibanner .da-img img {
 
 body .pswp {
     z-index: 30002;
+}
+
+.entry-content a,
+.comment-content a {
+	text-decoration: underline;
 }

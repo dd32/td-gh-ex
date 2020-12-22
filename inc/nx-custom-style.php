@@ -133,7 +133,7 @@
 
 			echo '.widget a:hover,.entry-header h1.entry-title a:hover {	color: '.$primary_color.';}';
 
-			echo '.error404 .page-title:before {	color: '.$primary_color.';}';
+			echo '.error404 .page-title:before,.entry-content a, .comment-content a {	color: '.$primary_color.';}';
 
 			echo '.format-status {	background-color: '.$primary_color.';}';
 
