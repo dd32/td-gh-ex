@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/agencyup/
 Author: themeansar
 Author URI: https://themeansar.com
 Description: Agencyup WordPress theme ideal for a business or perfect solutions for corporate, consulting, wedding planners, agency, law firms, finance, law travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, E-commerce.  The theme is responsive, WPML, Retina ready, SEO friendly(Live preview : https://demos.themeansar.com/agencyup/)
-Version: 1.0
+Version: 1.1
 Tested up to: 5.5
 Requires PHP: 5.6
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce
@@ -650,6 +650,15 @@ td a:focus {
 	box-shadow: none;
 }
 
+ul {
+    list-style: disc;
+}
+
+ul, ol {
+    margin: 0 0px 25px 36px;
+    padding: 0;
+}
+
 /*---------------------------------------
 	WP Styles  
 -----------------------------------------*/
@@ -758,6 +767,8 @@ embed, iframe, object {
 .wp-block-latest-comments article {
     margin-bottom: 32px;
 }
+
+#comments img {max-width: 100%;}
 /*---------------------------------------
 	Button Styles           
 -----------------------------------------*/
@@ -1047,6 +1058,12 @@ button.mfp-close:hover, button.mfp-close:focus {
 .comment-content a,.comment-content a:visited{text-decoration:underline;}
 
 .comment .comment-author a:hover,.comment .comment-author a:focus,.comment .comment-author a:active{color:#08ACD5;text-decoration:underline;}
+
+
+.comment-content p {
+    margin-bottom: 1.3rem;
+    padding: 0;
+}
 
 .edit-link .post-edit-link:hover { 
 	text-decoration: underline; 
