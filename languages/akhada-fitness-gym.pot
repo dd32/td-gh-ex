@@ -44,16 +44,36 @@ msgstr ""
 msgid 'Skip to Content'
 msgstr ""
 
-#: header.php:75
+#: header.php:62
 msgid 'Open Menu'
 msgstr ""
 
-#: header.php:78
+#: header.php:65
 msgid 'Top Menu'
 msgstr ""
 
-#: header.php:88
+#: header.php:75
 msgid 'Close Menu'
+msgstr ""
+
+#: header.php:83
+msgid 'Facebook'
+msgstr ""
+
+#: header.php:86
+msgid 'Twitter'
+msgstr ""
+
+#: header.php:89
+msgid 'Instagram'
+msgstr ""
+
+#: header.php:92
+msgid 'Linkedin'
+msgstr ""
+
+#: header.php:95
+msgid 'Youtube'
 msgstr ""
 
 #: searchform.php:16
@@ -268,39 +288,23 @@ msgstr ""
 msgid 'Add widgets here to appear in your footer.'
 msgstr ""
 
-#: functions.php:207
-msgid 'Expand child menu'
-msgstr ""
-
-#: functions.php:208
-msgid 'Collapse child menu'
-msgstr ""
-
-#: functions.php:249
+#: functions.php:235
 msgid 'Fitness WordPress Theme'
 msgstr ""
 
-#: template-parts/post/content-audio.php:62
-#: template-parts/post/content-gallery.php:52
-#: template-parts/post/content-image.php:44
-#: template-parts/post/content-video.php:62
-#: template-parts/content.php:44
-#: template-parts/grid-layout.php:45
+#: template-parts/post/content-audio.php:60
+#: template-parts/post/content-gallery.php:50
+#: template-parts/post/content-image.php:42
+#: template-parts/post/content-video.php:60
+#: template-parts/content.php:42
+#: template-parts/grid-layout.php:43
 #: template-parts/page/content-page.php:23
 msgid 'Pages:'
 msgstr ""
 
-#: page-template/custom-home-page.php:38
-#: page-template/custom-home-page.php:93
-msgid 'READ MORE'
-msgstr ""
-
-#: page-template/custom-home-page.php:52
-msgid "Prev"
-msgstr ""
-
-#: page-template/custom-home-page.php:56
-msgid "Next"
+#: page-template/custom-home-page.php:30
+#: page-template/custom-home-page.php:61
+msgid 'Read More'
 msgstr ""
 
 #: inc/customizer.php:17
@@ -323,7 +327,6 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:47
 #: inc/customizer.php:58
 msgid "Right Sidebar"
 msgstr ""
@@ -357,54 +360,66 @@ msgid 'Contact Details'
 msgstr ""
 
 #: inc/customizer.php:78
-msgid 'Email Address'
+msgid 'Add Facebook Link'
 msgstr ""
 
 #: inc/customizer.php:89
-msgid 'Address'
+msgid 'Add Twitter Link'
 msgstr ""
 
-#: inc/customizer.php:97
-msgid 'Slider Settings'
+#: inc/customizer.php:100
+msgid 'Add Instagram Link'
 msgstr ""
 
-#: inc/customizer.php:108
-msgid 'Select Slide Image Page'
+#: inc/customizer.php:111
+msgid 'Add Linkedin Link'
 msgstr ""
 
-#: inc/customizer.php:116
+#: inc/customizer.php:122
+msgid 'Add Youtube Link'
+msgstr ""
+
+#: inc/customizer.php:130
+msgid 'Banner Section'
+msgstr ""
+
+#: inc/customizer.php:140
+msgid 'Select Banner Page'
+msgstr ""
+
+#: inc/customizer.php:147
 msgid 'Our Services'
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:148
 msgid 'This section will appear below the slider.'
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:157
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:138
-msgid 'Select Service Page'
+#: inc/customizer.php:182
+msgid 'Select Category to display Post'
 msgstr ""
 
-#: inc/customizer.php:146
-#: inc/customizer.php:157
+#: inc/customizer.php:188
+#: inc/customizer.php:199
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:189
+#: inc/customizer.php:231
 msgid 'Front Page Section %d Content'
 msgstr ""
 
-#: inc/customizer.php:190
+#: inc/customizer.php:232
 msgid 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.'
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:351
 msgid 'Akhada Fitness Pro'
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:352
 msgid 'Go Pro'
 msgstr ""

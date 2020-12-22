@@ -259,6 +259,10 @@ function akhada_fitness_gym_sanitize_dropdown_pages( $page_id, $setting ) {
   return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 
+function akhada_fitness_gym_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
+
 require get_parent_theme_file_path( '/inc/custom-header.php' );
 
 require get_parent_theme_file_path( '/inc/template-tags.php' );

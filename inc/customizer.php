@@ -10,7 +10,7 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('akhada_fitness_gym_show_site_title',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'akhada_fitness_gym_sanitize_checkbox'
     ));
     $wp_customize->add_control('akhada_fitness_gym_show_site_title',array(
        'type' => 'checkbox',
@@ -20,7 +20,7 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('akhada_fitness_gym_show_tagline',array(
        'default' => true,
-       'sanitize_callback'	=> 'sanitize_text_field'
+       'sanitize_callback'	=> 'akhada_fitness_gym_sanitize_checkbox'
     ));
     $wp_customize->add_control('akhada_fitness_gym_show_tagline',array(
        'type' => 'checkbox',
@@ -44,23 +44,23 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('akhada_fitness_gym_theme_options',array(
-	        'default' => __('Right Sidebar','akhada-fitness-gym'),
+	        'default' => 'Right Sidebar',
 	        'sanitize_callback' => 'akhada_fitness_gym_sanitize_choices'	        
 	));
 
 	$wp_customize->add_control('akhada_fitness_gym_theme_options',
 	    array(
-	        'type' => 'radio',
-	        'label' => __('Do you want this section','akhada-fitness-gym'),
-	        'section' => 'akhada_fitness_gym_theme_options_section',
-	        'choices' => array(
-	            'Left Sidebar' => __('Left Sidebar','akhada-fitness-gym'),
-	            'Right Sidebar' => __('Right Sidebar','akhada-fitness-gym'),
-	            'One Column' => __('One Column','akhada-fitness-gym'),
-	            'Three Columns' => __('Three Columns','akhada-fitness-gym'),
-	            'Four Columns' => __('Four Columns','akhada-fitness-gym'),
-	            'Grid Layout' => __('Grid Layout','akhada-fitness-gym')
-	        ),
+        'type' => 'radio',
+        'label' => __('Do you want this section','akhada-fitness-gym'),
+        'section' => 'akhada_fitness_gym_theme_options_section',
+        'choices' => array(
+            'Left Sidebar' => __('Left Sidebar','akhada-fitness-gym'),
+            'Right Sidebar' => __('Right Sidebar','akhada-fitness-gym'),
+            'One Column' => __('One Column','akhada-fitness-gym'),
+            'Three Columns' => __('Three Columns','akhada-fitness-gym'),
+            'Four Columns' => __('Four Columns','akhada-fitness-gym'),
+            'Grid Layout' => __('Grid Layout','akhada-fitness-gym')
+        ),
 	));
 
 	// Social Icons
@@ -345,7 +345,7 @@ final class Akhada_Fitness_Gym_Customize {
 		$manager->add_section(
 			new Akhada_Fitness_Gym_Customize_Section_Pro(
 				$manager,
-				'example_1',
+				'akhada_fitness_gym_example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__( 'Akhada Fitness Pro', 'akhada-fitness-gym' ),

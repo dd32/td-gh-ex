@@ -4,9 +4,9 @@ Theme URI: https://www.luzuk.com/themes/free-fitness-wordpress-theme/
 Author: Luzuk
 Author URI: https://www.luzuk.com/
 Description: Akhada Fitness Gym is an impactful, modern and stylish WordPress theme dedicatedly designed for gyms, fitness centres, yoga classes, weight loss centres, personal trainers, aerobics and workout centres. Use it for spa, health and wellness centre, physiotherapy, health consultancy and other fitness related sites with perfect ease. The theme has clean design with user-friendly interface to help user find what they are looking for within few seconds of their landing. It is a responsive theme looking beautiful on all mobiles, tablets and desktops. This fitness theme is cross-browser compatible, translation ready and retina ready looking crisp on every device. It allows customization for almost every part of the theme. With banners and life-size sliders, make the site all the more attractive. Multiple page and blog layouts, template structure, slides, unlimited colours give the option to make your site personalize. The theme is search engine optimized giving higher rank to your site in Google search. Among various sections, testimonial section will speak for your work and services. Faster page loading is what makes the site compatible to today’s speeding world. Videos, audios, columns, various file formats and other things and embedded using shortcodes to make coding clean and secure. Use this theme to make people go crazy for fitness. Demo: https://www.luzukdemo.com/demo/akhada-fitness/
-Tested up to: 5.5.1
-Requires PHP: 7.2.14
-Version: 0.4.3
+Tested up to: 5.5
+Requires PHP: 5.2.4
+Version: 0.4.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: akhada-fitness-gym
@@ -84,16 +84,20 @@ a:focus, input:focus, textarea:focus, button:focus,
 .woocommerce form .form-row textarea:focus{
 	color: unset;
 	text-decoration: none;
-	outline: 1px dotted #000;
-	border-bottom: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 1px;
 }
 .copyright a:focus, .site-footer a:focus, .site-footer button:focus{
 	outline-color: #fff;
-	border-bottom-color: #fff;
 }
 abbr[title] {
 	border-bottom: 1px #767676 dotted;
 	text-decoration: none;
+}
+.article_content a, .lz-content a, .entry-content a, 
+.comment-body a, .textwidget a, #tab-description a,
+.woocommerce-product-details__short-description a, .service-content a {
+	color: #ffcb21;
+    text-decoration: underline !important;
 }
 
 b,
@@ -1257,6 +1261,7 @@ body.page:not(.akhada-fitness-gym-front-page) .entry-title {
 
 h3.entry-title a {
     font-weight: 500;
+    text-decoration: none !important;
 }
 
 .entry-title:not(:first-child) {

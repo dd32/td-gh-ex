@@ -2,9 +2,9 @@
 Contributors: Luzuk
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, full-width-template, threaded-comments, translation-ready, blog, e-commerce, news
 Requires at least: 5.0
-Tested up to: 5.5.1
-Requires PHP: 7.2.14
-Stable tag: 0.4.3
+Tested up to: 5.5
+Requires PHP: 5.2.4
+Stable tag: 0.4.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -114,3 +114,10 @@ Akhada Fitness Gym bundles the following third-party resources:
   - Removed esc_html from echoing function.
   - Removed skip-link-focus-fix.js file.
   - Removed unused code from function.php file.
+
+= 0.4.4 =
+  - added one codition in header.php file.
+  - Changed the css of keyboard navigation.
+  - added sanitize_callback for checkbox.
+  - Done prefixing & removed text-domain from default value in Customizer.
+  - Updated pot file.
