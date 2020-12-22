@@ -109,7 +109,7 @@ function beshop_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'beshop1',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'beshop2',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.

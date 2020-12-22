@@ -169,6 +169,8 @@ a.added_to_cart.wc-forward{
 display: block;
 }
 
+.woocommerce .col-1,
+.woocommerce .col-2,
 .woocommerce .col2-set .col-1,
 .woocommerce-page .col2-set .col-1,
 .woocommerce .col2-set .col-2, 

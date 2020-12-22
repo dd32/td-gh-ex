@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.6
-Stable tag: 1.0.15
+Stable tag: 1.0.16
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -76,6 +76,8 @@ Source:https://pxhere.com/en/photo/856028
 == Changelog ==
 
 
+= 1.0.16 - December 22 2020 =
+* Fixed single product page widget issue.
 = 1.0.15 - November 8 2020 =
 * Cart page update issue fixed
 * Cart page, checkout page and single product page width issue fixed.

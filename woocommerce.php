@@ -24,7 +24,7 @@ $beshop_banner_overlay = get_theme_mod( 'beshop_banner_overlay' );
 $beshop_shop_container = get_theme_mod( 'beshop_shop_container', 'container' );
 $beshop_shop_layout = get_theme_mod( 'beshop_shop_layout', 'rightside' );
 $beshop_shop_style = get_theme_mod( 'beshop_shop_style', '1' );
-if ( is_active_sidebar( 'shop-sidebar') && $beshop_shop_layout != 'fullwidth' && !is_single() ){
+if ( is_active_sidebar( 'shop-sidebar') && $beshop_shop_layout != 'fullwidth' ){
 	$beshop_column_set = 'col-lg-9';
 }else{
 	$beshop_column_set = 'col-lg-12';

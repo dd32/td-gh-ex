@@ -287,11 +287,11 @@ add_action( 'after_setup_theme', 'beshop_about_setup' );
 //Admin notice 
 function beshop_new_optins_texts() {
 
-    if(get_option('beshopn1')){
+    if(get_option('beshopn2')){
         return;
     }
 	$class = 'eye-notice notice notice-warning is-dismissible';
-	$message = __( '<strong>Good News!! Beshop Pro version now available. If you want a beautiful, orderly, SEO friendly, more secure and unlimited options website then need to upgrade pro. Upgrade for lifetime with nominal price.<br>Also, the Pro version has One-click checkout, Products Quick view, Wishlist, unique custom homepage<br> and many more advanced options waiting for you!! So upgrade today !!!</strong>', 'beshop' );
+	$message = __( '<strong>Upgrade Pro!! Beshop Pro version has huge Pro Options. You will get one click checkout options, Products Quick view, Wishlist, Products Tabs, Products animation slider, Products grid, Advanced products details offar options, Blog grid, Blog list and many more.  If you want to unlock the all pro features then need to upgrade pro. So upgrade today !!!</strong>', 'beshop' );
     $url1 = esc_url('https://wpthemespace.com/product/beshop/');
     $url3 =esc_url('https://wpthemespace.com/product/beshop/?add-to-cart=2897');
 
@@ -301,7 +301,7 @@ add_action( 'admin_notices', 'beshop_new_optins_texts' );
 
 function beshop_new_optins_texts_init(){
     if(isset($_GET['besnotice']) && $_GET['besnotice'] == 1 ){
-        update_option( 'beshopn1', 1);
+        update_option( 'beshopn2', 1);
     }
 }
 add_action('init','beshop_new_optins_texts_init');
