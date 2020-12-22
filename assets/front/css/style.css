@@ -2566,7 +2566,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.728em;
+  font-size: 1.6em;
 }
 
 h4 {
@@ -2578,7 +2578,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -6587,7 +6587,7 @@ form.czr-form .czr-focus.in-focus > label i.icn-close {
   padding: 0;
 }
 
-.wp-block-gallery .blocks-gallery-item {
+.wp-block-gallery .blocks-gallery-grid, .wp-block-gallery .blocks-gallery-item {
   padding: 0;
 }
 
