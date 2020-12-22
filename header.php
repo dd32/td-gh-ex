@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php
         $appointment_red_header_settings = wp_parse_args(get_option('appointment_options', array()), appointment_theme_setup_data());
-        ?>
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+        
+        if ( is_singular() && pings_open( get_queried_object() ) ) : 
+           echo '<link rel="pingback" href=" '.esc_url(get_bloginfo( 'pingback_url' )).' ">';
+        endif; ?>
 
         <?php wp_head(); ?>
     </head>

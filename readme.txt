@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, left-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.5
 Tested up to: 5.5
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,8 @@ Appointment Red WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 1.2.3
+1. Added condition for pingback_url.
 @Version 1.2.2
 1. Removed default value like '#' from social icons.
 @Version 1.2.1
