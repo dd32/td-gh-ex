@@ -514,8 +514,7 @@
     }
     .cart-wrap, .hamburger-menu,
     .mobile-menu-right .header-search-toggle,
-    .mobile-menu-right .cart-icon-wrap #cart,
-    .cart-icon .cart-icon-wrapper i {
+    .mobile-menu-right .cart-icon-wrap #cart{
         width: 32px;
         height: 32px;
         line-height: 1.65;
