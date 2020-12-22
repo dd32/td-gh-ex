@@ -17,7 +17,7 @@
 			<?php echo wp_kses_post( artblog_get_option( 'copyright_text' ) ); ?>
         </div><!-- .copyright -->
 
-        <div class="site-info">
+        <div class="site-info site-copyright">
 			<?php
 			/* translators: %s: Theme author */
 			$author_uri = wp_get_theme()->get( 'AuthorURI' );

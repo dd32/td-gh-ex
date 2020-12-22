@@ -3,8 +3,8 @@
 Contributors: wpconcern, ithemer
 Requires at least: 5.4.2
 Requires PHP: 7.4
-Tested up to: 5.5.1
-Stable tag: 2.0.3
+Tested up to: 5.6
+Stable tag: 2.0.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Artblog is a minimalist WordPress theme for personal, travel, fashion and all ty
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 2.0.4 - December 14 2020 =
+* Extend compatibility to WordPress 5.6
 
 = 2.0.3 - September 2 2020 =
 * Extend compatibility to Wordpress 5.5
@@ -48,10 +51,3 @@ Artblog is a minimalist WordPress theme for personal, travel, fashion and all ty
 * TRT Customizer Pro https://github.com/justintadlock/trt-customizer-pro, (c) 2016 Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Slick JS https://kenwheeler.github.io/slick/, (C) 2017 Ken Wheeler, [MIT](https://opensource.org/licenses/MIT)
 
-== Images ==
-
-License: CCO
-
-* https://pxhere.com/en/photo/1432769
-* https://pxhere.com/en/photo/1408126
-* https://pxhere.com/en/photo/1428623
