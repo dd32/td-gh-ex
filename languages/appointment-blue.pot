@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment Blue\n"
-"POT-Creation-Date: 2020-11-27 17:56+0530\n"
+"POT-Creation-Date: 2020-11-28 14:19+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr ""
 
-#: header.php:16
+#: header.php:18
 msgid "Skip to content"
 msgstr ""
 

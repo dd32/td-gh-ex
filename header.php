@@ -7,8 +7,10 @@
         <?php
         $appointment_blue_options = theme_setup_data();
         $appointment_blue_header_setting = wp_parse_args(get_option('appointment_options', array()), $appointment_blue_options);
-        ?>
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
+        if ( is_singular() && pings_open( get_queried_object() ) ) : 
+           echo '<link rel="pingback" href=" '.esc_url(get_bloginfo( 'pingback_url' )).' ">';
+        endif; ?>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?> >
