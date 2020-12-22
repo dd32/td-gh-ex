@@ -29,7 +29,7 @@ Template Name: Full-Width
 			}else{
 				
 				the_excerpt();
-				?> <a href="<?php echo esc_url( get_permalink() ); ?>"  class="btn btn-secondary"><em><?php esc_attr_e( 'Leggi l\'aricolo.', 'apelle-uno' ); ?></em></a><?php 
+				?> <a href="<?php echo esc_url( get_permalink() ); ?>"  class="btn btn-secondary"><em><?php esc_attr_e( 'Read the article.', 'apelle-uno' ); ?></em></a><?php 
 				
 				}
 			?></div><?php
