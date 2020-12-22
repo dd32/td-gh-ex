@@ -200,6 +200,56 @@
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
 
             <ul>
+                <li class="upgrade-changelog-v">#### 1.1.47</li>
+                <li>Styling fixes/tweaks</li>
+                <li>Updated WP compatibility version</li>
+                <li>Added missing escape functions on string values</li>
+                <li>Updated the language .pot file</li>
+                <li>PREMIUM: Improvements on Website Loader</li>
+                <li>PREMIUM: Improvements on AJAX Blog posts button loader & infinity scroll</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.46</li>
+                <li>Style tweaks/fixes</li>
+                <li>Only display demo slider IF user can edit_theme_options</li>
+                <li>Only display footer widgets hint IF user can edit_theme_options</li>
+                <li>Added Monster Insights as a recommended plugin in TGM</li>
+                <li>Updated the language .pot file</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.45</li>
+                <li>Style tweaks/fixes</li>
+                <li>Added new header setting to edit the Search bar placeholder text</li>
+                <li>Added new dismissable dashboard notice</li>
+                <li>Updated the language .pot file</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.44</li>
+                <li>Style tweaks/fixes</li>
+                <li>Fixed compatibility updates for WC & WP latests updates</li>
+                <li>Fixed main navigation bug</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.43</li>
+                <li>JS updates for removal of jQuery in WP 5.5</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.42</li>
+                <li>Style tweaks/fixes</li>
+                <li>Fixes for compatibility with WP 5.5</li>
+                <li>Gutenberg Editor CSS fix</li>
+                <li>Updated the language .pot file</li>
+                <li>PREMIUM: Improvements on Website Loader</li>
+                <li>PREMIUM: Improvements on AJAX Blog Post loader</li>
+                <li>PREMIUM: Improvements on Blog Infinity Scroll</li>
+            </ul>
+
+            <ul>
                 <li class="upgrade-changelog-v">#### 1.1.41</li>
                 <li>Style tweaks/fixes</li>
                 <li>Fix comments spacing with CSS</li>
@@ -216,97 +266,6 @@
                 <li>Style tweaks/fixes</li>
                 <li>Mobile Navigation fix</li>
                 <li><span>PREMIUM: FIX:</span> js error loading caroufredsel for NEW shortcode slider</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.39</li>
-                <li>Style tweaks/fixes</li>
-                <li>Mobile CSS fixes/tweaks</li>
-                <li>Improved accessibility / keyboard navigation for desktop sites</li>
-                <li>Improved accessibility / mobile keyboard navigation - trap focus to mobile menu</li>
-                <li>fix excluding default slider category from single post page if set to be excluded</li>
-                <li>Updated the language .pot file</li>
-                <li><span>PREMIUM: NEW FEATURE:</span> Avant Premium now includes a FREE shortcode slider plugin</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.38</li>
-                <li>Removed TGM enternal link</li>
-                <li>Added extra config strings to prevent conflict with SiteOrigin page builder TGM</li>
-                <li>Updated the language .pot file</li>
-            </ul>
-            
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.37</li>
-                <li>Style fixes/tweaks</li>
-                <li>Edit Recent & Categories widgets to be able to exclude specified blog categories</li>
-                <li>Added quick edit links / partials for theme text into WP Customizer</li>
-                <li>Added support & backwards compatibility for new wp_body_open hook</li>
-                <li>Change Skip Link Focus js to functions file, too small to load own file</li>
-                <li>Updated language .pot file</li>
-                <li><span>PREMIUM: NEW</span> Added Full Site Loader to Avant - Customize -> Avant Theme Settings -> Site Layout</li>
-                <li><span>PREMIUM: NEW</span> Customize design and loader icon of new Site Loader feature</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.35</li>
-                <li>Fixed Missing / Incorrect escaping & translations</li>
-                <li>Reduced the size of the Avant help notice on start</li>
-                <li>Updated the language .pot file</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.34</li>
-                <li>Style fixes/tweaks</li>
-                <li>Added Customizer note</li>
-                <li>Updated language .pot file</li>
-                <li><span>PREMIUM:</span> Added Numberic Pagination for Blog List & search pages</li>
-                <li><span>PREMIUM:</span> Added extra settings for new Numeric Pagination</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.33</li>
-                <li>Style fixes/tweaks</li>
-                <li>Fix WooCommerce mobile styling if product widths are set</li>
-                <li>Fix WooCommerce product page price floating left</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.32</li>
-                <li>Style fixes/tweaks</li>
-                <li>JS bug fix in WP Customizer</li>
-                <li>Remove old deprecated JS code</li>
-                <li>Updated language .pot file</li>
-                <li><span>PREMIUM:</span> Added Spotify to theme Social Links</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.31</li>
-                <li>Style fixes/tweaks</li>
-                <li>Added WooCustomizer as a recommended plugin in TGM</li>
-                <li>Fixed broken help links</li>
-                <li>Updated language .pot file</li>
-                <li><span>PREMIUM:</span> Edited Page Layouts import functionlaity</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.30</li>
-                <li>Style fixes/tweaks</li>
-                <li>Improved theme accessibility</li>
-                <li>Added 'Skip to Content' accessibility link</li>
-                <li>Changed Navigation & link elements to work when using tab & enter - Keyboard navigation</li>
-                <li>Fixed mobile minor design tweaks</li>
-                <li>Updated language .pot file</li>
-            </ul>
-
-            <ul>
-                <li class="upgrade-changelog-v">#### 1.1.28</li>
-                <li>Style fixes/tweaks</li>
-                <li>Updated language .pot file</li>
-                <li><span>PREMIUM:</span> Added Airbnb to Social Links</li>
-                <li><span>PREMIUM:</span> Added Kickstarter to Social Links</li>
-                <li><span>PREMIUM:</span> Added setting to show a single post author blocks</li>
-                <li><span>PREMIUM:</span> Added settings to change the design of the author block</li>
             </ul>
 
             <p>See Readme.txt file for older changelogs</p>

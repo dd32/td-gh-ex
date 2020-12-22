@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.46' );
+define( 'AVANT_THEME_VERSION' , '1.1.47' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -660,7 +660,7 @@ function avant_add_sale_notice() {
 			<p>
                 <?php
                 /* translators: 1: 'Avant Pro for only $20'. */
-                printf( esc_html__( 'Get %1$s... Use the limited coupon code "ONSALE" now.', 'avant' ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/avant/#purchase-premium' ) . '" target="_blank">' . __( 'Avant Pro for only $20', 'avant' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) ); ?>
+                printf( esc_html__( 'Get %1$s... Use the limited coupon code "SALE21" now.', 'avant' ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/avant/#purchase-premium' ) . '" target="_blank">' . __( 'Avant Pro for only $20', 'avant' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) ); ?>
 			</p>
 			<a href="?avant_add_sale_notice_ignore=" class="avant-notice-close"><?php esc_html_e( 'Dismiss Notice', 'avant' ); ?></a>
 		</div><?php
