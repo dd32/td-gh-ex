@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.33' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.34' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -305,7 +305,7 @@ function topshop_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'WooCustomizer', 'topshop' ),
+			'name'      => __( 'StoreCustomizer', 'topshop' ),
 			'slug'      => 'woocustomizer',
 			'required'  => false,
 		),
@@ -406,7 +406,7 @@ function topshop_add_license_notice() {
 				<?php esc_html_e( 'TopShop Premium now includes a FREE shortcode slider... Easily add sliders to all or any pages you choose.', 'topshop' ); ?>
             </p>
             <p>
-                <b><?php esc_html_e( 'Use the coupon "SALE2020" to get $5 off TopShop Pro now!', 'topshop' ); ?></b>
+                <b><?php esc_html_e( 'Use the coupon "SALE21" to get $5 off TopShop Pro now!', 'topshop' ); ?></b>
             </p>
 			<?php if ( $topshoppage == 'themes.php?page=theme_info' ) : ?>
 				<div class="topshop-admin-notice-blocks">
@@ -485,39 +485,3 @@ function topshop_add_license_notice_ignore() {
     }
 }
 add_action( 'admin_init', 'topshop_add_license_notice_ignore' );
-
-/**
- * Dismissable Admin notice
- */
-function topshop_add_sale_notice() {
-	global $pagenow;
-	global $current_user;
-	$topshop_user_id = $current_user->ID;
-
-	if ( !get_user_meta( $topshop_user_id, 'topshop_sale_notice_ignore' ) ) : ?>
-		<div class="notice notice-info">
-			<h3>
-				<?php esc_html_e( 'TopShop Premium on special!', 'topshop' ); ?>
-			</h3>
-			<p>
-                <?php
-                /* translators: 1: 'TopShop Pro for only $20'. */
-                printf( esc_html__( 'Get %1$s... Use the limited coupon code "AUG2020SALE" now.', 'topshop' ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/topshop/#purchase-premium' ) . '" target="_blank">' . __( 'TopShop Pro for only $20', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) ); ?>
-			</p>
-			<a href="?topshop_add_sale_notice_ignore=" class="topshop-notice-close"><?php esc_html_e( 'Dismiss Notice', 'topshop' ); ?></a>
-		</div><?php
-	endif;
-}
-add_action( 'admin_notices', 'topshop_add_sale_notice' );
-/**
- * Admin notice save dismiss to wp transient
- */
-function topshop_add_sale_notice_ignore() {
-    global $current_user;
-	$topshop_user_id = $current_user->ID;
-
-    if ( isset( $_GET['topshop_add_sale_notice_ignore'] ) ) {
-		update_user_meta( $topshop_user_id, 'topshop_sale_notice_ignore', true );
-    }
-}
-add_action( 'admin_init', 'topshop_add_sale_notice_ignore' );

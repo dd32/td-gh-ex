@@ -1,7 +1,7 @@
 <div class="wrap upgrade-page-wrap">
     
     <h2 class="upgrade-page-title">
-        <?php _e( 'About TopShop', 'topshop' ); ?>
+        <?php esc_html_e( 'About TopShop', 'topshop' ); ?>
     </h2>
     
     <div class="upgrade-page-inner-wrap">
@@ -12,7 +12,7 @@
                 <a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
                     <?php printf( __( '<span>TopShop Premium </span><em>$25</em>', 'topshop' ) ); ?>
                 </a>
-                <p><?php _e( 'Once-Off Payment, No Subscription', 'topshop' ); ?></p>
+                <p><?php esc_html_e( 'Once-Off Payment, No Subscription', 'topshop' ); ?></p>
             </div>
             
             <p class="topshop-upgrade-p">
@@ -31,7 +31,7 @@
 
                 <div class="topshop-upgrade-block topshop-upgrade-block-layouts">
                     <div class="upgrade-page-right-box-img">
-                        <h4><?php _e( 'Page Layouts', 'topshop' ); ?></h4>
+                        <h4><?php esc_html_e( 'Page Layouts', 'topshop' ); ?></h4>
                         <?php _e( 'TopShop Premium offers a bunch on Elementor Page layouts built into the theme<br />so you can simply import page layouts to use.', 'topshop' ); ?>
                         <div class="upgrade-page-right-box-image"></div>
                     </div>
@@ -49,57 +49,57 @@
                 
                 <div class="topshop-upgrade-block topshop-upgrade-block-alt">
                     <div class="topshop-upgrade-block-left">
-                        <?php _e( 'View the TopShop Premium Demo, and try out all the settings neatly built into the Customizer', 'topshop' ); ?>
+                        <?php esc_html_e( 'View the TopShop Premium Demo, and try out all the settings neatly built into the Customizer', 'topshop' ); ?>
                     </div>
                     <div class="topshop-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://demo.kairaweb.com/#topshop' ) ?>" target="_blank" class="topshop-upgrade-result-button">
-                            <?php _e( 'TopShop Premium Demo', 'topshop' ); ?>
+                            <?php esc_html_e( 'TopShop Premium Demo', 'topshop' ); ?>
                         </a>
                     </div>
                 </div>
 
                 <div class="topshop-upgrade-block">
                     <div class="topshop-upgrade-block-left">
-                        <?php _e( 'See our list of Recommended Plugins for building good websites', 'topshop' ); ?>
+                        <?php esc_html_e( 'See our list of Recommended Plugins for building good websites', 'topshop' ); ?>
                     </div>
                     <div class="topshop-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" target="_blank" class="topshop-upgrade-result-button">
-                            <?php _e( 'Recommended Plugins', 'topshop' ); ?>
+                            <?php esc_html_e( 'Recommended Plugins', 'topshop' ); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="topshop-upgrade-block topshop-upgrade-block-alt">
                     <div class="topshop-upgrade-block-left">
-                        <?php _e( 'Download a working Child Theme for TopShop', 'topshop' ); ?><br />
+                        <?php esc_html_e( 'Download a working Child Theme for TopShop', 'topshop' ); ?><br />
                         <?php printf( __( 'Or learn more on creating/editing a <a href="%s" target="_blank">Child Theme</a>', 'topshop' ) , 'https://codex.wordpress.org/Child_Themes' ); ?>
                     </div>
                     <div class="topshop-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/topshop-child-theme/' ) ?>" target="_blank" class="topshop-upgrade-result-button">
-                            <?php _e( 'TopShop Child Theme', 'topshop' ); ?>
+                            <?php esc_html_e( 'TopShop Child Theme', 'topshop' ); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="topshop-upgrade-block">
                     <div class="topshop-upgrade-block-left">
-                        <?php _e( 'We have on-growing documentation on setting up your website with the TopShop theme', 'topshop' ); ?>
+                        <?php esc_html_e( 'We have on-growing documentation on setting up your website with the TopShop theme', 'topshop' ); ?>
                     </div>
                     <div class="topshop-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" target="_blank" class="topshop-upgrade-result-button">
-                            <?php _e( 'Documentation', 'topshop' ); ?>
+                            <?php esc_html_e( 'Documentation', 'topshop' ); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="topshop-upgrade-block topshop-upgrade-block-alt">
                     <div class="topshop-upgrade-block-left">
-                        <?php _e( 'Have you enjoyed using TopShop?', 'topshop' ); ?><br />
+                        <?php esc_html_e( 'Have you enjoyed using TopShop?', 'topshop' ); ?><br />
                         <?php printf( __( 'Please help by giving us a 5 star rating on WordPress.org :)', 'topshop' ) , 'https://kairaweb.com/' ); ?>
                     </div>
                     <div class="topshop-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/topshop/reviews/?rate=5#new-post' ) ?>" target="_blank" class="topshop-upgrade-result-button">
-                            <?php _e( 'Rate TopShop 5 stars', 'topshop' ); ?>
+                            <?php esc_html_e( 'Rate TopShop 5 stars', 'topshop' ); ?>
                         </a>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 
             </div>
             
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Theme Ratings', 'topshop' ); ?></h3>
+            <h3 class="upgrade-page-sub-title"><?php esc_html_e( 'Theme Ratings', 'topshop' ); ?></h3>
             
             <div class="upgrade-page-right-box">
                 
