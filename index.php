@@ -26,7 +26,7 @@ avadanta_breadcrumbs();
 			<div class="row gutter-vr-30px">
 				
 
-			<?php $avadanta_blog_layout = sanitize_text_field( get_theme_mod( 'avadanta_blog_temp_layout', 'rightsidebar' ) );
+			<?php $avadanta_blog_layout =  get_theme_mod( 'avadanta_blog_temp_layout', 'rightsidebar' );
 			
 			if ( $avadanta_blog_layout == "leftsidebar" ) {
 				get_sidebar();
@@ -39,7 +39,7 @@ avadanta_breadcrumbs();
 				$avadanta_blog_layout = "rightsidebar";
 				$avadanta_float = 8;
 			} ?>
-			<div class="col-md-<?php echo intval( $avadanta_float ); ?>">
+			<div class="col-md-<?php echo  $avadanta_float; ?>">
 					<?php
 						if ( have_posts() ) :
 

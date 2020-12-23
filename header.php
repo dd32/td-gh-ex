@@ -32,4 +32,3 @@
 <div class="wrapper-area">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'avadanta' ); ?></a>
 		<?php get_template_part('header/header-nav'); ?>
-		<div id="content"></div>

@@ -40,7 +40,7 @@
 				<?php the_excerpt(); ?>
 			</div>
 			<div class="post-tag d-flex readmre">
-				<a href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More','avadanta'); ?><i class="fa fa-arrow-right" aria-hidden="true"></i>
+				<a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','avadanta'); ?><i class="fa fa-arrow-right" aria-hidden="true"></i>
 				</a>
 			</div>
 		</div>

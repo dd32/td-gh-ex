@@ -1299,3 +1299,52 @@ h1,h3{
 
  display: none;
 }
+
+.author-thumb img{
+
+  max-width: 85%;
+  border-radius: 50%;
+}
+
+.header-search .search-form label {
+    width: 50%;
+}
+
+.header-search .search-submit{
+
+      background-color: #ff7029;
+    border-radius: 5px;
+    height: 45px;
+    box-shadow: 0 2px 0 #000;
+    border: none;
+    color: #fff;
+
+}
+
+.header-search .search-form{
+  width: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .header-search .search-field {
+    background-color: #fff;
+    color: #4b4b4b;
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1;
+    border: none;
+    margin: 0 auto;
+    padding: 20px 50px 20px 30px;
+    width: 100%;
+}
+
+.search-trigger:focus{
+
+  outline: 1px solid #000;
+}

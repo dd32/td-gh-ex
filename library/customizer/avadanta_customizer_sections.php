@@ -14,6 +14,37 @@ function avadanta_sections_settings( $wp_customize ){
 	
     $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 
+    $wp_customize->get_setting( 'header_textcolor' ) ;
+
+    // Remove the core header textcolor control, as it shares the main text color.
+    $wp_customize->remove_control( 'header_textcolor' );
+
+    $wp_customize->add_setting( 'header_title_color', array(
+        'default'           => '#000',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+  $wp_customize->add_control(
+        new WP_Customize_Color_Control($wp_customize,'header_title_color',array(
+            'label' => esc_html__('Header Text Color','avadanta'),           
+            'description' => esc_html__('Header Text Title Color','avadanta'),
+            'section' => 'colors',
+        ))
+    ); 
+
+    $wp_customize->add_setting( 'header_tagline_color', array(
+        'default'           => '#000',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+  $wp_customize->add_control(
+        new WP_Customize_Color_Control($wp_customize,'header_tagline_color',array(
+            'label' => esc_html__('Header Tagline Color','avadanta'),           
+            'description' => esc_html__('Header Tagline  Color','avadanta'),
+            'section' => 'colors',
+        ))
+    );  
+
 /* Sections Settings */
 	$wp_customize->add_panel( 'section_settings', array(
 		'priority'       => 126,
@@ -207,7 +238,7 @@ $wp_customize->add_setting( 'avadanta_footer_widgets_column',
         $wp_customize->add_setting('avadanta_footer_opacity_section',
             array(
                 'default'           => '0.0',
-                'sanitize_callback' => 'avadanta_sanitize_float'
+                'sanitize_callback' => 'avadanta_sanitize_float_theme'
             )
         );
         $wp_customize->add_control('avadanta_footer_opacity_section',
@@ -358,7 +389,7 @@ $wp_customize->add_section('avadanta_navigation_settings',
     $wp_customize->add_setting('avadanta_navigation_url',   
         array(
             'sanitize_callback' => 'avadanta_sanitize_text',
-            'default'           => __('#', 'avadanta'),
+            'default'           => '',
             ));
 
     $wp_customize->add_control('avadanta_navigation_url',
@@ -464,7 +495,7 @@ $wp_customize->add_section('avadanta_breadcrumb_settings',
         $wp_customize->add_setting('braedcrumb_height',
             array(
                 'default'           => '62',
-                'sanitize_callback' => 'avadanta_sanitize_float'
+                'sanitize_callback' => 'avadanta_sanitize_float_theme'
             )
         );
         $wp_customize->add_control('braedcrumb_height',
@@ -743,40 +774,6 @@ $wp_customize->add_setting('avadanta_copyright_enable',
         )
     );
 
-            /**
-         * Section Reorder
-        */
-        $wp_customize->add_section( 'avadanta_homepage_section_reorder', array(
-            'title'     => esc_html__( 'Homepage Section Re Order', 'avadanta' ),
-            'priority'  => 5,
-            'panel'       => 'home_section_settings',
-
-        ) );
-        
-        $wp_customize->add_setting( 'avadanta_homepage_section_order_list', array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_text_field'
-        ) );
-
-        $wp_customize->add_control( new Avadanta_Section_Re_Order( $wp_customize, 'avadanta_homepage_section_order_list', array(
-            'type' => 'dragndrop',
-            'priority'  => 3,
-            'label' => esc_html__( 'FrontPage Section Re Order', 'avadanta' ),
-            'section' => 'avadanta_homepage_section_reorder',
-                'choices'   => array(
-                    'aboutus'      => esc_html__( 'About Us', 'avadanta' ),
-                    'features'       => esc_html__( 'Features Services', 'avadanta' ),
-                    'gallery'       => esc_html__( 'Gallery Section', 'avadanta' ),
-                    'ourteam'       => esc_html__( 'Our Team Member', 'avadanta' ),
-                    'testimonial'   => esc_html__( 'Testimonial Area', 'avadanta' ),
-                    'cta'           => esc_html__( 'Call To Action', 'avadanta' ),
-                    'ourblog'       => esc_html__( 'Our Blogs', 'avadanta' ),
-                    'courses'       => esc_html__( 'Client Section', 'avadanta' )
-
-
-                ),
-        ) ) );
-
 }
 add_action( 'customize_register', 'avadanta_sections_settings' );
 
@@ -819,5 +816,10 @@ function avadanta_sanitize_radio( $input, $setting ){
      //return input if valid or return default option
      return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                          
 }
+
+function avadanta_sanitize_float_theme( $input ) {
+    return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+        
 
 require AVADANTA_THEME_DIR . '/library/customizer/avadanta-customize-typography-control.php';

@@ -37,7 +37,7 @@ add_action( 'widgets_init', 'avadanta_theme_sidebars' );
 
 
 function avadanta_body_classes( $classes ) {
-	$layout_option = sanitize_text_field( get_theme_mod('avadanta_site_layout', '') );
+	$layout_option =  get_theme_mod('avadanta_site_layout', '') ;
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	
 if( $layout_option == 'boxed' )
@@ -56,7 +56,7 @@ $image = get_header_image();
         <div class="banner-block">
           <div class="container">
             <div class="row">
-              <div class="<?php if ( is_singular() || is_search()  ) { ?>col-md-12 single-full <?php } else { ?>col-md-6 <?php } ?>">
+               <div class="col-md-6">
                 <div class="banner-content">
                   <?php if(is_home()): ?>
                             <h1 class="banner-heading" ><?php bloginfo('name'); ?></h1>
@@ -67,7 +67,7 @@ $image = get_header_image();
                                 }
                                  elseif(is_search()){
 
-                                  echo  esc_html__('Search Results For ', 'avadanta') . ' " ' . esc_html(get_search_query()) . ' "';
+                                  echo  esc_html__('Search Results For ', 'avadanta') . ' " ' . get_search_query() . ' "';
 
                                  }elseif ( is_404() ) {
                                   echo  esc_html__('Nothing Found ', 'avadanta');
@@ -83,7 +83,6 @@ $image = get_header_image();
                             ?>
                 </div>
               </div>
-              <?php if ( !is_singular() && !is_search() ) { ?>
                 <div class="col-md-6">
                      <?php
                       $avadanta_header_show_breadcrumb =  get_theme_mod( 'avadanta_header_show_breadcrumb', 0 );
@@ -94,7 +93,6 @@ $image = get_header_image();
                         </div>
                       <?php } ?>
                     </div>
-                  <?php } ?>
             </div>
           </div>
           <div class="bg-image header-bg-image">
@@ -103,6 +101,7 @@ $image = get_header_image();
         </div>
         
       </div>
+      <div id="content"></div>
 <?php } endif;
 
 

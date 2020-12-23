@@ -1,7 +1,7 @@
 <?php
-$avadanta_single_post_thumb = intval( get_theme_mod( 'avadanta_single_post_thumb', 1 ) );
-$avadanta_single_post_meta = intval( get_theme_mod( 'avadanta_single_post_meta', 1 ) );
-$avadanta_single_post_title = intval( get_theme_mod( 'avadanta_single_post_title', 1 ) ); 
+$avadanta_single_post_thumb =  get_theme_mod( 'avadanta_single_post_thumb', 1 );
+$avadanta_single_post_meta = get_theme_mod( 'avadanta_single_post_meta', 1 );
+$avadanta_single_post_title =  get_theme_mod( 'avadanta_single_post_title', 1 ); 
 ?>
 
 <div class="post post-full post-details">

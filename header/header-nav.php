@@ -37,14 +37,14 @@
 								'menu_id'        => 'primary-menu',
 							) );
 						$avadanta_navigation_text = get_theme_mod('avadanta_navigation_text','Get A Quote');
-						$avadanta_navigation_url = get_theme_mod('avadanta_navigation_url','#'); ?>
+						$avadanta_navigation_url = get_theme_mod('avadanta_navigation_url'); ?>
 						<ul class="menu-btns">
 							<?php
 							$avadanta_header_show_search = get_theme_mod('avadanta_header_show_search',0); 
 							if($avadanta_header_show_search==0) {
 							?>
 							<li><a href="<?php esc_attr('#','avadanta'); ?>" class="btn search search-trigger"><i class="fa fa-search"></i></a></li>
-							<?php } if(!empty($avadanta_navigation_text && $avadanta_navigation_url)) { ?>
+							<?php } if(!empty($avadanta_navigation_url)) { ?>
 							<li><a href="<?php echo esc_url($avadanta_navigation_url); ?>" class="btn btn-sm"><?php echo esc_html($avadanta_navigation_text); ?></a></li>
 							<?php } ?>
 						</ul>
@@ -52,12 +52,7 @@
 				</div>   
 
 				<div class="header-search">
-					<form role="search" method="POST" class="search-form-header" action="<?php echo esc_url(home_url('/')); ?>">
-						<div class="search-group">
-							<input type="text" class="input-search" placeholder="<?php esc_attr_e('Search &hellip;', 'avadanta'); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s">
-							<button class="search-submit-header" type="submit" ><i class="fa fa-search"></i></button>
-						</div>
-					</form>
+					<?php get_search_form(); ?>
 				</div>
 			</div>
 		</div>

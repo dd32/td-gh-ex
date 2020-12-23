@@ -3,15 +3,17 @@ Theme Name: Avadanta
 Theme URI: https://www.avadantathemes.com/product/avadanta-free-multipurpose-business-wordpress-theme
 Author: avadantathemes
 Author URI: https://www.avadantathemes.com
-Requires at least: 4.7
-Requires PHP: 5.6
-Tested up to: WordPress 5.5.3
 Description: Avadanta is a creative, fully customizable and multipurpose theme that you can use to create any kind of beautiful websites. pre-made designed Homepage with 7 inner sections slider, service, about, team, testimonial, portfolio, call to action, you can easily customize them. Unlimited color feature with unlimited typography. Compatible with gutenberg, elemnetor page builder and so many popular plugins nicely works with avadanta theme.
-Version: 1.0.1
+Version: 1.0.2
+Requires at least: 5.0
+Tested up to: 5.6
+Requires PHP: 7.0
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-menu, custom-logo, featured-images, theme-options, threaded-comments, translation-ready, footer-widgets, blog, news
+License: GNU General Public License v2 or later
+License URI: http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
 Text Domain: avadanta
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, post-formats, theme-options, threaded-comments, translation-ready, footer-widgets, news
-License: GNU General Public License version 3
-License URI:  http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 html,
