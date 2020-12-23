@@ -1,7 +1,7 @@
 == Auto Car ==
 
 Contributors: codepixelzmedia
-Version: 1.3.2
+Version: 1.3.3
 Requires at least: 4.0
 Requires PHP: 5.6
 Tested up to: 5.2.2
@@ -85,7 +85,7 @@ Source: http://materializecss.com/
 	Licenses: https://github.com/garand/sticky/blob/master/LICENSE.md
 	Source: http://stickyjs.com/
 
-	Bootstrap v3.3.6 (http://getbootstrap.com)
+	Bootstrap v3.3.7 (http://getbootstrap.com)
 	Copyright 2011-2016 Twitter, Inc.
 	Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
@@ -155,3 +155,7 @@ Source: http://materializecss.com/
 = 1.3.2 =
 * 30 june 2020
 *Issues fixed based on .org review standard
+
+= 1.3.3 =
+* 22 Dec 2020
+*Bootstrap js updated
