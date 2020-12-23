@@ -65,3 +65,9 @@ blockquote { border-left: 5px solid #31a3dd; }
 	box-shadow: 0 3px 0 0 rgb(40, 146, 200); 
 }
 .bypostauthor{}
+.site-content .entry-content a, .textwidget a, .comment-detail p a {
+	text-decoration: underline;
+} 
+.edit-link a{
+	text-decoration: none !important;
+}

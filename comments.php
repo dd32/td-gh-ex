@@ -10,7 +10,7 @@
 		//get theme data
 		global $comment_data;
 		//translations
-		$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','elitepress'); ?>
+		$leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','elitepress'); ?>
 		<div <?php comment_class('media comment-box'); ?> id="comment-<?php comment_ID(); ?>">
 			<a class="pull-left-comment" href="<?php the_author_meta('user_url'); ?>">
 			<?php echo get_avatar( $comment , 70); ?>		
@@ -37,7 +37,7 @@
 <?php if ( have_comments() ) { ?>
 
 <div class="comment-section">
-	<div class="comment-title"><h3></i> <?php comments_number ( esc_html__('No comments so far','elitepress'), esc_html__( '1 comment so far','elitepress'),'% ' . esc_html__('comments so far','elitepress') ); ?> </h3>
+	<div class="comment-title"><h3> <?php comments_number ( esc_html__('No comments so far','elitepress'), esc_html__( '1 comment so far','elitepress'),'% ' . esc_html__('comments so far','elitepress') ); ?> </h3>
 	</div>
 	<?php wp_list_comments( array( 'callback' => 'elitepress_comment' ) ); ?>
 </div> <!---comment_section--->

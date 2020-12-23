@@ -2,7 +2,6 @@
 /**
  * Getting started template
  */
-$elitepress_customizer_url = admin_url() . 'customize.php' ;
 ?>
 
 <div id="getting_started" class="elitepress-tab-pane active">

@@ -1,5 +1,9 @@
 == Changelog ==
 
+@version 1.9.3
+1. Implemented "Links within content must be underlined" guideline.
+2. Fixed keyboard navigation issue.
+3. Added contact form 7 image license and removed unnecessary code.
 @version 1.9.2
 1. Fixed issue like prefix, escaping, IE11 and other.
 2. Removed custom CSS box.

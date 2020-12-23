@@ -2,8 +2,8 @@
 
 Contributors: priyanshumittal
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 1.9.2
+Tested up to: 5.6
+Stable tag: 1.9.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,10 +25,14 @@ Keyboard navigation is working properly in the forward direction by using the ta
 == License ==
 
 ElitePress WordPress Theme, Copyright (C) 2015, priyanshumittal
-ElitePress Pro is distributed under the terms of the GNU GPL
+ElitePress is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@version 1.9.3
+1. Implemented "Links within content must be underlined" guideline.
+2. Fixed keyboard navigation issue.
+3. Added contact form 7 image license and removed unnecessary code.
 @version 1.9.2
 1. Fixed issue like prefix, escaping, IE11 and other.
 2. Removed custom CSS box.
@@ -196,6 +200,10 @@ Screenshot Image
 URL: https://pxhere.com/en/photo/1175886
 Source: https://pxhere.com
 License: CC0 Public Domain
+
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
 Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

@@ -25,7 +25,7 @@ function elitepress_fallback_page_menu( $args = array() ) {
 			$text = $args['show_home'];
 		$class = '';
 		if ( is_front_page() && !is_paged() )
-			$class = 'class="current_page_item"';
+			$class = 'class="menu-item current_page_item"';
 		$menu .= '<li ' . $class . '><a href="' .esc_url( home_url( '/' )) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 		// If the front page is a page, add it to the exclude list
 		if (get_option('show_on_front') == 'page') {
