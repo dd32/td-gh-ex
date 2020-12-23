@@ -5,6 +5,7 @@ function arowana_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Pro','arowana'),
+			'priority'      => 1,
 		)
     );
 	
@@ -48,4 +49,3 @@ function arowana_premium_setting( $wp_customize ) {
 );
 }
 add_action( 'customize_register', 'arowana_premium_setting',999 );
-?>
