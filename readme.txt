@@ -24,6 +24,10 @@ Live demo: https://demo.themonic.com/io/
 == Changelog ==
 
 
+= 2.1.9=
+* Released: December 24, 2020
+* .webp image support, tested with imagify plugin
+
 = 2.1.8=
 * Released: November 6, 2020
 * Updated screenshot
