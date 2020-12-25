@@ -66,12 +66,12 @@
 		$plugins = array(
 			 // This is an example of how to include a plugin from the WordPress Plugin Repository.
 	        array(
-	            'name'      => 'Contact Form 7',
+	            'name'      => esc_html__('Contact Form 7','rambo'),
 	            'slug'      => 'contact-form-7',
 	            'required'  => false,
 	        ),
 	        array(
-	            'name'      => 'Webriti Companion',
+	            'name'      => esc_html__('Webriti Companion','rambo'),
 	            'slug'      => 'webriti-companion',
 	            'required'  => false,
 	        ),
@@ -111,9 +111,9 @@
 		if ( is_feed() )
 			return $title;
 		// Add the site name.
-		$title .= get_bloginfo( 'name' );
+		$title .= esc_html(get_bloginfo( 'name' ));
 		// Add the site description for the home/front page.
-		$site_description = get_bloginfo( 'description' );
+		$site_description = esc_html(get_bloginfo( 'description' ));
 		if ( $site_description && ( is_home() || is_front_page() ) )
 			$title = "$title $sep $site_description";
 		// Add a page number if necessary.

@@ -1,5 +1,8 @@
 == Changelog ==
 
+@version 2.0.5
+1. Fixed escaping, translation, empty markup issues and removed unnecessary code.
+
 @version 2.0.4
 1. Implemented "Links within content must be underlined" guideline.
 2. Fixed keyboard navigation issue for mobile menu.

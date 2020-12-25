@@ -9,13 +9,13 @@ if( $rambo_current_options['news_enable'] == false )
 			<div id="rambo_recent_news_widget-3" class="rambo_post_section widget widget_rambo_recent_news_widget">
 				<div class="row">
 					<div class="span12">
-						<div class="team_head_title">
-							<?php
-							 if( $rambo_current_options['latest_news_title'] != '' ) { ?> 
-							<h3 class="widget-title"><?php echo esc_html($rambo_current_options['latest_news_title']);?>
-							</h3>
-							<?php } ?>
-						</div>
+						<?php
+						if( $rambo_current_options['latest_news_title'] != '' ) { ?>
+							<div class="team_head_title"> 
+								<h3 class="widget-title"><?php echo esc_html($rambo_current_options['latest_news_title']);?>
+								</h3>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="row">

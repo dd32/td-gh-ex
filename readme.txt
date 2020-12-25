@@ -2,8 +2,8 @@
 
 Contributors: priyanshumittal
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 2.0.4
+Tested up to: 5.6
+Stable tag: 2.0.5
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.5
+1. Fixed escaping, translation, empty markup issues and removed unnecessary code.
 
 @version 2.0.4
 1. Implemented "Links within content must be underlined" guideline.
@@ -320,3 +323,6 @@ https://pxhere.com/en/photo/1559439
 * Image used for the Contact Form 7
 License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
+
+* Images on /images folder
+Copyright (C) 2019, Webriti and available as [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)

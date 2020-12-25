@@ -14,6 +14,7 @@ $rambo_current_options = wp_parse_args(  get_option( 'rambo_pro_theme_options', 
 <!-- /Widgets Section -->
 
 <!-- Footer Section -->
+<?php if(($rambo_current_options['footer_copyright'] != '' ) || (is_active_sidebar('footer-social-icon-sidebar-area'))) : ?>
 <div class="footer-section">
 	<div class="container">
 		<div class="row">
@@ -24,15 +25,16 @@ $rambo_current_options = wp_parse_args(  get_option( 'rambo_pro_theme_options', 
 			</div>
 			<div class="span4">
 				<?php  
-                                    if( is_active_sidebar('footer-social-icon-sidebar-area'))
-                                    {
-                                        dynamic_sidebar('footer-social-icon-sidebar-area');
-                                    }
-                                ?>
+                if( is_active_sidebar('footer-social-icon-sidebar-area'))
+                {
+                    dynamic_sidebar('footer-social-icon-sidebar-area');
+                }
+                ?>
 			</div>		
 		</div>
 	</div>		
-</div>		
+</div>	
+<?php endif; ?>	
 <!-- Footer Section-->
 
 <?php

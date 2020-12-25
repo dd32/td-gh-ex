@@ -5,7 +5,7 @@ msgstr ""
 "Blank WordPress Pot "
 "v1.0.0\n"
 "POT-Creation-Date: "
-"2020-11-24 19:02+0530\n"
+"2020-12-24 18:40+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Language: en_US\n"
 "X-Generator: Poedit "
-"2.4.1\n"
+"2.4.2\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
 
@@ -162,6 +162,7 @@ msgstr ""
 #: admin/inc/class-rambo-about-page.php:502
 #: admin/inc/include-companion.php:81
 #: admin/inc/include-companion.php:98
+#: functions.php:74
 msgid "Webriti Companion"
 msgstr ""
 
@@ -177,6 +178,7 @@ msgid ""
 msgstr ""
 
 #: admin/inc/class-rambo-about-page.php:509
+#: functions.php:69
 msgid "Contact Form 7"
 msgstr ""
 
