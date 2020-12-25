@@ -12,7 +12,7 @@ $busiprof_current_options = wp_parse_args(  get_option( 'busiprof_theme_options'
 			<div class="col-md-6">
 				<div class="page-title">
 					<h2><?php 
-					printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['tag_prefix'], single_tag_title( '', false ) ); ?></h2>
+					printf( esc_html__( '%1$s %2$s', 'busiprof' ), wp_kses_post($busiprof_current_options['tag_prefix']), single_tag_title( '', false ) ); ?></h2>
 				</div>
 			</div>
 			<div class="col-md-6">

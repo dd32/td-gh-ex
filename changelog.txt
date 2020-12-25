@@ -1,5 +1,9 @@
 == Changelog ==
 
+@version 2.2.7
+1. Fixed escaping and some styling issues.
+2. Escaped the pingback_url().
+
 @version 2.2.6
 1. Added contact form 7 image license. 
 2. Fixed home template issue.

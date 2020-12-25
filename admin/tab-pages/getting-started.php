@@ -2,7 +2,6 @@
 /**
  * Getting started template
  */
-$busiprof_customizer_url = admin_url() . 'customize.php' ;
 ?>
 
 <div id="getting_started" class="busiprof-tab-pane active">

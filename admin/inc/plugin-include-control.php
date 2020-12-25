@@ -77,7 +77,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('busiprof_Plugin_Insta
 		        <?php endif; ?>
 				<?php 
 					$button = $webriti_about_page->get_plugin_buttion($this->slug, $this->name);
-					echo wp_kese_post($button['button']);
+					echo wp_kses_post($button['button']);
 				?>
 				<div style="clear: both;"></div>
 			</div>

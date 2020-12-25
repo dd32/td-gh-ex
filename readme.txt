@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 2.2.6
+Stable tag: 2.2.7
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -52,6 +52,10 @@ Busiprof is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+@version 2.2.7
+1. Fixed escaping and some styling issues.
+2. Escaped the pingback_url().
 
 @version 2.2.6
 1. Added contact form 7 image license. 

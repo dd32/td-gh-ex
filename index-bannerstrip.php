@@ -12,7 +12,7 @@ $busiprof_current_options = wp_parse_args(  get_option( 'busiprof_theme_options'
 						
 						if( is_shop() ){
 			
-						printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['shop_prefix'], single_tag_title( '', false ));
+						printf( esc_html__( '%1$s %2$s', 'busiprof' ), wp_kses_post($busiprof_current_options['shop_prefix']), single_tag_title( '', false ));
 						} elseif(is_archive()){
 						
 							the_archive_title(); 
@@ -24,7 +24,7 @@ $busiprof_current_options = wp_parse_args(  get_option( 'busiprof_theme_options'
 							
 						}
 						elseif( is_search() ){
-							printf( esc_html__( '%1$s %2$s', 'busiprof' ), $busiprof_current_options['search_prefix'], get_search_query() );
+							printf( esc_html__( '%1$s %2$s', 'busiprof' ), wp_kses_post($busiprof_current_options['search_prefix']), get_search_query() );
 						}
 						elseif( is_404() ){
 							printf( esc_html($busiprof_current_options['404_prefix']));
