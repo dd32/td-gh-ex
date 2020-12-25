@@ -131,3 +131,17 @@ blockquote { border-left: 6px solid #5ca2df; }
 .site-content#blog-masonry .name { color: #5ca2df; }
 .site-content#blog-masonry .cat-links { background-color: #5ca2df; }
 .site-content#blog-masonry .entry-date a:hover, .site-content#blog-masonry .entry-date a:focus { color: #5ca2df; }
+@media screen and (max-width: 767px) {
+	.custom-logo-link-url {
+		display: block;
+	}
+	.navbar-brand img {
+		margin: 0 auto;
+	}
+	.navbar-brand {
+       float: none;
+    }
+}
+.portfolio .post .post-thumbnail {
+	height: auto;
+}
