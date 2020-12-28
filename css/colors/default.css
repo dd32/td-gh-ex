@@ -256,6 +256,15 @@ a:hover, a:focus {
 .bs-info-author-block {
     background: #e3e3e3;
 }
+
+.vcard img {
+    border: 3px solid #df0a0a;
+}
+
+.reply a {
+    border: 2px solid #df0a0a;
+}
+
 /*==================== Sidebar ====================*/
 .bs-sidebar .bs-widget {
 	background: white;
