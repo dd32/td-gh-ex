@@ -308,6 +308,14 @@ address i {
 .textwidget a {
     color: #007bff;
 }
+.footer-sidebar .textwidget a {
+	color: #007bff;
+}
+.footer-sidebar .textwidget > address > a:hover, 
+.footer-sidebar .textwidget > address > a:focus { 
+	color: #007bff !important;
+}
+
 
 /*--------------------------------------------------------------
 ## Captions
