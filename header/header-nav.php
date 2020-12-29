@@ -52,7 +52,7 @@
 				</div>   
 
 				<div class="header-search">
-					<?php get_search_form(); ?>
+					<?php custom_search_form(); ?>
 				</div>
 			</div>
 		</div>

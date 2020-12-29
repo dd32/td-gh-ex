@@ -398,20 +398,20 @@ a:focus,.menu-toggle:focus {
   outline: none;
 }
 a:focus-visible,.menu-toggle:focus-visible {
-  outline: 2px solid #000;
+  outline: 1px solid #000;
 }
 
 
 
-textarea:focus,.btn:focus,.search-field:focus{
+textarea:focus,.btn:focus,.search-field:focus,.comment-respond .form-submit input:focus,.menu-btns .btn:focus{
 
     outline: none;
 
 }
 
 
-textarea:focus-visible,.btn:focus-visible,.search-field:focus-visible {
-  outline: 2px solid #000;
+textarea:focus-visible,.btn:focus-visible,.search-field:focus-visible,.comment-respond .form-submit input:focus-visible,.menu-btns .btn:focus-visible {
+  outline: 1px solid #000;
 
 }
 
@@ -422,29 +422,7 @@ textarea:focus-visible,.btn:focus-visible,.search-field:focus-visible {
 
 .menu-item-has-children { position: relative; }
 
-.sub-menu { 
-  visibility: hidden; /* hides sub-menu */
-  opacity: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  transform: translateY(-2em);
-  z-index: -1;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-}
 
-
-
-.menu-item-has-children:focus > .sub-menu,
-.menu-item-has-children:focus-within > .sub-menu,
-.menu-item-has-children:hover > .sub-menu {
-  visibility: visible; /* shows sub-menu */
-  opacity: 1;
-  z-index: 1;
-  display: block;
-  transform: translateY(0%);
-  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
-}
 
 }
 .menu-btns::before {
@@ -812,7 +790,7 @@ ol.comment-list {
   width: 100%;
   border: none;
   line-height: normal !important;
-  background: #ecf6fa;
+  background: #f6f7f8;
   border: 1px solid #f9f9f9;
   color: #8d8d8d;
   font-size: 12px;
@@ -826,7 +804,7 @@ ol.comment-list {
   line-height: 33px;
   padding-left: 11px;
   padding-right: 11px;
-  background: #ecf6fa;
+  background: #f6f7f8;
   color: #8d8d8d;
   font-size: 12px;
 }
@@ -838,7 +816,7 @@ ol.comment-list {
   line-height: 33px;
   padding-left: 11px;
   padding-right: 11px;
-  background: #ecf6fa;
+  background: #f6f7f8;
   color: #8d8d8d;
   font-size: 12px;
 }
@@ -850,7 +828,7 @@ ol.comment-list {
   line-height: 33px;
   padding-left: 11px;
   padding-right: 11px;
-  background: #ecf6fa;
+  background: #f6f7f8;
   color: #8d8d8d;
   font-size: 12px;
 }
@@ -1347,4 +1325,12 @@ h1,h3{
 .search-trigger:focus{
 
   outline: 1px solid #000;
+}
+
+.post-content .content a:focus,
+.comment-content a:focus
+{
+
+text-decoration: underline;
+    outline: none;
 }

@@ -29,6 +29,19 @@ if ( ! function_exists( 'avadanta_posted_on' ) ) :
 	}	
 endif;
 
+                          
+function custom_search_form() {
+  $form = '<form role="search" method="post id="" class="search-form-header" action="' . home_url( '/' ) . '" >
+    <div class="search-group">
+    <input type="text" value="' . get_search_query() . '" name="s" placeholder="Search" class="input-search" id="s" />
+    <button class="search-submit-header" type="submit" ><i class="fa fa-search"></i></button>
+  </div>
+  </form>';
+
+  echo $form;
+}
+
+
 if ( ! function_exists( 'avadanta_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.

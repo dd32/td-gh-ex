@@ -28,15 +28,15 @@
  *
  * @since  0.1.0
  * @access public
- * @param  array $args Arguments to pass to Breadcrumb_Trail.
+ * @param  array $args Arguments to pass to Avadanta_Breadcrumb_Trail.
  * @return void
  */
-function breadcrumb_trail( $args = array() ) {
+function avadanta_breadcrumb_trail( $args = array() ) {
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
 	if ( ! is_object( $breadcrumb ) )
-		$breadcrumb = new Breadcrumb_Trail( $args );
+		$breadcrumb = new Avdanta_Breadcrumb_Trail( $args );
 
 	return $breadcrumb->trail();
 }
@@ -47,7 +47,7 @@ function breadcrumb_trail( $args = array() ) {
  * @since  0.6.0
  * @access public
  */
-class Breadcrumb_Trail {
+class Avdanta_Breadcrumb_Trail {
 
 	/**
 	 * Array of items belonging to the current breadcrumb trail.
@@ -241,7 +241,7 @@ class Breadcrumb_Trail {
 		}
 
 		// Allow developers to filter the breadcrumb trail HTML.
-		$breadcrumb = apply_filters( 'breadcrumb_trail', $breadcrumb, $this->args );
+		$breadcrumb = apply_filters( 'avadanta_breadcrumb_trail', $breadcrumb, $this->args );
 
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;

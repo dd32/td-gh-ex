@@ -89,7 +89,7 @@ $image = get_header_image();
                       if($avadanta_header_show_breadcrumb==0){
                         ?>
                         <div class="header-bennar-right">
-                            <?php breadcrumb_trail(); ?>
+                            <?php avadanta_breadcrumb_trail(); ?>
                         </div>
                       <?php } ?>
                     </div>
@@ -104,6 +104,7 @@ $image = get_header_image();
       <div id="content"></div>
 <?php } endif;
 
+ 
 
 function avadanta_inline_css(){
 

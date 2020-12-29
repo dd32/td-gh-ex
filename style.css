@@ -4,7 +4,7 @@ Theme URI: https://www.avadantathemes.com/product/avadanta-free-multipurpose-bus
 Author: avadantathemes
 Author URI: https://www.avadantathemes.com
 Description: Avadanta is a creative, fully customizable and multipurpose theme that you can use to create any kind of beautiful websites. pre-made designed Homepage with 7 inner sections slider, service, about, team, testimonial, portfolio, call to action, you can easily customize them. Unlimited color feature with unlimited typography. Compatible with gutenberg, elemnetor page builder and so many popular plugins nicely works with avadanta theme.
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.0
@@ -6817,7 +6817,7 @@ body.search-show {
 }
 
 .banner.brdcrmbs .header-bennar-right ul {
-    padding-top: 90px;
+    padding-top: 80px;
 }
 
 @media (max-width: 768px) {
