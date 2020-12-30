@@ -3,10 +3,10 @@ Theme Name: Advance Ecommerce Store
 Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
+Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, kids store, automobile store, gift shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. This multipurpose eCommerce theme can be used for sports, technology, cloth, electronics, accessories, flowers  fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, minimal, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.7
+Version: 0.7.1
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -45,12 +45,7 @@ img{
 section img{
   max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
   font-family: 'Montserrat', sans-serif;
   margin:0;
   padding:10px 0;
@@ -63,7 +58,6 @@ p{
   font-size:16px;
   letter-spacing: 0;
   line-height: 1.8;
-
 }
 a{
   text-decoration:none;
@@ -73,13 +67,11 @@ a:hover{
   text-decoration:none;
   color:#666;
 }
-a:focus,
-a:hover{
+a:focus,a:hover{
   text-decoration:none !important;
 }
 a:focus, input:focus, textarea:focus,.middle-header button[type="submit"]:focus, 
-.woocommerce form .form-row input:focus.input-text, 
-.woocommerce form .form-row textarea:focus{
+.woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
   outline: 1px solid #000;
   border-bottom: 1px solid #000 !important;
 }
@@ -100,19 +92,7 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 .clear{
@@ -144,7 +124,6 @@ input[type='submit']:hover{
   top:-9999em;
   left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -158,40 +137,39 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
 .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
   margin:0;
@@ -201,8 +179,7 @@ z-index: 100000; /* Above WP toolbar. */
   margin:0;
   padding:0;
 }
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
   display: inline;
   float: left;
   margin-right:20px;
@@ -212,8 +189,7 @@ z-index: 100000; /* Above WP toolbar. */
   border:1px solid #bbb;
   padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
   display: inline;
   float: right;
   border:1px solid #bbb;
@@ -221,8 +197,7 @@ z-index: 100000; /* Above WP toolbar. */
   margin-bottom:10px;
   margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
   clear: both;
   display: block;
   margin-left: auto;
@@ -246,11 +221,7 @@ z-index: 100000; /* Above WP toolbar. */
 small{
   font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
   border:1px solid #bcbcbc;
   width:100%;
   font-size:16px;
@@ -288,8 +259,7 @@ input[type="submit"] {
   padding: 20px 0;
 }
 /* ---------Top Menu--------- */
-.top-menu,
-.main-menu {
+.top-menu,.main-menu {
   background: #cb4f00;
 }
 .social_widget i {  
@@ -305,8 +275,7 @@ input[type="submit"] {
   border: none;
 }
 /*preloader*/
-.elementor-html #loader,
-.elementor-html #loader-wrapper{
+.elementor-html #loader,.elementor-html #loader-wrapper{
   display: none;
 }
 #loader-wrapper {
@@ -497,11 +466,11 @@ input[type="submit"] {
   text-align: center;
   margin: 25px 0;
 }
-span.cart_no {
+.cart_no {
   border: solid 1px #000;
   padding: 12px 25px;
 }
-span.cart_no a {
+.cart_no a {
   color: #000;
   font-weight: bold;
   font-size: 12px;
@@ -513,7 +482,7 @@ li.cart_box {
   text-align: right;
   list-style: none;
 }
-span.cart-value {
+.cart-value {
   background: #cb4f00;
   border-radius: 50%;
   padding: 4px 7px;
@@ -560,8 +529,7 @@ ul.list_nav {
   display: inline-block;
   position: relative;
 }
-.primary-navigation li a:hover,
-.primary-navigation li:hover a{
+.primary-navigation li a:hover,.primary-navigation li:hover a{
   background-color: #fff;
   color: #cb4f00;
 }
@@ -644,9 +612,7 @@ ul.list_nav {
   right: 10px;
   color: #cb4f00;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
@@ -1040,14 +1006,11 @@ table#wp-calendar {
   color: #fff;
   font-size: 20px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
   color:#202020 !important;
   padding: 5px;
 }
@@ -1055,14 +1018,12 @@ table#wp-calendar {
   padding: 7px;
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -1138,9 +1099,7 @@ table#wp-calendar {
   border: solid 1px #cb4f00;
   background: #cb4f00;
 }
-
 /* --------- POST --------- */
-
 .bradcrumbs{
   padding:30px 0;
 }
@@ -1174,9 +1133,7 @@ table#wp-calendar {
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1246,8 +1203,7 @@ li#comment{
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
-.woocommerce nav.woocommerce-pagination ul li a:focus, 
-.woocommerce nav.woocommerce-pagination ul li a:hover, 
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, 
 .woocommerce nav.woocommerce-pagination ul li span.current {
   background: #cb4f00;
   color: #fff;
@@ -1420,8 +1376,7 @@ h2.woocommerce-loop-product__title{
 .woocommerce .woocommerce-product-rating .star-rating {
   margin: 0.5em 20px 0 0;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1581,8 +1536,7 @@ a.rsswidget {
   letter-spacing: 0;
 }
 /* Page */
-h2.entry-title,
-h1.page-title {
+h2.entry-title,h1.page-title {
   text-align: left;
   margin-bottom: 0px;
   color: #000;
@@ -1674,8 +1628,7 @@ h1.page-title {
   float:right;
   font-weight:bold;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
   display:block;
     float:left;
     margin: 2px 2px 2px 0;
@@ -1700,27 +1653,22 @@ h1.page-title {
   color:#fff;
   font-weight:bold;
 }
-iframe{
+iframe, .entry-audio audio{
   width: 100%;
 }
-.entry-audio audio {
-  width: 100%;
-}
-
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){  
   .entry-content .alignwide {
     margin-left: -20px;
     margin-right: -20px;
   }
-  .box-content {
+  .box-content, #slider .inner_carousel p{
     display: none;
   }
   #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
     width: 40px;
   }
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
    padding: 4px;
   } 
   span.cart_no{
@@ -1732,9 +1680,6 @@ iframe{
   }
   .middle-header input[type="search"]{
     width: 80%;
-  }
-  #slider .inner_carousel p{
-    display: none;
   }
   .categry-title{
     padding: 13px;
@@ -1767,8 +1712,7 @@ iframe{
   .contentbox{
     width: auto;
   }
-  #header,
-  #header .logo h1{
+  #header,#header .logo h1{
     text-align: center;
   }
   .contact span {
@@ -1784,10 +1728,7 @@ iframe{
   .our-services{
     margin-top: 0;
   }
-  .box-content,
-  #slider .inner_carousel h2,
-  hr.slidehr,
-  #slider .inner_carousel p {
+  #slider .inner_carousel h1,.box-content,#slider .inner_carousel h2,hr.slidehr,#slider .inner_carousel p {
     display: none;
   }
   .middle-header form{
@@ -1815,9 +1756,6 @@ iframe{
     left: 45%;
     right: 50%;
   }
-  #slider .inner_carousel h1{
-    display: none;
-  }
   #slider .carousel-caption, #slider .inner_carousel{
     text-align: center !important;
     left: 0 !important;
@@ -1835,8 +1773,7 @@ iframe{
   #footer input[type="search"]{
     width: 100%;
   }
-  #footer th,
-  #footer td{
+  #footer th,#footer td{
     padding: 0px;
   } 
 }
@@ -1848,8 +1785,7 @@ iframe{
   #footer input[type="submit"]{
     margin-top: 5px;
   }
-  #footer th,
-  #footer td
+  #footer th,#footer td
   {
     padding: 4px;
   }
@@ -1868,22 +1804,20 @@ iframe{
   #footer input[type="search"]{
     width: 100%;
   }
-  .woocommerce ul.products[class*=columns-] li.product,
-  .woocommerce-page ul.products[class*=columns-] li.product{
+  .woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
     width: 100% !important;
     float: none !important;
   }
   .site-logo{
     padding: 10px 0;
   }
-  span.cart_no{
+  .cart_no{
     padding: 12px 14px;
   }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
-  .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
+  .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
     outline: 2px solid #fff;
     border-bottom: 1px solid #fff;
   }
@@ -1979,7 +1913,7 @@ iframe{
     text-align: center;
     border: none;
   }
-  nav#primary-site-navigation a.closebtn.mobile-menu i {
+  #primary-site-navigation a.closebtn.mobile-menu i {
     color: #fff;
   }
   #contact-info{

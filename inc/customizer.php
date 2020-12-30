@@ -1494,9 +1494,9 @@ final class Advance_Ecommerce_Store_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script('advance-ecommerce-store-customize-controls', trailingslashit(get_template_directory_uri()).'/js/customize-controls.js', array('customize-controls'));
+		wp_enqueue_script('advance-ecommerce-store-customize-controls', trailingslashit(esc_url(get_template_directory_uri())).'/js/customize-controls.js', array('customize-controls'));
 
-		wp_enqueue_style('advance-ecommerce-store-customize-controls', trailingslashit(get_template_directory_uri()).'/css/customize-controls.css');
+		wp_enqueue_style('advance-ecommerce-store-customize-controls', trailingslashit(esc_url(get_template_directory_uri())).'/css/customize-controls.css');
 	}
 }
 

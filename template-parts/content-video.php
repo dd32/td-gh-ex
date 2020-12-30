@@ -53,7 +53,7 @@
   <?php }?>
   <div class="new-text">
     <?php if(get_theme_mod('advance_ecommerce_store_blog_post_description_option') == 'Full Content'){ ?>
-      <?php the_content(); ?>
+      <div class="entry-content"><?php the_content(); ?></div>
     <?php }
     if(get_theme_mod('advance_ecommerce_store_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
       <?php if(get_the_excerpt()) { ?>
