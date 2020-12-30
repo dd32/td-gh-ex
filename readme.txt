@@ -40,26 +40,6 @@ Akaka is distributed under the terms of the GNU General Public License v2
      License: MIT license
      Source:  https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
-    banner1.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/light-sea-dawn-landscape-33545/
-
-    banner2.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/1-wtc-america-architecture-buildings-374710/
-
-    banner3.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/buildings-city-city-lights-1845084/
-
-    post-bg.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/mountain-sky-landscape-nature-2204316/
-
-    default-thumbnail.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/1-teacup-with-saucer-and-magazine-on-white-surface-818650/
-    
 
 === Installation ===
 
@@ -80,6 +60,9 @@ Theta provides support at https://www.coothemes.com/forum/akaka-theme.
 
 
 === Changelog ===
+version 1.0.6 20201230
+* Compatible with wordpress to version 5.6.0
+
 version 1.0.5 20180803
 * fix link problem
 
