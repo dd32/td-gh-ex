@@ -93,24 +93,6 @@ tgm-plugin
     http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  
 
-
-Images used are released under the CC0 license
-
-1. https://www.pexels.com/photo/light-sea-dawn-landscape-33545/
-
-2. https://www.pexels.com/photo/woman-wearing-red-fitted-cap-in-white-and-black-kayak-102633/
-
-3. https://www.pexels.com/photo/stary-night-photo-55664/
-
-4. https://www.pexels.com/photo/seaport-during-daytime-132037/
-
-5. https://www.pexels.com/photo/man-standing-on-brown-rocking-mountain-under-blue-sky-and-yellow-sunlight-196464/
-
-6. https://www.pexels.com/photo/city-sunny-people-street-2752/
-
-
-
-
 == Installation ==
 
 1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Click Add New button. Click Upload Theme button,  select theme .zip file, click on Install now button. If you have any errors, use alternate method.
@@ -121,6 +103,10 @@ content/themes/Ascreen/index.php (for example).
 3. Log into your WP admin panel and go to Appearance -> Themes. Now move your mouse over the Ascreen theme to activate  it.
 
 == Changelog ==
+Version 1.4.4  2020.12.30
+*fix link problem
+*Compatible with wordpress to version 5.6.0
+
 Version 1.4.3  2018.8.3
 *fix link problem
 

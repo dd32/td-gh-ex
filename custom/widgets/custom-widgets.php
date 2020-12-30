@@ -205,7 +205,9 @@ while ($i <= 6):
 if ($bannerPath[$i] <> '') { ?>
 <?php if ($bannerTitle[$i] == '') $bannerTitle[$i] = "advertisement";
 	  if ($bannerAlt[$i] == '') $bannerAlt[$i] = "advertisement"; ?>
-	<a href="<?php echo $bannerUrl[$i] ?>" <?php if ($new_window == 1) echo('target="_blank"') ?>><img src="<?php if ($use_relpath == 1) echo home_url(); else echo $bannerPath[$i]; ?><?php if ($use_relpath == 1 ) echo ("/" . $bannerPath[$i]); ?>" alt="<?php echo $bannerAlt[$i]; ?>" title="<?php echo $bannerTitle[$i]; ?>"  width="100%"/></a>
+	<a href="<?php echo $bannerUrl[$i] ?>" <?php if ($new_window == 1) echo('target="_blank"') ?>>
+		<img src="<?php if ($use_relpath == 1) echo esc_url(home_url()); else echo $bannerPath[$i]; ?><?php if ($use_relpath == 1 ) echo ("/" . $bannerPath[$i]); ?>" alt="<?php echo $bannerAlt[$i]; ?>" title="<?php echo $bannerTitle[$i]; ?>"  width="100%"/>
+		</a>
 <?php }; $i++;
 endwhile; ?>
 </div> <!-- end adwrap -->

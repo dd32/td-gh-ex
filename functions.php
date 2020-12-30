@@ -1,4 +1,5 @@
 <?php
+wp_body_open();
 function ascreen_setup(){	
 	global $content_width;
 
