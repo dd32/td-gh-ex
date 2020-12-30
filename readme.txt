@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 1.9.4
+Tested up to: 5.6
+Stable tag: 1.9.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ WallStreet is a Business WordPress Theme that contains a lot of features for cus
 
 == Keyboard navigation ==
 
-When the focus comes on any menu that has dropdown menus it is opening by pressing Enter key. Once you go to the child menu, the dropdown menu is closing by pressing the Esc key. For reverse movement, it is working by pressing Shift+Tab key. It is working on dropdown menus when the dropdown menu opened.
+Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
 == License ==
 
@@ -30,6 +30,10 @@ Wallstreet Pro is distributed under the terms of the GNU GPL
 	
 == Changelog ==
 
+@Version 1.9.5
+1. Removed default value from social links.
+2. Fixed Keyboard navigation for mobile view and Removed the unnecessary code.
+3. Fixed site title & tagline design issues in iPad view.
 @Version 1.9.4
 1. Implemented "Links within content must be underlined" guideline.
 2. Fixed comment section error notice.
@@ -260,6 +264,10 @@ License: CC0 Public Domain
 Page Header Image
 Source: https://pxhere.com/en/photo/1437705
 License: CC0 Public Domain
+
+* Image used for the Contact Form 7
+License: Under the terms of the GNU General Public License
+Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
 Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

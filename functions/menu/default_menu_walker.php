@@ -20,11 +20,11 @@ function wallstreet_fallback_page_menu( $args = array() ) {
 		$class = '';
 		if ( is_front_page() && !is_paged() )
 		{
-		$class = 'class="nav-item active"';
+		$class = 'class="menu-item nav-item active"';
 		}
 		else
 		{
-			$class = 'class="nav-item"';
+			$class = 'class="menu-item nav-item"';
 		}
 		$menu .= '<li ' . $class . '><a class="nav-link " href="' . esc_url(home_url( '/' )) . '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 		// If the front page is a page, add it to the exclude list

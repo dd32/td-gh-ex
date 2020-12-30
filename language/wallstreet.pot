@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2020-12-03 13:31+0530\n"
+"POT-Creation-Date: 2020-12-29 18:29+0530\n"
 "PO-Revision-Date: 2018-09-26 17:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -332,64 +332,64 @@ msgstr ""
 msgid "Get wallstreet PRO Now!"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:15
+#: admin/tab-pages/getting-started.php:14
 msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:18
+#: admin/tab-pages/getting-started.php:17
 msgid ""
 "To take full advanctage of the theme features you need to install "
 "recommended plugins."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:21
+#: admin/tab-pages/getting-started.php:20
 msgid "Click here"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:26
+#: admin/tab-pages/getting-started.php:25
 msgid "Start Customizing"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:29
+#: admin/tab-pages/getting-started.php:28
 msgid ""
 "After activating recommended plugins , now you can start customization."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:32
+#: admin/tab-pages/getting-started.php:31
 msgid "Go to Customizer"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:37
-#: admin/tab-pages/getting-started.php:43 admin/tab-pages/support.php:20
+#: admin/tab-pages/getting-started.php:36
+#: admin/tab-pages/getting-started.php:42 admin/tab-pages/support.php:20
 msgid "Documentation"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:40
+#: admin/tab-pages/getting-started.php:39
 msgid ""
 "Browse the documention for the detailed information regarding this theme."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:49
+#: admin/tab-pages/getting-started.php:48
 msgid "wallstreet Theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:55
+#: admin/tab-pages/getting-started.php:54
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:61
+#: admin/tab-pages/getting-started.php:60
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:65
+#: admin/tab-pages/getting-started.php:64
 msgid "PRO Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:71
+#: admin/tab-pages/getting-started.php:70
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:75
+#: admin/tab-pages/getting-started.php:74
 msgid "Premium Theme Details"
 msgstr ""
 
@@ -1345,27 +1345,27 @@ msgstr ""
 msgid "Enable social media links on footer section"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:76
+#: functions/customizer/customizer-social.php:75
 msgid "Twitter URL"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:95
+#: functions/customizer/customizer-social.php:94
 msgid "Facebook URL"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:115
+#: functions/customizer/customizer-social.php:114
 msgid "GooglePlus URL"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:136
+#: functions/customizer/customizer-social.php:135
 msgid "LinkedIn URL"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:156
+#: functions/customizer/customizer-social.php:155
 msgid "YouTube URL"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:176
+#: functions/customizer/customizer-social.php:175
 msgid "Instagram URL"
 msgstr ""
 
@@ -1449,8 +1449,7 @@ msgid "Tag Archive %s"
 msgstr ""
 
 #: wallstreet_theme_setup_data.php:10 wallstreet_theme_setup_data.php:15
-#: wallstreet_theme_setup_data.php:57 wallstreet_theme_setup_data.php:71
-#: wallstreet_theme_setup_data.php:72
+#: wallstreet_theme_setup_data.php:57
 msgid "on"
 msgstr ""
 

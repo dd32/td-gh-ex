@@ -216,3 +216,17 @@
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar-header  {
+        text-align: unset;
+    }
+    .navbar-header .site-description {
+        text-align: unset;
+    }
+    .logo-link-url {
+        padding: 15px 15px 12px 12px;
+    }
+    .navbar-toggle {
+        margin-top: 30px;
+    }
+}

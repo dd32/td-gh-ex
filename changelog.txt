@@ -1,5 +1,9 @@
 == Changelog ==
 
+@Version 1.9.5
+1. Removed default value from social links.
+2. Fixed Keyboard navigation for mobile view and Removed the unnecessary code.
+3. Fixed site title & tagline design issues in iPad view.
 @Version 1.9.4
 1. Implemented "Links within content must be underlined" guideline.
 2. Fixed comment section error notice.

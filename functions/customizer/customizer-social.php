@@ -42,7 +42,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	'wallstreet_pro_options[footer_social_media_enabled]'
     ,
     array(
-        'default' => true,
+        'default' => false,
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'wallstreet_sanitize_checkbox',
 		'type' => 'option',
@@ -63,8 +63,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'wallstreet_pro_options[social_media_twitter_link]',
     array(
-        'default' => '#',
-		'type' => 'theme_mod',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -83,7 +82,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'wallstreet_pro_options[social_media_facebook_link]',
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -103,7 +102,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[social_media_googleplus_link]' ,
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -124,7 +123,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[social_media_linkedin_link]' ,
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -144,7 +143,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[social_media_youtube_link]' ,
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
@@ -164,7 +163,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[social_media_instagram_link]' ,
     array(
-        'default' => '#',
+        'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )

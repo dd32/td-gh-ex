@@ -68,14 +68,14 @@ function wallstreet_theme_data_setup()
 			'home_blog_description' => __('Curabitur quis nibh vulputate nisi tincidunt eleifend.','wallstreet'),
 			
 			/** Social media links **/
-			'header_social_media_enabled'=>__('on','wallstreet'),			
-			'footer_social_media_enabled'=>__('on','wallstreet'),			
-			'social_media_twitter_link' =>"#",			
-			'social_media_facebook_link' =>"#",
-			'social_media_googleplus_link' =>"#",
-			'social_media_linkedin_link' =>"#",		
-			'social_media_youtube_link' =>"#",
-			'social_media_instagram_link' => '#',
+			'header_social_media_enabled'=> true,			
+			'footer_social_media_enabled'=> false,			
+			'social_media_twitter_link' =>"",			
+			'social_media_facebook_link' =>"",
+			'social_media_googleplus_link' =>"",
+			'social_media_linkedin_link' =>"",		
+			'social_media_youtube_link' =>"",
+			'social_media_instagram_link' => '',
 			
 			/** footer customization **/
 			'footer_copyright' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow"> Wallstreet</a> by Webriti', 'wallstreet' ).'</p>',
