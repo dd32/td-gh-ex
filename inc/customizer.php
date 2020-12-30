@@ -1609,9 +1609,9 @@ final class Advance_Fitness_Gym_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script('advance-fitness-gym-customize-controls', trailingslashit(get_template_directory_uri()).'/js/customize-controls.js', array('customize-controls'));
+		wp_enqueue_script('advance-fitness-gym-customize-controls', trailingslashit(esc_url(get_template_directory_uri())).'/js/customize-controls.js', array('customize-controls'));
 
-		wp_enqueue_style('advance-fitness-gym-customize-controls', trailingslashit(get_template_directory_uri()).'/css/customize-controls.css');
+		wp_enqueue_style('advance-fitness-gym-customize-controls', trailingslashit(esc_url(get_template_directory_uri())).'/css/customize-controls.css');
 	}
 }
 

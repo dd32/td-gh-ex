@@ -3,10 +3,10 @@ Theme Name: Advance Fitness Gym
 Theme URI: https://www.themeshopy.com/themes/free-wordpress-fitness-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPress theme for gyms, fitness clubs, yoga classes, weight loss centres, personal trainers, aerobics classes, healthcare centres, spa, workout studios, diet planners, gymnasium, bodybuilding, fitness coach, fitness consultant, fitness gym, fitness trainer, nutrition, sports, wellness center, psychologist, ecommerce, zumba classes, physiotherapists, health consultants and all the fitness freaks who are on a mission to make people healthy and fit. This multipurpose theme has an inviting design to make people turn their heads towards your website at least once. The Bootstrap framework gives a strong base with responsive layout yielding a beautiful look on different sizes of mobiles, tablets and desktops. Facility for customisation is provided right at your fingertips, through theme customizer, without requiring any coding knowledge. Advance Fitness Gym loads on all browsers and can be translated into numerous local and international languages. It is optimized for search engines and integrated with social media icons. It offers interactive features and animated transitions to make the site stand apart among others. With multiple layouts for header, editor style, footer and sidebars, you can style your website to suit your brand. It comes with thorough documentation that will let you make the most of your website irrespective of your skills. Demo: https://themeshopy.com/advance-fitness-gym-pro/
+Description: Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPress theme for gyms, fitness clubs, yoga classes, weight loss centres, personal trainers, aerobics classes, healthcare centres, spa, workout studios, Supplements, Crossfit, boxing, Training, diet planners, gymnasium, bodybuilding, fitness coach, fitness consultant, fitness gym, fitness trainer, nutrition, sports, wellness center, psychologist, Marathon event, Dance school, Martial arts, ecommerce, zumba classes, physiotherapists, health consultants and all the fitness freaks who are on a mission to make people healthy and fit. This multipurpose theme has an inviting design to make people turn their heads towards your website at least once. The Bootstrap framework gives a strong base with responsive layout yielding a beautiful look on different sizes of mobiles, tablets and desktops. Facility for customisation is provided right at your fingertips, through theme customizer, without requiring any coding knowledge. Advance Fitness Gym loads on all browsers and can be translated into numerous local and international languages. It is optimized for search engines and integrated with social media icons. It offers interactive features and animated transitions to make the site stand apart among others. With multiple layouts for header, editor style, Wide Blocks, footer and sidebars, you can style your website to suit your brand. It comes with thorough documentation that will let you make the most of your website irrespective of your skills. Demo: https://themeshopy.com/advance-fitness-gym-pro/
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.5.6
+Version: 0.5.7
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-fitness-gym
@@ -44,12 +44,7 @@ img{
 section img{
 	max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
 	margin:0;
 	padding:10px 0;
 	color: #000
@@ -67,12 +62,10 @@ a:hover{
 	text-decoration:none;
 	color:#666;
 }
-a:focus,
-a:hover{
+a:focus,a:hover{
 	text-decoration:none !important;
 }
-a:focus, .metabox a:focus,
-.woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+a:focus, .metabox a:focus,.woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
   outline: 2px solid #fe5e24;
   border-bottom: 1px solid #fff;
 }
@@ -81,7 +74,7 @@ a:focus, .metabox a:focus,
   outline: 2px solid #fe5e24;
   border-bottom: 1px solid #fff !important;
 }
-#sidebar input[type="submit"]:focus{
+#sidebar input[type="submit"]:focus, #contact-info input:focus{
   outline: 2px solid #000;
   border-bottom: 1px solid #000 !important;
 }
@@ -101,19 +94,7 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 .clear{
@@ -149,40 +130,39 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
 .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
 	margin:0;
@@ -192,8 +172,7 @@ z-index: 100000; /* Above WP toolbar. */
 	margin:0;
 	padding:0;
 }
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
  	display: inline;
 	float: left;
 	margin-right:20px;
@@ -203,8 +182,7 @@ z-index: 100000; /* Above WP toolbar. */
 	border:1px solid #bbb;
 	padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
 	display: inline;
 	float: right;
 	border:1px solid #bbb;
@@ -212,8 +190,7 @@ z-index: 100000; /* Above WP toolbar. */
 	margin-bottom:10px;
 	margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
 	clear: both;
 	display: block;
 	margin-left: auto;
@@ -234,7 +211,7 @@ z-index: 100000; /* Above WP toolbar. */
 	margin:0;
 	padding:0;
 }
-.entry-content a, #comments p a,  .woocommerce-product-details__short-description p a{
+.entry-content p a, #comments p a, .woocommerce-product-details__short-description p a{
   color: #000;
   text-decoration: underline;
 }
@@ -244,11 +221,7 @@ z-index: 100000; /* Above WP toolbar. */
 small{
 	font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phone"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phone"],input[type="password"],textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
 	font-size:16px;
@@ -274,7 +247,7 @@ input[type="submit"] {
 	color:#000;
 }
 input#pwbox-1168 {
-    padding: 9px;
+  padding: 9px;
 }
 /*elementor*/
 .elementor-html #loader, .elementor-html #loader-wrapper{ 
@@ -435,12 +408,9 @@ input#pwbox-1168 {
 .top_headbar{
   background-color: #161415;
 }
-#header .socialbox a {
+#header .socialbox a,#header .top-contact, .contact a, .mail a{
   color: #fff;
 }
-#header .top-contact {
-  color: #fff;
-}  
 #header .contact{
   padding: 8px;
   display: inline-block;
@@ -460,9 +430,6 @@ input#pwbox-1168 {
 }
 #contact-info{
   display: none;
-}
-.contact a, .mail a{
-  color: #fff;
 }
 /* ---------Middle Header--------- */
 .logo{
@@ -536,8 +503,7 @@ ul.list_nav {
   display: inline-block;
   position: relative;
 }
-.primary-navigation li a:hover,
-.primary-navigation li:hover a{
+.primary-navigation li a:hover,.primary-navigation li:hover a{
   background-color: #000;
   color: #fff;
 }
@@ -572,7 +538,7 @@ ul.list_nav {
   font-size: 12px;
   z-index: 999;
 }
-.primary-navigation ul ul li:hover > a , .primary-navigation ul li a:hover{
+.primary-navigation ul ul li:hover > a, .primary-navigation ul li a:hover{
   color: #fe5e24;
 }
 .primary-navigation ul ul li{
@@ -611,9 +577,7 @@ ul.list_nav {
   right: 10px;
   top:15px;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
@@ -748,7 +712,6 @@ ul.list_nav {
 #fitness-content {
   margin: 2% 0;
 }
-
 /*---------- Welcome section -----------*/
 #fitness-togym{
   padding:2% 0;
@@ -932,12 +895,10 @@ section .innerlightbox{
 	padding:4.5em 0;
 	color:#000;
 }
-
 /* Footer Section */
-#footer .search-form label{
+#footer .search-form label, table#wp-calendar{
   width: 100%;
 }
-
 #footer h3.widget-title a {
   color: #fe5e24;
 }
@@ -960,23 +921,16 @@ section .innerlightbox{
 #footer td#prev a {
   color: #fff;
 }
-table#wp-calendar {
-  width: 100%;
-}
-#footer caption,
-#sideabr caption {
+#footer caption,#sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
 	color:#202020 !important;
 	padding: 5px;
 }
@@ -984,14 +938,12 @@ table#wp-calendar {
   padding: 7px;
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -1139,9 +1091,7 @@ table#wp-calendar td a {
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1240,8 +1190,7 @@ h2.woocommerce-loop-product__title{
   font-weight: 500;
   font-size: 22px !important;
 }
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #000;
   font-size: 16px;
 }
@@ -1383,7 +1332,7 @@ tr.woocommerce-cart-form__cart-item.cart_item a{
   font-size: 14px;
 }
 .woocommerce .star-rating {
-    float: left;
+  float: left;
 }
 .news-item.layout-two .news-text-wrap{
   font-size: 14px;
@@ -1429,8 +1378,7 @@ tr.woocommerce-cart-form__cart-item.cart_item a{
 form.woocommerce-form.woocommerce-form-login.login {
   display: inline-block;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1532,8 +1480,7 @@ img.rss-widget-icon {
   width: auto !important;
 }
 /* Page */
-h2.entry-title,
-h1.page-title {
+h2.entry-title,h1.page-title {
   text-align: left;
   margin-bottom: 10px;
   color: #fe5e24;
@@ -1615,8 +1562,7 @@ h1.page-title {
 	font-weight:bold;
   margin-top: 15px;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
 	display:block;
   float:left;
   margin: 2px 2px 2px 0;
@@ -1641,13 +1587,9 @@ h1.page-title {
   color:#000;
 	font-weight:bold;
 }
-iframe{
+iframe, .entry-audio audio{
   width: 100%;
 }
-.entry-audio audio {
-  width: 100%;
-}
-
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
   .entry-content .alignwide {
@@ -1657,8 +1599,7 @@ iframe{
  	.box-content {
 	 display: none;
   }
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
 	 padding: 4px;
 	}	
   .woocommerce .products li {
@@ -1706,8 +1647,7 @@ iframe{
   .page-box{
     margin: 0 10px;
   }
-	#header,
-  #menu-sidebar .socialbox {
+	#header,#menu-sidebar .socialbox {
     text-align: center !important;
   }
 	.contact a {
@@ -1722,9 +1662,9 @@ iframe{
 		margin-top: 0;
 	}
 	.box-content {
-	display: none;
-    }
-    #slider .inner_carousel p {
+    display: none;
+  }
+  #slider .inner_carousel p {
     display: none;
   }
   #slider .inner_carousel h2 {
@@ -1759,10 +1699,10 @@ iframe{
     padding: 0px;
   }
   .fitnes-post {
-  background: #fff;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  margin-top: 18px;
-  position: relative;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 18px;
+    position: relative;
   }
   #fitness-togym .know-btn {
     text-align: left;
@@ -1794,8 +1734,7 @@ iframe{
 	#footer input[type="search"]{
 		width: 100%;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 0px;
 	}	
 }
@@ -1807,8 +1746,7 @@ iframe{
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 4px;
 	}
 }
@@ -1820,18 +1758,14 @@ iframe{
 	#footer input[type="search"]{
 		width: 100%;
 	}
-	.woocommerce ul.products[class*=columns-] li.product,
-	.woocommerce-page ul.products[class*=columns-] li.product{
+	.woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
 		width: 100% !important;
 		float: none !important;
     margin: 0px 0 20px 0 !important;
 	}
 }
-
-/*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
-  .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .primary-navigation a:focus, #menu-sidebar input[type="submit"]:focus{
+  .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus, #menu-sidebar input[type="submit"]:focus{
     outline: 2px solid #fff;
     border-bottom: 1px solid #fff;
   }
