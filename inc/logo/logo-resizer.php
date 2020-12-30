@@ -129,7 +129,7 @@ function advance_education_min_max( $short, $long, $short_max, $long_max, $perce
  * JS handlers for Customizer Controls
  */
 function advance_education_customize_controls_js() {
-	wp_enqueue_script( 'advance-education-customizer-controls', get_template_directory_uri() . 'inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
+	wp_enqueue_script( 'advance-education-customizer-controls', esc_url(get_template_directory_uri()) . 'inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'advance_education_customize_controls_js' );
 

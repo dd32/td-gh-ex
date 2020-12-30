@@ -4,7 +4,7 @@ Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, o
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.5.7
+Stable tag: 0.5.8
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 
 == Description ==
 
-Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, Academics and activities, toys stores, babysitting and summer camps, mentors, online library, educational web, LMS, Training Center, Courses Hub, College, Academy, university, school, Kindergarten educational websites and everything related to education, Secondary Schools, coaching centers,learning and teaching. It offers various layout options and most formats to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages also compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
+Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, Academics and activities, toys stores, babysitting and summer camps, mentors, online library, educational web, LMS, Training Center, private schools, home-learning, tutoring, language school, course, class, charter school, boarding school, religious, virtual self-learning. Courses Hub, College, Academy, university, school, Kindergarten educational websites and everything related to education, Secondary Schools, coaching centers,learning and teaching. It offers various layout options and most formats to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages also compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
 
 == Changelog ==
 
@@ -171,12 +171,17 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 
 = 0.5.6 =
 * Added flexible-header tag.
-* Changed escaped in ts-color-pallete.php.
+* Changed escape in ts-color-pallete.php.
 * Done with prefix if required.
 * Resolved translatable errors from customizer.php.
 
 = 0.5.7 =
 * Added block-styles tag.
+
+= 0.5.8 =
+* Done Underline on anchor tag.
+* Done escaping on get_template_directory_uri().
+* Corrected some focus errors.
 
 == Resources ==
 

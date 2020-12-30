@@ -3,10 +3,10 @@ Theme Name: Advance Education
 Theme URI: https://www.themeshopy.com/themes/free-education-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, Academics and activities, toys stores, babysitting and summer camps, mentors, online library, educational web, LMS, Training Center, Courses Hub, College, Academy, university, school, Kindergarten educational websites and everything related to education, Secondary Schools, coaching centers,learning and teaching. It offers various layout options and most formats to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages also compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://www.themeshopy.com/advance-education-pro/
+Description: Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, Academics and activities, toys stores, babysitting and summer camps, mentors, online library, educational web, LMS, Training Center, private schools, home-learning, tutoring, language school, course, class, charter school, boarding school, religious, virtual self-learning. Courses Hub, College, Academy, university, school, Kindergarten educational websites and everything related to education, Secondary Schools, coaching centers,learning and teaching. It offers various layout options and most formats to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages also compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://www.themeshopy.com/advance-education-pro/
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.5.7
+Version: 0.5.8
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-education
@@ -44,12 +44,7 @@ img{
 section img{
   max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
   margin:0;
   padding:10px 0;
   color: #cc3333;
@@ -102,19 +97,7 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 .clear{
@@ -146,7 +129,6 @@ input[type='submit']:hover{
   top:-9999em;
   left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -160,40 +142,39 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
 .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
   margin:0;
@@ -203,8 +184,7 @@ z-index: 100000; /* Above WP toolbar. */
   margin:0;
   padding:0;
 }
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
   display: inline;
   float: left;
   margin-right:20px;
@@ -214,8 +194,7 @@ z-index: 100000; /* Above WP toolbar. */
   border:1px solid #bbb;
   padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
   display: inline;
   float: right;
   border:1px solid #bbb;
@@ -223,8 +202,7 @@ z-index: 100000; /* Above WP toolbar. */
   margin-bottom:10px;
   margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
   clear: both;
   display: block;
   margin-left: auto;
@@ -248,11 +226,7 @@ z-index: 100000; /* Above WP toolbar. */
 small{
   font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
   border:1px solid #bcbcbc;
   width:100%;
   font-size:16px;
@@ -291,8 +265,7 @@ input[type="submit"] {
   color: #fff;
 }
 /*preloader*/
-.elementor-html #loader,
-.elementor-html #loader-wrapper{
+.elementor-html #loader,.elementor-html #loader-wrapper{
   display: none;
 }
 #loader-wrapper {
@@ -450,8 +423,7 @@ input[type="submit"] {
   bottom: 0px; 
   padding: 8px 0;
 }
-.logo h1,
-.logo p.site-title a{
+.logo h1,.logo p.site-title a{
   font-size:35px;
   font-weight:bold;
   text-align:center;
@@ -511,17 +483,14 @@ input[type="submit"] {
 .page-template-custom-front-page .top-header{
   background: #fff;
 }
-.mail i,
-.phone i{
+.mail i,.phone i{
   margin-right: 5px;
   color: #cc3333;
 }
-.mail a,
-.phone a{
+.mail a,.phone a{
   color: #000;
 }
-.mail,
-.phone{
+.mail,.phone{
   color: #232323;
   padding:18px 0; 
   font-size: 14px;
@@ -610,9 +579,7 @@ ul.list_nav {
 ul.sub-menu {
   margin-top: 0px;
 }
-.primary-navigation li a:hover,
-.primary-navigation li:hover a, .primary-navigation li a:focus,
-.primary-navigation li:focus a{
+.primary-navigation li a:hover,.primary-navigation li:hover a, .primary-navigation li a:focus,.primary-navigation li:focus a{
   background-color: #000;
   color: #fff;
 }
@@ -951,12 +918,10 @@ h3.title-btn {
   padding: 0;
   font-size: 22px;
 }
-.page-box .new-text,
-.page-box-single .new-text{
+.page-box .new-text,.page-box-single .new-text{
   padding:10px;
 }
-.page-box p,
-.page-box-single p{
+.page-box p,.page-box-single p{
   font-size:16px;
   margin:10px 0 !important;
 }
@@ -988,8 +953,7 @@ h3.title-btn {
 .read-more-btn {
   margin: 20px 0;
 }
-.page-box .metabox,
-.page-box-single .metabox{
+.page-box .metabox,.page-box-single .metabox{
   color:#cc3333;
   padding: 15px 0 5px;
   clear:both;
@@ -1054,6 +1018,10 @@ h3.title-btn {
   color: #fff;
   background: #cc3333;
   border: 1px solid #fff;
+}
+.entry-content a{
+  color: #cc3333;
+  text-decoration: underline;
 }
 /* --------- content-single  Page ------- */
 .page-box-single h1{
@@ -1142,20 +1110,16 @@ table#wp-calendar {
 table#wp-calendar td a {
   color: #cc3333;
 }
-#footer caption,
-#sideabr caption {
+#footer caption,#sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
   color:#202020 !important;
   padding: 5px;
 }
@@ -1163,14 +1127,12 @@ table#wp-calendar td a {
   padding: 7px;
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -1295,9 +1257,7 @@ table#wp-calendar td a {
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1754,8 +1714,7 @@ img.rss-widget-icon {
   color:#515151;
 }
 /* Page */
-h2.entry-title,
-h2.page-title {
+h2.entry-title, h2.page-title {
   text-align: left;
   margin-bottom: 10px;
   color: #cc3333;
@@ -1837,8 +1796,7 @@ h2.page-title {
   float:right;
   font-weight:bold;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
   display:block;
   float:left;
   margin: 2px 2px 2px 0;
@@ -1869,8 +1827,7 @@ iframe, .entry-audio audio {
 }
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){  
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
     padding: 0px;
   }
   #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
@@ -1914,13 +1871,10 @@ iframe, .entry-audio audio {
   }
 }
 @media screen and (max-width:720px) { 
-  #header,
-  #header .logo h1,
-  #slider .inner_carousel{
+  #header,#header .logo h1,#slider .inner_carousel{
     text-align: center;
   }
-  #slider .inner_carousel p,
-  #slider .inner_carousel h2 {
+  #slider .inner_carousel p,#slider .inner_carousel h2 {
     display: none;
   }
   #comments input[type="submit"].submit{
@@ -1937,20 +1891,15 @@ iframe, .entry-audio audio {
     margin-top: 4px;
     margin-bottom: 10px;
   }
-  .page-template-custom-front-page #header-top,
-  .page-template-custom-front-page .logo{
+  .page-template-custom-front-page #header-top,.page-template-custom-front-page .logo{
     position: static;
     margin: 0
   }
-  .phone,
-  .mail,
-  .time,
-  .top-header .account-btn{
+  .phone,.mail,.time,.top-header .account-btn{
     text-align: center;
     margin-bottom: 10px;
   }
-  .phone,
-  .mail{
+  .phone,.mail{
     padding:0;
   }
   .cat_content:hover .cat_body{
@@ -1975,8 +1924,7 @@ iframe, .entry-audio audio {
   #footer input[type="search"]{
     width: 100%;
   }
-  #footer th,
-  #footer td{
+  #footer th,#footer td{
     padding: 0px;
   } 
 }
@@ -1997,12 +1945,10 @@ iframe, .entry-audio audio {
   #footer input[type="submit"]{
     margin-top: 5px;
   }
-  #footer th,
-  #footer td{
+  #footer th,#footer td{
     padding: 4px;
   }
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
     padding: 0px;
   }
   #slider .carousel-caption {
@@ -2031,8 +1977,7 @@ iframe, .entry-audio audio {
   #footer input[type="search"]{
     width: 100%;
   }
-  .woocommerce ul.products[class*=columns-] li.product,
-  .woocommerce-page ul.products[class*=columns-] li.product{
+  .woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
     width: 100% !important;
     float: none !important;
   }
@@ -2119,10 +2064,8 @@ iframe, .entry-audio audio {
     top:48%;
   }
 }
-/*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
-  .menubar .primary-navigation ul li a:focus,
-  a.closebtn.responsive-menu:focus, .toggle-menu button:focus, .primary-navigation a:focus{
+  .menubar .primary-navigation ul li a:focus,a.closebtn.responsive-menu:focus, .toggle-menu button:focus, .primary-navigation a:focus{
     outline: 1px solid #fff !important;
     border-bottom: 1px solid #fff !important;
   }
@@ -2212,9 +2155,7 @@ iframe, .entry-audio audio {
     display: grid;
     text-align: center;
   }
-  .primary-navigation .current_page_item > a,
-  .primary-navigation .current-menu-item > a,
-  .primary-navigation .current_page_ancestor > a{
+  .primary-navigation .current_page_item > a,.primary-navigation .current-menu-item > a,.primary-navigation .current_page_ancestor > a{
     background:unset;
   }
   .page-template-custom-front-page .header-nav #header {
