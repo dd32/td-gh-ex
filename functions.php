@@ -1,4 +1,5 @@
 <?php
+wp_body_open();
 $template_directory = get_template_directory();
 global $theme_info;
 

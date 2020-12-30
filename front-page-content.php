@@ -10,7 +10,7 @@
             <div id="carousel-acool-generic" class="carousel slide" data-ride="carousel" data-interval="5000" >
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="<?php echo get_theme_mod( 'homepage_banner_img',$homepage_banner_img_deault);?> "  width="100%"/>
+                        <img src="<?php echo esc_url(get_theme_mod( 'homepage_banner_img',$homepage_banner_img_deault)）;?> "  width="100%"/>
                         <div class="carousel-caption">
                             <h1><?php echo esc_html(get_theme_mod( 'homepage_banner_text_h1',__( 'The jQuery slider that just slides.', 'acool' ) ) ) ;?></h1>
                             <p class="ct_slider_text"><?php echo esc_html(get_theme_mod( 'homepage_banner_text',__( 'No fancy effects or unnecessary markup.', 'acool' )) );?></p>
