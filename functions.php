@@ -1,4 +1,5 @@
 <?php
+wp_body_open();
 define( 'THEME_COLOR', '#cfa670' );
 
 function best_restaurant_setup(){

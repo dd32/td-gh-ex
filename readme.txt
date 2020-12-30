@@ -2,7 +2,7 @@
 Contributors: CooThemes
 Tags: Blog, Custom Background, Custom Logo, Custom Menu, Custom-Colors, Custom Header, Flexible Header, Featured Images,  Footer Widgets, Two Columns, Right Sidebar, Left Sidebar, Theme Options, E-Commerce, Food and Drink, Full Width Template,  Translation Ready
 
-Requires at least: 4.9
+Requires at least: 5.6
 Tested up to: 4.9.8
 Stable tag: 1.0.4
 
@@ -46,21 +46,6 @@ Best Restaurant is distributed under the terms of the GNU General Public License
      License: GNU GPL, version 2 or later
      Source:  https://www.coothemes.com/icon/
 
-
-    service.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/spaghetti-pasta-noodles-italian-2931846/
-
-
-    default.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/tea-time-poetry-coffee-reading-3240766/
-
-
-    screenshot.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/restaurant-people-eating-690975/
-
 === Frequently Asked Questions ===
 
 Does this theme have a support forum? 
@@ -69,6 +54,9 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/
 
 
 === Changelog ===
+=version 1.0.7 20201230=
+*Compatible with wordpress to version 5.6.0
+
 =version 1.0.6 20181015=
 *mod  copyright
 
