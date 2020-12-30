@@ -35,36 +35,6 @@ Best Food is distributed under the terms of the GNU General Public License v2
      Source:  https://github.com/pixelcog/parallax.js/blob/master/LICENSE
 
 
-
-    advantage.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/food-on-white-background-256318/
-
-    service.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/beef-cuisine-delicious-dinner-299347/
-
-
-    testimonial.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/baked-bread-on-table-top-900104/
-
-
-    contact.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    https://www.pexels.com/photo/coffee-lifestyle-starbucks-coffee-shop-17746/
-
-
-    fact.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/assorted-foods-892649/
-
-
-    default.jpg, Copyright Pexels.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/1-teacup-with-saucer-and-magazine-on-white-surface-818650/
-    
-
 === Frequently Asked Questions ===
 
 Does this theme have a support forum? 
@@ -73,6 +43,9 @@ Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
 
 
 === Changelog ===
+=version 1.0.9 20201230=
+*Compatible with wordpress to version 5.6.0
+
 =version 1.0.8 20180313=
 *Fixed mobile menu when menu title is empty
 

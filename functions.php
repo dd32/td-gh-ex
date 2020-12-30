@@ -1,4 +1,5 @@
 <?php
+wp_body_open();
 define( 'THEME_COLOR', '#ffb606' );
 
 function best_food_setup(){
