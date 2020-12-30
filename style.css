@@ -3,10 +3,10 @@ Theme Name: Advance Coaching
 Theme URI: https://www.themeshopy.com/themes/free-coaching-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, coaches, personal trainers, speakers, motivators, and other personal users personal trainer, tuition center, online classes, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video, four column layout etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
+Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, coaches, personal trainers, speakers, motivators, and other personal users personal trainer, Online Course Providers, Online Training, Vendor Certification Training, tuition center, online classes, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, Custom Header, gallery, video, four column layout etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
 Tested up to: 5.6
-Requires PHP: 7.2.14
-Version: 0.5.7
+Requires PHP: 7.2
+Version: 0.5.8
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-coaching
@@ -45,12 +45,7 @@ img{
 section img{
 	max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
 	margin:0;
 	padding:10px 0;
 	color: #051f31;
@@ -59,7 +54,7 @@ h6{
 p{
 	margin:0 0 15px;
 	padding:0;
-	font-size:16px;
+	font-size:16px !important;
 }
 a{
 	text-decoration:none;
@@ -69,8 +64,7 @@ a:hover{
 	text-decoration:none;
 	color:#666;
 }
-a:focus,
-a:hover{
+a:focus,a:hover{
 	text-decoration:none !important;
 }
 a:focus, textarea:focus, input:focus, .page-template-custom-front-page .topbar a:focus,.woocommerce form .form-row input.input-text:focus, 
@@ -95,19 +89,7 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 .clear{
@@ -139,7 +121,6 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -153,40 +134,39 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
 .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
 	margin:0;
@@ -196,8 +176,7 @@ z-index: 100000; /* Above WP toolbar. */
 	margin:0;
 	padding:0;
 }
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
  	display: inline;
 	float: left;
 	margin-right:20px;
@@ -207,8 +186,7 @@ z-index: 100000; /* Above WP toolbar. */
 	border:1px solid #bbb;
 	padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
 	display: inline;
 	float: right;
 	border:1px solid #bbb;
@@ -216,8 +194,7 @@ z-index: 100000; /* Above WP toolbar. */
 	margin-bottom:10px;
 	margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
 	clear: both;
 	display: block;
 	margin-left: auto;
@@ -244,11 +221,7 @@ z-index: 100000; /* Above WP toolbar. */
 small{
 	font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
 	font-size:16px;
@@ -338,8 +311,7 @@ input[type="submit"] {
   line-height: 1.8;
 }
 /*preloader*/
-.elementor-html #loader,
-.elementor-html #loader-wrapper{
+.elementor-html #loader,.elementor-html #loader-wrapper{
   display: none;
 }
 #loader-wrapper {
@@ -355,7 +327,6 @@ input[type="submit"] {
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -533,7 +504,7 @@ input[type="submit"] {
   margin-left: 15px;
 }
 .request-btn {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .contact_data .mail{
   padding: 10px 0px 4px;
@@ -584,16 +555,16 @@ input[type="submit"] {
   box-shadow: 0px 0px 12px #c0bebe;
 }
 .closepop {
- position: absolute;
- top: 0;
- text-align: center;
- font-size: 40px;
- z-index: 9999;
- right: 50%;
- color: #575756;
- background: none;
- border:none;
- cursor: pointer;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  font-size: 40px;
+  z-index: 9999;
+  right: 50%;
+  color: #575756;
+  background: none;
+  border:none;
+  cursor: pointer;
 }
 button.closepop span{
   font-size: 40px;
@@ -616,25 +587,25 @@ button.closepop span{
   width: 95%;
 }
 .serach-page input.search-field {
- border: 1px solid #ccc;
- padding: 9px;
+  border: 1px solid #ccc;
+  padding: 9px;
 }
 .serach_inner input.search-field {
- padding: 10px;
- font-size: 20px;
- font-style: italic;
- font-weight: normal;
- color: #3a4d5e;
- max-height: 1200px;
+  padding: 10px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: normal;
+  color: #3a4d5e;
+  max-height: 1200px;
 }
 .serach_inner input.search-submit {
- padding: 8px 35px;
- margin: 5px 0;
- font-size: 20px;
+  padding: 8px 35px;
+  margin: 5px 0;
+  font-size: 20px;
 }
 button.search-submit {
- border: 0;
- background: transparent;
+  border: 0;
+  background: transparent;
 }
 #post- .entry-title span {
   font-size: 50px;
@@ -646,10 +617,10 @@ button.search-submit {
   border: 1px solid #bbb;
 }
 input.search-field {
- border: none;
- padding: 10px;
- background: transparent;
- width: 95%;
+  border: none;
+  padding: 10px;
+  background: transparent;
+  width: 95%;
 }
 .search-box i {
   padding: 10px 0px;
@@ -711,7 +682,6 @@ a.search-box {
 .page-template-custom-front-page .search-box i {
   color: #005bba;
 }
-
 /* --------- Slider --------- */
 #slider{ 
   max-width:100%; 
@@ -732,8 +702,7 @@ a.search-box {
   top:100%;
   opacity: unset;
 }
-#slider .carousel-control-next-icon i,
-#slider .carousel-control-prev-icon i{
+#slider .carousel-control-next-icon i,#slider .carousel-control-prev-icon i{
   background: #005bba;
   padding: 20px 22px;
   border-radius: 50%;
@@ -1139,20 +1108,16 @@ section .innerlightbox{
 #footer #wp-calendar td a {
   color: #fff;
 }
-#footer caption,
-#sideabr caption {
+#footer caption,#sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
 	color:#202020 !important;
 	padding: 5px;
 }
@@ -1160,14 +1125,12 @@ section .innerlightbox{
   padding: 7px;
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -1271,9 +1234,7 @@ section .innerlightbox{
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1331,22 +1292,19 @@ span.entry-comments {
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
-.woocommerce nav.woocommerce-pagination ul li a:focus, 
-.woocommerce nav.woocommerce-pagination ul li a:hover, 
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, 
 .woocommerce nav.woocommerce-pagination ul li span.current {
   background: #005bba;
   color: #fff;
 }
-.woocommerce nav.woocommerce-pagination ul li a, 
-.woocommerce nav.woocommerce-pagination ul li span{
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{
   padding: 10px 15px;
   font-size: 18px;
 }
 .woocommerce #sidebar {
   margin-top: 2em;
 }
-a.showcoupon,
-.woocommerce-message::before{
+a.showcoupon,.woocommerce-message::before{
 	color: #000;
 }
 .woocommerce-message {
@@ -1365,8 +1323,7 @@ h2.woocommerce-loop-product__title{
   font-weight: 500;
   font-size: 23px !important;
 }
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce ul.products li.product .price, .woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #051f31;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
@@ -1413,11 +1370,8 @@ h2.woocommerce-loop-product__title{
 .woocommerce-product-gallery__image{
   padding: 2px;
 }
-.woocommerce a.remove{
+.woocommerce a.remove, .woocommerce form .form-row .required{
   color: #df0000 ;
-}
-.woocommerce form .form-row .required {
-  color: #df0000;
 }
 .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce table.cart td.actions, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
   color: #000;
@@ -1470,14 +1424,11 @@ h2.woocommerce-loop-product__title{
 .woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
   line-height: 20px;
 }
-.select2-container--default .select2-selection--single .select2-selection__arrow b{
-  top:70%;
-}
 .select2-container--default .select2-selection--single, input#billing_phone {
   padding: 10px 0px;
   border-radius: 0px;
 }
-.woocommerce #customer_login .col-1, .woocommerce #customer_login .col-2 {
+.woocommerce-Address, .woocommerce #customer_login .col-1, .woocommerce #customer_login .col-2 {
   max-width: 100%;
 }
 #sidebar .star-rating, #footer .star-rating{
@@ -1498,14 +1449,11 @@ h2.woocommerce-loop-product__title{
 #footer .widget_price_filter .price_slider_wrapper .ui-widget-content{
   background-color: #fff;
 }
-#footer .price_label, #sidebar .price_label{
+#footer .price_label, #sidebar .price_label, .news-item.layout-two .news-text-wrap{
   font-size: 14px;
 }
-.woocommerce .star-rating {
+.woocommerce .star-rating, .woocommerce-Reviews .comment-text .description{
   float: left;
-}
-.news-item.layout-two .news-text-wrap{
-  font-size: 14px;
 }
 .related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product{
   float:none;
@@ -1515,8 +1463,7 @@ h2.woocommerce-loop-product__title{
 .woocommerce .woocommerce-product-rating .star-rating {
   margin: 0.5em 20px 0 0;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1525,14 +1472,8 @@ h2.woocommerce-loop-product__title{
   float: left;
   padding-top: 10px;
 }
-.woocommerce-Address{
-  max-width: 100%;
-}
 #sidebar a.remove.remove_from_cart_button , #footer a.remove.remove_from_cart_button{
   font-size: 22px !important;
-}
-.woocommerce-Reviews .comment-text .description {
-  float: left;
 }
 .woocommerce #reviews #comments h2{
   font-size: 25px;
@@ -1590,7 +1531,7 @@ h2.woocommerce-loop-product__title{
 #sidebar ul.woocommerce-mini-cart.cart_list.product_list_widget li:before{
   display: none;
 }
-.woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
+.woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product,.woocommerce ul.products li.product,.woocommerce-page ul.products li.product{
   text-align: center;
 }
 #sidebar ul.woocommerce-mini-cart.cart_list.product_list_widget li a.remove{
@@ -1602,9 +1543,6 @@ h2.woocommerce-loop-product__title{
 }
 .woocommerce ul.products li.product .woocommerce-loop-product__title{
   text-transform: capitalize;
-  text-align: center;
-}
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
   text-align: center;
 }
 .woocommerce ul.products li.product .star-rating{
@@ -1736,9 +1674,7 @@ ul.list_nav {
   color: #fff;
   top:18px;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
@@ -1832,7 +1768,6 @@ div#sidebar{
   vertical-align: middle;
   width: 8px;
 }
-
 #sidebar ul li:hover:before{
   background: #051f31 !important;
 }
@@ -1861,8 +1796,7 @@ img.rss-widget-icon {
   width: auto !important;
 }
 /* Page */
-h2.entry-title,
-h1.page-title {
+h2.entry-title,h1.page-title {
   text-align: left;
   margin-bottom: 10px;
   color: #005bba;
@@ -1920,7 +1854,7 @@ h1.page-title {
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
 }
-.entry-content a , .comment-body p a, .woocommerce-product-details__short-description p a{
+#footer p a, .entry-content a , .comment-body p a, .woocommerce-product-details__short-description p a{
   text-decoration: underline;
   color: #005bba;
 }
@@ -1948,8 +1882,7 @@ h1.page-title {
 	float:right;
 	font-weight:bold;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
 	display:block;
   float:left;
   margin: 2px 5px 10px 0;
@@ -1975,16 +1908,12 @@ h1.page-title {
 	font-weight:bold;
 }
 /* iframe */
-iframe {
-  width: 100%;
-}
-.entry-audio audio {
+iframe,.entry-audio audio {
   width: 100%;
 }
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
 	  padding: 4px;
 	}
   #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
@@ -2042,16 +1971,14 @@ iframe {
 	.contentbox{
 		width: auto;
 	}
-	#header,
-	#header .logo h1{
+	#header,#header .logo h1{
 		text-align: center;
 	}
   #slider .carousel-caption{
     right: 0;
     left: 0;
   }
-  #slider .inner_carousel p,
-  #slider .inner_carousel h1 {
+  #slider .inner_carousel p,#slider .inner_carousel h1 {
     display: none;
   }
   .page-box{
@@ -2095,8 +2022,7 @@ iframe {
   #footer input[type="search"]{
     width: 100%;
   }
-  .woocommerce ul.products[class*=columns-] li.product,
-  .woocommerce-page ul.products[class*=columns-] li.product{
+  .woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
     width: 100% !important;
     float: none !important;
   }
@@ -2124,8 +2050,7 @@ iframe {
 	#footer input[type="search"]{
 		width: 100%;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 0px;
 	}	
 }
@@ -2137,8 +2062,7 @@ iframe {
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 4px;
 	}
   #slider .inner_carousel h2 {
@@ -2197,8 +2121,7 @@ iframe {
   #slider .carousel-control-next {
     right: 38%;
   }
-  #slider .inner_carousel p,
-  .box .description{
+  #slider .inner_carousel p,.box .description{
     display: none;
   }
   .box .title{
@@ -2248,10 +2171,8 @@ iframe {
     left:10%;
   }
 }
-/*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
-  .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .page-template-custom-front-page .topbar a:focus, .toggle-menu button:focus{
+  .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .page-template-custom-front-page .topbar a:focus, .toggle-menu button:focus{
     outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff !important;
   }
@@ -2298,7 +2219,7 @@ iframe {
     border:none;
     background: transparent;
   }
-  .sidebar #primary-site-navigation {
+  .sidebar #primary-site-navigation, input.search-field {
     width: 100%;
   }
   .toggle-menu span{
@@ -2306,15 +2227,12 @@ iframe {
     cursor:pointer; 
     text-align: right;
   }
-  .toggle-menu{
+  .toggle-menu, .primary-navigation ul ul li{
     display: block;
   }
   .toggle i.fa.fa-bars,.toggle i.fa.fa-times {
     float: right;
     color: black;
-  }
-  .primary-navigation ul ul li{
-    display: block;
   }
   .primary-navigation ul li a{
     padding: 15px;
@@ -2368,13 +2286,13 @@ iframe {
   .primary-navigation ul ul li:first-child{
     border-top: none;
   }
-  #menu-sidebar .social-icons, #menu-sidebar .mail{
+  #contact-info form.search-form , #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar form.search-form{
     display: block;
   }
   #menu-sidebar .request-btn{
     display: inline-block;
   }
-  .top-header .request-btn{
+  .top-header .request-btn, .search-box i, .search-box{
     display: none;
   }
   .request-btn a{
@@ -2403,9 +2321,6 @@ iframe {
     text-align: center;
     display: block;
   }
-  .search-box i{
-    display: none;
-  }
   .mail{
     padding:10px;
   }
@@ -2420,15 +2335,9 @@ iframe {
     padding: 10px;
     margin: 0 2%;
   }
-  #contact-info form.search-form {
-    display: block;
-  }
   .main-menu-navigation{
     overflow-y: scroll;
     scroll-behavior: auto;
-  }
-  input.search-field{
-    width: 100%;
   }
   .page-template-custom-front-page .contact_data .mail i{
     color: #005bba !important;
@@ -2446,9 +2355,6 @@ iframe {
     color: #fff;
     font-size: 10px;
   }
-  #menu-sidebar form.search-form{
-    display: block;
-  }
   .page-template-custom-front-page .sf-arrows .sf-with-ul:after{
     color: #fff;
   }
@@ -2460,8 +2366,5 @@ iframe {
   }
   .page-template-custom-front-page .fixed-header {
     background: none;
-  }
-  .search-box{
-    display: none;
   }
 }

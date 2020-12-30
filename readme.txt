@@ -3,8 +3,8 @@ Contributors: Themeshopy
 Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 Requires at least: 5.0
 Tested up to: 5.6
-Requires PHP: 7.2.14
-Stable tag: 0.5.7
+Requires PHP: 7.2
+Stable tag: 0.5.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,7 +12,7 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
 
 == Description ==
 
-Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, coaches, personal trainers, speakers, motivators, and other personal users personal trainer, tuition center, online classes, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video, four column layout etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage.
+Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, coaches, personal trainers, speakers, motivators, and other personal users personal trainer, Online Course Providers, Online Training, Vendor Certification Training, tuition center, online classes, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, Custom Header, gallery, video, four column layout etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage.
 
 == Changelog ==
 
@@ -177,6 +177,11 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
 
 = 0.5.7 =
   * Added block-styles tag.
+
+= 0.5.8 =
+  * Done Underline on anchor tag.
+  * Done escaping on get_template_directory_uri().
+  * Corrected some focus errors.
 
 == Resources ==
 
