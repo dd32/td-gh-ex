@@ -7,7 +7,7 @@ function advance_pet_care_abouttheme() {
 
 // Add a Custom CSS file to WP Admin Area
 function advance_pet_care_admin_theme_style() {
-   wp_enqueue_style('advance-pet-care-custom-admin-style', get_template_directory_uri() .'/inc/admin/admin.css');
+   wp_enqueue_style('advance-pet-care-custom-admin-style', esc_url(get_template_directory_uri()) .'/inc/admin/admin.css');
 }
 add_action('admin_enqueue_scripts', 'advance_pet_care_admin_theme_style');
 
