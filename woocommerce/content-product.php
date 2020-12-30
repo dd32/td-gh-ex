@@ -27,10 +27,24 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
+$woo_m_col_size  = get_option( 'nnfy_woocommerce_mobile_col_size', 2 );
+
+
+    switch ($woo_m_col_size) {
+        case '1':
+            $col_m_class = ' ht-col-xs-12';
+            break;
+        
+        default:
+            $col_m_class = ' ht-col-xs-6';
+            break;
+    }
+
+
 if(is_cart()){
-	$classes = 'ht-col-lg-6 ht-col-xs-12';
+	$classes = 'ht-col-lg-6 ht-col-xs-12' .$col_m_class;
 } else {
-	$classes = 'ht-col-lg-4 ht-col-sm-6 ht-col-xs-12';
+	$classes = 'ht-col-lg-4 ht-col-sm-6' .$col_m_class;
 }
 
 ?>

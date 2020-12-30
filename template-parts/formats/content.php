@@ -34,6 +34,7 @@ for($i = 1; $i <= $blog_col_size; $i++){
     }
     
 }
+
 ?>
 
 

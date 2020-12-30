@@ -33,7 +33,7 @@
             meanMenuContainer: "body",
             meanMenuClose: "X",
             meanMenuCloseSize: "18px",
-            meanMenuOpen: "<span /><span /><span />",
+            meanMenuOpen: "<span></span><span></span><span></span>",
             meanRevealPosition: "right",
             meanRevealPositionDistance: "0",
             meanRevealColour: "",
