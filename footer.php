@@ -10,7 +10,6 @@
  * @subpackage Avadanta
  */
 
-$footer_background_image = get_theme_mod('footer_background_image','');
 $avadanta_top_footer_enable = get_theme_mod('avadanta_top_footer_enable',0); 
 
 ?>	

@@ -3,9 +3,11 @@ Contributors: avadantathemes
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Avadanta WordPress Free theme under GPL V2 
 
 
 == Description ==
@@ -24,8 +26,15 @@ Set Homepage Setup:-
 
 Avadanta supports for Woocomerce, Elementor page builder plugin ans Also Other Plugins Too.
 
+= Can I modify Theme? =
+
+Avadanta developed under th GPL terms so you can use it free and can modify or redistribute according to your needs. 
+
 
 == Changelog ==
+
+= 1.0.4 =
+* Resolve Reviewer Issue
 
 = 1.0.3 =
 * Resolve Reviewer Issue
@@ -37,55 +46,41 @@ Avadanta supports for Woocomerce, Elementor page builder plugin ans Also Other P
 * Initial release
 
 
+== Upgrade Notice ==
+
+= 1.0.4 =
+* No Upgrade In The Theme.
+
+
+
 == Copyright ==
 * Avadanta WordPress Theme, Copyright 2020
 * Avadanta is distributed under the terms of the GNU GPL
 
 
+
 == Resources ==
+* Bootstrap , Copyright 2011-2019, Twitter, under MIT license ,http://getbootstrap.com
 
 
-1 - Bootstrap
-  Copyright 2011-2019, Twitter, under MIT license
-  http://getbootstrap.com
+* Magnific Popup: msemenov.com/plugins/magnific-popup/ , 2013 Dmitry Semenov ,License: under MIT license , https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSEtml
+
+* Owl Carousel : https://owlcarousel2.github.io/OwlCarousel2/ , Copyright 2013-2016 David Deutsch ,License: under MIT license , https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
 
 
-2 - Magnific Popup: msemenov.com/plugins/magnific-popup/
-    2013 Dmitry Semenov
-  License: under MIT license
-  https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSEtml
+* Slick : http://github.com/kenwheeler/slick , Copyright (c) 2016 Matthieu Aussaguel , License: under MIT license , https://github.com/kenwheeler/slick/blob/master/LICENSE
 
-3 - Owl Carousel : https://owlcarousel2.github.io/OwlCarousel2/ 
-    Copyright 2013-2016 David Deutsch
-    License: under MIT license
-    https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+Animate : http://daneden.me/animate , Copyright (c) 2016 Daniel Eden , License: under MIT license ,http://opensource.org/licenses/MIT
 
+* Fontawesome : http://fontawesome.io/ , Copyright (C) 2018 By davegandy , License: MIT License ,[SIL OFL 1.1]
 
-4 - Slick : http://github.com/kenwheeler/slick  
-    Copyright (c) 2016 Matthieu Aussaguel
-    License: under MIT license
-    https://github.com/kenwheeler/slick/blob/master/LICENSE
-
-5 - Animate : http://daneden.me/animate 
-    Copyright (c) 2016 Daniel Eden
-    License: under MIT license
-    http://opensource.org/licenses/MIT
-
-6 - Fontawesome : http://fontawesome.io/
-    Copyright (C) 2018 By davegandy
-    License: MIT License ,[SIL OFL 1.1]
-
-7 - Breadcrumb Trail : https://themehybrid.com/plugins/breadcrumb-trail
-    Copyright (c) 2008 - 2017, Justin Tadlock
-    License:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+* Breadcrumb Trail : https://themehybrid.com/plugins/breadcrumb-trail , Copyright (c) 2008 - 2017, Justin Tadlock , License:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
     
-8. Normalize : https://necolas.github.io/normalize.css/
-   Copyright © Nicolas Gallagher and Jonathan Neal
-   License:  https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+* Normalize : https://necolas.github.io/normalize.css/ , Copyright © Nicolas Gallagher and Jonathan Neal ,License:  https://github.com/necolas/normalize.css/blob/master/LICENSE.md
 
 
-== Images == 
-Screenshot: 
+
+== Screenshot ==
 Banner-:
   https://pxhere.com/en/photo/1448527
 

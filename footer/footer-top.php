@@ -9,6 +9,8 @@
  * @package WordPress
  * @subpackage Avadanta
  */
+$footer_background_image = get_theme_mod('footer_background_image','');
+
 ?>
 
 	<footer class="section footer bg-dark-alt tc-light footer-s1">

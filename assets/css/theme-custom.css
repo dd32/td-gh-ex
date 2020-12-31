@@ -402,6 +402,16 @@ a:focus-visible,.menu-toggle:focus-visible {
 }
 
 
+.menu-item-has-children .sub-menu li > a:focus-visible{
+
+  background: #d0d0d0;
+}
+
+.menu-item a:focus-visible{
+  background: #d0d0d0;
+
+
+}
 
 textarea:focus,.btn:focus,.search-field:focus,.comment-respond .form-submit input:focus,.menu-btns .btn:focus{
 
