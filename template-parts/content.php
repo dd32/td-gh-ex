@@ -68,7 +68,7 @@
 			?>
 
 				<div class="wp-block-buttons">
-					<div class="wp-block-button is-style-outline"><a href="<?php echo esc_url( get_permalink() ); ?>" class="wp-block-button__link has-black-color has-text-color no-border-radius"><?php echo __('Read More', 'ada-pearl') ?></a></div>
+					<div class="wp-block-button is-style-outline"><a href="<?php echo esc_url( get_permalink() ); ?>" class="wp-block-button__link has-black-color has-text-color no-border-radius">Read Article</a></div>
 				</div>
 
 			<?php

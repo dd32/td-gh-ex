@@ -1,4 +1,4 @@
-=== Ada ===
+=== Ada Pearl ===
 
 Contributors: lewisself64
 Tags: block-patterns, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, wide-blocks
@@ -6,7 +6,7 @@ Tags: block-patterns, custom-background, custom-logo, custom-menu, featured-imag
 Requires at least: 4.5
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -24,9 +24,13 @@ Ada is a business focused WordPress theme. The theme comes with pre built block 
 
 = Does this theme support any plugins? =
 
-Ada does not support any plugins out of the box.
+Ada Pearl does not support any plugins out of the box.
 
 == Changelog ==
+
+= 1.0.1 =
+* Added styling for skip link
+* Renamed incorrect prefixes
 
 = 1.0.0 =
 * Initial release
