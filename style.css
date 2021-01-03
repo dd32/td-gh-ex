@@ -5,7 +5,7 @@ Author URI:    https://www.athemeart.com
 Description:  BCF Shop is child theme of free ecommerce wordpress themes of business consultant finder. BCF Shop is that the best eCommerce WordPress Child theme for building on-line stores and on-line shop. The theme is absolutely Elementor, Gutenberg, WooCommerce , Google AMP, compatible, YITH WooCommerce wishlist and standard WordPress plugins. it's a extremely customizable theme – customise the theme simply with dozens of choices and make an excellent flexible website.it's a good WordPress theme to create a superb online store web site.  BCF Shop features a clean and fashionable style, integrate with the elective animated slideshows and eye-catching effects.
 
 Template:     business-consultant-finder
-Version:      1.0.4
+Version:      1.0.5
 Requires at least: 5.0
 Tested up to: 5.5.4
 Requires PHP: 7.0
@@ -1263,4 +1263,12 @@ p.comment-form-comment{
 }
 .wc_payment_method label{
 	width:100%;	
+}
+
+.u-column1.col-1,
+.u-column2.col-2,
+#customer_login .col-1,
+#customer_login .col-2{
+	max-width: 50%!important;
+	float: left!important;
 }

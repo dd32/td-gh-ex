@@ -1,9 +1,9 @@
 ﻿=== BCF Shop ===
 Contributors: aThemeArt
 Requires at least: 4.6
-Tested up to: 5.3.0
+Tested up to: 5.6.2
 Requires PHP: 5.2.4
-Version: 1.0.1
+Version: 1.0.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
