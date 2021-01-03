@@ -3,7 +3,7 @@ Contributors: CooThemes
 Tags: Blog, Custom Background, Custom Colors, Custom Header, Custom Logo, Custom Menu, E-Commerce, Featured Images, Flexible Header, Footer Widgets, Full Width Template, Left Sidebar, Portfolio, Right Sidebar, Theme Options, Translation Ready, Two Columns
 
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.6
 Stable tag: 1.0.0
 
 Author URI:  https://www.coothemes.com/
@@ -52,15 +52,6 @@ Best Construction is distributed under the terms of the GNU General Public Licen
      Source:  http://opensource.org/licenses/gpl-2.0.php  
 
 
-    default.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/london-england-great-britain-uk-2393098/
-
-
-    screenshot.jpg, Copyright Pixabay.com
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://pixabay.com/en/industrial-security-logistic-work-clothe-1636391/
-
 === Frequently Asked Questions ===
 
 Does this theme have a support forum? 
@@ -69,6 +60,10 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/best-c
 
 
 === Changelog ===
+=version 1.0.9 20210103=
+*fix news problem
+*Compatible with wordpress to version 5.6.0
+
 =version 1.0.8 20181103=
 *fix news problem
 

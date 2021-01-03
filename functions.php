@@ -1,4 +1,5 @@
 <?php
+wp_body_open();
 define( 'THEME_COLOR', '#fab702' );
 
 define( 'THEME_DIR', get_stylesheet_directory() );
@@ -233,8 +234,8 @@ function best_construction_import_files() {
 		),
 		array(
 			'import_file_name'           => 'best-construction Free',
-			'import_file_url'            => trailingslashit( THEME_URL ) . 'custom/demo-content/best-construction-free.xml',
-			'import_customizer_file_url' => trailingslashit( THEME_URL ) . 'custom/demo-content/best-construction-free.dat',			
+			'import_file_url'            => 'http://demos.coothemes.com/demo-file/best-construction/best-construction-free.xml',
+			'import_customizer_file_url' => 'http://demos.coothemes.com/demo-file/best-construction/best-construction-free.dat',			
 
 			'import_preview_image_url'   => trailingslashit( THEME_URL ) . 'custom/demo-content/images/demo1.jpg',
 			'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'best-construction' ),

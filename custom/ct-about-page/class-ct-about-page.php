@@ -912,6 +912,11 @@ if ( ! class_exists( 'Coothemes_About_Page' ) ) {
 
 				$recommended_actions = isset( $this->config['recommended_actions'] ) ? $this->config['recommended_actions'] : array();
 				$required_actions    = $this->get_required_actions();
+				
+				if(is_object($required_actions)||is_array($required_actions)){					
+				}else{
+					$required_actions = array();
+				}
 				wp_localize_script(
 					'ct-about-page-js', 'ctAboutPageObject', array(
 						'nr_actions_required' => count( $required_actions ),
