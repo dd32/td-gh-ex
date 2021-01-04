@@ -160,25 +160,6 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 }
 add_action( 'customize_register', 'arilewp_customizer_theme_settings' );
 
-add_action( 'customize_register', 'arilewp_recommended_plugin_section' );
-function arilewp_recommended_plugin_section( $manager ) {
-	// Register custom section types.
-	$manager->register_section_type( 'ArileWP_Customize_Recommended_Plugin_Section' );
-	// Register sections.
-	$manager->add_section(
-		new ArileWP_Customize_Recommended_Plugin_Section(
-			$manager,
-			'arilewp_upgrade_to_pro_option',
-			array(
-				'title'    => esc_html__( 'Ready for more?', 'arilewp' ),
-                'priority' => 1000, 
-				'plugin_text' => esc_html__( 'Get ArileWP Pro', 'arilewp' ),
-				'plugin_url'  => '//themearile.com/arilewp-pro-theme/'
-			)
-		)
-	);	
-}
-
 /*
  *  Customizer Notifications
  */ 

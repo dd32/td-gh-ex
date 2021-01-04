@@ -183,6 +183,21 @@ function arilewp_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'arilewp_scripts' );
 
+/**
+ * Enqueue admin scripts and styles.
+ */
+function arilewp_admin_enqueue_scripts(){
+	wp_enqueue_style('arilewp-admin-style', get_template_directory_uri() . '/assets/css/admin.css');
+	wp_enqueue_script( 'arilewp-admin-script', get_template_directory_uri() . '/assets/js/arilewp-admin-script.js', array( 'jquery' ), '', true );
+    wp_localize_script( 'arilewp-admin-script', 'arilewp_ajax_object',
+        array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+    );
+}
+add_action( 'admin_enqueue_scripts', 'arilewp_admin_enqueue_scripts' );
+
+/**
+ * Enqueue customizer scripts and styles.
+ */
 function arilewp_customizer_script() {
 	 wp_enqueue_style( 'arilewp-customize',get_template_directory_uri().'/inc/customizer/assets/css/customize.css', ARILEWP_THEME_VERSION, 'screen' );
 	wp_enqueue_script( 'arilewp-customizer-script', get_template_directory_uri() .'/inc/customizer/assets/js/customizer-section.js', array("jquery"),'', true  );	
@@ -245,13 +260,3 @@ require ARILEWP_PARENT_INC_DIR . '/theme-custom-typography.php';
  */
 
 require ARILEWP_PARENT_INC_DIR . '/class-bootstrap-navwalker.php';
-
-/**
- * Pgge layout setting.
- */
- 
-if ( 'ArileWP' == $arilewp_theme->name) {
-	if ( is_admin() ) {
-		require ARILEWP_PARENT_INC_DIR . '/admin/getting-started.php';
-	}
-}
