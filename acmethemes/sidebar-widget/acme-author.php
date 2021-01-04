@@ -72,7 +72,7 @@ if ( ! class_exists( 'acmeblog_author_widget' ) ) :
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id( 'acmeblog_author_short_disc' ); ?>"><?php _e( 'Author Short Disc:', 'acmeblog' ); ?></label>
-                <textarea class="widefat" id="<?php echo $this->get_field_id( 'acmeblog_author_short_disc' ); ?>" name="<?php echo $this->get_field_name( 'acmeblog_author_short_disc' ); ?>"><?php echo esc_attr( $acmeblog_author_short_disc ); ?></textarea>
+                <textarea class="widefat" id="<?php echo $this->get_field_id( 'acmeblog_author_short_disc' ); ?>" name="<?php echo $this->get_field_name( 'acmeblog_author_short_disc' ); ?>"><?php echo esc_html( $acmeblog_author_short_disc ); ?></textarea>
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id( 'acmeblog_author_link' ); ?>"><?php _e( 'Link URL:', 'acmeblog' ); ?></label>

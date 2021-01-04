@@ -1782,3 +1782,10 @@ article.post.sticky{
 .acme-default.post-title{
 	color: #2D2D2D;
 }
+
+.entry-content p a,
+.comment-content p a,
+.comment-content li a,
+.textwidget a{
+	text-decoration: underline;
+}

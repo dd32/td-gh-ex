@@ -175,7 +175,7 @@ class AcmeBlog_Notice_Handler {
 				<?php esc_html_e( 'Dismiss', 'acmeblog' ); ?>
             </a>
             <div class="at-gsm-container">
-                <img class="at-gsm-screenshot" src="<?php echo esc_url(get_template_directory_uri().'/screenshot.jpg' )?>" alt="<?php esc_html_e( 'AcmeBlog', 'acmeblog' ); ?>" />
+                <img class="at-gsm-screenshot" src="<?php echo esc_url(get_template_directory_uri().'/screenshot.jpg' )?>" alt="<?php esc_attr_e( 'AcmeBlog', 'acmeblog' ); ?>" />
                 <div class="at-gsm-notice">
                     <h2>
 						<?php
@@ -187,7 +187,7 @@ class AcmeBlog_Notice_Handler {
 
                     <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Advanced Import and Acme Demo Setup plugin.', 'acmeblog' ); ?></p>
 
-                    <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with AcmeBlog', 'acmeblog' ); ?>">
+                    <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_attr_e( 'Get started with AcmeBlog', 'acmeblog' ); ?>">
 		                <?php esc_html_e( 'Get started with AcmeBlog', 'acmeblog' );?>
                     </a>
                 </div>

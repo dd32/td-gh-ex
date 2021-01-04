@@ -4,7 +4,9 @@ Theme URI: https://www.acmethemes.com/themes/acmeblog/
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: AcmeBlog is a professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It is a very lightweight theme but has a highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further, you can add your own copyright text in the footer. This theme comes with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. The image can be enabled/disable in blog and archive pages. You can change the whole site primary colour. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information. Support: http://www.acmethemes.com/supports/ and Demo http://www.acmethemes.com/demo/?theme=acmeblog
-Version: 3.0.2
+Version: 3.0.3
+Tested up to: 5.6
+Requires PHP: 5.6.20
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmeblog
@@ -1818,4 +1820,10 @@ article.post.sticky{
 .acme-default.beside-caption,
 .acme-default.post-title{
 	color: #2D2D2D;
+}
+.entry-content p a,
+.comment-content p a,
+.comment-content li a,
+.textwidget a{
+	text-decoration: underline;
 }
