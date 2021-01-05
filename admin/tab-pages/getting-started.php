@@ -2,7 +2,6 @@
 /**
  * Getting started template
  */
-$spasalon_customizer_url = admin_url() . 'customize.php' ;
 ?>
 
 <div id="getting_started" class="spasalon-tab-pane active">

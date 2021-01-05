@@ -15,7 +15,7 @@ function spasalon_default_data(){
 	
 	// footer copyright
 	'footer_menu_enabled'=> 1,
-	'footer_tagline'=>__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Spasalon</a> by Webriti', 'spasalon' ),
+	'footer_tagline'=>__( 'Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Spasalon</a> by Webriti', 'spasalon' ),
 	
 	// home page settings
 	'call_us'=> __( '999 999 9999', 'spasalon' ),

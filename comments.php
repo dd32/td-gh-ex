@@ -12,7 +12,7 @@ function spasalon_comments( $spasalon_comment, $spasalon_args, $spasalon_depth )
 	global $comment_data;
 	
 	//translations
-	$spasalon_leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','spasalon');
+	$spasalon_leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply','spasalon');
 	?>
 	<div id="comment-<?php comment_ID(); ?>" <?php comment_class('media comments'); ?>>
 	

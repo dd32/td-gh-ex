@@ -164,3 +164,6 @@ ins span {
 }
 
 .google-map #wpgmza_map { border-bottom: 4px solid #d61841; }
+a:hover {
+	text-decoration: none;
+}

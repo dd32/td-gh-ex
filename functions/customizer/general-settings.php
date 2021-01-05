@@ -77,7 +77,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			// banner settings
 			$wp_customize->add_setting( 'spa_theme_options[footer_tagline]' , array(
 			'sanitize_callback' => 'spasalon_copyright_sanitize_text',
-			'default' => __( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Spasalon</a> by Webriti', 'spasalon' ),
+			'default' => __( 'Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Spasalon</a> by Webriti', 'spasalon' ),
 			'type'=>'option',
 			) );
 			$wp_customize->add_control('spa_theme_options[footer_tagline]' , array(

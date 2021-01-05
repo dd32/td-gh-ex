@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2020-12-10 19:27+0530\n"
+"POT-Creation-Date: 2020-12-31 16:34+0530\n"
 "PO-Revision-Date: 2018-08-01 12:55+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -374,63 +374,63 @@ msgstr ""
 msgid "Get SpaSalon PRO now!"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:15
+#: admin/tab-pages/getting-started.php:14
 msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:18
+#: admin/tab-pages/getting-started.php:17
 msgid ""
 "To take full advanctage of the theme features you need to install "
 "recommended plugins."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:21
+#: admin/tab-pages/getting-started.php:20
 msgid "Click here"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:26
+#: admin/tab-pages/getting-started.php:25
 msgid "Start Customizing"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:29
+#: admin/tab-pages/getting-started.php:28
 msgid "After activating recommended plugins , now you can start customization."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:32
+#: admin/tab-pages/getting-started.php:31
 msgid "Go to Customizer"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:37
-#: admin/tab-pages/getting-started.php:43 admin/tab-pages/support.php:20
+#: admin/tab-pages/getting-started.php:36
+#: admin/tab-pages/getting-started.php:42 admin/tab-pages/support.php:20
 msgid "Documentation"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:40
+#: admin/tab-pages/getting-started.php:39
 msgid ""
 "Browse the documention for the detailed information regarding this theme."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:49
+#: admin/tab-pages/getting-started.php:48
 msgid "spasalon Theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:55
+#: admin/tab-pages/getting-started.php:54
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:61
+#: admin/tab-pages/getting-started.php:60
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:65
+#: admin/tab-pages/getting-started.php:64
 msgid "PRO Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:71
+#: admin/tab-pages/getting-started.php:70
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:75
+#: admin/tab-pages/getting-started.php:74
 msgid "Premium Theme Details"
 msgstr ""
 
@@ -1421,7 +1421,7 @@ msgstr ""
 #: functions/customizer/general-settings.php:80
 #: functions/spasalon_default_data.php:18
 msgid ""
-"<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
+"Proudly powered by <a href=\"https://wordpress.org\">WordPress</a> | Theme: "
 "<a href=\"https://webriti.com\" rel=\"nofollow\">Spasalon</a> by Webriti"
 msgstr ""
 
