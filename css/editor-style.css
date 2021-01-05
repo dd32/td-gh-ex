@@ -1003,6 +1003,10 @@ pre.wp-block-verse {
 
 /* wp-block-audio styles */
 /* common editor block styles */
+body {
+  overflow-x: visible;
+}
+
 /* Width of blocks */
 .wp-block {
   max-width: 745px;
