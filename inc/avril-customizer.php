@@ -40,6 +40,7 @@
 			 * Customizer
 			 */
 			add_action( 'customize_preview_init',                  array( $this, 'avril_customize_preview_js' ) );
+			add_action( 'customize_controls_enqueue_scripts', 	   array( $this, 'avril_customizer_script' ) );
 			add_action( 'customize_register',                      array( $this, 'avril_customizer_register' ) );
 			add_action( 'after_setup_theme',                       array( $this, 'avril_customizer_settings' ) );
 		}
@@ -71,6 +72,10 @@
 		 */
 		function avril_customize_preview_js() {
 			wp_enqueue_script( 'avril-customizer', get_template_directory_uri() . '/assets/js/customizer-preview.js', array( 'customize-preview' ), '20151215', true );
+		}
+		
+		function avril_customizer_script() {
+			 wp_enqueue_script( 'avril-customizer-section', get_template_directory_uri() .'/assets/js/customizer-section.js', array("jquery"),'', true  );	
 		}
 
 		// Include customizer customizer settings.
