@@ -67,7 +67,6 @@ function quality_blog_customizer($wp_customize) {
                 'type' => 'text',
                 'label' => esc_html__('Title', 'quality'),
                 'section' => 'blog_setting',
-                'sanitize_callback' => 'quality_blog_sanitize_text',
             )
     );
 

@@ -1,5 +1,9 @@
 == Changelog ==
 
+@Version 2.6.3
+1. Fixed Escaping, prefix and service secton style issues.
+2. Fixed the user comment issue and removed unnecessary code.
+
 @Version 2.6.2
 1. Implemented "Links within content must be underlined" guideline.
 2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view. 

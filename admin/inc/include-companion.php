@@ -104,13 +104,13 @@ if (!function_exists('webriti_companion') && !$quality_hide_install) {
 			}
 		}
 	}
-	if (!function_exists('webriti_companion_installer_register')) {
+	if (!function_exists('quality_companion_installer_register')) {
 		/**
 		 * Registers the section, setting & control for the Webriti Companion installer.
 		 *
 		 * @param object $wp_customize The main customizer object.
 		 */
-		function webriti_companion_installer_register($wp_customize) {
+		function quality_companion_installer_register($wp_customize) {
 			$wp_customize->add_section(new Quality_Companion_Installer_Section($wp_customize, 'quality_companion_installer', array(
 				'title'      => '',
 				'capability' => 'install_plugins',
@@ -118,7 +118,7 @@ if (!function_exists('webriti_companion') && !$quality_hide_install) {
 			)));
 
 		}
-		add_action('customize_register', 'webriti_companion_installer_register');
+		add_action('customize_register', 'quality_companion_installer_register');
 	}
 }
 

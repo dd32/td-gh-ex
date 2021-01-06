@@ -22,7 +22,7 @@ function quality_copyright_customizer($wp_customize) {
     $wp_customize->add_setting(
             'quality_pro_options[footer_copyright_text]',
             array(
-                'default' => '<p>' . __('<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Quality</a> by Webriti', 'quality') . '</p>',
+                'default' => '<p>' . __('Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Quality</a> by Webriti', 'quality') . '</p>',
                 'type' => 'option',
                 'sanitize_callback' => 'quality_copyright_sanitize_text',
             )

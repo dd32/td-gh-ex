@@ -7,7 +7,7 @@
         <![endif]-->
         <meta charset="<?php bloginfo('charset'); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="profile" href="<?php 'http://gmpg.org/xfn/11'; ?>" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
         <!-- Theme Css -->
         <?php
         $quality_current_options = wp_parse_args(get_option('quality_pro_options', array()), quality_theme_data_setup());

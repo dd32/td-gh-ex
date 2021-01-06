@@ -87,9 +87,9 @@ function quality_head($title, $sep) {
     if (is_feed())
         return $title;
     // Add the site name.
-    $title .= get_bloginfo('name');
+    $title .= esc_html(get_bloginfo('name'));
     // Add the site description for the home/front page.
-    $site_description = get_bloginfo('description');
+    $site_description = esc_html(get_bloginfo('description'));
     if ($site_description && ( is_home() || is_front_page() ))
         $title = "$title $sep $site_description";
     // Add a page number if necessary.

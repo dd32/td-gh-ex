@@ -33,7 +33,7 @@
 		?>
 	<?php endif; ?>
 	<?php if ('open' == $post->comment_status) : ?>
-	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
+	<?php if ( get_option('comment_registration') && isset($user_ID) ) : ?>
 		<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','quality' ), esc_url(site_url( 'wp-login.php' )) . '?redirect_to=' .  urlencode(esc_url(get_permalink())) ); ?></p>
 </p>
 <?php else : ?>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2020-12-18 19:22+0530\n"
+"POT-Creation-Date: 2021-01-05 18:18+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -655,7 +655,7 @@ msgstr ""
 msgid "Proin Tincidunt"
 msgstr ""
 
-#: child_theme_compatible.php:52 functions/customizer/customizer-blog.php:78
+#: child_theme_compatible.php:52 functions/customizer/customizer-blog.php:77
 #: theme_setup_data.php:50
 msgid "Cras <b>Eros</b> Elit"
 msgstr ""
@@ -663,7 +663,7 @@ msgstr ""
 #: child_theme_compatible.php:57
 #: functions/customizer/customizer-copyright.php:25 theme_setup_data.php:55
 msgid ""
-"<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
+"Proudly powered by <a href=\"https://wordpress.org\">WordPress</a> | Theme: "
 "<a href=\"https://webriti.com\" rel=\"nofollow\">Quality</a> by Webriti"
 msgstr ""
 
@@ -1280,7 +1280,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:85
+#: functions/customizer/customizer-blog.php:84
 #: functions/customizer/customizer-slider.php:100
 msgid "Description"
 msgstr ""
