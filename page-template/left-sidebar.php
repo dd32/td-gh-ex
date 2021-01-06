@@ -7,7 +7,7 @@ get_header(); ?>
 <?php do_action( 'advance_blogging_header_page_left' ); ?>
 
 <div class="container">
-    <main id="main" role="main" class="middle-align row">       
+    <main id="main" role="main" class="middle-align row py-4">       
 		<div class="col-lg-4 col-md-4" id="sidebar">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 

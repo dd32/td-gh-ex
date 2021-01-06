@@ -12,7 +12,7 @@
 if ( post_password_required() )
 	return;
 ?>
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area mt-4">
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php

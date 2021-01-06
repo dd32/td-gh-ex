@@ -8,7 +8,7 @@ get_header(); ?>
 
 <main id="main" role="main" class="content-aa">
     <div class="container">
-        <div class="middle-align">
+        <div class="middle-align py-4">
             <?php
             $advance_blogging_left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
             if($advance_blogging_left_right == 'Left Sidebar'){ ?>

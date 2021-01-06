@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 
-<main id="main" role="main" class="middle-align">
+<main id="main" role="main" class="middle-align py-4">
 	<div class="container">
 		<?php
         $advance_blogging_left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');

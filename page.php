@@ -14,7 +14,7 @@ get_header(); ?>
 <?php do_action( 'advance_blogging_header_page' ); ?>
 
 <div class="container">
-    <div class="middle-align">       
+    <div class="middle-align py-4">       
         <main id="main" role="main" class="content-aa">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail();  ?>

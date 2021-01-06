@@ -127,41 +127,41 @@ add_action( 'after_setup_theme', 'advance_blogging_setup' );
 function advance_blogging_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Blog Sidebar', 'advance-blogging' ),
-		'description'   => __( 'Appears on blog page sidebar', 'advance-blogging' ),
+		'description' => __( 'Appears on blog page sidebar', 'advance-blogging' ),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-4 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title mb-3 py-2">',
 		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
 		'name'          => __( 'Page Sidebar', 'advance-blogging' ),
-		'description'   => __( 'Appears on page sidebar', 'advance-blogging' ),
+		'description' => __( 'Appears on page sidebar', 'advance-blogging' ),
 		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-4 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title mb-3 py-2">',
 		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
 		'name'          => __( 'Thid Column Sidebar', 'advance-blogging' ),
-		'description'   => __( 'Appears on page sidebar', 'advance-blogging' ),
+		'description' => __( 'Appears on page sidebar', 'advance-blogging' ),
 		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-4 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
+		'before_title'  => '<h1 class="widget-title mb-3 py-2">',
 		'after_title'   => '</h1>',
 	) );
 	
 	register_sidebar( array(
 		'name'          => __( 'Home Page Sidebar', 'advance-blogging' ),
-		'description'   => __( 'Appears on page sidebar', 'advance-blogging' ),
+		'description' => __( 'Appears on page sidebar', 'advance-blogging' ),
 		'id'            => 'home',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-4 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title mb-3 py-2">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -174,7 +174,7 @@ function advance_blogging_widgets_init() {
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
+			'before_title'  => '<h3 class="widget-title mb-2">',
 			'after_title'   => '</h3>',
 		) );
 	}

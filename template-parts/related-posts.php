@@ -52,7 +52,7 @@ $related_posts = advance_blogging_related_posts_function(); ?>
 
 <?php if ( $related_posts->have_posts() ): ?>
 
-	<div class="related-posts clearfix">
+	<div class="related-posts clearfix py-3">
 		<?php if ( get_theme_mod('advance_blogging_related_posts_title','Related Posts') != '' ) {?>
 			<h2 class="related-posts-main-title"><?php echo esc_html( get_theme_mod('advance_blogging_related_posts_title',__('Related Posts','advance-blogging')) ); ?></h2>
 		<?php }?>
@@ -60,7 +60,7 @@ $related_posts = advance_blogging_related_posts_function(); ?>
 			<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 				<div class="col-lg-4 col-md-4">
 				    <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
-				        <div class="postbox mdallpostimage">
+				        <div class="postbox mdallpostimage mb-4 p-3">
 				            <div class="postimage">
 				                <?php 
 				                    if(has_post_thumbnail()) { ?>
@@ -74,11 +74,11 @@ $related_posts = advance_blogging_related_posts_function(); ?>
 				                <?php }
 				                if(get_theme_mod('advance_blogging_post_content', 'Excerpt Content') == 'Excerpt Content'){ ?>
 				                    <?php if(get_the_excerpt()) { ?>
-				                      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_blogging_post_excerpt_length','20')))); ?><?php echo esc_html( get_theme_mod('advance_blogging_button_excerpt_suffix','[...]') ); ?></p></div>
+				                      <div class="entry-content"><p class="m-0"><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_blogging_post_excerpt_length','20')))); ?><?php echo esc_html( get_theme_mod('advance_blogging_button_excerpt_suffix','[...]') ); ?></p></div>
 				                    <?php }?>
 				                <?php }?>
 				                <?php if ( get_theme_mod('advance_blogging_post_button_text','READ MORE') != '' ) {?>
-				                    <a href="<?php the_permalink(); ?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?></span></a>
+				                    <a href="<?php the_permalink(); ?>" class="blogbutton-mdall mt-4 py-1 px-4" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_blogging_post_button_text',__( 'READ MORE','advance-blogging' )) ); ?></span></a>
 				                <?php }?>
 				            </div>
 				            <div class="clearfix"></div> 
