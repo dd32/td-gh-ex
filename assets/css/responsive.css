@@ -111,10 +111,6 @@
     }
 
     /* Coming Soon */
-    .count-area ul li {
-        width: 49%;
-        margin-bottom: 80px;
-    }
 
     .count-area ul li:nth-child(3),
     .count-area ul li:nth-child(4) {
@@ -340,10 +336,6 @@
     }
 
     /* Coming Soon */
-    .count-area ul li {
-        width: 49%;
-        margin-bottom: 70px;
-    }
 
     .count-area ul li:nth-child(3),
     .count-area ul li:nth-child(4) {
