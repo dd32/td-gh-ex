@@ -3,10 +3,10 @@ Theme Name: Advance Automobile
 Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, automotive, cardealer, mechanic, car repairing centre, car wash center, agricultural ehicles, heavy vehicles, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu options also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
+Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, auto mechanic, car repair shops, garages and automobile mechanicals , workshops, auto painting, auto centres automotive, cardealer, mechanic, car repairing centre, car wash center, agricultural ehicles, heavy vehicles, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu options also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.5.7
+Version: 0.5.8
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-automobile
@@ -45,12 +45,7 @@ img{
 section img{
   max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
   margin:0;
   padding:10px 0;
   color: #1a8129;
@@ -69,8 +64,7 @@ a:hover{
   text-decoration:none;
   color:#666;
 }
-a:focus,
-a:hover{
+a:focus,a:hover{
   text-decoration:none !important;
 }
 a:focus, .toggle-menu button:focus, textarea:focus, .closepop:focus, input:focus, button:focus, input:focus{
@@ -93,19 +87,7 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 .clear{
@@ -137,7 +119,6 @@ input[type='submit']:hover{
   top:-9999em;
   left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -151,9 +132,7 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
-.right-sidebar-page .entry-content .alignfull{
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
@@ -186,16 +165,11 @@ input[type='submit']:hover{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.sticky{
+.sticky, .gallery-caption{
   margin:0;
   padding:0;
 }
-.gallery-caption{
-  margin:0;
-  padding:0;
-}
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
   display: inline;
   float: left;
   margin-right:20px;
@@ -205,8 +179,7 @@ input[type='submit']:hover{
   border:1px solid #bbb;
   padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
   display: inline;
   float: right;
   border:1px solid #bbb;
@@ -214,8 +187,7 @@ input[type='submit']:hover{
   margin-bottom:10px;
   margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
   clear: both;
   display: block;
   margin-left: auto;
@@ -242,11 +214,7 @@ p.logged-in-as a{
 small{
   font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
   border:1px solid #bcbcbc;
   width:100%;
   font-size:16px;
@@ -286,7 +254,6 @@ input[type="submit"] {
 .single-product .background-img-skin {
   margin: 36px 0;
 }
-
 /* ---------Buttons--------- */
 .read-moresec a {
   border: 1px solid #1a8129;
@@ -302,8 +269,7 @@ input[type="submit"] {
   color: #fff;
 }
 /*preloader*/
-.elementor-html #loader,
-.elementor-html #loader-wrapper{
+.elementor-html #loader,.elementor-html #loader-wrapper{
   display: none;
 }
 #loader-wrapper {
@@ -434,7 +400,6 @@ input[type="submit"] {
   -webkit-transition: all 0.3s 1s ease-out;
   transition: all 0.3s 1s ease-out;
 }
-
 /*----------Sticky Header------*/
 .fixed-header {
   position: fixed;
@@ -444,7 +409,6 @@ input[type="submit"] {
   box-shadow: 2px 2px 10px 0px #2d2d2d;
   z-index: 9999;
 }
-
 /* ---------Logo Middle Header--------- */
 .logo h1{
   text-align: left;
@@ -527,8 +491,7 @@ ul.list_nav {
   display: inline-block;
   position: relative;
 }
-.primary-navigation li a:hover,
-.primary-navigation li:hover a{
+.primary-navigation li a:hover,.primary-navigation li:hover a{
   background-color: #06393a;
   color: #fff;
 }
@@ -588,7 +551,6 @@ ul.list_nav {
   background: transparent;
 }
 /*--------------- SUPERFISH MENU ---------------------------*/
-
 .sf-arrows .sf-with-ul:after{
   content: '\f067';
   position: absolute;
@@ -601,9 +563,7 @@ ul.list_nav {
   right: 10px;
   color: #fff;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
@@ -666,8 +626,8 @@ ul.list_nav {
   width: 95%;
 }
 .serach-page input.search-field {
- border: 1px solid #ccc;
- padding: 9px;
+  border: 1px solid #ccc;
+  padding: 9px;
 }
 .serach_inner input.search-field {
  padding: 10px;
@@ -732,6 +692,12 @@ input.search-field {
 .modal-open{
   overflow-y: scroll;
   padding: 0 !important;
+}
+body.admin-bar .serach_inner{
+  margin-top: 32px;
+}
+body.admin-bar .closepop{
+  top:30px;
 }
 /* --------- Slider --------- */
 #slider{ 
@@ -838,8 +804,7 @@ a.carousel-control-next, a.carousel-control-prev{
   color: #fff;
   margin: 0;
 }
-.address i,
-.time i{
+.address i,.time i{
   color: #1a8129;
   background: #fff;
   padding: 13px;
@@ -874,8 +839,7 @@ p.address-font{
 #category .owl-dots{
   display: none;
 }
-#category .owl-carousel .owl-nav .owl-prev,
-#category .owl-carousel .owl-nav .owl-next{
+#category .owl-carousel .owl-nav .owl-prev,#category .owl-carousel .owl-nav .owl-next{
   border:none;
   position: absolute;
   top: 50%;
@@ -887,8 +851,7 @@ p.address-font{
 #category .owl-carousel .owl-nav .owl-next{
   right: 1%;
 }
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next{
+.owl-carousel .owl-nav .owl-prev,.owl-carousel .owl-nav .owl-next{
   border: none;
 }
 .owl-carousel .owl-nav .owl-prev i, .owl-carousel .owl-nav .owl-next i{
@@ -961,8 +924,7 @@ p.address-font{
 .entry-content ul{
   margin: 0 0 15px 15px;
 }
-.page-box p,
-.page-box-single p{
+.page-box p,.page-box-single p{
   font-size:15px;
   margin:10px 0;
   line-height:2;
@@ -993,9 +955,7 @@ p.address-font{
 .read-more-btn {
   margin: 20px 0;
 }
-.page-box .metabox,
-.page-box-single .metabox,
-.metabox a{
+.page-box .metabox,.page-box-single .metabox,.metabox a{
   color:#06393a;
   clear:both;
 }
@@ -1047,9 +1007,7 @@ article.new-text.col-lg-6.col-md-6 {
   margin: 0 0 10px 0 !important;
   padding: 0;
 }
-.page-box-single .metabox,
-.page-box-single p,
-.page-box-single h3{
+.page-box-single .metabox,.page-box-single p,.page-box-single h3{
   text-align: left;
 }
 .page-box-single .box-image img{
@@ -1158,20 +1116,16 @@ table#wp-calendar td a {
 #footer #calendar_wrap a, #footer #calendar_wrap a:hover{
   color: #fff;
 }
-#footer caption,
-#sideabr caption {
+#footer caption,#sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
   color:#202020 !important;
   padding: 5px;
 }
@@ -1182,14 +1136,12 @@ table#wp-calendar td a {
   padding: 7px;
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -1311,9 +1263,7 @@ table#wp-calendar td a {
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1387,22 +1337,18 @@ li#comment{
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
-.woocommerce nav.woocommerce-pagination ul li a:focus, 
-.woocommerce nav.woocommerce-pagination ul li a:hover, 
-.woocommerce nav.woocommerce-pagination ul li span.current {
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
   background: #06393a;
   color: #fff;
 }
-.woocommerce nav.woocommerce-pagination ul li a, 
-.woocommerce nav.woocommerce-pagination ul li span{
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{
   padding: 10px 15px;
   font-size: 18px;
 }
 .woocommerce #sidebar {
   margin-top: 2em;
 }
-a.showcoupon,
-.woocommerce-message::before{
+a.showcoupon,.woocommerce-message::before{
   color: #06393a;
 }
 .woocommerce-message {
@@ -1421,8 +1367,7 @@ h2.woocommerce-loop-product__title{
   font-weight: 500;
   font-size: 22px !important;
 }
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #1a8129;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
@@ -1585,8 +1530,7 @@ span.woocommerce-input-wrapper{
 .woocommerce .woocommerce-product-rating .star-rating {
   margin: 0.5em 20px 0 0;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1649,8 +1593,7 @@ span.woocommerce-input-wrapper{
 #footer .woocommerce.widget_shopping_cart .cart_list li{
   padding: 0 0 10px 2em;
 }
-#footer .woocommerce a.button,
-#footer .widget_price_filter .price_slider_amount .button{
+#footer .woocommerce a.button,#footer .widget_price_filter .price_slider_amount .button{
   background: #1a8129;
   color: #fff;
 }
@@ -1794,8 +1737,7 @@ img.rss-widget-icon {
   color: #202020;
 }
 /* Page */
-h2.entry-title,
-h1.page-title {
+h2.entry-title,h1.page-title {
   text-align: left;
   margin-bottom: 10px;
   color: #06393a;
@@ -1871,8 +1813,7 @@ h1.page-title {
   float:right;
   font-weight:bold;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
   display:block;
   float:left;
   margin: 2px 2px 2px 0;
@@ -1899,18 +1840,15 @@ h1.page-title {
 iframe , .entry-audio audio{
   width: 100%;
 }
-
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){  
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
     padding: 0px;
   }
   #slider .inner_carousel h1 {
     padding: 0px 2px;
   }
-  #slider .inner_carousel p,
-  #category .text-content p {
+  #slider .inner_carousel p,#category .text-content p {
     font-size: 10px;
   }
   #slider .carousel-caption {
@@ -1940,12 +1878,10 @@ iframe , .entry-audio audio{
   }
 }
 @media screen and (max-width:720px) { 
-  #header,
-  #slider .inner_carousel{
+  #header,#slider .inner_carousel{
     text-align: center;
   }
-  #slider .inner_carousel p,
-  #slider .inner_carousel h1 {
+  #slider .inner_carousel p,#slider .inner_carousel h1 {
     display: none;
   }
   #comments input[type="submit"].submit{
@@ -1962,14 +1898,10 @@ iframe , .entry-audio audio{
     margin-top: 4px;
     margin-bottom: 10px;
   }
-  #contact-details,
-  .address,
-  .time,
-  .book-btn{
+  #contact-details,.address,.time,.book-btn{
     margin: 10px;
   }
-  .address,
-  .time{
+  .address,.time{
     text-align: center;
   }
   .center-align {
@@ -1991,8 +1923,7 @@ iframe , .entry-audio audio{
   #footer input[type="search"]{
     width: 100%;
   }
-  #footer th,
-  #footer td{
+  #footer th,#footer td{
     padding: 0px;
   } 
 }
@@ -2010,12 +1941,10 @@ iframe , .entry-audio audio{
   #footer input[type="submit"]{
     margin-top: 5px;
   }
-  #footer th,
-  #footer td{
+  #footer th,#footer td{
     padding: 4px;
   }
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
     padding: 0px;
   }
   #slider .carousel-caption {
@@ -2034,8 +1963,7 @@ iframe , .entry-audio audio{
   #footer input[type="search"]{
     width: 100%;
   }
-  .woocommerce ul.products[class*=columns-] li.product,
-  .woocommerce-page ul.products[class*=columns-] li.product{
+  .woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
     width: 100% !important;
     float: none !important;
   }
@@ -2056,8 +1984,7 @@ iframe , .entry-audio audio{
   .social-icons i{
     margin-left: 10px;
   }
-  .social-icons,
-  .mail{
+  .social-icons,.mail{
     text-align: center;
     margin-bottom: 10px;
   }
@@ -2113,8 +2040,7 @@ iframe , .entry-audio audio{
 }
 /*------------------RESPONSIVE MEIDA menu css-------------------*/
 @media screen and (max-width: 1000px){
-  .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .toggle-menu button:focus{
+  .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .toggle-menu button:focus{
     outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff;
   }

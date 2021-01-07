@@ -4,7 +4,7 @@ Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, o
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.5.7
+Stable tag: 0.5.8
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 
 == Description ==
 
-Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, automotive, cardealer, mechanic, car repairing centre, car wash center, agricultural ehicles, heavy vehicles, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu options also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
+Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, auto mechanic, car repair shops, garages and automobile mechanicals , workshops, auto painting, auto centres automotive, cardealer, mechanic, car repairing centre, car wash center, agricultural ehicles, heavy vehicles, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu options also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
 
 == Changelog ==
 
@@ -180,6 +180,11 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 
 = 0.5.7 =
 * Added block-styles tag.
+
+= 0.5.8 =
+* Done Underline on anchor tag.
+* Done escaping on get_template_directory_uri().
+* Corrected some focus errors.
 
 == Resources ==
 

@@ -31,7 +31,9 @@
         <span class="entry-comments"><i class="fas fa-comments"></i><?php comments_number( __('0 Comments','advance-automobile'), __('0 Comments','advance-automobile'), __('% Comments','advance-automobile') ); ?></span>
       <?php } ?>
     </div>
-    <div class="entry-content"><?php the_content();?></div>
+    <div class="entry-content">
+      <div class="entry-content"><?php the_content();?></div>
+    </div>
     <?php if( get_theme_mod( 'advance_automobile_tags_hide',true) != '') { ?>
       <div class="tags"><p><?php
         if( $tags = get_the_tags() ) {
