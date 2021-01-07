@@ -41,12 +41,12 @@ jQuery(document).ready(function () {
 
 })( jQuery );
 
-jQuery(function($){
-  $(window).load(function() {
-    $("#loader-wrapper").delay(1000).fadeOut("slow");
-      $("#loader").delay(1000).fadeOut("slow");
-  })
-});
+  jQuery(function($){
+    $(window).load(function() {
+      $("#loader-wrapper").delay(1000).fadeOut("slow");
+        $("#loader").delay(1000).fadeOut("slow");
+    })
+  });
 
 function advance_business_MobileMenuInit() {
 

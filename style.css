@@ -6,7 +6,7 @@ Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, blogger, creative, consulting, medical services, advertising consulting, travel agency, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, right sidebar lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. It has Theme Options to provide you with better customization options For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.5.5
+Version: 0.5.6
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -45,12 +45,7 @@ img{
 section img{
 	max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
 	margin:0;
 	padding:10px 0;
 	color: #000
@@ -92,23 +87,8 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+.clear, article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
-}
-.clear{
-	clear:both;
 }
 input[type='submit']:hover{
 	cursor: pointer;
@@ -140,7 +120,6 @@ input[type='submit']:hover{
 .elementor-html #loader, .elementor-html #loader-wrapper{ 
   display: none; 
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -154,9 +133,7 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
-.right-sidebar-page .entry-content .alignfull{
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
@@ -189,16 +166,11 @@ input[type='submit']:hover{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.sticky{
+.sticky, .gallery-caption{
 	margin:0;
 	padding:0;
 }
-.gallery-caption{
-	margin:0;
-	padding:0;
-}
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
  	display: inline;
 	float: left;
 	margin-right:20px;
@@ -208,8 +180,7 @@ input[type='submit']:hover{
 	border:1px solid #bbb;
 	padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
 	display: inline;
 	float: right;
 	border:1px solid #bbb;
@@ -217,8 +188,7 @@ input[type='submit']:hover{
 	margin-bottom:10px;
 	margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
 	clear: both;
 	display: block;
 	margin-left: auto;
@@ -245,11 +215,7 @@ input[type='submit']:hover{
 small{
 	font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
 	font-size:16px;
@@ -274,7 +240,6 @@ input[type="submit"] {
 	font-weight:bold;
 	color:#ffaa56;
 }
-
 /* ---------Buttons--------- */
 .read-moresec a.button{
 	background:#ffaa56;
@@ -287,10 +252,8 @@ input[type="submit"] {
 .read-moresec{
   margin:20px 0;
 }
-
 /*preloader*/
-.elementor-html #loader,
-.elementor-html #loader-wrapper{
+.elementor-html #loader,.elementor-html #loader-wrapper{
   display: none;
 }
 #loader-wrapper {
@@ -305,7 +268,6 @@ input[type="submit"] {
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -347,7 +309,6 @@ input[type="submit"] {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -422,7 +383,6 @@ input[type="submit"] {
   -webkit-transition: all 0.3s 1s ease-out;
   transition: all 0.3s 1s ease-out;
 }
-
 /*----------Sticky Header------*/
 .fixed-header {
   position: fixed;
@@ -441,8 +401,7 @@ input[type="submit"] {
   text-align: left;
   padding: 10px 20px;
 }
-.logo h1,
-.logo p.site-title{
+.logo h1,.logo p.site-title{
   font-size:30px;
   font-weight:bold;
   text-align:left;
@@ -498,8 +457,7 @@ ul.list_nav {
   display: inline-block;
   position: relative;
 }
-.primary-navigation li a:hover,
-.primary-navigation li:hover a{
+.primary-navigation li a:hover,.primary-navigation li:hover a{
   background-color: #000;
   color: #ffaa56;
 }
@@ -573,9 +531,7 @@ ul.list_nav {
   color: #ffaa56;
   top:15px;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
@@ -733,6 +689,12 @@ input.search-field {
 .modal-backdrop{
   position: relative;
 }
+body.admin-bar .serach_inner{
+  margin-top: 32px;
+}
+body.admin-bar .closepop{
+  top:30px;
+}
 /* --------- Slider --------- */
 #slider{ 
   max-width:100%; 
@@ -752,14 +714,12 @@ input.search-field {
 #slider .carousel-control-prev,#slider .carousel-control-next{
   opacity: unset;
 }
-#slider .carousel-control-next-icon i,
-#slider .carousel-control-prev-icon i{
+#slider .carousel-control-next-icon i,#slider .carousel-control-prev-icon i{
   background: #7d7b7b;
   padding: 20px 22px;
   border-radius: 50%;
   }
-#slider .carousel-control-next-icon i:hover,
-#slider .carousel-control-prev-icon i:hover{
+#slider .carousel-control-next-icon i:hover,#slider .carousel-control-prev-icon i:hover{
   background:#ffaa56;
 }
 #slider .carousel-caption {
@@ -835,7 +795,6 @@ input.search-field {
   font-weight: 500;
   padding: 2px 0px;
 }
-
 /*---------- Latest Projects section -----------*/
 #latest-projects {
   margin: 2% 0;
@@ -878,7 +837,6 @@ hr.project-hr {
 .project-box {
   margin-bottom: 20px;
 }
-
 /*----------------- Homepage ----------------*/
 .page-box {
   padding: 10px;
@@ -925,7 +883,6 @@ article.new-text.col-lg-6.col-md-6 {
   text-align: right;
   margin: 25px 0; 
 }
-
 /* --------- Blog Page ------- */
 .page-box-single {
   padding: 10px;
@@ -1088,9 +1045,7 @@ section .innerlightbox{
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
 	color:#202020 !important;
 	padding: 5px;
 }
@@ -1101,14 +1056,12 @@ section .innerlightbox{
 #footer #wp-calendar td a {
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -1143,7 +1096,7 @@ section .innerlightbox{
 	color: #fff;
 }
 #footer p{
-	font-size:14px;
+	font-size:15px;
 }
 #footer .news-form{
 	margin-top:24px;
@@ -1192,7 +1145,6 @@ section .innerlightbox{
   color: #fff;
 }
 /* --------- POST --------- */
-
 .bradcrumbs{
 	padding:30px 0;
 }
@@ -1210,7 +1162,6 @@ section .innerlightbox{
 	color:#000;
 	padding:5px 15px;
 }
-
 /* Comments BOX */
 #comments {
   display: block;
@@ -1227,9 +1178,7 @@ section .innerlightbox{
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1304,8 +1253,7 @@ input#billing_phone {
 .woocommerce #sidebar {
   margin-top: 2em;
 }
-a.showcoupon,
-.woocommerce-message::before{
+a.showcoupon,.woocommerce-message::before{
 	color: #000;
 }
 .woocommerce-message {
@@ -1324,8 +1272,7 @@ h2.woocommerce-loop-product__title{
   font-weight: 500;
   font-size: 25px !important;
 }
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #000;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
@@ -1352,9 +1299,6 @@ h2.woocommerce-loop-product__title{
   border-radius: 0;
   border: solid 1px #000;
   color: #000;
-}
-.col-1,.col-2 {
-  max-width: 100%;
 }
 nav.woocommerce-MyAccount-navigation ul {
   list-style: none;
@@ -1425,8 +1369,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 .woocommerce .woocommerce-product-rating .star-rating {
   margin: 0.5em 20px 0 0;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1486,8 +1429,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 .woocommerce ul.products li.product .star-rating{
   margin: 10px auto !important;
 }
-#footer .woocommerce a.button:hover,
-#footer .widget_price_filter .price_slider_amount .button:hover{
+#footer .woocommerce a.button:hover,#footer .widget_price_filter .price_slider_amount .button:hover{
   background: #ffaa56;
   color: #000;
 }
@@ -1606,8 +1548,7 @@ img.rss-widget-icon {
 }
 
 /* Page */
-h2.entry-title,
-h1.page-title {
+h2.entry-title,h1.page-title {
   text-align: left;
   margin-bottom: 10px;
   color: #000;
@@ -1691,8 +1632,7 @@ h1.page-title {
 	float:right;
 	font-weight:bold;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
 	display:block;
   float:left;
   margin: 2px 5px 10px 0;
@@ -1709,7 +1649,7 @@ h1.page-title {
 }
 .pagination a:hover{
 	color:#000;
-    background: #ffaa56;
+  background: #ffaa56;
 }
 .nav-links {
   margin-top: 20px;
@@ -1720,21 +1660,16 @@ h1.page-title {
   color:#000;
 	font-weight:bold;
 }
-iframe{
+iframe, .entry-audio audio{
   width: 100%;
 }
-.entry-audio audio {
-    width: 100%;
-}
-
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
   .entry-content .alignwide {
     margin-left: -20px;
     margin-right: -20px;
   }
-  #sidebar th,
-  #sidebar td{
+  #sidebar th,#sidebar td{
 	  padding: 4px;
 	}
   .page-template-custom-front-page #header{
@@ -1790,8 +1725,7 @@ iframe{
     margin-left: -10px;
     margin-right: -10px;
   }
-  .woocommerce ul.products[class*=columns-] li.product,
-  .woocommerce-page ul.products[class*=columns-] li.product{
+  .woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
     width: 100% !important;
     float: none !important;
   }
@@ -1818,8 +1752,7 @@ iframe{
     left: 10%;
     top: 42%;
   }
-  #slider .inner_carousel p,
-  #slider .inner_carousel h2 {
+  #slider .inner_carousel p,#slider .inner_carousel h2 {
     display: none;
   }
   #slider .inner_carousel {
@@ -1883,8 +1816,7 @@ iframe{
 	#footer input[type="search"]{
 		width: 100%;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 0px;
 	}	
 }
@@ -1896,8 +1828,7 @@ iframe{
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 4px;
 	}
   #slider .inner_carousel p{
@@ -1916,8 +1847,7 @@ iframe{
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
-  .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
+  .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
     outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff !important;
   }
