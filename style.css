@@ -3,10 +3,10 @@ Theme Name: Advance Portfolio
 Theme URI: https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, resume, proffesional CV, webdevelopers, multipurpose, app builders, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
+Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, architects, musicians, resume, proffesional CV, black and white, multicolor, programmer, web-developers, multipurpose, app builders, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 0.4.9
+Version: 0.5
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-portfolio
@@ -44,12 +44,7 @@ img{
 section img{
 	max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
 	margin:0;
 	padding:10px 0;
 	color: #000
@@ -61,7 +56,6 @@ p{
   letter-spacing: 0;
   font-weight: 500;
   line-height: 1.8;
-
 }
 a{
 	text-decoration:none;
@@ -71,13 +65,10 @@ a:hover{
 	text-decoration:none;
 	color:#666;
 }
-a:focus,
-a:hover{
+a:focus,a:hover{
 	text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus, .toggle-menu button:focus,
-.woocommerce form .form-row input.input-text:focus, 
-.woocommerce form .form-row textarea:focus{
+a:focus, input:focus, textarea:focus, .toggle-menu button:focus,.woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row textarea:focus{
   outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
 }
@@ -101,19 +92,7 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 .clear{
@@ -131,12 +110,10 @@ input[type='submit']:hover{
 	padding:20px 0 20px;
 }
 .wp-caption{
-	margin:0;
-	padding:0;
 	font-size:13px;
 	max-width:100%;
 }
-.wp-caption-text{
+.wp-caption-text, .wp-caption{
 	margin:0;
 	padding:0;
 }
@@ -145,7 +122,6 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -159,52 +135,44 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
-.right-sidebar-page .entry-content .alignfull{
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
-border: 0;
-clip: rect(1px, 1px, 1px, 1px);
-clip-path: inset(50%);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-background-color: #eee;
-clip: auto !important;
-clip-path: none;
-color: #444;
-display: block;
-font-size: 1em;
-height: auto;
-left: 5px;
-line-height: normal;
-padding: 15px 23px 14px;
-text-decoration: none;
-top: 5px;
-width: auto;
-z-index: 100000; /* Above WP toolbar. */
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
-.sticky{
+.sticky, .gallery-caption, .bypostauthor{
 	margin:0;
 	padding:0;
 }
-.gallery-caption{
-	margin:0;
-	padding:0;
-}
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
  	display: inline;
 	float: left;
 	margin-right:20px;
@@ -214,8 +182,7 @@ z-index: 100000; /* Above WP toolbar. */
 	border:1px solid #bbb;
 	padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
 	display: inline;
 	float: right;
 	border:1px solid #bbb;
@@ -223,8 +190,7 @@ z-index: 100000; /* Above WP toolbar. */
 	margin-bottom:10px;
 	margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
 	clear: both;
 	display: block;
 	margin-left: auto;
@@ -241,18 +207,10 @@ z-index: 100000; /* Above WP toolbar. */
 #respond{
 	clear:both;
 }
-.bypostauthor{
-	margin:0;
-	padding:0;
-}
 small{
 	font-size:14px !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
- textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
 	font-size:16px;
@@ -277,10 +235,7 @@ input[type="submit"] {
 	font-weight:bold;
 	color:#000;
 }
-iframe{
-  width: 100%;
-}
-.entry-audio audio {
+iframe,.entry-audio audio{
   width: 100%;
 }
 .entry-content  a, .woocommerce-product-details__short-description p a, .comment-body p a{ 
@@ -288,11 +243,10 @@ iframe{
   color: #202020 ;
 }
 .innerlightbox {
-    padding: 2% 0 0;
+  padding: 2% 0 0;
 }
 /*elementor*/
-.elementor-html #loader, 
-.elementor-html #loader-wrapper{ 
+.elementor-html #loader, .elementor-html #loader-wrapper{ 
   display: none; 
 }
 /* ---------Buttons--------- */
@@ -375,7 +329,6 @@ iframe{
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -458,8 +411,7 @@ iframe{
 #header .logo{
 	margin:0;
 }
-#header .logo h1,
-#header .logo p.site-title{
+#header .logo h1,#header .logo p.site-title{
 	font-weight:700;
 	text-transform:uppercase;
 	padding:0;
@@ -520,8 +472,7 @@ ul.list_nav {
   display: inline-block;
   position: relative;
 }
-.primary-navigation li a:hover,
-.primary-navigation li:hover a{
+.primary-navigation li a:hover,.primary-navigation li:hover a{
   color: #f54ea2;
 }
 .primary-navigation a{
@@ -583,9 +534,7 @@ ul.list_nav {
   right: 10px;
   top: 15px;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
@@ -597,7 +546,6 @@ ul.list_nav {
   padding-right: 30px;
 }
 /* Homepage */
-
 .page-box {
   padding: 10px;
   margin-bottom: 20px;
@@ -679,8 +627,7 @@ ul.list_nav {
 .metabox i {
   margin-right: 5px;
 }
-span.entry-comments,
-span.entry-date{
+span.entry-comments,span.entry-date{
   float: right;
 }
 .metabox a:hover{
@@ -827,20 +774,16 @@ section .innerlightbox{
 table#wp-calendar {
   width: 100%;
 }
-#footer caption,
-#sideabr caption {
+#footer caption,#sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
-#sidebar td,
-#sidebar td#prev a,
-#sidebar th {
+#sidebar td,#sidebar td#prev a,#sidebar th {
 	color:#202020 !important;
 	padding: 5px;
 }
@@ -848,14 +791,12 @@ table#wp-calendar {
   padding: 7px;
   color: #fff;
 }
-#footer th,
-#sidebar th {
+#footer th,#sidebar th {
   text-align: center;
   padding: 10px;
   color: #fff;
 }
-#footer select,
-#sidebar select {
+#footer select,#sidebar select {
   padding: 8px 5px;
   color: #4d4d4d;
 }
@@ -998,9 +939,7 @@ table#wp-calendar {
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1104,7 +1043,7 @@ li#comment{
   top: 50%;
   transform: translateY(-50%);
 }
-section#banner {
+#banner {
   position: relative;
 }
 #banner .social-media i {
@@ -1130,12 +1069,11 @@ section#banner {
   width: 100%;
   float: none;
 }
-a.showcoupon,
-.woocommerce-message::before{
+a.showcoupon,.woocommerce-message::before{
   color: #000;
 }
 .woocommerce-message {
-   border-top-color: #000;
+  border-top-color: #000;
 }
 .woocommerce span.onsale{
   background: #f54ea2;
@@ -1147,13 +1085,11 @@ a.showcoupon,
   padding: 10px;
   text-align: center;
 }
-h2.woocommerce-loop-product__title,
-.woocommerce div.product .product_title {
+h2.woocommerce-loop-product__title,.woocommerce div.product .product_title {
   color: #000;
   font-weight: 500;
 }
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #000;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
@@ -1181,7 +1117,7 @@ h2.woocommerce-loop-product__title,
 .single-product .background-img-skin {
   margin: 36px 0;
 }
-span.woocommerce-input-wrapper{
+.woocommerce-input-wrapper{
   width: 100%;
 }
 nav.woocommerce-MyAccount-navigation ul {
@@ -1282,7 +1218,7 @@ header.woocommerce-products-header {
   font-size: 14px;
 }
 .woocommerce .star-rating {
-    float: left;
+  float: left;
 }
 .news-item.layout-two .news-text-wrap{
   font-size: 14px;
@@ -1319,8 +1255,7 @@ header.woocommerce-products-header {
   background-color: #f54ea2;
   color: #000 !important;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1438,8 +1373,7 @@ img.rss-widget-icon {
   width: auto !important;
 }
 /* Page */
-h2.entry-title,
-h1.page-title {
+h2.entry-title,h1.page-title {
   text-align: left;
   margin-bottom: 10px;
   color: #000;
@@ -1522,8 +1456,7 @@ h1.page-title {
 	float:right;
 	font-weight:bold;
 }
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
 	display:block;
   float:left;
   margin: 2px 2px 2px 0;
@@ -1549,7 +1482,12 @@ h1.page-title {
 	font-weight:bold;
 }
 /* Media */
-@media screen and (max-width: 768px) and (min-width: 720px){	
+@media screen and (max-width: 768px) and (min-width: 720px){
+  .page-template-custom-front-page #header{
+    position: static;
+    background: #ffdd65;
+    padding: 15px 0;
+  }
   .entry-content .alignwide {
     margin-left: -20px;
     margin-right: -20px;
@@ -1560,8 +1498,7 @@ h1.page-title {
  	.box-content p, .box-content h2 {
     display: none;
   }
-    #sidebar th,
-	#sidebar td{
+  #sidebar th,#sidebar td{
 		padding: 4px;
 	}	
   #Portfolio-Section .image-box {
@@ -1570,8 +1507,7 @@ h1.page-title {
   .box-image.text-center a img {
     width: 100%;
   }
-  .products li,
-  .related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product {
+  .products li,.related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product {
     width: 47% !important;
     margin-right: 10px;
   }
@@ -1600,14 +1536,12 @@ h1.page-title {
   .page-template-custom-front-page #header{
     position: static;
   }
-	#header,
-	#header .logo h1,
-  #header .logo p.site-title{
+	#header,#header .logo h1,#header .logo p.site-title{
 		text-align: center;
 	}
 	.contact span {
-	    display: inline-block;
-	    margin: 0;
+    display: inline-block;
+    margin: 0;
 	}
 	#comments input[type="submit"].submit{
 		width: 100% !important;
@@ -1648,8 +1582,7 @@ h1.page-title {
 	#footer input[type="search"]{
 		width: 100%;
 	}
-	#footer th,
-	#footer td{
+	#footer th,#footer td{
 		padding: 0px;
 	}
 }
@@ -1663,9 +1596,7 @@ h1.page-title {
 		float: none;
 		margin-top: 5px;
 	}
-	#footer th,
-	#footer td
-	{
+	#footer th,#footer td{
 		padding: 4px;
 	}
   .box-content {
@@ -1693,8 +1624,7 @@ h1.page-title {
 	#footer input[type="search"]{
 		width: 100%;
 	}
-	.woocommerce ul.products[class*=columns-] li.product,
-	.woocommerce-page ul.products[class*=columns-] li.product{
+	.woocommerce ul.products[class*=columns-] li.product,.woocommerce-page ul.products[class*=columns-] li.product{
 		width: 100% !important;
 		float: none !important;
 	}
@@ -1731,7 +1661,7 @@ h1.page-title {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 9999999;
+    z-index: 9999999999;
     top: 0;
     right: 0;
     background-color: #252525;
@@ -1872,9 +1802,7 @@ h1.page-title {
     right: 0;
     color: #fff;
   }
-  .sf-arrows ul li > .sf-with-ul:focus:after,
-  .sf-arrows ul li:hover > .sf-with-ul:after,
-  .sf-arrows .sfHover > .sf-with-ul:after,.sf-arrows ul .sf-with-ul:after, .sf-arrows .sf-with-ul:after{
+  .sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after,.sf-arrows ul .sf-with-ul:after, .sf-arrows .sf-with-ul:after{
     color: #000 !important;
   }
 }

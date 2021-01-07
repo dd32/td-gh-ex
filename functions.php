@@ -164,11 +164,11 @@ function advance_portfolio_font_url() {
 function advance_portfolio_scripts() {
 	wp_enqueue_style('advance-portfolio-font', advance_portfolio_font_url(), array());
 	// blocks-css
-	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
-	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
+	wp_enqueue_style( 'advance-portfolio-block-style', get_theme_file_uri('/css/blocks.css') );
+	wp_enqueue_style('bootstrap', esc_url(get_template_directory_uri()).'/css/bootstrap.css');
 	wp_enqueue_style('advance-portfolio-basic-style', get_stylesheet_uri());
-	wp_enqueue_style('advance-portfolio-customcss', get_template_directory_uri().'/css/custom.css');
-	wp_enqueue_style('font-awesome', get_template_directory_uri().'/css/fontawesome-all.css');
+	wp_enqueue_style('advance-portfolio-customcss', esc_url(get_template_directory_uri()).'/css/custom.css');
+	wp_enqueue_style('font-awesome', esc_url(get_template_directory_uri()).'/css/fontawesome-all.css');
 
 	// Paragraph
 	    $advance_portfolio_paragraph_color = get_theme_mod('advance_portfolio_paragraph_color', '');
@@ -252,17 +252,17 @@ function advance_portfolio_scripts() {
 			';
 	wp_add_inline_style( 'advance-portfolio-basic-style',$advance_portfolio_custom_css );
 	
-	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
-	wp_enqueue_script('advance-portfolio-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
+	wp_enqueue_script('SmoothScroll', esc_url(get_template_directory_uri()).'/js/SmoothScroll.js', array('jquery'));
+	wp_enqueue_script('advance-portfolio-customscripts-jquery', esc_url(get_template_directory_uri()).'/js/custom.js', array('jquery'));
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
-	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
-	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
+	wp_enqueue_script('bootstrap', esc_url(get_template_directory_uri()).'/js/bootstrap.js', array('jquery'));
+	wp_enqueue_script( 'jquery-superfish', esc_url(get_template_directory_uri()) . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
 	wp_add_inline_style( 'advance-portfolio-basic-style',$advance_portfolio_custom_css );
 
-	wp_enqueue_style('advance-portfolio-ie', get_template_directory_uri().'/css/ie.css', array('advance-portfolio-basic-style'));
+	wp_enqueue_style('advance-portfolio-ie', esc_url(get_template_directory_uri()).'/css/ie.css', array('advance-portfolio-basic-style'));
 	wp_style_add_data('advance-portfolio-ie', 'conditional', 'IE');
 }
 add_action('wp_enqueue_scripts', 'advance_portfolio_scripts');
