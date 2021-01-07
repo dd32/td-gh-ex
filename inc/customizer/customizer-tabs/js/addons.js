@@ -11,7 +11,7 @@ var arrival_customize_tabs_focus = function ( $ ) {
 	$(
 		function () {
 				var customize = wp.customize;
-				$( '.customize-partial-edit-shortcut' ).live(
+				$( '.customize-partial-edit-shortcut' ).on(
 					'DOMNodeInserted', function () {
 						$( this ).on(
 							'click', function() {

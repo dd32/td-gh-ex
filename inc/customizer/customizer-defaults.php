@@ -26,7 +26,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_top_right_header_menus']            = 'top';
     $defaults[$prefix.'_main_nav_layout']                   = 'full';
     $defaults[$prefix.'_main_nav_right_content']            = 'search';
-    $defaults[$prefix.'_main_nav_right_btn_txt']            = esc_html('Contact Us','arrival');
+    $defaults[$prefix.'_main_nav_right_btn_txt']            = esc_html__('Contact Us','arrival');
     $defaults[$prefix.'_main_nav_right_btn_url']            = '#';
     $defaults[$prefix.'_page_header_layout']                = 'default';
     $defaults[$prefix.'_menu_hover_styles']                 = 'hover-layout-one';

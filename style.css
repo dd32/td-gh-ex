@@ -4,13 +4,13 @@ Theme URI: https://wpoperation.com/themes/arrival/
 Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website like corporate, business, portfolio, construction, charity, resturant, landing pages, education, fitness, gym, spa, travel, ecommerce, online stores etc. The theme is lightweight, fast and fully compatible with elementor and other major page builders. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor. The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.3.7
+Version: 1.3.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.4.2
+Tested up to: 5.6
 Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header,left-sidebar,rtl-language-support,block-styles,wide-blocks
 
 Arrival is a WordPress Theme, 
@@ -1678,7 +1678,9 @@ ul.social li a i {
 .site-main .entry-content a{
 	    font-weight: 500;
 	    color: #E12454;
+	    text-decoration: underline;
 }
+
 .site-main .entry-content a:hover {
     color: #333;
 }
@@ -2668,7 +2670,7 @@ body.header-bg-image.arrival-inner-page .site-header .main-header-wrapp.boxed.on
 }
 
 /* transparent header */
-body.home .arrival-transparent-header {
+body.home.page-template .arrival-transparent-header {
     position: absolute;
     width: 100%;
     background: transparent;

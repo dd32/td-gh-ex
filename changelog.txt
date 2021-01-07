@@ -1,3 +1,7 @@
+=== v1.3.8 ===
+- Fixed JS issue on customizer
+- Fixed minor design issues
+
 === v1.3.7 ===
 - Minor bugs fixed
 
