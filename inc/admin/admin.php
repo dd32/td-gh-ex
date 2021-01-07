@@ -7,7 +7,7 @@ function bb_ecommerce_store_abouttheme() {
 
 // Add a Custom CSS file to WP Admin Area
 function bb_ecommerce_store_admin_theme_style() {
-   wp_enqueue_style('bb-ecommerce-store-custom-admin-style', get_template_directory_uri() .'/inc/admin/admin.css');
+   wp_enqueue_style('bb-ecommerce-store-custom-admin-style', esc_url(get_template_directory_uri()) .'/inc/admin/admin.css');
 }
 add_action('admin_enqueue_scripts', 'bb_ecommerce_store_admin_theme_style');
 
