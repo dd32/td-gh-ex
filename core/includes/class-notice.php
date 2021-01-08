@@ -56,7 +56,7 @@ if( !class_exists( 'avventura_lite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="notice notice-warning is-dismissible">
+            <div class="notice notice-warning">
             
             	<p>
             
@@ -67,7 +67,7 @@ if( !class_exists( 'avventura_lite_admin_notice' ) ) {
                             esc_html_e( 'Upgrade to the premium version of Avventura, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more. ', 'avventura-lite' ); 
                             
 							printf( 
-								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'avventura-lite' ) . '</a>', 
+								'<p><a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'avventura-lite' ) . '</a></p>', 
 								esc_url( wp_nonce_url( add_query_arg( 'avventura-lite-dismiss', '1' ), 'avventura-lite-dismiss-action'))
 							);
                             
