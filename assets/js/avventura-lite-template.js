@@ -132,9 +132,17 @@ jQuery.noConflict()(function($){
 			$('body').addClass('overlay-active').addClass('no-scrolling');
 			$('#wrapper').addClass('open-sidebar');
 
+			$('#sidebar-wrapper').css({
+			  display: "block"
+			});
+
+			$('#scroll-sidebar').animate({
+			  left: "0px"
+			}, 400);
+
 		    setTimeout(function(){
 				$('#scroll-sidebar a.mobile-navigation').focus();
-    		},100);
+    		}, 100);
 
 		});
 
@@ -158,6 +166,16 @@ jQuery.noConflict()(function($){
 				$('body').removeClass('overlay-active').removeClass('no-scrolling');
 				$('#wrapper').removeClass('open-sidebar');
 
+				$('#scroll-sidebar').animate({
+				  left: "-300px"
+				}, 200);
+
+				setTimeout(function(){
+					$('#sidebar-wrapper').css({
+					  display: "none"
+					});
+				}, 200);
+
 			});
 
 		} else if ( $(window).width() > 992 ) {
@@ -166,6 +184,17 @@ jQuery.noConflict()(function($){
 				$('#overlay-body').fadeOut(600);
 				$('body').removeClass('overlay-active').removeClass('no-scrolling');
 				$('#wrapper').removeClass('open-sidebar');
+				
+				$('#scroll-sidebar').animate({
+				  left: "-300px"
+				}, 200);
+
+				setTimeout(function(){
+					$('#sidebar-wrapper').css({
+					  display: "none"
+					});
+				}, 200);
+
 			});
 
 		}
