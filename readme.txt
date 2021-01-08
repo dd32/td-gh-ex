@@ -2,8 +2,8 @@
 Contributors: alexvtn
 Tags: custom-background, custom-header, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, four-columns, grid-layout, blog, e-commerce, news
 Requires at least: 4.9
-Tested up to: 5.5
-Stable tag: 1.0.0
+Tested up to: 5.6
+Stable tag: 1.0.1
 Requires PHP: 5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -16,10 +16,10 @@ Attimo is a creative and clean minimal child theme of Avventura Lite, perfect to
 
 Developed by ThemeinProgress, https://www.themeinprogress.com
 
-Attimo WordPress Theme is a child theme of Avventura Lite Theme, Copyright 2020 ThemeinProgress.
+Attimo WordPress Theme is a child theme of Avventura Lite Theme, Copyright 2021 ThemeinProgress.
 Attimo is distributed under the terms of the GNU GPLv3.
 
-Avventura Lite WordPress Theme, Copyright 2020 ThemeinProgress.
+Avventura Lite WordPress Theme, Copyright 2021 ThemeinProgress.
 Avventura Lite is distributed under the terms of the GNU GPLv3.
 
 == Theme Documentation ==
@@ -29,8 +29,8 @@ https://demo.themeinprogress.com/avventura/documentation/avventura-lite-document
 
 == Changelog ==
 
-= 1.0.0 =
-Release date - December, 08 - 2020
+= 1.0.1 =
+Release date - January, 08 - 2021
 
 * Initial version
 

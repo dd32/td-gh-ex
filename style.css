@@ -4,9 +4,9 @@ Theme Name: Attimo
 Description: Attimo is a creative and clean minimal child theme of Avventura Lite, perfect to build your personal, travel, beauty, lifestyle, news, photography website. Attimo offers a sticky post grid on homepage, an optional banner area on header and a new layout for the navigation menu, social buttons and Google Fonts.
 Author: ThemeinProgress.
 Author URI: https://www.themeinprogress.com
-Version: 1.0.0
+Version: 1.0.1
 Requires PHP: 5.3
-Tested up to: 5.5
+Tested up to: 5.6
 Template: avventura-lite
 Tags: custom-background, custom-header, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, four-columns, grid-layout, blog, e-commerce, news
 Text Domain: attimo
@@ -14,13 +14,31 @@ Domain Path: /languages
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Attimo Child WordPress Theme is a child theme of Avventura Lite, Copyright 2020 ThemeinProgress.
+Attimo Child WordPress Theme is a child theme of Avventura Lite, Copyright 2021 ThemeinProgress.
 Attimo Child is distributed under the terms of the GNU GPLv3.
 
-Avventura Lite WordPress Theme, Copyright 2020 ThemeinProgress.
+Avventura Lite WordPress Theme, Copyright 2021 ThemeinProgress.
 Avventura Lite is distributed under the terms of the GNU GPLv3.
 
 */
+
+a,
+a:hover,
+.title a span,
+.post-article a:hover,
+.post-article a:active,
+.post-article a:focus ,
+.sidebar-area a:hover,
+.sidebar-area a:active,
+.sidebar-area a:focus ,
+#footer a:hover,
+#footer a:active,
+#footer a:focus ,
+#footer_widgets a:hover,
+#footer_widgets a:active,
+#footer_widgets a:focus {
+	text-decoration:underline;
+}
 
 /* ===============================================
    Typography
