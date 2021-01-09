@@ -415,6 +415,16 @@ function adventure_travelling_customize_register( $wp_customize ) {
 		'type'		=> 'text'
 	));
 
+    $wp_customize->add_setting('adventure_travelling_return_to_header',array(
+       'default' => true,
+       'sanitize_callback'	=> 'adventure_travelling_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('adventure_travelling_return_to_header',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Return to header','adventure-travelling'),
+       'section' => 'adventure_travelling_footer_section',
+    ));
+
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 

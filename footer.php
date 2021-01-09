@@ -14,9 +14,11 @@
 				get_template_part( 'template-parts/footer/footer', 'widgets' );
 				get_template_part( 'template-parts/footer/site', 'info' );
 			?>
-			<div class="return-to-header">
-				<a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
-			</div>
+			<?php if(get_theme_mod('adventure_travelling_return_to_header',true) != ''){ ?>
+				<div class="return-to-header">
+					<a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+				</div>
+			<?php }?>
 		</footer>
 	</div>
 </div>
