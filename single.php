@@ -1,106 +1,54 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package Aribiz
  */
+
 get_header();
 ?>
-<div class="smallhead">
-</div>
-<div class="page-intro" style="margin-top: 0px;">
-				<div class="container">
-					<div class="row">
- <div class="col-md-12  col-sm-12 ">
-        <ol class="breadcrumb ">
-          <i class="fa fa-home pr-10"></i> <?php aribiz_breadcrumbs(); ?>
-        </ol>
-      </div>
-</div>
+<?php
+			if ( get_theme_mod( 'show_breadcrumbs', true ) === true ) {
+				?>
+				<div class="breadcrumbs">
+					 
+         <?php aribiz_breadcrumb_trail(); ?>
+         
 				</div>
-			</div>
+				<?php
+			}
+			?>
 
 
+	<main id="primary" class="site-main">
+		<div class="contentArea">
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-<!--Start Content Grid-->
-<div class="mainblogwrapper clearfix">
-    <div class="container">
-        <div class="row">
-        
-            <div class="mainblogcontent">
-            
-             
-            
-                <div class="col-md-9">
-                    <!-- *** Post loop starts *** -->
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
-                  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="article-page">
-               <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
-             <?php
- 	             the_post_thumbnail();
-             ?>
- 	                <?php } else { ?>
-                     <?php
- 	                     the_post_thumbnail();
- 	                    ?> 
- 	                    <?php
- 	                }
- 	                ?>
-                    
-                    <div class="blogdetails">
-                <h3 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-                <ul class="meta">
-                 
-                    <li><i class="fa fa-clock-o blogin-color"></i> <?php
-                        $archive_year = get_the_time('Y');
-                        $archive_month = get_the_time('m');
-                        $archive_day = get_the_time('d');
-                        ?>
-                        <a href="<?php
-                        echo get_day_link($archive_year,
-                                $archive_month,
-                                $archive_day);
-                        ?>"><?php echo get_the_time('m, d, Y') ?></a></li>
-                    <li><i class="fa fa-user blogin-color"></i>&nbsp;<?php the_author_posts_link(); ?></li>
-                    <li><i class="fa fa-folder-open blogin-color"></i>&nbsp;<?php the_category(', '); ?></li>
-                    <li class="comments"><i class="fa fa-comment blogin-color"></i> <?php comments_popup_link('No Comments.',
-                                'Comment: 1',
-                                'Comments: %'); ?></li>
-                </ul>
-        <div class="blog-border"></div>
-                                    
-                          <div class="blog-content">   <?php the_content(); ?>  </div>
-                 
-            </div> </div>
-        </div>
-                 
-          <?php
-    endwhile;
-else:
-    ?>
-    <div>
-        <p>
-    <?php _e('Sorry no post matched your criteria',
-            'aribiz'); ?>
-        </p>
-    </div>
-<?php endif; ?>          
-                 
-                 
-                 
-                    <!-- *** Post loop ends*** -->
-                    <div class="clearfix"></div>
-                    <!-- ***Comment Template *** -->
-<?php comments_template(); ?>
-                    <!-- ***Comment Template *** -->
-                </div>
-                <div class="col-md-3">
-                    <!-- *** Sidebar Starts *** -->
-<?php get_sidebar(); ?>
-                    <!-- *** Sidebar Ends *** -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php get_footer(); ?>
+			get_template_part( 'template-parts/content', get_post_type() );
+
+			the_post_navigation(
+				array(
+					'prev_text' => '<i class="fa fa-angle-left"></i> <span class="nav-subtitle">' . esc_html__( 'Previous:', 'aribiz' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'aribiz' ) . '</span> <span class="nav-title">%title</span> <i class="fa fa-angle-right"></i>',
+				)
+			);
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
+		</div>
+		<?php
+		get_sidebar();
+		?>
+	</main><!-- #main -->
+
+<?php
+get_footer();

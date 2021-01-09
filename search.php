@@ -1,62 +1,67 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package Aribiz
  */
-get_header(); ?>
-<div class="smallhead">
-</div>
-<div class="page-intro" style="margin-top: 0px;">
-				<div class="container">
-					<div class="row">
- <div class="col-md-12  col-sm-12 ">
-        <ol class="breadcrumb ">
-        <i class="fa fa-home pr-10"></i>  <?php aribiz_breadcrumbs(); ?>
-        </ol>
-      </div>
-</div>
+
+get_header();
+?>
+<?php
+			if ( get_theme_mod( 'show_breadcrumbs', true ) === true ) {
+				?>
+				<div class="breadcrumbs">
+					 
+         <?php aribiz_breadcrumb_trail(); ?>
+         
 				</div>
+				<?php
+			}
+			?>
+
+
+	<main id="primary" class="site-main">
+	<div class="contentArea">
+		<?php if ( have_posts() ) : ?>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
+
+			endwhile;
+			?>
+			<div class="pagination-wrap">
+				<?php
+				the_posts_pagination(
+					array(
+						'mid_size'  => 3,
+						'prev_text' => '<i class="fa fa-angle-left"></i><span class="screen-reader-text">' . esc_html__( 'Previous', 'aribiz' ) . '</span>&nbsp;',
+						'next_text' => '&nbsp;<i class="fa fa-angle-right"></i><span class="screen-reader-text">' . esc_html__( 'Next', 'aribiz' ) . '</span>',
+					)
+				);
+				?>
 			</div>
+			<?php
+		else :
 
+			get_template_part( 'template-parts/content', 'none' );
 
-<div class="mainblogwrapper">
-    <div class="container">
-        <div class="row">
-        
-            <div class="mainblogcontent">
-             
-             <div class="col-md-9">
-            
-            
-          <h1><?php printf( __( 'Search Results for: %s', 'aribiz' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-        
-    <?php get_template_part('loop', 'search'); ?>
-          <!--end / post-content--> 
-          
-       <div class="clearfix"></div>
-                    <!-- *** Post1 Starts Ends *** -->
-                    <!-- *** Post loop ends*** -->
-                    <div class="clearfix"></div>
- 
-        
-        <!--end / article--> 
-                 
-      <div class="pagecount">
-       <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'aribiz' )); ?>
-                        </span> <span class="nav-next">
-<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'aribiz' )); ?>
-                        </span> </nav>
-      </div>
-      </div>
-      
-      <!--end / main-->
-      
-     <div class="col-md-3">
-        <?php get_sidebar(); ?>
-     </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php get_footer(); ?>
+		endif;
+		?>
+		</div>
+		<?php
+		get_sidebar();
+		?>
+	</main><!-- #main -->
+
+<?php
+get_footer();

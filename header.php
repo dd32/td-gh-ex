@@ -1,85 +1,56 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Aribiz
+ */
+
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
- 
- 
-   <?php wp_head(); ?> 
-
- 
-    
+	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> id="pageBody">
-<?php
-	if ( function_exists( 'wp_body_open' ) ) {
-		wp_body_open();
-	} else {
-		do_action( 'wp_body_open' );
-	}
-?>
 
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'aribiz' ); ?></a>
+		
 
+	<header id="myHeader" class="site-header">
+		<div class="mainNavbar">
+			<?php
+			if ( has_custom_logo() ) {
+				aribiz_logo();
+			}
+			?>
+			<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+			 
+			<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'aribiz' ); ?></span><i class="fa fa-plus"></i>
+			</button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
+	<br> <span class="site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo bloginfo('description'); ?></a></span>
+			
+	</header><!-- #masthead -->
 
-
-
-  <!-- Navigation -->
-    <nav class="navbar header navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-             <?php if(get_theme_mod('aribiz_logo')): ?> 
-			   <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php echo '<img src="'.esc_url( get_theme_mod( 'aribiz_logo' ) ).'">'; ?> </a>
-			   <?php  else:  ?>  
-			      <a class="navbar-brand" id="divSiteTitle" href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php echo bloginfo('name');?> </a> <br> <a href="" class="desnav" id="divTagLine"> <?php echo bloginfo('description'); ?></a> 
-               
-                <?php endif; ?> 
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               
-               
-               <?php 
-			$defaults = array(
-					'theme_location'  => 'primary',
-					'container'       => '',
-					'container_class' => '',
-					'container_id'    => '',
-					'menu_class'      => '',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="nav" class="nav navbar-nav navbar-right">%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => ''
-					);
-			wp_nav_menu($defaults); ?>
-               
-               
-               
-               
-               
-               
-               
-               
-                 
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+	<div class="content">
+		

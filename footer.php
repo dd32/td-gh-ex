@@ -1,60 +1,59 @@
- <!-- Footer -->
-        <footer id="footer">
-         
-        <div id="footer-copyright">
-          <div class="container">
-            <div class="row">
-            
-            <div class="col-md-6 avfoo">
-            <p><?php if(get_theme_mod('aribiz_copyright_text')): echo esc_attr( get_theme_mod( 'aribiz_copyright_text' ) ); else: echo __('Copyright &#169; 2016 All Rights Reserved.', 'aribiz');  endif;?> </p>
-            <p class="copyright">
-<?php _e('Powered by','aribiz'); ?> <a href="<?php echo esc_url( 'http://wordpress.org' ); ?>" rel="nofollow"><?php _e('WordPress','aribiz'); ?></a>. <?php _e('Theme by','aribiz'); ?> <a href="<?php echo esc_url( 'http://arinio.com' ); ?>" rel="nofollow"><?php _e('Arinio','aribiz'); ?></a>
-                  </p>
-             </div>
-            
-              <div class="col-md-6 clearfix">
-                  <nav class="navbar navbar-default" role="navigation">
-									<!-- Toggle get grouped for better mobile display -->
-									<div class="navbar-header">
-										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
-											<span class="sr-only">Toggle navigation</span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-										</button>
-									</div>   
-									<div class="navbar-collapse collapse" id="navbar-collapse-2" style="height: 1px;">
-										
-                                       <?php if ( has_nav_menu( 'secondary' ) ) : ?>
- 
-		<?php wp_nav_menu( array( 'theme_location' => 'secondary','menu_class' => 'nav navbar-nav nkkl navbar-right','depth'=>-1 ) ); ?>
-	 
-	<?php endif; ?>
-                                        
-                                            
-									</div>
-								</nav>
-                
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-<!--end / footer-->
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Aribiz
+ */
 
- 
- 
+?>
+</div><!-- .content -->
+	<footer id="footerArea" class="site-footer">
+
+	 
+
+	<div class="site-info">
+		<p class="copyright">
+		<?php
+		if ( get_theme_mod( 'copyright_text', '' ) <> '' ) {
+			echo wp_kses_post( get_theme_mod( 'copyright_text', '' ) );
+		} else {
+			?>
+			<span><?php bloginfo( 'name' ); ?></span> <span>&copy;&nbsp;</span><span class="copyright-year"><?php echo esc_html( date_i18n( _x( 'Y', 'copyright date format', 'aribiz' ) ) ); ?></span>
+			<?php
+		}
+		?>
+		<span class="sep"> | </span>
+		<?php
+		esc_html_e( 'All rights reserved.', 'aribiz' );
+		?>
+	</p>
+	 
+	
+	
+	
+	
+	
+	<p class="copyright">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aribiz' ) ); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', 'aribiz' ), 'WordPress' );
+				?>
+			</a>. <?php esc_html_e('Theme by Arinio Themes','aribiz'); ?>
+			
+                  </p>
+				  
+				  
+	</div><!-- .site-info -->
+
+</footer><!-- #footerArea -->
+</div><!-- #page -->
+
 <?php wp_footer(); ?>
 
-
-
-
-
-
-
-<!--++++++++++++++ Footer Section End +++++++++++++++++++++++++-->
- 
-
-
-</body></html>
+</body>
+</html>

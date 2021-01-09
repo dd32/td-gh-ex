@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aribiz\n"
-"POT-Creation-Date: 2020-11-22 21:35+0530\n"
-"PO-Revision-Date: 2020-11-22 21:35+0530\n"
+"POT-Creation-Date: 2021-01-08 20:50+0530\n"
+"PO-Revision-Date: 2021-01-08 20:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,493 +12,326 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html__;esc_html_e;esc_url;"
+"esc_html\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:36
-msgid "Not Found"
+#: 404.php:29
+msgid "The page you are looking for is not found!"
 msgstr ""
 
-#: 404.php:37
-msgid ""
-"Apologies, but the page you requested could not be found. Perhaps searching "
-"will help."
+#: 404.php:33
+msgid "Back To Home"
 msgstr ""
 
-#: archive.php:47
-#, php-format
-msgid "Daily Archives: %s"
+#: archive.php:47 index.php:52 search.php:47
+msgid "Previous"
 msgstr ""
 
-#: archive.php:49
-#, php-format
-msgid "Monthly Archives: %s"
+#: archive.php:48 index.php:53 search.php:48
+msgid "Next"
 msgstr ""
 
-#: archive.php:51
-#, php-format
-msgid "Yearly Archives: %s"
+#: comments.php:29
+msgid "Comments"
 msgstr ""
 
-#: archive.php:53
-msgid "Blog Archives"
-msgstr ""
-
-#: archive.php:75 category.php:48 index.php:55 search.php:46 tag.php:46
-msgid "Next Post <i class=\"fa fa-long-arrow-right\"></i>"
-msgstr ""
-
-#: archive.php:77 category.php:50 index.php:57 search.php:48 tag.php:48
-msgid "<i class=\"fa fa-long-arrow-left\"></i> Previous Post"
-msgstr ""
-
-#: attachment.php:37
-#, php-format
-msgid "Return to %s"
-msgstr ""
-
-#: attachment.php:40
-#, php-format
-msgid "<span>&larr;</span> %s"
-msgstr ""
-
-#: attachment.php:45
-#, php-format
-msgid "By %2$s"
-msgstr ""
-
-#: attachment.php:51
-#, php-format
-msgid "Published %2$s"
-msgstr ""
-
-#: attachment.php:57
-#, php-format
-msgid "Full size is %s pixels"
-msgstr ""
-
-#: attachment.php:57
-msgid "Link to full-size image"
-msgstr ""
-
-#: attachment.php:62 attachment.php:102
-msgid "Edit"
-msgstr ""
-
-#: attachment.php:100
-msgid "Continue reading &rarr;"
-msgstr ""
-
-#: attachment.php:101
-msgid "Pages:"
-msgstr ""
-
-#: author.php:40
-#, php-format
-msgid "Author Archives: %s"
-msgstr ""
-
-#: category.php:37
-#, php-format
-msgid "Category Archives: %s"
-msgstr ""
-
-#: comments.php:13
-msgid "Please do not load this page directly. Thanks!"
-msgstr ""
-
-#: comments.php:16
-msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-
-#: comments.php:25
-msgid "No Responses"
-msgstr ""
-
-#: comments.php:26
-msgid "One Response"
-msgstr ""
-
-#: comments.php:27
-msgid "% Responses"
-msgstr ""
-
-#: comments.php:28
-msgid "so far."
-msgstr ""
-
-#: comments.php:46
+#: comments.php:53
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:51
-msgid "Leave a Comment"
+#: footer.php:31
+msgid "All rights reserved."
 msgstr ""
 
-#: comments.php:80
-msgid "LEAVE A COMMENT"
+#: footer.php:41
+msgid "https://wordpress.org/"
 msgstr ""
 
-#: comments.php:81
-msgid "Submit Comment"
-msgstr ""
-
-#: comments.php:85
-msgid "Your Name*"
-msgstr ""
-
-#: comments.php:90
-msgid "E-mail*"
-msgstr ""
-
-#: comments.php:95
-msgid "Website"
-msgstr ""
-
-#: comments.php:99
-msgid "Comment*"
-msgstr ""
-
-#: footer.php:9
-msgid "Copyright &#169; 2016 All Rights Reserved."
-msgstr ""
-
-#: footer.php:11
-msgid "Powered by"
-msgstr ""
-
-#: footer.php:11
-msgid "WordPress"
-msgstr ""
-
-#: footer.php:11
-msgid "Theme by"
-msgstr ""
-
-#: footer.php:11
-msgid "Arinio"
-msgstr ""
-
-#: functions.php:27
-msgid "Main Menu"
-msgstr ""
-
-#: functions.php:28
-msgid "Secondary menu  for footer menu"
-msgstr ""
-
-#: functions.php:64
-msgid "Home"
-msgstr ""
-
-#: functions.php:68
-msgid "attachment:"
-msgstr ""
-
-#: functions.php:78
-msgid "Category By:"
-msgstr ""
-
-#: functions.php:97
-msgid "Search Results for..."
-msgstr ""
-
-#: functions.php:103 functions.php:104 functions.php:105
-msgid "Archive for "
-msgstr ""
-
-#: functions.php:106
-msgid "Author Archive for "
-msgstr ""
-
-#: functions.php:106
+#: footer.php:44
 #, php-format
-msgid " %s"
+msgid "Proudly powered by %s"
 msgstr ""
 
-#: functions.php:110
-msgid "Search Results for \""
+#: footer.php:46
+msgid "Theme by Arinio Themes"
 msgstr ""
 
-#: functions.php:123 functions.php:125
-msgid ", "
+#: functions.php:53
+msgid "Primary"
 msgstr ""
 
-#: functions.php:136
-#, php-format
-msgid "View all posts by %s"
+#: functions.php:127
+msgid "Sidebar"
 msgstr ""
 
-#: functions.php:142 functions.php:144
-#, php-format
+#: functions.php:129
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:213
+msgid "Aribiz Info"
+msgstr ""
+
+#: functions.php:222
+msgid "Thank you for using Aribiz Theme"
+msgstr ""
+
+#: functions.php:228
+msgid "View Premium Edition Theme Demo"
+msgstr ""
+
+#: functions.php:229
 msgid ""
-"<div class=\"post-category\"> Posted in : %1$s  on %3$s </div><div class="
-"\"post-author\"> by : %4$s </div> <div class=\"post-comment\"> Comments: <a "
-"href=\"#\">"
-msgstr ""
-
-#: functions.php:146
-#, php-format
-msgid ""
-"<div class=\"post-category\"> Posted on : %3$s </div><div class=\"post-author"
-"\"> by : %4$s </div> <div class=\"post-comment\"> Comments: <a href=\"#\">"
-msgstr ""
-
-#: functions.php:173
-msgid "Content Sidebar"
-msgstr ""
-
-#: functions.php:175
-msgid "Additional sidebar that appears on the right."
-msgstr ""
-
-#: functions.php:238
-msgid "Enter Your Comments"
-msgstr ""
-
-#: inc/aribiz-admin_page.php:7
-msgid "Theme Details"
-msgstr ""
-
-#: inc/aribiz-admin_page.php:237
-msgid "Thank you for using Aribiz Theme :)"
-msgstr ""
-
-#: inc/aribiz-admin_page.php:241
-msgid "View Theme Demo"
-msgstr ""
-
-#: inc/aribiz-admin_page.php:245
-msgid ""
-"You can see more feature & functionality in our PRO Virsion. Watch the Demo "
+"You can see more feature & functionality in our PRO Version. Watch the Demo "
 "by clicking the link below."
 msgstr ""
 
-#: inc/aribiz-admin_page.php:249 inc/customizer.php:31 inc/customizer.php:32
+#: functions.php:231
 msgid "View Demo"
 msgstr ""
 
-#: inc/aribiz-admin_page.php:253
-msgid "Get Pro Free This Theme"
+#: functions.php:237
+msgid "View our other themes"
 msgstr ""
 
-#: inc/aribiz-admin_page.php:257
-msgid ""
-"If you want to get Pro version of this theme Totally Free. Click the link "
-"below."
-msgstr ""
-
-#: inc/aribiz-admin_page.php:261
-msgid "Read More"
-msgstr ""
-
-#: inc/aribiz-admin_page.php:265
-msgid "View More Our Themes"
-msgstr ""
-
-#: inc/aribiz-admin_page.php:269
+#: functions.php:238
 msgid ""
 "Want to see more our themes you simply visit our site. Click the link below."
 msgstr ""
 
-#: inc/aribiz-admin_page.php:273
-msgid "Visit Site"
+#: functions.php:240
+msgid "View All Themes"
 msgstr ""
 
-#: inc/aribiz-admin_page.php:277
+#: functions.php:249
 msgid "Get Aribiz PRO Theme! Just $19"
 msgstr ""
 
-#: inc/aribiz-admin_page.php:281
+#: functions.php:252
 msgid ""
 "You are using the Aribiz, Free Version of Aribiz Pro Theme. Upgrade to Pro "
 "for extra features like Home Page Unlimited Slider, Work Gallery, Team "
 "section, Client Section, Contact Page and many more Page Templates, Social "
-"Link Section, Life time theme support and much more."
+"Link Section, Documents, Life time theme support and much more."
 msgstr ""
 
-#: inc/aribiz-admin_page.php:292
-msgid "Upgrade to Aribiz PRO"
+#: functions.php:258
+msgid "Upgrade to Aribiz Pro"
 msgstr ""
 
-#: inc/customizer.php:19
-msgid "Get Aribiz PRO Theme!  Just $19"
+#: header.php:26
+msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer.php:21 inc/customizer.php:22
-msgid "Upgrade to Aribiz PRO Theme"
+#: header.php:40
+msgid "Primary Menu"
 msgstr ""
 
-#: inc/customizer.php:24 inc/customizer.php:25
-msgid "View More our themes"
+#: inc/breadcrumb.php:308
+msgid "Browse:"
 msgstr ""
 
-#: inc/customizer.php:28 inc/customizer.php:29
-msgid "Free Support"
+#: inc/breadcrumb.php:310
+msgid "Home"
 msgstr ""
 
-#: inc/customizer.php:34 inc/customizer.php:35
-msgid "Get Free Pro Version"
+#: inc/breadcrumb.php:311
+msgid "404 Not Found"
 msgstr ""
 
-#: inc/customizer.php:58
-msgid "Aribiz Support"
-msgstr ""
-
-#: inc/customizer.php:59
-msgid ""
-"You are using the Aribiz, Free Version of Aribiz Pro Theme. Upgrade to Pro "
-"for extra features like Home Page Unlimited Slider, Work Gallery, Team "
-"section, Client Section and Life time theme support and much more. "
-msgstr ""
-
-#: inc/customizer.php:72
-msgid "Aribiz Upgrade"
-msgstr ""
-
-#: inc/customizer.php:99
-msgid "Basic Setting"
-msgstr ""
-
-#: inc/customizer.php:100
-msgid "This Is a Basic Setting Section For Frontpage"
-msgstr ""
-
-#: inc/customizer.php:106
-msgid "Site Logo"
-msgstr ""
-
-#: inc/customizer.php:118
-msgid "Copyright"
-msgstr ""
-
-#: inc/customizer.php:126
-msgid "Copyright Text"
-msgstr ""
-
-#: inc/customizer.php:198
-msgid "Slider 1"
-msgstr ""
-
-#: inc/customizer.php:199
-msgid "Slider 2"
-msgstr ""
-
-#: inc/customizer.php:203
-msgid "Slider Setting"
-msgstr ""
-
-#: inc/customizer.php:204
-msgid "You can upload here images for slider"
-msgstr ""
-
-#: inc/customizer.php:230
-msgid "File Upload"
-msgstr ""
-
-#: inc/customizer.php:240 inc/customizer.php:350 inc/customizer.php:355
-msgid "Title"
-msgstr ""
-
-#: inc/customizer.php:245
-msgid "Slider Title"
-msgstr ""
-
-#: inc/customizer.php:255 inc/customizer.php:367
-msgid "Description"
-msgstr ""
-
-#: inc/customizer.php:261
-msgid "Slider Description"
-msgstr ""
-
-#: inc/customizer.php:293 template-front-page.php:74
-msgid "Icon 1"
-msgstr ""
-
-#: inc/customizer.php:294 template-front-page.php:75
-msgid "Icon 2"
-msgstr ""
-
-#: inc/customizer.php:295 template-front-page.php:76
-msgid "Icon 3"
-msgstr ""
-
-#: inc/customizer.php:301
-msgid "Services Setting"
-msgstr ""
-
-#: inc/customizer.php:302
-msgid ""
-"This is a Services settings section to change the servise section Details."
-msgstr ""
-
-#: inc/customizer.php:335
-msgid "Font class Name"
-msgstr ""
-
-#: inc/customizer.php:340
-msgid "Class Name"
-msgstr ""
-
-#: inc/customizer.php:373
-msgid "Services Description"
-msgstr ""
-
-#: inc/customizer.php:407
-msgid "Heading"
-msgstr ""
-
-#: inc/customizer.php:416
-msgid "Main Heading"
-msgstr ""
-
-#: loop.php:49 single.php:83
-msgid "Sorry no post matched your criteria"
-msgstr ""
-
-#: search.php:31
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:4
-msgid "Search"
-msgstr ""
-
-#: sidebar.php:6
+#: inc/breadcrumb.php:312
 msgid "Archives"
 msgstr ""
 
-#: sidebar.php:12
-msgid "Categories"
-msgstr ""
-
-#: tag.php:39
+#: inc/breadcrumb.php:314
 #, php-format
-msgid "Tag Archives: %s"
+msgid "Search results for: %s"
 msgstr ""
 
-#: template-front-page.php:34
-msgid "ELEGANT BUSINESS TEMPLATE"
+#: inc/breadcrumb.php:316
+#, php-format
+msgid "Page %s"
 msgstr ""
 
-#: template-front-page.php:38
+#: inc/breadcrumb.php:318
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: inc/breadcrumb.php:320
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: inc/breadcrumb.php:322
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: inc/class-customize.php:77
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: inc/class-walker-comment.php:62
+msgid "Posted by: "
+msgstr ""
+
+#: inc/class-walker-comment.php:83
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipis elit. Suspendisse venenatis "
-"mi et risus fringilla, sit amet posuere rhoncus."
+"Your comment has been successfully submitted and is awaiting moderation."
 msgstr ""
 
-#: template-front-page.php:92
-msgid "Our Services"
+#: inc/custom-header.php:40
+msgid "AriSpa"
 msgstr ""
 
-#: template-front-page.php:103
+#: inc/customizer.php:40
+msgid "Layout (site width) "
+msgstr ""
+
+#: inc/customizer.php:48
+msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid "Service Section"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "Enable breadcrumbs"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Enter Main Heading:"
+msgstr ""
+
+#: inc/customizer.php:104 inc/customizer.php:121 inc/customizer.php:140
+#: inc/customizer.php:156 inc/customizer.php:179 inc/customizer.php:195
+#: inc/customizer.php:216 inc/customizer.php:232
+msgid "Leave this setting blank to disable it."
+msgstr ""
+
+#: inc/customizer.php:120
+msgid "Enter Sub Heading:"
+msgstr ""
+
+#: inc/customizer.php:139
+msgid "Enter Title 1:"
+msgstr ""
+
+#: inc/customizer.php:155
+msgid "Enter Description 1:"
+msgstr ""
+
+#: inc/customizer.php:178
+msgid "Enter Title 2:"
+msgstr ""
+
+#: inc/customizer.php:194
+msgid "Enter Description 2:"
+msgstr ""
+
+#: inc/customizer.php:215
+msgid "Enter Title 3:"
+msgstr ""
+
+#: inc/customizer.php:231
+msgid "Enter Description 3:"
+msgstr ""
+
+#: inc/customizer.php:255
+msgid "Enter a copyright text:"
+msgstr ""
+
+#: inc/customizer.php:257
+msgid "Copyright: "
+msgstr ""
+
+#: inc/template-tags.php:66
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:76
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:93
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/template-tags.php:136 inc/template-tags.php:169
+#: inc/template-tags.php:201
 msgid "Mobile Ready"
 msgstr ""
 
-#: template-front-page.php:104
+#: inc/template-tags.php:146 inc/template-tags.php:179
+#: inc/template-tags.php:211
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore"
+msgstr ""
+
+#: single.php:35 templates/full-width-template.php:38
+msgid "Previous:"
+msgstr ""
+
+#: single.php:36 templates/full-width-template.php:39
+msgid "Next:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:32 template-parts/content.php:71
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-search.php:37 template-parts/content.php:42
+msgid ", "
+msgstr ""
+
+#: template-parts/content-search.php:51 template-parts/content.php:78
+msgid "Continue Reading"
+msgstr ""
+
+#: template-parts/content.php:58
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: templates/front-page-template.php:16
+msgid "ELEGANT TEMPLATE"
+msgstr ""
+
+#: templates/front-page-template.php:24
+msgid ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo "
+"ligula eget dolor. Aenean massa."
 msgstr ""

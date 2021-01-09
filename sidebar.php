@@ -1,20 +1,17 @@
-<div class="sidebar">
-        <?php if (!dynamic_sidebar('content-sidebar')) : ?>
-            <?php get_search_form(); ?>
-            <br/>
-            <h3>
-                <?php  _e( 'Archives', 'aribiz' ); ?>
-            </h3>
-            <ul>
-                <?php wp_get_archives('type=monthly'); ?>
-            </ul>
-            <h3>
-              <?php  _e( 'Categories', 'aribiz' ); ?>   
-            </h3>
-            <ul>
-                <?php wp_list_categories('title_li'); ?>
-            </ul>
-        <?php endif; // end primary widget area  ?>
-     
-    </div>
- 
+<?php
+/**
+ * The sidebar containing the main widget area
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Aribiz
+ */
+
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	return;
+}
+?>
+
+<aside id="secondary" class="widget-area sidebar">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</aside><!-- #secondary -->

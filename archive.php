@@ -1,89 +1,67 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying archive pages
  *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
+ * @package Aribiz
  */
-?>
-<?php get_header(); ?>
-<div class="smallhead">
-</div>
-<div class="page-intro" style="margin-top: 0px;">
-				<div class="container">
-					<div class="row">
- <div class="col-md-12  col-sm-12 ">
-        <ol class="breadcrumb ">
-         <i class="fa fa-home pr-10"></i> <?php aribiz_breadcrumbs(); ?>
-        </ol>
-      </div>
-</div>
-				</div>
-			</div>
 
-<!--Start Content Grid-->
-<div class="mainblogwrapper">
-    <div class="container">
-        <div class="row">
-            <div class="mainblogcontent">
-             
-                <div class="col-md-9">
-             
-             <div class="article-page">   <?php
-                /* Queue the first post, that way we know
-                 * what date we're dealing with (if that is the case).
-                 *
-                 * We reset this later so we can run the loop
-                 * properly with a call to rewind_posts().
-                 */
-                if (have_posts())
-                    the_post();
-                ?>
-               <h1>
-                    <?php if (is_day()) : ?>
-                        <?php printf(__('Daily Archives: %s', 'aribiz'), get_the_date()); ?>
-                    <?php elseif (is_month()) : ?>
-                        <?php printf(__('Monthly Archives: %s', 'aribiz'), get_the_date('F Y')); ?>
-                    <?php elseif (is_year()) : ?>
-                        <?php printf(__('Yearly Archives: %s', 'aribiz'), get_the_date('Y')); ?>
-                    <?php else : ?>
-                      <?php _e( 'Blog Archives', 'aribiz' ); ?>  
-                    <?php endif; ?>
-                </h1></div>
-                <?php
-                /* Since we called the_post() above, we need to
-                 * rewind the loop back to the beginning that way
-                 * we can run the loop properly, in full.
-                 */
-                rewind_posts();
-                /* Run the loop for the archives page to output the posts.
-                 * If you want to overload this in a child theme then include a file
-                 * called loop-archives.php and that will be used instead.
-                 */
-                 
-                ?>
-                
-                
-                <?php get_template_part('loop', 'archive'); ?>
-            <div class="clearfix"></div>
-                               
-      <div class="pagecount">
-       <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'aribiz' )); ?>
-                        </span> <span class="nav-next">
-<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'aribiz' )); ?>
-                        </span> </nav>
-      </div>
-           <div class="clearfix"></div>
-                </div>
-                <div class="col-md-3">
-    <?php get_sidebar(); ?>
-</div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php get_footer(); ?>
+get_header();
+?>
+<?php
+			if ( get_theme_mod( 'show_breadcrumbs', true ) === true ) {
+				?>
+				<div class="breadcrumbs">
+					 
+         <?php aribiz_breadcrumb_trail(); ?>
+         
+				</div>
+				<?php
+			}
+			?>
+
+
+	<main id="primary" class="site-main">
+		<div class="contentArea">
+		<?php if ( have_posts() ) : ?>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
+
+			endwhile;
+			?>
+			<div class="pagination-wrap">
+				<?php
+				the_posts_pagination(
+					array(
+						'mid_size'  => 3,
+						'prev_text' => '<i class="fa fa-angle-left"></i><span class="screen-reader-text">' . esc_html__( 'Previous', 'aribiz' ) . '</span>&nbsp;',
+						'next_text' => '&nbsp;<i class="fa fa-angle-right"></i><span class="screen-reader-text">' . esc_html__( 'Next', 'aribiz' ) . '</span>',
+					)
+				);
+				?>
+			</div>
+			<?php
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif;
+		?>
+		</div>
+		<?php
+		get_sidebar();
+		?>
+	</main><!-- #main -->
+
+<?php
+get_footer();

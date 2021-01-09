@@ -1,101 +1,56 @@
-﻿"Aribiz Multipurpose WordPress Theme"
+=== Aribiz ===
+Contributors: arinio
+Requires at least: 4.5
+Tested up to: 5.5
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
 
-== Theme: Aribiz==
-
+== Description ==
 Aribiz is a flexible Multipurpose, Responsive and Beautiful Theme with Easy and Power full Customization Options. Aribiz theme is designed with great attention to details, flexibility and performance thus looks stunning on all types of screens. Aribiz is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blog, school, fitness, GYM, Magazine, News, Travels Agencies or any type of site. Its comes with amazing slider. It has a very easy admin option panel where you can change anything easily. You can also easily upload logo , fevicon etc. This theme made by arinio.com.
 
-* By ArinioThemes, http://arinio.com/
+== Installation ==
 
-== Theme License & Copyright ==
-Aribiz is distributed under the terms of the GNU GPL
-Aribiz - Copyright 2020 Aribiz, arinio.com
-
-
-
- 
- 
-* The script modernizr.js is dual licensed under BSD & MIT 
-* Other custom.js files are our own creation and is licensed under the same license as this theme.
-
-== bootstrap.min.js ==
- * Bootstrap v3.3.0 (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under http://www.apache.org/licenses/LICENSE-2.0
-
-== html5.js ==
- HTML5 Shiv v3.7.0 | MIT/GPL2 Licensed
-
-
-== respond.js ==
-Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license
-
-== selectivizr.js ==
-selectivizr v1.0.2 - (c) Keith Clark, freely distributable under the terms 
-of the MIT license.
-
-
-== jquery.easing.1.3.js ==
-jQuery Easing v1.3 -  © 2008 George McGinley Smith | Open source under the BSD License. 
-
-
-== Font Awesome Icons==
-Font License - http://fontawesome.io
-License: SIL OFL 1.1
-Code License - http://fortawesome.github.io/Font-Awesome/license/
-License: MIT License
-License URI: http://opensource.org/licenses/mit-license.html
-Copyright: Dave Gandy http://fontawesome.io
-
-
- 
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
 
 
+== Changelog ==
 
-/**********************************************************/
+= 1.3 - Dec 19 2020 =
+* fixed issues
 
-== Installation == 
+= 1.2 - Nov 28 2020 =
+* Initial release
 
-1. Sign into your WordPress dashboard, go to Appearance > Themes, and click Add New.
-2. Click Add New.
-3. Click Upload.
-4. Click Choose File and select the theme zip file.
-5. Click Install Now.
-6. Click Add New, then click Upload, then click Choose File.
-7. After WordPress installs the theme, click Activate.
-8. You've successfully installed your new theme!
- 
+== Credits ==
 
-= Theme Features Usage =
-All Available options can be used from Appearance->Customize
+* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Header image: License: CC0, https://pxhere.com/en/photo/599508
 
-Important Theme Customization Option Given Below.
-Aribiz Support - Here You can Upgrade Your Theme. 
-Slider Setting - Here You can change your Slider Images  & Slider Text.
-Bassic Setting - Here You can change theme logo or copyright text.
-Services Setting - Here You can change Front Page service section. You can put Title & Description of Services.
+* Twenty Twenty WordPress theme, Copyright 2019-2020 WordPress.org
+Theme URI: https://wordpress.org/themes/twentytwenty/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-
-
-/**********************************************************/
-
-
-License for images:
-1. Image Name: bg122.jpg
-Image for theme slider& screenshot, Copyright pxhere.com
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pxhere.com/en/photo/599508 (slider image)
-
-
- 
- 
-other images made by us .
-License:  Creative Commons license
-url : http://creativecommons.org/publicdomain/zero/1.0/
+* Twenty Nineteen WordPress theme, Copyright 2018-2020 WordPress.org
+Theme URI: https://wordpress.org/themes/twentynineteen/
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
+* BreadcrumbTrail
+@version   1.1.0
+@author    Justin Tadlock <justin@justintadlock.com>
+@copyright Copyright (c) 2008 - 2020, Justin Tadlock
+@link      https://themehybrid.com/plugins/breadcrumb-trail
+@license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-
-
+* Font Awesome Free 5.3.1 by @fontawesome
+https://fontawesome.com
+License - https://fontawesome.com/license/free
+Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License

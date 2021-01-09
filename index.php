@@ -1,75 +1,72 @@
-<?php 
+<?php
 /**
- * The main template file.
+ * The main template file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Market
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Aribiz
  */
-get_header(); ?>
-<div class="smallhead">
-</div>
-<div class="page-intro" style="margin-top: 0px;">
-				<div class="container">
-					<div class="row">
- <div class="col-md-12  col-sm-12 ">
-        <ol class="breadcrumb ">
-        &nbsp;
-        </ol>
-      </div>
-</div>
-				</div>
-			</div>
-<!--end / page-title-->
-<div class="mainblogwrapper">
-    <div class="container">
-        <div class="row">
-            <div class="mainblogcontent">
-              
-                <div class="col-md-9">
-                    <?php 
-	  $post_per_page = get_option('posts_per_page');
-	  $args = array( 'posts_per_page'  => $post_per_page, 
-		'orderby'      => 'post_date', 
-		'order'        => 'DESC',
-		'post_type'    => 'post',
-		'paged' => $paged,
-		'post_status'    => 'publish'	
-      );
-	$query = new WP_Query($args);
-	?>
- 
-                    
-                    
-                    
- <?php get_template_part('loop', 'index'); ?>
-                    <div class="clearfix"></div>
 
-                     
-      <div class="pagecount">
-         <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'aribiz' )); ?>
-                        </span> <span class="nav-next">
-<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'aribiz' )); ?>
-                        </span> </nav>	
-      </div>
-                     
-                    <div class="clearfix"></div>
-                    <!-- ***Comment Template *** -->
-                   
-                    <!-- ***Comment Template *** -->
-                </div>
-                <div class="col-md-3">
-                    <!-- *** Sidebar Starts *** -->
-                    <?php get_sidebar(); ?>
-                    <!-- *** Sidebar Ends *** -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php get_footer(); ?>
+get_header();
+?>
+<?php
+			if ( get_theme_mod( 'show_breadcrumbs', true ) === true ) {
+				?>
+				<div class="breadcrumbs">
+					 
+         <?php aribiz_breadcrumb_trail(); ?>
+         
+				</div>
+				<?php
+			}
+			?>
+
+
+	<main id="primary" class="site-main">
+		<div class="contentArea">
+			<?php
+			if ( have_posts() ) {
+
+				/* Start the Loop */
+				while ( have_posts() ) {
+					the_post();
+
+					/*
+					* Include the Post-Type-specific template for the content.
+					* If you want to override this in a child theme, then include a file
+					* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+					*/
+					get_template_part( 'template-parts/content', get_post_type() );
+				}
+				?>
+				<div class="pagination-wrap">
+					<?php
+					the_posts_pagination(
+						array(
+							'mid_size'  => 3,
+							'prev_text' => '<i class="fa fa-angle-left"></i><span class="screen-reader-text">' . esc_html__( 'Previous', 'aribiz' ) . '</span>&nbsp;',
+							'next_text' => '&nbsp;<i class="fa fa-angle-right"></i><span class="screen-reader-text">' . esc_html__( 'Next', 'aribiz' ) . '</span>',
+						)
+					);
+					?>
+				</div>
+				<?php
+
+			} else {
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			}
+			?>
+		</div>
+		<?php
+		get_sidebar();
+		?>
+	</main><!-- #main -->
+<?php
+get_footer();
