@@ -70,21 +70,19 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // MASSONRY
-    $(window).load(function(){
-        var $masonry_boxes = $( '.masonry-start' );
-        $masonry_boxes.hide();
+    var $masonry_boxes = $( '.masonry-start' );
+    $masonry_boxes.hide();
 
-        var $container = $( '#masonry-loop' );
-        $container.imagesLoaded( function(){
-            $masonry_boxes.fadeIn( 'slow' );
-            $container.masonry({
-                itemSelector : '.masonry-post'
-            });
+    var $container = $( '#masonry-loop' );
+    $container.imagesLoaded( function(){
+        $masonry_boxes.fadeIn( 'slow' );
+        $container.masonry({
+            itemSelector : '.masonry-post'
         });
-        $(window).resize(function () {
-            $container.masonry('bindResize')
-        });
+    });
+
+    $(window).resize(function () {
+        $container.masonry('bindResize')
     });
 
     /*new pagination style*/

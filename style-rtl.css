@@ -2026,3 +2026,9 @@ article.article-ap .nav-links a {
 .wpcf7-form input.wpcf7-submit:hover{
 	color: #ffffff;
 }
+.entry-content p a,
+.comment-content p a,
+.comment-content li a,
+.textwidget a{
+	text-decoration: underline;
+}
