@@ -367,6 +367,16 @@ function automobile_hub_customize_register( $wp_customize ) {
 		'type'		=> 'text'
 	));
 
+    $wp_customize->add_setting('automobile_hub_return_to_header',array(
+       'default' => true,
+       'sanitize_callback'	=> 'automobile_hub_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('automobile_hub_return_to_header',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Return to header','automobile-hub'),
+       'section' => 'automobile_hub_footer_section',
+    ));
+
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 
