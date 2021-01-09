@@ -1,10 +1,10 @@
 === Appointment Booking ===
 Contributors: VWThemes
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, wide-blocks, block-styles, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, flexible-header, sticky-post, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, portfolio, e-commerce
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, wide-blocks, block-styles, block-patterns, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, flexible-header, sticky-post, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, portfolio, e-commerce
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.4
+Stable tag: 0.4.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Appointment Booking is a sophisticated WordPress theme with a clean and elegantl
 
 == Description ==
 
-Appointment Booking is a sophisticated WordPress theme with a clean and elegantly designed layout for websites facilitating hospital booking and doctor appointment booking online. It is a multipurpose theme as it can be used for hospitals, advertise, directory, google map, job listing, job posting, patient management, pharmacy, listing clinics, and any medical and healthcare-related website. This theme is so well crafted that it makes your website appear as if it is designed by a professional WordPress developer. Your visitors will love the way your website performs at this theme includes clean codes that are optimized for speed as well as performance. With a plethora of customization options at your disposal, you can do any desired changes in the layout and make your website look the way you have always wanted. Designed using the Bootstrap framework, Custom Menu, it has a visual appeal and its minimalist design never lets the focus of your visitors drift away from the key information displayed on your site. Your website will be interactive as there are many Call To Action (CTA) buttons included in the theme. Mobile users will have a great experience as your web page adjusts to every screen size thanks to the theme’s responsive and retina-ready design. It is translation ready and includes social media icons and a lot of shortcodes.
+Appointment Booking is a sophisticated WordPress theme with a clean and elegantly designed layout for websites facilitating hospital booking and doctor appointment booking online. It is a multipurpose theme as it can be used for hospitals, advertise, directory, google map, job listing, job posting, listing clinics, and any medical and healthcare-related website. This theme is so well crafted that it makes your website appear as if it is designed by a professional WordPress developer. Your visitors will love the way your website performs at this theme includes clean codes that are optimized for speed as well as performance. With a plethora of customization options at your disposal, you can do any desired changes in the layout and make your website look the way you have always wanted. Designed using the Bootstrap framework, Custom Menu, it has a visual appeal and its minimalist design never lets the focus of your visitors drift away from the key information displayed on your site. Your website will be interactive as there are many Call To Action (CTA) buttons included in the theme. Mobile users will have a great experience as your web page adjusts to every screen size thanks to the theme’s responsive and retina-ready design. It is translation ready and includes social media icons and a lot of shortcodes.
 
 == Changelog ==
 
@@ -31,6 +31,13 @@ Appointment Booking is a sophisticated WordPress theme with a clean and elegantl
 * Done the css of block style button.
 * Resolved errors.
 * Updated language folder.
+
+= 0.4.1 =
+* Added block pattern tag.
+* Done escaping.
+* Changed search.
+* Remove h3 from activation notice.
+* Changed anchor tag focus.
 
 == Resources ==
 

@@ -64,7 +64,6 @@ add_action( 'after_setup_theme', 'appointment_booking_setup' );
 // Notice after Theme Activation
 function appointment_booking_activation_notice() {
 	echo '<div class="notice notice-success is-dismissible welcome-notice">';
-	echo '<h3>'. esc_html__( 'Warm Greetings to you!!', 'appointment-booking' ) .'</h3>';
 	echo '<p>'. esc_html__( 'Thank you for choosing Appointment Booking Theme. Would like to have you on our Welcome page so that you can reap all the benefits of our Appointment Booking Theme.', 'appointment-booking' ) .'</p>';
 	echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=appointment_booking_guide' ) ) .'" class="button button-primary">'. esc_html__( 'GET STARTED', 'appointment-booking' ) .'</a></p>';
 	echo '</div>';
@@ -294,6 +293,7 @@ function appointment_booking_font_url() {
 function appointment_booking_scripts() {
 	wp_enqueue_style( 'appointment-booking-font', appointment_booking_font_url(), array() );
 	wp_enqueue_style( 'appointment-booking-block-style', get_theme_file_uri('/assets/css/blocks.css') );
+	wp_enqueue_style( 'appointment-booking-block-patterns-style-frontend', get_theme_file_uri('/inc/block-patterns/css/block-frontend.css') );
 	wp_enqueue_style( 'bootstrap', esc_url(get_template_directory_uri()).'/assets/css/bootstrap.css' );
 	wp_enqueue_style( 'appointment-booking-basic-style', get_stylesheet_uri() );
 	wp_style_add_data('appointment-booking-basic-style', 'rtl', 'replace');
@@ -332,6 +332,15 @@ if ( ! function_exists( 'appointment_booking_credit' ) ) {
 		echo "<a href=".esc_url(APPOINTMENT_BOOKING_CREDIT).">". esc_html__('Appointment Booking WordPress Theme ','appointment-booking')."</a>";
 	}
 }
+
+/**
+ * Enqueue block editor style
+ */
+function appointment_booking_block_editor_styles() {
+	wp_enqueue_style( 'appointment-booking-font', appointment_booking_font_url(), array() );
+    wp_enqueue_style( 'appointment-booking-block-patterns-style-editor', get_theme_file_uri( '/inc/block-patterns/css/block-editor.css' ), false, '1.0', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'appointment_booking_block_editor_styles' );
 
 function appointment_booking_sanitize_dropdown_pages( $page_id, $setting ) {
   	// Ensure $input is an absolute integer.
@@ -413,3 +422,6 @@ require get_template_directory() . '/inc/getstart/getstart.php';
 
 /* Social Icons */
 require get_template_directory() . '/inc/themes-widgets/social-icon.php';
+
+/* Block Pattern */
+require get_template_directory() . '/inc/block-patterns/block-patterns.php';

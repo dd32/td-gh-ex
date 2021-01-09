@@ -368,9 +368,9 @@ function appointment_booking_typography_customize_register( $wp_customize ) {
  * @return void
  */
 function appointment_booking_customize_controls_register_scripts() {
-	wp_enqueue_script( 'appointment-booking-ctypo-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/typography/js/customize-controls.js',array( 'customize-controls' )  );
+	wp_enqueue_script( 'appointment-booking-ctypo-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . 'inc/typography/js/customize-controls.js',array( 'customize-controls' )  );
 
-	wp_enqueue_style( 'appointment-booking-ctypo-customize-controls-style', trailingslashit( get_template_directory_uri() ) . '/assets/css/customize-controls.css' );
+	wp_enqueue_style( 'appointment-booking-ctypo-customize-controls-style', trailingslashit( esc_url(get_template_directory_uri()) ) . '/assets/css/customize-controls.css' );
 }
 
 /**
@@ -381,7 +381,7 @@ function appointment_booking_customize_controls_register_scripts() {
  * @return void
  */
 function appointment_booking_customize_preview_enqueue_scripts() {
-	wp_enqueue_script( 'appointment-booking-ctypo-customize-preview', trailingslashit( get_template_directory_uri() ) . 'inc/typography/js/customize-preview.js',array( 'jquery' )  );
+	wp_enqueue_script( 'appointment-booking-ctypo-customize-preview', trailingslashit( esc_url(get_template_directory_uri()) ) . 'inc/typography/js/customize-preview.js',array( 'jquery' )  );
 }
 
 /**

@@ -8,8 +8,8 @@ function appointment_booking_gettingstarted() {
 // Add a Custom CSS file to WP Admin Area
 function appointment_booking_admin_theme_style() {
    wp_enqueue_style( 'appointment-booking-font', appointment_booking_admin_font_url(), array() );
-   wp_enqueue_style('appointment-booking-custom-admin-style', get_template_directory_uri() . '/inc/getstart/getstart.css');
-   wp_enqueue_script('appointment-booking-tabs', get_template_directory_uri() . '/inc/getstart/js/tab.js');
+   wp_enqueue_style('appointment-booking-custom-admin-style', esc_url(get_template_directory_uri()) . '/inc/getstart/getstart.css');
+   wp_enqueue_script('appointment-booking-tabs', esc_url(get_template_directory_uri()) . '/inc/getstart/js/tab.js');
 }
 add_action('admin_enqueue_scripts', 'appointment_booking_admin_theme_style');
 
@@ -62,7 +62,7 @@ function appointment_booking_mostrar_guide() {
 		<div id="theme_lite" class="tabcontent open">
 			<h3><?php esc_html_e( 'Lite Theme Information', 'appointment-booking' ); ?></h3>
 			<hr class="h3hr">
-		  	<p><?php esc_html_e('Free Appointment WordPress Theme is a lightweight theme based on a bootstrap framework that facilitates you setting you an online appointment booking system for your hospitals, dental clinics, healthcare centers and any healthcare-related organization. The layout is simple yet elegant and will catch the attention of your target audience. With a retina-ready design, this theme is designed to scale perfectly on any screen no matter how small or big it is. This is possible due to the theme’s responsive design. It is user-friendly as it comes with a theme customizer with many useful customization options available. As a theme user, you can use these options for uploading the customized logo, changing the color scheme and font styles. As the developers of this theme have included clean and optimized codes in its core, it gives your website a great loading speed and improves its performance for delivering a splendid user experience.','appointment-booking'); ?></p>
+		  	<p><?php esc_html_e('Free Appointment WordPress Theme is a lightweight theme based on a bootstrap framework that facilitates you setting you an online appointment booking system for your hospitals, dental clinics, healthcare centers and any healthcare-related organization. The layout is simple yet elegant and will catch the attention of your target audience. With a retina-ready design, this theme is designed to scale perfectly on any screen no matter how small or big it is. This is possible due to the themes responsive design. It is user-friendly as it comes with a theme customizer with many useful customization options available. As a theme user, you can use these options for uploading the customized logo, changing the color scheme and font styles. As the developers of this theme have included clean and optimized codes in its core, it gives your website a great loading speed and improves its performance for delivering a splendid user experience.','appointment-booking'); ?></p>
 		  	<div class="col-left-inner">
 		  		<h4><?php esc_html_e( 'Theme Documentation', 'appointment-booking' ); ?></h4>
 				<p><?php esc_html_e( 'If you need any assistance regarding setting up and configuring the Theme, our documentation is there.', 'appointment-booking' ); ?></p>

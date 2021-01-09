@@ -813,9 +813,9 @@ final class Appointment_Booking_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'appointment-booking-customize-controls', trailingslashit( get_template_directory_uri() ) . '/assets/js/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'appointment-booking-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . '/assets/js/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'appointment-booking-customize-controls', trailingslashit( get_template_directory_uri() ) . '/assets/css/customize-controls.css' );
+		wp_enqueue_style( 'appointment-booking-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . '/assets/css/customize-controls.css' );
 	}
 }
 
