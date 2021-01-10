@@ -19,7 +19,7 @@ get_header();
 
 			<div class="page-content">
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'ada-pearl' ); ?></p>
-				<h2>Search</h2>
+				<h2><?php esc_html_e( 'Search', 'ada-pearl' ); ?></h2>
 
 				<?php get_search_form(); ?>
 

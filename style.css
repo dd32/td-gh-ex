@@ -4,7 +4,7 @@ Theme URI: http://selfdesigns.co.uk/ada-pearl/
 Author: Self Designs
 Author URI: http://selfdesigns.co.uk
 Description: Ada Pearl is a business focused WordPress theme. The theme comes with pre built block patterns such as; banners, call to actions, meet the team, pricing plans and services. Templates provide a flexible experience for any business creating a website for any sector.
-Version: 1.0.2
+Version: 1.0.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -12,11 +12,12 @@ License URI: LICENSE
 Text Domain: ada-pearl
 Tags: block-patterns, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, wide-blocks
 */
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Generic
-	- Normalize 
+	- Normalize
 	- Box sizing
 # Base
 	- Typography
@@ -854,6 +855,12 @@ figure.wp-block-pullquote.has-background {
 	margin: 1em 0 2em 0;
 }
 
+.site-header .wp-custom-header {
+	text-align: center;
+	margin: 32px;
+	font-size: 0;
+}
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
@@ -1267,7 +1274,6 @@ figure.wp-block-pullquote.has-background {
 	padding: 32px 0;
 	background-color: #e1e1e1;
 	text-align: center;
-	clear: both;
 }
 
 .entry-footer span {
@@ -1309,7 +1315,7 @@ figure.wp-block-pullquote.has-background {
 --------------------------------------------- */
 #comments {
 	max-width: 1280px;
-	margin: 32px;
+	margin: 0 auto 32px auto;
 	background-color: #e8e8e8;
 	padding: 20px;
 }
@@ -1433,12 +1439,6 @@ figure.wp-block-pullquote.has-background {
 .comment-form-url input {
 	display: block;
 	width: 100%;
-}
-
-@media (min-width: 1360px) {
-	#comments {
-		margin: 0 auto 32px auto;
-	}
 }
 
 /* Widgets

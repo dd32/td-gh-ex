@@ -16,7 +16,7 @@
 			<?php dynamic_sidebar( 'footer-widgets-1' ); ?>
 		</div>
 		<div class="site-info">
-			<p><?php echo get_bloginfo( 'name' ) . ' ' . date( 'Y' ); ?> &copy;</p>
+			<p><?php echo get_bloginfo( 'name', 'display' ) . ' ' . esc_html( date( 'Y' ) ); ?> &copy;</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

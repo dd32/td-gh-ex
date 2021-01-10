@@ -1,12 +1,12 @@
 === Ada Pearl ===
 
-Contributors: lewisself64
+Contributors: selfdesigns
 Tags: block-patterns, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, wide-blocks
 
-Requires at least: 4.5
+Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -28,9 +28,24 @@ Ada Pearl does not support any plugins out of the box.
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed broken padding on portfolio pattern.
+* Fixed broken margin on widgets when displayed on mobile.
+* Fixed incorrect margin on comments.
+* Fixed image overflowing out of content area.
+* Fixed Dropcap flowing into the element below on paragraph blocks.
+* Styled quote blocks.
+* Added next and previous post links in single post.
+* Removed filter to search only posts and not pages.
+
 = 1.0.1 =
-* Added styling for skip link
-* Renamed incorrect prefixes
+* Added styling for skip link.
+* Renamed incorrect prefixes.
 
 = 1.0.0 =
-* Initial release
+* Initial release.
+
+== Copyright ==
+
+Images
+Art by Wilhelm Marstrand 1810-1873. Public domain.
