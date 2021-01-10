@@ -79,13 +79,13 @@ class Aglee_Lite_Contact_Widget extends WP_Widget {
                 <?php endif; ?>
                 <ul class="contact-info-wrapper">
                     <?php if(!empty($contact_phone)) : ?>
-                        <li><i class="fa fa-phone"><?php echo esc_attr($contact_phone); ?></i></li>
+                        <li><i class="fa fa-phone"><?php echo esc_html($contact_phone); ?></i></li>
                     <?php endif; ?>                    
                     <?php if(!empty($contact_email)) : ?>
-                        <li><i class="fa fa-envelope"><?php echo esc_attr($contact_email); ?></i></li>
+                        <li><i class="fa fa-envelope"><?php echo esc_html($contact_email); ?></i></li>
                     <?php endif; ?>
                     <?php if(!empty($contact_phone)) : ?>
-                        <li><i class="fa fa-map-marker"><?php echo esc_attr(wpautop($contact_address)); ?></i></li>
+                        <li><i class="fa fa-map-marker"><?php echo wpautop($contact_address); ?></i></li>
                     <?php endif; ?>
                 </ul>
             </div>

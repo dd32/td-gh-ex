@@ -3,7 +3,7 @@
 Contributors: 8degreethemes
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, threaded-comments, featured-images, custom-header, translation-ready, rtl-language-support
 Requires at least: 4.0
-Tested up to: 5.4.1
+Tested up to: 5.6
 Requires PHP: 5.6
 Stable tag: 1.1.3
 License: GPLv3 or later
@@ -54,14 +54,19 @@ Fonts
    http://www.google.com/fonts/specimen/Roboto+Slab
    
 === Images =====
-https://pixabay.com/en/cafe-restaurant-coffee-bar-768771/
-https://pixabay.com/en/computer-laptop-technology-keyboard-768608/
-https://pixabay.com/en/man-reading-touchscreen-blog-791049/
-https://pixabay.com/en/workshop-shield-keep-list-man-745017/
+https://pxhere.com/en/photo/722218
+https://pxhere.com/en/photo/177169
+https://pxhere.com/en/photo/942304
+https://pxhere.com/en/photo/1033061
+https://pxhere.com/en/photo/851773
 License: CC0 Public Domain
-License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+License url: https://pxhere.com/en/license
 
 == Changelog ==
+
+= 1.1.4 - 10th January, 2021 =
+** Fixed Themecheck issues
+** Updated screenshot with free images.
 
 = 1.1.3 - 31st May, 2020 =
 ** Added Required Header Fields: `Tested up to` and `Requires PHP` in Style.css.

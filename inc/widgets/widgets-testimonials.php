@@ -94,8 +94,8 @@ class Aglee_Lite_Testimonial_Widget extends WP_Widget {
                         <?php echo esc_textarea($client_testimonial); ?>
                     </div>
                     <div class="testimonial_info">
-                        <span class="client-name"><?php echo esc_attr($client_name); ?></span>
-                        <span class="client-designation"><?php echo esc_attr($client_designation); ?></span> 
+                        <span class="client-name"><?php echo esc_html($client_name); ?></span>
+                        <span class="client-designation"><?php echo esc_html($client_designation); ?></span> 
                     </div>
                 </div>
             <?php
