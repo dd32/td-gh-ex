@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 3.2 =
+* Section Heading font-size option added
+
 = 3.1 =
 * Button color option added
 * Minor Changes in Rate us banner

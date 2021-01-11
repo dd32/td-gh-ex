@@ -642,6 +642,26 @@ class astral_Customizer extends astral_Abstract_Main {
 	'settings' => 'desc_font_all'
 	)));
 
+
+	$wp_customize->add_setting( 'astral_section_title_size',
+		array(
+			'type'              => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'absint',
+			'capability'        => 'edit_theme_options',
+	   )
+	);
+ 
+	$wp_customize->add_control( 'astral_section_title_size',
+		array(
+		  	'label' => __( 'Section Heading Size','astral' ),
+		  	'description' => esc_html__( 'Size of each section title in px','astral' ),
+		  	'section' => 'astral_typography',
+		  	'type' => 'number',
+		  	'capability' => 'edit_theme_options',
+		)
+	);
+
 		function astral_sanitize_checkbox( $input ) {
 			return $input;
 		}

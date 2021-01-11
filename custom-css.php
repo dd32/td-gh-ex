@@ -2,6 +2,7 @@
 $header_color_setting = get_theme_mod( 'header_color_setting' );
 $footer_color_setting = get_theme_mod( 'footer_color_setting' );
 $button_color_setting = get_theme_mod( 'button_color_setting' );
+$astral_section_title_size = get_theme_mod( 'astral_section_title_size' );
 ?>
 
 <style>
@@ -49,5 +50,8 @@ a.blog_link:hover {
 }   
 #mm_single_submit {
     background: <?php echo $button_color_setting; ?> !important;
+}
+.slider-info h3, h4.abt-text, h4.mwa-title {
+    font-size: <?php echo $astral_section_title_size; ?>px !important;
 }
 </style>
