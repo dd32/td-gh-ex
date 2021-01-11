@@ -32,7 +32,7 @@
       </div>
     <?php }?>
     <?php if(get_theme_mod('advance_startup_blog_post_description_option') == 'Full Content'){ ?>
-      <?php the_content(); ?>
+      <div class="entry-content"><p><?php the_content();?></p></div>
     <?php }
     if(get_theme_mod('advance_startup_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
       <?php if(get_the_excerpt()) { ?>

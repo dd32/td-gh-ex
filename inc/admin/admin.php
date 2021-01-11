@@ -7,7 +7,7 @@ function advance_startup_abouttheme() {
 
 // Add a Custom CSS file to WP Admin Area
 function advance_startup_admin_theme_style() {
-   wp_enqueue_style('advance-startup-custom-admin-style', get_template_directory_uri() .'/inc/admin/admin.css');
+   wp_enqueue_style('advance-startup-custom-admin-style', esc_url(get_template_directory_uri()) .'/inc/admin/admin.css');
 }
 add_action('admin_enqueue_scripts', 'advance_startup_admin_theme_style');
 
