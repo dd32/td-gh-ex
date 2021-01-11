@@ -1,0 +1,212 @@
+ol#list-comments {
+    background: #ffffff;
+    border-top: #777777 solid .0625em;
+    font-size: .85em;
+}
+
+ol#list-comments li.comment,
+ol#list-comments li.pingback {
+    list-style: none;
+    padding: 2em;
+    position: relative;
+}
+
+ol#list-comments li.comment.even,
+ol#list-comments li.pingback.even {
+    background: #aaaaaa;
+}
+
+ol#list-comments li.comment.odd,
+ol#list-comments li.pingback.odd {
+    background: #ffffff;
+}
+
+ol#list-comments ol.children > li {
+    margin: auto;
+    max-width: 45em;
+}
+
+ol#list-comments article.comment-body {
+    margin: 0 auto;
+    max-width: 35em;
+    text-align: left;
+}
+
+ol#list-comments footer.comment-meta {
+    border-bottom: .1em solid #777777;
+    margin: 0 0 2.3em;
+    padding: 0 0 2.3em;
+    text-align: left;
+}
+
+ol#list-comments span.says {
+    display: none;
+}
+
+ol#list-comments img.avatar {
+    background: #111111;
+    border-radius: 50%;
+    border: .3em solid #ffffff;
+    float: right;
+    height: 6em;
+    width: 6em;
+}
+
+ol#list-comments footer.comment-meta b.fn {
+    display: block;
+    font-size: 2.25em;
+    line-height: 1.25em;
+    padding: .89em 0 .33em;
+}
+
+ol#list-comments footer.comment-meta b.fn a {
+    color: #434343;
+}
+
+ol#list-comments footer.comment-meta b.fn a:hover {
+    color: #777777;
+}
+
+ol#list-comments div.comment-metadata > a {
+    font-weight: normal;
+}
+
+ol#list-comments a.comment-edit-link {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-weight: normal;
+}
+
+ol#list-comments div.reply:before {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    width: 100%;
+}
+
+ol#list-comments div.reply {
+    display: block;
+    margin: 3em 1.25em;
+    text-align: right;
+}
+
+ol#list-comments a.comment-reply-link {
+    background: #333333;
+    color: #ffffff;
+    padding: .85em 1.25em;
+}
+
+ol#list-comments a.comment-reply-link:hover {
+    color: #aaaaaa;
+}
+
+ol#list-comments div.comment-content ol,
+ol#list-comments div.comment-content ul {
+    list-style: decimal-leading-zero;
+    margin: .5em 0;
+}
+
+ol#list-comments div.comment-content > ol,
+ol#list-comments div.comment-content > ul {
+    font-size: .9em;
+    margin: 1.1em auto;
+    max-width: calc(100% - 2.2em);
+}
+
+ol#list-comments div.comment-content ul {
+    list-style: circle;
+}
+
+ol#list-comments div.comment-content li {
+    margin: .5em 2em;
+}
+
+ol#list-comments div.comment-content ol li ol {
+    list-style: upper-alpha;
+}
+
+ol#list-comments div.comment-content ol li ol li ol {
+    list-style: upper-roman;
+}
+
+ol#list-comments div.comment-content ol a,
+ol#list-comments div.comment-content ul a {
+    font-weight: normal;
+}
+
+
+
+
+/* Comment Form
+------------------------------------------------------------------*/
+ol#list-comments form {
+    margin: 0 auto;
+    max-width: 40em;
+}
+
+ol#list-comments > section:nth-of-type(2n+1) + div {
+    background: #aaaaaa;
+}
+
+.log-out-link {
+ float: right;
+}
+
+.comment-respond {
+    background: #ffffff;
+    padding: 6em 2em;
+    position: relative;
+}
+
+.comment-respond h3 {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 30em;
+}
+
+.comment-respond h3 small {
+    padding:.14em 0 0;
+    float:right;}
+
+#comment {
+    height:10em;
+    min-width:calc(100% - 2em);
+    width:calc(100% - 2em);}
+
+.form-submit {
+    padding:1em 0 0;
+    text-align: right;}
+
+#commentform label {
+    display:inline-block;
+    width:4em;}
+
+#commentform .comment-subscription-form {
+    font-size: .85em;
+    margin: 1em 0 0;
+}
+
+#commentform .comment-subscription-form label {
+    max-width: 90%;
+	width:28em;}
+
+#commentform input .comment-form-author,
+#commentform input .comment-form-email,
+#commentform input .comment-form-url {
+    display:inline-block;
+    max-width: 100%;
+    width:20em;}
+
+#commentform .comment-form-comment label,
+p.comment-notes {
+    display:none;}
+
+#commentform .comment-form-author input[type="text"],
+#commentform .comment-form-email input[type="email"],
+#commentform .comment-form-url input[type="url"] {
+    border: 1px solid #aaaaaa;
+    padding: 0 .5em;
+}

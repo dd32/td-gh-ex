@@ -1,75 +1,261 @@
-= Semper Fi Information =
+=== Semper Fi Lite ===
 
-	Theme URI: http://schwarttzy.com/shop/semper-fi/
+Theme Name: Semper Fi Lite
+Contributors: Schwarttzy
+Version: 121
+Requires at least: 5.0
+Tested up to: 5.5.1
+Requires PHP: 5.6
+License: GNU General Public License, version 3 (AGPLv3)
+License URI: http://opensource.org/licenses/AGPL-3.0
+Stable tag: 121
+Tags: blog, custom-colors, custom-logo, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, portfolio, theme-options, threaded-comments, translation-ready
+Text Domain: semper-fi-lite
 
-	Author: Eric Schwarz
+Semper Fi Lite Wordpress Theme written for my personal use and freely shared with everyone else.
 
-	Author URI: http://schwarttzy.com/about-2/
 
-	Copyright (C) 2003-2012 Eric Schwarz - Schwarttzy
+== Description ==
 
-	License: GNU GENERAL PUBLIC LICENSE, Version 3
+Semper Fi Lite is a handwritten WordPress theme for blogs, businesses, and can also be used as a powerful e-commerce (Woocommerce) solution. Written without JavaScript, just pure HTML5 and CSS3, Semper Fi Lite is free of any possible scripting conflicts with every WordPress Plugin out there. Fully responsive, with a built-in mobile friendly touch screen menu, adaptive font sizing, Woo Commerce integration, page-specific custom backgrounds, and 4k+ resolution ready. All of Semper Fi Lite's options are organized and controlled with WordPress's powerful Customizer for real-time customization. For support with questions, help, or issues use http://schwarttzy.com/contact-me/ or head over to https://wordpress.org/support/theme/semper-fi-lite/
 
-	License URI: http://www.gnu.org/licenses/gpl.html
 
-== About Semper Fi ==
+== Copyright ==
 
-	Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you through at it. (More Updates to come soon)
+Semper Fi Lite WordPress Theme, Copyright 2020 Schwarttzy
+Semper Fi Lite is distributed under the terms of the GNU GPL
 
-== Installing Semper Fi Manually (FTP) ==
 
-	To add a Semper Fi to your WordPress installation, follow these basic steps:
+== Screenshots ==
 
-		1. Download the Semper Fi archive and extract the files it contains. You need to preserve the directory structure in the archive when extracting these files. Using an FTP client to access your host web server, create a directory to save Semper Fi in the wp-content/themes directory provided by WordPress. For example: wp-content/themes/semperfi
-    
-		2. Upload the Semper Fi files to the new directory on your host server.
+1. Main screenshot for the theme
 
-		3. Follow the instructions below for selecting the Semper Fi.
 
-	To select Semper Fi for your site
+== Image Licensing ==
 
-		1. Log in to the WordPress Administration Panel.
+All images and video in "Semper Fi Lite" are the author "Schwarttzy" and are licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 
-		2. Select the Appearance panel, then Themes.
+https://creativecommons.org/licenses/by-sa/4.0/
 
-		3. From the Available Themes section, click on the Theme title (or Theme screenshot) for Semper Fi to activate.
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
-		4. A preview of the Theme will be shown.
 
-		5. To activate the Theme click the Activate "Semper Fi" link in the top right.
+== Social Media Icon Licensing ==
 
-		6. After which Semper Fi will automatically redirect you to the Theme Options Page for further customization for your theme.
+The font "schwarttzy" is a dirivative work of "Font Awesome" and is licensed under a Creative Commons Attribution 4.0 International License.
 
-	Your selection should immediately become active.
+https://creativecommons.org/licenses/by/4.0/
 
-	Note: If the Theme preview is blank, do not activate the new Theme without investigating further. Your site may not be displayed correctly, otherwise.
+https://creativecommons.org/licenses/by/4.0/legalcode
 
-== About the Menu on Semper Fi ==
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.
 
-	Semper Fi currently only supports up to two level menu system right now. In the future this should change.
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
 
-== Images / Icons Licensing on Semper Fi ==
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OLF license applies to all icons
+packaged as web and desktop font files.
 
-	All Images / Icons in the Theme "Semper Fi" are released under the same GPL (GNU General Public License, version 3) license that the theme is released.
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
 
-== Customizing Semper Fi ==
+# Attribution
+Attribution is required by MIT, SIL OLF, and CC BY licenses. Downloaded Font
+Awesome Free files already contain embedded comments with sufficient
+attribution, so you shouldn't need to do anything additional when using these
+files normally.
 
-	To customize Semper Fi using the built in options, Semper Fi Should already be active:
-		
-		1. Log in to the WordPress Administration Panel.
+We've kept attribution comments terse, so we ask that you do not actively work
+to remove them from files, especially code. They're a great way for folks to
+learn about Font Awesome.
 
-		2. Select the Appearance panel, then Theme Options.
+# Brand Icons
+All brand icons are trademarks of their respective owners. The use of these
+trademarks does not indicate endorsement of the trademark holder by Font
+Awesome, nor vice versa. **Please do not use brand logos for any purpose except
+to represent the company, product, or service to which they refer.**
 
-		3. A page explaining the options will be displayed.
 
-		4. Click save to finilize your selections.
+== Changelog ==
 
-	Your selection should immediately become active.
+= 121 =
+* Reduced the number of hooks to build a page to reducing server requests and simplify hook function
+* CSS tweek for iOS mobile browsers users due to background-size: center; and background-attachment: cover;
 
-== Permium Features on Semper Fi ==
+= 119 =
+* Couple of exscaping functions were using the wrong attribute, esc_attr instead of esc_html
+* Added wp_body_open() to the theme
+* Added Requires PHP and Tested up to in the style.css
 
-	Semper Fi is considered an "Up-Vert Theme," meaning that it is first and foremost a completely free theme, but with that said some of the additional features remain unusable until you purchase the theme. I currently charge a one-time fee for unlimited access to free updates and downloads forever. It is simple, clean, and easy to "Active" your theme for life. Purchase "Semper Fi" by going to the http address http://schwarttzy.com/shop/semper-fi/ and add SemperFi to the cart and checkout normally. Once you have successful purchased the theme, look for an Email that is from "Schwarttzy.com," not from PayPal, and in that email is Transaction Code, copy and paste the Transaction Code in the Activation field below and you'll have completed everything you need to do.
+= 118 =
+* Issue fixed when logged in the menu would display under the Admin bar
+* added a lot fo esc_html and esc_attr to everything to improve securtiy
+* created a title filter function to reduce code usage simplfy future changes
 
-== Contact & Issues for Semper Fi ==
+= 117 =
+* on 404 error page video wasn't scaling properly on mobile view
 
-	If you need to contact me, have questions, or have any problems with the Theme you can contact me by visiting this link http://schwarttzy.com/contact-me/
+= 116 =
+* Menu no longer locks closed or open, instead is hover/focus based only
+* 404 had a missing escaped
+* Readme had mistakenly had wrong licensing information
+* Fixed skip-link when front-page isn't selected
+* Fixed 404 error in customizer with none existant javascript file for customizer
+* CSS Style had miss labeled text domain
+
+= 115 =
+* Added forum link back in style description, accidently got deleted
+* Woo-Commerce had a weird issue with overflow with overflowing
+* Some compatibility issue with a comma in functions
+* Skip link wasn't translateable
+
+= 114 =
+* Fixed issue where click the customizer icon on the first square box would open up the 404 video tab
+
+= 113 =
+* Minor adjustmen for cell phone when using keyboard accessibility, outline got cut off
+* In customizer and issue with the menu not floating properly and an accident with absolute positioning happened
+* Fixed customizer option that never got updated to the newer customizer code
+* Fixed an issue where the customizer would display
+* excerpt_length, excerpt_more no longer target admin section, only front page
+* removed some code that was commented out
+* Author URI changed to the correct link
+
+= 112 =
+* Had a second Text domain in style.css
+* Remove old keyboard accessibility, change it red box that outlines current focus
+
+= 111 =
+* change arrow right in functions file to &rarr;
+
+= 110 =
+* Text domain had issue, no sure how got there
+* Found some missing Translatable text in /inc/store-front/customizer.php
+* Added in alt text for customized photos if they have it
+* Theme Info doesn't error out from missing bit of code
+
+= 109 =
+* All prefixes changed from "semperfi" to "semper_fi_lite"
+* Fixed none escaped echo on /categories-and-tags/html.php:53
+* Fixed a bunch of missed Translatable text
+* Found couple of un-sanitized data in /theme-info/html.php
+* Added the copyright to the readme.txt file
+* The "WordPress Plugin readme.txt Validator" required me to add a screenshot section
+* Added information about the copyright information of all the photos
+* Fixed some hidden PHP "Undefined variable" & "Trying to get property of non-object" errors I wasn't aware of
+* Added "Skip Content" to improve the accessablity of the theme
+* Fixed issues where "Background Color" wouldn't work because of the theme's default background overlaying the color
+* Fixed issues with images that were changed from default in customizer wouldn't display upon revisiting
+* Fixed linking icons in Customizer, among some other issues
+
+= 108 =
+* Default publisher logo image in /inc/blog/images/ wasn't named properly, changed it correct naming
+* Customizer option code went missing too, added back in
+
+= 107 =
+* /inc/woo-commerce/style.css was accidently placed in the folder /inc/woo-commerce-content-microdata/
+
+= 106 =
+* Figure text on a center image was display off to the left because of WordPress CSS
+* .wp-block-button CSS displays same as the paragraph element now
+* figcaption is fixed, WordPress added padding and hard font numbers
+* Block quote cite wasn't applying CSS sytles because of block editor element differences
+* wp-block-embed will center up on the page now
+* Menu should be more accessable now, especially for users navigating with the tab key, also menu now works with hover
+* Navigation didn't work with a static front page, switched to pagination for a better user experience.
+
+= 104 =
+* Fixed the issues with WordPress Block editor and new gallery code
+* Changed it so the blockquotes center up on the screen, looks visually better
+
+= 103 =
+* Added content width back in, feels so pointless
+* Can't use the real "->"
+
+= 102 =
+* in semper-fi-lite/inc/footer-widgets/html.php "_()" changed to "__()"
+* learned about the plugin "Theme Sniffer" and fixed all the errors
+* fixed issue with the single page comments not displaying
+* fixed issue where the customizer modifed css for navigation wouldn't enqueue properly
+* updated semper-fi-lite/woocommerce/global/quantity-input.php to reflect the chances made in the woocommerce 4.0 update
+* After clicking "Older News" the "Square Boxes", "Above the Fold", and "Store Front / Woocommerce Display Products" no longer display
+
+= 101 =
+* Removed theme promotions on semper-fi-lite\inc\store-front\html.php and semper-fi-lite\inc\store-front\customizer.php
+* Moved semper-fi-lite\inc\open-graph-protocol\ from the theme over to the premium plugin because a third party api key is plugin territory
+* fixed wrong use of unique prefix in semper-fi-lite\inc\woo-commerce\
+* fixed the wrong uses of esc_attr, esc_textarea, and missing esc_url
+* custom customizer sanitizer for range and select
+* adding in the missing text domain for translation in semper-fi-lite\inc\footer-widgets\html.php
+* fixed coding error in semper-fi-lite\inc\404\html.php and issues with escaping functions with esc_html() between HTML tags using only esc_attr() 
+* fixed hardcode the date formats, although few hidden hard coded dates remain to ensure the Microdata work properly, these coded dates are not seen but the viewer, only the search engines see these hard coded dates
+* fixed missing translations on semper-fi-lite\inc\comments\html.php and semper-fi-lite\inc\woo-commerce\customizer.php
+* updated Read Me to use WordPress.org match recommend 
+
+= 100 =
+* Theme released after two plus years with new code
+
+
+== Upgrade Notice ==
+
+= 121 =
+* Improved code with better hook functions for a better experience
+
+= 120 =
+* Fixed issue with wrong escing function used, Updated theme to meet new requirements
+
+= 118 =
+* Increased Security and a menu fix
+
+= 116 =
+* Ajustment to the menu and minor bugs taken care of
+
+= 115 =
+* Minor tweaks in the code to fix obscure bugs and one none translatable text
+
+= 114 =
+* Fixed issue in customizer linking
+
+= 113 =
+* Improved experience in Customizer, fixed some code issues, and updated some information
+
+= 112 =
+* Worked to improve keyboard accessibility
+
+= 111 =
+* Changed arrow right to &rarr; in the Continue Reading link for blog
+
+= 110 =
+* Further tweaks to maybe some day get approved by the WordPress repository
+
+= 109 =
+* Fixes for odd configurations, proper licensing for photos and fonts, and some more tweaks. 
+
+= 108 =
+* Fixed issues with default publisher image logo missing and the customizer option missing.
+
+= 107 =
+* The file /inc/woo-commerce/style.css got accidently moved into the wrong folder, just putting it back in the correct folder.
+
+= 106 =
+* Fixing minor issues, switched to pagination, making the navigation more accessable, tweaking how embedded media displays.
+
+= 104 =
+* Gallerys and Blockquotes created in Block Editor will display more visually pleasing.
+
+= 103 =
+* Theme Failed, minor changes
+
+= 102 =
+* Mostly improvements to the theme based on the plugin Theme Sniffer recommendations, and couple for errors fixed
+
+= 101 =
+* Improvements to the theme based on WordPress.org Review recommendations.
+
+= 100 =
+* Completely redesigned theme under the hood with many fixes, new features.
