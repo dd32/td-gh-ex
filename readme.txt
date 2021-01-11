@@ -2,7 +2,7 @@
 
 Theme Name: Semper Fi Lite
 Contributors: Schwarttzy
-Version: 121
+Version: 122
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 5.6
@@ -82,6 +82,9 @@ to represent the company, product, or service to which they refer.**
 
 
 == Changelog ==
+
+= 122 =
+* on brand woo-commerce fixed to have correct sanitization
 
 = 121 =
 * Reduced the number of hooks to build a page to reducing server requests and simplify hook function
@@ -202,6 +205,9 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 122 =
+* Minor issue with using esc_html_e where should have been esc_attr_e
 
 = 121 =
 * Improved code with better hook functions for a better experience

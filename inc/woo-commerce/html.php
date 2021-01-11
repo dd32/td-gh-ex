@@ -8,7 +8,7 @@
 
 		<meta itemprop="url" content="<?php echo esc_url( get_permalink() ); ?>" />
 
-        <meta itemprop="brand" content="<?php esc_html_e( bloginfo('name') ); ?>" />
+        <meta itemprop="brand" content="<?php esc_attr_e( bloginfo('name') ); ?>" />
 <?php if ( $semper_fi_lite_woocommerce_product->get_sku() != '' ) : ?>
 
         <meta itemprop="sku" content="<?php esc_attr_e( $semper_fi_lite_woocommerce_product->get_sku() ); ?>" />
