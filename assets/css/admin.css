@@ -16,6 +16,7 @@
     line-height: 1;
     text-transform: uppercase;
 	color: #3292db;
+	border-left: 5px solid #0073aa;
 }
 
 .customize-control-hidden label {
