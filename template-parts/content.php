@@ -19,7 +19,9 @@
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
       <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
       <?php if(get_theme_mod('bb_mobile_application_blog_post_description_option') == 'Full Content'){ ?>
-        <?php the_content(); ?>
+        <div class="entry-content">
+          <?php the_content(); ?> 
+        </div>
       <?php }
       if(get_theme_mod('bb_mobile_application_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
         <?php if(get_the_excerpt()) { ?>

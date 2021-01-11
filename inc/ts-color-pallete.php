@@ -4,7 +4,7 @@
 
 	$bb_mobile_application_custom_css = '';
 
-	$bb_mobile_application_custom_css .='#header, .search-form input.search-submit, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, #slider .know-btn a,.read-more-box, .inner, #footer input[type="submit"], #footer .tagcloud a:hover, #sidebar input[type="submit"], #sidebar h3,.pagination span, .pagination .current, .pagination a:hover,#comments input[type="submit"].submit,.meta-nav:hover,.tags p a:hover,#sidebar .tagcloud a:hover,#comments a.comment-reply-link, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, .page-template-custom-front-page #header, #menu-sidebar input[type="submit"], .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, #footer .woocommerce a.button:hover, .woocommerce .widget_price_filter .price_slider_amount .button:hover, a.button{';
+	$bb_mobile_application_custom_css .='#header, .search-form input.search-submit, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, #slider .know-btn a,.read-more-box, .inner, #footer input[type="submit"], #footer .tagcloud a:hover, #sidebar input[type="submit"], #sidebar h3,.pagination span, .pagination .current, .pagination a:hover,#comments input[type="submit"].submit,.meta-nav:hover,.tags p a:hover,#sidebar .tagcloud a:hover,#comments a.comment-reply-link, #footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button, #menu-sidebar input[type="submit"], .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, #footer .woocommerce a.button:hover, .woocommerce .widget_price_filter .price_slider_amount .button:hover, a.button{';
 		$bb_mobile_application_custom_css .='background-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	$bb_mobile_application_custom_css .='}';
 
@@ -46,6 +46,13 @@
 	$bb_mobile_application_custom_css .='#menu-sidebar, .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul ul ul, #contact-info{
 	background-image: linear-gradient(-90deg, #000 0%, '.esc_attr($bb_mobile_application_theme_color).' 120%);
 		}';
+	}
+	$bb_mobile_application_custom_css .='}';
+
+	$bb_mobile_application_custom_css .='@media screen and (max-width:767px) {';
+	if($bb_mobile_application_theme_color){
+		$bb_mobile_application_custom_css .='.page-template-custom-front-page #header{';
+		$bb_mobile_application_custom_css .='background-color: '.esc_attr($bb_mobile_application_theme_color).';';
 	}
 	$bb_mobile_application_custom_css .='}';
 

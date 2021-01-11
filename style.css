@@ -3,10 +3,10 @@ Theme Name: BB Mobile Application
 Theme URI: https://www.themeshopy.com/themes/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
-Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, headphones, earphones, screenguards, back covers, Hosting Provider, game launch, music launch, single product launch, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, theme options, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
+Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, headphones, earphones, screenguards, back covers, software company, antivirus company, Hosting Provider, game launch, music launch, single product launch, Mobile Network Provider, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, theme options, responsive layout and special features to manage Slider, Custom Background, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Version: 1.4.6
+Version: 1.4.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: bb-mobile-application
@@ -20,13 +20,9 @@ In this theme some code is taken from Twenty Sixteen.
 
 /* Basic Style */
 *{
-	margin:0;
-	padding:0;
 	outline:none;
 }
 body{
-	margin:0;
-	padding:0;
 	-ms-word-wrap:break-word;
 	word-wrap:break-word;
 	background-color:#fff;
@@ -35,8 +31,6 @@ body{
   overflow-x: hidden;
 }
 img{
-	margin:0;
-	padding:0;
 	border:none;
 	max-width:100%;
 	height:auto;
@@ -56,26 +50,20 @@ p{
   line-height: 1.8;
 }
 a{
-	text-decoration:none;
 	color:#3ae0bf;
 }
 a:hover{
-	text-decoration:none;
 	color:#666;
 }
-a:focus,
-a:hover{
+a:focus,a:hover{
 	text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus, .page-template-custom-front-page .primary-navigation ul ul a:focus, 
-.primary-navigation ul ul a:focus , .woocommerce form .form-row input:focus.input-text, 
-.woocommerce form .form-row textarea:focus{
+a:focus, input:focus, textarea:focus, .page-template-custom-front-page .primary-navigation ul ul a:focus, .primary-navigation ul ul a:focus , .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+  text-decoration: none;
   outline: 2px solid #FF4500;
   border-bottom: 1px solid #000;
 }
-.page-template-custom-front-page #header .logo a:focus, .page-template-custom-front-page #header .logo p:focus, #footer a:focus,
-.page-template-custom-front-page .primary-navigation a:focus,
-.toggle-menu button:focus{
+.page-template-custom-front-page #header .logo a:focus, .page-template-custom-front-page #header .logo p:focus, #footer a:focus,.page-template-custom-front-page .primary-navigation a:focus,.toggle-menu button:focus{
   outline: 2px solid #FF4500;
   border-bottom: 1px solid #fff;
 }
@@ -91,23 +79,8 @@ ul{
 select{
   width:100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
+#respond, .clear, article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
-}
-.clear{
-	clear:both;
 }
 input[type='submit']:hover{
 	cursor: pointer;
@@ -121,12 +94,10 @@ input[type='submit']:hover{
 	padding:20px 0 20px;
 }
 .wp-caption{
-	margin:0;
-	padding:0;
 	font-size:13px;
 	max-width:100%;
 }
-.wp-caption-text{
+.wp-caption-text, .bypostauthor, .wp-caption, *, body, img, .sticky, .gallery-caption{
 	margin:0;
 	padding:0;
 }
@@ -135,7 +106,6 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
-
 /*wide block*/
 .entry-content .alignwide {
   margin-left  : -80px;
@@ -149,14 +119,12 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, 
-.left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, 
-.right-sidebar-page .entry-content .alignfull{
+.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
 /*elementor*/
-.elementor-html #loader, .elementor-html #loader-wrapper{ 
+.toggle-menu, a.closebtn.responsive-menu, #contact-info, .no-js #loader-wrapper, .elementor-html #loader, .elementor-html #loader-wrapper{ 
   display: none; 
 }
 /* Text meant only for screen readers. */
@@ -188,16 +156,7 @@ input[type='submit']:hover{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.sticky{
-	margin:0;
-	padding:0;
-}
-.gallery-caption{
-	margin:0;
-	padding:0;
-}
-.alignleft,
- img.alignleft {
+.alignleft,img.alignleft {
  	display: inline;
 	float: left;
 	margin-right:20px;
@@ -207,8 +166,7 @@ input[type='submit']:hover{
 	border:1px solid #bbb;
 	padding:5px;
 }
-.alignright,
- img.alignright {
+.alignright,img.alignright {
 	display: inline;
 	float: right;
 	border:1px solid #bbb;
@@ -216,8 +174,7 @@ input[type='submit']:hover{
 	margin-bottom:10px;
 	margin-left:25px;
 }
-.aligncenter,
- img.aligncenter {
+.aligncenter,img.aligncenter {
 	clear: both;
 	display: block;
 	margin-left: auto;
@@ -230,13 +187,6 @@ input[type='submit']:hover{
 }
 .comment-list .comment-content ul li{
 	margin:5px;
-}
-#respond{
-	clear:both;
-}
-.bypostauthor{
-	margin:0;
-	padding:0;
 }
 small{
 	font-size:14px !important;
@@ -253,11 +203,7 @@ a.small-button:hover{
 	color:#fff;
 	background:#0c5f96;
 }
-input[type="text"],
-input[type="email"],
-input[type="phno"],
-input[type="password"],
-textarea{
+input[type="text"],input[type="email"],input[type="phno"],input[type="password"],textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
 	font-size:16px;
@@ -321,9 +267,6 @@ a.button{
   z-index: 99999;
   overflow: hidden;
   display: block;
-}
-.no-js #loader-wrapper {
-  display: none;
 }
 #loader {
   display: block;
@@ -465,19 +408,15 @@ a.button{
 	margin: 0;
   line-height: 1.5;
 }
-.page-template-custom-front-page #header .logo a,.page-template-custom-front-page #header .logo p{
+.page-template-custom-front-page .primary-navigation a, .page-template-custom-front-page #header .logo a,.page-template-custom-front-page #header .logo p{
   color:#fff;
 }
-#header .logo a{
+#header .logo a, #header .logo p{
 	color:#000;
 }
 #header .logo p{
 	font-size:12px;
-	color: #000;
   margin: 0;
-}
-#contact-info{
-  display: none;
 }
 /* --------- MENUS CSS --------- */
 #menu-sidebar {
@@ -502,9 +441,6 @@ a.button{
   padding: 16px 25px;
   text-transform: uppercase;
 }
-.page-template-custom-front-page .primary-navigation a{
-  color: #fff;
-}
 .primary-navigation ul ul{
   display: none;
   position: absolute;
@@ -521,8 +457,7 @@ a.button{
   left: 100%;
   top: 5px;
 }
-.page-template-custom-front-page .primary-navigation ul ul a,
-.primary-navigation ul ul a{
+.page-template-custom-front-page .primary-navigation ul ul a,.primary-navigation ul ul a{
   color: #000;
   background-color: #fff;
   border: none;
@@ -555,15 +490,10 @@ a.button{
 .sf-arrows ul .sf-with-ul:after{
   right: 10px;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after{
   content: '\f068';
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
-}
-.toggle-menu, a.closebtn{
-  display: none;
 }
 .sf-arrows .sf-with-ul{
   padding-right: 30px;
@@ -573,16 +503,15 @@ a.button{
   text-align: center;
 }
 #about h3{
-  color: #717171;
   font-weight: bold;
   font-size: 18px;    
   text-align: left;
 }
-#about h3 a{
+#about h3, #about h3 a{
   color: #717171;
 }
 .left-part, .right-part {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 #about p {
   line-height: 1.8;
@@ -708,7 +637,7 @@ a.r_button {
 .copyright-wrapper .widget {
   padding: 20px 0;
 }
-.copyright-wrapper .tagcloud a {
+.copyright-wrapper .tagcloud a, #footer table#wp-calendar td a{
   color: #fff;
 }
 .copyright-wrapper .search-form .search-field {
@@ -740,9 +669,7 @@ a.r_button {
   color: #fff;
   font-size: 20px;
 }
-.copyright-wrapper table,
-.copyright-wrapper th,
-.copyright-wrapper td {
+.copyright-wrapper table,.copyright-wrapper th,.copyright-wrapper td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
@@ -826,9 +753,6 @@ a.r_button {
 #sidebar table#wp-calendar td a {
   color: #000;
 }
-#footer table#wp-calendar td a{
-	color: #fff;
-}
 /*scroll to top*/
 #scroll-top{
   background:#252525;
@@ -885,8 +809,7 @@ form.woocommerce-form.woocommerce-form-login.login{
 	padding: 10px;
 	text-align: center;
 }
-h2.woocommerce-loop-product__title,
-.woocommerce div.product .product_title {
+h2.woocommerce-loop-product__title,.woocommerce div.product .product_title {
   color: #000;
   font-weight: 700;
   font-size: 24px !important;
@@ -895,8 +818,7 @@ h2.woocommerce-loop-product__title,
   text-align: center;
   text-transform: capitalize;
 }
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #000;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
@@ -922,12 +844,8 @@ h2.woocommerce-loop-product__title,
   border: solid 1px #000;
   color: #000;
 }
-span.woocommerce-input-wrapper,
-.woocommerce label {
+span.woocommerce-input-wrapper, .woocommerce label {
 	width: 100%;
-}
-.col-1,.col-2 {
-  max-width: 100%;
 }
 .woocommerce-MyAccount-navigation ul {
   list-style: none;
@@ -954,9 +872,6 @@ span.woocommerce-input-wrapper,
 	vertical-align: top;
 	padding: 10px;
 }
-.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb,.woocommerce span.onsale, .woocommerce-privacy-policy-text p a,.woocommerce td.product-name a, .woocommerce-cart .cart-collaterals .shipping-calculator-button {
-  color: #000;
-}
 .woocommerce form .form-row .required,.woocommerce a.remove{
   color: #df0000 !important;
 }
@@ -969,7 +884,7 @@ span.woocommerce-input-wrapper,
 .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce button.button.alt:hover{
 	color: #fff !important;
 }
-.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb, .woocommerce li#tab-title-reviews a, tr.woocommerce-cart-form__cart-item.cart_item a, .woocommerce a.added_to_cart{
+.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb,.woocommerce span.onsale, .woocommerce-privacy-policy-text p a,.woocommerce td.product-name a, .woocommerce-cart .cart-collaterals .shipping-calculator-button, .woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb, .woocommerce li#tab-title-reviews a, tr.woocommerce-cart-form__cart-item.cart_item a, .woocommerce a.added_to_cart{
 	color: #000;
 }
 .woocommerce-info a,.woocommerce-privacy-policy-text p a,.woocommerce-MyAccount-content p a, .woocommerce-info a, tr.woocommerce-cart-form__cart-item.cart_item a, form.woocommerce-shipping-calculator a, nav.woocommerce-MyAccount-navigation a{
@@ -1039,8 +954,7 @@ span.woocommerce-input-wrapper,
 .woocommerce .woocommerce-product-rating .star-rating {
   margin: 0.5em 20px 0 0;
 }
-.woocommerce form.login .form-row,
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+.woocommerce form.login .form-row,.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
   display: block;
   float: none;
 }
@@ -1120,11 +1034,10 @@ span.woocommerce-input-wrapper,
 }
 /* Woocommerce CSS End*/
 .metabox{
-	color:#000;
 	padding:15px 0;
 	clear:both;
 }
-.metabox a{
+.metabox a, .metabox{
   color: #000;
 }
 .metabox a:hover{
@@ -1248,9 +1161,7 @@ span.woocommerce-input-wrapper,
   font-weight:bold;
   clear:both;
 }  
-#comments input[type="text"],
-#comments input[type="email"],
-#comments textarea{
+#comments input[type="text"],#comments input[type="email"],#comments textarea{
   width:100%;
   padding:12px 10px;
   font-size:18px;
@@ -1324,8 +1235,7 @@ div#comments a{
   display: inline-block;
 } 
 /* --------- SLIDER--------- */
-#slider .carousel-control-next-icon,
-#slider .carousel-control-prev-icon{
+#slider .carousel-control-next-icon,#slider .carousel-control-prev-icon{
 	background: transparent;
 }
 #slider{ 
@@ -1341,7 +1251,6 @@ div#comments a{
 #slider .carousel-item-next,#slider .carousel-item-prev,#slider .carousel-item.active {
  	display: block !important;
 }
-
 #slider .carousel-control-next, #slider .carousel-control-prev{
  	opacity: 1;
 }
@@ -1381,8 +1290,6 @@ div#comments a{
 #slider .know-btn {
   margin-top: 5%;
 }
-/* slider end */
-
 /* Sidebar */
 #sidebar caption {
 	font-weight: bold;
@@ -1391,11 +1298,9 @@ div#comments a{
 	text-align: center;
 }
 #sidebar table {
-    width: 100%;
+  width: 100%;
 }
-#sidebar table,
-#sidebar th,
-#sidebar td {
+#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #717171;
   text-align: center;
 }
@@ -1555,7 +1460,8 @@ label{
 	color:#333;
 	margin:0 0 25px;
 }
-.content-ts ul{list-style:none;
+.content-ts ul{
+  list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
@@ -1574,9 +1480,8 @@ label{
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
 }
-
 /*video*/
-iframe{
+iframe, .entry-audio audio{
 	width: 100%;
 }
 /*VIDEO*/
@@ -1590,10 +1495,6 @@ iframe{
   width: 100%;
   padding: 15px;
   font-size: 12px;
-}
-/*audio*/
-.entry-audio audio {
-    width: 100%;
 }
 /* Pagination */
 .nav-links {
@@ -1618,8 +1519,7 @@ iframe{
 	float:right;
 	font-weight:bold;
 } 
-.pagination span,
-.pagination a {
+.pagination span,.pagination a {
 	display:block;
   float:left;
   margin: 2px 2px 2px 0;
@@ -1691,8 +1591,7 @@ iframe{
   #header .logo{
     padding: 8px;
   }
-	#about h3,
-	#about p {
+	#about h3,#about p {
     text-align: center;
 	}
   .page-template-custom-front-page #header .logo a, .page-template-custom-front-page #header .logo p{
@@ -1739,6 +1638,19 @@ iframe{
   #slider img{
     height: auto !important;
   }
+  .page-template-custom-front-page #header{
+    position: static;
+    background-color: #3ae0bf;
+  }
+  #slider .inner_carousel p{
+    display: none;
+  }
+  #slider .inner_carousel h1{
+    font-size: 30px;
+  }
+  .page-template-custom-front-page #header .logo a, .page-template-custom-front-page #header .logo p{
+    color: #000;
+  }
 }
 @media screen and (min-width:768px) and (max-width: 992px){
   #sidebar th{
@@ -1749,8 +1661,7 @@ iframe{
   }
 }
 @media screen and (max-width: 1000px){
-  .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .primary-navigation ul ul a:focus{
+  .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .primary-navigation ul ul a:focus{
     outline: 2px solid #FF4500;
     border-bottom: 1px solid #fff;
   }
@@ -1807,7 +1718,7 @@ iframe{
     display: block;
     text-align: right;
   }
-  .primary-navigation ul ul li{
+  .primary-navigation ul ul li, a.closebtn.responsive-menu{
     display: block;
   }
   .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a{

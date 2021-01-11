@@ -222,25 +222,29 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button__link {
-  padding: 16px 40px;
-    font-weight: bold;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  background: #d51c22;
-  color: #fff !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #000 !important;
+  padding: 5px;
+  text-decoration: none;
+  margin: 20px 15px 0 0;
+  padding: 7px 20px;
+  background: #3ae0bf;
+  display: table;
+  font-weight: 600;
+  border-radius: 0;
 }
 
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-  background-color: #2c2b2b;
-  color: #fff;
+  background: #000;
+  color: #fff !important;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
 /* Separator */
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
@@ -482,20 +486,4 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-latest-comments {
   margin: 0;
   padding: 0;
-}
-/*button css*/
-.wp-block-button a{
-  color: #000 !important;
-  padding: 5px;
-  text-decoration: none;
-  margin: 20px 15px 0 0;
-  padding: 7px 20px;
-  background: #3ae0bf;
-  display: table;
-  font-weight: 600;
-  border-radius: 0;
-}
-.wp-block-button a:hover{
-  background: #000;
-  color: #fff;
 }
