@@ -79,18 +79,18 @@ get_header(); ?>
           <div class="col-lg-6 col-md-12">
             <?php
               $advance_it_company_postData1=  get_theme_mod('advance_it_company_setting');
-                if($advance_it_company_postData1){
+              if($advance_it_company_postData1){
                 $args = array( 'name' => esc_html($advance_it_company_postData1 ,'advance-it-company'));
-                  $query = new WP_Query( $args );
-                  if ( $query->have_posts() ) :
-                    while ( $query->have_posts() ) : $query->the_post(); ?>
-                      <div class="post-sec">
-                        <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2><span class="screen-reader-text"><?php the_title(); ?></span></a>
-                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?></p>
-                        <?php the_post_thumbnail(); ?>
-                      </div>
-                <?php endwhile; 
-                wp_reset_postdata();?>
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ) :
+                  while ( $query->have_posts() ) : $query->the_post(); ?>
+                    <div class="post-sec">
+                      <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?></p>
+                      <?php the_post_thumbnail(); ?>
+                    </div>
+                  <?php endwhile; 
+                  wp_reset_postdata();?>
                 <?php else : ?>
                   <div class="no-postfound"></div>
                 <?php
@@ -107,7 +107,7 @@ get_header(); ?>
                       <div class="cat-posts ">
                         <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                         <div class="cat_body">
-                          <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                          <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h4>
                           <p>
                             <?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?>
                           </p> 
