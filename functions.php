@@ -16,6 +16,7 @@ function academic_education_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'align-wide' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
@@ -102,6 +103,10 @@ function academic_education_sanitize_checkbox( $input ) {
 	return ( ( isset( $input ) && true == $input ) ? true : false );
 }
 
+function academic_education_sanitize_float( $input ) {
+	return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+}
+
 /* Excerpt Limit Begin */
 function academic_education_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));
@@ -112,10 +117,18 @@ function academic_education_string_limit_words($string, $word_limit) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'academic_education_loop_columns');
-	if (!function_exists('academic_education_loop_columns')) {
-		function academic_education_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('academic_education_loop_columns')) {
+	function academic_education_loop_columns() {
+		$columns = get_theme_mod( 'academic_education_products_per_column', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'academic_education_shop_per_page', 20 );
+function academic_education_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'academic_education_products_per_page', 9 );
+	return $cols;
 }
 
 function academic_education_sanitize_dropdown_pages($page_id, $setting) {

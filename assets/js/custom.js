@@ -1,10 +1,10 @@
 jQuery(function($){
-	"use strict";
-	jQuery('.main-menu-navigation > ul').superfish({
-		delay:       500,                            
-		animation:   {opacity:'show',height:'show'},  
-		speed:       'fast'                        
-	});
+ "use strict";
+   jQuery('.main-menu-navigation > ul').superfish({
+     delay:       500,                            
+     animation:   {opacity:'show',height:'show'},  
+     speed:       'fast'                        
+   });
 });
 
 function academic_education_resmenu_open() {
@@ -17,6 +17,7 @@ function academic_education_resmenu_close() {
 }
 
 jQuery(document).ready(function () {
+
 	window.academic_education_currentfocus=null;
   	academic_education_checkfocusdElement();
 	var academic_education_body = document.querySelector('body');

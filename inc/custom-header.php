@@ -9,8 +9,10 @@ function academic_education_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'academic_education_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
-		'width'                  => 1600,
-		'height'                 => 400,
+		'width'                  => 1355,
+		'height'                 => 90,
+		'flex-width'         	=> true,
+        'flex-height'        	=> true,
 		'wp-head-callback'       => 'academic_education_header_style',
 	) ) );
 }

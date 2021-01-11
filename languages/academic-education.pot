@@ -344,7 +344,7 @@ msgstr ""
 msgid "Description of what this panel does."
 msgstr ""
 
-#: inc/customizer.php:24
+#: inc/customizer.php:25
 msgid "General Settings"
 msgstr ""
 
@@ -559,6 +559,30 @@ msgstr ""
 
 #: inc/customizer.php:686
 msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:698
+msgid 'Woocommerce Shop Page'
+msgstr ""
+
+#: inc/customizer.php:708
+msgid 'Product Per Columns'
+msgstr ""
+
+#: inc/customizer.php:709
+msgid 'How many products should be shown per Column?'
+msgstr ""
+
+#: inc/customizer.php:725
+msgid 'Product Per Page'
+msgstr ""
+
+#: inc/customizer.php:726
+msgid 'How many products should be shown per page?'
+msgstr ""
+
+#: inc/customizer.php:737
+msgid 'Display Site Title and Tagline in Header'
 msgstr ""
 
 #: inc/customizer.php:769

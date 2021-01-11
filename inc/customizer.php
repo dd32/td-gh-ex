@@ -20,6 +20,7 @@ function academic_education_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'academic-education' ),
 	) );
 
+	// general setting
 	$wp_customize->add_section( 'academic_education_left_right' , array(
     	'title'      => __( 'General Settings', 'academic-education' ),
 		'priority'   => 30,
@@ -691,6 +692,52 @@ function academic_education_customize_register( $wp_customize ) {
 		'section'	=> 'academic_education_footer_section',
 		'type'		=> 'text'
 	));
+
+	//Wocommerce Shop Page
+	$wp_customize->add_section('academic_education_woocommerce_shop_page',array(
+		'title'	=> __('Woocommerce Shop Page','academic-education'),
+		'panel' => 'academic_education_panel_id'
+	));
+
+	$wp_customize->add_setting( 'academic_education_products_per_column' , array(
+		'default'           => 3,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'academic_education_sanitize_choices',
+	) );
+	$wp_customize->add_control( 'academic_education_products_per_column', array(
+		'label'    => __( 'Product Per Columns', 'academic-education' ),
+		'description'	=> __('How many products should be shown per Column?','academic-education'),
+		'section'  => 'academic_education_woocommerce_shop_page',
+		'type'     => 'select',
+		'choices'  => array(
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+			'5' => '5',
+		),
+	)  );
+
+	$wp_customize->add_setting('academic_education_products_per_page',array(
+		'default'	=> 9,
+		'sanitize_callback'	=> 'academic_education_sanitize_float',
+	));	
+	$wp_customize->add_control('academic_education_products_per_page',array(
+		'label'	=> __('Product Per Page','academic-education'),
+		'description'	=> __('How many products should be shown per page?','academic-education'),
+		'section'	=> 'academic_education_woocommerce_shop_page',
+		'type'		=> 'number'
+	));
+
+	// logo site title
+	$wp_customize->add_setting('academic_education_site_title_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'academic_education_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('academic_education_site_title_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Display Site Title and Tagline in Header','academic-education'),
+       'section' => 'title_tagline'
+    ));
 	
 }
 add_action( 'customize_register', 'academic_education_customize_register' );	

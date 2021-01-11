@@ -1,9 +1,10 @@
 === Academic Education ===
 Contributors: LogicalThemes
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
+Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
 Requires at least: 5.0
-Tested up to: 5.5.1
+Tested up to: 5.6
 Requires PHP: 7.2.14
+Stable tag: 0.2.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +12,7 @@ Academic Education theme is suitable for college, School, university, LMS, Train
 
 == Description ==
 
-Academic Education theme is suitable for college, School, university, LMS, Training Center, Academy, Primary School, High School and Kindergarten and various educational websites. and hey you can even put it use for tuition classes, coaching classes, personal, blogging and any small business, we are not leaving anything behind. A highly flexible, versatile yet multipurpose theme that can be used to build business and corporate websites. This theme comprises of news, added filter feature, personalization options with a clean professional design that is user friendly. Not only that you can also find useful sections such as testimonial section, Banner with Call to Action Button (CTA),social media links and so on. An excellent option for the educational institutions and businesses. The SEO optimization with unique and secure coding ensures safety of your data along with the SEO activities, web crawlers will love it. A lovely theme for your lovely university. lastly , we would like to talk about the insane customization viability in regards to add on features tools and short codes that we provide.
+Academic Education theme is suitable for college, School, university, LMS, Training Center, Academy, Primary School, High School and Kindergarten and various educational websites. and hey you can even put it use for tuition classes, coaching classes, personal, Online, teaching, institute, blogging and any small business, we are not leaving anything behind. A highly flexible, versatile yet multipurpose theme that can be used to build business and corporate websites. This theme comprises of news, added filter feature, personalization options with a clean professional design that is user friendly. Not only that you can also find useful sections such as testimonial section, Banner with Call to Action Button (CTA),social media links and so on. An excellent option for the educational institutions and businesses. The SEO optimization with unique and secure coding ensures safety of your data along with the SEO activities, web crawlers will love it. A lovely theme for your lovely university. lastly , we would like to talk about the insane customization viability in regards to add on features tools and short codes that we provide.
 
 == Changelog ==
 
@@ -77,6 +78,14 @@ Academic Education theme is suitable for college, School, university, LMS, Train
   * Updated license.
   * Added condition for primary menu.
   * Resolved login form error.
+
+= 0.2.9 =
+  * Added option to Change Number of WooCommerce Products Per Columns and Page.
+  * Added show / hide site title and tagline in header.
+  * Updated POT file.
+  * Added wide-blocks and flexible-header tags.
+  * Added wp_reset_postdata() function in template-tag.php.
+  * Changes in searchform.php.
 
 == Resources ==
 
