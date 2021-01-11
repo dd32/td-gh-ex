@@ -23,31 +23,31 @@ class arise_parallax_video_widget extends WP_Widget {
 		$arise_video_redirecturl = esc_url($instance['arise_video_redirecturl']);
 		?>	
 			<p>
-				<label for="<?php _e('Description','arise')?>">
-					<?php _e('Add all iframe code at page editor to display youtube/ Vimeo video. Do not add iframe code at video content. Your iframe code will be displayed from page editor', 'arise');?>
+				<label for="<?php esc_html_e('Description','arise')?>">
+					<?php esc_html_e('Add all iframe code at page editor to display youtube/ Vimeo video. Do not add iframe code at video content. Your iframe code will be displayed from page editor', 'arise');?>
 				:</label>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id(key($defaults));?>">
-					<?php _e('Page', 'arise');?>
+					<?php esc_html_e('Page', 'arise');?>
 				:</label>
 				<?php wp_dropdown_pages(array('show_option_none' => ' ', 'name' => $this->get_field_name(key($defaults)), 'selected' => $instance[key($defaults)]));?>
 			</p>
 
 			<p>
-					<?php _e('Video Content:', 'arise');?>
+					<?php esc_html_e('Video Content:', 'arise');?>
 				<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('arise_video_content');?>" name="<?php echo $this->get_field_name('arise_video_content');?>"><?php echo stripslashes( wp_filter_post_kses( addslashes ($arise_video_content)));
 		?></textarea>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id('arise_video_redirect_text');?>">
-					<?php _e('Redirect Text:', 'arise');?>
+					<?php esc_html_e('Redirect Text:', 'arise');?>
 				</label>
 				<input class="widefat" id="<?php echo $this->get_field_id('arise_video_redirect_text');?>" name="<?php echo $this->get_field_name('arise_video_redirect_text');?>" type="text" value="<?php echo esc_attr($arise_video_redirect_text);?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id('arise_video_redirecturl');?>">
-					<?php _e('Redirect Url:', 'arise');?>
+					<?php esc_html_e('Redirect Url:', 'arise');?>
 				</label>
 				<input class="widefat" id="<?php echo $this->get_field_id('arise_video_redirecturl');?>" name="<?php echo $this->get_field_name('arise_video_redirecturl');?>" type="text" value="<?php echo $arise_video_redirecturl;?>" />
 			</p>
@@ -98,13 +98,13 @@ class arise_parallax_video_widget extends WP_Widget {
 						<div class="two-column">
 							<div class="parallax_video_text">
 							<?php if (!empty($arise_video_title)): ?>
-							<h3 class="widget-title"><?php echo esc_attr($arise_video_title); ?></h3>
+							<h3 class="widget-title"><?php echo esc_html($arise_video_title); ?></h3>
 							<?php endif;
 							if(!empty($arise_video_content)): ?>
-							<h3><?php echo esc_attr($arise_video_content); ?></h3>
+							<h3><?php echo esc_html($arise_video_content); ?></h3>
 							<?php endif;
 							if(!empty($arise_video_redirect_text)): ?>
-							<a class="btn-default light" href="<?php echo esc_url($arise_video_redirecturl); ?>" title="<?php echo esc_attr($arise_video_redirect_text); ?>" target="_blank"><?php echo esc_attr($arise_video_redirect_text); ?></a><!-- end .btn-default -->
+							<a class="btn-default light" href="<?php echo esc_url($arise_video_redirecturl); ?>" title="<?php echo esc_attr($arise_video_redirect_text); ?>" target="_blank"><?php echo esc_html($arise_video_redirect_text); ?></a><!-- end .btn-default -->
 						<?php endif; ?>
 							</div>
 						</div> <!-- end .two-column -->

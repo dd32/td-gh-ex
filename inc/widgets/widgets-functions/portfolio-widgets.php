@@ -33,7 +33,7 @@ class arise_portfolio_widget extends WP_Widget {
   <input id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
 </p>
 <?php _e('Description', 'arise');?>
-<textarea class="widefat" rows="10" cols="20" id="<?php echo $this->get_field_id('text');?>" name="<?php echo $this->get_field_name('text');?>"><?php echo esc_attr($text);
+<textarea class="widefat" rows="10" cols="20" id="<?php echo $this->get_field_id('text');?>" name="<?php echo $this->get_field_name('text');?>"><?php echo esc_html($text);
 		?></textarea>
 <?php
 		for ($i = 0; $i < $number; $i++) {
@@ -88,7 +88,7 @@ class arise_portfolio_widget extends WP_Widget {
 		echo '<div class="container clearfix">';
 		if (!empty($title)) { echo $before_title . esc_attr($title) . $after_title; }
 		if(!empty($text)){ ?>
-<p class="widget-sub-title"><?php echo esc_attr($text); ?></p>
+<p class="widget-sub-title"><?php echo esc_html($text); ?></p>
 <?php }
 		while ($get_featured_pages->have_posts()):$get_featured_pages->the_post();
 		$page_title = get_the_title();
@@ -99,7 +99,7 @@ class arise_portfolio_widget extends WP_Widget {
   <?php echo get_the_post_thumbnail($post->ID, 'post-thumbnails');
 				} ?>
   <div class="portfolio-content slide-caption" title="<?php echo esc_attr($page_title); ?>">
-    <h3><a href="<?php the_permalink();?>" title="<?php echo esc_attr($page_title); ?>"><?php echo esc_attr($page_title); ?></a></h3>
+    <h3><a href="<?php the_permalink();?>" title="<?php echo esc_attr($page_title); ?>"><?php echo esc_html($page_title); ?></a></h3>
     <?php if(get_the_excerpt() != ''): ?>
     <p>
       <?php 
@@ -118,7 +118,7 @@ class arise_portfolio_widget extends WP_Widget {
     <p><a class="more-link" title="<?php the_title_attribute();?>" href="<?php the_permalink();?>">
       <?php
 							if($arise_tag_text == 'Read More' || $arise_tag_text == ''):
-								_e('Read More', 'arise');
+								esc_html_e('Read More', 'arise');
 							else:
 								echo esc_attr($arise_tag_text);
 							endif;?>

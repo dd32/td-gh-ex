@@ -33,7 +33,7 @@ get_header();
 	<h2 class="entry-title">
 		<?php get_search_form(); ?>
 		<p>&nbsp; </p>
-		<?php _e( 'No Posts Found.', 'arise' ); ?>
+		<?php esc_html_e( 'No Posts Found.', 'arise' ); ?>
 	</h2>
 	<?php
 	} ?>

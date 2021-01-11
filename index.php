@@ -32,7 +32,7 @@ get_header();
 			}
 		}
 		else { ?>
-		<h2 class="entry-title"> <?php _e( 'No Posts Found.', 'arise' ); ?> </h2>
+		<h2 class="entry-title"> <?php esc_html_e( 'No Posts Found.', 'arise' ); ?> </h2>
 		<?php } ?>
 		<?php get_template_part( 'navigation', 'none' ); ?>
 	</main> <!-- #main -->

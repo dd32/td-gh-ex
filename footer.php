@@ -80,10 +80,11 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 			if ( is_active_sidebar( 'arise_footer_options' ) ) :
 					dynamic_sidebar( 'arise_footer_options' );
 				else:
-					echo '<div class="copyright">' .'&copy; ' . date('Y') .' '; ?>
-					<a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" target="_blank" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name', 'display' ); ?></a> | 
-									<?php _e('Designed by:','arise'); ?> <a title="<?php echo esc_attr__( 'Themefreesia', 'arise' ); ?>" target="_blank" href="<?php echo esc_url( 'https://themefreesia.com' ); ?>"><?php _e('Theme Freesia','arise');?></a> | 
-									<?php _e('Powered by:','arise'); ?> <a title="<?php echo esc_attr__( 'WordPress', 'arise' );?>" target="_blank" href="<?php echo esc_url( 'http://wordpress.org' );?>"><?php _e('WordPress','arise'); ?></a>
+					echo '<div class="copyright">';?>
+					<?php  echo '&copy; ' . date_i18n(__('Y','arise')) ; ?>
+					<a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" target="_blank" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html (get_bloginfo( 'name', 'display' )); ?></a> | 
+									<?php esc_html_e('Designed by:','arise'); ?> <a title="<?php echo esc_attr__( 'Themefreesia', 'arise' ); ?>" target="_blank" href="<?php echo esc_url( 'https://themefreesia.com' ); ?>"><?php esc_html_e('Theme Freesia','arise');?></a> | 
+									<?php esc_html_e('Powered by:','arise'); ?> <a title="<?php echo esc_attr__( 'WordPress', 'arise' );?>" target="_blank" href="<?php echo esc_url( 'http://wordpress.org' );?>"><?php esc_html_e('WordPress','arise'); ?></a>
 								</div>
 				<?php endif; ?>
 			<div style="clear:both;"></div>
@@ -92,7 +93,7 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 	<?php
 		$disable_scroll = $arise_settings['arise_scroll'];
 		if($disable_scroll == 0):?>
-	<div class="go-to-top"><a title="<?php _e('Go to Top','arise');?>" href="#masthead"></a></div> <!-- end .go-to-top -->
+	<div class="go-to-top"><a title="<?php esc_html_e('Go to Top','arise');?>" href="#masthead"></a></div> <!-- end .go-to-top -->
 	<?php endif; ?>
 </footer> <!-- end #colophon -->
 </div> <!-- end #page -->

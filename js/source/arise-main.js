@@ -1,24 +1,27 @@
 jQuery( function() {
 
-	// Search toggle.
-	jQuery(function(){
-		var jQuerysearchlink = jQuery('#search-toggle');
-		var jQuerysearchbox  = jQuery('#search-box');
-		jQuery('#search-toggle').on('click', function(){
-			if(jQuery(this).attr('id') == 'search-toggle') {
-				if(!jQuerysearchbox.is(":visible")) { 
-					// if invisible we switch the icon to appear collapsable
-					jQuerysearchlink.removeClass('header-search').addClass('header-search-x');
-				} else {
-					// if visible we switch the icon to appear as a toggle
-					jQuerysearchlink.removeClass('header-search-x').addClass('header-search');
-				}
-					jQuerysearchbox.slideToggle(200, function(){
-					// callback after search bar animation
-				});
-			}
+		// Search toggle.
+		jQuery(function(){
+		  var jQuerysearchlink = jQuery('#search-toggle');
+		  var jQuerysearchbox  = jQuery('#search-box');
+		  
+		  jQuery('#search-toggle').on('click', function(){
+		    
+		    if(jQuery(this).attr('id') == 'search-toggle') {
+		      if(!jQuerysearchbox.is(":visible")) { 
+		        // if invisible we switch the icon to appear collapsable
+		        jQuerysearchlink.removeClass('header-search').addClass('header-search-x');
+		      } else {
+		        // if visible we switch the icon to appear as a toggle
+		        jQuerysearchlink.removeClass('header-search-x').addClass('header-search');
+		      }
+		      
+		      jQuerysearchbox.slideToggle(200, function(){
+		        // callback after search bar animation
+		      });
+		    }
+		  });
 		});
-	});
 
 		// Menu toggle for below 768 screens.
 		( function() {
@@ -43,6 +46,19 @@ jQuery( function() {
 				togglenav.toggleClass( 'toggled-on' );
 			} );
 		} )();
+
+		jQuery( function() {
+			if(jQuery( window ).width() < 768){
+				//responsive sub menu toggle
+                jQuery('#site-navigation .menu-item-has-children, #site-navigation .page_item_has_children').prepend('<button class="sub-menu-toggle"> <i class="plus-ico">+</i> </button>');
+				jQuery(".main-navigation .menu-item-has-children ul, .main-navigation .page_item_has_children ul").hide();
+				jQuery(".main-navigation .menu-item-has-children > .sub-menu-toggle, .main-navigation .page_item_has_children > .sub-menu-toggle").on('click', function () {
+					jQuery(this).parent(".main-navigation .menu-item-has-children, .main-navigation .page_item_has_children").children('ul').first().slideToggle();
+					jQuery(this).children('.plus-ico').first().toggleClass('back-ico');
+					
+				});
+			}
+		});
 
 		// Mini Slider 
 		 /*The code is pretty simple, we animate the ul with a -220px margin left. Then we find the first li and put it last to get the infinite animation.*/

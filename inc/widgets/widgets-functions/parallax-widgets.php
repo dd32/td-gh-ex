@@ -23,19 +23,19 @@ class arise_parallax_widget extends WP_Widget {
 		?>
 		<p>
 				<label for="<?php echo $this->get_field_id(key($defaults));?>">
-					<?php _e('Page', 'arise');?>
+					<?php esc_html_e('Page', 'arise');?>
 				:</label>
 				<?php wp_dropdown_pages(array('show_option_none' => ' ', 'name' => $this->get_field_name(key($defaults)), 'selected' => $instance[key($defaults)]));?>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id('arise_redirect_text');?>">
-					<?php _e('Redirect Text:', 'arise');?>
+					<?php esc_html_e('Redirect Text:', 'arise');?>
 				</label>
 				<input class="widefat" id="<?php echo $this->get_field_id('arise_redirect_text');?>" name="<?php echo $this->get_field_name('arise_redirect_text');?>" type="text" value="<?php echo esc_attr($arise_redirect_text);?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id('arise_widget_redirecturl');?>">
-					<?php _e('Redirect Url:', 'arise');?>
+					<?php esc_html_e('Redirect Url:', 'arise');?>
 				</label>
 				<input class="widefat" id="<?php echo $this->get_field_id('arise_widget_redirecturl');?>" name="<?php echo $this->get_field_name('arise_widget_redirecturl');?>" type="text" value="<?php echo esc_url($arise_widget_redirecturl);?>" />
 			</p>
@@ -73,13 +73,13 @@ class arise_parallax_widget extends WP_Widget {
 			<div class="parallax_content" <?php if (has_post_thumbnail()) { ?> style="background-image:url('<?php echo esc_url($image_attributes[0]); ?>');" <?php } ?> >
 				<div class="container clearfix">
 					<?php if(!empty($arise_parallax_title)): ?>
-					<h3><?php echo esc_attr($arise_parallax_title); ?></h3>
+					<h3><?php echo esc_html($arise_parallax_title); ?></h3>
 					<?php endif;
 					if(!empty($parallax_content)):?>
 						<h2 class="widget-title"><?php echo apply_filters( 'the_title', $parallax_content); ?></h2>
 					<?php endif;
 					if(!empty($arise_redirect_text)): ?>
-						<a class="btn-default light" href="<?php echo esc_url($arise_widget_redirecturl); ?>" title="<?php echo esc_attr($arise_redirect_text); ?>" target="_blank"><?php echo esc_attr($arise_redirect_text); ?></a><!-- end .btn-default -->
+						<a class="btn-default light" href="<?php echo esc_url($arise_widget_redirecturl); ?>" title="<?php echo esc_attr($arise_redirect_text); ?>" target="_blank"><?php echo esc_html($arise_redirect_text); ?></a><!-- end .btn-default -->
 					<?php endif; ?>
 				</div><!-- end .container -->
 			</div><!-- end .parallax_content -->

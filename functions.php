@@ -145,19 +145,19 @@ if(!class_exists('Arise_Plus_Features')){
 	class Arise_Customize_Arise_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
 			<a title="<?php esc_attr_e( 'Review Arise', 'arise' ); ?>" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/arise/' ); ?>" target="_blank" id="about_arise">
-			<?php _e( 'Review Arise', 'arise' ); ?>
+			<?php esc_html_e( 'Review Arise', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url( 'https://themefreesia.com/theme-instruction/arise/' ); ?>" title="<?php esc_attr_e( 'Theme Instructions', 'arise' ); ?>" target="_blank" id="about_arise">
-			<?php _e( 'Theme Instructions', 'arise' ); ?>
+			<?php esc_html_e( 'Theme Instructions', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url( 'https://tickets.themefreesia.com/' ); ?>" title="<?php esc_attr_e( 'Support Ticket', 'arise' ); ?>" target="_blank" id="about_arise">
-			<?php _e( 'Forum', 'arise' ); ?>
+			<?php esc_html_e( 'Forum', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url( 'https://demo.themefreesia.com/arise/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'arise' ); ?>" target="_blank" id="about_arise">
-			<?php _e( 'View Demo', 'arise' ); ?>
+			<?php esc_html_e( 'View Demo', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url(home_url('/')).'wp-admin/theme-install.php?search=author:themefreesia'; ?>" title="<?php esc_attr_e( 'View ThemeFreesia Themes', 'arise' ); ?>" target="_blank" id="about_arise">
-                <?php _e( 'View ThemeFreesia Themes', 'arise' ); ?>
+                <?php esc_html_e( 'View ThemeFreesia Themes', 'arise' ); ?>
             </a><br/>
 		<?php
 		}

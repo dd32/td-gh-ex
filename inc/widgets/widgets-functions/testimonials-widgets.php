@@ -19,12 +19,12 @@ class arise_widget_testimonial extends WP_Widget {
 		$category = $instance[ 'category' ];
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'arise' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Select category', 'arise' ); ?>:</label>
 			<?php wp_dropdown_categories( array( 'show_option_none' =>' ','name' => $this->get_field_name( 'category' ), 'selected' => $category ) ); ?>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>">
-			<?php _e( 'Number of Testimonial:', 'arise' ); ?>
+			<?php esc_html_e( 'Number of Testimonial:', 'arise' ); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 		</p>

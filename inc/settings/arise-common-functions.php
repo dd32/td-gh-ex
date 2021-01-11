@@ -213,14 +213,14 @@ function arise_header_image_display(){
 			<div class="header-inner section-inner">
 				<span>
 					<?php if($arise_settings['arise_Header_description']!=''){ ?>
-					<h2><a title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" href="<?php echo esc_url(home_url('/'));?>"><?php echo esc_attr($arise_settings['arise_Header_description']);?></a></h2>
+					<h2><a title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" href="<?php echo esc_url(home_url('/'));?>"><?php echo esc_html($arise_settings['arise_Header_description']);?></a></h2>
 					<?php }
 					if($arise_settings['arise_header_primary_text']!=''){ 
 					?>
-					<a class="btn-default vivid" href="<?php echo esc_url($arise_settings['arise_header_primary_url']);?>" alt="<?php echo esc_attr($arise_settings['arise_header_primary_text']);?>"><?php echo esc_attr($arise_settings['arise_header_primary_text']);?> </a>
+					<a class="btn-default vivid" href="<?php echo esc_url($arise_settings['arise_header_primary_url']);?>" alt="<?php echo esc_attr($arise_settings['arise_header_primary_text']);?>"><?php echo esc_html($arise_settings['arise_header_primary_text']);?> </a>
 					<?php }
 					if($arise_settings['arise_header_secondary_text']!=''){ ?>
-					<a class="btn-default light" href="<?php echo esc_url($arise_settings['arise_Header_secondary_url']);?>" alt="<?php echo esc_attr($arise_settings['arise_header_secondary_text']);?>"><?php echo esc_attr($arise_settings['arise_header_secondary_text']);?> </a>
+					<a class="btn-default light" href="<?php echo esc_url($arise_settings['arise_Header_secondary_url']);?>" alt="<?php echo esc_attr($arise_settings['arise_header_secondary_text']);?>"><?php echo esc_html($arise_settings['arise_header_secondary_text']);?> </a>
 					<?php } ?>
 				</span>
 			</div> <!-- end .header-inner -->
@@ -241,14 +241,14 @@ function arise_header_image_display(){
 			<div class="header-inner section-inner">
 				<span>
 					<?php if($arise_settings['arise_Header_description']!=''){ ?>
-					<h2><a title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" href="<?php echo esc_url(home_url('/'));?>"><?php echo esc_attr($arise_settings['arise_Header_description']);?></a></h2>
+					<h2><a title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" href="<?php echo esc_url(home_url('/'));?>"><?php echo esc_html($arise_settings['arise_Header_description']);?></a></h2>
 					<?php }
 					if($arise_settings['arise_header_primary_text']!=''){ 
 					?>
-					<a class="btn-default vivid" href="<?php echo esc_url($arise_settings['arise_header_primary_url']);?>" alt="<?php echo esc_attr($arise_settings['arise_header_primary_text']);?>"><?php echo esc_attr($arise_settings['arise_header_primary_text']);?> </a>
+					<a class="btn-default vivid" href="<?php echo esc_url($arise_settings['arise_header_primary_url']);?>" alt="<?php echo esc_html($arise_settings['arise_header_primary_text']);?>"><?php echo esc_html($arise_settings['arise_header_primary_text']);?> </a>
 					<?php }
 					if($arise_settings['arise_header_secondary_text']!=''){ ?>
-					<a class="btn-default light" href="<?php echo esc_url($arise_settings['arise_Header_secondary_url']);?>" alt="<?php echo esc_attr($arise_settings['arise_header_secondary_text']);?>"><?php echo esc_attr($arise_settings['arise_header_secondary_text']);?> </a>
+					<a class="btn-default light" href="<?php echo esc_url($arise_settings['arise_Header_secondary_url']);?>" alt="<?php echo esc_html($arise_settings['arise_header_secondary_text']);?>"><?php echo esc_html($arise_settings['arise_header_secondary_text']);?> </a>
 					<?php } ?>
 				</span>
 			</div> <!-- end .header-inner -->

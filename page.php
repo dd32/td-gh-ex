@@ -57,7 +57,7 @@ get_header();
 	</section>
 	<?php }
 	} else { ?>
-	<h1 class="entry-title"> <?php _e( 'No Posts Found.', 'arise' ); ?> </h1>
+	<h1 class="entry-title"> <?php esc_html_e( 'No Posts Found.', 'arise' ); ?> </h1>
 	<?php
 	} ?>
 	</main> <!-- #main -->

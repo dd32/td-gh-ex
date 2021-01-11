@@ -23,31 +23,31 @@
 		?>
 				<p>
 			<input id="<?php echo $this->get_field_id('checkbox'); ?>" name="<?php echo $this->get_field_name('checkbox'); ?>" type="checkbox" value="1" <?php checked( '1', $checkbox ); ?>/>
-			<label for="<?php echo $this->get_field_id('checkbox'); ?>"><?php _e('Check to hide entry format','arise'); ?></label>
+			<label for="<?php echo $this->get_field_id('checkbox'); ?>"><?php esc_html_e('Check to hide entry format','arise'); ?></label>
 		</p>
 				<p>
 				<label for="<?php echo $this->get_field_id('title');?>">
-		<?php _e('Title:', 'arise');?>
+		<?php esc_html_e('Title:', 'arise');?>
 				</label>
 				<input id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
 				</p>
 				<p>
 			<label for="<?php echo $this->get_field_id('description');?>">
-				<?php _e('Description:', 'arise');?>
+				<?php esc_html_e('Description:', 'arise');?>
 			</label>
-			<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('description');?>" name="<?php echo $this->get_field_name('description');?>"><?php echo esc_attr($description);
+			<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('description');?>" name="<?php echo $this->get_field_name('description');?>"><?php echo esc_html($description);
 	?></textarea></p>
 				<p>
 				<label for="<?php echo $this->get_field_id('number'); ?>">
-				<?php _e( 'Number of Post:', 'arise' ); ?>
+				<?php esc_html_e( 'Number of Post:', 'arise' ); ?>
 				</label>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 				</p>
-				<p><input type="radio" <?php checked($post_type, 'latest') ?> id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="latest"/><?php _e( 'Show latest Posts', 'arise' );?><br />  
-		 <input type="radio" <?php checked($post_type,'category') ?> id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="category"/><?php _e( 'Show posts from a category', 'arise' );?><br /></p>
+				<p><input type="radio" <?php checked($post_type, 'latest') ?> id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="latest"/><?php esc_html_e( 'Show latest Posts', 'arise' );?><br />  
+		 <input type="radio" <?php checked($post_type,'category') ?> id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="category"/><?php esc_html_e( 'Show posts from a category', 'arise' );?><br /></p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'arise' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Select category', 'arise' ); ?>:</label>
 			<?php wp_dropdown_categories( array( 'show_option_none' =>' ','name' => $this->get_field_name( 'category' ), 'selected' => $category ) ); ?>
 		</p>
 		<?php
@@ -123,11 +123,11 @@
 									printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
 										sprintf(''),
 										esc_url( get_post_format_link( $format ) ),
-										get_post_format_string( $format ) );
+										esc_html(get_post_format_string( $format )) );
 									} ?> 
-								<span class="author vcard"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a></span>
+								<span class="author vcard"><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a></span>
 
-									<span class="posted-on"><a title="<?php echo esc_attr( get_the_time() ); ?>" href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span>
+									<span class="posted-on"><a title="<?php echo esc_attr( get_the_time() ); ?>" href="<?php the_permalink(); ?>"><?php esc_attr(the_time( get_option( 'date_format' ) )); ?></a></span>
 									<?php if ( comments_open() ) { ?>
 									<span class="comments"><?php comments_popup_link( __( 'No Comments', 'arise' ), __( '1 Comment', 'arise' ), __( '% Comments', 'arise' ), '', __( 'Comments Off', 'arise' ) ); ?></span>
 									<?php } ?>	
@@ -141,9 +141,9 @@
 							<p><a class="more-link" title="<?php the_title_attribute();?>" href="<?php the_permalink();?>">
 								<?php
 								if($arise_tag_text == 'Read More' || $arise_tag_text == ''):
-									_e('Read More', 'arise');
+									esc_html_e('Read More', 'arise');
 								else:
-									echo esc_attr($arise_tag_text);
+									echo esc_html($arise_tag_text);
 								endif;?>
 							</a></p>
 							<?php } ?>

@@ -34,10 +34,10 @@ $arise_settings = arise_get_theme_options();
 						'orderby'             	=> 'post__in',
 					));
 				if($arise_settings['arise_features_title'] != ''){
-					$arise_features .= '<h2>'. esc_attr($arise_settings['arise_features_title']).'</h2>';
+					$arise_features .= '<h2>'. esc_html($arise_settings['arise_features_title']).'</h2>';
 				}
 				if($arise_settings['arise_features_description'] != ''){
-					$arise_features .= '<p class="feature-sub-title">'. esc_attr($arise_settings['arise_features_description']).'</p>';
+					$arise_features .= '<p class="feature-sub-title">'. esc_html($arise_settings['arise_features_description']).'</p>';
 				}
 					$arise_features .= '<div class="column clearfix">';
 				while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
@@ -47,7 +47,7 @@ $arise_settings = arise_get_theme_options();
 							$excerpt               	 	 = get_the_excerpt();
 					$arise_features .= '<div class="three-column">';
 					if ($image_attributes) {
-						$arise_features 	.= '<a class="feature-icon" href="'.esc_url(get_permalink()).'" title="'.the_title('', '', false).'"' .' alt="'.esc_url(get_permalink()).'">'.get_the_post_thumbnail($post->ID, 'thumbnail').'</a>';
+						$arise_features 	.= '<a class="feature-icon" href="'.esc_url(get_permalink()).'" title="'.the_title('', '', false).'"' .' alt="'.the_title('', '', false).'">'.get_the_post_thumbnail($post->ID, 'thumbnail').'</a>';
 					}
 					$arise_features 	.= '<article>';
 					if ($title_attribute != '') {

@@ -2,9 +2,9 @@
 Contributors: themefreesia
 Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, footer-widgets, blog, e-commerce, education, entertainment, news, portfolio
 Requires at least: 5.0
-Tested up to: 5.2.4
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -86,8 +86,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 	-Images
 		Screenshot Images: 
-		https://pixabay.com/en/suit-man-dapper-work-male-869380/
-		Licensed: Public Domain Images
+		https://pxhere.com/en/photo/868417
+		Licensed: License: CC0 1.0 Universal (CC0 1.0)
 
 
 	- Google Fonts - Apache License, version 2.0
@@ -120,6 +120,15 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+== 2.2.1 =
+	- New - Added tested information in style.css
+		  - Sub menu touch feature added for mobile
+
+	- Fix - Correctly Escaping the value
+		  - Fixed for Accessibility
+
+	- Update - Image license changed
+
 == 2.2.0 =
 	- Fix - WooCommerce search button issue fixed
 			- Style css viewport issue fixed

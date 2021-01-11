@@ -64,11 +64,11 @@ $arise_settings = arise_get_theme_options(); ?>
 	<div id="sticky_header" class="clearfix">
 		<div class="container clearfix">
 		<?php do_action('arise_site_branding'); ?>
-		<div class="menu-toggle">      
+		<button class="menu-toggle" type="button">
 			<div class="line-one"></div>
 			<div class="line-two"></div>
 			<div class="line-three"></div>
-		</div>
+		</button>
 		<!-- Main Nav ============================================= -->
 		<div class="navbar-right">
 		<?php
