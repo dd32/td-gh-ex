@@ -86,7 +86,7 @@ function bb_wedding_bliss_MobileMenuInit() {
     }
   });
 
-  /* Allow escape key to close menu */
+/* Allow escape key to close menu */
   jQuery('.sidebar').on('keyup', function(e){
     if (jQuery('body').hasClass('noscroll'))
     if (e.keyCode === 27 ) {
