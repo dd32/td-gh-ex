@@ -357,11 +357,15 @@ function arilewp_deprecated_hook_admin_notice() {
                         </h2>
 
                         <p class="plugin-install-notice"><?php echo sprintf(__('To take full advantage of all the features of this theme, please install and activate the <strong>Arile Extra</strong> plugin, then enjoy this theme.', 'arilewp')) ?></p>
-						
-					<?php $activate_theme_data = wp_get_theme(); // getting current theme data
-						$activate_theme = $activate_theme_data->name; ?>
 
-                        <a class="arilewp-btn-get-started button button-primary button-hero arilewp-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with ArileWP', 'arilewp' ) ?></a><span class="arilewp-push-down">
+                        <a class="arilewp-btn-get-started button button-primary button-hero arilewp-button-padding" href="#" data-name="" data-slug="">
+						<?php
+                        printf(
+                        /* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
+                            esc_html__( 'Get started with %1$s', 'arilewp' ), '<strong>'. wp_get_theme()->get('Name'). '</strong>' );
+                        ?>
+						
+						</a><span class="arilewp-push-down">
                         <?php
                             /* translators: %1$s: Anchor link start %2$s: Anchor link end */
                             printf(

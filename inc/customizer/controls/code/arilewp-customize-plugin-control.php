@@ -24,7 +24,7 @@ function arilewp_upgrade_pro_options( $wp_customize ) {
 					
 					<li><a class="support" href="https://themearile.com/forums/" target="_blank"><i class="dashicons dashicons-lightbulb"></i><?php _e( 'Get Full Support','arilewp' ); ?> </a></li>
 					
-					<li><a class="free-pro" href="https://themearile.com/arilewp-pro-theme/" target="_blank"><i class="dashicons dashicons-visibility"></i><?php _e( 'Free Vs Pro Features','arilewp' ); ?> </a></li>
+					<li><a class="free-pro" href="https://themearile.com/arilewp-pro-theme/#free-pro-features" target="_blank"><i class="dashicons dashicons-visibility"></i><?php _e( 'Free Vs Pro Features','arilewp' ); ?> </a></li>
 					
 					<li><a class="upgrade-to-pro" href="https://themearile.com/arilewp-pro-theme/" target="_blank"><i class="dashicons dashicons-update-alt"></i><?php _e( 'Upgrade to Pro','arilewp' ); ?> </a></li>
 					
