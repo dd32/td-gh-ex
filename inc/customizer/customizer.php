@@ -909,6 +909,7 @@ function bard_customize_register( $wp_customize ) {
 		'youtube-square' 		=> 'Youtube 2',
 		'vimeo-v' 				=> 'Vimeo 1',
 		'vimeo' 				=> 'Vimeo 2',
+		'twitch' 				=> 'Twitch',
 		'soundcloud' 			=> 'Soundcloud',
 		'flickr' 				=> 'Flickr',
 		'rss' 					=> 'RSS',

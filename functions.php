@@ -545,6 +545,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			'youtube-square',
 			'vimeo-v',
 			'vimeo',
+			'twitch',
 			'soundcloud',
 			'instagram',
 			'flickr',
