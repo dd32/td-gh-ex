@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.8.4 ==
+1. Fixed prefix and empty markup issues.
+
 = 1.8.3 ==
 1. Added the masonry js license and parent theme license.
 2. Removed unnecessary code.
