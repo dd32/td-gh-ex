@@ -1,8 +1,8 @@
 === Akarsh Blog ===
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.1
-Tested up to: WordPress 4.9.8
-Stable tag: 1.0.1
+Tested up to: WordPress 5.6
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, editor-style, left-sidebar, custom-colors, custom-header, custom-logo, custom-menu, featured-images,  post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -35,7 +35,11 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 (at your option) any later version.
 
+
 == Changelog ==
+
+= 1.0.2 =
+* Tested with WordPress 5.6
 
 = 1.0.1 =
 * Updated readme file as per guidelines : https://make.wordpress.org/themes/2015/04/29/a-revised-readme/
@@ -61,7 +65,7 @@ License: - GPL-2.0+
 Source :  http://tgmpluginactivation.com/
 
 * Images for screenshot
-License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-- https://pixabay.com/
-- https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
-- https://pixabay.com/en/cuba-oldtimer-old-car-forest-red-1197800/
+License: CC0 Creative Commons (CC0) license (https://pxhere.com/en/license)
+- https://pxhere.com/
+- https://pxhere.com/en/photo/839604
+- https://pxhere.com/en/photo/657518
