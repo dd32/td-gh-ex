@@ -15,6 +15,6 @@
 	</label>
 	<button type="submit" class="search-submit">
 		<i class="fa fa-search"></i>
-		<span class="screen-reader-text"><?php esc_attr_e( 'Search', 'advik-blog-lite' ); ?></span>
+		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'advik-blog-lite' ); ?></span>
 	</button>
 </form>

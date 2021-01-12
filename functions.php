@@ -10,7 +10,7 @@
 
 // Defining Some Variable
 if( !defined( 'ADVIK_BLOG_LITE_VERSION' ) ) {
-	define('ADVIK_BLOG_LITE_VERSION', '1.0'); // Theme Version
+	define('ADVIK_BLOG_LITE_VERSION', '1.1.2'); // Theme Version
 }
 if( !defined( 'ADVIK_BLOG_LITE_DIR' ) ) {
 	define( 'ADVIK_BLOG_LITE_DIR', get_template_directory() ); // Theme dir

@@ -21,7 +21,7 @@ $show_search = advik_blog_lite_get_theme_mod( 'show_search' );
           <a href="javascript:void(0);" onclick="Custombox.modal.close();" class="advik-blog-lite-close"><i class="fa fa-close"></i></a>      
             <div class="advik-blog-lite-search-box">
                 <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">                         
-                    <input placeholder="<?php esc_html_e('Type search term and press enter', 'advik-blog-lite'); ?>" type="search" value="<?php echo get_search_query(); ?>" name="s" id="s" />
+                    <input placeholder="<?php esc_attr_e('Type search term and press enter', 'advik-blog-lite'); ?>" type="search" value="<?php echo get_search_query(); ?>" name="s" id="s" />
                     <button type="submit" class="search-btn"><?php esc_html_e('Search', 'advik-blog-lite'); ?></button>         
                 </form><!-- end #searchform -->  
             </div>  
