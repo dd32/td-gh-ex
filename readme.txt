@@ -2,7 +2,7 @@
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0
-Version:  1.1
+Version:  1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  custom-colors,  custom-menu,  featured-images,  full-width-template,  threaded-comments, footer-widgets,  sticky-post,  theme-options
@@ -50,11 +50,14 @@ Copyright (c) 2011, Thomas Griffin
 https://opensource.org/licenses/GPL-2.0
 
 Images for screenshot
-License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-- https://pixabay.com/
-- https://pixabay.com/en/person-woman-man-couple-people-3519503/
+License: CC0 Creative Commons (CC0) license (https://pxhere.com/en/license)
+- https://pxhere.com/
+- https://pxhere.com/en/photo/1198265
 
 == Changelog ==
+
+= 1.1.1 =
+* Tested with WordPress 5.6
 
 = 1.1 =
 * Tested with WordPress 5.0 and Gutenberg

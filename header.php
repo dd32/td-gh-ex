@@ -17,6 +17,7 @@
 	<?php wp_head(); ?>	
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <?php
 	// Get some variable 
 	$header_social  = aakriti_personal_blog_get_theme_mod( 'header_social' );	
