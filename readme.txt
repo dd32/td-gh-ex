@@ -2,13 +2,12 @@
 
 Contributors: selfdesigns
 Tags: block-patterns, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, wide-blocks
-
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Description ==
 
@@ -27,6 +26,16 @@ Ada is a business focused WordPress theme. The theme comes with pre built block 
 Ada Pearl does not support any plugins out of the box.
 
 == Changelog ==
+
+= 1.0.4 =
+* Updated documentation
+
+= 1.0.3 =
+* Escaped output in content folder and footer.php
+* Fixed missing header image
+* Replaced pattern description & images
+* Improved missing / incorrect documentation
+* Fixed broken centered alignment in Gutenberg editor
 
 = 1.0.2 =
 * Fixed broken padding on portfolio pattern.
@@ -47,5 +56,27 @@ Ada Pearl does not support any plugins out of the box.
 
 == Copyright ==
 
+Ada Pearl WordPress Theme, Copyright 2021 Lewis Self
+Ada Pearl is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.
+
+Ada Pearl WordPress Theme is derived from Underscores WordPress Theme, Copyright 2013 Automattic, Inc.
+Underscores WordPress Theme is distributed under the terms of the GNU GPL
+
+Ada Pearl WordPress Theme bundles the following third-party resources:
+
 Images
-Art by Wilhelm Marstrand 1810-1873. Public domain.
+Art by Berthe Morisot 1841-1895. Public domain.
+https://www.wikiart.org/en/berthe-morisot/young-woman-in-mauve
+https://www.wikiart.org/en/berthe-morisot/the-garden-at-bougival-1884
