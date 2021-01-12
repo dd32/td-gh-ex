@@ -10,7 +10,7 @@
 
 // Defining Some Variable
 if( !defined( 'AAKRITI_BLOG_VERSION' ) ) {
-	define('AAKRITI_BLOG_VERSION', '1.1.1'); // Theme Version
+	define('AAKRITI_BLOG_VERSION', '1.1.2'); // Theme Version
 }
 if( !defined( 'AAKRITI_BLOG_DIR' ) ) {
 	define( 'AAKRITI_BLOG_DIR', get_template_directory() ); // Theme dir

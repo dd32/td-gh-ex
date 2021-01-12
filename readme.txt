@@ -1,8 +1,8 @@
 === Aakriti Personal Blog === 
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
-Tested up to: WordPress 5.0
-Version:  1.1.1
+Tested up to: WordPress 5.6
+Version:  1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  custom-colors,  custom-menu,  featured-images,  full-width-template,  threaded-comments, footer-widgets,  sticky-post,  theme-options
@@ -55,6 +55,9 @@ License: CC0 Creative Commons (CC0) license (https://pxhere.com/en/license)
 - https://pxhere.com/en/photo/1198265
 
 == Changelog ==
+
+= 1.1.2 =
+* Replaced esc_attr with esc_attr_e
 
 = 1.1.1 =
 * Tested with WordPress 5.6
