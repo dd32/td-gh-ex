@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -33,6 +33,9 @@ Rockers WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 20
 Rockers WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 3.0.4 ==
+1. Fixed escaping, prefix, and empty markup issues. 
 
 = 3.0.3 ==
 1. Added the license of parent theme in readme. 

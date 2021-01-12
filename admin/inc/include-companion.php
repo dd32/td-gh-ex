@@ -5,8 +5,8 @@
  *
  */
 
-$hide_install = get_option('rockers_hide_customizer_companion_notice', false);
-if (!function_exists('spicethemes_companion') && !$hide_install) {
+$rockers_hide_install = get_option('rockers_hide_customizer_companion_notice', false);
+if (!function_exists('spicethemes_companion') && !$rockers_hide_install) {
 	if (class_exists('WP_Customize_Section') && !class_exists('Rockers_Companion_Installer_Section')) {
 		/**
 		 *

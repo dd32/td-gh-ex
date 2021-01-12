@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 3.0.4 ==
+1. Fixed escaping, prefix, and empty markup issues.
+
 = 3.0.3 ==
 1. Added the license of parent theme in readme. 
 2. Escaped the pingback_url() and removed unnecessary code.

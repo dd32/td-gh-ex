@@ -1,8 +1,8 @@
 <?php
-$header_logo_placing_classic = get_theme_mod('header_logo_placing', 'left');
+$rockers_header_logo_placing_classic = get_theme_mod('header_logo_placing', 'left');
  
-if($header_logo_placing_classic == 'left' || $header_logo_placing_classic == 'center'){$menu_class = 'navbar-right';}
-if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}	
+if($rockers_header_logo_placing_classic == 'left' || $rockers_header_logo_placing_classic == 'center'){$rockers_menu_class = 'navbar-right';}
+if($rockers_header_logo_placing_classic == 'right'){$rockers_menu_class = 'navbar-left';}	
 ?>
 
 <!--Desktop Header Section-->
@@ -12,16 +12,16 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 		<div class="container">
 			<div class="row">
 			
-			<?php if($header_logo_placing_classic == 'left' || $header_logo_placing_classic == 'center'){ ?>
+			<?php if($rockers_header_logo_placing_classic == 'left' || $rockers_header_logo_placing_classic == 'center'){ ?>
 			
 				<div class="col-md-4 col-sm-5 col-xs-12">
 					<?php the_custom_logo(); ?>
 					<div class="site-branding-text">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
+					$rockers_description = get_bloginfo( 'description', 'display' );
+					if ( $rockers_description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $rockers_description; ?></p>
 					<?php endif; ?>
 					</div>
 				</div>
@@ -74,7 +74,7 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 					</div>				
 				</div>	
 				
-			<?php }if($header_logo_placing_classic == 'right'){  ?>
+			<?php }if($rockers_header_logo_placing_classic == 'right'){  ?>
 			
 			
 			    <div class="col-md-8 col-sm-7 col-xs-12">
@@ -130,9 +130,9 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 					<div class="site-branding-text align-right">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
+					$rockers_description = get_bloginfo( 'description', 'display' );
+					if ( $rockers_description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $rockers_description; ?></p>
 					<?php endif; ?>
 					</div>
 				</div>
@@ -152,7 +152,7 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 					<?php wp_nav_menu( array(
 								'theme_location' => 'primary',
 								'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-								'menu_class' => 'nav navbar-nav '.$menu_class.'',
+								'menu_class' => 'nav navbar-nav '.$rockers_menu_class.'',
 								'fallback_cb' => 'spicepress_fallback_page_menu',
 								'walker' => new spicepress_nav_walker() 
 							) ); 
@@ -169,16 +169,16 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 	<!--Logo & Menu Section-->	
 	<nav class="navbar-classic navbar navbar-custom" role="navigation">
 		<div class="container-fluid p-l-r-0">
-		<?php if($header_logo_placing_classic == 'left' || $header_logo_placing_classic == 'center'){ ?>
+		<?php if($rockers_header_logo_placing_classic == 'left' || $rockers_header_logo_placing_classic == 'center'){ ?>
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 			<?php the_custom_logo(); ?>
 			<div class="site-branding-text">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
+				$rockers_description = get_bloginfo( 'description', 'display' );
+				if ( $rockers_description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $rockers_description; ?></p>
 				<?php endif; ?>
 			</div>
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
@@ -189,7 +189,7 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 			</button>
 			</div>	
 
-        <?php } if($header_logo_placing_classic == 'right'){?>
+        <?php } if($rockers_header_logo_placing_classic == 'right'){?>
 
             <div class="navbar-header align-right">
 			    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
@@ -202,9 +202,9 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 				<div class="site-branding-text align-right">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
+					$rockers_description = get_bloginfo( 'description', 'display' );
+					if ( $rockers_description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $rockers_description; ?></p>
 					<?php endif; ?>
 				</div>
 			</div>	
@@ -214,7 +214,7 @@ if($header_logo_placing_classic == 'right'){$menu_class = 'navbar-left';}
 				<?php wp_nav_menu( array(
 								'theme_location' => 'primary',
 								'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-								'menu_class' => 'nav navbar-nav '.$menu_class.'',
+								'menu_class' => 'nav navbar-nav '.$rockers_menu_class.'',
 								'fallback_cb' => 'spicepress_fallback_page_menu',
 								'walker' => new spicepress_nav_walker() 
 							) ); 

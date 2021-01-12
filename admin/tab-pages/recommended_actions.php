@@ -1,15 +1,15 @@
 <?php 
-	$actions = $this->recommended_actions;
-	$actions_todo = get_option( 'rockers_recommended_actions', false );
+	$rockers_actions = $this->recommended_actions;
+	$rockers_actions_todo = get_option( 'rockers_recommended_actions', false );
 ?>
 <div id="recommended_actions" class="rockers-tab-pane panel-close">
 <div class="action-list">
-	<?php if($actions): foreach ($actions as $key => $rockers_val): ?>
+	<?php if($rockers_actions): foreach ($rockers_actions as $key => $rockers_val): ?>
 	<div class="col-md-6">
 	<div class="action" id="<?php echo esc_attr($rockers_val['id']); ?>">
 		<div class="action-watch">
 		<?php if(!$rockers_val['is_done']): ?>
-			<?php if(!isset($actions_todo[$rockers_val['id']]) || !$actions_todo[$rockers_val['id']]): ?>
+			<?php if(!isset($rockers_actions_todo[$rockers_val['id']]) || !$rockers_actions_todo[$rockers_val['id']]): ?>
 				<span class="dashicons dashicons-visibility"></span>
 			<?php else: ?>
 				<span class="dashicons dashicons-hidden"></span>

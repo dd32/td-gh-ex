@@ -71,7 +71,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 add_action('wp_head','rockers_custom_menu_breakpoint');
 function rockers_custom_menu_breakpoint() {
 	
-$menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
+$menu_breakpoint = esc_html(get_theme_mod('menu_breakpoint', 1100));
 ?>
 <style type="text/css">
 
