@@ -4,8 +4,8 @@ Contributors: nalam
 Tags: blog, news, education, custom-logo, one-column, two-columns, grid-layout, right-sidebar, custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, block-styles
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.5.3
-Stable tag: 1.0.5
+Tested up to: 5.6
+Stable tag: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/gpl-2.0.php
 
@@ -56,20 +56,29 @@ Source: http://fontawesome.io/
 Image for theme screenshot, self created
 License: CC0 1.0 Universal (CC0 1.0)
 
+* Header image 
+License: CC0 1.0 Universal (CC0 1.0)
+Source:https://pxhere.com/en/photo/1327741
+
 * Screenshot blog image one
 License: CC0 1.0 Universal (CC0 1.0)
-Source:https://pxhere.com/en/photo/1608267
+Source:https://pxhere.com/en/photo/450225
 
 * Screenshot blog image two
 License: CC0 1.0 Universal (CC0 1.0)
-Source:https://pxhere.com/en/photo/1626573
+Source:https://pxhere.com/en/photo/893145
 
 * Screenshot blog image three
 License: CC0 1.0 Universal (CC0 1.0)
-Source:https://pxhere.com/en/photo/683887
+Source:https://pxhere.com/en/photo/1159485
 
 
 == Changelog ==
+
+= 1.0.8 - Jan 13 2021 =
+* Changed screenshot
+* Header text font size change
+* tested with WordPress 5.6
 
 = 1.0.6 - November 25 2020 =
 * Fixed classic blog style

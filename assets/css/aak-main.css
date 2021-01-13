@@ -112,7 +112,9 @@ p.site-description {
 .aak-logo-center .headerlogo-text {
     padding: 10px 0 0;
 }
-
+.style2 h1.site-title a {
+    font-size: 50px;
+}
 /* Widgets - sidebar
 --------------------------------------------- */
 h3.widget-title {

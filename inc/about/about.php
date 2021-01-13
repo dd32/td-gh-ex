@@ -273,11 +273,11 @@ add_action( 'after_setup_theme', 'aak_about_setup' );
 //Admin notice 
 
 function aak_admin_notice__error() {
-    if(get_option('aak_notice2')){
+    if(get_option('aak_notice3')){
         return;
     }
 	$class = 'bb-notice notice notice-warning is-dismissible';
-	$message = __( '<strong><span> Hi Buddy!! <span>You are using the free version.</span> <span>Good News For You Aak Pro Now More updated for you!!</span> <br> If you want a beautiful, smart, SEO friendly, more secure and unlimited options website then need to upgrade pro. UPGRADE FOR LIFETIME WITH NOMINAL PRICE.</span> <span> PRO License Now Lifetime For You. Buy One Time And Get Lifetime Update, High-Quality performance And support.<br > <strong style="font-weight:700"> GOOD NEWS: The AAK Pro theme now support woocommerce plugin so now you can sell anything with AAK pro theme !!!</strong> So Why You late? Build Your Site With The Pro Version.</span> ', 'aak' );
+	$message = __( '<strong><span> Hi Buddy!! <span>You are using the Aak free version.</span> <span>But</span> <br> If you want a beautiful, smart, SEO friendly, more secure and unlimited options website then need to upgrade Aak pro. UPGRADE FOR LIFETIME WITH NOMINAL PRICE.</span> <span> PRO License Now Lifetime For You. Buy One Time And Get Lifetime Update, High-Quality performance And support.<br > <strong style="font-weight:700"> GOOD NEWS: The AAK Pro theme now support woocommerce plugin so now you can sell anything with AAK pro theme !!!</strong> So Why You late? Build Your Site With The Pro Version.</span> ', 'aak' );
     $url1 = esc_url('https://wpthemespace.com/product/aak/');
     $url2 =esc_url('https://wpthemespace.com/product/aak/?add-to-cart=2950');
 	$url3 =esc_url('https://www.youtube.com/watch?v=8ldj27EHS8s');
@@ -288,8 +288,8 @@ add_action( 'admin_notices', 'aak_admin_notice__error' );
 
 function aak_admin_notice_option(){
     if(isset($_GET['hnotice']) && $_GET['hnotice'] == 1 ){
-        delete_option( 'aak_notice1');
-        update_option( 'aak_notice2', 1);
+        delete_option( 'aak_notice2');
+        update_option( 'aak_notice3', 1);
     }
 }
 add_action('init','aak_admin_notice_option');

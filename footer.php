@@ -24,15 +24,7 @@ $aak_topfooter_show = get_theme_mod( 'aak_topfooter_show', '1' );
 
 	<footer id="colophon" class="site-footer text-center">
 		<div class="site-info">
-			<p class="footer-copyright m-0">&copy;
-				<?php
-					echo date_i18n(
-					/* translators: Copyright date format, see https://www.php.net/date */
-					_x( 'Y', 'copyright date format', 'aak' )
-					);
-				?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-			</p><!-- .footer-copyright -->
+			
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aak' ) ); ?>">
 				<?php _e( 'Powered by WordPress', 'aak' ); ?>
 			</a>
