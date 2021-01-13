@@ -166,7 +166,7 @@ if ( ! class_exists( 'Beauty_Studio_Service' ) ) {
 					$beauty_studio_service_content_from = beauty_studio_content_from();
 					foreach ( $beauty_studio_service_content_from as $key => $value ) {
 						?>
-                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $content_from ); ?>><?php echo esc_attr( $value ); ?></option>
+                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $content_from ); ?>><?php echo esc_html( $value ); ?></option>
 						<?php
 					}
 					?>
@@ -187,7 +187,7 @@ if ( ! class_exists( 'Beauty_Studio_Service' ) ) {
 					$beauty_studio_service_column_numbers = beauty_studio_widget_column_number();
 					foreach ( $beauty_studio_service_column_numbers as $key => $value ) {
 						?>
-                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $column_number ); ?>><?php echo esc_attr( $value ); ?></option>
+                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $column_number ); ?>><?php echo esc_html( $value ); ?></option>
 						<?php
 					}
 					?>
@@ -200,7 +200,7 @@ if ( ! class_exists( 'Beauty_Studio_Service' ) ) {
 					$beauty_studio_background_options = beauty_studio_background_options();
 					foreach ( $beauty_studio_background_options as $key => $value ) {
 						?>
-                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $background_options ); ?>><?php echo esc_attr( $value ); ?></option>
+                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $background_options ); ?>><?php echo esc_html( $value ); ?></option>
 						<?php
 					}
 					?>

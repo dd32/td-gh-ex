@@ -160,7 +160,7 @@ if ( ! class_exists( 'Beauty_Studio_Gallery' ) ) {
                     $beauty_studio_widget_column_numbers = beauty_studio_widget_column_number();
                     foreach ( $beauty_studio_widget_column_numbers as $key => $value ){
                         ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $column_number ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $column_number ); ?>><?php echo esc_html( $value );?></option>
                         <?php
                     }
                     ?>
@@ -173,7 +173,7 @@ if ( ! class_exists( 'Beauty_Studio_Gallery' ) ) {
                     $beauty_studio_gallery_image_popup = beauty_studio_gallery_image_popup();
                     foreach ( $beauty_studio_gallery_image_popup as $key => $value ){
                         ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $image_popup_type ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $image_popup_type ); ?>><?php echo esc_html( $value );?></option>
                         <?php
                     }
                     ?>

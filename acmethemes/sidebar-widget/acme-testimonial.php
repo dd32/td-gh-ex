@@ -176,7 +176,7 @@ if ( ! class_exists( 'Beauty_Studio_Testimonial' ) ) {
 			        $beauty_studio_about_content_from = beauty_studio_content_from();
 			        foreach ( $beauty_studio_about_content_from as $key => $value ) {
 				        ?>
-                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $content_from ); ?>><?php echo esc_attr( $value ); ?></option>
+                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $content_from ); ?>><?php echo esc_html( $value ); ?></option>
 				        <?php
 			        }
 			        ?>

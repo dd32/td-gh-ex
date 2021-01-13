@@ -86,7 +86,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $post_advanced_options = beauty_studio_post_advanced_options();
 			        foreach ( $post_advanced_options as $key => $value ){
 				        ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $post_advanced_option ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $post_advanced_option ); ?>><?php echo esc_html( $value );?></option>
 				        <?php
 			        }
 			        ?>
@@ -151,7 +151,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $beauty_studio_about_content_from = beauty_studio_content_from();
 			        foreach ( $beauty_studio_about_content_from as $key => $value ) {
 				        ?>
-                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $content_from ); ?>><?php echo esc_attr( $value ); ?></option>
+                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $content_from ); ?>><?php echo esc_html( $value ); ?></option>
 				        <?php
 			        }
 			        ?>
@@ -174,7 +174,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $beauty_studio_widget_column_numbers = beauty_studio_widget_column_number();
 			        foreach ( $beauty_studio_widget_column_numbers as $key => $value ){
 				        ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $column_number ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $column_number ); ?>><?php echo esc_html( $value );?></option>
 				        <?php
 			        }
 			        ?>
@@ -189,7 +189,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $beauty_studio_widget_display_types = beauty_studio_widget_display_type();
 			        foreach ( $beauty_studio_widget_display_types as $key => $value ){
 				        ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $display_type ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $display_type ); ?>><?php echo esc_html( $value );?></option>
 				        <?php
 			        }
 			        ?>
@@ -204,7 +204,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $beauty_studio_post_orderby = beauty_studio_post_orderby();
 			        foreach ( $beauty_studio_post_orderby as $key => $value ){
 				        ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $orderby ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $orderby ); ?>><?php echo esc_html( $value );?></option>
 				        <?php
 			        }
 			        ?>
@@ -219,7 +219,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $beauty_studio_post_order = beauty_studio_post_order();
 			        foreach ( $beauty_studio_post_order as $key => $value ){
 				        ?>
-                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $order ); ?>><?php echo esc_attr( $value );?></option>
+                        <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $order ); ?>><?php echo esc_html( $value );?></option>
 				        <?php
 			        }
 			        ?>
@@ -239,7 +239,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        <?php
 			        $beauty_studio_image_sizes = beauty_studio_get_image_sizes_options();
 			        foreach( $beauty_studio_image_sizes as $key => $beauty_studio_column_array ){
-				        echo ' <option value="'.esc_attr( $key ).'" '.selected( $beauty_studio_img_size, $key, 0). '>'.esc_attr( $beauty_studio_column_array ).'</option>';
+				        echo ' <option value="'.esc_attr( $key ).'" '.selected( $beauty_studio_img_size, $key, 0). '>'.esc_html( $beauty_studio_column_array ).'</option>';
 			        }
 			        ?>
                 </select>
@@ -251,7 +251,7 @@ if ( ! class_exists( 'Beauty_Studio_Posts_Col' ) ) {
 			        $beauty_studio_background_options = beauty_studio_background_options();
 			        foreach ( $beauty_studio_background_options as $key => $value ) {
 				        ?>
-                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $background_options ); ?>><?php echo esc_attr( $value ); ?></option>
+                        <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $background_options ); ?>><?php echo esc_html( $value ); ?></option>
 				        <?php
 			        }
 			        ?>

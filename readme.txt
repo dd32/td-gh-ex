@@ -3,9 +3,9 @@
 Contributors: acmethemes
 Tags: blog, e-commerce, portfolio, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 4.8
-Tested up to: 5.2.4
+Tested up to: 5.6
 Requires PHP: 5.6.20
-Stable tag: 2.0.1
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,14 @@ Beauty Studio is a WordPress theme made for Beauty, Spa, Saloon particularly bea
 2. Add/Edit Widgets, Page and Post
 
 == Change log ==
+
+= 3.0.0 - Jan 13 2021 =
+* Added   : Advanced Demo Import
+* Added   : Links within content must be underlined
+* Removed : Acme Demo Setup Plugin from TGM
+* Updated : Getting Started experience
+* Fixed   : Breadcrumbs error on google console, $item,$attributes,$meta updates inside function trail
+* Fixed   : New theme check issues
 
 = 2.0.1 - Oct 16 2019=
 * Added : wp_body_open hook in header

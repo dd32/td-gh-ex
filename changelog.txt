@@ -1,5 +1,13 @@
 == Change log ==
 
+= 3.0.0 - Jan 13 2021 =
+* Added   : Advanced Demo Import
+* Added   : Links within content must be underlined
+* Removed : Acme Demo Setup Plugin from TGM
+* Updated : Getting Started experience
+* Fixed   : Breadcrumbs error on google console, $item,$attributes,$meta updates inside function trail
+* Fixed   : New theme check issues
+
 = 2.0.1 - Oct 16 2019=
 * Added : wp_body_open hook in header
 * Added : Gutentor Plugin in TGM

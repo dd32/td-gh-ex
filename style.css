@@ -4,7 +4,9 @@ Theme URI: https://www.acmethemes.com/themes/beauty-studio
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: Beauty Studio is a WordPress theme made for Beauty, Spa, Saloon particularly beauty-based business. Its trendy layout design and extraordinary features make it a perfect theme for the glamour world and can promptly grab the attention of its viewers. Fully Customizer based theme and widget options let you design your site from only Customizer screen. ie: Appearance => Customize. It has good compatibility with Site Origin Page Builder. Thus, it's very user-friendly and anyone can customize the pages of the theme easily without the need for coding knowledge. Having integrated with WooCommerce, it offers its user to create an online store. For instance, a beauty shop owner can display their cosmetic products and sell them online. Besides that, much wide range of features such as Custom Widgets, Responsive, Responsive Slider Image, Awesome Featured Section, Custom Sidebar Areas, Social Media Integration, Theme Options, Translation Ready, Browser Compatibility etc. Furthermore, its a multi-purpose theme and can be used for different purposes. Overall, a great theme to showcase your brand, beauty services and promote your business. Demo: http://demo.acmethemes.com/beauty-studio
-Version: 2.0.1
+Version: 3.0.0
+Tested up to: 5.6
+Requires PHP: 5.6.20
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beauty-studio
@@ -531,6 +533,7 @@ address {
 	position: relative;
 }
 .navbar .search-wrap .search-icon:hover,
+.navbar .search-wrap .search-icon:focus,
 .navbar .cart-wrap .acme-cart-views a{
 	color: #2196f3;
 }
@@ -631,6 +634,12 @@ address {
 	top: 100%;
 	z-index: 99;
 }
+.navbar .cart-wrap:focus-within .widget_shopping_cart {
+	opacity: 1;
+	visibility: visible;
+	top: 100%;
+	z-index: 99;
+}
 .navbar .cart-wrap .widget_shopping_cart ul {
 	margin: 0;
 }
@@ -662,7 +671,8 @@ address {
 	margin-left: 7px;
 }
 .navbar-nav > li.menu-item-has-children ul > li.menu-item-has-children > a::after,
-.navbar-nav > li.menu-item-has-children > a:hover:after{
+.navbar-nav > li.menu-item-has-children > a:hover:after,
+.navbar-nav > li.menu-item-has-children > a:focus:after{
 	color: inherit;
 }
 .main-navigation ul ul {
@@ -691,6 +701,15 @@ address {
 	left: auto;
 }
 .main-navigation ul ul li:hover > ul {
+	left: 100%;
+}
+.main-navigation li:focus-within > a {
+	background: transparent;
+}
+.main-navigation ul li:focus-within > ul {
+	left: auto;
+}
+.main-navigation ul ul li:focus-within > ul {
 	left: 100%;
 }
 
@@ -734,7 +753,8 @@ address {
 		display: block;
 		width: auto;
 	}
-	.main-navigation ul ul a:hover {
+	.main-navigation ul ul a:hover,
+	.main-navigation ul ul a:focus{
 		background: rgba(0, 0, 0, 0);
 	}
 	.main-navigation a {
@@ -1190,7 +1210,8 @@ object {
 	line-height: 32px;
 	transition-duration: 0.3s;
 }
-.top-header a:hover{
+.top-header a:hover,
+.top-header a:focus{
 	opacity: 0.9;
 }
 .top-header .text-right >:first-child,
@@ -1449,6 +1470,10 @@ i.slick-arrow{
 	opacity: 1;
 	visibility: visible;
 }
+.image-slider-wrapper:focus-within .slick-arrow{
+	opacity: 1;
+	visibility: visible;
+}
 .image-slider-wrapper .slick-arrow.prev {
 	left: 10px;
 }
@@ -1545,7 +1570,8 @@ i.slick-arrow{
 	-moz-transition:all 0.5s ease-in-out 0s;
 }
 .comment-form .form-submit input,
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus{
 	color: #ffffff;
 	/*margin: 10px;*/
 	-moz-osx-font-smoothing: grayscale;
@@ -1562,12 +1588,14 @@ i.slick-arrow{
 	-moz-transition:all 0.5s ease-in-out 0s;
 }
 .comment-form .form-submit input:hover,
+.comment-form .form-submit input:focus,
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
 	color: #fff;
 }
 .comment-form .form-submit input:hover::before,
+.comment-form .form-submit input:focus::before,
 .btn-primary:hover::before,
 .btn-primary:focus::before,
 .btn-primary:active::before {
@@ -1799,6 +1827,9 @@ a.more-link::after {
 .acme-services .column .single-item:hover .icon i{
 	border: 2px solid;
 }
+.acme-services .column .single-item:focus-within .icon i{
+	border: 2px solid;
+}
 .acme-services .column .single-item:before{
 	position: absolute;
 	content: '';
@@ -1814,6 +1845,9 @@ a.more-link::after {
 	z-index: -1;
 }
 .acme-services .column .single-item:hover:before{
+	opacity: 1;
+}
+.acme-services .column .single-item:focus-within:before{
 	opacity: 1;
 }
 .widget_beauty_studio_service + .widget_beauty_studio_imp_number .at-widgets{
@@ -1891,7 +1925,17 @@ a.more-link::after {
 	-o-transform: scale(1.3);
 	transform: scale(1.3);
 }
+.team-item:focus-within img{
+	-webkit-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
 .team-item:hover{
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+.team-item:focus-within{
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
 	box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
@@ -1927,6 +1971,10 @@ a.more-link::after {
 	transition: all 0.5s ease-in-out 0s;
 }
 .team-author:hover .team-details {
+	margin-bottom: 0px;
+	margin-top:0px;
+}
+.team-author:focus-within .team-details {
 	margin-bottom: 0px;
 	margin-top:0px;
 }
@@ -1996,6 +2044,10 @@ a.more-link::after {
 	left: 250px;
 }
 .acme-testimonials:hover .slick-arrow {
+	opacity: 1;
+	visibility: visible;
+}
+.acme-testimonials:focus-within .slick-arrow {
 	opacity: 1;
 	visibility: visible;
 }
@@ -2143,10 +2195,24 @@ a.more-link::after {
 	-o-transition: all 0.5s ease-in-out 0s;
 	transition: all 0.5s ease-in-out 0s;
 }
+.acme-gallery .gallery-inner-item:focus-within .at-bottom-lower,
+.acme-gallery .gallery-inner-item:focus-within:before{
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-in-out 0s;
+	-o-transition: all 0.5s ease-in-out 0s;
+	transition: all 0.5s ease-in-out 0s;
+}
 .acme-gallery .gallery-inner-item:hover .at-bottom-lower .gallery-button{
 	bottom: 0;
 }
 .acme-gallery .gallery-inner-item:hover .at-bottom-lower h3{
+	top: 0;
+}
+.acme-gallery .gallery-inner-item:focus-within .at-bottom-lower .gallery-button{
+	bottom: 0;
+}
+.acme-gallery .gallery-inner-item:focus-within .at-bottom-lower h3{
 	top: 0;
 }
 .acme-gallery{
@@ -2178,6 +2244,12 @@ a.more-link::after {
 	transition: all 0.5s ease-in-out 0s;
 }
 .acme-col-posts article.post:hover .post-thumb img{
+	-webkit-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.acme-col-posts article.post:focus-within .post-thumb img{
 	-webkit-transform: scale(1.3);
 	-ms-transform: scale(1.3);
 	-o-transform: scale(1.3);
@@ -2396,6 +2468,12 @@ a.more-link::after {
 	-o-transform: scale(1.4);
 	transform: scale(1.4);
 }
+.at-gallery-item:focus-within img{
+	-webkit-transform: scale(1.4);
+	-ms-transform: scale(1.4);
+	-o-transform: scale(1.4);
+	transform: scale(1.4);
+}
 .at-bottom-lower {
 	padding: 0;
 	position: absolute;
@@ -2456,6 +2534,8 @@ a.more-link::after {
 }
 .mfp-iframe-holder .mfp-close:hover,
 .mfp-image-holder .mfp-close:hover,
+.mfp-iframe-holder .mfp-close:focus,
+.mfp-image-holder .mfp-close:focus,
 .mfp-iframe-holder .mfp-close,
 .mfp-image-holder .mfp-close {
 	background: inherit;
@@ -2649,7 +2729,8 @@ button.mfp-arrow, button.mfp-close {
 }
 /*social*/
 .socials a,
-.socials a:hover {
+.socials a:hover,
+.socials a:focus{
 	color: #ffffff;
 }
 .socials {
@@ -2685,7 +2766,8 @@ button.mfp-arrow, button.mfp-close {
 	line-height: 36px;
 	text-align: center;
 }
-.sm-up-container:hover {
+.sm-up-container:hover,
+.sm-up-container:focus{
 	background: #000;
 	color: #fff;
 }
@@ -3021,6 +3103,9 @@ article.page .post-thumb a{
 .post-thumb img:hover{
 	opacity: 0.6;
 }
+.post-thumb img:focus-within{
+	opacity: 0.6;
+}
 /*article post test end*/
 .nav-links div {
 	display: inline-block;
@@ -3159,11 +3244,13 @@ article.page .post-thumb a{
 
 } 
 #beauty-studio-breadcrumbs li span,
-#beauty-studio-breadcrumbs a:hover{
+#beauty-studio-breadcrumbs a:hover,
+#beauty-studio-breadcrumbs a:focus{
 	text-decoration: none;
 	opacity: 1;
 }
-#beauty-studio-breadcrumbs a:hover:before{
+#beauty-studio-breadcrumbs a:hover:before,
+#beauty-studio-breadcrumbs a:focus:before{
 	border-color: inherit;
 }
 #beauty-studio-breadcrumbs .breadcrumb-trail li.trail-item.trail-end::after {
@@ -3443,7 +3530,18 @@ article.page .post-thumb a{
 .woocommerce a.button.alt:hover,
 .woocommerce button.button.alt:hover,
 .woocommerce input.button.alt:hover,
-.woocommerce .widget_shopping_cart_content .buttons a.button:hover{
+.woocommerce .widget_shopping_cart_content .buttons a.button:hover,
+.woocommerce a.button.add_to_cart_button:focus,
+.woocommerce a.added_to_cart:focus,
+.woocommerce a.button.product_type_grouped:focus,
+.woocommerce a.button.product_type_external:focus,
+.woocommerce .cart .button:focus,
+.woocommerce .cart input.button:focus,
+.woocommerce #respond input#submit.alt:focus,
+.woocommerce a.button.alt:focus,
+.woocommerce button.button.alt:focus,
+.woocommerce input.button.alt:focus,
+.woocommerce .widget_shopping_cart_content .buttons a.button:focus{
 	background: #fff;
 }
 .single-product .yith-wcwl-add-to-wishlist,
@@ -3545,6 +3643,13 @@ article.page .post-thumb a{
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li:hover a,
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{
+	color:#fff;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li:focus-within{
+	border:none !important;
+	border-radius:0;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li:focus-within a{
 	color:#fff;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs{

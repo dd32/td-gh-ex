@@ -71,11 +71,14 @@ if ( ! function_exists( 'beauty_studio_dynamic_css' ) ) :
         $custom_css .= "
 	        .site-title:hover,
 	        .site-title a:hover,
+	        .site-title a:focus,
             .news-notice-content .news-content a:hover,
+            .news-notice-content .news-content a:focus,
 			 .at-social .socials li a,
 			 .primary-color,
 			 article.post .entry-header .cat-links a,
 			 #beauty-studio-breadcrumbs a:hover,
+			 #beauty-studio-breadcrumbs a:focus,
 			 .woocommerce .star-rating, 
             .woocommerce ul.products li.product .star-rating,
             .woocommerce p.stars a,
@@ -93,32 +96,50 @@ if ( ! function_exists( 'beauty_studio_dynamic_css' ) ) :
 			.woocommerce input.button.alt:hover,
 			.woocommerce .woocommerce-info .button:hover,
 			.woocommerce .widget_shopping_cart_content .buttons a.button:hover,
+            i.slick-arrow:hover,
+            .main-navigation .navbar-nav >li a:hover,
+            .main-navigation li li a:hover,
+            .woocommerce a.button.add_to_cart_button:focus,
+            .woocommerce a.added_to_cart:focus,
+            .woocommerce a.button.product_type_grouped:focus,
+            .woocommerce a.button.product_type_external:focus,
+            .woocommerce .cart .button:focus,
+            .woocommerce .cart input.button:focus,
+            .woocommerce #respond input#submit.alt:focus,
+			.woocommerce a.button.alt:focus,
+			.woocommerce button.button.alt:focus,
+			.woocommerce input.button.alt:focus,
+			.woocommerce .woocommerce-info .button:focus,
+			.woocommerce .widget_shopping_cart_content .buttons a.button:focus,
+            i.slick-arrow:focus,
+            .main-navigation .navbar-nav >li a:focus,
+            .main-navigation li li a:focus,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a,
 			.woocommerce-message::before,
-			i.slick-arrow:hover,
 			.acme-contact .contact-page-content ul li strong,
 			.main-navigation .acme-normal-page .current_page_item a,
             .main-navigation .acme-normal-page .current-menu-item a,
-            .main-navigation .active a,
-            .main-navigation .navbar-nav >li a:hover,
-            .main-navigation li li a:hover{
+            .main-navigation .active a{
                 color: {$beauty_studio_primary_color};
             }";
 
         /*background color*/
         $custom_css .= "
             .navbar .navbar-toggle:hover,
+            .navbar .navbar-toggle:focus,
             .main-navigation .current_page_ancestor > a:before,
             .comment-form .form-submit input,
             .btn-primary,
             .wpcf7-form input.wpcf7-submit,
             .wpcf7-form input.wpcf7-submit:hover,
+            .wpcf7-form input.wpcf7-submit:focus,
             .sm-up-container,
             .btn-primary.btn-reverse:before,
             #at-shortcode-bootstrap-modal .modal-header,
             .primary-bg,
 			.navigation.pagination .nav-links .page-numbers.current,
 			.navigation.pagination .nav-links a.page-numbers:hover,
+			.navigation.pagination .nav-links a.page-numbers:focus,
 			.woocommerce .product .onsale,
 			.woocommerce a.button.add_to_cart_button,
 			.woocommerce a.added_to_cart,
@@ -210,7 +231,17 @@ if ( ! function_exists( 'beauty_studio_dynamic_css' ) ) :
         .tags-links a:hover,
         .byline a:hover,
         .nav-links a:hover,
-        .widget li a:hover{
+        .widget li a:hover,
+        .posted-on a:focus,
+        .single-item .fa:focus,
+        .author.vcard a:focus,
+        .cat-links a:focus,
+        .comments-link a:focus,
+        .edit-link a:focus,
+        .tags-links a:focus,
+        .byline a:focus,
+        .nav-links a:focus,
+        .widget li a:focus{
             color: {$beauty_studio_link_hover_color};
         }";
 
@@ -223,8 +254,11 @@ if ( ! function_exists( 'beauty_studio_dynamic_css' ) ) :
 
         $custom_css .= "
        .btn-reverse:hover,
+       .btn-reverse:focus,
        .image-slider-wrapper .slider-content .btn-reverse:hover,
-       .at-widgets.at-parallax .btn-reverse:hover{
+       .image-slider-wrapper .slider-content .btn-reverse:focus,
+       .at-widgets.at-parallax .btn-reverse:hover,
+       .at-widgets.at-parallax .btn-reverse:focus{
             background: {$beauty_studio_primary_color};
             color:#fff;
             border-color:{$beauty_studio_primary_color};
