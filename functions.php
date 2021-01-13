@@ -61,7 +61,6 @@ add_action( 'after_setup_theme', 'automotive_centre_setup' );
 // Notice after Theme Activation
 function automotive_centre_activation_notice() {
 	echo '<div class="notice notice-success is-dismissible welcome-notice">';
-	echo '<h3>'. esc_html__( 'Warm Greetings to you!!', 'automotive-centre' ) .'</h3>';
 	echo '<p>'. esc_html__( 'Thank you for choosing Automotive Centre Theme. Would like to have you on our Welcome page so that you can reap all the benefits of our Automotive Centre Theme.', 'automotive-centre' ) .'</p>';
 	echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=automotive_centre_guide' ) ) .'" class="button button-primary">'. esc_html__( 'GET STARTED', 'automotive-centre' ) .'</a></p>';
 	echo '</div>';
@@ -275,15 +274,16 @@ function automotive_centre_font_url() {
 function automotive_centre_scripts() {
 	wp_enqueue_style( 'automotive-centre-font', automotive_centre_font_url(), array() );
 	wp_enqueue_style( 'automotive-centre-block-style', get_theme_file_uri('/assets/css/blocks.css') );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css' );
+	wp_enqueue_style( 'automotive-centre-block-patterns-style-frontend', get_theme_file_uri('/inc/block-patterns/css/block-frontend.css') );
+	wp_enqueue_style( 'bootstrap', esc_url(get_template_directory_uri()).'/assets/css/bootstrap.css' );
 	wp_enqueue_style( 'automotive-centre-basic-style', get_stylesheet_uri() );
 	/* Inline style sheet */
 	require get_parent_theme_file_path( '/inline-style.php' );
 	wp_add_inline_style( 'automotive-centre-basic-style',$automotive_centre_custom_css );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/fontawesome-all.css' );
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery') ,'',true);
-	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
-	wp_enqueue_script( 'automotive-centre-custom-scripts-jquery', get_template_directory_uri() . '/assets/js/custom.js', array('jquery') );
+	wp_enqueue_style( 'font-awesome', esc_url(get_template_directory_uri()).'/assets/css/fontawesome-all.css' );
+	wp_enqueue_script( 'bootstrap', esc_url(get_template_directory_uri()) . '/assets/js/bootstrap.js', array('jquery') ,'',true);
+	wp_enqueue_script( 'jquery-superfish', esc_url(get_template_directory_uri()) . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
+	wp_enqueue_script( 'automotive-centre-custom-scripts-jquery', esc_url(get_template_directory_uri()) . '/assets/js/custom.js', array('jquery') );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -363,6 +363,15 @@ if ( ! function_exists( 'automotive_centre_credit' ) ) {
 	}
 }
 
+/**
+ * Enqueue block editor style
+ */
+function automotive_centre_block_editor_styles() {
+	wp_enqueue_style( 'automotive-centre-font', automotive_centre_font_url(), array() );
+    wp_enqueue_style( 'automotive-centre-block-patterns-style-editor', get_theme_file_uri( '/inc/block-patterns/css/block-editor.css' ), false, '1.0', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'automotive_centre_block_editor_styles' );
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'automotive_centre_loop_columns');
 	if (!function_exists('automotive_centre_loop_columns')) {
@@ -401,3 +410,6 @@ require get_template_directory() . '/inc/typography/ctypo.php';
 
 /* Implement the About theme page */
 require get_template_directory() . '/inc/getstart/getstart.php';
+
+/* Block Pattern */
+require get_template_directory() . '/inc/block-patterns/block-patterns.php';

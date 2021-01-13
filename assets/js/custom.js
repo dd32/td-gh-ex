@@ -106,3 +106,40 @@ jQuery(document).ready(function () {
 		});
 	});
 })( jQuery );
+
+jQuery(document).ready(function () {
+	  function automotive_centre_search_loop_focus(element) {
+	  var automotive_centre_focus = element.find('select, input, textarea, button, a[href]');
+	  var automotive_centre_firstFocus = automotive_centre_focus[0];  
+	  var automotive_centre_lastFocus = automotive_centre_focus[automotive_centre_focus.length - 1];
+	  var KEYCODE_TAB = 9;
+
+	  element.on('keydown', function automotive_centre_search_loop_focus(e) {
+	    var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+	    if (!isTabPressed) { 
+	      return; 
+	    }
+
+	    if ( e.shiftKey ) /* shift + tab */ {
+	      if (document.activeElement === automotive_centre_firstFocus) {
+	        automotive_centre_lastFocus.focus();
+	          e.preventDefault();
+	        }
+	      } else /* tab */ {
+	      if (document.activeElement === automotive_centre_lastFocus) {
+	        automotive_centre_firstFocus.focus();
+	          e.preventDefault();
+	        }
+	      }
+	  });
+	}
+	jQuery('.search-box span a').click(function(){
+        jQuery(".serach_outer").slideDown(1000);
+    	automotive_centre_search_loop_focus(jQuery('.serach_outer'));
+    });
+
+    jQuery('.closepop a').click(function(){
+        jQuery(".serach_outer").slideUp(1000);
+    });
+});

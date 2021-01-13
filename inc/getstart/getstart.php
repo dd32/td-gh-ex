@@ -8,8 +8,8 @@ function automotive_centre_gettingstarted() {
 // Add a Custom CSS file to WP Admin Area
 function automotive_centre_admin_theme_style() {
    wp_enqueue_style( 'automotive-centre-font', automotive_centre_admin_font_url(), array() );
-   wp_enqueue_style('automotive-centre-custom-admin-style', get_template_directory_uri() . '/inc/getstart/getstart.css');
-   wp_enqueue_script('automotive-centre-tabs', get_template_directory_uri() . '/inc/getstart/js/tab.js');
+   wp_enqueue_style('automotive-centre-custom-admin-style', esc_url(get_template_directory_uri()) . '/inc/getstart/getstart.css');
+   wp_enqueue_script('automotive-centre-tabs', esc_url(get_template_directory_uri()) . '/inc/getstart/js/tab.js');
 }
 add_action('admin_enqueue_scripts', 'automotive_centre_admin_theme_style');
 

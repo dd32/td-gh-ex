@@ -38,21 +38,17 @@
 				<div class="col-lg-1 col-md-2 col-6">
 			        <?php if( get_theme_mod( 'automotive_centre_search_hide_show',true) != '') { ?>
 			        <div class="search-box">
-			        	<button type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
-			        </div>
+                      <span><a href="#"><i class="<?php echo esc_attr(get_theme_mod('automotive_centre_search_icon','fas fa-search')); ?>"></i></a></span>
+                    </div>
 			        <?php }?>
 			    </div>
 			</div>
 		</div>
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		    <div class="modal-dialog" role="document">
-		      <div class="modal-body">
-		        <div class="serach_inner">
-		          <?php get_search_form(); ?>
-		        </div>
-		      </div>
-		      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		    </div>
-		</div>
+		<div class="serach_outer">
+          <div class="closepop"><a href="#maincontent"><i class="<?php echo esc_attr(get_theme_mod('automotive_centre_search_close_icon','fa fa-window-close')); ?>"></i></a></div>
+          <div class="serach_inner">
+            <?php get_search_form(); ?>
+          </div>
+        </div>
 	</div>
 </div>

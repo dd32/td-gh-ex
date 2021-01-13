@@ -222,12 +222,12 @@
     if($automotive_centre_resp_scroll_top == true){
     	$automotive_centre_custom_css .='@media screen and (max-width:575px) {';
 		$automotive_centre_custom_css .='.scrollup i{';
-			$automotive_centre_custom_css .='display:block;';
+			$automotive_centre_custom_css .='visibility:visible;';
 		$automotive_centre_custom_css .='} }';
 	}else if($automotive_centre_resp_scroll_top == false){
 		$automotive_centre_custom_css .='@media screen and (max-width:575px) {';
 		$automotive_centre_custom_css .='.scrollup i{';
-			$automotive_centre_custom_css .='display:none !important;';
+			$automotive_centre_custom_css .='visibility:hidden !important;';
 		$automotive_centre_custom_css .='} }';
 	}
 

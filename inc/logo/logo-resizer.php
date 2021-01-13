@@ -129,7 +129,7 @@ function automotive_centre_min_max( $short, $long, $short_max, $long_max, $perce
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function automotive_centre_customize_preview_js() {
-	wp_enqueue_script( 'automotive-centre-customizer', get_template_directory_uri() . '/inc/logo/js/customize-preview.js', array( 'jquery', 'customize-preview' ), '201709081119', true );
+	wp_enqueue_script( 'automotive-centre-customizer', esc_url(get_template_directory_uri()) . '/inc/logo/js/customize-preview.js', array( 'jquery', 'customize-preview' ), '201709081119', true );
 }
 add_action( 'customize_preview_init', 'automotive_centre_customize_preview_js' );
 
@@ -137,7 +137,7 @@ add_action( 'customize_preview_init', 'automotive_centre_customize_preview_js' )
  * JS handlers for Customizer Controls
  */
 function automotive_centre_customize_controls_js() {
-	wp_enqueue_script( 'automotive-centre-customizer-controls', get_template_directory_uri() . '/inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
+	wp_enqueue_script( 'automotive-centre-customizer-controls', esc_url(get_template_directory_uri()) . '/inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'automotive_centre_customize_controls_js' );
 

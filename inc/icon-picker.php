@@ -42,8 +42,8 @@ class Automotive_Centre_Fontawesome_Icon_Chooser extends WP_Customize_Control{
 
 function automotive_centre_customizer_script() {
      
-    wp_enqueue_style( 'font-awesome-1', get_template_directory_uri().'/assets/css/fontawesome-all.css');
-    wp_enqueue_script( 'automotive-centre-customizer-script', get_template_directory_uri().'/assets/js/customizer-scripts.js', array("jquery"),'', true  );
+    wp_enqueue_style( 'font-awesome-1', esc_url(get_template_directory_uri()).'/assets/css/fontawesome-all.css');
+    wp_enqueue_script( 'automotive-centre-customizer-script', esc_url(get_template_directory_uri()).'/assets/js/customizer-scripts.js', array("jquery"),'', true  );
 }
 add_action( 'customize_controls_enqueue_scripts', 'automotive_centre_customizer_script' );
 
