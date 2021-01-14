@@ -14,6 +14,8 @@ function automobile_car_dealer_setup() {
 	load_theme_textdomain( 'automobile_car_dealer', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
@@ -234,9 +236,16 @@ function automobile_car_dealer_font_url() {
 /* Theme enqueue scripts */
 function automobile_car_dealer_scripts() {
 	wp_enqueue_style( 'automobile-car-dealer-font', automobile_car_dealer_font_url(), array() );
+
+	// blocks-css
+	wp_enqueue_style( 'automobile-car-dealer-block-style', get_theme_file_uri('/css/blocks.css') );
+
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+
 	wp_enqueue_style( 'automobile-car-dealer-basic-style', get_stylesheet_uri() );
+
 	wp_style_add_data( 'automobile-car-dealer-style', 'rtl', 'replace' );	
+
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome-all.css' );
 
 	// Paragraph

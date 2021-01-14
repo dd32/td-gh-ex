@@ -8,17 +8,20 @@
 	font-weight: 400;
 	margin-left: 8px;
 }
-
 .rtl .control-section-automobile-car-dealer .accordion-section-title .button {
 	margin-left:  0;
 	margin-right: 8px;
 }
-
 .wp-core-ui .button, .wp-core-ui .button-secondary {
-    border: solid 1px #0073aa;
-    color: #0073aa;
-    font-size: 16px;
-    font-weight: bold !important;
+  border: solid 1px #0073aa;
+  color: #0073aa;
+  font-size: 16px;
+  font-weight: bold !important;
+}
+#customize-save-button-wrapper input#save, #customize-save-button-wrapper button#publish-settings {
+  color: #fff;
+  border-radius: 0;
+  font-size: 12px;
 }
 /* ---------Excerpt & Logo --------- */
 input#_customize-input-automobile_car_dealer_excerpt_number,

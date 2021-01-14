@@ -10,7 +10,7 @@ get_header(); ?>
         <?php
         $automobile_car_dealer_layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
         if($automobile_car_dealer_layout_option == 'One Column'){ ?>
-            <div class="blog-section">
+            <div class="blog-section mt-5">
                 <?php
                     the_archive_title( '<h1 class="page-title">', '</h1>' );
                     the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -39,7 +39,7 @@ get_header(); ?>
         <?php }else if($automobile_car_dealer_layout_option == 'Three Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-                <div class="blog-section col-lg-6 col-md-6">
+                <div class="blog-section col-lg-6 col-md-6 mt-5">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -70,7 +70,7 @@ get_header(); ?>
         <?php }else if($automobile_car_dealer_layout_option == 'Four Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-                <div class="blog-section col-lg-3 col-md-3">
+                <div class="blog-section col-lg-3 col-md-3 mt-5">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -101,7 +101,7 @@ get_header(); ?>
             </div>
         <?php }else if($automobile_car_dealer_layout_option == 'Grid Layout'){ ?>
             <div class="row">
-                <div class="blog-section col-lg-8 col-md-8">
+                <div class="blog-section col-lg-8 col-md-8 mt-5">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -134,7 +134,7 @@ get_header(); ?>
         <?php }else if($automobile_car_dealer_layout_option == 'Left Sidebar'){ ?>
             <div class="row">
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
-                <div class="blog-section col-lg-8 col-md-8">
+                <div class="blog-section col-lg-8 col-md-8 mt-5">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -163,7 +163,7 @@ get_header(); ?>
             </div>
         <?php }else if($automobile_car_dealer_layout_option == 'Right Sidebar'){ ?>
             <div class="row">
-                <div class="blog-section col-lg-8 col-md-8">
+                <div class="blog-section col-lg-8 col-md-8 mt-5">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -193,7 +193,7 @@ get_header(); ?>
             </div>
         <?php }else {?>
             <div class="row">
-                <div class="blog-section col-lg-8 col-md-8">
+                <div class="blog-section col-lg-8 col-md-8 mt-5">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );

@@ -1,11 +1,10 @@
 jQuery(function($){
- "use strict";
-   jQuery('.main-menu-navigation > ul').superfish({
-     delay:       500,                            
-     animation:   {opacity:'show',height:'show'},  
-     speed:       'fast'                        
-   });
-
+    "use strict";
+    jQuery('.main-menu-navigation > ul').superfish({
+        delay:       500,                            
+        animation:   {opacity:'show',height:'show'},  
+        speed:       'fast'                        
+    });
 });
 
 function automobile_car_dealer_responsive_menu_open() {
@@ -49,6 +48,18 @@ var automobile_car_dealer_Keyboard_loop = function (elem) {
     });
 };
 
+/**** Hidden search box ***/
+jQuery('document').ready(function($){
+    $('.main-search span a').click(function(){
+        $(".searchform_page").slideDown(500);
+        automobile_car_dealer_Keyboard_loop($('.searchform_page'));
+    });
+
+    $('.close a').click(function(){
+        $(".searchform_page").slideUp(0);
+    });
+}); 
+
 // scroll
 jQuery(document).ready(function () {
 	jQuery(window).scroll(function () {
@@ -59,7 +70,7 @@ jQuery(document).ready(function () {
 	    }
 	});
 	jQuery(window).on("scroll", function () {
-	   document.getElementById("scrollbutton").style.display = "block";
+       document.getElementById("scrollbutton").style.display = "block";
 	});
 	jQuery('#scrollbutton').click(function () {
 	    jQuery("html, body").animate({

@@ -7,7 +7,7 @@ get_header(); ?>
 
 <main id="skip_content" role="main">
     <div class="container">
-        <div class="main-wrapper">
+        <div class="main-wrapper my-3">
             <?php
             $automobile_car_dealer_layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
             if($automobile_car_dealer_layout_option == 'Left Sidebar'){ ?>

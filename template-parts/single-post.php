@@ -15,15 +15,15 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>> 
 	<h1><?php the_title(); ?></h1>
 	<?php if( get_theme_mod( 'automobile_car_dealer_metafields_date',true) != '' || get_theme_mod( 'automobile_car_dealer_metafields_author',true) != '' || get_theme_mod( 'automobile_car_dealer_metafields_comment',true) != '') { ?>
-		<div class="metabox">
+		<div class="metabox mb-3 py-2 px-3">
 			<?php if( get_theme_mod( 'automobile_car_dealer_metafields_date',true) != '') { ?>
-				<i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_post_date_icon','far fa-calendar-alt')); ?>""></i><span class="entry-date"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('automobile_car_dealer_single_post_meta_seperator') ); ?>
+				<i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_post_date_icon','far fa-calendar-alt')); ?> mr-2"></i><span class="entry-date mr-2"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('automobile_car_dealer_single_post_meta_seperator') ); ?>
 			<?php }?>
 			<?php if( get_theme_mod( 'automobile_car_dealer_metafields_author',true) != '') { ?>
-				<i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_post_author_icon','fas fa-user')); ?>"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></span><?php echo esc_html( get_theme_mod('automobile_car_dealer_single_post_meta_seperator') ); ?>
+				<i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_post_author_icon','fas fa-user')); ?> mr-2"></i><span class="entry-author mr-2"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></span><?php echo esc_html( get_theme_mod('automobile_car_dealer_single_post_meta_seperator') ); ?>
 			<?php }?>
 			<?php if( get_theme_mod( 'automobile_car_dealer_metafields_comment',true) != '') { ?>
-				<i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_post_comment_icon','fas fa-comments')); ?>"></i><span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?></span>
+				<i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_post_comment_icon','fas fa-comments')); ?> mr-2"></i><span class="entry-comments mr-2"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?></span>
 			<?php }?>
 		</div>
 	<?php }?>

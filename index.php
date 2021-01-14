@@ -11,7 +11,7 @@ get_header(); ?>
     <?php
     $automobile_car_dealer_layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
     if($automobile_car_dealer_layout_option == 'One Column'){ ?>
-      <div id="blog_sec" class="blog-section">
+      <div id="blog_sec" class="blog-section mt-5">
         <?php if ( have_posts() ) :
           /* Start the Loop */          
           while ( have_posts() ) : the_post();
@@ -36,7 +36,7 @@ get_header(); ?>
     <?php }else if($automobile_car_dealer_layout_option == 'Three Columns'){ ?>
       <div class="row">
         <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-        <div id="blog_sec" class="blog-section col-lg-6 col-md-6">
+        <div id="blog_sec" class="blog-section col-lg-6 col-md-6 mt-5">
           <?php if ( have_posts() ) :
             /* Start the Loop */
             while ( have_posts() ) : the_post();
@@ -63,7 +63,7 @@ get_header(); ?>
     <?php }else if($automobile_car_dealer_layout_option == 'Four Columns'){ ?>
       <div class="row">
         <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-        <div id="blog_sec" class="blog-section col-lg-3 col-md-3">
+        <div id="blog_sec" class="blog-section col-lg-3 col-md-3 mt-5">
           <?php if ( have_posts() ) :
             /* Start the Loop */          
             while ( have_posts() ) : the_post();
@@ -89,7 +89,7 @@ get_header(); ?>
         <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
       </div>
     <?php }else if($automobile_car_dealer_layout_option == 'Grid Layout'){ ?>
-      <div id="blog_sec" class="blog-section row">
+      <div id="blog_sec" class="blog-section row mt-5">
         <?php if ( have_posts() ) :
           /* Start the Loop */
           while ( have_posts() ) : the_post();
@@ -113,7 +113,7 @@ get_header(); ?>
       </div>
     <?php }else if($automobile_car_dealer_layout_option == 'Right Sidebar'){ ?>
       <div class="row">
-        <div id="blog_sec" class="blog-section col-lg-8 col-md-8">
+        <div id="blog_sec" class="blog-section col-lg-8 col-md-8 mt-5">
           <?php if ( have_posts() ) :
             /* Start the Loop */ 
             while ( have_posts() ) : the_post();
@@ -140,7 +140,7 @@ get_header(); ?>
     <?php }else if($automobile_car_dealer_layout_option == 'Left Sidebar'){ ?>
       <div class="row">
         <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
-        <div id="blog_sec" class="blog-section col-lg-8 col-md-8">
+        <div id="blog_sec" class="blog-section col-lg-8 col-md-8 mt-5">
           <?php if ( have_posts() ) :
             /* Start the Loop */          
             while ( have_posts() ) : the_post();
@@ -165,7 +165,7 @@ get_header(); ?>
       </div>
     <?php }else {?>
       <div class="row">
-        <div id="blog_sec" class="blog-section col-lg-8 col-md-8">
+        <div id="blog_sec" class="blog-section col-lg-8 col-md-8 mt-5">
           <?php if ( have_posts() ) :
             /* Start the Loop */ 
             while ( have_posts() ) : the_post();

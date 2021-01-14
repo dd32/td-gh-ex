@@ -9,9 +9,9 @@ get_header(); ?>
     <?php do_action( 'automobile_car_dealer_pageright_top' ); ?>
 
     <div class="container">
-        <div class="main-wrapper row">       
+        <div class="main-wrapper row my-3">       
     		<div class="col-lg-8 col-md-8">
-                <div class="content_box">
+                <div class="content_box py-4 px-0">
                     <h1><?php the_title(); ?></h1> 
                     <?php while ( have_posts() ) : the_post(); ?>
                         <?php the_post_thumbnail(); ?>

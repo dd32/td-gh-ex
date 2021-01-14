@@ -6,10 +6,10 @@
 
 get_header(); ?>
 
-<main id="skip_content" class="content_box" role="main">
+<main id="skip_content" class="content_box py-4 px-0" role="main">
     <?php do_action( 'automobile_car_dealer_page_top' ); ?>
     <div class="container">
-        <div class="main-wrapper">
+        <div class="main-wrapper my-3">
             <?php while ( have_posts() ) : the_post(); ?>
             <h1><?php the_title(); ?></h1>
             <?php if(has_post_thumbnail()) { ?>
