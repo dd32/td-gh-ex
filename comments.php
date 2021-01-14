@@ -10,7 +10,7 @@
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number(__('No Comments','d5-socialia') . '', __('One Comment','d5-socialia'), '% ' . __('Comments','d5-socialia') . '' );  echo ' ' . __(' to','d5-socialia'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="comments"><?php comments_number(esc_html__('No Comments','d5-socialia') . '', esc_html__('One Comment','d5-socialia'), '% ' . esc_html__('Comments','d5-socialia') . '' );  echo ' ' . esc_html__(' to','d5-socialia'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments( array( 'avatar_size' => '150') ); ?>
 	</ol>
@@ -24,7 +24,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark"><?php _e('Comments are Closed','d5-socialia'); ?></p>
+		<p class="watermark"><?php esc_html_e('Comments are Closed','d5-socialia'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

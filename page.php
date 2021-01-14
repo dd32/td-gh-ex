@@ -17,7 +17,7 @@
  	<?php if (d5socialia_get_option('tpage', '1') != '1' ): ?><div class="thumb"><?php the_post_thumbnail(); ?></div><?php endif; ?>
  	<?php d5socialia_content(); ?>
 
-	<?php wp_link_pages(array('before' => '<p><strong>' . __('Pages','d5-socialia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+	<?php wp_link_pages(array('before' => '<p><strong>' . esc_html__('Pages','d5-socialia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 	<?php edit_post_link('Edit', '<p>', '</p>'); ?>
 	<?php if (d5socialia_get_option ('cpage', '' ) != '1' ): comments_template('', true); endif;?>
 	<?php else: ?>
-		<p><?php _e('Sorry, no pages matched your criteria.','d5-socialia'); ?></p>
+		<p><?php esc_html_e('Sorry, no pages matched your criteria.','d5-socialia'); ?></p>
 	<?php endif; ?>
 	</div>
 

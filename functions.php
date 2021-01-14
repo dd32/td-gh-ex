@@ -7,7 +7,7 @@
   	
 
 function d5socialia_setup() {
-	register_nav_menus( array( 'main-menu' => __('Main Menu','d5-socialia' ) ) );
+	register_nav_menus( array( 'main-menu' => esc_html__('Main Menu','d5-socialia' ) ) );
 //	Set the content width based on the theme's socialia and stylesheet.
 	load_theme_textdomain( 'd5-socialia', get_template_directory() . '/languages' );	
 	global $content_width;
@@ -70,6 +70,9 @@ function d5socialia_setup() {
 	wp_enqueue_style('d5socialia-style', get_stylesheet_uri(), false );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  wp_enqueue_script( 'comment-reply' ); }
 	
+	wp_enqueue_script( 'd5socialia-html5', get_template_directory_uri().'/js/html5.min.js'); 
+    wp_script_add_data( 'd5socialia-html5', 'conditional', 'lt IE 9' );	
+		
 	wp_enqueue_script( 'd5socialia-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_enqueue_style('d5socialia-gfonts1', '//fonts.googleapis.com/css?family=Marvel:400', false );
 	wp_enqueue_style ('d5socialia_skitter-style', get_template_directory_uri() . '/css/skitter.styles.css' );
@@ -101,13 +104,13 @@ function d5socialia_setup() {
 	
 	function d5socialia_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . __('Read More ...','d5-socialia') . '</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . esc_html__('Read More ...','d5-socialia') . '</a>';
 	}
 	add_filter('excerpt_more', 'd5socialia_excerpt_more');
 
 // Content Type Showing
 	function d5socialia_content() {
-	the_content('<span class="read-more">' . __('Read More ...','d5-socialia') . '</span>');
+	the_content('<span class="read-more">' . esc_html__('Read More ...','d5-socialia') . '</span>');
 	}
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
@@ -122,7 +125,7 @@ function d5socialia_setup() {
 	function d5socialia_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __('Primary Sidebar','d5-socialia'),
+		'name' => esc_html__('Primary Sidebar','d5-socialia'),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -131,7 +134,7 @@ function d5socialia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Secondary Sidebar','d5-socialia'),
+		'name' => esc_html__('Secondary Sidebar','d5-socialia'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -140,9 +143,9 @@ function d5socialia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area One','d5-socialia'),
+		'name' => esc_html__('Footer Area One','d5-socialia'),
 		'id' => 'sidebar-3',
-		'description' => __('An optional widget area for your site footer','d5-socialia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-socialia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -150,9 +153,9 @@ function d5socialia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Two','d5-socialia'),
+		'name' => esc_html__('Footer Area Two','d5-socialia'),
 		'id' => 'sidebar-4',
-		'description' => __('An optional widget area for your site footer','d5-socialia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-socialia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -160,9 +163,9 @@ function d5socialia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Three','d5-socialia'),
+		'name' => esc_html__('Footer Area Three','d5-socialia'),
 		'id' => 'sidebar-5',
-		'description' => __('An optional widget area for your site footer','d5-socialia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-socialia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -170,9 +173,9 @@ function d5socialia_setup() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __('Footer Area Four','d5-socialia'),
+		'name' => esc_html__('Footer Area Four','d5-socialia'),
 		'id' => 'sidebar-6',
-		'description' => __('An optional widget area for your site footer','d5-socialia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-socialia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',

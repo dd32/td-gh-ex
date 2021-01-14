@@ -28,7 +28,7 @@ You can Visit the Socialia Extend <a href="<?php echo esc_url('http://demo.d5cre
 <a href="<?php echo esc_url('https://d5creation.com/theme/socialia/'); ?>" target="_blank" class="extendlink"> </a>
         </div>
         
-        <p>The D5 Socialia theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for Social Organizations, basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Development, Cultural Organizations etc. It can also be used for Personal or Company Websites. There are two different Editions of Socialia. You can use the Free Version downloading from WordPress.org and the Extend version downloading from D5Creation.com
+        <p class="heading-des">The D5 Socialia theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for Social Organizations, basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Development, Cultural Organizations etc. It can also be used for Personal or Company Websites. There are two different Editions of Socialia. You can use the Free Version downloading from WordPress.org and the Extend version downloading from D5Creation.com
         </p>
         
         <div class="floatcntr">
@@ -79,7 +79,7 @@ You can Visit the Socialia Extend <a href="<?php echo esc_url('http://demo.d5cre
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
+        <div class="bottom"><img src="<?php echo esc_url(get_template_directory_uri()).'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
         
 <div class="floatcntr">
 		<h2 class="spetitle">World Class, Responsive and Premium WordPress Themes</h2>
@@ -89,7 +89,7 @@ You can Visit the Socialia Extend <a href="<?php echo esc_url('http://demo.d5cre
         <a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://demo.d5creation.com' ) ?>">Visit Theme Demos</a>
 		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/wp-login.php?action=register' ) ?>">Become a Happy Member</a> <br /><br /><br />
         
-        <img width="100%" src="<?php echo get_template_directory_uri() . '/inc/images/themefeatures.png' ?>" alt="D5 Creation Themes" />
+        <img width="100%" src="<?php echo esc_url(get_template_directory_uri()) . '/inc/images/themefeatures.png' ?>" alt="D5 Creation Themes" />
 	</div>   
 
 </div>

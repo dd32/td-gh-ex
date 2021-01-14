@@ -7,7 +7,12 @@ Author URI: https://d5creation.com/
 
 Description: D5 Socialia Theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for the Social Organizations, basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Development, Cultural Organizations etc. It can also be used for Personal or Company Websites. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/themes/?theme=Socialia" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>. Before Installing or Updating you must read the Readme File of this Theme.
 
-Version: 3.5
+
+Requires at least: 4.9
+Tested up to: 5.6
+Requires PHP: 5.6
+
+Version: 3.7
 
 Tags: one-column, two-columns, right-sidebar, custom-background, blog, portfolio, education, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, translation-ready, theme-options 
 
@@ -112,7 +117,7 @@ img.site-logo, h1.site-title {
 	float:right;
 }
 
-#left-sidebar {
+#right-sidebar {
 	float: left;
 }
 
@@ -182,8 +187,8 @@ address {
 /* Wedget Elements 
 ------------------------------------------------------------- */
 
-#left-sidebar .widget ul,
-#left-sidebar .widget ol {
+#right-sidebar .widget ul,
+#right-sidebar .widget ol {
 	margin-right: 15px;
 	margin-left: auto;
 }

@@ -3,8 +3,8 @@
 Contributors: D5 Creation
 Tags: one-column, two-columns, right-sidebar, custom-background, blog, portfolio, education, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, translation-ready, theme-options
 Requires at least: 4.0
-Tested up to: 5.0.4-alpha
-Stable tag: 3.5
+Tested up to: 5.2.3-alpha
+Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ No, It is for Blogs, Company, Personal Websites
 
 
 == Changelog ==
+
+= 3.7 =
+* Code Cleanup
 
 = 3.5 =
 * Change Images

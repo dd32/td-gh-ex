@@ -6,14 +6,14 @@ function d5socialia_customize_register($wp_customize){
     $wp_customize->add_section('d5socialia_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('SOCIALIA OPTIONS', 'd5-socialia'),
-        'description'   => ' <div class="infohead">' . __('We appreciate an','d5-socialia') . ' <a href="http://wordpress.org/support/view/theme-reviews/d5-socialia" target="_blank">' . __('Honest Review','d5-socialia') . '</a> ' . __('of this Theme if you Love our Work','d5-socialia') . '<br /> <br />
+		'title'    		=> esc_html__('SOCIALIA OPTIONS', 'd5-socialia'),
+        'description'   => ' <div class="infohead">' . esc_html__('We appreciate an','d5-socialia') . ' <a href="http://wordpress.org/support/view/theme-reviews/d5-socialia" target="_blank">' . esc_html__('Honest Review','d5-socialia') . '</a> ' . esc_html__('of this Theme if you Love our Work','d5-socialia') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-socialia') . '<a href="' . esc_url('https://d5creation.com/theme/socialia/') .'
-" target="_blank"><strong>' . __('Socialia Extend','d5-socialia') . '</strong></a><br /> <br /> 
+' . esc_html__('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-socialia') . '<a href="' . esc_url('https://d5creation.com/theme/socialia/') .'
+" target="_blank"><strong>' . esc_html__('Socialia Extend','d5-socialia') . '</strong></a><br /> <br /> 
         
         
-' . __('You can Visit the Socialia Extend ','d5-socialia') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Socialia') .'" target="_blank"><strong>' . __('Demo Here','d5-socialia') . '</strong></a> 
+' . esc_html__('You can Visit the Socialia Extend ','d5-socialia') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Socialia') .'" target="_blank"><strong>' . esc_html__('Demo Here','d5-socialia') . '</strong></a> 
         </div>		
 		'
     ));
@@ -33,15 +33,15 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'slide-image-'. $opsinumber, array(
-        'label'    			=> __('Sliding Image', 'd5-socialia') . '-' . $opsinumber,
+        'label'    			=> esc_html__('Sliding Image', 'd5-socialia') . '-' . $opsinumber,
         'section'  			=> 'd5socialia_options',
         'settings' 			=> 'd5_socialia_pro[slide-image-'. $opsinumber .']',
-		'description'   	=> __('1000px X 288px image is recommended','d5-socialia')
+		'description'   	=> esc_html__('1000px X 288px image is recommended','d5-socialia')
     )));
   
 // Slide Image Title
     $wp_customize->add_setting('d5_socialia_pro[slide-image-' . $opsinumber . '-title]', array(
-        'default'        	=> __('Slide Image ','d5-socialia') . $opsinumber . __(' Title | Welcome to D5 Socialia Theme, Visit D5 Creation for Details','d5-socialia'),
+        'default'        	=> esc_html__('Slide Image ','d5-socialia') . $opsinumber . esc_html__(' Title | Welcome to D5 Socialia Theme, Visit D5 Creation for Details','d5-socialia'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -49,7 +49,7 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5socialia_slide-image-' . $opsinumber . '-title' , array(
-        'label'      => __('Image Title', 'd5-socialia') . '-' . $opsinumber,
+        'label'      => esc_html__('Image Title', 'd5-socialia') . '-' . $opsinumber,
         'section'    => 'd5socialia_options',
         'settings'   => 'd5_socialia_pro[slide-image-' . $opsinumber .'-title]'
     ));
@@ -57,7 +57,7 @@ function d5socialia_customize_register($wp_customize){
 
 // Image Description
     $wp_customize->add_setting('d5_socialia_pro[slide-image-' . $opsinumber . '-description]', array(
-        'default'        	=> __('D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms','d5-socialia'),
+        'default'        	=> esc_html__('D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms','d5-socialia'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -65,7 +65,7 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5socialia_slide-image-' . $opsinumber . '-description' , array(
-        'label'      => __('Image Description', 'd5-socialia') . '-' . $opsinumber,
+        'label'      => esc_html__('Image Description', 'd5-socialia') . '-' . $opsinumber,
         'section'    => 'd5socialia_options',
         'settings'   => 'd5_socialia_pro[slide-image-' . $opsinumber .'-description]',
 		'type' 		 => 'textarea'
@@ -81,7 +81,7 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5socialia_slide-image-' . $opsinumber . '-link' , array(
-        'label'      => __('Image Link', 'd5-socialia') . '-' . $opsinumber,
+        'label'      => esc_html__('Image Link', 'd5-socialia') . '-' . $opsinumber,
         'section'    => 'd5socialia_options',
         'settings'   => 'd5_socialia_pro[slide-image-' . $opsinumber .'-link]',
 		'description'   	=> 'Input the URL where the image will redirect the visitors'
@@ -100,7 +100,7 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5socialia_facebook_link', array(
-        'label'      => __('Facebook Link', 'd5-socialia'),
+        'label'      => esc_html__('Facebook Link', 'd5-socialia'),
         'section'    => 'd5socialia_options',
         'settings'   => 'd5_socialia_pro[facebook_link]'
     ));
@@ -115,7 +115,7 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5socialia_twitter_link', array(
-        'label'      => __('Twitter Link', 'd5-socialia'),
+        'label'      => esc_html__('Twitter Link', 'd5-socialia'),
         'section'    => 'd5socialia_options',
         'settings'   => 'd5_socialia_pro[twitter_link]'
     ));
@@ -131,7 +131,7 @@ function d5socialia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5socialia_blog_link', array(
-        'label'      => __('Blog/News Link', 'd5-socialia'),
+        'label'      => esc_html__('Blog/News Link', 'd5-socialia'),
         'section'    => 'd5socialia_options',
         'settings'   => 'd5_socialia_pro[blog_link]'
     ));

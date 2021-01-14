@@ -7,14 +7,14 @@ Author URI: https://d5creation.com/
 
 Description: D5 Socialia Theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for the Social Organizations, basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Development, Cultural Organizations etc. It can also be used for Personal or Company Websites. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/themes/?theme=Socialia" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>. Before Installing or Updating you must read the Readme File of this Theme.
 
-Version: 3.5
+Version: 3.7
 
 Tags: one-column, two-columns, right-sidebar, custom-background, blog, portfolio, education, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, translation-ready, theme-options 
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-D5 Socialia WordPress Theme, Copyright 2012-2018: D5 Creation (www.d5creation.com)
+D5 Socialia WordPress Theme, Copyright 2012-2020: D5 Creation (www.d5creation.com)
 
 Text Domain: d5-socialia
 
@@ -87,7 +87,7 @@ img.site-logo{max-width: 300px;}
 .blog-link{background:url(images/blogicon.png) no-repeat scroll center 50% transparent}
 .ytube-link{background:url(images/ytubeicon.png) no-repeat scroll center 50% transparent}
 .lin-link{background:url(images/linicon.png) no-repeat scroll center 50% transparent}
-.facebook-link,.twitter-link,.gplus-link,.blog-link,.ytube-link,.lin-link{float:left;height:30px;margin:0 3px;padding:3px;width:30px;opacity:.7;background-size:50px 50px;border-radius:50px;transition:opacity 1s linear;-moz-transition:opacity 1s linear;-o-transition:opacity 1s linear;-webkit-transition:opacity 1s linear}
+.facebook-link,.twitter-link,.gplus-link,.blog-link,.ytube-link,.lin-link{float:left;height:30px;margin:0 3px;padding:3px;width:30px;opacity:.7;background-size:50px 50px;border-radius:50px; transition: all .5s; }
 .facebook-link:hover,.twitter-link:hover,.gplus-link:hover,.blog-link:hover,.ytube-link:hover,.lin-link:hover{opacity:1}
 #footer-sidebar{margin:0 auto;overflow:hidden;padding:20px 0 0;width:1000px}
 #creditline{color:#FFF;font-size:11px;margin:0 auto;padding:10px 0;text-align:center;width:1000px}
@@ -129,13 +129,13 @@ embed{max-width:100%}
 
 #main-menu-con ul ul, .sub-menu, .sub-menu ul ul { background: rgba(255, 102, 0, 0.95); border-bottom: 7px solid #316022; border-radius: 0 0 5px 5px; box-shadow: 0 3px 3px rgba(0,0,0,0.2); display: none; float: left; left: 0; margin: 0; position: absolute; width: 210px; z-index: 99999; padding: 0; }
 
-#main-menu-con ul li ul li { padding: 0; background: transparent; margin:0; width: 100%; border-bottom: 1px dotted #cccccc; transition: all 1s; }
+#main-menu-con ul li ul li { padding: 0; background: transparent; margin:0; width: 100%; border-bottom: 1px dotted #cccccc; transition: all .5s; }
 #main-menu-con ul li ul li:last-child { border-bottom: none; }
 
 #main-menu-con ul li ul li:hover { background: rgba(179,74,4,.9); }
 #main-menu-con ul ul ul { left: 100%; top: 0; z-index: 999; }
 
-#main-menu-con ul ul a  { background: transparent; border: none; color: #ffffff; font-size: 12px; font-weight: normal; height: auto; line-height: 1em; padding: 10px; width: 100%; text-transform:none; text-align: left; transition: all 1s; }
+#main-menu-con ul ul a  { background: transparent; border: none; color: #ffffff; font-size: 12px; font-weight: normal; height: auto; line-height: 1em; padding: 10px; width: 100%; text-transform:none; text-align: left; transition: all .5s; }
 
 #main-menu-con ul ul a:hover { background: transparent; padding-left: 20px; }
 #main-menu-con ul ul li:hover > ul { /* display: block; */ margin-top: -5px; }
@@ -205,9 +205,9 @@ td{padding:5px 7px;vertical-align:top}
 #wp-calendar td{padding:0 7px}
 th{font-weight:700;line-height:1;padding:5px 7px}
 table#wp-calendar{background:none repeat scroll 0 0 transparent;border:medium none;box-shadow:none;width:100%}
-button,input[type="reset"],input[type="button"],input[type="submit"],#respond .form-submit input#submit,#wp-submit{border-radius:5px;display:inline-block;font-size:11px;font-weight:700;padding:5px 15px 6px;text-decoration:none;height:35px;text-transform:uppercase;cursor:pointer;margin:0 7px;background:#F60;color:#FFF;box-shadow:1px 1px 5px 1px #AAA;border:none;transition:all 2s;-moz-transition:all 2s;-o-transition:all 2s;-webkit-transition:all 2s}
+button,input[type="reset"],input[type="button"],input[type="submit"],#respond .form-submit input#submit,#wp-submit{border-radius:5px;display:inline-block;font-size:11px;font-weight:700;padding:5px 15px 6px;text-decoration:none;height:35px;text-transform:uppercase;cursor:pointer;margin:0 7px;background:#F60;color:#FFF;box-shadow:1px 1px 5px 1px #AAA;border:none;transition:all .5s;}
 button:hover,input[type="reset"]:hover,input[type="button"]:hover,input[type="submit"]:hover,#respond .form-submit input#submit:hover,#wp-submit:hover{box-shadow:1px 1px 5px 1px #777;opacity:.9;color:#333;text-shadow:1px 1px 1px #ECF6FD}
-textarea,input[type="text"],input[type="password"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],.titlewrap input,select{background:#E5E5E5;border-color:#AAA #BBB #FFF #FFF;border-radius:5px;border-style:solid;border-width:1px;box-shadow:0 1px 1px rgba(0,0,0,0.1) inset;color:#777;display:inline-block;min-width:50%;padding:7px 10px;position:relative;transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;-webkit-transition:all 1s}
+textarea,input[type="text"],input[type="password"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],.titlewrap input,select{background:#E5E5E5;border-color:#AAA #BBB #FFF #FFF;border-radius:5px;border-style:solid;border-width:1px;box-shadow:0 1px 1px rgba(0,0,0,0.1) inset;color:#777;display:inline-block;min-width:50%;padding:7px 10px;position:relative;transition:all .5s; }
 textarea:focus,input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus,input[type="number"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,.titlewrap:focus input:focus,select:focus{background:#F6F6F6}
 input[type="password"]{width:200px}
 button:active,input[type="reset"]:active,input[type="button"]:active,input[type="submit"]:active{position:relative;top:1px}
@@ -225,7 +225,7 @@ button:active,input[type="reset"]:active,input[type="button"]:active,input[type=
 blockquote{margin:20px 10px;padding:10px;quotes:'<<' '>>';background:#ECF6FD;border-left:10px solid #158E09;border-right:10px solid #158E09}
 blockquote:before{content:'\201C';font-size:4em;line-height:.1em;margin-right:.2em;vertical-align:-.4em;color:#158E09}
 blockquote:after{content:'\201D';font-size:4em;line-height:.1em;margin-left:.2em;vertical-align:-.4em;color:#158E09}
-blockquote p{display:inline}
+
 #container .attachment-post-thumbnail{float:left;margin:5px 10px 10px 0}
 h1.page-title,h1.arc-post-title{color:#158E09;font-size:25px;font-weight:700;text-align:left}
 h2.post-title,h2.comments,h3#reply-title,h2.post-title-color,h2.post-title a{margin-bottom:0;padding-bottom:5px;font-size:19px;text-align:left;text-decoration:none}
@@ -253,7 +253,7 @@ h3.arc-src span{color:#555}
 #commentsbox ol,#commentsbox ul,#commentsbox li{list-style:none inside none}
 #commentsbox .watermark{font-size:17px;text-align:center;text-shadow:none;text-transform:uppercase}
 #commentsbox .comment-author cite,#commentsbox .comment-author cite a{color:#158E09;font-size:15px;font-style:normal;font-weight:700}
-#commentsbox .avatar{border-radius:5px 5px 5px 5px;float:left;font-size:10px;height:70px;left:-100px;position:absolute;top:0;transition:all 2s ease 0;width:70px}
+#commentsbox .avatar{border-radius:5px 5px 5px 5px;float:left;font-size:10px;height:70px;left:-100px;position:absolute;top:0;transition:all 1s ease 0;width:70px}
 #commentsbox .avatar:hover{background:#F60}
 #commentsbox ul.children{padding:0}
 .comment-body{background:#F6F6F6;border:1px solid #CCC;border-radius:5px 5px 5px 5px;padding:15px;position:relative}

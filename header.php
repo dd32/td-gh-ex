@@ -12,9 +12,6 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
 
 <?php 
 
@@ -23,7 +20,7 @@ wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> >
-
+	<?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
   
   	  <div id="top-menu-container">
      
@@ -55,7 +52,7 @@ wp_head(); ?>
 
 <div id="slide-container"><div class="box_skitter box_skitter_large"><ul> <?php
 foreach (range(1, 12) as $sinumber) { ?>
-<li><a href="<?php echo esc_url(d5socialia_get_option('slide-image-' . $sinumber . '-link', '#')); ?>"><img src="<?php echo esc_url(d5socialia_get_option('slide-image-' . $sinumber,  get_template_directory_uri() . '/images/slides/(' . $sinumber . ').jpg')); ?>" class="fade" /></a><div class="label_text"><p><?php echo '<span>' . esc_textarea(d5socialia_get_option('slide-image-' . $sinumber . '-title', 'Slide Image ' . $sinumber . __(' Title | Welcome to D5 Socialia Theme, Visit D5 Creation for Details','d5-socialia'))). '</span><br />'; echo esc_textarea(d5socialia_get_option('slide-image-' . $sinumber . '-description', __('D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.','d5-socialia'))); ?></p></div></li>
+<li><a href="<?php echo esc_url(d5socialia_get_option('slide-image-' . $sinumber . '-link', '#')); ?>"><img src="<?php echo esc_url(d5socialia_get_option('slide-image-' . $sinumber,  get_template_directory_uri() . '/images/slides/(' . $sinumber . ').jpg')); ?>" class="fade" /></a><div class="label_text"><p><?php echo '<span>' . esc_textarea(d5socialia_get_option('slide-image-' . $sinumber . '-title', 'Slide Image ' . $sinumber . esc_html__(' Title | Welcome to D5 Socialia Theme, Visit D5 Creation for Details','d5-socialia'))). '</span><br />'; echo esc_textarea(d5socialia_get_option('slide-image-' . $sinumber . '-description', esc_html__('D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.','d5-socialia'))); ?></p></div></li>
 <?php  }  ?>
 </ul>
 
