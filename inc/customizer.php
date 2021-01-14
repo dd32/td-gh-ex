@@ -123,5 +123,5 @@ add_action( 'customize_controls_enqueue_scripts', 'adri_customizer_assets' );
  * Generate a link to the Noah Lite info page.
  */
 function adri_get_pro_link() {
-    return 'https://aperturewp.com/downloads/adri/';
+    return 'https://portfolio.thepixeltribe.com/#adri';
 }

@@ -3,7 +3,7 @@
 Contributors: Afrothemes
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.5
-Tested up to: 4.9
+Tested up to: 5.3
 Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -29,10 +29,7 @@ adri includes support for Infinite Scroll in Jetpack.
 
 == Credits ==
 Images used in screenshot:
-License(for all of them): https://pixabay.com/en/service/terms/#usage
-https://pixabay.com/en/dog-animal-canine-pet-portrait-3277414/
-https://pixabay.com/en/guy-motorbike-biker-parked-sitting-3639100/
-https://pixabay.com/en/teddy-bear-stuffed-animal-teddy-3599680/
+License(for all of them):
 
 
 == Changelog ==
