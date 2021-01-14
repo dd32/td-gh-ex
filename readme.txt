@@ -29,14 +29,9 @@ Aperture Portfolio includes support for Infinite Scroll in Jetpack.
 
 == Credits ==
 Images used in screenshot:
-License(for all of them): https://pixabay.com/en/service/terms/#usage
+License(for all of them)
 
-https://pixabay.com/en/squaw-american-indian-1942493/
-https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
-https://pixabay.com/en/oia-santorini-village-greece-416135/
-https://pixabay.com/en/tattoos-adult-body-art-couple-girl-1867535/
-https://pixabay.com/en/water-waterfall-outdoors-adult-3354062/
-https://pixabay.com/en/fitness-couple-model-sport-strong-2498657/
+
 
 
 == Changelog ==
