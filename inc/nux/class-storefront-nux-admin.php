@@ -25,9 +25,9 @@ if ( ! class_exists( 'Storefront_NUX_Admin' ) ) :
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 			/*
-			 * In case the user has installed the Storefront theme without WooCommerce plugin this will detect this scenario and show the admin notice.
+			 * In case the WC Admin inbox is not available, show the admin notice.
 			 */
-			if ( is_callable( array( 'WooCommerce', 'is_wc_admin_active' ) ) && wc()->is_wc_admin_active() ) {
+			if ( $this->is_inbox_available() ) {
 				add_action( 'admin_notices', array( $this, 'admin_inbox_messages' ), 99 );
 			} else {
 				add_action( 'admin_notices', array( $this, 'admin_notices' ), 99 );
@@ -37,6 +37,26 @@ if ( ! class_exists( 'Storefront_NUX_Admin' ) ) :
 			add_action( 'admin_post_storefront_starter_content', array( $this, 'redirect_customizer' ) );
 			add_action( 'init', array( $this, 'log_fresh_site_state' ) );
 			add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
+		}
+
+		/**
+		 * Checks if WC Admin inbox is available. It might not be available if
+		 * WooCommerce is not installed, in old versions of WC or if wc-admin
+		 * has been disabled.
+		 *
+		 * @since 3.3.0
+		 */
+		private function is_inbox_available() {
+			if (
+				function_exists( 'WC' ) &&
+				is_callable( array( WC(), 'is_wc_admin_active' ) ) &&
+				WC()->is_wc_admin_active() &&
+				version_compare( WC_VERSION, '4.8.0', '>=' )
+			) {
+				return true;
+			}
+
+			return false;
 		}
 
 		/**
@@ -158,7 +178,7 @@ if ( ! class_exists( 'Storefront_NUX_Admin' ) ) :
 							<?php endif; ?>
 
 							<input type="submit" name="storefront-guided-tour" class="sf-nux-button" value="<?php esc_attr_e( 'Let\'s go!', 'storefront' ); ?>">
-							<a href="#" class="sf-nux-dismiss-button" ><?php esc_attr_e( 'Skip', 'storefront' ); ?></a>
+							<a href="#" class="sf-nux-dismiss-button" ><?php esc_html_e( 'Skip', 'storefront' ); ?></a>
 						</form>
 					<?php endif; ?>
 				</div>

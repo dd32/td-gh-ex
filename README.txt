@@ -3,7 +3,7 @@ Contributors: automattic, tiagonoronha, jameskoster
 Requires at least: 5.3.4
 Tested up to: 5.6.0
 Stable tag: 3.2.0
-Version: 3.2.0
+Version: 3.3.0
 WC requires at least: 4.2
 WC tested up to: 4.9
 License: GPLv2 or later
@@ -51,9 +51,13 @@ Privacy Policy for the Google Fonts API: https://developers.google.com/fonts/faq
 
 == Changelog ==
 
+= 3.3.0 - 2021-01-14 =
+- Fix – Fatal error in old versions of WooCommerce. [#1583](https://github.com/woocommerce/storefront/pull/1583)
+- Fix - Updated several escape functions. [#1581](https://github.com/woocommerce/storefront/pull/1581)
+
 = 3.2.0 - 2021-01-12 =
-* Fix – Replaced WooCommerce and Star icon usage with FontAwesome. (#1574)[https://github.com/woocommerce/storefront/pull/1574]
-* Fix - Use proper escape function for `datetime` attribute in comments template. (#1576)[https://github.com/woocommerce/storefront/pull/1576]
+* Fix – Replaced WooCommerce and Star icon usage with FontAwesome. [#1574](https://github.com/woocommerce/storefront/pull/1574)
+* Fix - Use proper escape function for `datetime` attribute in comments template. [#1576](https://github.com/woocommerce/storefront/pull/1576)
 
 = 3.1.0 - 2021-01-05 =
 * Fix – Prevent a fatal error on activation if WooCommerce Admin is intentionally disabled.
