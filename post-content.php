@@ -32,8 +32,8 @@
             	<div class="floatleft"><?php previous_post_link('<span class="genericon-previous"></span> %link'); ?></div>
  				<div class="floatright"><?php next_post_link('%link <span class="genericon-next"></span>'); ?></div><br /><br />
              	<?php if ( is_attachment() ): ?>
-            	<div class="floatleft"><?php previous_image_link( false, '<span class="genericon-previous"></span> ' . __('Previous Image', 'selfie') ); ?></div>
-				<div class="floatright"><?php next_image_link( false,  __('Next Image', 'selfie') . ' <span class="genericon-next"></span>' ); ?></div> 
+            	<div class="floatleft"><?php previous_image_link( false, '<span class="genericon-previous"></span> ' . esc_html__('Previous Image', 'selfie') ); ?></div>
+				<div class="floatright"><?php next_image_link( false,  esc_html__('Next Image', 'selfie') . ' <span class="genericon-next"></span>' ); ?></div> 
            		<?php endif; endif; ?>
 			</div>
             <?php endif; ?>

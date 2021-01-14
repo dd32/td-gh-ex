@@ -33,7 +33,7 @@
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
+        <div class="bottom"><img src="<?php echo esc_url(get_template_directory_uri()).'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
         <br /><br /><br />
-        <img width="100%" src="<?php echo get_template_directory_uri() . '/inc/images/themefeatures.png' ?>" alt="<?php _e('D5 Creation Themes', 'selfie'); ?>" />
+        <img width="100%" src="<?php echo esc_url(get_template_directory_uri()) . '/inc/images/themefeatures.png' ?>" alt="<?php _e('D5 Creation Themes', 'selfie'); ?>" />
 </div>

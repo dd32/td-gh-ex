@@ -6,13 +6,13 @@ function selfie_customize_register($wp_customize){
     $wp_customize->add_section('selfie_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('Selfie Options', 'selfie'),
-        'description'   => '<div class="infohead"><span class="donation">'. __('Selfie is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the', 'selfie').' <a href="'. esc_url('https://d5creation.com/theme/selfie/').'" target="_blank"><strong>'. __('Selfie Theme Page', 'selfie').'</strong></a></span></div>'
+		'title'    		=> esc_html__('Selfie Options', 'selfie'),
+        'description'   => '<div class="infohead"><span class="donation">'. esc_html__('Selfie is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the', 'selfie').' <a href="'. esc_url('https://d5creation.com/theme/selfie/').'" target="_blank"><strong>'. esc_html__('Selfie Theme Page', 'selfie').'</strong></a></span></div>'
     ));
 	
 //  Banner Image
     $wp_customize->add_setting('selfie[banner-image]', array(
-        'default'           => get_template_directory_uri() . '/images/banner-image.jpg',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -21,16 +21,16 @@ function selfie_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'banner-image', array(
-        'label'    			=> __('Slide Banner Image', 'selfie'),
+        'label'    			=> esc_html__('Slide Banner Image', 'selfie'),
         'section'  			=> 'selfie_options',
         'settings' 			=> 'selfie[banner-image]',
-		'description'   	=> __('Upload or Input the Image URL Here. Recommended Size: 2000px X 900px','selfie')
+		'description'   	=> esc_html__('Upload or Input the Image URL Here. Recommended Size: 2000px X 900px','selfie')
 		
     )));
 	
 // Contact Number
     $wp_customize->add_setting('selfie[contactnumber]', array(
-        'default'        	=> __('(000) 111-222','selfie'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
@@ -38,14 +38,14 @@ function selfie_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('selfie_contactnumber' , array(
-        'label'      => __('Contact Number', 'selfie'),
+        'label'      => esc_html__('Contact Number', 'selfie'),
         'section'    => 'selfie_options',
         'settings'   => 'selfie[contactnumber]'
     ));
 
 // Heading
     $wp_customize->add_setting('selfie[heading_text1]', array(
-        'default'        	=> __('WordPress is web <em>software you can use to create websites!</em>','selfie'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
@@ -53,14 +53,14 @@ function selfie_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('selfie_heading_text1' , array(
-        'label'      => __('Front Page Heading', 'selfie'),
+        'label'      => esc_html__('Front Page Heading', 'selfie'),
         'section'    => 'selfie_options',
         'settings'   => 'selfie[heading_text1]'
     ));
 	
 // Description
     $wp_customize->add_setting('selfie[heading_des1]', array(
-        'default'        	=> __('It is Amazing!  <em>Over 60 million people</em> have chosen WordPress to power the place on the web','selfie'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
@@ -68,7 +68,7 @@ function selfie_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('selfie_heading_des1' , array(
-        'label'      => __('Front Page Heading Description', 'selfie'),
+        'label'      => esc_html__('Front Page Heading Description', 'selfie'),
         'section'    => 'selfie_options',
         'settings'   => 'selfie[heading_des1]',
 		'type' 		 => 'textarea'
@@ -76,7 +76,7 @@ function selfie_customize_register($wp_customize){
 	
 // Button Link
     $wp_customize->add_setting('selfie[heading_btn1_link]', array(
-        'default'        	=> '#',
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_url_raw',
         'type'           	=> 'option'
@@ -84,7 +84,7 @@ function selfie_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('selfie_heading_btn1_link' , array(
-        'label'      => __('Front Page Heading Button Link', 'selfie'),
+        'label'      => esc_html__('Front Page Heading Button Link', 'selfie'),
         'section'    => 'selfie_options',
         'settings'   => 'selfie[heading_btn1_link]'
     ));
@@ -99,10 +99,10 @@ function selfie_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('selfie_sl' . $selfie_numslinksn, array(
-        'label'      => __('Social Link - ',  'selfie'). $selfie_numslinksn,
+        'label'      => esc_html__('Social Link - ',  'selfie'). $selfie_numslinksn,
         'section'    => 'selfie_options',
         'settings'   => 'selfie[sl' . $selfie_numslinksn .']',
-		'description' => __('Social Page Link. Example: <b>https://facebook.com/d5creation</b>', 'selfie'),
+		'description' => wp_kses_post(__('Social Page Link. Example: <strong>https://facebook.com/d5creation</strong>', 'selfie')),
     ));	
 	}
 

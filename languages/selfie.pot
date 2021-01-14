@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2019-02-06 12:16+0600\n"
+"POT-Creation-Date: 2021-01-14 23:07+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.13\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: front-page.php:19
+#: front-page.php:23
 msgid "Learn More"
 msgstr ""
 
@@ -80,63 +80,63 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:106
 msgid "Theme by:"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:106
 msgid "Powered by:"
 msgstr ""
 
-#: functions.php:120 functions.php:126
+#: functions.php:122 functions.php:128
 msgid "Read More"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:142
 msgid "Edit"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:152
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:153
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:153
+#: functions.php:155
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:165
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:166
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:175
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:184
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:191
+#: functions.php:193
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:200
+#: functions.php:202
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:209
+#: functions.php:211
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:219
+#: functions.php:221
 msgid "Footer Area Four"
 msgstr ""
 
@@ -162,26 +162,12 @@ msgstr ""
 msgid "Upload or Input the Image URL Here. Recommended Size: 2000px X 900px"
 msgstr ""
 
-#: inc/customize.php:33
-msgid "(000) 111-222"
-msgstr ""
-
 #: inc/customize.php:41
 msgid "Contact Number"
 msgstr ""
 
-#: inc/customize.php:48
-msgid "WordPress is web <em>software you can use to create websites!</em>"
-msgstr ""
-
 #: inc/customize.php:56
 msgid "Front Page Heading"
-msgstr ""
-
-#: inc/customize.php:63
-msgid ""
-"It is Amazing!  <em>Over 60 million people</em> have chosen WordPress to "
-"power the place on the web"
 msgstr ""
 
 #: inc/customize.php:71
@@ -197,7 +183,8 @@ msgid "Social Link - "
 msgstr ""
 
 #: inc/customize.php:105
-msgid "Social Page Link. Example: <b>https://facebook.com/d5creation</b>"
+msgid ""
+"Social Page Link. Example: <strong>https://facebook.com/d5creation</strong>"
 msgstr ""
 
 #: inc/theme-about.php:38

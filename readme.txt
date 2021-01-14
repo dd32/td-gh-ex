@@ -3,7 +3,7 @@
 Contributors: D5 Creation
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options
 Requires at least: 4.0
-Tested up to: 5.0.4-alpha
+Tested up to: 5.2.3-alpha
 Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ No, It is for Blogs, Company, Personal Websites
 
 
 == Changelog ==
+
+= 2.1 =
+* Code Cleanup
 
 = 1.9 =
 * readme.txt update

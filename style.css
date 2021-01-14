@@ -7,7 +7,11 @@ Author URI: https://d5creation.com/
 
 Description: Selfie is CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Selfie Theme will be adjusted automatically with all smart devices.  Full Wide Template can be used for showing showcase or other pages. You can Visit the Selfie Demo at http://demo.d5creation.com/themes/?theme=Selfie
 
-Version: 1.9
+Requires at least: 4.9
+Tested up to: 5.6
+Requires PHP: 5.6
+
+Version: 2.1
 
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
 
@@ -144,7 +148,7 @@ img.site-logo,.site-title{width:25%;height:auto;padding:5px 0;float:left; font-s
 
 #top-menu-con #searchform { float: right; margin-top: 3px;  }
 #top-menu-con input#s { padding: 5px 10px; min-width: 100px; border-radius: 5px 0 0 5px; border-color: #DDDDDD; background: #FFFFFF;  transition-duration: 400ms; transition-property: width, background; transition-timing-function: ease;  width: 72px; color: #AAAAAA; }
-#top-menu-con #searchsubmit { background: url("images/search.png") no-repeat scroll center center #09a0e7; border-radius: 0 5px 5px 0; font-size: 14px; font-weight: normal; padding: 5px 20px;  text-indent: -90000px; margin-left: -5px; border: 1px solid #09a0e7; }
+#top-menu-con #searchsubmit { background: url("images/search.png") no-repeat scroll center center #09a0e7; border-radius: 0 5px 5px 0; font-size: 14px; font-weight: normal; padding: 5px 20px;  text-indent: -90000px; margin-left: -5px; border: 1px solid #09a0e7; background-size: auto 85%; }
 
 #top-menu-con input#s:focus { width: 150px; color: #777777; background: #FFFFFF; }
 .connumber { float: right; padding: 5px 10px; font-weight: 500; }

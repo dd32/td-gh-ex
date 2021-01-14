@@ -17,7 +17,7 @@
 	load_theme_textdomain( 'selfie', get_template_directory() . '/languages' );
 
 // 	Theme Menus
-	register_nav_menus( array( 'main-menu' => __('Main Menu', 'selfie'), 'top-menu' => __('Top Menu', 'selfie') ) );
+	register_nav_menus( array( 'main-menu' => esc_html__('Main Menu', 'selfie'), 'top-menu' => esc_html__('Top Menu', 'selfie') ) );
 
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width;
@@ -66,6 +66,8 @@
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'selfie-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_script( 'selfie-html5', get_template_directory_uri().'/js/html5.min.js'); 
+    wp_script_add_data( 'selfie-html5', 'conditional', 'lt IE 9' );	
 	wp_register_style('selfie-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
 	wp_enqueue_style('selfie-gfonts1');
 	wp_register_style('selfie-gfonts2', '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700', false );
@@ -101,7 +103,7 @@
 
 function selfie_creditline () {
 	$selfie_theme_data = wp_get_theme(); $selfie_author_uri = $selfie_theme_data->get( 'AuthorURI' );
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Selfie ' . __('Theme by:', 'selfie') . ' <a href="'. $selfie_author_uri .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'selfie') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Selfie ' . esc_html__('Theme by:', 'selfie') . ' <a href="'. $selfie_author_uri .'" target="_blank"> D5 Creation</a> | ' . esc_html__('Powered by:', 'selfie') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 	
 
@@ -117,13 +119,13 @@ function selfie_creditline () {
 	
 	function selfie_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . __('Read More', 'selfie'). '</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . esc_html__('Read More', 'selfie'). '</a>';
 	}
 	add_filter('excerpt_more', 'selfie_excerpt_more');
 	
 	// Content Type Showing
 	function selfie_content() {
-	if ( is_page() || is_single() ) : the_content('<span class="read-more">' . __('Read More', 'selfie'). '</span>');
+	if ( is_page() || is_single() ) : the_content('<span class="read-more">' . esc_html__('Read More', 'selfie'). '</span>');
 	else: the_excerpt();
 	endif;	
 	}
@@ -137,7 +139,7 @@ function selfie_creditline () {
 	
 // 	Post Meta design
 	function selfie_post_meta() { ?>
-	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(__('Edit', 'selfie'),'<span class="genericon-edit">','</span>' ); ?></span> <span class="post-author genericon-user"> <?php the_author_posts_link(); ?> </span> <span class="post-date genericon-time"><?php the_time('F j, Y'); ?></span>	<span class="post-tag genericon-tag"> <?php the_tags('' , ', '); ?> </span> <span class="post-category genericon-category"> <?php the_category(', '); ?> </span> <span class="post-comments genericon-comment"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;'); ?> </span>
+	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(esc_html__('Edit', 'selfie'),'<span class="genericon-edit">','</span>' ); ?></span> <span class="post-author genericon-user"> <?php the_author_posts_link(); ?> </span> <span class="post-date genericon-time"><?php the_time('F j, Y'); ?></span>	<span class="post-tag genericon-tag"> <?php the_tags('' , ', '); ?> </span> <span class="post-category genericon-category"> <?php the_category(', '); ?> </span> <span class="post-comments genericon-comment"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;'); ?> </span>
 	</div> 
 	
 	<?php
@@ -147,10 +149,10 @@ function selfie_creditline () {
 	function selfie_not_found() { ?>
 	<br /><br />
         <div class="searchinfo">
-        <h1 class="page-title fa-times-circle"><?php __('SORRY, NOT FOUND ANYTHING', 'selfie'); ?></h1>
-		<h3 class="arc-src"><span><?php __('You Can Try Another Search...', 'selfie'); ?></span></h3>
+        <h1 class="page-title fa-times-circle"><?php esc_html__('SORRY, NOT FOUND ANYTHING', 'selfie'); ?></h1>
+		<h3 class="arc-src"><span><?php esc_html__('You Can Try Another Search...', 'selfie'); ?></span></h3>
 		<?php get_search_form(); ?>
-		<p class="backhome"><a href="<?php echo home_url(); ?>" ><?php __('&laquo; Or Return to the Home Page', 'selfie'); ?></a></p>
+		<p class="backhome"><a href="<?php echo esc_url(home_url()); ?>" ><?php esc_html__('&laquo; Or Return to the Home Page', 'selfie'); ?></a></p>
         </div>
         <br />
 	
@@ -160,8 +162,8 @@ function selfie_creditline () {
 // Page Navigation
 	function selfie_page_nav() { ?>	
 	<div id="page-nav">
-			<div class="alignleft"><?php previous_posts_link('<span class="genericon-previous"></span>  ' . __('NEWER ENTRIES', 'selfie') ); ?></div>
-			<div class="alignright"><?php next_posts_link( __('OLDER ENTRIES', 'selfie') .' <span class="genericon-next"></span>'); ?></div>
+			<div class="alignleft"><?php previous_posts_link('<span class="genericon-previous"></span>  ' . esc_html__('NEWER ENTRIES', 'selfie') ); ?></div>
+			<div class="alignright"><?php next_posts_link( esc_html__('OLDER ENTRIES', 'selfie') .' <span class="genericon-next"></span>'); ?></div>
 	</div>
     <?php
 	}
@@ -170,7 +172,7 @@ function selfie_creditline () {
 	function selfie_widgets_init() {
 
 	register_sidebar( array(
-		'name' =>  __('Primary Sidebar', 'selfie'), 
+		'name' =>  esc_html__('Primary Sidebar', 'selfie'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -179,7 +181,7 @@ function selfie_creditline () {
 	) );
 
 	register_sidebar( array(
-		'name' =>  __('Secondary Sidebar', 'selfie'), 
+		'name' =>  esc_html__('Secondary Sidebar', 'selfie'), 
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -188,7 +190,7 @@ function selfie_creditline () {
 	) );
 	 
 	register_sidebar( array(
-		'name' => __('Footer Area One', 'selfie'), 
+		'name' => esc_html__('Footer Area One', 'selfie'), 
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -197,7 +199,7 @@ function selfie_creditline () {
 	) );
 	    
 	register_sidebar( array(
-		'name' =>  __('Footer Area Two', 'selfie'), 
+		'name' =>  esc_html__('Footer Area Two', 'selfie'), 
 		'id' => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -206,7 +208,7 @@ function selfie_creditline () {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Three', 'selfie'), 
+		'name' => esc_html__('Footer Area Three', 'selfie'), 
 		'id' => 'sidebar-5',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -216,7 +218,7 @@ function selfie_creditline () {
 	
 	
 	register_sidebar( array(
-		'name' => __('Footer Area Four', 'selfie'), 
+		'name' => esc_html__('Footer Area Four', 'selfie'), 
 		'id' => 'sidebar-6',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",

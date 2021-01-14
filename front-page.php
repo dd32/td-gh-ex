@@ -8,18 +8,24 @@
 */
 get_header(); ?>
 <div class="clear"></div>
-<div class="bannerimage"><img src="<?php echo esc_url(selfie_get_option('banner-image', get_template_directory_uri() . '/images/banner-image.jpg')); ?>" /></div>
-<div class="clear"></div>
+<?php 
+$sldimg = selfie_get_option('banner-image', '');
+if($sldimg): ?>
+	<div class="bannerimage"><img src="<?php echo esc_url($sldimg); ?>" /></div>
+	<div class="clear"></div>
+<?php endif; 
+$headingbox = '';
+$headtext = selfie_get_option('heading_text1', ''); 
+if($headtext) $headingbox .= '<h1 id="heading1">'.wp_kses_post($headtext).'</h1>';
+$headdes = selfie_get_option('heading_des1', '');
+if($headdes) $headingbox .= '<p class="heading-desc1">'.wp_kses_post($headdes).'</p>';
+$headlink = selfie_get_option( 'heading_btn1_link', '' );
+if($headlink) $headingbox .= '<div class="vcenter"><a target="-blank" href="'.esc_url($headlink).'"><button>'.esc_html__('Learn More', 'selfie' ).'</button></a></div>';
 
-<div id="heading1-box-item" class="heading1container" >
-	<div class="heading1vcenter">
-		<h1 id="heading1"><?php echo html_entity_decode(esc_textarea(selfie_get_option('heading_text1', 'WordPress is web <em>software you can use to create websites!</em> '))); ?></h1>
-		<p class="heading-desc1"><?php echo html_entity_decode(esc_textarea(selfie_get_option('heading_des1', 'It is Amazing! <em>Over 60 million people</em> have chosen WordPress to power the place on the web.'))); ?></p>
-		<?php if ( esc_url(selfie_get_option( 'heading_btn1_link', '#' )) != '' ): 
-echo '<div class="vcenter"><a target="-blank" href="'.esc_url(selfie_get_option( 'heading_btn1_link', '#' )).'"><button>'.__('Learn More', 'selfie' ).'</button></a></div>';
-		endif; ?>
-	</div>
-</div>
+if($headingbox) echo '<div id="heading1-box-item" class="heading1container" ><div class="heading1vcenter">'.$headingbox.'</div></div>';
+
+?>
+
 
 <?php if ( 'posts' == get_option( 'show_on_front' ) ): ?>
 <div id="fpblog-box-item" class="box100 bqpcontainer" >
