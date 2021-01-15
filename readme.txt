@@ -52,6 +52,16 @@ Best Construction is distributed under the terms of the GNU General Public Licen
      Source:  http://opensource.org/licenses/gpl-2.0.php  
 
 
+    default.jpg, Copyright Pxhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/1087241 
+
+
+    screenshot.jpg, Copyright Pxhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/513138
+
+
 === Frequently Asked Questions ===
 
 Does this theme have a support forum? 
@@ -60,6 +70,9 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/best-c
 
 
 === Changelog ===
+=version 1.1 20210115=
+*update images
+
 =version 1.0.9 20210103=
 *fix news problem
 *Compatible with wordpress to version 5.6.0
