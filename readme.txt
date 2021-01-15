@@ -93,6 +93,21 @@ tgm-plugin
     http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  
 
+Images used are released under the CC0 license
+
+1. https://pxhere.com/en/photo/918292   
+
+2. https://pxhere.com/en/photo/137824 
+
+3. https://pxhere.com/en/photo/514914
+
+4. https://pxhere.com/en/photo/1435193
+
+5. https://pxhere.com/en/photo/647251 
+
+6. https://pxhere.com/en/photo/99158
+
+
 == Installation ==
 
 1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Click Add New button. Click Upload Theme button,  select theme .zip file, click on Install now button. If you have any errors, use alternate method.
@@ -103,6 +118,9 @@ content/themes/Ascreen/index.php (for example).
 3. Log into your WP admin panel and go to Appearance -> Themes. Now move your mouse over the Ascreen theme to activate  it.
 
 == Changelog ==
+Version 1.4.5  2021.1.15
+*update images
+
 Version 1.4.4  2020.12.30
 *fix link problem
 *Compatible with wordpress to version 5.6.0
