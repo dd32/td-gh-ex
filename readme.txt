@@ -3,7 +3,7 @@ Contributors: CooThemes
 Tags: two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, theme-options, translation-ready, blog, portfolio 
 
 Requires at least: 4.0
-Tested up to: 4.9
+Tested up to: 5.6
 Stable tag: 1.1.8
 
 Author URI:  https://www.coothemes.com/
@@ -40,6 +40,27 @@ Akaka is distributed under the terms of the GNU General Public License v2
      License: MIT license
      Source:  https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
+    banner1.jpg, Copyright xhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/1446741     
+
+    banner2.jpg, Copyright Pxhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/815651        
+
+    banner3.jpg, Copyright Pxhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/1430841        
+
+    post-bg.jpg, Copyright Pxhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/1453491
+
+    default-thumbnail.jpg, Copyright Pxhere.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pxhere.com/en/photo/815651     
+
+
 
 === Installation ===
 
@@ -60,6 +81,9 @@ Theta provides support at https://www.coothemes.com/forum/akaka-theme.
 
 
 === Changelog ===
+version 1.0.7 20210115
+* update images
+
 version 1.0.6 20201230
 * Compatible with wordpress to version 5.6.0
 
