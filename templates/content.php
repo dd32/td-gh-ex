@@ -88,5 +88,5 @@ if ( weaverx_is_checked_page_opt( '_pp_pwp_compact_posts' )
 </article><!-- /#post-<?php the_ID(); ?> -->
 
 <?php
-// need the trailing clear:both instead of clarfix on the article to make outside FIs work right
+// need the trailing clear:both instead of clearfix on the article to make outside FIs work right
 

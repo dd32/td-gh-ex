@@ -19,47 +19,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! isset( $GLOBALS['weaverx_page_who'] ) ) {
 	$GLOBALS['weaverx_page_who'] = 'unknown';
 }
+
 do_action( 'weaverx_alt_theme', $GLOBALS['weaverx_page_who'] );
 
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
-	<?php
+<meta charset="<?php bloginfo( 'charset' ); ?>"/>
+<?php
 	/* set viewport, use full horizontal size on iPad */
-	echo "<meta name='viewport' content='width=device-width,initial-scale=1.0' />\n";
-	?>
+echo "<meta name='viewport' content='width=device-width,initial-scale=1.0' />\n";
+?>
+<link rel="profile" href="//gmpg.org/xfn/11"/>
+<link rel="pingback" href="<?php esc_url( get_bloginfo( 'pingback_url' ) ); ?>"/>
 
-	<link rel="profile" href="//gmpg.org/xfn/11"/>
-	<link rel="pingback" href="<?php esc_url( get_bloginfo( 'pingback_url' ) ); ?>"/>
+<?php // V4.4: drop support for IE8 and IE9
 
-	<?php // V4.4: drop support for IE8 and IE9
+do_action( 'weaverx_load_fonts' );        // load google fonts
 
-	do_action( 'weaverx_load_fonts' );        // load google fonts
+// ++++ FAVICON - only if option has been set ++++
+$icon = weaverx_getopt( '_favicon_url' );
+if ( $icon != '' ) {
+	$url = esc_url( apply_filters( 'weaverx_css', parse_url( $icon, PHP_URL_PATH ) ) );
+	echo "<link rel=\"shortcut icon\"  href=\"$url\" />\n";
+}
 
-	// ++++ FAVICON - only if option has been set ++++
-	$icon = weaverx_getopt( '_favicon_url' );
-	if ( $icon != '' ) {
-		$url = esc_url( apply_filters( 'weaverx_css', parse_url( $icon, PHP_URL_PATH ) ) );
-		echo "<link rel=\"shortcut icon\"  href=\"$url\" />\n";
-	}
+do_action( 'weaverxplus_action', 'head' ); // stuff like other style files...
 
-	do_action( 'weaverxplus_action', 'head' ); // stuff like other style files...
-
-	wp_head();
-	?>
+wp_head();
+?>
 </head>
 <!-- **** body **** -->
 <body <?php body_class();
 echo weaverx_schema( 'body' ); ?>>
 <?php wp_body_open();       // Since WP 5.2 ?>
-<a href="#page-bottom" id="page-top">&darr;</a> <!-- add custom CSS to use this page-bottom link -->
-<div id="wvrx-page-width">&nbsp;</div>
-<!--googleoff: all-->
-<noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
-		<?php esc_html_e( 'JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/ ); ?></p></noscript>
-<!--googleon: all--><!-- displayed only if JavaScript disabled -->
+	<a href="#page-bottom" id="page-top">&darr;</a> <!-- add custom CSS to use this page-bottom link -->
+	<div id="wvrx-page-width">&nbsp;</div>
+	<!--googleoff: all-->
+	<noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
+			<?php esc_html_e( 'JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/ ); ?></p></noscript>
+	<!--googleon: all--><!-- displayed only if JavaScript disabled -->
 <?php
 do_action( 'weaverxplus_action', 'body_top' ); // mostly for the loading screen
 
@@ -367,8 +367,7 @@ function weaverx_header_image() {
 		}
 	}
 
-	if ( weaverx_getopt( 'link_site_image' ) )
-	{ // need to close <a> tag?
+	if ( weaverx_getopt( 'link_site_image' ) ) { // need to close <a> tag?
 		?>
 		</a> <?php
 	}
@@ -451,9 +450,9 @@ function weaverx_logo_and_title() {
 	$tagline = apply_filters( 'weaverx_tagline', esc_html( get_bloginfo( 'description' ) ) );
 
 	echo '<h2 id="site-tagline" class="' . $hide_tag . '"><span ' . weaverx_title_class( 'tagline' ) .
-	          '>' . $tagline . '</span></h2>';
+	     '>' . $tagline . '</span></h2>';
 
-	 if ( $logo ) { ?>
+	if ( $logo ) { ?>
 		<div id="site-logo" class="site-logo <?php echo esc_attr( $hide_logo ); ?>"><?php echo do_shortcode( $logo ); ?></div>
 	<?php }
 

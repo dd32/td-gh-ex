@@ -250,13 +250,15 @@ function weaverx_set_cur_page_id( $id ) {
 	$weaverx_cur_page_ID = $id;
 }
 
+function weaverx_is_archive() {
+	return ( $GLOBALS['weaverx_wooshop'] != 0 ) ? false : is_archive() ;
+}
 
 function weaverx_get_per_page_value( $name ) {
 
 	if ( ! ( $id = weaverx_get_cur_page_id() ) ) {
 		return false;
 	}
-
 	return get_post_meta( $id, $name, true );
 }
 
@@ -990,7 +992,7 @@ function weaverx_get_first_post_image( $content = '' ) {
 	if ( has_post_thumbnail() ) {
 		$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 
-		return '<img class="format-image-img" src="' . esc_url( $img[0] ) . '" "alt="post image" />';
+		return '<img class="format-image-img" src="' . esc_url( $img[0] ) . '" alt="post image" />';
 	}
 
 	if ( $content == '' ) {

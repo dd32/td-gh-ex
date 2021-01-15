@@ -8,15 +8,6 @@ if ( ! function_exists( 'weaverx_generate_wphead' ) ) {    /* Allow child to ove
 	function weaverx_generate_wphead() {
 		/* this guy does ALL the work for generating theme look - it writes out the over-rides to the standard style.css */
 
-		global $post;
-
-		if ( is_object( $post ) ) {
-			weaverx_set_cur_page_id( get_the_ID() );
-		}    // we're on a page now, so set the post id for the rest of the session
-		else {
-			weaverx_set_cur_page_id( 0 );
-		}    // no page
-
 		printf( "<!-- %s %s ( %s ) %s --> ", WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt( 'style_version' ), weaverx_getopt( 'themename' ) );
 
 		do_action( 'weaverx_ts_show_version' );

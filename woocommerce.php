@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $body_classes = get_body_class();
 $archive = ! in_array( 'single-product', $body_classes );
 
-$sb_layout = weaverx_page_lead( 'single', $archive );
+$sb_layout = weaverx_page_lead( 'single' );
 
 // and next the content area.
 weaverx_sb_precontent( 'page' );
@@ -19,6 +19,25 @@ weaverx_sb_precontent( 'page' );
 echo "\n<!-- Weaver Woocommerce page -->\n";
 if ( function_exists( 'woocommerce_content' ) ) {
 	woocommerce_content();
+	if ( $GLOBALS['weaverx_wooshop'] != 0 ) {
+		if ( is_shop()) {
+			$before = '<span class="edit-link">';
+			$after = '</span>';
+			$link_label = esc_html__( 'Edit', 'weaver-xtreme' );
+			$id = 0;
+
+			if ( ! $post = get_post( $id ) ) {
+				return;
+			}
+
+			if ( ! $url = get_edit_post_link( $GLOBALS['weaverx_wooshop'] ) ) {
+				return;
+			}
+
+			$link = '<a class="post-edit-link" href="' . $url . '" title="Shop">' . $link_label . '</a>';
+			echo  $before . $link . $after;
+		}
+	}
 } else {
 	while ( have_posts() ) {
 		weaverx_post_count_clear();
@@ -28,6 +47,7 @@ if ( function_exists( 'woocommerce_content' ) ) {
 
 		comments_template( '', true );
 	}
+	weaverx_edit_link();
 }
 
 weaverx_sb_postcontent( 'page' );

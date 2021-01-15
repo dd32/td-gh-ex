@@ -426,15 +426,14 @@ function weaverx_menu_class( $who, $no_hide = false ) {
 
 
 // >>>>> weaverx_page_lead <<<<<
-function weaverx_page_lead( $who, $archive = false ) {
+function weaverx_page_lead( $who ) {
 	// common lead in for all pages with infobar and top widget area
 
 	$GLOBALS['weaverx_page_who'] = $who;
-	$GLOBALS['weaverx_page_is_archive'] = $archive;
 
 	get_header( $who );
 
-	if ( $archive ) {
+	if ( weaverx_is_archive() ) {
 		$sb_layout = weaverx_sb_layout_archive( $who );
 	} else {
 		$sb_layout = weaverx_sb_layout( $who );
@@ -753,7 +752,7 @@ function weaverx_put_widgetarea( $area_name, $class = '', $area_class_name = '' 
 
 	$area = apply_filters( 'weaverx_replace_widget_area', $area_name );
 
-	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && ! $GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt( '_pp_' . $area_name ) ) {
+	if ( ! weaverx_is_archive() && weaverx_is_checked_page_opt( '_pp_' . $area_name ) ) {
 		return;
 	}        // hide area option checked
 
@@ -997,7 +996,7 @@ function weaverx_has_widgetarea( $area_name ) {
 
 	$area = apply_filters( 'weaverx_replace_widget_area', $area_name );
 
-	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && ! $GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt( '_pp_' . $area_name ) ) {
+	if ( ! weaverx_is_archive() && weaverx_is_checked_page_opt( '_pp_' . $area_name ) ) {
 		return false;        // hide area option checked
 	}
 

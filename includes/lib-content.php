@@ -1054,7 +1054,7 @@ function weaverx_use_excerpt() {
 	if ( is_search() ) {
 		return ! weaverx_getopt_checked( 'fullpost_search' );
 	}
-	if ( is_archive() ) {
+	if ( weaverx_is_archive() ) {
 		return ! weaverx_getopt_checked( 'fullpost_archive' );
 	}
 

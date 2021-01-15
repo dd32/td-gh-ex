@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 weaverx_set_cur_page_id( 0 );    // no page for this type
 
-$sb_layout = weaverx_page_lead( 'category', true );
+$sb_layout = weaverx_page_lead( 'category' );
 
 // and next the content area.
 weaverx_sb_precontent( 'category' );

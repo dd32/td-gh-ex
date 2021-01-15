@@ -151,7 +151,7 @@ function weaverx_get_theme_mod( $name, $theme ) {
  *
  */
 function weaverx_set_theme_mod( $name, $value, $theme ) {
-	$mods      = weaverx_get_theme_mods( $theme );
+	$mods = weaverx_get_theme_mods( $theme );
 	$old_value = isset( $mods[ $name ] ) ? $mods[ $name ] : false;
 
 	/**
@@ -176,9 +176,9 @@ function weaverx_page_menu( $args = array() ) {
 
 	// this is the callback for the default menu
 
-	$defaults  = array( 'sort_column' => 'menu_order, post_title', 'menu_class' => 'wvrx-menu', 'echo' => true, 'link_before' => '', 'link_after' => '' );
-	$args      = wp_parse_args( $args, $defaults );
-	$menu      = '';
+	$defaults = array( 'sort_column' => 'menu_order, post_title', 'menu_class' => 'wvrx-menu', 'echo' => true, 'link_before' => '', 'link_after' => '' );
+	$args = wp_parse_args( $args, $defaults );
+	$menu = '';
 	$list_args = $args;
 	if ( weaverx_getopt( 'menu_nohome' ) ) {
 		$args['show_home'] = false;
@@ -187,7 +187,7 @@ function weaverx_page_menu( $args = array() ) {
 	}
 
 	// look for pages to hide from menu
-	$ex_list    = '';
+	$ex_list = '';
 	$hide_pages = get_pages( array( 'hierarchical' => 0, 'meta_key' => '_pp_hide_on_menu' ) );  // get list of excluded pages
 	if ( ! empty( $hide_pages ) ) {
 		foreach ( $hide_pages as $page ) {
@@ -206,7 +206,7 @@ function weaverx_page_menu( $args = array() ) {
 
 	// Show Home in the menu
 	if ( $args['show_home'] ) {
-		$text  = esc_html__( 'Home', 'weaver-xtreme' );
+		$text = esc_html__( 'Home', 'weaver-xtreme' );
 		$class = 'class="default-home-menu-item"';
 		if ( is_home() || is_front_page() ) {
 			$class = 'class="default-home-menu-item current_page_item"';
@@ -225,7 +225,7 @@ function weaverx_page_menu( $args = array() ) {
 		}
 	}
 
-	$list_args['echo']     = false;
+	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
 
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages( $list_args ) );
@@ -245,11 +245,11 @@ function weaverx_page_menu( $args = array() ) {
 		$classt .= weaverx_get_bold_italic( 'site_title', 'bold' );
 		$classt .= weaverx_get_bold_italic( 'site_title', 'italic' );
 
-		$site_title = '<span class="' . $classt . '"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__('Site Home', 'weaver-xtreme') . '">' . get_bloginfo( 'name' ) . '</a></span>';
+		$site_title = '<span class="' . $classt . '"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__( 'Site Home', 'weaver-xtreme' ) . '">' . get_bloginfo( 'name' ) . '</a></span>';
 	}
 
 
-	$left  = weaverx_getopt( 'm_primary_html_left' );
+	$left = weaverx_getopt( 'm_primary_html_left' );
 	$right = weaverx_getopt( 'm_primary_html_right' );
 
 	$logo = '';
@@ -259,9 +259,9 @@ function weaverx_page_menu( $args = array() ) {
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
-				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__('Site Home', 'weaver-xtreme') . '"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__( 'Site Home', 'weaver-xtreme' ) . '"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );
 			} else {
-				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="' . esc_attr__('logo', 'weaver-xtreme') . '"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="' . esc_attr__( 'logo', 'weaver-xtreme' ) . '"/></span>', $custom_logo_url );    // +since: 3.1.10: add alt=
 			}
 		}
 	}
@@ -292,11 +292,11 @@ function weaverx_page_menu( $args = array() ) {
 	}
 
 	if ( $right ) {
-		$hide  = weaverx_getopt( 'm_primary_hide_right' );
+		$hide = weaverx_getopt( 'm_primary_hide_right' );
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '">' . do_shortcode( $right ) . '</span>';
 	}
 	if ( ! $right && is_customize_preview() ) {
-		$hide  = weaverx_getopt( 'm_primary_hide_right' );
+		$hide = weaverx_getopt( 'm_primary_hide_right' );
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
@@ -317,6 +317,7 @@ function weaverx_page_menu( $args = array() ) {
 
 	if ( $args['echo'] ) {
 		echo $menu;
+
 		return '';
 	} else {
 		return $menu;
@@ -396,7 +397,7 @@ function weaverx_body_classes( $classes ) {
 //        $classes[] = 'wvr-wp-customizer';
 //    }
 
-	$pwp       = in_array( 'page-template-paget-posts-php', $classes );
+	$pwp = in_array( 'page-template-paget-posts-php', $classes );
 	$has_posts = false;
 
 	if ( $pwp ) {                // page with posts - add stuff like blog
@@ -433,8 +434,8 @@ function weaverx_body_classes( $classes ) {
 		$classes[] = "wvrx-wide-{$wide}";
 	}
 
-	if ( isset( $GLOBALS['weaverx_page_who'] ) && isset( $GLOBALS['weaverx_page_is_archive'] ) ) { // Changed: 3.1.10 - check if archive is set
-		if ( $GLOBALS['weaverx_page_is_archive'] ) {
+	if ( isset( $GLOBALS['weaverx_page_who'] ) ) { // Changed: 4.4 - check if archive is set
+		if ( weaverx_is_archive() ) {
 			$sb_layout = weaverx_sb_layout_archive( $GLOBALS['weaverx_page_who'] );
 			if ( $GLOBALS['weaverx_page_who'] != '404' ) {
 				$has_posts = true;
@@ -443,9 +444,9 @@ function weaverx_body_classes( $classes ) {
 			$sb_layout = weaverx_sb_layout( $GLOBALS['weaverx_page_who'] );
 		}
 
-		$classes[]                    = 'weaverx-page-' . $GLOBALS['weaverx_page_who'];
+		$classes[] = 'weaverx-page-' . $GLOBALS['weaverx_page_who'];
 		$GLOBALS['weaverx_sb_layout'] = $sb_layout;
-		$classes[]                    = 'weaverx-sb-' . $sb_layout;
+		$classes[] = 'weaverx-sb-' . $sb_layout;
 		if ( $sb_layout != 'one-column' ) {
 			$classes[] = 'weaverx-has-sb';
 		}
@@ -464,9 +465,9 @@ function weaverx_body_classes( $classes ) {
 add_filter( 'comment_form_defaults', 'weaverx_comment_form_defaults', 10, 1 );
 
 function weaverx_comment_form_defaults( $defaults ) {       // filter definition
-	$defaults['title_reply']       = apply_filters( 'weaverx_leave_reply_form', $defaults['title_reply'] );
+	$defaults['title_reply'] = apply_filters( 'weaverx_leave_reply_form', $defaults['title_reply'] );
 	$defaults['cancel_reply_link'] = apply_filters( 'weaverx_cancel_reply_form', $defaults['cancel_reply_link'] );
-	$defaults['label_submit']      = apply_filters( 'weaverx_post_comment_form', $defaults['label_submit'] );
+	$defaults['label_submit'] = apply_filters( 'weaverx_post_comment_form', $defaults['label_submit'] );
 
 	return $defaults;
 }
@@ -527,15 +528,15 @@ if ( ! function_exists( 'weaverx_video_controls' ) ) :
 
 		// modify the video parameters
 
-		$settings['l10n']['play']  = '<span class="screen-reader-text">' . esc_html__( 'Play background video', 'weaver-xtreme' ) . '</span>';
+		$settings['l10n']['play'] = '<span class="screen-reader-text">' . esc_html__( 'Play background video', 'weaver-xtreme' ) . '</span>';
 		$settings['l10n']['pause'] = '<span class="screen-reader-text">' . esc_html__( 'Pause background video', 'weaver-xtreme' ) . '</span>';
 
 		$ratio = weaverx_get_per_page_value( '_pp_video_aspect' );
 		if ( ! $ratio ) {
 			$ratio = weaverx_getopt_default( 'header_video_aspect', '16:9' );
 		}
-		$ratio              = explode( ':', $ratio );
-		$settings['width']  = $ratio[0];
+		$ratio = explode( ':', $ratio );
+		$settings['width'] = $ratio[0];
 		$settings['height'] = $ratio[1];
 
 		$settings['minWidth'] = 800;
@@ -642,7 +643,7 @@ function weaverx_enqueue_gutenberg_block_editor_assets() {
 
 	$css_path = trailingslashit( $updir['baseurl'] ) . WEAVERX_SUBTHEMES_DIR . '/block-editor-style-wvrx.css';
 
-	if (  weaverx_f_exists( $css_file ) ) {  // add dynamically generated editor CSS if the file exists
+	if ( weaverx_f_exists( $css_file ) ) {  // add dynamically generated editor CSS if the file exists
 		$css_path = str_replace( array( 'http:', 'https:' ), '', $css_path );       // strip the http: if there, just use the //
 		wp_enqueue_style( 'weaverx_gutenberg_wvrx_style', $css_path, array(), WEAVERX_VERSION );   // fixup CSS for current theme settings
 	}
@@ -677,10 +678,10 @@ function weaverx_replace_widget_area_filter( $area_name ) {
 
 		if ( ! is_active_sidebar( $replace ) ) {
 			?>
-			<h3><?php echo esc_html__( 'Notice: Widget Area Not Found:', 'weaver-xtreme'); ?> <em><?php echo $replace; ?></em></h3>
+			<h3><?php echo esc_html__( 'Notice: Widget Area Not Found:', 'weaver-xtreme' ); ?> <em><?php echo $replace; ?></em></h3>
 			<p><?php echo weaverx_filter_text( __( 'You probably have not defined it as a Per Page Widget area at the bottom of the Weaver Xtreme
         <em>Main Options &rarr; Sidebars &amp; Layout</em> tab, or you may need to add
-        widgets to the area.', 'weaver-xtreme') ); ?></p>
+        widgets to the area.', 'weaver-xtreme' ) ); ?></p>
 			<?php
 			return $area_name;
 		}
@@ -779,10 +780,10 @@ function weaverx_replace_pb_area_filter( $area ) {
 	}
 
 	$before = '';
-	$after  = '';
+	$after = '';
 	if ( $area == 'header' ) {
 		$before = '<header id="branding" ' . weaverx_schema( 'branding' ) . ' class=" ' . $area . '">';
-		$after  = "</header> <!-- /#branding -->\n";
+		$after = "</header> <!-- /#branding -->\n";
 	}
 
 	switch ( $area ) {

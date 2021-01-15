@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 $GLOBALS['weaverx_page_who'] = 'pwp';
-$GLOBALS['weaverx_page_is_archive'] = false;    // need these for body class
 get_header( 'pwp' );
 
 // build infobar front part - replace get_template_part('infobar'); with local code

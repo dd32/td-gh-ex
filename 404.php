@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 weaverx_set_cur_page_id( 0 );    // no page for this type
 
-$sb_layout = weaverx_page_lead( '404', true );
+$sb_layout = weaverx_page_lead( '404' );
 
 weaverx_sb_precontent( '404' );
 

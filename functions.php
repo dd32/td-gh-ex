@@ -54,6 +54,7 @@ if ( ! function_exists( 'weaverx_setup' ) ) :
 			$GLOBALS['content_width'] = ( int ) ( WEAVERX_THEME_WIDTH * .75 );
 		}
 
+		$GLOBALS['weaverx_wooshop'] = 0;
 		/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
@@ -496,6 +497,8 @@ add_action( 'wp_enqueue_scripts', 'weaverx_enqueue_scripts_action', 8 );    // e
  */
 function weaverx_enqueue_scripts_action() {    // action definition
 
+	// we now know the page id so, set it up
+
 	//weaverx_enqueue_styles();	// add the styles
 
 	// need to know the page template for some conditional script inclusion
@@ -531,6 +534,14 @@ function weaverx_enqueue_scripts_action() {    // action definition
 	if ( ! weaverx_get_cur_page_id() && is_object( $post ) ) {
 		weaverx_set_cur_page_id( get_the_ID() );
 	}            // this must go before weaverx_get_video_render() call
+
+	$GLOBALS['weaverx_wooshop'] = 0;
+	if ( weaverx_is_archive() ) {
+		if ( function_exists( 'is_shop' ) ) {
+			$GLOBALS['weaverx_wooshop'] = wc_get_page_id( 'shop' );
+			weaverx_set_cur_page_id( $GLOBALS['weaverx_wooshop'] );
+		}
+	}
 
 	$primary_move = weaverx_getopt( 'm_primary_move') ? '1' : '0';
 	$secondary_move = weaverx_getopt( 'm_secondary_move') ? '1' : '0';

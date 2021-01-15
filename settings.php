@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /* Version Information */
 
-define( 'WEAVERX_VERSION', '4.4.3' );
+define( 'WEAVERX_VERSION', '4.4.4' );
 define( 'WEAVERX_THEMENAME', 'Weaver Xtreme' ); // do not change in child theme!
 
 define( 'WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION );
