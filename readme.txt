@@ -2,10 +2,10 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.3
-Version: 1.0.3
+Stable tag: 1.0.30
+Version: 1.0.30
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
@@ -18,7 +18,7 @@ Avril is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Avril is a fast and lightweight, multi-purpose WordPress theme. Enjoy Ken Burns effect, background elements, & smooth animations. Build amazing website with Avril. 
+Avril is flexible, super fast, easily customizable, lightweight, modern multipurpose theme. Avril comes with everything you could ever need to build an amazing website, and It's perfect for any type of business. View the demo of Avril Pro https://www.nayrathemes.com/demo/pro/?theme=avril
 
 
 == Installation ==
@@ -77,7 +77,7 @@ Source: https://github.com/cristian-ungureanu/customizer-repeater
 8) Screenshot Images
 =================================================================================================
 Screenshot Images
-URL: https://pxhere.com/en/photo/893400
+URL: https://pxhere.com/en/photo/1573331
 Source: https://pxhere.com
 License: Creative Commons Zero(https://pxhere.com/en/license)
 
@@ -94,6 +94,91 @@ Info Hover, Smile, Shadow & All other Images have been used in images folder, Cr
 
 
 == Changelog ==
+
+@version 1.0.30
+* Mobile Menu Loading Issue Fixed
+
+@version 1.0.29
+* Customizer Style Improvement
+
+@version 1.0.28
+* Fixed Console Error in Admin Dashboard
+
+@version 1.0.27
+* Customizer Section Navigation Functionality Improved
+
+@version 1.0.26
+* Removed Unused Style
+
+@version 1.0.25
+* Removed Unused Styles
+
+@version 1.0.24
+* Tested With WordPress 5.6
+
+@version 1.0.23
+* Style Improvement
+
+@version 1.0.22
+* Removed Unused Styles
+
+@version 1.0.21
+* Fixed Style Issue
+
+@version 1.0.20
+* Fixed Blog Meta Style Issue
+
+@version 1.0.19
+* Style Improvement
+* Button Hover Effect Added
+
+@version 1.0.18
+* Code Improvement in avril-premium.php
+
+@version 1.0.17
+* Code Improvement in Search Page
+
+@version 1.0.16
+* Removed Unused Style
+
+@version 1.0.15
+* Code Improvement
+
+@version 1.0.14
+* Screenshot Updated
+
+@version 1.0.13
+* Functionality Improvement
+
+@version 1.0.12
+* Tested With WordPress 5.5.3
+
+@version 1.0.11
+* Removed Unused Styles
+
+@version 1.0.10
+* Removed Unused Styles
+
+@version 1.0.9
+* Removed Unused Styles
+
+@version 1.0.8
+* Theme Description Updated
+
+@version 1.0.7
+* Removed Unused Styles
+
+@version 1.0.6
+* Theme Description Updated
+* Footer Credit Link Added
+
+@version 1.0.5
+* Screenshot Updated
+* Upsale Button Added
+* Theme & Author URI Added
+
+@version 1.0.4
+* Getting Start Notice Added
 
 @version 1.0.3
 * Initial release

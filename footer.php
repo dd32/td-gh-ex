@@ -21,7 +21,7 @@
 										$avril_copyright_allowed_tags = array(
 											'[current_year]' => date_i18n('Y'),
 											'[site_title]'   => get_bloginfo('name'),
-											'[theme_author]' => sprintf(__('<a href="#">Avril WordPress Theme</a>', 'avril')),
+											'[theme_author]' => sprintf(__('<a href="https://www.nayrathemes.com/avril-free/" target="_blank">Avril WordPress Theme</a>', 'avril')),
 										);	
 										echo apply_filters('avril_footer_copyright', wp_kses_post(avril_str_replace_assoc($avril_copyright_allowed_tags, $copyright_content)));
 									?>

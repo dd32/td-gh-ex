@@ -105,6 +105,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
     	array(
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'avril_sanitize_html',
+			'transport'         => $selective_refresh,
 			'priority' => 5,
 		)
 	);	
