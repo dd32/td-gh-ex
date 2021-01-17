@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free support on our <a href="https://siteorigin.com/thread/">forum</a> (https://siteorigin.com/thread/).
-Version: 1.15.6
+Version: 1.15.7
 Tested up to: 5.6
 Requires at least: 4.7
 Requires PHP: 5.6.20
@@ -2518,16 +2518,26 @@ html[xmlns] .slides {
   position: relative;
   zoom: 1;
 }
-.flexslider .caption-wrap {
+.flexslider .flex-caption {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-decoration: none;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.25em;
+  color: #FFF;
   text-align: center;
 }
-.flexslider .caption-wrap .caption {
-  line-height: normal;
-  padding: 8px 14px 9px;
+.flexslider .flex-caption h3 {
+  color: inherit;
+  margin: 0;
+  line-height: 1.25em;
+  font-size: 15px;
 }
 .flexslider .slides > li .content img {
   height: auto !important;
