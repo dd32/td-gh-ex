@@ -12,7 +12,7 @@ Description: Redesign is a transparent theme suitable for creative use of backgr
 - Custom background, and custom background colors.
 - Widget areas in index header, cards, sidebars and footer.
 - Responsive. Easy to read from desktops, tablets and smartphones.
-Redesign WordPress theme, Copyright (C) 2020 Robert Toth
+Redesign WordPress theme, Copyright (C) 2021 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
 Resource All graphic objects, example: img/logo.png.
 Resource Images: brifhe.jpg - the front cover image from Good Free Photos, public domain photos (included in img folder). Link to their website: https://www.goodfreephotos.com/ The logo (aslo included) is designed by the author, free to use under GNU license.
@@ -20,7 +20,7 @@ Resource Fonts: Raleway, by The League of Movable Type, under SIL Open Font Lice
 
 Author: Robert Toth
 Author URI: https://toth-illustration.com
-Version: 1.4.3
+Version: 1.4.4
 Requires at least: 4.5
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -376,6 +376,15 @@ body{
 	color: #777;
 	font-size: 16px;
     line-height:180%; 
+	
+	/* Break word */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
 }
 
 #header{
