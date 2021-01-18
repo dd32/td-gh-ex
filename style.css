@@ -4,7 +4,7 @@ Theme URI: http://demo.mywebapp.in/astral/
 Author: wpmwa
 Author URI: http://mywebapp.in/
 Description: Astral is a free version  WordPress theme. It is a multi-purpose theme for blog, Education, News, Entertainment etc. You can create a beautiful homepage contain slider, callout, services, blogs, contact section. Support easy to use customization theme options. Astral theme also support Elementor plugin and contact form 7 plugin. Theme contains custom template page full width and page with left sidebar. Demo link - http://demo.mywebapp.in/astral/
-Version: 3.2
+Version: 3.3
 Tested up to: 5.4.2
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -24,7 +24,6 @@ Text Domain: astral
     src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'),
     url('../astral/font-family/playfair-display-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../astral/font-family/playfair-display-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../astral/font-family/playfair-display-v14-latin-regular.woff') format('woff'), /* Modern Browsers */ url('../astral/font-family/playfair-display-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../astral/font-family/playfair-display-v14-latin-regular.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
 }
-
 
 .navbar {
     border-radius: 0;
@@ -50,7 +49,12 @@ p {
     line-height: 1.9;
     color: #000;
 }
-
+.astral_blog p a {
+    text-decoration: underline;
+}
+.media-body a {
+    text-decoration: underline;
+}
 .wp-caption {
     width: 100% !important;
 }
@@ -1353,7 +1357,7 @@ img.img-fluid.page-full.img-thumbnail {
 
 /* swiper css */
 html, body {
-    position: relative;
+    /*position: relative;*/
     height: 100%;
 }
 

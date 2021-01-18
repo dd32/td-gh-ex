@@ -138,10 +138,27 @@ function astral_navigation() { ?>
 add_action( 'astral_pagination', 'astral_navigation' );
 
 /* excerpt length */
-function astral_excerpt_length( $length ) {
-	return 30;
+remove_filter( 'the_excerpt', 'wp_trim_excerpt' );
+function new_trim_excerpt($text) {
+ global $post;
+ if ( '' == $text ) {
+ $text = get_the_content('');
+ $text = apply_filters('the_content', $text);
+ $text = str_replace('\]\]\>', ']]>', $text);
+ $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+ $text = strip_tags($text, '<a>');
+ $excerpt_length = 30;
+ $words = explode(' ', $text, $excerpt_length + 1);
+ if (count($words)> $excerpt_length) {
+ array_pop($words);
+ array_push($words, '...');
+ $text = implode(' ', $words);
+ }
+ }
+ return $text;
 }
-add_filter( 'excerpt_length', 'astral_excerpt_length' );
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'new_trim_excerpt');
 
 /* wp_body_open function check */
 if ( ! function_exists( 'wp_body_open' ) ) {

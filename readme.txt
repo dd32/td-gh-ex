@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 3.3 =
+* minor issues resolved
+
 = 3.2 =
 * Section Heading font-size option added
 

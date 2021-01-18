@@ -91,7 +91,7 @@ class astral_main {
 		
 		/* web font */
 		$font_var          = '300,400,600,700,900,300italic,400italic,600italic,700italic,900italic';
-        $http              = ( ! empty( $_SERVER['HTTPS'] ) ) ? "https" : "http";
+        $http              = ( ! empty( $_SERVER['HTTPS'] ) ) ? "https" : "https";
 		$main_heading_font1 = get_theme_mod('main_heading_font','Playfair Display');
         $main_heading_font = str_replace( ' ' , '+', $main_heading_font1 );
 		$menu_font1 = get_theme_mod('menu_font', 'Playfair Display');

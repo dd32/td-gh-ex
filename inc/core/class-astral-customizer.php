@@ -593,13 +593,13 @@ class astral_Customizer extends astral_Abstract_Main {
 		
 		$wp_customize->add_setting('main_heading_font',array(
 			'type' => 'theme_mod',
+			'default' => 'Playfair Display',
 			'sanitize_callback'=>'wp_filter_nohtml_kses',
 			'capability'=>'edit_theme_options',
 		));
 
 		$wp_customize->add_control(new astral_Font_Control($wp_customize, 'main_heading_font', array(
 		'label' => __('Logo Font Style', 'astral'),
-		/* 'type' => 'select', */
 		'section' => 'astral_typography',
 		'settings' => 'main_heading_font',
 		)));
@@ -608,6 +608,7 @@ class astral_Customizer extends astral_Abstract_Main {
 	'menu_font',
 	array(
 	'type' => 'theme_mod',
+	'default' => 'Playfair Display',
 	'sanitize_callback'=>'wp_filter_nohtml_kses',
 	'capability'=>'edit_theme_options'
     ));
@@ -620,6 +621,7 @@ class astral_Customizer extends astral_Abstract_Main {
 	
 	$wp_customize->add_setting('theme_title', array(
 	'type' => 'theme_mod',
+	'default' => 'Playfair Display',
 	'sanitize_callback'=>'wp_filter_nohtml_kses',
 	'capability'=>'edit_theme_options'
     ));
@@ -632,6 +634,7 @@ class astral_Customizer extends astral_Abstract_Main {
 	
 	$wp_customize->add_setting('desc_font_all', array(
 	'type' => 'theme_mod',
+	'default' => 'Playfair Display',
 	'sanitize_callback'=>'wp_filter_nohtml_kses',
 	'capability'=>'edit_theme_options'
     ));
