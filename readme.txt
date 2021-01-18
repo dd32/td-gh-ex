@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.2
 Tested up to: 5.6
-Stable tag: 4.4.4
+Stable tag: 4.4.4.1
 
 == Description ==
 
@@ -709,3 +709,6 @@ Fix: PwP paging links for Previous/Next
 = Version 4.4.4 =
 * Added: Improved support for Per Page options for Woocommerce special pages (Shop, Cart, etc.)
 * Fix: <img> alt= generated code for Page with Post compact images
+
+= Version 4.4.4.1 =
+* Fix: problem with "Edit" link for WooCommerce pages

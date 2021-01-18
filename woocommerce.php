@@ -20,22 +20,15 @@ echo "\n<!-- Weaver Woocommerce page -->\n";
 if ( function_exists( 'woocommerce_content' ) ) {
 	woocommerce_content();
 	if ( $GLOBALS['weaverx_wooshop'] != 0 ) {
-		if ( is_shop()) {
-			$before = '<span class="edit-link">';
-			$after = '</span>';
-			$link_label = esc_html__( 'Edit', 'weaver-xtreme' );
-			$id = 0;
-
-			if ( ! $post = get_post( $id ) ) {
-				return;
+		if ( is_shop() ) {
+			$url = get_edit_post_link( $GLOBALS['weaverx_wooshop'] );
+			if ( $url != '' ) {     // don't show if not there.... (e.g., not admin)
+				$before = '<span class="edit-link">';
+				$after = '</span>';
+				$link_label = esc_html__( 'Edit', 'weaver-xtreme' );
+				$link = '<a class="post-edit-link" href="' . $url . '" title="Shop">' . $link_label . '</a>';
+				echo $before . $link . $after;
 			}
-
-			if ( ! $url = get_edit_post_link( $GLOBALS['weaverx_wooshop'] ) ) {
-				return;
-			}
-
-			$link = '<a class="post-edit-link" href="' . $url . '" title="Shop">' . $link_label . '</a>';
-			echo  $before . $link . $after;
 		}
 	}
 } else {
