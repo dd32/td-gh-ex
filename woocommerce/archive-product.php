@@ -28,7 +28,7 @@ get_header( 'shop' ); ?>
  } 
 ?>
 <div class="container">
-	<main role="main" id="maincontent" class="our-services">
+	<main role="main" id="maincontent" class="our-services py-4 px-0">
 		<div class="row">
 			<div class="<?php echo esc_html( $colmd ); ?>">
 				<?php

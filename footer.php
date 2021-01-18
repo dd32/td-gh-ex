@@ -21,7 +21,7 @@
             $cols = 'col-lg-12 col-md-12';
         }
     ?>
-    <div id="footer" class="copyright-wrapper">
+    <div id="footer" class="copyright-wrapper py-4 px-0">
         <div class="container">
             <div class="row">
                 <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -47,8 +47,8 @@
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p><?php advance_fitness_gym_credit();?> <?php echo esc_html(get_theme_mod('advance_fitness_gym_footer_copy', __('By Themeshopy ', 'advance-fitness-gym')));?></p>
+    <div class="copyright text-center p-3">
+        <p class="mb-0 p-1"><?php advance_fitness_gym_credit();?> <?php echo esc_html(get_theme_mod('advance_fitness_gym_footer_copy', __('By Themeshopy ', 'advance-fitness-gym')));?></p>
     </div>
 </footer>
 <?php if( get_theme_mod( 'advance_fitness_gym_enable_disable_scroll',true) != '' || get_theme_mod( 'advance_fitness_gym_responsive_scroll',true) != '') { ?>

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main role="main" id="maincontent" class="our-services">
+<main role="main" id="maincontent" class="our-services py-4 px-0">
     <div class="innerlightbox">
         <div class="container">
             <?php
@@ -38,7 +38,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                         'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -68,7 +68,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                         'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -100,7 +100,7 @@ get_header(); ?>
                                 the_posts_pagination( array(
                                     'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                     'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                 ) );
                             ?>
                         </div>
@@ -130,7 +130,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                         'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -162,7 +162,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                         'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -194,7 +194,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                         'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -227,7 +227,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-fitness-gym' ),
                                         'next_text'          => __( 'Next page', 'advance-fitness-gym' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>

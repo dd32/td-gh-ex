@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'advance_fitness_gym_pageright_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="our-services row">        
+    <main role="main" id="maincontent" class="our-services row py-4 px-0">        
         <div class="background-img-skin col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>

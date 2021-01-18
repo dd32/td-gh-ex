@@ -20,7 +20,7 @@ if ( post_password_required() )
 
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments-title my-2 mx-0 pt-4 px-0 pb-2">
 			<?php
 				$comments_number = get_comments_number();
 				if ( 1 === $comments_number ) {
@@ -70,7 +70,7 @@ if ( post_password_required() )
 
 	<?php
 		comment_form( array(
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title py-2 px-3">',
 			'title_reply_after'  => '</h2>',
 		) );
 	?>

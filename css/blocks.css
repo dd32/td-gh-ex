@@ -222,25 +222,36 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button__link {
-  padding: 16px 40px;
-    font-weight: bold;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  background: #d51c22;
-  color: #fff !important;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: solid 1px #000;
+  padding: 12px 25px;
+  font-size: 15px;
+  color: #000 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
 }
 
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-  background-color: #2c2b2b;
+  background: #fe5e24 !important;
+  border: solid 1px #fe5e24;
   color: #fff;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
+/*button css*/
+/*.wp-block-button a{
+  
+}
+.wp-block-button a:hover{
+  
+}*/
 /* Separator */
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
@@ -482,18 +493,4 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-latest-comments {
   margin: 0;
   padding: 0;
-}
-
-/*button css*/
-.wp-block-button a{
-  border: solid 1px #000;
-  padding: 12px 25px;
-  font-size: 15px;
-  color: #000 !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-}
-.wp-block-button a:hover{
-  background: #fe5e24 !important;
-  border: solid 1px #fe5e24;
 }

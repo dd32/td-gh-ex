@@ -13,16 +13,16 @@
   $archive_day   = get_the_time('d'); 
 ?>
 <div class="col-lg-4 col-md-4">
-  <article class="page-box">
+  <article class="page-box py-md-3 px-md-2 py-0 px-2">
     <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?></a></h2>
-    <div class="box-image">
+    <div class="box-image m-0">
       <?php the_post_thumbnail();?>
     </div>
     <div class="new-text">
       <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_fitness_gym_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_fitness_gym_post_suffix_option','...') ); ?></p></div>
       <?php if( get_theme_mod('advance_fitness_gym_button_text','READ MORE') != ''){ ?>
-        <div class="second-border">
-          <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?></span></a>
+        <div class="second-border text-right my-4 mx-0">
+          <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>" class="py-3 px-4"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?></span></a>
         </div>
       <?php } ?>
     </div>

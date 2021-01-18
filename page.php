@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php do_action( 'advance_fitness_gym_page_header' ); ?>
 
-<main role="main" id="maincontent" class="our-services">
+<main role="main" id="maincontent" class="our-services py-4 px-0">
     <div class="container">
         <?php
         $advance_fitness_gym_left_right = get_theme_mod( 'advance_fitness_gym_single_page_sidebar_layout','One Column');

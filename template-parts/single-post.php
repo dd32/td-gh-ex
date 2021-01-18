@@ -12,18 +12,18 @@
   $archive_month = get_the_time('m'); 
   $archive_day   = get_the_time('d'); 
 ?>
-<article class="page-box-single">
+<article class="page-box-single p-2 my-3 mx-0">
 	<h1><?php the_title();?></h1>
 	<?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '' || get_theme_mod( 'advance_fitness_gym_date_hide',true) != '' || get_theme_mod( 'advance_fitness_gym_comment_hide',true) != '') { ?>
-	    <div class="metabox">
+	    <div class="metabox pt-2 px-0 pb-3">
 	      <?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '') { ?>
-	        <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span><?php echo esc_html( get_theme_mod('advance_fitness_gym_metabox_separator_blog_post') ); ?>
+	        <span class="entry-author py-0 px-2"><i class="fas fa-user mr-2"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span><?php echo esc_html( get_theme_mod('advance_fitness_gym_metabox_separator_blog_post') ); ?>
 	      <?php } ?>
 	      <?php if( get_theme_mod( 'advance_fitness_gym_date_hide',true) != '') { ?>
-	        <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('advance_fitness_gym_metabox_separator_blog_post') ); ?>
+	        <span class="entry-date py-0 px-2"><i class="fa fa-calendar mr-2"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('advance_fitness_gym_metabox_separator_blog_post') ); ?>
 	      <?php } ?>  
 	      <?php if( get_theme_mod( 'advance_fitness_gym_comment_hide',true) != '') { ?>  
-	        <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'advance-fitness-gym'), __('0 Comments', 'advance-fitness-gym'), __('% Comments', 'advance-fitness-gym') ); ?> </span>
+	        <span class="entry-comments py-0 px-2"><i class="fas fa-comments mr-2"></i> <?php comments_number( __('0 Comment', 'advance-fitness-gym'), __('0 Comments', 'advance-fitness-gym'), __('% Comments', 'advance-fitness-gym') ); ?> </span>
 	      <?php } ?>
 	    </div>
 	<?php }?>
@@ -40,9 +40,9 @@
       <?php the_content();?>
     </div>
     <?php if( get_theme_mod( 'advance_fitness_gym_tags_hide',true) != '') { ?>
-    <div class="tags"><p><?php
+    <div class="tags my-3 mx-0"><p><?php
         if( $tags = get_the_tags() ) {
-          echo '<i class="fas fa-tags"></i>';
+          echo '<i class="fas fa-tags mr-2"></i>';
           echo '<span class="meta-sep"></span>';
           foreach( $tags as $content_tag ) {
             $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
@@ -63,14 +63,14 @@
 	if ( is_singular( 'attachment' ) ) {
 		// Parent post navigation.
 		the_post_navigation( array(
-			'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'advance-fitness-gym' ),
+			'prev_text' => _x( '<span class="meta-nav text-uppercase p-2">Published in</span><span class="post-title my-3 mx-0">%title</span>', 'Parent post link', 'advance-fitness-gym' ),
 		) );
 	} elseif ( is_singular( 'post' ) ) {
 		// Previous/next post navigation.
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-fitness-gym' ) . '</span> ' .
+			'next_text' => '<span class="meta-nav text-uppercase p-2" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-fitness-gym' ) . '</span> ' .
 				'<span class="screen-reader-text">' . __( 'Next post:', 'advance-fitness-gym' ) . '</span> ',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i>Previous', 'advance-fitness-gym' ) . '</span> ' .
+			'prev_text' => '<span class="meta-nav text-uppercase p-2" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i>Previous', 'advance-fitness-gym' ) . '</span> ' .
 				'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-fitness-gym' ) . '</span> ' ,
 		) );
 	}

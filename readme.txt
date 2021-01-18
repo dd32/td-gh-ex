@@ -4,7 +4,7 @@ Tags: wide-blocks, flexible-header, block-styles, left-sidebar, right-sidebar, o
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.5.7
+Stable tag: 0.5.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -179,6 +179,9 @@ Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPres
   * Done Underline on anchor tag.
   * Done escaping on get_template_directory_uri().
   * Corrected some focus errors.
+
+= 0.5.8 =
+  * Reduced css by adding boostrap classes.
   
 == Resources ==
 

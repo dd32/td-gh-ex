@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'advance_fitness_gym_pageleft_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent"  class="our-services row">
+    <main role="main" id="maincontent"  class="our-services row py-4 px-0">
     	<div id="sidebar" class="col-lg-4 col-md-4">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>

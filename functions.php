@@ -73,9 +73,9 @@ function advance_fitness_gym_widgets_init() {
 		'name'          => __('Blog Sidebar', 'advance-fitness-gym'),
 		'description'   => __('Appears on blog page sidebar', 'advance-fitness-gym'),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title my-0 mx-0 mb-3 text-uppercase p-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -83,9 +83,9 @@ function advance_fitness_gym_widgets_init() {
 		'name'          => __('Page Sidebar', 'advance-fitness-gym'),
 		'description'   => __('Appears on page sidebar', 'advance-fitness-gym'),
 		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title my-0 mx-0 mb-3 text-uppercase p-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -93,9 +93,9 @@ function advance_fitness_gym_widgets_init() {
 		'name'          => __('Third Column Sidebar', 'advance-fitness-gym'),
 		'description'   => __('Appears on page sidebar', 'advance-fitness-gym'),
 		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title my-0 mx-0 mb-3 text-uppercase p-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -106,9 +106,9 @@ function advance_fitness_gym_widgets_init() {
 			'name'          => __( 'Footer Nav ', 'advance-fitness-gym' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s mb-2">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
+			'before_title'  => '<h3 class="widget-title text-left text-uppercase">',
 			'after_title'   => '</h3>',
 		) );
 	}
@@ -117,9 +117,9 @@ function advance_fitness_gym_widgets_init() {
 		'name'          => __('Home Page Sidebar', 'advance-fitness-gym'),
 		'description'   => __('Appears on home page', 'advance-fitness-gym'),
 		'id'            => 'homepage-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title my-0 mx-0 mb-3 text-uppercase p-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -127,9 +127,9 @@ function advance_fitness_gym_widgets_init() {
 		'name'          => __( 'Shop Page Sidebar', 'advance-fitness-gym' ),
 		'description'   => __( 'Appears on shop page', 'advance-fitness-gym' ),
 		'id'            => 'woocommerce_sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title my-0 mx-0 mb-3 text-uppercase p-2">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -137,9 +137,9 @@ function advance_fitness_gym_widgets_init() {
 		'name'          => __( 'Single Product Page Sidebar', 'advance-fitness-gym' ),
 		'description'   => __( 'Appears on shop page', 'advance-fitness-gym' ),
 		'id'            => 'woocommerce-single-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title my-0 mx-0 mb-3 text-uppercase p-2">',
 		'after_title'   => '</h3>',
 	) );
 }
@@ -259,7 +259,7 @@ function advance_fitness_gym_font_url(){
 function advance_fitness_gym_scripts() {
 	wp_enqueue_style('advance-fitness-gym-font', advance_fitness_gym_font_url(), array());
 	// blocks-css
-	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
+	wp_enqueue_style( 'advance-fitness-gym-block-style', get_theme_file_uri('/css/blocks.css') );
 	wp_enqueue_style('bootstrap', esc_url(get_template_directory_uri()).'/css/bootstrap.css');
 	wp_enqueue_style('advance-fitness-gym-basic-style', get_stylesheet_uri());
 	wp_enqueue_style('advance-fitness-gym-customcss', esc_url(get_template_directory_uri()).'/css/custom.css');
