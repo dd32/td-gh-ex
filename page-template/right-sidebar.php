@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'advance_pet_care_pageright_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="middle-align row">
+    <main role="main" id="maincontent" class="middle-align row my-0 mx-auto py-3 px-0">
         <div class="background-img-skin col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>

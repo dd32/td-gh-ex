@@ -13,7 +13,7 @@ get_header(); ?>
 
 <?php do_action( 'advance_pet_care_page_header' ); ?>
 
-<main role="main" id="maincontent" class="middle-align">
+<main role="main" id="maincontent" class="middle-align my-0 mx-auto py-3 px-0">
     <div class="container">
         <?php
         $advance_pet_care_left_right = get_theme_mod( 'advance_pet_care_single_page_sidebar_layout','One Column');

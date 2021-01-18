@@ -9,7 +9,7 @@
 ?>
 
 <header role="banner">
-	<h2 class="entry-title"><?php echo esc_html(get_theme_mod('advance_pet_care_nosearch_found_title',__('Nothing Found','advance-pet-care')));?></h2>
+	<h2 class="entry-title text-left mb-3"><?php echo esc_html(get_theme_mod('advance_pet_care_nosearch_found_title',__('Nothing Found','advance-pet-care')));?></h2>
 </header>
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 	<p><?php printf( esc_html__( 'Ready to publish your first post? Get started here.', 'advance-pet-care' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
@@ -20,7 +20,7 @@
 		<?php } ?>
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-pet-care' ); ?></p><br />
-		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-pet-care' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to Home Page', 'advance-pet-care' ); ?></span></a>
+		<div class="read-moresec my-4 mx-0">
+			<a href="<?php echo esc_url(home_url()); ?>" class="button p-3"><?php esc_html_e( 'Return to Home Page', 'advance-pet-care' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to Home Page', 'advance-pet-care' ); ?></span></a>
 		</div>
 <?php endif; ?>

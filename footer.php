@@ -47,8 +47,8 @@
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p><?php advance_pet_care_credit();?> <?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('By Themeshopy', 'advance-pet-care')));?></p>
+    <div class="copyright p-3">
+        <p class="mb-0"><?php advance_pet_care_credit();?> <?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('By Themeshopy', 'advance-pet-care')));?></p>
     </div>
 </footer>
 <?php if( get_theme_mod( 'advance_pet_care_enable_disable_scroll',true) != '' || get_theme_mod( 'advance_pet_care_responsive_scroll',true) != '') { ?>

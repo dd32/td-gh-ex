@@ -14,28 +14,28 @@
 ?> 
 <article class="page-box-single">
   <?php if( get_theme_mod( 'advance_pet_care_show_featured_image_single_post',true) != '') { ?>
-    <div class="box-img">
+    <div class="box-img mt-3">
       <?php the_post_thumbnail(); ?>
     </div>
   <?php } ?>
   <div class="new-text">
     <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
     <?php if( get_theme_mod( 'advance_pet_care_date_hide',true) != '' || get_theme_mod( 'advance_pet_care_date_hide',true) != '' || get_theme_mod( 'advance_pet_care_date_hide',true) != '') { ?>
-      <div class="metabox">
+      <div class="metabox pt-3 px-0 pb-2">
         <?php if( get_theme_mod( 'advance_pet_care_date_hide',true) != '') { ?>
-          <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('advance_pet_care_metabox_separator_blog_post') ); ?>
+          <span class="entry-date py-0 px-2"><i class="fa fa-calendar mr-2"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><?php echo esc_html( get_theme_mod('advance_pet_care_metabox_separator_blog_post') ); ?>
         <?php } ?>
         <?php if( get_theme_mod( 'advance_pet_care_author_hide',true) != '') { ?>
-          <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span><?php echo esc_html( get_theme_mod('advance_pet_care_metabox_separator_blog_post') ); ?>
+          <span class="entry-author py-0 px-2"><i class="fa fa-user mr-2"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span><?php echo esc_html( get_theme_mod('advance_pet_care_metabox_separator_blog_post') ); ?>
         <?php } ?>
         <?php if( get_theme_mod( 'advance_pet_care_comment_hide',true) != '') { ?>
-          <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'advance-pet-care'), __('0 Comments', 'advance-pet-care'), __('% Comments', 'advance-pet-care') ); ?> </span>
+          <span class="entry-comments py-0 px-2"><i class="fas fa-comments mr-2"></i> <?php comments_number( __('0 Comment', 'advance-pet-care'), __('0 Comments', 'advance-pet-care'), __('% Comments', 'advance-pet-care') ); ?> </span>
         <?php } ?>
       </div>
     <?php }?>
     <div class="entry-content"><p><?php the_content();?></p></div>
     <?php if( get_theme_mod( 'advance_pet_care_tags_hide',true) != '') { ?>
-      <div class="tags"><p><?php
+      <div class="tags my-3 mx-0"><p><?php
       if( $tags = get_the_tags() ) {
         echo '<i class="fas fa-tags"></i>';
         echo '<span class="meta-sep"></span>';

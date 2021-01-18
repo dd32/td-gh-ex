@@ -17,9 +17,9 @@
 if ( post_password_required() )
 	return;
 ?>
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area mt-5">
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments-title py-5 px-0">
 			<?php
 				$comments_number = get_comments_number();
 				if ( 1 === $comments_number ) {
@@ -69,7 +69,7 @@ if ( post_password_required() )
 
 	<?php
 		comment_form( array(
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title py-2 px-3">',
 			'title_reply_after'  => '</h2>',
 		) );
 	?>

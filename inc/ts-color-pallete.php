@@ -323,10 +323,10 @@
 	$advance_pet_care_custom_css .='}';
 
 	/*-------------- Footer Text -------------------*/
-	$advance_pet_care_copyright_content_align = get_theme_mod('advance_pet_care_copyright_content_align');
+	$advance_pet_care_copyright_content_align = get_theme_mod('advance_pet_care_copyright_content_align','center');
 	if($advance_pet_care_copyright_content_align != false){
 		$advance_pet_care_custom_css .='.copyright{';
-			$advance_pet_care_custom_css .='text-align: '.esc_attr($advance_pet_care_copyright_content_align).';';
+			$advance_pet_care_custom_css .='text-align: '.esc_attr($advance_pet_care_copyright_content_align).'; !important';
 		$advance_pet_care_custom_css .='}';
 	}
 
