@@ -4,19 +4,19 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 2.0.38
-Version: 2.0.38
+Stable tag: 2.0.39
+Version: 2.0.39
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
 
 == Copyright ==
 
-Arowana WordPress Theme, Copyright 2020 Nayra Themes
+Arowana WordPress Theme, Copyright 2021 Nayra Themes
 Arowana is distributed under the terms of the GPLv2 or later
 
 
-StartKit WordPress Theme, Copyright 2020 Nayra Themes. StartKit WordPress Theme is distributed under the terms of the GPLv2 or later
+StartKit WordPress Theme, Copyright 2021 Nayra Themes. StartKit WordPress Theme is distributed under the terms of the GPLv2 or later
 
 == Description ==
 
@@ -116,6 +116,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 2.0.39
+*Copyright Updated
 
 @version 2.0.38
 *Upsale Section Position Changed in Customizer
