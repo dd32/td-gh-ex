@@ -34,8 +34,8 @@
           <div class="container">
             <?php 
               if(has_nav_menu('resposive-menu')){ ?>
-              <div class="toggle-menu mobile-menu">
-                <button class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
+              <div class="toggle-menu mobile-menu text-left">
+                <button class="mobiletoggle"><i class="fas fa-bars my-3 mx-0"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
               </div>
             <?php }?>
             <div id="res-sidebar" class="nav sidebar">
@@ -51,7 +51,7 @@
                     ) );
                   } 
                 ?>
-                <div id="contact-info">
+                <div id="contact-info" class="w-100 py-3 px-0">
                   <?php get_search_form();?>
                   <?php dynamic_sidebar('social'); ?>
                 </div>
@@ -60,7 +60,7 @@
             </div>
           </div>
       </div>
-    <div id="header">   
+    <div id="header" class="text-lg-left text-md-left text-center">   
       <div class="top-menu">
         <div class="container">
           <div class="row">
@@ -76,7 +76,7 @@
                         'theme_location' => 'woocommerce-menu',
                         'container_class' => 'main-menu-navigation clearfix' ,
                         'menu_class' => 'clearfix',
-                        'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav text-right">%3$s</ul>',
                         'fallback_cb' => 'wp_page_menu',
                       ) );
                     } 
@@ -90,7 +90,7 @@
       <div class="middle-header">
         <div class="container">
           <div class="row">
-            <div class="logo col-lg-3 col-md-3">
+            <div class="logo col-lg-3 col-md-3 m-lg-0">
               <?php if ( has_custom_logo() ) : ?>
                 <div class="site-logo"><?php the_custom_logo(); ?></div>
               <?php endif; ?>
@@ -100,7 +100,7 @@
                   <?php if ( is_front_page() && is_home() ) : ?>
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                   <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <p class="site-title m-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="text-lg-left"><?php bloginfo( 'name' ); ?></a></p>
                   <?php endif; ?>
                 <?php }?>
               <?php endif; ?>
@@ -109,31 +109,31 @@
               if ( $description || is_customize_preview() ) :
                 ?>
                 <?php if( get_theme_mod('advance_ecommerce_store_tagline',true) != ''){ ?>
-                  <p class="site-description">
+                  <p class="site-description m-0">
                     <?php echo esc_html($description); ?>
                   </p>
                 <?php }?>
               <?php endif; ?>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-5">
               <?php if(class_exists('woocommerce')){ ?>
                 <?php get_product_search_form()?>
               <?php }?>
             </div>
-            <div class="account col-lg-1 col-md-1 col-4">
+            <div class="account col-lg-1 col-md-1 col-4 text-center my-lg-4 mx-lg-0 mr-md-2 my-md-4 m-3">
               <?php if ( is_user_logged_in() ) { ?>
-                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt"></i><span class="screen-reader-text"><?php esc_html_e('My Account','advance-ecommerce-store'); ?></span></a>
+                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt p-3 mr-md-2"></i><span class="screen-reader-text"><?php esc_html_e('My Account','advance-ecommerce-store'); ?></span></a>
               <?php } 
               else { ?>
-                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user p-3"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
               <?php } ?>
             </div>
-            <div class="col-lg-2 col-md-2 col-6 cart_icon ">
+            <div class="col-lg-2 col-md-2 col-6 cart_icon my-lg-3 mx-lg-0 p-md-0 my-md-3 mx-0 my-1">
               <?php if(class_exists('woocommerce')){ ?>
-                <li class="cart_box">
-                  <span class="cart-value"> <?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+                <li class="cart_box text-right">
+                  <span class="cart-value rounded-circle"> <?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
                 </li>
-                <span class="cart_no">
+                <span class="cart_no py-lg-3 px-lg-5 py-md-3 px-md-2 py-2 px-3">
                   <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_attr_e( 'SHOPPING CART','advance-ecommerce-store' ); ?>"><?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?><span class="screen-reader-text"><?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' );?></span></a>
                 </span>
               <?php }?>
@@ -143,7 +143,7 @@
       </div>
       <div class="main-menu <?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>" >
         <div class="container">
-          <div id="menu-sidebar" class="nav sidebar">
+          <div id="menu-sidebar" class="nav sidebar text-lg-center">
             <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
               <?php
                 if(has_nav_menu('primary')){ 
@@ -151,7 +151,7 @@
                     'theme_location' => 'primary',
                     'container_class' => 'main-menu-navigation clearfix' ,
                     'menu_class' => 'clearfix',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav text-lg-left pl-lg-0">%3$s</ul>',
                     'fallback_cb' => 'wp_page_menu',
                   ) );
                 } 

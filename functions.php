@@ -78,9 +78,9 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __('Blog Sidebar', 'advance-ecommerce-store'),
 		'description'   => __('Appears on blog page sidebar', 'advance-ecommerce-store'),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-capitalize p-2 mt-0 mx-0 mb-3">',
 		'after_title'   => '</h3>',
 	));
 
@@ -88,9 +88,9 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __('Page Sidebar', 'advance-ecommerce-store'),
 		'description'   => __('Appears on page sidebar', 'advance-ecommerce-store'),
 		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-capitalize p-2 mt-0 mx-0 mb-3">',
 		'after_title'   => '</h3>',
 	));
 
@@ -98,9 +98,9 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __('Third Column Sidebar', 'advance-ecommerce-store'),
 		'description'   => __('Appears on page sidebar', 'advance-ecommerce-store'),
 		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-capitalize p-2 mt-0 mx-0 mb-3">',
 		'after_title'   => '</h3>',
 	));
 
@@ -111,9 +111,9 @@ function advance_ecommerce_store_widgets_init() {
 			'name'          => __( 'Footer Nav ', 'advance-ecommerce-store' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s py-2 px-0">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
+			'before_title'  => '<h3 class="widget-title text-left text-uppercase">',
 			'after_title'   => '</h3>',
 		) );
 	}
@@ -122,9 +122,9 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __('Home Page Sidebar', 'advance-ecommerce-store'),
 		'description'   => __('Appears on home page', 'advance-ecommerce-store'),
 		'id'            => 'homepage-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-capitalize p-2 mt-0 mx-0 mb-3">',
 		'after_title'   => '</h3>',
 	));
 
@@ -132,7 +132,7 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __('Social Media Widget', 'advance-ecommerce-store'),
 		'description'   => __('Appears on topbar', 'advance-ecommerce-store'),
 		'id'            => 'social',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -142,9 +142,9 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __( 'Shop Page Sidebar', 'advance-ecommerce-store' ),
 		'description'   => __( 'Appears on shop page', 'advance-ecommerce-store' ),
 		'id'            => 'woocommerce_sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-capitalize p-2 mt-0 mx-0 mb-3">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -152,9 +152,9 @@ function advance_ecommerce_store_widgets_init() {
 		'name'          => __( 'Single Product Page Sidebar', 'advance-ecommerce-store' ),
 		'description'   => __( 'Appears on shop page', 'advance-ecommerce-store' ),
 		'id'            => 'woocommerce-single-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-3">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-capitalize p-2 mt-0 mx-0 mb-3">',
 		'after_title'   => '</h3>',
 	) );
 }
@@ -274,7 +274,7 @@ function advance_ecommerce_store_font_url(){
 function advance_ecommerce_store_scripts() {
 	wp_enqueue_style('advance-ecommerce-store-font', advance_ecommerce_store_font_url(), array());
 	// blocks-css
-	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
+	wp_enqueue_style( 'advance-ecommerce-store-block-style', get_theme_file_uri('/css/blocks.css') );
 	wp_enqueue_style('bootstrap', esc_url(get_template_directory_uri()).'/css/bootstrap.css');
 	wp_enqueue_style('advance-ecommerce-store-basic-style', get_stylesheet_uri());
 	wp_enqueue_style('advance-ecommerce-store-customcss', esc_url(get_template_directory_uri()).'/css/custom.css');

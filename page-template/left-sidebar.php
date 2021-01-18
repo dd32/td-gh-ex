@@ -8,8 +8,8 @@ get_header(); ?>
 <?php do_action( 'advance_ecommerce_store_pageleft_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="middle-align row">
-    	<div id="sidebar" class="col-lg-4 col-md-4">
+    <main role="main" id="maincontent" class="middle-align row my-0 mx-auto py-3 px-0">
+    	<div id="sidebar" class="col-lg-4 col-md-4 my-3 mx-0">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>
         <div class="background-img-skin col-lg-8 col-md-8">

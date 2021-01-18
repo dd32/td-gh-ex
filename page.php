@@ -14,13 +14,13 @@ get_header(); ?>
 
 <?php do_action( 'advance_ecommerce_store_page_header' ); ?>
 
-<main role="main" id="maincontent" class="middle-align">
+<main role="main" id="maincontent" class="middle-align my-0 mx-auto py-3 px-0">
     <div class="container">
         <?php
         $advance_ecommerce_store_left_right = get_theme_mod( 'advance_ecommerce_store_single_page_sidebar_layout','One Column');
         if($advance_ecommerce_store_left_right == 'Left Sidebar'){ ?>
             <div class="row">
-                <div id="sidebar" class="col-lg-4 col-md-4">
+                <div id="sidebar" class="col-lg-4 col-md-4 my-3 mx-0">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
                 <div class="col-lg-8 col-md-8 left-sidebar-page background-img-skin">
@@ -54,7 +54,7 @@ get_header(); ?>
                     ?>
                     <div class="clear"></div>
                 </div>
-                <div id="sidebar" class="col-lg-4 col-md-4">
+                <div id="sidebar" class="col-lg-4 col-md-4 my-3 mx-0">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
             </div>

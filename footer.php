@@ -20,7 +20,7 @@
         $cols = 'col-lg-12 col-md-12';
     }
   ?>
-  <div id="footer" class="copyright-wrapper">
+  <div id="footer" class="copyright-wrapper py-2 px-0">
     <div class="container">
       <div class="row">
         <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -46,8 +46,8 @@
       </div>
     </div>
   </div>
-  <div class="copyright">
-    <p><?php advance_ecommerce_store_credit();?> <?php echo esc_html(get_theme_mod('advance_ecommerce_store_footer_copy', __('By Themeshopy', 'advance-ecommerce-store')));?></p>
+  <div class="copyright p-3 text-center">
+    <p class="mb-0"><?php advance_ecommerce_store_credit();?> <?php echo esc_html(get_theme_mod('advance_ecommerce_store_footer_copy', __('By Themeshopy', 'advance-ecommerce-store')));?></p>
   </div>
 </footer>
 

@@ -31,19 +31,19 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
         $youtube = $instance['youtube'];
  
         echo '<div class="custom-social-icons">';
-        if(!empty($facebook) ){ ?><a class="custom_facebook fff" href=" <?php echo esc_url($instance['facebook']); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-ecommerce-store' );?></span></a><?php } ?>
+        if(!empty($facebook) ){ ?><a class="custom_facebook fff mr-2" href=" <?php echo esc_url($instance['facebook']); ?>"><i class="fab fa-facebook-f mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Facebook','advance-ecommerce-store' );?></span></a><?php } ?>
 
-        <?php if(!empty($twitter) ){ ?><a class="custom_twitter" href="<?php echo esc_url($instance['twitter']); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-ecommerce-store' );?></span></a><?php } ?>
+        <?php if(!empty($twitter) ){ ?><a class="custom_twitter mr-2" href="<?php echo esc_url($instance['twitter']); ?>"><i class="fab fa-twitter mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Twitter','advance-ecommerce-store' );?></span></a><?php } ?>
 
-        <?php if(!empty($linkedin) ){ ?><a class="custom_linkedin" href="<?php echo esc_url($instance['linkedin']); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-ecommerce-store' );?></span></a><?php } ?>
+        <?php if(!empty($linkedin) ){ ?><a class="custom_linkedin mr-2" href="<?php echo esc_url($instance['linkedin']); ?>"><i class="fab fa-linkedin-in mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Linkedin','advance-ecommerce-store' );?></span></a><?php } ?>
 
-        <?php if(!empty($pinterest) ){ ?><a class="custom_pinterest" href="<?php echo esc_url($instance['pinterest']); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','advance-ecommerce-store' );?></span></a><?php } ?>
+        <?php if(!empty($pinterest) ){ ?><a class="custom_pinterest mr-2" href="<?php echo esc_url($instance['pinterest']); ?>"><i class="fab fa-pinterest-p mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Pinterest','advance-ecommerce-store' );?></span></a><?php } ?>
 
-        <?php if(!empty($tumblr) ){ ?><a class="custom_tumblr" href="<?php echo esc_url($instance['tumblr']); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','advance-ecommerce-store' );?></span></a><?php } ?>
+        <?php if(!empty($tumblr) ){ ?><a class="custom_tumblr mr-2" href="<?php echo esc_url($instance['tumblr']); ?>"><i class="fab fa-tumblr mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Tumblr','advance-ecommerce-store' );?></span></a><?php } ?>
 
-        <?php if(!empty($instagram) ){ ?><a class="custom_instagram" href="<?php echo esc_url($instance['instagram']); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-ecommerce-store' );?></span></a><?php } ?>
+        <?php if(!empty($instagram) ){ ?><a class="custom_instagram mr-2" href="<?php echo esc_url($instance['instagram']); ?>"><i class="fab fa-instagram mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Instagram','advance-ecommerce-store' );?></span></a><?php } ?>
 
-        <?php if(!empty($youtube) ){ ?><a class="custom_youtube" href="<?php echo esc_url($instance['youtube']); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-ecommerce-store' );?></span></a><?php } ?>
+        <?php if(!empty($youtube) ){ ?><a class="custom_youtube mr-2" href="<?php echo esc_url($instance['youtube']); ?>"><i class="fab fa-youtube mr-2 py-2 px-2"></i><span class="screen-reader-text"><?php esc_html_e( 'Youtube','advance-ecommerce-store' );?></span></a><?php } ?>
         <?php echo '</div>';
 		?>
 		</div>

@@ -5,12 +5,12 @@
 get_header(); ?>
 
 <main role="main" id="maincontent">
-  <div class="slider-category">
+  <div class="slider-category py-5 px-0">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3">
-          <div class="categry-title">
-            <i class="fa fa-bars" aria-hidden="true"></i><span><?php echo esc_html_e('CATEGORIES','advance-ecommerce-store'); ?></span>
+          <div class="categry-title p-3">
+            <i class="fa fa-bars mr-3" aria-hidden="true"></i><span><?php echo esc_html_e('CATEGORIES','advance-ecommerce-store'); ?></span>
           </div>
           <?php if(class_exists('woocommerce')){ ?>
             <div class="product-category">
@@ -33,10 +33,10 @@ get_header(); ?>
                     $image = wp_get_attachment_url( $thumbnail_id );
                     if ($product_category->category_parent == 0) {
                       ?>
-                      <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
+                      <li class="drp_dwn_menu p-3"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
                         <?php
                         if ( $image ) {
-                          echo '<img class="thulg_img" src="' . esc_url( $image ) . '" alt="" />';
+                          echo '<img class="thulg_img mr-3" src="' . esc_url( $image ) . '" alt="" />';
                         }
                       echo esc_html( $product_category->name ); ?></a></li>
                      <?php
@@ -50,7 +50,7 @@ get_header(); ?>
         <div class="col-lg-9 col-md-9">
           <?php do_action( 'advance_ecommerce_store_before_slider' ); ?>
           <?php if( get_theme_mod( 'advance_ecommerce_store_slider_hide', false) != '' || get_theme_mod( 'advance_ecommerce_store_responsive_slider', false) != '') { ?>
-          <div id="slider">
+          <div id="slider" class="mw-100 m-auto p-0">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_ecommerce_store_slider_speed_option', 3000)); ?>">
               <?php $advance_ecommerce_store_slider_pages = array();
                 for ( $count = 1; $count <= 4; $count++ ) {
@@ -73,14 +73,14 @@ get_header(); ?>
                 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
                   <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
                     <?php the_post_thumbnail(); ?>
-                    <div class="carousel-caption">
+                    <div class="carousel-caption text-left">
                       <div class="inner_carousel">
-                        <h1><?php the_title(); ?></h1>
-                        <hr class="slidehr">
-                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','15')))); ?></p>
+                        <h1 class="m-0 text-left px-0 pt-0 pb-3 text-uppercase"><?php the_title(); ?></h1>
+                        <hr class="slidehr m-0">
+                        <p class="mb-0 mt-3"><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','15')))); ?></p>
                         <?php if( get_theme_mod('advance_ecommerce_store_slider_button','READ MORE') != ''){ ?>
-                          <div class="more-btn">              
-                            <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_slider_button','READ MORE'));?></span></a>
+                          <div class="more-btn mt-4">              
+                            <a href="<?php the_permalink(); ?>" class="p-3"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_slider_button','READ MORE'));?></span></a>
                           </div>
                         <?php } ?>
                       </div>
@@ -94,18 +94,18 @@ get_header(); ?>
               <?php endif;
               endif;?>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                <span class="carousel-control-prev-icon py-2 px-3" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
                 <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-ecommerce-store' );?></span>
               </a>
               <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="carousel-control-next-icon py-2 px-3" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
                 <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-ecommerce-store' );?></span>
               </a>
             </div>
             <div class="clearfix"></div>
           </div>
           <?php } ?>
-          <div class="product-service">
+          <div class="product-service text-center">
             <div class="row">
               <?php 
                 $advance_ecommerce_store_catData = get_theme_mod('advance_ecommerce_store_product_service');
@@ -113,9 +113,9 @@ get_header(); ?>
                 $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_ecommerce_store_catData ,'advance-ecommerce-store')));?>
                 <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                   <div class="col-lg-4 col-md-4">
-                    <div class="service-border">
-                      <a href="<?php the_permalink(); ?>"><strong><?php the_title(); ?></strong><span class="screen-reader-text"><?php the_title(); ?></span></a>
-                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,5 ) ); ?></p>
+                    <div class="service-border p-3">
+                      <a href="<?php the_permalink(); ?>"><strong class="pt-3 px-0 pb-0"><?php the_title(); ?></strong><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                      <p class="m-0 pb-2"><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,5 ) ); ?></p>
                     </div>
                   </div>
                 <?php endwhile;
@@ -129,10 +129,10 @@ get_header(); ?>
       </div>
     </div>
   </div>
-  <div class="sidebar-products">
+  <div class="sidebar-products py-5 px-0">
     <div class="container">
       <div class="row">
-        <div id="sidebar" class="col-lg-3 col-md-3">
+        <div id="sidebar" class="col-lg-3 col-md-3 my-3 mx-0">
           <?php dynamic_sidebar('homepage-sidebar'); ?>
         </div>
         <div class="col-lg-9 col-md-9">
@@ -140,7 +140,7 @@ get_header(); ?>
           <?php if( get_theme_mod('advance_ecommerce_store_section_title') != '' || get_theme_mod('advance_ecommerce_store_product_page') != ''){ ?>
             <div class="product-page">
               <?php if( get_theme_mod('advance_ecommerce_store_section_title') != ''){ ?>
-                <strong><?php echo esc_html(get_theme_mod('advance_ecommerce_store_section_title')); ?></strong>
+                <strong class="p-0 mb-4"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_section_title')); ?></strong>
               <?php }?>
               <?php $advance_ecommerce_store_slider_pages = array();
                 $mod = absint( get_theme_mod( 'advance_ecommerce_store_product_page','advance-ecommerce-store'));

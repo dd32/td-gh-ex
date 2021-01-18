@@ -61,7 +61,7 @@ get_header( 'shop' ); ?>
 				?>
 			</div>
 			<?php if ( false != $advance_ecommerce_store_wocommerce_single_page_sidebar ) {?>
-				<div class="col-lg-4 col-md-4" id="sidebar">
+				<div class="col-lg-4 col-md-4 my-3 mx-0" id="sidebar">
 					<?php dynamic_sidebar( 'woocommerce-single-sidebar' ); ?>
 				</div>
 			<?php } ?>

@@ -39,7 +39,7 @@ get_header(); ?>
                   the_posts_pagination( array(
                       'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                       'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                      'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                   ) );
                 ?>
               </div>
@@ -65,7 +65,7 @@ get_header(); ?>
                   the_posts_pagination( array(
                       'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                       'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                      'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                   ) );
                 ?>
               </div>
@@ -93,7 +93,7 @@ get_header(); ?>
                 the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                     'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                 ) );
               ?>
             </div>
@@ -101,7 +101,7 @@ get_header(); ?>
         </div>
       <?php }else if($advance_ecommerce_store_left_right == 'Three Columns'){ ?>
         <div class="row">
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 my-3 mx-0"><?php dynamic_sidebar('sidebar-1');?></div>
           <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
             <?php if ( have_posts() ) :
               /* Start the Loop */
@@ -119,17 +119,17 @@ get_header(); ?>
                   the_posts_pagination( array(
                       'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                       'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                      'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                   ) );
                 ?>
               </div>
             <?php } ?> 
           </div>
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 my-3 mx-0"><?php dynamic_sidebar('sidebar-2');?></div>
         </div>
       <?php }else if($advance_ecommerce_store_left_right == 'Four Columns'){ ?>
         <div class="row">
-          <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-1');?></div>
+          <div id="sidebar" class="col-lg-3 my-3 mx-0"><?php dynamic_sidebar('sidebar-1');?></div>
           <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
             <?php if ( have_posts() ) :
               /* Start the Loop */
@@ -147,14 +147,14 @@ get_header(); ?>
                   the_posts_pagination( array(
                       'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                       'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                      'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                   ) );
                 ?>
               </div>
             <?php } ?> 
           </div>
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 my-3 mx-0"><?php dynamic_sidebar('sidebar-2');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 my-3 mx-0"><?php dynamic_sidebar('sidebar-3');?></div>
         </div>
       <?php }else if($advance_ecommerce_store_left_right == 'Grid Layout'){ ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
@@ -174,7 +174,7 @@ get_header(); ?>
                 the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                     'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                 ) );
               ?>
             </div>
@@ -199,7 +199,7 @@ get_header(); ?>
                   the_posts_pagination( array(
                       'prev_text'          => __( 'Previous page', 'advance-ecommerce-store' ),
                       'next_text'          => __( 'Next page', 'advance-ecommerce-store' ),
-                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
+                      'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-ecommerce-store' ) . ' </span>',
                   ) );
                 ?>
               </div>
