@@ -8,7 +8,7 @@
  */
 ?>
 <header role="banner">
-	<h2 class="entry-title"><?php echo esc_html(get_theme_mod('advance_coaching_nosearch_found_title',__('Nothing Found','advance-coaching')));?></h2>
+	<h2 class="entry-title text-left mb-3"><?php echo esc_html(get_theme_mod('advance_coaching_nosearch_found_title',__('Nothing Found','advance-coaching')));?></h2>
 </header>
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 	<p><?php printf( esc_html__( 'Ready to publish your first post? Get started here.', 'advance-coaching' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
@@ -19,7 +19,7 @@
 		<?php } ?>
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-coaching' ); ?></p><br />
-		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-coaching' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to Home Page', 'advance-coaching' ); ?></span></a>
+		<div class="read-moresec my-3 mx-0">
+			<a href="<?php echo esc_url(home_url()); ?>" class="button p-3"><?php esc_html_e( 'Return to Home Page', 'advance-coaching' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to Home Page', 'advance-coaching' ); ?></span></a>
 		</div>
 <?php endif; ?>

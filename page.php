@@ -13,13 +13,13 @@ get_header(); ?>
 
 <?php do_action( 'advance_coaching_page_header' ); ?>
 
-<main role="main" id="maincontent" class="middle-align">
+<main role="main" id="maincontent" class="middle-align my-0 mx-auto px-0 py-3">
     <div class="container">
         <?php
         $advance_coaching_left_right = get_theme_mod( 'advance_coaching_single_page_sidebar_layout','One Column');
         if($advance_coaching_left_right == 'Left Sidebar'){ ?>
             <div class="row">
-                <div id="sidebar" class="col-lg-4 col-md-4">
+                <div id="sidebar" class="col-lg-4 col-md-4 mt-3">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
                 <div class="col-lg-8 col-md-8 left-sidebar-page background-img-skin">
@@ -53,7 +53,7 @@ get_header(); ?>
                     ?>
                     <div class="clear"></div>
                 </div>
-                <div id="sidebar" class="col-lg-4 col-md-4">
+                <div id="sidebar" class="col-lg-4 col-md-4 mt-3">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
             </div>

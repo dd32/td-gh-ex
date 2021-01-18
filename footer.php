@@ -20,7 +20,7 @@
       $cols = 'col-lg-12 col-md-12';
     }
   ?>
-  <div id="footer" class="copyright-wrapper">
+  <div id="footer" class="copyright-wrapper py-3 px-0">
     <div class="container">
       <div class="row">
         <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -46,8 +46,8 @@
       </div>
     </div>
   </div>
-  <div class="copyright">
-    <p><?php advance_coaching_credit();?> <?php echo esc_html(get_theme_mod('advance_coaching_footer_copy', __('By Themeshopy', 'advance-coaching')));?></p>
+  <div class="copyright text-center p-3">
+    <p class="mb-0"><?php advance_coaching_credit();?> <?php echo esc_html(get_theme_mod('advance_coaching_footer_copy', __('By Themeshopy', 'advance-coaching')));?></p>
   </div>
 </footer>
 

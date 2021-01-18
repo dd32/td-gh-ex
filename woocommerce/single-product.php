@@ -61,7 +61,7 @@ get_header( 'shop' ); ?>
 				?>
 			</div>
 			<?php if ( false != $advance_coaching_wocommerce_single_page_sidebar ) {?>
-				<div class="col-lg-4 col-md-4" id="sidebar">
+				<div class="col-lg-4 col-md-4 mt-3" id="sidebar">
 					<?php dynamic_sidebar( 'woocommerce-single-sidebar' ); ?>
 				</div>
 			<?php } ?>

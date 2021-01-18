@@ -7,12 +7,12 @@
 get_header(); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="middle-align">
+    <main role="main" id="maincontent" class="middle-align my-0 mx-auto px-0 py-3">
     	<?php
         $advance_coaching_left_right = get_theme_mod( 'advance_coaching_single_post_sidebar_layout','Right Sidebar');
         if($advance_coaching_left_right == 'Left Sidebar'){ ?>
             <div class="row">
-		    	<div id="sidebar" class="col-lg-4 col-md-4">
+		    	<div id="sidebar" class="col-lg-4 col-md-4 mt-3">
 					<?php dynamic_sidebar('sidebar-1'); ?>
 				</div>
 				<div class="col-lg-8 col-md-8" id="content-ts">
@@ -28,9 +28,9 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
+								'next_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
 									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-coaching' ) . '</span> ',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
+								'prev_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
 									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-coaching' ) . '</span> ' ,
 							) );
 
@@ -53,16 +53,16 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
+								'next_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
 									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-coaching' ) . '</span> ',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
+								'prev_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
 									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-coaching' ) . '</span> ',
 							) );
 
 						endwhile; // End of the loop.
 					?>
 		       	</div>
-				<div id="sidebar" class="col-lg-4 col-md-4">
+				<div id="sidebar" class="col-lg-4 col-md-4 mt-3">
 					<?php dynamic_sidebar('sidebar-1'); ?>
 				</div>
 			</div>
@@ -80,9 +80,9 @@ get_header(); ?>
 						endif;
 
 						the_post_navigation( array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
+							'next_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
 								'<span class="screen-reader-text">' . __( 'Next post:', 'advance-coaching' ) . '</span> ' ,
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
+							'prev_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
 								'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-coaching' ) . '</span> ',
 						) );
 
@@ -104,16 +104,16 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
+								'next_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-coaching' ) . '</span> ' .
 									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-coaching' ) . '</span> ',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( ' <i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
+								'prev_text' => '<span class="meta-nav text-uppercase p-3" aria-hidden="true">' . __( ' <i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-coaching' ) . '</span> ' .
 									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-coaching' ) . '</span> ',
 							) );
 
 						endwhile; // End of the loop.
 					?>
 		       	</div>
-				<div id="sidebar" class="col-lg-4 col-md-4">
+				<div id="sidebar" class="col-lg-4 col-md-4 mt-3">
 					<?php dynamic_sidebar('sidebar-1'); ?>
 				</div>
 			</div>

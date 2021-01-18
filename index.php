@@ -38,7 +38,7 @@ get_header(); ?>
                   the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                     'next_text'          => __( 'Next page', 'advance-coaching' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                   ) );
                 ?>
               </div>
@@ -64,7 +64,7 @@ get_header(); ?>
                   the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                     'next_text'          => __( 'Next page', 'advance-coaching' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                   ) );
                 ?>
               </div>
@@ -92,7 +92,7 @@ get_header(); ?>
                 the_posts_pagination( array(
                   'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                   'next_text'          => __( 'Next page', 'advance-coaching' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                  'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                 ) );
               ?>
             </div>
@@ -100,7 +100,7 @@ get_header(); ?>
         </div>
       <?php }else if($advance_coaching_left_right == 'Three Columns'){ ?>
         <div class="row">
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 mt-3"><?php dynamic_sidebar('sidebar-1');?></div>
           <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
             <?php if ( have_posts() ) :
               /* Start the Loop */
@@ -118,17 +118,17 @@ get_header(); ?>
                   the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                     'next_text'          => __( 'Next page', 'advance-coaching' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                   ) );
                 ?>
               </div>
             <?php } ?> 
           </div>
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 mt-3"><?php dynamic_sidebar('sidebar-2');?></div>
         </div>
       <?php }else if($advance_coaching_left_right == 'Four Columns'){ ?>
         <div class="row">
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 mt-3"><?php dynamic_sidebar('sidebar-1');?></div>
           <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
             <?php if ( have_posts() ) :
               /* Start the Loop */
@@ -146,14 +146,14 @@ get_header(); ?>
                   the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                     'next_text'          => __( 'Next page', 'advance-coaching' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                   ) );
                 ?>
               </div>
             <?php } ?> 
           </div>
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
-          <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 mt-3"><?php dynamic_sidebar('sidebar-2');?></div>
+          <div id="sidebar" class="col-lg-3 col-md-3 mt-3"><?php dynamic_sidebar('sidebar-3');?></div>
         </div>
       <?php }else if($advance_coaching_left_right == 'Grid Layout'){ ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
@@ -173,7 +173,7 @@ get_header(); ?>
                 the_posts_pagination( array(
                   'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                   'next_text'          => __( 'Next page', 'advance-coaching' ),
-                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                  'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                 ) );
               ?>
             </div>
@@ -198,7 +198,7 @@ get_header(); ?>
                   the_posts_pagination( array(
                     'prev_text'          => __( 'Previous page', 'advance-coaching' ),
                     'next_text'          => __( 'Next page', 'advance-coaching' ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-coaching' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-3">' . __( 'Page', 'advance-coaching' ) . ' </span>',
                   ) );
                 ?>
               </div>

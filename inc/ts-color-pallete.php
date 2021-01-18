@@ -105,11 +105,11 @@
 		$advance_coaching_custom_css .='}';
 	}else if($advance_coaching_theme_lay == 'Center'){
 		$advance_coaching_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_coaching_custom_css .='text-align:center; left:20%; right:20%;';
+			$advance_coaching_custom_css .='text-align:center !important; left:20%; right:20%;';
 		$advance_coaching_custom_css .='}';
 	}else if($advance_coaching_theme_lay == 'Right'){
 		$advance_coaching_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_coaching_custom_css .='text-align:right; left:45%; right:15%;';
+			$advance_coaching_custom_css .='text-align:right !important; left:45%; right:15%;';
 		$advance_coaching_custom_css .='}';
 	}
 
@@ -161,7 +161,7 @@
 	$advance_coaching_button_padding_top_bottom = get_theme_mod('advance_coaching_button_padding_top_bottom');
 	$advance_coaching_button_padding_left_right = get_theme_mod('advance_coaching_button_padding_left_right');
 	$advance_coaching_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .read-btn a, #comments .form-submit input[type="submit"],#coaching .read-more a{';
-		$advance_coaching_custom_css .='padding-top: '.esc_attr($advance_coaching_button_padding_top_bottom).'px; padding-bottom: '.esc_attr($advance_coaching_button_padding_top_bottom).'px; padding-left: '.esc_attr($advance_coaching_button_padding_left_right).'px; padding-right: '.esc_attr($advance_coaching_button_padding_left_right).'px; display:inline-block;';
+		$advance_coaching_custom_css .='padding-top: '.esc_attr($advance_coaching_button_padding_top_bottom).'px !important; padding-bottom: '.esc_attr($advance_coaching_button_padding_top_bottom).'px !important; padding-left: '.esc_attr($advance_coaching_button_padding_left_right).'px !important; padding-right: '.esc_attr($advance_coaching_button_padding_left_right).'px !important; display:inline-block;';
 	$advance_coaching_custom_css .='}';
 
 	$advance_coaching_button_border_radius = get_theme_mod('advance_coaching_button_border_radius');
@@ -363,7 +363,7 @@
 	$advance_coaching_display_blog_page_post = get_theme_mod( 'advance_coaching_display_blog_page_post','Without Box');
     if($advance_coaching_display_blog_page_post == 'In Box'){
 		$advance_coaching_custom_css .='.page-box{';
-			$advance_coaching_custom_css .='border:solid 1px #051f31;margin:20px 0;padding:15px;';
+			$advance_coaching_custom_css .='border:solid 1px #051f31; margin:20px 0; padding:15px;';
 		$advance_coaching_custom_css .='}';
 	}
 

@@ -8,15 +8,15 @@ get_header(); ?>
 <?php do_action( 'advance_coaching_pageleft_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="middle-align row">
-    	<div id="sidebar" class="col-lg-4 col-md-4">
+    <main role="main" id="maincontent" class="middle-align row my-0 mx-auto px-0 py-3">
+    	<div id="sidebar" class="col-lg-4 col-md-4 mt-3">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>
         <div class="background-img-skin col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>
                 <h1><?php the_title(); ?></h1>
-                <div class="entry-content"><?php the_content();?></div>
+                <div class="entry-content"><p class="my-3 mx-0"><?php the_content();?></p></div>
             <?php endwhile; // end of the loop. ?>
             <?php
                 // If comments are open or we have at least one comment, load up the comment template.

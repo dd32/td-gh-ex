@@ -45,7 +45,7 @@ get_header( 'shop' ); ?>
 				?>
 				<header class="woocommerce-products-header">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-						<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+						<h1 class="woocommerce-products-header__title page-title text-left mb-3"><?php woocommerce_page_title(); ?></h1>
 					<?php endif; ?>
 
 					<?php
@@ -113,7 +113,7 @@ get_header( 'shop' ); ?>
 
 			</div>
 			<?php if ( false != $advance_coaching_shop_page_sidebar ) {?>
-				<div class="col-lg-4 col-md-4" id="sidebar">
+				<div class="col-lg-4 col-md-4 mt-3" id="sidebar">
 					<?php dynamic_sidebar('woocommerce_sidebar'); ?>
 				</div>
 			<?php } ?>

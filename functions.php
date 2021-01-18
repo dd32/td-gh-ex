@@ -72,9 +72,9 @@ function advance_coaching_widgets_init() {
 		'name'          => __('Blog Sidebar', 'advance-coaching'),
 		'description'   => __('Appears on blog page sidebar', 'advance-coaching'),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-uppercase text-left py-3 px-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -82,9 +82,9 @@ function advance_coaching_widgets_init() {
 		'name'          => __('Page Sidebar', 'advance-coaching'),
 		'description'   => __('Appears on page sidebar', 'advance-coaching'),
 		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-uppercase text-left py-3 px-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -92,9 +92,9 @@ function advance_coaching_widgets_init() {
 		'name'          => __('Third Column Sidebar', 'advance-coaching'),
 		'description'   => __('Appears on page sidebar', 'advance-coaching'),
 		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-uppercase text-left py-3 px-2">',
 		'after_title'   => '</h3>',
 	));
 
@@ -105,9 +105,9 @@ function advance_coaching_widgets_init() {
 			'name'          => __( 'Footer Nav ', 'advance-coaching' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s py-3 px-0">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
+			'before_title'  => '<h3 class="widget-title text-left text-uppercase">',
 			'after_title'   => '</h3>',
 		) );
 	}
@@ -116,9 +116,9 @@ function advance_coaching_widgets_init() {
 		'name'          => __( 'Shop Page Sidebar', 'advance-coaching' ),
 		'description'   => __( 'Appears on shop page', 'advance-coaching' ),
 		'id'            => 'woocommerce_sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-uppercase text-left py-3 px-2">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -126,9 +126,9 @@ function advance_coaching_widgets_init() {
 		'name'          => __( 'Single Product Page Sidebar', 'advance-coaching' ),
 		'description'   => __( 'Appears on shop page', 'advance-coaching' ),
 		'id'            => 'woocommerce-single-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s mb-3 p-2">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-uppercase text-left py-3 px-2">',
 		'after_title'   => '</h3>',
 	) );
 }
@@ -248,7 +248,7 @@ function advance_coaching_font_url(){
 function advance_coaching_scripts() {
 	wp_enqueue_style('advance-coaching-font', advance_coaching_font_url(), array());
 	// blocks-css
-	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
+	wp_enqueue_style( 'advance-coaching-block-style', get_theme_file_uri('/css/blocks.css') );
 	wp_enqueue_style('bootstrap', esc_url(get_template_directory_uri()).'/css/bootstrap.css');
 	wp_enqueue_style('advance-coaching-basic-style', get_stylesheet_uri());
 	wp_enqueue_style('advance-coaching-customcss', esc_url(get_template_directory_uri()).'/css/custom.css');
