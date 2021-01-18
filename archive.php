@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <main role="main" id="maincontent" class="our-services">
-    <div class="innerlightbox">
+    <div class="innerlightbox pt-3 px-0 pb-0">
         <div class="container">
             <?php
             $advance_education_left_right = get_theme_mod( 'advance_education_layout_options','Right Sidebar');
@@ -38,7 +38,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-education' ),
                                         'next_text'          => __( 'Next page', 'advance-education' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-education' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -68,7 +68,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-education' ),
                                         'next_text'          => __( 'Next page', 'advance-education' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-education' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -100,7 +100,7 @@ get_header(); ?>
                                 the_posts_pagination( array(
                                     'prev_text'          => __( 'Previous page', 'advance-education' ),
                                     'next_text'          => __( 'Next page', 'advance-education' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
+                                    'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-education' ) . ' </span>',
                                 ) );
                             ?>
                         </div>
@@ -138,7 +138,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-education' ),
                                         'next_text'          => __( 'Next page', 'advance-education' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-education' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>
@@ -171,7 +171,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-education' ),
                                         'next_text'          => __( 'Next page', 'advance-education' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav screen-reader-text text-uppercase p-2">' . __( 'Page', 'advance-education' ) . ' </span>',
                                     ) );
                                 ?>
                             </div>

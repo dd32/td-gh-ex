@@ -21,7 +21,7 @@
             $cols = 'col-lg-12 col-md-12';
         }
     ?>
-    <div id="footer" class="copyright-wrapper">
+    <div id="footer" class="copyright-wrapper py-2 px-0">
         <div class="container">
             <div class="row">
                 <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -47,8 +47,8 @@
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p><?php advance_education_credit();?> <?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('By Themeshopy', 'advance-education')));?></p>
+    <div class="copyright p-3">
+        <p class="mb-0"><?php advance_education_credit();?> <?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('By Themeshopy', 'advance-education')));?></p>
     </div>
 </footer>
 <?php if( get_theme_mod( 'advance_education_enable_disable_scroll',true) != '' || get_theme_mod( 'advance_education_responsive_scroll',true) != '') { ?>

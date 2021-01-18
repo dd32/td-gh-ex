@@ -18,9 +18,9 @@ if ( post_password_required() )
 	return;
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area my-3">
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments-title py-3 px-0">
 			<?php
 				$comments_number = get_comments_number();
 				if ( 1 === $comments_number ) {

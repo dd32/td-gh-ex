@@ -74,9 +74,9 @@ function advance_education_widgets_init() {
 		'name'          => __('Blog Sidebar', 'advance-education'),
 		'description'   => __('Appears on blog page sidebar', 'advance-education'),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-4">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-left p-2 text-capitalize">',
 		'after_title'   => '</h3>',
 	));
 
@@ -84,9 +84,9 @@ function advance_education_widgets_init() {
 		'name'          => __('Page Sidebar', 'advance-education'),
 		'description'   => __('Appears on page sidebar', 'advance-education'),
 		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-4">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-left p-2 text-capitalize">',
 		'after_title'   => '</h3>',
 	));
 
@@ -94,9 +94,9 @@ function advance_education_widgets_init() {
 		'name'          => __('Third Column Sidebar', 'advance-education'),
 		'description'   => __('Appears on page sidebar', 'advance-education'),
 		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-4">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-left p-2 text-capitalize">',
 		'after_title'   => '</h3>',
 	));
 
@@ -107,9 +107,9 @@ function advance_education_widgets_init() {
 			'name'          => __( 'Footer Nav ', 'advance-education' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s py-2 px-0">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
+			'before_title'  => '<h3 class="widget-title text-left text-capitalize">',
 			'after_title'   => '</h3>',
 		) );
 	}
@@ -118,9 +118,9 @@ function advance_education_widgets_init() {
 		'name'          => __( 'Shop Page Sidebar', 'advance-education' ),
 		'description'   => __( 'Appears on shop page', 'advance-education' ),
 		'id'            => 'woocommerce_sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-4">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-left p-2 text-capitalize">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -128,9 +128,9 @@ function advance_education_widgets_init() {
 		'name'          => __( 'Single Product Page Sidebar', 'advance-education' ),
 		'description'   => __( 'Appears on shop page', 'advance-education' ),
 		'id'            => 'woocommerce-single-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s p-2 mb-4">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title text-left p-2 text-capitalize">',
 		'after_title'   => '</h3>',
 	) );
 }
@@ -327,7 +327,7 @@ function advance_education_shop_per_page( $cols ) {
 function advance_education_scripts() {
 	wp_enqueue_style('advance-education-font', advance_education_font_url(), array());
 	// blocks-css
-	wp_enqueue_style( 'block-style', get_theme_file_uri('/css/blocks.css') );
+	wp_enqueue_style( 'advance-education-block-style', get_theme_file_uri('/css/blocks.css') );
 	wp_enqueue_style('bootstrap', esc_url(get_template_directory_uri()).'/css/bootstrap.css');
 	wp_enqueue_style('advance-education-basic-style', get_stylesheet_uri());
 	wp_enqueue_style('advance-education-customcss', esc_url(get_template_directory_uri()).'/css/custom.css');

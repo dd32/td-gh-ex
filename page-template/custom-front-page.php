@@ -9,7 +9,7 @@ get_header(); ?>
   <?php do_action( 'advance_education_above_slider' ); ?>
 
   <?php if( get_theme_mod( 'advance_education_slider_hide', false) != '' || get_theme_mod( 'advance_education_responsive_slider', false) != '') { ?>    
-    <section id="slider">
+    <section id="slider" class="mw-100 m-auto p-0">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_education_slider_speed_option', 3000)); ?>"> 
         <?php $advance_education_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
@@ -33,12 +33,12 @@ get_header(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
               <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
               <div class="carousel-caption">
-                <div class="inner_carousel">
-                  <h1><?php the_title(); ?></h1>
-                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_education_slider_excerpt_length','20')))); ?></p>
+                <div class="inner_carousel text-left">
+                  <h1 class="m-0 p-1 text-left text-uppercase"><?php the_title(); ?></h1>
+                  <p class="py-2 px-0"><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_education_slider_excerpt_length','20')))); ?></p>
                   <?php if( get_theme_mod('advance_education_slider_button','READ MORE') != ''){ ?>
-                    <div class="readbtn">
-                      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_education_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_education_slider_button','READ MORE'));?></span></a>
+                    <div class="readbtn mt-3">
+                      <a href="<?php the_permalink(); ?>" class="p-3"><?php echo esc_html(get_theme_mod('advance_education_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_education_slider_button','READ MORE'));?></span></a>
                     </div>
                   <?php } ?>
                 </div>
@@ -53,11 +53,11 @@ get_header(); ?>
         endif;?>
         <div class="slider-nex-pre">
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+            <span class="carousel-control-prev-icon w-auto h-auto" aria-hidden="true"><i class="fas fa-chevron-left p-3"></i></span>
             <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-education' );?></span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+            <span class="carousel-control-next-icon w-auto h-auto" aria-hidden="true"><i class="fas fa-chevron-right p-3"></i></span>
             <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-education' );?></span>
           </a>
         </div>
@@ -75,10 +75,10 @@ get_header(); ?>
   <?php do_action( 'advance_education_above_popular_courses_section' ); ?>
 
   <?php if( get_theme_mod('advance_education_title') != '' || get_theme_mod( 'advance_education_popular_courses_category' )!= ''){ ?>
-    <section id="courses">
+    <section id="courses" class="py-5 px-0">
       <div class="container">
         <?php if( get_theme_mod('advance_education_title') != ''){ ?>
-          <h2><i class="fas fa-book"></i><?php echo esc_html(get_theme_mod('advance_education_title','')); ?></h2>
+          <h2 class="text-center"><i class="fas fa-book"></i><?php echo esc_html(get_theme_mod('advance_education_title','')); ?></h2>
         <?php } ?>
         <div class="row">
           <?php 
@@ -88,20 +88,20 @@ get_header(); ?>
               <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                 <div class=" col-lg-4 col-md-6">
                   <div class="cat_content">
-                    <div class="cat-posts ">
+                    <div class="cat-posts">
                       <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
-                      <div class="cat_body">
-                        <h3 class="title"><?php the_title(); ?></h3>
-                        <p class="description">
+                      <div class="cat_body p-lg-2">
+                        <h3 class="title p-0"><?php the_title(); ?></h3>
+                        <p class="description my-3 mx-0">
                           <?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt,12 ) ); ?>
                         </p> 
-                        <div class="theme_button">
-                          <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('APPLY NOW','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'APPLY NOW','advance-education' );?></span>
+                        <div class="theme_button mt-3">
+                          <a href="<?php the_permalink(); ?>" class="p-3"><?php echo esc_html_e('APPLY NOW','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'APPLY NOW','advance-education' );?></span>
                           </a>
                         </div>
                       </div>
                     </div>
-                    <h3 class="title-btn"><?php the_title(); ?></h3>
+                    <h3 class="title-btn p-3 m-0"><?php the_title(); ?></h3>
                   </div>
                 </div> 
               <?php endwhile;

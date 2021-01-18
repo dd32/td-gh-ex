@@ -112,7 +112,7 @@ get_header( 'shop' ); ?>
 
 				</div>
 				<?php if ( false != $advance_education_shop_page_sidebar ) {?>
-					<div class="col-lg-4 col-md-4" id="sidebar">
+					<div class="col-lg-4 col-md-4 mt-3" id="sidebar">
 						<?php dynamic_sidebar('woocommerce_sidebar'); ?>
 					</div>
 				<?php } ?>

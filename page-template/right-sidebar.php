@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'advance_education_pageright_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="middle-align row">
+    <main role="main" id="maincontent" class="middle-align row my-0 mx-auto py-3 px-0">
         <div class="background-img-skin col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>
@@ -22,7 +22,7 @@ get_header(); ?>
                 endif;
             ?>
         </div>
-        <div id="sidebar" class="col-lg-4 col-md-4">
+        <div id="sidebar" class="col-lg-4 col-md-4 mt-3">
             <?php dynamic_sidebar('sidebar-2'); ?>
         </div>
         <div class="clear"></div> 

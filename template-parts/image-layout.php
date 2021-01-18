@@ -44,17 +44,17 @@
         if ( is_singular( 'attachment' ) ) {
             // Parent post navigation.
             the_post_navigation( array(
-                'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'advance-education' ),
+                'prev_text' => _x( '<span class="meta-nav text-uppercase p-2">Published in</span><span class="post-title my-2 mx-0">%title</span>', 'Parent post link', 'advance-education' ),
             ) );
         }   elseif ( is_singular( 'post' ) ) {
             // Previous/next post navigation.
             the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-education' ) . '</span> ' .
+                'next_text' => '<span class="meta-nav text-uppercase p-2" aria-hidden="true">' . __( 'Next', 'advance-education' ) . '</span> ' .
                     '<span class="screen-reader-text">' . __( 'Next post:', 'advance-education' ) . '</span> ' .
-                    '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-education' ) . '</span> ' .
+                    '<span class="post-title my-2 mx-0">%title</span>',
+                'prev_text' => '<span class="meta-nav text-uppercase p-2" aria-hidden="true">' . __( 'Previous', 'advance-education' ) . '</span> ' .
                     '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-education' ) . '</span> ' .
-                    '<span class="post-title">%title</span>',
+                    '<span class="post-title my-2 mx-0">%title</span>',
             ) );
         }
     ?>

@@ -22,7 +22,7 @@
   } ?>
   <header role="banner">
     <?php if(get_theme_mod('advance_education_preloader_option',true) || get_theme_mod('advance_education_responsive_preloader', true) != ''){ ?>
-      <div id="loader-wrapper">
+      <div id="loader-wrapper" class="w-100 h-100">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
@@ -35,27 +35,27 @@
           <div class="top-header">
             <div class="row m-0">
               <?php if( get_theme_mod('advance_education_time') != ''){ ?>
-                <div class="col-lg-3 col-md-3 time">
+                <div class="col-lg-3 col-md-3 time py-3">
                   <span><?php echo esc_html( get_theme_mod('advance_education_time','')); ?></span>
                 </div>
               <?php } ?>
               <div class="col-lg-2 col-md-3">
                 <?php if( get_theme_mod('advance_education_phone1') != ''){ ?>
-                  <div class="phone">
-                    <a href="tel:<?php echo esc_attr( get_theme_mod('advance_education_phone1','' )); ?>"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span></a>
+                  <div class="phone py-lg-3 px-lg-0 text-center mb-2">
+                    <a href="tel:<?php echo esc_attr( get_theme_mod('advance_education_phone1','' )); ?>"><i class="fas fa-phone mr-2"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?><span class="screen-reader-text"><i class="fas fa-phone mr-2"></i><?php echo esc_html( get_theme_mod('advance_education_phone1','' )); ?></span></a>
                   </div> 
                 <?php } ?>
               </div>
               <div class="col-lg-3 col-md-3 p-0">
                 <?php if( get_theme_mod('advance_education_mail1') != ''){ ?>
-                  <div class="mail">
-                    <a href="mailto:<?php echo esc_attr( get_theme_mod('advance_education_mail1','') ); ?>"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span></a>
+                  <div class="mail py-lg-3 px-lg-0 text-lg-left mb-lg-0 text-center mb-2 p-0">
+                    <a href="mailto:<?php echo esc_attr( get_theme_mod('advance_education_mail1','') ); ?>"><i class="fas fa-envelope mr-2"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?><span class="screen-reader-text"><i class="fas fa-envelope mr-2"></i><?php echo esc_html( get_theme_mod('advance_education_mail1','')); ?></span></a>
                   </div>  
                 <?php } ?>
               </div>
               <div class="col-lg-4 col-md-3">
-                <div class="account-btn">
-                  <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'MY ACCOUNT','advance-education' );?></span></a>
+                <div class="account-btn text-right my-3 mx-0">
+                  <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>" class="py-2 px-3"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'MY ACCOUNT','advance-education' );?></span></a>
                 </div>
               </div>
             </div>
@@ -67,8 +67,8 @@
   <div class="<?php if( get_theme_mod( 'advance_education_sticky_header', false) != '' || get_theme_mod( 'advance_education_responsive_sticky_header', false) != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <?php 
     if(has_nav_menu('primary')){ ?>
-      <div class="toggle-menu responsive-menu">
-        <button role="tab" class="mobiletoggle"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
+      <div class="toggle-menu responsive-menu text-left">
+        <button role="tab" class="mobiletoggle"><i class="fas fa-bars p-3"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
       </div>
     <?php }?>
   </div>
