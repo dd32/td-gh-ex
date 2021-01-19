@@ -1067,7 +1067,8 @@ function ashe_customize_register( $wp_customize ) {
 		'youtube-play' 			=> 'Youtube 1',
 		'youtube' 				=> 'Youtube 2',
 		'youtube-square' 		=> 'Youtube 3',
-		'vimeo-square' 			=> 'Vimeo 1',
+		'vimeo-square' 			=> 'Vimeo',
+		'twitch' 				=> 'Twitch',
 		'soundcloud' 			=> 'Soundcloud',
 		'instagram' 			=> 'Instagram',
 		'info' 					=> 'Info 1',
@@ -1100,7 +1101,7 @@ function ashe_customize_register( $wp_customize ) {
 		'shopping-cart'			=> 'Cart',
 		'meetup' 				=> 'Meetup',
 		'cc-paypal' 			=> 'PayPal',
-		'credit-card' 			=> 'Credit Card', 
+		'credit-card' 			=> 'Credit Card',
 	);
 
 	// Social #1 Icon
