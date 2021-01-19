@@ -1,12 +1,12 @@
 <?php
-// Footer copyright section 
+// Footer copyright section
 	function appointment_red_copyright_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'appointment_copyright_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
 		'title'      => esc_html__('Footer copyright settings', 'appointment-red'),
 	) );
-	
+
 	$wp_customize->add_section(
         'copyright_section_one',
         array(
@@ -15,16 +15,16 @@
 			'panel' => 'appointment_copyright_setting',
         )
     );
-	
-	
+
+
 	$wp_customize->add_setting(
     'appointment_options[footer_copyright_text]',
     array(
-        'default' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment Red</a> by Webriti', 'appointment-red' ).'</p>',
+        'default' => '<p>'.__( 'Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment Red</a> by Webriti', 'appointment-red' ).'</p>',
 		'sanitize_callback' => 'appointment_red_footer_copyright_sanitize_html',
 		'type' =>'option'
     )
-	
+
 );
 $wp_customize->add_control(
     'appointment_options[footer_copyright_text]',
@@ -49,7 +49,7 @@ $wp_customize->add_control(
     )
 );
 
-	//Footer social link 
+	//Footer social link
 	$wp_customize->add_section(
         'copyright_social_icon',
         array(
@@ -58,10 +58,10 @@ $wp_customize->add_control(
 			'panel' => 'appointment_copyright_setting',
         )
     );
-	
-	
+
+
 	//Hide Index Service Section
-	
+
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_enabled]',
     array(
@@ -69,7 +69,7 @@ $wp_customize->add_control(
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_red_sanitize_checkbox',
 		'type' => 'option'
-    )	
+    )
 	);
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_enabled]',
@@ -88,7 +88,7 @@ $wp_customize->add_control(
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
-	
+
 	);
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_facebook_link]',
@@ -116,7 +116,7 @@ $wp_customize->add_control(
 );
 
 	//twitter link
-	
+
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_twitter_link]',
     array(
@@ -124,7 +124,7 @@ $wp_customize->add_control(
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option'
     )
-	
+
 	);
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_twitter_link]',
@@ -151,7 +151,7 @@ $wp_customize->add_control(
     )
 );
 	//Linkdin link
-	
+
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_linkedin_link]',
     array(
@@ -159,7 +159,7 @@ $wp_customize->add_control(
         'default' => '',
 		'sanitize_callback' => 'esc_url_raw',
     )
-	
+
 	);
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_linkedin_link]',
@@ -187,7 +187,7 @@ $wp_customize->add_control(
 );
 
 	//Google-plus link
-	
+
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_googleplus_link]',
     array(
@@ -195,7 +195,7 @@ $wp_customize->add_control(
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
     )
-	
+
 	);
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_googleplus_link]',
@@ -223,7 +223,7 @@ $wp_customize->add_control(
 );
 
 	//Skype link
-	
+
 	$wp_customize->add_setting(
     'appointment_options[footer_social_media_skype_link]',
     array(
@@ -231,7 +231,7 @@ $wp_customize->add_control(
 		'sanitize_callback' => 'esc_url_raw',
 		'type'=>'option',
     )
-	
+
 	);
 	$wp_customize->add_control(
    'appointment_options[footer_social_media_skype_link]',
