@@ -14,23 +14,23 @@ const {
 } = require('../helpers/handle-errors.js');
 const bs = require('browser-sync');
 const notify = require('gulp-notify');
+const mmq = require('gulp-merge-media-queries');
 
 function styles(done) {
-  const plugins = [autoprefixer({
-    grid: true
-  })];
-
   return src(config.styles.main)
     .pipe(sass(config.styles.opts.development))
-    .on('error', handleError('styles'))
+
+    // Merge media queries
+    .pipe(mmq({
+      log: false
+    }))
 
     // Save expanded version for development
     .pipe(dest(config.styles.dest))
 
     // Production settings
     .pipe(sass(config.styles.opts.production))
-    .pipe(postcss(plugins))
-    .on('error', handleError('styles'))
+    .pipe(postcss([autoprefixer()]))
 
     .pipe(cleancss(config.cleancss.opts,
       function (details) {
@@ -51,18 +51,13 @@ function styles(done) {
 }
 
 function gutenbergstyles(done) {
-  const plugins = [autoprefixer({
-    grid: true
-  })];
 
   return src(config.styles.gutenberg)
     .pipe(sass(config.styles.opts.development))
-    .on('error', handleError('styles'))
 
     // Production settings
     .pipe(sass(config.styles.opts.production))
-    .pipe(postcss(plugins))
-    .on('error', handleError('styles'))
+    .pipe(postcss([autoprefixer()]))
 
     .pipe(cleancss(config.cleancss.opts,
       function (details) {

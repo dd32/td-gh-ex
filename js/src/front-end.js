@@ -4,27 +4,32 @@
 
 // Import modules (comment to disable)
 import MoveTo from 'moveto';
-// import './sticky-nav.js'
+import LazyLoad from "vanilla-lazyload";
+import getLocalization from './modules/localization';
+import styleExternalLinks from './modules/external-link';
+// import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
 import 'what-input';
-import './lazyload.js';
 
 // Navigation
-import './navigation.js';
+import './modules/navigation.js';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
 
+// Style external links
+styleExternalLinks();
+
 // Init lazyload
 // Usage example on template side when air-helper enabled:
-// <?php image_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
-let images = document.querySelectorAll('.lazyload');
-lazyload(images, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0
-});
+// <?php vanilla_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
+// Refer to documentation:
+// 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
+// 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
+var air_light_LazyLoad = new LazyLoad();
+// After your content has changed...
+air_light_LazyLoad.update();
 
 // jQuery start
 (function ($) {
@@ -123,3 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
     moveTo.registerTrigger(triggers[i]);
   }
 });
+
+

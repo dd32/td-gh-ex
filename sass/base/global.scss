@@ -8,17 +8,16 @@
 @import '../helpers/typography';
 @import '../helpers/general';
 @import '../helpers/aspect-ratio';
-@import '../helpers/background';
 @import '../helpers/grid';
-
-// Style components
-// @import '../components/person-card';
 
 // Variables
 @import '../variables/colors';
 @import '../variables/breakpoints';
 @import '../variables/spacings';
 @import '../variables/fonts';
+
+// Style components
+// @import '../components/box-with-shadow';
 
 // Accessibility
 @import 'accessibility';
@@ -29,6 +28,7 @@
 @import '../navigation/nav-mobile';
 
 // Structure
+@import '../layout/demo-content';
 @import '../layout/general';
 @import '../layout/typography';
 @import '../layout/site-header';
@@ -36,18 +36,22 @@
 @import '../layout/forms';
 @import '../layout/gutenberg';
 @import '../layout/wordpress';
-@import '../layout/demo-content';
 
 // Global features
 @import '../features/top';
 @import '../features/gallery';
 @import '../features/lazyload';
 @import '../features/pagination';
+@import '../features/gravity-forms';
 
 // Views
 @import '../views/front-page';
 @import '../views/search';
+@import '../views/404';
 @import '../views/comments';
+
+// Modules
+// @import '../modules/some-module';
 
 // Gutenberg blocks
 @import '../gutenberg/boxed';

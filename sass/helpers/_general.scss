@@ -1,8 +1,6 @@
-// ---------------------------------------------------------
 // Helpers
 //
 // Mixins and other essentials for global theme development.
-// ---------------------------------------------------------
 
 // General
 @mixin hiddentext() {
@@ -14,8 +12,6 @@
   text-align: start;
 }
 
-// Related to viewport sized typography with minimum and maximum values, see helpers/_typography.scss
-// Based on an example here: https://css-tricks.com/snippets/css/fluid-typography/
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }

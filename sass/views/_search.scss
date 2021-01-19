@@ -1,3 +1,5 @@
+// Search
+
 .block-search,
 .block-search-results {
   background-color: $color-white;
@@ -6,6 +8,7 @@
 .block-search form {
   display: grid;
   grid-template-columns: 9fr 1fr;
+
   /* autoprefixer: off */
   grid-gap: 1rem;
 
@@ -27,10 +30,10 @@
 
   .row-result {
     padding: 2rem 0;
-    border-top: 2px solid $color-forms-border;
+    border-top: 2px solid $color-border-forms;
 
     &:last-of-type {
-      border-bottom: 2px solid $color-forms-border;
+      border-bottom: 2px solid $color-border-forms;
     }
   }
 
@@ -43,13 +46,13 @@
     margin-top: 1rem;
   }
 
-  .tags li a {
-    background-color: $color-ice;
+  .tags a {
+    background-color: $color-tags-and-search-items;
     color: $color-main;
 
     &:hover {
       background-color: $color-main;
-      color: $color-ice;
+      color: $color-tags-and-search-items;
     }
   }
 }

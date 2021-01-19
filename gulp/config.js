@@ -50,7 +50,19 @@ module.exports = {
     main: 'sass/base/global.scss',
     src: 'sass/**/*.{sass,scss}',
     dest: 'css',
-    scsslintexcludes: ['!' + 'sass/navigation/_burger.scss', '!' + 'sass/base/_normalize.scss'],
+    exclude: ['!' + 'sass/navigation/_burger.scss', '!' + 'sass/base/_normalize.scss', '!' + 'css/global.css', '!' + 'css/global.min.css'],
+    stylelint: {
+      opts: {
+        fix: false,
+        ignoreFiles: ['!*.scss'],
+        reporters: [{
+          formatter: 'string',
+          console: true,
+          failAfterError: false,
+          debug: false
+        }]
+      }
+    },
     opts: {
       development: {
         bundleExec: true,
@@ -71,15 +83,9 @@ module.exports = {
     }
   },
   js: {
-    main: 'js/src/scripts.js',
+    main: 'js/src/*.js',
     src: 'js/src/**/*.js',
-    dest: 'js',
-    uglify: {
-      opts: {
-        compress: true,
-        mangle: true
-      }
-    }
+    dest: 'js/dist/'
   },
   php: {
     src: '**/*.php'
