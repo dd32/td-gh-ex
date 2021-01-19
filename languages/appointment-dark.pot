@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment Dark\n"
-"POT-Creation-Date: 2020-12-08 17:37+0530\n"
+"POT-Creation-Date: 2021-01-15 18:04+0530\n"
 "PO-Revision-Date: 2020-10-03 11:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -620,28 +620,32 @@ msgid ""
 "support you can create a website available in multiple languages."
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
+msgid "Proudly powered by"
+msgstr ""
+
+#: footer.php:25
 msgid "https://wordpress.org"
 msgstr ""
 
-#: footer.php:26
-msgid "Proudly powered by WordPress"
+#: footer.php:25
+msgid "WordPress"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
 msgid "| Theme:"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
 msgid "https://webriti.com"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-#: footer.php:26
+#: footer.php:25
 msgid "Appointment Dark"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
 msgid "by Webriti"
 msgstr ""
 

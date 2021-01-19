@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 1.1.1
+1. Updated "Tested up to" field and fixed some style issues.
+
 @Version 1.1
 1. Fixed empty markup issue of the latest news section title & description.
 
@@ -30,5 +33,5 @@
 1. Update Free vs pro table in option page.
 2. Fixed escaping and style issues.
 
-@Version 0.1 
+@Version 0.1
 Released.

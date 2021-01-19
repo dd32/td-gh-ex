@@ -2,11 +2,13 @@
 
 Contributors: priyanshumittal
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 1.1
+Tested up to: 5.6
+Stable tag: 1.1.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Appointment Dark is the child theme of Appointment theme.
 
 === Description ===
 
@@ -35,6 +37,9 @@ Appointment Dark WordPress Theme is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+@Version 1.1.1
+1. Updated "Tested up to" field and fixed some style issues.
 
 @Version 1.1
 1. Fixed empty markup issue of the latest news section title & description.
@@ -66,7 +71,7 @@ Appointment Dark WordPress Theme is distributed under the terms of the GNU GPL
 1. Update Free vs pro table in option page.
 2. Fixed escaping and style issues.
 
-@Version 0.1 
+@Version 0.1
 Released.
 
 == Images ==
@@ -79,7 +84,7 @@ https://pxhere.com/en/photo/1411386
 License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
-* Images on /images folder
+* Images on /images and /admin/assets/img folder
 Copyright (C) 2020, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
 
 # --- EOF --- #

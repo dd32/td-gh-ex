@@ -4,12 +4,12 @@ $appointment_dark_footer_setting = wp_parse_args(get_option('appointment_options
 if (is_active_sidebar('footer-widget-area')) {
     ?>
     <div class="footer-section">
-        <div class="container">	
+        <div class="container">
             <div class="row footer-widget-section">
                 <?php
                 dynamic_sidebar('footer-widget-area');
             }
-            ?>	
+            ?>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -21,9 +21,9 @@ if (is_active_sidebar('footer-widget-area')) {
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div class="footer-copyright">                
-                    <p>
-                        <a href="<?php echo esc_url( __( 'https://wordpress.org', 'appointment-dark' ) ); ?>"> <?php esc_html_e( 'Proudly powered by WordPress', 'appointment-dark' ); ?></a> <?php esc_html_e( '| Theme:', 'appointment-dark' ); ?> <a href="<?php echo esc_url( __( 'https://webriti.com', 'appointment-dark' ) ); ?>" rel="nofollow"><?php esc_html_e( 'Appointment Dark', 'appointment-dark' ); ?></a> <?php esc_html_e( 'by Webriti', 'appointment-dark' );?></p>                              
+                <div class="footer-copyright">
+                    <p> <?php esc_html_e('Proudly powered by','appointment-dark'); ?> <a href="<?php echo esc_url( __( 'https://wordpress.org', 'appointment-dark' ) ); ?>"> <?php esc_html_e('WordPress', 'appointment-dark' ); ?></a> <?php esc_html_e( '| Theme:', 'appointment-dark' ); ?> <a href="<?php echo esc_url( __( 'https://webriti.com', 'appointment-dark' ) ); ?>" rel="nofollow"><?php esc_html_e( 'Appointment Dark', 'appointment-dark' ); ?></a> <?php esc_html_e( 'by Webriti', 'appointment-dark' );?>
+                    </p>
                 </div>
             </div>
             <?php
@@ -75,9 +75,9 @@ if (is_active_sidebar('footer-widget-area')) {
     </div>
 </div>
 <!-- /Footer Copyright Section -->
-<!--Scroll To Top--> 
+<!--Scroll To Top-->
 <a href="#" class="hc_scrollup"><i class="fa fa-chevron-up"></i></a>
-<!--/Scroll To Top--> 
+<!--/Scroll To Top-->
 <?php wp_footer(); ?>
 </body>
 </html>

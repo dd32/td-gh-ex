@@ -26,7 +26,7 @@ input {
 .head-contact-social li.pagelines:hover { background-color: #364146; }
 .head-contact-social li > a > i { color: #FFFFFF; }
 
-/* Menu Section css---------------------------------------------------------------------------------------------------- */ 
+/* Menu Section css---------------------------------------------------------------------------------------------------- */
 .navbar-default { background-color: transparent; border-color: #e7e7e7; }
 .navbar-inverse .navbar-toggle { background: none repeat scroll 0 0 #66d1b9; border-color: none; }
 .navbar-inverse .navbar-toggle:hover,
@@ -53,7 +53,7 @@ input {
 @media only screen and (min-width: 480px) and (max-width: 1100px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #1bbc9b;background-color: transparent; } }
 .navbar2 .nav .open >a, .navbar2 .nav .open >a:hover, .navbar2 .nav .open >a:focus{border-color: #169d81;}
-/*Homepage Carousel Bootstrap Slider Section------------------------------------------------------------------*/ 
+/*Homepage Carousel Bootstrap Slider Section------------------------------------------------------------------*/
 .slide-text-bg1 h2 {
     background-color: rgba(255, 255, 255, 0.9);
     color: #242526;
@@ -78,8 +78,8 @@ input {
 .format-aside { background-color: rgba(45, 47, 49, 0.8); }
 .format-aside p { color: #ffffff; }
 /*Post Format - Quote*/
-.format-quote { background-color: rgba(45, 47, 49, 0.8); color: #ffffff; } 
-.format-quote:before { color: #1bbc9b; } 
+.format-quote { background-color: rgba(45, 47, 49, 0.8); color: #ffffff; }
+.format-quote:before { color: #1bbc9b; }
 /*Post Format - Video*/
 .video-frame { background: #ffffff; }
 .video-frame iframe { border: 0px none; }
@@ -109,7 +109,7 @@ input {
 .service-area p { color: #727272; }
 
 /*Callout Section-----------------------------------------------------------------------------------------------*/
-.callout-section { background: url("../images/callout-bg.jpg") no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0); } 
+.callout-section { background: url("../images/callout-bg.jpg") no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0); }
 .callout-section .overlay { background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7); }
 .callout-section h1 { color: #ffffff; }
 .callout-section p { color: #e5e5e5; }
@@ -168,7 +168,7 @@ a.works-btn:hover { color: #ffffff; }
 .blog-post-sm a:hover, .blog-tags-sm a:hover { color: #1bbc9b; }
 .blog-sm-area h3 { color: #242526; }
 .blog-sm-area h3 > a { color: #242526; }
-.blog-sm-area h3 > a:hover, 
+.blog-sm-area h3 > a:hover,
 .blog-sm-area h3 > a:focus { color: #1bbc9b; }
 .blog-sm-area p { color: #727272; }
 .blog-btn-sm { background-color: #1bbc9b; box-shadow: 0 3px 0 0 #169d81; color: #ffffff; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
@@ -205,7 +205,7 @@ a.works-btn:hover { color: #ffffff; }
 .footer-blog-post span { color: #727272; }
 .footer-widget-tags a { background-color: #fcfcfc; border: 1px solid #dadada; color: #45494b; }
 .footer-widget-tags a:hover { background-color: #1bbc9b; border: 1px solid #1bbc9b; color: #ffffff; }
-.footer-widget-column ul li a { color: #727272; } 
+.footer-widget-column ul li a { color: #727272; }
 .footer-widget-column ul li a:hover { color: #1bbc9b; }
 .footer-copyright-section { background-color: #ffffff; border-bottom: 5px solid #1bbc9b; }
 .footer-copyright { padding: 30px 0; }
@@ -249,13 +249,13 @@ a.works-btn:hover { color: #ffffff; }
 .team-image .team-showcase-icons a:hover { background-color: #0e0e0e; color: #ffffff; }
 
 /*Blog Section Css - Blog Right Sidebar, Blog Left Sidebar, Blog Full Width, Blog Detail Page------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.blog-lg-area-left > .media > .media-body, 
-.blog-lg-area-right  .media > .media-body, 
-.blog-lg-area-full .media > .media-body { border-bottom: 1px solid #eeeeee; } 
+.blog-lg-area-left > .media > .media-body,
+.blog-lg-area-right  .media > .media-body,
+.blog-lg-area-full .media > .media-body { border-bottom: 1px solid #eeeeee; }
 .blog-post-date-area { background: none repeat scroll 0 0 #ffffff; }
 .blog-post-date-area .date { background-color: #1bbc9b; color: #ffffff; }
 .blog-post-date-area .month-year { color: #ffffff; }
-.blog-post-date-area .comment { background-color: #2a2a2a; color: #d0d0d0; } 
+.blog-post-date-area .comment { background-color: #2a2a2a; color: #d0d0d0; }
 .blog-post-date-area .comment > a { color: #d0d0d0; }
 .blog-post-date-area .comment:hover > a { color: #ffffff; }
 .blog-lg-box img { border-bottom: 3px solid #1bbc9b; }
@@ -263,21 +263,21 @@ a.works-btn:hover { color: #ffffff; }
 .blog-tags-lg i { color: #afafaf; }
 .blog-post-lg a, .blog-tags-lg a { color: #242526; }
 .blog-post-lg a:hover, .blog-tags-lg a:hover { color: #1bbc9b; }
-.blog-lg-area-left h3, 
-.blog-lg-area-right h3, 
+.blog-lg-area-left h3,
+.blog-lg-area-right h3,
 .blog-lg-area-full h3 { color: #242526; }
-.blog-lg-area-left h3 > a, 
-.blog-lg-area-right h3 > a, 
-.blog-lg-area-full h3 > a { 
+.blog-lg-area-left h3 > a,
+.blog-lg-area-right h3 > a,
+.blog-lg-area-full h3 > a {
     color: #242526;
 }
-.blog-lg-area-left h3 > a:hover, 
-.blog-lg-area-right h3 > a:hover, 
+.blog-lg-area-left h3 > a:hover,
+.blog-lg-area-right h3 > a:hover,
 .blog-lg-area-full h3 > a:hover {
     color: #1bbc9b;
 }
-.blog-lg-area-left p, 
-.blog-lg-area-right p, 
+.blog-lg-area-left p,
+.blog-lg-area-right p,
 .blog-lg-area-full p { color: #727272; }
 .blog-btn-lg { background-color: #1bbc9b; box-shadow: 0 3px 0 0 #169d81; color: #ffffff; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
 .blog-btn-lg:hover { color: #ffffff; }
@@ -317,28 +317,28 @@ p.wp-caption-text a { color: #1bbc9b; }
 .comment-form-section { background-color: transparent; }
 .blog-form-group, .contact-form-group { margin-bottom: 15px; }
 .blog-form-control, .contact-form-control { color: #8f969c; background-color: transparent; border: 1px solid #e9e9e9; }
-.blog-form-control-textarea, 
+.blog-form-control-textarea,
 .contact-form-control-textarea { color: #8f969c; background-color: transparent; border: 1px solid #e9e9e9; }
 
 /*Placeholder css*/
-.blog-form-control::-webkit-input-placeholder, 
+.blog-form-control::-webkit-input-placeholder,
 .blog-form-control-textarea::-webkit-input-placeholder,
-.contact-form-control::-webkit-input-placeholder, 
+.contact-form-control::-webkit-input-placeholder,
 .contact-form-control-textarea::-webkit-input-placeholder {
    color: #727272;
 }
-.blog-form-control::-moz-placeholder, 
-.blog-form-control-textarea::-moz-placeholder, 
-.contact-form-control::-moz-placeholder, 
-.contact-form-control-textarea::-moz-placeholder {  
-   color: #727272;  
+.blog-form-control::-moz-placeholder,
+.blog-form-control-textarea::-moz-placeholder,
+.contact-form-control::-moz-placeholder,
+.contact-form-control-textarea::-moz-placeholder {
+   color: #727272;
 }
-.blog-form-control:-ms-input-placeholder, 
-.blog-form-control-textarea:-ms-input-placeholder, 
-.contact-form-control:-ms-input-placeholder, 
-.contact-form-control-textarea:-ms-input-placeholder {  
-   color: #727272;  
-} 
+.blog-form-control:-ms-input-placeholder,
+.blog-form-control-textarea:-ms-input-placeholder,
+.contact-form-control:-ms-input-placeholder,
+.contact-form-control-textarea:-ms-input-placeholder {
+   color: #727272;
+}
 .blogdetail-btn a, .cont-btn a  { background-color: #1bbc9b; color: #FFFFFF; box-shadow: 0 3px 0 0 #169d81; }
 .blogdetail-btn a:hover, .cont-btn a:hover { background-color: #1bbc9b; color: #FFFFFF; }
 
@@ -371,7 +371,7 @@ p.wp-caption-text a { color: #1bbc9b; }
     color: #242526;
 }
 .sidebar-blog-post:hover h3 a {
-    color: #1bbc9b; 
+    color: #1bbc9b;
 }
 .sidebar-blog-post span {
     color: #727272;
@@ -392,7 +392,7 @@ ul.post-content li:hover a { color: #1bbc9b; }
 .google-map { border: 4px solid #ffffff; box-shadow: 0 0 5px 0 #bebebe; }
 .contact-detail-section { background: url("../images/bg1.jpg") repeat fixed 0 0 rgba(0, 0, 0, 0); }
 .contact-detail-section .overlay { background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7); }
-.contact-detail-area { background: none repeat scroll 0 0 transparent; } 
+.contact-detail-area { background: none repeat scroll 0 0 transparent; }
 .contact-detail-area i { color: #ffffff; }
 .contact-detail-area h6 { color: #ffffff; }
 .contact-detail-area address { color: #ffffff; }
@@ -446,14 +446,14 @@ a.error-btn:hover { color: #ffffff; }
 .team4 .team-block .custom-social-icons li > a:hover {
     color: #1bbc9b;
 }
- /*New css*/ 
+ /*New css*/
 .cart-header > a .cart-total {
     background: #1bbc9b;
 }
 .dropdown-menu { background-color: #1bbc9b; }
- /*New Header css*/ 
+ /*New Header css*/
  @media only screen and (min-width: 480px) and (max-width: 767px) {
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #1bbc9b; } 
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #1bbc9b; }
 }
 #searchbar_fullscreen .btn {background-color: #1bbc9b;}
 #searchbar_fullscreen .close {background-color: #1bbc9b;}
@@ -526,7 +526,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .page-builder h1, .page-bu
 .blog-section { background-color : #111111; }
 .section-heading-title p , .service-area p, .blog-post-sm, .blog-sm-area p, .footer-contact-area h6 { color: #e5e5e5; }
 .footer-contact-area .media-body h4 , .footer-section p , .footer-widget-address address,
-.footer-blog-post span, .footer-widget-column ul li a , .footer-copyright .media-body p { color: #e5e5e5; } 
+.footer-blog-post span, .footer-widget-column ul li a , .footer-copyright .media-body p { color: #e5e5e5; }
 .blog-sm-area:hover .blog-sm-box img {  padding-top: 0px; }
 .callout-section { margin: 0px 0;}
 .blog-section {  margin: 0px 0 0; padding: 50px 0 0;}
@@ -595,7 +595,7 @@ table,.wp-block-pullquote blockquote p,.wp-block-group.has-background p,.wp-capt
 .tagcloud a:hover { background-color: #1bbc9b;border: none;}
 .tagcloud a {border:none;}
 .blog-sm-area:hover .blog-sm-box img {
-    opacity: 1; 
+    opacity: 1;
 }
 .footer-widget-section .textwidget img.alignnone {margin: 0;}
 
@@ -624,7 +624,7 @@ table,.wp-block-pullquote blockquote p,.wp-block-group.has-background p,.wp-capt
  .footer-contact-detail-section h3,
   .footer-contact-detail-section h4,
   .footer-contact-detail-section h5,
-  .footer-contact-detail-section h6 {   
+  .footer-contact-detail-section h6 {
     font-weight: 500;
     }
 .footer-section {
