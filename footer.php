@@ -4,12 +4,12 @@ $appointment_blue_footer_setting = wp_parse_args(get_option('appointment_options
 if (is_active_sidebar('footer-widget-area')) {
     ?>
     <div class="footer-section">
-        <div class="container">	
+        <div class="container">
             <div class="row footer-widget-section">
                 <?php
                 dynamic_sidebar('footer-widget-area');
             }
-            ?>	
+            ?>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -21,22 +21,22 @@ if (is_active_sidebar('footer-widget-area')) {
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+                <?php if ($appointment_blue_footer_setting['footer_menu_bar_enabled'] == 0) { ?>
                 <div class="footer-copyright">
-                    <?php if ($appointment_blue_footer_setting['footer_menu_bar_enabled'] == 0) { ?>
                         <?php echo wp_kses_post($appointment_blue_footer_setting['footer_copyright_text']); ?>
                         <!--</a>-->
-                    <?php } // end if    ?>
                 </div>
+                <?php } // end if    ?>
             </div>
             <?php
             if ($appointment_blue_footer_setting['footer_social_media_enabled'] == 0) {
                 $appointment_blue_footer_facebook = $appointment_blue_footer_setting['footer_social_media_facebook_link'];
                 $appointment_blue_footer_twitter = $appointment_blue_footer_setting['footer_social_media_twitter_link'];
                 $appointment_blue_footer_linkdin = $appointment_blue_footer_setting['footer_social_media_linkedin_link'];
-                $appointment_footer_blue_googleplus = $appointment_blue_footer_setting['footer_social_media_googleplus_link'];
-                $appointment_footer_blue_skype = $appointment_blue_footer_setting['footer_social_media_skype_link'];
-                
-                if($appointment_blue_footer_facebook !='' || $appointment_blue_footer_twitter!='' || $appointment_blue_footer_linkdin!='' ||  $appointment_footer_blue_googleplus !='' || $appointment_footer_blue_skype !='') {
+                $appointment_blue_footer_googleplus = $appointment_blue_footer_setting['footer_social_media_googleplus_link'];
+                $appointment_blue_footer_skype = $appointment_blue_footer_setting['footer_social_media_skype_link'];
+
+                if($appointment_blue_footer_facebook !='' || $appointment_blue_footer_twitter!='' || $appointment_blue_footer_linkdin!='' ||  $appointment_blue_footer_googleplus !='' || $appointment_blue_footer_skype !='') {
                 ?>
                 <div class="col-md-4">
                     <ul class="footer-contact-social">
@@ -59,13 +59,13 @@ if (is_active_sidebar('footer-widget-area')) {
                                 }
                                 ?> ><i class="fa fa-linkedin"></i></a></li>
                                                 <?php } if ($appointment_blue_footer_setting['footer_social_media_googleplus_link'] != '') { ?>
-                            <li class="googleplus"><a href="<?php echo esc_url($appointment_footer_blue_googleplus); ?>" <?php
+                            <li class="googleplus"><a href="<?php echo esc_url($appointment_blue_footer_googleplus); ?>" <?php
                                 if ($appointment_blue_footer_setting['footer_googleplus_media_enabled'] == 1) {
                                     echo "target='_blank'";
                                 }
                                 ?> ><i class="fa fa-google-plus"></i></a></li>
                                                   <?php } if ($appointment_blue_footer_setting['footer_social_media_skype_link'] != '') { ?>
-                            <li class="skype"><a href="<?php echo esc_url($appointment_footer_blue_skype); ?>" <?php
+                            <li class="skype"><a href="<?php echo esc_url($appointment_blue_footer_skype); ?>" <?php
                                 if ($appointment_blue_footer_setting['footer_skype_media_enabled'] == 1) {
                                     echo "target='_blank'";
                                 }
@@ -73,15 +73,15 @@ if (is_active_sidebar('footer-widget-area')) {
                                              <?php } ?>
                     </ul>
                 </div>
-            <?php } 
+            <?php }
             } ?>
         </div>
     </div>
 </div>
 <!-- /Footer Copyright Section -->
-<!--Scroll To Top--> 
+<!--Scroll To Top-->
 <a href="#" class="hc_scrollup"><i class="fa fa-chevron-up"></i></a>
-<!--/Scroll To Top--> 
+<!--/Scroll To Top-->
 <?php wp_footer(); ?>
 </body>
 </html>

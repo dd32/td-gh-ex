@@ -6,9 +6,9 @@ Description: A Business theme which is ideal for creating a corporate / business
 Author URI: https://www.webriti.com
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, left-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Template: appointment
-Version: 1.2.3
+Version: 1.2.4
 Requires at least: 4.5
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -111,7 +111,7 @@ Text Domain: appointment-blue
   color: #FFFFFF;
   }
 }
-/* Menu Section css  Navbar3 ---------------------------------------------------------------------------------------------------- */ 
+/* Menu Section css  Navbar3 ---------------------------------------------------------------------------------------------------- */
 
 .navbar3 .navbar-inverse .navbar-toggle { background: none repeat scroll 0 0 #66d1b9; border-color: none; }
 .navbar3 .navbar-inverse .navbar-toggle:hover,
@@ -189,7 +189,7 @@ Text Domain: appointment-blue
     width: 100%;
 }
 .service-section2 .service-area:hover .service-icon i {
-     padding-top: 0px; 
+     padding-top: 0px;
 }
 .service-section2 .service-area:hover .media-body h3,.service-section2 .service-area:hover .media-body p{
    color: #fff;
@@ -205,7 +205,7 @@ Text Domain: appointment-blue
   padding-bottom:5px;
 }
 @media only screen and (max-width: 1100px) and (min-width: 200px){
-  .navbar-toggle {
+  .navbar3 .navbar-toggle {
       color: #FFFFFF;
       display: block !important;
       float: none !important;
@@ -214,6 +214,6 @@ Text Domain: appointment-blue
 
     }
 }
-.logo-link-url {
+.index3 .logo-link-url {
     display: block !important;
 }
