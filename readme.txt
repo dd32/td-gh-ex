@@ -1,10 +1,10 @@
 === Appointment Green ===
 
 Contributors: priyanshumittal
-Tags: full-width-template, threaded-comments, two-columns, right-sidebar, left-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
+Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 1.2.3
+Tested up to: 5.6
+Stable tag: 1.2.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,9 @@ For any ideas, support and feedback you can access the theme forum.
 
 == Changelog ==
 
+= 1.2.4 =
+1. Fixed the footer copyright empty markup and prefix issues.
+2. Removed the unnecessary code.
 = 1.2.3 =
 1. Added condition for pingback_url.
 = 1.2.2 =
@@ -93,6 +96,6 @@ Feel free to use as you please. I would be very pleased if you could keep the Au
 
 == Images ==
 
-* Image used in the screenshot
+* Image used in the screenshot and header layout
 License CC0 Public Domain
 https://pxhere.com/en/photo/912411

@@ -1,6 +1,6 @@
 <?php
 function appointment_green_header_column_layout_customizer( $wp_customize ) {
-    
+
     /**
      * Image Radio Button Custom Control
      *
@@ -53,7 +53,7 @@ function appointment_green_header_column_layout_customizer( $wp_customize ) {
 
     }
 
-        $appointment_blue_header_setting = wp_parse_args(get_option('appointment_options', array()), appointment_theme_setup_data());
+        $appointment_green_header_setting = wp_parse_args(get_option('appointment_options', array()), appointment_theme_setup_data());
 
 
 	   /* Header Layout section */
@@ -61,9 +61,9 @@ function appointment_green_header_column_layout_customizer( $wp_customize ) {
             'title'      => esc_html__('Header Layout', 'appointment-green'),
             'panel'  => 'header_options'
         ) );
-        
+
             // Header Layout settings
-        if((!has_custom_logo() &&  $appointment_blue_header_setting['enable_header_logo_text'] == 'nomorenow') || $appointment_blue_header_setting['enable_header_logo_text'] == 1 || $appointment_blue_header_setting['upload_image_logo'] !='' ){
+        if((!has_custom_logo() &&  $appointment_green_header_setting['enable_header_logo_text'] == 'nomorenow') || $appointment_green_header_setting['enable_header_logo_text'] == 1 || $appointment_green_header_setting['upload_image_logo'] !='' ){
 
             $wp_customize->add_setting( 'appointment_options[header_column_layout_setting]' , array(
             'default' => 'default',
@@ -97,7 +97,7 @@ function appointment_green_header_column_layout_customizer( $wp_customize ) {
                 )
                     )
     ));
-           
+
 }
 add_action( 'customize_register', 'appointment_green_header_column_layout_customizer' );
 //radio box sanitization function
@@ -107,6 +107,6 @@ add_action( 'customize_register', 'appointment_green_header_column_layout_custom
 
         $choices = $setting->manager->get_control($setting->id)->choices;
 
-        //return if valid 
+        //return if valid
         return ( array_key_exists($input, $choices) ? $input : $setting->default );
     }

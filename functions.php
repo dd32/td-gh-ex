@@ -59,7 +59,7 @@ function appointment_green_default_data() {
     }
     $array_old = array(
         // general settings
-        'footer_copyright_text' => '<p>' . __('<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment Green</a> by Webriti', 'appointment-green') . '</p>',
+        'footer_copyright_text' => '<p>' . __('Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment Green</a> by Webriti', 'appointment-green') . '</p>',
         'footer_menu_bar_enabled' => '',
         'footer_social_media_enabled' => '',
         'footer_social_media_facebook_link' => '',

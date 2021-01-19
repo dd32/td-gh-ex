@@ -4,11 +4,11 @@ Theme URI: https://webriti.com/appointment-green-child-version-details-page-1/
 Author: webriti
 Author URI: https://www.webriti.com
 Description: A Business theme which is ideal for creating a corporate / business website. Appointment Green theme is a child theme of appointment which has several sections such as slider, services , widget area, etc etc. The green of this theme makes your site looks clean and elegant. Appointment Green theme comes with various locales.
-Tags: full-width-template, threaded-comments, two-columns, right-sidebar, left-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
+Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Template: appointment
-Version: 1.2.3
+Version: 1.2.4
 Requires at least: 4.5
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,8 +31,8 @@ Text Domain: appointment-green
     background-color: #ffffff;
     padding: 0 0;
 }
-.navbar-default.navbar6 .navbar-nav > .active > a, 
-.navbar-default.navbar6 .navbar-nav > .active > a:hover, 
+.navbar-default.navbar6 .navbar-nav > .active > a,
+.navbar-default.navbar6 .navbar-nav > .active > a:hover,
 .navbar-default.navbar6 .navbar-nav > .active > a:focus {
     color: #7aa228;
     background-color: transparent;
@@ -93,8 +93,8 @@ Text Domain: appointment-green
 }
 .navbar6 li.active .dropdown-toggle .sub-arrow::after,
 .navbar6 li a:hover .sub-arrow::after {color: #7aa228;}
-.navbar.navbar6 .navbar-nav > .active.open > a, 
-.navbar.navbar6 .navbar-nav > .active.open > a:hover, 
+.navbar.navbar6 .navbar-nav > .active.open > a,
+.navbar.navbar6 .navbar-nav > .active.open > a:hover,
 .navbar.navbar6 .navbar-nav > .active.open > a:focus {
     background-color: unset;
     color: #7aa228;
