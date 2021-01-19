@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post,custom-menu, translation-ready, blog, footer-widgets, featured-images, news
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 2.8.7
+Tested up to: 5.6
+Stable tag: 2.8.8
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,9 @@ Appointment is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.8.8
+1. Fixed the user comment issue and removed the unnecessary code.
+2. Fixed the escaping and translation issues.
 @Version 2.8.7
 1. Added condition for pingback_url.
 2. Fixed escaping issues.
@@ -153,7 +156,7 @@ Appointment is distributed under the terms of the GNU GPL
 @version 2.4.1
 1. Resolved Theme Check error.
 @version 2.4
-1. Add Default.css. 
+1. Add Default.css.
 2. Styling issue fixed.
 @version 2.2.3
 1. Change the label orange info Widget.
@@ -165,7 +168,7 @@ Appointment is distributed under the terms of the GNU GPL
 1. Add esc_url in index-home-callout and footer.php
 @version 2.1
 1. Add Custom front page template.
-@version 2.0 
+@version 2.0
 1. Add Theme Customization API.
 2. Update pot file.
 
@@ -186,9 +189,9 @@ Appointment is distributed under the terms of the GNU GPL
 1. Add a feature to select number of posts on index news section.
 2. feature to select category of post to show on front page in the news section.
 3. Add demo slider.
-4. Fix style issue. 
+4. Fix style issue.
 5. Update pot file.
- 
+
 @version 1.5.3
 1. Add slider using post and Category.
 2. Add widget.
@@ -252,10 +255,10 @@ Appointment is distributed under the terms of the GNU GPL
 4.Comments form issue fixed also fixed extra white space in it.
 5.Search Bar and button display in proper manner.
 6.Spacing and Alignment in Password protected post fixed.
-7.Styling is needed for attachments page title fixed. 
+7.Styling is needed for attachments page title fixed.
 8.Nested list items unnecessary white-space removed.
 9.Post Format:Image issue fixed.
-10.Long Text issue (Edge Case) fixed. 
+10.Long Text issue (Edge Case) fixed.
 11.Footer URI issue fixed.
 12.Footer widgets displays properly side by side.
 13.Images spacing in post pages overlapping fixed.
@@ -311,7 +314,7 @@ released
 
 Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
 
-Appointment supports Custom Menu, Widgets and 
+Appointment supports Custom Menu, Widgets and
 the following extra features:
 
  - Pre-installed menu and content colors
@@ -320,15 +323,15 @@ the following extra features:
  - Support for post thumbnails
  - Similar posts feature
  - 4 widgetized areas in the footer
- - Slideshow using Post Meta  
+ - Slideshow using Post Meta
  - Custom footer
- - Translation Ready 
+ - Translation Ready
 
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 == External resources ==
 
-Font Awesome: 
+Font Awesome:
 Copyright: (c) Dave Gandy
 License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
 Source: https://fontawesome.com
@@ -358,5 +361,5 @@ https://pxhere.com/en/photo/912411
 License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
-* Images on /images folder
+* Images on /images and /admin/assets/img folder
 Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

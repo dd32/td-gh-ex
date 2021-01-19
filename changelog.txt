@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 2.8.8
+1. Fixed the user comment issue and removed the unnecessary code.
+2. Fixed the escaping and translation issues.
 @Version 2.8.7
 1. Added condition for pingback_url.
 2. Fixed escaping issues.
@@ -122,7 +125,7 @@
 @version 2.4.1
 1. Resolved Theme Check error.
 @version 2.4
-1. Add Default.css. 
+1. Add Default.css.
 2. Styling issue fixed.
 @version 2.2.3
 1. Change the label orange info Widget.
@@ -134,7 +137,7 @@
 1. Add esc_url in index-home-callout and footer.php
 @version 2.1
 1. Add Custom front page template.
-@version 2.0 
+@version 2.0
 1. Add Theme Customization API.
 2. Update pot file.
 
@@ -155,9 +158,9 @@
 1. Add a feature to select number of posts on index news section.
 2. feature to select category of post to show on front page in the news section.
 3. Add demo slider.
-4. Fix style issue. 
+4. Fix style issue.
 5. Update pot file.
- 
+
 @version 1.5.3
 1. Add slider using post and Category.
 2. Add widget.
@@ -221,10 +224,10 @@
 4.Comments form issue fixed also fixed extra white space in it.
 5.Search Bar and button display in proper manner.
 6.Spacing and Alignment in Password protected post fixed.
-7.Styling is needed for attachments page title fixed. 
+7.Styling is needed for attachments page title fixed.
 8.Nested list items unnecessary white-space removed.
 9.Post Format:Image issue fixed.
-10.Long Text issue (Edge Case) fixed. 
+10.Long Text issue (Edge Case) fixed.
 11.Footer URI issue fixed.
 12.Footer widgets displays properly side by side.
 13.Images spacing in post pages overlapping fixed.

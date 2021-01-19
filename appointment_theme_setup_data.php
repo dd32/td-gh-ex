@@ -1,4 +1,4 @@
-<?php 
+<?php
 function appointment_theme_setup_data()
   	{
 	return $appointment_options=array(
@@ -19,7 +19,7 @@ function appointment_theme_setup_data()
 	'twitter_media_enabled' => 1,
 	'linkedin_media_enabled' => 1,
 	'webrit_custom_css' => '',
-	
+
 	//Slider Default settings
 	'home_banner_enabled' => '',
 	'slider_radio' => 'demo',
@@ -27,7 +27,7 @@ function appointment_theme_setup_data()
 	'slider_options' => __('slide','appointment'),
 	'slider_transition_delay' => 2000,
 	'featured_slider_post' => '',
-	
+
 	//Service section settings
 	'service_section_enabled' => '',
 	'service_title' => __('Lorem Ipsum','appointment'),
@@ -50,7 +50,7 @@ function appointment_theme_setup_data()
 	'service_six_icon' => 'fa-cog',
 	'service_six_title'=>__('Quam in nibh','appointment'),
 	'service_six_description' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
-	
+
 	//Home callout section
 	'home_call_out_area_enabled' => '',
 	'home_call_out_title' => __('Etiam eu nisi quis lectus bibend?','appointment'),
@@ -62,7 +62,7 @@ function appointment_theme_setup_data()
 	'home_call_out_btn2_text' => __('Fringilla in Magna','appointment'),
 	'home_call_out_btn2_link' => '#',
 	'home_call_out_btn2_link_target' => '',
-	
+
 	//News Section
 	'home_blog_enabled' => '',
 	'home_meta_section_settings' => '',
@@ -70,9 +70,9 @@ function appointment_theme_setup_data()
 	'blog_description' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.','appointment'),
 	'blog_selected_category_id'=> 1,
 	'post_display_count' => '4',
-	
+
 	//Footer Copyright & footer social links
-	'footer_copyright_text' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment</a> by Webriti', 'appointment' ).'</p>',
+	'footer_copyright_text' => '<p>'.__( 'Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment</a> by Webriti', 'appointment' ).'</p>',
 	'footer_menu_bar_enabled' => '',
 	'footer_social_media_enabled' => '',
 	'footer_social_media_facebook_link' => '',
@@ -87,4 +87,3 @@ function appointment_theme_setup_data()
 	'footer_skype_media_enabled' => 1
 	);
   	}
-  

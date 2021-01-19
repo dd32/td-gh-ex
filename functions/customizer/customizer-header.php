@@ -84,7 +84,6 @@ function appointment_header_customizer($wp_customize) {
             'appointment_options[social_media_twitter_link]',
             array(
                 'default' => '',
-                'type' => 'theme_mod',
                 'sanitize_callback' => 'esc_url_raw',
                 'type' => 'option',
             )

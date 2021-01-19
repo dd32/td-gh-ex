@@ -11,11 +11,11 @@ if (!function_exists('appointment_comment')) {
         global $comment_data;
         //translations
 $leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : esc_html__('Reply', 'appointment');
-        ?>	
+        ?>
 
         <div <?php comment_class('media comment-box'); ?> id="comment-<?php comment_ID(); ?>">
             <a class="pull-left-comment" href="<?php the_author_meta('user_url'); ?>">
-                <?php echo get_avatar($comment, 70); ?>		
+                <?php echo get_avatar($comment, 70); ?>
             </a>
             <div class="media-body">
                 <div class="comment-detail">
@@ -40,12 +40,12 @@ $leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_da
         <?php
     }
 
-}// end of appointment_comment function 
+}// end of appointment_comment function
 if (have_comments()) {
     ?>
 
     <div class="comment-section">
-        <div class="comment-title"><h3></i> <?php comments_number(__('No Comments so far', 'appointment'), __('1 Comment so far', 'appointment'), '% ' . __('Comments so far', 'appointment')); ?> </h3>
+        <div class="comment-title"><h3> <?php comments_number(__('No Comments so far', 'appointment'), __('1 Comment so far', 'appointment'), '% ' . __('Comments so far', 'appointment')); ?> </h3>
         </div>
         <?php wp_list_comments(array('callback' => 'appointment_comment')); ?>
     </div> <!---comment_section--->
@@ -66,7 +66,7 @@ if (have_comments()) {
 }
 ?>
 <?php if ('open' == $post->comment_status) { ?>
-    <?php if (get_option('comment_registration') && !$user_ID) { ?>
+    <?php if (get_option('comment_registration') && isset($user_ID )) { ?>
         <p><?php echo sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'appointment'), esc_url(site_url('wp-login.php')) . '?redirect_to=' . urlencode(esc_url(get_permalink()))); ?></p>
     <?php } else {
         ?>
@@ -99,7 +99,7 @@ if (have_comments()) {
             comment_form($appointment_defaults);
             echo str_replace('class="comment-form"', 'class="form-inline"', ob_get_clean());
             ?>
-        </div>	
+        </div>
         <?php
     }
 }

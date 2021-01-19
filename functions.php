@@ -55,19 +55,19 @@ function appointment_register_required_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
-            'name' => 'Webriti Companion',
+            'name' => esc_html__('Webriti Companion','appointment'),
             'slug' => 'webriti-companion',
             'required' => false,
         ),
 
         array(
-            'name' => 'Contact Form 7',
+            'name' => esc_html__('Contact Form 7','appointment'),
             'slug' => 'contact-form-7',
             'required' => false,
         ),
-        
+
          array(
-            'name' => 'Seo Optimized Images',
+            'name' => esc_html__('Seo Optimized Images','appointment'),
             'slug' => 'seo-optimized-images',
             'required' => false,
         ),
@@ -98,7 +98,7 @@ function appointment_register_required_plugins() {
 
 // Appointment Info Page
 //require( APPOINTMENT_THEME_FUNCTIONS_PATH . '/appointment-info/welcome-screen.php');
-// Custom Category control 
+// Custom Category control
 require( APPOINTMENT_THEME_FUNCTIONS_PATH . '/custom-controls/select/categorydrop-downcustomcontrol.php');
 
 add_action('admin_init', 'appointment_customizer_css');
@@ -122,7 +122,7 @@ function appointment_setup() {
             )
     );
     add_theme_support('post-thumbnails'); //supports featured image
-    // Register primary menu 
+    // Register primary menu
     register_nav_menu('primary', __('Primary Menu', 'appointment'));
 
     add_editor_style();
@@ -160,7 +160,7 @@ function appointment_change_logo_class($html) {
     return $html;
 }
 
-// set appointment page title       
+// set appointment page title
 function appointment_title($title, $sep) {
     global $paged, $page;
 

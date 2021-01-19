@@ -1,6 +1,6 @@
 <?php
 
-// Footer copyright section 
+// Footer copyright section
 function appointment_copyright_customizer($wp_customize) {
     $wp_customize->add_panel('appointment_copyright_setting', array(
         'priority' => 700,
@@ -21,7 +21,7 @@ function appointment_copyright_customizer($wp_customize) {
     $wp_customize->add_setting(
             'appointment_options[footer_copyright_text]',
             array(
-                'default' => '<p>' . __('<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment</a> by Webriti', 'appointment') . '</p>',
+                'default' => '<p>' . __('Proudly powered by <a href="https://wordpress.org">WordPress</a> | Theme: <a href="https://webriti.com" rel="nofollow">Appointment</a> by Webriti', 'appointment') . '</p>',
                 'sanitize_callback' => 'appointment_footer_copyright_sanitize_html',
                 'type' => 'option'
             )
@@ -49,7 +49,7 @@ function appointment_copyright_customizer($wp_customize) {
             )
     );
 
-    //Footer social link 
+    //Footer social link
     $wp_customize->add_section(
             'copyright_social_icon',
             array(
