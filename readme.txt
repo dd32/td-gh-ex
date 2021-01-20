@@ -2,7 +2,7 @@
 Contributors: britner
 Tags: two-columns, one-column, custom-colors, custom-logo, editor-style, custom-menu, featured-images, custom-background, threaded-comments, translation-ready, theme-options, e-commerce, rtl-language-support, post-formats, footer-widgets, grid-layout, right-sidebar, left-sidebar.
 Requires at least: 5.2
-Tested up to: 5.5.0
+Tested up to: 5.6.0
 Requires PHP: 5.6
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -31,7 +31,12 @@ Yes, go here: https://www.kadencewp.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
-= Version 1.4.6 | 13nd August 2020 =
+= Version 1.4.7 | 20th January 2021 =
+* Update: Archive title.
+* Fix: Sticky header issue.
+* Update: Google font options.
+
+= Version 1.4.6 | 13th August 2020 =
 * Update: 5.5 support.
 
 = Version 1.4.5 | 22nd January 2020 =

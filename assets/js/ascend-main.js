@@ -721,7 +721,9 @@ jQuery(document).ready(function ($) {
 		wait_height = 0;
 		if(item == 'header') {
 			var stickyitem = $('.kad-header-menu-outer');
-			wait_height = $('#topbar').height();
+			if ( $('#topbar').length ) {
+				wait_height = $('#topbar').height();
+			} 
 		} else if(item == 'header_top') {
 			var stickyitem = $('.kad-header-topbar-primary-outer');
 		} else if(item == 'header_all') {
