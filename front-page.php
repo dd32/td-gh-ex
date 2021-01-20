@@ -1,6 +1,6 @@
 <?php
-$busiprof_theme_options=theme_setup_data();
-$is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $busiprof_theme_options);
+$arzine_theme_options=theme_setup_data();
+$arzine_is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $arzine_theme_options);
 ?>
 
 <!-- End of Page Title -->
@@ -26,16 +26,16 @@ $is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $b
                     <?php if (has_post_thumbnail()) { ?>
                     <figure class="post-thumbnail">
                         <a  href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-                        <?php $cat_list = get_the_category_list();
-                            if (!empty($cat_list)) { ?>
+                        <?php $arzine_cat_list = get_the_category_list();
+                            if (!empty($arzine_cat_list)) { ?>
                         <span class="cat-links"><?php the_category(', '); ?></span>
                         <?php } ?>
                     </figure>
                     <?php }?>
                     <aside class="masonry-content">
                         <div class="entry-meta">
-                        <?php $cat_list = get_the_category_list();
-                                if (!empty($cat_list)) {
+                        <?php $arzine_cat_list = get_the_category_list();
+                                if (!empty($arzine_cat_list)) {
                                     ?>
                         <?php if (!has_post_thumbnail()) {
                                         ?>
@@ -53,10 +53,10 @@ $is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $b
                         </div>
                         <span class="author">
                         <figure class="avatar">
-                        <?php $author_id=$post->post_author; ?>
-                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>" title="<?php echo esc_attr(the_author_meta('display_name', $author_id)); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></a>
+                        <?php $arzine_author_id=$post->post_author; ?>
+                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>" title="<?php echo esc_attr(the_author_meta('display_name', $arzine_author_id)); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></a>
                         </figure>
-                        <?php esc_html_e('by', 'arzine'); echo ' ';?><a rel="tag" class="name" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>"><?php echo esc_html(the_author_meta('display_name', $author_id)); ?></a>
+                        <?php esc_html_e('by', 'arzine'); echo ' ';?><a rel="tag" class="name" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>"><?php echo esc_html(the_author_meta('display_name', $arzine_author_id)); ?></a>
                         </span>
                     </aside>
                 </article>
@@ -82,8 +82,8 @@ $is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $b
     </div>
 </section>
 </div>
-<?php 
-get_footer(); } elseif('page' == get_option('show_on_front') && $is_front_page['front_page'] == 'yes' ){
+<?php
+get_footer(); } elseif('page' == get_option('show_on_front') && $arzine_is_front_page['front_page'] == 'yes' ){
  get_header();
  ?>
 <div id="content">
@@ -92,18 +92,18 @@ get_footer(); } elseif('page' == get_option('show_on_front') && $is_front_page['
 <?php get_template_part('index', 'blog'); ?>
 <?php do_action( 'busiprof_home_tesi_sections', false ); ?>
 </div>
-<?php get_footer(); }elseif('page' == get_option('show_on_front') && $is_front_page['front_page'] != 'yes' ){get_template_part('page');
+<?php get_footer(); }elseif('page' == get_option('show_on_front') && $arzine_is_front_page['front_page'] != 'yes' ){get_template_part('page');
                             }
 elseif (is_page_template('front-page.php')) {
-                            $busiprof_theme_options=theme_setup_data();
-                            $is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $busiprof_theme_options);
-                            if ($is_front_page['front_page'] != 'yes') {
+                            $arzine_theme_options=theme_setup_data();
+                            $arzine_is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $arzine_theme_options);
+                            if ($arzine_is_front_page['front_page'] != 'yes') {
                                 get_template_part('index');
                             }
                         } elseif (is_page_template('template-home-two.php')) {
-                            $busiprof_theme_options=theme_setup_data();
-                            $is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $busiprof_theme_options);
-                            if ($is_front_page['front_page'] != 'yes') {
+                            $arzine_theme_options=theme_setup_data();
+                            $arzine_is_front_page = wp_parse_args(get_option('busiprof_theme_options', array()), $arzine_theme_options);
+                            if ($arzine_is_front_page['front_page'] != 'yes') {
                                 get_template_part('index');
                             }
                         } else { ?>
@@ -132,7 +132,7 @@ get_template_part('index', 'bannerstrip');
     </section>
     </div>
     <?php get_footer(); ?>
-    <?php else: 
+    <?php else:
         get_header();
 get_template_part('index', 'bannerstrip');
 ?>

@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, grid-layout, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.7
 Tested up to: 5.6
-Stable tag: 1.8.2
+Stable tag: 1.8.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,8 +28,19 @@ In the Arzine child theme, Blog Masonry layout is there that is not present in t
 
 Keyboard navigation is working properly in the forward direction by using the tab key. For the reverse direction, Shift+Tab key is working on all the parent menus and if the dropdown menus are open then it is working on it. The focus is moving back to the parent menu having submenus from the next menu in a reverse direction.
 
+== License ==
+
+Busiprof WordPress Theme, Copyright (C) 2013-2021, priyanshumittal
+Busiprof is distributed under the terms of the GNU GPL
+
+ARzine WordPress Theme is the child theme of Busiprof Theme, Copyright (C) 2018-2021, priyanshumittal
+ARzine WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 1.8.3
+* Added parent theme license information.
+* Fixed the prefix issues.
 
 = 1.8.2
 * Fixed header section style issue in mobile view.
@@ -63,7 +74,7 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 Masonry JS:
 Copyright: (C) 2007 Free Software Foundation
-License: Under the GNU General Public License v3.0 
+License: Under the GNU General Public License v3.0
 Source: https://github.com/jmlp-131092/mp-mansory.js
 
 == Images ==

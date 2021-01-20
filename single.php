@@ -25,8 +25,8 @@ get_template_part('index', 'bannerstrip');
 					<article <?php post_class('post'); ?>>
 	<span class="site-author">
 		<figure class="avatar">
-		<?php $author_id=$post->post_author; ?>
-			<a data-tip="<?php the_author() ;?>" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>" data-toggle="tooltip" title="<?php echo esc_attr(the_author_meta('display_name', $author_id)); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></a>
+		<?php $arzine_author_id=$post->post_author; ?>
+			<a data-tip="<?php the_author() ;?>" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>" data-toggle="tooltip" title="<?php echo esc_attr(the_author_meta('display_name', $arzine_author_id)); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></a>
 		</figure>
 	</span>
 		<header class="entry-header">
@@ -74,8 +74,8 @@ get_template_part('index', 'bannerstrip');
 
 					<?php if (wp_link_pages(array('echo'=>0))):?>
 					<div class="pagination_blog"><ul><?php
-                        $args=array('before' => '<li>', ' after' => '</li>');
-                        wp_link_pages($args); ?></ul>
+                        $arzine_args=array('before' => '<li>', ' after' => '</li>');
+                        wp_link_pages($arzine_args); ?></ul>
 					</div>
 				<?php endif;?>
 

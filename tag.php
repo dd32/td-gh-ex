@@ -4,7 +4,7 @@
  */
 get_header();
 
-$current_options = wp_parse_args(get_option('busiprof_theme_options', array()), theme_setup_data());
+$arzine_current_options = wp_parse_args(get_option('busiprof_theme_options', array()), theme_setup_data());
 
 ?>
 <!-- Page Title -->
@@ -15,7 +15,7 @@ $current_options = wp_parse_args(get_option('busiprof_theme_options', array()), 
 				<div class="page-title tag">
 					<h2><?php
                     /* translators: 1. Tag Prefix, 2. Tag title. */
-                    printf(esc_html__('%1$s %2$s', 'arzine'), esc_html($current_options['tag_prefix']), single_tag_title('', false)); ?></h2>
+                    printf(esc_html__('%1$s %2$s', 'arzine'), esc_html($arzine_current_options['tag_prefix']), single_tag_title('', false)); ?></h2>
 				</div>
 			</div>
 			<div class="col-md-6">

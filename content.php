@@ -2,8 +2,8 @@
 					<?php if (has_post_thumbnail()) { ?>
 					<figure class="post-thumbnail">
 						<a  href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-						<?php $cat_list = get_the_category_list();
-                            if (!empty($cat_list)) { ?>
+						<?php $arzine_cat_list = get_the_category_list();
+                            if (!empty($arzine_cat_list)) { ?>
 						<span class="cat-links"><?php the_category(', '); ?></span>
 						<?php } ?>
 					</figure>
@@ -11,8 +11,8 @@
 					<aside class="masonry-content">
 
 						<div class="entry-meta">
-						<?php $cat_list = get_the_category_list();
-                                if (!empty($cat_list)) {
+						<?php $arzine_cat_list = get_the_category_list();
+                                if (!empty($arzine_cat_list)) {
                                     ?>
 						<?php if (!has_post_thumbnail()) {
                                         ?>
@@ -30,10 +30,10 @@
 						</div>
 						<span class="author">
 						<figure class="avatar">
-						<?php $author_id=$post->post_author; ?>
-							<a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>" title="<?php echo esc_attr(the_author_meta('display_name', $author_id)); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></a>
+						<?php $arzine_author_id=$post->post_author; ?>
+							<a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>" title="<?php echo esc_attr(the_author_meta('display_name', $arzine_author_id)); ?>"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></a>
 						</figure>
-						<?php esc_html_e('by', 'arzine'); echo ' ';?><a rel="tag" class="name" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>"><?php echo esc_html(the_author_meta('display_name', $author_id)); ?></a>
+						<?php esc_html_e('by', 'arzine'); echo ' ';?><a rel="tag" class="name" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID')));?>"><?php echo esc_html(the_author_meta('display_name', $arzine_author_id)); ?></a>
 						</span>
 					</aside>
 				</article>
