@@ -95,18 +95,13 @@ function busiprof_customizer_css() {
 
 add_action('admin_init', 'busiprof_customizer_css');
 
-//theme ckeck plugin required 	
+//theme ckeck plugin required
 add_theme_support('automatic-feed-links');
 add_theme_support('woocommerce');
 
-//content width
-if (!isset($content_width))
-    $content_width = 750;
+if (!function_exists('busiprof_setup')) :
 
-
-if (!function_exists('busiporf_setup')) :
-
-    function busiporf_setup() {
+    function busiprof_setup() {
 
         /*
          * Make theme available for translation.
@@ -147,12 +142,17 @@ if (!function_exists('busiporf_setup')) :
         register_nav_menus(array(
             'primary' => esc_html__('Primary Menu', 'busiprof')
         ));
+
+        //content width
+        if (!isset($content_width)) {
+            $content_width = 750;
+        }
     }
 
-// busiporf_setup
+// busiprof_setup
 endif;
 
-add_action('after_setup_theme', 'busiporf_setup');
+add_action('after_setup_theme', 'busiprof_setup');
 
 
 
@@ -193,8 +193,8 @@ function busiprof_tag_cloud($tag_string){
   return preg_replace('/style=("|\')(.*?)("|\')/','',$tag_string);
 }
 
-$theme = wp_get_theme();
-if ('Busiprof' == $theme->name) {
+$busiprof_theme = wp_get_theme();
+if ('Busiprof' == $busiprof_theme->name) {
     if (is_admin()) {
         require  BUSI_TEMPLATE_DIR . '/admin/admin-init.php';
     }

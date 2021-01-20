@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 2.2.7
+Stable tag: 2.2.8
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -12,7 +12,7 @@ License: GNU General Public License v2 or later
 
 Busiprof is a business WordPress theme. Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof
 
- 
+
 # Basic Setup of the Theme.
 -----------------------------------
 Fresh installation!
@@ -40,30 +40,34 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 ====== Site Title and Description =============
 Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
-	
+
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 == License ==
 
-Busiprof WordPress Theme, Copyright (C) 2013-2020, priyanshumittal
-Busiprof is distributed under the terms of the GNU GPL
+Busiprof WordPress Theme, Copyright (C) 2013-2021, priyanshumittal
+Busiprof WordPress Theme is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+@version 2.2.8
+1. Fixed the user comment and prefix issues.
+2. Removed the unnecessary code.
 
 @version 2.2.7
 1. Fixed escaping and some styling issues.
 2. Escaped the pingback_url().
 
 @version 2.2.6
-1. Added contact form 7 image license. 
+1. Added contact form 7 image license.
 2. Fixed home template issue.
 3. Updated the bootstrap version to fix the menu issue in WP 5.6.
 
 @version 2.2.5
-1. Implemented "Links within content must be underlined" guideline. 
+1. Implemented "Links within content must be underlined" guideline.
 2. Resolved comment section error.
 
 @version 2.2.4
@@ -227,10 +231,10 @@ Busiprof is distributed under the terms of the GNU GPL
 
 @version 1.5
 1. Fix styling issues of Sidebar-widgets.
-2. Fix styling issues of Footer-widgets. 
+2. Fix styling issues of Footer-widgets.
 3. Fix styling issue of banner-strip.
 4. Fix styling issues of post-meta in index.php, archive.php, category.php, tag.php, page.php, single.php
-5. Fix styling issues of button.  
+5. Fix styling issues of button.
 
 @version 1.4.3.1
 1. all the bug fixed https://themes.trac.wordpress.org/ticket/22045
@@ -283,10 +287,10 @@ Busiprof is distributed under the terms of the GNU GPL
 1. Added More Styling for tables .
 
 @version: 1.3.7
-1. Banner Strip Modified for 404 page. 
+1. Banner Strip Modified for 404 page.
 
 @version: 1.3.6.9
-1. Removed Confliction with Webriti Coming Soon. 
+1. Removed Confliction with Webriti Coming Soon.
 
 @version: 1.3.6.8
 1. Added Enable/Disable checkbox for Projects on Home.
@@ -313,7 +317,7 @@ Busiprof is distributed under the terms of the GNU GPL
 1. Enable/Disable Option Added for Services on Home Page .using Option Panel.
 
 @version 1.3.6.1
-1. Removed Custom Header & Custom Background As Discussed.  
+1. Removed Custom Header & Custom Background As Discussed.
 
 @version 1.3.6
 1. Magic Quotes Issue Resolved.
@@ -339,7 +343,7 @@ Busiprof is distributed under the terms of the GNU GPL
 @version 1.0.3
 
 @version 1.0.2
-1. Tag lien linked to home 
+1. Tag lien linked to home
 
 @Version 1.0.1
 1. Copyright sign removed from hyperlink.
@@ -358,7 +362,7 @@ Copyright: (c) Dave Gandy
 License: https://fontawesome.com/license ( Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License )
 Source: https://fontawesome.com
 
-Bootstrap: 
+Bootstrap:
 Copyright: (c) Twitter
 License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source: http://getbootstrap.com
@@ -385,4 +389,4 @@ License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
-Copyright (C) 2020, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
