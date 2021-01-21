@@ -1197,16 +1197,6 @@ function aagaz_startup_customize_register( $wp_customize ) {
        'section' => 'aagaz_startup_mobile_media'
     ));
 
-    $wp_customize->add_setting('aagaz_startup_enable_disable_fixed_header',array(
-       'default' => false,
-       'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
-    ));
-    $wp_customize->add_control('aagaz_startup_enable_disable_fixed_header',array(
-       'type' => 'checkbox',
-       'label' => __('Enable / Disable Fixed Header','aagaz-startup'),
-       'section' => 'aagaz_startup_mobile_media'
-    ));
-
     $wp_customize->add_setting('aagaz_startup_enable_disable_slider',array(
        'default' => false,
        'sanitize_callback'	=> 'aagaz_startup_sanitize_checkbox'
@@ -1814,9 +1804,9 @@ final class Aagaz_Startup_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'aagaz-startup-customize-controls', trailingslashit( get_template_directory_uri() ) . '/assets/js/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'aagaz-startup-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . '/assets/js/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'aagaz-startup-customize-controls', trailingslashit( get_template_directory_uri() ) . '/assets/css/customize-controls.css' );
+		wp_enqueue_style( 'aagaz-startup-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . '/assets/css/customize-controls.css' );
 	}
 }
 

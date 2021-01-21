@@ -2,9 +2,9 @@
 Contributors: ThemesEye
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, block-styles, wide-blocks, flexible-header, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.5.5
+Stable tag: 0.5.6
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 
 == Description ==
 
-Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, organization, corporate agencies, freelancers, Startup Hub, entrepreneurs, joint ventures, portfolio IT companies, web development agencies, digital marketing agencies, business startups, agency, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible, It has Custom header options and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen and can translate into Arabic, Chinese, French, German and Spanish languages. The theme offers multiple options in most of the elements be it header and footer layout, menu style, Sticky Post, blog formats or gallery layout.
+Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, organization, corporate agencies, freelancers, Startup Hub, entrepreneurs, joint ventures, portfolio IT companies, web development agencies,  online entrepreneurs ,company's business blog , online agencies and firms, digital marketing agencies, business startups, agency, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible, It has Custom header options and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen and can translate into Arabic, Chinese, French, German and Spanish languages. The theme offers multiple options in most of the elements be it header and footer layout, menu style, Sticky Post, blog formats or gallery layout.
 
 == Changelog ==
 
@@ -168,6 +168,10 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 
 = 0.5.5 =
   * Added flexible-header tag.
+
+= 0.5.6 =
+  * Done Escaping.
+  * Removed unusable css from style.css. 
 
 == Resources ==
 

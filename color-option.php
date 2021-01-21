@@ -168,7 +168,7 @@
 			$aagaz_startup_custom_css .='';
 		$aagaz_startup_custom_css .='}';
 	}else if($aagaz_startup_theme_lay == 'Center'){
-		$aagaz_startup_custom_css .='.blogger, .blogger h2, .post-info, .text p, .blogger .post-link{';
+		$aagaz_startup_custom_css .='.blogger, .blogger h2, .post-info, .blogger .text p, .blogger .post-link{';
 			$aagaz_startup_custom_css .='text-align:center;';
 		$aagaz_startup_custom_css .='}';
 		$aagaz_startup_custom_css .='.post-info{';
@@ -242,24 +242,6 @@
 		$aagaz_startup_custom_css .='@media screen and (max-width:575px) {';
 		$aagaz_startup_custom_css .='.topbar{';
 			$aagaz_startup_custom_css .='display:none;';
-		$aagaz_startup_custom_css .='} }';
-	}
-
-	$aagaz_startup_stickyheader = get_theme_mod( 'aagaz_startup_enable_disable_fixed_header', false);
-	if($aagaz_startup_stickyheader == true && get_theme_mod( 'aagaz_startup_fixed_header', false) == false){
-    	$aagaz_startup_custom_css .='.fixed-header{';
-			$aagaz_startup_custom_css .='position:static;';
-		$aagaz_startup_custom_css .='} ';
-	}
-    if($aagaz_startup_stickyheader == true){
-    	$aagaz_startup_custom_css .='@media screen and (max-width:575px) {';
-		$aagaz_startup_custom_css .='.fixed-header{';
-			$aagaz_startup_custom_css .='position:fixed;';
-		$aagaz_startup_custom_css .='} }';
-	}else if($aagaz_startup_stickyheader == false){
-		$aagaz_startup_custom_css .='@media screen and (max-width:575px) {';
-		$aagaz_startup_custom_css .='.fixed-header{';
-			$aagaz_startup_custom_css .='position:static;';
 		$aagaz_startup_custom_css .='} }';
 	}
 

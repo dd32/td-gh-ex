@@ -3,7 +3,7 @@
  * Displays top navigation
  */
 ?>
-<div class="header-menu <?php if( get_theme_mod( 'aagaz_startup_fixed_header', false) != '' || get_theme_mod( 'aagaz_startup_enable_disable_fixed_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+<div class="header-menu <?php if( get_theme_mod( 'aagaz_startup_fixed_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
 	<div class="row m-0">
 		<div class="col-lg-11 col-md-10">
 			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'aagaz-startup' ); ?>">
