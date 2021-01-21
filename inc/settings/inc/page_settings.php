@@ -54,7 +54,7 @@ class SiteOrigin_Settings_Page_Settings {
 		static $type = false;
 		static $id = false;
 
-		if( $type === false && $id === false ) {
+		if ( ( apply_filters( 'siteorigin_page_settings_get_query_bypass', false ) || is_main_query() ) && $type === false && $id === false ) {
 			list( $type, $id ) = self::get_current_page();
 		}
 
@@ -172,6 +172,16 @@ class SiteOrigin_Settings_Page_Settings {
 	 * @param $post_type
 	 */
 	function add_meta_box( $post_type ){
+		// Don't add meta box to WooCommerce Shop page.
+		$screen = get_current_screen();
+		if (
+		    class_exists( 'WooCommerce' ) &&
+		    ! empty( $screen ) && $screen->id == 'page' &&
+		    isset( $_GET['post'] ) &&
+		    get_option( 'woocommerce_shop_page_id' ) == $_GET['post']
+		) {
+		    return;
+		}
 
 		if( !empty( $post_type ) && post_type_supports( $post_type, 'so-page-settings' ) ) {
 			add_meta_box(

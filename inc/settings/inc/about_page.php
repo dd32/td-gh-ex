@@ -121,7 +121,7 @@ class SiteOrigin_Settings_About_Page {
 			),
 			'video_url' => add_query_arg( 'autoplay', 1, $theme->get( 'ThemeURI' ) ),
 			'video_description' => false,
-			'newsletter_url' => 'https://siteorigin.com/#newsletter',
+			'newsletter_url' => '',
 			'tour_url' => '',
 			'documentation_url' => '',
 			'premium_url' => SiteOrigin_Settings::get_premium_url( 'theme' ),
@@ -276,7 +276,7 @@ class SiteOrigin_Settings_About_Page {
 					<?php echo esc_html( __( 'Proudly Created By', 'origami' ) ) ?>
 				</p>
 				<a href="https://siteorigin.com/" target="_blank">
-					<img src="<?php echo get_template_directory_uri() ?>/inc/settings/css/images/siteorigin.png" />
+					<img src="<?php echo esc_url( get_template_directory_uri() ) ?>/inc/settings/css/images/siteorigin.png" />
 				</a>
 			</div>
 		</div>

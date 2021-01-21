@@ -1,6 +1,6 @@
 <?php
 
-define('SITEORIGIN_THEME_VERSION', '1.7.7');
+define('SITEORIGIN_THEME_VERSION', '1.8');
 define('SITEORIGIN_THEME_JS_PREFIX', '.min');
 
 include get_template_directory() . '/inc/settings/settings.php';
@@ -114,6 +114,12 @@ function origami_siteorigin_premium_support(){
 }
 add_action( 'after_setup_theme', 'origami_siteorigin_premium_support' );
 
+if ( ! function_exists( 'origami_filter_mobilenav_collapse' ) ) :
+function origami_filter_mobilenav_collapse( $collpase ) {
+	return siteorigin_setting( 'responsive_menu_collapse' );
+}
+endif;
+add_filter( 'siteorigin_mobilenav_resolution', 'origami_filter_mobilenav_collapse' );
 
 if(!function_exists('origami_widgets_init')) :
 /**
@@ -343,10 +349,10 @@ if(!function_exists('origami_html_shiv')) :
 function origami_html_shiv(){
 	?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5shiv.js" type="text/javascript"></script>
 	<![endif]-->
 	<!--[if (gte IE 6)&(lte IE 8)]>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.js"></script>
+	<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/selectivizr.js"></script>
 	<![endif]-->
 	<?php
 }

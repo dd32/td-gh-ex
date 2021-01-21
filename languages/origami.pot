@@ -1,4 +1,4 @@
-# Copyright (C) 2019 origami
+# Copyright (C) 2021 origami
 # This file is distributed under the same license as the origami package.
 msgid ""
 msgstr ""
@@ -20,21 +20,24 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: 404.php:7, inc/settings.php:90
+#: 404.php:7, inc/settings.php:94
 msgid "We couldn't find what you were looking for."
 msgstr ""
 
-#: archive.php:5
-msgid "Daily Archives: %s"
+#: archive.php:17
+msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:7
-msgid "Monthly Archives: %s"
+#: archive.php:15, search.php:4
+msgid "Search Results for: %s"
 msgstr ""
 
-#: archive.php:7
-msgctxt "monthly archives date format"
-msgid "F Y"
+#: archive.php:13
+msgid "Posts in Category: %s"
+msgstr ""
+
+#: archive.php:11
+msgid "Posts Tagged: %s"
 msgstr ""
 
 #: archive.php:9
@@ -46,20 +49,17 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: archive.php:11
-msgid "Posts Tagged: %s"
+#: archive.php:7
+msgid "Monthly Archives: %s"
 msgstr ""
 
-#: archive.php:13
-msgid "Posts in Category: %s"
+#: archive.php:7
+msgctxt "monthly archives date format"
+msgid "F Y"
 msgstr ""
 
-#: archive.php:15, search.php:4
-msgid "Search Results for: %s"
-msgstr ""
-
-#: archive.php:17
-msgid "Blog Archives"
+#: archive.php:5
+msgid "Daily Archives: %s"
 msgstr ""
 
 #: archive.php:26, author.php:9, index.php:6, search.php:10
@@ -112,15 +112,15 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:127, inc/customizer.php:179
+#: functions.php:133, inc/customizer.php:179
 msgid "Footer"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:173
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:208, functions.php:209, admin/metabox-columns.php:7
+#: functions.php:214, functions.php:215, admin/metabox-columns.php:7
 msgid "Columns"
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: search.php:14, inc/settings.php:91
+#: search.php:14, inc/settings.php:95
 msgid "No results for your query."
 msgstr ""
 
@@ -315,16 +315,16 @@ msgstr ""
 msgid "Update Required"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:934
-msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+#: inc/class-tgm-plugin-activation.php:937
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:934, inc/class-tgm-plugin-activation.php:937
+#: inc/class-tgm-plugin-activation.php:937, inc/class-tgm-plugin-activation.php:934
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:937
-msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+#: inc/class-tgm-plugin-activation.php:934
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:1121, inc/class-tgm-plugin-activation.php:2948
@@ -361,24 +361,24 @@ msgstr ""
 msgid "Not Installed"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2319
-msgid "Installed But Not Activated"
-msgstr ""
-
 #: inc/class-tgm-plugin-activation.php:2321
 msgid "Active"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2327
-msgid "Required Update not Available"
+#: inc/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2330
 msgid "Requires Update"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2333
-msgid "Update recommended"
+#: inc/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
@@ -458,11 +458,6 @@ msgid "Status"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: inc/class-tgm-plugin-activation.php:2603
-msgid "Install %2$s"
-msgstr ""
-
-#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2608
 msgid "Update %2$s"
 msgstr ""
@@ -470,6 +465,10 @@ msgstr ""
 #. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2614
 msgid "Activate %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2603
+msgid "Install %2$s"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2684
@@ -488,20 +487,20 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
 #: inc/class-tgm-plugin-activation.php:2759
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be installed at this time."
+#: inc/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2802
 msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2908
@@ -516,11 +515,6 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/class-tgm-plugin-activation.php:3498
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
 #. translators: 1: plugin name, 2: error message.
 #: inc/class-tgm-plugin-activation.php:3501
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
@@ -529,32 +523,6 @@ msgstr ""
 #. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3503
 msgid "The installation of %1$s failed."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3507
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: inc/class-tgm-plugin-activation.php:3509
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3509, inc/class-tgm-plugin-activation.php:3517
-msgid "Show Details"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3509, inc/class-tgm-plugin-activation.php:3517
-msgid "Hide Details"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3510
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/class-tgm-plugin-activation.php:3512
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:3515
@@ -566,6 +534,14 @@ msgstr ""
 msgid "%1$s installed successfully."
 msgstr ""
 
+#: inc/class-tgm-plugin-activation.php:3517, inc/class-tgm-plugin-activation.php:3509
+msgid "Show Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3517, inc/class-tgm-plugin-activation.php:3509
+msgid "Hide Details"
+msgstr ""
+
 #: inc/class-tgm-plugin-activation.php:3518
 msgid "All installations have been completed."
 msgstr ""
@@ -573,6 +549,26 @@ msgstr ""
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3520
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3507
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3509
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3512
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3498
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/customizer.php:11
@@ -743,7 +739,7 @@ msgstr ""
 msgid "Display your posts in style with a masonry layout."
 msgstr ""
 
-#: inc/recommended.php:41, inc/settings.php:75
+#: inc/recommended.php:41, inc/settings.php:79
 msgid "Ajax Comments"
 msgstr ""
 
@@ -864,34 +860,42 @@ msgid "Should Origami use responsive mode."
 msgstr ""
 
 #: inc/settings.php:65
-msgid "Responsive Navigation"
+msgid "Responsive Navigation Collapse"
 msgstr ""
 
 #: inc/settings.php:66
-msgid "Gorgeous mobile navigation menu for your main menu."
+msgid "The resolution when the menu collapses into a mobile navigation menu. Value is in pixels."
 msgstr ""
 
 #: inc/settings.php:69
-msgid "Use Fitvids"
+msgid "Responsive Navigation"
 msgstr ""
 
 #: inc/settings.php:70
-msgid "Enable FitVids to automatically scale your videos."
+msgid "Gorgeous mobile navigation menu for your main menu."
 msgstr ""
 
 #: inc/settings.php:73
+msgid "Use Fitvids"
+msgstr ""
+
+#: inc/settings.php:74
+msgid "Enable FitVids to automatically scale your videos."
+msgstr ""
+
+#: inc/settings.php:77
 msgid "Comments"
 msgstr ""
 
-#: inc/settings.php:76
+#: inc/settings.php:80
 msgid "Use ajax comments system."
 msgstr ""
 
-#: inc/settings.php:89
+#: inc/settings.php:93
 msgid "Copyright %s"
 msgstr ""
 
-#: inc/settings.php:118
+#: inc/settings.php:123
 msgid "Origami is one of our most elegant, mature WordPress themes. Find out more about what it has to offer by watching this short video."
 msgstr ""
 
