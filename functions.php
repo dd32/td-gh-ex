@@ -609,6 +609,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'codepen',
 			'delicious',
 			'deviantart',
+			'diaspora',
 			'digg',
 			'discord',
 			'dribbble',
@@ -619,6 +620,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'goodreads',
 			'google-wallet',
 			'hacker-news',
+			'mastodon',
 			'medium',
 			'meetup',
 			'mixcloud',
@@ -657,7 +659,10 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'xing',
 			'yahoo',
 			'yelp',
-			'500px'
+			'500px',
+			'social_icon_custom_1',
+			'social_icon_custom_2',
+			'social_icon_custom_3'
 		);
 
 		return apply_filters( 'ct_ignite_customizer_social_media_array_filter', $social_sites );
