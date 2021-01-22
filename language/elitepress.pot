@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Elitepress\n"
-"POT-Creation-Date: 2020-12-23 19:23+0530\n"
+"POT-Creation-Date: 2021-01-22 19:20+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -135,6 +135,7 @@ msgstr ""
 
 #: admin/inc/class-webriti-about-page.php:559
 #: admin/inc/include-companion.php:81 admin/inc/include-companion.php:98
+#: functions.php:179
 msgid "Webriti Companion"
 msgstr ""
 
@@ -144,7 +145,7 @@ msgid ""
 "have access to the advance Frontpage sections and other theme features"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:566
+#: admin/inc/class-webriti-about-page.php:566 functions.php:174
 msgid "Contact Form 7"
 msgstr ""
 
@@ -649,6 +650,14 @@ msgstr ""
 #: comments.php:61
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:73
+msgid "Name"
+msgstr ""
+
+#: comments.php:74
+msgid "Email"
 msgstr ""
 
 #: comments.php:83

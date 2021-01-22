@@ -1,5 +1,7 @@
 == Changelog ==
 
+@version 1.9.4
+1. Fixed user comment issue and corrected the escaping and translation functions.
 @version 1.9.3
 1. Implemented "Links within content must be underlined" guideline.
 2. Fixed keyboard navigation issue.
@@ -103,7 +105,7 @@
 @version 1.1
 1. Add Post slider.
 2. Update pot file.
-@version 1.0 
+@version 1.0
 1. Solve Font issue.
 2. Enable Copyright section on server.
 @version 0.3
@@ -115,7 +117,7 @@
 @Version 0.2.3
 1. Add some escape tags, missing banner_header.php , footer.php , home_page_header_setting.php
 2. Add  sanitizing for custom css box.
-3. Solve front page Reading Issue 
+3. Solve front page Reading Issue
 
 @Version 0.2.2
 1. Add bootstrap.js for unless provide origianl profile.

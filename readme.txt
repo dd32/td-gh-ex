@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 1.9.3
+Stable tag: 1.9.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,8 @@ ElitePress is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@version 1.9.4
+1. Fixed user comment issue and corrected the escaping and translation functions.
 @version 1.9.3
 1. Implemented "Links within content must be underlined" guideline.
 2. Fixed keyboard navigation issue.
@@ -130,7 +132,7 @@ ElitePress is distributed under the terms of the GNU GPL
 @version 1.1
 1. Add Post slider.
 2. Update pot file.
-@version 1.0 
+@version 1.0
 1. Solve Font issue.
 2. Enable Copyright section on server.
 @version 0.3
@@ -142,7 +144,7 @@ ElitePress is distributed under the terms of the GNU GPL
 @Version 0.2.3
 1. Add some escape tags, missing banner_header.php , footer.php , home_page_header_setting.php
 2. Add  sanitizing for custom css box.
-3. Solve front page Reading Issue 
+3. Solve front page Reading Issue
 @Version 0.2.2
 1. Add bootstrap.js for unless provide origianl profile.
 2. use sens default.
@@ -159,7 +161,7 @@ ElitePress is distributed under the terms of the GNU GPL
 @Version 0.1 released
 
 
-ElitePress supports Custom Menu, Widgets and 
+ElitePress supports Custom Menu, Widgets and
 the following extra features:
 
  - Pre-installed menu and content colors
@@ -168,13 +170,13 @@ the following extra features:
  - Support for post thumbnails
  - Similar posts feature
  - 4 widgetized areas in the footer
- - Customise Front Page 
+ - Customise Front Page
  - Custom footer
- - Translation Ready 
+ - Translation Ready
 
 == External resources ==
 
-Font Awesome: 
+Font Awesome:
 Copyright: (c) Dave Gandy
 License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
 Source: https://fontawesome.com
@@ -206,6 +208,6 @@ License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
-Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
 
 # --- EOF --- #

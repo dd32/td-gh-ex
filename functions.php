@@ -1,7 +1,7 @@
 <?php
 /**Theme Name	: ElitePress
  * Theme Core Functions and Codes
-*/	
+*/
 
 // Global variables define
 if ( ! function_exists( 'wp_body_open' ) ) {
@@ -15,13 +15,13 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 }
 
 /**Includes reqired resources here**/
-define('ELITEPRESS_TEMPLATE_DIR_URI',get_template_directory_uri());	
+define('ELITEPRESS_TEMPLATE_DIR_URI',get_template_directory_uri());
 define('ELITEPRESS_TEMPLATE_DIR',get_template_directory());
-define('ELITEPRESS_THEME_FUNCTIONS_PATH',ELITEPRESS_TEMPLATE_DIR.'/functions');	
+define('ELITEPRESS_THEME_FUNCTIONS_PATH',ELITEPRESS_TEMPLATE_DIR.'/functions');
 define('WEBRITI_THEME_OPTIONS_PATH',ELITEPRESS_TEMPLATE_DIR_URI.'/functions/theme_options');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/class-tgm-plugin-activation.php');
-require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); 
-require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/menu/elitepress_nav_walker.php'); 
+require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php');
+require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/menu/elitepress_nav_walker.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/widget/elitepress_header_widget.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/widget/elitepress_social_icon.php');
@@ -30,7 +30,7 @@ require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/meta-box/post-meta.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/template-tag.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/font/font.php');
 
-//Customizer 
+//Customizer
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
 require( ELITEPRESS_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
@@ -70,24 +70,24 @@ function elitepress_head( $title, $sep ) {
                 $title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'elitepress' ), max( $paged, $page ) );
     }
     return $title;
-}	
+}
 add_filter( 'wp_title', 'elitepress_head', 10, 2);
 
-add_action( 'after_setup_theme', 'elitepress_setup' ); 	
+add_action( 'after_setup_theme', 'elitepress_setup' );
 function elitepress_setup(){
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 600;//In PX */
-	
+
 	// Load text domain for translation-ready
 	load_theme_textdomain( 'elitepress', ELITEPRESS_TEMPLATE_DIR. '/language' );
-	
+
 	add_theme_support( 'post-thumbnails' ); //supports featured image
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'elitepress' ) ); //Navigation
 	register_nav_menu( 'footer_menu', esc_html__( 'Footer Menu', 'elitepress' ) );
-	// theme support 	
+	// theme support
 	$args = array('default-color' => 'ffffff',);
-	add_theme_support( 'custom-background', $args  ); 
+	add_theme_support( 'custom-background', $args  );
 	add_theme_support( 'automatic-feed-links');
 	//Add Theme Support Title Tag
 	add_theme_support( 'title-tag' );
@@ -97,10 +97,10 @@ function elitepress_setup(){
 		'width'       => 250,
 		'flex-height' => true,
 		'header-text' => array( 'site-title', 'site-description' ),
-		
+
 	) );
 	add_editor_style();
-	
+
 	$theme = wp_get_theme(); // gets the current theme
 	if ( 'ElitePress' == $theme->name )
 	{
@@ -109,7 +109,7 @@ function elitepress_setup(){
 		}
 	}
 }
-	
+
 function elitepress_add_gravatar_class($class) {
 	$class = str_replace("class='avatar", "class='img-responsive comment-img", $class);
 	return $class;
@@ -128,22 +128,22 @@ function elitepress_post_slider_excerpt($output){
 		return '<div class="slide-text-bg2">' .'<h3>'.esc_html($output).'</h3>'.'</div>'.
       			'<div class="flex-btn-div"><a href="' . esc_url(get_permalink()) . '" class="btn1 flex-btn">'. esc_html__('Read More','elitepress') .'</a></div>';
 	}
-		
 
-// Read more tag to formatting in blog page 	
+
+// Read more tag to formatting in blog page
 function elitepress_content_more($more){
   global $post;
   return '<a href="' . esc_url(get_permalink()) . '" class="more-link">'.esc_html__('Read More','elitepress').'</a>';
-}   
+}
 add_filter( 'the_content_more_link', 'elitepress_content_more' );
 
 function elitepress_enqueue_scripts(){
 
 	wp_enqueue_style('elitepress-drag-drop-css', ELITEPRESS_TEMPLATE_DIR_URI . '/css/drag-drop.css');
-	
+
 }
 add_action( 'admin_enqueue_scripts', 'elitepress_enqueue_scripts' );
-	
+
 add_action( 'tgmpa_register', 'elitepress_register_required_plugins' );
 
 /**
@@ -171,12 +171,12 @@ function elitepress_register_required_plugins() {
 	$plugins = array(
 	// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-            'name' => 'Contact Form 7',
+            'name' => esc_html__('Contact Form 7','elitepress'),
             'slug' => 'contact-form-7',
             'required' => false,
         ),
 		array(
-           'name' => 'Webriti Companion',
+           'name' => esc_html__('Webriti Companion','elitepress'),
             'slug' => 'webriti-companion',
             'required' => false,
         )
@@ -222,7 +222,7 @@ function elitepress_get_home_blog_excerpt()
 		else
 		{ return $excerpt; }
 	}
-        
+
 
 //Set for old user
 if (!get_option('ElitePress_user', false)) {
