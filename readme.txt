@@ -26,6 +26,9 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 
 == Changelog ==
 
+= 1.9.31 - January 25 2020 =
+* Improvement: Updated Font Awesome to version 5.15.2.
+
 = 1.9.30 - December 7 2020 =
 * Improvement: Mobile menu is now accessible through VoiceOver.
 * Bugfix: Customizer controls were misbehaving on newer WordPress versions.
@@ -660,6 +663,9 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.9.31 =
+* Update Font Awesome version 5.15.2.
 
 = 1.9.30 =
 * Accessibility improvements and compatibility updates.

@@ -3,7 +3,7 @@
  * @package Make
  */
 
-// Updated: 2020-12-07T20:20:12+00:00
+// Updated: 2021-01-25T14:26:01+00:00
 
 // Bail if this isn't being included inside of MAKE_Font_Source_Google.
 if ( ! isset( $this ) || ! $this instanceof MAKE_Font_Source_Google ) {
@@ -588,6 +588,21 @@ $this->load_font_data( array(
 		'subsets' => array(
 			'cyrillic',
 			'cyrillic-ext',
+			'latin',
+			'latin-ext',
+			'vietnamese',
+		),
+		'category' => 'sans-serif',
+	),
+	'Andika New Basic' => array(
+		'label' => 'Andika New Basic',
+		'variants' => array(
+			'700',
+			'700italic',
+			'italic',
+			'regular',
+		),
+		'subsets' => array(
 			'latin',
 			'latin-ext',
 			'vietnamese',
@@ -2036,6 +2051,28 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'sans-serif',
+	),
+	'Bodoni Moda' => array(
+		'label' => 'Bodoni Moda',
+		'variants' => array(
+			'500',
+			'500italic',
+			'600',
+			'600italic',
+			'700',
+			'700italic',
+			'800',
+			'800italic',
+			'900',
+			'900italic',
+			'italic',
+			'regular',
+		),
+		'subsets' => array(
+			'latin',
+			'latin-ext',
+		),
+		'category' => 'serif',
 	),
 	'Bokor' => array(
 		'label' => 'Bokor',
@@ -4660,6 +4697,35 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
+	'Fraunces' => array(
+		'label' => 'Fraunces',
+		'variants' => array(
+			'100',
+			'100italic',
+			'200',
+			'200italic',
+			'300',
+			'300italic',
+			'500',
+			'500italic',
+			'600',
+			'600italic',
+			'700',
+			'700italic',
+			'800',
+			'800italic',
+			'900',
+			'900italic',
+			'italic',
+			'regular',
+		),
+		'subsets' => array(
+			'latin',
+			'latin-ext',
+			'vietnamese',
+		),
+		'category' => 'serif',
+	),
 	'Freckle Face' => array(
 		'label' => 'Freckle Face',
 		'variants' => array(
@@ -5310,6 +5376,19 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
+	'Hachi Maru Pop' => array(
+		'label' => 'Hachi Maru Pop',
+		'variants' => array(
+			'regular',
+		),
+		'subsets' => array(
+			'cyrillic',
+			'japanese',
+			'latin',
+			'latin-ext',
+		),
+		'category' => 'handwriting',
+	),
 	'Halant' => array(
 		'label' => 'Halant',
 		'variants' => array(
@@ -5845,6 +5924,26 @@ $this->load_font_data( array(
 			'latin',
 		),
 		'category' => 'display',
+	),
+	'Imbue' => array(
+		'label' => 'Imbue',
+		'variants' => array(
+			'100',
+			'200',
+			'300',
+			'500',
+			'600',
+			'700',
+			'800',
+			'900',
+			'regular',
+		),
+		'subsets' => array(
+			'latin',
+			'latin-ext',
+			'vietnamese',
+		),
+		'category' => 'serif',
 	),
 	'Imprima' => array(
 		'label' => 'Imprima',
@@ -6981,6 +7080,18 @@ $this->load_font_data( array(
 			'regular',
 		),
 		'subsets' => array(
+			'latin',
+			'latin-ext',
+		),
+		'category' => 'display',
+	),
+	'Langar' => array(
+		'label' => 'Langar',
+		'variants' => array(
+			'regular',
+		),
+		'subsets' => array(
+			'gurmukhi',
 			'latin',
 			'latin-ext',
 		),
@@ -10336,6 +10447,19 @@ $this->load_font_data( array(
 		),
 		'category' => 'serif',
 	),
+	'Potta One' => array(
+		'label' => 'Potta One',
+		'variants' => array(
+			'regular',
+		),
+		'subsets' => array(
+			'japanese',
+			'latin',
+			'latin-ext',
+			'vietnamese',
+		),
+		'category' => 'display',
+	),
 	'Pragati Narrow' => array(
 		'label' => 'Pragati Narrow',
 		'variants' => array(
@@ -11433,13 +11557,22 @@ $this->load_font_data( array(
 		'label' => 'Saira',
 		'variants' => array(
 			'100',
+			'100italic',
 			'200',
+			'200italic',
 			'300',
+			'300italic',
 			'500',
+			'500italic',
 			'600',
+			'600italic',
 			'700',
+			'700italic',
 			'800',
+			'800italic',
 			'900',
+			'900italic',
+			'italic',
 			'regular',
 		),
 		'subsets' => array(
@@ -13800,6 +13933,18 @@ $this->load_font_data( array(
 			'latin-ext',
 		),
 		'category' => 'serif',
+	),
+	'Yusei Magic' => array(
+		'label' => 'Yusei Magic',
+		'variants' => array(
+			'regular',
+		),
+		'subsets' => array(
+			'japanese',
+			'latin',
+			'latin-ext',
+		),
+		'category' => 'sans-serif',
 	),
 	'ZCOOL KuaiLe' => array(
 		'label' => 'ZCOOL KuaiLe',

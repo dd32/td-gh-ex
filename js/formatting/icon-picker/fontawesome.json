@@ -73,14 +73,6 @@
     ],
     "unicode": "f170"
   },
-  "adobe": {
-    "id": "fa-adobe",
-    "label": "Adobe",
-    "style": [
-      "brands"
-    ],
-    "unicode": "f778"
-  },
   "adversal": {
     "id": "fa-adversal",
     "label": "Adversal",
@@ -104,6 +96,14 @@
       "solid"
     ],
     "unicode": "f5d0"
+  },
+  "airbnb": {
+    "id": "fa-airbnb",
+    "label": "Airbnb",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f834"
   },
   "algolia": {
     "id": "fa-algolia",
@@ -662,6 +662,38 @@
     ],
     "unicode": "f04a"
   },
+  "bacon": {
+    "id": "fa-bacon",
+    "label": "Bacon",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7e5"
+  },
+  "bacteria": {
+    "id": "fa-bacteria",
+    "label": "Bacteria",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e059"
+  },
+  "bacterium": {
+    "id": "fa-bacterium",
+    "label": "Bacterium",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e05a"
+  },
+  "bahai": {
+    "id": "fa-bahai",
+    "label": "Bahá'í",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f666"
+  },
   "balance-scale": {
     "id": "fa-balance-scale",
     "label": "Balance Scale",
@@ -669,6 +701,22 @@
       "solid"
     ],
     "unicode": "f24e"
+  },
+  "balance-scale-left": {
+    "id": "fa-balance-scale-left",
+    "label": "Balance Scale (Left-Weighted)",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f515"
+  },
+  "balance-scale-right": {
+    "id": "fa-balance-scale-right",
+    "label": "Balance Scale (Right-Weighted)",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f516"
   },
   "ban": {
     "id": "fa-ban",
@@ -774,6 +822,14 @@
     ],
     "unicode": "f241"
   },
+  "battle-net": {
+    "id": "fa-battle-net",
+    "label": "Battle.net",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f835"
+  },
   "bed": {
     "id": "fa-bed",
     "label": "Bed",
@@ -847,6 +903,14 @@
       "solid"
     ],
     "unicode": "f206"
+  },
+  "biking": {
+    "id": "fa-biking",
+    "label": "Biking",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f84a"
   },
   "bimobject": {
     "id": "fa-bimobject",
@@ -1040,6 +1104,14 @@
     ],
     "unicode": "f6b7"
   },
+  "book-medical": {
+    "id": "fa-book-medical",
+    "label": "Medical Book",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7e6"
+  },
   "book-open": {
     "id": "fa-book-open",
     "label": "Book Open",
@@ -1065,6 +1137,38 @@
     ],
     "unicode": "f02e"
   },
+  "bootstrap": {
+    "id": "fa-bootstrap",
+    "label": "Bootstrap",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f836"
+  },
+  "border-all": {
+    "id": "fa-border-all",
+    "label": "Border All",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f84c"
+  },
+  "border-none": {
+    "id": "fa-border-none",
+    "label": "Border None",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f850"
+  },
+  "border-style": {
+    "id": "fa-border-style",
+    "label": "Border Style",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f853"
+  },
   "bowling-ball": {
     "id": "fa-bowling-ball",
     "label": "Bowling Ball",
@@ -1089,6 +1193,14 @@
     ],
     "unicode": "f49e"
   },
+  "box-tissue": {
+    "id": "fa-box-tissue",
+    "label": "Tissue Box",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e05b"
+  },
   "boxes": {
     "id": "fa-boxes",
     "label": "Boxes",
@@ -1112,6 +1224,14 @@
       "solid"
     ],
     "unicode": "f5dc"
+  },
+  "bread-slice": {
+    "id": "fa-bread-slice",
+    "label": "Bread Slice",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7ec"
   },
   "briefcase": {
     "id": "fa-briefcase",
@@ -1160,6 +1280,14 @@
       "brands"
     ],
     "unicode": "f15a"
+  },
+  "buffer": {
+    "id": "fa-buffer",
+    "label": "Buffer",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f837"
   },
   "bug": {
     "id": "fa-bug",
@@ -1233,6 +1361,14 @@
       "solid"
     ],
     "unicode": "f64a"
+  },
+  "buy-n-large": {
+    "id": "fa-buy-n-large",
+    "label": "Buy n Large",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f8a6"
   },
   "buysellads": {
     "id": "fa-buysellads",
@@ -1415,6 +1551,14 @@
       "solid"
     ],
     "unicode": "f5e4"
+  },
+  "caravan": {
+    "id": "fa-caravan",
+    "label": "Caravan",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f8ff"
   },
   "caret-down": {
     "id": "fa-caret-down",
@@ -1712,7 +1856,7 @@
   },
   "check-double": {
     "id": "fa-check-double",
-    "label": "Check Double",
+    "label": "Double Check",
     "style": [
       "solid"
     ],
@@ -1726,6 +1870,14 @@
       "regular"
     ],
     "unicode": "f14a"
+  },
+  "cheese": {
+    "id": "fa-cheese",
+    "label": "Cheese",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7ef"
   },
   "chess": {
     "id": "fa-chess",
@@ -1871,6 +2023,14 @@
     ],
     "unicode": "f268"
   },
+  "chromecast": {
+    "id": "fa-chromecast",
+    "label": "Chromecast",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f838"
+  },
   "church": {
     "id": "fa-church",
     "label": "Church",
@@ -1903,6 +2063,14 @@
       "solid"
     ],
     "unicode": "f64f"
+  },
+  "clinic-medical": {
+    "id": "fa-clinic-medical",
+    "label": "Medical Clinic",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7f2"
   },
   "clipboard": {
     "id": "fa-clipboard",
@@ -2035,6 +2203,14 @@
       "solid"
     ],
     "unicode": "f382"
+  },
+  "cloudflare": {
+    "id": "fa-cloudflare",
+    "label": "Cloudflare",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e07d"
   },
   "cloudscale": {
     "id": "fa-cloudscale",
@@ -2175,6 +2351,14 @@
     ],
     "unicode": "f4ad"
   },
+  "comment-medical": {
+    "id": "fa-comment-medical",
+    "label": "Alternate Medical Chat",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7f5"
+  },
   "comment-slash": {
     "id": "fa-comment-slash",
     "label": "Comment Slash",
@@ -2224,6 +2408,14 @@
       "solid"
     ],
     "unicode": "f066"
+  },
+  "compress-alt": {
+    "id": "fa-compress-alt",
+    "label": "Alternate Compress",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f422"
   },
   "compress-arrows-alt": {
     "id": "fa-compress-arrows-alt",
@@ -2298,6 +2490,14 @@
       "regular"
     ],
     "unicode": "f1f9"
+  },
+  "cotton-bureau": {
+    "id": "fa-cotton-bureau",
+    "label": "Cotton Bureau",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f89e"
   },
   "couch": {
     "id": "fa-couch",
@@ -2492,6 +2692,14 @@
     ],
     "unicode": "f521"
   },
+  "crutch": {
+    "id": "fa-crutch",
+    "label": "Crutch",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7f7"
+  },
   "css3": {
     "id": "fa-css3",
     "label": "CSS 3 Logo",
@@ -2556,6 +2764,14 @@
     ],
     "unicode": "f6ca"
   },
+  "dailymotion": {
+    "id": "fa-dailymotion",
+    "label": "dailymotion",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e052"
+  },
   "dashcube": {
     "id": "fa-dashcube",
     "label": "DashCube",
@@ -2580,9 +2796,17 @@
     ],
     "unicode": "f2a4"
   },
+  "deezer": {
+    "id": "fa-deezer",
+    "label": "Deezer",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e077"
+  },
   "delicious": {
     "id": "fa-delicious",
-    "label": "Delicious Logo",
+    "label": "Delicious",
     "style": [
       "brands"
     ],
@@ -2787,6 +3011,14 @@
       "brands"
     ],
     "unicode": "f393"
+  },
+  "disease": {
+    "id": "fa-disease",
+    "label": "Disease",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7fa"
   },
   "divide": {
     "id": "fa-divide",
@@ -3062,6 +3294,14 @@
     ],
     "unicode": "f282"
   },
+  "edge-legacy": {
+    "id": "fa-edge-legacy",
+    "label": "Edge Legacy Browser",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e078"
+  },
   "edit": {
     "id": "fa-edit",
     "label": "Edit",
@@ -3070,6 +3310,14 @@
       "regular"
     ],
     "unicode": "f044"
+  },
+  "egg": {
+    "id": "fa-egg",
+    "label": "Egg",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f7fb"
   },
   "eject": {
     "id": "fa-eject",
@@ -3225,6 +3473,14 @@
     ],
     "unicode": "f153"
   },
+  "evernote": {
+    "id": "fa-evernote",
+    "label": "Evernote",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f839"
+  },
   "exchange-alt": {
     "id": "fa-exchange-alt",
     "label": "Alternate Exchange",
@@ -3264,6 +3520,14 @@
       "solid"
     ],
     "unicode": "f065"
+  },
+  "expand-alt": {
+    "id": "fa-expand-alt",
+    "label": "Alternate Expand",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f424"
   },
   "expand-arrows-alt": {
     "id": "fa-expand-arrows-alt",
@@ -3355,6 +3619,14 @@
     ],
     "unicode": "f082"
   },
+  "fan": {
+    "id": "fa-fan",
+    "label": "Fan",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f863"
+  },
   "fantasy-flight-games": {
     "id": "fa-fantasy-flight-games",
     "label": "Fantasy Flight-games",
@@ -3378,6 +3650,14 @@
       "solid"
     ],
     "unicode": "f050"
+  },
+  "faucet": {
+    "id": "fa-faucet",
+    "label": "Faucet",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e005"
   },
   "fax": {
     "id": "fa-fax",
@@ -3710,6 +3990,14 @@
     ],
     "unicode": "f269"
   },
+  "firefox-browser": {
+    "id": "fa-firefox-browser",
+    "label": "Firefox Browser",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e007"
+  },
   "first-aid": {
     "id": "fa-first-aid",
     "label": "First Aid",
@@ -3966,7 +4254,7 @@
   },
   "free-code-camp": {
     "id": "fa-free-code-camp",
-    "label": "Free Code Camp",
+    "label": "freeCodeCamp",
     "style": [
       "brands"
     ],
@@ -4143,6 +4431,14 @@
       "brands"
     ],
     "unicode": "f1d3"
+  },
+  "git-alt": {
+    "id": "fa-git-alt",
+    "label": "Git Alt",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f841"
   },
   "git-square": {
     "id": "fa-git-square",
@@ -4343,6 +4639,14 @@
       "brands"
     ],
     "unicode": "f3aa"
+  },
+  "google-pay": {
+    "id": "fa-google-pay",
+    "label": "Google Pay",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e079"
   },
   "google-play": {
     "id": "fa-google-play",
@@ -4606,6 +4910,14 @@
     ],
     "unicode": "f3ad"
   },
+  "guilded": {
+    "id": "fa-guilded",
+    "label": "Guilded",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e07e"
+  },
   "guitar": {
     "id": "fa-guitar",
     "label": "Guitar",
@@ -4654,6 +4966,14 @@
     ],
     "unicode": "f5f7"
   },
+  "hamburger": {
+    "id": "fa-hamburger",
+    "label": "Hamburger",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f805"
+  },
   "hammer": {
     "id": "fa-hammer",
     "label": "Hammer",
@@ -4686,6 +5006,14 @@
     ],
     "unicode": "f4be"
   },
+  "hand-holding-medical": {
+    "id": "fa-hand-holding-medical",
+    "label": "Hand Holding Medical Cross",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e05c"
+  },
   "hand-holding-usd": {
     "id": "fa-hand-holding-usd",
     "label": "Hand Holding US Dollar",
@@ -4693,6 +5021,14 @@
       "solid"
     ],
     "unicode": "f4c0"
+  },
+  "hand-holding-water": {
+    "id": "fa-hand-holding-water",
+    "label": "Hand Holding Water",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f4c1"
   },
   "hand-lizard": {
     "id": "fa-hand-lizard",
@@ -4702,6 +5038,14 @@
       "regular"
     ],
     "unicode": "f258"
+  },
+  "hand-middle-finger": {
+    "id": "fa-hand-middle-finger",
+    "label": "Hand with Middle Finger Raised",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f806"
   },
   "hand-paper": {
     "id": "fa-hand-paper",
@@ -4784,6 +5128,14 @@
     ],
     "unicode": "f257"
   },
+  "hand-sparkles": {
+    "id": "fa-hand-sparkles",
+    "label": "Hand Sparkles",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e05d"
+  },
   "hand-spock": {
     "id": "fa-hand-spock",
     "label": "Spock (Hand)",
@@ -4809,6 +5161,14 @@
     ],
     "unicode": "f4c4"
   },
+  "hands-wash": {
+    "id": "fa-hands-wash",
+    "label": "Hands Wash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e05e"
+  },
   "handshake": {
     "id": "fa-handshake",
     "label": "Handshake",
@@ -4818,6 +5178,22 @@
     ],
     "unicode": "f2b5"
   },
+  "handshake-alt-slash": {
+    "id": "fa-handshake-alt-slash",
+    "label": "Handshake Alternate Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e05f"
+  },
+  "handshake-slash": {
+    "id": "fa-handshake-slash",
+    "label": "Handshake Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e060"
+  },
   "hanukiah": {
     "id": "fa-hanukiah",
     "label": "Hanukiah",
@@ -4825,6 +5201,14 @@
       "solid"
     ],
     "unicode": "f6e6"
+  },
+  "hard-hat": {
+    "id": "fa-hard-hat",
+    "label": "Hard Hat",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f807"
   },
   "hashtag": {
     "id": "fa-hashtag",
@@ -4834,6 +5218,22 @@
     ],
     "unicode": "f292"
   },
+  "hat-cowboy": {
+    "id": "fa-hat-cowboy",
+    "label": "Cowboy Hat",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f8c0"
+  },
+  "hat-cowboy-side": {
+    "id": "fa-hat-cowboy-side",
+    "label": "Cowboy Hat Side",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f8c1"
+  },
   "hat-wizard": {
     "id": "fa-hat-wizard",
     "label": "Wizard's Hat",
@@ -4841,14 +5241,6 @@
       "solid"
     ],
     "unicode": "f6e8"
-  },
-  "haykal": {
-    "id": "fa-haykal",
-    "label": "Haykal",
-    "style": [
-      "solid"
-    ],
-    "unicode": "f666"
   },
   "hdd": {
     "id": "fa-hdd",
@@ -4858,6 +5250,38 @@
       "regular"
     ],
     "unicode": "f0a0"
+  },
+  "head-side-cough": {
+    "id": "fa-head-side-cough",
+    "label": "Head Side Cough",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e061"
+  },
+  "head-side-cough-slash": {
+    "id": "fa-head-side-cough-slash",
+    "label": "Head Side-cough-slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e062"
+  },
+  "head-side-mask": {
+    "id": "fa-head-side-mask",
+    "label": "Head Side Mask",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e063"
+  },
+  "head-side-virus": {
+    "id": "fa-head-side-virus",
+    "label": "Head Side Virus",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e064"
   },
   "heading": {
     "id": "fa-heading",
@@ -4972,6 +5396,14 @@
     ],
     "unicode": "f1da"
   },
+  "hive": {
+    "id": "fa-hive",
+    "label": "Hive Blockchain Network",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e07f"
+  },
   "hockey-puck": {
     "id": "fa-hockey-puck",
     "label": "Hockey Puck",
@@ -5053,6 +5485,14 @@
     ],
     "unicode": "f47e"
   },
+  "hospital-user": {
+    "id": "fa-hospital-user",
+    "label": "Hospital with User",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f80d"
+  },
   "hot-tub": {
     "id": "fa-hot-tub",
     "label": "Hot Tub",
@@ -5060,6 +5500,14 @@
       "solid"
     ],
     "unicode": "f593"
+  },
+  "hotdog": {
+    "id": "fa-hotdog",
+    "label": "Hot Dog",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f80f"
   },
   "hotel": {
     "id": "fa-hotel",
@@ -5118,6 +5566,14 @@
     ],
     "unicode": "f6f1"
   },
+  "house-user": {
+    "id": "fa-house-user",
+    "label": "House User",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e065"
+  },
   "houzz": {
     "id": "fa-houzz",
     "label": "Houzz",
@@ -5158,6 +5614,14 @@
     ],
     "unicode": "f246"
   },
+  "ice-cream": {
+    "id": "fa-ice-cream",
+    "label": "Ice Cream",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f810"
+  },
   "icicles": {
     "id": "fa-icicles",
     "label": "Icicles",
@@ -5165,6 +5629,14 @@
       "solid"
     ],
     "unicode": "f7ad"
+  },
+  "icons": {
+    "id": "fa-icons",
+    "label": "Icons",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f86d"
   },
   "id-badge": {
     "id": "fa-id-badge",
@@ -5191,6 +5663,14 @@
       "solid"
     ],
     "unicode": "f47f"
+  },
+  "ideal": {
+    "id": "fa-ideal",
+    "label": "iDeal",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e013"
   },
   "igloo": {
     "id": "fa-igloo",
@@ -5274,6 +5754,14 @@
     ],
     "unicode": "f05a"
   },
+  "innosoft": {
+    "id": "fa-innosoft",
+    "label": "Innosoft",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e080"
+  },
   "instagram": {
     "id": "fa-instagram",
     "label": "Instagram",
@@ -5281,6 +5769,22 @@
       "brands"
     ],
     "unicode": "f16d"
+  },
+  "instagram-square": {
+    "id": "fa-instagram-square",
+    "label": "Instagram Square",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e055"
+  },
+  "instalod": {
+    "id": "fa-instalod",
+    "label": "InstaLOD",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e081"
   },
   "intercom": {
     "id": "fa-intercom",
@@ -5321,6 +5825,14 @@
       "solid"
     ],
     "unicode": "f033"
+  },
+  "itch-io": {
+    "id": "fa-itch-io",
+    "label": "itch.io",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f83a"
   },
   "itunes": {
     "id": "fa-itunes",
@@ -5581,6 +6093,22 @@
       "solid"
     ],
     "unicode": "f5fc"
+  },
+  "laptop-house": {
+    "id": "fa-laptop-house",
+    "label": "Laptop House",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e066"
+  },
+  "laptop-medical": {
+    "id": "fa-laptop-medical",
+    "label": "Laptop Medical",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f812"
   },
   "laravel": {
     "id": "fa-laravel",
@@ -5894,6 +6422,22 @@
     ],
     "unicode": "f59d"
   },
+  "lungs": {
+    "id": "fa-lungs",
+    "label": "Lungs",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f604"
+  },
+  "lungs-virus": {
+    "id": "fa-lungs-virus",
+    "label": "Lungs Virus",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e067"
+  },
   "lyft": {
     "id": "fa-lyft",
     "label": "lyft",
@@ -6095,6 +6639,14 @@
     ],
     "unicode": "f136"
   },
+  "mdb": {
+    "id": "fa-mdb",
+    "label": "Material Design for Bootstrap",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f8ca"
+  },
   "medal": {
     "id": "fa-medal",
     "label": "Medal",
@@ -6226,6 +6778,14 @@
     ],
     "unicode": "f753"
   },
+  "microblog": {
+    "id": "fa-microblog",
+    "label": "Micro.blog",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e01a"
+  },
   "microchip": {
     "id": "fa-microchip",
     "label": "Microchip",
@@ -6330,6 +6890,14 @@
       "brands"
     ],
     "unicode": "f289"
+  },
+  "mixer": {
+    "id": "fa-mixer",
+    "label": "Mixer",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e056"
   },
   "mizuni": {
     "id": "fa-mizuni",
@@ -6469,6 +7037,14 @@
     ],
     "unicode": "f6fc"
   },
+  "mouse": {
+    "id": "fa-mouse",
+    "label": "Mouse",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f8cc"
+  },
   "mouse-pointer": {
     "id": "fa-mouse-pointer",
     "label": "Mouse Pointer",
@@ -6541,14 +7117,6 @@
       "brands"
     ],
     "unicode": "f5a8"
-  },
-  "nintendo-switch": {
-    "id": "fa-nintendo-switch",
-    "label": "Nintendo Switch",
-    "style": [
-      "brands"
-    ],
-    "unicode": "f418"
   },
   "node": {
     "id": "fa-node",
@@ -6624,6 +7192,14 @@
     ],
     "unicode": "f248"
   },
+  "octopus-deploy": {
+    "id": "fa-octopus-deploy",
+    "label": "Octopus Deploy",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e082"
+  },
   "odnoklassniki": {
     "id": "fa-odnoklassniki",
     "label": "Odnoklassniki",
@@ -6696,6 +7272,14 @@
     ],
     "unicode": "f23c"
   },
+  "orcid": {
+    "id": "fa-orcid",
+    "label": "ORCID",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f8d2"
+  },
   "osi": {
     "id": "fa-osi",
     "label": "Open Source Initiative",
@@ -6735,6 +7319,14 @@
       "brands"
     ],
     "unicode": "f18c"
+  },
+  "pager": {
+    "id": "fa-pager",
+    "label": "Pager",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f815"
   },
   "paint-brush": {
     "id": "fa-paint-brush",
@@ -6954,6 +7546,14 @@
     ],
     "unicode": "f704"
   },
+  "people-arrows": {
+    "id": "fa-people-arrows",
+    "label": "People Arrows",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e068"
+  },
   "people-carry": {
     "id": "fa-people-carry",
     "label": "People Carry",
@@ -6961,6 +7561,22 @@
       "solid"
     ],
     "unicode": "f4ce"
+  },
+  "pepper-hot": {
+    "id": "fa-pepper-hot",
+    "label": "Hot Pepper",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f816"
+  },
+  "perbyte": {
+    "id": "fa-perbyte",
+    "label": "PerByte",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e083"
   },
   "percent": {
     "id": "fa-percent",
@@ -7026,6 +7642,14 @@
     ],
     "unicode": "f095"
   },
+  "phone-alt": {
+    "id": "fa-phone-alt",
+    "label": "Alternate Phone",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f879"
+  },
   "phone-slash": {
     "id": "fa-phone-slash",
     "label": "Phone Slash",
@@ -7042,6 +7666,14 @@
     ],
     "unicode": "f098"
   },
+  "phone-square-alt": {
+    "id": "fa-phone-square-alt",
+    "label": "Alternate Phone Square",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f87b"
+  },
   "phone-volume": {
     "id": "fa-phone-volume",
     "label": "Phone Volume",
@@ -7049,6 +7681,14 @@
       "solid"
     ],
     "unicode": "f2a0"
+  },
+  "photo-video": {
+    "id": "fa-photo-video",
+    "label": "Photo Video",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f87c"
   },
   "php": {
     "id": "fa-php",
@@ -7068,7 +7708,7 @@
   },
   "pied-piper-alt": {
     "id": "fa-pied-piper-alt",
-    "label": "Alternate Pied Piper Logo",
+    "label": "Alternate Pied Piper Logo (Old)",
     "style": [
       "brands"
     ],
@@ -7076,7 +7716,7 @@
   },
   "pied-piper-hat": {
     "id": "fa-pied-piper-hat",
-    "label": "Pied Piper-hat",
+    "label": "Pied Piper Hat (Old)",
     "style": [
       "brands"
     ],
@@ -7089,6 +7729,14 @@
       "brands"
     ],
     "unicode": "f1a7"
+  },
+  "pied-piper-square": {
+    "id": "fa-pied-piper-square",
+    "label": "Pied Piper Square Logo (Old)",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e01e"
   },
   "piggy-bank": {
     "id": "fa-piggy-bank",
@@ -7130,6 +7778,14 @@
     ],
     "unicode": "f0d3"
   },
+  "pizza-slice": {
+    "id": "fa-pizza-slice",
+    "label": "Pizza Slice",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f818"
+  },
   "place-of-worship": {
     "id": "fa-place-of-worship",
     "label": "Place of Worship",
@@ -7161,6 +7817,14 @@
       "solid"
     ],
     "unicode": "f5b0"
+  },
+  "plane-slash": {
+    "id": "fa-plane-slash",
+    "label": "Plane Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e069"
   },
   "play": {
     "id": "fa-play",
@@ -7364,6 +8028,22 @@
     ],
     "unicode": "f542"
   },
+  "pump-medical": {
+    "id": "fa-pump-medical",
+    "label": "Pump Medical",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e06a"
+  },
+  "pump-soap": {
+    "id": "fa-pump-soap",
+    "label": "Pump Soap",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e06b"
+  },
   "pushed": {
     "id": "fa-pushed",
     "label": "Pushed",
@@ -7565,6 +8245,14 @@
     ],
     "unicode": "f543"
   },
+  "record-vinyl": {
+    "id": "fa-record-vinyl",
+    "label": "Record Vinyl",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f8d9"
+  },
   "recycle": {
     "id": "fa-recycle",
     "label": "Recycle",
@@ -7637,6 +8325,14 @@
       "regular"
     ],
     "unicode": "f25d"
+  },
+  "remove-format": {
+    "id": "fa-remove-format",
+    "label": "Remove Format",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f87d"
   },
   "renren": {
     "id": "fa-renren",
@@ -7854,6 +8550,14 @@
     ],
     "unicode": "f156"
   },
+  "rust": {
+    "id": "fa-rust",
+    "label": "Rust",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e07a"
+  },
   "sad-cry": {
     "id": "fa-sad-cry",
     "label": "Crying Face",
@@ -7879,6 +8583,14 @@
       "brands"
     ],
     "unicode": "f267"
+  },
+  "salesforce": {
+    "id": "fa-salesforce",
+    "label": "Salesforce",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f83b"
   },
   "sass": {
     "id": "fa-sass",
@@ -8106,6 +8818,14 @@
     ],
     "unicode": "f3ed"
   },
+  "shield-virus": {
+    "id": "fa-shield-virus",
+    "label": "Shield Virus",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e06c"
+  },
   "ship": {
     "id": "fa-ship",
     "label": "Ship",
@@ -8137,6 +8857,14 @@
       "solid"
     ],
     "unicode": "f54b"
+  },
+  "shopify": {
+    "id": "fa-shopify",
+    "label": "Shopify",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e057"
   },
   "shopping-bag": {
     "id": "fa-shopping-bag",
@@ -8249,6 +8977,14 @@
       "brands"
     ],
     "unicode": "f215"
+  },
+  "sink": {
+    "id": "fa-sink",
+    "label": "Sink",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e06d"
   },
   "sistrix": {
     "id": "fa-sistrix",
@@ -8502,6 +9238,14 @@
     ],
     "unicode": "f7d2"
   },
+  "soap": {
+    "id": "fa-soap",
+    "label": "Soap",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e06e"
+  },
   "socks": {
     "id": "fa-socks",
     "label": "Socks",
@@ -8528,19 +9272,35 @@
   },
   "sort-alpha-down": {
     "id": "fa-sort-alpha-down",
-    "label": "Sort Alpha Down",
+    "label": "Sort Alphabetical Down",
     "style": [
       "solid"
     ],
     "unicode": "f15d"
   },
+  "sort-alpha-down-alt": {
+    "id": "fa-sort-alpha-down-alt",
+    "label": "Alternate Sort Alphabetical Down",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f881"
+  },
   "sort-alpha-up": {
     "id": "fa-sort-alpha-up",
-    "label": "Sort Alpha Up",
+    "label": "Sort Alphabetical Up",
     "style": [
       "solid"
     ],
     "unicode": "f15e"
+  },
+  "sort-alpha-up-alt": {
+    "id": "fa-sort-alpha-up-alt",
+    "label": "Alternate Sort Alphabetical Up",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f882"
   },
   "sort-amount-down": {
     "id": "fa-sort-amount-down",
@@ -8550,6 +9310,14 @@
     ],
     "unicode": "f160"
   },
+  "sort-amount-down-alt": {
+    "id": "fa-sort-amount-down-alt",
+    "label": "Alternate Sort Amount Down",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f884"
+  },
   "sort-amount-up": {
     "id": "fa-sort-amount-up",
     "label": "Sort Amount Up",
@@ -8557,6 +9325,14 @@
       "solid"
     ],
     "unicode": "f161"
+  },
+  "sort-amount-up-alt": {
+    "id": "fa-sort-amount-up-alt",
+    "label": "Alternate Sort Amount Up",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f885"
   },
   "sort-down": {
     "id": "fa-sort-down",
@@ -8574,6 +9350,14 @@
     ],
     "unicode": "f162"
   },
+  "sort-numeric-down-alt": {
+    "id": "fa-sort-numeric-down-alt",
+    "label": "Alternate Sort Numeric Down",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f886"
+  },
   "sort-numeric-up": {
     "id": "fa-sort-numeric-up",
     "label": "Sort Numeric Up",
@@ -8581,6 +9365,14 @@
       "solid"
     ],
     "unicode": "f163"
+  },
+  "sort-numeric-up-alt": {
+    "id": "fa-sort-numeric-up-alt",
+    "label": "Alternate Sort Numeric Up",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f887"
   },
   "sort-up": {
     "id": "fa-sort-up",
@@ -8629,6 +9421,22 @@
       "brands"
     ],
     "unicode": "f3f3"
+  },
+  "speaker-deck": {
+    "id": "fa-speaker-deck",
+    "label": "Speaker Deck",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f83c"
+  },
+  "spell-check": {
+    "id": "fa-spell-check",
+    "label": "Spell Check",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f891"
   },
   "spider": {
     "id": "fa-spider",
@@ -8718,6 +9526,14 @@
       "brands"
     ],
     "unicode": "f16c"
+  },
+  "stackpath": {
+    "id": "fa-stackpath",
+    "label": "Stackpath",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f842"
   },
   "stamp": {
     "id": "fa-stamp",
@@ -8875,6 +9691,14 @@
     ],
     "unicode": "f2f2"
   },
+  "stopwatch-20": {
+    "id": "fa-stopwatch-20",
+    "label": "Stopwatch 20",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e06f"
+  },
   "store": {
     "id": "fa-store",
     "label": "Store",
@@ -8890,6 +9714,22 @@
       "solid"
     ],
     "unicode": "f54f"
+  },
+  "store-alt-slash": {
+    "id": "fa-store-alt-slash",
+    "label": "Alternate Store Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e070"
+  },
+  "store-slash": {
+    "id": "fa-store-slash",
+    "label": "Store Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e071"
   },
   "strava": {
     "id": "fa-strava",
@@ -9061,6 +9901,14 @@
     ],
     "unicode": "f5c3"
   },
+  "swift": {
+    "id": "fa-swift",
+    "label": "Swift",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f8e1"
+  },
   "swimmer": {
     "id": "fa-swimmer",
     "label": "Swimmer",
@@ -9076,6 +9924,14 @@
       "solid"
     ],
     "unicode": "f5c5"
+  },
+  "symfony": {
+    "id": "fa-symfony",
+    "label": "Symfony",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f83d"
   },
   "synagogue": {
     "id": "fa-synagogue",
@@ -9287,7 +10143,7 @@
   },
   "text-width": {
     "id": "fa-text-width",
-    "label": "text-width",
+    "label": "Text Width",
     "style": [
       "solid"
     ],
@@ -9439,6 +10295,14 @@
     ],
     "unicode": "f3ff"
   },
+  "tiktok": {
+    "id": "fa-tiktok",
+    "label": "TikTok",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e07b"
+  },
   "times": {
     "id": "fa-times",
     "label": "Times",
@@ -9513,6 +10377,14 @@
     ],
     "unicode": "f71e"
   },
+  "toilet-paper-slash": {
+    "id": "fa-toilet-paper-slash",
+    "label": "Toilet Paper Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e072"
+  },
   "toolbox": {
     "id": "fa-toolbox",
     "label": "Toolbox",
@@ -9585,6 +10457,14 @@
     ],
     "unicode": "f637"
   },
+  "trailer": {
+    "id": "fa-trailer",
+    "label": "Trailer",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e041"
+  },
   "train": {
     "id": "fa-train",
     "label": "Train",
@@ -9633,6 +10513,22 @@
       "regular"
     ],
     "unicode": "f2ed"
+  },
+  "trash-restore": {
+    "id": "fa-trash-restore",
+    "label": "Trash Restore",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f829"
+  },
+  "trash-restore-alt": {
+    "id": "fa-trash-restore-alt",
+    "label": "Alternative Trash Restore",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f82a"
   },
   "tree": {
     "id": "fa-tree",
@@ -9802,6 +10698,14 @@
     ],
     "unicode": "f403"
   },
+  "umbraco": {
+    "id": "fa-umbraco",
+    "label": "Umbraco",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f8e8"
+  },
   "umbrella": {
     "id": "fa-umbrella",
     "label": "Umbrella",
@@ -9817,6 +10721,14 @@
       "solid"
     ],
     "unicode": "f5ca"
+  },
+  "uncharted": {
+    "id": "fa-uncharted",
+    "label": "Uncharted Software",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e084"
   },
   "underline": {
     "id": "fa-underline",
@@ -9849,6 +10761,14 @@
       "brands"
     ],
     "unicode": "f404"
+  },
+  "unity": {
+    "id": "fa-unity",
+    "label": "Unity 3D",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e049"
   },
   "universal-access": {
     "id": "fa-universal-access",
@@ -9889,6 +10809,14 @@
       "solid"
     ],
     "unicode": "f13e"
+  },
+  "unsplash": {
+    "id": "fa-unsplash",
+    "label": "Unsplash",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e07c"
   },
   "untappd": {
     "id": "fa-untappd",
@@ -10030,7 +10958,7 @@
   },
   "user-md": {
     "id": "fa-user-md",
-    "label": "user-md",
+    "label": "Doctor",
     "style": [
       "solid"
     ],
@@ -10051,6 +10979,14 @@
       "solid"
     ],
     "unicode": "f504"
+  },
+  "user-nurse": {
+    "id": "fa-user-nurse",
+    "label": "Nurse",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f82f"
   },
   "user-plus": {
     "id": "fa-user-plus",
@@ -10124,6 +11060,14 @@
     ],
     "unicode": "f509"
   },
+  "users-slash": {
+    "id": "fa-users-slash",
+    "label": "Users Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e073"
+  },
   "usps": {
     "id": "fa-usps",
     "label": "United States Postal Service",
@@ -10196,6 +11140,22 @@
     ],
     "unicode": "f228"
   },
+  "vest": {
+    "id": "fa-vest",
+    "label": "vest",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e085"
+  },
+  "vest-patches": {
+    "id": "fa-vest-patches",
+    "label": "vest-patches",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e086"
+  },
   "viacoin": {
     "id": "fa-viacoin",
     "label": "Viacoin",
@@ -10206,7 +11166,7 @@
   },
   "viadeo": {
     "id": "fa-viadeo",
-    "label": "Video",
+    "label": "Viadeo",
     "style": [
       "brands"
     ],
@@ -10214,7 +11174,7 @@
   },
   "viadeo-square": {
     "id": "fa-viadeo-square",
-    "label": "Video Square",
+    "label": "Viadeo Square",
     "style": [
       "brands"
     ],
@@ -10300,6 +11260,30 @@
     ],
     "unicode": "f1ca"
   },
+  "virus": {
+    "id": "fa-virus",
+    "label": "Virus",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e074"
+  },
+  "virus-slash": {
+    "id": "fa-virus-slash",
+    "label": "Virus Slash",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e075"
+  },
+  "viruses": {
+    "id": "fa-viruses",
+    "label": "Viruses",
+    "style": [
+      "solid"
+    ],
+    "unicode": "e076"
+  },
   "vk": {
     "id": "fa-vk",
     "label": "VK",
@@ -10315,6 +11299,14 @@
       "brands"
     ],
     "unicode": "f40b"
+  },
+  "voicemail": {
+    "id": "fa-voicemail",
+    "label": "Voicemail",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f897"
   },
   "volleyball-ball": {
     "id": "fa-volleyball-ball",
@@ -10404,6 +11396,14 @@
     ],
     "unicode": "f494"
   },
+  "watchman-monitoring": {
+    "id": "fa-watchman-monitoring",
+    "label": "Watchman Monitoring",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e087"
+  },
   "water": {
     "id": "fa-water",
     "label": "Water",
@@ -10411,6 +11411,22 @@
       "solid"
     ],
     "unicode": "f773"
+  },
+  "wave-square": {
+    "id": "fa-wave-square",
+    "label": "Square Wave",
+    "style": [
+      "solid"
+    ],
+    "unicode": "f83e"
+  },
+  "waze": {
+    "id": "fa-waze",
+    "label": "Waze",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f83f"
   },
   "weebly": {
     "id": "fa-weebly",
@@ -10592,6 +11608,14 @@
     ],
     "unicode": "f730"
   },
+  "wodu": {
+    "id": "fa-wodu",
+    "label": "Wodu",
+    "style": [
+      "brands"
+    ],
+    "unicode": "e088"
+  },
   "wolf-pack-battalion": {
     "id": "fa-wolf-pack-battalion",
     "label": "Wolf Pack Battalion",
@@ -10711,6 +11735,14 @@
       "brands"
     ],
     "unicode": "f19e"
+  },
+  "yammer": {
+    "id": "fa-yammer",
+    "label": "Yammer",
+    "style": [
+      "brands"
+    ],
+    "unicode": "f840"
   },
   "yandex": {
     "id": "fa-yandex",
