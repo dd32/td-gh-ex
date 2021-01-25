@@ -44,7 +44,7 @@
                             ?>
                             </a>
                           </h1>
-                              <p class="site-description"><?php bloginfo('description'); ?></p>
+                              <p class="site-description"><?php echo esc_html(bloginfo('description')); ?></p>
                           </div>
                       <?php endif; ?>
             <!-- navbar-toggle --> 
@@ -74,7 +74,7 @@
                         <?php 
                             echo esc_html(get_bloginfo('name'));
                           ?></a></h1>
-                      <p class="site-description"><?php bloginfo('description'); ?></p>
+                      <p class="site-description"><?php echo esc_html(bloginfo('description')); ?></p>
                     </div>
             <?php endif; ?>
           </div>
