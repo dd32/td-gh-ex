@@ -34,6 +34,11 @@
 
 <div id="page" class="site">
 
+    <!-- Progress -->
+    <p class="load-progress">
+        <a href="#" id="show"></a>
+    </p>
+
     <!--====== Header Start ======-->
     <header class="header">
         <nav class="navbar navbar-expand-lg center-brand static-nav header header--fixed">
