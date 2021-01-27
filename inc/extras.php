@@ -170,7 +170,7 @@ endif;
  * function to show the footer info, copyright information
  */
 function unite_footer_info() {
-   $output = '<a href="http://colorlib.com/wp/unite" title="Unite Theme" target="_blank">'.esc_html__('Unite Theme','unite').'</a> '.esc_html__('powered by','unite').' <a href="http://wordpress.org" title="WordPress" target="_blank">WordPress</a>.';
+   $output = '<a href="http://colorlib.com/wp/unite" title="Unite Theme" target="_blank" rel="nofollow noopener">'.esc_html__('Unite Theme','unite').'</a> '.esc_html__('powered by','unite').' <a href="http://wordpress.org" title="WordPress" target="_blank">WordPress</a>.';
    echo $output;
 }
 add_action( 'unite_footer', 'unite_footer_info', 30 );

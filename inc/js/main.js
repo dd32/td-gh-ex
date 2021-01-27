@@ -41,7 +41,7 @@ jQuery(document).ready(function(){
 				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) )
 					element.tabIndex = -1;
 
-				element.focus();
+				element.trigger('focus');
 			}
 		}, false );
 	}
