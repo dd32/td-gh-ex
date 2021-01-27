@@ -13,7 +13,7 @@ get_header(); ?>
 						echo '' . esc_html( get_theme_mod( 'header_text_main_heading' ) ) . '';
 					} else
 					{
-						echo __('ELEGANT TEMPLATE', 'aribiz');
+						echo __('LOREMPM IPSUMKL', 'aribiz');
 					}?>
 					</h1>
 					<?php 

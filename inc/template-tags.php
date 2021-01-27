@@ -133,7 +133,7 @@ if ( ! function_exists( 'aribiz_social_links' ) ) {
 						echo '' . esc_html( get_theme_mod( 'service_title_one' ) ) . '';
 					} else
 					{
-						echo __('Web Support', 'aribiz');
+						echo __('Lorem Ipsum', 'aribiz');
 					}?>
 				</h3>
 			
@@ -166,7 +166,7 @@ if ( ! function_exists( 'aribiz_social_links' ) ) {
 						echo '' . esc_html( get_theme_mod( 'service_title_two' ) ) . '';
 					} else
 					{
-						echo __('Chat Support', 'aribiz');
+						echo __('Lorem Ipsum', 'aribiz');
 					}?>
 				</h3>
 			
@@ -198,7 +198,7 @@ if ( ! function_exists( 'aribiz_social_links' ) ) {
 						echo '' . esc_html( get_theme_mod( 'service_title_three' ) ) . '';
 					} else
 					{
-						echo __('Mobile Support', 'aribiz');
+						echo __('Lorem Ipsum', 'aribiz');
 					}?>
 				</h3>
 			

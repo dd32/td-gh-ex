@@ -15,7 +15,7 @@ function aribiz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	//$wp_customize->get_control( 'custom_logo' )->description = __( 'Header menu logo size is 40x40px.', 'aribiz' );
+	 
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
