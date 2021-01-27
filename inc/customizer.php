@@ -425,6 +425,23 @@ function adventure_travelling_customize_register( $wp_customize ) {
        'section' => 'adventure_travelling_footer_section',
     ));
 
+    // Add Settings and Controls for Scroll top 
+	$wp_customize->add_setting('adventure_travelling_scroll_top_position',array(
+        'default' => 'Right',
+        'sanitize_callback' => 'adventure_travelling_sanitize_choices'
+	));
+	$wp_customize->add_control('adventure_travelling_scroll_top_position',array(
+        'type' => 'radio',
+        'label'     => __('Scroll to top Position', 'adventure-travelling'),
+        'description'   => __('This option work for scroll to top', 'adventure-travelling'),
+        'section' => 'adventure_travelling_footer_section',
+        'choices' => array(
+            'Right' => __('Right','adventure-travelling'),
+            'Left' => __('Left','adventure-travelling'),             
+            'Center' => __('Center','adventure-travelling')
+        ),
+	) );
+
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 

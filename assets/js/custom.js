@@ -12,7 +12,7 @@ jQuery(function($){
     animation:   {opacity:'show',height:'show'},
     speed:       'fast'
   });
-  $('.search-box span a').click(function(){
+    $('.search-box span a').click(function(){
     $(".serach_outer").toggle();
   });
 });

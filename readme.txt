@@ -4,7 +4,7 @@ Tags: wide-blocks, one-column, two-columns, right-sidebar, left-sidebar, three-c
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.2.14
-Stable tag: 0.7.9
+Stable tag: 0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Adventure travelling is a bold, powerful, attractive and multipurpose travel Wor
 
 == Description ==
 
-Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, sports, trekking, railing, rafting, games, fun, elking, hunting, military, zorbing, tournament, football club, mountain climbing, skiing, surfing, exotic holiday vacation planning, tour operators, Scuba Diving School, adventure agency, providing diving, snorkeling, surfing or hiking activities. tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people.
+Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, sports, trekking, railing, rafting, games, fun, elking, hunting, military, zorbing, tournament, tours, travel guide, trip, voyage, adrenaline, biking, cycling, football club, mountain climbing, skiing, surfing, exotic holiday vacation planning, tour operators, Scuba Diving School, adventure agency, providing diving, snorkeling, surfing or hiking activities. tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. 
 
 Installation
 
@@ -126,6 +126,9 @@ Installation
 = 0.7.9 =
 	* Added Show / Hide option of return to header.
 	* Resolved CSS issues.
+
+= 0.8 =
+	* Added new settings.
 
 == Resources ==
 

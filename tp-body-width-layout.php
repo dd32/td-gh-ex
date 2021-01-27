@@ -20,3 +20,18 @@
 			$adventure_travelling_tp_theme_css .='max-width: 100%;';
 		$adventure_travelling_tp_theme_css .='}';
 	}
+
+	$adventure_travelling_scroll_position = get_theme_mod( 'adventure_travelling_scroll_top_position','Right');
+	if($adventure_travelling_scroll_position == 'Right'){
+		$adventure_travelling_tp_theme_css .='#return-to-top{';
+			$adventure_travelling_tp_theme_css .='right: 20px;';
+		$adventure_travelling_tp_theme_css .='}';
+	}else if($adventure_travelling_scroll_position == 'Left'){
+		$adventure_travelling_tp_theme_css .='#return-to-top{';
+			$adventure_travelling_tp_theme_css .='left: 20px;';
+		$adventure_travelling_tp_theme_css .='}';
+	}else if($adventure_travelling_scroll_position == 'Center'){
+		$adventure_travelling_tp_theme_css .='#return-to-top{';
+			$adventure_travelling_tp_theme_css .='right: 50%;left: 50%;';
+		$adventure_travelling_tp_theme_css .='}';
+	}
