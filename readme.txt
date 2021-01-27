@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,8 +24,8 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Rambo WordPress Theme, Copyright 2014-2020 priyanshumittal
-Rambo is distributed under the terms of the GNU GPL
+Rambo WordPress Theme, Copyright 2014-2021 priyanshumittal
+Rambo WordPress Theme is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -38,6 +38,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.6
+1. Fixed user comment and "WBR: Page Widget" issues.
 
 @version 2.0.5
 1. Fixed escaping, translation, empty markup issues and removed unnecessary code.
@@ -71,7 +74,7 @@ GNU General Public License for more details.
 1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 
 @version 1.8
-1. Update customizer and added upgrade to pro link. 
+1. Update customizer and added upgrade to pro link.
 
 @version 1.7.3.2
 1. Fixed service image style issue
@@ -117,7 +120,7 @@ GNU General Public License for more details.
 1. Added workpress child theme screenshot in theme about.
 
 @version 1.5.9
-1. Change dummy data folder priority. 
+1. Change dummy data folder priority.
 
 @version 1.5.8
 1. Added dummy data import setting.
@@ -179,10 +182,10 @@ GNU General Public License for more details.
 1. Add Google Font.
 2. Remove Title Tag Support.
 
-@version 1.3.1 
+@version 1.3.1
 1. Add Blog Left sidebar Template.
 2. Resolved Theme Check Error.
-3. Add Screen reader css 
+3. Add Screen reader css
 
 @version 1.3
 1. Update Font-awesome Icon Folder.
@@ -227,7 +230,7 @@ Proper copyright attribution added.
 7. Image pagination managed properly.
 8. Change Aside Box layout.
 9. All the resources license mentioned.
-10. esc_url_raw used in instead of sanitize_text_field for links validation. 
+10. esc_url_raw used in instead of sanitize_text_field for links validation.
 
 @Version: 1.2.5
 1. Hover for Sub-Menus added.
@@ -256,7 +259,7 @@ Proper copyright attribution added.
 1. GPL screen shot added.
 
 @Version: 1.1.4
-1.New Screen Shot added. 
+1.New Screen Shot added.
 
 @Version: 1.1.3
 1.New Theme Detail added to Options Panle.
@@ -277,7 +280,7 @@ Small Value Change in Default Data
 1. Banner Strip in 404 page.
 
 @Version: 1.0.7
-Tag.php added and category bug fixed. 
+Tag.php added and category bug fixed.
 
 @Version: 1.0.6
 Comperison Tab added in options Panel.
@@ -293,7 +296,7 @@ Some Small bug fixed.
 
 @Version: 1.0.2
 ->Default CSS enqueued in scripts.php
-->Screenshot size changed  
+->Screenshot size changed
 
 @Version 1.0
 released
@@ -305,7 +308,7 @@ Copyright: (c) Dave Gandy
 License: https://fontawesome.com/license ( Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License )
 Source: https://fontawesome.com
 
-Bootstrap: 
+Bootstrap:
 Copyright: (c) Twitter
 License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source: https://getbootstrap.com
@@ -325,4 +328,4 @@ License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
-Copyright (C) 2019, Webriti and available as [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, Webriti and available as [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)

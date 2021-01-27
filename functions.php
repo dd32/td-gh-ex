@@ -2,35 +2,35 @@
 /*
 	*Theme Name	: Rambo
 	*Theme Core Functions and Codes
-*/	
+*/
 	/**Includes reqired resources here**/
-	define('RAMBO_TEMPLATE_DIR_URI',get_template_directory_uri());	
-	
+	define('RAMBO_TEMPLATE_DIR_URI',get_template_directory_uri());
+
 	define('RAMBO_TEMPLATE_DIR',get_template_directory());
 	define('RAMBO_THEME_FUNCTIONS_PATH',RAMBO_TEMPLATE_DIR.'/functions');
 
 	require_once('theme_setup_data.php');
 	require_once('child_theme_compatible.php');
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
-	require( RAMBO_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus	
-	
-	require( RAMBO_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); 
-	
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus
+
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' );
+
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
-	
+
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
-	
+
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/font/font.php'); //for font library
-	
+
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-site-intro-widget.php' ); //for Site Intro widgets
-	
+
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-register-page-widget.php' ); //for Page / Service widgets
-	
+
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/template-tags.php' ); //for post meta content
-	
-	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-sidebar-latest-news.php' ); //for sidebar Latest News custom widgets	
-	
-	
+
+	require( RAMBO_THEME_FUNCTIONS_PATH . '/widget/rambo-sidebar-latest-news.php' ); //for sidebar Latest News custom widgets
+
+
 	//Customizer
 	require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro_feature.php');
 	//require( RAMBO_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
@@ -100,14 +100,12 @@
 
 		tgmpa( $plugins, $config );
 	}
-	
+
 	global $resetno; //user for reset function
-	//content width
-	if ( ! isset( $content_width ) ) $content_width = 900;	
-	
+
 	//wp title tag starts here
 	function rambo_head( $title, $sep )
-	{	global $paged, $page;		
+	{	global $paged, $page;
 		if ( is_feed() )
 			return $title;
 		// Add the site name.
@@ -120,46 +118,46 @@
 		if ( $paged >= 2 || $page >= 2 )
 			$title = "$title $sep " . sprintf( esc_html_e('Page','rambo'), max( $paged, $page ) );
 		return $title;
-	}	
+	}
 	add_filter( 'wp_title', 'rambo_head', 10,2 );
 
 	function rambo_customizer_css() {
 		wp_enqueue_style( 'rambo-customizer-info', RAMBO_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
 	}
 	add_action( 'admin_init', 'rambo_customizer_css' );
-	
-		add_action( 'after_setup_theme', 'rambo_setup' ); 	
+
+		add_action( 'after_setup_theme', 'rambo_setup' );
 		function rambo_setup()
 		{	// Load text domain for translation-ready
-			load_theme_textdomain( 'rambo', RAMBO_TEMPLATE_DIR . '/languages' );	
-			
+			load_theme_textdomain( 'rambo', RAMBO_TEMPLATE_DIR . '/languages' );
+
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		add_theme_support( 'woocommerce' );//woocommerce
 		add_theme_support( 'title-tag' ); //Title Tag
 		add_theme_support( 'automatic-feed-links' ); // Feed Link
 		add_theme_support( 'custom-background' ); // Custom Background
-		
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-		
+
 		add_editor_style();
 
 		//Custom logo
-	
+
 		add_theme_support( 'custom-logo' , array(
-	
+
 	   'class'       => 'navbar-brand',
 	   'width'       => 300,
 	   'height'      => 50,
 	   'flex-width' => false,
 	   'flex-height' => false,
 	   'header-text' => array( 'site-title', 'site-description' ),
-	   
+
 		) );
-		
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'rambo' ) );
-		
+
 		// setup admin pannel defual data for index page
 		$rambo_theme=rambo_theme_data_setup();
 
@@ -170,8 +168,13 @@
             require get_template_directory() . '/admin/admin-init.php';
         }
    	 }
+
+		 //content width
+	 	 if ( ! isset( $content_width ) ) {
+			 $content_width = 900;
+		 }
 	}
-	
+
 // change custom logo link class
 	add_filter('get_custom_logo','rambo_change_logo_class');
 	function rambo_change_logo_class($html)

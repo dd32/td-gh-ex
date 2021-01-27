@@ -5,7 +5,7 @@ msgstr ""
 "Blank WordPress Pot "
 "v1.0.0\n"
 "POT-Creation-Date: "
-"2020-12-24 18:40+0530\n"
+"2021-01-23 17:45+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -1033,11 +1033,11 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:119
 msgid "Page"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:159
 msgid "Primary Menu"
 msgstr ""
 
@@ -1940,7 +1940,7 @@ msgstr ""
 
 #: functions/widget/rambo-register-page-widget.php:136
 msgid ""
-"Display image above title"
+"Display image below title"
 msgstr ""
 
 #: functions/widget/rambo-sidebar-latest-news.php:16
