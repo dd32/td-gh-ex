@@ -26,6 +26,25 @@
 		<?php /* Post content */ ?>
 		<div class="entry-content clearfix">
 			<?php do_action( 'graphene_before_post_content' ); ?>
+
+			<?php if ( ! is_singular() && ! $graphene_settings['hide_post_featured_image'] ) : ?>
+				<?php if ( ! $graphene_settings['archive_full_content'] && ! ( is_home() && ! $graphene_settings['posts_show_excerpt'] ) ) : ?>
+					<?php /* The post thumbnail */
+						if ( has_post_thumbnail( get_the_ID() ) ) { ?>
+							<p class="excerpt-thumb">
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( esc_attr__( 'Permalink to %s', 'graphene' ), the_title_attribute( 'echo=0' ) ); ?>">
+									<?php the_post_thumbnail( apply_filters( 'graphene_excerpt_thumbnail_size', 'medium' ) ); ?>
+								</a>
+							</p>
+							<?php
+						} else {
+							echo graphene_get_post_image( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'medium' ), 'excerpt' );	
+						}
+					?>
+				<?php else : ?>
+					<?php graphene_featured_image(); ?>
+				<?php endif; ?>
+			<?php endif; ?>
 			
 			<?php if ( ( is_home() && ! $graphene_settings['posts_show_excerpt'] ) || is_singular() || ( ! is_singular() && ! is_home() && $graphene_settings['archive_full_content'] ) ) : ?>
 				
@@ -37,19 +56,6 @@
 
 			<?php else : ?>
 
-				<?php /* The post thumbnail */
-					if ( has_post_thumbnail( get_the_ID() ) ) { ?>
-						<p class="excerpt-thumb">
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( esc_attr__( 'Permalink to %s', 'graphene' ), the_title_attribute( 'echo=0' ) ); ?>">
-								<?php the_post_thumbnail( apply_filters( 'graphene_excerpt_thumbnail_size', 'medium' ) ); ?>
-							</a>
-						</p>
-						<?php
-					} else {
-						echo graphene_get_post_image( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'medium' ), 'excerpt' );	
-					}
-				?>
-                
                 <?php /* Social sharing buttons at top of post */ ?>
 				<?php if ( stripos( $graphene_settings['addthis_location'], 'top' ) !== false && $graphene_settings['show_addthis_archive'] ) { graphene_addthis( get_the_ID() ); } ?>
                 

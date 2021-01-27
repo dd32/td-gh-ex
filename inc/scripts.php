@@ -229,7 +229,7 @@ add_action( 'wp_head', 'graphene_load_google_fonts' );
 function graphene_google_fonts_local( $fonts ){
 	global $graphene_settings;
 	if ( ! $graphene_settings['host_scripts_locally'] ) return $fonts;
-	if ( $graphene_settings['disable_google_fonts'] ) return $fonts;
+	if ( isset( $graphene_settings['disable_google_fonts'] ) && $graphene_settings['disable_google_fonts'] ) return $fonts;
 
 	/* Do not run this on AMP pages */
 	if ( function_exists( 'is_amp_endpoint' ) ) {

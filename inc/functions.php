@@ -32,9 +32,8 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 		if ( isset( $image ) && $image ) {
 
 			$header_img = $image;
-			if ( ini_get( 'allow_url_fopen' ) ) $dimension = getimagesize( $header_img );
-			else $dimension = array( '', '' );
-			
+			$dimension = graphene_get_image_size( $header_img );
+
 			$header_img = array( $header_img, $dimension[0], $dimension[1] );
 
 		} else if ( $header_img ) {
@@ -144,8 +143,7 @@ function graphene_get_image_html( $image_src_or_id, $size = '', $alt = '' ){
 			$height = '';
 			$width = '';
 
-			if ( ini_get( 'allow_url_fopen' ) ) $image_size = getimagesize( $image_src_or_id );
-			else $image_size = array( '', '' );
+			$image_size = graphene_get_image_size( $image_src_or_id );
 
 			if ( $image_size && isset( $image_size[0] ) && isset( $image_size[1] ) ) {
 				if ( $image_size[0] && is_numeric( $image_size[0] ) ) $width = $image_size[0];
@@ -498,4 +496,18 @@ function graphene_container_wrapper( $part = 'start' ) {
 
 	if ( $part == 'start' ) echo '<div class="container container-full-width-boxed">';
 	if ( $part == 'end' ) echo '</div>';
+}
+
+
+/**
+ * Get image size, with error handling
+ */
+function graphene_get_image_size( $file ){
+	$image_size = array( '', '' );
+
+	if ( ini_get( 'allow_url_fopen' ) ) {
+		try { $image_size = getimagesize( $file ); } catch ( Exception $e ) {}
+	}
+
+	return $image_size;
 }

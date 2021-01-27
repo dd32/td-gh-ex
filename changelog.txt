@@ -4,6 +4,14 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.8.3 [27-01-2021]
+	* Added: Granular CSS classes for author byline
+	* Fixed: Text colour in search box when placed in the navigation bar
+	* Fixed: Structured Data markup warnings for AMP pages
+	* Fixed: PHP warnings in loop.php
+	* Fixed: Inconsistent behaviour related to excerpts and features images in posts listing
+	* Fixed: PHP notices/warnings related to getimagesize() for certain server configurations
+
 Version 2.8.2 [11-10-2020]
 	* Added: Top bar foreground and links colour options
 	* Added: Move back-to-top button if there is a Recaptcha badge on page

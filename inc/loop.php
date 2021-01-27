@@ -392,13 +392,13 @@ function graphene_get_post_image( $post_id = NULL, $size = 'thumbnail', $context
 	/* Get the images */
 	$image = graphene_get_best_post_image( $post_id, $size );
 	$html = '';
-	
+
 	/* Returns generic image if there is no image to show */
 	if ( ! $image && $context != 'excerpt' && ! $urlonly ) {
 		$html .= apply_filters( 'graphene_generic_slider_img', '' ); // For backward compatibility
 		$html .= apply_filters( 'graphene_generic_post_img', '' );
 	
-	} else {
+	} elseif ( $image ) {
 
 		/* Build the <img> tag if there is an image */
 		if ( ! $urlonly ) {
@@ -916,12 +916,12 @@ function graphene_entry_meta(){
 		if ( $categories ) $categories = '<span class="terms">' . implode( ', ', $categories ) . '</span>';
 	}
 
-	if ( ! $graphene_settings['hide_post_author'] && ! is_page() ) {
+	if ( ! $graphene_settings['hide_post_author'] && ! is_page() && get_the_author() ) {
 		$author = '<span class="author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ) . '" rel="author">' . get_the_author_meta( 'display_name' , $author_id ) . '</a></span>';
 	}
 	
-	if ( $categories && $author ) $byline = sprintf( __( 'By %1$s in %2$s', 'graphene' ), $author, $categories );
-	elseif ( $categories ) $byline = sprintf( __( 'Filed under %2$s', 'graphene' ), $author, $categories );
+	if ( $categories && $author ) $byline = sprintf( __( 'By %1$s in %2$s', 'graphene' ), $author . '<span class="entry-cat">', $categories . '</span>' );
+	elseif ( $categories ) $byline = '<span class="entry-cat">' . sprintf( __( 'Filed under %2$s', 'graphene' ), $author, $categories ) . '</span>';
 	elseif ( $author ) $byline = sprintf( __( 'By %s', 'graphene' ), $author );
 	else $byline = false;
 	
@@ -962,7 +962,7 @@ function graphene_entry_meta(){
 	
 	$meta = apply_filters( 'graphene_entry_meta', $meta, $post_id );
 	if ( $meta ) : ?>
-	    <ul class="post-meta clearfix">
+	    <ul class="post-meta entry-meta clearfix">
 	    	<?php foreach ( $meta as $item ) : if ( isset( $item['icon'] ) ) $item['class'] .= ' has-icon'; ?>
 	        <li class="<?php echo esc_attr( $item['class'] ); ?>">
 	        	<?php 
