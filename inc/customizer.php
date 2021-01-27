@@ -377,6 +377,23 @@ function automobile_hub_customize_register( $wp_customize ) {
        'section' => 'automobile_hub_footer_section',
     ));
 
+    // Add Settings and Controls for Scroll top 
+	$wp_customize->add_setting('automobile_hub_scroll_top_position',array(
+        'default' => 'Right',
+        'sanitize_callback' => 'automobile_hub_sanitize_choices'
+	));
+	$wp_customize->add_control('automobile_hub_scroll_top_position',array(
+        'type' => 'radio',
+        'label'     => __('Scroll to top Position', 'automobile-hub'),
+        'description'   => __('This option work for scroll to top', 'automobile-hub'),
+        'section' => 'automobile_hub_footer_section',
+        'choices' => array(
+            'Right' => __('Right','automobile-hub'),
+            'Left' => __('Left','automobile-hub'),
+            'Center' => __('Center','automobile-hub')
+        ),
+	) );
+
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 

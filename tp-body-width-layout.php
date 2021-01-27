@@ -20,3 +20,18 @@
 			$automobile_hub_tp_theme_css .='max-width: 100%;';
 		$automobile_hub_tp_theme_css .='}';
 	}
+
+    $automobile_hub_scroll_position = get_theme_mod( 'automobile_hub_scroll_top_position','Right');
+    if($automobile_hub_scroll_position == 'Right'){
+        $automobile_hub_tp_theme_css .='#return-to-top{';
+            $automobile_hub_tp_theme_css .='right: 20px;';
+        $automobile_hub_tp_theme_css .='}';
+    }else if($automobile_hub_scroll_position == 'Left'){
+        $automobile_hub_tp_theme_css .='#return-to-top{';
+            $automobile_hub_tp_theme_css .='left: 20px;';
+        $automobile_hub_tp_theme_css .='}';
+    }else if($automobile_hub_scroll_position == 'Center'){
+        $automobile_hub_tp_theme_css .='#return-to-top{';
+            $automobile_hub_tp_theme_css .='right: 50%;left: 50%;';
+        $automobile_hub_tp_theme_css .='}';
+    }
