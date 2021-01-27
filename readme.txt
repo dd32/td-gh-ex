@@ -4,7 +4,7 @@ Contributors: thethemefoundry
 Tags: black, blue, green, gray, orange, red, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, footer-widgets, blog, e-commerce, portfolio, accessibility-ready, custom-logo, featured-image-header, rtl-language-support
 
 Requires at least: 4.7
-Tested up to: 5.5.3
+Tested up to: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ Build a website that means business. With Make’s powerful drag and drop page b
 Please see the Make documentation: https://thethemefoundry.com/make-help/
 
 == Changelog ==
+
+= 1.9.32 - January 27 2020 =
+* Bugfix: Wrong CSS class prevented social icons from working correctly.
 
 = 1.9.31 - January 25 2020 =
 * Improvement: Updated Font Awesome to version 5.15.2.
@@ -663,6 +666,9 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.9.32 =
+* Bugfixes.
 
 = 1.9.31 =
 * Update Font Awesome version 5.15.2.
