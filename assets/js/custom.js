@@ -10,21 +10,12 @@
             if (jQuery(window).scrollTop() >= 100) {
                 jQuery('.header-sticky').addClass('header-fixed-top');
 				jQuery('.header-sticky').removeClass('not-sticky');
-				jQuery('.navbar-collapse').removeClass('show');
             }
             else {
                 jQuery('.header-sticky').removeClass('header-fixed-top');
 				jQuery('.header-sticky').addClass('not-sticky');
             }
         });
-		
-		jQuery(".theme-main-slider").focusin(function(){
-			jQuery('.navbar-collapse').removeClass('show');
-		});
-		jQuery(".theme-page-header-area").focusin(function(){
-			jQuery('.navbar-collapse').removeClass('show');
-		});
-		
 		
 		/* ---------------------------------------------- /*
          * Scroll top
