@@ -20,8 +20,10 @@ $single_post_layout = esc_attr(of_get_option('single_post_layout')); ?>
 			</div>
 			<?php } ?>
 		</header><!-- .entry-header -->
-
-		<?php accesspress_breadcrumbs() ?>
+		<?php $show_bd = of_get_option('enable_breadcrumb',1);
+		if($show_bd){
+		 accesspress_breadcrumbs(); 
+		}?>
 		</div>
 	</div>
 

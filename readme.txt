@@ -3,8 +3,8 @@
 Contributors: Access Keys
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.5.1
-Stable tag: 2.4
+Tested up to: 5.6
+Stable tag: 2.5
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, custom-header, translation-ready
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -97,6 +97,11 @@ https://pxhere.com/en/photo/1451181
 
 ---------------------------------------------
 == Changelog ==
+= 2.5 =
+** Fixed JS issues
+** Refined Breadcrumb functions
+** Added Breadcrumb Show Hide Option for Single Post
+
 = 2.4 =
 ** Fixed compatiblity issue with WordPress 5.5
 

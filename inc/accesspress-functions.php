@@ -229,7 +229,7 @@ function accesspress_breadcrumbs() {
             echo '<div id="accesspress-breadcrumb"><a href="' . esc_url($homeLink) . '">' . esc_html( $home ) . '</a></div></div>';
     } else {
 
-        echo '<div id="accesspress-breadcrumb"><a href="' . esc_url($homeLink) . '">' . esc_html( $home ) . '</a> ' . esc_html($delimiter) . ' ';
+        echo '<div id="accesspress-breadcrumb"><a href="' . esc_url($homeLink) . '">' . esc_html( $home ) . '</a> ' . ($delimiter) . ' ';
 
         if (is_category()) {
             $thisCat = get_category(get_query_var('cat'), false);
@@ -239,11 +239,11 @@ function accesspress_breadcrumbs() {
         } elseif (is_search()) {
             echo wp_kses_post($before) . esc_html__('Search results for','accesspress-root'). '"' . esc_html(get_search_query()) . '"' . wp_kses_post($after);
         } elseif (is_day()) {
-            echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ' . esc_html($delimiter) . ' ';
-            echo '<a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a> ' . esc_html($delimiter) . ' ';
+            echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ' . ($delimiter) . ' ';
+            echo '<a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a> ' . ($delimiter) . ' ';
             echo wp_kses_post($before) . esc_html(get_the_time('d')) . wp_kses_post($after);
         } elseif (is_month()) {
-            echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ' . esc_html($delimiter) . ' ';
+            echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ' . ($delimiter) . ' ';
             echo wp_kses_post($before) . wp_kses_post(get_the_time('F')) . wp_kses_post($after);
         } elseif (is_year()) {
             echo wp_kses_post($before) . wp_kses_post(get_the_time('Y')) . wp_kses_post($after);
@@ -253,14 +253,14 @@ function accesspress_breadcrumbs() {
                 $slug = $post_type->rewrite;
                 echo '<a href="' . esc_url($homeLink) . '/' . esc_attr($slug['slug']) . '/">' . esc_html($post_type->labels->singular_name) . '</a>';
                 if ($showCurrent == 1)
-                    echo ' ' . esc_html($delimiter) . ' ' . wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
+                    echo $delimiter . $before . get_the_title() . $after;
             } else {
                 $cat = get_the_category();
                 $cat = $cat[0];
                 $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                 if ($showCurrent == 0)
                     $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-                echo wp_kses_post($cats);
+                echo ($cats);
                 if ($showCurrent == 1)
                     echo wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
             }
@@ -284,10 +284,10 @@ function accesspress_breadcrumbs() {
             for ($i = 0; $i < count($breadcrumbs); $i++) {
                 echo wp_kses_post($breadcrumbs[$i]);
                 if ($i != count($breadcrumbs) - 1)
-                    echo ' ' . esc_html($delimiter) . ' ';
+                    echo ' ' . ($delimiter) . ' ';
             }
             if ($showCurrent == 1)
-                echo ' ' . esc_html($delimiter) . ' ' . wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
+                echo ' ' . ($delimiter) . ' ' . wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
         } elseif (is_tag()) {
             echo wp_kses_post($before) . esc_html__('Posts tagged','accesspress-root').' "' . wp_kses_post( single_tag_title('', false) ) . '"' . wp_kses_post($after);
         } elseif (is_author()) {
