@@ -141,10 +141,12 @@ get_header(); ?>
 	
 	<?php do_action( 'advance_blogging_below_product_section' ); ?>
 
-	<div class="container">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php the_content(); ?>
-		<?php endwhile; // end of the loop. ?>
+	<div id="content-ma">
+		<div class="container">
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php the_content(); ?>
+			<?php endwhile; // end of the loop. ?>
+		</div>
 	</div>
 </main>
 

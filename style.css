@@ -4,7 +4,7 @@ Theme URI: https://www.themescaliber.com/themes/free-blog-wordpress-theme/
 Author: ThemesCaliber
 Author URI: https://www.themescaliber.com/
 Description: Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology, author, editor,  blog, fashion blog, SEO blogs, trending technologies, travel journals, health blog, travel blog, photography blog, portfolios, craft blog are just few of them. You can use this theme for building magazine website, news website landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc.You can also set featured images to enhance your article. You can translate this theme into different languages such as Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese. Demo: https://www.themescaliber.com/advance-blogging-pro/
-Version: 0.8.6
+Version: 0.8.7
 Tested up to: 5.6
 Requires PHP: 7.2.14
 License: GNU General Public License v3.0
@@ -28,7 +28,7 @@ body{
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#f8f8f8;
-  font-size:16px;
+  font-size:14px;
   color:#222;
   width: 100%;
   font-family: 'Poppins', sans-serif; 
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6{
 p{
   margin:0 0 15px;
   padding:0;
-  font-size:16px;
+  font-size:15px;
   line-height:1.8;
 }
 a, code{
@@ -67,12 +67,7 @@ a:focus,a:hover{
   text-decoration:none !important;
 }
 a:focus, input:focus, textarea:focus, button:focus, #sidebar .widget a:focus, .woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row textarea:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
-}
-.topbar a:focus, #header .cart a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
+  outline: ridge;
 }
 ul{
   margin:0 0 0 15px;
@@ -154,7 +149,7 @@ input[type='submit']:hover{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.entry-content a, .textwidget a, .comment-list li.comment p a{
+.entry-content a, .textwidget a, .comment-list li.comment p a, #content-ma a{
   text-decoration:underline;
   color: #db0607;
 }
@@ -383,10 +378,10 @@ a.blog-btn:hover {
 .primary-navigation ul ul{
   display: none;
   position: absolute;
-  background: #252525;
   min-width: 215px;
   z-index: 9999;
   border: 1px solid #db0607;
+  margin: 0;
 }
 .primary-navigation ul ul ul{
   left: 100% !important;
@@ -490,8 +485,8 @@ a.button.wc-backward, .woocommerce-MyAccount-content p a, .woocommerce-privacy-p
   font-size: 40px;
   color: #fff;
 }
-.closepop:focus, .search-box button:focus, .primary-navigation ul li a:focus, .toggle-menu button:focus{
-  outline: 1px dotted #fff;
+.closepop:focus, .search-box button:focus, .primary-navigation ul li a:focus, .toggle-menu button:focus, .footertown a:focus, .footertown input:focus{
+  outline-color: #fff;
 }
 .serach_inner form.search-form {
   display: table;
@@ -1000,9 +995,6 @@ span.woocommerce-input-wrapper {
 .footertown {
   background: #000;
 }
-.footertown a:focus, .footertown input:focus{
-  outline: 1px dotted #fff;
-}
 .footertown input.search-field{
   border: 1px solid #db0607;
   padding: 7px;
@@ -1257,7 +1249,7 @@ h2.entry-title{
 }
 #sidebar th {
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   color: #000;
 }
 #sidebar select {
@@ -1486,6 +1478,9 @@ span.post-page-numbers.current {
     padding: 5px;
     color: #fff;
   }
+  #sidebar td{
+    padding: 2px;
+  }
   .footertown th {
     text-align: center;
     padding: 0px;
@@ -1499,21 +1494,7 @@ span.post-page-numbers.current {
     margin-right: 10px;
   }
 }
-@media screen and (max-width: 984px) {
-  #sidebar th {
-    padding: 1px;
-  }
-  #sidebar td {
-    padding: 1px;
-  }
-}
 @media screen and (max-width: 1000px){
-  #sidebar td{
-    padding: 0px;
-  }
-  #sidebar th{
-    padding: 2px;
-  }
   .primary-navigation ul ul a:hover, .primary-navigation li a:hover {
     color: #db0607 !important;
     background:#fff !important;
@@ -1525,8 +1506,7 @@ span.post-page-numbers.current {
     margin: 0;
   }
   .menubar .primary-navigation ul li a:focus, a.closebtn.responsive-menu:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
+    outline-color: #fff;
   }
   .toggle-menu {
     display: none;

@@ -41,7 +41,7 @@ class Advance_Blogging_Icon_Changer extends WP_Customize_Control{
 }
 
 function advance_blogging_customizer_script() {
-    wp_enqueue_style( 'font-awesome-1', get_template_directory_uri().'/css/fontawesome-all.css');
+    wp_enqueue_style( 'font-awesome-1', esc_url(get_template_directory_uri()).'/css/fontawesome-all.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'advance_blogging_customizer_script' );
 
