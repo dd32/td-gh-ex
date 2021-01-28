@@ -23,7 +23,7 @@ require( WALLSTREET_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php');
 require( WALLSTREET_THEME_FUNCTIONS_PATH . '/menu/wallstreet_nav_walker.php');
 require( WALLSTREET_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 require( WALLSTREET_THEME_FUNCTIONS_PATH . '/font/font.php');
-//Customizer 
+//Customizer
 require( WALLSTREET_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 require( WALLSTREET_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
 //require( WALLSTREET_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
@@ -78,19 +78,19 @@ function wallstreet_setup() {
     if (!isset($content_width))
         $content_width = 600; //In PX
 
-        
+
 // Load text domain for translation-ready
     load_theme_textdomain('wallstreet', WALLSTREET_TEMPLATE_DIR . '/language');
 
     add_theme_support('post-thumbnails'); //supports featured image
     // This theme uses wp_nav_menu() in one location.
     register_nav_menu('primary', esc_html__('Primary Menu', 'wallstreet')); //Navigation
-    // theme support 	
+    // theme support
     $args = array('default-color' => '000000',);
     add_theme_support('custom-background', $args);
     add_theme_support('automatic-feed-links');
 
-    // woocommerce support	
+    // woocommerce support
     add_theme_support('woocommerce');
 
     //Added Woocommerce Galllery Support
@@ -124,7 +124,7 @@ function wallstreet_setup() {
     }
 }
 
-// Read more tag to formatting in blog page 	
+// Read more tag to formatting in blog page
 function wallstreet_new_content_more($more) {
     global $post;
     return '<div class=\"blog-btn-col\"><a href="' . esc_url(get_permalink()) . "#more-{$post->ID}\" class=\"blog-btn\">" . esc_html__('Read More', 'wallstreet') . '</a></div>';
@@ -211,11 +211,11 @@ if (!function_exists('wallstreet_comment')) {
         <?php edit_comment_link(esc_html__('Edit', 'wallstreet'), '<p class="edit-link">', '</p>'); ?>
                     <div class="reply">
         <?php comment_reply_link(array_merge($args, array('reply_text' => $leave_reply, 'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
-                    </div>					
+                    </div>
         <?php if ($comment->comment_approved == '0') : ?>
                         <em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'wallstreet'); ?></em>
                         <br/>
-        <?php endif; ?>				
+        <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -223,7 +223,7 @@ if (!function_exists('wallstreet_comment')) {
     }
 
 }
-// end of wallstreet_comment function 
+// end of wallstreet_comment function
 
 add_action('wp_head', 'wallstreet_head_enqueue_custom_css');
 
@@ -233,7 +233,7 @@ function wallstreet_head_enqueue_custom_css() {
     if ($current_options['webrit_custom_css'] != '') {
         ?>
         <style>
-        <?php echo $current_options['webrit_custom_css']; ?>
+        <?php echo esc_html($current_options['webrit_custom_css']); ?>
         </style>
     <?php
     }
@@ -276,12 +276,12 @@ function wallstreet_register_required_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
-            'name' => 'Contact Form 7',
+            'name' => esc_html__('Contact Form 7','wallstreet'),
             'slug' => 'contact-form-7',
             'required' => false,
         ),
         array(
-            'name' => 'Webriti Companion',
+            'name' => esc_html__('Webriti Companion','wallstreet'),
             'slug' => 'webriti-companion',
             'required' => false,
         )
@@ -310,7 +310,7 @@ function wallstreet_register_required_plugins() {
     tgmpa($plugins, $config);
 }
 
-// add css on activate webriti-companion plugin	
+// add css on activate webriti-companion plugin
 
 $wallstreet_pluginList = get_option('active_plugins');
 $wallstreet_webriti_companion_plugin = 'webriti-companion/webriti-companion.php';

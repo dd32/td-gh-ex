@@ -1,13 +1,13 @@
 <?php if ( post_password_required() ) : ?>
 	<p class="nopassword"><?php esc_html_e( 'This post is password protected. Enter the password to view any comments.','wallstreet' ); ?></p>
-<?php return; endif; ?>	
+<?php return; endif; ?>
 <?php if ( have_comments() ) { ?>
 
 <div class="comment-section">
 	<div class="comment-title">
-	<h3><i class="fa fa-comment-o"></i> 
+	<h3><i class="fa fa-comment-o"></i>
 		<?php
-				printf( esc_html('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'wallstreet' ),
+				printf( esc_html( __('One thought on &ldquo;%2$s&rdquo;','wallstreet'), __('%1$s thoughts on &ldquo;%2$s&rdquo;','wallstreet'), get_comments_number() ),
 					esc_html(number_format_i18n( get_comments_number() )), '<span>' . esc_html(get_the_title()) . '</span>' );
 			?>
 	</h3>
@@ -24,10 +24,10 @@
 		<?php }?>
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
 		<p class="nocomments"><?php esc_html_e( 'Comments are closed' ,'wallstreet' ); ?></p>
-		<?php endif; ?>		
+		<?php endif; ?>
 	<?php } ?>
 	<?php if ('open' == $post->comment_status) { ?>
-	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
+	<?php if ( get_option('comment_registration') && isset($user_ID) ) { ?>
 	<p><?php echo sprintf( 	wp_kses(
 											/* translators: %s is Link to login */
 											__( 'You must be <a href="%s">logged in</a> to post a comment.', 'wallstreet' ),
@@ -37,22 +37,22 @@
 												),
 											)
 										), esc_url(site_url( 'wp-login.php' )) . '?redirect_to=' .  urlencode(esc_url(get_permalink()))); ?></p>
-<?php } else { 
+<?php } else {
 ?>
 <div class="comment-form-section">
-	<?php  
+	<?php
 	 $wallstreet_fields=array(
 		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.esc_attr__('Name','wallstreet').'" /></div>',
 		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value="" type="email" placeholder="'.esc_attr__('Email','wallstreet').'" /></div>',
 		);
-		function wallstreet_fields($wallstreet_fields) { 
+		function wallstreet_fields($wallstreet_fields) {
 			return $wallstreet_fields;
 		}
 		add_filter('comment_form_default_fields','wallstreet_fields');
 			$wallstreet_defaults = array(
 			'fields'=> apply_filters( 'comment_form_default_fields', $wallstreet_fields ),
 			'comment_field'=> '<div class="blog-form-group-textarea" >
-			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.esc_attr__('Leave your message','wallstreet').'"></textarea></div>',		
+			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.esc_attr__('Leave your message','wallstreet').'"></textarea></div>',
 			'logged_in_as' => '<p class="logged-in-as">' . esc_html__("Logged in as",'wallstreet' ).'<a href="'.  esc_url(admin_url( 'profile.php' )).'"> '.$user_identity.'</a>'. '<a href="'. esc_url(wp_logout_url( get_permalink() )).'" title="'.esc_attr__('Log out from this Account','wallstreet').'"> '.esc_html__("Logout",'wallstreet').'</a>' . '</p>',
 			'id_submit'=> 'blogdetail_btn',
 			'label_submit'=>esc_html__('Send Message','wallstreet'),
@@ -63,5 +63,5 @@
 			);
 		comment_form($wallstreet_defaults);
 	?>
-</div>	
+</div>
 <?php } }

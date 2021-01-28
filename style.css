@@ -4,7 +4,7 @@ Theme URI: https://webriti.com/wallstreet-lite-version-details-page/
 Author: webriti
 Author URI: https://www.webriti.com
 Description: WallStreet is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In WallStreet Lite, you can easily set a Featured Banner / Slide, Social Icons in the header, Contact Information, Services, Portfolio, and a 4-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get 2 color skins (Lite and Dark), 10 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of WallStreet theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/wallstreet
-Version: 1.9.5
+Version: 1.9.6
 Requires at least: 4.5
 Tested up to: 5.6
 Requires PHP: 5.4
@@ -189,7 +189,7 @@ body {
     margin: 0 0 0px;
     padding: 0 0px 0px;
     text-align: center;
-    
+
 }
 .slide-text-bg2 span {
     font-family:'Roboto';
@@ -204,7 +204,7 @@ body {
     text-align: center;
     width: auto;
     z-index: 773;
-}	
+}
 .slide-text-bg3 p {
     display: inline-block;
     font-family:'Roboto';
@@ -274,7 +274,7 @@ body {
     line-height: 42px;
     margin: 0 0 10px;
     text-align: center;
-    
+
 }
 .section_heading_title p {
 	font-family:'Roboto';
@@ -283,7 +283,7 @@ body {
     line-height: 25px;
     margin: 0 0 10px;
     text-align: center;
-    
+
 }
 .pagetitle-separator{
 		background: #cccccc !important;
@@ -332,16 +332,16 @@ body {
     transition: all 600ms ease-out 0s;
     width: 125px;
 }
-.service-effect:hover .service-box img { 
-	-webkit-transform: rotate(360deg); 
-	-moz-transform: rotate(360deg); 
+.service-effect:hover .service-box img {
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
 	-o-transform: rotate(360deg);
-	-ms-transform: rotate(360deg); 
+	-ms-transform: rotate(360deg);
 }
 
 /* Edit by Harish For Service Image*/
 .service-area {
-	margin: 0px 0 60px;	
+	margin: 0px 0 60px;
 	padding: 127px 30px 30px;
 	transition: background 0.3s ease-in-out 0s;
 }
@@ -352,7 +352,7 @@ body {
     line-height: 30px;
     margin: 0 0 11px;
     text-align: center;
-	
+
 }
 .service-area p {
     font-family:'Roboto';
@@ -426,13 +426,13 @@ body {
 	padding-top : 39px;
 }
 
-.service-effect:hover .other-service-area1 i{ 
-	-webkit-transform: rotate(360deg); 
-	-moz-transform: rotate(360deg); 
+.service-effect:hover .other-service-area1 i{
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
 	-o-transform: rotate(360deg);
 	-ms-transform: rotate(360deg);
 }
-/*//// Finish Here For Service Template Images */	
+/*//// Finish Here For Service Template Images */
 .other-service-area h2 {
 	font-family:'Roboto';
 	font-weight:400;
@@ -440,7 +440,7 @@ body {
 	line-height: 30px;
 	margin: 7px 0 14px;
 	text-align: center;
-	
+
 }
 .other-service-area p {
 	font-family:'Roboto';
@@ -519,7 +519,7 @@ body {
 	font-weight:500;
 	line-height: 20px;
 	font-size: 18px;
-	
+
 }
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
 	font-family:'Roboto';
@@ -546,7 +546,7 @@ body {
     padding: 7px 15px;
     text-align: center;
     transition: all 0.4s ease 0s;
-	
+
 }
 .home-portfolio-showcase:hover .home-portfolio-showcase-overlay {
     visibility: visible;
@@ -565,7 +565,7 @@ body {
     text-align: center;
     transition: all 0.4s ease 0s;
 	margin: 0 0 50px;
-	
+
 }
 .proejct-btn a {
 	transition: all 0.4s ease 0s;
@@ -774,7 +774,7 @@ body {
     margin-bottom: 0;
     padding: 12px 22px;
     text-align: center;
-    
+
     transition: all 0.4s ease 0s;
 }
 
@@ -960,7 +960,7 @@ body {
 
 .page-mycarousel { position: relative; box-shadow: 0 7px 10px -10px #000; z-index: 2; margin: 0 0 80px; }
 .page-mycarousel img { margin: 0 auto; }
-.page-title-col { 
+.page-title-col {
 	padding: 15px 0;
 	left: 0;
     position: absolute;
@@ -969,7 +969,7 @@ body {
     top: 55%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
 }
 .page-title-col h1 { font-family: 'Roboto'; font-size: 50px; line-height: 65px; color: #ffffff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); margin: 0px; }
 .page-breadcrumbs { left: 0; position: absolute; right: 0; bottom: 0; }
@@ -988,7 +988,7 @@ body {
 }
 
 @media (max-width: 767px) {
-.page-title-col { top: 40%; }	
+.page-title-col { top: 40%; }
 .page-title-col h1 { font-size: 20px; line-height: 27px; }
 .breadcrumbs { padding: 5px 0; }
 .breadcrumbs > li { font-size: 12px; line-height: 18px; }
@@ -1006,7 +1006,7 @@ body {
 .page-title-col h1 { font-size: 8px; line-height: 13px; }
 .breadcrumbs { padding: 0; line-height: 11px; }
 .breadcrumbs > li { font-size: 7px; line-height: 10px; }
-} 
+}
 
 /*--------------------------------------------------------------
 10.0 Blog Section Css
@@ -1016,7 +1016,7 @@ body {
 	float: none;
     margin-bottom: 70px;
     overflow: auto;
-    padding: 0; 
+    padding: 0;
 	margin-right: 10px;
 }
 .blog-section-right {
@@ -1024,7 +1024,7 @@ body {
 	float: none;
     margin-bottom: 70px;
     overflow: auto;
-    padding: 0; 
+    padding: 0;
 }
 .blog-section-full{
 	float: none;
@@ -1037,7 +1037,7 @@ body {
 	float: none;
     margin-bottom: 50px;
     overflow: auto;
-    padding: 0; 
+    padding: 0;
 	margin-right: 10px;
 }
 .blog-post-img {
@@ -1060,7 +1060,7 @@ body {
 .blog-post-img img {
 	transition: all 300ms ease-out 0s;
 	max-width: 100%;
-	opacity: 0.8;	
+	opacity: 0.8;
 }
 .blog-post-title {
 	display: block;
@@ -1400,12 +1400,12 @@ a.blog-btn {
 .sidebar-widget  ul#recentcomments > li.recentcomments > a:before, .sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li > a:before{
 	font-family: FontAwesome;
     content: none;
-	
+
 }
 .footer_widget_column  ul#recentcomments > li.recentcomments > a:before, .footer_widget_column ul.sidebar-tab.sidebar-widget-tab > li > a:before{
 	font-family: FontAwesome;
     content: none;
-	
+
 }
 .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before{
 	font-size: 6px;
@@ -1466,7 +1466,7 @@ a.blog-btn {
     margin-right: 0;
     padding: 11px 29px;
     text-align: center;
-    
+
     vertical-align: middle;
     white-space: nowrap;
 }
@@ -1490,7 +1490,7 @@ a.blog-btn {
 }
 .search_btn{
 	border-radius: 3px;
-	border: 0 none;	
+	border: 0 none;
 	border-radius: 0px;
     cursor: pointer;
     display: inline-block;
@@ -1629,7 +1629,7 @@ a.blog-btn {
 	line-height: 25px;
 	margin: 0;
 	padding: 6px 18px;
-	
+
 }
 
 .post-media-sidebar {
@@ -2100,12 +2100,12 @@ color: #e5e5e5;
 }
 .table-bordered {
 	border: 1px solid #eeeeee !important;
-} 
+}
 .table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th, 
-.table-bordered > tfoot > tr > th, 
-.table-bordered > thead > tr > td, 
-.table-bordered > tbody > tr > td, 
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
 	border: none !important;
 }
@@ -2136,11 +2136,11 @@ th {
 }
 th:first-child {
 	border-top-left-radius:3px;
-} 
+}
 th:last-child {
 	border-top-right-radius:3px;
 	border-right:none;
-} 
+}
 tr {
 	border-top: none;
 	border-bottom: none;
@@ -2224,7 +2224,7 @@ td.text-right {
 16.0 404 page
 --------------------------------------------------------------*/
 
-.error_404 { 
+.error_404 {
 	font-family:'Roboto';
 	font-weight:300;
     font-size: 18px;
@@ -2233,7 +2233,7 @@ td.text-right {
 	text-align: center;
 	margin-bottom: 75px;
 	}
-.error_404 h2{ 
+.error_404 h2{
 	font-size: 75px;
 	font-family:'Roboto';
 	font-weight:700;
@@ -2369,7 +2369,7 @@ line-height: 25px;
 .blog-post-title-wrapper .alignnone,
 .blog-post-title-wrapper-full .alignnone,
 .blog-post-title-wrapper #attachment_907,
-.blog-post-title-wrapper-full #attachment_907{ 
+.blog-post-title-wrapper-full #attachment_907{
 	max-width:100%;
 }
 /*/////** Added by Harish For Heading Title ***/
@@ -2486,7 +2486,7 @@ input#pwbox-1168{
 	padding: 12px 15px 12px 15px;
 	border-right: 0px !important;
 }
- 
+
 .comment-detail > table > tbody > tr:last-child td:first-child {
     border-bottom-left-radius: 0px !important;
 }
@@ -2496,7 +2496,7 @@ input#pwbox-1168{
 .comment-detail > table > thead > tr > td,
 .comment-detail > table > thead > tr > th {
 	padding: 8px !important;
-} 
+}
 .comment-detail > dl > dt,
 .comment-detail > dl > dd {
 	color: #e5e5e5;
@@ -2525,7 +2525,7 @@ input#pwbox-1168{
     font-size: 16px;
     line-height: 20px;
 }
- 
+
 .comment-detail > ol > li,
 .comment-detail > ol > li > ul > li,
 .comment-detail  > ol > li > ul > li > ol > li {
@@ -2653,12 +2653,12 @@ ul ul, ol ul, ul ol, ol ol {
 	left: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
-	text-decoration: none;	
+	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; 
+	z-index: 100000;
 	/* Above WP toolbar. */}
-	
+
 /*///*** Added by Abhishek For change blog-post-detals to blog-post-meta ***/
 
 .blog-post-meta {
@@ -2712,7 +2712,7 @@ ul ul, ol ul, ul ol, ol ol {
 .woocommerce-ordering select { background-color: transparent; padding: 12px 10px; height: 46px; }
 .woocommerce ul.products li.product h3 { font-size: 1.2286em; letter-spacing: 0.5px; padding: 0.2em 0; text-align: center; font-family: 'Roboto'; font-weight: 400; }
 .woocommerce .products .star-rating { margin: 0.8em auto 0.8em; text-align: center; }
-.woocommerce ul.products li.product .onsale { 
+.woocommerce ul.products li.product .onsale {
     padding: 0.2em 0.500em;
     line-height: 1em;
     min-height: auto;
@@ -2722,12 +2722,12 @@ ul ul, ol ul, ul ol, ol ol {
     top: 10px;
     right: 10px;
 	font-weight: 800;
-	background-color: transparent; 
+	background-color: transparent;
 	font-size: 10px;
 }
 .woocommerce span.onsale {
-	background-color: transparent; 
-	font-size: 10px;	
+	background-color: transparent;
+	font-size: 10px;
     font-weight: 800;
 	border-radius: 0;
 	padding: 0.2em 0.500em;
@@ -2739,13 +2739,13 @@ ul ul, ol ul, ul ol, ol ol {
 }
 .woocommerce ul.products li.product .price { font-size: 1.2286em; text-align: center; margin-bottom: .2em; font-family: 'Roboto'; font-weight: 400; }
 .woocommerce ul.products li.product .price del { font-size: 0.8em; padding-right: 5px;display: inline-block; }
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, 
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
 .woocommerce #respond input#submit.alt, .woocommerce button.button.alt {  color: #ffffff; border-radius: 0; transition: all 0.3s ease 0s; padding: .900em 0.9em; font-size: 0.9em; font-family: 'Roboto'; font-weight: 400; }
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product { text-align: center; padding: 0 0 2em; margin-bottom: 3em; }
-.woocommerce ul.products li.product:before, .woocommerce ul.products li.product:after, 
+.woocommerce ul.products li.product:before, .woocommerce ul.products li.product:after,
 .woocommerce-page ul.products li.product:before, .woocommerce-page ul.products li.product:after {
     content:"";
-    position:absolute; 
+    position:absolute;
     z-index:-1;
     top:50%;
     bottom:0;
@@ -2755,9 +2755,9 @@ ul ul, ol ul, ul ol, ol ol {
     border-radius:100px / 10px;
 }
 .woocommerce a.added_to_cart {
-	border-radius: 0; 
-	transition: all 0.3s ease 0s; 
-	padding: .900em 0.9em;	
+	border-radius: 0;
+	transition: all 0.3s ease 0s;
+	padding: .900em 0.9em;
 	font-size: 0.9em;
     margin: 0;
     line-height: 1;
@@ -2773,7 +2773,7 @@ ul ul, ol ul, ul ol, ol ol {
     background-image: none;
     box-shadow: none;
     -webkit-box-shadow: none;
-    text-shadow: none;	
+    text-shadow: none;
 }
 .woocommerce nav.woocommerce-pagination { margin: 0 0 5em; }
 .woocommerce nav.woocommerce-pagination ul { border: none; }
@@ -2789,17 +2789,17 @@ ul ul, ol ul, ul ol, ol ol {
 #review_form { margin: 2em 0 0; }
 .woocommerce div.product .woocommerce-tabs .panel { background: transparent; }
 .woocommerce-Tabs-panel h2, .woocommerce-Tabs-panel { font-family: 'Roboto'; font-weight: 400; }
-.woocommerce #reviews #comments h2, #review_form, .woocommerce-tabs { margin: 1em 0 1em; } 
+.woocommerce #reviews #comments h2, #review_form, .woocommerce-tabs { margin: 1em 0 1em; }
 .products h2 { margin: 0 0 1em; font-family: 'Roboto'; font-weight: 400; }
 .woocommerce div.product .woocommerce-tabs ul.tabs li { margin: 0; }
-.woocommerce div.product .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:before, 
+.woocommerce div.product .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:before,
 .woocommerce div.product .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:before {
     border: none;
 }
-.woocommerce div.product .woocommerce-tabs ul.tabs li.active:before, .woocommerce div.product .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:before, 
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active:before, .woocommerce div.product .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:before,
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .woocommerce-tabs ul.tabs li:before  { box-shadow: none; }
 .woocommerce #reviews h3 { margin: 0 0 0.5em; font-family: 'Roboto'; }
-.woocommerce #reviews #comments ol.commentlist li .comment-text { margin: 0 0 0 90px; }	
+.woocommerce #reviews #comments ol.commentlist li .comment-text { margin: 0 0 0 90px; }
 .woocommerce div.product #reviews .comment img, .woocommerce-page div.product #reviews .comment img {
 	border-radius: 100%;
     height: 70px;
@@ -2825,7 +2825,7 @@ ul ul, ol ul, ul ol, ol ol {
 .woocommerce a.button.alt{ padding: .900em 0.9em; }
 .cart-subtotal th { border:none; }
 .order-total th { border:none; }
-.cart-collaterals .cart_totals table th, .cart-collaterals .cart_totals table td { padding: 1em 0.8em; } 
+.cart-collaterals .cart_totals table th, .cart-collaterals .cart_totals table td { padding: 1em 0.8em; }
 .woocommerce-billing-fields h3, .woocommerce-shipping-fields h3, #order_review_heading { font-family: 'Roboto'; font-weight: 300; font-size:24px; }
 .woocommerce-checkout #payment{ border-radius:0; }
 #add_payment_method #payment div.payment_box:before, .woocommerce-cart #payment div.payment_box:before, .woocommerce-checkout #payment div.payment_box:before {
@@ -2906,7 +2906,7 @@ li.cat-item { padding: 5px 0; }
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     width: 100%;
 }
-.woocommerce-product-search input[type="submit"] { 
+.woocommerce-product-search input[type="submit"] {
 	border: none;
     border-radius: 0px;
     display: inline-block;
@@ -2922,28 +2922,28 @@ li.cat-item { padding: 5px 0; }
     vertical-align: middle;
     white-space: nowrap;
 }
-.woocommerce ul.product_list_widget li a:before, .product_list_widget li a:before { display:none; } 
+.woocommerce ul.product_list_widget li a:before, .product_list_widget li a:before { display:none; }
 .product_list_widget a { display: block; }
 .woocommerce ul.cart_list li dl, .woocommerce ul.product_list_widget li dl{padding-left:0;border-left:none; }
 .woocommerce ul.cart_list li dl dt, .woocommerce ul.product_list_widget li dl dt{font-size:16px; }
 .woocommerce ul.cart_list li { margin: 0 0 15px; }
 .woocommerce ul.product_list_widget li, .product_list_widget li { padding: 7px; margin-bottom: 5px; }
 .product_list_widget li:first-child { padding-top: 7px !important; }
-.sidebar-widget ul.product_list_widget { padding: 0; } 
-.product_list_widget li { list-style: none; } 
-.woocommerce ul.cart_list li img, 
-.woocommerce ul.product_list_widget li img, 
+.sidebar-widget ul.product_list_widget { padding: 0; }
+.product_list_widget li { list-style: none; }
+.woocommerce ul.cart_list li img,
+.woocommerce ul.product_list_widget li img,
 .woocommerce-page ul.product_list_widget li img { width: 60px; float: left; margin-left: 0; margin-right: 15px; padding-left: 0px; }
-.woocommerce .widget_shopping_cart .cart_list li a.remove, 
+.woocommerce .widget_shopping_cart .cart_list li a.remove,
 .woocommerce.widget_shopping_cart .cart_list li a.remove { position: absolute; top: 0; left: 0; }
-.woocommerce .widget_shopping_cart .cart_list li, 
+.woocommerce .widget_shopping_cart .cart_list li,
 .woocommerce.widget_shopping_cart .cart_list li { padding-left: 2em; position: relative; padding-top: 0; }
 .woocommerce .order_details { padding: 0; }
 .blog-post-title-wrapper h2, .title h3 { font-family: 'Roboto'; font-weight: 300; }
 .woocommerce-account .addresses .title .edit, .edit-account fieldset legend { padding: 20px 0 5px; margin: 0 0 20px; }
 .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td { border-top: none; }
 .form-row input[type="submit"] { height: 46px; }
-.woocommerce-checkout  .blog-post-title-wrapper, .woocommerce-page .blog-post-title-wrapper, 
+.woocommerce-checkout  .blog-post-title-wrapper, .woocommerce-page .blog-post-title-wrapper,
 .woocommerce-order-received .blog-post-title-wrapper{width:100%; float:none;}
 /*End of Woocommerce css*/
 
@@ -3044,7 +3044,7 @@ li.cat-item { padding: 5px 0; }
     width: 22%;
     float: left;
     margin-right: 4%;
-  
+
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n) {
   margin-right: 0;
@@ -3152,10 +3152,13 @@ color: #e5e5e5 !important;
 .wp-block-gallery a{display: block;}
 input:focus, button:focus, select:focus, textarea:focus{outline: thin dotted !important;
     outline: 5px auto -webkit-focus-ring-color !important;
-    outline-offset: -2px;}  
+    outline-offset: -2px;}
 .blog-section-right .blog-post-title-wrapper a, .blog-detail-section .blog-post-title-wrapper a, .comment-detail a, .textwidget a {
     text-decoration: underline;
 }
 .blog-section-right .blog-post-title-wrapper h2:first-child a, .blog-section-right .blog-post-meta a, .comment-detail h4:first-child a, .edit-link a, .reply a{
     text-decoration: none;
+}
+.blog-post-meta a, .woocommerce a{
+    text-decoration: none !important;
 }

@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,11 +25,13 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Wallstreet WordPress Theme, Copyright (C) 2019, Webriti
-Wallstreet Pro is distributed under the terms of the GNU GPL
-	
+Wallstreet WordPress Theme, Copyright (C) 2015-2021, priyanshumittal
+Wallstreet WordPress Theme is distributed under the terms of the GNU GPL
+
 == Changelog ==
 
+@Version 1.9.6
+1. Fixed user comment and translation issues.
 @Version 1.9.5
 1. Removed default value from social links.
 2. Fixed Keyboard navigation for mobile view and Removed the unnecessary code.
@@ -81,7 +83,7 @@ Wallstreet Pro is distributed under the terms of the GNU GPL
 @Version 1.7.7.7
 1. Theme URI & Author URI Updated.
 @Version 1.7.7.6
-1. Update Strings (Suggest by Transifix) 
+1. Update Strings (Suggest by Transifix)
 @Version 1.7.7.5
 1. Added Help link in customize setting.
 @Version 1.7.7.4
@@ -167,7 +169,7 @@ Wallstreet Pro is distributed under the terms of the GNU GPL
 1. Added Customizer.
 @Version 1.3
 1. Add Blog section in front-page.
-@Version 1.2 
+@Version 1.2
 1. Remove resize image option.
 2. Fixed Styling issue.
 @Version 1.1
@@ -239,7 +241,7 @@ Wallstreet WordPress Theme bundles the following third-party resources:
 
 == External resources ==
 
-Font Awesome: 
+Font Awesome:
 Copyright: (c) Dave Gandy
 License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
 Source: https://fontawesome.com
@@ -270,4 +272,4 @@ License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
-Copyright (C) 2019, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
