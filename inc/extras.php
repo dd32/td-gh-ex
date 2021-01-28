@@ -371,33 +371,31 @@ function benevolent_slider_cb(){
             'ignore_sticky_posts'   => true
         ) );
         if( $slider_qry->have_posts() ){
-            echo '<div class="banner"><ul id="banner-slider" class="owl-carousel">';
-            
-            while( $slider_qry->have_posts()) {
-                $slider_qry->the_post();
-                if( has_post_thumbnail() ){
-                ?>
-          <li>
-            <?php 
-                    the_post_thumbnail( 'benevolent-slider', array( 'itemprop' => 'image' ) ); 
-                    if( $slider_caption ){
-                    ?>
-                    <div class="banner-text">
-              <div class="container">
-                <div class="text">
-                  <strong class="main-title"><?php the_title(); ?></strong>
-                  <?php if( has_excerpt() ) the_excerpt(); ?>
-                  <a href="<?php the_permalink(); ?>" class="btn-learn"><?php echo esc_html( $slider_readmore );?></a>
-                </div>
-              </div>
-            </div>
-                    <?php
-                    }
-                    ?>
-          </li>
-                <?php 
-                }
-            } 
+            echo '<div class="banner"><ul id="banner-slider" class="owl-carousel">';            
+                while( $slider_qry->have_posts()) {
+                    $slider_qry->the_post();
+                    if( has_post_thumbnail() ){ ?>
+                        <li>
+                            <?php 
+                            the_post_thumbnail( 'benevolent-slider', array( 'itemprop' => 'image' ) ); 
+                            if( $slider_caption ){ ?>
+                                <div class="banner-text">
+                                    <div class="container">
+                                        <div class="text">
+                                          <strong class="main-title"><?php the_title(); ?></strong>
+                                          <?php 
+                                            if( has_excerpt() ) the_excerpt(); 
+
+                                            if ( $slider_readmore ) echo '<a href="'. get_the_permalink() .'" class="btn-learn">'. esc_html( $slider_readmore ) .'</a>';
+                                                
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </li>
+                    <?php }
+                } 
             echo '</ul></div>';
             wp_reset_postdata(); 
         }
@@ -419,14 +417,14 @@ function benevolent_promotional_cb(){
     if( $ed_promotional_section ){
     ?>
     <div class="promotional-block" <?php if( $promotional_section_bg ) echo 'style="background: url(' . esc_url( $promotional_section_bg ) . '); background-size: cover; background-repeat: no-repeat; background-position: center;"';?>>
-      <div class="container">
-        <div class="text">
-          <?php 
-                    if( $promotional_section_title ) echo '<h3 class="title">' . esc_html( $promotional_section_title ) . '</h3>';
-          if( $promotional_button_url && $promotional_button_text ) echo '<a href="' . esc_url( $promotional_button_url ) . '" class="btn-donate" target="_blank">' . esc_html( $promotional_button_text ) . '</a>';
-                    ?>
+        <div class="container">
+            <div class="text">
+            <?php 
+                if( $promotional_section_title ) echo '<h3 class="title">' . esc_html( $promotional_section_title ) . '</h3>';
+                if( $promotional_button_url && $promotional_button_text ) echo '<a href="' . esc_url( $promotional_button_url ) . '" class="btn-donate" target="_blank">' . esc_html( $promotional_button_text ) . '</a>';
+            ?>
+            </div>
         </div>
-      </div>
     </div>
     <?php
     }
@@ -550,7 +548,7 @@ function benevolent_footer_credit(){
    }
     $text .= '<span class="by">';
     $text .= esc_html__( 'Benevolent | Developed By ', 'benevolent' );
-    $text .= '<a href="' . esc_url( 'https://rarathemes.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Theme', 'benevolent' ) . '</a>. ';
+    $text .= '<a href="' . esc_url( 'https://rarathemes.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Themes', 'benevolent' ) . '</a>. ';
     $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'" target="_blank">WordPress</a>.' );
     $text .= '</span></div></div>';
     echo apply_filters( 'benevolent_footer_text', $text );    

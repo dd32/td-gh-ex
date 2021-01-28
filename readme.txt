@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.5
-Stable tag: 1.2.7
+Tested up to: 5.6
+Stable tag: 1.2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
@@ -172,6 +172,11 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    1.2.8
+    * Fixed empty div issue when button text is empty
+    * Fixed typo error
+    * Added underline in link in single post and in single page
+
     1.2.7
     * Fixed counterUp issue 
 
