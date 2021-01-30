@@ -1,10 +1,10 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: https://www.guido.site/themes
-Version: 6.8
+Version: 6.9
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.5
+Tested up to: 5.6
 Author: Guido
 Author URI: https://www.guido.site
 Description: MyKnowledgeBase is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard and by using a custom post or page template. With 2 of the custom page templates you can transform your categories and posts into a knowledge base, FAQ, wiki or link portal. It also contains multiple widget areas. Enjoy!
@@ -149,13 +149,17 @@ button {font-size:inherit; font-family:inherit;}
 #header-third .search-submit:hover {background:#333; color:#fff;}
 
 
-/* CONTAINER */
-#container {max-width:1200px; clear:both; margin:0 auto; padding:0 20px;}
+/* TEXT FOR SCREEN READERS */
+.screen-reader-text {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px; padding:0; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%); word-wrap:normal;}
 
 
 /* SKIP TO CONTENT LINK */
-.skip-link {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px; opacity:0;}
-.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; background:#f8f8f8; opacity:1; z-index:100000;}
+.skip-link {top:0; left:0;}
+.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; clip:auto; clip-path:none; background:#f8f8f8; z-index:100000;}
+
+
+/* CONTAINER */
+#container {max-width:1200px; clear:both; margin:0 auto; padding:0 20px;}
 
 
 /* MAIN CONTENT AREA */
@@ -184,11 +188,12 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* HEADER FIRST SUBMENU */
-.nav-head ul ul {height:0; width:12em; position:absolute; top:100%; padding:0; background:#333; text-align:left; overflow:hidden; opacity:0;}
+.nav-head ul ul {height:0; width:12em; position:absolute; top:100%; padding:0; background:#333; text-align:left; overflow:hidden; visibility:hidden;}
 .nav-head ul ul ul {top:0; left:100%;}
 .nav-head ul ul li {display:block; margin:0;}
 .nav-head ul ul a {padding:5px 10px; color:#fff;}
-.nav-head ul li:hover > ul, .nav-head ul li:focus-within > ul {height:auto; overflow:visible; opacity:1;}
+.nav-head ul li:hover > ul {height:auto; overflow:visible; visibility:visible;}
+.nav-head ul li:focus-within > ul {height:auto; overflow:visible; visibility:visible;}
 
 
 /* HEADER FIRST MOBILE MENU */
@@ -259,6 +264,9 @@ button {font-size:inherit; font-family:inherit;}
 .entry-content {clear:both; padding:0 0 20px;}
 .sticky-title {margin:0 0 10px; font-weight:bold; font-style:italic;}
 .postmetadata {clear:both; margin:0 0 20px; padding:5px 10px; background:#f8f8f8; border:1px solid #eee;}
+
+
+/* READ MORE */
 .more {clear:both; padding:0 0 20px;}
 a.readmore {float:right; padding:2px 10px; background:#08a0ff; color:#fff; text-decoration:none;}
 a.readmore:hover {background:#333; text-decoration:none;}
@@ -277,7 +285,7 @@ a.readmore:hover {background:#333; text-decoration:none;}
 
 
 /* EDIT LINK */
-.edit-link {clear:both; padding:10px 0; font-weight:bold; font-style:italic;}
+.edit-link {clear:both; padding:20px 0; font-weight:bold; font-style:italic;}
 
 
 /* IMAGE AND VIDEO */
@@ -290,6 +298,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 .list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
+.wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
 
 .gallery-item {margin:0 0 10px !important;}
@@ -300,7 +309,6 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {margin:0 5px 0 0;}
-.search-form .screen-reader-text {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px;}
 
 
 /* COMMENTS */
@@ -308,7 +316,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-list, .comment-list .children {list-style:none; margin:0; padding:0;}
 .comment-list li {margin:0; padding:0;}
 .comment-list .children > li {margin:0 0 0 10px;}
-.comment-body {background:#f8f8f8; border:1px solid #eee; margin:0 0 20px; padding:10px;}
+.comment-body {background:#f8f8f8; border:1px solid #eee; margin:0 0 20px; padding:15px;}
 .comment-content {padding:10px 0;}
 .comment-metadata .edit-link {clear:none; padding:0 0 0 10px; display:inline-block;}
 .comments-title, .no-comments {margin:0 0 10px; font-size:1.45em;}
@@ -319,7 +327,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENTS RESPOND */
-#respond {clear:both; padding:0 0 10px;}
+#respond {clear:both; padding:10px 0 20px;}
 .comment-reply-title {margin:0 0 10px; font-size:1.45em;}
 #cancel-comment-reply-link {padding:0 0 0 10px;}
 .comment-notes {padding:5px 0; font-size:0.8em;}

@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 6.9 - january 2021
+- Fix: submenu in IE11
+- Fix: submenu in older iOS version
+- Fix: image caption
+- Updated support for screen readers
+
 MyKnowledgeBase version 6.8 - november 2020
 - Have updated the metabox that was added in previous version
 

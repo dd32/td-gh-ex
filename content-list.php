@@ -28,7 +28,7 @@
 
 	<?php if ( get_theme_mod( 'myknowledgebase_read_more' ) != "no" ) { ?>
 		<div class="more">
-			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'myknowledgebase' ); ?></a>
+			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'myknowledgebase' ); ?><span class="screen-reader-text"> <?php the_title(); ?></span></a>
 		</div>
 	<?php } ?>
 </article>
