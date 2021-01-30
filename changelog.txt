@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Medical version 6.4 - january 2021
+- Fix: submenu in IE11
+- Fix: submenu in older iOS version
+- Fix: image caption
+- Updated support for screen readers
+
 Medical version 6.3 - october 2020
 - Improved accessibility
 - Better support for screen readers
