@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+DarkElements version 6.7 - january 2021
+- Fix: submenu in IE11
+- Fix: submenu in older iOS version
+- Fix: image caption
+- Updated support for screen readers
+
 DarkElements version 6.6 - october 2020
 - Improved accessibility
 - Better support for screen readers

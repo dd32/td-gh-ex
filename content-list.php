@@ -28,7 +28,7 @@
 
 	<?php if ( get_theme_mod( 'darkelements_read_more' ) != "no" ) { ?>
 		<div class="more">
-			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'darkelements' ); ?></a>
+			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'darkelements' ); ?><span class="screen-reader-text"> <?php the_title(); ?></span></a>
 		</div>
 	<?php } ?>
 </article>

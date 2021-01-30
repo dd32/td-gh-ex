@@ -1,10 +1,10 @@
 /*
 Theme Name: DarkElements
 Theme URI: https://www.guido.site/themes
-Version: 6.6
+Version: 6.7
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.5
+Tested up to: 5.6
 Author: Guido
 Author URI: https://www.guido.site
 Description: DarkElements is a lightweight and mobile-friendly WordPress theme. Personalize your website via the Customizer in your dashboard. It also contains multiple widget areas. Enjoy!
@@ -131,13 +131,17 @@ select {-webkit-appearance:menulist; -moz-appearance:menulist; max-width:100%; b
 button {font-size:inherit; font-family:inherit;}
 
 
-/* CONTAINER */
-#container {clear:both; max-width:1000px; margin:20px 0 20px 20px;}
+/* TEXT FOR SCREEN READERS */
+.screen-reader-text {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px; padding:0; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%); word-wrap:normal;}
 
 
 /* SKIP TO CONTENT LINK */
-.skip-link {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px; opacity:0;}
-.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; background:#f8f8f8; color:#333; opacity:1; z-index:100000;}
+.skip-link {top:0; left:0;}
+.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; clip:auto; clip-path:none; background:#f8f8f8; z-index:100000;}
+
+
+/* CONTAINER */
+#container {clear:both; max-width:1000px; margin:20px 0 20px 20px;}
 
 
 /* MAIN CONTENT AREA */
@@ -225,6 +229,9 @@ button {font-size:inherit; font-family:inherit;}
 .entry-content {clear:both; padding:0 0 20px;}
 .sticky-title {margin:0 0 10px; font-weight:bold; font-style:italic;}
 .postmetadata {clear:both; margin:0 0 20px; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
+
+
+/* READ MORE */
 .more {clear:both; padding:0 0 20px;}
 a.readmore {float:right; text-decoration:none; padding:2px 5px; background:#ddd; color:#333; border-radius:5px;}
 a.readmore:hover {background:#e77776; color:#ddd; text-decoration:none;}
@@ -243,7 +250,7 @@ a.readmore:hover {background:#e77776; color:#ddd; text-decoration:none;}
 
 
 /* EDIT LINK */
-.edit-link {clear:both; padding:10px 0; font-weight:bold; font-style:italic;}
+.edit-link {clear:both; padding:20px 0; font-weight:bold; font-style:italic;}
 
 
 /* IMAGE AND VIDEO */
@@ -256,6 +263,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 .list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
+.wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
 
 .gallery-item {margin:0 0 10px !important;}
@@ -266,7 +274,6 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
 .search-field {margin:0 5px 0 0;}
-.search-form .screen-reader-text {position:absolute; overflow:hidden; height:1px; width:1px; margin:-1px;}
 
 
 /* COMMENTS */
@@ -274,7 +281,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-list, .comment-list .children {list-style:none; margin:0; padding:0;}
 .comment-list li {margin:0; padding:0;}
 .comment-list .children > li {margin:0 0 0 10px;}
-.comment-body {background:none; border:1px solid #444; margin:0 0 20px; padding:10px;}
+.comment-body {background:none; border:1px solid #444; margin:0 0 20px; padding:15px;}
 .comment-content {padding:10px 0;}
 .comment-metadata .edit-link {clear:none; padding:0 0 0 10px; display:inline-block;}
 .comments-title, .no-comments {margin:0 0 10px; font-size:1.45em;}
@@ -285,7 +292,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* COMMENTS RESPOND */
-#respond {clear:both; padding:0 0 10px;}
+#respond {clear:both; padding:10px 0 20px;}
 .comment-reply-title {margin:0 0 10px; font-size:1.45em;}
 #cancel-comment-reply-link {padding:0 0 0 10px;}
 .comment-notes {padding:5px 0; font-size:0.8em;}
