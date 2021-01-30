@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+OneColumn version 7.0 - january 2021
+- Fix: submenu in IE11
+- Fix: submenu in older iOS version
+- Fix: image caption
+- Updated support for screen readers
+
 OneColumn version 6.9 - october 2020
 - Improved accessibility
 - Better support for screen readers
