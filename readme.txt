@@ -1,9 +1,9 @@
 === DarkOrange ===
 Contributors: Guido07111975
-Version: 7.0
+Version: 7.1
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.5
+Tested up to: 5.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
@@ -71,7 +71,7 @@ DarkOrange is inspired by a theme called Best (released under the GNU General Pu
 Without the WordPress codex and help from the WordPress community I was not able to develop my theme, so: thank you!
 
 = Support =
-If you have a question or problem using this WordPress theme, please visit the relevant theme page at WordPress.org and open a ticket in support forum.
+If you have a question or problem while using this theme, please visit the relevant theme page at WordPress.org and open a ticket in support forum.
 
 
 == Changelog ==
