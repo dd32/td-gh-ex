@@ -58,7 +58,7 @@
 	</div>
 	<div id="main-content">
 		<?php if( is_front_page() ) {?>
-		<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?>
+		<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
 			<div id="homepage-widgets" role="complementary">
 				<div class="home-left">
 					<?php dynamic_sidebar( 'homepage-left' ); ?>
