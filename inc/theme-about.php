@@ -1,6 +1,6 @@
 <?php 
 /* 	Easy Theme's About Page
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 3.0
 */
@@ -78,7 +78,7 @@
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>  
+        <div class="bottom"><img src="<?php echo esc_url(get_template_directory_uri()).'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>  
 
 	<div class="floatcntr">
 		<h2 class="spetitle"><?php _e('World Class, Responsive and Premium WordPress Themes', 'easy'); ?></h2>
@@ -88,7 +88,7 @@
         <a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://demo.d5creation.com' ) ?>"><?php _e('Visit Theme Demos', 'easy'); ?></a>
 		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/wp-login.php?action=register' ) ?>"><?php _e('Become a Happy Member', 'easy'); ?></a> <br /><br /><br />
         
-        <img width="100%" src="<?php echo get_template_directory_uri() . '/inc/images/themefeatures.png' ?>" alt="<?php _e('D5 Creation Themes', 'easy'); ?>" />
+        <img width="100%" src="<?php echo esc_url(get_template_directory_uri()) . '/inc/images/themefeatures.png' ?>" alt="<?php _e('D5 Creation Themes', 'easy'); ?>" />
 	</div>   
 
 </div>

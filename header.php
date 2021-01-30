@@ -1,7 +1,7 @@
 <?php
 
 /* 	Easy Theme's Header
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
@@ -19,6 +19,7 @@
 </head>
 
 <body <?php body_class(); ?> >
+	<?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
 	<div id ="site-container">
 		<div id ="header">
 			<div id="header-content" >
@@ -29,7 +30,7 @@
 				<!-- Site Main Menu Goes Here -->
 				<div id="mmainmenu">
 						<!-- Site Main Menu Goes Here -->
-						<div id="mobile-menu" class="mmenucon"><span class="mobilefirst">&#9776;</span><?php echo __('Main Menu', 'easy'); ?></div>
+						<div id="mobile-menu" class="mmenucon"><span class="mobilefirst">&#9776;</span><?php echo esc_html__('Main Menu', 'easy'); ?></div>
 						<nav id="main-menu-con" class="mmenucon"><?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'm-menu', 'fallback_cb' => 'easy_page_menu'  )); ?></nav>
 				</div>
 			</div>

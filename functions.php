@@ -1,6 +1,6 @@
 <?php
 /* 	Easy Theme's Functions
-	Copyright: 2012-2018, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
@@ -94,12 +94,12 @@ function easy_page_menu() { echo '<ul class="m-menu">'; wp_list_pages(array('sor
 	
 	function easy_excerpt_more($more) {
        global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Learn More', 'easy').'</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.esc_html__('Learn More', 'easy').'</a>';
 	}
 	add_filter('excerpt_more', 'easy_excerpt_more');
 	
 // Content Type Showing
-	function easy_content() { if (( esc_html(easy_get_option('contype', '2')) != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">'.__('Learn More', 'easy').'</span>');
+	function easy_content() { if (( esc_html(easy_get_option('contype', '2')) != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">'.esc_html__('Learn More', 'easy').'</span>');
 	else: the_excerpt();
 	endif; }
 
