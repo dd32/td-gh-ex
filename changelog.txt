@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+LeftSide version 6.3 - january 2021
+- Fix: submenu in IE11
+- Fix: submenu in older iOS version
+- Fix: image caption
+- Updated support for screen readers
+
 LeftSide version 6.2 - october 2020
 - Improved accessibility
 - Better support for screen readers

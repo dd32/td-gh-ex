@@ -28,7 +28,7 @@
 
 	<?php if ( get_theme_mod( 'leftside_read_more' ) != "no" ) { ?>
 		<div class="more">
-			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'leftside' ); ?></a>
+			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'leftside' ); ?><span class="screen-reader-text"> <?php the_title(); ?></span></a>
 		</div>
 	<?php } ?>
 </article>
