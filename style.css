@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: https://www.guido.site/themes
-Version: 6.6
+Version: 6.7
 Requires PHP: 5.6
 Requires at least: 5.2
 Tested up to: 5.6
@@ -132,17 +132,20 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* INPUTS ON LIGHT BACKGROUND */
-#header-third input, #header-third textarea {border:1px solid #ddd; color:#333;}
-#header-third select {border:1px solid #ddd;} 
+#header-third input, #header-third textarea {border:1px solid #ccc; color:#333;}
+#header-third select {border:1px solid #ccc;} 
 #header-third input[type="submit"], #header-third input[type="reset"], #header-third input[type="button"], #header-third button {border:0; background:#333; color:#eee;}
+#header-third input[type="submit"]:hover, #header-third input[type="reset"]:hover, #header-third input[type="button"]:hover, #header-third button:hover {background:#666;}
 
-#homepage-widgets input, #homepage-widgets textarea {border:1px solid #ddd; color:#333;}
-#homepage-widgets select {border:1px solid #ddd;} 
+#homepage-widgets input, #homepage-widgets textarea {border:1px solid #ccc; color:#333;}
+#homepage-widgets select {border:1px solid #ccc;} 
 #homepage-widgets input[type="submit"], #homepage-widgets input[type="reset"], #homepage-widgets input[type="button"], #homepage-widgets button {border:0; background:#333; color:#eee;}
+#homepage-widgets input[type="submit"]:hover, #homepage-widgets input[type="reset"]:hover, #homepage-widgets input[type="button"]:hover, #homepage-widgets button:hover {background:#666;}
 
-#sidebar input, #sidebar textarea {border:1px solid #ddd; color:#333;}
-#sidebar select {border:1px solid #ddd;} 
+#sidebar input, #sidebar textarea {border:1px solid #ccc; color:#333;}
+#sidebar select {border:1px solid #ccc;} 
 #sidebar input[type="submit"], #sidebar input[type="reset"], #sidebar input[type="button"], #sidebar button {border:0; background:#333; color:#eee;}
+#sidebar input[type="submit"]:hover, #sidebar input[type="reset"]:hover, #sidebar input[type="button"]:hover, #sidebar button:hover {background:#666;}
 
 
 /* TEXT FOR SCREEN READERS */
@@ -151,7 +154,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* SKIP TO CONTENT LINK */
 .skip-link {top:0; left:0;}
-.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; clip:auto; clip-path:none; background:#f8f8f8; z-index:100000;}
+.skip-link:focus {display:block; height:auto; width:auto; top:5px; left:5px; padding:10px; clip:auto; clip-path:none; background:#f8f8f8; color:#00aaff; z-index:100000;}
 
 
 /* CONTAINER */

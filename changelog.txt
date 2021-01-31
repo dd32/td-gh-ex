@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MultiColors version 6.7 - january 2021
+- Several minor adjustments
+
 MultiColors version 6.6 - january 2021
 - Fix: submenu in IE11
 - Fix: submenu in older iOS version

@@ -1,6 +1,6 @@
 === MultiColors ===
 Contributors: Guido07111975
-Version: 6.6
+Version: 6.7
 Requires PHP: 5.6
 Requires at least: 5.2
 Tested up to: 5.6
