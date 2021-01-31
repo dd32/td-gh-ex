@@ -17,6 +17,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site-wrapper site">
 
 	<header id="masthead" class="site-header" role="banner">

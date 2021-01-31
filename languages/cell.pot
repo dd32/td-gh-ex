@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Cell\n"
-"POT-Creation-Date: 2019-03-20 00:10+0500\n"
+"POT-Creation-Date: 2021-01-31 23:16+0500\n"
 "PO-Revision-Date: 2016-08-24 18:13+0500\n"
 "Last-Translator: DesignOrbital <care@designorbital.com>\n"
 "Language-Team: DesignOrbital <care@designorbital.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -80,11 +80,11 @@ msgstr ""
 msgid "Main Sidebar"
 msgstr ""
 
-#: header.php:48
+#: header.php:49
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:50 header.php:51
+#: header.php:51 header.php:52
 msgid "Menu"
 msgstr ""
 
@@ -362,7 +362,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Cell is a responsive Wordpress theme having clean design and smart theme "
+"Cell is a responsive WordPress theme having clean design and smart theme "
 "settings. It is developed with website performance and easy setup in mind. "
 "Cell is a perfect theme for fashion, tech, social, lifestyle and any blog."
 msgstr ""

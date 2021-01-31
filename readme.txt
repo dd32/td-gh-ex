@@ -1,10 +1,10 @@
 === Cell Lite ===
 Contributors: DesignOrbital
 Tags: one-column, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
-Requires at least: WordPress 4.9
-Tested up to: WordPress 5.1.1
+Stable tag: 1.1.6
+Requires at least: 5.4
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,10 +62,21 @@ Copyright: Dave Gandy, https://twitter.com/davegandy
 
 = IMAGES =
 
-Image used in screenshot.png - http://unsplash.com/
+Image used in screenshot.png
 Licensed under the terms of CC0
 
+- https://stocksnap.io/photo/woman-developer-HMPNPRBUJ7
+- https://stocksnap.io/photo/woman-makeup-2XXA0XX9G0
+- https://stocksnap.io/photo/camera-lens-ODS9H3QHAY
+
 == Changelog ==
+
+= 1.1.6 =
+Released: Jan 31, 2021
+
+* Code improvements.
+* Readme file updated.
+* POT file updated.
 
 = 1.1.5 =
 Released: March 20, 2019
