@@ -6,8 +6,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:33:49
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 11:24:01
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-02-01 18:37:16
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @package air-light
@@ -19,7 +19,7 @@ namespace Air_Light;
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer has-dark-bg">
 
   <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
 

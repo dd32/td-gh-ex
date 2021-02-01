@@ -7,6 +7,7 @@ import MoveTo from 'moveto';
 import LazyLoad from "vanilla-lazyload";
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
+import './modules/gutenberg-helpers';
 // import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
 import 'what-input';
@@ -36,7 +37,7 @@ air_light_LazyLoad.update();
   // Accessibility: Ensure back to top is right color on right background
   // Note: Needs .has-light-bg or .has-dark-bg class on all blocks
   var stickyOffset = $('.back-to-top').offset();
-  var $contentDivs = $('.block');
+  var $contentDivs = $('.block, .site-footer');
   $(document).scroll(function () {
     $contentDivs.each(function (k) {
       var _thisOffset = $(this).offset();
@@ -69,7 +70,7 @@ air_light_LazyLoad.update();
 
   // Accessibility: Ensure back to top is right color on right background
   $(window).on('resize scroll', function () {
-    $('.block').each(function () {
+    $('.block, .site-footer').each(function () {
       if ($(this).isInViewport()) {
         $('.back-to-top')
           .removeClass('has-light-bg has-dark-bg')

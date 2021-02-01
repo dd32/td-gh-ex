@@ -20,12 +20,25 @@
 // Gutenberg blocks
 @import '../gutenberg/boxed';
 
+// Fix alignleft and alignright figcaption width
+// Hack for achieving the same than in gutenberg-helpers.js
+[data-align="right"] figcaption,
+[data-align="left"] figcaption {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  text-align: center;
+}
+
 // Wider editor
 // Default is 580px which is way too narrow
+// Forced to use important here, because WordPress uses too specific selectors
+/* stylelint-disable declaration-no-important */
 .wp-block {
-  // Forced to use important here, because WordPress uses too specific selectors
-  /* stylelint-disable declaration-no-important */
   font-family: $font-paragraphs !important;
-  max-width: 1000px !important;
-  /* stylelint-enable */
+
+  &:not([data-align="wide"]),
+  &:not([data-align="full"]) {
+    max-width: $width-max-article !important;
+  }
 }

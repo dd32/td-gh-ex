@@ -5,7 +5,7 @@
 
 // Blog post category styles
 .cat {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   margin-top: 4rem;
 
   a {
@@ -18,7 +18,8 @@
     color: $color-black;
     display: inline-block;
     font-size: var(--font-size-small);
-    margin-right: .4em;
+    margin-bottom: .5rem;
+    margin-right: .5em;
     padding: .2em .6em;
     transition: all $transition-duration;
   }
@@ -62,12 +63,12 @@
 
   .alignleft {
     float: left;
-    margin-right: 20px;
+    margin-right: 3rem;
   }
 
   .alignright {
     float: right;
-    margin-left: 20px;
+    margin-left: 3rem;
   }
 
   .aligncenter {
@@ -130,7 +131,7 @@
     border-radius: 4px;
   }
 
-  @media (max-width: $article-max-width + 40px) {
+  @media (max-width: $width-max-article + 40px) {
     padding-left: 2rem;
     padding-right: 2rem;
     width: calc(100% - 4rem);
@@ -161,7 +162,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 3rem;
-    max-width: $article-max-width;
+    max-width: $width-max-article;
     padding-bottom: 0;
     text-align: center;
     width: 100%;
@@ -202,6 +203,39 @@
     width: 100%;
   }
   /* stylelint-enable selector-max-compound-selectors */
+
+  .wp-block-image > figure {
+    display: inline-block;
+    width: auto;
+
+    &.alignleft,
+    &.alignright,
+    &.aligncenter {
+      figcaption {
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: $container-mobile) {
+        float: none;
+        margin: 0;
+
+        // Has to be important because we want to override inline width
+        /* stylelint-disable declaration-no-important */
+        width: 100% !important;
+        /* stylelint-enable */
+      }
+
+      @media (max-width: $container-mobile) {
+        &.alignleft img,
+        &.alignright img,
+        &.aligncenter img {
+          float: none;
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
 
   a:hover,
   &:focus {
@@ -249,7 +283,7 @@
     /* stylelint-disable declaration-no-important */
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: $article-max-width !important;
+    max-width: $width-max-article !important;
     width: 100% !important;
     /* stylelint-enable */
   }
@@ -257,7 +291,7 @@
   > figure.wp-caption {
     // Forced to use important here, because embeds inline stuff
     /* stylelint-disable declaration-no-important */
-    max-width: $article-max-width !important;
+    max-width: $width-max-article !important;
     width: 100% !important;
     /* stylelint-enable */
   }
@@ -266,7 +300,7 @@
     line-height: $line-height-blog;
     margin-left: auto;
     margin-right: auto;
-    max-width: $article-max-width;
+    max-width: $width-max-article;
     width: 100%;
 
     .twitter-tweet,
@@ -279,7 +313,7 @@
       /* stylelint-disable declaration-no-important */
       margin-left: auto !important;
       margin-right: auto !important;
-      max-width: $article-max-width !important;
+      max-width: $width-max-article !important;
       width: 100% !important;
 
       @media (max-width: 800px) {
@@ -297,12 +331,6 @@
     &.wp-block-image {
       margin-bottom: 4rem;
       margin-top: 4rem;
-
-      img {
-        height: auto;
-        max-width: 100%;
-        width: 100%;
-      }
     }
 
     &.twitter-tweet,
@@ -312,7 +340,7 @@
       /* stylelint-disable declaration-no-important */
       margin-left: auto !important;
       margin-right: auto !important;
-      max-width: $article-max-width !important;
+      max-width: $width-max-article !important;
       width: 100% !important;
 
       @media (max-width: 800px) {
@@ -337,7 +365,7 @@
       width: 100%;
 
       @media (min-width: 870px) {
-        max-width: $grid-base-size;
+        max-width: $width-grid-base;
         padding-left: 0;
         padding-right: 0;
       }
@@ -370,7 +398,7 @@
 .wp-caption {
   max-width: 100%;
 
-  @media (max-width: $article-max-width + 40px) {
+  @media (max-width: $width-max-article + 40px) {
     // Forced to use important here, because embeds inline stuff
     /* stylelint-disable declaration-no-important */
     width: 100% !important;
@@ -480,7 +508,7 @@ ul.tags {
   margin-top: 0;
   overflow: hidden;
 
-  @media (min-width: $article-max-width + 40px) {
+  @media (min-width: $width-max-article + 40px) {
     padding: 0;
   }
 
