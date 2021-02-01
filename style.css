@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/agencyup/
 Author: themeansar
 Author URI: https://themeansar.com
 Description: Agencyup WordPress theme ideal for a business or perfect solutions for corporate, consulting, wedding planners, agency, law firms, finance, law travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, E-commerce.  The theme is responsive, WPML, Retina ready, SEO friendly(Live preview : https://demos.themeansar.com/agencyup/)
-Version: 1.3
+Version: 1.4
 Tested up to: 5.5
 Requires PHP: 5.6
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce
@@ -2338,23 +2338,8 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
 	.navbar-brand img{
 		max-width: 100%;
 	}
-	.container.mobi-menu {
-		display: block;
-	}
-	.mobi-menu .navbar-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
 	.mobi-menu .desk-header .btn-theme{
 		display: none;
-	}
-	.navbar-wp {
-		height: auto;
-	}
-	.desk-menu .navbar-header, .desk-menu .desk-header, .desk-menu .top-cart  {
-		display: none !important;
 	}
 	.bs-head-detail .info-left, .bs-head-detail .info-right {
 		justify-content: center;
@@ -2370,6 +2355,21 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
 	}
 }
 @media (max-width: 991.98px) {
+	.container.mobi-menu {
+		display: block;
+	}
+	.mobi-menu .navbar-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+	.navbar-wp {
+		height: auto;
+	}
+	.desk-menu .navbar-header, .desk-menu .desk-header, .desk-menu .top-cart  {
+		display: none !important;
+	}
 
 	.bs-headwidget .navbar-wp {
 	    position: inherit;

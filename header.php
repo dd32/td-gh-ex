@@ -30,7 +30,7 @@
     <div class="clearfix"></div>
     <!-- Main Menu Area-->
     <div class="bs-main-nav">
-      <nav class="navbar navbar-expand-md navbar-wp">
+      <nav class="navbar navbar-expand-lg navbar-wp">
           <div class="container mobi-menu"> 
            <!-- Logo image --> 
            <div class="navbar-header col-12"> 
