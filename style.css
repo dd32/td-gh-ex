@@ -4,7 +4,7 @@ Theme URI: https://themearile.com/arilewp-theme/
 Author: ThemeArile
 Author URI: https://themearile.com
 Description: ArileWP is a powerful, modern and professional multipurpose WordPress theme with pixel perfect design and outstanding functionality. As well as sophisticated plus it has some exotic features like customization and clean code, advanced typography, sticky menu, logo upload, header image, Bootstrap 4 framework, built with SEO in mind, and theme info area besides being Mobile ready, translation ready (WPML, Polylang) and it's built to be beautiful on all screen sizes. The theme perfectly suited for business, consultant, finance, corporate, freelancer, agency, business promotion, electrician, industries, education, SEO, construction, fashion, online shop, health & medical, Beauty & spa salons, wedding, photography, gym, cafe, music, architecture, lawyer, restaurant, hotel, blog, magazine, travel agency and many other websites compatible. This theme supports the best Elementor page builder to create, edit and updates page designs as per the requirement. ArileWP also supports popular free and premium WordPress plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, Google Analytics and much more. Check the demo of ArileWP Pro https://themearile.com/arilewp-pro-theme/.
-Version: 2.5.7
+Version: 2.5.8
 Tested up to: 5.6
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -1452,13 +1452,18 @@ body.single-post .theme-blog.theme-blog-large .post .entry-title {
 	margin: 0 0 2rem;
 	padding-bottom: 1.500rem; 
 }
-
 .pull-left-comment { float: left; margin-right: 1.875rem; width: 5.25rem; height: 5.25rem; }
 .pull-left-comment img { border-radius: 50%; }
 .comment-detail-title { margin: 0 0 0.625rem; font-size: 1.250rem; }
 .comment-date { font-size: 0.875rem; color: #878e94; font-weight: 400; margin-left: 1.25rem; }
 .comment-date a, .comment-detail p > a { box-shadow: 0 1px 0 0 currentColor; }
-.comment-date a:hover, .comment-date a:focus { color: #01012f; box-shadow: none; }
+.comment-date a:hover, 
+.comment-date a:focus, 
+.comment-detail p > a:hover, 
+.comment-detail p > a:focus { 
+	color: #01012f; 
+	box-shadow: none; 
+}
 .comment-detail p { margin-bottom: 1.3rem; padding: 0; }
 .reply a {
     color: #01012f;
@@ -1934,10 +1939,12 @@ body.page-template-default .theme-blog .post .post-content { overflow: hidden; }
 embed, iframe, object {
     max-width: 100%;
 }
-.entry-content .wp-block-archives.wp-block-archives-dropdown {
-	margin: 0 0 1.563rem;
+.wp-block-archives-dropdown, 
+.wp-block-categories-dropdown {
+	margin-bottom: 1.563rem;
 }
-.entry-content .wp-block-archives.wp-block-archives-dropdown select {
+.wp-block-archives-dropdown select, 
+.wp-block-categories-dropdown select {
 	width: auto;
 }
 .entry-content .wp-block-latest-comments__comment-meta a {

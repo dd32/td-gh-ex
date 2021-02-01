@@ -267,6 +267,9 @@ td a {
 	border: 1px solid #007bff; 
 }
 .comment-date a { color: #007bff; }
+.comment-detail p > a {
+    color: #007bff;
+}
 .pull-left-comment img { 
 	border: 3px solid #007bff; 
 }
