@@ -97,57 +97,6 @@ function spasalon_default_data(){
 	'posts_per_page' => 2,
 	
 	
-	
-	// typography settings
-	
-	'h1_size'=>36,
-	'h1_fontfamily'=>'Roboto',
-	'h1_fontstyle'=>'normal',
-	
-	'h2_size'=>30,
-	'h2_fontfamily'=>'Roboto',
-	'h2_fontstyle'=>'normal',
-	
-	'h3_size'=>24,
-	'h3_fontfamily'=>'Roboto',
-	'h3_fontstyle'=>'normal',
-	
-	'h4_size'=>18,
-	'h4_fontfamily'=>'Roboto',
-	'h4_fontstyle'=>'normal',
-	
-	'h5_size'=>14,
-	'h5_fontfamily'=>'Roboto',
-	'h5_fontstyle'=>'normal',
-	
-	'h6_size'=>12,
-	'h6_fontfamily'=>'Roboto',
-	'h6_fontstyle'=>'normal',
-	
-	'home_section_title_fontsize'=>42,
-	'home_section_title_fontfamily'=>'MarketingScript',
-	'home_section_title_fontstyle'=>'normal',
-	
-	'home_section_desc_fontsize'=>16,
-	'home_section_desc_fontfamily'=>'Droid Serif',
-	'home_section_desc_fontstyle'=>'italic',
-	
-	'menu_title_fontsize'=>15,
-	'menu_title_fontfamily'=>'Raleway',
-	'menu_title_fontstyle'=>'normal',
-	
-	'post_title_fontsize'=>20,
-	'post_title_fontfamily'=>'Roboto',
-	'post_title_fontstyle'=>'normal',
-	
-	'postexcerpt_title_fontsize'=>15,
-	'postexcerpt_fontfamily'=>'Roboto',
-	'postexcerpt_fontstyle'=>'normal',
-	
-	'widget_title_fontsize'=>20,
-	'widget_title_fontfamily'=>'Roboto',
-	'widget_title_fontstyle'=>'normal',
-	
 	// banner settings for archive
 	'banner_title_one_category'=>'',
 	'banner_title_two_category'=>'',
@@ -163,6 +112,7 @@ function spasalon_default_data(){
 	
 	'banner_title_one_tag'=>'',
 	'banner_title_two_tag'=>'',
+	'banner_description_tag'=> '',
 	
 	'banner_title_one_search'=>'',
 	'banner_title_two_search'=>'',

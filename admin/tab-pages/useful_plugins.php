@@ -96,7 +96,7 @@
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'spasalon' ); ?></strong></p>
 		<p><?php esc_html_e( 'We provide good knowledge base articles to help you create an effective website. You can see these articles on our', 'spasalon' ); ?>
-		<a href="<?php echo esc_url('http://webriti.com/help/themes/spasalon/spasalon-wordpress-theme/');?>" target="_blank"><?php esc_html_e('Help Section','spasalon'); ?></a></a></p>
+		<a href="<?php echo esc_url('http://webriti.com/help/themes/spasalon/spasalon-wordpress-theme/');?>" target="_blank"><?php esc_html_e('Help Section','spasalon'); ?></a></p>
 		<hr>
 	</div>
 	</div>

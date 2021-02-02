@@ -188,98 +188,8 @@ function spasalon_custom_css_function(){
 	
 	$spasalon_current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spasalon_default_data() );
 	echo '<style>';
-	echo $spasalon_current_options['spa_custom_css'];
-	echo '</style>';
-	echo '<style>';
-	echo '
-	
-		h1, .h1 { 
-			font-family: "'.$spasalon_current_options['h1_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['h1_size'].'px; 
-			line-height: '.($spasalon_current_options['h1_size'] + 4).'px;
-			font-style: '.$spasalon_current_options['h1_fontstyle'].';
-		}
-		
-		h2, .h2 { 
-			font-family: "'.$spasalon_current_options['h2_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['h2_size'].'px; 
-			line-height: '.($spasalon_current_options['h2_size'] + 5).'px;
-			font-style: '.$spasalon_current_options['h2_fontstyle'].';
-		}
-		
-		h3, .h3 { 
-			font-family: "'.$spasalon_current_options['h3_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['h3_size'].'px; 
-			line-height: '.($spasalon_current_options['h3_size'] + 6).'px;
-			font-style: '.$spasalon_current_options['h3_fontstyle'].';
-		}
-		
-		h4, .h4 { 
-			font-family: "'.$spasalon_current_options['h4_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['h4_size'].'px; 
-			line-height: '.($spasalon_current_options['h4_size'] + 7).'px;
-			font-style: '.$spasalon_current_options['h4_fontstyle'].';
-		}
-		
-		h5, .h5 { 
-			font-family: "'.$spasalon_current_options['h5_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['h5_size'].'px; 
-			line-height: '.($spasalon_current_options['h5_size'] + 6).'px;
-			font-style: '.$spasalon_current_options['h5_fontstyle'].';
-		}
-		
-		h6, .h6 { 
-			font-family: "'.$spasalon_current_options['h6_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['h6_size'].'px; 
-			line-height: '.($spasalon_current_options['h6_size'] + 8).'px;
-			font-style: '.$spasalon_current_options['h6_fontstyle'].';
-		}
-		
-		.section-title{ 
-			font-family: "'.$spasalon_current_options['home_section_title_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['home_section_title_fontsize'].'px; 
-			line-height: '.($spasalon_current_options['home_section_title_fontsize'] + 3).'px;
-			font-style: '.$spasalon_current_options['home_section_title_fontstyle'].';
-		}
-		
-		.section-subtitle{ 
-			font-family: "'.$spasalon_current_options['home_section_desc_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['home_section_desc_fontsize'].'px; 
-			line-height: '.($spasalon_current_options['home_section_desc_fontsize'] + 9).'px;
-			font-style: '.$spasalon_current_options['home_section_desc_fontstyle'].';
-		}
-		
-		.navbar-default .navbar-nav > li > a,
-		.dropdown-menu > li > a	{
-			font-family: "'.$spasalon_current_options['menu_title_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['menu_title_fontsize'].'px; 
-			line-height: '.($spasalon_current_options['menu_title_fontsize'] + 5).'px;
-			font-style: '.$spasalon_current_options['menu_title_fontstyle'].';
-		}
-		
-		.entry-header .entry-title{
-			font-family: "'.$spasalon_current_options['post_title_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['post_title_fontsize'].'px; 
-			line-height: '.($spasalon_current_options['post_title_fontsize'] + 6).'px;
-			font-style: '.$spasalon_current_options['post_title_fontstyle'].';
-		}
-		
-		p, .entry-content, .post .entry-content {
-			font-family: "'.$spasalon_current_options['postexcerpt_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['postexcerpt_title_fontsize'].'px; 
-			line-height: '.($spasalon_current_options['postexcerpt_title_fontsize'] + 10).'px;
-			font-style: '.$spasalon_current_options['postexcerpt_fontstyle'].';
-		}
-		
-		.widget .widget-title, .footer-sidebar .widget .widget-title{
-			font-family: "'.$spasalon_current_options['widget_title_fontfamily'].'"; 
-			font-size: '.$spasalon_current_options['widget_title_fontsize'].'px; 
-			line-height: '.($spasalon_current_options['widget_title_fontsize'] + 6).'px;
-			font-style: '.$spasalon_current_options['widget_title_fontstyle'].';
-		}
-	';
-	echo '</style>';
-		
+	echo esc_html($spasalon_current_options['spa_custom_css']);
+	echo '</style>';	
 	}
 add_action('wp_head','spasalon_custom_css_function');
 
@@ -321,12 +231,12 @@ function spasalon_register_required_plugins() {
 	$spasalon_plugins = array(
 	// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-            'name' => 'Contact Form 7',
+            'name' => esc_html__('Contact Form 7', 'spasalon'),
             'slug' => 'contact-form-7',
             'required' => false,
         ),
 		array(
-           'name' => 'Webriti Companion',
+           'name' => esc_html__('Webriti Companion', 'spasalon'),
             'slug' => 'webriti-companion',
             'required' => false,
         )

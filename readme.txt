@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,11 +25,14 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-Spasalon WordPress Theme, Copyright (C) 2013-2020, priyanshumittal
+Spasalon WordPress Theme, Copyright (C) 2013-2021, priyanshumittal
 Spasalon is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 2.1.5
+1. Fixed the prefix, escaping and translation issues and removed unnecessary code.
+2. Fixed undefined index error in the tag page.
 @Version 2.1.4
 1. Implemented "Links within content must be underlined" guideline.
 2. Added contact form 7 image license and fixed console warning issue.
@@ -295,4 +298,4 @@ License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
-Copyright (C) 2013, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

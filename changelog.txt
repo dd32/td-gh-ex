@@ -1,5 +1,8 @@
 == Changelog ==
 
+@Version 2.1.5
+1. Fixed the prefix, escaping and translation issues and removed unnecessary code.
+2. Fixed undefined index error in the tag page.
 @Version 2.1.4
 1. Implemented "Links within content must be underlined" guideline.
 2. Added contact form 7 image license and fixed console warning issue.
