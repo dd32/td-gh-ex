@@ -181,6 +181,10 @@ require get_template_directory() . '/inc/admin/options/customizer.php';
  * Welcome screen.
  */
 require get_template_directory() . '/inc/admin/welcome/welcome-screen.php';
+/**
+ * TGM.
+ */
+require get_template_directory() . '/inc/admin/tgm/tgm-plugins.php';
 
 /**
  * Template functions an actionss.
