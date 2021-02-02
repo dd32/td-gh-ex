@@ -3,9 +3,9 @@ Author: wpbusinessthemes
 Theme Name: Agency Starter
 Theme URI: https://wpbusinessthemes.com/product/agency-starter-theme/
 Author URI: https://wpbusinessthemes.com/
-Version: 1.1.5
+Version: 1.1.6
 Requires PHP: 5.6
-Tested up to: 5.5.1
+Tested up to: 5.6
 Description: Agency Starter is a fully customizable theme, which You can use to develop any business site, hotel, travel agency, blog, portfolio, online store, shopping cart and eCommerce websites. The theme uses bootstrap framework and responsive design will render very well on any viewing devices. You can use header image and hero content to highlight your business details. More details: https://wpbusinessthemes.com/product/agency-starter-theme/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1056,6 +1056,11 @@ a:active {
 .social-navigation a[href$="/feed/"]:before {
 	content: "\f09e";
 }
+
+.social-navigation a[href*="yelp.com"]:before {
+	content: "\f1e9";
+}
+
 
 .post-navigation {
 	border-top: 0px solid #1a1a1a;
@@ -2595,7 +2600,7 @@ body.search-no-results .page-header {
  */
 
 .site-footer {
-	padding: 3.5em 0 2.5em;
+	padding: 1em 0 1em;
 }
 
 .site-info {
@@ -2634,7 +2639,7 @@ body.search-no-results .page-header {
 }
 
 .site-footer .footer-info {
-	padding-top:25px;
+	padding-top:5px;
 	margin-top:10px;
 }
 

@@ -16,9 +16,9 @@ function agency_starter_default_settings($param){
 					 'primary_color'=> '#ffb404',
 					 'header_bg_color'=> '#fff',
 					 'header_text_color'=> '#333333',
-					 'footer_bg_color'=> '#130701',
+					 'footer_bg_color'=> '#011217',
 					 'footer_text_color'=> '#fff',
-					 'header_contact_social_bg_color'=> '#ffb404',
+					 'header_contact_social_bg_color'=> '#483301',
 					 'footer_border' =>'1',
 					 'hero_border' => 0 ,
 					 'header_layout' =>'1',
@@ -583,10 +583,10 @@ define ('agency_starter_tutorial', 'https://wpbusinessthemes.com/wordpress/');
  * Displays theme info / quick help 
  */
 if ( isset( $_GET['hide_admin_notice'] ) ) {
-		update_option('agency_starter_hide_admin_notice', 'dispose');
+		update_option('agency_starter_hide_admin_notice', 'always-hide');
 } else {
 	$agency_starter_info = get_option('agency_starter_hide_admin_notice', 'show');
-	if ($agency_starter_info != 'dispose' || $agency_starter_info ==""){ 
+	if ($agency_starter_info != 'always-hide' || $agency_starter_info ==""){ 
 		add_action( 'admin_notices', 'agency_starter_help_notice' );
 	}
 }

@@ -77,6 +77,9 @@ Image used in screenshot & default header :
 * Source: https://pxhere.com/en/photo/559565
 
 == Changelog ==
+= 1.1.6 =
+* Fixed css, 
+*tested with 5.6
 
 = 1.1.5 =
 * Update to our new author and theme URI
