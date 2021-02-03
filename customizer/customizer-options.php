@@ -853,6 +853,13 @@ function customizer_library_avant_options() {
             'panel' => $panel
         );
         
+        $options['avant-help-slider-woocustomizer'] = array(
+            'id' => 'avant-help-slider-woocustomizer',
+            'section' => $section,
+            'type'    => 'help',
+            'description' => __( 'We recommend the <b>StoreCustomizer plugin</b> for customizing and enhancing your WooCommerce Shop pages, it\'s listed in Recommended Plugins in the Dashboard', 'avant' )
+        );
+        
         $options['avant-remove-wc-page-titles'] = array(
             'id' => 'avant-remove-wc-page-titles',
             'label'   => __( 'Remove Shop Page Titles', 'avant' ),

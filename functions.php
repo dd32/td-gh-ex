@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.47' );
+define( 'AVANT_THEME_VERSION' , '1.1.48' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';

@@ -95,6 +95,9 @@
     margin: 0;
     padding: 4px 0;
 }
+#customize-control-avant-help-slider-woocustomizer b {
+    color: #000;
+}
 
 #customize-control-blogdescription,
 #customize-control-avant-disable-google-fonts,
@@ -136,6 +139,7 @@
 #customize-control-avant-mobile-remove-topbar,
 #customize-control-avant-slider-mobile-set-height,
 #customize-control-avant-set-wc-single-col-width,
+#customize-control-avant-help-slider-woocustomizer,
 #customize-control-avant-website-txt-copy {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 0 0 20px;

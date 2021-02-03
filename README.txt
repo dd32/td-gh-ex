@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.48
+* Style tweaks/fixes
+* Update help links in Customizer
+* Updated the language .pot file
+* PREMIUM: Improvments on Pro Shortcode Slider
+* PREMIUM: Added the option to start the default slider and shortcode slider on a random slide
+
 #### 1.1.47
 * Styling fixes/tweaks
 * Updated WP compatibility version
