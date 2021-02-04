@@ -13,7 +13,7 @@ function atomy_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html__('Atomy','atomy');?></h2>
-		  	<span><?php echo esc_html__('V 1.1.5','atomy');?></span>
+		  	<span><?php echo esc_html__('V 1.1.6','atomy');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
