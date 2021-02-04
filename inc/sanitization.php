@@ -108,27 +108,6 @@ function avril_sanitize_image( $image, $setting ) {
 }
 
 /**
- * No-HTML sanitization callback example.
- *
- * - Sanitization: nohtml
- * - Control: text, textarea, password
- * 
- * Sanitization callback for 'nohtml' type text inputs. This callback sanitizes `$nohtml`
- * to remove all HTML.
- * 
- * NOTE: wp_filter_nohtml_kses() can be passed directly as `$wp_customize->add_setting()`
- * 'sanitize_callback'. It is wrapped in a callback here merely for example purposes.
- * 
- * @see wp_filter_nohtml_kses() https://developer.wordpress.org/reference/functions/wp_filter_nohtml_kses/
- *
- * @param string $nohtml The no-HTML content to sanitize.
- * @return string Sanitized no-HTML content.
- */
-function avril_sanitize_nohtml( $nohtml ) {
-	return wp_filter_nohtml_kses( $nohtml );
-}
-
-/**
  * Number sanitization callback example.
  *
  * - Sanitization: number_absint
