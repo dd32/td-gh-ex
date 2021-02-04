@@ -830,7 +830,7 @@ img.img-who-we-are{
 }
 
 .navbar.hide-menu a,.navbar.hide-menu .avik-logo p{
-  color:<?php echo esc_attr( get_theme_mod('avik_color_menu', '#000')); ?>!important;
+  color:<?php echo esc_attr( get_theme_mod('avik_color_menu', '#fff')); ?>!important;
 }
 }
 
