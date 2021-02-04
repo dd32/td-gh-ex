@@ -2,8 +2,8 @@
 Tags:         custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, rtl-language-support, full-width-template, theme-options, threaded-comments, featured-images, grid-layout 
 Requires at least: 4.0
 Requires PHP: 5.6
-Stable tag: 2.6.3
-Tested up to: 5.5.1
+Stable tag: 2.6.4
+Tested up to: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Contributors: Access Keys
@@ -101,6 +101,10 @@ Source: https://stocksnap.io/photo/fashion-man-Y6SDOYW0KA
 
 ----------------------------------------------------
 == Changelog ==
+= 2.6.4 =
+ ** Fixed Compatiblity issue with WordPress 5.6
+ ** Added Category Show Hide Option in Single Post
+
 = 2.6.3 =
  ** Fixed compatiblity issue with WordPress 5.5
  ** Fixed Minor CSS
@@ -112,7 +116,7 @@ Source: https://stocksnap.io/photo/fashion-man-Y6SDOYW0KA
 
 = 2.6.1 =
  ** Fixed Minor Issues
- ** Added Post Category Show Hide Option 
+ ** Added Post Category Show Hide Option in Archive Page
 
 = 2.6.0 =
  ** Fixed Double Date Issues

@@ -715,6 +715,22 @@ Kirki::add_field( 'accesspress_mag_config',
 	)
 );
 
+Kirki::add_field( 'accesspress_mag_config', 
+	array(
+		'type'        => 'switch',
+		'settings'    => 'show_post_cat_op',
+		'label'       => esc_html__( 'Show Post Category', 'accesspress-mag' ),
+		'description' => esc_html__( 'Enable or Disable the Post Categories.', 'accesspress-mag' ),
+		'section'     => 'accesspress_mag_add_settings',
+		'default'     => true,
+		'priority'    => 10,
+		'choices'     => array(
+			true   => esc_html__( 'Enable', 'accesspress-mag' ),
+			false => esc_html__( 'Disable', 'accesspress-mag' ),
+		),					
+		'sanitize_callback'	=> 'accesspress_mag_sanitize_checkbox'
+	)
+);
 
 Kirki::add_field( 'accesspress_mag_config', 
 	array(
