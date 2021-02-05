@@ -4,20 +4,20 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready, sticky-post, blog, footer-widgets, featured-images, right-sidebar
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 2.6.3
+Stable tag: 2.6.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. 
+A Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc.
+It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site.
 Qality supports featured slider managed from Theme Option Panel.
 
 Feel free to use as you please. I would be very pleased if you could keep the Author-link in the footer. Thanks and enjoy.
 
-Quality supports Custom Menu, Widgets and 
+Quality supports Custom Menu, Widgets and
 the following extra features:
 
  - Pre-installed menu and content
@@ -26,10 +26,10 @@ the following extra features:
  - Support for post thumbnails
  - Similar posts feature
  - 4 widgetized areas in the footer
- - Customise Front Page 
+ - Customise Front Page
  - Custom footer
- - Translation Ready 
- 
+ - Translation Ready
+
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 == Installation ==
@@ -44,13 +44,17 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == Changelog ==
 
+@Version 2.6.4
+1. Fixed footer copyright empty markup and posts design issues.
+2. Fixed the translation issue.
+
 @Version 2.6.3
 1. Fixed Escaping, prefix and service secton style issues.
 2. Fixed the user comment issue and removed unnecessary code.
 
 @Version 2.6.2
 1. Implemented "Links within content must be underlined" guideline.
-2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view. 
+2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view.
 
 @Version 2.6.1
 1. Prefix fixed.
@@ -163,7 +167,7 @@ Corrected Sanitization issue
 1. Added Demo images for wordpress preview.
 
 @Version 1.7.8
-1. Updated Theme URI & Author URI 
+1. Updated Theme URI & Author URI
 
 @Version 1.7.7
 1. Added Getting starded button in customize setting for use our homepage.
@@ -278,7 +282,7 @@ Corrected Sanitization issue
 3. Content Width Issue Fixed.
 
 @version 1.0.5
-1. NEW WLAKER CLASS ADDED FOR BOOTSTRAP-3. 
+1. NEW WLAKER CLASS ADDED FOR BOOTSTRAP-3.
 
 @version 1.0.4
 1. Small Changes in Comment Form
@@ -305,7 +309,7 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank y
 License
 -------
 
-Quality WordPress Theme, Copyright 2014-2020 priyanshumittal
+Quality WordPress Theme, Copyright 2014-2021 priyanshumittal
 Quality WordPress Theme is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -328,7 +332,7 @@ Quality WordPress Theme bundles the following third-party resources:
 
 == External resources ==
 
-Font Awesome: 
+Font Awesome:
 Copyright: (c) Dave Gandy
 License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
 Source: https://fontawesome.com
@@ -348,7 +352,7 @@ Copyright: (c) Lokesh Dhakar
 License: Released under the MIT license
 Source: https://github.com/lokesh/lightbox2/blob/master/LICENSE
 
-== Screenshots == 
+== Screenshots ==
 * Image used in the Screenshots
 License CC0 Public Domain
 https://pxhere.com/en/photo/1451901
@@ -364,6 +368,6 @@ License: Under the terms of the GNU General Public License
 Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
-Copyright (C) 2014, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
 
 # --- EOF --- #

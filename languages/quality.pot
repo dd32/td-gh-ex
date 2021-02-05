@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2021-01-05 18:18+0530\n"
+"POT-Creation-Date: 2021-02-04 18:23+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -135,6 +135,7 @@ msgstr ""
 
 #: admin/inc/class-webriti-about-page.php:546
 #: admin/inc/include-companion.php:81 admin/inc/include-companion.php:98
+#: functions.php:48
 msgid "Webriti Companion"
 msgstr ""
 
@@ -144,7 +145,7 @@ msgid ""
 "have access to the advance Frontpage sections and other theme features"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:553
+#: admin/inc/class-webriti-about-page.php:553 functions.php:43
 msgid "Contact Form 7"
 msgstr ""
 

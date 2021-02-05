@@ -40,12 +40,12 @@ function quality_register_required_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
-            'name' => 'Contact Form 7',
+            'name' => esc_html__('Contact Form 7', 'quality'),
             'slug' => 'contact-form-7',
             'required' => false,
         ),
         array(
-            'name' => 'Webriti Companion',
+            'name' => esc_html__('Webriti Companion', 'quality'),
             'slug' => 'webriti-companion',
             'required' => false,
         ),

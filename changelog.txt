@@ -1,12 +1,16 @@
 == Changelog ==
 
+@Version 2.6.4
+1. Fixed footer copyright empty markup and posts design issues.
+2. Fixed the translation issue.
+
 @Version 2.6.3
 1. Fixed Escaping, prefix and service secton style issues.
 2. Fixed the user comment issue and removed unnecessary code.
 
 @Version 2.6.2
 1. Implemented "Links within content must be underlined" guideline.
-2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view. 
+2. Added contact form 7 image license and fixed keyboard naviagtion issue in responsive view.
 
 @Version 2.6.1
 1. Prefix fixed.
@@ -82,10 +86,10 @@
 
 @Version 2.0
 1. Added  Testimonial Section.
-2. Update Whole Theme Design. 
+2. Update Whole Theme Design.
 
 @Version 1.9.7
-1. Update Get started Style. 
+1. Update Get started Style.
 
 @Version 1.9.6
 1. Strings Updated
@@ -119,7 +123,7 @@
 1. Added Demo images for wordpress preview.
 
 @Version 1.7.8
-1. Updated Theme URI & Author URI 
+1. Updated Theme URI & Author URI
 
 @Version 1.7.7
 1. Added Getting starded button in customize setting for use our homepage .
@@ -234,7 +238,7 @@
 3. Content Width Issue Fixed.
 
 @version 1.0.5
-1.	NEW WLAKER CLASS ADDED FOR BOOTSTRAP-3. 
+1.	NEW WLAKER CLASS ADDED FOR BOOTSTRAP-3.
 
 @version 1.0.4
 1.	Small Changes in Comment Form
