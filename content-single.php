@@ -10,7 +10,11 @@ $apbasic_settings = get_option('apbasic_options',$apbasic_options);
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
+    	<?php 
+    	$showpost = isset($apbasic_settings['show_post_title'])? $apbasic_settings['show_post_title'] : ''; 
+    	if($showpost == 1){?>
     	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    	<?php } ?>
     
     	<div class="entry-meta">
     		<?php 

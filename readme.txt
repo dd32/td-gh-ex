@@ -3,8 +3,8 @@
 Contributors: Access Keys
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.4.2
-Stable tag: 3.1.9
+Tested up to: 5.6
+Stable tag: 3.2.1
 Tags: left-sidebar, right-sidebar, custom-background, featured-images, full-width-template, rtl-language-support, theme-options, threaded-comments, translation-ready, e-commerce, news, blog
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -68,6 +68,9 @@ All other icons & images are created by AccessPress Themes & licensed under CC0 
 ---------------------------------------------
 
 == Changelog ==
+= 3.2.1 =
+** Fixed Js issues
+** Added Post Title Option for Single Post
 
 = 3.2.0 =
 ** Minor bugs fixed and improvements

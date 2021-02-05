@@ -680,6 +680,21 @@
 
 			Kirki::add_field( 'accesspress_basic_config', [
 				'type'        => 'switch',
+				'settings'    => 'show_post_title',
+				'label'       => esc_html__( 'Show Post Title', 'accesspress-basic' ),
+				'description' => esc_html__( 'Show post title in Single Post?', 'accesspress-basic' ),
+				'section'     => 'accesspress_basic_post_setting',
+				'default'     => '1',
+				'priority'    => 10,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-basic' ),
+					false => esc_html__( 'Disable', 'accesspress-basic' ),
+				],
+				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
+			] );
+
+			Kirki::add_field( 'accesspress_basic_config', [
+				'type'        => 'switch',
 				'settings'    => 'show_post_meta_data',
 				'label'       => esc_html__( 'Show Meta Data', 'accesspress-basic' ),
 				'description' => esc_html__( 'Show date and author in Single Post?', 'accesspress-basic' ),

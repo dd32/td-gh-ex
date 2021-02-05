@@ -15,12 +15,10 @@
     	wp_enqueue_script( 'jquery-bxslider-js', get_template_directory_uri() . '/js/jquery.bxslider.js', array('jquery') );
         wp_register_script('accesspress-basic-custom-js', get_template_directory_uri().'/js/custom.js', array('jquery'));
 
-        $mode = $apbasic_settings['slider_mode'];
+        $mode = isset($apbasic_settings['slider_mode'])? $apbasic_settings['slider_mode'] : '';
 
         $script_vals = array(
         'mode'     => $mode
-        
-
     );
     wp_localize_script('accesspress-basic-custom-js','accesspress_basic_script',$script_vals );
     wp_enqueue_script('accesspress-basic-custom-js');
