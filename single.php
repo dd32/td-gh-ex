@@ -28,9 +28,12 @@ $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true
 
             <?php
 			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || '0' != get_comments_number() ) :
-				comments_template();
-			endif;
+			$show_comments = isset($accesspresslite_settings['post_comment_enable'])? $accesspresslite_settings['post_comment_enable'] : '';
+    		if($show_comments == 1){
+				if ( comments_open() || '0' != get_comments_number() ) :
+					comments_template();
+				endif;
+			}
 			?>
 
 		<?php endwhile; // end of the loop. ?>

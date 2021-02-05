@@ -1,10 +1,10 @@
 ﻿=== AccessPress Lite ===
 
 Contributors: Access Keys
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 2.91
+Stable tag: 2.92
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, rtl-language-support, blog, education, portfolio
@@ -101,6 +101,10 @@ All other images are designed by AccessPress Themes
 
 
 == Changelog ==
+= 2.92 =
+** Fixed js issues
+** Added Comments Show Hide Option For Single Post
+
 = 2.91 =
 ** Fixed url escapings from attr
 ** Descreased welcome notice height.

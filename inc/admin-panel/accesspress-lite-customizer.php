@@ -187,6 +187,22 @@
 				'type'        => 'switch',
 				'settings'    => 'post_meta_enable',
 				'label'       => esc_html__( 'Show Meta Data?', 'accesspress-lite' ),
+				'description' => esc_html__( 'Show Meta Data in Post', 'accesspress-lite' ),
+				'section'     => 'accesspress_lite_post_setting',
+				'default'     => '1',
+				'priority'    => 20,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-lite' ),
+					false => esc_html__( 'Disable', 'accesspress-lite' ),
+				],
+				'sanitize_callback'	=> 'accesspress_lite_sanitize_checkbox',
+			] );
+
+			Kirki::add_field( 'accesspress_lite_config', [
+				'type'        => 'switch',
+				'settings'    => 'post_comment_enable',
+				'label'       => esc_html__( 'Show Page Comment?', 'accesspress-lite' ),
+				'description' => esc_html__( 'Show Comments in Post', 'accesspress-lite' ),
 				'section'     => 'accesspress_lite_post_setting',
 				'default'     => '1',
 				'priority'    => 20,

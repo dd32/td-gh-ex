@@ -6,8 +6,7 @@
  jQuery(document).ready(function ($) {
 
  	"use strict";
-
- 	$(window).load(function(){
+ 	$(window).on("load", function(){
  		var hash = window.location.hash;
  		if ( hash !== null ) {
  			var clsr = hash.split('#');
@@ -31,8 +30,8 @@
  			}
  		}
  	});
-
- 	jQuery('.nav-tab').click(function(){
+ 	jQuery('.nav-tab').on("click", function(){
+ 	// jQuery('.nav-tab').click(function(){
  		jQuery('.nav-tab').removeClass('nav-tab-active');
  		jQuery('.welcome-section').removeClass('nav-tab-active').addClass('nav-tab-inactive');
  		var tab = jQuery(this);		
