@@ -1,6 +1,6 @@
 <?php if (!function_exists('astral_info_page')) {
 	function astral_info_page() {
-	$page1=add_theme_page(__('Welcome to Astral', 'astral'), __('<span style="color:#ffe100">Welcome Astral</span>', 'astral'), 'edit_theme_options', 'astral', 'astral_display_theme');
+	$page1=add_theme_page(__('Welcome to Astral', 'astral'), __('<span style="">Welcome Astral</span>', 'astral'), 'edit_theme_options', 'astral', 'astral_display_theme');
 	
 	add_action('admin_print_styles-'.$page1, 'astral_pro_info');
 	}	
