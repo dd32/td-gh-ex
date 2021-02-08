@@ -308,7 +308,7 @@ endif; // fkidd_sanitize_checkbox
 if ( ! function_exists( 'fkidd_sanitize_html' ) ) :
 
 	function fkidd_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 endif; // fkidd_sanitize_html
@@ -596,8 +596,8 @@ function fkidd_load_scripts() {
 	wp_localize_script('fkidd-utilities-js', 'fkidd_options', $data);
 	
 	
-	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery.easing', get_template_directory_uri() . '/js/jquery.easing.js', array( 'jquery' ) );
+	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'fkidd_load_scripts' );
 

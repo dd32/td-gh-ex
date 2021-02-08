@@ -4,14 +4,14 @@ Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Resp
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 2.1.4
+Version: 2.1.5
 Text Domain: fkidd
 Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 5.6.0
-Requires at least: 4.8.0
-Tested up to: 5.4.1
+Requires PHP: 5.6
+Requires at least: 5.3
+Tested up to: 5.6
 */
 
 /* general styles */
@@ -39,6 +39,11 @@ body:before {
 
 article a {
 	text-decoration: underline;
+}
+
+.entry-title a,
+.post-entry-title a {
+	text-decoration: none;
 }
 
 .icon:before {
@@ -240,6 +245,7 @@ span > object {
 
 dt.gallery-icon:before {
 	content:'';
+	display: none;
 }
 
 
@@ -272,6 +278,8 @@ dt.gallery-icon:before {
 
 .custom-logo-link img {
 	margin-right:10px;
+	max-width:100%;
+	height:auto;
 }
 
 
@@ -1791,36 +1799,41 @@ blockquote, figure {
 	width: 100%;
 }
 
+.gallery-item img {
+	width:100%;
+	height:auto;
+}
+
 .gallery-columns-1 .gallery-item {
-	max-width: 50%;
+	max-width: 99%;
 }
 
 .gallery-columns-3 .gallery-item {
-	max-width: 25%;
+	max-width: 33%;
 }
 
 .gallery-columns-4 .gallery-item {
-	max-width: 20%;
+	max-width: 25%;
 }
 
 .gallery-columns-5 .gallery-item {
-	max-width: 15%;
+	max-width: 20%;
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 13%;
+	max-width: 16%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 11%;
+	max-width: 14%;
 }
 
 .gallery-columns-8 .gallery-item {
-	max-width: 10%;
+	max-width: 12%;
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 9%;
+	max-width: 11%;
 }
 
 .gallery-icon img {
@@ -1961,7 +1974,7 @@ article > *.aligncenter,
 @media only screen and (min-width: 1168px) {
   article > *.aligncenter,
   .entry .entry-summary > *.aligncenter {
-    max-width: calc(6 * (100vw / 12) - 28px);
+    max-width: 100%;
   }
 }
 
@@ -2399,7 +2412,7 @@ article .wp-block-image img {
 
 @media only screen and (min-width: 1168px) {
   article .wp-block-image .aligncenter {
-    max-width: calc(6 * (100vw / 12) - 28px);
+    max-width: 100%;
   }
 }
 
@@ -2415,7 +2428,7 @@ article .wp-block-image img {
 
 @media only screen and (min-width: 1168px) {
   article .wp-block-image .aligncenter {
-    width: calc(6 * (100vw / 12) - 28px);
+    width: 100%;
   }
   article .wp-block-image .aligncenter img {
     margin: 0 auto;
@@ -2502,7 +2515,7 @@ article .wp-block-cover.alignright {
   article .wp-block-cover.alignfull .wp-block-cover-image-text,
   article .wp-block-cover.alignfull .wp-block-cover-text,
   article .wp-block-cover.alignfull h2 {
-    max-width: calc(6 * (100vw / 12) - 28px);
+    max-width: 100%;
   }
 }
 
@@ -2533,7 +2546,7 @@ article .wp-block-gallery .blocks-gallery-item:last-child {
 }
 
 article .blocks-gallery-item:before {
-	content:'';
+	content:'' !important;
 }
 
 article .wp-block-gallery figcaption a {
@@ -2579,7 +2592,7 @@ article hr.is-style-wide {
 @media only screen and (min-width: 1168px) {
   article .wp-block-separator.is-style-wide,
   article hr.is-style-wide {
-    max-width: calc(6 * (100vw / 12) - 28px);
+    max-width: 100%;
   }
 }
 
@@ -2602,7 +2615,7 @@ article hr.is-style-dots {
 @media only screen and (min-width: 1168px) {
   article .wp-block-separator.is-style-dots,
   article hr.is-style-dots {
-    max-width: calc(6 * (100vw / 12) - 28px);
+    max-width: 100%;
   }
 }
 
@@ -2871,6 +2884,10 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 
 .woocommerce-input-wrapper {
 	width:100%;
+}
+
+.woocommerce-product-gallery__image {
+	margin-bottom:10px;
 }
 
 .mini_cart_item a.remove {
@@ -3299,6 +3316,7 @@ li.product:before {
 	content:'';
 }
 
+section.related,
 .product_meta {
 	clear:both !important;
 }
@@ -3715,6 +3733,10 @@ mark {
 
     #navmain {
    		margin-top: -35px;
+    }
+
+    #site-identity {
+    	min-height: 35px;
     }
 
 	#navmain {
