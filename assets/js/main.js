@@ -10,11 +10,44 @@ jQuery('a.zoom').colorbox({rel:'gal'});
 } 
   
 
+      function avadantaaccess() {
+        jQuery( document ).on( 'keydown', function( e ) {
+            if ( jQuery( window ).width() > 992 ) {
+                return;
+            }
+            var activeElement = document.activeElement;
+            var menuItems = jQuery( '#primary-menu .menu-item > a' );
+            var firstEl = jQuery( '.menu-toggle' );
+            var lastEl = menuItems[ menuItems.length - 1 ];
+            var tabKey = event.keyCode === 9;
+            var shiftKey = event.shiftKey;
+            if ( ! shiftKey && tabKey && lastEl === activeElement ) {
+                event.preventDefault();
+                firstEl.focus();
+            }
+        } );
+    }
+
+     
+     jQuery(document).ready(function() {
+   
+   
+    jQuery(".cross").focusin(function(){
+    jQuery('body').removeClass('search-show')
+    });
+   
+ });
+
+
   jQuery(document).ready(function() {
   jQuery("a").on('click', function(e) {
     jQuery(this).css("outline", "none");
   });
 
+
+    jQuery(document).ready(function () {
+    avadantaaccess();
+    });
 
 });
 // Show or hide the sticky footer button

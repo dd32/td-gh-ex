@@ -1344,3 +1344,29 @@ h1,h3{
 text-decoration: underline;
     outline: none;
 }
+
+.search-submit-header:focus{
+
+  outline: 2px solid #000 !important;
+}
+
+.header-search .cross a{
+
+     z-index: 999999;
+    color: #fff;
+    margin-top: 30px;
+    font-size: 30px;
+    margin-right: 8px;
+    right: 0;
+    float: right;
+}
+
+.search-submit-header{
+
+  color: #000;
+}
+
+.cross a:focus{
+
+  outline: 2px solid #fff !important;  
+}

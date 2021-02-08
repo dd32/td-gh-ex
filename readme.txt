@@ -3,7 +3,7 @@ Contributors: avadantathemes
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ Avadanta developed under th GPL terms so you can use it free and can modify or r
 
 
 == Changelog ==
+
+= 1.0.5 =
+* Resolve Reviewer Issue
 
 = 1.0.4 =
 * Resolve Reviewer Issue
@@ -77,6 +80,13 @@ Animate : http://daneden.me/animate , Copyright (c) 2016 Daniel Eden , License: 
 * Breadcrumb Trail : https://themehybrid.com/plugins/breadcrumb-trail , Copyright (c) 2008 - 2017, Justin Tadlock , License:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
     
 * Normalize : https://necolas.github.io/normalize.css/ , Copyright © Nicolas Gallagher and Jonathan Neal ,License:  https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+
+* Customizer Repeater : https://github.com/cristian-ungureanu/customizer-repeater , Copyright (c) 2016 ,License:  https://github.com/cristian-ungureanu/customizer-repeater/blob/production/LICENSE
+
+* Customizer Repeater : https://github.com/Codeinwp/customizer-controls/tree/master/customizer-alpha-color-picker , Copyright (c) 2016 ,
+License:  https://github.com/Codeinwp/customizer-controls/blob/master/LICENSE
+
+* customizer alpha color picker : https://www.jacklmoore.com/colorbox/ ,Copyright (c) 2016 Jack Moore ,License:  https://github.com/jackmoore/colorbox/blob/master/LICENSE.md
 
 
 

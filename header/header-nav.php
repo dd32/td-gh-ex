@@ -2,7 +2,7 @@
 	$avadanta_sticky_thumb = get_theme_mod('avadanta_sticky_thumb',0);
 	 if($avadanta_sticky_thumb==0){
 	?>
-	<header class="is-sticky is-shrink is-boxed header-s1" id="header">
+	<header class="is-sticky is-shrink is-boxed header-s1 <?php if(  is_user_logged_in() ) { ?> avndta-admn <?php } ?>" id="header">
 	<?php } else { ?>
 	<header class=" is-shrink is-boxed header-s1" id="header">
 		<?php } ?>
@@ -51,8 +51,9 @@
 					</nav>
 				</div>   
 
-				<div class="header-search">
-					<?php custom_search_form(); ?>
+				<div id="head-search" class="header-search">
+					<?php avadanta_custom_search_form(); ?>
+					<span class="cross"><a href="#"><?php echo esc_html__('✕','avadanta'); ?></a></span>
 				</div>
 			</div>
 		</div>

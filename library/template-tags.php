@@ -30,10 +30,10 @@ if ( ! function_exists( 'avadanta_posted_on' ) ) :
 endif;
 
                           
-function custom_search_form() {
-  $form = '<form role="search" method="post id="" class="search-form-header" action="' . home_url( '/' ) . '" >
+function avadanta_custom_search_form() {
+  $form = '<form role="search" method="post id="" class="search-form-header" action="' . esc_url(home_url( '/' )) . '" >
     <div class="search-group">
-    <input type="text" value="' . get_search_query() . '" name="s" placeholder="Search" class="input-search" id="s" />
+    <input type="text" value="' . get_search_query() . '" name="s" placeholder="' . esc_html__( 'Search', 'avadanta' ) . '" class="input-search" id="s" />
     <button class="search-submit-header" type="submit" ><i class="fa fa-search"></i></button>
   </div>
   </form>';
