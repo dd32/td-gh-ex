@@ -167,7 +167,7 @@ if ( ! function_exists( 'ayawild_load_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		wp_enqueue_script( 'slippry', get_template_directory_uri() . '/js/slippry.min.js',
+		wp_enqueue_script( 'slippry', get_template_directory_uri() . '/js/slippry.js',
 			array( 'jquery' ) );
 		
 		// Load Utilities JS Script
@@ -580,7 +580,7 @@ endif; // ayawild_sanitize_checkbox
 if ( ! function_exists( 'ayawild_sanitize_html' ) ) :
 
 	function ayawild_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 endif; // ayawild_sanitize_html
