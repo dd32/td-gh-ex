@@ -1,9 +1,9 @@
 === Alante Grid ===
 Contributors: thinkupthemes
 Requires at least: 4.7
-Tested up to: 5.4.2
+Tested up to: 5.6.0
 Requires PHP: 5.6.0
-Version: 1.1.7
+Version: 1.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -42,6 +42,9 @@ Alante Grid is a child theme or Alante and as such uses the same opensource proj
 
 
 == Changelog ==
+
+= 1.1.8
+- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.6.0.
 
 = 1.1.7
 - New:     "Tested up to" header field added to style.css.
