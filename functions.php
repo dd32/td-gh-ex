@@ -227,8 +227,8 @@ if ( ! function_exists( 'artgallery_load_scripts' ) ) :
 	    wp_localize_script('artgallery-utilities', 'artgallery_options', $data);
 
 	    
-		wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js', array( 'jquery' ) );
-		wp_enqueue_script( 'camera', get_template_directory_uri() . '/assets/js/camera.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'jquery.easing', get_template_directory_uri() . '/assets/js/jquery.easing.js', array( 'jquery' ) );
+		wp_enqueue_script( 'camera', get_template_directory_uri() . '/assets/js/camera.js', array( 'jquery' ) );
 	}
 endif; // artgallery_load_scripts
 add_action( 'wp_enqueue_scripts', 'artgallery_load_scripts' );

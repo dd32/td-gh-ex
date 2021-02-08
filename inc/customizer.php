@@ -17,7 +17,7 @@ endif; // artgallery_sanitize_checkbox
 if ( ! function_exists( 'artgallery_sanitize_html' ) ) :
 
 	function artgallery_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 endif; // artgallery_sanitize_html
