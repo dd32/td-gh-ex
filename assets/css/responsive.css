@@ -471,16 +471,14 @@
         font-size: 23px;
         align-items: center;
     }
-    .mobile-menu-right .header-search-toggle,
-    .mobile-menu-right .cart-icon-wrap #cart {
+    .mobile-menu-right .header-search-toggle{
         font-size: 14px;
     }
     .hamburger-menu .menu-toggle {
         padding: 4px 5px 4px;
     }
     .cart-wrap, .hamburger-menu,
-    .mobile-menu-right .header-search-toggle,
-    .mobile-menu-right .cart-icon-wrap #cart{
+    .mobile-menu-right .header-search-toggle{
         width: 32px;
         height: 32px;
         line-height: 1.65;
