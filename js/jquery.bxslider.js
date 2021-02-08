@@ -276,10 +276,10 @@
 			}
 			var count = 0;
 			selector.find('img, iframe').each(function(){
-				$(this).one('load', function() {
+				$(this).on('load', function() {
 				  if(++count == total) callback();
 				}).each(function() {
-				  if(this.complete) $(this).load();
+				  if(this.complete) $(this).trigger('load');
 				});
 			});
 		}
@@ -310,7 +310,7 @@
 			// slider has been fully initialized
 			slider.initialized = true;
 			// bind the resize call to the window
-			if (slider.settings.responsive) $(window).bind('resize', resizeWindow);
+			if (slider.settings.responsive) $(window).on('resize', resizeWindow);
 			// if auto is true and has more than 1 page, start the show
 			if (slider.settings.auto && slider.settings.autoStart && (getPagerQty() > 1 || slider.settings.autoSlideForOnePage)) initAuto();
 			// if ticker is true, start the ticker
@@ -543,9 +543,9 @@
 					// set the property value
 					el.css(slider.animProp, propValue);
 					// bind a callback method - executes when CSS transition completes
-					el.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
+					el.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
 						// unbind the callback
-						el.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+						el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
 						updateAfterSlideTransition();
 					});
 				}else if(type == 'reset'){
@@ -555,9 +555,9 @@
 					el.css('-' + slider.cssPrefix + '-transition-timing-function', 'linear');
 					el.css(slider.animProp, propValue);
 					// bind a callback method - executes when CSS transition completes
-					el.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
+					el.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
 						// unbind the callback
-						el.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+						el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
 						// reset the position
 						setPositionProperty(params['resetValue'], 'reset', 0);
 						// start the loop again
@@ -594,14 +594,14 @@
 			for(var i=0; i < pagerQty; i++){
 				var linkContent = '';
 				// if a buildPager function is supplied, use it to get pager link value, else use index + 1
-				if(slider.settings.buildPager && $.isFunction(slider.settings.buildPager)){
+				if(slider.settings.buildPager && (typeof slider.settings.buildPager === "function")){
 					linkContent = slider.settings.buildPager(i);
 					slider.pagerEl.addClass('bx-custom-pager');
 				}else{
 					linkContent = i + 1;
 					slider.pagerEl.addClass('bx-default-pager');
 				}
-				// var linkContent = slider.settings.buildPager && $.isFunction(slider.settings.buildPager) ? slider.settings.buildPager(i) : i + 1;
+				// var linkContent = slider.settings.buildPager && (typeof slider.settings.buildPager === "function") ? slider.settings.buildPager(i) : i + 1;
 				// add the markup to the string
 				pagerHtml += '<div class="bx-pager-item"><a href="" data-slide-index="' + i + '" class="bx-pager-link">' + linkContent + '</a></div>';
 			};
@@ -639,8 +639,8 @@
 			slider.controls.next = $('<a class="bx-next" href="">' + slider.settings.nextText + '</a>');
 			slider.controls.prev = $('<a class="bx-prev" href="">' + slider.settings.prevText + '</a>');
 			// bind click actions to the controls
-			slider.controls.next.bind('click', clickNextBind);
-			slider.controls.prev.bind('click', clickPrevBind);
+			slider.controls.next.on('click', clickNextBind);
+			slider.controls.prev.on('click', clickPrevBind);
 			// if nextSlector was supplied, populate it
 			if(slider.settings.nextSelector){
 				$(slider.settings.nextSelector).append(slider.controls.next);
@@ -696,7 +696,7 @@
 			// cycle through each child
 			slider.children.each(function(index){
 				// get the image title attribute
-				var title = $(this).find('img:first').attr('title');
+				var title = $(this).find('img').first().attr('title');
 				// append the caption
 				if (title != undefined && ('' + title).length) {
                     $(this).append('<div class="bx-caption"><span>' + title + '</span></div>');
@@ -876,7 +876,7 @@
 			// if autoHover is requested
 			if(slider.settings.autoHover){
 				// on el hover
-				el.hover(function(){
+				el.on('mouseenter', function(){
 					// if the auto show is currently playing (has an active interval)
 					if(slider.interval){
 						// stop the auto show and pass true agument which will prevent control update
@@ -884,7 +884,8 @@
 						// create a new autoPaused value which will be used by the relative "mouseout" event
 						slider.autoPaused = true;
 					}
-				}, function(){
+				})
+        .on('mouseleave', function(){
 					// if the autoPaused value was created be the prior "mouseover" event
 					if(slider.autoPaused){
 						// start the auto show and pass true agument which will prevent control update
@@ -918,9 +919,10 @@
 			// if autoHover is requested
 			if(slider.settings.tickerHover && !slider.usingCSS){
 				// on el hover
-				slider.viewport.hover(function(){
+				slider.viewport.on('mouseenter', function() {
 					el.stop();
-				}, function(){
+				})
+        .on('mouseleave', function(){
 					// calculate the total width of children (used to calculate the speed ratio)
 					var totalDimens = 0;
 					slider.children.each(function(index){
@@ -968,7 +970,7 @@
 				start: {x: 0, y: 0},
 				end: {x: 0, y: 0}
 			}
-			slider.viewport.bind('touchstart', onTouchStart);
+			slider.viewport.on('touchstart', onTouchStart);
 		}
 
 		/**
@@ -988,9 +990,9 @@
 				slider.touch.start.x = orig.changedTouches[0].pageX;
 				slider.touch.start.y = orig.changedTouches[0].pageY;
 				// bind a "touchmove" event to the viewport
-				slider.viewport.bind('touchmove', onTouchMove);
+				slider.viewport.on('touchmove', onTouchMove);
 				// bind a "touchend" event to the viewport
-				slider.viewport.bind('touchend', onTouchEnd);
+				slider.viewport.on('touchend', onTouchEnd);
 			}
 		}
 
@@ -1034,7 +1036,7 @@
 		 *  - DOM event object
 		 */
 		var onTouchEnd = function(e){
-			slider.viewport.unbind('touchmove', onTouchMove);
+			slider.viewport.off('touchmove', onTouchMove);
 			var orig = e.originalEvent;
 			var value = 0;
 			// record end x, y positions
@@ -1072,7 +1074,7 @@
 					}
 				}
 			}
-			slider.viewport.unbind('touchend', onTouchEnd);
+			slider.viewport.off('touchend', onTouchEnd);
 		}
 
 		/**
@@ -1322,7 +1324,7 @@
 			$('.bx-caption', this).remove();
 			if(slider.controls.autoEl) slider.controls.autoEl.remove();
 			clearInterval(slider.interval);
-			if(slider.settings.responsive) $(window).unbind('resize', resizeWindow);
+			if(slider.settings.responsive) $(window).off('resize', resizeWindow);
 		}
 
 		/**

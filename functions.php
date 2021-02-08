@@ -189,7 +189,7 @@ if ( ! function_exists( 'ayageek_load_scripts' ) ) :
 		// Load Utilities JS Script
 		wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js', array( 'jquery' ) );
 
-		wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js', array( 'jquery' ) );
 
 		wp_enqueue_script( 'ayageek-utilities',
 			get_template_directory_uri() . '/js/utilities.js',
@@ -758,7 +758,7 @@ endif; // ayageek_sanitize_checkbox
 if ( ! function_exists( 'ayageek_sanitize_html' ) ) :
 
 	function ayageek_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 endif; // ayageek_sanitize_html
