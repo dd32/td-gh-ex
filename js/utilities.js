@@ -12,7 +12,7 @@
 			$('#wpadminbar').css('position', 'fixed');
 		}
 
-		$(window).scroll(function () {
+		$(window).on('scroll', function () {
 
 			if ($(this).scrollTop() > 100) {
 
@@ -25,7 +25,7 @@
 			}
 		});
 
-		$('.scrollup').click(function () {
+		$('.scrollup').on('click', function () {
 			
 			$("html, body").animate({
 				  scrollTop: 0
@@ -118,7 +118,7 @@
 		});
 
 		// re-init main menu on screen resize
-		$(window).resize(function () {
+		$(window).on('resize', function () {
 	       
 	    	ayapsychology_mainMenuClear();
 	    	ayapsychology_mainMenuInit();
@@ -140,8 +140,8 @@
 
 		if ( $(window).width() >= 800 ) {
 		
-			$('#navmain > div > ul > li:has("ul")').removeClass('level-one-sub-menu');
-			$('#navmain > div > ul li ul li:has("ul")').removeClass('level-two-sub-menu');										
+			$('#navmain > div > ul > li').has('ul').removeClass('level-one-sub-menu');
+			$('#navmain > div > ul li ul li').has('ul').removeClass('level-two-sub-menu');										
 		}
 
 		if ( $('ul:first-child', $('#navmain > div') ).is( ":visible" ) ) {
@@ -154,18 +154,18 @@
 
 		if ( $(window).width() >= 800 ) {
 		
-			$('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
-			$('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');
+			$('#navmain > div > ul > li').has('ul').addClass('level-one-sub-menu');
+			$('#navmain > div > ul li ul li').has('ul').addClass('level-two-sub-menu');
 
     // add support of browsers which don't support focus-within
     $('#navmain > div > ul > li > a:not(.login-form-icon):not(.search-form-icon), #navmain > div > ul > li > ul > li > a, #navmain > div > ul > li > ul > li > ul > li > a, .mega-menu-sub-menu')
-      .bind('mouseenter focus', function() {
+      .on('mouseenter focus', function() {
         $(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
         $(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
 
         if (!$(this).parent().find('#cart-popup-content').length && $('#cart-popup-content').css('right') != '-99999px')
           $('#cart-popup-content').css('right', '-99999px');
-      }).bind('mouseleave blur', function() {
+      }).on('mouseleave blur', function() {
         $(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
         $(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
     });										
