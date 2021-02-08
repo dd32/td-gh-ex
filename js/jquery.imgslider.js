@@ -27,8 +27,8 @@
 	/*global jQuery: false */
 	$.fn.imagesLoaded = function( callback ) {
 		var $this = this,
-			deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
-			hasNotify = $.isFunction(deferred.notify),
+			deferred = (typeof $.Deferred === "function") ? $.Deferred() : 0,
+			hasNotify = (typeof deferred.notify === "function"),
 			$images = $this.find('img').add( $this.filter('img') ),
 			loaded = [],
 			proper = [],
@@ -46,7 +46,7 @@
 				}
 			}
 
-			if ( $.isFunction( callback ) ) {
+			if ( (typeof  callback  === "function") ) {
 				callback.call( $this, $images, $proper, $broken );
 			}
 		}
@@ -78,7 +78,7 @@
 			// call doneLoading and clean listeners if all images are loaded
 			if ( $images.length === loaded.length ){
 				setTimeout( doneLoading );
-				$images.unbind( '.imagesLoaded' );
+				$images.off( '.imagesLoaded' );
 			}
 		}
 
@@ -86,7 +86,7 @@
 		if ( !$images.length ) {
 			doneLoading();
 		} else {
-			$images.bind( 'load.imagesLoaded error.imagesLoaded', function( event ){
+			$images.on( 'load.imagesLoaded error.imagesLoaded', function( event ){
 				// trigger imgLoaded
 				imgLoaded( event.target, event.type === 'error' );
 			}).each( function( i, el ) {
@@ -234,7 +234,7 @@
 			this.$initElems.wrapAll( '<div class="fs-temp"></div>' ).hide();
 
 			this.$initElems
-				.filter( ':lt(3)' )
+				.slice( 0, 3 )
 				.clone()
 				.show()
 				.prependTo( this.$el )
@@ -265,8 +265,8 @@
 				var $nav = $( '<nav class="fs-navigation"><span>Previous</span><span>Next</span></nav>' ).appendTo( this.$el.parent() );
 
 				// next and previous
-				this.$navPrev	= $nav.find( 'span:first' );
-				this.$navNext	= $nav.find( 'span:last' );
+				this.$navPrev	= $nav.find( 'span' ).first();
+				this.$navNext	= $nav.find( 'span' ).last();
 
 				this._initNavigationEvents();
 
@@ -444,7 +444,10 @@
 
 			// now show new images
 
-			var $slides = this.$blocks.find( 'figure:first' ).css( 'width', '0%');
+			this.$blocks.each(function(){
+				$(this).find('figure').first().addClass('first-figure');
+			});
+			var $slides = this.$blocks.find( 'figure.first-figure' ).css( 'width', '0%');
 			
 			if( Modernizr.csstransitions ) {
 
@@ -555,7 +558,7 @@
 				
 				}
 				
-				if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
+				if ( !(typeof  instance[options]  === "function") || options.charAt(0) === "_" ) {
 
 					logError( "no such method '" + options + "' for imgslider instance" );
 					return;
