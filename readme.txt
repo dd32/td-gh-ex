@@ -3,10 +3,10 @@ Contributors: ayatemplates
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
 sticky-post, theme-options, footer-widgets
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: 1.0.6
-Requires PHP: 5.6.0
-Requires at least: 4.8.0
+Requires PHP: 5.6
+Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.7 =
+* Fix deprecated jQuery code usage
 
 = 1.2.6 =
 * Make Links within content underlined
