@@ -5,14 +5,14 @@ Theme URI: https://ayatemplates.com/product/ayahairsalon
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayaclub
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: ayahairsalon
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 5.6.0
-Requires at least: 4.8.0
-Tested up to: 5.4.1
+Requires PHP: 5.6
+Requires at least: 5.3
+Tested up to: 5.6
 */
 
 /* general styles */
@@ -27,6 +27,11 @@ body:before {
 
 article a {
 	text-decoration: underline;
+}
+
+.entry-title a,
+.post-entry-title a {
+	text-decoration: none;
 }
 
 a {
@@ -118,6 +123,7 @@ h2 {
 }
 
 #header-main-fixed a:hover {
+	text-decoration: none;
 	color:#EE5C13; 
 }
 
