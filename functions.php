@@ -312,10 +312,11 @@ function ayaspirit_load_scripts() {
 	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js', array( 'jquery' ) );
 
 	// Load Slider JS Script
-	wp_enqueue_script( 'modernizr-custom-79639', get_template_directory_uri() . '/js/modernizr.custom.79639.min.js',
+	wp_enqueue_script( 'modernizr-custom-79639',
+		get_template_directory_uri() . '/js/modernizr.custom.79639.js',
 		array( 'jquery' ) );
 
-	wp_enqueue_script( 'jquery-ba-cond', get_template_directory_uri() . '/js/jquery.ba-cond.min.js',
+	wp_enqueue_script( 'jquery-ba-cond', get_template_directory_uri() . '/js/jquery.ba-cond.js',
 		array( 'modernizr-custom-79639' ) );
 
 	wp_enqueue_script( 'jquery-slitslider', get_template_directory_uri() . '/js/jquery.slitslider.js',

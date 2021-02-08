@@ -25,7 +25,7 @@
       test = args[ i++ ];
       callback = args[ i++ ];
       
-      test = $.isFunction( test ) ? test.call( this ) : test;
+      test = (typeof  test  === "function") ? test.call( this ) : test;
       
       result = !callback ? test
         : test ? callback.call( this, test )

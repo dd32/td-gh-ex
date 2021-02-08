@@ -21,7 +21,7 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 	var called = false, $el = this
 	jQuery(this).one(transEndEventName, function () { called = true })
 
-	var callback = function () { if (!called) $($el).trigger(transEndEventName) }
+	var callback = function () { if (!called) jQuery($el).trigger(transEndEventName) }
 	setTimeout(callback, duration)
 	return this
 }
@@ -45,10 +45,10 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 
 	$special = $event.special.debouncedresize = {
 		setup: function() {
-			$( this ).on( "resize", $special.handler );
+			jQuery( this ).on( "resize", $special.handler );
 		},
 		teardown: function() {
-			$( this ).off( "resize", $special.handler );
+			jQuery( this ).off( "resize", $special.handler );
 		},
 		handler: function( event, execAsap ) {
 			// Save the context
@@ -72,13 +72,13 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 	};
 
 	// global
-	var $window = $( window ),
-		$document = $( document ),
+	var $window = jQuery( window ),
+		$document = jQuery( document ),
 		Modernizr = window.Modernizr;
 
 	$.Slitslider = function( options, element ) {
 
-		this.$elWrapper = $( element );
+		this.$elWrapper = jQuery( element );
 		this._init( options );
 
 	};
@@ -158,12 +158,12 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 		},
 		_layout : function() {
 
-			this.$slideWrapper = $( '<div class="sl-slides-wrapper" />' );
+			this.$slideWrapper = jQuery( '<div class="sl-slides-wrapper" />' );
 
 			// wrap the slides
 			this.$slides.wrapAll( this.$slideWrapper ).each( function( i ) {
 
-				var $slide = $( this ),
+				var $slide = jQuery( this ),
 					// vertical || horizontal
 					orientation = $slide.data( 'orientation' );
 
@@ -274,7 +274,7 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 			// add the 2 slices and animate them
 			$movingSlide.css( 'z-index', this.slidesCount )
 						.find( 'div.sl-content-wrapper' )
-						.wrap( $( '<div class="sl-content-slice" />' ).css( transitionProp ) )
+						.wrap( jQuery( '<div class="sl-content-slice" />' ).css( transitionProp ) )
 						.parent()
 						.cond(
 							dir === 'prev',
@@ -508,7 +508,7 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 			$document.off( '.slitslider' );
 			this.$slides.each( function( i ) {
 
-				var $slide = $( this ),
+				var $slide = jQuery( this ),
 					$content = $slide.find( 'div.sl-content' ).children();
 
 				$content.appendTo( $slide );
@@ -534,7 +534,7 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 
 			$slides.each( function( i ) {
 
-				var $slide = $( this ),
+				var $slide = jQuery( this ),
 					// vertical || horizontal
 					orientation = $slide.data( 'orientation' );
 
@@ -655,7 +655,7 @@ jQuery.fn.slitsliderEmulateTransitionEnd = function (duration) {
 
 				}
 
-				if ( !$.isFunction( self[options] ) || options.charAt(0) === "_" ) {
+				if ( !(typeof  self[options]  === "function") || options.charAt(0) === "_" ) {
 
 					logError( "no such method '" + options + "' for slitslider self" );
 					return;

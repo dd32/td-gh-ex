@@ -3,12 +3,12 @@ jQuery( document ).ready(function() {
 	// add submenu icons class in main menu (only for large resolution)
 	if (ayaspirit_IsLargeResolution()) {
 	
-		jQuery('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
-		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');
+		jQuery('#navmain > div > ul > li').has('ul').addClass('level-one-sub-menu');
+		jQuery('#navmain > div > ul li ul li').has('ul').addClass('level-two-sub-menu');
 
     // add support of browsers which don't support focus-within
     jQuery('#navmain > div > ul > li > a:not(.login-form-icon):not(.search-form-icon), #navmain > div > ul > li > ul > li > a, #navmain > div > ul > li > ul > li > ul > li > a, .mega-menu-sub-menu')
-      .bind('mouseenter focus', function() {
+      .on('mouseenter focus', function() {
         jQuery(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
         jQuery(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
 
@@ -41,7 +41,7 @@ jQuery( document ).ready(function() {
         // show search popup content when focus on search popup link if hidden on iterate back (shift + tab)
         if (jQuery(this).closest('#navmain > div > ul > li').find('#search-popup-content').length && jQuery('#search-popup-content').css('z-index') == '-1')
           jQuery('#search-popup-content').css('z-index', '5000');
-      }).bind('mouseleave blur', function() {
+      }).on('mouseleave blur', function() {
         jQuery(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
         jQuery(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
     });										
@@ -270,7 +270,7 @@ function ayaspirit_init_loading_effects() {
 
 jQuery(document).ready(function () {
 
-  jQuery(window).scroll(function () {
+  jQuery(window).on('scroll', function () {
 	  if (jQuery(this).scrollTop() > 100) {
 		  jQuery('.scrollup').fadeIn();
 	  } else {
@@ -278,7 +278,7 @@ jQuery(document).ready(function () {
 	  }
   });
 
-  jQuery('.scrollup').click(function () {
+  jQuery('.scrollup').on('click', function () {
 	  jQuery("html, body").animate({
 		  scrollTop: 0
 	  }, 600);
