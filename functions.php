@@ -238,7 +238,7 @@ if ( ! function_exists( 'ayaportfolio_load_scripts' ) ) :
 			array( 'jquery' ) );
 
 		wp_enqueue_script( 'jquery.carousel-3d',
-			get_template_directory_uri() . '/js/jquery.carousel-3d.min.js',
+			get_template_directory_uri() . '/js/jquery.carousel-3d.js',
 			array( 'jquery' ) );
 
 		$data = array(
@@ -534,7 +534,7 @@ endif; // ayaportfolio_sanitize_checkbox
 if ( ! function_exists( 'ayaportfolio_sanitize_html' ) ) :
 
 	function ayaportfolio_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 endif; // ayaportfolio_sanitize_html

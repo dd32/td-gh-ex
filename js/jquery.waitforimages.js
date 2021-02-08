@@ -1,9 +1,25 @@
-/*! waitForImages jQuery Plugin - v2.0.0 - 2014-11-14
+/*! waitForImages jQuery Plugin - v2.4.0 - 2018-02-13
 * https://github.com/alexanderdickson/waitForImages
-* Copyright (c) 2014 Alex Dickson; Licensed MIT */
-;(function ($) {
+* Copyright (c) 2018 Alex Dickson; Licensed MIT */
+;(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // CommonJS / nodejs module
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
     // Namespace all events.
     var eventNamespace = 'waitForImages';
+
+    // Is srcset supported by this browser?
+    var hasSrcset = (function(img) {
+        return img.srcset && img.sizes;
+    })(new Image());
 
     // CSS properties which contain references to images.
     $.waitForImages = {
@@ -17,20 +33,23 @@
         hasImageAttributes: ['srcset']
     };
 
-    // Custom selector to find `img` elements that have a valid `src`
-    // attribute and have not already loaded.
-    $.expr[':'].uncached = function (obj) {
+    // Custom selector to find all `img` elements with a valid `src` attribute.
+    $.expr.pseudos['has-src'] = function (obj) {
         // Ensure we are dealing with an `img` element with a valid
         // `src` attribute.
-        if (!$(obj).is('img[src][src!=""]')) {
+        return $(obj).is('img[src][src!=""]');
+    };
+
+    // Custom selector to find images which are not already cached by the
+    // browser.
+    $.expr.pseudos.uncached = function (obj) {
+        // Ensure we are dealing with an `img` element with a valid
+        // `src` attribute.
+        if (!$(obj).is(':has-src')) {
             return false;
         }
 
-        // Firefox's `complete` property will always be `true` even if the
-        // image has not been downloaded. Doing it this way works in Firefox.
-        var img = new Image();
-        img.src = obj.src;
-        return !img.complete;
+        return !obj.complete;
     };
 
     $.fn.waitForImages = function () {
@@ -38,6 +57,16 @@
         var allImgsLength = 0;
         var allImgsLoaded = 0;
         var deferred = $.Deferred();
+        var originalCollection = this;
+        var allImgs = [];
+
+        // CSS properties which may contain an image.
+        var hasImgProperties = $.waitForImages.hasImageProperties || [];
+        // Element attributes which may contain an image.
+        var hasImageAttributes = $.waitForImages.hasImageAttributes || [];
+        // To match `url()` references.
+        // Spec: http://www.w3.org/TR/CSS2/syndata.html#value-def-uri
+        var matchUrl = /url\(\s*(['"]?)(.*?)\1\s*\)/g;
 
         var finishedCallback;
         var eachCallback;
@@ -53,7 +82,7 @@
         } else {
 
             // Handle if using deferred object and only one param was passed in.
-            if (arguments.length === 1 && $.type(arguments[0]) === 'boolean') {
+            if (arguments.length === 1 && (typeof arguments[0] === 'boolean')) {
                 waitForAll = arguments[0];
             } else {
                 finishedCallback = arguments[0];
@@ -67,11 +96,11 @@
         finishedCallback = finishedCallback || $.noop;
         eachCallback = eachCallback || $.noop;
 
-        // Convert waitForAll to Boolean
+        // Convert waitForAll to Boolean.
         waitForAll = !! waitForAll;
 
         // Ensure callbacks are functions.
-        if (!$.isFunction(finishedCallback) || !$.isFunction(eachCallback)) {
+        if (!(typeof finishedCallback === 'function') || !(typeof eachCallback === 'function')) {
             throw new TypeError('An invalid callback was supplied.');
         }
 
@@ -79,14 +108,6 @@
             // Build a list of all imgs, dependent on what images will
             // be considered.
             var obj = $(this);
-            var allImgs = [];
-            // CSS properties which may contain an image.
-            var hasImgProperties = $.waitForImages.hasImageProperties || [];
-            // Element attributes which may contain an image.
-            var hasImageAttributes = $.waitForImages.hasImageAttributes || [];
-            // To match `url()` references.
-            // Spec: http://www.w3.org/TR/CSS2/syndata.html#value-def-uri
-            var matchUrl = /url\(\s*(['"]?)(.*?)\1\s*\)/g;
 
             if (waitForAll) {
 
@@ -97,7 +118,8 @@
 
                     // If an `img` element, add it. But keep iterating in
                     // case it has a background image too.
-                    if (element.is('img:uncached')) {
+                    if (element.is('img:has-src') &&
+                        !element.is('[srcset]')) {
                         allImgs.push({
                             src: element.attr('src'),
                             element: element[0]
@@ -131,23 +153,16 @@
                             return true;
                         }
 
-                        // Check for multiple comma separated images
-                        attributeValues = attributeValue.split(',');
-
-                        $.each(attributeValues, function(i, value) {
-                            // Trim value and get string before first
-                            // whitespace (for use with srcset).
-                            value = $.trim(value).split(' ')[0];
-                            allImgs.push({
-                                src: value,
-                                element: element[0]
-                            });
+                        allImgs.push({
+                            src: element.attr('src'),
+                            srcset: element.attr('srcset'),
+                            element: element[0]
                         });
                     });
                 });
             } else {
                 // For images only, the task is simpler.
-                obj.find('img:uncached')
+                obj.find('img:has-src')
                     .each(function () {
                     allImgs.push({
                         src: this.src,
@@ -155,54 +170,60 @@
                     });
                 });
             }
+        });
 
-            allImgsLength = allImgs.length;
-            allImgsLoaded = 0;
+        allImgsLength = allImgs.length;
+        allImgsLoaded = 0;
 
-            // If no images found, don't bother.
-            if (allImgsLength === 0) {
-                finishedCallback.call(obj[0]);
-                deferred.resolveWith(obj[0]);
-            }
+        // If no images found, don't bother.
+        if (allImgsLength === 0) {
+            finishedCallback.call(originalCollection);
+            deferred.resolveWith(originalCollection);
+        }
 
-            $.each(allImgs, function (i, img) {
+        // Now that we've found all imgs in all elements in this,
+        // load them and attach callbacks.
+        $.each(allImgs, function (i, img) {
 
-                var image = new Image();
-                var events =
-                  'load.' + eventNamespace + ' error.' + eventNamespace;
+            var image = new Image();
+            var events =
+              'load.' + eventNamespace + ' error.' + eventNamespace;
 
-                // Handle the image loading and error with the same callback.
-                $(image).one(events, function me (event) {
-                    // If an error occurred with loading the image, set the
-                    // third argument accordingly.
-                    var eachArguments = [
-                        allImgsLoaded,
-                        allImgsLength,
-                        event.type == 'load'
-                    ];
-                    allImgsLoaded++;
+            // Handle the image loading and error with the same callback.
+            $(image).one(events, function me (event) {
+                // If an error occurred with loading the image, set the
+                // third argument accordingly.
+                var eachArguments = [
+                    allImgsLoaded,
+                    allImgsLength,
+                    event.type == 'load'
+                ];
+                allImgsLoaded++;
 
-                    eachCallback.apply(img.element, eachArguments);
-                    deferred.notifyWith(img.element, eachArguments);
+                eachCallback.apply(img.element, eachArguments);
+                deferred.notifyWith(img.element, eachArguments);
 
-                    // Unbind the event listeners. I use this in addition to
-                    // `one` as one of those events won't be called (either
-                    // 'load' or 'error' will be called).
-                    $(this).off(events, me);
+                // Unbind the event listeners. I use this in addition to
+                // `one` as one of those events won't be called (either
+                // 'load' or 'error' will be called).
+                $(this).off(events, me);
 
-                    if (allImgsLoaded == allImgsLength) {
-                        finishedCallback.call(obj[0]);
-                        deferred.resolveWith(obj[0]);
-                        return false;
-                    }
+                if (allImgsLoaded == allImgsLength) {
+                    finishedCallback.call(originalCollection[0]);
+                    deferred.resolveWith(originalCollection[0]);
+                    return false;
+                }
 
-                });
-
-                image.src = img.src;
             });
+
+            if (hasSrcset && img.srcset) {
+                image.srcset = img.srcset;
+                image.sizes = img.sizes;
+            }
+            image.src = img.src;
         });
 
         return deferred.promise();
 
     };
-}(jQuery));
+}));

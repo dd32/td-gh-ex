@@ -159,14 +159,14 @@
         // Select the correct events
         if( 'ontouchstart' in window || 'onmsgesturechange' in window ){
             // Device with touchscreen
-            $(document).bind("touchmove MSPointerMove pointermove", this.checkElements);
+            $(document).on("touchmove MSPointerMove pointermove", this.checkElements);
         }
 
         // Always load on window load
-        $(options.scrollBox).bind("load scroll", this.checkElements);
+        $(options.scrollBox).on("load scroll", this.checkElements);
 
         // On resize change the height var
-        $(window).resize(function(e){
+        $(window).on('resize', function(e){
             boxSize = {height: $(options.scrollBox).height(), width: $(options.scrollBox).width()};
             $elem.checkElements();
         });

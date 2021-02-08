@@ -40,10 +40,10 @@
     //create prev/next buttons
     this._prevButton = jQuery('<div data-prev-button></div>')[0];
     jQuery(this.el).append(this._prevButton);
-    jQuery(this._prevButton).click(this.prev.bind(this));
+    jQuery(this._prevButton).on('click', this.prev.bind(this));
     this._nextButton = jQuery('<div data-next-button></div>')[0];
     jQuery(this.el).append(this._nextButton);
-    jQuery(this._nextButton).click(this.next.bind(this));
+    jQuery(this._nextButton).on('click', this.next.bind(this));
 
     this.rotate(currentIndex);
   };
@@ -220,8 +220,8 @@
     jQuery(this._contentWrapper).waitForImages(function () {
       setTimeout(function () {
         this._resize();
-        jQuery(this._content).resize(this._resize.bind(this));
-        jQuery(this.el).resize(this._resize.bind(this));
+        jQuery(this._content).on('resize', this._resize.bind(this));
+        jQuery(this.el).on('resize', this._resize.bind(this));
         jQuery(this._content).css('visibility', 'visible');
       }.bind(this), 1);
     }.bind(this));
@@ -278,7 +278,7 @@
     this._childObjArray = [];
     this._carousel3dObj = carousel3dObj;
     this.el = jQuery('<div data-children-wrapper></div>')[0];
-    jQuery(carousel3dObj.el).resize(this._resize.bind(this));
+    jQuery(carousel3dObj.el).on('resize', this._resize.bind(this));
   };
 
   /**
