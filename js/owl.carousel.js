@@ -157,21 +157,21 @@
 			}
 		};
 
-		$.each([ 'onResize', 'onThrottledResize' ], $.proxy(function(i, handler) {
-			this._handlers[handler] = $.proxy(this[handler], this);
-		}, this));
+		$.each([ 'onResize', 'onThrottledResize' ], function(i, handler) {
+			this._handlers[handler] = this[handler].bind(this);
+		}.bind(this));
 
-		$.each(Owl.Plugins, $.proxy(function(key, plugin) {
+		$.each(Owl.Plugins, function(key, plugin) {
 			this._plugins[key.charAt(0).toLowerCase() + key.slice(1)]
 				= new plugin(this);
-		}, this));
+		}.bind(this));
 
-		$.each(Owl.Workers, $.proxy(function(priority, worker) {
+		$.each(Owl.Workers, function(priority, worker) {
 			this._pipe.push({
 				'filter': worker.filter,
-				'run': $.proxy(worker.run, this)
+				'run': worker.run.bind(this)
 			});
-		}, this));
+		}.bind(this));
 
 		this.setup();
 		this.initialize();
@@ -434,7 +434,11 @@
 			}
 
 			this.$stage.children('.active').removeClass('active');
-			this.$stage.children(':eq(' + matches.join('), :eq(') + ')').addClass('active');
+			for (var j = 0; j < matches.length; ++j) {
+        var match = matches[j];
+
+        this.$stage.children().eq(match).addClass('active');
+      }
 
 			this.$stage.children('.center').removeClass('center');
 			if (this.settings.center) {
@@ -626,7 +630,7 @@
 	Owl.prototype.update = function() {
 		var i = 0,
 			n = this._pipe.length,
-			filter = $.proxy(function(p) { return this[p] }, this._invalidated),
+			filter = function(p) { return this[p] }.bind(this._invalidated),
 			cache = {};
 
 		while (i < n) {
@@ -729,7 +733,7 @@
 	 */
 	Owl.prototype.registerEventHandlers = function() {
 		if ($.support.transition) {
-			this.$stage.on($.support.transition.end + '.owl.core', $.proxy(this.onTransitionEnd, this));
+			this.$stage.on($.support.transition.end + '.owl.core', this.onTransitionEnd.bind(this));
 		}
 
 		if (this.settings.responsive !== false) {
@@ -738,13 +742,13 @@
 
 		if (this.settings.mouseDrag) {
 			this.$element.addClass(this.options.dragClass);
-			this.$stage.on('mousedown.owl.core', $.proxy(this.onDragStart, this));
+			this.$stage.on('mousedown.owl.core', this.onDragStart.bind(this));
 			this.$stage.on('dragstart.owl.core selectstart.owl.core', function() { return false });
 		}
 
 		if (this.settings.touchDrag){
-			this.$stage.on('touchstart.owl.core', $.proxy(this.onDragStart, this));
-			this.$stage.on('touchcancel.owl.core', $.proxy(this.onDragEnd, this));
+			this.$stage.on('touchstart.owl.core', this.onDragStart.bind(this));
+			this.$stage.on('touchcancel.owl.core', this.onDragEnd.bind(this));
 		}
 	};
 
@@ -793,12 +797,12 @@
 		this._drag.stage.current = stage;
 		this._drag.pointer = this.pointer(event);
 
-		$(document).on('mouseup.owl.core touchend.owl.core', $.proxy(this.onDragEnd, this));
+		$(document).on('mouseup.owl.core touchend.owl.core', this.onDragEnd.bind(this));
 
-		$(document).one('mousemove.owl.core touchmove.owl.core', $.proxy(function(event) {
+		$(document).one('mousemove.owl.core touchmove.owl.core', function(event) {
 			var delta = this.difference(this._drag.pointer, this.pointer(event));
 
-			$(document).on('mousemove.owl.core touchmove.owl.core', $.proxy(this.onDragMove, this));
+			$(document).on('mousemove.owl.core touchmove.owl.core', this.onDragMove.bind(this));
 
 			if (Math.abs(delta.x) < Math.abs(delta.y) && this.is('valid')) {
 				return;
@@ -808,7 +812,7 @@
 
 			this.enter('dragging');
 			this.trigger('drag');
-		}, this));
+		}.bind(this));
 	};
 
 	/**
@@ -899,7 +903,7 @@
 
 		if (!this.settings.freeDrag) {
 			// check closest item
-			$.each(coordinates, $.proxy(function(index, value) {
+			$.each(coordinates, function(index, value) {
 				// on a left pull, check on current index
 				if (direction === 'left' && coordinate > value - pull && coordinate < value + pull) {
 					position = index;
@@ -912,7 +916,7 @@
 					position = direction === 'left' ? index + 1 : index;
 				}
 				return position === -1;
-			}, this));
+			}.bind(this));
 		}
 
 		if (!this.settings.loop) {
@@ -953,7 +957,7 @@
 		} else if (animate) {
 			this.$stage.animate({
 				left: coordinate + 'px'
-			}, this.speed(), this.settings.fallbackEasing, $.proxy(this.onTransitionEnd, this));
+			}, this.speed(), this.settings.fallbackEasing, this.onTransitionEnd.bind(this));
 		} else {
 			this.$stage.css({
 				left: coordinate + 'px'
@@ -1010,7 +1014,7 @@
 	 * @returns {Array.<String>} - The invalidated parts.
 	 */
 	Owl.prototype.invalidate = function(part) {
-		if ($.type(part) === 'string') {
+		if (typeof part === 'string') {
 			this._invalidated[part] = true;
 			this.is('valid') && this.leave('valid');
 		}
@@ -1196,9 +1200,9 @@
 			coordinate;
 
 		if (position === undefined) {
-			return $.map(this._coordinates, $.proxy(function(coordinate, index) {
+			return $.map(this._coordinates, function(coordinate, index) {
 				return this.coordinates(index);
-			}, this));
+			}.bind(this));
 		}
 
 		if (this.settings.center) {
@@ -1356,12 +1360,12 @@
 
 		content.filter(function() {
 			return this.nodeType === 1;
-		}).each($.proxy(function(index, item) {
+		}).each(function(index, item) {
 			item = this.prepare(item);
 			this.$stage.append(item);
 			this._items.push(item);
 			this._mergers.push(item.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
-		}, this));
+		}.bind(this));
 
 		this.reset(this.isNumeric(this.settings.startPosition) ? this.settings.startPosition : 0);
 
@@ -1433,16 +1437,16 @@
 	 * @protected
 	 */
 	Owl.prototype.preloadAutoWidthImages = function(images) {
-		images.each($.proxy(function(i, element) {
+		images.each(function(i, element) {
 			this.enter('pre-loading');
 			element = $(element);
-			$(new Image()).one('load', $.proxy(function(e) {
+			$(new Image()).one('load', function(e) {
 				element.attr('src', e.target.src);
 				element.css('opacity', 1);
 				this.leave('pre-loading');
 				!this.is('pre-loading') && !this.is('initializing') && this.refresh();
-			}, this)).attr('src', element.attr('src') || element.attr('data-src') || element.attr('data-src-retina'));
-		}, this));
+			}.bind(this)).attr('src', element.attr('src') || element.attr('data-src') || element.attr('data-src-retina'));
+		}.bind(this));
 	};
 
 	/**
@@ -1581,13 +1585,13 @@
 	 * @param name - The state name.
 	 */
 	Owl.prototype.enter = function(name) {
-		$.each([ name ].concat(this._states.tags[name] || []), $.proxy(function(i, name) {
+		$.each([ name ].concat(this._states.tags[name] || []), function(i, name) {
 			if (this._states.current[name] === undefined) {
 				this._states.current[name] = 0;
 			}
 
 			this._states.current[name]++;
-		}, this));
+		}.bind(this));
 	};
 
 	/**
@@ -1595,9 +1599,9 @@
 	 * @param name - The state name.
 	 */
 	Owl.prototype.leave = function(name) {
-		$.each([ name ].concat(this._states.tags[name] || []), $.proxy(function(i, name) {
+		$.each([ name ].concat(this._states.tags[name] || []), function(i, name) {
 			this._states.current[name]--;
-		}, this));
+		}.bind(this));
 	};
 
 	/**
@@ -1628,9 +1632,9 @@
 				this._states.tags[object.name] = this._states.tags[object.name].concat(object.tags);
 			}
 
-			this._states.tags[object.name] = $.grep(this._states.tags[object.name], $.proxy(function(tag, i) {
+			this._states.tags[object.name] = $.grep(this._states.tags[object.name], function(tag, i) {
 				return $.inArray(tag, this._states.tags[object.name]) === i;
-			}, this));
+			}.bind(this));
 		}
 	};
 
@@ -1640,9 +1644,9 @@
 	 * @param {Array.<String>} events - The events to suppress.
 	 */
 	Owl.prototype.suppress = function(events) {
-		$.each(events, $.proxy(function(index, event) {
+		$.each(events, function(index, event) {
 			this._supress[event] = true;
-		}, this));
+		}.bind(this));
 	};
 
 	/**
@@ -1651,9 +1655,9 @@
 	 * @param {Array.<String>} events - The events to release.
 	 */
 	Owl.prototype.release = function(events) {
-		$.each(events, $.proxy(function(index, event) {
+		$.each(events, function(index, event) {
 			delete this._supress[event];
-		}, this));
+		}.bind(this));
 	};
 
 	/**
@@ -1728,13 +1732,13 @@
 					'next', 'prev', 'to', 'destroy', 'refresh', 'replace', 'add', 'remove'
 				], function(i, event) {
 					data.register({ type: Owl.Type.Event, name: event });
-					data.$element.on(event + '.owl.carousel.core', $.proxy(function(e) {
+					data.$element.on(event + '.owl.carousel.core', function(e) {
 						if (e.namespace && e.relatedTarget !== this) {
 							this.suppress([ event ]);
 							data[event].apply(this, [].slice.call(arguments, 1));
 							this.release([ event ]);
 						}
-					}, data));
+					}.bind(data));
 				});
 			}
 
@@ -1794,11 +1798,11 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.autoRefresh) {
 					this.watch();
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// set default options
@@ -1826,7 +1830,7 @@
 		}
 
 		this._visible = this._core.isVisible();
-		this._interval = window.setInterval($.proxy(this.refresh, this), this._core.settings.autoRefreshInterval);
+		this._interval = window.setInterval(this.refresh.bind(this), this._core.settings.autoRefreshInterval);
 	};
 
 	/**
@@ -1900,7 +1904,7 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel change.owl.carousel resized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.carousel change.owl.carousel resized.owl.carousel': function(e) {
 				if (!e.namespace) {
 					return;
 				}
@@ -1915,7 +1919,7 @@
 						i = ((settings.center && n * -1) || 0),
 						position = (e.property && e.property.value !== undefined ? e.property.value : this._core.current()) + i,
 						clones = this._core.clones().length,
-						load = $.proxy(function(i, v) { this.load(v) }, this);
+						load = function(i, v) { this.load(v) }.bind(this);
 					//TODO: Need documentation for this new option
 					if (settings.lazyLoadEager > 0) {
 						n += settings.lazyLoadEager;
@@ -1932,7 +1936,7 @@
 						position++;
 					}
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// set the default options
@@ -1964,33 +1968,33 @@
 			return;
 		}
 
-		$elements.each($.proxy(function(index, element) {
+		$elements.each(function(index, element) {
 			var $element = $(element), image,
                 url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src') || $element.attr('data-srcset');
 
 			this._core.trigger('load', { element: $element, url: url }, 'lazy');
 
 			if ($element.is('img')) {
-				$element.one('load.owl.lazy', $.proxy(function() {
+				$element.one('load.owl.lazy', function() {
 					$element.css('opacity', 1);
 					this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-				}, this)).attr('src', url);
+				}.bind(this)).attr('src', url);
             } else if ($element.is('source')) {
-                $element.one('load.owl.lazy', $.proxy(function() {
+                $element.one('load.owl.lazy', function() {
                     this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-                }, this)).attr('srcset', url);
+                }.bind(this)).attr('srcset', url);
 			} else {
 				image = new Image();
-				image.onload = $.proxy(function() {
+				image.onload = function() {
 					$element.css({
 						'background-image': 'url("' + url + '")',
 						'opacity': '1'
 					});
 					this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-				}, this);
+				}.bind(this);
 				image.src = url;
 			}
-		}, this));
+		}.bind(this));
 
 		this._loaded.push($item.get(0));
 	};
@@ -2044,22 +2048,22 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel refreshed.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.carousel refreshed.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.autoHeight) {
 					this.update();
 				}
-			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'changed.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.autoHeight && e.property.name === 'position'){
 					this.update();
 				}
-			}, this),
-			'loaded.owl.lazy': $.proxy(function(e) {
+			}.bind(this),
+			'loaded.owl.lazy': function(e) {
 				if (e.namespace && this._core.settings.autoHeight
 					&& e.element.closest('.' + this._core.settings.itemClass).index() === this._core.current()) {
 					this.update();
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// set default options
@@ -2072,7 +2076,7 @@
 
 		// These changes have been taken from a PR by gavrochelegnou proposed in #1575
 		// and have been made compatible with the latest jQuery version
-		$(window).on('load', function() {
+		$(this).on('load', function() {
 			if (refThis._core.settings.autoHeight) {
 				refThis.update();
 			}
@@ -2081,7 +2085,7 @@
 		// Autoresize the height of the carousel when window is resized
 		// When carousel has images, the height is dependent on the width
 		// and should also change on resize
-		$(window).resize(function() {
+		$(window).on('resize', function() {
 			if (refThis._core.settings.autoHeight) {
 				if (refThis._intervalId != null) {
 					clearTimeout(refThis._intervalId);
@@ -2190,27 +2194,27 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.carousel': function(e) {
 				if (e.namespace) {
 					this._core.register({ type: 'state', name: 'playing', tags: [ 'interacting' ] });
 				}
-			}, this),
-			'resize.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'resize.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.video && this.isInFullScreen()) {
 					e.preventDefault();
 				}
-			}, this),
-			'refreshed.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'refreshed.owl.carousel': function(e) {
 				if (e.namespace && this._core.is('resizing')) {
 					this._core.$stage.find('.cloned .owl-video-frame').remove();
 				}
-			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'changed.owl.carousel': function(e) {
 				if (e.namespace && e.property.name === 'position' && this._playing) {
 					this.stop();
 				}
-			}, this),
-			'prepared.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'prepared.owl.carousel': function(e) {
 				if (!e.namespace) {
 					return;
 				}
@@ -2221,7 +2225,7 @@
 					$element.css('display', 'none');
 					this.fetch($element, $(e.content));
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// set default options
@@ -2230,9 +2234,9 @@
 		// register event handlers
 		this._core.$element.on(this._handlers);
 
-		this._core.$element.on('click.owl.video', '.owl-video-play-icon', $.proxy(function(e) {
+		this._core.$element.on('click.owl.video', '.owl-video-play-icon', function(e) {
 			this.play(e);
-		}, this));
+		}.bind(this));
 	};
 
 	/**
@@ -2497,22 +2501,22 @@
 		this.next = undefined;
 
 		this.handlers = {
-			'change.owl.carousel': $.proxy(function(e) {
+			'change.owl.carousel': function(e) {
 				if (e.namespace && e.property.name == 'position') {
 					this.previous = this.core.current();
 					this.next = e.property.value;
 				}
-			}, this),
-			'drag.owl.carousel dragged.owl.carousel translated.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'drag.owl.carousel dragged.owl.carousel translated.owl.carousel': function(e) {
 				if (e.namespace) {
 					this.swapping = e.type == 'translated';
 				}
-			}, this),
-			'translate.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'translate.owl.carousel': function(e) {
 				if (e.namespace && this.swapping && (this.core.options.animateOut || this.core.options.animateIn)) {
 					this.swap();
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		this.core.$element.on(this.handlers);
@@ -2545,7 +2549,7 @@
 		this.core.speed(0);
 
 		var left,
-			clear = $.proxy(this.clear, this),
+			clear = this.clear.bind(this),
 			previous = this.core.$stage.children().eq(this.previous),
 			next = this.core.$stage.children().eq(this.next),
 			incoming = this.core.settings.animateIn,
@@ -2654,7 +2658,7 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'changed.owl.carousel': $.proxy(function(e) {
+			'changed.owl.carousel': function(e) {
 				if (e.namespace && e.property.name === 'settings') {
 					if (this._core.settings.autoplay) {
 						this.play();
@@ -2666,42 +2670,42 @@
 					// of the carousel was changed through user interaction.
 					this._time = 0;
 				}
-			}, this),
-			'initialized.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'initialized.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.autoplay) {
 					this.play();
 				}
-			}, this),
-			'play.owl.autoplay': $.proxy(function(e, t, s) {
+			}.bind(this),
+			'play.owl.autoplay': function(e, t, s) {
 				if (e.namespace) {
 					this.play(t, s);
 				}
-			}, this),
-			'stop.owl.autoplay': $.proxy(function(e) {
+			}.bind(this),
+			'stop.owl.autoplay': function(e) {
 				if (e.namespace) {
 					this.stop();
 				}
-			}, this),
-			'mouseover.owl.autoplay': $.proxy(function() {
+			}.bind(this),
+			'mouseover.owl.autoplay': function() {
 				if (this._core.settings.autoplayHoverPause && this._core.is('rotating')) {
 					this.pause();
 				}
-			}, this),
-			'mouseleave.owl.autoplay': $.proxy(function() {
+			}.bind(this),
+			'mouseleave.owl.autoplay': function() {
 				if (this._core.settings.autoplayHoverPause && this._core.is('rotating')) {
 					this.play();
 				}
-			}, this),
-			'touchstart.owl.core': $.proxy(function() {
+			}.bind(this),
+			'touchstart.owl.core': function() {
 				if (this._core.settings.autoplayHoverPause && this._core.is('rotating')) {
 					this.pause();
 				}
-			}, this),
-			'touchend.owl.core': $.proxy(function() {
+			}.bind(this),
+			'touchend.owl.core': function() {
 				if (this._core.settings.autoplayHoverPause) {
 					this.play();
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// register event handlers
@@ -2729,7 +2733,7 @@
 	 */
 	Autoplay.prototype._next = function(speed) {
 		this._call = window.setTimeout(
-			$.proxy(this._next, this, speed),
+			this._next.bind(this, speed),
 			this._timeout * (Math.round(this.read() / this._timeout) + 1) - this.read()
 		);
 
@@ -2779,7 +2783,7 @@
 		this._time += this.read() % timeout - elapsed;
 
 		this._timeout = timeout;
-		this._call = window.setTimeout($.proxy(this._next, this, speed), timeout - elapsed);
+		this._call = window.setTimeout(this._next.bind(this, speed), timeout - elapsed);
 	};
 
 	/**
@@ -2905,28 +2909,28 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'prepared.owl.carousel': $.proxy(function(e) {
+			'prepared.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
 					this._templates.push('<div class="' + this._core.settings.dotClass + '">' +
 						$(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot') + '</div>');
 				}
-			}, this),
-			'added.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'added.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
 					this._templates.splice(e.position, 0, this._templates.pop());
 				}
-			}, this),
-			'remove.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'remove.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
 					this._templates.splice(e.position, 1);
 				}
-			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'changed.owl.carousel': function(e) {
 				if (e.namespace && e.property.name == 'position') {
 					this.draw();
 				}
-			}, this),
-			'initialized.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'initialized.owl.carousel': function(e) {
 				if (e.namespace && !this._initialized) {
 					this._core.trigger('initialize', null, 'navigation');
 					this.initialize();
@@ -2935,15 +2939,15 @@
 					this._initialized = true;
 					this._core.trigger('initialized', null, 'navigation');
 				}
-			}, this),
-			'refreshed.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'refreshed.owl.carousel': function(e) {
 				if (e.namespace && this._initialized) {
 					this._core.trigger('refresh', null, 'navigation');
 					this.update();
 					this.draw();
 					this._core.trigger('refreshed', null, 'navigation');
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// set default options
@@ -2998,16 +3002,16 @@
 			.addClass(settings.navClass[0])
 			.html(settings.navText[0])
 			.prependTo(this._controls.$relative)
-			.on('click', $.proxy(function(e) {
+			.on('click', function(e) {
 				this.prev(settings.navSpeed);
-			}, this));
+			}.bind(this));
 		this._controls.$next = $('<' + settings.navElement + '>')
 			.addClass(settings.navClass[1])
 			.html(settings.navText[1])
 			.appendTo(this._controls.$relative)
-			.on('click', $.proxy(function(e) {
+			.on('click', function(e) {
 				this.next(settings.navSpeed);
-			}, this));
+			}.bind(this));
 
 		// create DOM structure for absolute navigation
 		if (!settings.dotsData) {
@@ -3020,14 +3024,14 @@
 		this._controls.$absolute = (settings.dotsContainer ? $(settings.dotsContainer)
 			: $('<div>').addClass(settings.dotsClass).appendTo(this.$element)).addClass('disabled');
 
-		this._controls.$absolute.on('click', 'button', $.proxy(function(e) {
+		this._controls.$absolute.on('click', 'button', function(e) {
 			var index = $(e.target).parent().is(this._controls.$absolute)
 				? $(e.target).index() : $(e.target).parent().index();
 
 			e.preventDefault();
 
 			this.to(index, settings.dotsSpeed);
-		}, this));
+		}.bind(this));
 
 		/*$el.on('focusin', function() {
 			$(document).off(".carousel");
@@ -3044,7 +3048,7 @@
 
 		// override public methods of the carousel
 		for (override in this._overrides) {
-			this._core[override] = $.proxy(this[override], this);
+			this._core[override] = this[override].bind(this);
 		}
 	};
 
@@ -3170,9 +3174,9 @@
 	 */
 	Navigation.prototype.current = function() {
 		var current = this._core.relative(this._core.current());
-		return $.grep(this._pages, $.proxy(function(page, index) {
+		return $.grep(this._pages, function(page, index) {
 			return page.start <= current && page.end >= current;
-		}, this)).pop();
+		}.bind(this)).pop();
 	};
 
 	/**
@@ -3204,7 +3208,7 @@
 	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
 	 */
 	Navigation.prototype.next = function(speed) {
-		$.proxy(this._overrides.to, this._core)(this.getPosition(true), speed);
+		this._overrides.to.bind(this._core)(this.getPosition(true), speed);
 	};
 
 	/**
@@ -3213,7 +3217,7 @@
 	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
 	 */
 	Navigation.prototype.prev = function(speed) {
-		$.proxy(this._overrides.to, this._core)(this.getPosition(false), speed);
+		this._overrides.to.bind(this._core)(this.getPosition(false), speed);
 	};
 
 	/**
@@ -3228,9 +3232,9 @@
 
 		if (!standard && this._pages.length) {
 			length = this._pages.length;
-			$.proxy(this._overrides.to, this._core)(this._pages[((position % length) + length) % length].start, speed);
+			this._overrides.to.bind(this._core)(this._pages[((position % length) + length) % length].start, speed);
 		} else {
-			$.proxy(this._overrides.to, this._core)(position, speed);
+			this._overrides.to.bind(this._core)(position, speed);
 		}
 	};
 
@@ -3280,12 +3284,12 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.carousel': function(e) {
 				if (e.namespace && this._core.settings.startPosition === 'URLHash') {
 					$(window).trigger('hashchange.owl.navigation');
 				}
-			}, this),
-			'prepared.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'prepared.owl.carousel': function(e) {
 				if (e.namespace) {
 					var hash = $(e.content).find('[data-hash]').addBack('[data-hash]').attr('data-hash');
 
@@ -3295,8 +3299,8 @@
 
 					this._hashes[hash] = e.content;
 				}
-			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			}.bind(this),
+			'changed.owl.carousel': function(e) {
 				if (e.namespace && e.property.name === 'position') {
 					var current = this._core.items(this._core.relative(this._core.current())),
 						hash = $.map(this._hashes, function(item, hash) {
@@ -3309,7 +3313,7 @@
 
 					window.location.hash = hash;
 				}
-			}, this)
+			}.bind(this)
 		};
 
 		// set default options
@@ -3319,7 +3323,7 @@
 		this.$element.on(this._handlers);
 
 		// register event listener for hash navigation
-		$(window).on('hashchange.owl.navigation', $.proxy(function(e) {
+		$(window).on('hashchange.owl.navigation', function(e) {
 			var hash = window.location.hash.substring(1),
 				items = this._core.$stage.children(),
 				position = this._hashes[hash] && items.index(this._hashes[hash]);
@@ -3329,7 +3333,7 @@
 			}
 
 			this._core.to(this._core.relative(position), false, true);
-		}, this));
+		}.bind(this));
 	};
 
 	/**
