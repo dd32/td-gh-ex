@@ -14,9 +14,9 @@ if (!function_exists('aemi_customizer_controls__analytics')) {
 
         $wp_customize->add_control(
             new Aemi_Dropdown_Options(
-            $wp_customize,
-            'aemi_ga_type',
-            [
+                $wp_customize,
+                'aemi_ga_type',
+                [
                 'label'     =>      __('Google Analytics Method', 'aemi'),
                 'description'   =>  __('Choose the method to set up Google Analytics. If "gtag.js" or "analytics.js" is selected, please fill your Google Analytics ID.', 'aemi'),
                 'section'   =>      'aemi_analytics',
@@ -27,7 +27,7 @@ if (!function_exists('aemi_customizer_controls__analytics')) {
                'analytics'  => __('analytics.js', 'aemi')
                 ]
             ]
-        )
+            )
         );
 
         $wp_customize->add_control('aemi_bing_meta_tag', [
@@ -341,20 +341,22 @@ if (!function_exists('aemi_customizer_controls__identity')) {
     function aemi_customizer_controls__identity($wp_customize)
     {
         $wp_customize->add_control(
-            new WP_Customize_Image_Control($wp_customize, 'aemi_light_scheme_logo', [
+            new WP_Customize_Media_Control($wp_customize, 'aemi_light_scheme_logo', [
             'label'     => __('Add Light for Light Scheme', 'aemi'),
             'description'   => __('It is recommanded to set up this setting. If used, it replaces native logo setting.', 'aemi'),
             'settings'  => 'aemi_light_scheme_logo',
-            'section'   => 'aemi_identity'
+            'section'   => 'aemi_identity',
+            'mime_type' => 'image'
         ])
         );
 
         $wp_customize->add_control(
-            new WP_Customize_Image_Control($wp_customize, 'aemi_dark_scheme_logo', [
+            new WP_Customize_Media_Control($wp_customize, 'aemi_dark_scheme_logo', [
             'label'     => __('Add Logo for Dark Scheme', 'aemi'),
             'description'   => __('It is recommanded to set up this setting.', 'aemi'),
             'settings'  => 'aemi_dark_scheme_logo',
-            'section'   => 'aemi_identity'
+            'section'   => 'aemi_identity',
+            'mime_type' => 'image'
         ])
         );
 
@@ -493,7 +495,7 @@ if (!function_exists('aemi_customizer_controls__post_types')) {
                         __('Show a short excerpt of', 'aemi'),
                         $p_name,
                         __('s in lists of', 'aemi'),
-                        __('s', 'aemi'),
+                        __('s', 'aemi')
                     ),
                     'section'   =>      'aemi_type_' . $p_name,
                     'settings'  =>      $setting,
