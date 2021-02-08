@@ -3,10 +3,10 @@ Contributors: ayatemplates
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
 sticky-post, theme-options, footer-widgets
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: 1.0.4
-Requires PHP: 5.6.0
-Requires at least: 4.8.0
+Requires PHP: 5.6
+Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.7 =
+* Fix deprecated jQuery code usage
 
 = 1.2.6 =
 * Make Links within content underlined
@@ -141,7 +144,6 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * js/jquery.slicebox.js, © 2012 Codrops, MIT
 * js/modernizr.custom.46884.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
-* js/modernizr.custom.46884.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * images/slider/1.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/1374298, CC0
 * images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/764672, CC0
 * images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/767599, CC0

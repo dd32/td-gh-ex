@@ -72,8 +72,8 @@
 
 	$.fn.imagesLoaded = function( callback ) {
 		var $this = this,
-			deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
-			hasNotify = $.isFunction(deferred.notify),
+			deferred = (typeof $.Deferred === "function") ? $.Deferred() : 0,
+			hasNotify = (typeof deferred.notify === "function"),
 			$images = $this.find('img').add( $this.filter('img') ),
 			loaded = [],
 			proper = [],
@@ -102,7 +102,7 @@
 				}
 			}
 
-			if ( $.isFunction( callback ) ) {
+			if ( (typeof  callback  === "function") ) {
 				callback.call( $this, $images, $proper, $broken );
 			}
 		}
@@ -134,7 +134,7 @@
 			// call doneLoading and clean listeners if all images are loaded
 			if ( $images.length === loaded.length ){
 				setTimeout( doneLoading );
-				$images.unbind( '.imagesLoaded' );
+				$images.off( '.imagesLoaded' );
 			}
 		}
 
@@ -142,7 +142,7 @@
 		if ( !$images.length ) {
 			doneLoading();
 		} else {
-			$images.bind( 'load.imagesLoaded error.imagesLoaded', function( event ){
+			$images.on( 'load.imagesLoaded error.imagesLoaded', function( event ){
 				// trigger imgLoaded
 				imgLoaded( event.target, event.type === 'error' );
 			}).each( function( i, el ) {
@@ -873,7 +873,7 @@
 				
 				}
 				
-				if ( !$.isFunction( self[options] ) || options.charAt(0) === "_" ) {
+				if ( !(typeof  self[options]  === "function") || options.charAt(0) === "_" ) {
 
 					logError( "no such method '" + options + "' for slicebox self" );
 					return;

@@ -190,7 +190,7 @@ if ( ! function_exists( 'ayablogging_load_scripts' ) ) :
 		wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js', array( 'jquery' ) );
 
 		// Load Slider JS Scripts
-		wp_enqueue_script( 'modernizr.custom.46884', get_template_directory_uri() . '/js/modernizr.custom.46884.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'modernizr.custom.46884', get_template_directory_uri() . '/js/modernizr.custom.46884.js', array( 'jquery' ) );
 		wp_enqueue_script( 'jquery.slicebox', get_template_directory_uri() . '/js/jquery.slicebox.js', array( 'modernizr.custom.46884', 'jquery', ) );
 
 		wp_enqueue_script( 'ayablogging-utilities',
