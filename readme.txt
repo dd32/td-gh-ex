@@ -3,10 +3,10 @@ Contributors: tishonator
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, front-page-post-form
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: 1.9.3
-Requires PHP: 5.6.0
-Requires at least: 4.8.0
+Requires PHP: 5.6
+Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.9.6 =
+* Fix deprecated jQuery code usage
 
 = 1.9.5 =
 * Make Links within content underlined
@@ -204,9 +207,8 @@ fGymm is distributed under the terms of the GNU GPL
 * Twenty Nineteen 1.4 (Code Block CSS), © 2018 - 2019 wordpressdotorg, GNU v2.0
 * Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* js/camera.min.js, © 2012 Manuel Masia, MIT
 * js/camera.js, © 2012 Manuel Masia, MIT
-* js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
+* js/jquery.easing.js, © 2008 George McGinley Smith, BSD
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * images/slider/1.jpg, © 2017 @PxHere https://pxhere.com/en/photo/860263, CC0
