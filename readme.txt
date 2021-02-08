@@ -1,10 +1,10 @@
 === AyaClub ===
 Contributors: ayatemplates
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: 1.0.9
-Requires PHP: 5.6.0
-Requires at least: 4.8.0
+Requires PHP: 5.6
+Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.1 =
+* Fix deprecated jQuery code usage
 
 = 1.3.0 =
 * Make Links within content underlined
@@ -152,6 +155,5 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * images/slider/2.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/546448, CC0
 * images/slider/3.jpg, © 2017 @Pxhere https://pxhere.com/en/photo/978775, CC0
 * screenshot.png (slider img) © 2017 @Pxhere https://pxhere.com/en/photo/727825, CC0
-* js/camera.min.js, © 2012 by Manuel Masia, MIT
 * js/camera.js, © 2012 by Manuel Masia, MIT
-* js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
+* js/jquery.easing.js, © 2008 George McGinley Smith, BSD
