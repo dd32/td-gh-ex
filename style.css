@@ -4,8 +4,8 @@ Theme URI: https://themeansar.com/free-themes/agencyup/
 Author: themeansar
 Author URI: https://themeansar.com
 Description: Agencyup WordPress theme ideal for a business or perfect solutions for corporate, consulting, wedding planners, agency, law firms, finance, law travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, E-commerce.  The theme is responsive, WPML, Retina ready, SEO friendly(Live preview : https://demos.themeansar.com/agencyup/)
-Version: 1.4
-Tested up to: 5.5
+Version: 1.5
+Tested up to: 5.6
 Requires PHP: 5.6
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce
 License: GNU General Public License v3 or later
@@ -1770,6 +1770,7 @@ color: #fff;
 }
 .bs-widget ul {
 	padding: 0;
+	margin: 0;
 	list-style: none;
 }
 .bs-widget ul li:last-child {
@@ -2347,6 +2348,28 @@ footer .agencyup-widget .woocommerce ul.cart_list li img, footer .agencyup-widge
 	.top-cart {
 	    margin-right: auto;
 	}
+	#bs-slider .bs-slide {
+		height: 350px;
+	}
+	#bs-slider .slide-caption h2 {
+	    font-size: 26px;
+	    line-height: 1.25;
+	    margin-bottom: 10px;
+	}
+	.btn-tislider {
+    	padding: 5px;
+    	line-height: 20px;
+    	font-size: 14px;
+	}
+	.calltoaction .bs-heading {
+		margin-bottom: 30px;
+	}
+    .calltoaction,.calltoaction .bs-heading h2, .calltoaction .bs-heading h3 {
+      text-align: center;
+    }
+    .calltoaction .btn{
+     float: unset;
+    }
     .text-xs {
 	text-align: center;
 	}
