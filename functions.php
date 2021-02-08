@@ -222,7 +222,7 @@ function artpop_scripts() {
 	wp_enqueue_style( 'artpop-style', get_stylesheet_uri(), array(), $theme_version );
 
 	// Main js.
-	wp_enqueue_script( 'artpop-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20201123', true );
+	wp_enqueue_script( 'artpop-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20210207', true );
 
 	// Add Swiper.
 	if ( is_home() && get_theme_mod( 'home_show_featured_posts', artpop_defaults( 'home_show_featured_posts' ) ) && 'featured-carousel' == get_theme_mod( 'home_featured_posts_layout', artpop_defaults( 'home_featured_posts_layout' ) ) ) {
@@ -559,9 +559,10 @@ function artpop_search_popup() {
 	if ( get_theme_mod( 'header_show_search_icon', 1 ) ) :
 		echo '<div class="search-popup">';
 		echo '<button class="search-popup-button search-open">' . artpop_get_svg( array( 'icon' => 'search' ) ) . '</button>';
+		echo '<div class="search-popup-inner">';
 		echo '<button class="search-popup-button search-close">' . artpop_get_svg( array( 'icon' => 'x' ) ) . '</button>';
 		get_search_form();
-		echo '</div>';
+		echo '</div></div>';
 	endif;
 }
 

@@ -49,32 +49,63 @@
 
 	}
 
-	function keepFocusInMenu() {
-		document.addEventListener( 'keydown', function( e ) {
-			const mobileNav = document.getElementById( 'mobile-navigation' );
+	function trapFocusModal() {
+		var sidePanel = document.getElementById( 'side-panel' );
+		var focusableEls = sidePanel.querySelectorAll( 'a, button');
 
-			if ( ! mobileNav || ! mobileNav.classList.contains( 'is-open' ) ) {
+		var firstFocusableEl = focusableEls[0];
+		var lastFocusableEl = focusableEls[focusableEls.length - 1];
+		var KEYCODE_TAB = 9;
+
+		sidePanel.addEventListener('keydown', function(e) {
+			var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+			if (!isTabPressed) {
 				return;
 			}
 
-			const closePanel = document.getElementById( 'side-panel-close'),
-				elements = [...mobileNav.querySelectorAll( 'a, button' )],
-				lastEl = elements[ elements.length - 1 ],
-				firstEl = elements[0],
-				activeEl = closePanel,
-				tabKey = e.keyCode === 9,
-				shiftKey = e.shiftKey;
+			if ( e.shiftKey ) /* shift + tab */ {
+				if (document.activeElement === firstFocusableEl) {
+					lastFocusableEl.focus();
+					e.preventDefault();
+				}
+			} else /* tab */ {
+				if (document.activeElement === lastFocusableEl) {
+					firstFocusableEl.focus();
+					e.preventDefault();
+				}
+			}
+		});
+	}
 
-			if ( ! shiftKey && tabKey && lastEl === activeEl ) {
-				e.preventDefault();
-				firstEl.focus();
+	function trapFocusSearchPopup() {
+		var siteHeader = document.getElementById( 'masthead' );
+		var searchPopup = siteHeader.querySelector( '.search-popup-inner' );
+		var focusableEls = searchPopup.querySelectorAll( 'input, button');
+
+		var firstFocusableEl = focusableEls[0];
+		var lastFocusableEl = focusableEls[focusableEls.length - 1];
+		var KEYCODE_TAB = 9;
+
+		searchPopup.addEventListener('keydown', function(e) {
+			var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+			if (!isTabPressed) {
+				return;
 			}
 
-			if ( shiftKey && tabKey && firstEl === activeEl ) {
-				e.preventDefault();
-				lastEl.focus();
+			if ( e.shiftKey ) /* shift + tab */ {
+				if (document.activeElement === firstFocusableEl) {
+					lastFocusableEl.focus();
+					e.preventDefault();
+				}
+			} else /* tab */ {
+				if (document.activeElement === lastFocusableEl) {
+					firstFocusableEl.focus();
+					e.preventDefault();
+				}
 			}
-		} );
+		});
 	}
 
 	function toggleSubmenu() {
@@ -278,12 +309,13 @@
 	}
 
 	toggleMenu();
-	keepFocusInMenu();
+	trapFocusModal();
+	trapFocusSearchPopup();
 	toggleSubmenu();
 	goToTop();
 	openSearch();
 	closeSearch();
 	stickyHeader();
 	tabKeyNavigation();
-	
+
 }() );

@@ -49,7 +49,7 @@ function artpop_custom_css() {
 	}
 	if ( ! empty( $accent_color ) ) {
 		$theme_css .= "
-		.entry-content .has-accent-color, a, .entry-title a:hover, .main-navigation ul ul li:hover > a, .cat-links a, .comment-metadata .comment-edit-link, .read-more:hover, .trending-posts-title h2 .divider, .related-posts-title .divider, .widget a:hover, .widget_recent_comments a, .widget_text a, .widget_designlab_profile .more-link, .sidebar .widget_tag_cloud a:hover, .widget-title .divider, .posts-navigation a:hover, .post-navigation a:hover .meta-nav, .post-navigation a:hover .post-title, .author-link a:hover, .wp-block-latest-posts.is-grid li a:hover {
+		.entry-content .has-accent-color, a, .entry-title a:hover, .main-navigation ul ul li:hover > a, .cat-links a, .comment-metadata .comment-edit-link, .read-more:hover, .trending-posts-title h2 .divider, .related-posts-title .divider, .widget a:hover, .widget_text a, .widget_designlab_profile .more-link, .sidebar .widget_tag_cloud a:hover, .widget-title .divider, .posts-navigation a:hover, .post-navigation a:hover .meta-nav, .post-navigation a:hover .post-title, .author-link a:hover, .wp-block-latest-posts.is-grid li a:hover {
 			color: {$accent_color};
 		}
 		.entry-content .has-accent-background-color, button, .button, input[type='button'], input[type='reset'], input[type='submit'], .read-more:after, .post-navigation a:hover .nav-arrow, .pagination .current, .pagination .page-numbers:hover, .post-edit-link, .reply a, .swiper .swiper-pagination-bullet-active, #sb_instagram .sbi_follow_btn a {

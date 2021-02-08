@@ -1,9 +1,9 @@
 /*
 Theme Name: Artpop
 Text Domain: artpop
-Version: 1.0.3
+Version: 1.0.4
 Requires at least: 4.7
-Tested up to: 5.5.3
+Tested up to: 5.6.1
 Requires PHP: 5.6
 Description: Artpop is a beautiful Gutenberg-first WordPress theme, carefully designed to help you build your online brand. Unleash your creativity, Artpop takes care of the rest! Well documented and easy to use even for WordPress beginners, Artpop is perfect for a blog, personal portfolio, small business website, and WooCommerce storefront. Easily set your logo, change colors, and create awesome layouts to give your website a truly unique look.
 Author: Design Lab
@@ -377,10 +377,11 @@ big {
 /* Links */
 a {
 	color: #0BAAB0;
-	text-decoration: none;
-}
-a:hover {
 	text-decoration: underline;
+}
+a:hover,
+a:focus {
+	text-decoration: none;
 }
 a:hover,
 a:active {
@@ -389,6 +390,7 @@ a:active {
 .site-title a {
 	color: #F02E90;
 	white-space: nowrap;
+	text-decoration: none;
 	opacity: 1;
 	transition: all 0.3s ease-in-out 0s;
 }
@@ -398,10 +400,11 @@ a:active {
 }
 .entry-title a {
 	color: #000;
+	text-decoration: none;
 }
 .entry-title a:hover {
 	color: #0BAAB0;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 /* Read more link */
@@ -1380,6 +1383,7 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 }
 .post-navigation a {
 	display: inline-block;
+	text-decoration: none;
 }
 .post-navigation .meta-nav,
 .post-navigation .post-title {
@@ -1409,10 +1413,6 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 .post-navigation a:hover .meta-nav,
 .post-navigation a:hover .post-title {
 	color: #0BAAB0;
-}
-.post-navigation a:hover,
-.post-navigation a:hover {
-	text-decoration: none;
 }
 .post-navigation a .svg-icon {
 	width: 16px;
@@ -1658,7 +1658,8 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 }
 
 /* Search Popup */
-.search-popup {
+.search-popup,
+.search-popup-inner {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -1824,10 +1825,11 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 	color: #2c2d2e;
 	opacity: 1;
 	transition: opacity 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+	text-decoration: none;
 }
 .footer-credits a:hover {
 	opacity: .5;
-	text-decoration: none;
+	text-decoration: underline;
 }
 .footer-credits span:first-child {
 	padding-left: 0;
@@ -1848,11 +1850,12 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 	margin: 0.5rem 0;
 	color: #2c2d2e;
 	opacity: 1;
+	text-decoration: none;
 	transition: opacity 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
 }
 .footer-menu a:hover {
 	opacity: .5;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 /* Section Title */
@@ -1987,6 +1990,12 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 }
 .entry-meta a {
 	display: inline-block;
+	text-decoration: none;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+}
+.entry-meta a:hover {
+	opacity: .5;
 }
 .posted-on a,
 .byline .author a,
@@ -2002,12 +2011,6 @@ li.is-open > .menu-item-wrapper .sub-menu-toggle .svg-icon {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	font-weight: 700;
-	opacity: 1;
-	transition: opacity 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
-}
-.cat-links a:hover {
-	opacity: .5;
-	text-decoration: none;
 }
 .updated:not(.published) {
 	display: none;
@@ -2055,11 +2058,11 @@ span + .comments-link:before {
 	font-weight: 700;
 	line-height: 1.25;
 	border-radius: 2px;
+	text-decoration: none;
 	opacity: 1;
 	transition: opacity 0.3s ease-in-out 0s;
 }
 .post-edit-link:hover {
-	text-decoration: none;
 	opacity: 0.8;
 }
 
@@ -2292,6 +2295,7 @@ span + .comments-link:before {
 	margin: 0 0.5rem 0.25rem 0;
 	border-radius: 2px;
 	border: 1px solid #0BAAB0;
+	text-decoration: none;
 	opacity: 1;
 	transition: opacity 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
 }
@@ -2300,7 +2304,6 @@ span + .comments-link:before {
 }
 .tags-links a:hover {
 	opacity: .5;
-	text-decoration: none;
 }
 .page-links {
 	clear: both;
@@ -2398,6 +2401,9 @@ span + .comments-link:before {
 .comment-metadata a {
 	color: #9D9E9E;
 }
+.comment-metadata a {
+	text-decoration: none;
+}
 .comment-metadata,
 .comment-awaiting-moderation {
 	font-size: 0.875rem;
@@ -2440,11 +2446,11 @@ span + .comments-link:before {
 	font-weight: 700;
 	letter-spacing: 0.05em;
 	color: #fff;
+	text-decoration: none;
 	background-color: #0BAAB0;
 	transition: all 0.3s ease 0s;
 }
 .reply a:hover {
-	text-decoration: none;
 	opacity: 0.75;
 }
 .bypostauthor {
@@ -3055,6 +3061,22 @@ pre.wp-block-verse {
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
+.widget_archive ul li a,
+.widget_categories ul li a,
+.widget_meta ul li a,
+.widget_nav_menu ul li a,
+.widget_recent_entries ul li a,
+.widget_pages ul li a {
+	text-decoration: none;
+}
+.widget_archive ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_nav_menu ul li a:hover,
+.widget_recent_entries ul li a:hover,
+.widget_pages ul li a:hover {
+	text-decoration: underline;
+}
 .widget_archive ul li,
 .widget_categories ul li {
 	text-align: right;
@@ -3062,9 +3084,6 @@ pre.wp-block-verse {
 .widget_archive ul li a,
 .widget_categories ul li a {
 	float: left;
-}
-.widget_recent_comments a {
-	color: #0BAAB0;
 }
 .widget_recent_entries .post-date {
 	display: block;
@@ -3095,9 +3114,13 @@ pre.wp-block-verse {
 	margin: 0 0.25rem 0.5rem 0;
 	font-size: 1em !important;
 	line-height: 1.25;
+	text-decoration: none;
 	border: 1px solid rgba(0,0,0,.08);
 	border-radius: 2px;
 	background-color: transparent;
+}
+.widget_tag_cloud a:hover {
+	text-decoration: underline;
 }
 .widget_media_image img {
 	display: block;
