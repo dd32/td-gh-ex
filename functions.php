@@ -322,8 +322,8 @@ function fcorpo_load_scripts() {
 
 	// Load Slider JS Scripts
 	
-	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery.easing', get_template_directory_uri() . '/js/jquery.easing.js', array( 'jquery' ) );
+	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'fcorpo_load_scripts' );
 
@@ -622,7 +622,7 @@ endif; // fcorpo_sanitize_checkbox
 if ( ! function_exists( 'fcorpo_sanitize_html' ) ) :
 
 	function fcorpo_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 endif; // fcorpo_sanitize_html
