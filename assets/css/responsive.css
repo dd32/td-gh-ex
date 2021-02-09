@@ -118,9 +118,6 @@
 /* Mobile Layout: 320px */
 
 @media only screen and (max-width:991px) {
-    .funfact-item {
-        flex: 1 1 50%;
-    }
     
     .header-right-bar {
         padding-right: 42px;
@@ -381,11 +378,7 @@
 
 }
 
-@media only screen and (max-width:480px) {
-    .funfact-item {
-        flex: 1 1 100%;
-    }
-    
+@media only screen and (max-width:480px) {    
     .bb {
         border-bottom: 0;
     }
