@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -26,19 +26,22 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-SpicePress WordPress Theme, Copyright (C) 2018, SpiceThemes
+SpicePress WordPress Theme, Copyright (C) 2018-2021, SpiceThemes
 SpicePress is distributed under the terms of the GNU GPL
 
-Rockers WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018, SpiceThemes
+Rockers WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018-2021, SpiceThemes
 Rockers WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+= 3.0.5 ==
+1. Fixed "ST:Social icons" and "ST:Classic Header info" widgets issues.
+
 = 3.0.4 ==
-1. Fixed escaping, prefix, and empty markup issues. 
+1. Fixed escaping, prefix, and empty markup issues.
 
 = 3.0.3 ==
-1. Added the license of parent theme in readme. 
+1. Added the license of parent theme in readme.
 2. Escaped the pingback_url() and removed unnecessary code.
 
 = 3.0.2 ==
@@ -101,7 +104,7 @@ Rockers WordPress Theme is distributed under the terms of the GNU GPL
 
 == External resources ==
 
-Bootstrap: 
+Bootstrap:
 Copyright: (c) Twitter
 License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source: http://getbootstrap.com
@@ -112,4 +115,4 @@ License - CC0 Public domain
 Source - https://pxhere.com/en/photo/879286
 
 * Images on admin/img folder
-Copyright (C) 2018, SpcieThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, SpcieThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

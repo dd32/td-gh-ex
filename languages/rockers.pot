@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rockers\n"
-"POT-Creation-Date: 2021-01-05 14:25+0530\n"
+"POT-Creation-Date: 2021-02-09 17:53+0530\n"
 "PO-Revision-Date: 2019-04-09 11:27+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -453,56 +453,56 @@ msgstr ""
 msgid "Topbar Classic Header info widget."
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:55
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:98
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:130
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:60
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:90
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:122
 #: header/header-navbar.php:41 header/header-navbar.php:92
 #: header/header-navbar.php:257
 msgid "Chestnut Road,"
 msgstr ""
 
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:66
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:105
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:133
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:97
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:125
 #: header/header-navbar.php:42 header/header-navbar.php:93
 #: header/header-navbar.php:258
 msgid "California - United States"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:125
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:117
 msgid "Font Awesome icon"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:127
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:119
 msgid "Link to get Font Awesome icons"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:127
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:119
 msgid "fa-icon"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:129
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:121
 msgid "Title"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:132
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:124
 msgid "Description"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:135
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:127
 msgid "Link"
 msgstr ""
 
-#: functions/widgets/wdl_header_topbar_info_ct_widget.php:139
-#: functions/widgets/wdl_social_icon.php:198
-#: functions/widgets/wdl_social_icon.php:204
-#: functions/widgets/wdl_social_icon.php:210
-#: functions/widgets/wdl_social_icon.php:216
-#: functions/widgets/wdl_social_icon.php:222
-#: functions/widgets/wdl_social_icon.php:228
-#: functions/widgets/wdl_social_icon.php:234
-#: functions/widgets/wdl_social_icon.php:240
-#: functions/widgets/wdl_social_icon.php:246
+#: functions/widgets/wdl_header_topbar_info_ct_widget.php:131
+#: functions/widgets/wdl_social_icon.php:206
+#: functions/widgets/wdl_social_icon.php:212
+#: functions/widgets/wdl_social_icon.php:218
+#: functions/widgets/wdl_social_icon.php:224
+#: functions/widgets/wdl_social_icon.php:230
+#: functions/widgets/wdl_social_icon.php:236
+#: functions/widgets/wdl_social_icon.php:242
+#: functions/widgets/wdl_social_icon.php:248
+#: functions/widgets/wdl_social_icon.php:254
 msgid "Open link in new tab"
 msgstr ""
 
@@ -514,39 +514,39 @@ msgstr ""
 msgid "Rockers social icons widget"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:195
+#: functions/widgets/wdl_social_icon.php:203
 msgid "Facebook URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:201
+#: functions/widgets/wdl_social_icon.php:209
 msgid "Twitter URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:207
+#: functions/widgets/wdl_social_icon.php:215
 msgid "Google-Plus URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:213
+#: functions/widgets/wdl_social_icon.php:221
 msgid "LinkedIn URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:219
+#: functions/widgets/wdl_social_icon.php:227
 msgid "Instagram URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:225
+#: functions/widgets/wdl_social_icon.php:233
 msgid "YouTube URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:231
+#: functions/widgets/wdl_social_icon.php:239
 msgid "Skype URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:237
+#: functions/widgets/wdl_social_icon.php:245
 msgid "Vimeo URL"
 msgstr ""
 
-#: functions/widgets/wdl_social_icon.php:243
+#: functions/widgets/wdl_social_icon.php:251
 msgid "Dribble URL"
 msgstr ""
 
