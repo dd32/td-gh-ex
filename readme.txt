@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.7
 Tested up to: 5.6
-Stable tag: 1.8.4
+Stable tag: 1.8.5
 Requires PHP: 5.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
@@ -26,13 +26,16 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-SpicePress WordPress Theme, Copyright (C) 2018, SpiceThemes
+SpicePress WordPress Theme, Copyright (C) 2018-2021, SpiceThemes
 SpicePress is distributed under the terms of the GNU GPL
 
-Content WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018, SpiceThemes
+Content WordPress Theme is the child theme of SpicePress Theme, Copyright (C) 2018-2021, SpiceThemes
 Content WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 1.8.5 ==
+1. Fixed the page title issue for the post page.
 
 = 1.8.4 ==
 1. Fixed prefix and empty markup issues.
@@ -80,14 +83,14 @@ Content WordPress Theme is distributed under the terms of the GNU GPL
 
 == External resources ==
 
-Bootstrap: 
+Bootstrap:
 Copyright: (c) Twitter
 License: MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source: http://getbootstrap.com
 
 Masonry JS:
 Copyright: (C) 2007 Free Software Foundation
-License: Under the GNU General Public License v3.0 
+License: Under the GNU General Public License v3.0
 Source: https://github.com/jmlp-131092/mp-mansory.js
 
 == Images ==
@@ -98,4 +101,4 @@ https://pxhere.com/en/photo/1456587
 https://pxhere.com/en/photo/1522087
 
 * Images on admin/img folder
-Copyright (C) 2018, SpcieThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2021, SpcieThemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

@@ -9,14 +9,17 @@
  */
 get_header(); ?>
  <!-- Page Title Section -->
-		<section class="page-title-section">		
+		<section class="page-title-section">
 			<div class="overlay">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
-						   <?php					   
-								echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.esc_html__( 'Home','content' ).'</h1></div>';
-						   ?>
+						   <?php
+							 if ( is_home() && ! is_front_page() ) {
+									 echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.esc_html(get_the_title(get_option('page_for_posts'))).'</h1></div>';
+							 } else {
+									 echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.esc_html__( 'Home','content' ).'</h1></div>';
+							 } ?>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<?php
@@ -27,21 +30,21 @@ get_header(); ?>
 							?>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</section>
 		<div class="page-seperate"></div>
 		<!-- /Page Title Section -->
- 
- 
-<!-- Blog & Sidebar Section -->	
-<div id="content">	
+
+
+<!-- Blog & Sidebar Section -->
+<div id="content">
 <section class="blog-section">
 	<div class="container">
 		<div class="row">
 		<div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'8' ); ?> col-sm-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'7' ); ?> col-xs-12">
 			<div class="row site-content" id="blog-masonry">
-				<?php 
+				<?php
 					if ( have_posts() ) :
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
@@ -51,8 +54,8 @@ get_header(); ?>
 						echo '</div>';
 					endwhile;
 				endif;
-				
-				?>	
+
+				?>
 			</div>
 			<?php
 			// Previous/next page navigation.
@@ -62,9 +65,9 @@ get_header(); ?>
 					) );
 			?>
 		</div>
-		
+
 		<?php get_sidebar();?>
-		
+
 		</div>
 	</div>
 </section>
