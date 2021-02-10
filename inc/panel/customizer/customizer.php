@@ -494,18 +494,6 @@ function catchflames_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['enable_slider'],
 			'choices'		=> catchflames_enable_slider_options(),
 		),
-		'transition_effect' => array(
-			'id' 				=> 'transition_effect',
-			'title' 			=> __( 'Transition Effect', 'catch-flames' ),
-			'description'		=> '',
-			'field_type' 		=> 'select',
-			'sanitize' 			=> 'catchflames_sanitize_select',
-			'panel' 			=> 'featured_slider',
-			'section' 			=> 'slider_options',
-			'default' 			=> $defaults['transition_effect'],
-			'active_callback'	=> 'catchflames_is_slider_active',
-			'choices'			=> catchflames_transition_effects(),
-		),
 		'transition_delay' => array(
 			'id' 				=> 'transition_delay',
 			'title' 			=> __( 'Transition Delay', 'catch-flames' ),

@@ -232,32 +232,6 @@ function catchflames_enable_slider_options() {
 	return apply_filters( 'catchflames_enable_slider_options', $options );
 }
 
-
-/**
- * Returns an array of slider transition effects
- *
- * @since Catch Flames 2.7
- */
-function catchflames_transition_effects() {
-	$options = array(
-		'fade'			=> __( 'fade', 'catch-flames' ),
-		'wipe' 			=> __( 'wipe', 'catch-flames' ),
-		'scrollUp' 		=> __( 'scrollUp', 'catch-flames' ),
-		'scrollDown'	=> __( 'scrollDown', 'catch-flames' ),
-		'scrollUp' 		=> __( 'scrollUp', 'catch-flames' ),
-		'scrollLeft'	=> __( 'scrollLeft', 'catch-flames' ),
-		'scrollRight'	=> __( 'scrollRight', 'catch-flames' ),
-		'blindX' 		=> __( 'blindX', 'catch-flames' ),
-		'blindY' 		=> __( 'blindY', 'catch-flames' ),
-		'blindZ' 		=> __( 'blindZ', 'catch-flames' ),
-		'cover' 		=> __( 'cover', 'catch-flames' ),
-		'shuffle' 		=> __( 'shuffle', 'catch-flames' ),
-	);
-
-	return apply_filters( 'catchflames_transition_effects', $options );
-}
-
-
 /**
  * Returns an array of slider types
  *

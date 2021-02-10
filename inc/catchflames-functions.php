@@ -37,29 +37,9 @@ function catchflames_scripts_method() {
 	// Slider JS load loop
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 		wp_register_script( 'jquery-cycle2', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
+		
+		wp_enqueue_script( 'jquery-cycle2' );
 
-		/**
-		 * Condition checks for additional slider transition plugins
-		 */
-		// Scroll Vertical transition plugin addition
-		if ( 'scrollVert' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery-cycle2-scrollVert', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery-cycle2' ), '20140128', true );
-		}
-		// Flip transition plugin addition
-		elseif ( 'flipHorz' ==  $options['transition_effect'] || 'flipVert' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery-cycle2-flip', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery-cycle2' ), '20140128', true );
-		}
-		// Shuffle transition plugin addition
-		elseif ( 'tileSlide' ==  $options['transition_effect'] || 'tileBlind' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery-cycle2-tile', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery-cycle2' ), '20140128', true );
-		}
-		// Shuffle transition plugin addition
-		elseif ( 'shuffle' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery-cycle2-shuffle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery-cycle2' ), '20140128 ', true );
-		}
-		else {
-			wp_enqueue_script( 'jquery-cycle2' );
-		}
 	}
 
 	//Responsive

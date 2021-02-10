@@ -21,7 +21,7 @@ function catchflames_default_sliders() {
 			    data-cycle-pause-on-hover="true"
 			    data-cycle-swipe="true"
 			    data-cycle-auto-height=container
-			    data-cycle-fx="'. esc_attr( $options['transition_effect'] ) .'"
+			    data-cycle-fx="'. esc_attr( 'fade' ) .'"
 				data-cycle-speed="'. esc_attr( $options['transition_duration'] ) * 1000 .'"
 				data-cycle-timeout="'. esc_attr( $options['transition_delay'] ) * 1000 .'"
 				data-cycle-loader="'. esc_attr( $options['image_loader'] ) .'"
@@ -88,7 +88,7 @@ function catchflames_page_sliders() {
 			    data-cycle-pause-on-hover="true"
 			    data-cycle-swipe="true"
 			    data-cycle-auto-height=container
-			    data-cycle-fx="'. esc_attr( $options['transition_effect'] ) .'"
+			    data-cycle-fx="'. esc_attr( 'fade' ) .'"
 				data-cycle-speed="'. esc_attr( $options['transition_duration'] ) * 1000 .'"
 				data-cycle-timeout="'. esc_attr( $options['transition_delay'] ) * 1000 .'"
 				data-cycle-loader="'. esc_attr( $options['image_loader'] ) .'"
@@ -117,7 +117,7 @@ function catchflames_page_sliders() {
 					<article class="'.$classes.'">
 						<figure class="slider-image">
 							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
-								'. get_the_post_thumbnail( $post->ID, $imagesize, array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
+								'. get_the_post_thumbnail( $post->ID, $imagesize, array( 'title' => $title_attribute, 'alt' => $title_attribute, 'loading'	=> false ) ).'
 							</a>
 						</figure>';
 						if ( empty ( $options['disable_slider_text'] ) ) {

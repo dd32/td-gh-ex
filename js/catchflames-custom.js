@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
 		})
 	}
 
-	jQuery('#scrollup').click(function () {
+	jQuery('#scrollup').on( 'click',function () {
 		jQuery('body,html').animate({
 			scrollTop: 1
 		}, 800);

@@ -2,9 +2,9 @@
 Contributors: catchthemes
 Tags: black, gray, tan, white, dark, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 5.1
-Tested up to: 5.4
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 3.5.3
+Stable tag: 3.5.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +62,10 @@ There are 5 Menus registered in this theme. Fixed Header Top, Header Right Sideb
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.5.4 (Released: February 10, 2021) =
+* Bug Fixed: Lazy loading issue in the Slider
+* Removed: Transition effect JS files
 
 = 3.5.3 (Released: May 28, 2020) =
 * Updated: readme.txt and style.css as per the new requirements
@@ -233,8 +237,8 @@ Catch Flames is distributed under the terms of the GNU GPL
 * Images
     Images used are released under the CC0 license
     The screenshot's visible images are as follow:
-    1. http://pixabay.com/en/new-year-s-eve-sparks-stellina-114011/ - 1st slider image and screenshot image
-    2. http://pixabay.com/en/match-sticks-lighter-sulfur-fire-268528/ - 2nd slider image
+    1. https://stocksnap.io/photo/people-men-BTT0E1H0TJ - 1st slider image and screenshot image
+    2. https://stocksnap.io/photo/fire-firedance-BVWEXUL2VG - 2nd slider image
     3. nature.jpg is self shot image by (CatchThemes.com) - Custom header image
 
 * Font Icons
