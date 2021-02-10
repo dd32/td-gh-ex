@@ -28,15 +28,16 @@ if ( ! function_exists( 'avadanta_posted_on' ) ) :
 
 	}	
 endif;
-
                           
 function avadanta_custom_search_form() {
-  $form = '<form role="search" method="post id="" class="search-form-header" action="' . esc_url(home_url( '/' )) . '" >
-    <div class="search-group">
-    <input type="text" value="' . get_search_query() . '" name="s" placeholder="' . esc_html__( 'Search', 'avadanta' ) . '" class="input-search" id="s" />
-    <button class="search-submit-header" type="submit" ><i class="fa fa-search"></i></button>
-  </div>
-  </form>';
+  $form = '<form role="search" method="post  action="' . esc_url(home_url( '/' )) . '" >
+    <input type="text" value="' . get_search_query() . '" name="s" placeholder="' . esc_attr__( 'Search', 'avadanta' ) . '" class="input-search" id="firstinput" />
+    <input  type="submit" class="sub-modals" ></button>
+    <span class="cross"><a href="#" ><i class="fa fa-times" aria-hidden="true"></i></a></span>
+
+  </form>
+
+  ';
 
   echo $form;
 }

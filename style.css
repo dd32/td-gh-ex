@@ -4,7 +4,7 @@ Theme URI: https://www.avadantathemes.com/product/avadanta-free-multipurpose-bus
 Author: avadantathemes
 Author URI: https://www.avadantathemes.com
 Description: Avadanta is a creative, fully customizable and multipurpose theme that you can use to create any kind of beautiful websites. pre-made designed Homepage with 7 inner sections slider, service, about, team, testimonial, portfolio, call to action, you can easily customize them. Unlimited color feature with unlimited typography. Compatible with gutenberg, elemnetor page builder and so many popular plugins nicely works with avadanta theme.
-Version: 1.0.5
+Version: 1.0.6
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.0
@@ -6240,19 +6240,7 @@ hr {
     width: 80%;
 }
 
-.search-submit-header {
-    position: absolute;
-    right: 0;
-    top: 3px;
-    background: transparent;
-    border: 0;
-    font-size: 24px;
-    bottom: 0;
-    padding: 0;
-    right: 15px;
-    height: 100%;
-    color: #086ad8;
-}
+
 
 .bg-dark .search-submit-header:hover,
 .bg-dark-alt .search-submit-header:hover {
@@ -7060,4 +7048,86 @@ body.search-show {
 .avndta-admn.has-fixed .header-main{
 
         margin-top: 32px;
+}
+
+#modal {
+  display: none;
+  background: rgba(0, 0, 0, 1);
+
+}
+#modal.open {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height:100%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  padding: 20px;
+}
+#modal.open:not(:focus-within) {
+  background: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.01s ease;
+}
+
+.search-submit-header {
+    position: absolute;
+    right: 0;
+    top: -3px;
+    background: transparent;
+    border: 0;
+    font-size: 24px;
+    bottom: 0;
+    padding: 0;
+    right: 15px;
+    height: 100%;
+    color: #086ad8;
+}
+
+.input-search
+{
+  width: 90%;
+      padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+#modal form{
+
+    width: 60%;
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.sub-modals{
+
+        height: 69px;
+            margin-left: -6px;
+            border: none;
+            color: #fff;
+}
+
+.menu-btns #button{
+
+    border: none;
+    background: none;
+    color: #000;
+}
+
+.cross a{
+
+    padding: 0 !important;
+    color: #fff !important;
+        width: 2% !important;
+}
+
+.textwidget a:focus{
+
+    text-decoration: underline !important;
+    outline: none !important;
 }

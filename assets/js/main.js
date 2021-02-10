@@ -10,6 +10,17 @@ jQuery('a.zoom').colorbox({rel:'gal'});
 } 
   
 
+ button.onclick = () => {
+  modal.classList.toggle("open");
+}
+
+modal.addEventListener('transitionend', (e) => {
+  document.querySelector("#firstinput").focus();
+  document.querySelector(".cross a").focus();
+});
+
+
+
       function avadantaaccess() {
         jQuery( document ).on( 'keydown', function( e ) {
             if ( jQuery( window ).width() > 992 ) {
@@ -28,12 +39,29 @@ jQuery('a.zoom').colorbox({rel:'gal'});
         } );
     }
 
+      function avadantamodalaccess() {
+        jQuery( document ).on( 'keydown', function( e ) {
+            if ( jQuery( window ).width() < 992 ) {
+                return;
+            }
+            var activeElement = document.activeElement;
+            var menuItems = jQuery( '#modal .sub-modals' );
+            var firstEl = jQuery( '#button' );
+            var lastEl = menuItems[ menuItems.length - 1 ];
+            var tabKey = event.keyCode === 9;
+            var shiftKey = event.shiftKey;
+            if ( ! shiftKey && tabKey && lastEl === activeElement ) {
+                event.preventDefault();
+                firstEl.focus();
+            }
+        } );
+    }
      
      jQuery(document).ready(function() {
    
    
-    jQuery(".cross").focusin(function(){
-    jQuery('body').removeClass('search-show')
+    jQuery(".cross").click(function(){
+    jQuery('#modal').removeClass('open')
     });
    
  });
@@ -47,6 +75,7 @@ jQuery('a.zoom').colorbox({rel:'gal'});
 
     jQuery(document).ready(function () {
     avadantaaccess();
+    avadantamodalaccess();
     });
 
 });

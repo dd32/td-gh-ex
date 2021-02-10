@@ -14,7 +14,7 @@ if( ! defined( 'ABSPATH' ) )
 }
 
 define('AVADANTA_THEME_DIR', get_template_directory());
-define('AVADANTA_THEME_URI', get_template_directory_uri() );
+define('AVADANTA_THEME_URI', get_template_directory_uri());
 
 /**
  * Custom Header feature.

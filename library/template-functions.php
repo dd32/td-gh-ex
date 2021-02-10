@@ -96,7 +96,7 @@ $image = get_header_image();
             </div>
           </div>
           <div class="bg-image header-bg-image">
-            <img src="<?php echo esc_url(get_header_image()); ?>" alt="<?php echo esc_attr('banner','avadanta'); ?>">
+            <img src="<?php echo esc_url(get_header_image()); ?>" alt="<?php echo esc_attr__('banner','avadanta'); ?>">
           </div>
         </div>
         
@@ -152,7 +152,7 @@ $avadanta_theme_color_scheme = get_theme_mod('avadanta_theme_color_scheme','#ff7
 $avadanta_custom_css      .= '.btn,.btn-theme:hover,.dash::before, .dash::after,
        .comment-respond .form-submit input,
        .widget_tag_cloud .tagcloud a:hover,.main-header-area .main-menu-area nav ul li ul > li:hover, .main-header-area .main-menu-area nav ul li ul > li .active,
-       .main-slider-three .owl-carousel .owl-nav .owl-next:hover,.comment-respond .form-submit input:hover,.widget_tag_cloud .tagcloud a:hover,.srvc .bg-darker,.project-area.project-call,.header-search .input-search:focus
+       .main-slider-three .owl-carousel .owl-nav .owl-next:hover,.comment-respond .form-submit input:hover,.widget_tag_cloud .tagcloud a:hover,.srvc .bg-darker,.project-area.project-call,.header-search .input-search:focus,.sub-modals
        {background-color: ' . esc_attr( $avadanta_theme_color_scheme) . ';}';
 
 $avadanta_custom_css      .= '.nav-links .page-numbers,.social li

@@ -37,7 +37,13 @@
 			</div>
 			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<div class="content">
-				<?php the_excerpt(); ?>
+					<?php
+					if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+						the_excerpt();
+					} else {
+						the_content( __( 'Continue reading', 'avadanta' ) );
+					}
+					?>
 			</div>
 			<div class="post-tag d-flex readmre">
 				<a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','avadanta'); ?><i class="fa fa-arrow-right" aria-hidden="true"></i>

@@ -3,7 +3,7 @@ Contributors: avadantathemes
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ Avadanta developed under th GPL terms so you can use it free and can modify or r
 
 
 == Changelog ==
+
+= 1.0.6 =
+* Resolve Reviewer Issue
 
 = 1.0.5 =
 * Resolve Reviewer Issue
