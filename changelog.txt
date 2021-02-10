@@ -4,6 +4,15 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.8.4 [10-02-2021]
+	* Added: Featured image display to Pages
+	* Added: Support for WP paragraph block font size and line height
+	* Fixed: PHP notices/warnings in inc/functions.php
+	* Fixed: JS error in certain plugins due to deferred-loading of jQuery Migrate
+	* Fixed: Post thumbnails not appearing in blog page when excerpts are displayed
+	* Fixed: Content styling not applied in WordPress editor
+	* Changed: Minimum featured image width for display in singular pages lowered to 75% of content area width
+
 Version 2.8.3 [27-01-2021]
 	* Added: Granular CSS classes for author byline
 	* Fixed: Text colour in search box when placed in the navigation bar

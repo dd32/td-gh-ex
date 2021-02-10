@@ -111,7 +111,12 @@ function graphene_get_header_image_alt( $image_src_or_id ) {
         	$header_url = wp_get_attachment_url( $image_id );
         	if ( stripos( $header_url, '/cropped-' ) !== false ) {
         		$attachment_metadata = wp_get_attachment_metadata( $image_id );
-        		$alt = graphene_get_attachment_image_alt( $attachment_metadata['attachment_parent'] );
+
+        		if ( array_key_exists( 'attachment_parent', $attachment_metadata ) ) {
+        			$alt = graphene_get_attachment_image_alt( $attachment_metadata['attachment_parent'] );
+        		} else {
+        			$alt = '';
+        		}
         	}
         }
 

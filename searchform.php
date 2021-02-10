@@ -1,7 +1,8 @@
 <form class="searchform" method="get" action="<?php echo get_home_url(); ?>">
 	<div class="input-group">
 		<div class="form-group live-search-input">
-		    <input type="text" name="s" class="form-control" placeholder="<?php esc_attr_e( 'Search', 'graphene' ); ?>">
+			<label for="s" class="screen-reader-text">Search for:</label>
+		    <input type="text" id="s" name="s" class="form-control" placeholder="<?php esc_attr_e( 'Search', 'graphene' ); ?>">
 		    <?php do_action( 'graphene_search_input' ); ?>
 		</div>
 	    <span class="input-group-btn">

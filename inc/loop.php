@@ -1205,12 +1205,13 @@ function graphene_featured_image( $force = false ){
 	$has_featured_image = true;
 	if ( $graphene_settings['hide_post_featured_image'] && ! $force ) $has_featured_image = false;
 	if ( ! has_post_thumbnail() ) $has_featured_image = false;
+
 	else {
-		/* Check if featured image size is at least as wide as the content area width */
+		/* Check if featured image size is at least 75% as wide as the content area width */
 		global $content_width;
 		$featured_image_id = get_post_thumbnail_id();
 		$featured_image = wp_get_attachment_metadata( $featured_image_id );
-		if ( $featured_image['width'] < $content_width ) $has_featured_image = false;
+		if ( $featured_image['width'] < ( $content_width * 0.75 ) ) $has_featured_image = false;
 	}
 
 	if ( $has_featured_image ) :

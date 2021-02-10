@@ -77,7 +77,7 @@ function graphene_defer_enqueued_scripts( $tag, $handle, $src ){
 	}
 
 	$scripts = array(
-		'jquery-migrate',
+		// 'jquery-migrate',
 		'bootstrap',
 		'bootstrap-hover-dropdown',
 		'bootstrap-submenu',

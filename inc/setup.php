@@ -63,6 +63,7 @@ function graphene_setup() {
 	
 	// Add support for editor syling
 	if ( ! $graphene_settings['disable_editor_style'] ){
+		add_theme_support( 'editor-styles' );
 		add_editor_style( array( 
 			GRAPHENE_ROOTURI . '/bootstrap/css/bootstrap.min.css',
 			'editor-style.css'
@@ -125,6 +126,41 @@ function graphene_setup() {
 	/* Add responsive embeds */
 	add_filter( 'embed_oembed_html', 'graphene_responsive_embed', 10, 3 );
 	add_theme_support( 'responsive-embeds' );
+
+	/* Adds support for editor font sizes */
+	add_theme_support( 'custom-line-height' );
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'Tiny', 'graphene' ),
+			'shortName' => __( 'XS', 'graphene' ),
+			'size'      => 10,
+			'slug'      => 'tiny'
+		),
+		array(
+			'name'      => __( 'Small', 'graphene' ),
+			'shortName' => __( 'S', 'graphene' ),
+			'size'      => 14,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'Regular', 'graphene' ),
+			'shortName' => __( 'M', 'graphene' ),
+			'size'      => 16,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'Large', 'graphene' ),
+			'shortName' => __( 'L', 'graphene' ),
+			'size'      => 20,
+			'slug'      => 'large'
+		),
+		array(
+			'name'      => __( 'Larger', 'graphene' ),
+			'shortName' => __( 'XL', 'graphene' ),
+			'size'      => 26,
+			'slug'      => 'larger'
+		)
+	) );
 
     do_action( 'graphene_setup' );
 }
