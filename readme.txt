@@ -18,6 +18,9 @@ Aribiz is a flexible Multipurpose, Responsive and Beautiful Theme with Easy and 
 
 
 == Changelog ==
+= 1.5 - Jan 27 2021 =
+* fixed issues
+
 = 1.4 - Jan 09 2021 =
 * fixed issues
 

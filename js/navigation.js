@@ -99,16 +99,16 @@
 }() );
 
 window.onscroll = function () {
-	stickThis();
+	aribiz_stickThis();
 };
 
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
+var aribiz_header = document.getElementById("myHeader");
+var aribiz_sticky = aribiz_header.offsetTop;
 
-function stickThis() {
-	if (window.pageYOffset > sticky) {
-		header.classList.add("sticky");
+function aribiz_stickThis() {
+	if (window.pageYOffset > aribiz_sticky) {
+		aribiz_header.classList.add("sticky");
 	} else {
-		header.classList.remove("sticky");
+		aribiz_header.classList.remove("sticky");
 	}
 }

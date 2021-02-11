@@ -65,23 +65,3 @@ function aribiz_logo() {
 	 
 
 }
-
-/**
- * Add the dropdown arrow to links with submenus.
- *
- * @param string   $item_output The menu item's starting HTML output.
- * @param WP_Post  $item        Menu item data object.
- * @return string
- */
-add_filter( 'walker_nav_menu_start_el', function( $item_output, $item ) {
-	$has_children = in_array( 'menu-item-has-children', $item->classes );
-	if ( $has_children ) {
-		$item_output = str_replace(
-			'</a>',
-			'<i class="fa fa-angle-down"></i></a>',
-			$item_output
-		);
-	}
-	return $item_output;
-}, 10, 2 );
-

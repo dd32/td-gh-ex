@@ -44,6 +44,8 @@
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
+					'depth'           => 2,
+					'link_after'	  => '<i class="fa fa-angle-down"></i>',
 				)
 			);
 			?>
