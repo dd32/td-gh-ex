@@ -17,7 +17,7 @@
  	<?php if (d5smartia_get_option('tpage', '1') != '1' ): ?><div class="thumb"><?php the_post_thumbnail(); ?></div><?php endif; ?>
  	<?php d5smartia_content(); ?>
 
-	<?php wp_link_pages(array('before' => '<p><strong>' . __('Pages','d5-smartia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+	<?php wp_link_pages(array('before' => '<p><strong>' . esc_html__('Pages','d5-smartia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>

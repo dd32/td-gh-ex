@@ -6,14 +6,14 @@ function d5smartia_customize_register($wp_customize){
     $wp_customize->add_section('smartia_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('SMARTIA OPTIONS', 'd5-smartia'),
-        'description'   => ' <div class="infohead">' . __('We appreciate an','d5-smartia') . ' <a href="http://wordpress.org/support/view/theme-reviews/d5-smartia" target="_blank">' . __('Honest Review','d5-smartia') . '</a> ' . __('of this Theme if you Love our Work','d5-smartia') . '<br /> <br />
+		'title'    		=> esc_html__('SMARTIA OPTIONS', 'd5-smartia'),
+        'description'   => ' <div class="infohead">' . esc_html__('We appreciate an','d5-smartia') . ' <a href="http://wordpress.org/support/view/theme-reviews/d5-smartia" target="_blank">' . esc_html__('Honest Review','d5-smartia') . '</a> ' . esc_html__('of this Theme if you Love our Work','d5-smartia') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-smartia') . '<a href="' . esc_url('https://d5creation.com/theme/smartia/') .'
-" target="_blank"><strong>' . __('Smartia Extend','d5-smartia') . '</strong></a><br /> <br /> 
+' . esc_html__('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-smartia') . '<a href="' . esc_url('https://d5creation.com/theme/smartia/') .'
+" target="_blank"><strong>' . esc_html__('Smartia Extend','d5-smartia') . '</strong></a><br /> <br /> 
         
         
-' . __('You can Visit the Smartia Extend ','d5-smartia') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Smartia') .'" target="_blank"><strong>' . __('Demo Here','d5-smartia') . '</strong></a> 
+' . esc_html__('You can Visit the Smartia Extend ','d5-smartia') . ' <a href="' . esc_url('http://demo.d5creation.com/themes/?theme=Smartia') .'" target="_blank"><strong>' . esc_html__('Demo Here','d5-smartia') . '</strong></a> 
         </div>		
 		'
     ));
@@ -21,7 +21,7 @@ function d5smartia_customize_register($wp_customize){
 	
 	// Contact Number
     $wp_customize->add_setting('smartia[contactnumber]', array(
-        'default'        	=> __('012-345-6789','d5-smartia'),
+        'default'        	=> esc_html__('012-345-6789','d5-smartia'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -29,7 +29,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('smartia_contactnumber', array(
-        'label'      => __('Contact Number', 'd5-smartia'),
+        'label'      => esc_html__('Contact Number', 'd5-smartia'),
         'section'    => 'smartia_options',
         'settings'   => 'smartia[contactnumber]'
     ));
@@ -44,7 +44,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('smartia_extra-num', array(
-        'label'      => __('Contact E-Mail', 'd5-smartia'),
+        'label'      => esc_html__('Contact E-Mail', 'd5-smartia'),
         'section'    => 'smartia_options',
         'settings'   => 'smartia[extra-num]'
     ));
@@ -55,7 +55,7 @@ function d5smartia_customize_register($wp_customize){
  $wp_customize->add_section('smartia_ads', array(
         'priority' 		=> 11,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - ADs', 'd5-smartia'),
+		'title'    		=> esc_html__('&nbsp;&nbsp;&nbsp;&nbsp; - Smartia ADs', 'd5-smartia'),
         'description'   => ''
     ));	
 
@@ -71,10 +71,10 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'adcodel', array(
-        'label'    			=> __('Left Ad Image', 'd5-smartia'),
+        'label'    			=> esc_html__('Left Ad Image', 'd5-smartia'),
         'section'  			=> 'smartia_ads',
         'settings' 			=> 'smartia[adcodel]',
-		'description'   	=> __('180px X 150px image is recommended','d5-smartia')
+		'description'   	=> esc_html__('180px X 150px image is recommended','d5-smartia')
     )));
 	
 //  Right Ad Image
@@ -88,10 +88,10 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'adcoder', array(
-        'label'    			=> __('Right Ad Image', 'd5-smartia'),
+        'label'    			=> esc_html__('Right Ad Image', 'd5-smartia'),
         'section'  			=> 'smartia_ads',
         'settings' 			=> 'smartia[adcoder]',
-		'description'   	=> __('180px X 150px image is recommended','d5-smartia')
+		'description'   	=> esc_html__('180px X 150px image is recommended','d5-smartia')
     )));
   
 	
@@ -100,7 +100,7 @@ function d5smartia_customize_register($wp_customize){
  $wp_customize->add_section('smartia_slide', array(
         'priority' 		=> 12,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - Slide', 'd5-smartia'),
+		'title'    		=> esc_html__('&nbsp;&nbsp;&nbsp;&nbsp; - Smartia Slide', 'd5-smartia'),
         'description'   => ''
     ));	
   
@@ -117,15 +117,15 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'slide-image-'. $opsinumber, array(
-        'label'    			=> __('SLIDE IMAGE', 'd5-smartia') . '-' . $opsinumber,
+        'label'    			=> esc_html__('SLIDE IMAGE', 'd5-smartia') . '-' . $opsinumber,
         'section'  			=> 'smartia_slide',
         'settings' 			=> 'smartia[slide-image-'. $opsinumber .']',
-		'description'   	=> __('1300px X 300px image is recommended','d5-smartia')
+		'description'   	=> esc_html__('1300px X 300px image is recommended','d5-smartia')
     )));
   
 // Slide Image Title
     $wp_customize->add_setting('smartia[slide-image-' . $opsinumber . '-title]', array(
-        'default'        	=> __('Slide Image ','d5-smartia') . $opsinumber . __(' Title | Welcome to D5 Smartia Theme, Visit D5 Creation for Details','d5-smartia'),
+        'default'        	=> esc_html__('Slide Image ','d5-smartia') . $opsinumber . esc_html__(' Title | Welcome to D5 Smartia Theme, Visit D5 Creation for Details','d5-smartia'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -133,7 +133,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_slide-image-' . $opsinumber . '-title' , array(
-        'label'      => __('Title', 'd5-smartia') . '-' . $opsinumber,
+        'label'      => esc_html__('Title', 'd5-smartia') . '-' . $opsinumber,
         'section'    => 'smartia_slide',
         'settings'   => 'smartia[slide-image-' . $opsinumber .'-title]'
     ));
@@ -141,7 +141,7 @@ function d5smartia_customize_register($wp_customize){
 
 // Image Description
     $wp_customize->add_setting('smartia[slide-image-' . $opsinumber . '-description]', array(
-        'default'        	=> __('You can use D5 Smartia for Black and White looking Smart Blogging, Personal or Corporate Websites.  This is a Sample Description and you can change these from Samrtia Options','d5-smartia'),
+        'default'        	=> esc_html__('You can use D5 Smartia for Black and White looking Smart Blogging, Personal or Corporate Websites.  This is a Sample Description and you can change these from Samrtia Options','d5-smartia'),
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_textarea',
         'type'           	=> 'option'
@@ -149,7 +149,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_slide-image-' . $opsinumber . '-description' , array(
-        'label'      => __('Description', 'd5-smartia') . '-' . $opsinumber,
+        'label'      => esc_html__('Description', 'd5-smartia') . '-' . $opsinumber,
         'section'    => 'smartia_slide',
         'settings'   => 'smartia[slide-image-' . $opsinumber .'-description]',
 		'type' 		 => 'textarea'
@@ -163,7 +163,7 @@ function d5smartia_customize_register($wp_customize){
  $wp_customize->add_section('smartia_social', array(
         'priority' 		=> 13,
 		'capability'     => 'edit_theme_options',
-		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - Slide', 'd5-smartia'),
+		'title'    		=> esc_html__('&nbsp;&nbsp;&nbsp;&nbsp; - Smartia Social Links', 'd5-smartia'),
         'description'   => ''
     ));
 	
@@ -177,7 +177,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_fb_link', array(
-        'label'      => __('Facebook Link', 'd5-smartia'),
+        'label'      => esc_html__('Facebook Link', 'd5-smartia'),
         'section'    => 'smartia_social',
         'settings'   => 'smartia[fb_link]'
     ));
@@ -192,7 +192,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_tw_link', array(
-        'label'      => __('Twitter Link', 'd5-smartia'),
+        'label'      => esc_html__('Twitter Link', 'd5-smartia'),
         'section'    => 'smartia_social',
         'settings'   => 'smartia[tw_link]'
     ));
@@ -207,7 +207,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_lin_link', array(
-        'label'      => __('Linked In Link', 'd5-smartia'),
+        'label'      => esc_html__('Linked In Link', 'd5-smartia'),
         'section'    => 'smartia_social',
         'settings'   => 'smartia[lin_link]'
     ));
@@ -222,7 +222,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_ytube_link', array(
-        'label'      => __('YouTube Link', 'd5-smartia'),
+        'label'      => esc_html__('YouTube Link', 'd5-smartia'),
         'section'    => 'smartia_social',
         'settings'   => 'smartia[ytube_link]'
     ));
@@ -238,7 +238,7 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_blog_link', array(
-        'label'      => __('Blog/News Link', 'd5-smartia'),
+        'label'      => esc_html__('Blog/News Link', 'd5-smartia'),
         'section'    => 'smartia_social',
         'settings'   => 'smartia[blog_link]'
     ));

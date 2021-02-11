@@ -17,15 +17,15 @@ get_header(); ?>
  			<div class="entrytext"><?php the_post_thumbnail(); ?>
  			<?php d5smartia_content(); ?>
  			<div class="clear"> </div>
- 			<?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __('Pages','d5-smartia'). ': </span>', 'after' => '</div>' ) ); ?>
- 			<div class="postmetadata"><?php _e('Posted in','d5-smartia'); ?> <?php the_category(', ') ?> | <?php edit_post_link(__('Edit','d5-smartia'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments','d5-smartia') . ' &#187;', __('One Comment','d5-smartia') . ' &#187;', '% ' . __('Comments','d5-smartia') . ' &#187;'); ?> <?php the_tags('<br />' .  __('Tags','d5-smartia') . ': ', ', ', '<br />'); ?></div>
+ 			<?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__('Pages','d5-smartia'). ': </span>', 'after' => '</div>' ) ); ?>
+ 			<div class="postmetadata"><?php _e('Posted in','d5-smartia'); ?> <?php the_category(', ') ?> | <?php edit_post_link(esc_html__('Edit','d5-smartia'), '', ' | '); ?>  <?php comments_popup_link(esc_html__('No Comments','d5-smartia') . ' &#187;', esc_html__('One Comment','d5-smartia') . ' &#187;', '% ' . esc_html__('Comments','d5-smartia') . ' &#187;'); ?> <?php the_tags('<br />' .  esc_html__('Tags','d5-smartia') . ': ', ', ', '<br />'); ?></div>
  			</div>
  			<br />
 			<div class="floatleft"><?php previous_post_link('&laquo; %link'); ?></div>
 			<div class="floatright"><?php next_post_link('%link &raquo;'); ?></div><br /><br />
             <?php if ( is_attachment() ): ?>
-            <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . __('Previous Image','d5-smartia') ); ?></div>
-			<div class="floatright"><?php next_image_link( false,  __('Next Image','d5-smartia') . ' &raquo;' ); ?></div> 
+            <div class="floatleft"><?php previous_image_link( false, '&laquo; ' . esc_html__('Previous Image','d5-smartia') ); ?></div>
+			<div class="floatright"><?php next_image_link( false,  esc_html__('Next Image','d5-smartia') . ' &raquo;' ); ?></div> 
             <?php endif; ?>
           	<div class="content-ver-sep"></div><br />
 			<?php endwhile;?>

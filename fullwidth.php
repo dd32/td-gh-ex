@@ -14,7 +14,7 @@ get_header(); ?>
  <?php if (!is_front_page()): ?><h1 class="page-title"><?php the_title(); ?></h1><?php endif; ?>
  <div class="entrytext">
  <?php the_content(); ?>
- <?php wp_link_pages(array('before' => '<p><strong>' . __('Pages','d5-smartia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+ <?php wp_link_pages(array('before' => '<p><strong>' . esc_html__('Pages','d5-smartia'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link('Edit', '<p>', '</p>'); ?>
 <?php if (d5smartia_get_option ('cpage', '' ) != '1' ): comments_template('', true); endif;?>

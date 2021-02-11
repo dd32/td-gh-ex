@@ -2,9 +2,9 @@
 
 Contributors: D5 Creation
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, translation-ready, blog, education, portfolio
-Requires at least: 4.0
-Tested up to: 5.0.4-alpha
-Stable tag: 3.3
+Requires at least: 4.6
+Tested up to: 5.6.1
+Stable tag: 3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ No, It is for Blogs, Company, Personal Websites
 
 
 == Changelog ==
+
+= 3.5 =
+* Code Cleanup
 
 = 3.4 =
 * Minor Issues Fixed

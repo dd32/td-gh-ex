@@ -92,7 +92,7 @@ You can Visit the Smartia Extend <a href="<?php echo esc_url('http://demo.d5crea
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
+        <div class="bottom"><img src="<?php echo esc_url(get_template_directory_uri()).'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
         
 <div class="floatcntr">
 		<h2 class="spetitle">World Class, Responsive and Premium WordPress Themes</h2>
@@ -102,7 +102,7 @@ You can Visit the Smartia Extend <a href="<?php echo esc_url('http://demo.d5crea
         <a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://demo.d5creation.com' ) ?>">Visit Theme Demos</a>
 		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/wp-login.php?action=register' ) ?>">Become a Happy Member</a> <br /><br /><br />
         
-        <img width="100%" src="<?php echo get_template_directory_uri() . '/inc/images/themefeatures.png' ?>" alt="D5 Creation Themes" />
+        <img width="100%" src="<?php echo esc_url(get_template_directory_uri()) . '/inc/images/themefeatures.png' ?>" alt="D5 Creation Themes" />
 	</div>   
 
 </div>

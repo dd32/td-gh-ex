@@ -16,6 +16,7 @@
 wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
+<?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
 <div id="site-container">
 	<div id ="header">
 		<div id="top-menu-con" class="box100">
@@ -58,7 +59,7 @@ wp_head(); ?>
        	</div><!-- header-content -->
               
         <!-- Site Main Menu Goes Here -->
-        <div id="mobile-menu"><?php echo __('Main Menu','d5-smartia'); ?></div>         
+        <div id="mobile-menu"><?php echo esc_html__('Main Menu','d5-smartia'); ?></div>         
         <nav id="main-menu-con">
 			<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'main-menu-items' )); else: wp_page_menu(); endif; ?>
         </nav>

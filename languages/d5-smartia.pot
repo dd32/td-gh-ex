@@ -2,21 +2,21 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2019-02-14 12:47+0600\n"
-"PO-Revision-Date: 2015-10-29 02:02+0600\n"
+"Project-Id-Version: D5 Smartia\n"
+"POT-Creation-Date: 2021-02-12 02:18+0600\n"
+"PO-Revision-Date: 2021-02-12 02:18+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.13\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: functions.php:9 header.php:56
+#: functions.php:9 header.php:62
 msgid "Main Menu"
 msgstr ""
 
@@ -196,58 +196,90 @@ msgstr ""
 msgid "Demo Here"
 msgstr ""
 
-#: inc/customize.php:33
+#: inc/customize.php:24
+msgid "012-345-6789"
+msgstr ""
+
+#: inc/customize.php:32
+msgid "Contact Number"
+msgstr ""
+
+#: inc/customize.php:47
+msgid "Contact E-Mail"
+msgstr ""
+
+#: inc/customize.php:58
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Smartia ADs"
+msgstr ""
+
+#: inc/customize.php:74
 msgid "Left Ad Image"
 msgstr ""
 
-#: inc/customize.php:36 inc/customize.php:53
+#: inc/customize.php:77 inc/customize.php:94
 msgid "180px X 150px image is recommended"
 msgstr ""
 
-#: inc/customize.php:50
+#: inc/customize.php:91
 msgid "Right Ad Image"
 msgstr ""
 
-#: inc/customize.php:70
-msgid "Sliding Image"
+#: inc/customize.php:103
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Smartia Slide"
 msgstr ""
 
-#: inc/customize.php:73
+#: inc/customize.php:120
+msgid "SLIDE IMAGE"
+msgstr ""
+
+#: inc/customize.php:123
 msgid "1300px X 300px image is recommended"
 msgstr ""
 
-#: inc/customize.php:78
+#: inc/customize.php:128
 msgid "Slide Image "
 msgstr ""
 
-#: inc/customize.php:78
+#: inc/customize.php:128
 msgid " Title | Welcome to D5 Smartia Theme, Visit D5 Creation for Details"
 msgstr ""
 
-#: inc/customize.php:86
-msgid "Image Title"
+#: inc/customize.php:136
+msgid "Title"
 msgstr ""
 
-#: inc/customize.php:94
+#: inc/customize.php:144
 msgid ""
 "You can use D5 Smartia for Black and White looking Smart Blogging, Personal "
 "or Corporate Websites.  This is a Sample Description and you can change "
 "these from Samrtia Options"
 msgstr ""
 
-#: inc/customize.php:102
-msgid "Image Description"
+#: inc/customize.php:152
+msgid "Description"
 msgstr ""
 
-#: inc/customize.php:121
+#: inc/customize.php:166
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Smartia Social Links"
+msgstr ""
+
+#: inc/customize.php:180
+msgid "Facebook Link"
+msgstr ""
+
+#: inc/customize.php:195
+msgid "Twitter Link"
+msgstr ""
+
+#: inc/customize.php:210
 msgid "Linked In Link"
 msgstr ""
 
-#: inc/customize.php:136
+#: inc/customize.php:225
 msgid "YouTube Link"
 msgstr ""
 
-#: inc/customize.php:152
+#: inc/customize.php:241
 msgid "Blog/News Link"
 msgstr ""
 
@@ -306,8 +338,8 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "D5 Smartia theme for WordPress is sophisticated, lightweight, adaptable and "
-"Responsive. You can use D5 Smartia for Smart Blogging, Personal or "
-"Corporate Websites."
+"Responsive. You can use D5 Smartia for Smart Blogging, Personal or Corporate "
+"Websites."
 msgstr ""
 
 #. Author of the plugin/theme

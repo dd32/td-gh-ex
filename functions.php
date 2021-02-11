@@ -6,7 +6,7 @@
 */  
 
 function d5smartia_setup() {
-	register_nav_menus( array( 'main-menu' => __('Main Menu','d5-smartia' ), 'top-menu' => __('Top Menu','d5-smartia' ) ) );
+	register_nav_menus( array( 'main-menu' => esc_html__('Main Menu','d5-smartia' ), 'top-menu' => esc_html__('Top Menu','d5-smartia' ) ) );
 //	Set the content width based on the theme's Smartia and stylesheet.
 	load_theme_textdomain( 'd5-smartia', get_template_directory() . '/languages' );	
 	global $content_width;
@@ -138,7 +138,7 @@ function d5smartia_setup() {
 	function d5smartia_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __('Primary Sidebar','d5-smartia'),
+		'name' => esc_html__('Primary Sidebar','d5-smartia'),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -147,7 +147,7 @@ function d5smartia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Secondary Sidebar','d5-smartia'),
+		'name' => esc_html__('Secondary Sidebar','d5-smartia'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -156,9 +156,9 @@ function d5smartia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area One','d5-smartia'),
+		'name' => esc_html__('Footer Area One','d5-smartia'),
 		'id' => 'sidebar-3',
-		'description' => __('An optional widget area for your site footer','d5-smartia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-smartia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -166,9 +166,9 @@ function d5smartia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Two','d5-smartia'),
+		'name' => esc_html__('Footer Area Two','d5-smartia'),
 		'id' => 'sidebar-4',
-		'description' => __('An optional widget area for your site footer','d5-smartia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-smartia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -176,9 +176,9 @@ function d5smartia_setup() {
 	) );
 
 	register_sidebar( array(
-		'name' => __('Footer Area Three','d5-smartia'),
+		'name' => esc_html__('Footer Area Three','d5-smartia'),
 		'id' => 'sidebar-5',
-		'description' => __('An optional widget area for your site footer','d5-smartia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-smartia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -186,9 +186,9 @@ function d5smartia_setup() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __('Footer Area Four','d5-smartia'),
+		'name' => esc_html__('Footer Area Four','d5-smartia'),
 		'id' => 'sidebar-6',
-		'description' => __('An optional widget area for your site footer','d5-smartia'),
+		'description' => esc_html__('An optional widget area for your site footer','d5-smartia'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',

@@ -11,7 +11,7 @@
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number(__('No Comments','d5-smartia') . '', __('One Comment','d5-smartia'), '% ' . __('Comments','d5-smartia') . '' );  echo ' ' . __(' to','d5-smartia'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="comments"><?php comments_number(esc_html__('No Comments','d5-smartia') . '', esc_html__('One Comment','d5-smartia'), '% ' . esc_html__('Comments','d5-smartia') . '' );  echo ' ' . esc_html__(' to','d5-smartia'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments( array( 'avatar_size' => '150') ); ?>
 	</ol>
