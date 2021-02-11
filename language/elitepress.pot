@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Elitepress\n"
-"POT-Creation-Date: 2021-01-22 19:20+0530\n"
+"POT-Creation-Date: 2021-02-11 17:21+0530\n"
 "PO-Revision-Date: 2019-04-03 17:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -718,7 +718,7 @@ msgstr ""
 #: elitepress_theme_setup_data.php:80
 #: functions/customizer/customizer-copyright.php:22
 msgid ""
-"<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
+"Proudly powered by <a href=\"https://wordpress.org\">WordPress</a> | Theme: "
 "<a href=\"https://webriti.com\" rel=\"nofollow\">ElitePress</a> by Webriti"
 msgstr ""
 
@@ -1608,13 +1608,13 @@ msgstr ""
 
 #: functions/widget/elitepress_header_widget.php:42
 #: functions/widget/elitepress_header_widget.php:69
-#: functions/widget/elitepress_header_widget.php:87 header-logo-section.php:53
+#: functions/widget/elitepress_header_widget.php:87
 msgid "Maecenas sollicitudin"
 msgstr ""
 
 #: functions/widget/elitepress_header_widget.php:47
 #: functions/widget/elitepress_header_widget.php:75
-#: functions/widget/elitepress_header_widget.php:92 header-logo-section.php:54
+#: functions/widget/elitepress_header_widget.php:92
 msgid "California, United States."
 msgstr ""
 
@@ -1684,34 +1684,6 @@ msgstr ""
 
 #: functions/widget/elitepress_social_icon.php:245
 msgid "Dribble URL"
-msgstr ""
-
-#: header-logo-section.php:52
-msgid "fa fa fa-home"
-msgstr ""
-
-#: header-logo-section.php:52
-msgid "fa fa-envelope"
-msgstr ""
-
-#: header-logo-section.php:52
-msgid "fa fa-clock-o"
-msgstr ""
-
-#: header-logo-section.php:53
-msgid "Fusce et diam ornare:"
-msgstr ""
-
-#: header-logo-section.php:53
-msgid "Sed ut sem"
-msgstr ""
-
-#: header-logo-section.php:54
-msgid "abc@example.com"
-msgstr ""
-
-#: header-logo-section.php:54
-msgid "Nec-Vel: 9.30am To 7.00pm"
 msgstr ""
 
 #: header-menu-section.php:10

@@ -7,18 +7,20 @@ if( $elitepress_current_options['blog_section_enabled']== true ) { ?>
 		<!-- Section Title -->
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<div class="section-header">
-					<?php if($elitepress_current_options['blog_title']) { ?>
-					<h3 class="section-title"><?php echo esc_html($elitepress_current_options['blog_title']); ?></h3>
-					<?php }
-					if($elitepress_current_options['blog_description']) { ?>
-					<p class="section-subtitle"><?php echo esc_html($elitepress_current_options['blog_description']); ?></p>
-					<?php } ?>
-				</div>
-			</div>		
+				<?php if( ($elitepress_current_options['blog_title'] != '') || ($elitepress_current_options['blog_description'] != '') ) : ?>
+					<div class="section-header">
+						<?php if($elitepress_current_options['blog_title']) { ?>
+						<h3 class="section-title"><?php echo esc_html($elitepress_current_options['blog_title']); ?></h3>
+						<?php }
+						if($elitepress_current_options['blog_description']) { ?>
+						<p class="section-subtitle"><?php echo esc_html($elitepress_current_options['blog_description']); ?></p>
+						<?php } ?>
+					</div>
+				<?php endif; ?>
+			</div>
 		</div>
 		<!-- /Section Title -->
-		
+
 		<!-- blog -->
 		<div class="row">
 			<?php
@@ -41,7 +43,7 @@ if( $elitepress_current_options['blog_section_enabled']== true ) { ?>
 					<div class="blog-info">
 						<header class="entry-header">
 							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						</header>						
+						</header>
 						<div class="entry-content">
 							<p><?php echo wp_kses_post(elitepress_get_home_blog_excerpt()); ?></p>
 						</div>

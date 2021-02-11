@@ -1,5 +1,8 @@
 == Changelog ==
 
+@version 1.9.5
+1. Removed default value from Top header widget area.
+2. Fixed footer copyright and latest news section empty markup issues.
 @version 1.9.4
 1. Fixed user comment issue and corrected the escaping and translation functions.
 @version 1.9.3

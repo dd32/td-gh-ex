@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 1.9.4
+Stable tag: 1.9.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,11 +24,14 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == License ==
 
-ElitePress WordPress Theme, Copyright (C) 2015, priyanshumittal
+ElitePress WordPress Theme, Copyright (C) 2015-2021, priyanshumittal
 ElitePress is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@version 1.9.5
+1. Removed default value from Top header widget area.
+2. Fixed footer copyright and latest news section empty markup issues.
 @version 1.9.4
 1. Fixed user comment issue and corrected the escaping and translation functions.
 @version 1.9.3
@@ -209,5 +212,3 @@ Source: https://wordpress.org/plugins/contact-form-7/
 
 * Images on /images folder
 Copyright (C) 2021, Webriti and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
-
-# --- EOF --- #
