@@ -2,9 +2,9 @@
 Contributors: catchthemes
 Tags: blog, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 5.1
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 3.4.1
+Stable tag: 3.4.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -140,6 +140,10 @@ Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.4.2 (Released: February 12, 2021) =
+* Add: Default Blocks Support
+* Bug Fixed: Slider Issue on Image loader set to true on WP 5.5
 
 = 3.4.1 (Released: September 03, 2020) =
 * Updated: Screenshot

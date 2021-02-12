@@ -75,7 +75,7 @@ final class catchbase_upgrade_pro_customize {
 				array(
 					'title'    => esc_html__( 'Catch Base Pro', 'catch-base' ),
 					'pro_text' => esc_html__( 'Upgrade Now', 'catch-base' ),
-					'pro_url'  => 'https://catchthemes.com/themes/catch-base-pro',
+					'pro_url'  => 'https://catchthemes.com/themes/catch-base',
 					'priority' => 1
 				)
 			)

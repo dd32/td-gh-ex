@@ -1,11 +1,11 @@
-# Copyright (C) 2012-2020 Catch Themes
+# Copyright (C) 2012-2021 Catch Themes
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-09-03 11:29-0400\n"
-"PO-Revision-Date: 2020-09-03 11:29-0400\n"
+"POT-Creation-Date: 2021-02-11 22:36-0800\n"
+"PO-Revision-Date: 2021-02-11 22:36-0800\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
@@ -100,8 +100,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Puslapiai:"
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:535
-#: ../inc/catchbase-core.php:554 ../inc/catchbase-core.php:680
+#: ../content-page.php:35 ../inc/catchbase-core.php:620
+#: ../inc/catchbase-core.php:639 ../inc/catchbase-core.php:765
 msgid "Edit"
 msgstr "Redaguoti"
 
@@ -146,98 +146,150 @@ msgstr "Pagrindinis meniu"
 msgid "Secondary Menu"
 msgstr "Antrinis meniu"
 
-#: ../inc/catchbase-core.php:503
+#: ../inc/catchbase-core.php:190
+msgid "Small"
+msgstr ""
+
+#: ../inc/catchbase-core.php:191
+msgid "S"
+msgstr ""
+
+#: ../inc/catchbase-core.php:196
+msgid "Normal"
+msgstr ""
+
+#: ../inc/catchbase-core.php:197
+msgid "M"
+msgstr ""
+
+#: ../inc/catchbase-core.php:202 ../inc/catchbase-default-options.php:303
+msgid "Large"
+msgstr "Didelis"
+
+#: ../inc/catchbase-core.php:203
+msgid "L"
+msgstr ""
+
+#: ../inc/catchbase-core.php:208
+msgid "Huge"
+msgstr ""
+
+#: ../inc/catchbase-core.php:209
+msgid "XL"
+msgstr ""
+
+#: ../inc/catchbase-core.php:219
+msgid "White"
+msgstr ""
+
+#: ../inc/catchbase-core.php:224
+msgid "Black"
+msgstr ""
+
+#: ../inc/catchbase-core.php:229
+msgid "Gray"
+msgstr ""
+
+#: ../inc/catchbase-core.php:234
+msgid "Yellow"
+msgstr ""
+
+#: ../inc/catchbase-core.php:239
+msgid "Blue"
+msgstr ""
+
+#: ../inc/catchbase-core.php:588
 msgid "Post navigation"
 msgstr "Įrašo meniu"
 
-#: ../inc/catchbase-core.php:512
+#: ../inc/catchbase-core.php:597
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Senesni pranešimai"
 
-#: ../inc/catchbase-core.php:513
+#: ../inc/catchbase-core.php:598
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Naujausi pranešimai <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchbase-core.php:535
+#: ../inc/catchbase-core.php:620
 msgid "Pingback:"
 msgstr "Žingsniu atgal:"
 
-#: ../inc/catchbase-core.php:545
+#: ../inc/catchbase-core.php:630
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sako:</span>"
 
-#: ../inc/catchbase-core.php:551
+#: ../inc/catchbase-core.php:636
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$s"
 
-#: ../inc/catchbase-core.php:558
+#: ../inc/catchbase-core.php:643
 msgid "Your comment is awaiting moderation."
 msgstr "Jūsų komentaras laukia patvirtinimo."
 
-#: ../inc/catchbase-core.php:661
+#: ../inc/catchbase-core.php:746
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
-#: ../inc/catchbase-core.php:668
+#: ../inc/catchbase-core.php:753
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autorius</span>"
 
-#: ../inc/catchbase-core.php:676
+#: ../inc/catchbase-core.php:761
 msgid "Leave a comment"
 msgstr "Parašykite komentarą"
 
-#: ../inc/catchbase-core.php:676
+#: ../inc/catchbase-core.php:761
 msgid "1 Comment"
 msgstr "1 komentaras"
 
-#: ../inc/catchbase-core.php:676
+#: ../inc/catchbase-core.php:761
 msgid "% Comments"
 msgstr "% komentarai"
 
-#: ../inc/catchbase-core.php:697 ../inc/catchbase-core.php:705
+#: ../inc/catchbase-core.php:782 ../inc/catchbase-core.php:790
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/catchbase-core.php:700
+#: ../inc/catchbase-core.php:785
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorijos</span>"
 
-#: ../inc/catchbase-core.php:708
+#: ../inc/catchbase-core.php:793
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Žymės</span>"
 
-#: ../inc/catchbase-core.php:1369
+#: ../inc/catchbase-core.php:1454
 msgid "Scroll Up"
 msgstr "Slinkti aukštyn"
 
-#: ../inc/catchbase-core.php:1387
+#: ../inc/catchbase-core.php:1472
 msgid "Posted on"
 msgstr "Paskelbta"
 
-#: ../inc/catchbase-core.php:1388
+#: ../inc/catchbase-core.php:1473
 msgid "By"
 msgstr "pagal"
 
-#: ../inc/catchbase-core.php:1429
+#: ../inc/catchbase-core.php:1514
 msgid "Next &rarr;"
 msgstr "Kitas &rarr;"
 
-#: ../inc/catchbase-core.php:1430
+#: ../inc/catchbase-core.php:1515
 msgid "Next post:"
 msgstr "Paskesnis įrašas:"
 
-#: ../inc/catchbase-core.php:1432
+#: ../inc/catchbase-core.php:1517
 msgid "&larr; Previous"
 msgstr "&larr; Ankstesnis"
 
-#: ../inc/catchbase-core.php:1433
+#: ../inc/catchbase-core.php:1518
 msgid "Previous post:"
 msgstr "Ankstesnis įrašas:"
 
@@ -403,10 +455,6 @@ msgstr "Begalinis slinkimas (paspaudimas)"
 #: ../inc/catchbase-default-options.php:289
 msgid "Infinite Scroll (Scroll)"
 msgstr "Begalinis slinkimas (slinkimas)"
-
-#: ../inc/catchbase-default-options.php:303
-msgid "Large"
-msgstr "Didelis"
 
 #: ../inc/catchbase-default-options.php:304
 msgid "Medium"

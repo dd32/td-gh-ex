@@ -169,6 +169,78 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 				'footer'    => 'page'
 			) );
 		}
+
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom editor font sizes.
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => esc_html__( 'Small', 'catch-base' ),
+					'shortName' => esc_html__( 'S', 'catch-base' ),
+					'size'      => 14,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => esc_html__( 'Normal', 'catch-base' ),
+					'shortName' => esc_html__( 'M', 'catch-base' ),
+					'size'      => 17,
+					'slug'      => 'normal',
+				),
+				array(
+					'name'      => esc_html__( 'Large', 'catch-base' ),
+					'shortName' => esc_html__( 'L', 'catch-base' ),
+					'size'      => 48,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => esc_html__( 'Huge', 'catch-base' ),
+					'shortName' => esc_html__( 'XL', 'catch-base' ),
+					'size'      => 64,
+					'slug'      => 'huge',
+				),
+			)
+		);
+
+		// Add support for custom color scheme.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'White', 'catch-base' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Black', 'catch-base' ),
+				'slug'  => 'black',
+				'color' => '#111111',
+			),
+			array(
+				'name'  => esc_html__( 'Gray', 'catch-base' ),
+				'slug'  => 'gray',
+				'color' => '#f4f4f4',
+			),
+			array(
+				'name'  => esc_html__( 'Yellow', 'catch-base' ),
+				'slug'  => 'yellow',
+				'color' => '#e5ae4a',
+			),
+			array(
+				'name'  => esc_html__( 'Blue', 'catch-base' ),
+				'slug'  => 'Blue',
+				'color' => '#21759b',
+			),
+		) );
 	}
 endif; // catchbase_setup
 add_action( 'after_setup_theme', 'catchbase_setup' );
@@ -186,6 +258,9 @@ function catchbase_scripts() {
 	$options			= catchbase_get_theme_options();
 
 	wp_enqueue_style( 'catchbase-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
+
+	// Theme block stylesheet.
+	wp_enqueue_style( 'catch-base-block-style', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/blocks.css', array( 'catchbase-style' ), CATCHBASE_THEME_VERSION );
 
 	wp_enqueue_script( 'catchbase-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/navigation.min.js', array(), '20120206', true );
 
@@ -256,6 +331,16 @@ function catchbase_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'catchbase_scripts' );
 
+/**
+ * Enqueue editor styles for Gutenberg
+ *
+ * @since Catch Base 3.4.2
+ */
+function catch_base_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'catch-base-block-editor-style', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/editor-blocks.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'catch_base_block_editor_styles' );
 
 /**
  * Enqueue scripts and styles for Metaboxes

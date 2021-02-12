@@ -5,7 +5,7 @@
 
 jQuery(document).ready(function() {
 	var jQueryheader_search = jQuery( '#search-toggle' );
-	jQueryheader_search.click( function() {
+	jQueryheader_search.on( 'click', function() {
 		var jQuerythis_el_search = jQuery(this),
 			jQueryform_search = jQuerythis_el_search.siblings( '#search-container' );
 			

@@ -28,7 +28,6 @@ textarea {
 	color: #404040;
 	font-family: sans-serif;
 	font-size: 15px;
-	font-size: 1.5rem;
 	line-height: 1.5;
 }
 
@@ -112,7 +111,6 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
-	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-top: 0;
 	margin-bottom: 1.6em;
@@ -193,7 +191,7 @@ p {
     margin-bottom: 20px;
 }
 
-ol, 
+ol,
 ul {
     margin-bottom: 20px;
     margin-left: 20px;
