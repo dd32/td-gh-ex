@@ -4,7 +4,7 @@ Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, cust
 custom-header, custom-menu, featured-images, post-formats, threaded-comments,
 sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 Tested up to: 5.6
-Stable tag: 2.1.2
+Stable tag: 2.1.6
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -20,7 +20,6 @@ W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, 
 Search Engine Optimized, Social Sites: Facebook, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr,
 YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera,
 and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
-DEMO: DEMO: https://tishonator.com/demo/fkidd
 
 == Frequently Asked Questions ==
 
@@ -48,6 +47,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 2.1.6 =
+* fix issue in starter content
+* remove demo link from description
 
 = 2.1.5 =
 * Fix deprecated jQuery code usage
