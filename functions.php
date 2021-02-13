@@ -186,38 +186,24 @@ function fgymm_setup() {
 			'contact'
 		),
 
-		// Create the custom image attachments used as slides
-		'attachments' => array(
-			'image-slide-1' => array(
-				'post_title' => _x( 'Slider Image 1', 'Theme starter content', 'fgymm' ),
-				'file' => 'images/slider/1.jpg', // URL relative to the template directory.
-			),
-			'image-slide-2' => array(
-				'post_title' => _x( 'Slider Image 2', 'Theme starter content', 'fgymm' ),
-				'file' => 'images/slider/2.jpg', // URL relative to the template directory.
-			),
-			'image-slide-3' => array(
-				'post_title' => _x( 'Slider Image 3', 'Theme starter content', 'fgymm' ),
-				'file' => 'images/slider/3.jpg', // URL relative to the template directory.
-			),
-		),
-
 		// Default to a static front page and assign the front and posts pages.
 		'options' => array(
 			'show_on_front' => 'page',
 			'page_on_front' => '{{home}}',
 			'page_for_posts' => '{{blog}}',
+			'blogname' => _x( 'fGymm', 'Theme starter content', 'fgymm' ),
+			'blogdescription' => _x( 'Theme Preview', 'Theme starter content', 'fgymm' ),
 		),
 
 		// Set the front page section theme mods to the IDs of the core-registered pages.
 		'theme_mods' => array(
 			'fgymm_slider_display' => 1,
-			'fgymm_slide1_image' => '{{image-slider-1}}',
-			'fgymm_slide1_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
-			'fgymm_slide2_image' => '{{image-slider-2}}',
-			'fgymm_slide2_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
-			'fgymm_slide3_image' => '{{image-slider-3}}',
-			'fgymm_slide3_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
+			'fgymm_slide1_image' => esc_url( get_template_directory_uri() . '/images/slider/1.jpg' ),
+			'fgymm_slide1_content' => _x( '<h2>Slide 1 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a href="#" title="Read more">Read more</a>', 'Theme starter content', 'fgymm' ),
+			'fgymm_slide2_image' => esc_url( get_template_directory_uri() . '/images/slider/2.jpg' ),
+			'fgymm_slide2_content' => _x( '<h2>Slide 2 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a href="#" title="Read more">Read more</a>', 'Theme starter content', 'fgymm' ),
+			'fgymm_slide3_image' => esc_url( get_template_directory_uri() . '/images/slider/3.jpg' ),
+			'fgymm_slide3_content' => _x( '<h2>Slide 3 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a href="#" title="Read more">Read more</a>', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_facebook' => _x( '#', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_twitter' => _x( '#', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_linkedin' => _x( '#', 'Theme starter content', 'fgymm' ),

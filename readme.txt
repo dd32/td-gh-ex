@@ -4,7 +4,7 @@ Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, 
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, front-page-post-form
 Tested up to: 5.6
-Stable tag: 1.9.3
+Stable tag: 1.9.7
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -43,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.9.7 =
+* Fix issues in starter content
 
 = 1.9.6 =
 * Fix deprecated jQuery code usage
