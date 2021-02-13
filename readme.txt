@@ -2,8 +2,8 @@
 Contributors: Buywptemplates
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, flexible-header, wide-blocks, block-styles, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats , translation-ready, rtl-language-support, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.6
-Stable tag: 0.5.8
+Tested up to: 5.6.1
+Stable tag: 0.5.9
 Requires PHP: 7.2.14
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -12,7 +12,7 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 
 == Description ==
 
-Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly robust WordPress theme is perfect for dealers of new or used cars, tractor, forklift & lift truck, snowmobile, motoSnow, Motorbike, agriculture equipment, auto service applications, car repair shops, car washes, mechanics shops, aircrafts, Utilitie ATV, Campers, RVs, Travel Trailer, Lifts, Turboprops, Charter, Airplanes, motorbikes and motorcycles. It has Custom Menu, footer-widgets, left-sidebar and Custom logo that allows showcasing the portfolio of products in best possible ways. Its simple, adaptable, theme-options, clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. This theme is perfect for car dealers, wheel shop owners, Motorcycle shops, Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business process right from browsing till purchase. It supports different languages such as ARABIC, GERMAN, SPANISH, FRENCH, ITALIAN, RUSSIAN, CHINESE, and TURKISH.
+Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly robust WordPress theme is perfect for dealers of new or used cars, tractor, garages, car rental agencies, small auto business services, small car dealer, forklift & lift truck, snowmobile, motoSnow, Motorbike, agriculture equipment, auto service applications, car repair shops, car washes, mechanics shops, aircrafts, Utilitie ATV, Campers, RVs, Travel Trailer, Lifts, Turboprops, Charter, Airplanes, motorbikes and motorcycles. It has Custom Menu, footer-widgets, left-sidebar and Custom logo that allows showcasing the portfolio of products in best possible ways. Its simple, adaptable, theme-options, clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. This theme is perfect for car dealers, wheel shop owners, Motorcycle shops, Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business process right from browsing till purchase. It supports different languages such as ARABIC, GERMAN, SPANISH, FRENCH, ITALIAN, RUSSIAN, CHINESE, and TURKISH.
 
 == Changelog ==
 
@@ -194,6 +194,10 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 * Added block-styles tag.
 * Added boostrap classes.
 * Changed search code.
+
+= 0.5.9 =
+* Added underline on anchor as per Accessibility.
+* Escaped on get_template_directory_uri() function.
 
 == Resources ==
 

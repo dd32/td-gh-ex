@@ -43,8 +43,8 @@ class Automobile_Car_Dealer_Icon_Changer extends WP_Customize_Control{
 
 function automobile_car_dealer_icon_customize_js() {
      
-    wp_enqueue_style( 'font-awesome-1', get_template_directory_uri().'/css/fontawesome-all.css');
-    wp_enqueue_script( 'automobile-car-dealer-customize-icon', get_template_directory_uri().'/js/customize-icon.js', array("jquery"),'', true  );
+    wp_enqueue_style( 'font-awesome-1', esc_url(get_template_directory_uri()).'/css/fontawesome-all.css');
+    wp_enqueue_script( 'automobile-car-dealer-customize-icon', esc_url(get_template_directory_uri()).'/js/customize-icon.js', array("jquery"),'', true  );
 }
 add_action( 'customize_controls_enqueue_scripts', 'automobile_car_dealer_icon_customize_js' );
 

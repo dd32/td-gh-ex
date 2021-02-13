@@ -589,9 +589,9 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
         'description' => __('Here you can change the 3 different layouts of post.','automobile-car-dealer'),
         'section' => 'automobile_car_dealer_post_settings',
         'choices' => array(
-            'Layout 1' => get_template_directory_uri().'/images/layout1.png',
-            'Layout 2' => get_template_directory_uri().'/images/layout2.png',
-            'Layout 3' => get_template_directory_uri().'/images/layout3.png',
+            'Layout 1' => esc_url(get_template_directory_uri()).'/images/layout1.png',
+            'Layout 2' => esc_url(get_template_directory_uri()).'/images/layout2.png',
+            'Layout 3' => esc_url(get_template_directory_uri()).'/images/layout3.png',
     ))));
 
 	$wp_customize->add_setting( 'automobile_car_dealer_post_excerpt_number', array(
@@ -1894,9 +1894,9 @@ final class Automobile_Car_Dealer_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'automobile-car-dealer-customize-controls', trailingslashit( get_template_directory_uri() ) . '/js/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'automobile-car-dealer-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . '/js/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'automobile-car-dealer-customize-controls', trailingslashit( get_template_directory_uri() ) . '/css/customize-controls.css' );
+		wp_enqueue_style( 'automobile-car-dealer-customize-controls', trailingslashit( esc_url(get_template_directory_uri()) ) . '/css/customize-controls.css' );
 	}
 
 	//Footer widget areas

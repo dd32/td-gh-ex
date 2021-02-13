@@ -69,12 +69,12 @@ function automobile_car_dealer_min_max( $short, $long, $short_max, $long_max, $p
 }
 
 function automobile_car_dealer_customize_preview_js() {
-	wp_enqueue_script( 'automobile-car-dealer-customizer', get_template_directory_uri() . '/js/logo-sizer/customize-preview.js', array( 'jquery', 'customize-preview' ), '201709081119', true );
+	wp_enqueue_script( 'automobile-car-dealer-customizer', esc_url(get_template_directory_uri()) . '/js/logo-sizer/customize-preview.js', array( 'jquery', 'customize-preview' ), '201709081119', true );
 }
 add_action( 'customize_preview_init', 'automobile_car_dealer_customize_preview_js' );
 
 function automobile_car_dealer_customize_controls_js() {
-	wp_enqueue_script( 'automobile-car-dealer-customizer-controls', get_template_directory_uri() . '/js/logo-sizer/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
+	wp_enqueue_script( 'automobile-car-dealer-customizer-controls', esc_url(get_template_directory_uri()) . '/js/logo-sizer/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'automobile_car_dealer_customize_controls_js' );
 

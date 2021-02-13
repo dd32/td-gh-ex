@@ -3,8 +3,8 @@
 class Automobile_Car_Dealer_Custom_Control extends WP_Customize_Control {
 	public $type = 'slider_control';
 	public function enqueue() {
-		wp_enqueue_script( 'automobile-car-dealer-custom-controls-js', trailingslashit( get_template_directory_uri() ) . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-		wp_enqueue_style( 'automobile-car-dealer-custom-controls-css', trailingslashit( get_template_directory_uri() ) . 'css/customizer.css', array(), '1.0', 'all' );
+		wp_enqueue_script( 'automobile-car-dealer-custom-controls-js', trailingslashit( esc_url(get_template_directory_uri()) ) . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
+		wp_enqueue_style( 'automobile-car-dealer-custom-controls-css', trailingslashit( esc_url(get_template_directory_uri()) ) . 'css/customizer.css', array(), '1.0', 'all' );
 	}
 	public function render_content() {
 	?>
