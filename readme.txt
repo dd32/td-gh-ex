@@ -4,7 +4,7 @@ Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, cust
 custom-header, custom-menu, featured-images, post-formats, threaded-comments,
 sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 Tested up to: 5.6
-Stable tag: 2.1.6
+Stable tag: 2.1.7
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -47,6 +47,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 2.1.7 =
+* remove repeating starter content
 
 = 2.1.6 =
 * fix issue in starter content

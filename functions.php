@@ -166,10 +166,6 @@ function fkidd_setup() {
 				'meta'
 			),
 
-			'homepage-below-widget-area' => array(
-				'text_business_info'
-			),
-
 			'footer-column-1-widget-area' => array(
 				'recent-comments'
 			),
