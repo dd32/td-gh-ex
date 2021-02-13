@@ -4,22 +4,23 @@ Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, 
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, front-page-post-form
 Tested up to: 5.6
-Stable tag: 1.9.7
+Stable tag: 1.9.8
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-fGymm is a Fully Responsive Gym and Fitness WordPress Theme.
+Fully Responsive Gym and Fitness WordPress Theme.
 
 == Description ==
 
-fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, 
-CrossFit programs, fitness professionals, personal trainers, etc. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page), 
-WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header
-and Footer Social Icons (Facebook, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK,
-Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple
-Browsers Support, Translation Ready and much more. DEMO: https://tishonator.com/demo/fgymm
+Fully Responsive Gym and Fitness WordPress Theme. fGymm is designed for health and fitness clubs,
+CrossFit programs, fitness professionals, personal trainers, etc. Features include Built-in
+Homepage Slider (Displayed Only on a Static Front Page), WooCommerce plugin support, Multi-level
+Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social Icons (Facebook,
+Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine), Sidebar and 3 Footer Widget
+Areas, 3 Homepage widget areas, Full-Width Template, Multiple Browsers Support, Translation Ready
+and much more.
 
 == Frequently Asked Questions ==
 
@@ -43,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.9.8 =
+* Update theme description
+* remove site title and description from starter content
 
 = 1.9.7 =
 * Fix issues in starter content

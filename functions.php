@@ -191,8 +191,6 @@ function fgymm_setup() {
 			'show_on_front' => 'page',
 			'page_on_front' => '{{home}}',
 			'page_for_posts' => '{{blog}}',
-			'blogname' => _x( 'fGymm', 'Theme starter content', 'fgymm' ),
-			'blogdescription' => _x( 'Theme Preview', 'Theme starter content', 'fgymm' ),
 		),
 
 		// Set the front page section theme mods to the IDs of the core-registered pages.
