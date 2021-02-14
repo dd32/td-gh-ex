@@ -4,7 +4,7 @@ Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, 
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options,
 footer-widgets
 Tested up to: 5.6
-Stable tag: 1.0.7
+Stable tag: 1.2.8
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -14,11 +14,7 @@ AyaMagazine is Fully Responsive Magazine WordPress Theme.
 
 == Description ==
 
-AyaMagazine is Fully Responsive Magazine WordPress Theme perfect for Online journals, News Blogs and
-other kinds of Magazine Sites. Features include Animation Appearing Effects, Multi-Level Drop-Down
-Header Menu, W3C Markup Validated, Right and Left Sidebar Widget Areas, 3 Footer Columns, Full-Width
-Page Template, Customize Options, Search Engine Optimized (SEO), Multiple Browser Compatible (IE9,
-IE10, IE11, Chrome, Firefox, Opera, and Safari), FontAwesome Integration, and Translation Ready.
+AyaMagazine is Fully Responsive Magazine WordPress Theme. Perfect for Online journals, News Blogs and other kinds of Magazine Sites. Features include Animation Appearing Effects, Multi-Level Drop-Down Header Menu, W3C Markup Validated, Right and Left Sidebar Widget Areas, 3 Footer Columns, Full-Width Page Template, Customize Options, Search Engine Optimized (SEO), Multiple Browser Compatible (IE9, IE10, IE11, Chrome, Firefox, Opera, and Safari), FontAwesome Integration, and Translation Ready.
 
 == Frequently Asked Questions ==
 
@@ -41,6 +37,9 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.2.8 = 
+* Update theme description
 
 = 1.2.7 =
 * Fix deprecated jQuery code usage
