@@ -43,11 +43,17 @@
 							$avadanta_header_show_search = get_theme_mod('avadanta_header_show_search',0); 
 							if($avadanta_header_show_search==0) {
 							?>
-							<button id="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							
 
-							<div id="modal">
-							  <?php avadanta_custom_search_form(); ?>
-							</div>
+ 
+      							<button id="open-dialog"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+   
+
+ 
+  <div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1" hidden>
+   <?php avadanta_custom_search_form(); ?>
+  </div>
 							
 							<?php } if(!empty($avadanta_navigation_url)) { ?>
 							<li><a href="<?php echo esc_url($avadanta_navigation_url); ?>" class="btn btn-sm"><?php echo esc_html($avadanta_navigation_text); ?></a></li>

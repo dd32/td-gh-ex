@@ -74,7 +74,7 @@ function avadanta_enqueue_script()
 	wp_enqueue_script( 'magnific-popup', AVADANTA_THEME_URI.'/assets/js/magnific-popup.js', array(), true );
 	wp_enqueue_script( 'jquery-colorbox', AVADANTA_THEME_URI.'/assets/js/jquery.colorbox.js', array(), true );
 	wp_enqueue_script('avadanta-main', AVADANTA_THEME_URI.'/assets/js/main.js',array(), '', true);
-
+	wp_enqueue_script('ally', AVADANTA_THEME_URI.'/assets/js/ally.js',array(), '', true);
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) 
 	{
 		wp_enqueue_script( 'comment-reply' );

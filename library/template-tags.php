@@ -30,10 +30,10 @@ if ( ! function_exists( 'avadanta_posted_on' ) ) :
 endif;
                           
 function avadanta_custom_search_form() {
-  $form = '<form role="search" method="post  action="' . esc_url(home_url( '/' )) . '" >
-    <input type="text" value="' . get_search_query() . '" name="s" placeholder="' . esc_attr__( 'Search', 'avadanta' ) . '" class="input-search" id="firstinput" />
-    <input  type="submit" class="sub-modals" ></button>
-    <span class="cross"><a href="#" ><i class="fa fa-times" aria-hidden="true"></i></a></span>
+  $form = '<form role="search" class="dialog-content" method="post"  action="' . esc_url(home_url( '/' )) . '" >
+    <input type="text" value="' . get_search_query() . '" name="s" placeholder="' . esc_attr__( 'Search', 'avadanta' ) . '" class="input-search" id="within-dialog" />
+    	<input  type="submit" id="save-dialog" >
+        <button type="button" id="close-dialog"><i class="fa fa-times" aria-hidden="true"></i></button>
 
   </form>
 
@@ -41,6 +41,7 @@ function avadanta_custom_search_form() {
 
   echo $form;
 }
+
 
 
 if ( ! function_exists( 'avadanta_posted_by' ) ) :

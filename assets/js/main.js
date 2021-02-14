@@ -8,17 +8,69 @@ if(jQuery('a.zoom').length)
 {
 jQuery('a.zoom').colorbox({rel:'gal'});
 } 
-  
 
- button.onclick = () => {
-  modal.classList.toggle("open");
+var openButton = document.getElementById('open-dialog');
+var dialog = document.getElementById('dialog');
+var closeButton = document.getElementById('close-dialog');
+
+var keyHandle;
+var tabHandle;
+var disabledHandle;
+var hiddenHandle;
+var focusedElementBeforeDialogOpened;
+
+function openDialog() {
+  focusedElementBeforeDialogOpened = document.activeElement;
+
+  ally.when.visibleArea({
+    context: dialog,
+    callback: function(context) {
+      var element = ally.query.firstTabbable({
+        context: context, // context === dialog
+        defaultToContext: true,
+      });
+      element.focus();
+    },
+  });
+
+  disabledHandle = ally.maintain.disabled({
+    filter: dialog,
+  });
+
+  hiddenHandle = ally.maintain.hidden({
+    filter: dialog,
+  });
+
+  tabHandle = ally.maintain.tabFocus({
+    context: dialog,
+  });
+
+  keyHandle = ally.when.key({
+    escape: closeDialogByKey,
+  });
+
+  // Show the dialog
+  dialog.hidden = false;
 }
 
-modal.addEventListener('transitionend', (e) => {
-  document.querySelector("#firstinput").focus();
-  document.querySelector(".cross a").focus();
-});
+function closeDialogByKey() {
+  
+  setTimeout(closeDialog);
+}
 
+ function closeDialog() {
+   keyHandle.disengage();
+   tabHandle.disengage();
+   hiddenHandle.disengage();
+   disabledHandle.disengage();
+   focusedElementBeforeDialogOpened.focus();
+   dialog.hidden = true;
+ }
+
+
+
+openButton.addEventListener('click', openDialog, false);
+closeButton.addEventListener('click', closeDialog, false);
 
 
       function avadantaaccess() {
@@ -39,23 +91,7 @@ modal.addEventListener('transitionend', (e) => {
         } );
     }
 
-      function avadantamodalaccess() {
-        jQuery( document ).on( 'keydown', function( e ) {
-            if ( jQuery( window ).width() < 992 ) {
-                return;
-            }
-            var activeElement = document.activeElement;
-            var menuItems = jQuery( '#modal .sub-modals' );
-            var firstEl = jQuery( '#button' );
-            var lastEl = menuItems[ menuItems.length - 1 ];
-            var tabKey = event.keyCode === 9;
-            var shiftKey = event.shiftKey;
-            if ( ! shiftKey && tabKey && lastEl === activeElement ) {
-                event.preventDefault();
-                firstEl.focus();
-            }
-        } );
-    }
+
      
      jQuery(document).ready(function() {
    
@@ -75,7 +111,6 @@ modal.addEventListener('transitionend', (e) => {
 
     jQuery(document).ready(function () {
     avadantaaccess();
-    avadantamodalaccess();
     });
 
 });

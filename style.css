@@ -4,9 +4,9 @@ Theme URI: https://www.avadantathemes.com/product/avadanta-free-multipurpose-bus
 Author: avadantathemes
 Author URI: https://www.avadantathemes.com
 Description: Avadanta is a creative, fully customizable and multipurpose theme that you can use to create any kind of beautiful websites. pre-made designed Homepage with 7 inner sections slider, service, about, team, testimonial, portfolio, call to action, you can easily customize them. Unlimited color feature with unlimited typography. Compatible with gutenberg, elemnetor page builder and so many popular plugins nicely works with avadanta theme.
-Version: 1.0.6
+Version: 1.0.7
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 5.6.1
 Requires PHP: 7.0
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-menu, custom-logo, featured-images, theme-options, threaded-comments, translation-ready, footer-widgets, blog, news
 License: GNU General Public License v2 or later
@@ -2322,7 +2322,7 @@ hr {
         margin-bottom: -10px;
         margin-left: 12px;
         padding-left: 15px;
-        padding-top: 0;
+        padding-top: 1px;
     }
     .menu-btns>li {
         padding-top: 6px !important;
@@ -7119,15 +7119,146 @@ body.search-show {
     color: #000;
 }
 
-.cross a{
 
-    padding: 0 !important;
-    color: #fff !important;
-        width: 2% !important;
-}
 
 .textwidget a:focus{
 
     text-decoration: underline !important;
     outline: none !important;
+}
+
+
+#dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0);
+  z-index: 999;
+}
+
+#dialog:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 999;
+
+  -webkit-transition: opacity 0.2s ease-in-out;
+          transition: opacity 0.2s ease-in-out;
+}
+#dialog .dialog-content {
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 250px !important;
+    height: 100%;
+  -webkit-transform: translate3d(-50%,-50%,0);
+          transform: translate3d(-50%,-50%,0);
+
+  padding: 20px;
+  border: 1px solid #CCC;
+  background: #080808;
+  z-index: 1000;
+
+  -webkit-transition: transform 0.2s ease-in-out;
+          transition: transform 0.2s ease-in-out;
+}
+
+#dialog h1 {
+  margin: 0;
+}
+#dialog footer {
+  margin-top: 20px;
+}
+
+#dialog[hidden],
+#dialog[hidden]:before,
+#dialog[hidden] .dialog-content {
+  display: block;
+  visibility: hidden;
+  -webkit-transform: translate3d(0px, -1px, 0px) scale(0);
+          transform: translate3d(0px, -1px, 0px) scale(0);
+
+  -webkit-transition:
+    visibility 0s linear 0.2s,
+    transform 0s linear 0.2s;
+  transition:
+    visibility 0s linear 0.2s,
+    transform 0s linear 0.2s;
+}
+#dialog[hidden]:before {
+  opacity: 0;
+ 
+  -webkit-transition:
+    opacity 0.2s ease-in-out,
+    visibility 0s linear 0.2s,
+    transform 0s linear 0.2s;
+  transition:
+    opacity 0.2s ease-in-out,
+    visibility 0s linear 0.2s,
+    transform 0s linear 0.2s;
+}
+#dialog[hidden] .dialog-content {
+  -webkit-transform: translate3d(0px, -1px, 0px) scale(0);
+          transform: translate3d(0px, -1px, 0px) scale(0);
+
+  -webkit-transition:
+    transform 0.2s ease-in-out,
+    visibility 0s linear 0.2s;
+  transition:
+    transform 0.2s ease-in-out,
+    visibility 0s linear 0.2s;
+}
+  
+
+#close-dialog:focus{
+
+    outline: 2px solid #fff !important;
+}
+
+.dialog-content #save-dialog{
+    height: 69px;
+    margin-left: -6px;
+    border: none;
+    color: #fff;
+
+}
+
+.dialog-content #close-dialog{
+    background: none;
+    border: none;
+    padding-left: 0px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.menu-btns #open-dialog{
+
+     background: none;
+    border: none;
+    font-weight: 800;
+    color: #000;
+}
+
+.menu-btns #open-dialog:focus{
+
+outline: 2px solid #000;
+}
+
+.post-content-wd a:focus{
+
+    text-decoration: underline;
+}
+
+.post-content a:focus{
+
+        text-decoration: underline;
+
 }

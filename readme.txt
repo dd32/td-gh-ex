@@ -1,9 +1,9 @@
 === Avadanta ===
 Contributors: avadantathemes
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 5.6.1
 Requires PHP: 5.6
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ Avadanta developed under th GPL terms so you can use it free and can modify or r
 Animate : http://daneden.me/animate , Copyright (c) 2016 Daniel Eden , License: under MIT license ,http://opensource.org/licenses/MIT
 
 * Fontawesome : http://fontawesome.io/ , Copyright (C) 2018 By davegandy , License: MIT License ,[SIL OFL 1.1]
+
+* Ally : https://allyjs.io/ , Copyright (c) 2015 Rodney Rehm , 
+License: MIT License,https://github.com/medialize/ally.js/blob/master/LICENSE.txt
 
 * Breadcrumb Trail : https://themehybrid.com/plugins/breadcrumb-trail , Copyright (c) 2008 - 2017, Justin Tadlock , License:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
     
