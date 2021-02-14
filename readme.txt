@@ -5,21 +5,21 @@ custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded
 translation-ready, sticky-post, theme-options, footer-widgets, full-width-template,
 front-page-post-form
 Tested up to: 5.6
-Stable tag: 1.3.7
+Stable tag: 1.4.1
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog.
+Corporate WordPress Theme.
 
 == Description ==
 
-fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is
-Fully Responsive, Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Custom Menu,
-Admin Panel Options, W3C Markup Validated, Full-Width Page Template, Search Engine Optimized, Multiple
-Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
-DEMO: https://tishonator.com/demo/fcorpo
+Corporate WordPress Theme. fCorpo is a perfect choice for your Corporate, Business, Company,
+Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, WooCommerce plugin
+support, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Full-Width
+Page Template, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments,
+FontAwesome Icons, Custom Post Formats, and Translation Ready.
 
 == Frequently Asked Questions ==
 
@@ -45,6 +45,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.4.1 =
+* update description
+* fix issue in starter content
 
 = 1.4.0 =
 * Fix deprecated jQuery code usage
