@@ -4,7 +4,7 @@ Tags: blog, education, entertainment, two-columns, right-sidebar, custom-backgro
 custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
 sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
 Tested up to: 5.6
-Stable tag: 1.0.6
+Stable tag: 1.3.8
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -14,9 +14,7 @@ AyaSpirit is a Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice for a spiritual, non profit
-organization website, blog about spritiuality, etc. 100% Responsive Design, Customizable,
-and Easy to Use WordPress Theme.
+AyaSpirit is a Fully Responsive WordPress Theme. A perfect choice for a spiritual, non profit organization website, blog about spritiuality, etc. 100% Responsive Design, Customizable, and Easy to Use WordPress Theme.
 
 
 == Frequently Asked Questions ==
@@ -41,6 +39,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.8 =
+* Update theme description
 
 = 1.3.7 =
 * Fix deprecated jQuery code usage
