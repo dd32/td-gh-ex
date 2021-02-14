@@ -39,19 +39,23 @@ jQuery(document).ready(function ($) {
     $(function () {
         $('.icon-search').on('click', function (event) {
             $('body').toggleClass('united-model');
+            $('body').addClass('window-scroll-locked');
             setTimeout(function () { 
-                $('.icon-search').focus();
+                $('.model-search-wrapper .search-field').focus();
             }, 300);
             
         });
         $('.cross-exit').on('click', function (event) {
             $('body').removeClass('united-model');
+            $('body').removeClass('window-scroll-locked');
             $('.icon-search').focus();
         });
 
         $(document).keyup(function(j) {
-            if (j.key === "Escape") { // escape key maps to keycode `27`
+            if (j.key === "Escape") {
                 $('body').removeClass('united-model');
+                $('body').removeClass('window-scroll-locked');
+                $('.icon-search').focus();
             }
         });
 
@@ -67,6 +71,7 @@ jQuery(document).ready(function ($) {
                 }
             }
         } );
+
     });
 
     $(window).scroll(function () {
