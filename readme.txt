@@ -4,19 +4,17 @@ Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-h
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Tested up to: 5.6
-Stable tag: 1.0.5
+Stable tag: 1.2.6
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-AyaBooks is Fully Responsive WordPress Theme.
+AyaBooks is a Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaBooksPro is a fully responsive WordPress Theme, a perfect choice for a site about books, library,
-book shop, book store, blogs about readers and book lovers, websites about coffee book store, online store,
-or a book portfolio site. Fully responsive, customizable, and easy to use theme.
+AyaBooksPro is a fully responsive WordPress Theme. A perfect choice for a site about books, library, book shop, book store, blogs about readers and book lovers, websites about coffee book store, online store, or a book portfolio site. Fully responsive, customizable, and easy to use theme.
 
 == Frequently Asked Questions ==
 
@@ -39,6 +37,9 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.2.6 = 
+* Update theme description
 
 = 1.2.5 =
 * Fix deprecated jQuery code usage
