@@ -4,7 +4,7 @@ Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-h
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Tested up to: 5.6
-Stable tag: 1.1.4
+Stable tag: 1.2.7
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -14,12 +14,7 @@ AyaAirPort is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaAirPort is Fully Responsive WordPress Theme, a perfect choice for a website about air-ports,
-air-planes, air-lines, site for terminals, air-ports, blog. Features include Camera Slider Plugin
-Support, Animation Appearing Effects, Custom Logo, Multi-level Drop-down Menu, Custom Background,
-Full-Width Page Template, Widget Areas: Homepage Widget Area, Right Sidebar and 3 Footer Columns,
-Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support,
-Translation-Ready, etc.
+AyaAirPort is Fully Responsive WordPress Theme. A perfect choice for a website about air-ports, air-planes, air-lines, site for terminals, air-ports, blog. Features include Animation Appearing Effects, Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template, Widget Areas: Homepage Widget Area, Right Sidebar and 3 Footer Columns, Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support, Gutenberg Compatible, Translation-Ready, etc.
 
 == Frequently Asked Questions ==
 
@@ -42,6 +37,9 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.2.7 =
+* Update theme description
 
 = 1.2.6 =
 * Fix deprecated jQuery code usage
