@@ -4,7 +4,7 @@ Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
 sticky-post, theme-options, footer-widgets
 Tested up to: 5.6
-Stable tag: 1.0.6
+Stable tag: 1.2.8
 Requires PHP: 5.6
 Requires at least: 5.3
 License: GPLv2 or later
@@ -14,10 +14,7 @@ AyaPhotography is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaPhotography is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down
-Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright
-Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers
-Support, Gutenberg Compatible, Translation-Ready and much more.
+AyaPhotography is fully Responsive WordPress Theme. With Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers Support, Gutenberg Compatible, Translation-Ready and much more.
 
 == Frequently Asked Questions ==
 
@@ -44,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.8 = 
+* Update theme description
 
 = 1.2.7 =
 * Fix deprecated jQuery code usage
