@@ -60,11 +60,11 @@ get_header(); ?>
 
   <?php do_action( 'advance_portfolio_below_banner' ); ?>
 
-  <section id="Portfolio-Section">
+  <section id="Portfolio-Section" class="py-5 px-0">
     <div class="container">
       <div class="portfolio-title">
         <?php if( get_theme_mod('advance_portfolio_title') != ''){ ?>     
-          <h2><?php echo esc_html(get_theme_mod('advance_portfolio_title','')); ?></h2>
+          <h2 class="pb-4"><?php echo esc_html(get_theme_mod('advance_portfolio_title','')); ?></h2>
         <?php }?>
       </div>
       <?php if( get_theme_mod('advance_portfolio_awesome_setting') != ''){ ?>    
@@ -77,7 +77,7 @@ get_header(); ?>
                 $query = new WP_Query( $args );
                 if ( $query->have_posts() ) :
                   while ( $query->have_posts() ) : $query->the_post(); ?>
-                  <div class="box-image text-center">
+                  <div class="box-image">
                     <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                   </div>
                 <?php endwhile; 
@@ -93,7 +93,7 @@ get_header(); ?>
               $query = new WP_Query( $args );
               if ( $query->have_posts() ) :
                 while ( $query->have_posts() ) : $query->the_post(); ?>
-                  <div class="box-image text-center">
+                  <div class="box-image">
                     <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                   </div>                
                 <?php endwhile; 
@@ -109,7 +109,7 @@ get_header(); ?>
           $query = new WP_Query( $args );
             if ( $query->have_posts() ) :
               while ( $query->have_posts() ) : $query->the_post(); ?>
-                <div class="image-box">
+                <div class="image-box my-3">
                   <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
                 </div>
               <?php endwhile; 
@@ -125,7 +125,7 @@ get_header(); ?>
           $query = new WP_Query( $args );
           if ( $query->have_posts() ) :
             while ( $query->have_posts() ) : $query->the_post(); ?>
-              <div class="box-image text-center">
+              <div class="box-image">
                 <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
               </div>
             <?php endwhile; 

@@ -24,17 +24,17 @@
   <div class="main-menu <?php if( get_theme_mod( 'advance_portfolio_sticky_header', false) != '' || get_theme_mod( 'advance_portfolio_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
       <?php if(get_theme_mod('advance_portfolio_preloader_option',true)!= '' || get_theme_mod('advance_portfolio_responsive_preloader', true) != ''){ ?>
-        <div id="loader-wrapper">
+        <div id="loader-wrapper" class="w-100 h-100">
           <div id="loader"></div>
           <div class="loader-section section-left"></div>
           <div class="loader-section section-right"></div>
         </div>
       <?php }?>
       <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-portfolio' ); ?></a>
-      <div id="header">
+      <div id="header" class="py-3">
         <div class="container">
           <div class="row m-0">
-            <div class="logo col-lg-4 col-md-4 col-9">
+            <div class="logo col-lg-4 col-md-4 col-9 m-0">
               <?php if ( has_custom_logo() ) : ?>
                 <div class="site-logo"><?php the_custom_logo(); ?></div>
               <?php endif; ?>
@@ -42,9 +42,9 @@
               <?php if ( ! empty( $blog_info ) ) : ?>
                 <?php if( get_theme_mod('advance_portfolio_site_title',true) != ''){ ?>
                   <?php if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <h1 class="site-title text-uppercase p-0 m-0 text-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                   <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <p class="site-title text-uppercase p-0 m-0 text-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
                   <?php endif; ?>
                 <?php }?>
               <?php endif; ?>
@@ -53,7 +53,7 @@
               if ( $description || is_customize_preview() ) :
                 ?>
                 <?php if( get_theme_mod('advance_portfolio_tagline',true) != ''){ ?>
-                  <p class="site-description">
+                  <p class="site-description m-0">
                     <?php echo esc_html($description); ?>
                   </p>
                 <?php }?>
@@ -87,7 +87,7 @@
               </div>
             </div>
           </div>
-          <hr class="horizontal">
+          <hr class="horizontal m-0">
         </div>
         <div class="clearfix"></div>
       </div>

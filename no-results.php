@@ -19,7 +19,7 @@
 		<?php } ?>
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-portfolio' ); ?></p><br />
-		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-portfolio' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to Home Page', 'advance-portfolio' ); ?></span></a>
+		<div class="read-moresec py-4 px-0">
+			<a href="<?php echo esc_url(home_url()); ?>" class="button mt-3 mx-0 mb-0 py-2 px-3"><?php esc_html_e( 'Return to Home Page', 'advance-portfolio' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to Home Page', 'advance-portfolio' ); ?></span></a>
 		</div>
 <?php endif; ?>
