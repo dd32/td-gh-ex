@@ -107,11 +107,11 @@
 		$advance_it_company_custom_css .='}';
 	}else if($advance_it_company_theme_lay == 'Center'){
 		$advance_it_company_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_it_company_custom_css .='text-align:center; left:20%; right:20%;';
+			$advance_it_company_custom_css .='text-align:center !important; left:20%; right:20%;';
 		$advance_it_company_custom_css .='}';
 	}else if($advance_it_company_theme_lay == 'Right'){
 		$advance_it_company_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_it_company_custom_css .='text-align:right; left:45%; right:15%;';
+			$advance_it_company_custom_css .='text-align:right !important; left:45%; right:15%;';
 		$advance_it_company_custom_css .='}';
 	}
 

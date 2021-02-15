@@ -8,7 +8,7 @@ get_header(); ?>
   <?php do_action( 'advance_it_company_above_slider' ); ?>
   
   <?php if( get_theme_mod( 'advance_it_company_slider_hide', false) != '' || get_theme_mod( 'advance_it_company_responsive_slider', false) != '') { ?>
-    <section id="slider">
+    <section id="slider" class="mw-100 m-auto p-0">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_it_company_slider_speed_option', 3000)); ?>">
         <?php $advance_it_company_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
@@ -32,11 +32,11 @@ get_header(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
-                <div class="inner_carousel">
-                  <h1><?php the_title(); ?></h1>
+                <div class="inner_carousel text-left">
+                  <h1 class="m-0 text-left text-uppercase"><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_it_company_slider_excerpt_length','20')))); ?></p>
                   <?php if( get_theme_mod('advance_it_company_slider_button','READ MORE') != ''){ ?>
-                    <div class="readbtn">
+                    <div class="readbtn my-4 mx-0">
                       <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_it_company_slider_button','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_it_company_slider_button','READ MORE'));?></span></a>
                     </div>
                   <?php } ?>
@@ -70,10 +70,10 @@ get_header(); ?>
   <?php do_action( 'advance_it_company_above_work_section' ); ?>
 
   <?php if( get_theme_mod('advance_it_company_title') != '' || get_theme_mod( 'advance_it_company_setting' )!= '' || get_theme_mod( 'advance_it_company_works_category' )!= ''){ ?>
-    <section id="work_cat">
+    <section id="work_cat" class="py-5 px-0">
       <div class="container">
         <?php if( get_theme_mod('advance_it_company_title') != ''){ ?>
-          <h5><?php echo esc_html(get_theme_mod('advance_it_company_title','')); ?></h5>
+          <h5 class="p-2 text-uppercase"><?php echo esc_html(get_theme_mod('advance_it_company_title','')); ?></h5>
         <?php } ?>
         <div class="row">
           <div class="col-lg-6 col-md-12">
@@ -85,7 +85,7 @@ get_header(); ?>
                 if ( $query->have_posts() ) :
                   while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="post-sec">
-                      <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                      <a href="<?php the_permalink(); ?>"><h2 class="p-0 text-uppercase"><?php the_title(); ?></h2><span class="screen-reader-text"><?php the_title(); ?></span></a>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?></p>
                       <?php the_post_thumbnail(); ?>
                     </div>
@@ -104,10 +104,10 @@ get_header(); ?>
                 $page_query = new WP_Query(array( 'category_name' => esc_html($advance_it_company_catData,'advance-it-company')));?>
                   <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                     <div class=" col-lg-6 col-md-4">
-                      <div class="cat-posts ">
+                      <div class="cat-posts text-center p-3 my-2 mx-0">
                         <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
-                        <div class="cat_body">
-                          <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h4>
+                        <div class="cat_body mb-4">
+                          <h4 class="text-uppercase"><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h4>
                           <p>
                             <?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?>
                           </p> 
