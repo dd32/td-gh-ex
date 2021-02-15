@@ -63,7 +63,7 @@
     <?php }?>
     <?php if( get_theme_mod('advance_startup_button_text','READ MORE') != ''){ ?>
       <div class="read-more-btn">
-        <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_startup_button_text','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_startup_button_text','READ MORE'));?></span></a>
+        <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_startup_button_text','READ MORE'));?><i class="fas fa-angle-right ml-2"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_startup_button_text','READ MORE'));?></span></a>
       </div>
     <?php } ?>
   </div>

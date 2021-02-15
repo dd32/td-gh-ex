@@ -136,15 +136,15 @@
 	$advance_startup_theme_lay = get_theme_mod( 'advance_startup_slider_content_alignment','Center');
     if($advance_startup_theme_lay == 'Left'){
 		$advance_startup_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_startup_custom_css .='text-align:left; left:15%; right:45%;';
+			$advance_startup_custom_css .='text-align:left !important; left:15%; right:45%;';
 		$advance_startup_custom_css .='}';
 	}else if($advance_startup_theme_lay == 'Center'){
 		$advance_startup_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_startup_custom_css .='text-align:center; left:20%; right:20%;';
+			$advance_startup_custom_css .='text-align:center !important; left:20%; right:20%;';
 		$advance_startup_custom_css .='}';
 	}else if($advance_startup_theme_lay == 'Right'){
 		$advance_startup_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_startup_custom_css .='text-align:right; left:45%; right:15%;';
+			$advance_startup_custom_css .='text-align:right !important; left:45%; right:15%;';
 		$advance_startup_custom_css .='}';
 	}
 
@@ -196,7 +196,7 @@
 	$advance_startup_button_padding_top_bottom = get_theme_mod('advance_startup_button_padding_top_bottom');
 	$advance_startup_button_padding_left_right = get_theme_mod('advance_startup_button_padding_left_right');
 	$advance_startup_custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"],#category .explore-btn a, #we_provide .theme_button a{';
-		$advance_startup_custom_css .='padding-top: '.esc_attr($advance_startup_button_padding_top_bottom).'px; padding-bottom: '.esc_attr($advance_startup_button_padding_top_bottom).'px; padding-left: '.esc_attr($advance_startup_button_padding_left_right).'px; padding-right: '.esc_attr($advance_startup_button_padding_left_right).'px; display:inline-block;';
+		$advance_startup_custom_css .='padding-top: '.esc_attr($advance_startup_button_padding_top_bottom).'px !important; padding-bottom: '.esc_attr($advance_startup_button_padding_top_bottom).'px !important; padding-left: '.esc_attr($advance_startup_button_padding_left_right).'px !important; padding-right: '.esc_attr($advance_startup_button_padding_left_right).'px !important; display:inline-block;';
 	$advance_startup_custom_css .='}';
 
 	$advance_startup_button_border_radius = get_theme_mod('advance_startup_button_border_radius');

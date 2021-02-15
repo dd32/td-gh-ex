@@ -3,10 +3,10 @@ Theme Name: Advance Startup
 Theme URI: https://www.themeshopy.com/themes/free-startup-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, company's business blog ,online agencies and firms, portfolios, ecommerce (WooCommerce), IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization, charity NGO, Online Business, Affiliate Market, App Landing Page, Software Landing Page, bloggers  consulting law firms, organizations, Startup Hub, agency, online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options and Full width template all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. Demo: https://www.themeshopy.com/advance-startup-pro/
-Tested up to: 5.6
+Description: Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups,  company's business blog ,online agencies and firms, portfolios, ecommerce (WooCommerce), IT companies, entrepreneurs, cryptocurrency, marketing, product showcase, technology joint business ventures, web development agencies, digital marketers, tech startup, freelancers, organization, charity NGO, Online Business, Affiliate Market, App Landing Page, Software Landing Page, bloggers  consulting law firms, organizations, Startup Hub, agency, online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options and Full width template all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. Demo: https://www.themeshopy.com/advance-startup-pro/
+Tested up to: 5.6.1
 Requires PHP: 7.2.14
-Version: 0.4.9
+Version: 0.5
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-startup
@@ -76,7 +76,7 @@ ul{
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
-select{
+iframe, .entry-audio audio, table#wp-calendar, span.woocommerce-input-wrapper, #footer label, .page-box-single .box-image img, .page-box-single img, select, .our-services img, #comments .comment-author, #sidebar label{
   width:100%;
 }
 .clear, #respond, article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
@@ -221,11 +221,7 @@ input[type="submit"] {
 /* ---------Buttons--------- */
 .read-moresec a {
   border: 2px solid ;
-  color: #906b00 ;
-  padding: 10px;
-}
-.read-moresec {
-  margin:20px 0; 
+  color: #906b00;
 }
 .read-moresec a:hover{
   background: #906b00 ;
@@ -234,31 +230,26 @@ input[type="submit"] {
 /* ---------Logo Middle Header--------- */
 .logo {
   bottom: 0px; 
-  padding: 4px 0px;
 }
 .logo h1,.logo p.site-title{
   font-size:35px;
-  padding: 0;
   font-weight:bold;
   line-height: 1.2;
 }
 .logo p{
   font-size:12px;
-  margin:0;
 }
-#header-top a span, .logo a, .logo p, .page-template-custom-front-page .logo a,.page-template-custom-front-page .logo p {
+.copyright p a, nav.woocommerce-MyAccount-navigation li a, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, #footer .news-text-wrap h2 a, #footer td#prev a, #footer table#wp-calendar td a,#footer a.rsswidget, #footer .wp-calendar-nav-prev a, .tagcloud a, #footer .textwidget a, #header-top a span, .logo a, .logo p, .mail,.phone,.time, .top-header a,#header-top a, .social-icons i, .mail i,.phone i,.time i, .page-template-custom-front-page .logo a,.page-template-custom-front-page .logo p {
   color: #fff;
 }
 /*preloader*/
-.toggle-menu, a.closebtn, #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn, .elementor-html #loader,.elementor-html #loader-wrapper, .toggle, .no-js #loader-wrapper, .page-template-custom-front-page #header{
+#sidebar .woocommerce ul.cart_list li:before, #contact-info, .toggle-menu, a.closebtn, #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn, .elementor-html #loader,.elementor-html #loader-wrapper, .toggle, .no-js #loader-wrapper, .page-template-custom-front-page #header{
   display: none;
 }
 #loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 99999;
   overflow: hidden;
   display: block;
@@ -422,7 +413,6 @@ input[type="submit"] {
   margin: 22px 0;
 }
 #header-top{
-  padding: 15px 0;
   position: static;
   background: #262626;
   border-top:1px solid;
@@ -430,38 +420,17 @@ input[type="submit"] {
 .talk-btn a {
   border: 2px solid #fff;
   color: #fff;
-  padding: 12px 20px;
   font-size: 12px;
   font-weight: bold;
   border-radius:25px;
-}
-.talk-btn a i{
-  margin-left: 8px;
 }
 .talk-btn a:hover{
   background: #906b00 ;
   color: #fff;
   border-color: #906b00 ;
 }
-.talk-btn {
-  margin: 25px 0;
-  text-align: right;
-}
 .top-header{ 
   background: #262626;
-  padding: 10px 0;
-}
-.mail,.phone,.time, .top-header a,#header-top a, .social-icons i, .mail i,.phone i,.time i{
-  color: #fff;
-}
-.social-icons i {
-  margin-left: 15px;
-}
-.social-icons {
-  text-align: right;
-}
-.mail i,.phone i,.time i{
-  margin-right: 5px;
 }
 .mail,.phone,.time, .social-icons i {
   font-size: 13px;
@@ -477,14 +446,9 @@ input[type="submit"] {
   color: #000;
 }
 /* --------- MENUS CSS --------- */
-#menu-sidebar {
-  text-align: center;
-}
 .primary-navigation ul{
   list-style: none !important;
   margin: 0;
-  padding-left: 0;  
-  text-align: left;
 }
 .primary-navigation li{
   position: relative;
@@ -586,8 +550,6 @@ input[type="submit"] {
 .serach_inner{
   background: #fff;
   max-height: 40%;
-  height: 100%;
-  width: 100%;
   min-height: 150px;
   display: flex;
   justify-content: center;
@@ -598,8 +560,6 @@ input[type="submit"] {
 }
 .serach_outer {
   position: fixed;
-  width: 100%;
-  height: 100%;
   left: 0;
   top: 0em;
   display: none;
@@ -608,21 +568,17 @@ input[type="submit"] {
   z-index: 9999;
   transition: all 300ms;
   visibility: visible;
+  font-size: 24px;
+  cursor: pointer;
   transition: opacity 300ms, z-index 0ms;
 }
 .closepop {
   position: absolute;
   top: 25px;
-  text-align: center;
   font-size: 40px;
   z-index: 9999;
   right: 50%;
   color: #575756;
-}
-.serach_outer {
-  font-size: 24px;
-  padding: 4px 0 0 0;
-  cursor: pointer;
 }
 .serach_inner form.search-form {
   display: table;
@@ -678,9 +634,6 @@ input.search-field {
 .page-template-custom-front-page .search-box i{
   color: #fff !important;
 }
-.search-box {
-  margin: 8px 0px;
-}
 .serach_inner input[type="submit"]{
   text-indent: -9999px;
   z-index: 9999;
@@ -691,9 +644,6 @@ input.search-field {
 }
 /* --------- Slider --------- */
 #slider{ 
-  max-width:100%; 
-  margin:auto;
-  padding: 0;
   background:#000;
 }
 #slider img {
@@ -714,7 +664,6 @@ input.search-field {
 }
 #slider .carousel-control-next-icon i,#slider .carousel-control-prev-icon i{
   background: #fff;
-  padding: 10px 12px;
   color: #df2b23;
 }
 #slider .carousel-caption {
@@ -724,18 +673,12 @@ input.search-field {
   right: 20%;
 }
 #slider .inner_carousel h1 {
-  margin: 0;
   font-size: 40px;
   color: #fff;
-  padding: 6px 2px;
-  text-transform: capitalize;
 }
 #slider .inner_carousel p {
   font-size: 15px;
   color: #fff;
-}
-#slider .inner_carousel {
-  text-align: center;
 }
 #slider .inner_carousel .readbtn a {
   border: 2px solid #df2b23;
@@ -751,17 +694,9 @@ input.search-field {
   color: #fff;
   background: transparent !important;
 }
-#slider .inner_carousel .readbtn a i{
-  margin-left: 10px;
-}
-#slider .inner_carousel .readbtn {
-  margin-top: 23px;
-}
 /*----------------- Courses ----------------*/
 #we_provide{
-  padding:2% 0;
   background: #f7f7f7;
-  text-align: center;
 }
 #we_provide h2:before{
   content: "" !important;
@@ -779,11 +714,9 @@ input.search-field {
   letter-spacing: 0;
 }
 .cat-posts {
-  padding: 10px;
   box-shadow: 0px 7px 5px #eee;
   border :1px solid #eee;
   background: #fff;
-  margin: 5px 0;
 }
 #we_provide .theme_button a ,.read-more-btn a {
   border: 2px solid #d4d4d4;
@@ -800,15 +733,6 @@ input.search-field {
   background: linear-gradient(130deg, #906b00  40% , #df2b23 77%); 
   border: 2px solid #d4d4d4;
 }
-#we_provide .theme_button a i,.read-more-btn a i{
-  margin-left: 10px;
-}
-#we_provide .theme_button {
-  margin:10px 0;
-}
-#we_provide .cat_body {
-  margin-bottom: 25px;
-}
 #we_provide .cat_body p{
   letter-spacing: 0;
   line-height: 2;
@@ -820,10 +744,10 @@ input.search-field {
   font-weight: 600;
   font-size: 16px;
 }
+/*----------------- content page ----------------*/
 #content {
   margin-top: 3%;
 }
-/*----------------- content page ----------------*/
 .page-box {
   padding: 10px;
   margin:10px 0;
@@ -843,12 +767,6 @@ input.search-field {
 }
 .page-box p,.page-box-single p{
   margin:10px 0 !important;
-}
-.page-box-single img{
-  width: 100%;
-}
-.our-services img{
-  width:100%;
 }
 .our-services .services-box{
   margin:40px 0 20px 0;
@@ -886,9 +804,6 @@ input.search-field {
   margin: 0 0 10px;
   padding: 0;
 }
-.page-box-single .box-image img{
-  width: 100%;
-}
 span.post-title {
   color: #000;
 }
@@ -908,9 +823,6 @@ span.post-title {
 .tags p{
   color: #262626;
   font-weight: 600;
-}
-#contact-info{
-  display: none;
 }
 .meta-nav {
   color: #906b00;
@@ -983,14 +895,8 @@ section .innerlightbox{
   background-size:100% 100%;
   padding:2.5em 0;
 }
-#footer label{
-  width: 100%;
-}
 #footer .widget {
   padding: 5% 0;
-}
-.copyright p a, #footer .news-text-wrap h2 a, #footer td#prev a, #footer table#wp-calendar td a,#footer a.rsswidget, #footer .wp-calendar-nav-prev a, .tagcloud a, #footer .textwidget a{
-  color: #fff;
 }
 #footer .textwidget a{
   text-decoration: underline;
@@ -1015,9 +921,6 @@ section .innerlightbox{
 #sidebar form.woocommerce-product-search button{
   margin-top: 0;
 }
-#sidebar .woocommerce ul.cart_list li:before{
-  display: none;
-}
 #sidebar .woocommerce ul.cart_list li{
   padding-left: 2em !important;
 }
@@ -1029,9 +932,6 @@ section .innerlightbox{
   margin: 3px 0 0 0;
   font-size: 15px;
   width: 100%
-}
-table#wp-calendar {
-  width: 100%;
 }
 #footer caption,#sideabr caption {
   font-weight: bold;
@@ -1219,9 +1119,6 @@ table#wp-calendar {
 #comments .reply{
   text-align: right;
 }
-#comments .comment-author{
-  width:100%;
-}  
 ol.comment-list li{
   color: #717171;
 }
@@ -1316,9 +1213,6 @@ nav.woocommerce-MyAccount-navigation ul li {
 .woocommerce .woocommerce-ordering select{
   padding: 10px;
 }
-span.woocommerce-input-wrapper{
- width: 100%;
-}
 .woocommerce-product-gallery__image{
   padding: 2px;
 }
@@ -1346,9 +1240,6 @@ span.woocommerce-input-wrapper{
 }
 a.showcoupon,.woocommerce-MyAccount-content a, nav.woocommerce-MyAccount-navigation a, tr.woocommerce-cart-form__cart-item.cart_item a{
   text-decoration: none;
-}
-nav.woocommerce-MyAccount-navigation li a, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover{
-  color: #fff;
 }
 .woocommerce #reply-title {
   font-size: 18px;
@@ -1490,9 +1381,6 @@ form.woocommerce-form.woocommerce-form-login.login{
   color: #000;
   width: 100%;
   margin-bottom: 10px;
-}
-#sidebar label{
-  width:100%;
 }
 #sidebar input[type="submit"]{
   padding: 7px 0;
@@ -1685,9 +1573,6 @@ img.rss-widget-icon {
   border:1px solid #000;
   color:#000;
   font-weight:bold;
-}
-iframe, .entry-audio audio{
-  width: 100%;
 }
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){  
@@ -1926,8 +1811,8 @@ iframe, .entry-audio audio{
   }
   .side-menu .closebtn {
     position: absolute;
-    top: -9px;
-    left: -6px;
+    top: 0;
+    left: 10px;
     font-size: 40px !important;
     display: block;
     color: #ffffff;
@@ -1996,7 +1881,7 @@ iframe, .entry-audio audio{
   .main-header-box{
     padding-bottom: 15px;
   }
-  #menu-sidebar {
+  #menu-sidebar, .side-menu {
     background-image: linear-gradient(-90deg, #df2b23 0%, #906b00  120% );
     opacity: 0.95;
   }
@@ -2070,6 +1955,11 @@ iframe, .entry-audio audio{
   }
   #contact-info form.search-form {
     display: block;
+    margin: 10px;
+  }
+  input[type="submit"]{
+    padding: 10px 15px;
+    font-size: 15px;
   }
   .main-menu-navigation{
     overflow-y: scroll;
