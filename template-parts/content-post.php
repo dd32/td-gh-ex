@@ -31,7 +31,10 @@
 		
     		<div class="entry-meta">
     			<div class="comment-author-date">
+                    <?php $show_date = get_theme_mod('agency_lite_post_date_enable','on');
+                    if($show_date == 'on'){ ?>
                     <span class="post-date"> <?php echo esc_html(get_the_date()); ?></span>
+                    <?php } ?>
 
                     <span class="post-author"><?php  echo esc_url(the_author_posts_link()); ?> </span>
 

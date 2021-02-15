@@ -3,8 +3,8 @@
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, custom-header, footer-widget, blog, portfolio
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.5.3
-Stable tag: 1.1.5
+Tested up to: 5.6
+Stable tag: 1.1.6
 Contributors: Access Keys
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -53,6 +53,8 @@ https://pxhere.com/en/photo/1434347
 https://pxhere.com/en/photo/1433625
 
 == Changelog ==
+= 1.1.6 - Feb 15 2021 =
+** Added Post Date Show Hide Option for Single Post
 
 = 1.1.5 - Nov 06 2020 =
 ** Fixed compatiblity issue with WordPress 5.5

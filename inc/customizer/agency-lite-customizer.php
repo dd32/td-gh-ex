@@ -830,3 +830,17 @@ $wp_customize->add_control( new agency_lite_Switch_Control( $wp_customize,'agenc
 		'on'          	=> esc_html__( 'Show', 'agency-lite' ),
 		'off'         	=> esc_html__( 'Hide', 'agency-lite' ),
 	))));
+
+$wp_customize->add_setting( 'agency_lite_post_date_enable',array(
+	'sanitize_callback' => 'agency_lite_sanitize_textarea',
+	'default'           => 'on'
+));
+
+$wp_customize->add_control( new agency_lite_Switch_Control( $wp_customize,'agency_lite_post_date_enable',array(
+	'label'         	=> esc_html__( 'Show/Hide Single Post Date', 'agency-lite' ),
+	'section'       	=> 'agency_lite_post_section',
+	'priority'		=> 1,
+	'on_off_label'  	=> array(
+		'on'          	=> esc_html__( 'Show', 'agency-lite' ),
+		'off'         	=> esc_html__( 'Hide', 'agency-lite' ),
+	))));
