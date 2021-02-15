@@ -4,7 +4,7 @@ Contributors: WPinterface
 
 Requires at least:4.0
 Tested up to: 5.3
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ Advance Blog is distributed under the terms of the GNU GPL
 Advance Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
+
+= 1.1.5 - [11-February-2021] =
+* Minor Js issue fixed.
+
 = 1.1.4 - [03-Nov-2020] =
 * fixing skip link added some CSS
 

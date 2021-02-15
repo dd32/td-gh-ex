@@ -22,11 +22,10 @@
         $('.search-icon').on('click', function (event) {
             $('body').toggleClass('search-toogle');
             setTimeout(function () { 
-                $('.search-icon').focus();
+                $('.popup-search-wrapper .search-field').focus();
             }, 300);
             
         });
-
         $('.esc-search').on('click', function (event) {
             $('body').removeClass('search-toogle');
             $('.search-icon').focus();
@@ -35,6 +34,7 @@
         $(document).keyup(function(j) {
             if (j.key === "Escape") { // escape key maps to keycode `27`
                 $('body').removeClass('search-toogle');
+                $('.search-icon').focus();
             }
         });
 
@@ -50,7 +50,7 @@
                 }
             }
         } );
- 
+          
     });
 
     $(document).ready(function () {
@@ -100,7 +100,9 @@
     $(document).ready(function () {
         $('.background').each(function () {
             var src = $(this).children('img').attr('src');
-            $(this).css('background-image', 'url(' + src + ')').children('img').hide();
+            if( src ){
+                $(this).css('background-image', 'url(' + src + ')').children('img').hide();
+            }
         });
     });
     $(document).ready(function () {
