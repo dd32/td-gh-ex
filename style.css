@@ -3,10 +3,10 @@ Theme Name: Advance Automobile
 Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, auto mechanic, car repair shops, garages and automobile mechanicals , workshops, auto painting, auto centres automotive, cardealer, mechanic, car repairing centre, car wash center, agricultural ehicles, heavy vehicles, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu options also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
-Tested up to: 5.6
+Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, break shops, auto service application, auto mechanic, car repair shops, garages and automobile mechanicals, Car Services, Car AMC, motorcycle, bicycle, workshops, auto painting, auto centres automotive, cardealer, mechanic, car repairing centre, car wash center, agricultural ehicles, heavy vehicles, motorbike showroom, bike garage, tyre services, car servicing, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. The theme has custom-menu options also. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese, fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-automobile-pro/
+Tested up to: 5.6.1
 Requires PHP: 7.2.14
-Version: 0.5.8
+Version: 0.5.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: advance-automobile
@@ -20,13 +20,9 @@ In this theme some code is taken from Twenty Sixteen.
 
 /* Basic Style */
 *{
-  margin:0;
-  padding:0;
   outline:none;
 }
 body{
-  margin:0;
-  padding:0;
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#fff;
@@ -36,13 +32,10 @@ body{
   overflow-x: hidden;
 }
 img{
-  margin:0;
-  padding:0;
   border:none;
-  max-width:100%;
   height:auto;
 }
-section img{
+section img, img{
   max-width:100%;
 }
 h1,h2,h3,h4,h5,h6{
@@ -61,7 +54,6 @@ a{
   color:#1a8129;
 }
 a:hover{
-  text-decoration:none;
   color:#666;
 }
 a:focus,a:hover{
@@ -79,7 +71,8 @@ ul{
   margin:0 0 0 15px;
   padding:0;
 }
-:hover{-webkit-transition-duration: 1s;
+:hover{
+  -webkit-transition-duration: 1s;
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
@@ -87,10 +80,7 @@ ul{
 select{
   width:100%;
 }
-article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
-  clear:both;
-}
-.clear{
+.clear, article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 input[type='submit']:hover{
@@ -105,12 +95,10 @@ input[type='submit']:hover{
   padding:0 0 20px;
 }
 .wp-caption{
-  margin:0;
-  padding:0;
   font-size:13px;
   max-width:100%;
 }
-.wp-caption-text{
+.bypostauthor, .wp-caption-text, *, body, img, .wp-caption, .sticky, .gallery-caption{
   margin:0;
   padding:0;
 }
@@ -165,10 +153,6 @@ input[type='submit']:hover{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.sticky, .gallery-caption{
-  margin:0;
-  padding:0;
-}
 .alignleft,img.alignleft {
   display: inline;
   float: left;
@@ -203,10 +187,6 @@ input[type='submit']:hover{
 }
 #respond{
   clear:both;
-}
-.bypostauthor{
-  margin:0;
-  padding:0;
 }
 p.logged-in-as a{
   color: #06393a ;
@@ -248,7 +228,7 @@ input[type="submit"] {
 .entry-content code{
   color:#1a8129;
 }
-#contact-info form.search-form {
+a.closebtn.mobile-menu, #contact-info form.search-form, .toggle-menu, #category .owl-dots, a.closebtn, #sidebar ul.woocommerce-mini-cart.cart_list.product_list_widget li:before, .no-js #loader-wrapper, #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn, .elementor-html #loader,.elementor-html #loader-wrapper {
   display: none;
 }
 .single-product .background-img-skin {
@@ -258,32 +238,20 @@ input[type="submit"] {
 .read-moresec a {
   border: 1px solid #1a8129;
   color: #1a8129;
-  padding: 14px;
   border-radius: 5px;
-}
-.read-moresec {
-  margin: 30px 0 20px;
 }
 .read-moresec a:hover{
   background: #06393a;
   color: #fff;
 }
 /*preloader*/
-.elementor-html #loader,.elementor-html #loader-wrapper{
-  display: none;
-}
 #loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 99999;
   overflow: hidden;
   display: block;
-}
-.no-js #loader-wrapper {
-  display: none;
 }
 #loader {
   display: block;
@@ -293,7 +261,6 @@ input[type="submit"] {
   width: 150px;
   height: 150px;
   margin: -75px 0 0 -75px;
-  border-radius: 50%;
   border: 3px solid transparent;
   border-top-color: #16a085;
   -webkit-animation: spin 1.7s linear infinite;
@@ -410,41 +377,27 @@ input[type="submit"] {
   z-index: 9999;
 }
 /* ---------Logo Middle Header--------- */
-.logo h1{
-  text-align: left;
-  padding: 0px;
-}
 .logo a{
   color: #06393a;
   font-size: 30px;
   font-weight: bold;
-  text-align: left;
-  padding-top: 0px;
   line-height: 1.5;
-  text-transform: capitalize;
   letter-spacing: 1px;
 }
 .logo p{
   font-size: 12px;
   color: #06393a !important;
-  text-align: left;
-  margin-bottom: 0px;
 }
 /* ---------HEADER--------- */
 .top-header{
   color: #000;
-  padding:7px;
   background: #1a8129;
-}
-.social-icons{
-  text-align: right;
 }
 .social-icons i{
   color: #fff;
-  margin-left: 20px;
   font-size: 12px;
 }
-.social-icons a{
+#footer #calendar_wrap a, #footer #calendar_wrap a:hover, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .social-icons a, .tagcloud a, #footer td#prev a, table#wp-calendar td a, .copyright p a{
   color: #fff;
 }
 .book-btn a {
@@ -453,39 +406,18 @@ input[type="submit"] {
   color: #fff;
   font-weight: 600;
   font-size: 12px;
-  text-transform: uppercase;
-}
-.book-btn{
-  text-align: center;
 }
 .mail a{
   color: #fff;
   font-size: 14px;
-  text-transform: lowercase !important;
-}
-.mail i{
-  margin-right: 5px;
 }
 /* --------- MENUS CSS --------- */
 .main-menu {
   border-bottom: 1px solid #000;
 }
-#menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn{
-  display: none;
-}
-#menu-sidebar {
-  text-align: center;
-}
-ul.list_nav {
-  margin: 0 auto;
-  text-align: center;
-  display: block;
-}
 .primary-navigation ul{
   list-style: none;
   margin: 5px 0 0;
-  padding-left: 0;  
-  text-align: left;
 }
 .primary-navigation li{
   display: inline-block;
@@ -569,9 +501,6 @@ ul.list_nav {
   font-family: 'Font Awesome 5 Free';
   color: #fff;
 }
-.toggle-menu, a.closebtn{
-  display: none;
-}
 .sf-arrows .sf-with-ul{
   padding-right: 30px;
 }
@@ -586,8 +515,6 @@ ul.list_nav {
 .serach_inner{
   background: #fff;
   max-height: 40%;
-  height: 100%;
-  width: 100%;
   min-height: 150px;
   display: flex;
   justify-content: center;
@@ -597,16 +524,15 @@ ul.list_nav {
   box-shadow: 0px 0px 12px #c0bebe;
 }
 .closepop {
- position: absolute;
- top: 0;
- text-align: center;
- font-size: 40px;
- z-index: 9999;
- right: 50%;
- color: #575756;
- background: none;
- border:none;
- cursor: pointer;
+  position: absolute;
+  top: 0;
+  font-size: 40px;
+  z-index: 9999;
+  right: 50%;
+  color: #575756;
+  background: none;
+  border:none;
+  cursor: pointer;
 }
 .serach_inner form.search-form {
   width: calc(100% - 30px);
@@ -653,18 +579,11 @@ input.search-field {
  width: 95%;
 }
 .search-box i {
-  padding: 10px 0px;
   color: #06393a;
-  margin: 5px;
+}
+.search-box button, .search-box i {
   background: none;
   border:none;
-}
-.search-box button {
-  background: none;
-  border:none;
-}
-.search-box {
-  margin: 8px 0px;
 }
 .serach_inner input[type="submit"]{
   text-indent: -9999px;
@@ -679,19 +598,16 @@ input.search-field {
   border: 0;
 }
 .modal-dialog{
-  max-width: 100%;
   pointer-events: all;
-  margin: 0;
 }
 .modal-body{
   padding: 0;
 }
-#myModal {
+#myModal, .modal-open {
   padding: 0 !important;
 }
 .modal-open{
   overflow-y: scroll;
-  padding: 0 !important;
 }
 body.admin-bar .serach_inner{
   margin-top: 32px;
@@ -701,9 +617,6 @@ body.admin-bar .closepop{
 }
 /* --------- Slider --------- */
 #slider{ 
-  max-width:100%; 
-  margin:auto;
-  padding: 0;
   background-color: #fff;
 }
 #slider img {
@@ -711,8 +624,6 @@ body.admin-bar .closepop{
   opacity: 0.7;
 }
 #slider .carousel-control-next-icon, #slider .carousel-control-prev-icon {
-  width: auto;
-  height: auto;
   background:transparent;
 }
 #slider .carousel-control-prev,#slider .carousel-control-next{
@@ -721,7 +632,6 @@ body.admin-bar .closepop{
 }
 #slider i{
   background: #1a8129;
-  padding: 15px;
   color: #fff;
   font-size: 10px;
   border-radius: 2px;
@@ -740,10 +650,8 @@ body.admin-bar .closepop{
   right: 45%;
 }
 #slider .inner_carousel h1 {
-  margin: 0;
   font-size: 30px;
   letter-spacing: 1px;
-  text-align: left;
   font-weight: 900;
   color: #06393a;
 }
@@ -751,15 +659,12 @@ body.admin-bar .closepop{
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: 0;
-  padding: 5px 0px 8px 0;
 }
 #slider .inner_carousel {
   color: #06393a;
-  text-align: left;
 }
 #slider .inner_carousel .read-btn a {
   color: #fff;
-  padding: 12px 25px;
   border-radius: 5px;
   background: #1a8129;
   font-size: 12px;
@@ -798,34 +703,24 @@ a.carousel-control-next, a.carousel-control-prev{
 }
 .address p, .address a{
   color: #fff;
-  margin-bottom: 0px;
 }
 .time p{
   color: #fff;
-  margin: 0;
 }
 .address i,.time i{
   color: #1a8129;
   background: #fff;
-  padding: 13px;
-  border-radius: 50%;
 }
 p.address-font{
   font-size: 15px;
   font-weight: 600;
 }
 /*---------- our service -------*/
-#category{
-  padding: 2% 0;
-}
 #category h2{
   font-size: 30px;
   letter-spacing: 1px;
   color: #06393a;
   font-weight: 600;
-  margin: 0px;
-  padding: 0 0 10px;
-  text-align: center;
 }
 #category .imagebox img{
   border-radius: 5px;
@@ -835,9 +730,6 @@ p.address-font{
 }
 #category .owl-nav {
   width: 100%;
-}
-#category .owl-dots{
-  display: none;
 }
 #category .owl-carousel .owl-nav .owl-prev,#category .owl-carousel .owl-nav .owl-next{
   border:none;
@@ -873,7 +765,6 @@ p.address-font{
 #category .text-content h3 {
   color: #1a8129;
   font-size: 22px;
-  padding-bottom: 0px;
 }
 #category .text-content p {
   color: #2f3637;
@@ -881,7 +772,6 @@ p.address-font{
 }
 #category .explore-btn a {
   color: #fff;
-  padding: 12px 25px;
   border-radius: 5px;
   background: #1a8129;
   font-size: 12px;
@@ -892,28 +782,13 @@ p.address-font{
   background: #06393a;
   color: #fff;
 }
-#category .explore-btn {
-  margin-top: 23px;
-}
 #category .owl-carousel .owl-item{
   background: #f4f8fb;
   border-radius: 5px;
 }
 /*----------------- content page ----------------*/
 .page-box {
-  padding: 10px;
   border: 1px solid #06393a;
-  margin: 15px;
-}
-.page-box h4{
-  text-transform: capitalize;
-  color: #06393a;
-  padding: 0;
-  font-size: 22px;
-}
-.page-box .new-text{
-  padding:10px;
-  text-align: center;
 }
 .new-text h2 a {
   color: #06393a;
@@ -926,10 +801,8 @@ p.address-font{
 }
 .page-box p,.page-box-single p{
   font-size:15px;
-  margin:10px 0;
   line-height:2;
   color: #2f3637;
-  text-align: center;
 }
 .page-box-single img{
   width: 100%;
@@ -937,12 +810,8 @@ p.address-font{
 .our-services img{
   width:100%;
 }
-.our-services .services-box{
-  margin:40px 0 20px 0;
-}
 .read-more-btn a {
   color: #fff;
-  padding: 12px 25px;
   border-radius: 5px;
   background: #06393a;
   font-size: 12px;
@@ -952,9 +821,6 @@ p.address-font{
 .read-more-btn a:hover{
   background:#1a8129;
 }
-.read-more-btn {
-  margin: 20px 0;
-}
 .page-box .metabox,.page-box-single .metabox,.metabox a{
   color:#06393a;
   clear:both;
@@ -962,23 +828,14 @@ p.address-font{
 .nav-links {
   margin: 10px 0;
 }
-.page-box-single .metabox{
-  margin:10px 0;
-}
 .page-box-single {
   background: #fafafa;
-  padding: 15px;
 }
 .metabox a:hover{
   color: #1a8129;
 }
 .metabox span {
-  margin-right: 24px;
   font-size: 15px;
-  margin-right: 10px;
-}
-.metabox i {
-  margin-right: 5px;
 }
 .tags i{
   font-size: 20px;
@@ -1001,15 +858,6 @@ article.new-text.col-lg-6.col-md-6 {
   max-width: 100%;
 }
 /* --------- content-single  Page ------- */
-.page-box-single h3{
-  font-weight: 600 !important;
-  color: #06393a !important;
-  margin: 0 0 10px 0 !important;
-  padding: 0;
-}
-.page-box-single .metabox,.page-box-single p,.page-box-single h3{
-  text-align: left;
-}
 .page-box-single .box-image img{
   width: 100%;
 }
@@ -1017,16 +865,13 @@ article.new-text.col-lg-6.col-md-6 {
   color: #1a8129;
   font-weight: bold;
   font-size: 14px;
-  text-transform: uppercase;
   background: #f6f6f6;
-  padding: 10px;
 }
 .meta-nav:hover{
   background: #1a8129;
   color: #fff;
 }
 .post-title{
-  margin:10px 0;
   color: #1a8129;
   display: block;
 }
@@ -1036,38 +881,10 @@ article.new-text.col-lg-6.col-md-6 {
   padding: 8px 0;
 }
 /* Headings */
-section h2{
-  font-weight:bold;
-  text-align:center;
-  margin:0 0 45px;
-  padding:0;
-  text-transform:uppercase;
-}
-section h2{
-  font-weight:bold;
-  text-transform:uppercase;
-}
-section h3{
-  color:#1a8129;
-  font-weight:bold;
-  font-size:20px;
-}
-section h5{
-  color:#3890cb;
-  font-weight:bold;
-  font-size:24px;
-  margin:0 0 10px 0;
-  padding:0;
-}
 a.r_button {
   background: #3790ca;
   padding: 0.5em 2em;
   color: #fff;
-}
-section .innerlightbox{
-  background-size:100% 100%;
-  padding: 3em 0;
-  color:#1a8129;
 }
 .innerlightbox input.search-field{
   padding: 9px 0;
@@ -1085,9 +902,6 @@ section .innerlightbox{
   color: #fff;
   text-decoration: underline;
 }
-.tagcloud a {
-  color: #fff;
-}
 #footer input[type="search"] {
   width: 95%;
   border: none;
@@ -1104,17 +918,8 @@ section .innerlightbox{
   font-size: 15px;
   width: 100%
 }
-#footer td#prev a {
-  color: #fff;
-}
 table#wp-calendar {
   width: 100%;
-}
-table#wp-calendar td a {
-  color: #fff;
-}
-#footer #calendar_wrap a, #footer #calendar_wrap a:hover{
-  color: #fff;
 }
 #footer caption,#sideabr caption {
   font-weight: bold;
@@ -1163,11 +968,8 @@ table#wp-calendar td a {
 }
 #footer h3{
   letter-spacing: 1px;
-  text-align:left;
   font-size:24px;
-  text-transform: capitalize;
   font-weight: bold;
-  padding:0 0 17px 0;
   color: #fff;
 }
 #footer p{
@@ -1193,15 +995,9 @@ table#wp-calendar td a {
 .copyright p {
   font-size: 15px;
   color: #fff;
-  margin-bottom: 0;
-}
-.copyright p a{
-  color: #fff;
 }
 .copyright {
   background: #1a8129;
-  padding: 15px;
-  text-align:center;
 }
 #footer .tagcloud a {
   border: solid 1px #999;
@@ -1255,8 +1051,6 @@ table#wp-calendar td a {
   font-size:25px;
   font-weight:bold;
   border-top:2px dotted #7e7e7e;
-  margin:10px 0;
-  padding: 30px 0 10px;
 }
 #comments h3.comment-reply-title{
   font-size:20px;
@@ -1428,9 +1222,6 @@ span.woocommerce-input-wrapper{
 }
 .woocommerce .woocommerce-breadcrumb{
   margin-top: 10px;
-}
-.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
-  color: #fff;
 }
 .woocommerce ul.products.columns-4 {
   display: table;
@@ -1616,9 +1407,6 @@ span.woocommerce-input-wrapper{
   left: 0;
   top: 12px;
 }
-#sidebar ul.woocommerce-mini-cart.cart_list.product_list_widget li:before{
-  display: none;
-}
 .woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product{
   text-align: center;
 }
@@ -1629,9 +1417,6 @@ span.woocommerce-input-wrapper{
   padding-left: 2em;
 }
 /*------------- Sidebar -------------*/
-#sidebar {
-  margin-top: 1em;
-}
 #sidebar caption{
   color: #1a8129;
 }
@@ -1749,30 +1534,6 @@ h2.entry-title,h1.page-title {
 }
 .content-ts hr{
   clear:both;
-}
-.content-ts h2{
-  font-size:32px;
-  font-weight:normal;
-  margin:0;
-  padding:0;
-  color:#1a8129;
-  margin:0 0 25px;
-}
-.content-ts h3{
-  font-size:36px;
-  font-weight:normal;
-  margin:0;
-  padding:0;
-  color:#1a8129;
-  margin:0 0 25px;
-}
-.content-ts h4{
-  font-size:20px;
-  font-weight:bold;
-  margin:0;
-  padding:0;
-  color:#333;
-  margin:0 0 25px;
 }
 .content-ts ul{
   list-style:none;
@@ -2007,8 +1768,7 @@ iframe , .entry-audio audio{
     background-color: #1a8129;
     padding: 10px 0;
   }
-  .social-icons,
-  .mail{
+  .social-icons,.mail{
     text-align: center;
     margin-bottom: 10px;
   }
@@ -2016,29 +1776,6 @@ iframe , .entry-audio audio{
     margin-left: 10px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 999px){
-  .entry-content .alignwide {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-  #slider .carousel-caption {
-    top: 50%;
-  }
-  #slider .inner_carousel p{
-    display: none;
-  }
-  #slider .carousel-control-prev {
-    left: 73%;
-  }
-  #contact-details{
-    margin:10px;
-  }
-  .center-align {
-    left: 45%;
-    right: 50%;
-  }
-}
-/*------------------RESPONSIVE MEIDA menu css-------------------*/
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus, .toggle-menu button:focus{
     outline: 2px solid #FF4500;
@@ -2047,9 +1784,7 @@ iframe , .entry-audio audio{
   .toggle-menu i {
     font-size: 18px;
     color: #fff;
-    padding:10px;
     background: #06393a;
-    margin: 10px 0;
   }
   .toggle-menu button {
     background: transparent;
@@ -2082,18 +1817,14 @@ iframe , .entry-audio audio{
     border:none;
     background: transparent;
   }
-  .sidebar #primary-site-navigation {
+  .sidebar #primary-site-navigation, input.search-field {
     width: 100%;
   }
   .toggle-menu span{
     font-size:30px;
     cursor:pointer; 
   }
-  .toggle-menu{
-    display: block;
-    text-align: right;
-  }
-  .primary-navigation ul ul li{
+  .toggle-menu, .primary-navigation ul ul li, #contact-info form.search-form, a.closebtn.mobile-menu{
     display: block;
   }
   .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a{
@@ -2123,14 +1854,11 @@ iframe , .entry-audio audio{
     background: unset;
     border: none;
   }
-  .primary-navigation ul ul li{
+  .primary-navigation ul ul li, .social-icons, form.search-form, .mail{
     text-align: center;
   }
   .primary-navigation li{
     padding: 0;
-  }
-  .main-header-box{
-    padding-bottom: 15px;
   }
   #menu-sidebar {
     background-image: linear-gradient(-90deg, #06393a 0%, #1a8129 120% );
@@ -2150,14 +1878,8 @@ iframe , .entry-audio audio{
     display: block;
     padding: 5px 0;
   }
-  #menu-sidebar .mail{
-    padding: 10px 0;
-  }
-  .top-header .social-icons, .top-header .mail, .top-header .book-btn{
+  .top-header .social-icons, .top-header .mail, .top-header .book-btn, .search-box, .top-header{
     display: none;
-  }
-  #menu-sidebar .social-icons a{
-    padding:5px 0;
   }
   #contact-info{
     z-index: 1;
@@ -2174,11 +1896,7 @@ iframe , .entry-audio audio{
   }
   #menu-sidebar .search-box i{
     color: #fff;
-    text-align: center;
     display: block;
-  }
-  .search-box {
-    display: none;
   }
   .book-btn a, .mail i, .mail a, .social-icons a{
     color: #fff !important;
@@ -2186,14 +1904,7 @@ iframe , .entry-audio audio{
     font-weight: 600;
   }
   #menu-sidebar .book-btn a{
-    padding: 8px 20px;
     font-size: 13px;
-  }
-  #menu-sidebar .book-btn{
-    margin: 10px 0;
-  }
-  .mail{
-    padding:10px;
   }
   #menu-sidebar input[type="submit"]{
     padding: 8px;
@@ -2208,21 +1919,9 @@ iframe , .entry-audio audio{
   .primary-navigation a{
     display: unset;
   }
-  #contact-info form.search-form {
-    display: block;
-  }
-  .main-menu-navigation{/
+  .main-menu-navigation{
     overflow-y: scroll;
     scroll-behavior: auto;
-  }
-  input.search-field{
-    width: 100%;
-  }
-  .social-icons{
-    text-align: center;
-  }
-  .top-header {
-    display: none;
   }
   .sf-arrows .sf-with-ul:after{
     position: absolute;

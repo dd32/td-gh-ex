@@ -47,8 +47,8 @@
       </div>
     </div>
   </div>
-  <div class="copyright">
-    <p><?php advance_automobile_credit(); ?> <?php echo esc_html(get_theme_mod('advance_automobile_footer_copy', __('By Themeshopy', 'advance-automobile')));?></p>
+  <div class="copyright p-3 text-center">
+    <p class="mb-0"><?php advance_automobile_credit(); ?> <?php echo esc_html(get_theme_mod('advance_automobile_footer_copy', __('By Themeshopy', 'advance-automobile')));?></p>
   </div>
 </footer>
 <?php if( get_theme_mod( 'advance_automobile_enable_disable_scroll',true) != '' || get_theme_mod( 'advance_automobile_responsive_scroll',true) != '') { ?>

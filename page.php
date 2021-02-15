@@ -20,7 +20,7 @@ get_header(); ?>
         $advance_automobile_left_right = get_theme_mod( 'advance_automobile_single_page_sidebar_layout','One Column');
         if($advance_automobile_left_right == 'Left Sidebar'){ ?>
             <div class="row">
-                <div id="sidebar" class="col-lg-4 col-md-4">
+                <div id="sidebar" class="col-lg-4 col-md-4 mt-3">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
                 <div class="col-lg-8 col-md-8 left-sidebar-page background-img-skin">
@@ -54,7 +54,7 @@ get_header(); ?>
                     ?>
                     <div class="clear"></div>
                 </div>
-                <div id="sidebar" class="col-lg-4 col-md-4">
+                <div id="sidebar" class="col-lg-4 col-md-4 mt-3">
                     <?php dynamic_sidebar('sidebar-1'); ?>
                 </div>
             </div>

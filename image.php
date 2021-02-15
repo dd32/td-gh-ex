@@ -38,7 +38,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-automobile' ),
                                         'next_text'          => __( 'Next page', 'advance-automobile' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav text-uppercase p-2 screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
                                     ) );
                                 ?>
                             </div> 
@@ -68,7 +68,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-automobile' ),
                                         'next_text'          => __( 'Next page', 'advance-automobile' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav text-uppercase p-2 screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
                                     ) );
                                 ?>
                             </div> 
@@ -100,7 +100,7 @@ get_header(); ?>
                                 the_posts_pagination( array(
                                     'prev_text'          => __( 'Previous page', 'advance-automobile' ),
                                     'next_text'          => __( 'Next page', 'advance-automobile' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                                    'before_page_number' => '<span class="meta-nav text-uppercase p-2 screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
                                 ) );
                             ?>
                         </div> 
@@ -129,7 +129,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-automobile' ),
                                         'next_text'          => __( 'Next page', 'advance-automobile' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav text-uppercase p-2 screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
                                     ) );
                                 ?>
                             </div> 
@@ -162,7 +162,7 @@ get_header(); ?>
                                     the_posts_pagination( array(
                                         'prev_text'          => __( 'Previous page', 'advance-automobile' ),
                                         'next_text'          => __( 'Next page', 'advance-automobile' ),
-                                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
+                                        'before_page_number' => '<span class="meta-nav text-uppercase p-2 screen-reader-text">' . __( 'Page', 'advance-automobile' ) . ' </span>',
                                     ) );
                                 ?>
                             </div> 

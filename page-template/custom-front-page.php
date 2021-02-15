@@ -9,7 +9,7 @@ get_header(); ?>
   <?php do_action( 'advance_automobile_above_slider' ); ?>
 
   <?php if( get_theme_mod( 'advance_automobile_slider_hide', false) != '' || get_theme_mod( 'advance_automobile_responsive_slider', false) != '') { ?>
-    <section id="slider">
+    <section id="slider" class="mw-100 m-auto p-0">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('advance_automobile_slider_speed_option', 3000)); ?>"> 
         <?php $advance_automobile_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
@@ -33,12 +33,12 @@ get_header(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
-                <div class="inner_carousel">
-                  <h1><?php the_title(); ?></h1>
-                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_automobile_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_automobile_slider_excerpt_length','20')))); ?></p>
+                <div class="inner_carousel text-left">
+                  <h1 class="m-0 text-left"><?php the_title(); ?></h1>
+                  <p class="py-2 px-0"><?php $excerpt = get_the_excerpt(); echo esc_html( advance_automobile_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_automobile_slider_excerpt_length','20')))); ?></p>
                   <?php if( get_theme_mod('advance_automobile_slider_button','READ MORE') != ''){ ?>
                     <div class="read-btn">
-                      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_automobile_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_automobile_slider_button','READ MORE'));?></span></a>
+                      <a href="<?php the_permalink(); ?>" class="p-3"><?php echo esc_html(get_theme_mod('advance_automobile_slider_button','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_automobile_slider_button','READ MORE'));?></span></a>
                     </div>
                   <?php } ?>
                 </div>
@@ -53,11 +53,11 @@ get_header(); ?>
         endif;?>
         <div class="slider-nex-pre">
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+            <span class="carousel-control-prev-icon w-auto h-auto" aria-hidden="true"><i class="fas fa-chevron-left p-3"></i></span>
             <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-automobile' );?></span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+            <span class="carousel-control-next-icon w-auto h-auto" aria-hidden="true"><i class="fas fa-chevron-right p-3"></i></span>
             <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-automobile' );?></span>
           </a>
         </div>
@@ -75,14 +75,14 @@ get_header(); ?>
             <div class="address">
               <div class="row">
                 <div class="col-lg-2 col-md-3">
-                  <i class="fas fa-map-marker-alt"></i>
+                  <i class="fas fa-map-marker-alt p-3 rounded-circle"></i>
                 </div>
                 <div class="col-lg-10 col-md-9">
                   <?php if( get_theme_mod('advance_automobile_address') != ''){ ?>
-                    <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_address','')); ?></p>
+                    <p class="address-font mb-0"><?php echo esc_html( get_theme_mod('advance_automobile_address','')); ?></p>
                   <?php } ?>
                   <?php if( get_theme_mod('advance_automobile_address1') != ''){ ?>
-                    <p><?php echo esc_html( get_theme_mod('advance_automobile_address1','')); ?></p>
+                    <p class="mb-0"><?php echo esc_html( get_theme_mod('advance_automobile_address1','')); ?></p>
                   <?php } ?>
                 </div>
               </div>
@@ -94,14 +94,14 @@ get_header(); ?>
             <div class="time">
               <div class="row">
                 <div class="col-lg-2 col-md-3">
-                  <i class="far fa-clock"></i>
+                  <i class="far fa-clock p-3 rounded-circle"></i>
                 </div>
                 <div class="col-lg-10 col-md-9">
                   <?php if( get_theme_mod('advance_automobile_time') != ''){ ?>
-                    <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_time','')); ?></p>
+                    <p class="address-font m-0"><?php echo esc_html( get_theme_mod('advance_automobile_time','')); ?></p>
                   <?php } ?>
                   <?php if( get_theme_mod('advance_automobile_time1') != ''){ ?>
-                    <p><?php echo esc_html( get_theme_mod('advance_automobile_time1','')); ?></p>
+                    <p class="m-0"><?php echo esc_html( get_theme_mod('advance_automobile_time1','')); ?></p>
                   <?php } ?>
                 </div>
               </div>
@@ -113,11 +113,11 @@ get_header(); ?>
             <div class="address">
               <div class="row">
                 <div class="col-lg-2 col-md-3">
-                  <i class="fas fa-phone"></i>
+                  <i class="fas fa-phone p-3 rounded-circle"></i>
                 </div>
                 <div class="col-lg-10 col-md-9">
                   <?php if( get_theme_mod('advance_automobile_call') != ''){ ?>
-                    <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_call','')); ?></p>
+                    <p class="address-font mb-0"><?php echo esc_html( get_theme_mod('advance_automobile_call','')); ?></p>
                   <?php } ?>
                   <?php if( get_theme_mod('advance_automobile_call1') != ''){ ?>
                     <a href="tel:<?php echo esc_attr( get_theme_mod('advance_automobile_call1','' )); ?>"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></span></a>
@@ -133,10 +133,10 @@ get_header(); ?>
   <?php do_action( 'advance_automobile_below_contact_section' ); ?>
 
   <?php if( get_theme_mod('advance_automobile_category3') != '' || get_theme_mod( 'advance_automobile_our_services_title' )!= ''){ ?>
-    <section id="category">
+    <section id="category" class="py-5 px-0">
       <div class="container">
         <?php if( get_theme_mod('advance_automobile_our_services_title') != ''){ ?>
-        <h2><?php echo esc_html(get_theme_mod('advance_automobile_our_services_title','')); ?></h2>
+        <h2 class="m-0 pt-0 px-0 pb-3 text-center"><?php echo esc_html(get_theme_mod('advance_automobile_our_services_title','')); ?></h2>
         <?php }?>
         <div class="row owl-carousel m-0">
           <?php 
@@ -147,10 +147,10 @@ get_header(); ?>
             <div class="row">
               <div class="col-lg-6 col-md-6">
                 <div class="text-content">
-                  <h3><?php the_title(); ?></h3>
+                  <h3 class="pb-0"><?php the_title(); ?></h3>
                   <p><?php the_excerpt(); ?></p>
-                  <div class="explore-btn">
-                    <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html_e('EXPLORE MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'EXPLORE MORE','advance-automobile' );?></span></a>
+                  <div class="explore-btn mt-4">
+                    <a href="<?php echo esc_url(get_permalink()); ?>" class="py-3 px-4"><?php echo esc_html_e('EXPLORE MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'EXPLORE MORE','advance-automobile' );?></span></a>
                   </div>
                 </div>
               </div>

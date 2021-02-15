@@ -109,7 +109,7 @@ function advance_automobile_widgets_init() {
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
+			'before_title'  => '<h3 class="widget-title text-left text-transform py-0 pr-0 mb-4">',
 			'after_title'   => '</h3>',
 		) );
 	}
