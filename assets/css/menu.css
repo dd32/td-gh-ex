@@ -486,16 +486,6 @@ ul.menu-wrap .btn-home > a.nav-link > span {
     left: 100%;
 }
 
-/*.header .widget_nav_menu .sub-menu li:hover > .sub-menu,
-.header .widget_nav_menu .sub-menu li.focus > .sub-menu,
-.navbar-area .menubar .dropdown-menu li:hover > .dropdown-menu,
-.navbar-area .menubar .dropdown-menu li.focus > .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}*/
-
 .footer .menu-wrap .menubar .dropdown-menu > li,
 .footer-copyright .widget_nav_menu .sub-menu > li,
 .header .widget_nav_menu .sub-menu > li,

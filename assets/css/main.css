@@ -1,19 +1,4 @@
 /*
-* ------------------------------------------------------------------
-*
-* Project: Avril - Multipurpose HTML Template
-* Version: 1.0
-* Created : 25/04/2020
-* Template URI: http://nayrathemes.com/demo/html/avril
-* Author Name: NayraThemes
-* Author URI: http://nayrathemes.com/
-* Description: Business, Finance HTML Template
-* Developer: MuAasifShah;
-*
-*
-* -------------------------------------------------------------------
-*
-============================================
 *   [Table of contents]
 * ==========================================
     Theme Default Css
@@ -1170,10 +1155,6 @@
     display: flex;
     align-items: flex-start;
 }
-
-/* .cta-bg-image { */
-    /* background: url(../images/bg/cta-bg.jpg) center center scroll rgba(0,0,0,.7); */
-/* } */
 
 .cta-bg-image .cta-wrapper {
     color: var(--sp-white);
@@ -2505,11 +2486,6 @@ nav.woocommerce-pagination ul,
   z-index: 100000;
   /* Above WP toolbar. */
 }
-
-/* Do not show the outline on the skip link target. */
-/* #content { */
-    /* background: var(--sp-white); */
-/* } */
 
 #content[tabindex="-1"]:focus {
   outline: 0;
