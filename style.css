@@ -3,10 +3,10 @@ Theme Name: Advance Business
 Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, blogger, creative, consulting, medical services, advertising consulting, travel agency, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, right sidebar lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. It has Theme Options to provide you with better customization options For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro
-Tested up to: 5.6
+Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, hotel, financial advisors, construction, insurance brokers, investment consultants, blogger, creative, consulting, medical services, advertising consulting, travel agency, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, right sidebar lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. It has Theme Options to provide you with better customization options For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro
+Tested up to: 5.6.1
 Requires PHP: 7.2.14
-Version: 0.5.6
+Version: 0.5.7
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -20,13 +20,9 @@ In this theme some code is taken from Twenty Sixteen.
 
 /* Basic Style */
 *{
-	margin:0;
-	padding:0;
 	outline:none;
 }
 body{
-	margin:0;
-	padding:0;
 	-ms-word-wrap:break-word;
 	word-wrap:break-word;
 	background-color:#fff;
@@ -36,8 +32,6 @@ body{
   overflow-x: hidden;
 }
 img{
-	margin:0;
-	padding:0;
 	border:none;
 	max-width:100%;
 	height:auto;
@@ -61,7 +55,6 @@ a{
 	color:#000;
 }
 a:hover{
-	text-decoration:none;
 	color:#666;
 }
 a:hover{
@@ -87,7 +80,7 @@ ul{
 select{
   width:100%;
 }
-.clear, article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
+#respond, .clear, article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   clear:both;
 }
 input[type='submit']:hover{
@@ -102,12 +95,10 @@ input[type='submit']:hover{
 	padding:20px 0 20px;
 }
 .wp-caption{
-	margin:0;
-	padding:0;
 	font-size:13px;
 	max-width:100%;
 }
-.wp-caption-text{
+.bypostauthor, *, body, img, .wp-caption-text, .wp-caption{
 	margin:0;
 	padding:0;
 }
@@ -117,7 +108,7 @@ input[type='submit']:hover{
 	left:-9999em;
 }
 /*elementor*/
-.elementor-html #loader, .elementor-html #loader-wrapper{ 
+.toggle, a.closebtn.responsive-menu, #contact-info, .toggle-menu, a.closebtn, .elementor-html #loader, .elementor-html #loader-wrapper, .no-js #loader-wrapper, #menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn{ 
   display: none; 
 }
 /*wide block*/
@@ -133,7 +124,7 @@ input[type='submit']:hover{
 .alignfull img {
   width: 100vw;
 } 
-.left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, .right-sidebar-page .entry-content .alignfull{
+.sticky, .gallery-caption, .left-sidebar-page .entry-content .alignwide, .left-sidebar-page .entry-content .alignfull, .right-sidebar-page .entry-content .alignwide, .right-sidebar-page .entry-content .alignfull{
   margin-left  : 0;
   margin-right : 0;
 }
@@ -166,10 +157,6 @@ input[type='submit']:hover{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.sticky, .gallery-caption{
-	margin:0;
-	padding:0;
-}
 .alignleft,img.alignleft {
  	display: inline;
 	float: left;
@@ -201,16 +188,6 @@ input[type='submit']:hover{
 }
 .comment-list .comment-content ul li{
 	margin:5px;
-}
-#respond{
-	clear:both;
-}
-.toggle{
- 	display:none;
-}
-.bypostauthor{
-	margin:0;
-	padding:0;
 }
 small{
 	font-size:14px !important;
@@ -245,28 +222,15 @@ input[type="submit"] {
 	background:#ffaa56;
 	color: #fff;
 	font-size: 16px;
-	margin: 20px 0 0;
-	padding: 10px 30px;
 	font-weight:bold;
 }
-.read-moresec{
-  margin:20px 0;
-}
 /*preloader*/
-.elementor-html #loader,.elementor-html #loader-wrapper{
-  display: none;
-}
 #loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 99999;
   overflow: hidden;
-}
-.no-js #loader-wrapper {
-  display: none;
 }
 #loader {
   display: block;
@@ -397,18 +361,11 @@ input[type="submit"] {
   background: #fff !important;
 }
 /* ---------Middle Header--------- */
-.logo {
-  text-align: left;
-  padding: 10px 20px;
-}
 .logo h1,.logo p.site-title{
   font-size:30px;
   font-weight:bold;
-  text-align:left;
   letter-spacing: 0px;
-  padding: 0;
   line-height: 1.5;
-  text-transform: uppercase;
 }
 .logo a{
   color: #000;
@@ -416,7 +373,6 @@ input[type="submit"] {
 .logo p{
   font-size:12px;
   color: #000;
-  margin-bottom: 0;
 }
 .page-template-custom-front-page #header {
   position: absolute;
@@ -426,7 +382,6 @@ input[type="submit"] {
 }
 .main-header {
   background: #fff;
-  padding: 0 10px;
 }
 #header {
   border-bottom: 1px solid #000;
@@ -434,17 +389,6 @@ input[type="submit"] {
 /* --------- MENUS CSS --------- */
 .main-menu {
   border-bottom: 1px solid #000;
-}
-#menu-sidebar .social-icons, #menu-sidebar .mail, #menu-sidebar .book-btn{
-  display: none;
-}
-#menu-sidebar {
-  text-align: center;
-}
-ul.list_nav {
-  margin: 0 auto;
-  text-align: center;
-  display: block;
 }
 .primary-navigation ul{
   list-style: none;
@@ -536,9 +480,6 @@ ul.list_nav {
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
 }
-.toggle-menu, a.closebtn{
-  display: none;
-}
 .sf-arrows .sf-with-ul{
   padding-right: 30px;
 }
@@ -571,13 +512,11 @@ ul.list_nav {
 }
 /*-----------------Search pop up----------------*/
 .serach_inner label {
-  width: 95%;
+  width: 100%;
 }
 .serach_inner{
   background: #fff;
   max-height: 40%;
-  height: 100%;
-  width: 100%;
   min-height: 150px;
   display: flex;
   justify-content: center;
@@ -589,7 +528,6 @@ ul.list_nav {
 .closepop {
  position: absolute;
  top: 0;
- text-align: center;
  font-size: 40px;
  z-index: 9999;
  right: 50%;
@@ -613,7 +551,7 @@ ul.list_nav {
   max-width: 1200px;
 }
 .serach_inner form.search-form label {
-  width: 95%;
+  width: 100%;
 }
 .serach-page input.search-field {
  border: 1px solid #ccc;
@@ -639,25 +577,15 @@ button.search-submit {
 #post- input.search-field{
   border: 1px solid #bbb;
 }
-input.search-field {
- border: none;
- padding: 10px;
- background: transparent;
- width: 100%;
-}
 .search-box i {
   padding: 10px;
   color: #000;
-  margin: 10px;
   background: none;
   border:none;
 }
 .search-box button {
   background: none;
   border:none;
-}
-.search-box {
-  margin: 8px 0px;
 }
 .serach_inner input[type="submit"]{
   text-indent: -9999px;
@@ -674,10 +602,6 @@ input.search-field {
 .modal-dialog{
   max-width: 100%;
   pointer-events: all;
-  margin: 0;
-}
-.modal-body{
-  padding: 0;
 }
 #myModal {
   padding: 0 !important;
@@ -697,9 +621,6 @@ body.admin-bar .closepop{
 }
 /* --------- Slider --------- */
 #slider{ 
-  max-width:100%; 
-  margin:auto;
-  padding:0;
   background: #fff;
 }
 #slider img {
@@ -707,9 +628,9 @@ body.admin-bar .closepop{
   opacity: 0.3;
 }
 #slider .carousel-control-next-icon, #slider .carousel-control-prev-icon {
+  background:transparent;
   width: auto;
   height: auto;
-  background:transparent;
 }
 #slider .carousel-control-prev,#slider .carousel-control-next{
   opacity: unset;
@@ -717,8 +638,7 @@ body.admin-bar .closepop{
 #slider .carousel-control-next-icon i,#slider .carousel-control-prev-icon i{
   background: #7d7b7b;
   padding: 20px 22px;
-  border-radius: 50%;
-  }
+}
 #slider .carousel-control-next-icon i:hover,#slider .carousel-control-prev-icon i:hover{
   background:#ffaa56;
 }
@@ -729,26 +649,21 @@ body.admin-bar .closepop{
   right: 40%;
 }
 #slider .inner_carousel h1 {
-  margin: 0;
   font-size: 40px;
   letter-spacing: 1px;
   color: #000;
-  text-align: left;
   font-weight: 700;
 }
 #slider .inner_carousel p {
   font-size: 15px;
   line-height: 2;
-  padding: 10px 0px;
 }
 #slider .inner_carousel {
   color: #212121;
-  text-align: left;
 }
 #slider .inner_carousel .know-btn a {
   border: 1px solid #212121;
   color: #212121;
-  padding: 15px;
   border-radius: 25px;
   font-size: 13px;
   font-weight: 500;
@@ -758,31 +673,20 @@ body.admin-bar .closepop{
   color: #000;
   border-color: #ffaa56;
 }
-#slider .inner_carousel .know-btn {
-  margin-top: 23px;
-}
-#slider .inner_carousel .know-btn a i {
-  padding: 6px;
-}
 /*---------- Services -----------*/
 .contact-box {
   background: #fff;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   margin-top: -8.5%;
   position: relative;
-  padding: 28px;
 }
 #business-contact .service-border a h4 {
   text-transform: uppercase;
   text-align: center;
 }
-#business-contact {
-  margin: 2% 0;
-}
 .contact p.heading-line {
   color: #010101;
   font-size: 16px;
-  margin: 15px 0 0 0;
 }
 .contact i {
   color: #ffaa56;
@@ -790,7 +694,7 @@ body.admin-bar .closepop{
   font-size: 36px;
 }
 .contact p, .contact a {
- color: #212121;
+  color: #212121;
   margin: 0;
   font-weight: 500;
   padding: 2px 0px;
@@ -800,7 +704,6 @@ body.admin-bar .closepop{
   margin: 2% 0;
 }
 .project_content a {
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: 800;
 }
@@ -811,7 +714,6 @@ body.admin-bar .closepop{
 }
 .project_content {
   background: #f6f7f9;
-  padding: 5px 16px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -819,28 +721,19 @@ body.admin-bar .closepop{
 hr.project-hr {
   background: #ffaa56;
   width: 9%;
-  margin: 0 auto;
   padding: 1px;
-  margin-bottom: 4%;
+  margin: 0 auto 4%; 
 }
-.project_title h2 {
+.project_title h2, .project_content h3 {
   font-weight: 800;
-  margin-top: 0;
 }
 .project_content h3 {
-  font-weight: 800;
   font-size: 14px;
-}
-.project_content .know-btn a i {
-  padding: 5px;
-}
-.project-box {
-  margin-bottom: 20px;
 }
 /*----------------- Homepage ----------------*/
 .page-box {
   padding: 10px;
-  margin: 15px 10px;
+  margin: 15px 0;
   border-bottom: solid 2px #ffaa56;
 }
 .page-box h2 a:hover{
@@ -911,9 +804,6 @@ article.new-text.col-lg-6.col-md-6 {
   color: #262626;
   font-weight: 600;
 }
-#contact-info{
-  display: none;
-}
 .meta-nav {
   color: #000;
   font-weight: bold;
@@ -959,31 +849,6 @@ article.new-text.col-lg-6.col-md-6 {
   border: 1px solid #ffaa56;
 }
 /* Headings */
-section h1{
-	font-weight:bold;
-	text-align:center;
-	margin:0 0 45px;
-	padding:0;
-	text-transform:uppercase;
-}
-section h2{
-	font-weight:bold;
-	text-align:center;
-	margin:30px 0 0 0;
-	text-transform:uppercase;
-}
-section h4{
-	color:#000;
-	font-weight:bold;
-	font-size:20px;
-}
-section h5{
-	color:#3890cb;
-	font-weight:bold;
-	font-size:24px;
-	margin:0 0 10px 0;
-	padding:0;
-}
 a.r_button {
 	background: #3790ca;
 	padding: 0.5em 2em;
@@ -994,7 +859,6 @@ section .innerlightbox{
 	padding:4.5em 0;
 	color:#000;
 }
-
 /* Footer Section */
 #footer form.search-form label{
   width: 100%;
@@ -1007,7 +871,7 @@ section .innerlightbox{
   text-decoration: underline;
 }
 #footer input[type="search"] {
-  width: 95%;
+  width: 100%;
   border: none;
   padding: 10px;
   border: solid 1px #ffaa56;
@@ -1031,8 +895,7 @@ section .innerlightbox{
 #wp-calendar td a {
   color: #000;
 }
-#footer caption,
-#sideabr caption {
+#footer caption,#sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
@@ -1040,8 +903,7 @@ section .innerlightbox{
 #sidebar {
   margin-top: 19px;
 }
-#footer table,#footer th,#footer td,
-#sidebar table,#sidebar th,#sidebar td {
+#footer table,#footer th,#footer td,#sidebar table,#sidebar th,#sidebar td {
   border: 1px solid #d1d1d1;
   text-align: center;
 }
@@ -1320,7 +1182,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 	padding: 10px;
 }
 .woocommerce-input-wrapper{
- width: 100%;
+  width: 100%;
 }
 .woocommerce div.product form.cart .button {
   vertical-align: middle;
@@ -1338,7 +1200,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
   margin-top: 10px;
 }
 .woocommerce-product-gallery__image {
-    padding: 5px;
+  padding: 5px;
 }
 .woocommerce-info a, form.woocommerce-shipping-calculator a,.woocommerce-account .woocommerce-MyAccount-content a,tr.woocommerce-cart-form__cart-item.cart_item td a{
   text-decoration: none !important;
@@ -1546,7 +1408,6 @@ nav.woocommerce-MyAccount-navigation ul li a{
 img.rss-widget-icon {
   width: auto !important;
 }
-
 /* Page */
 h2.entry-title,h1.page-title {
   text-align: left;
@@ -1557,12 +1418,6 @@ h2.entry-title,h1.page-title {
 	text-align:justify;
 	font-size: 16px;
 	margin:0 0 10px 0;
-}
-.content-ts hr{
-	border:none;
-	border-bottom:2px dotted #7e7e7e;
-	margin:35px 0;
-	clear:both;
 }
 .content-ts h1{
 	font-size:35px;
@@ -1588,7 +1443,8 @@ h2.entry-title,h1.page-title {
 	color:#333;
 	margin:0 0 25px;
 }
-.content-ts ul{list-style:none;
+.content-ts ul{
+  list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
@@ -1598,7 +1454,7 @@ h2.entry-title,h1.page-title {
 	margin:0 0 20px 0;
 	line-height:25px;
 }
-.content-ts ol{list-style: none;
+.content-ts ol{
 	padding:10px 0 0 0;
 	font-size:16px;
 	counter-reset: myCounter;
@@ -1721,6 +1577,9 @@ iframe, .entry-audio audio{
   }
 }
 @media screen and (max-width:720px) {	
+  #slider .carousel-control-next-icon i, #slider .carousel-control-prev-icon i{
+    padding: 16px 18px;
+  }
   .entry-content .alignwide {
     margin-left: -10px;
     margin-right: -10px;
@@ -1786,7 +1645,7 @@ iframe, .entry-audio audio{
     display: none;
   }
   #footer input[type="submit"] {
-    padding: 6px 0;
+    padding: 10px 0;
     float: right;
     background: #ffaa56;
     border-radius: 0px;
@@ -1845,7 +1704,6 @@ iframe, .entry-audio audio{
     padding: 18px 28px;
   }
 }
-/*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
     outline: 2px solid #FF4500;
@@ -1900,7 +1758,7 @@ iframe, .entry-audio audio{
     display: block;
     text-align: right;
   }
-  .primary-navigation ul ul li{
+  .primary-navigation ul ul li, a.closebtn.responsive-menu{
     display: block;
   }
   .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a{
@@ -1935,8 +1793,8 @@ iframe, .entry-audio audio{
   .main-header-box{
     padding-bottom: 15px;
   }
-  #menu-sidebar {
-    background-image: linear-gradient(-90deg, #000 0%, #ffaa56 120% );
+  #menu-sidebar, .sidebar {
+    background-image: linear-gradient(-90deg, #000 0%, #ffaa56 120% ) !important;
     opacity: 0.95;
   }
   .primary-navigation ul{
@@ -1992,6 +1850,7 @@ iframe, .entry-audio audio{
   #contact-info form.search-form {
     display: block;
     margin: 20px 0;
+    text-align: center;
   }
   .main-menu-navigation{
     overflow-y: scroll;

@@ -94,11 +94,11 @@
 		$advance_business_custom_css .='}';
 	}else if($advance_business_theme_lay == 'Center'){
 		$advance_business_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_business_custom_css .='text-align:center; left:20%; right:20%;';
+			$advance_business_custom_css .='text-align:center !important; left:20%; right:20%;';
 		$advance_business_custom_css .='}';
 	}else if($advance_business_theme_lay == 'Right'){
 		$advance_business_custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
-			$advance_business_custom_css .='text-align:right; left:40%; right:13%;';
+			$advance_business_custom_css .='text-align:right !important; left:40%; right:13%;';
 		$advance_business_custom_css .='}';
 	}
 
@@ -150,7 +150,7 @@
 	$advance_business_button_padding_top_bottom = get_theme_mod('advance_business_button_padding_top_bottom');
 	$advance_business_button_padding_left_right = get_theme_mod('advance_business_button_padding_left_right');
 	$advance_business_custom_css .='.new-text .second-border a, #slider .inner_carousel .know-btn a, #comments .form-submit input[type="submit"]{';
-		$advance_business_custom_css .='padding-top: '.esc_attr($advance_business_button_padding_top_bottom).'px; padding-bottom: '.esc_attr($advance_business_button_padding_top_bottom).'px; padding-left: '.esc_attr($advance_business_button_padding_left_right).'px; padding-right: '.esc_attr($advance_business_button_padding_left_right).'px; display:inline-block;';
+		$advance_business_custom_css .='padding-top: '.esc_attr($advance_business_button_padding_top_bottom).'px !important; padding-bottom: '.esc_attr($advance_business_button_padding_top_bottom).'px !important; padding-left: '.esc_attr($advance_business_button_padding_left_right).'px !important; padding-right: '.esc_attr($advance_business_button_padding_left_right).'px !important; display:inline-block;';
 	$advance_business_custom_css .='}';
 
 	$advance_business_button_border_radius = get_theme_mod('advance_business_button_border_radius');
