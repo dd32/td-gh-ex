@@ -4,7 +4,7 @@ Contributors: Access Keys
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.6
-Stable tag: 2.4.7
+Stable tag: 2.4.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +66,8 @@ https://stocksnap.io/photo/money-purse-IE0EK3MDHK
 
 
 == Changelog ==
+= 2.4.8 =
+** Fixed issues shown by welcome page
 
 = 2.4.7 =
 ** Fixed Minor CSS

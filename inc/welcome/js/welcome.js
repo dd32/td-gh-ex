@@ -7,7 +7,7 @@
 
  	"use strict";
 
- 	$(window).load(function(){
+ 	$(window).on("load", function(){
  		var hash = window.location.hash;
  		if ( hash !== null ) {
  			var clsr = hash.split('#');
