@@ -3,7 +3,7 @@ Contributors: themeansar
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.5
+Stable tag: 1.6
 
 == Theme License & Copyright ==
 Agencyup is distributed under the terms of the GNU GPL
@@ -107,3 +107,6 @@ Source: https://stocksnap.io/photo/working-chromebook-GHIBZPY4FS
 --- Version 1.5 ----
 1. Fixed mobile style issue.
 2. Fixed Widget spacing issue.
+
+--- Version 1.6 ----
+1. Fixed Comments Style Isuue

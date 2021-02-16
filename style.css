@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/agencyup/
 Author: themeansar
 Author URI: https://themeansar.com
 Description: Agencyup WordPress theme ideal for a business or perfect solutions for corporate, consulting, wedding planners, agency, law firms, finance, law travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, E-commerce.  The theme is responsive, WPML, Retina ready, SEO friendly(Live preview : https://demos.themeansar.com/agencyup/)
-Version: 1.5
+Version: 1.6
 Tested up to: 5.6
 Requires PHP: 5.6
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce
@@ -767,28 +767,8 @@ embed, iframe, object {
 .wp-block-latest-comments article {
     margin-bottom: 32px;
 }
-
-#comments img {max-width: 100%;}
-
 .vcard img {
     border-radius: 50%;
-}
-
-.reply a {
-    color: #01012f;
-    font-size: 14px3;
-    padding: 5px 17px;
-    font-weight: 600;
-    transition: 0.3s ease-in-out 0s;
-    letter-spacing: 0.033rem;
-    background-color: #fff;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-.comment-body
-{
-	margin-bottom: 25px;
 }
 
 /*---------------------------------------
@@ -1663,7 +1643,81 @@ font-weight: 600;
 }
 
 .bs-blog-post img{ max-width: 100%; }
+.comment-list {
+	list-style: none !important;
+}
+.comments-area .comment-body {
+    position: relative;
+    padding: 25px 25px 25px 70px;
+    min-height: 120px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border-radius: 3px;
+    z-index: 0;
+    margin-bottom: 1rem;
+}
+.comment-body
+{
+	margin-bottom: 25px;
+}
+.comment-list .children {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-left: 2.5rem;
+    z-index: 0;
+    list-style: none;
+}
+.comment-body .reply {
+    text-align: right;
+}
+#comments img {max-width: 100%;}
+.reply a {
+    font-size: 14px;
+    padding: 5px 17px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out 0s;
+    border-radius: 0;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+}
+.comments-area .comment-meta {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.comments-area .comment-meta .comment-author img {
+	border-radius: 60%;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 28px;
+    width: 60px;
+    height: 60px; 
+}
+.comment-meta .comment-metadata {
+    width: 100%;
+    line-height: 1.5;
+    font-size: 14px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
 
+.comment-content {
+    position: relative;
+    z-index: 0;
+    padding: 16px 40px 16px 0;
+}
 /* --------------------------------------
 =========================================
 	4.agencyup-breadcrumb-section

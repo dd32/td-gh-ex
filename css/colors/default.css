@@ -262,9 +262,15 @@ a:hover, a:focus {
 }
 
 .reply a {
-    border: 2px solid #df0a0a;
+	background: #df0a0a;
+	color: #fff;
+    border-color:#df0a0a;
 }
-
+.reply a:hover, .reply a:focus {
+	background: #fff;
+	color: #df0a0a;
+    border-color:#df0a0a;
+}
 /*==================== Sidebar ====================*/
 .bs-sidebar .bs-widget {
 	background: white;
