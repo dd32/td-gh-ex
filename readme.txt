@@ -3,7 +3,7 @@ Contributors: rcgoncalves
 Requires at least: 4.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,10 @@ A simple green theme, with a responsive design, using HTML5 and CSS3, and provid
 
 
 == Changelog ==
+
+= 3.0.1 =
+Changed:
+* Fix CSS for `ul`.
 
 = 3.0.0 =
 Changed:

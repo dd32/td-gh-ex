@@ -4,7 +4,7 @@ Theme URI: https://rcgoncalves.pt/project/rcg-forest/
 Author: Rui Carlos Gonçalves
 Author URI: https://rcgoncalves.pt/
 Description: A simple green theme, with a responsive design, using HTML5 and CSS3, and providing support for WordPress features, such as featured images, custom menus, custom background, or custom page templates.  (This theme was originally inspired on Green Grapes theme.  The code base of the current version was adapted from TwentyTwelve theme.)
-Version: 3.0.0
+Version: 3.0.1
 Requires at least: 4.0
 Tested up to: 5.4.2
 Requires PHP: 5.6
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, footer-widgets
 Text Domain: rcg-forest
 
-RCG Forest WordPress Theme, Copyright 2020, Rui Carlos Gonçalves
+RCG Forest WordPress Theme, Copyright 2021, Rui Carlos Gonçalves
 Derived from Twenty Twelve, Copyright 2012, the WordPress team
 RCG Forest is distributed under the terms of the GNU GPL v2
 forest.jpg header image, Copyright 2012, Rui Carlos Gonçalves
@@ -579,7 +579,7 @@ img.header-image {
 	margin-bottom: 1.714285714rem;
 }
 .widget-area .textwidget ul {
-	list-style: disc outside;
+	list-style: square outside;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
 }
@@ -589,7 +589,6 @@ img.header-image {
 	margin: 0 0 1.714285714rem;
 }
 .widget-area .widget li {
-	list-style: square;
 	margin-left: 16px;
 	margin-left: 1.142857142rem;
 }
@@ -821,7 +820,6 @@ footer[role="contentinfo"] a:hover {
 .entry-content li,
 .comment-body li,
 .mu_register li {
-	list-style: square;
 	margin-left: 16px;
 	margin-left: 1.142857142rem;
 }
