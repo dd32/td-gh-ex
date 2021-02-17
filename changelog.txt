@@ -1,5 +1,8 @@
 == Changelog ==
 
+@version 2.0.7
+1. Fixed service section, contact form 7, site title and widgets styling issues.
+
 @version 2.0.6
 1. Fixed user comment and "WBR: Page Widget" issues.
 

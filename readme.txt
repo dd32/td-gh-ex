@@ -3,7 +3,7 @@
 Contributors: priyanshumittal
 Requires at least: 4.5
 Tested up to: 5.6
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+@version 2.0.7
+1. Fixed service section, contact form 7, site title and widgets styling issues.
 
 @version 2.0.6
 1. Fixed user comment and "WBR: Page Widget" issues.

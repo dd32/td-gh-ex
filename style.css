@@ -5,7 +5,7 @@ Author: Webriti
 Author URI: https://webriti.com/
 Description: Rambo is an ideal WordPress theme for those who wish to create an impressive web presence. Rambo is easy to use, provides everything you need to create great looking website. It is professional, smooth and sleek, with a clean modern layout, for almost any business types: agency, freelance, blog, startup, portfolio, corporate, firms, law firms, digital media agency , architecture firms, real estate firms, food , fashion etc etc. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the modern devices like mobiles, tablets, laptops etc. In Rambo Lite, you can easily set Featured Banner, Services, Portfolio and 4 column widgetized footer. Page templates like Homepage, Full Width Page and Blog left sidebar template will be there. In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language. Check premium version theme demo at http://webriti.com/demo/wp/rambo
 Tags: full-width-template, threaded-comments, right-sidebar, left-sidebar, one-column, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
-Version: 2.0.6
+Version: 2.0.7
 Requires at least: 4.5
 Tested up to: 5.6
 Requires PHP: 5.4
@@ -2133,7 +2133,7 @@ table th {
 .woocommerce .quantity .qty { width: 3.5em; text-align: left; padding: .780em 0.7em; border-radius: 0; }
 .woocommerce td.product-name dl.variation { margin: .35em 0 0; }
 .woocommerce td.product-name dl.variation dt, .woocommerce td.product-name dl.variation dd, .woocommerce td.product-name dl.variation dd p { line-height: 20px; }
-.woocommerce-cart table.cart td.actions .coupon .input-text { width: 180px; border: 1px solid #e9e9e9; color: #767676; padding: .600em 0.7em; border-radius: 0; height: auto; }
+.woocommerce-cart table.cart td.actions .coupon .input-text { border: 1px solid #e9e9e9; color: #767676; padding: .600em 0.7em; border-radius: 0; height: auto; }
 .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled] { color: #ffffff; }
 .woocommerce .cart input.button, .woocommerce input.button.alt, .woocommerce button.button, .woocommerce #respond input#submit {
 	color: #ffffff;
@@ -2304,7 +2304,7 @@ li.cat-item { padding: 5px 0; }
     white-space: nowrap;
 }
 .sidebar-widget .widget-title { font-size: 24px; line-height: 30px; border-bottom: 2px solid #eeeeee; padding-bottom: 11px; display: inline-block; margin: 0 0 20px; }
-.woocommerce .sidebar-widget { margin: 0 0 50px; }
+.woocommerce-page .sidebar-widget { margin: 0 0 50px; }
 .woocommerce .sidebar-widget ul { padding: 0; list-style: none; }
 .woocommerce ul.product_list_widget li a:before, .product_list_widget li a:before { display:none; }
 .product_list_widget a { display: block; }
@@ -2710,10 +2710,11 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     width: 100%;
     display: block;
 }
-.home_service span a{padding: 46px 0px;
-    display: block;}
-
-.home_service .fa-stack{line-height: 0em !important;}
+.home_service span a{
+		/* padding: 46px 0px; */
+    display: block;
+}
+/* .home_service .fa-stack{line-height: 0em !important;} */
 .latest_news_section .blog-news img{float:none;}
 .latest_news_section .blog-news{float:left;display: block;}
 iframe {
@@ -2748,11 +2749,27 @@ code{white-space: normal!important;}
 .Blog_main a, .textwidget a {
 	text-decoration: underline;
 }
-.blog_section2_comment a, .Blog_main h2:first-child a, .Blog_main .blog_tags a, .comment_box .blog_single_post_heading a, .comment_section .logged-in-as a, .pagination_section a{
+.blog_section2_comment a, .Blog_main h2:first-child a, .Blog_main .blog_tags a, .comment_box .blog_single_post_heading a, .comment_section .logged-in-as a, .pagination_section a, .woocommerce-page a {
 	text-decoration: none;
 }
 @media (max-width: 420px) {
 	.wp-block-audio audio {
 		min-width: auto;
 	}
+}
+@media (max-width: 768px) {
+	.logo-link-url {
+		margin-bottom: 15px;
+	}
+}
+.Blog_main .wpcf7 .wpcf7-form input[type="text"], .Blog_main .wpcf7 .wpcf7-form input[type="email"], .Blog_main .wpcf7 .wpcf7-form textarea {
+	width: 97%;
+}
+@media (min-width: 1024px) {
+	.woocommerce-cart table.cart td.actions .coupon .input-text {
+		width: 180px !important;
+	}
+}
+.footer-section .span4 .widget_search input[type="text"], .woocommerce-page .blog-sidebar .span4 .sidebar-widget input[type="text"] {
+	margin-bottom: 0;
 }
